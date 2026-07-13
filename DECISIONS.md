@@ -14,3 +14,6 @@
 - INTERIM chat: use the existing Priya/Chatbase bot (chatbotId rpNt_uRW6W8EDiTf6AvYJ, extracted from live kairali.guru) on new sites NOW; replace with the four entity bots later. Compliance caveat noted: clinical-register bot on non-clinical surfaces is temporary by owner's order.
 - INTERIM WhatsApp: chat-first CTAs on all sites (email alone is not enough — most clients won't write email). Use Priya's +91 92898 38797 until a group number is provided; swap later.
 - kairali.guru upgrade: blend the LIVE site's design + Eeshal's repo design, improve both — neither is the ceiling.
+
+## 2026-07-13 18:55:39 IST — agent research per D1 delegation
+- D1 CLOSED (forward strategy): SEMANTIC MAP adopted — every surplus domain 301s (Cloudflare Bulk Redirects, single hop, no chains, never in Ads final URLs) to the topically nearest LIVE Kairali site, never all→one; full findings, citations and per-family mapping rules in docs/research/forward-strategy-D1.md.
