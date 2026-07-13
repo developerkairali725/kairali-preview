@@ -69,6 +69,8 @@ When blocked on a question during unattended work, append it to QUESTIONS.md and
 ## CRASH RESILIENCE (M2 has no power backup until ~Sep 2026)
 Work in small units and make state durable continuously: commit + push after every meaningful unit (never batch hours of work uncommitted); long research/build outputs stream to repo files as they progress, not only at the end; after any crash, `git status` + QUESTIONS.md + wiki/log.md are the recovery map. Slow and durable beats fast and lost.
 
+Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_BRIEF.md, audits/, launches/) is timestamped to the SECOND in IST: `YYYY-MM-DD HH:MM:SS IST` — date-only entries are a lint finding. Git commits carry second-precision timestamps automatically (`git log --format=%ci`).
+
 ## CHANGELOG
 - v1.0 (13 Jul 2026): Initial lock.
 - v1.1 (13 Jul 2026): Appended Factory Rules (Runbook §7) and Unattended Rule (PHASE0 §M2.7) per the launch-pack placement instructions.
