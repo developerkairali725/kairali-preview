@@ -55,9 +55,24 @@ Ambiguity about facts, money, medical claims, legal/GST language, or anything to
 ## UNATTENDED RULE (PHASE0 Playbook §M2.7)
 When blocked on a question during unattended work, append it to QUESTIONS.md and move to the next queued task — do not stall. Unattended sessions end at commits, PRs, and preview links. Never DNS changes, never production pushes, never destructive commands while unattended.
 
+## KNOWLEDGE & VERIFICATION DOCTRINE
+- (a) `content-mined/` legacy content is an immutable raw-sources layer — never edited, only read.
+- (b) Update the relevant `wiki/` page at every site launch (Ship Gate §E); pages link to sources, never duplicate them.
+- (c) Wiki lint every Monday: contradictions, stale facts, gaps → fix PR. Same Monday pass: `pnpm audit` + Dependabot triage + hook self-test → findings to QUESTIONS.md or a fix PR.
+- (d) Design skills/plugins NEVER override `packages/ui/brand-tokens.css` or `raag-tokens.css` — the brand manuals win.
+- (e) `/security-review` must pass on every release diff (Ship Gate A-13).
+- (f) Every task ends with a Checker pass: re-read the instruction, diff claim vs machine evidence, list anything unverified as unverified.
+- (g) A failing gate/hook/CI is NEVER fixed by weakening it — fix the cause or escalate to QUESTIONS.md.
+- (h) Tier-1 site PRs also run a code-review stage before Abilash's approval.
+- (i) Engineering standards live in docs/ENGINEERING_STANDARDS.md and are binding on every site.
+
+## CRASH RESILIENCE (M2 has no power backup until ~Sep 2026)
+Work in small units and make state durable continuously: commit + push after every meaningful unit (never batch hours of work uncommitted); long research/build outputs stream to repo files as they progress, not only at the end; after any crash, `git status` + QUESTIONS.md + wiki/log.md are the recovery map. Slow and durable beats fast and lost.
+
 ## CHANGELOG
 - v1.0 (13 Jul 2026): Initial lock.
 - v1.1 (13 Jul 2026): Appended Factory Rules (Runbook §7) and Unattended Rule (PHASE0 §M2.7) per the launch-pack placement instructions.
+- v1.2 (13 Jul 2026): Knowledge & Verification Doctrine (a–i), Crash Resilience rule, standards pointer.
 
 ## FACTORY RULES (monorepo)
 - Every site lives in sites/<domain>, built ONLY from packages/* — no copy-pasted components.
