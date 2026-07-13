@@ -97,7 +97,7 @@ for d in "${DOMAINS[@]}"; do
       gen=$(printf '%s' "$body" | sed -n 's/.*<meta[^>]*name="generator"[^>]*content="\([^"]*\)".*/\1/Ip' | head -1)
       [ -n "$gen" ] && cms="${cms:+$cms/}$gen"
       case "$lc" in *viewport*) viewport="Y";; esac
-      case "$lc" in *gtag(*|*googletagmanager*|*google-analytics*|*clarity.ms*) analytics="Y";; esac
+      case "$lc" in *"gtag("*|*googletagmanager*|*google-analytics*|*clarity.ms*) analytics="Y";; esac
       flat=$(printf '%s' "$lc" | tr -d ' -()')
       case "$flat" in *"$WRONG_PHONE"*) wrongp="Y";; esac
       case "$flat" in *"$RIGHT_PHONE"*) rightp="Y";; esac
