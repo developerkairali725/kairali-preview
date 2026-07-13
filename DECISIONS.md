@@ -9,3 +9,8 @@
 - kairali.guru: intern (Eeshal) repo github.com/Eeshal27/kairali-guru- confirmed as her latest; plan = evaluate as baseline, migrate into monorepo, Eeshal continues work in the Factory repo via PRs.
 - Launch evidence: filled sitewide+pagewise checklists committed per launch in launches/<domain>/ (CLAUDE.md rule).
 - Team: Eeshal, Deepu, Ambuj, Sunaj, Satyam join via GitHub org invites (Abilash executes); PR + Vercel-preview review flow; only Abilash merges main.
+
+## 2026-07-13 18:51:36 IST — Abilash, evening rulings
+- INTERIM chat: use the existing Priya/Chatbase bot (chatbotId rpNt_uRW6W8EDiTf6AvYJ, extracted from live kairali.guru) on new sites NOW; replace with the four entity bots later. Compliance caveat noted: clinical-register bot on non-clinical surfaces is temporary by owner's order.
+- INTERIM WhatsApp: chat-first CTAs on all sites (email alone is not enough — most clients won't write email). Use Priya's +91 92898 38797 until a group number is provided; swap later.
+- kairali.guru upgrade: blend the LIVE site's design + Eeshal's repo design, improve both — neither is the ceiling.
