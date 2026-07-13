@@ -1,0 +1,46 @@
+name: gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # gitleaks scans history
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (turbo)
+        run: pnpm build
+
+      - name: Package tests
+        run: node --test packages/compliance/test/
+
+      - name: Compliance lint (merge-blocking, Checklist A3)
+        run: node packages/compliance/bin/lint.js
+
+      - name: Dependency audit
+        run: pnpm audit --audit-level=high
+
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # TODO (QUESTIONS.md): Lighthouse CI against the Vercel preview URL
+  # (perf ≥90 / a11y ≥95 / SEO =100) once the preview-URL wiring is added,
+  # and anthropics/claude-code-security-review once ANTHROPIC_API_KEY is set
+  # as a repo secret. Gates are added, never weakened (CLAUDE.md rule g).
