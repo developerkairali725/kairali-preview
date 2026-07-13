@@ -63,3 +63,9 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 - **WhatsApp number conflict on the old site**: api.whatsapp links carry BOTH +91 88269 21110 (matches the contact-page phone) and +91 88260 21114. Which is Sneha's real number for the rebuild's chat-first CTA? (Priya's interim number is Kairali-only — wrong for a personal brand.)
 - **Blush Lounge brand assets**: only a low-res logo.png + Allura/Montserrat type mined. Does Blush Lounge get its own token file (like raag-tokens.css) and is there any brand material / does Sneha have Instagram (@blushlounge_sneha) originals for portfolio imagery? Old gallery is 2018-era low-res.
 - **Wave placement**: personal site isn't on the Wave map — when should sites/theblushlounge.com be built?
+
+## 2026-07-13 19:44:30 IST · kairali.guru baseline evaluation — rulings needed
+- **student-hub**: Eeshal's repo has a fake client-side login (hardcoded email+password committed to her PUBLIC repo). Drop the page for launch, or is a real student portal (auth, noindex) wanted in Wave 2/3?
+- **Course prices**: her repo hardcodes prices (e.g. OAP ₹15,500 / $260 Kerala, ₹9,000 / $150 Delhi-Mumbai) that do NOT appear on the live site. Who confirms current programme pricing before the rebuild ships? (Rule 6: verify or leave empty + flag.)
+- **Supabase**: her enquiry form writes to a Supabase project from the client. Plan is to replace with packages/forms → Satyam webhook; does anything in that Supabase table need exporting first?
+- **Register-table correction**: SITE_DESIGN_LOCALE_REGISTER.md says kairali.guru live = EN/DE/FR/AR/RU, but the live site is EN-only (no hreflang, /de/ 404s) — the 5 locales exist only in Eeshal's repo. Amend the table via DECISIONS at next edit.
