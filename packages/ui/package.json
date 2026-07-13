@@ -4,5 +4,8 @@
   "private": true,
   "type": "module",
   "description": "Brand tokens + shared components per Brand Manual ch.07",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": "./src/index.ts",
+    "./brand-tokens.css": "./brand-tokens.css"
+  }
 }
