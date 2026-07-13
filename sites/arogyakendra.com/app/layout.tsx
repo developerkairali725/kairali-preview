@@ -33,6 +33,25 @@ export const metadata: Metadata = {
   description:
     "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
   alternates: { canonical: "https://arogyakendra.com" },
+  // OG/Twitter ship WITHOUT an image for now: no real 1200×630 asset exists
+  // yet and fabricating one is banned. Spec lives in IMAGE_MANIFEST.md
+  // (slot og-image); add `images` here when the asset lands.
+  openGraph: {
+    type: "website",
+    url: "https://arogyakendra.com",
+    siteName: "Arogya Kendra",
+    title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
+    description:
+      "The gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary",
+    title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
+    description:
+      "The gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

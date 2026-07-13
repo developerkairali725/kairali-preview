@@ -57,14 +57,42 @@ const BRANDS = [
   },
 ];
 
-const organizationSchema = {
+// Checklist A8 / pagewise structured-data items: Organization + WebSite +
+// BreadcrumbList (Home only — this is a one-pager) in a single @graph.
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Kairali Ayurvedic Group",
-  url: "https://arogyakendra.com",
-  email: EMAIL,
-  foundingDate: "1908",
-  sameAs: BRANDS.map((b) => b.href),
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://arogyakendra.com/#organization",
+      name: "Kairali Ayurvedic Group",
+      url: "https://arogyakendra.com",
+      email: EMAIL,
+      foundingDate: "1908",
+      slogan: "health through ayurveda",
+      sameAs: BRANDS.map((b) => b.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://arogyakendra.com/#website",
+      name: "Arogya Kendra",
+      url: "https://arogyakendra.com",
+      publisher: { "@id": "https://arogyakendra.com/#organization" },
+      inLanguage: "en",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://arogyakendra.com/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://arogyakendra.com",
+        },
+      ],
+    },
+  ],
 };
 
 function WhatsAppIcon() {
@@ -132,7 +160,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <header className="site-header">
