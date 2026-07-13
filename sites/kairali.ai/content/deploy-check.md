@@ -2,4 +2,4 @@
 title: Deploy check
 ---
 
-Post-transfer deploy check: 2026-07-13 16:38:51 IST
+Post-app-install deploy check: 2026-07-13 16:44:26 IST
