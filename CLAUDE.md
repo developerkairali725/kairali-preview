@@ -52,8 +52,12 @@ Playwright MCP explore: broken links, 4xx/5xx, mixed content, mobile viewport re
 ## ESCALATION
 Ambiguity about facts, money, medical claims, legal/GST language, or anything touching production → STOP and ask Abilash. A blocked task with a question beats a wrong task completed.
 
+## UNATTENDED RULE (PHASE0 Playbook §M2.7)
+When blocked on a question during unattended work, append it to QUESTIONS.md and move to the next queued task — do not stall. Unattended sessions end at commits, PRs, and preview links. Never DNS changes, never production pushes, never destructive commands while unattended.
+
 ## CHANGELOG
 - v1.0 (13 Jul 2026): Initial lock.
+- v1.1 (13 Jul 2026): Appended Factory Rules (Runbook §7) and Unattended Rule (PHASE0 §M2.7) per the launch-pack placement instructions.
 
 ## FACTORY RULES (monorepo)
 - Every site lives in sites/<domain>, built ONLY from packages/* — no copy-pasted components.
