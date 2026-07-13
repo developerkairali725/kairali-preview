@@ -10,8 +10,6 @@ deleted — history is the point.
 - [ ] Re-read ALL governing docs + both brand manuals + checklists + comp set before further building (Abilash order, 13 Jul)
 - [ ] Drive sweep: locate MOA Matrix v3.0, European Buyer Journey, competitor dossiers → docs/ktahv-inputs/
 - [ ] Forward-strategy research + decision D1 (delegated to agent; Google-compliant, best ROI)
-- [ ] Retro-fill launches/arogyakendra.com/ (filled sitewide+pagewise checklists — evidence rule)
-- [ ] arogyakendra v2: WhatsApp CTA (needs group number from Abilash), image placeholders + manifest, design-critic pass ≥9/10
 - [ ] Mine theblushlounge.com (primary per D6) + build plan; snehachowdhary.com = forward
 - [ ] Evaluate Eeshal repo (kairali-guru-) vs live kairali.guru → migration plan into sites/
 - [ ] Mine image sources per image-library/README registry (KTAHV video folder CONFIRMED; folder 1LlD59… needs sharing fix; albums via browser) → image-library/ + per-site IMAGE_MANIFEST swaps
@@ -36,6 +34,8 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-13 19:17:20 IST — arogyakendra v2 shipped + live-verified (HTTP 200, new h1, WhatsApp CTA live): brand-manual design pass (Kurale/Asap/Lato via next/font, placeholders + IMAGE_MANIFEST, sticky mobile WhatsApp bar), interim Priya WhatsApp + Chatbase per DECISIONS, sitemap/robots/OG/JSON-LD conformance, design-critic pass 9.2/10 (launches/arogyakendra.com/design-review.md)
+- [x] 2026-07-13 19:16:54 IST — launches/arogyakendra.com/ retro-filled: sitewide + pagewise checklists committed with curl/build/lint evidence; GSC/Bing/GA4/DNS items marked pending honestly
 - [x] 2026-07-13 18:47:18 IST — BACKLOG system created; team emails recorded
 - [x] 2026-07-13 18:42:22 IST — packages/forms v1 built + LIVE-verified against Satyam's test webhook (B8 evidence in docs/integrations/crm-forms-spec.md)
 - [x] 2026-07-13 ~18:30 IST — brand manuals ingested (text + PDFs), raag-tokens.css created (D8 closed); comp set ingested; checklists ingested + made law; plugins installed
