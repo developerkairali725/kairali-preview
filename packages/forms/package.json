@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "ONE webhook standard → lead-classification/CRM (v1 FROZEN)",
-  "exports": { ".": "./src/index.ts" }
+  "description": "ONE lead pipe: canonical CRM payload + webhook submit (v1 FREEZE per Satyam's spec 13 Jul 2026)",
+  "exports": { ".": "./src/index.js" },
+  "scripts": { "test": "node --test test/*.test.js" }
 }

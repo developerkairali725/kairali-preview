@@ -1,5 +1,10 @@
-# CRM & forms
-v1 FREEZE: replicate the CURRENT production form schema + webhook endpoint EXACTLY (field names, hidden fields, source tags). Additions only: consent checkbox + privacy link (DPDP), invisible Turnstile, data-cta events.
-- BLOCKED on Ambuj: canonical schema + endpoint + test-mode flag (highest-priority pending item; gates packages/forms for all 28 sites).
-- Launch evidence B8: one live test lead screenshotted in CRM with consent flag + source attribution.
-- Downstream: lead-classification v4.3 (5 verticals). v2 ideas = backlog only.
+# CRM & forms — UNBLOCKED 13 Jul 2026 (spec from Satyam, who built the CRM)
+Canonical spec + verification evidence: docs/integrations/crm-forms-spec.md.
+`@kairali/forms` v1 implements it exactly: buildPayload (only canonical fields),
+trackingFromLocation (UTM/gclid/fbclid/landingPage/referrer capture), submitLead
+(server-side, endpoint from env CRM_WEBHOOK_URL). v1 additions: DPDP consent
+checkbox (client-side gate), Turnstile, data-cta events — payload unchanged.
+- PRODUCTION webhook still needed from Satyam before first real launch.
+- OPEN: does the CRM want an explicit consent field? (QUESTIONS)
+- Launch evidence per site: one live test lead + screenshot/row-ref (Checklist B8).
+v2 backlog (post-sprint): chat-style forms, conditional fields per MOA, enrichment, A/B.
