@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/product-card",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shopify Storefront API cards — buy on Shopify, NEVER build checkout",
+  "exports": { ".": "./src/index.ts" }
+}

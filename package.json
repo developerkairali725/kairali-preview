@@ -1,0 +1,20 @@
+{
+  "name": "kairali-web-factory",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.12.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "compliance": "node packages/compliance/bin/lint.js"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.0"
+  }
+}

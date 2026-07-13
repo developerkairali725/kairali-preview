@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/seo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Meta, sitemaps, OG/Twitter cards, llms.txt, GEO/Q&A structure",
+  "exports": { ".": "./src/index.ts" }
+}

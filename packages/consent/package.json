@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/consent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cookie banner + Google Consent Mode v2 + privacy/terms per entity",
+  "exports": { ".": "./src/index.ts" }
+}

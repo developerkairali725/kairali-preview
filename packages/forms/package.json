@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/forms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ONE webhook standard → lead-classification/CRM (v1 FROZEN)",
+  "exports": { ".": "./src/index.ts" }
+}

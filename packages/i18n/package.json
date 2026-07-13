@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Keyed strings + locale gates; transcreation not translation",
+  "exports": { ".": "./src/index.ts" }
+}

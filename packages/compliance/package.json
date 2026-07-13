@@ -1,0 +1,17 @@
+{
+  "name": "@kairali/compliance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Language-lock lint from CLAUDE.md — KTAHV clinical lock, group-wide banned filler, cure claims, locked facts",
+  "bin": {
+    "kairali-compliance-lint": "./bin/lint.js"
+  },
+  "exports": {
+    ".": "./src/lint.js",
+    "./rules": "./src/rules.js"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  }
+}

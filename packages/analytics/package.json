@@ -1,0 +1,8 @@
+{
+  "name": "@kairali/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GA4 + Ads conversions + Meta/LinkedIn/Bing pixels from data-cta",
+  "exports": { ".": "./src/index.ts" }
+}

@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+.next/
+dist/
+out/
+.turbo/
+.vercel/
+
+# env & secrets — never commit credentials (CLAUDE.md gate 4/6)
+.env
+.env.*
+!.env.example
+*.pem
+
+# OS / editor
+.DS_Store
+*.log
+
+# test artifacts
+playwright-report/
+test-results/
+sweep_results.csv
