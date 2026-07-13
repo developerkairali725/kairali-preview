@@ -46,3 +46,9 @@ Both 2026 manuals ingested from Drive (text layers: docs/brand/). All eight Kair
 
 ## 2026-07-13 18:43:16 IST · Forms v1 verified
 - packages/forms BUILT + LIVE-TESTED against Satyam's test webhook (success, rows 2-4 in test sheet). Ask Satyam: (a) PRODUCTION webhook URL when ready, (b) should payload carry an explicit consent field (DPDP evidence), (c) he can delete the 3 test rows.
+
+## 2026-07-13 19:22:05 IST · Drive corpus sweep — two source docs missing
+Corpus sweep landed 28 docs in docs/ktahv-inputs/ (incl. all 20 competitor dossiers). Two referenced sources could NOT be found in Drive and gate full fidelity of the MOA/KTAHV work:
+- **European Buyer Journey (the 8-stage DACH/FR document, PROJECT_CONTEXT §7).** Only its condensed cohorts (DA1–DA3, FR1–FR3) and moments (M1 "90-second first impression" = Stage 4; M2 "pre-booking physician video consult" = Stage 5) survive inside Harmony_Content_Brief_Pack; KTAHV_B2B_Landscape cross-references it by name. Abilash: where does the full doc live (chat export? xlsx? another account)?
+- **KTAHV_MOA_Matrix_v3_0.xlsx** — the workbook the MOA Review Handover names as must-attach (9 sheets, classifier code in Sheet 3, baseline in Sheet 7, open questions in Sheet 9). Only the handover DOC is in Drive. Abilash: export/drop the xlsx into Drive or docs/ktahv-inputs/.
+Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG5oPVFLtnA1xxk) and "Villa Raag- Images" (1WTBf-LIiA3YPnFYb5NWNeIm6l9WKf0_R) show metadata but list zero children to director@kairali.com — the sharing fix is still pending (matches the media-catalog pass).
