@@ -27,7 +27,7 @@ jobs:
         run: pnpm build
 
       - name: Package tests
-        run: node --test packages/compliance/test/
+        run: node --test packages/compliance/test/*.test.js
 
       - name: Compliance lint (merge-blocking, Checklist A3)
         run: node packages/compliance/bin/lint.js

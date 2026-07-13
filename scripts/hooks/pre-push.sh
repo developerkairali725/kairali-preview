@@ -7,7 +7,7 @@ echo "pre-push gate: compliance lint…" >&2
 node packages/compliance/bin/lint.js >&2
 
 echo "pre-push gate: package tests…" >&2
-node --test packages/compliance/test/ >/dev/null 2>&1 || { echo "compliance tests failed" >&2; exit 1; }
+node --test packages/compliance/test/*.test.js >/dev/null 2>&1 || { echo "compliance tests failed" >&2; exit 1; }
 
 if [ -d node_modules ]; then
   echo "pre-push gate: build…" >&2
