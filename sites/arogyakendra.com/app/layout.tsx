@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
 import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
+import ChatbaseLoader from "./chatbase-loader";
 
 // Brand Manual ch.04: Kurale (display, weight 400 only) · Asap (body/UI) ·
 // Lato (captions, overlines, numerals). next/font self-hosts at build —
@@ -37,7 +38,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${kurale.variable} ${asap.variable} ${lato.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ChatbaseLoader />
+      </body>
     </html>
   );
 }
