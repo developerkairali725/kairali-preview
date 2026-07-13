@@ -71,6 +71,10 @@ Work in small units and make state durable continuously: commit + push after eve
 
 Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_BRIEF.md, audits/, launches/) is timestamped to the SECOND in IST: `YYYY-MM-DD HH:MM:SS IST` — date-only entries are a lint finding. Git commits carry second-precision timestamps automatically (`git log --format=%ci`).
 
+## LAUNCH EVIDENCE & COMPETITIVE RESEARCH (Abilash directives, 13 Jul 2026)
+- Every site launch produces `launches/<domain>/` containing: the FILLED sitewide checklist, FILLED pagewise checklist (docs/checklists/ are the masters), and Ship Gate evidence — committed to git as permanent, auditable history. A launch without its filled checklists in the repo is not a launch.
+- Before building any revenue site: research the niche's competitors — their SEO strengths, SEM/ads behaviour, and practitioner insight from YouTube/Reddit/forums on what makes a high-ROI site in that niche. Findings go to `docs/<entity>-inputs/` or the site's wiki page BEFORE design decisions are made. The KTAHV comp set (docs/ktahv-inputs/comp-set.md) is the model.
+
 ## CHANGELOG
 - v1.0 (13 Jul 2026): Initial lock.
 - v1.1 (13 Jul 2026): Appended Factory Rules (Runbook §7) and Unattended Rule (PHASE0 §M2.7) per the launch-pack placement instructions.
