@@ -33,5 +33,21 @@ Marigold: one accent moment per view, never body text on white.
 WCAG 2.2 AA. Focus rings present, touch targets ≥ 44 px, semantic landmarks,
 `prefers-reduced-motion` honored everywhere motion exists.
 
+## Images: placeholder-first workflow (Abilash directive, 13 Jul 2026)
+No site waits for photography, and no site ships boring. Every image slot gets a
+DESCRIBED PLACEHOLDER at build time: a styled block (brand-token colors, correct
+aspect ratio) carrying a spec — subject, mood, exact dimensions, format
+(AVIF/WebP), alt text — plus a matching entry in the site's `IMAGE_MANIFEST.md`
+so the shoot/sourcing list is one file per site. Swap-in is then mechanical.
+Sources in priority order: Kairali image library (~/Claude/Kairali-Digital/
+image-library/) → the manual-linked galleries (Raag Google Photos album,
+kairali.com/media-assets, villaraag.com/photo-gallery) → licensed stock → AI-gen
+only per the site's video/imagery policy code (never people on KTAHV).
+
+## Mobile-first is the default
+~80% of traffic is mobile: design at 375px first, enhance upward. Layouts, type
+scale, and CTAs must be verified at mobile widths BEFORE desktop polish; sticky
+WhatsApp/enquiry CTAs on mobile where the register allows.
+
 ## Amendments
 Via LEARNINGS.md-driven PRs only — same rule as the Ship Gate.
