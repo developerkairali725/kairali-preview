@@ -69,3 +69,7 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 - **Course prices**: her repo hardcodes prices (e.g. OAP ₹15,500 / $260 Kerala, ₹9,000 / $150 Delhi-Mumbai) that do NOT appear on the live site. Who confirms current programme pricing before the rebuild ships? (Rule 6: verify or leave empty + flag.)
 - **Supabase**: her enquiry form writes to a Supabase project from the client. Plan is to replace with packages/forms → Satyam webhook; does anything in that Supabase table need exporting first?
 - **Register-table correction**: SITE_DESIGN_LOCALE_REGISTER.md says kairali.guru live = EN/DE/FR/AR/RU, but the live site is EN-only (no hreflang, /de/ 404s) — the 5 locales exist only in Eeshal's repo. Amend the table via DECISIONS at next edit.
+
+## 2026-07-13 19:50:28 IST · URGENT pair from the overnight synthesis
+- **theblushlounge.com is DOWN** (DigitalOcean origin unreachable on all ports; was live Nov 2025). This is Sneha's live business site. Who manages that droplet — Sunaj or Ambuj? Restore or accelerate the rebuild; brief ready at docs/site-briefs/theblushlounge.md (content recovered via Wayback).
+- **Security: Eeshal's PUBLIC repo (kairali-guru-) contains a hardcoded student-hub password.** Action: Eeshal rotates that credential immediately and makes the repo private (or removes the secret + history). Flag when she joins the org.
