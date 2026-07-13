@@ -86,12 +86,9 @@ export function lintText(text, { file = "<text>", entity = "group", asCode = fal
     checkWordList(CLINICAL_LOCK_BANNED.fr, "clinical-lock-fr", "KTAHV clinical lock (FR seed)");
   }
 
-  // Brand-voice filler ban is Kairali brand law; "personal" sites (Register:
-  // "owner's call") are not Kairali brand surfaces. Cure-claims and locked
-  // facts remain global. Scope decision logged in QUESTIONS.md — Abilash review.
-  if (effectiveEntity !== "personal") {
-    checkWordList(BANNED_FILLER, "banned-filler", "Banned filler (all Kairali entities)");
-  }
+  // Abilash's ruling 13 Jul 2026: banned filler applies to ALL sites,
+  // personal included — fix the copy, never exempt the site.
+  checkWordList(BANNED_FILLER, "banned-filler", "Banned filler (all entities)");
 
   for (const { re, note } of CURE_CLAIM_PATTERNS) {
     lines.forEach((line, i) => {

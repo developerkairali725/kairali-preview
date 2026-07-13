@@ -93,9 +93,9 @@ test("code files get warnings, not errors", () => {
   assert.ok(f.filter((x) => x.severity === "warning").length >= 2);
 });
 
-test("personal entity exempt from brand filler, but not cure claims or locked facts", () => {
+test("personal entity gets banned-filler too (Abilash ruling 13 Jul 2026)", () => {
   const filler = lintText("Curated speeches and unique talks.", { entity: "personal" });
-  assert.equal(errs(filler).filter((x) => x.rule === "banned-filler").length, 0);
+  assert.ok(errs(filler).filter((x) => x.rule === "banned-filler").length >= 2);
   const cure = lintText("This talk cures boredom. Call +91 92898 38777.", { entity: "personal" });
   assert.ok(errs(cure).some((x) => x.rule === "cure-claims"));
   assert.ok(errs(cure).some((x) => x.rule === "locked-facts"));

@@ -31,3 +31,8 @@
 ## 2026-07-13 17:18:44 IST · First tenant + lint scope
 - Q10 RESOLVED by Abilash: portfolio-website = abhilashkr.com. Imported to sites/abhilashkr (original repo untouched); builds green in turbo (2/2 tasks).
 - SCOPE DECISION (ratify or veto, Abilash): entity "personal" is now EXEMPT from the Kairali banned-filler rule only — your portfolio's "Curated Speeches" isn't Kairali brand copy. Cure-claims + locked-facts checks still apply to it. Also: dot-directories (.agents etc.) excluded from lint scans, and the old repo's agent docs moved to docs/tenants/.
+
+## 2026-07-13 17:53:12 IST · Wave 1 kickoff rulings (from Abilash)
+- Personal-site exemption VETOED — banned filler applies to all sites incl. abhilashkr.com; copy fixed ("Curated" → "Selected").
+- Language locks are ALL-LOCALE: every locale a site targets needs its own native-reviewed banned list before that locale ships (rules.js updated). Applies beyond DE/FR: AR, RU, CS, etc.
+- KTAHV inputs exist OUTSIDE this repo: Abilash has the competitor comp set and extensive target-audience work (MOA Matrix v3.0, European Buyer Journey, competitor dossiers — PROJECT_CONTEXT §7) from previous Claude chats. ACTION (Abilash): export/drop these into the repo (suggest: docs/ktahv-inputs/ — any format) or share the Drive folder BEFORE any KTAHV or KTAHV-related work begins. Agent rule: no KTAHV surface gets built without ingesting these first.

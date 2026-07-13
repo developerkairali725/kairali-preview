@@ -9,6 +9,12 @@
 /**
  * KTAHV GST clinical lock — applies to entity "ktahv" ONLY (never Raag/KAPPL).
  * Union of CLAUDE.md list and PROJECT_CONTEXT §4.1 (adds getaway/escape).
+ *
+ * Abilash directive 13 Jul 2026: locks cover EVERY locale a site targets per
+ * SITE_DESIGN_LOCALE_REGISTER.md — not just DE/FR. Before any locale ships,
+ * its banned-equivalents list must exist here (AR/RU for guru-family, CS for
+ * .cz, etc.) and be native-reviewed. A locale with no list is a launch
+ * blocker, not a pass.
  */
 export const CLINICAL_LOCK_BANNED = {
   en: [

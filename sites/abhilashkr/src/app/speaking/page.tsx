@@ -73,7 +73,7 @@ export default function SpeakingPage() {
         {/* Core Topics Ledger */}
         <section className="mb-16">
           <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
-            Core Topics & Curated Speeches
+            Core Topics & Selected Speeches
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
