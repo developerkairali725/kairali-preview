@@ -1,0 +1,127 @@
+/* ============================================================================
+   KAIRALI BRAND TOKENS — packages/ui/brand-tokens.css
+   v1.0 · 13 Jul 2026 · Source of truth: Kairali Brand Manual, 2026 Edition
+   Chapters encoded: 03 Color · 04 Typography · 07 Digital Foundations ·
+   08 Channels · 10 Accessibility · 11 Voice (enforced in packages/compliance)
+   TODO(design-system library): fill full 10-step ramps + exact ink hex; only
+   anchors and explicitly documented values are set below. DO NOT invent hexes.
+   ========================================================================== */
+
+:root {
+  /* ---------- COLOR ANCHORS (Manual ch.03; print refs: PMS 7495·349·7409·7510) */
+  --leaf-500:     #8E9D35;  /* Identity, focus rings, secondary */
+  --forest-500:   #006038;  /* Actions, links, headers — the interactive color */
+  --marigold-400: #EEB41E;  /* Accent ONLY — never body text (ch.10) */
+  --bronze-400:   #C1882C;  /* Taglines, overlines */
+  --ivory:        #F7F4EA;  /* Page ground (ch.08 favicon spec) */
+  --forest-700:   #004226;  /* Dark surfaces / favicon ground (ch.08) */
+  --ink:          #1C1B19;  /* TODO confirm exact hex — placeholder matches the
+                               documented 15.6:1 contrast on ivory (ch.10) */
+  /* Semantic (ch.03: heritage red & indigo are semantic ONLY, never decorative) */
+  --color-error:  #BE202E;
+  --color-info:   #26265F;
+
+  /* Ramps: steps 50→900 per family; anchors sit at 500 (Leaf, Forest) and 400
+     (Marigold, Bronze). Only documented steps are filled. */
+  --forest-800: /* TODO */ var(--forest-700); /* dark-surface alt per ch.08 */
+  --leaf-700:   /* TODO — body-text-capable leaf per ch.10 */ var(--forest-500);
+  --bronze-600: /* TODO — body-capable bronze per ch.10 */ var(--bronze-400);
+  --marigold-300: /* TODO — descriptor/accent on dark per ch.08 */ var(--marigold-400);
+
+  /* ---------- TYPE (ch.04) — Google-hosted; Freefrm721 BT is LOGO ARTWORK ONLY */
+  --font-display: "Kurale", Georgia, serif;        /* h1–h3, ALWAYS weight 400, never bold */
+  --font-body:    "Asap", "Trebuchet MS", sans-serif;   /* body, UI, h4+; 400–700 */
+  --font-caption: "Lato", system-ui, sans-serif;   /* captions, overlines, numerals; 300–700 */
+  /* Sub-brand display voices (use ONLY on that sub-brand's surfaces):
+     Centres: "Yeseva One" + "Open Sans" · Healing Village: "Gelasio" + "Roboto"
+     · kair range: "Quicksand". Packaging faces without free licences map to
+     these Google faces for digital (ch.04 note). */
+
+  /* ---------- RHYTHM (ch.07) */
+  --space-1: 4px;                    /* base unit; all spacing = n × 4px */
+  --control-sm: 32px; --control-md: 40px; --control-lg: 48px;
+  --radius-1: 6px; --radius-2: 10px; --radius-3: 16px; --radius-4: 24px;
+  --radius-pill: 999px;              /* ALL action buttons are pills */
+  --measure-prose: 720px;            /* content measure */
+  --measure-layout: 1120px;          /* 12-col container */
+  --header-h: 64px;                  /* ivory header, horizontal lockup 34–40px */
+
+  /* ---------- SURFACES & SHADOW (ch.07: white cards on ivory, warm shadow) */
+  --card-bg: #FFFFFF;
+  --card-radius: var(--radius-3);    /* 16px */
+  --card-border: 1px solid color-mix(in srgb, var(--bronze-400) 18%, transparent);
+  --shadow-warm: 0 2px 8px rgba(94, 66, 22, 0.08),
+                 0 8px 24px rgba(94, 66, 22, 0.10); /* warm-tinted, never harsh */
+
+  /* ---------- MOTION (ch.07/08: gentle ease-out fades 150–400ms; NOTHING bounces;
+       logo enters by fade + settle 102→100% over 400ms; hover deepens one ramp
+       step — never lifts) */
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 150ms; --dur-slow: 400ms;
+
+  /* ---------- FOCUS (ch.07/10: leaf-green visible focus on EVERY control) */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--leaf-500) 55%, transparent);
+}
+
+/* ============================ USAGE LAW (ch.10) ==============================
+   Forest-500 on white  7.7:1  → unrestricted (body, actions, links)
+   Ink on ivory        15.6:1  → unrestricted primary text
+   Leaf-500 on white    3.0:1  → LARGE text ≥24px, icons, focus only; body → leaf-700
+   Bronze-400 on white  3.1:1  → overlines ≥14px bold, taglines; body → bronze-600
+   Marigold-400         1.9:1  → DECORATIVE only; never text on white
+                                 (ink ON marigold passes at 8.3:1)
+   Proportions: ivory & white carry the composition; forest works; leaf
+   identifies; marigold punctuates — ONE accent moment per view.
+   Dark surfaces: forest-700/800 or ink only; wordmark inverts white;
+   descriptors/accents marigold-300; body = ivory @90%; leaf NEVER text on dark.
+   ========================================================================== */
+
+/* Base */
+html { background: var(--ivory); color: var(--ink);
+       font-family: var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; }
+h4, h5, h6, strong { font-family: var(--font-body); }
+.overline { font-family: var(--font-caption); font-weight: 700;
+            letter-spacing: .08em; text-transform: uppercase;
+            color: var(--bronze-400); font-size: 14px; }
+em.botanical { font-style: italic; } /* botanical names italic (ch.11) */
+
+a { color: var(--forest-500); transition: color var(--dur-fast) var(--ease-brand); }
+
+/* Pill actions (ch.07): Asap semibold; hover deepens one ramp step, never lifts */
+.btn { font-family: var(--font-body); font-weight: 600;
+       border-radius: var(--radius-pill);
+       min-height: var(--control-md); padding: 0 calc(var(--space-1) * 5);
+       transition: background var(--dur-fast) var(--ease-brand); }
+.btn-primary   { background: var(--forest-500); color: #fff; }
+.btn-primary:hover { background: var(--forest-700); box-shadow: none; transform: none; }
+.btn-secondary { background: transparent; color: var(--forest-500);
+                 border: 1.5px solid var(--forest-500); }
+
+.card { background: var(--card-bg); border-radius: var(--card-radius);
+        border: var(--card-border); box-shadow: var(--shadow-warm); }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none; box-shadow: var(--focus-ring); }
+
+/* Dark surface scope (ch.08) */
+.surface-dark { background: var(--forest-700); color: color-mix(in srgb, var(--ivory) 90%, transparent); }
+.surface-dark .overline, .surface-dark .accent { color: var(--marigold-300); }
+
+/* Accessibility (ch.10): touch targets ≥44px; reduced motion = instant fades */
+.btn, .icon-button, .nav a { min-height: 44px; min-width: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  video.hero { display: none; } .hero-poster { display: block; }
+}
+
+/* Channel constants (ch.08) — for packages/seo:
+   OG/link images 1200×630 (lockup + one Kurale line on ivory or ch.05 photo)
+   Favicon: icon alone @70% tile on forest #004226 or ivory #F7F4EA;
+   export 16/32/180/512; no effects/borders/gradients.
+   Email: 600px column, lockup 44px, fallbacks Georgia (Kurale) / Trebuchet (Asap). */
+
+/* ASSETS REQUIRED FROM DESIGN TEAM (do not recreate the logo — ch.02):
+   logo lockups SVG (full/wordmark/icon, light+dark), clear-space = K-width,
+   min screen sizes 72px lockup / 40px icon; heritage engraving asset;
+   full ramp hex values (50–900 × 5 families) + exact ink hex. */
