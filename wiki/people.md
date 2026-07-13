@@ -1,0 +1,7 @@
+# People & contacts (routing per PROJECT_CONTEXT §2)
+- Abilash — Owner/ED, only production gate. director@kairali.com (GitHub AbhilashKairali)
+- Sunaj — tech lead, sysadmin@kairali.com (DNS/registrar/infra questions)
+- Satyam — CRM/databases/dashboards, dme@kairali.com (forms webhook owner)
+- Ambuj — tech lead/infra/access, dme@kairaliproducts.com (MainWP, Chatbase, Shopify tokens, registrar sheet)
+- Deepu — website developer (WP execution), developer@kairali.com — NOT Dr. Deepu John (chief physician, clinical sign-off)
+- Eeshal — intern, github.com/Eeshal27 (kairali.guru rebuild)
