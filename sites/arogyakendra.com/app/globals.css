@@ -71,14 +71,16 @@ h1, h2, h3 {
    pack arrives (QUESTIONS.md Q17; ch.02 forbids recreating the logo). */
 .wordmark {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
   color: var(--forest-700);
   text-decoration: none;
   min-height: 44px;
   display: inline-flex;
   align-items: center;
 }
-.header-cta { display: none; }
+/* Scoped selector so the later .btn display rule cannot re-show it */
+.site-header .header-cta { display: none; }
 
 /* ---------- Buttons (ch.07: pills, Asap semibold, hover deepens) ---------- */
 .btn {
@@ -289,6 +291,15 @@ h1, h2, h3 {
 .sticky-cta .btn { flex: 1; min-height: 48px; }
 .sticky-cta .btn-secondary { flex: 0 0 auto; width: 48px; padding: 0; }
 
+/* Chatbase floating widget: lift above the sticky contact bar on mobile so
+   the chat bubble never covers the email button (ids are Chatbase's own). */
+@media (max-width: 767px) {
+  #chatbase-bubble-button,
+  #chatbase-message-bubbles {
+    bottom: calc(84px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
 /* ---------- Focus (ch.10: leaf-green ring on every control) ---------- */
 :where(a, button):focus-visible {
   outline: none;
@@ -300,7 +311,7 @@ h1, h2, h3 {
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 768px) {
-  .header-cta { display: inline-flex; min-height: var(--control-md); }
+  .site-header .header-cta { display: inline-flex; min-height: var(--control-md); }
   .sticky-cta { display: none; }
   .site-footer { padding-bottom: 28px; }
   .trust-card { grid-template-columns: repeat(4, 1fr); padding: 28px 32px; }

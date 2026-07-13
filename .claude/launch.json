@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "arogyakendra",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@kairali/site-arogyakendra", "dev"],
+      "port": 3000
+    }
+  ]
+}
