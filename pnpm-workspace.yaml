@@ -1,3 +1,5 @@
 packages:
   - "sites/*"
   - "packages/*"
+allowBuilds:
+  sharp: true
