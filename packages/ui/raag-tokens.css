@@ -1,0 +1,162 @@
+/* ============================================================================
+   VILLA RAAG BRAND TOKENS — packages/ui/raag-tokens.css
+   v1.0 · 13 Jul 2026 · Source of truth: Villa Raag Brand Manual, 2026 Edition
+   Text layer archived: docs/brand/villa-raag-brand-manual-2026.md
+   (Drive fileId 1fsXlTRbUWXzr9TM_DDnAw8UnqVy8R8Dv — PDF is visual truth)
+   Chapters encoded: 02 Wordmark · 03 Emblem · 04 Colour · 05 Typography ·
+   06 Photography · 07 Family/Endorsement · 08 Voice (packages/compliance) ·
+   10 Digital & Social · 11 Accessibility.
+   SCOPE: Villa Raag surfaces ONLY. Kairali tokens are NEVER applied here, and
+   these are never applied to Kairali/KTAHV surfaces (wiki/entities/villa-raag).
+   Raag ch.10: digital work INHERITS the group's 2026 foundation — spacing,
+   radii, motion, components, accessibility — recoloured to Villa Raag anchors.
+   Rhythm/motion values below therefore restate brand-tokens.css ch.07 values.
+   TODO(shared design system): 10-step digital ramps for all four anchors —
+   the manual defers them to "the group's ten-step method in the shared design
+   system" and prints only the values below. DO NOT invent hexes.
+   (See QUESTIONS.md 2026-07-13 · Brand-manual ingest.)
+   ========================================================================== */
+
+:root {
+  /* ---------- COLOUR ANCHORS (Raag ch.04; CMYK builds are the print refs) */
+  --blush-coconut:   #FFEDE0;  /* Primary — grounds, interiors, roundels (C0 M7 Y12 K0) */
+  --south-goa-tan:   #D9B98E;  /* Primary — panels, borders, textures ONLY, never text (C0 M15 Y35 K15) */
+  --agonda-gold-light: #DEBC91; /* Gradient light end; accents/descriptors on dark (ch.10) */
+  --agonda-gold-deep:  #B7916B; /* Gradient deep end; decorative on white (2.9:1) */
+  --gold-600:        #8F6D49;  /* Darkened step for gold TEXT on light grounds — 4.7:1 AA (ch.04/11) */
+  --canacona-forest: #324544;  /* Secondary — text, actions, links, headers, dark surfaces (C28 M0 Y1 K73) */
+  /* The Agonda Gold gradient (#DEBC91 → #B7916B) is reserved for artwork,
+     roundels and foil — NEVER for type or thin rules (ch.04). */
+  --gradient-agonda-gold: linear-gradient(var(--agonda-gold-light), var(--agonda-gold-deep));
+  --ink: /* TODO — wordmark default colourway is "Ink" (ch.02) but neither
+            manual prints its hex; shared with the group's ink TODO in
+            brand-tokens.css. DO NOT invent. */ var(--canacona-forest);
+
+  /* Semantics, inherited from the group (ch.04) — never decorative here */
+  --color-error: #BE202E;
+  --color-info:  #26265F;
+
+  /* Proportions (ch.04): BLUSH 40 · WHITE 30 · TAN 15 · GOLD 10 · FOREST 5 —
+     one gold moment per view. */
+
+  /* ---------- TYPE (ch.05) — Google-face equivalents; the licensed faces
+       (Vonca, Cabrito Didone, Miller) keep printed use where installed.
+       The wordmark is ARTWORK, not type (ch.02) — never re-typeset. */
+  --font-caps:    "Julius Sans One", Georgia, serif; /* Vonca map — capitals only,
+                     tracked wide: overlines, descriptors, small labels, data
+                     lines — NEVER body text. Email fallback: letterspaced
+                     Georgia capitals (ch.10). */
+  --font-display: "Prata", Georgia, serif;  /* Cabrito Didone map — h1–h3,
+                     headlines, pull quotes, menus, room names. Regular ONLY,
+                     never bolded (like Kurale at the group). */
+  --font-body:    "Source Serif 4", Georgia, serif; /* Miller map, 300–700 —
+                     body, captions, data. Semibold for labels, italic for
+                     programme names. */
+  /* Working hierarchy (ch.05, print reference): overline Vonca 9–11 ·
+     body Miller 10–12 pt · caption Miller 8–9 pt. Web px scale not specified —
+     see QUESTIONS.md. Documented leading: */
+  --leading-body: 1.6;
+
+  /* ---------- RHYTHM — inherited from group ch.07 per Raag ch.10 (pill
+       buttons + 16 px card radius are also named directly in Raag ch.10) */
+  --space-1: 4px;
+  --control-sm: 32px; --control-md: 40px; --control-lg: 48px;
+  --radius-1: 6px; --radius-2: 10px; --radius-3: 16px; --radius-4: 24px;
+  --radius-pill: 999px;              /* ALL action buttons are pills */
+  --measure-prose: 720px;
+  --measure-layout: 1120px;
+
+  /* ---------- SURFACES (ch.10: blush and white grounds; forest for links,
+       actions and headers) */
+  --page-bg: var(--blush-coconut);
+  --card-bg: #FFFFFF;
+  --card-radius: var(--radius-3);    /* 16px — named in Raag ch.10 */
+
+  /* ---------- MOTION — group foundation, inherited (Raag ch.10: "calm
+       ease-out motion from the group's component library") */
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 150ms; --dur-slow: 400ms;
+
+  /* ---------- FOCUS (ch.11: visible FOREST focus ring on every control) */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--canacona-forest) 55%, transparent);
+}
+
+/* ============================ USAGE LAW (ch.11) ==============================
+   Forest on white          10.1:1 → unrestricted (body, actions, links)
+   Forest on Blush Coconut   8.9:1 → unrestricted primary text on brand grounds
+   White on Forest          10.1:1 → unrestricted on dark surfaces
+   Gold 600 #8F6D49 / white  4.7:1 → AA: overlines, small gold text, endorsement lines
+   Agonda Gold #B7916B       2.9:1 → DECORATIVE (artwork, rules); text steps to Gold 600
+   South Goa Tan             1.9:1 → DECORATIVE (panels, borders, textures) — never text
+   Forest carries words; gold and tan decorate.
+   Dark surfaces (ch.10): Canacona Forest ONLY — never black, never gradients
+   of it. Wordmark inverts white; descriptors/accents = Agonda Gold light end
+   #DEBC91; body text = blush @90%; tan NEVER text on dark.
+   ========================================================================== */
+
+/* Base */
+html { background: var(--page-bg); color: var(--canacona-forest);
+       font-family: var(--font-body); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; } /* never bolded */
+.overline, .descriptor, .data-line {
+  font-family: var(--font-caps); text-transform: uppercase;
+  letter-spacing: .18em;  /* "tracked wide" (ch.05); exact tracking unspecified */
+  color: var(--gold-600); }
+em.programme { font-style: italic; } /* programme names italic (ch.05) */
+
+a { color: var(--canacona-forest);
+    transition: color var(--dur-fast) var(--ease-brand); }
+
+/* Pill actions (ch.10: pill buttons; forest leads action here too) */
+.btn { border-radius: var(--radius-pill);
+       min-height: var(--control-md); padding: 0 calc(var(--space-1) * 5);
+       transition: background var(--dur-fast) var(--ease-brand); }
+.btn-primary   { background: var(--canacona-forest); color: #fff; }
+.btn-primary:hover { box-shadow: none; transform: none; } /* hover never lifts
+       (group ch.07; hover ramp step needs the TODO forest ramp) */
+.btn-secondary { background: transparent; color: var(--canacona-forest);
+                 border: 1.5px solid var(--canacona-forest); }
+
+.card { background: var(--card-bg); border-radius: var(--card-radius); }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none; box-shadow: var(--focus-ring); }
+
+/* Dark surface scope (ch.10) — Canacona Forest only */
+.surface-dark { background: var(--canacona-forest);
+  color: color-mix(in srgb, var(--blush-coconut) 90%, transparent); }
+.surface-dark .overline, .surface-dark .accent,
+.surface-dark .descriptor { color: var(--agonda-gold-light); }
+
+/* Accessibility (ch.11): touch targets ≥44px; reduced motion honoured */
+.btn, .icon-button, .nav a { min-height: 44px; min-width: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Channel constants (ch.02/03/07/10) — for packages/seo + builders:
+   Wordmark minimums: screen 220px with descriptor / 140px without; below
+   these use the emblem (64px min; roundels 80px). Wordmark colourways: ink
+   (default on light) · Agonda Gold (blush grounds) · white (forest & gold
+   grounds) — three ONLY. Never on busy photography — use a colour panel.
+   Favicon/app icons: EMBLEM alone @70% tile on blush or forest; export
+   16/32/180/512; never the full lockup.
+   Social: avatar = roundel (blush on light, gold on dark/photo); posts 1:1 &
+   4:5, stories 9:16; ONE gold moment per post.
+   Email: 600px column on white, lockup 44px; fallback Georgia for both serifs,
+   letterspaced Georgia caps for Vonca; forest links, pill buttons; signatures:
+   name Prata, role Vonca caps, contacts Miller, logo 36px.
+   Booking flow: same register — NO urgency banners, NO countdowns.
+   Endorsement (ch.07): recommended = one Vonca line under the lockup in
+   Gold 600 at the descriptor's tracking: "A KAIRALI AYURVEDIC GROUP BRAND";
+   never inside the wordmark's clear space, never twice in one piece.
+   Photography (ch.06): warm natural colour default; golden hour for heroes;
+   blush overlay (multiply, reduced opacity) for supporting images. NEVER:
+   cool/blue grading, HDR/heavy filters, posed stock wellness, cluttered
+   frames, text over faces, black & white.
+   Watermarks ≤ 8% opacity (ch.03). Emblem clear space = 1/4 emblem width. */
+
+/* ASSETS REQUIRED FROM DESIGN TEAM (never redraw — ch.02/03):
+   wordmark SVGs (ink/gold/white, with + without descriptor), emblem SVGs
+   (gold/blush/white), roundels (blush + gold); 10-step ramps for the four
+   anchors + exact ink hex (shared design system). */

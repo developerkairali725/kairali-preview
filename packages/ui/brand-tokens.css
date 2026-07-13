@@ -1,10 +1,16 @@
 /* ============================================================================
    KAIRALI BRAND TOKENS — packages/ui/brand-tokens.css
-   v1.0 · 13 Jul 2026 · Source of truth: Kairali Brand Manual, 2026 Edition
+   v1.1 · 13 Jul 2026 · Source of truth: Kairali Brand Manual, 2026 Edition (rev. 2)
+   Text layer archived: docs/brand/kairali-brand-manual-2026-rev2.md
+   (Drive fileId 1GUnJgtyGd7_QAOBzpzB1ctQtfq9wB7dF — PDF is visual truth)
    Chapters encoded: 03 Color · 04 Typography · 07 Digital Foundations ·
    08 Channels · 10 Accessibility · 11 Voice (enforced in packages/compliance)
+   VERIFIED 2026-07-13 against rev. 2: all eight documented hexes below match
+   the manual. Rev. 2 gives NO hex for ink / forest-800 / leaf-700 / bronze-600
+   / marigold-300 — it defers the 10-step ramps to the design-system library.
    TODO(design-system library): fill full 10-step ramps + exact ink hex; only
    anchors and explicitly documented values are set below. DO NOT invent hexes.
+   (See QUESTIONS.md 2026-07-13 · Brand-manual ingest.)
    ========================================================================== */
 
 :root {
@@ -34,8 +40,11 @@
   --font-caption: "Lato", system-ui, sans-serif;   /* captions, overlines, numerals; 300–700 */
   /* Sub-brand display voices (use ONLY on that sub-brand's surfaces):
      Centres: "Yeseva One" + "Open Sans" · Healing Village: "Gelasio" + "Roboto"
-     · kair range: "Quicksand". Packaging faces without free licences map to
-     these Google faces for digital (ch.04 note). */
+     · kair range: "Quicksand" · Villa Raag (rev. 2): "Julius Sans One" +
+     "Prata" + "Source Serif 4" (for Vonca, Cabrito Didone, Miller) — Villa Raag
+     surfaces use packages/ui/raag-tokens.css, NEVER these Kairali tokens.
+     Packaging faces without free licences map to these Google faces for
+     digital (ch.04 note). */
 
   /* ---------- RHYTHM (ch.07) */
   --space-1: 4px;                    /* base unit; all spacing = n × 4px */
