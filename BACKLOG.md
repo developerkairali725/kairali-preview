@@ -14,7 +14,7 @@ deleted — history is the point.
 - [ ] arogyakendra v2: WhatsApp CTA (needs group number from Abilash), image placeholders + manifest, design-critic pass ≥9/10
 - [ ] Mine theblushlounge.com (primary per D6) + build plan; snehachowdhary.com = forward
 - [ ] Evaluate Eeshal repo (kairali-guru-) vs live kairali.guru → migration plan into sites/
-- [ ] Mine image sources: 3 Google Photos albums + 3 Drive folders + kairali.com/media-assets → image-library/
+- [ ] Mine image sources per image-library/README registry (KTAHV video folder CONFIRMED; folder 1LlD59… needs sharing fix; albums via browser) → image-library/ + per-site IMAGE_MANIFEST swaps
 - [ ] Design-critic gate: formalize as scripts/design-review prompt + Ship Gate step
 
 ## SCHEDULED (date- or condition-triggered)
