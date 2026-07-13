@@ -86,7 +86,12 @@ export function lintText(text, { file = "<text>", entity = "group", asCode = fal
     checkWordList(CLINICAL_LOCK_BANNED.fr, "clinical-lock-fr", "KTAHV clinical lock (FR seed)");
   }
 
-  checkWordList(BANNED_FILLER, "banned-filler", "Banned filler (all entities)");
+  // Brand-voice filler ban is Kairali brand law; "personal" sites (Register:
+  // "owner's call") are not Kairali brand surfaces. Cure-claims and locked
+  // facts remain global. Scope decision logged in QUESTIONS.md — Abilash review.
+  if (effectiveEntity !== "personal") {
+    checkWordList(BANNED_FILLER, "banned-filler", "Banned filler (all Kairali entities)");
+  }
 
   for (const { re, note } of CURE_CLAIM_PATTERNS) {
     lines.forEach((line, i) => {
@@ -129,7 +134,7 @@ export function lintText(text, { file = "<text>", entity = "group", asCode = fal
 
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
-    if (IGNORED_DIRS.has(name)) continue;
+    if (IGNORED_DIRS.has(name) || name.startsWith(".")) continue;
     const p = join(dir, name);
     const st = statSync(p);
     if (st.isDirectory()) walk(p, out);

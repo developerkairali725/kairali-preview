@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Night Ledger (Default Dark Theme) */
+  --background: #0E1712;         /* --ground deep green-black */
+  --foreground: #EDEADF;         /* --ink kasavu ivory */
+  --card: #142019;               /* --ground-raised */
+  --card-foreground: #EDEADF;
+  --popover: #142019;
+  --popover-foreground: #EDEADF;
+  --primary: #C2A14D;            /* --zari gold */
+  --primary-foreground: #0E1712;
+  --secondary: #142019;
+  --secondary-foreground: #EDEADF;
+  --muted: #142019;
+  --muted-foreground: #9BA69B;   /* --ink-muted */
+  --accent: #142019;
+  --accent-foreground: #EDEADF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #1F2E26;             /* Thin clean forest divider line */
+  --input: #1F2E26;
+  --ring: #C2A14D;
+  --radius: 0px;                 /* Square ledger borders */
+
+  /* Night Ledger Raw Brand Colors */
+  --ground: #0E1712;
+  --ground-raised: #142019;
+  --ink: #EDEADF;
+  --ink-muted: #9BA69B;
+  --zari: #C2A14D;
+  --leaf: #7FA98C;
+
+  /* Kasavu Light Specific Variables to inherit */
+  --zari-dark: #8A6E2F;
+  --leaf-light: #2E5641;
+}
+
+[data-theme="kasavu"] {
+  /* Kasavu (Light Secondary Theme) */
+  --background: #F4F2E9;         /* ground #F4F2E9 */
+  --foreground: #1A2B22;         /* ink #1A2B22 */
+  --card: #FBFAF4;               /* card #FBFAF4 */
+  --card-foreground: #1A2B22;
+  --popover: #FBFAF4;
+  --popover-foreground: #1A2B22;
+  --primary: #7A5F28;            /* gold-as-text #7A5F28 */
+  --primary-foreground: #F4F2E9;
+  --secondary: #FBFAF4;
+  --secondary-foreground: #1A2B22;
+  --muted: #FBFAF4;
+  --muted-foreground: #4C5A50;   /* secondary/muted text #4C5A50 */
+  --accent: #FBFAF4;
+  --accent-foreground: #1A2B22;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #DAD7C7;             /* rules/mist #DAD7C7 */
+  --input: #DAD7C7;
+  --ring: #7A5F28;
+
+  /* Redefine brand tokens in light mode so custom classes resolve correctly */
+  --ground: #F4F2E9;
+  --ground-raised: #FBFAF4;
+  --ink: #1A2B22;
+  --ink-muted: #4C5A50;
+  --zari: #7A5F28;
+  --leaf: #2E5641;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Fonts */
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* Brand Specific Palette */
+  --color-ground: var(--ground);
+  --color-ground-raised: var(--ground-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-zari: var(--zari);
+  --color-zari-dark: var(--zari-dark);
+  --color-leaf: var(--leaf);
+  --color-leaf-light: var(--leaf-light);
+}
+
+/* Zari Gold Selections */
+::selection {
+  background-color: color-mix(in srgb, #C2A14D 30%, transparent);
+  color: inherit;
+}
+
+[data-theme="kasavu"] ::selection {
+  background-color: color-mix(in srgb, #8A6E2F 30%, transparent);
+  color: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--foreground) 15%, transparent);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--foreground) 30%, transparent);
+}
+
+/* Gold Zari Double Rule border styling */
+.zari-rule {
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+  height: 3px;
+  width: 100%;
+  opacity: 0.85;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-200 antialiased font-sans;
+    line-height: 1.625;
+  }
+  html {
+    @apply h-full scroll-smooth;
+    font-size: 18px;
+  }
+}

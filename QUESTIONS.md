@@ -27,3 +27,7 @@
 ## 2026-07-13 16:55:59 IST · Org + Vercel resolution
 - Org kairali-digital created by Abilash (16:36:11 IST). Repo transferred in, then BACK to AbhilashKairali: Vercel Hobby cannot deploy private org-owned repos (paywall discovered 16:49 IST). Pipeline reconnected and verified green (deploy of dfd7887 completed, 16:55 IST).
 - **DECISION PENDING (Abilash): Vercel Pro (~$20/user/mo).** Needed to (a) host the repo under the org and (b) be properly licensed — Hobby is non-commercial and this is a revenue fleet. When purchased: transfer repo to org + reconnect (5 min, documented here). Branch protection (Q9) also becomes worth revisiting then via GitHub Pro/Team.
+
+## 2026-07-13 17:18:44 IST · First tenant + lint scope
+- Q10 RESOLVED by Abilash: portfolio-website = abhilashkr.com. Imported to sites/abhilashkr (original repo untouched); builds green in turbo (2/2 tasks).
+- SCOPE DECISION (ratify or veto, Abilash): entity "personal" is now EXEMPT from the Kairali banned-filler rule only — your portfolio's "Curated Speeches" isn't Kairali brand copy. Cure-claims + locked-facts checks still apply to it. Also: dot-directories (.agents etc.) excluded from lint scans, and the old repo's agent docs moved to docs/tenants/.
