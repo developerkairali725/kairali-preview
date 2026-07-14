@@ -4,14 +4,40 @@
     {
       "name": "arogyakendra",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["--filter", "@kairali/site-arogyakendra", "dev"],
+      "runtimeArgs": [
+        "--filter",
+        "@kairali/site-arogyakendra",
+        "dev"
+      ],
       "port": 3000
     },
     {
       "name": "arogyakendra-prod",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["--dir", "sites/arogyakendra.com", "exec", "next", "start", "-p", "4310"],
+      "runtimeArgs": [
+        "--dir",
+        "sites/arogyakendra.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4310"
+      ],
       "port": 4310
+    },
+    {
+      "name": "kairali-com",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/kairali.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4311"
+      ],
+      "port": 4311
     }
   ]
 }

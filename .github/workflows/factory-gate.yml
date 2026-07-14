@@ -42,7 +42,7 @@ jobs:
         # Every Factory site adds itself here at scaffold time (Ship Gate A2).
         # abhilashkr + kairali.ai are imported/internal surfaces — not yet in
         # the matrix; adding them is a QUESTIONS.md item for Abilash.
-        site: ["sites/arogyakendra.com"]
+        site: ["sites/arogyakendra.com", "sites/kairali.com"]
     steps:
       - uses: actions/checkout@v4
 
