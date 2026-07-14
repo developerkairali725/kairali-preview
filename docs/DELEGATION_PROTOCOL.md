@@ -8,7 +8,24 @@ produce. Rather than let these pile up in QUESTIONS.md where nobody outside
 this session sees them, they are routed into the company's real delegation
 system through Abilash's EA.
 
-## The mechanism
+## Two channels
+1. **Email → Ritu (PRIMARY — Abilash: "faster and more foolproof").** The
+   mechanism below. Use this by default.
+2. **Bulk-upload delegation sheet** (Google Sheet `1iG770sUhs2t54ryebH_DmNadkpiizXfcgi-eH48QskE`,
+   "Delegation - Bulk Upload Sheet To Master Delegation v2") — feeds Abilash's
+   master delegation list. The agent may add rows here directly; a row
+   auto-submits when all required fields are filled, OR the agent fills just
+   Task + Doer and the delegated person completes the blanks. Columns:
+   **Doer\*** (dropdown of named people — this is the authoritative team name
+   list), **Task\***, First Date, **Company** (dropdown), **Assigned By**
+   (dropdown), **Task Priority\***, Ease to Implement (1–10, 10=easiest),
+   Relative Impact on Result (1–10), Urgency (1–5), Importance (1–5),
+   Emotional Energy (1–5), Significance (1–5). Use the sheet for bulk/batch
+   delegations or where a named Doer + scoring is wanted; email for anything
+   needing a written explanation. When the agent adds a sheet row, still log
+   it in delegation-log.md.
+
+## The mechanism (email channel)
 1. When the agent finds a delegatable item, it **drafts an email** in
    Abilash's Gmail (director@kairali.com):
    - **TO:** the person who owns the fix (the "main person").
