@@ -12,6 +12,7 @@ deleted — history is the point.
 - [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul)
 - [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
 - [ ] Chase: Google Photos album 9UCcY3jv4zi6byq48 is DEAD (HTTP 500) — Abilash to reshare if its contents matter
+- [ ] **Abilash: merge PR #4 (HOTFIX — gate CI red on main, gitleaks-action license paywall)** — one click, any order vs PR #2 (files byte-identical); until merged, EVERY main push shows a red gate
 - [ ] **Abilash: merge PR #3 (Wave-0 mechanization, branch claude/vigorous-swanson-7a2b7c) AFTER PR #2** — it adopts PR #2's checklist/gate.yml as base; merging it first would conflict PR #2
 - [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO) + /security-review CI step (A-13; needs ANTHROPIC_API_KEY secret) [gap #1/#7] — also gated on the Vercel relink above
 - [ ] Forms v1.1: Cloudflare Turnstile (Checklist FORMS v1 freeze names it; absent from packages/forms) [gap #6]
@@ -45,6 +46,7 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-14 12:33:21 IST — HOTFIX PR #4 opened: main's gate CI has been red ALL DAY (5 straight runs incl. bc9b593 — gitleaks-action@v2 now needs a paid GITLEAKS_LICENSE for org repos); cherry-carried PR #2's gitleaks-CLI fix + .gitleaks.toml BYTE-IDENTICAL so it merges clean in any order vs PR #2; verified CI scans checked-out history only (79 commits on PR #3's green run), local scan clean over the hotfix's 73-commit history
 - [x] 2026-07-14 11:59:46 IST — Design-critic gate formalized: scripts/design-review/PROMPT.md + Ship Gate B-14 (checklist edit on PR #2's base) + kairali.guru EN-only-live correction (register row + DECISIONS; PROJECT_CONTEXT patch queued post-PR#2) [gaps #13/#14 closed]
 - [x] 2026-07-14 11:56:45 IST — Forward farm per D1 rules 5/7: docs/redirects/forward-farm.csv (43 rows, sweep-verified spellings, LIVE-verified canonical targets — kairalicenters + AHV are apex) + forward-farm-export.mjs (36 CF rules; 7 HELD w/ gates) + verify-forwards.sh + audits/. Findings: ktahv.com ALREADY correctly 301s (4/4 PASS); arogyashala.co.in flip BLOCKED (target DNS-dead, source live) [gap #8 closed]
 - [x] 2026-07-14 11:48:53 IST — arogyakendra retro → LEARNINGS.md (learning loop running; headline: human 9.2/10 review missed two 44px violations that machine gates caught) [gap #10 closed]
