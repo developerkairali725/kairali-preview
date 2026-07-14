@@ -13,3 +13,5 @@ Status: DRAFTED (in Gmail, awaiting Abilash send) · SENT · DONE.
 
 | 2026-07-14 22:55:00 IST | Sunaj Sahoo (Doer) / Abhilash Sir (Assigned By) / KTAHV | Cloudflare WAF skip-rule for /wp-json/ (allow M2 automation to reach WP REST) | 1 pt | IN BULK SHEET row 3 |
 | 2026-07-14 22:55:00 IST | Sunaj Sahoo (Doer) / Abhilash Sir (Assigned By) / ADMIN | Rotate 2 WhatsApp-transited passwords (WP app-pw + Linux RO), hand over by phone/in-person only | 1 pt | IN BULK SHEET row 4 |
+| 2026-07-14 23:15:00 IST | Anupam Singh Molpha (Doer) / Abhilash Sir / KTAHV | URGENT KTAHV live-site banned-word fixes (9/10 pages) — clinical-register rewrite; detail in email | 10 pts | IN BULK SHEET row 5 (+ email has detail) |
+| 2026-07-14 23:15:00 IST | Astha Kumari (Doer) / Abhilash Sir / KAPPL | Remaining brand assets: KAG vector + dark/reversed variants of 4 logos + confirm Raag manual version | 3 pts | IN BULK SHEET row 6 (+ email has detail) |

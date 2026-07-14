@@ -74,3 +74,6 @@ system through Abilash's EA.
 ## Channel selection rule — 2026-07-14 22:55 IST
 - **Bulk sheet** (agent writes Doer/Task/Date/Company/Assigned By; scoring cols H-M are protected → owner scores): use for tasks whose OWNER is in the sheet's Doer dropdown (operational staff — Sunaj/IT, Vikash, the ~40-name list). Add an email-footer note "already uploaded to the bulk sheet (row N)" so Ritu verifies not transcribes.
 - **Email (itemized, CC Ritu)**: use when the owner is NOT a sheet Doer — Anupam & Astha (they are "Assigned By" managers, not Doers), Satyam, the new developer (no name in list yet), or any external party.
+
+## Correction — 2026-07-14 23:15 IST
+The 22:55 note (Anupam/Astha not Doers) was WRONG — both ARE in the Doer dropdown (Anupam Singh Molpha, Astha Kumari). The Doer list covers essentially the whole team; ONLY the newly-joined Shopify developer is not yet listed (joins the list in a day or two). Sheet is the default channel for anyone listed; email-only for the new dev + external parties, plus reply-type items (e.g. Satyam CRM confirmation).
