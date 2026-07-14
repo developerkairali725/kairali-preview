@@ -67,3 +67,6 @@ system through Abilash's EA.
 > OPEN: Abilash mentioned a second marketing recipient heard as "Slaget"
 > for banned-word infringements — identity/email unconfirmed. Drafts route to
 > Anupam + CC Ritu until Abilash confirms who to add.
+
+## Routing addition — 2026-07-14 22:40:00 IST
+| developers6@kairali.com | NEW developer (name TBD — Abilash, 14 Jul) | Website/WordPress execution fixes (KTAHV live site technical tasks). First delegation: 4-point technical fix email (consent checkboxes, Resort→Hospital schema, DE hygiene, staging confirm). Deepu remains the established WP executor; clarify division of labour when the new developer's name/role lands. |
