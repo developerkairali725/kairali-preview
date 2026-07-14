@@ -20,6 +20,7 @@ U4. Installed apps inventory (name, monthly cost, data access, perf weight).
 U5. Backup app present? (Rewind or similar). If none → theme snapshot in git is the only theme backup; monthly catalog CSV export becomes mandatory.
 U6. Payments — CONFIRMED 13 Jul: .in = Razorpay (+ Indian methods: UPI/cards/netbanking/COD); .com = Razorpay International + PayPal. Audit still snapshots the exact config, fees, and settlement. Shipping/taxes config still unknown (GST/HSN on .in; duties/export docs on .com).
 U7b. Triple Whale state: which store(s) connected; plan tier + monthly cost vs GMV; Triple Pixel installed and healthy (client+server-side); post-purchase survey on; COGS/shipping/payment-fee costs configured (without them 'profit' numbers are fiction); Compass/Sonar/Moby features paid for vs actually used.
+   → PARTIAL ANSWER (Abilash in-chat, 2026-07-14 15:35 IST): account owned by **director@kairali.com** (Abilash himself); **FREE plan, no Moby** (D8 dormant until any purchase; Moby buy deferred pending this audit); connected to the **.in store ONLY**; **Pixel installed and tracking**. Remaining at kickoff: pixel health (client+server-side), post-purchase survey, cost configuration, whether .com needs its own connection.
 U7. Consent state: Shopify Customer Privacy settings, cookie banner, DPDP (.in) + GDPR (.com EU buyers) posture, and how GA4/pixels are wired (native Google channel vs theme-hacked scripts).
 
 ## 4 · COMPLIANCE (KAPPL register — different from KTAHV, stricter than generic e-comm)
