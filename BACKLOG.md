@@ -12,18 +12,15 @@ deleted — history is the point.
 - [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul)
 - [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
 - [ ] Chase: Google Photos album 9UCcY3jv4zi6byq48 is DEAD (HTTP 500) — Abilash to reshare if its contents matter
-- [ ] Design-critic gate: formalize as scripts/design-review prompt + Ship Gate step
-- [ ] Write arogyakendra retro into LEARNINGS.md (Ship Gate §E — file is empty; learning loop not running) [gap: SPRINT_STATE #10]
-- [ ] Build packages/seo + schema + i18n for REAL (2-line stubs today): meta/canonical/robots/sitemap/llms.txt, reciprocal hreflang, JSON-LD templates — extract from arogyakendra [gap #4]
-- [ ] Brand lint (Ship Gate A4: rogue hex, marigold-as-body, focus rings, 44px) mechanized into CI [gap #2]
-- [ ] Factory per-site spec-suite template (Ship Gate A2: locked facts, forms+consent render, locale switcher, mixed content) [gap #3]
-- [ ] packages/consent (banner + Google Consent Mode v2) + packages/analytics (GA4/GTM loader, data-cta events) — code with env-var IDs [gap #4/#5]
-- [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO) + /security-review CI step (A-13; needs ANTHROPIC_API_KEY secret) [gap #1/#7]
+- [ ] **Abilash: merge PR #3 (Wave-0 mechanization, branch claude/vigorous-swanson-7a2b7c) AFTER PR #2** — it adopts PR #2's checklist/gate.yml as base; merging it first would conflict PR #2
+- [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO) + /security-review CI step (A-13; needs ANTHROPIC_API_KEY secret) [gap #1/#7] — also gated on the Vercel relink above
 - [ ] Forms v1.1: Cloudflare Turnstile (Checklist FORMS v1 freeze names it; absent from packages/forms) [gap #6]
-- [ ] Forward-farm artifacts per D1 rules 5/7: in-repo Cloudflare bulk-redirect mapping CSV + curl verification script + audits/ dir (flips = human, timing-guarded) [gap #8]
-- [ ] Register-table + PROJECT_CONTEXT §3 correction via DECISIONS: kairali.guru LIVE site is EN-only (verified 13 Jul); 5 locales exist only in Eeshal's repo [gap #14]
+- [ ] Abilash rulings from 14 Jul QUESTIONS: brand-lint exemptions (abhilashkr/kairali.ai) + CI-matrix membership · kairaliproduct.com forward family · raagcasa/raagvilla/theraagvilla ownership · whyayurveda interim target · where ktahv.com's existing 301 is configured · consent-banner × Chatbase bubble overlap
 
 ## SCHEDULED (date- or condition-triggered)
+- [ ] Immediately after PR #2 merges: patch PROJECT_CONTEXT.md §1/§3/§7 kairali.guru locale lines to EN-only-live (DECISIONS 2026-07-14 11:59:06 IST; register row already fixed) + re-read PROJECT_CONTEXT/Checklist per handoff instruction
+- [ ] At each Wave-1 product-microsite launch: re-point its forward-farm rows target_now→target_final in docs/redirects/forward-farm.csv + regenerate cloudflare-upload.csv + human re-upload + scripts/verify-forwards.sh (same-edit rule, never chain)
+- [ ] Wave-2 whatisayurveda.com cutover: re-point whyayurveda.com/.in/.org AND whatisayurveda.org in ONE list edit (D2; forward-farm.csv notes)
 - [ ] Wave 1 product microsites (Days 7–13, from 20 Jul): kairalitea, kairalioil, kairaliherbals, kairaliorganic(+kairorganics/kairproducts per D3 two-brand ruling), kairaliequipment, bulk×2 — needs Shopify Storefront token (Ambuj/Abilash)
 - [ ] arogyakendra richer version (multi-section) — AFTER image library lands; single-pager is deliberate v1
 - [ ] Wave 2 (Days 13–19): franchise, centers, yoga, whatisayurveda (.com canonical per D2, .org 301s), healing.recipes
@@ -48,6 +45,12 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-14 11:59:46 IST — Design-critic gate formalized: scripts/design-review/PROMPT.md + Ship Gate B-14 (checklist edit on PR #2's base) + kairali.guru EN-only-live correction (register row + DECISIONS; PROJECT_CONTEXT patch queued post-PR#2) [gaps #13/#14 closed]
+- [x] 2026-07-14 11:56:45 IST — Forward farm per D1 rules 5/7: docs/redirects/forward-farm.csv (43 rows, sweep-verified spellings, LIVE-verified canonical targets — kairalicenters + AHV are apex) + forward-farm-export.mjs (36 CF rules; 7 HELD w/ gates) + verify-forwards.sh + audits/. Findings: ktahv.com ALREADY correctly 301s (4/4 PASS); arogyashala.co.in flip BLOCKED (target DNS-dead, source live) [gap #8 closed]
+- [x] 2026-07-14 11:48:53 IST — arogyakendra retro → LEARNINGS.md (learning loop running; headline: human 9.2/10 review missed two 44px violations that machine gates caught) [gap #10 closed]
+- [x] 2026-07-14 11:47:34 IST — packages/consent + analytics REAL: Consent Mode v2 default-denied → banner → stored re-apply (browser-verified order default→update, event capture, zero loaders w/o env IDs); data-cta delegation queues events until Vikash's measurement handover [gaps #4/#5 code side closed]
+- [x] 2026-07-14 11:38:48 IST — Ship Gate A4+A2 mechanized: packages/ui brand lint (rogue-hex/rogue-color/marigold-text/focus-strip/tokens-import) + tests/factory spec suite (locked facts, consent, hreflang, mixed content, 44px, focus, meta limits, JSON-LD) + factory-gate.yml CI (NEW file — no PR #2 conflict). Caught + fixed 2 real A4 bugs on arogyakendra (16px footer CTAs, 40px header pill) [gaps #2/#3 closed]
+- [x] 2026-07-14 11:29:33 IST — packages/seo + schema + i18n built for REAL and arogyakendra refitted to consume them (Factory premise now true for seo/schema/i18n): A6 limits THROW at build, /lp noindex default, reciprocal hreflang by construction, locked-facts-fed JSON-LD builders, NEW /llms.txt; 42 tests; curl-diffed against previous output [gap #4 closed]
 - [x] 2026-07-14 11:12:43 IST — Gate CI fixed on PR #2: gitleaks-action requires paid license for org repos → replaced with pinned gitleaks CLI (full-history scan, strength unchanged) + .gitleaks.toml allowlisting 88 verified non-secrets (expired Perplexity S3 presigned URLs in ingested docs + public acobot widget key in mined legacy HTML); canary-tested real keys still trip; run 29309257932 green ("69 commits scanned, no leaks found"). Vercel abhilashkr failure root-caused: project git-linked to pre-transfer personal repo (NOT commit email — same commit deployed green on 2 other projects); relink is a NOW item for Abilash
 - [x] 2026-07-14 10:48:35 IST — PR #2 "Docs sync v2 + Shopify track" opened per mentor's UPDATE TASK: synced PROJECT_CONTEXT/Checklist/START_HERE from kairali-launch-pack, added SHOPIFY_TRACK_CONTEXT + 6 shopify-agents + people docs; CLAUDE.md/DECISIONS/QUESTIONS/LEARNINGS/wiki untouched; awaiting Abilash approval
 - [x] 2026-07-14 10:45:50 IST — IMAGE_CATALOG.csv complete: 798 rows, every image vision-described (category/description/tags/semantic-name/best-use, KTAHV clinical register enforced); library = products 561 + ktahv 50 + raag 158 + influencers 29 (~2.4GB originals in ~/Claude/Kairali-Digital/image-library/, outside git)

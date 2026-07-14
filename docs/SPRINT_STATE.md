@@ -1,7 +1,15 @@
 # SPRINT_STATE.md — one-screen state of the sprint
 
-**2026-07-13 19:47:20 IST · Day 1 of 30 (13 Jul → 12 Aug 2026) · written after the ordered full re-read of every governing doc (CLAUDE.md, PROJECT_CONTEXT, Ship Gate, Register, ENGINEERING_STANDARDS, MIGRATION_PLAYBOOK, both checklists, both brand manuals, all wiki pages, BACKLOG, QUESTIONS, DECISIONS).**
+**2026-07-14 12:01:30 IST · Day 2 of 30 (13 Jul → 12 Aug 2026) · updated after the Wave-0 mechanization session (branch claude/vigorous-swanson-7a2b7c, PR pending — merge AFTER PR #2).**
 **Refresh: rewrite this file whenever the picture changes materially (each wave gate at minimum); history via git.**
+
+## Closed 14 Jul (mechanization session — evidence in the six commits 11:29–11:59 IST)
+- Gap #4 (packages are stubs): **seo / schema / i18n / consent / analytics are REAL** and arogyakendra consumes them (A6 limits throw at build; reciprocal hreflang by construction; Consent Mode v2 default-denied verified in-browser; data-cta events queue until measurement IDs land). product-card still a stub (Wave-1, Shopify token gate).
+- Gap #2 (brand lint) + #3 (spec template): **merge-blocking in .github/workflows/factory-gate.yml** — packages/ui/bin/brand-lint.js (static A4) + tests/factory/factory-site.spec.ts (A2 + browser A4, mobile-first). Caught and fixed two real 44px violations the 9.2/10 human review missed.
+- Gap #8 (D1 artifacts): docs/redirects/forward-farm.csv (43 rows; 36 uploadable, 7 HELD with gates) + export + verify scripts + audits/. Finding: ktahv.com already 301s correctly; arogyashala.co.in flip BLOCKED (target DNS-dead, source live — Sunaj).
+- Gap #10 (LEARNINGS empty): arogyakendra retro written; learning loop running.
+- Gap #13 (design-critic gate): scripts/design-review/PROMPT.md + Ship Gate B-14.
+- Gap #14 (stale locale fact): register row fixed + DECISIONS; PROJECT_CONTEXT patch queued post-PR#2.
 
 ## What is LIVE / DONE (evidence in git)
 - Factory end-to-end: monorepo → kairali-digital org → Vercel Pro; CI gate (build + compliance lint + pnpm audit + gitleaks); hooks; wiki; morning brief; Migration Playbook.
