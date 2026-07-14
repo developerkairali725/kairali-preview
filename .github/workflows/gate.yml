@@ -39,10 +39,15 @@ jobs:
       - name: Dependency audit
         run: pnpm audit --audit-level=high
 
+      # gitleaks CLI directly (not gitleaks/gitleaks-action@v2): the Action now
+      # requires a paid GITLEAKS_LICENSE for organization-owned repos, which broke
+      # this gate when the repo moved to kairali-digital. Same scanner, same rules,
+      # full-history scan — gate strength unchanged (CLAUDE.md rule g).
       - name: Secret scan (gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          GITLEAKS_VERSION=8.24.3
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz gitleaks
+          ./gitleaks git . --redact --no-banner --exit-code 1
 
   # TODO (QUESTIONS.md): Lighthouse CI against the Vercel preview URL
   # (perf ≥90 / a11y ≥95 / SEO =100) once the preview-URL wiring is added,

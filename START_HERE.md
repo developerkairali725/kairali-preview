@@ -3,42 +3,43 @@
 
 ---
 
-## 1 · THE 11 FILES AND WHERE THEY GO
+## 1 · THE LAUNCH PACK — 16 FILES AND WHERE THEY GO
 
+**Paste-prompts (you copy their contents into Claude Code; they don't live in the repo):**
+M2_MASTER_SETUP_FINAL_v2.md (the ONE combined setup — supersedes all earlier prompts) · M2_SHOPIFY_SETUP_PROMPT.md (Shopify track, after setup).
+
+**People docs (hand over, don't paste):**
+NEW_ENGINEER_DAY1.md (onboarding + 90-min agenda) · DEVELOPER_RUNBOOK_DAY1.md (his same-day execution manual — if you're delegating the M2 work, hand him THIS and stop reading here).
+
+**Repo files (FINAL v2 Phase 3 places these automatically):**
 | File | Goes | Purpose |
 |---|---|---|
-| START_HERE.md | Repo root (keep) | This guide |
-| PROJECT_CONTEXT.md | **Repo root** | The agent's brain — read first by every session |
-| CLAUDE_FLEET.md | Repo root **renamed to `CLAUDE.md`**, then paste the Factory Addendum (Runbook §7) below its content | Binding agent rulebook |
+| START_HERE.md | Repo root | This guide |
+| PROJECT_CONTEXT.md | Repo root | The agent's brain — read first every session |
+| CLAUDE_FLEET.md | Root, renamed `CLAUDE.md` + Runbook §7 FACTORY ADDENDUM appended | Binding agent rulebook |
 | SITE_LAUNCH_CHECKLIST_v1.0.md | Repo root | Definition of done, every site |
 | SITE_DESIGN_LOCALE_REGISTER.md | Repo root | Per-site register/locales/video/KPI |
-| KAIRALI_30DAY_BUILD_RUNBOOK_v1.0.md | `/docs/` | The 30-day plan + waves + Day-0 detail |
-| PHASE0_STABILIZE_PLAYBOOK.md | `/docs/` | Point −1→5 ladder + M2 night-shift setup |
-| KAIRALI_WP_FLEET_OS_v1.0.md | `/docs/` | WordPress-tail operations (MainWP etc.) |
-| brand-tokens.css | `packages/ui/` | Brand Manual as code |
-| ktahv-critical-flows.spec.ts | `tests/` | Deterministic KTAHV gate |
-| sweep.sh | Repo root (or run from anywhere) | 15-min estate recon |
-| *(created empty on day 0)* DECISIONS.md · QUESTIONS.md · LEARNINGS.md | Repo root | Append-only logs |
+| SHOPIFY_TRACK_CONTEXT.md | Repo root | KAPPL e-commerce brain (live admin wins) |
+| KAIRALI_30DAY_BUILD_RUNBOOK_v1.0.md | /docs/ | The 30-day plan + waves |
+| PHASE0_STABILIZE_PLAYBOOK.md | /docs/ | Ladder −1→5 + M2 night shift |
+| KAIRALI_WP_FLEET_OS_v1.0.md | /docs/ | WordPress-tail operations |
+| brand-tokens.css | packages/ui/ | Brand Manual as code |
+| ktahv-critical-flows.spec.ts | tests/ | Deterministic KTAHV gate |
+| sweep.sh | Repo root | 15-min estate recon |
+| *(created empty)* DECISIONS.md · QUESTIONS.md · LEARNINGS.md · wiki/ | Repo root | Logs + compiled memory |
 
-## 2 · DO THIS NOW, IN ORDER (first sitting, ~3–4 hours)
+## 2 · DO THIS NOW, IN ORDER
 
 **Step 0 — Sweep (15 min, needs nothing).** On any Mac/Linux terminal: `bash sweep.sh`. While it runs: `curl -sI https://spalabs.in/migration/` and Google `site:spalabs.in` — if KTAHV copies are live/indexed there, WhatsApp Deepu to kill/noindex today.
 
-**Step 1 — Accounts (30 min).** GitHub org `kairali-digital` + private repo `kairali-web-factory` · Vercel team connected to the org · confirm/create the Cloudflare account (future home of all DNS).
+**Step 1 — The ONE paste.** On the M2: Terminal → `mkdir -p ~/work && cd ~/work` → `claude` (log in if first time) → `/model fable` → paste everything below the dashed line of **M2_MASTER_SETUP_FINAL_v2.md**. It audits the system, installs what's missing, creates the repo, places every file above, imports abhilashkr, installs skills + MCPs, builds the memory wiki, and hardens everything (hooks, CI, branch protection, Sentry). It pauses only for passwords/logins/popups; DEVELOPER_RUNBOOK Part 3 has the pause table.
 
-**Step 2 — Machine (30 min).**
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-claude            # log in (Max plan)
-claude doctor
-claude mcp add playwright npx @playwright/mcp@latest
-```
-Install VS Code + Git if missing.
+**Step 2 — Your four manual moves when it stops:** /config → Remote Control ON · Vercel import (Root Directory = sites/abhilashkr) · Cloudflare DNS grey-cloud · approve the proof PR.
 
-**Step 3 — Seed the repo (30 min).** Clone the empty repo → drop all files per the §1 map → create empty DECISIONS.md, QUESTIONS.md, LEARNINGS.md → commit → push → import repo into Vercel. Then open Claude Code in the repo, `/model fable`, and give it its first task verbatim:
+**Step 3 — The scaffold prompt (the build starts here).** After Step 2, give Claude Code this verbatim:
 > "Read PROJECT_CONTEXT.md, CLAUDE.md, SITE_LAUNCH_CHECKLIST_v1.0.md and SITE_DESIGN_LOCALE_REGISTER.md fully. Confirm your understanding in 10 bullets, list anything ambiguous into QUESTIONS.md, then scaffold the Turborepo monorepo per PROJECT_CONTEXT §6 (sites/, packages/ui with brand-tokens.css, seo, schema, i18n, compliance, consent, analytics, forms, product-card) and build the compliance lint from CLAUDE.md's language locks. Plan first, then execute."
 
-**Step 4 — First site live today.** Drop the already-built abhilashkr.com Next.js code into `sites/abhilashkr`, deploy on Vercel, point DNS (grey-cloud). Proves the whole chain at zero risk.
+**Step 4 — Shopify track.** Paste M2_SHOPIFY_SETUP_PROMPT.md (below its dashed line). It resolves Stage 0, snapshots the live theme as the rollback baseline, runs the revenue-weighted audit, and builds the Monday catalog lint. Review its audit before it continues.
 
 **Step 5 — Feed it the sweep.** Give Claude Code `sweep_results.csv`: "Triage RED/AMBER/GREen per PHASE0 Step 0 and re-cut the runbook waves."
 
@@ -78,6 +79,7 @@ Install VS Code + Git if missing.
 
 **E — Confirmations (2 min):**
 19. DE/FR slugs in ktahv-critical-flows.spec.ts match the live sitemap.
+20. Shipping platform names for W1 (Abilash said "e-shop box" + "express" — confirm exact aggregator + couriers; fill into SHOPIFY_TRACK_CONTEXT §9B and DEVELOPER_RUNBOOK header).
 
 Nothing in §3 blocks Steps 0–5 today. Items 9, 14 and 1 unblock the most, fastest.
 
