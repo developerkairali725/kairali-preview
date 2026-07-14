@@ -92,3 +92,11 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 - ANSWERED: abhilashkr brand exemption ratified (Kairali-inspired allowed, not required) · raag ×3 + all sheet domains owned · kairaliproduct.com → products family · banner×bubble fix now · U1 provisional = TWO stores (.in India / .com international, compliance + gateways) — verify at kickoff.
 - STILL OPEN: Maharaja Suites 1001/1002 names · where ktahv.com's existing 301 is configured · exact ChatGPT image-model name ("Sol 5.6" as heard) · shipping aggregator + couriers (runbook Part 4 blanks).
 - NOTE: whatisayurveda.com is a PARKED lander (verified 14 Jul) — the "fresh Jun 2026" in the Runbook was the registration, not a site. Flip stays gated on the Wave-2 build; Abilash informed.
+
+## 2026-07-14 15:05:00 IST · GitHub MCP — SKIPPED by design (not pending)
+Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible auth server: does not support dynamic client registration" (GitHub-side limitation). Ruling with Abilash in-chat: SKIP — the authenticated gh CLI on this machine already covers 100% of the factory's GitHub needs (PRs, API, secrets, protection), proven across the whole 14 Jul session. Revisit only if a future agent lacks shell access. MCP roster for factory scope is now: playwright · vercel · cloudflare-docs · next-devtools · clarity (step 4) · semrush (step 5).
+
+## 2026-07-14 15:35:00 IST · MCP sitting outcomes (steps 3-5 closed)
+- GitHub MCP: SKIPPED (DCR incompatibility; gh CLI covers everything — see entry above).
+- Clarity: clarity-ktahv CONNECTED + verified with real data (677 sessions/day, 4.14% dead-click on KTAHV). Three more projects exist (Villa Raag, whyayurVeda, Kairali Products.com) — same one-command pattern when needed; the whyayurVeda project implies tracked traffic on that family (relevant to Wave-2 whatisayurveda build).
+- Semrush: Composio MCP CONNECTED ✔; Semrush API purchase DECLINED (Business-tier + units / Trends API ≈ ₹17k+/mo for data we don't need). Keyword lane per the checklist's own fallback: GSC (free, browser access granted 14 Jul) + DataForSEO pay-per-call (~$50 covers the sprint) — set up at Wave-1 start.
