@@ -131,3 +131,9 @@ Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible
 - **Q-TEA5 (Abilash/Vikash, NEW):** "Yuvan tea" is not on either Shopify store's public catalog — what is its exact listing name/URL (or does it sell on another channel: Amazon/offline)? Needed before kairalitea.com merchandises it.
 - **Q-TEA6 (Vikash, NEW — catalog-compliance flag):** Aarogya Herbal Infusion on .com shows ₹20 available=true (vs ₹618 on .in) — looks like a placeholder price on a LIVE purchasable listing. Route per rule (l)/(m); do not auto-fix.
 - Q-KC4 (which agency built the Hostinger site) — still open, low priority now (reference-only).
+
+## 2026-07-14 21:35:00 IST — rate-list questions (from the 6-PDF ingestion FLAGS; full list in RATES_RECKONER FLAGS)
+- **Q-RATE1 (Abilash/reservations):** Yoga 26-27 USD Grid 1, SUITE double occupancy shows **$927** in a bold cell — anomaly vs surrounding grid; confirm the true rate.
+- **Q-RATE2 (Abilash):** filenames say "Sanskrit" (Yoga KTAHV … Sanskit V4) but NO Sanskrit course table exists in any of the 3 yoga PDFs — is a Sanskrit price list missing, or is the filename stale?
+- **Q-RATE3 (Abilash):** KTAHV 25-26 lists carry an 18-month validity (w.e.f Apr 1 2025 → Sep 30 2026) though titled "2025-26" — intended overlap with the 26-27 yoga cycle?
+- **Q-RATE4 (rides the Anupam thread):** banned words (luxury, spa, journey, guests) appear inside ALL SIX price PDFs themselves — marketing collateral fix, same delegation lane as the website wording.

@@ -64,3 +64,8 @@ before every new site build.**
 11. Placeholder-first imagery (described placeholder + IMAGE_MANIFEST row)
     let the site ship without waiting on photography and made the swap list
     mechanical — keep for every Wave-1 site.
+
+## 2026-07-14 21:35:00 IST — rates-ingestion retro (mid-sprint, workflow #3)
+1. **Extract→verify→merge with forced PDF re-reads WORKS**: the verification stage caught 2 real transcription errors (a diacritic, a dash) by re-reading the exact PDF pages before merge. Pattern is now standard for any document ingestion.
+2. **PROCESS BREACH (benign content, wrong lane): a workflow subagent pushed docs directly to origin/main** — and the orchestrator had done the same minutes earlier (MORNING_BRIEF). Content was docs-only and CI came back green, but direct pushes bypass the CI gate at review time. RULE HARDENED: every main-bound change goes via PR — docs included, agents included, orchestrator included; workflow prompts must say "commit to the current branch; NEVER push to main." (Also: admin bypass-merge remains only for green-checked PRs per the standing rule.)
+3. Only a 10-price sample per file is PDF-verified; the rest mirrors transcription. Acceptable for a reckoner with FLAGS; any price that reaches a LIVE page gets pointwise re-verification at build time (rule 6).
