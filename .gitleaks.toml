@@ -1,0 +1,24 @@
+# Gitleaks config — extends the default ruleset (gate strength unchanged).
+# Allowlist entries are NARROW and each one documents the verification that the
+# matched strings are not secrets. Adding to this file requires the same review
+# as any governing file (CODEOWNERS). CLAUDE.md rule g: gates are never weakened —
+# verified false positives are documented here instead of skipping the scan.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Verified non-secrets in ingested source documents (2026-07-14 review)"
+regexTarget = "line"
+regexes = [
+  # Expired third-party S3 presigned URLs (Perplexity file-upload attachments)
+  # embedded verbatim in ingested strategy docs (docs/ktahv-inputs/). The ASIA*
+  # strings are temporary STS access-key IDs belonging to Perplexity's AWS
+  # account, paired only with an HMAC signature and an Expires= timestamp that
+  # is already in the past. Not Kairali credentials; URLs are dead.
+  '''ppl-ai-file-upload\.s3\.amazonaws\.com''',
+  # Public chat-widget site key in the OLD arogyakendra.com public HTML
+  # (content-mined/ immutable raw-sources layer). Widget site keys are served
+  # to every visitor by design; the legacy site is being replaced.
+  '''acobot\.ai/js/w\?key=''',
+]
