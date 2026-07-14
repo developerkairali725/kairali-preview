@@ -50,7 +50,37 @@ jobs:
           curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz gitleaks
           ./gitleaks git . --redact --no-banner --exit-code 1
 
+  # Ship Gate A-13: Claude security review on every PR diff (ANTHROPIC_API_KEY
+  # landed 14 Jul 2026). Action pinned to a commit SHA (supply-chain hygiene).
+  # content-mined/ is excluded: immutable ingested legacy HTML, never shipped.
+  security-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # posts findings as PR comments (the A-13 evidence)
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Claude security review (Ship Gate A-13)
+        id: security
+        uses: anthropics/claude-code-security-review@0c6a49f1fa56a1d472575da86a94dbc1edb78eda
+        with:
+          claude-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          comment-pr: true
+          exclude-directories: 'content-mined'
+
+      - name: A-13 zero-findings gate (fix the cause, never the gate)
+        run: |
+          COUNT="${{ steps.security.outputs.findings-count }}"
+          echo "security findings after FP filtering: ${COUNT:-0}"
+          if [ "${COUNT:-0}" != "0" ]; then
+            echo "A-13 requires zero high/critical findings — see the PR comments for evidence."
+            exit 1
+          fi
+
   # TODO (QUESTIONS.md): Lighthouse CI against the Vercel preview URL
-  # (perf ≥90 / a11y ≥95 / SEO =100) once the preview-URL wiring is added,
-  # and anthropics/claude-code-security-review once ANTHROPIC_API_KEY is set
-  # as a repo secret. Gates are added, never weakened (CLAUDE.md rule g).
+  # (perf ≥90 / a11y ≥95 / SEO =100) once the preview-URL wiring is added.
+  # Gates are added, never weakened (CLAUDE.md rule g).
