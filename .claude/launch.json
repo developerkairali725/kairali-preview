@@ -38,6 +38,20 @@
         "4311"
       ],
       "port": 4311
+    },
+    {
+      "name": "whatisayurveda",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/whatisayurveda.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4312"
+      ],
+      "port": 4312
     }
   ]
 }

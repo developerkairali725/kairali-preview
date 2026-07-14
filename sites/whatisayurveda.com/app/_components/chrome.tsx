@@ -1,0 +1,88 @@
+// Shared header + footer for whatisayurveda.com. Group/educational register.
+import Link from "next/link";
+
+export const EMAIL = "info@kairali.com";
+export const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS 2026-07-13)
+
+export const NAV = [
+  { href: "/what-is-ayurveda", label: "What is Ayurveda" },
+  { href: "/doshas", label: "Doshas" },
+  { href: "/panchakarma", label: "Panchakarma" },
+  { href: "/herbs", label: "Herbs" },
+  { href: "/is-ayurveda-scientific", label: "The Evidence" },
+];
+
+export function SiteHeader() {
+  return (
+    <header className="site-header">
+      <div className="container">
+        <Link className="logo-link" href="/" aria-label="What is Ayurveda — by the Kairali Ayurvedic Group, home">
+          <img src="/images/kairali-logo.png" alt="Kairali Ayurvedic Group" width="46" height="46" />
+          <span className="logo-name">
+            What is Ayurveda
+            <small>by the Kairali Group · since 1908</small>
+          </span>
+        </Link>
+        <nav className="site-nav" aria-label="Sections">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href}>{n.label}</Link>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <p className="tagline">Understanding Ayurveda, honestly.</p>
+        <div className="footer-grid">
+          <div className="footer-col">
+            <h4>About this site</h4>
+            <p style={{ margin: "10px 0 0", maxWidth: "34ch" }}>
+              An educational resource from the Kairali Ayurvedic Group — a
+              family of Ayurvedic physicians since 1908. Every health page is
+              reviewed by a registered Ayurvedic doctor. This site is for
+              learning, not medical advice.
+            </p>
+          </div>
+          <div className="footer-col">
+            <h4>Learn</h4>
+            <ul>
+              <li><Link href="/what-is-ayurveda">What is Ayurveda</Link></li>
+              <li><Link href="/doshas">The three doshas</Link></li>
+              <li><Link href="/panchakarma">Panchakarma</Link></li>
+              <li><Link href="/herbs">Ayurvedic herbs</Link></li>
+              <li><Link href="/is-ayurveda-scientific">Is Ayurveda scientific?</Link></li>
+              <li><Link href="/faq">FAQ</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>The Kairali Group</h4>
+            <ul>
+              <li><a href="https://www.ayurvedichealingvillage.com" rel="noopener">Healing Village hospital</a></li>
+              <li><a href="https://www.kairaliproducts.com" rel="noopener">Ayurvedic products</a></li>
+              <li><a href="https://www.kairali.com" rel="noopener">Kairali Group</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a></li>
+              <li><a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a></li>
+            </ul>
+          </div>
+        </div>
+        <p className="footer-disclaimer">
+          The information on whatisayurveda.com is educational and is not a
+          substitute for professional medical advice, diagnosis, or treatment.
+          Ayurvedic therapies and herbs should be used under the guidance of a
+          qualified physician. Always consult a doctor before starting any
+          treatment. © 1908–2026 Kairali Ayurvedic Group.
+        </p>
+      </div>
+    </footer>
+  );
+}
