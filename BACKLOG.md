@@ -7,7 +7,11 @@ The 07:05 morning brief reads this file daily and surfaces anything due. Nothing
 deleted — history is the point.
 
 ## NOW (this week — Wave 0 / Days 1–6)
-- [ ] Mine image sources per image-library/README registry (KTAHV video folder CONFIRMED; folder 1LlD59… needs sharing fix; albums via browser) → image-library/ + per-site IMAGE_MANIFEST swaps
+- [ ] **Abilash: merge PR #2 (Docs sync v2 + Shopify track)** — all checks green as of 11:15 IST; governing files, needs his one-click
+- [ ] **Abilash: relink Vercel project kairali-web-factory-abhilashkr** → Settings→Git→connect kairali-digital/kairali-web-factory (still points at pre-transfer personal repo; site can't deploy until relinked; does NOT block PR #2)
+- [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul)
+- [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
+- [ ] Chase: Google Photos album 9UCcY3jv4zi6byq48 is DEAD (HTTP 500) — Abilash to reshare if its contents matter
 - [ ] Design-critic gate: formalize as scripts/design-review prompt + Ship Gate step
 - [ ] Write arogyakendra retro into LEARNINGS.md (Ship Gate §E — file is empty; learning loop not running) [gap: SPRINT_STATE #10]
 - [ ] Build packages/seo + schema + i18n for REAL (2-line stubs today): meta/canonical/robots/sitemap/llms.txt, reciprocal hreflang, JSON-LD templates — extract from arogyakendra [gap #4]
@@ -44,6 +48,13 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-14 11:12:43 IST — Gate CI fixed on PR #2: gitleaks-action requires paid license for org repos → replaced with pinned gitleaks CLI (full-history scan, strength unchanged) + .gitleaks.toml allowlisting 88 verified non-secrets (expired Perplexity S3 presigned URLs in ingested docs + public acobot widget key in mined legacy HTML); canary-tested real keys still trip; run 29309257932 green ("69 commits scanned, no leaks found"). Vercel abhilashkr failure root-caused: project git-linked to pre-transfer personal repo (NOT commit email — same commit deployed green on 2 other projects); relink is a NOW item for Abilash
+- [x] 2026-07-14 10:48:35 IST — PR #2 "Docs sync v2 + Shopify track" opened per mentor's UPDATE TASK: synced PROJECT_CONTEXT/Checklist/START_HERE from kairali-launch-pack, added SHOPIFY_TRACK_CONTEXT + 6 shopify-agents + people docs; CLAUDE.md/DECISIONS/QUESTIONS/LEARNINGS/wiki untouched; awaiting Abilash approval
+- [x] 2026-07-14 10:45:50 IST — IMAGE_CATALOG.csv complete: 798 rows, every image vision-described (category/description/tags/semantic-name/best-use, KTAHV clinical register enforced); library = products 561 + ktahv 50 + raag 158 + influencers 29 (~2.4GB originals in ~/Claude/Kairali-Digital/image-library/, outside git)
+- [x] 2026-07-14 10:36:13 IST — VIDEO_CATALOG.csv complete: 458 rows all described — 355 YouTube (EMBED decision; enriched w/ upload date/age/duration/views/description via yt-dlp android client; 158 health-claim flags) + 19 KTAHV 2023 shoot (hosted, 5.9GB) + 84 KTAHV 2025 raw clips (hosted, 15GB; poster-frame vision pass: 37 bridal-model, 19 yoga, 22 grounds/nature B-roll, largely NOT clinical footage)
+- [x] 2026-07-14 09:42:10 IST — Image mining executed end-to-end (the "dispatch" gap): Drive link-shared folders via web-UI ID scrape + curl-by-id (Drive search API can't list anyone-with-link folders), Google Photos via =d full-res, villaraag.com gallery crawl; dispatch's 583-row product mapping rescued from local-agent-mode outputs/ into docs/media/kairali-product-images/
+- [x] 2026-07-14 ~09:20 IST — Secret purge: kairali1908 removed from ALL git history (filter-branch + force-with-lease; old SHAs dead), verified clean across every ref; Eeshal repo still public w/ live credential — rotation + private flip on her, chase-up pending
+- [x] 2026-07-14 08:23:27 IST — Morning brief Day 2 committed (98ee03f)
 - [x] 2026-07-13 19:47:20 IST — Governing-docs re-read (Abilash order): ALL of CLAUDE.md, PROJECT_CONTEXT, Ship Gate, Register, ENGINEERING_STANDARDS, MIGRATION_PLAYBOOK, both checklists, both brand manuals, all wiki pages, BACKLOG/QUESTIONS/DECISIONS + repo mechanization audit → docs/SPRINT_STATE.md (15 gaps, top-10 next actions with gates); missing items added to NOW/SCHEDULED/WAITING ON above
 - [x] 2026-07-13 19:44:30 IST — Eeshal repo (kairali-guru-) evaluated vs live kairali.guru → docs/site-briefs/kairali-guru-migration.md (verdict: usable baseline — keep architecture/i18n/redirect map, replace forms/analytics/consent/palette with Factory packages; ~5.5–6 d Wave-2 plan; live site is EN-only + dead UA analytics; security finding: hardcoded student-hub credential in her public repo)
 - [x] 2026-07-13 19:38:12 IST — theblushlounge.com mined (primary per D6; origin DOWN — Wayback provenance, latest capture Nov 2025) + docs/site-briefs/theblushlounge.md (E-register single-site structure, snehachowdhary.com→theblushlounge.com 301 plan per D1; snehachowdhary.com = GoDaddy parking lander, no content); outage + number-conflict + brand-asset questions → QUESTIONS.md
