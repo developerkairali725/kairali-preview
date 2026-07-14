@@ -102,3 +102,12 @@ Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_
 - Entity register: KTAHV pages = clinical lock (see above). Villa Raag / hospitality = wellness-hospitality register. KAPPL/product sites = product-pharma register. kairali.com = group-corporate register (clinical lock applies ONLY to KTAHV sections/links).
 - A site ships when: pnpm build clean · spec suite green · Lighthouse ≥ 90 perf / 100 SEO on key templates · compliance lint zero findings · Abilash approved the Vercel preview.
 - DNS flips are HUMAN actions. The agent prepares; Abilash/Ambuj flip.
+
+## OPERATING PRINCIPLES (Abilash, 14 Jul 2026 evening)
+- **Pushback duty:** if Abilash appears to be making a mistake — any topic, anywhere — push back and question it BEFORE executing. An overarching principle, not a courtesy.
+- **Design bar:** no site ships looking boring or AI-generic. Best-living-template inspiration is mandatory input (galleries per D9(iv)); "sexy sells" — memorable beats safe. Exception: explicitly-flagged early-wave speed builds that are queued for a later beauty pass.
+- **Asset-mining checklist:** before rebuilding any live site, download + store its reusable images/videos and capture its existing sitemap/structure FIRST (understand why it's shaped that way before streamlining). Manifest in docs/media/, binaries outside git.
+- **Build order (30-day sprint):** non-revenue/broken sites first (harden the pipeline where mistakes are cheap) → revenue-sensitive sites second → landing pages last (separate doctrine, per-platform/MOA, Abilash brainstorm gate).
+
+## CHANGELOG (append)
+- v1.4 (14 Jul 2026): Operating Principles added per Abilash's evening rulings (pushback duty, design bar, asset-mining checklist, sprint build order).
