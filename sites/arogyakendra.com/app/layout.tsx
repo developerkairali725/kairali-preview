@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
+import { buildMetadata } from "@kairali/seo";
 import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
 import ChatbaseLoader from "./chatbase-loader";
+import siteConfig from "../site.config.json";
 
 // Brand Manual ch.04: Kurale (display, weight 400 only) · Asap (body/UI) ·
 // Lato (captions, overlines, numerals). next/font self-hosts at build —
@@ -27,32 +29,15 @@ const lato = Lato({
   variable: "--font-lato",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://arogyakendra.com"),
+// OG/Twitter ship WITHOUT an image for now: no real 1200×630 asset exists
+// yet and fabricating one is banned. Spec lives in IMAGE_MANIFEST.md
+// (slot og-image); pass `ogImage` here when the asset lands.
+export const metadata: Metadata = buildMetadata(siteConfig, {
   title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
   description:
     "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
-  alternates: { canonical: "https://arogyakendra.com" },
-  // OG/Twitter ship WITHOUT an image for now: no real 1200×630 asset exists
-  // yet and fabricating one is banned. Spec lives in IMAGE_MANIFEST.md
-  // (slot og-image); add `images` here when the asset lands.
-  openGraph: {
-    type: "website",
-    url: "https://arogyakendra.com",
-    siteName: "Arogya Kendra",
-    title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
-    description:
-      "The gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary",
-    title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
-    description:
-      "The gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908.",
-  },
-  robots: { index: true, follow: true },
-};
+  siteName: "Arogya Kendra",
+}) as Metadata;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

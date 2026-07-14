@@ -4,5 +4,16 @@
   "private": true,
   "type": "module",
   "description": "Meta, sitemaps, OG/Twitter cards, llms.txt, GEO/Q&A structure",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@kairali/i18n": "workspace:*"
+  }
 }

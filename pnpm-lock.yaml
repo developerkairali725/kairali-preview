@@ -30,9 +30,17 @@ importers:
 
   packages/product-card: {}
 
-  packages/schema: {}
+  packages/schema:
+    dependencies:
+      '@kairali/compliance':
+        specifier: workspace:*
+        version: link:../compliance
 
-  packages/seo: {}
+  packages/seo:
+    dependencies:
+      '@kairali/i18n':
+        specifier: workspace:*
+        version: link:../i18n
 
   packages/ui: {}
 
@@ -111,6 +119,12 @@ importers:
 
   sites/arogyakendra.com:
     dependencies:
+      '@kairali/schema':
+        specifier: workspace:*
+        version: link:../../packages/schema
+      '@kairali/seo':
+        specifier: workspace:*
+        version: link:../../packages/seo
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
