@@ -11,7 +11,11 @@
     "next": "^15.4.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@kairali/ui": "workspace:*"
+    "@kairali/ui": "workspace:*",
+    "@kairali/seo": "workspace:*",
+    "@kairali/schema": "workspace:*",
+    "@kairali/consent": "workspace:*",
+    "@kairali/analytics": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

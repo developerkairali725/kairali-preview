@@ -17,3 +17,18 @@
 
 ## 2026-07-13 18:55:39 IST — agent research per D1 delegation
 - D1 CLOSED (forward strategy): SEMANTIC MAP adopted — every surplus domain 301s (Cloudflare Bulk Redirects, single hop, no chains, never in Ads final URLs) to the topically nearest LIVE Kairali site, never all→one; full findings, citations and per-family mapping rules in docs/research/forward-strategy-D1.md.
+
+## 2026-07-14 11:59:06 IST — agent, stale-fact correction per SPRINT_STATE gap #14 (standing instruction: register-table amendments via DECISIONS)
+- kairali.guru LIVE-site locale fact corrected: the live site is EN-ONLY (verified 13 Jul — /de/ 404s, no hreflang, dead UA analytics). The EN/DE/FR/AR/RU build exists ONLY in Eeshal's repo and becomes real at the Wave-2 migration. SITE_DESIGN_LOCALE_REGISTER.md row amended this commit. PROJECT_CONTEXT.md §1/§3/§7 carry the same stale claim but the file is being replaced wholesale by PR #2 (mentor doc-sync, same stale lines) — patching those three lines is queued in BACKLOG for immediately after PR #2 merges, so the fix isn't lost in a merge conflict.
+
+## 2026-07-14 11:59:06 IST — agent, design-critic gate formalized (BACKLOG NOW item; SPRINT_STATE action #10)
+- The ad-hoc arogyakendra design pass is now LAW for every Factory site: scripts/design-review/PROMPT.md (skeptical-marketer persona, 5 criteria, mobile-first method, computed-style audit, average ≥9.0/10 + no criterion <7, max 3 iterations) + Ship Gate B-14 in SITE_LAUNCH_CHECKLIST_v1.0.md. Evidence contract: launches/<domain>/design-review.md with an Honest-limitations section. Criteria amendments only via LEARNINGS-driven PR.
+
+## 2026-07-14 13:14:52 IST — Abilash, in-chat rulings (post-PR#2-merge session)
+- **Nakshatra villa 212 = ROYAL** — the Nakshatra guide is correct, the website archive is wrong. (Maharaja Suite names for 1001/1002 still unresolved — re-asked.)
+- **kairali.guru student-hub:** Eeshal's version is a TEMPORARY benchmark — will be redone properly; improve on it, don't preserve it. No online digital program exists today → student-hub/program surface ships as "coming soon". Her sitemap/architecture is good — keep it as the Wave-2 baseline.
+- **Design-source protocol extended to the Factory track** (mirrors D9(iv)): Awwwards/Mobbin/CSSDA primary; **Dribbble/Pinterest are valid at COMPONENT level only** (never whole-page copying); every design decision cites its source; brand tokens always win (CLAUDE.md rule d).
+- **Asset-generation roster + prompt-handoff rule:** Claude Code does NOT generate raster/visual assets itself (images, buttons, PNGs — quality insufficient, Abilash observation). Instead it drafts the EXACT prompt and names the tool; a human runs it. Approved tools: Higgsfield (per-register policy codes stand), ChatGPT's image model (Abilash cited "Sol 5.6" — exact model name to confirm), Google Nano Banana (Gemini image). Register/imagery law unchanged: no AI humans/patients/physicians on KTAHV, ever.
+- **Triple Whale reality check:** account is FREE tier — Moby is not present, so D8's "Autopilot OFF" rule is dormant until any purchase. Moby purchase (~$2,200/yr) DEFERRED pending the Shopify Stage-0/U7b audit (plan cost vs GMV vs features actually used) — agent recommendation, Abilash to re-decide with the audit data.
+- **Measurement access:** Abilash signed into Google Ads + Analytics + Search Console + Semrush in the browser — read access for baselines/exports now possible via browser sessions; property/container CREATION remains per-action approval. Staff (Vikash) handover no longer blocks reads.
+- **Blush Lounge droplet:** Abilash calling Sunaj to restore the origin.

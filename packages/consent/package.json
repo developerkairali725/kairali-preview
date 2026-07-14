@@ -4,5 +4,17 @@
   "private": true,
   "type": "module",
   "description": "Cookie banner + Google Consent Mode v2 + privacy/terms per entity",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": "./src/index.ts",
+    "./core": "./src/core.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0"
+  }
 }

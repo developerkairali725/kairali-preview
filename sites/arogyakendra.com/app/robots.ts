@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { buildRobots } from "@kairali/seo";
+import siteConfig from "../site.config.json";
 
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: "https://arogyakendra.com/sitemap.xml",
-  };
+  return buildRobots(siteConfig) as MetadataRoute.Robots;
 }

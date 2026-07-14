@@ -9,7 +9,7 @@ Kairali Ayurvedic Group — a 118-year family business (since 1908; founders' fa
 - **KTAHV** — Kairali, The Ayurvedic Healing Village (ayurvedichealingvillage.com): NABH-accredited Ayurvedic **hospital**-retreat, Kodumbu/Olassery, Palakkad, Kerala. Clinical register ALWAYS.
 - **KAPPL** — Kairali Ayurvedic Products Pvt. Ltd.: WHO-GMP-certified Ayurvedic pharma/products manufacturer. Product/pharma register. E-commerce runs on **Shopify** (checkout/payments live there and ONLY there).
 - **Villa Raag** — boutique wellness property, Agonda, South Goa. Hospitality/wellness register is CORRECT here.
-Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training arm (kairali.guru, live Next.js), franchise arm.
+Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training arm (kairali.guru, live Next.js, EN-only today), franchise arm.
 
 ## 2 · PEOPLE & ROUTING
 - **Abilash** — decisions, approvals, DNS flips. The only production gate.
@@ -23,7 +23,7 @@ Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training ar
 ## 3 · LOCKED FACTS (grep-verifiable; wrong values are bugs)
 - Public contact email everywhere: **info@kairali.com**
 - Priya's KTAHV WhatsApp: **+91 92898 38797** (…38777 is a known-bad value — remove on sight)
-- KTAHV locales: EN/DE/FR. kairali.guru: EN/DE/FR/AR/RU. Others per SITE_DESIGN_LOCALE_REGISTER.md.
+- KTAHV locales: EN/DE/FR. kairali.guru LIVE site: EN-only (verified 13 Jul 2026 — DECISIONS 14 Jul; EN/DE/FR/AR/RU exist only in Eeshal's repo, Wave-2 target). Others per SITE_DESIGN_LOCALE_REGISTER.md.
 - Group heritage: since 1908. KTAHV: NABH-accredited. KAPPL: WHO-GMP.
 
 ## 4 · COMPLIANCE STACK (all machine-gated where possible)
@@ -57,7 +57,7 @@ Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training ar
 - **KTAHV migration method** (post-sprint): rewrite-vs-**deindex** triage per page (prune thin/AI pages instead of rewriting all 376), 301 map from mined inventory, condition-page template (doctor-bylined), Dr. Deepu John sign-off lane.
 
 ## 7 · ALREADY BUILT (don't rebuild; reuse)
-KTAHV consultation/enquiry/contact/how-to-reach pages v1.3.x (EN/DE/FR) + Python transform pipeline + 19 compliance gates + staging-only push script (`push_to_wp.py`) · kairali.guru live Next.js (EN/DE/FR/AR/RU) — the component/i18n donor · Financial OS (₹18.96 Cr FY25-26 verified) · Saanvi voice agent + Call Analysis + Scheduling prompts · Lead classification v4.3 (5 verticals) · Agent Alex email + Priya chatbot · MOA Matrix v3.0 + European Buyer Journey (8 stages, DACH/FR MOAs) · 18+ competitor dossiers · Brand Manual 2026 (tokens now in code) · Vendor-evaluator prompt (use it on any future agency) · Fleet OS / Runbook / Phase-0 / sweep.sh / ktahv spec suite (see §10).
+KTAHV consultation/enquiry/contact/how-to-reach pages v1.3.x (EN/DE/FR) + Python transform pipeline + 19 compliance gates + staging-only push script (`push_to_wp.py`) · kairali.guru live Next.js (EN-only live; 5-locale build in Eeshal's repo) — the component/i18n donor · Financial OS (₹18.96 Cr FY25-26 verified) · Saanvi voice agent + Call Analysis + Scheduling prompts · Lead classification v4.3 (5 verticals) · Agent Alex email + Priya chatbot · MOA Matrix v3.0 + European Buyer Journey (8 stages, DACH/FR MOAs) · 18+ competitor dossiers · Brand Manual 2026 (tokens now in code) · Vendor-evaluator prompt (use it on any future agency) · Fleet OS / Runbook / Phase-0 / sweep.sh / ktahv spec suite (see §10).
 
 ## 8 · CURRENT MISSION
 30-day sprint (13 Jul → 12 Aug 2026): stabilize the live estate (Phase 0), stand up the Factory, ship ~28 sites in 5 waves (pilots → product microsites → business lines → corporate/brand → kairali.com), forward-farm ~35 domains, Fleet Pulse on kairali.ai, hand over to one IT person + content team. KTAHV stays WP this sprint (tech fixes only; incl. **sitemap_index 404 in robots.txt** from the Delante findings) and migrates first afterward.

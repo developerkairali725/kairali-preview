@@ -4,5 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Keyed strings + locale gates; transcreation not translation",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
 }

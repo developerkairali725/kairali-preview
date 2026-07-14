@@ -37,7 +37,7 @@ Companion to PROJECT_CONTEXT.md. Every Factory site is built to ONE of four desi
 | kairaliequipment.com | A | B2B: spa/centre equipment buyers (note: "spa" allowed here — not a KTAHV surface) | EN | REAL + HF-AMB | Quote requests/mo |
 | bulkayurvedaoils.com / bulkayurvedaproducts.com | A/C | B2B bulk & private-label buyers (US/EU/GCC) | EN | HF-AMB | RFQ leads/mo |
 | kairaliyoga.com | E | Yoga programme seekers + TTC prospects | EN | HF-AMB + REAL people | Programme enquiries/mo |
-| kairali.guru (live) | ED | Ayurveda learners (EN/DE/FR/AR/RU — live) | as-is | REAL + HF-AMB | Course enquiries; article rankings |
+| kairali.guru (live) | ED | Ayurveda learners (live site EN-ONLY, verified 13 Jul 2026 — /de/ 404s, no hreflang; EN/DE/FR/AR/RU exist only in Eeshal's repo, Wave-2 target set — DECISIONS 14 Jul) | as-is | REAL + HF-AMB | Course enquiries; article rankings |
 | whatisayurveda.org/.com | ED | Top-funnel education, AI-answer capture (Decision #2) | EN (→DE/FR) | HF-AMB explainers | AI-citation presence; assisted enquiries |
 | healing.recipes | **ED→E** | Cookbook readers, Gita Ramesh audience, press | EN | REAL (food) + HF-AMB | Book interest clicks; press pickups |
 | ayurvedafranchise.com | A (or 301 → franchise; Decision #4) | SEO satellite | EN | REAL | Assisted franchise leads |

@@ -3,6 +3,14 @@
 // Image slots are described placeholders (ENGINEERING_STANDARDS placeholder-
 // first rule) — specs mirror IMAGE_MANIFEST.md; swap-in is mechanical.
 
+import {
+  graph,
+  kairaliOrganization,
+  webSite,
+  breadcrumbList,
+  serializeJsonLd,
+} from "@kairali/schema";
+
 const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS.md 2026-07-13 18:51 IST)
 const EMAIL = "info@kairali.com";
 
@@ -59,41 +67,24 @@ const BRANDS = [
 
 // Checklist A8 / pagewise structured-data items: Organization + WebSite +
 // BreadcrumbList (Home only — this is a one-pager) in a single @graph.
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arogyakendra.com/#organization",
-      name: "Kairali Ayurvedic Group",
-      url: "https://arogyakendra.com",
-      email: EMAIL,
-      foundingDate: "1908",
-      slogan: "health through ayurveda",
-      sameAs: BRANDS.map((b) => b.href),
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arogyakendra.com/#website",
-      name: "Arogya Kendra",
-      url: "https://arogyakendra.com",
-      publisher: { "@id": "https://arogyakendra.com/#organization" },
-      inLanguage: "en",
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://arogyakendra.com/#breadcrumb",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://arogyakendra.com",
-        },
-      ],
-    },
-  ],
-};
+const jsonLd = graph(
+  kairaliOrganization({
+    id: "https://arogyakendra.com/#organization",
+    url: "https://arogyakendra.com",
+    sameAs: BRANDS.map((b) => b.href),
+  }),
+  webSite({
+    id: "https://arogyakendra.com/#website",
+    name: "Arogya Kendra",
+    url: "https://arogyakendra.com",
+    publisherId: "https://arogyakendra.com/#organization",
+    inLanguage: "en",
+  }),
+  breadcrumbList({
+    id: "https://arogyakendra.com/#breadcrumb",
+    items: [{ name: "Home", url: "https://arogyakendra.com" }],
+  }),
+);
 
 function WhatsAppIcon() {
   return (
@@ -160,7 +151,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <header className="site-header">

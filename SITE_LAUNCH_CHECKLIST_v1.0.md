@@ -38,6 +38,7 @@
 11. Redirect the domain's forward-family variants at Cloudflare (per semantic map).
 12. Social profile links verified; press/author pages linked where register = A/ED.
 13. Runtime monitoring live: Vercel Speed Insights + Analytics enabled on the project; Sentry project created and DSN wired (errors flow to the shared Kairali Sentry org, alert rule → email).
+14. Design-critic gate passed (scripts/design-review/PROMPT.md): skeptical-marketer review at 375px then desktop with computed-style audit; average ≥9.0/10, no criterion <7, max 3 iterations; scorecard + honest-limitations committed to `launches/<domain>/design-review.md` BEFORE the preview goes to C-1. (Formalized 14 Jul 2026 from the arogyakendra pass.)
 
 > **Enforcement note:** Gate A is not a memory exercise — it is enforced twice mechanically: Claude Code hooks re-run the fast gates after every edit and before every push, and GitHub branch protection makes the full CI gate a required check on main. A site physically cannot merge unchecked. (Created in Setup Phase 8: scripts/hooks/ + .github/workflows/gate.yml + branch protection.)
 

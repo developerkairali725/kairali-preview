@@ -4,5 +4,17 @@
   "private": true,
   "type": "module",
   "description": "GA4 + Ads conversions + Meta/LinkedIn/Bing pixels from data-cta",
-  "exports": { ".": "./src/index.ts" }
+  "exports": {
+    ".": "./src/index.ts",
+    "./core": "./src/core.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0"
+  }
 }

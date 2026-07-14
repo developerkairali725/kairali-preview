@@ -1,0 +1,68 @@
+# Factory gate — Ship Gate A4 (brand lint) + A2 (factory spec suite).
+# Separate workflow from gate.yml ON PURPOSE: gate.yml is being amended by
+# PR #2 (docs-sync-v2-shopify); a second file avoids a merge conflict and
+# keeps the fast lint path independent of the build cache.
+# Gates are added, never weakened (CLAUDE.md rule g).
+name: factory-gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  brand-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Brand lint (merge-blocking, Ship Gate A4 static layer)
+        run: node packages/ui/bin/brand-lint.js
+
+      - name: All package tests (seo · schema · i18n · ui · compliance · forms)
+        run: node --test packages/*/test/*.test.js
+
+  factory-spec:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Every Factory site adds itself here at scaffold time (Ship Gate A2).
+        # abhilashkr + kairali.ai are imported/internal surfaces — not yet in
+        # the matrix; adding them is a QUESTIONS.md item for Abilash.
+        site: ["sites/arogyakendra.com"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (turbo)
+        run: pnpm build
+
+      - name: Install Playwright chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Factory spec suite (Ship Gate A2 + A4 browser layer)
+        run: pnpm exec playwright test tests/factory
+        env:
+          SITE: ${{ matrix.site }}

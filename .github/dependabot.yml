@@ -1,0 +1,25 @@
+# Dependabot version updates (fix #3, Abilash approval 14 Jul 2026).
+# Vulnerability ALERTS were already on; this adds scheduled update PRs.
+# Monday cadence aligns with the standing Monday ritual (wiki lint +
+# pnpm audit + Dependabot triage — CLAUDE.md rule c).
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Kolkata"
