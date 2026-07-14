@@ -100,3 +100,8 @@ Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible
 - GitHub MCP: SKIPPED (DCR incompatibility; gh CLI covers everything — see entry above).
 - Clarity: clarity-ktahv CONNECTED + verified with real data (677 sessions/day, 4.14% dead-click on KTAHV). Three more projects exist (Villa Raag, whyayurVeda, Kairali Products.com) — same one-command pattern when needed; the whyayurVeda project implies tracked traffic on that family (relevant to Wave-2 whatisayurveda build).
 - Semrush: Composio MCP CONNECTED ✔; Semrush API purchase DECLINED (Business-tier + units / Trends API ≈ ₹17k+/mo for data we don't need). Keyword lane per the checklist's own fallback: GSC (free, browser access granted 14 Jul) + DataForSEO pay-per-call (~$50 covers the sprint) — set up at Wave-1 start.
+
+## 2026-07-14 16:10:08 IST · Domain sheet ingested — follow-ups
+- Sunaj (one line): add two columns to the Domain List sheet — "Registered with (company)" + "Login email" — that's the part the Cloudflare move needs.
+- Abilash rulings: (a) kairaliproduct.com is a LIVE Shopify property per the sheet (not a parked variant) — what's its future (kept as-is / folded into .in)? Redirect HELD. (b) The sheet note says all domains "forward into one" main domain — D1 (semantic map) stands unless you re-rule; confirm the sheet note is outdated. (c) kairalipharma.com is in our sweep but absent from the sheet — do we still own it?
+- RENEWALS within ~10 weeks (needs registrar access): snehachowdhary 01-Sep · kairalicenters.com 03-Sep (LIVE main site) · kairbykairali 23-Sep · whatisayurveda.org 28-Sep (live, ranking) · ayurvedafranchise 01-Oct · theblushlounge 28-Oct.
