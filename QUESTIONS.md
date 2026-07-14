@@ -110,3 +110,14 @@ Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible
 - VERIFIED: blush lounge RESTORED (200) · arogyashala.in DNS back (GoDaddy parking; forward stays HELD until real content) · Linux box = DigitalOcean droplet managed by RedHoney (ktahv.redhoney.in) — the "Linux vs DigitalOcean" confusion is resolved, they're the same machine.
 - SECURITY (for Sunaj, prepare-only list in docs/infra/SERVER_AUDIT_2026-07-14.md): RDP+SSH are internet-exposed → allowlist/VPN hardening recommended; the two WhatsApp-shared credentials should be stored-to-env then ROTATED; backup destination + restore-test evidence still needed.
 - UNLOCK: Cloudflare admin access granted to director@ — bulk-redirect upload (39 rules ready) is now an Abilash dashboard action; also enables GSC domain-property DNS verification.
+
+## 2026-07-14 18:27:00 IST — kairali.com agency-build intake (docs/group-inputs/kairali-com-agency-build-intake.md)
+- **Q-KC1 (Abilash):** Is the agency's Hostinger build meant to GO LIVE as kairali.com, or is it reference input for the Factory rebuild? Working assumption: reference input only. If it's going live, §4 of the intake doc is the blocker list (banned words in KTAHV sections, chronic-disease claim, GTranslate, unverified phone).
+- **Q-KC2 (Abilash):** Canonical founding year — logo says "since 1908", agency footer says "© 1956-2026". Which is true? (Locked-fact candidate.)
+- **Q-KC3 (Abilash):** Is +91 9555156156 a real, current group contact number (Delhi office?)? If yes it becomes a locked fact for kairali.com; if not it must not ship.
+- **Q-KC4 (Abilash):** Which external agency built it (name/contact), so register fixes can be delegated via the protocol if their build proceeds?
+- **Q-KC5 (Abilash/Ritu):** github.com/Eeshal27/kairali.com is PUBLIC with paid plugin bundles (Elementor Pro, Slider Rev, ACF Pro, Ohio) — recommend making it private (licensing + CVE surface). Add to the existing Eeshal repo-privacy delegation.
+
+## 2026-07-14 18:27:00 IST — kairalitea.com pre-build escalations (docs/kappl-inputs/kairalitea-niche-brief.md §5)
+- **Q-TEA1 (Abilash/legal):** FSSAI naming exposure — herbal infusions without Camellia sinensis may not legally be sold as "tea" in India; the DOMAIN ITSELF is kairalitea.com. Need ruling on SKU naming ("herbal infusion" vs "tea") before copy is finalized. Build proceeds with compliant copy ("herbal infusion" for tea-less SKUs) pending ruling.
+- **Q-TEA2 (Abilash):** Sign-off requested on the claims-guardrails section of the niche brief as BINDING copy law for kairalitea.com (safe vs banned phrasings, India DMR/FSSAI/ASCI + US FDA/FTC + EU). Build proceeds under it as law until amended.
