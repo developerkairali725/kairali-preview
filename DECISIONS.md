@@ -17,3 +17,9 @@
 
 ## 2026-07-13 18:55:39 IST — agent research per D1 delegation
 - D1 CLOSED (forward strategy): SEMANTIC MAP adopted — every surplus domain 301s (Cloudflare Bulk Redirects, single hop, no chains, never in Ads final URLs) to the topically nearest LIVE Kairali site, never all→one; full findings, citations and per-family mapping rules in docs/research/forward-strategy-D1.md.
+
+## 2026-07-14 11:59:06 IST — agent, stale-fact correction per SPRINT_STATE gap #14 (standing instruction: register-table amendments via DECISIONS)
+- kairali.guru LIVE-site locale fact corrected: the live site is EN-ONLY (verified 13 Jul — /de/ 404s, no hreflang, dead UA analytics). The EN/DE/FR/AR/RU build exists ONLY in Eeshal's repo and becomes real at the Wave-2 migration. SITE_DESIGN_LOCALE_REGISTER.md row amended this commit. PROJECT_CONTEXT.md §1/§3/§7 carry the same stale claim but the file is being replaced wholesale by PR #2 (mentor doc-sync, same stale lines) — patching those three lines is queued in BACKLOG for immediately after PR #2 merges, so the fix isn't lost in a merge conflict.
+
+## 2026-07-14 11:59:06 IST — agent, design-critic gate formalized (BACKLOG NOW item; SPRINT_STATE action #10)
+- The ad-hoc arogyakendra design pass is now LAW for every Factory site: scripts/design-review/PROMPT.md (skeptical-marketer persona, 5 criteria, mobile-first method, computed-style audit, average ≥9.0/10 + no criterion <7, max 3 iterations) + Ship Gate B-14 in SITE_LAUNCH_CHECKLIST_v1.0.md. Evidence contract: launches/<domain>/design-review.md with an Honest-limitations section. Criteria amendments only via LEARNINGS-driven PR.

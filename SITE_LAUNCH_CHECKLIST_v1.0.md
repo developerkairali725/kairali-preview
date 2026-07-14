@@ -18,6 +18,7 @@
 10. Every image has alt text; favicons exported 16/32/180/512 per ch.08.
 11. Internal link crawl: zero 4xx/5xx; 301 map from the mined legacy inventory deployed and spot-checked (10 random old URLs → correct new targets).
 12. `packages/consent` active: banner + Google Consent Mode v2 + privacy/terms pages per entity.
+13. `/security-review` (built into Claude Code) run on the release diff: zero high/critical findings, evidence pasted.
 
 ## B · AGENT LAUNCH TASKS (run per site; paste evidence into `launches/<domain>.md`)
 **Search & content intelligence**
@@ -27,7 +28,7 @@
 3. GA4 property + web data stream created; site ID in `packages/analytics` config.
 4. GTM container published: GA4 tag + conversion events mapped from `data-cta` (form_submit, whatsapp_click, call_click, add_to_cart_assist).
 5. Google Ads: conversion actions created + linked (import from GA4 or GTM tag); if campaigns exist for this domain → final-URL cutover per PPC protocol.
-6. Meta pixel installed + domain verified in Business Manager (C/E register consumer sites); LinkedIn Insight Tag (A-register B2B: franchise, bulk, kappl, equipment); Bing UET where Ads run there.
+6. Meta pixel installed + domain verified in Business Manager (C/E register consumer sites); LinkedIn Insight Tag (A-register B2B: franchise, bulk, kappl, equipment); Bing UET where Ads run there; **Triple Whale Pixel on every C-register site** (headless install; UTM `ms_<site>` standard) so microsite-assisted Shopify revenue attributes correctly.
 7. GSC property verified (domain property via Cloudflare DNS) + sitemap submitted; Bing Webmaster verified + sitemap submitted.
 **Integrations**
 8. Forms v1: EXACT current CRM field schema + endpoint (per FORMS section below); send one live test lead → screenshot it arriving in CRM with consent flag + source attribution. This is the single most important evidence item.
@@ -36,6 +37,10 @@
 **Housekeeping**
 11. Redirect the domain's forward-family variants at Cloudflare (per semantic map).
 12. Social profile links verified; press/author pages linked where register = A/ED.
+13. Runtime monitoring live: Vercel Speed Insights + Analytics enabled on the project; Sentry project created and DSN wired (errors flow to the shared Kairali Sentry org, alert rule → email).
+14. Design-critic gate passed (scripts/design-review/PROMPT.md): skeptical-marketer review at 375px then desktop with computed-style audit; average ≥9.0/10, no criterion <7, max 3 iterations; scorecard + honest-limitations committed to `launches/<domain>/design-review.md` BEFORE the preview goes to C-1. (Formalized 14 Jul 2026 from the arogyakendra pass.)
+
+> **Enforcement note:** Gate A is not a memory exercise — it is enforced twice mechanically: Claude Code hooks re-run the fast gates after every edit and before every push, and GitHub branch protection makes the full CI gate a required check on main. A site physically cannot merge unchecked. (Created in Setup Phase 8: scripts/hooks/ + .github/workflows/gate.yml + branch protection.)
 
 ## C · HUMAN GATE (the only three things Abilash does)
 1. Approve the Vercel preview (section-by-section for A-register flagships).
@@ -48,6 +53,7 @@ Day 7: CWV field sample · keyword indexing spot-check · lead count vs baseline
 
 ## E · THE LEARNING LOOP (the "keeps learning from previous sites" mechanism)
 After every launch: 15-minute retro appended to `LEARNINGS.md` — what broke, what was manual, what should become template/package code. Anything appearing twice gets a PR into `packages/*` or this checklist within the same week. The mined legacy data (top pages, top queries from GSC history) is recorded per site so the next similar site starts from evidence, not zero. This file is read by the agent at the start of every new site build. That is how site #12 is built with everything learned on sites #1–11.
+**Wiki layer (Karpathy LLM Wiki pattern):** mined legacy content = immutable raw sources; the agent compiles/updates `wiki/` pages (one page per domain, entity, integration; navigated by `wiki/index.md` + `wiki/log.md`) at every launch; a **weekly lint pass** checks the wiki for contradictions, stale facts, and gaps, and proposes fixes. Wiki pages are also the export source for the Chatbase entity KBs.
 
 ## FORMS — v1 FREEZE / v2 BACKLOG
 **v1 (speed + CRM continuity):** replicate the CURRENT production form structure exactly — field names, hidden fields, source tags, and endpoint — so the CRM/database ingests without any migration work. Additions allowed in v1 only where compliance demands: consent checkbox + privacy link (DPDP), Cloudflare Turnstile anti-spam (invisible; doesn't change the payload), `data-cta` events. **Needed from Ambuj once: the canonical form schema + webhook/endpoint + a test-mode flag.** That becomes `packages/forms` v1 for all 28 sites.
