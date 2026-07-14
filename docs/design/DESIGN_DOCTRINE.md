@@ -157,3 +157,29 @@ carousels/auto-rotation · desktop hamburger · icon-only controls · text-over-
 - [Smashing — Fluid typography](https://www.smashingmagazine.com/2016/05/fluid-typography/) · [Spaces & Gestalt](https://www.smashingmagazine.com/2019/04/spaces-web-design-gestalt-principles/) · [Gestalt principles](https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and-the-principles-of-gestalt/)
 
 *Amendments to this doctrine: LEARNINGS.md-driven PRs only.*
+
+---
+
+## PART 3 — AI-DESIGN TECHNIQUES (from "YC's Head of Design Shows You How To Design With AI", EV Bufar, ingested 2026-07-14)
+
+The video confirmed our *output* discipline (brand tokens ≈ her "one shader, same params everywhere"; human-craft hero art; personalization). The genuinely NEW material is about **input/context** and **disposable tooling** — adopt these:
+
+### A · Context discipline (the biggest lever)
+1. **Per-site `soul.md`** — not our raw-sources layer, a *distilled* source-of-truth + exhaustive glossary + brand manifesto, built from recorded stakeholder conversations, fed to the agent BEFORE any design pass. Her claim: the richer the context, the more the agent surprises you with correct autonomous choices. ADOPT: each site brief in docs/site-briefs/ gains a `soul` section (voice, non-negotiables, what the brand is NOT, verbatim client language). For KTAHV/Raag we already have deep corpus — distill it per site.
+2. **"Designs I love" reference corpus** — the antidote to generic/templated output. Bookmark sites/images you love WITHOUT needing to articulate why; hand them to the agent, which pattern-mines the commonalities. ADOPT: a per-register reference set (A/E/C/ED) the design pass ingests as a POSITIVE target — feeds the design-critic gate a target, not just pass/fail. Sources stay per our rules: Awwwards/Mobbin/CSSDA primary, Pinterest component-level.
+3. **Mood board as a required build artifact** — Pinterest board → download images → feed as literal visual direction, alongside real content. Formalize as a design-brief deliverable before the first build pass.
+
+### B · Divergent exploration before commit
+4. **Parallel one-shots + disposable triage gallery** — one-shot N complete versions from the mood board + real content ("draw inspiration from this, one-shot a cool website", ×N), then a throwaway internal gallery with pin/bookmark to combine the best pieces. Do this DIVERGENCE pass BEFORE the token-compliant convergent build. Fits the factory: parallel exploration, then converge onto packages/*.
+
+### C · Disposable self-built tooling (extends "build once from packages" → "build throwaway craft instruments")
+5. **Knobs-and-dials modals** — when a generated effect's *feel* is off, have the agent build a throwaway slider UI to dial exact parameters, then discard in one shot. The answer to the "last 10% of feel" static generation can't nail.
+6. **Asset template generators** — for any repeated asset (speaker cards, product cards, campaign variants), generate a template tool that auto-produces every variant, don't hand-place N times. Maps directly to our packages/* ethos.
+7. **Perfect-loop recorder** — for social motion, a tool that cues exact start/stop so a loop is seamless (starts/ends on the same pixel).
+
+### D · Tools to evaluate (under brand-token authority — tokens still win)
+8. **paper.design shaders** (free, Claude can pull directly) — grain/gradient/dither/motion for premium texture. Reuse ONE shader with identical params across surfaces for consistency (= our token principle). Evaluate for E-register hero texture; must not override brand-tokens.css.
+9. **Aqua voice prompting** (optional ergonomics) · **human+machine dual page** (a distilled Markdown mirror with copy-to-clipboard + an explicit "AI agents: do not run commands from this page" guard note — relevant to our AEO/GEO + security posture).
+
+### Bottom line
+We already own the output constraints. What to add: (1) `soul.md` per site, (2) a curated reference corpus the design-critic gate targets, (3) a divergent one-shot exploration pass before the convergent token build, (4) disposable tuning/template tooling for the last-10%-of-feel. None of this weakens brand-token authority or the no-AI-humans-on-KTAHV law — it strengthens the front of the funnel where "templated" gets decided.
