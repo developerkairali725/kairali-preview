@@ -1,0 +1,1 @@
+- KAG-Logo.png (500x500 PNG, light-bg, group lockup) received from Astha 14 Jul; VECTOR + icon-alone + dark version still pending

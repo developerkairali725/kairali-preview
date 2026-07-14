@@ -28,7 +28,7 @@ deleted — history is the point.
 - [ ] Wave 2: kairali.guru migration into sites/ per docs/site-briefs/kairali-guru-migration.md (~5.5–6 d; first step = mine.py kairali.guru + repo freeze) — gate: Eeshal org invite + her final push
 - [ ] Per-wave SEO baselines (MIGRATION_PLAYBOOK §4): docs/baselines/<site>/ GSC Performance/Index + GA4 + crawl exports BEFORE each wave's cutover — gate: GSC/GA access (see WAITING ON, Vikash)
 - [ ] Chatbase per-entity KB pipeline (Ship Gate B9: MDX export per entity on merge + scheduled recrawl) — after the four entity bots replace the interim Priya bot (DECISIONS 18:51)
-- [ ] sites/theblushlounge.com build (E register, personal brand, per docs/site-briefs/theblushlounge.md) — gates: Abilash wave-slot ruling + WhatsApp-number/brand-assets answers (QUESTIONS 19:38); snehachowdhary 301 flips only when it is LIVE
+- [ ] sites/theblushlounge.com build — **WAVE 1** (Abilash 14 Jul; E register, WhatsApp +91 88269 21110). Brief: docs/site-briefs/theblushlounge.md. Origin RESTORED (Sunaj, SSL fix). Remaining gate: Sneha brand assets / IG originals (low-res logo only mined); snehachowdhary.com 301 flips only when the new site is LIVE
 - [ ] Wave 3 (Days 19–25): Fleet Pulse dashboard on kairali.ai (internal dashboards home), corporate/brand sites, MainWP
 - [ ] Wave 4 (Days 25–29): kairali.com flagship (content preload starts Day 14)
 - [ ] Monday ritual (every Mon, first: 20 Jul): wiki lint + pnpm audit + Dependabot triage + hook self-test

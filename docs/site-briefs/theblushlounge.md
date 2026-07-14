@@ -25,7 +25,7 @@ Old-school static PHP + Bootstrap 3 brochure site ("Blush Lounge – Makeup by S
 | `/contact.php` | "Let's get in touch!" — phone **088269 21110**, email **makeoverbysneha@gmail.com**, address **Shivalik, New Delhi, India**, contact form |
 | `/blog/` (WP, theme "blankslate") | 2 posts only: "BRIDAL MEKEUP" (2019-03-13, sic) and "BLUSHLOUNGE BY SNEHA" (2018-05-01, colour-correction tips). Dormant since 2019 |
 
-Other mined facts: GTM container `GTM-MFXP2LH`; Instagram **@blushlounge_sneha**; WhatsApp links carry **two different numbers** (+91 88269 21110 and +91 88260 21114 — conflict, do not reuse either without Abilash/Sneha confirming); fonts Montserrat + decorative Allura/Antiqua; no schema, no OG tags, no sitemap found, `services.php` linked in nav but never captured (likely never built — service pages linked directly).
+Other mined facts: GTM container `GTM-MFXP2LH`; Instagram **@blushlounge_sneha**; **WhatsApp = +91 88269 21110 (RESOLVED, Abilash 14 Jul — Sneha's real number; the …21114 on the old site was Sunaj's, a mistake, do NOT use)**; fonts Montserrat + decorative Allura/Antiqua; no schema, no OG tags, no sitemap found, `services.php` linked in nav but never captured (likely never built — service pages linked directly).
 
 ## 2 · Strongest content (worth carrying forward)
 
@@ -72,7 +72,7 @@ Per `docs/research/forward-strategy-D1.md` implementation rules 1–8:
 ## 5 · Open items (also in QUESTIONS.md)
 
 - Hosting outage: revive old droplet or accept downtime until Factory rebuild ships?
-- WhatsApp number conflict (…21110 vs …21114) — which is Sneha's real one?
+- WhatsApp number: RESOLVED 14 Jul → +91 88269 21110 (…21114 was Sunaj's).
 - Blush Lounge brand assets: logo source file, any palette, `blush-tokens.css` decision.
 - Access to Instagram @blushlounge_sneha for fresh portfolio imagery (old gallery is 2018-era low-res).
-- Build-wave placement: not on the Wave map (personal site) — needs Abilash to slot it.
+- Build-wave placement: RESOLVED 14 Jul → WAVE 1 (light slot; site is family + now live-but-old, agent recommendation accepted). E-register single-pager per this brief.
