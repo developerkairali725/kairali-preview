@@ -26,7 +26,7 @@
 - Honest self-audit docs in docs/: feature-status-matrix.csv (every row candidly "No" on desktop/mobile/a11y/multilingual testing), compliance-audit, cookie/tracker inventories, keyword maps, redesign-plan. She also vendored the Factory OS doc (_temp_source/) — she's read our system.
 
 **Quality assessment — the bad:**
-- **Security: hardcoded client-side credentials** in student-hub/page.tsx: `email === "student@kairali.guru" && password === "REDACTED"` — fake auth committed to a public repo. Must be removed or replaced with real auth + noindex before any deploy (her own matrix flags it).
+- **Security: hardcoded client-side credentials** in student-hub/page.tsx — a fake client-side auth check comparing against a hardcoded email + password pair (literal value redacted from this repo 2026-07-14; treat the password as compromised and rotate it anywhere it is reused). Committed to a PUBLIC repo. Must be removed or replaced with real auth + noindex before any deploy (her own matrix flags it).
 - **Forms lane conflict:** EnquiryForm inserts directly into Supabase from the client with the anon key (name/email/country/programme/phone/language/location). Factory lane is packages/forms → Satyam's webhook; a public-repo Supabase table also raises RLS + DPDP consent-evidence questions. Replace, don't extend.
 - **Analytics is a stub:** AnalyticsTracker logs pageviews to console. No GA4, no Google Consent Mode v2 — her consent UI is not wired to anything real. packages/analytics + packages/consent replace this.
 - **Rogue palette:** globals.css defines its own token set (bark/laterite/palm/turmeric/sage/sand…, 15 raw hexes) — not brand-tokens.css; brand lint would fail the build today.
