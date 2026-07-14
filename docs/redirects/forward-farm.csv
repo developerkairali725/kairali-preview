@@ -1,0 +1,44 @@
+source_domain,family,target_now,target_final,gate,notes
+kairalicenter.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+kairalicenter.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+kairalicenters.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+kairalicentre.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+kairalicentres.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacenters.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacenters.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacentre.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacentre.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacentres.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralacentres.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+healthspacenter.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+healthspacenters.com,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),
+keralatraining.com,training,https://kairali.guru/,https://kairali.guru/,none (flip-ready),
+kairalitraining.com,training,https://kairali.guru/,https://kairali.guru/,none (flip-ready),
+traininginayurveda.com,training,https://kairali.guru/,https://kairali.guru/,none (flip-ready),
+keralaayurvedainstitute.com,training,https://kairali.guru/,https://kairali.guru/,none (flip-ready),
+kairaliayurvedainstitute.com,training,https://kairali.guru/,https://kairali.guru/,none (flip-ready),
+kairalioils.com,products,https://www.kairaliproducts.in/,https://kairalioil.com/,Wave-1 kairalioil.com launch,interim to live parent per D1 rule 8; re-point at launch (list edit — never chain)
+kairaliequipments.com,products,https://www.kairaliproducts.in/,https://kairaliequipment.com/,Wave-1 kairaliequipment.com launch,interim per D1 rule 8
+keralaequipments.com,products,https://www.kairaliproducts.in/,https://kairaliequipment.com/,Wave-1 kairaliequipment.com launch,interim per D1 rule 8
+kairaliorganics.com,products,https://www.kairaliproducts.in/,https://kairaliorganic.com/,Wave-1 kairaliorganic.com launch,D3: Kairali Organic brand (not KAIR); interim per D1 rule 8
+keralaherbals.com,products,https://www.kairaliproducts.in/,https://kairaliherbals.com/,Wave-1 kairaliherbals.com launch,interim per D1 rule 8
+kairalipharma.com,products,https://www.kairaliproducts.in/,https://www.kairaliproducts.in/,none (flip-ready),no pharma microsite in Wave 1 — kairaliproducts.in is final
+keralapharma.com,products,https://www.kairaliproducts.in/,https://www.kairaliproducts.in/,none (flip-ready),no pharma microsite in Wave 1 — kairaliproducts.in is final
+keralatowels.com,products,https://www.kairaliproducts.in/,https://www.kairaliproducts.in/,none (flip-ready),no towels microsite planned; revisit if kairalitowels.com becomes a Wave site
+kairaliproducts.com,products,https://www.kairaliproducts.in/,https://www.kairaliproducts.in/,none (flip-ready),.in is the canonical live store
+whyayurveda.com,whatisayurveda,https://whatisayurveda.org/,https://whatisayurveda.com/,Wave-2 whatisayurveda.com launch,interim to live .org (topical parent); at Wave-2 cutover re-point with the .org row in the SAME list edit — never chain
+whyayurveda.in,whatisayurveda,https://whatisayurveda.org/,https://whatisayurveda.com/,Wave-2 whatisayurveda.com launch,same cutover edit as whyayurveda.com
+whyayurveda.org,whatisayurveda,https://whatisayurveda.org/,https://whatisayurveda.com/,Wave-2 whatisayurveda.com launch,same cutover edit as whyayurveda.com
+whatisayurveda.org,whatisayurveda,,https://whatisayurveda.com/,Wave-2 whatisayurveda.com launch,LIVE aged site (D2: .com canonical) — stays live until .com ships; 301 flips at cutover
+casaraag.com,raag,https://villaraag.com/,https://villaraag.com/,none (flip-ready),
+raagcasa.com,raag,,https://villaraag.com/,confirm registration/ownership,HOLD — named in Runbook §2D + D1 but ABSENT from sweep_results.csv; never upload unverified rows
+raagvilla.com,raag,,https://villaraag.com/,confirm registration/ownership,HOLD — named in Runbook §2D + D1 but ABSENT from sweep_results.csv; never upload unverified rows
+theraagvilla.com,raag,,https://villaraag.com/,confirm registration/ownership,HOLD — named in Runbook §2D + D1 but ABSENT from sweep_results.csv; never upload unverified rows
+ktahv.com,ktahv,https://ayurvedichealingvillage.com/,https://ayurvedichealingvillage.com/,none (flip-ready),
+kairalivillage.com,ktahv,https://ayurvedichealingvillage.com/,https://ayurvedichealingvillage.com/,none (flip-ready),
+arogyakendra.co.in,arogya,https://arogyakendra.com/,https://arogyakendra.com/,none (flip-ready),source currently serves a live legacy IIS site — flip timing is the human call
+arogyashala.co.in,arogya,,https://arogyashala.in/,arogyashala.in DNS restore (Sunaj),HOLD — target is DNS-DEAD (sweep dns_fail; re-verified 000 on 14 Jul) while source serves a LIVE site (200) — D1 rule 8 forbids this flip
+houseofayurveda.in,catch-all,https://www.kairali.com/,https://www.kairali.com/,none (flip-ready),D1: no closer topical home
+kairali.co.in,catch-all,https://www.kairali.com/,https://www.kairali.com/,none (flip-ready),
+ayurvedafranchise.com,franchise,,https://www.kairalifranchise.com/,D4 ruling (merge vs SEO satellite),HOLD — Runbook decision #4 pending with Abilash; Runbook once spells it 'aayurvedafranchise'; sweep ground truth is ayurvedafranchise.com
+snehachowdhary.com,blush,,https://theblushlounge.com/,D6 + theblushlounge.com rebuild LIVE,HOLD per D1 rule 8 — never 301 to a coming-soon page

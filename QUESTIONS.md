@@ -73,3 +73,12 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 ## 2026-07-13 19:50:28 IST · URGENT pair from the overnight synthesis
 - **theblushlounge.com is DOWN** (DigitalOcean origin unreachable on all ports; was live Nov 2025). This is Sneha's live business site. Who manages that droplet — Sunaj or Ambuj? Restore or accelerate the rebuild; brief ready at docs/site-briefs/theblushlounge.md (content recovered via Wayback).
 - **Security: Eeshal's PUBLIC repo (kairali-guru-) contains a hardcoded student-hub password.** Action: Eeshal rotates that credential immediately and makes the repo private (or removes the secret + history). Flag when she joins the org.
+
+## 2026-07-14 11:56:19 IST · Wave-0 mechanization session (packages + gates + forward farm)
+- **Brand-lint exemptions to ratify (or veto, like the banned-filler one):** site.config.json now carries `brand: "kairali" | "raag" | "none"`; abhilashkr (own personal design) and kairali.ai (internal placeholder) are set to `"none"` — exempt from token law only (compliance lint still applies). Related: should those two also join the factory-spec CI matrix in .github/workflows/factory-gate.yml (currently arogyakendra only)?
+- **kairaliproduct.com (singular)** is in sweep_results.csv but NOT in Runbook §2D's forward list — does it join the products family in docs/redirects/forward-farm.csv?
+- **raagcasa.com / raagvilla.com / theraagvilla.com** are named in Runbook §2D + D1 but absent from the 87-domain sweep — confirm we actually own them (rows are HELD until then).
+- **ktahv.com already 301s correctly** (all 4 URL forms, single hop → https://ayurvedichealingvillage.com/, verified 14 Jul) — where is that redirect configured (already Cloudflare? registrar forward?)? Matters for consolidating everything into the one Bulk Redirects list without breaking a working redirect.
+- **arogyashala.co.in flip is now BLOCKED, not just pending:** its D1 target arogyashala.in is DNS-dead (sweep dns_fail, re-verified 14 Jul) while arogyashala.co.in itself serves a live site — held per D1 rule 8. Sunaj's registrar/DNS fix is the gate.
+- **whyayurveda.* interim target:** pointed at whatisayurveda.org (nearest LIVE topical parent per D1 rule 8) with a noted same-edit re-point to .com at Wave-2 cutover — ratify.
+- **Consent banner vs Chatbase bubble:** on first visit at 375px the interim Priya bubble overlaps the banner's text edge (cosmetic; banner dismisses forever after one tap). Fix now or fold into the packages/ui "floating stack" idea from LEARNINGS #3?
