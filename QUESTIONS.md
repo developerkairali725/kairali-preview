@@ -82,3 +82,8 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 - **arogyashala.co.in flip is now BLOCKED, not just pending:** its D1 target arogyashala.in is DNS-dead (sweep dns_fail, re-verified 14 Jul) while arogyashala.co.in itself serves a live site — held per D1 rule 8. Sunaj's registrar/DNS fix is the gate.
 - **whyayurveda.* interim target:** pointed at whatisayurveda.org (nearest LIVE topical parent per D1 rule 8) with a noted same-edit re-point to .com at Wave-2 cutover — ratify.
 - **Consent banner vs Chatbase bubble:** on first visit at 375px the interim Priya bubble overlaps the banner's text edge (cosmetic; banner dismisses forever after one tap). Fix now or fold into the packages/ui "floating stack" idea from LEARNINGS #3?
+
+## 2026-07-14 13:14:52 IST · Answered today by Abilash (in-chat) + still-open re-asks
+- ANSWERED: villa 212 = Royal (guide wins) · guru student-hub = temp benchmark, redo; digital program = "coming soon" · guru sitemap = keep · Blush Lounge droplet = Sunaj (call in progress) · image-folder shares = Abilash clicking the links · Pinterest = component-level source, yes · Google Ads/GA4/GSC/Semrush = browser sessions available.
+- STILL OPEN (re-ask, simply): (1) **Maharaja Suites** — rooms 1001 and 1002 have swapped names between the Nakshatra guide and the old website; which name belongs to which room? (2) exact name of the ChatGPT image model Abilash recommends ("Sol 5.6" as heard). 
+- NEW: interim uptime monitor priority raised (Abilash "regular listening tool") — see BACKLOG; news/watch monitor for stack-relevant updates queued for Fleet Pulse phase.

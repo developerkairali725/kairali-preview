@@ -9,20 +9,21 @@ Kairali Ayurvedic Group — a 118-year family business (since 1908; founders' fa
 - **KTAHV** — Kairali, The Ayurvedic Healing Village (ayurvedichealingvillage.com): NABH-accredited Ayurvedic **hospital**-retreat, Kodumbu/Olassery, Palakkad, Kerala. Clinical register ALWAYS.
 - **KAPPL** — Kairali Ayurvedic Products Pvt. Ltd.: WHO-GMP-certified Ayurvedic pharma/products manufacturer. Product/pharma register. E-commerce runs on **Shopify** (checkout/payments live there and ONLY there).
 - **Villa Raag** — boutique wellness property, Agonda, South Goa. Hospitality/wellness register is CORRECT here.
-Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training arm (kairali.guru, live Next.js), franchise arm.
+Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training arm (kairali.guru, live Next.js, EN-only today), franchise arm.
 
 ## 2 · PEOPLE & ROUTING
 - **Abilash** — decisions, approvals, DNS flips. The only production gate.
 - **Ambuj** — infra/access/security/MainWP/servers.
 - **Deepu (web developer)** — executes WordPress specs. **Dr. Deepu John (chief physician)** — clinical sign-off on medical content. TWO DIFFERENT PEOPLE. Never conflate. Medical pages need Dr. Deepu John, not Deepu.
 - **Anupam** — head of marketing. **Vikash** — digital marketing/Google Ads/GSC. **Ritu** — EA.
+- **New engineer (joined 13 Jul 2026; name TBD — update)** — daily ops, QA, Shopify catalog hygiene, Monday lint triage; onboarding: NEW_ENGINEER_DAY1.md.
 - **Gita Ramesh** — co-founder, cookbook author, central brand & clinical authority (bylines, E-E-A-T anchor, healing.recipes).
 - Content team — writes/edits words only; publishes nothing directly.
 
 ## 3 · LOCKED FACTS (grep-verifiable; wrong values are bugs)
 - Public contact email everywhere: **info@kairali.com**
 - Priya's KTAHV WhatsApp: **+91 92898 38797** (…38777 is a known-bad value — remove on sight)
-- KTAHV locales: EN/DE/FR. kairali.guru: EN/DE/FR/AR/RU. Others per SITE_DESIGN_LOCALE_REGISTER.md.
+- KTAHV locales: EN/DE/FR. kairali.guru LIVE site: EN-only (verified 13 Jul 2026 — DECISIONS 14 Jul; EN/DE/FR/AR/RU exist only in Eeshal's repo, Wave-2 target). Others per SITE_DESIGN_LOCALE_REGISTER.md.
 - Group heritage: since 1908. KTAHV: NABH-accredited. KAPPL: WHO-GMP.
 
 ## 4 · COMPLIANCE STACK (all machine-gated where possible)
@@ -56,17 +57,17 @@ Also: ~18 Ayurvedic Centres across 9 countries (kairalicenters.com), training ar
 - **KTAHV migration method** (post-sprint): rewrite-vs-**deindex** triage per page (prune thin/AI pages instead of rewriting all 376), 301 map from mined inventory, condition-page template (doctor-bylined), Dr. Deepu John sign-off lane.
 
 ## 7 · ALREADY BUILT (don't rebuild; reuse)
-KTAHV consultation/enquiry/contact/how-to-reach pages v1.3.x (EN/DE/FR) + Python transform pipeline + 19 compliance gates + staging-only push script (`push_to_wp.py`) · kairali.guru live Next.js (EN/DE/FR/AR/RU) — the component/i18n donor · Financial OS (₹18.96 Cr FY25-26 verified) · Saanvi voice agent + Call Analysis + Scheduling prompts · Lead classification v4.3 (5 verticals) · Agent Alex email + Priya chatbot · MOA Matrix v3.0 + European Buyer Journey (8 stages, DACH/FR MOAs) · 18+ competitor dossiers · Brand Manual 2026 (tokens now in code) · Vendor-evaluator prompt (use it on any future agency) · Fleet OS / Runbook / Phase-0 / sweep.sh / ktahv spec suite (see §10).
+KTAHV consultation/enquiry/contact/how-to-reach pages v1.3.x (EN/DE/FR) + Python transform pipeline + 19 compliance gates + staging-only push script (`push_to_wp.py`) · kairali.guru live Next.js (EN-only live; 5-locale build in Eeshal's repo) — the component/i18n donor · Financial OS (₹18.96 Cr FY25-26 verified) · Saanvi voice agent + Call Analysis + Scheduling prompts · Lead classification v4.3 (5 verticals) · Agent Alex email + Priya chatbot · MOA Matrix v3.0 + European Buyer Journey (8 stages, DACH/FR MOAs) · 18+ competitor dossiers · Brand Manual 2026 (tokens now in code) · Vendor-evaluator prompt (use it on any future agency) · Fleet OS / Runbook / Phase-0 / sweep.sh / ktahv spec suite (see §10).
 
 ## 8 · CURRENT MISSION
 30-day sprint (13 Jul → 12 Aug 2026): stabilize the live estate (Phase 0), stand up the Factory, ship ~28 sites in 5 waves (pilots → product microsites → business lines → corporate/brand → kairali.com), forward-farm ~35 domains, Fleet Pulse on kairali.ai, hand over to one IT person + content team. KTAHV stays WP this sprint (tech fixes only; incl. **sitemap_index 404 in robots.txt** from the Delante findings) and migrates first afterward.
 
 ## 9 · DECISIONS LOG
 **Locked:** semantic architecture as default recommendation (variants 301 to nearest live site) · Shopify-only checkout · Tier discipline · registrar-first access · no AI humans on KTAHV · two-plane Cloudflare.
-**Pending (Abilash):** 1 forward strategy final word · 2 whatisayurveda .org vs .com canonical · 3 Kairali Organic vs KAIR consolidation · 4 ayurvedafranchise merge-or-satellite · 5 drop-list confirmation · 6 snehachowdhary/theblushlounge primary · 7 ayurvedajournals intent ("Believe it") · 8 updated Raag brand manual delivery (gates villaraag.com visual finalization) · 9 canonical CRM form schema + endpoint from Ambuj (gates packages/forms v1).
+**Pending (Abilash):** 1 forward strategy final word · 2 whatisayurveda .org vs .com canonical · 3 Kairali Organic vs KAIR consolidation · 4 ayurvedafranchise merge-or-satellite · 5 drop-list confirmation · 6 snehachowdhary/theblushlounge primary · 7 ayurvedajournals intent ("Believe it") · 8 updated Raag brand manual delivery (gates villaraag.com visual finalization) · 9 canonical CRM form schema + endpoint from Ambuj (gates packages/forms v1) · 10 Shopify Stage-0 (one store w/ Markets vs two stores — resolved during Shopify setup) + staff account for the new engineer via Ambuj.
 
 ## 10 · STANDING DOCS INDEX (source-of-truth order on conflict: newest version wins; this file arbitrates)
-`CLAUDE.md` (fleet rulebook + factory addendum — conduct & gates) · `PROJECT_CONTEXT.md` (this) · `SITE_LAUNCH_CHECKLIST_v1.0.md` (definition of done, every site) · `LEARNINGS.md` (append-only; read before every build) · `SITE_DESIGN_LOCALE_REGISTER.md` (per-site audience/register/locales/video/KPI) · `packages/ui/brand-tokens.css` (visual law; `raag-tokens.css` pending) · `KAIRALI_30DAY_BUILD_RUNBOOK_v1.0.md` (+PHASE0 amendment) · `KAIRALI_WP_FLEET_OS_v1.0.md` (WP tail ops) · `ktahv-critical-flows.spec.ts` (deterministic gate) · `sweep.sh` + `sweep_results.csv` (estate truth) · `DECISIONS.md` (append-only) · `QUESTIONS.md` (unattended-session questions) · Content KB & MOA docs (content direction).
+`CLAUDE.md` (fleet rulebook + factory addendum — conduct & gates) · `PROJECT_CONTEXT.md` (this) · `SITE_LAUNCH_CHECKLIST_v1.0.md` (definition of done, every site) · `LEARNINGS.md` (append-only; read before every build) · `wiki/` + index.md + log.md (Karpathy LLM-Wiki compiled memory; Monday lint; feeds Chatbase KBs) · `SITE_DESIGN_LOCALE_REGISTER.md` (per-site audience/register/locales/video/KPI) · `SHOPIFY_TRACK_CONTEXT.md` (KAPPL e-commerce brain; live admin overrides it) · `NEW_ENGINEER_DAY1.md` (onboarding) · `packages/ui/brand-tokens.css` (visual law; `raag-tokens.css` pending) · `KAIRALI_30DAY_BUILD_RUNBOOK_v1.0.md` (+PHASE0 amendment) · `KAIRALI_WP_FLEET_OS_v1.0.md` (WP tail ops) · `ktahv-critical-flows.spec.ts` (deterministic gate) · `sweep.sh` + `sweep_results.csv` (estate truth) · `DECISIONS.md` (append-only) · `QUESTIONS.md` (unattended-session questions) · Content KB & MOA docs (content direction).
 
 ## 11 · AGENT CONDUCT (summary; CLAUDE.md is binding)
 Staging first, human gate for production and DNS. Editor-role WP credentials from env only. Proof-of-work: no "done" without a live link/real output/passing spec; check ALL locales. Never invent facts/IDs/prices — ask. Medical content → Dr. Deepu John lane. When blocked unattended → QUESTIONS.md and continue. `--force-with-lease` only. If this file and reality disagree, say so loudly and update via Abilash.
