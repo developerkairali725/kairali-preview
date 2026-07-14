@@ -125,3 +125,9 @@ Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible
 ## 2026-07-14 18:40:00 IST — kairalitea.com BLOCKED by catalog reality (build-order pivot)
 - **Q-TEA3 (Abilash + Vikash):** The live Shopify store (kairaliproducts.com, 157 products) has exactly ONE tea SKU — "Ayurvedic Herbal Infusion - Herbal Tea for Immunity & Vitality", ₹20, OUT OF STOCK. Taahira Ayurvedic Herbal Tea (photographed, 8 library images) is listed on NEITHER website. kairalitea.com cannot assist add-to-carts against this. Ruling needed: which tea SKUs will exist (Taahira launch? restock? price points?) before the site ships. Research brief is banked and ready (docs/kappl-inputs/kairalitea-niche-brief.md).
 - **Q-TEA4 (Monday catalog lint / Vikash):** the one live tea SKU's TITLE carries "for Immunity & Vitality" — a benefit claim inside a food product title (FSSAI claims exposure, brief §5.B). Flag for the catalog-compliance pass; do not reproduce the title verbatim on any Factory surface.
+
+## 2026-07-14 19:55:00 IST — closures + new (Abilash night batch)
+- Q-KC1 ANSWERED: reference only. Q-KC2 ANSWERED: 1908. Q-KC3 ANSWERED: IVR number, real. "Slaget" ANSWERED: transcription artifact, nobody. Free-consultation ANSWERED: real config.
+- **Q-TEA5 (Abilash/Vikash, NEW):** "Yuvan tea" is not on either Shopify store's public catalog — what is its exact listing name/URL (or does it sell on another channel: Amazon/offline)? Needed before kairalitea.com merchandises it.
+- **Q-TEA6 (Vikash, NEW — catalog-compliance flag):** Aarogya Herbal Infusion on .com shows ₹20 available=true (vs ₹618 on .in) — looks like a placeholder price on a LIVE purchasable listing. Route per rule (l)/(m); do not auto-fix.
+- Q-KC4 (which agency built the Hostinger site) — still open, low priority now (reference-only).
