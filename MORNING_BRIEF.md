@@ -48,3 +48,24 @@ _None stale yet — all logged 13 Jul (1 day old); 3-day stale threshold hits 16
 - **whatisayurveda research complete + merged** (docs/group-inputs/whatisayurveda-niche-brief.md): the "what is ayurveda" results page is owned by Hopkins/Cleveland/NCCIH/Healthline — NO heritage practitioner brand ranks; our edge = real BAMS physicians (Dr. Deepu John as named medical reviewer, satisfying E-E-A-T and rule 7 in one workflow), WHO-GMP/NABH first-hand content, and answering the heavy-metals objection head-on. Day-one: ~20-page hub-and-spoke with answer capsules built for AI-Overview citation (51% of healthcare queries trigger AIOs). .org mine: it's ONE page with 98 dead links — greenfield build, nothing to migrate, 94 images harvested anyway.
 - **Build begins tonight** on sites/whatisayurveda.com per the ruled build order (non-revenue rescue first). Clinical claims ship only after Dr. Deepu John's review — flagged in the plan.
 - Rates reckoner: COMPLETE (26 tables, 6/6 PDFs, price-verified) + Q-RATE1-4 for you (incl. the $927 Suite-double anomaly and the missing-Sanskrit-table question).
+
+## 2026-07-15 00:20:00 IST — OVERNIGHT WRAP (agent, autonomous build session)
+### SHIPPED (all merged to main, CI green, launch-ready)
+- **4 sites**: kairali.com (design 9.2), whatisayurveda.com (9.0, v1 of the "Ayurveda bible"), kairalicenters.com (9.0, 14 verified centres) — built tonight; arogyakendra already live. All now carry legal pages + working consent.
+- **@kairali/legal** package → privacy/terms/cookie fleet-wide (A12 closed everywhere).
+- Rates reckoner complete (26 tables, price-verified) · uptime monitor live on GitHub · SEO-tooling verdict (buy DataForSEO $50).
+
+### URGENT (do first)
+1. **Send the Sunaj "kairalicenters.com is HACKED" email** — live site has gambling-spam injection (in Drafts + bulk sheet row 7). A live Kairali property is compromised right now.
+2. Send the other Gmail drafts (Satyam, Astha·CC Ritu, Anupam banned-words, Sunaj security).
+
+### DECISIONS THAT UNBLOCK SITES (the current critical path)
+- **Canonical "X centres in Y countries" roster** — conflicts everywhere (18/9 vs 14/5 vs 35/25). ONE authoritative number unblocks kairali.com + kairalicenters + franchise. (Q-KC-ROSTER / Q-FR-SCALE)
+- **Franchise**: (a) gate investment behind enquiry OR give me the figures; (b) canonical domain (kairalifranchise 301s to ayurvedafranchise). (Q-FR-*)
+- **Equipment**: legacy product DB is empty (0 SKUs) + the live site is 500/broken & leaking server paths — need the real product list, and route the broken-site fix. (Q-EQ-*)
+
+### WHY THE BUILD PIPELINE PAUSED (~00:20 IST)
+Three legacy sites mined in a row (centres/franchise/equipment) are each hacked / empty-DB / missing-figures — the mining discipline (no fabrication, rule 6) correctly refused to build on absent data. Further non-revenue rebuilds need Abilash to SUPPLY source data or point at targets that have it. Self-contained factory work remains (packages/ui floating-stack #11, packages/forms store-first #12 — the latter needs the Supabase creds).
+
+### YOUR OTHER MORNING ITEMS
+Vercel imports (kairali.com + whatisayurveda + kairalicenters), create Supabase project, DataForSEO $50 + key on the office machine, the drive for the archive.
