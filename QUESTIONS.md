@@ -87,3 +87,8 @@ Also reconfirmed: folders "KTAHV New Shoot 2025 HO centre" (1LlD59bSNYYcgddcVkYG
 - ANSWERED: villa 212 = Royal (guide wins) · guru student-hub = temp benchmark, redo; digital program = "coming soon" · guru sitemap = keep · Blush Lounge droplet = Sunaj (call in progress) · image-folder shares = Abilash clicking the links · Pinterest = component-level source, yes · Google Ads/GA4/GSC/Semrush = browser sessions available.
 - STILL OPEN (re-ask, simply): (1) **Maharaja Suites** — rooms 1001 and 1002 have swapped names between the Nakshatra guide and the old website; which name belongs to which room? (2) exact name of the ChatGPT image model Abilash recommends ("Sol 5.6" as heard). 
 - NEW: interim uptime monitor priority raised (Abilash "regular listening tool") — see BACKLOG; news/watch monitor for stack-relevant updates queued for Fleet Pulse phase.
+
+## 2026-07-14 13:38:20 IST · Second batch answered (Abilash in-chat)
+- ANSWERED: abhilashkr brand exemption ratified (Kairali-inspired allowed, not required) · raag ×3 + all sheet domains owned · kairaliproduct.com → products family · banner×bubble fix now · U1 provisional = TWO stores (.in India / .com international, compliance + gateways) — verify at kickoff.
+- STILL OPEN: Maharaja Suites 1001/1002 names · where ktahv.com's existing 301 is configured · exact ChatGPT image-model name ("Sol 5.6" as heard) · shipping aggregator + couriers (runbook Part 4 blanks).
+- NOTE: whatisayurveda.com is a PARKED lander (verified 14 Jul) — the "fresh Jun 2026" in the Runbook was the registration, not a site. Flip stays gated on the Wave-2 build; Abilash informed.

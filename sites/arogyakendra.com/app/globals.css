@@ -310,6 +310,15 @@ h1, h2, h3 {
   }
 }
 
+/* While the consent banner is open, the chat bubble yields entirely — one
+   decision at a time, no floating-UI overlap on any viewport (Abilash
+   ruling 14 Jul: "fix it now"). ConsentBanner sets data-consent-open on
+   <html>; the attribute clears the moment a choice is made. */
+:root[data-consent-open] #chatbase-bubble-button,
+:root[data-consent-open] #chatbase-message-bubbles {
+  display: none !important;
+}
+
 /* ---------- Focus (ch.10: leaf-green ring on every control) ---------- */
 :where(a, button):focus-visible {
   outline: none;
