@@ -21,4 +21,9 @@ regexes = [
   # (content-mined/ immutable raw-sources layer). Widget site keys are served
   # to every visitor by design; the legacy site is being replaced.
   '''acobot\.ai/js/w\?key=''',
+  # localStorage KEY NAME (browser storage identifier, shipped to every
+  # visitor by design) in packages/consent — the generic-api-key rule matches
+  # the word KEY in CONSENT_STORAGE_KEY + a string constant. Verified 14 Jul
+  # 2026: no credential, value is the literal "kairali-consent-v1".
+  '''CONSENT_STORAGE_KEY = "kairali-consent-v1"''',
 ]
