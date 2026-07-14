@@ -1,0 +1,53 @@
+# Interim uptime listener (Ship Gate B10, priority raised 14 Jul 2026).
+# Runs on GitHub's infrastructure so it survives M2 power cuts. On failure
+# it opens (or comments on) a single "site down" issue — GitHub notifies
+# Abilash by email. Replaced later by a proper monitor (BACKLOG).
+name: uptime
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Probe sites
+        id: probe
+        run: |
+          set +e
+          OUT=$(node scripts/uptime/check.mjs 2>&1)
+          CODE=$?
+          echo "$OUT"
+          {
+            echo "report<<EOF"
+            echo "$OUT" | sed -n '/::DOWN-REPORT::/,$p' | tail -n +2
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          exit $CODE
+
+      - name: Open or update the down issue
+        if: failure() && steps.probe.outputs.report != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ steps.probe.outputs.report }}
+        run: |
+          TITLE="🔴 Site down (uptime listener)"
+          BODY=$(printf '%s\n\n%s\n\nRun: %s' "$REPORT" "_Checked every 10 min from GitHub Actions. This issue auto-closes commentary is manual — close it once resolved._" "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          EXISTING=$(gh issue list --repo "${{ github.repository }}" --label uptime --state open --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "${{ github.repository }}" --body "$BODY"
+          else
+            gh issue create --repo "${{ github.repository }}" --title "$TITLE" --body "$BODY" --label uptime
+          fi
