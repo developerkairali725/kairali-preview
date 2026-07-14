@@ -27,6 +27,14 @@ export function ConsentBanner({ privacyHref }: { privacyHref?: string }) {
     setVisible(readStoredChoice(window.localStorage) === null);
   }, []);
 
+  // Signal other floating UI (chat bubble, sticky bars) to yield while the
+  // banner is open — sites style [data-consent-open] as needed.
+  useEffect(() => {
+    if (visible) document.documentElement.setAttribute("data-consent-open", "");
+    else document.documentElement.removeAttribute("data-consent-open");
+    return () => document.documentElement.removeAttribute("data-consent-open");
+  }, [visible]);
+
   if (!visible) return null;
 
   const choose = (granted: boolean) => {
