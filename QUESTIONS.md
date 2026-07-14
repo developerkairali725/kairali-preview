@@ -105,3 +105,8 @@ Remote GitHub MCP (api.githubcopilot.com) fails Claude Code OAuth: "incompatible
 - Sunaj (one line): add two columns to the Domain List sheet — "Registered with (company)" + "Login email" — that's the part the Cloudflare move needs.
 - Abilash rulings: (a) kairaliproduct.com is a LIVE Shopify property per the sheet (not a parked variant) — what's its future (kept as-is / folded into .in)? Redirect HELD. (b) The sheet note says all domains "forward into one" main domain — D1 (semantic map) stands unless you re-rule; confirm the sheet note is outdated. (c) kairalipharma.com is in our sweep but absent from the sheet — do we still own it?
 - RENEWALS within ~10 weeks (needs registrar access): snehachowdhary 01-Sep · kairalicenters.com 03-Sep (LIVE main site) · kairbykairali 23-Sep · whatisayurveda.org 28-Sep (live, ranking) · ayurvedafranchise 01-Oct · theblushlounge 28-Oct.
+
+## 2026-07-14 16:35:00 IST · Sunaj server-audit reply processed
+- VERIFIED: blush lounge RESTORED (200) · arogyashala.in DNS back (GoDaddy parking; forward stays HELD until real content) · Linux box = DigitalOcean droplet managed by RedHoney (ktahv.redhoney.in) — the "Linux vs DigitalOcean" confusion is resolved, they're the same machine.
+- SECURITY (for Sunaj, prepare-only list in docs/infra/SERVER_AUDIT_2026-07-14.md): RDP+SSH are internet-exposed → allowlist/VPN hardening recommended; the two WhatsApp-shared credentials should be stored-to-env then ROTATED; backup destination + restore-test evidence still needed.
+- UNLOCK: Cloudflare admin access granted to director@ — bulk-redirect upload (39 rules ready) is now an Abilash dashboard action; also enables GSC domain-property DNS verification.
