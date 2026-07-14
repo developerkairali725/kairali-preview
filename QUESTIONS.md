@@ -153,3 +153,15 @@ Mining done (docs/group-inputs/kairalifranchise-*), security scan CLEAN (no inje
 - **Q-FR-CONTACT (Abilash):** franchise enquiries — use the locked info@kairali.com, or a dedicated franchise@kairali.com (seen on the live site)?
 - **Q-FR-SCALE (Abilash):** conflicting centre/country counts across sources (35 / 25 / ~13 / "6+19") — same root issue as Q-KC-ROSTER. What is the canonical "X centres in Y countries" for ALL sites? (One authoritative number unblocks kairali.com, kairalicenters, and franchise at once.)
 - Founding year RESOLVED: 1908 (locked fact + your confirm), despite live-site 1989/1948 noise.
+
+## 2026-07-15 00:15:00 IST — kairaliequipment.com pre-build: BLOCKED (no catalog data) + security
+- **Q-EQ-CATALOG (Abilash/Deepu):** the legacy kairaliequipment.com product gallery is DB-driven and EMPTY in every live + Wayback capture. Only 5 category names survive (Pathi, Shirodhara Stand, Steam Box, Urlis, Accessories) + 3 accessory names — ZERO recoverable SKUs, models, dimensions, prices, or product photos. Cannot build a real equipment catalog without the source product data. Need: the actual product list (names/specs/photos), or a decision to ship category-level pages only for now.
+- **Q-EQ-SECURITY (Deepu/Sunaj):** kairaliequipment.com live homepage + Category.aspx return HTTP 500 (site is BROKEN) with customErrors=Off — the error pages LEAK full server file paths (information disclosure). Two issues: the site is down, and it's exposing internals. Route to whoever manages that server (ASP.NET/IIS, not the WP stack).
+- **Q-EQ-CLAIMS (Abilash):** cert / export capability / own-manufacturing / heritage-year / phone are asserted about the equipment business but not captured — confirm before publishing any.
+
+## 2026-07-15 00:15:00 IST — PATTERN: the legacy-site rebuild queue is now DATA-BLOCKED on Abilash
+Three consecutive non-revenue sites mined tonight are each blocked on missing SOURCE data the legacy sites don't contain:
+- kairalicenters.com → built (14 verified centres) BUT live site is HACKED (gambling injection).
+- kairalifranchise.com → blocked: investment figures absent everywhere; canonical domain undecided.
+- kairaliequipment.com → blocked: product catalog DB is empty; live site is 500/broken + leaking paths.
+The mining discipline is doing its job (no fabrication), but the remaining non-revenue rebuilds need Abilash to SUPPLY real source data (product lists, franchise terms, canonical roster) — they can't be mined from broken/empty/hacked legacy sites. Consolidated ask surfaced to Abilash; further speculative mining paused until he provides data or picks targets.
