@@ -1,0 +1,16 @@
+{
+  "name": "@kairali/legal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared privacy / terms / cookie-policy pages, parameterized per site. DRAFT text pending legal review; grounds the consent banner's privacy link (Ship Gate A12).",
+  "exports": {
+    ".": "./src/index.tsx"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0"
+  }
+}

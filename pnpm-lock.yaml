@@ -47,6 +47,16 @@ importers:
 
   packages/i18n: {}
 
+  packages/legal:
+    dependencies:
+      react:
+        specifier: '>=19'
+        version: 19.2.4
+    devDependencies:
+      '@types/react':
+        specifier: ^19.1.0
+        version: 19.2.17
+
   packages/product-card: {}
 
   packages/schema:
@@ -144,6 +154,9 @@ importers:
       '@kairali/consent':
         specifier: workspace:*
         version: link:../../packages/consent
+      '@kairali/legal':
+        specifier: workspace:*
+        version: link:../../packages/legal
       '@kairali/schema':
         specifier: workspace:*
         version: link:../../packages/schema
@@ -203,6 +216,9 @@ importers:
       '@kairali/consent':
         specifier: workspace:*
         version: link:../../packages/consent
+      '@kairali/legal':
+        specifier: workspace:*
+        version: link:../../packages/legal
       '@kairali/schema':
         specifier: workspace:*
         version: link:../../packages/schema
@@ -240,6 +256,9 @@ importers:
       '@kairali/consent':
         specifier: workspace:*
         version: link:../../packages/consent
+      '@kairali/legal':
+        specifier: workspace:*
+        version: link:../../packages/legal
       '@kairali/schema':
         specifier: workspace:*
         version: link:../../packages/schema
