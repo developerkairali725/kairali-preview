@@ -59,3 +59,16 @@
 ## 2026-07-14 15:38:30 IST — Abilash, account-ownership answers (in-chat)
 - **Chatbase = sysadmin@kairali.com (Sunaj).** Inventory: "Kairali Ayurvedic Group" workspace → Aarika (doctor-facing, previously undocumented) + Priya Sharma; "KAPPL and VR" workspace → Villa Raag bot + un-rolled-out Priya Sharma. Access request moves to the Sunaj lane; NOTHING remains for Ambuj (registrar/Shopify/Sentry/TW all rerouted earlier) — the Ambuj email is cancelled. Four-entity-bot consolidation must map Aarika first; decommission nothing without Abilash.
 - **Triple Whale = director@kairali.com (Abilash).** Free plan, no Moby; connected to .in ONLY; Pixel installed and tracking. U7b partially answered in SHOPIFY_TRACK_CONTEXT §3; viewer grants happen on demand at kickoff (owner is in the room).
+
+## 2026-07-14 16:55:00 IST — Sunaj's second reply ("Re: reply asap", thread 19f60234feee0910) — three long-open unknowns CLOSED
+- **U1 CONFIRMED: kairaliproducts.in and kairaliproducts.com are TWO SEPARATE Shopify stores** (Sunaj, definitive). Every Shopify-track phase runs per store, .in first. Staff accounts for developer6@kairali.com to be added on BOTH.
+- **Sentry: NONE EXISTS** ("no Sentry") — a free org gets created fresh. Account creation = Abilash's click (2 min, sentry.io signup with director@); agent wires DSN after.
+- **SHIPPING AGGREGATOR = ESHOPBOX** (for kairaliproducts.in) — the runbook Part-4 blank is filled; the mentor's "e-shop box" placeholder was literal. Individual couriers ride behind Eshopbox; exact carrier list to be read from the admin at Shopify kickoff. → SHOPIFY_TRACK_CONTEXT §9B.
+- Blush lounge root cause: SSL issue (not a dead droplet) — resolved + verified 200.
+- arogyashala.in DNS page screenshot received (attachment); domain list sheet "updated" per Sunaj — re-pulled for the registrar column.
+- Note: both credentials again via WhatsApp — rotation + env-storage plan stands (SERVER_AUDIT doc).
+
+## 2026-07-14 17:05:00 IST — Abilash delegations RULED (expert-judgment mandate, in-chat)
+- **kairaliproduct.com (singular): CONSOLIDATE — two stores is the end-state, not three.** It serves a full live storefront today ("Kairali Ayurvedic Store", verified 200), so no blind redirect: the Shopify kickoff audit determines which admin owns it + whether unique traffic/campaigns/catalog flow through it, THEN it 301s to kairaliproducts.com (singular-.com typers = international intent). Until the audit: untouched. Forward-farm row stays HELD with this gate.
+- **Forward strategy RE-CONFIRMED as the semantic map** (Abilash delegated; expert ruling = D1 stands): acronyms/shortcuts → the real site they abbreviate (ktahv.com → ayurvedichealingvillage.com, already live); centre/training/product variants → their family site; orphans → kairali.com as the one "main" catch-all; NEVER all-into-one (Google soft-404s mass homepage redirects — D1 citations). The 39 prepared rules implement exactly this; no rebuild needed. The sheet's "all forward into one" note is superseded.
+- **kairalipharma.com: owned (Abilash)** — missing from Sunaj's sheet along with kagapp.com and kairaliproducts.cn; gap-closure email drafted to Sunaj (+ registrar/login columns reminder + which admin owns kairaliproduct.com).
