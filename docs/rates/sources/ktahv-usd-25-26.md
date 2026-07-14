@@ -73,7 +73,7 @@
 | Joint Rehabilitation & Arthritis Treatment – Sandhivātam Chikitsa | 14 Nights |
 | Neck & Upper Back Rehabilitation Treatment – Manyastambha Chikitsa | 14 Nights |
 | Spinal Disc & Nerve Restoration Treatment – Snāyu Bala Chikitsa | 14 Nights |
-| Spine Care & Spondylitis Treatment – Merudaṇḍa Chikitsa | 14 Nights |
+| Spine Care & Spondylitis Treatment – Merudanḍa Chikitsa | 14 Nights |
 | Postpartum Rejuvenation Therapy – Sutikā Paricharya | 14 Nights |
 | Weight Management & Metabolism Therapy – Sthoulyaghna Chikitsa | 14 Nights |
 
@@ -266,6 +266,7 @@ All-Inclusive Pricing: No hidden fees! Includes accommodation, meals, therapies,
 - None. All prices, durations, and terms were legible in the 150-dpi page renders and consistent with the PDF's embedded text layer.
 - Note (not a guess, printed as-is): p.6 "effective from April 1 2025, through September 30, 2026" — an 18-month validity window; document ref says "2025-2026". Punctuation ("April 1 2025," without comma after 1; deposit bullet ends without a period) transcribed as printed.
 - Note: p.3 uses a hyphen "-" in "Kairali's Personalized & Customized Healing Program - Swasthya Anukūla Chikitsa" where other program rows use an en dash "–"; transcribed as printed.
+- Correction (2026-07-14 verification pass): p.2 "Merudanḍa Chikitsa" was initially transcribed as "Merudaṇḍa" (dot under the n as well); the PDF's embedded text layer and 600-dpi render both print "Merudanḍa" (plain n, dot only under ḍ). Fixed to match the PDF exactly.
 
 ### KTAHV banned-word usage IN THE SOURCE PDF (for the delegation queue — the hospital's own collateral violates the clinical lock)
 | Banned word | Where it appears in the PDF |

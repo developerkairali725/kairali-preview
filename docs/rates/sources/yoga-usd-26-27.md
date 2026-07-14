@@ -2,7 +2,7 @@
 
 - **Source file:** `/Users/kairalimacmini/Claude/Kairali-Digital/rates-source/Yoga-KTAHV-USD-Sanskrit-V4-26-27.pdf` (5 pages, 12.8 MB)
 - **Document title (as printed):** "Yoga & Meditation Charges With Admission"
-- **Effective:** w.e.f – October 1, 2026
+- **Effective:** w.e.f-October 1, 2026
 - **Ref. No.:** KAHR/AY-PKG/2026-2027/04/USD
 - **Rate validity (from T&C):** "Our rates are quoted on a per-day basis and are effective from October 1 2026, through September 30, 2027."
 - **Property header:** KAIRALI–THE AYURVEDIC HEALING VILLAGE, Olassery – P.O., Kodumbu, Palakkad Dist. – 678551, Kerala (INDIA). Ph: +91-9555156156, E: info@kairali.com, www.ktahv.com
