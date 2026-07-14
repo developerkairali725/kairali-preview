@@ -253,7 +253,9 @@ h1, h2, h3 {
   color: color-mix(in srgb, var(--ivory) 90%, transparent);
   padding: 56px 0;
 }
-.promise .overline { color: var(--marigold-300); }
+/* marigold-300 on the forest-700 dark band — ch.08 dark-surface rule; verified
+   in launches/arogyakendra.com/design-review.md */
+.promise .overline { color: var(--marigold-300); } /* brand-allow: marigold-text */
 .promise-quote {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 5vw, 2.1rem);
@@ -271,6 +273,14 @@ h1, h2, h3 {
   border-top: 1px solid color-mix(in srgb, var(--ivory) 16%, transparent);
   padding: 24px 0 calc(84px + env(safe-area-inset-bottom));
   font-size: 0.88rem;
+}
+/* Inline contact links are conversion CTAs (data-cta) — grow the tap target
+   to 44px without moving the visual layout (padding offset by negative
+   margin). Ship Gate A4 touch-target law, caught by tests/factory 14 Jul. */
+.site-footer a[data-cta] {
+  display: inline-block;
+  padding-block: 14px;
+  margin-block: -14px;
 }
 .site-footer a { color: var(--ivory); }
 .site-footer .tagline { font-family: var(--font-display); }
@@ -311,7 +321,9 @@ h1, h2, h3 {
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 768px) {
-  .site-header .header-cta { display: inline-flex; min-height: var(--control-md); }
+  /* control-lg, not -md: 40px is under the 44px touch-target law (Ship Gate
+     A4, caught by tests/factory 14 Jul); 48px is the next token step. */
+  .site-header .header-cta { display: inline-flex; min-height: var(--control-lg); }
   .sticky-cta { display: none; }
   .site-footer { padding-bottom: 28px; }
   .trust-card { grid-template-columns: repeat(4, 1fr); padding: 28px 32px; }

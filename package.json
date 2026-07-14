@@ -11,10 +11,13 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "compliance": "node packages/compliance/bin/lint.js"
+    "compliance": "node packages/compliance/bin/lint.js",
+    "brand-lint": "node packages/ui/bin/brand-lint.js",
+    "factory-spec": "playwright test tests/factory"
   },
   "devDependencies": {
     "turbo": "^2.5.0",
-    "typescript": "^5.8.0"
+    "typescript": "^5.8.0",
+    "@playwright/test": "^1.54.0"
   }
 }
