@@ -7,16 +7,13 @@ The 07:05 morning brief reads this file daily and surfaces anything due. Nothing
 deleted — history is the point.
 
 ## NOW (this week — Wave 0 / Days 1–6)
-- [ ] **Abilash: approve/merge PR #5 (docs: SEO_PLAYBOOK + DESIGN_DOCTRINE)** — with protection now ON, agent PRs need a teammate approval OR your admin merge
 - [ ] Interim uptime monitor for launched sites (Ship Gate B10) — PRIORITY RAISED by Abilash 14 Jul ("regular listening tool"); Fleet Pulse stays Wave 3
 - [ ] MCP OAuth sitting: github (/mcp click) · Clarity token · Semrush/Composio — commands delivered 14 Jul; verify with read-only calls after
 - [ ] Mechanization candidates from docs/seo/SEO_PLAYBOOK.md §GAPS + docs/design/DESIGN_DOCTRINE.md (INP gate, title-uniqueness, orphan-page check, AI-crawler policy…) — triage into packages/checklist within the week (Ship Gate §E rule)
-- [ ] **Abilash: merge PR #2 (Docs sync v2 + Shopify track)** — all checks green as of 11:15 IST; governing files, needs his one-click
-- [ ] **Abilash: relink Vercel project kairali-web-factory-abhilashkr** → Settings→Git→connect kairali-digital/kairali-web-factory (still points at pre-transfer personal repo; site can't deploy until relinked; does NOT block PR #2)
 - [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul)
 - [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
 - [ ] Chase: Google Photos album 9UCcY3jv4zi6byq48 is DEAD (HTTP 500) — Abilash to reshare if its contents matter
-- [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO) + /security-review CI step (A-13; needs ANTHROPIC_API_KEY secret) [gap #1/#7] — also gated on the Vercel relink above
+- [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO — needs preview-URL wiring) [gap #1]
 - [ ] Forms v1.1: Cloudflare Turnstile (Checklist FORMS v1 freeze names it; absent from packages/forms) [gap #6]
 - [ ] Abilash rulings from 14 Jul QUESTIONS: brand-lint exemptions (abhilashkr/kairali.ai) + CI-matrix membership · kairaliproduct.com forward family · raagcasa/raagvilla/theraagvilla ownership · whyayurveda interim target · where ktahv.com's existing 301 is configured · consent-banner × Chatbase bubble overlap
 
@@ -48,6 +45,7 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-14 14:35:00 IST — Ship Gate A-13 LIVE: ANTHROPIC_API_KEY secret set by Abilash; security-review job added to gate.yml (Claude review on every PR diff, SHA-pinned action, PR-comment evidence, zero-findings hard gate); PR #13 (playbook incl. AI-content doctrine §6) + PR #14 (banner fix + forward farm) merged; OpenAI key stored locally for the image lane; Vercel relink verified [gap #7 closed]
 - [x] 2026-07-14 13:28:11 IST — MERGE TRAIN COMPLETE: PR #2 (docs sync v2 + Shopify track) + PR #3 (Wave-0 mechanization incl. CLAUDE.md (j)–(s), enumerated gitleaks allowlists, dependabot.yml) merged by Abilash; PR #4 closed superseded; main FULLY GREEN (gate + factory-gate + Dependabot on 4c6adf1); BRANCH PROTECTION applied + verified (gate/brand-lint/factory-spec required, 1 approval, CODEOWNERS binding, no force-push/delete; admins exempt to preserve the one-click)
 - [x] 2026-07-14 13:28:11 IST — Plugins installed (fix #4): security-guidance 2.0.6 · code-simplifier 1.0.0 · commit-commands · skill-creator · superpowers 6.1.1 (obra marketplace) + 13-skill taste/design bundle moved to ~/.claude/skills (user scope, repo kept clean); GitHub Team confirmed active (6 seats)
 - [x] 2026-07-14 13:28:11 IST — docs/seo/SEO_PLAYBOOK.md + docs/design/DESIGN_DOCTRINE.md compiled (Abilash ask): 5-agent research fan-out, ~150 cited sources, every item mapped to the exact existing gate + honest GAPS lists (this PR)
