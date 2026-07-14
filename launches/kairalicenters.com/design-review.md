@@ -4,7 +4,7 @@
 - **Reviewer stance:** skeptical marketer + senior design reviewer (per scripts/design-review/PROMPT.md v1.0)
 - **Register judged:** Group / treatment-centres directory — non-revenue lead-gen. Judged as a clean, trustworthy multi-location health directory whose job is to help a visitor find a centre and book. KTAHV clinical lock applies only to KTAHV/hospital references (none marketed here).
 - **Preview:** http://localhost:4313 — `/` · `/centres/new-delhi-mehrauli` · `/centres/yokohama` · `/privacy` (all HTTP 200).
-- **Verdict:** **FAIL** — average **8.8/10** (gate is ≥ 9.0). No criterion < 7. Misses the bar by 0.2 on **CTA clarity (8)**; three selector-level fixes below would clear it.
+- **Verdict:** **PASS at iteration 2** — average **9.0/10** (gate ≥ 9.0), no criterion < 7. Iteration 1 was **8.8 FAIL** (held down solely by CTA clarity = 8); the builder applied all three selector-level fixes and CTA clarity rose to 9. Iteration-2 scorecard is at the bottom of this file; iteration-1 record is preserved below it.
 
 ---
 
@@ -43,7 +43,7 @@ Evidence is computed `rgb()`/px values and live screenshots, not vibes.
 
 ---
 
-## Scorecard
+## Iteration 1 scorecard — 8.8 / FAIL (record preserved)
 
 | # | Criterion | Score | Evidence |
 |---|---|---|---|
@@ -94,3 +94,36 @@ Per the rulebook this scorecard is NOT ground up by softening criteria — the s
 - **Partner-vs-owned + roster count unresolved upstream.** Partner flags and the "14 live vs 18 register" discrepancy are open questions (Q-KC-ROSTER, Q-KC-PARTNERS); the build correctly asserts neither. Not a design finding.
 - **Chat widget is third-party (chatbase).** Its icon loads from an external CDN; its bubble is positioned by our CSS. Behaviour beyond position/collision was not audited here.
 - **Not scored:** Lighthouse, spec suite, and compliance-lint results are separate gates (this pass judges only what machines cannot). Legal pages (`/privacy` etc.) confirmed present and content-bearing but not legally reviewed.
+
+---
+
+# Iteration 2 — re-score (2026-07-14 23:55:00 IST)
+
+**Trigger:** builder reported all three iteration-1 fixes applied; rebuild brand-lint PASS, factory-spec 20/20; site restarted at http://localhost:4313; fresh `home-desktop.png` / `home-mobile.png`.
+
+## Fixes verified (source + live computed style + fresh screenshots)
+
+| Fix | Source | Live evidence | Verdict |
+|---|---|---|---|
+| 1. Desktop header CTA revealed | `chrome.tsx` inline `display:none` removed; `globals.css:68` `.header-cta{display:none}` + `:222` `@media(min-width:768px){.header-cta{display:inline-flex;min-height:48px}}` | Desktop: header WhatsApp `display:flex`, minH 48px, `href=wa.me/919289838797`, `data-cta="whatsapp_click"`, visible top-right (fresh desktop screenshot). | ✓ |
+| 2. One filled primary per view | `page.tsx:57-58` both hero jump-buttons now `.btn-secondary`; sticky `page.tsx:104` remains `.btn-primary` | Live: both hero buttons `filled:false` (bg transparent, 1.5px border); zero `.btn-primary` visible on desktop; on mobile the sticky "Book on WhatsApp" is the sole filled primary. | ✓ |
+| 3. Sub-14px bronze labels lifted | `globals.css:45` `.overline`, `:241` `.cc-place`, `:254` `.country-h` → `font-size:0.875rem` | Live computed: `.overline` 14px, `.cc-place` 14px (`.country-h` 0.875rem in source, renders on centre pages). Now within the manual's "bronze-400 ≥14px bold" allowance. | ✓ |
+
+**Regression checks (unchanged):** tokens still match (forest #006038, marigold #EEB41E); one-accent-per-light-view holds (only `.accent-rule` marigold, both viewports); locked facts intact — 0× `…38777`, correct `…38797` present, `info@kairali.com` ×6 with zero `kairalicenters.com` email variant; header WhatsApp carries the correct number.
+
+## Iteration-2 scorecard
+
+| # | Criterion | Iter-1 | Iter-2 | Note |
+|---|---|---|---|---|
+| 1 | Premium feel | 9 | **9** | Unchanged strengths; 14px labels marginally cleaner; all-outline desktop hero reads calm/restrained. Same drags (single hero photo, text-only cards, raster-logo interim). |
+| 2 | Human-made feel | 9 | **9** | Content identical — verbatim NAP, honest omissions, boilerplate per-centre lede drag remains. |
+| 3 | Mobile UX | 9 | **9** | Still clean; the sticky "Book on WhatsApp" is now the single filled primary, marginally clearer; floating-UI de-confliction (consent z60 / sticky z50 / chat `bottom:84px`) intact. |
+| 4 | CTA clarity | 8 | **9** | **The fixed criterion.** Iteration-1's three concrete dings are resolved: desktop now carries a persistent header WhatsApp CTA (was dead `display:none` markup); one filled primary per view (mobile sticky) — no competing forest pills; `data-cta` fully wired; helper copy still excellent. Residual is a soft preference only (see limitations), not a defect. |
+| 5 | Brand-manual fidelity | 9 | **9** | The only iteration-1 nick (sub-14px bronze at 3.1:1) is gone — labels at 14px bold now sit inside the manual's usage law. Token-perfect, one-accent verified, leaf focus ring, register-correct. Held at 9, not higher, because the raster-logo interim and the placeholder `--bronze-600` ramp (still aliased to bronze-400) remain acknowledged brand-asset gaps. |
+
+**Iteration-2 average = (9 + 9 + 9 + 9 + 9) / 5 = 9.0/10 → PASS** (gate ≥ 9.0; no criterion < 7). Clears the gate on the strength of the CTA fix; not softened — the CTA rise reflects the objective resolution of the three evidenced iteration-1 problems.
+
+## Iteration-2 honest limitations (not scored away)
+
+- **Desktop hero has no *filled* primary.** With both hero buttons and the header WhatsApp all rendered as forest outlines, the desktop above-the-fold has three equal-weight outline pills and no single filled anchor. This satisfies "one primary per view" and suits the brand's calm restraint, and the filled primary correctly appears at the point of decision (mobile sticky + each centre page's "Book on WhatsApp") — so it is recorded as a hierarchy preference, not a defect. If stronger desktop conversion pull is later wanted, promote only the header WhatsApp to `.btn-primary` (keep the two hero jump-buttons outline). Note: the builder described the header CTA as "the sole filled primary," but it renders as `.btn-secondary` (outline) — functionally a persistent CTA, just not filled.
+- **Carried from iteration 1 (unchanged):** raster-logo interim pending SVG lockups; `--bronze-600` ramp still a placeholder alias in brand-tokens.css; single hero photograph + verbatim-only per-centre data (shared boilerplate lede); partner-vs-owned and 14-vs-18 roster questions open upstream (correctly not asserted); third-party chatbase widget (position/collision audited only); Lighthouse/spec/compliance-lint are separate gates; legal pages present but not legally reviewed.
