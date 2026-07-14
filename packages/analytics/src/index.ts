@@ -1,2 +1,8 @@
-// @kairali/analytics — see README.md for the charter (PROJECT_CONTEXT §6)
-export {};
+export { Analytics } from "./Analytics";
+export {
+  readIds,
+  gtagSrc,
+  ga4ConfigSnippet,
+  gtmSnippet,
+  ctaListenerSnippet,
+} from "./core.js";

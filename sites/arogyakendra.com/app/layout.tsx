@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
 import { buildMetadata } from "@kairali/seo";
+import { ConsentScripts, ConsentBanner } from "@kairali/consent";
+import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
 import ChatbaseLoader from "./chatbase-loader";
@@ -42,9 +44,17 @@ export const metadata: Metadata = buildMetadata(siteConfig, {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${kurale.variable} ${asap.variable} ${lato.variable}`}>
+      <head>
+        {/* Order is law: consent defaults (denied) BEFORE any tag loader */}
+        <ConsentScripts />
+        <Analytics />
+      </head>
       <body>
         {children}
         <ChatbaseLoader />
+        {/* No privacyHref yet: /privacy doesn't exist — Ship Gate A12 gap
+            stays visible until the entity privacy page ships */}
+        <ConsentBanner />
       </body>
     </html>
   );
