@@ -70,3 +70,7 @@ system through Abilash's EA.
 
 ## Routing addition — 2026-07-14 22:40:00 IST
 | developers6@kairali.com | NEW developer (name TBD — Abilash, 14 Jul) | Website/WordPress execution fixes (KTAHV live site technical tasks). First delegation: 4-point technical fix email (consent checkboxes, Resort→Hospital schema, DE hygiene, staging confirm). Deepu remains the established WP executor; clarify division of labour when the new developer's name/role lands. |
+
+## Channel selection rule — 2026-07-14 22:55 IST
+- **Bulk sheet** (agent writes Doer/Task/Date/Company/Assigned By; scoring cols H-M are protected → owner scores): use for tasks whose OWNER is in the sheet's Doer dropdown (operational staff — Sunaj/IT, Vikash, the ~40-name list). Add an email-footer note "already uploaded to the bulk sheet (row N)" so Ritu verifies not transcribes.
+- **Email (itemized, CC Ritu)**: use when the owner is NOT a sheet Doer — Anupam & Astha (they are "Assigned By" managers, not Doers), Satyam, the new developer (no name in list yet), or any external party.
