@@ -52,6 +52,20 @@
         "4312"
       ],
       "port": 4312
+    },
+    {
+      "name": "kairalicenters",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/kairalicenters.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4313"
+      ],
+      "port": 4313
     }
   ]
 }
