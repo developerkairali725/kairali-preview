@@ -1,29 +1,71 @@
 # Gitleaks config — extends the default ruleset (gate strength unchanged).
-# Allowlist entries are NARROW and each one documents the verification that the
-# matched strings are not secrets. Adding to this file requires the same review
-# as any governing file (CODEOWNERS). CLAUDE.md rule g: gates are never weakened —
-# verified false positives are documented here instead of skipping the scan.
+# RULE (Abilash directive, 14 Jul 2026): every allowlist entry references its
+# SPECIFIC inspected finding — path, rule, reason, inspection date — never a
+# broad pattern. Mechanism: RULE-SCOPED [[rules.allowlists]] with
+# condition = "AND" (file path AND line-content must BOTH match, and only for
+# that one rule), so any NEW finding still fails CI — even in an allowlisted
+# file, even in the same variable (canary-proven). Global [[allowlists]] are
+# deliberately NOT used: they suppress on path alone (OR semantics).
+# Requires gitleaks ≥ 8.25 (rule extension + AND allowlists); gate.yml pins
+# the version. Adding to this file requires the same review as any governing
+# file (CODEOWNERS). CLAUDE.md rule g: gates are never weakened — verified
+# false positives are documented here instead of skipping the scan.
 
 [extend]
 useDefault = true
 
-[allowlist]
-description = "Verified non-secrets in ingested source documents (2026-07-14 review)"
-regexTarget = "line"
-regexes = [
-  # Expired third-party S3 presigned URLs (Perplexity file-upload attachments)
-  # embedded verbatim in ingested strategy docs (docs/ktahv-inputs/). The ASIA*
-  # strings are temporary STS access-key IDs belonging to Perplexity's AWS
-  # account, paired only with an HMAC signature and an Expires= timestamp that
-  # is already in the past. Not Kairali credentials; URLs are dead.
-  '''ppl-ai-file-upload\.s3\.amazonaws\.com''',
-  # Public chat-widget site key in the OLD arogyakendra.com public HTML
-  # (content-mined/ immutable raw-sources layer). Widget site keys are served
-  # to every visitor by design; the legacy site is being replaced.
-  '''acobot\.ai/js/w\?key=''',
-  # localStorage KEY NAME (browser storage identifier, shipped to every
-  # visitor by design) in packages/consent — the generic-api-key rule matches
-  # the word KEY in CONSENT_STORAGE_KEY + a string constant. Verified 14 Jul
-  # 2026: no credential, value is the literal "kairali-consent-v1".
-  '''CONSENT_STORAGE_KEY = "kairali-consent-v1"''',
-]
+# ── aws-access-token: findings 1 & 2 of 4 ──────────────────────────────────
+# The default rule is inherited unchanged; only these two AND-scoped
+# allowlists are added to it.
+[[rules]]
+id = "aws-access-token"
+
+    # FINDING 1/4 — 50× aws-access-token in
+    # docs/ktahv-inputs/agency-seo-proposal-delante-ktahv.md.
+    # Inspected 2026-07-14: expired Perplexity file-upload S3 presigned URLs
+    # embedded verbatim in the ingested agency proposal. The ASIA* strings are
+    # Perplexity's own temporary STS access-key IDs, paired only with an HMAC
+    # signature and a past Expires= timestamp. Not Kairali credentials; dead URLs.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "line"
+    regexes = ['''ppl-ai-file-upload\.s3\.amazonaws\.com''']
+    paths = ['''docs/ktahv-inputs/agency-seo-proposal-delante-ktahv\.md''']
+
+    # FINDING 2/4 — 37× aws-access-token in
+    # docs/ktahv-inputs/strategic-language-targeting-matrix.md.
+    # Inspected 2026-07-14: same class as finding 1 — expired Perplexity S3
+    # presigned URLs in an ingested strategy doc (ingested layer is immutable,
+    # CLAUDE.md rule a). Not Kairali credentials; dead URLs.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "line"
+    regexes = ['''ppl-ai-file-upload\.s3\.amazonaws\.com''']
+    paths = ['''docs/ktahv-inputs/strategic-language-targeting-matrix\.md''']
+
+# ── generic-api-key: findings 3 & 4 of 4 ───────────────────────────────────
+[[rules]]
+id = "generic-api-key"
+
+    # FINDING 3/4 — 1× generic-api-key in
+    # content-mined/arogyakendra.com/enquirenow.aspx.html.
+    # Inspected 2026-07-14: public acobot.ai chat-widget SITE key in the OLD
+    # arogyakendra.com public HTML (immutable raw-sources layer). Widget site
+    # keys are served to every visitor by design; the legacy site is being replaced.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "line"
+    regexes = ['''acobot\.ai/js/w\?key=''']
+    paths = ['''content-mined/arogyakendra\.com/enquirenow\.aspx\.html''']
+
+    # FINDING 4/4 — 1× generic-api-key in packages/consent/src/core.js:15
+    # (commit 64f0108, PR #3). Inspected 2026-07-14: localStorage KEY NAME
+    # constant (browser storage identifier, shipped to every visitor by
+    # design) — the rule matches the word KEY in CONSENT_STORAGE_KEY plus a
+    # string constant. Literal value "kairali-consent-v1"; no credential.
+    # Canary-tested: a real-looking secret in the same variable still trips.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "line"
+    regexes = ['''CONSENT_STORAGE_KEY = "kairali-consent-v1"''']
+    paths = ['''packages/consent/src/core\.js''']
