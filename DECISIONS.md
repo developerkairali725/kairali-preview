@@ -247,3 +247,8 @@
 - **kairalifranchise / ayurvedafranchise site: HELD.** Do NOT build until Abilash finalises the franchise commercials (fees/investment/ROI). The brief + inventory stay banked. Q-FR-MONEY resolved as "hold", not "gate" — parked entirely for now.
 - **CANONICAL FRANCHISE DOMAIN = ayurvedafranchise.com** (Decision #4 CLOSED). The generic-keyword domain is the home; **kairalifranchise.com 301s INTO ayurvedafranchise.com** (single hop). Forward-farm: move kairalifranchise.com to a 301→ayurvedafranchise.com row; ayurvedafranchise.com becomes the eventual BUILD target (not a forward), currently HELD pending commercials.
 - Franchise-intent SEO value across both domains to be compared once DataForSEO is live (informs nothing about the build until released).
+
+## 2026-07-15 15:45:00 IST — Equipment held + PENDING-DECISION QUEUE CLEARED
+- **kairaliequipment.com: HELD** (Abilash) — park until the real product catalog (names/specs/photos) is available; no thin/category-only build now. Brief + inventory banked.
+- **NOTE: the equipment LIVE site issue stands regardless** — Q-EQ-SECURITY (HTTP 500 + customErrors=Off leaking server paths) is a broken/leaking live site that still needs the server owner (Sunaj/IIS) to fix, independent of the rebuild being parked. Lower urgency than the kairalicenters hack but not closed.
+- **PENDING-DECISION QUEUE NOW CLEAR** (Abilash worked through them one-by-one 15 Jul): whatisayurveda branding=transparent-steward+gratitude; 4 positioning changes ratified; franchise held + ayurvedafranchise canonical; equipment held. ONLY the canonical centres/countries roster remains — blocked on Abishek's reply (not on Abilash).
