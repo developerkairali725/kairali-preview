@@ -4,6 +4,19 @@
   "private": true,
   "type": "module",
   "description": "ONE lead pipe: canonical CRM payload + webhook submit (v1 FREEZE per Satyam's spec 13 Jul 2026)",
-  "exports": { ".": "./src/index.js" },
-  "scripts": { "test": "node --test test/*.test.js" }
+  "exports": {
+    ".": "./src/index.js",
+    "./store": "./src/store.js",
+    "./route": "./src/route-handler.ts",
+    "./form": "./src/EnquiryForm.tsx"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0"
+  }
 }

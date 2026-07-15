@@ -62,3 +62,6 @@ export async function submitLead(input, { endpoint = process.env.CRM_WEBHOOK_URL
   if (!res.ok) throw new Error(`CRM webhook responded ${res.status}`);
   return { ok: true, status: res.status, payload };
 }
+
+// Store-first production path (Satyam spec 14 Jul) — writes to Supabase first.
+export { storeLead } from "./store.js";
