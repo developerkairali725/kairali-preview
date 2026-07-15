@@ -171,3 +171,10 @@ The strategy source-of-truth (docs/strategy/POSITIONING_AND_MOA.md, distilled fr
 - **Q-POS-MCB:** "MCB" is NOT defined anywhere in the competitor audits — it only appears as an informal label. Confirm what MCB stands for (Pavan is sending Akshar Yadav's teachings this week — likely the source). Not invented.
 - **Q-POS-RATIFY (register amendments — need your sign-off before applied):** the synthesis proposes 5 build changes (Villa Raag = wellness-not-medicine compliance rewrite; whatisayurveda = "WebMD/Mayo of Ayurveda" spec; GERMAN as priority 2nd locale on reference/tourism sites; KTAHV audience +M3 NRI +M6 GCC; hard reference-vs-commerce boundary) + add WhyAyurveda to the register. These change site briefs → ratify per site before build (register-table amendments go via DECISIONS with your sign-off).
 - MOA data caveat: figures rest on a 58-booking sample (workbook ~80% complete) — directional, not precise.
+
+## 2026-07-15 14:05:00 IST — kairali.com mining results: new facts needing Abilash
+- **Q-KC-AHV-YEAR:** agency draft contradicts itself — AHV established **1997** (/partnerships-and-investment/) vs **1999** (/ayurvedic-healing-village/ + /our-partner-resorts/). Which year is true?
+- **Q-KC-ROSTER (now 4 variants!):** register 18/9 · live centres site 14/5 · agency draft "24 centres" + a /locations/ list including **Hyderabad ×2** (absent from the live centres site!) · franchise sources 35/25/13. One canonical roster please — it now touches kairali.com, kairalicenters, franchise AND the agency content reuse.
+- **Q-KC-PDFS:** the agency Hostinger site's download-centre holds price lists + Villa Raag tariffs — HARVEST before that staging site is torn down (queued as a machine task; flagging in case teardown is imminent).
+- **Q-KC-MED-CLAIMS:** agency pages carry medical claims (Lipidex "2-4kg/month", Duravin, "99.99%" sanitizer) — anything reused goes through Dr. Deepu John (rule 7).
+- Protection-map §4 asks (from the live-site analysis): GSC read access to rank the 208 URLs by real impressions · awards architecture call (77 individual pages vs consolidated timeline) · the deliberate-kill list · extra contact-email keep/kill.
