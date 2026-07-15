@@ -242,3 +242,8 @@
   3. **KTAHV audience EXPANDS** — add NRI ("bring your parents") hook + a capped GCC test; reorganise around programme-OUTCOME pages over generic treatment pages.
   4. **WhyAyurveda ADDED to the register.**
 - **whyayurveda.org = the group's CENTRALISED BLOG, on WordPress** (Abilash). NOT a competitor to whatisayurveda: whatisayurveda = the authority REFERENCE (WebMD model); whyayurveda = the BLOG (news/stories/opinion). They cross-link (blog → reference for definitions; reference → blog for topical pieces). It's live WP → mine before any rebuild + security-screen (WP sites have been hacked/broken in this fleet). Mining launched.
+
+## 2026-07-15 15:35:00 IST — Franchise decisions (Abilash)
+- **kairalifranchise / ayurvedafranchise site: HELD.** Do NOT build until Abilash finalises the franchise commercials (fees/investment/ROI). The brief + inventory stay banked. Q-FR-MONEY resolved as "hold", not "gate" — parked entirely for now.
+- **CANONICAL FRANCHISE DOMAIN = ayurvedafranchise.com** (Decision #4 CLOSED). The generic-keyword domain is the home; **kairalifranchise.com 301s INTO ayurvedafranchise.com** (single hop). Forward-farm: move kairalifranchise.com to a 301→ayurvedafranchise.com row; ayurvedafranchise.com becomes the eventual BUILD target (not a forward), currently HELD pending commercials.
+- Franchise-intent SEO value across both domains to be compared once DataForSEO is live (informs nothing about the build until released).
