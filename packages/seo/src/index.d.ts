@@ -6,6 +6,13 @@ import type { SiteConfig } from "@kairali/i18n";
 export const LIMITS: { title: number; description: number };
 export const OG_IMAGE: { width: number; height: number };
 
+export interface FaviconIcons {
+  icon: Array<{ url: string; type: string; sizes?: string }>;
+}
+
+/** Standard Factory favicon set (SVG primary + PNG fallback). Opt in per layout. */
+export function faviconIcons(): FaviconIcons;
+
 export function siteUrl(config: SiteConfig): string;
 
 export interface PageMeta {

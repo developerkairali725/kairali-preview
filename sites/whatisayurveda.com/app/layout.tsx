@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
-import { buildMetadata } from "@kairali/seo";
+import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
@@ -14,13 +14,16 @@ const kurale = Kurale({ weight: "400", subsets: ["latin"], display: "swap", vari
 const asap = Asap({ weight: ["400", "600", "700"], subsets: ["latin"], display: "swap", variable: "--font-asap" });
 const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"], display: "swap", variable: "--font-lato" });
 
-export const metadata: Metadata = buildMetadata(siteConfig, {
-  title: "What is Ayurveda? A Physician-Reviewed Guide",
-  description:
-    "A clear, honest, physician-reviewed guide to Ayurveda — the doshas, panchakarma, herbs, and what the evidence says. From the Kairali Group, since 1908.",
-  siteName: "What is Ayurveda",
-  ogImage: "/og.jpg",
-}) as Metadata;
+export const metadata: Metadata = {
+  ...(buildMetadata(siteConfig, {
+    title: "What is Ayurveda? A Physician-Reviewed Guide",
+    description:
+      "A clear, honest, physician-reviewed guide to Ayurveda — the doshas, panchakarma, herbs, and what the evidence says. From the Kairali Group, since 1908.",
+    siteName: "What is Ayurveda",
+    ogImage: "/og.jpg",
+  }) as Metadata),
+  icons: faviconIcons(),
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

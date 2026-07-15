@@ -140,12 +140,12 @@ export default function Home() {
 
       <header className="site-header">
         <div className="container">
-          {/* Real KAG lockup (raster interim — vector pack pending, Q17) */}
+          {/* KAG brand mark — vector (Q17: raster → SVG swap complete) */}
           <a className="logo-link" href="#top" aria-label="Kairali Ayurvedic Group — home">
             <img
-              src="/images/kairali-logo.png"
+              src="/images/kairali-icon.svg"
               alt="Kairali — health through ayurveda, since 1908"
-              width="52"
+              width="75"
               height="52"
             />
             <span className="logo-name">Kairali Ayurvedic Group</span>

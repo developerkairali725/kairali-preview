@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
-import { buildMetadata } from "@kairali/seo";
+import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
@@ -34,12 +34,15 @@ const lato = Lato({
 // OG/Twitter ship WITHOUT an image for now: no real 1200×630 asset exists
 // yet and fabricating one is banned. Spec lives in IMAGE_MANIFEST.md
 // (slot og-image); pass `ogImage` here when the asset lands.
-export const metadata: Metadata = buildMetadata(siteConfig, {
-  title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
-  description:
-    "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
-  siteName: "Arogya Kendra",
-}) as Metadata;
+export const metadata: Metadata = {
+  ...(buildMetadata(siteConfig, {
+    title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
+    description:
+      "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
+    siteName: "Arogya Kendra",
+  }) as Metadata),
+  icons: faviconIcons(),
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

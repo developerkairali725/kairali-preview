@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
-import { buildMetadata } from "@kairali/seo";
+import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
@@ -33,13 +33,16 @@ const lato = Lato({
 
 // First Factory site with a REAL OG image: /og.jpg is a 1200×630 derivative
 // of the Healing Village footbridge photograph (IMAGE_MANIFEST.md).
-export const metadata: Metadata = buildMetadata(siteConfig, {
-  title: "Kairali Ayurvedic Group — Since 1908",
-  description:
-    "Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in nine countries, Ayurveda training, Villa Raag — since 1908.",
-  siteName: "Kairali Ayurvedic Group",
-  ogImage: "/og.jpg",
-}) as Metadata;
+export const metadata: Metadata = {
+  ...(buildMetadata(siteConfig, {
+    title: "Kairali Ayurvedic Group — Since 1908",
+    description:
+      "Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in nine countries, Ayurveda training, Villa Raag — since 1908.",
+    siteName: "Kairali Ayurvedic Group",
+    ogImage: "/og.jpg",
+  }) as Metadata),
+  icons: faviconIcons(),
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

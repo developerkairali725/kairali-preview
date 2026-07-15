@@ -20,6 +20,25 @@ export const LIMITS = { title: 60, description: 155 };
 /** OG image law (Brand Manual ch.08). */
 export const OG_IMAGE = { width: 1200, height: 630 };
 
+/**
+ * Favicon set for a Factory site (Checklist A: real favicons, not a raster
+ * browser default). SVG primary — crisp at any DPI — plus a PNG raster fallback
+ * for the few engines without SVG-favicon support. The site must serve
+ * `/icon.svg` (the brand mark) and `/icon.png` (raster) from app/ or public/.
+ *
+ * Opt in PER LAYOUT: `icons: faviconIcons()`. Kept explicit (not injected into
+ * buildMetadata) so a newly-scaffolded site that lacks the files never emits a
+ * broken <link> by accident, and a site with a different icon set can override.
+ */
+export function faviconIcons() {
+  return {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "64x64" },
+    ],
+  };
+}
+
 export function siteUrl(config) {
   return `https://${config.domain}`;
 }

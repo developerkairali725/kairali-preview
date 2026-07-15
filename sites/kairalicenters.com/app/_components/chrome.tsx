@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container">
         <Link className="logo-link" href="/" aria-label="Kairali Ayurvedic Centres — home">
-          <img src="/images/kairali-logo.png" alt="Kairali Ayurvedic Group" width="46" height="46" />
+          <img src="/images/kairali-icon.svg" alt="Kairali Ayurvedic Group" width="64" height="44" />
           <span className="logo-name">
             Kairali Ayurvedic Centres
             <small>Health through ayurveda · since 1908</small>
