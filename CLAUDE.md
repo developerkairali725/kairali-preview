@@ -111,3 +111,10 @@ Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_
 
 ## CHANGELOG (append)
 - v1.4 (14 Jul 2026): Operating Principles added per Abilash's evening rulings (pushback duty, design bar, asset-mining checklist, sprint build order).
+
+## BRIEFS & STATE-TRUTH (added 15 Jul 2026 — after a morning brief went stale mid-session)
+Root cause it fixes: a hand-written brief snapshotted "machine idle / nothing merged after X" as if final, then more work landed and made it wrong; and agents had to reverse-engineer "the true current state" from a stale feature-branch checkout.
+- **State-of-truth is ALWAYS `origin/main`.** Any session/brief begins by syncing to it (`git fetch && git checkout main && git pull`) — never read state from a feature-branch checkout.
+- **A brief is a GENERATED VIEW, never a source of truth.** The durable state lives in QUESTIONS.md / DECISIONS.md / BACKLOG.md / git history. Run `scripts/brief-snapshot.sh` FIRST to produce the machine-verifiable base (as-of-commit hash, merges-since-last-brief, sites, HACKED/SECURITY/BLOCKED grep flags, open-question headers, open PRs). Interpretation is appended ON TOP of that fresh base.
+- **Every brief carries an "as of <commit> <IST>" stamp and NEVER claims a stale absolute** ("idle", "nothing after X") as final — only ever "as of commit X". Re-running the script refreshes it.
+- **Concurrent-writer safety:** more than one agent may touch the repo; briefs/backlog updates that push to main use the PR flow where possible, and always `git pull` immediately before writing so nothing is clobbered.
