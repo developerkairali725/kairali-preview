@@ -41,11 +41,13 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-col">
             <h4>About this site</h4>
-            <p style={{ margin: "10px 0 0", maxWidth: "34ch" }}>
-              An educational resource from the Kairali Ayurvedic Group — a
-              family of Ayurvedic physicians since 1908. Every health page is
-              reviewed by a registered Ayurvedic doctor. This site is for
-              learning, not medical advice.
+            <p style={{ margin: "10px 0 0", maxWidth: "36ch" }}>
+              Ayurveda has been our family&rsquo;s practice for four generations.
+              We built this to explain it honestly — its evidence and its limits
+              alike — as our way of giving back to a science that has given us so
+              much. Published by the Kairali Ayurvedic Group; every health page is
+              reviewed by a registered Ayurvedic physician. For learning, not
+              medical advice.
             </p>
           </div>
           <div className="footer-col">
