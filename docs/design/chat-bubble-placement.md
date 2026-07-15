@@ -55,3 +55,56 @@ Default bottom-right bubble, 48–56px tap target, ≥16px edge padding, lifted 
 - **`packages/ui` floating-stack task:** build the single-slot floating-stack manager (§2 pattern 3) as a shared `packages/ui` component — one corner slot arbitrating chat bubble / sticky CTA bar / cookie-consent / back-to-top, with per-page hide states (§4), the facade launcher (§5) as the only way a chat widget loads, and WCAG focus management baked in. Per Factory rules, every site consumes this from `packages/*` — no per-site bubble implementations. Design skills/plugins never override `brand-tokens.css`/`raag-tokens.css` (Doctrine d).
 - **Already shipped and to be treated as the reference behaviour:** kairali.com and arogyakendra already implement the core of this law — **bubble lifted above the sticky bar** (§2 pattern 1), **proactive popups suppressed on mobile** (§3), and **consent-yield** (the bubble yields the slot to the cookie-consent element until consent is resolved — one floating element at a time, §2 pattern 3). The floating-stack component generalizes what those two sites do by hand.
 - QA hook: the weekly audit pass and LP checklists should verify bubble/sticky-bar non-overlap on mobile viewport, absence of auto-open, and hide states on consultation/enquiry/contact form pages.
+
+## 8. Multi-channel launcher (dual-bubble) verdict — 15 Jul 2026
+
+Appended 2026-07-15 14:04:00 IST (task #11). Question researched: combined WhatsApp+AI-chat launchers vs two separate bubbles vs our current sticky-bar + bubble split.
+
+### 8.1 What the market actually ships
+
+- The dominant "combined" pattern is **NOT two bubbles** — it is a **single floating bubble that expands into a channel picker** (speed-dial FAB). Chaty (the category leader on WordPress/Wix/Shopify), GetButton, Bit Assist and Buttonizer all implement one launcher exposing WhatsApp/call/Messenger/email inside it, with per-device rules (e.g. Call+WhatsApp on mobile, form+email on desktop), page targeting, trigger delays and built-in click analytics. This is almost certainly the pattern Abilash saw. ([Chaty — WordPress plugin](https://wordpress.org/plugins/chaty/))
+- The exact "WhatsApp + AI chatbot in one outer bubble" combination is a **productized commodity, not custom design**: GetButton's own pitch is an "all-in-one chat button… enabling chat via WhatsApp, Custom ChatGPT, Messenger, Instagram, and more" (also Boei, Social Intents), aimed largely at SMB/WhatsApp-first markets. ([GetButton](https://getbutton.io/))
+- Design-system guardrail: Material's speed-dial spec caps an expanding FAB at **3–6 related actions** ("If more than six actions are needed, something other than a FAB should be used"); for a contact launcher the practical ceiling is **~3** (WhatsApp, call, AI chat) before choice costs kick in. ([MUI SpeedDial / Material spec](https://mui.com/material-ui/react-speed-dial/))
+
+### 8.2 Why WhatsApp-forward launchers fit our market
+
+- India is the archetypal WhatsApp-first market (500M+ users heading to ~800M). GoKwik's WhatsApp Commerce Intelligence Report 2026 (26B messages, 1,800+ D2C brands): 83% of WhatsApp-driven orders in the Oct–Dec 2025 festive quarter were first-time buyers; brands using WhatsApp marketing saw 2.25x higher median GMV growth; ~98% open rates vs email's ~20%. Indian D2C brands use WhatsApp for **acquisition**, not just support. ([Outlook Business — D2C brands lean on WhatsApp](https://www.outlookbusiness.com/corporate/d2c-brands-lean-on-whatsapp-to-find-new-customers))
+- Healthcare specifically: WhatsApp is described as the #1 patient-communication channel for Indian hospitals; instant WhatsApp replies are credited with converting enquiries to confirmed appointments and 20–30% no-show reduction. **Caveat: vendor-reported figures (TeleCRM et al.), not independent A/B trials — directional only.** ([TeleCRM — WhatsApp chatbot for hospitals](https://telecrm.in/blog/whatsapp-chatbot-hospital/))
+
+### 8.3 The honest conversion read
+
+There is **no rigorous public A/B evidence that a combined multi-channel launcher outperforms a single well-chosen channel**. Vendor claims exist ("WhatsApp widgets boost conversions by 45%", "2–5x more inquiries than email or phone" — Flowcart/TailorTalk, unaudited). What the evidence does support:
+
+1. **WhatsApp entry points strongly outperform email/phone for enquiry volume** (§8.2 sources).
+2. **Fewer floating elements convert better.** Yonder's tourism-site analysis — the only placement-specific finding with a stated mechanism: overlapping widgets create "friction at the exact moment you should be removing it", and "over 60% of tourism traffic is mobile — and that's where conflicts show up most often." ([Yonder — chatbot placement](https://blog.yonderhq.com/yonders-blog/why-your-chatbot-placement-matters-and-how-to-fix-conflicts-on-your-tourism-website))
+3. **Choice paralysis is real at the launcher:** Hick's Law / choice-overload research puts the usable ceiling at 3–5 options in a chat/contact context, and a launcher that opens to a menu adds one extra decision + one extra tap before any conversation starts — it must earn that tap.
+
+Any combined-launcher decision gets validated with our own `data-cta` click analytics, not vendor claims.
+
+### 8.4 Verdict
+
+- **Two separate bubbles: NEVER.** It violates the single-slot law (§2 pattern 3) and the fewer-floating-elements finding (§8.3). If two channels are wanted, they live inside ONE launcher.
+- **Combined launcher (speed-dial): allowed, capped at 3 channels**, and only where ≥2 channels genuinely carry lead volume. The menu costs one decision + one tap, so a site with one dominant channel should skip it.
+- **Single direct-open WhatsApp bubble: the default** for WhatsApp-first lead-gen — zero extra taps, matches §8.2 market evidence.
+- **Current sticky-bar + bubble split (kairali.com / arogyakendra reference behaviour, §7): keep.** It already satisfies the single-slot law; nothing in the research says to replace it.
+
+**Recommendation per site type** (offers/copy still per entity register; KTAHV clinical lock applies):
+
+| Site type | Launcher | Rationale |
+|---|---|---|
+| KTAHV lead-gen pages | Single WhatsApp bubble, direct-open (Priya: +91 92898 38797), clinical-register prefill | One dominant channel; menu tap unearned. Upgrade to 3-item speed-dial (WhatsApp / call / AI chat) ONLY if/when an AI intake assistant ships and call volume justifies it |
+| kairalicenters (18-centre network) | Combined speed-dial: WhatsApp + click-to-call (2 items; 3 max if AI chat ships) | Local-business evidence favours click-to-call alongside WhatsApp; per-centre numbers make a picker genuinely useful |
+| Villa Raag | Single WhatsApp bubble, direct-open | Boutique property, one channel; hospitality register |
+| KAPPL / product sites | Single WhatsApp bubble on enquiry/product pages; hidden near Shopify checkout handoff | Checkout is Shopify — never interfere; product-pharma register |
+| kairali.com (group corporate) | Keep current sticky-bar + bubble split as-is | Reference behaviour (§7); corporate register |
+| /lp/ landing pages | NO launcher menu — single CTA rule wins; at most a single-channel bubble matching the campaign CTA, or none | LANDING_PAGE_DOCTRINE.md single-CTA law |
+
+### 8.5 Changes to the `packages/ui` floating-stack spec
+
+The §7 floating-stack component gains ONE addition — a launcher variant — everything else in this law is unchanged:
+
+- `launcher: "single" | "speed-dial"` — `single` (default) opens the channel directly on tap; `speed-dial` expands upward into a channel list, **hard-capped at 3 items** (build-time lint, not a soft guideline).
+- Speed-dial still occupies the SAME single corner slot, is facade-loaded (§5), inherits all hide states (§4), all placement/offset rules (§1–2), and the no-auto-open law (§3). The menu never auto-expands.
+- Each expanded channel item ≥44px target; expanded state is a menu for focus purposes (Esc or re-tap collapses, focus returns to the launcher).
+- **We own the launcher — no Chaty/GetButton/third-party plugin.** Same reasoning as the Intercom custom-launcher caveat (§2): third-party launchers break placement control and CWV (§5).
+- Instrumentation is mandatory so §8.3's open question gets answered with our data: `data-cta="launcher-open"`, `launcher-whatsapp`, `launcher-call`, `launcher-ai` per channel; weekly QA audit verifies the events fire.
