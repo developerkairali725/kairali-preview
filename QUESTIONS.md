@@ -165,3 +165,9 @@ Three consecutive non-revenue sites mined tonight are each blocked on missing SO
 - kairalifranchise.com → blocked: investment figures absent everywhere; canonical domain undecided.
 - kairaliequipment.com → blocked: product catalog DB is empty; live site is 500/broken + leaking paths.
 The mining discipline is doing its job (no fabrication), but the remaining non-revenue rebuilds need Abilash to SUPPLY real source data (product lists, franchise terms, canonical roster) — they can't be mined from broken/empty/hacked legacy sites. Consolidated ask surfaced to Abilash; further speculative mining paused until he provides data or picks targets.
+
+## 2026-07-15 12:45:00 IST — POSITIONING_AND_MOA.md questions (from the archive strategy-docs synthesis)
+The strategy source-of-truth (docs/strategy/POSITIONING_AND_MOA.md, distilled from your real MOA Matrix v3, Villa Raag buyer journey, competitor audits, GEO KB) raises 5 Abilash questions — full text in its §6. Load-bearing ones:
+- **Q-POS-MCB:** "MCB" is NOT defined anywhere in the competitor audits — it only appears as an informal label. Confirm what MCB stands for (Pavan is sending Akshar Yadav's teachings this week — likely the source). Not invented.
+- **Q-POS-RATIFY (register amendments — need your sign-off before applied):** the synthesis proposes 5 build changes (Villa Raag = wellness-not-medicine compliance rewrite; whatisayurveda = "WebMD/Mayo of Ayurveda" spec; GERMAN as priority 2nd locale on reference/tourism sites; KTAHV audience +M3 NRI +M6 GCC; hard reference-vs-commerce boundary) + add WhyAyurveda to the register. These change site briefs → ratify per site before build (register-table amendments go via DECISIONS with your sign-off).
+- MOA data caveat: figures rest on a 58-booking sample (workbook ~80% complete) — directional, not precise.
