@@ -17,10 +17,11 @@ import {
 import { Markdown } from "../lib/render";
 import { EMAIL, WHATSAPP_URL } from "./chrome";
 import type { Page } from "../lib/content";
+import { MEDICAL_REVIEW } from "../lib/medical-review";
 
 const SITE = "https://whatisayurveda.com";
 const REVIEWED = "2026-07-14"; // build date; real review cadence tracked in editorial policy
-const REVIEWER_ID = `${SITE}/about#dr-deepu-john`;
+const REVIEWER_ID = `${SITE}/about#${MEDICAL_REVIEW.current.anchor}`;
 const AUTHOR_ID = `${SITE}/about#editorial-team`;
 const ORG_ID = `${SITE}/#organization`;
 
@@ -82,8 +83,8 @@ export function Article({ page }: { page: Page }) {
         }),
     physician({
       id: REVIEWER_ID,
-      name: "Dr. Deepu John",
-      jobTitle: "Chief Physician (BAMS), Kairali — The Ayurvedic Healing Village",
+      name: MEDICAL_REVIEW.current.name,
+      jobTitle: `${MEDICAL_REVIEW.current.title} (${MEDICAL_REVIEW.current.credentials})`,
       medicalSpecialty: "https://schema.org/PublicHealth",
       affiliationId: ORG_ID,
     }),
@@ -119,7 +120,7 @@ export function Article({ page }: { page: Page }) {
 
           <div className="byline">
             <span>By <span style={{ color: "var(--forest-700)", fontWeight: 700 }}>the Kairali Editorial Team</span></span>
-            <span className="review-badge"><CheckIcon /> Medically reviewed by Dr. Deepu John (BAMS)</span>
+            <span className="review-badge"><CheckIcon /> Medically reviewed by {MEDICAL_REVIEW.current.name} ({MEDICAL_REVIEW.current.credentials})</span>
             <span>Reviewed {new Date(REVIEWED).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
           </div>
 
