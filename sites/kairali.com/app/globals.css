@@ -346,13 +346,13 @@ h1, h2, h3 {
   #chatbase-bubble-button {
     bottom: calc(84px + env(safe-area-inset-bottom)) !important;
   }
-  /* Priya's PROACTIVE popups covered ~40% of a 375px viewport on top of the
-     sticky bar + bubble (a 4th floating overlay — DESIGN_DOCTRINE §1.4).
-     On mobile the popups are suppressed; the chat BUTTON stays. Desktop
-     keeps the popups. Floating-stack manager remains the package-level fix
-     (LEARNINGS 14 Jul #3). */
-  #chatbase-message-bubbles { display: none !important; }
 }
+/* Priya's PROACTIVE popups suppressed on ALL viewports (interim): the desktop
+   stack asserts an offer no locked fact verifies (rule 6) and violates the
+   bubble law's 1-teaser/<15%-viewport caps (design-philosophy-audit G6).
+   The chat BUTTON stays. Permanent fix = Priya's Chatbase dashboard config
+   (cap 1, >=30s delay, register copy, verify-or-kill the offer). */
+#chatbase-message-bubbles { display: none !important; }
 
 /* While the consent banner is open, the chat bubble yields entirely — one
    decision at a time, no floating-UI overlap on any viewport (Abilash
