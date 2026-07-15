@@ -118,3 +118,9 @@ Root cause it fixes: a hand-written brief snapshotted "machine idle / nothing me
 - **A brief is a GENERATED VIEW, never a source of truth.** The durable state lives in QUESTIONS.md / DECISIONS.md / BACKLOG.md / git history. Run `scripts/brief-snapshot.sh` FIRST to produce the machine-verifiable base (as-of-commit hash, merges-since-last-brief, sites, HACKED/SECURITY/BLOCKED grep flags, open-question headers, open PRs). Interpretation is appended ON TOP of that fresh base.
 - **Every brief carries an "as of <commit> <IST>" stamp and NEVER claims a stale absolute** ("idle", "nothing after X") as final — only ever "as of commit X". Re-running the script refreshes it.
 - **Concurrent-writer safety:** more than one agent may touch the repo; briefs/backlog updates that push to main use the PR flow where possible, and always `git pull` immediately before writing so nothing is clobbered.
+
+## BUILD DECISION MATRIX (Abilash ruling, 15 Jul 2026 — applies to EVERY rebuild of an existing/ranked site)
+1. **MINE FIRST, ALWAYS**: full live-site inventory (sitemap, every URL, per-page value signals, assets, security screen) BEFORE design decisions. Mining the live site is not optional homework — it is step zero.
+2. **PROTECTION MAP before any flip**: every legacy URL gets an explicit fate — KEEP-AS-PAGE (rebuild it), MERGE (into which page), or 301 (to which exact single-hop target). Content-rich ranking pages are never redirected to thin targets. Search Console data ranks the URLs when available.
+3. **"Lean at birth, complete at launch"**: a new site may START lean, but DNS does not flip until it has absorbed the legacy site's ranking value and Abilash approves.
+4. **PACE: slow and easy beats fast.** The deliverable is a PUBLISH-READY, design-gate-passed, "sexy" site added to the go-live pool — Abilash takes them live one by one. No rushing a site out to hit a count.

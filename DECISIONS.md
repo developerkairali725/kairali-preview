@@ -211,3 +211,7 @@
 - Gap his question exposed: we mined the agency's staging build but never the LIVE kairali.com. Mining launched now → docs/group-inputs/kairali-com-live-inventory.md + kairali-com-protection-map.md.
 - Search Console read access = the ranking data that finalizes URL fates (impressions/clicks per URL) — Abilash is connecting data/GSC this afternoon; protection map will be re-ranked with real GSC numbers when available.
 - The Vercel deploy today is a PREVIEW (vercel.app) — live kairali.com untouched; zero SEO risk from today's step.
+
+## 2026-07-15 13:35:00 IST — Abilash ratifications (in-chat)
+- **Build Decision Matrix = LAW for all future builds** (CLAUDE.md): mine live site first → protection map (KEEP/MERGE/301) → lean-at-birth-complete-at-launch → Abilash flips one by one from the publish-ready pool. Pace ruling: slow and easy, great sexy publish-ready sites > speed.
+- **Agency-draft gap (Abilash caught it):** the Hostinger agency build (darkgreen-cobra-882291.hostingersite.com) has EXTENSIVE SUBPAGES that were never inventoried — only its homepage was examined in the 14 Jul intake. Its subpage content = agency-written raw material for the kairali.com build list. Full subpage mining launched → docs/group-inputs/kairali-com-agency-subpages.md. Feeds the BUILD side of the protection map (live-site mining feeds the PRESERVE side).
