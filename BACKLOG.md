@@ -7,15 +7,16 @@ The 07:05 morning brief reads this file daily and surfaces anything due. Nothing
 deleted — history is the point.
 
 ## NOW (this week — Wave 0 / Days 1–6)
-- [ ] Interim uptime monitor for launched sites (Ship Gate B10) — PRIORITY RAISED by Abilash 14 Jul ("regular listening tool"); Fleet Pulse stays Wave 3
-- [ ] MCP OAuth sitting: github (/mcp click) · Clarity token · Semrush/Composio — commands delivered 14 Jul; verify with read-only calls after
+- [ ] URGENT — kairalicenters.com LIVE site is HACKED (gambling-spam injection); Sunaj email drafted (bulk-sheet row 7). A live Kairali property is compromised — route the fix + send the email
+- [ ] Non-revenue build queue DATA-BLOCKED (rule 6, no-rework): centres canonical roster · franchise investment figures + canonical domain · equipment product DB (empty). Rebuilds paused until Abilash supplies source data (see overnight wrap + QUESTIONS)
+- [ ] Self-contained factory work available while the build queue is blocked: packages/ui floating-stack (LEARNINGS #3) + packages/forms store-first (needs Supabase creds)
 - [ ] Mechanization candidates from docs/seo/SEO_PLAYBOOK.md §GAPS + docs/design/DESIGN_DOCTRINE.md (INP gate, title-uniqueness, orphan-page check, AI-crawler policy…) — triage into packages/checklist within the week (Ship Gate §E rule)
-- [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul)
+- [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul) — gated on image-folder shares
 - [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
 - [ ] Chase: Google Photos album 9UCcY3jv4zi6byq48 is DEAD (HTTP 500) — Abilash to reshare if its contents matter
 - [ ] Lighthouse CI vs Vercel preview in gate.yml (A5 TODO — needs preview-URL wiring) [gap #1]
 - [ ] Forms v1.1: Cloudflare Turnstile (Checklist FORMS v1 freeze names it; absent from packages/forms) [gap #6]
-- [ ] Abilash rulings from 14 Jul QUESTIONS: brand-lint exemptions (abhilashkr/kairali.ai) + CI-matrix membership · kairaliproduct.com forward family · raagcasa/raagvilla/theraagvilla ownership · whyayurveda interim target · where ktahv.com's existing 301 is configured · consent-banner × Chatbase bubble overlap
+- [ ] Still-open 14 Jul rulings (rest answered): abhilashkr/kairali.ai CI-matrix membership · whyayurveda.* interim target ratification · where ktahv.com's existing 301 is configured (for the Cloudflare bulk-redirect consolidation)
 
 ## SCHEDULED (date- or condition-triggered)
 - [ ] News/updates monitor for the tech stack (Next.js/Vercel/Cloudflare/Shopify/Google-algo updates → flagged fixes) — build with Fleet Pulse on kairali.ai (Wave 3); Abilash ask 14 Jul
@@ -45,6 +46,24 @@ deleted — history is the point.
 - [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
 
 ## DONE (most recent first)
+- [x] 2026-07-15 00:18:20 IST — Overnight-wrap brief committed to main (PR #43); autonomous build session paused ~00:20 IST (non-revenue queue data-blocked on Abilash source data)
+- [x] 2026-07-15 00:17:16 IST — kairaliequipment.com pre-build BANKED + BLOCKED: legacy product DB empty (0 SKUs) + live site 500/path-leak; no fabrication (rule 6) → needs real product list + broken-site routing (PR #42)
+- [x] 2026-07-14 23:57:59 IST — kairalifranchise.com pre-build BANKED + PAUSED: needs investment figures + canonical domain ruling before build (rule 6, no-rework) (PR #41)
+- [x] 2026-07-14 23:38:55 IST — whatisayurveda.com launch evidence in repo: design-review 9.0 PASS + screenshots → launches/whatisayurveda.com/ (PR #40)
+- [x] 2026-07-14 23:38:13 IST — sites/kairalicenters.com built (14 verified centres; mining caught hacked WP + false roster) + design-review iteration-2 PASS 9.0 → launches/kairalicenters.com/ (PR #38/#39)
+- [x] 2026-07-14 22:55:30 IST — @kairali/legal package: shared privacy/terms/cookie pages; Ship Gate A12 closed fleet-wide (PR #37)
+- [x] 2026-07-14 22:08:22 IST — sites/whatisayurveda.com v1 shipped (design gate 9.0 PASS) — the "Ayurveda authority" hub; greenfield (.org mine = 1 page, 98 dead links) (PR #36)
+- [x] 2026-07-14 21:10:03 IST — Bulk-sheet delegation channel live (2 Sunaj tasks) + correction (Anupam Molpha + Astha Kumari ARE Doers, rows 3-6) + channel-selection rule (PR #34/#35)
+- [x] 2026-07-14 20:34:17 IST — developers6 delegation (KTAHV technical fixes) + standing rules (transcript-search in research, trust-furniture, drive ruling) (PR #33)
+- [x] 2026-07-14 20:16:01 IST — whatisayurveda.org legacy mine (1-page site, 98 dead article links, 94 images harvested, claim-risk catalogue) + .org EXPIRES 2026-09-28 (whois-verified) → Sunaj renewal draft (PR #31/#32)
+- [x] 2026-07-14 20:03:59 IST — RATES_RECKONER.md complete (26 tables, 6/6 PDFs, price-verified) + Q-RATE1-4 (verify-pass caught 2 errors; direct-push rule hardened) (PR #30)
+- [x] 2026-07-14 19:56:51 IST — SEO tooling verdict: buy $50 one-time DataForSEO deposit (~$3.60/mo at our usage) over Semrush/Ahrefs APIs; free GSC/Bing/Clarity backbone; DIY AEO (PR #29)
+- [x] 2026-07-14 19:52:21 IST — Interim uptime monitor LIVE (Ship Gate B10): 10-min GitHub cron, CF-aware probe, single auto-issue alerting (PR #28) [NOW item closed]
+- [x] 2026-07-14 19:49:36 IST — LP doctrine DRAFT + chat-bubble law + legacy KTAHV mining (594-URL sitemap decoded, 83 assets banked, live banned-word audit → delegation) (PR #27)
+- [x] 2026-07-14 19:47:27 IST — Night closures: Q-KC1/2/3 + Slaget + free-consult CLOSED; Supabase decision; tea catalog facts; PDFs found locally; Sunaj draft (PR #26)
+- [x] 2026-07-14 19:32:23 IST — Abilash evening rulings ingested → CLAUDE.md v1.4 Operating Principles (pushback duty, design bar, asset-mining checklist, sprint build order) + vector logos received (Q17) + Satyam CRM spec (PR #25)
+- [x] 2026-07-14 19:19:15 IST — sites/kairali.com flagship group site shipped (design gate 9.2 PASS, real photography) (PR #24)
+- [x] 2026-07-14 15:35:00 IST — MCP sitting closed: clarity-ktahv CONNECTED + verified (677 sessions/day real data); GitHub MCP SKIPPED (DCR-incompatible, gh CLI covers all); Composio CONNECTED; Semrush API DECLINED (cost) [NOW item closed]
 - [x] 2026-07-14 14:35:00 IST — Ship Gate A-13 LIVE: ANTHROPIC_API_KEY secret set by Abilash; security-review job added to gate.yml (Claude review on every PR diff, SHA-pinned action, PR-comment evidence, zero-findings hard gate); PR #13 (playbook incl. AI-content doctrine §6) + PR #14 (banner fix + forward farm) merged; OpenAI key stored locally for the image lane; Vercel relink verified [gap #7 closed]
 - [x] 2026-07-14 13:28:11 IST — MERGE TRAIN COMPLETE: PR #2 (docs sync v2 + Shopify track) + PR #3 (Wave-0 mechanization incl. CLAUDE.md (j)–(s), enumerated gitleaks allowlists, dependabot.yml) merged by Abilash; PR #4 closed superseded; main FULLY GREEN (gate + factory-gate + Dependabot on 4c6adf1); BRANCH PROTECTION applied + verified (gate/brand-lint/factory-spec required, 1 approval, CODEOWNERS binding, no force-push/delete; admins exempt to preserve the one-click)
 - [x] 2026-07-14 13:28:11 IST — Plugins installed (fix #4): security-guidance 2.0.6 · code-simplifier 1.0.0 · commit-commands · skill-creator · superpowers 6.1.1 (obra marketplace) + 13-skill taste/design bundle moved to ~/.claude/skills (user scope, repo kept clean); GitHub Team confirmed active (6 seats)
