@@ -234,3 +234,11 @@
 ## 2026-07-15 15:05:00 IST — whatisayurveda BRANDING + VOICE LAW (Abilash delegated; agent ruled)
 - **Branding = TRANSPARENT STEWARD.** Neutral masthead + voice ("What is Ayurveda", physician-reviewed); Kairali named ONLY as the disclosed publisher (footer/about), Mayo/Cleveland-style. Rationale: it reads as un-motivated truth AND satisfies Google E-E-A-T (a named credentialed publisher out-ranks anonymous/hidden). Zero selling in content; contextual "where this is practised" notes only.
 - **VOICE = DUTY & GRATITUDE, never charity.** Abilash's framing: "our duty towards the science of Ayurveda, since it has given us so much" — NOT "a charitable thing we did". Charity centres Kairali's virtue (self-congratulatory, sales-adjacent); duty-gratitude centres Ayurveda + the reader (devotion, humility, honesty). This is the binding editorial voice for the ENTIRE whatisayurveda repository build-out (feeds POSITIONING_AND_MOA + the full-sitemap build). Embodied first in the footer publisher-signature.
+
+## 2026-07-15 15:20:00 IST — POSITIONING changes RATIFIED (Abilash approved all 4) + whyayurveda role
+- **ALL FOUR positioning changes from POSITIONING_AND_MOA.md are now APPROVED and binding:**
+  1. **Villa Raag = wellness, NOT medicine** — villaraag.com uses strict wellness-lifestyle language; NO clinical/medical vocabulary (D&MR-Act compliance, inverse of KTAHV lock); real clinical demand referred to KTAHV. This is a compliance rule, not a preference.
+  2. **German before Hindi as the priority 2nd locale** on tourism/reference sites (KTAHV, Villa Raag, whatisayurveda) — DACH + UK/GCC affluent inbound is the high-value MOA segment; contests Sitaram's German cultivation.
+  3. **KTAHV audience EXPANDS** — add NRI ("bring your parents") hook + a capped GCC test; reorganise around programme-OUTCOME pages over generic treatment pages.
+  4. **WhyAyurveda ADDED to the register.**
+- **whyayurveda.org = the group's CENTRALISED BLOG, on WordPress** (Abilash). NOT a competitor to whatisayurveda: whatisayurveda = the authority REFERENCE (WebMD model); whyayurveda = the BLOG (news/stories/opinion). They cross-link (blog → reference for definitions; reference → blog for topical pieces). It's live WP → mine before any rebuild + security-screen (WP sites have been hacked/broken in this fleet). Mining launched.

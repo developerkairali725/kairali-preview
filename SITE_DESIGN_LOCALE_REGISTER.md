@@ -56,3 +56,10 @@ Register inherits from parent site; video default HF-FULL allowed EXCEPT any KTA
 - KPI baselines: pulled from GSC/GA in Phase 0; targets set in DECISIONS.md within week 2; Fleet Pulse renders red/amber/green against them.
 
 *v1.0 — amend via DECISIONS.md entries only.*
+
+
+## 2026-07-15 amendments (Abilash-ratified)
+- **whyayurveda.org** ADDED — register ED (blog). The group's centralised BLOG on WordPress (live). Role: topical blog/news/stories; cross-links with whatisayurveda (the authority reference). Locale EN (→DE priority). Mine + security-screen before rebuild.
+- **Locale priority:** German (DE) is the priority 2nd locale over Hindi on KTAHV / Villa Raag / whatisayurveda / whyayurveda (DACH+UK+GCC MOA).
+- **villaraag.com:** wellness-lifestyle register LOCKED — no clinical/medical vocabulary (D&MR compliance); clinical demand → KTAHV referral.
+- **KTAHV:** audience expands (+NRI 'bring your parents', +GCC capped test); programme-outcome page architecture.
