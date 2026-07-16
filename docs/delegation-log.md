@@ -18,3 +18,5 @@ Status: DRAFTED (in Gmail, awaiting Abilash send) · SENT · DONE.
 | 2026-07-14 23:10:00 IST | Sunaj Sahoo (Doer) / Abhilash Sir / ADMIN | URGENT SECURITY: kairalicenters.com WP hacked — gambling-spam injection; backup, clean, rotate all creds, update, remove unknown admins | 1 pt | IN BULK SHEET row 7 + email |
 
 | 2026-07-16 13:12:00 IST | Vikash (seo@ktahv.com) + digital@kairali.com CC Ritu | Analytics & Search Console access for the new websites — measurement setup | 5 (GSC read · Bing WMT read · GA4 Viewer+Measurement IDs · GTM read+container IDs · Google Ads read/IDs) | DRAFTED (Gmail draft id r-1282796369626820802, awaiting Abilash send) — genuinely a draft this time; verified in Gmail, NOT auto-sent |
+
+| 2026-07-16 13:47:26 IST | — (cancelled) | Measurement-access draft (r-1282796369626820802) CANCELLED unsent — Abilash ruled his own director@ Google login is the access; agent verified GSC/GA4/Ads/Bing/Clarity reachable via Chrome extension 16 Jul. No delegation needed. | 0 | CANCELLED |
