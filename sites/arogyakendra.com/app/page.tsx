@@ -26,7 +26,7 @@ const BRANDS = [
   {
     name: "Kairali Ayurvedic Centres",
     href: "https://www.kairalicenters.com",
-    line: "Treatment centres across nine countries, carrying forward classical Ayurvedic therapy.",
+    line: "Treatment centres in India and overseas, carrying forward classical Ayurvedic therapy.",
     slot: "brand-centres",
     subject: "Therapy room interior at a Kairali Ayurvedic Centre",
     alt: "Calm therapy room with a wooden treatment table at a Kairali Ayurvedic Centre",

@@ -41,7 +41,7 @@ Companion to PROJECT_CONTEXT.md. Every Factory site is built to ONE of four desi
 | whatisayurveda.org/.com | ED | Top-funnel education, AI-answer capture (Decision #2) | EN (→DE/FR) | HF-AMB explainers | AI-citation presence; assisted enquiries |
 | healing.recipes | **ED→E** | Cookbook readers, Gita Ramesh audience, press | EN | REAL (food) + HF-AMB | Book interest clicks; press pickups |
 | ayurvedafranchise.com | A (or 301 → franchise; Decision #4) | SEO satellite | EN | REAL | Assisted franchise leads |
-| arogyakendra.com / arogyashala.in | A (1-pagers) | Brand-protective single pages | EN | none | Indexed + branded query capture |
+| arogyakendra.com / arogyashala.in | A (1-pagers) | Brand-protective single pages — MEANING (Abilash 16 Jul, wiki/entities/arogya-brands.md): Kendra = tier-2/3 partner-doctor clinics under Kairali brand (hub-and-spoke); Shala = tier-2/3 chemist/retail branding programme. Richer B2B versions inherit the franchise commercials gate | EN | none | Indexed + branded query capture |
 | snehachowdhary.com (+theblushlounge; Decision #6) | E | Personal brand | EN | HF-FULL | n/a (personal) |
 | abhilashkr.com | ED/personal | Personal | EN | owner's call | n/a |
 | kairali.ai | internal | Fleet Pulse + tools | EN | none | uptime of dashboard itself |
