@@ -221,3 +221,45 @@ export function product(p) {
       : undefined,
   });
 }
+
+/**
+ * Book (healing.recipes book-plate pages). Offers carry seller + URL only —
+ * NO price: list prices go stale, and rule 6 says a stale fact is a wrong
+ * fact. The buy CLICK is the KPI, not the quote.
+ * @param {{id?:string,name:string,alternateName?:string,url?:string,image?:string,
+ *          authorId?:string,isbn?:string,numberOfPages?:number,datePublished?:string,
+ *          publisherName?:string,inLanguage?:string,award?:string,bookFormat?:"Hardcover"|"Paperback"|"EBook",
+ *          offers?:Array<{url:string,sellerName?:string}>}} b
+ */
+export function book(b) {
+  return clean({
+    "@type": "Book",
+    "@id": b.id,
+    name: b.name,
+    alternateName: b.alternateName,
+    url: b.url,
+    image: b.image,
+    author: b.authorId ? { "@id": b.authorId } : undefined,
+    isbn: b.isbn,
+    numberOfPages: b.numberOfPages,
+    datePublished: b.datePublished,
+    publisher: b.publisherName
+      ? { "@type": "Organization", name: b.publisherName }
+      : undefined,
+    inLanguage: b.inLanguage,
+    award: b.award,
+    bookFormat: b.bookFormat ? `https://schema.org/${b.bookFormat}` : undefined,
+    offers:
+      b.offers && b.offers.length
+        ? b.offers.map((o) =>
+            clean({
+              "@type": "Offer",
+              url: o.url,
+              seller: o.sellerName
+                ? { "@type": "Organization", name: o.sellerName }
+                : undefined,
+            }),
+          )
+        : undefined,
+  });
+}

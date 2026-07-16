@@ -23,7 +23,7 @@ export interface PageMeta {
   siteName?: string;
   ogImage?: string;
   index?: boolean;
-  ogType?: "website" | "article";
+  ogType?: "website" | "article" | "book";
 }
 
 /** Returns a Next.js Metadata-shaped object; throws on A6 violations. */

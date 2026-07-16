@@ -122,3 +122,20 @@ export function product(p: {
     availability?: string;
   };
 }): JsonLdNode;
+
+export function book(b: {
+  id?: string;
+  name: string;
+  alternateName?: string;
+  url?: string;
+  image?: string;
+  authorId?: string;
+  isbn?: string;
+  numberOfPages?: number;
+  datePublished?: string;
+  publisherName?: string;
+  inLanguage?: string;
+  award?: string;
+  bookFormat?: "Hardcover" | "Paperback" | "EBook";
+  offers?: Array<{ url: string; sellerName?: string }>;
+}): JsonLdNode;

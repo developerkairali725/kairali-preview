@@ -14,6 +14,7 @@ import {
   medicalWebPage,
   medicalClinic,
   product,
+  book,
 } from "../src/index.js";
 
 test("kairaliOrganization carries the locked facts and never invents", () => {
@@ -105,4 +106,28 @@ test("medicalClinic + product build with nested address/offer", () => {
   });
   assert.equal(p.offers["@type"], "Offer");
   assert.equal(p.offers.url, "https://shop.example/p");
+});
+
+test("book builds with author ref, offers carry NO price, gaps stay absent", () => {
+  const b = book({
+    id: "https://healing.recipes/books/harmony#book",
+    name: "Harmony",
+    alternateName: "Harmony: Essential Ayurveda for All",
+    authorId: "https://healing.recipes/#gita-ramesh",
+    isbn: "9789349474826",
+    numberOfPages: 280,
+    datePublished: "2026-03",
+    publisherName: "Roli Books",
+    bookFormat: "Hardcover",
+    offers: [{ url: "https://rolibooks.com/product/harmony-essential-ayurveda-for-all", sellerName: "Roli Books" }],
+  });
+  assert.equal(b["@type"], "Book");
+  assert.deepEqual(b.author, { "@id": "https://healing.recipes/#gita-ramesh" });
+  assert.equal(b.publisher.name, "Roli Books");
+  assert.equal(b.bookFormat, "https://schema.org/Hardcover");
+  assert.equal(b.offers[0].seller.name, "Roli Books");
+  assert.equal("price" in b.offers[0], false);
+  const lean = book({ name: "Ayurvedic Herbal Massage" });
+  assert.equal("award" in lean, false);
+  assert.equal("offers" in lean, false);
 });

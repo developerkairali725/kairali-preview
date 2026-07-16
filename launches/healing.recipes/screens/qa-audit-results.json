@@ -1,0 +1,890 @@
+{
+  "consoleErrors": [],
+  "pages": {
+    "home@mobile": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "as reported by The Hindu",
+          "w": 177,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 270,
+          "loading": null,
+          "fetchpriority": "high"
+        },
+        {
+          "src": "herbal-massage.jpg",
+          "alt": "Front cover of Ayurvedic Herbal Massage by Gita Ramesh — a woman receiving a head massage, pink flowers laid in her dark hair, Roli Books",
+          "natural": 2560,
+          "displayed": 196,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "ayurvedic-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Cookbook: Get Fit in Just Two Weeks by Gita Ramesh, Roli Books",
+          "natural": 711,
+          "displayed": 167,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "wellness-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Wellness Cookbook: Recipes for Balance & Rejuvenation by Gita Ramesh, Roli Books",
+          "natural": 436,
+          "displayed": 164,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 185,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony-mockup.jpg",
+          "alt": "The hardback edition of Harmony: Essential Ayurveda for All, photographed by Roli Books",
+          "natural": 1156,
+          "displayed": 335,
+          "loading": "lazy",
+          "fetchpriority": null
+        }
+      ],
+      "header": {
+        "navVisible": false,
+        "ctaVisible": false,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "shelf-biblio": {
+          "color": "color(srgb 0.968627 0.956863 0.917647 / 0.68)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "award-line": {
+          "color": "rgb(238, 180, 30)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "award-line": {
+          "ratio": 6.19,
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "ratio": 15.64,
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    },
+    "book-harmony@mobile": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 335,
+          "loading": null,
+          "fetchpriority": "high"
+        }
+      ],
+      "header": {
+        "navVisible": false,
+        "ctaVisible": false,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "subtitle": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "20px",
+          "weight": "400"
+        },
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "biblio-dt": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.55)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "subtitle": {
+          "ratio": 2.8,
+          "size": "20px",
+          "weight": "400"
+        },
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    },
+    "home@tablet": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "as reported by The Hindu",
+          "w": 177,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 340,
+          "loading": null,
+          "fetchpriority": "high"
+        },
+        {
+          "src": "herbal-massage.jpg",
+          "alt": "Front cover of Ayurvedic Herbal Massage by Gita Ramesh — a woman receiving a head massage, pink flowers laid in her dark hair, Roli Books",
+          "natural": 2560,
+          "displayed": 239,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "ayurvedic-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Cookbook: Get Fit in Just Two Weeks by Gita Ramesh, Roli Books",
+          "natural": 711,
+          "displayed": 206,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "wellness-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Wellness Cookbook: Recipes for Balance & Rejuvenation by Gita Ramesh, Roli Books",
+          "natural": 436,
+          "displayed": 202,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 228,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony-mockup.jpg",
+          "alt": "The hardback edition of Harmony: Essential Ayurveda for All, photographed by Roli Books",
+          "natural": 1156,
+          "displayed": 310,
+          "loading": "lazy",
+          "fetchpriority": null
+        }
+      ],
+      "header": {
+        "navVisible": true,
+        "ctaVisible": true,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "shelf-biblio": {
+          "color": "color(srgb 0.968627 0.956863 0.917647 / 0.68)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "award-line": {
+          "color": "rgb(238, 180, 30)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "award-line": {
+          "ratio": 6.19,
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "ratio": 15.64,
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    },
+    "book-harmony@tablet": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 380,
+          "loading": null,
+          "fetchpriority": "high"
+        }
+      ],
+      "header": {
+        "navVisible": true,
+        "ctaVisible": true,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "subtitle": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "20px",
+          "weight": "400"
+        },
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "biblio-dt": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.55)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "subtitle": {
+          "ratio": 2.8,
+          "size": "20px",
+          "weight": "400"
+        },
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    },
+    "home@desktop": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "as reported by The Hindu",
+          "w": 177,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 340,
+          "loading": null,
+          "fetchpriority": "high"
+        },
+        {
+          "src": "herbal-massage.jpg",
+          "alt": "Front cover of Ayurvedic Herbal Massage by Gita Ramesh — a woman receiving a head massage, pink flowers laid in her dark hair, Roli Books",
+          "natural": 2560,
+          "displayed": 239,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "ayurvedic-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Cookbook: Get Fit in Just Two Weeks by Gita Ramesh, Roli Books",
+          "natural": 711,
+          "displayed": 206,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "wellness-cookbook.jpg",
+          "alt": "Front cover of The Ayurvedic Wellness Cookbook: Recipes for Balance & Rejuvenation by Gita Ramesh, Roli Books",
+          "natural": 436,
+          "displayed": 202,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 228,
+          "loading": "lazy",
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony-mockup.jpg",
+          "alt": "The hardback edition of Harmony: Essential Ayurveda for All, photographed by Roli Books",
+          "natural": 1156,
+          "displayed": 468,
+          "loading": "lazy",
+          "fetchpriority": null
+        }
+      ],
+      "header": {
+        "navVisible": true,
+        "ctaVisible": true,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "shelf-biblio": {
+          "color": "color(srgb 0.968627 0.956863 0.917647 / 0.68)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "award-line": {
+          "color": "rgb(238, 180, 30)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "award-line": {
+          "ratio": 6.19,
+          "size": "12.48px",
+          "weight": "700"
+        },
+        "lede": {
+          "ratio": 15.64,
+          "size": "17.28px",
+          "weight": "400"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    },
+    "book-harmony@desktop": {
+      "hOverflow": 0,
+      "smallTargets": [
+        {
+          "t": "info@kairali.com",
+          "w": 121,
+          "h": 18,
+          "cls": ""
+        },
+        {
+          "t": "Terms",
+          "w": 38,
+          "h": 44,
+          "cls": ""
+        },
+        {
+          "t": "Privacy policy",
+          "w": 91,
+          "h": 17,
+          "cls": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "kairali-icon.svg",
+          "alt": "",
+          "natural": 532,
+          "displayed": 40,
+          "loading": null,
+          "fetchpriority": null
+        },
+        {
+          "src": "harmony.jpg",
+          "alt": "Front cover of Harmony: Essential Ayurveda for All by Gita Ramesh — a watercolour wreath of flowers, herbs and fruit on a vermilion ground, Roli Books",
+          "natural": 1970,
+          "displayed": 380,
+          "loading": null,
+          "fetchpriority": "high"
+        }
+      ],
+      "header": {
+        "navVisible": true,
+        "ctaVisible": true,
+        "hamburger": false
+      },
+      "type": {
+        "h1Font": "Kurale",
+        "h1Weight": "400",
+        "bodyFont": "Asap",
+        "bodySize": "16px"
+      },
+      "btnRadius": "999px",
+      "colorSamples": {
+        "subtitle": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "20px",
+          "weight": "400"
+        },
+        "biblio-line": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.62)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "biblio-dt": {
+          "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.55)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "overline": {
+          "color": "rgb(193, 136, 44)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "footer-fine": {
+          "color": "color(srgb 0.968628 0.956863 0.917647 / 0.65)",
+          "bg": "rgb(0, 66, 38)",
+          "size": "13.12px",
+          "weight": "400"
+        },
+        "body-p": {
+          "color": "rgb(28, 27, 25)",
+          "bg": "rgb(247, 244, 234)",
+          "size": "16px",
+          "weight": "400"
+        }
+      },
+      "contrast": {
+        "subtitle": {
+          "ratio": 2.8,
+          "size": "20px",
+          "weight": "400"
+        },
+        "overline": {
+          "ratio": 2.8,
+          "size": "12.8px",
+          "weight": "700"
+        },
+        "body-p": {
+          "ratio": 15.64,
+          "size": "16px",
+          "weight": "400"
+        }
+      }
+    }
+  },
+  "focusProbe": {
+    "el": "The Books",
+    "boxShadow": "color(srgb 0.556863 0.615686 0.207843 / 0.55) 0px 0px 0px 3px",
+    "outline": "none"
+  },
+  "reducedMotion": "1e-05s",
+  "routes": {
+    "/": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Healing Recipes — The Books of Gita Ramesh"
+    },
+    "/books/harmony": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Harmony — Gita Ramesh"
+    },
+    "/books/ayurvedic-herbal-massage": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Ayurvedic Herbal Massage — Gita Ramesh"
+    },
+    "/books/the-ayurvedic-cookbook": {
+      "status": 200,
+      "h1s": 1,
+      "title": "The Ayurvedic Cookbook — Gita Ramesh"
+    },
+    "/books/the-ayurvedic-wellness-cookbook": {
+      "status": 200,
+      "h1s": 1,
+      "title": "The Ayurvedic Wellness Cookbook — Gita Ramesh"
+    },
+    "/author": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Gita Ramesh — Author & Co-Founder, Kairali Ayurvedic Group"
+    },
+    "/press": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Press — the books of Gita Ramesh"
+    },
+    "/contact": {
+      "status": 200,
+      "h1s": 1,
+      "title": "Contact — Healing Recipes"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "Protection map for the legacy 2017 Chef Retreat site (docs/site-briefs/healing-recipes-legacy-mine.md). Every legacy URL gets a single-hop permanent redirect. Consumed by next.config.ts AND asserted complete by test/books.test.js against content-mined/healing.recipes/url-inventory.csv.",
+  "redirects": [
+    { "source": "/default.aspx", "destination": "/" },
+    { "source": "/about-us.aspx", "destination": "/author" },
+    { "source": "/concept.aspx", "destination": "/" },
+    { "source": "/recipes.aspx", "destination": "/" },
+    { "source": "/press-praise.aspx", "destination": "/press" },
+    { "source": "/faq.aspx", "destination": "/" },
+    { "source": "/gallery.aspx", "destination": "/" },
+    { "source": "/chef-retreat-july-2017.aspx", "destination": "/" },
+    { "source": "/menu-july-2017.aspx", "destination": "/" },
+    { "source": "/reservations.aspx", "destination": "/contact" },
+    { "source": "/enquire-now.aspx", "destination": "/contact" },
+    { "source": "/contact-us.aspx", "destination": "/contact" },
+    { "source": "/privacy-policy.aspx", "destination": "/privacy" },
+    { "source": "/sitemap.aspx", "destination": "/" }
+  ]
+}

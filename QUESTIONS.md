@@ -303,3 +303,8 @@ Abilash directed: record what each website is/does as pending questions, ask ONL
 5. **keralatowels.com** — possible FUTURE product launch; for now forwards to the e-commerce site ✓ (kairaliproducts.in, already correct). Idea logged.
 6. **Training family** (kairaliayurvedainstitute/kairalitraining/keralatraining/traininginayurveda) — a future **ACADEMY launch**; interim forwards to kairali.guru ✓ stay. Idea logged.
 **Bonus ruling:** healing.recipes showcases ALL of Gita Ramesh's books — the latest AND the previous three (4 total) — and **moves UP in priority** (BACKLOG updated; was Wave 2).
+
+## 2026-07-16 18:31:00 IST · healing.recipes legacy mine — two non-blocking questions (build proceeds)
+Mining the live healing.recipes (Build Decision Matrix step zero) found it is NOT a books site: it is the 2017 **"Chef Retreat — Back to Roots"** event site, co-founded by **K R Abhilash (Promoter) + Madhulika Dash (Curator)**, with real chef recipes (85KB, ingredient tables) banked verbatim in content-mined/healing.recipes/. Full map: docs/site-briefs/healing-recipes-legacy-mine.md.
+- **Q-HR-ARCHIVE (Abilash):** should the new books site carry a small archive section for the 2017 Chef Retreat (recipes + gallery + founding story — your own initiative with Madhulika Dash), or is healing.recipes purely the Gita Ramesh books home? v1 ships books-only per your 16 Jul ruling; archive is additive later. Legacy /recipes.aspx 301s to / in the interim.
+- **Q-HR-PHONE (Abilash):** the legacy site prints +91-9999231117 sitewide. Is that number still live/owned? The rebuild uses info@kairali.com (locked) and NO phone until you confirm one (rule 6 — no unverified contact details).

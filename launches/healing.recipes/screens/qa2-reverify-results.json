@@ -1,0 +1,83 @@
+{
+  "plateDesktop": {
+    "subtitleColor": "rgb(0, 66, 38)",
+    "subtitleSize": "20px",
+    "buyRowTop": 385,
+    "buyRowVisibleInFold": true,
+    "overlineSize": "14px",
+    "dtColor": "color(srgb 0.109804 0.105882 0.0980392 / 0.55)",
+    "subtitleColorContrast": 10.56,
+    "dtColorContrast": 3.76
+  },
+  "plateMobile": {
+    "buyRowTop": 894,
+    "hOverflow": 0
+  },
+  "homeMobile": {
+    "navVisible": true,
+    "navLinks": [
+      {
+        "t": "The Books",
+        "h": 40,
+        "w": 85
+      },
+      {
+        "t": "The Author",
+        "h": 40,
+        "w": 90
+      },
+      {
+        "t": "Press",
+        "h": 40,
+        "w": 53
+      },
+      {
+        "t": "Contact",
+        "h": 40,
+        "w": 70
+      }
+    ],
+    "ctaVisible": true,
+    "ctaRect": {
+      "h": 40,
+      "w": 120
+    },
+    "headerHeight": 113,
+    "hOverflow": 0,
+    "heroCtaTop": 505
+  },
+  "homeImages": {
+    "harmony.jpg": 204108,
+    "kairali-icon.svg": 8389,
+    "herbal-massage.jpg": 105630,
+    "harmony-mockup.jpg": 305030,
+    "ayurvedic-cookbook.jpg": 172226,
+    "wellness-cookbook.jpg": 60968
+  },
+  "homeImageTotalKB": 836,
+  "shelf": {
+    "covers": [
+      {
+        "src": "herbal-massage.jpg",
+        "bottom": -1774,
+        "height": 200
+      },
+      {
+        "src": "ayurvedic-cookbook.jpg",
+        "bottom": -1774,
+        "height": 280
+      },
+      {
+        "src": "wellness-cookbook.jpg",
+        "bottom": -1774,
+        "height": 280
+      },
+      {
+        "src": "harmony.jpg",
+        "bottom": -1774,
+        "height": 280
+      }
+    ],
+    "borderCarriers": []
+  }
+}
