@@ -107,7 +107,7 @@ Book count check: the Kairali Healing Village homepage (fetched 2026-07-16) stil
 
 1. **The Ayurvedic Cookbook first-edition date conflict:** Google Books says 2013; AbeBooks/Walmart trade records say (February) 2014. Which does Kairali treat as the official first-edition year? ______
 2. **First-edition (2013/14) cover image:** no direct, verifiable publisher image URL found for the original 9788174369628 cover (Roli now only lists the 2019/20 "Get Fit" edition). Supply the original cover scan if healing.recipes should show both editions. ______
-3. **Harmony official launch date/event:** Roli says 10/03/26, Amazon.in says 15/03/26. Was there a launch event (date, venue, photos) we can cite/show? ______
+3. **Harmony official launch date/event:** Roli says 10/03/26, Amazon.in says 15/03/26. Was there a launch event (date, venue, photos) we can cite/show? → **ANSWERED (Abilash, 2026-07-16 18:15 IST): the end-of-July OFFICIAL LAUNCH EVENT has no details yet — he supplies them when they exist; it is not tied to any current news. Site ships with a clearly-flagged placeholder section; do NOT chase.** The March dates above are the book's PUBLICATION dates (India), distinct from the July launch event.
 4. **Harmony on Kairali's own store:** not yet listed on kairaliproducts.com — will it be, and at what URL/price? ______
 5. **Harmony press coverage:** only publisher promo (Roli IG/FB/YouTube) found; no independent reviews yet. Any press clippings, interviews, or endorsement quotes Kairali has collected? ______
 6. **Ayurvedic Herbal Massage imprint detail:** first edition (2000) recorded by Internet Archive as "Roli & Janssen BV" while her LinkedIn credits "Lustre" (Lustre Press is Roli's imprint). Confirm preferred imprint credit for the site. ______
