@@ -30,3 +30,7 @@ Status: DRAFTED (in Gmail, awaiting Abilash send) · SENT · DONE.
 | 2026-07-16 16:22:09 IST | Deepu (developer@kairali.com) CC Ritu | URGENT website fixes from today's audit — store lead forms MISSING + 9 technical items (3 sites) | 13 points | DRAFTED (Gmail r-103380482716504368, awaiting Abilash send) |
 | 2026-07-16 16:22:09 IST | Sunaj (sysadmin@kairali.com) CC Ritu | Booking engine German meta + Cloudflare/Googlebot exemption check | 2 points | DRAFTED (Gmail r1548867792293087111, awaiting Abilash send) |
 | 2026-07-16 16:22:09 IST | Vikash (seo@ktahv.com) CC Ritu | Re: Search Console thread — 4 indexing-cause inputs + URL-inspection follow-through + kairali.com property reminder | 5 points | DRAFTED (Gmail r-5401958213938269987, awaiting Abilash send; reply in existing thread) |
+
+| 2026-07-16 16:54:59 IST | Deepu (developer@kairali.com) CC Ritu | Audit round 2 — kairalicenters + kairali.guru technical fixes | 8 points (guru GA4/viewport/privacy first) | DRAFTED (Gmail r5116039632432847056, awaiting Abilash send) |
+| 2026-07-16 16:54:59 IST | Sunaj (sysadmin@kairali.com) CC Ritu | kairalicenters verified CLEAN + xmlrpc disable + generator metas + weekly reinfection watch | 2 points + watch | DRAFTED (Gmail r-7432166840046783471, awaiting Abilash send) |
+| 2026-07-16 16:54:59 IST | Anupam (mkt@ktahv.com) CC Ritu | Content fixes — centers Lorem ipsum/typos + guru expired prices/meta descriptions | 4 points (rates via Abilash) | DRAFTED (Gmail r-3835658149110360314, awaiting Abilash send) |
