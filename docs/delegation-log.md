@@ -16,3 +16,5 @@ Status: DRAFTED (in Gmail, awaiting Abilash send) · SENT · DONE.
 | 2026-07-14 23:15:00 IST | Anupam Singh Molpha (Doer) / Abhilash Sir / KTAHV | URGENT KTAHV live-site banned-word fixes (9/10 pages) — clinical-register rewrite; detail in email | 10 pts | IN BULK SHEET row 5 (+ email has detail) |
 | 2026-07-14 23:15:00 IST | Astha Kumari (Doer) / Abhilash Sir / KAPPL | Remaining brand assets: KAG vector + dark/reversed variants of 4 logos + confirm Raag manual version | 3 pts | IN BULK SHEET row 6 (+ email has detail) |
 | 2026-07-14 23:10:00 IST | Sunaj Sahoo (Doer) / Abhilash Sir / ADMIN | URGENT SECURITY: kairalicenters.com WP hacked — gambling-spam injection; backup, clean, rotate all creds, update, remove unknown admins | 1 pt | IN BULK SHEET row 7 + email |
+
+| 2026-07-16 13:12:00 IST | Vikash (seo@ktahv.com) + digital@kairali.com CC Ritu | Analytics & Search Console access for the new websites — measurement setup | 5 (GSC read · Bing WMT read · GA4 Viewer+Measurement IDs · GTM read+container IDs · Google Ads read/IDs) | DRAFTED (Gmail draft id r-1282796369626820802, awaiting Abilash send) — genuinely a draft this time; verified in Gmail, NOT auto-sent |
