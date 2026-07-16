@@ -760,7 +760,12 @@ export function loadPathwayKeys(file = ARTICLE_TSX) {
     else if (src[i] === "}") { depth--; if (depth === 0) { end = i; break; } }
   }
   const block = src.slice(open, end);
-  const keys = [...block.matchAll(/^\s{2}([A-Za-z_][\w-]*)\s*:\s*\{/gm)].map((m) => m[1]);
+  // Keys may be bare identifiers (KTAHV) OR quoted strings ("Villa Raag") —
+  // the first version matched only bare identifiers, so "Villa Raag" was
+  // invisible to r4 and every page routing to it was a FALSE POSITIVE while
+  // the renderer served it fine. Two sources of truth had silently diverged;
+  // this extractor exists to prevent exactly that.
+  const keys = [...block.matchAll(/^\s{2}(?:"([^"]+)"|([A-Za-z_][\w-]*))\s*:\s*\{/gm)].map((m) => m[1] ?? m[2]);
   if (keys.length === 0) throw new Error("content-lint: extracted ZERO pathway keys — the extractor is broken; refusing to report a pass (§2.7 r23 doctrine)");
   return new Set(keys);
 }

@@ -46,6 +46,36 @@ jobs:
       - name: CTA-label lint (no human/clinical claim on a bot channel)
         run: node scripts/cta-label-lint.mjs
 
+      # The honest-YMYL content gate (BUILD_PLAN §2.7, 35 rules). Existed since
+      # 15 Jul with passing unit tests — but the gate itself never ran against
+      # the real content in CI, so 84 real content errors sat invisible behind
+      # a green checkmark. A gate that only lints its fixtures is a comment.
+      # Its own self-test (r23) refuses to report a pass if the scanner breaks.
+      - name: Content lint (whatisayurveda honest-YMYL gate, §2.7 — merge-blocking)
+        run: node scripts/content-lint.mjs --quiet
+
+      # S3 keyword gates arm themselves the moment S3 produces artifacts. While
+      # none exist the step says so LOUDLY (no silent skip — CLAUDE.md launch
+      # evidence rules); once docs/keywords/ lands, these become merge-blocking
+      # with no workflow edit.
+      - name: S3 keyword gates (seed-lint + keyword-validate — armed when artifacts exist)
+        run: |
+          armed=0
+          for seeds in docs/keywords/*/seeds.json; do
+            [ -e "$seeds" ] || continue
+            armed=1
+            dir=$(dirname "$seeds")
+            echo "── seed-lint: $dir"
+            node scripts/seed-lint.mjs --seeds "$seeds" --ontology "$dir/ontology.json"
+            if [ -e "$dir/demand.json" ]; then
+              echo "── keyword-validate: $dir"
+              node scripts/keyword-validate.mjs --artifact "$dir/demand.json" --ontology "$dir/ontology.json" --seeds "$seeds"
+            fi
+          done
+          if [ "$armed" = 0 ]; then
+            echo "::notice::S3 keyword gates NOT ARMED — no docs/keywords/*/seeds.json artifacts exist yet. The gates arm automatically when S3 produces them."
+          fi
+
       # Discovered by find, NOT a fixed glob. The old glob was
       # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
       # medical-review.test.js — the ONLY test guarding our anti-fabrication

@@ -94,3 +94,15 @@ before every new site build.**
 ## 2026-07-15 18:04:09 IST — auditor contamination: never hand a fact-checker your own conclusions
 Ran scripts/audit-perplexity.mjs against demand.md AFTER I had prepended a quarantine header explaining the bugs. The auditor dutifully "found" the faults — but several findings simply restated MY analysis back to me ("the artifact itself states…"). That is contaminated evidence, not independent verification, and it would let a future agent fake a passing fact-check by pre-loading the conclusion.
 **Rule:** a fact-grounding gate must see the RAW artifact only. Strip our own annotations, warnings and conclusions before submitting. If an auditor's justification cites the artifact rather than an external source, that finding is worthless — treat "the artifact itself says" as a red flag in any verdict.
+
+## 2026-07-16 14:43:42 IST — Research tooling directive (Abilash) + the content-gate-green retro
+
+### Abilash directive (BINDING on all research work)
+**Do not rely on built-in WebSearch/WebFetch alone.** The session has better research tools connected and they must be used alongside: **Tavily MCP** (tavily_search with search_depth:"advanced", tavily_extract for protected pages, tavily_research for deep dives) and the **Perplexity API** (scripts/audit-perplexity.mjs pattern / PERPLEXITY_API_KEY). Applied retroactively 16 Jul: the four r3-citation-floor sources chosen via built-in search were cross-checked with Tavily before shipping — Tavily's top authoritative result for triphala independently matched the chosen MSK About Herbs monograph, and the brahmi pick (Aguiar & Borowski 2013) was confirmed complementary to the page's existing Kongkeaw 2014 meta-analysis rather than duplicative. Every external citation on a YMYL page gets this two-tool check from now on.
+
+### What broke (this pass) and the general lesson
+Three separate artifacts had ENSHRINED a stale reality, and each cost time to unwind:
+1. content-lint's r4 extractor could not see quoted PATHWAYS keys → "Villa Raag" routes were false positives;
+2. its unit test asserted the broken output (["KAPPL","KTAHV"]) — a test that asserts broken output is the broken output's bodyguard;
+3. the corpus test asserted errors>0 ("dirty corpus") — right when written, absurd once the corpus was fixed.
+**Lesson: any assertion about CURRENT repo state (key lists, error counts, roster sizes) must be derived from the artifact, never hardcoded — or it becomes tomorrow's false gate.** Same class as the morning-brief staleness (fixed by brief-snapshot.sh) and the 3-of-5 physician roster literal (fixed by {{REVIEW_PANEL}}).

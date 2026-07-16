@@ -5,8 +5,14 @@
   "metaDescription": "A fixture page with link rot, citation rot and dead pathway keys.",
   "answerCapsule": "This page has no h1 at all, so the article template quietly falls back to rendering the meta title as the headline, even though the two strings are written for entirely different jobs and readers see the wrong one.",
   "breadcrumb": [
-    { "name": "Nonexistent Hub", "url": "/this-hub-does-not-exist" },
-    { "name": "Rot", "url": "/fixture-rot" }
+    {
+      "name": "Nonexistent Hub",
+      "url": "/this-hub-does-not-exist"
+    },
+    {
+      "name": "Rot",
+      "url": "/fixture-rot"
+    }
   ],
   "sections": [
     {
@@ -16,11 +22,26 @@
     }
   ],
   "citations": [
-    { "n": 2, "text": "Numbering starts at 2, so the contiguity check fires.", "url": "https://pubmed.ncbi.nlm.nih.gov/00000002/" },
-    { "n": 3, "text": "Ashwagandha benefits and dosage.", "url": "https://www.webmd.com/vitamins/ai/ingredientmono-953/ashwagandha" },
-    { "n": 4, "text": "Nobody cites this one in the body.", "url": "https://www.rxlist.com/supplements/ashwagandha.htm" }
+    {
+      "n": 2,
+      "text": "Numbering starts at 2, so the contiguity check fires.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/00000002/"
+    },
+    {
+      "n": 3,
+      "text": "Ashwagandha benefits and dosage.",
+      "url": "https://www.webmd.com/vitamins/ai/ingredientmono-953/ashwagandha"
+    },
+    {
+      "n": 4,
+      "text": "Nobody cites this one in the body.",
+      "url": "https://www.rxlist.com/supplements/ashwagandha.htm"
+    }
   ],
-  "routesTo": ["Villa Raag", "Kairali Ayurvedic Group (kairali.com)"],
+  "routesTo": [
+    "KTAVH",
+    "Kairali Ayurvedic Group (kairali.com)"
+  ],
   "clinical": false,
   "register_ok": "review"
 }

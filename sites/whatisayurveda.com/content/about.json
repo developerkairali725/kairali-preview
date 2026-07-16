@@ -7,7 +7,7 @@
   "clinical": false,
   "register_ok": "ok",
   "routesTo": [
-    "Kairali Ayurvedic Group (kairali.com)"
+    "KAG"
   ],
   "breadcrumb": [
     {
@@ -22,7 +22,7 @@
   "sections": [
     {
       "h2": "Who publishes whatisayurveda.com?",
-      "capsule": "This site is published by the Kairali Ayurvedic Group, a Kerala-based family enterprise that has worked in Ayurveda since 1908. Kairali runs an NABH-accredited Ayurvedic hospital and a WHO-GMP-certified pharmacy. whatisayurveda.com is its non-commercial educational arm: it explains the tradition and links out, but never sells anything on the page.",
+      "capsule": "whatisayurveda.com is published by the Kairali Ayurvedic Group, a Kerala-based family enterprise that has worked in Ayurveda since 1908. Kairali runs an NABH-accredited Ayurvedic hospital and a WHO-GMP-certified pharmacy. whatisayurveda.com is its non-commercial educational arm: it explains the tradition and links out, but never sells anything on the page.",
       "body": "whatisayurveda.com is published by the **Kairali Ayurvedic Group**, a family-run organisation whose work in Ayurveda goes back to 1908. It is a free, non-commercial reference site. Nothing is sold here — there is no shop, no cart, and no consultation fee to read a page.\n\nWe built it because most of the clearest, best-ranked writing about Ayurveda online comes from institutions outside the tradition, while the practitioners who train in and practise it are largely absent from the conversation. This site is our attempt to explain Ayurveda from inside the tradition, in plain language, and to hold ourselves to the same evidence and disclosure standards a good medical library would.\n\nIf you want the plain-English overview of the subject itself, start with our pillar guide, [what is Ayurveda](/what-is-ayurveda). This page is about who stands behind it."
     },
     {
@@ -48,7 +48,7 @@
     {
       "h2": "Who writes and reviews these pages?",
       "capsule": "Pages are prepared by the Kairali editorial team under content editor Roshni A John, and reviewed by the Ayurvedic physicians of the Kairali Ayurvedic Group — each of whom holds a BAMS, the recognised Indian degree in Ayurveda. A reviewed page names the physician who approved it.",
-      "body": "**Roshni A John — Content Editor.** Roshni leads the editorial team that prepares the pages on this site.\n\n**Our reviewing physicians.** Health content is reviewed by physicians of the Kairali Ayurvedic Group, based at Kairali — The Ayurvedic Healing Village, the group's NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Each holds a **BAMS** (Bachelor of Ayurvedic Medicine and Surgery), the recognised Indian degree qualification in Ayurveda:\n\n- **Dr. Deepu John, BAMS** — Chief Physician & Head of Department\n- **Dr. Akhila Oommen, BAMS** — Ayurvedic Physician\n- **Dr. Rahul R, BAMS** — Ayurvedic Physician\n\nWhen one of them approves a page, that page carries their name and the date they approved it.\n\n**Gita Ramesh — Co-Founder and Joint Managing Director.** Gita Ramesh co-founded the Kairali Ayurvedic Group and is its Joint Managing Director. She is known for her writing on Ayurvedic cooking and daily practice (dinacharya), and she anchors the plainspoken, practitioner's-eye register you will find across this site. She is not a physician and does not medically review these pages.\n\n**Credentials are stated, not implied.** We name the qualification each physician actually holds, and nothing more. Where we do not have something, we do not hint at it."
+      "body": "**Roshni A John — Content Editor.** Roshni leads the editorial team that prepares the pages on this site.\n\n**Our reviewing physicians.** Health content is reviewed by physicians of the Kairali Ayurvedic Group, based at Kairali — The Ayurvedic Healing Village, the group's NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Each holds a **BAMS** (Bachelor of Ayurvedic Medicine and Surgery), the recognised Indian degree qualification in Ayurveda:\n\n{{REVIEW_PANEL}}\n\nWhen one of them approves a page, that page carries their name and the date they approved it.\n\n**Gita Ramesh — Co-Founder and Joint Managing Director.** Gita Ramesh co-founded the Kairali Ayurvedic Group and is its Joint Managing Director. She is known for her writing on Ayurvedic cooking and daily practice (dinacharya), and she anchors the plainspoken, practitioner's-eye register you will find across this site. She is not a physician and does not medically review these pages.\n\n**Credentials are stated, not implied.** We name the qualification each physician actually holds, and nothing more. Where we do not have something, we do not hint at it."
     },
     {
       "h2": "How can you contact or correct us?",

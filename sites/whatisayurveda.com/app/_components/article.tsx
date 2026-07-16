@@ -17,7 +17,7 @@ import {
 import { Markdown } from "../lib/render";
 import { EMAIL, WHATSAPP_URL } from "./chrome";
 import { reviewCoverage, type Page } from "../lib/content";
-import { MEDICAL_REVIEW, resolveReview } from "../lib/medical-review";
+import { MEDICAL_REVIEW, REVIEWERS, resolveReview } from "../lib/medical-review";
 
 const SITE = "https://whatisayurveda.com";
 const AUTHOR_ID = `${SITE}/about#editorial-team`;
@@ -43,6 +43,12 @@ const PATHWAYS: Record<string, { overline: string; body: string; href: string; c
     href: "https://villaraag.com",
     cta: "Visit Villa Raag",
   },
+  KAG: {
+    overline: "The publisher",
+    body: "whatisayurveda.com is published by the Kairali Ayurvedic Group, a family enterprise working in Ayurveda since 1908.",
+    href: "https://www.kairali.com",
+    cta: "About the Kairali Ayurvedic Group",
+  },
 };
 
 function fmtDate(iso: string) {
@@ -52,12 +58,27 @@ function fmtDate(iso: string) {
 /**
  * Content tokens resolved at build time. {{REVIEW_COVERAGE}} renders the LIVE
  * reviewed/total count so /about can never overstate our review coverage in
- * prose — the number is computed from the pages themselves.
+ * prose — the number is computed from the pages themselves. {{REVIEW_PANEL}}
+ * renders the physician roster from config (app/lib/medical-review.ts) so the
+ * panel can never be listed as a stale literal in content again — /about had
+ * drifted to naming 3 of the 5 panel physicians (content-lint r29).
  */
+function reviewPanelMarkdown(): string {
+  return Object.values(REVIEWERS)
+    .map((r) => {
+      const role = r.title.split(", Kairali")[0];
+      return `- **${r.name}, ${r.credentials}** — ${role}`;
+    })
+    .join("\n");
+}
+
 function fillTokens(text: string): string {
-  return text.includes("{{REVIEW_COVERAGE}}")
-    ? text.replace(/\{\{REVIEW_COVERAGE\}\}/g, reviewCoverage().sentence)
-    : text;
+  let out = text;
+  if (out.includes("{{REVIEW_COVERAGE}}"))
+    out = out.replace(/\{\{REVIEW_COVERAGE\}\}/g, reviewCoverage().sentence);
+  if (out.includes("{{REVIEW_PANEL}}"))
+    out = out.replace(/\{\{REVIEW_PANEL\}\}/g, reviewPanelMarkdown());
+  return out;
 }
 
 function CheckIcon() {

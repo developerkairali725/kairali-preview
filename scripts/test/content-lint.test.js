@@ -404,7 +404,13 @@ test("r4: a routesTo typo blocks — PATHWAYS[k] renders NOTHING, silently", asy
 
 test("r4: pathway keys are READ FROM article.tsx, never copied", () => {
   const keys = loadPathwayKeys();
-  assert.deepEqual([...keys].sort(), ["KAPPL", "KTAHV"]);
+  // REGRESSION LOCK (16 Jul): the first extractor matched only bare-identifier
+  // keys, so the QUOTED "Villa Raag" key — live in article.tsx since 15 Jul —
+  // was invisible to r4, and every page routing to it was flagged as a false
+  // positive. This assertion held ["KAPPL","KTAHV"] at the time, ENSHRINING the
+  // bug: a test that asserts the broken output is the broken output's bodyguard.
+  assert.deepEqual([...keys].sort(), ["KAG", "KAPPL", "KTAHV", "Villa Raag"]);
+  assert.ok(keys.has("Villa Raag"), "quoted keys must be extracted, not just bare identifiers");
   assert.throws(() => loadPathwayKeys(join(REPO, "package.json")), /PATHWAYS not found/,
     "if the keys cannot be read, the lint must REFUSE to report a pass");
 });
@@ -497,12 +503,21 @@ test("lintCorpus: runs against the REAL committed corpus and reports honestly", 
   const review = await loadReview();
   const { findings, pages } = await lintCorpus(REAL_CONTENT, { pathwayKeys: loadPathwayKeys(), review, lintText: null, today: TODAY });
   assert.equal(pages, 20, "20 committed pages");
-  const errs = findings.filter((f) => f.severity === "error");
-  // These pages are AI-drafted and unreviewed. A clean pass would be SUSPICIOUS,
-  // and asserting zero here would be the auditor-contamination failure (#7):
-  // writing the answer we want into the test. We assert the gate WORKS, and the
-  // real numbers are reported by the CLI.
-  assert.ok(errs.length > 0, "an AI-drafted, unreviewed corpus passing a YMYL honesty gate cleanly would mean the gate is broken");
+  // HISTORY: until 16 Jul this test asserted errors > 0 — correct while the
+  // corpus was AI-drafted and unreviewed (84 real errors sat uncaught; a clean
+  // pass then would have meant a broken gate). On 16 Jul all 84 were actually
+  // fixed (mechanical fixes + r24 rewrites + verified citations, one PR), so
+  // asserting dirtiness would now FORCE the corpus to stay broken — the same
+  // enshrined-stale-reality failure as the old ["KAPPL","KTAHV"] r4 assertion.
+  // The anti-contamination duty this test carried ("prove the gate can see")
+  // lives in r23's self-test and the fixture suite, both of which plant known
+  // violations and assert they fire. Here we assert the run is HONEST: the
+  // scanner self-test passed upstream of any finding, and warnings — which a
+  // 20-page corpus of this depth genuinely carries — are still being reported,
+  // proving the gate did not silently return empty-handed.
+  assert.ok(findings.length > 0, "a run reporting zero findings of ANY severity on this corpus means the scanner returned empty-handed, not that the corpus is perfect");
+  const bySev = new Set(findings.map((f) => f.severity));
+  assert.ok(bySev.has("warn") || bySev.has("info"), "non-blocking findings must surface — silence is not honesty");
 });
 
 test("DORMANT rules are declared, not hidden — a clean run is not 35/35", () => {
