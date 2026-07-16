@@ -307,3 +307,24 @@
 **Precedent already in the repo:** `reviewCoverage()` computes "0 of 11 health pages reviewed" from the content itself, so the copy physically cannot overstate it. Same pattern; extend it to time.
 **Applies to (audit these at S6/S8):** years-since-founding · "X+ years of experience" · "over N patients treated" · "N centres in M countries" · any "since"/"for the past" phrasing · copyright years. **Test:** if the sentence would be false next January without an edit, it must be computed, not typed.
 **Still open (separate from this rule):** the ORIGIN itself. 1908 has no evidence — no registry entity, and one press source says 1909. Computing 118 from an unverified origin just produces a precise wrong number. Origin needs the family (QUESTIONS.md).
+
+## D — 1908 CONFIRMED as the lineage origin (Abilash, primary source) — 2026-07-16 12:55:18 IST
+**Ruling:** Abilash confirms **1908 is correct.** The locked fact stands.
+**Why this settles it, despite the research finding "no registry evidence":** there WAS no corporate registry in 1908 — the great-grandfather's practice was not a company. For a family's own origin, **the family is the primary source**, and Abilash is that source. A missing MCA record is not counter-evidence; it is the expected absence. (The lineage agent was right to flag that it could not verify it from public records, and right not to assert it — but "unverifiable from a registry" and "false" are different facts, which is the same distinction the keyword gate enforces on data.)
+**Noted, unresolved, low-stakes:** one press source says 1909. Not chased — the Director's word outranks a secondary article on his own family.
+
+### What 1908 does and does not license
+- ✅ **"a family practising Ayurveda since 1908"** — the LINEAGE. True, and Abilash-confirmed.
+- ❌ **"Kairali Ayurvedic Group — Since 1908"** — still WRONG, and still live on our own kairali.com. It conflates the lineage (1908) with the GROUP, founded **1989** by K.V. Ramesh and Gita Ramesh in New Delhi — the best-evidenced date in the entire record (the co-founder's own words + four corroborating sources). Confirming 1908 does not rescue this sentence; the two facts are both true and describe different things.
+- **The fix stays a single word:** *"health through ayurveda | a family tradition since 1908."*
+
+### And it must be COMPUTED, never typed
+Per the rolling-number rule (same session): the ORIGIN is now fixed and confirmed at 1908, so any "N years" is `currentYear − 1908` → **118 in 2026, 119 in 2027**, computed at build time. "115+ years" was frozen in 2023 and rotted. With the origin confirmed, computing it is now both safe and mandatory.
+**Still for the family (lower stakes, logged):** 1948 vs 1968 (one event or two?) · KTAHV opened 1998 or 1999?
+
+### The 1908 story, from Abilash (primary source) — 2026-07-16 12:59:17 IST
+**1908 — the great-grandfather opened his FIRST Ayurvedic clinic in PALAKKAD.** Later he opened a SECOND in **POLLACHI** — then part of the Malabar region, today in Tamil Nadu. **The date of the second is NOT KNOWN** and must never be invented or implied.
+**This closes a research gap:** the lineage agent found the claim of "two Ayurvedic centres" in Abilash's account but could not source it anywhere — no Kairali site, no press. Now sourced to the family directly: Palakkad (1908) → Pollachi (date unknown).
+**"1909" is a TYPO** in the press source, not a competing date. Closed — do not chase.
+**Publishable, exactly this precise:** "a family practising Ayurveda since 1908, when [great-grandfather] opened his first clinic in Palakkad" — and Pollachi may be mentioned as a later second clinic **without a date**. Writing "1908–1910" or "shortly after" for Pollachi would be fabrication by implication: the honest form is silence on a date we do not have.
+**Naming note:** the great-grandfather's name is NOT yet confirmed for publication (the lineage doc has "Sankunny Vaidiar" from a secondary source — UNVERIFIED). Do not print a name until Abilash confirms it.
