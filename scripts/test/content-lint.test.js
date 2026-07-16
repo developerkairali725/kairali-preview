@@ -22,7 +22,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync, mkdtempSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdtempSync, rmSync, readdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -502,7 +502,16 @@ test("lintCorpus: duplicate slugs block (one page becomes unreachable)", async (
 test("lintCorpus: runs against the REAL committed corpus and reports honestly", async () => {
   const review = await loadReview();
   const { findings, pages } = await lintCorpus(REAL_CONTENT, { pathwayKeys: loadPathwayKeys(), review, lintText: null, today: TODAY });
-  assert.equal(pages, 20, "20 committed pages");
+  // Page count is DERIVED from the corpus directory, never hardcoded. The old
+  // `=== 20` froze the count and broke the moment the corpus grew (28 after the
+  // first herb batch) — the same enshrined-stale-reality failure this very test
+  // was rewritten to avoid. Assert the gate SAW every committed page, whatever
+  // the number is today.
+  // Mirror lintCorpus's own file filter exactly (content-lint.mjs:1165):
+  // .json only, and `_`-prefixed files (e.g. _manifest.json) are not pages.
+  const committed = readdirSync(REAL_CONTENT).filter((f) => f.endsWith(".json") && !f.startsWith("_")).length;
+  assert.equal(pages, committed, `every committed page must be linted (dir has ${committed})`);
+  assert.ok(pages >= 20, "the corpus never shrinks below its shipped v1 floor without a deliberate reason");
   // HISTORY: until 16 Jul this test asserted errors > 0 — correct while the
   // corpus was AI-drafted and unreviewed (84 real errors sat uncaught; a clean
   // pass then would have meant a broken gate). On 16 Jul all 84 were actually

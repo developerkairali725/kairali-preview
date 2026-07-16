@@ -1,10 +1,22 @@
 {
-  "generated": "2026-07-14",
+  "generated": "2026-07-16",
   "pages": [
     {
-      "slug": "/what-is-ayurveda",
-      "file": "what-is-ayurveda.json",
-      "clinical": true,
+      "slug": "/about",
+      "file": "about.json",
+      "clinical": false,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/diet",
+      "file": "diet.json",
+      "clinical": false,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/diet/eating-by-dosha",
+      "file": "diet__eating-by-dosha.json",
+      "clinical": false,
       "register_ok": "ok"
     },
     {
@@ -14,8 +26,8 @@
       "register_ok": "ok"
     },
     {
-      "slug": "/doshas/vata",
-      "file": "doshas__vata.json",
+      "slug": "/doshas/kapha",
+      "file": "doshas__kapha.json",
       "clinical": false,
       "register_ok": "ok"
     },
@@ -26,8 +38,110 @@
       "register_ok": "ok"
     },
     {
-      "slug": "/doshas/kapha",
-      "file": "doshas__kapha.json",
+      "slug": "/doshas/vata",
+      "file": "doshas__vata.json",
+      "clinical": false,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/faq",
+      "file": "faq.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs",
+      "file": "herbs.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/amla",
+      "file": "herbs__amla.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/ashwagandha",
+      "file": "herbs__ashwagandha.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/brahmi",
+      "file": "herbs__brahmi.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/ginger",
+      "file": "herbs__ginger.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/gotu-kola",
+      "file": "herbs__gotu-kola.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/guduchi",
+      "file": "herbs__guduchi.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/neem",
+      "file": "herbs__neem.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/shatavari",
+      "file": "herbs__shatavari.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/shilajit",
+      "file": "herbs__shilajit.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/triphala",
+      "file": "herbs__triphala.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/tulsi",
+      "file": "herbs__tulsi.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/herbs/turmeric",
+      "file": "herbs__turmeric.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/history-of-ayurveda",
+      "file": "history-of-ayurveda.json",
+      "clinical": false,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/is-ayurveda-scientific",
+      "file": "is-ayurveda-scientific.json",
+      "clinical": true,
+      "register_ok": "ok"
+    },
+    {
+      "slug": "/lifestyle/dinacharya",
+      "file": "lifestyle__dinacharya.json",
       "clinical": false,
       "register_ok": "ok"
     },
@@ -50,75 +164,9 @@
       "register_ok": "ok"
     },
     {
-      "slug": "/herbs",
-      "file": "herbs.json",
+      "slug": "/what-is-ayurveda",
+      "file": "what-is-ayurveda.json",
       "clinical": true,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/herbs/ashwagandha",
-      "file": "herbs__ashwagandha.json",
-      "clinical": true,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/herbs/triphala",
-      "file": "herbs__triphala.json",
-      "clinical": true,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/herbs/brahmi",
-      "file": "herbs__brahmi.json",
-      "clinical": true,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/herbs/turmeric",
-      "file": "herbs__turmeric.json",
-      "clinical": true,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/diet",
-      "file": "diet.json",
-      "clinical": false,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/diet/eating-by-dosha",
-      "file": "diet__eating-by-dosha.json",
-      "clinical": false,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/lifestyle/dinacharya",
-      "file": "lifestyle__dinacharya.json",
-      "clinical": false,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/is-ayurveda-scientific",
-      "file": "is-ayurveda-scientific.json",
-      "clinical": true,
-      "register_ok": "review"
-    },
-    {
-      "slug": "/faq",
-      "file": "faq.json",
-      "clinical": true,
-      "register_ok": "review"
-    },
-    {
-      "slug": "/about",
-      "file": "about.json",
-      "clinical": false,
-      "register_ok": "ok"
-    },
-    {
-      "slug": "/history-of-ayurveda",
-      "file": "history-of-ayurveda.json",
-      "clinical": false,
       "register_ok": "ok"
     }
   ]
