@@ -1,0 +1,75 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A research report that ends in a minimal keep/cut/add adoption plan to stop agent state-drift and reduce token burn in a 30‑day multi‑agent website sprint, plus guidance on cross‑model judging and model routing.
+  for whom: Abilash (non‑technical Executive Director with low bandwidth) and the operator who must implement it immediately.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: The actionable keep/cut/add is buried inside a long research narrative. There is no copy‑pasteable tomorrow‑morning checklist, no JSON schema, no file paths, no cron commands, no owner/timebox, no success metrics or measurement harness. Two commissioned questions (cross‑model judge panels and model routing) are explicitly left unanswered.
+  they would think: “Impressive research, but I still don’t have the 30‑minute implementation plan to stop drift tomorrow, and you didn’t answer the judge-panel/model‑routing questions I asked.”
+  Abilash is low‑bandwidth and outcome‑driven. The deliverable optimizes for breadth of citations over minimal, enforceable change. It doesn’t commit to machine‑verifiable steps or measurement to prove the goal (less drift, better token ratio).
+
+--- MY REASONING --- sound: false
+  FLAWED: Assumes that citing many sources equals execution readiness; the plan lacks enforceable, testable steps.
+  FLAWED: Treats “HIGH/MEDIUM confidence” labels as sufficient to justify design choices without providing raw verification artifacts or reproducible checks.
+  FLAWED: Conflates viability of Git‑as‑memory with sufficiency; does not specify how flip‑only JSON will be enforced (schema/validator/CI), leaving the same class of silent failures possible.
+  FLAWED: Argues strongly against probabilistic memory stores yet doesn’t quantify Kairali’s own failure rates or token spend to show expected lift from the proposed ADDs.
+  ASSUMED (never reasoned): Email→issue bridge is acceptable and permitted for Kairali’s Gmail/security posture.
+  ASSUMED (never reasoned): GitHub API is the sole ground truth; ignores cases where truth lives in other systems (calendar, payments, CMS).
+  ASSUMED (never reasoned): A single compact JSON boot file will fit context reliably for all projects; no back‑pressure/size policy specified.
+  ASSUMED (never reasoned): Operators will reliably follow the directive‑capture rule without automation; no hook implementation given.
+  ASSUMED (never reasoned): Cron polling vs webhooks trade‑off not examined for reliability/latency given solo‑operator constraints.
+
+--- VS PRIOR --- better for audience: false
+  REGRESSION: None relative to prior (none supplied), but it regresses against the stated need for minimalism by delivering a dense paper without the promised direct answers.
+
+Quality: weak | expert would respect it: false | AI-filler risk: medium
+  weakest point: It doesn’t deliver the minimal, machine‑verifiable implementation Abilash asked for and dodges two core questions.
+
+Step — claimed: Research report + adoption plan | actual: Research summary with a high‑level recommendation; not yet an adoption plan ready for execution. | prereqs met: false
+  ORDER VIOLATION: Commissioned scope required answers on judge panels and model routing; these are left as open questions.
+  ORDER VIOLATION: ‘ADD’ items are proposed without the required spec (schema, owners, commands, CI gates), so the build‑before‑spec step is inverted.
+
+MISSED STEPS (8):
+  [blocking] Answer the two commissioned gaps (cross‑model judging value; model routing)
+     evidence: Explicitly left as ‘Open questions’ in the report.
+  [blocking] Actionable adoption spec (JSON schema, file locations, validator, boot/load rule, cron command, owners, rollout)
+     evidence: No schema, paths, commands, or assignment provided.
+  [blocking] Measurement plan to prove success (state‑drift reduction, token ratio)
+     evidence: No baseline, KPIs, or instrumentation defined.
+  [major] Enforcement/gating design (flip‑only JSON cannot be prose‑edited)
+     evidence: No linter/CI rule or pre‑commit hook specified.
+  [major] Risk/security review for email ingestion and API scopes
+     evidence: No mention of secrets handling, OAuth scopes, or data retention.
+  [major] Rollback/escape hatch
+     evidence: No revert path if reconcile corrupts derived state.
+  [minor] Cost/time estimate for the ‘ADD’ work
+     evidence: No effort sizing or timeline.
+  [major] Test harness/acceptance criteria
+     evidence: No synthetic cases or pass/fail gates for the new reconcile/boot flow.
+
+NEEDS FACT-CHECK (3) → run audit-perplexity.mjs:
+  - Temporal memory contamination yields violation rates rising to ~0.3–0.5 with memory length; recency‑biased designs stay ~0.1–0.2.
+  - Mem0 vs full‑context LOCOMO: 66.88% vs 72.90% quality; p95 latency 1.44s vs 17.1s; >90% token savings.
+  - Claude Code leak implies ~98.4% of code is deterministic infrastructure, 1.6% AI logic.
+
+BLOCKING (3):
+  ✗ No actionable, minimal adoption plan with concrete steps, schema, and owners.
+  ✗ Commissioned questions (judge panels; model routing) unanswered.
+  ✗ No measurement plan to prove drift reduction or token‑ratio improvement.
+
+RECOMMENDATIONS:
+  → Replace the narrative with a one‑page, enforceable keep/cut/add and a 30‑minute operator checklist.
+  → Specify the boot JSON now: file path repo/state/boot.json; schema: items[], each {id,type,source,timestamp,status in {open,blocked,ready,done},link,notes}; forbid free‑text edits outside notes.
+  → Enforce flip‑only: add a JSON Schema + ajv validate in CI; a pre‑commit hook that rejects field additions/deletions; a bot comment if Markdown changes attempt to encode state.
+  → Cron reconcile spec: write scripts/reconcile.ts to compare GitHub Issues/PRs + IMAP/Gmail to repo state; run at 06:55 IST (before 07:05 brief) via GitHub Actions on schedule and local cron; dry‑run mode + --fix; log JSONL to logs/reconcile/*.jsonl.
+  → Email bridge MVP: start with Gmail search via MCP/IMAP; map inbound threads to GitHub issues by subject token; if security balks, create a dedicated forwarding alias to GitHub Issues via Actions.
+  → Directive‑capture automation: add an end‑of‑session tool or post‑tool hook that appends to repo/inbox/DIRECTIVES.md with [timestamp][source][instruction]; surface unacknowledged IDs in boot.json until closed.
+  → Measurement plan: baseline this week’s drift (count of contradictions like BLOCKED‑vs‑merged; average re‑ask count/session) and token spend by category; set success targets (≥80% reduction in drift contradictions; ≥40% reduction in meta‑tokens) and instrument via the existing PostToolUse jsonl.
+  → Gating: require a different‑family model judge for any action that merges to default branch or modifies prod content; otherwise sample 10% random audits. Keep it lean.
+  → Risk/rollback: secrets via GitHub OIDC to cloud secret store; read‑only dry‑run first three days; automatic revert of reconcile PRs if CI detect anomalies.
+  → Answer the missing Q2/Q3 now (below), label evidence vs opinion, and schedule a 1‑day bake‑off to replace opinion with data.
+
+tokens: prompt 9583 · completion 4443 (reasoning 2496)
