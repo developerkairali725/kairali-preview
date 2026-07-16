@@ -12,13 +12,13 @@
 //     silently failed under this machine's grep. A silently-broken lint
 //     reporting "clean" is worse than no lint.
 //
-// NOTE ON DISCOVERY: CI finds tests with
-//   find packages sites -path '*/test/*.test.js'
-// This file lives in scripts/test/, which that glob DOES NOT MATCH. It is
-// therefore DEAD ON ARRIVAL in CI as wired today — the exact failure the glob
-// was fixed to prevent, which has already happened twice. The orchestrator owns
-// .github/workflows and must widen the glob to include `scripts`. Flagged in the
-// builder's return, not silently worked around.
+// NOTE ON DISCOVERY (resolved 2026-07-16): CI discovers tests with
+//   find packages sites scripts -path '*/test/*.test.js'
+// in .github/workflows/factory-gate.yml (the "All tests" step of the brand-lint
+// job). `scripts` IS in that list, so this file DOES run in CI — verified by
+// the brand-lint check passing on PRs. The earlier "dead on arrival" warning
+// here was true against the old narrow glob but is now stale; the widen-glob
+// fix landed. Leaving this note so the next reader doesn't re-flag a fixed gap.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";

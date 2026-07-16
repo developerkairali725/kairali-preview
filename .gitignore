@@ -27,3 +27,6 @@ docs/archive/archive-categorized.csv
 
 # workflow browser scratch
 .playwright-mcp/
+
+# agent audit log — deterministic per-edit trail, machine-local (wiki/log.md is the committed spine)
+agent-log.jsonl
