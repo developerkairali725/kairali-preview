@@ -39,7 +39,7 @@ ktahv.com,ktahv,https://ayurvedichealingvillage.com/,https://ayurvedichealingvil
 kairalivillage.com,ktahv,https://ayurvedichealingvillage.com/,https://ayurvedichealingvillage.com/,none (flip-ready),
 arogyakendra.co.in,arogya,https://arogyakendra.com/,https://arogyakendra.com/,none (flip-ready),source currently serves a live legacy IIS site — flip timing is the human call
 arogyashala.co.in,arogya,,https://arogyashala.in/,arogyashala.in DNS restore (Sunaj),HOLD — target is DNS-DEAD (sweep dns_fail; re-verified 000 on 14 Jul) while source serves a LIVE site (200) — D1 rule 8 forbids this flip
-houseofayurveda.in,catch-all,https://www.kairali.com/,https://www.kairali.com/,none (flip-ready),D1: no closer topical home
+houseofayurveda.in,centers,https://kairalicenters.com/,https://kairalicenters.com/,none (flip-ready),Abilash ruling 16 Jul: brand-protection forward to Kairali Ayurvedic Centre (overrides D1 catch-all guess)
 kairali.co.in,catch-all,https://www.kairali.com/,https://www.kairali.com/,none (flip-ready),
 ayurvedafranchise.com,franchise,,https://www.kairalifranchise.com/,D4 ruling (merge vs SEO satellite),HOLD — Runbook decision #4 pending with Abilash; Runbook once spells it 'aayurvedafranchise'; sweep ground truth is ayurvedafranchise.com
 snehachowdhary.com,blush,,https://theblushlounge.com/,D6 + theblushlounge.com rebuild LIVE,HOLD per D1 rule 8 — never 301 to a coming-soon page

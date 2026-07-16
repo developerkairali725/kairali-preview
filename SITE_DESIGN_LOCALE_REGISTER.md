@@ -25,7 +25,7 @@ Companion to PROJECT_CONTEXT.md. Every Factory site is built to ONE of four desi
 | ayurvedichealingvillage.com (KTAHV) | A (clinical) | M1/M2 India · M4a DACH · M4b FR patients | EN/DE/FR (locked) | **REAL only** | Consultation forms + WhatsApp starts/mo |
 | kairalicenters.com | A | Centre patients (18 centres, 9 countries), B2B centre partners | EN (→ per-country later) | REAL | Centre enquiries/mo; location-page sessions |
 | kairalifranchise.com | A | Franchise investors (India + intl.) | EN | REAL + HF-AMB | Qualified franchise leads/mo (LinkedIn Insight on) |
-| kairalihospitality.com | E | Hospitality partners + Villa Raag prospects | EN (→DE) | HF-AMB | Partner + stay enquiries/mo |
+| kairalihospitality.com | E | UMBRELLA site (Abilash 16 Jul, wiki/entities/kairali-hospitality.md): holds Villa Raag + Healing Village + European JV "Swatak Katrina" (spelling TBC) + future properties; owned-property showcase + consultancy services for others | EN (→DE) | HF-AMB | Partner + stay + consultancy enquiries/mo |
 | villaraag.com | **E (flag-bearer) — OWN BRAND: raag-tokens.css, NOT Kairali tokens** (updated Raag manual pending from Abilash; structure/content build on schedule, visual pass gated on manual) | Premium leisure/wellness travellers (domestic + intl.) | EN (→DE/RU later) | HF-AMB hero, REAL people | Stay enquiries/direct bookings assist |
 | kappl.co.in | A | B2B pharma buyers, regulators, distributors | EN | REAL + HF-AMB product | Distributor/B2B enquiries/mo |
 | kairaliproducts.in | C | India D2C content layer over Shopify | EN | HF-FULL product | Shopify sessions assisted; add-to-carts |
@@ -39,7 +39,7 @@ Companion to PROJECT_CONTEXT.md. Every Factory site is built to ONE of four desi
 | kairaliyoga.com | E | Yoga programme seekers + TTC prospects | EN | HF-AMB + REAL people | Programme enquiries/mo |
 | kairali.guru (live) | ED | Ayurveda learners (live site EN-ONLY, verified 13 Jul 2026 — /de/ 404s, no hreflang; EN/DE/FR/AR/RU exist only in Eeshal's repo, Wave-2 target set — DECISIONS 14 Jul) | as-is | REAL + HF-AMB | Course enquiries; article rankings |
 | whatisayurveda.org/.com | ED | Top-funnel education, AI-answer capture (Decision #2) | EN (→DE/FR) | HF-AMB explainers | AI-citation presence; assisted enquiries |
-| healing.recipes | **ED→E** | Cookbook readers, Gita Ramesh audience, press | EN | REAL (food) + HF-AMB | Book interest clicks; press pickups |
+| healing.recipes | **ED→E** | Cookbook readers, Gita Ramesh audience, press — ALL her books: the new launch + previous three (4 total; Abilash 16 Jul, priority RAISED to next-up) | EN | REAL (food) + HF-AMB | Book interest clicks; press pickups |
 | ayurvedafranchise.com | A (or 301 → franchise; Decision #4) | SEO satellite | EN | REAL | Assisted franchise leads |
 | arogyakendra.com / arogyashala.in | A (1-pagers) | Brand-protective single pages — MEANING (Abilash 16 Jul, wiki/entities/arogya-brands.md): Kendra = tier-2/3 partner-doctor clinics under Kairali brand (hub-and-spoke); Shala = tier-2/3 chemist/retail branding programme. Richer B2B versions inherit the franchise commercials gate | EN | none | Indexed + branded query capture |
 | snehachowdhary.com (+theblushlounge; Decision #6) | E | Personal brand | EN | HF-FULL | n/a (personal) |

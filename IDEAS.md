@@ -38,3 +38,15 @@ Once Dr. Deepu John has capacity, run a structured review batch (20–30 pages o
 one template type per the full-sitemap batching rule) so reviewed pages gain true
 `reviewedOn` dates. Pairs with Ambuj's FMS doctor-approval fields when built.
 **Enabler:** Dr. Deepu John's availability + Abilash's go.
+
+## 2026-07-16 15:54:00 IST — Kerala Towels product launch (Abilash)
+keralatowels.com "is something that we might look at launching in the future" — a
+possible product line/site. Interim: forwards to kairaliproducts.in. **Enabler:**
+Abilash's go + a real catalog (same no-invented-catalog rule as equipment).
+
+## 2026-07-16 15:54:00 IST — Ayurveda Academy launch (Abilash)
+Kairali Ayurveda Institute / training-in-Ayurveda = a future ACADEMY the group
+will launch. Domains held: kairaliayurvedainstitute.com, kairalitraining.com,
+keralatraining.com, traininginayurveda.com (all interim-forward to kairali.guru).
+**Enabler:** Abilash's go; relationship to kairali.guru (replace? coexist?) to be
+decided then.

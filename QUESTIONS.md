@@ -294,3 +294,12 @@ Abilash directed: record what each website is/does as pending questions, ask ONL
 5. **keralatowels.com** — the odd one out in the domain sweep. Does Kairali actually make/sell towels (a KAPPL textile line?), or was this a defensive registration?
 6. **The training-domain family** — kairaliayurvedainstitute.com, kairalitraining.com, keralatraining.com, traininginayurveda.com (institute + training GSC properties exist). Are these all one academy (everything → kairali.guru), or is the "Institute" a distinct real entity with its own courses/accreditation that deserves its own page rather than a forward?
 **Not queued (documented well enough):** all register-table sites incl. healing.recipes (Gita Ramesh's cookbook audience), kagapp (future-app placeholder per DECISIONS), the casaraag/raag* family (Villa Raag variants), pharma/products/centres/kerala* families (semantic-map forwards to their obvious targets).
+
+## 2026-07-16 15:54:00 IST · RESOLVED — all 6 parked site-purpose questions (Abilash, in-chat)
+1. **kairalihospitality.com** — umbrella entity for the group's properties: Villa Raag, Healing Village, the European JV **"Swatak Katrina"** (spelling to confirm at build time — recorded as dictated), and future properties; site = what we own + consultancy services for others starting out. → wiki/entities/kairali-hospitality.md
+2. **houseofayurveda.in** — brand-protection forward to **Kairali Ayurvedic Centre** (kairalicenters.com). Forward-farm row CORRECTED (was kairali.com per D1 catch-all guess) + cloudflare-upload.csv regenerated — needs the human re-upload.
+3. **healthspacenter(.com/.s)** — same: brand-protection holds → kairalicenters.com. Forward-farm already pointed there ✓.
+4. **kairalivillage.com** — plain forward to ayurvedichealingvillage.com ✓ (already correct).
+5. **keralatowels.com** — possible FUTURE product launch; for now forwards to the e-commerce site ✓ (kairaliproducts.in, already correct). Idea logged.
+6. **Training family** (kairaliayurvedainstitute/kairalitraining/keralatraining/traininginayurveda) — a future **ACADEMY launch**; interim forwards to kairali.guru ✓ stay. Idea logged.
+**Bonus ruling:** healing.recipes showcases ALL of Gita Ramesh's books — the latest AND the previous three (4 total) — and **moves UP in priority** (BACKLOG updated; was Wave 2).
