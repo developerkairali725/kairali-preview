@@ -36,6 +36,7 @@ deleted — history is the point.
 - [ ] sites/theblushlounge.com build — **WAVE 1** (Abilash 14 Jul; E register, WhatsApp +91 88269 21110). Brief: docs/site-briefs/theblushlounge.md. Origin RESTORED (Sunaj, SSL fix). Remaining gate: Sneha brand assets / IG originals (low-res logo only mined); snehachowdhary.com 301 flips only when the new site is LIVE
 - [ ] Wave 3 (Days 19–25): Fleet Pulse dashboard on kairali.ai (internal dashboards home), corporate/brand sites, MainWP
 - [ ] Wave 4 (Days 25–29): kairali.com flagship (content preload starts Day 14)
+- [ ] Site-purpose walkthrough with Abilash — the 6 PARKED questions (QUESTIONS.md 16 Jul 16:35): kairalihospitality · houseofayurveda · healthspacenter(s) · kairalivillage · keralatowels · training-domain family. Trigger: basic/Wave-0-1 tasks done, or naturally when each domain's build/forward turn arrives. One short session, not piecemeal
 - [ ] Monday ritual (every Mon, first: 20 Jul): wiki lint + pnpm audit + Dependabot triage + hook self-test
 - [ ] KTAHV migration (POST-sprint, own 3–4 week plan) — gate: docs/ktahv-inputs/ corpus ingested + Dr. Deepu John sign-off lane
 - [ ] Locale expansions (DE for kairali.com/hospitality, RU/CS etc.) — gate: native-reviewed banned lists per locale
