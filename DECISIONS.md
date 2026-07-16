@@ -336,3 +336,9 @@ Per the rolling-number rule (same session): the ORIGIN is now fixed and confirme
 
 ## 2026-07-16 14:36:15 IST — Abilash, in-chat
 - **D-PWMGR: password-manager proposal DECLINED.** The 16 Jul security flag (plaintext credential drafts in the director@ mailbox, QUESTIONS.md 14:20) was reviewed by Abilash; the recommended password-manager migration is declined for now. The flag stays on record; the agent does not re-raise it unprompted.
+
+## 2026-07-16 16:04:46 IST — Abilash, two-lane ruling (after agent pushback discussion)
+- **D-TWO-LANE:** Live-fleet QA/QC blitz APPROVED as an audit→delegate program (agent audits, findings only; fixes executed by the team via delegation protocol; NO agent writes to production). Scope: coding errors, basic content mistakes, Google-compliance hygiene — explicitly NOT complex SEO, NOT structure/images/UI-UX changes. Runs PARALLEL to the build queue, never instead of it. Audit order = revenue-opportunity-lost: kairaliproducts.in → ayurvedichealingvillage.com → villaraag.com → kairalicenters.com → kairali.guru → kairali.com/whyayurveda/rest. Existing landing pages included in audits; NEW landing pages stay behind the LP-doctrine brainstorm gate.
+- **D-PRIORITY-LAW:** build priority = revenue opportunity lost (store > bookings > leads > course sales > education/brand).
+- **healing.recipes:** official launch event END OF JULY — preview target ~28 Jul; raised but not top priority. Book data: agent mines public sources first, Abilash fills the gap list (likely the new book's cover/description).
+- **"1-2 days more setup then start afresh" REJECTED on the merits** (agent pushback accepted): setup is complete — gates enforced, pipeline proven; the real blockers are external (Shopify token, roster, commercials). No pause.
