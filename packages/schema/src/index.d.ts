@@ -13,6 +13,7 @@ export function organization(o: {
   email?: string;
   logo?: string;
   foundingDate?: string;
+  description?: string;
   slogan?: string;
   sameAs?: string[];
   parentId?: string;

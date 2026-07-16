@@ -52,6 +52,7 @@ export function organization(o) {
     email: o.email,
     logo: o.logo,
     foundingDate: o.foundingDate,
+    description: o.description,
     slogan: o.slogan,
     sameAs: o.sameAs,
     parentOrganization: o.parentId ? { "@id": o.parentId } : undefined,
@@ -68,7 +69,12 @@ export function kairaliOrganization({ id, url, sameAs, logo } = {}) {
     name: "Kairali Ayurvedic Group",
     url: url ?? "https://www.kairali.com",
     email: LOCKED_FACTS.contactEmail,
-    foundingDate: "1908",
+    // PR #65 / D-1908 ruling (16 Jul 2026): the GROUP was founded 1989;
+    // 1908 is the family lineage ONLY and must never attach to the Group.
+    // The lineage lives in `description` with the licensed phrasing.
+    foundingDate: "1989",
+    description:
+      "Founded in 1989 by K. V. Ramesh and Gita Ramesh — a family practising Ayurveda since 1908.",
     slogan: "health through ayurveda",
     sameAs,
     logo,

@@ -20,7 +20,11 @@ import {
 test("kairaliOrganization carries the locked facts and never invents", () => {
   const org = kairaliOrganization({ id: "https://x.com/#org", url: "https://x.com" });
   assert.equal(org.email, "info@kairali.com");
-  assert.equal(org.foundingDate, "1908");
+  // D-1908 regression (PR #65): Group founded 1989; 1908 = lineage only,
+  // carried in description with the licensed phrasing — never foundingDate.
+  assert.equal(org.foundingDate, "1989");
+  assert.match(org.description, /family practising Ayurveda since 1908/);
+  assert.doesNotMatch(JSON.stringify(org).replace(/family practising Ayurveda since 1908/g, ""), /1908/);
   assert.equal(org.slogan, "health through ayurveda");
   assert.equal(org.name, "Kairali Ayurvedic Group");
   assert.ok(!("logo" in org), "absent optional facts stay absent");
