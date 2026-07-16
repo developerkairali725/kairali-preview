@@ -1,0 +1,18 @@
+{
+  "_fixture": "FAILURE #5, REPRODUCED. This page names a real BAMS physician as reviewer with no review date — resolveReview() throws on it, and content-lint surfaces that throw as r27-review-invalid. It also writes the physician's name literally into prose (r29: the reviewer is CONFIG, never a literal — Abilash 15 Jul: 'he might be head now but not in future'). Expected: r27-review-invalid + r29-physician-name ERRORs.",
+  "slug": "/fixture-fabricated-review",
+  "title": "A Page Claiming A Review That Never Happened",
+  "metaDescription": "A fixture page that names a reviewer with no review date.",
+  "h1": "A Page Claiming A Review That Never Happened",
+  "answerCapsule": "This fixture page names a physician as its reviewer but carries no review date at all, which is the precise shape of the defect that shipped in July and stamped a real physician's credential onto thousands of words he had never read once.",
+  "reviewedBy": "deepu-john",
+  "sections": [
+    {
+      "h2": "What is this page?",
+      "capsule": "This page was medically reviewed by Dr. Deepu John, according to a byline that no data supports, because the review date is absent and the reviewer key was set by a build script rather than by any physician who actually opened the document.",
+      "body": "This content was reviewed by Dr. Deepu John (BAMS), Chief Physician. That sentence is a hardcoded literal, which is exactly what medical-review.ts exists to make impossible."
+    }
+  ],
+  "clinical": true,
+  "register_ok": "ok"
+}

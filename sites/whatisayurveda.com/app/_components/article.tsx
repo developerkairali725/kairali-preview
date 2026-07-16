@@ -16,12 +16,10 @@ import {
 } from "@kairali/schema";
 import { Markdown } from "../lib/render";
 import { EMAIL, WHATSAPP_URL } from "./chrome";
-import type { Page } from "../lib/content";
-import { MEDICAL_REVIEW } from "../lib/medical-review";
+import { reviewCoverage, type Page } from "../lib/content";
+import { MEDICAL_REVIEW, resolveReview } from "../lib/medical-review";
 
 const SITE = "https://whatisayurveda.com";
-const REVIEWED = "2026-07-14"; // build date; real review cadence tracked in editorial policy
-const REVIEWER_ID = `${SITE}/about#${MEDICAL_REVIEW.current.anchor}`;
 const AUTHOR_ID = `${SITE}/about#editorial-team`;
 const ORG_ID = `${SITE}/#organization`;
 
@@ -47,6 +45,21 @@ const PATHWAYS: Record<string, { overline: string; body: string; href: string; c
   },
 };
 
+function fmtDate(iso: string) {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
+
+/**
+ * Content tokens resolved at build time. {{REVIEW_COVERAGE}} renders the LIVE
+ * reviewed/total count so /about can never overstate our review coverage in
+ * prose — the number is computed from the pages themselves.
+ */
+function fillTokens(text: string): string {
+  return text.includes("{{REVIEW_COVERAGE}}")
+    ? text.replace(/\{\{REVIEW_COVERAGE\}\}/g, reviewCoverage().sentence)
+    : text;
+}
+
 function CheckIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
@@ -60,6 +73,12 @@ export function Article({ page }: { page: Page }) {
     ? page.breadcrumb
     : [{ name: "Home", url: "/" }, { name: page.h1 ?? page.title, url: page.slug }];
 
+  // TIERED HONESTY (Abilash, 15 Jul 2026): a review is claimed ONLY where one
+  // genuinely happened. null => no byline badge, no lastReviewed, no Physician
+  // node. Throws on malformed review data rather than degrading silently.
+  const review = resolveReview(page.reviewedOn, page.reviewedBy, page.slug);
+  const reviewerId = review ? `${SITE}/about#${review.reviewer.anchor}` : undefined;
+
   const jsonLd = graph(
     kairaliOrganization({ id: ORG_ID, url: SITE }),
     page.clinical
@@ -67,8 +86,10 @@ export function Article({ page }: { page: Page }) {
           id: `${SITE}${page.slug}#page`,
           name: page.title,
           url: `${SITE}${page.slug}`,
-          lastReviewed: REVIEWED,
-          reviewedById: REVIEWER_ID,
+          // omitted entirely when unreviewed — never assert a review that
+          // did not happen, and never fabricate a date from the build clock
+          lastReviewed: review?.date,
+          reviewedById: reviewerId,
           inLanguage: "en",
         })
       : articleSchema({
@@ -76,18 +97,23 @@ export function Article({ page }: { page: Page }) {
           headline: page.title,
           url: `${SITE}${page.slug}`,
           authorId: AUTHOR_ID,
-          datePublished: REVIEWED,
-          dateModified: REVIEWED,
+          datePublished: page.publishedOn,
+          dateModified: page.updatedOn ?? page.publishedOn,
           inLanguage: "en",
           publisherId: ORG_ID,
         }),
-    physician({
-      id: REVIEWER_ID,
-      name: MEDICAL_REVIEW.current.name,
-      jobTitle: `${MEDICAL_REVIEW.current.title} (${MEDICAL_REVIEW.current.credentials})`,
-      medicalSpecialty: "https://schema.org/PublicHealth",
-      affiliationId: ORG_ID,
-    }),
+    // the Physician node exists only when a physician actually reviewed this page
+    ...(review
+      ? [
+          physician({
+            id: reviewerId!,
+            name: review.reviewer.name,
+            jobTitle: `${review.reviewer.title} (${review.reviewer.credentials})`,
+            medicalSpecialty: "https://schema.org/PublicHealth",
+            affiliationId: ORG_ID,
+          }),
+        ]
+      : []),
     person({ id: AUTHOR_ID, name: "The Kairali Editorial Team", affiliationId: ORG_ID }),
     breadcrumbList({
       id: `${SITE}${page.slug}#breadcrumb`,
@@ -119,9 +145,17 @@ export function Article({ page }: { page: Page }) {
           <h1>{page.h1 ?? page.title}</h1>
 
           <div className="byline">
-            <span>By <span style={{ color: "var(--forest-700)", fontWeight: 700 }}>the Kairali Editorial Team</span></span>
-            <span className="review-badge"><CheckIcon /> Medically reviewed by {MEDICAL_REVIEW.current.name} ({MEDICAL_REVIEW.current.credentials})</span>
-            <span>Reviewed {new Date(REVIEWED).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
+            <span>By <span style={{ color: "var(--forest-700)", fontWeight: 700 }}>{MEDICAL_REVIEW.labels.author}</span></span>
+            {review ? (
+              <>
+                <span className="review-badge"><CheckIcon /> {MEDICAL_REVIEW.labels.reviewed(review.reviewer)}</span>
+                <span>Reviewed {fmtDate(review.date)}</span>
+              </>
+            ) : (
+              // No physician read this page — so we say so. An honest absence
+              // beats a false badge, and it is the brand: evidence and limits alike.
+              <span className="review-pending">{MEDICAL_REVIEW.labels.notReviewed}</span>
+            )}
           </div>
 
           <div className="capsule lead">{page.answerCapsule}</div>
@@ -131,7 +165,7 @@ export function Article({ page }: { page: Page }) {
               <section key={i}>
                 <h2 id={`s-${i}`}>{s.h2}</h2>
                 {s.capsule ? <div className="capsule">{s.capsule}</div> : null}
-                <Markdown text={s.body} />
+                <Markdown text={fillTokens(s.body)} />
               </section>
             ))}
           </div>
@@ -177,7 +211,7 @@ export function Article({ page }: { page: Page }) {
       </article>
 
       <div className="sticky-cta" aria-label="Ask a question">
-        <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_click">Ask a doctor on WhatsApp</a>
+        <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_click">Ask Priya, our AI assistant</a>
       </div>
     </>
   );

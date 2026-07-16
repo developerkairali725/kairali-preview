@@ -1,0 +1,10 @@
+{
+  "name": "@kairali/keyword-gate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Regression corpus + tests for the S3 keyword gate (scripts/seed-lint.mjs, scripts/keyword-validate.mjs). Lives under packages/ because that is where CI's test discovery looks.",
+  "scripts": {
+    "test": "node --test test/"
+  }
+}

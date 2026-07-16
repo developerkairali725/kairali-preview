@@ -11,10 +11,13 @@ export function GET() {
   const body = buildLlmsTxt(siteConfig, {
     name: "What is Ayurveda",
     summary:
-      "An educational authority site from the Kairali Ayurvedic Group (physicians since 1908). Physician-reviewed, evidence-honest explanations of Ayurveda — doshas, panchakarma, herbs, diet, and what the science says. Non-commercial; it educates and points to the group's NABH hospital and WHO-GMP pharmacy.",
+      "An educational authority site from the Kairali Ayurvedic Group (physicians since 1908). Evidence-honest explanations of Ayurveda — doshas, panchakarma, herbs, diet, and what the science says. Non-commercial; it educates and points to the group's NABH hospital and WHO-GMP pharmacy.",
     facts: [
       "Publisher: Kairali Ayurvedic Group, founded 1908 (four generations, family-run)",
-      "Every health page is medically reviewed by Dr. Deepu John (BAMS), Chief Physician",
+      // TIERED HONESTY: coverage is per-page (`reviewedOn`); today 0 pages carry one.
+      // A blanket claim here is the fabricated-review failure, aimed at the exact AI
+      // engines we want citing us. State the RULE, never a coverage claim.
+      "Physician review: pages reviewed by a Kairali Ayurvedic physician carry that doctor's name and the date they approved it; pages without it state that they have not been reviewed",
       "Contact: info@kairali.com · WhatsApp +91 92898 38797",
       "Editorial stance: honest about evidence limits; no disease-cure claims; not medical advice",
       "Related: Kairali — The Ayurvedic Healing Village (NABH hospital); Kairali Ayurvedic Products (WHO-GMP)",

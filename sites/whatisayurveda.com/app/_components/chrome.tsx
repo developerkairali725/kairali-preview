@@ -2,7 +2,9 @@
 import Link from "next/link";
 
 export const EMAIL = "info@kairali.com";
-export const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS 2026-07-13)
+export const WHATSAPP_URL = "https://wa.me/919289838797"; // Priya = the Chatbase AI ASSISTANT, NOT a physician
+// (Abilash confirmed 15 Jul 2026). NEVER label this "ask a doctor" — on a YMYL
+// health site that is a false medical claim. Disclose it as an AI assistant.
 
 export const NAV = [
   { href: "/what-is-ayurveda", label: "What is Ayurveda" },
@@ -45,8 +47,9 @@ export function SiteFooter() {
               Ayurveda has been our family&rsquo;s practice for four generations.
               We built this to explain it honestly — its evidence and its limits
               alike — as our way of giving back to a science that has given us so
-              much. Published by the Kairali Ayurvedic Group; every health page is
-              reviewed by a registered Ayurvedic physician. For learning, not
+              much. Published by the Kairali Ayurvedic Group. Health pages reviewed by one
+              of our Ayurvedic physicians are marked with that doctor's name and
+              the date they approved it. For learning, not
               medical advice.
             </p>
           </div>

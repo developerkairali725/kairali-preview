@@ -74,3 +74,23 @@ before every new site build.**
 - The missing /privacy page was flagged by the B-14 design critic on arogyakendra, kairali.com AND whatisayurveda — three strikes. Per the twice-rule it graduated to shared package code: **@kairali/legal** exports PrivacyPolicy/TermsOfService/CookiePolicy components parameterized by site.config (domain/entity/siteName); each site adds 3 thin noindex routes + passes privacyHref="/privacy" to ConsentBanner. One build, every current AND future site gets launch-complete consent + legal pages.
 - Policy TEXT is an honest DRAFT grounded in the sites' ACTUAL data practices (Consent Mode v2 default-denied, GA4 only post-consent, forms→CRM with consent field, no data sale, DPDP+GDPR rights) — marked "pending legal review", must be reviewed by counsel before production. This is legitimate: describing what we genuinely do, not inventing claims.
 - LESSON: a launch-checklist item (A12) that three sites shipped without is exactly the signal to build it into the factory, not to keep re-flagging it. New sites now inherit legal pages by adding the dep + 3 routes.
+
+## 2026-07-15 15:41:04 IST — DataForSEO credential shape + live ( balance)
+- **Gotcha:** the DataForSEO API-access page shows a ready-made `Authorization: Basic <base64>` token AND example code; a user copying "the key" often grabs the **base64 blob** (base64 of `login:password`), not the plain password. Stored as `DATAFORSEO_PASSWORD` it 40100s. **Detect:** `base64 -d` the value — if it decodes to `email:password` (contains `@` and `:`), it's the token; decode + split into `DATAFORSEO_LOGIN`/`DATAFORSEO_PASSWORD`. Now normalized in ~/.secrets/dataforseo.env; `curl -u login:password` → 20000 Ok.
+- **Helper:** `scripts/dfs.sh <endpoint> '<json>'` does the authed POST (reads env, never echoes creds).
+- **Cost seen:** google_ads/search_volume/live ≈ $0.011/keyword ($0.09 per ~85-kw call). $51 ⇒ ~4,600 kw of volume lookups. Be deliberate; don't spray from parallel agents.
+- **Demand headline (US+India):** herbs cluster 2.57M/mo dominates → whatisayurveda build order starts with ingredient monographs. ("ojas" 1.5M India = brand noise, discount.)
+
+## 2026-07-15 17:40:04 IST — the external auditor caught what self-review did not (first run, real bug)
+**What happened:** I pulled a DataForSEO demand map and told Abilash "herbs = 2.57M/mo, build herbs first", intending it as the basis for a ~3,400-page content architecture. GPT-5 (`scripts/audit-gpt.mjs`) audited it and returned **FAIL**. Verifying its claims against the raw JSON proved it right on every substantive point.
+**The bugs I shipped:** (1) **compound fake seeds** — "turmeric curcumin"/"amla amalaki"/"tulsi holy basil" are not real queries; single-term re-test showed turmeric 301K US (I reported 27.1K — 11x low) and amla 165K IN (I reported 6.6K — 25x low). (2) **implausible zeros summed into totals** — shilajit/shatavari/gokshura = 0 US (yet 246K/90.5K/27.1K in India). I *noticed* the ojas outlier but not the zeros — I pattern-matched on the anomaly I expected. (3) **India in English only**. (4) seed universe far too small; no ontology/competitor/intent/AEO work before prioritising.
+**Lessons (binding):**
+- A **different model family is not invested in the work being right** — it catches what self-review structurally cannot. Abilash's instinct was correct and this paid for itself immediately.
+- **Never invent seed keywords.** Seeds come from a canonical entity ontology (AYUSH/CCRAS/API index for Ayurveda), then programmatic expansion. Concatenations are banned.
+- **A zero for a known-major entity is a DATA FAULT, not a finding.** Plausibility-check before any number is reported, let alone used to prioritise. Same for outliers (brand/noise contamination).
+- **Multi-locale is not optional** for India (Hindi/Devanagari/Hinglish).
+- Noticing *one* anomaly is not auditing — I found ojas and stopped looking. Systematic validation beats spot-checks.
+
+## 2026-07-15 18:04:09 IST — auditor contamination: never hand a fact-checker your own conclusions
+Ran scripts/audit-perplexity.mjs against demand.md AFTER I had prepended a quarantine header explaining the bugs. The auditor dutifully "found" the faults — but several findings simply restated MY analysis back to me ("the artifact itself states…"). That is contaminated evidence, not independent verification, and it would let a future agent fake a passing fact-check by pre-loading the conclusion.
+**Rule:** a fact-grounding gate must see the RAW artifact only. Strip our own annotations, warnings and conclusions before submitting. If an auditor's justification cites the artifact rather than an external source, that finding is worthless — treat "the artifact itself says" as a red flag in any verdict.

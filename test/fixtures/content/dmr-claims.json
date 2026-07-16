@@ -1,0 +1,17 @@
+{
+  "_fixture": "The page a keen marketer writes. Every sentence here is a criminal-law exposure under the Drugs and Magic Remedies (Objectionable Advertisements) Act, 1954 — advertising a remedy for a Schedule disease is cognizable, up to 6 months' imprisonment on first conviction (§2.7 r20). Also carries the r21 hype register and a 'detox' physiological claim. Expected: multiple r20-dmr-claim + r21-banned-claim ERRORs.",
+  "slug": "/fixture-dmr",
+  "title": "Ayurvedic Remedies That Work",
+  "metaDescription": "A fixture page of banned claims.",
+  "h1": "Ayurvedic Remedies That Work",
+  "answerCapsule": "This miracle formulation cures cancer and reverses diabetes at the root cause, with no side effects and guaranteed results in every patient who takes it as directed for ninety days without interruption of any kind whatsoever today.",
+  "sections": [
+    {
+      "h2": "How it works",
+      "capsule": "Our clinically proven blend treats epilepsy and heals paralysis, and it is 100% safe for everyone including children, because it is completely natural and therefore carries no risk at all to any person at any dose.",
+      "body": "This breakthrough preparation cures cancer in most patients. It treats diabetes permanently and prevents heart disease. The formulation detoxifies the body and eliminates the root cause of hypertension. Science finally confirms what ancient wisdom validated: this remedy for arthritis gives permanent relief with guaranteed recovery."
+    }
+  ],
+  "clinical": true,
+  "register_ok": "ok"
+}

@@ -27,10 +27,51 @@ test("clinical lock does NOT cross-apply to Villa Raag or KAPPL", () => {
   assert.equal(errs(kappl).filter((x) => x.rule.startsWith("clinical-lock")).length, 0);
 });
 
-test("DE/FR seed equivalents fire on KTAHV", () => {
-  const f = lintText("Ein Luxus Urlaub mit Kur.\nDes vacances de luxe, une cure.", { entity: "ktahv" });
-  const msgs = errs(f).map((x) => x.message).join(" ");
-  for (const w of ["kur", "urlaub", "luxus", "vacances", "luxe", "cure"]) assert.ok(msgs.toLowerCase().includes(`"${w}"`), w);
+// REWRITTEN 16 Jul 2026. The previous version asserted that "kur" and "cure"
+// must fire — i.e. it encoded the bug. Both auditors failed the old lists:
+// they were TRANSLATIONS of the English ban, which made both readers worse —
+// the patient saw a hospital avoiding normal hospital words, while the GST
+// officer still found resort vocabulary the list never covered.
+// The principle now: ban what a RESORT says that a HOSPITAL never would.
+// This is not weakening a gate to make it pass — the gate got stronger (18
+// words/language, up from 10 DE and 17 FR, now catching Wellness/Kurort/
+// Pauschale/bien-être/forfait, which the old list missed entirely).
+test("DE/FR: RESORT vocabulary fires on KTAHV", () => {
+  const f = lintText(
+    "Ein Luxus Urlaub im Wellnesshotel, Pauschale im Kurort.\nDes vacances de luxe, une escapade bien-être, forfait détente.",
+    { entity: "ktahv" },
+  );
+  const msgs = errs(f).map((x) => x.message).join(" ").toLowerCase();
+  for (const w of ["urlaub", "luxus", "wellnesshotel", "pauschale", "kurort", "vacances", "luxe", "escapade", "bien-être", "forfait"]) {
+    assert.ok(msgs.includes(`"${w}"`), `resort word must fire: ${w}`);
+  }
+});
+
+// The other half of the same rule, and the reason the old list was self-defeating:
+// blocking correct clinical language pushes writers toward vaguer, less medical
+// prose — which is the OPPOSITE of what the GST argument needs.
+test("DE/FR: CLINICAL language must NOT fire (it is the tax argument)", () => {
+  const f = lintText(
+    "Kur und Rehabilitation: stationäre Aufnahme und Behandlung durch den Arzt.\nSéjour hospitalier, durée de séjour, cure de sevrage, prise en charge du patient.",
+    { entity: "ktahv" },
+  );
+  const msgs = errs(f).map((x) => x.message).join(" ").toLowerCase();
+  // "Kur" is a REGULATED German rehab concept inside statutory healthcare
+  // (14 sources); the spa risk lives in "Kurort", which IS banned above.
+  // French "séjour" is standard hospital register — "séjour hospitalier",
+  // "durée de séjour".
+  for (const w of ["kur", "séjour", "rehabilitation", "behandlung"]) {
+    assert.ok(!msgs.includes(`"${w}"`), `clinical word must NOT be blocked: ${w}`);
+  }
+  // NOTE — "cure" is deliberately NOT asserted here. The CLINICAL LOCK no
+  // longer bans it (correct: French "cure de sevrage" = a course of treatment,
+  // a false friend of English "cure"). But it is still caught by the CURE-CLAIMS
+  // rule — a separate, ratified, no-disease-cure-promises floor with real
+  // regulatory weight (India's DMR Act et al). That rule firing on legitimate
+  // French clinical text is a REAL false positive, logged in QUESTIONS.md for
+  // the native-speaker/legal review. It is NOT ours to weaken unilaterally:
+  // the clinical lock is a tax-register rule; cure-claims is a medical-claims
+  // rule. Two rules, two reasons, two reviewers.
 });
 
 test("banned filler fires on ALL entities", () => {

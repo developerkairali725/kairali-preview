@@ -1,0 +1,19 @@
+{
+  "gate": "G5-HUMAN",
+  "status": "PASS",
+  "artifact_path": "docs/group-inputs/whatisayurveda-keyword-url-map.tsv",
+  "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "rubric_sha256": null,
+  "command": null,
+  "argv": [],
+  "exit_code": 0,
+  "started_at": "2026-07-16T19:30:47+05:30",
+  "finished_at": "2026-07-16T19:30:49+05:30",
+  "runner": "human",
+  "ci_run_url": null,
+  "control_probe": {
+    "name": "known-present-seed:turmeric",
+    "expected": true,
+    "observed": true
+  }
+}

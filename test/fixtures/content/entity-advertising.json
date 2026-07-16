@@ -1,0 +1,21 @@
+{
+  "_fixture": "§2.7 r24 / §4 F5 — the failure that quietly destroys the DMR defence. Educational prose that names the group's own hospital and pharmacy stops being education and becomes advertising, and 'educational, not advertising' is the ONLY thing standing between this site and the Drugs and Magic Remedies Act (r20). The group may be named in the pathway aside, which routesTo renders, and on /about, where the commercial relationship MUST be disclosed. Not here. Expected: r24-entity-in-content ERRORs.",
+  "slug": "/fixture-advertising",
+  "title": "How Panchakarma Is Done",
+  "metaDescription": "A fixture page that names the group's own entities in educational prose.",
+  "h1": "How Panchakarma Is Done",
+  "answerCapsule": "Panchakarma is a set of five classical procedures carried out under physician supervision over a period of one to three weeks, with preparation and aftercare phases that are considered part of the procedure rather than optional extras added to it afterwards.",
+  "sections": [
+    {
+      "h2": "Where is Panchakarma practised?",
+      "capsule": "Panchakarma is carried out at KTAHV, the group's own NABH-accredited hospital, where physicians supervise every stage of the procedure from preparation through to aftercare, and the formulations used are manufactured at the group's own pharmacy nearby in Kerala.",
+      "body": "The formulations used are made by KAPPL at its WHO-GMP-certified pharmacy. Treatment happens at The Ayurvedic Healing Village under NABH-accredited supervision, and Kairali Ayurvedic Products supplies the oils."
+    }
+  ],
+  "citations": [
+    { "n": 1, "text": "National Center for Complementary and Integrative Health (NCCIH). Panchakarma.", "url": "https://www.nccih.nih.gov/health/panchakarma" }
+  ],
+  "routesTo": ["KAPPL"],
+  "clinical": true,
+  "register_ok": "ok"
+}

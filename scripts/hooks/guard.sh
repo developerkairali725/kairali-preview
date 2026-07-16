@@ -26,6 +26,50 @@ case "$CMD" in
   *"api.cloudflare.com/client"*"dns_records"*) block "DNS change — FOREVER-HUMAN action (Abilash/Ambuj flip)";;
 esac
 
+# Shopify Admin API — the agent is READ-ONLY (CLAUDE.md rule k: it audits, builds
+# in git and prepares; HUMANS click). Same shape as the Cloudflare block above,
+# plus a verb test: GET must still pass so the admin CAN be audited, because an
+# agent that cannot read the admin cannot check the docs against it (rule j).
+#
+# Lowercased + quote-stripped copy for the URL and verb words, so `-X 'POST'` and
+# `-XPOST` cannot slip through. Body flags are matched against the ORIGINAL case
+# on purpose: curl's `-F` is --form (a write) but `-f` is --fail (a harmless GET),
+# and folding case would block every `curl -f`.
+CMD_LC=$(printf '%s' "$CMD" | tr '[:upper:]' '[:lower:]' | tr -d "\"'")
+case "$CMD_LC" in
+  *myshopify.com/admin/api*)
+    SHOPIFY_WRITE=""
+    case "$CMD_LC" in
+      *graphql.json*)
+        # The GraphQL Admin API is POST even for reads, so the verb proves
+        # nothing. The `mutation` keyword is what separates a write from a query.
+        case "$CMD_LC" in *mutation*) SHOPIFY_WRITE="a GraphQL mutation";; esac
+        ;;
+      *)
+        case "$CMD_LC" in
+          *" -x post"*|*" -x put"*|*" -x patch"*|*" -x delete"*|\
+          *" -xpost"*|*" -xput"*|*" -xpatch"*|*" -xdelete"*|\
+          *" -x=post"*|*" -x=put"*|*" -x=patch"*|*" -x=delete"*|\
+          *"--request post"*|*"--request put"*|*"--request patch"*|*"--request delete"*|\
+          *"--request=post"*|*"--request=put"*|*"--request=patch"*|*"--request=delete"*|\
+          *"--method post"*|*"--method put"*|*"--method patch"*|*"--method delete"*|\
+          *"--method=post"*|*"--method=put"*|*"--method=patch"*|*"--method=delete"*|\
+          *"method: post"*|*"method:post"*|*"method: put"*|*"method:put"*|\
+          *"method: patch"*|*"method:patch"*|*"method: delete"*|*"method:delete"*)
+            SHOPIFY_WRITE="an explicit mutating verb";;
+        esac
+        case "$CMD" in
+          *" -d "*|*" -d'"*|*' -d"'*|*" -d{"*|*"--data"*|*" -F "*|*"--form"*|*" -T "*|*"--upload-file"*)
+            SHOPIFY_WRITE="a request body (curl sends POST/PUT)";;
+        esac
+        ;;
+    esac
+    if [ -n "$SHOPIFY_WRITE" ]; then
+      block "Shopify Admin API write — $SHOPIFY_WRITE. FOREVER-HUMAN action (CLAUDE.md rule k: the agent is READ-ONLY in the Shopify admin). Reads (GET, GraphQL queries) are allowed; a human clicks the write."
+    fi
+    ;;
+esac
+
 # Pre-push gate: build + tests + compliance must pass before any push
 case "$CMD" in
   *"git push"*)

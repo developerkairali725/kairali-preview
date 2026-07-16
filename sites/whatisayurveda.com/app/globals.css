@@ -229,3 +229,7 @@ a:hover { color: var(--forest-700); }
   .cluster-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }
+
+/* Honest review status. The badge is earned; its absence is stated plainly —
+   muted, never hidden. (Tiered-honesty ruling, 15 Jul 2026.) */
+.review-pending { color: var(--bronze-400); font-style: italic; }

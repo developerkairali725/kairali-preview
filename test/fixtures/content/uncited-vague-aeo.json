@@ -1,0 +1,22 @@
+{
+  "_fixture": "The AI-drafted page that reads well and proves nothing. Efficacy claims with no citation marker in the section (§2.7 r6 'No uncited health claims, ever'); vagueness with no number anywhere in the section (§2.7 r26 'bans vagueness, not honesty'); an answerCapsule that opens with bare anaphora and is far under 40 words, so the chunk means nothing when an answer engine retrieves it alone (§4b.3); a positional anchor that breaks on re-order; and an answersQuestion that is not a question.",
+  "slug": "/fixture-vague",
+  "title": "A Page That Sounds Careful",
+  "metaDescription": "A fixture page of uncited claims and hedging with no numbers.",
+  "h1": "A Page That Sounds Careful",
+  "answerCapsule": "This article explains what the herb does and, as mentioned above, it works well.",
+  "sections": [
+    {
+      "h2": "Benefits",
+      "anchor": "s-1",
+      "answersQuestion": "Benefits of the herb",
+      "capsule": "It reduces anxiety and improves sleep in most people who take it regularly, and some people find that it lowers stress within a few weeks, though more research is needed before anything can be stated with real confidence here.",
+      "body": "The herb reduces anxiety and improves sleep quality. Studies suggest it lowers cortisol. It may possibly improve memory and boost immunity as well, and many experts believe it enhances digestion over time."
+    }
+  ],
+  "citations": [
+    { "n": 1, "text": "A source nobody cites in the body.", "url": "https://pubmed.ncbi.nlm.nih.gov/00000003/" }
+  ],
+  "clinical": true,
+  "register_ok": "ok"
+}

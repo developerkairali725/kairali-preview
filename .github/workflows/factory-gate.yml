@@ -32,8 +32,33 @@ jobs:
       - name: Brand lint (merge-blocking, Ship Gate A4 static layer)
         run: node packages/ui/bin/brand-lint.js
 
-      - name: All package tests (seo · schema · i18n · ui · compliance · forms)
-        run: node --test packages/*/test/*.test.js
+      # ANTI-FABRICATION LINTS — free greps, no API, no cost. They exist because
+      # every string they ban was ACTUALLY SHIPPED by us and found later:
+      #  · "Every health page is medically reviewed by Dr. Deepu John (BAMS)"
+      #    survived in app/llms.txt/route.ts — the file whose entire job is
+      #    telling ChatGPT and Perplexity what this site is — a full day after I
+      #    swept the content files and reported "0 false claims remaining".
+      #  · "Ask a doctor on WhatsApp" pointed at the Priya AI chatbot.
+      # A rule that is not executed is a comment. These execute.
+      - name: Banned-string lint (fabricated claims, locked facts)
+        run: node scripts/banned-string-lint.mjs
+
+      - name: CTA-label lint (no human/clinical claim on a bot channel)
+        run: node scripts/cta-label-lint.mjs
+
+      # Discovered by find, NOT a fixed glob. The old glob was
+      # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
+      # medical-review.test.js — the ONLY test guarding our anti-fabrication
+      # gate (no physician review may be asserted without a real sign-off) —
+      # never ran. That is the second time a test was dead on arrival because it
+      # sat outside the glob (see tests/ktahv-critical-flows.spec.ts). A test
+      # that does not run is not a gate; it is a comment.
+      - name: All tests (packages/* AND sites/*) — discovered, not globbed
+        run: |
+          files=$(find packages sites scripts -path '*/test/*.test.js' -not -path '*/node_modules/*' | sort | tr '\n' ' ')
+          if [ -z "$files" ]; then echo "::error::no test files discovered — the discovery is broken"; exit 1; fi
+          echo "running $(echo $files | wc -w) test files:"; for f in $files; do echo "  · $f"; done
+          node --test $files
 
   factory-spec:
     runs-on: ubuntu-latest

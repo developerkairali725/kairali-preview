@@ -1,0 +1,26 @@
+{
+  "_fixture": "Structural decay: no h1 (template silently falls back to the meta title), a breadcrumb and a body link to slugs that do not exist (link-rot is the #1 failure mode of a large corpus, §2.7 r2), non-contiguous citation numbering, a body marker [7] with nothing behind it, a citation nobody cites, a laundered supplement source (§2.7 r35 — 'the failure mode is not fabrication, it is laundering'), and two routesTo values that are not PATHWAYS keys so the pathway aside renders NOTHING, silently (§2.7 r4).",
+  "slug": "/fixture-rot",
+  "title": "A Structurally Broken Page",
+  "metaDescription": "A fixture page with link rot, citation rot and dead pathway keys.",
+  "answerCapsule": "This page has no h1 at all, so the article template quietly falls back to rendering the meta title as the headline, even though the two strings are written for entirely different jobs and readers see the wrong one.",
+  "breadcrumb": [
+    { "name": "Nonexistent Hub", "url": "/this-hub-does-not-exist" },
+    { "name": "Rot", "url": "/fixture-rot" }
+  ],
+  "sections": [
+    {
+      "h2": "Where do the links go?",
+      "capsule": "Every internal link in this section points at a slug that no page in the corpus defines, which means the build succeeds, the page renders, and the reader hits a 404 that nobody discovers until a crawler reports it months later.",
+      "body": "See our [guide to nothing](/no-such-page) and the [missing herb](/herbs/does-not-exist) for more. This claim has a citation marker [7] that resolves to nothing at all."
+    }
+  ],
+  "citations": [
+    { "n": 2, "text": "Numbering starts at 2, so the contiguity check fires.", "url": "https://pubmed.ncbi.nlm.nih.gov/00000002/" },
+    { "n": 3, "text": "Ashwagandha benefits and dosage.", "url": "https://www.webmd.com/vitamins/ai/ingredientmono-953/ashwagandha" },
+    { "n": 4, "text": "Nobody cites this one in the body.", "url": "https://www.rxlist.com/supplements/ashwagandha.htm" }
+  ],
+  "routesTo": ["Villa Raag", "Kairali Ayurvedic Group (kairali.com)"],
+  "clinical": false,
+  "register_ok": "review"
+}

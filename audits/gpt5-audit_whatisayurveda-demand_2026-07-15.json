@@ -1,0 +1,128 @@
+{
+  "understanding": {
+    "what_is_being_built": "An authority-grade, very large (≈3,400 pages) information site at whatisayurveda.com, whose information architecture and content priorities are to be driven by a rigorous SEO/AEO demand model across Ayurveda entities (herbs, formulations, concepts, treatments, classical texts, conditions, etc.).",
+    "why": "To choose what to build first, how deep to go, and how to structure clusters so the site captures real search demand and intent in key markets (US and India) and supports best-in-class AEO answers. This demand layer is the foundation for the content roadmap and IA.",
+    "intended_structure": "Entity-clustered taxonomy (as shown in the artifact: herbs, formulations, concepts, treatments, texts, conditions), with each entity and its intents/questions fueling topic hubs and pages. The pipeline expects entity ontology → seed list → multi-locale demand pull → plausibility checks → intent/difficulty/opportunity scoring → IA and content outlines.",
+    "decision_tree": "Per the artifact’s own supersession note, the correct process is: build an explicit entity ontology; use real single-term canonical seeds and synonyms; pull demand for multiple locales/languages (including Hindi/Devanagari/Hinglish for India); run automated plausibility validation; ground with external sources (Perplexity, SERP checks); add intent/difficulty/opportunity scoring before any content decisions. The detailed MASTER_PIPELINE.md is referenced but not provided here.",
+    "context_sufficient": false
+  },
+  "step_location": {
+    "claimed_step": "3 · SEO/AEO keyword + demand development",
+    "actual_step": "Failed attempt at Step 3 (output quarantined) — pre-pass rework required before IA/content.",
+    "prerequisites_met": false,
+    "order_violations": [
+      "Entity ontology not produced before the demand pull (artifact admits this).",
+      "India demand pulled in English only (hi/Devanagari/Hinglish missing).",
+      "Automated plausibility validation not run prior to publishing the table (zeros and compound terms slipped through).",
+      "Unknown whether any content/IA was started based on this — no evidence provided; require staging URLs or commits to verify."
+    ]
+  },
+  "missed_steps": [
+    {
+      "step": "Entity ontology and canonical synonym map",
+      "evidence_it_was_missed": "Artifact admits ~80 ad-hoc seeds and no ontology; presence of non-canonical concatenations (e.g., “turmeric curcumin”, “amla amalaki”).",
+      "severity": "blocking"
+    },
+    {
+      "step": "Competitor/SERP landscape analysis (who ranks, DR, SERP features, content models)",
+      "evidence_it_was_missed": "No competitor set, no SERP feature inventory, no references in the file.",
+      "severity": "blocking"
+    },
+    {
+      "step": "Intent classification (informational/commercial/transactional; AEO tasks/questions)",
+      "evidence_it_was_missed": "No intent labels or PAA/FAQ extraction anywhere in the artifact.",
+      "severity": "blocking"
+    },
+    {
+      "step": "Multi-locale, multi-language coverage for India (hi-Devanagari + Hinglish alongside en)",
+      "evidence_it_was_missed": "File explicitly states language_code=en only for India.",
+      "severity": "blocking"
+    },
+    {
+      "step": "Automated plausibility/outlier validation + manual spot checks",
+      "evidence_it_was_missed": "Implausible zeros for popular terms (e.g., shilajit US=0), and inflated/odd values (e.g., ojas India=1.5M) made it into the table; artifact concedes this.",
+      "severity": "blocking"
+    },
+    {
+      "step": "Difficulty/Opportunity scoring (KD/competition strength + gap analysis)",
+      "evidence_it_was_missed": "No KD metrics, no DR/authority checks, no opportunity score present.",
+      "severity": "blocking"
+    },
+    {
+      "step": "Synonym/alias canonicalization and deduplication",
+      "evidence_it_was_missed": "Seeds contain parallel names merged into single phrases (e.g., giloy guduchi, fenugreek methi), indicating no canonicalization.",
+      "severity": "major"
+    },
+    {
+      "step": "Proof-of-work artifacts (raw API exports, script logs, audit outputs)",
+      "evidence_it_was_missed": "References to demand-raw.json and scripts/audit-gpt.mjs exist but neither the raw data nor logs are attached here for verification.",
+      "severity": "major"
+    },
+    {
+      "step": "AEO research pass (PAA, People Also Search For, task frames)",
+      "evidence_it_was_missed": "No questions or task breakdowns are presented per entity.",
+      "severity": "major"
+    },
+    {
+      "step": "Security-auditor screening for externally fetched data (per doctrine r)",
+      "evidence_it_was_missed": "No evidence the DataForSEO pull or any scraped sources were passed through the security screen.",
+      "severity": "minor"
+    }
+  ],
+  "quality": {
+    "rating": "unacceptable",
+    "would_an_expert_respect_it": false,
+    "weakest_point": "Seed integrity: invented compound seeds and English-only India pull produce grossly distorted volumes (zeros where demand is obviously non-zero; 10–25x understatements on core entities), invalidating cluster totals and any prioritization derived from them.",
+    "generic_ai_filler_risk": "medium",
+    "reasoning": "Beyond numeric inaccuracies, the methodology omits mandatory inputs (ontology, competitor and intent/difficulty layers). A 3,400-page roadmap cannot be credibly based on ~80 ad-hoc seeds and unvalidated GKP volumes."
+  },
+  "hallucination_risks": [
+    {
+      "claim": "US=0 for shilajit/shatavari/gokshura; multiple ‘0’ rows in both markets.",
+      "why_risky": "These are widely searched in the US; zeros indicate a data fault, not real demand.",
+      "how_to_verify": "Run single-term checks in Google Keyword Planner, Ahrefs/Semrush, and Google Trends (US, 5y). Re-pull via DataForSEO with correct parameters; compare."
+    },
+    {
+      "claim": "ojas India=1,500,000 (English-only pull).",
+      "why_risky": "Implausibly high for a Sanskrit concept in an en-only query set; likely contamination or parameter error.",
+      "how_to_verify": "Check GKP exact-match for ‘ojas’ (IN, en vs hi), inspect SERP intent, and run Trends to sanity-check scale."
+    },
+    {
+      "claim": "turmeric curcumin US=27,100 (as a single keyword).",
+      "why_risky": "Artificial concatenation; users search ‘turmeric’ or ‘curcumin’ separately. Using this depresses demand and misguides priorities.",
+      "how_to_verify": "Pull single-term exact volumes for ‘turmeric’ and ‘curcumin’; remove concatenated seeds; validate against GKP and Trends."
+    },
+    {
+      "claim": "ashwagandha benefits US=201,000; multiple high figures presented without raw source.",
+      "why_risky": "Potentially plausible but unverified; no raw API responses or logs attached.",
+      "how_to_verify": "Publish the raw DataForSEO JSON for these terms and a reproducible script with timestamps; cross-check with a second tool."
+    },
+    {
+      "claim": "Pull cost: US $0.09 + India $0.09 via DataForSEO google_ads search_volume.",
+      "why_risky": "Billing detail unsubstantiated here.",
+      "how_to_verify": "Attach the DataForSEO usage/billing log and the exact API request/response metadata."
+    }
+  ],
+  "blocking_issues": [
+    "The artifact is explicitly quarantined as ‘DO NOT USE — THIS DATA IS FLAWED’.",
+    "Entity ontology and synonym canon not built; seeds are untrustworthy.",
+    "India demand missing Hindi/Devanagari/Hinglish, biasing totals.",
+    "No automated plausibility checks or manual spot-verification evidence.",
+    "No competitor, intent, or difficulty/opportunity layers to guide a 3,400-page plan.",
+    "Proof-of-work (raw JSON, logs, audit outputs) not provided for independent verification."
+  ],
+  "recommendations": [
+    "Freeze any IA/content work dependent on this file. Nothing proceeds until a re-run passes all gates.",
+    "Run Step 3 correctly per MASTER_PIPELINE: (1) Build an explicit Ayurveda entity ontology (herbs, formulations, therapies, body concepts, classical texts, conditions), with canonical names, synonyms/transliterations (e.g., amla/amalaki, guduchi/giloy, shallaki/boswellia), and schema.org alignments where applicable.",
+    "Generate single-term seed lists from the ontology; forbid concatenated dual-name seeds. Deduplicate by canonical entity; preserve synonym mappings for later matching.",
+    "Multi-market, multi-language pulls: US-en; India: en + hi (Devanagari) + common Hinglish variants. Consider additional Indian languages only if in scope; document choices.",
+    "Implement automated plausibility validation: flag zeros for high-profile entities; detect unlikely market skews; cap outliers; run trend sanity checks; require human spot-check on the top 200 terms across two independent sources (GKP + Ahrefs/Semrush). Commit the validation report.",
+    "Add AEO/intent research: extract PAA/Related/‘People also search’ and YouTube/Reddit Qs per entity; map intents (definitional, benefits, dosage, side effects, interactions, preparation, comparisons, contraindications).",
+    "Add difficulty/opportunity scoring: capture KD/competition strength, SERP feature mix, DR of ranking pages, and topical gap vs named competitors. Produce a composite priority score per entity/intent.",
+    "Compile the competitor set empirically from SERPs across representative queries (e.g., ashwagandha, panchakarma, chyawanprash, ‘what is ayurveda’). Log who ranks, content models, and SERP features. Commit this to docs/whatisayurveda-research/competitors.md.",
+    "Publish proof-of-work: commit raw DataForSEO JSON (with timestamps and query params), script outputs (including scripts/audit-gpt.mjs results), and the plausibility-validation logs to the repo. No self-reported success.",
+    "Acceptance criteria before greenlighting IA/content: ≥1,000 canonical entities/intents covered; Hindi/Hinglish incorporated for India; 0 inexplicable zeros on top-200; ≤2% duplicate synonyms unresolved; ≥95% of top-200 spot-checked across two sources; priority scoring present; competitor/intent layers documented.",
+    "Only after the above passes, produce the 3,400-page IA and content outline packs per cluster, with AEO questions and compliance notes (YMYL flags requiring clinical review where applicable)."
+  ],
+  "verdict": "FAIL"
+}

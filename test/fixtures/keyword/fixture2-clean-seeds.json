@@ -1,0 +1,28 @@
+{
+  "_README": [
+    "Seeds for fixture 2 AND fixture 3. CLEAN BY CONSTRUCTION — no compounds, every seed",
+    "tagged with an origin and a locator. seed-lint must return PASS on this file.",
+    "",
+    "This is the shape the failed pull never had. 'turmeric curcumin' cannot enter a seed",
+    "set built this way REGARDLESS of Rules A and B: it is not an ontology monograph and no",
+    "human ever said it, so it has no origin to declare. That is Rule C, and it is the",
+    "actual guarantee — A and B just name the mistake faster.",
+    "",
+    "Note the Hinglish seeds carry origin:'ontology': they are generated PROGRAMMATICALLY by",
+    "the K3 construction rule ({preferred_term} + pattern, for each pattern in the versioned",
+    "list), and each resolves to a real ontology entity. Machine-generated is auditable and",
+    "reproducible by re-running; HAND-TYPED is indistinguishable from invented once it is in",
+    "the file, which is why K4 bans 'just a few more' candidates."
+  ],
+  "seeds": [
+    { "seed": "shilajit", "origin": "ontology", "source_id": "boot-shilajit" },
+    { "seed": "शिलाजीत", "origin": "ontology", "source_id": "boot-shilajit" },
+    { "seed": "shilajit ke fayde", "origin": "audience", "source_quote": "shilajit ke fayde" },
+    { "seed": "ashwagandha", "origin": "ontology", "source_id": "boot-ashwagandha" },
+    { "seed": "अश्वगंधा", "origin": "ontology", "source_id": "boot-ashwagandha" },
+    { "seed": "ashwagandha ke fayde", "origin": "audience", "source_quote": "ashwagandha ke fayde" },
+    { "seed": "turmeric", "origin": "ontology", "source_id": "boot-turmeric" },
+    { "seed": "हल्दी", "origin": "ontology", "source_id": "boot-turmeric" },
+    { "seed": "haldi ke fayde", "origin": "audience", "source_quote": "haldi ke fayde" }
+  ]
+}

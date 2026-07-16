@@ -1,0 +1,63 @@
+{
+  "_README": [
+    "FIXTURE 4 (seeds half) — THE ADVERSARIAL EDGE CASES. MUST PASS, every one.",
+    "",
+    "This fixture is the one that keeps the lint USABLE. Fixtures 1 and 2 prove it catches",
+    "what it should; this one proves it does NOT catch what it shouldn't. A lint that cries",
+    "wolf gets disabled by the team within a week, and a disabled lint protects nothing —",
+    "so a false positive here is exactly as serious as a miss in fixture 1.",
+    "",
+    "Every entry below is multi-word and/or contains an entity name, so a naive",
+    "'ban compound concatenations' rule flags most of them. Each must pass, for a reason:"
+  ],
+  "seeds": [
+    {
+      "seed": "bacopa monnieri", "origin": "ontology", "source_id": "boot-brahmi",
+      "_why_it_must_pass": "A Latin binomial is ONE name. The ontology deliberately lists both 'bacopa monnieri' and the bare genus 'bacopa', so BOTH match — a naive two-forms-of-one-entity rule flags it. Their token spans OVERLAP ([0,2) vs [0,1)), so it is one name, not a juxtaposition. This is the span-overlap predicate earning its keep."
+    },
+    {
+      "seed": "mucuna pruriens", "origin": "ontology", "source_id": "boot-kapikacchu",
+      "_why_it_must_pass": "THE SHARPEST TRAP IN THE CORPUS. 'kapikacchu mucuna' MUST FAIL (Rule A) while 'mucuna pruriens' MUST PASS — and 'mucuna' is a synonym appearing in both. The binomial's span subsumes the bare synonym's, so only the genuine juxtaposition fires. Same entity, opposite verdicts, one predicate."
+    },
+    {
+      "seed": "turmeric", "origin": "ontology", "source_id": "boot-turmeric",
+      "_why_it_must_pass": "The parent alone is the REAL head term: 301,000 US. Banning 'turmeric curcumin' must not ban 'turmeric'."
+    },
+    {
+      "seed": "curcumin", "origin": "ontology", "source_id": "boot-curcumin",
+      "_why_it_must_pass": "The constituent ALONE is a legitimate entity and a legitimate query in its own right: 60,500 US at CPC $2.48 (2.9x turmeric's $0.86 — a commercially distinct supplement-buyer query). Rule B bans the WELD, never either half. The old artifact destroyed this distinction and lost both numbers."
+    },
+    {
+      "seed": "tulsi", "origin": "ontology", "source_id": "boot-tulsi",
+      "_why_it_must_pass": "A synonym on its own is just a name. Only the juxtaposition of two names for one referent is banned."
+    },
+    {
+      "seed": "holy basil", "origin": "ontology", "source_id": "boot-tulsi",
+      "_why_it_must_pass": "The OTHER name for the same entity, alone, is also just a name. Rule A bans 'tulsi holy basil' — it must not ban either term separately. Both are tested SEPARATELY; that is the corollary rule, not a loophole."
+    },
+    {
+      "seed": "ashwagandha benefits", "origin": "audience", "source_quote": "ashwagandha for anxiety",
+      "_why_it_must_pass": "A real modifier query, 201,000 US. 'benefits' names no entity, so no two forms of one entity are juxtaposed. Ahrefs' seed method #1 — variations OF A REAL TERM ALREADY IN HAND — is legitimate and this is it."
+    },
+    {
+      "seed": "ayurvedic medicine for anxiety", "origin": "audience", "source_quote": "ayurvedic medicine for anxiety",
+      "_why_it_must_pass": "THE COMMISSION'S NAMED CASE. A legitimate long-tail phrase, verbatim from the audience corpus. Four words, no entity juxtaposition. If the lint flags this, the lint is wrong and the whole gate loses its credibility."
+    },
+    {
+      "seed": "is ashwagandha safe with blood pressure medication", "origin": "audience", "source_quote": "is ashwagandha safe with blood pressure medication",
+      "_why_it_must_pass": "A long, natural, high-intent YMYL question in the audience's own register. Contains exactly one entity name. Length is not a signal of invention — PROVENANCE is."
+    },
+    {
+      "seed": "ashwagandha ke fayde", "origin": "audience", "source_quote": "ashwagandha ke fayde",
+      "_why_it_must_pass": "Hinglish, verbatim from the corpus. 33,100/mo — MORE than Devanagari अश्वगंधा at 22,200. The register IS the keyword; 'ke fayde' is not noise to be normalised away into 'benefits of'."
+    },
+    {
+      "seed": "अश्वगंधा", "origin": "ontology", "source_id": "boot-ashwagandha",
+      "_why_it_must_pass": "Devanagari must survive tokenisation intact. A tokeniser that drops non-ASCII makes every Hindi seed invisible to the lint — failure #3 wearing a different hat."
+    },
+    {
+      "seed": "what is ayurveda", "origin": "audience", "source_quote": "what is ayurveda",
+      "_why_it_must_pass": "A question-shaped seed containing no ontology entity at all. Must pass on provenance alone."
+    }
+  ]
+}

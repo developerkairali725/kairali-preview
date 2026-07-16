@@ -1,0 +1,9 @@
+locale	keyword	url	decision	cluster	reason
+en	what is ayurveda	/what-is-ayurveda	URL	core	head term
+en	ayurveda meaning	/what-is-ayurveda	URL	core	synonym, same intent
+en	vata dosha	/doshas/vata	URL	doshas	1:1
+en	pitta dosha	/doshas/pitta	URL	doshas	1:1
+en	turmeric benefits	/herbs/turmeric	URL	herbs	301k/mo US - the real figure, not the invented compound seed
+en	haldi doodh	/herbs/turmeric	MERGE	herbs	same intent as turmeric benefits; merged, not its own URL
+en	ayurveda cure cancer		301	core	C2-SCHEDULE: Schedule-disease term. A keyword we may not target is not a keyword
+de	was ist ayurveda	/de/was-ist-ayurveda	URL	core	DE fate declared

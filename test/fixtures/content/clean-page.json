@@ -1,0 +1,42 @@
+{
+  "_fixture": "THE PROOF THE GATE IS PASSABLE. A gate nothing can satisfy gets deleted; this page must produce ZERO errors. Every field here is the shape an author should copy: 40-80 word self-contained capsules, question-form h2s, a citation marker in every section that makes a claim, 3 real primary/authority sources all referenced, honest hedging with real numbers beside it, no group entities in prose, no physician name, a valid PATHWAYS key. If this fixture ever goes red, read the diff before touching the rule — the gate got stricter than an honest author can be.",
+  "slug": "/herbs/fixture-clean",
+  "type": "herb",
+  "title": "Fixture Herb: Uses, Evidence and Safety",
+  "metaDescription": "A fixture herb page carrying the exact shape content-lint requires: capsules, citations, honest hedging and stated harms.",
+  "h1": "Fixture Herb (Withania fixtura): Traditional Use, Evidence and Cautions",
+  "breadcrumb": [
+    { "name": "Fixture Hub", "url": "/fixture-hub" },
+    { "name": "Fixture Herb", "url": "/herbs/fixture-clean" }
+  ],
+  "answerCapsule": "Fixture herb is a root used in Ayurvedic practice and studied mainly for stress and sleep outcomes. Randomised trials remain small and short, so the evidence is preliminary rather than settled. The root is generally well tolerated across trials lasting up to twelve weeks, though it may interact with thyroid medication and sedatives, and safety data in pregnancy are insufficient to draw any conclusion.",
+  "sections": [
+    {
+      "h2": "What is fixture herb?",
+      "capsule": "Fixture herb is the dried root of Withania fixtura, ground to a powder and taken in classical Ayurvedic practice as a rasayana. Its studied constituents are withanolides, a group of steroidal lactones. Most modern research uses standardised root extracts rather than the whole powder, and the two are not interchangeable at the same dose.",
+      "body": "The root has been described in classical Ayurvedic texts as a rasayana, a category of preparations associated with restoration [1]. Modern products usually concentrate a standardised withanolide fraction, so a capsule and a traditional powder deliver very different amounts of the studied compounds [2]."
+    },
+    {
+      "h2": "What does the evidence show for stress?",
+      "capsule": "Small randomised trials report reduced self-rated stress scores against placebo, but the trials are short and mostly industry-funded. The largest identified trial enrolled 60 adults over eight weeks. Independent reviewers describe the evidence as preliminary and not yet sufficient to support a clinical recommendation for any condition.",
+      "body": "Across 5 randomised trials totalling 400 participants, the root extract lowered self-rated stress scores compared with placebo [2]. The trials ran for 8 to 12 weeks, used different extracts at different doses, and most were funded by manufacturers [3]. No trial has measured outcomes beyond 3 months, so nothing is known about longer use [3]."
+    },
+    {
+      "h2": "What are the harms and cautions?",
+      "capsule": "Reported adverse effects are usually mild and gastrointestinal, but the root may interact with thyroid hormone, sedatives and immunosuppressants. Case reports describe liver injury at concentrated doses. Safety in pregnancy and lactation has not been established, and no trial has followed participants beyond 3 months of continuous use.",
+      "body": "Mild gastrointestinal upset and drowsiness are the most commonly reported effects in trials [2]. Case reports describe liver injury associated with concentrated extracts, and the evidence for causation is graded as probable in at least 5 published cases [3]. The root may raise thyroid hormone levels, so anyone on thyroid medication should speak to their physician before taking it [1]."
+    }
+  ],
+  "faqs": [
+    { "q": "Is fixture herb safe in pregnancy?", "a": "There is no adequate safety data in pregnancy, so no conclusion can be drawn. Classical practice avoids it in pregnancy, and modern trials have excluded pregnant participants [1]." },
+    { "q": "How long has fixture herb been studied for?", "a": "The longest identified randomised trial ran for 12 weeks with 60 participants. Nothing is established about use beyond 3 months [3]." }
+  ],
+  "citations": [
+    { "n": 1, "text": "National Center for Complementary and Integrative Health (NCCIH). Fixture Herb.", "url": "https://www.nccih.nih.gov/health/fixture-herb" },
+    { "n": 2, "text": "Fixture A, et al. A randomised placebo-controlled trial of Withania fixtura root extract. J Fixture Med. 2023;12(4):101-110.", "url": "https://pubmed.ncbi.nlm.nih.gov/00000001/" },
+    { "n": 3, "text": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury. Fixture Herb.", "url": "https://www.ncbi.nlm.nih.gov/books/NBK000000/" }
+  ],
+  "routesTo": ["KTAHV"],
+  "clinical": true,
+  "register_ok": "ok"
+}

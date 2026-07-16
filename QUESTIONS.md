@@ -179,3 +179,82 @@ The strategy source-of-truth (docs/strategy/POSITIONING_AND_MOA.md, distilled fr
 - **Q-KC-PDFS:** the agency Hostinger site's download-centre holds price lists + Villa Raag tariffs — HARVEST before that staging site is torn down (queued as a machine task; flagging in case teardown is imminent).
 - **Q-KC-MED-CLAIMS:** agency pages carry medical claims (Lipidex "2-4kg/month", Duravin, "99.99%" sanitizer) — anything reused goes through Dr. Deepu John (rule 7).
 - Protection-map §4 asks (from the live-site analysis): GSC read access to rank the 208 URLs by real impressions · awards architecture call (77 individual pages vs consolidated timeline) · the deliberate-kill list · extra contact-email keep/kill.
+
+## 2026-07-15 17:26:59 IST · FINDING — the Shopify Track Doctrine mandates six sub-agents that DO NOT EXIST
+Abilash asked (15 Jul): "is there anything in Shopify that's related to making these websites that seems more advanced and is not there with us?" Audited it. Answer: **yes conceptually — but nothing is actually built on either track.**
+
+**Machine evidence:** `.claude/agents/` **does not exist**. CLAUDE.md Shopify Track Doctrine (j–s, appended 14 Jul, marked binding) names six specialists — `seo-aeo-geo-auditor`, `design-qa`, `content-geo-writer`, `catalog-compliance`, `security-auditor`, `logger` — and **none are implemented**. So rules (n)(o)(p)(q)(r)(s) cannot execute as written. Also rule (q) claims every change lands in `agent-log.jsonl` + `wiki/log.md`: `wiki/log.md` exists (15 lines), **`agent-log.jsonl` is MISSING**; the PostToolUse hook (scripts/hooks/post-edit.sh) runs per-site lint work, not a logger sub-agent.
+
+**What Shopify doctrine specifies that the WEBSITE factory does NOT do (worth porting):**
+1. **(n) seo-aeo-geo-auditor + design-qa after EVERY build/visual change, both attaching PASS/FAIL evidence.** Website factory checks design + GEO **once, at launch, by hand** (Ship Gate B-tasks) with no PASS/FAIL artifact — and **AEO is never named anywhere** in SITE_LAUNCH_CHECKLIST (only "GEO/AI-readiness"). ← directly implements Abilash's 15 Jul AEO/GEO universal ruling; highest priority.
+2. **(o) content drafts come ONLY from content-geo-writer, compliance gate mandatory.** Website factory hand-writes content and lints afterwards. ← biggest miss for whatisayurveda's ~3,400 pages.
+3. **(r) ALL scraped/fetched content injection-screened by security-auditor BEFORE any agent acts.** Website factory does this ad-hoc/manually (e.g. the SVG screen on 15 Jul) — not systematic.
+4. **(s) security-auditor pre-PR posture + monthly access review.** Not implemented (we have /security-review on code diffs only).
+5. **(q) logger → agent-log.jsonl.** Missing.
+
+**What the website factory already has (not starting from zero):** llms.txt route on **all 4 live sites**; Ship Gate A-6 (llms.txt + AI-crawler files) and B-2 (GEO/AI-readiness: entity clarity, Q&A structuring); CI gates (brand-lint, factory-spec, gate, security-review); DESIGN_DOCTRINE + design-critic gate (B-14).
+
+**PENDING ABILASH — scope call:** build the missing agents for the WEBSITE factory (not just Shopify)? Recommended order: (1) seo-aeo-geo-auditor [already ruled mandatory — building regardless], (2) content-geo-writer [unblocks 3,400 pages], (3) design-qa, (4) security-auditor, (5) logger/agent-log.jsonl. Confirm order / any to drop.
+
+## 2026-07-15 18:14:54 IST · BLOCKING — whatisayurveda asserts physician reviews that never happened
+**Found by:** the content-engine research pass (two independent agents), **verified by me against the code and the built HTML.**
+
+**The defect:** `sites/whatisayurveda.com/app/_components/article.tsx:23` — `const REVIEWED = "2026-07-14"` is a single hardcoded constant used for `lastReviewed`, `datePublished` AND `dateModified` in the `MedicalWebPage` JSON-LD (line 70/79/80), and rendered in the byline (line 123-124) next to **"Medically reviewed by Dr. Deepu John (BAMS)"**. Proof from the build: `/panchakarma` and `/herbs` both emit `lastReviewed":"2026-07-14"`. **Every page therefore asserts a named BAMS physician reviewed it on a date on which no such review occurred** — in machine-readable structured data, on a YMYL health site, under a real person's professional credential. Any page added later inherits the same false July date.
+
+**Not yet live** (no DNS flip) — caught before publication.
+
+**My own miss:** PR #61 (merged) made the reviewer NAME configurable for exactly these integrity reasons and left the DATE hardcoded. I had this file open and fixed half the problem.
+
+**Structural fix (clear, doing it):** `reviewedOn` becomes REQUIRED per-page data, settable only on genuine sign-off; a page with no real review must NOT render a reviewer byline and must NOT emit `lastReviewed`/`reviewer`. Absence of a claim is honest; a false claim is not. Lint gate: reviewer byline present ⟺ `reviewedOn` present.
+
+**DECISIONS NEEDED (Abilash + Dr. Deepu John — medical/professional boundary, CLAUDE.md rule 7):**
+1. The existing ~20-30 pages: (a) strip the review claim until Dr. Deepu John genuinely reviews them, (b) he reviews them now and we record the true dates, or (c) re-label as "written by the Kairali editorial team" with no physician assertion? **Recommend (a) now + (b) as he has time** — no page claims a review it didn't get.
+2. **The ~3,400-page promise is arithmetically false.** No single physician can genuinely review 3,400 pages, and a nominal review under a named credential is WORSE than no claim. Research recommends capping genuinely-reviewed pages (e.g. condition pages 15-25) and letting the herb cluster carry the traffic with a different, TRUE trust label. This changes the site's core promise — needs Abilash's ruling before the content engine is built.
+
+**Related (minor, found same pass):** `packages/schema/src/index.js:164` emits `about: MedicalCondition` from a `condition` param `article.tsx` never passes — built and unused. And Mount Sinai's About Herbs library is dead (301→/care as of 15 Jul) — drop from the comp set.
+
+## 2026-07-15 18:40:54 IST · Physician roster mined from the LIVE sites — 5 verified, 7 gaps need a human
+Evidence + verbatim credential lines: `docs/group-inputs/kairali-physician-roster.md`. Every doctor corroborated on TWO independent sources (KTAHV roster + whyayurveda profile/author schema). Injection screen clean. **All five are BAMS only — no MD/MS/PhD is published anywhere, so none may ever be written into our roster.**
+
+**On the panel now (usable):** Dr. Deepu John (Chief Physician **& Head of Department** — our string was TRUNCATED, now corrected) · Dr. Akhila Oommen · Dr. Rahul R.
+
+**Verified but NOT usable — need Abilash/HR:**
+1. **Dr. Ashika vs Ashikha Raj** — both spellings are live and *contradict each other inside one Yoast schema block*. We will not guess a doctor's name. Which is correct?
+2. **Dr. Anagha's SURNAME is not published anywhere** — no profile, no author account. Cannot be credited until we have it.
+
+**Other gaps:**
+3. **No medical-council REGISTRATION NUMBERS for any physician.** This is the single biggest YMYL credibility gap — the first thing a Google quality rater or a regulator asks for on health content. Collect from HR **before** launch, not after.
+4. **No head-office doctor exists on either site** — this contradicts Abilash's stated process ("doctors in the head office or at the Healing Village"). Are head-office doctors simply unpublished, or does the premise need revisiting? Affects who can approve content.
+5. **"Dr. Priya Devi"** appears only in a guest testimonial thanking her for personal guidance — unrostered, uncredentialed. Current/former physician?
+6. **"Helped draft the NABH Panchakarma Clinic Standards"** (Dr. Deepu John) — appears once, uncited. High-value if true, a liability if not. Not reused until confirmed.
+7. **Gita Ramesh is Co-Founder & Joint Managing Director** — always "Mrs.", NEVER "Dr.", with **no published medical credential**. Two consequences: (a) she must NEVER be a YMYL medical reviewer — editorial voice is not clinical sign-off; (b) our /about UNDERSTATES her as "a long-standing author and educator" when she co-founded the group. "Editorial Voice" is our own label, not published anywhere — Abilash confirms she knows and accepts it.
+8. **Founding year is live in FOUR conflicting forms across Kairali's own sites: 1908 / 1989 / "115+ years" / "25 years".** Our locked fact is 1908. The group's own sites contradict themselves publicly.
+9. KTAHV DE/FR locales not mined (robots.txt confirms they exist) — the all-locale rule applies.
+
+**Design correction accepted (agent pushback, and it is right):** whyayurveda credits doctors by making the doctor the POST AUTHOR (byline + rel=author + Article.author schema). Do NOT mirror that — it asserts the physician WROTE the page. Abilash's actual model is *approval*, not authorship. We keep distinct `author` + `reviewedBy` fields with a visible "Medically reviewed by Dr. X, BAMS on <date>".
+
+## 2026-07-15 20:06:54 IST · CORRECTION — I was WRONG: the six Shopify sub-agents DO exist
+Earlier today I reported to Abilash that the six sub-agents named in CLAUDE.md (n)–(s) "do not exist — doctrine on paper". **That was factually wrong, and I reported it as a finding.** The pipeline's inventory agent caught it and pushed back rather than inheriting my error.
+
+**The truth:** all six exist as well-formed agent files in `shopify-agents/` (authored 14 Jul, 1.9–5.4 KB each, valid frontmatter with name/description/tools/model). They were never *discoverable* because `.claude/agents/` — the folder Claude Code loads from — did not exist. `M2_SHOPIFY_SETUP_PROMPT.md` line 56 says verbatim: *"Copy the SIX files from shopify-agents/ into this repo's .claude/agents/"*. **The copy step was simply never executed.** A month of "binding doctrine" was one `cp` away from running.
+
+**My error mode:** I checked `.claude/agents/`, found it absent, and concluded the agents were never built — without grepping the repo for the filenames. A confident conclusion from a partial check: exactly the failure this whole day has been about. **Lesson: absence in the expected location is not evidence of absence.**
+
+**FIXED:** the six are now installed in `.claude/agents/` (catalog-compliance, content-geo-writer, design-qa, logger, security-auditor, seo-aeo-geo-auditor). They are now discoverable. NOT yet verified as *working* — that is the next step, and rule (q) remains FALSE as written (`post-edit.sh` runs a compliance lint, never a logger; `agent-log.jsonl` does not exist).
+
+## 2026-07-15 20:06:54 IST · FIXED — the anti-fabrication test never ran in CI (2nd dead-on-arrival test)
+CI ran `node --test packages/*/test/*.test.js`. `sites/whatisayurveda.com/test/medical-review.test.js` — the ONLY test guarding the gate that stops us asserting a physician review that never happened — sat outside that glob and **never executed**. Second instance of this exact class (after `tests/ktahv-critical-flows.spec.ts`). **A test that does not run is not a gate; it is a comment.**
+**Fixed:** the step now DISCOVERS tests via `find packages sites -path '*/test/*.test.js'` and fails loudly if discovery returns nothing. Verified under bash (as Actions runs it): 11 files discovered (was 10), **76 tests pass**. My local zsh run silently ran zero tests — zsh does not word-split unquoted vars — which is itself a reminder to verify in the target shell.
+
+## 2026-07-15 20:12:57 IST · THE PIPELINE FAILED ITS OWN AUDIT — and for the right reason
+GPT-5 judged `docs/process/MASTER_PIPELINE.md` as an end result for Abilash. **Verdict: FAIL. Quality: weak.**
+**Verbatim finding:** *"It promises un-skippable, machine-evidenced gates but delivers a prose spec with most machines unbuilt — the exact class of failure the document condemns."*
+**It is right.** This afternoon I reported that the Shopify doctrine's sin was declaring rules binding whose enforcement was never built. I then wrote 2,181 lines committing the same sin. The doc's own scorecard: **"Score today: 1 of 9 mechanized."** Approving it changes NOTHING tomorrow.
+**Blocking:** (1) **no minimal runnable core** — `matrix-walk.mjs` doesn't exist; most G3/G9 gates are NOT BUILT; (2) `resolveReview()` protects **whatisayurveda only** — no repo-wide gate; (3) the **compliance research agent DIED** on an API error and the pipeline was finalised without it — in a YMYL domain.
+**RECOMMENDATION FOR THE MORNING — do NOT ratify the 2,181-line spec.** Approve a **minimal core** instead: build the 3–4 gates that actually run (wire the two proven auditors into CI; generalise the anti-fabrication gate repo-wide; the S3 keyword-plausibility check), prove they catch our real failures, and let the spec follow the machines rather than lead them. Re-run the compliance research before any YMYL ratification.
+
+## 2026-07-16 12:40:40 IST · FOR THE NATIVE-SPEAKER / LEGAL REVIEW — French "cure" is caught by the WRONG rule
+Found while rebuilding the DE/FR clinical lock (both auditors failed the old lists; see DECISIONS).
+**The conflict:** the CLINICAL LOCK (a tax-register rule, KTAHV-only) correctly no longer bans French `cure` — "cure de sevrage" is a legitimate course of treatment, a false friend of English "cure". But the **CURE-CLAIMS rule** (a medical-claims rule, ALL entities, all languages — India's DMR Act floor) still fires on it. So legitimate French clinical text is blocked by a rule aimed at English efficacy promises.
+**Not fixed unilaterally, deliberately.** Two rules, two reasons, two reviewers: the clinical lock defends a GST classification; cure-claims defends against regulated medical claims. Weakening the DMR floor to unblock French would be exactly the "never weaken a gate" failure — the fix has to come from someone who can say what French efficacy language actually looks like.
+**FOR THE REVIEWER:** (1) what French wording constitutes a prohibited efficacy claim, vs a legitimate clinical "cure de …"? (2) Should cure-claims become locale-aware (phrase-level rather than token-level)? (3) Same question for German "heilen"/"Heilung". Until then French clinical copy mentioning "cure" will be blocked and must be reworded.

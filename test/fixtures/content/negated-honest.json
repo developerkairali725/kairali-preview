@@ -1,0 +1,26 @@
+{
+  "_fixture": "THE MOST IMPORTANT FIXTURE IN THIS DIRECTORY. Every claim sentence here is NEGATED — this is the Healing Secrets booklet's construction (reusable-content-map.md §3.3), which is exemplary honest drafting that a naive lint flags. §2.7 r22: 'Train reviewers to click past the one lint that matters most and the lint is worse than nothing.' This page must produce ZERO r20/r21 errors. If it ever goes red, the claims lint is worse than nothing and must not ship. The negated matches are reported as INFO so the suppression stays visible.",
+  "slug": "/fixture-negated",
+  "title": "What Ayurveda Does Not Do",
+  "metaDescription": "A fixture page whose every claim sentence is negated — the honest construction the claims lint must never punish.",
+  "h1": "What Ayurveda Does Not Do",
+  "breadcrumb": [{ "name": "Fixture Hub", "url": "/fixture-hub" }],
+  "answerCapsule": "Ayurveda is not a cure for cancer, and no Ayurvedic preparation should ever replace oncology care. Classical practice is described here as supportive alongside conventional treatment, never as an alternative to it. Where the evidence is absent this page says so plainly, because a stated limit is more useful to a patient than a confident claim.",
+  "sections": [
+    {
+      "h2": "Does Ayurveda cure cancer?",
+      "capsule": "No. Ayurveda is not a cure for cancer; it is designed to work alongside the care of your treating medical team. No Ayurvedic preparation has been shown to treat cancer in any randomised trial, and anyone offering one as an alternative to oncology is describing something Ayurveda does not claim about itself.",
+      "body": "Ayurveda is not a cure for cancer; it is designed to work alongside the care of your treating medical team [1]. There is no cure for cancer in Ayurveda, and no classical text claims one. Nothing described on this site prevents cancer, and no herb here has been shown to reverse any tumour [1]."
+    },
+    {
+      "h2": "Does Ayurveda cure diabetes?",
+      "capsule": "No. There is no cure for diabetes in any system of medicine, including Ayurveda. Some herbs have been studied for blood sugar outcomes in trials of 12 weeks or less, but none is a replacement for prescribed medication, and stopping insulin on the basis of a herbal preparation is dangerous.",
+      "body": "There is no cure for diabetes in Ayurveda, and this site does not treat diabetes [1]. Across 4 small trials of 12 weeks, effects on blood sugar were inconsistent [1]. Never stop prescribed medication; this cannot heal diabetes and does not claim to."
+    }
+  ],
+  "citations": [
+    { "n": 1, "text": "National Center for Complementary and Integrative Health (NCCIH). Cancer and complementary approaches.", "url": "https://www.nccih.nih.gov/health/cancer" }
+  ],
+  "clinical": false,
+  "register_ok": "ok"
+}

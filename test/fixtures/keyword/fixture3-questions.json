@@ -1,0 +1,55 @@
+{
+  "_README": [
+    "QUESTIONS \u2014 HARVESTED, NOT WRITTEN (G3-PRE #7).",
+    "",
+    "Every question below was extracted from the people_also_ask block of a REAL committed",
+    "SERP response (res_05, shilajit US, depth=10, cost $0.002 on 2026-07-15). Not one was",
+    "composed by an agent. Each carries the sha256 of the exact bytes it came from, so the",
+    "claim is checkable rather than asserted.",
+    "",
+    "WHY THIS ASSERTION EXISTS AT ALL: 'What are the benefits of Ashwagandha for stress?' is",
+    "an agent-constructed question by the SAME mechanism as 'turmeric curcumin' \u2014 same",
+    "fluency, same plausibility, same absence of any falsification loop. That is FAILURE #1",
+    "VERBATIM, ONE ARTIFACT OVER. seeds.json forbade agent_constructed by name while",
+    "questions.json had no provenance assertion at all \u2014 and questions drive the URL",
+    "decision downstream.",
+    "",
+    "HONEST LIMIT: SERP composition is UNSTABLE run-to-run (verified \u2014 two shilajit pulls",
+    "minutes apart disagreed on organic 8->7, short_videos appeared, ai_overview flickered).",
+    "One PAA snapshot is a sample of something that moves, not THE question set."
+  ],
+  "questions": [
+    {
+      "q": "What does Shilajit do to your body?",
+      "source": "paa",
+      "level": 1,
+      "cluster": "herb.shilajit",
+      "raw_response_hash": "sha256:223a5bfc7ad9d06fa47d92163cde74731c3cae65cc36600138cc91d530950398",
+      "raw_response_file": "docs/process/evidence/keyword-rigor-2026-07-15/res_05_serp_organic_shilajit_us.json"
+    },
+    {
+      "q": "What happens if I take Shilajit daily?",
+      "source": "paa",
+      "level": 1,
+      "cluster": "herb.shilajit",
+      "raw_response_hash": "sha256:223a5bfc7ad9d06fa47d92163cde74731c3cae65cc36600138cc91d530950398",
+      "raw_response_file": "docs/process/evidence/keyword-rigor-2026-07-15/res_05_serp_organic_shilajit_us.json"
+    },
+    {
+      "q": "What is the side effect of Shilajit?",
+      "source": "paa",
+      "level": 1,
+      "cluster": "herb.shilajit",
+      "raw_response_hash": "sha256:223a5bfc7ad9d06fa47d92163cde74731c3cae65cc36600138cc91d530950398",
+      "raw_response_file": "docs/process/evidence/keyword-rigor-2026-07-15/res_05_serp_organic_shilajit_us.json"
+    },
+    {
+      "q": "Does Shilajit help with weight loss?",
+      "source": "paa",
+      "level": 1,
+      "cluster": "herb.shilajit",
+      "raw_response_hash": "sha256:223a5bfc7ad9d06fa47d92163cde74731c3cae65cc36600138cc91d530950398",
+      "raw_response_file": "docs/process/evidence/keyword-rigor-2026-07-15/res_05_serp_organic_shilajit_us.json"
+    }
+  ]
+}

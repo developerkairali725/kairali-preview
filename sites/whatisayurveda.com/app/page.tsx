@@ -93,9 +93,7 @@ export default function Home() {
               <h2 id="learn-heading">Where would you like to begin?</h2>
               <p>
                 Each guide opens with a short, direct answer, then goes deeper.
-                Every page on health topics is reviewed by a registered
-                Ayurvedic doctor before it is published.
-              </p>
+                Pages reviewed by one of our physicians carry that doctor’s name and the date; the rest say they have not been</p>
             </div>
             <div className="cluster-grid">
               {CLUSTERS.map((c) => (
@@ -127,7 +125,7 @@ export default function Home() {
       </main>
 
       <div className="sticky-cta" aria-label="Ask a question">
-        <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_click">Ask a doctor on WhatsApp</a>
+        <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_click">Ask Priya, our AI assistant</a>
       </div>
     </>
   );

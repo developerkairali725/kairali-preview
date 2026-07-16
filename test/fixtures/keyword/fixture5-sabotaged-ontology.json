@@ -1,0 +1,211 @@
+{
+  "_README": [
+    "FIXTURE 5 — THE SABOTAGED ONTOLOGY (MASTER_PIPELINE SS11.3 fixture 3). MUST BE CAUGHT",
+    "BY THE CONTROL PROBE, NOT BY A VIOLATION.",
+    "",
+    "SS11.3 asks for 'a lint whose regex is deliberately broken — the control probe must catch",
+    "it.' In seed-lint the equivalent sabotage is not a regex: Rules A and B are driven",
+    "entirely by the ontology's synonyms[] and constituents[] lists. Empty those and the",
+    "rules go silent. THE LINT THEN REPORTS 'no violations' ON THE REAL DEMAND MAP — a",
+    "confident, clean, totally false PASS.",
+    "",
+    "THIS IS NOT HYPOTHETICAL. From our own record: a banned-word scan on this machine",
+    "returned '0 hits — a false negative'; the [[:<:]] word-boundary syntax silently fails",
+    "under ugrep. The control word 'ayurveda' ALSO returned 0, WHICH IS WHAT EXPOSED IT.",
+    "Without that control word the scan would have been believed.",
+    "",
+    "A LINT RETURNING ZERO BECAUSE ITS MATCHER SILENTLY DIED IS FAILURE #2 LIVING INSIDE THE",
+    "GATE BUILT TO PREVENT FAILURE #2 — an implausible zero, believed, reported as PASS.",
+    "",
+    "EXPECTED: seed-lint verdict FAIL with control_probes_ok === false, and it must fail",
+    "EVEN THOUGH violations.length === 0. If a sabotaged ontology yields PASS, the SX rule",
+    "is not implemented and every clean run in this repo is worthless.",
+    "",
+    "SABOTAGE APPLIED: every synonyms[] and constituents[] list emptied. Nothing else touched."
+  ],
+  "_source": "docs/process/research-keyword-rigor.md (rev 3) SS4.2 offender table + SS6 V3 high-prior list",
+  "_supersedes": "nothing — superseded BY packages/ontology/ once it is built and human-signed",
+  "_generated": "hand-transcribed from the cited sections; every entity carries its source_url",
+  "entities": [
+    {
+      "canonical_id": "boot-turmeric",
+      "preferred_term": "turmeric",
+      "sanskrit_term": "हल्दी",
+      "latin_binomial": "curcuma longa",
+      "common_en": [
+        "haldi"
+      ],
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2: 'Curcumin is not a synonym of turmeric — it is a chemical constituent of it.' Verified live, different demand AND different CPC: turmeric 301,000/$0.86 vs curcumin 60,500/$2.48. The CPC gap is itself the signal that curcumin is a commercially distinct supplement-buyer query — a fact the concatenation destroyed. 'turmeric curcumin' = 27,100 is a supplement-LABEL artifact, not a topic.",
+      "_sanskrit_source": "हल्दी is recorded in the SS5.2 live India/hi pull at 18,100/mo. Added after seed-lint CORRECTLY rejected the seed 'हल्दी' as unresolvable against an ontology that lacked it — the lint caught an ontology gap, which is precisely Rule C's job.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-curcumin",
+      "preferred_term": "curcumin",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "A legitimate entity and a legitimate query IN ITS OWN RIGHT (60,500 US, CPC $2.48). 'curcumin' alone must PASS the lint. Only the welding of it to its parent is banned.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-tulsi",
+      "preferred_term": "tulsi",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'tulsi holy basil' — synonym pair — Rule A",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-amla",
+      "preferred_term": "amla",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'amla amalaki' — synonym pair — Rule A. Real demand: amla = 165,000 India; the artifact recorded 'amla amalaki' = 1,000 US / 6,600 India -> 25x understated.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-giloy",
+      "preferred_term": "giloy",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'giloy guduchi' — synonym pair — Rule A",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-fenugreek",
+      "preferred_term": "fenugreek",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'fenugreek methi' — synonym pair — Rule A",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-boswellia",
+      "preferred_term": "boswellia",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'boswellia shallaki' — synonym pair — Rule A. SS4.2 Rule B names 'boswellia -> boswellic acid' as the second parent/constituent example.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-yashtimadhu",
+      "preferred_term": "yashtimadhu",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'yashtimadhu licorice' — synonym pair — Rule A",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-kapikacchu",
+      "preferred_term": "kapikacchu",
+      "latin_binomial": "mucuna pruriens",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2 offender table: 'kapikacchu mucuna' — synonym pair — Rule A. NOTE the binomial 'mucuna pruriens' must still PASS: it is ONE name, and its span subsumes 'mucuna'. This entity is the sharpest test of span-overlap precision in the corpus.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-brahmi",
+      "preferred_term": "brahmi",
+      "latin_binomial": "bacopa monnieri",
+      "common_en": [
+        "bacopa"
+      ],
+      "synonyms": [],
+      "constituents": [],
+      "_note": "SS4.2: 'Passes bacopa monnieri (one binomial = one name).' The ontology deliberately lists BOTH the binomial and the bare genus 'bacopa' — so a naive two-forms-of-one-entity rule WOULD flag the legitimate binomial. Their spans overlap, so Rule A correctly passes it. This row exists to keep that precision honest.",
+      "source_url": "docs/process/research-keyword-rigor.md#42-the-compound-ban--as-an-executable-rule",
+      "source_type": "kairali_research_rev3_s4_2"
+    },
+    {
+      "canonical_id": "boot-ashwagandha",
+      "preferred_term": "ashwagandha",
+      "sanskrit_term": "अश्वगंधा",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "High-prior (SS6 V3). Verified: 673,000 US; 301,000 IN/en; अश्वगंधा 22,200 IN/hi; 'ashwagandha ke fayde' 33,100 (Hinglish OUTRANKS Devanagari).",
+      "source_url": "docs/process/research-keyword-rigor.md#52-the-live-result-that-overturns-the-intuitive-rule",
+      "source_type": "kairali_research_rev3_s5_2"
+    },
+    {
+      "canonical_id": "boot-shilajit",
+      "preferred_term": "shilajit",
+      "sanskrit_term": "शिलाजीत",
+      "synonyms": [],
+      "latin_binomial": null,
+      "constituents": [],
+      "_note": "THE ENTITY THAT STARTED THIS. Recorded as 0 US in demand-raw.json. Reality: google_ads returned NULL (not 0); Labs keyword_overview says 201,000 US at KD 12 — the highest-value opportunity in the whole set, recorded as nonexistent. IN/en = 246,000. shilajit ke fayde = 27,100 vs शिलाजीत = 9,900 (Hinglish 2.7x Devanagari). Mineral-pitch drug, so latin_binomial is genuinely null — NOT missing data.",
+      "source_url": "docs/process/research-keyword-rigor.md#0--pushback-first",
+      "source_type": "kairali_research_rev3_s0"
+    },
+    {
+      "canonical_id": "boot-shatavari",
+      "preferred_term": "shatavari",
+      "sanskrit_term": "शतावरी",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "Recorded 0 US. google_ads: null. Labs: 14,800 US. IN/en 90,500. शतावरी 5,400 (Labs; google_ads null).",
+      "source_url": "docs/process/research-keyword-rigor.md#0--pushback-first",
+      "source_type": "kairali_research_rev3_s0"
+    },
+    {
+      "canonical_id": "boot-gokshura",
+      "preferred_term": "gokshura",
+      "sanskrit_term": "गोक्षुर",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "Recorded 0 US. google_ads: null. Labs: 1,900 US. IN/en 27,100.",
+      "source_url": "docs/process/research-keyword-rigor.md#0--pushback-first",
+      "source_type": "kairali_research_rev3_s0"
+    },
+    {
+      "canonical_id": "boot-triphala",
+      "preferred_term": "triphala",
+      "sanskrit_term": "त्रिफला",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "High-prior (SS6 V3). त्रिफला 8,100 IN/hi.",
+      "source_url": "docs/process/research-keyword-rigor.md#6--k7--data-integrity-validation--the-blocking-gate",
+      "source_type": "kairali_research_rev3_s6_v3"
+    },
+    {
+      "canonical_id": "boot-moringa",
+      "preferred_term": "moringa",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "High-prior (SS6 V3). 201,000 US — and it collides EXACTLY with 'ashwagandha benefits' at 201,000. SS6 V8 records that collision as the reason a 'duplicate volume => grouping artifact' rule was REJECTED: on a 47-value ladder, collisions are the pigeonhole principle, not evidence.",
+      "source_url": "docs/process/research-keyword-rigor.md#v8--bucket-quantization",
+      "source_type": "kairali_research_rev3_s6_v8"
+    },
+    {
+      "canonical_id": "boot-neem",
+      "preferred_term": "neem",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "High-prior (SS6 V3). 22,200 US.",
+      "source_url": "docs/process/research-keyword-rigor.md#6--k7--data-integrity-validation--the-blocking-gate",
+      "source_type": "kairali_research_rev3_s6_v3"
+    },
+    {
+      "canonical_id": "boot-ojas",
+      "preferred_term": "ojas",
+      "synonyms": [],
+      "constituents": [],
+      "_note": "V4 CONTAMINATION EXEMPLAR — not a demand finding. India 1,500,000/mo at competition LOW; US Labs 12,100 at keyword_difficulty 0. A six-figure-adjacent abstract concept nobody competes for is definitionally contamination: 'Ojas' is a common Indian personal/brand name. Un-flagged it would have made 'concepts' the site's top cluster and driven the entire IA off a homonym.",
+      "source_url": "docs/process/research-keyword-rigor.md#v4--outlier--contamination-detection",
+      "source_type": "kairali_research_rev3_s6_v4"
+    }
+  ],
+  "_sabotage": "synonyms[] and constituents[] emptied on every entity. Rules A and B are now blind."
+}

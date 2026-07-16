@@ -1,0 +1,22 @@
+{
+  "gate": "G3-PRE",
+  "status": "PASS",
+  "artifact_path": "docs/group-inputs/whatisayurveda-keyword-url-map.tsv",
+  "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "rubric_sha256": null,
+  "command": "node scripts/keyword-validate.mjs",
+  "argv": [
+    "--artifact",
+    "docs/group-inputs/whatisayurveda-keyword-url-map.tsv"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-16T19:30:47+05:30",
+  "finished_at": "2026-07-16T19:30:49+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/1234567890",
+  "control_probe": {
+    "name": "known-present-seed:turmeric",
+    "expected": true,
+    "observed": false
+  }
+}

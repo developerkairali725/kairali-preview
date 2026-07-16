@@ -1,0 +1,262 @@
+{
+  "_README": [
+    "FIXTURE 3 — THE NEGATIVE CONTROL. MUST PASS.",
+    "",
+    "Identical to fixture 2 in every respect EXCEPT the one row: shilajit US is RESOLVED.",
+    "",
+    "WHY A PASSING FIXTURE IS NOT OPTIONAL: without it, a validator could score 100% on the",
+    "regression corpus by simply FAILING EVERYTHING. A gate that never passes is not a gate;",
+    "it is an outage, and the team routes around it within a week. The research doc makes this",
+    "point about res_14: 'without it, a validator could pass V9 by rejecting EVERY response",
+    "with fewer rows than requested, including the ones that are correct.'",
+    "",
+    "THE RESOLUTION IS THE HONEST ONE (V2): google_ads returned null for shilajit US. Labs",
+    "keyword_overview holds 201,000 at KD 12. So the row is status 'measured_secondary',",
+    "source 'labs_keyword_overview', confidence 'medium' — NOT 'measured'/'high', because the",
+    "primary endpoint never saw it and we do not launder a second-source number into a",
+    "first-source claim. The cross_check records google_ads' null EXPLICITLY rather than",
+    "hiding it: a null is a fact about Google Ads' coverage and it stays on the record.",
+    "",
+    "Note what the resolution is worth: 201,000/mo at KD 12 is the highest-value opportunity",
+    "in the entire set — and the old artifact recorded it as 0 and would have declined to",
+    "build the page."
+  ],
+  "meta": {
+    "site": "whatisayurveda.com",
+    "generated_at": "2026-07-16 09:15:00 IST",
+    "ontology_source": "test/fixtures/keyword/ontology.bootstrap.json",
+    "audience_dossier": "test/fixtures/keyword/audience.sample.md",
+    "locales": [
+      {
+        "location_code": 2840,
+        "language_code": "en",
+        "register": "english"
+      },
+      {
+        "location_code": 2356,
+        "language_code": "en",
+        "register": "english"
+      },
+      {
+        "location_code": 2356,
+        "language_code": "hi",
+        "register": "devanagari"
+      },
+      {
+        "location_code": 2356,
+        "language_code": "en",
+        "register": "hinglish"
+      }
+    ],
+    "evidence_dir": "docs/process/evidence/keyword-rigor-2026-07-15/"
+  },
+  "rows": [
+    {
+      "keyword": "shilajit",
+      "locale": "US/en",
+      "language_code": "en",
+      "volume": 201000,
+      "status": "measured_secondary",
+      "source": "labs_keyword_overview",
+      "retrieved_at": "2026-07-15 18:42:00 IST",
+      "competition": "MEDIUM",
+      "keyword_difficulty": 12,
+      "cross_check": {
+        "endpoint": "google_ads_search_volume",
+        "volume": null,
+        "status": "no_data"
+      },
+      "confidence": "medium",
+      "_note": "V2 RESOLUTION. google_ads null -> Labs 201,000. confidence 'medium', not 'high': the primary endpoint never saw this row, and the null stays on the record in cross_check. A null is an UNFINISHED QUERY, and this is what finishing it looks like."
+    },
+    {
+      "keyword": "shilajit",
+      "locale": "IN/en",
+      "language_code": "en",
+      "volume": 246000,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "MEDIUM",
+      "keyword_difficulty": 12,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 246000,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "शिलाजीत",
+      "locale": "IN/hi-Deva",
+      "language_code": "hi",
+      "volume": 9900,
+      "status": "measured_secondary",
+      "source": "labs_keyword_overview",
+      "retrieved_at": "2026-07-15 18:42:00 IST",
+      "competition": "LOW",
+      "keyword_difficulty": 0,
+      "cross_check": {
+        "endpoint": "google_ads_search_volume",
+        "volume": null,
+        "status": "no_data"
+      },
+      "confidence": "medium"
+    },
+    {
+      "keyword": "shilajit ke fayde",
+      "locale": "IN/hi-Latn",
+      "language_code": "en",
+      "volume": 27100,
+      "status": "measured_secondary",
+      "source": "labs_keyword_overview",
+      "retrieved_at": "2026-07-15 18:42:00 IST",
+      "competition": "LOW",
+      "keyword_difficulty": 6,
+      "cross_check": {
+        "endpoint": "google_ads_search_volume",
+        "volume": null,
+        "status": "no_data"
+      },
+      "confidence": "medium",
+      "_note": "27,100 vs Devanagari 9,900 = 2.7x. Hinglish is THE Hindi channel for our entities. A 'we'll add Devanagari' fix captures 27% of shilajit's Hindi demand and declares the locale problem solved."
+    },
+    {
+      "keyword": "ashwagandha",
+      "locale": "US/en",
+      "language_code": "en",
+      "volume": 673000,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "HIGH",
+      "keyword_difficulty": 66,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 673000,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "ashwagandha",
+      "locale": "IN/en",
+      "language_code": "en",
+      "volume": 301000,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "HIGH",
+      "keyword_difficulty": 66,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 301000,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "अश्वगंधा",
+      "locale": "IN/hi-Deva",
+      "language_code": "hi",
+      "volume": 22200,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "MEDIUM",
+      "keyword_difficulty": 0,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 22200,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "ashwagandha ke fayde",
+      "locale": "IN/hi-Latn",
+      "language_code": "en",
+      "volume": 33100,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:19:00 IST",
+      "competition": "MEDIUM",
+      "keyword_difficulty": 0,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 33100,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "turmeric",
+      "locale": "US/en",
+      "language_code": "en",
+      "volume": 301000,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "HIGH",
+      "keyword_difficulty": 66,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 301000,
+        "status": "measured"
+      },
+      "confidence": "high",
+      "_note": "The REAL head term. The old artifact recorded 27,100 under the invented 'turmeric curcumin' — 11.1x understated."
+    },
+    {
+      "keyword": "turmeric",
+      "locale": "IN/en",
+      "language_code": "en",
+      "volume": 165000,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "HIGH",
+      "keyword_difficulty": 60,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 165000,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "हल्दी",
+      "locale": "IN/hi-Deva",
+      "language_code": "hi",
+      "volume": 18100,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:13:00 IST",
+      "competition": "MEDIUM",
+      "keyword_difficulty": 0,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 18100,
+        "status": "measured"
+      },
+      "confidence": "high"
+    },
+    {
+      "keyword": "haldi ke fayde",
+      "locale": "IN/hi-Latn",
+      "language_code": "en",
+      "volume": 12100,
+      "status": "measured",
+      "source": "google_ads_search_volume",
+      "retrieved_at": "2026-07-15 18:19:00 IST",
+      "competition": "LOW",
+      "keyword_difficulty": 3,
+      "cross_check": {
+        "endpoint": "labs_keyword_overview",
+        "volume": 12100,
+        "status": "measured"
+      },
+      "confidence": "high"
+    }
+  ]
+}

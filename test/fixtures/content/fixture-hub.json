@@ -1,0 +1,18 @@
+{
+  "_fixture": "A minimal, valid hub. Exists so the other fixtures' breadcrumbs and internal links have a real slug to resolve against — the corpus-scoped rules (r2 link resolution, r2 slug uniqueness) need a corpus, not a page.",
+  "slug": "/fixture-hub",
+  "type": "hub",
+  "title": "Fixture Hub",
+  "metaDescription": "A fixture hub page that exists so internal links in the other fixtures resolve.",
+  "h1": "Fixture Hub",
+  "answerCapsule": "Fixture Hub exists so that the other fixture pages have a real internal link target to resolve against, which is what the corpus-scoped link-resolution rule needs in order to be tested at all rather than merely asserted to work inside a code comment somewhere.",
+  "sections": [
+    {
+      "h2": "What is in this hub?",
+      "capsule": "Fixture Hub lists the pages used by the content-lint test suite, and exists purely so that breadcrumbs and internal Markdown links in those fixtures have a real slug to point at when the corpus-scoped rules run against this directory during a test.",
+      "body": "See the [clean page](/herbs/fixture-clean) and the [negated page](/fixture-negated)."
+    }
+  ],
+  "clinical": false,
+  "register_ok": "ok"
+}

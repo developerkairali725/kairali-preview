@@ -36,8 +36,49 @@ export const CLINICAL_LOCK_BANNED = {
     "escapes",
   ],
   // SEED lists — confirm with native review before hard CI gate (QUESTIONS.md)
-  de: ["kur", "urlaub", "luxus", "luxuriös", "gast", "gäste", "auszeit", "kurzurlaub", "resort", "spa"],
-  fr: ["cure", "cures", "vacances", "luxe", "luxueux", "luxueuse", "séjour", "séjours", "invité", "invités", "hôte", "hôtes", "escapade", "escapades", "évasion", "spa", "resort"],
+  // REBUILT 16 Jul 2026 on a principle, after BOTH auditors failed the previous
+  // lists. The old ones were translations of the English ban — which was exactly
+  // wrong, and made BOTH readers worse:
+  //   patient: "this doesn't sound like a hospital; they avoid normal hospital words"
+  //   GST officer: "they talk like a resort and avoid clinical terms — supports our case"
+  //
+  // THE PRINCIPLE (GPT-5's answer to the actual question): ban the vocabulary a
+  // RESORT uses that a HOSPITAL never would. Do NOT ban clinical language merely
+  // because its English cognate is banned — the English "cure" ban is about
+  // EFFICACY claims, a different rule with a different reason.
+  //
+  // REMOVED and why (they are standard hospital register; banning them forced
+  // writers toward worse, less clinical prose — the opposite of the tax goal):
+  //   fr "séjour"/"séjours" — "séjour hospitalier", "durée de séjour" are THE
+  //       standard French terms for a hospital stay. Banning it was self-defeating.
+  //   fr "cure"/"cures" — French "cure" = a course of treatment ("cure de
+  //       sevrage"); a false friend of English "cure". Efficacy claims are caught
+  //       by the cure-claims rule, which is a separate lint with a separate reason.
+  //   de "kur" — a REGULATED German rehabilitation concept inside statutory
+  //       healthcare (Perplexity, 14 sources; formal Reha-vs-Kur distinction).
+  //       The SPA risk lives in "kurort"/"kurhotel" (spa town/spa hotel), which
+  //       ARE banned below. Banning "kur" itself blocked legitimate medical German.
+  //
+  // ADDED: the resort lexicon the old lists missed entirely — a German
+  // Wellnesshotel and a French centre de bien-être use these; a hospital does not.
+  // INTERIM: validated by GPT-5 + Perplexity only (Abilash's ruling, 16 Jul).
+  // A native DE/FR speaker + the GST adviser must still confirm. See QUESTIONS.md.
+  de: [
+    // hospitality/wellness register — a Klinik never says these
+    "wellness", "wellnesshotel", "retreat", "kurort", "kurhotel", "kurzurlaub",
+    "urlaub", "luxus", "luxuriös", "resort", "spa", "erholung", "auszeit",
+    "verwöhn", "pauschale", "wohlfühl",
+    // "guest" — a hospital says Patient
+    "gast", "gäste",
+  ],
+  fr: [
+    // hospitality/wellness register — an hôpital/clinique never says these
+    "vacances", "luxe", "luxueux", "luxueuse", "escapade", "escapades",
+    "évasion", "spa", "resort", "bien-être", "forfait", "détente",
+    "ressourcement", "parenthèse",
+    // "guest" — a hospital says patient
+    "invité", "invités", "hôte", "hôtes",
+  ],
 };
 
 /** Required clinical register (advisory — reported as info, never a failure). */
