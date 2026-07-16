@@ -69,3 +69,16 @@ id = "generic-api-key"
     regexTarget = "line"
     regexes = ['''CONSENT_STORAGE_KEY = "kairali-consent-v1"''']
     paths = ['''packages/consent/src/core\.js''']
+
+    # FINDING 5 — 1× generic-api-key in audits/ayurvedajournals.com-2026-07-16.md
+    # (commit b36fa7cb, 16 Jul audit tail). Inspected 2026-07-16: the audit
+    # quoted the site's PUBLIC Zendesk snippet key (static.zdassets.com/ekr/
+    # snippet.js?key=… — a client-side widget key served to every visitor by
+    # design). The file at tip is REDACTED to first-8-chars; this entry covers
+    # the pre-redaction blob so history needs no rewrite. Scoped to the exact
+    # key + path; any new finding still fails.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "line"
+    regexes = ['''2b97355b-bf6d-4a8c-83a9-ba5c0c52fc4b''']
+    paths = ['''audits/ayurvedajournals\.com-2026-07-16\.md''']
