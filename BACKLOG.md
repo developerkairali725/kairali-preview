@@ -7,9 +7,12 @@ The 07:05 morning brief reads this file daily and surfaces anything due. Nothing
 deleted — history is the point.
 
 ## NOW (this week — Wave 0 / Days 1–6)
+- [ ] PR #64 awaiting Abilash's approval — all 8 checks green, mergeable state BLOCKED on the 1 required approval since 15 Jul 20:12. Carries the whatisayurveda trust-integrity fix (4 fabricated medical claims removed before publication). Two rulings ride with it: the ~20-30 existing pages' review claim, and the ~3,400-page review promise that no single physician can honestly keep
 - [ ] URGENT — kairalicenters.com LIVE site is HACKED (gambling-spam injection); Sunaj email drafted (bulk-sheet row 7). A live Kairali property is compromised — route the fix + send the email
-- [ ] Non-revenue build queue DATA-BLOCKED (rule 6, no-rework): centres canonical roster · franchise investment figures + canonical domain · equipment product DB (empty). Rebuilds paused until Abilash supplies source data (see overnight wrap + QUESTIONS)
-- [ ] Self-contained factory work available while the build queue is blocked: packages/ui floating-stack (LEARNINGS #3) + packages/forms store-first (needs Supabase creds)
+- [ ] Non-revenue build queue DATA-BLOCKED (rule 6, no-rework): centres canonical roster is the LAST open item (blocked on Abishek per #60) — franchise HELD (#59) and equipment HELD (#60) are now formal decisions, not open questions
+- [ ] Missing factory sub-agents (QUESTIONS 15 Jul 17:26): CLAUDE.md doctrine (n)–(s) mandates six specialists; `.claude/agents/` was empty until 2 were fixed overnight. Pending Abilash scope call on build order — seo-aeo-geo-auditor is being built regardless (already ruled mandatory)
+- [ ] Self-contained factory work available while the build queue is blocked: packages/ui floating-stack (LEARNINGS #3) [forms store-first CLOSED — merged + live-tested, #55]
+- [ ] Uncommitted orphan in the working tree: `docs/group-inputs/kairalicenters-niche-brief.md` (192 lines, compiled 2026-07-14 23:03:16 IST, never committed — survived on disk only). Decide: commit it, or supersede it with the built site's brief
 - [ ] Mechanization candidates from docs/seo/SEO_PLAYBOOK.md §GAPS + docs/design/DESIGN_DOCTRINE.md (INP gate, title-uniqueness, orphan-page check, AI-crawler policy…) — triage into packages/checklist within the week (Ship Gate §E rule)
 - [ ] Per-site IMAGE_MANIFEST swaps using IMAGE_CATALOG.csv (library is downloaded + described — see DONE 14 Jul) — gated on image-folder shares
 - [ ] Compliance triage: 158 YouTube titles flagged as possible health claims (VIDEO_CATALOG.csv) — vet before any embed on KTAHV surfaces
@@ -20,7 +23,6 @@ deleted — history is the point.
 
 ## SCHEDULED (date- or condition-triggered)
 - [ ] News/updates monitor for the tech stack (Next.js/Vercel/Cloudflare/Shopify/Google-algo updates → flagged fixes) — build with Fleet Pulse on kairali.ai (Wave 3); Abilash ask 14 Jul
-- [ ] Immediately after PR #2 merges: patch PROJECT_CONTEXT.md §1/§3/§7 kairali.guru locale lines to EN-only-live (DECISIONS 2026-07-14 11:59:06 IST; register row already fixed) + re-read PROJECT_CONTEXT/Checklist per handoff instruction
 - [ ] At each Wave-1 product-microsite launch: re-point its forward-farm rows target_now→target_final in docs/redirects/forward-farm.csv + regenerate cloudflare-upload.csv + human re-upload + scripts/verify-forwards.sh (same-edit rule, never chain)
 - [ ] Wave-2 whatisayurveda.com cutover: re-point whyayurveda.com/.in/.org AND whatisayurveda.org in ONE list edit (D2; forward-farm.csv notes)
 - [ ] Wave 1 product microsites (Days 7–13, from 20 Jul): kairalitea, kairalioil, kairaliherbals, kairaliorganic(+kairorganics/kairproducts per D3 two-brand ruling), kairaliequipment, bulk×2 — needs Shopify Storefront token (Ambuj/Abilash)
@@ -37,15 +39,22 @@ deleted — history is the point.
 - [ ] Locale expansions (DE for kairali.com/hospitality, RU/CS etc.) — gate: native-reviewed banned lists per locale
 
 ## WAITING ON (people)
-- [ ] Abilash: group WhatsApp number (non-KTAHV CTAs) · ink hex + 10-step ramps + logo SVG pack (Q14–17) · Raag web type scale · KTAHV auditor GPT prompt export · GitHub org invites (emails below) · historical-chat corpus if Drive sweep misses it · ANTHROPIC_API_KEY repo secret (security-review CI) · theblushlounge rulings (hosting outage, WhatsApp number, brand assets, wave slot — QUESTIONS 19:38) · kairali.guru rulings (student-hub, course prices — QUESTIONS 19:44)
-- [ ] Vikash (digital marketing): GA4 + GTM + Google Ads + GSC + Bing Webmaster access/handover — gates Ship Gate B3–B7 for EVERY launch (measurement lane; currently nobody owns this)
-- [ ] Satyam (dme@kairali.com): PRODUCTION webhook URL · consent-field answer · delete 3 test rows
-- [ ] Sunaj (sysadmin@kairali.com): arogyashala.in DNS/registrar (message drafted 13 Jul)
-- [ ] Ambuj (dme@kairaliproducts.com): registrar access sheet · Chatbase inventory · server audit · Semrush key · Shopify Storefront API token
-- [ ] Deepu (developer@kairali.com): KTAHV WP tech-fix spec execution (sitemap_index 404 etc.)
-- [ ] Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite
+_Staleness rule: >3 days without a reply = chase. Ages below are as of 2026-07-16 08:56:46 IST._
+- [ ] **STALE (3d, logged 13 Jul)** Vikash (digital marketing): GA4 + GTM + Google Ads + GSC + Bing Webmaster access/handover — gates Ship Gate B3–B7 for EVERY launch (measurement lane; still nobody owns this). CHASE TODAY
+- [ ] **STALE (3d, logged 13 Jul)** Ambuj (dme@kairaliproducts.com): registrar access sheet · Shopify Storefront API token (gates ALL of Wave 1, starts 20 Jul). [Chatbase inventory + server audit CLOSED 14 Jul via Sunaj; Semrush key DECLINED on cost — DataForSEO instead]. CHASE TODAY
+- [ ] **STALE (3d, logged 13 Jul)** Satyam (dme@kairali.com): PRODUCTION webhook URL · consent-field answer · delete 3 test rows — re-scope before chasing: packages/forms is now store-first (Supabase, #55) and the CRM pulls from there, so the webhook item may be moot. CHASE TODAY with the revised ask
+- [ ] **STALE (3d, logged 13 Jul)** Deepu (developer@kairali.com): KTAHV WP tech-fix spec execution (sitemap_index 404 etc.). CHASE TODAY
+- [ ] **STALE (3d, logged 13 Jul)** Eeshal (github.com/Eeshal27): stop standalone repo, move to Factory PRs after org invite — also still carries a live hardcoded student-hub credential in a PUBLIC repo. CHASE TODAY (security, not just process)
+- [ ] Abilash: PR #64 approval + its two whatisayurveda review rulings · canonical centres roster (via Abishek) · group WhatsApp number (non-KTAHV CTAs) · ink hex + 10-step ramps (Q14–16) · Raag web type scale · KTAHV auditor GPT prompt export · GitHub org invites · historical-chat corpus if Drive sweep misses it · Sneha brand assets / IG originals (theblushlounge) · factory sub-agent build order. [Q17 logo SVG pack RECEIVED 15 Jul · ANTHROPIC_API_KEY SET 14 Jul · theblushlounge wave slot + number ANSWERED 14 Jul]
+- [ ] Sunaj (sysadmin@kairali.com): kairalicenters.com hacked-WP remediation (URGENT, email drafted) · whatisayurveda.org renewal — EXPIRES 2026-09-28. [arogyashala.in DNS RESOLVED 14 Jul]
+- [ ] Abishek: canonical physician/centre roster (per #60 — the one item the whole non-revenue queue waits on)
 
 ## DONE (most recent first)
+- [x] 2026-07-16 08:56:46 IST — SCHEDULED item retired (condition met, grep-verified): the post-PR#2 PROJECT_CONTEXT patch is unnecessary — §1, §3 and §7 already read kairali.guru = EN-only-live (5-locale build in Eeshal's repo). No edit needed; item removed from SCHEDULED
+- [x] 2026-07-15 20:12:57 IST — Overnight session banked to PR #64 (OPEN, not merged): whatisayurveda trust-integrity fix + content-engine research — 14 commits, 73 files, all 8 checks GREEN, blocked on Abilash's approval. Killed 4 fabricated medical claims before publication (hardcoded "Medically reviewed by Dr. Deepu John" date on every page + "ask a doctor on WhatsApp" = the Priya bot + a footer review promise + an invented editorial policy inside FAQPage schema); real 5-physician roster mined + double-sourced; GPT-5 (scripts/audit-gpt.mjs) + Perplexity (scripts/audit-perplexity.mjs) auditors added; MASTER_PIPELINE S0–S12 + 9 content teardowns; the 6 doctrine-mandated sub-agents found MISSING and 2 gaps fixed
+- [x] 2026-07-15 15:46:00 IST — whatisayurveda hardening + Q17 CLOSED: medical reviewer = single-source config, multi-doctor future-proof (#61) · whyayurveda.org blog mine, 2,261 posts + migration/cross-link map (#62) · raster KAG logo → vector SVG mark + real favicons across all 4 sites (#63)
+- [x] 2026-07-15 14:58:56 IST — Abilash ruling batch ratified into law: AHV opening = 14 Feb 1999 locked (#53) · WIA WebMD-grounded IA to ~3,400 pages, 4 phases (#54) · packages/forms store-first Supabase path — 7/7 unit + LIVE e2e insert/read/delete against real Supabase (#55) · all vector logos received, Q17 closed (#56) · WIA transparent-steward voice law (#57) · 4 positioning changes ratified + whyayurveda = central WP blog (#58) · franchise HELD pending commercials, canonical = ayurvedafranchise.com, Decision #4 closed (#59) · equipment HELD pending real catalog; pending-decision queue cleared to roster-only (#60)
+- [x] 2026-07-15 13:41:50 IST — Mine-first laws + archive pass: SEO-protection law — no DNS flip for a ranked site without live-URL inventory + KEEP/MERGE/301 map (#49) · Build Decision Matrix ratified as law (#50) · kairali.com protection map, 208 URLs → KEEP 14 / MERGE 110 / 301 ~25 + 13-page build list + agency subpage dossier (#52) · POSITIONING_AND_MOA.md positioning source-of-truth, 7 MOA segments → sites (#47) · archive catalogued, 363 docs / 15 categories / 337 artifacts kept local (#45, #48) · brief-snapshot.sh + CLAUDE.md rule fixing the stale-brief root cause (#46) · kairali.com popup interim fix (#51)
 - [x] 2026-07-15 00:18:20 IST — Overnight-wrap brief committed to main (PR #43); autonomous build session paused ~00:20 IST (non-revenue queue data-blocked on Abilash source data)
 - [x] 2026-07-15 00:17:16 IST — kairaliequipment.com pre-build BANKED + BLOCKED: legacy product DB empty (0 SKUs) + live site 500/path-leak; no fabrication (rule 6) → needs real product list + broken-site routing (PR #42)
 - [x] 2026-07-14 23:57:59 IST — kairalifranchise.com pre-build BANKED + PAUSED: needs investment figures + canonical domain ruling before build (rule 6, no-rework) (PR #41)

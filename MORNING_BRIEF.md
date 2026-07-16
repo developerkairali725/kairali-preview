@@ -1,37 +1,36 @@
-# MORNING BRIEF — 2026-07-15 10:56:43 IST
+# MORNING BRIEF — 2026-07-16 08:56:46 IST
 
-_Sprint Day 3 of 30 (13 Jul → 12 Aug 2026). `main` clean + in sync with origin. No open human PRs (8 Dependabot bumps parked for the 20 Jul Monday triage). Machine idle since the 00:18 IST overnight-wrap — nothing merged after it._
+_Sprint Day 4 of 30 (13 Jul → 12 Aug 2026). `main` clean + in sync with origin (HEAD f84cfe3, 15 Jul 15:46). One human PR open (#64, green, waiting on you) + 8 Dependabot bumps parked for Monday. Machine idle since 20:12 IST._
 
 ## Finished overnight
-A large autonomous evening/build session landed on `main` (PRs #24–#43, merged 19:19 IST → 00:18 IST); all now in BACKLOG DONE:
-- **3 new sites built + evidenced** — [kairali.com](launches/kairali.com/) (design 9.2, real photography, PR #24), [whatisayurveda.com](launches/whatisayurveda.com/) (9.0, "Ayurveda authority" v1, greenfield, PR #36/#40), [kairalicenters.com](launches/kairalicenters.com/) (9.0, 14 verified centres, PR #38/#39). arogyakendra already live → 4 sites now carry legal + consent.
-- **@kairali/legal** package → privacy/terms/cookie fleet-wide, Ship Gate A12 closed everywhere (PR #37).
-- **Interim uptime monitor LIVE** (Ship Gate B10) — 10-min GitHub cron, CF-aware probe, auto-issue alert (PR #28). **[NOW item closed]**
-- **SEO tooling verdict** — buy a $50 one-time DataForSEO deposit (~$3.60/mo at our usage) over Semrush/Ahrefs (PR #29). **MCP sitting closed** — Clarity connected + verified, GitHub skipped, Composio in, Semrush declined.
-- **RATES_RECKONER** complete (26 tables, 6/6 PDFs, price-verified, PR #30); **LP doctrine draft** + KTAHV legacy mine (594-URL sitemap, PR #27); **whatisayurveda.org mine** — 1 page, 98 dead links, expiry 28 Sep flagged (PR #31).
-- **Franchise + Equipment pre-builds BANKED but BLOCKED** — franchise needs figures + domain (PR #41); equipment legacy DB empty + live site 500/path-leak (PR #42). Build queue paused ~00:20 (no fabrication, rule 6).
+One session, 18:04 → 20:12 IST, all banked to **[PR #64](https://github.com/kairali-digital/kairali-web-factory/pull/64)** — 14 commits, 73 files, **all 8 checks green, not merged** (needs your approval). Preview: [whatisayurveda](https://kairali-web-factory-whatisayurveda-com-git-feat-8a8a38-kairali.vercel.app).
+- **It caught whatisayurveda about to publish four medical claims that were not true** — every page carried "Medically reviewed by Dr. Deepu John (BAMS)" with a hardcoded date, in `MedicalWebPage` structured data, under a real physician's credential, for reviews that never happened. Also: "ask a doctor on WhatsApp" (that number is the Priya chatbot), a footer review promise, and an invented editorial policy served as `FAQPage` schema. Nothing was live; no DNS flip had happened.
+- **Replaced with verifiable numbers** — a live coverage count on /about ("none of our 11 health pages has been reviewed yet"), a stated conflict of interest, and a real 5-physician roster mined and double-sourced (2 doctors held off the panel rather than guess a spelling).
+- **Machinery, not just fixes** — GPT-5 (`scripts/audit-gpt.mjs`) + Perplexity (`scripts/audit-perplexity.mjs`) auditors, `MASTER_PIPELINE.md` (S0–S12, 3 tracks), 9 content teardowns, and a finding that CLAUDE.md doctrine (n)–(s) mandates six sub-agents that did not exist (2 built overnight).
 
-## Due today (Day 3 · Wave 0, Days 1–6)
-No SCHEDULED item date-triggers today or tomorrow (Wave 1 starts Day 7 / 20 Jul; Monday ritual first 20 Jul). Non-revenue build queue is paused on Abilash source-data — so today's ungated leverage:
-1. **Self-contained factory work** — packages/ui floating-stack (LEARNINGS #3) + packages/forms store-first (needs Supabase creds); neither is gated on people.
-2. **Mechanization triage** — SEO_PLAYBOOK §GAPS + DESIGN_DOCTRINE items (INP gate, title-uniqueness, orphan-page, AI-crawler policy) into packages/checklist (Ship Gate §E, "within the week").
-3. **Compliance triage** — 158 YouTube titles flagged as possible health claims, vet before any KTAHV embed.
-4. **Lighthouse CI** vs Vercel preview wiring [gap #1] · **Forms v1.1 Turnstile** [gap #6] — both self-contained.
+_Also now logged in BACKLOG DONE: yesterday's 19 merged PRs (#45–#63, 12:32 → 15:46 IST) were never recorded — the 15 Jul day session outran the brief that reported it._
+
+## Due today (Day 4 · Wave 0, Days 1–6)
+No SCHEDULED item date-triggers today or tomorrow (Wave 1 starts Day 7 / 20 Jul; Monday ritual first 20 Jul). What today's BACKLOG pass surfaced:
+1. **The 3-day chase threshold hits today** — five people have been silent since 13 Jul (below). This is the day the sprint's measurement lane and Wave 1 either unblock or slip.
+2. **PR #64 merge** — one click, then the whatisayurveda content engine can proceed on honest foundations.
+3. **One SCHEDULED item retired** — the post-PR#2 PROJECT_CONTEXT patch turned out to be unnecessary; §1/§3/§7 already read kairali.guru = EN-only-live (grep-verified, moved to DONE).
+4. **Self-contained work while the build queue is data-blocked** — packages/ui floating-stack (LEARNINGS #3), mechanization triage into packages/checklist (Ship Gate §E, "within the week" — due Day 6), Lighthouse CI wiring [gap #1], Forms v1.1 Turnstile [gap #6].
 
 ## Blocked / waiting on people
-_Nothing stale yet — the 13 Jul cluster is 2 days old; 3-day threshold hits **tomorrow, 16 Jul** (chase then)._
-- **kairalicenters.com LIVE site is HACKED** (gambling-spam injection) — **Sunaj** — email drafted (bulk-sheet row 7); a live Kairali property is compromised right now.
-- **Measurement access** (GA4/GTM/Ads/GSC/Bing) — **Vikash** — gates Ship Gate B3–B7 for every launch; still nobody owns this lane.
-- **Shopify Storefront token** — **Ambuj** — gates packages/product-card + all of Wave 1 (Day 7).
-- **Image-folder shares** (KTAHV New Shoot / Villa Raag Images) — **mkt@ktahv.com + ho.mkt@kairaliproducts.com** — gate placeholder image swaps.
-- **Production webhook URL + consent-field + delete 3 test rows** — **Satyam**. **Supabase creds** (store-first forms) — **Abilash/Ambuj**.
-- **Ink hex + 10-step ramps (Q14–17), group WhatsApp number, Raag type scale** — **Abilash/design team** — gate raag-tokens + brand visuals.
-- **GitHub org invites** — **Abilash** — unblock Eeshal→Factory PRs + kairali.guru Wave-2 freeze.
+**Five items are stale today (3 days, logged 13 Jul) — chase all five:**
+- **Vikash** — GA4/GTM/Ads/GSC/Bing handover. Gates Ship Gate B3–B7 on **every** launch; nobody owns this lane.
+- **Ambuj** — Shopify Storefront token (gates **all of Wave 1, starts Monday**) + registrar access sheet.
+- **Satyam** — prod webhook / consent field / 3 test rows. Re-scope first: forms went store-first (Supabase, #55), so the webhook ask may be moot.
+- **Deepu** (web developer) — KTAHV WP tech fixes (sitemap_index 404).
+- **Eeshal** — still a **live credential in a public repo**, plus the org-invite move. Security, not just process.
+
+Not stale, still open: **Sunaj** — kairalicenters.com hacked-WP remediation (a live Kairali property is serving gambling spam right now) + whatisayurveda.org renewal (expires 28 Sep). **Abishek** — canonical roster, the one item the non-revenue build queue waits on.
 
 ## Needs your decision (Abilash)
-1. **Send the pending Gmail drafts** — esp. the **URGENT Sunaj "kairalicenters.com is HACKED"** email (live property compromised) + Satyam · Astha (CC Ritu) · Anupam (banned-words). Send now? (Y/N)
-2. **Canonical centres roster** — "X centres in Y countries" conflicts everywhere (18/9 vs 14/5 vs 35/25). One authoritative number unblocks kairali.com + kairalicenters + franchise. Which is correct?
-3. **Franchise** — (a) gate investment behind enquiry, or give me the figures? (b) canonical domain — kairalifranchise 301s to ayurvedafranchise, or reverse?
-4. **Equipment** — legacy product DB is empty (0 SKUs) and the live site is 500/broken + leaking server paths. Supply the real product list, and who routes the broken-site fix?
-5. **Morning setup that unblocks automation** — Vercel imports (kairali.com + whatisayurveda + kairalicenters), create the Supabase project, and place the $50 DataForSEO deposit (doc: docs/seo/TOOLING_DECISION.md §5). Do these today?
+1. **Approve PR #64?** (Y/N) — green on all 8 checks, blocked only on your approval since last night.
+2. **The ~20-30 existing whatisayurveda pages** — (a) strip the review claim until Dr. Deepu John genuinely reviews them, (b) he reviews them now and we record true dates, or (c) label them "Kairali editorial team" with no physician assertion? *Recommend (a) now, (b) as he has time.*
+3. **The ~3,400-page review promise is arithmetically false** — no single physician can honestly review 3,400 pages. Cap genuinely-reviewed pages (condition pages, ~15–25) and let the herb cluster carry traffic under a different, true trust label? (Y/N — this changes the site's core promise.)
+4. **Factory sub-agent build order** — doctrine mandates six, none existed. Proposed: seo-aeo-geo-auditor (building regardless) → content-geo-writer → design-qa → security-auditor → logger. Confirm or drop any.
+5. **Send the pending Sunaj email** on the hacked kairalicenters.com? It has been drafted since 14 Jul and the site is still compromised. (Y/N)
 6. **Dependabot majors** (#9 next 15→16, #11 typescript 5→7, #10 eslint 9→10) — hold all 8 for Monday triage as planned? (Y = default)
