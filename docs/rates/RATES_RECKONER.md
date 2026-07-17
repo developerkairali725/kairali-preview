@@ -293,7 +293,7 @@ Table label as printed: **"Price for Pick-up or Drop-off  - AC Vehicle (One Way)
 - **Arrival & Accommodation:** signature herbal detox welcome drink; private, eco-friendly villas.
 - **Nourishment:** freshly prepared vegetarian/vegan meals per wellness consultation (breakfast, lunch, dinner), organic ingredients; additional food items charged separately. Daily in-room mineral water (1 bottle per person) + unlimited herbal-infused detox water.
 - **Ayurvedic Therapies:** **two Ayurvedic therapies per day**, including herbal steam baths. *Exception: Preventive Health & Regenerative Program includes one therapy per day.* Post-treatment juices/herbal teas.
-- **Mind-Body Practices:** group sunrise yoga; group guided evening meditation.
+- **Mind-Body Practices:** group sunrise yoga; group guided evening meditation. **⚑ RULED WRONG (D-YOGA-PRIVATE, Abilash 17 Jul 2026): private one-on-one yoga sessions ARE offered, and one-on-one packages too — this "group" notation is a source-PDF error. Transcription kept verbatim; the source document needs correction at its next revision. Do not carry "group" to any site.**
 - **Learning & Cultural Immersion (once a week):** Ayurveda & yoga workshops; Ayurvedic cooking classes; organic farm tours, village walks, nature trails.
 - **Facilities & Extras:** swimming pool, library, gym, outdoor facilities; daily wellness check-ins with the Ayurvedic doctor. Internal herbal medicines, lab tests, or specialty therapies (e.g., Panchakarma) charged as needed.
 - **All-Inclusive Pricing:** includes accommodation, meals, therapies, and applicable taxes; rates subject to change per government policies.
@@ -383,7 +383,7 @@ Table label as printed: **"Price for Pick-up or Drop-off  - AC Vehicle (One Way)
 Same structure as the 25–26 treatment inclusions, with these differences:
 
 - **Ayurvedic Therapies:** **one Ayurvedic therapy per day** (not two), including herbal steam baths.
-- **Mind-Body Practices:** **Private** sunrise yoga sessions and **Private** guided evening mindfulness sessions (the treatment lists say "group").
+- **Mind-Body Practices:** **Private** sunrise yoga sessions and **Private** guided evening mindfulness sessions (the treatment lists say "group"). **⚑ CONTRADICTION RESOLVED (D-YOGA-PRIVATE, Abilash 17 Jul 2026): "Private" is CORRECT; the treatment lists' "group" is the source-PDF error.**
 - All other blocks (Arrival & Accommodation, Nourishment, Learning & Cultural Immersion, Facilities & Extras, All-Inclusive Pricing) match the 25–26 wording.
 
 (Full verbatim text: source files, Page 2.)
@@ -399,6 +399,8 @@ Identical clause-for-clause to the 25–26 Terms & Conditions block above, excep
 ---
 
 ## FLAGS (for downstream website use — not part of the source numbers)
+
+- **Private-vs-group RULED (D-YOGA-PRIVATE, Abilash 17 Jul 2026) — the SOURCE PDFs need correction.** The 25–26 treatment inclusions print "group sunrise yoga; group guided evening meditation" while the 26–27 yoga inclusions print "Private"; Abilash rules the yoga side is the truth: **private one-on-one yoga sessions ARE offered, and one-on-one yoga packages too.** The "group" notation in the treatment lists is a source-document error — flag it to whoever prepares the next rate PDFs. kairaliyoga.com's "private" copy stands. Related facts on record (same ruling): externally-organised groups ARE hosted (evidence: the historical archives on the KTAHV site and kairali.com — cite those for any group-hosting claim); internally-run fixed group departures are a FUTURE plan only and must never be presented as a current offering; yoga teacher-training certification (TTC) is NOT offered.
 
 - **KTAHV language-lock conflict — ALL SIX source PDFs.** Every ingested document is KTAHV (clinical-register) collateral, yet the source copy itself uses hospitality/luxury register. Banned words found in the PDFs: **"luxury"** ("Luxury Stay" inclusion heading; "Luxury Sedan" transfer column; award names "World Luxury Award/Awards", "Best Luxury Yoga & Wellness Retreat"), **"spa"** (award names/captions only: "National Geographic Traveller (UK) Spa & Wellness", "Asia Pacific Spa & Wellness Coalition", "World Luxury Spa Awards"), **"journey"** ("Your Complete Wellness Journey" inclusions banner; "tailor your journey"), **"guests"** (throughout the T&C: noise policy, loyalty rewards, age policy, hospital guidelines). Not found in any PDF: "resort", "holiday", "cure" (banned senses). Also noted for register review (not on the banned list): "retreat" ("your serene retreat"; award name). Third-party award names are proper nouns — register decision needed on whether they are exempt. Per CLAUDE_FLEET.md KTAHV LANGUAGE LOCK these words are banned on KTAHV website pages; the numbers here are the source of truth, but the surrounding marketing language must be re-registered to the clinical lock before publication. Do NOT copy the verbatim phrasing to the site. (Per-occurrence lists: each source file's FLAGS section.)
 - **Programme/course "price" is not a single number — applies to ALL rate lists.** Every document prices per night by villa type and occupancy, with a minimum duration per programme. Publishing a per-programme/per-course fee requires multiplying a per-night rate by the nights, or an Abilash ruling on how to display. Confirm before showing any bundled figure.

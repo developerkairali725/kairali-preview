@@ -96,3 +96,22 @@ Routes verified to exist on disk (find, today): app/page.tsx · books/[slug]/pag
 ## Discrepancy note (report-honesty)
 
 The committed seo-aeo-geo-report.md's final verdict is **FAIL** (3 blockers: /author description 160>155, buildMetadata gate bypass on 7 page files, /icon.png 404) and was never re-audited on the branch. Today's read-only inspection of merge commit `789b523` shows all three were fixed before merge (description 143ch through the gate; author/press/contact/book pages all import buildMetadata; app/icon.png present as a real 64×64 PNG) — but the evidence trail lacks a committed seo re-audit, unlike design-qa which has one. Residual audit notes still true in merged code: noindex legal pages inherit the homepage canonical (contradictory signal), book pages pre-`slice()` before the gate (silent truncation), no FAQ/question-formatted H2s (AEO opportunity), 308-vs-301 human flag.
+
+## Post-import live verification — appended 2026-07-17 12:48:45 IST (Session 2B follow-up)
+
+Abilash imported the Vercel project (`kairali-web-factory-healing-recipes`, prj_eyEq9n2uyd1f9gp6xx7r3oYHh3I3, team kairali) at ~12:41 IST; latest deployment READY, target production, from main. This supersedes the 404 probe recorded above and closes the "no Vercel project" gap; **preview URL for Human Gate C-1 now exists**. Real output:
+
+```
+$ curl -s -o page.html -w "HTTP %{http_code}\n" https://kairali-web-factory-healing-recipes.vercel.app/
+HTTP 200
+$ grep -oE '<h1[^>]*>[^<]*' page.html | head -1
+<h1>Recipes that carry a lineage.
+$ grep -o '"foundingDate":"[^"]*"' page.html
+"foundingDate":"1989"        # the PR #84 fleet-wide schema fix, live on this fresh deploy
+$ curl -s -o /dev/null -w "llms.txt %{http_code} · " .../llms.txt; curl -s -o /dev/null -w "sitemap.xml %{http_code}\n" .../sitemap.xml
+llms.txt 200 · sitemap.xml 200
+$ curl -s -o /dev/null -w "/recipes.aspx → %{http_code} → %{redirect_url}\n" .../recipes.aspx
+/recipes.aspx → 308 → https://kairali-web-factory-healing-recipes.vercel.app/
+```
+
+Still pending after this update (unchanged): Abilash preview approval (C-1), DNS flip (human), GSC/Bing/GA4 (production-domain-gated), Lighthouse/factory-spec CI, event details, Q-HR-ARCHIVE/Q-HR-PHONE, Harmony pre-event bibliographic re-verification (triangulation note).

@@ -107,7 +107,7 @@ export default function Home() {
                 fetchPriority="high"
               />
               <figcaption className="biblio-line">
-                Harmony: Essential Ayurveda for All · Roli Books · March 2026
+                Harmony: Essential Ayurveda for All · Roli Books · April 2026
               </figcaption>
             </figure>
           </div>
@@ -173,7 +173,7 @@ export default function Home() {
                 loading="lazy"
               />
               <figcaption className="biblio-line">
-                The Roli Books hardback, March 2026.
+                The Roli Books hardback, April 2026.
               </figcaption>
             </figure>
             <div>

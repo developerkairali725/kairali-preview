@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
     title: "Kairali Hospitality — The Group’s Properties, Goa to Europe",
     description:
-      "The Kairali group’s hospitality umbrella — Villa Raag in Goa, the Healing Village hospital in Palakkad, a European joint venture, and consultancy.",
+      "The Kairali group’s hospitality umbrella — Villa Raag in Goa, the Healing Village hospital in Palakkad, Ayurveda in the Czech Republic, and consultancy.",
     siteName: "Kairali Hospitality",
     ogImage: "/og.jpg",
   }) as Metadata),

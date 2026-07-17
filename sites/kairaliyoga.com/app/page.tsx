@@ -451,7 +451,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------- Training — the real offer, honestly framed ---------- */}
+        {/* ---------- Training — the real offer, honestly framed. TTC is NOT
+            offered (Abilash ruling 17 Jul 2026, D-YOGA-PRIVATE batch) — the
+            copy states the non-offering explicitly; guards ban any offering
+            claim (test/guards.test.js TTC regex). ---------- */}
         <section className="section training" id="training" aria-labelledby="training-heading">
           <div className="container">
             <p className="overline">Train in the Tradition</p>
@@ -460,9 +463,10 @@ export default function Home() {
               Kairali&rsquo;s training programmes teach Ayurvedic therapy —
               daily theory classes with Ayurvedic doctors and hands-on practice
               with senior therapists, certified by the Kairali Institute of
-              Panchakarma Therapies. If you are researching yoga teacher
-              training, write to us anyway: we will tell you honestly whether
-              what we teach fits what you seek.
+              Panchakarma Therapies. Kairali does not run a yoga
+              teacher-training certification — if that is what you are
+              researching, write to us anyway: we will tell you honestly
+              whether what we teach fits what you seek.
             </p>
             <ul className="training-list">
               {TRAININGS.map((t) => (
@@ -650,7 +654,7 @@ export default function Home() {
           <p className="footer-fine">
             © {new Date().getFullYear()} Kairali Ayurvedic Group — founded
             1989, {GROUP_YEARS} years ago, by a family practising Ayurveda
-            since 1908 · {LINEAGE_YEARS} years of unbroken lineage
+            since 1908 · {LINEAGE_YEARS} years of lineage
           </p>
         </div>
       </footer>

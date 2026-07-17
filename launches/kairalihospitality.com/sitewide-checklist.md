@@ -109,3 +109,23 @@ the Czech panel ships deliberately text-first (IMAGE_MANIFEST GAP honoured — d
 Open Abilash rulings riding this site: Q-KH-JV-NAME (verified "Resort Svatá Kateřina" stands in
 for the dictation; NO ownership language until the legal form is ruled), Q-KH-2008, Q-KH-PHONE,
 Q-KH-BRIEF-RULINGS (four it.2 interpretation calls, each a one-line reversal).
+
+## Post-import live verification — appended 2026-07-17 12:48:45 IST (Session 2B follow-up)
+
+Abilash imported the Vercel project (`kairali-web-factory-kairalihospitality-com`, prj_35O9A52SPqWuce1UiXjXnE09QqC4, team kairali) at ~12:43 IST; latest deployment READY, target production, from main. Note: Vercel truncated the short alias to `kairali-web-factory-kairalihospital.vercel.app` (name-length limit); the full-name aliases `…-kairalihospitality-com-kairali.vercel.app` / `…-git-main-kairali.vercel.app` also serve. Supersedes the 404 probes above; **preview URL for Human Gate C-1 now exists**. Real output:
+
+```
+$ curl -s -o page.html -w "HTTP %{http_code}\n" https://kairali-web-factory-kairalihospital.vercel.app/
+HTTP 200
+$ grep -oE '<h1[^>]*>.{0,120}' page.html | head -1
+<h1><span>Places built to restore.</span> <span>A family practising Ayurveda for 118 years.</span></h1>
+                                                  # ↑ computed rolling years (2026−1908=118), live
+$ grep -o '"foundingDate":"[^"]*"' page.html
+"foundingDate":"1989"        # PR #84 fleet-wide schema fix, live on this fresh deploy
+$ curl -s -o /dev/null -w "llms.txt %{http_code} · " .../llms.txt; curl -s -o /dev/null -w "sitemap.xml %{http_code}\n" .../sitemap.xml
+llms.txt 200 · sitemap.xml 200
+$ curl -s -o /dev/null -w "/about-us.aspx → %{http_code} → %{redirect_url}\n" .../about-us.aspx
+/about-us.aspx → 308 → https://kairali-web-factory-kairalihospital.vercel.app/   # single-hop
+```
+
+Still pending after this update (unchanged): Abilash preview approval (C-1), DNS flip (human), GSC/Bing/GA4, Lighthouse/factory-spec CI, Q-KH-JV-NAME (now with triangulation evidence on the "joint venture" label itself), Q-KH-2008/PHONE/BRIEF-RULINGS, "unbroken" phrasing (fleet item).

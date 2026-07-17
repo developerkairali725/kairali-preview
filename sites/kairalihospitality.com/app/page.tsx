@@ -17,9 +17,10 @@
 // kairali-hospitality.md (LOCKED). Svatá Kateřina name + region VERIFIED
 // 16 Jul 2026 via two independent sources (katerinaresort.cz "part of the
 // Kairali Ayurveda Group"; kairali.com/svata-katerina-prague-czech-
-// republic.aspx; third-party corroboration) — see the build brief. The JV's
-// legal/ownership form is an OPEN Abilash question: no ownership claim is
-// printed, "joint venture" is his own dictated framing. Legacy "established
+// republic.aspx; third-party corroboration) — see the build brief. RULED
+// 17 Jul 2026 (Abilash): the label is "in cooperation with" — "joint
+// venture" must NOT appear unless he later confirms the legal form
+// (D-KH-JV-LABEL). No ownership claim is printed. Legacy "established
 // 2008 subsidiary" fact NOT carried (unruled — QUESTIONS.md). Healing
 // Village card = clinical register (data-register="clinical", guarded).
 // Contacts: locked info@kairali.com + interim Priya WhatsApp (DECISIONS
@@ -267,9 +268,9 @@ export default function Home() {
                   <p className="panel-place">Vysočina · Czech Republic</p>
                   <h3>Resort Svatá Kateřina</h3>
                   <p className="panel-line">
-                    The group&rsquo;s European joint venture in the
-                    Bohemian-Moravian Highlands, with a purpose-built
-                    Ayurvedic Pavilion.
+                    Ayurvedic programmes in the Bohemian-Moravian Highlands,
+                    run in cooperation with the Kairali Ayurvedic Group in a
+                    purpose-built Ayurvedic Pavilion.
                   </p>
                   <p className="panel-ctas">
                     <a href={KATERINA_URL} data-cta="katerina_explore">Explore katerinaresort.cz &rarr;</a>
@@ -286,7 +287,7 @@ export default function Home() {
           <div className="container">
             <blockquote>
               One family has practised Ayurveda since 1908 &mdash;{" "}
-              {LINEAGE_YEARS} years, unbroken. The Kairali Ayurvedic Group,
+              {LINEAGE_YEARS} years. The Kairali Ayurvedic Group,
               founded in 1989 by K.&nbsp;V.&nbsp;Ramesh and Gita Ramesh,
               carries that practice into its places.
             </blockquote>
@@ -318,8 +319,9 @@ export default function Home() {
               Kairali helps people who are starting out &mdash; a first
               wellness property, an Ayurveda wing, a full campus. The group
               has done every part of this for itself: it runs an
-              NABH-accredited Ayurvedic hospital in Palakkad, a boutique
-              wellness property in Goa and a European joint venture, and it
+              NABH-accredited Ayurvedic hospital in Palakkad and a boutique
+              wellness property in Goa, it brings Ayurveda to the Czech
+              Republic in cooperation with Resort Svatá Kateřina, and it
               manufactures its own WHO-GMP-certified Ayurvedic product range.
               That working knowledge is what we consult with.
             </p>

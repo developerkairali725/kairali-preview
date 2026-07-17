@@ -257,7 +257,7 @@ export default function Home() {
             <dl className="trust-lines">
               <div>
                 <dt>A family practising Ayurveda since 1908</dt>
-                <dd>{LINEAGE_YEARS} years of unbroken practice in the same family.</dd>
+                <dd>{LINEAGE_YEARS} years of practice in the same family.</dd>
               </div>
               <div>
                 <dt>Kairali Ayurvedic Group, founded 1989</dt>

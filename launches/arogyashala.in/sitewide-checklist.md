@@ -78,3 +78,22 @@ $ grep 'rel="canonical"' sites/arogyashala.in/.next/server/app/index.html
 ## Gates at merge time (PR #84, merged 2026-07-16 15:38 UTC as e1c1651)
 
 `gh pr view 84 --json body,statusCheckRollup` (run today): ALL checks SUCCESS — gate (incl. full-history gitleaks), brand-lint, security-review, factory-spec ×4 (NOT including this site — see §3), Vercel ×6. PR body: build clean · brand-lint 0/0 · compliance PASS · guards 6/6 · full suite 182/182 · D-DESIGN-DIFF similarity PASS · B-14 critic 9.1.
+
+## Post-import live verification — appended 2026-07-17 12:48:45 IST (Session 2B follow-up)
+
+Abilash imported the Vercel project (`kairali-web-factory-arogyashala-in`, prj_oDi6A1zad9PvpQ0lRitX5ikZy8Qh, team kairali) at ~12:41 IST; latest deployment READY, target production, from main. Supersedes the 404 probe above; **preview URL for Human Gate C-1 now exists**. Real output:
+
+```
+$ curl -s -o page.html -w "HTTP %{http_code}\n" https://kairali-web-factory-arogyashala-in.vercel.app/
+HTTP 200
+$ grep -oE '<h1[^>]*>[^<]*' page.html | head -1
+<h1>Arogya Shala — the Kairali counter for your neighbourhood.
+$ grep -o '"foundingDate":"[^"]*"' page.html
+"foundingDate":"1989"        # this PR's own fleet-wide schema fix, live
+$ curl -s -o /dev/null -w "llms.txt %{http_code} · " .../llms.txt; curl -s -o /dev/null -w "sitemap.xml %{http_code}\n" .../sitemap.xml
+llms.txt 200 · sitemap.xml 200
+$ curl -s -o /dev/null -w "/about-us.aspx → %{http_code} → %{redirect_url}\n" .../about-us.aspx
+/about-us.aspx → 308 → https://kairali-web-factory-arogyashala-in.vercel.app/   # single-hop
+```
+
+Still pending after this update (unchanged): Abilash preview approval (C-1), DNS flip incl. the .co.in forward HOLD lift (human), GSC/Bing/GA4, Lighthouse/factory-spec CI, commercials gate before programme promises harden, triangulation attention items ("unbroken" phrasing; NABH/WHO-GMP proof links).

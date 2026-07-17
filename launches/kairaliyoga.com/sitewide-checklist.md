@@ -94,3 +94,22 @@ $ grep -E '₹|€|\$[0-9]|\b(INR|USD)\b' sites/kairaliyoga.com/app/page.tsx
 4. **GSC/Bing/GA4** — no IDs; all monitoring rows pending.
 5. **Kurale IAST interim** — display faces ship ROMANIZED programme names by documented interim; exact IAST lives in support faces and is guard-pinned. Ruling pending (Q-YOGA-IAST, QUESTIONS.md 2026-07-16 22:39:52 IST) — an open ruling, NOT an error. Also open: Q-YOGA-PRIVATE (reckoner's private-vs-group contradiction) and Q-YOGA-GUESTBOOK (late dignitary's entry).
 6. **Wave-wide evidence-layer misses** (retro-audit): no wiki/log.md entry, no LEARNINGS retro, no cross-model audit for this build — this file closes only the checklist gap.
+
+## Post-import live verification — appended 2026-07-17 12:48:45 IST (Session 2B follow-up)
+
+Abilash imported the Vercel project (`kairali-web-factory-kairaliyoga-com`, prj_eGnNcoAwngZc3ScXihMkS0llIc78, team kairali) at ~12:42 IST; latest deployment READY, target production, from main. Supersedes gap #2 above (404 probe); **preview URL for Human Gate C-1 now exists**. Real output:
+
+```
+$ curl -s -o page.html -w "HTTP %{http_code}\n" https://kairali-web-factory-kairaliyoga-com.vercel.app/
+HTTP 200
+$ grep -oE '<h1[^>]*>[^<]*' page.html | head -1
+<h1>Yoga, kept the way a lineage keeps it.
+$ grep -o '"foundingDate":"[^"]*"' page.html
+"foundingDate":"1989"        # PR #84 fleet-wide schema fix, live on this fresh deploy
+$ curl -s -o /dev/null -w "llms.txt %{http_code} · " .../llms.txt; curl -s -o /dev/null -w "sitemap.xml %{http_code}\n" .../sitemap.xml
+llms.txt 200 · sitemap.xml 200
+$ curl -s -o /dev/null -w "/retreat-programs.aspx → %{http_code} → %{redirect_url}\n" .../retreat-programs.aspx
+/retreat-programs.aspx → 308 → https://kairali-web-factory-kairaliyoga-com.vercel.app/#programmes   # single-hop, anchor preserved
+```
+
+Still pending after this update (unchanged): Abilash preview approval (C-1); the PRE-FLIP BLOCKER (~56 legacy sitemap URL fates) stands regardless of the preview existing; GSC/Bing/GA4; Lighthouse/factory-spec CI; Q-YOGA-IAST / Q-YOGA-GUESTBOOK; **Q-YOGA-PRIVATE — now load-bearing** (triangulation note: the live page asserts "private" sessions ×7 while the reckoner contradiction is unresolved).
