@@ -1,0 +1,592 @@
+/* ===========================================================================
+   kairaliyoga.com — E-register editorial one-pager · Kairali Brand Manual 2026
+   Tokens ONLY (packages/ui/brand-tokens.css). Mobile-first.
+   D-DESIGN-DIFF grammar (docs/design-research/kairaliyoga-2026-07-16.md):
+   the fleet's first FULL-BLEED PHOTO hero (slow 400ms brand-legal fade,
+   nothing bounces), a goal-first index RAIL (it.2: bordered full-width rows
+   with bronze rules — de-twinned from arogyashala's card doors), Sanskrit
+   names set oversized in Kurale with plain-English bronze overlines and a
+   reckoner-exact IAST subline in Lato (Q-YOGA-IAST interim), an honest
+   admissions strip (the page's ONE marigold moment on light ground), a
+   vertical day-timeline, details/summary FAQ (two columns at desktop), and
+   an enquiry ladder stepped by spelled-out Kurale words.
+   No left-text/right-image ivory hero, no 4-up stat band, no card grids.
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  --hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 26%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  line-height: 1.14;
+  margin: 0;
+}
+h2, h3 { color: var(--forest-700); }
+p { margin: 0 0 1em; }
+img { max-width: 100%; height: auto; }
+
+.container {
+  max-width: var(--measure-layout);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.measure { max-width: var(--measure-prose); }
+
+.overline {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px floor (ch.10) */
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-400);
+  margin: 0 0 12px;
+}
+
+.btn { display: inline-flex; align-items: center; justify-content: center;
+       gap: 8px; text-decoration: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+.text-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch floor without pill chrome */
+  font-weight: 600;
+  color: var(--forest-500);
+  text-decoration: none;
+}
+.text-cta:hover { color: var(--forest-700); }
+
+.section { padding: 76px 0 64px; }
+.section h2 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); margin-bottom: 14px; }
+/* anchor targets land clear of the viewport top */
+section[id], article[id] { scroll-margin-top: 24px; }
+
+/* ---------- Full-bleed dawn hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--forest-700); /* paints before the photo fades in */
+  display: flex;
+  align-items: flex-end;
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* the brand-legal slow entrance: a single 400ms ease-out fade (ch.07);
+     prefers-reduced-motion collapses it via the token sheet's global rule */
+  animation: hero-fade var(--dur-slow) var(--ease-brand) both;
+}
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  /* legibility scrim from tokens only — deepest at the text edge */
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--forest-700) 86%, transparent),
+    color-mix(in srgb, var(--forest-700) 38%, transparent) 46%,
+    color-mix(in srgb, var(--ink) 12%, transparent)
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  color: color-mix(in srgb, var(--ivory) 92%, transparent);
+  padding-top: 22px;
+  padding-bottom: 46px;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--ivory);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+.hero-overline { color: var(--marigold-300); margin-top: 18px; /* ch.08 dark-surface descriptor · brand-allow: marigold-text */ }
+.hero h1 {
+  color: var(--ivory);
+  /* E-register: Kurale display larger than any current fleet build */
+  font-size: clamp(2.35rem, 6.8vw, 4.6rem);
+  max-width: 17ch;
+}
+.hero .lede {
+  max-width: 52ch;
+  margin: 18px 0 0;
+  font-size: 1.06rem;
+}
+/* ghost button on the dark hero photo */
+.btn-ghost {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  min-height: 44px; /* touch floor (ch.10) — never below the token sheet's law */
+  padding: 0 calc(var(--space-1) * 5);
+  color: var(--ivory);
+  border: 1.5px solid color-mix(in srgb, var(--ivory) 70%, transparent);
+  background: transparent;
+  transition: border-color var(--dur-fast) var(--ease-brand);
+}
+.btn-ghost:hover { border-color: var(--ivory); }
+
+/* ---------- Goal-first selector — bordered index rail (it.2 de-twin:
+   no white card-doors, no border-top bar, no hero overlap; full-width
+   rows separated by bronze rules, an arrow closing each row) ---------- */
+.paths { margin-top: 30px; }
+.paths-question {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--forest-700);
+  margin: 0 0 12px;
+}
+.paths-rail {
+  border: var(--card-border);
+  border-radius: var(--radius-1);
+  background: color-mix(in srgb, var(--card-bg) 55%, transparent);
+}
+.path {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "kicker arrow"
+    "title  arrow"
+    "hint   arrow";
+  align-items: center;
+  gap: 0 16px;
+  min-height: 44px; /* touch floor (ch.10) */
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.path + .path { border-top: var(--hairline-bronze); }
+.path:hover { background: var(--card-bg); }
+/* ch.07/10: rail rows carry no shadow, so the ring stands alone — and
+   z-index lifts it above the neighbouring rows' hairlines */
+.path:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-1);
+  z-index: 1;
+}
+.path-kicker {
+  grid-area: kicker;
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze-400);
+}
+.path-title {
+  grid-area: title;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--forest-700);
+  line-height: 1.25;
+}
+.path-hint { grid-area: hint; font-weight: 600; color: var(--forest-500); margin-top: 2px; }
+.path-arrow {
+  grid-area: arrow;
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--forest-500);
+}
+
+/* ---------- Programmes — Sanskrit editorial ---------- */
+.programme {
+  border-top: var(--hairline-bronze);
+  margin-top: 44px;
+  padding-top: 36px;
+  max-width: var(--measure-prose);
+}
+.programme-english { margin-bottom: 6px; }
+.programme-sanskrit {
+  /* the ownable device: the Sanskrit name set huge in Kurale.
+     Q-YOGA-IAST interim: this line is ASCII-ROMANIZED — Kurale misanchors
+     combining macrons (font-level defect, design review it.1 finding 1). */
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  color: var(--forest-700);
+  letter-spacing: 0.01em;
+}
+.programme-iast {
+  /* the reckoner-EXACT IAST spelling, in a support face that renders the
+     macrons correctly (Lato — verified in the it.1 review's Asap probe) */
+  font-family: var(--font-caption);
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  margin: 8px 0 0;
+}
+.programme-nights {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest-500);
+  margin: 10px 0 14px;
+}
+.programme-body { max-width: 62ch; }
+
+/* ---------- Admissions strip — THE marigold moment on light ground ---------- */
+.admissions {
+  margin-top: 52px;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-top: 3px solid var(--marigold-400);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+  padding: 26px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.admissions-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--forest-700);
+  margin: 0 0 6px;
+}
+.admissions-body { margin: 0; max-width: 58ch; }
+
+/* ---------- Day timeline ---------- */
+.day { background: color-mix(in srgb, var(--card-bg) 55%, transparent);
+       border-top: var(--hairline-bronze); border-bottom: var(--hairline-bronze); }
+.timeline {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0 0 0 26px;
+  position: relative;
+  display: grid;
+  gap: 44px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: color-mix(in srgb, var(--leaf-500) 55%, transparent);
+}
+.timeline li { position: relative; display: grid; gap: 18px; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--leaf-500);
+}
+.timeline-when {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-400);
+  margin: 0 0 6px;
+}
+.timeline h3 { font-size: 1.45rem; margin-bottom: 8px; }
+.timeline p { max-width: 56ch; }
+.timeline img {
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+/* ---------- What to expect ---------- */
+.expect-grid { display: grid; gap: 36px; }
+.expect-list { margin: 22px 0 0; display: grid; gap: 20px; }
+.expect-list dt {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--forest-700);
+}
+.expect-list dd { margin: 4px 0 0; max-width: 58ch; }
+.expect-photo { margin: 0; }
+.expect-photo img {
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+  width: 100%;
+  object-fit: cover;
+}
+.expect-photo figcaption, .teachers-photo figcaption {
+  font-family: var(--font-caption);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ink) 65%, transparent);
+  margin-top: 8px;
+}
+
+/* ---------- Training ---------- */
+.training { border-top: var(--hairline-bronze); }
+.training-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 12px;
+  max-width: var(--measure-prose);
+  display: grid;
+}
+.training-list li {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  border-top: var(--hairline-bronze);
+  padding: 14px 0;
+}
+.training-list li:last-child { border-bottom: var(--hairline-bronze); }
+.training-duration {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: 1.35rem;
+  color: var(--forest-500);
+  flex: 0 0 84px;
+  white-space: nowrap;
+}
+.training-text strong { color: var(--forest-700); }
+
+/* ---------- Teachers ---------- */
+.teachers { background: color-mix(in srgb, var(--card-bg) 55%, transparent);
+            border-top: var(--hairline-bronze); border-bottom: var(--hairline-bronze); }
+.teachers-grid { display: grid; gap: 36px; }
+.teachers-photo { margin: 0; }
+.teachers-photo img {
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+  width: 100%;
+  object-fit: cover;
+}
+.teachers p { max-width: 58ch; }
+
+/* ---------- Voices ---------- */
+.voices-grid { display: grid; gap: 18px; margin-top: 26px; }
+.voice {
+  margin: 0;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+  padding: 24px 24px 20px;
+}
+.voice p {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--forest-700);
+  margin: 0 0 14px;
+}
+.voice footer { display: grid; gap: 2px; }
+.voice cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+.voice footer span {
+  font-family: var(--font-caption);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ink) 65%, transparent);
+}
+.voices-note {
+  font-family: var(--font-caption);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ink) 65%, transparent);
+  margin: 16px 0 0;
+}
+
+/* ---------- FAQ (details/summary — no JS; two columns ≥1024, it.2) ---------- */
+.faq { padding-top: 0; }
+.faq-list { max-width: var(--measure-prose); }
+.faq-list details { border-top: var(--hairline-bronze); }
+.faq-col:last-child details:last-child { border-bottom: var(--hairline-bronze); }
+.faq-list summary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--forest-700);
+  padding: 18px 36px 18px 4px;
+  cursor: pointer;
+  min-height: 44px;
+  list-style: none;
+  position: relative;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--forest-500);
+}
+.faq-list details[open] summary::after { content: "–"; }
+.faq-list summary:hover { color: var(--forest-500); }
+.faq-list summary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+.faq-list details p { padding: 0 4px 18px; max-width: 62ch; }
+
+/* ---------- Enquiry ladder ---------- */
+.enquire { padding-top: 0; }
+.ladder {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: grid;
+  gap: 22px;
+  max-width: var(--measure-prose);
+}
+.ladder-rung {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-top: var(--hairline-bronze);
+  padding-top: 22px;
+}
+.ladder-num {
+  /* it.2 de-twin: spelled-out Kurale words (One/Two/Three), not the
+     fleet's giant Lato-300 numerals (.flow-num look) */
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  font-size: clamp(1.45rem, 3.4vw, 1.85rem);
+  line-height: 1.25;
+  color: var(--forest-700);
+  flex: 0 0 auto;
+  min-width: 96px;
+}
+.ladder-body h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.ladder-body p { max-width: 54ch; }
+.ladder-body .btn { margin-top: 4px; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--forest-700);
+  color: color-mix(in srgb, var(--ivory) 90%, transparent);
+  padding: 52px 0 44px;
+}
+.site-footer a { color: var(--ivory); }
+/* Ship Gate A4 lesson (14 Jul): inline conversion links get real tap area */
+.site-footer a[data-cta] {
+  display: inline-block;
+  padding-block: 14px;
+  margin-block: -14px;
+}
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ivory);
+  margin-bottom: 6px;
+}
+.footer-address {
+  font-family: var(--font-caption);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.footer-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+.footer-nav a { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }
+/* it.2 (review micro 6a): short legal links get a real ≥44px tap width
+   without shifting the visual rhythm (padding offset by negative margin) */
+.footer-legal a { min-width: 44px; justify-content: center; padding-inline: 6px; margin-inline: -6px; }
+.footer-fine {
+  margin: 20px 0 0;
+  font-family: var(--font-caption);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ivory) 65%, transparent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 759.98px) {
+  /* First-paint law (375×812): headline + primary CTA must read above the
+     consent banner — the hero is compact on mobile, cinematic on desktop. */
+  .hero { min-height: auto; }
+  .hero-content { padding-top: 14px; padding-bottom: 34px; }
+  .hero-overline { margin-top: 10px; margin-bottom: 8px; }
+  .hero h1 { font-size: clamp(1.9rem, 7.4vw, 2.4rem); }
+  .hero .lede { margin-top: 10px; font-size: 0.98rem; max-width: 46ch; }
+  .hero .cta-row { margin-top: 18px; gap: 10px; }
+  /* first-paint law: the question + first rail row must clear the banner */
+  .paths { margin-top: 20px; }
+  .paths-question { font-size: 1.15rem; margin-bottom: 8px; }
+  .path { padding: 12px 16px; }
+}
+@media (min-width: 760px) {
+  .hero { min-height: clamp(560px, 88vh, 840px); }
+  .hero-content { padding-top: 30px; padding-bottom: 84px; }
+  .paths { margin-top: 48px; }
+  .path {
+    grid-template-columns: 108px minmax(0, 1fr) auto auto;
+    grid-template-areas: "kicker title hint arrow";
+    gap: 0 24px;
+    padding: 18px 24px;
+  }
+  .path-hint { margin-top: 0; }
+  .admissions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .timeline { padding-left: 34px; gap: 56px; }
+  .timeline li { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 36px; align-items: center; }
+  .timeline li:nth-child(even) { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); }
+  .timeline li:nth-child(even) .timeline-text { order: 2; }
+  .timeline li:nth-child(even) img { order: 1; }
+  .timeline li::before { left: -34px; }
+  .timeline::before { left: 5px; }
+  .expect-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 56px; align-items: start; }
+  .teachers-grid { grid-template-columns: minmax(0, 480px) minmax(0, 1fr); gap: 56px; align-items: center; }
+  .voices-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .expect-list { grid-template-columns: 1fr 1fr; gap: 26px 32px; }
+  /* it.2 (review finding 4): the FAQ answers the empty right lung at
+     desktop widths — two independent columns, three questions each */
+  .faq-list {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 56px;
+    align-items: start;
+  }
+  .faq-col details:last-child { border-bottom: var(--hairline-bronze); }
+}

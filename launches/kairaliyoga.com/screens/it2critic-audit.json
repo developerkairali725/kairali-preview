@@ -1,0 +1,629 @@
+{
+  "meta": {
+    "when": "2026-07-16T17:27:39.468Z",
+    "base": "http://localhost:4317"
+  },
+  "mobileWeightAtLoad": {
+    "totalKB": 907.9,
+    "imagesKB": 322.1,
+    "images": [
+      {
+        "url": "/images/ktahv-round-stone-cottages-dawn-1280.jpg",
+        "KB": 188
+      },
+      {
+        "url": "/images/kairali-icon.svg",
+        "KB": 8.2
+      },
+      {
+        "url": "/images/ktahv-yoga-cobra-instructor-adjustment.jpg",
+        "KB": 125.9
+      }
+    ],
+    "byType": {
+      "document": 72.2,
+      "font": 147.3,
+      "stylesheet": 20.8,
+      "image": 322.1,
+      "script": 345.4
+    }
+  },
+  "firstPaint": {
+    "bannerTop": 648.8,
+    "bannerVisible": true,
+    "h1": {
+      "top": 122.8,
+      "bottom": 192.1,
+      "left": 20,
+      "right": 355,
+      "w": 335,
+      "h": 69.3
+    },
+    "ctaPrimary": {
+      "top": 323.6,
+      "bottom": 367.6,
+      "left": 20,
+      "right": 258.1,
+      "w": 238.1,
+      "h": 44
+    },
+    "ctaGhost": {
+      "top": 377.6,
+      "bottom": 421.6,
+      "left": 20,
+      "right": 222.1,
+      "w": 202.1,
+      "h": 44
+    },
+    "pathsQuestion": {
+      "top": 475.6,
+      "bottom": 506,
+      "left": 20,
+      "right": 355,
+      "w": 335,
+      "h": 30.4
+    },
+    "firstPathRow": {
+      "top": 515,
+      "bottom": 617.5,
+      "left": 21,
+      "right": 354,
+      "w": 333,
+      "h": 102.5
+    },
+    "heroHeight": 455.6,
+    "scrollWidth": 375,
+    "innerWidth": 375
+  },
+  "mobileWeightFullScroll": {
+    "totalKB": 1741.8,
+    "imagesKB": 1156,
+    "images": [
+      {
+        "url": "/images/ktahv-round-stone-cottages-dawn-1280.jpg",
+        "KB": 188
+      },
+      {
+        "url": "/images/kairali-icon.svg",
+        "KB": 8.2
+      },
+      {
+        "url": "/images/ktahv-yoga-cobra-instructor-adjustment.jpg",
+        "KB": 125.9
+      },
+      {
+        "url": "/images/ktahv-physician-consultation-room-1024.jpg",
+        "KB": 111.7
+      },
+      {
+        "url": "/images/ktahv-therapist-carrying-dhara-pot-sunrise-1024.jpg",
+        "KB": 103.3
+      },
+      {
+        "url": "/images/ahv-food-idiyappam-veg-stew-1024.jpg",
+        "KB": 99.4
+      },
+      {
+        "url": "/images/ktahv-meditation-seated-chin-mudra.jpg",
+        "KB": 122.8
+      },
+      {
+        "url": "/images/ktahv-organic-farm-rice-transplanting-1024.jpg",
+        "KB": 114.6
+      },
+      {
+        "url": "/images/ktahv-grounds-water-channel-cottages.jpg",
+        "KB": 219.1
+      },
+      {
+        "url": "/images/ktahv-yoga-namaste-greeting-instructor-1024.jpg",
+        "KB": 63
+      }
+    ]
+  },
+  "mobileImageDiscipline": [
+    {
+      "src": "ktahv-round-stone-cottages-dawn-1280.jpg",
+      "naturalW": 375,
+      "renderedCssW": 375,
+      "dpr": 3,
+      "servedOverNeeded": 0.33
+    },
+    {
+      "src": "kairali-icon.svg",
+      "naturalW": 532,
+      "renderedCssW": 44,
+      "dpr": 3,
+      "servedOverNeeded": 4.03
+    },
+    {
+      "src": "ktahv-yoga-cobra-instructor-adjustment.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ktahv-physician-consultation-room-1024.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ktahv-therapist-carrying-dhara-pot-sunrise-1024.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ahv-food-idiyappam-veg-stew-1024.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ktahv-meditation-seated-chin-mudra.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ktahv-organic-farm-rice-transplanting-1024.jpg",
+      "naturalW": 335,
+      "renderedCssW": 309,
+      "dpr": 3,
+      "servedOverNeeded": 0.36
+    },
+    {
+      "src": "ktahv-grounds-water-channel-cottages.jpg",
+      "naturalW": 335,
+      "renderedCssW": 335,
+      "dpr": 3,
+      "servedOverNeeded": 0.33
+    },
+    {
+      "src": "ktahv-yoga-namaste-greeting-instructor-1024.jpg",
+      "naturalW": 335,
+      "renderedCssW": 335,
+      "dpr": 3,
+      "servedOverNeeded": 0.33
+    }
+  ],
+  "kuraleScan": {
+    "kuraleTextElements": 38,
+    "sample": [
+      {
+        "tag": "SPAN",
+        "cls": "",
+        "text": "Kairali Yoga"
+      },
+      {
+        "tag": "H1",
+        "cls": "",
+        "text": "Yoga, kept the way a lineage keeps it."
+      },
+      {
+        "tag": "P",
+        "cls": "paths-question",
+        "text": "What brings you?"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "path-title",
+        "text": "Deepen my practice"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "path-title",
+        "text": "Restore my system"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "path-title",
+        "text": "Train in the tradition"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Three programmes, named in Sanskrit, kept by physicians"
+      },
+      {
+        "tag": "H3",
+        "cls": "programme-sanskrit",
+        "text": "Dhyana-Yoga Shibiram"
+      },
+      {
+        "tag": "H3",
+        "cls": "programme-sanskrit",
+        "text": "Agni Dipanam Yoga Chikitsa"
+      },
+      {
+        "tag": "H3",
+        "cls": "programme-sanskrit",
+        "text": "Prana Samya Yoga Chikitsa"
+      },
+      {
+        "tag": "P",
+        "cls": "admissions-title",
+        "text": "Admissions are year-round. Dates are set with you."
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Sunrise to lamplight, the day holds you"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "Private yoga, before the heat"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "The physician’s check-in"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "One therapy, every day"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "The Ayurvedic table"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "Guided mindfulness as the light goes"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "The village around the practice"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "A hospital’s honesty, a village’s pace"
+      },
+      {
+        "tag": "DT",
+        "cls": "",
+        "text": "Arrival"
+      },
+      {
+        "tag": "DT",
+        "cls": "",
+        "text": "The campus"
+      },
+      {
+        "tag": "DT",
+        "cls": "",
+        "text": "The table"
+      },
+      {
+        "tag": "DT",
+        "cls": "",
+        "text": "The discipline"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Ayurveda training courses at the hospital"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Five points of yoga, one physician beside them"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Entries kept as they were written"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "“I’ve had an extremely relaxed and rejuvenating stay at Kair"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "“Paradise on Earth in the God’s own Country - the perfect pl"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "“We are going back to London feeling relaxed, healthy and we"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "The questions a stay raises"
+      },
+      {
+        "tag": "H2",
+        "cls": "",
+        "text": "Start wherever you are"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "ladder-num",
+        "text": "One"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "Just a question?"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "ladder-num",
+        "text": "Two"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "Ready to plan a stay?"
+      },
+      {
+        "tag": "SPAN",
+        "cls": "ladder-num",
+        "text": "Three"
+      },
+      {
+        "tag": "H3",
+        "cls": "",
+        "text": "Want the numbers?"
+      },
+      {
+        "tag": "P",
+        "cls": "footer-title",
+        "text": "Kairali Yoga — at Kairali, The Ayurvedic Healing Village"
+      }
+    ],
+    "macronViolationsInKurale": []
+  },
+  "iastSupportFaces": {
+    "programmeIast": [
+      {
+        "text": "Dhyāna-Yoga Shibiram",
+        "font": "Lato",
+        "size": "16.8px",
+        "hasMacrons": true
+      },
+      {
+        "text": "Agni Dīpanam Yoga Chikitsa",
+        "font": "Lato",
+        "size": "16.8px",
+        "hasMacrons": true
+      },
+      {
+        "text": "Prāna Sāmya Yoga Chikitsa",
+        "font": "Lato",
+        "size": "16.8px",
+        "hasMacrons": true
+      }
+    ],
+    "pathHints": [
+      {
+        "text": "Dhyāna-Yoga Shibiram",
+        "font": "Asap",
+        "size": "16px",
+        "hasMacrons": true
+      },
+      {
+        "text": "Agni Dīpanam & Prāna Sāmya",
+        "font": "Asap",
+        "size": "16px",
+        "hasMacrons": true
+      },
+      {
+        "text": "Ayurveda training courses",
+        "font": "Asap",
+        "size": "16px",
+        "hasMacrons": false
+      }
+    ],
+    "programmeDisplayH3": [
+      {
+        "text": "Dhyana-Yoga Shibiram",
+        "font": "Kurale",
+        "size": "32px",
+        "hasMacrons": false
+      },
+      {
+        "text": "Agni Dipanam Yoga Chikitsa",
+        "font": "Kurale",
+        "size": "32px",
+        "hasMacrons": false
+      },
+      {
+        "text": "Prana Samya Yoga Chikitsa",
+        "font": "Kurale",
+        "size": "32px",
+        "hasMacrons": false
+      }
+    ]
+  },
+  "timelinePairs": [
+    {
+      "when": "Sunrise",
+      "h3": "Private yoga, before the heat",
+      "img": "ktahv-yoga-cobra-instructor-adjustment.jpg"
+    },
+    {
+      "when": "Morning",
+      "h3": "The physician’s check-in",
+      "img": "ktahv-physician-consultation-room.jpg"
+    },
+    {
+      "when": "Midday",
+      "h3": "One therapy, every day",
+      "img": "ktahv-therapist-carrying-dhara-pot-sunrise.jpg"
+    },
+    {
+      "when": "Mealtimes",
+      "h3": "The Ayurvedic table",
+      "img": "ahv-food-idiyappam-veg-stew.jpg"
+    },
+    {
+      "when": "Evening",
+      "h3": "Guided mindfulness as the light goes",
+      "img": "ktahv-meditation-seated-chin-mudra.jpg"
+    },
+    {
+      "when": "Once a week",
+      "h3": "The village around the practice",
+      "img": "ktahv-organic-farm-rice-transplanting.jpg"
+    }
+  ],
+  "tapCensus": {
+    "total": 28,
+    "under44": []
+  },
+  "desktopHero": {
+    "currentSrc": "ktahv-round-stone-cottages-dawn.jpg",
+    "naturalW": 1280,
+    "renderedCssW": 1280,
+    "neededDevicePx": 2560,
+    "upscaleFactor": 2
+  },
+  "desktopType": {
+    "h1": {
+      "fontFamily": "Kurale, \"Kurale Fallback\", Georgia, serif",
+      "fontSize": "73.6px",
+      "fontWeight": "400"
+    },
+    "programmeSanskrit": {
+      "fontFamily": "Kurale, \"Kurale Fallback\", Georgia, serif",
+      "fontSize": "59.2px",
+      "fontWeight": "400",
+      "color": "rgb(0, 66, 38)"
+    },
+    "programmeIast": {
+      "fontFamily": "Lato, \"Lato Fallback\", system-ui, sans-serif",
+      "fontSize": "16.8px",
+      "letterSpacing": "0.504px",
+      "color": "color(srgb 0.109804 0.105882 0.0980392 / 0.78)"
+    },
+    "ladderNum": {
+      "fontFamily": "Kurale, \"Kurale Fallback\", Georgia, serif",
+      "fontSize": "29.6px",
+      "fontWeight": "400",
+      "color": "rgb(0, 66, 38)"
+    },
+    "pathTitle": {
+      "fontFamily": "Kurale, \"Kurale Fallback\", Georgia, serif",
+      "fontSize": "21.6px",
+      "color": "rgb(0, 66, 38)"
+    },
+    "pathKicker": {
+      "fontFamily": "Lato, \"Lato Fallback\", system-ui, sans-serif",
+      "fontWeight": "700",
+      "fontSize": "14px",
+      "color": "rgb(193, 136, 44)"
+    },
+    "pathArrow": {
+      "fontFamily": "Lato, \"Lato Fallback\", system-ui, sans-serif",
+      "fontSize": "24px",
+      "color": "rgb(0, 96, 56)"
+    },
+    "btnPrimary": {
+      "backgroundColor": "rgb(0, 96, 56)",
+      "borderRadius": "999px",
+      "minHeight": "44px"
+    },
+    "faqList": {
+      "display": "grid",
+      "gridTemplateColumns": "512px 512px",
+      "maxWidth": "none"
+    },
+    "pathsRail": {
+      "border": "1px solid color(srgb 0.756863 0.533333 0.172549 / 0.18)",
+      "borderRadius": "6px",
+      "backgroundColor": "color(srgb 1 1 1 / 0.55)"
+    }
+  },
+  "desktopContent": {
+    "ladderNums": [
+      "One",
+      "Two",
+      "Three"
+    ],
+    "voicesOverline": "From the Guestbook",
+    "voicesH2": "Entries kept as they were written",
+    "faqOverline": "Asked, Answered",
+    "faqH2": "The questions a stay raises",
+    "dataCtas": [
+      "hero_enquire",
+      "hero_programmes",
+      "goal_deepen",
+      "goal_restore",
+      "goal_train",
+      "prog_dhyana_enquire",
+      "prog_agni_enquire",
+      "prog_prana_enquire",
+      "admissions_enquire",
+      "training_enquire",
+      "whatsapp_question",
+      "email_enquiry",
+      "email_tariff",
+      "email_click",
+      "whatsapp_click"
+    ]
+  },
+  "desktopLungs": {
+    "viewport": 1280,
+    "programmeRight": 820,
+    "programmeBodyRight": 630.7,
+    "trainingRight": 1180,
+    "faqListRight": 1180,
+    "faqCol2Right": 1180,
+    "ladderRight": 820,
+    "ladderBodyRight": 678.2
+  },
+  "marigoldCensus": [
+    {
+      "cls": "overline hero-overline",
+      "field": "color",
+      "val": "rgb(238, 180, 30)"
+    },
+    {
+      "cls": "admissions",
+      "field": "borderTopColor",
+      "val": "rgb(238, 180, 30)"
+    }
+  ],
+  "jsonLd": {
+    "orgLogo": "https://kairaliyoga.com/logo.png",
+    "orgSameAs": [
+      "https://www.kairali.com",
+      "https://www.ayurvedichealingvillage.com"
+    ],
+    "types": [
+      "Organization",
+      "WebSite",
+      "FAQPage",
+      "BreadcrumbList"
+    ]
+  },
+  "focusRail": {
+    "cls": "",
+    "boxShadow": "color(srgb 0.556863 0.615686 0.207843 / 0.55) 0px 0px 0px 3px",
+    "zIndex": "auto"
+  },
+  "focusFaq": {
+    "tag": "SUMMARY",
+    "boxShadow": "color(srgb 0.556863 0.615686 0.207843 / 0.55) 0px 0px 0px 3px"
+  },
+  "reducedMotion": {
+    "animationDuration": "1e-05s",
+    "transitionDuration": "1e-05s"
+  }
+}
