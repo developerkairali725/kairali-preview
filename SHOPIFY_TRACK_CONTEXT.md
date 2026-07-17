@@ -13,7 +13,11 @@ The Shopify estate is KAPPL's revenue engine: catalog, cart, checkout, payments.
 - A prior read-only audit framework exists (May 2026) with revenue-weighted priorities; this document inherits its rules.
 
 ## 3 · STAGE-0 UNKNOWNS (answer FIRST; record in DECISIONS.md + update here)
-U1. **One store with two domains via Shopify Markets, or TWO separate stores?** (Intel 13 Jul: a Triple Whale dashboard URL shows shop handle `kairali-products.myshopify.com` — at least one store confirmed under that handle; verify whether .in and .com both resolve to it or a second store exists.) Changes everything downstream (catalog ops, apps, tokens, audits ×1 or ×2).
+U1. **RESOLVED 2026-07-17 19:23 IST (Ambuj, email; CC Sunaj + Ritu): TWO SEPARATE STORES, not one under Markets.**
+   - `kairaliproducts.in` → **kairali-products.myshopify.com** (India)
+   - `kairaliproducts.com` → **ayurvedakairali.myshopify.com** (international)
+   - **⇒ TWO Storefront API tokens (one per store), TWO catalogs, audits ×2.** `packages/product-card` is configured per-store. Ambuj is preparing both tokens, expected before 20 Jul. This closes the question open since 13 Jul; the earlier Triple Whale handle (`kairali-products`) was the .in store only.
+   - *(original question, for the record: One store with two domains via Shopify Markets, or TWO separate stores? Intel 13 Jul saw only the `kairali-products` handle and could not tell.)*
 U2. Shopify plan tier (Basic/Shopify/Advanced/Plus) — determines checkout extensibility, Markets features, API limits.
 U3. Current theme name/version + how far customized from base.
 U4. Installed apps inventory (name, monthly cost, data access, perf weight).

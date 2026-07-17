@@ -86,9 +86,9 @@ His replies say the GSC task is **based on stale facts**:
 ### 2026-07-17 19:31:07 IST — reminders DRAFTED after the reconcile (Abilash sends; timestamps to be logged after)
 | Date (IST) | TO | CC | Subject | Points | Status |
 |---|---|---|---|---|---|
-| 2026-07-17 19:31:07 IST | Anupam (mkt@ktahv.com) | Ritu | Still open with you — 3 items, oldest is 3 days (2 are compliance) | 3 (banned words 9 pages + 3 consent forms · courses price doc language · centers Lorem ipsum + guru) | DRAFTED (r4753494413218074475, awaiting Abilash send) |
-| 2026-07-17 19:31:07 IST | Sunaj (sysadmin@kairali.com) | Ritu | Four small items still open with you (oldest 3 days) — none should take long | 5 (Cloudflare WAF skip-rule · rotate 2 WhatsApp passwords · whatisayurveda.org renewal · booking-engine DE + Googlebot · xmlrpc/generator hardening) | DRAFTED (r3200257658450690405, awaiting Abilash send) |
-| 2026-07-17 19:31:07 IST | Deepu (developer@kairali.com) | Ritu | Good work on the indexing fixes — it worked. Two things still open, and help available on Shopify | 3 (14 Jul compliance list · 16 Jul items 10/12/13 · Shopify 1-4 = UNBLOCK not chase) | DRAFTED (r4055123691241410655, awaiting Abilash send) |
+| 2026-07-17 19:31:07 IST | Anupam (mkt@ktahv.com) | Ritu | Still open with you — 3 items, oldest is 3 days (2 are compliance) | 3 (banned words 9 pages + 3 consent forms · courses price doc language · centers Lorem ipsum + guru) | **SENT 2026-07-17 19:30:13 IST** (verified in Sent, msg 19f7060b53ed5492) |
+| 2026-07-17 19:31:07 IST | Sunaj (sysadmin@kairali.com) | Ritu | Four small items still open with you (oldest 3 days) — none should take long | 5 (Cloudflare WAF skip-rule · rotate 2 WhatsApp passwords · whatisayurveda.org renewal · booking-engine DE + Googlebot · xmlrpc/generator hardening) | **SENT 2026-07-17 19:29:58 IST** (verified in Sent, msg 19f706079ee999cd) |
+| 2026-07-17 19:31:07 IST | Deepu (developer@kairali.com) | Ritu | Good work on the indexing fixes — it worked. Two things still open, and help available on Shopify | 3 (14 Jul compliance list · 16 Jul items 10/12/13 · Shopify 1-4 = UNBLOCK not chase) | **SENT 2026-07-17 19:29:52 IST** (verified in Sent, msg 19f7060650500443) |
 | — | Vikash (seo@ktahv.com) | — | NO REMINDER — he replied twice and was RIGHT | — | CLOSED, see ruling below |
 
 **Drafting notes (Abilash's instruction, 17 Jul):** *"some tasks they might not consider impt and not replied"* — so every draft explicitly invites them to push back on priority rather than go silent, and says silence is the only unworkable answer. **Deepu's is not a chase**: it opens by crediting the indexing fix with the measured 3 → 646 result, and offers to hand Shopify items 1-4 to someone else or get him help, because he already told us he is new to Shopify. Chasing the one person who delivered would be the worst possible outcome of this reconcile.
@@ -103,3 +103,12 @@ His replies say the GSC task is **based on stale facts**:
 - **Consequence:** the "ayurvedichealingvillage.com 3-indexed/125-not-indexing problem" (BACKLOG GSC PROPERTY GAPS item 2) is **CLOSED — it was never the problem it was described as**, and what was real (Deepu's items 5/6/7) is already fixed. **Do not re-raise it at Vikash.**
 - **What Vikash still has open, by his own account, and it is legitimate:** FR/DE pages still error because breadcrumbs, schema and sitemap are corrected on EN only; he is working through six recently-assigned tasks first. That is a sequencing statement from a person doing the work, not a blocker.
 - **The uncomfortable part, recorded deliberately:** he answered in hours, twice, with screenshots, and was correct — while our records called him *"the real gap"* and his replies sat unread. He was the best-performing person in this reconcile and the worst-described.
+## 2026-07-17 20:31 IST — hour-check done: all 3 reminders SENT, and Ambuj already REPLIED (U1 resolved)
+Timer fired; verified against director@ Sent. All three reminders went out ~19:30 IST (rows above flipped DRAFTED→SENT with message IDs). Turnaround from draft to send was Abilash's, same evening.
+**AMBUJ REPLIED 2026-07-17 19:23:07 IST (13:53Z)** to the token ask — 15 minutes after Abilash sent it. Full text verified (msg 19f705a692c71b0d, CC Sunaj + Ritu):
+- Token: *"I am working on getting the Storefront API token ready. That should be available before July 20th."* — on track for Wave 1.
+- **U1 ANSWERED (open since 13 Jul): TWO separate Shopify stores, NOT one under Markets.**
+  - `kairaliproducts.in` → **kairali-products.myshopify.com** (India)
+  - `kairaliproducts.com` → **ayurvedakairali.myshopify.com** (international)
+  - **⇒ TWO Storefront API tokens, one per store** — not one. This changes the Wave-1 catalog + audit work: `packages/product-card` must be configured per-store, and any per-store audit is ×2.
+Reply is unread in director@ inbox as of this check.
