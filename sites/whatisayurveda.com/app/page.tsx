@@ -1,6 +1,7 @@
 // whatisayurveda.com — home. An educational front door: hero, trust furniture
 // (accreditations), and the five learning clusters. Non-revenue; routes intent
 // to the group properties. Register: group/educational.
+import Image from "next/image";
 import Link from "next/link";
 import {
   graph,
@@ -63,12 +64,16 @@ export default function Home() {
               </div>
             </div>
             <figure className="hero-photo">
-              <img
+              {/* next/image: the 266KB 1800×1200 original was the LCP element
+                  (A5 gate finding, 17 Jul — CI perf 88). Optimizer serves
+                  responsive AVIF/WebP; sizes matches the 1fr/1fr hero grid. */}
+              <Image
                 src="/images/hero-herbs-oils.jpg"
                 alt="Herbal poultices and medicated oils in brass vessels on a rattan tray — traditional Ayurvedic preparations"
-                width="1800"
-                height="1200"
-                fetchPriority="high"
+                width={1800}
+                height={1200}
+                priority
+                sizes="(min-width: 900px) 50vw, 100vw"
               />
               <figcaption>Traditional Ayurvedic preparations — medicated oils and herbal poultices.</figcaption>
             </figure>
@@ -78,10 +83,10 @@ export default function Home() {
         <section className="trust-strip" aria-label="About the Kairali Group">
           <div className="container">
             {TRUST.map((t) => (
-              <div className="trust-item" key={t.dt}>
+              <dl className="trust-item" key={t.dt}>
                 <dt>{t.dt}</dt>
                 <dd>{t.dd}</dd>
-              </div>
+              </dl>
             ))}
           </div>
         </section>

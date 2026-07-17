@@ -76,6 +76,23 @@ jobs:
             echo "::notice::S3 keyword gates NOT ARMED — no docs/keywords/*/seeds.json artifacts exist yet. The gates arm automatically when S3 produces them."
           fi
 
+      # SELF-REGISTRATION GATE (retro-audit 17 Jul, process fix #1). The matrix
+      # below once promised "every Factory site adds itself here at scaffold
+      # time" in a comment — and four sites then shipped without ever entering
+      # it, so the browser gate never ran on them. This step makes the promise
+      # mechanical: a sites/<domain> with a site.config.json that is absent
+      # from ANY site matrix in this file fails the PR that introduces it.
+      - name: Factory matrix self-registration lint (site on disk ⇒ site in matrix)
+        run: node scripts/factory-matrix-lint.mjs
+
+      # LAUNCH EVIDENCE GATE (retro-audit 17 Jul, process fix #2). The 16-Jul
+      # wave shipped with design-qa/seo reports but NO filled checklists, NO
+      # wiki/log.md entries, NO LEARNINGS retros — the evidence layer was
+      # remembered, and memory failed. Now it is checked: audit reports in
+      # launches/<domain>/ without the rest of the evidence set block the PR.
+      - name: Launch evidence gate (reports ⇒ checklists + wiki/log + LEARNINGS)
+        run: node scripts/launch-evidence-gate.mjs
+
       # Discovered by find, NOT a fixed glob. The old glob was
       # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
       # medical-review.test.js — the ONLY test guarding our anti-fabrication
@@ -93,11 +110,15 @@ jobs:
   factory-spec:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false # one red site must not cancel the evidence for the others
       matrix:
-        # Every Factory site adds itself here at scaffold time (Ship Gate A2).
-        # abhilashkr + kairali.ai are imported/internal surfaces — not yet in
-        # the matrix; adding them is a QUESTIONS.md item for Abilash.
-        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com"]
+        # Every Factory site adds itself here at scaffold time (Ship Gate A2) —
+        # and since 17 Jul that sentence is ENFORCED by factory-matrix-lint.mjs
+        # in the brand-lint job (the 16-Jul wave shipped with this comment
+        # promising self-registration and no mechanism doing it). abhilashkr +
+        # kairali.ai are exempt (imported/internal) — STANDING RULING, Abilash
+        # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com"]
     steps:
       - uses: actions/checkout@v4
 
@@ -119,5 +140,41 @@ jobs:
 
       - name: Factory spec suite (Ship Gate A2 + A4 browser layer)
         run: pnpm exec playwright test tests/factory
+        env:
+          SITE: ${{ matrix.site }}
+
+  # Ship Gate A5 in CI (retro-audit 17 Jul: "Lighthouse (A5) still not in CI" —
+  # the budget lived only in SITE_LAUNCH_CHECKLIST_v1.0.md item 5 and the TODO
+  # comment at the bottom of gate.yml; no wave site ever ran it). Budgets are
+  # the checklist's own: Performance ≥90 · Accessibility ≥95 · SEO = 100,
+  # mobile emulation, against the local production build (`next start`) — the
+  # same transport the factory spec suite gates on. Preview-URL runs stay a
+  # launch-time step; this catches regressions at merge time.
+  lighthouse:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # one red site must not cancel the evidence for the others
+      matrix:
+        # Kept in lockstep with the factory-spec matrix by factory-matrix-lint.mjs
+        # (it validates EVERY site matrix in this file).
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (turbo)
+        run: pnpm build
+
+      - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
+        run: node scripts/lighthouse-gate.mjs
         env:
           SITE: ${{ matrix.site }}

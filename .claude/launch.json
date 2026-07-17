@@ -66,6 +66,20 @@
         "4313"
       ],
       "port": 4313
+    },
+    {
+      "name": "healing-recipes-prod",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/healing.recipes",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4314"
+      ],
+      "port": 4314
     }
   ]
 }

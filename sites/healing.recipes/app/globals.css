@@ -412,6 +412,16 @@ p { margin: 0 0 1em; }
   margin-top: 0;
 }
 .site-footer a { color: var(--ivory); }
+/* Ship Gate A4 lesson (14 Jul): inline conversion links get real tap area —
+   same rule as the sibling sites (arogyashala.in globals.css:285). This site
+   missed it at build time and the gap surfaced only when PR #92 put it in the
+   factory-spec matrix: both inline email_click links measured 121×18. */
+.site-footer a[data-cta],
+p a[data-cta]:not(.btn) {
+  display: inline-block;
+  padding-block: 14px;
+  margin-block: -14px;
+}
 .footer-title {
   font-family: var(--font-display);
   font-size: 1.15rem;

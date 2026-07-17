@@ -170,6 +170,9 @@ a:hover { color: var(--forest-700); }
 /* ---------- Trust furniture (awards/accreditation) ---------- */
 .trust-strip { margin: 8px 0 0; padding: 24px 0; border-top: var(--hairline-bronze); border-bottom: var(--hairline-bronze); background: color-mix(in srgb, var(--card-bg) 60%, transparent); }
 .trust-strip .container { display: grid; gap: 18px 24px; grid-template-columns: repeat(2, 1fr); }
+/* .trust-item is a <dl> (dt/dd need a dl parent — Lighthouse dlitem, A5 a11y);
+   margin: 0 cancels the UA's default dl margins so the grid doesn't shift. */
+.trust-item { margin: 0; }
 .trust-item dt { font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest-500); }
 .trust-item dd { margin: 4px 0 0; font-size: 0.88rem; color: color-mix(in srgb, var(--ink) 82%, transparent); }
 

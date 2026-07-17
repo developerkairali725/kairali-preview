@@ -6,6 +6,7 @@
 // hospitality, Products speak pharma. First Factory site with REAL
 // photography — every image is a library original (IMAGE_MANIFEST.md).
 
+import Image from "next/image";
 import {
   graph,
   kairaliOrganization,
@@ -200,12 +201,16 @@ export default function Home() {
               </p>
             </div>
             <figure className="hero-photo">
-              <img
+              {/* next/image: the 461KB 1800×1200 original was the LCP element
+                  (7.3s mobile) — A5 gate finding, 17 Jul. Optimizer serves
+                  responsive AVIF/WebP under next start AND Vercel. */}
+              <Image
                 src="/images/hero-healing-village-bridge.jpg"
                 alt="White wooden footbridge leading through misty tropical forest to a stilted building at the Ayurvedic Healing Village"
-                width="1800"
-                height="1200"
-                fetchPriority="high"
+                width={1800}
+                height={1200}
+                priority
+                sizes="(min-width: 960px) 52vw, 100vw"
               />
               <figcaption>The Ayurvedic Healing Village, Palakkad — morning.</figcaption>
             </figure>

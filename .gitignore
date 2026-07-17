@@ -33,3 +33,6 @@ agent-log.jsonl
 
 # TypeScript incremental build state (build artifact)
 *.tsbuildinfo
+
+# generated session state — re-derived from ground truth every session start (scripts/boot-contract.mjs)
+state/

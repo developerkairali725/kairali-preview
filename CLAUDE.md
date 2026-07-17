@@ -17,6 +17,7 @@ Kairali Ayurvedic Group. Three entities with DIFFERENT language rules:
 6. **Never invent IDs, keys, prices, distances, phone numbers, emails, or facts.** Read from env/content files, or leave empty and flag. If a fact is missing, ASK — do not fill the gap.
 7. **Medical/clinical content changes require Dr. Deepu John's sign-off** before staging→production. Flag them explicitly.
 8. **Never merge or copy a staging database into production.**
+9. **Admin bypass of branch protection is OWNER-ONLY** — Abilash's hands, never the agent, no exceptions (doc-only or otherwise). Every bypass is logged in wiki/log.md with reason, same session. The agent's lane is always a PR; a blocked PR waits for review, it does not route around it. [Abilash's ruling, 17 Jul 2026 — D-RULE-ADMIN-BYPASS]
 
 ## KTAHV LANGUAGE LOCK (GST SCN — applies to KTAHV pages ONLY)
 - Required register: patient, physician, treatment, programme, Panchakarma, admission, discharge, consultation.
@@ -95,7 +96,7 @@ Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_
 
 ## FACTORY RULES (monorepo)
 - Every site lives in sites/<domain>, built ONLY from packages/* — no copy-pasted components.
-- Every page is MDX with complete frontmatter: title, description, locale, keywords[], schemaType, cta.
+- Every page is TSX built from packages/* components; page metadata (title, description, locale, keywords[], schemaType, cta) is complete in each page's exported metadata/config and is lint-checkable. MDX remains permitted for long-form editorial content where it earns its keep. [amended from "every page is MDX" per Abilash's ruling, 17 Jul 2026 — the fleet had already converged on TSX; see D-RULE-MDX]
 - Locales: EN always; DE/FR where the site brief says so. A page missing a locale is flagged, never silently EN-only.
 - Product cards use packages/product-card (Shopify Storefront API). NEVER build a cart, checkout, or payment form — checkout is the main Shopify store, always.
 - Landing pages live at /lp/<campaign>, noindex by default, single CTA, data-cta events required.
@@ -112,6 +113,8 @@ Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_
 ## CHANGELOG (append)
 - v1.4 (14 Jul 2026): Operating Principles added per Abilash's evening rulings (pushback duty, design bar, asset-mining checklist, sprint build order).
 - v1.5 (16 Jul 2026): Rule (q) wording amended per Abilash's in-session approval — now describes the built mechanism (PostToolUse hook writes agent-log.jsonl deterministically; logger sub-agent writes curated wiki/log.md rollups). Enforcement built + tested in PR #67 (scripts/test/post-edit-hook.test.js). See DECISIONS.md D-RULE-Q.
+- v1.6 (17 Jul 2026): SESSION STATE & DELIVERABLE RULES section added per Abilash's Session-2C-hardening directive (boot contract + directive capture + report-deliverable rule; mechanisms in scripts/boot-contract.mjs, doctor.mjs, directive-capture.mjs). The "every page is MDX" Factory rule and the admin-bypass practice were deliberately NOT touched — draft amendments for both await Abilash's sign-off (QUESTIONS.md 17 Jul, Q-RULE-MDX / Q-RULE-ADMIN-BYPASS).
+- v1.7 (17 Jul 2026): Both drafted amendments APPROVED by Abilash as written (in-chat ruling, 17 Jul 2026 ~15:25 IST; DECISIONS.md D-RULE-MDX / D-RULE-ADMIN-BYPASS): Factory MDX rule replaced with the TSX-as-standard wording; admin-bypass added as HARD GATE 9 (owner-only, logged, agent lane is always a PR). Same ruling: abhilashkr + kairali.ai remain EXEMPT from the CI matrices as a STANDING ruling — exemptions stay loud and paper-trailed in scripts/factory-matrix-lint.mjs.
 
 ## BRIEFS & STATE-TRUTH (added 15 Jul 2026 — after a morning brief went stale mid-session)
 Root cause it fixes: a hand-written brief snapshotted "machine idle / nothing merged after X" as if final, then more work landed and made it wrong; and agents had to reverse-engineer "the true current state" from a stale feature-branch checkout.
@@ -119,6 +122,11 @@ Root cause it fixes: a hand-written brief snapshotted "machine idle / nothing me
 - **A brief is a GENERATED VIEW, never a source of truth.** The durable state lives in QUESTIONS.md / DECISIONS.md / BACKLOG.md / git history. Run `scripts/brief-snapshot.sh` FIRST to produce the machine-verifiable base (as-of-commit hash, merges-since-last-brief, sites, HACKED/SECURITY/BLOCKED grep flags, open-question headers, open PRs). Interpretation is appended ON TOP of that fresh base.
 - **Every brief carries an "as of <commit> <IST>" stamp and NEVER claims a stale absolute** ("idle", "nothing after X") as final — only ever "as of commit X". Re-running the script refreshes it.
 - **Concurrent-writer safety:** more than one agent may touch the repo; briefs/backlog updates that push to main use the PR flow where possible, and always `git pull` immediately before writing so nothing is clobbered.
+
+## SESSION STATE & DELIVERABLE RULES (Abilash's Session-2C-hardening directive, 17 Jul 2026)
+- **Session boot contract:** every session STARTS by running `node scripts/boot-contract.mjs` and `node scripts/doctor.mjs` (the SessionStart hook does this automatically; if it did not run, run them by hand before anything else). `state/boot.json` is generated ground truth — never hand-edit it; GitHub outranks the markdown logs wherever doctor finds them disagreeing, and the fix is always truthing-up the logs, never the reverse. Grounding: docs/research/agentic-memory-and-state-2026-07-16.md (MVP items 1–2).
+- **Directive capture:** any directive Abilash gives in chat is captured the SAME session via `node scripts/directive-capture.mjs add "<one line>" --source "<where/when>"` and committed — an unlogged directive is a dropped directive (his 16-Jul ruling). Acknowledge (`ack <id> --note "<where it landed>"`) only when the directive has LANDED in durable state; boot.json surfaces unacked entries every session until then. DIRECTIVES.md entries are append-only; the checkbox flip via the script is the only permitted mutation.
+- **Report deliverable rule:** any session whose final deliverable is a REPORT rather than a PR must save that report to `docs/reports/YYYY-MM-DD-<topic>.md` and COMMIT it before the session ends — chat-only output is not evidence and does not survive the session. (Same law as launch evidence: if it isn't in the repo, it didn't happen.)
 
 ## BUILD DECISION MATRIX (Abilash ruling, 15 Jul 2026 — applies to EVERY rebuild of an existing/ranked site)
 1. **MINE FIRST, ALWAYS**: full live-site inventory (sitemap, every URL, per-page value signals, assets, security screen) BEFORE design decisions. Mining the live site is not optional homework — it is step zero.

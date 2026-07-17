@@ -3,6 +3,7 @@
 // canonical roster since the 17 Jul 2026 ruling — PROJECT_CONTEXT §12). No
 // aggregate count is printed in this site's copy; the trust strip leads with
 // heritage + accreditation instead.
+import Image from "next/image";
 import Link from "next/link";
 import { graph, kairaliOrganization, webSite, breadcrumbList, serializeJsonLd } from "@kairali/schema";
 import { INDIA_CENTRES, INTERNATIONAL_CENTRES, type Centre } from "./lib/centres";
@@ -60,7 +61,10 @@ export default function Home() {
               </div>
             </div>
             <figure className="hero-photo">
-              <img src="/images/hero-reception.jpg" alt="A Kairali Ayurvedic Centre — a welcoming treatment reception with traditional preparations" width="1800" height="1200" fetchPriority="high" />
+              {/* next/image: the 216KB 1800×1200 original was the LCP element
+                  (A5 gate finding, 17 Jul — CI perf 89). Optimizer serves
+                  responsive AVIF/WebP; sizes matches the 1fr/1fr hero grid. */}
+              <Image src="/images/hero-reception.jpg" alt="A Kairali Ayurvedic Centre — a welcoming treatment reception with traditional preparations" width={1800} height={1200} priority sizes="(min-width: 900px) 50vw, 100vw" />
               <figcaption>Classical Ayurveda, physician-led, at every Kairali centre.</figcaption>
             </figure>
           </div>
@@ -69,7 +73,7 @@ export default function Home() {
         <section className="trust-strip" aria-label="About the Kairali Group">
           <div className="container">
             {TRUST.map((t) => (
-              <div className="trust-item" key={t.dt}><dt>{t.dt}</dt><dd>{t.dd}</dd></div>
+              <dl className="trust-item" key={t.dt}><dt>{t.dt}</dt><dd>{t.dd}</dd></dl>
             ))}
           </div>
         </section>

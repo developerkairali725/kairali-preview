@@ -1,0 +1,128 @@
+#!/usr/bin/env node
+/**
+ * boot-contract.mjs — the session boot contract: state/boot.json, compact,
+ * re-derived from GROUND TRUTH at every session start.
+ *
+ * WHY THIS EXISTS. The sprint's most repeated failure class is derived-state
+ * rot: a BACKLOG "NOW" line said PR #65 was blocked five hours after Abilash
+ * merged it; delegation items went phantom-stale against an unread mailbox;
+ * briefs snapshotted "machine idle" as if final. The 16-Jul research pass
+ * (docs/research/agentic-memory-and-state-2026-07-16.md, findings 4+11 and
+ * MVP item 1) converged on the fix: session resume must load a SMALL
+ * machine-readable boot file re-derived from external ground truth (GitHub
+ * API, not the markdown logs), because compaction and free-form notes
+ * measurably fail across context windows.
+ *
+ * CONTRACT.
+ *   · state/boot.json is GENERATED — git-ignored, regenerated every session
+ *     start, never hand-edited (regeneration from ground truth is what makes
+ *     rot impossible; there is nothing to rot).
+ *   · The one mutable store it surfaces — DIRECTIVES.md — is flip-only via
+ *     scripts/directive-capture.mjs ack.
+ *   · Offline degrades loudly, never silently: gh-derived fields become null
+ *     and `offline: true` is set — a brief built on a null is visibly partial.
+ *   · ≤4KB target: compact recency-biased state, not a log dump (research
+ *     caveat: long-context degradation punishes fat boot payloads).
+ *
+ * Usage: node scripts/boot-contract.mjs [--quiet]   (writes state/boot.json, prints summary)
+ * Exit codes: 0 = written (even offline) · 1 = harness error.
+ */
+
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { join, resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
+import { parseMatrices, fleetSites, lint, EXEMPT, WORKFLOW } from "./factory-matrix-lint.mjs";
+import { parseDirectives, INBOX } from "./directive-capture.mjs";
+import { istNow } from "./launch-scaffold.mjs";
+
+export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+export const BOOT_PATH = "state/boot.json";
+const FLAG_WORDS = ["HACKED", "URGENT", "BLOCKED", "PAUSED", "SECURITY"];
+
+const run = (cmd, args, opts = {}) =>
+  execFileSync(cmd, args, { cwd: REPO_ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], timeout: 30_000, ...opts }).trim();
+
+/** gh call that degrades to null instead of throwing — offline is a state, not a crash. */
+function ghJson(args) {
+  try {
+    return JSON.parse(run("gh", args));
+  } catch {
+    return null;
+  }
+}
+
+export function buildBootState({ root = REPO_ROOT } = {}) {
+  const read = (rel) => (existsSync(join(root, rel)) ? readFileSync(join(root, rel), "utf8") : "");
+
+  let originMain = null;
+  try {
+    try { run("git", ["fetch", "origin", "--quiet"]); } catch { /* offline — rev-parse still answers from the last fetch */ }
+    originMain = run("git", ["rev-parse", "--short", "origin/main"]);
+  } catch { /* not a repo? leave null */ }
+
+  const openPrs = ghJson(["pr", "list", "--state", "open", "--json", "number,title,isDraft,headRefName,updatedAt"]);
+  const protection = ghJson(["api", "repos/kairali-digital/kairali-web-factory/branches/main/protection/required_status_checks"]);
+
+  const wf = read(WORKFLOW);
+  const matrices = wf ? parseMatrices(wf) : [];
+  const matrixDrift = wf ? lint({ matrices, sites: fleetSites(root), exempt: EXEMPT }) : ["workflow unreadable"];
+
+  // required-checks drift: every matrix site should have its factory-spec +
+  // lighthouse contexts required — the class of gap this contract exists to surface.
+  let requiredChecksDrift = null; // null = protection unreadable (offline / no admin scope)
+  if (protection?.contexts) {
+    const required = new Set(protection.contexts);
+    requiredChecksDrift = [...new Set(matrices.flatMap((m) => m.sites))]
+      .flatMap((s) => [`factory-spec (${s})`, `lighthouse (${s})`])
+      .filter((c) => !required.has(c));
+  }
+
+  const questions = read("QUESTIONS.md");
+  const flags = {};
+  for (const w of FLAG_WORDS) {
+    flags[w] = (questions.match(new RegExp(w, "gi")) ?? []).length + (read("DECISIONS.md").match(new RegExp(w, "gi")) ?? []).length;
+  }
+
+  const directives = parseDirectives(read(INBOX)).filter((d) => !d.acked);
+
+  return {
+    _contract: "GENERATED at session start from ground truth — never hand-edit; regenerate with scripts/boot-contract.mjs. Directives are acked ONLY via scripts/directive-capture.mjs.",
+    generated: istNow(),
+    origin_main: originMain,
+    offline: openPrs === null,
+    open_prs: openPrs?.map((p) => ({ n: p.number, title: p.title.slice(0, 60), draft: p.isDraft, idle_h: Math.round((Date.now() - new Date(p.updatedAt).getTime()) / 3.6e6) })) ?? null,
+    required_checks: protection?.contexts ?? null,
+    required_checks_drift: requiredChecksDrift,
+    factory_matrix_sites: [...new Set(matrices.flatMap((m) => m.sites))].sort(),
+    matrix_drift: matrixDrift,
+    directives_unacknowledged: directives.map((d) => ({ id: d.id, when: d.when, source: d.source, text: d.text })),
+    open_question_headers_newest: (questions.match(/^## .*/gm) ?? []).slice(-5).map((h) => h.slice(0, 90)),
+    flag_mentions: flags,
+  };
+}
+
+function main(argv) {
+  const state = buildBootState();
+  mkdirSync(join(REPO_ROOT, "state"), { recursive: true });
+  const json = JSON.stringify(state, null, 2);
+  writeFileSync(join(REPO_ROOT, BOOT_PATH), json + "\n");
+
+  if (!argv.includes("--quiet")) {
+    console.log(`boot contract → ${BOOT_PATH} (${(json.length / 1024).toFixed(1)}KB) · origin/main @ ${state.origin_main ?? "?"} · ${state.offline ? "OFFLINE (gh fields null — partial state, says so)" : `${state.open_prs.length} open PR(s)`}`);
+    if (state.matrix_drift.length > 0) console.log(`  ⚠ MATRIX DRIFT: ${state.matrix_drift.length} finding(s) — run node scripts/factory-matrix-lint.mjs`);
+    if (state.required_checks_drift?.length > 0) console.log(`  ⚠ REQUIRED-CHECKS DRIFT: ${state.required_checks_drift.length} matrix context(s) not required on main — owner one-click, see scripts/launch-scaffold.mjs output`);
+    for (const d of state.directives_unacknowledged) console.log(`  ⚠ UNACKED DIRECTIVE ${d.id} (${d.when}): ${d.text.slice(0, 100)}`);
+    if (json.length > 4096) console.log(`  note: boot.json exceeds the 4KB compactness target — trim what grew, do not raise the target.`);
+  }
+  return 0;
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  try {
+    process.exit(main(process.argv.slice(2)));
+  } catch (e) {
+    console.error(`boot-contract: harness error — ${e.message}`);
+    process.exit(1);
+  }
+}

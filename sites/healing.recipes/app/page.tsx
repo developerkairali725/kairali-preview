@@ -4,6 +4,7 @@
 // do not exist yet (Abilash, 16 Jul 2026 18:15 IST) — no date, venue, or any
 // specific beyond "July 2026" may be added until he supplies them.
 
+import Image from "next/image";
 import {
   graph,
   kairaliOrganization,
@@ -99,12 +100,16 @@ export default function Home() {
             </div>
             <figure className="hero-cover">
               <span className="new-tag">New · 2026</span>
-              <img
+              {/* next/image: the full-size cover was the LCP element (4.7s
+                  mobile) — A5 gate finding, 17 Jul. CSS renders it at
+                  min(340px, 72vw); sizes matches that, not the viewport. */}
+              <Image
                 src={harmony.cover}
                 alt={harmony.coverAlt}
                 width={harmony.coverWidth}
                 height={harmony.coverHeight}
-                fetchPriority="high"
+                priority
+                sizes="(min-width: 473px) 340px, 72vw"
               />
               <figcaption className="biblio-line">
                 Harmony: Essential Ayurveda for All · Roli Books · April 2026

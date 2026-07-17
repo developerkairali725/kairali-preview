@@ -17,6 +17,7 @@
 // treatment, programme, admission — never spa/resort/holiday/luxury/guests.
 // Contact: info@kairali.com + interim WhatsApp (DECISIONS 2026-07-13 18:51).
 
+import Image from "next/image";
 import {
   graph,
   kairaliOrganization,
@@ -152,15 +153,18 @@ export default function Home() {
 
       {/* ---------- Full-bleed dawn hero (no fleet build opens on a photo) ---------- */}
       <header className="hero" id="top">
-        <img
+        {/* next/image replaces the hand-generated JPG srcSet (-640/-800/-1280
+            variants stay in /public as mined originals): the optimizer serves
+            the same widths as AVIF/WebP, which is what the A5 gate flagged
+            (modern-image-formats, LCP 4.1s mobile — 17 Jul). */}
+        <Image
           className="hero-media"
           src="/images/ktahv-round-stone-cottages-dawn.jpg"
-          srcSet="/images/ktahv-round-stone-cottages-dawn-640.jpg 640w, /images/ktahv-round-stone-cottages-dawn-800.jpg 800w, /images/ktahv-round-stone-cottages-dawn-1280.jpg 1280w, /images/ktahv-round-stone-cottages-dawn.jpg 1600w"
           sizes="100vw"
           alt="Round stone cottages of the Ayurvedic Healing Village at dawn, amid coconut palms, a curving footpath and a water channel"
           width={1600}
           height={1067}
-          fetchPriority="high"
+          priority
         />
         <div className="hero-scrim" aria-hidden="true" />
         <div className="container hero-content">

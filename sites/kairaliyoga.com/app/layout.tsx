@@ -9,10 +9,18 @@ import "./globals.css";
 import siteConfig from "../site.config.json";
 
 // Brand Manual ch.04 faces; next/font self-hosts at build. latin-ext is
-// REQUIRED here: the programme names carry macrons (Dhyāna, Dīpanam, Sāmya).
+// REQUIRED for Asap + Lato: the macrons (Dhyāna, Dīpanam, Prāna, Sāmya) render
+// in .path-hint (body/Asap) and .programme-iast (caption/Lato) — verified by
+// walking the rendered DOM, not assumed.
+// Kurale does NOT need it: the display face carries the ROMANIZED programme
+// names (the Q-YOGA-IAST interim — Kurale's macron bug is precisely why), so
+// its latin-ext file was preloaded weight that no glyph on the page used.
+// Every preloaded font competes with the LCP paint on Lighthouse's slow-4G
+// model — this site was the only fleet build shipping latin-ext at all, and
+// the only one that could not clear the A5 perf budget (17 Jul).
 const kurale = Kurale({
   weight: "400",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-kurale",
 });
