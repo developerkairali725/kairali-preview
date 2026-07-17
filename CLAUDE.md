@@ -114,6 +114,7 @@ Every log entry (QUESTIONS.md, LEARNINGS.md, DECISIONS.md, wiki/log.md, MORNING_
 - v1.4 (14 Jul 2026): Operating Principles added per Abilash's evening rulings (pushback duty, design bar, asset-mining checklist, sprint build order).
 - v1.5 (16 Jul 2026): Rule (q) wording amended per Abilash's in-session approval — now describes the built mechanism (PostToolUse hook writes agent-log.jsonl deterministically; logger sub-agent writes curated wiki/log.md rollups). Enforcement built + tested in PR #67 (scripts/test/post-edit-hook.test.js). See DECISIONS.md D-RULE-Q.
 - v1.6 (17 Jul 2026): SESSION STATE & DELIVERABLE RULES section added per Abilash's Session-2C-hardening directive (boot contract + directive capture + report-deliverable rule; mechanisms in scripts/boot-contract.mjs, doctor.mjs, directive-capture.mjs). The "every page is MDX" Factory rule and the admin-bypass practice were deliberately NOT touched — draft amendments for both await Abilash's sign-off (QUESTIONS.md 17 Jul, Q-RULE-MDX / Q-RULE-ADMIN-BYPASS).
+- v1.8 (17 Jul 2026): FRONT GATES added per Abilash's Session-2D directive (his GO, in-chat, 17 Jul 2026) — four new sections: DESIGN SOURCE (MODE A human-supplied / MODE B agent-proposed), GOLDEN PAGE, STOP AT EACH GATE, POLISH TIME-BOX. Mechanisms: scripts/front-gate.mjs + the `front-gate` CI job (an unapproved build is un-mergeable), and scripts/launch-scaffold.mjs now writes launches/<domain>/design-intake/ + approvals.yaml at scaffold time. Session 2C hardened the back of the pipeline; this hardens the front. ONE judgment call is flagged for ratification rather than assumed: the gate ARMS on the presence of approvals.yaml, so the eight pre-2D sites are unarmed (printed loudly every run) — retro-fitting ledgers onto shipped sites is the owner's call, since it would make the next typo fix wait on four signatures. See QUESTIONS.md Q-FRONT-GATE-BACKFILL.
 - v1.7 (17 Jul 2026): Both drafted amendments APPROVED by Abilash as written (in-chat ruling, 17 Jul 2026 ~15:25 IST; DECISIONS.md D-RULE-MDX / D-RULE-ADMIN-BYPASS): Factory MDX rule replaced with the TSX-as-standard wording; admin-bypass added as HARD GATE 9 (owner-only, logged, agent lane is always a PR). Same ruling: abhilashkr + kairali.ai remain EXEMPT from the CI matrices as a STANDING ruling — exemptions stay loud and paper-trailed in scripts/factory-matrix-lint.mjs.
 
 ## BRIEFS & STATE-TRUTH (added 15 Jul 2026 — after a morning brief went stale mid-session)
@@ -127,6 +128,41 @@ Root cause it fixes: a hand-written brief snapshotted "machine idle / nothing me
 - **Session boot contract:** every session STARTS by running `node scripts/boot-contract.mjs` and `node scripts/doctor.mjs` (the SessionStart hook does this automatically; if it did not run, run them by hand before anything else). `state/boot.json` is generated ground truth — never hand-edit it; GitHub outranks the markdown logs wherever doctor finds them disagreeing, and the fix is always truthing-up the logs, never the reverse. Grounding: docs/research/agentic-memory-and-state-2026-07-16.md (MVP items 1–2).
 - **Directive capture:** any directive Abilash gives in chat is captured the SAME session via `node scripts/directive-capture.mjs add "<one line>" --source "<where/when>"` and committed — an unlogged directive is a dropped directive (his 16-Jul ruling). Acknowledge (`ack <id> --note "<where it landed>"`) only when the directive has LANDED in durable state; boot.json surfaces unacked entries every session until then. DIRECTIVES.md entries are append-only; the checkbox flip via the script is the only permitted mutation.
 - **Report deliverable rule:** any session whose final deliverable is a REPORT rather than a PR must save that report to `docs/reports/YYYY-MM-DD-<topic>.md` and COMMIT it before the session ends — chat-only output is not evidence and does not survive the session. (Same law as launch evidence: if it isn't in the repo, it didn't happen.)
+
+## DESIGN SOURCE (Abilash's Session-2D directive, 17 Jul 2026 — every new-site/rebuild run declares ONE mode)
+
+Root cause it fixes: session 2C hardened the BACK of the pipeline — once a build had happened, its evidence and CI registration became impossible to forget. Nothing guarded the FRONT. The agent could brief itself, invent a sitemap, invent a design direction, build the site, and only then meet a gate — at which point the owner's only real options are "accept it" or "throw away a session". An approval that arrives after the work is a rubber stamp wearing a gate's uniform.
+
+Every new-site/rebuild run MUST declare its mode in `launches/<domain>/approvals.yaml` (`mode: A` or `mode: B`). This is not a formality: it decides who is doing the designing.
+
+- **MODE A — human-supplied design. DEFAULT and PREFERRED.** A designer / marketing / an intern drops design input into `launches/<domain>/design-intake/` (that folder's README tells them exactly what: exported frames or screenshots, OR reference-site URLs with what to take from each, OR a wireframe — plus the page/section order). The agent **IMPLEMENTS that design faithfully and MUST NOT redesign, re-theme, restyle or "improve" it.** If something in the supplied design looks wrong — broken layout, an accessibility problem, an off-brand element against the brand manual — the agent **STOPS and flags it for the owner**. It never silently overrides. This is the same authority rule as untrusted content, pointed the other way: the human's design is the AUTHORITY, and the agent executes it. Disagreeing is allowed and welcome; overriding is not.
+- **MODE B — agent-proposed. FALLBACK ONLY, and only when `design-intake/` is empty of human design.** The agent proposes **ONE** design direction — tokens + a single hero mockup — anchored to the owner's aesthetic references in `design-intake/REFERENCES.md`, **never invented from nothing**. Then it STOPS for owner approval before any page is built. MODE B carries an extra gate (`design_direction`) precisely because it is the mode where the agent is doing a human's job.
+
+Doctrine (d) survives both modes: the brand manuals win over any supplied design or reference.
+
+## GOLDEN PAGE (same directive)
+
+A new-site/rebuild session builds **ONE page first — the golden page** (the homepage by default; the owner may name another in the brief) — and then **STOPS for approval**. Only after `golden_page` is signed may the rest of the site be built, and **every later page must match the approved golden page**. No full-site build before the golden page is signed. The reason is arithmetic: a design mistake caught on page 1 costs one page; caught on page 12 it costs twelve, and by then the sunk cost is arguing for itself.
+
+## STOP AT EACH GATE (same directive — how a new-site/rebuild session actually runs)
+
+The agent runs to the next unsigned front gate, posts the artifact, and STOPS with one line:
+
+> `reply APPROVE <gate> or CHANGES <notes>`
+
+On **APPROVE** the agent writes and commits the signed `approvals.yaml` row itself, then proceeds to the next gate. The owner approves from his phone, in one word. **The agent NEVER self-approves a gate and NEVER merges its own PR** (HARD GATE 9: the agent's lane is always a PR).
+
+Order: **brief → strategy → design_source (+ design_direction in MODE B) → golden_page → full build.**
+
+The **strategy** gate is deliberately fat: ONE approval covers the sitemap, the primary + secondary keywords per page, the competitor-keyword-to-page map, AND the integrations plan (which events fire, which forms, chatbot/voice). Everything plannable is batched into that one gate so the stops stay FEW — a gate the owner meets six times a day is a gate he starts rubber-stamping.
+
+Enforcement: `scripts/front-gate.mjs` (CI job `front-gate`) FAILS any PR that adds or changes pages under `sites/<domain>` while a required row is not `approved`. CI verifies the row EXISTS and is SIGNED — **the judgment stays the owner's**; the gate only makes an unapproved build un-mergeable. Writing `status: approved` without his word is falsifying a ledger, not passing a check.
+
+## POLISH TIME-BOX (same directive)
+
+Design-token, brand-ramp and micro-polish work is **CAPPED: fix ONLY what ships or blocks a live / going-live site.** Any token or ramp step that nothing renders yet, and any polish beyond the cap, is logged to BACKLOG.md as **DEFERRED (approved risk)** and the session continues. A build or a wave is **NEVER blocked, and NEVER runs long, on sub-threshold polish that ships no defect.**
+
+On record, and the reason this rule exists: a full session was spent deriving ramp steps that shipped nothing. Deferring them ships no defect. "It would be more correct" is not the bar — "a live site is wrong without it" is.
 
 ## BUILD DECISION MATRIX (Abilash ruling, 15 Jul 2026 — applies to EVERY rebuild of an existing/ranked site)
 1. **MINE FIRST, ALWAYS**: full live-site inventory (sitemap, every URL, per-page value signals, assets, security screen) BEFORE design decisions. Mining the live site is not optional homework — it is step zero.

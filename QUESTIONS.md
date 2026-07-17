@@ -399,3 +399,24 @@ Found while control-probing marigold-300. Not urgent, nothing ships wrong today,
 2. **Per-entry files** (`wiki/log/<timestamp>-<slug>.md`) — your original alternative. Conflicts and duplication both become **structurally impossible** rather than auto-resolved-then-policed. Cost: a real migration; every reader changes (launch-evidence-gate.mjs, logger sub-agent, CLAUDE.md's crash-recovery ritual); a day's work, its own PR.
 3. Union on log.md, and never correct an entry — append a correction as a NEW entry instead. Zero cost, but it makes the log longer and correction-by-append is its own discipline nobody will remember.
 **Recommend (2) when the sprint has a gap, (1) until then** — the guard makes (1) safe enough today, and I would rather not spend a day on log plumbing while sites are the deliverable. But you called per-entry files as an option on day one and you were right: it is the only one where this class cannot happen. Your call.
+
+## 2026-07-17 19:24:11 IST · Session 2D — front gates installed (one judgment call for ratification)
+
+**Q-FRONT-GATE-BACKFILL — needs-Abilash. Do the eight pre-2D sites get retro-fitted with approvals.yaml ledgers?**
+
+The front gate (`scripts/front-gate.mjs`, CI job `front-gate`) ARMS on the presence of `launches/<domain>/approvals.yaml`. Every NEW site is armed by construction — the scaffold writes the ledger, and a PR adding `sites/<domain>/site.config.json` with no ledger fails outright. But the eight sites built before this gate existed (arogyakendra.com, kairali.com, whatisayurveda.com, kairalicenters.com, arogyashala.in, healing.recipes, kairaliyoga.com, kairalihospitality.com) carry no ledger, so page changes to them are **not** blocked. They print as UNARMED on every run — loudly, never silently, per the factory-matrix-lint EXEMPT precedent.
+
+I did NOT arm them, and that is a deliberate choice I am flagging rather than making:
+
+- **Arming them now** would make the next typo fix on a live site un-mergeable until four rows are signed for a site that already shipped. healing.recipes launches ~28 Jul and kairaliyoga/kairalihospitality are in open PRs — this would land on exactly those.
+- **Leaving them unarmed** means the front gates protect new work only, and the existing fleet keeps running on the honour system for design changes.
+
+Three options, my recommendation first:
+
+1. **RECOMMENDED — leave unarmed; arm each site the next time it gets a real design change** (not a typo/dep bump), retro-signing the four rows at that point as a deliberate act. The gate's purpose is to stop unapproved *design* work, and the existing eight already have your approval in substance — you reviewed their PRs.
+2. Arm all eight now with rows retro-signed to their existing approvals (honest only if you actually consider those sites design-approved; it is a signature, so it should be true).
+3. Arm all eight now with `pending` rows — maximally strict, and it freezes the fleet until you sign 32 rows. I recommend against it: it would land mid-launch on healing.recipes.
+
+Whichever you pick is a one-line reply; option 1 needs no work now.
+
+**Pushback, on the record (OPERATING PRINCIPLES: pushback duty).** Your directive said "Full gates, NO admin bypass." The arming rule is not an admin bypass — nothing here lets the agent route around a gate, and I closed the three escape routes I could find (skipping the scaffold FAILS; deleting a ledger FAILS; an unreadable ledger FAILS). But it IS a scope limit, and you should know it exists rather than read "full gates" and assume the whole fleet is covered tonight. It is not. New sites are; the old eight are not, until you answer this.

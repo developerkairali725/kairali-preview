@@ -176,3 +176,21 @@ kairaliyoga sat at 89–92 while its siblings hit 95–100, and the obvious susp
 - **SOME jobs red → a real failure or flake** (e.g. Q-A5-FLAKE, now mitigated by median-of-5 in #98).
 **The fix is TIME, never the policy.** Rule (g) applies with force here — relaxing minimumReleaseAge to make a bump merge would trade a real supply-chain defence for a few hours' convenience. Wait until each package is 24h old and re-run. In #93's case: tailwindcss cleared on its own (25.2h by the time it was diagnosed); lucide-react clears 18 Jul 13:58 IST. No code change, no rebase (it merges clean).
 **For the Monday Dependabot triage:** expect this on any PR bumping a package released in the previous 24h. It is not a broken bump. Re-run it a day later.
+
+## 2026-07-17 19:58:44 IST · Near-miss: I amended another session's commit, because `cd` persists between Bash calls
+
+**What happened.** Session 2D worked in a worktree (`wt-session-2d`). To check the repo's standard commit author I ran `cd .../kairali-web-factory && git config user.name`. That `cd` **persisted into the next Bash call**. The next call was a `git commit --amend --author=...` intended for *my* commit in the worktree — the shell ran it in the **main repo**, on branch `factory/fix-ambuj-token-record`, which a **concurrent session** had just committed to. I rewrote their commit (`d124baf` → `d6ff9c5`), author field only, content byte-identical.
+
+**Why it was recoverable, and what actually saved it.** Two things, neither of them me being careful:
+1. The `--force-with-lease` push was **blocked by the Claude Code permission classifier**. Had it gone through, the other session's branch would have been rewritten under them mid-work.
+2. `origin` still had `d124baf`, so `git reset --hard d124baf` restored their commit exactly. Verified: local == origin, author `Abhilash Kairali <director@kairali.com>` intact.
+
+**Root cause, stated honestly:** not "the cwd was surprising" — it is documented that the working directory persists. The real cause is that I used a bare `git` command whose target depended on **ambient state I had changed two calls earlier**, in a repo whose CLAUDE.md **explicitly warns** that "more than one agent may touch the repo" (BRIEFS & STATE-TRUTH, concurrent-writer safety). The warning was right and I walked into it anyway.
+
+**Rules that follow (cheap, mechanical):**
+- **Never `cd` into the main repo during a worktree session.** Read config with `git -C <path> …` — it costs nothing and cannot leak into the next call.
+- **Every history-rewriting command names its repo explicitly**: `git -C <worktree> commit --amend`, never a bare `git commit --amend`. Same for reset/rebase/push.
+- **Before any amend/reset/force-push, print `git -C <path> log -1` first** and read the subject line. If the subject is not the commit you wrote this session, STOP. This one check would have caught it in one second.
+- **`git reset --hard` destroys uncommitted AND committed-this-session work.** Earlier the same session I reset a probe away and took my own real work with it (recovered from reflog — `git checkout <reflog-sha> -- <paths>`). Probe in a scratch dir or `git stash` it; do not commit probes onto the branch you are about to reset.
+
+**Wider point for concurrent sessions:** the worktree gave isolation of *files*, not of *shell state*. Isolation you can undo with one `cd` is not isolation. The `git -C` habit is what makes it real.

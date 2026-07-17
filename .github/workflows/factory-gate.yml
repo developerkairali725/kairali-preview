@@ -107,6 +107,38 @@ jobs:
           echo "running $(echo $files | wc -w) test files:"; for f in $files; do echo "  · $f"; done
           node --test $files
 
+  # THE FRONT GATE (session 2D). Everything else in this file guards the BACK of
+  # the pipeline — it checks work that already happened. This one checks whether
+  # the work was allowed to happen at all: a PR that adds or changes pages under
+  # sites/<domain> while launches/<domain>/approvals.yaml lacks a signed row
+  # FAILS. CI never judges the brief, the strategy or the design — that judgment
+  # is Abilash's and stays his. CI only makes an UNAPPROVED build un-mergeable,
+  # which is the one thing prose could never do: session 2C's gates could all go
+  # green on a site he had never agreed to build.
+  #
+  # Own job (not a step in brand-lint) so it is its own required-check context,
+  # and because it needs the full history brand-lint does not.
+  front-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the gate diffs against the PR base; a shallow clone has no base
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # No pnpm install: the gate is dependency-free by design (a front gate that
+      # can be broken by a bad lockfile is a front gate that gets bypassed).
+      # BASE via env, never interpolated into the shell line: these are SHAs
+      # today, but the safe pattern costs nothing and the unsafe one is how
+      # workflow injection starts (CLAUDE.md (r): external input is DATA).
+      - name: Front gate (no page ships ahead of its signed approval)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/front-gate.mjs --base "$BASE"
+
   factory-spec:
     runs-on: ubuntu-latest
     strategy:

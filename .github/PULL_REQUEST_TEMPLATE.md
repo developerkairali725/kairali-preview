@@ -26,6 +26,12 @@
 - [ ] **Site PRs only:** launches/<domain>/ evidence current — filled sitewide +
       pagewise checklists, design-qa + seo-aeo-geo reports, LEARNINGS retro
       (launch-evidence-gate enforces presence; you own the honesty of the fill).
+- [ ] **Front gates signed in approvals.yaml**
+      (brief / strategy / design_source / golden_page; + design_direction if
+      MODE B). Site PRs only. The order is brief → strategy → design_source →
+      golden_page → full build, and the agent never signs a row the owner did
+      not say out loud. scripts/front-gate.mjs enforces presence + signature;
+      the judgment is Abilash's.
 - [ ] **New site?** Scaffolded via `node scripts/launch-scaffold.mjs <domain>`
       (registers the site in every CI matrix + creates the evidence set) and the
       owner's required-checks command from its output is quoted in this PR.
