@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>marigold-300 — D-RAMP-STEPS step 2 evidence</title>
+<style>
+  :root{ --forest-700:#004226; --ink:#1C1B19; --ivory:#F7F4EA;
+         --m400:#EEB41E;   /* what --marigold-300 aliased BEFORE */
+         --m300:#F0BF3E; } /* derived: color-mix(marigold-400 86%, white) */
+  body{background:var(--ivory);color:var(--ink);font:16px/1.6 "Trebuchet MS",sans-serif;margin:0;padding:32px;}
+  h1{font:400 26px Georgia,serif;margin:0 0 4px;} .sub{color:#5b5a55;margin:0 0 26px;font-size:14px;}
+  .row{display:flex;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+  .card{flex:1;min-width:240px;border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:16px;}
+  .sw{height:54px;border-radius:6px;margin-bottom:10px;}
+  .tag{font:700 11px/1 sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#5b5a55;margin-bottom:8px;}
+  .hex{font:13px ui-monospace,monospace;color:#5b5a55;}
+  .band{border-radius:10px;padding:20px;margin-bottom:14px;}
+  .f700{background:var(--forest-700);} .inkb{background:var(--ink);}
+  .ov{font:700 13px sans-serif;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;}
+  .body{color:rgba(247,244,234,.9);font-size:14px;margin:0;}
+  .lbl{font:700 10px sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,244,234,.55);margin-bottom:10px;}
+</style>
+<h1>--marigold-300 — a real lighter step, replacing an alias</h1>
+<p class="sub">ch.08: dark-surface descriptors/accents. rev.2 publishes no hex. 300 steps LIGHTER than the 400 anchor.</p>
+
+<div class="row">
+  <div class="card">
+    <div class="tag">Anchor · marigold-400</div>
+    <div class="sw" style="background:var(--m400)"></div>
+    <div class="hex">#EEB41E · hue 43.3° · L 52.5%</div>
+  </div>
+  <div class="card">
+    <div class="tag">BEFORE · --marigold-300 aliased the anchor</div>
+    <div class="sw" style="background:var(--m400)"></div>
+    <div class="hex">#EEB41E · identical — not a step at all</div>
+  </div>
+  <div class="card">
+    <div class="tag">AFTER · derived marigold-300</div>
+    <div class="sw" style="background:var(--m300)"></div>
+    <div class="hex">#F0BF3E · hue 43.5° · L 59.2% (+6.7)</div>
+  </div>
+</div>
+
+<div class="band f700">
+  <div class="lbl">on forest-700 #004226 — the real dark band (ch.08)</div>
+  <div class="ov" style="color:var(--m400)">BEFORE — overline at 6.19:1</div>
+  <p class="body">Body copy sits at ivory 90%. The accent above is the alias.</p>
+  <div class="ov" style="color:var(--m300);margin-top:14px">AFTER — overline at 6.77:1</div>
+  <p class="body">Lighter accent ⇒ more contrast on dark. Nothing regresses.</p>
+</div>
+
+<div class="band inkb">
+  <div class="lbl">on ink #1C1B19</div>
+  <div class="ov" style="color:var(--m400)">BEFORE — 9.16:1</div>
+  <div class="ov" style="color:var(--m300);margin-top:10px">AFTER — 10.02:1</div>
+</div>

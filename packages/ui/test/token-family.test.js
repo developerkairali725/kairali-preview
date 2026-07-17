@@ -113,6 +113,56 @@ test("every ramp step stays inside its own hue family", () => {
   }
 });
 
+/** HSL lightness 0-100. */
+function lightness(hex) {
+  const [r, g, b] = hexToRgb(hex).map((v) => v / 255);
+  return ((Math.max(r, g, b) + Math.min(r, g, b)) / 2) * 100;
+}
+
+// ── Direction (D-RAMP-STEPS step 2, marigold-300) ────────────────────────────
+// marigold-300 is the fleet's FIRST step BELOW an anchor, so direction becomes
+// checkable: in a 50→900 ramp, a lower number is LIGHTER and a higher number is
+// DARKER. The family check above catches a step landing in the wrong HUE; this
+// catches one landing in the wrong DIRECTION — e.g. deriving marigold-300 toward
+// black (its anchor's own method) instead of toward white. That would still be
+// marigold, still pass contrast on a dark band, and still be wrong.
+
+test("a step below its anchor is LIGHTER; a step above is DARKER", () => {
+  for (const { key, family, step } of rampSteps) {
+    const anchorStep = ANCHORS[family];
+    if (step === anchorStep) continue;
+    const stepL = lightness(resolveHex(tokens, key));
+    const anchorL = lightness(resolveHex(tokens, `--${family}-${anchorStep}`));
+    if (Number(step) < Number(anchorStep)) {
+      assert.ok(stepL > anchorL, `${key} is a LOWER step than --${family}-${anchorStep} so it must be LIGHTER, but measures L ${stepL.toFixed(1)} vs the anchor's ${anchorL.toFixed(1)}. Ramps run light→dark as the number rises (50→900).`);
+    } else {
+      assert.ok(stepL < anchorL, `${key} is a HIGHER step than --${family}-${anchorStep} so it must be DARKER, but measures L ${stepL.toFixed(1)} vs the anchor's ${anchorL.toFixed(1)}.`);
+    }
+  }
+});
+
+test("marigold-300 is a real lighter step, not the anchor aliased (the step-2 landmine)", () => {
+  const m300 = resolveHex(tokens, "--marigold-300");
+  const m400 = resolveHex(tokens, "--marigold-400");
+  assert.notEqual(m300, m400, "--marigold-300 must not resolve to marigold-400 — an alias is not a ramp step");
+  const d = lightness(m300) - lightness(m400);
+  assert.ok(d > 3 && d < 11, `--marigold-300 should sit ~one step (≈6.6) lighter than its anchor; measured +${d.toFixed(1)}. The landed precedents travel 6.20–7.00 per step.`);
+});
+
+test("DETECTOR PROOF: direction check catches a 300 derived the WRONG way (toward black)", () => {
+  // The plausible mistake: reuse bronze/leaf's toward-black formula on a step
+  // that must go lighter. Result is still marigold, still passes on dark.
+  const wrong = parseTokens(`:root{
+    --marigold-400: #EEB41E;
+    --marigold-300: #A67E15;   /* color-mix(marigold-400 70%, black) — darker */
+  }`);
+  const m300 = lightness(resolveHex(wrong, "--marigold-300"));
+  const m400 = lightness(resolveHex(wrong, "--marigold-400"));
+  assert.ok(m300 < m400, "fixture sanity: this wrong value IS darker");
+  const gap = hueGap(hue(resolveHex(wrong, "--marigold-300")), hue(resolveHex(wrong, "--marigold-400")));
+  assert.ok(gap <= HUE_TOLERANCE, "and the HUE check would NOT catch it — same family, which is exactly why the direction check has to exist");
+});
+
 test("leaf-700 specifically is leaf, not forest (the landmine, pinned)", () => {
   const leaf700 = resolveHex(tokens, "--leaf-700");
   const forest500 = resolveHex(tokens, "--forest-500");

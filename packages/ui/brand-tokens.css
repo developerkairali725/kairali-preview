@@ -79,7 +79,39 @@
      decoration (hairlines, shadow tints) and for logo/tagline ARTWORK, which is
      never recolored (ch.02) and is WCAG-exempt. Enforced by brand-lint. */
   --bronze-600:   #875F1F;
-  --marigold-300: /* TODO — descriptor/accent on dark per ch.08 */ var(--marigold-400);
+  /* OFFICIAL marigold-300 — D-RAMP-STEPS step 2 of 3 (Abilash, 17 Jul 2026),
+     same clause-2 method as bronze-600 and leaf-700. ch.08 names this step
+     (dark-surface descriptors/accents) but rev. 2 publishes no hex.
+     THIS ONE STEPS LIGHTER, not darker — 300 is below the 400 anchor — so it is
+     derived toward WHITE: color-mix(in srgb, var(--marigold-400) 86%, white).
+     Measured, that mirror holds the family as well as the toward-black one did:
+     hue 43.3->43.5deg, saturation 86.0->85.6%.
+     WHY 86%: the two landed precedents give a real per-step travel — bronze
+     -14.0 across a two-step 400->600 (-7.00/step) and leaf -12.4 across a
+     two-step 500->700 (-6.20/step), so one step ~= 6.6. marigold 400->300 is
+     ONE step, lighter: target L 52.5 + 6.6 = 59.1. 86% lands at 59.2 (+6.7).
+     Verified against its ROLE (ch.08 accent on DARK), not a generic bar:
+       on forest-700 #004226 .... 6.77:1   (AA 4.5) PASS
+       on forest-800 ............ 6.77:1   PASS — forest-800 still ALIASES
+                                  forest-700 today; when step 3 of 3 derives it
+                                  DARKER, this ratio only rises. Re-verify there.
+       on ink #1C1B19 .......... 10.02:1   PASS
+     It replaces an alias of marigold-400, and being lighter it IMPROVES every
+     dark ground: 6.19 -> 6.77 on forest-700, 9.16 -> 10.02 on ink. No fleet
+     pixel regresses; all current uses are ch.08-legal and brand-allow'd.
+     NEVER text on a light ground: this measures 1.56:1 on ivory — WORSE than
+     the anchor's 1.71, because lighter marigold on ivory is closer in
+     luminance. brand-lint rule 3 already governs that (marigold-300 in a
+     `color:` = WARNING, verify the surface or suppress).
+     Math control-probed against the document: the same calculator reproduces
+     ch.10's published "Marigold-400 = 1.9:1 on white" as 1.88.
+     ch.10's OTHER marigold figure does NOT reconcile — "ink on marigold = 8.3:1"
+     computes 9.16 with our --ink placeholder, and no single ink hex can satisfy
+     both that and ch.10's "ink on ivory = 15.6:1" (they demand luminances
+     0.01737 vs 0.01117). That is a defect in the MANUAL's own numbers, not in
+     this token — see QUESTIONS Q-INK-INCONSISTENT. It does not affect this
+     step: marigold-300's grounds are measured directly, not inferred from ink. */
+  --marigold-300: #F0BF3E;
 
   /* ---------- TYPE (ch.04) — Google-hosted; Freefrm721 BT is LOGO ARTWORK ONLY */
   --font-display: "Kurale", Georgia, serif;        /* h1–h3, ALWAYS weight 400, never bold */
