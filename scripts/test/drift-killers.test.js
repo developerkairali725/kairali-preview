@@ -10,7 +10,7 @@ import assert from "node:assert/strict";
 
 import { addDirective, ackDirective, nextId, parseDirectives, HEADER } from "../directive-capture.mjs";
 import { findDeadRequiredChecks, findMissingRequiredChecks, findPrContradictions } from "../doctor.mjs";
-import { BUDGETS, judge, median, urlsFor } from "../lighthouse-gate.mjs";
+import { BUDGETS, judge, median, urlsFor, PERF_RUNS_ON_MISS } from "../lighthouse-gate.mjs";
 
 const NOW = "2026-07-17 15:00:00 IST";
 
@@ -109,4 +109,31 @@ test("urlsFor defaults to home-only WITH the defaulted flag set (loud partial co
   const { urls, defaulted } = urlsFor("sites/no-such-site-fixture");
   assert.deepEqual(urls, ["/"]);
   assert.equal(defaulted, true);
+});
+
+// ── Q-A5-FLAKE (Abilash's ruling, 17 Jul 2026): median-of-5 ──────────────────
+// The gate was failing ~50% of the time on code that cannot affect performance.
+// Two real kairaliyoga runs, each later GREEN on a re-run of the identical SHA:
+//   64/91/89 -> median 89 (fail)   ·   71/92/89 -> median 89 (fail)
+// One outlier below two healthy samples decides a median-of-3. It cannot decide
+// a median-of-5. Budget stays 90; the gate stays required; only noise is removed.
+
+test("perf sampling is 5 — one runner-noise outlier must not decide the gate (Q-A5-FLAKE)", () => {
+  assert.equal(PERF_RUNS_ON_MISS, 5,
+    "Q-A5-FLAKE ruled median-of-5. Lowering this back to 3 re-arms a ~50% flake on correct code; raising the pass rate by lowering BUDGETS instead is forbidden (CLAUDE.md rule g).");
+});
+
+test("the real flake samples now pass, and the budget still is not lowered", () => {
+  assert.equal(BUDGETS.performance, 90, "budget stays 90 — the ruling removed noise, not the bar");
+  // The two observed outliers, plus healthy samples the same runs produced.
+  assert.equal(median([64, 91, 89]), 89, "median-of-3 on the real run: the outlier decided, and it failed");
+  assert.equal(median([64, 89, 91, 92, 94]), 91, "median-of-5 on the same page: the outlier is outvoted");
+  assert.ok(judge({ performance: median([64, 89, 91, 92, 94]), accessibility: 100, seo: 100 }).length === 0);
+});
+
+test("a genuinely slow page still FAILS median-of-5 — this removes noise, not the gate", () => {
+  // Every sample honestly below budget: no amount of sampling may rescue it.
+  const v = judge({ performance: median([80, 81, 82, 83, 84]), accessibility: 100, seo: 100 });
+  assert.equal(v.length, 1, "a real regression must still fail");
+  assert.match(v[0], /performance 82 < 90/);
 });

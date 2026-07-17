@@ -18,9 +18,13 @@
  * template + one LP and home-only is partial coverage, stated, never silent.
  *
  * SCORING. Accessibility and SEO are deterministic — one run decides.
- * Performance is noisy on shared runners, so a first-run miss triggers two
- * more runs and the MEDIAN decides — never best-of (that would be gaming
- * our own gate), never a lowered threshold (CLAUDE.md rule g).
+ * Performance is noisy on shared runners, so a first-run miss triggers four
+ * more runs and the MEDIAN of five decides — never best-of (that would be
+ * gaming our own gate), never a lowered threshold (CLAUDE.md rule g).
+ * Five, not three, since 17 Jul 2026 (Q-A5-FLAKE): with three samples a single
+ * runner-noise outlier drags the median onto the budget line and fails correct
+ * code ~50% of the time. Extra runs cost nothing unless a run has already
+ * missed.
  *
  * Exit codes: 0 = all URLs within budget · 2 = budget violation · 1 = harness error.
  *
@@ -39,7 +43,29 @@ export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Ship Gate A5 budgets (SITE_LAUNCH_CHECKLIST_v1.0.md item 5). Never lowered here. */
 export const BUDGETS = { performance: 90, accessibility: 95, seo: 100 };
-const PERF_RUNS_ON_MISS = 3; // median of 3 decides a first-run performance miss
+/** Runs that decide a first-run performance miss. MEDIAN of these — never
+ *  best-of (that games our own gate), never a lowered budget (CLAUDE.md rule g).
+ *
+ *  Was 3; raised to 5 on 17 Jul 2026 per Abilash's ruling on Q-A5-FLAKE. Why:
+ *  the gate was failing ~50% of the time on code that cannot affect performance
+ *  (a .gitattributes line; a markdown-only PR). Two measured examples on
+ *  kairaliyoga, both later passing GREEN on a re-run of the IDENTICAL commit:
+ *    perf median of 64/91/89 → 89   (spread 27)
+ *    perf median of 71/92/89 → 89   (spread 21)
+ *  In both, ONE severe outlier (64, 71 — shared-runner CPU steal) sat below two
+ *  healthy samples, and with only 3 samples the median lands ON the lower
+ *  healthy one. Five samples let a single outlier be outvoted: the median moves
+ *  to the 3rd of 5, so one bad run can no longer decide the gate.
+ *
+ *  COSTS NOTHING when a site is healthy — these runs only happen AFTER a first
+ *  run misses the budget, so passing sites still take exactly one run.
+ *
+ *  This does NOT make the gate immune. kairaliyoga genuinely measures ~89-94 on
+ *  CI runners against a budget of 90, so it is a marginal page, and a marginal
+ *  page can still fail honestly. That is the gate working. If it keeps flaking
+ *  after this, the cause is the page's real CI headroom, not the sampling —
+ *  fix the page (Q-A5-FLAKE option 2: dedicated runners), never the budget. */
+export const PERF_RUNS_ON_MISS = 5;
 
 /** @param {number[]} xs */
 export const median = (xs) => {
@@ -150,7 +176,8 @@ async function main(argv) {
       let scores = runLighthouse(url, outDir, `${path.replace(/\W+/g, "_")}-1`);
       let note = "";
       if (scores.performance < BUDGETS.performance) {
-        // perf is the one noisy category — median of 3 decides, never best-of
+        // perf is the one noisy category — median of PERF_RUNS_ON_MISS decides,
+        // never best-of. 5 samples so one outlier cannot decide the gate (Q-A5-FLAKE).
         const perfs = [scores.performance];
         for (let i = 2; i <= PERF_RUNS_ON_MISS; i++) {
           const again = runLighthouse(url, outDir, `${path.replace(/\W+/g, "_")}-${i}`);

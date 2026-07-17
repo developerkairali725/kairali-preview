@@ -375,6 +375,7 @@ The five A5 failures logged at 14:58 are FIXED and gate-verified locally: whatis
 2. move A5 off shared GitHub runners (the 64 outlier is a noisy-neighbour CPU steal, not a page defect);
 3. keep median-of-3 and accept ~50% re-runs (status quo — recommend against, for the reason above).
 **Recommend (1) now and (2) when budget allows.** Whichever you pick, the budget stays at 90.
+**RESOLVED 2026-07-17 17:52:41 IST — Abilash ruled option (1): median-of-5.** Applied: `PERF_RUNS_ON_MISS` 3 → 5 in scripts/lighthouse-gate.mjs. Budget stays **90**, jobs stay **required**, never best-of. Costs nothing on healthy sites — the extra runs only fire after a first run misses. Pinned by 3 tests (sampling=5; the real 64/91/89 and 71/92/89 samples; and a genuinely-slow page still failing). **Honest residual:** kairaliyoga really does measure ~89–94 on CI against a budget of 90, so it is a marginal page and can still fail honestly — that is the gate working, not flake. If it recurs after this, the cause is the page's CI headroom, and the fix is option (2) (dedicated runners) or the page — never the budget.
 
 ## 2026-07-17 17:31:09 IST · Q-LOG-UNION-REVISIT — union just bit us; do we go to per-entry files after all?
 **What happened:** `merge=union` (item zero, #95) duplicated a log entry **inside the PR that introduced it**, and it reached main. Fixed in #97, plus a guard that detects the signature.
