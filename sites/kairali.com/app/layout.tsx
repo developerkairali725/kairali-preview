@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Kurale, Asap, Lato } from "next/font/google";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
+// Network counts are COMPUTED from the verified centres roster — never typed
+// (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
+import { COUNTRIES_PHRASE } from "@kairali/facts";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
     title: "Kairali Ayurvedic Group — Since 1908",
     description:
-      "Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in nine countries, Ayurveda training, Villa Raag — since 1908.",
+      `Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in ${COUNTRIES_PHRASE}, Ayurveda training, Villa Raag — since 1908.`,
     siteName: "Kairali Ayurvedic Group",
     ogImage: "/og.jpg",
   }) as Metadata),

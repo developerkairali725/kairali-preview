@@ -120,6 +120,52 @@ export const CURE_CLAIM_PATTERNS = [
   { re: /\bpermanent(?:ly)?\s+(?:cure[ds]?|relief|remission)\b/giu, note: "permanence claim" },
 ];
 
+/**
+ * Locked-count patterns — the canonical centres/countries ruling of 17 Jul 2026
+ * (PROJECT_CONTEXT §12: the KAC website's published figures — 14 centres in
+ * 5 countries — are canonical for ALL properties; retro-audit process fix #4).
+ *
+ * TWO families, one gate:
+ *   · STALE counts ("nine countries", "18 centres", "25 Centers") — the drift
+ *     that actually shipped 12× across kairali.com + arogyakendra.com;
+ *   · the CURRENT canonical values typed as literals ("five countries",
+ *     "14 centres") — banned for the same reason "115+ years" was banned
+ *     (D 16 Jul: never hardcode a rolling number). Copy renders the computed
+ *     constants from @kairali/facts; a typed count rots the day the network
+ *     changes.
+ *
+ * Violations are ERRORS even in code files (like the locked facts below, and
+ * unlike the word lists): a count literal in TSX is exactly the bug this rule
+ * exists to kill. Escape hatch: `compliance-allow: locked-counts` on the line
+ * (reported as info, never silent).
+ */
+// Up to two qualifier words may sit between the number and the noun
+// ("18 Ayurvedic treatment centres" is the same stale claim as "18 centres").
+const CENTRE_QUALIFIERS = /(?:(?:treatment|ayurvedic|wellness|health)\s+){0,2}/.source;
+
+export const LOCKED_COUNT_STALE_PATTERNS = [
+  { re: /\b(?:nine|9)\s+countries\b/giu, note: 'stale network count "nine countries"' },
+  { re: new RegExp(`\\b(?:eighteen|18)\\s+${CENTRE_QUALIFIERS}cent(?:re|er)s\\b`, "giu"), note: 'stale network count "18 centres"' },
+  { re: new RegExp(`\\b(?:twenty[-\\s]?five|25)\\s+${CENTRE_QUALIFIERS}cent(?:re|er)s\\b`, "giu"), note: 'stale network count "25 Centers"' },
+];
+
+/**
+ * These are TRUE today — and banned as literals anyway, in SOURCE only.
+ * Rendered output legitimately shows "five countries" (that is the constants
+ * doing their job); source that TYPES it is the drift bug. The factory spec's
+ * render-level check therefore uses only the STALE list above.
+ */
+export const LOCKED_COUNT_HARDCODE_PATTERNS = [
+  // Lookbehind: "twenty-five countries" is not the canonical count typed out.
+  { re: /(?<!twenty[-\s])\b(?:five|5)\s+countries\b/giu, note: "canonical country count typed as a literal" },
+  { re: new RegExp(`\\b(?:fourteen|14)\\s+${CENTRE_QUALIFIERS}cent(?:re|er)s\\b`, "giu"), note: "canonical centre count typed as a literal" },
+];
+
+export const LOCKED_COUNT_PATTERNS = [
+  ...LOCKED_COUNT_STALE_PATTERNS,
+  ...LOCKED_COUNT_HARDCODE_PATTERNS,
+];
+
 /** Locked facts (PROJECT_CONTEXT §3 / CLAUDE.md) — wrong values are bugs. */
 export const LOCKED_FACTS = {
   contactEmail: "info@kairali.com",

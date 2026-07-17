@@ -21,6 +21,16 @@ export const WHATSAPP_URL = "https://wa.me/919289838797"; // Priya = the Chatbas
 // A launch date is not a medical claim.
 const LAUNCH_DATE = "2026-07-14";
 
+// Network counts render from @kairali/facts — the constants-rendered form is
+// the CORRECT shape and must always pass the locked-count rule. "five doors"
+// (a different noun) and digit-boundary neighbours like "195 countries" must
+// never trip a countries/centres count ban. (Fixtures are scanned as text,
+// never compiled, so the import below needs no resolution.)
+import { CENTRES_COUNT, COUNTRIES_PHRASE } from "@kairali/facts";
+export const NETWORK_LINE = `${CENTRES_COUNT} treatment centres across ${COUNTRIES_PHRASE}`;
+export const SUMMARY = "One family, five doors: hospital, products, centres, training, Villa Raag.";
+export const TRIVIA = "Ayurveda is practised in 195 countries today.";
+
 // A regex literal containing `//` must not eat the rest of this line: /\/\//g
 const PROTOCOL_RELATIVE = /^\/\//;
 

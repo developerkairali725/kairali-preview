@@ -1,7 +1,8 @@
 // kairalicenters.com — network hub. Lists the VERIFIED centres (India +
-// international) from lib/centres.ts. NO "18 centres / 9 countries" count is
-// printed — the register's figure is unverified (live = 14/5); the trust strip
-// leads with heritage + accreditation instead (Q-KC-ROSTER).
+// international) from lib/centres.ts (re-exported from @kairali/facts, the
+// canonical roster since the 17 Jul 2026 ruling — PROJECT_CONTEXT §12). No
+// aggregate count is printed in this site's copy; the trust strip leads with
+// heritage + accreditation instead.
 import Link from "next/link";
 import { graph, kairaliOrganization, webSite, breadcrumbList, serializeJsonLd } from "@kairali/schema";
 import { INDIA_CENTRES, INTERNATIONAL_CENTRES, type Centre } from "./lib/centres";

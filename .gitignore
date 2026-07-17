@@ -30,3 +30,6 @@ docs/archive/archive-categorized.csv
 
 # agent audit log — deterministic per-edit trail, machine-local (wiki/log.md is the committed spine)
 agent-log.jsonl
+
+# TypeScript incremental build state (build artifact)
+*.tsbuildinfo

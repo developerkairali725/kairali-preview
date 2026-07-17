@@ -10,6 +10,9 @@ import {
   breadcrumbList,
   serializeJsonLd,
 } from "@kairali/schema";
+// Network counts are COMPUTED from the verified centres roster — never typed
+// (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
+import { CENTRES_COUNT, COUNTRIES_PHRASE, COUNTRIES_PHRASE_TITLE } from "@kairali/facts";
 
 const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS.md 2026-07-13 18:51 IST)
 const EMAIL = "info@kairali.com";
@@ -182,7 +185,7 @@ export default function Home() {
                 generations our family has practised Ayurveda the classical way
                 — physician-led treatment at our NABH-accredited
                 hospital-retreat, medicines from our own WHO-GMP-certified
-                manufacturing, and treatment centres across nine countries.
+                manufacturing, and treatment centres across {COUNTRIES_PHRASE}.
               </p>
               <div className="cta-row">
                 <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_click">
@@ -228,8 +231,8 @@ export default function Home() {
                 <dd>Medicines from our own manufacturing.</dd>
               </div>
               <div>
-                <dt>Nine Countries</dt>
-                <dd>Ayurvedic treatment centres across the world.</dd>
+                <dt>{COUNTRIES_PHRASE_TITLE}</dt>
+                <dd>{CENTRES_COUNT} Ayurvedic treatment centres across the world.</dd>
               </div>
             </dl>
           </div>

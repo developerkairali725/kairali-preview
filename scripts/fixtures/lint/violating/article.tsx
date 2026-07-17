@@ -23,6 +23,7 @@ export function Article({ page }: { page: { title: string } }) {
       <p>Reviewed by Deepu John on {REVIEWED}. Questions? Write to reservations@kairali.com.</p>
       <a className="btn" href={WHATSAPP_URL}>Ask a doctor on WhatsApp</a>
       <Link href="/contact">Call us on +91 92898 38777</Link>
+      <p>Treatment centres across nine countries carry the tradition forward.</p>
       <p>Published {LAUNCH_DATE}.</p>
     </article>
   );

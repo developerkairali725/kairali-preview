@@ -21,8 +21,13 @@
  */
 
 import { test, expect, Page } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+// Locked-count law (17 Jul 2026 ruling, PROJECT_CONTEXT §12): stale network
+// counts must never RENDER; sites that source the canonical line from
+// @kairali/facts must actually emit it. One pattern list, shared with the lints.
+import { LOCKED_COUNT_STALE_PATTERNS } from "../../packages/compliance/src/rules.js";
+import { CENTRES_NETWORK_LINE, COUNTRIES_PHRASE } from "../../packages/facts/src/index.js";
 
 const SITE_DIR = process.env.SITE ?? "sites/arogyakendra.com";
 const config = JSON.parse(readFileSync(join(SITE_DIR, "site.config.json"), "utf8")) as {
@@ -66,6 +71,37 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
     );
     for (const addr of mailtos.filter((a) => a.endsWith("@kairali.com"))) {
       expect(addr).toBe(CONTACT_EMAIL);
+    }
+  });
+
+  test("A2 locked counts: stale network counts never render; the facts constant does", async ({ page, request }) => {
+    // Rendered home copy: "nine countries" / "18 centres" / "25 Centers" must
+    // be impossible. (The CURRENT values legitimately render — they come from
+    // @kairali/facts — so only the stale list applies at render level.)
+    const home = await page.evaluate(() => document.body.innerText);
+    for (const { re, note } of LOCKED_COUNT_STALE_PATTERNS) {
+      expect(home, `home page renders a ${note}`).not.toMatch(new RegExp(re.source, "iu"));
+    }
+    // llms.txt is the machine-readable surface AI answers quote — same law,
+    // plus: a route that sources CENTRES_NETWORK_LINE must actually emit it.
+    const llmsRoute = join(SITE_DIR, "app", "llms.txt", "route.ts");
+    if (existsSync(llmsRoute)) {
+      const res = await request.get("/llms.txt");
+      expect(res.ok(), "llms.txt route exists but does not serve").toBeTruthy();
+      const body = await res.text();
+      for (const { re, note } of LOCKED_COUNT_STALE_PATTERNS) {
+        expect(body, `llms.txt carries a ${note}`).not.toMatch(new RegExp(re.source, "iu"));
+      }
+      // A route that sources the facts constants must actually emit their
+      // VALUES — whichever form it uses (the full network line, or the
+      // countries phrase composed inline). A site that makes no count claim
+      // (kairalicenters, deliberately) imports neither and skips both.
+      const routeSrc = readFileSync(llmsRoute, "utf8");
+      if (routeSrc.includes("CENTRES_NETWORK_LINE")) {
+        expect(body, "the canonical network line must render in llms.txt").toContain(CENTRES_NETWORK_LINE);
+      } else if (routeSrc.includes("COUNTRIES_PHRASE")) {
+        expect(body, "the countries phrase must render in llms.txt").toContain(COUNTRIES_PHRASE);
+      }
     }
   });
 

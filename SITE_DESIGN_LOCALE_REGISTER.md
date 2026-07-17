@@ -23,7 +23,7 @@ Companion to PROJECT_CONTEXT.md. Every Factory site is built to ONE of four desi
 |---|---|---|---|---|---|
 | kairali.com | A | Group stakeholders, partners, press, franchise curious | EN (→DE) | REAL + HF-AMB hero | Enquiries/mo across verticals; brand queries CTR |
 | ayurvedichealingvillage.com (KTAHV) | A (clinical) | M1/M2 India · M4a DACH · M4b FR patients | EN/DE/FR (locked) | **REAL only** | Consultation forms + WhatsApp starts/mo |
-| kairalicenters.com | A | Centre patients (18 centres, 9 countries), B2B centre partners | EN (→ per-country later) | REAL | Centre enquiries/mo; location-page sessions |
+| kairalicenters.com | A | Centre patients (14 centres, 5 countries — canonical: KAC site, ruled 17 Jul 2026), B2B centre partners | EN (→ per-country later) | REAL | Centre enquiries/mo; location-page sessions | <!-- compliance-allow: locked-counts (register records the ruling) -->
 | kairalifranchise.com | A | Franchise investors (India + intl.) | EN | REAL + HF-AMB | Qualified franchise leads/mo (LinkedIn Insight on) |
 | kairalihospitality.com | E | UMBRELLA site (Abilash 16 Jul, wiki/entities/kairali-hospitality.md): holds Villa Raag + Healing Village + European JV "Swatak Katrina" (spelling TBC) + future properties; owned-property showcase + consultancy services for others | EN (→DE) | HF-AMB | Partner + stay + consultancy enquiries/mo |
 | villaraag.com | **E (flag-bearer) — OWN BRAND: raag-tokens.css, NOT Kairali tokens** (updated Raag manual pending from Abilash; structure/content build on schedule, visual pass gated on manual) | Premium leisure/wellness travellers (domestic + intl.) | EN (→DE/RU later) | HF-AMB hero, REAL people | Stay enquiries/direct bookings assist |

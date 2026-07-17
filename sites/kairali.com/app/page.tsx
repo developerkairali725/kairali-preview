@@ -13,6 +13,9 @@ import {
   breadcrumbList,
   serializeJsonLd,
 } from "@kairali/schema";
+// Network counts are COMPUTED from the verified centres roster — never typed
+// (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
+import { CENTRES_COUNT, COUNTRIES_PHRASE, COUNTRIES_PHRASE_TITLE } from "@kairali/facts";
 
 const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS.md 2026-07-13 18:51 IST)
 const EMAIL = "info@kairali.com";
@@ -48,7 +51,7 @@ const PILLARS = [
     name: "Kairali Ayurvedic Centres",
     href: "https://www.kairalicenters.com",
     line:
-      "Treatment centres across nine countries carrying forward classical Ayurvedic therapy — the group's oldest pillar.",
+      `Treatment centres across ${COUNTRIES_PHRASE} carrying forward classical Ayurvedic therapy — the group's oldest pillar.`,
     img: {
       src: "/images/centres-products-garden.jpg",
       width: 733,
@@ -178,7 +181,7 @@ export default function Home() {
                 For four generations, one family has practised Ayurveda the
                 classical way — a NABH-accredited hospital in Kerala, medicines
                 from our own WHO-GMP-certified manufacturing, treatment centres
-                in nine countries, training for the next generation, and a
+                in {COUNTRIES_PHRASE}, training for the next generation, and a
                 wellness villa by the sea in Goa.
               </p>
               <div className="cta-row">
@@ -225,8 +228,8 @@ export default function Home() {
                 <dd>Medicines from our own manufacturing.</dd>
               </div>
               <div>
-                <dt>Nine Countries</dt>
-                <dd>Ayurvedic treatment centres across the world.</dd>
+                <dt>{COUNTRIES_PHRASE_TITLE}</dt>
+                <dd>{CENTRES_COUNT} Ayurvedic treatment centres across the world.</dd>
               </div>
             </dl>
           </div>
@@ -299,7 +302,7 @@ export default function Home() {
                 The same family carries it forward today: classical formulations
                 manufactured to WHO-GMP standard, physician-led treatment at the
                 Healing Village, and centres that keep the tradition within
-                reach of nine countries.
+                reach of {COUNTRIES_PHRASE}.
               </p>
             </div>
           </div>

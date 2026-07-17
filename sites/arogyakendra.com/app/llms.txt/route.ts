@@ -1,4 +1,7 @@
 import { buildLlmsTxt } from "@kairali/seo";
+// Network counts are COMPUTED from the verified centres roster — never typed
+// (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
+import { CENTRES_NETWORK_LINE } from "@kairali/facts";
 import siteConfig from "../../site.config.json";
 
 // llms.txt (Ship Gate B2 / llmstxt.org): the site's canonical facts for AI
@@ -15,7 +18,7 @@ export function GET() {
       "Contact: info@kairali.com · WhatsApp +91 92898 38797",
       "Kairali — The Ayurvedic Healing Village: NABH-accredited Ayurvedic hospital-retreat, Palakkad, Kerala",
       "Kairali Ayurvedic Products: WHO-GMP-certified manufacturing",
-      "Treatment centres across nine countries",
+      CENTRES_NETWORK_LINE,
     ],
     sections: [
       {
@@ -29,7 +32,7 @@ export function GET() {
           {
             title: "Kairali Ayurvedic Centres",
             url: "https://www.kairalicenters.com",
-            note: "treatment centres across nine countries",
+            note: CENTRES_NETWORK_LINE,
           },
           {
             title: "Kairali Ayurvedic Products",

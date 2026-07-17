@@ -58,6 +58,10 @@
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, extname, relative, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+// ONE pattern list for the locked-count ban, shared with packages/compliance
+// (which enforces it at edit time via the PostToolUse hook). A second copy of
+// the patterns is a second thing to drift — the exact failure counts had.
+import { LOCKED_COUNT_PATTERNS } from "../packages/compliance/src/rules.js";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -341,6 +345,31 @@ export const RULES = [
       "A page one of them has approved carries their name and the date; a page that has not been reviewed yet says so at the top.",
       "Not every page is reviewed by a physician, and we say so on the ones that are not.",
       "We do not claim every page is reviewed.",
+    ],
+  },
+  {
+    id: "hardcoded-centres-count",
+    appliesTo: "both",
+    why:
+      'The centres/countries count was hardcoded 12× ("nine countries") across two shipped sites while the verified network was 14 centres in 5 countries ' +
+      "(retro-audit 17 Jul 2026; canonical = the KAC website's figures, PROJECT_CONTEXT §12). A typed count — stale OR currently-correct — rots the day the " +
+      "network changes. Copy renders the computed constants from @kairali/facts (CENTRES_COUNT, COUNTRIES_PHRASE, CENTRES_NETWORK_LINE).",
+    scan: (ctx) =>
+      LOCKED_COUNT_PATTERNS.flatMap(({ re, note }) =>
+        // No figures in the message — the canonical numbers live in @kairali/facts
+        // (computed); a number typed here would rot exactly the way the rule forbids.
+        reScan(ctx, re, (m) => `"${m[0].replace(/\s+/g, " ")}" — ${note}. Network counts are canonical (KAC site ruling 17 Jul 2026, PROJECT_CONTEXT §12) and render from @kairali/facts constants; never type one.`)
+      ),
+    probe: "Treatment centres across nine countries",
+    antiProbes: [
+      // "five doors" is the flagship's own summary line — numbers next to a
+      // different noun must never trip a countries/centres count ban.
+      "One family, five doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, Ayurveda training, and Villa Raag in Goa.",
+      // digit boundaries: 195 must not contain a "9 countries" / "5 countries" hit
+      "Ayurveda is practised in 195 countries today.",
+      // the constants-rendered form is the CORRECT shape — it must always pass
+      "`${CENTRES_COUNT} treatment centres across ${COUNTRIES_PHRASE}`",
+      "Nine practitioners trained in five disciplines",
     ],
   },
   {

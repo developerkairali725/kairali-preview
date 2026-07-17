@@ -20,6 +20,7 @@ import {
   CLINICAL_LOCK_ENTITIES,
   BANNED_FILLER,
   CURE_CLAIM_PATTERNS,
+  LOCKED_COUNT_PATTERNS,
   LOCKED_FACTS,
   CONTENT_EXTENSIONS,
   CODE_EXTENSIONS,
@@ -90,18 +91,42 @@ export function lintText(text, { file = "<text>", entity = "group", asCode = fal
   // personal included — fix the copy, never exempt the site.
   checkWordList(BANNED_FILLER, "banned-filler", "Banned filler (all entities)");
 
-  for (const { re, note } of CURE_CLAIM_PATTERNS) {
-    lines.forEach((line, i) => {
-      const r = new RegExp(re.source, re.flags);
-      if (!r.test(line)) return;
-      // On KTAHV "cure" is already flagged by the clinical lock; still flag the claim.
-      if (lineSuppresses(line, "cure-claims")) {
-        push(i, "info", "cure-claims", `suppressed ${note}`);
-      } else {
-        push(i, sev, "cure-claims", `No cure promises anywhere: ${note}`);
+  // Pattern-list families share one engine. Scans the WHOLE text (not per
+  // line) so a claim wrapped across a JSX/prose line break — "nine\ncountries"
+  // — is still caught; the finding and any suppression key to the line the
+  // match starts on.
+  const checkPatternList = (patterns, rule, { severity, suppressed, message }) => {
+    for (const { re, note } of patterns) {
+      const r = new RegExp(re.source, re.flags.includes("g") ? re.flags : `${re.flags}g`);
+      let m;
+      while ((m = r.exec(text)) !== null) {
+        if (m[0].length === 0) { r.lastIndex++; continue; }
+        const i = text.slice(0, m.index).split("\n").length - 1;
+        if (lineSuppresses(lines[i], rule)) {
+          push(i, "info", rule, suppressed(note));
+        } else {
+          push(i, severity, rule, message(note));
+        }
       }
-    });
-  }
+    }
+  };
+
+  // On KTAHV "cure" is already flagged by the clinical lock; still flag the claim.
+  checkPatternList(CURE_CLAIM_PATTERNS, "cure-claims", {
+    severity: sev,
+    suppressed: (note) => `suppressed ${note}`,
+    message: (note) => `No cure promises anywhere: ${note}`,
+  });
+
+  // Locked counts — ERROR even in code (a count literal in TSX is the bug).
+  // The message deliberately carries NO figures: the canonical numbers live in
+  // @kairali/facts (computed) and a number typed here would rot the same way.
+  checkPatternList(LOCKED_COUNT_PATTERNS, "locked-counts", {
+    severity: "error",
+    suppressed: (note) => `suppressed: ${note}`,
+    message: (note) =>
+      `${note} — network counts are canonical (KAC site ruling 17 Jul 2026, PROJECT_CONTEXT §12) and render from @kairali/facts constants; never type one`,
+  });
 
   // Locked facts — any formatting of the known-bad number
   lines.forEach((line, i) => {
