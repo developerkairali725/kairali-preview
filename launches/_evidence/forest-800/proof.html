@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>forest-800 — D-RAMP-STEPS step 3 evidence</title>
+<style>
+  :root{ --ivory:#F7F4EA; --ink:#1C1B19; --f500:#006038; --f700:#004226;
+         --f800:#003720; --m300:#F0BF3E; }
+  body{background:var(--ivory);color:var(--ink);font:16px/1.6 "Trebuchet MS",sans-serif;margin:0;padding:32px;}
+  h1{font:400 26px Georgia,serif;margin:0 0 4px;} .sub{color:#5b5a55;margin:0 0 24px;font-size:14px;}
+  .row{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap;}
+  .card{flex:1;min-width:210px;border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:14px;}
+  .sw{height:50px;border-radius:6px;margin-bottom:9px;}
+  .tag{font:700 10px/1.3 sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#5b5a55;margin-bottom:7px;}
+  .hex{font:12px ui-monospace,monospace;color:#5b5a55;}
+  .band{border-radius:10px;padding:20px;margin-bottom:14px;}
+  .lbl{font:700 10px sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,244,234,.5);margin-bottom:10px;}
+  .ov{font:700 13px sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--m300);margin-bottom:6px;}
+  /* THE ROLE CHECK, rendered exactly as .surface-dark does it: ivory at 90% ALPHA */
+  .body90{color:color-mix(in srgb, var(--ivory) 90%, transparent);font-size:14px;margin:0 0 4px;}
+  .note{font:11px ui-monospace,monospace;color:rgba(247,244,234,.45);margin-top:8px;}
+</style>
+<h1>--forest-800 — the last placeholder, and the only method we could prove</h1>
+<p class="sub">ch.08: dark-surface alt. rev.2 publishes no hex for 800 — but it DOES publish forest-500 and forest-700, two points on one ramp.</p>
+
+<div class="row">
+  <div class="card">
+    <div class="tag">Anchor · forest-500</div><div class="sw" style="background:var(--f500)"></div>
+    <div class="hex">#006038 · hue 155.0° · L 18.8%</div>
+  </div>
+  <div class="card">
+    <div class="tag">forest-700 · PUBLISHED</div><div class="sw" style="background:var(--f700)"></div>
+    <div class="hex">#004226 · L 12.9%<br><b>color-mix(500, 68.5%) reproduces this EXACTLY</b></div>
+  </div>
+  <div class="card">
+    <div class="tag">BEFORE · --forest-800 aliased 700</div><div class="sw" style="background:var(--f700)"></div>
+    <div class="hex">#004226 · identical — not a step</div>
+  </div>
+  <div class="card">
+    <div class="tag">AFTER · derived forest-800</div><div class="sw" style="background:var(--f800)"></div>
+    <div class="hex">#003720 · hue 154.9° · L 10.8%</div>
+  </div>
+</div>
+
+<div class="band" style="background:var(--f800)">
+  <div class="lbl">THE ROLE CHECK — forest-800 IS a dark surface. ivory@90% body on it must pass AA.</div>
+  <div class="ov">marigold-300 accent — 7.80:1 (was 6.77 against the alias)</div>
+  <p class="body90">This paragraph is ivory at 90% <b>alpha</b>, composited over forest-800 exactly as .surface-dark renders it — not opaque ivory. It composites to #dee1d6 and measures <b>10.11:1</b>. AA needs 4.5.</p>
+  <div class="note">naive/no-compositing would have claimed 12.18:1 — inflated. That shortcut is the 17-Jul parser bug.</div>
+</div>
+
+<div class="band" style="background:var(--f700)">
+  <div class="lbl">the same rule on forest-700 (today's alias) — for comparison</div>
+  <p class="body90">ivory@90% composited over forest-700 measures 8.83:1. forest-800 is darker, so every duty on it improves. Nothing regresses.</p>
+</div>

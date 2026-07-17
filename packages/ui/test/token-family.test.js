@@ -163,6 +163,48 @@ test("DETECTOR PROOF: direction check catches a 300 derived the WRONG way (towar
   assert.ok(gap <= HUE_TOLERANCE, "and the HUE check would NOT catch it — same family, which is exactly why the direction check has to exist");
 });
 
+// ── Ordering + method validation (D-RAMP-STEPS step 3, forest-800) ───────────
+
+test("within a family, lightness falls monotonically as the step number rises", () => {
+  const byFamily = new Map();
+  for (const s of rampSteps) {
+    if (!byFamily.has(s.family)) byFamily.set(s.family, []);
+    byFamily.get(s.family).push(s);
+  }
+  for (const [family, steps] of byFamily) {
+    if (steps.length < 3) continue; // needs 3+ to be an ordering, not just a direction
+    const ordered = [...steps].sort((a, b) => Number(a.step) - Number(b.step));
+    for (let i = 1; i < ordered.length; i++) {
+      const prev = lightness(resolveHex(tokens, ordered[i - 1].key));
+      const cur = lightness(resolveHex(tokens, ordered[i].key));
+      assert.ok(cur < prev, `${family}: ${ordered[i].key} (L ${cur.toFixed(1)}) must be DARKER than ${ordered[i - 1].key} (L ${prev.toFixed(1)}) — a ramp is monotonic, 50→900 runs light→dark. Two steps out of order means one was derived from the wrong base.`);
+    }
+  }
+});
+
+test("METHOD VALIDATION: the color-mix derivation reproduces the manual's own published forest-700", () => {
+  // Unique to forest — rev.2 publishes TWO points on this ramp (ch.03 #006038,
+  // ch.08 #004226). Every other family could only check the CALCULATOR against a
+  // published ratio; here the document itself confirms the derivation METHOD.
+  // If this ever fails, the whole clause-2 approach is wrong, not just one token.
+  const mix = (hexStr, pct) =>
+    "#" + hexToRgb(hexStr).map((c) => Math.round((c * pct) / 100).toString(16).padStart(2, "0")).join("");
+  const derived = mix(resolveHex(tokens, "--forest-500"), 68.5);
+  assert.equal(
+    derived.toLowerCase(),
+    resolveHex(tokens, "--forest-700").toLowerCase(),
+    "color-mix(forest-500 68.5%, black) must reproduce the PUBLISHED forest-700 — this is the only place the manual lets us verify the derivation method itself, not merely the arithmetic",
+  );
+});
+
+test("forest-800 is a real darker step, not forest-700 aliased (the step-3 landmine)", () => {
+  const f800 = resolveHex(tokens, "--forest-800");
+  const f700 = resolveHex(tokens, "--forest-700");
+  assert.notEqual(f800, f700, "--forest-800 must not resolve to forest-700 — an alias is not a ramp step");
+  const d = lightness(f700) - lightness(f800);
+  assert.ok(d > 1 && d < 5, `--forest-800 should sit ~one FOREST step (≈2.95, flatter than other families) below forest-700; measured -${d.toFixed(1)}`);
+});
+
 test("leaf-700 specifically is leaf, not forest (the landmine, pinned)", () => {
   const leaf700 = resolveHex(tokens, "--leaf-700");
   const forest500 = resolveHex(tokens, "--forest-500");

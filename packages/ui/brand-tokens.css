@@ -7,9 +7,33 @@
    08 Channels · 10 Accessibility · 11 Voice (enforced in packages/compliance)
    VERIFIED 2026-07-13 against rev. 2: all eight documented hexes below match
    the manual. Rev. 2 gives NO hex for ink / forest-800 / leaf-700 / bronze-600
-   / marigold-300 — it defers the 10-step ramps to the design-system library.
-   TODO(design-system library): fill full 10-step ramps + exact ink hex; only
-   anchors and explicitly documented values are set below. DO NOT invent hexes.
+   / marigold-300 — it NAMES those steps but defers the 10-step ramps to a
+   design-system library that does not exist in this repo.
+
+   RAMP STATUS (updated 2026-07-17 — D-BRONZE-CONTRAST + D-RAMP-STEPS 1-3):
+   FOUR of those five are now OFFICIAL, each COMPLETING the manual's own ramp
+   rather than inventing a hex — derived by one consistent method (color-mix
+   from the family anchor, hue+saturation held, lightness step sized to the step
+   number), each control-probed against a figure the manual publishes, each
+   verified against its ROLE, each recorded with its ruling cited:
+     --bronze-600  #875F1F  (D-BRONZE-CONTRAST · body bronze on light, ch.10)
+     --leaf-700    #636E25  (D-RAMP-STEPS 1/3 · body leaf on light, ch.10)
+     --marigold-300 #F0BF3E (D-RAMP-STEPS 2/3 · accent on dark, ch.08 — LIGHTER)
+     --forest-800  #003720  (D-RAMP-STEPS 3/3 · dark surface alt, ch.08)
+   The METHOD is not merely asserted: forest publishes two points on one ramp
+   (#006038 and #004226), and the formula reproduces the published forest-700
+   from the anchor EXACTLY. See packages/ui/test/token-family.test.js, which
+   holds every step to its family's hue, direction and ordering.
+
+   STILL A PLACEHOLDER: --ink. Not derivable — it is an anchor, not a ramp step,
+   so there is nothing to interpolate from, and ch.10's two published ink figures
+   CONTRADICT EACH OTHER (15.6:1 on ivory vs 8.3:1 on marigold demand different
+   inks). Parked by Abilash as a manual defect for the rev. 3 errata, routed to
+   the manual owner; see QUESTIONS.md Q-INK-INCONSISTENT. Our placeholder is
+   darker than either figure implies, so every real contrast beats published.
+
+   DO NOT invent hexes. Completing a ramp the manual names, by a probed method,
+   with the ruling cited, is not invention — anything else is.
    (See QUESTIONS.md 2026-07-13 · Brand-manual ingest.)
    ========================================================================== */
 
@@ -21,15 +45,66 @@
   --bronze-400:   #C1882C;  /* Taglines, overlines */
   --ivory:        #F7F4EA;  /* Page ground (ch.08 favicon spec) */
   --forest-700:   #004226;  /* Dark surfaces / favicon ground (ch.08) */
-  --ink:          #1C1B19;  /* TODO confirm exact hex — placeholder matches the
-                               documented 15.6:1 contrast on ivory (ch.10) */
+  --ink:          #1C1B19;  /* TODO confirm exact hex. Placeholder matches ONE of
+                               ch.10's two published ink figures — 15.64:1 vs the
+                               documented 15.6:1 on ivory. It does NOT match the
+                               other ("ink on marigold = 8.3:1"; we measure 9.16),
+                               and NO hex can match both: they demand luminances
+                               0.01117 vs 0.01737. The manual contradicts itself,
+                               so this token cannot be resolved by measurement —
+                               unlike the four ramp steps, ink is an ANCHOR with
+                               nothing to interpolate from. Parked by Abilash for
+                               the rev.3 errata (Q-INK-INCONSISTENT). Safe: this
+                               is darker than either figure implies, so every real
+                               contrast beats published. Earlier record called it
+                               "evidence-backed, consistent" — that was one data
+                               point; corrected here. */
   /* Semantic (ch.03: heritage red & indigo are semantic ONLY, never decorative) */
   --color-error:  #BE202E;
   --color-info:   #26265F;
 
   /* Ramps: steps 50→900 per family; anchors sit at 500 (Leaf, Forest) and 400
      (Marigold, Bronze). Only documented steps are filled. */
-  --forest-800: /* TODO */ var(--forest-700); /* dark-surface alt per ch.08 */
+  /* OFFICIAL forest-800 — D-RAMP-STEPS step 3 of 3 (Abilash, 17 Jul 2026),
+     completing the ramp work. ch.08 names this step (dark-surface alt); rev. 2
+     publishes no hex. Derived = color-mix(in srgb, var(--forest-500) 57%, black).
+     Hue 155.0 -> 154.9deg, saturation 100 -> 100%.
+
+     FOREST IS THE ONLY FAMILY WHERE THE METHOD ITSELF COULD BE VALIDATED, and it
+     was. rev. 2 publishes BOTH forest-500 (#006038) and forest-700 (#004226) —
+     two points on one ramp. Feeding the anchor to the same color-mix formula the
+     bronze ruling introduced REPRODUCES THE PUBLISHED forest-700 EXACTLY:
+         color-mix(in srgb, #006038 68.5%, black) === #004226
+     That is the strongest control probe available anywhere in this work: the
+     other three families could only check the calculator against a published
+     RATIO; here the manual's own second hex confirms the derivation METHOD.
+
+     WHY 57%, and why NOT the ~6.6/step the other families gave: forest publishes
+     its own travel, so nothing is borrowed. 500->700 measures -5.9 across two
+     steps = -2.95/step — less than half of bronze's -7.00 and leaf's -6.20,
+     because forest starts dark (L 18.8) and the ramp compresses. In multiplicative
+     terms (RGB scaling scales HSL lightness by exactly the mix coefficient) the
+     two-step factor is 0.685, so one step is sqrt(0.685) = 0.8276 and three steps
+     (500->800) is 0.685^1.5 = 0.567. 56.7% and 57% differ only by rounding; 57%
+     is taken because it holds hue tighter (154.9deg vs 155.6deg, against the
+     anchor's 155.0). Result L 10.8, i.e. one flat forest step below 700's 12.9.
+
+     VERIFIED AGAINST ITS ROLE — forest-800 IS A DARK SURFACE, so what matters is
+     what sits ON it, measured with REAL sRGB ALPHA COMPOSITING (the .surface-dark
+     body rule is color-mix(in srgb, var(--ivory) 90%, transparent), i.e. ivory at
+     alpha 0.9 — NOT opaque ivory; skipping that composite is exactly the parser
+     bug that fabricated passes on 17 Jul):
+       ivory@90% body text composites to #dee1d6 .... 10.11:1  (AA 4.5) PASS
+         - the same rule on forest-700 is 8.83:1, so this step only IMPROVES it
+         - naive/no-compositing would have claimed 12.18:1 — inflated, rejected
+       marigold-300 accent (ch.08) .................. 7.80:1  PASS
+         - RE-MEASURED here for real: 6.77 was marigold-300 against forest-800
+           while it still ALIASED forest-700. The true step raises it to 7.80.
+       white wordmark (ch.08 inverts white) ........ 13.40:1  PASS
+       ivory at 100% ............................... 12.18:1  PASS
+     Every duty ch.08 gives a dark surface passes, and each by MORE than the
+     alias it replaces — a darker ground can only help what sits on it. */
+  --forest-800:   #003720;
   /* OFFICIAL leaf-700 — Abilash's ruling D-RAMP-STEPS, 17 Jul 2026, extending
      D-BRONZE-CONTRAST clause 2 to the remaining placeholder aliases. ch.10
      names this step ("body → leaf-700") but rev. 2 publishes no hex for it, so
