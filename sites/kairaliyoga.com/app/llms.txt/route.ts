@@ -19,7 +19,7 @@ export function GET() {
       "Ayurveda Training Courses at the hospital: 1-day workshop, 3-day certificate, 5-day intensive, 10-day advanced, 20-day advanced consultant — certification by Kairali Institute of Panchakarma Therapies",
       "Venue: Kairali — The Ayurvedic Healing Village (NABH-accredited Ayurvedic hospital), Olassery P.O., Kodumbu, Palakkad District 678551, Kerala, India",
       "Transfers: Palakkad Railway Station 25 km, Coimbatore Airport 75 km, Cochin/Calicut airports 125 km",
-      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908",
+      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh (first centre, South Delhi); the family has practised Ayurveda since 1908",
       "No prices and no batch dates are published on this site — enquire at info@kairali.com or WhatsApp +91 92898 38797",
     ],
     sections: [

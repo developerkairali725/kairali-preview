@@ -17,6 +17,7 @@ export function GET() {
     facts: [
       "Villa Raag: the group's boutique wellness property in Agonda, Goa — villaraag.com",
       "Kairali — The Ayurvedic Healing Village: the group's NABH-accredited Ayurvedic hospital in Palakkad, Kerala; physician-led treatment programmes — ayurvedichealingvillage.com",
+      "Kairali — The Ayurvedic Healing Village opened 14 February 1999",
       "Resort Svatá Kateřina: a resort in the Bohemian-Moravian Highlands (Vysočina), Czech Republic, whose purpose-built Ayurvedic Pavilion and programmes run in cooperation with the Kairali Ayurvedic Group — katerinaresort.cz",
       "Consultancy: concept, build and operating support for new wellness/hospitality properties; the group's own properties are the case studies",
       "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908",

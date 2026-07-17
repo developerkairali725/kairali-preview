@@ -241,8 +241,9 @@ export default function Home() {
                   <p className="panel-place">Palakkad · Kerala</p>
                   <h3>Kairali &mdash; The Ayurvedic Healing Village</h3>
                   <p className="panel-line">
-                    The group&rsquo;s NABH-accredited hospital &mdash;
-                    physician-led treatment programmes.
+                    The group&rsquo;s NABH-accredited hospital, open since
+                    14 February 1999 &mdash; physician-led treatment
+                    programmes.
                   </p>
                   <p className="panel-ctas">
                     <a href={KTAHV_URL} data-cta="ktahv_site">Hospital site &rarr;</a>
@@ -286,8 +287,9 @@ export default function Home() {
         <section className="band-lineage" aria-label="The family behind the places">
           <div className="container">
             <blockquote>
-              One family has practised Ayurveda since 1908 &mdash;{" "}
-              {LINEAGE_YEARS} years. The Kairali Ayurvedic Group,
+              One family has practised Ayurveda since 1908, when
+              Dr.&nbsp;Sankunny Vaidiar opened his first clinic in Palakkad
+              &mdash; {LINEAGE_YEARS} years. The Kairali Ayurvedic Group,
               founded in 1989 by K.&nbsp;V.&nbsp;Ramesh and Gita Ramesh,
               carries that practice into its places.
             </blockquote>

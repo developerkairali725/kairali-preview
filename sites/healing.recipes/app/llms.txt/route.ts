@@ -17,6 +17,7 @@ export function GET() {
       "The Ayurvedic Cookbook: Get Fit in Just Two Weeks (2nd edition, 2019; US 2020) · Roli Books · ISBN 9788194206842",
       "The Ayurvedic Wellness Cookbook (2022) · Roli Books · ISBN 9789392130755 · Gourmand World Cookbook Award 2023, Best in the World",
       "Harmony: Essential Ayurveda for All (April 2026; international 14 July 2026) · Roli Books · ISBN 9789349474826 (international edition ISBN 9789392130946) · 280 pages",
+      "Heritage: the Kairali Ayurvedic Group was founded in 1989 by K.V. Ramesh and Gita Ramesh (first centre, South Delhi); the family has practised Ayurveda since 1908, when Dr. Sankunny Vaidiar opened his first clinic in Palakkad",
       "Contact: info@kairali.com",
     ],
     sections: [

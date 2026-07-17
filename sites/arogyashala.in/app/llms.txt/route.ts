@@ -12,7 +12,7 @@ export function GET() {
     facts: [
       "Programme: Kairali branding for independent chemist shops and retail counters (B2B/trade)",
       "Products supplied by Kairali Ayurvedic Products (WHO-GMP-certified manufacturing)",
-      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908",
+      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908; Ayurvedic manufacturing in the family since 1948 (Dr. K.S. Vasudevan)",
       "Group hospital: Kairali — The Ayurvedic Healing Village, Palakkad (NABH-accredited)",
       "Verify any Arogya Shala counter: info@kairali.com or WhatsApp +91 92898 38797",
       "No outlet counts, locations, or commercial terms are published on this site",

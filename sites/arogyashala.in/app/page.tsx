@@ -263,7 +263,15 @@ export default function Home() {
                 <dt>Kairali Ayurvedic Group, founded 1989</dt>
                 <dd>
                   {GROUP_YEARS} years — founded by K.&nbsp;V.&nbsp;Ramesh and
-                  Gita Ramesh in New Delhi.
+                  Gita Ramesh, with the first Kairali Ayurvedic Centre in
+                  South Delhi.
+                </dd>
+              </div>
+              <div>
+                <dt>Ayurvedic manufacturing in the family since 1948</dt>
+                <dd>
+                  Begun by Dr.&nbsp;K.S.&nbsp;Vasudevan — the line the WHO-GMP
+                  Kairali range continues.
                 </dd>
               </div>
               <div>

@@ -373,3 +373,23 @@ Per the rolling-number rule (same session): the ORIGIN is now fixed and confirme
 - **D-KVR-TITLE: K.V. Ramesh's canonical title is "Chairman & Managing Director"** (owner's pick, per the kappl.co.in board page); Gita Ramesh remains "Co-Founder & Joint Managing Director". Live-estate consequence → Phase-A fix list: kairali.com/about-us.aspx's "Joint Managing Directors" pair-title phrasing and AHV's "Managing Director and co-founder" title.
 - **D-LIN-SPELLINGS: canonical founder-name spellings are "Dr. Sankunny Vaidiar" and "Dr. K.S. Vasudevan"** (kairali.com About page + majority of sources). AHV's "Sungunny Vaidir" and "K.S.V Vasudevan" variants → Phase-A fix list as typos.
 - **CONSEQUENCE: with all seven flags ruled, kairali-lineage.md §0/§0b is CONFIRMED as the single canonical heritage reference** and draft/lineage-1908 merges to main on the owner's instruction (this session). All future heritage copy on every site is written strictly from it. Existing live-site heritage copy stays FROZEN (licensed 1908 wording; "unbroken" removed) until Abilash approves each new line drawn from the document.
+
+## 2026-07-17 14:27:24 IST — D-HERITAGE-LINES-1: the first approved-lines register (Abilash, line-by-line, Session 2D)
+**Process:** 15 numbered heritage lines were drafted strictly from kairali-lineage.md §0/§0b (the canonical reference, merged as PR #90), tagged with their § source, and approved by Abilash line-by-line in-session. This register records the dispositions; the branch content/heritage-approved-lines-17jul carries exactly these and nothing else.
+- **1 APPROVED** · healing.recipes /author — "first Kairali Ayurvedic Centre in **South Delhi** in 1989" (was "New Delhi") [§0-1989]
+- **2 APPROVED** · healing.recipes /author — AHV "…on **14 February 1999**" (was "in 1999") [§0-1999]
+- **3 APPROVED** · healing.recipes /author — "…since 1908, **when Dr. Sankunny Vaidiar opened his first clinic in Palakkad**" [§0-1908 + §0b]
+- **4 APPROVED** · healing.recipes llms.txt — new Heritage fact line (1989 South Delhi + 1908 Sankunny Vaidiar) [§0-1989 + §0-1908]
+- **5 NO CHANGE (confirmed)** · healing.recipes hero lede, footer, meta — already the licensed wording
+- **6 APPROVED** · arogyashala.in trust band — 1989 dd "…with the first Kairali Ayurvedic Centre in South Delhi" (was "in New Delhi") [§0-1989]
+- **7 APPROVED** · arogyashala.in trust band — NEW third line: dt "Ayurvedic manufacturing in the family since 1948" / dd "Begun by Dr. K.S. Vasudevan — the line the WHO-GMP Kairali range continues." [§0-1948]
+- **8 APPROVED** · arogyashala.in llms.txt — heritage fact appends "; Ayurvedic manufacturing in the family since 1948 (Dr. K.S. Vasudevan)" [§0-1948]
+- **9 NO CHANGE (confirmed)** · arogyashala.in hero span, 1908 dt, meta — licensed already
+- **10 RULED: kairaliyoga.com stays deliberately near-silent on heritage** — authority = hospital + reckoner-exact programmes; heritage remains footer + llms only
+- **11 APPROVED** · kairaliyoga.com llms.txt — "(first centre, South Delhi)" appended after the 1989 founding clause [§0-1989]
+- **12 APPROVED** · kairalihospitality.com lineage band — "…since 1908, when Dr. Sankunny Vaidiar opened his first clinic in Palakkad — {LINEAGE_YEARS} years…" [§0-1908 + §0b + §0-1989]
+- **13 APPROVED** · kairalihospitality.com Healing Village panel — "…hospital, open since 14 February 1999 — physician-led treatment programmes." [§0-1999; clinical register held]
+- **14 APPROVED AS MODIFIED** · kairalihospitality.com llms.txt — fact line "Kairali — The Ayurvedic Healing Village opened 14 February 1999" ONLY; the operator-entity clause was REMOVED by Abilash's ruling: **entity names stay on genuinely legal surfaces, not the machine-facts file** [§0-1999]
+- **15 NO CHANGE (confirmed)** · kairalihospitality.com h1 span, meta — licensed computed form; meta carries no heritage
+**Standing consequence of ruling 14:** llms.txt files carry brand/property facts, never legal-entity names — apply fleet-wide.
+**Known consistency gap (NOT in this register, needs its own approval):** healing.recipes HOME page still carries the sibling sentence "…New Delhi in 1989 and … Palakkad, in 1999" (app/page.tsx:229–230) — the register only licensed the /author page instance; flag carried in the PR for the owner's next one-line approval.

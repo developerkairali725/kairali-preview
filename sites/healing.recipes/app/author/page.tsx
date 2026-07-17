@@ -60,11 +60,13 @@ export default function AuthorPage() {
           <p>
             Gita Ramesh co-founded the Kairali Ayurvedic Group with
             K.&nbsp;V.&nbsp;Ramesh, opening the first Kairali Ayurvedic Centre
-            in New Delhi in 1989 and Kairali — The Ayurvedic Healing Village in
-            Palakkad, Kerala, in 1999. The group she helps lead today spans an
-            NABH-accredited Ayurvedic hospital, WHO-GMP-certified medicine
-            manufacturing, treatment centres in India and overseas, and comes
-            from a family practising Ayurveda since 1908.
+            in South Delhi in 1989 and Kairali — The Ayurvedic Healing Village
+            in Palakkad, Kerala, on 14 February 1999. The group she helps lead
+            today spans an NABH-accredited Ayurvedic hospital,
+            WHO-GMP-certified medicine manufacturing, treatment centres in
+            India and overseas, and comes from a family practising Ayurveda
+            since 1908, when Dr.&nbsp;Sankunny Vaidiar opened his first clinic
+            in Palakkad.
           </p>
           <p>
             Her four books, all published by Roli Books, move from therapy to
