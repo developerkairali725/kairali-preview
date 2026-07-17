@@ -71,3 +71,6 @@ KTAHV consultation/enquiry/contact/how-to-reach pages v1.3.x (EN/DE/FR) + Python
 
 ## 11 · AGENT CONDUCT (summary; CLAUDE.md is binding)
 Staging first, human gate for production and DNS. Editor-role WP credentials from env only. Proof-of-work: no "done" without a live link/real output/passing spec; check ALL locales. Never invent facts/IDs/prices — ask. Medical content → Dr. Deepu John lane. When blocked unattended → QUESTIONS.md and continue. `--force-with-lease` only. If this file and reality disagree, say so loudly and update via Abilash.
+
+## 12 · LOG — RULINGS APPENDED
+- 2026-07-17 10:27:59 IST — Centres & countries count: the figures published on the Kairali Centres (KAC) website are canonical for all Kairali properties — confirmed by owner's brother, 17 Jul 2026. Machine-verified same day: kairalicenters.com/locations/ currently lists **14 centres in 5 countries** (India ×8 · Japan ×3 · Mauritius · Czech Republic · Kuwait); the homepage prints no aggregate count. This closes Q-KC-ROSTER / Q-FR-SCALE (QUESTIONS.md 14–15 Jul). Propagation of the canonical figure across the estate happens only on Abilash's go (retro-audit 17 Jul lists every affected claim).
