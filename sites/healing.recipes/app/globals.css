@@ -53,7 +53,7 @@ p { margin: 0 0 1em; }
   font-size: 0.875rem; /* 14px — ch.10 floor for bronze overlines */
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
   margin: 0 0 12px;
 }
 
@@ -332,8 +332,11 @@ p { margin: 0 0 1em; }
 .plate .subtitle {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  /* forest-700 (10.9:1) — bronze-600 still aliases bronze-400 (2.8:1 at 20px,
-     WCAG AA fail; ramp TODO Q14). Revisit when the real bronze-600 hex lands. */
+  /* forest-700 (10.9:1). The real --bronze-600 has since landed (5.16:1 —
+     D-BRONZE-CONTRAST, 17 Jul 2026; the hex lives in brand-tokens.css, its
+     only legal home), so this workaround is no longer forced; whether this
+     line returns to bronze is a DESIGN call for Abilash, not a contrast one,
+     so it stays forest-700 until he rules (QUESTIONS.md). */
   color: var(--forest-700);
   margin: 6px 0 0;
 }

@@ -56,7 +56,7 @@ p { margin: 0 0 1em; }
   font-size: 0.875rem; /* 14px floor (ch.10) */
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
   margin: 0 0 12px;
 }
 
@@ -198,7 +198,7 @@ p { margin: 0 0 1em; }
   font-weight: 300;
   font-size: 1.45rem;
   line-height: 1;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
 }
 .door-kicker {
   font-family: var(--font-caption);
@@ -206,7 +206,7 @@ p { margin: 0 0 1em; }
   font-size: 0.875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
 }
 .door-title {
   font-family: var(--font-display);

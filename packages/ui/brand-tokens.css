@@ -31,7 +31,24 @@
      (Marigold, Bronze). Only documented steps are filled. */
   --forest-800: /* TODO */ var(--forest-700); /* dark-surface alt per ch.08 */
   --leaf-700:   /* TODO — body-text-capable leaf per ch.10 */ var(--forest-500);
-  --bronze-600: /* TODO — body-capable bronze per ch.10 */ var(--bronze-400);
+  /* OFFICIAL bronze-600 — Abilash's ruling D-BRONZE-CONTRAST, 17 Jul 2026,
+     clause 2. Rev. 2 NAMES this step (ch.10: "body uses Bronze 600") but
+     publishes no hex — it defers the ramps to a design-system library that
+     does not exist, so the manual's own ramp is completed here rather than a
+     hex invented: derived = color-mix(in srgb, var(--bronze-400) 70%, black),
+     i.e. RGB scaling, which holds hue 37.0° and saturation 62.9% IDENTICAL to
+     the anchor. Recorded as a literal so it is greppable, lintable and stable.
+     Measured: 5.16:1 on ivory · 5.68:1 on white — clears AA (4.5:1) with
+     margin, where bronze-400 is 2.80:1 on ivory (fails even the 3:1 large-text
+     bar — the reason for the ruling). Lightness 32.5% vs the anchor's 46.5%: a
+     -14.0 step, matching the -12.7 that conventional 400→600 ramps travel.
+     Verification of the math: this same formula reproduces the manual's own
+     published "Bronze 400 · 3.1:1 on white" as 3.08:1.
+     Scope (ruling clause 3): ALL text-level bronze on light grounds uses this
+     — overlines, taglines, any body use. bronze-400 remains for non-text
+     decoration (hairlines, shadow tints) and for logo/tagline ARTWORK, which is
+     never recolored (ch.02) and is WCAG-exempt. Enforced by brand-lint. */
+  --bronze-600:   #875F1F;
   --marigold-300: /* TODO — descriptor/accent on dark per ch.08 */ var(--marigold-400);
 
   /* ---------- TYPE (ch.04) — Google-hosted; Freefrm721 BT is LOGO ARTWORK ONLY */
@@ -76,7 +93,15 @@
    Forest-500 on white  7.7:1  → unrestricted (body, actions, links)
    Ink on ivory        15.6:1  → unrestricted primary text
    Leaf-500 on white    3.0:1  → LARGE text ≥24px, icons, focus only; body → leaf-700
-   Bronze-400 on white  3.1:1  → overlines ≥14px bold, taglines; body → bronze-600
+   Bronze-400 on white  3.1:1  → the manual's letter. AMENDED by D-BRONZE-CONTRAST
+                                 (Abilash, 17 Jul 2026), ONE STEP STRICTER: on our
+                                 IVORY ground bronze-400 measures 2.80:1 and fails
+                                 even the 3:1 large-text bar, so ALL text-level
+                                 bronze on light grounds — overlines, taglines,
+                                 body — uses bronze-600 (5.16:1). The manual's own
+                                 AA target decides it. bronze-400 stays for non-text
+                                 decoration and logo/tagline artwork (ch.02, never
+                                 recolored, WCAG-exempt). Enforced: brand-lint r7.
    Marigold-400         1.9:1  → DECORATIVE only; never text on white
                                  (ink ON marigold passes at 8.3:1)
    Proportions: ivory & white carry the composition; forest works; leaf

@@ -20,6 +20,18 @@
  *                     = ERROR (ch.07/10: visible focus on EVERY control).
  *  5. tokens-import — a branded site must import its token sheet
  *                     (brand-tokens.css, or raag-tokens.css for Raag).
+ *  6. bronze-text   — `color: var(--bronze-400)` = ERROR. It measures 2.80:1
+ *                     on ivory: it fails AA (4.5:1) and even the 3:1
+ *                     large-text bar, so every text-level bronze on a light
+ *                     ground uses --bronze-600 (#875F1F, 5.16:1) —
+ *                     D-BRONZE-CONTRAST (Abilash, 17 Jul 2026), which reads
+ *                     the manual's own ch.10 line ("body uses Bronze 600")
+ *                     one step stricter because our ground is ivory, not
+ *                     white. This rule reads ONLY `color:`, so bronze-400
+ *                     stays legal for borders/shadows/tints, and the logo
+ *                     lockup's ARTWORK (ch.02, never recolored, WCAG-exempt).
+ *                     All 20 fleet instances failed before this landed; the
+ *                     rule exists so they cannot drift back.
  *
  * Scope: sites/<domain> with site.config.json. The `brand` field picks the
  * token law: "kairali" (default) | "raag" | "none" (exempt — imported
@@ -50,6 +62,11 @@ const SOURCE_EXTENSIONS = new Set([".css", ".scss", ".ts", ".tsx", ".js", ".jsx"
 const HEX_RE = /#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b/g;
 const COLOR_FN_RE = /\b(?:rgb|rgba|hsl|hsla|oklch)\(/g;
 const MARIGOLD_TEXT_RE = /(?<![-\w])color\s*:\s*var\(--marigold-(\d+)\)/g;
+/** Rule 6 (D-BRONZE-CONTRAST): bronze-400 in a `color:` property. Matches the
+ *  marigold rule's shape deliberately — `color:` is the bright line between
+ *  TEXT (must pass AA) and decoration (borders/shadows/tints, which take
+ *  bronze-400 freely and are untouched by this regex). */
+const BRONZE_TEXT_RE = /(?<![-\w])color\s*:\s*var\(--bronze-(\d+)\)/g;
 
 /** @typedef {{file:string,line:number,severity:"error"|"warning"|"info",rule:string,message:string,excerpt:string}} Finding */
 
@@ -109,6 +126,17 @@ export function lintBrandText(text, { file = "<text>" } = {}) {
         push(i, "warning", "marigold-text", `marigold-300 as text — legal ONLY on dark surfaces (ch.08); verify or suppress with brand-allow: marigold-text`);
       } else {
         push(i, "error", "marigold-text", `marigold-${step} is never a text color (ch.10: 1.9:1 on white)`);
+      }
+    }
+
+    // 6. bronze-400 as text color on a light ground (D-BRONZE-CONTRAST)
+    for (const m of line.matchAll(BRONZE_TEXT_RE)) {
+      const step = m[1];
+      if (step !== "400") continue; // bronze-600 (#875F1F, 5.16:1) is the sanctioned text bronze
+      if (lineSuppresses(line, "bronze-text")) {
+        push(i, "info", "bronze-text", `bronze-400 as color allowed by brand-allow on this line — legal ONLY on a dark ground or as logo/tagline artwork`);
+      } else {
+        push(i, "error", "bronze-text", `bronze-400 as text — 2.80:1 on ivory, failing AA and even the 3:1 large-text bar. ALL text-level bronze on light grounds uses --bronze-600 (#875F1F, 5.16:1) per D-BRONZE-CONTRAST (Abilash, 17 Jul 2026). bronze-400 stays for decoration (borders/shadows/tints — this rule only reads \`color:\`); on a dark ground, suppress with brand-allow: bronze-text`);
       }
     }
   });

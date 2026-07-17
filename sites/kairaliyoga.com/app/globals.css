@@ -56,7 +56,7 @@ img { max-width: 100%; height: auto; }
   font-size: 0.875rem; /* 14px floor (ch.10) */
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
   margin: 0 0 12px;
 }
 
@@ -204,7 +204,7 @@ section[id], article[id] { scroll-margin-top: 24px; }
   font-size: 0.875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
 }
 .path-title {
   grid-area: title;
@@ -317,7 +317,7 @@ section[id], article[id] { scroll-margin-top: 24px; }
   font-size: 0.875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
   margin: 0 0 6px;
 }
 .timeline h3 { font-size: 1.45rem; margin-bottom: 8px; }

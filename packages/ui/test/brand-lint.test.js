@@ -71,3 +71,49 @@ test("brand 'none' sites are exempt with an info trail; missing config is an err
   assert.equal(missing[0].severity, "error");
   assert.equal(missing[0].rule, "config");
 });
+
+// ── Rule 6: bronze-text (D-BRONZE-CONTRAST, Abilash 17 Jul 2026) ─────────────
+// Both directions, same run: the banned shape must FAIL and every legitimate
+// bronze use must PASS. A rule that flags decoration would be switched off in
+// a week, and then it protects nothing.
+
+test("bronze-400 as a text color is an error; bronze-600 is the sanctioned text bronze", () => {
+  const bad = errs(lintBrandText(`.overline { color: var(--bronze-400); }`, { file: "a.css" }));
+  assert.equal(bad.length, 1);
+  assert.equal(bad[0].rule, "bronze-text");
+  assert.match(bad[0].message, /2\.80:1 on ivory/);
+  assert.match(bad[0].message, /--bronze-600/);
+
+  // the fix shape must be silent
+  assert.equal(errs(lintBrandText(`.overline { color: var(--bronze-600); }`, { file: "a.css" })).length, 0);
+});
+
+test("bronze-text reads ONLY `color:` — decoration keeps bronze-400 (borders, shadows, tints)", () => {
+  const decoration = [
+    `--hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 26%, transparent);`,
+    `.shelf-row::before { border-top: 2px solid color-mix(in srgb, var(--bronze-400) 55%, transparent); }`,
+    `.hero-cover img { box-shadow: 0 24px 48px color-mix(in srgb, var(--bronze-400) 26%, transparent); }`,
+    `.card { border: 1.5px solid var(--bronze-400); }`,
+    `.x { border-color: var(--bronze-400); }`,
+  ];
+  for (const css of decoration) {
+    const f = lintBrandText(css, { file: "a.css" }).filter((x) => x.rule === "bronze-text");
+    assert.equal(f.length, 0, `decoration wrongly flagged: ${css}`);
+  }
+});
+
+test("bronze-400 text on a dark ground is suppressible, and the suppression is reported, never silent", () => {
+  const f = lintBrandText(
+    `.hero .kicker { color: var(--bronze-400); /* brand-allow: bronze-text */ }`,
+    { file: "a.css" },
+  );
+  assert.equal(errs(f).length, 0);
+  const info = f.find((x) => x.rule === "bronze-text");
+  assert.equal(info.severity, "info");
+  assert.match(info.message, /dark ground or as logo\/tagline artwork/);
+});
+
+test("the shipped fleet is clean under bronze-text — the 20 real violations stay fixed", () => {
+  const findings = lintBrandDir("sites/kairaliyoga.com").filter((f) => f.rule === "bronze-text");
+  assert.deepEqual(findings.filter((f) => f.severity === "error"), []);
+});

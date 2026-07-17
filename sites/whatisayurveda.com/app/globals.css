@@ -45,7 +45,7 @@ a:hover { color: var(--forest-700); }
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-400);
+  color: var(--bronze-600);
   margin: 0 0 12px;
 }
 
@@ -63,7 +63,7 @@ a:hover { color: var(--forest-700); }
 .logo-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; }
 .logo-link img { display: block; border-radius: 4px; }
 .logo-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--forest-700); white-space: nowrap; }
-.logo-name small { display: block; font-family: var(--font-caption); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-400); }
+.logo-name small { display: block; font-family: var(--font-caption); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-600); }
 .site-nav { display: none; }
 
 /* ---------- Buttons ---------- */
@@ -94,7 +94,7 @@ a:hover { color: var(--forest-700); }
 /* ---------- Breadcrumbs ---------- */
 .breadcrumbs { font-family: var(--font-caption); font-size: 0.82rem; padding: 18px 0 0; }
 .breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
-.breadcrumbs li::after { content: "›"; margin-left: 6px; color: var(--bronze-400); }
+.breadcrumbs li::after { content: "›"; margin-left: 6px; color: var(--bronze-600); }
 .breadcrumbs li:last-child::after { content: ""; }
 .breadcrumbs a { color: color-mix(in srgb, var(--ink) 66%, transparent); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--forest-500); }
@@ -235,4 +235,4 @@ a:hover { color: var(--forest-700); }
 
 /* Honest review status. The badge is earned; its absence is stated plainly —
    muted, never hidden. (Tiered-honesty ruling, 15 Jul 2026.) */
-.review-pending { color: var(--bronze-400); font-style: italic; }
+.review-pending { color: var(--bronze-600); font-style: italic; }
