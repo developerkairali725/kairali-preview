@@ -32,7 +32,23 @@
  *                     lockup's ARTWORK (ch.02, never recolored, WCAG-exempt).
  *                     All 20 fleet instances failed before this landed; the
  *                     rule exists so they cannot drift back.
+ *  7. leaf-text     — `color: var(--leaf-500)` = ERROR. ch.10's table grants
+ *                     leaf-500 to large text (≥24px), icons and focus — but
+ *                     that table is stated ON WHITE (3.0:1), and our ground is
+ *                     IVORY, where it measures 2.72:1 and fails even the 3:1
+ *                     large-text bar. Exactly the bronze situation: the manual
+ *                     read one step stricter for the ground we actually ship.
+ *                     Body-level leaf uses --leaf-700 (#636E25, 5.04:1 ivory /
+ *                     5.54:1 white) — D-RAMP-STEPS (Abilash, 17 Jul 2026).
+ *                     Reads ONLY `color:`, so leaf-500 stays legal for focus
+ *                     rings (--focus-ring is a box-shadow), borders and tints.
+ *                     UNLIKE rule 6, this rule flags ZERO instances today: no
+ *                     site uses leaf as text yet. It is armed BEFORE the first
+ *                     one does, which is the whole point — the leaf-700 alias
+ *                     bug shipped for four days precisely because nothing was
+ *                     watching a token nobody had used yet.
  *
+
  * Scope: sites/<domain> with site.config.json. The `brand` field picks the
  * token law: "kairali" (default) | "raag" | "none" (exempt — imported
  * personal/internal surfaces; exemptions are Abilash's to ratify, see
@@ -67,6 +83,10 @@ const MARIGOLD_TEXT_RE = /(?<![-\w])color\s*:\s*var\(--marigold-(\d+)\)/g;
  *  TEXT (must pass AA) and decoration (borders/shadows/tints, which take
  *  bronze-400 freely and are untouched by this regex). */
 const BRONZE_TEXT_RE = /(?<![-\w])color\s*:\s*var\(--bronze-(\d+)\)/g;
+/** Rule 7 (D-RAMP-STEPS): leaf-500 in a `color:` property. Same shape as rules
+ *  3 and 6 — `color:` separates TEXT (must pass AA on ivory) from decoration
+ *  and focus rings, which take leaf-500 freely and never match this regex. */
+const LEAF_TEXT_RE = /(?<![-\w])color\s*:\s*var\(--leaf-(\d+)\)/g;
 
 /** @typedef {{file:string,line:number,severity:"error"|"warning"|"info",rule:string,message:string,excerpt:string}} Finding */
 
@@ -137,6 +157,17 @@ export function lintBrandText(text, { file = "<text>" } = {}) {
         push(i, "info", "bronze-text", `bronze-400 as color allowed by brand-allow on this line — legal ONLY on a dark ground or as logo/tagline artwork`);
       } else {
         push(i, "error", "bronze-text", `bronze-400 as text — 2.80:1 on ivory, failing AA and even the 3:1 large-text bar. ALL text-level bronze on light grounds uses --bronze-600 (#875F1F, 5.16:1) per D-BRONZE-CONTRAST (Abilash, 17 Jul 2026). bronze-400 stays for decoration (borders/shadows/tints — this rule only reads \`color:\`); on a dark ground, suppress with brand-allow: bronze-text`);
+      }
+    }
+
+    // 7. leaf-500 as text color on a light ground (D-RAMP-STEPS)
+    for (const m of line.matchAll(LEAF_TEXT_RE)) {
+      const step = m[1];
+      if (step !== "500") continue; // leaf-700 (#636E25, 5.04:1 on ivory) is the sanctioned text leaf
+      if (lineSuppresses(line, "leaf-text")) {
+        push(i, "info", "leaf-text", `leaf-500 as color allowed by brand-allow on this line — legal ONLY on a dark ground or as artwork`);
+      } else {
+        push(i, "error", "leaf-text", `leaf-500 as text — 2.72:1 on ivory, failing AA and even the 3:1 large-text bar. ch.10 grants leaf-500 to large text/icons/focus, but that table is stated ON WHITE (3.0:1) and our ground is IVORY. Body-level leaf uses --leaf-700 (#636E25, 5.04:1 ivory / 5.54:1 white) per D-RAMP-STEPS (Abilash, 17 Jul 2026). leaf-500 stays for focus rings (--focus-ring is a box-shadow), borders and tints — this rule only reads \`color:\`; on a dark ground, suppress with brand-allow: leaf-text`);
       }
     }
   });

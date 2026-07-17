@@ -117,3 +117,46 @@ test("the shipped fleet is clean under bronze-text — the 20 real violations st
   const findings = lintBrandDir("sites/kairaliyoga.com").filter((f) => f.rule === "bronze-text");
   assert.deepEqual(findings.filter((f) => f.severity === "error"), []);
 });
+
+// ---------------------------------------------------------------------------
+// Rule 7 — leaf-text (D-RAMP-STEPS, Abilash 17 Jul 2026)
+// Same both-directions standard as rule 6. The difference worth remembering:
+// rule 6 was written to fix 20 live failures; rule 7 flags NOTHING today. It is
+// armed before the first leaf text node exists, because the leaf-700 alias bug
+// survived four days precisely by guarding a token nobody had used yet.
+// ---------------------------------------------------------------------------
+
+test("leaf-500 as a text color is an error; leaf-700 is the sanctioned text leaf", () => {
+  const bad = errs(lintBrandText(`.lede { color: var(--leaf-500); }`, { file: "a.css" }));
+  assert.equal(bad.length, 1);
+  assert.equal(bad[0].rule, "leaf-text");
+  assert.match(bad[0].message, /2\.72:1 on ivory/);
+  assert.match(bad[0].message, /--leaf-700/);
+
+  // the fix shape must be silent
+  assert.equal(errs(lintBrandText(`.lede { color: var(--leaf-700); }`, { file: "a.css" })).length, 0);
+});
+
+test("leaf-text reads ONLY `color:` — focus rings, borders and tints keep leaf-500", () => {
+  const legitimate = [
+    `--focus-ring: 0 0 0 3px color-mix(in srgb, var(--leaf-500) 55%, transparent);`,
+    `.banner { border-top: 1px solid var(--leaf-500); }`,
+    `.chip { background: color-mix(in srgb, var(--leaf-500) 12%, transparent); }`,
+    `.x { border-color: var(--leaf-500); }`,
+  ];
+  for (const css of legitimate) {
+    const f = lintBrandText(css, { file: "a.css" }).filter((x) => x.rule === "leaf-text");
+    assert.equal(f.length, 0, `legitimate leaf-500 use wrongly flagged: ${css}`);
+  }
+});
+
+test("leaf-500 text on a dark ground is suppressible, and the suppression is reported, never silent", () => {
+  const f = lintBrandText(
+    `.surface-dark .tag { color: var(--leaf-500); /* brand-allow: leaf-text */ }`,
+    { file: "a.css" },
+  );
+  assert.equal(errs(f).length, 0);
+  const info = f.find((x) => x.rule === "leaf-text");
+  assert.ok(info, "suppression must still be reported as info — never silent");
+  assert.equal(info.severity, "info");
+});

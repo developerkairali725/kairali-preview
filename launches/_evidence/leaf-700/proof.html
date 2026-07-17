@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>leaf-700 — D-RAMP-STEPS evidence</title>
+<style>
+  :root{
+    --ivory:#F7F4EA; --ink:#1C1B19;
+    --leaf-500:#8E9D35;      /* anchor, Manual ch.03 */
+    --forest-500:#006038;    /* what --leaf-700 ALIASED before this PR */
+    --leaf-700:#636E25;      /* derived: color-mix(leaf-500 70%, black) */
+  }
+  body{background:var(--ivory);color:var(--ink);font:16px/1.6 "Trebuchet MS",sans-serif;margin:0;padding:32px;}
+  h1{font:400 26px Georgia,serif;margin:0 0 4px;}
+  .sub{color:#5b5a55;margin:0 0 28px;font-size:14px;}
+  .row{display:flex;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
+  .card{flex:1;min-width:260px;background:var(--ivory);border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:18px;}
+  .sw{height:60px;border-radius:6px;margin-bottom:12px;}
+  .tag{font:700 11px/1 sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#5b5a55;margin-bottom:8px;}
+  .hex{font:13px ui-monospace,monospace;color:#5b5a55;}
+  .verdict{margin-top:10px;font-size:13px;font-weight:700;}
+  .bad{color:#BE202E;} .good{color:#1d6b3f;}
+  .demo{background:var(--ivory);border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:20px;}
+  .demo p{margin:0 0 14px;max-width:60ch;}
+</style>
+
+<h1>--leaf-700 — the silent landmine</h1>
+<p class="sub">ch.10: “body → leaf-700”. rev.2 publishes no hex for it. Ground = ivory #F7F4EA.</p>
+
+<div class="row">
+  <div class="card">
+    <div class="tag">Anchor · leaf-500</div>
+    <div class="sw" style="background:var(--leaf-500)"></div>
+    <div class="hex">#8E9D35 · hue 68.7° · 2.72:1 on ivory</div>
+    <div class="verdict bad">fails AA — and the 3:1 large-text bar</div>
+  </div>
+  <div class="card">
+    <div class="tag">BEFORE · what --leaf-700 aliased</div>
+    <div class="sw" style="background:var(--forest-500)"></div>
+    <div class="hex">#006038 (forest-500) · hue 155° · 6.99:1</div>
+    <div class="verdict bad">PASSES contrast — while being the wrong family (86.3° off)</div>
+  </div>
+  <div class="card">
+    <div class="tag">AFTER · derived leaf-700</div>
+    <div class="sw" style="background:var(--leaf-700)"></div>
+    <div class="hex">#636E25 · hue 69.0° · 5.04:1 on ivory</div>
+    <div class="verdict good">passes AA · stays in the leaf family</div>
+  </div>
+</div>
+
+<div class="demo">
+  <div class="tag">Body text set to leaf-700, per ch.10 — what a site would have shipped vs. what it should</div>
+  <p style="color:var(--forest-500)"><strong>BEFORE:</strong> Ayurveda begins with the person, not the complaint. This paragraph is what any site following ch.10 would have rendered — forest green, under a passing contrast gate. Nothing would have flagged it.</p>
+  <p style="color:var(--leaf-700)"><strong>AFTER:</strong> Ayurveda begins with the person, not the complaint. The same rule, now rendering the leaf family the manual actually specifies, still clearing AA at 5.04:1.</p>
+</div>

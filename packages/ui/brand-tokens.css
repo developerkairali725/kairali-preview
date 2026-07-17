@@ -30,7 +30,37 @@
   /* Ramps: steps 50→900 per family; anchors sit at 500 (Leaf, Forest) and 400
      (Marigold, Bronze). Only documented steps are filled. */
   --forest-800: /* TODO */ var(--forest-700); /* dark-surface alt per ch.08 */
-  --leaf-700:   /* TODO — body-text-capable leaf per ch.10 */ var(--forest-500);
+  /* OFFICIAL leaf-700 — Abilash's ruling D-RAMP-STEPS, 17 Jul 2026, extending
+     D-BRONZE-CONTRAST clause 2 to the remaining placeholder aliases. ch.10
+     names this step ("body → leaf-700") but rev. 2 publishes no hex for it, so
+     the manual's own ramp is COMPLETED here rather than a hex invented.
+     Derived = color-mix(in srgb, var(--leaf-500) 70%, black) — RGB scaling,
+     the identical formula and coefficient the bronze ruling used. Because the
+     anchor's HSL lightness is 41.2% (<50%), scaling every channel by the same
+     factor holds hue and saturation: 68.7deg/49.5% -> 69.0deg/49.7%. That
+     residual 0.3deg / 0.2pp is 8-bit hex quantization, nothing more. (Note: the
+     bronze DECISIONS entry calls its equivalent drift "IDENTICAL"; measured, it
+     is 37.0->36.9deg and 62.9->62.7%. Functionally identical, not literally —
+     phrasing corrected here rather than propagated.)
+     Measured: 5.04:1 on ivory · 5.54:1 on white — clears AA (4.5:1) on BOTH
+     grounds, which is the bar its ROLE demands (ch.10 body text). Ivory is the
+     harder ground of the two, being darker than white; AA there implies AA on
+     white. Lightness 28.8% vs the anchor's 41.2%: a -12.4 step across a
+     two-step 500->700 travel, sitting alongside bronze's -14.0 across its
+     two-step 400->600 and the -12.7 conventional ramps travel. So it lands
+     where a "700" belongs.
+     Verification of the math: this same calculator reproduces the manual's own
+     published "Leaf-500 on white = 3.0:1" (ch.10) as 2.99 — control-probed
+     against the document BEFORE being trusted, per the bronze precedent.
+     WHY THIS WAS URGENT (the silent landmine): the placeholder aliased
+     var(--forest-500) — hue 155deg against leaf's 68.7deg, i.e. 86.3deg away and
+     a DIFFERENT COLOR FAMILY. It measured 6.99:1 on ivory, so it PASSED every
+     contrast gate we own while rendering the wrong brand color. The first site
+     to follow ch.10 and set body text to leaf-700 would have shipped forest
+     green under a green checkmark. Guarded now by the token-family integrity
+     test (packages/ui/test/token-family.test.js), which fails any ramp step
+     that resolves outside its own anchor's hue family. */
+  --leaf-700:     #636E25;
   /* OFFICIAL bronze-600 — Abilash's ruling D-BRONZE-CONTRAST, 17 Jul 2026,
      clause 2. Rev. 2 NAMES this step (ch.10: "body uses Bronze 600") but
      publishes no hex — it defers the ramps to a design-system library that
