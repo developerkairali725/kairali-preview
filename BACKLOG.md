@@ -39,6 +39,8 @@ _Prioritization law (Abilash, 16 Jul): rank build work by **revenue opportunity 
 - [ ] Wave 4 (Days 25–29): kairali.com flagship (content preload starts Day 14)
 - [ ] Cloudflare bulk-redirect re-upload (HUMAN: Abilash/Ambuj): houseofayurveda.in target corrected to kairalicenters.com (Abilash ruling 16 Jul); cloudflare-upload.csv regenerated — re-upload + scripts/verify-forwards.sh
 - [ ] Monday ritual (every Mon, first: 20 Jul): wiki lint + pnpm audit + Dependabot triage + hook self-test
+  - **Dependabot triage rule (17 Jul):** if ALL jobs are red, read the INSTALL step before anything else — `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION` fails `pnpm install`, so every job dies at setup and the job names tell you nothing. pnpm 11 defaults `minimumReleaseAge` to 24h (not configured by us; it is a supply-chain defence against fresh compromised releases). Dependabot opens PRs within hours of a release, so the two structurally disagree. **Fix = wait 24h and re-run. NEVER relax the policy (rule g).** Some jobs red = a real failure or flake instead. See LEARNINGS 17 Jul.
+- [ ] **#93 (Dependabot minor+patch ×6: turbo · lucide-react · react/react-dom 19.2.7) — NOT broken, just early.** Blocked only by lucide-react@1.25.0 being <24h old; clears **18 Jul 13:58 IST**. tailwindcss@4.3.3 already cleared. Merges clean with main, no rebase needed. **Action: re-run the failed jobs after 14:00 IST on 18 Jul, then merge.** No code change.
 - [ ] KTAHV migration (POST-sprint, own 3–4 week plan) — gate: docs/ktahv-inputs/ corpus ingested + Dr. Deepu John sign-off lane
 - [ ] Locale expansions (DE for kairali.com/hospitality, RU/CS etc.) — gate: native-reviewed banned lists per locale
 

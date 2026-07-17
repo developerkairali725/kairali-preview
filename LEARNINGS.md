@@ -159,3 +159,20 @@ kairaliyoga sat at 89–92 while its siblings hit 95–100, and the obvious susp
 3. **A branch whose PR is closed is a write-only medium.** Work committed there is not "pending review"; it is lost, silently, with a passing local test suite and a cheerful log entry.
 4. **This is one disease with three symptoms today** — the stranded branch, two `wiki/log.md` append-append conflicts, and `directive-capture.mjs` assigning a duplicate ID (`D-20260717-05` to two different directives, because it counts `max+1` of the *local file*). All three are: append-only or long-lived state, concurrent writers, no structural protection. Fixing them one at a time treats symptoms.
 5. **The self-check that would have caught it earliest is the cheapest:** a session that says "the PR should now be green" has made a claim about GitHub without asking GitHub. Evidence before assertions applies to PR state too, not just test output.
+
+## 2026-07-17 18:51:20 IST — "17 red jobs" on a Dependabot PR usually means ONE line at the install step
+**What #93 looked like:** every job red — brand-lint, all 8 factory-spec, all 8 lighthouse. Catastrophic. It read like the dependency bump had broken the fleet, and it was flagged as needing "a real look, separately".
+**What it actually was:** one line, before any job's real work began.
+```
+✗ Lockfile failed supply-chain policy check (874 entries in 10.9s)
+[ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION] 2 lockfile entries failed verification:
+  lucide-react@1.25.0 was published at 2026-07-17T08:28:15Z, within the minimumReleaseAge cutoff
+  tailwindcss@4.3.3   was published at 2026-07-16T12:03:32Z, within the minimumReleaseAge cutoff
+```
+`pnpm install` refuses the lockfile, so **every** job dies at setup. brand-lint never linted; factory-spec never opened a browser. The red is one failure wearing seventeen hats.
+**The policy is a pnpm 11 DEFAULT we never configured.** `minimumReleaseAge` appears nowhere in this repo — not pnpm-workspace.yaml, not .npmrc, not package.json — and `pnpm config get minimumReleaseAge` returns undefined. pnpm 11.12.0 ships it on, at **24h** (the log's cutoff is exactly 24h before the run). **It is a supply-chain protection: it refuses packages published in the last day, which is precisely the window a compromised npm release does its damage in.** Dependabot opens PRs within *hours* of a release, so Dependabot and this policy structurally disagree.
+**Diagnostic rule — cheap and reliable:**
+- **ALL jobs red → look at the install step first.** Lockfile/policy/setup. Do not read the job names as evidence; they are all the same failure.
+- **SOME jobs red → a real failure or flake** (e.g. Q-A5-FLAKE, now mitigated by median-of-5 in #98).
+**The fix is TIME, never the policy.** Rule (g) applies with force here — relaxing minimumReleaseAge to make a bump merge would trade a real supply-chain defence for a few hours' convenience. Wait until each package is 24h old and re-run. In #93's case: tailwindcss cleared on its own (25.2h by the time it was diagnosed); lucide-react clears 18 Jul 13:58 IST. No code change, no rebase (it merges clean).
+**For the Monday Dependabot triage:** expect this on any PR bumping a package released in the previous 24h. It is not a broken bump. Re-run it a day later.
