@@ -364,3 +364,13 @@ The five A5 failures logged at 14:58 are FIXED and gate-verified locally: whatis
 2. **Q-RAMP-MARIGOLD300 (Abilash):** `--marigold-300` aliases marigold-400. Used on dark bands per ch.08 (descriptors), where it measures 6.19:1 — passes, and a true lighter 300 would only pass by more, so there is no risk today. Derive it, or leave the alias until the design-system library lands?
 3. **Q-RAMP-FOREST800 (Abilash):** `--forest-800` aliases forest-700 (dark-surface alt per ch.08). No text-contrast risk. Same question: derive or leave?
 **Also unblocked by the bronze ruling (DESIGN call, not contrast — not changed):** healing.recipes `.featured-title` was set to forest-700 back when bronze-600 was an unusable alias, with the code comment "Revisit when the real bronze-600 hex lands." It has landed. Should that line return to bronze-600, or stay forest-700? Purely aesthetic — your call.
+## 2026-07-17 16:58:12 IST · Q-A5-FLAKE — the Lighthouse A5 gate is a coin-flip merge blocker (escalated, NOT weakened)
+**Observed this session, on a PR that cannot possibly affect performance** (item zero adds one `.gitattributes` line and one test file): `lighthouse (sites/kairaliyoga.com)` FAILED at `perf 89 < 90` — **"perf median of 64/91/89"**. A 27-point spread across three runs of identical code.
+**Proof it is flake, not signal:** the job was re-run on the **identical commit** with zero changes and went **fully green** (all 19 non-Vercel checks pass). Red → green, same SHA.
+**Not isolated.** Across the last 12 factory-gate runs, roughly half fail, including dependabot PRs that touch only a lockfile — and the failing job differs run to run (lighthouse on various sites, factory-spec, even brand-lint). The 17-Jul session already predicted this ("except any CI-runner perf noise on yoga").
+**Why it matters:** kairaliyoga measures 94 ×3 locally. A gate that fails ~50% of the time on correct code trains everyone to click re-run, and a gate people re-run by reflex is a gate that stops being read — which is exactly how the four wave sites shipped without a browser gate in the first place.
+**NOT fixed here, per CLAUDE.md rule (g)** — a failing gate is never fixed by weakening it. The budget was not touched. **Abilash's call on the cause:**
+1. raise the sample (median-of-3 → median-of-5, or best-of-3) — cheap, treats the symptom, keeps the budget honest;
+2. move A5 off shared GitHub runners (the 64 outlier is a noisy-neighbour CPU steal, not a page defect);
+3. keep median-of-3 and accept ~50% re-runs (status quo — recommend against, for the reason above).
+**Recommend (1) now and (2) when budget allows.** Whichever you pick, the budget stays at 90.

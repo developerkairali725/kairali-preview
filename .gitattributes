@@ -1,0 +1,35 @@
+# ============================================================================
+# .gitattributes — merge behaviour for the append-only log spine
+# [D-RAMP-STEPS item zero · Abilash, 17 Jul 2026 — directed twice, landed here]
+# ============================================================================
+
+# wiki/log.md is an append-only chronological spine (its own first line says
+# "# Log — append only"). It has many concurrent writers — every agent session
+# plus Abilash — across long-lived branches, and every writer appends at the
+# tail. That is the exact shape git's built-in `union` driver exists for: on a
+# merge it keeps BOTH sides' added lines instead of raising a conflict.
+#
+# Without it, every pair of sessions that both logged produced an append-append
+# conflict resolved BY HAND, identically, every time — see a04edde:
+# "resolve wiki/log.md append-append conflict, both entries kept chronologically".
+# 17 Jul 2026 produced two such conflicts in one day. Union makes the hand
+# resolution automatic and unmissable; a conflict a human resolves by rote is a
+# conflict the tool should have resolved.
+#
+# TRADE ACCEPTED (read before extending this line to other files): union keeps
+# BOTH versions of an EDITED line, silently — it cannot tell a rewrite from an
+# append. That is safe here *only* because this file is contractually never
+# edited, only appended. If wiki/log.md ever becomes editable, this line must go.
+#
+# NOT covered, deliberately:
+#   · DIRECTIVES.md — append-only for entries, BUT `[ ]`→`[x]` ack flips are
+#     real edits. Union would silently keep both the flipped and unflipped line
+#     on a concurrent ack. It needs per-entry IDs that don't collide, not union.
+#   · DECISIONS.md / QUESTIONS.md / LEARNINGS.md — edited in place (questions get
+#     answered, decisions get amended). Union would duplicate those edits.
+#
+# Ordering note: union preserves each side's lines but cannot know IST order
+# across branches, so a merge can leave two entries chronologically adjacent but
+# swapped. Both survive, which is the property that matters; the timestamps
+# remain the truth.
+wiki/log.md merge=union
