@@ -374,3 +374,17 @@ The five A5 failures logged at 14:58 are FIXED and gate-verified locally: whatis
 2. move A5 off shared GitHub runners (the 64 outlier is a noisy-neighbour CPU steal, not a page defect);
 3. keep median-of-3 and accept ~50% re-runs (status quo — recommend against, for the reason above).
 **Recommend (1) now and (2) when budget allows.** Whichever you pick, the budget stays at 90.
+
+## 2026-07-17 17:31:09 IST · Q-LOG-UNION-REVISIT — union just bit us; do we go to per-entry files after all?
+**What happened:** `merge=union` (item zero, #95) duplicated a log entry **inside the PR that introduced it**, and it reached main. Fixed in #97, plus a guard that detects the signature.
+**Why my justification was weaker than I claimed.** I argued union is safe because log.md is "contractually never edited, only appended". Two things falsify that:
+1. **Corrections to log entries are normal and legitimate.** I made two today (a wrong test count). A log we may never correct is a log that carries known-wrong numbers.
+2. **A rebase replays every commit as a three-way merge.** So union does not only apply at merge time — it applies to every replayed edit during any rebase. The exposure is much wider than "two sessions merge".
+**The honest scorecard:**
+- Union DID work as intended: it silently auto-resolved genuine append-append merges twice today (#96 rebase, and the #95↔#96 sequence) — the conflicts you were hitting are gone.
+- Union ALSO silently duplicated an edited entry, and no gate could see it, because a duplicated append is not a conflict. Only the new bespoke guard catches it.
+**Options:**
+1. **Keep union + the new guard** (status quo after #97). Cheap; conflicts stay gone; the guard catches the one failure mode. Cost: a bespoke test defending a mechanism that is wrong-by-design for edits.
+2. **Per-entry files** (`wiki/log/<timestamp>-<slug>.md`) — your original alternative. Conflicts and duplication both become **structurally impossible** rather than auto-resolved-then-policed. Cost: a real migration; every reader changes (launch-evidence-gate.mjs, logger sub-agent, CLAUDE.md's crash-recovery ritual); a day's work, its own PR.
+3. Union on log.md, and never correct an entry — append a correction as a NEW entry instead. Zero cost, but it makes the log longer and correction-by-append is its own discipline nobody will remember.
+**Recommend (2) when the sprint has a gap, (1) until then** — the guard makes (1) safe enough today, and I would rather not spend a day on log plumbing while sites are the deliverable. But you called per-entry files as an option on day one and you were right: it is the only one where this class cannot happen. Your call.
