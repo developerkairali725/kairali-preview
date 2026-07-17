@@ -1,0 +1,78 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A single-page, two-door site for Arogya Shala that (1) funnels tier-2/3 chemist/retail shop owners into a WhatsApp-first enquiry for joining Kairali’s retail-branding programme and (2) lets customers verify that an Arogya Shala board at a shop is genuine. It replaces arogyashala.co.in.
+  for whom: Tier-2/3 Indian chemist and retail shop owners considering joining; customers who saw an Arogya Shala board and want to verify it is genuine.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: - Shop owners: at the primary CTA. There is no phone number, no Hindi/region-language prompt, and no preview of commercial basics. For a tier-2/3 owner who prefers a quick call or Hindi WhatsApp, this feels brochure-like and may not trigger an action.
+- Customers: at verification. There’s no instant, self-serve check (ID/QR/form). Only a WhatsApp/email promise. With no stated SLA or verified business number badge, many will not wait or may mistrust the channel.
+  they would think: - Owner (Akola chemist): “Looks polished, but no numbers, no fees, no call? Is this the real Kairali? I’ll come back later.” Likely exit without writing on WhatsApp.
+- Customer at counter: “How do I know now? I don’t want to message and wait.” Likely abandon verification.
+
+  The page is cleaner and focused vs legacy, but core conversion hinges on an unproven WhatsApp channel and a manual verification flow with no immediacy or response expectation. For this audience, the absence of a call option, Hindi prompt, and a quick-check tool blocks the stated purpose.
+
+--- MY REASONING --- sound: false
+  FLAWED: Assuming WhatsApp-first without proving channel ownership, staffing, autoresponder, or verified-business status will carry conversion alone.
+  FLAWED: Equating a manual WhatsApp/email check with a credible, immediate verification experience for customers at point-of-purchase.
+  FLAWED: Relying on ‘facts law/CI guard tests’ as protection while publishing unsourced certification/lineage claims (NABH, WHO-GMP, “unbroken since 1908”).
+  ASSUMED (never reasoned): Tier-2/3 shop owners will initiate over WhatsApp without a phone option or Hindi/Hinglish cues.
+  ASSUMED (never reasoned): Customers are willing to wait for a reply to verify a board rather than self-verify instantly.
+  ASSUMED (never reasoned): Legal pages exist or will be shipped later despite being linked in footer.
+  ASSUMED (never reasoned): That ‘The Ayurvedic Healing Village’ is accurately described as a hospital and NABH-accredited today (and that naming it as the group’s hospital is correct).
+  ASSUMED (never reasoned): That product training and usage guidance are actually offered under this programme as stated.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Footer links to Privacy/Terms/Cookies likely 404 on a one-pager (not provided).
+  REGRESSION: Removed any instant-contact options (old site had multiple contact paths; new page lacks a phone call path).
+  REGRESSION: Verification is still manual; no progress to a self-serve validator despite this being the main customer task.
+
+Quality: average | expert would respect it: false | AI-filler risk: low
+  weakest point: The core conversion channels (WhatsApp intake and authenticity verification) are promises without operational proof or a fit-for-context UX.
+
+Step — claimed: Session 2B post-merge triangulation + D-DESIGN-DIFF old-vs-new comparison (evidence backfill, merged PR #84, not DNS-live). | actual: Mid-build content freeze with unresolved channel enablement, legal, and claim-sourcing; not ready for DNS cutover. | prereqs met: false
+  ORDER VIOLATION: Core CTA channel (WhatsApp) not proven before content/design lock (no evidence of business verification, routing, or autoresponder).
+  ORDER VIOLATION: Legal links added before pages exist (Privacy/Terms/Cookies).
+  ORDER VIOLATION: Certification and accreditation claims published without attached source artifacts (WHO-GMP, NABH, 1908 ‘unbroken practice’).
+  ORDER VIOLATION: Verification service promised without an operational SOP/SLA or instrumented workflow.
+
+MISSED STEPS (6):
+  [blocking] WhatsApp channel validation and ownership (Business profile, verified badge, routing to staffed queue, autoresponder with SLA).
+     evidence: Code uses an ‘interim Priya number’ comment; no proof of WhatsApp Business verification, no ops evidence, no SLA text on page.
+  [blocking] Legal pages (Privacy, Terms, Cookie Policy).
+     evidence: Footer links exist but no files/routes were provided in the artifact; likely 404 at launch.
+  [blocking] Claim sourcing pack for certifications and accreditations.
+     evidence: WHO-GMP, NABH, ‘unbroken since 1908’, ‘clinics’, and ‘product training’ claims have no sources or links attached.
+  [major] Customer verification UX design (self-serve).
+     evidence: Only WhatsApp/email offered; no ID/QR/form validator, no response time promise; undermines ‘check it in one message’.
+  [major] Language and contact fit for tier-2/3 owners.
+     evidence: English-only microcopy, no Hindi/Hinglish cue, no click-to-call number; risk for this audience profile.
+  [minor] Live device and performance evidence (screens, Lighthouse/CLS, a11y checks).
+     evidence: No machine evidence attached for the five-device claim; no reports provided here.
+
+NEEDS FACT-CHECK (5) → run audit-perplexity.mjs:
+  - WHO-GMP-certified manufacturing (Kairali Ayurvedic Products).
+  - NABH-accredited hospital: Kairali — The Ayurvedic Healing Village, Palakkad.
+  - A family practising Ayurveda since 1908; ‘unbroken practice’.
+  - Product training and usage guidance for shop staff are included.
+  - Clinics (plural) as part of physician consultations.
+
+BLOCKING (3):
+  ✗ Primary CTA relies on an ‘interim’ WhatsApp number with no proof of ownership, verification, routing or SLA.
+  ✗ Legal links (Privacy/Terms/Cookies) present but no pages provided; likely broken at launch.
+  ✗ Unsourced certification/accreditation/lineage claims (WHO-GMP, NABH, ‘unbroken since 1908’).
+
+RECOMMENDATIONS:
+  → Lock a WhatsApp Business account owned by Kairali for this programme (green tick if possible), set autoresponder in Hindi/English, and publish an SLA (e.g., we reply within 2 business hours). Replace the interim personal number before go-live.
+  → Ship real Privacy/Terms/Cookie Policy routes now or remove links until ready. Broken legal links are a trust and compliance failure.
+  → Attach sources in-page or via a trust drawer: link to NABH registry entry, WHO-GMP certificate, and a lineage note; remove ‘unbroken’ if not provable.
+  → Add a click-to-call number and a short Hindi/Hinglish line on all CTAs (e.g., “Hindi/English — WhatsApp या कॉल करें”). This audience is phone-first.
+  → Upgrade customer verification to a self-serve flow: a form to submit shop name, pincode, and board photo, with auto-acknowledgement and a target response time; better, ship a QR/ID-based validator when the registry is ruled.
+  → If commercial details can’t be published, offer one concrete hook acceptable to compliance (e.g., ‘no franchise fee’ if true, or ‘standard retailer margins; details after qualification’). Otherwise expect low owner conversion.
+  → Prove device and performance quality: attach Lighthouse reports, accessibility checks, and five-device screenshots as evidence to pass the design gate legitimately.
+  → Sanity-check ‘hospital’ wording for AHV; if it’s a wellness hospital/ayurvedic hospital per license, name it precisely; otherwise use ‘NABH-accredited facility’ and link to proof.
+
+tokens: prompt 18559 · completion 4836 (reasoning 2688)
+EXIT_GPT=2

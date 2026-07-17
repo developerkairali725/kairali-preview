@@ -1,0 +1,79 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A rebuilt umbrella website (single-page, with JSON-LD and llms.txt) for the Kairali Ayurvedic Group’s hospitality arm, showcasing three properties (Villa Raag – Goa; Kairali — The Ayurvedic Healing Village – Palakkad; Resort Svatá Kateřina – Vysočina, CZ) and a consultancy offering for developers/investors.
+  for whom: 1) Prospective guests comparing which Kairali place to stay (villa, hospital retreat, Czech JV). 2) Hospitality developers/investors evaluating Kairali’s consultancy credibility and fit.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: - For guests: the Czech property panel is text-only, looks like an afterthought; credibility and desire drop there. The treatment door and KTAHV panel assert “NABH-accredited hospital” with no proof link. - For developers/investors: consultancy lacks concrete proof (engagement metrics, clients, deliverables, outcomes, team bios); it reads like polished positioning rather than a de-risked offer. - Legal/ownership: calling Svatá Kateřina “the group’s European joint venture” contradicts the stated ‘no ownership language’ rule; a cautious investor will notice the inconsistency and pause.
+  they would think: - A guest will like the design and find the Goa and Palakkad options clear, but may question whether the Czech tie-up is real (no image, JV claims without proof) and bounce to Google to verify. - A developer/investor will think: good taste, but where is the evidence you’ve executed for others, accreditation proofs, WHO-GMP proof, and the legal clarity on the JV? They will likely move on or request a deck rather than be moved to outreach.
+  The page is elegant and navigable, but it leans on unproven claims and omits persuasive, checkable proof for a YMYL/regulated hospitality-health context. The single-page approach can serve both audiences, but only if clinical/regulatory claims and JV framing are locked with visible proof and consultancy is substantiated.
+
+--- MY REASONING --- sound: false
+  FLAWED: Saying “no ownership language anywhere pending legal-form ruling” then repeatedly printing “the group’s European joint venture” in UI and llms.txt is self-contradictory.
+  FLAWED: Relying on internal ‘guards’ and ‘locked wiki facts’ without shipping or citing visible machine evidence in this PR assumes compliance existed rather than proving it.
+  FLAWED: Assuming a text-only European panel can carry equal weight to two rich photo panels under a ‘world-class’ bar underestimates visual proof needs for guests and credibility needs for investors.
+  ASSUMED (never reasoned): That KTAHV’s NABH accreditation can be claimed without an on-page/verifiable source link.
+  ASSUMED (never reasoned): That the ‘WHO-GMP-certified’ products claim can be printed in consultancy copy without proof.
+  ASSUMED (never reasoned): That one WhatsApp number (+91 92898 38797) is sanctioned for umbrella enquiries (no proof of ownership/consent).
+  ASSUMED (never reasoned): That JSON-LD ownership relationships are safe to assert for all properties (you avoided Katerina but asserted parent for Villa Raag and KTAHV without pointing to evidence).
+  ASSUMED (never reasoned): That privacy/terms/cookie links can ship before the pages exist.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Broken legal links: /privacy, /terms, /cookie-policy don’t exist in the artifact; the legacy had privacy-policy.aspx and terms-and-condition.aspx.
+  REGRESSION: Introduction of legally sensitive JV ownership phrasing where the thought process said to avoid it.
+  REGRESSION: Loss of immediate office address/phone (legacy footer had Delhi address and phone); for some investors this reduces legitimacy signals.
+
+Quality: average | expert would respect it: false | AI-filler risk: low
+  weakest point: Trust and legal-compliance: unproven NABH/WHO-GMP claims and contradictory JV ownership language; plus broken legal links.
+
+Step — claimed: Session 2B post-merge triangulation + D-DESIGN-DIFF old-vs-new comparison (evidence backfill; PR #86, not yet DNS-live). | actual: A merged design/dev pass with partial semantics (JSON-LD, llms.txt) but missing proof gates (legal/clinical claims, policies) and evidence backfill. | prereqs met: false
+  ORDER VIOLATION: Clinical/regulatory claim verification not evidenced before content shipped (should precede copy).
+  ORDER VIOLATION: Legal/JV framing unresolved before publishing ownership language.
+  ORDER VIOLATION: Policy pages linked before being created.
+  ORDER VIOLATION: Redirects ‘29/29 curl-verified’ claimed without artifacts/logs in PR.
+
+MISSED STEPS (7):
+  [blocking] Clinical/regulatory proof gate for NABH and WHO-GMP claims
+     evidence: sites/kairalihospitality.com/app/page.tsx: KTAHV panel and Consultancy chapter assert “NABH-accredited” and “WHO-GMP-certified” without a citation or proof link; no tests/files shown.
+  [blocking] Legal review lock for JV/ownership phrasing
+     evidence: page.tsx and llms.txt both state “the group’s European joint venture”, contradicting the stated ‘no ownership language’ rule pending ruling.
+  [blocking] Ship policy pages
+     evidence: Footer links to /privacy, /terms, /cookie-policy with no corresponding files in the artifact set.
+  [major] Evidence of banned-lexicon guard/tests
+     evidence: The text references a guard (“guard-enforced … packages/compliance; guards.test.js”), but no tests or CI output included with PR #86 here.
+  [major] Investor/developer-proof content (case studies, metrics, references)
+     evidence: Consultancy section is generic (Concept/Build/Operate) without verifiable case outputs or references.
+  [major] Image rights clearance proof for all used images; decision on Katerina panel parity
+     evidence: Katerina panel admits a library gap; no rights-clearance manifest attached for the other images in this PR.
+  [minor] Redirects validation artifact
+     evidence: Claimed 29/29 single-hop redirects; no list or curl log included.
+
+NEEDS FACT-CHECK (5) → run audit-perplexity.mjs:
+  - “the group’s NABH-accredited hospital”
+  - “WHO-GMP-certified Ayurvedic product range”
+  - “the group’s European joint venture … with a purpose-built Ayurvedic Pavilion”
+  - “A family practising Ayurveda since 1908 — years, unbroken”
+  - WhatsApp +91 92898 38797 as umbrella contact
+
+BLOCKING (3):
+  ✗ Contradiction between stated rule (‘no ownership language pending ruling’) and visible copy repeatedly saying “the group’s European joint venture” (page.tsx Panels and llms.txt summary).
+  ✗ Unsourced clinical/regulatory claims: “NABH-accredited hospital” and “WHO-GMP-certified” (page.tsx; llms.txt).
+  ✗ Broken legal links to /privacy, /terms, /cookie-policy (no pages in artifact).
+
+RECOMMENDATIONS:
+  → Remove or neutralize all JV ownership language sitewide until the legal-form ruling is issued; e.g., “Resort Svatá Kateřina — Kairali Ayurveda operated pavilion with our partners in Vysočina” only if that phrasing is legally approved. Update llms.txt accordingly.
+  → Gate all clinical/regulatory assertions behind visible proof: add a small trust row with NABH certificate link/ID and WHO-GMP certificate link/scope; mirror the links in llms.txt. If proof not available, remove the claims.
+  → Do not ship broken policy links. Create minimal /privacy, /terms, /cookie-policy pages or hide the links until ready.
+  → Add a verifiable ‘Proof’ section for consultancy: 2–3 mini case notes (objective, scope, what Kairali delivered, measurable outcome, dates), references/quotes, and a link to download a capabilities deck.
+  → Fix the Svatá Kateřina panel parity: secure one licensed hero from the Ayurvedic Pavilion or partner-provided official media and credit it, or clearly state “image courtesy” if permitted. If no image, visually differentiate the card as intentional editorial instead of a missing asset, and add a partner-logo lockup.
+  → Publish the redirect map and a curl log (or CI artifact) proving 1-hop status for the legacy URLs most used by humans and crawlers; attach to the PR.
+  → Ship an Accessibility/Performance check: include lighthouse and axe reports for the page in the PR to evidence the ‘world-class’ target.
+  → Expand JSON-LD to include a neutral ‘Organization -> hasPart -> LodgingBusiness/Hospital’ model with clear exclusion of JV ownership; consider adding Svatá Kateřina as a Place with an ‘affiliation’ or ‘brand’ relationship if allowed by legal.
+  → Confirm the WhatsApp number ownership, add a phone number and office address to the footer for investor trust, and align with schema.org ContactPoint.
+  → Replace “unbroken” lineage phrasing with a sourced statement or link to a heritage page that documents the 1908 claim.
+
+tokens: prompt 26731 · completion 5734 (reasoning 3264)
+EXIT_GPT=2

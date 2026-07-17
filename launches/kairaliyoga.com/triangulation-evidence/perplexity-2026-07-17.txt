@@ -1,0 +1,106 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+Most core institutional facts — NABH accreditation, Kerala location, Clinical Establishment certificate, Green Leaf certification, and group founding in 1989 — are supported by external sources. However, the artifact makes many detailed operational and health-adjacent claims about programme structure (daily therapies, daily physician check-ins, private sunrise and evening mindfulness sessions, strict alcohol- and smoke-free campus, weekly workshops and farm tours, organic-only ingredients, specific training curriculum, five points of yoga framework, daily joint review by doctors and teachers) that cannot be verified from any public authoritative documentation.
+For a YMYL-facing site, several of these are **misleading**: they package marketing or internal policy aspirations as guaranteed clinical features, particularly around daily therapies and integrated medical-yoga review, the five points of yoga framing, and the claimed organic sourcing of all meals. The precise lineage maths around “since 1908” further overstates historical certainty without evidence.
+Because there are multiple MISLEADING and many UNVERIFIABLE claims, especially in health and programme-structure areas critical to wellness travellers choosing a residential programme, this artifact does **not** meet the required fact-grounding standard.
+
+claims checked: 31 | problems: 25
+
+[UNVERIFIABLE] (risk:low) Palakkad Railway Station is 25 km from the Healing Village, Coimbatore Airport 75 km, and Cochin or Calicut airports 125 km.
+   evidence: No official Kairali page or transport page giving exact distances was found; distances from maps appear roughly consistent with ~25 km to Palakkad Jn and ~75–80 km to Coimbatore Airport, and ~120–130 km to Kochi and Calicut airports, but no authoritative published figures exist.
+
+[UNVERIFIABLE] (risk:low) Transfers by AC vehicle are arranged on request when your admission is confirmed.
+   evidence: The Healing Village FAQ and booking pages generally describe arranged transfers but I did not find an explicit statement matching “AC vehicle” and “on request when admission is confirmed.”
+
+[MISLEADING] (risk:medium) Kairali’s yoga and meditation programmes are residential and run at Kairali’s NABH-accredited Ayurvedic hospital.
+   evidence: The official AHV FAQ states that at Kairali, “Yoga, Ayurveda, Meditation and Indian Wellness programs are practiced” in a one-stop wellness destination.[4] NABH listing confirms the centre is an AYUSH hospital.[1] However, no official source explicitly uses the phrase “residential yoga and meditation programmes” or describes them as hospital admissions; that framing is internal positioning.
+
+[UNVERIFIABLE] (HEALTH risk:medium) Each yoga programme includes a private sunrise yoga session and a private guided mindfulness session each evening.
+   evidence: The RATES_RECKONER.md and official programme descriptions are not available via web search; the public AHV site and FAQs describe yoga and meditation offerings broadly but do not specify daily private sunrise yoga plus private evening mindfulness as a fixed inclusion.
+
+[UNVERIFIABLE] (HEALTH risk:medium) Each programme includes one Ayurvedic therapy every day and a physician’s daily check-in.
+   evidence: Public content for AHV programmes (e.g., generic wellness packages) mention physician consultations and treatments, but I did not find a source guaranteeing one therapy *every day* plus *daily* physician check-ins for all yoga programmes.[4]
+
+[UNVERIFIABLE] (risk:low) Programme 1 English name: “Kairali’s Yoga & Meditation Package”; Sanskrit name: Dhyana-Yoga Shibiram / Dhyāna-Yoga Shibiram; minimum duration 7 nights.
+   evidence: No public brochure or rate card listing this exact English-Sanskrit pairing and minimum stay is accessible via web search; these appear internal to RATES_RECKONER.md, which is not externally verifiable.
+
+[UNVERIFIABLE] (risk:low) Programme 2 English name: “Digestive Wellness & Gut Health Yoga Therapy”; Sanskrit name: Agni Dipanam Yoga Chikitsa / Agni Dīpanam Yoga Chikitsa; minimum duration 14 nights.
+   evidence: Again, no external programme sheet or brochure listing this exact name set and minimum duration could be found online; the internal reckoner is not publicly verifiable.
+
+[UNVERIFIABLE] (risk:low) Programme 3 English name: “Yoga based Stress & Energy Reset Program”; Sanskrit name: Prana Samya Yoga Chikitsa / Prāna Sāmya Yoga Chikitsa; minimum duration 7 nights.
+   evidence: No public listing of this programme with those exact names and duration is available; depends solely on internal RATES_RECKONER.md.
+
+[UNVERIFIABLE] (risk:low) The Healing Village publishes no batch calendar — dates are agreed when the visitor enquires, against villa and physician availability.
+   evidence: The official AHV booking interface allows guests to choose dates but I did not find an authoritative statement that no batch calendar exists for yoga programmes; likely true operationally but not verifiable from external sources.
+
+[MISLEADING] (HEALTH risk:medium) Guests receive an Ayurvedic therapy each day of their stay, herbal steam baths included — prescribed by the physician.
+   evidence: Package descriptions on external travel portals (e.g., SpaDreams) show 1 treatment per day on some packages.[8] However, that is not necessarily universal across all yoga programmes, and I found no clinical or official statement committing to daily therapy plus herbal steam for every yoga guest.
+
+[MISLEADING] (HEALTH risk:low) Three wholesome vegetarian meals a day are cooked from organic ingredients at the Ayurvedic Healing Village.
+   evidence: Marketing content consistently claims vegetarian food and an organic farm, but there is no independent certification or detailed sourcing proving that *all* ingredients are organic for *every* meal.[4][8]
+
+[UNVERIFIABLE] (HEALTH risk:low) Guests receive in-room mineral water and herbal detox water throughout the day.
+   evidence: Descriptions on travel sites mention mineral water and herbal teas, but I did not find a formal commitment to “herbal detox water” available in-room all day for all programmes.[8]
+
+[UNVERIFIABLE] (risk:low) Weekly Ayurveda and yoga workshops, Ayurvedic cooking classes, organic farm tours, village walks and nature trails are offered.
+   evidence: External describing AHV mention yoga, Ayurveda, village setting, and sometimes cooking demos or activities, but not a specific weekly schedule with all listed activities bundled.[4][8]
+
+[UNVERIFIABLE] (risk:low) Check-in from 12 noon, check-out by 10 AM.
+   evidence: No external policy page or terms with these exact times could be located; such operational details are usually on booking confirmations, not public pages.
+
+[UNVERIFIABLE] (risk:low) The campus is strictly alcohol-free and smoke-free.
+   evidence: Wellness resort descriptions often mention alcohol-free policies, and some AHV content notes no alcohol and vegetarian food, but I did not find an explicit statement covering both alcohol- and smoke-free campus together.[4][8]
+
+[UNVERIFIABLE] (HEALTH risk:medium) Internal herbal medicines and additional treatment happen only on the physician’s prescription; nothing is upsold on a menu.
+   evidence: This is consistent with NABH and clinical establishment norms, but I found no explicit policy statement from AHV confirming no upselling or menu-based internal medicines.
+
+[UNVERIFIABLE] (HEALTH risk:medium) Kairali’s training programmes teach Ayurvedic therapy with daily theory classes with Ayurvedic doctors and hands-on practice with senior therapists, certified by the Kairali Institute of Panchakarma Therapies.
+   evidence: Search results show Ayurvedic training at Kairali but not a detailed curriculum specifying daily theory classes and hands-on practice, nor do they mention a formal “Kairali Institute of Panchakarma Therapies” as a certifying body in public documentation.
+
+[UNVERIFIABLE] (risk:low) The itemised Ayurveda training offers (1 Day Workshop, 3 Day Certificate Program, 5 Day Intensive Program, 10 Days Advanced Program, 20 Days Advanced Consultant Program) with durations and short notes reflect real, existing training courses.
+   evidence: No external page listing exactly these five training course names and durations was found; they appear derived from an internal reckoner or brochure, not publicly verifiable.
+
+[MISLEADING] (HEALTH risk:medium) Teaching at Kairali is built around the five points of yoga — postures, breathing, relaxation, meditation and diet — held in private sessions.
+   evidence: The “five points of yoga” is a Sivananda framework, but I did not find an official statement that Kairali explicitly bases its teaching on this framework or that all sessions are private rather than group.[4]
+
+[UNVERIFIABLE] (HEALTH risk:medium) Beside the teachers stand the hospital’s Ayurvedic doctors, who read practice and treatment together and compare notes about guests every day.
+   evidence: NABH-accredited AYUSH hospitals involve physicians in treatment plans, but there is no external documentation describing daily joint review of yoga practice and medical treatment for wellness travellers.[1][6]
+
+[UNVERIFIABLE] (risk:low) Testimonials shown are entries published on the previous kairaliyoga.com, carried over verbatim.
+   evidence: I do not have access to the legacy kairaliyoga.com testimonial page to confirm provenance; no independent archive surfaced in search.
+
+[MISLEADING] (risk:low) Kairali Ayurvedic Group was founded in 1989 by a family practising Ayurveda since 1908.
+   evidence: An external profile states Kairali - The Ayurvedic Healing Village is part of the four-generation Kairali Ayurvedic Group (founded 1989).[6] However, the “since 1908” family practice date is not directly supported by that source and appears in marketing narratives rather than independently verifiable historical records.
+
+[MISLEADING] (risk:low) The group has {GROUP_YEARS} years of history and {LINEAGE_YEARS} years of unbroken lineage, computed as current year minus 1989 and 1908 respectively.
+   evidence: Given the founding year claim 1989 and lineage start 1908 in the artifact, the arithmetic is correct; but the underlying 1908 claim itself lacks external corroboration.[6]
+
+[UNVERIFIABLE] (risk:low) WhatsApp contact number +91 92898 38797 is an official Kairali contact channel.
+   evidence: Official pages list phone contact as +91-9555156156 and email addresses, but not this WhatsApp number.[2][7][9]
+
+[UNVERIFIABLE] (risk:low) Email contact info@kairali.com is an official Kairali contact address.
+   evidence: The legal notice for AHV lists a different email format (info@kairali.com is not shown there, but similar addresses exist). I could not find a public page explicitly listing info@kairali.com as a contact; likely valid group-wide but not verifiable from given sources.[2][7]
+
+⚠ FABRICATED / MISREPRESENTED SOURCES:
+  ✗ The artifact implicitly treats internal RATES_RECKONER.md, internal training-course docs, and legacy kairaliyoga.com testimonials as if they were externally verifiable sources; for this audit they are not evidence and cannot support factual claims.
+  ✗ The lineage statement “family practising Ayurveda since 1908” is presented with computed years, giving it an air of precise history that is not backed by independent historical or institutional records.
+
+DATA FAULTS:
+  ✗ A large number of operational and programme-structure claims (daily therapies, daily physician check-ins, private sunrise yoga, private evening mindfulness, weekly activities, exact check-in/out times, no batch calendar, AC transfers) rely solely on internal documents and are not corroborated by any external authoritative source.
+  ✗ Founding-year lineage math is correct given 1908 and 1989, but the 1908 start date is a marketing narrative without independent verification; treating it as historical fact is a data fault for an evidence-backed encyclopedia.
+  ✗ Exact package names, Sanskrit titles and minimum durations for the three yoga programmes and five training courses cannot be validated externally; if the internal reckoner were wrong or outdated, these would be factually wrong with no external guard rails.
+  ✗ WhatsApp number and email address used on the page are not visible on any official external page in search results; they may be valid but cannot be treated as verified facts.
+  ✗ Transport distances (25 km, 75 km, 125 km) look plausible from mapping tools but have no official source; they should be presented as approximate, not precise, if retained.
+
+SOURCES (9):
+  - https://portal.nabh.co/Documents/AccreditedList/AYUSH%20Hospitals/AH-2024-0250.pdf
+  - https://ayurvedichealingvillage.com/legal-notice/
+  - https://travelworldonline.in/kairali-the-ayurvedic-healing-village-receives-clinical-establishment-permanent-certificate-valid-through-2030/
+  - https://ayurvedichealingvillage.com/faqs/how-is-kairali-the-ayurvedic-healing-village-different-from-all-other-wellness-provider/
+  - https://www.healingguide.org/hotels/kairali-ayurveda-india/
+  - https://healthspaneconomy.com/atlas/entity/kairali-ayurvedic-healing-village/
+  - https://www.kairali.com/detail.aspx?page=nabh-certification-for-best-ayurvedic-panchakarma-clinic-to-kairali-ayurvedic-center-in-2017
+  - https://www.spadreams.com/hotel/kairali-the-ayurvedic-healing-village-kodumbupalakkad-south-west-india-kerala-732/
+  - https://kairaliorganic.com/kairali-ayurvedic-group.aspx
+EXIT_PPLX=2

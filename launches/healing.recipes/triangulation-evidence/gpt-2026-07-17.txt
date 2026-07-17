@@ -1,0 +1,75 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A new healing.recipes website pivoted from a 2017 event microsite into the official home for Gita Ramesh’s four books, with a signature “shelf” showcasing all titles in true chronology (2000–2026), and routing visitors to retailers, press, and the author — no prices, no invented event details.
+  for whom: Food-and-wellness readers, press, and prospective buyers discovering Gita Ramesh’s Ayurvedic cookbooks around the 2026 launch.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: On the homepage (sites/healing.recipes/app/page.tsx): 1) precise publication dates are asserted without evidence; 2) the award claim relies on an unseen data link; 3) “All Published by Roli Books” may be incorrect historically; 4) CTAs route to /books/:slug pages that aren’t provided here — the core ‘where to buy’ flow is unproven. For press, there’s no visible press kit or media assets; only a generic email in the launch placeholder.
+  they would think: Buyers: “Looks clean and credible, but I can’t actually see where to buy unless those book pages work — and why are there such precise dates?” Press: “Where’s the press kit, hi‑res covers, and award proof link? I don’t have enough to file a story.” Skeptical readers: “Bold claims (Gourmand ‘Best in the World’, WHO‑GMP, NABH, ‘since 1908’) — where’s the proof?”
+  The copy presents authority and a neat shelf device, but the site’s primary job (truthfully list four books and route to retailers/press/author) is only half‑done on the evidence shown. Several high‑risk factual claims are made without surfaced proof, which is a blocking issue on a YMYL-adjacent brand site.
+
+--- MY REASONING --- sound: false
+  FLAWED: Assuming the internal brief/books.json equals ‘evidence’ visible to users; it isn’t. Claims need surfaced proof or are reduced/removed.
+  FLAWED: Assuming all four books were published by Roli Books (‘All Published by Roli Books’) without showing verification; that’s a single‑point failure if one wasn’t.
+  FLAWED: Adding day‑precision market dates for Harmony (‘14 July 2026’, ‘28 July 2026’) while simultaneously enforcing ‘no specific launch event details’ — publication dates also require proof and are just as risky if wrong.
+  FLAWED: Linking core CTAs to /books/:slug without demonstrating those pages exist and contain retailer links is an untested funnel.
+  ASSUMED (never reasoned): That booksData.pressLinks and buy arrays exist and are correct; not shown.
+  ASSUMED (never reasoned): That the 2000 title is Roli Books; not verified here.
+  ASSUMED (never reasoned): That the award claim is accurately scoped to only one book by data hygiene; not proven.
+  ASSUMED (never reasoned): That the ‘shelf’ visual treatment (landscape book shorter, bottom‑aligned) is implemented and readable; CSS not shown.
+  ASSUMED (never reasoned): That certifications (NABH, WHO‑GMP) and ‘since 1908’ lineage are safe to assert without inline citations.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Core transaction path unproven: the new home links to book pages we haven’t seen — if missing, it’s a regression versus any page that previously had working CTAs.
+  REGRESSION: ‘Healing Recipes’ used to denote a 2017 chef retreat; the pivot drops all historical context. If a user searched for that event, there’s no archive or explainer (not necessarily wrong, but it changes expectations).
+
+Quality: average | expert would respect it: false | AI-filler risk: low
+  weakest point: Unverified precise claims (awards, dates, certifications, ‘since 1908’) and an unproven buy funnel — both are blockers for trust and purpose.
+
+Step — claimed: Session 2B post-merge triangulation + D-DESIGN-DIFF (old vs new comparison, evidence backfill pending) | actual: Design/content draft with partial implementation; fact backfill and funnel proof not demonstrated. | prereqs met: false
+  ORDER VIOLATION: Facts claimed as ‘two-source rule’ without providing or linking machine-verifiable evidence to this audit. That gate should precede public copy.
+  ORDER VIOLATION: Funnel routing to retailers/press assumed without surfacing the book detail pages; buy-path test belongs before declaring the home ‘ready’.
+
+MISSED STEPS (5):
+  [blocking] Fact backfill with machine evidence (two-source rule) for every factual claim on the pages.
+     evidence: Comments say ‘Every fact… traces to docs/site-briefs/healing-recipes-books.md’, but that file and the sources are not provided. Multiple claims (awards, dates, publisher, certifications, 1908 lineage) lack surfaced citations.
+  [blocking] Buy-path verification: ensure /books/:slug pages exist with retailer links (and no prices).
+     evidence: Home CTAs point to /books/harmony and /books/:slug, but no such pages were included. The KPI ‘buy click’ is unproven.
+  [major] Press routing: provide press kit or at minimum a press page with high-res covers, author bio, award proof, and contact.
+     evidence: Only a generic email in the launch placeholder; no press assets or page.
+  [major] Claim hygiene check for publisher-line and certifications.
+     evidence: ‘All Published by Roli Books’ overline (app/page.tsx) may be inaccurate historically. Author page asserts NABH, WHO‑GMP certifications without proof.
+  [minor] Accessibility and semantics QA of the shelf device.
+     evidence: No CSS or ARIA/keyboard behaviour evidence that the landscape/shorter visual is both honest and readable on mobile and high-contrast modes.
+
+NEEDS FACT-CHECK (5) → run audit-perplexity.mjs:
+  - “Best in the World at the Gourmand World Cookbook Awards 2023.” (app/page.tsx hero lede; award band)
+  - “Out now in India; international edition since 14 July 2026, US trade edition 28 July 2026.” (app/page.tsx Featured section)
+  - “All Published by Roli Books” (app/page.tsx shelf overline)
+  - “from a family practising Ayurveda since 1908” (app/page.tsx lede; author page)
+  - “NABH-accredited Ayurvedic hospital, WHO-GMP-certified medicine manufacturing” (author/page.tsx)
+
+BLOCKING (6):
+  ✗ No surfaced machine evidence for multiple precise claims (awards, dates, certifications, 1908 lineage).
+  ✗ Core CTA routes to /books/:slug pages that are not included here; buy-path is unproven.
+  ✗ Potentially false blanket statement ‘All Published by Roli Books’.
+  ✗ Press needs are underserved: no press kit/assets/awards proof page; only a generic email.
+  ✗ Day-precision market dates on Harmony without visible source; violates the spirit of ‘no fabricated details’.
+  ✗ Reliance on books.json for key links (pressLinks, buy) without showing their existence or validity.
+
+RECOMMENDATIONS:
+  → Produce and attach the evidence pack: for each factual line on both pages, cite the two sources (publisher pages, ISBN records, award lists, accreditation registries). Do not ship without it.
+  → Ship at least the Harmony book detail page now, with retailer buttons (no prices), and smoke-test all outbound links. If book pages aren’t ready, add direct retailer buttons on the home ‘Featured’ block as a stopgap.
+  → Replace ‘All Published by Roli Books’ with a per-book publisher line on the shelf; or verify all four first. Safer: ‘Published by Roli Books’ only where true.
+  → Remove or soften day-precision market dates until verified; e.g., ‘International edition July 2026; US trade late July 2026’ with source once confirmed.
+  → Create a simple Press page: award proof links, downloadable covers, 200-word author bio, contact email. Link it from the award band and footer.
+  → For the award band, surface the corroborating links (Gourmand winners page + The Hindu). Avoid relying on hidden data structures.
+  → Audit the author-page certification claims; add citations or remove them. Certifications are not evergreen.
+  → Validate JSON-LD against schema.org (Offer typically expects price/availability). If keeping ‘offers’ without price, consider using ‘potentialAction’ BuyAction or remove Offers to avoid Search Console errors.
+  → Confirm the shelf device is visually honest: bottom-aligned, 2000 landscape visibly shorter; capture screenshots across breakpoints as evidence.
+
+tokens: prompt 18401 · completion 5258 (reasoning 2944)
+EXIT_GPT=2

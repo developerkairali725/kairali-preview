@@ -1,0 +1,56 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+Several core programme and group facts in the new Arogya Shala page and llms.txt are broadly consistent with Kairali’s own legacy content (e.g., founders and 1989 establishment, Arogya Shala as a Kairali initiative, NABH-accredited Healing Village). However, multiple important claims are either extrapolated from internal decisions (tier-2/3 focus, B2B branding framing, “retail-only” consultation rule, counter-verification via a specific WhatsApp number) or rely solely on brand self-description for compliance-sensitive attributes (WHO-GMP manufacturing, unbroken family practice since 1908) without external corroboration. For a trust-focused one-pager targeting chemists and customers, treating these as fully established facts rather than clearly labelled programme policy or brand claims is misleading. The WhatsApp verification number in particular is completely unverified in public sources and should not be published as a fact without operational confirmation. Overall, the artifact contains several MISLEADING and UNVERIFIABLE claims that must be corrected or caveated before it can safely serve as a retail-trust document.
+
+claims checked: 11 | problems: 8
+
+[MISLEADING] (risk:low) Kairali Ayurvedic Group has practised Ayurveda for LINEAGE_YEARS years, with lineage starting in 1908
+   evidence: Kairali’s official sites state that Kairali Ayurvedic Group was established in 1989 and refer to the family’s Ayurvedic heritage dating back to 1908, but this is presented as brand narrative and is not corroborated by independent registries or historical records.[1][5]
+   correction: It is supported that the Kairali Ayurvedic Group traces its Ayurvedic lineage to 1908, but the exact phrasing “a family practising Ayurveda since 1908” and “unbroken practice in the same family” is based on Kairali’s own branding rather than independent verification. Public materials state that Kairali Ayurvedic Group was formally established in 1989, and refer to a family Ayurvedic tradition from 1908, but do not independently document unbroken practice year-by-year.
+
+[MISLEADING] (risk:low) Arogya Shala is Kairali’s retail-branding programme for chemists and retail outlets in tier-2 and tier-3 cities
+   evidence: Legacy ArogyaShala pages describe Arogya Shala as an endeavour of Kairali Ayurvedic Products to make Ayurvedic medicines and products available at customers’ doorstep and as a place where the complete range of Kairali Ayurvedic Products can be found.[2][3] They do not mention tier-2/3 targeting or the term “retail-branding programme.”
+   correction: Arogya Shala is described in Kairali’s own materials as an initiative of Kairali Ayurvedic Products to make its Ayurvedic products and procedures available to the masses and as a place to find the complete range of Kairali Ayurvedic Products.[2][3] However, the specific positioning as a structured “retail-branding programme for chemists and retail outlets in tier-2 and tier-3 cities” is an internal strategic definition and is not explicitly stated in public-facing legacy content. It should be presented as the current programme definition, not as a historically documented fact.
+
+[MISLEADING] (risk:medium) Products supplied by Kairali Ayurvedic Products come from WHO-GMP-certified manufacturing
+   evidence: Kairali’s own product and corporate pages describe their manufacturing as WHO-GMP-certified, but no third-party registry or certificate details are surfaced in general web search.[5]
+   correction: Kairali publicly claims WHO-GMP certification for its manufacturing arm (Kairali Ayurvedic Products), and this is widely repeated in its brand communications. However, independent verification (e.g., WHO or regulator-maintained GMP certificate databases) is not readily accessible via public web search, so the certification detail should be clearly attributed to Kairali rather than presented as an independently established fact.
+
+[UNVERIFIABLE] (HEALTH risk:medium) Arogya Shala counters retail Kairali products only; consultation and treatment belong with physicians at Kairali’s hospital and clinics, never at a retail counter
+   evidence: Legacy pages describe Arogya Shala as making procedures, cures and medicines available, without clearly distinguishing retail vs clinical services.[2][3] No independent sources define Arogya Shala as strictly retail-only.
+   correction: Legacy ArogyaShala content positions Arogya Shala as a place where Kairali Ayurvedic procedures, medicines, and products are made available to the masses, and mentions Ayurvedic cures and medicines.[2][3] It does not clearly separate retail-only activity from consultation or treatments. The new page’s explicit statement that consultation and treatment belong with physicians, not counters, is a policy decision and a safety/compliance clarification, not a fact that can be verified from past public content. It should therefore be framed as current programme policy rather than historical description.
+
+[UNVERIFIABLE] (risk:medium) Every genuine Arogya Shala counter is authorised by Kairali and can be verified by contacting info@kairali.com or WhatsApp +91 92898 38797
+   evidence: The legacy ArogyaShala site lists info@kairali.com as a contact email.[0] No public source mentions a counter-verification workflow or the specific WhatsApp number used here.
+   correction: It is reasonable and internally coherent that Kairali would authorise its branded counters and allow verification via its corporate email. However, no public documentation currently confirms a formal verification service for Arogya Shala counters via info@kairali.com, and the specific WhatsApp number +91 92898 38797 is an internal decision not visible in public sources. This should be presented as current contact/verification policy, not as a third-party-verified fact, and the WhatsApp number in particular must be confirmed operationally before publishing.
+
+[MISLEADING] (risk:low) Programme: Kairali branding for independent chemist shops and retail counters (B2B/trade)
+   evidence: Legacy materials call Arogya Shala an attempt to make procedures, products and medicines available and a place with the complete range of Kairali Ayurvedic Products, but do not use B2B/trade language.[2][3]
+   correction: The description of Arogya Shala as a B2B/trade branding programme for independent chemists and retail counters is consistent with how such initiatives typically operate and aligns with Kairali’s legacy statement that Arogya Shala is a place to find the complete range of Kairali products.[2] However, the exact formulation is not present in public-facing materials and represents an internal programme framing rather than an externally documented fact.
+
+[MISLEADING] (HEALTH risk:medium) Arogya Shala is an endeavour/initiative of Kairali Ayurvedic Products to make Ayurvedic cures, medicines, and products available to all / at customers’ doorstep
+   evidence: The existing ‘Why Arogyashala’ page explicitly states: “ArogyaShala is an endeavour of the Kairali Ayurvedic Products to make this amazing healing system and the Kairali Ayurvedic medicines and products available at your doorstep… ArogyaShala is an initiative by Kairali Ayurvedic Products to make Ayurvedic cures and medicines available to all.”[3]
+   correction: This claim, present in legacy content, is supported as Kairali’s own description of Arogya Shala. It should be clearly attributed to Kairali in any reuse, and the word “cures” should be avoided or caveated to prevent implying guaranteed treatment outcomes.
+
+[MISLEADING] (risk:medium) Arogya Shala is the place where you can find the complete range of Kairali Ayurvedic Products
+   evidence: Kairali’s business-opportunities page for Arogya Shala states: “Arogya Shala is the place where you can find the complete range of Kairali Ayurvedic Products.”[2]
+   correction: Legacy material does state that Arogya Shala is a place to find the complete range of Kairali Ayurvedic Products. However, without up-to-date outlet information, promising the “complete range” at every counter may overstate availability; it should be qualified (e.g., counters typically carry a broad range of Kairali products) unless current SKU coverage is confirmed for all outlets.
+
+⚠ FABRICATED / MISREPRESENTED SOURCES:
+  ✗ No explicit external study, registry, or certificate sources are cited in the artifact, so there are no fabricated bibliographic references. The risk lies instead in treating brand-origin claims (WHO-GMP, NABH, lineage) as if independently verified without citing the underlying accreditation documents.
+
+DATA FAULTS:
+  ✗ Use of the WhatsApp number +91 92898 38797 is not grounded in any external source; it appears to be an internal provisional number and may not be operational or officially registered as a Kairali contact.
+  ✗ The WHO-GMP certification claim for Kairali Ayurvedic Products is treated as a hard fact without linking to or citing an actual certificate or regulator listing; reliance purely on brand self-description is a data provenance fault for a compliance-sensitive attribute.
+  ✗ The ‘family practising Ayurveda since 1908’ and ‘unbroken practice’ framing is treated as historically established, but no independent historical or regulatory documentation has been surfaced to verify this beyond brand narrative.
+
+SOURCES (7):
+  - https://www.arogyashala.co.in/company-profile.aspx
+  - https://kappl.co.in/business-opportunities-arogya-shala.aspx
+  - https://www.arogyashala.co.in/why-arogyashala.aspx
+  - https://www.scribd.com/document/859580388/BM-Unit-2-Final
+  - https://kairaliorganic.com/kairali-ayurvedic-group.aspx
+  - https://www.youtube.com/watch?v=p4B30v14Bfk
+  - https://www.youtube.com/watch?v=umBQmmPnOXI
+EXIT_PPLX=2

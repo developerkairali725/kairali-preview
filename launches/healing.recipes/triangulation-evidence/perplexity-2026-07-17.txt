@@ -1,0 +1,142 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+This artifact mixes one genuinely well-supported external fact — the 2023 Gourmand “Best in the World” award for *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation* at Umeå, Sweden — with a large number of internal, unverified or future-planned details that are presented as established bibliographic and corporate facts.[1]
+
+Crucially, the existence, exact titles, publishers, years and page counts of three of the four books (and of Harmony in particular) are not supported by any external bibliographic source in this review; neither are the precise 1989/1999 opening dates for Kairali centres, the “since 1908” family practice claim, or the NABH/WHO-GMP accreditation statements. Those may well be true, but they cannot be published as facts without independent verification and/or explicit attribution to Kairali.
+
+For a public-facing launch site aimed at journalists and discerning readers, this is not acceptable: it risks propagating internal planning assumptions and marketing lines as if they were independently-verified reality. The Gourmand award itself is solid; almost everything else that carries a number or a regulatory/historical claim needs either external sourcing or softening/attribution before publication.
+
+claims checked: 20 | problems: 15
+
+[MISLEADING] (risk:medium) Four books by Gita Ramesh — co-founder and Joint Managing Director of the Kairali Ayurvedic Group, from a family practising Ayurveda since 1908 — including the cookbook named Best in the World at the Gourmand World Cookbook Awards 2023.
+   evidence: The Hindu explicitly states that Gita Ramesh’s book *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation* won the “Best in the World” Gourmand World Cookbook Award 2023 at Umeå Food in Sweden.[1] I was not given external sources in the search results for her exact job title, number of books, or the 1908 family-practising-Ayurveda claim; those are widely used in Kairali’s own materials but not independently corroborated in this result set.
+   correction: Parts of this compound claim are supported; others are currently unverifiable from external sources and need softening or sourcing.
+
+Supported/likely:
+- She co-founded Kairali Ayurvedic Group with K.V. Ramesh; this is widely stated in Kairali’s own materials and secondary profiles, though not in the search snippets provided here.
+- She is Joint Managing Director of Kairali Ayurvedic Group: likewise consistently claimed in Kairali’s own communications.
+- Her book *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation* won a Gourmand World Cookbook Award 2023 at Umeå, Sweden; The Hindu explicitly reports this.[1]
+
+Unverifiable/needs caveat:
+- “Four books” and their exact identities, publication years and page counts are not verifiable from the snippets given; they need to match external catalog data (e.g., publisher catalogues, ISBN registries) before being asserted as fact.
+- “From a family practising Ayurveda since 1908” is a standard Kairali brand line but I was not given an independent external source to confirm the specific year 1908; treat this as a corporate-origin claim, not a historically verified one.
+
+I would split this sentence and rephrase the lineage part with attribution (e.g., “from a family that, according to Kairali, has been practising Ayurveda since 1908”) unless you can supply an independent historical source.
+
+[UNVERIFIABLE] (risk:medium) Harmony: Essential Ayurveda for All · Roli Books · March 2026 (as a published hardback).
+   evidence: No result among the provided search snippets mentions a book titled *Harmony: Essential Ayurveda for All*, nor any 2026 title by Gita Ramesh, nor any Roli Books listing or ISBN data.[1][2][3][4] For a genuine trade hardback releasing in March 2026, at least one third-party listing (publisher, distributor, retailer, library) would normally exist; its absence in the snippets supplied makes the exact details currently unverifiable.
+   correction: This is a *future/very recent* title with no corroboration in the given search results; all specific bibliographic details should be clearly marked as provisional until an external publisher or catalog listing is available.
+
+At minimum, remove the specific month (“March 2026”) and treat Harmony as an announced forthcoming title from Roli Books unless you can cite a public Roli/ISBN listing confirming:
+- exact title string
+- publisher (Roli Books)
+- publication date (month/year)
+- format and page count.
+
+For launch copy, you can say “Harmony, a forthcoming hardback from Roli Books” without dating it to March 2026 until externally verifiable.
+
+[UNVERIFIABLE] (risk:low) 2000 — 2026 · All Published by Roli Books (i.e., all four books are published by Roli Books, and the series runs from 2000 to 2026).
+   evidence: The provided search results do not contain any bibliographic data for Gita Ramesh’s earlier titles or Harmony.[1][2][3][4] Without catalog/ISBN confirmation, we cannot verify that every one of the four books is from Roli Books or that the series starts exactly in 2000 and ends in 2026.
+   correction: Do not state “All Published by Roli Books” or lock the span “2000 — 2026” as fact until each book’s publisher and year are independently checked against ISBN or publisher records.
+
+What is currently supportable based on typical catalog data (outside the snippets provided) is that at least some of Gita Ramesh’s cookery/ayurveda titles have been published by Roli Books; however, asserting that *all four* books, including Harmony, are by Roli and that the series necessarily spans exactly 2000–2026 overstates what is verifiable.
+
+Safer phrasing: “A series of books published with Roli Books, beginning in 2000” unless you have confirmed publisher-of-record for each ISBN.
+
+[UNVERIFIABLE] (risk:low) One shelf, {currentYear - 2000} years of kitchen wisdom (implicitly: the series has been in publication for that many years, starting in 2000).
+   evidence: No search snippet provided includes a publication date for *Ayurvedic Herbal Massage* or any of the other Gita Ramesh titles.[1][2][3][4] Without that, a 2000 start-date for the series is not yet externally verified in this review pass.
+   correction: If *Ayurvedic Herbal Massage* (or whichever book is first in the series) is independently verified as first published in 2000, then the “since 2000” framing is reasonable; however the rolling arithmetic (“26 years of kitchen wisdom” etc.) implies an unbroken series starting exactly that year and may mislead if any earlier editions or other works exist.
+
+Given the stakes and the marketing nature, I would keep the “since 2000” concept but avoid the precise computed duration unless the 2000 first-publication date has been confirmed via ISBN/publisher data. Otherwise, this should be treated as provisional.
+
+[UNVERIFIABLE] (risk:low) Each book stands on the last: massage first, then the everyday cookbook, the award-winning wellness kitchen, and now the whole practice of living by Ayurveda. (Implied sequence: Ayurvedic Herbal Massage → The Ayurvedic Cookbook → The Ayurvedic Wellness Cookbook → Harmony).
+   evidence: The Hindu mentions *The Ayurvedic Wellness Cookbook* as the award-winning 2023 title but does not place it in a sequence with other named books or provide their dates.[1] No snippet given lists *Ayurvedic Herbal Massage* or *The Ayurvedic Cookbook* at all.[1][2][3][4]
+   correction: As a narrative description, this is broadly defensible if the publication sequence of the three existing books is confirmed and Harmony is indeed the latest.
+
+However, the exact order and first-publication years are not confirmed by the provided snippets, so avoid implying a detailed chronological sequence as established fact until bibliographic data are checked. You can safely describe the thematic progression (therapy → home cooking → wellness-focused recipes → broader lifestyle) without asserting strict publication order.
+
+[UNVERIFIABLE] (risk:low) Across 280 pages, Gita Ramesh reads the three doshas as personal blueprints for daily life (Harmony page count = 280).
+   evidence: None of the search snippets mention Harmony, its existence, or its page count.[1][2][3][4] A specific page count without external confirmation is therefore unverifiable in this review.
+   correction: 280 pages is a precise bibliographic claim and must match the publisher’s or ISBN record; currently there is no external evidence supplied for this.
+
+Until you have an ISBN or publisher catalog entry confirming Harmony’s page count, remove “Across 280 pages” or replace it with a non-numeric description like “In a full-length hardback volume…”.
+
+[UNVERIFIABLE] (risk:medium) Out now in India; international edition since 14 July 2026, US trade edition 28 July 2026 (Harmony publication statuses and dates).
+   evidence: No snippet refers to Harmony or to any 2026 publication dates.[1][2][3][4] For a trade book, such dates should appear in catalogs or retailer listings, which are not present here.
+   correction: These concrete release dates and territorial statuses need to match publisher announcements or retailer/catalog listings. Without such evidence, they must not be presented as established fact.
+
+Until verified externally:
+- Remove the specific dates “14 July 2026” and “28 July 2026”.
+- Use softer, future-facing language: e.g., “Publishing in India first, with international and US trade editions to follow” or leave this line out altogether until dates are confirmed by Roli or major distributors.
+
+[UNVERIFIABLE] (risk:low) Gita Ramesh is Co-founder and Joint Managing Director of the Kairali Ayurvedic Group.
+   evidence: The search results supplied here do not include corporate bios; however, Kairali’s own public materials (outside this snippet set) commonly list her as “Co-Founder and Joint Managing Director.” No contradictory source was supplied.[1][2][3][4]
+   correction: This is very likely accurate and is consistent with Kairali’s own descriptions of her role, but no external snippet was provided in this pass.
+
+Given the internal decision log notes (“co-founded the Kairali Ayurvedic Group…”) and the low risk to readers, you can keep this *if* Kairali’s official site or a major interview/profile explicitly uses “Co-founder and Joint Managing Director”. Otherwise, consider “co-founder and senior leader at Kairali Ayurvedic Group” as a slightly softer but still accurate description.
+
+[UNVERIFIABLE] (risk:medium) Gita Ramesh opened the first Kairali Ayurvedic Centre in New Delhi in 1989.
+   evidence: The provided snippets do not include a corporate history timeline or founding dates for Kairali’s centres.[1][2][3][4]
+   correction: Year and location need external corroboration (e.g., company history, news coverage). Until a public corporate or media source confirms 1989 and New Delhi for the first centre, treat the specific year as provisional.
+
+Safer framing without a source would be “She led the opening of Kairali’s first Ayurvedic Centre in New Delhi in the late 1980s” only if a decade-level date is supported, or simply “She led the opening of Kairali’s first Ayurvedic Centre in New Delhi” if not.
+
+[UNVERIFIABLE] (risk:low) Gita Ramesh opened Kairali — The Ayurvedic Healing Village, Palakkad, in 1999.
+   evidence: No provided snippet contains a founding year for Kairali — The Ayurvedic Healing Village.[1][2][3][4]
+   correction: Again, the specific year 1999 should be verified against Kairali’s official history or third-party coverage. Do not state the exact year in public copy until an external source confirms it.
+
+Interim option: “She later opened Kairali — The Ayurvedic Healing Village in Palakkad, Kerala,” without the year, pending source confirmation.
+
+[UNVERIFIABLE] (risk:high) The group she helps lead today spans an NABH-accredited Ayurvedic hospital, WHO-GMP-certified medicine manufacturing, and treatment centres in India and overseas.
+   evidence: The search snippets provided here do not include any NABH or WHO-GMP documentation or any third-party verification of such accreditations for Kairali facilities.[1][2][3][4]
+   correction: Each accreditation/regulatory claim (NABH, WHO-GMP) must be directly supportable via current public listings. You should:
+- Verify in NABH’s official hospital accreditation list that the named Kairali facility is indeed accredited and use the exact accredited name.
+- Verify in a regulator’s or WHO-prequalification/inspection documentation that the manufacturing unit is WHO-GMP certified, and specify the facility.
+
+Until confirmed, the sentence should not assert these as facts. Safer: “The group includes an Ayurvedic hospital, medicine manufacturing facilities, and treatment centres in India and overseas,” dropping the accreditation claims.
+
+[UNVERIFIABLE] (risk:medium) [Kairali] comes from a family practising Ayurveda since 1908.
+   evidence: No external historical or biographical source confirming the 1908 date is included in the snippets.[1][2][3][4]
+   correction: This is a standard brand-origin line but, as a specific historical claim to a date, requires independent corroboration (e.g., archival records, third-party histories) if presented as history rather than marketing.
+
+Until such evidence is provided, rephrase with explicit attribution: “According to the Kairali Ayurvedic Group, the family’s Ayurvedic practice dates back to 1908,” or remove the exact year and use a vaguer phrase like “for over a century.”
+
+[UNVERIFIABLE] (risk:medium) Her four books, all published by Roli Books, are: Ayurvedic Herbal Massage (2000); The Ayurvedic Cookbook; The Ayurvedic Wellness Cookbook (2022, Gourmand Best in the World 2023); Harmony: Essential Ayurveda for All (2026).
+   evidence: The Hindu confirms the existence of *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation* and its 2023 award.[1] No snippet verifies the existence, titles, years or publishers for *Ayurvedic Herbal Massage*, *The Ayurvedic Cookbook*, or Harmony.[1][2][3][4]
+   correction: Break this into separate claims and verify each via ISBN/publisher catalog:
+- That there are exactly four books.
+- That every one of them is published by Roli Books.
+- That *Ayurvedic Herbal Massage* was first published in 2000.
+- That *The Ayurvedic Cookbook* exists under precisely that title and its publication year.
+- That *The Ayurvedic Wellness Cookbook* was published in 2022.
+- That Harmony exists, is by Roli Books, and will be published in 2026.
+
+From the provided snippets we only have firm external support for *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation* and its 2023 Gourmand award.[1] All other details require external confirmation; until then, remove the years and the “all published by Roli Books” blanket statement, and avoid stating Harmony as a 2026 publication.
+
+[MISLEADING] “The Ayurvedic Wellness Cookbook” (2022) was named Best in the World at the Gourmand World Cookbook Awards 2023.
+   evidence: The Hindu confirms that the book won the “best in the world Gourmand World Cookbook Award 2023 at UMEA Food in Sweden.”[1] The snippet does not mention its publication year.[1]
+   correction: The award part is strongly supported; the 2022 publication year is not evidenced in the snippets.
+
+Suggested edit: “Her book, *The Ayurvedic Wellness Cookbook: Recipes for Balance and Rejuvenation*, was named Best in the World at the Gourmand World Cookbook Awards 2023,” omitting the year until confirmed via ISBN/publisher data.
+
+[UNVERIFIABLE] (risk:low) Gita Ramesh wrote four books on Ayurvedic cooking, including the Gourmand-winning Wellness Cookbook.
+   evidence: The Hindu confirms one Ayurvedic cookbook and refers to “her book” in the singular.[1] It does not enumerate multiple titles or total count.[1][3]
+   correction: The existence of at least one Ayurvedic cookbook by her (the Wellness Cookbook) is confirmed. The exact count “four books” is not verified in the snippets and should be checked against catalog data.
+
+Until verified, change to “has written several books on Ayurvedic cooking, including…” or confirm via ISBN list and then keep “four”.
+
+⚠ FABRICATED / MISREPRESENTED SOURCES:
+  ✗ No explicit fabricated citations were given in the artifact, but multiple factual claims (about Harmony’s publication details, the 2000/2026 span, accreditation statuses, and family history since 1908) rely solely on internal decision memos and brand lines rather than any external evidence. They are presented as facts without attribution, which is epistemically misleading for readers.
+
+DATA FAULTS:
+  ✗ Absence of any external bibliographic data (titles, publishers, years, page counts, ISBNs) for three of the four claimed books and for Harmony specifically, despite making very detailed claims about publication dates, publishers, formats and page counts. For a trade publisher like Roli Books, this should be externally visible; its absence here indicates missing verification, not real-world absence.
+  ✗ Treating internal decision logs and brand language (e.g., “since 1908”, specific opening years for centres, NABH/WHO-GMP accreditations) as if they were independently verified facts, despite no external corroboration in this pass.
+  ✗ Hard-coding specific future release dates (14 and 28 July 2026) and a specific month of publication (March 2026) for Harmony with no external publisher or distributor source; these are at best internal plans, not ground truth, and can easily slip, making them factually wrong in public copy.
+
+SOURCES (4):
+  - https://www.thehindu.com/life-and-style/food/an-ayurvedic-cookbook-wins-the-gourmand-world-cookbook-award-2023/article67093497.ece
+  - https://www.antaranews.com/berita/3559821/buku-gastronomi-indonesia-juarai-gourmand-world-cookbook-awards-2023
+  - https://travelpotpourri.net/2024/12/16/the-ayurvedic-wellness-cookbook-recipes-for-regaining-your-inner-balance/
+  - https://www.prnewswire.com/news-releases/gourmand-world-cookbook-award-winners-111844364.html
+EXIT_PPLX=2

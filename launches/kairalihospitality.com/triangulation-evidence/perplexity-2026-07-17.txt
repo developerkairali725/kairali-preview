@@ -1,0 +1,42 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+The artifact is accurate on the core clinical and accreditation facts for Kairali – The Ayurvedic Healing Village (NABH AYUSH hospital accreditation and Kerala Clinical Establishment certificate) and on basic location and web presence for Villa Raag and Resort Svatá Kateřina.[1][2][3][5][6][10][11] It correctly states the group’s founding year and founders and the WHO-GMP certification of its product manufacturing.[6][9] However, several ownership and relationship claims are not externally verifiable or overstate the evidence: calling Villa Raag “the group’s boutique wellness property,” describing Resort Svatá Kateřina as “the group’s European joint venture,” and summarising that the group “runs” a boutique property in Goa and a European joint venture lack independent corroboration and are at best partnership/cooperation relationships.[10][11] The long-standing family-practising-Ayurveda-since-1908 claim also rests solely on internal narrative, with no external historical documentation. The consultancy offering (concept, build, operate) is plausible from the group’s activities but not clearly documented as a formal product. Contact details (info@kairali.com, WhatsApp +91 92898 38797) are not confirmed in the surfaced sources. For a hospitality umbrella site and consultancy pitch, mis-stating ownership/joint-venture status is material: a developer or guest could make decisions based on an inaccurate impression of control and legal structure. These issues mean the artifact cannot be treated as fully fact-checked and safe to publish without revision and internal legal confirmation of property relationships and consultancy scope. Ownership-language should be softened to "operated with" or "in cooperation with" unless backed by corporate records, and heritage claims should be clearly presented as the group’s narrative rather than as independently established fact.
+
+claims checked: 21 | problems: 7
+
+[UNVERIFIABLE] (risk:medium) Resort Svatá Kateřina is described as "part of the Kairali Ayurveda Group" and as the group’s European joint venture, with a purpose-built Ayurvedic Pavilion.
+   evidence: The English site of Resort Svatá Kateřina states that the Ayurvedic Pavilion and Ayurvedic programs are provided in cooperation with Kairali Ayurvedic Group; wording such as “part of the Kairali Ayurveda Group” appears in some marketing texts, but formal ownership/legal-structure details are not clearly documented in publicly available authoritative corporate records.[11]
+
+[UNVERIFIABLE] (risk:medium) Villa Raag is “the group’s boutique wellness property, a villa in the palms above Agonda.”
+   evidence: Villa Raag’s own site describes it as a luxury villa/retreat in Agonda with wellness amenities.[10] Kairali’s corporate sites do not (in currently visible pages) unequivocally list Villa Raag as a directly owned Kairali property, so the phrase “the group’s boutique wellness property” implies ownership that is not externally confirmed.
+   correction: Public sources identify Villa Raag as a boutique villa/retreat in Agonda with wellness positioning, but do not clearly state formal ownership by Kairali Ayurvedic Group; it may be operated in partnership or association rather than direct group ownership.
+
+[MISLEADING] (risk:medium) Resort Svatá Kateřina is "the group’s European joint venture in the Bohemian-Moravian Highlands, with a purpose-built Ayurvedic Pavilion."
+   evidence: Resort Svatá Kateřina’s site describes the Ayurvedic Pavilion and programs as offered in cooperation with Kairali Ayurvedic Group.[11] No publicly accessible corporate or regulatory records explicitly label it as a joint venture entity with Kairali as an equity partner.
+   correction: External sources confirm that the resort features an Ayurvedic Pavilion and works in cooperation with Kairali Ayurvedic Group, but they do not clearly document joint-venture legal structure; describing it as “the group’s European joint venture” overstates substantiated ownership details.
+
+[MISLEADING] (risk:medium) Kairali Ayurvedic Group runs an NABH-accredited Ayurvedic hospital in Palakkad, a boutique wellness property in Goa, and a European joint venture in Czech Republic.
+   evidence: NABH accreditation for Kairali – The Ayurvedic Healing Village is documented.[1][6] Villa Raag and Resort Svatá Kateřina operate as described, but ownership and exact corporate control are not specified in authoritative external sources.[10][11]
+   correction: The NABH-accredited Ayurvedic hospital in Palakkad is supported.[1][6] The existence of a wellness villa in Agonda and cooperation with Resort Svatá Kateřina are supported, but formal ownership ("runs" and "joint venture") is not clearly documented externally; the sentence should be softened to "operates or partners in" pending internal legal confirmation.
+
+[UNVERIFIABLE] (HEALTH risk:medium) One family has practised Ayurveda since 1908; Kairali Ayurvedic Group represents a four-generation family Ayurveda lineage from 1908 onward.
+   evidence: Kairali’s corporate materials describe the group as having four generations of Ayurvedic practice and frequently cite 1908 as the start of the family’s Ayurveda tradition.[6][9] However, primary historical documentation beyond the company’s own narrative is limited; as a corporate heritage claim it is plausible but not independently verifiable.
+
+[UNVERIFIABLE] (risk:medium) The consultancy description that the group offers concept, build and operating support for wellness/hospitality properties, using its own properties as case studies, is factually grounded in the group’s documented activities.
+   evidence: Kairali’s corporate site describes activities including operating Ayurvedic retreats, manufacturing products, and offering training/consultancy services, suggesting experience in concept, build and operations.[9] However, a formal, detailed consultancy program for external hospitality developers is not extensively documented in public sources, so the breadth of “concept, build, operate” as a consulting product is not independently fully verifiable.
+
+[UNVERIFIABLE] (risk:low) The contact information info@kairali.com and WhatsApp +91 92898 38797 are valid enquiry channels for Kairali Ayurvedic Group.
+   evidence: Public Kairali contact pages list phone numbers including +91-9555156156 and various email addresses; info@kairali.com and WhatsApp +91 92898 38797 are plausible but are not explicitly listed in the specific external sources surfaced.[2][7][9]
+
+SOURCES (9):
+  - https://portal.nabh.co/Documents/AccreditedList/AYUSH%20Hospitals/AH-2024-0250.pdf
+  - https://ayurvedichealingvillage.com/legal-notice/
+  - https://travelworldonline.in/kairali-the-ayurvedic-healing-village-receives-clinical-establishment-permanent-certificate-valid-through-2030/
+  - https://ayurvedichealingvillage.com/faqs/how-is-kairali-the-ayurvedic-healing-village-different-from-all-other-wellness-provider/
+  - https://www.healingguide.org/hotels/kairali-ayurveda-india/
+  - https://healthspaneconomy.com/atlas/entity/kairali-ayurvedic-healing-village/
+  - https://www.kairali.com/detail.aspx?page=nabh-certification-for-best-ayurvedic-panchakarma-clinic-to-kairali-ayurvedic-center-in-2017
+  - https://www.spadreams.com/hotel/kairali-the-ayurvedic-healing-village-kodumbupalakkad-south-west-india-kerala-732/
+  - https://kairaliorganic.com/kairali-ayurvedic-group.aspx
+EXIT_PPLX=2

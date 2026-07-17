@@ -1,0 +1,90 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A Sanskrit-forward, expressive single-page site for Kairali’s three real residential yoga programmes at Kairali – The Ayurvedic Healing Village (Palakkad), replacing a legacy site. It intentionally shows no prices; programme names, durations and inclusions must match the internal rates reckoner exactly. Testimonials are carried over from the legacy site.
+  for whom: International and Indian wellness travellers researching residential yoga-and-Ayurveda stays at Kairali’s Ayurvedic Healing Village in Palakkad.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: Two places: 1) Trust: The page repeatedly claims private 1:1 sessions and NABH accreditation without showing proof; 2) Decision friction: no prices, no calendar, and only mailto/WhatsApp CTAs — no instant indicative range or quick quote form. Many travellers will bounce at the first “Email us for tariff” step.
+  they would think: “This reads well and looks credible, but I can’t see even a ballpark price. Are sessions really 1:1? Is it truly an accredited hospital? I’ll compare with competitors who show clear inclusions and indicative rates.”
+  For this audience, clarity on delivery (private vs group), accreditation, what’s included each day, and a rapid sense of budget are table stakes. The new page is aesthetically superior and focused, but it asserts several unverified service details and increases price-discovery friction versus competitors — undermining confidence and conversion.
+
+--- MY REASONING --- sound: false
+  FLAWED: You state “the site claims neither” about the private-vs-group contradiction (Q-YOGA-PRIVATE), yet the page asserts “private sunrise practice”, “private guided mindfulness”, and “Sessions are private” in the FAQ — a direct process contradiction and potential misrepresentation.
+  FLAWED: Rule 6 (reckoner-exact) is invoked, but no machine evidence is provided that names/durations/inclusions on the page are pulled from, or match, the cited RATES_RECKONER.md. A rule written is not evidence executed.
+  FLAWED: High-stakes claims (NABH accreditation, ‘organic ingredients’, distances, daily therapy + steam) are published without links, citations, or internal proofs — pattern-matched copy, not verified content.
+  FLAWED: Price-free stance is treated as an end in itself rather than a conversion design problem to solve; no compensating UX (range, SLAed response time, instant quote form) is designed.
+  ASSUMED (never reasoned): That travellers will accept “email/WhatsApp for tariff” without a price anchor or response-time guarantee.
+  ASSUMED (never reasoned): That all programme sessions are private 1:1 across the board (versus small-group or mixed delivery).
+  ASSUMED (never reasoned): That every meal is cooked from organic ingredients (always) and that weekly ancillary activities are consistently offered.
+  ASSUMED (never reasoned): That the Ayurvedic Healing Village is currently NABH-accredited (and listed) and that this can be asserted without linking to the certificate or NABH listing.
+  ASSUMED (never reasoned): That testimonials carried over as-is still serve 2026 decision needs without fresh, programme-specific social proof.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Price-discovery friction increases: legacy (wrongly) showed prices; new shows none and offers no instant indicative range or form — higher bounce risk.
+  REGRESSION: Loss of teacher transparency: old site at least gestured at teachers; new site states no named roster — reduces trust.
+  REGRESSION: Fewer navigable entry points for niche intents (e.g., ‘Yoga Therapy Retreats’, ‘Meditation Coaching’) that existed on legacy menus; if those map to the three real programmes, the redirects/intent mapping aren’t shown.
+
+Quality: weak | expert would respect it: false | AI-filler risk: medium
+  weakest point: The page asserts disputed or unproven service details (private 1:1 sessions; accreditation; inclusions) while withholding the one thing travellers most need to qualify themselves (a credible price anchor).
+
+Step — claimed: Session 2B post-merge triangulation + D-DESIGN-DIFF old-vs-new comparison (evidence backfill pending). | actual: Mid-content build with unresolved verification gates and migration work outstanding. | prereqs met: false
+  ORDER VIOLATION: You claim the site ‘claims neither’ side of the private-vs-group contradiction before resolving Q-YOGA-PRIVATE, yet the page asserts ‘private sessions’ multiple times — content shipped before resolving a gating question.
+  ORDER VIOLATION: Rule 6 (reckoner-exact) is cited, but no machine evidence links the live copy to the reckoner source — verification step skipped.
+  ORDER VIOLATION: ~56 legacy URLs still need fates; redirect map and deprecation plan are not evidenced before considering any DNS flip.
+  ORDER VIOLATION: Legal/ancillary pages are linked (/privacy, /terms, /cookie-policy) but not evidenced in this PR — IA integrity not proven before ship.
+
+MISSED STEPS (9):
+  [blocking] Verify and evidence programme inclusions against RATES_RECKONER.md
+     evidence: No commit link, hash, or automated test showing the PROGAMMES array is sourced from (or matches) the reckoner; copy includes new-ish phrasing like “herbal steam baths included”.
+  [blocking] Resolve and evidence private vs group delivery (Q-YOGA-PRIVATE)
+     evidence: The artifact asserts 1:1 ‘private’ repeatedly while your notes say the contradiction is queued and the site should claim neither.
+  [major] Accreditation proof (NABH) linked and current
+     evidence: ‘NABH-accredited’ appears in hero and sections; no certificate link or NABH listing referenced.
+  [major] Price-discovery UX to compensate for price-free policy
+     evidence: Only mailto and WhatsApp CTAs; no quick-quote form, no response-time SLA, no indicative range messaging.
+  [blocking] Legacy URL fates + 301 map
+     evidence: You note ~56 legacy URLs need fates; no map or test matrix is provided here.
+  [major] Legal pages existence and content
+     evidence: Footer links to /privacy, /terms, /cookie-policy; no evidence those routes/pages exist in this PR.
+  [minor] Testimonial provenance proof
+     evidence: You claim ‘guards-compared against the mined HTML’; no diff/artifact showing verbatim carryover is included.
+  [major] Claims about ‘organic ingredients’ and weekly activities
+     evidence: Stated as universal; no policy/source or copy constraints evidenced.
+  [minor] Distances and transfer logistics verification
+     evidence: Specific km figures are stated; no source/evidence or internal approval noted.
+
+NEEDS FACT-CHECK (9) → run audit-perplexity.mjs:
+  - “Sessions are private, not group classes” and “private sunrise practice … private guided mindfulness”
+  - “NABH-accredited Ayurvedic hospital”
+  - “One therapy, every day … herbal steam baths included”
+  - “Three meals … cooked from organic ingredients”
+  - Distances: “Palakkad 25 km; Coimbatore 75 km; Cochin/Calicut 125 km”
+  - “Kairali Institute of Panchakarma Therapies” certification for trainings
+  - “No alcohol, no smoking” campus discipline
+  - “Year-round admissions; no batch calendar”
+  - “Lineage since 1908 … unbroken lineage”
+
+BLOCKING (4):
+  ✗ Private-vs-group delivery contradiction: the artifact asserts private 1:1 repeatedly despite Q-YOGA-PRIVATE being unresolved. This is a sell-critical claim and must be evidenced or removed.
+  ✗ ‘Reckoner-exact’ is claimed but not evidenced: no proof that names/durations/inclusions are sourced from or match RATES_RECKONER.md.
+  ✗ ~56 legacy sitemap URLs have no documented fates/301 map — cannot flip DNS.
+  ✗ Accreditation claim (NABH) is unsourced — high-stakes on a health site.
+
+RECOMMENDATIONS:
+  → Remove or neutralize all ‘private’ assertions immediately (e.g., ‘individualised sessions’) until Q-YOGA-PRIVATE is resolved and evidenced; when resolved, drive the copy from a single data source (reckoner) with a unit test asserting match.
+  → Attach machine evidence for Rule 6: include the commit hash for RATES_RECKONER.md and a test that PROGRAMMES (name/duration/inclusions) equal the reckoner entries; block CI if drift occurs.
+  → Link NABH accreditation to the official listing or a hosted certificate PDF with validity dates; add a review reminder before expiry.
+  → Reduce price-friction without publishing tariffs: add a 60-second inline quote form (programme, dates window, occupancy, villa preference) with a “we reply within 4 business hours” SLA; add ‘Rates vary by villa/occupancy; quotes are all-in per-night’ microcopy. Optionally show ‘Tariffs are typically comparable to [X star resort]’ only if permitted.
+  → Constrain inclusion claims to what’s guaranteed across all three programmes; if steam or workshops are not universal, soften language (‘often includes’, ‘typically’), or list per-programme inclusions from the reckoner.
+  → Verify and, if needed, soften ‘organic’ to an accurate statement (‘largely organic, much of it from our own farm’) with internal approval.
+  → Provide the 301 map for all ~56 legacy URLs (e.g., retreat-programs.aspx -> #programmes, yoga-teachers.aspx -> #teachers, etc.), with a test crawl proving 200/301 outcomes and no 404s.
+  → Ensure /privacy, /terms, /cookie-policy routes exist and contain compliant content; add a basic cookie banner only if trackers are present.
+  → Distance/logistics: verify km values and add duration ranges (‘~60–90 min from Coimbatore airport’) which are more traveller-meaningful than km.
+  → Teacher trust: if no roster is public, add a short ‘How we staff your sessions’ panel (qualification standard, physician oversight) and remove any implication of celebrity teachers.
+  → Add provenance artifact for testimonials (diff against mined HTML) and include a date range or ‘historical guestbook’ label to avoid presenting them as current peer-proof.
+
+tokens: prompt 50714 · completion 5388 (reasoning 2560)
+EXIT_GPT=2
