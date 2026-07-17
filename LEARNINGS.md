@@ -177,6 +177,38 @@ kairaliyoga sat at 89–92 while its siblings hit 95–100, and the obvious susp
 **The fix is TIME, never the policy.** Rule (g) applies with force here — relaxing minimumReleaseAge to make a bump merge would trade a real supply-chain defence for a few hours' convenience. Wait until each package is 24h old and re-run. In #93's case: tailwindcss cleared on its own (25.2h by the time it was diagnosed); lucide-react clears 18 Jul 13:58 IST. No code change, no rebase (it merges clean).
 **For the Monday Dependabot triage:** expect this on any PR bumping a package released in the previous 24h. It is not a broken bump. Re-run it a day later.
 
+## 2026-07-17 18:58:12 IST — "He is reachable" is not "he was asked" — a blocker entry must name the ask date or admit there isn't one
+**What happened:** the Shopify Storefront token sat on BACKLOG as **OPEN — Ambuj**, gating Wave 1 (20 Jul), annotated *"He is in active daily contact (director emailed him 16 Jul 07:22; he sends the daily delegation summary), so he is reachable, not silent."* Abilash asked me to check for Ambuj's reply and send a reminder if there wasn't one. **There was no reply because there was no ask.** Mailbox-verified: 201 sent threads to Ambuj, zero about a Storefront token; zero across all of director@. The 16 Jul 07:22 mail cited as evidence was the FMS/Quillrun thread — a different subject entirely.
+**Why it survived a reconcile.** The 16-Jul mailbox reconcile was built to catch the OPPOSITE drift — phantom "stale" items where a reply existed but was never logged. This is the inverse: an item logged as *waiting* that was never *started*. The reconcile checked for replies, and finding none, left it open — which is exactly what a genuinely-unanswered ask looks like. **"No reply" is ambiguous between "they ignored us" and "we never asked", and only the sent folder distinguishes them.**
+**The tell was in the prose.** Read the same reconcile's four entries side by side:
+- Deepu — "**asked 14 Jul**, 2 days, no reply"
+- Sunaj — "**asked 14 Jul**"
+- Vikash — "**no ask thread**, no reply; the real gap"
+- Ambuj — "but he's **in active daily contact**"
+Three state the ask status. The fourth answers a question nobody asked (*is he reachable?*) and lets the reader infer the one that matters. It reads like progress. **Evidence of reachability is not evidence of a request.** Ambuj answers same-day when actually asked — he replied to the FMS mail in 76 minutes.
+**Rules:**
+1. **A blocker entry names the ask: `asked <date>` — or says `NOT YET ASKED`.** Nothing else is a status. "In contact", "reachable", "active", "aware" are not statuses.
+2. **On any "chase X" instruction, check the SENT folder before composing.** The instruction presumes an ask; verify the premise. Sending a "reminder" for an email that never existed fabricates a history and confuses the recipient about which mail they missed.
+3. **Reconcile both directions:** replies-not-logged (phantom stale) AND asks-never-sent (phantom pending). The 16-Jul rule only covered the first.
+4. Cost here: the token gated Wave 1 from 3 days out, with the recipient never informed — for free, and invisibly.
+
+## 2026-07-17 19:14:33 IST — The delegation system worked. Nobody read the replies, so we logged it as failure.
+**The instruction:** "check for Ambuj's reply, and if there isn't one send a reminder." Then: "go ahead and send reminders." Following either literally would have chased four colleagues, two of whom had already answered, one of whom had done most of the work and fixed the exact item we were about to chase him for.
+**What the mailbox actually said, verified message by message:**
+- **Deepu** replied in **2h22m** and closed **6 of 13** audit items — including item 5 (contact-us NOINDEX), item 6 (stale static sitemap, 210 dead URLs) and **item 7, the sitemap_index.xml 404 that BACKLOG told us to chase him for**. He also named his own blocker unprompted: Shopify items 1–4, *"I'm still relatively new to"* it.
+- **Vikash** replied **twice** (17 Jul 05:46, 06:00) with screenshots. **Both unread.**
+- **Abilash had sent** almost every mail the delegation log still marked `DRAFTED (awaiting Abilash send)`.
+**THE CHAIN NOBODY SAW.** 16 Jul 10:54 our mail states *"only 3 of our 128 pages are indexed"* → 16 Jul 13:16 Deepu fixes the three causes → **17 Jul 05:46 Vikash reports "646 KTAHV pages have been indexed."** The crisis was diagnosed, delegated, fixed and confirmed in **19 hours**, by two people doing their jobs well. Our records at that moment said: Deepu is stale, chase him; the indexing problem is open; Vikash is the real gap. **Every one of those was false, and the evidence was sitting unread in the inbox.**
+**Root cause — a hand-maintained mirror of a system nobody updates is a rumour.** Three independent hand-maintained truths (delegation-log Status, BACKLOG, QUESTIONS) all drifted from the one machine-checkable source (the mailbox), in the same direction: **toward pessimism**. Every drifted record said someone had failed. Not one drifted toward "this is done".
+**Why pessimism specifically:** a record is written when work is *dispatched* and would only be corrected when someone *reads a reply and remembers to log it*. Dispatch is motivated; reconciliation is a chore. So the logs accumulate open items and never accumulate closures. **An un-reconciled tracker converges on a lie about your colleagues.**
+**Rules:**
+1. **Read the inbox before writing about people.** A "chase" list built from our own records is a list of our own unread mail. Verify against the mailbox first — it takes minutes and it is the only real source.
+2. **The 16-Jul mailbox-drift rule existed and did not save us.** A rule that depends on remembering is not a mechanism. If reconciliation is not automated or ritualised (Monday triage), it will not happen.
+3. **Unread replies are worse than no replies.** Vikash answered in hours, twice, with evidence, and was recorded as "the real gap" — while his mail sat unread. That is how good people learn that answering does not matter.
+4. **A blocked colleague ≠ a slow colleague.** Deepu is blocked on Shopify *access and unfamiliarity*, and said so. That needs help, not a reminder. Reminders sent to someone who already told you the blocker are corrosive.
+5. **Before chasing, ask: does the task's premise still hold?** Vikash refuted his: 646 indexed, not 3; noindex on OLD URLs, not live ones. Chasing him would have been chasing a fixed problem.
+
+
 ## 2026-07-17 19:58:44 IST · Near-miss: I amended another session's commit, because `cd` persists between Bash calls
 
 **What happened.** Session 2D worked in a worktree (`wt-session-2d`). To check the repo's standard commit author I ran `cd .../kairali-web-factory && git config user.name`. That `cd` **persisted into the next Bash call**. The next call was a `git commit --amend --author=...` intended for *my* commit in the worktree — the shell ran it in the **main repo**, on branch `factory/fix-ambuj-token-record`, which a **concurrent session** had just committed to. I rewrote their commit (`d124baf` → `d6ff9c5`), author field only, content byte-identical.
@@ -194,3 +226,4 @@ kairaliyoga sat at 89–92 while its siblings hit 95–100, and the obvious susp
 - **`git reset --hard` destroys uncommitted AND committed-this-session work.** Earlier the same session I reset a probe away and took my own real work with it (recovered from reflog — `git checkout <reflog-sha> -- <paths>`). Probe in a scratch dir or `git stash` it; do not commit probes onto the branch you are about to reset.
 
 **Wider point for concurrent sessions:** the worktree gave isolation of *files*, not of *shell state*. Isolation you can undo with one `cd` is not isolation. The `git -C` habit is what makes it real.
+
