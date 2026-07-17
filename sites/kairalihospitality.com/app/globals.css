@@ -1,0 +1,495 @@
+/* ===========================================================================
+   kairalihospitality.com — the group's hospitality umbrella · Kairali Brand
+   Manual 2026 (rev.2). Tokens ONLY (packages/ui/brand-tokens.css).
+   D-DESIGN-DIFF grammar (docs/design-research/kairalihospitality-2026-07-16.md
+   §5): FULL-BLEED photographic hero (§5.1) — the first Factory surface where
+   imagery touches the viewport edges; typographic place strip (§5.3); a
+   three-door intent fork breaching the hero (§5.4); portrait 3:4 property
+   panels in one desktop viewport (§5.2); a forest-700 lineage pull-quote band
+   (§5.6) with honest counters (§5.8); an asymmetric editorial pair (§5.9);
+   marigold = ONE accent moment on light ground (the develop chapter's bar).
+   No polaroid hero, no 4-chip stat band, no uniform landscape card grid.
+   Motion: fades/one-ramp hover deepens only, 150–400ms (calm-motion law).
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  --hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 26%, transparent);
+  --veil-ink: color-mix(in srgb, var(--ink) 55%, transparent);
+  --veil-soft: color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  line-height: 1.16;
+  margin: 0;
+}
+h2, h3 { color: var(--forest-700); }
+p { margin: 0 0 1em; }
+
+.container {
+  max-width: var(--measure-layout);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.measure { max-width: var(--measure-prose); }
+
+.overline {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px floor (ch.10) */
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-400);
+  margin: 0 0 12px;
+}
+
+.btn { display: inline-flex; align-items: center; justify-content: center;
+       gap: 8px; text-decoration: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* ---------- Full-bleed photographic hero (§5.1) ---------- */
+.hero {
+  position: relative;
+  min-height: 92svh;
+  display: flex;
+  overflow: hidden;
+  background: var(--forest-700); /* paints before the photo streams in */
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+}
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  /* legibility scrim over the photograph — token-mixed, no raw colors */
+  background: linear-gradient(
+    to bottom,
+    var(--veil-ink) 0%,
+    var(--veil-soft) 34%,
+    var(--veil-soft) 55%,
+    var(--veil-ink) 100%
+  );
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0 64px;
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--ivory);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+.hero-enquire {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--ivory);
+  text-decoration: none;
+  border: 1.5px solid color-mix(in srgb, var(--ivory) 70%, transparent);
+  border-radius: var(--radius-pill);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 22px;
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.hero-enquire:hover { background: color-mix(in srgb, var(--ivory) 16%, transparent); }
+.hero-statement { width: 100%; }
+.hero-overline { color: color-mix(in srgb, var(--ivory) 88%, transparent); }
+.hero h1 {
+  color: var(--ivory);
+  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+  max-width: 24ch;
+  text-wrap: balance;
+}
+.hero h1 span { display: block; }
+
+/* ---------- Typographic place strip (§5.3, Lore Group) ---------- */
+.place-strip {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: clamp(1rem, 2.6vw, 1.5rem);
+  letter-spacing: 0.34em;
+  color: color-mix(in srgb, var(--ivory) 85%, transparent);
+  margin: 26px 0 0;
+}
+.place-strip span { color: color-mix(in srgb, var(--ivory) 55%, transparent); }
+
+/* ---------- Intent fork (§5.4, COMO "I'm searching for…") ----------
+   ONE white index slab breaching the hero — three numbered segments split
+   by bronze hairlines. Deliberately de-twinned from arogyashala.in's
+   separate door cards (design-qa it.1 similarity note): no per-card top
+   border, no card grid, no hover shadow-lift; hover is a quiet forest
+   tint, the hinge breach is the shared compositional move that remains. */
+.fork {
+  display: grid;
+  width: calc(100% - 40px);
+  max-width: calc(var(--measure-layout) - 40px);
+  margin-inline: auto;
+  margin-top: -40px; /* the slab bites into the photograph — the page's hinge */
+  position: relative;
+  z-index: 2;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-warm);
+}
+.door {
+  padding: 24px 28px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.door:hover { background: color-mix(in srgb, var(--forest-500) 6%, transparent); }
+/* ch.07/10: the leaf focus ring must beat the slab's shadow */
+.door:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 10px;
+  z-index: 1;
+}
+.door-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.door-index {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--bronze-400);
+}
+.door-kicker {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze-400);
+}
+.door-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--forest-700);
+  line-height: 1.3;
+}
+.door-hint { font-weight: 600; color: var(--forest-500); margin-top: 4px; }
+
+/* ---------- Sections ---------- */
+.section { padding: 72px 0 64px; }
+.section h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); margin-bottom: 14px; }
+
+/* ---------- Portrait property panels (§5.2, Singita/Oetker) ---------- */
+.properties { padding-bottom: 72px; }
+.panels {
+  display: grid;
+  gap: 20px;
+  margin-top: 28px;
+}
+.panel {
+  position: relative;
+  aspect-ratio: 3 / 4; /* portrait crop — kills the landscape-card monotony */
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  background: var(--forest-700);
+}
+.panel > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--dur-slow) var(--ease-brand);
+}
+.panel-veil {
+  position: absolute;
+  inset: 0;
+  /* ramp starts at 24% and lands deeper (design-qa it.1: the copy zone's
+     thinnest-contrast moment) — imagery stays clear above, text always
+     sits on ink below */
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--ink) 6%, transparent) 24%,
+    color-mix(in srgb, var(--ink) 84%, transparent) 100%
+  );
+}
+.panel-copy {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 22px 22px 18px;
+  color: color-mix(in srgb, var(--ivory) 92%, transparent);
+}
+.panel-copy h3 {
+  color: var(--ivory);
+  font-size: clamp(1.3rem, 2vw, 1.55rem);
+  line-height: 1.2;
+  margin: 2px 0 8px;
+}
+.panel-place {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ivory) 80%, transparent);
+  margin: 0;
+}
+.panel-line { font-size: 0.98rem; margin: 0 0 12px; }
+.panel-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin: 0;
+}
+.panel-ctas a {
+  color: var(--ivory);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ivory) 45%, transparent);
+  text-underline-offset: 4px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: text-decoration-color var(--dur-fast) var(--ease-brand);
+}
+.panel-ctas a:hover { text-decoration-color: var(--ivory); }
+.panel-ctas a:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 4px; }
+/* Czech JV panel — text-first on the ch.08 dark surface (no photo exists
+   in the library; IMAGE_MANIFEST GAP note). The rule-and-diamond colophon
+   mark composes the dark field top; copy anchors the foot — deliberate
+   restraint, not a failed image (design review it.1, finding 4). */
+.panel-dark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-motif {
+  padding-top: 34px;
+  color: color-mix(in srgb, var(--ivory) 42%, transparent);
+}
+.panel-motif svg { display: block; }
+.panel-copy-static { position: static; width: 100%; }
+.panel-dark .panel-place { color: color-mix(in srgb, var(--ivory) 72%, transparent); }
+
+/* ---------- Lineage pull-quote + honest counters (§5.6, §5.8) ---------- */
+.band-lineage {
+  background: var(--forest-700);
+  color: color-mix(in srgb, var(--ivory) 90%, transparent);
+  padding: 76px 0 64px;
+}
+.band-lineage blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3.2vw, 2.15rem);
+  line-height: 1.35;
+  color: var(--ivory);
+  max-width: 30ch;
+}
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 56px;
+  margin: 44px 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--ivory) 22%, transparent);
+  padding-top: 28px;
+}
+.counters dt {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1;
+  color: var(--ivory);
+}
+.counters dd {
+  margin: 4px 0 0;
+  font-family: var(--font-caption);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ivory) 72%, transparent);
+}
+
+/* ---------- Consultancy chapter (§5.7) ---------- */
+.develop { position: relative; }
+/* THE one marigold moment on light ground (ch.03 proportions law) */
+.accent-bar {
+  display: block;
+  width: 52px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--marigold-400);
+  margin-bottom: 18px;
+}
+.services {
+  display: grid;
+  gap: 18px;
+  margin-top: 36px;
+}
+.service {
+  background: var(--card-bg);
+  border-radius: var(--radius-3);
+  border: var(--card-border);
+  box-shadow: var(--shadow-warm);
+  padding: 24px 24px 12px;
+}
+.service h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.service p { font-size: 0.98rem; }
+
+/* Asymmetric editorial pair (§5.9, Aman/COMO) — one landscape, one
+   portrait-cropped, text riding the negative space */
+.proof-pair {
+  display: grid;
+  gap: 20px;
+  margin: 44px 0 8px;
+}
+.proof-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-3);
+}
+.proof-portrait img { aspect-ratio: 3 / 4; object-fit: cover; }
+.proof-pair figcaption {
+  font-family: var(--font-caption);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ink) 66%, transparent);
+  margin-top: 8px;
+}
+.proof-line {
+  max-width: var(--measure-prose);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--forest-700);
+  margin-top: 20px;
+}
+
+/* ---------- Closing enquiry band ---------- */
+.band-enquire {
+  border-top: var(--hairline-bronze);
+  padding: 64px 0 72px;
+  background: color-mix(in srgb, var(--card-bg) 55%, transparent);
+}
+.band-enquire h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); margin-bottom: 14px; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--forest-700);
+  color: color-mix(in srgb, var(--ivory) 90%, transparent);
+  padding: 52px 0 44px;
+}
+.site-footer a { color: var(--ivory); }
+/* Ship Gate A4 lesson (14 Jul): inline conversion links get real tap area */
+.site-footer a[data-cta] {
+  display: inline-block;
+  padding-block: 14px;
+  margin-block: -14px;
+}
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ivory);
+  margin-bottom: 6px;
+}
+.footer-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+.footer-nav a { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }
+/* short legal labels ("Terms") get real tap WIDTH too — same negative-margin
+   trick as [data-cta] (design-qa it.1: 38px-wide Terms link) */
+.footer-legal a { padding-inline: 8px; margin-inline: -8px; }
+.footer-fine {
+  margin: 20px 0 0;
+  font-family: var(--font-caption);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ivory) 65%, transparent);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 760px) {
+  .fork { grid-template-columns: repeat(3, 1fr); }
+  .door + .door { border-left: var(--hairline-bronze); }
+  .door:first-child { border-radius: var(--radius-3) 0 0 var(--radius-3); }
+  .door:last-child { border-radius: 0 var(--radius-3) var(--radius-3) 0; }
+  .services { grid-template-columns: repeat(3, 1fr); }
+  .proof-pair {
+    grid-template-columns: 1.35fr 1fr;
+    align-items: end;
+  }
+}
+@media (min-width: 980px) {
+  /* the three properties share ONE desktop viewport (§5.2) */
+  .panels { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 979.98px) {
+  /* tablet band: the capped panels centre instead of pinning left
+     (design review it.1, finding 5). Explicit width, not max-width: the
+     photo panels' children are all absolutely positioned, so with auto
+     margins alone the grid item would collapse to its 0 intrinsic width. */
+  .panel { width: min(560px, 100%); margin-inline: auto; }
+}
+@media (max-width: 759.98px) {
+  /* First-paint law: the hero statement AND the first door's title + hint
+     must read above the consent banner on a 375×812 phone — compress the
+     opening on mobile (design review it.1, finding 1: 76svh → 70svh) */
+  .hero { min-height: 70svh; }
+  .hero-inner { padding: 12px 0 44px; }
+  .hero h1 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .place-strip { margin-top: 16px; letter-spacing: 0.26em; }
+  .fork { margin-top: -36px; }
+  .door { padding: 16px 20px 13px; }
+  .door + .door { border-top: var(--hairline-bronze); }
+  .door:first-child { border-radius: var(--radius-3) var(--radius-3) 0 0; }
+  .door:last-child { border-radius: 0 0 var(--radius-3) var(--radius-3); }
+  .door-title { font-size: 1.15rem; }
+  .section { padding: 56px 0 48px; }
+  .band-lineage { padding: 60px 0 52px; }
+  /* the Czech text-first panel hugs its content below 760px — the forced
+     3:4 field read as a failed image in the single-column stack (design
+     review it.1, finding 4); the colophon mark + a settled name size keep
+     it deliberate */
+  .panel-dark { aspect-ratio: auto; }
+  .panel-dark .panel-motif { padding-top: 30px; }
+  .panel-dark .panel-copy { padding-top: 24px; }
+  .panel-dark h3 { font-size: 1.5rem; }
+}

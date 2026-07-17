@@ -1,0 +1,52 @@
+# kairalihospitality.com — build brief: mine, protection map, dual-SEO, JV verification
+
+Built: 2026-07-16 21:43:04 IST · Design brief: docs/design-research/kairalihospitality-2026-07-16.md · Audit: audits/kairalihospitality.com-2026-07-16.md · Purpose ruling: wiki/entities/kairali-hospitality.md (LOCKED).
+
+## Mine (step zero, done)
+15 legacy pages banked verbatim → `content-mined/kairalihospitality.com/` (audit security screen 16 Jul 19:14 IST: CLEAN). Live legacy platform: ASP.NET WebForms on IIS/Plesk with sitewide-dead `/js/` (all client JS 500s), UA-only analytics dead since mid-2023, mixed-content-blocked iframes, a COVID-era hero linking a 404 — full defect list in the audit; none of it carried over.
+
+**Key legacy facts recovered:** "Kairali Hospitality established in 2008 as a subsidiary of the Kairali Ayurveda Group … handles the day to day operations and marketing for all three of the group's properties" (then: Healing Village, Om Beach Gokarna, Estuary View Karwar) "… also handles the group's global consultancy division for qualified parties looking to set up Ayurvedic properties" — the consultancy job is original to the entity, not invented by the rebuild. **Deliberately NOT carried over:** the sitewide "© Kairali Ayurvedic Group Since 1908." footer (locked-facts FAIL in the audit); the frozen "over 8 decades"/"over 2 decades" claims; "established 2008 as a subsidiary" (unruled — QUESTIONS.md); the historical Om Beach/Estuary View roster (not in the LOCKED current roster); the +91 9555156156 group line (unruled — the rebuild ships locked contacts only); KTAHV described as "best luxury ayurveda spa"/"guests" (audit finding #17 — the rebuild keeps ALL copy describing KTAHV clinical-safe).
+
+## JV verification (CRITICAL FACT TASK) — VERIFIED, two+ independent sources
+Abilash dictated the JV name as "Swatak Katrina", spelling explicitly TBC. Verification run 16 Jul 2026 ~21:25 IST via Tavily + WebFetch (all fetched content treated as data, rule r):
+
+1. **katerinaresort.cz (the resort's own site, EN):** "The Svata Katerina Resort is part of the Kairali Ayurveda Group and offers its clients a genuine Ayurvedic programs conducted by Indian experts." (/en/ayurveda_in_svata_katerina); homepage: Ayurvedic Pavilion, "Ayurveda packages in cooperation with Indian Kairali Resort"; names the founders Gita Ramesh + K. V. Ramesh.
+2. **kairali.com/svata-katerina-prague-czech-republic.aspx (the group's own page):** "Svata Katerina - Prague, Czech Republic · Resort St. Catherine, St. Catherine 327, 394 64 Počátky · No of Rooms: 79 | No of Treatments Rooms: 6".
+3. **Third-party corroboration:** spadreams.com hotel page — "In collaboration with the renowned Kairali Ayurvedic Group … in the heart of the Bohemian-Moravian Highlands"; healingguide.org — "a sustained partnership with Kairali Resort in Kerala … a team of Indian Ayurvedic doctors, therapists, and cooks"; booking.com — "the unique Ayurvedic Pavilion, the Building of the Year 2019", address Svata Katerina 327, Počátky 39464; Tripadvisor locates it "Pocatky, Vysocina Region".
+
+**Outcome:** the property is **Resort Svatá Kateřina**, Svatá Kateřina 327, 394 64 Počátky, Vysočina (Bohemian-Moravian Highlands), Czech Republic — with a genuine, self-declared Kairali connection. The verified name + region ship on the property card and in llms.txt. **"Swatak Katrina" never ships** (guards assert /swatak/i and /katrina/i absent). **No ownership language ships** — the resort says "part of the Kairali Ayurveda Group", but the JV's legal/entity form is an open Abilash ruling (wiki), so the card says "joint venture" (his own dictated framing) and the JSON-LD deliberately carries NO parentOrganization for it. Room/treatment-room counts verified but NOT printed (panels are one-line by design; guards ban counted nouns). Logged in QUESTIONS.md for Abilash's spelling confirmation.
+
+## Protection map (implemented in next.config.ts; guards assert coverage)
+| Legacy URL | Fate | Why |
+|---|---|---|
+| /home.aspx, /default.aspx | 301 → / | the one-pager replaces the home |
+| /about-us.aspx, /brief-on-kairali.aspx, /founders-message.aspx, /awards.aspx | 301 → / | group-story pages; the umbrella page carries the ruled group facts |
+| /ayurvedic-destination.aspx | 301 → /#properties | property-roster page → the panels |
+| /ayurvedic-healing-village.aspx | 301 → /#healing-village | property page → the clinical card (links out to ayurvedichealingvillage.com) |
+| /accommodation-tariffs.aspx | 301 → /#healing-village | legacy KTAHV tariff page; tariffs are the hospital site's business — the card is the honest hop-free target |
+| /ayurvedic-franchise.aspx | 301 → https://ayurvedafranchise.com/ | franchise belongs to the franchise lane; ayurvedafranchise.com is the CANONICAL franchise domain (Decision #4) and verified serving 200 on 16 Jul; kairalifranchise.com rejected — it is itself a 301 into ayurvedafranchise.com, so pointing there would chain two hops |
+| /contact-us.aspx, /enquiry-now.aspx | 301 → /#enquire | enquiry intent → the enquiry band |
+| /careers.aspx, /apply-now.aspx, /faqs.aspx, /download-center.aspx | 301 → / | no careers/downloads surface in v1 |
+| *(audit-observed extras, unmined but live)* /privacy-policy.aspx → /privacy · /terms-of-use.aspx → /terms · /free-online-consultation.aspx, /give-feedback.aspx → /#enquire · /wellness-destination.aspx → /#properties · /sitemap.aspx, /newsletter.aspx, /virtual-tour.aspx, /meet-the-directors.aspx, /social-responsibility.aspx, /photo-gallery.aspx, /video-gallery.aspx, /read-feedback.aspx → / | cheap insurance beyond the banked set |
+
+All single-hop (guards assert no .aspx destinations). GSC property exists (years old, per QUESTIONS 16:35 entry) — pull its query data at DNS-flip time to re-rank fates before go-live.
+
+## D-SEO-DUAL (two named steps, per the 16 Jul ruling)
+**DEFEND (what the domain already holds):** branded queries — "kairali hospitality" — plus whatever the aged GSC property shows at flip (pre-flip we have no export; legacy titles were keyword-stuffed pipe-chains with no canonicals, four duplicate hosts and a contradictory sitemap, so little non-brand equity is presumed). Defence = exact-brand title/H1 ("Kairali Hospitality"), Organization + WebSite + LodgingBusiness/Hospital JSON-LD, llms.txt, the wholesale 301 map above, and one canonical host (Vercel + canonical meta replace the http/https×www/non-www four-way split).
+**ATTACK (what the audience searches):** partner/investor + premium-traveller phrases worked naturally into copy — "ayurveda resort Czech Republic" (the Svatá Kateřina card + llms.txt), "ayurvedic hospital Kerala" (clinical card), "wellness villa Goa" (Raag panel), "wellness hospitality consultancy" / "develop an ayurveda property" (the Develop-with-us chapter's H2/copy). AEO/GEO: llms.txt states the three properties + consultancy in plain ruled facts; the intent fork mirrors the three real query intents (stay / develop / treatment).
+**MUST-NOT (ROI protection):** no tariff/price content (the legacy tariff page died for a reason — rates belong to the property sites); no franchise-commercial keywords (that lane is ayurvedafranchise.com's, commercials still HELD); no "luxury spa resort" vocabulary anywhere near KTAHV copy (GST lock — the audit's finding #17 is exactly the trap); no invented counts (rooms/acres/centres), no future-property teasers until Abilash rules them announceable.
+
+## Design deltas vs the fleet (D-DESIGN-DIFF)
+First factory build with: full-bleed edge-to-edge photographic hero (§5.1) · typographic place strip (§5.3) · three-door audience fork incl. a clinical door (§5.4) · portrait 3:4 property panels, one desktop viewport (§5.2) · dual Explore/Enquire property CTAs (§5.10) · full-width lineage pull-quote band (§5.6) · honest counter strip (§5.8) · asymmetric editorial pair (§5.9) · B2B "Develop with us" chapter (§5.7). "On the horizon" band omitted per its facts gate (§5.5). Marigold = ONE moment (the consultancy chapter's accent bar). v1 ships a photographic hero, not HF-AMB video: no brand-graded ambient asset exists in the library yet; the register-table HF-AMB allowance stays open for a later pass (poster-first budget already in place).
+
+## Contact interim
+WhatsApp = Priya interim number (DECISIONS 2026-07-13 18:51, arogyakendra precedent) + info@kairali.com for stay, JV, consultancy and treatment enquiries alike. Swap when the group WhatsApp ruling lands (BACKLOG, Abilash).
+
+## Post-build gates run on this site
+pnpm build clean · brand-lint 0 errors · compliance lint PASS · guards.test.js 8/8 · full discovered suite · Playwright evidence (desktop/mobile/first-paint/og) → launches/kairalihospitality.com/screens/. Follow-ups for the launch pass: design-qa + seo-aeo-geo (rule n), B-14 design-critic, D-DESIGN-DIFF external similarity judge, filled checklists.
+
+## Iteration-2 builder rulings (2026-07-16 22:58:18 IST — pending Abilash ratification; critic it.1 asked for these "in writing")
+1. **Statement form (critic finding 7):** the §5.1 "two-line Kurale statement" is BLESSED as a three-line setting — the second sentence ("A family practising Ayurveda for {computed} years.") balance-wraps cleanly at the 24ch measure and the critic judged the break dignified at every viewport. Shortening it would cost the guard-locked "family practising Ayurveda" phrasing; the three-line form is the intended one. Q-KH-BRIEF-RULINGS in QUESTIONS.md carries this to Abilash.
+2. **Hero overline in ivory (critic Brand row):** over photography the hero overline sets in ivory@88%, not marigold-300 — the page's one marigold moment is the consultancy accent bar (ch.03 proportions law), and a second marigold element over the hero photo would break the one-accent budget. Blessed as the umbrella's dark-surface interpretation.
+3. **Ivory-outline hero pill (critic Brand row):** the hero "Enquire" is an ivory-outline pill — a photographic inversion of the button catalog for legibility over the twilight frame; forest-500 fill would vanish into the palms. Blessed as the full-bleed-hero variant; not for use on flat dark bands (those keep catalog buttons).
+4. **H1 vs D-SEO-DUAL DEFEND (seo-aeo-geo it.1 WARN-2):** the DEFEND line names "exact-brand title/H1" while §5.1 commissions the design statement as H1. The build keeps the statement H1; the exact brand holds title, og:site_name, WebSite JSON-LD and the header wordmark — branded-query defence rests on those. Flagged, not silently resolved.
