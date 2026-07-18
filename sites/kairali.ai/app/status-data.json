@@ -1,11 +1,11 @@
 {
   "meta": {
-    "updated": "2026-07-18 17:20:00 IST (late session: Gate B–E emails SENT by owner 16:40 IST — round LIVE · #121–#124 merged · PRs open: #125 B1 map, #126 emitters T1, #127 fleet chat bubble · weekend build sprint armed (D-20260718-08/-10), gated on unblock sheet · Shopify agentic pilot Mon 20 Jul via Shadab (D-09, access email sent 17:08))",
-    "as_of_commit": "1d6adfe",
+    "updated": "2026-07-18 20:45:00 IST (beauty lane: D-20260718-21 EXECUTED — BEAUTY_DOCTRINE.md (four pillars, per-entity communicate-lists, §3 ROI framework, §R rubric) + scripts/beauty-audit.mjs + registry row beauty-conformance (68 gates, lint PASS) + CLAUDE.md v1.15; first live run: honest FAIL on whatisayurveda homepage, caught a real truncated sentence at app/page.tsx:101 — evidence launches/whatisayurveda.com/beauty/2026-07-18.md; PR open on feature/beauty-doctrine-gate. Earlier late-session state: Gate B–E emails SENT 16:40 IST · weekend build sprint armed · Shopify agentic pilot Mon 20 Jul)",
+    "as_of_commit": "8d382a2 (feature/beauty-doctrine-gate)",
     "sprint": "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)",
     "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
   },
-  "generatedFrom": "2026-07-18 17:20:00 IST (late session: Gate B–E emails SENT by owner 16:40 IST — round LIVE · #121–#124 merged · PRs open: #125 B1 map, #126 emitters T1, #127 fleet chat bubble · weekend build sprint armed (D-20260718-08/-10), gated on unblock sheet · Shopify agentic pilot Mon 20 Jul via Shadab (D-09, access email sent 17:08))",
+  "generatedFrom": "2026-07-18 20:45:00 IST (beauty lane: D-20260718-21 EXECUTED — BEAUTY_DOCTRINE.md (four pillars, per-entity communicate-lists, §3 ROI framework, §R rubric) + scripts/beauty-audit.mjs + registry row beauty-conformance (68 gates, lint PASS) + CLAUDE.md v1.15; first live run: honest FAIL on whatisayurveda homepage, caught a real truncated sentence at app/page.tsx:101 — evidence launches/whatisayurveda.com/beauty/2026-07-18.md; PR open on feature/beauty-doctrine-gate. Earlier late-session state: Gate B–E emails SENT 16:40 IST · weekend build sprint armed · Shopify agentic pilot Mon 20 Jul)",
   "stageOrder": [
     "ideation",
     "research",
@@ -59,7 +59,7 @@
     {
       "name": "Pipeline & CI gates (front + back)",
       "status": "active",
-      "next_milestone": "18 Jul PROMPT 4 pilot DONE: arogyashala.in through all 63 registry gates (organic class) end-to-end -> human_audit; baseline: automated chain 2m54s, subagent audits 12m15s wall, total ~28m; 334,234 subagent tokens measured (parent-session tokens still unmeasured — PROMPT 6 instruments the rest); 1 honest FAIL recorded (matrix-walk DO-NOT-SHIP, verdict emitters unbuilt) + 2 gaps (keyword-map file missing; content-lint scope). Report: docs/reports/2026-07-18-prompt4-single-pager-pilot.md. LATE SESSION: B1 keyword-map PR #125 · verdict emitters T1 PR #126 (476 tests; CI wiring = sheet A-13) · chat-bubble gate PR #127. NEXT: unblock sheet answers (O1 A-9, O4 A-10, backfill A-11, wiring A-13) then weekend build",
+      "next_milestone": "18 Jul PROMPT 4 pilot DONE: arogyashala.in through all 63 registry gates (organic class) end-to-end -> human_audit; baseline: automated chain 2m54s, subagent audits 12m15s wall, total ~28m; 334,234 subagent tokens measured (parent-session tokens still unmeasured — PROMPT 6 instruments the rest); 1 honest FAIL recorded (matrix-walk DO-NOT-SHIP, verdict emitters unbuilt) + 2 gaps (keyword-map file missing; content-lint scope). Report: docs/reports/2026-07-18-prompt4-single-pager-pilot.md. LATE SESSION: B1 keyword-map PR #125 · verdict emitters T1 PR #126 (476 tests; CI wiring = sheet A-13) · chat-bubble gate PR #127. NEXT: unblock sheet answers (O1 A-9, O4 A-10, backfill A-11, wiring A-13) then weekend build. 20:45 IST: BEAUTY GATE landed (D-20260718-21) — doctrine + beauty-audit.mjs + beauty-conformance row (all 3 classes; landing ROI-first per doctrine §3); 13 mocked-model tests; full suite 567/567; demo verdict = honest FAIL on whatisayurveda homepage (pass 1)",
       "due": null,
       "tokens_spent": null,
       "cost_inr": null,

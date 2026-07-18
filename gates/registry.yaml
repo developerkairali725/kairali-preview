@@ -39,7 +39,7 @@
 #   applicability     — commerce / organic / landing, per the law above.
 
 version: 1
-updated: "2026-07-18 20:09:55 IST"
+updated: "2026-07-18 20:33:25 IST"
 classes: [commerce, organic, landing]
 
 gates:
@@ -585,6 +585,27 @@ gates:
       commerce: required
       organic: required
       landing: required
+
+  # ── BEAUTY CONFORMANCE (D-20260718-21, 18 Jul 2026). Beauty is not the goal —
+  # desired perception is (docs/design/beauty-doctrine-inputs-2026-07-18.md,
+  # owner-supplied verbatim; completed as docs/design/BEAUTY_DOCTRINE.md). The
+  # gate judges a page FOR ITS ENTITY (per-entity communicate-lists) AND PAGE
+  # TYPE (LP converts · blog educates · homepage positions · About trusts ·
+  # PDP reduces anxiety). Gate-duplication law: criteria other gates own are
+  # REFERENCED, never re-run — this gate owns entity-perception fit, restraint,
+  # timelessness, fleet consistency, authenticity, price-perception ceiling.
+  - id: beauty-conformance
+    name: "Beauty-conformance gate (BEAUTY_DOCTRINE rubric)"
+    what_it_verifies: "Rendered page (desktop AND mobile screenshots + source + strategy artifact) judged against the doctrine rubric for its entity and page type: desired-perception questions answered, entity communicate-list served, restraint/editing, fleet-system consistency, authenticity (show Kerala — never imitate Bali/Japan/generic wellness), price-perception ceiling, trust-before-beauty staging, copy deliberateness; performance and truth criteria READ existing gate evidence (lighthouse-budgets A5, design-external-ai-review, B-14) — never re-measured; findings per pillar; strict PASS/FAIL + advisory lane per D-EXTREVIEW-OWNER-FACTS"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "scripts/beauty-audit.mjs — parses the §R rubric from docs/design/BEAUTY_DOCTRINE.md, orchestrates scripts/audit-gpt.mjs with desktop+mobile --image (scripts/lib/image-input.mjs); exit 0 only on strict PASS; evidence append-only under launches/<domain>/beauty/"
+    source: "DIRECTIVES.md D-20260718-21 (Abilash in-chat, 18 Jul 2026 ~20:45 IST); docs/design/beauty-doctrine-inputs-2026-07-18.md (immutable owner input)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: { adapted: "ROI-first — beauty serves conversion per doctrine §3" }
 
   # ─────────────────────────── D · SUBAGENT AUDIT GATES ──
   - id: design-qa-audit
