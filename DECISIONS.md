@@ -478,3 +478,52 @@ His words (verbatim intent): he's "my marketing teacher who's given me guideline
 
 ## 2026-07-18 14:41:00 IST — D-QUEUE-18JUL-EVENING addendum: marketing review routing (Abilash, in-chat)
 Marketing coverage split, stated while filling the Gate B email recipient: **Anupam (mkt@ktahv.com) covers Healing-Village-related things and blogs; Astha (ho.mkt@kairaliproducts.com) covers Villa Raag and the rest of the sites/companies.** Applied to the Gate B draft in docs/reports/2026-07-18-prompt2-preview-round.md §6 (Astha primary for the 8-site round, Anupam for KTAHV-adjacent content). Feed this into wiki/people.md and the delegation sheet at next touch.
+
+## 2026-07-18 17:46:09 IST — Abilash, weekend-sprint unblock walk (§A/§B of docs/reports/2026-07-18-weekend-unblock-sheet.md, answered one-at-a-time in-chat)
+- D-FR-MONEY + D-FR-ROYALTY: PUBLISH the live kairalifranchise.com investment/fee/ROI figures AND royalty terms as-is (brother-confirmed current; he updates us if they change). Supersedes the gate-behind-enquiry recommendation.
+- D-FR-CONTACT: franchise enquiries → info@kairali.com (locked fact stands).
+- D-EQ-CATALOG (amended by §B answer): build the FULL catalog structure with UNMISTAKABLE placeholders — lorem-ipsum-style ₹/$ values, obviously-fake SKU IDs, placeholder/stock/generated images "so the team knows what goes where". Real catalog data swaps in on arrival (B-1 not deliverable in time). Placeholder pages NEVER go live — preview only. HARD GATE 6 note: owner-directed explicit placeholders, never data presented as real.
+- D-EQ-CLAIMS: carry the live site's cert/export/manufacturing/heritage claims AS-IS (same trust basis as D-FR-MONEY).
+- D-KC-DOMAIN: canonical spelling = kairaliCENTERS (live domain + GSC property).
+- D-KC-PARTNERS: ALL SIX partner-branded centres (Patna/Surya, Vadodara/RETROFIT, Japan ×3/ayus.co.jp, Mauritius, Czech/Katerina, Kuwait) are FRANCHISE PARTNERS — pages state it.
+- D-KAIR-DOMAINS (Decision #3 residual CLOSED): kairaliorganic.com = Kairali Organics brand site · kairorganics.com = 301 → kairaliorganic.com · kairproducts.com = KAIR sub-brand site. Both builds join the weekend as informational shells; buy-path stays Track-B-gated.
+- D-O1: BUILD scripts/shopify-catalog-lint.mjs this weekend (Monday pilot tool).
+- D-O4: RATIFIED — run: automated|agent|human enum stays as merged.
+- D-REBUILD-ALL-8 (supersedes Q-FRONT-GATE-BACKFILL): ALL 8 pre-front-gate sites are REBUILT FROM SCRATCH through the full front-gate law — owner confirmed "literally rebuild", cost surfaced and accepted. Sequencing: NEW sites first (this weekend), rebuilds start Monday as their own wave. Gate B–E audit round stays LIVE; replies become rebrief design input.
+- D-LP-LIST: the 10 live KTAHV LP URLs (docs/ktahv-inputs/live-lp-list.md — now the durable authority, supplied 3rd/4th time) rebuild FIRST in the LP lane; then the 3 proposed new LPs (KTAHV consultation · franchise lead-gen · healing.recipes launch). Golden-page stop each.
+- D-EMITTER-WIRING: RATIFIED — wire the #126 emitters into CI as its own PR.
+- D-BULK-B2B: build bulkayurvedaoils.com + bulkayurvedaproducts.com B2B lead-gen shells this weekend, research-first, buy-path deferred.
+- D-SOCIALS-INTERIM (part-acks D-20260718-04): socials PR ships the director@ SIGNATURE set + Pinterest from live NOW; email to Astha + Anupam (drafted for owner send) collects the canonical per-entity list for the repo; drift fixed on reply.
+- D-VR-MANUAL: villaraag BUILDS THIS WEEKEND from the brand manual the owner already supplied — missing ramp/type-scale steps derived provisionally per the D-BRONZE-CONTRAST clause-2 method and FLAGGED, never silently invented.
+- D-BL-INTERIM: theblushlounge BUILDS THIS WEEKEND using images from IG @blushlounge_sneha as interim assets (owner-authorized); hi-res originals of the two sets replace them later. Scraped assets pass rule-(r) security screening.
+- Vercel/localhost (owner, same session): sites without a Vercel project may preview on LOCALHOST for the weekend; owner connects Vercel Sat/Mon (remote + phone access available).
+
+## 2026-07-18 18:35:00 IST — Abilash, sweep-walk rulings (continuing the one-at-a-time walk, in-chat)
+- D-BL-WHATSAPP: theblushlounge chat CTA number = +91 88269 21110 (the contact-page match; the ...21114 variant is wrong).
+- D-VR-EMAIL: villaraag.com displays info@kairali.com (locked group contact).
+- D-VR-RATES: rebuild carries the LIVE tariff table as-is (incl. the AP/APAI oddity — owner's call, trust-the-live-site basis).
+- D-VR-CHAT: Villa Raag uses the group interim WhatsApp (+91 92898 38797) + interim Chatbase bot until entity bots land.
+- D-410-NAMASTEDWAAR: /namastedwaar-…-up-india.aspx 410 APPROVED — "that location closed now" (owner). Stale 2016–2020 tariff/price PDFs: backlink-check-then-410 path proceeding per recommendation (owner did not object; flagged for veto).
+- D-KAIR-CANONICAL (AMENDS D-KAIR-DOMAINS same day): kairbykairali.com STAYS the canonical KAIR home (it is the live site — rebuild in place); kairproducts.com becomes a 301 INTO kairbykairali.com, NOT the KAIR site. kairaliorganic.com ruling unchanged (Organics canonical, kairorganics.com 301s in; note: it is a LIVE legacy site — rebuild, not create).
+
+## 2026-07-18 18:55:00 IST — Abilash, sweep-walk rulings batch 2 (repo-wide doubt clearance, in-chat one-at-a-time; D-20260718-14 executed)
+- D-SHALA-BUBBLE: arogyashala.in KEEPS the chat bubble (fleet rule wins over the older no-chatbot-by-design note); packet recipients to be notified the preview gained it.
+- D-YOGA-GUESTBOOK: keep the full historical guestbook incl. the late Pramod Mahajan's entry, framed as an archive ("entries kept as they were written").
+- D-KH-JV: "Resort Svatá Kateřina" spelling CONFIRMED; relationship stays "in cooperation with" — no JV/ownership claim until the legal form is documented.
+- D-KH-2008: the "established 2008 subsidiary" line stays OFF (unconfirmed).
+- D-KH-PHONE: the group IVR 9555156156 DOES print on kairalihospitality.com alongside info@ + WhatsApp.
+- D-HR-PHONE: healing.recipes drops legacy +91-9999231117; prints the group IVR 9555156156 instead.
+- D-SANSKRIT-FONT (fleet policy): mix a macron-capable serif for Sanskrit display terms — headlines with diacritics switch to the paired serif; Kurale stays for Latin display. Build item: token + lint + swap pass.
+- D-RATE-PDFS: $927 suite cell = possible typo, owner sends the correct figure later (PARKED, nothing publishes from it); "Sanskrit" filename = stale, ignore; 18-month validity overlap = intended.
+- D-GA4-VIKASH: GA4 property + GTM container creation is routed to Vikash (draft email for owner send); legal drafts to final remain owner-lane before any DNS flip.
+- D-YMYL-WIDEN (closes O5): the honest-YMYL content lint widens to ALL organic health surfaces; per-site tuning as sites onboard. Build item queued.
+- D-LINEAGE-UNFREEZE: APPROVED — heritage/About copy may be corrected from canonical kairali-lineage.md; mismatched live pages go to Deepu's Phase-A fix list.
+- D-KH-BRIEF-RULINGS: NOT ratified sight-unseen — owner reviews the preview first (send link); the four calls carry as proposals into the Monday rebuild brief. NOTE + correction on record: the sweep agent's claim of a "9.4 owner rating" was FABRICATED (repo shows critic 8.9 FAIL → fix pass; owner never rated it); logged in LEARNINGS.md.
+- D-HR-SCOPE (amends the 16-Jul lean): healing.recipes ADDS the 2017 Chef Retreat archive (recipes/gallery/Madhulika Dash story) to launch scope; asset ask: locate the 2017 materials.
+- D-BL-BUBBLE-EXEMPT: theblushlounge.com is EXEMPT from the fleet chat bubble — Sneha's own WhatsApp (+91 88269 21110) is the chat CTA; loud registry exemption, not a silent skip.
+- D-EMITTER-ALLOWANCE (closes Q-EMITTER-PUSH-ALLOWANCE): GRANTED after risk briefing — owner adds "github-actions" to the main branch-protection bypass list himself (Settings → Branches); removable any time.
+- D-HR-TITLE-BRONZE: healing.recipes featured title switches to bronze-600 (closes the parked aesthetic item).
+- D-DEFR-AI-REVIEW: DE/FR banned/risky wording is screened by the GPT+Perplexity reviewers for now; a human native+legal check remains REQUIRED before any DE/FR page's DNS-live moment.
+- Q-KC4 CLOSED: Hostinger mirror agency unknown/not important — trace via Sunaj if ever needed.
+- D-GURU-PRICES: Anupam confirms kairali.guru programme prices before its Wave-2 rebuild ships.
+- Sweep residue (no owner input needed): log merge=union stays (status quo per recommendation); ktahv.com 301 location routed to Sunaj; TARIFF_MODE/BOOKING_ROUTE live in the WP workspace (nothing here waits); stale BACKLOG pwmgr line to be cleaned (D-PWMGR already DECLINED).

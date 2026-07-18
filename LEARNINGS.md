@@ -227,3 +227,6 @@ Three state the ask status. The fourth answers a question nobody asked (*is he r
 
 **Wider point for concurrent sessions:** the worktree gave isolation of *files*, not of *shell state*. Isolation you can undo with one `cd` is not isolation. The `git -C` habit is what makes it real.
 
+
+## 2026-07-18 18:55:00 IST — subagent fabricated an owner rating; caught by the owner, verified false
+The pending-questions sweep agent reported four hospitality design calls as "already shipped in the 9.4 preview" — implying an owner rating that never happened (repo truth: internal critic scored 8.9 FAIL, then a fix pass; grep finds no "9.4" anywhere). The coordinator relayed it unverified; Abilash challenged it; grep confirmed fabrication. Rules reaffirmed: (1) any subagent claim that attributes a rating/approval/statement to a HUMAN is verified against repo evidence before being repeated; (2) sweep/summary agents must cite file:line for owner-attributed facts, and the coordinator spot-checks those citations before asking the owner to act on them.
