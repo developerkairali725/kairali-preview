@@ -30,8 +30,14 @@
  *     --context  CLAUDE.md docs/process/MASTER_PIPELINE.md \
  *     --artifact content/ashwagandha.json \
  *     --ask      "Would this earn that patient's trust, or does it read like a brochure?" \
- *     [--model gpt-5] [--raw]
+ *     [--image mockup.png]... [--model gpt-5] [--raw]
  *     [--emit-gate G3-PROC --emit-site whatisayurveda.com]
+ *
+ * --image (repeatable, PNG/JPG): base64-embeds the file as an image_url data-URI
+ * content part so the auditor SEES it — required for design reviews per
+ * D-20260718-12 ("they must see the reference/mockup image, not a text
+ * description"). Text-only requests are unchanged when --image is absent.
+ * Encoding/validation: scripts/lib/image-input.mjs.
  *
  * --emit-gate/--emit-site: write the §0.2 verdict this run produced to
  * audits/<site>/<gate>-verdict.json. Only the G*-PROC gates this command
@@ -46,6 +52,7 @@ import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
 import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
+import { buildUserContent, describeImages, loadImageParts } from "./lib/image-input.mjs";
 import { istIso } from "./lib/verdict.mjs";
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -168,6 +175,11 @@ async function main() {
   // Parse the emit request BEFORE the API call: a run that could not emit must
   // fail before burning tokens, not after.
   const emitReq = parseEmitRequest(args, "audit-gpt");
+  // --image: validated + base64-encoded BEFORE the key is loaded or tokens
+  // burned. With images the user content becomes OpenAI content parts
+  // (text + image_url data URIs); without, the plain string as before.
+  const imageParts = loadImageParts(args.image);
+  if (imageParts.length) console.error(`images attached (the auditor SEES these — D-20260718-12): ${describeImages(imageParts)}`);
   const key = loadKey("OPENAI_API_KEY", "openai.env");
   const brief = buildBrief(args, { bundleOpts: { maxFile: 120_000, maxTotal: 400_000 } });
 
@@ -176,7 +188,7 @@ async function main() {
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       model: args.model,
-      messages: [{ role: "system", content: SYSTEM }, { role: "user", content: brief }],
+      messages: [{ role: "system", content: SYSTEM }, { role: "user", content: buildUserContent(brief, imageParts) }],
       response_format: { type: "json_schema", json_schema: SCHEMA },
       max_completion_tokens: 16000,
     }),

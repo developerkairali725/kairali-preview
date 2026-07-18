@@ -24,6 +24,14 @@
  * Reads PERPLEXITY_API_KEY from ~/.secrets/perplexity.env. Never prints the key.
  * Exit 0 = PASS, 2 = FAIL, 1 = error.
  *
+ * --image (repeatable, PNG/JPG): base64-embeds the file as an image_url
+ * data-URI content part so the auditor SEES it — required for design reviews
+ * per D-20260718-12. Verified 18 Jul 2026: the Perplexity Sonar API accepts
+ * the same OpenAI-style {type:"image_url", image_url:{url:<data URI>}} part,
+ * and sonar-pro supports image attachments (docs.perplexity.ai/guides/
+ * image-attachments). Text-only requests unchanged when --image is absent.
+ * Encoding/validation: scripts/lib/image-input.mjs.
+ *
  * --emit-gate/--emit-site (e.g. --emit-gate G6-FACT --emit-site
  * whatisayurveda.com): write the §0.2 verdict this run produced to
  * audits/<site>/<gate>-verdict.json. Only the G*-FACT gates this command
@@ -36,6 +44,7 @@ import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
 import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
+import { buildUserContent, describeImages, loadImageParts } from "./lib/image-input.mjs";
 import { istIso } from "./lib/verdict.mjs";
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -102,6 +111,10 @@ async function main() {
   // Parse the emit request BEFORE the API call: a run that could not emit must
   // fail before burning tokens, not after.
   const emitReq = parseEmitRequest(args, "audit-perplexity");
+  // --image: validated + base64-encoded BEFORE the key is loaded or tokens
+  // burned. Same OpenAI-style content-part shape as audit-gpt (see header).
+  const imageParts = loadImageParts(args.image);
+  if (imageParts.length) console.error(`images attached (the auditor SEES these — D-20260718-12): ${describeImages(imageParts)}`);
   const key = loadKey("PERPLEXITY_API_KEY", "perplexity.env");
   // sonar's context is tighter than gpt-5's
   const brief = buildBrief(args, { bundleOpts: { maxFile: 60_000, maxTotal: 140_000 } });
@@ -111,7 +124,7 @@ async function main() {
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       model: args.model,
-      messages: [{ role: "system", content: SYSTEM }, { role: "user", content: brief }],
+      messages: [{ role: "system", content: SYSTEM }, { role: "user", content: buildUserContent(brief, imageParts) }],
       response_format: { type: "json_schema", json_schema: { schema: SCHEMA } },
       temperature: 0,
     }),

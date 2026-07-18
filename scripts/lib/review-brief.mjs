@@ -74,12 +74,14 @@ export const STRIP_LOG = [];
 
 export function parseReviewArgs(argv, defaults = {}) {
   const out = {
-    context: [], artifact: [], prior: [], thinking: [],
+    context: [], artifact: [], prior: [], thinking: [], image: [],
     audience: "", purpose: "", ask: "", step: "", pass: "1",
     raw: false, ...defaults,
   };
   let key = null;
-  const multi = new Set(["context", "artifact", "prior", "thinking"]);
+  // `image` (repeatable): PNG/JPG mockups the auditor must SEE (D-20260718-12).
+  // Encoding + request shape live in scripts/lib/image-input.mjs.
+  const multi = new Set(["context", "artifact", "prior", "thinking", "image"]);
   for (const a of argv) {
     if (a.startsWith("--")) {
       key = a.slice(2);
