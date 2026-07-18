@@ -168,7 +168,7 @@ whatisayurveda.com     → https://kairali-web-factory-whatisayurveda.vercel.app
 
 ### Draft 1 — Gate B · Marketing review
 
-> **To:** Marketing — ⚠️ recipient for Abilash to pick: no single group-marketing address is on file (known marketing contacts: mkt@ktahv.com — KTAHV; ho.mkt@kairaliproducts.com — KAPPL). Left unfilled rather than guessed.
+> **To:** ho.mkt@kairaliproducts.com (Astha — Villa Raag + all non-KTAHV sites/companies), mkt@ktahv.com (Anupam — Healing-Village-related things and blogs) — routing per Abilash's in-chat ruling, 2026-07-18 evening (D-QUEUE-18JUL-EVENING addendum): Astha owns the marketing review for this 8-site round; Anupam is included for the KTAHV-adjacent content (kairali.com KTAHV sections, blogs).
 > **CC:** director@kairali.com
 > **Subject:** Review round — 8 rebuilt Kairali sites on preview links (copy, brand, offers, imagery)
 >

@@ -9,7 +9,7 @@ When a blog is published, Claude reads the chosen author's profile below and wri
 
 ## ⚠️ MUST-FIX BEFORE USING THESE AS BYLINES
 
-1. **"Dr. Ashika Raj" vs "Dr. Ashikha Raj" — unresolved.** The site shows both spellings (author byline = "Ashika", her about-page and bio = "Ashikha"), inside the same author schema. **Do not guess.** Settle it from her BAMS/registration, fix the WordPress display name + bio to match, then use the one true spelling everywhere. Until then, flag any post under this byline.
+1. **"Dr. Ashikha Raj" (with h) — RESOLVED 2026-07-18 14:26:47 IST, Abilash's in-chat ruling.** Use "Dr. Ashikha Raj" everywhere going forward. The live site still shows "Ashika" in bylines/schema (and an "anshika.webp" image filename) — those are now known-wrong: fix the WordPress display name, bylines, bio and schema to "Ashikha" via the content pipeline (first whyayurveda batch), never by hand on production.
 2. **Author schema must match the visible byline** on every post (E-E-A-T on a health site).
 
 ---
@@ -56,7 +56,7 @@ When a blog **doesn't name an author**, use the default — don't invent a bylin
 - **Writes like:** clear teacher; takes a common belief, weighs it fairly, lands on the safe, evidence-based answer.
 - **Avoid:** absolutism, scare tactics, dismissing the reader's question.
 
-**Dr. Ashika / Ashikha Raj** · `drashikaraj` · *Resident Medical Officer, KTAHV (as published — verify). ⚠️ spelling unresolved (see top).*
+**Dr. Ashikha Raj** · `drashikaraj` · *Resident Medical Officer, KTAHV (as published — verify). Spelling RESOLVED 18 Jul 2026 (Abilash): "Ashikha"; live "Ashika" instances queued for correction (see top).*
 - **Best for:** women's health, digestion/acidity, PCOD, seasonal resets, office-friendly everyday practice.
 - **Voice in one line:** approachable clinician — women's health, gut, and doable daily habits.
 - **Writes like:** warm and practical, close to the reader's daily life, still clinically grounded.
@@ -138,15 +138,15 @@ The blocks above are a strong first pass. To make each voice *sound like the rea
 |---|---|---|
 | **Abilash** (primary default) | ~30 bylined whyayurveda.org posts + 1 interview quote (DONE); **still to add:** YouTube interviews (Breaking Travel News, "Failing It Up", ITB Berlin — need manual transcription), the SV Business/Hospitality (Calaméo) interview, DISC C/D, past Claude chats | **First pass done · spoken verbatim pending** |
 | **Gita Ramesh** (2nd default) | Interview (cas.indica.in) + bylined post (DONE); **still to add:** the "Talk with Gita Ramesh" series, her four books | **First pass done · deepen from interviews** |
-| **Physicians** (Deepu John, Akhila, Ashika/Ashikha, Rahul) | Their articles published online | To ingest |
-| **Yoga content** | Akshar's teachings (via Pawan) | Later session |
+| **Physicians** (Deepu John, Akhila, Ashikha, Rahul) | Their articles published online | To ingest |
+| **Yoga content** | Source TBD when yoga content starts (a yoga-qualified author) | Later session |
 
 **How:** paste the real transcripts/articles and ask Claude — *"Update [author]'s voice block from these real samples: [paste]."* The more real material, the closer the voice. Compliance guardrails never change.
 
 ## OPEN ITEMS / REMINDERS (Abilash, 18 Jul 2026)
 
-- **ChatGPT once-over:** Abilash has a ChatGPT input reviewing this whole SOP/architecture — reconcile it against what we've built to catch anything missed, before finalising.
-- **Akshar's teachings (from Pawan):** to be added to the yoga voice in a later session.
+- **ChatGPT once-over: DONE 2026-07-18** — Abilash confirmed in-chat that the "ChatGPT notes" ARE the Control SOP v1.0 docx, already mapped (docs/reports/2026-07-17-sop-coverage-map.md) and baked into the Kitting Card + publish-ready prompt. Nothing further pending.
+- **Akshar's teachings — CORRECTED 2026-07-18 (Abilash in-chat, DIRECTIVES D-20260718-02):** Akshar Yadav is Abilash's MARKETING TEACHER, not an author-voice source. His teachings (GO science, docs/marketing/go-science/) are standing build-time guidelines for EVERYTHING marketing we build (sites, LPs, MCB, MOA) — working question: "What would Akshar say?" They are NOT a yoga author voice.
 
 ## TO ADD OR CHANGE A VOICE
 
