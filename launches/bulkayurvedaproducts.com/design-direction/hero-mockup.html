@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero mockup — bulkayurvedaproducts.com · "The Batch Ledger" (cool pole)</title>
+<!-- MODE B design-direction artifact. NOT a site page (lives in launches/, never sites/).
+     Token values copied verbatim from packages/ui/brand-tokens.css v1.1 — the manual wins.
+     Photography slot is a placeholder gradient: real imagery is mined (kappl.co.in facility)
+     or generated per the asset roster at build time; no stock, no AI-generic. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kurale&family=Asap:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --leaf-500:#8E9D35; --forest-500:#006038; --marigold-400:#EEB41E; --bronze-400:#C1882C;
+    --ivory:#F7F4EA; --forest-700:#004226; --forest-800:#003720; --ink:#1C1B19;
+    --bronze-600:#875F1F; --marigold-300:#F0BF3E; --leaf-700:#636E25;
+    --font-display:"Kurale",Georgia,serif; --font-body:"Asap","Trebuchet MS",sans-serif;
+    --font-caption:"Lato",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--font-body);line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{background:var(--ivory);border-bottom:1px solid rgba(28,27,25,.12)}
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px}
+  .logo{font-family:var(--font-display);font-size:22px;color:var(--forest-500)}
+  .logo small{display:block;font-family:var(--font-caption);font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-600)}
+  nav{display:flex;gap:26px;font-weight:600;font-size:15px}
+  nav a{color:var(--ink);text-decoration:none}
+  nav a:hover{color:var(--forest-500)}
+  .btn{display:inline-block;font-weight:600;background:var(--forest-500);color:#fff;
+       padding:13px 26px;border-radius:6px;text-decoration:none;min-height:44px}
+  .btn:hover{background:var(--forest-700)}
+  /* hero — forest-800 plate, the cool pole */
+  .hero{background:linear-gradient(160deg,var(--forest-800),var(--forest-700) 78%);color:var(--ivory);
+        padding:76px 0 64px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .photo{position:absolute;right:-6%;top:-18%;width:52%;height:150%;
+         background:linear-gradient(120deg,rgba(142,157,53,.35),rgba(0,96,56,.15) 60%,rgba(240,191,62,.18));
+         transform:rotate(8deg);border-radius:24px;z-index:0}
+  .photo span{position:absolute;bottom:16%;left:18px;font-family:var(--font-caption);font-size:10px;
+              letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);transform:rotate(-8deg);opacity:.8}
+  .overline{font-family:var(--font-caption);font-weight:700;font-size:14px;
+            letter-spacing:.16em;text-transform:uppercase;color:var(--marigold-300)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5.2vw,60px);
+     line-height:1.12;color:var(--ivory);margin:14px 0 18px}
+  h1 .accent{color:var(--leaf-500)}
+  .sub{font-size:18px;max-width:34em;color:var(--ivory)}
+  .rule{width:64px;height:4px;background:var(--leaf-500);margin:26px 0 0}
+  /* the model card — the signature element: "which model am I?" */
+  .card{position:relative;z-index:1;background:var(--ivory);color:var(--ink);border-radius:10px;
+        box-shadow:0 18px 44px rgba(0,0,0,.28);padding:28px}
+  .card h2{font-family:var(--font-caption);font-weight:700;font-size:12px;letter-spacing:.2em;
+           text-transform:uppercase;color:var(--forest-500);border-bottom:1px solid rgba(28,27,25,.14);
+           padding-bottom:12px;margin-bottom:6px}
+  .model{width:100%;border-collapse:collapse;font-family:var(--font-caption);font-size:14px}
+  .model td{padding:11px 2px;border-bottom:1px dashed rgba(28,27,25,.16)}
+  .model td:first-child{color:var(--bronze-600);font-weight:700;width:46%}
+  .card .btn{width:100%;text-align:center;margin-top:18px}
+  .card .note{font-family:var(--font-caption);font-size:11px;color:var(--bronze-600);text-align:center;margin-top:10px}
+  /* counters strip — oversized Lato numerals, published figures only */
+  .strip{background:var(--ivory);padding:34px 0;border-bottom:1px solid rgba(28,27,25,.12)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .n{font-family:var(--font-caption);font-weight:300;font-size:clamp(28px,3.4vw,44px);color:var(--forest-500)}
+  .l{font-family:var(--font-caption);font-weight:700;font-size:11px;letter-spacing:.16em;
+     text-transform:uppercase;color:var(--bronze-600);margin-top:4px}
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    nav{display:none} /* mockup shorthand — real build uses the packages/ui visible-nav pattern, never a desktop hamburger */
+    .strip .wrap{grid-template-columns:repeat(2,1fr)}
+    .photo{display:none}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <div class="logo">Kairali <small>Bulk Ayurveda Products · A KAPPL manufacturing desk</small></div>
+    <nav aria-label="Primary">
+      <a href="#">Services</a><a href="#">What we make</a><a href="#">Facility</a><a href="#">Quality</a><a href="#">How it works</a>
+    </nav>
+    <a class="btn" href="#" data-cta="rfq-open">Start your project</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="photo" role="img" aria-label="Photography slot"><span>photo slot — Pollachi line / laboratory (mined kappl.co.in assets)</span></div>
+    <div class="wrap">
+      <div>
+        <p class="overline">Private label · Third party · Loan licence</p>
+        <h1>Your brand. <span class="accent">Our WHO-GMP line.</span></h1>
+        <p class="sub">Contract manufacturing of Ayurvedic and herbal products — formulation, sourcing,
+           production, packaging and QA from our Pollachi, Tamil Nadu facility. In-house laboratories
+           and herb extraction, four generations deep.</p>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="card">
+        <h2>Choose your engagement model</h2>
+        <table class="model">
+          <tr><td>Third party</td><td>Our products · our packing</td></tr>
+          <tr><td>Third party</td><td>Our products · your packing</td></tr>
+          <tr><td>Loan licence</td><td>Your products · your brand · your packing</td></tr>
+          <tr><td>Loan licence</td><td>Your concept · our R&amp;D · your brand</td></tr>
+        </table>
+        <a class="btn" href="#" data-cta="rfq-open">Discuss your product</a>
+        <p class="note">Answered by the KAPPL desk · info@kairali.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Published figures">
+    <div class="wrap">
+      <div><div class="n">10000+</div><div class="l">Satisfied clients</div></div>
+      <div><div class="n">1200+</div><div class="l">Distributors</div></div>
+      <div><div class="n">900+</div><div class="l">Product SKUs</div></div>
+      <div><div class="n">111+</div><div class="l">Years of experience</div></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero mockup — bulkayurvedaoils.com · "The Batch Ledger" (warm pole)</title>
+<!-- MODE B design-direction artifact. NOT a site page (lives in launches/, never sites/).
+     Token values copied verbatim from packages/ui/brand-tokens.css v1.1 — the manual wins.
+     Photography slot is a placeholder gradient: real imagery is mined/generated per the
+     asset roster at build time; no stock, no AI-generic. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kurale&family=Asap:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --leaf-500:#8E9D35; --forest-500:#006038; --marigold-400:#EEB41E; --bronze-400:#C1882C;
+    --ivory:#F7F4EA; --forest-700:#004226; --forest-800:#003720; --ink:#1C1B19;
+    --bronze-600:#875F1F; --marigold-300:#F0BF3E; --leaf-700:#636E25;
+    --font-display:"Kurale",Georgia,serif; --font-body:"Asap","Trebuchet MS",sans-serif;
+    --font-caption:"Lato",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--font-body);line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  /* header */
+  header{border-bottom:1px solid rgba(28,27,25,.12);background:var(--ivory)}
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:24px}
+  .logo{font-family:var(--font-display);font-size:22px;color:var(--forest-500)}
+  .logo small{display:block;font-family:var(--font-caption);font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-600)}
+  nav{display:flex;gap:26px;font-weight:600;font-size:15px}
+  nav a{color:var(--ink);text-decoration:none}
+  nav a:hover{color:var(--forest-500)}
+  .btn{display:inline-block;font-weight:600;background:var(--forest-500);color:#fff;
+       padding:13px 26px;border-radius:6px;text-decoration:none;min-height:44px}
+  .btn:hover{background:var(--forest-700)}
+  /* hero */
+  .hero{padding:72px 0 56px;position:relative}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .overline{font-family:var(--font-caption);font-weight:700;font-size:14px;
+            letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-600)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5.2vw,60px);
+     line-height:1.12;color:var(--ink);margin:14px 0 18px}
+  h1 .accent{color:var(--forest-500)}
+  .sub{font-size:18px;max-width:34em;color:var(--ink)}
+  .rule{width:64px;height:4px;background:var(--marigold-400);margin:26px 0 0}
+  /* the ledger spec card — the signature element */
+  .plate{position:relative}
+  .photo{position:absolute;inset:-28px -28px 40% auto;width:78%;height:72%;border-radius:10px;
+         background:linear-gradient(135deg,var(--bronze-400),var(--marigold-400) 55%,var(--bronze-600));
+         opacity:.28;z-index:0}
+  .photo span{position:absolute;bottom:8px;left:12px;font-family:var(--font-caption);
+              font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .card{position:relative;z-index:1;background:#fff;border:1px solid rgba(28,27,25,.14);
+        border-radius:10px;box-shadow:0 18px 44px rgba(0,66,38,.14);padding:28px}
+  .card h2{font-family:var(--font-caption);font-weight:700;font-size:12px;letter-spacing:.2em;
+           text-transform:uppercase;color:var(--forest-500);border-bottom:1px solid rgba(28,27,25,.14);
+           padding-bottom:12px;margin-bottom:6px}
+  .spec{width:100%;border-collapse:collapse;font-family:var(--font-caption);font-size:14px}
+  .spec td{padding:11px 2px;border-bottom:1px dashed rgba(28,27,25,.16);vertical-align:top}
+  .spec td:first-child{color:var(--bronze-600);font-weight:700;width:44%}
+  .spec .big{font-size:26px;font-weight:300;color:var(--forest-500);line-height:1}
+  .card .btn{width:100%;text-align:center;margin-top:18px}
+  .card .note{font-family:var(--font-caption);font-size:11px;color:var(--bronze-600);
+              text-align:center;margin-top:10px}
+  /* trust strip */
+  .strip{background:var(--forest-800);color:var(--ivory);padding:20px 0}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:12px 36px;align-items:baseline;justify-content:space-between}
+  .strip .cert{font-family:var(--font-caption);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .strip .cert em{font-style:normal;color:var(--marigold-300)}
+  .strip .heritage{font-family:var(--font-display);font-size:15px;color:var(--ivory)}
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    nav{display:none} /* mockup shorthand — real build uses the packages/ui visible-nav pattern, never a desktop hamburger */
+    .photo{inset:-16px -12px auto auto;width:60%;height:46%}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <div class="logo">Kairali <small>Bulk Ayurveda Oils · A KAPPL supply desk</small></div>
+    <nav aria-label="Primary">
+      <a href="#">Oils</a><a href="#">For your business</a><a href="#">Quality</a><a href="#">How it works</a>
+    </nav>
+    <a class="btn" href="#" data-cta="rfq-open">Request a quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="overline">WHO-GMP manufacturer · Since 1908, founded 1989</p>
+        <h1>Classical Ayurvedic oils, <span class="accent">by the batch.</span></h1>
+        <p class="sub">Manufacturer-direct bulk supply of classical thailams, proprietary oils and
+           therapy powders — for spas, panchakarma centres, clinics and distributors. Quoted direct
+           from our Pollachi facility.</p>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="plate">
+        <div class="photo" role="img" aria-label="Photography slot"><span>photo slot — brass uruli, pouring oil (mined/generated per asset roster)</span></div>
+        <div class="card">
+          <h2>Supply specification</h2>
+          <table class="spec">
+            <tr><td>Oil pack format</td><td><span class="big">5 L</span> &nbsp;per can, classical thailams</td></tr>
+            <tr><td>Powder pack format</td><td><span class="big">1 kg</span> &nbsp;choornams &amp; kizhi powders</td></tr>
+            <tr><td>Certifications</td><td>WHO-GMP · ISO · FSSAI · FDA · GLP · CE <em style="font-family:var(--font-caption);font-style:normal;color:var(--bronze-600)">(as published)</em></td></tr>
+            <tr><td>Buyer lanes</td><td>Spas &amp; hotels · Panchakarma centres · Distributors &amp; importers</td></tr>
+          </table>
+          <a class="btn" href="#" data-cta="rfq-open">Get a bulk quote</a>
+          <p class="note">Enquiries answered by the KAPPL desk · info@kairali.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap">
+      <span class="cert">Certified: <em>WHO-GMP</em> · ISO · FSSAI · FDA · GLP · CE</span>
+      <span class="heritage">Trusted since 1908 — four generations of Ayurvedic manufacture</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>
