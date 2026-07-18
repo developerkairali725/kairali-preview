@@ -10,10 +10,66 @@ on:
     branches: [main]
   pull_request:
 
+# ACTIONS-BURN FIX (18 Jul 2026, evening-session queue #4; DECISIONS/handover:
+# July hit 11,444 Linux minutes vs 3,000 included — $50 net overage — because
+# all 16 matrix jobs ran on EVERY push of EVERY PR, docs-only included, and the
+# old budget cap then killed a main run mid-flight).
+# A superseded PR push cancels its still-running predecessor; main pushes are
+# never cancelled (merged evidence always completes).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 permissions:
   contents: read
 
 jobs:
+  # CHANGE DETECTION for the two 8-site matrices below. NOT a weakening of any
+  # gate (rule g): the matrices validate SITE code, and this job only lets them
+  # skip when the diff PROVABLY touches no site-affecting path — the exact code
+  # they would test is already green on main. brand-lint, front-gate and the
+  # gate workflow still run on every push, so docs/content lints never skip.
+  # Required-checks safety: the matrix jobs use a job-level `if`, so on a skip
+  # each context reports conclusion "skipped" — which SATISFIES branch
+  # protection. (A workflow-level `paths:` filter would instead leave required
+  # contexts forever "Expected" and freeze the PR — that is why this is a job,
+  # not a paths: block.) Any ambiguity (missing/unknown base SHA, force-push)
+  # defaults to site_affecting=true — the full matrices run.
+  # sites/kairali.ai is excluded from the trigger paths: it is matrix-EXEMPT by
+  # standing ruling (D-RULE-MATRIX-EXEMPT), so no matrix job ever tests it —
+  # its own build is verified by the gate workflow + its Vercel deploy. Without
+  # this exclusion every session-end STATUS.yaml dashboard regen would burn the
+  # full ~85-minute matrix for jobs that cannot observe the change.
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      site_affecting: ${{ steps.diff.outputs.site_affecting }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # diffs against the PR base / previous main tip
+
+      # BASE via env, never interpolated into the shell line (same injection
+      # doctrine as front-gate).
+      - name: Detect site-affecting changes
+        id: diff
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            echo "::notice::No usable base SHA — defaulting to site_affecting=true (full matrices)."
+            echo "site_affecting=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          changed=$(git diff --name-only "$BASE"...HEAD)
+          echo "changed files vs merge-base:"; echo "$changed" | sed 's/^/  · /'
+          pattern='^(sites/|packages/|tests/|scripts/|\.github/workflows/|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|turbo\.json)'
+          exempt='^sites/kairali\.ai/'
+          if echo "$changed" | grep -E "$pattern" | grep -Ev "$exempt" | grep -q .; then
+            echo "site_affecting=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "site_affecting=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No site-affecting paths in this diff — factory-spec + lighthouse matrices skip-as-success (contexts report 'skipped', which satisfies required checks). They arm automatically on any sites/, packages/, tests/, scripts/, workflow or lockfile change."
+          fi
   brand-lint:
     runs-on: ubuntu-latest
     steps:
@@ -151,6 +207,10 @@ jobs:
         run: node scripts/front-gate.mjs --base "$BASE"
 
   factory-spec:
+    # Skip-as-success on docs-only diffs (see the `changes` job's contract —
+    # a skipped context still satisfies branch protection).
+    needs: changes
+    if: needs.changes.outputs.site_affecting == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # one red site must not cancel the evidence for the others
@@ -194,6 +254,9 @@ jobs:
   # same transport the factory spec suite gates on. Preview-URL runs stay a
   # launch-time step; this catches regressions at merge time.
   lighthouse:
+    # Skip-as-success on docs-only diffs (see the `changes` job's contract).
+    needs: changes
+    if: needs.changes.outputs.site_affecting == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # one red site must not cancel the evidence for the others
