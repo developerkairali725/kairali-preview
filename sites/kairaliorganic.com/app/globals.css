@@ -1,0 +1,442 @@
+/* ===========================================================================
+   kairaliorganic.com — "The Apothecary Ledger" (launches/kairaliorganic.com/
+   DESIGN_DIRECTION.md, pass-2 mockup: hero-mockup.svg). Kairali Brand Manual
+   2026 rev.2 tokens ONLY (packages/ui/brand-tokens.css) — every value below
+   is a token or a color-mix of tokens; site-level names are ALIASES.
+   Grammar: ivory ledger ground · asymmetric editorial hero split (forest-700
+   panel / framed still-life field) · bronze hairline rules · numbered 01–09
+   ledger strip as the signature motif · Kurale display never bolded ·
+   marigold = the ONE accent moment (the hero CTA) · calm motion only.
+   Distinctness vs kairbykairali.com (D3): deep forest+bronze on ivory,
+   serif ledger voice — never leaf-led, never rounded-playful.
+   Mockup deviations, each a manual-wins fix (doctrine d), logged in the
+   go-science self-check: dark-panel overline renders marigold-300 (ch.08
+   dark-surface accent law; the mockup's bronze-400-on-forest measures ~3.2:1
+   and bronze-400 text is banned by D-BRONZE-CONTRAST/brand-lint r6).
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  /* bronze-400 is legal for NON-TEXT decoration only (hairlines, frames) */
+  --hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 45%, transparent);
+  --hairline-bronze-soft: 1px solid color-mix(in srgb, var(--bronze-400) 26%, transparent);
+  --ivory-on-dark: color-mix(in srgb, var(--ivory) 90%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  line-height: 1.16;
+  margin: 0;
+}
+h2, h3 { color: var(--forest-700); }
+p { margin: 0 0 1em; }
+
+.container {
+  max-width: var(--measure-layout);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.measure { max-width: var(--measure-prose); }
+
+.overline {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px floor (ch.10) */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronze-600);
+  margin: 0 0 12px;
+}
+
+.btn { display: inline-flex; align-items: center; justify-content: center;
+       gap: 8px; text-decoration: none; min-height: 48px; padding: 0 26px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+
+.section { padding: 76px 0 64px; }
+.section h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 14px; }
+
+/* ---------- Top nav: the ledger's letterhead ---------- */
+.topnav {
+  border-bottom: var(--hairline-bronze-soft);
+  background: var(--ivory);
+}
+.topnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+.lockup { text-decoration: none; display: inline-block; min-height: 44px; }
+.lockup-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: 0.12em;
+  color: var(--forest-700);
+  display: block;
+  line-height: 1.2;
+}
+.lockup-name em { font-style: normal; color: var(--bronze-600); }
+.lockup-rule {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--bronze-400); /* hairline artwork, non-text */
+  margin: 3px 0 4px;
+}
+.lockup-desc {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: var(--bronze-600);
+  display: block;
+  text-transform: uppercase;
+}
+.topnav-links { display: flex; gap: 26px; align-items: center; }
+.topnav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-brand);
+}
+.topnav-links a:hover { border-bottom-color: var(--bronze-400); }
+.nav-enquire {
+  border: 1.5px solid var(--forest-500);
+  border-radius: var(--radius-pill);
+  color: var(--forest-500);
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 22px;
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.nav-enquire:hover { background: color-mix(in srgb, var(--forest-500) 8%, transparent); }
+
+/* ---------- Hero: asymmetric editorial split (mockup 640/800) ---------- */
+.hero { display: grid; background: var(--ivory); }
+.hero-panel {
+  /* .surface-dark (brand-tokens) supplies forest-700 ground + ivory body +
+     marigold-300 overline — the ch.08 dark-surface law, not a local choice */
+  padding: 84px 48px 72px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-panel-inner { max-width: 560px; margin-left: auto; width: 100%; }
+.hero h1 {
+  color: var(--ivory);
+  font-size: clamp(2.3rem, 4.3vw, 3.55rem);
+  max-width: 15ch;
+  text-wrap: balance;
+  margin: 10px 0 22px;
+}
+.hero-sub {
+  font-size: 1.06rem;
+  color: var(--ivory-on-dark);
+  max-width: 44ch;
+  margin: 0 0 10px;
+}
+.hero-proof {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ivory);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ivory) 45%, transparent);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-fast) var(--ease-brand);
+}
+.hero-proof:hover { text-decoration-color: var(--ivory); }
+.btn-hero-primary {
+  background: var(--marigold-400); /* THE accent moment; text is ink (ch.10) */
+  color: var(--ink);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.btn-hero-primary:hover { background: var(--marigold-300); }
+.btn-hero-ghost {
+  border: 1.5px solid color-mix(in srgb, var(--ivory) 75%, transparent);
+  color: var(--ivory);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.btn-hero-ghost:hover { background: color-mix(in srgb, var(--ivory) 14%, transparent); }
+
+/* Right: ivory still-life field, bronze hairline frame (mockup) */
+.hero-still {
+  padding: 64px 20px 56px 48px;
+  display: flex;
+  align-items: center;
+}
+.hero-frame {
+  border: var(--hairline-bronze);
+  padding: 10px;
+  background: var(--ivory);
+  max-width: 640px;
+  width: 100%;
+}
+.hero-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 7 / 6;
+  object-fit: cover;
+}
+.hero-frame figcaption {
+  font-family: var(--font-caption);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--bronze-600);
+  padding: 10px 4px 2px;
+}
+
+/* ---------- The ledger strip: 01–09, first-class navigation ---------- */
+.ledger {
+  border-top: var(--hairline-bronze);
+  background: var(--ivory);
+}
+.ledger-inner {
+  display: flex;
+  overflow-x: auto; /* mobile: horizontal scroller (pass-2 auditor spec) */
+  -webkit-overflow-scrolling: touch;
+}
+.ledger a {
+  flex: 1 0 auto;
+  min-width: 118px;
+  min-height: 64px;
+  padding: 12px 18px 14px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: var(--hairline-bronze-soft);
+  transition: background var(--dur-fast) var(--ease-brand);
+}
+.ledger a:first-child { border-left: none; }
+.ledger a:hover { background: color-mix(in srgb, var(--forest-500) 6%, transparent); }
+.ledger-num {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  color: var(--bronze-600);
+}
+.ledger-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--forest-500);
+}
+.ledger a:hover .ledger-name { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- The formulary: nine numbered ledger rows ---------- */
+.formulary-list {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+  display: grid;
+  border-top: var(--hairline-bronze);
+}
+.formulary-list li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 4px 18px;
+  padding: 20px 4px 16px;
+  border-bottom: var(--hairline-bronze-soft);
+}
+.f-num {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--bronze-600);
+  grid-row: span 2;
+}
+.formulary-list h3 { font-size: 1.35rem; }
+.f-desc { margin: 0; font-size: 0.95rem; color: color-mix(in srgb, var(--ink) 82%, transparent); }
+.f-desc strong { font-family: var(--font-body); font-weight: 600; color: var(--forest-700); }
+
+/* ---------- Philosophy band: forest-800 alternate dark (mockup tokens) ---------- */
+.band-philosophy {
+  background: var(--forest-800);
+  color: var(--ivory-on-dark);
+  padding: 84px 0 76px;
+}
+.band-philosophy .overline { color: var(--marigold-300); } /* ch.08 dark-surface accent (brand-allow: marigold-text — forest-800 ground, 7.8:1) */
+.band-philosophy h2 {
+  color: var(--ivory);
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+  margin-bottom: 16px;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.philosophy-grid {
+  display: grid;
+  gap: 44px;
+  align-items: center;
+}
+.philosophy-copy p { max-width: 54ch; }
+.philosophy-plain {
+  border-left: 3px solid var(--marigold-300);
+  padding-left: 18px;
+  font-size: 1.02rem;
+  color: var(--ivory);
+}
+.philosophy-frame {
+  border: var(--hairline-bronze);
+  padding: 10px;
+}
+.philosophy-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.philosophy-frame figcaption {
+  font-family: var(--font-caption);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, var(--ivory) 72%, transparent);
+  padding: 10px 4px 2px;
+}
+
+/* ---------- Where to buy: the hand-off (no cart, by design) ----------
+   Action pills are the stock .btn-primary/.btn-secondary from
+   packages/ui/brand-tokens.css — never redefined here (rogue-hex law). */
+.buy-band { border-top: var(--hairline-bronze-soft); }
+.buy-note {
+  font-family: var(--font-caption);
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+  margin-top: 18px;
+}
+
+/* ---------- Manufacturing trust: the group's own hands ---------- */
+.made-by { background: color-mix(in srgb, var(--card-bg) 55%, transparent); border-top: var(--hairline-bronze-soft); }
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 56px;
+  margin: 40px 0 0;
+  border-top: var(--hairline-bronze-soft);
+  padding-top: 26px;
+}
+.counters dt {
+  font-family: var(--font-caption);
+  font-weight: 300;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  line-height: 1;
+  color: var(--forest-700);
+}
+.counters dd {
+  margin: 6px 0 0;
+  font-family: var(--font-caption);
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bronze-600);
+  max-width: 22ch;
+}
+
+/* ---------- Sister range: one labelled crossing, never a shared catalog ---------- */
+.sister-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-warm);
+  padding: 30px 30px 22px;
+  max-width: 720px;
+  margin-top: 28px;
+}
+.sister-card h3 { font-size: 1.45rem; margin-bottom: 10px; }
+.sister-card p { max-width: 58ch; }
+.sister-card a {
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- Enquiry band (stock .btn-primary/.btn-secondary pills) ---------- */
+.band-enquire {
+  border-top: var(--hairline-bronze);
+  padding: 70px 0 78px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--forest-700);
+  color: var(--ivory-on-dark);
+  padding: 52px 0 44px;
+}
+.site-footer a { color: var(--ivory); }
+/* inline conversion links get real tap area (Ship Gate A4 lesson) */
+.site-footer a[data-cta] { display: inline-block; padding-block: 14px; margin-block: -14px; }
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--ivory);
+  margin-bottom: 6px;
+}
+.footer-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+.footer-nav a { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }
+.footer-legal a { padding-inline: 8px; margin-inline: -8px; }
+.footer-fine {
+  margin: 20px 0 0;
+  font-family: var(--font-caption);
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ivory) 65%, transparent);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 44.5% 55.5%; } /* the mockup's 640/800 split */
+  .philosophy-grid { grid-template-columns: 1.15fr 1fr; }
+  .formulary-list {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 56px;
+  }
+}
+@media (max-width: 899.98px) {
+  .hero-panel { padding: 64px 20px 56px; }
+  .hero-panel-inner { margin-left: 0; }
+  .hero-still { padding: 40px 20px 44px; }
+  .topnav-links { display: none; } /* golden page: anchors live in the ledger strip on mobile */
+}
+@media (max-width: 759.98px) {
+  .section { padding: 56px 0 48px; }
+  .band-philosophy { padding: 60px 0 56px; }
+  .lockup-name { font-size: 1.2rem; }
+  .lockup-desc { font-size: 0.55rem; letter-spacing: 0.22em; }
+  .hero h1 { font-size: clamp(2rem, 8.6vw, 2.3rem); }
+}
