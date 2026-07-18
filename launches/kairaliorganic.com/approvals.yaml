@@ -1,0 +1,84 @@
+# launches/kairaliorganic.com/approvals.yaml — the signed FRONT-GATE ledger.
+#
+# scaffolded by scripts/launch-scaffold.mjs on 2026-07-18 17:53:56 IST
+#
+# THE RULE (CLAUDE.md "Design source" / "Golden page" / "Stop at each gate"):
+# the build runs to the next unsigned gate, posts the artifact, and STOPS. The
+# owner replies APPROVE <gate> or CHANGES <notes>, in one word, from his phone.
+# On APPROVE the agent writes the row below and commits it. The agent NEVER
+# self-approves a gate and NEVER merges its own PR.
+#
+# scripts/front-gate.mjs FAILS any PR that adds or changes pages under
+# sites/kairaliorganic.com while a required row here is not "approved". CI does not judge
+# the brief or the design — it only checks the row exists and is signed.
+#
+# Order: brief → strategy → design_source (+ design_direction in MODE B)
+#        → golden_page → full build.
+
+domain: kairaliorganic.com
+
+# MODE A = a human supplied the design in design-intake/ — the agent IMPLEMENTS
+#          it faithfully and must not redesign it. DEFAULT and preferred.
+# MODE B = design-intake/ is empty — the agent proposes ONE direction, anchored
+#          to design-intake/REFERENCES.md, and needs design_direction signed too.
+# Set this deliberately at the start of the run. It is not a formality: it
+# decides who is doing the designing.
+mode: B
+# CONTEXT (2026-07-18 17:54 IST, weekend sprint — KAIR pair lane): kairaliorganic.com
+# is the KAIRALI ORGANICS brand site per D-KAIR-DOMAINS (Abilash, 18 Jul 2026,
+# closing Decision #3 residual): Organics = 100% chemical-free products (D3,
+# 13 Jul) — a DIFFERENT brand from KAIR (kairbykairali.com per D-KAIR-CANONICAL,
+# 18 Jul, which amends D-KAIR-DOMAINS: kairproducts.com now 301s into it);
+# never blur the two.
+# kairorganics.com is a plain 301 into this domain (DNS execution = HUMAN).
+# Scope: INFORMATIONAL SHELL — product-line presentation + enquiry, NO cart
+# (buy-path is Track-B-gated). design-intake/ holds no human design at scaffold
+# time → MODE B per the lane directive: ONE design direction (tokens + one hero
+# mockup), visually DISTINCT from kairbykairali.com per D3, then STOP. If a human
+# design lands in design-intake/ first, MODE A takes over and the proposal is
+# discarded — the human's design wins.
+
+approvals:
+  # What the site is, who it is for, what it must achieve. The golden page is
+  # the homepage unless this brief names another page.
+  - gate: brief
+    status: pending
+    owner:
+    date:
+    artifact:
+
+  # ONE approval, everything plannable batched in — so the stops stay few:
+  #   · the sitemap
+  #   · primary + secondary keywords PER PAGE
+  #   · the competitor-keyword-to-page map
+  #   · the integrations plan — which events fire, which forms, chatbot/voice
+  - gate: strategy
+    status: pending
+    owner:
+    date:
+    artifact:
+
+  # Which mode, and the design that is being implemented (MODE A: what is in
+  # design-intake/. MODE B: the confirmation that it is legitimately empty).
+  - gate: design_source
+    status: pending
+    owner:
+    date:
+    artifact:
+
+  # MODE B ONLY — delete this row in MODE A. The agent's single proposed
+  # direction: tokens + one hero mockup, anchored to REFERENCES.md.
+  # front-gate.mjs requires this row when mode is B.
+  - gate: design_direction
+    status: pending
+    owner:
+    date:
+    artifact:
+
+  # ONE page built, then STOP. Every later page must match this approved page.
+  # No full-site build before this row is signed.
+  - gate: golden_page
+    status: pending
+    owner:
+    date:
+    artifact:

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1440 820" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <!-- DESIGN_DIRECTION mockup — kairaliorganic.com "The Apothecary Ledger".
+       Palette = packages/ui/brand-tokens.css ONLY (no invented hexes).
+       Faces approximated: Kurale -> Georgia fallback; Asap/Lato -> Helvetica fallback.
+       Photography slots are labelled placeholders (doctrine: styled as intentional
+       brand blocks) naming the REAL library asset that lands there. -->
+
+  <!-- page ground: ivory -->
+  <rect width="1440" height="820" fill="#F7F4EA"/>
+
+  <!-- top nav -->
+  <rect width="1440" height="76" fill="#F7F4EA"/>
+  <text x="72" y="47" font-size="21" fill="#004226" letter-spacing="1">KAIRALI <tspan fill="#C1882C">ORGANICS</tspan></text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1C1B19">
+    <text x="820" y="45">The Nine</text>
+    <text x="925" y="45">Philosophy</text>
+    <text x="1035" y="45">Where to Buy</text>
+    <text x="1160" y="45">About</text>
+  </g>
+  <rect x="1240" y="24" rx="18" width="128" height="36" fill="#006038"/>
+  <text x="1258" y="47" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#F7F4EA">Enquire</text>
+
+  <!-- HERO: asymmetric editorial split. Left = deep forest panel -->
+  <rect x="0" y="76" width="640" height="640" fill="#004226"/>
+  <!-- bronze overline -->
+  <text x="72" y="205" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="4" fill="#C1882C">100% CHEMICAL-FREE · BY FORMULATION</text>
+  <!-- Kurale-style display, Regular never bolded (manual ch.04) -->
+  <text x="72" y="280" font-size="58" fill="#F7F4EA">Nine formulations.</text>
+  <text x="72" y="348" font-size="58" fill="#F7F4EA">Nothing that isn&#8217;t</text>
+  <text x="72" y="416" font-size="58" fill="#F7F4EA">from the earth.</text>
+  <text x="72" y="475" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#F7F4EA" opacity="0.85">The Kairali Organics proprietary range &#8212; Ayurvedic</text>
+  <text x="72" y="500" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#F7F4EA" opacity="0.85">formulations in compliance with the doshas.</text>
+  <!-- CTAs: marigold accent (accent only, never body text) + quiet secondary -->
+  <rect x="72" y="540" rx="26" width="196" height="52" fill="#EEB41E"/>
+  <text x="99" y="572" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#1C1B19">Meet the Nine</text>
+  <rect x="288" y="540" rx="26" width="180" height="52" fill="none" stroke="#F7F4EA" stroke-width="1.5"/>
+  <text x="316" y="572" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#F7F4EA">Where to buy</text>
+
+  <!-- Right = ivory field with still-life photography slot -->
+  <g>
+    <rect x="704" y="140" width="600" height="512" fill="#F7F4EA" stroke="#C1882C" stroke-width="1"/>
+    <!-- stylized still-life: bottle silhouettes in range tones -->
+    <rect x="850" y="330" rx="8" width="86" height="240" fill="#006038"/>
+    <rect x="866" y="290" width="54" height="46" fill="#004226"/>
+    <rect x="970" y="390" rx="8" width="70" height="180" fill="#875F1F"/>
+    <rect x="984" y="356" width="42" height="40" fill="#1C1B19"/>
+    <rect x="1074" y="430" rx="6" width="58" height="140" fill="#8E9D35"/>
+    <circle cx="1103" cy="416" r="16" fill="#636E25"/>
+    <ellipse cx="980" cy="586" rx="210" ry="16" fill="#1C1B19" opacity="0.08"/>
+    <text x="864" y="640" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#875F1F" letter-spacing="1">PHOTO SLOT: kairali-group-kairali-proprietary-organic-01.jpg (natural warm)</text>
+  </g>
+
+  <!-- ledger strip under hero: the nine, numbered -->
+  <rect x="0" y="716" width="1440" height="104" fill="#F7F4EA"/>
+  <line x1="72" y1="716" x2="1368" y2="716" stroke="#C1882C" stroke-width="1"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1C1B19">
+    <text x="72"   y="762" fill="#875F1F">01</text><text x="72"   y="784">Kaircin</text>
+    <text x="216"  y="762" fill="#875F1F">02</text><text x="216"  y="784">Kairoil</text>
+    <text x="360"  y="762" fill="#875F1F">03</text><text x="360"  y="784">Kairbal</text>
+    <text x="504"  y="762" fill="#875F1F">04</text><text x="504"  y="784">Kairpack</text>
+    <text x="648"  y="762" fill="#875F1F">05</text><text x="648"  y="784">Kairwash</text>
+    <text x="792"  y="762" fill="#875F1F">06</text><text x="792"  y="784">Kairheal</text>
+    <text x="936"  y="762" fill="#875F1F">07</text><text x="936"  y="784">Kairkare</text>
+    <text x="1080" y="762" fill="#875F1F">08</text><text x="1080" y="784">Kairkare Plus</text>
+    <text x="1248" y="762" fill="#875F1F">09</text><text x="1248" y="784">Kairbossom</text>
+  </g>
+</svg>
