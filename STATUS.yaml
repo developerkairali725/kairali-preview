@@ -15,15 +15,15 @@
 # null rather than inventing numbers (HARD GATE 6). Fill them once instrumented.
 
 meta:
-  updated: "2026-07-18 IST (PM session: batch SOPs + one-time setup walk)"
-  as_of_commit: "f2f1df7"
+  updated: "2026-07-18 14:10 IST (PROMPT 2 preview round: URLs + links + screenshots + Lighthouse, PR #114)"
+  as_of_commit: "83058ab"
   sprint: "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)"
   sources: "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
 
 workstreams:
   - name: "Website fleet (Next.js Factory)"
     status: "active"
-    next_milestone: "Vercel preview + human-audit round B-F for the 8 built sites (roadmap Prompt 2 / pipeline step 9-10)"
+    next_milestone: "Human-audit round B-F: send Gate B-E emails (drafts in docs/reports/2026-07-18-prompt2-preview-round.md) + collect sign-offs; fix 3 broken external refs (report SS5). Preview evidence COMPLETE 18 Jul (PR #114)"
     due: "2026-08-12"
     tokens_spent: null
     cost_inr: null
@@ -81,10 +81,10 @@ workstreams:
 sites:
   - name: "kairali.com"
     entity: "Kairali Group"
-    stage: "gates"
+    stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "ayurvedichealingvillage.com (KTAHV)"
     entity: "KTAHV"
     stage: "research"
@@ -93,10 +93,10 @@ sites:
     updated: "2026-07-18"
   - name: "kairalicenters.com"
     entity: "Kairali Group"
-    stage: "gates"
+    stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "kairalifranchise.com"
     entity: "Kairali Group"
     stage: "ideation"
@@ -108,7 +108,7 @@ sites:
     stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "villaraag.com"
     entity: "Villa Raag"
     stage: "research"
@@ -174,7 +174,7 @@ sites:
     stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "kairali.guru"
     entity: "Kairali Group (education)"
     stage: "live"
@@ -183,16 +183,16 @@ sites:
     updated: "2026-07-13"
   - name: "whatisayurveda.com"
     entity: "Kairali Group (education)"
-    stage: "gates"
+    stage: "preview"
     owner: "Abilash"
-    blocker: "Sibling whatisayurveda.org still ideation (Decision #2)"
-    updated: "2026-07-17"
+    blocker: "Sibling whatisayurveda.org still ideation (Decision #2); 2 external reference links broken (ayush.gov.in www-cert, NCCIH 404) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5"
+    updated: "2026-07-18"
   - name: "healing.recipes"
     entity: "Kairali Group (Gita Ramesh)"
     stage: "preview"
     owner: "Abilash"
-    blocker: null
-    updated: "2026-07-17"
+    blocker: "1 external retailer link 404 (ACC Art Books, Harmony) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5"
+    updated: "2026-07-18"
   - name: "ayurvedafranchise.com"
     entity: "Kairali Group"
     stage: "ideation"
@@ -201,16 +201,16 @@ sites:
     updated: "2026-07-13"
   - name: "arogyakendra.com"
     entity: "Kairali Group"
-    stage: "gates"
+    stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "arogyashala.in"
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
     blocker: null
-    updated: "2026-07-17"
+    updated: "2026-07-18"
   - name: "snehachowdhary.com"
     entity: "Personal"
     stage: "ideation"
