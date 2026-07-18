@@ -4,6 +4,7 @@ import { Kurale, Asap, Lato } from "next/font/google";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
+import { ChatbaseLoader } from "@kairali/chat";
 import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
 import siteConfig from "../site.config.json";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <ChatbaseLoader />
         <ConsentBanner privacyHref="/privacy" />
       </body>
     </html>

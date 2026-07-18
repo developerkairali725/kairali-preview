@@ -27,7 +27,7 @@ const LEGACY_REDIRECTS: Array<{ source: string; destination: string }> = [
 ];
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/legal"],
+  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal"],
   async redirects() {
     return LEGACY_REDIRECTS.map(({ source, destination }) => ({
       source,

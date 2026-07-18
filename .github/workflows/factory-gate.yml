@@ -164,6 +164,16 @@ jobs:
       - name: Gate-registry lint (every gate × every class — no missing entries)
         run: node scripts/gate-registry-lint.mjs
 
+      # CHAT BUBBLE PRESENCE (D-20260718-05, 18 Jul). The chat bubble is
+      # mandatory on every Factory site; before this gate four preview-stage
+      # sites silently lacked it — an absence nobody decided. Every non-exempt
+      # site's root layout must render the shared @kairali/chat loader, with
+      # ConsentScripts (default-denied) BEFORE it — the denied-before-loaders
+      # order from the pilot's security audit, asserted, not remembered.
+      # Registry row: chat-bubble-present (gates/registry.yaml).
+      - name: Chat-bubble presence lint (every fleet site, consent-first)
+        run: node scripts/chat-bubble-lint.mjs
+
       # Discovered by find, NOT a fixed glob. The old glob was
       # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
       # medical-review.test.js — the ONLY test guarding our anti-fabrication

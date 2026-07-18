@@ -39,7 +39,7 @@
 #   applicability     — commerce / organic / landing, per the law above.
 
 version: 1
-updated: "2026-07-18 14:05:00 IST"
+updated: "2026-07-18 17:04:00 IST"
 classes: [commerce, organic, landing]
 
 gates:
@@ -474,6 +474,19 @@ gates:
       commerce: { adapted: "Products/Shopify entity bot answers product Qs and links to PDPs; KB fed from catalog export" }
       organic: required
       landing: { n_a: "Single-CTA law — no chatbot widget competes with the one conversion goal on a campaign LP" }
+
+  - id: chat-bubble-present
+    name: "Chat bubble present (fleet-wide)"
+    what_it_verifies: "Every non-exempt Factory site's root layout renders the shared @kairali/chat ChatbaseLoader (interim Priya bot until entity bots land), with ConsentScripts default-denied consent rendered BEFORE the loader (denied-before-loaders, pilot security-audit contract)"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/chat-bubble-lint.mjs (merge-blocking in .github/workflows/factory-gate.yml) + scripts/test/chat-bubble-lint.test.js"
+    source: "D-20260718-05 (Abilash in-chat, 18 Jul 2026: chat bubble mandatory on every site) — presence companion to chatbase-entity-bot, which stays the B9 mapping-quality gate"
+    applicability:
+      commerce: { adapted: "Store chat installs via the Shopify theme app embed in the admin (agent is READ-ONLY there, rule k — humans install apps); presence verified on the dev-theme preview, not by this repo lint" }
+      organic: required
+      landing: { n_a: "Single-CTA law — no chat widget competes with the one conversion goal on /lp/ pages (same ruling as chatbase-entity-bot)" }
 
   - id: uptime-fleet-pulse
     name: "Uptime monitor + Fleet Pulse row"

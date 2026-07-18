@@ -9,7 +9,7 @@ import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
-import ChatbaseLoader from "./chatbase-loader";
+import { ChatbaseLoader } from "@kairali/chat";
 import siteConfig from "../site.config.json";
 
 // Brand Manual ch.04: Kurale (display, weight 400 only) · Asap (body/UI) ·

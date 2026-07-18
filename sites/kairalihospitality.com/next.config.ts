@@ -46,7 +46,7 @@ const OBSERVED_EXTRA: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/legal"],
+  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal"],
   async redirects() {
     return Object.entries({ ...LEGACY_MAP, ...OBSERVED_EXTRA }).map(
       ([source, destination]) => ({ source, destination, permanent: true }),

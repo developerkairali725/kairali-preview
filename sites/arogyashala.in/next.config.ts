@@ -23,7 +23,7 @@ const LEGACY_PATHS = [
 ];
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/legal"],
+  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal"],
   async redirects() {
     return LEGACY_PATHS.map((source) => ({
       source,
