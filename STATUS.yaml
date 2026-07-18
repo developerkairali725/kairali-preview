@@ -15,8 +15,8 @@
 # null rather than inventing numbers (HARD GATE 6). Fill them once instrumented.
 
 meta:
-  updated: "2026-07-18 14:10 IST (PROMPT 2 preview round: URLs + links + screenshots + Lighthouse, PR #114)"
-  as_of_commit: "83058ab"
+  updated: "2026-07-18 15:05 IST (evening close: 8 front-gate rows SIGNED + Q-SCAFFOLD-MATRIX ratified (#113/#115) · gate registry v1 63 gates (#116) · Actions-burn fix (#117) · 19 required checks armed · budget $200 · 4 directives acked)"
+  as_of_commit: "da70ff5"
   sprint: "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)"
   sources: "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
 
@@ -44,7 +44,7 @@ workstreams:
     hours: null
   - name: "Pipeline & CI gates (front + back)"
     status: "active"
-    next_milestone: "Q-FRONT-GATE-BACKFILL ruling — arm front gates on the 8 pre-2D sites"
+    next_milestone: "18 Jul evening DONE: all 19 checks REQUIRED on main (owner one-click) · gate registry v1 merged (63 gates x 3 classes, lint-enforced, PR #116) · Actions burn fixed (PR #117, docs PRs ~85min -> ~5min). NEXT: PROMPT 4 single-pager pilot vs the registry · Q-FRONT-GATE-BACKFILL ruling still open · checklist generator from registry (O6) · shopify-catalog-lint.mjs cited by CLAUDE.md but missing (O1)"
     due: null
     tokens_spent: null
     cost_inr: null
@@ -72,7 +72,7 @@ workstreams:
     hours: null
   - name: "Marketing content pipeline (Team Workbook)"
     status: "active"
-    next_milestone: "Playbook v4 MERGED (PR #109) + old kairali-team-workbook Vercel project DELETED (18 Jul). Now: Abilash reviews PR #110 (Vikash batch QA/QC + Roshni 600-post batch wizard SOPs) + the one-time-setup PR (scaffolds, ledgers, content/ledger.yaml) -> Abilash signs the front-gate rows for both scaffold domains -> Deepu's human steps (Novamira on WP staging, bookmarks, verify prompt) -> first item through the pipeline."
+    next_milestone: "SOPs + one-time setup MERGED (#110/#111); ALL 8 front-gate rows SIGNED by Abilash 18 Jul evening (PR #113) + Q-SCAFFOLD-MATRIX ratified (#115). Remaining before first item: Deepu's human steps (Novamira on WP staging, bookmarks, verify prompt) -> first-item-through-the-pipeline demo (Vikash's 11-URL list = natural first batch; the demo in front of the team IS the training)."
     due: null
     tokens_spent: null
     cost_inr: null
@@ -89,7 +89,7 @@ sites:
     entity: "KTAHV"
     stage: "research"
     owner: "Abilash"
-    blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered; clinical sign-off Dr. Deepu John. 18 Jul PM: sites/ scaffold + armed approvals.yaml EXIST (one-time setup #1 done, PR pending) — the 11 legacy landing pages (Vikash's list is the authority on the count) flow once Abilash signs the front-gate rows + Novamira is on staging"
+    blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113) — the 11-page QA/QC batch now waits ONLY on Deepu's Novamira-on-staging install + Vikash's 11-URL list (his list is the authority on the count)"
     updated: "2026-07-18"
   - name: "kairalicenters.com"
     entity: "Kairali Group"
@@ -227,7 +227,7 @@ sites:
     entity: "Kairali Group (blog)"
     stage: "live"
     owner: "Abilash"
-    blocker: "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. 18 Jul PM: content-home scaffold + armed approvals.yaml EXIST (one-time setup #2 done, PR pending); Roshni's 600-post batch SOP built into the Playbook — batches HELD on Abilash's front-gate signatures + the sitewide internal-link map"
+    blocker: "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113); Ashikha byline ruled (D-ASHIKHA-SPELLING — live 'Ashika' fixes ride the first batch). Batches now wait on: Deepu's Novamira install + the golden first post + the sitewide internal-link map (needs GSC; access plan confirmed 18 Jul)"
     updated: "2026-07-18"
   - name: "kairali.ai"
     entity: "Internal"
