@@ -86,11 +86,11 @@ const FAIL_RUN = {
 
 /* ------------------------------------------------------- rubric parsing */
 
-test("parseRubric: the SHIPPED doctrine rubric parses and carries the four entities, the ROI page types, and both lanes", () => {
+test("parseRubric: the SHIPPED doctrine rubric parses and carries all six entities (paper: every website type/company), the ROI page types, and both lanes", () => {
   const rubric = parseRubric(REAL_DOCTRINE);
   assert.deepEqual(
     Object.keys(rubric.entities).sort(),
-    ["blog", "healing-village", "kappl", "villa-raag"],
+    ["blog", "corporate", "healing-village", "kappl", "kappl-b2b", "villa-raag"],
   );
   // The exact communicate-lists from inputs §2, never reworded.
   assert.deepEqual(rubric.entities["healing-village"].communicates, [
@@ -102,12 +102,33 @@ test("parseRubric: the SHIPPED doctrine rubric parses and carries the four entit
   assert.deepEqual(rubric.entities.kappl.communicates, [
     "purity", "efficacy", "authenticity", "premium quality", "trust", "clinical credibility", "Ayurveda",
   ]);
+  // The paper's additions (D-20260718-22): corporate §11 + B2B §12/§32, exact.
+  assert.deepEqual(rubric.entities.corporate.communicates, [
+    "scale", "continuity", "governance", "heritage", "stability", "competence", "clarity", "credibility", "connection across businesses",
+  ]);
+  assert.deepEqual(rubric.entities["kappl-b2b"].communicates, [
+    "capability", "clarity", "commercial confidence",
+  ]);
+  // Paper Parts IV–VIII frameworks: must-answer + avoid lists ride the entities.
+  assert.ok(rubric.entities.corporate.must_answer.length >= 5, "corporate must_answer (paper §11) present");
+  assert.ok(rubric.entities["kappl-b2b"].must_answer.length >= 5, "b2b must_answer (paper §12.1) present");
+  assert.ok(rubric.entities["healing-village"].must_answer.length >= 5, "healing-village must_answer (paper §19) present");
+  assert.ok(rubric.entities["villa-raag"].avoid.some((a) => /superlative|gold|scarcity/.test(a)), "villa-raag avoid list carries the false-luxury bans (paper §23.5)");
   // The inputs-§3 ROI framework: every named page type present with its job.
   assert.equal(rubric.page_types.landing.job, "converts");
   assert.equal(rubric.page_types.blog.job, "educates");
   assert.equal(rubric.page_types.homepage.job, "positions");
   assert.equal(rubric.page_types.about.job, "builds trust");
   assert.equal(rubric.page_types.pdp.job, "reduces buying anxiety");
+  // The paper's page-type additions: category §15, checkout §16, partner §12.
+  assert.equal(rubric.page_types.category.job, "makes the catalogue navigable");
+  assert.equal(rubric.page_types.checkout.job, "completes the purchase with calm confidence");
+  assert.equal(rubric.page_types.partner.job, "qualifies a partnership enquiry");
+  // The paper's criteria additions keep v1 ids stable and extend B13–B20.
+  const idSet = new Set(rubric.criteria.map((c) => c.id));
+  for (const id of ["B1", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "B19", "B20", "R1", "R4"]) {
+    assert.ok(idSet.has(id), `criterion ${id} must exist`);
+  }
   // Criteria: unique ids, valid pillars, both lanes present, referenced ⇒ evidence.
   const ids = rubric.criteria.map((c) => c.id);
   assert.equal(new Set(ids).size, ids.length);
@@ -134,6 +155,9 @@ test("parseRubric refusals: no §R block, bad JSON, empty communicate-list, dup 
   assert.throws(() => parseRubric(mk({ ...good, criteria: [{ id: "R1", pillar: "science", lane: "referenced", question: "q" }] })), /requires an evidence pointer/);
   assert.throws(() => parseRubric(mk({ ...good, criteria: [{ id: "B1", pillar: "vibes", lane: "owned", question: "q" }] })), /pillar "vibes"/);
   assert.throws(() => parseRubric(mk({ ...good, page_types: { homepage: { roi_focus: "x" } } })), /job missing/);
+  // Paper frameworks are optional per entity, but a present-but-unusable list refuses (D-20260718-22).
+  assert.throws(() => parseRubric(mk({ ...good, entities: { e1: { ...good.entities.e1, must_answer: [] } } })), /must_answer must be a non-empty array/);
+  assert.throws(() => parseRubric(mk({ ...good, entities: { e1: { ...good.entities.e1, avoid: "not a list" } } })), /avoid must be a non-empty array/);
 });
 
 /* ------------------------------------------------------ entity selection */
@@ -144,6 +168,10 @@ test("selectEntity: domain map decides; explicit --entity wins; unknowns are REF
   assert.equal(selectEntity(rubric, "ayurvedichealingvillage.com"), "healing-village");
   assert.equal(selectEntity(rubric, "villaraag.com"), "villa-raag");
   assert.equal(selectEntity(rubric, "kairaliorganic.com"), "kappl");
+  // D-20260718-22: corporate is its own chapter; the bulk B2B domains moved to kappl-b2b (paper §11/§12).
+  assert.equal(selectEntity(rubric, "kairali.com"), "corporate");
+  assert.equal(selectEntity(rubric, "bulkayurvedaproducts.com"), "kappl-b2b");
+  assert.equal(selectEntity(rubric, "bulkayurvedaoils.com"), "kappl-b2b");
   // Explicit override wins even for a mapped domain.
   assert.equal(selectEntity(rubric, "whatisayurveda.com", "kappl"), "kappl");
   // Unmapped domain without --entity: refused with the declare-your-entity message.
@@ -190,6 +218,23 @@ test("buildAsk: carries the entity communicate-list, the page-type job, EVERY cr
   assert.match(ask, /RESTRAINT PROBE/);
   // KTAHV register nuance travels with the entity.
   assert.match(ask, /LANGUAGE LOCK/);
+  // D-20260718-22: the paper's frameworks travel with the entity and the verdict frame.
+  assert.match(ask, /MUST-ANSWER LIST/);
+  for (const q of parseRubric(REAL_DOCTRINE).entities["healing-village"].must_answer) {
+    assert.ok(ask.includes(q), `must-answer item "${q}" must be in the ask`);
+  }
+  assert.match(ask, /AVOID LIST/);
+  assert.match(ask, /FIVE-LAYER APPROVAL TEST/);
+  assert.match(ask, /not complete if it passes only the visual layer/);
+});
+
+test("buildAsk: entities without paper frameworks get no empty MUST-ANSWER/AVOID scaffolding", () => {
+  const rubric = parseRubric(REAL_DOCTRINE);
+  // blog has an avoid list but no must_answer in §R — the ask must only carry what exists.
+  const ask = buildAsk(rubric, "blog", "blog", { site: "whatisayurveda.com", pageType: "blog" });
+  assert.ok(!rubric.entities.blog.must_answer);
+  assert.ok(!ask.includes("MUST-ANSWER LIST"));
+  assert.match(ask, /AVOID LIST/);
 });
 
 test("judgeArgv: both screenshots as --image (desktop first), doctrine as first context, source as --artifact, model default + override", () => {

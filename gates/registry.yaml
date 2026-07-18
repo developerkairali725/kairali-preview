@@ -596,12 +596,12 @@ gates:
   # timelessness, fleet consistency, authenticity, price-perception ceiling.
   - id: beauty-conformance
     name: "Beauty-conformance gate (BEAUTY_DOCTRINE rubric)"
-    what_it_verifies: "Rendered page (desktop AND mobile screenshots + source + strategy artifact) judged against the doctrine rubric for its entity and page type: desired-perception questions answered, entity communicate-list served, restraint/editing, fleet-system consistency, authenticity (show Kerala — never imitate Bali/Japan/generic wellness), price-perception ceiling, trust-before-beauty staging, copy deliberateness; performance and truth criteria READ existing gate evidence (lighthouse-budgets A5, design-external-ai-review, B-14) — never re-measured; findings per pillar; strict PASS/FAIL + advisory lane per D-EXTREVIEW-OWNER-FACTS"
+    what_it_verifies: "Rendered page (desktop AND mobile screenshots + source + strategy artifact) judged against the doctrine rubric for its entity and page type — ALL website types/companies per the owner's paper (corporate, B2B, D2C, hospitality/healing, luxury, product, editorial, landing): desired-perception questions answered, entity communicate-list AND must-answer list served, restraint/editing, one dominant idea, visual rhyming from genuine brand material, texture/materiality, typography fitness, fleet-system consistency, authenticity (show Kerala — never imitate Bali/Japan/generic wellness), price-perception ceiling, trust-before-beauty staging, copy deliberateness, pre-design readiness (Twelve Questions), specific-action CTAs, false-luxury/generic-conversion bans; verdict walks the Five-Layer Approval Test (strategic/visual/informational/functional/commercial); performance and truth criteria READ existing gate evidence (lighthouse-budgets A5, design-external-ai-review, B-14) — never re-measured; findings per pillar; strict PASS/FAIL + advisory lane per D-EXTREVIEW-OWNER-FACTS"
     severity: blocker
     run: agent
     status: built
     script_or_agent_ref: "scripts/beauty-audit.mjs — parses the §R rubric from docs/design/BEAUTY_DOCTRINE.md, orchestrates scripts/audit-gpt.mjs with desktop+mobile --image (scripts/lib/image-input.mjs); exit 0 only on strict PASS; evidence append-only under launches/<domain>/beauty/"
-    source: "DIRECTIVES.md D-20260718-21 (Abilash in-chat, 18 Jul 2026 ~20:45 IST); docs/design/beauty-doctrine-inputs-2026-07-18.md (immutable owner input)"
+    source: "DIRECTIVES.md D-20260718-21 + D-20260718-22 (Abilash in-chat, 18 Jul 2026); docs/design/what-is-beauty-owner-paper-2026-07-18.md (PRIMARY immutable owner input — wins conflicts) + docs/design/beauty-doctrine-inputs-2026-07-18.md (critique layer, immutable)"
     applicability:
       commerce: required
       organic: required

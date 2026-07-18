@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 /**
- * beauty-audit.mjs — the BEAUTY-CONFORMANCE gate (D-20260718-21).
+ * beauty-audit.mjs — the BEAUTY-CONFORMANCE gate (D-20260718-21 + D-20260718-22).
  *
- * THE LAW (Abilash, 18 Jul 2026 ~20:45 IST — docs/design/BEAUTY_DOCTRINE.md,
- * built verbatim from docs/design/beauty-doctrine-inputs-2026-07-18.md):
+ * THE LAW (Abilash, 18 Jul 2026 — docs/design/BEAUTY_DOCTRINE.md, built from
+ * the owner's own paper docs/design/what-is-beauty-owner-paper-2026-07-18.md
+ * (PRIMARY source, verbatim) + the critique layer
+ * docs/design/beauty-doctrine-inputs-2026-07-18.md; the paper wins conflicts):
  * beauty is not the goal — DESIRED PERCEPTION is. A page is judged against the
- * doctrine's rubric FOR ITS ENTITY (Healing Village / Villa Raag / KAPPL /
- * blog — each with its exact communicate-list) AND ITS PAGE TYPE (LP converts,
- * blog educates, homepage positions, About trusts, PDP reduces anxiety).
+ * doctrine's rubric FOR ITS ENTITY (corporate / Healing Village / Villa Raag /
+ * KAPPL D2C / KAPPL B2B / blog — each with its exact communicate-list, its
+ * must-answer list and its avoid list) AND ITS PAGE TYPE (LP converts, blog
+ * educates, homepage positions, About trusts, PDP reduces anxiety, category
+ * navigates the catalogue, checkout completes calmly, partner qualifies).
+ * The verdict walks the paper's Five-Layer Approval Test (§36): strategic ·
+ * visual · informational · functional · commercial — "A page is not complete
+ * if it passes only the visual layer."
  *
  * WHAT THE JUDGE SEES (never a text description of a design — same image law
  * as D-20260718-12): rendered DESKTOP AND MOBILE screenshots (base64 via
@@ -99,6 +106,10 @@ export function parseRubric(doctrineText) {
   for (const [key, e] of Object.entries(entities)) {
     if (!Array.isArray(e.domains) || e.domains.length === 0) errs.push(`entity "${key}": domains[] missing/empty`);
     if (!Array.isArray(e.communicates) || e.communicates.length === 0) errs.push(`entity "${key}": communicates[] missing/empty — an entity without a communicate-list cannot be judged (inputs §2)`);
+    // Paper-derived per-type frameworks (D-20260718-22) are optional per entity, but if present they must be usable lists.
+    for (const field of ["must_answer", "avoid"]) {
+      if (field in e && (!Array.isArray(e[field]) || e[field].length === 0)) errs.push(`entity "${key}": ${field} must be a non-empty array when present (paper Parts IV–VIII frameworks)`);
+    }
   }
   const seenDomains = new Map();
   for (const [key, e] of Object.entries(entities)) {
@@ -214,6 +225,14 @@ export function buildAsk(rubric, entityKey, pageTypeKey, args) {
     ``,
     `ENTITY: ${entity.label} (${entityKey}). Its beauty must communicate, exactly: ${entity.communicates.join(" · ")}.`,
     ...(entity.register_note ? [`Register note (binding): ${entity.register_note}`] : []),
+    ...(entity.must_answer?.length
+      ? [``, `MUST-ANSWER LIST (paper Parts IV–VIII — the entity's informational-completeness bar, judged under B18): every item below must be answered visibly on the page or consciously deferred to a named sibling page. Premium design never forces visitors to guess; mystery must not become vagueness.`,
+         ...entity.must_answer.map((q) => `  - ${q}`)]
+      : []),
+    ...(entity.avoid?.length
+      ? [``, `AVOID LIST (paper — named failure modes for this entity; each sighting is a finding):`,
+         ...entity.avoid.map((a) => `  - ${a}`)]
+      : []),
     ``,
     `PAGE TYPE: ${pageTypeKey} — this page's job is: it ${pt.job}. ${pt.roi_focus} Judge beauty AS the doing of that job, never in the abstract.`,
     ``,
@@ -229,7 +248,9 @@ export function buildAsk(rubric, entityKey, pageTypeKey, args) {
     ``,
     `RESTRAINT PROBE (B4, mandatory): name concretely what could be removed from this page without losing any item on the entity's communicate-list. "Nothing" must be argued, not asserted.`,
     ``,
-    `VERDICT LAW: FAIL if any OWNED criterion has a blocking failure for this entity and page type. Referenced-evidence gaps and advisory items never force a FAIL on their own. PASS only if this page, as seen, genuinely creates the entity's desired perception while doing its page-type job.`,
+    `FIVE-LAYER APPROVAL TEST (paper §36, mandatory frame for your verdict): before the verdict, assess each layer explicitly — Layer 1 STRATEGIC (correct brand and audience position), Layer 2 VISUAL (typography, imagery, composition, colour, motion, detail), Layer 3 INFORMATIONAL (clear, ordered, understandable, complete — the must-answer list), Layer 4 FUNCTIONAL (fast, responsive, accessible — from the referenced evidence, never re-measured), Layer 5 COMMERCIAL (supports the intended action and measurable outcome). "A page is not complete if it passes only the visual layer."`,
+    ``,
+    `VERDICT LAW: FAIL if any OWNED criterion has a blocking failure for this entity and page type, or if any of the five layers fails on OWNED evidence. Referenced-evidence gaps and advisory items never force a FAIL on their own. PASS only if this page, as seen, genuinely creates the entity's desired perception while doing its page-type job — across all five layers, not the visual layer alone.`,
   ];
   return lines.join("\n");
 }
@@ -322,7 +343,7 @@ export function renderEvidence({ args, entityKey, rubric, stamp, images, result,
   const lines = [
     `# BEAUTY-CONFORMANCE — ${args.site} — entity ${entityKey} — page type ${args.pageType} — pass ${args.pass}`,
     ``,
-    `- directive: ${DIRECTIVE} (Abilash, 18 Jul 2026 ~20:45 IST) · doctrine: ${DOCTRINE} · inputs: docs/design/beauty-doctrine-inputs-2026-07-18.md (immutable)`,
+    `- directive: ${DIRECTIVE} + D-20260718-22 (Abilash, 18 Jul 2026) · doctrine: ${DOCTRINE} · inputs (immutable): docs/design/what-is-beauty-owner-paper-2026-07-18.md (PRIMARY) + docs/design/beauty-doctrine-inputs-2026-07-18.md`,
     `- when: ${stamp}`,
     `- entity: ${entity.label} — must communicate: ${entity.communicates.join(" · ")}`,
     `- page type: ${args.pageType} — job: ${rubric.page_types[args.pageType].job}`,
