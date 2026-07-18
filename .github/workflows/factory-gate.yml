@@ -127,6 +127,13 @@ jobs:
       - name: CTA-label lint (no human/clinical claim on a bot channel)
         run: node scripts/cta-label-lint.mjs
 
+      # D-EQ-CATALOG preview-only lock: every PR prints the live placeholder
+      # debt on armed sites (report mode, informational). The GO-LIVE half runs
+      # the same script with --golive from the launch checklist and FAILS while
+      # any placeholder remains — DNS cannot flip over placeholder data.
+      - name: Placeholder lint (D-EQ-CATALOG preview-only lock — report mode)
+        run: node scripts/placeholder-lint.mjs
+
       # The honest-YMYL content gate (BUILD_PLAN §2.7, 35 rules). Existed since
       # 15 Jul with passing unit tests — but the gate itself never ran against
       # the real content in CI, so 84 real content errors sat invisible behind
@@ -255,7 +262,7 @@ jobs:
         # promising self-registration and no mechanism doing it). abhilashkr +
         # kairali.ai are exempt (imported/internal) — STANDING RULING, Abilash
         # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
-        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com"]
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
@@ -304,7 +311,7 @@ jobs:
       matrix:
         # Kept in lockstep with the factory-spec matrix by factory-matrix-lint.mjs
         # (it validates EVERY site matrix in this file).
-        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com"]
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'

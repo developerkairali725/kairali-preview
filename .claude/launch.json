@@ -90,6 +90,20 @@
         "dev"
       ],
       "port": 3000
+    },
+    {
+      "name": "kairaliequipment-prod",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/kairaliequipment.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4315"
+      ],
+      "port": 4315
     }
   ]
 }

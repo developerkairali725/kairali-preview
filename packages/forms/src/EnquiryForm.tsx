@@ -19,6 +19,31 @@ export type EnquiryFormProps = {
   subject?: string;
   heading?: string;
   submitLabel?: string;
+  /** data-cta event name on the submit control (Ship Gate A4 / per-site
+   *  integrations plan — e.g. kairaliequipment STRATEGY §4 names the RFQ
+   *  submit event "quote-request-submit"). Additive; default unchanged. */
+  submitCta?: string;
+  /** OPT-IN structured B2B/RFQ fields (kairaliequipment STRATEGY §4 signed
+   *  integrations plan). All default OFF — the fleet form is unchanged.
+   *  CRM-contract note: `country` maps to the canonical CRM_FIELDS entry;
+   *  the non-canonical extras (organisation, categories, project type,
+   *  scale) are folded into the canonical `message` as a labelled preamble —
+   *  the Satyam CRM payload spec is never altered from a form. */
+  rfq?: {
+    /** organisation/company text field (named "organisation" — the "company"
+     *  name is the honeypot and must never be a real field) */
+    organisation?: boolean;
+    /** country text field (canonical CRM field) */
+    country?: boolean;
+    /** category-of-interest checkboxes; pre-tick via defaultCategories
+     *  (hidden pre-fill when opened from a category page) */
+    categoryOptions?: string[];
+    defaultCategories?: string[];
+    /** project-type select */
+    projectTypeOptions?: string[];
+    /** quantity / project-scale free-text field */
+    scale?: boolean;
+  };
 };
 
 export function EnquiryForm({
@@ -29,6 +54,8 @@ export function EnquiryForm({
   subject,
   heading = "Send an enquiry",
   submitLabel = "Send enquiry",
+  submitCta = "enquiry_submit",
+  rfq,
 }: EnquiryFormProps) {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
@@ -44,6 +71,20 @@ export function EnquiryForm({
     }
     setState("sending");
     setError("");
+    // Non-canonical RFQ extras ride inside the canonical `message` field as a
+    // labelled preamble — visible to the sales team, CRM contract untouched.
+    const preamble = rfq
+      ? [
+          rfq.organisation && fd.get("organisation") ? `Organisation: ${fd.get("organisation")}` : "",
+          rfq.categoryOptions?.length && fd.getAll("categories").length
+            ? `Categories of interest: ${fd.getAll("categories").join(", ")}`
+            : "",
+          rfq.projectTypeOptions?.length && fd.get("projectType") ? `Project type: ${fd.get("projectType")}` : "",
+          rfq.scale && fd.get("scale") ? `Quantity / project scale: ${fd.get("scale")}` : "",
+        ]
+          .filter(Boolean)
+          .join("\n")
+      : "";
     try {
       const res = await fetch(action, {
         method: "POST",
@@ -57,7 +98,8 @@ export function EnquiryForm({
           phone: fd.get("phone"),
           email: fd.get("email"),
           subject: subject ?? fd.get("subject"),
-          message: fd.get("message"),
+          country: rfq?.country ? fd.get("country") || undefined : undefined,
+          message: preamble ? `${preamble}\n\n${fd.get("message")}` : fd.get("message"),
           landingPage: typeof window !== "undefined" ? window.location.href : undefined,
           referrer: typeof document !== "undefined" ? document.referrer : undefined,
         }),
@@ -104,6 +146,56 @@ export function EnquiryForm({
         <input id="ef-email" name="email" type="email" inputMode="email" autoComplete="email" required />
       </div>
 
+      {rfq?.organisation ? (
+        <div className="field">
+          <label htmlFor="ef-org">Company / organisation</label>
+          <input id="ef-org" name="organisation" type="text" autoComplete="organization" />
+        </div>
+      ) : null}
+
+      {rfq?.country ? (
+        <div className="field">
+          <label htmlFor="ef-country">Country</label>
+          <input id="ef-country" name="country" type="text" autoComplete="country-name" />
+        </div>
+      ) : null}
+
+      {rfq?.categoryOptions?.length ? (
+        <fieldset className="field ef-cats">
+          <legend>Category of interest</legend>
+          {rfq.categoryOptions.map((c) => (
+            <label key={c} className="ef-cat">
+              <input
+                type="checkbox"
+                name="categories"
+                value={c}
+                defaultChecked={rfq.defaultCategories?.includes(c)}
+              />
+              <span>{c}</span>
+            </label>
+          ))}
+        </fieldset>
+      ) : null}
+
+      {rfq?.projectTypeOptions?.length ? (
+        <div className="field">
+          <label htmlFor="ef-ptype">Project type</label>
+          <select id="ef-ptype" name="projectType" defaultValue="">
+            <option value="">— select —</option>
+            {rfq.projectTypeOptions.map((p) => (
+              <option key={p} value={p}>{p}</option>
+            ))}
+          </select>
+        </div>
+      ) : null}
+
+      {rfq?.scale ? (
+        <div className="field">
+          <label htmlFor="ef-scale">Quantity / project scale</label>
+          <input id="ef-scale" name="scale" type="text" placeholder="e.g. 12 treatment rooms, one container" />
+        </div>
+      ) : null}
+
       {subject ? null : (
         <div className="field">
           <label htmlFor="ef-subject">Subject</label>
@@ -132,7 +224,7 @@ export function EnquiryForm({
 
       {error ? <p className="enquiry-error" role="alert">{error}</p> : null}
 
-      <button className="btn btn-primary" type="submit" data-cta="enquiry_submit" disabled={state === "sending"}>
+      <button className="btn btn-primary" type="submit" data-cta={submitCta} disabled={state === "sending"}>
         {state === "sending" ? "Sending…" : submitLabel}
       </button>
     </form>

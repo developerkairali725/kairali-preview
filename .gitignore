@@ -36,3 +36,5 @@ agent-log.jsonl
 
 # generated session state — re-derived from ground truth every session start (scripts/boot-contract.mjs)
 state/
+.vercel
+.env*

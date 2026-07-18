@@ -1,0 +1,432 @@
+/* ===========================================================================
+   kairaliequipment.com — "The Foundry Ledger" · Kairali Brand Manual 2026
+   MODE B direction (launches/kairaliequipment.com/DESIGN_DIRECTION.md):
+   heritage manufacturer's ledger set in a dark workshop. Forest-700 hero
+   ground, ivory sections, Lato-numeral spec ledgers ruled with hairlines,
+   ONE primary-CTA treatment (marigold pill, ink label). Tokens ONLY
+   (packages/ui/brand-tokens.css). Mobile-first.
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  --hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 18%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  color: var(--forest-700);
+  line-height: 1.2;
+  margin: 0;
+}
+
+a { color: var(--forest-500); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--forest-700); }
+
+.container { max-width: var(--measure-layout); margin: 0 auto; padding: 0 20px; }
+
+.overline {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--bronze-600);
+  margin: 0 0 14px;
+}
+
+/* ---------- Header: 64px ivory ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--ivory) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--hairline-bronze);
+}
+.site-header .container {
+  min-height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.lockup { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.lockup-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--forest-500); letter-spacing: 0.2px; white-space: nowrap; }
+.lockup-name small { display: none; font-family: var(--font-caption); font-weight: 400; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze-600); }
+.site-nav { display: none; }
+.hdr-actions { display: flex; align-items: center; }
+.hdr-quote { font-size: 0.85rem; min-height: 44px; padding: 0 16px; }
+@media (min-width: 768px) { .hdr-quote { font-size: 0.9rem; padding: 0 20px; } }
+
+/* ---------- Buttons: ONE primary treatment (marigold pill, ink label) ------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+  min-height: var(--control-lg); min-width: 44px;
+  padding: 0 calc(var(--space-1) * 7);
+  border-radius: var(--radius-pill); text-decoration: none;
+  white-space: nowrap; /* a pill never wraps */
+  transition: background var(--dur-fast) var(--ease-brand), color var(--dur-fast) var(--ease-brand), border-color var(--dur-fast) var(--ease-brand);
+}
+.btn-quote, .btn-primary {
+  background: var(--marigold-400); color: var(--ink); border: 0; cursor: pointer;
+}
+.btn-quote:hover, .btn-primary:hover { background: var(--marigold-300); color: var(--ink); }
+/* WhatsApp = its own labelled channel: ghost pill on dark */
+.btn-wa {
+  color: var(--ivory);
+  border: 1.5px solid color-mix(in srgb, var(--ivory) 55%, transparent);
+  background: transparent;
+}
+.btn-wa:hover { color: var(--ivory); border-color: var(--ivory); }
+/* Catalogue = soft CTA: quieter ghost pill on dark */
+.btn-pdf {
+  font-size: 0.94rem;
+  color: var(--ivory);
+  border: 1.5px solid color-mix(in srgb, var(--ivory) 35%, transparent);
+  background: transparent;
+}
+.btn-pdf:hover { color: var(--ivory); border-color: color-mix(in srgb, var(--ivory) 70%, transparent); }
+
+/* ---------- Hero: the forge — forest-700 dark surface (ch.08) ------------- */
+.hero { background: var(--forest-700); color: var(--ivory); position: relative; overflow: hidden; }
+.hero::after {
+  content: ""; position: absolute; right: -180px; top: -180px; width: 640px; height: 640px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--marigold-300) 22%, transparent);
+  box-shadow:
+    0 0 0 60px color-mix(in srgb, var(--marigold-300) 5%, transparent),
+    0 0 0 130px color-mix(in srgb, var(--marigold-300) 3%, transparent);
+  pointer-events: none;
+}
+.hero .container { display: grid; grid-template-columns: 1fr; gap: 44px; padding-top: 48px; padding-bottom: 56px; position: relative; z-index: 1; }
+.hero .overline { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground, 6.77:1 */ }
+.hero h1 { font-size: clamp(2.1rem, 7vw, 3rem); line-height: 1.12; letter-spacing: 0.1px; color: var(--ivory); margin-bottom: 18px; }
+.hero h1 em { font-style: normal; color: var(--marigold-300); /* brand-allow: marigold-text — dark ground pairing (ch.08) */ }
+.hero .lede { font-size: 1.08rem; line-height: 1.6; color: color-mix(in srgb, var(--ivory) 88%, transparent); max-width: 34em; margin: 0 0 26px; }
+.cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; margin: 0 0 10px; }
+.email-line {
+  font-family: var(--font-caption); font-size: 0.85rem;
+  color: color-mix(in srgb, var(--ivory) 80%, transparent);
+  margin: 0 0 22px;
+}
+.email-line a {
+  color: var(--marigold-300); /* brand-allow: marigold-text — dark ground, 6.77:1 */
+  font-weight: 700; text-decoration: underline; text-underline-offset: 3px;
+  display: inline-block; padding-block: 12px; margin-block: -12px; /* 44px hit area */
+}
+
+/* category chips — the catalog story, in the hero */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; max-width: 640px; padding: 0; list-style: none; }
+.chip {
+  display: inline-flex; flex-direction: column; gap: 1px; justify-content: center;
+  text-decoration: none; min-height: 48px; padding: 10px 15px;
+  background: color-mix(in srgb, var(--ivory) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ivory) 22%, transparent);
+  border-radius: var(--radius-2);
+  transition: border-color var(--dur-fast) var(--ease-brand);
+}
+.chip:hover { border-color: color-mix(in srgb, var(--marigold-300) 60%, transparent); }
+.chip b { font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; color: var(--ivory); }
+.chip span { font-family: var(--font-caption); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--ivory) 85%, transparent); }
+
+/* heritage ledger — canonical lineage wording (FLAG-3 / D-LIN-1989-WORDING) */
+.ledger { display: flex; flex-wrap: wrap; border-top: 1px solid color-mix(in srgb, var(--ivory) 22%, transparent); max-width: 640px; margin: 0; }
+.ledger > div { padding: 13px 18px 0 0; margin-right: 18px; border-right: 1px solid color-mix(in srgb, var(--ivory) 14%, transparent); }
+.ledger > div:last-child { border-right: 0; margin-right: 0; }
+.ledger b { display: block; font-family: var(--font-caption); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.02em; color: var(--ivory); }
+.ledger span { font-family: var(--font-caption); font-weight: 400; font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--ivory) 62%, transparent); }
+
+/* group-credential badges — real, named, honestly scoped to the group */
+.badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: color-mix(in srgb, var(--ivory) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--marigold-300) 40%, transparent);
+  border-radius: var(--radius-1); padding: 8px 13px;
+  font-family: var(--font-caption); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ivory);
+}
+.badge b { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground */ font-weight: 700; letter-spacing: 0.08em; }
+
+/* ---------- Specimen catalog card (white card on dark) -------------------- */
+.product-card {
+  background: var(--card-bg); border-radius: var(--card-radius); box-shadow: var(--shadow-warm);
+  overflow: hidden; color: var(--ink); align-self: center; width: 100%; max-width: 440px; justify-self: stretch;
+}
+.sheet-head {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 12px 22px; border-bottom: var(--hairline-bronze);
+  font-family: var(--font-caption); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--bronze-600);
+}
+.sheet-head .sheet-note { letter-spacing: 0.08em; font-weight: 400; text-transform: none; text-align: right; }
+.drawing { padding: 18px 20px 8px; border-bottom: var(--hairline-bronze); }
+.drawing svg { display: block; width: 100%; height: auto; }
+/* technical-drawing linework — tokens only, never raw hex (brand lint) */
+.drawing .ln-ink { stroke: var(--ink); }
+.drawing .ln-bronze { stroke: var(--bronze-600); }
+.drawing .fl-bronze { fill: var(--bronze-600); }
+.drawing .tx-ink { fill: var(--ink); font-family: var(--font-caption); }
+.drawing .tx-bronze { fill: var(--bronze-600); font-family: var(--font-caption); }
+.product-card .card-body { padding: 18px 22px 22px; }
+.product-card h3 { font-size: 1.25rem; color: var(--forest-500); margin-bottom: 10px; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.spec-table td { padding: 7px 0; border-top: var(--hairline-bronze); }
+.spec-table td:first-child { color: color-mix(in srgb, var(--ink) 70%, transparent); }
+.spec-table td:last-child { text-align: right; font-family: var(--font-caption); font-weight: 700; }
+/* subordinate placeholder meta-line: unmistakable, never dominant (D-EQ-CATALOG) */
+.ph-meta { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; font-family: var(--font-caption); font-size: 0.72rem; color: var(--bronze-600); }
+.ph-tag {
+  flex: none; background: var(--ink);
+  color: var(--marigold-300); /* brand-allow: marigold-text — ink ground */
+  font-weight: 700; font-size: 0.6rem; letter-spacing: 0.16em; border-radius: 4px; padding: 3px 7px;
+}
+.thumb-row { display: flex; gap: 12px; align-items: flex-start; margin: 12px 0 0; }
+.thumb-row img { width: 86px; height: 72px; object-fit: cover; border-radius: var(--radius-1); flex: none; border: 1px solid color-mix(in srgb, var(--bronze-400) 30%, transparent); }
+.thumb-row p { font-family: var(--font-caption); font-size: 0.66rem; line-height: 1.5; color: color-mix(in srgb, var(--ink) 62%, transparent); margin: 0; }
+.card-cta { margin-top: 14px; width: 100%; font-size: 0.94rem; min-height: 48px; }
+
+/* ---------- Trust strip ---------- */
+.trust { background: var(--ivory); border-bottom: var(--hairline-bronze); }
+.trust .container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 24px; padding-top: 26px; padding-bottom: 26px; }
+.trust .item { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; font-weight: 500; margin: 0; }
+.trust .item i { width: 8px; height: 8px; border-radius: 50%; background: var(--marigold-400); flex: none; margin-top: 7px; }
+.trust .item > div { display: flex; flex-direction: column; gap: 2px; }
+.trust .item span { color: var(--bronze-600); font-family: var(--font-caption); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; }
+
+/* chips variant for ivory ground (lane/subpages) */
+.chips-light .chip { background: var(--card-bg); border-color: color-mix(in srgb, var(--bronze-400) 40%, transparent); }
+.chips-light .chip b { color: var(--forest-700); }
+.chips-light .chip span { color: var(--bronze-600); }
+.chips-light .chip:hover { border-color: var(--forest-500); }
+
+/* ---------- Sub-page chrome (Foundry Ledger grammar on inner pages) ------- */
+.page-head { background: var(--forest-700); color: var(--ivory); }
+.page-head .container { padding-top: 28px; padding-bottom: 40px; }
+.page-head h1 { font-size: clamp(1.8rem, 5.5vw, 2.5rem); line-height: 1.15; color: var(--ivory); margin: 0 0 12px; max-width: 24em; }
+.page-head .overline { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground, 6.77:1 */ }
+.page-head .lede { font-size: 1.04rem; line-height: 1.6; color: color-mix(in srgb, var(--ivory) 88%, transparent); max-width: 36em; margin: 0 0 22px; }
+.crumbs { padding: 14px 0 18px; font-family: var(--font-caption); font-size: 0.78rem; }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.crumbs li + li::before { content: "/"; margin-right: 6px; color: color-mix(in srgb, var(--ivory) 45%, transparent); }
+.crumbs a { color: color-mix(in srgb, var(--ivory) 78%, transparent); text-decoration: none; display: inline-block; padding-block: 8px; margin-block: -8px; }
+.crumbs a:hover { color: var(--ivory); }
+.crumbs [aria-current] { color: var(--ivory); }
+
+/* closing quote band — dark, echoes the hero */
+.rfq-band { margin-top: 52px; background: var(--forest-700); color: var(--ivory); }
+.rfq-band .container { padding-top: 40px; padding-bottom: 44px; display: grid; gap: 20px; }
+.rfq-band h2 { color: var(--ivory); font-size: clamp(1.5rem, 4.5vw, 2rem); }
+.rfq-band .overline { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground */ }
+.rfq-band p { color: color-mix(in srgb, var(--ivory) 88%, transparent); max-width: 36em; margin: 10px 0 0; }
+.btn-band-ghost { color: var(--ivory); border: 1.5px solid color-mix(in srgb, var(--ivory) 55%, transparent); background: transparent; }
+.btn-band-ghost:hover { color: var(--ivory); border-color: var(--ivory); }
+@media (min-width: 1000px) { .rfq-band .container { grid-template-columns: 1fr auto; align-items: center; } }
+
+/* verbatim-record blockquote (category + corporate pages) */
+.record-quote { margin: 22px 0 0; padding: 16px 20px; border-left: 3px solid var(--bronze-600); background: var(--card-bg); border-radius: 0 var(--radius-2) var(--radius-2) 0; }
+.record-quote p { margin: 0; font-size: 0.98rem; }
+.record-quote cite { display: block; margin-top: 8px; font-family: var(--font-caption); font-style: normal; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-600); }
+
+/* category page layout */
+.cat-grid { display: grid; gap: 28px; margin-top: 28px; }
+@media (min-width: 1000px) { .cat-grid { grid-template-columns: 3fr 2fr; align-items: start; } }
+.cat-fig { margin: 0; }
+.cat-fig img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-2); border: 1px solid color-mix(in srgb, var(--bronze-400) 30%, transparent); }
+.cat-fig figcaption { font-family: var(--font-caption); font-size: 0.7rem; color: color-mix(in srgb, var(--ink) 60%, transparent); padding-top: 8px; }
+
+/* FAQ list (real Q&A only) */
+.faq-list { margin-top: 24px; display: grid; gap: 12px; }
+.faq-list details { background: var(--card-bg); border: var(--card-border); border-radius: var(--radius-2); box-shadow: var(--shadow-warm); padding: 0; }
+.faq-list summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 16px 20px; font-weight: 600; min-height: 44px; }
+.faq-list summary::after { content: "+"; font-family: var(--font-caption); font-weight: 700; color: var(--bronze-600); }
+.faq-list details[open] summary::after { content: "–"; }
+.faq-list details > p { margin: 0; padding: 0 20px 16px; font-size: 0.95rem; color: color-mix(in srgb, var(--ink) 84%, transparent); }
+
+/* placeholder PDP */
+.pdp-shell { margin-top: 28px; display: grid; gap: 24px; }
+@media (min-width: 1000px) { .pdp-shell { grid-template-columns: 2fr 3fr; align-items: start; } }
+.pdp-media { position: relative; margin: 0; }
+.pdp-media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-2); border: 1px solid color-mix(in srgb, var(--bronze-400) 30%, transparent); filter: grayscale(0.35); }
+.pdp-media .ph-stamp { position: absolute; top: 12px; left: 12px; background: var(--ink); color: var(--marigold-300); /* brand-allow: marigold-text — ink ground */ font-family: var(--font-caption); font-weight: 700; font-size: 0.66rem; letter-spacing: 0.18em; padding: 6px 10px; border-radius: 4px; }
+.pdp-note { margin-top: 18px; padding: 14px 18px; border: 1.5px dashed color-mix(in srgb, var(--bronze-600) 55%, transparent); border-radius: var(--radius-2); font-family: var(--font-caption); font-size: 0.82rem; color: color-mix(in srgb, var(--ink) 74%, transparent); }
+
+/* enquiry form additions (RFQ structured fields) */
+.enquiry-form select { width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--ink); background: var(--ivory); border: 1px solid color-mix(in srgb, var(--bronze-400) 40%, transparent); border-radius: var(--radius-1); padding: 11px 12px; min-height: 44px; }
+.enquiry-form fieldset.ef-cats { border: 1px solid color-mix(in srgb, var(--bronze-400) 40%, transparent); border-radius: var(--radius-1); padding: 10px 12px 12px; }
+.enquiry-form fieldset.ef-cats legend { font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--forest-700); padding: 0 4px; }
+.enquiry-form .ef-cat { display: inline-flex; align-items: center; gap: 7px; margin: 4px 12px 0 0; font-size: 0.9rem; }
+.enquiry-form .ef-cat input { width: 17px; height: 17px; accent-color: var(--forest-500); }
+
+/* trust items that link their named page (beauty B2/B18) keep the item look */
+.trust a.item { text-decoration: none; color: var(--ink); }
+.trust a.item:hover > div { color: var(--forest-500); }
+
+/* ---------- Sections ---------- */
+.section { padding: 52px 0 0; }
+.section:last-of-type { padding-bottom: 56px; }
+.section-head { max-width: var(--measure-prose); }
+.section-head h2 { font-size: clamp(1.7rem, 5vw, 2.2rem); }
+.section-head .sub { margin: 12px 0 0; color: color-mix(in srgb, var(--ink) 84%, transparent); }
+
+/* ONE photography disclaimer for the whole grid (beauty B4 restraint) */
+.grid-note { margin: 10px 0 0; font-family: var(--font-caption); font-size: 0.78rem; color: color-mix(in srgb, var(--ink) 62%, transparent); }
+
+/* Equipment line cards — the spec-ledger card grammar on ivory */
+.line-grid { display: grid; gap: 18px; margin-top: 28px; }
+.line-card {
+  display: flex; flex-direction: column;
+  background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius);
+  box-shadow: var(--shadow-warm); overflow: hidden;
+}
+.line-card figure { margin: 0; }
+.line-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.line-card figcaption { font-family: var(--font-caption); font-size: 0.68rem; color: color-mix(in srgb, var(--ink) 60%, transparent); padding: 8px 20px 0; }
+.line-card .lc-body { padding: 12px 20px 20px; display: flex; flex-direction: column; height: 100%; }
+.line-card h3 { font-size: 1.2rem; color: var(--forest-500); }
+.line-card .lc-gloss { font-family: var(--font-caption); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bronze-600); font-weight: 700; margin: 2px 0 8px; }
+.line-card p { margin: 0 0 10px; font-size: 0.92rem; color: color-mix(in srgb, var(--ink) 82%, transparent); }
+.line-card .spec-table { margin-top: auto; }
+.line-card .lc-cta { margin-top: 14px; font-size: 0.9rem; min-height: 46px; }
+
+/* Manufacturing & heritage band */
+.made { margin-top: 52px; background: var(--forest-700); color: var(--ivory); }
+.made .container { padding-top: 48px; padding-bottom: 48px; display: grid; gap: 32px; }
+.made h2 { color: var(--ivory); font-size: clamp(1.7rem, 5vw, 2.2rem); }
+.made .overline { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground */ }
+.made p { color: color-mix(in srgb, var(--ivory) 88%, transparent); max-width: 36em; margin: 14px 0 0; }
+.made .ledger { margin-top: 22px; }
+.made-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+.made-figs figure { margin: 0; }
+.made-figs img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-2); border: 1px solid color-mix(in srgb, var(--ivory) 22%, transparent); }
+.made-figs figcaption { font-family: var(--font-caption); font-size: 0.66rem; color: color-mix(in srgb, var(--ivory) 66%, transparent); padding-top: 6px; }
+
+/* deep-links out of the manufacturing band (replaces the duplicate ledger) */
+.made-more { font-family: var(--font-caption); font-size: 0.85rem; }
+.made-more a { color: var(--marigold-300); /* brand-allow: marigold-text — dark ground, 6.77:1 */ font-weight: 700; text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding-block: 12px; margin-block: -12px; }
+
+/* Trade lanes */
+.lane-grid { display: grid; gap: 14px; margin-top: 28px; }
+.lane-card {
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius);
+  box-shadow: var(--shadow-warm); padding: 18px 20px; text-decoration: none; color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease-brand);
+}
+.lane-card:hover { border-color: var(--forest-500); color: var(--ink); }
+.lane-card h3 { font-size: 1.1rem; }
+.lane-card p { margin: 0; font-size: 0.9rem; color: color-mix(in srgb, var(--ink) 80%, transparent); }
+.lane-card .go { margin-top: 4px; font-weight: 600; font-size: 0.88rem; color: var(--forest-500); }
+
+.lane-after { margin: 18px 0 0; font-family: var(--font-caption); font-size: 0.85rem; color: color-mix(in srgb, var(--ink) 74%, transparent); max-width: 44em; }
+
+/* Commercial terms — the must-answer B2B items (beauty B18) */
+.terms-grid { display: grid; gap: 14px; margin-top: 28px; }
+.terms-card { background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius); box-shadow: var(--shadow-warm); padding: 18px 20px; }
+.terms-card h3 { font-size: 1.05rem; }
+.terms-card p { margin: 6px 0 0; font-size: 0.9rem; color: color-mix(in srgb, var(--ink) 80%, transparent); }
+
+/* ---------- RFQ ---------- */
+.rfq { margin-top: 52px; padding: 48px 0 56px; background: color-mix(in srgb, var(--card-bg) 60%, transparent); border-top: var(--hairline-bronze); }
+.rfq-grid { display: grid; gap: 32px; }
+.rfq .after-note { margin: 18px 0 0; font-family: var(--font-caption); font-size: 0.85rem; color: color-mix(in srgb, var(--ink) 74%, transparent); max-width: 34em; }
+.rfq .after-note strong { color: var(--forest-700); }
+.rfq .rfq-email { font-size: 0.95rem; margin: 14px 0 0; }
+.rfq .rfq-email a { display: inline-block; padding-block: 12px; margin-block: -12px; font-weight: 600; }
+
+/* @kairali/forms EnquiryForm */
+.enquiry-form { background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius); box-shadow: var(--shadow-warm); padding: 22px; }
+.enquiry-heading { font-size: 1.3rem; margin-bottom: 12px; }
+.enquiry-form .field { margin: 12px 0 0; }
+.enquiry-form .field-row { display: flex; gap: 12px; }
+.enquiry-form .field-cc { flex: 0 0 84px; }
+.enquiry-form .field-phone { flex: 1; }
+.enquiry-form label { display: block; font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--forest-700); margin-bottom: 5px; }
+.enquiry-form input[type="text"], .enquiry-form input[type="tel"], .enquiry-form input[type="email"], .enquiry-form textarea {
+  width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--ink);
+  background: var(--ivory); border: 1px solid color-mix(in srgb, var(--bronze-400) 40%, transparent);
+  border-radius: var(--radius-1); padding: 11px 12px; min-height: 44px;
+}
+.enquiry-form textarea { resize: vertical; }
+.enquiry-form .consent { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 0; font-size: 0.88rem; }
+.enquiry-form .consent input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--forest-500); }
+.enquiry-form .enquiry-error { color: var(--color-error); font-size: 0.9rem; margin: 12px 0 0; }
+.enquiry-form button[type="submit"] { margin-top: 16px; width: 100%; }
+.enquiry-sent { background: var(--card-bg); border-left: 4px solid var(--forest-500); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); padding: 18px 22px; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--forest-700); color: color-mix(in srgb, var(--ivory) 90%, transparent); padding: 40px 0 calc(120px + env(safe-area-inset-bottom)); font-size: 0.9rem; }
+.site-footer .tagline { font-family: var(--font-display); font-size: 1.15rem; color: var(--ivory); margin: 0; }
+.footer-grid { display: grid; gap: 24px; margin-top: 20px; }
+.site-footer a { color: var(--ivory); }
+.site-footer a[data-cta] { display: inline-block; padding-block: 12px; margin-block: -12px; }
+.footer-col h4 { font-family: var(--font-caption); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marigold-300); /* brand-allow: marigold-text — dark ground */ margin: 0; }
+.footer-col ul { list-style: none; padding: 0; margin: 10px 0 0; }
+.footer-col li { margin: 6px 0 0; }
+.footer-about { margin: 10px 0 0; max-width: 38ch; }
+.footer-disclaimer { margin-top: 24px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ivory) 18%, transparent); font-family: var(--font-caption); font-size: 0.76rem; color: color-mix(in srgb, var(--ivory) 74%, transparent); }
+
+/* ---------- Sticky MOBILE utility bar (kairalicenters pattern) ------------ */
+.utility-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  display: flex; gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--ivory) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid color-mix(in srgb, var(--bronze-400) 30%, transparent);
+}
+.utility-bar a {
+  flex: 1; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-weight: 600; font-size: 0.94rem; border-radius: var(--radius-pill); text-decoration: none;
+}
+.utility-bar .u-quote { background: var(--marigold-400); color: var(--ink); }
+.utility-bar .u-wa { background: var(--forest-500); color: var(--ivory); }
+
+/* chatbase bubble sits above the utility bar on mobile; message bubbles off */
+@media (max-width: 767px) {
+  #chatbase-bubble-button { bottom: calc(84px + env(safe-area-inset-bottom)) !important; }
+  #chatbase-message-bubbles { display: none !important; }
+}
+/* chat yields while the consent banner is open (DESIGN_DOCTRINE §1.4) */
+:root[data-consent-open] #chatbase-bubble-button,
+:root[data-consent-open] #chatbase-message-bubbles { display: none !important; }
+
+:where(a, button):focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* ---------- Upward enhancement ---------- */
+@media (min-width: 640px) {
+  .line-grid { grid-template-columns: repeat(2, 1fr); }
+  .lane-grid { grid-template-columns: repeat(2, 1fr); }
+  .terms-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust .container { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 768px) {
+  .site-nav { display: flex; gap: 2px; }
+  .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 11px; font-weight: 600; font-size: 0.9rem; color: var(--ink); text-decoration: none; border-radius: var(--radius-pill); transition: background var(--dur-fast) var(--ease-brand), color var(--dur-fast) var(--ease-brand); }
+  .site-nav a:hover { color: var(--forest-500); background: color-mix(in srgb, var(--forest-500) 6%, transparent); }
+  .lockup-name small { display: block; }
+  .utility-bar { display: none; }
+  .site-footer { padding-bottom: 32px; }
+  .hero .container { padding-top: 64px; padding-bottom: 60px; }
+}
+@media (min-width: 1000px) {
+  .hero .container { grid-template-columns: 7fr 5fr; gap: 52px; }
+  .product-card { justify-self: end; }
+  .line-grid { grid-template-columns: repeat(3, 1fr); }
+  .lane-grid { grid-template-columns: repeat(4, 1fr); }
+  .terms-grid { grid-template-columns: repeat(4, 1fr); }
+  .made .container { grid-template-columns: 3fr 2fr; align-items: center; }
+  .rfq-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; }
+}

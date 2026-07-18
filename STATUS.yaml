@@ -188,11 +188,11 @@ sites:
     live_url: null
   - name: "kairaliequipment.com"
     entity: "Kairali Group (B2B)"
-    stage: "ideation"
+    stage: "human_audit"
     owner: "Abilash"
-    blocker: null
-    updated: "2026-07-13"
-    preview_url: null
+    blocker: "PREVIEW-ONLY by owner order (D-EQ-CATALOG placeholder lock); Gate-2 truth lane needs owner judgment (Q-EQ-GATE2-TRUTH-LANE)"
+    updated: "2026-07-19"
+    preview_url: "https://kairali-web-factory-kairaliequipmen.vercel.app"
     live_url: null
   - name: "bulkayurvedaoils.com"
     entity: "KAPPL (B2B supply desk)"

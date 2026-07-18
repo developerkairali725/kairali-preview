@@ -1,0 +1,103 @@
+# launches/kairaliequipment.com/approvals.yaml — the signed FRONT-GATE ledger.
+#
+# scaffolded by scripts/launch-scaffold.mjs on 2026-07-18 17:57:22 IST
+#
+# THE RULE (CLAUDE.md "Design source" / "Golden page" / "Stop at each gate"):
+# the build runs to the next unsigned gate, posts the artifact, and STOPS. The
+# owner replies APPROVE <gate> or CHANGES <notes>, in one word, from his phone.
+# On APPROVE the agent writes the row below and commits it. The agent NEVER
+# self-approves a gate and NEVER merges its own PR.
+#
+# scripts/front-gate.mjs FAILS any PR that adds or changes pages under
+# sites/kairaliequipment.com while a required row here is not "approved". CI does not judge
+# the brief or the design — it only checks the row exists and is signed.
+#
+# Order: brief → strategy → design_source (+ design_direction in MODE B)
+#        → golden_page → full build.
+
+domain: kairaliequipment.com
+
+# MODE A = a human supplied the design in design-intake/ — the agent IMPLEMENTS
+#          it faithfully and must not redesign it. DEFAULT and preferred.
+# MODE B = design-intake/ is empty — the agent proposes ONE direction, anchored
+#          to design-intake/REFERENCES.md, and needs design_direction signed too.
+# Set this deliberately at the start of the run. It is not a formality: it
+# decides who is doing the designing.
+# MODE B declared per Abilash's 18 Jul weekend-sprint instruction (this lane's
+# task brief: "MODE B DESIGN DIRECTION — ONE direction: tokens + single hero
+# mockup, brand manuals + gallery inspiration"). design-intake/ is empty of
+# human design; the direction is anchored to the brand manual (packages/ui/
+# brand-tokens.css + docs/design/DESIGN_DOCTRINE.md) per doctrine (d).
+mode: B
+
+approvals:
+  # What the site is, who it is for, what it must achieve. The golden page is
+  # the homepage unless this brief names another page.
+  # Signed per D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)
+  # · dual-AI evidence design-review/2026-07-18-pass6.md (truth lane PASS ×2;
+  # GPT residuals advisory per D-EXTREVIEW-OWNER-FACTS)
+  - gate: brief
+    status: approved
+    owner: Abilash
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/kairaliequipment.com/BRIEF.md
+
+  # ONE approval, everything plannable batched in — so the stops stay few:
+  #   · the sitemap
+  #   · primary + secondary keywords PER PAGE
+  #   · the competitor-keyword-to-page map
+  #   · the integrations plan — which events fire, which forms, chatbot/voice
+  # Signed per D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)
+  # · dual-AI evidence design-review/2026-07-18-pass6.md (truth lane PASS ×2;
+  # GPT residuals advisory per D-EXTREVIEW-OWNER-FACTS)
+  - gate: strategy
+    status: approved
+    owner: Abilash
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/kairaliequipment.com/STRATEGY.md
+
+  # Which mode, and the design that is being implemented (MODE A: what is in
+  # design-intake/. MODE B: the confirmation that it is legitimately empty).
+  # Signed WITH design_direction — DESIGN_DIRECTION.md footer: "design_source
+  # signs with it — same evidence". Same signature: D-AUTOMERGE-TIERS +
+  # D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST) · dual-AI evidence
+  # design-review/2026-07-18-pass6.md (truth lane PASS ×2; GPT residuals
+  # advisory per D-EXTREVIEW-OWNER-FACTS)
+  - gate: design_source
+    status: approved
+    owner: Abilash
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/kairaliequipment.com/DESIGN_DIRECTION.md  # MODE B — intake empty, see §0 of that doc
+
+  # MODE B ONLY — delete this row in MODE A. The agent's single proposed
+  # direction: tokens + one hero mockup, anchored to REFERENCES.md.
+  # front-gate.mjs requires this row when mode is B.
+  # Signed per D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)
+  # · dual-AI evidence design-review/2026-07-18-pass6.md (truth lane PASS ×2;
+  # GPT residuals advisory per D-EXTREVIEW-OWNER-FACTS)
+  - gate: design_direction
+    status: approved
+    owner: Abilash
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/kairaliequipment.com/DESIGN_DIRECTION.md  # tokens + single hero mockup (design-direction/hero-mockup.html)
+
+  # ONE page built, then STOP. Every later page must match this approved page.
+  # No full-site build before this row is signed.
+  # Signed on the owner's OWN approval acts (recorded, not self-approved):
+  #   1. PR #155 (the golden-page PR) squash-merged into this stack by
+  #      AbhilashKairali HIMSELF at 2026-07-18 20:24:51 IST — the owner's hands,
+  #      the approval act (HARD GATE 9 kept: the agent merged nothing).
+  #   2. docs/reports/2026-07-18-golden-gate-battery.md (battery branch a590d66,
+  #      committed under the owner's git identity director@kairali.com) — verdict
+  #      table row 3 records this golden_page row as approved via that merge.
+  #   3. D-20260718-23 (DIRECTIVES.md, owner paste-prompt ~22:10 IST): "launch
+  #      ALL full-site builds per the approved strategies (golden-page-matching,
+  #      all gates, worktree per site)" — the full-site order that presupposes it.
+  # Battery pass-1 FAIL findings (design Gate-2 / go-science / beauty) are being
+  # fixed and re-run in this lane; approval of the page is the owner's, iteration
+  # to dual PASS is the lane's definition of done.
+  - gate: golden_page
+    status: approved
+    owner: Abilash
+    date: 2026-07-18 20:24:51 IST
+    artifact: sites/kairaliequipment.com/app/page.tsx  # merged as PR #155 "Foundry Ledger"

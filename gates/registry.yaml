@@ -884,6 +884,19 @@ gates:
       organic: required
       landing: { n_a: "An /lp/ path under a live domain needs no DNS action; go-live is the Ads cutover" }
 
+  - id: placeholder-preview-lock
+    name: "Placeholder preview-only lock (D-EQ-CATALOG)"
+    what_it_verifies: "No owner-ordered placeholder (SKU-PLACEHOLDER-0NN, ₹X,XXX/$X,XXX, awaiting-catalog rows, PLACEHOLDER-badged/-named assets) remains on an armed site at go-live; while any remains the site is preview-only and the DNS flip is blocked"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/placeholder-lint.mjs (report mode every CI run; --golive gate from the launch checklist exits 2 on any hit) + scripts/test/placeholder-lint.test.js"
+    source: "D-EQ-CATALOG (DECISIONS.md 2026-07-18 17:46:09 IST) + launches/kairaliequipment.com/STRATEGY.md §6 + BRIEF §4"
+    applicability:
+      commerce: { adapted: "Catalog data lives in the Shopify admin, not git — the equivalent no-placeholder-published check rides shopify-catalog-lint (rule l) before any theme publish" }
+      organic: required
+      landing: required
+
   - id: ads-final-url-cutover
     name: "Ads final-URL cutover approval"
     what_it_verifies: "Where live spend exists, Abilash approves the final-URL cutover; final URL is never a redirecting domain (Google Ads destination policy)"
