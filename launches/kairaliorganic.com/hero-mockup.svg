@@ -8,17 +8,22 @@
   <!-- page ground: ivory -->
   <rect width="1440" height="820" fill="#F7F4EA"/>
 
-  <!-- top nav -->
+  <!-- top nav — pass-2 fix: stronger wordmark lockup (larger, tracked, bronze-600 text step
+       on ivory per D-BRONZE-CONTRAST; bronze-400 kept for the hairline rule only) -->
   <rect width="1440" height="76" fill="#F7F4EA"/>
-  <text x="72" y="47" font-size="21" fill="#004226" letter-spacing="1">KAIRALI <tspan fill="#C1882C">ORGANICS</tspan></text>
+  <text x="72" y="44" font-size="25" fill="#004226" letter-spacing="3">KAIRALI <tspan fill="#875F1F">ORGANICS</tspan></text>
+  <rect x="72" y="54" width="248" height="1.5" fill="#C1882C"/>
+  <text x="72" y="68" font-family="Helvetica, Arial, sans-serif" font-size="9" letter-spacing="3" fill="#875F1F">THE PROPRIETARY FORMULARY OF THE KAIRALI AYURVEDIC GROUP</text>
   <g font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1C1B19">
     <text x="820" y="45">The Nine</text>
     <text x="925" y="45">Philosophy</text>
     <text x="1035" y="45">Where to Buy</text>
     <text x="1160" y="45">About</text>
   </g>
-  <rect x="1240" y="24" rx="18" width="128" height="36" fill="#006038"/>
-  <text x="1258" y="47" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#F7F4EA">Enquire</text>
+  <!-- pass-2 fix: header Enquire demoted to quiet outline pill so the hero's
+       "Meet the Nine" stays the page's most attractive action -->
+  <rect x="1240" y="24" rx="18" width="128" height="36" fill="none" stroke="#006038" stroke-width="1.5"/>
+  <text x="1258" y="47" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#006038">Enquire</text>
 
   <!-- HERO: asymmetric editorial split. Left = deep forest panel -->
   <rect x="0" y="76" width="640" height="640" fill="#004226"/>
@@ -50,18 +55,45 @@
     <text x="864" y="640" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#875F1F" letter-spacing="1">PHOTO SLOT: kairali-group-kairali-proprietary-organic-01.jpg (natural warm)</text>
   </g>
 
-  <!-- ledger strip under hero: the nine, numbered -->
+  <!-- ledger strip under hero: the nine, numbered.
+       Pass-2 fix (auditor blocking finding): first-class navigation, not decoration —
+       numerals 13px bronze-600, names 16px forest-500 (the site's interactive/link
+       token, ~5.9:1 on ivory = the affordance), hairline column dividers, ≥48px
+       implied hit rows. Bronze-400 stays hairline-only. -->
   <rect x="0" y="716" width="1440" height="104" fill="#F7F4EA"/>
   <line x1="72" y1="716" x2="1368" y2="716" stroke="#C1882C" stroke-width="1"/>
-  <g font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1C1B19">
-    <text x="72"   y="762" fill="#875F1F">01</text><text x="72"   y="784">Kaircin</text>
-    <text x="216"  y="762" fill="#875F1F">02</text><text x="216"  y="784">Kairoil</text>
-    <text x="360"  y="762" fill="#875F1F">03</text><text x="360"  y="784">Kairbal</text>
-    <text x="504"  y="762" fill="#875F1F">04</text><text x="504"  y="784">Kairpack</text>
-    <text x="648"  y="762" fill="#875F1F">05</text><text x="648"  y="784">Kairwash</text>
-    <text x="792"  y="762" fill="#875F1F">06</text><text x="792"  y="784">Kairheal</text>
-    <text x="936"  y="762" fill="#875F1F">07</text><text x="936"  y="784">Kairkare</text>
-    <text x="1080" y="762" fill="#875F1F">08</text><text x="1080" y="784">Kairkare Plus</text>
-    <text x="1248" y="762" fill="#875F1F">09</text><text x="1248" y="784">Kairbossom</text>
+  <g stroke="#C1882C" stroke-width="0.75" opacity="0.45">
+    <line x1="204"  y1="738" x2="204"  y2="796"/>
+    <line x1="348"  y1="738" x2="348"  y2="796"/>
+    <line x1="492"  y1="738" x2="492"  y2="796"/>
+    <line x1="636"  y1="738" x2="636"  y2="796"/>
+    <line x1="780"  y1="738" x2="780"  y2="796"/>
+    <line x1="924"  y1="738" x2="924"  y2="796"/>
+    <line x1="1068" y1="738" x2="1068" y2="796"/>
+    <line x1="1236" y1="738" x2="1236" y2="796"/>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif">
+    <g font-size="13" letter-spacing="2" fill="#875F1F">
+      <text x="72"   y="754">01</text>
+      <text x="216"  y="754">02</text>
+      <text x="360"  y="754">03</text>
+      <text x="504"  y="754">04</text>
+      <text x="648"  y="754">05</text>
+      <text x="792"  y="754">06</text>
+      <text x="936"  y="754">07</text>
+      <text x="1080" y="754">08</text>
+      <text x="1248" y="754">09</text>
+    </g>
+    <g font-size="16" fill="#006038">
+      <text x="72"   y="786">Kaircin</text>
+      <text x="216"  y="786">Kairoil</text>
+      <text x="360"  y="786">Kairbal</text>
+      <text x="504"  y="786">Kairpack</text>
+      <text x="648"  y="786">Kairwash</text>
+      <text x="792"  y="786">Kairheal</text>
+      <text x="936"  y="786">Kairkare</text>
+      <text x="1080" y="786">Kairkare Plus</text>
+      <text x="1248" y="786">Kairbossom</text>
+    </g>
   </g>
 </svg>

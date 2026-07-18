@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blush Lounge — MODE B hero mockup (design_direction artifact)</title>
+<!-- launches/theblushlounge.com/design-direction/hero-mockup.html
+     ONE proposed direction: "Champagne Editorial" — tokens + this single hero.
+     Anchor: D-BL-INTERIM (owner-authorized IG aesthetic) + mined brand assets
+     (gold-foil/ink logo, Allura script, Montserrat caps). NOT a site page.
+     Image: interim asset ig-DUsF6VCjFHW.jpg (INTERIM-IG-SOURCED — swaps for
+     hi-res shoot set later). Local binary path per the asset-mining law;
+     re-render: open this file on the M2 with the image library present. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Montserrat:wght@400;500;600&family=Allura&display=swap" rel="stylesheet">
+<style>
+  /* ---- proposed blush-tokens.css (the approval object) ---- */
+  :root{
+    --blush-ink:        #211A16;  /* warm near-black — her photos' shadow floor */
+    --blush-ink-soft:   #4A3F37;
+    --blush-ivory:      #FAF6EF;  /* studio-wall ivory */
+    --blush-champagne:  #C9AE7E;  /* logo gold foil (sampled) */
+    --blush-champagne-deep: #A08652; /* hover / rule deepen */
+    --blush-rose:       #D8A79E;  /* the quiet "blush" — accents only */
+    --blush-white:      #FFFFFF;
+    --font-display: "Fraunces", Georgia, serif;      /* editorial serif — her course-post overlay register */
+    --font-ui:      "Montserrat", system-ui, sans-serif; /* continuity: wordmark caps */
+    --font-script:  "Allura", cursive;               /* monogram lineage — MAX one accent per page */
+    --track-caps: .22em;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--blush-ivory);color:var(--blush-ink);font-family:var(--font-ui)}
+  .hero{display:grid;grid-template-columns:47% 53%;height:100vh}
+  .hero__copy{display:flex;flex-direction:column;justify-content:space-between;padding:48px 56px 40px 64px}
+  .brand{display:flex;align-items:baseline;gap:14px}
+  .brand__mark{font-family:var(--font-script);font-size:44px;line-height:1;color:var(--blush-ink)}
+  .brand__word{font-size:13px;font-weight:600;letter-spacing:var(--track-caps);text-transform:uppercase}
+  .brand__word small{display:block;font-size:9px;font-weight:500;letter-spacing:.3em;color:var(--blush-champagne-deep);margin-top:4px}
+  .center{max-width:560px}
+  /* pass-2 fix: eyebrow text moves to ink-soft for AA at 11px; champagne stays in the rule */
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--blush-ink-soft);display:flex;align-items:center;gap:14px;margin-bottom:26px}
+  .eyebrow::before{content:"";width:44px;height:1px;background:var(--blush-champagne)}
+  h1{font-family:var(--font-display);font-weight:340;font-size:clamp(44px,4.6vw,66px);line-height:1.06;letter-spacing:-.01em}
+  h1 em{font-style:italic;font-weight:380;color:var(--blush-champagne-deep)}
+  .lede{margin-top:22px;font-size:15px;line-height:1.75;color:var(--blush-ink-soft);max-width:44ch}
+  .ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
+  .btn{font-size:11px;font-weight:600;letter-spacing:var(--track-caps);text-transform:uppercase;padding:17px 28px;text-decoration:none;transition:all .2s}
+  .btn--solid{background:var(--blush-ink);color:var(--blush-ivory)}
+  .btn--solid:hover{background:var(--blush-champagne-deep)}
+  .btn--line{border:1px solid var(--blush-ink);color:var(--blush-ink)}
+  .btn--line:hover{border-color:var(--blush-champagne-deep);color:var(--blush-champagne-deep)}
+  .trust{border-top:1px solid rgba(33,26,22,.14);padding-top:18px;display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+  /* pass-2 fix: uniform trust styling (no single highlighted mark), slightly larger, labelled */
+  .trust span{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--blush-ink)}
+  .trust b{color:var(--blush-ink);font-weight:600}
+  .trust .trust__label{font-size:9px;letter-spacing:.3em;color:var(--blush-champagne-deep);flex-basis:100%}
+  .hero__image{position:relative;overflow:hidden}
+  .hero__image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(33,26,22,.38), transparent 42%)}
+  /* pass-2 fix: mobile-only WhatsApp action over the image's lower edge so the
+     first viewport carries the conversion (static CTA, not the fleet bubble —
+     D-BL-BUBBLE-EXEMPT stands) */
+  .wa-over{display:none}
+  .credit{position:absolute;left:28px;bottom:22px;z-index:2;color:var(--blush-ivory)}
+  .credit .script{font-family:var(--font-script);font-size:34px;line-height:1}
+  .credit .caps{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;opacity:.85;margin-top:6px}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;height:auto;min-height:100vh}
+    .hero__image{order:-1;height:46vh}
+    .hero__copy{padding:28px 24px;gap:26px}
+    h1{font-size:37px}
+    .eyebrow{font-size:10px;letter-spacing:.2em;margin-bottom:18px}
+    .lede{margin-top:16px}
+    .ctas{margin-top:24px}
+    .btn{padding:15px 20px}
+    .credit{bottom:78px} /* clears the over-image CTA */
+    .wa-over{display:inline-block;position:absolute;right:16px;bottom:18px;z-index:2;
+             font-size:11px;font-weight:600;letter-spacing:var(--track-caps);text-transform:uppercase;
+             background:var(--blush-ink);color:var(--blush-ivory);padding:15px 20px;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero__copy">
+    <div class="brand">
+      <div class="brand__mark">bl</div>
+      <div class="brand__word">Blush Lounge<small>Makeup by Sneha</small></div>
+    </div>
+    <div class="center">
+      <p class="eyebrow">Delhi · Worldwide — Beauty, Bridal &amp; SFX</p>
+      <h1>Soft glamour,<br><em>precise</em> drama.</h1>
+      <p class="lede">Luminous skin, sculpted structure, and a look that lasts
+      from the first photograph to the last dance — bridal, cocktail and
+      editorial artistry by Sneha Chowdhary.</p>
+      <!-- pass-2 fix (auditor blocking finding): the funnel is WhatsApp-first —
+           WhatsApp is now the solid primary with the verified number surfaced
+           (D-BL-WHATSAPP); Enquire drops to the outline secondary -->
+      <div class="ctas">
+        <a class="btn btn--solid" href="#" data-cta="whatsapp_click">WhatsApp Sneha · +91&nbsp;88269&nbsp;21110</a>
+        <a class="btn btn--line" href="#" data-cta="enquiry_submit">Enquire for your date</a>
+      </div>
+    </div>
+    <div class="trust">
+      <span class="trust__label">As seen in · trained &amp; collaborated with</span>
+      <span><b>MAC</b> Bridal</span>
+      <span>Femina</span>
+      <span>Grazia</span>
+      <span>Cinema Makeup School · LA</span>
+    </div>
+  </div>
+  <div class="hero__image">
+    <img src="/Users/kairalimacmini/Claude/Kairali-Digital/image-library/blushlounge/ig-interim/ig-DUsF6VCjFHW.jpg" alt="Bride in champagne couture — makeup by Sneha Chowdhary (INTERIM-IG-SOURCED)">
+    <div class="credit">
+      <div class="script">makeup by Sneha</div>
+      <div class="caps">@blushlounge_sneha</div>
+    </div>
+    <a class="wa-over" href="#" data-cta="whatsapp_click">WhatsApp Sneha</a>
+  </div>
+</section>
+</body>
+</html>

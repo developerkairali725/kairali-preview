@@ -31,15 +31,28 @@
   .btn{display:inline-block;font-weight:600;background:var(--forest-500);color:#fff;
        padding:13px 26px;border-radius:6px;text-decoration:none;min-height:44px}
   .btn:hover{background:var(--forest-700)}
+  /* pass-2 fix: ONE primary CTA per surface — header demoted to ghost; the model-card
+     button is the page's single primary. Copy unified to "Start your project". */
+  .btn-ghost{display:inline-block;font-weight:600;background:transparent;color:var(--forest-500);
+       border:1.5px solid var(--forest-500);padding:11.5px 24px;border-radius:6px;
+       text-decoration:none;min-height:44px}
+  .btn-ghost:hover{background:rgba(0,96,56,.07)}
+  .menu{display:none;font-weight:700;font-size:14px;color:var(--forest-500);text-decoration:none;
+        border:1.5px solid var(--forest-500);border-radius:6px;padding:9px 14px}
   /* hero — forest-800 plate, the cool pole */
   .hero{background:linear-gradient(160deg,var(--forest-800),var(--forest-700) 78%);color:var(--ivory);
         padding:76px 0 64px;position:relative;overflow:hidden}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
-  .photo{position:absolute;right:-6%;top:-18%;width:52%;height:150%;
-         background:linear-gradient(120deg,rgba(142,157,53,.35),rgba(0,96,56,.15) 60%,rgba(240,191,62,.18));
-         transform:rotate(8deg);border-radius:24px;z-index:0}
-  .photo span{position:absolute;bottom:16%;left:18px;font-family:var(--font-caption);font-size:10px;
-              letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);transform:rotate(-8deg);opacity:.8}
+  /* pass-2 fix: committed photographic crop — mask, position and tone proven in the mock
+     (was an unanchored rotated wash); stays visible on mobile as a band */
+  .photo{position:absolute;right:0;top:0;bottom:0;width:42%;
+         background:linear-gradient(120deg,rgba(142,157,53,.75),rgba(99,110,37,.55) 55%,rgba(240,191,62,.45));
+         border-left:1px solid rgba(247,244,234,.25);
+         -webkit-mask-image:linear-gradient(100deg,transparent 0 8%,#000 26%);
+         mask-image:linear-gradient(100deg,transparent 0 8%,#000 26%);z-index:0}
+  .photo span{position:absolute;bottom:14px;right:16px;max-width:46%;text-align:right;
+              font-family:var(--font-caption);font-size:10px;
+              letter-spacing:.12em;text-transform:uppercase;color:var(--ivory);opacity:.85}
   .overline{font-family:var(--font-caption);font-weight:700;font-size:14px;
             letter-spacing:.16em;text-transform:uppercase;color:var(--marigold-300)}
   h1{font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5.2vw,60px);
@@ -47,6 +60,15 @@
   h1 .accent{color:var(--leaf-500)}
   .sub{font-size:18px;max-width:34em;color:var(--ivory)}
   .rule{width:64px;height:4px;background:var(--leaf-500);margin:26px 0 0}
+  .forms{font-family:var(--font-caption);font-size:12.5px;letter-spacing:.06em;color:var(--ivory);
+         opacity:.82;margin-top:14px}
+  /* pass-2 fix: the published certificate strip enters the FIRST viewport */
+  .certband{background:var(--forest-800);border-top:1px solid rgba(247,244,234,.18);padding:14px 0}
+  .certband .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:baseline}
+  .certband .cert{font-family:var(--font-caption);font-weight:700;font-size:13px;letter-spacing:.14em;
+                  text-transform:uppercase;color:var(--ivory)}
+  .certband .cert em{font-style:normal;color:var(--marigold-300)}
+  .certband .qual{font-family:var(--font-caption);font-size:11px;color:var(--ivory);opacity:.75}
   /* the model card — the signature element: "which model am I?" */
   .card{position:relative;z-index:1;background:var(--ivory);color:var(--ink);border-radius:10px;
         box-shadow:0 18px 44px rgba(0,0,0,.28);padding:28px}
@@ -64,11 +86,17 @@
   .n{font-family:var(--font-caption);font-weight:300;font-size:clamp(28px,3.4vw,44px);color:var(--forest-500)}
   .l{font-family:var(--font-caption);font-weight:700;font-size:11px;letter-spacing:.16em;
      text-transform:uppercase;color:var(--bronze-600);margin-top:4px}
+  .pub{font-family:var(--font-caption);font-size:11px;color:var(--bronze-600);text-align:center;
+       margin-top:16px;grid-column:1 / -1}
   @media (max-width:860px){
     .hero .wrap{grid-template-columns:1fr;gap:40px}
-    nav{display:none} /* mockup shorthand — real build uses the packages/ui visible-nav pattern, never a desktop hamburger */
+    nav{display:none} /* mobile: collapsed behind the Menu affordance below — desktop keeps the visible-nav pattern, never a desktop hamburger */
+    .menu{display:inline-block} /* pass-2 fix: visible mobile navigation affordance */
+    .bar .btn-ghost{display:none} /* no header CTA fighting the in-card primary; the build's sticky bar carries it */
     .strip .wrap{grid-template-columns:repeat(2,1fr)}
-    .photo{display:none}
+    .photo{position:static;width:auto;height:150px;margin:28px 24px 0;border-radius:12px;
+           -webkit-mask-image:none;mask-image:none;border:1px solid rgba(247,244,234,.25)}
+    .photo span{right:12px;bottom:10px;max-width:80%}
   }
 </style>
 </head>
@@ -79,7 +107,8 @@
     <nav aria-label="Primary">
       <a href="#">Services</a><a href="#">What we make</a><a href="#">Facility</a><a href="#">Quality</a><a href="#">How it works</a>
     </nav>
-    <a class="btn" href="#" data-cta="rfq-open">Start your project</a>
+    <a class="btn-ghost" href="#" data-cta="rfq-open">Start your project</a>
+    <a class="menu" href="#" aria-label="Open navigation">Menu</a>
   </div>
 </header>
 
@@ -93,19 +122,27 @@
         <p class="sub">Contract manufacturing of Ayurvedic and herbal products — formulation, sourcing,
            production, packaging and QA from our Pollachi, Tamil Nadu facility. In-house laboratories
            and herb extraction, four generations deep.</p>
+        <p class="forms">Capsules · tablets · syrups &amp; tonics · churnams · lehyams · balms · lotions · powders</p>
         <div class="rule" aria-hidden="true"></div>
       </div>
       <div class="card">
         <h2>Choose your engagement model</h2>
         <table class="model">
-          <tr><td>Third party</td><td>Our products · our packing</td></tr>
-          <tr><td>Third party</td><td>Our products · your packing</td></tr>
-          <tr><td>Loan licence</td><td>Your products · your brand · your packing</td></tr>
-          <tr><td>Loan licence</td><td>Your concept · our R&amp;D · your brand</td></tr>
+          <tr><td>Third party — our pack</td><td>Our products · our packing</td></tr>
+          <tr><td>Third party — your pack</td><td>Our products · your packing</td></tr>
+          <tr><td>Loan licence — your product</td><td>Your products · your brand · your packing</td></tr>
+          <tr><td>Loan licence — your concept</td><td>Your concept · our R&amp;D · your brand</td></tr>
         </table>
-        <a class="btn" href="#" data-cta="rfq-open">Discuss your product</a>
+        <a class="btn" href="#" data-cta="rfq-open">Start your project</a>
         <p class="note">Answered by the KAPPL desk · info@kairali.com</p>
       </div>
+    </div>
+  </section>
+
+  <section class="certband" aria-label="Certifications as published">
+    <div class="wrap">
+      <span class="cert">Certified: <em>WHO-GMP</em> · ISO · FSSAI · FDA · GLP · CE</span>
+      <span class="qual">Strip as published by KAPPL — certificate artefacts on the Quality wall</span>
     </div>
   </section>
 
@@ -115,6 +152,7 @@
       <div><div class="n">1200+</div><div class="l">Distributors</div></div>
       <div><div class="n">900+</div><div class="l">Product SKUs</div></div>
       <div><div class="n">111+</div><div class="l">Years of experience</div></div>
+      <p class="pub">Figures as published by KAPPL — carried as-is, never restated</p>
     </div>
   </section>
 </main>
