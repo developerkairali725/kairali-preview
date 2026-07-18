@@ -1,11 +1,11 @@
 {
   "meta": {
-    "updated": "2026-07-18 17:05:20 IST (verdict emitters tranche 1 behind pre-launch-matrix-walk: gate-emit.mjs + auditor --emit-gate wiring, 30 new tests, suite 476/476; emitters ship UN-WIRED from CI per O6 precedent — walk count unchanged 50, honest)",
+    "updated": "2026-07-18 17:20:00 IST (late session: Gate B–E emails SENT by owner 16:40 IST — round LIVE · #121–#124 merged · PRs open: #125 B1 map, #126 emitters T1, #127 fleet chat bubble · weekend build sprint armed (D-20260718-08/-10), gated on unblock sheet · Shopify agentic pilot Mon 20 Jul via Shadab (D-09, access email sent 17:08))",
     "as_of_commit": "1d6adfe",
     "sprint": "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)",
     "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
   },
-  "generatedFrom": "2026-07-18 17:05:20 IST (verdict emitters tranche 1 behind pre-launch-matrix-walk: gate-emit.mjs + auditor --emit-gate wiring, 30 new tests, suite 476/476; emitters ship UN-WIRED from CI per O6 precedent — walk count unchanged 50, honest)",
+  "generatedFrom": "2026-07-18 17:20:00 IST (late session: Gate B–E emails SENT by owner 16:40 IST — round LIVE · #121–#124 merged · PRs open: #125 B1 map, #126 emitters T1, #127 fleet chat bubble · weekend build sprint armed (D-20260718-08/-10), gated on unblock sheet · Shopify agentic pilot Mon 20 Jul via Shadab (D-09, access email sent 17:08))",
   "stageOrder": [
     "ideation",
     "research",
@@ -32,7 +32,7 @@
     {
       "name": "Website fleet (Next.js Factory)",
       "status": "active",
-      "next_milestone": "Human-audit round B-F: send Gate B-E emails (drafts in docs/reports/2026-07-18-prompt2-preview-round.md) + collect sign-offs; fix 3 broken external refs (report SS5). Preview evidence COMPLETE 18 Jul (PR #114)",
+      "next_milestone": "Gate B-E emails SENT by Abilash 18 Jul 16:40 IST (B Astha+Anupam / C Deepu / D Satyam / E Sunaj) -> TRACK REPLIES per gate; fleet chat bubble PR #127 + social-links set pending sheet item 15; WEEKEND BUILD SPRINT (D-20260718-08/-10): all blocker-free non-commerce sites + 3 LPs preview-ready by Mon 20 Jul, gated on docs/reports/2026-07-18-weekend-unblock-sheet.md; fix 3 broken external refs (report SS5)",
       "due": "2026-08-12",
       "tokens_spent": null,
       "cost_inr": null,
@@ -41,7 +41,7 @@
     {
       "name": "Shopify commerce track (Track B)",
       "status": "blocked",
-      "next_milestone": "Unblock staff access + Storefront/Admin tokens from Ambuj",
+      "next_milestone": "AGENTIC PILOT Mon 20 Jul (D-20260718-06/-09): Claude Code + Shopify AI Toolkit per docs/process/shopify-agentic-rollout-instructions-v2.md; comms lane = Shadab Ali developer6@ CC Sunaj (access/tokens email SENT 17:08 IST 18 Jul — awaiting his reply); Astha approves batches; doctrine j–s binds. Ambuj Storefront-token lane continues in parallel for Wave-1 microsites",
       "due": null,
       "tokens_spent": null,
       "cost_inr": null,
@@ -59,7 +59,7 @@
     {
       "name": "Pipeline & CI gates (front + back)",
       "status": "active",
-      "next_milestone": "18 Jul PROMPT 4 pilot DONE (report: docs/reports/2026-07-18-prompt4-single-pager-pilot.md) + pilot follow-up: VERDICT EMITTERS tranche 1 in PR (scripts/gate-emit.mjs G6-BUILD/G6-LINT/G3-PRE + --emit-gate wiring in both auditors for G*-PROC/G*-FACT; 14 walk gates now PROVABLE; suite 476/476). arogyashala.in walk stays DO-NOT-SHIP 50 unproven — correct: verdicts become ship evidence only when a CI job runs+commits them, and that wiring is a separate ratifiable change (O6 precedent). NEXT: Gate B-E packet SEND approval (owner) · CI wiring ratification for emitters + verdict-commit step · tranche 2 (G0/G1/G2/G4/G5-PRE lints, cite-resolve, a11y-gate, claims-lint half of G6-PRE, tributaries, human-verdict recorder from signed approvals) · Q-FRONT-GATE-BACKFILL · checklist generator (O6) · shopify-catalog-lint.mjs (O1)",
+      "next_milestone": "18 Jul PROMPT 4 pilot DONE: arogyashala.in through all 63 registry gates (organic class) end-to-end -> human_audit; baseline: automated chain 2m54s, subagent audits 12m15s wall, total ~28m; 334,234 subagent tokens measured (parent-session tokens still unmeasured — PROMPT 6 instruments the rest); 1 honest FAIL recorded (matrix-walk DO-NOT-SHIP, verdict emitters unbuilt) + 2 gaps (keyword-map file missing; content-lint scope). Report: docs/reports/2026-07-18-prompt4-single-pager-pilot.md. LATE SESSION: B1 keyword-map PR #125 · verdict emitters T1 PR #126 (476 tests; CI wiring = sheet A-13) · chat-bubble gate PR #127. NEXT: unblock sheet answers (O1 A-9, O4 A-10, backfill A-11, wiring A-13) then weekend build",
       "due": null,
       "tokens_spent": null,
       "cost_inr": null,
@@ -132,8 +132,8 @@
       "entity": "Kairali Group",
       "stage": "ideation",
       "owner": "Abilash",
-      "blocker": null,
-      "updated": "2026-07-13"
+      "blocker": "D#4 CLOSED: no separate build — 301s into ayurvedafranchise.com at cutover",
+      "updated": "2026-07-18"
     },
     {
       "name": "kairalihospitality.com",
@@ -156,7 +156,7 @@
       "entity": "KAPPL",
       "stage": "ideation",
       "owner": "Abilash",
-      "blocker": "Shipping platform names unanswered (3x ask)",
+      "blocker": "Aggregator RULED = ESHOPBOX (DECISIONS.md:66); residual courier list read at Shopify kickoff — STATUS 3x-ask line was partially stale",
       "updated": "2026-07-13"
     },
     {
@@ -244,7 +244,7 @@
       "entity": "Kairali Group (education)",
       "stage": "preview",
       "owner": "Abilash",
-      "blocker": "Sibling whatisayurveda.org still ideation (Decision #2); 2 external reference links broken (ayush.gov.in www-cert, NCCIH 404) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5",
+      "blocker": "D#2 CLOSED: whatisayurveda.org is a plain forward at Wave-2 cutover; 2 external reference links broken (ayush.gov.in www-cert, NCCIH 404) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5",
       "updated": "2026-07-18"
     },
     {
@@ -260,8 +260,8 @@
       "entity": "Kairali Group",
       "stage": "ideation",
       "owner": "Abilash",
-      "blocker": "Decision #4 — 301 to kairalifranchise vs build as satellite",
-      "updated": "2026-07-13"
+      "blocker": "CANONICAL franchise build (D#4 CLOSED, DECISIONS.md:248 — kairalifranchise.com 301s INTO this domain); build-start gated on unblock sheet A-1/2/3 (money figures, royalty, contact)",
+      "updated": "2026-07-18"
     },
     {
       "name": "arogyakendra.com",
@@ -284,7 +284,7 @@
       "entity": "Personal",
       "stage": "ideation",
       "owner": "Abilash",
-      "blocker": "Decision #6 (+ theblushlounge scope)",
+      "blocker": "D#6 CLOSED: theblushlounge.com primary, this domain 301s when live; build gated on Sneha brand assets (unblock sheet B-3)",
       "updated": "2026-07-13"
     },
     {
