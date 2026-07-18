@@ -29,12 +29,16 @@ jobs:
   # skip when the diff PROVABLY touches no site-affecting path — the exact code
   # they would test is already green on main. brand-lint, front-gate and the
   # gate workflow still run on every push, so docs/content lints never skip.
-  # Required-checks safety: the matrix jobs use a job-level `if`, so on a skip
-  # each context reports conclusion "skipped" — which SATISFIES branch
-  # protection. (A workflow-level `paths:` filter would instead leave required
-  # contexts forever "Expected" and freeze the PR — that is why this is a job,
-  # not a paths: block.) Any ambiguity (missing/unknown base SHA, force-push)
-  # defaults to site_affecting=true — the full matrices run.
+  # Required-checks safety — CORRECTED 18 Jul (learned empirically on PR #118):
+  # a matrix job skipped with a JOB-level `if` never expands its matrix, so the
+  # 16 required per-site contexts ("factory-spec (sites/…)") are never created
+  # and branch protection waits on them forever — the same freeze a workflow
+  # `paths:` filter causes. The correct pattern is STEP-level conditions: the
+  # matrix always expands, all 16 jobs spawn and report SUCCESS, but on a
+  # docs-only diff every step is skipped, so each job finishes in seconds
+  # (~1 billed minute each vs ~5-6 real minutes — an honest ~80% cut, not a
+  # fake 100%). Any ambiguity (missing/unknown base SHA, force-push) defaults
+  # to site_affecting=true — the full matrices run.
   # sites/kairali.ai is excluded from the trigger paths: it is matrix-EXEMPT by
   # standing ruling (D-RULE-MATRIX-EXEMPT), so no matrix job ever tests it —
   # its own build is verified by the gate workflow + its Vercel deploy. Without
@@ -68,7 +72,7 @@ jobs:
             echo "site_affecting=true" >> "$GITHUB_OUTPUT"
           else
             echo "site_affecting=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No site-affecting paths in this diff — factory-spec + lighthouse matrices skip-as-success (contexts report 'skipped', which satisfies required checks). They arm automatically on any sites/, packages/, tests/, scripts/, workflow or lockfile change."
+            echo "::notice::No site-affecting paths in this diff — every factory-spec + lighthouse matrix job runs with ZERO steps and reports success in seconds. They arm automatically on any sites/, packages/, tests/, scripts/, workflow or lockfile change."
           fi
   brand-lint:
     runs-on: ubuntu-latest
@@ -207,10 +211,9 @@ jobs:
         run: node scripts/front-gate.mjs --base "$BASE"
 
   factory-spec:
-    # Skip-as-success on docs-only diffs (see the `changes` job's contract —
-    # a skipped context still satisfies branch protection).
+    # Docs-only diffs: the job still spawns (its required context must report)
+    # but every step below is skipped — see the `changes` job's contract.
     needs: changes
-    if: needs.changes.outputs.site_affecting == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # one red site must not cancel the evidence for the others
@@ -224,24 +227,31 @@ jobs:
         site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com"]
     steps:
       - uses: actions/checkout@v4
+        if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: pnpm/action-setup@v4
+        if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: actions/setup-node@v4
+        if: needs.changes.outputs.site_affecting == 'true'
         with:
           node-version: 24
           cache: pnpm
 
       - name: Install
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Build (turbo)
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm build
 
       - name: Install Playwright chromium
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Factory spec suite (Ship Gate A2 + A4 browser layer)
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm exec playwright test tests/factory
         env:
           SITE: ${{ matrix.site }}
@@ -254,9 +264,9 @@ jobs:
   # same transport the factory spec suite gates on. Preview-URL runs stay a
   # launch-time step; this catches regressions at merge time.
   lighthouse:
-    # Skip-as-success on docs-only diffs (see the `changes` job's contract).
+    # Docs-only diffs: the job still spawns (its required context must report)
+    # but every step below is skipped — see the `changes` job's contract.
     needs: changes
-    if: needs.changes.outputs.site_affecting == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # one red site must not cancel the evidence for the others
@@ -266,21 +276,27 @@ jobs:
         site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com"]
     steps:
       - uses: actions/checkout@v4
+        if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: pnpm/action-setup@v4
+        if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: actions/setup-node@v4
+        if: needs.changes.outputs.site_affecting == 'true'
         with:
           node-version: 24
           cache: pnpm
 
       - name: Install
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Build (turbo)
+        if: needs.changes.outputs.site_affecting == 'true'
         run: pnpm build
 
       - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
+        if: needs.changes.outputs.site_affecting == 'true'
         run: node scripts/lighthouse-gate.mjs
         env:
           SITE: ${{ matrix.site }}
