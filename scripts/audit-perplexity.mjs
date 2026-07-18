@@ -23,8 +23,22 @@
  *
  * Reads PERPLEXITY_API_KEY from ~/.secrets/perplexity.env. Never prints the key.
  * Exit 0 = PASS, 2 = FAIL, 1 = error.
+ *
+ * --emit-gate/--emit-site (e.g. --emit-gate G6-FACT --emit-site
+ * whatisayurveda.com): write the §0.2 verdict this run produced to
+ * audits/<site>/<gate>-verdict.json. Only the G*-FACT gates this command
+ * enforces are accepted, only from a completed API run, PASS/FAIL derived from
+ * the model's strict enum — see scripts/lib/audit-verdict.mjs. A local run
+ * emits runner:"local" (iteration evidence; the matrix walk requires a
+ * CI-committed run for ship evidence).
  */
+import { dirname, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
+import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
+import { istIso } from "./lib/verdict.mjs";
+
+const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const SYSTEM = `You are a FACT-GROUNDING AUDITOR with live web access. You are the last line of defence against confidently-stated falsehood.
 
@@ -82,8 +96,12 @@ const SCHEMA = {
 };
 
 async function main() {
+  const startedAt = istIso();
   const args = parseReviewArgs(process.argv.slice(2), { model: "sonar-pro" });
   if (!args.ask) throw new Error("--ask is required");
+  // Parse the emit request BEFORE the API call: a run that could not emit must
+  // fail before burning tokens, not after.
+  const emitReq = parseEmitRequest(args, "audit-perplexity");
   const key = loadKey("PERPLEXITY_API_KEY", "perplexity.env");
   // sonar's context is tighter than gpt-5's
   const brief = buildBrief(args, { bundleOpts: { maxFile: 60_000, maxTotal: 140_000 } });
@@ -123,6 +141,22 @@ async function main() {
     if (v.fabricated_or_misrepresented_sources.length) { console.log(`\n⚠ FABRICATED / MISREPRESENTED SOURCES:`); for (const f of v.fabricated_or_misrepresented_sources) console.log(`  ✗ ${f}`); }
     if (v.data_faults.length) { console.log(`\nDATA FAULTS:`); for (const d of v.data_faults) console.log(`  ✗ ${d}`); }
     if (citations.length) { console.log(`\nSOURCES (${citations.length}):`); for (const c of citations.slice(0, 12)) console.log(`  - ${typeof c === "string" ? c : c.url || ""}`); }
+  }
+  if (emitReq) {
+    // The verdict is emitted BY this execution, from the enum this run parsed —
+    // the only sanctioned path to a G*-FACT verdict (§0.2).
+    const { path } = emitAuditVerdict({
+      auditor: "audit-perplexity",
+      gate: emitReq.gate,
+      site: emitReq.site,
+      repoRoot: REPO_ROOT,
+      artifacts: args.artifact,
+      verdict: v.verdict,
+      startedAt,
+      argv: process.argv.slice(2),
+      model: args.model,
+    });
+    console.error(`verdict: ${relative(REPO_ROOT, path)} — ${v.verdict}`);
   }
   process.exit(v.verdict === "PASS" ? 0 : 2);
 }

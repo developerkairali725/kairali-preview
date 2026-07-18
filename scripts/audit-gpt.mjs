@@ -31,10 +31,24 @@
  *     --artifact content/ashwagandha.json \
  *     --ask      "Would this earn that patient's trust, or does it read like a brochure?" \
  *     [--model gpt-5] [--raw]
+ *     [--emit-gate G3-PROC --emit-site whatisayurveda.com]
+ *
+ * --emit-gate/--emit-site: write the §0.2 verdict this run produced to
+ * audits/<site>/<gate>-verdict.json. Only the G*-PROC gates this command
+ * enforces are accepted, only from a completed API run, PASS/FAIL derived from
+ * the model's strict enum — see scripts/lib/audit-verdict.mjs. A local run
+ * emits runner:"local" (iteration evidence; the matrix walk requires a
+ * CI-committed run for ship evidence).
  *
  * Exit 0 = PASS, 2 = FAIL (gate CI on it), 1 = error.
  */
+import { dirname, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
+import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
+import { istIso } from "./lib/verdict.mjs";
+
+const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const SYSTEM = `You are an INDEPENDENT, SKEPTICAL external auditor for the Kairali Ayurvedic Group's web factory. You did NOT do this work and you are NOT invested in it being right. That detachment is your entire value: you catch what self-review structurally cannot.
 
@@ -148,8 +162,12 @@ const SCHEMA = {
 };
 
 async function main() {
+  const startedAt = istIso();
   const args = parseReviewArgs(process.argv.slice(2), { model: "gpt-5" });
   if (!args.ask) throw new Error("--ask is required");
+  // Parse the emit request BEFORE the API call: a run that could not emit must
+  // fail before burning tokens, not after.
+  const emitReq = parseEmitRequest(args, "audit-gpt");
   const key = loadKey("OPENAI_API_KEY", "openai.env");
   const brief = buildBrief(args, { bundleOpts: { maxFile: 120_000, maxTotal: 400_000 } });
 
@@ -197,6 +215,22 @@ async function main() {
     if (v.blocking_issues.length) { console.log(`\nBLOCKING (${v.blocking_issues.length}):`); for (const b of v.blocking_issues) console.log(`  ✗ ${b}`); }
     if (v.recommendations.length) { console.log(`\nRECOMMENDATIONS:`); for (const r of v.recommendations) console.log(`  → ${r}`); }
     console.log(`\ntokens: prompt ${u.prompt_tokens} · completion ${u.completion_tokens} (reasoning ${u.completion_tokens_details?.reasoning_tokens ?? "?"})`);
+  }
+  if (emitReq) {
+    // The verdict is emitted BY this execution, from the enum this run parsed —
+    // the only sanctioned path to a G*-PROC verdict (§0.2).
+    const { path } = emitAuditVerdict({
+      auditor: "audit-gpt",
+      gate: emitReq.gate,
+      site: emitReq.site,
+      repoRoot: REPO_ROOT,
+      artifacts: args.artifact,
+      verdict: v.verdict,
+      startedAt,
+      argv: process.argv.slice(2),
+      model: args.model,
+    });
+    console.error(`verdict: ${relative(REPO_ROOT, path)} — ${v.verdict}`);
   }
   process.exit(v.verdict === "PASS" ? 0 : 2);
 }
