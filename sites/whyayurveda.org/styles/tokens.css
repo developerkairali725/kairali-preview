@@ -1,0 +1,6 @@
+/* Token sheet entry point — scaffold (one-time setup #2, 18 Jul 2026).
+ * CLAUDE.md rule (d): branded sites are built on the token sheet; the brand
+ * manuals win over any supplied design. Every future page/layout of this site
+ * imports its styles THROUGH this file. Lives outside app/ on purpose: the
+ * scaffold ships zero pages (front gate: no page before Abilash's signed rows). */
+@import "@kairali/ui/brand-tokens.css";

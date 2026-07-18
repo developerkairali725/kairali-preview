@@ -1,0 +1,35 @@
+# content/ledger.yaml — the machine-side tracking ledger for content items.
+# Created 18 Jul 2026 (one-time setup #4 — Workbook Part 4; schema: Part 5).
+#
+# One entry per submission flowing through the marketing→publish pipeline.
+# Deepu owns every field. This ledger tracks content ITEMS; STATUS.yaml tracks
+# whole SITES — different granularity, never copy statuses between them.
+# If the Pipeline Tracker sheet and this file disagree, THIS FILE WINS
+# (it travels with the code); reconciling is part of the Monday lint ritual.
+#
+# status uses STATUS.yaml values ONLY: ideation|research|build|gates|preview|
+# human_audit|ok_to_publish|live|monitoring
+# A bounce = ci_status: red + a needs_fix note, status stays "gates".
+# Batches: rows share one pr: number; batches are severable (a red item moves
+# to its own follow-up PR, the green rest merge on time).
+#
+# ROW SCHEMA (Workbook Part 5 example):
+#   - title: "Panchakarma programme — landing page"
+#     target_site: ayurvedichealingvillage.com   # clinical lock comes from its site.config.json
+#     format: landing-page                       # landing-page | blog | page-update | content-fix
+#     publish_route: wordpress-novamira          # wordpress-novamira | vercel-merge
+#     author_voice: null                         # blogs: voice key from /guide/voices
+#     submitted_by: "Name (role)"
+#     submitted_date: YYYY-MM-DD
+#     has_medical_claims: yes|no
+#     pr: 0
+#     last_checked: YYYY-MM-DD
+#     ci_status: green|red
+#     medical_signoff: "drdeepujohn:YYYY-MM-DD"  # human step, recorded here — NOT judged by CI
+#     reviewed_by: "Deepu (developer)"
+#     status: gates
+#     published_url: null
+#     published_date: null
+#     notes: ""
+
+items: []

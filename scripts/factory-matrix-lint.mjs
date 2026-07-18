@@ -52,6 +52,8 @@ export const WORKFLOW = ".github/workflows/factory-gate.yml";
 export const EXEMPT = new Map([
   ["sites/abhilashkr", "imported personal site (brand: none) — STANDING RULING, Abilash 17 Jul 2026 (D-RULE-MATRIX-EXEMPT): stays out of the matrices; exemption stays loud and paper-trailed"],
   ["sites/kairali.ai", "internal placeholder surface (register: internal) — same standing ruling as abhilashkr (D-RULE-MATRIX-EXEMPT, 17 Jul 2026)"],
+  ["sites/ayurvedichealingvillage.com", "pipeline-container scaffold: config + armed front-gate ledger, ZERO pages (Workbook Part 4 one-time setup #1; Abilash's 18 Jul 2026 in-chat directive to walk the setup) — a page-less site cannot run factory-spec/lighthouse; joins BOTH matrices in the same PR that adds its first page. TEMPORARY, pending ratification: Q-SCAFFOLD-MATRIX, QUESTIONS.md 18 Jul 2026"],
+  ["sites/whyayurveda.org", "pipeline-container scaffold: config + armed front-gate ledger, ZERO pages (Workbook Part 4 one-time setup #2; same 18 Jul 2026 directive) — same rule and same exit as ayurvedichealingvillage.com: matrix entry lands with the first page PR. TEMPORARY, pending ratification: Q-SCAFFOLD-MATRIX, QUESTIONS.md 18 Jul 2026"],
 ]);
 
 /**

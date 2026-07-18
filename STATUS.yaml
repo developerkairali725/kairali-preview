@@ -15,8 +15,8 @@
 # null rather than inventing numbers (HARD GATE 6). Fill them once instrumented.
 
 meta:
-  updated: "2026-07-18 IST"
-  as_of_commit: "087c8cf"
+  updated: "2026-07-18 IST (PM session: batch SOPs + one-time setup walk)"
+  as_of_commit: "f2f1df7"
   sprint: "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)"
   sources: "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
 
@@ -72,7 +72,7 @@ workstreams:
     hours: null
   - name: "Marketing content pipeline (Team Workbook)"
     status: "active"
-    next_milestone: "MERGE branch content/team-playbook-v4 (one-link Playbook on kairali.ai: /playbook wizard + guides + access page; GO science ingested; battle-tested + clean build) -> then Deepu one-time setup (Part 4) -> first item through the pipeline. Old kairali-team-workbook.vercel.app superseded after merge."
+    next_milestone: "Playbook v4 MERGED (PR #109) + old kairali-team-workbook Vercel project DELETED (18 Jul). Now: Abilash reviews PR #110 (Vikash batch QA/QC + Roshni 600-post batch wizard SOPs) + the one-time-setup PR (scaffolds, ledgers, content/ledger.yaml) -> Abilash signs the front-gate rows for both scaffold domains -> Deepu's human steps (Novamira on WP staging, bookmarks, verify prompt) -> first item through the pipeline."
     due: null
     tokens_spent: null
     cost_inr: null
@@ -89,7 +89,7 @@ sites:
     entity: "KTAHV"
     stage: "research"
     owner: "Abilash"
-    blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered; clinical sign-off Dr. Deepu John. NEW 18 Jul: 10 legacy .html landing pages route via the content pipeline once Deepu scaffolds sites/ (Workbook Part 4 one-time setup #1)"
+    blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered; clinical sign-off Dr. Deepu John. 18 Jul PM: sites/ scaffold + armed approvals.yaml EXIST (one-time setup #1 done, PR pending) — the 11 legacy landing pages (Vikash's list is the authority on the count) flow once Abilash signs the front-gate rows + Novamira is on staging"
     updated: "2026-07-18"
   - name: "kairalicenters.com"
     entity: "Kairali Group"
@@ -227,7 +227,7 @@ sites:
     entity: "Kairali Group (blog)"
     stage: "live"
     owner: "Abilash"
-    blocker: "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. NEW 18 Jul: Roshni's fast-blog pipeline awaits the sites/whyayurveda.org content-home scaffold (Workbook Part 4 one-time setup #2)"
+    blocker: "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. 18 Jul PM: content-home scaffold + armed approvals.yaml EXIST (one-time setup #2 done, PR pending); Roshni's 600-post batch SOP built into the Playbook — batches HELD on Abilash's front-gate signatures + the sitewide internal-link map"
     updated: "2026-07-18"
   - name: "kairali.ai"
     entity: "Internal"
