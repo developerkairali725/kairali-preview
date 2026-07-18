@@ -6,3 +6,9 @@
 - New engineer (Shopify track + factory) — developer6@kairali.com (Abilash, 14 Jul). Pending: Shopify staff acct (Sunaj), GitHub org invite (Abilash), onboarding = NEW_DEVELOPER_PACKET.md
 - Deepu — website developer (WP execution), developer@kairali.com — NOT Dr. Deepu John (chief physician, clinical sign-off)
 - Eeshal — intern, github.com/Eeshal27 (kairali.guru rebuild)
+- Vikash — SEO (KTAHV), seo@ktahv.com (GSC/indexing; batch LP QA lane per Playbook)
+- Anupam — marketing (KTAHV), mkt@ktahv.com — **routing (Abilash ruling 18 Jul 2026, D-QUEUE-18JUL-EVENING addendum): Healing-Village-related things + blogs**
+- Astha — marketing (HO), ho.mkt@kairaliproducts.com — **routing (same ruling): Villa Raag + everything else non-KTAHV**
+- Anoop Vijayaraj — GM, KTAHV, gm.hv@kairali.com (physician-registry source: "Doctors details.xlsx", 17 Jul 2026)
+- Gaurav Saraswat — Senior Manager Marcom (Centres), ops@kairalicentres.com
+- Dr. Shari K — head-office content approver (BAMS, Reg No 12695, Travancore–Cochin Council of Indian System of Medicine, 2018 — source: Gaurav's email 16 Jul 2026, thread 19f69af281346318). Physician-review lane for non-KTAHV content; clinical KTAHV sign-off stays Dr. Deepu John
