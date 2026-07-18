@@ -131,6 +131,60 @@ sites/<target-domain>/ in the form that site uses (its .tsx/.mdx/.md page).
 - If a Claude Design share link won't open, do NOT rebuild from memory —
   tell me so the submitter drops an exported copy instead.`;
 
+const BATCH_LIST = `BATCH QA/QC LIST — [site] existing pages ([n] pages)
+For EACH page:
+1. [full live page URL]
+   What it is:      [one line — e.g. the weight-loss programme landing page]
+   Facts check:     [CORRECT / change: ___ → ___ (per the FACTS doc)]
+   Known problems:  [broken form / old price / outdated photo / none]
+2. ...
+(The machine fetches and snapshots every page itself — nobody retypes anything.
+A page that is already gone from the live site: write GONE, don't guess.)`;
+
+const P_BATCH_IMPORT = `BATCH QA/QC IMPORT — existing live pages into sites/[target-domain].
+Here is the batch list (live URLs + the facts-verification notes):
+[paste the batch list doc]
+
+Do exactly this, in order, and show me the real output of each step:
+1. Sync: git fetch, checkout main, pull. New branch: content/[batch-name].
+2. SNAPSHOT FIRST: for EVERY URL run node scripts/wp-snapshot.mjs <url> and
+   commit the new files in backups/ on the branch. A page that fails to
+   snapshot is HELD OUT of the batch — never imported without its backup.
+3. Recreate each page as a real page under sites/[target-domain]/ in the form
+   that site uses. QA/QC ONLY: same page, same words — apply ONLY the fixes
+   written in the facts notes. Do NOT redesign, restructure, or "improve" the
+   copy. The site's word rules fire automatically from its site.config.json —
+   if a legacy page contains a banned word, LIST it for me; never silently
+   rewrite it (that wording bounces to marketing).
+4. One commit per page, push the branch (--force-with-lease only, never --force).
+5. Open ONE PR to main with the batch Handoff Card as the description.
+6. Give me: the PR number + link, and the CI report sorted per page into
+   DEV-FIX (mine: paths, links, images, alt text) vs BOUNCE (facts, claims,
+   banned wording → back to the submitter).
+Do NOT merge. Do NOT touch production or WordPress in this step.`;
+
+const P_POST_UPDATE = `Please bring in this existing blog post so I can update a copy of it:
+[paste the full post link]
+
+This is a BATCH UPDATE (QA/QC + links + voice) — NOT a rewrite:
+1. Keep the post's topic, structure, and facts. Do NOT rewrite it wholesale —
+   improve it. (Mass AI-rewrites are exactly what Google demotes; genuinely
+   better pages are what it rewards.)
+2. INTERNAL LINKS: add 2–5 links to related posts/pages ONLY from the
+   internal-link map rows I paste below — never invent a link.
+3. EXTERNAL LINKS: only genuinely authoritative sources (official bodies,
+   research, government health pages), never competitors or thin sites; name
+   the source in the text for health topics.
+4. COMPLIANCE: conservative health claims only ("supports", "may help"),
+   no cure words, and flag every medical claim so the doctor can approve it.
+5. VOICE: the post must still sound like the author whose voice block I
+   pasted — not like generic AI.
+6. NEVER invent a statistic, study, price, or date — write [NEEDS FACT] and
+   list them all at the end.
+
+INTERNAL-LINK MAP (the rows for this post):
+[paste this post's rows from the sitewide link map]`;
+
 const P_WP_PUBLISH = `The PR for [page] is green and the manual medical checkpoint passed.
 
 STEP 1 — SNAPSHOT FIRST (never skip, never reorder):
@@ -197,6 +251,12 @@ const stepHandoff: Step = {
   d: "Move the item's folder to YOUR '2 — Ready for Deepu' subfolder in the shared Drive, drop the filled Handoff Card (a Google Doc) + screenshots in it, add your row to the Pipeline Tracker, and message Deepu. Moving it LOCKS it — pull it back to '1 — Drafts' if you must change something.",
   prompt: HANDOFF,
   link: { href: "https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX", label: "Open the shared Drive folder ↗" },
+};
+const stepBatchHandoff: Step = {
+  warn: "Speed never skips safety — every post in the batch passes the same machine checks and the same doctor gate.",
+  t: "Batch the handoff",
+  d: "Drop several finished posts into '2 — Ready for Deepu' together, one Handoff Card each, one message to Deepu. One PR can carry the batch — and one red post never holds the rest hostage (Deepu severs it).",
+  prompt: HANDOFF,
 };
 const stepTrack: Step = {
   t: "Track it — you're done; the system takes over",
@@ -332,6 +392,31 @@ const PATHS: Record<string, { label: string; tasks: { key: string; label: string
       { key: "new-lp", label: "Create a NEW landing page", tools: true },
       { key: "update", label: "UPDATE an existing page", tools: true },
       { key: "new-blog", label: "Write a NEW blog post", tools: true },
+      {
+        key: "batch-qa",
+        label: "QA/QC a batch of existing pages (e.g. Vikash's 11)",
+        steps: [
+          {
+            warn: "Only LIVE page links — a page that's already gone gets the word GONE, never a guess. The machine snapshots every page before touching it.",
+            t: "List the batch — the live URLs, one line each",
+            d: "One Google Doc in your '1 — Drafts' folder using the template below: every live page URL in the batch, what the page is, and anything you already know is wrong on it. This list IS the work order — the machine fetches the pages itself; nobody retypes anything.",
+            copy: [{ label: "The batch list template", text: BATCH_LIST }],
+          },
+          {
+            warn: "Never fill a gap from memory — the pipeline publishes what YOU verified, and a wrong price rides your note all the way to live.",
+            t: "Verify the facts on every page (your real job here)",
+            d: "Open each live page next to that site's FACTS doc. Check every price, phone, WhatsApp, programme name, and date. On the list, write per page: CORRECT, or exactly what must change (old → new, per the FACTS doc). This is the one step only a human who knows the business can do.",
+            link: { href: "https://drive.google.com/drive/folders/1T8_UUHxRft9OwPsWZaUxsvo_NPiv-OVo", label: "Open the FACTS folder ↗" },
+          },
+          {
+            warn: "Moving the doc to '2 — Ready for Deepu' LOCKS the batch. The machine may bounce facts questions back — answer fast; the whole batch waits on you.",
+            t: "Hand the batch to Deepu — one folder, one card",
+            d: "Move the finished list (URLs + facts notes) to your '2 — Ready for Deepu' folder, add ONE Handoff Card for the whole batch, one Tracker row per page (same batch name), and message Deepu. He runs the whole chain (snapshot → import → machine checks → publish); the honest budget is ~1–2 days for a batch this size.",
+            prompt: HANDOFF,
+          },
+          stepTrack,
+        ],
+      },
     ],
   },
   roshni: {
@@ -346,8 +431,43 @@ const PATHS: Record<string, { label: string; tasks: { key: string; label: string
           { t: "Voice first, always", d: "Open the Voices page, copy the author block (clinical topic → a physician + doctor sign-off; food/lifestyle → Gita; brand news → your own voice; else → Abilash).", prompt: P_VOICE, link: { href: "/guide/voices", label: "Open the Voices page" } },
           { t: "Write fast, finish properly", d: "Draft in your tool (VS Code + Claude plugin is great for cadence), then the publish-ready paste. Never invent a statistic, study, or date — that's where fast blogs slip.", prompt: P_PUBLISH_READY },
           stepApprove,
-          { warn: "Speed never skips safety — every post in the batch passes the same machine checks and the same doctor gate.", t: "Batch the handoff", d: "Drop several finished posts into '2 — Ready for Deepu' together, one Handoff Card each, one message to Deepu. One PR can carry the batch — and one red post never holds the rest hostage (Deepu severs it).", prompt: HANDOFF },
+          stepBatchHandoff,
           stepTrack,
+        ],
+      },
+      {
+        key: "batch-update",
+        label: "Update OLD posts in batches (the 600)",
+        steps: [
+          {
+            warn: "\"All 600 in a day\" is not faster — one demotion undoes years of ranking. The batch plan IS the fast way.",
+            t: "The plan: batches, never all 600 at once",
+            d: "Editing old posts has no Google rate limit — but mass AI-rewriting hundreds of health posts in a few days is exactly the fingerprint Google's scaled-content systems demote (the March 2026 core update sharpened this). So we do the same work, spread safely: the top 50 posts by search traffic first (Abilash/Vikash pull the priority list from Search Console), then 30–60 posts per day, the whole 600 in 2–3 weeks. Same result, none of the risk.",
+          },
+          {
+            warn: "Internal links without the map = links invented from memory — the exact thing the machine exists to prevent.",
+            t: "Two prereqs must exist before batch 1",
+            d: "(a) The sites/whyayurveda.org scaffold (Deepu's one-time setup #2) so the content gates fire on posts; (b) the sitewide internal-link map (built from Search Console data) so every post links to the RIGHT sister pages. Until both exist, batches are HELD — ask Deepu/Abilash where these stand before starting.",
+          },
+          {
+            t: "Kit the BATCH (one card per batch, not per post)",
+            d: "One Kitting Card for the whole batch: which posts (from the priority list), and what every post gets — internal links from the map, the external-link policy, the compliance pass, and the right author voice. One task ID from the delegation sheet covers the batch.",
+            prompt: KITTING,
+          },
+          {
+            warn: "Clinical topics = a physician's voice AND Dr. Deepu John's sign-off — batch or no batch, however small the edit.",
+            t: "Update each post — voice first, then the update paste",
+            d: "Per post: load the author's voice block (Voices page), then the update prompt below with that post's rows from the link map. Keep the post's facts intact; claims stay conservative.",
+            prompt: P_POST_UPDATE,
+            link: { href: "/guide/voices", label: "Open the Voices page" },
+          },
+          stepApprove,
+          stepBatchHandoff,
+          {
+            warn: "A pause costs a week; ignoring a dip can cost the site. Never push the next batch through a warning sign.",
+            t: "Watch Search Console weekly — the safety loop",
+            d: "After each batch goes live: check the updated posts in Search Console weekly. Steady or rising = next batch goes. A broad dip across updated posts = PAUSE all batches and tell Abilash the same day. This loop is what makes the 2–3 week plan safe.",
+          },
         ],
       },
     ],
@@ -379,6 +499,46 @@ const PATHS: Record<string, { label: string; tasks: { key: string; label: string
     tasks: [
       { key: "day0", label: "Day 0 — set up my machine (first time)", steps: deepuDay0 },
       { key: "publish", label: "Publish an item (the full chain)", steps: deepuPublish },
+      {
+        key: "batch-qa",
+        label: "Batch QA/QC — import & re-publish existing pages",
+        steps: [
+          {
+            warn: "Until the scaffold + signed rows exist, the batch is HELD — never published \"just this once\" around the gates.",
+            t: "Prereq — the target site's scaffold must exist",
+            d: "For the KTAHV landing-page batch that means one-time setup #1: sites/ayurvedichealingvillage.com (entity ktahv) plus launches/ayurvedichealingvillage.com/approvals.yaml with Abilash's signed rows. Check with the paste below; missing → run your 'One-time setup' task first and HOLD the batch (WAITING-ON-SETUP.txt in the batch folder).",
+            copy: [{ label: "The prereq check (paste into Claude Code)", text: "Confirm sites/ayurvedichealingvillage.com/site.config.json exists and says entity ktahv, and launches/ayurvedichealingvillage.com/approvals.yaml has its required rows approved. Report PASS/FAIL per item — do not fix anything." }],
+          },
+          {
+            warn: "No backup, no publish — and QA/QC means the SAME page, better. A redesign is a different task with its own front gates.",
+            t: "Snapshot every page FIRST, then import the whole batch",
+            d: "Pick up the batch list (URLs + facts notes) from '2 — Ready for Deepu'. One paste in Claude Code does the chain: snapshot ALL pages into backups/ (committed), then recreate each as a real page under sites/<domain>/ on ONE branch — applying only the fixes the facts notes name.",
+            prompt: P_BATCH_IMPORT,
+          },
+          {
+            warn: "Green CI never means a doctor approved anything — the medical checkpoint stays yours, by hand, per page.",
+            t: "One PR — the machine reads the whole batch at once",
+            d: "The PR carries the batch Handoff Card. CI runs everything on all pages together (on the KTAHV site the clinical word-lock fires automatically — legacy pages WILL trip it; that's the machine doing its job). Sort the report per page: DEV-FIX vs BOUNCE.",
+            link: { href: "/guide/workbook", label: "Full gate table — Workbook Part 4" },
+          },
+          {
+            warn: "NEVER rewrite a fact, claim, price, or banned wording yourself — those words belong to the submitter and the doctor. Bounce them.",
+            t: "Fix trivia, bounce facts — batches are severable",
+            d: "Dev things (broken links, images, alt text, paths, tokens) → fix on the branch. Content things (facts, claims, banned wording on a visible page) → one plain-English bounce list back to the submitter + NEEDS-FIX-❌.txt + the Tracker cell. One red page moves OFF the branch (own row, own follow-up PR) — the green rest never wait for it.",
+          },
+          {
+            warn: "SNAPSHOT FIRST — the publish prompt has the backup inside it. And a HUMAN clicks Publish. Never the agent, never production via Novamira.",
+            t: "Publish the batch — page by page, snapshot-first",
+            d: "For each green page run the WordPress publish prompt (Novamira → staging → your eyeball → YOU click Publish). One ledger row per page, all sharing the batch's pr: number. Factory-site batches merge instead (approver merges the green PR).",
+            prompt: P_WP_PUBLISH,
+          },
+          {
+            warn: "No CHECKED-✅.txt = not checked, whatever anyone remembers. One marker per page — the batch shares a folder, not a proof.",
+            t: "Stamp the batch closed",
+            d: "Per page: CHECKED-✅.txt (date, PR#, gates green, sign-off line, live URL) in the batch folder → Tracker + ledger rows updated → batch folder moves to '3 — Published' → the delegation task closes with the live URLs. Honest budget for an ~11-page batch: 1–2 days end to end.",
+          },
+        ],
+      },
       {
         key: "setup",
         label: "One-time setup + install Novamira",
