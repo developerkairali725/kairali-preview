@@ -29,14 +29,21 @@ mode: A
 # that lets the content gates fire on Roshni's posts (publishing still goes out
 # via WordPress). MODE A design source = the existing live posts being updated.
 
+# SIGNED 2026-07-18 13:46:06 IST — Abilash, in-chat one-word approvals
+# ("APPROVE brief/strategy/design_source/golden_page"), evening session 18 Jul.
+# Scope signed: the whyayurveda content home per the CONTEXT note above —
+# Roshni's 600-post batch pipeline (edits only, out via WordPress). golden_page
+# signs the PROCESS (first post alone → STOP); the actual first post still gets
+# its own in-chat approval when it exists.
+
 approvals:
   # What the site is, who it is for, what it must achieve. The golden page is
   # the homepage unless this brief names another page.
   - gate: brief
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:46:06 IST"
+    artifact: "docs/reports/2026-07-18-batch-sops-and-setup-walk.md (Roshni 600-post batch SOP; content home = render target for the gates, not a rebuild)"
 
   # ONE approval, everything plannable batched in — so the stops stay few:
   #   · the sitemap
@@ -44,23 +51,23 @@ approvals:
   #   · the competitor-keyword-to-page map
   #   · the integrations plan — which events fire, which forms, chatbot/voice
   - gate: strategy
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:46:06 IST"
+    artifact: "GSC-priority batches (top 50 first), 30-60 posts/day, every batch through the gates; links per the sitewide link map; edits only — no new pages, no WP structure changes"
 
   # Which mode, and the design that is being implemented (MODE A: what is in
   # design-intake/. MODE B: the confirmation that it is legitimately empty).
   - gate: design_source
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:46:06 IST"
+    artifact: "MODE A — the existing live posts are the authority; content improved (compliance, voice, links), layout/theme untouched"
 
   # ONE page built, then STOP. Every later page must match this approved page.
   # No full-site build before this row is signed.
   - gate: golden_page
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:46:06 IST"
+    artifact: "PROCESS signed: first updated post flows alone (gates -> preview -> Abilash approval), then STOP; batches start only after it is signed"

@@ -30,14 +30,20 @@ mode: A
 # page, better — never a redesign). The full KTAHV rebuild is a separate future
 # run; its brief/strategy/golden-page approvals happen when that run starts.
 
+# SIGNED 2026-07-18 13:42:15 IST — Abilash, in-chat one-word approvals
+# ("APPROVE brief/strategy/design_source/golden_page"), evening session 18 Jul.
+# Scope signed: the 11-legacy-landing-page QA/QC batch per the CONTEXT note
+# above. golden_page here signs the PROCESS (first page alone → STOP); the
+# actual first page still gets its own in-chat approval when it exists.
+
 approvals:
   # What the site is, who it is for, what it must achieve. The golden page is
   # the homepage unless this brief names another page.
   - gate: brief
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:42:15 IST"
+    artifact: "docs/reports/2026-07-18-batch-sops-and-setup-walk.md (Vikash 11-page batch QA/QC SOP; not a redesign, not the full rebuild)"
 
   # ONE approval, everything plannable batched in — so the stops stay few:
   #   · the sitemap
@@ -45,23 +51,23 @@ approvals:
   #   · the competitor-keyword-to-page map
   #   · the integrations plan — which events fire, which forms, chatbot/voice
   - gate: strategy
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:42:15 IST"
+    artifact: "11 pages imported as-is: no sitemap/keyword/integration changes — QA/QC fixes only (facts, links, banned-word lock, rendering)"
 
   # Which mode, and the design that is being implemented (MODE A: what is in
   # design-intake/. MODE B: the confirmation that it is legitimately empty).
   - gate: design_source
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:42:15 IST"
+    artifact: "MODE A — the LIVE legacy pages are the design authority (same page, better; anything broken/off-brand is flagged, never silently fixed)"
 
   # ONE page built, then STOP. Every later page must match this approved page.
   # No full-site build before this row is signed.
   - gate: golden_page
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash
+    date: "2026-07-18 13:42:15 IST"
+    artifact: "PROCESS signed: first page of the batch flows alone, then STOP for Abilash's approval of that page; remaining 10 only after it is signed"
