@@ -15,6 +15,8 @@ import {
   medicalClinic,
   product,
   book,
+  itemList,
+  service,
 } from "../src/index.js";
 
 test("kairaliOrganization carries the locked facts and never invents", () => {
@@ -134,4 +136,33 @@ test("book builds with author ref, offers carry NO price, gaps stay absent", () 
   const lean = book({ name: "Ayurvedic Herbal Massage" });
   assert.equal("award" in lean, false);
   assert.equal("offers" in lean, false);
+});
+
+test("itemList numbers items in order and never invents fields", () => {
+  const l = itemList({
+    id: "https://bulkayurvedaoils.com/oils/#catalog",
+    name: "Bulk formulation ledger",
+    items: [
+      { name: "Balaguluchyadi Kera Thailam", url: "https://bulkayurvedaoils.com/oils/classical-thailams" },
+      { name: "Udwarthanam Powder" },
+    ],
+  });
+  assert.equal(l["@type"], "ItemList");
+  assert.equal(l.numberOfItems, 2);
+  assert.equal(l.itemListElement[0].position, 1);
+  assert.equal(l.itemListElement[1].name, "Udwarthanam Powder");
+  assert.equal("url" in l.itemListElement[1], false);
+});
+
+test("service carries the quote model — provider by @id, no offers/price surface", () => {
+  const s = service({
+    id: "https://bulkayurvedaproducts.com/services/private-label#service",
+    name: "Private label Ayurvedic manufacturing",
+    providerId: "https://bulkayurvedaproducts.com/#organization",
+    serviceType: "Contract manufacturing",
+  });
+  assert.equal(s["@type"], "Service");
+  assert.deepEqual(s.provider, { "@id": "https://bulkayurvedaproducts.com/#organization" });
+  assert.equal("offers" in s, false);
+  assert.equal("price" in s, false);
 });

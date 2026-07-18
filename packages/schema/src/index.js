@@ -269,3 +269,39 @@ export function book(b) {
         : undefined,
   });
 }
+
+/**
+ * ItemList for catalog hubs (Ship-Gate schema plan: "ItemList on catalog
+ * hubs"). Items are {name, url?} in display order — never invented entries.
+ * @param {{id?:string, name?:string, items: Array<{name:string,url?:string}>}} l
+ */
+export function itemList(l) {
+  return clean({
+    "@type": "ItemList",
+    "@id": l.id,
+    name: l.name,
+    numberOfItems: l.items.length,
+    itemListElement: l.items.map((item, i) =>
+      clean({ "@type": "ListItem", position: i + 1, name: item.name, url: item.url }),
+    ),
+  });
+}
+
+/**
+ * Service for B2B service pages (quote model — no offers/price, ever;
+ * the same no-invented-commerce law as product()).
+ * @param {{id?:string, name:string, description?:string, url?:string,
+ *          providerId?:string, serviceType?:string, areaServed?:string}} s
+ */
+export function service(s) {
+  return clean({
+    "@type": "Service",
+    "@id": s.id,
+    name: s.name,
+    description: s.description,
+    url: s.url,
+    provider: s.providerId ? { "@id": s.providerId } : undefined,
+    serviceType: s.serviceType,
+    areaServed: s.areaServed,
+  });
+}

@@ -28,14 +28,22 @@ domain: bulkayurvedaoils.com
 # human design; the agent proposes ONE direction and STOPS for design_direction.
 mode: B
 
+# SIGNATURE (all rows below): "D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner
+# in-chat ~20:05 IST) · dual-AI evidence pass-2 + advisory classification per
+# D-EXTREVIEW-OWNER-FACTS". The owner's in-chat ruling of 18 Jul 2026 ~20:05 IST
+# approved this lane's front gates in one word, with the pass-2 dual-AI evidence
+# (launches/bulkayurvedaoils.com/design-review/2026-07-18-pass2.md) and the
+# advisory classification of the Perplexity cert-strip findings
+# (design-review/advisory-notes-2026-07-18.md) before him. The build applies the
+# pass-2 minor mechanical residue fixes named in that evidence.
 approvals:
   # What the site is, who it is for, what it must achieve. The golden page is
   # the homepage unless this brief names another page.
   - gate: brief
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash — D-VETO-WAIVED-18JUL (in-chat ~20:05 IST)
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/bulkayurvedaoils.com/BRIEF.md
 
   # ONE approval, everything plannable batched in — so the stops stay few:
   #   · the sitemap
@@ -43,32 +51,32 @@ approvals:
   #   · the competitor-keyword-to-page map
   #   · the integrations plan — which events fire, which forms, chatbot/voice
   - gate: strategy
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash — D-VETO-WAIVED-18JUL (in-chat ~20:05 IST)
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/bulkayurvedaoils.com/STRATEGY.md
 
   # Which mode, and the design that is being implemented (MODE A: what is in
   # design-intake/. MODE B: the confirmation that it is legitimately empty).
   - gate: design_source
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash — D-VETO-WAIVED-18JUL (in-chat ~20:05 IST)
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/bulkayurvedaoils.com/design-intake/ (empty of human design — MODE B confirmed)
 
   # MODE B ONLY — delete this row in MODE A. The agent's single proposed
   # direction: tokens + one hero mockup, anchored to REFERENCES.md.
   # front-gate.mjs requires this row when mode is B.
   - gate: design_direction
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash — D-VETO-WAIVED-18JUL (in-chat ~20:05 IST)
+    date: 2026-07-18 20:05:00 IST
+    artifact: launches/bulkayurvedaoils.com/DESIGN-DIRECTION.md + design-direction/hero-mockup.html + design-review/2026-07-18-pass2.md (dual-AI pass-2 + advisory notes)
 
   # ONE page built, then STOP. Every later page must match this approved page.
   # No full-site build before this row is signed.
   - gate: golden_page
-    status: pending
-    owner:
-    date:
-    artifact:
+    status: approved
+    owner: Abilash — D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (in-chat ~20:05 IST)
+    date: 2026-07-18 20:05:00 IST
+    artifact: sites/bulkayurvedaoils.com/app/page.tsx (golden homepage, this PR — preview URL in the PR body + launches/bulkayurvedaoils.com/screens/)

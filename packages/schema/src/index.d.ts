@@ -140,3 +140,19 @@ export function book(b: {
   bookFormat?: "Hardcover" | "Paperback" | "EBook";
   offers?: Array<{ url: string; sellerName?: string }>;
 }): JsonLdNode;
+
+export function itemList(l: {
+  id?: string;
+  name?: string;
+  items: Array<{ name: string; url?: string }>;
+}): JsonLdNode;
+
+export function service(s: {
+  id?: string;
+  name: string;
+  description?: string;
+  url?: string;
+  providerId?: string;
+  serviceType?: string;
+  areaServed?: string;
+}): JsonLdNode;

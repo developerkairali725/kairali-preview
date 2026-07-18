@@ -1,0 +1,320 @@
+/* ===========================================================================
+   bulkayurvedaoils.com — KAPPL bulk-supply desk · "The Batch Ledger" (WARM pole)
+   Register: A (authority, B2B RFQ-first) · product-pharma copy register.
+   Tokens ONLY (packages/ui/brand-tokens.css). Mobile-first.
+   Signature element: the hero LEDGER SPEC CARD (conversion surface = aesthetic
+   signature). Pass-2 residue fixes built in: visible mobile nav affordance ·
+   "(as published)" qualifier on the dark trust strip · unoccluded photography
+   column · single primary CTA (header demoted to ghost).
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  --hairline-bronze: 1px solid color-mix(in srgb, var(--bronze-400) 26%, transparent);
+  --hairline-ink: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Kurale is never bolded (ch.04) */
+  color: var(--forest-700);
+  line-height: 1.15;
+  margin: 0;
+}
+
+a { color: var(--forest-500); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--forest-700); }
+
+.container { max-width: var(--measure-layout); margin: 0 auto; padding: 0 20px; }
+
+.overline {
+  font-family: var(--font-caption);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-600);
+  margin: 0 0 12px;
+}
+
+/* ---------- Header (ivory bar + always-visible section nav) ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--ivory) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--hairline-bronze);
+}
+.site-header .bar {
+  min-height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: 6px; padding-bottom: 2px;
+}
+.logo-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; }
+.logo-link img { display: block; }
+.logo-name { font-family: var(--font-display); font-size: 1.08rem; color: var(--forest-700); white-space: nowrap; }
+.logo-name small { display: block; font-family: var(--font-caption); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze-600); }
+.site-header .header-cta { display: none; }
+
+/* Mobile nav affordance (pass-2 fix): the nav is ALWAYS visible — a scrollable
+   pill row under the bar on small screens, inline on desktop. Never a desktop
+   hamburger (doctrine); never an invisible mobile nav (auditor blocker). */
+.site-nav { border-top: var(--hairline-bronze); }
+.nav-row {
+  display: flex; gap: 2px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  padding-top: 2px; padding-bottom: 2px; scrollbar-width: none;
+}
+.nav-row::-webkit-scrollbar { display: none; }
+.nav-row a {
+  display: inline-flex; align-items: center; flex: 0 0 auto;
+  min-height: 44px; padding: 0 12px;
+  font-weight: 600; font-size: 0.9rem; color: var(--forest-700);
+  text-decoration: none; border-radius: var(--radius-pill);
+  transition: background var(--dur-fast) var(--ease-brand), color var(--dur-fast) var(--ease-brand);
+}
+.nav-row a:hover { color: var(--forest-500); background: color-mix(in srgb, var(--forest-500) 6%, transparent); }
+
+/* ---------- Buttons (pill law, ch.07) ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+  min-height: var(--control-lg); min-width: 44px;
+  padding: 0 calc(var(--space-1) * 7);
+  border-radius: var(--radius-pill); text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-brand), color var(--dur-fast) var(--ease-brand), border-color var(--dur-fast) var(--ease-brand);
+}
+.btn-primary { background: var(--forest-500); color: var(--card-bg); }
+.btn-primary:hover { background: var(--forest-700); color: var(--card-bg); }
+.btn-secondary { background: transparent; color: var(--forest-500); border: 1.5px solid var(--forest-500); }
+.btn-secondary:hover { color: var(--forest-700); border-color: var(--forest-700); background: color-mix(in srgb, var(--forest-500) 6%, transparent); }
+
+/* ---------- Hero: the ledger plate ---------- */
+.hero { padding: 44px 0 48px; }
+.hero-grid { display: grid; gap: 32px; align-items: stretch; }
+.hero-copy { align-self: center; }
+.hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.6rem); color: var(--ink); }
+.hero h1 .accent { color: var(--forest-500); }
+.hero .lede { font-size: 1.1rem; max-width: 36em; margin: 18px 0 0; color: color-mix(in srgb, var(--ink) 90%, transparent); }
+.accent-rule { width: 64px; height: 4px; border-radius: 2px; background: var(--marigold-400); margin: 26px 0 0; }
+
+/* The spec card — the signature element. White card, warm shadow, Lato table. */
+.spec-card {
+  align-self: center;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-warm);
+  padding: 26px 26px 24px;
+}
+.spec-card h2 {
+  font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--forest-500);
+  border-bottom: var(--hairline-ink); padding-bottom: 12px; margin: 0 0 4px;
+}
+.spec { width: 100%; border-collapse: collapse; font-family: var(--font-caption); font-size: 0.9rem; }
+.spec td { padding: 11px 2px; border-bottom: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent); vertical-align: top; }
+.spec td:first-child { color: var(--bronze-600); font-weight: 700; width: 42%; }
+.spec tr:last-child td { border-bottom: none; }
+/* pass-2: pack numerals genuinely oversized — the niche's scan beacons */
+.spec .big { font-family: var(--font-caption); font-size: 2.6rem; font-weight: 300; color: var(--forest-500); line-height: 1; letter-spacing: -0.01em; }
+.spec .qual { font-family: var(--font-caption); font-size: 0.78rem; color: var(--bronze-600); }
+.spec-card .btn { width: 100%; margin-top: 18px; }
+.spec-card .note { font-family: var(--font-caption); font-size: 0.78rem; color: var(--bronze-600); text-align: center; margin: 10px 0 0; }
+
+/* pass-2 fix: the photography anchor is its own full-height, unoccluded column */
+.hero-photo { margin: 0; border-radius: var(--radius-2); overflow: hidden; border: var(--hairline-bronze); box-shadow: var(--shadow-warm); background: var(--card-bg); position: relative; min-height: 240px; }
+.hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.hero-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 10px 14px;
+  font-family: var(--font-caption); font-size: 0.72rem; letter-spacing: 0.06em;
+  color: var(--ivory); background: color-mix(in srgb, var(--ink) 62%, transparent);
+}
+
+/* ---------- Dark trust strip (forest-800, marigold accent) ---------- */
+.trust-strip { background: var(--forest-800); color: color-mix(in srgb, var(--ivory) 90%, transparent); padding: 18px 0; }
+.trust-strip .container { display: flex; flex-wrap: wrap; gap: 10px 36px; align-items: baseline; justify-content: space-between; }
+.trust-strip .cert { font-family: var(--font-caption); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.trust-strip .cert em { font-style: normal; color: var(--marigold-300); } /* accent on forest-800 (7.80:1) — ch.08 legal · brand-allow: marigold-text */
+/* pass-2 fix: the "(as published)" qualifier now travels with the strip */
+.trust-strip .qual { font-family: var(--font-caption); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: none; color: color-mix(in srgb, var(--ivory) 78%, transparent); }
+.trust-strip .heritage { font-family: var(--font-display); font-size: 0.95rem; color: var(--ivory); }
+
+/* ---------- Sections ---------- */
+.section { padding: 52px 0 0; }
+.section:last-of-type { padding-bottom: 56px; }
+.section-head { max-width: var(--measure-prose); }
+.section-head h2 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); }
+.section-head p { margin: 12px 0 0; }
+
+/* Segment lanes */
+.lane-grid { display: grid; gap: 16px; margin-top: 26px; }
+.lane-card { display: flex; flex-direction: column; background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius); box-shadow: var(--shadow-warm); padding: 20px 22px; }
+.lane-card h3 { font-size: 1.2rem; }
+.lane-card p { margin: 8px 0 0; font-size: 0.94rem; color: color-mix(in srgb, var(--ink) 82%, transparent); }
+.lane-card .lane-go { margin-top: auto; padding-top: 14px; }
+.lane-card .lane-go a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; font-size: 0.92rem; color: var(--forest-500); text-decoration: none; }
+.lane-card .lane-go a:hover { color: var(--forest-700); }
+
+/* Formulation ledger table */
+.ledger-wrap { margin-top: 26px; background: var(--card-bg); border: var(--card-border); border-radius: var(--card-radius); box-shadow: var(--shadow-warm); overflow-x: auto; }
+.ledger { width: 100%; border-collapse: collapse; font-family: var(--font-caption); font-size: 0.92rem; min-width: 560px; }
+.ledger th { text-align: left; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest-500); padding: 14px 18px 10px; border-bottom: var(--hairline-ink); }
+.ledger td { padding: 12px 18px; border-bottom: 1px dashed color-mix(in srgb, var(--ink) 14%, transparent); vertical-align: top; }
+.ledger tr:last-child td { border-bottom: none; }
+.ledger .pack { font-weight: 700; color: var(--bronze-600); white-space: nowrap; }
+.ledger-note { font-family: var(--font-caption); font-size: 0.82rem; color: var(--bronze-600); margin: 12px 0 0; }
+.ledger-note a { color: var(--forest-500); }
+
+/* Quality plaques */
+.plaque-grid { display: grid; gap: 16px; margin-top: 26px; }
+.plaque { background: var(--card-bg); border: var(--card-border); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); padding: 18px 20px; }
+.plaque dt { font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest-500); }
+.plaque dd { margin: 6px 0 0; font-size: 0.9rem; color: color-mix(in srgb, var(--ink) 84%, transparent); }
+.plaque-qual { font-family: var(--font-caption); font-size: 0.82rem; color: var(--bronze-600); margin: 14px 0 0; }
+
+/* How it works — the batch process.
+   list-style none + padding 0: the OL's default browser markers ("1. 2. 3.")
+   must never render beside the design's own counter numerals — the owner's
+   18-Jul defect report ("1 2 3 appeared twice") was exactly this double. */
+.steps { display: grid; gap: 16px; margin: 26px 0 0; padding: 0; list-style: none; counter-reset: step; }
+.step { position: relative; background: var(--card-bg); border: var(--card-border); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); padding: 18px 20px 18px 64px; }
+.step::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 18px; top: 16px;
+  font-family: var(--font-caption); font-weight: 300; font-size: 1.9rem; line-height: 1;
+  color: var(--forest-500);
+}
+.step h3 { font-size: 1.08rem; }
+.step p { margin: 6px 0 0; font-size: 0.92rem; color: color-mix(in srgb, var(--ink) 82%, transparent); }
+
+/* RFQ band */
+.rfq-band { margin-top: 56px; background: var(--forest-700); color: color-mix(in srgb, var(--ivory) 90%, transparent); padding: 52px 0 56px; }
+.rfq-band .overline { color: var(--marigold-300); } /* on forest-700 (6.77:1) — ch.08 legal · brand-allow: marigold-text */
+.rfq-band h2 { color: var(--ivory); font-size: clamp(1.7rem, 4.5vw, 2.3rem); }
+.rfq-band .rfq-lede { margin: 12px 0 0; max-width: 38em; }
+.rfq-grid { display: grid; gap: 32px; margin-top: 30px; }
+.rfq-aside p { margin: 0 0 14px; font-size: 0.95rem; }
+.rfq-aside .rfq-fact { font-family: var(--font-caption); font-size: 0.9rem; padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--ivory) 18%, transparent); }
+.rfq-aside .rfq-fact strong { color: var(--ivory); }
+.rfq-aside a { color: var(--ivory); }
+
+/* EnquiryForm styling (shared component classes) */
+.enquiry-form { background: var(--card-bg); color: var(--ink); border-radius: var(--card-radius); box-shadow: var(--shadow-warm); padding: 26px; display: grid; gap: 14px; }
+.enquiry-heading { font-family: var(--font-display); font-weight: 400; color: var(--forest-700); font-size: 1.35rem; margin: 0 0 4px; }
+.enquiry-form .field { display: grid; gap: 6px; }
+.enquiry-form .field-row { display: grid; grid-template-columns: 88px 1fr; gap: 12px; }
+.enquiry-form label { font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bronze-600); }
+.enquiry-form input[type="text"], .enquiry-form input[type="tel"], .enquiry-form input[type="email"], .enquiry-form textarea {
+  font-family: var(--font-body); font-size: 1rem; color: var(--ink);
+  background: var(--ivory); border: var(--hairline-ink); border-radius: var(--radius-1);
+  padding: 12px 14px; min-height: 44px; width: 100%;
+}
+.enquiry-form textarea { resize: vertical; }
+.enquiry-form .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; }
+.enquiry-form .consent input { width: 18px; height: 18px; margin-top: 3px; }
+.enquiry-form .enquiry-error { color: var(--color-error); font-size: 0.9rem; margin: 0; }
+.enquiry-sent { background: var(--card-bg); color: var(--ink); border-left: 4px solid var(--forest-500); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); padding: 20px 24px; }
+
+/* ---------- Footer ---------- */
+.site-footer { margin-top: 0; background: var(--forest-800); color: color-mix(in srgb, var(--ivory) 90%, transparent); padding: 44px 0 calc(148px + env(safe-area-inset-bottom)); font-size: 0.9rem; }
+.site-footer .tagline { font-family: var(--font-display); font-size: 1.15rem; color: var(--ivory); margin: 0; }
+.footer-grid { display: grid; gap: 24px; margin-top: 22px; }
+.site-footer a { color: var(--ivory); }
+.site-footer a[data-cta] { display: inline-block; padding-block: 12px; margin-block: -12px; }
+.footer-col h4 { font-family: var(--font-caption); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--marigold-300); margin: 0 0 2px; } /* brand-allow: marigold-text */
+.footer-col ul { list-style: none; padding: 0; margin: 10px 0 0; }
+.footer-col li { margin: 6px 0 0; }
+.footer-col p { margin: 10px 0 0; max-width: 36ch; }
+.footer-disclaimer { margin-top: 26px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--ivory) 18%, transparent); font-family: var(--font-caption); font-size: 0.78rem; color: color-mix(in srgb, var(--ivory) 74%, transparent); }
+
+/* ---------- Sticky mobile CTA (floating stack slot 3) ---------- */
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; display: flex; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--ivory) 94%, transparent); backdrop-filter: blur(8px); border-top: var(--hairline-bronze); }
+.sticky-cta .btn { flex: 1; min-height: 48px; font-size: 0.95rem; padding: 0 10px; }
+
+/* Chat bubble yields to the sticky bar (single-slot law) and to the consent banner */
+@media (max-width: 767px) {
+  #chatbase-bubble-button { bottom: calc(84px + env(safe-area-inset-bottom)) !important; }
+  #chatbase-message-bubbles { display: none !important; }
+}
+:root[data-consent-open] #chatbase-bubble-button,
+:root[data-consent-open] #chatbase-message-bubbles { display: none !important; }
+
+:where(a, button, input, select, textarea):focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* ---------- Upward enhancement ---------- */
+@media (min-width: 640px) {
+  .lane-grid { grid-template-columns: repeat(3, 1fr); }
+  .plaque-grid { grid-template-columns: repeat(3, 1fr); }
+  .steps { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 768px) {
+  .site-header .header-cta { display: inline-flex; min-height: 44px; }
+  .sticky-cta { display: none; }
+  .site-footer { padding-bottom: 36px; }
+  .hero { padding: 56px 0 60px; }
+}
+@media (min-width: 1000px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.95fr) minmax(230px, 0.62fr); gap: 40px; }
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; }
+  .rfq-grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+}
+
+/* ---------- Subpages (Phase-1 full-site build — same ledger system) ---------- */
+/* Compact page header: the golden hero's register at subpage scale. */
+.page-head { padding: 40px 0 8px; }
+.page-head h1 { font-size: clamp(2rem, 4.6vw, 2.9rem); color: var(--ink); }
+.page-head .lede { font-size: 1.06rem; max-width: 40em; margin: 14px 0 0; color: color-mix(in srgb, var(--ink) 90%, transparent); }
+.page-head .accent-rule { margin-top: 22px; }
+
+/* FAQ — answer capsules in the ledger register (AEO layer, verified answers only) */
+.faq { display: grid; gap: 14px; margin: 26px 0 0; }
+.faq details { background: var(--card-bg); border: var(--card-border); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 44px; padding: 14px 20px; font-family: var(--font-body); font-weight: 600; color: var(--forest-700); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-caption); font-weight: 300; font-size: 1.5rem; color: var(--forest-500); line-height: 1; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq .faq-a { padding: 0 20px 16px; margin: 0; font-size: 0.94rem; color: color-mix(in srgb, var(--ink) 84%, transparent); }
+
+/* Four-card lane variant (distribution lanes) — 2×2 above mobile */
+@media (min-width: 640px) {
+  .lane-grid.lane-grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Prose blocks (about/guide) stay at reading measure */
+.prose { max-width: var(--measure-prose); }
+.prose p { margin: 14px 0 0; }
+.prose h2 { font-size: clamp(1.5rem, 4vw, 2rem); margin-top: 36px; }
+.prose h2:first-child { margin-top: 0; }
+
+/* Cross-desk pointer ("want this under your own brand?") */
+.cross-desk { margin-top: 32px; background: var(--card-bg); border: var(--card-border); border-left: 4px solid var(--marigold-400); border-radius: var(--radius-3); box-shadow: var(--shadow-warm); padding: 16px 20px; font-size: 0.94rem; }
+
+/* Chat bubble hide state on the dedicated RFQ page (chat-bubble law §4:
+   form-heavy pages hide the bubble entirely — the form IS the conversation). */
+body:has(main.page-rfq) #chatbase-bubble-button,
+body:has(main.page-rfq) #chatbase-message-bubbles { display: none !important; }
+
+/* Inline data-cta links (ledger note, RFQ aside) get a padded ≥44px hit area —
+   same mechanic as the footer links (A4 touch-target law, browser-verified). */
+.ledger-note a[data-cta], .rfq-aside a[data-cta] { display: inline-block; padding-block: 12px; margin-block: -12px; }
+
+/* Mobile: the logo lockup wraps instead of clipping at the viewport edge */
+@media (max-width: 480px) {
+  .logo-name { white-space: normal; font-size: 1rem; }
+  .logo-name small { letter-spacing: 0.1em; }
+}

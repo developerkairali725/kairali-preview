@@ -18,11 +18,11 @@
     "monitoring"
   ],
   "stageCounts": {
-    "ideation": 12,
+    "ideation": 11,
     "research": 2,
     "build": 1,
     "gates": 0,
-    "preview": 7,
+    "preview": 9,
     "human_audit": 1,
     "ok_to_publish": 0,
     "live": 3,
@@ -244,13 +244,23 @@
       "live_url": null
     },
     {
-      "name": "bulkayurvedaoils.com / bulkayurvedaproducts.com",
-      "entity": "Kairali Group (B2B)",
-      "stage": "ideation",
+      "name": "bulkayurvedaoils.com",
+      "entity": "KAPPL (B2B supply desk)",
+      "stage": "preview",
       "owner": "Abilash",
-      "blocker": null,
-      "updated": "2026-07-13",
-      "preview_url": null,
+      "blocker": "Golden page only (front gates signed per D-VETO-WAIVED-18JUL); Phase-1 pages next. Interim WhatsApp number flagged for swap (niche brief §7 ask #3)",
+      "updated": "2026-07-18",
+      "preview_url": "https://bulkayurvedaoils-com.vercel.app",
+      "live_url": null
+    },
+    {
+      "name": "bulkayurvedaproducts.com",
+      "entity": "KAPPL (B2B manufacturing desk)",
+      "stage": "preview",
+      "owner": "Abilash",
+      "blocker": "Golden page only (front gates signed per D-VETO-WAIVED-18JUL); Phase-1 pages next. Facility photography gap flagged (image-library/kappl empty)",
+      "updated": "2026-07-18",
+      "preview_url": "https://bulkayurvedaproducts-com.vercel.app",
       "live_url": null
     },
     {
