@@ -13,7 +13,7 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # gitleaks scans history
 
@@ -60,7 +60,7 @@ jobs:
       contents: read
       pull-requests: write # posts findings as PR comments (the A-13 evidence)
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 2
 

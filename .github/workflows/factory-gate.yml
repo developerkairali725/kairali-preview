@@ -52,7 +52,7 @@ jobs:
       # true when the diff touches anything the verdict emitters JUDGE.
       emit_affecting: ${{ steps.diff.outputs.emit_affecting }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # diffs against the PR base / previous main tip
 
@@ -98,7 +98,7 @@ jobs:
   brand-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: pnpm/action-setup@v4
 
@@ -223,7 +223,7 @@ jobs:
   front-gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # the gate diffs against the PR base; a shallow clone has no base
 
@@ -257,7 +257,7 @@ jobs:
         # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
         site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: pnpm/action-setup@v4
@@ -306,7 +306,7 @@ jobs:
         # (it validates EVERY site matrix in this file).
         site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
 
       - uses: pnpm/action-setup@v4
@@ -366,7 +366,7 @@ jobs:
     permissions:
       contents: write # push rights for the verdict commit — scoped to THIS job; the workflow default stays contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # the push step rebases onto wherever main moved meanwhile
 
