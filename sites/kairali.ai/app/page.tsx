@@ -17,6 +17,10 @@ type Site = {
   owner: string | null;
   blocker: string | null;
   updated: string | null;
+  /** Vercel deployment URL (verified real) or null = no Vercel project yet (local-only preview). */
+  preview_url?: string | null;
+  /** https://<domain> for stage=live sites (verified responding), else null. */
+  live_url?: string | null;
 };
 type Snapshot = {
   meta: { updated?: string; as_of_commit?: string; sprint?: string; sources?: string };
@@ -54,6 +58,26 @@ const STATUS_TONE: Record<string, { bg: string; fg: string }> = {
 };
 
 const dash = (v: unknown) => (v === null || v === undefined || v === "" ? "—" : String(v));
+
+function SiteLinks({ site }: { site: Site }) {
+  const live = site.live_url ?? null;
+  const preview = site.preview_url ?? null;
+  return (
+    <div className="links">
+      {live ? (
+        <a className="lnk live" href={live} target="_blank" rel="noopener noreferrer">
+          live&nbsp;↗
+        </a>
+      ) : null}
+      {preview ? (
+        <a className="lnk" href={preview} target="_blank" rel="noopener noreferrer">
+          preview&nbsp;↗
+        </a>
+      ) : null}
+      {!live && !preview ? <span className="localonly">local only</span> : null}
+    </div>
+  );
+}
 
 function StageChip({ stage }: { stage: string }) {
   const s = STAGE[stage] ?? { bg: "#EEE", fg: "#333", label: stage };
@@ -182,6 +206,7 @@ export default function Home() {
                 <span className="owner">owner: {dash(s.owner)}</span>
                 <span className="upd">upd {dash(s.updated)}</span>
               </div>
+              <SiteLinks site={s} />
               {s.blocker ? <p className="blk">⚠ {s.blocker}</p> : null}
             </div>
           ))}
@@ -248,6 +273,16 @@ const CSS = `
   .sitemeta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 8px;
               font-size: 0.75rem; opacity: 0.7; }
   .tag { background: #00000008; padding: 1px 8px; border-radius: 6px; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .lnk { display: inline-block; padding: 2px 11px; border-radius: 999px; font-size: 0.72rem;
+         font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; text-decoration: none;
+         color: ${INK}; border: 1px solid ${INK}; background: transparent; }
+  .lnk:hover { background: ${INK}; color: ${IVORY}; }
+  .lnk.live { background: #003720; border-color: #003720; color: #EAF3EA; }
+  .lnk.live:hover { background: #1A2E1A; border-color: #1A2E1A; }
+  .localonly { font-size: 0.72rem; font-style: italic; opacity: 0.45; padding: 3px 0; }
+
   .blk { margin: 10px 0 0; font-size: 0.78rem; color: #8A3D14; line-height: 1.45; }
 
   .pgfoot { margin-top: 48px; padding-top: 18px; border-top: 1px solid ${LINE};

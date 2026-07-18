@@ -88,6 +88,25 @@ if (bad.length) {
   process.exit(1);
 }
 
+// Per-site clickable links (D-20260718-13): preview_url + live_url pass through
+// to the snapshot. Default absent fields to null so the dashboard can rely on
+// the keys existing, and require https on non-null values — the fields hold
+// REAL, verified URLs or null, never guesses (HARD GATE 6).
+const URL_FIELDS = ['preview_url', 'live_url'];
+const badUrls = [];
+for (const s of data.sites || []) {
+  for (const f of URL_FIELDS) {
+    if (s[f] === undefined) s[f] = null;
+    if (s[f] !== null && !/^https:\/\/[^\s"']+$/.test(String(s[f]))) {
+      badUrls.push(`${s.name}.${f}=${s[f]}`);
+    }
+  }
+}
+if (badUrls.length) {
+  console.error('status-build: invalid URL(s) (must be https://… or null):', badUrls.join(', '));
+  process.exit(1);
+}
+
 // Stage tallies for the site view header.
 const stageCounts = {};
 for (const st of STAGES) stageCounts[st] = 0;

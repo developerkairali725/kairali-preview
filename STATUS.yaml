@@ -5,7 +5,10 @@
 #
 # SCHEMA
 #   workstreams[]: { name, status, next_milestone, due, tokens_spent, cost_inr, hours }
-#   sites[]:       { name, entity, stage, owner, blocker, updated }
+#   sites[]:       { name, entity, stage, owner, blocker, updated, preview_url, live_url }
+#   preview_url:   the site's Vercel deployment URL (real + verified responding, HARD GATE 6)
+#                  or null = no Vercel project yet, local-only preview (dashboard shows a quiet marker)
+#   live_url:      https://<domain>, ONLY for stage=live sites and only after verifying it responds; else null
 #   stage enum:    ideation | research | build | gates | preview | human_audit | ok_to_publish | live | monitoring
 #
 # BUDGET-BURN NOTE: tokens_spent / cost_inr / hours are null across the board.
@@ -85,153 +88,211 @@ sites:
     owner: "Abilash"
     blocker: null
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-kairali-com.vercel.app"
+    live_url: null
   - name: "ayurvedichealingvillage.com (KTAHV)"
     entity: "KTAHV"
     stage: "research"
     owner: "Abilash"
     blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113) — the 11-page QA/QC batch now waits ONLY on Deepu's Novamira-on-staging install + Vikash's 11-URL list (his list is the authority on the count)"
     updated: "2026-07-18"
+    preview_url: null
+    live_url: null
   - name: "kairalicenters.com"
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-kairalicenters.vercel.app"
+    live_url: null
   - name: "kairalifranchise.com"
     entity: "Kairali Group"
     stage: "ideation"
     owner: "Abilash"
     blocker: "D#4 CLOSED: no separate build — 301s into ayurvedafranchise.com at cutover"
     updated: "2026-07-18"
+    preview_url: null
+    live_url: null
   - name: "kairalihospitality.com"
     entity: "Kairali Hospitality"
     stage: "preview"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-kairalihospital.vercel.app"
+    live_url: null
   - name: "villaraag.com"
     entity: "Villa Raag"
     stage: "research"
     owner: "Abilash"
     blocker: "Villa Raag brand manual/tokens (raag-tokens.css) pending delivery"
     updated: "2026-07-17"
+    preview_url: null
+    live_url: null
   - name: "kappl.co.in"
     entity: "KAPPL"
     stage: "ideation"
     owner: "Abilash"
     blocker: "Aggregator RULED = ESHOPBOX (DECISIONS.md:66); residual courier list read at Shopify kickoff — STATUS 3x-ask line was partially stale"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliproducts.in"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Ambuj"
     blocker: "Track B — staff access + Shopify tokens pending"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliproducts.us / .cz / kairaliproduct.com"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Ambuj"
     blocker: "Track B — staff access + Shopify tokens pending"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairalitea.com"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Ambuj"
     blocker: "Track B — staff access + Shopify tokens pending"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairalioil.com"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Ambuj"
     blocker: "Track B — staff access + Shopify tokens pending"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliherbals.com"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Ambuj"
     blocker: "Track B — staff access + Shopify tokens pending"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliorganic.com / kairorganics.com / kairproducts.com"
     entity: "KAPPL (commerce)"
     stage: "ideation"
     owner: "Abilash"
     blocker: "Decision #3 (KAIR sub-brand) pending + Track B"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliequipment.com"
     entity: "Kairali Group (B2B)"
     stage: "ideation"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "bulkayurvedaoils.com / bulkayurvedaproducts.com"
     entity: "Kairali Group (B2B)"
     stage: "ideation"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "kairaliyoga.com"
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-kairaliyoga-com.vercel.app"
+    live_url: null
   - name: "kairali.guru"
     entity: "Kairali Group (education)"
     stage: "live"
     owner: "Eeshal"
     blocker: "Live EN-only; DE/FR/AR/RU exist only in Eeshal's repo (Wave-2)"
     updated: "2026-07-13"
+    preview_url: "https://kairali-guru-website.vercel.app"
+    # preview_url = Eeshal's rebuild (Vercel project kairali-guru-website, team kairali);
+    # live domain still serves the old IIS/Plesk-hosted site (verified 18 Jul 2026).
+    live_url: "https://kairali.guru"
   - name: "whatisayurveda.com"
     entity: "Kairali Group (education)"
     stage: "preview"
     owner: "Abilash"
     blocker: "D#2 CLOSED: whatisayurveda.org is a plain forward at Wave-2 cutover; 2 external reference links broken (ayush.gov.in www-cert, NCCIH 404) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5"
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-whatisayurveda.vercel.app"
+    live_url: null
   - name: "healing.recipes"
     entity: "Kairali Group (Gita Ramesh)"
     stage: "preview"
     owner: "Abilash"
     blocker: "1 external retailer link 404 (ACC Art Books, Harmony) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5"
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-healing-recipes.vercel.app"
+    live_url: null
   - name: "ayurvedafranchise.com"
     entity: "Kairali Group"
     stage: "ideation"
     owner: "Abilash"
     blocker: "CANONICAL franchise build (D#4 CLOSED, DECISIONS.md:248 — kairalifranchise.com 301s INTO this domain); build-start gated on unblock sheet A-1/2/3 (money figures, royalty, contact)"
     updated: "2026-07-18"
+    preview_url: null
+    live_url: null
   - name: "arogyakendra.com"
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-arogyakendra-co.vercel.app"
+    live_url: null
   - name: "arogyashala.in"
     entity: "Kairali Group"
     stage: "human_audit"
     owner: "Abilash"
     blocker: "PROMPT 4 pilot complete (all 63 organic gates dispositioned, 3 fresh subagent audits PASS). Waiting on: 4 packet replies (launches/arogyashala.in/audit-packets/2026-07-18-*.md — send needs owner approval) + pre-launch pendings (GA4/GTM IDs, GSC at flip, legal drafts to final before DNS)"
     updated: "2026-07-18"
+    preview_url: "https://kairali-web-factory-arogyashala-in.vercel.app"
+    live_url: null
   - name: "snehachowdhary.com"
     entity: "Personal"
     stage: "ideation"
     owner: "Abilash"
     blocker: "D#6 CLOSED: theblushlounge.com primary, this domain 301s when live; build gated on Sneha brand assets (unblock sheet B-3)"
     updated: "2026-07-13"
+    preview_url: null
+    live_url: null
   - name: "abhilashkr.com"
     entity: "Personal"
     stage: "build"
     owner: "Abilash"
     blocker: "Matrix-exempt (standing ruling); low priority"
     updated: "2026-07-14"
+    preview_url: "https://kairali-web-factory-abhilashkr.vercel.app"
+    live_url: null
   - name: "whyayurveda.org"
     entity: "Kairali Group (blog)"
     stage: "live"
     owner: "Abilash"
     blocker: "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113); Ashikha byline ruled (D-ASHIKHA-SPELLING — live 'Ashika' fixes ride the first batch). Batches now wait on: Deepu's Novamira install + the golden first post + the sitewide internal-link map (needs GSC; access plan confirmed 18 Jul)"
     updated: "2026-07-18"
+    preview_url: null
+    live_url: "https://whyayurveda.org"
   - name: "kairali.ai"
     entity: "Internal"
     stage: "live"
     owner: "Abilash"
     blocker: null
     updated: "2026-07-17"
+    preview_url: "https://kairali-web-factory-kairali-ai.vercel.app"
+    # live_url null DESPITE stage=live: https://kairali.ai (-> www.kairali.ai) currently
+    # serves the OLD Plesk/IIS host, which returns an iisnode 500 error page — DNS has
+    # not flipped to the Vercel project. Verified 18 Jul 2026; flagged in the PR.
+    # The dashboard IS reachable at preview_url.
+    live_url: null
