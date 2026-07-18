@@ -1,0 +1,967 @@
+<h1>Kairali Web Factory — The Complete Team Workbook</h1>
+<h2>Build it → hand it over → the machine checks it → Deepu publishes it once</h2>
+<hr>
+<h2>PART 0 — START HERE (NO CODING NEEDED)</h2>
+<p>You are about to learn the <strong>one and only way</strong> we put pages and blogs online. It is written like a workshop workbook. If you can fill in a form and paste a block of text, you can do every marketing step in this guide. You will <strong>never</strong> touch GitHub. You will <strong>never</strong> touch WordPress.</p>
+<p>Whenever you see a <strong>PROMPT BOX</strong>, copy the whole block, fill in the <code>[brackets]</code>, and paste it into Claude <strong>once</strong>. Claude does the technical work. You look at a preview and pass it on.</p>
+<h3>The big-picture flow (the whole journey on one page)</h3>
+<pre><code>  YOU (marketing)                    DEEPU (our one developer)          THE INTERNET
+  ─────────────────                  ─────────────────────────          ────────────
+  1. Build the page/blog             4. Picks it up from the             6. It&#39;s LIVE
+     in your chosen tool                shared folder
+            │                                  │
+  2. Run the &quot;Make it                5. Turns it into a factory
+     publish-ready&quot; prompt              page, opens a request, and
+            │                            the MACHINE CHECKS run by
+  3. Get it approved, move it          themselves (catch ~99%)
+     to &quot;2 — Ready for Deepu&quot;                 │
+     folder + fill the                 ┌───────┴────────┐
+     Handoff Card                    GREEN ✅         RED ❌ ──┐
+                                       │                        │
+                                  He reviews ONCE      He sends you a plain-
+                                  and publishes        English &quot;please fix&quot;
+                                                       list → you fix → resend
+</code></pre>
+<h3>⏱️ THE TIME BUDGET (what &quot;fast&quot; means here)</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>You build + make publish-ready</td>
+<td><strong>20–40 min</strong> of active work</td>
+</tr>
+<tr>
+<td>Approvals (Abilash windows ~12:00/17:00 · doctor same-business-day)</td>
+<td>the <strong>controlled human gate</strong></td>
+</tr>
+<tr>
+<td>Deepu: import + machine checks</td>
+<td><strong>30–60 min</strong></td>
+</tr>
+<tr>
+<td>Publish + marker + tracker</td>
+<td><strong>~15 min</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>✅ The promise:</strong> your <em>active</em> work is about an hour. Handed off before ~11:00 with approvals answered → <strong>live the same day</strong>. The guaranteed worst case is <strong>next business day</strong>. If something sits longer, a human gate is stuck — the Troubleshooting table says who to ping.</p>
+</blockquote>
+<h3>WHY we work this way (read this once — it is the whole point)</h3>
+<blockquote>
+<p><strong>ℹ️ The bottleneck has a name: Deepu.</strong>
+Deepu is our <strong>only</strong> developer. For years, every page waited on him checking it by hand, line by line. He physically could not keep up — which is <em>exactly</em> why our old landing pages sat for months, never updated. This system fixes that with one idea: your work is pushed <strong>through the GitHub factory</strong>, where <strong>automatic checks</strong> catch about <strong>99%</strong> of problems (banned words, made-up facts, fake medical claims, broken links, slow pages, off-brand design). Deepu stops being the checker. He does only the two things a machine cannot: <strong>one human look</strong>, then <strong>press publish</strong>. That is how one developer can finally keep up with all of you.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ Two people are called &quot;Deepu&quot;. Never mix them up.</strong></p>
+<ul>
+<li><strong>Deepu</strong> (the developer) — imports your work, runs the checks, publishes. No &quot;Dr.&quot;, no &quot;John&quot;.</li>
+<li><strong>Dr. Deepu John</strong> (the chief physician) — a <em>different person</em>. He signs off <strong>medical claims</strong> before a hospital page can go live. Deepu-the-developer can never approve a medical claim himself.</li>
+<li>(Dr. Deepu John also appears as a <strong>blog author voice</strong> on the Voices page — that is the same physician, writing. Still not the developer.)</li>
+</ul>
+</blockquote>
+<h3>📁 THE SHARED FOLDER (where all handoffs live)</h3>
+<p>Everything moves through <strong>one Google Drive folder</strong>: <strong><a href="https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX">Website - Staging - Marketing</a></strong>. Inside it, <strong>every team member has their own folder</strong> with three subfolders:</p>
+<pre><code>Website - Staging - Marketing/
+├── Roshni/    ├── 1 — Drafts (working on it)
+├── Vikash/    ├── 2 — Ready for Deepu (approved)   ← the handoff spot
+├── Abilash/   └── 3 — Published (done)
+└── _TEMPLATE — copy me for a new person/
+</code></pre>
+<ul>
+<li>While you work → keep the item&#39;s folder in <strong>1 — Drafts</strong>.</li>
+<li>Approved and ready → move it to <strong>2 — Ready for Deepu</strong> and message Deepu.</li>
+<li>Deepu publishes → <strong>he</strong> moves it to <strong>3 — Published</strong>, with the live link and the ✅ CHECKED note inside.</li>
+</ul>
+<p>One glance at anyone&#39;s folder tells you (and management, and Deepu) exactly what state everything is in. <strong>New team member?</strong> Right-click <code>_TEMPLATE</code> → Make a copy → rename to their name.</p>
+<hr>
+<h2>PART 1 — THE 4 HARD RULES (keep this open while you work)</h2>
+<p>These four rules are not opinions. The machine checks enforce them, and breaking one gets your page sent back.</p>
+<h3>🚫 Rule 1 — Right words for the right site</h3>
+<p>The hospital site — <strong>ayurvedichealingvillage.com (KTAHV)</strong> — is a medical site. It must sound clinical. On that site these words are <strong>BANNED</strong>, in any language:</p>
+<blockquote>
+<p>❌ spa · resort · holiday · luxury · cure · journey · guests</p><!-- compliance-allow: cure-claims (this line TEACHES the banned words — the Playbook is the rulebook, not a claim) -->
+</blockquote>
+<p>Use these instead:</p>
+<blockquote>
+<p>✅ patient · treatment · programme · Panchakarma · consultation</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ The exception:</strong> Villa Raag (<strong>villaraag.com</strong>) is a hospitality place, so resort / holiday / luxury are perfectly fine <strong>there</strong>. The ban is only for the hospital site. You do not have to memorise any of this — the machine knows each site&#39;s rules and will flag a wrong word. Quick map:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Word rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ayurvedichealingvillage.com</strong> (KTAHV — the hospital)</td>
+<td><strong>Clinical only.</strong> The banned list above applies.</td>
+</tr>
+<tr>
+<td><strong>villaraag.com</strong> (Villa Raag, Goa)</td>
+<td>Hospitality — resort / luxury / holiday are fine.</td>
+</tr>
+<tr>
+<td><strong>whyayurveda.org</strong> (the blog) · kairali.com · kairaliyoga.com · kairalicenters.com · healing.recipes · the other group sites</td>
+<td>Normal, honest tone. No hype words, no invented facts — but no clinical lock.</td>
+</tr>
+</tbody></table>
+<h3>🚫 Rule 2 — Never make anything up</h3>
+<p>Do not invent a fact, price, phone number, date, distance, statistic, or medical claim. If you were not given it, leave it <strong>blank</strong> and flag it. Guessing gets caught and bounced.</p>
+<h3>🚫 Rule 3 — A real doctor signs off every health claim, BEFORE handoff</h3>
+<p>Any sentence that makes a <strong>medical or health claim</strong> must be approved by <strong>Dr. Deepu John</strong> <em>before</em> you hand the page to Deepu. You hold the page until the doctor has signed. Deepu should never receive a page that still needs a medical approval — his one review must stay a review, not a chase.</p>
+<blockquote>
+<p><strong>ℹ️ What counts as &quot;signed&quot;:</strong> his actual reply — an email or WhatsApp message saying he approves — <strong>saved into the item&#39;s folder</strong> (screenshot or forwarded email is fine). Writing &quot;signed&quot; on the Handoff Card with nothing behind it is Rule 2 (making something up).</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ What counts as a medical claim? Five examples:</strong> &quot;Panchakarma helps manage weight&quot; = <strong>claim</strong>. &quot;Reduces stress&quot; = <strong>claim</strong>. &quot;Supports digestion&quot; = <strong>claim</strong>. &quot;NABH-accredited hospital&quot; = <em>not a claim</em> (verified fact). &quot;14-day residential programme&quot; = <em>not a claim</em> (a description). When unsure, treat it as a claim — a needless sign-off costs a day; a missed one costs much more.</p>
+</blockquote>
+<p><strong>How to ask (copy-paste, WhatsApp):</strong></p>
+<pre><code>Dr. Deepu John — sign-off request.
+Page: [name + which site]
+The health claims are: [paste the exact flagged lines]
+Preview/screenshot attached. Please reply &quot;approved&quot; or tell me what to change.
+</code></pre>
+<p><strong>SLAs so nothing rots in Drafts:</strong> doctor sign-off — same business day is the ask; if silent by next morning, escalate to Abilash. <strong>Abilash approvals happen in two daily windows (~12:00 and ~17:00)</strong> — batch your asks to those, don&#39;t drip them.</p>
+<h3>🚫 Rule 4 — You don&#39;t publish. Deepu does.</h3>
+<p>That is the safety gate. Your job ends at &quot;approved, handed to Deepu.&quot;</p>
+<blockquote>
+<p><strong>✅ CHECKPOINT — the 4-question gut check before every handoff</strong></p>
+<ol>
+<li>Right site, right words? (No banned words on the hospital site?)</li>
+<li>Did I invent any fact, price, or number? (I must not have.)</li>
+<li>Any health claim in here? If yes — has <strong>Dr. Deepu John already signed off</strong>?</li>
+<li>Honest channels? (Right WhatsApp number, no fake &quot;reviewed by a doctor&quot; line.)
+Four yeses (or &quot;not applicable&quot;) = clear to hand off.</li>
+</ol>
+</blockquote>
+<hr>
+<h2>PART 2 — MARKETING: BUILD IT IN YOUR TOOL</h2>
+<h3>🧰 DAY 0 — GET SET UP (30 minutes, once, with an owner)</h3>
+<p>Before your first page, these five things must be true. <strong>Owner: Deepu (or Abilash) sets you up — you never hunt for installs alone.</strong></p>
+<ol>
+<li><strong>VS Code installed</strong> with the <strong>Claude plugin</strong> signed in (or Antigravity, if that&#39;s your tool).</li>
+<li><strong>Drive access:</strong> you can open the <a href="https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX">shared folder</a> and see <strong>your own name folder</strong> with its three subfolders.</li>
+<li><strong>The Tracker &amp; this workbook bookmarked</strong> (links in the Reference Library at the bottom).</li>
+<li><strong>The facts pack:</strong> every site has a <strong>FACTS doc</strong> in the Drive folder (prices, phone numbers, WhatsApp, addresses — maintained by Vikash/Abilash). Facts come from there, never from memory. The two locked facts everyone must know: public email is <strong><a href="mailto:info@kairali.com">info@kairali.com</a></strong>, WhatsApp is <strong>+91 92898 38797</strong> (any other number is wrong — flag it).</li>
+<li><strong>Smoke test:</strong> build a one-line practice page with Claude, see it in the preview, delete it. If that works, you&#39;re set.</li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ When Claude asks permission</strong> (&quot;allow this command?&quot;, &quot;trust this folder?&quot;) while building or previewing — click <strong>Allow/Trust</strong>. It only ever works inside your page folder. This is normal, not a warning sign.</p>
+</blockquote>
+<p>Every tool ends the same way. No matter which one you pick, you always do these three things:</p>
+<pre><code>1. BUILD / CHANGE   → make the page in your tool (per-tool steps below)
+2. MAKE IT PUBLISH-READY → paste ONE shared prompt (same for every tool)
+3. HAND TO DEEPU    → drop it in the shared folder + fill the Handoff Card + message him
+</code></pre>
+<p>Steps 2 and 3 are printed <strong>once</strong>, right here. Keep them open while you work.</p>
+<h3>⭐ Step 2 — THE &quot;MAKE IT PUBLISH-READY&quot; PROMPT (same for every tool)</h3>
+<p>Paste this into your tool <strong>once</strong>, after you&#39;ve built or changed the page.</p>
+<pre><code>Please finish this [landing page / blog post] so it is ready to publish.
+It is for: [which site + page — e.g. ayurvedichealingvillage.com weight-loss page]
+
+Please:
+1. ON-PAGE SEO: one clear H1, a good page title and meta description,
+   and alt text on every image.
+2. INTERNAL LINKS: add links ONLY to real pages listed on the workbook&#39;s
+   Reference Library / the site itself — never invent a link. If a page you
+   want to link doesn&#39;t exist, write &quot;FEATURE NEEDED: link target ___&quot;.
+3. Check it reads well and looks right on a phone.
+4. COMPLIANCE (important):
+   - If this is the hospital site (ayurvedichealingvillage.com),
+     use ONLY clinical words (patient, treatment, programme, Panchakarma,
+     consultation) and NEVER &quot;spa, resort, holiday, luxury, cure, journey,<!-- compliance-allow: cure-claims (this line TEACHES the banned words — the Playbook is the rulebook, not a claim) -->
+     guests&quot; — in any language.
+   - Do NOT invent any fact, price, number, phone, date, or medical claim.
+   - Flag every medical claim clearly so Dr. Deepu John can approve it.
+5. If something I need doesn&#39;t exist yet, say &quot;FEATURE NEEDED: ___&quot;
+   instead of inventing an off-brand look or a fact.
+
+Then give me a preview (a link that opens the page in my browser, OR the
+on-screen design if I&#39;m in Claude Design), plus a plain-English list of
+(a) what you did and (b) anything I must decide or get approved.
+Do NOT publish — Deepu publishes.
+</code></pre>
+<h3>📋 Step 3 — THE HANDOFF CARD (same for every tool)</h3>
+<p>When your page is approved, copy this into the item&#39;s folder and move the whole item folder to your <strong>2 — Ready for Deepu</strong> subfolder.</p>
+<pre><code>HANDOFF TO DEEPU
+- What is it:            [new landing page / update / new blog / content fix]
+- Built with:           [Claude Design / VS Code + Claude plugin / Antigravity / Claude Code]
+- Which site + page:     [e.g. ayurvedichealingvillage.com — the weight-loss page]
+- Where the work is:     [Claude Design share link  OR  folder name in &quot;2 — Ready for Deepu&quot;]
+- Author voice (blogs):  [name, or &quot;n/a&quot;]
+- Must-be-exact facts:   [prices, phone, WhatsApp, dates — or &quot;none&quot;]
+- Medical claim inside?  [yes / no]
+- Dr. Deepu John sign-off: [signed on YYYY-MM-DD  /  n-a]     ← if &quot;Medical claim = yes&quot;, this MUST say &quot;signed&quot;
+- If an UPDATE, what changed: [one line — e.g. &quot;new price block + 2 new photos&quot;]
+- Approved by:           [your name] + Abilash
+- Ready to publish:      [leave BLANK — only write YES after everything above is done]
+</code></pre>
+<blockquote>
+<p><strong>⚠️ You may only write &quot;Ready to publish: YES&quot; after every line above it is filled AND any medical claim shows &quot;signed&quot;.</strong> &quot;YES&quot; is a deliberate act, not a default. If a medical claim is unsigned, the card is <strong>not</strong> ready — hold it.</p>
+</blockquote>
+<p>Three habits that make the handoff bulletproof:</p>
+<ul>
+<li><strong>The card is a Google Doc</strong> named <code>HANDOFF CARD</code> inside the item folder — and paste <strong>Abilash&#39;s approving message (screenshot)</strong> into the folder too, same rule as the doctor&#39;s. An approval with no evidence is Rule 2.</li>
+<li><strong>Add your row to the <a href="https://docs.google.com/spreadsheets/d/1mS6WzRrZmQVnWjfg631uOFSRDD1raFTSLhjlYuQZIos/edit">Pipeline Tracker</a></strong> (Item, Site+page, Who, Tool, Handed off = today). Deepu owns the rest of the row.</li>
+<li><strong>🧊 The freeze rule:</strong> moving an item to <strong>2 — Ready for Deepu</strong> LOCKS it. Never edit a handed-off item — if you must change something, pull it back to <strong>1 — Drafts</strong> and message Deepu &quot;pulled back&quot;. Editing under him is how versions diverge and work gets lost.</li>
+</ul>
+<blockquote>
+<p><strong>ℹ️ Where the shared folder lives:</strong> <strong>2 — Ready for Deepu</strong> is the middle subfolder inside <em>your own name folder</em> in the shared Drive — the <strong>Shared Folder ↗</strong> link is in the top bar of this page. That folder — plus a WhatsApp/email message to Deepu — is the <strong>only</strong> way work reaches him. You never open GitHub to hand anything over.</p>
+</blockquote>
+<h3>Which tool should I use?</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Best when you want to…</th>
+<th>You hand Deepu</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A. Claude Design</strong></td>
+<td>Design the look fast, by describing it. No files.</td>
+<td>A <strong>share link</strong></td>
+</tr>
+<tr>
+<td><strong>B. VS Code + Claude plugin</strong> ⭐</td>
+<td>The <strong>recommended</strong> all-rounder (the video&#39;s method). Build, preview, tweak in one window.</td>
+<td>A <strong>page folder</strong></td>
+</tr>
+<tr>
+<td><strong>C. Antigravity</strong></td>
+<td>Same as B, if Antigravity is the editor you prefer.</td>
+<td>A <strong>page folder</strong></td>
+</tr>
+<tr>
+<td><strong>D. Claude Code</strong></td>
+<td>You&#39;re comfortable in the terminal and want it quick.</td>
+<td>A <strong>page folder</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>⭐ Not sure? Use B (VS Code + Claude plugin).</strong> It&#39;s the method the training video is built around and it hands off most cleanly.</p>
+</blockquote>
+<hr>
+<h3>PART A — CLAUDE DESIGN</h3>
+<p><em>You end with a share link. Nothing to install.</em></p>
+<p><strong>A1 · CREATE a new landing page</strong></p>
+<ol>
+<li>Open <strong>Claude Design</strong> and start a new design.</li>
+<li>Paste this <strong>once</strong> (fill the brackets):<pre><code>Design a new landing page for [which site — e.g. ayurvedichealingvillage.com,
+the Ayurveda hospital in Kerala].
+
+The page is about: [topic — e.g. a 14-day weight-management Panchakarma programme].
+Include: one headline (H1), a short intro, [the sections you want], and ONE main
+button that says [e.g. &quot;Book a Consultation&quot;].
+
+Rules:
+- Clean, calm Kairali look — not loud or generic.
+- Hospital site = clinical words ONLY (patient, treatment, programme,
+  Panchakarma, consultation); never spa / resort / holiday / luxury / cure /<!-- compliance-allow: cure-claims (this line TEACHES the banned words — the Playbook is the rulebook, not a claim) -->
+  journey / guests.
+- Leave any price, phone number, or medical claim BLANK — never invent one.
+</code></pre>
+</li>
+<li>Look at the design on screen. Want changes? Tell Claude in plain words (&quot;make the button bigger&quot;, &quot;add a second photo&quot;) until it&#39;s right.</li>
+<li>Paste <strong>⭐ Step 2 (Make it publish-ready)</strong>.</li>
+<li>Click <strong>Share</strong> and copy the <strong>share link</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>✅ Checkpoint before handoff:</strong> words match the site, no invented facts, looks right on a phone. Get <strong>Abilash&#39;s approval</strong> — and <strong>Dr. Deepu John&#39;s</strong> first if there&#39;s any medical claim.</p>
+</blockquote>
+<p><strong>🎯 Hand Deepu:</strong> the <strong>share link</strong> in the Handoff Card, dropped in <strong>2 — Ready for Deepu</strong>, then message him: &quot;[page name] is ready — link is in the folder.&quot;</p>
+<p><strong>A2 · UPDATE an existing landing page</strong></p>
+<ol>
+<li>In Claude Design, paste this <strong>once</strong> with the live page address:<pre><code>Please recreate this existing page so I can edit it:
+[paste the full page link — e.g. https://ayurvedichealingvillage.com/weight-loss]
+
+Bring in the same content and layout as closely as you can. Then STOP and wait —
+I&#39;ll tell you the one change I want. Do not invent anything new.
+</code></pre>
+</li>
+<li>Tell Claude the one change in plain words.</li>
+<li>Paste <strong>⭐ Step 2</strong>. Then <strong>Share</strong> → copy the new link.</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ UPDATE fact-check (do this before Step 2):</strong> the recreate step can silently drop or alter a price, phone, WhatsApp number, or date. <strong>First, save a full screenshot (or copy) of the original live page into your item folder</strong> — that&#39;s the before-proof Deepu and the doctor check against. Then compare the recreated page against the live page and confirm <strong>every</strong> price, phone, WhatsApp number, and date matches exactly. If you cannot confirm one, blank it and write it under &quot;Must-be-exact facts&quot;. Do not trust the machine to catch a wrong-but-not-banned number.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ Banned word on a hospital page?</strong> If it&#39;s in the <strong>visible text</strong> (e.g. the word &quot;resort&quot; in a sentence), fix it yourself: tell Claude <em>&quot;This is the hospital site — remove [word] and use a clinical word instead.&quot;</em> Only <strong>flag</strong> things you genuinely cannot change — like the page&#39;s short web address if it contains a banned word (e.g. <code>.../wellness-resort-kerala</code>) — on the Handoff Card for Deepu.</p>
+</blockquote>
+<hr>
+<h3>PART B — VS CODE + THE CLAUDE PLUGIN ⭐ (recommended)</h3>
+<p><em>You end with a folder of files. Build, preview, and tweak in one window.</em></p>
+<p><strong>B1 · CREATE a new landing page</strong></p>
+<ol>
+<li>Make a <strong>new empty folder</strong> named for the page (e.g. <code>weight-loss-page</code>). Open it in <strong>VS Code</strong> (File → Open Folder).</li>
+<li>Open the <strong>Claude plugin</strong> chat panel (the Claude icon in the sidebar).</li>
+<li>Paste this <strong>once</strong>:<pre><code>Build a new landing page in this folder that I can preview in my browser.
+
+It is for: [which site — e.g. ayurvedichealingvillage.com, the Ayurveda hospital].
+Topic: [e.g. a 14-day weight-management Panchakarma programme].
+Include: one headline (H1), a short intro, [sections you want], and ONE button
+that says [e.g. &quot;Book a Consultation&quot;].
+
+Rules:
+- Build it as a SINGLE self-contained HTML file (plus an images folder if
+  needed) — no frameworks, no node_modules, nothing to install. The folder
+  I hand over must open with a double-click.
+- Mobile-friendly, calm clean Kairali look. If you&#39;d need a design piece we
+  don&#39;t have, say &quot;FEATURE NEEDED: ___&quot; — don&#39;t invent an off-brand look.
+- Hospital site = clinical words only (patient, treatment, programme,
+  Panchakarma, consultation); never spa / resort / holiday / luxury / cure /<!-- compliance-allow: cure-claims (this line TEACHES the banned words — the Playbook is the rulebook, not a claim) -->
+  journey / guests.
+- Leave any price, phone, or medical claim BLANK — never invent one.
+- Do NOT commit, push, or publish anything.
+
+Then start the preview and give me the link that opens the page in my browser.
+</code></pre>
+</li>
+<li>Click the <strong>preview link</strong> Claude gives you — the page opens in your browser. Ask for tweaks in plain words until it&#39;s right.</li>
+<li>Paste <strong>⭐ Step 2</strong>. Preview again.</li>
+<li>Take a <strong>screenshot</strong> of the preview (and one with the window made narrow, to see the phone view).</li>
+</ol>
+<blockquote>
+<p><strong>✅ Checkpoint:</strong> facts correct, right words for the site, looks good narrow (phone). Get Abilash&#39;s approval (+ Dr. Deepu John first for any medical claim).</p>
+</blockquote>
+<p><strong>🎯 Hand Deepu:</strong> copy the <strong>whole page folder</strong> into your <strong>2 — Ready for Deepu</strong> subfolder (as <code>[page-name]/</code>), drop the screenshot(s) in it, add the filled Handoff Card, and message him.</p>
+<p><strong>B2 · UPDATE an existing landing page</strong></p>
+<ol>
+<li>In a new folder, open the Claude plugin and paste <strong>once</strong>:<pre><code>Please bring in this existing page so I can edit a copy of it:
+[paste the full page link — e.g. https://ayurvedichealingvillage.com/weight-loss]
+
+Save it in this folder and start a preview so I can see it. Keep everything the
+same for now — I&#39;ll tell you the one change I want. Invent nothing.
+</code></pre>
+</li>
+<li>Tell Claude the one change. Let it update the copy.</li>
+<li>Do the <strong>UPDATE fact-check</strong> (same as A2 — confirm every price/phone/WhatsApp/date matches the live page).</li>
+<li>Paste <strong>⭐ Step 2</strong>. Preview and screenshot.</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Banned word in the visible text?</strong> Fix it yourself (tell Claude to swap it for a clinical word). Only flag the page&#39;s short web address if <em>that</em> contains a banned word.</p>
+</blockquote>
+<hr>
+<h3>PART C — ANTIGRAVITY</h3>
+<p><em>Same shape as VS Code — only the window is different. You end with a folder of files.</em></p>
+<p><strong>C1 · CREATE:</strong> Open <strong>Antigravity</strong>, open a <strong>new empty folder</strong>, open the <strong>Claude chat panel</strong>, and paste the <strong>same CREATE prompt from B1</strong>. Click the preview link, tweak in plain words, paste <strong>⭐ Step 2</strong>, preview again, screenshot (including a narrow/phone view).</p>
+<p><strong>C2 · UPDATE:</strong> New folder in Antigravity, open the Claude panel, paste the <strong>same &quot;bring in this existing page&quot; prompt from B2</strong>. Tell Claude the one change, do the <strong>UPDATE fact-check</strong>, paste <strong>⭐ Step 2</strong>, preview + screenshot.</p>
+<blockquote>
+<p><strong>✅ Checkpoint &amp; 🎯 Handoff:</strong> identical to Part B — folder + screenshot + Handoff Card into <strong>2 — Ready for Deepu</strong>, then message Deepu.</p>
+</blockquote>
+<hr>
+<h3>PART D — CLAUDE CODE</h3>
+<p><em>You end with a folder of files. Same job, in the terminal.</em></p>
+<p><strong>D1 · CREATE:</strong> Make a <strong>new empty folder</strong>, open it in the terminal, type <code>claude</code>, and paste the <strong>same CREATE prompt from B1</strong>. Open the preview link, ask for changes in plain words, paste <strong>⭐ Step 2</strong>, preview again, screenshot (including a narrow/phone view).</p>
+<p><strong>D2 · UPDATE:</strong> New folder, run <code>claude</code>, paste the <strong>same &quot;bring in this existing page&quot; prompt from B2</strong>. Tell Claude the one change, do the <strong>UPDATE fact-check</strong>, paste <strong>⭐ Step 2</strong>, preview + screenshot.</p>
+<blockquote>
+<p><strong>✅ Checkpoint &amp; 🎯 Handoff:</strong> identical to Part B — folder + screenshot + Handoff Card into <strong>2 — Ready for Deepu</strong>, then message Deepu.</p>
+</blockquote>
+<hr>
+<h3>IF DEEPU SENDS IT BACK (the fix-it loop)</h3>
+<p>Sometimes the machine finds something after handoff. Deepu will send you a <strong>plain-English list</strong> of what to fix (WhatsApp/email — never a code report). This is normal; it means the machine caught a real problem before it went live.</p>
+<ol>
+<li>Read his list. Each item says exactly what to change, in plain words.</li>
+<li>Re-open the page in the same tool you built it in.</li>
+<li>Paste a short fix-it prompt naming each item:<pre><code>Please fix these on the page, and change nothing else:
+1. [paste Deepu&#39;s item 1]
+2. [paste Deepu&#39;s item 2]
+Keep every fact exactly as it is. Invent nothing.
+</code></pre>
+</li>
+<li>Paste <strong>⭐ Step 2</strong> again. Preview and check.</li>
+<li>Re-hand it off the same way, with &quot;what changed&quot; updated on the Handoff Card. Tell Deepu it&#39;s the corrected version of the same page (don&#39;t start a brand-new folder name — keep the same page name so he can match it to his open work).</li>
+</ol>
+<hr>
+<h2>PART 3 — ROSHNI&#39;S FAST BLOG FLOW</h2>
+<p>Roshni ships blogs at a <strong>quick pace</strong>. This is the fast path — but it runs through the <strong>exact same checks and the same one-time Deepu review</strong> as everything else. Speed does not skip safety.</p>
+<blockquote>
+<p><strong>ℹ️ Blogs go through the machine too.</strong> Every post, however fast, is checked automatically before it goes live — so Roshni&#39;s volume never lands on Deepu as a pile of manual reading. He reviews once and publishes. To help his single review scale, <strong>batch</strong> posts: drop several finished posts into the <strong>2 — Ready for Deepu</strong> folder together and message him once, rather than pinging per post.</p>
+</blockquote>
+<h3>Step 1 — Pick the author voice FIRST</h3>
+<p>Every blog publishes in a named author&#39;s voice.</p>
+<table>
+<thead>
+<tr>
+<th>The blog is about…</th>
+<th>Use this voice</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Anything clinical / medical</td>
+<td>the physician voice (and Dr. Deepu John must sign off — see Step 4)</td>
+</tr>
+<tr>
+<td>Food, cooking, lifestyle</td>
+<td><strong>Gita Ramesh</strong></td>
+</tr>
+<tr>
+<td>Brand news, awards, centre updates</td>
+<td><strong>Roshni</strong></td>
+</tr>
+<tr>
+<td>Anything else / not sure</td>
+<td><strong>Abilash</strong> (default)</td>
+</tr>
+</tbody></table>
+<p>Open the <strong>Voices page</strong> of this workbook site, copy the author&#39;s whole voice block, then load it with this prompt <strong>once</strong>:</p>
+<pre><code>Please write this blog in the voice described below. Match the tone, sentence
+length, vocabulary, and do&#39;s/don&#39;ts exactly — it must genuinely sound like this
+author, not generic AI. Keep every fact accurate; invent nothing.
+
+[PASTE THE AUTHOR&#39;S VOICE BLOCK FROM THE VOICES PAGE HERE]
+</code></pre>
+<blockquote>
+<p><strong>ℹ️</strong> If the author you want isn&#39;t on the Voices page yet, use the <strong>Abilash</strong> (default) block and write &quot;FEATURE NEEDED: author voice for [name]&quot; on the Handoff Card.</p>
+</blockquote>
+<h3>Step 2 — Write the post in your tool</h3>
+<p>Use whichever tool you like (VS Code + Claude plugin is great for a quick cadence). Write the draft, then paste <strong>⭐ Step 2 (Make it publish-ready)</strong> — it adds SEO and internal links and <em>prepares</em> the post to pass the machine checks first time. (The <strong>real</strong> checks run later, at Deepu&#39;s stage — Step 2 is your rehearsal, not the exam.)</p>
+<blockquote>
+<p><strong>⚠️ Blogs on hospital pages (ayurvedichealingvillage.com) carry the clinical word-lock too.</strong> No spa / resort / holiday / luxury / cure / journey / guests. And never invent a statistic, study result, or date — Rule 2 is where fast blogs slip most.</p><!-- compliance-allow: cure-claims (this line TEACHES the banned words — the Playbook is the rulebook, not a claim) -->
+</blockquote>
+<h3>Step 3 — Proofread and approve</h3>
+<p>Roshni proofreads → <strong>Abilash approves</strong>. Nothing moves without approval.</p>
+<h3>Step 4 — Medical gate (only if there&#39;s a health claim)</h3>
+<p>If the post makes any medical or health claim, <strong>Dr. Deepu John signs off before handoff</strong>. Mark it on the Handoff Card (&quot;Dr. Deepu John sign-off: signed on …&quot;). No sign-off = the post waits.</p>
+<h3>Step 5 — Hand to Deepu</h3>
+<p>Drop the post in <strong>2 — Ready for Deepu</strong>, fill the <strong>same Handoff Card</strong> as landing pages (set &quot;Author voice&quot;), and message Deepu — or add it to today&#39;s batch.</p>
+<blockquote>
+<p><strong>✅ Roshni&#39;s checkpoint:</strong> voice set · facts real · hospital word-lock respected (if applicable) · Abilash approved · doctor signed (if medical) · Handoff Card filled. Then it&#39;s Deepu&#39;s.</p>
+</blockquote>
+<hr>
+<h2>PART 4 — DEEPU&#39;S IMPORT → CHECK → REVIEW-ONCE → PUBLISH PIPELINE</h2>
+<blockquote>
+<p><strong>This Part is Deepu&#39;s only.</strong> Marketing never runs any of it. Everything below is technical on purpose.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ Deepu&#39;s two companion guides live on the <a href="deepu.html">For Deepu page</a>:</strong> the <strong>Novamira install (step by step, nothing assumed)</strong> and the <strong>Rollback &amp; Backup undo book</strong> (every go-back-to-old use case, with the automatic pre-publish snapshot system). Read both before your first publish.</p>
+</blockquote>
+<h3>⚙️ ONE-TIME SETUP (Deepu, day 1 — the pipeline doesn&#39;t fully work until these exist)</h3>
+<p>Honest status: some targets of this pipeline are <strong>not in the factory yet</strong>. These five setup items make everything below true — do them once, tick them off:</p>
+<ol>
+<li><strong>Scaffold <code>sites/ayurvedichealingvillage.com</code></strong> with <code>site.config.json</code> set to <code>entity: &quot;ktahv&quot;</code> — that single line is what switches on the clinical word-lock in <code>pnpm compliance</code> (the lock is already coded in <code>packages/compliance/src/rules.js</code>; it just needs a site folder to bite on). Also create <code>launches/ayurvedichealingvillage.com/approvals.yaml</code> and get Abilash to sign the front-gate rows. <em>Until this exists, no KTAHV landing page can flow through CI — this is the very first task.</em></li>
+<li><strong>Scaffold a minimal <code>sites/whyayurveda.org</code> content home</strong> (blog/editorial entity) so Roshni&#39;s posts render there and the content gates fire on them, even though publishing still goes out via WordPress.</li>
+<li><strong>Install Novamira on the WordPress <em>staging</em> sites</strong> (per <code>wordpress-gutenberg-setup.md</code> — staging only, backup first, admin stays with you).</li>
+<li><strong>Create <code>content/ledger.yaml</code></strong> (Part 5) in the repo.</li>
+<li><strong>Bookmark the Drive folder</strong> (<a href="https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX">Website - Staging - Marketing</a>) and the Pipeline Tracker sheet in it.</li>
+<li><strong>Prove it done</strong> — paste into Claude Code: <em>&quot;Verify one-time setup: confirm sites/ayurvedichealingvillage.com/site.config.json says entity ktahv; sites/whyayurveda.org exists; launches/ayurvedichealingvillage.com/approvals.yaml exists with signed rows; content/ledger.yaml parses; then ask Novamira to list installed plugins on staging. Report PASS/FAIL per item.&quot;</em> Record the PASS in the Tracker.</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Until setups #1–2 exist:</strong> incoming KTAHV / blog submissions are <strong>HELD</strong> in <strong>2 — Ready for Deepu</strong> with a <code>WAITING-ON-SETUP.txt</code> note — never published &quot;just this once&quot; around the gates. The 99% is a lie for exactly the site with legal exposure if this rule bends.
+<strong>ℹ️ Git is the source; WordPress is the render target.</strong> Once a page flows through this pipeline, WP-side edits outside the pipeline are banned — every change re-enters at Stage 1, so git and the live page never diverge.</p>
+</blockquote>
+<h3>The one rule that makes the checks real</h3>
+<blockquote>
+<p><strong>⚠️ The gates only inspect pages under <code>sites/&lt;domain&gt;/</code>.</strong> Every check (<code>pnpm compliance</code>, <code>banned-string-lint</code>, <code>content-lint</code>, <code>cta-label-lint</code>, <code>brand-lint</code>, <code>lighthouse-gate</code>, the Playwright factory suite, <code>front-gate</code>) is scoped to <code>sites/</code>. A raw <code>.html</code>, a Google-Doc blog, or a loose project folder that is <em>not</em> rendered into <code>sites/&lt;domain&gt;/</code> is inspected by <strong>nothing</strong> — a green PR would mean the machine read zero words. So <strong>Stage 1 is a real build/transform step</strong>: every submission must become a page under <code>sites/&lt;domain&gt;/</code> <em>before</em> the PR, or the &quot;99%&quot; is a lie for that item.</p>
+</blockquote>
+<h3>Stage 1 — Pick up and render INTO the factory</h3>
+<ol>
+<li>Take the submission from the <strong>2 — Ready for Deepu</strong> shared folder (share link, page folder, or blog draft).</li>
+<li>Render it into the site it belongs to, as a real page:<blockquote>
+<p><strong>PROMPT BOX — &quot;Render a submission into its site&quot; (paste into Claude Code once)</strong></p>
+<pre><code>Take the marketing submission I point you to (a Claude Design share link, a
+page folder, or a blog draft) and turn it into a real page under
+sites/&lt;target-domain&gt;/ in the form that site uses (its .tsx/.mdx/.md page).
+- Do NOT change any wording, fact, price, or claim. Preserve them exactly.
+- Wire it into the site so the existing gates can inspect it.
+- Show me the new/changed files and the page route. Change nothing else.
+- If a Claude Design share link won&#39;t open, do NOT rebuild from memory —
+  tell me so the submitter drops an exported copy instead.
+</code></pre>
+</blockquote>
+</li>
+<li>The clinical word-lock is applied <strong>automatically</strong> once the page sits under <code>sites/ayurvedichealingvillage.com/</code> — because that site&#39;s <code>site.config.json</code> says <code>entity: &quot;ktahv&quot;</code>, and <code>pnpm compliance</code> reads the config (One-time setup #1 creates this). Do not rely on a metadata line to switch it on; put the page under the correct site and the correct rules apply.</li>
+</ol>
+<blockquote>
+<p><strong>✅ Stage 1 checkpoint:</strong> the work is a real page under <code>sites/&lt;domain&gt;/</code>; wording is byte-for-byte the marketing copy; the Handoff Card&#39;s &quot;Medical claim?&quot; and &quot;Dr. Deepu John sign-off&quot; lines are captured for later.</p>
+</blockquote>
+<h3>Stage 2 — Open a PR; the machine checks run</h3>
+<p>Branch, commit, push, open the PR. CI (<code>.github/workflows/gate.yml</code> + <code>factory-gate.yml</code>) runs the gates automatically.</p>
+<p><strong>Which gate runs on which format — be honest about coverage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Gate (exact command)</th>
+<th>What it stops</th>
+<th>Runs on</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pnpm compliance</code> <em>(<code>packages/compliance/bin/lint.js</code>)</em></td>
+<td>banned filler words + facts that don&#39;t match locked facts — <strong>MERGE-BLOCKING</strong></td>
+<td>any page under <code>sites/</code> (all formats, once rendered)</td>
+</tr>
+<tr>
+<td><code>node scripts/banned-string-lint.mjs</code></td>
+<td>fabricated medical claims, wrong WhatsApp number, false &quot;reviewed by physician&quot;, fake review dates</td>
+<td>any text under <code>sites/</code></td>
+</tr>
+<tr>
+<td><code>node scripts/content-lint.mjs</code></td>
+<td>dishonest / unsafe / legally-exposed YMYL content (35 rules)</td>
+<td>rendered article/page under <code>sites/</code></td>
+</tr>
+<tr>
+<td><code>node scripts/cta-label-lint.mjs</code></td>
+<td>a button promising a human/clinician that goes to a bot channel</td>
+<td>any page under <code>sites/</code></td>
+</tr>
+<tr>
+<td><code>node packages/ui/bin/brand-lint.js</code></td>
+<td>off-brand tokens, colour, spacing</td>
+<td>any page under <code>sites/</code></td>
+</tr>
+<tr>
+<td><code>node scripts/lighthouse-gate.mjs</code></td>
+<td>Performance &lt;90 / Accessibility &lt;95 / SEO &lt;100</td>
+<td><strong>built factory pages only</strong> (needs a route + dev server)</td>
+</tr>
+<tr>
+<td><code>pnpm exec playwright test tests/factory</code></td>
+<td>broken links, render, mobile, forms+consent, schema</td>
+<td><strong>built factory pages only</strong></td>
+</tr>
+<tr>
+<td><code>node scripts/front-gate.mjs</code></td>
+<td>any page shipping <strong>ahead of a signed approval file</strong> in <code>launches/&lt;domain&gt;/approvals.yaml</code></td>
+<td>sites that are launch-armed</td>
+</tr>
+<tr>
+<td>Claude security review · <code>gitleaks</code> · <code>pnpm audit</code></td>
+<td>leaked secrets/keys, vulnerable deps</td>
+<td>whole PR</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>⚠️ Lighthouse and the Playwright factory suite cannot run on a raw <code>.html</code> or a blog draft that has no route.</strong> That is <em>why</em> Stage 1 renders everything into a built <code>sites/&lt;domain&gt;/</code> page — only then do those two gates physically fire. If an item is not yet a built page, do not claim those gates protected it.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ <code>front-gate</code> is NOT the medical enforcer.</strong> It only checks that a signed <em>design</em> approval row exists (brief → strategy → design_source → golden_page) in <code>launches/&lt;domain&gt;/approvals.yaml</code>. Its own comment says it does not judge the brief, the strategy, or any medical claim. Green CI never means a doctor approved anything.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ Front-gate approval for a <code>sites/&lt;domain&gt;</code> (Vercel) page.</strong> A brand-new site page with no approval rows will fail <code>front-gate</code> by design. The site <strong>owner</strong> signs the <code>brief → strategy → design_source → golden_page</code> rows in <code>launches/&lt;domain&gt;/approvals.yaml</code>. <strong>Careful — the gate only bites when <code>launches/&lt;domain&gt;/approvals.yaml</code> EXISTS; a missing file silently disarms it.</strong> So setup #1 must both create the file AND get its rows signed — a scaffold without its approvals ledger looks green while the front gate is actually off. That is a deliberate launch step, not something this SOP skips past.</p>
+</blockquote>
+<p>Turn the red into an action list:</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Summarise the CI report&quot; (paste into Claude Code once)</strong></p>
+<pre><code>Read the latest CI run for this PR (gh pr checks; gh run view --log-failed).
+For EVERY failed check, give a table: Gate | file+line | one-line reason |
+Verdict (TRIVIAL DEV FIX or BOUNCE TO MARKETING).
+Verdict rule:
+  - formatting, brand tokens, image size, config, broken internal path = DEV FIX
+  - a banned word in a ROUTE/SLUG/URL = DEV FIX (rename the route)
+  - any banned word in VISIBLE TEXT, fact, medical claim, health promise,
+    CTA wording, date = BOUNCE
+Change no files yet.
+</code></pre>
+</blockquote>
+<h3>Stage 3 — Fix trivial dev things; BOUNCE content problems</h3>
+<blockquote>
+<p><strong>⚠️ The line Deepu never crosses:</strong> fix developer things (tokens, image compression, a broken path, config). <strong>Never</strong> rewrite a health claim, price, fact, CTA promise, or date yourself — those are marketing&#39;s words (and Dr. Deepu John&#39;s call). Bounce them.</p>
+</blockquote>
+<ul>
+<li><strong>Dev fixes:</strong> fix on the branch, commit, push, let CI re-run.</li>
+<li><strong>Bounces:</strong> send marketing the plain-English item and <strong>keep the branch open</strong>. <strong>Stamp the bounce:</strong> drop a <strong><code>NEEDS-FIX-❌.txt</code></strong> (date, PR #, the fix list) into the item&#39;s Drive folder and set its Tracker &quot;Checks&quot; cell to <strong>❌ bounced <date></strong> — a bounced item must be visible in the folder system, not buried in a chat thread.</li>
+<li><strong>Two-bounce cap:</strong> the third red on the same item stops the ping-pong — switch to <strong>Deepu-Solo with the author beside you</strong> (desk or screen-share) and finish it together. The loop is more expensive than the pairing.</li>
+<li><strong>Incomplete Handoff Card = bounce WITHOUT import.</strong> Thirty seconds of &quot;fill lines X and Y, re-drop&quot; beats laundering a half-filled card through the whole machine.</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ On a bounce, do NOT discard the branch.</strong> When marketing resends the corrected content, re-import it into the <strong>same branch</strong> so your dev fixes survive. Never redo the whole import from scratch — that quietly reloads work onto you.</p>
+</blockquote>
+<p>Bounce message channel = the same <strong>2 — Ready for Deepu</strong> shared folder + WhatsApp/email. <strong>Never tell marketing to &quot;resend to the inbox&quot;</strong> — they have no such place. Say: &quot;Fix these and drop the new version back in your <strong>2 — Ready for Deepu</strong> folder; everything else passed.&quot;</p>
+<h3>Stage 4 — Publish (with the hard medical checkpoint)</h3>
+<p>Only here when the PR is <strong>fully green</strong> AND the manual medical checkpoint passes.</p>
+<blockquote>
+<p><strong>⚠️ MANUAL MEDICAL CHECKPOINT — Deepu cannot skip this.</strong> No gate can verify a real doctor reviewed a claim. Before publishing any page, check the Handoff Card + the page: if it contains <strong>any</strong> medical claim, <code>medical_signoff</code> in the ledger must show <code>drdeepujohn:&lt;date&gt;</code>. If &quot;Medical claim = yes&quot; but sign-off is missing — even if CI is fully green — <strong>stop and route it to Dr. Deepu John.</strong> A wrong &quot;no medical claim&quot; is caught here, by a human, not by the machine.</p>
+</blockquote>
+<p><strong>Route A — WordPress site via Novamira</strong> (existing sites, e.g. ayurvedichealingvillage.com):</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Publish to WordPress staging via Novamira&quot; (Claude Code, once)</strong></p>
+<pre><code>FIRST: run  node scripts/wp-snapshot.mjs &lt;live page URL&gt;  and show me the
+saved backup file path. If it exits non-zero, STOP — do not import anything.
+
+Refuse to continue unless I paste BOTH: the PR number AND its green CI run
+link. (PR: #___  CI: ___)
+
+Then: using Novamira, import the page into &lt;target-site&gt; as EDITABLE
+WordPress blocks, into STAGING / DRAFT only. Do NOT publish live.
+After import, fetch the staging page and diff its visible text against the
+sites/&lt;domain&gt; page — show me the diff (it should be empty or cosmetic).
+Give me the staging preview URL.
+</code></pre>
+</blockquote>
+<p>Novamira lives <strong>only</strong> with Deepu. Then the human part, in this exact order:</p>
+<ol>
+<li>Open the staging URL — the <strong>one human review</strong> (reads right, mobile, on-brand).</li>
+<li>Open the item&#39;s Drive folder and <strong>verify the sign-off evidence</strong>: if the Handoff Card says a medical claim is &quot;signed&quot;, the doctor&#39;s actual saved reply must be in the folder with a sane date. Card says signed but no evidence = <strong>bounce to the submitter</strong> (the submitter chases Dr. Deepu John — never you).</li>
+<li>Write the ledger row first (<code>status: ok_to_publish</code>, PR, sign-off) — durable BEFORE the click.</li>
+<li>Run <code>node scripts/wp-snapshot.mjs</code> against the <strong>live</strong> page one more time (the promotion backup), then <strong>push the staged content live yourself</strong> (Publish/Update in WordPress). A human makes it live — never the agent.</li>
+</ol>
+<p><strong>Route B — Factory site via Vercel</strong> (pages under <code>sites/</code>): an <strong>approver merges</strong> the PR (<code>main</code> is protected — if you don&#39;t hold approver rights for content PRs, post the green PR link to Abilash for his one-word merge). Vercel deploys automatically. Confirm the production URL loads.</p>
+<blockquote>
+<p><strong>✅ Stage 4 checkpoint:</strong> CI green · medical checkpoint passed (signed or n-a) · WordPress: eyeballed staging then published yourself · Vercel: production URL loads · you have the final URL for the ledger.</p>
+</blockquote>
+<h3>Stage 5 — Stamp the ✅ CHECKED marker and close the loop</h3>
+<p>The marker is how anyone — Abilash, marketing, you in three weeks — can tell <strong>at a glance</strong> whether an item actually went through the machine:</p>
+<ol>
+<li>Drop a <strong><code>CHECKED-✅.txt</code></strong> file into the item&#39;s Drive folder containing: the date, the PR number, &quot;all gates green&quot;, the medical sign-off line (signed / n-a), and the live URL.</li>
+<li><strong>Move the item&#39;s folder</strong> from that person&#39;s <strong>2 — Ready for Deepu</strong> into their <strong>3 — Published</strong>.</li>
+<li>Update the item&#39;s row in the <strong>Pipeline Tracker sheet</strong> and in <code>content/ledger.yaml</code> (Part 5).</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ No marker = not checked.</strong> If you ever find published-looking work with no <code>CHECKED-✅.txt</code>, treat it as unchecked: run it through the pipeline yourself before touching it further. The marker is the only proof the machine ever saw it.</p>
+</blockquote>
+<h3>🚑 IF DEEPU IS AWAY (the named backup)</h3>
+<blockquote>
+<p><strong>⚠️ The pipeline must never halt on one person&#39;s leave.</strong> The named backup is <strong>Abilash</strong> — he already runs Claude Code and git, and he runs Stages 1–5 <strong>exactly as written</strong> (same gates, same markers, same medical checkpoint; the Express Lane section is his fast path). Nobody else publishes. If both are away, items wait in <strong>2 — Ready for Deepu</strong> — waiting is safe; bypassing is not.</p>
+</blockquote>
+<h3>🦸 DEEPU-SOLO MODE (when marketing can&#39;t drive the system)</h3>
+<p>The team is new to this. Some will hand you a perfect folder; some will hand you a WhatsApp message and a Word file. <strong>The pipeline works either way</strong> — because you can run <em>every</em> stage yourself, start to finish:</p>
+<ol start="0">
+<li><strong>Intake first, work second:</strong> before touching it, create the item&#39;s folder in the sender&#39;s <strong>2 — Ready for Deepu</strong> (or your own Inbox) and add its Tracker row — a WhatsApp message is not a pipeline state.</li>
+<li>Take whatever raw input exists — a rough doc, a Claude Design link, even just &quot;update the weight-loss page&quot; — or, for the legacy pages, <strong>fetch the live page yourself</strong> (the old <code>.html</code> landing pages count as raw input; nobody needs to hand them to you).</li>
+<li>Run the marketing steps on their behalf in Claude Code: build/recreate the page, paste the <strong>⭐ Step 2</strong> prompt, apply the voice (from the Voices page) if it&#39;s a blog.</li>
+<li>Then run your own Stages 1–5 exactly as above. Nothing about the checks changes.</li>
+<li>First few times: <strong>do it on screen in front of Abilash / the team</strong> — that demo <em>is</em> the training. Then publish.</li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ This is the bottleneck-killer&#39;s backstop:</strong> even at marketing&#39;s worst, the flow never stalls — it just starts at your desk instead of theirs. As they learn, work arrives more finished and your share shrinks back to &quot;review once, publish.&quot;</p>
+</blockquote>
+<h3>🔙 IF SOMETHING&#39;S WRONG AFTER IT&#39;S LIVE (rollback)</h3>
+<ul>
+<li><strong>WordPress:</strong> open the page in Gutenberg → <strong>Revisions</strong> → restore the previous version (or switch the post back to Draft if it must come down <em>now</em>). Fix through the normal pipeline, republish.</li>
+<li><strong>Factory site (Vercel):</strong> use Vercel&#39;s <strong>instant rollback</strong> to the previous deployment (or revert the PR and merge). Fix forward through a new PR.</li>
+<li>Either way: note it in the ledger row (<code>notes:</code>) and tell Abilash. No silent fixes.</li>
+</ul>
+<hr>
+<h2>THE EXPRESS LANE — GitHub for Abilash (and trained members)</h2>
+<p><em>Marketing hands work to Abilash. He reviews it. Then — instead of forwarding it to Deepu&#39;s queue, where it waits — he pushes it into the factory himself. Deepu only publishes.</em></p>
+<hr>
+<h3>1 · The answer up front: YES — and it is safe by construction</h3>
+<p>This lane exists because the question was asked: <em>&quot;If I&#39;ve already reviewed the work, why does it sit in a folder waiting for Deepu to import it? Can I push it in myself?&quot;</em></p>
+<p><strong>Yes.</strong> And nothing about the safety changes, because the safety was never in <em>who types</em> — it is in the machine:</p>
+<ol>
+<li><strong><code>main</code> is branch-protected.</strong> Nobody — not Abilash, not Claude, not a trained member — can merge without an approving review. A pushed branch can never touch the live site by itself.</li>
+<li><strong>Every PR runs the full machine checks automatically</strong> — <code>pnpm compliance</code>, banned-string-lint, content-lint, cta-label-lint, brand-lint, the Lighthouse gate, the Playwright factory suite, front-gate, the security review, gitleaks. The same 99% that protects Deepu&#39;s imports protects yours.</li>
+<li><strong>Every pushed branch of a registered factory site gets a Vercel PREVIEW link automatically.</strong> You see the real page, on a real URL, before anyone merges anything.</li>
+</ol>
+<blockquote>
+<p><strong>✅ The worst case of this lane is a red PR that never merges.</strong> That is the whole point of the factory: pushing a branch risks nothing.</p>
+</blockquote>
+<hr>
+<h3>2 · Who may use it</h3>
+<ol>
+<li><strong>Abilash — now.</strong> He runs Claude Code and git already.</li>
+<li><strong>A marketing member — only after Abilash explicitly certifies them.</strong> Certified means: Abilash watched them run the full flow, start to finish, and said so. Not &quot;watched the video&quot;. Not &quot;seems comfortable&quot;.</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Untrained git use is how work gets lost — the normal Drive lane is always available.</strong> Nobody is ever <em>required</em> to use the Express Lane. <strong>2 — Ready for Deepu</strong> keeps working exactly as before.</p>
+</blockquote>
+<hr>
+<h3>3 · The flow (Abilash&#39;s steps, one prompt)</h3>
+<p><strong>Before you start:</strong> the work must already be <em>reviewed</em> — the 4-question gut check passed, and if there is any medical claim, <strong>Dr. Deepu John&#39;s sign-off is already saved in the item&#39;s Drive folder</strong>. The Express Lane skips the queue, never the review.</p>
+<ol>
+<li><p>Give the item a short name, e.g. <code>weight-loss-page</code>. Keep its Drive folder — that is still where the doctor&#39;s sign-off proof and, later, the <code>CHECKED-✅.txt</code> marker live.</p>
+</li>
+<li><p>Fill the <strong>Handoff Card</strong> (the same one from Part 2, Step 3). You will paste it into the prompt below — it travels inside the PR description.</p>
+</li>
+<li><p>Open the factory folder in the terminal and start Claude Code:</p>
+<pre><code>cd ~/Claude/Kairali-Digital/kairali-web-factory
+claude
+</code></pre>
+</li>
+<li><p>Paste this <strong>once</strong> (fill the brackets):</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Push a reviewed submission into the factory as a PR&quot;</strong></p>
+<pre><code>I have a REVIEWED marketing submission to push into the factory as a PR.
+Submission: [Claude Design share link / path to page folder / blog draft]
+Target site: [e.g. ayurvedichealingvillage.com]
+Item name: [short-name — e.g. weight-loss-page]
+
+Do exactly this, in order, and show me the real output of each step:
+1. Sync to the source of truth: git fetch, checkout main, pull latest.
+2. Create a new branch: content/[item-name].
+3. Take the submission and turn it into a real page under
+   sites/[target-domain]/ in the form that site uses (its .tsx/.mdx/.md page).
+   - Do NOT change any wording, fact, price, or claim. Preserve them exactly.
+   - Wire it into the site so the existing gates can inspect it.
+   - Show me the new/changed files and the page route. Change nothing else.
+4. Commit and push the branch (--force-with-lease only, never --force).
+5. Open the PR to main, with the Handoff Card below as the PR description.
+6. Give me: the PR number, the PR link, and the Vercel preview link for
+   this branch (wait for the preview deployment if you need to).
+Do NOT merge the PR. Do NOT touch production. Deepu merges and publishes.
+
+HANDOFF CARD (put this in the PR description):
+[paste your filled Handoff Card here]
+</code></pre>
+</blockquote>
+</li>
+<li><p><strong>Open the Vercel preview link yourself.</strong> One look: right words, right facts, right on a phone.</p>
+</li>
+<li><p><strong>Paste the preview link back to the reviewer</strong> (the marketing member who built it). They confirm it is their page, unchanged.</p>
+</li>
+<li><p><strong>Add the item&#39;s row to the Pipeline Tracker sheet</strong> — same as any other item. (Deepu still fills the Checks and Published columns; he still owns <code>content/ledger.yaml</code>.)</p>
+</li>
+<li><p><strong>Message Deepu:</strong> <em>&quot;PR #N is green-pending, over to you.&quot;</em> Done. Your part is over.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ Steps 1–6 of the prompt are the workbook&#39;s own Stage-1 render prompt plus the git bookends.</strong> You are not inventing a new pipeline — you are doing Deepu&#39;s Stage 1 and Stage 2 for him, on one item, so his queue is one item shorter.</p>
+</blockquote>
+<hr>
+<h3>4 · What Deepu does differently: NOTHING</h3>
+<p>That is the design. Deepu opens the PR and it looks exactly like one he imported himself:</p>
+<ol>
+<li>The <strong>Handoff Card is in the PR description</strong> — same card, new address.</li>
+<li>The checks have already run. Green → his <strong>one human review</strong>, then he merges (<strong>factory site: Vercel deploys production automatically</strong>) or publishes (<strong>WordPress target: Novamira into staging/draft, eyeball, then he clicks Publish</strong> — Stage 4, Route A, unchanged).</li>
+<li>Red on a content gate → he <strong>bounces</strong> with the plain-English list, same as always, and the branch stays open.</li>
+<li>He stamps <code>CHECKED-✅.txt</code> into the item&#39;s Drive folder, moves it to <strong>3 — Published</strong>, updates the tracker row and the ledger. Stage 5, unchanged.</li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ WordPress-target items still ride this lane.</strong> The page still gets rendered under <code>sites/&lt;domain&gt;/</code> so every gate can inspect it — the PR is the checkpoint, Novamira is only Deepu&#39;s delivery van afterwards.</p>
+</blockquote>
+<hr>
+<h3>5 · The one warning that matters</h3>
+<blockquote>
+<p><strong>⚠️ The Express Lane changes WHO types, never WHAT is checked.</strong> Every machine gate still runs. Dr. Deepu John still signs every medical claim <strong>before</strong> the push — and Deepu&#39;s manual medical checkpoint still stands even on a green PR. Deepu&#39;s one human review still happens. The <code>CHECKED-✅.txt</code> marker still gets stamped. The item still gets its Pipeline Tracker row. If you ever feel the lane letting you <em>skip</em> one of those, stop — you are off the road.</p>
+</blockquote>
+<hr>
+<h3>6 · Where this fits</h3>
+<pre><code>Normal lane:   Marketing → Drive → Deepu
+Express lane:  Marketing → Abilash → GitHub PR → Deepu
+</code></pre>
+<p>Same machine, same gates, same publisher. The Express Lane only deletes the wait between <em>&quot;Abilash approved it&quot;</em> and <em>&quot;Deepu imported it&quot;</em> — because by the time Deepu opens the PR, the import already happened.</p>
+<hr>
+<h2>PART 5 — THE TRACKING LEDGER</h2>
+<p>Tracking lives in <strong>two layers</strong>, each for the people who actually use it. Neither invents a status the other contradicts:</p>
+<p><strong>Layer 1 — for marketing &amp; management: the Drive folders + the Pipeline Tracker sheet.</strong>
+Marketing never edits a repo file. Their status <em>is</em> which subfolder the item sits in — <strong>1 Drafts → 2 Ready for Deepu → 3 Published</strong> — mirrored in one Google Sheet (the <strong>Pipeline Tracker</strong>, in the same Drive folder) with plain-words columns: <em>Item · Site + page · Who · Tool · Handed off · Checks (✅/❌/–) · Doctor sign-off · Published date · Live link</em>. One glance = the whole pipeline. Deepu fills the Checks/Published columns; nobody else touches those.</p>
+<p><strong>Layer 2 — for Deepu &amp; the machine: <code>content/ledger.yaml</code>, committed in the repo.</strong>
+This is the durable, auditable record that answers &quot;did this go through the factory, when was it last checked, and is it live?&quot; — the exact question the old static pages could never answer. <strong>Deepu owns every field</strong> (marketing can&#39;t see CI or live URLs, so they write none of it).</p>
+<blockquote>
+<p><strong>ℹ️ Status words.</strong> The ledger&#39;s <code>status</code> reuses the fleet&#39;s real <code>STATUS.yaml</code> values — <code>build | gates | human_audit | ok_to_publish | live</code> — it does <strong>not</strong> invent new ones. An item Deepu hasn&#39;t imported yet simply isn&#39;t in the ledger (it&#39;s visible in Layer 1&#39;s &quot;2 — Ready for Deepu&quot; folder). A bounce is recorded as <code>ci_status: red</code> + a <code>needs_fix</code> note while <code>status</code> stays <code>gates</code>. Green + Deepu&#39;s review = <code>human_audit</code> → <code>ok_to_publish</code>; published = <code>live</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ This ledger does not replace <code>STATUS.yaml</code>.</strong> <code>STATUS.yaml</code> tracks whole <strong>sites</strong> (one row per site, session-end rule); <code>content/ledger.yaml</code> tracks individual <strong>content items</strong> flowing through the pipeline. Different granularity, no overlap — never copy statuses between them.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ Batches.</strong> Roshni&#39;s batched blogs can share <strong>one PR</strong>: each post still gets its own ledger row and tracker row; the rows simply carry the same <code>pr:</code> number, and one green run + one review clears them all. <strong>Batches are severable:</strong> if one post goes red, Deepu moves <em>that post</em> off the branch (own row, own follow-up PR) and the green rest merge on time — one bad post never holds a batch hostage.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ If the Tracker and the ledger ever disagree, the ledger wins</strong> (it travels with the code). Reconciling the two is part of the existing <strong>Monday lint ritual</strong> — same pass as the wiki lint.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ Brand rules come from each site, not a two-value tag.</strong> Only <code>ayurvedichealingvillage.com</code> carries the clinical lock; only Villa Raag is hospitality; yoga, blog, and corporate sites each have their own ruleset in their <code>site.config.json</code>. Never tag a yoga or blog site &quot;clinical&quot; — that would wrongly ban words like &quot;journey&quot; on a page where they&#39;re fine.</p>
+</blockquote>
+<p><strong>Example rows:</strong></p>
+<pre><code class="language-yaml"># content/ledger.yaml — one entry per submission.
+# status uses STATUS.yaml values only: ideation|research|build|gates|preview|
+# human_audit|ok_to_publish|live|monitoring
+items:
+  - title: &quot;Panchakarma programme — landing page&quot;
+    target_site: ayurvedichealingvillage.com     # clinical lock comes from its site.config.json
+    format: landing-page
+    publish_route: wordpress-novamira
+    author_voice: null
+    submitted_by: &quot;Anu (marketing)&quot;
+    submitted_date: 2026-07-18
+    has_medical_claims: yes
+    pr: 142
+    last_checked: 2026-07-21
+    ci_status: green
+    medical_signoff: &quot;drdeepujohn:2026-07-20&quot;     # human step, recorded here — NOT judged by CI
+    reviewed_by: &quot;Deepu (developer)&quot;
+    status: live
+    published_url: &quot;https://ayurvedichealingvillage.com/panchakarma&quot;
+    published_date: 2026-07-21
+    notes: &quot;Legacy .html rebuilt into sites/ then imported to WordPress via Novamira.&quot;
+
+  - title: &quot;Monsoon diet tips (blog)&quot;
+    target_site: whyayurveda.org                  # blog/editorial ruleset — NOT clinical
+    format: blog
+    publish_route: wordpress-novamira
+    author_voice: gita-ramesh
+    submitted_by: &quot;Roshni&quot;
+    submitted_date: 2026-07-18
+    has_medical_claims: no
+    pr: 143
+    last_checked: 2026-07-18
+    ci_status: red
+    medical_signoff: na
+    reviewed_by: null
+    status: gates
+    published_url: null
+    published_date: null
+    notes: &quot;needs_fix: 2 health-promise lines to soften; bounced to Roshni via the shared folder. Branch kept open.&quot;
+
+  - title: &quot;Yoga programme hero refresh&quot;
+    target_site: kairaliyoga.com                  # yoga ruleset — &#39;journey&#39;/&#39;luxury&#39; NOT banned here
+    format: landing-page
+    publish_route: vercel
+    author_voice: null
+    submitted_by: &quot;Anu (marketing)&quot;
+    submitted_date: 2026-07-17
+    has_medical_claims: no
+    pr: 138
+    last_checked: 2026-07-18
+    ci_status: green
+    medical_signoff: na
+    reviewed_by: &quot;Deepu (developer)&quot;
+    status: human_audit
+    published_url: null
+    published_date: null
+    notes: &quot;Green; awaiting Deepu&#39;s staging eyeball before Vercel merge.&quot;
+</code></pre>
+<hr>
+<h2>PART 6 — TROUBLESHOOTING</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>What it means</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>(Marketing) Deepu sent it back</strong></td>
+<td>The machine caught something before it went live</td>
+<td>Read his plain-English list, fix each item in your tool, re-run Step 2, re-hand-off with &quot;what changed&quot; updated</td>
+</tr>
+<tr>
+<td><strong>(Marketing) No price/phone/date to put in</strong></td>
+<td>Missing fact</td>
+<td>Leave it blank, list it under &quot;Must-be-exact facts&quot;. Never guess (Rule 2)</td>
+</tr>
+<tr>
+<td><strong>(Marketing) Claude wrote a health claim</strong></td>
+<td>Needs a doctor</td>
+<td>Get <strong>Dr. Deepu John</strong> to sign <strong>before</strong> handoff; only then write &quot;Ready: YES&quot;</td>
+</tr>
+<tr>
+<td><strong>(Marketing) Banned word on a hospital page</strong></td>
+<td>Rule 1</td>
+<td>Fix visible text yourself (tell Claude to swap for a clinical word). Only flag things you can&#39;t change, like the page&#39;s short web address</td>
+</tr>
+<tr>
+<td><strong>(Marketing) &quot;FEATURE NEEDED: ___&quot;</strong></td>
+<td>Claude refused to fake something — good</td>
+<td>Put that exact line on the Handoff Card so Deepu builds it properly</td>
+</tr>
+<tr>
+<td><strong>(Marketing) Blog with no voice set</strong></td>
+<td>Missing author voice</td>
+<td>Run the author-voice prompt first (default Abilash; food/lifestyle Gita; brand news Roshni), then Step 2</td>
+</tr>
+<tr>
+<td><strong>(Deepu) CI red, all cosmetic</strong></td>
+<td>The 99% caught dev issues</td>
+<td>Fix on branch, push, re-run (Stage 3)</td>
+</tr>
+<tr>
+<td><strong>(Deepu) CI red on compliance / content / banned-string / cta-label</strong></td>
+<td>Words/facts/claims — not yours to edit</td>
+<td>Bounce with the plain-English item; keep the branch open</td>
+</tr>
+<tr>
+<td><strong>(Deepu) <code>front-gate</code> fails, content clean</strong></td>
+<td>No signed approval file yet</td>
+<td>The <strong>front-gate blocks until the signed approval file exists</strong> — get the site owner to sign the <code>brief→strategy→design_source→golden_page</code> rows in <code>launches/&lt;domain&gt;/approvals.yaml</code>, then re-run. (The doctor&#39;s medical sign-off is a <em>separate</em> human step in Stage 4.)</td>
+</tr>
+<tr>
+<td><strong>(Deepu) Green but page has a medical claim</strong></td>
+<td>CI can&#39;t sign for a physician</td>
+<td>Manual checkpoint — route to Dr. Deepu John, record <code>medical_signoff</code>, then publish</td>
+</tr>
+<tr>
+<td><strong>(Deepu) Lighthouse / performance red</strong></td>
+<td>Should be rare (checked at build)</td>
+<td>If marketing can rebuild, bounce; if it&#39;s a dev-side fix, log it on the row (<code>ci_status: red</code>, note who owns it) so it&#39;s visible, not silent</td>
+</tr>
+<tr>
+<td><strong>Item sitting in &quot;2 — Ready for Deepu&quot; for days</strong></td>
+<td>Not imported yet</td>
+<td>Ping Deepu; intake target is next-business-day. Batch blogs so one review clears many</td>
+</tr>
+<tr>
+<td><strong>Published-looking work with no <code>CHECKED-✅.txt</code> in its folder</strong></td>
+<td>It never went through the machine</td>
+<td>Treat as unchecked — Deepu runs it through the pipeline before anything else touches it</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>REFERENCE LIBRARY — every link in one place</h2>
+<p>Lost a link? It is here. Bookmark this page. Every link the whole system uses, one line each.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Link</th>
+<th>What it is</th>
+<th>When to open it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.youtube.com/watch?v=Gt8tT-xf6g4">The origin video (Jono Catliff, YouTube)</a></td>
+<td>&quot;How I Built INSANE WordPress Websites In 20 Minutes (Claude Code)&quot; — the method this whole factory industrialises</td>
+<td><strong>Once</strong>, in your first week. It shows the <em>idea</em>; this workbook shows <em>our</em> version of it</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://kairali-team-workbook.vercel.app">Team Workbook (this page)</a></td>
+<td>The one and only way we put pages and blogs online</td>
+<td>Every time you build, hand off, or get a bounce-back</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://kairali-team-workbook.vercel.app/voices.html">Voices page</a></td>
+<td>The 10 blog author voices and how to pick one</td>
+<td>Before writing <strong>any</strong> blog (default Abilash; food/lifestyle Gita)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX">Shared Drive folder — Website - Staging - Marketing</a></td>
+<td>Where all handoffs live: your folder with <strong>1 Drafts / 2 Ready for Deepu / 3 Published</strong></td>
+<td>Daily. Your item&#39;s subfolder <em>is</em> its status</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://docs.google.com/spreadsheets/d/1mS6WzRrZmQVnWjfg631uOFSRDD1raFTSLhjlYuQZIos/edit">Pipeline Tracker sheet</a></td>
+<td>One Google Sheet mirroring the whole pipeline — one glance = everything in flight</td>
+<td>When you hand off (add your row) and when you want to know &quot;where is my page?&quot;</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://docs.google.com/document/d/1ilwWTz-8h6PrHslKgTrbQO9yIuDYorsXzhmEwS8QEj8/edit">START HERE doc</a></td>
+<td>The short Drive-side orientation doc sitting inside the shared folder</td>
+<td>Day one, before anything else — then come back to this workbook</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GitHub repo: <code>kairali-digital/kairali-web-factory</code></td>
+<td>The factory itself — code, checks, ledger. <strong>Developers only</strong></td>
+<td>Deepu (and Abilash) only. Marketing <strong>never</strong> opens GitHub — that is the whole point</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>docs/sops/</code> (inside the repo)</td>
+<td>The source files these pages are built from — <code>team-website-lifecycle-sop.md</code> (this workbook) and <code>wordpress-gutenberg-setup.md</code> (Deepu&#39;s Novamira/WordPress setup)</td>
+<td>Deepu, when he needs the WordPress steps; anyone editing the workbook itself</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>ℹ️ Which one do I need?</strong> Marketing lives in links <strong>2–6</strong>. Deepu adds <strong>7–8</strong>. Everyone watches <strong>1</strong> once.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ Don&#39;t pass links around in chat.</strong> If someone asks &quot;where&#39;s the tracker?&quot;, send them to this page — one place, always current.</p>
+</blockquote>
+<hr>
+<p><em>Kairali Web Factory — Team Workbook v3.0 (18 Jul 2026, audited). You build → Step 2 → hand to Deepu → the machine checks → he reviews once and publishes → the marker + tracker show it live. Marketing never touches GitHub or WordPress. When unsure: stop and ask Abilash. Companions: the <strong>Voices page</strong> (author voices) · <code>wordpress-gutenberg-setup.md</code> (Deepu&#39;s Novamira setup) · the Drive folder <a href="https://drive.google.com/drive/folders/1w89m48AKO9lhOBKKR_DRB0ra8SpXljpX">Website - Staging - Marketing</a>.</em></p>

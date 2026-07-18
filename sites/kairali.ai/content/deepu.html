@@ -1,0 +1,457 @@
+<h1>KAIRALI — FOR DEEPU: PUBLISHING, NOVAMIRA &amp; THE UNDO BOOK</h1>
+<h2>Companion to the Team Workbook (Part 4). Developer-facing, nothing assumed.</h2>
+<blockquote>
+<p><strong>ℹ️ Read order for your first week:</strong> (1) Workbook Part 4 (the pipeline), (2) Novamira install below, (3) the Undo Book below — then run the one-time setup and do the first publish as a demo in front of Abilash.</p>
+</blockquote>
+<hr>
+<h2>INSTALLING NOVAMIRA — STEP BY STEP, NOTHING ASSUMED</h2>
+<blockquote>
+<p><strong>This section is Deepu&#39;s only.</strong> Marketing never installs anything, never sees WP admin. This is One-time Setup item #3 from Part 4 — do it once per staging site.</p>
+</blockquote>
+<blockquote>
+<p><strong>✅ THE HONEST VERDICT — was Novamira the right pick? (4 lines)</strong>
+<strong>Yes — for THIS role.</strong> Our research compared the options, and for the Deepu-only, admin-level, staging-first job — importing pages as <strong>editable Gutenberg blocks</strong> — Novamira is the tool.
+The caveats the research found are real: it is <strong>admin-only and all-or-nothing</strong>, and it does <strong>not</strong> block itself on production — its own docs say staging is <em>&quot;a recommendation, not enforced.&quot;</em>
+Those caveats are solved by <strong>our architecture</strong> — staging-only, full backup first, you supervising every session — <strong>not by the plugin</strong>. Never rely on Novamira to protect a live site. It won&#39;t.
+<strong>Optional hardening later:</strong> add <strong>Block MCP</strong> as a limited Editor account for everyday content edits (Track B in <code>wordpress-gutenberg-setup.md</code>), so admin power comes out only for big jobs.</p>
+</blockquote>
+<hr>
+<h3>STEP 0 — Prerequisites (tick all four before touching anything)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>How you know it&#39;s true</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>A staging copy of the site exists</strong></td>
+<td>The URL is a staging URL. Not the live domain. Look at the address bar and say it out loud.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>A full backup was taken today</strong></td>
+<td>Host-level backup of files + database, dated today. Not last week&#39;s.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Claude Code is installed</strong></td>
+<td>Needs Node.js 18+. You can run <code>claude</code> from the site&#39;s project folder.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>You have WP admin login for the STAGING site</strong></td>
+<td>You can reach <code>/wp-admin</code> on the staging URL right now.</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>ℹ️ Backups, two layers.</strong> The full backup above is the install-time safety net. Later, at publish time, per-page snapshots come from <code>scripts/wp-snapshot.mjs</code> — it fetches the page and saves timestamped HTML into <code>backups/&lt;domain&gt;/</code> before every WordPress publish, automatically as part of the publish prompt. Different jobs; you need both.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ If any box is unticked, stop.</strong> Novamira has no rollback of its own changes. The backup and the staging copy ARE the rollback.</p>
+</blockquote>
+<hr>
+<h3>THE INSTALL — 8 numbered steps, exactly what to click</h3>
+<p><strong>1. Download the plugin — from ONE place only.</strong>
+Go to <strong>novamira.ai/download</strong> and download the ZIP. (The source code lives on GitHub at <code>use-novamira/novamira</code> if you want to read it.)</p>
+<blockquote>
+<p><strong>⚠️ Novamira is NOT on wordpress.org.</strong> If you find something with that name in the WordPress plugin directory, it is not this plugin. Do not install it. Official download only.</p>
+</blockquote>
+<p><strong>2. Upload it.</strong>
+Staging WP admin → <strong>Plugins → Add New → Upload Plugin → Choose File</strong> → pick the ZIP → <strong>Install Now</strong> → <strong>Activate</strong>.</p>
+<p><strong>3. Turn on &quot;AI Abilities&quot;.</strong>
+Left sidebar → <strong>Novamira → Configuration</strong> → enable <strong>&quot;AI Abilities&quot;</strong>. It is <strong>off by default</strong> and asks for explicit confirmation.</p>
+<blockquote>
+<p><strong>⚠️ Read that confirmation before clicking.</strong> This is the moment you hand an AI admin-level power over this site. That is fine on staging with a backup. It is never fine on production.</p>
+</blockquote>
+<p><strong>4. Create an Application Password.</strong>
+<strong>Users → Profile → scroll to Application Passwords</strong> → type a descriptive name (see the settings table below) → <strong>Add New Application Password</strong> → <strong>copy the generated password now</strong>. WordPress shows it once and never again.</p>
+<blockquote>
+<p><strong>⚠️ No &quot;Application Passwords&quot; section on your Profile?</strong> A security plugin (Wordfence is the usual suspect) is blocking the feature. Open that plugin&#39;s settings, re-enable application passwords, then come back and create it.</p>
+</blockquote>
+<p><strong>5. Connect Claude Code.</strong>
+<strong>Novamira → Configuration → &quot;Copy prompt&quot;</strong> — this copies a setup prompt to your clipboard.</p>
+<p><strong>6. Paste it into Claude Code.</strong>
+Open the terminal in the site&#39;s project folder, run <code>claude</code>, paste the prompt. Claude Code writes its own <code>.mcp.json</code> — you do not edit config files by hand. (OAuth sign-in exists as a newer alternative; the copy-prompt path is the one we use.)</p>
+<p><strong>7. Verify the connection.</strong></p>
+<blockquote>
+<p><strong>PROMPT BOX — paste into Claude Code once:</strong></p>
+<pre><code>Check the Novamira connection and list installed plugins.
+</code></pre>
+</blockquote>
+<p>If Claude answers with the real plugin list from the staging site, the connection is live.</p>
+<p><strong>8. Do the smoke test below. Then turn AI Abilities OFF until the first real job.</strong></p>
+<hr>
+<h3>THE SETTINGS THAT MATTER</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What to set</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AI Abilities</strong></td>
+<td><strong>ON only while actively working. OFF the moment you stop.</strong></td>
+<td>It is all-or-nothing admin power. Off = the plugin is inert. There is no half-open.</td>
+</tr>
+<tr>
+<td><strong>Which site it points at</strong></td>
+<td><strong>The staging URL. Only. Ever.</strong></td>
+<td>The plugin does not enforce staging — <em>we</em> do. Pointing it at production breaks HARD GATE 1.</td>
+</tr>
+<tr>
+<td><strong>Import / build mode</strong></td>
+<td><strong>Editable Gutenberg blocks — NEVER the &quot;pixel-perfect PHP page&quot; mode.</strong></td>
+<td>The PHP-page mode is locked forever; nobody can ever edit it in the editor again. Editable blocks + Gutenberg revisions = every change restorable.</td>
+</tr>
+<tr>
+<td><strong>Application Password name</strong></td>
+<td>Descriptive: <code>Claude Code – staging – Deepu</code></td>
+<td>So &quot;Last Used&quot; means something and you know exactly what to revoke. One password per person/machine.</td>
+</tr>
+<tr>
+<td><strong>Idle app passwords</strong></td>
+<td><strong>Revoke them.</strong> Users → Profile → Application Passwords → Revoke.</td>
+<td>A live credential nobody is using is pure risk. Check &quot;Last Used&quot; when in doubt.</td>
+</tr>
+<tr>
+<td><strong>Leaving it running</strong></td>
+<td><strong>Never.</strong> Session ends = AI Abilities off.</td>
+<td>Novamira&#39;s <code>execute-php</code> bypasses its own safety sandbox. Not a thing to leave plugged in overnight.</td>
+</tr>
+<tr>
+<td><strong>Production</strong></td>
+<td><strong>Never point Novamira at a live site. No exceptions.</strong></td>
+<td>It has no rollback of its own changes and no production block. Staging + backup is the only protection that exists.</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>✅ SMOKE TEST — prove it works, 5 minutes, do it right now</h3>
+<blockquote>
+<p><strong>PROMPT BOX — paste into Claude Code once:</strong></p>
+<pre><code>Using Novamira, create ONE dummy page on the STAGING site titled
+&quot;NOVAMIRA SMOKE TEST — DELETE ME&quot;, as EDITABLE Gutenberg blocks:
+one heading, one paragraph, one button. Save as DRAFT only.
+Do NOT publish. Give me the edit link.
+</code></pre>
+</blockquote>
+<ol>
+<li>Open the page in Gutenberg (staging WP admin → <strong>Pages</strong> → find &quot;NOVAMIRA SMOKE TEST — DELETE ME&quot; → <strong>Edit</strong>).</li>
+<li>Click the heading. <strong>Can you type in it?</strong> Click the paragraph. <strong>Can you edit it?</strong> Open the list view — do you see separate, normal blocks (Heading, Paragraph, Buttons)?</li>
+<li><strong>All editable = pass.</strong> One giant locked block you can&#39;t click into = fail — wrong mode; see troubleshooting.</li>
+<li>Delete the dummy page: <strong>Pages → hover the title → Trash.</strong></li>
+<li><strong>Novamira → Configuration → AI Abilities → OFF.</strong></li>
+</ol>
+<blockquote>
+<p><strong>✅ Passed all five? Setup is done and safe.</strong> The publish flow that uses this lives in Part 4, Stage 4, Route A — Novamira imports the green-lit page to staging as editable blocks, you eyeball it, and <em>you</em> click Publish. A human makes it live, always.</p>
+</blockquote>
+<hr>
+<h3>TROUBLESHOOTING</h3>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>What it means</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No &quot;Application Passwords&quot; section under Users → Profile</td>
+<td>A security plugin (e.g. Wordfence) is blocking the feature</td>
+<td>Re-enable application passwords in that plugin&#39;s settings, then create the password</td>
+</tr>
+<tr>
+<td>Connection check fails / Claude can&#39;t see the site</td>
+<td>Stale or broken <code>.mcp.json</code> config</td>
+<td><strong>Novamira → Configuration → &quot;Copy prompt&quot;</strong> again → paste into Claude Code fresh — it rewrites its own config. Then re-run the verify prompt</td>
+</tr>
+<tr>
+<td>Imported page opens as one locked block — nothing is clickable or editable</td>
+<td>Wrong mode: the &quot;pixel-perfect PHP page&quot; path was used</td>
+<td>Delete that page. Redo the import telling Claude explicitly: <strong>editable Gutenberg blocks</strong>. The locked mode can never be converted back — rebuild, don&#39;t rescue</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>ROLLBACK &amp; BACKUP — DEEPU&#39;S UNDO BOOK</h2>
+<blockquote>
+<p><strong>This section is Deepu&#39;s only.</strong> Marketing never rolls anything back. If marketing spots something wrong on a live page, they message you — the undo is yours.</p>
+</blockquote>
+<h3>WHY this section exists (read once)</h3>
+<p>The machine checks catch ~99% of problems <strong>before</strong> publish. Rollback exists for everything else — and &quot;everything else&quot; is almost always a <strong>human</strong> slip in a long chain: the wrong page imported, an old draft published over a new one, a good-looking change that broke something nobody predicted. <strong>Humans make more mistakes than the machine in a complex chain.</strong> So the undo path must be <strong>one paste, not archaeology</strong>. Every recipe below is exactly that: you paste one prompt (or click one button), and the old version is back. No digging, no guessing, no &quot;I think it was Tuesday&#39;s version.&quot;</p>
+<p>Two facts make this possible — keep them in your head:</p>
+<blockquote>
+<p><strong>ℹ️ Fact 1 — for factory sites, GIT IS THE BACKUP.</strong> Every change is a commit with a second-precision timestamp (<code>git log --format=%ci</code>). There is no separate backup system to maintain, because the history <em>is</em> the backup. Any file, any page, any moment — restorable.</p>
+</blockquote>
+<blockquote>
+<p><strong>ℹ️ Fact 2 — for WordPress, the backup is two layers.</strong> Gutenberg keeps a restorable <strong>revision</strong> for every edit, and (Section C below) the machine saves a <strong>pre-publish snapshot</strong> into <code>backups/</code> before every publish — automatically, baked into the publish prompt itself. You never have to remember it.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ THE ONE RULE — never fix silently.</strong> Every rollback, however small, gets <strong>(a)</strong> a note in the item&#39;s <code>content/ledger.yaml</code> row and <strong>(b)</strong> a message to Abilash. No exceptions, no &quot;it was tiny.&quot; A silent fix hides the lesson; a logged fix teaches the whole pipeline. The paper-trail recipe (Recipe 7) closes <strong>every</strong> other recipe in this section.</p>
+</blockquote>
+<hr>
+<h3>🧭 WHICH UNDO DO I NEED? (start here)</h3>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Factory (Vercel) page</strong> — a merged PR was wrong; the whole change must go</td>
+<td><strong>Recipe 1</strong> — revert the PR</td>
+</tr>
+<tr>
+<td><strong>Factory site is broken RIGHT NOW</strong> — seconds matter, fix the live site first, think later</td>
+<td><strong>Recipe 2</strong> — Vercel instant rollback (then Recipe 1)</td>
+</tr>
+<tr>
+<td><strong>Factory page</strong> — only ONE file went bad; the rest of the merge is fine</td>
+<td><strong>Recipe 3</strong> — restore one file from history</td>
+</tr>
+<tr>
+<td><strong>WordPress page</strong> — yesterday&#39;s version was fine; today&#39;s edit broke it</td>
+<td><strong>Recipe 4</strong> — Gutenberg Revisions</td>
+</tr>
+<tr>
+<td><strong>WordPress page must come DOWN NOW</strong> — wrong medical claim, wrong price, legal risk</td>
+<td><strong>Recipe 5</strong> — unpublish to draft (then fix via the pipeline)</td>
+</tr>
+<tr>
+<td><strong>WordPress page</strong> — Revisions can&#39;t help (import scrambled it / history unusable)</td>
+<td><strong>Recipe 6</strong> — restore from the <code>backups/</code> snapshot</td>
+</tr>
+<tr>
+<td>Not sure which</td>
+<td>Take it off the internet first (<strong>Recipe 2</strong> for factory, <strong>Recipe 5</strong> for WordPress), then undo calmly</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>✅ After ANY recipe → Recipe 7 (the paper trail).</strong> Always. That is the One Rule.</p>
+</blockquote>
+<hr>
+<h3>SECTION A — FACTORY / VERCEL PAGES (git is the backup)</h3>
+<h4>Recipe 1 — Undo a whole merged PR (git revert, via a new PR)</h4>
+<p><strong>When:</strong> a PR merged to <code>main</code>, Vercel deployed it to production, and the whole change was a mistake.</p>
+<ol>
+<li><p>Find the PR number. If you don&#39;t remember it, run in the repo:</p>
+<pre><code>gh pr list --state merged --limit 10
+</code></pre>
+</li>
+<li><p>Paste this into Claude Code:</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Revert a merged PR&quot;</strong></p>
+<pre><code>PR #[number] was merged but must be undone.
+
+1. git fetch origin, then create a new branch from origin/main.
+2. Find the commit that PR put on main
+   (git log --format=&#39;%h %ci %s&#39; origin/main — the timestamps are
+   second-precision; match them to the PR&#39;s merge time from gh pr view [number]).
+3. git revert that commit (use -m 1 only if it is a true merge commit).
+   Change NOTHING else — no cleanups, no improvements, a pure revert.
+4. Push the branch and open a PR titled &quot;Revert #[number]: [one-line reason]&quot;.
+   If you ever need to re-push, --force-with-lease only.
+5. Show me the diff and the PR link. Do NOT merge — merging is not yours.
+</code></pre>
+</blockquote>
+</li>
+<li><p>The revert PR runs through <strong>the same CI gates as everything else</strong>. That is a feature, not friction — even the undo gets checked.</p>
+</li>
+<li><p>An <strong>approver merges</strong> it (main is branch-protected; you and the agent cannot). Vercel auto-builds production on merge.</p>
+</li>
+<li><p>Open the production URL and confirm the old version is back.</p>
+</li>
+<li><p><strong>Recipe 7.</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Site actively broken while the revert PR waits for review?</strong> Do Recipe 2 first — it fixes the live site in seconds — then land this revert calmly. Never skip the revert just because the rollback &quot;fixed it&quot; (see the warning in Recipe 2).</p>
+</blockquote>
+<h4>Recipe 2 — Vercel instant rollback (the fastest fix on Earth)</h4>
+<p><strong>When:</strong> the factory site is wrong or broken <strong>right now</strong> and every minute is a minute of visitors seeing it.</p>
+<ol>
+<li>Open <strong>vercel.com</strong> → the site&#39;s project → <strong>Deployments</strong>.</li>
+<li>Find the previous <strong>Production</strong> deployment — the one just <em>before</em> the bad one. The timestamps make this unambiguous.</li>
+<li>Open its <strong>⋯ menu → Instant Rollback</strong> → confirm.</li>
+<li>Reload the production URL. The old version is live within seconds.</li>
+<li><strong>Recipe 7.</strong></li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Rollback fixes the LIVE SITE, not the CODE.</strong> <code>main</code> still contains the bad change. If you stop here, the <strong>very next merge re-ships the bug</strong>. An instant rollback must always be followed by Recipe 1 (revert the PR) or a proper fix-forward PR. Rollback buys time; it is never the fix.</p>
+</blockquote>
+<h4>Recipe 3 — Restore ONE file from history</h4>
+<p><strong>When:</strong> the merge was mostly fine, but one file (one page, one component) went bad — you want <em>that file</em> back at an earlier state, without touching the rest.</p>
+<ol>
+<li><p>Find the right commit <strong>fast</strong> — this is the one-liner that makes it archaeology-free:</p>
+<pre><code>git log --format=&#39;%h %ci %s&#39; -- sites/[domain]/[path-to-file]
+</code></pre>
+<p>Every line is <code>short-hash · timestamp-to-the-second · message</code>, newest first, <strong>only for that file</strong>. Pick the last commit where the file was good — the second-precision timestamps mean &quot;the state at 14:32:07, before the 14:35 merge&quot; is a fact, not a guess.</p>
+</li>
+<li><p>Paste this into Claude Code:</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Restore one file from history&quot;</strong></p>
+<pre><code>One file must go back to an earlier version. Everything else stays as it is.
+
+File:   sites/[domain]/[path-to-file]
+Run:    git log --format=&#39;%h %ci %s&#39; -- [that path]
+and show me the list. I will pick the commit — or if I already know it,
+it is [short-hash].
+
+Then:
+1. Create a new branch from origin/main.
+2. git checkout [commit] -- [path]   (restore ONLY that file).
+3. Commit with message &quot;Restore [file] to [short-hash] ([reason])&quot;,
+   push, open a PR. --force-with-lease only, ever.
+4. Show me the diff and the PR link. Do NOT merge.
+</code></pre>
+</blockquote>
+</li>
+<li><p>CI runs, an approver merges, Vercel deploys. Confirm the page on production.</p>
+</li>
+<li><p><strong>Recipe 7.</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>✅ Checkpoint for Section A:</strong> the undo went through a PR · CI was green · an approver merged it · production shows the old version · ledger note + Abilash message done. You never pushed to <code>main</code> directly, never force-pushed, never merged your own PR — the undo obeys the same laws as the do.</p>
+</blockquote>
+<hr>
+<h3>SECTION B — WORDPRESS PAGES</h3>
+<h4>Recipe 4 — Gutenberg Revisions (the normal WordPress undo)</h4>
+<p><strong>When:</strong> a WordPress page or post was edited and the earlier version was better.</p>
+<ol>
+<li>WP admin → <strong>Pages</strong> (or Posts) → open the page in the editor.</li>
+<li>In the settings sidebar, click <strong>Revisions</strong>.</li>
+<li>Drag the slider left until the compare view shows the version you want. The changes are highlighted side-by-side — read them, don&#39;t assume.</li>
+<li>Click <strong>Restore This Revision</strong>.</li>
+<li>Click <strong>Update</strong>. The old version is live.</li>
+<li><strong>Recipe 7.</strong></li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ You cannot lose anything here.</strong> Restoring a revision creates a <em>new</em> revision — even the bad version stays in history. Revisions are the reason we always publish in the editable-Gutenberg mode and never the locked &quot;pixel-perfect PHP page&quot; mode: locked pages have nothing to slide back to.</p>
+</blockquote>
+<h4>Recipe 5 — Unpublish to draft (it must come down NOW)</h4>
+<p><strong>When:</strong> a live WordPress page is dangerous — an unsigned medical claim, a wrong price, anything with legal exposure. Getting it <em>off the internet</em> beats getting it <em>right</em>.</p>
+<ol>
+<li>WP admin → open the page in the editor.</li>
+<li>Top bar → <strong>Switch to draft</strong> → confirm.</li>
+<li>Reload the public URL and confirm the page is no longer served.</li>
+<li>Fix the content <strong>through the normal pipeline</strong> (marketing fix → gates → your one review), then republish. Never patch it live &quot;just this once.&quot;</li>
+<li><strong>Recipe 7</strong> — and for this recipe the Abilash message is <strong>immediate</strong>, not end-of-day.</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ This click is YOURS and only yours.</strong> The agent is never allowed to unpublish, delete, or change the status of any page or post — that is a hard gate. Do not paste a prompt for this. Log in, click Switch to draft, with your own hand. Thirty seconds, human, done.</p>
+</blockquote>
+<h4>Recipe 6 — Restore from the pre-publish snapshot in <code>backups/</code></h4>
+<p><strong>When:</strong> Revisions can&#39;t save you — the import scrambled the block tree, the history is unusable, or you need the page <em>exactly</em> as it was before the last publish.</p>
+<ol>
+<li><p>Every publish saved a snapshot first (Section C explains how). Find it:</p>
+<pre><code>ls backups/[domain]/
+</code></pre>
+<p>Files look like <code>[page]--YYYY-MM-DDTHH-MM-SS.html</code> — IST, to the second. Pick the newest one <strong>from before</strong> the bad publish. The timestamp tells you; no guessing.</p>
+</li>
+<li><p>Paste this into Claude Code:</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Rebuild a WordPress page from its snapshot&quot;</strong></p>
+<pre><code>The live WordPress page [URL] is wrong and Gutenberg Revisions cannot fix it.
+
+Open backups/[domain]/[page]--[timestamp].html — that file is the page
+exactly as it was before the publish.
+
+Using Novamira, rebuild the page from that snapshot as EDITABLE Gutenberg
+blocks, on STAGING, as a DRAFT only. Do NOT publish. Do NOT change any
+wording, fact, price, or claim — the snapshot is the truth, reproduce it.
+Give me the staging preview URL.
+</code></pre>
+</blockquote>
+</li>
+<li><p>Open the staging preview. Compare it against the snapshot file in your browser. Same page? Good.</p>
+</li>
+<li><p><strong>You</strong> click Publish. A human makes it live — same as always.</p>
+</li>
+<li><p><strong>Recipe 7.</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>ℹ️ Snapshot deleted or overwritten? It can&#39;t be.</strong> Every snapshot has a to-the-second filename (two can never collide), and <code>backups/</code> is committed — so every snapshot ever taken also lives in git history forever. Worst case, Recipe 3 recovers the snapshot file itself.</p>
+</blockquote>
+<hr>
+<h3>SECTION C — THE AUTOMATIC BACKUP RULE (the machine remembers so you don&#39;t)</h3>
+<p>Here is the design decision that makes Recipe 6 always work: <strong>the backup is not a habit, it is a step inside the publish prompt.</strong> Humans forget habits — especially on the fifth publish of a busy day. So the snapshot runs <em>inside</em> the same paste that does the publishing. The only way to skip the backup is to not publish at all.</p>
+<p><strong>The rule:</strong> before <strong>every</strong> WordPress publish, <code>scripts/wp-snapshot.mjs</code> fetches the live page and saves a timestamped copy. It is baked into the publish prompt — this is the <strong>only</strong> publish prompt you use from now on (it replaces the Stage 4 Route A box):</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Publish to WordPress staging via Novamira — WITH SNAPSHOT&quot; (the only WordPress publish prompt)</strong></p>
+<pre><code>The PR for [page] is green and the manual medical checkpoint passed.
+
+STEP 1 — SNAPSHOT FIRST (never skip, never reorder):
+Run: node scripts/wp-snapshot.mjs [full live page URL]
+It saves the current live page to
+  backups/[domain]/[page]--YYYY-MM-DDTHH-MM-SS.html
+Show me the exact saved file path, then commit the new file in backups/
+on the current branch so the snapshot also lands in git history.
+If the page does not exist live yet (a brand-new page), say so and
+continue — there is nothing to snapshot on a first publish.
+
+STEP 2 — THEN IMPORT:
+Using Novamira, import the page into [target-site] as EDITABLE WordPress
+blocks, into STAGING / DRAFT only. Do NOT publish live.
+Give me the staging preview URL.
+</code></pre>
+</blockquote>
+<p>Then, as always: open the staging URL, do your one human review, and click <strong>Publish</strong> yourself.</p>
+<p><strong>How the snapshot name works — learn to read it once:</strong></p>
+<pre><code>backups/ayurvedichealingvillage.com/weight-loss--2026-07-18T14-32-07.html
+        └────────── domain ───────┘ └── page ──┘ └── IST, to the second ──┘
+</code></pre>
+<ol>
+<li><strong><code>[domain]</code></strong> — which site. One folder per site, nothing ever mixed.</li>
+<li><strong><code>[page]</code></strong> — which page (the slug).</li>
+<li><strong><code>YYYY-MM-DDTHH-MM-SS</code></strong> — when, in <strong>IST, to the second</strong>. Two publishes on the same day can never collide, and the timestamp lines up with git&#39;s own second-precision commit stamps (<code>git log --format=%ci</code>) — so &quot;which snapshot came before which commit&quot; is always a fact you read, never a mystery you reconstruct.</li>
+<li><strong><code>backups/</code> is committed.</strong> Every snapshot doubles into git history. Two independent copies of every pre-publish state, forever, for free.</li>
+</ol>
+<blockquote>
+<p><strong>✅ What this buys you:</strong> every WordPress page now has the same guarantee factory pages get from git — a known-good copy of the moment before every change, findable in one <code>ls</code>, restorable in one paste (Recipe 6). Nobody remembered anything. The machine did.</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ If you ever catch yourself pasting a publish prompt WITHOUT Step 1 in it, stop.</strong> That prompt is outdated — the snapshot step is not optional garnish, it is the backup system. Fix the prompt, then publish.</p>
+</blockquote>
+<hr>
+<h3>Recipe 7 — THE PAPER TRAIL (closes every rollback, no exceptions)</h3>
+<p><strong>When:</strong> always. After Recipes 1 through 6, every single time.</p>
+<ol>
+<li><p>Paste this into Claude Code:</p>
+<blockquote>
+<p><strong>PROMPT BOX — &quot;Log the rollback in the ledger&quot;</strong></p>
+<pre><code>Open content/ledger.yaml and find the row for [page/item].
+Append to its notes: field:
+  &quot;ROLLBACK [YYYY-MM-DD HH:MM:SS IST] — [what was wrong, one line]
+   — undone with Recipe [1-6] — proper fix coming via [PR #n / the pipeline].&quot;
+Timestamp to the second, IST. Change nothing else in the file.
+Commit on a branch and open a PR.
+</code></pre>
+</blockquote>
+</li>
+<li><p>Message Abilash (WhatsApp or email), one plain-English line: <em>what</em> was wrong, <em>what</em> you rolled back to, <em>how</em> the real fix is coming. For Recipe 5 (a safety take-down), send this message the moment the page is down.</p>
+</li>
+<li><p>If the item&#39;s Drive folder says <strong>3 — Published</strong> but the page is now down or reverted, update the item&#39;s row in the <strong>Pipeline Tracker</strong> sheet too — the trackers must never claim a state the internet contradicts.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>⚠️ Why the One Rule is a hard rule:</strong> a rollback nobody logged is a mistake nobody learns from — and three months later someone &quot;fixes&quot; the page back to the broken version, because the record said everything was fine. The ledger note costs one paste. The silence costs a repeat of the whole incident.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>✅ DEEPU&#39;S UNDO CHECKPOINT (the whole section in five lines)</strong></p>
+<ol>
+<li>Factory page → git is the backup: revert the PR (1), instant-rollback Vercel (2), or restore one file (3).</li>
+<li>WordPress page → Revisions (4), Switch-to-draft with your own hand (5), or the <code>backups/</code> snapshot (6).</li>
+<li>Emergency? Take it down first (2 or 5), undo properly second.</li>
+<li>Every WordPress publish snapshots itself first — because it&#39;s inside the publish prompt, not inside your memory.</li>
+<li>Every rollback ends with Recipe 7: ledger note + message to Abilash. <strong>Never fix silently.</strong></li>
+</ol>
+</blockquote>
+<hr>
+<p><em>Kairali — For Deepu v1.0 (18 Jul 2026). Companion: <code>wordpress-gutenberg-setup.md</code> (the full research + two-track security model) · the Team Workbook (the pipeline) · <code>scripts/wp-snapshot.mjs</code> (the automatic backup, built + tested 18 Jul).</em></p>

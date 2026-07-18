@@ -1,11 +1,11 @@
 {
   "meta": {
-    "updated": "2026-07-17 IST",
+    "updated": "2026-07-18 IST",
     "as_of_commit": "087c8cf",
     "sprint": "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)",
-    "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*"
+    "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
   },
-  "generatedFrom": "2026-07-17 IST",
+  "generatedFrom": "2026-07-18 IST",
   "stageOrder": [
     "ideation",
     "research",
@@ -91,6 +91,15 @@
       "tokens_spent": null,
       "cost_inr": null,
       "hours": null
+    },
+    {
+      "name": "Marketing content pipeline (Team Workbook)",
+      "status": "active",
+      "next_milestone": "MERGE branch content/team-playbook-v4 (one-link Playbook on kairali.ai: /playbook wizard + guides + access page; GO science ingested; battle-tested + clean build) -> then Deepu one-time setup (Part 4) -> first item through the pipeline. Old kairali-team-workbook.vercel.app superseded after merge.",
+      "due": null,
+      "tokens_spent": null,
+      "cost_inr": null,
+      "hours": null
     }
   ],
   "sites": [
@@ -107,8 +116,8 @@
       "entity": "KTAHV",
       "stage": "research",
       "owner": "Abilash",
-      "blocker": "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered; clinical sign-off Dr. Deepu John",
-      "updated": "2026-07-17"
+      "blocker": "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered; clinical sign-off Dr. Deepu John. NEW 18 Jul: 10 legacy .html landing pages route via the content pipeline once Deepu scaffolds sites/ (Workbook Part 4 one-time setup #1)",
+      "updated": "2026-07-18"
     },
     {
       "name": "kairalicenters.com",
@@ -291,8 +300,8 @@
       "entity": "Kairali Group (blog)",
       "stage": "live",
       "owner": "Abilash",
-      "blocker": "Live WordPress (web-dev-executed); mine + security-screen before any rebuild",
-      "updated": "2026-07-15"
+      "blocker": "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. NEW 18 Jul: Roshni's fast-blog pipeline awaits the sites/whyayurveda.org content-home scaffold (Workbook Part 4 one-time setup #2)",
+      "updated": "2026-07-18"
     },
     {
       "name": "kairali.ai",

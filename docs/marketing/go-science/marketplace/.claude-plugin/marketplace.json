@@ -1,0 +1,15 @@
+{
+  "name": "go-science",
+  "metadata": {
+    "description": "GO Science — Akshar Yadav's Get Overbooked marketing program assistant"
+  },
+  "plugins": [
+    {
+      "name": "go-science",
+      "source": "./",
+      "description": "GO Program marketing science assistant — 13-step framework, Four-Phase, MCB, KIT, ARC, IRO, and more",
+      "version": "1.0.0",
+      "license": "MIT"
+    }
+  ]
+}

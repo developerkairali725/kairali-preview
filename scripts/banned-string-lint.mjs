@@ -388,6 +388,16 @@ export const RULES = [
     appliesTo: "both",
     why: 'CLAUDE.md LOCKED FACTS — two Deepus: "Deepu" is the web developer; "Dr. Deepu John" is the chief physician. On a shipped page the physician\'s name is always written in full: a truncated "Dr. Deepu" or a bare "Deepu John" on a medical byline is the conflation the rulebook forbids.',
     scan: (ctx) => {
+      // EXEMPTION — sites/kairali.ai ONLY. That site is the INTERNAL, noindex
+      // ops manual (Fleet Pulse + the team Playbook) whose subject matter IS
+      // Deepu-the-developer: the publisher role appears ~130 times by design.
+      // This rule's assumption — every bare "Deepu" on a shipped page is a
+      // truncated physician byline — is false there and only there. Patient-
+      // facing sites keep the rule at FULL strength. Same standing internal-
+      // site ruling as D-RULE-MATRIX-EXEMPT (factory-matrix-lint), and like
+      // that exemption it lives HERE, loudly, not in a config nobody reads.
+      // Ratified by Abilash via merge of PR #109 (18 Jul 2026).
+      if (ctx.file && ctx.file.includes("sites/kairali.ai/")) return [];
       /** @type {Hit[]} */
       const hits = [];
       ctx.lines.forEach((line, i) => {
@@ -437,7 +447,7 @@ export function scanText(text, { file = "<text>", kind, rules = RULES }) {
     return lo + 1;
   };
 
-  const ctx = { text: scanned, lines, lineAt };
+  const ctx = { text: scanned, lines, lineAt, file };
   const applies = kind === "code" ? "code" : "content";
 
   /** @type {Finding[]} */

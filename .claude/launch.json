@@ -80,6 +80,16 @@
         "4314"
       ],
       "port": 4314
+    },
+    {
+      "name": "kairali-ai",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--filter",
+        "@kairali/site-kairali-ai",
+        "dev"
+      ],
+      "port": 3000
     }
   ]
 }
