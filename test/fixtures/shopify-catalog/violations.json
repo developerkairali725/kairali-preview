@@ -1,0 +1,77 @@
+{
+  "products": [
+    {
+      "handle": "",
+      "title": "No Handle Product",
+      "body_html": "<p>A classical Ayurvedic massage oil prepared under WHO-GMP conditions for daily use.</p>",
+      "vendor": "Kairali",
+      "product_type": "Massage Oil",
+      "tags": "massage, oil",
+      "status": "active",
+      "published_at": "2026-07-01T00:00:00+05:30",
+      "seo_title": "No Handle Product",
+      "seo_description": "Classical Ayurvedic massage oil for daily use.",
+      "variants": [
+        { "sku": "NH-1", "price": "250.00", "compare_at_price": "", "harmonized_system_code": "330590", "currency": "INR" }
+      ],
+      "images": [{ "src": "https://cdn.example.com/nh-1.jpg", "alt": "Massage oil bottle" }]
+    },
+    {
+      "handle": "mixed-currency-product",
+      "title": "Mixed Currency Product",
+      "body_html": "<p>A classical Ayurvedic massage oil prepared under WHO-GMP conditions for daily use.</p>",
+      "vendor": "Kairali",
+      "product_type": "Massage Oil",
+      "tags": "massage, oil",
+      "status": "active",
+      "published_at": "2026-07-01T00:00:00+05:30",
+      "seo_title": "Mixed Currency Product",
+      "seo_description": "Classical Ayurvedic massage oil for daily use.",
+      "variants": [
+        { "sku": "MC-1", "price": "20.00", "compare_at_price": "", "harmonized_system_code": "330590", "currency": "USD" }
+      ],
+      "images": [{ "src": "https://cdn.example.com/mc-1.jpg", "alt": "Massage oil bottle" }]
+    },
+    {
+      "handle": "no-variant-product",
+      "title": "No Variant Product",
+      "body_html": "<p>A classical Ayurvedic massage oil prepared under WHO-GMP conditions for daily use.</p>",
+      "vendor": "Kairali",
+      "product_type": "Massage Oil",
+      "tags": "massage, oil",
+      "status": "active",
+      "published_at": "2026-07-01T00:00:00+05:30",
+      "seo_title": "No Variant Product",
+      "seo_description": "Classical Ayurvedic massage oil for daily use.",
+      "variants": [],
+      "images": [{ "src": "https://cdn.example.com/nv-1.jpg", "alt": "Massage oil bottle" }]
+    },
+    {
+      "handle": "bad-price-product",
+      "title": "Bad Price Product",
+      "body_html": "<p>A classical Ayurvedic massage oil prepared under WHO-GMP conditions for daily use.</p>",
+      "vendor": "Kairali",
+      "product_type": "Massage Oil",
+      "tags": "massage, oil",
+      "status": "active",
+      "published_at": "2026-07-01T00:00:00+05:30",
+      "seo_title": "Bad Price Product",
+      "seo_description": "Classical Ayurvedic massage oil for daily use.",
+      "variants": [
+        { "sku": "BP-1", "price": "abc", "compare_at_price": "", "harmonized_system_code": "330590", "currency": "INR" }
+      ],
+      "images": [{ "src": "https://cdn.example.com/bp-1.jpg", "alt": "Massage oil bottle" }]
+    }
+  ],
+  "custom_collections": [
+    {
+      "handle": "banned-filler-collection",
+      "title": "Signature Range",
+      "body_html": "<p>A bespoke, world-class range for the discerning customer.</p>"
+    }
+  ],
+  "smart_collections": [],
+  "pages": [
+    { "handle": "empty-page", "title": "Empty Page", "body_html": "" }
+  ]
+}

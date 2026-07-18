@@ -1,0 +1,43 @@
+{
+  "products": [
+    {
+      "handle": "kairali-hair-care-oil",
+      "title": "Kairali Hair Care Oil 200 ml",
+      "body_html": "<p>A classical Ayurvedic hair oil prepared under WHO-GMP conditions. It is not a cure for cancer or any disease; use it alongside the advice of your treating medical team.</p>",
+      "vendor": "Kairali",
+      "product_type": "Hair Oil",
+      "tags": "hair oil, ayurveda",
+      "status": "active",
+      "published_at": "2026-07-01T00:00:00+05:30",
+      "seo_title": "Kairali Hair Care Oil 200 ml",
+      "seo_description": "Classical Ayurvedic hair oil, prepared under WHO-GMP conditions.",
+      "variants": [
+        {
+          "sku": "KHC-200",
+          "price": "495.00",
+          "compare_at_price": "650.00",
+          "harmonized_system_code": "330590",
+          "currency": "INR"
+        }
+      ],
+      "images": [
+        { "src": "https://cdn.example.com/khc-200.jpg", "alt": "Kairali Hair Care Oil bottle" }
+      ]
+    }
+  ],
+  "custom_collections": [
+    {
+      "handle": "hair-care",
+      "title": "Hair Care",
+      "body_html": "<p>Classical Ayurvedic oils and cleansers for everyday hair care.</p>"
+    }
+  ],
+  "smart_collections": [],
+  "pages": [
+    {
+      "handle": "about-kairali",
+      "title": "About Kairali",
+      "body_html": "<p>Kairali Ayurvedic Products has manufactured classical formulations under WHO-GMP conditions since 1908. Write to info@kairali.com.</p>"
+    }
+  ]
+}
