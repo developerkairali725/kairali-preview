@@ -527,3 +527,8 @@ Marketing coverage split, stated while filling the Gate B email recipient: **Anu
 - Q-KC4 CLOSED: Hostinger mirror agency unknown/not important — trace via Sunaj if ever needed.
 - D-GURU-PRICES: Anupam confirms kairali.guru programme prices before its Wave-2 rebuild ships.
 - Sweep residue (no owner input needed): log merge=union stays (status quo per recommendation); ktahv.com 301 location routed to Sunaj; TARIFF_MODE/BOOKING_ROUTE live in the WP workspace (nothing here waits); stale BACKLOG pwmgr line to be cleaned (D-PWMGR already DECLINED).
+
+## 2026-07-18 19:47:52 IST — Abilash, veto waiver + build GO (in-chat)
+- D-VETO-WAIVED-18JUL: the overnight veto window for tonight's Tier-2 batch is WAIVED — golden-page builds start immediately for: ayurvedafranchise, kairaliequipment, villaraag, kairaliorganic, theblushlounge, bulkayurvedaoils, bulkayurvedaproducts, ktahv-lp-batch (golden LP panchkarma). kairbykairali waits on its design rework; kairalicenters stays in the Monday rebuild wave. Owner's framing on record: multiple humans still check everything before live — the agent is the medium making ideation→design→implementation→deployment→maintenance fast.
+- Gate rows for the above are SIGNED by the agent citing D-AUTOMERGE-TIERS + this waiver + each site's dual-AI evidence path.
+- Owner CONFIRMED both Gmail drafts SENT (Astha/Anupam canonical socials; Vikash GA4/GTM) — reply-tracking joins the mailbox round.
