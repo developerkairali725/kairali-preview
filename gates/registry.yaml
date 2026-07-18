@@ -39,7 +39,7 @@
 #   applicability     — commerce / organic / landing, per the law above.
 
 version: 1
-updated: "2026-07-18 18:08:47 IST"
+updated: "2026-07-18 20:09:55 IST"
 classes: [commerce, organic, landing]
 
 gates:
@@ -595,6 +595,19 @@ gates:
     status: built
     script_or_agent_ref: ".claude/agents/design-qa.md — runs in parallel with seo-aeo-geo-auditor after EVERY build/visual change (CLAUDE.md rule n), both reports attached as evidence"
     source: "CLAUDE.md rule (n); .claude/agents/design-qa.md"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: go-science-conformance
+    name: "GO-science conformance — MCB + MoA + look (\"What would Akshar say?\")"
+    what_it_verifies: "Every site/LP page conforms to Akshar Yadav's GO science per docs/marketing/go-science/ — CONTENT: curiosity hook rooted in the declared MoA's secret desire, big-promise support, small non-pressuring CTA, signature-MCB anchoring, Market-2.0-specific MoA (ideal group, not misfits), NDFF grounded never invented; AND LOOK (amendment, 18 Jul 19:58 IST): the rendered page is psychologically attractive to its MoA at its awareness stage — visual hierarchy, imagery, CTA psychology, trust signals — judged on desktop AND mobile screenshots with ROI as the key metric. Applied DURING build (standing guideline) and AT THE LAST as the final pre-ship pass; both sections blocking; FAIL = content/look rebuilt or refixed, never shipped around"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "scripts/go-science-audit.mjs — rubric derived VERBATIM from docs/marketing/go-science/ (fail-closed on doc drift; ambiguities flagged to QUESTIONS.md Q-GO-SCIENCE-RUBRIC, never guessed); an evaluating agent answers the rubric against page source + strategy artifact + desktop/mobile screenshots; findings hash-bound to the judged bytes; evidence append-only at launches/<domain>/go-science/ — exit 0 only on all-criteria PASS"
+    source: "DIRECTIVES.md D-20260718-20 + DECISIONS.md D-GO-SCIENCE-GATE incl. 19:58:22 IST look/ROI amendment (Abilash in-chat voice, 18 Jul 2026); extends D-AKSHAR-ROLE / D-20260718-02"
     applicability:
       commerce: required
       organic: required
