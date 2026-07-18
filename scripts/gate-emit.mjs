@@ -29,10 +29,12 @@
  * a local run yields runner:"local", which matrix-walk correctly rejects as
  * "iteration evidence, not ship evidence" (§0.2), and any verdict committed by
  * a human or agent fails provenance. A gate flips to PROVEN only when a CI job
- * runs the emitter and commits the verdict. That CI wiring is DELIBERATELY NOT
- * in this file's tranche: per the O6 precedent (generator shipped un-wired;
- * wiring is a separate ratified change), making these emitters required in CI
- * is a ratifiable change for Abilash, not a default this file takes.
+ * runs the emitter and commits the verdict. That CI wiring shipped un-wired in
+ * tranche 1 (O6 precedent: wiring is its own ratified change) and was RATIFIED
+ * by Abilash on 18 Jul 2026 (DECISIONS.md D-EMITTER-WIRING, weekend-unblock
+ * walk): the `emit-verdicts` job in .github/workflows/factory-gate.yml now
+ * runs scripts/ci-emit-verdicts.mjs on every main push and commits the
+ * verdicts as github-actions[bot].
  *
  * ARTIFACT BINDING, stated honestly. G3-PRE binds the artifact it judges
  * (docs/keywords/<dir>/demand.json — §0.2's own example). The build/lint gates
@@ -48,6 +50,7 @@
  * USAGE
  *   node scripts/gate-emit.mjs --site <domain> --gate <G6-BUILD|G6-LINT|G3-PRE>
  *   node scripts/gate-emit.mjs --list
+ *   node scripts/ci-emit-verdicts.mjs   # the CI wiring: all emitters × the matrix site set
  *
  * EXIT CODES (house rule): 0 = emitted PASS, or NOT ARMED (loud, nothing
  * written — same convention as CI's S3 "not armed" step) · 2 = emitted FAIL

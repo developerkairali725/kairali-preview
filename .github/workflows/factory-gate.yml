@@ -48,6 +48,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       site_affecting: ${{ steps.diff.outputs.site_affecting }}
+      # emit_affecting gates the emit-verdicts job below (D-EMITTER-WIRING):
+      # true when the diff touches anything the verdict emitters JUDGE.
+      emit_affecting: ${{ steps.diff.outputs.emit_affecting }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -61,8 +64,10 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
           if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
-            echo "::notice::No usable base SHA — defaulting to site_affecting=true (full matrices)."
-            echo "site_affecting=true" >> "$GITHUB_OUTPUT"; exit 0
+            echo "::notice::No usable base SHA — defaulting to site_affecting=true (full matrices) and emit_affecting=true."
+            echo "site_affecting=true" >> "$GITHUB_OUTPUT"
+            echo "emit_affecting=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
           changed=$(git diff --name-only "$BASE"...HEAD)
           echo "changed files vs merge-base:"; echo "$changed" | sed 's/^/  · /'
@@ -73,6 +78,22 @@ jobs:
           else
             echo "site_affecting=false" >> "$GITHUB_OUTPUT"
             echo "::notice::No site-affecting paths in this diff — every factory-spec + lighthouse matrix job runs with ZERO steps and reports success in seconds. They arm automatically on any sites/, packages/, tests/, scripts/, workflow or lockfile change."
+          fi
+          # EMIT-affecting = what the verdict emitters JUDGE (D-EMITTER-WIRING).
+          # Differences from the site pattern, each a decision: tests/ is OUT
+          # (no emitter judges the spec suite's own files); docs/keywords/ is IN
+          # (G3-PRE judges the S3 artifacts, invisible to the site pattern);
+          # audits/ is deliberately OUT — the bot's own verdict commit must
+          # never re-arm the emit job (second recursion guard beside [skip ci]).
+          # Skipping on a non-judged diff weakens nothing: an unchanged artifact
+          # keeps its committed verdict's hash-binding valid (§S9(d)2), and a
+          # re-run would only rewrite identical evidence with newer timestamps.
+          emit_pattern='^(sites/|packages/|scripts/|docs/keywords/|\.github/workflows/|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|turbo\.json)'
+          if echo "$changed" | grep -E "$emit_pattern" | grep -Ev "$exempt" | grep -q .; then
+            echo "emit_affecting=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "emit_affecting=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No emitter-judged paths in this diff — emit-verdicts skips; every committed verdict keeps its validity (nothing it binds changed, §S9(d)2)."
           fi
   brand-lint:
     runs-on: ubuntu-latest
@@ -310,3 +331,101 @@ jobs:
         run: node scripts/lighthouse-gate.mjs
         env:
           SITE: ${{ matrix.site }}
+
+  # VERDICT EMITTERS → CI (D-EMITTER-WIRING, Abilash's ratification 18 Jul 2026:
+  # "wire the #126 emitters into CI as its own PR"). PR #126 built the emitters
+  # and shipped them DELIBERATELY un-wired per the O6 precedent; this job is the
+  # wiring. It re-runs the REAL enforcing commands through scripts/gate-emit.mjs
+  # (via scripts/ci-emit-verdicts.mjs) at the merged commit and commits the §0.2
+  # verdicts their real exit codes produced — the change that lets matrix-walk's
+  # unproven count start dropping on REAL evidence, never on a hand-written file.
+  #
+  # WHY MAIN-PUSH ONLY, NEVER PR-TIME. A verdict is ship evidence only when its
+  # file was COMMITTED BY A CI JOB (§0.2 provenance). This repo squash-merges:
+  # the squash commit is authored by the human who merges (see d27e6bf, #126's
+  # own merge commit), so a verdict committed onto a PR branch loses its CI
+  # authorship at the exact moment it reaches main — PR-time emission can never
+  # become ship evidence. Post-merge emission also binds each verdict to the
+  # tree that is actually ON main, not to a pre-merge tree that may never exist
+  # again after the squash.
+  #
+  # NOT a required-check context, so a JOB-level `if` is safe here — the
+  # step-level dance above exists only because required matrix contexts must
+  # always report (CORRECTED 18 Jul lesson, PR #118/#120). Recursion guards,
+  # both loud: the bot commit carries [skip ci], and audits/ is outside
+  # emit_pattern, so the verdict commit can never re-arm the job that wrote it.
+  #
+  # RULE g: nothing is weakened. Every enforcing step above is byte-identical;
+  # this job only RECORDS what those same commands' real exit codes were at the
+  # merged commit — FAIL included (a FAIL verdict is committed exactly like a
+  # PASS; refusing to record a failure would be falsification by omission).
+  emit-verdicts:
+    needs: changes
+    if: github.event_name == 'push' && needs.changes.outputs.emit_affecting == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push rights for the verdict commit — scoped to THIS job; the workflow default stays contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the push step rebases onto wherever main moved meanwhile
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # Exit 2 = at least one FAIL verdict (surfaced red BELOW, after the
+      # commit step — evidence first). Exit 1 = harness error (§0.6 probe
+      # misfire): nothing from that run is evidence, and the script aborts
+      # before writing. continue-on-error lets the commit step run either way.
+      - name: Emit verdicts (real enforcing commands, real exit codes — §0.2)
+        id: emit
+        continue-on-error: true
+        run: node scripts/ci-emit-verdicts.mjs
+
+      - name: Preserve run evidence (verdicts survive even if the push lane is blocked)
+        uses: actions/upload-artifact@v4
+        with:
+          name: verdicts-${{ github.sha }}
+          path: audits/
+          if-no-files-found: ignore
+
+      # All values interpolated below are runner-controlled (sha/run id/repo),
+      # never event text — same injection doctrine as front-gate's BASE.
+      - name: Commit verdicts as github-actions[bot] (§0.2 provenance)
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$(git status --porcelain -- audits/)" ]; then
+            echo "no new verdicts — nothing to commit (not-armed absence stays absence)"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- audits/
+          git commit -m "CI verdicts @ ${GITHUB_SHA:0:9} [skip ci]" \
+            -m "Emitted by the emit-verdicts job from the real exit codes of the enforcing commands (§0.2). Run: ${RUN_URL}"
+          for i in 1 2 3; do
+            if out=$(git push origin HEAD:main 2>&1); then
+              echo "$out"; echo "verdicts committed to main with CI provenance."; exit 0
+            fi
+            echo "$out"
+            if echo "$out" | grep -Eqi "protected branch|GH006|pull request"; then
+              echo "::error::main's branch protection rejected the bot push — EXPECTED until the owner grants the github-actions app a bypass (QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE, 18 Jul 2026). The verdicts are preserved in this run's artifact but are NOT ship evidence until a CI job commits them (§0.2). The allowance is Abilash's click; weakening protection is never the agent's lane."
+              exit 1
+            fi
+            git pull --rebase origin main || exit 1
+          done
+          echo "::error::push failed 3 times for a non-protection reason — see the log above"
+          exit 1
+
+      - name: Surface FAIL verdicts / harness errors (after the evidence is committed)
+        if: steps.emit.outcome == 'failure'
+        run: |
+          echo "::error::the emit step exited non-zero — either an enforcing command FAILED (its FAIL verdict was still committed: a FAIL is evidence too) or the §0.6 harness refused to emit. See the emit step log."
+          exit 2
