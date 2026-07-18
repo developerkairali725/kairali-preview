@@ -1,0 +1,51 @@
+/* ============================================================================
+   BLUSH LOUNGE BRAND TOKENS — packages/ui/blush-tokens.css
+   v1.0 · 18 Jul 2026 · Source of truth: the APPROVED "Champagne Editorial"
+   design direction (launches/theblushlounge.com/DESIGN_DIRECTION.md, MODE B,
+   signed 18 Jul 2026 per D-VETO-WAIVED-18JUL; dual-AI pass-2 evidence at
+   launches/theblushlounge.com/design-review/2026-07-18-pass2.md).
+
+   SCOPE: theblushlounge.com ONLY — Sneha Chowdhary's PERSONAL beauty brand
+   (site.config brand: "blush"). No Kairali entity tokens apply here and these
+   are never applied to any Kairali/KTAHV/Raag surface. Same per-brand-sheet
+   law as raag-tokens.css (the QUESTIONS.md "own token file?" item — answered
+   YES by the signed design direction).
+
+   Anchors (mined, never invented — docs/media/blushlounge-image-manifest.md):
+   · gold-foil + ink circular logo (script "bl" monogram, tracked-caps wordmark)
+   · her IG grid: champagne/ivory couture, warm low-key light, luminous skin
+   · Allura + Montserrat continuity from the live 2018 site; Fraunces for the
+     editorial-serif press register (NOT Playfair — the AI-generic default).
+
+   NO Blush brand manual exists today; if one surfaces it WINS over this sheet
+   (CLAUDE.md doctrine (d)). Hexes live HERE and nowhere else on the site —
+   packages/ui token sheets are the only legal homes for color literals.
+   ========================================================================== */
+
+:root {
+  /* ---------- COLOUR (sampled from her assets — DESIGN_DIRECTION table) --- */
+  --blush-ink:            #211A16; /* warm near-black — her photos' shadow floor */
+  --blush-ink-soft:       #4A3F37; /* body text on ivory (9.0:1 / 7.2:1 AA) */
+  --blush-ivory:          #FAF6EF; /* studio-wall ivory — the page field */
+  --blush-champagne:      #C9AE7E; /* sampled from the logo's gold foil — rules/accents, never text on ivory */
+  --blush-champagne-deep: #A08652; /* hover / deepened rules / LARGE display text only — measured 3.23:1 on ivory, NOT AA for small text (Lighthouse A5, 18 Jul) */
+  --blush-champagne-text: #7E683F; /* AA champagne for small caps/labels — 4.95:1 on ivory, 5.33:1 on white (A5 fix 2026-07-18 22:55 IST; same foil hue, deepened) */
+  --blush-rose:           #D8A79E; /* the quiet "blush" — sparing accents only */
+  --blush-white:          #FFFFFF;
+
+  /* ---------- DERIVED SURFACES (so site CSS never needs a raw color fn) --- */
+  /* warm gradient scrim for text legibility over full-bleed imagery
+     (pass-2 mockup: rgba(33,26,22,.38) → transparent 42%) */
+  --blush-scrim: linear-gradient(to top, rgba(33, 26, 22, 0.38), transparent 42%);
+  --blush-hairline: rgba(33, 26, 22, 0.14);  /* trust-bar / section rules */
+  --blush-shadow-warm: 0 18px 44px rgba(33, 26, 22, 0.16);
+
+  /* ---------- TYPE (DESIGN_DIRECTION table; fonts self-hosted via next/font) */
+  --font-display: var(--font-fraunces, Georgia), Georgia, serif;   /* editorial serif */
+  --font-ui:      var(--font-montserrat, system-ui), system-ui, sans-serif; /* wordmark caps continuity */
+  --font-script:  var(--font-allura, cursive), cursive;            /* monogram lineage — HARD CAP one accent per page */
+  --track-caps: 0.22em;   /* matches the logo wordmark's letterspacing */
+
+  /* ---------- FOCUS (A4 law: visible focus on EVERY control) -------------- */
+  --blush-focus-ring: 0 0 0 3px rgba(160, 134, 82, 0.85); /* champagne-deep ring, box-shadow form */
+}

@@ -690,6 +690,46 @@ importers:
         specifier: ^5.8.0
         version: 5.9.3
 
+  sites/theblushlounge.com:
+    dependencies:
+      '@kairali/analytics':
+        specifier: workspace:*
+        version: link:../../packages/analytics
+      '@kairali/consent':
+        specifier: workspace:*
+        version: link:../../packages/consent
+      '@kairali/forms':
+        specifier: workspace:*
+        version: link:../../packages/forms
+      '@kairali/schema':
+        specifier: workspace:*
+        version: link:../../packages/schema
+      '@kairali/seo':
+        specifier: workspace:*
+        version: link:../../packages/seo
+      '@kairali/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      next:
+        specifier: ^15.4.0
+        version: 15.5.20(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@playwright/test@1.61.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react:
+        specifier: ^19.2.7
+        version: 19.2.7
+      react-dom:
+        specifier: ^19.2.7
+        version: 19.2.7(react@19.2.7)
+    devDependencies:
+      '@types/node':
+        specifier: ^24.0.0
+        version: 24.13.3
+      '@types/react':
+        specifier: ^19.1.0
+        version: 19.2.17
+      typescript:
+        specifier: ^5.8.0
+        version: 5.9.3
+
   sites/whatisayurveda.com:
     dependencies:
       '@kairali/analytics':

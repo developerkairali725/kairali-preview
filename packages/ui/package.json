@@ -8,6 +8,7 @@
     ".": "./src/index.ts",
     "./brand-tokens.css": "./brand-tokens.css",
     "./raag-tokens.css": "./raag-tokens.css",
+    "./blush-tokens.css": "./blush-tokens.css",
     "./brand-lint": "./src/brand-lint.js"
   },
   "bin": {

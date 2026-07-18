@@ -1,0 +1,1221 @@
+/* theblushlounge.com — "Champagne Editorial" (signed MODE B direction,
+   launches/theblushlounge.com/DESIGN_DIRECTION.md + design-review pass-2).
+   TOKENS ONLY: every color comes from @kairali/ui/blush-tokens.css (imported
+   in app/layout.tsx). No hex, no raw color functions in this file — brand
+   lint (brand: "blush") enforces it. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--blush-ivory);
+  color: var(--blush-ink);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* A4 law: visible focus on EVERY control (browser layer verifies) */
+:focus-visible {
+  outline: 2px solid var(--blush-champagne-deep);
+  outline-offset: 3px;
+}
+
+/* ---------- shared type ---------- */
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--blush-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 44px;
+  height: 1px;
+  background: var(--blush-champagne);
+  flex: none;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 340;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+.display em {
+  font-style: italic;
+  font-weight: 380;
+  color: var(--blush-champagne-deep);
+}
+
+.script-accent {
+  font-family: var(--font-script);
+  line-height: 1;
+}
+
+/* ---------- buttons (mockup: rectangular, tracked caps) ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px; /* touch-target law ≥44px */
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  padding: 0 28px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn--solid {
+  background: var(--blush-ink);
+  color: var(--blush-ivory);
+}
+
+.btn--solid:hover {
+  background: var(--blush-champagne-deep);
+}
+
+.btn--line {
+  border: 1px solid var(--blush-ink);
+  color: var(--blush-ink);
+}
+
+.btn--line:hover {
+  border-color: var(--blush-champagne-deep);
+  color: var(--blush-champagne-deep);
+}
+
+.btn--ivory {
+  background: var(--blush-ivory);
+  color: var(--blush-ink);
+}
+
+.btn--ivory:hover {
+  background: var(--blush-champagne);
+  color: var(--blush-ink);
+}
+
+/* ============================================================ HERO
+   (pass-2 mockup, implemented faithfully) */
+
+.hero {
+  display: grid;
+  grid-template-columns: 47% 53%;
+  min-height: 100vh;
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 56px 40px 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand__mark {
+  font-family: var(--font-script);
+  font-size: 44px;
+  line-height: 1;
+  color: var(--blush-ink);
+}
+
+.brand__word {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+}
+
+.brand__word small {
+  display: block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--blush-champagne-text); /* A5 contrast fix — AA on ivory */
+  margin-top: 4px;
+}
+
+.hero__center {
+  max-width: 560px;
+}
+
+.hero__center .eyebrow {
+  margin-bottom: 26px;
+}
+
+.hero h1 {
+  font-size: clamp(44px, 4.6vw, 66px);
+  line-height: 1.06;
+}
+
+.lede {
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+  max-width: 44ch;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.trust {
+  border-top: 1px solid var(--blush-hairline);
+  padding-top: 18px;
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.trust span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blush-ink);
+}
+
+.trust b {
+  color: var(--blush-ink);
+  font-weight: 600;
+}
+
+.trust .trust__label {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--blush-champagne-text); /* A5 contrast fix — AA on ivory */
+  flex-basis: 100%;
+}
+
+.hero__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__image .hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.hero__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blush-scrim);
+  pointer-events: none;
+}
+
+/* mobile-only WhatsApp action over the image's lower edge (pass-2 fix) —
+   a STATIC CTA, not the fleet bubble: D-BL-BUBBLE-EXEMPT stands */
+.wa-over {
+  display: none;
+}
+
+.credit {
+  position: absolute;
+  left: 28px;
+  bottom: 22px;
+  z-index: 2;
+  color: var(--blush-ivory);
+  text-decoration: none; /* .credit is a link since the battery pass-1 fix */
+  display: block;
+}
+
+.credit .script-accent {
+  font-size: 34px;
+}
+
+.credit .caps {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+/* ============================================================ SECTIONS */
+
+.section {
+  padding: 96px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section__head {
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+
+.section__head h2 {
+  font-size: clamp(30px, 3.2vw, 44px);
+  margin-top: 18px;
+}
+
+.section__head .section-lede {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+  max-width: 54ch;
+}
+
+/* ---------- approach (positioning) ---------- */
+
+.approach {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.approach__media {
+  position: relative;
+}
+
+.approach__media img {
+  width: 100%;
+  height: auto;
+  box-shadow: var(--blush-shadow-warm);
+}
+
+.approach__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 360;
+  font-size: clamp(21px, 2vw, 26px);
+  line-height: 1.45;
+  color: var(--blush-ink);
+  margin-top: 26px;
+}
+
+.approach__body {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--blush-ink-soft);
+  max-width: 52ch;
+}
+
+.approach__body + .approach__body {
+  margin-top: 14px;
+}
+
+/* ---------- services teaser ---------- */
+
+.services {
+  background: var(--blush-white);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--blush-hairline);
+  border: 1px solid var(--blush-hairline);
+}
+
+.service {
+  background: var(--blush-white);
+  padding: 34px 30px 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.service:hover {
+  background: var(--blush-ivory);
+}
+
+.service h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.service p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--blush-ink-soft);
+}
+
+.service .service__cue {
+  margin-top: auto;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blush-champagne-text); /* A5 contrast fix — AA on white */
+}
+
+/* ---------- portfolio strip ---------- */
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portfolio__item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  aspect-ratio: 3 / 4;
+}
+
+.portfolio__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio__item:hover img {
+  transform: scale(1.03);
+}
+
+.portfolio__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blush-scrim);
+  pointer-events: none;
+}
+
+.portfolio__item figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  z-index: 2;
+  color: var(--blush-ivory);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.portfolio__foot {
+  margin-top: 34px;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.textlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch-target law */
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--blush-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--blush-champagne);
+}
+
+.textlink:hover {
+  color: var(--blush-champagne-deep);
+}
+
+/* ---------- academy teaser ---------- */
+
+.academy {
+  background: var(--blush-ink);
+  color: var(--blush-ivory);
+}
+
+.academy .section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.academy .eyebrow {
+  color: var(--blush-champagne);
+}
+
+.academy h2 {
+  font-size: clamp(30px, 3.2vw, 44px);
+  margin-top: 18px;
+  color: var(--blush-ivory);
+}
+
+.academy p {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--blush-ivory);
+  opacity: 0.82;
+  max-width: 52ch;
+}
+
+.academy__list {
+  margin-top: 22px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.academy__list li {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blush-champagne);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.academy__list li::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--blush-champagne-deep);
+  flex: none;
+}
+
+.academy .ctas {
+  margin-top: 30px;
+}
+
+.academy__media img {
+  width: 100%;
+  height: auto;
+  box-shadow: var(--blush-shadow-warm);
+}
+
+/* ---------- closing CTA band ---------- */
+
+.close-cta {
+  text-align: center;
+  padding: 110px 24px;
+}
+
+.close-cta .script-accent {
+  font-size: clamp(38px, 4vw, 54px);
+  color: var(--blush-champagne-deep);
+}
+
+.close-cta h2 {
+  font-size: clamp(32px, 3.6vw, 48px);
+  margin-top: 10px;
+}
+
+.close-cta p {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-cta .ctas {
+  justify-content: center;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  border-top: 1px solid var(--blush-hairline);
+  padding: 54px 64px 44px;
+}
+
+.footer__grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+/* h3 since the A5 heading-order fix (h2 → h4 skipped a level) */
+.footer h3 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blush-champagne-text); /* A5 contrast fix — AA on ivory */
+  margin-bottom: 14px;
+}
+
+.footer__nav,
+.footer__social {
+  list-style: none;
+}
+
+.footer__nav a,
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch-target law */
+  font-size: 12.5px;
+  color: var(--blush-ink-soft);
+  text-decoration: none;
+}
+
+.footer__nav a:hover,
+.footer__social a:hover {
+  color: var(--blush-champagne-deep);
+}
+
+.footer__meta {
+  font-size: 12.5px;
+  line-height: 2;
+  color: var(--blush-ink-soft);
+}
+
+.footer__bottom {
+  max-width: 1280px;
+  margin: 44px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--blush-hairline);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--blush-ink-soft);
+}
+
+/* ============================================================ INNER PAGES
+   (full build — same system as the approved golden page: tokens only,
+   tracked caps, editorial serif, single accent per section) */
+
+.pagehead {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 64px;
+  border-bottom: 1px solid var(--blush-hairline);
+  flex-wrap: wrap;
+}
+
+.pagehead .brand__mark {
+  font-size: 34px;
+}
+
+.pagehead__nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.pagehead__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch-target law */
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--blush-ink-soft);
+}
+
+.pagehead__nav a:hover,
+.pagehead__nav a[aria-current="page"] {
+  color: var(--blush-ink);
+  border-bottom: 1px solid var(--blush-champagne);
+}
+
+.pagehead__wa {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--blush-ivory);
+  background: var(--blush-ink);
+  padding: 0 18px;
+  text-decoration: none;
+}
+
+.pagehead__wa:hover {
+  background: var(--blush-champagne-deep);
+}
+
+.pagehero {
+  padding-top: 72px;
+  padding-bottom: 40px;
+}
+
+.pagehero h1 {
+  font-size: clamp(38px, 4vw, 58px);
+  margin-top: 16px;
+  max-width: 18ch;
+}
+
+.pagehero .section-lede {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+  max-width: 54ch;
+}
+
+/* ---------- portfolio page ---------- */
+
+.filter {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.filter__btn {
+  min-height: 44px;
+  padding: 0 18px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--blush-hairline);
+  color: var(--blush-ink-soft);
+  cursor: pointer;
+}
+
+.filter__btn--on {
+  background: var(--blush-ink);
+  border-color: var(--blush-ink);
+  color: var(--blush-ivory);
+}
+
+.portfolio__grid--page {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ---------- services page ---------- */
+
+.svc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+  scroll-margin-top: 24px;
+}
+
+.svc__head h2 {
+  font-size: clamp(24px, 2.4vw, 34px);
+  margin-top: 14px;
+  line-height: 1.25;
+}
+
+.svc__body .ctas {
+  margin-top: 24px;
+}
+
+.steps {
+  margin-top: 26px;
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 60ch;
+}
+
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ivory);
+  opacity: 0.92;
+}
+
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--blush-champagne);
+  flex: none;
+  line-height: 1.4;
+}
+
+.steps li b {
+  color: var(--blush-ivory);
+}
+
+.academy .approach__body {
+  color: var(--blush-ivory);
+  opacity: 0.82;
+}
+
+/* ---------- academy page ---------- */
+
+.academy-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-top: 0;
+}
+
+.academy-media img {
+  width: 100%;
+  height: auto;
+  box-shadow: var(--blush-shadow-warm);
+}
+
+.offers {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--blush-hairline);
+  border: 1px solid var(--blush-hairline);
+}
+
+.offer {
+  background: var(--blush-ink);
+  padding: 30px 30px 34px;
+}
+
+.offer h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--blush-ivory);
+}
+
+.offer p {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--blush-ivory);
+  opacity: 0.82;
+  max-width: 60ch;
+}
+
+.offer .btn {
+  margin-top: 18px;
+}
+
+.academy__link {
+  color: var(--blush-champagne);
+}
+
+/* ---------- about page ---------- */
+
+.about-intro {
+  padding-top: 24px;
+}
+
+.path {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--blush-hairline);
+  border: 1px solid var(--blush-hairline);
+}
+
+.path__step {
+  background: var(--blush-white);
+  padding: 34px 30px 38px;
+}
+
+.path__step h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 21px;
+}
+
+.path__step p {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+}
+
+.cities {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+.cities__dot {
+  color: var(--blush-champagne-deep);
+}
+
+/* ---------- contact page ---------- */
+
+.contact {
+  padding-top: 24px;
+}
+
+.contact__lanes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.lane h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.lane > p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--blush-ink-soft);
+  max-width: 44ch;
+}
+
+.lane .btn {
+  margin-top: 20px;
+}
+
+.lane__meta {
+  margin-top: 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--blush-ink-soft);
+}
+
+.lane__meta b {
+  display: inline-block;
+  min-width: 96px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blush-champagne-text);
+}
+
+.lane__meta a {
+  color: var(--blush-ink-soft);
+}
+
+.lane__meta a:hover {
+  color: var(--blush-champagne-deep);
+}
+
+/* factory EnquiryForm skinned in blush tokens */
+
+.lane--form .enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: var(--blush-white);
+  border: 1px solid var(--blush-hairline);
+  padding: 34px 30px 38px;
+}
+
+.lane--form .enquiry-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.lane--form .field label,
+.lane--form .field-row label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blush-ink-soft);
+  margin-bottom: 6px;
+}
+
+.lane--form input,
+.lane--form textarea {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--blush-ink);
+  background: var(--blush-ivory);
+  border: 1px solid var(--blush-hairline);
+  padding: 12px 14px;
+  min-height: 44px; /* touch-target law */
+}
+
+.lane--form .field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.lane--form .field-cc {
+  flex: 0 0 84px;
+}
+
+.lane--form .field-phone {
+  flex: 1;
+}
+
+.lane--form .consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--blush-ink-soft);
+}
+
+.lane--form .consent input {
+  width: auto;
+  min-height: 0;
+  margin-top: 3px;
+}
+
+.lane--form .enquiry-error {
+  color: var(--blush-ink);
+  font-size: 13px;
+}
+
+.lane--form .btn-primary {
+  min-height: 48px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  background: var(--blush-ink);
+  color: var(--blush-ivory);
+  border: 0;
+  padding: 0 28px;
+  cursor: pointer;
+}
+
+.lane--form .btn-primary:hover {
+  background: var(--blush-champagne-deep);
+}
+
+.lane--form .enquiry-sent {
+  background: var(--blush-white);
+  border: 1px solid var(--blush-hairline);
+  padding: 34px 30px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ============================================================ CONSENT YIELD
+   (battery pass-1 fix: GS-MCB-5 residual + Gate-2 [6] + beauty B9 — the
+   consent banner covered the hero trust marks at desktop first paint).
+   @kairali/consent flags html[data-consent-open] while the banner shows —
+   its DOCUMENTED yield hook for floating/sticky UI. The layout reserves the
+   banner's height so the four trust marks are visible BEFORE any consent
+   choice. The consent gate itself is untouched (rule g): storage stays
+   denied until a choice — only the layout yields. */
+
+html[data-consent-open] .hero__copy {
+  padding-bottom: 128px;
+}
+
+html[data-consent-open] body {
+  padding-bottom: 168px; /* end-of-scroll content (footer) clears the banner too */
+}
+
+@media (min-width: 901px) {
+  html[data-consent-open] .credit {
+    bottom: 118px; /* the photo credit clears the open banner on desktop */
+  }
+}
+
+/* ============================================================ MOBILE
+   (pass-2 mockup breakpoint: image-first, copy below, over-image CTA) */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .hero__image {
+    order: -1;
+    height: 46vh;
+  }
+
+  .hero__copy {
+    padding: 28px 24px;
+    gap: 26px;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero__center .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+  }
+
+  .lede {
+    margin-top: 16px;
+  }
+
+  .ctas {
+    margin-top: 24px;
+  }
+
+  .btn {
+    padding: 0 20px;
+    min-height: 46px;
+  }
+
+  .credit {
+    bottom: 78px; /* clears the over-image CTA */
+  }
+
+  .wa-over {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    position: absolute;
+    right: 16px;
+    bottom: 18px;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: 600;
+    /* battery pass-1 fix (Gate-2 [3] / beauty B19): the overlay now carries
+       the full verified number — tighter tracking so it fits at 390px */
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--blush-ink);
+    color: var(--blush-ivory);
+    padding: 0 18px;
+    text-decoration: none;
+  }
+
+  .section {
+    padding: 72px 24px;
+  }
+
+  .approach,
+  .academy .section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .footer {
+    padding: 44px 24px 36px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* inner pages at mobile */
+  .pagehead {
+    padding: 18px 24px;
+    gap: 14px;
+  }
+
+  .pagehead__nav {
+    order: 3;
+    flex-basis: 100%;
+    gap: 16px;
+  }
+
+  .pagehead__wa {
+    margin-left: auto;
+  }
+
+  .pagehero {
+    padding-top: 48px;
+  }
+
+  .portfolio__grid--page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .svc,
+  .contact__lanes,
+  .academy-media {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .path {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .service,
+  .portfolio__item img,
+  .textlink {
+    transition: none;
+  }
+}

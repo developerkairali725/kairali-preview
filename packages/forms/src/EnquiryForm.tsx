@@ -13,12 +13,25 @@ export type EnquiryFormProps = {
   formType?: string;
   /** route handler endpoint (same-origin) */
   action?: string;
-  /** /privacy on every Factory site (via @kairali/legal) */
+  /** /privacy on every Factory site (via @kairali/legal). Pass "" (empty) on a
+   *  site whose privacy page does not exist yet — the consent line then renders
+   *  without a dead link (the A12 gap stays loud in the launch checklist, never
+   *  a 404 in a legal sentence). */
   privacyHref?: string;
   /** subject line prefilled (e.g. a centre name) */
   subject?: string;
   heading?: string;
   submitLabel?: string;
+  /** whose name the consent line speaks for. Default "Kairali" (fleet sites).
+   *  External personal brands MUST override (entity law: no Kairali claim on a
+   *  personal brand — e.g. "Blush Lounge"). Added 18 Jul 2026, blushlounge
+   *  full build; default unchanged for every existing site. */
+  brandName?: string;
+  /** when set, renders an optional date input (name="eventDate") with this
+   *  label — the premium-bridal booking pattern (event-date field). Folded
+   *  into the canonical message (frozen CRM spec); absent by default so
+   *  existing forms are unchanged. */
+  eventDateLabel?: string;
   /** data-cta event name on the submit control (Ship Gate A4 / per-site
    *  integrations plan — e.g. kairaliequipment STRATEGY §4 names the RFQ
    *  submit event "quote-request-submit"). Additive; default unchanged. */
@@ -54,6 +67,8 @@ export function EnquiryForm({
   subject,
   heading = "Send an enquiry",
   submitLabel = "Send enquiry",
+  brandName = "Kairali",
+  eventDateLabel,
   submitCta = "enquiry_submit",
   rfq,
 }: EnquiryFormProps) {
@@ -99,7 +114,15 @@ export function EnquiryForm({
           email: fd.get("email"),
           subject: subject ?? fd.get("subject"),
           country: rfq?.country ? fd.get("country") || undefined : undefined,
-          message: preamble ? `${preamble}\n\n${fd.get("message")}` : fd.get("message"),
+          // Non-canonical extras (RFQ preamble + event date) fold into the
+          // canonical message: the CRM payload schema is FROZEN to Satyam's
+          // spec (no new fields), and nothing typed may be lost.
+          message: (() => {
+            const parts = [preamble];
+            if (eventDateLabel && fd.get("eventDate")) parts.push(`Event date: ${fd.get("eventDate")}`);
+            const head = parts.filter(Boolean).join("\n");
+            return head ? `${head}\n\n${fd.get("message")}` : fd.get("message");
+          })(),
           landingPage: typeof window !== "undefined" ? window.location.href : undefined,
           referrer: typeof document !== "undefined" ? document.referrer : undefined,
         }),
@@ -116,7 +139,7 @@ export function EnquiryForm({
   if (state === "sent") {
     return (
       <div className="enquiry-sent" role="status">
-        <p><strong>Thank you — your enquiry has reached us.</strong> Our team will be in touch shortly.</p>
+        <p><strong>Thank you — your enquiry has reached us.</strong> You’ll hear back shortly.</p>
       </div>
     );
   }
@@ -203,6 +226,13 @@ export function EnquiryForm({
         </div>
       )}
 
+      {eventDateLabel ? (
+        <div className="field">
+          <label htmlFor="ef-eventdate">{eventDateLabel}</label>
+          <input id="ef-eventdate" name="eventDate" type="date" />
+        </div>
+      ) : null}
+
       <div className="field">
         <label htmlFor="ef-message">How can we help?</label>
         <textarea id="ef-message" name="message" rows={4} required />
@@ -217,8 +247,14 @@ export function EnquiryForm({
       <label className="consent">
         <input type="checkbox" name="consent" required />
         <span>
-          I agree that Kairali may use my details to respond to this enquiry, as described in the{" "}
-          <a href={privacyHref}>privacy policy</a>.
+          I agree that {brandName} may use my details to respond to this enquiry
+          {privacyHref ? (
+            <>
+              , as described in the <a href={privacyHref}>privacy policy</a>.
+            </>
+          ) : (
+            "."
+          )}
         </span>
       </label>
 

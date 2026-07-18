@@ -799,6 +799,35 @@ The paper's editorial chapter (Part VIII §29) concurs and specifies:
 - Factory law compounds: LANDING_PAGE_DOCTRINE.md, noindex-by-default, single CTA, data-cta
   events (Factory Rules); the go-science gate's MoA psychology runs alongside.
 
+## Chapter: External personal brands (theblushlounge.com · future non-Kairali client/personal sites)
+
+*(Added 2026-07-18 23:25:00 IST by the amendment route the "Every future property" section
+prescribes — theblushlounge.com mapped to NO entity and its pass-2 beauty run correctly refused
+the villa-raag closest-chapter analogue as entity misrouting. Communicate-list grounded in the
+site's OWNER-SIGNED stack: BRIEF.md ("the site should feel like her press features"),
+DESIGN_DIRECTION.md ("Champagne Editorial" — the photograph carries the glamour, the type stays
+precise, restraint IS the sexy) and STRATEGY.md §6. Owner ratification riding:
+QUESTIONS.md Q-BL-BEAUTY-ENTITY.)*
+
+- **The PERSON is the protagonist.** Their real work, their own voice, first person where the
+  brief declares register E. The site must feel like the person's press coverage, never a
+  template — and never a Kairali surface: no Kairali entity claims, no fleet chrome; tokens
+  come from the person's own brand sheet (e.g. `packages/ui/blush-tokens.css`).
+- **Beauty here means credible personal premium:** the visitor believes "this professional is
+  the real, premium thing" — achieved with restraint (the paper's luxury + editorial chapters
+  govern: editing over decoration, typography as character, the work as the dominant idea).
+- **The authority for this entity's communicate-list is the SITE'S OWN signed strategy stack**
+  (brief · strategy · design direction), not any Kairali chapter — the gate judges against
+  what the owner signed for that person.
+- Must answer: who this professional is and what they do, in one glance · what proof exists
+  (real work, press, training) · what services/offers exist and for whom · how an enquiry
+  actually starts and what happens next · where they work (base + travel reach) · what
+  engaging feels like, stated truthfully.
+- Avoid: template-glam clichés and stock imagery · Kairali entity claims on a personal brand ·
+  invented credentials, counts or prices (HARD GATE 6) · absolute delivery promises operations
+  cannot verify · generic "Learn More" CTAs · false luxury (fabricated urgency, countdowns,
+  pop-ups) · burying the person behind decoration.
+
 ## Every future property
 
 New entities/domains inherit this doctrine by declaring their entity chapter (or adding one by
@@ -962,6 +991,14 @@ paper's per-type frameworks, surfaced to the judge verbatim-derived.
       "communicates": ["beauty should disappear", "the content becomes the hero"],
       "register_note": "Ornament is a defect class here. Measure, rhythm, effortless long-form reading; real bylines carry trust. The editorial checklist (paper §29) binds: title, meaningful introduction, author/reviewer info, updated date, ToC for long pieces, citations, related articles, responsible health language. A knowledge institution, not a traffic farm.",
       "avoid": ["excessive animation", "text hemmed in by advertisements", "intrusive subscription prompts", "decorative layouts that break reading continuity", "enormous hero images that delay the answer", "generic AI-style wellness writing"]
+    },
+    "external-personal": {
+      "label": "External personal brands built by the factory (non-Kairali client/personal sites)",
+      "domains": ["theblushlounge.com"],
+      "communicates": ["personal artistry", "editorial credibility", "precision", "warmth", "premium restraint", "authenticity"],
+      "register_note": "The PERSON is the protagonist - their real work, their own voice, first person where the brief declares register E. The site must feel like the person's press coverage, never a template and never a Kairali surface: no Kairali entity claims, tokens from the person's own brand sheet (e.g. blush-tokens.css). Beauty here means credible personal premium achieved with restraint (the paper's luxury + editorial chapters govern). The authority for this entity's communicate-list is the SITE'S OWN owner-signed strategy stack (brief / strategy / design direction). [Chapter added 2026-07-18 by the 'Every future property' amendment route after the pass-2 entity-misrouting refusal; owner ratification riding: QUESTIONS.md Q-BL-BEAUTY-ENTITY]",
+      "must_answer": ["Who is this professional and what do they do, in one glance?", "What proof exists (real work, press, training, credentials)?", "What services/offers exist and for whom?", "How does an enquiry/booking actually start and what happens next?", "Where do they work (base + travel/destination reach)?", "What does engaging feel like (voice, process, personal involvement - stated truthfully)?"],
+      "avoid": ["template-glam cliches and stock imagery", "Kairali entity claims or fleet chrome on a personal brand", "invented credentials, counts or prices (HARD GATE 6)", "absolute delivery promises operations cannot verify", "generic 'Learn More' CTAs", "false luxury: fabricated urgency, countdowns, pop-ups", "burying the person behind decoration - the work is the hero"]
     }
   },
   "page_types": {

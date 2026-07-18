@@ -288,6 +288,28 @@ export function itemList(l) {
 }
 
 /**
+ * Course (education offering — e.g. Blush School of Beauty; STRATEGY schema
+ * plans that declare Course for academy pages). Provider referenced by @id or
+ * inline name. Added 18 Jul 2026, theblushlounge full build; additive only.
+ */
+export function course(c) {
+  return clean({
+    "@type": "Course",
+    "@id": c.id,
+    name: c.name,
+    description: c.description,
+    url: c.url,
+    provider: c.providerId
+      ? { "@id": c.providerId }
+      : c.providerName
+        ? clean({ "@type": "Organization", name: c.providerName, url: c.providerUrl })
+        : undefined,
+    courseMode: c.courseMode,
+    inLanguage: c.inLanguage,
+  });
+}
+
+/**
  * Service for B2B service pages (quote model — no offers/price, ever;
  * the same no-invented-commerce law as product()).
  * @param {{id?:string, name:string, description?:string, url?:string,
@@ -303,5 +325,20 @@ export function service(s) {
     provider: s.providerId ? { "@id": s.providerId } : undefined,
     serviceType: s.serviceType,
     areaServed: s.areaServed,
+  });
+}
+
+/**
+ * ImageGallery (portfolio pages). Images are absolute or site-relative URLs.
+ * Added 18 Jul 2026, theblushlounge full build; additive only.
+ */
+export function imageGallery(g) {
+  return clean({
+    "@type": "ImageGallery",
+    "@id": g.id,
+    name: g.name,
+    description: g.description,
+    url: g.url,
+    image: g.images && g.images.length ? g.images : undefined,
   });
 }

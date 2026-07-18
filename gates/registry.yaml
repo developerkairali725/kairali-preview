@@ -482,7 +482,7 @@ gates:
     run: automated
     status: built
     script_or_agent_ref: "scripts/chat-bubble-lint.mjs (merge-blocking in .github/workflows/factory-gate.yml) + scripts/test/chat-bubble-lint.test.js"
-    source: "D-20260718-05 (Abilash in-chat, 18 Jul 2026: chat bubble mandatory on every site) — presence companion to chatbase-entity-bot, which stays the B9 mapping-quality gate"
+    source: "D-20260718-05 (Abilash in-chat, 18 Jul 2026: chat bubble mandatory on every site) — presence companion to chatbase-entity-bot, which stays the B9 mapping-quality gate. SITE EXEMPTION on record: theblushlounge.com per D-BL-BUBBLE-EXEMPT (Abilash, 18 Jul 2026) — Sneha's own WhatsApp IS the chat surface on her personal brand; encoded loudly in the lint's CHAT_EXEMPT ledger, never a silent skip"
     applicability:
       commerce: { adapted: "Store chat installs via the Shopify theme app embed in the admin (agent is READ-ONLY there, rule k — humans install apps); presence verified on the dev-theme preview, not by this repo lint" }
       organic: required

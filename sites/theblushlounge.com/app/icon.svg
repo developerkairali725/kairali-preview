@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Blush Lounge favicon — champagne ring + ink script monogram, drawn from
+       the mined 499×401 logo (gold-foil circular "bl" mark; vector logo remains
+       an open QUESTIONS.md ask). Colors = blush token values (tokens live in
+       packages/ui/blush-tokens.css; static artwork is exported, not styled). -->
+  <rect width="64" height="64" rx="14" fill="#FAF6EF"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#C9AE7E" stroke-width="2.5"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Snell Roundhand, Brush Script MT, cursive" font-style="italic" font-size="26" fill="#211A16">bl</text>
+</svg>

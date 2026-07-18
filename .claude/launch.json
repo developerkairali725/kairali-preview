@@ -82,6 +82,20 @@
       "port": 4314
     },
     {
+      "name": "theblushlounge-prod",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/theblushlounge.com",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4315"
+      ],
+      "port": 4315
+    },
+    {
       "name": "kairali-ai",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": [

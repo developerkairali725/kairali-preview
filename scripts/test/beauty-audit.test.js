@@ -86,11 +86,11 @@ const FAIL_RUN = {
 
 /* ------------------------------------------------------- rubric parsing */
 
-test("parseRubric: the SHIPPED doctrine rubric parses and carries all six entities (paper: every website type/company), the ROI page types, and both lanes", () => {
+test("parseRubric: the SHIPPED doctrine rubric parses and carries all seven entities (paper: every website type/company; external-personal added 18 Jul 2026 via the Every-future-property amendment route — Q-BL-BEAUTY-ENTITY), the ROI page types, and both lanes", () => {
   const rubric = parseRubric(REAL_DOCTRINE);
   assert.deepEqual(
     Object.keys(rubric.entities).sort(),
-    ["blog", "corporate", "healing-village", "kappl", "kappl-b2b", "villa-raag"],
+    ["blog", "corporate", "external-personal", "healing-village", "kappl", "kappl-b2b", "villa-raag"],
   );
   // The exact communicate-lists from inputs §2, never reworded.
   assert.deepEqual(rubric.entities["healing-village"].communicates, [

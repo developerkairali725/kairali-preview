@@ -262,7 +262,7 @@ jobs:
         # promising self-registration and no mechanism doing it). abhilashkr +
         # kairali.ai are exempt (imported/internal) — STANDING RULING, Abilash
         # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
-        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com"]
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
@@ -311,7 +311,7 @@ jobs:
       matrix:
         # Kept in lockstep with the factory-spec matrix by factory-matrix-lint.mjs
         # (it validates EVERY site matrix in this file).
-        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com"]
+        site: ["sites/arogyakendra.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'

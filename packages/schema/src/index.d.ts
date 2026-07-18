@@ -156,3 +156,23 @@ export function service(s: {
   serviceType?: string;
   areaServed?: string;
 }): JsonLdNode;
+
+export function course(c: {
+  id?: string;
+  name: string;
+  description?: string;
+  url?: string;
+  providerId?: string;
+  providerName?: string;
+  providerUrl?: string;
+  courseMode?: string;
+  inLanguage?: string;
+}): JsonLdNode;
+
+export function imageGallery(g: {
+  id?: string;
+  name: string;
+  description?: string;
+  url?: string;
+  images?: string[];
+}): JsonLdNode;

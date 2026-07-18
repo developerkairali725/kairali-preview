@@ -27,6 +27,12 @@
  * D-RULE-MATRIX-EXEMPT; the two zero-page scaffolds until their first page).
  * Every exemption prints LOUDLY every run.
  *
+ * PLUS one lint-SPECIFIC ledger (CHAT_EXEMPT below): sites that ARE in the CI
+ * matrices (so they cannot ride the matrix EXEMPT list) but are exempt from
+ * THE BUBBLE ITSELF by owner ruling. Same loud pattern as abhilashkr's matrix
+ * exemption: a Map entry with the ruling as its paper trail, printed every
+ * run — never a silent skip.
+ *
  * /lp/ landing pages are OUT of scope by law — single-CTA rule, no chat
  * widget competes with the one conversion goal (gates/registry.yaml:
  * chat-bubble-present → landing: n_a; same ruling as chatbase-entity-bot).
@@ -47,6 +53,16 @@ import { EXEMPT } from "./factory-matrix-lint.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PKG = "@kairali/chat";
+
+/**
+ * Lint-specific exemptions — sites in the CI matrices whose BUBBLE absence is
+ * an owner ruling, not a drift. Every entry needs Abilash's ruling as its
+ * reason (same law as factory-matrix-lint EXEMPT: an exemption without a
+ * paper trail is drift wearing a badge). Printed LOUDLY every run.
+ */
+export const CHAT_EXEMPT = new Map([
+  ["sites/theblushlounge.com", "personal-brand exemption — D-BL-BUBBLE-EXEMPT (Abilash, 18 Jul 2026): Sneha's OWN WhatsApp (+91 88269 21110, D-BL-WHATSAPP) IS the chat surface; a Kairali/Chatbase bubble is off-brand and off-register in both directions on her personal site. Loud registry exemption, not a silent skip."],
+]);
 
 /**
  * Pure layout-source checker. Returns violations (empty = clean).
@@ -122,10 +138,22 @@ export function main(argv = []) {
   const violations = [];
   console.log(`\nchat-bubble-lint — ${sites.length} fleet sites (D-20260718-05: chat bubble mandatory)`);
 
+  // exemptions rot too (factory-matrix-lint law): a CHAT_EXEMPT entry naming a
+  // site that no longer exists is stale and must be deleted, loudly.
+  for (const [key, reason] of CHAT_EXEMPT) {
+    if (!sites.includes(key.replace(/^sites\//, ""))) {
+      violations.push(`stale CHAT_EXEMPT entry: ${key} ("${reason.slice(0, 60)}…") names no fleet site on disk — delete the exemption`);
+    }
+  }
+
   for (const name of sites) {
     const key = `sites/${name}`;
     if (EXEMPT.has(key)) {
       console.log(`  EXEMPT ${key} — ${EXEMPT.get(key)}`);
+      continue;
+    }
+    if (CHAT_EXEMPT.has(key)) {
+      console.log(`  EXEMPT ${key} — ${CHAT_EXEMPT.get(key)}`);
       continue;
     }
     const layoutPath = join(sitesDir, name, "app", "layout.tsx");

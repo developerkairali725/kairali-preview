@@ -234,7 +234,9 @@ function siteBrand(siteDir) {
   }
 }
 
-const TOKEN_SHEETS = { kairali: "brand-tokens.css", raag: "raag-tokens.css" };
+// blush = theblushlounge.com (Sneha Chowdhary's personal brand) — its OWN
+// sheet per the signed MODE B design direction (18 Jul 2026, "like raag").
+const TOKEN_SHEETS = { kairali: "brand-tokens.css", raag: "raag-tokens.css", blush: "blush-tokens.css" };
 
 /**
  * Lint a site directory.
@@ -247,7 +249,7 @@ export function lintBrandDir(dir, { brand } = {}) {
   if (eff === null) {
     return [{
       file: join(dir, "site.config.json"), line: 1, severity: "error", rule: "config",
-      message: `Missing or invalid site.config.json — brand lint cannot scope (declare "brand": "kairali" | "raag" | "none")`,
+      message: `Missing or invalid site.config.json — brand lint cannot scope (declare "brand": "kairali" | "raag" | "blush" | "none")`,
       excerpt: "",
     }];
   }
@@ -262,7 +264,7 @@ export function lintBrandDir(dir, { brand } = {}) {
   if (!sheet) {
     return [{
       file: join(dir, "site.config.json"), line: 1, severity: "error", rule: "config",
-      message: `Unknown brand "${eff}" — expected "kairali" | "raag" | "none"`,
+      message: `Unknown brand "${eff}" — expected "kairali" | "raag" | "blush" | "none"`,
       excerpt: "",
     }];
   }
