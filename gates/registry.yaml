@@ -1,0 +1,870 @@
+# gates/registry.yaml — THE UNIFIED GATE REGISTRY (one registry, three site classes)
+#
+# LAW (CLAUDE.md §GATE REGISTRY, added 2026-07-18; source: Abilash's 17 Jul rule,
+# docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md §7 + PROMPT 5):
+#   · Every rigorous check is defined ONCE, here. The three site classes are
+#     commerce (Shopify stores), organic (Factory + WordPress content sites),
+#     landing (/lp/<campaign> single-pagers).
+#   · Every gate MUST carry an explicit applicability entry for ALL declared
+#     classes: `required`, `{ adapted: "how" }`, or `{ n_a: "reason" }`.
+#     A missing class entry FAILS validation (scripts/gate-registry-lint.mjs,
+#     merge-blocking in .github/workflows/factory-gate.yml). A gate can never
+#     exist for one class and simply be absent from the others.
+#   · Per-site ship checklists are GENERATED from this registry by site class,
+#     never hand-written. docs/checklists/ masters and SITE_LAUNCH_CHECKLIST_v1.0.md
+#     remain the historical source texts; this file is the operational law.
+#   · Gates are added, never weakened (CLAUDE.md rule g). Removing or softening
+#     a row needs Abilash's ruling logged in DECISIONS.md.
+#   · Roadmap §8 plans a FOURTH class, `external` (monitor-only, third-party
+#     channels). It lands by adding `external` to `classes:` below — which makes
+#     every gate fail validation until it carries an explicit external entry.
+#     That is the no-miss guarantee scaling, by design.
+#
+# FIELD CONTRACT (validated by scripts/gate-registry-lint.mjs):
+#   id                — unique kebab-case slug.
+#   name              — short human name.
+#   what_it_verifies  — one line, plain language.
+#   severity          — blocker  (merge/ship-blocking: the site does not move)
+#                       high     (launch-evidence item: must pass before go-live)
+#                       advisory (recurring/monitoring: findings routed, not blocking)
+#   run               — automated (deterministic script/CI) · agent (LLM subagent
+#                       with structured PASS/FAIL output) · human (a named person).
+#   status            — built (enforcement exists and runs) · partial (exists but
+#                       does not cover the gate's full claim — the gap is stated)
+#                       · planned (named mechanism not built yet — ref MUST start
+#                       with "PLANNED").
+#   script_or_agent_ref — the real enforcing artifact (paths are existence-checked
+#                       for built/partial), or "PLANNED: …" for planned gates.
+#   source            — where the check came from (checklist item, doctrine rule).
+#   applicability     — commerce / organic / landing, per the law above.
+
+version: 1
+updated: "2026-07-18 14:05:00 IST"
+classes: [commerce, organic, landing]
+
+gates:
+  # ───────────────────────── A · MERGE-BLOCKING CI (Ship Gate A + repo lints) ──
+  - id: build-clean
+    name: "Clean production build"
+    what_it_verifies: "pnpm build completes clean; zero console errors on key templates"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: ".github/workflows/factory-gate.yml (factory-spec job, pnpm build) + tests/factory/factory-site.spec.ts (A1 console errors)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A1"
+    applicability:
+      commerce: { adapted: "Factory product microsites build via pnpm as-is; the Shopify theme itself is validated by shopify-theme-check instead (no pnpm build exists for liquid)" }
+      organic: required
+      landing: required
+
+  - id: factory-spec-suite
+    name: "Factory Playwright spec suite"
+    what_it_verifies: "Locked facts (info@kairali.com, +91 92898 38797, …38777 absent), forms render + consent + privacy link, locale switcher + reciprocal hreflang, no mixed content, touch targets >=44px, visible focus rings, >=1 data-cta CTA"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "tests/factory/factory-site.spec.ts via .github/workflows/factory-gate.yml (factory-spec matrix)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A2 + A4 browser layer"
+    applicability:
+      commerce: { adapted: "Runs as-is on commerce microsites in the matrix; the store itself needs the planned checkout-flows suite against the dev-theme preview — locked-fact and mixed-content assertions apply there too" }
+      organic: required
+      landing: { adapted: "Suite runs at host-site level; /lp/ routes are not individually visited today — LP-specific assertions live in lp-noindex-single-cta (flagged cross-class miss until an LP route walker exists)" }
+
+  - id: compliance-lint
+    name: "Entity-register compliance lint"
+    what_it_verifies: "Entity register rules (KTAHV clinical lock incl. DE/FR equivalents), group banned filler, claims-jurisdiction lens for declared target markets — zero findings"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "packages/compliance/bin/lint.js via .github/workflows/gate.yml + scripts/hooks/pre-push.sh"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A3; CLAUDE.md §KTAHV LANGUAGE LOCK"
+    applicability:
+      commerce: { adapted: "Repo-side commerce surfaces linted as-is; live store catalog copy is linted by catalog-compliance-audit (the lint cannot see the Shopify admin)" }
+      organic: required
+      landing: required
+
+  - id: brand-lint
+    name: "Brand-token lint"
+    what_it_verifies: "Only brand-token colors (no rogue hex), marigold never body text, focus rings present, touch targets >=44px, pill buttons"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "packages/ui/bin/brand-lint.js via .github/workflows/factory-gate.yml"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A4 static layer; CLAUDE.md doctrine (d)"
+    applicability:
+      commerce: { adapted: "Factory microsites linted as-is; theme liquid/CSS is NOT scanned today — theme token conformance rides design-qa-audit on the dev-theme preview until a liquid-aware lint exists (flagged cross-class miss)" }
+      organic: required
+      landing: required
+
+  - id: banned-string-lint
+    name: "Banned-string lint (fabricated claims, locked facts)"
+    what_it_verifies: "Strings we actually shipped and later found false (fabricated review claims, wrong WhatsApp tail, process claims with no process) can never ship again"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/banned-string-lint.mjs via .github/workflows/factory-gate.yml"
+    source: "MASTER_PIPELINE G6-PRE (strings half); rubric docs/process/rubrics/G6-PRE-STRINGS.md"
+    applicability:
+      commerce: { adapted: "Repo surfaces scanned as-is; live store catalog strings covered by catalog-compliance-audit" }
+      organic: required
+      landing: required
+
+  - id: cta-label-lint
+    name: "CTA-label lint (no clinical claim on a bot channel)"
+    what_it_verifies: "A CTA whose href reaches the Priya WhatsApp bot may not use doctor/physician/clinician language"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/cta-label-lint.mjs via .github/workflows/factory-gate.yml"
+    source: "MASTER_PIPELINE failure #7 ('Ask a doctor on WhatsApp')"
+    applicability:
+      commerce: { adapted: "Repo surfaces scanned as-is; store theme CTAs verified by design-qa-audit on the dev-theme preview until the theme repo carries the same lint" }
+      organic: required
+      landing: required
+
+  - id: honest-ymyl-content-lint
+    name: "Honest-YMYL content lint"
+    what_it_verifies: "The 35 honesty rules for YMYL health content (no invented reviewers, no false process claims, citation presence) — zero findings"
+    severity: blocker
+    run: automated
+    status: partial
+    script_or_agent_ref: "scripts/content-lint.mjs via .github/workflows/factory-gate.yml — scoped to sites/whatisayurveda.com today; other organic sites are NOT covered (flagged cross-class AND cross-site miss)"
+    source: "whatisayurveda BUILD_PLAN §2.7"
+    applicability:
+      commerce: { adapted: "Product-claim honesty enforced through catalog-compliance-audit's claims lens (.in DMR/ASCI · US FDA/FTC · EU health-claims)" }
+      organic: required
+      landing: { adapted: "LP claims run compliance-lint + lp-ad-policy (DMR/ASCI ad enforcement is stricter than page rules); YMYL article rules n/a to single-goal campaign pages" }
+
+  - id: s3-keyword-gates
+    name: "S3 keyword-rigor gates (seed-lint + keyword-validate)"
+    what_it_verifies: "No invented compound seeds, locale x script parity, no nulls coerced to zero, no aggregate over non-measured rows — no number leaves S3 unvalidated"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/seed-lint.mjs + scripts/keyword-validate.mjs via .github/workflows/factory-gate.yml (armed when docs/keywords/ artifacts exist)"
+    source: "MASTER_PIPELINE G3-PRE; failures #1–#4"
+    applicability:
+      commerce: { adapted: "Applies whenever S3 keyword work runs for commerce microsites/collection metadata — same artifacts, same gates" }
+      organic: required
+      landing: { n_a: "LPs are noindex by default (Factory rule); paid terms come from the approved campaign mandate, and term-to-page alignment is gated by lp-message-match, not organic demand data" }
+
+  - id: factory-matrix-self-registration
+    name: "Factory CI matrix self-registration"
+    what_it_verifies: "Every sites/<dir> with a site.config.json is present in EVERY CI site matrix (factory-spec + lighthouse); no dead entries; exemptions stay loud and paper-trailed"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/factory-matrix-lint.mjs via .github/workflows/factory-gate.yml"
+    source: "Retro-audit 17 Jul, process fix #1 (the 16-Jul wave shipped outside the matrix)"
+    applicability:
+      commerce: { adapted: "Commerce microsites in this monorepo register as-is; the Shopify theme repo lives outside these matrices — its CI equivalent is the planned theme-repo pipeline (flagged cross-class miss)" }
+      organic: required
+      landing: { adapted: "/lp/ pages ship inside a registered host site; no separate matrix entry exists or is needed" }
+
+  - id: launch-evidence-gate
+    name: "Launch evidence completeness"
+    what_it_verifies: "Audit reports in launches/<domain>/ cannot ship without the full evidence set: filled checklists, wiki/log.md entry, LEARNINGS retro"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/launch-evidence-gate.mjs via .github/workflows/factory-gate.yml"
+    source: "Retro-audit 17 Jul, process fix #2; CLAUDE.md §LAUNCH EVIDENCE"
+    applicability:
+      commerce: { adapted: "Store launches keep the same law — evidence lands in launches/<store-domain>/ with the commerce-class generated checklist" }
+      organic: required
+      landing: { adapted: "Campaign launches file evidence under the host site's launches/<domain>/ keyed by campaign slug" }
+
+  - id: front-gate-approvals
+    name: "Front gate (signed approvals ledger)"
+    what_it_verifies: "No page ships ahead of its signed approval: brief → strategy → design_source (+ design_direction in MODE B) → golden_page rows in launches/<domain>/approvals.yaml"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/front-gate.mjs via .github/workflows/factory-gate.yml (front-gate job)"
+    source: "CLAUDE.md §DESIGN SOURCE / §GOLDEN PAGE / §STOP AT EACH GATE (session 2D)"
+    applicability:
+      commerce: { adapted: "Microsites arm normally; theme-repo work is not under sites/<domain> so the mechanical gate never fires there — the forever-human list (CLAUDE.md k) is the commerce front gate today (flagged cross-class miss)" }
+      organic: required
+      landing: required
+
+  - id: lighthouse-budgets
+    name: "Lighthouse budgets"
+    what_it_verifies: "Performance >=90 · Accessibility >=95 · SEO = 100 on key templates, mobile emulation, local production build"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/lighthouse-gate.mjs via .github/workflows/factory-gate.yml (lighthouse matrix)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A5"
+    applicability:
+      commerce: { adapted: "Run against the UNPUBLISHED dev-theme preview URL; checkout-critical templates included; budgets per roadmap §7" }
+      organic: required
+      landing: { adapted: "STRICTER speed budget (LP doctrine §6 — paid traffic pays per click); SEO=100 n/a on noindexed LPs per LANDING_PAGE_DOCTRINE §8 — perf/a11y budgets bind unchanged" }
+
+  - id: unit-tests-discovered
+    name: "All unit tests (discovered, not globbed)"
+    what_it_verifies: "Every */test/*.test.js under packages, sites AND scripts runs — a test outside the glob is a dead gate"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: ".github/workflows/factory-gate.yml (All tests step, find-discovered)"
+    source: "factory-gate.yml history: the dead-test failure class, third occurrence"
+    applicability:
+      commerce: { adapted: "Monorepo commerce code tested as-is; theme-repo tests ride the planned theme-repo pipeline" }
+      organic: required
+      landing: required
+
+  - id: secret-scan
+    name: "Secret scan (gitleaks, full history)"
+    what_it_verifies: "No tokens/keys/secrets in code or git history"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: ".github/workflows/gate.yml (gitleaks step) + .gitleaks.toml"
+    source: "CLAUDE.md HARD GATE 5; Ship Gate enforcement note"
+    applicability:
+      commerce: { adapted: "Monorepo scanned as-is; security-audit-posture additionally checks no tokens in theme code/liquid and ~/work/.env.shopify hygiene" }
+      organic: required
+      landing: required
+
+  - id: dependency-audit
+    name: "Dependency audit"
+    what_it_verifies: "pnpm audit at high level — no known-vulnerable dependencies ship"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: ".github/workflows/gate.yml (Dependency audit step); Monday ritual per CLAUDE.md doctrine (c)"
+    source: "CLAUDE.md doctrine (c); gate.yml"
+    applicability:
+      commerce: { adapted: "Monorepo lockfile audited as-is; theme repo audited where a lockfile exists" }
+      organic: required
+      landing: required
+
+  - id: security-review-diff
+    name: "Security review of the release diff"
+    what_it_verifies: "Claude security review on every PR diff: zero high/critical findings after FP filtering"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: ".github/workflows/gate.yml (security-review job, anthropics/claude-code-security-review)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A13; CLAUDE.md doctrine (e)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: pre-launch-matrix-walk
+    name: "Pre-launch decision-matrix walk"
+    what_it_verifies: "Before any 'ready to launch' claim: every pipeline stage has a verdict bound to artifact hash + exit code + CI provenance — no self-reported readiness"
+    severity: blocker
+    run: automated
+    status: partial
+    script_or_agent_ref: "scripts/matrix-walk.mjs + scripts/lib/verdict.mjs — walk exists; verdict emitters for most gates are still being built (MASTER_PIPELINE §0.2)"
+    source: "MASTER_PIPELINE G9-PRE; Abilash's #1 ask verbatim"
+    applicability:
+      commerce: { adapted: "Same verdict-contract walk over the Shopify track's stage set once its emitters exist; the forever-human rows record human sign-off verdicts" }
+      organic: required
+      landing: { adapted: "LP variants under an approved campaign mandate walk the SΔ re-entry slice (MASTER_PIPELINE §0.3), not the full pre-launch walk" }
+
+  # ─────────────── B · SHIP GATE A ITEMS NOT YET FULLY MECHANIZED (A6–A12) ──
+  - id: meta-canonical-crawl-files
+    name: "Metadata, canonicals and crawl files"
+    what_it_verifies: "Meta title <=60ch + description <=155ch on every page; canonical set; robots.txt sane; sitemap.xml + llms.txt + AI-crawler files generated"
+    severity: blocker
+    run: agent
+    status: partial
+    script_or_agent_ref: ".claude/agents/seo-aeo-geo-auditor.md + filled pagewise checklist — flagged FALSE-automated in MASTER_PIPELINE §8 review; a deterministic lint is not built"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A6; docs/checklists/pagewise-migration-checklist.md"
+    applicability:
+      commerce: { adapted: "Shopify generates robots/sitemap — verify rather than build; per-store claims lens on titles/descriptions; myshopify-noindex is its own gate" }
+      organic: required
+      landing: { adapted: "Meta present for QA but page is noindex BY DESIGN — the check inverts: verify noindex IS set (lp-noindex-single-cta) and the page is excluded from sitemap.xml" }
+
+  - id: hreflang-reciprocal
+    name: "hreflang complete and reciprocal"
+    what_it_verifies: "Every declared locale has reciprocal hreflang + x-default; no orphan locales; a page missing a locale is flagged, never silently EN-only"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "tests/factory/factory-site.spec.ts (A7 assertions for declared locales)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A7; CLAUDE.md §LOCKED FACTS (KTAHV EN/DE/FR)"
+    applicability:
+      commerce: { adapted: "Two-store market split (.in/.com): cross-store hreflang only where both stores carry the equivalent page; within a store, per Shopify markets config" }
+      organic: required
+      landing: { n_a: "Campaign LPs are single-locale by design; a locale variant is a separate campaign page with its own mandate" }
+
+  - id: schema-jsonld
+    name: "Schema JSON-LD valid per template"
+    what_it_verifies: "Organization + entity type (MedicalClinic/LocalBusiness/Product/Article), BreadcrumbList, FAQPage where Q&A exists, Person for bylines — parses and validates"
+    severity: blocker
+    run: agent
+    status: partial
+    script_or_agent_ref: ".claude/agents/seo-aeo-geo-auditor.md (schema checks) + Rich Results spot-check pasted into launch evidence; deterministic parse lint not built"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A8; sitewide checklist §2"
+    applicability:
+      commerce: { adapted: "PDP: valid Product/Offer JSON-LD (price, currency, availability) with one canonical PDP URL — per seo-aeo-geo-auditor Shopify section" }
+      organic: required
+      landing: { adapted: "Organization schema only; FAQ/Article rich-result schema n/a on noindexed pages" }
+
+  - id: og-cards-render
+    name: "OG/Twitter card render"
+    what_it_verifies: "Social cards render for every page type (1200x630 per Brand Manual ch.08) — validated render, not just tags present"
+    severity: high
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: render-validation script — A9 was flagged FALSE-automated (MASTER_PIPELINE: 'four of thirteen'); today verified by eye during the filled pagewise checklist"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A9"
+    applicability:
+      commerce: { adapted: "Store OG comes from theme settings + product images — verify render on PDP/collection templates in the dev-theme preview" }
+      organic: required
+      landing: required
+
+  - id: alt-text-favicons
+    name: "Alt text + favicon set"
+    what_it_verifies: "Every image has descriptive alt text; favicons exported 16/32/180/512 per Brand Manual ch.08"
+    severity: high
+    run: agent
+    status: partial
+    script_or_agent_ref: ".claude/agents/design-qa.md + .claude/agents/seo-aeo-geo-auditor.md (alt-text checks); favicon export verified in the filled checklist — A10 flagged FALSE-automated, deterministic lint not built"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A10; pagewise checklist (WAVE accessibility pass)"
+    applicability:
+      commerce: { adapted: "Catalog images-without-alt linted by catalog-compliance-audit; favicons from theme settings" }
+      organic: required
+      landing: required
+
+  - id: internal-link-crawl
+    name: "Internal link crawl + 301 map"
+    what_it_verifies: "Zero 4xx/5xx internally; 301 map from the mined legacy inventory deployed; 10 random old URLs spot-checked to correct new targets"
+    severity: blocker
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: link-crawl script in CI — A11 flagged FALSE-automated; today run manually/Playwright MCP at launch and in the weekly QA rotation"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A11; sitewide checklist §5"
+    applicability:
+      commerce: { adapted: "Store crawl for collection/PDP 404s; PDP URL changes flagged to Vikash BEFORE they happen (CLAUDE.md rule m) since live Ads point at them" }
+      organic: required
+      landing: { adapted: "No legacy 301 map for new /lp/ paths; internal + outbound links on the LP still crawled clean" }
+
+  - id: consent-mode
+    name: "Consent banner + Google Consent Mode v2"
+    what_it_verifies: "packages/consent active: banner, Consent Mode v2, privacy/terms pages per entity"
+    severity: blocker
+    run: automated
+    status: partial
+    script_or_agent_ref: "packages/consent + tests/factory/factory-site.spec.ts (forms consent assertions); full Consent-Mode signal verification is a launch-evidence item"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md A12; DPDP requirements"
+    applicability:
+      commerce: { adapted: "Shopify Customer Privacy API / consent app in the theme + Consent Mode v2 via GTM — same signals, Shopify-native mechanism" }
+      organic: required
+      landing: { adapted: "Even with the stripped LP footer, consent + privacy link REMAIN (LP doctrine §9 Q8 minimum set); consent boolean written to the CRM record explicitly" }
+
+  # ────────────────────────── C · SHIP GATE B LAUNCH TASKS (agent-run) ──
+  - id: keyword-map
+    name: "Keyword map per page"
+    what_it_verifies: "Semrush/GSC/DataForSEO keyword map written into page frontmatter; competitor snapshot for the niche"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B1 procedure; validated by s3-keyword-gates when S3 artifacts exist; evidence: the map file in launches/<domain>/"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B1"
+    applicability:
+      commerce: { adapted: "Collection/PDP keyword map for commerce microsites and store metadata" }
+      organic: required
+      landing: { n_a: "Paid terms come from the campaign mandate; term alignment gated by lp-message-match" }
+
+  - id: geo-ai-readiness
+    name: "GEO/AI-readiness pass"
+    what_it_verifies: "Entity clarity block, Q&A structuring on money pages, llms.txt populated with canonical facts, AI crawlers not blocked"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/seo-aeo-geo-auditor.md (GEO checklist) + SITE_LAUNCH_CHECKLIST_v1.0.md B2"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B2; roadmap §7 shared core (SEO/AEO/GEO)"
+    applicability:
+      commerce: { adapted: "llms.txt on commerce microsites; store product facts flow to the Products entity bot KB rather than a store llms.txt" }
+      organic: required
+      landing: { n_a: "Noindexed campaign pages are not AI-answer surfaces; entity facts live on the host site's organic pages" }
+
+  - id: ga4-stream
+    name: "GA4 property + data stream"
+    what_it_verifies: "GA4 property + web data stream created; site ID wired in packages/analytics config"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B3 procedure + packages/analytics; evidence in launches/<domain>/"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B3 (ROI wiring — a site without this does not launch)"
+    applicability:
+      commerce: { adapted: "Store GA4 via Shopify's Google channel + Triple Whale for commerce metrics; microsites use packages/analytics as-is" }
+      organic: required
+      landing: required
+
+  - id: gtm-conversion-events
+    name: "GTM container + conversion events"
+    what_it_verifies: "GTM published: GA4 tag + conversion events mapped from data-cta (form_submit, whatsapp_click, call_click, add_to_cart_assist)"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B4 procedure; data-cta presence asserted by tests/factory/factory-site.spec.ts"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B4; Factory rule (data-cta events required on LPs)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: ads-conversion-actions
+    name: "Google Ads conversion actions"
+    what_it_verifies: "Conversion actions created + linked; final-URL cutover per PPC protocol where campaigns exist"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B5 procedure; human cutover approval is ads-final-url-cutover"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B5"
+    applicability:
+      commerce: required
+      organic: { adapted: "Only where live campaigns target the domain; otherwise recorded as no-spend in launch evidence" }
+      landing: required
+
+  - id: pixels-installed
+    name: "Ad platform pixels"
+    what_it_verifies: "Meta pixel + domain verification (C/E register), LinkedIn Insight (A-register B2B), Bing UET where Ads run, Triple Whale pixel on every C-register site (UTM ms_<site> standard)"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B6 procedure; evidence in launches/<domain>/"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B6"
+    applicability:
+      commerce: required
+      organic: { adapted: "Per register: Meta (C/E consumer), LinkedIn (A-register B2B) — the register decides the set" }
+      landing: required
+
+  - id: gsc-bing-verification
+    name: "GSC + Bing verification and sitemap submission"
+    what_it_verifies: "GSC domain property verified via Cloudflare DNS + sitemap submitted; Bing Webmaster verified + sitemap submitted"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B7 procedure; sitewide checklist §2"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B7; docs/checklists/sitewide-migration-checklist.md"
+    applicability:
+      commerce: { adapted: "Store primary domains verified; Shopify auto-sitemap submitted; myshopify subdomain excluded (see myshopify-noindex)" }
+      organic: required
+      landing: { n_a: "Noindex pages are not submitted; the host site's domain property already covers the URL space" }
+
+  - id: forms-crm-parity
+    name: "Forms v1 CRM parity + live test lead"
+    what_it_verifies: "EXACT current CRM field schema + endpoint; one live test lead lands in CRM with consent flag + source attribution (screenshot evidence)"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B8 + FORMS v1-freeze section; render+consent asserted by tests/factory/factory-site.spec.ts"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B8 ('the single most important evidence item'); roadmap §5 Gate D (Satyam)"
+    applicability:
+      commerce: { n_a: "Checkout replaces lead forms — checkout is ALWAYS the main Shopify store (Factory rule: never build a cart/checkout/payment form); any store contact form follows the host CRM parity rule where present" }
+      organic: required
+      landing: { adapted: "LP lead capture is store-first into our own DB with consent as an explicit boolean field (LP doctrine §4, Satyam spec) — same parity law, stricter field-minimization" }
+
+  - id: chatbase-entity-bot
+    name: "Chatbase entity bot mapping"
+    what_it_verifies: "Site mapped to its ENTITY bot (never a group bot); KB updated with site content; widget installed unless register says none; WhatsApp handoff verified; 5 test questions answered in-register"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B9 + CHATBOT ARCHITECTURE section"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B9"
+    applicability:
+      commerce: { adapted: "Products/Shopify entity bot answers product Qs and links to PDPs; KB fed from catalog export" }
+      organic: required
+      landing: { n_a: "Single-CTA law — no chatbot widget competes with the one conversion goal on a campaign LP" }
+
+  - id: uptime-fleet-pulse
+    name: "Uptime monitor + Fleet Pulse row"
+    what_it_verifies: "Uptime monitor added; Fleet Pulse row created with KPI baseline + 90-day target; STATUS.yaml stage current"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: ".github/workflows/uptime.yml + scripts/uptime/ + STATUS.yaml (scripts/status-build.mjs)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B10; CLAUDE.md §STATUS.yaml session-end rule"
+    applicability:
+      commerce: required
+      organic: required
+      landing: { adapted: "Rides the host site's monitor; campaign tracked as a workstream/stage in STATUS.yaml rather than a separate uptime row" }
+
+  - id: forward-family-redirects
+    name: "Forward-family domain redirects"
+    what_it_verifies: "The domain's forward-family variants redirect at Cloudflare per the semantic map"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B11 + scripts/verify-forwards.sh + scripts/forward-farm-export.mjs"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B11"
+    applicability:
+      commerce: { adapted: "Store forward family plus myshopify.com → primary-domain redirect (see myshopify-noindex)" }
+      organic: required
+      landing: { n_a: "No forward family exists for an /lp/ path under an already-forwarded domain" }
+
+  - id: social-press-links
+    name: "Social profiles + press/author pages"
+    what_it_verifies: "Social profile links verified; press/author pages linked where register = A/ED"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B12 procedure"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B12"
+    applicability:
+      commerce: { adapted: "Store social links via theme settings; press pages n/a to the store itself" }
+      organic: required
+      landing: { n_a: "Stripped-footer LPs carry no social/press links by design (attention ratio)" }
+
+  - id: runtime-monitoring
+    name: "Runtime monitoring (Speed Insights + Sentry)"
+    what_it_verifies: "Vercel Speed Insights + Analytics enabled; Sentry project created, DSN wired, alert rule → email"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md B13 procedure"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B13"
+    applicability:
+      commerce: { adapted: "Shopify hosts the store (no Vercel/Sentry surface) — web vitals + error signals via Shopify analytics and Triple Whale; microsites wire Sentry as-is" }
+      organic: required
+      landing: { adapted: "Covered by the host site's Vercel/Sentry project — verify LP routes report into it" }
+
+  - id: design-critic-review
+    name: "Design-critic gate (skeptical-marketer review)"
+    what_it_verifies: "375px-first then desktop review with computed-style audit; average >=9.0/10, no criterion <7, max 3 iterations; scorecard committed before preview goes to human gate"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: "scripts/design-review/PROMPT.md; scorecard committed per-domain under launches/"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md B14 (formalized 14 Jul from the arogyakendra pass); CLAUDE.md design bar"
+    applicability:
+      commerce: { adapted: "Review runs on the dev-theme preview URL screenshots — never the live theme" }
+      organic: required
+      landing: { adapted: "Same rubric plus message-match awareness: the reviewer scores against the ad promise, not just the page in isolation" }
+
+  # ─────────────────────────── D · SUBAGENT AUDIT GATES ──
+  - id: design-qa-audit
+    name: "Design-QA subagent audit"
+    what_it_verifies: "Brand-token conformance, design-mistakes checklist, design principles, WCAG AA contrast, mobile/tablet/desktop screenshots — structured PASS/FAIL"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/design-qa.md — runs in parallel with seo-aeo-geo-auditor after EVERY build/visual change (CLAUDE.md rule n), both reports attached as evidence"
+    source: "CLAUDE.md rule (n); .claude/agents/design-qa.md"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: seo-aeo-geo-audit
+    name: "SEO/AEO/GEO subagent audit"
+    what_it_verifies: "SEO checklist (titles, H1 hierarchy, canonicals, CWV), AEO checklist (quotable answers, question H2s, FAQ schema), GEO checklist (AI crawlers, llms.txt, E-E-A-T, entity consistency, freshness), internal linking"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/seo-aeo-geo-auditor.md — parallel with design-qa per CLAUDE.md rule (n)"
+    source: "CLAUDE.md rule (n); roadmap §7 organic adds (internal linking, E-E-A-T, freshness)"
+    applicability:
+      commerce: { adapted: "Shopify-specific section runs first: PDP Product/Offer JSON-LD, collection canonicals, variant/tag URLs not indexable, per-store claims lens" }
+      organic: required
+      landing: { adapted: "SEO/AEO/GEO sections n/a on noindex pages — audit scope narrows to meta hygiene, mobile usability, CWV and schema minimum" }
+
+  - id: security-posture-audit
+    name: "Security-auditor posture + access hygiene"
+    what_it_verifies: "Website security checklist (HTTPS, MFA, backups, WAF, least privilege), Shopify staff/token hygiene, settings-drift vs snapshot, MCP permission scope — pre-PR and monthly access review"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/security-auditor.md — pre-PR + monthly per CLAUDE.md rule (s), alongside security-review-diff"
+    source: "CLAUDE.md rule (s); .claude/agents/security-auditor.md"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: injection-screening
+    name: "Prompt-injection screening of scraped content"
+    what_it_verifies: "ANY externally scraped/fetched content is screened for injection patterns BEFORE any agent acts on it; on detection: quarantine URL, downgrade action to human review"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/security-auditor.md (injection screening section) per CLAUDE.md rule (r)"
+    source: "CLAUDE.md rule (r)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: content-draft-compliance
+    name: "Content-draft compliance gate"
+    what_it_verifies: "Every content draft passes the repo compliance lint (register + claims lens + banned filler + locked facts) BEFORE it is returned; brainstorm gate run before drafting"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/content-geo-writer.md (mandatory gates A+B) — drafts come ONLY from this agent per CLAUDE.md rule (o)"
+    source: "CLAUDE.md rule (o)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: catalog-compliance-audit
+    name: "Catalog compliance audit"
+    what_it_verifies: "Full catalog via Admin API: KAPPL register, claims lens per store market, banned filler, locked facts, missing meta, images without alt, .in HSN/GST fields, untrue urgency lines — dated report with severity counts + week-over-week diff"
+    severity: high
+    run: agent
+    status: planned
+    script_or_agent_ref: "PLANNED: scripts/shopify-catalog-lint.mjs — referenced by CLAUDE.md rules (l)/(p) and .claude/agents/catalog-compliance.md but NOT YET IN THE REPO (OPEN flag, see docs/reports/2026-07-18-prompt5-gate-registry.md); agent contract exists at .claude/agents/catalog-compliance.md"
+    source: "CLAUDE.md rules (l) + (p); .claude/agents/catalog-compliance.md"
+    applicability:
+      commerce: required
+      organic: { n_a: "No catalog exists on organic sites; product mentions are page content, covered by compliance-lint" }
+      landing: { n_a: "Product LPs render packages/product-card fed by the Storefront API — catalog truth is linted at the store, once, upstream" }
+
+  # ──────────────── E · COMMERCE-SPECIFIC GATES (Shopify Track, planned) ──
+  - id: shopify-theme-check
+    name: "Shopify theme-check"
+    what_it_verifies: "theme-check clean on the dev theme before any preview is shared; theme edits only in git, never in the live theme editor"
+    severity: blocker
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: theme-check in the theme repo's CI (M2_SHOPIFY_SETUP_PROMPT: 'run theme-check + preview before any share'); Track B blocked on staff access + tokens from Ambuj"
+    source: "M2_SHOPIFY_SETUP_PROMPT.md; roadmap §7"
+    applicability:
+      commerce: required
+      organic: { n_a: "No liquid themes exist on Factory/WordPress organic sites" }
+      landing: { n_a: "LPs are Factory TSX pages; no theme layer" }
+
+  - id: checkout-flows
+    name: "Checkout + revenue-critical flow suite"
+    what_it_verifies: "Playwright on the five-six revenue-critical flows (checkout above all) against the theme preview; every buy action resolves to the main Shopify checkout — the one-checkout law"
+    severity: blocker
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: Playwright suite per roadmap §7 (mirror of tests/factory for the store); Track B prerequisite"
+    source: "Roadmap §7 ('checkout above all'); Factory rule (checkout is the main Shopify store, always)"
+    applicability:
+      commerce: required
+      organic: { adapted: "Where packages/product-card is embedded: verify the buy action resolves to the main store checkout — no local cart/checkout exists to test (Factory rule)" }
+      landing: { adapted: "Product LPs: same product-card handoff verification — the buy CTA must land on the store checkout" }
+
+  - id: payment-gateways-per-store
+    name: "Payment gateways per store"
+    what_it_verifies: "kairaliproducts.in: Razorpay/UPI/COD · kairaliproducts.com: Razorpay International + PayPal — configured and test-transacted per the locked two-store architecture"
+    severity: blocker
+    run: human
+    status: built
+    script_or_agent_ref: "FOREVER-HUMAN (CLAUDE.md rule k): Settings/payments are owner-lane; agent is READ-ONLY in the admin — verification evidence is the human's screenshot in launch evidence"
+    source: "Roadmap §7 (locked two-store architecture); CLAUDE.md rule (k)"
+    applicability:
+      commerce: required
+      organic: { n_a: "No payment surface exists — Factory sites never carry checkout or payment forms" }
+      landing: { n_a: "Same law — LPs never carry payment forms; money changes hands only at the store" }
+
+  - id: price-inventory-integrity
+    name: "Price + inventory integrity"
+    what_it_verifies: "Real catalog, real SKUs, truthful price and stock — no invented prices anywhere (HARD GATE 6); price/inventory consistent between store and any surface rendering it"
+    severity: blocker
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: integrity check inside the catalog lint (MASTER_PIPELINE MM-11, kairalitea precedent DECISIONS.md:196); today enforced by HARD GATE 6 discipline + catalog-compliance-audit"
+    source: "Roadmap §7 commerce adds; CLAUDE.md HARD GATE 6"
+    applicability:
+      commerce: required
+      organic: { adapted: "Product cards render LIVE Storefront API prices — a hardcoded price string in a page is a HARD GATE 6 violation" }
+      landing: { adapted: "Same product-card rule on product LPs" }
+
+  - id: settings-drift-check
+    name: "Store settings drift check"
+    what_it_verifies: "Checkout/payments/shipping/tax settings UNCHANGED vs the Phase-4 audit snapshot — any drift is a red flag reported immediately"
+    severity: blocker
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/security-auditor.md (Shopify-track section) — READ-ONLY comparison against the snapshot"
+    source: ".claude/agents/security-auditor.md; CLAUDE.md rule (k)"
+    applicability:
+      commerce: required
+      organic: { n_a: "No store settings surface exists" }
+      landing: { n_a: "No store settings surface exists" }
+
+  - id: myshopify-noindex
+    name: "myshopify subdomain not indexed"
+    what_it_verifies: "myshopify.com subdomain redirects to the primary domain and is not indexed; theme preview URLs never submitted to any index"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: ".claude/agents/seo-aeo-geo-auditor.md (Shopify-specific checks)"
+    source: ".claude/agents/seo-aeo-geo-auditor.md"
+    applicability:
+      commerce: required
+      organic: { n_a: "No myshopify surface" }
+      landing: { n_a: "No myshopify surface" }
+
+  # ─────────────────── F · LANDING-SPECIFIC GATES (LP doctrine) ──
+  - id: lp-noindex-single-cta
+    name: "LP noindex + single CTA + events"
+    what_it_verifies: "/lp/<campaign> is noindex, carries ONE conversion goal / single CTA (attention ratio), and fires data-cta events"
+    severity: blocker
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: LP route lint (LANDING_PAGE_DOCTRINE §9 Q7 names the checklist amendment; no lint exists — today verified by eye against the Factory rule); Factory rule is binding prose in CLAUDE.md §FACTORY RULES"
+    source: "CLAUDE.md §FACTORY RULES (landing pages); LANDING_PAGE_DOCTRINE.md §1"
+    applicability:
+      commerce: { n_a: "Store pages are indexable commerce surfaces with their own conversion architecture" }
+      organic: { n_a: "Organic pages are indexable by definition and serve multiple journeys" }
+      landing: required
+
+  - id: lp-message-match
+    name: "LP message match with the ad"
+    what_it_verifies: "The LP headline repeats the phrasing of the ad/keyword that produced the click, measured per-campaign; awareness-stage template matches the traffic source"
+    severity: blocker
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: message-match verification against the live ad in the LP-specific pagewise checklist (LANDING_PAGE_DOCTRINE §9 Q7); today a human check in campaign review"
+    source: "LANDING_PAGE_DOCTRINE.md §1 (the foundational paid-LP law); roadmap §7 landing adds"
+    applicability:
+      commerce: { n_a: "No paired ad-to-page promise on store pages; Ads final-URL policy still applies via ads-final-url-cutover" }
+      organic: { n_a: "Organic pages answer queries, not ad promises" }
+      landing: required
+
+  - id: lp-ad-policy
+    name: "LP ad-policy + claims compliance"
+    what_it_verifies: "DMR Act/ASCI healthcare-claims scan on LP copy (no magical/guaranteed cures); Google Ads destination rules (no redirecting final-URL domain, LP on the brand's own domain); remarketing on non-sensitive signals only"
+    severity: blocker
+    run: agent
+    status: partial
+    script_or_agent_ref: "packages/compliance/bin/lint.js (claims lens) covers the copy layer; the ad-policy layer (final-URL, remarketing signals) is a PLANNED checklist item per LANDING_PAGE_DOCTRINE §5–§7"
+    source: "LANDING_PAGE_DOCTRINE.md §5 §7; roadmap §7 landing adds (ad-policy compliance)"
+    applicability:
+      commerce: { adapted: "Product claims on store surfaces run the same claims lens via catalog-compliance-audit; Ads destination rules apply to store campaigns at cutover" }
+      organic: { adapted: "Same DMR/ASCI claims law enforced by compliance-lint; ad-destination rules n/a without paired ads" }
+      landing: required
+
+  # ──────────── G · PROCESS, EVIDENCE & HUMAN GATES (all classes) ──
+  - id: generated-checklists-filled
+    name: "Generated ship checklists filled"
+    what_it_verifies: "The per-class ship checklist (GENERATED from this registry — never hand-written) is filled with evidence per item and committed to launches/<domain>/"
+    severity: blocker
+    run: human
+    status: partial
+    script_or_agent_ref: "docs/checklists/ masters (historical source texts) + launch-evidence-gate enforcement; the generator script from this registry is PLANNED — until it lands, filled checklists are transcribed from the masters"
+    source: "CLAUDE.md §LAUNCH EVIDENCE + §GATE REGISTRY; docs/checklists/README.md"
+    applicability:
+      commerce: { adapted: "Commerce-class checklist generated from this registry (the docs/checklists/ masters assume indexable web pages)" }
+      organic: required
+      landing: { adapted: "Landing-class checklist generated from this registry (LP-specific items per LANDING_PAGE_DOCTRINE §9 Q7)" }
+
+  - id: legacy-mine-protection-map
+    name: "Legacy mine + protection map"
+    what_it_verifies: "Full live-site inventory BEFORE design decisions; every legacy URL has exactly one fate (KEEP/MERGE/301 single-hop); content-rich ranking pages never redirected to thin targets; greenfield declaration if skipped"
+    severity: blocker
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: scripts/protection-map-lint.mjs (MASTER_PIPELINE G0-PRE, not built); today enforced by the BUILD DECISION MATRIX discipline + asset-mining checklist"
+    source: "CLAUDE.md §BUILD DECISION MATRIX; MASTER_PIPELINE S0/G0-PRE"
+    applicability:
+      commerce: { adapted: "Store migrations: PDP/collection URL fates + Vikash flagged BEFORE any PDP URL change (CLAUDE.md rule m)" }
+      organic: required
+      landing: { n_a: "New /lp/ paths have no legacy URLs; the host domain's map is owned by the host site's rebuild" }
+
+  - id: human-audit-round
+    name: "Human audit round (Marketing / Deepu / Satyam / Sunaj)"
+    what_it_verifies: "Marketing: copy/brand/offers/imagery (challengeable) · Deepu: code sanity + publish readiness · Satyam: forms CRM parity + test submissions · Sunaj: servers/DNS/SSL/redirect plan"
+    severity: blocker
+    run: human
+    status: built
+    script_or_agent_ref: "docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md §5 Gates B–E; audit-request packets prepared by the agent"
+    source: "Roadmap §5 (formalized 17 Jul)"
+    applicability:
+      commerce: { adapted: "Same round on the theme preview link; Satyam's slot covers checkout test transactions instead of lead forms" }
+      organic: required
+      landing: { adapted: "Satyam verifies LP lead capture lands store-first with the consent boolean; Sunaj slot shrinks to routing (no DNS change for a path)" }
+
+  - id: preview-approval
+    name: "Owner preview approval"
+    what_it_verifies: "Abilash approves the Vercel preview (section-by-section for A-register flagships) — the logged OK-to-publish decision"
+    severity: blocker
+    run: human
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md C1 + roadmap §5 Gate F (decision logged in the repo; role emails drafted the moment it lands)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md C1; roadmap §5 F–G"
+    applicability:
+      commerce: { adapted: "Approval is on the UNPUBLISHED theme preview link; publishing the theme is itself forever-human (rule k)" }
+      organic: required
+      landing: required
+
+  - id: dns-go-live
+    name: "DNS / go-live flip"
+    what_it_verifies: "DNS flip at Cloudflare (grey-cloud for Vercel, two-plane rule) executed by a human; never by the agent; old site archived"
+    severity: blocker
+    run: human
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md C2; CLAUDE.md Factory rule (DNS flips are HUMAN actions — Abilash/Ambuj flip)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md C2"
+    applicability:
+      commerce: { adapted: "Domain connect + theme publish inside Shopify admin — forever-human list (rule k)" }
+      organic: required
+      landing: { n_a: "An /lp/ path under a live domain needs no DNS action; go-live is the Ads cutover" }
+
+  - id: ads-final-url-cutover
+    name: "Ads final-URL cutover approval"
+    what_it_verifies: "Where live spend exists, Abilash approves the final-URL cutover; final URL is never a redirecting domain (Google Ads destination policy)"
+    severity: blocker
+    run: human
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md C3; docs/design/LANDING_PAGE_DOCTRINE.md §7 (destination rules)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md C3"
+    applicability:
+      commerce: { adapted: "Where live spend targets store URLs — coordinated with Vikash (PDP URL rule m)" }
+      organic: { adapted: "Only where campaigns point at the domain; otherwise recorded as no-spend" }
+      landing: required
+
+  - id: post-launch-verification
+    name: "Post-launch Day-1 / Day-7 verification"
+    what_it_verifies: "Day 1: indexing, GSC coverage 0 errors, live analytics events, first live lead traced to CRM, bot answering · Day 7: CWV field sample, keyword spot-check, lead count vs baseline, broken-link recrawl"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md D procedure; reported in Fleet Pulse"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md D"
+    applicability:
+      commerce: { adapted: "Plus checkout conversion monitoring and Triple Whale baseline in the same windows" }
+      organic: required
+      landing: { adapted: "Indexing checks invert (verify still noindexed); Day-1 = events firing + first lead in CRM; Day-7 = conversion rate vs campaign baseline" }
+
+  - id: launch-retro-learning-loop
+    name: "Launch retro + wiki update"
+    what_it_verifies: "15-minute retro appended to LEARNINGS.md; anything appearing twice becomes a packages/* or checklist PR within the week; wiki page updated at launch (doctrine b)"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "SITE_LAUNCH_CHECKLIST_v1.0.md E + CLAUDE.md doctrine (b); enforced in part by launch-evidence-gate (LEARNINGS entry required)"
+    source: "SITE_LAUNCH_CHECKLIST_v1.0.md E"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required
+
+  - id: weekly-qa-rotation
+    name: "Weekly QA audit rotation"
+    what_it_verifies: "Playwright MCP explore: broken links, 4xx/5xx, mixed content, mobile render, banned-word scan (KTAHV), schema presence, forms + consent, data-cta firing, images, hreflang → audits/<site>-<date>.md, findings only"
+    severity: advisory
+    run: agent
+    status: partial
+    script_or_agent_ref: "CLAUDE.md §QA audit pass procedure + audits/ outputs — no scheduler exists (PROSE-ONLY per docs/process/inventory-existing-rules.md WF-QA); runs when invoked"
+    source: "CLAUDE.md §STANDARD WORKFLOWS (QA audit pass)"
+    applicability:
+      commerce: { adapted: "Store surfaces crawled READ-ONLY; catalog layer covered by the Monday catalog-compliance-audit instead" }
+      organic: required
+      landing: { adapted: "Live campaign LPs join the host site's rotation while spend is active" }
+
+  - id: cross-model-audit
+    name: "Cross-model audit at phase boundary"
+    what_it_verifies: "Independent GPT-5.5-via-Codex audit note at every phase boundary; load-bearing claims triangulated (both external verifiers or pending-triangulation queue — never 'verified by one only')"
+    severity: high
+    run: agent
+    status: built
+    script_or_agent_ref: "scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs; triangulation rule per roadmap §3"
+    source: "Roadmap §1 step 7 + §3 (secondary auditors)"
+    applicability:
+      commerce: required
+      organic: required
+      landing: required

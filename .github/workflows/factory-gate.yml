@@ -93,6 +93,17 @@ jobs:
       - name: Launch evidence gate (reports ⇒ checklists + wiki/log + LEARNINGS)
         run: node scripts/launch-evidence-gate.mjs
 
+      # UNIFIED GATE REGISTRY (roadmap §7 / PROMPT 5, 18 Jul). One registry,
+      # three site classes: every gate in gates/registry.yaml must carry an
+      # explicit entry for commerce, organic AND landing — required, adapted
+      # ("how"), or n_a ("reason"). A missing class entry fails the PR: a check
+      # that exists for one class and is simply absent for another is how the
+      # "19-gate check" orphan and the one-site content-lint scope happened.
+      # Per-site ship checklists are GENERATED from the registry, never
+      # hand-written (CLAUDE.md §GATE REGISTRY).
+      - name: Gate-registry lint (every gate × every class — no missing entries)
+        run: node scripts/gate-registry-lint.mjs
+
       # Discovered by find, NOT a fixed glob. The old glob was
       # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
       # medical-review.test.js — the ONLY test guarding our anti-fabrication
