@@ -82,3 +82,15 @@ id = "generic-api-key"
     regexTarget = "line"
     regexes = ['''2b97355b-bf6d-4a8c-83a9-ba5c0c52fc4b''']
     paths = ['''audits/ayurvedajournals\.com-2026-07-16\.md''']
+
+# Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
+# Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
+# trip generic-api-key. These are third-party public-page artifacts, not repo secrets;
+# rule-(r) injection screening + security-auditor remain the controls for mined content.
+# Scoped by RULE + PATH only — real secrets of ours anywhere else still fail the scan.
+[[rules.allowlists]]
+  targetRules = ["generic-api-key"]
+  paths = [
+    '''docs/ktahv-inputs/lp-mining/.*\.html''',
+    '''content-mined/.*''',
+  ]
