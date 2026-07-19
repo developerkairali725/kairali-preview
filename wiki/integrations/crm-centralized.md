@@ -53,9 +53,26 @@ when answered; never guess fields (HARD GATE 6).
   BOTH in the central CRM and in property-management software — **two different PMS** (names TBD;
   not blocking, since conversion truth incl. booking details = Satyam's CRM DB). PMS names ride
   the Satyam reply or ops, needed only for reconciliation depth at M3.
-- **Centres are a SEPARATE system:** different team, different CRM, workflow unknown to the owner.
-  **Delegated to Gaurav Saraswat (ops@kairalicentres.com)** — his team supplies the exact
-  workflow, endpoints/start points, and how appointments + conversions are recorded. Owner expects
-  an extensive tracking system there too. Email SENT 19 Jul 14:51 IST (msg 19f79ae347a9f8b8,
-  mailbox-verified); dual-source verification for kairalicenters.com binds to THAT system once
-  documented. All three access threads now in flight: Satyam · Abhishek/Gaurav GSC · Gaurav centres.
+- **Centres system MAPPED — Gaurav Saraswat REPLIED 19 Jul 17:19 IST** (msg 19f7a365247be568,
+  supersedes the "workflow unknown" state below):
+  - **Stack:** in-house CRM on **Google Sheets** (operational lead management) + **Looker Studio**
+    (reporting/dashboards). Not a commercial CRM.
+  - **Lead flow:** all channels (Website, LPs, WhatsApp, Meta FB/IG, GBP, Direct Call, Walk-in,
+    Vendor, Event) → **Lead Verification Team** (validation + de-dup) → Centre assignment →
+    Centre calling panel → appointment scheduling → patient visit → **billing** → revenue mapping
+    & conversion reporting → follow-up.
+  - **Attribution key = customer MOBILE NUMBER** (lead→revenue join; marketing dashboard tracks
+    Lead vs Revenue per campaign/source). OS implication: the wa.me+UTM launch pattern
+    (D-20260719-22) feeds this key natively — the phone number IS the join.
+  - **Source captured:** yes — Lead Source field (category level: Website / Google / Meta /
+    WhatsApp / Direct Call / Landing Pages / Event / Vendor / Walk-in) + Assigned Centre +
+    Revenue Status. Click-level UTM→lead mapping still absent = the M3 build requirement stands.
+  - **Read-only access DEFERRED by Gaurav:** Centres are mid-migration to a NEW CRM platform
+    (pilot live at the **Gurgaon Centre**, DME team finalizing); read endpoint promised after
+    rollout stabilizes. **WAITING-ON: chase the endpoint once the new platform rollout completes**
+    — M3 integration targets the NEW platform, not the Sheets legacy.
+- ORIGINAL delegation record (kept for provenance): different team, different CRM, workflow was
+  unknown to the owner; delegated to Gaurav Saraswat (ops@kairalicentres.com). Email SENT 19 Jul
+  14:51 IST (msg 19f79ae347a9f8b8, mailbox-verified); dual-source verification for
+  kairalicenters.com binds to the Centres system now documented above. Access threads: Satyam
+  (awaited) · Abhishek/Gaurav GSC (awaited) · Gaurav centres (**ANSWERED**).

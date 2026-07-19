@@ -271,6 +271,9 @@ jobs:
   # Own job (not a step in brand-lint) so it is its own required-check context,
   # and because it needs the full history brand-lint does not.
   front-gate:
+    permissions:
+      contents: read
+      pull-requests: read # the authenticated-approval step reads PR reviews (M1); job-scoped like emit-verdicts' write grant — the workflow default stays contents: read. Without it the reviews API 403s and the gate fails closed on the error path (post-merge demo PR #169 finding) instead of the review-demand message.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

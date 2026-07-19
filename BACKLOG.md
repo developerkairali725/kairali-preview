@@ -157,3 +157,8 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
 - [x] 2026-07-13 ~18:30 IST — brand manuals ingested (text + PDFs), raag-tokens.css created (D8 closed); comp set ingested; checklists ingested + made law; plugins installed
 - [x] 2026-07-13 ~17:30 IST — Wave 0: arogyakendra.com built+deployed; estate sweep (87 domains, 40 RED); Wave-0 mining done
 - [x] 2026-07-13 (day) — Factory stood up end-to-end: repo→org→Vercel Pro, hooks, CI, wiki, morning brief, migration playbook, Vercel deploy pipeline verified
+
+- [ ] 2026-07-19 19:18:08 IST — WAITING-ON (Gaurav/DME team): Centres NEW CRM platform rollout
+  (pilot at Gurgaon Centre) → then the promised read-only reporting endpoint (msg 19f7a365247be568).
+  M3 CRM integration targets the NEW platform, not the Sheets legacy. Chase only after rollout
+  stabilizes — do not ping before (reconcile-before-chasing rule).
