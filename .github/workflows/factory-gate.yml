@@ -99,6 +99,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the M2 diff-based lints below (evidence-manifest ci, evolution-lint SE-6, change-gates-resolve) diff against the PR base; a shallow clone has no base
 
       - uses: pnpm/action-setup@v4
 
@@ -234,6 +236,79 @@ jobs:
       # immutable source layer must still carry the original exactly once).
       - name: Neutralized-workflows check (PKG-043 — adopted copies byte-faithful, sources untouched)
         run: node scripts/neutralize-workflows.mjs --check
+
+      # EVIDENCE-MANIFEST APPEND-ONLY LAW (OS v2 M2, EVIDENCE LAW v2 §2.5 /
+      # EV-4; clears strict residues PKG-020/PKG-077). A PR that MODIFIES or
+      # DELETES a file matched by a committed evidence manifest, or rewrites a
+      # manifest's history without a strictly greater run-id, FAILS — evidence
+      # cannot be silently edited after the fact. Corrections = a NEW run-id,
+      # never overwrite. BASE via env, never interpolated into the shell line
+      # (front-gate injection doctrine); the script itself falls back to
+      # origin/main when BASE is empty/zeros and refuses to guess beyond that.
+      - name: Evidence-manifest append-only check (EV-4 — merge-blocking)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/evidence-manifest.mjs ci
+
+      # DECISIONS PROVENANCE STORE (OS v2 M2, plan §3.2 / owner requirement R2;
+      # cleared strict residues CM-073/CM-076). Validates every decisions/D-*.md
+      # and launches/*/decisions/D-*.md record, proves the committed
+      # decisions/index.json is up to date, and FAILS on any mutation of an
+      # accepted record (immutability law, decisions/README.md) — history that
+      # can be edited is not history. BASE-TRUST (external pass blocker): the
+      # prior ledger is read from the MERGE BASE (`git show <merge-base>:
+      # decisions/index.json`), never the PR's working tree — a PR that edits
+      # an accepted record and re-hashes index.json in the same commit is
+      # judged against the ledger it could not rewrite. BASE via env, never
+      # shell-interpolated (front-gate injection doctrine); if the store is
+      # new in this PR the script bootstraps LOUDLY instead of bricking the
+      # minting PR (authenticated-approval bootstrap posture).
+      - name: Decisions-index check (records valid, index fresh, accepted records immutable vs BASE ledger)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/decisions-index.mjs --check
+
+      # REPORT-STORE FRONTMATTER + DISPOSITIONS LAW (OS v2 M2, plan §3.3 R3).
+      # Every report created from the M2 cutover carries complete frontmatter;
+      # finding-type reports carry the IMPLEMENT|REJECT|MONITOR dispositions
+      # triad — a finding without a recorded disposition silently becomes
+      # forgotten work or unowned scope creep. Legacy reports are counted,
+      # never failed (retro-editing history would falsify it).
+      - name: Report-store lint (frontmatter + dispositions triad — merge-blocking)
+        run: node scripts/report-store-lint.mjs --check
+
+      # EVOLUTION REGISTERS + SE-6 CONTINUITY GUARD (OS v2 M2, plan §3.1 R1 +
+      # §5; cleared strict residue PKG-059). Validates radar/channels/
+      # anti-patterns/scout-schema, and — the SE-6 guard — FAILS any PR that
+      # touches evolution/** in the same breath as the HARD GATES section,
+      # gates/registry.yaml, the beauty/go-science doctrine, or front-gate.mjs:
+      # the agent never modifies its own evaluation criteria alongside its
+      # evolution layer. BASE via env, same injection doctrine as above; the
+      # shell guard mirrors the `changes` job — an unusable BASE falls back to
+      # origin/main so the SE-6 guard never silently skips in CI.
+      - name: Evolution lint + SE-6 continuity guard (registers honest, no evolution/gate bundling)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
+            echo "::notice::No usable base SHA — SE-6 guard diffs against origin/main instead."
+            BASE=origin/main
+          fi
+          node scripts/evolution-lint.mjs --base "$BASE"
+
+      # PER-CHANGE GATE RESOLUTION (OS v2 M2, D-20260719-09 right-tool-right-
+      # time; external pass 3 finding B5). INFORMATIONAL, deliberately: the
+      # resolver posts WHICH gates this diff obligates (the auditable
+      # evidence trail) — it does not yet execute or block on them; it becomes
+      # BLOCKING when the job-spec envelope consumes it at the M4 pilot
+      # (ACTIVATION SEMANTICS, CLAUDE.md OS v2 §10). Exit 1 = broken resolver
+      # (unparseable class-map/registry, unresolvable base) and DOES fail the
+      # build — a broken resolver must never silently pass. Rule g: nothing
+      # weakened; this only makes the per-change obligation set visible.
+      - name: Change-gates resolution (INFORMATIONAL — evidence of which gates the diff obligates)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/change-gates-resolve.mjs
 
       # CHAT BUBBLE PRESENCE (D-20260718-05, 18 Jul). The chat bubble is
       # mandatory on every Factory site; before this gate four preview-stage

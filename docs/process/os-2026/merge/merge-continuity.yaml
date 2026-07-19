@@ -729,7 +729,7 @@ rows:
     enforcement: "lint (date-only entries are a finding)"
     evidence_path: null
     approver: "CI"
-    test: "timestamp lint (Monday pass); PLANNED: manifest validator (M2)"
+    test: "timestamp lint (Monday pass); scripts/evidence-manifest.mjs verify (manifest dual-timestamp fields, BUILT M2)"
     status: strengthened
   - source_id: CM-056
     source_file: "CLAUDE.md"
@@ -739,10 +739,10 @@ rows:
     new_home: "Evidence Law v2 §2.5 — root stays launches/<domain>/, 'if it isn't in the repo, it didn't happen' survives; package RAW/PROCESSED/PUBLISHED taxonomy nests inside; SHA-256 manifests added; checklists now GENERATED from gates/registry.yaml"
     dimensions: [all]
     trigger: "every site launch"
-    enforcement: "evidence law + registry-generated checklists; PLANNED: scripts/evidence-manifest.mjs validator in CI (M2)"
+    enforcement: "evidence law + registry-generated checklists; scripts/evidence-manifest.mjs validator BUILT at M2 (EV-4 ci step merge-blocking in factory-gate.yml)"
     evidence_path: "launches/<domain>/"
     approver: "CI + owner"
-    test: "PLANNED: evidence-manifest validator (M2)"
+    test: "scripts/test/evidence-manifest.test.js + evidence-manifest ci (factory-gate.yml)"
     status: strengthened
   - source_id: CM-057
     source_file: "CLAUDE.md"
@@ -961,10 +961,10 @@ rows:
     new_home: "Session-state family (plan §4, strengthened); decisions/index.json joins the durable-state set (§3.2)"
     dimensions: [all]
     trigger: "every brief generation"
-    enforcement: "scripts/brief-snapshot.sh first; generated-view law"
+    enforcement: "scripts/brief-snapshot.sh first; generated-view law; decisions/index.json BUILT at M2 (scripts/decisions-index.mjs, --check in factory-gate.yml CI)"
     evidence_path: null
     approver: "agent (self-executing duty)"
-    test: "scripts/brief-snapshot.sh"
+    test: "scripts/brief-snapshot.sh; scripts/test/decisions-index.test.js + decisions-index --check (CI)"
     status: strengthened
   - source_id: CM-074
     source_file: "CLAUDE.md"
@@ -1000,7 +1000,7 @@ rows:
     new_home: "Session state unchanged + decisions index + radar load added at boot (plan §4 session-state row; §3.1 mandatory LOCAL radar lookup; §3.2 boot loads decisions/index.json)"
     dimensions: [all]
     trigger: "session start"
-    enforcement: "SessionStart hook; manual fallback mandatory"
+    enforcement: "SessionStart hook; manual fallback mandatory; boot loads decisions/index.json + surfaces proposed records (M2 hook in scripts/boot-contract.mjs); doctor unpromoted-rulings attention check (scripts/doctor.mjs, M2)"
     evidence_path: "state/boot.json"
     approver: "CI (hook)"
     test: "scripts/boot-contract.mjs + scripts/doctor.mjs"
@@ -1052,10 +1052,10 @@ rows:
     new_home: "Report store R3 (plan §3.3) — docs/reports/ gains frontmatter + mandatory dispositions block; rule itself unchanged"
     dimensions: [all]
     trigger: "session end, when deliverable is a report"
-    enforcement: "doctrine; PLANNED: report-store frontmatter + dispositions lint (M2)"
+    enforcement: "doctrine; scripts/report-store-lint.mjs (frontmatter + dispositions triad, BUILT M2; --check merge-blocking in factory-gate.yml)"
     evidence_path: "docs/reports/YYYY-MM-DD-<topic>.md"
     approver: "agent (self-executing duty)"
-    test: "PLANNED: dispositions lint (M2)"
+    test: "scripts/test/report-store-lint.test.js + report-store-lint --check (CI)"
     status: strengthened
   - source_id: CM-081
     source_file: "CLAUDE.md"
@@ -2710,10 +2710,10 @@ rows:
     dimensions: [all]
     also_carried_by: [docs/process/os-2026/standards/00_MASTER_OPERATING_SYSTEM.md]
     trigger: "Phase 2 of every engagement"
-    enforcement: "PLANNED M2 issue register mechanism (V1_ISSUE_REGISTER.csv fork + agency_issue.schema.json fork)"
-    evidence_path: "launches/<domain>/ issue register (M2 location)"
+    enforcement: "issue register BUILT at M2 as launches/<domain>/issues.yaml (docs/process/os-2026/issue-register-format.md — the narrow-YAML fork of V1_ISSUE_REGISTER.csv + agency_issue.schema.json per M0(a) disp 4/6), parsed + field-validated by scripts/job-spec-generate.mjs"
+    evidence_path: "launches/<domain>/issues.yaml"
     approver: "owner"
-    test: "PLANNED: issue schema validation test, M2"
+    test: "scripts/test/job-spec-generate.test.js (issue-row parse + validation)"
     status: adopted
   - source_id: PKG-005
     source_file: "docs/process/os-2026/package/01_MASTER_OS/MASTER_AGENCY_OPERATING_SYSTEM_COMPLETE_2026.md (§5 Phase 3)"
@@ -2808,10 +2808,10 @@ rows:
     dimensions: [all]
     also_carried_by: [docs/process/os-2026/standards/00_MASTER_OPERATING_SYSTEM.md]
     trigger: "every tracked issue lifecycle"
-    enforcement: "PLANNED M2 issue-register mechanism + lint; PROOF-OF-WORK rules (existing CLAUDE.md)"
+    enforcement: "issue register BUILT at M2 (launches/<domain>/issues.yaml, docs/process/os-2026/issue-register-format.md; state field required by scripts/job-spec-generate.mjs); PROOF-OF-WORK rules (existing CLAUDE.md); the TRANSITION lint (no-skip/enum proof between commits) is still PLANNED"
     evidence_path: "issue register rows + retest evidence"
     approver: "owner (P0/P1 closure requires independent review)"
-    test: "PLANNED: state-machine transition lint, M2"
+    test: "scripts/test/job-spec-generate.test.js (issue-row field validation); PLANNED: state-machine transition lint"
     status: strengthened
   - source_id: PKG-012
     source_file: "docs/process/os-2026/package/08_SCHEMAS_AND_SCRIPTS/agency_issue.schema.json (severity enum)"
@@ -2822,10 +2822,10 @@ rows:
     dimensions: [all]
     also_carried_by: [docs/process/os-2026/standards/00_MASTER_OPERATING_SYSTEM.md, docs/process/os-2026/standards/05_QA_LAUNCH_MONITORING_LOOP.md]
     trigger: "every issue at creation"
-    enforcement: "forked agency_issue schema (PLANNED M2, decision 7.1.6)"
-    evidence_path: "issue register"
+    enforcement: "forked schema REALIZED at M2 as docs/process/os-2026/issue-register-format.md (severity P0–P3 field law; P0/P1 never self-approved carried into every generated envelope by scripts/job-spec-generate.mjs); severity field required at parse; enum-membership lint still PLANNED"
+    evidence_path: "launches/<domain>/issues.yaml"
     approver: "agent"
-    test: "PLANNED: issue schema validation test, M2"
+    test: "scripts/test/job-spec-generate.test.js; PLANNED: severity enum-membership lint"
     status: adopted
   - source_id: PKG-013
     source_file: "docs/process/os-2026/package/08_SCHEMAS_AND_SCRIPTS/phase_gate.schema.json (decision enum GO/CONDITIONAL_GO/NO_GO)"
@@ -2932,10 +2932,10 @@ rows:
     new_home: "plan §2.5 — SHA-256 manifests on every evidence bundle via new scripts/evidence-manifest.mjs (port of package Python utilities, extended with the §4 fields the shipped script omits) + validator wired into CI and Monday lints; corrections = new run-id, never overwrite"
     dimensions: [all]
     trigger: "every evidence-bundle creation or correction"
-    enforcement: "PLANNED M2 scripts/evidence-manifest.mjs + CI validator + Monday lint pass"
+    enforcement: "scripts/evidence-manifest.mjs BUILT at M2 (write/verify/ci modes; corrections = strictly greater run-id, never overwrite) + EV-4 append-only ci step merge-blocking in factory-gate.yml; Monday lint pass wiring pending"
     evidence_path: "launches/<domain>/evidence/**/manifest.json"
     approver: "CI"
-    test: "PLANNED: evidence-manifest.mjs test suite, M2"
+    test: "scripts/test/evidence-manifest.test.js + evidence-manifest ci (factory-gate.yml)"
     status: adopted
   - source_id: PKG-021
     source_file: "docs/process/os-2026/package/08_SCHEMAS_AND_SCRIPTS/artifact_manifest.schema.json (required field collected_at_utc)"
@@ -2945,10 +2945,10 @@ rows:
     new_home: "plan §2.5 + §7.1.4 — IST to the second remains canonical (existing law); machine records carry a dual collected_at_utc field; registers never fork on timezone again; UTC-only rejected (REJ-004)"
     dimensions: [all]
     trigger: "every timestamped machine record"
-    enforcement: "forked manifest schema (PLANNED M2) + existing IST-to-the-second lint"
-    evidence_path: "manifest files"
+    enforcement: "manifest fields BUILT at M2 — scripts/evidence-manifest.mjs writes IST-canonical `generated` + dual `collected_at_utc` and verify fails a manifest missing/garbling either; existing IST-to-the-second lint"
+    evidence_path: "launches/<domain>/evidence/**/manifest.json"
     approver: "CI"
-    test: "PLANNED: dual-timestamp schema test, M2"
+    test: "scripts/test/evidence-manifest.test.js (dual-timestamp validation)"
     status: constrained
   - source_id: PKG-022
     source_file: "docs/process/os-2026/package/04_EVIDENCE_QA_AGENT_EXECUTION/EVIDENCE_STORAGE_QA_AND_AI_AGENT_EXECUTION_STANDARD_2026.md (§3)"
@@ -3096,10 +3096,10 @@ rows:
     new_home: "plan §2.7 — per-task machine-readable YAML job-spec envelope; prohibited actions GENERATED from HARD GATES + registry so it can never be narrower than doctrine"
     dimensions: [all]
     trigger: "every delegated agent task"
-    enforcement: "PLANNED M2 job-spec generator"
+    enforcement: "scripts/job-spec-generate.mjs BUILT at M2 — envelope generated from the issue row; prohibited actions generated from HARD GATES + registry (superset property re-proven at --check); refuses missing budget, builder==verifier, T1 forever-human actions in the authorized surface"
     evidence_path: "job-spec files per task"
     approver: "agent"
-    test: "PLANNED: job-spec generator test (prohibited-actions superset property), M2"
+    test: "scripts/test/job-spec-generate.test.js (prohibited-actions superset property, both directions)"
     status: strengthened
   - source_id: PKG-033
     source_file: "docs/process/os-2026/package/04_EVIDENCE_QA_AGENT_EXECUTION/EVIDENCE_STORAGE_QA_AND_AI_AGENT_EXECUTION_STANDARD_2026.md (§9 Agent evidence labels)"
@@ -3123,10 +3123,10 @@ rows:
     new_home: "plan §2.7 — cost budgets in every job spec; closes the one failure class v1 had no gate for (token blowups); reinforced by §5 EX-2 session budgets"
     dimensions: [all]
     trigger: "every delegated agent task"
-    enforcement: "PLANNED M2 job-spec generator budget fields + EX-2 session budgets"
+    enforcement: "job-spec generator budget fields BUILT at M2 (scripts/job-spec-generate.mjs REFUSES a spec whose cost_budget is missing/empty — no default exists); EX-2 session budgets still PLANNED"
     evidence_path: "job-spec files"
     approver: "agent"
-    test: "PLANNED: budget-field-required test, M2"
+    test: "scripts/test/job-spec-generate.test.js (budget-required refusal); PLANNED: EX-2 session-budget mechanism"
     status: adopted
   - source_id: PKG-035
     source_file: "docs/process/os-2026/package/05_WORKFLOWS/01_B2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md (AI-agent execution rules, rule 1; byte-identical in all 24 workflows)"
@@ -3221,10 +3221,10 @@ rows:
     dimensions: [all]
     also_carried_by: [docs/process/os-2026/standards/00_MASTER_OPERATING_SYSTEM.md]
     trigger: "before any change to a live asset"
-    enforcement: "PLANNED M2 EV-4 append-only CI check + evidence-manifest.mjs"
+    enforcement: "EV-4 append-only CI check + scripts/evidence-manifest.mjs BUILT at M2 (ci step merge-blocking in factory-gate.yml; covers files matched by committed manifests under launches/)"
     evidence_path: "launches/<domain>/baseline/ + evidence/ manifests"
     approver: "CI"
-    test: "PLANNED: append-only CI test, M2"
+    test: "scripts/test/evidence-manifest.test.js (append-only, both directions)"
     status: strengthened
   - source_id: PKG-042
     source_file: "docs/process/os-2026/package/05_WORKFLOWS/01_B2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md (rule 8)"
@@ -3248,10 +3248,10 @@ rows:
     new_home: "plan §9 rewrite — 'propose via DIRECTIVES.md + owner-approved PR'; any future agent behavior matching the original wording is a gate violation; re-issued under owner authority in the authored standards (§3.6)"
     dimensions: [all]
     trigger: "any learning that would change doctrine/standards"
-    enforcement: "DIRECTIVES.md capture (existing) + docs/process/os-2026/workflows/ generated adopted tree (rule 9 neutralized in every copy, scripts/neutralize-workflows.mjs) + scripts/neutralize-workflows.mjs --check (CI) + SE-6 evolution-PR continuity lint (M2)"
+    enforcement: "DIRECTIVES.md capture (existing) + docs/process/os-2026/workflows/ generated adopted tree (rule 9 neutralized in every copy, scripts/neutralize-workflows.mjs) + scripts/neutralize-workflows.mjs --check (CI) + SE-6 continuity guard BUILT at M2 (scripts/evolution-lint.mjs --base, merge-blocking in factory-gate.yml — evolution/** never rides with gate/doctrine edits)"
     evidence_path: "DIRECTIVES.md + doctrine PRs"
     approver: "owner"
-    test: "scripts/test/neutralize-workflows.test.js (10 tests); PLANNED: SE-6 continuity lint blocks doctrine self-edits, M2"
+    test: "scripts/test/neutralize-workflows.test.js (10 tests); scripts/test/evolution-lint.test.js (SE-6 guard, both directions)"
     status: neutralized
   - source_id: PKG-044
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 SE-1 (plan-authored; anchored to package §9: 'Agentic systems should also be threat-modelled for prompt injection, tool misuse, insecure memory/context and excessive autonomy [O02]')"
@@ -3261,10 +3261,10 @@ rows:
     new_home: "plan §5 SE-1 + §3.1 — scout architecturally quarantined; output fixed data-only schema; never installs, writes doctrine, or touches client context"
     dimensions: [all]
     trigger: "every evolution-scout run"
-    enforcement: "PLANNED M2 scout scaffold (isolated session, no side-effect tools)"
+    enforcement: "scout OUTPUT schema BUILT at M2 (evolution/scout-schema.json, additionalProperties:false at every level, validated by scripts/evolution-lint.mjs in CI); the isolated-session scaffold itself still PLANNED"
     evidence_path: "scout reports in evolution/ registers"
     approver: "owner"
-    test: "PLANNED: scout-isolation test, M2"
+    test: "scripts/test/evolution-lint.test.js (scout-schema fixed shape); PLANNED: scout-isolation test"
     status: adopted
   - source_id: PKG-045
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 SE-2 (plan-authored, extends package O02 threat model)"
@@ -3274,10 +3274,10 @@ rows:
     new_home: "plan §5 SE-2 — scout/recommendation outputs constrained to a fixed data-only schema, zero-width/bidi-normalized"
     dimensions: [all]
     trigger: "every scout/recommendation output write"
-    enforcement: "PLANNED M2 recommendation schema + normalization pass"
+    enforcement: "data-only schema BUILT at M2 (evolution/scout-schema.json; its $comment carries the Unicode-normalization + injection-screen ingest law, presence checked by scripts/evolution-lint.mjs); the executed normalization PASS at ingest still PLANNED"
     evidence_path: "evolution/ candidate records"
     approver: "CI"
-    test: "PLANNED: schema + normalization test, M2"
+    test: "scripts/test/evolution-lint.test.js (schema shape + ingest-law presence); PLANNED: normalization-pass test"
     status: adopted
   - source_id: PKG-046
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 SE-3 (plan-authored; package Research Library evidence class 5: 'Reddit, forums, YouTube and expert opinion … never used alone to set a target or assert causality')"
@@ -3287,10 +3287,10 @@ rows:
     new_home: "plan §5 SE-3 + §3.1 channels.yaml trust tiers — package's 5-class evidence hierarchy hardened into a trust-tier register"
     dimensions: [all]
     trigger: "any externally sourced claim entering evidence or decisions"
-    enforcement: "PLANNED M2 trust-tier register + corroboration rule in research admission"
+    enforcement: "trust-tier register BUILT at M2 (evolution/channels.yaml tiers; scripts/evolution-lint.mjs FAILS any untrusted-forum row not carrying the SE-3 corroboration law in its notes); corroboration enforcement at research-admission time still PLANNED"
     evidence_path: "evolution/channels.yaml + source register entries"
     approver: "owner"
-    test: "PLANNED: tier-1 corroboration lint, M2"
+    test: "scripts/test/evolution-lint.test.js (SE-3 notes law, both directions); PLANNED: research-admission corroboration lint"
     status: strengthened
   - source_id: PKG-047
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 SE-4 (= §2.6 HARD GATE 15; cross-reference PKG-030)"
@@ -3327,10 +3327,10 @@ rows:
     new_home: "plan §5 SE-6 + §3.1 — lint merge-blocks any evolution PR touching HARD GATES, registry semantics, beauty/GO-science rubrics, or front gates; adopted learnings carry TTL/review_by"
     dimensions: [all]
     trigger: "every evolution/doctrine PR"
-    enforcement: "PLANNED M1/M2 continuity lint in CI"
+    enforcement: "SE-6 continuity guard BUILT at M2 (scripts/evolution-lint.mjs --base, merge-blocking in factory-gate.yml — evolution/** never lands with HARD GATES, registry, beauty/GO-science, or front-gate edits); TTL/review_by carried by the evolution registers and staleness-checked by the same lint"
     evidence_path: "CI check results on evolution PRs"
     approver: "CI"
-    test: "PLANNED: continuity-lint test, M1/M2"
+    test: "scripts/test/evolution-lint.test.js (SE-6 guard, both directions)"
     status: adopted
   - source_id: PKG-050
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 SE-7 (plan-authored; approval-fatigue research per §2.1)"
@@ -3353,10 +3353,10 @@ rows:
     new_home: "plan §5 EX-1 — risk-tier map committed as part of M2 mechanisms"
     dimensions: [all]
     trigger: "any new v2 action type introduced"
-    enforcement: "PLANNED M2 risk-tier map + review on new action types"
-    evidence_path: "risk-tier map file (M2)"
+    enforcement: "gates/risk-tiers.yaml BUILT at M2 — every action type mapped to one tier, unmapped = T1-forever-human (fail-closed); FOREVER_HUMAN_FLOOR machine-pinned in scripts/job-spec-generate.mjs (a T1 row mapped lower is itself a refusal)"
+    evidence_path: "gates/risk-tiers.yaml"
     approver: "owner"
-    test: "PLANNED: risk-map coverage test, M2"
+    test: "scripts/test/job-spec-generate.test.js (floor pin + T1 refusal, both directions)"
     status: adopted
   - source_id: PKG-052
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §5 EX-2 (plan-authored)"
@@ -3444,10 +3444,10 @@ rows:
     new_home: "plan §5 EV-4 — append-only CI check on launches/<domain>/evidence/ and baseline/"
     dimensions: [all]
     trigger: "every PR touching evidence paths"
-    enforcement: "PLANNED M2 append-only CI job"
+    enforcement: "EV-4 append-only CI check BUILT at M2 — scripts/evidence-manifest.mjs ci, merge-blocking step in factory-gate.yml (modification/deletion of any manifest-matched evidence file, or manifest history rewrite without a strictly greater run-id, fails the PR)"
     evidence_path: "CI check results"
     approver: "CI"
-    test: "PLANNED: append-only CI test, M2"
+    test: "scripts/test/evidence-manifest.test.js (EV-4 ci findings, both directions)"
     status: strengthened
   - source_id: PKG-059
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.1 (R1 build; seeded from the package's 18-stage TOOL_STACK_REGISTER.csv)"
@@ -3457,10 +3457,10 @@ rows:
     new_home: "plan §3.1 — evolution/radar.yaml with honest per-domain staleness (AI-model rows ~4–8 weeks, framework ~quarter, doctrine 6–12 months)"
     dimensions: [all]
     trigger: "per-phase/per-task mandatory LOCAL radar lookup; staleness review_by dates"
-    enforcement: "PLANNED M2 evolution registers + radar-lookup log line"
+    enforcement: "evolution/radar.yaml BUILT at M2 + schema/staleness validated by scripts/evolution-lint.mjs (merge-blocking in factory-gate.yml; stale rows print LOUD for the Monday sweep, never silently pass); radar-lookup log line still PLANNED"
     evidence_path: "evolution/radar.yaml"
     approver: "owner"
-    test: "PLANNED: radar schema + staleness lint, M2"
+    test: "scripts/test/evolution-lint.test.js (radar schema + staleness, both directions)"
     status: adopted
   - source_id: PKG-060
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.1 (R1; owner-requested channels register)"
@@ -3470,10 +3470,10 @@ rows:
     new_home: "plan §3.1 — channels.yaml (Anthropic/Claude Code, Next.js/Vercel, DataForSEO, Google Search Central, Shopify changelogs, ChatGPT/Perplexity API notes, ThoughtWorks Radar, curated trackers, named subreddits/HN as UNTRUSTED tier)"
     dimensions: [all]
     trigger: "channel polling per declared cadence; any register addition"
-    enforcement: "PLANNED M2 channels register; owner approval on every addition"
+    enforcement: "channels register BUILT at M2 (evolution/channels.yaml, pending-owner-ratification header until his logged word; schema + pinned tiers/cadences validated by scripts/evolution-lint.mjs in CI); owner approval on every addition"
     evidence_path: "evolution/channels.yaml"
     approver: "owner"
-    test: "PLANNED: channels schema lint, M2"
+    test: "scripts/test/evolution-lint.test.js (channels schema + pinned rows, both directions)"
     status: adopted
   - source_id: PKG-061
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.1 (amended per external review §12 — two-layer cadence)"
@@ -3509,10 +3509,10 @@ rows:
     new_home: "plan §3.1 + §5 SE-1/SE-6 — quarantined scout, owner-ruling path for protected surfaces, frozen clinical lane"
     dimensions: [all]
     trigger: "every evolution-layer change proposal"
-    enforcement: "PLANNED M1/M2 continuity lint + PR-only path; DECISIONS.md owner-ruling channel (existing)"
+    enforcement: "SE-6 continuity guard BUILT at M2 (scripts/evolution-lint.mjs --base in factory-gate.yml merge-blocks evolution+protected-surface bundling) + authenticated-approval guarded paths (M1, scripts/authenticated-approval.mjs); DECISIONS.md owner-ruling channel (existing)"
     evidence_path: "evolution PRs + lint results"
     approver: "owner"
-    test: "PLANNED: protected-surface merge-block test, M1/M2"
+    test: "scripts/test/evolution-lint.test.js (protected-surface merge-block, both directions)"
     status: adopted
   - source_id: PKG-064
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.2 (R2 build; package DECISION_EXCLUSION_REGISTER.csv as vocabulary source)"
@@ -3522,10 +3522,10 @@ rows:
     new_home: "plan §3.2 — decisions/ (global) + launches/<domain>/decisions/ (site-scoped); ADR granularity at decision altitude per §7.1.13; scientific rationale with citations in the body"
     dimensions: [all]
     trigger: "every stakeholder-questionable choice (design direction, token set, sitemap, keyword map, named tagline…)"
-    enforcement: "PLANNED M2 decisions/ store + immutability lint"
+    enforcement: "decisions/ store BUILT at M2 (decisions/ + launches/<domain>/decisions/, format law in decisions/README.md) + immutability enforced by scripts/decisions-index.mjs (--check merge-blocking in factory-gate.yml — any mutation of an accepted record fails)"
     evidence_path: "decisions/*.md + launches/<domain>/decisions/*.md"
     approver: "owner"
-    test: "PLANNED: ADR schema + immutability lint, M2"
+    test: "scripts/test/decisions-index.test.js (schema + immutability, both directions)"
     status: adopted
   - source_id: PKG-065
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.2 (Decision Guardian + index)"
@@ -3535,10 +3535,10 @@ rows:
     new_home: "plan §3.2 — index.json build + Decision Guardian CI + boot-contract load (§4: session state 'strengthened; + decisions index + radar load')"
     dimensions: [all]
     trigger: "every PR (Guardian) + every session boot (index load)"
-    enforcement: "PLANNED M2 CI index build + Guardian step + boot-contract.mjs extension"
+    enforcement: "index build + freshness check BUILT at M2 (scripts/decisions-index.mjs, --check merge-blocking in factory-gate.yml) + boot-contract.mjs loads the index and surfaces proposed records (M2 hook); the Guardian mode (guardian --base) is built and informational — its own CI step/PR-comment wiring still PLANNED"
     evidence_path: "decisions/index.json + Guardian PR comments"
     approver: "CI"
-    test: "PLANNED: Guardian mapping test, M2"
+    test: "scripts/test/decisions-index.test.js (incl. Guardian mapping)"
     status: adopted
   - source_id: PKG-066
     source_file: "docs/process/os-2026/package/04_EVIDENCE_QA_AGENT_EXECUTION/EVIDENCE_STORAGE_QA_AND_AI_AGENT_EXECUTION_STANDARD_2026.md (§10 Exclusion and decision register)"
@@ -3548,10 +3548,10 @@ rows:
     new_home: "plan §3.2 — the package's 6-status register becomes the disposition vocabulary of the decisions/ store; §8 list seeds the exclusion register; DECISIONS.md stays the owner-ruling capture channel"
     dimensions: [all]
     trigger: "every evaluated proposal/control/finding"
-    enforcement: "PLANNED M1 exclusion-register seed + M2 decisions/ mechanics"
+    enforcement: "exclusion-register seed (M1, this file's REJ-*/DEF-* rows) + decisions/ mechanics BUILT at M2 (scripts/decisions-index.mjs status/supersession validation); the report-store dispositions triad (scripts/report-store-lint.mjs) carries the finding-level vocabulary; full disposition-enum lint across registers still PLANNED"
     evidence_path: "exclusion register + decisions/ records"
     approver: "owner"
-    test: "PLANNED: disposition-enum lint, M2"
+    test: "scripts/test/decisions-index.test.js + scripts/test/report-store-lint.test.js; PLANNED: cross-register disposition-enum lint"
     status: adopted
   - source_id: PKG-067
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.3 (R3 build; package §5 historical report policy as base: 'Never overwrite a monthly or pre-launch report. Use a new timestamp/version.')"
@@ -3562,10 +3562,10 @@ rows:
     dimensions: [all]
     also_carried_by: [docs/process/os-2026/standards/01_TOOL_AND_REPORT_REGISTER.md]
     trigger: "every report written to docs/reports/"
-    enforcement: "PLANNED M2 report-store frontmatter + dispositions lint"
+    enforcement: "scripts/report-store-lint.mjs BUILT at M2 (frontmatter + dispositions triad on finding-type reports from the cutover date, fail-closed on unparseable dates; docs/reports/index.json generated + freshness-checked; --check merge-blocking in factory-gate.yml)"
     evidence_path: "docs/reports/ frontmatter + index.json"
     approver: "agent"
-    test: "PLANNED: dispositions-block lint, M2"
+    test: "scripts/test/report-store-lint.test.js (both directions)"
     status: adopted
   - source_id: PKG-068
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.4 (R6 build; package Phase 1 protected-baseline obligations as base)"
@@ -3698,10 +3698,10 @@ rows:
     new_home: "plan §2.5 + §7.1.6 — ported to scripts/evidence-manifest.mjs (repo toolchain uniformity), extended with the §4 manifest fields the shipped script omits; Python originals retained as package data, never executed in the pipeline"
     dimensions: [all]
     trigger: "M2 mechanisms build"
-    enforcement: "PLANNED M2 evidence-manifest.mjs + CI validator"
-    evidence_path: "scripts/evidence-manifest.mjs (M2)"
+    enforcement: "scripts/evidence-manifest.mjs BUILT at M2 (write + verify + ci modes; §4 fields the Python omitted added) + EV-4 ci step merge-blocking in factory-gate.yml; Python originals remain package data, never executed"
+    evidence_path: "scripts/evidence-manifest.mjs"
     approver: "CI"
-    test: "PLANNED: port-parity test vs Python output, M2"
+    test: "scripts/test/evidence-manifest.test.js (writer/validator both directions; parity carried by shared SHA-256 semantics, no live Python run — honest note, the originals are data-only)"
     status: constrained
   - source_id: PKG-078
     source_file: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §1 + §7.1.10 (11 specialist-manual DOCX)"
@@ -3897,7 +3897,7 @@ rows:
     new_home: "plan §8 — REJECTED as storage ROOT (degenerate for a single-owner fleet; breaks CI + evidence law); the layer taxonomy survives inside launches/<domain>/evidence/ (PKG-019)"
     dimensions: [all]
     trigger: "n/a (rejection recorded in exclusion register)"
-    enforcement: "exclusion-register seed (PLANNED M1) + evidence-path lint (M2)"
+    enforcement: "exclusion-register seed (M1) + bundle-root law BUILT at M2 (scripts/evidence-manifest.mjs rejects in-repo bundle roots outside launches/<domain>/ — the clients/ tree cannot come back by accident)"
     evidence_path: "exclusion register row"
     approver: "owner"
     test: "PLANNED: exclusion-register seed check, M1"
@@ -3936,10 +3936,10 @@ rows:
     new_home: "plan §8 — UTC-only timestamps rejected; IST-to-the-second stays canonical with dual collected_at_utc field (PKG-021)"
     dimensions: [all]
     trigger: "n/a (rejection recorded)"
-    enforcement: "existing IST lint + forked schema (M2)"
+    enforcement: "existing IST lint + dual-timestamp manifest fields BUILT at M2 (scripts/evidence-manifest.mjs — IST-canonical `generated` + `collected_at_utc`)"
     evidence_path: "exclusion register row"
     approver: "owner"
-    test: "PLANNED: dual-timestamp schema test, M2"
+    test: "scripts/test/evidence-manifest.test.js (dual-timestamp validation)"
     status: rejected
   - source_id: REJ-005
     source_file: "docs/process/os-2026/package/08_SCHEMAS_AND_SCRIPTS/phase_gate.schema.json (decision enum CONDITIONAL_GO)"
@@ -3962,10 +3962,10 @@ rows:
     new_home: "plan §8 + §9 — the self-modification licence is REJECTED as written; replaced by the neutralized rewrite (PKG-043: propose via DIRECTIVES.md + owner-approved PR); matching agent behavior = gate violation"
     dimensions: [all]
     trigger: "n/a (rejection recorded)"
-    enforcement: "SE-6 continuity lint + DIRECTIVES.md path"
+    enforcement: "SE-6 continuity guard BUILT at M2 (scripts/evolution-lint.mjs --base in factory-gate.yml) + DIRECTIVES.md path"
     evidence_path: "exclusion register row"
     approver: "owner"
-    test: "PLANNED: continuity lint doctrine-self-edit block, M1/M2"
+    test: "scripts/test/evolution-lint.test.js (doctrine-self-edit block, both directions)"
     status: rejected
   - source_id: REJ-007
     source_file: "docs/process/os-2026/package/01_MASTER_OS/MASTER_AGENCY_OPERATING_SYSTEM_COMPLETE_2026.md (§4 tool stack: Semrush/Ahrefs/Similarweb/GTmetrix/Hotjar/BrightLocal as primary/secondary tools)"

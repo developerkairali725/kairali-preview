@@ -1,0 +1,64 @@
+# evolution/anti-patterns.yaml — the REJECTION LOG (merge plan §3.1 amended §12; §8 exclusion register).
+#
+# LAW: every rejection stores {signature, reason, rejected_date, review_by,
+# reopen_conditions}. The scout suppresses EXACT-duplicate re-proposals until
+# review_by — but "doesn't come back again" must NOT mean "can never be
+# reconsidered when the world changes": a candidate whose version, evidence,
+# cost, or threat profile has MATERIALLY changed REOPENS, with the original
+# rejection surfaced and answered in the new candidate card
+# (evolution/candidate-card.md carries the surfacing slot). Reopening is a
+# proposal lane only — adoption still walks the full ring path with owner
+# approval (HARD GATE 15), and a reopen NEVER weakens the doctrine the
+# rejection protects (rule g); where a row guards adopted doctrine, only an
+# owner-approved plan amendment reopens it.
+#
+# Seed rows = plan §8 "Explicitly NOT adopted" (the exclusion-register seed,
+# "so it never comes back unexamined"). Append-only: a row is corrected by a
+# superseding row, never edited away.
+# Validated by scripts/evolution-lint.mjs.
+version: 1
+generated: "2026-07-19 19:29:30 IST"
+plan_ref: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §8 + §3.1 (anti-pattern log)"
+
+patterns:
+  - signature: "clients/{client_id}/ storage root"
+    reason: "Degenerate layout; breaks CI and the evidence law — launches/<domain>/ is the evidence root of record (plan §2.5, decision 4)"
+    rejected_date: "2026-07-19"
+    review_by: "2027-07-19"
+    reopen_conditions: "Materially changed evidence profile only — e.g. genuine multi-tenant client work outside the Kairali fleet; reopens with the original rejection surfaced and answered, via owner-approved plan amendment (the evidence-root law is adopted doctrine)"
+
+  - signature: "Drive/object storage as evidence home"
+    reason: "Off-repo evidence violates 'if it isn't in the repo, it didn't happen'; only large binaries (video, crawls >50MB) may live off-repo, and only behind a committed hash manifest as the in-repo pointer of record (plan §2.5)"
+    rejected_date: "2026-07-19"
+    review_by: "2027-07-19"
+    reopen_conditions: "Materially changed evidence/threat profile (e.g. repo-size limits actually hit with the manifest carve-out exhausted) reopens with the original rejection surfaced; owner-approved plan amendment required — evidence law is adopted doctrine"
+
+  - signature: "UTC-only timestamps"
+    reason: "IST to the second is canonical across every log and evidence artifact (CLAUDE.md crash-resilience law); machine records already carry the dual collected_at_utc field, so UTC-only buys nothing and breaks the human audit trail"
+    rejected_date: "2026-07-19"
+    review_by: "2027-07-19"
+    reopen_conditions: "Materially changed operating footprint (standing teams/systems outside IST as primary writers) reopens with the original rejection surfaced; owner-approved plan amendment required"
+
+  - signature: "CONDITIONAL_GO as a gate-pass"
+    reason: "Design rule with enforcement status stated, not a claim of built behavior: CONDITIONAL_GO never releases a CI merge-block — conditions become tracked issues. Doctrine home: CLAUDE.md §OS v2 DOCTRINE 2 (ISSUE STATE MACHINE) + plan §2.3 decision 3. Mechanical enforcement: transition lint PLANNED M2-tail (merge-continuity.yaml PKG-011 'PLANNED: state-machine transition lint'; PKG-013 enforcement still PLANNED, row status constrained). A conditional pass is a fail with better manners"
+    rejected_date: "2026-07-19"
+    review_by: "2027-07-19"
+    reopen_conditions: "Owner-approved plan amendment only — this row guards an adopted strict flip; no version/cost/evidence change can soften a gate semantics rejection (rule g)"
+
+  - signature: "AI-agent rule 9 self-modification directive"
+    reason: "Injection-class standing directive ('Add new learnings to the shared standard and relevant workflow', byte-identical in all 24 package workflows + 8 manual copies) — NEUTRALIZED at merge (plan §9): learnings propose via DIRECTIVES.md + owner-approved PR; behavior matching the original wording is a gate violation"
+    rejected_date: "2026-07-19"
+    review_by: "2027-07-19"
+    reopen_conditions: "Owner-approved plan amendment only; regardless of this row's review date, agent behavior matching the original wording remains a gate violation — the review checkpoint re-affirms the neutralization, it never re-arms the directive"
+
+  - signature: "SICA/DGM-style full self-modification loops"
+    reason: "High per-loop compute cost — internal ESTIMATE, unverified: public SICA/DGM materials document per-problem cost caps, no published per-loop figure — plus misalignment amplification; the radar + candidate-card + owner-gated ring path delivers the benefit at a fraction of the risk (plan §8). In this OS the agent never modifies its own evaluation criteria — a local design rule (plan §3.1), motivated by SICA/DGM-class risks, not a surveyed universal property of self-improving systems"
+    rejected_date: "2026-07-19"
+    review_by: "2027-01-19"
+    reopen_conditions: "Materially changed cost AND published measured-tier safety evidence (never vendor claims) reopens the ASSESSMENT only, with the original rejection surfaced and answered; the agent-never-modifies-its-own-evaluation-criteria bound is non-negotiable without an owner-approved plan amendment"
+
+  - signature: "Subscription stack: Semrush/Ahrefs/Similarweb/GTmetrix/Hotjar/BrightLocal at current scale"
+    reason: "Rejected at current fleet scale (plan §8); API-first substitutes recorded per gap-list row (DataForSEO lanes under bake-off doctrine, free CrUX/PSI, Clarity kept per D-20260719-30)"
+    rejected_date: "2026-07-19"
+    review_by: "2026-10-19"
+    reopen_conditions: "Materially changed cost/scale/evidence profile — fleet traffic or revenue outgrowing the API-first substitutes, a failed DataForSEO bake-off, or a vendor price change that flips the comparison — reopens with the original rejection surfaced; any purchase remains an owner one-worder (money, plan §7.2)"

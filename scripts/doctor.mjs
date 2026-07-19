@@ -98,6 +98,32 @@ export function findMissingRequiredChecks(requiredContexts, matrixSites) {
   return matrixSites.flatMap((s) => [`factory-spec (${s})`, `lighthouse (${s})`]).filter((c) => !required.has(c));
 }
 
+/**
+ * DECISIONS.md ruling headers newer than the newest decisions/ store record —
+ * candidate "unpromoted rulings" (OS v2 M2, decisions/README.md promotion
+ * law: rulings of ADR altitude get a decisions/D-*.md record).
+ *
+ * HONESTLY SHALLOW, by design: this is a STRING-DATE comparison of the
+ * `## YYYY-MM-DD HH:MM:SS IST — …` headers against the store's newest record
+ * date (IST-to-the-second strings sort lexicographically, so no date parsing).
+ * It cannot know whether a newer ruling DESERVES a record — ADR altitude is a
+ * judgment call (D-20260719-adr-altitude: decision altitude, not keystroke
+ * altitude) — so every hit is an ATTENTION line (exit 0), never a
+ * contradiction. A doctor that cried "contradiction" on every logged ruling
+ * would train people to stop logging rulings.
+ * @param {string} decisionsText DECISIONS.md content
+ * @param {string|null} latestRecordDate newest `date` in decisions/index.json (IST string)
+ * @returns {{date:string, title:string}[]}
+ */
+export function findUnpromotedRulings(decisionsText, latestRecordDate) {
+  if (!latestRecordDate) return []; // no store yet — nothing to compare against, and inventing a baseline would be noise
+  const out = [];
+  for (const m of decisionsText.matchAll(/^## (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} IST)( — (.*))?$/gm)) {
+    if (m[1] > latestRecordDate) out.push({ date: m[1], title: (m[3] ?? "").trim().slice(0, 90) });
+  }
+  return out;
+}
+
 function main() {
   const read = (rel) => (existsSync(join(REPO_ROOT, rel)) ? readFileSync(join(REPO_ROOT, rel), "utf8") : "");
   const contradictions = [];
@@ -134,6 +160,19 @@ function main() {
     const missing = findMissingRequiredChecks(protection.contexts, matrixSites);
     if (missing.length > 0) attention.push(`${missing.length} matrix context(s) not yet required on main (owner one-click — command in scripts/launch-scaffold.mjs output): ${missing.slice(0, 4).join(" · ")}${missing.length > 4 ? " · …" : ""}`);
   }
+
+  // Unpromoted-rulings check (OS v2 M2 decisions store). Shallow string-date
+  // heuristic — see findUnpromotedRulings; attention only, never contradiction.
+  try {
+    const idx = JSON.parse(read("decisions/index.json") || "null");
+    if (Array.isArray(idx) && idx.length > 0) {
+      const latest = idx.map((d) => d.date).filter(Boolean).sort().at(-1) ?? null;
+      const unpromoted = findUnpromotedRulings(read("DECISIONS.md"), latest);
+      if (unpromoted.length > 0) {
+        attention.push(`${unpromoted.length} DECISIONS.md ruling(s) newer than the newest decisions/ record (${latest}) — unpromoted ruling candidates. If one is ADR-altitude, promote it to decisions/D-*.md (decisions/README.md); if not, this line is just the heuristic being honest: ${unpromoted.slice(0, 3).map((u) => `"${u.date}${u.title ? ` — ${u.title}` : ""}"`).join(" · ")}${unpromoted.length > 3 ? " · …" : ""}`);
+      }
+    }
+  } catch { attention.push("decisions/index.json unreadable — unpromoted-rulings check SKIPPED (decisions-index --check in CI owns the failure)"); }
 
   try {
     const ahead = run("git", ["log", "--branches", "--not", "--remotes", "--oneline"]);

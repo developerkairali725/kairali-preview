@@ -1,0 +1,44 @@
+[
+  {
+    "report_id": "RPT-20260719-M0A",
+    "date": "2026-07-19 13:05:11 IST",
+    "type": "dry-run",
+    "file": "docs/reports/2026-07-19-m0a-paper-dryrun.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260719-STD-INGEST",
+    "date": "2026-07-19 14:09:19 IST",
+    "type": "ingest-screen",
+    "file": "docs/reports/2026-07-19-standards-ingest-screen.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260719-M1-PRLEDGER",
+    "date": "2026-07-19 17:31:03 IST",
+    "type": "disposition",
+    "file": "docs/reports/2026-07-19-m1-frozen-pr-dispositions.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260719-M1",
+    "date": "2026-07-19 20:35:00 IST",
+    "type": "milestone-build",
+    "file": "docs/reports/2026-07-19-m1-doctrine-merge.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260720-CHASE",
+    "date": "2026-07-19 22:40:00 IST",
+    "type": "ops-plan",
+    "file": "docs/reports/2026-07-20-monday-chase-sheet.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260719-M2",
+    "date": "2026-07-19 23:45:00 IST",
+    "type": "milestone-build",
+    "file": "docs/reports/2026-07-19-m2-mechanisms.md",
+    "supersedes": null
+  }
+]

@@ -1,0 +1,205 @@
+# evolution/radar.yaml — the SELF-EVOLUTION RADAR (merge plan §3.1, R1; M2 mechanism).
+# Clears strict residue PKG-059 (docs/process/os-2026/merge/strict-residues.yaml).
+#
+# LAW (plan §3.1, ThoughtWorks-radar rings + eval-driven swaps):
+#   · ONE ROW PER OS STEP, seeded from the R7 tool map
+#     (docs/process/os-2026/merge/gap-list.yaml stages — 18 rows), plus the two
+#     OS-layer AI-model rows the per-domain staleness law names (the agent
+#     runtime and the external audit models are OS steps too; leaving them off
+#     the radar would exempt the most volatile domain from review).
+#   · rings: adopt (ruled/working in this stack) · trial (decided or funded,
+#     being wired/bake-off pending) · assess (gap open; candidates named from
+#     the gap-list closer) · hold (deliberately deferred/blocked — a decision,
+#     not a silence).
+#   · RINGS ARE HONEST: DataForSEO lanes sit at trial/assess under the
+#     BAKE-OFF-BEFORE-CONSOLIDATION doctrine (gap-list C1) — vendor claims
+#     never justify adoption; nothing missing is dressed as adopted.
+#   · per-domain staleness (plan §3.1): ai-model rows review every 4–8 weeks,
+#     framework rows ~quarterly, doctrine rows 6–12 months. `domain` declares
+#     the class so scripts/evolution-lint.mjs can enforce the span; a row past
+#     its review_by is a LOUD STALE finding (the Monday sweep + monthly deep
+#     pass on the 3 stalest rows chase it), never a silent skip.
+#   · ring promotions: assess→trial needs a candidate card
+#     (evolution/candidate-card.md) + sandboxed pilot scored by the EXISTING
+#     audit harness vs the incumbent baseline; trial→adopt needs owner sign-off
+#     + one supervised real use. HARD GATE 15: the agent proposes, the owner
+#     approves, the vetting pipeline (SE-4/SE-5) installs.
+#   · rejections live in evolution/anti-patterns.yaml, never here.
+# Validated by scripts/evolution-lint.mjs (control probes + both-directions
+# tests in scripts/test/evolution-lint.test.js). Rule g: nothing here weakens a gate.
+version: 1
+generated: "2026-07-19 19:26:40 IST"
+plan_ref: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.1 (R1)"
+seeded_from: "docs/process/os-2026/merge/gap-list.yaml (R7 map, 18 stages)"
+
+rows:
+  - step: "Commercial truth"
+    domain: framework
+    current_tool: "Central CRM ruled commercial truth per entity (D-20260719-22 / R4); read access requested from Satyam 19 Jul, reply awaited; UTM-to-CRM mapping unbuilt"
+    ring: trial
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates: []
+
+  - step: "Google organic"
+    domain: framework
+    current_tool: "GSC via LOCAL service account kairali-os-reader (RULED local, D-20260719-18); 8 property grants live, smoke 200; BigQuery bulk export armed; MCP wiring + ownership consolidation ride M3"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  - step: "Analytics and tags"
+    domain: framework
+    current_tool: "GA4 account-Viewer via the same local SA, Data API smoke 200; MCP wiring + cross-account grant sweep ride M3; GTM governance unstarted"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  - step: "Technical crawling"
+    domain: framework
+    current_tool: "None installed (Screaming Frog parked to M3, ask 6 closed 19 Jul)"
+    ring: assess
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates:
+      - "DataForSEO On-Page as Phase-1 baseline crawler inside seo-baseline.mjs (vendor tier — bake-off before adoption, gap-list C1)"
+      - "Screaming Frog (decision re-opens at M3 only if the bake-off shows a need for an independent crawler sample)"
+
+  - step: "Automated SEO data"
+    domain: framework
+    current_tool: "DataForSEO FUNDED — ~$48 PAYG (D-20260719-15); nothing wired yet; BAKE-OFF-BEFORE-CONSOLIDATION doctrine stands (validate against GSC/GA4 ground truth + one independent crawler sample)"
+    ring: trial
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates: []
+
+  - step: "SEO/competitor suite"
+    domain: framework
+    current_tool: "None (Semrush/Ahrefs/Similarweb subscriptions REJECTED at current scale — evolution/anti-patterns.yaml subscription-stack row)"
+    ring: assess
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates:
+      - "DataForSEO Labs/backlinks substitution (vendor tier — ONLY after the bake-off passes, gap-list C1; Labs outputs always labelled ESTIMATE, HARD GATE 6)"
+
+  - step: "Market/channel intelligence"
+    domain: framework
+    current_tool: "None (Similarweb rejected; modelled estimates low-value at current fleet traffic)"
+    ring: hold
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates:
+      - "DataForSEO / first-party substitutes (assessed after the bake-off; no purchase)"
+
+  - step: "Performance field"
+    domain: framework
+    current_tool: "Lab Lighthouse in CI only — no CrUX/PSI field P75 per URL/origin, no RUM"
+    ring: assess
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates:
+      - "Free CrUX/PSI API pulls folded into the M3 baseline/monitoring scripts (measured tier)"
+
+  - step: "Performance diagnosis"
+    domain: framework
+    current_tool: "Lighthouse CI in the factory gate battery (PROMPT-4 pilot measured, ~28 min full battery)"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  - step: "Behaviour/UX"
+    domain: framework
+    current_tool: "Microsoft Clarity — KTAHV project live with clarity-ktahv MCP; KEEP ruled (D-20260719-30); fleet-wide projects ride the M3 per-site tracking bundle"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  - step: "Usability research"
+    domain: framework
+    current_tool: "None — moderated/unmoderated task testing below current scale"
+    ring: hold
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates:
+      - "Activate a task-testing lane when a conversion lane warrants it (post-M4 pilot learnings)"
+
+  - step: "Accessibility"
+    domain: framework
+    current_tool: "None automated (manual checks only); axe-core-a11y registry row landed at M1, wiring rides M3"
+    ring: trial
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates:
+      - "@axe-core/playwright into existing CI (FREE, measured tier; .github/ change needs CODEOWNERS owner approval)"
+
+  - step: "Visual/functional QA"
+    domain: framework
+    current_tool: "Playwright in repo CI (critical-flow specs, screenshots/traces, golden-battery evidence)"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  - step: "Security"
+    domain: framework
+    current_tool: "pnpm audit + Dependabot live and CLEAN (D-20260719-16) + Monday triage ritual; no DAST yet — zap-baseline registry row landed at M1, wiring rides M3"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates:
+      - "OWASP ZAP baseline GitHub Action (FREE, measured tier; .github/ change needs CODEOWNERS owner approval)"
+
+  - step: "Commerce feeds"
+    domain: framework
+    current_tool: "None (Shopify Track B blocked on access; Merchant Center not wired)"
+    ring: hold
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates:
+      - "Merchant Center wiring + Track B agentic pilot (blocked on the Shadab access lane; re-ring when commerce unblocks)"
+
+  - step: "Local"
+    domain: framework
+    current_tool: "GBP RULED both-parallel (D-20260719-19): owner runs the GBP API application actions WHILE DataForSEO Business Data read-pipelines proceed without Google; neither lane wired yet"
+    ring: trial
+    last_reviewed: "2026-07-19"
+    review_by: "2026-08-31"
+    candidates: []
+
+  - step: "Paid competitor creative"
+    domain: framework
+    current_tool: "None operationalized; Meta pixel/CAPI DEFERRED to the ads lane (D-20260719-30); launch attribution = wa.me + UTM only (D-20260719-22)"
+    ring: hold
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates:
+      - "Free ad-library archive checks the day an ads/pixel need opens (CRM UTM-mapping build is the prerequisite either way)"
+
+  - step: "Evidence/versioning"
+    domain: framework
+    current_tool: "GitHub + CI required checks + hash manifests (merge-continuity lint live in factory-gate CI; evidence law v2, launches/<domain>/ root); evidence-manifest.mjs validator rides M2 as planned"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-10-19"
+    candidates: []
+
+  # ── OS-layer AI-model rows (plan §3.1: "AI-model rows ~4–8 weeks") ─────────
+  - step: "Agent runtime (OS layer)"
+    domain: ai-model
+    current_tool: "Claude Code on the Mac mini (ULTRACODE default for OS builds); scheduled-tasks runner for feed polling"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-09-12"
+    candidates: []
+
+  - step: "External audit models (OS layer)"
+    domain: ai-model
+    current_tool: "ChatGPT (Sol, highest mode — is it good) + Perplexity (highest reasoning — is it true), per the 15 Jul dual-auditor ruling + D-20260719-08 phase-gate checkpoints"
+    ring: adopt
+    last_reviewed: "2026-07-19"
+    review_by: "2026-09-12"
+    candidates: []

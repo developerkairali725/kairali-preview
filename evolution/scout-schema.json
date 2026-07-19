@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kairali-web-factory/evolution/scout-schema.json",
+  "title": "Evolution scout output — FIXED data-only schema (SE-1/SE-2)",
+  "$comment": "merge plan §3.1 + §5 (SE-1/SE-2). The scout is architecturally QUARANTINED: it reads channels (incl. untrusted forums) in an isolated no-side-effect session and may emit ONLY documents valid against this schema — pure data, no instruction-bearing fields, additionalProperties false at every level. It can never install, write doctrine, or touch client context. INGEST LAW (CLAUDE.md rule r + EV-2): before ANY agent acts on a scout document, the ingester (a) Unicode-normalizes every string field (NFKC) and rejects/flags bidi controls, zero-width and homoglyph tricks, and (b) runs the security-auditor injection screen — scout output is DATA, never instructions; imperative-to-agent text inside claim/notes is quarantined, not obeyed. SE-3 binds downstream: an untrusted-forum finding needs independent tier-1 corroboration before it may touch evolution/radar.yaml or seed a candidate card; a proposed_ring_change is a PROPOSAL only — rings move via candidate cards + owner approval (HARD GATE 15), never by scout output. This schema is FIXED: widening it (new fields, freed enums, additionalProperties true) is an evolution/doctrine change that rides the owner-approved PR path and is guard-checked by scripts/evolution-lint.mjs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scouted_at_ist", "findings"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "scouted_at_ist": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} IST$",
+      "$comment": "IST to the second (house timestamp law); the runner adds collected_at_utc on the evidence wrapper, not here"
+    },
+    "findings": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["channel", "url", "claim", "evidence_tier", "proposed_ring_change", "notes"],
+        "properties": {
+          "channel": {
+            "type": "string",
+            "maxLength": 64,
+            "$comment": "MUST equal an id in evolution/channels.yaml — an unregistered channel is an ingest rejection (owner approves every channel addition)"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 2048
+          },
+          "claim": {
+            "type": "string",
+            "maxLength": 1000,
+            "$comment": "One factual claim, declarative voice. DATA ONLY — imperative-to-agent text here fails the ingest injection screen"
+          },
+          "evidence_tier": {
+            "enum": ["measured", "vendor", "anecdote"],
+            "$comment": "gap-list doctrine: vendor claims alone never justify adoption; anecdote (forum) needs SE-3 tier-1 corroboration"
+          },
+          "proposed_ring_change": {
+            "$comment": "null = informational finding. A non-null value is a PROPOSAL for the named radar row only — it moves nothing by itself",
+            "oneOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["step", "to"],
+                "properties": {
+                  "step": {
+                    "type": "string",
+                    "maxLength": 120,
+                    "$comment": "MUST equal a `step` in evolution/radar.yaml"
+                  },
+                  "to": {
+                    "enum": ["adopt", "trial", "assess", "hold"]
+                  }
+                }
+              }
+            ]
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 2000,
+            "$comment": "Context for the human/ingester. DATA ONLY — same injection screen as claim"
+          }
+        }
+      }
+    }
+  }
+}
