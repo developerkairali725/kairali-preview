@@ -1,11 +1,11 @@
 {
   "meta": {
-    "updated": "2026-07-18 20:45:00 IST (beauty lane: D-20260718-21 EXECUTED — BEAUTY_DOCTRINE.md (four pillars, per-entity communicate-lists, §3 ROI framework, §R rubric) + scripts/beauty-audit.mjs + registry row beauty-conformance (68 gates, lint PASS) + CLAUDE.md v1.15; first live run: honest FAIL on whatisayurveda homepage, caught a real truncated sentence at app/page.tsx:101 — evidence launches/whatisayurveda.com/beauty/2026-07-18.md; PR open on feature/beauty-doctrine-gate. Earlier late-session state: Gate B–E emails SENT 16:40 IST · weekend build sprint armed · Shopify agentic pilot Mon 20 Jul)",
+    "updated": "2026-07-19 00:52:48 IST (OVERNIGHT FULL-SITE WAVE COMPLETE — 7 lanes: villaraag 14 routes (#157) · theblushlounge 6 pages (#154 MERGED) · ayurvedafranchise 10 pages (#130) · kairaliequipment 29 routes (#131) · kairaliorganic 9 PDPs+3 (#164) · bulk B2B ×2 28 routes (#159) · KTAHV 10-LP battery (#145): GO-science+beauty PASS ×10, 8 clinical clusters → Dr. Deepu John. Gates substance-green fleet-wide; Gate-2 residues = owner truth-lane rulings. OWNER FEEDBACK ROUND PENDING (D-20260718-24) — collect FIRST next session. Merge order: docs/reports/2026-07-19-handover-morning-fullsite.md. Vercel cross-project check noise = config fix queued)",
     "as_of_commit": "8d382a2 (feature/beauty-doctrine-gate)",
     "sprint": "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)",
     "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
   },
-  "generatedFrom": "2026-07-18 20:45:00 IST (beauty lane: D-20260718-21 EXECUTED — BEAUTY_DOCTRINE.md (four pillars, per-entity communicate-lists, §3 ROI framework, §R rubric) + scripts/beauty-audit.mjs + registry row beauty-conformance (68 gates, lint PASS) + CLAUDE.md v1.15; first live run: honest FAIL on whatisayurveda homepage, caught a real truncated sentence at app/page.tsx:101 — evidence launches/whatisayurveda.com/beauty/2026-07-18.md; PR open on feature/beauty-doctrine-gate. Earlier late-session state: Gate B–E emails SENT 16:40 IST · weekend build sprint armed · Shopify agentic pilot Mon 20 Jul)",
+  "generatedFrom": "2026-07-19 00:52:48 IST (OVERNIGHT FULL-SITE WAVE COMPLETE — 7 lanes: villaraag 14 routes (#157) · theblushlounge 6 pages (#154 MERGED) · ayurvedafranchise 10 pages (#130) · kairaliequipment 29 routes (#131) · kairaliorganic 9 PDPs+3 (#164) · bulk B2B ×2 28 routes (#159) · KTAHV 10-LP battery (#145): GO-science+beauty PASS ×10, 8 clinical clusters → Dr. Deepu John. Gates substance-green fleet-wide; Gate-2 residues = owner truth-lane rulings. OWNER FEEDBACK ROUND PENDING (D-20260718-24) — collect FIRST next session. Merge order: docs/reports/2026-07-19-handover-morning-fullsite.md. Vercel cross-project check noise = config fix queued)",
   "stageOrder": [
     "ideation",
     "research",
@@ -18,11 +18,11 @@
     "monitoring"
   ],
   "stageCounts": {
-    "ideation": 10,
-    "research": 2,
+    "ideation": 7,
+    "research": 1,
     "build": 1,
     "gates": 0,
-    "preview": 9,
+    "preview": 13,
     "human_audit": 3,
     "ok_to_publish": 0,
     "live": 3,
@@ -118,9 +118,9 @@
       "entity": "KTAHV",
       "stage": "research",
       "owner": "Abilash",
-      "blocker": "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113) — the 11-page QA/QC batch now waits ONLY on Deepu's Novamira-on-staging install + Vikash's 11-URL list (his list is the authority on the count)",
-      "updated": "2026-07-18",
-      "preview_url": null,
+      "blocker": "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. QA/QC batch waits on Deepu's Novamira install + Vikash's 11-URL list. 19 Jul: 10-LP REBUILD SET battery COMPLETE (PR #145) — GO-science + beauty PASS ×10, machine layer verified live, 6 real defects fixed (incl. 2 banned-word hero images caught at pixel level); Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY); 8 clinical clusters compiled for Dr. Deepu John (HARD GATE 7); owner disabled preview SSO 22:45 IST",
+      "updated": "2026-07-19",
+      "preview_url": "https://kairali-web-factory-ayurvedichealingvillage-rh8jwv4cf-kairali.vercel.app",
       "live_url": null
     },
     {
@@ -156,11 +156,11 @@
     {
       "name": "villaraag.com",
       "entity": "Villa Raag",
-      "stage": "research",
+      "stage": "preview",
       "owner": "Abilash",
-      "blocker": "Villa Raag brand manual/tokens (raag-tokens.css) pending delivery",
-      "updated": "2026-07-17",
-      "preview_url": null,
+      "blocker": "Full site built 19 Jul (14 routes + branded 404, MODE A manual-faithful, PR #157): go-science PASS · beauty PASS · Gate-2 4 passes, honest terminal FAIL in owner-facts advisory class (judge log in evidence). Waiting: owner feedback round (D-20260718-24) + VR emblem SVG slot + Q-VR-DISTANCES",
+      "updated": "2026-07-19",
+      "preview_url": "https://kairali-web-factory-villaraag.vercel.app",
       "live_url": null
     },
     {
@@ -226,11 +226,11 @@
     {
       "name": "kairaliorganic.com / kairorganics.com / kairproducts.com",
       "entity": "KAPPL (commerce)",
-      "stage": "ideation",
+      "stage": "preview",
       "owner": "Abilash",
-      "blocker": "Decision #3 (KAIR sub-brand) pending + Track B",
-      "updated": "2026-07-13",
-      "preview_url": null,
+      "blocker": "FULL SITE built 19 Jul (9 PDPs + /products + /about + /contact, Apothecary Ledger, PR #164, main-merge conflict resolved): informational shell, no cart (Track B). Owner one-worders: YMYL ledger-descriptor wording (label-verbatim or soften) + marketplace brand-store URLs (Q-ORG-MARKETPLACE-URLS). kairorganics.com plain 301 at cutover",
+      "updated": "2026-07-19",
+      "preview_url": "https://kairali-web-factory-kairaliorganic.vercel.app",
       "live_url": null
     },
     {
@@ -238,9 +238,9 @@
       "entity": "Kairali Group (B2B)",
       "stage": "human_audit",
       "owner": "Abilash",
-      "blocker": "PREVIEW-ONLY by owner order (D-EQ-CATALOG placeholder lock); Gate-2 truth lane needs owner judgment (Q-EQ-GATE2-TRUTH-LANE)",
+      "blocker": "FULL SITE 29 routes (PR #131 all-green, owner's own auto-merge armed — fires on his review): banned equivalence sentence purged ×3 + guard-tested; go-science PASS · beauty PASS · Gate-2 GPT PASS, truth-lane residue = Q-EQ-GATE2-TRUTH-LANE + 3 more one-worders. PREVIEW-ONLY (D-EQ-CATALOG placeholder lock); stable alias serves OLD golden — one owner promote of f3klajuzg publishes the full site",
       "updated": "2026-07-19",
-      "preview_url": "https://kairali-web-factory-kairaliequipmen.vercel.app",
+      "preview_url": "https://kairali-web-factory-kairaliequipment-f3klajuzg-kairali.vercel.app",
       "live_url": null
     },
     {
@@ -248,7 +248,7 @@
       "entity": "KAPPL (B2B supply desk)",
       "stage": "preview",
       "owner": "Abilash",
-      "blocker": "Golden page only (front gates signed per D-VETO-WAIVED-18JUL); Phase-1 pages next. Interim WhatsApp number flagged for swap (niche brief §7 ask #3)",
+      "blocker": "FULL SITE 13 routes built 19 Jul (PR #159): go-science + beauty + Lighthouse strict PASS; Gate-2 FAIL-standing = advisory-routed auditor conduct (Q-BULK-POSTBUILD-VETO, owner one-worder). Interim WhatsApp number still flagged for swap; Supabase RFQ env keys owner-side",
       "updated": "2026-07-18",
       "preview_url": "https://bulkayurvedaoils-com.vercel.app",
       "live_url": null
@@ -258,7 +258,7 @@
       "entity": "KAPPL (B2B manufacturing desk)",
       "stage": "preview",
       "owner": "Abilash",
-      "blocker": "Golden page only (front gates signed per D-VETO-WAIVED-18JUL); Phase-1 pages next. Facility photography gap flagged (image-library/kappl empty)",
+      "blocker": "FULL SITE 15 routes built 19 Jul (PR #159): go-science + beauty + Lighthouse strict PASS; Gate-2 both real findings fixed in-build, GPT PASS p3 (advisory notes on file). Facility photography gap still owner-side; Supabase RFQ env keys owner-side",
       "updated": "2026-07-18",
       "preview_url": "https://bulkayurvedaproducts-com.vercel.app",
       "live_url": null
@@ -306,11 +306,11 @@
     {
       "name": "ayurvedafranchise.com",
       "entity": "Kairali Group",
-      "stage": "ideation",
+      "stage": "preview",
       "owner": "Abilash",
-      "blocker": "CANONICAL franchise build (D#4 CLOSED, DECISIONS.md:248 — kairalifranchise.com 301s INTO this domain); build-start gated on unblock sheet A-1/2/3 (money figures, royalty, contact)",
-      "updated": "2026-07-18",
-      "preview_url": null,
+      "blocker": "CANONICAL franchise FULL SITE built 19 Jul (10 pages per signed STRATEGY, PR #130): go-science PASS ×2 sections; compliance-lint fixed; design/beauty gate completion was blocked on external-bot config at lane close — verify in morning sweep. Money figures per unblock-sheet answers, gaps flagged not invented. kairalifranchise.com 301s INTO this domain (D#4)",
+      "updated": "2026-07-19",
+      "preview_url": "https://kairali-web-factory-ayurvedafranchise-i9nuv4l94-kairali.vercel.app",
       "live_url": null
     },
     {
@@ -346,11 +346,11 @@
     {
       "name": "snehachowdhary.com",
       "entity": "Personal",
-      "stage": "ideation",
+      "stage": "preview",
       "owner": "Abilash",
-      "blocker": "D#6 CLOSED: theblushlounge.com primary, this domain 301s when live; build gated on Sneha brand assets (unblock sheet B-3)",
-      "updated": "2026-07-13",
-      "preview_url": null,
+      "blocker": "theblushlounge.com FULL SITE MERGED (#154, 6 pages, Champagne Editorial): go-science PASS · beauty PASS · Lighthouse a11y/SEO 100 ×4 · Gate-2 GPT PASS, Perplexity deadlock on owner-locked facts (Q-BL-GATE2-PERPLEXITY-DEADLOCK). Owner: Vercel PROMOTE kfi5o3g1a to alias (alias still serves old golden) + Supabase env keys + 3 ratifications; D-20260718-16 IG re-mine when owner has a session; this domain 301s at live (D#6)",
+      "updated": "2026-07-19",
+      "preview_url": "https://kairali-web-factory-theblushlounge.vercel.app",
       "live_url": null
     },
     {
