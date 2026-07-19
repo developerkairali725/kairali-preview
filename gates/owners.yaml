@@ -1,0 +1,32 @@
+# gates/owners.yaml — the authenticated-approval IDENTITY REGISTER.
+#
+# WHY THIS EXISTS (plan §10 M1 · external review pass 1 blocking finding 2 —
+# "Owner approvals not authenticated (agent-written rows)"): an approvals.yaml
+# row saying `owner: Abilash` is TEXT the agent typed. Nothing platform-side
+# proved the owner was ever in the loop. scripts/authenticated-approval.mjs
+# closes that hole: a PR touching a guarded path needs a GitHub PR review with
+# state APPROVED, submitted at the PR's CURRENT HEAD SHA, authored by a login
+# listed HERE. GitHub authenticates the login; this file says which logins are
+# the owner. Written 2026-07-19 17:30:12 IST.
+#
+# SCOPE (D-20260719-10, owner ruling 19 Jul 2026 ~13:40 IST): binds FRONT GATES
+# + doctrine/evolution PRs ONLY. Routine green technical PRs keep agent-armed
+# auto-merge per D-AUTOMERGE-TIERS. Learnings are always owner-approved.
+#
+# ADDITIONS ARE OWNER RULINGS. The agent NEVER adds a login here — a new row
+# lands only on Abilash's explicit ruling, logged in DECISIONS.md. (This file
+# guards itself: it lives under gates/**, a guarded path, so changing it needs
+# an authenticated owner approval — the register cannot quietly grow.)
+#
+# SEED-ENTRY EVIDENCE (read-only gh discovery, 2026-07-19 17:28 IST):
+#   · gh pr view 113 --json mergedBy → AbhilashKairali (human-merged PR)
+#   · the last 8 merged PRs (#156, #158–#162, #165, #168) all merged by
+#     AbhilashKairali
+#   · repo collaborator list includes AbhilashKairali
+#   (repos/kairali-digital/kairali-web-factory .owner.login is the ORG
+#   `kairali-digital`, not a person — deliberately NOT used.)
+
+version: 1
+note: "authenticated-approval identity register — additions are owner rulings"
+owner_logins:
+  - AbhilashKairali

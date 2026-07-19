@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/gate.schema.json",
+  "title": "Phase Gate",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "project_id",
+    "phase",
+    "decision",
+    "evidence_ids",
+    "approver"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "decision": {
+      "enum": [
+        "GO",
+        "CONDITIONAL_GO",
+        "NO_GO"
+      ]
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_p0": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "open_p1": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approver": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

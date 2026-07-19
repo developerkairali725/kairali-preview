@@ -7,3 +7,19 @@
 /.github/                        @AbhilashKairali
 /.claude/                        @AbhilashKairali
 /scripts/hooks/                  @AbhilashKairali
+
+# M1 (19 Jul 2026, external pass 3 depth): the OS v2 doctrine surface gets the same
+# base-trusted GitHub enforcement — code-owner review is read from the BASE branch,
+# so no PR can edit away its own guard (closes the pass-3 circularity finding).
+# Routine PRs touch none of these; the D-AUTOMERGE-TIERS lane is unaffected.
+/gates/                          @AbhilashKairali
+/docs/process/os-2026/           @AbhilashKairali
+/scripts/authenticated-approval.mjs @AbhilashKairali
+/scripts/front-gate.mjs          @AbhilashKairali
+/scripts/merge-continuity-lint.mjs @AbhilashKairali
+/scripts/standards-acceptance.mjs @AbhilashKairali
+/scripts/class-map-lint.mjs      @AbhilashKairali
+/scripts/gate-registry-lint.mjs  @AbhilashKairali
+/scripts/neutralize-workflows.mjs @AbhilashKairali
+/scripts/go-science-audit.mjs    @AbhilashKairali
+/scripts/beauty-audit.mjs        @AbhilashKairali

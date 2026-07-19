@@ -498,3 +498,37 @@ Five append-only Gate-2 passes on the finished kairaliequipment.com site (design
 
 ## Q-BL-BEAUTY-ENTITY — external-personal beauty-doctrine chapter added by the sanctioned amendment route; ratification requested [2026-07-18 23:28:00 IST · logged 2026-07-19 01:50:00 IST after an append-chain slip dropped the original write — content identical]
 theblushlounge.com mapped to NO entity in BEAUTY_DOCTRINE.md §R (the taxonomy covered Kairali properties only), and the beauty pass-2 judge — defensibly, by the rubric's letter — refused the pass-1 villa-raag closest-chapter analogue as entity misrouting (launches/theblushlounge.com/beauty/2026-07-18-pass2.md). The doctrine's own "Every future property" section prescribes the fix: "adding one by amendment PR with an explicit communicate-list BEFORE their beauty gate can run." Done in this PR (#154): new chapter "External personal brands" (prose + §R JSON entity `external-personal`, domains [theblushlounge.com]) — communicate-list (personal artistry · editorial credibility · precision · warmth · premium restraint · authenticity), must-answer and avoid lists grounded ONLY in the site's owner-signed stack (BRIEF "feel like her press features" · DESIGN_DIRECTION "Champagne Editorial" · STRATEGY §6) + the paper's luxury/editorial chapters; the beauty-audit test's pinned entity inventory updated in the same PR (the v2 precedent). ADDITIVE only — no existing chapter, criterion or threshold touched (rule g). Requested: ratify the chapter as written (or send CHANGES); future non-Kairali personal/client sites join by adding their domain to the same entity.
+
+## 2026-07-19 12:21:19 IST — Q-AUTOMERGE-V2 (PR #166 deny rule vs D-AUTOMERGE-TIERS)
+Morning session surfaced an uncommitted settings.json allow entry for `gh pr merge` as drift and (on your
+"fix it, you have authority" word) reverted it + added a DENY rule in PR #166, reasoning from HARD GATE 9.
+Memory reconcile now shows that entry traces to D-AUTOMERGE-TIERS (18 Jul): green technical PRs auto-merge,
+agent arms `gh pr merge --auto` per PR — your explicit ruling. The two now conflict for the routine tier.
+No operational harm during the freeze (ledger says nothing merges without the new workflow anyway), and the
+v2 plan's authenticated-approval design (plan §12, adopting the external reviewer's sharpest finding: an
+agent-written approval is unauthenticated by construction) is the principled successor — routine-tier
+automation returns at M1 via an owner-authenticated arming mechanism instead of the agent's bare CLI.
+ONE-WORDER: keep the #166 deny through the freeze and re-introduce automerge via authenticated arming at M1
+(recommended), or restore the 18-Jul agent-armed pattern now?
+
+## 2026-07-19 12:31:30 IST — Q-GSC-COVERAGE (post-export gaps)
+16-month GSC exports DONE for all 4 properties that exist under director@ (see launches/README-gsc-snapshot-2026-07-19.md).
+Gaps: (1) kairalicenters.com — GSC with Abhishek + Gaurav Saraswat; want me to draft the request email for your send?
+(2) ~8 legacy domains have NO GSC property at all — registration needs DNS/HTML verification (human lane). One-worder:
+draft the verification records for Ambuj/you to place, or defer to per-site rebuild kickoff?
+
+## 2026-07-19 12:52:21 IST — Q-AUTOMERGE-V2: ANSWERED by owner in-chat ("keep self merging; learnings can be approved by me")
+Ruling: D-AUTOMERGE-TIERS routine-tier self-merge STAYS; the #166 deny rule is REMOVED (this commit).
+Evolution-layer learnings/doctrine remain owner-approved (never auto-merged). Authenticated-approval work in
+the v2 plan now scopes to FRONT GATES + doctrine PRs only, not routine technical merges.
+
+## 2026-07-19 19:55:00 IST — Q-CLASSMAP-UNKNOWNS (four dimension vectors set to `unknown`, owner one-worders)
+External pass 2 ruled guessed classification defaults out of gates/class-map.yaml; four vectors now carry
+`unknown` (fail-closed: an unknown dimension forfeits every subset benefit — full battery applies). One-worders:
+(1) kairali.ai business_model — internal dashboard; add `internal` to the enum, or leave unknown?
+(2) kairali.ai locale_market — en-in neutral default was a guess; ratify en-in or name one.
+(3) kairaliproduct.com locale_market — register groups it with "US / EU buyers" but names no single market; en-global?
+(4) kairaliequipment.com locale_market — register names no market for equipment buyers; en-global (B2B export) or en-in?
+Also riding from the same review, for ratification not blocking: kairaliyoga.com entity_register=villa-raag-hospitality
+(bucket-fit — the enum has no generic wellness value) and the 04_SHOPIFY LP test vectors on platform=factory-next
+(LPs run on the factory /lp infrastructure; checkout stays Shopify).

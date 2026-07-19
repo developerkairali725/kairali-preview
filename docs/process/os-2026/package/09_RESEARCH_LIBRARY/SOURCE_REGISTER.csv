@@ -1,0 +1,61 @@
+﻿source_id,publisher,evidence_class,title,url,used_for
+G01,Google,Primary,How Google Search works,https://developers.google.com/search/docs/fundamentals/how-search-works,"Discovery, crawling, indexing and serving"
+G02,Google,Primary,Search Essentials,https://developers.google.com/search/docs/essentials,"Eligibility, technical requirements and spam policy foundation"
+G03,Google,Primary,SEO Starter Guide,https://developers.google.com/search/docs/fundamentals/seo-starter-guide,Foundational SEO implementation
+G04,Google,Primary,Build and submit a sitemap,https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap,XML sitemap rules and limitations
+G05,Google,Primary,Canonicalization,https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls,Canonical signals and duplicate URL consolidation
+G06,Google,Primary,Site moves with URL changes,https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes,Migration planning and redirects
+G07,Google,Primary,Mobile-first indexing best practices,https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing,Mobile parity
+G08,Google,Primary,Faceted navigation and crawling,https://developers.google.com/search/blog/2024/12/crawling-december-faceted-nav,Crawl-space controls
+G09,Google,Primary,Crawlable links,https://developers.google.com/search/docs/crawling-indexing/links-crawlable,Internal link implementation
+G10,Google,Primary,Structured data documentation,https://developers.google.com/search/docs/appearance/structured-data,Rich result eligibility and implementation
+G11,Google,Primary,Page experience,https://developers.google.com/search/docs/appearance/page-experience,Page experience interpretation
+G12,Google,Primary,Core Web Vitals,https://web.dev/articles/vitals,"LCP, INP and CLS thresholds"
+G13,Google,Primary,PageSpeed Insights API,https://developers.google.com/speed/docs/insights/rest/v5/pagespeedapi/runpagespeed,Programmatic lab and CrUX collection
+G14,Google,Primary,AI optimization guide,https://developers.google.com/search/docs/fundamentals/ai-optimization-guide,Generative Search best practices and anti-hacks
+G15,Google,Primary,Search Generative AI performance reports,https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports,2026 AI visibility reports and dimensions
+G16,Google,Primary,Google Search Console performance report,https://support.google.com/webmasters/answer/7576553,"Queries, pages, countries, devices and search appearance"
+G17,Google,Primary,Page Indexing report,https://support.google.com/webmasters/answer/7440203,Indexing status and exclusion reasons
+G18,Google,Primary,URL Inspection,https://support.google.com/webmasters/answer/9012289,Indexed and live URL diagnostics
+G19,Google,Primary,Crawl Stats report,https://support.google.com/webmasters/answer/9679690,Googlebot request and host health evidence
+G20,Google Ads,Primary,Quality Score,https://support.google.com/google-ads/answer/6167118,"Landing-page experience, ad relevance and expected CTR"
+G21,Google Ads,Primary,Landing pages report,https://support.google.com/google-ads/answer/7543502,Paid landing page and mobile experience review
+G22,Google,Primary,Google Trends,https://trends.google.com/trends/,Relative search interest by time and geography
+W01,W3C,Primary standard,WCAG overview and WCAG 2.2,https://www.w3.org/WAI/standards-guidelines/wcag/,Accessibility standard
+W02,W3C,Primary standard,WCAG 2.2 Quick Reference,https://www.w3.org/WAI/WCAG22/quickref/,Testable success criteria and techniques
+W03,W3C,Primary standard,PROV Overview,https://www.w3.org/TR/prov-overview/,Evidence provenance model
+W04,JSON Schema,Primary standard,JSON Schema 2020-12,https://json-schema.org/draft/2020-12,Agent-output validation
+O01,OWASP,Primary standard,OWASP Top 10 2025,https://owasp.org/Top10/2025/,Web application security risk baseline
+O02,OWASP,Primary standard,OWASP Top 10 for Agentic Applications 2026,https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/,Agentic system security controls
+S01,Shopify,Primary,Shopify analytics,https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/new-analytics,Store metrics and reports
+S02,Shopify,Primary,Web performance reports,https://help.shopify.com/en/manual/online-store/web-performance/web-performance-reports,Storefront real-user CWV by URL
+S03,Shopify,Primary,Search & Discovery analytics,https://help.shopify.com/en/manual/online-store/storefront-search/search-and-discovery-analytics,Onsite search and discovery
+S04,Shopify,Primary,Find and submit Shopify sitemap,https://help.shopify.com/en/manual/promoting-marketing/seo/find-site-map,Shopify sitemap handling
+S05,Shopify,Primary,URL redirects,https://help.shopify.com/en/manual/online-store/menus-and-links/url-redirect,Shopify redirect import/export and constraints
+SF01,Screaming Frog,Vendor primary,SEO Spider configuration,https://www.screamingfrog.co.uk/seo-spider/user-guide/configuration/,"Raw HTML, JavaScript and crawl configuration"
+SF02,Screaming Frog,Vendor primary,Crawl comparison,https://www.screamingfrog.co.uk/seo-spider/tutorials/how-to-compare-crawls/,Before/after regression comparison
+SF03,Screaming Frog,Vendor primary,Site migration workflow,https://www.screamingfrog.co.uk/seo-spider/tutorials/how-to-use-the-seo-spider-in-a-site-migration/,URL mapping and migration QA
+SE01,Semrush,Vendor primary,Semrush Site Audit,https://www.semrush.com/solutions/technical-seo/,Cloud audit and thematic reports
+SE02,Semrush,Vendor primary,Semrush SEO Toolkit,https://www.semrush.com/kb/809-seo-toolkit,"Organic, keyword, link and competitor tools"
+DF01,DataForSEO,Vendor primary,On-Page API,https://dataforseo.com/apis/on-page-api,"Agentic crawling, rendering and Lighthouse"
+DF02,DataForSEO,Vendor primary,DataForSEO APIs,https://dataforseo.com/apis,"SERP, Labs, backlinks, business and merchant data"
+SW01,Similarweb,Vendor/research,Competitive analysis guide,https://www.similarweb.com/blog/marketing/marketing-strategy/competitive-analysis/,Digital channel and competitor analysis method
+GT01,GTmetrix,Vendor primary,GTmetrix features,https://gtmetrix.com/features.html,"Waterfalls, videos, regions and monitoring"
+PW01,Playwright,Primary documentation,Visual comparisons,https://playwright.dev/docs/test-snapshots,Automated screenshot regression
+GH01,GitHub,Primary documentation,Artifact attestations,https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations,Build provenance
+GH02,GitHub,Primary documentation,Protected branches,https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches,Required review and checks
+BM01,Baymard,Large-sample UX research,Product Page UX 2026,https://baymard.com/blog/current-state-ecommerce-product-page-ux,Product page benchmarks and failure patterns
+BM02,Baymard,Large-sample UX research,Cart abandonment rate,https://baymard.com/lists/cart-abandonment-rate,Checkout and abandonment research
+BM03,Baymard,Large-sample UX research,Ecommerce search UX,https://baymard.com/blog/ecommerce-search-query-types,Onsite search research
+UB01,Unbounce,Large-sample benchmark,Landing page conversion benchmark,https://unbounce.com/average-conversion-rates-landing-pages/,Landing page median and industry segmentation
+CXL01,CXL,Practitioner education,Conversion optimization research-first course,https://www.youtube.com/watch?v=PK1Myc_dXFg,Research-led CRO workflow
+YT01,Baymard,Research video,Checkout UX,https://www.youtube.com/watch?v=DlQ1wcHFxBo,Checkout failure modes
+YT02,Baymard,Research video,Product page UX,https://www.youtube.com/watch?v=vv74GmBXxHE,Product page failure modes
+YT03,Semrush,Vendor tutorial,Competitor analysis tutorial,https://www.youtube.com/watch?v=EqMjWU7vF2o,Competitor research workflow
+YT04,Semrush,Vendor tutorial,Advanced competitor analysis,https://www.youtube.com/watch?v=z3RElr1EH_c,Competitive SEO workflows
+A01,Academic,Research preprint,Redirect patterns on the web,https://arxiv.org/abs/2507.22019,Large-scale redirect failure evidence
+A02,Academic,Research preprint,Impact of AI Overviews on website traffic,https://arxiv.org/abs/2602.18455,Causal evidence on AI summary traffic effects
+A03,Academic,Research preprint,Rise of AI Search,https://arxiv.org/abs/2602.13415,Global AI-search exposure and source diversity
+R01,Reddit,Anecdotal practitioner evidence,Domain migration disaster discussion,https://www.reddit.com/r/TechSEO/comments/1r58qpy/domain_migration_disaster_98_traffic_drop/,Migration failure modes; not a benchmark
+R02,Reddit,Anecdotal practitioner evidence,Website redesign conversion drop discussion,https://www.reddit.com/,"Clarity, CTA and preservation failure patterns; examples only"
+R03,Reddit,Anecdotal practitioner evidence,Shopify app bloat discussions,https://www.reddit.com/r/shopify/,App/script residue and performance failure patterns; examples only

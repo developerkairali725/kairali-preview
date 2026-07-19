@@ -1,0 +1,750 @@
+# gates/class-map.yaml — POLICY-COMPOSITION OVERLAY on the unified gate registry
+#
+# LAW (merge plan §2.2 + §7.1 decision 2, amended per external review §12;
+# M0(a) disposition 3, docs/reports/2026-07-19-m0a-paper-dryrun.md):
+#   · gates/registry.yaml and its three lint-enforced site classes
+#     (commerce / organic / landing) stay SUPREME. site_class below MIRRORS the
+#     registry's classes line and is the PRIMARY dimension: the registry's
+#     applicability entry for a property's site_class is the floor of its gate
+#     set, always.
+#   · This file is an OVERLAY. An overlay row may ADD gates to a matching
+#     vector, or ADAPT a gate with a written reason that only sharpens the lens.
+#     It may NEVER remove, n_a, waive, or soften a registry-required gate
+#     (CLAUDE.md rule g: gates are added, never weakened). The schema has no
+#     removal channel by construction, and scripts/class-map-lint.mjs hard-fails
+#     any row that tries to smuggle one in (forbidden keys, softening language).
+#   · The dimension list is plan §2.2's list COMPLETE — business model, asset
+#     situation (new/existing/migration), entity register, locale/market
+#     (`locale_market` below: launch locale set + claims-market lens, values
+#     compiled from SITE_DESIGN_LOCALE_REGISTER.md), platform — plus scope
+#     (M0(a) disposition 3). A plan-named dimension is never silently dropped;
+#     scripts/class-map-lint.mjs requires every one on every vector.
+#   · The selector NEVER silently drives anything: every dimension is declared
+#     in `dimensions:`, every fleet property carries its full vector in
+#     `properties:`, every overlay is a declared, linted row, and every
+#     combination a real Kairali property or package workflow uses must resolve
+#     to ONE unambiguous gate set (scripts/class-map-lint.mjs, both directions).
+#   · scope (project | change) is M0(a) disposition 3 made operational:
+#     scope: project = the FULL battery, per-site pre-launch + scheduled
+#     sweeps; scope: change = the diff-relevant subset (`scope_map` below).
+#     Gates are not weakened; their BINDING SCOPE is declared, linted, and
+#     owner-visible.
+#   · scope_map is the FLOOR partition, not the whole answer (external review
+#     pass 2, finding B5: a fixed global partition is not a diff-sensitive
+#     resolver). `change_triggers` below is the ADDITIVE second half: rows
+#     keyed to changed paths / change kinds pull project_only gates INTO a
+#     specific change's battery. A change's gate set is
+#       change_relevant ∪ (adds of every trigger whose when_changed matches)
+#     and the FAIL-CLOSED LAW (`fail_closed:` below, lint-pinned) governs
+#     every change the triggers cannot classify: unknown never buys a subset.
+#   · The 24 package workflows (docs/process/os-2026/package/05_WORKFLOWS/) are
+#     TEST VECTORS: each maps to a property-shaped vector that MUST resolve.
+#
+# Validated by scripts/class-map-lint.mjs (control probes + both-directions
+# tests in scripts/test/class-map-lint.test.js).
+
+version: 1
+updated: "2026-07-19 18:14:20 IST"
+
+# ── Declared dimensions (the ONLY vocabulary overlays may select on) ─────────
+# locale_market is plan §2.2's "locale/market" dimension: the launch locale set
+# + the claims-market lens, compiled from SITE_DESIGN_LOCALE_REGISTER.md
+# ("Locales @launch" column + claims-jurisdiction notes):
+#   en-in     = EN, India market (India claims lens; India Shopify checkout family)
+#   en-global = EN, global/multi-market audience
+#   en-us     = EN, US market (FDA/FTC claims lens)
+#   en-eu     = EN, EU market (EU claims lens; CS later per the register)
+#   en-de-fr  = EN/DE/FR locked set, international patient market (KTAHV law)
+#   unknown   = honestly undetermined (external review pass 2: guessed defaults
+#               removed). NEVER a neutral default — a property may carry
+#               `unknown` only with an owner-question pointer comment on the
+#               same line (a Q- id or "owner ratification pending"; linted),
+#               and it buys the property NO subset benefit:
+#               fail_closed.unknown_dimension applies (full battery + every
+#               situation add that could match under any resolution).
+dimensions:
+  site_class: [commerce, organic, landing]          # PRIMARY — mirrors gates/registry.yaml classes
+  business_model: [b2c, b2b, d2c, shopify, unknown]
+  asset_situation: [new, existing, migration]
+  entity_register: [ktahv-clinical, villa-raag-hospitality, kappl-product, kappl-b2b, group-corporate, personal, internal, education]
+  locale_market: [en-in, en-global, en-us, en-eu, en-de-fr, unknown]
+  platform: [factory-next, wordpress, shopify]
+  scope: [project, change]                          # binds per WORK ITEM via scope_map, never per property
+
+# ── Fleet properties (every STATUS.yaml sites[] domain, full vector) ─────────
+# Compound STATUS.yaml entries are split into their member domains.
+# Vectors derived from STATUS.yaml + SITE_DESIGN_LOCALE_REGISTER.md; genuinely
+# ambiguous calls are flagged in the session report, not guessed silently.
+properties:
+  - domain: kairali.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  - domain: ayurvedichealingvillage.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: ktahv-clinical
+    locale_market: en-de-fr
+    platform: factory-next
+  - domain: kairalicenters.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  # forward-only at cutover: 301s into ayurvedafranchise.com (D#4); vector mirrors its target
+  - domain: kairalifranchise.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: existing
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  # umbrella hospitality site (register E) — wellness-hospitality register bucket
+  - domain: kairalihospitality.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: villa-raag-hospitality
+    locale_market: en-global
+    platform: factory-next
+  - domain: villaraag.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: new
+    entity_register: villa-raag-hospitality
+    locale_market: en-global
+    platform: factory-next
+  # KAPPL corporate (register A, B2B pharma buyers/regulators/distributors)
+  - domain: kappl.co.in
+    site_class: organic
+    business_model: b2b
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  # THE Shopify store (India D2C; checkout always here)
+  - domain: kairaliproducts.in
+    site_class: commerce
+    business_model: shopify
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: shopify
+  # market content layers over the store (register C) — factory microsites, commerce class
+  - domain: kairaliproducts.us
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-us
+    platform: factory-next
+  - domain: kairaliproducts.cz
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-eu
+    platform: factory-next
+  # register groups .com with the "US / EU buyers" row but names no single market —
+  # was recorded en-global as a guessed default; removed per external review pass 2
+  - domain: kairaliproduct.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: unknown            # owner ratification pending — which claims market governs kairaliproduct.com (US? EU? both)?
+    platform: factory-next
+  - domain: kairalitea.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - domain: kairalioil.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - domain: kairaliherbals.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  # informational commerce shell, no cart (Track B); built new 19 Jul (PR #164)
+  - domain: kairaliorganic.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: new
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  # plain 301 into kairaliorganic.com at cutover — vector mirrors the target, legacy asset exists
+  - domain: kairorganics.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - domain: kairproducts.com
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  # register A — B2B equipment buyers ("spa" allowed here, not a KTAHV surface);
+  # register names no market for equipment buyers — was recorded en-global as a
+  # guessed default; removed per external review pass 2
+  - domain: kairaliequipment.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: existing
+    entity_register: kappl-b2b
+    locale_market: unknown            # owner ratification pending — which claims market do equipment buyers sit under?
+    platform: factory-next
+  - domain: bulkayurvedaoils.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: new
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - domain: bulkayurvedaproducts.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: new
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  # register E (yoga programmes + TTC) — wellness-hospitality register bucket, flagged
+  - domain: kairaliyoga.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: villa-raag-hospitality
+    locale_market: en-global
+    platform: factory-next
+  - domain: kairali.guru
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: education
+    locale_market: en-global
+    platform: factory-next
+  # canonical education domain; whatisayurveda.org becomes a plain forward at Wave-2 (D#2)
+  - domain: whatisayurveda.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: migration
+    entity_register: education
+    locale_market: en-global
+    platform: factory-next
+  # Gita Ramesh book site (register ED→E blend)
+  - domain: healing.recipes
+    site_class: organic
+    business_model: b2c
+    asset_situation: new
+    entity_register: education
+    locale_market: en-global
+    platform: factory-next
+  # canonical franchise site — absorbs kairalifranchise.com legacy (D#4)
+  - domain: ayurvedafranchise.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: migration
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  # brand-protective single-pagers on their own domains (register A) — ran the ORGANIC battery (PROMPT-4 pilot)
+  - domain: arogyakendra.com
+    site_class: organic
+    business_model: b2b
+    asset_situation: new
+    entity_register: group-corporate
+    locale_market: en-in
+    platform: factory-next
+  - domain: arogyashala.in
+    site_class: organic
+    business_model: b2b
+    asset_situation: new
+    entity_register: group-corporate
+    locale_market: en-in
+    platform: factory-next
+  - domain: theblushlounge.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: new
+    entity_register: personal
+    locale_market: en-in
+    platform: factory-next
+  # 301s into theblushlounge.com at live (D#6); legacy asset exists
+  - domain: snehachowdhary.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: personal
+    locale_market: en-in
+    platform: factory-next
+  # matrix-exempt (standing ruling) — still declared: exemption is loud, never silent
+  - domain: abhilashkr.com
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: personal
+    locale_market: en-in
+    platform: factory-next
+  - domain: whyayurveda.org
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: education
+    locale_market: en-global
+    platform: wordpress
+  # internal Fleet Pulse dashboard; business_model and locale_market have no
+  # honest value here — the former b2c / en-in "neutral defaults" were guesses
+  # and are removed per external review pass 2. unknown = full battery, no
+  # subset benefit, until the owner rules (or ratifies an n_a-style dimension
+  # value for internal tooling — that too is his call, not a default).
+  - domain: kairali.ai
+    site_class: organic
+    business_model: unknown           # owner ratification pending — internal dashboard has no business model to declare
+    asset_situation: existing
+    entity_register: internal
+    locale_market: unknown            # owner ratification pending — internal dashboard serves no claims market
+    platform: factory-next
+
+# ── Overlays (ADD or ADAPT only — never remove, never soften) ────────────────
+# TWO ORTHOGONAL AXES — read this before auditing the adds-lists below:
+#   · WHICH gates apply to a property = registry floor for its site_class
+#     + these overlay adds/adapts. That is ALL an adds-list here decides.
+#   · WHEN those gates bind = scope_map (floor partition) + change_triggers
+#     (diff-keyed additive pulls). A gate sitting in project_only is NOT
+#     "removed" from a property that an overlay adds it to — the overlay
+#     decided it APPLIES; scope_map/change_triggers decide WHICH WORK ITEMS
+#     run it. Reading the two axes as one partition produced a false DATA
+#     FAULT in an external audit — they compose, they do not compete.
+# `when` values may be a scalar or an inline list (list = any-of).
+# `adds` ids must exist in gates/registry.yaml, or be on the FIXED
+# pending-sibling list (axe-core-a11y, zap-baseline, redirect-map-tests,
+# rollback-verification, scaled-content, baseline, launch-certificate) — those
+# are tolerated-and-reported by the lint until the sibling registry rows land.
+overlays:
+  # HARD GATE 7 also binds per clinical CHANGE independently of scope_map —
+  # this row is the per-project emphasis, not the only carrier of the law.
+  - id: clinical-register-emphasis
+    when:
+      entity_register: ktahv-clinical
+    adapts:
+      compliance-lint: "KTAHV clinical lock binds at full strength incl. DE/FR banned-word equivalents; zero findings, and the claims lens runs clinical-register-strict."
+      human-audit-round: "Adds Dr. Deepu John's clinical sign-off (HARD GATE 7) on top of the standard four-role round — one MORE signature, never one fewer."
+  # existing/migration assets: ranking value must be measured and protected before it is touched
+  - id: legacy-asset-continuity
+    when:
+      asset_situation: [existing, migration]
+    adds: [baseline, redirect-map-tests]
+  - id: migration-rollback
+    when:
+      asset_situation: migration
+    adds: [rollback-verification]
+  # B2B surfaces are read by partner audiences — same bar, sharper lens
+  - id: b2b-partner-audience-lens
+    when:
+      business_model: b2b
+    adapts:
+      beauty-conformance: "Judged against the owner paper's B2B partner-audience chapters (five partner audiences) — the bar is unchanged, the lens is sharpened to partner readers and quote-request intent."
+  # live WordPress carries the fleet's only compromised-history platform surface
+  - id: wordpress-attack-surface
+    when:
+      platform: wordpress
+    adds: [zap-baseline]
+
+# ── Binding scope (M0(a) disposition 3) ──────────────────────────────────────
+# scope: project  = the FULL composed battery, per-site pre-launch + scheduled
+#                   sweeps (project engagements: site build / rebuild / campaign).
+# scope: change   = the diff-relevant subset below (the CH-1 walk's Phase-5 row
+#                   + every merge-blocking per-PR CI lint + every doctrine-bound
+#                   per-change audit, by construction).
+# change_relevant ∪ project_only = every registry gate id, exactly once
+# (linted). Nothing here weakens a gate: it declares WHERE each one binds.
+#
+# scope_map is the FLOOR, never the ceiling (external review pass 2, B5): a
+# change that touches a URL surface, a form, a canonical, schema, tracking, a
+# locale file, or the security surface pulls the matching project_only gates
+# into ITS battery via `change_triggers` below — the per-change gate set is
+#   change_relevant ∪ (adds of every trigger whose when_changed matches the diff)
+# and an unclassifiable change runs the FULL battery (`fail_closed:` below).
+scope_map:
+  change_relevant:
+    # merge-blocking CI — runs on every PR by construction
+    - build-clean
+    - factory-spec-suite
+    - compliance-lint
+    - brand-lint
+    - banned-string-lint
+    - cta-label-lint
+    - honest-ymyl-content-lint
+    - s3-keyword-gates
+    - factory-matrix-self-registration
+    - lighthouse-budgets
+    - unit-tests-discovered
+    - secret-scan
+    - dependency-audit
+    - security-review-diff
+    # M0(a) §2 Phase-5 row (diff-relevant battery for CH-1)
+    - beauty-conformance
+    - go-science-conformance
+    - design-external-ai-review-post
+    - axe-core-a11y
+    # doctrine-bound per-change audits (rules n, o, p, r, s — after EVERY build/visual change / draft / scrape / pre-PR)
+    - design-qa-audit
+    - seo-aeo-geo-audit
+    - content-draft-compliance
+    - injection-screening
+    - security-posture-audit
+    # commerce diff lane (rules l/m/p: after any bulk store/theme change)
+    - catalog-compliance-audit
+    - shopify-theme-check
+    - checkout-flows
+    - price-inventory-integrity
+    # LP optimisation changes re-verify their own gates
+    - lp-noindex-single-cta
+    - lp-message-match
+    - lp-ad-policy
+    # Lane-B per-change law (M0(a) walk Phases 6–7: owner preview approval, post-publish QA fetch + diff)
+    - preview-approval
+    - post-launch-verification
+    # every release deploys with a verified way back
+    - rollback-verification
+    # scaled-content risk arrives with each content batch PR
+    - scaled-content
+  project_only:
+    # launch evidence + front gates (per project engagement, disposition 1)
+    - launch-evidence-gate
+    - front-gate-approvals
+    - generated-checklists-filled
+    - legacy-mine-protection-map
+    - design-critic-review
+    - design-external-ai-review          # Gate 1 binds at design-DIRECTION altitude (disposition 2)
+    - human-audit-round
+    - launch-certificate                 # n_a for change-class work (disposition 5)
+    - baseline
+    # full-battery pre-launch crawl/SEO rows + scheduled sweeps
+    - pre-launch-matrix-walk
+    - meta-canonical-crawl-files
+    - hreflang-reciprocal
+    - schema-jsonld
+    - og-cards-render
+    - alt-text-favicons
+    - internal-link-crawl
+    - consent-mode
+    - keyword-map
+    - geo-ai-readiness
+    - zap-baseline
+    - redirect-map-tests
+    # analytics / integration stand-up (per site)
+    - ga4-stream
+    - gtm-conversion-events
+    - ads-conversion-actions
+    - pixels-installed
+    - gsc-bing-verification
+    - forms-crm-parity
+    - chatbase-entity-bot
+    - chat-bubble-present
+    # store-level configuration (forever-human territory, rule k)
+    - payment-gateways-per-store
+    - settings-drift-check
+    - myshopify-noindex
+    # go-live + post-flip + monitoring cadence
+    - dns-go-live
+    - placeholder-preview-lock
+    - ads-final-url-cutover
+    - forward-family-redirects
+    - social-press-links
+    - uptime-fleet-pulse
+    - runtime-monitoring
+    - launch-retro-learning-loop
+    - weekly-qa-rotation
+    - cross-model-audit
+
+# ── Change kinds (external review pass 2, B5 remedy) ─────────────────────────
+# The caller-declared classifications a diff may carry when paths alone cannot
+# express it: a route rename or deletion under sites/**/app/** is a diff of
+# ABSENCES — no surviving path can glob-match it, so the resolver receives it
+# as a declared kind. `content-only` is the ONLY kind that may claim the plain
+# change_relevant floor when no trigger matches, and it is an assertion the
+# caller must be able to prove (prose/asset-only diff, no route/config/meta
+# surface touched) — an unasserted or unprovable classification fails closed.
+change_kinds: [route-rename, route-delete, content-only]
+
+# ── FAIL-CLOSED LAW (lint-pinned: this block must exist with EXACTLY these
+# keys and values; any edit is a lint finding — rule g has no quiet lane) ─────
+#   · unmatched_change: a change that matches NO change_trigger AND is not
+#     provably content-only (declared kind `content-only`) runs the FULL
+#     battery for its property. Unknown classification NEVER buys a subset.
+#   · unknown_dimension: a property carrying `unknown` in ANY dimension gets
+#     NO subset benefit — full battery PLUS every situation add (overlay) that
+#     could match under any resolution of the unknown value (unknown matches
+#     as a wildcard when composing, never as a miss).
+fail_closed:
+  unmatched_change: full-battery
+  unknown_dimension: full-battery-plus-situation-adds
+
+# ── Change triggers (ADDITIVE — diff-sensitive resolver, B5 remedy) ──────────
+# Each row: {id, when_changed: [path globs and/or kind:<change_kind>],
+# adds: [gate ids]}. Semantics: if ANY when_changed entry matches ANY changed
+# path (globs: * = one segment, ** = any depth incl. zero) or ANY declared
+# change kind, the row's adds join the change's battery. Rows only ever ADD
+# (rule g): removing or narrowing a row is a gate-weakening and needs the
+# owner's DECISIONS.md ruling. The lint enforces that every diff-reachable
+# gate the B5 finding names is carried by at least one row (REQUIRED_TRIGGERED
+# in scripts/class-map-lint.mjs) — deleting a row below cannot silently strand
+# a gate back in project_only-only land.
+# Path facts (verified against the tree, 19 Jul 2026): sites use app/ and
+# (abhilashkr) src/app/; forms surface = packages/forms + app/contact +
+# app/api/enquiry; schema/analytics/consent/i18n are packages/*.
+change_triggers:
+  # URL/redirect surfaces: redirect config, middleware, route renames/deletions
+  - id: url-redirect-surfaces
+    when_changed: [sites/*/next.config.*, sites/*/middleware.*, sites/*/src/middleware.*, sites/*/vercel.json, kind:route-rename, kind:route-delete]
+    adds: [redirect-map-tests, meta-canonical-crawl-files, internal-link-crawl]
+  # forms + enquiry endpoints: parity with CRM and consent must re-verify
+  - id: forms-surfaces
+    when_changed: [packages/forms/**, sites/*/app/contact/**, sites/*/src/app/contact/**, sites/*/app/api/enquiry/**, sites/*/src/app/api/enquiry/**]
+    adds: [forms-crm-parity, consent-mode]
+  # structured-data source: JSON-LD emitters
+  - id: schema-structured-data
+    when_changed: [packages/schema/**]
+    adds: [schema-jsonld]
+  # analytics/tracking implementation + consent plumbing
+  - id: analytics-tracking
+    when_changed: [packages/analytics/**, packages/consent/**]
+    adds: [ga4-stream, gtm-conversion-events, consent-mode]
+  # locale/i18n surfaces: locale routes and the i18n package
+  - id: locale-surfaces
+    when_changed: [packages/i18n/**, sites/*/app/de/**, sites/*/app/fr/**, sites/*/src/app/de/**, sites/*/src/app/fr/**]
+    adds: [hreflang-reciprocal, meta-canonical-crawl-files]
+  # security surface: middleware, headers config (next.config), API routes
+  - id: security-surfaces
+    when_changed: [sites/*/middleware.*, sites/*/src/middleware.*, sites/*/next.config.*, sites/*/app/api/**, sites/*/src/app/api/**]
+    adds: [zap-baseline]
+  # meta/canonical/crawl files: metadata exports (layout/page), robots, sitemap, llms.txt
+  - id: meta-crawl-surfaces
+    when_changed: [sites/*/app/robots.*, sites/*/app/sitemap.*, sites/*/app/llms.txt/**, sites/*/app/**/layout.tsx, sites/*/src/app/**/layout.tsx, sites/*/app/**/page.tsx, sites/*/src/app/**/page.tsx]
+    adds: [meta-canonical-crawl-files]
+  # keyword-bearing pages: H1/title edits cannot be path-distinguished from any
+  # other page edit, so EVERY page-file change re-verifies the keyword map
+  - id: keyword-bearing-pages
+    when_changed: [sites/*/app/**/page.tsx, sites/*/src/app/**/page.tsx, sites/*/app/**/page.mdx, sites/*/src/app/**/page.mdx]
+    adds: [keyword-map]
+
+# ── Test vectors: the 24 package workflows (each MUST resolve) ───────────────
+# {business_model dir} × {workflow type → asset_situation / site_class};
+# entity_register/platform picked from the real fleet property each workflow
+# family actually describes. The lint resolves every row and checks the
+# workflow file exists.
+test_vectors:
+  - id: wf-b2c-01-new-website
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/01_NEW_WEBSITE.md
+    site_class: organic
+    business_model: b2c
+    asset_situation: new
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2c-02-existing-upgrade-migration
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md
+    site_class: organic
+    business_model: b2c
+    asset_situation: migration
+    entity_register: group-corporate
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2c-03-new-organic-programme
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/03_NEW_ORGANIC_PROGRAMME.md
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: education
+    locale_market: en-global
+    platform: wordpress
+  - id: wf-b2c-04-existing-organic-recovery
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md
+    site_class: organic
+    business_model: b2c
+    asset_situation: existing
+    entity_register: education
+    locale_market: en-global
+    platform: wordpress
+  - id: wf-b2c-05-new-landing-page
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/05_NEW_LANDING_PAGE.md
+    site_class: landing
+    business_model: b2c
+    asset_situation: new
+    entity_register: ktahv-clinical
+    locale_market: en-de-fr
+    platform: factory-next
+  - id: wf-b2c-06-existing-lp-optimisation
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/01_B2C/06_EXISTING_LANDING_PAGE_OPTIMISATION.md
+    site_class: landing
+    business_model: b2c
+    asset_situation: existing
+    entity_register: ktahv-clinical
+    locale_market: en-de-fr
+    platform: factory-next
+  - id: wf-b2b-01-new-website
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/01_NEW_WEBSITE.md
+    site_class: organic
+    business_model: b2b
+    asset_situation: new
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2b-02-existing-upgrade-migration
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md
+    site_class: organic
+    business_model: b2b
+    asset_situation: migration
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2b-03-new-organic-programme
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/03_NEW_ORGANIC_PROGRAMME.md
+    site_class: organic
+    business_model: b2b
+    asset_situation: existing
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2b-04-existing-organic-recovery
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md
+    site_class: organic
+    business_model: b2b
+    asset_situation: existing
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2b-05-new-landing-page
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/05_NEW_LANDING_PAGE.md
+    site_class: landing
+    business_model: b2b
+    asset_situation: new
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-b2b-06-existing-lp-optimisation
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/02_B2B/06_EXISTING_LANDING_PAGE_OPTIMISATION.md
+    site_class: landing
+    business_model: b2b
+    asset_situation: existing
+    entity_register: kappl-b2b
+    locale_market: en-global
+    platform: factory-next
+  - id: wf-d2c-01-new-website
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/01_NEW_WEBSITE.md
+    site_class: commerce
+    business_model: d2c
+    asset_situation: new
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-d2c-02-existing-upgrade-migration
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md
+    site_class: commerce
+    business_model: d2c
+    asset_situation: migration
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-d2c-03-new-organic-programme
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/03_NEW_ORGANIC_PROGRAMME.md
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-d2c-04-existing-organic-recovery
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md
+    site_class: commerce
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-d2c-05-new-product-offer-lp
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/05_NEW_PRODUCT_OFFER_LANDING_PAGE.md
+    site_class: landing
+    business_model: d2c
+    asset_situation: new
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-d2c-06-existing-product-offer-lp-optimisation
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/03_D2C/06_EXISTING_PRODUCT_OFFER_LANDING_PAGE_OPTIMISATION.md
+    site_class: landing
+    business_model: d2c
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-shopify-01-new-store
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/01_NEW_STORE.md
+    site_class: commerce
+    business_model: shopify
+    asset_situation: new
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: shopify
+  - id: wf-shopify-02-existing-store-upgrade-migration
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/02_EXISTING_STORE_UPGRADE_MIGRATION.md
+    site_class: commerce
+    business_model: shopify
+    asset_situation: migration
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: shopify
+  - id: wf-shopify-03-new-organic-programme
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/03_NEW_ORGANIC_PROGRAMME.md
+    site_class: commerce
+    business_model: shopify
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: shopify
+  - id: wf-shopify-04-existing-organic-recovery
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md
+    site_class: commerce
+    business_model: shopify
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: shopify
+  # store LPs run on the factory /lp infrastructure; checkout stays the main Shopify store (Factory rule)
+  - id: wf-shopify-05-new-landing-page
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/05_NEW_LANDING_PAGE.md
+    site_class: landing
+    business_model: shopify
+    asset_situation: new
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next
+  - id: wf-shopify-06-existing-lp-optimisation
+    workflow: docs/process/os-2026/package/05_WORKFLOWS/04_SHOPIFY/06_EXISTING_LANDING_PAGE_OPTIMISATION.md
+    site_class: landing
+    business_model: shopify
+    asset_situation: existing
+    entity_register: kappl-product
+    locale_market: en-in
+    platform: factory-next

@@ -1,15 +1,18 @@
 {
   "name": "go-science",
   "metadata": {
-    "description": "GO Science — Akshar Yadav's Get Overbooked marketing program assistant"
+    "description": "GO Science \u2014 Akshar Yadav's Get Overbooked marketing program assistant"
   },
   "plugins": [
     {
       "name": "go-science",
       "source": "./",
-      "description": "GO Program marketing science assistant — 13-step framework, Four-Phase, MCB, KIT, ARC, IRO, and more",
+      "description": "GO Program marketing science assistant \u2014 13-step framework, Four-Phase, MCB, KIT, ARC, IRO, and more",
       "version": "1.0.0",
       "license": "MIT"
     }
-  ]
+  ],
+  "owner": {
+    "name": "Akshar Yadav \u2014 GO Science (installed for Abilash K R)"
+  }
 }

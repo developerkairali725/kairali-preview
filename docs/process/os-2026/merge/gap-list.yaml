@@ -1,0 +1,206 @@
+# gap-list.yaml — MACHINE-READABLE R7 tool-gap list (plan §3.5; merge-continuity PKG-070).
+# The 18-stage TOOL_STACK_REGISTER.csv reconciled against installed reality, updated with
+# the 19 Jul directive rulings (D-20260719-15/-18/-19/-22/-30). This file is the current
+# truth for the ChatGPT counter-recommendation round; the package CSV is reference
+# architecture, not procurement (ingest-screen theme 5).
+# DOCTRINE: every recommendation carries an evidence tier (measured/vendor/anecdote);
+# VENDOR CLAIMS ALONE NEVER JUSTIFY ADOPTION (plan §3.5). Rule g: nothing here weakens a gate.
+version: 1
+generated: "2026-07-19 17:31:03 IST"
+source_register: "docs/process/os-2026/package/07_TEMPLATES/TOOL_STACK_REGISTER.csv (18 stages)"
+plan_ref: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.5 (R7)"
+note: >-
+  The plan's coarse "9 stages covered today" reading resolves to the per-row grading below
+  (yes 3 / partial 8 / no 7), which supersedes it as the machine truth. Plan §3.5 was written
+  before the 19 Jul owner rulings; stale facts updated per the directive refs on each row.
+
+stages:
+  - stage: "Commercial truth"
+    covered_today: partial
+    current_tool: "Central CRM ruled commercial truth per entity (D-20260719-22 / R4); KTAHV/VR = CRM+2 PMS; read access requested from Satyam (email sent 19 Jul, reply awaited)"
+    gap: "No API/warehouse read access wired; UTM→CRM mapping unbuilt (wiki/integrations/crm-centralized.md build requirement)"
+    closer: "CRM read access + UTM-mapping build"
+    closer_status: "in-flight (owner email sent; build rides M3)"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Google organic"
+    covered_today: partial
+    current_tool: "GSC via LOCAL service account kairali-os-reader (RULED local, D-20260719-18 — Composio rejected for this lane); 8 property grants live, smoke 200; BigQuery bulk export armed"
+    gap: "5 GSC ownership gaps pending Mon 20 Jul consolidation (Sunaj/Vikash); MCP wiring + per-property BigQuery export config not done; 16-month rolling-deletion clock URGENT"
+    closer: "Local SA MCP wiring + ownership consolidation + BigQuery per-property enable (runbook docs/sops/gsc-ga4-local-access-runbook.md)"
+    closer_status: "in-flight (access layer built 19 Jul; owner runbook run + Monday consolidation pending)"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Analytics and tags"
+    covered_today: partial
+    current_tool: "GA4 account-Viewer (Kairali) via the same local SA, Data API smoke 200; ~15 GA4 accounts across two logins mapped (runbook addendum 2)"
+    gap: "MCP wiring pending; cross-account grant sweep pending the Monday ownership consolidation; GTM governance unstarted"
+    closer: "Local SA GA4 MCP wiring (D-20260719-18 lane) + grant sweep"
+    closer_status: "in-flight"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Technical crawling"
+    covered_today: "no"
+    current_tool: "None installed (Screaming Frog parked to M3, ask ⑥ closed 19 Jul)"
+    gap: "No URL-level crawler for the Phase-1 baseline register or regression comparison"
+    closer: "DataForSEO On-Page as baseline crawler inside seo-baseline.mjs; Screaming Frog decision re-opens at M3 only if the bake-off shows a need for an independent crawler sample"
+    closer_status: "planned"
+    evidence_tier: vendor
+    milestone: M3
+
+  - stage: "Automated SEO data"
+    covered_today: partial
+    current_tool: "DataForSEO FUNDED — account exists with ~$48 PAYG (D-20260719-15; supersedes the plan's '$50 deposit pending owner approval'); nothing wired yet"
+    gap: "Credentials/env wiring + narrow REST integration for seo-baseline.mjs unbuilt; BAKE-OFF-BEFORE-CONSOLIDATION doctrine stands (plan §3.5 amended per external review §12): validate against GSC/GA4 ground truth + one independent crawler sample before any consolidation"
+    closer: "Narrow REST wiring + pilot bake-off with vendor-neutral raw schema + documented fallback path"
+    closer_status: "funded; wiring rides M3"
+    evidence_tier: vendor
+    milestone: M3
+
+  - stage: "SEO/competitor suite"
+    covered_today: "no"
+    current_tool: "None (Semrush/Ahrefs/Similarweb subscriptions REJECTED at current scale, plan §8)"
+    gap: "No integrated rank-tracking/keyword-gap/backlink suite"
+    closer: "DataForSEO Labs/backlinks substitution — ONLY after the bake-off passes (see contestable_calls C1); Labs outputs always labelled ESTIMATE (HARD GATE 6)"
+    closer_status: "planned (post-bake-off)"
+    evidence_tier: vendor
+    milestone: "M3+"
+
+  - stage: "Market/channel intelligence"
+    covered_today: "no"
+    current_tool: "None (Similarweb rejected, plan §8)"
+    gap: "No relative market/channel-share estimates; modelled estimates are low-value at current fleet traffic"
+    closer: "DataForSEO/first-party substitutes assessed after the bake-off; no purchase"
+    closer_status: "deferred"
+    evidence_tier: anecdote
+    milestone: "M3+"
+
+  - stage: "Performance field"
+    covered_today: partial
+    current_tool: "Lab Lighthouse in CI (A5 job + gate battery) — lab only, not field"
+    gap: "No CrUX/PSI field P75 (LCP/INP/CLS) collection per URL/origin; no RUM"
+    closer: "Free CrUX/PSI API pulls folded into the M3 baseline/monitoring scripts"
+    closer_status: "planned"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Performance diagnosis"
+    covered_today: "yes"
+    current_tool: "Lighthouse CI in the factory gate battery (PROMPT-4 pilot measured, ~28 min full battery)"
+    gap: null
+    closer: null
+    closer_status: none
+    evidence_tier: measured
+    milestone: done
+
+  - stage: "Behaviour/UX"
+    covered_today: partial
+    current_tool: "Microsoft Clarity — KTAHV project live with clarity-ktahv MCP (dashboard + recordings); KEEP ruled (D-20260719-30, runbook addendum 4)"
+    gap: "Only KTAHV covered; no fleet-wide Clarity projects; Hotjar rejected (plan §8)"
+    closer: "One Clarity project per launch site in the M3 per-site tracking bundle (agent-driven browser setup, owner clicks submit per D-20260719-30)"
+    closer_status: "in-flight (KTAHV live; fleet rides M3)"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Usability research"
+    covered_today: "no"
+    current_tool: "None"
+    gap: "No moderated/unmoderated task testing; below current scale"
+    closer: "Activate when a conversion lane warrants it (post-M4 pilot learnings)"
+    closer_status: "deferred"
+    evidence_tier: anecdote
+    milestone: "M4+"
+
+  - stage: "Accessibility"
+    covered_today: "no"
+    current_tool: "None automated (manual checks only)"
+    gap: "No axe-core in CI; WCAG release gate missing"
+    closer: "FREE — @axe-core/playwright into existing CI; registry row at M1, wiring at M3; PR touches .github/ → CODEOWNERS owner approval required"
+    closer_status: "planned (M1 registry row committed lane)"
+    evidence_tier: measured
+    milestone: "M1 (row) / M3 (wiring)"
+
+  - stage: "Visual/functional QA"
+    covered_today: "yes"
+    current_tool: "Playwright in repo CI (critical-flow specs, screenshots/traces, golden-battery evidence)"
+    gap: null
+    closer: null
+    closer_status: none
+    evidence_tier: measured
+    milestone: done
+
+  - stage: "Security"
+    covered_today: partial
+    current_tool: "pnpm audit + Dependabot live and CLEAN (otel override, PR #168 merged, D-20260719-16); Monday triage ritual"
+    gap: "No DAST — ZAP baseline scan absent"
+    closer: "FREE — OWASP ZAP baseline GitHub Action; registry row at M1, wiring at M3; .github/ change → CODEOWNERS gate"
+    closer_status: "planned"
+    evidence_tier: measured
+    milestone: "M1 (row) / M3 (wiring)"
+
+  - stage: "Commerce feeds"
+    covered_today: "no"
+    current_tool: "None (Shopify Track B blocked on access; Merchant Center not wired)"
+    gap: "No feed diagnostics/eligibility monitoring"
+    closer: "Rides Track B agentic pilot (Shadab access lane) + Merchant Center wiring when commerce unblocks"
+    closer_status: "blocked (Track B)"
+    evidence_tier: vendor
+    milestone: "M3+"
+
+  - stage: "Local"
+    covered_today: partial
+    current_tool: "GBP RULED both-parallel (D-20260719-19): owner runs the 5-min application actions from docs/sops/gbp-access-runbook.md WHILE DataForSEO Business Data read-pipelines proceed without Google"
+    gap: "Neither lane wired yet; grid rank tracking absent; BrightLocal rejected (plan §8)"
+    closer: "GBP API application (owner actions prepared) + DataForSEO Business Data reads"
+    closer_status: "in-flight (runbook committed 19 Jul; owner actions pending)"
+    evidence_tier: measured
+    milestone: M3
+
+  - stage: "Paid competitor creative"
+    covered_today: "no"
+    current_tool: "None operationalized (free ad libraries exist; no paid lane live). Meta pixel/CAPI DEFERRED to the ads lane (D-20260719-30, runbook addendum 4); launch attribution = wa.me + UTM only (D-20260719-22)"
+    gap: "No creative/offer monitoring — accepted while no paid-social lane exists"
+    closer: "Free ad-library archive checks the day an ads/pixel need opens; CRM UTM-mapping build is the prerequisite either way"
+    closer_status: "deferred (skipped per ruling, not forgotten)"
+    evidence_tier: measured
+    milestone: "M3+"
+
+  - stage: "Evidence/versioning"
+    covered_today: "yes"
+    current_tool: "GitHub + CI required checks + hash manifests (merge-continuity lint live in factory-gate CI; evidence law v2, launches/<domain>/ root)"
+    gap: "evidence-manifest.mjs validator is an M2 mechanism (planned, on schedule — not a tool gap)"
+    closer: "M2 mechanisms milestone as planned"
+    closer_status: "planned"
+    evidence_tier: measured
+    milestone: M2
+
+contestable_calls:
+  # Flagged for the ChatGPT counter-recommendation attack round (plan §3.5).
+  # The plan flagged TWO; one has since been RULED by the owner and is closed.
+  - id: C1
+    call: "Single-vendor DataForSEO consolidation (replacing Semrush/Ahrefs/Screaming Frog/Similarweb/BrightLocal roles)"
+    status: OPEN — attack this
+    mitigation: >-
+      Bake-off-before-consolidation doctrine (plan §3.5 amended): narrow REST first, pilot
+      bake-off against GSC/GA4 ground truth + one independent crawler sample, tolerated
+      disagreement defined, vendor-neutral raw schema, documented fallback path. Consolidation
+      becomes doctrine only after the bake-off. Savings figure is an ESTIMATE (modelled from
+      list prices), never a measured fleet figure.
+    evidence_tier: vendor
+  - id: C2
+    call: "Composio cloud hub vs local service-account MCPs for GSC/GA4 routing"
+    status: "RULED — no longer contestable"
+    ruling: >-
+      D-20260719-18 (2026-07-19 14:14:32 IST): LOCAL service-account MCPs on the Mac mini;
+      Composio rejected for this lane — credentials stay self-hosted per evidence law.
+      Retained here for exclusion-register continuity (plan §8 discipline: rejected paths
+      never come back unexamined).
+    evidence_tier: measured
+
+doctrine:
+  - "Every recommendation row carries an evidence tier: measured / vendor / anecdote."
+  - "VENDOR CLAIMS ALONE NEVER JUSTIFY ADOPTION — measured validation against first-party ground truth precedes any consolidation or purchase (plan §3.5)."
+  - "Paid items remain owner one-worders (plan §7.2); this file recommends, the owner decides."

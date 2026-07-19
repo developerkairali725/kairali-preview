@@ -1,0 +1,35 @@
+workflow_id: SHOPIFY_EXISTING_STORE_UPGRADE
+project_id: CLIENT-PROJECT-001
+phase: 1
+scope:
+  production_domain: example.com
+  staging_domain: staging.example.com
+  markets: [IN, US]
+  languages: [en-IN, en-US]
+  devices: [mobile, desktop]
+inputs:
+  artifact_ids: []
+  freshness_days: 7
+authorized_tools:
+  - google_search_console_read
+  - ga4_read
+  - screaming_frog_cli
+  - dataforseo_read
+  - shopify_analytics_read
+prohibited_actions:
+  - production_publish
+  - redirect_change
+  - robots_change
+  - delete_content
+  - disavow_submit
+outputs:
+  schema: agency_issue.schema.json
+  evidence_manifest: artifact_manifest.schema.json
+gate:
+  required: BASELINE_APPROVAL
+  approver_role: accountable_business_owner
+definition_of_done:
+  - all mandatory reports archived with hashes
+  - master URL inventory reconciled
+  - competitor baseline completed
+  - unknowns and exclusions logged

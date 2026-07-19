@@ -192,6 +192,49 @@ jobs:
       - name: Gate-registry lint (every gate × every class — no missing entries)
         run: node scripts/gate-registry-lint.mjs
 
+      # MERGE CONTINUITY PROOF (OS v2 M0(b), plan §10; external review pass 1
+      # blocking finding #1: the §4 continuity table was a manual assertion).
+      # Every normative CLAUDE.md unit, every registry gate, and every adopted
+      # package obligation is a row in merge-continuity.yaml; this lint proves
+      # hash integrity, verbatim presence, registry coverage, and one-home-per-
+      # obligation — and FAILS on source drift, so a CLAUDE.md or registry edit
+      # that nobody re-verified against the rows cannot merge. --strict ARMED
+      # at M1 (19 Jul 2026, plan §10): pending standards block, and every
+      # file-like new_home must exist — except the residues explicitly
+      # allowlisted in docs/process/os-2026/merge/strict-residues.yaml (M2/M3
+      # scheduled builds), which print LOUDLY as ALLOWED and fail the moment
+      # they go stale. Not a weakening (rule g): pre-M1 mode checked less.
+      - name: Merge-continuity lint (OS v2 — nothing lost, machine-proven, strict)
+        run: node scripts/merge-continuity-lint.mjs --strict
+
+      # SHARED-STANDARDS ACCEPTANCE (OS v2 M0(c), plan §3.6 / D-20260719-11).
+      # The seven 00_SHARED_STANDARDS files the package dangles are accepted
+      # only when they declare + carry their mapped obligations VERBATIM (v1
+      # supreme) and contain no rule-9-class self-modification language.
+      # --strict ARMED at M1 (all seven standards are authored): a missing or
+      # wrong standard now FAILS instead of printing PENDING_AUTHOR.
+      - name: Standards acceptance (seven shared standards — carried, not paraphrased, strict)
+        run: node scripts/standards-acceptance.mjs --strict
+
+      # CLASS-MAP POLICY COMPOSITION (OS v2 M1, plan §2.2 / §7.1 decision 2).
+      # gates/class-map.yaml is the applicability overlay over the registry's
+      # three supreme classes: 32 fleet properties × 5 declared dimensions,
+      # overlay rows that may only ADD/ADAPT (never remove/soften — rule g),
+      # and a scope_map declaring every registry gate change_relevant or
+      # project_only exactly once. The lint proves every property and all 24
+      # workflow test vectors resolve to ONE unambiguous gate set.
+      - name: Class-map lint (policy composition — no ambiguity, nothing weakened)
+        run: node scripts/class-map-lint.mjs
+
+      # PKG-043 RULE-9 NEUTRALIZATION (OS v2 M1, plan §9). The adopted copies
+      # under docs/process/os-2026/workflows/ carry the package workflows with
+      # the self-modification directive (rule 9) replaced by the owner-approved
+      # proposal path; --check fails on byte drift, a reintroduced original
+      # sentence, a missing/stray file, or any touched package source (the
+      # immutable source layer must still carry the original exactly once).
+      - name: Neutralized-workflows check (PKG-043 — adopted copies byte-faithful, sources untouched)
+        run: node scripts/neutralize-workflows.mjs --check
+
       # CHAT BUBBLE PRESENCE (D-20260718-05, 18 Jul). The chat bubble is
       # mandatory on every Factory site; before this gate four preview-stage
       # sites silently lacked it — an absence nobody decided. Every non-exempt
@@ -247,6 +290,27 @@ jobs:
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: node scripts/front-gate.mjs --base "$BASE"
+
+      # AUTHENTICATED APPROVAL (OS v2 M1, plan §10 / external-review pass 1
+      # blocking finding #2, scope per D-20260719-10). A diff touching a
+      # GUARDED path (front-gate ledgers, CLAUDE.md, gates/, standards,
+      # workflows, doctrine scripts, evolution/, decisions/, .github/workflows)
+      # requires a GitHub PR review in state APPROVED at the CURRENT head SHA
+      # by a login registered in gates/owners.yaml — an agent-written
+      # approvals.yaml row alone no longer satisfies a gate, and every
+      # approved ledger row added/modified in the diff must be hash-bound to
+      # its committed artifact. Out-of-scope diffs pass untouched: routine
+      # green technical PRs keep their D-AUTOMERGE-TIERS auto-merge lane.
+      # PR number + head SHA come from GITHUB_EVENT_PATH (pull_request events
+      # carry the payload, so the merge-ref rev-parse fallback never decides a
+      # PR); BASE via env, never interpolated — same injection doctrine as the
+      # front-gate step above.
+      - name: Authenticated approval (guarded paths need an owner-identity review)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: node scripts/authenticated-approval.mjs --base "$BASE"
 
   factory-spec:
     # Docs-only diffs: the job still spawns (its required context must report)

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/agency-issue.schema.json",
+  "title": "Agency OS Issue",
+  "type": "object",
+  "required": [
+    "issue_id",
+    "project_id",
+    "phase",
+    "severity",
+    "observation",
+    "evidence_ids",
+    "business_consequence",
+    "recommendation",
+    "acceptance_criteria",
+    "status"
+  ],
+  "properties": {
+    "issue_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "severity": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "evidence_label": {
+      "enum": [
+        "OBSERVED_FIRST_PARTY",
+        "OBSERVED_LIVE_TEST",
+        "CALCULATED",
+        "THIRD_PARTY_ESTIMATE",
+        "USER_PROVIDED",
+        "EXTERNAL_BENCHMARK",
+        "ANECDOTAL_SIGNAL",
+        "ASSUMPTION",
+        "RECOMMENDATION",
+        "UNKNOWN"
+      ]
+    },
+    "observation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "affected_entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "business_consequence": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "owner": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "OPEN",
+        "EVIDENCED",
+        "APPROVED",
+        "IMPLEMENTING",
+        "STAGING_QA",
+        "READY_FOR_RELEASE",
+        "DEPLOYED",
+        "LIVE_VERIFIED",
+        "MONITORED",
+        "CLOSED",
+        "ACCEPTED_RISK"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "implementation_reference": {
+      "type": "string"
+    },
+    "retest_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

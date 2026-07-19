@@ -39,7 +39,7 @@
 #   applicability     — commerce / organic / landing, per the law above.
 
 version: 1
-updated: "2026-07-18 20:33:25 IST"
+updated: "2026-07-19 17:31:40 IST"
 classes: [commerce, organic, landing]
 
 gates:
@@ -961,3 +961,95 @@ gates:
       commerce: required
       organic: required
       landing: required
+
+  # ──────── H · OS v2 ADDITIONS (merge plan 2026-07-19 — Phase-5 battery, R6 baseline, R5 scaled-content) ──
+  - id: axe-core-a11y
+    name: "axe-core accessibility scan"
+    what_it_verifies: "@axe-core/playwright scan on key templates (desktop + mobile viewports) reports zero serious/critical WCAG violations"
+    severity: high
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: @axe-core/playwright wired into the existing factory-spec CI matrix at M3 (plan §3.5 gap-closer 2, the free tier); until then only the a11y basics ride factory-spec-suite (touch targets, focus rings) — NOT the full axe ruleset"
+    source: "OS v2 merge plan §2.1 Phase 5 + §3.5 (docs/plans/2026-07-19-os-v2-architecture-merge-plan.md); Digital_Growth_Agency_OS_2026 package QA standards"
+    applicability:
+      commerce: { adapted: "Theme pages scanned via storefront preview URLs — no pnpm-served templates exist for liquid" }
+      organic: required
+      landing: required
+
+  - id: zap-baseline
+    name: "OWASP ZAP baseline security scan"
+    what_it_verifies: "ZAP baseline scan (GitHub Action) against the preview URL reports no unresolved medium-or-higher alerts before launch"
+    severity: high
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: zaproxy baseline-scan job at M3 (plan §3.5 gap-closer 2); NOTE the wiring PR touches .github/ and therefore requires Abilash's CODEOWNERS approval before it can merge"
+    source: "OS v2 merge plan §2.1 Phase 5 + §3.5; Digital_Growth_Agency_OS_2026 package security standards"
+    applicability:
+      commerce: { adapted: "Scan targets the dev-theme storefront preview URL; Shopify owns the origin, so findings are scoped to the theme-controllable surface" }
+      organic: required
+      landing: required
+
+  - id: redirect-map-tests
+    name: "Redirect-map tests (protection map, machine-verified)"
+    what_it_verifies: "At migration cutover every legacy URL's declared fate (KEEP/MERGE/301) is asserted per-URL by a test run — KEEP resolves 200, every 301 hits its exact single-hop target, no chains, no legacy URL outside the map"
+    severity: blocker
+    run: automated
+    status: planned
+    script_or_agent_ref: "PLANNED: redirect-map spec generated from the protection map at M2 (plan §2.1 Phase 5); today the map itself is disciplined by legacy-mine-protection-map with no per-URL machine assertion"
+    source: "OS v2 merge plan §2.1 Phase 5; Digital_Growth_Agency_OS_2026 package migration standard; CLAUDE.md §BUILD DECISION MATRIX (protection map)"
+    applicability:
+      commerce: { adapted: "Shopify URL redirects are created in-admin by humans (rule k); the agent verifies the admin redirect EXPORT against the protection map instead of deploying routes it cannot touch" }
+      organic: required
+      landing: { n_a: "New /lp/<campaign> paths have no legacy URLs; the host domain's redirect map is owned by the host site's migration" }
+
+  - id: rollback-verification
+    name: "Rollback path rehearsed + evidenced"
+    what_it_verifies: "BEFORE any DNS flip / production release, launches/<domain>/rollback.md exists naming WHO executes, the exact commands/steps, and evidence the path was actually rehearsed on staging — not a theoretical paragraph"
+    severity: blocker
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: launches/<domain>/rollback.md template + launch-evidence check at M2 (plan §2.1 Phases 5-6); the agent prepares the document and rehearsal evidence, a named human executes the rehearsal — rollback authority stays human, same law as dns-go-live"
+    source: "OS v2 merge plan §2.1 Phases 5-6 (rollback authority human); Digital_Growth_Agency_OS_2026 package launch standards"
+    applicability:
+      commerce: { adapted: "Rollback = republish the previous theme version, forever-human (rule k); steps + executor rehearsed against the unpublished dev theme and evidenced the same way" }
+      organic: required
+      landing: { adapted: "No DNS to revert; rollback = revert PR on the host site + Ads pause, rehearsed as a staged revert with the executor named" }
+
+  - id: scaled-content
+    name: "Scaled-content governance (publish-rate + E-E-A-T)"
+    what_it_verifies: "Programmatic/AI-assisted publishing stays under a declared publish-rate ceiling, every published piece carries human-editing evidence, and E-E-A-T artifacts exist (real author entities, citations). Risk basis stated honestly (HARD GATE 6): Google documents SITE-WIDE helpfulness/quality signals; rapid scaling of thin content is an OBSERVED industry demotion pattern, not a formally documented velocity factor — the ceiling is our prudence control [external pass 2 correction, sonar-reasoning-pro 19 Jul 2026]"
+    severity: high
+    run: agent
+    status: planned
+    script_or_agent_ref: "PLANNED: scaled-content audit at M1/M2 (plan §6 R5); the publish-rate ceiling + evidence format land in the authored content standard; author-entity groundwork exists in the whyayurveda.org voice system (docs/sops/)"
+    source: "OS v2 merge plan §6 (R5 scaled-content enforcement); Digital_Growth_Agency_OS_2026 package content standards"
+    applicability:
+      commerce: { adapted: "PDP/collection copy produced at scale carries the same human-editing evidence via the catalog content workflow (rule o) + Monday catalog lint" }
+      organic: required
+      landing: { n_a: "LPs are noindex by default — no indexable publishing surface for scaled-content signals" }
+
+  - id: baseline
+    name: "Baseline front gate (R6 — old-site register before strategy)"
+    what_it_verifies: "Wherever a live predecessor exists, launches/<domain>/baseline/ is committed BEFORE the strategy approval row may be signed: per-URL register + GSC 16m + GA4 12m + immutable hashed raw exports + the date-stamped PDF with MONITOR/REJECT/IMPLEMENT sections; CI blocks strategy until baseline/ exists"
+    severity: blocker
+    run: automated
+    status: partial
+    script_or_agent_ref: "GSC 16m UI snapshots committed for 13 properties (launches/*/baseline/raw/gsc-ui-export-2026-07-19/ + hashed manifests; see launches/README-gsc-snapshot-2026-07-19.md); the full register/PDF via the M3 seo-baseline script (DataForSEO, plan §3.4) and the strategy-row CI block in scripts/front-gate.mjs (M2) are NOT built yet"
+    source: "OS v2 merge plan §3.4 (R6 baseline gate) + §2.1 Phase 1; Digital_Growth_Agency_OS_2026 package Phase-1 baseline discipline; D-20260719-07 (GSC export)"
+    applicability:
+      commerce: { adapted: "Store migrations baseline PDP/collection organic + revenue analytics BEFORE any URL change (rule m: Vikash flagged first); greenfield stores declare greenfield" }
+      organic: required
+      landing: { n_a: "New /lp/ paths have no live predecessor; the host domain's baseline is owned by the host site's rebuild" }
+
+  - id: launch-certificate
+    name: "Signed launch certificate (site launches only)"
+    what_it_verifies: "One signed certificate per SITE launch / DNS flip binds the Phase-5 evidence to the go-live decision; change-class work NEVER carries one — changes get the monitoring row only, and the before/after PDF remains the per-SITE proof artifact"
+    severity: blocker
+    run: human
+    status: planned
+    script_or_agent_ref: "PLANNED: certificate template + launch-evidence check at M2 (plan §2.1 Phases 5-6); scope ruled by M0(a) dispositions 5 + 7 — the class-map scope_map lists this gate project_only"
+    source: "OS v2 merge plan §2.1 Phase 5; docs/reports/2026-07-19-m0a-paper-dryrun.md dispositions 5 + 7; Digital_Growth_Agency_OS_2026 package launch-command-centre standard"
+    applicability:
+      commerce: { adapted: "Certificate binds to the theme-publish / domain-connect event inside the Shopify admin — itself forever-human (rule k)" }
+      organic: required
+      landing: { n_a: "An /lp/ path has no site launch or DNS flip; its go-live is the Ads cutover, covered by ads-final-url-cutover" }

@@ -1,0 +1,432 @@
+{
+  "package": "Digital_Growth_Agency_OS_2026",
+  "version": "2.0",
+  "created": "2026-07-19",
+  "files": [
+    {
+      "path": "00_START_HERE/QA_AND_COMPLETENESS_REPORT.md",
+      "bytes": 6103,
+      "sha256": "0611881a972204ba82e9a378b07a143c283e01847b754b15ea050d16fbaa94be"
+    },
+    {
+      "path": "00_START_HERE/README.md",
+      "bytes": 1666,
+      "sha256": "b36100c4d2bf101bd8c9f3b71ab3aa6e8adc54e9da7d07d4d2c6b50284184817"
+    },
+    {
+      "path": "01_MASTER_OS/00_MASTER_AGENCY_OPERATING_SYSTEM_2026.md",
+      "bytes": 10477,
+      "sha256": "9c6dbc0ecddd2030fdba7e2bbafcc28796712f517a10726b41cf2d8d20f37356"
+    },
+    {
+      "path": "01_MASTER_OS/01_AGENCY_CAPABILITY_AND_SPECIALIST_MAP.md",
+      "bytes": 3291,
+      "sha256": "6a98c8c33b96e57b2aed99f6c2c0aa2685330cbc0d40cb4322b61afa07430497"
+    },
+    {
+      "path": "01_MASTER_OS/MASTER_AGENCY_OPERATING_SYSTEM_COMPLETE_2026.md",
+      "bytes": 73710,
+      "sha256": "8b5b5f6356a0fd13a2b6475215807a54ee6a9daa908a09fa25cd4a66a8336196"
+    },
+    {
+      "path": "02_COMPETITIVE_INTELLIGENCE/COMPETITIVE_INTELLIGENCE_AND_MARKET_SHARE_PLAYBOOK_2026.md",
+      "bytes": 11641,
+      "sha256": "2f81b2f528643fa80fadb9583deba48b868c12f104c8b83232067eb0e8bb4ea5"
+    },
+    {
+      "path": "03_METRICS_TOOLS_BENCHMARKS/METRICS_TOOLS_BENCHMARKS_SOLUTION_DICTIONARY_2026.md",
+      "bytes": 23904,
+      "sha256": "cbd48f587a9cae7e47024212c45e3a8f6e476724f84861d9ea18ebdd394be952"
+    },
+    {
+      "path": "04_EVIDENCE_QA_AGENT_EXECUTION/EVIDENCE_STORAGE_QA_AND_AI_AGENT_EXECUTION_STANDARD_2026.md",
+      "bytes": 7572,
+      "sha256": "66c811f71839a7634d4d72e01f8527fd66fc2117ae4c3b5468d24c9e41bc2d6a"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/01_NEW_WEBSITE.md",
+      "bytes": 24826,
+      "sha256": "37cf965e95763c19cb0416bff5d4c4e9014f5bb542c653be6971f0a2dc9ddf89"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md",
+      "bytes": 25814,
+      "sha256": "76f9ab434cb3e5c6fa9447e435a5c7dda2cc09464652dfc31f141af1e721f88a"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/03_NEW_ORGANIC_PROGRAMME.md",
+      "bytes": 25747,
+      "sha256": "67f1d8d7dda4ee010ca94bcd37a281030683aba7caa575837297ba2365de2b1d"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md",
+      "bytes": 26701,
+      "sha256": "74e5f74d6f5e6e1baa19c1b1f950cd34c3cd7093b3cc0b47e22aa10d11fee893"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/05_NEW_LANDING_PAGE.md",
+      "bytes": 25820,
+      "sha256": "455486d3392e064fec790a443bf96f6166ae2afb915cb6a27c20cfcaaed598bc"
+    },
+    {
+      "path": "05_WORKFLOWS/01_B2C/06_EXISTING_LANDING_PAGE_OPTIMISATION.md",
+      "bytes": 26785,
+      "sha256": "9a28a05078a3dcc2de956aeae44a5490b3abaeb7cfe8fa9c465c5269d4b28805"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/01_NEW_WEBSITE.md",
+      "bytes": 24201,
+      "sha256": "460a5098802db277132115515f833a7f351a3c3f62e4223fcdfcece2afc4ddcc"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md",
+      "bytes": 25189,
+      "sha256": "172cd4f64ee49ff8e0504c1e70c98ce04913d747b5428511dc56020921c6261d"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/03_NEW_ORGANIC_PROGRAMME.md",
+      "bytes": 25090,
+      "sha256": "3f1cc2b23580efb096fa5aea650f58660223cd8effd450fbfaeac2e14471265d"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md",
+      "bytes": 26044,
+      "sha256": "00f88f02ba20996b6332110502455746cae36122101b851f57cbbebee3855f59"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/05_NEW_LANDING_PAGE.md",
+      "bytes": 25270,
+      "sha256": "d2ccd52c94a8d2c3cad0f3361698f347a8d8d9f6619f80d94d16c1039eff42c2"
+    },
+    {
+      "path": "05_WORKFLOWS/02_B2B/06_EXISTING_LANDING_PAGE_OPTIMISATION.md",
+      "bytes": 26235,
+      "sha256": "ac6558e61ea6311118e139d0d203207c82abc6dbefdf4de7bf620965bf8b9cdf"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/01_NEW_WEBSITE.md",
+      "bytes": 24715,
+      "sha256": "464ea144e8a469b956f91414480d94930d3de4383704dec26763145abcc9e347"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/02_EXISTING_WEBSITE_UPGRADE_MIGRATION.md",
+      "bytes": 25703,
+      "sha256": "5ffcdad26a14f4b3c340a8df3ba90f1f60917f3421ec3b8b1e58e3b2f65e3784"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/03_NEW_ORGANIC_PROGRAMME.md",
+      "bytes": 25554,
+      "sha256": "8c1e3796e5d22286e48242b49ed52ee129c89c498982e5e33fb6d91225988417"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md",
+      "bytes": 26508,
+      "sha256": "d3e455b3d6fb0f7b207c602f711ef48112fe551fe285b82bac8de10556ec91f7"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/05_NEW_PRODUCT_OFFER_LANDING_PAGE.md",
+      "bytes": 25743,
+      "sha256": "85e69603557eff9b7449256ba82d53ee5690003d7bf9cc654c4ddb88424bd1df"
+    },
+    {
+      "path": "05_WORKFLOWS/03_D2C/06_EXISTING_PRODUCT_OFFER_LANDING_PAGE_OPTIMISATION.md",
+      "bytes": 26708,
+      "sha256": "27a46008b48cd558ac727c3ba38aba77fd13f325ead343cbd4945b10e2cc4a5f"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/01_NEW_STORE.md",
+      "bytes": 26361,
+      "sha256": "ed481862b1d952b46327ff0ad4e3a5330aad45e7258a2b261d1a872b3726b3da"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/02_EXISTING_STORE_UPGRADE_MIGRATION.md",
+      "bytes": 27362,
+      "sha256": "0d59fe5d96ffbb2ddc2141d5c5ddb5ae1470ef8daa5d26e6c92e4af9e255cca5"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/03_NEW_ORGANIC_PROGRAMME.md",
+      "bytes": 27258,
+      "sha256": "12e6f14bb61d9b103c433d7b7acb5c021f3e5b987313cc1a864ae72111e3120c"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/04_EXISTING_ORGANIC_GROWTH_RECOVERY.md",
+      "bytes": 28212,
+      "sha256": "88fe3f3b4f2e22b4a02e95ea6bcc0d769abd2fb28940553f341ccf81804537e1"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/05_NEW_LANDING_PAGE.md",
+      "bytes": 27353,
+      "sha256": "28c6d45686efe6039cb8d1774017441bb1d7c4575f642572cd25066dae8c7ee1"
+    },
+    {
+      "path": "05_WORKFLOWS/04_SHOPIFY/06_EXISTING_LANDING_PAGE_OPTIMISATION.md",
+      "bytes": 28318,
+      "sha256": "3b0f767c7e250ff76693da251ea4ee5f6cf1b17f555d0b6106ee957ec02cd562"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/B2B_OPERATING_MANUAL_2026.md",
+      "bytes": 153469,
+      "sha256": "39c24ada775e9746ea1f49cc1a4b9b6046bc6731af862d158b77f30667c56e9d"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/B2C_OPERATING_MANUAL_2026.md",
+      "bytes": 157063,
+      "sha256": "aa9c7861aa3c22945c9b2a28873b759616edb84cc3eded7af3b57827cfb9558f"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/D2C_OPERATING_MANUAL_2026.md",
+      "bytes": 156426,
+      "sha256": "3013b2f1bf962815854a1b679f320b3c4c0eef9f228a08633f5afa009621dd35"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/INTERNATIONAL_LOCALIZATION_DOMAIN_LOCATION_MANUAL_2026.md",
+      "bytes": 4022,
+      "sha256": "ef123cbb6d0394d5e299bb89d97ea936a534ef56690076dd8eac87e886b6cb4b"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/LANDING_PAGE_OPERATING_MANUAL_2026.md",
+      "bytes": 216610,
+      "sha256": "2b5543c4921d6b1e0738ad6e7b7f29ad859f1cdfd055cd99329393e07325e006"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/MONITORING_REGRESSION_AND_CONTINUOUS_IMPROVEMENT_2026.md",
+      "bytes": 5622,
+      "sha256": "054a164e8d72d49b3a647f60d4be65f72ded05b70c842db3ae96d30eb660abf1"
+    },
+    {
+      "path": "06_SPECIALIST_MANUALS/SHOPIFY_OPERATING_MANUAL_2026.md",
+      "bytes": 166301,
+      "sha256": "14de3416a411ef109779214dc669a9e32b2ba99b288fc00c9e2a9338fad13b19"
+    },
+    {
+      "path": "07_TEMPLATES/AI_PROMPT_VISIBILITY_PANEL.csv",
+      "bytes": 252,
+      "sha256": "d938e4d62b9c4a68aafcce822c97e8af55e21266138623e279d9b8f46905078a"
+    },
+    {
+      "path": "07_TEMPLATES/BENCHMARK_REGISTER.csv",
+      "bytes": 2856,
+      "sha256": "78b1e715f32fe12e4e5d062c09565d180ee4a7ee3cf2d9d39ed3dbb6ffe6074e"
+    },
+    {
+      "path": "07_TEMPLATES/COMPETITOR_EVIDENCE_MATRIX.csv",
+      "bytes": 247,
+      "sha256": "3474cf4e891fcafdb1e9fd8f87c0c782a5ef0674ccf7610fc121696441e586e5"
+    },
+    {
+      "path": "07_TEMPLATES/COMPETITOR_PAGE_TEARDOWN.csv",
+      "bytes": 328,
+      "sha256": "7d692143b496768529657b3d19d602407e44160bd69a01b22ee487b81cb18fdd"
+    },
+    {
+      "path": "07_TEMPLATES/COMPETITOR_ROSTER.csv",
+      "bytes": 200,
+      "sha256": "ccc64c0696119f79ee8a6ec66bd8e6adb07796cf6e526a7ee80c6bdf23c1e3ff"
+    },
+    {
+      "path": "07_TEMPLATES/DECISION_EXCLUSION_REGISTER.csv",
+      "bytes": 245,
+      "sha256": "de91d45e597a2d099bc5126f07a973bf5a06fd4406a1ddd0745345938646b4c2"
+    },
+    {
+      "path": "07_TEMPLATES/EVIDENCE_LEDGER.csv",
+      "bytes": 336,
+      "sha256": "a6bf0f743823db39ee6814d35db363ff05923dc1bd1ea37c8191210e084e27f4"
+    },
+    {
+      "path": "07_TEMPLATES/IMPLEMENTATION_VERIFICATION.csv",
+      "bytes": 285,
+      "sha256": "31fa9ae26a4002808a166aa733d4e4963ff09a41d939485dc08cd2b5fc3caafb"
+    },
+    {
+      "path": "07_TEMPLATES/MARKET_SHARE_OPPORTUNITY_BACKLOG.csv",
+      "bytes": 457,
+      "sha256": "930b8c856904621ecf6cefd75981fba4c0e2da071cd88d78c5bde6c91f726821"
+    },
+    {
+      "path": "07_TEMPLATES/METRIC_DICTIONARY.csv",
+      "bytes": 26058,
+      "sha256": "b7a52d5d307512d10a3021ee30ab4de9b9ac15cece5b5d64d7e688ae9eecc9d5"
+    },
+    {
+      "path": "07_TEMPLATES/PHASE_GATE_APPROVAL.csv",
+      "bytes": 212,
+      "sha256": "ce8606f889dd0ade409d9ef36074e3c4c2fb78c7de00cc309e65709a41de0c3a"
+    },
+    {
+      "path": "07_TEMPLATES/REGIONAL_DOMAIN_LOCATION_MATRIX.csv",
+      "bytes": 387,
+      "sha256": "dfd740c2c0a33800a6f38d9b710e88fb9cec77bb9eee46a299fe200eba9381f5"
+    },
+    {
+      "path": "07_TEMPLATES/REPORT_AND_TOOL_RUN_MANIFEST.csv",
+      "bytes": 290,
+      "sha256": "c050e9fe11b5da5916e5198c823df570486c50c145242366a3eb6a91ac8d09b2"
+    },
+    {
+      "path": "07_TEMPLATES/TOOL_STACK_REGISTER.csv",
+      "bytes": 5200,
+      "sha256": "629ed24b9e8d855764cae9b9a631d58f82925e7b34242b65a3c27862f0553f84"
+    },
+    {
+      "path": "07_TEMPLATES/V1_EXPERIMENT_REGISTER.csv",
+      "bytes": 246,
+      "sha256": "7320dafded60ed9661fc0a20d03cab20e9829ac36e73fce689d380f3e9502e13"
+    },
+    {
+      "path": "07_TEMPLATES/V1_ISSUE_REGISTER.csv",
+      "bytes": 274,
+      "sha256": "2030e629c8b3c562d18b296652ef124af3965d823c9055ea97ae98bdc33ab8b1"
+    },
+    {
+      "path": "07_TEMPLATES/V1_KPI_BASELINE_GUARDRAILS.csv",
+      "bytes": 182,
+      "sha256": "6aede0f561acfe216bd16f2c87b76506ec8805836335015cc2d3f75d79e492ec"
+    },
+    {
+      "path": "07_TEMPLATES/V1_LAUNCH_CHECKLIST.csv",
+      "bytes": 172,
+      "sha256": "e473ed53d9816541fcad068426b0b05bfaee1cc8f71c00e6be3396c07123153c"
+    },
+    {
+      "path": "07_TEMPLATES/V1_MASTER_URL_INVENTORY.csv",
+      "bytes": 534,
+      "sha256": "40ca9a38c7768d5e39585f0fc749cba34ab69976bc51d7ffd0549f68aa64024e"
+    },
+    {
+      "path": "07_TEMPLATES/V1_PAGE_BRIEF.csv",
+      "bytes": 414,
+      "sha256": "bd5ea9f050a91135ac051ad308563b8067bc7e157db942f1c74bf37a575cb084"
+    },
+    {
+      "path": "07_TEMPLATES/V1_PROJECT_CHARTER_AND_GATES.md",
+      "bytes": 809,
+      "sha256": "d02d6756410f6beeeead168ac39a77f61f85274b27f5c77bd75315f4b78577df"
+    },
+    {
+      "path": "07_TEMPLATES/V1_REDIRECT_MAP.csv",
+      "bytes": 243,
+      "sha256": "4e5250efc2f6b6aa2da10c486fb26ee95f8ebd0ca3f4b020005d3a3e98cbbc7f"
+    },
+    {
+      "path": "07_TEMPLATES/V1_REPORT_RUN_REGISTER.csv",
+      "bytes": 215,
+      "sha256": "2cbccf73531ed3c1a4cccf45fe96722c298da2157bb908297d1d06f97173da4a"
+    },
+    {
+      "path": "07_TEMPLATES/V1_SITEMAP_CHANGE_REGISTER.csv",
+      "bytes": 314,
+      "sha256": "5308a2a9543528a21b7b4257a9d94eda898b7522d8ed9f353a6743a84f8bdebb"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/AGENT_JOB_SPEC_EXAMPLE.yaml",
+      "bytes": 884,
+      "sha256": "7a861ea00860f97fea3b3db8899bd5bc0987e0f2713d9f64b76dc99026a57058"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/__pycache__/archive_artifact.cpython-313.pyc",
+      "bytes": 3348,
+      "sha256": "d2f989a3089e2566f96efd68139880aa7b12567b75a46eef47118ec497579b18"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/__pycache__/validate_project_evidence.cpython-313.pyc",
+      "bytes": 2331,
+      "sha256": "ca4c465b1d62ccdd46353ba5ae22a3158f85803fc72310b0f485da3c2b0d39a5"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/agency_issue.schema.json",
+      "bytes": 2196,
+      "sha256": "0baf491dd4142735dd8787b8b2719a6d0798751439b948798419c40c16f41485"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/archive_artifact.py",
+      "bytes": 1456,
+      "sha256": "22eed0bcd144c3094677a00bfca7e87ff26a5e21e1f4431ba0f6f3dd7270777b"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/artifact_manifest.schema.json",
+      "bytes": 1740,
+      "sha256": "4045adf7f3bb2c8691ebb3b2b9eaf202e2700c286c3d3e5d7f32ff6004340144"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/phase_gate.schema.json",
+      "bytes": 1092,
+      "sha256": "21056d8c033c54384223f24e3b8c59c682acc081f5ac06c68148c0f97af305d9"
+    },
+    {
+      "path": "08_SCHEMAS_AND_SCRIPTS/validate_project_evidence.py",
+      "bytes": 1118,
+      "sha256": "5d80ee7e9421729779bf8b961b7ad75ca7d6a7964c7df0b3b4621b9bc797e4cc"
+    },
+    {
+      "path": "09_RESEARCH_LIBRARY/REFERENCE_URLS.md",
+      "bytes": 12292,
+      "sha256": "0276a18490276b259f900db77f2ac81d923a5ba9fad6daaa65146c482ed5b047"
+    },
+    {
+      "path": "09_RESEARCH_LIBRARY/RESEARCH_METHOD_AND_SOURCE_REGISTER.md",
+      "bytes": 7132,
+      "sha256": "b1b8cf9d62e9fedfc40f31e4a6623902cfc190ae88792395a09ce6c71d9451af"
+    },
+    {
+      "path": "09_RESEARCH_LIBRARY/SOURCE_REGISTER.csv",
+      "bytes": 9055,
+      "sha256": "a3e45e8affbb45327fc6f1b667a0d2e051cdbf4b1acd22e7d8ab2f5956bbeb3b"
+    },
+    {
+      "path": "10_DOCX_MANUALS/00_MASTER_AGENCY_OPERATING_SYSTEM_2026.docx",
+      "bytes": 72969,
+      "sha256": "bfc26faed60bd530b71ec825fe3e3a8a7628dafd170e3ca2e86f09825ca480e1"
+    },
+    {
+      "path": "10_DOCX_MANUALS/01_COMPETITIVE_INTELLIGENCE_AND_MARKET_SHARE_2026.docx",
+      "bytes": 43487,
+      "sha256": "11388f5725d3198001125559067bff87c21262d5f89fc389adff0f19551ad772"
+    },
+    {
+      "path": "10_DOCX_MANUALS/02_METRICS_TOOLS_BENCHMARKS_2026.docx",
+      "bytes": 50105,
+      "sha256": "827c38ed6b9dc8fab4b3c07aa161c28493f3f0553726e29f107c056409ea1736"
+    },
+    {
+      "path": "10_DOCX_MANUALS/03_EVIDENCE_QA_AI_AGENT_EXECUTION_2026.docx",
+      "bytes": 41744,
+      "sha256": "aaaf6cf68a2d15c306d8190f314b8c841651c3f692ba623d91f77472f44175f1"
+    },
+    {
+      "path": "10_DOCX_MANUALS/10_B2B_OPERATING_MANUAL_2026.docx",
+      "bytes": 100691,
+      "sha256": "165536d43d750ebd097a15023d9f1ee922c3bd8459e4cd3a90abccf6a19e9572"
+    },
+    {
+      "path": "10_DOCX_MANUALS/10_B2C_OPERATING_MANUAL_2026.docx",
+      "bytes": 102035,
+      "sha256": "ee5d7bb9a0a5603f9cb12a2299288753a3f695f537c779e9260086ca689936b3"
+    },
+    {
+      "path": "10_DOCX_MANUALS/10_D2C_OPERATING_MANUAL_2026.docx",
+      "bytes": 101754,
+      "sha256": "214370c738205a99af562ee3b69c71d8c66c8472c14f37c5cbb5821196f142a4"
+    },
+    {
+      "path": "10_DOCX_MANUALS/10_SHOPIFY_OPERATING_MANUAL_2026.docx",
+      "bytes": 104996,
+      "sha256": "cb86a7726a2a0035c843a6520621a39c793e361803b78aa7b3535932e4a5a5e5"
+    },
+    {
+      "path": "10_DOCX_MANUALS/20_LANDING_PAGE_OPERATING_MANUAL_2026.docx",
+      "bytes": 126423,
+      "sha256": "6c11e58ad3911302f37d3cca3782b78900a3d4f29b7b8b9f8f94a2b4de7df3cc"
+    },
+    {
+      "path": "10_DOCX_MANUALS/21_INTERNATIONAL_LOCALIZATION_DOMAIN_LOCATION_2026.docx",
+      "bytes": 39749,
+      "sha256": "4485061594242aafef9841b6bb857065987ad485ad72965bebc09b644dee4260"
+    },
+    {
+      "path": "10_DOCX_MANUALS/22_MONITORING_REGRESSION_CONTINUOUS_IMPROVEMENT_2026.docx",
+      "bytes": 40892,
+      "sha256": "2340664f95b5d0a4c83cc5883cddb84d34a5628a0b6ea93db16ee347c20c2bcf"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿benchmark_id,workstream,metric,value_or_rule,applicability,class,source_ids,caveat
+BMK-001,Core Web Vitals,LCP P75,Good <=2.5s; needs improvement >2.5-4s; poor >4s,URL/origin field data; mobile and desktop separately,HARD,G12,Use field/RUM or CrUX; lab only diagnoses
+BMK-002,Core Web Vitals,INP P75,Good <=200ms; needs improvement >200-500ms; poor >500ms,URL/origin field data; mobile and desktop separately,HARD,G12,TBT is not field INP
+BMK-003,Core Web Vitals,CLS P75,Good <=0.1; needs improvement >0.1-0.25; poor >0.25,URL/origin field data; mobile and desktop separately,HARD,G12,Measure P75 over field window
+BMK-004,Accessibility,Conformance target,WCAG 2.2 AA unless stricter contractual/legal requirement,Applicable pages/components and technologies,HARD,"W01,W02",Automated tests cannot establish full conformance
+BMK-005,Security,Release gate,0 open confirmed critical vulnerabilities; high-risk exceptions require formal approval,Defined environment and severity model,HARD,O01,"Security standard is risk baseline, not penetration test replacement"
+BMK-006,Technical,Critical conversion path,100% pass for production release test; 0 unowned P0 failures,Target device/market/payment/form variants,HARD,Internal control,Use real end-to-end evidence
+BMK-007,Technical,Sitemap hygiene,100% intended canonical indexable 200 URLs; 0 unintended redirects/noindex/4xx/5xx,Each submitted XML sitemap,HARD,G04,Sitemap inclusion does not guarantee indexing
+BMK-008,Technical,Redirect control,One hop where controllable; no loops; closest intent match,All historical valuable URLs and internal links,HARD,"G06,SF03,A01",External legacy chains may need documented exceptions
+BMK-009,Landing pages,Median CVR context,6.6% median across industries in Q4 2024 sample,"41k pages, 464m visits, 57m conversions; conversion definitions vary",INDUSTRY,UB01,Do not use as universal target; segment by industry/offer/source
+BMK-010,Ecommerce,Cart abandonment context,Approximately 70% broad research average,Multiple studies aggregated; funnel definitions vary,INDUSTRY,BM02,Not a target and not equivalent to checkout abandonment
+BMK-011,Ecommerce UX,Product page maturity,62% of mobile sites rated mediocre or worse in Baymard 2026 benchmark,Leading US/EU ecommerce sites; manually rated criteria,INDUSTRY,BM01,"Use criteria/failure modes, not as direct CVR benchmark"
+BMK-012,AI Search,Google report availability,2026 generative reports rolled to a subset of properties initially,Search Console property availability,PLATFORM,G15,Mark not available rather than fabricate data
+BMK-013,AI Search,AI traffic risk context,A 2026 preprint estimated ~15% Wikipedia traffic decline from AIO exposure for matched articles,English Wikipedia; informational content; specific study design,ACADEMIC,A02,Do not generalize to commerce/lead-gen without evidence
