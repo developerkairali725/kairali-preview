@@ -1,396 +1,990 @@
 {
-  "meta": {
-    "updated": "2026-07-19 20:50:00 IST (M1 EVENING SESSION — M1 DOCTRINE MERGE COMPLETE on feature/os-v2-architecture (report RPT-20260719-M1): CLAUDE.md v2.0/v2.0.1 (HARD GATES 10-15, lifecycle, state machine, evidence law v2, agent contract, D-08/09/28/29 doctrine, HG9xautomerge reconciliation, activation semantics) + gates/class-map.yaml (policy composition, project|change scope, additive change_triggers, fail-closed unknowns) + 7 registry rows (76 gates) + rule-9 neutralization (24 adopted workflows) + authenticated-approval mechanism (base-trusted owner register, latest-effective-review, workflow-derived tamper-evident guards) + strict CI flips w/ expiry-enforced residue allowlist + CODEOWNERS extended to doctrine surface + bootstrap runbook. 735/735 tests; merge-continuity 300 rows 76/76. EXTERNAL DEPLOY GATE: pass 2 both-FAIL -> every finding dispositioned + adopted ones FIXED (ec34c2e); pass 3 sonar-reasoning-pro PASS (fact lane closed), gpt-5.6-sol FAIL(6) dispositioned in report S3 (sharpest refuted by CODEOWNERS base-trust platform evidence; 2 owner-action-by-nature; 2 M2-scoped under activation semantics; 1 vs D-EXTREVIEW-OWNER-FACTS). AWAITING: OWNER MERGE WORD on PR #167 via docs/process/os-2026/merge/m1-bootstrap-runbook.md. OPS INGEST same session: D-28/29/30 captured+landed (escalation ladder, missing-asset protocol + demo files, tracker ruling Clarity-keep/Bing-M3/Meta-defer); Vikash GA4 reply DEFECTIVE (arogyashala.CO.in stream, no GTM, no structure answer) -> correction SENT by owner 17:18; access-order triple-send caught -> date clarifier SENT 17:34 (Mon 20 Jul EOD now unambiguous); NEW FLAGS: GCP tax-info request rides Monday billing task, GitHub budget 75% of USD200, main emit-verdicts red = known Q-EMITTER-PUSH-ALLOWANCE. Q-CLASSMAP-UNKNOWNS one-worders queued AFTER merge word (asks one at a time). EARLIER 17:00 DAY CLOSE — see docs/reports/2026-07-19-handover-day-close.md: M0 done · 7 standards ADOPTED · vulns ZERO (PR #168 merged) · all 6 asks closed · ANALYTICS ACCESS BUILT agent-driven: GCP kairali-analytics-os + SA + 8 GSC grants + GA4 Kairali Viewer, smoke 200; GA4 = ~15 accounts both logins (map in runbook add.2); 5 GSC ownership gaps -> Sunaj/Vikash HIGH-PRIORITY draft v3 AWAITING OWNER SEND (Mon 20 Jul EOD deadline + propose-first cleanup D-26); BigQuery armed (billing linked, APIs, IAM grant) — per-property export config + billing identity verification (PAST DUE) ride scheduled task monday-billing-verify-access-check 09:30 Mon; Satyam/AbhishekGaurav/Gaurav-centres emails SENT awaiting replies; NEXT WORK SESSION = M1. EARLIER 15:00 note: ASKS LIST CLOSED — all 6 owner asks resolved same-day: ① DataForSEO funded · ② GSC/GA4 = LOCAL (runbook docs/sops/gsc-ga4-local-access-runbook.md) · ③ GBP both-parallel (runbook docs/sops/gbp-access-runbook.md) · ④ kairalicenters GSC email SENT (mailbox-verified) · ⑤ R4 facts COMPLETE: central CRM = commercial truth (Satyam; read-access email SENT), wa.me+UTM-only launch, KTAHV/VR = CRM+2 PMS, centres = separate CRM (Gaurav draft ready) · ⑥ Screaming Frog parked to M3. UTM-mapping gap = M3 build requirement (wiki/integrations/crm-centralized.md). Awaiting: Satyam + Abhishek/Gaurav replies; owner runbook runs. EARLIER 14:20 note: STANDARDS + VULNS SESSION: owner's GPT 00_SHARED_STANDARDS zip ARRIVED + manifest 7/7 + 129-agent ultracode ingest screen (0 blocking, 91 verified findings dispositioned) + ADOPTED with v1-supremacy appendices, standards-acceptance ACCEPTED x7, merge-continuity 0 pending (report: docs/reports/2026-07-19-standards-ingest-screen.md). OWNER RULINGS: PILOT = theblushlounge.com (D-14) · ULTRACODE default for OS builds (D-13) · DataForSEO funded ~$48 (D-15) · Miro connected (D-17). VULNS FIXED (D-16): otel-core >=2.8.0 override, PR #168 MERGED, pnpm audit + Dependabot CLEAN. M1 next: doctrine merge + rule-9 neutralization + authenticated approvals + --strict flip (17 residues) + external pass 2. Asks one-at-a-time (D-12): ask 2 = Composio-vs-local presented. EARLIER 14:05 M0 note: M0(a) paper dry-run (CH-1 through all phases: 8 artifacts + 1 owner touch per P2 change vs ~16/8-9 literal reading; 7 scope/DELETE rulings issued BEFORE code, 13 dispositions in docs/reports/2026-07-19-m0a-paper-dryrun.md). M0(b) merge-continuity.yaml: 293 rows (121 CM normative CLAUDE.md units verbatim-checked + hash-pinned · 69 GR registry gates · 85 PKG package obligations · 7 STD pending · 8 REJ + 3 DEF exclusion seed), scripts/merge-continuity-lint.mjs in factory-gate CI (source-drift pins, one-home-per-obligation; --strict arms at M1). M0(c) standards-acceptance harness: 69 obligation carriages mapped into the seven 00_SHARED_STANDARDS files; verbatim-or-SUPERSEDES + rule-9 self-mod screen; GPT zip in flight (D-20260719-11/-12). 637/637 tests. Owner asks now ONE-AT-A-TIME per D-20260719-12: ask 1 = DataForSEO $50 PAYG presented. PREVIOUS 12:40 note archived in git history) Digital_Growth_Agency_OS_2026 package (86 files, manifest 85/85 verified) + go-science skill delivered by owner. Skill PROPERLY installed (vendor setup bug found+fixed, v1.0.0 in installed_plugins.json, KB hash-pinned). Package ingested by 16-agent workflow (1.66M tok) + 6-lane research sweep (541k tok). MERGE PLAN written+committed: package=superstructure, v1 gates=enforcement layer, HARD GATES 10-15 added, evolution/decisions/reports/baseline subsystems designed. External review pass 1 DONE (gpt-5.6-sol + sonar-reasoning-pro): 6 blocking findings ADOPTED into plan (continuity proof M0, authenticated approvals, policy composition, DataForSEO bake-off, daily feeds, clean-predecessor pilot). Designs remain FROZEN; 11 ledger PRs untouched; ONE pilot site only after M0-M3. PR #167. Owner one-worders pending: GSC 16-month export (URGENT-destructive clock), DataForSEO $50, GSC/GA4 routing, CRM/call-tracking/booking facts, pilot-site pick)",
-    "as_of_commit": "feature/os-v2-architecture (plan + evidence committed; main untouched at e84dc31)",
-    "sprint": "13 Jul 2026 -> 12 Aug 2026 (30-day rebuild sprint)",
-    "sources": "SITE_DESIGN_LOCALE_REGISTER.md, PR history (#86-#107), state/boot.json, docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md, launches/*, docs/sops/team-website-lifecycle-sop.md (Team Workbook, published https://kairali-team-workbook.vercel.app)"
+  "schema": 2,
+  "generated": "2026-07-19 20:48:18 IST",
+  "generated_utc": "2026-07-19T15:18:18Z",
+  "os": {
+    "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot pending",
+    "milestones": [
+      {
+        "id": "M0",
+        "label": "Continuity proof (dry-run + merge-continuity + acceptance harness)",
+        "state": "done"
+      },
+      {
+        "id": "M1",
+        "label": "Doctrine merge (CLAUDE.md v2 + class-map + registry + strict flips)",
+        "state": "done"
+      },
+      {
+        "id": "M2",
+        "label": "Mechanisms (evidence-manifest, decisions store, job-spec generator)",
+        "state": "done"
+      },
+      {
+        "id": "M3",
+        "label": "Tools + data (DataForSEO, seo-baseline)",
+        "state": "next"
+      },
+      {
+        "id": "M4",
+        "label": "Pilot — theblushlounge.com",
+        "state": "pending"
+      }
+    ],
+    "strict_residues": 1,
+    "unacked_directives": 5,
+    "open_questions": 83,
+    "decisions": 15,
+    "tests": null
   },
-  "generatedFrom": "2026-07-19 20:50:00 IST (M1 EVENING SESSION — M1 DOCTRINE MERGE COMPLETE on feature/os-v2-architecture (report RPT-20260719-M1): CLAUDE.md v2.0/v2.0.1 (HARD GATES 10-15, lifecycle, state machine, evidence law v2, agent contract, D-08/09/28/29 doctrine, HG9xautomerge reconciliation, activation semantics) + gates/class-map.yaml (policy composition, project|change scope, additive change_triggers, fail-closed unknowns) + 7 registry rows (76 gates) + rule-9 neutralization (24 adopted workflows) + authenticated-approval mechanism (base-trusted owner register, latest-effective-review, workflow-derived tamper-evident guards) + strict CI flips w/ expiry-enforced residue allowlist + CODEOWNERS extended to doctrine surface + bootstrap runbook. 735/735 tests; merge-continuity 300 rows 76/76. EXTERNAL DEPLOY GATE: pass 2 both-FAIL -> every finding dispositioned + adopted ones FIXED (ec34c2e); pass 3 sonar-reasoning-pro PASS (fact lane closed), gpt-5.6-sol FAIL(6) dispositioned in report S3 (sharpest refuted by CODEOWNERS base-trust platform evidence; 2 owner-action-by-nature; 2 M2-scoped under activation semantics; 1 vs D-EXTREVIEW-OWNER-FACTS). AWAITING: OWNER MERGE WORD on PR #167 via docs/process/os-2026/merge/m1-bootstrap-runbook.md. OPS INGEST same session: D-28/29/30 captured+landed (escalation ladder, missing-asset protocol + demo files, tracker ruling Clarity-keep/Bing-M3/Meta-defer); Vikash GA4 reply DEFECTIVE (arogyashala.CO.in stream, no GTM, no structure answer) -> correction SENT by owner 17:18; access-order triple-send caught -> date clarifier SENT 17:34 (Mon 20 Jul EOD now unambiguous); NEW FLAGS: GCP tax-info request rides Monday billing task, GitHub budget 75% of USD200, main emit-verdicts red = known Q-EMITTER-PUSH-ALLOWANCE. Q-CLASSMAP-UNKNOWNS one-worders queued AFTER merge word (asks one at a time). EARLIER 17:00 DAY CLOSE — see docs/reports/2026-07-19-handover-day-close.md: M0 done · 7 standards ADOPTED · vulns ZERO (PR #168 merged) · all 6 asks closed · ANALYTICS ACCESS BUILT agent-driven: GCP kairali-analytics-os + SA + 8 GSC grants + GA4 Kairali Viewer, smoke 200; GA4 = ~15 accounts both logins (map in runbook add.2); 5 GSC ownership gaps -> Sunaj/Vikash HIGH-PRIORITY draft v3 AWAITING OWNER SEND (Mon 20 Jul EOD deadline + propose-first cleanup D-26); BigQuery armed (billing linked, APIs, IAM grant) — per-property export config + billing identity verification (PAST DUE) ride scheduled task monday-billing-verify-access-check 09:30 Mon; Satyam/AbhishekGaurav/Gaurav-centres emails SENT awaiting replies; NEXT WORK SESSION = M1. EARLIER 15:00 note: ASKS LIST CLOSED — all 6 owner asks resolved same-day: ① DataForSEO funded · ② GSC/GA4 = LOCAL (runbook docs/sops/gsc-ga4-local-access-runbook.md) · ③ GBP both-parallel (runbook docs/sops/gbp-access-runbook.md) · ④ kairalicenters GSC email SENT (mailbox-verified) · ⑤ R4 facts COMPLETE: central CRM = commercial truth (Satyam; read-access email SENT), wa.me+UTM-only launch, KTAHV/VR = CRM+2 PMS, centres = separate CRM (Gaurav draft ready) · ⑥ Screaming Frog parked to M3. UTM-mapping gap = M3 build requirement (wiki/integrations/crm-centralized.md). Awaiting: Satyam + Abhishek/Gaurav replies; owner runbook runs. EARLIER 14:20 note: STANDARDS + VULNS SESSION: owner's GPT 00_SHARED_STANDARDS zip ARRIVED + manifest 7/7 + 129-agent ultracode ingest screen (0 blocking, 91 verified findings dispositioned) + ADOPTED with v1-supremacy appendices, standards-acceptance ACCEPTED x7, merge-continuity 0 pending (report: docs/reports/2026-07-19-standards-ingest-screen.md). OWNER RULINGS: PILOT = theblushlounge.com (D-14) · ULTRACODE default for OS builds (D-13) · DataForSEO funded ~$48 (D-15) · Miro connected (D-17). VULNS FIXED (D-16): otel-core >=2.8.0 override, PR #168 MERGED, pnpm audit + Dependabot CLEAN. M1 next: doctrine merge + rule-9 neutralization + authenticated approvals + --strict flip (17 residues) + external pass 2. Asks one-at-a-time (D-12): ask 2 = Composio-vs-local presented. EARLIER 14:05 M0 note: M0(a) paper dry-run (CH-1 through all phases: 8 artifacts + 1 owner touch per P2 change vs ~16/8-9 literal reading; 7 scope/DELETE rulings issued BEFORE code, 13 dispositions in docs/reports/2026-07-19-m0a-paper-dryrun.md). M0(b) merge-continuity.yaml: 293 rows (121 CM normative CLAUDE.md units verbatim-checked + hash-pinned · 69 GR registry gates · 85 PKG package obligations · 7 STD pending · 8 REJ + 3 DEF exclusion seed), scripts/merge-continuity-lint.mjs in factory-gate CI (source-drift pins, one-home-per-obligation; --strict arms at M1). M0(c) standards-acceptance harness: 69 obligation carriages mapped into the seven 00_SHARED_STANDARDS files; verbatim-or-SUPERSEDES + rule-9 self-mod screen; GPT zip in flight (D-20260719-11/-12). 637/637 tests. Owner asks now ONE-AT-A-TIME per D-20260719-12: ask 1 = DataForSEO $50 PAYG presented. PREVIOUS 12:40 note archived in git history) Digital_Growth_Agency_OS_2026 package (86 files, manifest 85/85 verified) + go-science skill delivered by owner. Skill PROPERLY installed (vendor setup bug found+fixed, v1.0.0 in installed_plugins.json, KB hash-pinned). Package ingested by 16-agent workflow (1.66M tok) + 6-lane research sweep (541k tok). MERGE PLAN written+committed: package=superstructure, v1 gates=enforcement layer, HARD GATES 10-15 added, evolution/decisions/reports/baseline subsystems designed. External review pass 1 DONE (gpt-5.6-sol + sonar-reasoning-pro): 6 blocking findings ADOPTED into plan (continuity proof M0, authenticated approvals, policy composition, DataForSEO bake-off, daily feeds, clean-predecessor pilot). Designs remain FROZEN; 11 ledger PRs untouched; ONE pilot site only after M0-M3. PR #167. Owner one-worders pending: GSC 16-month export (URGENT-destructive clock), DataForSEO $50, GSC/GA4 routing, CRM/call-tracking/booking facts, pilot-site pick)",
-  "stageOrder": [
-    "ideation",
-    "research",
-    "build",
-    "gates",
-    "preview",
-    "human_audit",
-    "ok_to_publish",
-    "live",
-    "monitoring"
-  ],
-  "stageCounts": {
-    "ideation": 7,
-    "research": 1,
-    "build": 1,
-    "gates": 0,
-    "preview": 13,
-    "human_audit": 3,
-    "ok_to_publish": 0,
-    "live": 3,
-    "monitoring": 0
-  },
-  "workstreams": [
-    {
-      "name": "OS v2 architecture (Agency OS 2026 merge)",
-      "status": "active",
-      "next_milestone": "M1 COMPLETE 19 Jul evening (RPT-20260719-M1: doctrine + class-map + 7 registry rows + rule-9 neutralization + authenticated approvals + strict flips; 735/735; external pass 3: sonar PASS, gpt dispositioned) -> OWNER MERGE WORD on PR #167 via m1-bootstrap-runbook.md (review-approve -> owner-lane merge -> required-contexts click -> dual post-merge demo) -> M2 mechanisms (evidence-manifest, decisions/ store, job-spec generator, change-trigger execution, evolution/ registers) -> M3 tools/data -> M4 ONE pilot (theblushlounge.com). SUPERSEDED PLAN LINE: M0 DONE + STANDARDS ADOPTED 19 Jul (ACCEPTED x7; PILOT RULED = theblushlounge.com; ultracode default D-13) -> M1 doctrine merge: CLAUDE.md v2 + HARD GATES 10-15 + class-map policy composition (+ M0(a) scope rulings: per-project gate events, Gate-1 at design-direction altitude, project|change dimension) + authenticated approvals + seven standards adopted via acceptance harness (GPT zip in flight, D-20260719-11) + --strict flip on both new lints -> external review pass 2 on the M0+M1 diff -> owner merge word -> M2 mechanisms -> M3 tools (owner asks now one-at-a-time per D-20260719-12: ask 1 DataForSEO $50 PAYG presented 19 Jul) -> M4 ONE pilot site. Plan: docs/plans/2026-07-19-os-v2-architecture-merge-plan.md",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Website fleet (Next.js Factory)",
-      "status": "active",
-      "next_milestone": "Gate B-E emails SENT by Abilash 18 Jul 16:40 IST (B Astha+Anupam / C Deepu / D Satyam / E Sunaj) -> TRACK REPLIES per gate; fleet chat bubble PR #127 + social-links set pending sheet item 15; WEEKEND BUILD SPRINT (D-20260718-08/-10): all blocker-free non-commerce sites + 3 LPs preview-ready by Mon 20 Jul, gated on docs/reports/2026-07-18-weekend-unblock-sheet.md; fix 3 broken external refs (report SS5)",
-      "due": "2026-08-12",
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Shopify commerce track (Track B)",
-      "status": "blocked",
-      "next_milestone": "AGENTIC PILOT Mon 20 Jul (D-20260718-06/-09): Claude Code + Shopify AI Toolkit per docs/process/shopify-agentic-rollout-instructions-v2.md; comms lane = Shadab Ali developer6@ CC Sunaj (access/tokens email SENT 17:08 IST 18 Jul — awaiting his reply); Astha approves batches; doctrine j–s binds. Ambuj Storefront-token lane continues in parallel for Wave-1 microsites",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Brand & design system (tokens + manuals)",
-      "status": "active",
-      "next_milestone": "Villa Raag brand manual/tokens delivery (Abilash); ramp work capped by POLISH TIME-BOX",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Pipeline & CI gates (front + back)",
-      "status": "active",
-      "next_milestone": "18 Jul PROMPT 4 pilot DONE: arogyashala.in through all 63 registry gates (organic class) end-to-end -> human_audit; baseline: automated chain 2m54s, subagent audits 12m15s wall, total ~28m; 334,234 subagent tokens measured (parent-session tokens still unmeasured — PROMPT 6 instruments the rest); 1 honest FAIL recorded (matrix-walk DO-NOT-SHIP, verdict emitters unbuilt) + 2 gaps (keyword-map file missing; content-lint scope). Report: docs/reports/2026-07-18-prompt4-single-pager-pilot.md. LATE SESSION: B1 keyword-map PR #125 · verdict emitters T1 PR #126 (476 tests; CI wiring = sheet A-13) · chat-bubble gate PR #127. NEXT: unblock sheet answers (O1 A-9, O4 A-10, backfill A-11, wiring A-13) then weekend build. 20:45 IST: BEAUTY GATE landed (D-20260718-21) — doctrine + beauty-audit.mjs + beauty-conformance row (all 3 classes; landing ROI-first per doctrine §3); 13 mocked-model tests; full suite 567/567; demo verdict = honest FAIL on whatisayurveda homepage (pass 1)",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": 0.5
-    },
-    {
-      "name": "Analytics & tracking OS (GA4 / GSC / Ads)",
-      "status": "active",
-      "next_milestone": "ACCESS LAYER BUILT 19 Jul (agent-driven, D-24): GCP kairali-analytics-os + kairali-os-reader SA + 8 GSC Restricted grants + GA4 account-Viewer (Kairali), smoke tests 200; BigQuery armed to last click. Mon 20 Jul: Sunaj/Vikash make director@ Owner/Admin everywhere (draft v3 awaiting owner send) -> SA sweep + bulk-export config per property (scheduled task) + billing identity verify (PAST DUE). Central CRM = commercial truth (Satyam, read-access requested); UTM mapping gap = M3 build requirement (wiki/integrations/crm-centralized.md)",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Knowledge & wiki (mining, lint, triangulation)",
-      "status": "active",
-      "next_milestone": "Monday wiki + catalog lint; whyayurveda mining + security screen",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Fleet Pulse dashboard (internal)",
-      "status": "active",
-      "next_milestone": "Deploy to kairali.ai + adopt the session-end STATUS.yaml update rule",
-      "due": "2026-07-17",
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    },
-    {
-      "name": "Marketing content pipeline (Team Workbook)",
-      "status": "active",
-      "next_milestone": "SOPs + one-time setup MERGED (#110/#111); ALL 8 front-gate rows SIGNED by Abilash 18 Jul evening (PR #113) + Q-SCAFFOLD-MATRIX ratified (#115). Remaining before first item: Deepu's human steps (Novamira on WP staging, bookmarks, verify prompt) -> first-item-through-the-pipeline demo (Vikash's 11-URL list = natural first batch; the demo in front of the team IS the training).",
-      "due": null,
-      "tokens_spent": null,
-      "cost_inr": null,
-      "hours": null
-    }
-  ],
   "sites": [
     {
       "name": "kairali.com",
       "entity": "Kairali Group",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-kairali-com.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 2,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "ayurvedichealingvillage.com (KTAHV)",
       "entity": "KTAHV",
       "stage": "research",
+      "phase": 1,
       "owner": "Abilash",
       "blocker": "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. QA/QC batch waits on Deepu's Novamira install + Vikash's 11-URL list. 19 Jul: 10-LP REBUILD SET battery COMPLETE (PR #145) — GO-science + beauty PASS ×10, machine layer verified live, 6 real defects fixed (incl. 2 banned-word hero images caught at pixel level); Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY); 8 clinical clusters compiled for Dr. Deepu John (HARD GATE 7); owner disabled preview SSO 22:45 IST",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-ayurvedichealingvillage-rh8jwv4cf-kairali.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "ktahv-clinical",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner",
+        "Vikash",
+        "Deepu",
+        "Dr. Deepu John"
+      ]
     },
     {
       "name": "kairalicenters.com",
       "entity": "Kairali Group",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-kairalicenters.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 1,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairalifranchise.com",
       "entity": "Kairali Group",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Abilash",
       "blocker": "D#4 CLOSED: no separate build — 301s into ayurvedafranchise.com at cutover",
       "updated": "2026-07-18",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "existing",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairalihospitality.com",
       "entity": "Kairali Hospitality",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-kairalihospital.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "villa-raag-hospitality",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": []
     },
     {
       "name": "villaraag.com",
       "entity": "Villa Raag",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "Full site built 19 Jul (14 routes + branded 404, MODE A manual-faithful, PR #157): go-science PASS · beauty PASS · Gate-2 4 passes, honest terminal FAIL in owner-facts advisory class (judge log in evidence). Waiting: owner feedback round (D-20260718-24) + VR emblem SVG slot + Q-VR-DISTANCES",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-villaraag.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "new",
+        "entity_register": "villa-raag-hospitality",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 1,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "kappl.co.in",
       "entity": "KAPPL",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Abilash",
       "blocker": "Aggregator RULED = ESHOPBOX (DECISIONS.md:66); residual courier list read at Shopify kickoff — STATUS 3x-ask line was partially stale",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairaliproducts.in",
       "entity": "KAPPL (commerce)",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Ambuj",
       "blocker": "Track B — staff access + Shopify tokens pending",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "shopify",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "shopify"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairaliproducts.us / .cz / kairaliproduct.com",
       "entity": "KAPPL (commerce)",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Ambuj",
       "blocker": "Track B — staff access + Shopify tokens pending",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "d2c",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairalitea.com",
       "entity": "KAPPL (commerce)",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Ambuj",
       "blocker": "Track B — staff access + Shopify tokens pending",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "d2c",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairalioil.com",
       "entity": "KAPPL (commerce)",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Ambuj",
       "blocker": "Track B — staff access + Shopify tokens pending",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "d2c",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairaliherbals.com",
       "entity": "KAPPL (commerce)",
       "stage": "ideation",
+      "phase": 0,
       "owner": "Ambuj",
       "blocker": "Track B — staff access + Shopify tokens pending",
       "updated": "2026-07-13",
       "preview_url": null,
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "d2c",
+        "asset_situation": "existing",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "kairaliorganic.com / kairorganics.com / kairproducts.com",
       "entity": "KAPPL (commerce)",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "FULL SITE built 19 Jul (9 PDPs + /products + /about + /contact, Apothecary Ledger, PR #164, main-merge conflict resolved): informational shell, no cart (Track B). Owner one-worders: YMYL ledger-descriptor wording (label-verbatim or soften) + marketplace brand-store URLs (Q-ORG-MARKETPLACE-URLS). kairorganics.com plain 301 at cutover",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-kairaliorganic.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "commerce",
+        "business_model": "d2c",
+        "asset_situation": "new",
+        "entity_register": "kappl-product",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "design_direction",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 1,
+        "beauty": 0,
+        "design_review_pre": 4,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "kairaliequipment.com",
       "entity": "Kairali Group (B2B)",
       "stage": "human_audit",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "FULL SITE 29 routes (PR #131 all-green, owner's own auto-merge armed — fires on his review): banned equivalence sentence purged ×3 + guard-tested; go-science PASS · beauty PASS · Gate-2 GPT PASS, truth-lane residue = Q-EQ-GATE2-TRUTH-LANE + 3 more one-worders. PREVIEW-ONLY (D-EQ-CATALOG placeholder lock); stable alias serves OLD golden — one owner promote of f3klajuzg publishes the full site",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-kairaliequipment-f3klajuzg-kairali.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "existing",
+        "entity_register": "kappl-b2b",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "design_direction",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 4,
+        "beauty": 3,
+        "design_review_pre": 8,
+        "design_review_post": 6,
+        "audits": 0,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "bulkayurvedaoils.com",
       "entity": "KAPPL (B2B supply desk)",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "FULL SITE 13 routes built 19 Jul (PR #159): go-science + beauty + Lighthouse strict PASS; Gate-2 FAIL-standing = advisory-routed auditor conduct (Q-BULK-POSTBUILD-VETO, owner one-worder). Interim WhatsApp number still flagged for swap; Supabase RFQ env keys owner-side",
       "updated": "2026-07-18",
       "preview_url": "https://bulkayurvedaoils-com.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "new",
+        "entity_register": "kappl-b2b",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "design_direction",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 1,
+        "beauty": 0,
+        "design_review_pre": 4,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "bulkayurvedaproducts.com",
       "entity": "KAPPL (B2B manufacturing desk)",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "FULL SITE 15 routes built 19 Jul (PR #159): go-science + beauty + Lighthouse strict PASS; Gate-2 both real findings fixed in-build, GPT PASS p3 (advisory notes on file). Facility photography gap still owner-side; Supabase RFQ env keys owner-side",
       "updated": "2026-07-18",
       "preview_url": "https://bulkayurvedaproducts-com.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "new",
+        "entity_register": "kappl-b2b",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "design_direction",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 1,
+        "beauty": 0,
+        "design_review_pre": 4,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "kairaliyoga.com",
       "entity": "Kairali Group",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-kairaliyoga-com.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "villa-raag-hospitality",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": []
     },
     {
       "name": "kairali.guru",
       "entity": "Kairali Group (education)",
       "stage": "live",
+      "phase": 7,
       "owner": "Eeshal",
       "blocker": "Live EN-only; DE/FR/AR/RU exist only in Eeshal's repo (Wave-2)",
       "updated": "2026-07-13",
       "preview_url": "https://kairali-guru-website.vercel.app",
-      "live_url": "https://kairali.guru"
+      "live_url": "https://kairali.guru",
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "education",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": [
+        "Eeshal"
+      ]
     },
     {
       "name": "whatisayurveda.com",
       "entity": "Kairali Group (education)",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "D#2 CLOSED: whatisayurveda.org is a plain forward at Wave-2 cutover; 2 external reference links broken (ayush.gov.in www-cert, NCCIH 404) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5",
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-whatisayurveda.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "migration",
+        "entity_register": "education",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 1,
+        "beauty": 1,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "healing.recipes",
       "entity": "Kairali Group (Gita Ramesh)",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "1 external retailer link 404 (ACC Art Books, Harmony) — fix list in docs/reports/2026-07-18-prompt2-preview-round.md SS5",
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-healing-recipes.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "new",
+        "entity_register": "education",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": true
+      },
+      "waiting_on": []
     },
     {
       "name": "ayurvedafranchise.com",
       "entity": "Kairali Group",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "CANONICAL franchise FULL SITE built 19 Jul (10 pages per signed STRATEGY, PR #130): go-science PASS ×2 sections; compliance-lint fixed; design/beauty gate completion was blocked on external-bot config at lane close — verify in morning sweep. Money figures per unblock-sheet answers, gaps flagged not invented. kairalifranchise.com 301s INTO this domain (D#4)",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-ayurvedafranchise-i9nuv4l94-kairali.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "migration",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 1,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "arogyakendra.com",
       "entity": "Kairali Group",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-arogyakendra-co.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "new",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": []
     },
     {
       "name": "arogyashala.in",
       "entity": "Kairali Group",
       "stage": "human_audit",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "PROMPT 4 pilot complete (all 63 organic gates dispositioned, 3 fresh subagent audits PASS). Waiting on: 4 packet replies (launches/arogyashala.in/audit-packets/2026-07-18-*.md — send needs owner approval) + pre-launch pendings (GA4/GTM IDs, GSC at flip, legal drafts to final before DNS)",
       "updated": "2026-07-18",
       "preview_url": "https://kairali-web-factory-arogyashala-in.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2b",
+        "asset_situation": "new",
+        "entity_register": "group-corporate",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "theblushlounge.com",
       "entity": "Personal",
       "stage": "human_audit",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "FULL SITE BUILT (6 pages per signed STRATEGY; golden_page signed per D-20260718-23 paste-prompt) + battery: go-science PASS, beauty PASS (new external-personal chapter, ratification riding), A5 92-99/100/100 x4, Gate-2 GPT element-complete PASS at pass 9 (Perplexity owner-fact deadlock on record, Q-BL-GATE2-PERPLEXITY-DEADLOCK). Deployed Ready; ONE owner promote updates the public alias (session permission gate blocked vercel promote). Riding: email/hours confirm, Supabase env keys, privacy page (owner legal lane), hi-res shoot swap, PR #154 review",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-theblushlounge.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "new",
+        "entity_register": "personal",
+        "platform": "factory-next"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "design_direction",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 5,
+        "beauty": 6,
+        "design_review_pre": 5,
+        "design_review_post": 9,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "snehachowdhary.com",
       "entity": "Personal",
       "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
       "blocker": "theblushlounge.com FULL SITE MERGED (#154, 6 pages, Champagne Editorial): go-science PASS · beauty PASS · Lighthouse a11y/SEO 100 ×4 · Gate-2 GPT PASS, Perplexity deadlock on owner-locked facts (Q-BL-GATE2-PERPLEXITY-DEADLOCK). Owner: Vercel PROMOTE kfi5o3g1a to alias (alias still serves old golden) + Supabase env keys + 3 ratifications; D-20260718-16 IG re-mine when owner has a session; this domain 301s at live (D#6)",
       "updated": "2026-07-19",
       "preview_url": "https://kairali-web-factory-theblushlounge.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "personal",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": [
+        "owner"
+      ]
     },
     {
       "name": "abhilashkr.com",
       "entity": "Personal",
       "stage": "build",
+      "phase": 4,
       "owner": "Abilash",
       "blocker": "Matrix-exempt (standing ruling); low priority",
       "updated": "2026-07-14",
       "preview_url": "https://kairali-web-factory-abhilashkr.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "personal",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     },
     {
       "name": "whyayurveda.org",
       "entity": "Kairali Group (blog)",
       "stage": "live",
+      "phase": 7,
       "owner": "Abilash",
       "blocker": "Live WordPress (web-dev-executed); mine + security-screen before any rebuild. 18 Jul EVENING: all 4 front-gate rows SIGNED (PR #113); Ashikha byline ruled (D-ASHIKHA-SPELLING — live 'Ashika' fixes ride the first batch). Batches now wait on: Deepu's Novamira install + the golden first post + the sitewide internal-link map (needs GSC; access plan confirmed 18 Jul)",
       "updated": "2026-07-18",
       "preview_url": null,
-      "live_url": "https://whyayurveda.org"
+      "live_url": "https://whyayurveda.org",
+      "vector": {
+        "site_class": "organic",
+        "business_model": "b2c",
+        "asset_situation": "existing",
+        "entity_register": "education",
+        "platform": "wordpress"
+      },
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "approved"
+        },
+        {
+          "gate": "strategy",
+          "status": "approved"
+        },
+        {
+          "gate": "design_source",
+          "status": "approved"
+        },
+        {
+          "gate": "golden_page",
+          "status": "approved"
+        }
+      ],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 1,
+        "checklists": true
+      },
+      "waiting_on": [
+        "Deepu"
+      ]
     },
     {
       "name": "kairali.ai",
       "entity": "Internal",
       "stage": "live",
+      "phase": 7,
       "owner": "Abilash",
       "blocker": null,
       "updated": "2026-07-17",
       "preview_url": "https://kairali-web-factory-kairali-ai.vercel.app",
-      "live_url": null
+      "live_url": null,
+      "vector": {
+        "site_class": "organic",
+        "business_model": "unknown",
+        "asset_situation": "existing",
+        "entity_register": "internal",
+        "platform": "factory-next"
+      },
+      "front_gates": [],
+      "evidence": {
+        "go_science": 0,
+        "beauty": 0,
+        "design_review_pre": 0,
+        "design_review_post": 0,
+        "audits": 0,
+        "checklists": false
+      },
+      "waiting_on": []
     }
   ]
 }

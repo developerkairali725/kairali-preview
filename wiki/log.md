@@ -87,3 +87,10 @@ workflow reply ingested (wiki/integrations/crm-centralized.md). SELF-CORRECTION:
 commit above was itself pushed direct to main under the owner-credentialed identity — HARD GATE 9's
 letter (agent lane is ALWAYS a PR) admits no exceptions; recorded as a deviation with cause, and all
 session commits from here ride PRs (this entry arrives by one).
+
+## 2026-07-19 20:48:18 IST — HARD GATE 9 owner-lane log: PR #172 merge (M2 mechanisms)
+Owner AbhilashKairali merged PR #172 (a220f82) over the DESIGNED red front-gate auth step
+(doctrine PR; author==owner blocks Approve — the standing bootstrap pattern until the
+kairali-os-bot account exists). All other checks green (33 pass), emit-verdicts skipped (PR
+context, normal). External review round: both auditors FAIL -> 11 findings dispositioned, adopted
+ones fixed + adversarially verified pre-merge (RPT-20260719-M2). Logged per HARD GATE 9.
