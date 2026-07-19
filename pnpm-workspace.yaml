@@ -6,3 +6,8 @@ allowBuilds:
   unrs-resolver: true
 overrides:
   postcss: ">=8.5.10"
+  # GHSA-8988-4f7v-96qf (moderate): unbounded memory allocation in W3C Baggage
+  # propagation, @opentelemetry/core <2.8.0. Transitive via lighthouse>@sentry/node;
+  # every declared range accepts ^2.0.0 but pnpm resolved 1.30.1. Remove once
+  # lighthouse/@sentry/node resolve >=2.8.0 on their own.
+  "@opentelemetry/core@<2.8.0": ">=2.8.0"
