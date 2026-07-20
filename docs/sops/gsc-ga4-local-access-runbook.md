@@ -223,3 +223,67 @@ Agent verified the form live; typing was blocked by the permission classifier �
   the exports would collide — resolve THEN (options: check whether the field unlocks, or per-property
   Cloud projects). Flagged here so the Monday sweep sees it.
 - First export lands ~48h after Continue; no backfill — remaining properties should follow soon.
+
+---
+
+# ADDENDUM 6 — whyayurveda.org bulk export DONE, location = DELHI asia-south2 (owner, 2026-07-20 ~17:40 IST) + region ruling needed
+
+**LIVE ADMIN STATE (owner-reported, overrides addendum 5 and step 10 — rule j):** the owner completed
+Settings → Bulk data export for https://whyayurveda.org/ with: project `kairali-analytics-os` ·
+dataset `searchconsole` (the addendum-5 name deviation stands) · **location Delhi (asia-south2)** —
+owner chose Delhi over the runbook's Mumbai ("we are based in Delhi"). Captured as D-20260720-28.
+
+**VERIFIED FACTS (3-agent sweep, official docs + Tavily cross-checks, 20 Jul — full answers in the
+session record):**
+1. **Location is immutable in place** ("Bulk data export does not support changing the dataset
+   location"). Official migration path: stop export → wait 24h → copy dataset → restart in the new
+   location, losing ~1–2 days of data. Recreating an export has **NO backfill** — but the FIRST
+   export only lands ~48h after setup, so **today (before any data flows) a redo costs ~nothing**.
+2. **Cross-location joins are impossible** in a normal query (BigQuery colocation rule; location is
+   per dataset). Workarounds are all paid/laggy (DTS copy 12h-min recurrence · cross-region replica
+   with duplicate storage + egress · global queries still Preview). Consequence: the remaining 7 GSC
+   property exports AND every GA4 BigQuery export MUST land in the SAME region as this dataset.
+3. **Price: IDENTICAL** Delhi vs Mumbai on every BigQuery SKU (on-demand $7.50/TiB both; all storage
+   and edition rates equal — parsed from the official pricing page + 2 cross-checks). **Feature gap:
+   asia-south2 lacks BigQuery ML REMOTE models** (no Vertex AI endpoint / genAI SQL functions like
+   ML.GENERATE_TEXT; built-in model training works). Mumbai has the fuller feature set. No India
+   multi-region exists; both regions satisfy "data in India".
+
+**ONE-WORDER FOR THE OWNER — Q-BQ-REGION (reply DELHI-STAYS or REDO-MUMBAI):**
+- **DELHI-STAYS**: zero clicks; asia-south2 becomes the standard for ALL analytics datasets (step 10
+  and the PENDING list update accordingly). Cost identical; the only loss = BigQuery's in-SQL AI
+  functions would need a cross-region copy if ever wanted.
+- **REDO-MUMBAI (recommended)**: one ~60-second form redo TODAY (stop the whyayurveda export →
+  set it up again with location Mumbai asia-south1) — free only until the first export lands (~48h);
+  keeps every BigQuery feature open (including the AI functions an AI-run operation may well want)
+  and matches the runbook as written. After data flows, this same switch costs a dataset copy +
+  1–2 days of data.
+Whichever word comes back: **all 7 remaining property exports + GA4 exports use THAT region** — a
+split brain between Indian regions is the one configuration the colocation rule punishes forever.
+
+---
+
+# ADDENDUM 7 — REDO-MUMBAI EXECUTED: whyayurveda export ACTIVE in Mumbai (agent in owner's Chrome, 2026-07-20 ~18:50 IST)
+
+**LIVE STATE (GSC settings page, machine-verified on screen):** "Bulk data export is active — Exporting
+to: kairali-analytics-os · `searchconsole_whyayurveda` · **Mumbai (asia-south1)**." First export ≤48h.
+Q-BQ-REGION executed per D-20260720-31; the per-property dataset name (runbook step 10's original
+intent) landed as a bonus.
+
+**THREE OPERATIONAL FINDINGS (correct the addendum-5/6 record):**
+1. **No dataset was ever created in Delhi.** BigQuery Explorer for kairali-analytics-os, filter off,
+   tree expanded: zero datasets. The dataset only materializes at first export — so a pre-first-export
+   redo truly costs nothing.
+2. **"Dataset location mismatch" is GSC-side, keyed to the DATASET NAME.** Even with the export
+   stopped and NO dataset existing, re-setup with the same name `searchconsole` + a new location fails
+   (reproduced twice: owner, then agent). GSC retains the stopped config's name→location memory
+   (presumably until a daily cycle clears it). **The dodge: use a different dataset name** — the
+   per-property `searchconsole_<domain>` went straight through.
+3. **The name field is NOT locked — it enforces the `searchconsole` stem and garbles inserted text.**
+   Addendum-5's "UI would not accept a change" corrected: cmd+A + Delete resets the field to the bare
+   stem (with trailing underscore), and APPENDING the suffix then works. Never paste/insert into the
+   middle; never trust the field without zooming the review dialog. This unblocks per-property names
+   for the remaining 7 properties — the addendum-5 name-collision worry is DISSOLVED.
+
+**STANDING RESULT: region = Mumbai asia-south1 · naming = searchconsole_<domain> — BOTH now proven
+paths for the remaining 7 GSC properties and the GA4 exports (same region, always).**
