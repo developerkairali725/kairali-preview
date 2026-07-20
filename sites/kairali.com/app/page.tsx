@@ -17,6 +17,7 @@ import {
 // Network counts are COMPUTED from the verified centres roster — never typed
 // (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
 import { CENTRES_COUNT, COUNTRIES_PHRASE, COUNTRIES_PHRASE_TITLE } from "@kairali/facts";
+import { SocialLinks } from "@kairali/social";
 
 const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS.md 2026-07-13 18:51 IST)
 const EMAIL = "info@kairali.com";
@@ -339,6 +340,9 @@ export default function Home() {
             {/* Group IVR — Q-KC3 CLOSED / D-20260714-QKC3 (B-073 restore) */}
             <a href="tel:+919555156156" data-cta="call_click">Call +91 95551 56156</a>
           </p>
+          {/* D-20260718-04: the shared fleet social set — handles live in
+              packages/social/src/config.ts ONLY (one-file true-up) */}
+          <SocialLinks />
           <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>
       </footer>

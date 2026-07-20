@@ -28,7 +28,8 @@ import {
   breadcrumbList,
   serializeJsonLd,
 } from "@kairali/schema";
-import { EMAIL, WHATSAPP_URL, SOCIALS, WhatsAppGlyph } from "./_components/chrome";
+import { EMAIL, WHATSAPP_URL, WhatsAppGlyph } from "./_components/chrome";
+import { SOCIAL_PROFILES } from "@kairali/social";
 
 const SITE = "https://kairaliequipment.com";
 
@@ -181,7 +182,7 @@ const LANES = [
 const jsonLd = graph(
   kairaliOrganization({
     id: "https://www.kairali.com/#organization",
-    sameAs: SOCIALS.map((s) => s.href),
+    sameAs: SOCIAL_PROFILES.map((p) => p.href),
   }),
   organization({
     id: `${SITE}/#organization`,

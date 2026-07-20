@@ -527,6 +527,19 @@ gates:
       organic: required
       landing: { n_a: "Stripped-footer LPs carry no social/press links by design (attention ratio)" }
 
+  - id: footer-socials-present
+    name: "Footer social links present (fleet-wide)"
+    what_it_verifies: "Every non-exempt Factory site's footer renders the shared @kairali/social SocialLinks nav (canonical KAG set per the 20 Jul marketing true-up, D-20260720-39; non-Kairali entity-personal sites exempt, Q-SOCIALS-EXTERNAL-EXEMPT) with the handles living in exactly ONE config file — no local copies, no hardcoded profile URLs in site code, plain links only (no embed widgets or tracking)"
+    severity: blocker
+    run: automated
+    status: built
+    script_or_agent_ref: "scripts/footer-socials-lint.mjs (merge-blocking in .github/workflows/factory-gate.yml) + scripts/test/footer-socials-lint.test.js + tests/factory/factory-site.spec.ts (render layer)"
+    source: "D-20260718-04 (Abilash, 18 Jul 2026: footer social-links parity fleet-wide) + D-SOCIALS-INTERIM (18 Jul 2026 unblock walk: ship the verified signature set now, Astha/Anupam true-up is a one-file change) — presence companion to social-press-links (B12), which stays the launch-evidence verification gate"
+    applicability:
+      commerce: { adapted: "Store footer social links are set via Shopify theme settings in the admin (agent is READ-ONLY there, rule k — humans click); the same ONE canonical set applies, verified on the dev-theme preview, not by this repo lint" }
+      organic: required
+      landing: { n_a: "Stripped-footer LPs carry no social links by design (attention ratio) — same ruling as social-press-links" }
+
   - id: runtime-monitoring
     name: "Runtime monitoring (Speed Insights + Sentry)"
     what_it_verifies: "Vercel Speed Insights + Analytics enabled; Sentry project created, DSN wired, alert rule → email"

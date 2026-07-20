@@ -13,6 +13,7 @@ import {
 // Network counts are COMPUTED from the verified centres roster — never typed
 // (canonical: KAC site figures, ruled 17 Jul 2026; PROJECT_CONTEXT §12).
 import { CENTRES_COUNT, COUNTRIES_PHRASE, COUNTRIES_PHRASE_TITLE } from "@kairali/facts";
+import { SocialLinks } from "@kairali/social";
 
 const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS.md 2026-07-13 18:51 IST)
 const EMAIL = "info@kairali.com";
@@ -296,6 +297,9 @@ export default function Home() {
             <a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a> ·{" "}
             <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
           </p>
+          {/* D-20260718-04: the shared fleet social set — handles live in
+              packages/social/src/config.ts ONLY (one-file true-up) */}
+          <SocialLinks />
           <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>
       </footer>

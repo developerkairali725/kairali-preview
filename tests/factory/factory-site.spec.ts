@@ -28,6 +28,9 @@ import { join } from "node:path";
 // @kairali/facts must actually emit it. One pattern list, shared with the lints.
 import { LOCKED_COUNT_STALE_PATTERNS } from "../../packages/compliance/src/rules.js";
 import { CENTRES_NETWORK_LINE, COUNTRIES_PHRASE } from "../../packages/facts/src/index.js";
+// Footer social parity (D-20260718-04): the canonical set is read from the
+// ONE config file the fleet renders from — the spec can never drift from it.
+import { SOCIAL_PROFILES } from "../../packages/social/src/config";
 
 const SITE_DIR = process.env.SITE ?? "sites/arogyakendra.com";
 const config = JSON.parse(readFileSync(join(SITE_DIR, "site.config.json"), "utf8")) as {
@@ -113,6 +116,29 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
     for (const href of waLinks) {
       expect(href.replace(/[^\d]/g, "")).toContain(PRIYA_WHATSAPP);
     }
+  });
+
+  test("D-20260718-04: footer renders the canonical group social set (shared @kairali/social)", async ({ page }) => {
+    test.skip(!isKairaliSurface, "non-Kairali surface — group social parity does not apply");
+    const links = await page.$$eval("footer a[data-social]", (as) =>
+      as.map((a) => ({
+        social: a.getAttribute("data-social"),
+        href: (a as HTMLAnchorElement).href,
+        rel: a.getAttribute("rel") ?? "",
+      })),
+    );
+    for (const p of SOCIAL_PROFILES) {
+      const match = links.find((l) => l.social === p.id);
+      expect(match, `footer missing social link "${p.id}" (D-20260718-04 parity)`).toBeTruthy();
+      expect(match!.href.replace(/\/$/, ""), `${p.id} href drifted from the ONE config`).toBe(
+        p.href.replace(/\/$/, ""),
+      );
+      expect(match!.rel, `${p.id} external link must carry noopener`).toContain("noopener");
+    }
+    // The set is exact — a seventh, unruled handle is as wrong as a missing one.
+    expect(links.length, "footer social set must match the config exactly").toBe(
+      SOCIAL_PROFILES.length,
+    );
   });
 
   test("A2: a Kairali surface offers a contact path (email or WhatsApp)", async ({ page }) => {

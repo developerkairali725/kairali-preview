@@ -27,11 +27,9 @@
 //   search URL (mined 18 Jul 2026), and inventing brand-store URLs is banned
 //   (rule 6). Canonical marketplace storefront URLs = owner question.
 // · Contacts: locked info@kairali.com; interim Priya WhatsApp (standing rule).
-// · Socials: the VERIFIED interim set (D-SOCIALS-INTERIM, 18 Jul 2026 —
-//   HTTP-checked profiles). Swap to @kairali/social <SocialLinks/> the moment
-//   the fleet-socials PR (no. 139) lands — a one-import change, noted in the
-//   PR body. (Written "no. 139" here because "#"+digits reads as a hex color
-//   to brand-lint's rogue-hex rule.)
+// · Socials: the shared @kairali/social canonical set (D-20260718-04 parity,
+//   true-up D-20260720-39) — <SocialLinks/> renders it; Organization sameAs
+//   reads SOCIAL_PROFILES from the same config (one source, no drift).
 // GO-SCIENCE (D-20260718-20): section order follows the Educational 4-Phase —
 // hero states the promise (MCB: secret desire "genuinely chemical-free
 // Ayurvedic care" without the label-scrutiny anxiety), the formulary presents
@@ -42,6 +40,7 @@
 // shell — they live at the stores). Evidence:
 // launches/kairaliorganic.com/go-science/2026-07-18-selfcheck.md
 
+import { SocialLinks, SOCIAL_PROFILES } from "@kairali/social";
 import {
   graph,
   kairaliOrganization,
@@ -74,23 +73,12 @@ const THE_NINE = [
   { slug: "kairbossom", name: "Kairbossom", category: "Ayurvedic Body Oil", benefit: "for Beautiful Bosom" },
 ];
 
-// Verified interim social set (D-SOCIALS-INTERIM, 18 Jul 2026) — every URL
-// HTTP-checked to a live matching profile before shipping. ONE list, reused
-// for the footer AND Organization sameAs so the two can never drift.
-const SOCIALS = [
-  { label: "Instagram", href: "https://www.instagram.com/kairaliayurvedichealingvillage" },
-  { label: "YouTube", href: "https://www.youtube.com/@kairaliayurvedagroup" },
-  { label: "Facebook", href: "https://www.facebook.com/KairaliGroup" },
-  { label: "X (Twitter)", href: "https://x.com/KairaliGroup" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/kairali-ayurvedic-group" },
-  { label: "Pinterest", href: "https://in.pinterest.com/kairalihealing" },
-];
 
 const jsonLd = graph(
   kairaliOrganization({
     id: `${SITE}/#group`,
     logo: `${SITE}/icon.png`,
-    sameAs: [GROUP_URL, ...SOCIALS.map((s) => s.href)],
+    sameAs: [GROUP_URL, ...SOCIAL_PROFILES.map((p) => p.href)],
   }),
   organization({
     id: `${SITE}/#organization`,
@@ -388,16 +376,9 @@ export default function Home() {
             <a href={STORE_COM}>Kairali Store (.com)</a>
             <a href={KAIR_URL}>KAIR by Kairali</a>
           </nav>
-          {/* Verified interim social set — swap to @kairali/social
-              <SocialLinks/> when the fleet-socials PR (no. 139) lands
-              (D-20260718-04) */}
-          <nav className="footer-nav" aria-label="Kairali on social media">
-            {SOCIALS.map((s) => (
-              <a key={s.label} href={s.href}>
-                {s.label}
-              </a>
-            ))}
-          </nav>
+          {/* D-20260718-04: the shared fleet social set — handles live in
+              packages/social/src/config.ts ONLY (canonical true-up D-20260720-39) */}
+          <SocialLinks className="footer-nav" ariaLabel="Kairali on social media" />
           <nav className="footer-nav footer-legal" aria-label="Legal">
             <a href="/privacy">Privacy</a>
           </nav>

@@ -1,6 +1,8 @@
 // healing.recipes shared chrome — header + footer on every page.
 // Contact policy: locked email + the group IVR tel: CTA (D-HR-PHONE +
 // D-20260720-29 GO — legacy +91-9999231117 dropped; the group line prints).
+import { SocialLinks } from "@kairali/social";
+
 const EMAIL = "info@kairali.com";
 const IVR_TEL = "tel:+919555156156";
 
@@ -62,6 +64,10 @@ export function SiteFooter() {
           <a href="https://www.kairaliproducts.com">Kairali Store (International)</a>
           <a href="https://www.ayurvedichealingvillage.com">The Ayurvedic Healing Village</a>
         </nav>
+        {/* D-20260718-04: the shared fleet social set (GROUP profiles —
+            flagged for owner review: this site is Gita Ramesh's imprint;
+            handles live in packages/social/src/config.ts ONLY) */}
+        <SocialLinks className="footer-nav footer-social" />
         <nav className="footer-nav footer-legal" aria-label="Legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>

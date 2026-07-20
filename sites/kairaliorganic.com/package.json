@@ -17,7 +17,8 @@
     "@kairali/consent": "workspace:*",
     "@kairali/analytics": "workspace:*",
     "@kairali/chat": "workspace:*",
-    "@kairali/legal": "workspace:*"
+    "@kairali/legal": "workspace:*",
+    "@kairali/social": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

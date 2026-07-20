@@ -1,5 +1,6 @@
 // Shared header + footer for kairalicenters.com. Group register.
 import Link from "next/link";
+import { SocialLinks } from "@kairali/social";
 
 export const EMAIL = "info@kairali.com";
 export const WHATSAPP_URL = "https://wa.me/919289838797"; // interim Priya number (DECISIONS 2026-07-13)
@@ -63,6 +64,9 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
+        {/* D-20260718-04: the shared fleet social set — handles live in
+            packages/social/src/config.ts ONLY (one-file true-up) */}
+        <SocialLinks />
         <p className="footer-disclaimer">
           Ayurvedic treatment should be taken under the guidance of a qualified
           physician. Centre timings and details may change — please call the

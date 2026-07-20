@@ -430,3 +430,9 @@ a:hover { color: var(--forest-700); }
   .rfq-grid { grid-template-columns: 1fr 1fr; align-items: start; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; }
 }
+
+/* D-20260718-04: fleet footer social links — the shared @kairali/social nav
+   (handles live in packages/social/src/config.ts ONLY). Same flex row +
+   >=44px tap-height treatment as the fleet's other footer navs. */
+.footer-social { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+.footer-social a { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }

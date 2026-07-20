@@ -11,7 +11,7 @@ meta:
   note: "CM = normative CLAUDE.md units · GR = registry gates (generated, scripts/merge-continuity-gen-registry.mjs) · PKG = adopted package obligations · STD = seven shared standards (pending author, D-20260719-11) · REJ/DEF = exclusion-register seed (plan §8)"
   source_hashes:
     CLAUDE.md: "sha256:1761a932b907973baa15fc7c75f720f502c7f192353dabd64d7875ab8862a2e3"
-    gates/registry.yaml: "sha256:3be9c3aa2674903e42bd9e7e71de9741ac80942fd69f0f8ba4626198db6e7843"
+    gates/registry.yaml: "sha256:105e5500b87c54c3a06aa3b0e2b73656bc2c5c2637eeef757da1cd14083b8615"
 rows:
   - source_id: CM-001
     source_file: "CLAUDE.md"
@@ -2657,6 +2657,20 @@ rows:
     enforcement: "PLANNED: certificate template + launch-evidence check at M2 (plan §2.1 Phases 5-6); scope ruled by M0(a) dispositions 5 + 7 — the class-map scope_map lists this gate project_only"
     evidence_path: null
     approver: "named human"
+    test: "scripts/test/gate-registry-lint.test.js (registry contract) + scripts/test/merge-continuity-lint.test.js (coverage)"
+    status: verbatim
+  - source_id: GR-077
+    source_file: "gates/registry.yaml"
+    registry_id: footer-socials-present
+    old_text: |-
+      footer-socials-present — Every non-exempt Factory site's footer renders the shared @kairali/social SocialLinks nav (canonical KAG set per the 20 Jul marketing true-up, D-20260720-39; non-Kairali entity-personal sites exempt, Q-SOCIALS-EXTERNAL-EXEMPT) with the handles living in exactly ONE config file — no local copies, no hardcoded profile URLs, plain links only (severity blocker, run automated, status built)
+    old_text_hash: "sha256:cc716a0bfb23141d8f345882534e53a180d0b82b8e18488e017b1d45f9532aaa"
+    new_home: "gates/registry.yaml (row added by the D-20260718-04 lane, re-ported + canonically trued-up 20 Jul per D-20260720-39; presence companion to social-press-links B12)"
+    dimensions: [commerce-adapted, organic]
+    trigger: "per PR (merge-blocking CI)"
+    enforcement: "scripts/footer-socials-lint.mjs (merge-blocking step in .github/workflows/factory-gate.yml brand-lint job) + scripts/test/footer-socials-lint.test.js + tests/factory/factory-site.spec.ts (render layer); exemptions: factory-matrix EXEMPT ledger + entity-personal scoping (loud print, ratification Q-SOCIALS-EXTERNAL-EXEMPT)"
+    evidence_path: null
+    approver: "CI"
     test: "scripts/test/gate-registry-lint.test.js (registry contract) + scripts/test/merge-continuity-lint.test.js (coverage)"
     status: verbatim
   - source_id: PKG-001

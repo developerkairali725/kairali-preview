@@ -622,3 +622,25 @@ kairaliyoga entity bucket + Shopify-LP platform vectors stand as built (no objec
   all 3 instances reworded to the content file's own h1 'The Complete, Honest Guide'; description
   carries the #197 per-page rule verbatim; 1908 clause untouched. Activation-③ review triple PASS.
   Blanket-claim class now zero site-wide. Captured as owner answer 4/5, D-20260720-35.
+
+## 2026-07-20 21:56:02 IST · Q-SOCIALS-CANONICAL-WARTS — three warts in the canonical social list (non-blocking; fleet set shipped without them)
+The 20 Jul canonical reply (Anupam, thread 19f7528b5b9fc4ab) landed and the fleet footer set is trued
+up (PR riding fix/fleet-footer-socials-canonical; full record wiki/marketing/social-profiles.md). Three
+delivered items could NOT ship as-given: (1) KAG LinkedIn came as a personal-profile /in/ URL,
+bot-blocked — footers ship the content-verified company page instead; confirm which is canonical.
+(2) KAG Instagram = "N.A" — the old footers borrowed KTAHV's 24K-follower account; it is now DROPPED
+from fleet footers per the canonical list. One word restores it fleet-wide if you prefer reach over
+strict entity truth: INSTA-RESTORE / INSTA-STAY-OFF. (3) KTAHV Dailyhunt was delivered as a
+creator-dashboard login URL and Villa Raag Facebook as a share-redirect — both flagged in the wiki,
+neither shippable in a footer; ask Anupam for the public URLs on the next mail.
+- **PARTIALLY ANSWERED (owner, in-chat, 21 Jul ~00:05 IST):** item (2) RULED **INSTA-STAY-OFF** —
+  fleet footers carry only the group's own four profiles; KTAHV's Instagram waits for KTAHV
+  surfaces (D-20260720-41). Items (1) LinkedIn form + (3) Anupam's two broken URLs remain open.
+
+## 2026-07-20 22:02:00 IST · Q-SOCIALS-EXTERNAL-EXEMPT — ratify: entity-"personal" sites exempt from fleet footer socials
+The footer-socials gate now exempts sites whose site.config.json entity is "personal" (today exactly
+one: theblushlounge.com, the external-client pilot) — Kairali's group profiles on a client's site
+would be a false claim, HARD GATE 6 class. Judgment call made during the D-20260720-39 UNFREEZE
+execution, printed LOUDLY every lint run, needs your one-word ratification: RATIFY / REVERT.
+- **ANSWERED — RATIFIED (owner, in-chat, 20 Jul late night).** The entity-"personal" exemption is
+  standing law; captured as D-20260720-40, rides PR #204.

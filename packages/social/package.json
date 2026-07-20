@@ -1,0 +1,19 @@
+{
+  "name": "@kairali/social",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kairali group social-profile links — ONE config file, every fleet footer (D-20260718-04)",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0"
+  }
+}

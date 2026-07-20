@@ -35,6 +35,7 @@ import {
   localBusiness,
   serializeJsonLd,
 } from "@kairali/schema";
+import { SocialLinks } from "@kairali/social";
 
 const SITE = "https://kairalihospitality.com";
 const EMAIL = "info@kairali.com";
@@ -441,6 +442,9 @@ export default function Home() {
             <a href="https://www.kairali.com">Kairali Ayurvedic Group</a>
             <a href="https://www.kairaliproducts.in">Kairali Store (India)</a>
           </nav>
+          {/* D-20260718-04: the shared fleet social set — handles live in
+              packages/social/src/config.ts ONLY (one-file true-up) */}
+          <SocialLinks className="footer-nav footer-social" />
           <nav className="footer-nav footer-legal" aria-label="Legal">
             <a href="/privacy">Privacy</a>
             <a href="/terms">Terms</a>

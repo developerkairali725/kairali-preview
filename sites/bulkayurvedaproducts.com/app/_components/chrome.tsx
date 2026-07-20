@@ -2,6 +2,7 @@
 // desk. Product-pharma register. "The Batch Ledger" direction, cool pole.
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { SocialLinks } from "@kairali/social";
 
 export const EMAIL = "info@kairali.com"; // locked fact (CLAUDE.md)
 // INTERIM number per the 13-Jul ruling ("until a group number is provided") —
@@ -9,19 +10,6 @@ export const EMAIL = "info@kairali.com"; // locked fact (CLAUDE.md)
 export const WHATSAPP_URL = "https://wa.me/919289838797";
 export const CONTRACT_PAGE =
   "https://www.kairaliproducts.in/pages/ayurvedic-herbal-products-contract-manufacturing-and-third-party-manufacturing-company-in-india";
-
-// D-SOCIALS-INTERIM (DECISIONS.md, 18 Jul 2026): the director@ SIGNATURE set +
-// Pinterest from live. FB: the signature entry is a share-link, so the page URL
-// comes from the curl-verified live kairali.com footer. Corrected on the
-// Astha + Anupam canonical-list reply (D-20260718-04 lane).
-export const SOCIALS = [
-  { label: "Facebook", href: "https://www.facebook.com/KairaliGroup" },
-  { label: "X (Twitter)", href: "https://x.com/KairaliGroup" },
-  { label: "Instagram", href: "https://www.instagram.com/kairaliayurvedichealingvillage/" },
-  { label: "YouTube", href: "https://www.youtube.com/@kairaliayurvedagroup" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/kairali-ayurvedic-group" },
-  { label: "Pinterest", href: "https://www.pinterest.com/kairalihealing" },
-];
 
 // Full-site nav (Phase-1 build): the golden page's section anchors graduated
 // into the strategy's real routes — labels unchanged, targets now pages.
@@ -140,11 +128,9 @@ export function SiteFooter() {
           </div>
           <div className="footer-col">
             <h4>Follow Kairali</h4>
-            <ul>
-              {SOCIALS.map((s) => (
-                <li key={s.label}><a href={s.href} rel="noopener">{s.label}</a></li>
-              ))}
-            </ul>
+            {/* D-20260718-04: the shared fleet social set — handles live in
+                packages/social/src/config.ts ONLY (canonical true-up D-20260720-39) */}
+            <SocialLinks />
           </div>
         </div>
         <p className="footer-disclaimer">

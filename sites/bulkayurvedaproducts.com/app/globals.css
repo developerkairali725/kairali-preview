@@ -338,3 +338,9 @@ body:has(main.page-rfq) #chatbase-message-bubbles { display: none !important; }
   .logo-name { white-space: normal; font-size: 1rem; }
   .logo-name small { letter-spacing: 0.1em; }
 }
+
+/* D-20260718-04: fleet footer social links — the shared @kairali/social nav
+   (handles live in packages/social/src/config.ts ONLY). Same flex row +
+   >=44px tap-height treatment as the fleet's other footer navs. */
+.footer-social { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+.footer-social a { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }

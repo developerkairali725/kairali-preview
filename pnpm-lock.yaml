@@ -100,6 +100,16 @@ importers:
         specifier: workspace:*
         version: link:../i18n
 
+  packages/social:
+    dependencies:
+      react:
+        specifier: '>=19'
+        version: 19.2.7
+    devDependencies:
+      '@types/react':
+        specifier: ^19.1.0
+        version: 19.2.17
+
   packages/ui: {}
 
   sites/abhilashkr:
@@ -198,6 +208,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -241,6 +254,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -287,6 +303,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -333,6 +352,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -376,6 +398,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -444,6 +469,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -490,6 +518,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -539,6 +570,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -582,6 +616,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -625,6 +662,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -668,6 +708,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -751,6 +794,9 @@ importers:
       '@kairali/seo':
         specifier: workspace:*
         version: link:../../packages/seo
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../packages/ui

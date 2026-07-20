@@ -24,7 +24,7 @@ const LEGACY_MAP: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal"],
+  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal", "@kairali/social"],
   async redirects() {
     return Object.entries(LEGACY_MAP).map(([source, destination]) => ({
       source,

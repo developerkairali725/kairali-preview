@@ -12,20 +12,11 @@
 // LOUD SWAP FLAG (STRATEGY §4): the pre-filled message text identifies the
 // equipment site so Priya's line can triage until an equipment number lands.
 import Link from "next/link";
+import { SocialLinks } from "@kairali/social";
 
 export const EMAIL = "info@kairali.com"; // locked fact
 export const WHATSAPP_URL =
   "https://wa.me/919289838797?text=Hello%20Kairali%20%E2%80%94%20equipment%20enquiry%20via%20kairaliequipment.com";
-
-// Group social profiles — mined from the legacy Kairali group site footers
-// (content-mined/arogyakendra.com/index.html:534-537), https-normalised.
-// Nothing invented (HARD GATE 6).
-export const SOCIALS = [
-  { label: "Facebook", href: "https://www.facebook.com/pages/Kairaliayurvedicgroup/114901512030869" },
-  { label: "X (Twitter)", href: "https://twitter.com/Kairali_Group" },
-  { label: "YouTube", href: "https://www.youtube.com/user/kairaliayurvedagroup" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/kairali-ayurvedic-group" },
-];
 
 export const NAV = [
   { href: "/equipment", label: "Equipment" },
@@ -124,11 +115,9 @@ export function SiteFooter() {
           </div>
           <div className="footer-col">
             <h4>Follow</h4>
-            <ul>
-              {SOCIALS.map((s) => (
-                <li key={s.label}><a href={s.href} rel="noopener">{s.label}</a></li>
-              ))}
-            </ul>
+            {/* D-20260718-04: the shared fleet social set — handles live in
+                packages/social/src/config.ts ONLY (canonical true-up D-20260720-39) */}
+            <SocialLinks />
           </div>
         </div>
         <p className="footer-disclaimer">

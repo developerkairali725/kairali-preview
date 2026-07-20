@@ -10,7 +10,8 @@ import { graph, breadcrumbList, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../site.config.json";
 import { SITE_URL } from "../_lib/catalog";
 import { PageHead } from "../_components/page-chrome";
-import { EMAIL, SOCIALS } from "../_components/chrome";
+import { EMAIL } from "../_components/chrome";
+import { SOCIAL_PROFILES } from "@kairali/social";
 
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
@@ -76,11 +77,12 @@ export default function ContactPage() {
             </div>
             <div className="terms-card">
               <h3>Follow the group</h3>
+              {/* D-20260718-04: handles single-sourced from packages/social/src/config.ts */}
               <p>
-                {SOCIALS.map((s, i) => (
-                  <span key={s.label}>
+                {SOCIAL_PROFILES.map((p, i) => (
+                  <span key={p.id}>
                     {i > 0 ? " · " : ""}
-                    <a href={s.href} rel="noopener">{s.label}</a>
+                    <a href={p.href} rel="noopener">{p.label}</a>
                   </span>
                 ))}
               </p>

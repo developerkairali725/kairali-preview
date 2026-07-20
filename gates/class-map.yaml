@@ -395,6 +395,7 @@ scope_map:
     - banned-string-lint
     - cta-label-lint
     - honest-ymyl-content-lint
+    - footer-socials-present
     - s3-keyword-gates
     - factory-matrix-self-registration
     - lighthouse-budgets

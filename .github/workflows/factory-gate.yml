@@ -320,6 +320,17 @@ jobs:
       - name: Chat-bubble presence lint (every fleet site, consent-first)
         run: node scripts/chat-bubble-lint.mjs
 
+      # FOOTER SOCIAL LINKS (D-20260718-04, 18 Jul). Footer social parity is
+      # mandatory fleet-wide; before this gate no fleet footer carried the
+      # group profiles — an absence PR #127 surfaced but could not close
+      # (no verified handle set existed). D-SOCIALS-INTERIM supplied the
+      # verified interim set; every non-exempt site's footer must render the
+      # shared @kairali/social nav, with the handles living in ONE config
+      # file so the Astha/Anupam true-up stays a one-file change.
+      # Registry row: footer-socials-present (gates/registry.yaml).
+      - name: Footer-socials lint (every fleet site, one handle source)
+        run: node scripts/footer-socials-lint.mjs
+
       # Discovered by find, NOT a fixed glob. The old glob was
       # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
       # medical-review.test.js — the ONLY test guarding our anti-fabrication

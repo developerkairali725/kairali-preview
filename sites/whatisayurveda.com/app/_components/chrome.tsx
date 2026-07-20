@@ -1,5 +1,6 @@
 // Shared header + footer for whatisayurveda.com. Group/educational register.
 import Link from "next/link";
+import { SocialLinks } from "@kairali/social";
 
 export const EMAIL = "info@kairali.com";
 export const WHATSAPP_URL = "https://wa.me/919289838797"; // Priya = the Chatbase AI ASSISTANT, NOT a physician
@@ -78,6 +79,9 @@ export function SiteFooter() {
             </ul>
           </div>
         </div>
+        {/* D-20260718-04: the shared fleet social set — handles live in
+            packages/social/src/config.ts ONLY (one-file true-up) */}
+        <SocialLinks />
         <p className="footer-disclaimer">
           The information on whatisayurveda.com is educational and is not a
           substitute for professional medical advice, diagnosis, or treatment.
