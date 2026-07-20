@@ -16,9 +16,9 @@ const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"], display: 
 
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
-    title: "What is Ayurveda? A Physician-Reviewed Guide",
+    title: "What is Ayurveda? The Complete, Honest Guide",
     description:
-      "A clear, honest, physician-reviewed guide to Ayurveda — doshas, panchakarma, herbs, evidence. From the Kairali Group, a family tradition since 1908.",
+      "A clear, honest guide to Ayurveda. Reviewed pages carry the doctor's name and date. From the Kairali Group, a family tradition since 1908.",
     siteName: "What is Ayurveda",
     ogImage: "/og.jpg",
   }) as Metadata),
