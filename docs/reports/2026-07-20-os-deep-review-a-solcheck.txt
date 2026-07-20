@@ -1,0 +1,46 @@
+gpt-5.6-sol counter-check of RPT-20260720-DEEPA (phase A architecture review) —
+run 2026-07-20 ~10:00 IST via scripts/audit-gpt.mjs (--model gpt-5.6-sol;
+prompt 44,076 tok / completion 3,822). VERDICT: FAIL — 4 blocking. All four
+blocking findings and recs 1-12 ADOPTED; the report was rewritten before commit
+(this file records the check; the report's appendix records the dispositions).
+
+BLOCKING (4):
+  1. The reduction buries the actual goal-blocking gap: owner queueing, approval
+     UX, actuation, identity, scheduling and autonomous continuation collapsed
+     into "owner-interface," whose proposal family contains no conductor or
+     autonomous runtime. "A better queue does not make the process run itself."
+     → ADOPTED: Theme 0 (NO CONDUCTOR) extracted as dominant; Theme 1 split 1a/1b/1c.
+  2. Dominant ranking wrong for the owner's stated goal — the highest-order gap
+     is the absence of a conductor/steady-state execution loop; owner-interface
+     is second. → ADOPTED (re-ranked).
+  3. Reduction not auditable — no stable finding IDs / finding→theme table.
+     → ADOPTED: F01–F44 + C1–C3 stamped into the evidence JSON; lossless mapping in report.
+  4. Seven broad IMPLEMENT dispositions = a programme backlog, not an
+     authorization-ready decision (no dependency order, no measurable M4 exit
+     criteria, no simplicity test per proposal). → ADOPTED: 4-step dependency-
+     ordered critical path + measurable owner-away M4 acceptance test; Themes
+     5/6/C2 deferred measured-first.
+
+ORDER VIOLATIONS noted: M4 priorities before the owner-away acceptance test;
+cross-platform pilot implications before publish-path jurisdiction proof.
+→ Both corrected by critical-path steps 1 and 4.
+
+MISSED STEPS: lossless reduction matrix (adopted); conductor separated from
+owner-interface (adopted); dependency graph before waves (adopted); simplicity
+test per proposal (adopted via smallest-critical-path reduction); machine-
+measurable step-back exit criteria (adopted); include the counter-check evidence
+(this file). NEEDS-FACT-CHECK items ride the Perplexity leg at T8 authorization.
+
+RECOMMENDATIONS 1-12 all adopted, notably:
+  6. Activation truth via append-only execution ledger + generated status —
+     never mutable last_fired fields inside the policy registry.
+  7. Outcomes in a separate per-site ledger, never STATUS.yaml.
+  8. Deploy reconciler independently SCHEDULED, not a session-start doctor duty.
+  9. Fleet review-intensity step-down authorized only from measured pilot
+     defect-yield/cost; candidate rules drafted now.
+  10. Blunt truth to owner (in the report verbatim): not yet a self-running OS —
+      a heavily governed assistant that needs him to start, sequence, resolve.
+  11. Factory pilot ≠ proof of WordPress/Shopify governability; their publish
+      paths need real choke points first.
+  12. 58 agents / 5.54M tokens for this review is itself evidence of possible
+      process excess — M4 must include cost per useful defect found.
