@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-07-20 15:20:01 IST",
-  "generated_utc": "2026-07-20T09:50:01Z",
+  "generated": "2026-07-20 16:34:34 IST",
+  "generated_utc": "2026-07-20T11:04:34Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot pending",
     "milestones": [
@@ -32,8 +32,8 @@
       }
     ],
     "strict_residues": 0,
-    "unacked_directives": 8,
-    "open_questions": 88,
+    "unacked_directives": 14,
+    "open_questions": 94,
     "decisions": 15,
     "tests": null
   },
@@ -970,7 +970,7 @@
       "live_url": null,
       "vector": {
         "site_class": "organic",
-        "business_model": "unknown",
+        "business_model": "internal",
         "asset_situation": "existing",
         "entity_register": "internal",
         "platform": "factory-next"

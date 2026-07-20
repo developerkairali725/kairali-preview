@@ -549,6 +549,7 @@ The security-guidance plugin's LLM review (commit/push/Stop gate) has NEVER run:
 the plugin's SDK needs >=3.10, and it silently no-ops while its regex warnings create false assurance
 (RPT-20260720-SILENT #1). Fix = `brew install python` (system install on your machine — your word first).
 Reply INSTALL (I run it + verify the review fires on a test commit) or SKIP (documented risk).
+- **RESOLVED BY EVENTS 2026-07-20 ~16:55 IST (card-walk session): no INSTALL word needed.** OBSERVED_FIRST_PARTY: real LLM reviews now run (~/.claude/security/log.txt 15:46:52 / 15:48:23 "LLM code review: no vulnerabilities found") even though system python3 remains 3.9.6 — the 20 Jul SDK update + D-20260720-20 key wiring brought the review leg live via its own runtime path. The premise (review can never run) no longer holds; question closed on evidence, cross-ref Q-SECURITY-HOOK-CREDENTIALS closure.
 
 ## 2026-07-20 08:27:00 IST — Q-AUDITORS-YML (one-worder: RELAND or DELETE)
 The 15-Jul external-auditor CI gate lived 6 minutes on a PR-less branch; GitHub still lists the workflow
@@ -567,6 +568,7 @@ prep the exact context name + verify after your click.
 - SECONDARY (same silent-failure class as RPT-20260720-SILENT): the hook's git-baseline leg runs with cwd=~/Claude (session launch dir, not a repo) → "Failed to capture git baseline" on every UserPromptSubmit; commit REVIEW still works because it parses the command, but per-session baseline diffing never activates.
 - ONE-WORDER OPTIONS: (a) set ANTHROPIC_API_KEY in the hook's env so the LLM review leg goes live — OWNER WORD needed (separate API billing vs the Max plan); (b) file the issue upstream on the security-guidance plugin (honor CLI OAuth session / document the env requirement) and accept log-only until fixed; (c) both. 
 - **ANSWERED 2026-07-20 12:42:46 IST — Abilash ruled (a): dedicated API key.** Key created by owner, stored owner-hands via helper script (agent-side writes classifier-blocked, correctly): ~/.secrets/anthropic-hook.env (0600) + ~/.claude/settings.json env (hook processes inherit it) + customApiKeyResponses.rejected guard (main session stays on Max-plan OAuth billing). ACTIVATION PROOF PENDING next session restart (registration != activation) — first commit of the next session must show a real LLM review in ~/.claude/security/log.txt. Upstream issue (option b) NOT filed — owner chose (a) only.
+- **ACTIVATION PROVEN 2026-07-20 ~15:52 IST (card-walk session, checkpoint ③): CLOSED.** ~/.claude/security/log.txt shows real "LLM code review: no vulnerabilities found" runs at 15:46:52 + 15:48:23 (2.5s, prior session close) and the hook fired on this session's first commit (15:52:12, "Commit review: 1/1 sha(s) resolved"); LAST "no API credentials" line is 12:40:21 — pre-wiring. D-20260720-20 proof banked in the session record.
 
 
 ## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 5d7d59c (fix/canonical-centres-count); text VERBATIM from the stranded commit
