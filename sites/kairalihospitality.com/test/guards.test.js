@@ -112,11 +112,11 @@ test("redirect map covers every mined legacy page, single-hop", () => {
   assert.ok(!config.includes("kairalifranchise.com"), "kairalifranchise.com is a hop, not a home");
 });
 
-test("locked contacts only: info@kairali.com + the interim 38797 WhatsApp", () => {
+test("locked contacts only: info@kairali.com + group IVR + the interim 38797 WhatsApp", () => {
   assert.match(page, /info@kairali\.com/);
   assert.doesNotMatch(everything, /38777/, "…38777 is the WRONG number, fix on sight");
   assert.match(page, /919289838797/);
-  assert.doesNotMatch(everything, /9555156156/, "legacy group line is unruled — not carried (rule 6)");
+  assert.match(page, /tel:\+919555156156/, "the group IVR prints — D-KH-PHONE, D-20260720-29 GO");
   const mailboxes = new Set((everything.match(/[\w.+-]+@kairali\.com/gi) ?? []).map((e) => e.toLowerCase()));
   assert.deepEqual([...mailboxes], ["info@kairali.com"], "info@ is the only public mailbox");
 });

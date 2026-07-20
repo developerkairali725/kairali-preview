@@ -23,8 +23,9 @@
 // (D-KH-JV-LABEL). No ownership claim is printed. Legacy "established
 // 2008 subsidiary" fact NOT carried (unruled — QUESTIONS.md). Healing
 // Village card = clinical register (data-register="clinical", guarded).
-// Contacts: locked info@kairali.com + interim Priya WhatsApp (DECISIONS
-// 2026-07-13 18:51 precedent).
+// Contacts: locked info@kairali.com + group IVR tel: CTA (D-KH-PHONE,
+// D-20260720-29 GO) + interim Priya WhatsApp (DECISIONS 2026-07-13 18:51
+// precedent).
 
 import {
   graph,
@@ -38,6 +39,7 @@ import {
 const SITE = "https://kairalihospitality.com";
 const EMAIL = "info@kairali.com";
 const WHATSAPP_URL = "https://wa.me/919289838797";
+const IVR_TEL = "tel:+919555156156";
 const RAAG_URL = "https://villaraag.com";
 const KTAHV_URL = "https://www.ayurvedichealingvillage.com";
 const KATERINA_URL = "https://www.katerinaresort.cz/en";
@@ -427,6 +429,7 @@ export default function Home() {
           <p className="footer-title">Kairali Hospitality &mdash; the Kairali Ayurvedic Group&rsquo;s properties</p>
           <p>
             <a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a> ·{" "}
+            <a href={IVR_TEL} data-cta="call_click">Call +91 95551 56156</a> ·{" "}
             <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
           </p>
           <nav className="footer-nav" aria-label="The properties">

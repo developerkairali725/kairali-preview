@@ -1,7 +1,8 @@
 // healing.recipes shared chrome — header + footer on every page.
-// Contact policy (rule 6): locked email only; NO phone number until Abilash
-// confirms one (Q-HR-PHONE — the legacy site's number is unverified).
+// Contact policy: locked email + the group IVR tel: CTA (D-HR-PHONE +
+// D-20260720-29 GO — legacy +91-9999231117 dropped; the group line prints).
 const EMAIL = "info@kairali.com";
+const IVR_TEL = "tel:+919555156156";
 
 export function SiteHeader() {
   return (
@@ -43,6 +44,10 @@ export function SiteFooter() {
           A Kairali Ayurvedic Group site ·{" "}
           <a href={`mailto:${EMAIL}`} data-cta="email_click">
             {EMAIL}
+          </a>{" "}
+          ·{" "}
+          <a href={IVR_TEL} data-cta="call_click">
+            Call +91 95551 56156
           </a>
         </p>
         <nav className="footer-nav" aria-label="Site">

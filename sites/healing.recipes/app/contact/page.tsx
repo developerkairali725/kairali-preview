@@ -1,10 +1,11 @@
-// Contact — locked email only. NO phone ships until Abilash confirms one
-// (Q-HR-PHONE: the legacy site's number is unverified; rule 6).
+// Contact — locked email + the group IVR tel: CTA (D-HR-PHONE +
+// D-20260720-29 GO: legacy +91-9999231117 dropped; the group line prints).
 import type { Metadata } from "next";
 import { buildMetadata } from "@kairali/seo";
 import siteConfig from "../../site.config.json";
 
 const EMAIL = "info@kairali.com";
+const IVR_TEL = "tel:+919555156156";
 
 export const metadata: Metadata = buildMetadata(siteConfig, {
   title: "Contact — Healing Recipes",
@@ -31,6 +32,10 @@ export default function ContactPage() {
               {EMAIL}
             </a>
           </div>
+          <p>
+            Prefer to talk?{" "}
+            <a href={IVR_TEL} data-cta="call_click">Call +91 95551 56156</a>.
+          </p>
           <p className="biblio-line" style={{ marginTop: "16px" }}>
             Kairali Ayurvedic Group · New Delhi &amp; Palakkad, Kerala, India
           </p>
