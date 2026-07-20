@@ -11,7 +11,7 @@ export function GET() {
   const body = buildLlmsTxt(siteConfig, {
     name: "Bulk Ayurveda Products — a KAPPL manufacturing desk",
     summary:
-      "The manufacturing-partnership desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): private label, third-party and loan-licence manufacturing of Ayurvedic and herbal products, from formulation to dispatch. Project-enquiry based — no cart, no online checkout.",
+      "The manufacturing-partnership desk of Kairali Ayurvedic Products (KAPPL): private label, third-party and loan-licence manufacturing of Ayurvedic and herbal products, from formulation to dispatch. Project-enquiry based — no cart, no online checkout.",
     facts: [
       "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
       "Facility: Pollachi, Tamil Nadu — in-house laboratories, herb-extraction unit and R&D",

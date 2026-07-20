@@ -1,0 +1,28 @@
+CARD-4(b) T8 3-WAY CHECK — JUDGED DISPOSITION RECORD
+Date: 2026-07-20 ~17:18 IST · Authorization: D-20260720-25 fix 2 · Evidence: 2026-07-20-card4b-3way-{spec,gpt,ppx,evidence}.txt
+
+PERPLEXITY — FAIL(3) → ADVISORY, no changes:
+- "public materials use the full legal name, not the stripped brand form" → the ruling governs OUR
+  llms.txt surface, not public usage; its own evidence confirms KAPPL as the public acronym; the
+  brand line "Kairali Ayurvedic Products: WHO-GMP-certified manufacturing" already ships unflagged
+  in kairali.com/arogyakendra llms facts. Owner surface policy outranks (D-EXTREVIEW-OWNER-FACTS).
+- "llms.txt naming norm unverifiable externally" → correct and irrelevant: it is Kairali's own ruled
+  policy (DECISIONS.md ruling 14); the spec never claimed an industry standard.
+- "WHO-GMP unverified" → pre-existing copy outside (b)'s scope, already qualified "as published by
+  KAPPL" per the owned-claims register design; KAPPL's WHO-GMP status is a CLAUDE.md locked entity fact.
+
+GPT — FAIL(5) → 2 evidence-adopted, 2 adopted-as-checks, 1 widened, 1 rejected:
+- ADOPTED (evidence ×2): before/after grep of all 12 llms routes + emitter inputs (site.config.json,
+  packages/seo — zero legal-entity strings) + lint run + fixture-bound compliance suite 59/59 attached.
+- ADOPTED (emitter-input check): grep across every llms route AND its inputs — zero matches beyond the
+  two purged summaries. All 12 routes follow the app/llms.txt/route.ts pattern; the path-scoped rule
+  covers every one plus any future file whose path contains llms.txt.
+- ADOPTED (pattern widen): \bLLP\b added. Kept tight otherwise — the fleet's real legal names are the
+  Pvt. Ltd. forms; a broad "Ltd|Inc|GmbH" net would false-positive prose. Gates are added, not noisy.
+- REJECTED (owner sign-off on the brand form): the deep-review findings B-212/B-235 define the
+  violation class as the legal-suffix form; "Kairali Ayurvedic Products" is the established brand
+  rendering shipping fleet-wide (incl. CLAUDE.md's own entity line). No new owner ask needed — the
+  card IS the owner's authorization for exactly this purge.
+
+BOTTOM LINE: both violations purged (single-token, brand kept), zero legal-entity strings across all
+12 llms routes + inputs, recurrence guard armed and fixture-bound. The 3-way check is DONE for fix (b).

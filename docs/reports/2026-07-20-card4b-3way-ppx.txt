@@ -1,0 +1,28 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+Claim (1) that "Kairali Ayurvedic Products (KAPPL)" is a publicly used brand form for the manufacturing arm is **misleading**: public B2B materials consistently use the full legal name "Kairali Ayurvedic Products Pvt. Ltd." tied to the acronym KAPPL, and there is no evidence of a standard public pattern that drops "Pvt. Ltd." while keeping "(KAPPL)".[1][2][4] Claim (2) that it is a standard/accepted practice for "llms.txt" machine-facts files to carry brand names rather than legal entities is **unverifiable**, because "llms.txt" is an internal convention and no external standard or precedent could be found; it should be framed strictly as Kairali’s own policy, not a general norm. WHO-GMP association with KAPPL is also **unverified** in public sources and must not be asserted as fact. Overall verdict: FAIL, because key claims are misleading or unsupported for an audience validating Kairali’s B2B representations.
+
+claims checked: 5 | problems: 3
+
+[MISLEADING] (risk:medium) "Kairali Ayurvedic Products (KAPPL)" is a publicly used brand form for Kairali’s WHO‑GMP manufacturing arm, distinct from the full legal name "Kairali Ayurvedic Products Pvt. Ltd."
+   evidence: The KAPPL corporate site header and contact block identify the entity as "Kairali Ayurvedic Products Pvt Ltd. - KAPPL" with the legal suffix included.[1] The official product manual lists "Kairali Ayurvedic Products Pvt. Ltd" as the manufacturing unit under "Kairali Manufacturing" and then separately lists the website "www.kappl.co.in" among group properties, again tying KAPPL to the Pvt. Ltd. entity.[2] The Facebook page also uses "Kairali Ayurvedic Products Pvt Ltd" as the page name, reinforcing that the public-facing name actively includes the legal form.[4] No authoritative artifact found uses the exact pattern "Kairali Ayurvedic Products (KAPPL)" as a brand form.
+   correction: Authoritative public materials consistently use the **full legal name** "Kairali Ayurvedic Products Pvt. Ltd." and sometimes the acronym **KAPPL**, but they do **not** show a stripped brand form "Kairali Ayurvedic Products (KAPPL)" with the legal suffix removed as a standard public usage. The manufacturing arm is referred to as "Kairali Ayurvedic Products Pvt. Ltd" and associated with the domain kappl.co.in; KAPPL appears as an acronym tied to that legal entity, not as a separate brand name without "Pvt. Ltd.".
+
+[UNVERIFIABLE] (risk:low) It is standard/accepted practice that llms.txt-style machine-facts surfaces carry brand names rather than legal-entity names, with legal names reserved for imprint/terms surfaces.
+   evidence: Search results show no external documentation or standard defining "llms.txt" conventions or prescribing brand vs. legal-entity naming for such files. The only described rule comes from the internal DECISIONS.md excerpt in the artifact itself, which is not an external authority and therefore cannot serve as independent evidence.
+   correction: There is **no verifiable external standard** or industry-wide practice specifically about "llms.txt" machine-facts files using brand names rather than legal-entity names. "llms.txt" is an internal convention; how entities are labelled there is a matter of internal policy, not a demonstrable broader norm. Presenting this as standard practice beyond Kairali’s own rules is unsupported.
+
+[UNVERIFIABLE] (risk:medium) The Kairali manufacturing arm is WHO-GMP compliant, and this is associated with KAPPL.
+   evidence: The kappl.co.in brands page lists the entity and address but does not mention WHO-GMP.[1] The Kairali product manual lists "Kairali Ayurvedic Products Pvt. Ltd" as the manufacturing unit but does not reference WHO-GMP or WHO certification.[2] Other group coverage (e.g., Business Standard article) discusses revenue targets and growth but not manufacturing certifications.[3]
+   correction: WHO-GMP claims for Kairali or KAPPL cannot be verified from the provided search results; none of the accessible official documents or pages explicitly state WHO-GMP certification for Kairali Ayurvedic Products Pvt. Ltd. or for KAPPL. Any WHO-GMP assertion should be treated as unverified unless backed by an official certificate or regulator listing.
+
+DATA FAULTS:
+  ✗ Treating an internal naming rule for "llms.txt" as if it reflected an external or industry-wide standard without any supporting documentation. This conflates internal policy with broader practice and risks misleading validators who assume external precedent.
+  ✗ Assuming WHO-GMP status for Kairali’s manufacturing arm (KAPPL) without any verifiable certificate or official confirmation in accessible public sources.
+
+SOURCES (4):
+  - https://www.kappl.co.in/brands.aspx
+  - https://www.kairali.com/download/Product-Manual.pdf
+  - https://www.business-standard.com/companies/news/kairali-ayurvedic-group-eyes-rs-150-cr-revenue-by-fy26-with-organic-growth-124120100195_1.html
+  - https://www.facebook.com/kairaliayurvedicproductsindia/

@@ -1,0 +1,27 @@
+CARD-4(b) CHANGE SPEC — llms.txt legal-entity purge + lint row
+(D-20260720-25 fix 2; findings B-212/B-235; T8 3-way check at authorization)
+Date: 2026-07-20 ~17:15 IST · Session: erosion-wave · Stacked on CARD-4(a)
+
+RULING ENFORCED (DECISIONS.md ruling 14 + standing consequence, 17 Jul, Abilash):
+"llms.txt files carry brand/property facts, never legal-entity names — apply fleet-wide."
+(Entity names stay on genuinely legal surfaces. The hospitality llms.txt operator-entity
+clause was REMOVED by the owner's own hand — that is the precedent shape.)
+
+VIOLATIONS (fleet grep — the only two, both shipped 18 Jul by PR #159, one day AFTER the rule):
+- bulkayurvedaoils.com/app/llms.txt/route.ts:13 — summary "…desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): …"
+- bulkayurvedaproducts.com/app/llms.txt/route.ts:14 — summary "…desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): …"
+
+FIX (single-token, brand form kept — matches each file's own facts lines already using KAPPL):
+"Kairali Ayurvedic Products Pvt. Ltd. (KAPPL)" → "Kairali Ayurvedic Products (KAPPL)"
+
+RECURRENCE GUARD ("so it cannot recur" — the directive's own words):
+banned-string-lint rule `llms-legal-entity`, scoped to llms.txt route files (+ probe corpus):
+flags Pvt./Pvt Ltd/Private Limited legal-suffix forms in any app/llms.txt/ file.
+Violating + legitimate fixture corpus rows added (llms.txt/route.ts path-scoped fixtures) so the
+every-rule-exercised test binds it forever. Legal surfaces (about pages, terms) stay untouched
+and unflagged — the rule scope is the machine-facts file only, exactly the ruling's boundary.
+
+KEEP LIST: "KAPPL" alone everywhere (brand shorthand, used repo-wide incl. CLAUDE.md);
+"Kairali Ayurvedic Products" (brand name); about-page meta "The bulk-supply desk of Kairali
+Ayurvedic Products Pvt. Ltd. — …" (about = a genuinely legal/editorial surface, NOT llms.txt;
+out of the ruling's scope).

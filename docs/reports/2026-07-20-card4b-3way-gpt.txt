@@ -1,0 +1,75 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A fleet-wide purge of legal-entity names from llms.txt machine-facts files, plus a lint rule so the violation cannot recur.
+  for whom: AI crawlers consuming llms.txt; the owner enforcing the rule; auditors who must verify the rule is now mechanized with machine evidence.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: Only a narrative spec is provided. There are no diffs, no build artifacts, no CI logs, no linter output, no fleet grep evidence, and no output-level assertions that live llms.txt responses are clean. Auditors can’t verify; the owner can’t trust; crawlers may still ingest entity names if any path was missed.
+  they would think: Owner: This is words, not enforcement. Auditors: Unproven; scope under-specified; ambiguous brand/entity string retained; linter too narrow. Crawlers: Could still see an entity if output paths or variants were missed.
+  The proposal assumes dropping just the suffix is compliant and that scoping lint to app/llms.txt/route.ts is sufficient. Neither is proven; neither covers output. Evidence is required, not intentions.
+
+--- MY REASONING --- sound: false
+  FLAWED: Assuming a single-token suffix drop converts a legal-entity name into a permissible brand form without brand-policy proof.
+  FLAWED: Assuming KAPPL is safe for llms.txt because it’s used repo‑wide, not because the ruling allows it.
+  FLAWED: Scoping lint to app/llms.txt/route.ts assumes uniform pathing across the fleet and ignores output-level verification.
+  FLAWED: Relying on a prior 'hospitality precedent' without linking machine evidence or explicit applicability here.
+  ASSUMED (never reasoned): That 'Kairali Ayurvedic Products' is definitively a brand string distinct from the registered entity name.
+  ASSUMED (never reasoned): That keeping 'KAPPL' in llms.txt does not violate the spirit of 'never legal‑entity names'.
+  ASSUMED (never reasoned): That all llms.txt endpoints are emitted from Next.js app/llms.txt/route.ts across the fleet.
+  ASSUMED (never reasoned): That only Indian 'Pvt. Ltd.' variants need banning despite a fleet‑wide rule.
+  ASSUMED (never reasoned): That banning three literal variants catches case/spacing/punctuation/local‑language permutations.
+
+--- VS PRIOR --- better for audience: false
+  REGRESSION: No verifiable improvement: without code, tests, and logs, the violation may still be live and recurrence unguarded.
+
+Quality: unacceptable | expert would respect it: false | AI-filler risk: medium
+  weakest point: No machine evidence of enforcement and an unproven assumption that dropping the suffix makes the string a brand.
+
+Step — claimed: T8 · CARD-4(b) authorization | actual: Spec/proposal; no demonstrable code change or passing enforcement in CI; no output verification. | prereqs met: false
+  ORDER VIOLATION: Ruling enforcement claimed without machine evidence (diffs, CI runs, output checks).
+  ORDER VIOLATION: Lint rule described but not proven integrated with 'every-rule-exercised' harness.
+  ORDER VIOLATION: No brand-policy sign-off before deciding to keep 'Kairali Ayurvedic Products' and 'KAPPL' in llms.txt.
+
+MISSED STEPS (7):
+  [blocking] Machine evidence of code change (diff/commit/PR) and fleet grep proving only two violations existed and are now gone
+     evidence: Spec references PR #159 and two files but provides no diffs or grep output.
+  [blocking] CI proof that a new lint rule runs fleet-wide and fails on bad fixtures while passing on good ones
+     evidence: No CI job link, no test output, no rule ID in linter summary.
+  [blocking] Output-level test that fetches served llms.txt responses for all sites and scans for banned patterns
+     evidence: No evidence of runtime/output validation; only source-string lint is mentioned.
+  [major] Scope audit of all llms.txt emitters across frameworks/repos
+     evidence: Lint scope limited to app/llms.txt/route.ts; other locations (pages/api, static, serverless, public/llms.txt) unaddressed.
+  [blocking] Brand-policy confirmation that 'Kairali Ayurvedic Products' and 'KAPPL' are permitted in llms.txt
+     evidence: Spec asserts keep-list without owner sign-off or brand guidelines.
+  [major] Comprehensive banned-suffix pattern set and locale/case/punctuation robustness
+     evidence: Only 'Pvt./Pvt Ltd/Private Limited' mentioned; misses Ltd., Limited, LLP, LLC, Inc., GmbH, etc., and spacing/period/case variants.
+  [major] Purge check for adjacent entity signals in llms.txt (operator clauses, registrations like CIN/GSTIN, addresses embedding entity name)
+     evidence: No audit beyond two summary lines; no search for these patterns.
+
+NEEDS FACT-CHECK (3) → run audit-perplexity.mjs:
+  - Fleet grep — the only two violations were the ones cited.
+  - Hospitality precedent removed the entity clause and kept brand facts.
+  - KAPPL is an approved brand shorthand for llms.txt.
+
+BLOCKING (5):
+  ✗ No machine evidence that the two offending llms.txt sources were changed and deployed.
+  ✗ No CI/log proof that a lint rule exists, runs fleet-wide, and is bound by fixtures.
+  ✗ Ambiguity: 'Kairali Ayurvedic Products' may still be a legal-entity name; no owner sign-off that it is an acceptable brand form in llms.txt.
+  ✗ Lint scope likely misses other llms.txt emitters and does not check the emitted output.
+  ✗ Banned-pattern list is too narrow for a fleet-wide rule.
+
+RECOMMENDATIONS:
+  → Produce machine evidence now: link PR(s) with diffs for both files; attach rg/grep output before/after showing zero matches for legal-entity forms across the fleet; include commit SHAs.
+  → Add an output-level test: for every site, hit /llms.txt in CI (preview build) and fail if any banned pattern appears. Store logs/artifacts.
+  → Broaden lint scope: target any file that emits llms.txt (e.g., **/llms.txt*/**/*, pages/api/llms.txt.*, src/routes/llms.txt.*, public/llms.txt, serverless functions) and ensure monorepo/fleet coverage.
+  → Expand banned patterns with a case/space/punctuation-robust regex set for Indian and common global suffixes (at minimum: Pvt, PVT, Private Limited, Ltd, Limited, LLP, LLC, Inc, Co., Company, PLC; include dotted/undotted, spaced/unspaced, case-insensitive variants). Document why each is in/out.
+  → Decide the brand string with the owner: either (a) get explicit sign-off that 'Kairali Ayurvedic Products' and 'KAPPL' are permitted in llms.txt, or (b) switch llms.txt to an unambiguously brand-only string like 'Kairali' or 'Kairali Ayurveda' and drop KAPPL. Attach the approval to DECISIONS.md.
+  → Purge adjacent signals in llms.txt: remove 'operated by …' clauses, registration numbers (CIN/GSTIN), and addresses embedding the entity name. Prove via grep and output tests.
+  → Show the 'every-rule-exercised' proof: add bad and good fixtures, paste the linter summary with rule ID llms-legal-entity showing exercised lines, and a CI link where the rule both fails (on the bad fixture) and passes (on the repo).
+  → Add PR checklists and a pre-commit hook to run the llms.txt entity lint and the output fetch test locally to prevent regressions.
+  → Document the hospitality precedent with links, or stop citing it as justification.
+
+tokens: prompt 2289 · completion 6019 (reasoning 3776)

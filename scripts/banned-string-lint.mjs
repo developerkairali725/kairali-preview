@@ -463,6 +463,38 @@ export const RULES = [
       "© 1989–{new Date().getFullYear()} Kairali Ayurvedic Group.",
     ],
   },
+  {
+    id: "llms-legal-entity",
+    appliesTo: "both",
+    why:
+      "DECISIONS.md ruling 14 standing consequence (17 Jul, Abilash): llms.txt files carry brand/property facts, NEVER " +
+      "legal-entity names — entity names stay on genuinely legal surfaces. Breached the very next day: PR #159 shipped " +
+      "'Kairali Ayurvedic Products Pvt. Ltd.' in both bulk-site llms.txt summaries with no recorded exception " +
+      "(findings B-212/B-235, purged by CARD-4(b) / D-20260720-25 fix 2). This row is the 'so it cannot recur' half.",
+    scan: (ctx) => {
+      // SCOPE — the machine-facts surface ONLY: any file under an app/llms.txt/
+      // route (plus the probe corpus, whose synthetic <probe:…> file id carries
+      // no path). About pages, terms, imprints are genuinely legal surfaces and
+      // may print the registered name — flagging them would invert the ruling.
+      if (ctx.file && !ctx.file.includes("llms.txt") && !ctx.file.startsWith("<probe:")) return [];
+      /** @type {Hit[]} */
+      const hits = [];
+      ctx.lines.forEach((line, i) => {
+        if (/\bPvt\.?\s?Ltd\.?|\bPrivate\s+Limited\b|\bLLP\b/i.test(line)) {
+          hits.push({ line: i + 1, message: `Legal-entity name in an llms.txt machine-facts file. Ruling 14: brand/property facts only — write the brand ("Kairali Ayurvedic Products (KAPPL)"); the registered name lives on legal surfaces.` });
+        }
+      });
+      return hits;
+    },
+    probe: "The bulk-supply desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL)",
+    antiProbes: [
+      // The corrected brand form and the facts lines that were always legal.
+      "The bulk-supply desk of Kairali Ayurvedic Products (KAPPL): manufacturer-direct bulk supply",
+      "Manufacturer: KAPPL, Pollachi, Tamil Nadu — in-house laboratories and herb extraction",
+      "Certifications (as published by KAPPL): WHO-GMP, ISO, FSSAI",
+      "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------

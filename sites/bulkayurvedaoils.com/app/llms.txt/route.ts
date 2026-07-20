@@ -10,7 +10,7 @@ export function GET() {
   const body = buildLlmsTxt(siteConfig, {
     name: "Bulk Ayurveda Oils — a KAPPL supply desk",
     summary:
-      "The bulk-supply desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): manufacturer-direct bulk supply of classical Ayurvedic thailams, proprietary oils and therapy powders for spas, panchakarma centres, clinics and distributors. Quote-based B2B supply — no cart, no online checkout.",
+      "The bulk-supply desk of Kairali Ayurvedic Products (KAPPL): manufacturer-direct bulk supply of classical Ayurvedic thailams, proprietary oils and therapy powders for spas, panchakarma centres, clinics and distributors. Quote-based B2B supply — no cart, no online checkout.",
     facts: [
       "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
       "Manufacturer: KAPPL, Pollachi, Tamil Nadu — in-house laboratories and herb extraction",

@@ -1,0 +1,16 @@
+CARD-4(b) MACHINE EVIDENCE — llms.txt legal-entity purge (branch card4/llms-legal-entity)
+Generated: 2026-07-20 17:16:26 IST
+
+== BEFORE (main): legal-entity names in llms emitters ==
+sites/bulkayurvedaoils.com/app/llms.txt/route.ts:13:      "The bulk-supply desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): manufacturer-direct bulk supply of classical Ayurvedic thailams, proprietary oils and therapy powders for spas, panchakarma centres, clinics and distributors. Quote-based B2B supply — no cart, no online checkout.",
+sites/bulkayurvedaproducts.com/app/llms.txt/route.ts:14:      "The manufacturing-partnership desk of Kairali Ayurvedic Products Pvt. Ltd. (KAPPL): private label, third-party and loan-licence manufacturing of Ayurvedic and herbal products, from formulation to dispatch. Project-enquiry based — no cart, no online checkout.",
+
+== AFTER (working tree): legal-entity names in ALL 12 llms routes + their emitter inputs (site.config.json, packages/seo) ==
+(zero matches)
+
+
+PASS — 0 violations.
+
+ℹ tests 59
+ℹ pass 59
+ℹ fail 0
