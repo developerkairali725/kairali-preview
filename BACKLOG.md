@@ -162,3 +162,6 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   (pilot at Gurgaon Centre) → then the promised read-only reporting endpoint (msg 19f7a365247be568).
   M3 CRM integration targets the NEW platform, not the Sheets legacy. Chase only after rollout
   stabilizes — do not ping before (reconcile-before-chasing rule).
+
+- [ ] SCHEDULED (RPT-20260720-DEEPB, CARD-6 pending): fold the 32 P2 activation-proof findings into the Phase A critical-path step-3 activation ledger — list = findings index P2 section (docs/reports/2026-07-20-os-deep-review-b-findings-index.md); review_by 2026-07-24
+- [ ] SCHEDULED (RPT-20260720-DEEPB): records-hygiene batch for the 72 P3/unclassified findings — list = findings index P3 section; never blocking; review_by 2026-08-05

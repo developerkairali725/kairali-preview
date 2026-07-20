@@ -1,0 +1,45 @@
+gpt-5.6-sol counter-check of RPT-20260720-DEEPB (phase B owner-inputs review) —
+run 2026-07-20 ~15:50 IST via scripts/audit-gpt.mjs (--model gpt-5.6-sol;
+prompt 6,199 tok / completion 4,476). VERDICT ON DRAFT 1: FAIL — 6 blocking.
+ALL SIX ADOPTED; the committed report is the rewritten version (its appendix
+maps each adoption). This file records the check.
+
+BLOCKING (6):
+  1. Core evidence not supplied/inspectable — report leaned on an evidence JSON
+     absent from the review packet; owner asked to authorize from assertions.
+     → ADOPTED: evidence JSON (1.03MB, all 462 rows) + owner-readable findings
+       index (all 118, one line each) committed beside the report; reconciliation
+       table added up front.
+  2. Denominators don't reconcile (462 vs 430; status totals short; "3 FAILs"
+     unexplained). → ADOPTED: full per-dimension tables, each summing to 462;
+     432/32-row split explained (critic/remediation double-checks).
+  3. Two-class reduction not demonstrably lossless; "live findings"/"class 3"
+     ambiguity. → ADOPTED: explicit 127→54/64/9 and 118→4/10/32/69+3 ledgers;
+     §5 declared ADDITIVE meta-findings.
+  4. Dispositions bundle multiple independent decisions (branch sweep + ledger
+     recovery + PR #175 + D-RATE ruling in one row). → ADOPTED: six
+     one-decision cards; D-RATE isolated as its own substantive ruling (927/PDFS);
+     card 1 bounded with inclusion rule + machine-verifiable completion test.
+  5. 104 P2/P3 items buried as counts. → ADOPTED: per-item index file
+     (2026-07-20-os-deep-review-b-findings-index.md).
+  6. Promotional language ("near-perfectly", "almost nothing") hides the 28
+     non-PASS captures. → ADOPTED: §1 lists every non-PASS capture/understanding
+     row and the two incurred consequences (double-answered rate question;
+     cancelled delegation still directed).
+
+ORDER VIOLATIONS noted (reduction before corpus proof; dispositions before
+per-survivor exposure; waves before prerequisite rulings; counter-check not
+exposed) → all resolved by the rewrite structure (reconciliation first, index
+committed, D-RATE isolated as card 2, this file committed).
+
+ASSUMED-NEVER-REASONED list retained as review caveats in the evidence JSON
+method field (corpus completeness rests on the 8-slice enumeration + critic
+sweep; dedup ledger is the merged_items map in the evidence JSON).
+
+NEEDS-FACT-CHECK (5 items) → per the standing rule (Phase A precedent), the
+Perplexity leg runs at T8 authorization time: changes, not report prose, are
+what the 3-way rule gates.
+
+RECOMMENDATIONS 1-9: adopted as described above; rec-9 (bounded recovery sweep
+with branch inventory, cutoff, inclusion rule, completion test) became CARD 1
+verbatim.

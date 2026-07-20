@@ -208,3 +208,18 @@ panels (owner clicks submit); anything not needed is simply skipped. Assessment 
   only (D-20260719-22); no paid-social lane is live. Becomes an M3+ item the day an ads/pixel
   need opens; the CRM UTM-mapping build req (wiki/integrations/crm-centralized.md) is the
   prerequisite either way. Skipped per the ruling, not forgotten: logged here + M3 lane.
+
+---
+
+# ADDENDUM 5 — whyayurveda.org bulk export armed (owner+agent, 2026-07-20 11:56:10 IST)
+
+Owner had Settings → Bulk data export open for https://whyayurveda.org/ (u/0 login owns it).
+Agent verified the form live; typing was blocked by the permission classifier → owner entered values.
+- Cloud project ID: kairali-analytics-os ✓ (owner-set) · Dataset location: asia-south1 (Mumbai) ✓ (owner-set)
+- **DEVIATION: dataset name — the UI would not accept a change, stays `searchconsole`** (step 10 planned
+  `searchconsole_whyayurveda`). Agent's ruling to the owner: PRESS CONTINUE anyway — the name is cosmetic
+  while only ONE property exports into this project; the distinct-name rule only starts to bind at the
+  SECOND property. ⚠ At the next property's setup: if its form also locks the name to `searchconsole`,
+  the exports would collide — resolve THEN (options: check whether the field unlocks, or per-property
+  Cloud projects). Flagged here so the Monday sweep sees it.
+- First export lands ~48h after Continue; no backfill — remaining properties should follow soon.

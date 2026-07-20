@@ -16,19 +16,19 @@ and are NOT to be chased. Nothing is clubbed; tick each line separately.
 
 ## A. ABILASH — his own list (today first)
 
-- [ ] Approve PR #176 on GitHub (M3a seo-baseline — technical checks green since last night)
-- [ ] Review + merge PR #180 (hook layer resurrection + audit report)
-- [ ] Vercel: promote theblushlounge deployment `kfi5o3g1a` (public alias still serves the OLD build)
+- [x] ✔ DONE — PR #176 MERGED to main (ea6b85a)
+- [x] ✔ DONE — PR #180 MERGED to main (6707c55)
+- [x] ✔ DONE 20 Jul ~12:5x IST BY AGENT (D-20260720-17 click delegation): kfi5o3g1a promoted to Production (new dpl_5xTuSrpwe, READY; public alias verified pointing at the full-site build)
 - [ ] One word — Q-BAKEOFF-VERDICT: KEEP-NARROW / WIDEN / DROP (DataForSEO)
-- [ ] One word — Q-PYTHON-SECURITY-GUIDANCE: INSTALL / SKIP (security review needs Python 3.10)
+- [x] ✔ OBSOLETE 20 Jul — the update installed Python 3.12.13; hook fires + commit detection PROVEN. Live successor one-worder: Q-SECURITY-HOOK-CREDENTIALS — (a) ANTHROPIC_API_KEY env / (b) upstream issue / (c) both
 - [ ] One word — Q-AUDITORS-YML: RELAND / DELETE (orphaned CI gate, paid keys idle)
 - [ ] One word — Q-A13-REQUIRED-CHECK: GO (then one branch-protection click)
-- [ ] GCP billing identity verification + tax info (PAST DUE — links were given in chat 19 Jul)
+- [x] ✔ DONE 20 Jul (owner) — billing verify + payments settings submitted; profile "In review"; the 1-critical-alert chip = the pending verification itself, no further user action (machine-checked)
 - [ ] Create kairali-os-bot GitHub account + give repo write (kills the approve deadlock)
 - [ ] Q-CLASSMAP-UNKNOWNS — 4 one-worders (kairali.ai ×2, kairaliproduct.com, kairaliequipment.com)
 - [ ] evolution/channels.yaml — ratification word
 - [ ] READ Anupam's reply of 18 Jul 17:19 (UNREAD in inbox — status on the 3 open items)
-- [ ] kairaliequipment.com: review PR #131 (your own auto-merge fires on it) + promote `f3klajuzg`
+- [ ] kairaliequipment.com: review PR #131 (your own auto-merge fires on it) — AGENT HOLD on the f3klajuzg promote: that build is from the UNMERGED #131 branch (dirty tree); promoting before your review would publish ahead of the gate. Order: your review → merge → agent promotes a post-merge build
 - [ ] Villa Raag: feedback round + emblem SVG + Q-VR-DISTANCES one-worder
 - [ ] 15-min self-chase per RPT-20260720-CHASE (anything above still unticked by evening)
 
@@ -49,7 +49,7 @@ and are NOT to be chased. Nothing is clubbed; tick each line separately.
 - [ ] GTM container ID (asked in the same correction mail)
 - [ ] Answer the account-structure question (one GA4 property per site?)
 - [ ] The 11-URL list for the first whyayurveda.org content batch
-- [ ] Video transcripts (asked 18 Jul morning, no reply yet)
+- [x] ✔ RECEIVED 18 Jul 17:42 IST — Vikash sent them on a NEW thread "Author Transcript" (19f7524311376698, Gita + Abhishek + Abhilash Drive links) + Drive share "Abhilash Sir Transcription- 1.docx"; the 09:10 reconcile missed it because it was not a reply on the ask thread (phantom-pending). Author-voice ingestion queued
 - [ ] (joint with Sunaj) GA4 Admin grants — Section B items apply to him too
 
 ## D. SATYAM — dme@kairali.com
@@ -64,7 +64,7 @@ and are NOT to be chased. Nothing is clubbed; tick each line separately.
 
 ## F. AMBUJ — dme@kairaliproducts.com
 
-- [ ] Storefront API token — HIS OWN PROMISE was "before July 20th" = DUE TODAY (his 17 Jul reply)
+- [x] ✔ DELIVERED 20 Jul 10:21 IST, half-defective — .in token VALID; .com token is an ADMIN token (shpat_, sent over plain email, against the explicit ask). RESOLVED 20 Jul ~11:50 IST: owner sent the rotate mail; Ambuj revoked the admin token (dead) + issued a proper read-only Storefront token for .com (thread 19f704a636f7debb). BOTH stores now have valid tokens — Track B microsites lane UNBLOCKED (tokens go to Vercel env only, never the repo)
 
 ## G. ABHISHEK + GAURAV — abishek@kairali.com / ops@kairalicentres.com
 
@@ -88,7 +88,7 @@ and are NOT to be chased. Nothing is clubbed; tick each line separately.
 
 ## J. DR. DEEPU JOHN (chief physician — via Abilash, never direct)
 
-- [ ] 8 clinical clusters from the KTAHV LP battery await sign-off (HARD GATE 7)
+- [x] ✔ SENT 20 Jul 11:54 IST — plain-English 8-point sign-off request emailed DIRECTLY to doctor@ktahv.com per D-20260720-15 (routing change: owner granted direct-send for doctor approvals; msg 19f7e32b1784b0cf, CC ea.abhilash@). Now awaiting Dr. Deepu John's one-email reply
 
 ## K. PARKED (do not chase)
 

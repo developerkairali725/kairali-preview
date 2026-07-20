@@ -1,0 +1,47 @@
+
+=== PERPLEXITY FACT AUDIT (pass 2) — FAIL ===
+
+For the non-technical owner deciding DataForSEO’s role, the key factual issues are:
+
+• The internal bake-off numbers (3–39% coverage vs GSC and 4–7× ETV overstatement) are **not corroborated by any external, authoritative source** on DataForSEO’s behaviour. They likely reflect specifics of your comparison setup (16‑month, all‑geo GSC vs single‑geo vendor snapshot; how ETV was defined and joined) rather than a universal vendor limitation. Treating them as general truths is UNVERIFIABLE and a data fault.
+
+• It **is** well-supported that GSC is the best available ground truth for your own site’s recorded clicks/impressions, and that third‑party tools like DataForSEO work on modelled samples and should not be used for absolute totals. GSC also has significant blind spots at the query dimension (50k/day limits, privacy sampling, 16‑month retention), so its query exports are themselves incomplete and should be treated as a sample.
+
+• DataForSEO’s public positioning and independent guides describe a very large keyword corpus (~4.8B) and ~85–90% coverage of commercially actionable queries in major English/EU markets. That is inconsistent with the bake-off’s 3–39% coverage if interpreted as a general statement about query coverage. The bake-off is measuring something narrower and more idiosyncratic.
+
+Given these facts, the safest recommendation for the business owner is:
+
+**KEEP-NARROW.** Use GSC/GA4 as the primary measurement spine for your own sites’ performance and treat GSC query data as a sample with known limits. Use DataForSEO narrowly for what GSC cannot do: live SERP checks, competitor visibility, backlink data, and keyword discovery. Do **not** consolidate on DataForSEO for core performance reporting or totals, but also do **not** overgeneralise the internal bake-off ratios as inherent vendor flaws.
+
+This balances cost sanity with factual honesty: GSC remains the baseline; DataForSEO is a targeted, PAYG add-on, and any future widening should be based on a more rigorously designed, externally benchmarked bake-off rather than the current unverified ETV and coverage metrics.
+
+claims checked: 6 | problems: 2
+
+[UNVERIFIABLE] (risk:medium) DataForSEO’s measured coverage vs GSC in the bake-off is 3–39% of GSC clicks, and its Estimated Traffic Value (ETV) runs 4–7× over GSC actuals; therefore GSC should remain ground truth and DataForSEO should be kept narrow.
+   evidence: DataForSEO’s own marketing and independent reviews describe a corpus of ~4.8B keywords and claim ~85–90% coverage of commercially actionable queries in major English/EU markets, which is inconsistent with a systematic 3–39% coverage vs GSC if the comparison were apples-to-apples.[6] Studies like ZipTie’s and 3L3C’s analysis show GSC query data can itself miss 50–75% of total queries/clicks due to privacy thresholds and sampling, meaning GSC is not a full population baseline.[4][9] Practical SEO guides emphasize GSC as the best available ground truth for *relative* performance but still note truncation limits (50k rows/day via API, 16‑month retention) and sampling issues.[2][8] None of these sources report third‑party tools over‑stating traffic 4–7× vs GSC; typical discrepancies are smaller and directionally opposite (vendors often show fewer clicks than GSC).[8]
+   correction: Most vendor-vs-GSC studies and tool comparisons show that (1) **GSC itself under-reports queries and clicks at the query dimension**, and (2) third‑party tools like DataForSEO/Semrush/Ahrefs generally report *lower* total traffic than GSC, not 4–7× more.[4][8][9] The extreme ETV multipliers (especially the ~150–180× on kairali.com) are almost certainly an artifact of how ETV was defined or joined to GSC data in this internal bake‑off – not how DataForSEO’s traffic estimation behaves in the wild. Without independent replication or a transparent ETV formula, treating 4–7× as a vendor bias is UNVERIFIABLE. The coverage numbers (3–39% of GSC clicks covered as queries) are plausible for a **single-geo snapshot vs 16‑month all-geo GSC export**, but they don’t directly measure DataForSEO’s global keyword corpus coverage or its suitability as a discovery tool.[2][4][6][8]
+
+[MISLEADING] (risk:medium) DataForSEO has partial query coverage relative to Google Search Console (GSC), so consolidation on DataForSEO as the single measurement spine is not justified; it should be kept narrow for backlink graph, keyword discovery, competitor visibility.
+   evidence: Tool‑comparison content clearly positions GSC as the better source for organic performance analysis and DataForSEO (and similar SERP APIs) as better for live ranking checks and cross‑domain data.[1] The GSC API guide documents hard limits: 50k rows/day per property and 16 months of retention.[2] Analytical articles show GSC can miss up to ~50–75% of queries/clicks at the query dimension due to privacy thresholds, and explicitly recommend treating GSC query exports as a *sample*, not the full population.[4][9] This means neither GSC nor DataForSEO has ‘complete’ query coverage; they are complementary slices. Guides for practitioners emphasize using GSC as the reference for real ranking impact and pairing it with other tools for blind spots.[8]
+   correction: It is **supported** that DataForSEO and GSC see different subsets of queries and that GSC is closer to Google’s actual recorded clicks/impressions, so GSC remains the primary ground truth for *your own* site’s performance.[1][2][8] It is also reasonable to limit DataForSEO to use‑cases GSC cannot cover (live SERP checks, competitor domains, backlink data). However, claiming that DataForSEO has fundamentally ‘partial query coverage’ vs GSC, in a general sense, is MISLEADING: the tools measure different things under different constraints, and GSC itself has substantial blind spots at the query dimension.[2][4][9] A more accurate framing is: **GSC is the authoritative source for your site’s recorded performance; DataForSEO is a modelled, sample‑based view useful for discovery and competitive intelligence, not for totals.**
+
+⚠ FABRICATED / MISREPRESENTED SOURCES:
+  ✗ No specific external study or source was cited for the internal bake-off’s 3–39% coverage and 4–7× ETV multipliers; they appear to come entirely from local tooling and were treated as general truths about DataForSEO’s behaviour without external validation.
+  ✗ The claim that DataForSEO’s ETV tends to overstate traffic 4–7× vs GSC lacks support in vendor documentation or independent comparisons; available sources instead describe ETV/traffic metrics as modelled estimates without indicating such systemic, large-scale overstatement.
+
+DATA FAULTS:
+  ✗ The internal bake-off’s ETV/actual ratios (e.g., 4–7× on big properties and ~150–180× on kairali.com) are extreme and inconsistent with how third‑party SEO tools generally diverge from GSC; without a published ETV formula and external replication, treating these multipliers as a true measure of DataForSEO bias is a data fault rather than a world fact.
+  ✗ The reported 3–39% ‘coverage’ vs GSC clicks conflates multiple dimensions (16‑month all‑geo GSC vs single‑geo vendor snapshot; query-level vs page-level; tool sampling) and cannot be generalised to DataForSEO’s global query corpus without additional evidence. It should not be used as a canonical coverage percentage for strategic vendor decisions.
+
+SOURCES (11):
+  - https://top-mcps.com/compare/dataforseo-vs-google-search-console
+  - https://rankstudio.net/articles/en/pdfs/google-search-console-api-guide.pdf
+  - https://www.reddit.com/r/bioinformatics/comments/p2vs6i/can_someone_briefly_explain_to_me_what_the/
+  - https://news.opositive.io/google/google-search-console-misses-half-of-search-queries/
+  - https://pmc.ncbi.nlm.nih.gov/articles/PMC3867762/
+  - https://nextgrowth.ai/dataforseo-api-guide/
+  - https://improvado.io/blog/seo-analytics-guide
+  - https://ighenatt.es/en/blog/google-search-console-practical-guide/
+  - https://www.3l3c.ai/blog/smb-content-marketing-united-states/gsc-missing-data-fix
+  - https://www.wix.com/seo/learn/resource/google-search-console-for-keyword-research
+  - https://www.biostars.org/p/180510/

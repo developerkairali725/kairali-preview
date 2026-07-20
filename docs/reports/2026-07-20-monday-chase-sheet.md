@@ -88,3 +88,13 @@ Deadline he already holds: **TODAY EOD** (your 19 Jul HIGH-PRIORITY mail + clari
 - Gaurav's read endpoint (waits for their rollout — date only, item 5).
 - Site promotes / Villa Raag feedback / Instagram re-mine — site lane, frozen until the M4 pilot.
 - GitHub Actions budget at 75% — watch, no action yet.
+
+---
+
+## MAILBOX RECONCILIATION — 2026-07-20 11:31:43 IST (mid-morning update, D-20260720-09/-10)
+
+**Item 9 Ambuj — Storefront tokens: DELIVERED, half-defective.** Reply 20 Jul 10:21 IST (thread 19f704a636f7debb, msg 19f7ddd80bd299da) carries both stores' tokens. The **.in token is valid** (proper Storefront format — goes to Vercel env, never the repo). The **.com token is an ADMIN API token (shpat_ prefix)** — exactly what the ask said not to send: it cannot work in the Storefront header AND it is full-write access exposed over plain email. **Reply draft in director@ (r-2425061058603262229): revoke/rotate first, then issue the real Storefront token — owner clicks send.** Registrar sheet + GSC DNS records (Q-GSC-COVERAGE) remain open with Ambuj.
+
+**Item 2 Vikash — GA4 correction still unanswered** as of this check (thread 19f7550795ad2d32; last message = owner's 19 Jul 17:18 IST three-fix correction). Chase stands. **Transcripts: DELIVERED 18 Jul** — "Author Transcript" thread 19f7524311376698 (Gita Ramesh + Abhishek + Abhilash, Drive links) + Drive share "Abhilash Sir Transcription- 1.docx"; already captured in PR #121; author-voice ingestion queued behind the OS deep-review lane.
+
+**Owner self-items — billing: DONE (owner word, this session).** GCP billing verify + payments.google.com settings both completed. Payments profile 8749-4151-4001 ("Kairali Ayurvedic Group", Organization/India) now shows **In review**; the "1 critical alert" chip is the pending business-identity verification — machine-checked in the payments center this session: **no user-fixable item behind it**; it should clear when Google's review completes. If Google needs documents it emails director@; only chase if the alert survives 3–5 business days. GCP-console detail sits behind a password re-auth (owner-only).
