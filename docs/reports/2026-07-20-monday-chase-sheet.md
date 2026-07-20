@@ -115,3 +115,25 @@ Today's replies overturn most of the sheet. **Still live chases: Shadab (item 3,
 8. **Deepu — audit round 2 status (18:22 IST)**: items 2 (footer socials placeholder), 4 (/testimonilas/ redirect), 6 done per his list; tech check of the 8 Vercel previews STARTED (16:01 IST). His AHV fixes wait on the staging answer (see item 1).
 
 Routine ops mail (weekly consultation report · KTAHV daily sales · Riya AI daily) noted, not chase items.
+
+## NIGHT RECONCILE 2 (2026-07-20 22:40:00 IST — one-worders/access-verify session; corrects the evening section)
+
+1. **Satyam (item 4) — WAS NEVER SILENT: evening sheet WRONG.** Two substantive replies landed midday,
+   unread at evening reconcile time: **CRM read access DELIVERED** (12:38 IST — GET /api/leads +
+   /api/conversion on kairali-group-crm.vercel.app, full lead schema incl. all five utm_* + gclid/fbclid
+   + landingPage, IVR record shape with sr_number as source key, qualification enum
+   Pending/Qualified/Non-Qualified, conversion response structure) and **FORMS RULING (b)** (12:45 IST):
+   preview sites must NOT go live without a CRM-integrated enquiry form — a new ship-gate input for all
+   8 previews. Chase CLOSED by answer. **CRITICAL SECURITY FINDING (agent, ~22:25 IST): both endpoints
+   answer HTTP 200 with NO authentication — /api/leads returns real customer PII (verified minimally,
+   first 200 bytes only). Lock-it reply DRAFTED for owner send; do not wire reporting against these
+   until locked + re-verified from outside.**
+2. **Sunaj (item 1) — GSC half CLOSED (claim TRUE, 5/5 verified on-screen); GA4 9/16 after the agent
+   executed 3 grants in the owner's Chrome (D-20260720-37).** Remainder rides the drafted follow-up:
+   robot Viewer ×5 + TASK-2 CLOSE proposal (7 UA shells + gtempaccount/personal-gmail hygiene).
+   Full evidence: RPT-20260720-ACCESS-VERIFY.
+3. **Vikash (item 2) — CLOSED by answer + owner one-worder ACCEPT-STREAM-NAME (D-20260720-36).**
+4. **Shadab (item 3) — the ONLY live silence** (2 days, pilot blocker). Deadline chase DRAFTED
+   (Tue 21 Jul 12:00 noon, unblock-offer included).
+5. Three Gmail drafts staged for owner review/send: Shadab chase · Satyam thanks + URGENT lock ·
+   Sunaj follow-up.

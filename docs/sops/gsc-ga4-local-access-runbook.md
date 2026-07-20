@@ -327,3 +327,21 @@ step 11) once tables exist — M3.
    appears on BOTH logins (exported once, from u/0).
 4. The form's first fill attempt right after page load is sometimes swallowed — fill, VERIFY the
    zoomed fields, and refill once if blank (took one retry on 3 of 7 properties).
+
+# ADDENDUM 9 — kairalicenters.com bulk export ACTIVE: fleet 9/9, one region (2026-07-20 ~22:05 IST)
+
+**"Setup completed successfully / Bulk automated export will start in the next 48 hours" read
+on-screen.** Property `sc-domain:kairalicenters.com` (u/1 director@ — delegated owner, granted
+by Gaurav's lane 11:20 IST in writing, verified on the same settings page) now exports to
+**kairali-analytics-os · Mumbai (asia-south1) · `searchconsole_kairalicenters`**. With the
+addendum-7/8 eight, that is **9 of 9 fleet properties exporting to one region, one project**.
+No backfill; kairalicenters' history clock starts today.
+
+**TRAP TRUTH-UP (amends the addendum-8 "illusion" diagnosis):** the dataset-name field can
+REALLY double-prefix, not just apparently. Typing the full `searchconsole_kairalicenters` into
+the field produced a review dialog showing `searchconsole_searchconsole_kairalicenters` — a
+REAL wrong name, not a scroll artifact. Correct fill = **the suffix only** (`kairalicenters`);
+the form prepends `searchconsole_` itself. The two diagnoses coexist: the visible in-field text
+garbles harmlessly (addendum 8), AND full-name input double-prefixes for real (this session).
+Both resolve the same way, which is why the standing law stands: **fill, then trust ONLY the
+review dialog — Set up export only when the dialog shows the exact target name.**
