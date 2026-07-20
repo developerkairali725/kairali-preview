@@ -380,12 +380,15 @@ test("gates/class-map.yaml passes against the real gates/registry.yaml", () => {
     assert.ok(registryIds.has(id), `B5 gate ${id} missing from the real registry`);
     assert.ok(triggered.has(id), `B5 gate ${id} not carried by any real trigger`);
   }
-  // the flagged guessed defaults are gone: kairali.ai + the two locale guesses
+  // the owner-ruled values stand (D-20260719-33 b1-b4, PR #175 absorbed per
+  // CARD-3): zero unknown dimensions remain in the real map
   const prop = (d) => doc.properties.find((p) => p.domain === d);
-  assert.equal(prop("kairali.ai").business_model, "unknown");
-  assert.equal(prop("kairali.ai").locale_market, "unknown");
-  assert.equal(prop("kairaliproduct.com").locale_market, "unknown");
-  assert.equal(prop("kairaliequipment.com").locale_market, "unknown");
+  assert.equal(prop("kairali.ai").business_model, "internal");
+  assert.equal(prop("kairali.ai").locale_market, "en-in");
+  assert.equal(prop("kairaliproduct.com").locale_market, "en-global");
+  assert.equal(prop("kairaliequipment.com").locale_market, "en-global");
+  for (const p of doc.properties)
+    for (const v of Object.values(p)) assert.notEqual(v, "unknown");
 
   // reference resolver against the REAL map: a forms change on a real property
   // pulls forms-crm-parity + consent-mode in; an unmapped diff fails closed
@@ -395,6 +398,8 @@ test("gates/class-map.yaml passes against the real gates/registry.yaml", () => {
   assert.ok(formsChange.gates.has("forms-crm-parity") && formsChange.gates.has("consent-mode"));
   const mystery = resolveChangeGates(blush, { paths: ["scripts/new-mystery-surface.mjs"], kinds: [] }, doc, reg);
   assert.equal(mystery.failClosed, "unmatched_change");
-  const unknownProp = prop("kairali.ai");
+  // fail-closed law on unknown dims stays tested via a SYNTHETIC clone — the
+  // real map has zero unknowns since D-20260719-33 and must stay that way
+  const unknownProp = { ...prop("kairali.ai"), locale_market: "unknown" };
   assert.equal(resolveChangeGates(unknownProp, { paths: ["content/x.md"], kinds: ["content-only"] }, doc, reg).failClosed, "unknown_dimension");
 });

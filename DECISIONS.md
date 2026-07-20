@@ -532,3 +532,50 @@ Marketing coverage split, stated while filling the Gate B email recipient: **Anu
 - D-VETO-WAIVED-18JUL: the overnight veto window for tonight's Tier-2 batch is WAIVED — golden-page builds start immediately for: ayurvedafranchise, kairaliequipment, villaraag, kairaliorganic, theblushlounge, bulkayurvedaoils, bulkayurvedaproducts, ktahv-lp-batch (golden LP panchkarma). kairbykairali waits on its design rework; kairalicenters stays in the Monday rebuild wave. Owner's framing on record: multiple humans still check everything before live — the agent is the medium making ideation→design→implementation→deployment→maintenance fast.
 - Gate rows for the above are SIGNED by the agent citing D-AUTOMERGE-TIERS + this waiver + each site's dual-AI evidence path.
 - Owner CONFIRMED both Gmail drafts SENT (Astha/Anupam canonical socials; Vikash GA4/GTM) — reply-tracking joins the mailbox round.
+
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 5d7d59c (fix/canonical-centres-count, PR #87 squash-strand); text VERBATIM from the stranded commit
+## 2026-07-17 11:51:55 IST — Abilash, Session-2A closeout rulings (in-chat, four decisions)
+- **D-KC-DOMAIN: canonical spelling = the live site's = kairalicenters.com** (American), for the rebuild AND for email going forward. Machine-verified 17 Jul 11:48 IST: https://kairalicenters.com/ serves HTTP 200 (www 301s to apex); kairalicentres.com serves NO website (no HTTP response) but DOES carry Google-Workspace MX records — today's centre mailboxes (delhi@kairalicentres.com etc., mined verbatim into @kairali/facts) are real and stay as printed contact facts until the team actually provisions @kairalicenters.com addresses (rule 6: we print what exists, not the intent). Q-KC-DOMAIN CLOSED.
+- **D-RATE-927: the published PDF is the source of truth for rates — the $927 Yoga 26-27 SUITE double-occupancy cell STANDS, use as-is.** Q-RATE1 CLOSED; RATES_RECKONER flag updated this commit. (Q-RATE2 missing-Sanskrit-table and Q-RATE3 validity-overlap were NOT part of this ruling and stay open.)
+- **D-PHASEA-COUNT-SUPERSEDED: the Phase-A legacy "25 Centers Worldwide" delegation fix-list (Session-2A step 6) is CANCELLED — do not delegate.** The legacy sites' count claims die with their rebuilds/forwards; the fix lands with each rebuild instead of as team edits. Caveat on record (pushback duty, not re-litigation): keralaequipments.com rides the HELD equipment track with no scheduled rebuild, so it is the one surface whose "25 Centers" claim has no dated path to correction — it now simply waits for that track to resume.
+- **D-SHIP-INTL: kairaliproducts.com international shipping = ESHOPBOX too** — Eshopbox's international tie-ups (DHL, FedEx) auto-select the better carrier per shipment. With .in = Eshopbox (Sunaj, 14 Jul 16:55), **Wave-1 shipping is fully settled, both stores**; SHOPIFY_TRACK_CONTEXT §9B blanks filled this commit. The KAPPL shipping/policy-page blocker is CLOSED.
+- **CARD-2 CONTRADICTION NOTE (2026-07-20):** D-RATE-927 above conflicts with D-RATE-PDFS (18 Jul, on main: $927 cell = possible typo, PARKED). Which stands is the owner's pending CARD-2 one-worder — NOTHING publishes from either rate record until ruled.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 07ca80e (docs/sweep-rulings-cont, PR #143 strand); text VERBATIM from the stranded commit
+## 2026-07-18 18:55:33 IST — Abilash, design-review policy + follow-on rulings (in-chat)
+- D-EXTREVIEW-OWNER-FACTS (closes the franchise lane's Q): OWNER-CONFIRMED FACTS ARE AUTHORITY in external AI design reviews. Every review run attaches a canonical facts sheet (relevant DECISIONS rulings + @kairali/facts); reviewer doubt on owner-confirmed facts is ADVISORY, never a blocking FAIL; the owner's signature remains the deciding judgment. Build item queued: design-review.mjs auto-attaches the facts context (the centers lane's context-rulings file is the template).
+- D-EQ-PASS4 (closes Q-EQ-DESIGN-GATE, owner option c): equipment runs pass 4 with the WhatsApp count FIXED at exactly two placements (hero primary + sticky mobile utility bar, none in header — the centers-lane pattern), full ruling context fed.
+- D-KC-HEADLINE: centers signature h1 = "One family tradition" (true across all 14 incl. the six franchise partners); "physician-led" claims scope to OWNED centers only.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan f842e83 (docs/sweep-rulings-cont; stamp later corrected to ~18:46 by 0bcf25d); text VERBATIM from the stranded commit
+## 2026-07-18 19:40:00 IST — Abilash, Villa Raag reviewer-flag rulings (in-chat)
+- D-VR-CTA: "Book Your Stay" is the PRIMARY sitewide CTA (direct into the live booking engine); Enquire is secondary.
+- D-VR-SESSIONS: one-on-one practice is the default story; a truthful "group sessions can be arranged if booked" note is CORRECT — manual's "every practice is one-on-one" line gets a small errata (route to the manual owner), site copy reflects both.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 65de1bb (governance strand — THE defining text of D-AUTOMERGE-TIERS that three lanes could not find); text VERBATIM from the stranded commit
+## 2026-07-18 19:25:40 IST — Abilash, APPROVAL AUTOMATION ruling (D-AUTOMERGE-TIERS; amends the merge practice under HARD GATE 9; directives D-20260718-18/-19)
+- TIER 1: technical/docs PRs AUTO-MERGE on all-green checks — the owner's merge click is retired for them. (Deferred majors #9–#12 stay excluded.)
+- TIER 2: brief + strategy gates AUTO-APPROVE once BOTH external AI reviewers pass the artifacts; owner receives a summary; OVERNIGHT VETO window (silence = approved; any objection reverses before build).
+- GOLDEN PAGE: autopilot with the same overnight-veto pattern — the rendered picture is sent; silence = approved.
+- MONEY/LEGAL WORDING: ALSO autopilot with AI screens + loud summaries — the owner chose this EXPLICITLY AGAINST the coordinator's recorded advice (GST/DMR liability rests with the owner).
+- UNCHANGED: Dr. Deepu John's clinical sign-off for KTAHV medical content (HARD GATE 7 — a physician's professional gate, not the owner's tap); the owner's go-live word; DNS flips human.
+- Scoped-feedback rule (D-18): every external AI review request names its ONE feedback type (design / keywords / content) — generalistic feedback is a prompt defect.
+- Mechanisms: repo allow-auto-merge + approvals-count-zero (owner flips the two GitHub toggles); lanes enable auto-merge at PR creation; rulebook amendment v1.13 + front-gate signing-flow update to land as their own PR.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 23f29d1 (feature/go-science-gate strand); text VERBATIM from the stranded commit
+## 2026-07-18 19:56:10 IST — Abilash, GO-science gate (in-chat, final directive of the session)
+- D-GO-SCIENCE-GATE: "What would Akshar say?" becomes a SHIP GATE, not just a build-time guideline (extends D-AKSHAR-ROLE): every site/LP, organic AND Shopify class, is checked for GO-science conformance (MCB + MOA per docs/marketing/go-science/) during build AND as a final pre-ship pass; a FAIL means the content is rebuilt/refixed, never shipped around. Registry row + audit mechanism to land as their own PR; tonight's golden-page lanes apply it in-flight.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan a8cad42 (same strand — the phone amendment (content AND look, ROI key metric)); text VERBATIM from the stranded commit
+## 2026-07-18 19:58:22 IST — Abilash, GO-science gate AMENDED (in-chat, from his phone)
+- D-GO-SCIENCE-GATE amendment: the conformance check covers CONTENT AND LOOK — the page must be PSYCHOLOGICALLY ATTRACTIVE to its MOA (awareness-stage audience), visually and structurally, not just copy-conformant. ROI IS THE KEY METRIC — the audit judges every element (visual hierarchy, imagery, CTA psychology, trust signals) by whether it converts the MOA audience, per docs/marketing/go-science/. Applies to the audit tooling AND tonight's in-flight self-checks.
+
+## 2026-07-20 16:5x IST — D-RATES-V2 (CARD-2 RESOLVED BY SUPERSESSION — Abilash + Anupam's files)
+Owner shared Anupam's updated rate files in-chat ("I shared the updated rates ... so this should fix
+this issue"): KTAHV Ayurveda Training Courses V2 (w.e.f. 1 Oct 2026, per-night villa pricing) + the
+Delhi-centre training price page. The old $927 Yoga-suite cell does not exist in the V2 structure —
+**D-RATE-927 and D-RATE-PDFS are BOTH superseded; the CARD-2 one-worder is closed without picking a
+side.** Rates source of truth for training products = docs/ktahv-inputs/rates/ (transcription +
+SHA-pinned binaries). Flags for Anupam on record there (USD($g) typo; Delhi file lacks a validity
+window). Nothing publishes without the standing gates.

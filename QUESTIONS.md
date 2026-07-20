@@ -567,3 +567,27 @@ prep the exact context name + verify after your click.
 - SECONDARY (same silent-failure class as RPT-20260720-SILENT): the hook's git-baseline leg runs with cwd=~/Claude (session launch dir, not a repo) → "Failed to capture git baseline" on every UserPromptSubmit; commit REVIEW still works because it parses the command, but per-session baseline diffing never activates.
 - ONE-WORDER OPTIONS: (a) set ANTHROPIC_API_KEY in the hook's env so the LLM review leg goes live — OWNER WORD needed (separate API billing vs the Max plan); (b) file the issue upstream on the security-guidance plugin (honor CLI OAuth session / document the env requirement) and accept log-only until fixed; (c) both. 
 - **ANSWERED 2026-07-20 12:42:46 IST — Abilash ruled (a): dedicated API key.** Key created by owner, stored owner-hands via helper script (agent-side writes classifier-blocked, correctly): ~/.secrets/anthropic-hook.env (0600) + ~/.claude/settings.json env (hook processes inherit it) + customApiKeyResponses.rejected guard (main session stays on Max-plan OAuth billing). ACTIVATION PROOF PENDING next session restart (registration != activation) — first commit of the next session must show a real LLM review in ~/.claude/security/log.txt. Upstream issue (option b) NOT filed — owner chose (a) only.
+
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan 5d7d59c (fix/canonical-centres-count); text VERBATIM from the stranded commit
+## 2026-07-17 11:51:55 IST · Session-2A closeout — four Abilash rulings recorded (details in DECISIONS.md same stamp)
+- **Q-KC-DOMAIN CLOSED:** canonical = kairalicenters.com (live-site spelling, verified: -centers serves HTTP 200; -centres has no website but live Google MX — current mailboxes remain real facts until migrated).
+- **Q-RATE1 CLOSED:** $927 stands (published PDF = source of truth). **Q-RATE2 and Q-RATE3 remain open** — not covered by this ruling.
+- **Phase-A "25 Centers" delegation fix-list SUPERSEDED** (no delegation; fix rides each rebuild/forward). Open tail: keralaequipments.com sits on the HELD equipment track — no dated rebuild, claim persists until that track resumes.
+- **KAPPL shipping fully settled:** Eshopbox on BOTH stores (.in per Sunaj 14 Jul; .com international via Eshopbox's DHL/FedEx tie-ups, auto carrier selection). The long-standing "shipping platform names" ask (3× in the runbook/report) is CLOSED.
+
+## RECOVERED — relanded 2026-07-20 per CARD-1 (D-20260720-22) from orphan bc7a26f (docs/sweep-rulings-cont); text VERBATIM from the stranded commit
+## 2026-07-18 18:48:10 IST · Q-VR-MANUAL-ERRATA-SESSIONS — Villa Raag manual ch.01/ch.08 "every practice is one-on-one" needs a small errata
+Found via the GATE-1 external review (Perplexity pass-2 flag) and RULED same evening (D-VR-SESSIONS, DECISIONS.md entry stamped 2026-07-18 19:40:00 IST, docs/sweep-rulings-cont): **one-on-one practice is the default story AND a truthful "group sessions can be arranged if booked" note is correct** — the live site's /inclusions ("seasonal retreat workshops & group sessions, if booked") and the manual's absolute "every practice is one-on-one" (ch.01 brand statement; ch.08 voice) cannot both stand unamended.
+- **Site copy is settled by the ruling** (applied: launches/villaraag.com/design-source/ hero + STRATEGY §4): default-story wording + the truthful note; the absolutist "every" is not used.
+- **The manual line itself is a MANUAL defect** → routed OUT of the engineering lane exactly like Q-INK-INCONSISTENT: errata note for the manual owner's next revision, carried by **Ritu (EA)** — delegation note DRAFTED in docs/delegation-log.md (draft-only rule; owner sends). The agent does not edit the manual's text layer (VERBATIM, immutable) and does not silently contradict it — the ruling is the recorded authority for the deviation.
+- **Do not re-raise as an engineering question.** Payoff when the errata lands in a manual revision: the faithfulness ledger's deviation note collapses back to "verbatim".
+
+## ABSORBED per CARD-3 (owner APPROVE, 2026-07-20) from PR #175 (ops/owner-rulings-20jul); text VERBATIM (entry chronologically 2026-07-20 00:50 IST, appended at tail per append-only law)
+## 2026-07-20 00:50:00 IST — Q-CLASSMAP-UNKNOWNS: ANSWERED by owner in-chat (D-20260719-33)
+All four ruled: kairali.ai business_model = internal (enum extended) · kairali.ai locale_market =
+en-in ratified · kairaliproduct.com = en-global (English-speaking EXCLUDING India — ex-India claims
+register) · kairaliequipment.com = en-global. gates/class-map.yaml updated, zero unknowns remain,
+lint PASS. Same ruling: channels.yaml expanded (12 adds: GitHub/GA4/web.dev/Bing/GBP/Playwright/WP
+tier-1 + SEL/OWASP tier-2 + TechSEO/shopify/analytics subs) and RATIFIED (ratified_ref in file).
+kairaliyoga entity bucket + Shopify-LP platform vectors stand as built (no objection raised).

@@ -64,7 +64,7 @@ updated: "2026-07-19 18:14:20 IST"
 #               situation add that could match under any resolution).
 dimensions:
   site_class: [commerce, organic, landing]          # PRIMARY — mirrors gates/registry.yaml classes
-  business_model: [b2c, b2b, d2c, shopify, unknown]
+  business_model: [b2c, b2b, d2c, shopify, internal, unknown] # internal added per owner ruling D-20260719-33 (kairali.ai)
   asset_situation: [new, existing, migration]
   entity_register: [ktahv-clinical, villa-raag-hospitality, kappl-product, kappl-b2b, group-corporate, personal, internal, education]
   locale_market: [en-in, en-global, en-us, en-eu, en-de-fr, unknown]
@@ -158,7 +158,7 @@ properties:
     business_model: d2c
     asset_situation: existing
     entity_register: kappl-product
-    locale_market: unknown            # owner ratification pending — which claims market governs kairaliproduct.com (US? EU? both)?
+    locale_market: en-global          # RULED D-20260719-33 (b3): any English-speaking market EXCLUDING India — ex-India claims register binds
     platform: factory-next
   - domain: kairalitea.com
     site_class: commerce
@@ -212,7 +212,7 @@ properties:
     business_model: b2b
     asset_situation: existing
     entity_register: kappl-b2b
-    locale_market: unknown            # owner ratification pending — which claims market do equipment buyers sit under?
+    locale_market: en-global          # RULED D-20260719-33 (b4): global
     platform: factory-next
   - domain: bulkayurvedaoils.com
     site_class: organic
@@ -319,10 +319,10 @@ properties:
   # value for internal tooling — that too is his call, not a default).
   - domain: kairali.ai
     site_class: organic
-    business_model: unknown           # owner ratification pending — internal dashboard has no business model to declare
+    business_model: internal          # RULED D-20260719-33 (b1): internal tool, no business model
     asset_situation: existing
     entity_register: internal
-    locale_market: unknown            # owner ratification pending — internal dashboard serves no claims market
+    locale_market: en-in              # RULED D-20260719-33 (b2): English ok — en-in neutral ratified
     platform: factory-next
 
 # ── Overlays (ADD or ADAPT only — never remove, never soften) ────────────────

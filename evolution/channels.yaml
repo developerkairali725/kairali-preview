@@ -33,7 +33,8 @@
 #
 # Validated by scripts/evolution-lint.mjs. Rule g: nothing here weakens a gate.
 version: 1
-status: pending-owner-ratification
+status: ratified
+ratified_ref: "D-20260719-33 + D-20260719-34 (owner chat 2026-07-20 ~00:45/~01:00 IST): 'add reddit and all relevant channels relevant to this os's work and steps' + 'add ai search and aeo and geo reddit subs and news and forums and websites related to it — add and ratify' — both rulings pre-cover the additions landed with them"
 generated: "2026-07-19 19:28:10 IST"
 plan_ref: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §3.1 (R1) + §5 (SE-3)"
 
@@ -88,6 +89,49 @@ channels:
     cadence: daily
     notes: "External auditor #2 (Perplexity = is it true); paired-engine search lane per the research-tools directive"
 
+  - id: github-changelog
+    name: "GitHub changelog (Actions, rulesets, branch protection)"
+    url: "https://github.blog/changelog/"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "The CI enforcement layer (required checks, CODEOWNERS, reviews API) runs ON GitHub — platform changes move authenticated-approval and factory-gate directly"
+  - id: ga4-release-notes
+    name: "Google Analytics 4 release notes"
+    url: "https://support.google.com/analytics/answer/9164320"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "Measurement lane (M3): GA4 property/stream/API changes move the SA wiring + fleet analytics bundle"
+  - id: chrome-web-dev
+    name: "web.dev + Chrome developers blog (Core Web Vitals)"
+    url: "https://web.dev/blog"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "CWV/lighthouse metric changes move the lighthouse gate thresholds (Ship Gate A5)"
+  - id: bing-webmaster-blog
+    name: "Bing Webmaster blog"
+    url: "https://blogs.bing.com/webmaster"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "Bing import lands M3 (D-20260719-30); Bing/Copilot AI-search surface = AEO lane"
+  - id: gbp-api-updates
+    name: "Google Business Profile API release notes"
+    url: "https://developers.google.com/my-business/content/release-notes"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "GBP lane (D-20260719-19 both-parallel); API application in flight owner-side"
+  - id: playwright-releases
+    name: "Playwright releases"
+    url: "https://github.com/microsoft/playwright/releases"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "The spec suite + screenshot evidence layer runs on it"
+  - id: wordpress-news
+    name: "WordPress core news"
+    url: "https://wordpress.org/news/"
+    tier: tier1-vendor
+    cadence: weekly
+    notes: "Lane B / whyayurveda.org live WP + the content pipeline; core/security releases move Deepu's lane"
+
   # ── tier2-research — weekly Monday sweep + monthly deep pass ───────────────
   - id: thoughtworks-radar
     name: "ThoughtWorks Technology Radar"
@@ -101,6 +145,44 @@ channels:
     tier: tier2-research
     cadence: weekly
     notes: "Curated practitioners tracking agent-OS patterns and failures; weekly Monday sweep; claims still verified against tier-1 sources before any ring change"
+
+  - id: search-industry-news
+    name: "Search Engine Land + Search Engine Roundtable"
+    url: "https://searchengineland.com"
+    tier: tier2-research
+    cadence: weekly
+    notes: "Industry algo-update tracking, often ahead of official confirmation; verified against Google's own channels before any radar move"
+  - id: owasp-genai-agentic
+    name: "OWASP GenAI / Agentic Security project"
+    url: "https://genai.owasp.org"
+    tier: tier2-research
+    cadence: monthly
+    notes: "The plan's §5 security controls map to the Agentic Top 10; new versions re-open the SE-* control review"
+
+  # ── AI-search / AEO / GEO lane (D-20260719-34) — feeds the geo-ai-readiness ──
+  # gate + the AEO strategy layer. Answer-surface VENDOR channels are already
+  # tier-1 above: Google Search Central carries AI Overviews/AI Mode announce-
+  # ments, Bing Webmaster carries Copilot, OpenAI/Perplexity API notes carry
+  # their citation/browsing behavior. These rows add the research + news +
+  # practitioner layers on top.
+  - id: ai-search-news
+    name: "AI-search / AEO news (Search Engine Journal AI section + SEOFOMO newsletter)"
+    url: "https://www.searchenginejournal.com/category/generative-ai/"
+    tier: tier2-research
+    cadence: weekly
+    notes: "AEO/AI-answer-surface industry news; SEOFOMO (seofomo.co, Aleyda Solis) as the curated weekly digest; verified against tier-1 vendor channels before any radar move"
+  - id: geo-relevance-engineering
+    name: "GEO / relevance-engineering practitioners (iPullRank blog, Kevin Indig's Growth Memo)"
+    url: "https://ipullrank.com/blog"
+    tier: tier2-research
+    cadence: weekly
+    notes: "The leading generative-engine-optimization practitioner lane; methods enter the OS only via candidate cards + the vetting pipeline (HARD GATE 15)"
+  - id: geo-aeo-research
+    name: "GEO/AEO academic lane (arXiv cs.IR/cs.CL — generative engine optimization lineage)"
+    url: "https://arxiv.org/list/cs.IR/recent"
+    tier: tier2-research
+    cadence: monthly
+    notes: "The GEO paper lineage + citation-behavior studies; monthly deep-pass material for the geo-ai-readiness gate rubric"
 
   # ── untrusted-forum — SE-3: tier-1 corroboration REQUIRED, consensus never counts ──
   - id: hn-front
@@ -127,3 +209,27 @@ channels:
     tier: untrusted-forum
     cadence: weekly
     notes: "UNTRUSTED (SE-3): tier-1 corroboration (Anthropic release notes) required; consensus never counts; the postmark-mcp backdoor pattern lives in exactly this tier — scout-only (SE-1), HARD GATE 15 recommend-never-install"
+  - id: reddit-techseo
+    name: "r/TechSEO"
+    url: "https://www.reddit.com/r/TechSEO/"
+    tier: untrusted-forum
+    cadence: weekly
+    notes: "UNTRUSTED (SE-3): tier-1 corroboration required; consensus never counts; scout-only (SE-1)"
+  - id: reddit-shopify
+    name: "r/shopify + r/ShopifyeCommerce"
+    url: "https://www.reddit.com/r/shopify/"
+    tier: untrusted-forum
+    cadence: weekly
+    notes: "UNTRUSTED (SE-3): Track B practitioner signal; tier-1 corroboration (Shopify changelog) required; scout-only (SE-1)"
+  - id: reddit-analytics
+    name: "r/GoogleAnalytics + r/analytics"
+    url: "https://www.reddit.com/r/GoogleAnalytics/"
+    tier: untrusted-forum
+    cadence: weekly
+    notes: "UNTRUSTED (SE-3): GA4 practitioner signal for the M3 measurement lane; tier-1 corroboration required; scout-only (SE-1)"
+  - id: reddit-ai-answer-surfaces
+    name: "r/ChatGPT + r/perplexity_ai (AI answer-surface user forums)"
+    url: "https://www.reddit.com/r/perplexity_ai/"
+    tier: untrusted-forum
+    cadence: weekly
+    notes: "UNTRUSTED (SE-3): where citation/visibility behavior changes surface first from users; tier-1 corroboration (vendor changelogs) required; consensus never counts; scout-only (SE-1). AEO/GEO practitioner threads in r/SEO+r/bigseo+r/TechSEO rows above share this law"

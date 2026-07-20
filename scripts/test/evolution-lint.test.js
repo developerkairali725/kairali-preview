@@ -288,9 +288,11 @@ test("real registers: radar/channels/anti-patterns/scout-schema all pass the rea
   assert.deepEqual(lintScoutSchema(realSchema()).errors, []);
 });
 
-test("real channels register: awaits owner ratification loudly; forums stay untrusted", () => {
+test("real channels register: RATIFIED with the owner ruling pinned (D-20260719-33/-34); forums stay untrusted", () => {
   const { top, lists } = parseRegister(readFileSync(resolve(REPO_ROOT, CHANNELS), "utf8"));
-  assert.equal(top.status, "pending-owner-ratification");
+  assert.equal(top.status, "ratified");
+  assert.match(top.ratified_ref, /D-20260719-33/);
+  assert.match(top.ratified_ref, /D-20260719-34/);
   for (const [id, pin] of Object.entries(REQUIRED_CHANNELS)) {
     const row = lists.channels.find((c) => c.id === id);
     assert.ok(row, `required channel ${id} present`);

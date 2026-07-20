@@ -78,7 +78,7 @@ and are NOT to be chased. Nothing is clubbed; tick each line separately.
 - [ ] Marketing review round on the 8 preview sites (sent 18 Jul, no reply yet)
 - [ ] Anupam: banned words on 9 live KTAHV pages — verify done (his 18 Jul reply claims progress; owner reads + confirms)
 - [ ] Anupam: remaining items from the "3 open items" thread after owner reads the reply
-- [ ] Anupam: kairali.guru training prices (standing ruling: prices come from Anupam)
+- [x] ✔ RECEIVED 20 Jul (via owner): Delhi-centre training prices + KTAHV Training Courses V2 — banked docs/ktahv-inputs/rates/ (D-20260720-23); also resolves the D-RATE contradiction by supersession
 
 ## I. DEEPU (web developer) — developer@kairali.com
 

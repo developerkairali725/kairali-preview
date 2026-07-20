@@ -155,8 +155,16 @@ test("fleet-shared surface (packages/forms, no site path) is REPORTED, never a s
 
 // ── fail-closed law: fires when it must, not when it must not ───────────────
 
-test("unknown-dimension property (kairali.ai) fails closed to the full battery + situation adds", () => {
-  const r = resolveM(["sites/kairali.ai/app/page.tsx"]);
+test("unknown-dimension property fails closed to the full battery + situation adds", () => {
+  // synthetic clone: the REAL map has zero unknowns since D-20260719-33
+  // (kairali.ai ruled internal/en-in) — the fail-closed law stays tested on a
+  // doc whose kairali.ai row has one dimension knocked back to unknown
+  const unknownDoc = {
+    ...doc,
+    properties: doc.properties.map((p) =>
+      p.domain === "kairali.ai" ? { ...p, locale_market: "unknown" } : p),
+  };
+  const r = resolveDiff({ entries: modified("sites/kairali.ai/app/page.tsx"), declaredKinds: [] }, unknownDoc, reg);
   const [res] = r.resolutions;
   assert.equal(res.failClosed, "unknown_dimension");
   assert.match(res.failClosedWhy, /unknown/);
