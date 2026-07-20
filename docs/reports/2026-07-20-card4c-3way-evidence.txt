@@ -1,0 +1,20 @@
+CARD-4(c) MACHINE EVIDENCE — kairali.com tel: CTA restore
+Generated: 2026-07-20 17:20:35 IST
+
+== BEFORE (main): tel:/IVR under sites/kairali.com ==
+(zero — B-073 confirmed)
+
+== AFTER: ==
+sites/kairali.com/app/page.tsx:340:            <a href="tel:+919555156156" data-cta="call_click">Call +91 95551 56156</a>
+
+== site-wide-ness: contact rows on the legal pages (0 = homepage footer is the only contact surface) ==
+sites/kairali.com/app/privacy/page.tsx:0
+sites/kairali.com/app/terms/page.tsx:0
+sites/kairali.com/app/cookie-policy/page.tsx:0
+
+== analytics capture: document-level data-cta delegation mounted ==
+9:import { Analytics } from "@kairali/analytics";
+56:        <Analytics />
+2: * @kairali/analytics core — GA4/GTM loader plumbing + data-cta delegation.
+54: * data-cta delegation (Ship Gate B4: conversion events from data-cta —
+62:    "var el=e.target&&e.target.closest?e.target.closest('[data-cta]'):null;",

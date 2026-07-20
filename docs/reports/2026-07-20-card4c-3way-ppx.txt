@@ -1,0 +1,27 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — PASS ===
+
+(1) The number +91 9555156156 is widely and publicly used across multiple official Kairali web properties (corporate, products, Healing Village, Yoga, PDFs, LinkedIn) as a main phone/customer care contact, so its association with Kairali is solidly supported. Some pages show extensions on this number, strongly implying IVR/PBX functionality, but no public page literally labels it “IVR”, so calling it specifically “the group IVR number” without that qualifier is slightly overstated.
+
+(2) The tel: URI tel:+919555156156 is the correct canonical E.164 form for the Indian number +91 95551 56156 (local 9555156156). Using that URI in the href and the spaced format in the visible text is technically correct and consistent.
+
+Overall verdict for publishing these contact facts: PASS, with a caveat that the “IVR” wording should either be tied to the owner’s internal confirmation or softened publicly to “main phone/customer care number” if you want to match only what the web shows.
+
+claims checked: 5 | problems: 1
+
+[MISLEADING] (risk:low) +91 9555156156 is the group IVR number (not just any phone).
+   evidence: Kairali Yoga contact page shows “+91-9555156156, Ext-8” for both Healing Village and corporate office, indicating a number with extensions, consistent with an IVR/PBX.[9] Other Kairali properties list it simply as phone or customer care.[1][3][6][10] None of these pages explicitly use the term “IVR”.
+   correction: Public web pages clearly show +91-9555156156 as a main phone/customer care/phone contact; some explicitly mention extensions, which strongly suggests an IVR system, but they do not literally label it “IVR” on the public pages.
+
+SOURCES (11):
+  - https://www.kairali.com/contact-us.aspx
+  - https://www.kappl.co.in/contact-us.aspx
+  - https://www.kairaliorganic.com/contact-us.aspx
+  - https://www.linkedin.com/in/kairaliayurvedicgroup
+  - https://kairaliorganic.com/kairali-ayurvedic-group.aspx
+  - https://ayurvedichealingvillage.com/legal-notice/
+  - https://www.kairali.com/detail.aspx?page=fastest-growing-ayurvedic-chain-awarded-to-kairali-ayurvedic-center-by-right-choice-awards-2016
+  - https://kairaliayurvedicproducts.weebly.com/contact.html
+  - https://www.kairaliyoga.com/contact-us.aspx
+  - https://www.kairali.com/download/KTAHV-Ayurveda-Packages-INR-Price-List-2025-26.pdf
+  - https://kairalicenters.com/locations/

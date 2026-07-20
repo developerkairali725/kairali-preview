@@ -1,0 +1,21 @@
+CARD-4(c) T8 3-WAY CHECK — JUDGED DISPOSITION RECORD
+Date: 2026-07-20 ~17:22 IST · Authorization: D-20260720-25 fix 3 · Evidence: card4c-3way-{spec,gpt,ppx,evidence}.txt
+
+PERPLEXITY — PASS. The number is publicly used across Kairali properties as the main contact
+(extensions imply IVR/PBX); tel:+919555156156 is the correct E.164 URI. One nuance adopted for the
+record: public pages don't literally label it "IVR" — our visible text says only "Call +91 95551 56156",
+which carries no IVR claim, so nothing to change.
+
+GPT — FAIL(2) → both REFUTED with machine facts (evidence file):
+- "app/page.tsx placement likely wrong for a site-wide footer" → kairali.com is a one-pager + 3 legal
+  pages; the legal pages carry ZERO contact rows/data-cta (grep: 0/0/0). The homepage footer contact row
+  IS the site's contact surface — placement is site-wide by construction.
+- "analytics capture asserted, not proven" → @kairali/analytics is mounted in layout.tsx and captures
+  every [data-cta] click by document delegation (packages/analytics/src/core.js:54-64, Ship Gate B4).
+  call_click is captured by the SAME mechanism as the row's existing email_click/whatsapp_click.
+
+SCOPE: the kairalihospitality/healing.recipes IVR implementation gap (D-KH-PHONE/D-HR-PHONE ruled,
+never landed) is appended as Q-IVR-FLEET-GAP in QUESTIONS.md — an owner one-worder, not a silent fix.
+
+BOTTOM LINE: the ruled CTA landed where the site's other contact CTAs live, tracked by the existing
+mechanism, digits exactly the ruled fact. The 3-way check is DONE for fix (c).

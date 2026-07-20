@@ -335,7 +335,9 @@ export default function Home() {
           <p>
             Kairali Ayurvedic Group ·{" "}
             <a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a> ·{" "}
-            <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
+            <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a> ·{" "}
+            {/* Group IVR — Q-KC3 CLOSED / D-20260714-QKC3 (B-073 restore) */}
+            <a href="tel:+919555156156" data-cta="call_click">Call +91 95551 56156</a>
           </p>
           <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>

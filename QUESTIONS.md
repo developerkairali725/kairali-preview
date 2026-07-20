@@ -593,3 +593,7 @@ register) · kairaliequipment.com = en-global. gates/class-map.yaml updated, zer
 lint PASS. Same ruling: channels.yaml expanded (12 adds: GitHub/GA4/web.dev/Bing/GBP/Playwright/WP
 tier-1 + SEL/OWASP tier-2 + TechSEO/shopify/analytics subs) and RATIFIED (ratified_ref in file).
 kairaliyoga entity bucket + Shopify-LP platform vectors stand as built (no objection raised).
+
+## 2026-07-20 17:20:35 IST · Q-IVR-FLEET-GAP — D-KH-PHONE / D-HR-PHONE ruled the group IVR prints on kairalihospitality.com + healing.recipes, but neither site's source prints it
+- Found during CARD-4(c) (B-073 restore). DECISIONS.md D-KH-PHONE: "the group IVR 9555156156 DOES print on kairalihospitality.com alongside info@ + WhatsApp"; D-HR-PHONE: "healing.recipes drops legacy +91-9999231117; prints the group IVR 9555156156 instead". Machine state today (main): zero occurrences of the IVR digits on either site; healing.recipes source comments still say "NO phone ships until Abilash confirms one (Q-HR-PHONE)" — the pre-ruling state. Either the rulings were never implemented or were reverted without a record.
+- Ask: confirm both sites should now print the IVR (tel: CTA, call_click) per the standing rulings — one word GO lands it as a small PR next wave. Out of CARD-4 scope, so appended rather than silently fixed.

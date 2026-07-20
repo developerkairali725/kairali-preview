@@ -1,0 +1,23 @@
+CARD-4(c) CHANGE SPEC — kairali.com tel: CTA restore
+(D-20260720-25 fix 3; finding B-073; ruling D-20260714-QKC3; T8 3-way at authorization)
+Date: 2026-07-20 ~17:20 IST · Stacked on CARD-4(a)+(b)
+
+RULING: Q-KC3 CLOSED (14 Jul): "+91 9555156156 = the group IVR number (real). Usable contact
+fact → add tel: CTA to kairali.com in the vector-logo swap pass." The vehicle (#63) shipped
+15 Jul WITHOUT it; B-073: zero tel:/IVR anywhere under sites/kairali.com, no tracking item.
+
+FIX (single insertion, designs frozen — the footer contact row where the other two contact
+CTAs already live):
+  sites/kairali.com/app/page.tsx footer contact <p>:
+  "Kairali Ayurvedic Group · info@kairali.com · WhatsApp +91 92898 38797"
+  + " · <a href="tel:+919555156156" data-cta="call_click">Call +91 95551 56156</a>"
+  (data-cta="call_click" = the fleet analytics convention, precedent kairalicenters.com
+  centres/[slug]/page.tsx; digit grouping matches the row's WhatsApp presentation; digits
+  are exactly the ruled 9555156156.)
+
+DELIBERATELY NOT DONE (scope discipline):
+- No sticky-cta third button, no header CTA change — design surfaces are frozen; the ruled ask
+  is "a tel: CTA", landed in the contact row.
+- kairalihospitality/healing.recipes IVR gaps (D-KH-PHONE/D-HR-PHONE ruled it prints there;
+  source still says "NO phone ships" per Q-HR-PHONE-era comments) — OUT of card scope, appended
+  to QUESTIONS.md as Q-IVR-FLEET-GAP for the owner instead of silently fixed.

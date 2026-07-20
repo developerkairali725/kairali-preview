@@ -1,0 +1,65 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A restoration of a tel: click-to-call CTA on kairali.com, placed in the footer contact row alongside existing Email and WhatsApp CTAs, with analytics tagging.
+  for whom: 1) kairali.com visitors who want to call directly. 2) The owner who ordered the CTA on 14 Jul and expects it implemented correctly and tracked.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: Two failure points: 1) Placement is specified in app/page.tsx, which likely limits visibility to a single page rather than site-wide. A visitor landing on a subpage may never see the CTA. 2) Analytics is asserted (data-cta="call_click") without proof that kairali.com actually collects this attribute into GA/warehouse; the owner’s requirement includes restoring it with tracking, and that isn’t evidenced.
+  they would think: Visitor: If not on the homepage, they may not see a phone link at all and give up or switch to WhatsApp/email. Owner: This repeats the earlier failure pattern — a rule written, no machine evidence it actually works or is tracked.
+  The spec opts for minimal change but assumes the footer contact row in page.tsx is the global footer and that the fleet analytics convention auto-applies to kairali.com. Neither is demonstrated. For a restoration ordered by the owner, visible site-wide placement and verified tracking are non-negotiable.
+
+--- MY REASONING --- sound: false
+  FLAWED: Assuming the footer contact row in app/page.tsx is global across the site without proving where the actual shared footer lives (likely layout.tsx or a Footer component).
+  FLAWED: Assuming the fleet data-cta convention is wired on kairali.com because it exists on kairalicenters.com, without citing the collector script or a prior event seen in kairali.com telemetry.
+  FLAWED: Treating a spec line as sufficient evidence of execution/tracking when the standard explicitly rejects that.
+  ASSUMED (never reasoned): That kairali.com is a single-page site so page.tsx is sufficient for global footer exposure.
+  ASSUMED (never reasoned): That the exact analytics pipeline (listener, mapping to GA4, event name/property) is present and identical across fleet domains.
+  ASSUMED (never reasoned): That the chosen display grouping and link label meet internal content standards and don’t require a11y or non-breaking spacing for mobile wraps.
+
+--- VS PRIOR --- better for audience: false
+  REGRESSION: None compared to prior (not supplied), but the same failure pattern (no proof) persists.
+
+Quality: weak | expert would respect it: false | AI-filler risk: low
+  weakest point: Assuming both placement and analytics are correct without machine evidence; targeting app/page.tsx suggests the CTA may not be site-wide.
+
+Step — claimed: T8 · CARD-4(c) authorization (3-way spec before implementation) | actual: Draft change spec. No code change, no analytics verification, no QA evidence. | prereqs met: false
+  ORDER VIOLATION: No proof of footer’s global location before specifying insertion point.
+  ORDER VIOLATION: No proof of analytics event capture on kairali.com before locking the event attribute.
+  ORDER VIOLATION: No test/verification plan included at authorization for a YMYL-ish contact CTA.
+
+MISSED STEPS (6):
+  [blocking] Prove global placement (site-wide footer)
+     evidence: Target file is app/page.tsx; if the site has multiple routes, this won’t render on all pages. No evidence of a shared Footer component or layout.tsx insertion.
+  [blocking] Prove analytics wiring on kairali.com for data-cta="call_click"
+     evidence: No reference to the tracking script, dataLayer mapping, GA4 event name, or prior events from kairali.com. Only cites another site as precedent.
+  [major] Implementation diff + automated check
+     evidence: No code diff, no unit test asserting the anchor’s presence/href/text, no visual screenshot across breakpoints.
+  [major] Cross-device QA plan for tel: behavior + event fire
+     evidence: No test steps for iOS/Android/desktop behaviors or evidence of event payload in network logs.
+  [minor] Event payload specificity
+     evidence: No label/param to distinguish which number was clicked (if more are added later). Convention unspecified beyond data-cta value.
+  [minor] A11y and wrap control
+     evidence: No decision on non-breaking spaces around +91 and digit groups; no aria-label consideration.
+
+NEEDS FACT-CHECK (3) → run audit-perplexity.mjs:
+  - “data-cta=call_click” is the fleet analytics convention and works here (precedent: kairalicenters.com).
+  - +91 9555156156 is the group IVR number (real).
+  - Footer contact row already carries email and WhatsApp CTAs with data-cta events.
+
+BLOCKING (2):
+  ✗ Placement not proven site-wide; targeting app/page.tsx is likely wrong for a footer intended for all visitors.
+  ✗ Analytics event capture is asserted, not proven, for kairali.com. For an owner-mandated restore, untracked is a repeat failure.
+
+RECOMMENDATIONS:
+  → Change placement target to the shared footer (e.g., sites/kairali.com/app/layout.tsx or a Footer.tsx component). Provide a repo path and a code diff proving one injection renders on all routes.
+  → Add analytics proof: confirm the listener that reads data-cta is loaded on kairali.com; document event name mapping to GA4 (e.g., event=call_click, params={number:+919555156156, location:footer}). Include data-cta-detail or data-params with the E.164 number.
+  → Provide machine evidence: code diff, rendered DOM snippet, and screenshots on at least two distinct routes showing the CTA present.
+  → QA plan: iOS Safari and Android Chrome tap opens dialer; desktop click behavior acceptable. Capture a devtools network log or GA4 DebugView showing the call_click with correct params.
+  → Typography/a11y: use non-breaking spaces between +91 and number groups to avoid awkward wraps; optional aria-label="Call Kairali Ayurvedic Group, +91 95551 56156".
+  → Add a unit/integration test that asserts the footer renders an anchor with href="tel:+919555156156" and text containing the digits; if analytics uses a data attribute, assert its presence.
+  → Reference and attach the ruling (Q-KC3) or source for the number in the spec to eliminate ambiguity.
+
+tokens: prompt 2082 · completion 4477 (reasoning 2752)
