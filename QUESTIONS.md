@@ -562,6 +562,10 @@ Ship Gate A-13 (/security-review on every release diff) runs in CI but is NOT a 
 auto-merge legally completes without it (RPT-20260720-SILENT C1). Fix is your branch-protection click:
 add `security-review` to required contexts (same screen as the M1 required-contexts click). Say GO and I
 prep the exact context name + verify after your click.
+- **ANSWERED 2026-07-20 20:47:00 IST — GO given and CLICK EXECUTED (owner's hands, admin screen).**
+  Machine-verified via the protection API right after: `security-review` present, required contexts
+  29 → 30. RPT-20260720-SILENT C1 CLOSED — auto-merge can no longer complete without the security
+  review. Captured as owner answer 3/5, D-20260720-34.
 
 ## 2026-07-20 11:24:25 IST · Q-SECURITY-HOOK-CREDENTIALS — security-guidance LLM review leg still credential-dead after the 20 Jul SDK update (activation checkpoint ③, D-20260720-05 session)
 - FACTS (machine-verified this session): the security-guidance hook v2.0.6 FIRES (UserPromptSubmit/PostToolUse/Stop events logged), and commit detection is PROVEN — ~/.claude/security/log.txt 11:23:53.872: "Commit review: detected git commit in command" on commit 206a8d0. But the review leg still logs "LLM review disabled or no API credentials" — post-update, same as the old session. The plugin's reviewer does not use the Claude Code login session; it wants its own API credentials.
@@ -614,3 +618,7 @@ kairaliyoga entity bucket + Shopify-LP platform vectors stand as built (no objec
 - Found while executing the tile-4 truth-up (D-REVIEW-2 lane). The tile is fixed and the widened `blanket-review-claim` lint now catches its shape — but three same-class instances remain, all saying the GUIDE is physician-reviewed while machine state = zero pages carry a genuine `reviewedOn`: `app/layout.tsx:19` title "What is Ayurveda? A Physician-Reviewed Guide" · `app/layout.tsx:21` meta description "…physician-reviewed guide…" · `content/what-is-ayurveda.json:3` same title. The widened lint does NOT flag them (no "every page" quantifier), so CI stays green either way.
 - These are TITLE TAGS on a ranking site — a reword is an SEO/protection-map decision, not a silent fix (Build Decision Matrix). Options: **REWORD** (e.g. "What is Ayurveda? An Honest Guide" / description points at the per-page rule) / **KEEP-UNTIL-FIRST-REVIEW** (title stands until the first genuine reviewedOn lands, then it is true).
 - One word lands it: REWORD or KEEP-UNTIL-FIRST-REVIEW.
+- **ANSWERED 2026-07-20 20:58:00 IST — REWORD (owner, in-chat).** Executed as PR #201 (bot-authored):
+  all 3 instances reworded to the content file's own h1 'The Complete, Honest Guide'; description
+  carries the #197 per-page rule verbatim; 1908 clause untouched. Activation-③ review triple PASS.
+  Blanket-claim class now zero site-wide. Captured as owner answer 4/5, D-20260720-35.
