@@ -323,28 +323,38 @@ export const RULES = [
     appliesTo: "both",
     why: 'The promise "every health page is reviewed by a registered Ayurvedic physician" was false, was ruled removed sitewide, and is STILL LIVE in the repo. It is arithmetically undeliverable across ~3,400 pages: today 0 pages carry a `reviewedOn`. Genuinely reviewed pages are MARKED; the rest state what they are.',
     // The claim shape is a quantifier ASSERTING the review as fact:
-    // "<every|all|each> … page … <is|are|has been> … reviewed".
+    // "<every|all|each> … page … <is|are|has been> … reviewed" — OR the
+    // elliptical participle form with no copula at all, "every health page
+    // checked by a BAMS doctor" (the whatisayurveda trust-strip tile that
+    // slipped the original copula-anchored pattern; widened 20 Jul 2026 per
+    // the erosion-handover finding, D-REVIEW-2). The verb set covers the
+    // synonyms a rewrite reaches for (checked/vetted/verified/approved) and
+    // hyphenated participles ("physician-reviewed").
     // It is NOT triggered by copy that merely REPORTS review state — "each page
     // states honestly whether a physician has reviewed it yet" (about.json) is
     // our honest sentence and must survive. Nor by a negated claim — "not every
     // page is reviewed" is the honest form, and a lint that flags our best
-    // sentence teaches everyone to ignore it (§0.6 negation-awareness).
+    // sentence teaches everyone to ignore it (§0.6 negation-awareness). Nor by
+    // the per-page rule itself — "Reviewed pages carry the doctor's name and
+    // date" opens with the participle, carries no quantifier, and must survive.
     scan: (ctx) =>
       reScan(
         ctx,
-        /\b(?:every|all|each)\s+(?:[a-z]+\s+){0,3}?(?:pages?|articles?|monographs?)\b(?:\s+[a-z]+){0,4}?\s+(?:is|are|has\s+been|have\s+been|gets?|will\s+be)\s+(?:(?!not\b)[a-z-]+\s+){0,2}?reviewed\b/gi,
+        /\b(?:every|all|each)\s+(?:[a-z]+\s+){0,3}?(?:pages?|articles?|monographs?)\b(?:(?:\s+[a-z]+){0,4}?\s+(?:is|are|has\s+been|have\s+been|gets?|will\s+be)\s+(?:(?!not\b)[a-z-]+\s+){0,2}?|\s+)(?:[a-z]+-)?(?:reviewed|checked|vetted|verified|approved)\b/gi,
         (m) =>
           `"${m[0].replace(/\s+/g, " ")}" — a blanket physician-review claim. ` +
           `Coverage is per-page (\`reviewedOn\`, today 0 pages carry one); asserting it for all pages is the fabricated-review failure written in prose.`,
         inNegatedClause
       ),
-    probe: "Every health page is medically reviewed by Dr. Deepu John (BAMS), Chief Physician",
+    probe: "Every health page checked by a BAMS doctor.",
     antiProbes: [
       "Health pages reviewed by one of our Ayurvedic physicians are marked with that doctor's name and the date they approved it.",
       "each page states honestly whether a physician has reviewed it yet.",
       "A page one of them has approved carries their name and the date; a page that has not been reviewed yet says so at the top.",
       "Not every page is reviewed by a physician, and we say so on the ones that are not.",
       "We do not claim every page is reviewed.",
+      "Reviewed pages carry the doctor's name and date.",
+      "Physician-reviewed pages carry the doctor's name and date.",
     ],
   },
   {

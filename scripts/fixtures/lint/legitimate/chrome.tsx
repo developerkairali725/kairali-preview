@@ -46,6 +46,9 @@ export function SiteFooter() {
         Not every page is reviewed by a physician, and we say so on the ones that
         are not. We do not claim every page is reviewed.
       </p>
+      {/* The truthed trust-strip tile (20 Jul 2026): the per-page rule stated as
+          fact — participle-first, no quantifier. Must always pass. */}
+      <p>Physician-Reviewed: Reviewed pages carry the doctor&apos;s name and date.</p>
       <ul>
         <li><a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a></li>
         <li><a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a></li>

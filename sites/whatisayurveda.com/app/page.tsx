@@ -27,7 +27,7 @@ const TRUST = [
   { dt: "Since 1908", dd: "Four generations of Ayurvedic physicians." },
   { dt: "NABH-Accredited", dd: "Our teaching hospital in Palakkad, Kerala." },
   { dt: "WHO-GMP Pharmacy", dd: "Our own certified manufacturing." },
-  { dt: "Physician-Reviewed", dd: "Every health page checked by a BAMS doctor." },
+  { dt: "Physician-Reviewed", dd: "Reviewed pages carry the doctor's name and date." },
 ];
 
 const jsonLd = graph(

@@ -20,6 +20,9 @@ export function Article({ page }: { page: { title: string } }) {
     <article>
       <h1>{page.title}</h1>
       <p>Every health page is reviewed by a registered Ayurvedic physician before it is published.</p>
+      {/* The whatisayurveda trust-strip tile shape: elliptical (no copula), verb
+          "checked" — slipped the original pattern; caught since the 20 Jul widening. */}
+      <p>Physician-Reviewed — every health page checked by a BAMS doctor.</p>
       <p>Reviewed by Deepu John on {REVIEWED}. Questions? Write to reservations@kairali.com.</p>
       <a className="btn" href={WHATSAPP_URL}>Ask a doctor on WhatsApp</a>
       <Link href="/contact">Call us on +91 92898 38777</Link>

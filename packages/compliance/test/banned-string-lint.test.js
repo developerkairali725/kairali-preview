@@ -58,6 +58,18 @@ test("the claim is caught even when JSX wraps it across two lines", () => {
   assert.ok(ids(f).includes("blanket-review-claim"), `expected blanket claim, got ${ids(f)}`);
 });
 
+test("the elliptical tile shape is caught — no copula, verb 'checked' (whatisayurveda tile 4)", () => {
+  // The shipped trust-strip tile: quantifier + page-noun + bare participle,
+  // no is/are anywhere, and a verb the original pattern did not know.
+  const f = errors(scanText('<dd>Every health page checked by a BAMS doctor.</dd>', { kind: "code" }));
+  assert.ok(ids(f).includes("blanket-review-claim"), `expected blanket claim, got ${ids(f)}`);
+});
+
+test("the truthed tile passes — the per-page rule is not a blanket claim", () => {
+  const f = errors(scanText('<dd>Reviewed pages carry the doctor’s name and date.</dd>', { kind: "code" }));
+  assert.ok(!ids(f).includes("blanket-review-claim"), `per-page rule flagged: ${ids(f)}`);
+});
+
 test("the known-bad WhatsApp number is caught in ANY formatting", () => {
   for (const bad of ["+91 92898 38777", "9289838777", "+91-92898-38777", "https://wa.me/919289838777", "(92898) 38777"]) {
     assert.deepEqual(ids(errors(scanText(bad, { kind: "plain" }))), ["wrong-whatsapp-38777"], `missed: ${bad}`);
