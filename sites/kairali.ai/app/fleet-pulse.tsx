@@ -1,38 +1,48 @@
-// ---- FLEET PULSE v2 — calm mission control (schema-2) ---------------------
-// D-20260719-32: "better-looking dashboard … statuses of all the websites
-// being monitored or built or to be built."
+// ---- FLEET PULSE v2.1 — precision mission control (schema-2) --------------
+// D-20260719-32 built the board; D-20260720-03 is this beauty+taste pass.
 //
-// Design intent: dark ink surface, ONE restrained accent family sampled from
-// the Kairali brand anchors (forest #006038 / leaf #8E9D35 for "good",
-// marigold-300 #F0BF3E for "waiting" — the manual's own accent-on-dark step,
-// bronze #C1882C for the warm display voice). No card-shadow soup, no
-// gradients. Numbers and headers speak in one display face (Fraunces via
-// next/font); data speaks in the system mono. Reads at a glance on a phone;
-// rewards a longer look on desktop.
+// Design read (taste-skill §0.B): internal mission-control status board on
+// dark ink; precision-instrument feel; the DATA is the hero; calm authority,
+// zero marketing. Dials: VARIANCE 4 · MOTION 2 · DENSITY 6.
+//
+// Taste rules applied (Leonxlnx/taste-skill, D-20260720-01):
+//   · Fraunces is on the skill's banned-serif list — display voice is now
+//     Space Grotesk (geometric, technical) + JetBrains Mono for data. §4.1
+//   · ONE accent (leaf #8E9D35 — the brand's accent-on-dark step); amber and
+//     ember are SEMANTIC states (waiting / changes), forest fill = live only;
+//     the old fourth voice (bronze) is retired. §4.2 color-consistency lock
+//   · Radius scale LOCKED: cards 14 · inner surfaces 10 · pills full. §4.4
+//   · Cards use the nested double-bezel architecture (outer hairline, inset
+//     inner surface) instead of flat single-border boxes. Stat tiles lose
+//     their card-per-number soup and become one hairline-divided instrument
+//     band. §4.4 "cards only when elevation communicates hierarchy"
+//   · Motion: 120ms state transitions only; prefers-reduced-motion honored.
 //
 // HARD GATE 6: everything rendered is machine-derived from status-data.json.
 // A missing fact renders as its honest absence ("—", "unarmed", "none"),
 // never a guess. STATUS.yaml is the truth; this board is a generated view.
 
-import { Fraunces } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import type { CSSProperties } from "react";
 import type { Evidence, FrontGate, OsMilestone, Site2, Snapshot2 } from "./schema";
 
-const fraunces = Fraunces({ subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
+const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "600"], display: "swap" });
 
 // ---- palette (internal-dashboard look; brand accents sampled, not imported)
-const BG = "#0E1410"; // ink surface
-const CARD = "#161F19";
-const CARD_UP = "#1B2620";
-const LINE = "rgba(247,244,234,0.11)";
+const BG = "#0C120E"; // ink surface
+const CARD = "#131A15";
+const CARD_IN = "#0F1511"; // inner bezel surface — sits BELOW the card
+const CARD_UP = "#18211B";
+const LINE = "rgba(242,240,230,0.10)";
+const LINE_UP = "rgba(242,240,230,0.22)";
 const TEXT = "#F2F0E6"; // ivory on ink — ~15:1
 const MUTED = "#A9B4A6"; // ~7:1 on CARD
 const FAINT = "#7E8A7C"; // ~4.6:1 on CARD — smallest text stays AA
-const GREEN = "#8E9D35"; // leaf-500 — approved / done
-const FOREST = "#006038"; // forest-500 — fills, live
-const AMBER = "#F0BF3E"; // marigold-300 — pending / waiting
-const BRONZE = "#C88F35"; // bronze family, lifted one step for dark ground
-const CHANGES = "#E06A4A"; // changes-requested (internal semantic, not brand)
+const LEAF = "#8E9D35"; // THE accent — approved / done / counts
+const FOREST = "#006038"; // semantic: live (fill)
+const AMBER = "#F0BF3E"; // semantic: pending / waiting
+const EMBER = "#E06A4A"; // semantic: changes-requested / blocked
 
 // ---- lanes ----------------------------------------------------------------
 const LANES: { id: string; label: string; hint: string; stages: string[] }[] = [
@@ -57,9 +67,9 @@ const STAGE_LABEL: Record<string, string> = {
 };
 
 const GATE_COLOR: Record<FrontGate["status"], string> = {
-  approved: GREEN,
+  approved: LEAF,
   pending: AMBER,
-  changes: CHANGES,
+  changes: EMBER,
   none: "transparent",
 };
 
@@ -67,54 +77,53 @@ const dash = (v: unknown) => (v === null || v === undefined || v === "" ? "—" 
 
 // ---- OS header strip ------------------------------------------------------
 
-function MilestoneStep({ m }: { m: OsMilestone }) {
-  const style: Record<OsMilestone["state"], CSSProperties> = {
-    done: { background: FOREST, borderColor: FOREST, color: "#EAF3EA" },
+function MilestoneRail({ milestones }: { milestones: OsMilestone[] }) {
+  const dot: Record<OsMilestone["state"], CSSProperties> = {
+    done: { background: LEAF, borderColor: LEAF, color: "#10150A" },
     "in-review": { background: "transparent", borderColor: AMBER, color: AMBER },
-    next: { background: "transparent", borderColor: BRONZE, color: BRONZE, borderStyle: "dashed" },
+    next: { background: "transparent", borderColor: LINE_UP, color: MUTED, borderStyle: "dashed" },
     pending: { background: "transparent", borderColor: LINE, color: FAINT },
   };
   return (
-    <li className="mstep" aria-label={`${m.id} ${m.label}: ${m.state}`}>
-      <span className={`mdot ${fraunces.className}`} style={style[m.state]}>
-        {m.id}
-      </span>
-      <span className="mlabel">{m.label}</span>
-      <span className="mstate" style={{ color: m.state === "done" ? GREEN : m.state === "in-review" ? AMBER : m.state === "next" ? BRONZE : FAINT }}>
-        {m.state}
-      </span>
-    </li>
-  );
-}
-
-function Tile({ n, label, sub }: { n: string; label: string; sub?: string }) {
-  return (
-    <div className="tile">
-      <span className={`tilenum ${fraunces.className}`}>{n}</span>
-      <span className="tilelabel">{label}</span>
-      {sub ? <span className="tilesub">{sub}</span> : null}
-    </div>
+    <ol className="rail" aria-label="OS milestones">
+      {milestones.map((m, i) => (
+        <li key={m.id} className="railstep" aria-label={`${m.id} ${m.label}: ${m.state}`}>
+          {i > 0 ? <span className={`railseg ${m.state === "done" ? "railsegdone" : ""}`} aria-hidden="true" /> : null}
+          <span className={`raildot ${grotesk.className}`} style={dot[m.state]}>
+            {m.id}
+          </span>
+          <span className="raillabel">{m.label}</span>
+          <span
+            className={`railstate ${mono.className}`}
+            style={{ color: m.state === "done" ? LEAF : m.state === "in-review" ? AMBER : m.state === "next" ? MUTED : FAINT }}
+          >
+            {m.state}
+          </span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
 function OsStrip({ os }: { os: Snapshot2["os"] }) {
+  const stats: { n: string; label: string; zero: boolean; sub?: string }[] = [
+    { n: String(os.strict_residues), label: "strict residues", zero: os.strict_residues === 0 },
+    { n: String(os.unacked_directives), label: "unacked directives", zero: os.unacked_directives === 0 },
+    { n: String(os.open_questions), label: "open questions", zero: os.open_questions === 0 },
+    { n: String(os.decisions), label: "decisions", zero: os.decisions === 0 },
+    { n: os.tests ? `${os.tests.pass}/${os.tests.total}` : "—", label: "tests", zero: !os.tests, sub: os.tests ? undefined : "no run recorded" },
+  ];
   return (
     <section className="osstrip" aria-label="OS status">
-      <ol className="msteps">
-        {os.milestones.map((m) => (
-          <MilestoneStep key={m.id} m={m} />
+      <MilestoneRail milestones={os.milestones} />
+      <div className="band" role="list">
+        {stats.map((s) => (
+          <div key={s.label} className="stat" role="listitem">
+            <span className={`statnum ${grotesk.className} ${s.zero ? "statzero" : ""}`}>{s.n}</span>
+            <span className={`statlabel ${mono.className}`}>{s.label}</span>
+            {s.sub ? <span className="statsub">{s.sub}</span> : null}
+          </div>
         ))}
-      </ol>
-      <div className="tiles">
-        <Tile n={String(os.strict_residues)} label="strict residues" />
-        <Tile n={String(os.unacked_directives)} label="unacked directives" />
-        <Tile n={String(os.open_questions)} label="open questions" />
-        <Tile n={String(os.decisions)} label="decisions" />
-        <Tile
-          n={os.tests ? `${os.tests.pass}/${os.tests.total}` : "—"}
-          label="tests"
-          sub={os.tests ? undefined : "no run recorded"}
-        />
       </div>
     </section>
   );
@@ -125,14 +134,13 @@ function OsStrip({ os }: { os: Snapshot2["os"] }) {
 function GateDots({ gates }: { gates: FrontGate[] }) {
   if (gates.length === 0) {
     // No approvals.yaml ledger — the front gate is UNARMED for this site.
-    // Four hollow dashed dots (the standard gate count) + an explicit hint:
-    // the dots are presentation; "unarmed" is the fact.
+    // Hollow dashed dots are presentation; "unarmed" is the fact.
     return (
       <span className="gates" title="no approvals.yaml ledger — front gates unarmed">
         {[0, 1, 2, 3].map((i) => (
           <span key={i} className="dot unarmed" aria-hidden="true" />
         ))}
-        <span className="gatesnote">unarmed</span>
+        <span className={`gatesnote ${mono.className}`}>unarmed</span>
       </span>
     );
   }
@@ -147,7 +155,7 @@ function GateDots({ gates }: { gates: FrontGate[] }) {
           title={`${g.gate}: ${g.status}`}
         />
       ))}
-      <span className="gatesnote">
+      <span className={`gatesnote ${mono.className}`}>
         {approved}/{gates.length} approved
       </span>
     </span>
@@ -170,7 +178,7 @@ function EvidencePips({ e }: { e: Evidence }) {
   return (
     <span className="pips">
       {pips.map((p) => (
-        <span key={p.label} className={`pip ${p.zero ? "pipzero" : ""}`} title={p.title}>
+        <span key={p.label} className={`pip ${mono.className} ${p.zero ? "pipzero" : ""}`} title={p.title}>
           {p.label}&thinsp;{p.value}
         </span>
       ))}
@@ -203,9 +211,9 @@ function SiteCard({ site }: { site: Site2 }) {
   return (
     <article className="site">
       <header className="siterow">
-        <h4 className="sitename">{site.name}</h4>
+        <h4 className={`sitename ${grotesk.className}`}>{site.name}</h4>
         {site.phase !== null ? (
-          <span className={`phase ${fraunces.className}`} title={`lifecycle phase ${site.phase} of 0–8`}>
+          <span className={`phase ${mono.className}`} title={`lifecycle phase ${site.phase} of 0–8`}>
             P{site.phase}
             <span className="phaseof">/8</span>
           </span>
@@ -213,16 +221,13 @@ function SiteCard({ site }: { site: Site2 }) {
       </header>
 
       <div className="chiprow">
-        <span className="chip entity">{site.entity}</span>
-        <span className="chip stage">{STAGE_LABEL[site.stage] ?? site.stage}</span>
+        <span className={`chip entity ${mono.className}`}>{site.entity}</span>
+        <span className={`chip stage ${mono.className}`}>{STAGE_LABEL[site.stage] ?? site.stage}</span>
       </div>
-
-      <GateDots gates={site.front_gates} />
-      <EvidencePips e={site.evidence} />
 
       {site.waiting_on.length > 0 ? (
         <div className="waitrow">
-          <span className="waitlabel">waiting on</span>
+          <span className={`waitlabel ${mono.className}`}>waiting on</span>
           {site.waiting_on.map((w) => (
             <span key={w} className="waitchip">
               {w}
@@ -231,19 +236,23 @@ function SiteCard({ site }: { site: Site2 }) {
         </div>
       ) : null}
 
-      <footer className="sitefoot">
-        <span className="upd" title="last updated in STATUS.yaml">
-          upd {dash(site.updated)}
-        </span>
-        <SiteLinks site={site} />
-      </footer>
+      <div className="meta">
+        <GateDots gates={site.front_gates} />
+        <EvidencePips e={site.evidence} />
+        <div className="sitefoot">
+          <span className={`upd ${mono.className}`} title="last updated in STATUS.yaml">
+            upd {dash(site.updated)}
+          </span>
+          <SiteLinks site={site} />
+        </div>
+      </div>
 
       <details className="detail">
-        <summary>details</summary>
+        <summary className={mono.className}>details</summary>
         <dl className="dl">
-          <dt>owner</dt>
+          <dt className={mono.className}>owner</dt>
           <dd>{dash(site.owner)}</dd>
-          <dt>vector</dt>
+          <dt className={mono.className}>vector</dt>
           <dd>
             {v ? (
               <>
@@ -253,14 +262,14 @@ function SiteCard({ site }: { site: Site2 }) {
               "— not classified yet"
             )}
           </dd>
-          <dt>phase</dt>
+          <dt className={mono.className}>phase</dt>
           <dd>{site.phase !== null ? `${site.phase} of 0–8` : "—"}</dd>
-          <dt>evidence</dt>
+          <dt className={mono.className}>evidence</dt>
           <dd>
             go-science {site.evidence.go_science} · beauty {site.evidence.beauty} · design review {site.evidence.design_review_pre} pre /{" "}
             {site.evidence.design_review_post} post · audits {site.evidence.audits} · checklists {site.evidence.checklists ? "present" : "absent"}
           </dd>
-          <dt>blocker</dt>
+          <dt className={mono.className}>blocker</dt>
           <dd className="blocker">{site.blocker ?? "none"}</dd>
         </dl>
       </details>
@@ -296,15 +305,16 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
 
       <header className="hd">
         <div>
-          <p className="eyebrow">Kairali Web Factory · internal</p>
-          <h1 className={fraunces.className}>Fleet Pulse</h1>
+          <p className={`eyebrow ${mono.className}`}>Kairali Web Factory — internal</p>
+          <h1 className={grotesk.className}>Fleet Pulse</h1>
         </div>
-        <p className="hdmeta">
-          <span className="hdnow">
+        <div className="hdmeta">
+          <p className="hdnow">
+            <span className="hddot" aria-hidden="true" />
             now: <b>{os.milestone}</b>
-          </span>
-          <span className="hdstamp">generated {data.generated}</span>
-        </p>
+          </p>
+          <p className={`hdstamp ${mono.className}`}>generated {data.generated}</p>
+        </div>
       </header>
 
       <OsStrip os={os} />
@@ -315,9 +325,13 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
           return (
             <section key={lane.id} className="lane" aria-label={`${lane.label} — ${laneSites.length} sites`}>
               <header className="lanehd">
-                <h2 className={fraunces.className}>{lane.label}</h2>
-                <span className={`lanecount ${fraunces.className}`}>{laneSites.length}</span>
-                <span className="lanehint">{lane.hint}</span>
+                <h2 className={grotesk.className}>{lane.label}</h2>
+                <span className={`lanecount ${grotesk.className}`}>
+                  {laneSites.length}
+                  <span className="laneof">/{sites.length}</span>
+                </span>
+                <span className={`lanehint ${mono.className}`}>{lane.hint}</span>
+                <span className="lanerule" aria-hidden="true" />
               </header>
               {laneSites.length > 0 ? (
                 <div className="lanegrid">
@@ -326,7 +340,7 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
                   ))}
                 </div>
               ) : (
-                <p className="laneempty">none</p>
+                <p className={`laneempty ${mono.className}`}>none</p>
               )}
             </section>
           );
@@ -335,9 +349,10 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
         {unmapped.length > 0 ? (
           <section className="lane" aria-label={`Unmapped stage — ${unmapped.length} sites`}>
             <header className="lanehd">
-              <h2 className={fraunces.className}>Unmapped stage</h2>
-              <span className={`lanecount ${fraunces.className}`}>{unmapped.length}</span>
-              <span className="lanehint">stage value not in the lane map — shown, not hidden</span>
+              <h2 className={grotesk.className}>Unmapped stage</h2>
+              <span className={`lanecount ${grotesk.className}`}>{unmapped.length}</span>
+              <span className={`lanehint ${mono.className}`}>stage value not in the lane map — shown, not hidden</span>
+              <span className="lanerule" aria-hidden="true" />
             </header>
             <div className="lanegrid">
               {unmapped.map((s) => (
@@ -348,7 +363,7 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
         ) : null}
       </section>
 
-      <footer className="pgfoot">
+      <footer className={`pgfoot ${mono.className}`}>
         <p>
           generated {data.generated} <span className="sep">·</span> {data.generated_utc} UTC
         </p>
@@ -361,131 +376,156 @@ export default function FleetPulse({ data }: { data: Snapshot2 }) {
 }
 
 // ---- styles ---------------------------------------------------------------
+// Radius scale LOCKED (taste-skill §4.4): cards 14 · inner surfaces 10 ·
+// pills 999 · code 6. Nothing else.
 
 const CSS = `
   body { background: ${BG}; }
   .fp { max-width: 1180px; margin: 0 auto; padding: 0 18px 72px; color: ${TEXT};
         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
         font-size: 15px; line-height: 1.5; }
-  .fp code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em;
-             background: rgba(247,244,234,0.07); padding: 1px 6px; border-radius: 4px; }
-  .fp :focus-visible { outline: 2px solid ${AMBER}; outline-offset: 2px; border-radius: 3px; }
+  .fp code { font-size: 0.85em; background: rgba(242,240,230,0.07); padding: 1px 6px; border-radius: 6px; }
+  .fp :focus-visible { outline: 2px solid ${AMBER}; outline-offset: 2px; border-radius: 6px; }
+  .fp * { transition: border-color 120ms ease, background 120ms ease, color 120ms ease, transform 120ms ease; }
+  @media (prefers-reduced-motion: reduce) { .fp * { transition: none; } }
 
   /* header */
   .hd { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
-        gap: 12px 24px; padding: 44px 0 26px; border-bottom: 1px solid ${LINE}; }
-  .eyebrow { margin: 0; letter-spacing: 0.24em; font-size: 0.68rem; text-transform: uppercase;
-             color: ${BRONZE}; }
-  .hd h1 { margin: 4px 0 0; font-size: 2.6rem; font-weight: 600; letter-spacing: -0.01em; color: ${TEXT}; }
-  .hdmeta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; margin: 0;
-            text-align: right; }
-  .hdnow { font-size: 0.85rem; color: ${MUTED}; }
-  .hdnow b { color: ${AMBER}; font-weight: 650; }
-  .hdstamp { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.72rem; color: ${FAINT}; }
+        gap: 12px 24px; padding: 46px 0 24px; }
+  .eyebrow { margin: 0; letter-spacing: 0.22em; font-size: 0.66rem; text-transform: uppercase; color: ${LEAF}; }
+  .hd h1 { margin: 6px 0 0; font-size: 2.7rem; font-weight: 700; letter-spacing: -0.03em; color: ${TEXT}; line-height: 1; }
+  .hdmeta { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; margin: 0; text-align: right; }
+  .hdnow { margin: 0; font-size: 0.85rem; color: ${MUTED}; display: flex; align-items: center; gap: 8px; }
+  .hdnow b { color: ${TEXT}; font-weight: 650; }
+  .hddot { width: 8px; height: 8px; border-radius: 999px; background: ${LEAF}; flex: none; }
+  .hdstamp { margin: 0; font-size: 0.7rem; color: ${FAINT}; }
 
-  /* OS strip */
-  .osstrip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-             gap: 20px 32px; padding: 22px 0; border-bottom: 1px solid ${LINE}; }
-  .msteps { display: flex; flex-wrap: wrap; gap: 4px 22px; list-style: none; margin: 0; padding: 0; }
-  .mstep { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; }
-  .mdot { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
-          border-radius: 50%; border: 1.5px solid; font-size: 0.82rem; font-weight: 600;
-          font-variant-numeric: tabular-nums; }
-  .mlabel { font-size: 0.66rem; color: ${MUTED}; max-width: 110px; text-align: center; line-height: 1.25; }
-  .mstate { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .tiles { display: flex; flex-wrap: wrap; gap: 10px; }
-  .tile { display: flex; flex-direction: column; gap: 1px; min-width: 96px; padding: 10px 14px;
-          border: 1px solid ${LINE}; border-radius: 10px; background: ${CARD}; }
-  .tilenum { font-size: 1.7rem; font-weight: 600; color: ${BRONZE}; line-height: 1.15;
+  /* OS strip — instrument band */
+  .osstrip { display: grid; gap: 18px; padding: 20px 0 26px; border-top: 1px solid ${LINE};
+             border-bottom: 1px solid ${LINE}; }
+  .rail { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2px 0; list-style: none;
+          margin: 0; padding: 0; }
+  .railstep { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 78px;
+              position: relative; }
+  .railseg { position: absolute; top: 20px; right: calc(50% + 22px); width: calc(100% - 44px);
+             height: 1.5px; background: ${LINE}; }
+  .railsegdone { background: rgba(142,157,53,0.55); }
+  .raildot { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+             border-radius: 999px; border: 1.5px solid; font-size: 0.82rem; font-weight: 600;
              font-variant-numeric: tabular-nums; }
-  .tilelabel { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; color: ${MUTED}; }
-  .tilesub { font-size: 0.62rem; color: ${FAINT}; font-style: italic; }
+  .raillabel { font-size: 0.66rem; color: ${MUTED}; max-width: 110px; text-align: center; line-height: 1.25; }
+  .railstate { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .band { display: flex; border: 1px solid ${LINE}; border-radius: 14px; background: ${CARD};
+          overflow: hidden; width: fit-content; }
+  .stat { display: flex; flex-direction: column; gap: 1px; padding: 12px 22px 10px; min-width: 108px; }
+  .stat + .stat { border-left: 1px solid ${LINE}; }
+  .statnum { font-size: 1.9rem; font-weight: 600; color: ${TEXT}; line-height: 1.1;
+             font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .statzero { color: ${FAINT}; }
+  .statlabel { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; color: ${MUTED}; }
+  .statsub { font-size: 0.62rem; color: ${FAINT}; font-style: italic; }
 
   /* lanes */
-  .lane { margin-top: 34px; }
-  .lanehd { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
-  .lanehd h2 { margin: 0; font-size: 1.15rem; font-weight: 600; color: ${TEXT}; }
-  .lanecount { font-size: 1.15rem; font-weight: 600; color: ${BRONZE}; font-variant-numeric: tabular-nums; }
-  .lanehint { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.68rem; color: ${FAINT}; }
-  .laneempty { margin: 0; padding: 14px 16px; border: 1px dashed ${LINE}; border-radius: 12px;
-               color: ${FAINT}; font-size: 0.82rem; }
-  .lanegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 10px; }
+  .lane { margin-top: 36px; }
+  .lanehd { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .lanehd h2 { margin: 0; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; color: ${TEXT};
+               white-space: nowrap; }
+  .lanecount { font-size: 1.2rem; font-weight: 600; color: ${LEAF}; font-variant-numeric: tabular-nums; }
+  .laneof { font-size: 0.72rem; color: ${FAINT}; font-weight: 500; }
+  .lanehint { font-size: 0.66rem; color: ${FAINT}; white-space: nowrap; }
+  .lanerule { flex: 1; height: 1px; background: ${LINE}; align-self: center; min-width: 40px; }
+  .laneempty { margin: 0; padding: 10px 16px; border: 1px dashed ${LINE}; border-radius: 14px;
+               color: ${FAINT}; font-size: 0.74rem; width: fit-content; }
+  .lanegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
 
-  /* site card */
-  .site { border: 1px solid ${LINE}; border-radius: 12px; padding: 14px 15px 11px; background: ${CARD}; }
+  /* site card — double bezel: hairline shell, inset meta surface */
+  .site { border: 1px solid ${LINE}; border-radius: 14px; padding: 14px 15px 12px; background: ${CARD}; }
+  .site:hover { border-color: ${LINE_UP}; transform: translateY(-1px); }
   .siterow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-  .sitename { margin: 0; font-weight: 650; font-size: 0.98rem; word-break: break-word; color: ${TEXT}; }
-  .phase { flex: none; font-size: 1.05rem; font-weight: 600; color: ${BRONZE};
+  .sitename { margin: 0; font-weight: 600; font-size: 1.02rem; letter-spacing: -0.01em;
+              word-break: break-word; color: ${TEXT}; }
+  .phase { flex: none; font-size: 0.85rem; font-weight: 600; color: ${LEAF};
            font-variant-numeric: tabular-nums; }
-  .phaseof { font-size: 0.7rem; color: ${FAINT}; }
-  .chiprow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .chip { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 0.7rem;
-          font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
-  .chip.entity { background: rgba(247,244,234,0.08); color: ${MUTED}; }
-  .chip.stage { background: transparent; border: 1px solid rgba(142,157,53,0.55); color: ${GREEN}; }
+  .phaseof { font-size: 0.66rem; color: ${FAINT}; }
+  .chiprow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .chip { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 0.64rem;
+          font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+  .chip.entity { background: rgba(242,240,230,0.07); color: ${MUTED}; }
+  .chip.stage { background: transparent; border: 1px solid rgba(142,157,53,0.5); color: ${LEAF}; }
+
+  /* waiting-on — semantic amber, sits with the card body, not the meta band */
+  .waitrow { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 10px; }
+  .waitlabel { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: ${FAINT}; }
+  .waitchip { padding: 0 8px; border-radius: 999px; border: 1px solid rgba(240,191,62,0.55);
+              color: ${AMBER}; font-size: 0.7rem; font-weight: 600; }
+
+  /* meta band — the inner bezel */
+  .meta { margin-top: 12px; padding: 10px 12px 9px; background: ${CARD_IN};
+          border: 1px solid rgba(242,240,230,0.06); border-radius: 10px;
+          display: flex; flex-direction: column; gap: 7px; }
 
   /* gate dots */
-  .gates { display: flex; align-items: center; gap: 5px; margin-top: 11px; }
-  .dot { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid ${LINE}; flex: none; }
+  .gates { display: flex; align-items: center; gap: 5px; }
+  .dot { width: 11px; height: 11px; border-radius: 999px; border: 1.5px solid ${LINE_UP}; flex: none; }
   .dot.hollow { background: transparent; }
-  .dot.unarmed { background: transparent; border-style: dashed; }
-  .gatesnote { margin-left: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-               font-size: 0.66rem; color: ${FAINT}; }
+  .dot.unarmed { background: transparent; border-style: dashed; border-color: ${LINE_UP}; }
+  .gatesnote { margin-left: 4px; font-size: 0.62rem; color: ${FAINT}; }
 
   /* evidence pips */
-  .pips { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 8px; }
-  .pip { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.66rem;
-         padding: 1px 7px; border-radius: 6px; background: rgba(247,244,234,0.06); color: ${MUTED}; }
+  .pips { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+  .pip { font-size: 0.62rem; padding: 1px 7px; border-radius: 999px;
+         background: rgba(242,240,230,0.06); color: ${MUTED}; }
   .pip.pipzero { color: ${FAINT}; background: transparent; border: 1px dashed ${LINE}; }
-
-  /* waiting-on */
-  .waitrow { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 9px; }
-  .waitlabel { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.09em; color: ${FAINT}; }
-  .waitchip { padding: 0 8px; border-radius: 999px; border: 1px solid rgba(240,191,62,0.6);
-              color: ${AMBER}; font-size: 0.7rem; font-weight: 600; }
 
   /* card footer + links */
   .sitefoot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-              gap: 6px 12px; margin-top: 11px; }
-  .upd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.68rem; color: ${FAINT}; }
+              gap: 6px 12px; padding-top: 7px; border-top: 1px solid rgba(242,240,230,0.06); }
+  .upd { font-size: 0.64rem; color: ${FAINT}; }
   .links { display: flex; flex-wrap: wrap; gap: 6px; }
   .lnk { display: inline-block; padding: 2px 11px; border-radius: 999px; font-size: 0.7rem;
          font-weight: 600; white-space: nowrap; text-decoration: none; color: ${TEXT};
-         border: 1px solid rgba(247,244,234,0.35); background: transparent; }
+         border: 1px solid ${LINE_UP}; background: transparent; }
   .lnk:hover { background: ${TEXT}; color: ${BG}; border-color: ${TEXT}; }
+  .lnk:active { transform: translateY(1px); }
   .lnklive { background: ${FOREST}; border-color: ${FOREST}; color: #EAF3EA; }
   .lnklive:hover { background: #007A48; border-color: #007A48; color: #EAF3EA; }
   .localonly { font-size: 0.7rem; font-style: italic; color: ${FAINT}; }
 
   /* detail disclosure */
-  .detail { margin-top: 9px; border-top: 1px solid ${LINE}; }
-  .detail summary { cursor: pointer; list-style: none; padding: 7px 0 4px;
-                    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.11em; color: ${FAINT}; }
+  .detail { margin-top: 10px; }
+  .detail summary { cursor: pointer; list-style: none; padding: 6px 0 2px;
+                    font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; color: ${FAINT}; }
   .detail summary::-webkit-details-marker { display: none; }
-  .detail summary::before { content: "▸ "; color: ${BRONZE}; }
+  .detail summary::before { content: "▸ "; color: ${LEAF}; }
   .detail[open] summary::before { content: "▾ "; }
   .detail summary:hover { color: ${MUTED}; }
-  .detail[open] { background: ${CARD_UP}; margin: 9px -15px -11px; padding: 0 15px 11px; border-radius: 0 0 12px 12px; }
-  .dl { margin: 4px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; }
-  .dl dt { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.09em; color: ${FAINT};
+  .detail[open] { background: ${CARD_UP}; margin: 10px -15px -12px; padding: 0 15px 12px;
+                  border-radius: 0 0 14px 14px; border-top: 1px solid ${LINE}; }
+  .dl { margin: 6px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; }
+  .dl dt { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: ${FAINT};
            padding-top: 2px; }
   .dl dd { margin: 0; font-size: 0.8rem; color: ${MUTED}; overflow-wrap: anywhere; }
-  .dl dd.blocker { white-space: pre-wrap; color: #DCC9A8; }
+  .dl dd.blocker { white-space: pre-wrap; color: #D9CBB0; }
 
   /* footer */
-  .pgfoot { margin-top: 52px; padding-top: 18px; border-top: 1px solid ${LINE};
-            font-size: 0.75rem; color: ${FAINT}; line-height: 1.7; }
+  .pgfoot { margin-top: 56px; padding-top: 18px; border-top: 1px solid ${LINE};
+            font-size: 0.68rem; color: ${FAINT}; line-height: 1.8; }
   .pgfoot p { margin: 0 0 4px; }
   .pgfoot .sep { margin: 0 6px; }
 
   @media (max-width: 720px) {
     .hd { padding-top: 30px; }
-    .hd h1 { font-size: 2rem; }
+    .hd h1 { font-size: 2.1rem; }
     .hdmeta { align-items: flex-start; text-align: left; }
-    .osstrip { flex-direction: column; align-items: stretch; }
-    .mstep { min-width: 56px; }
-    .mlabel { display: none; } /* phone: id + state carry the meaning */
-    .tiles { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .railstep { min-width: 62px; }
+    .raillabel { display: none; } /* phone: id + state carry the meaning */
+    .railseg { right: calc(50% + 20px); width: calc(100% - 40px); }
+    .band { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
+    .stat + .stat { border-left: none; }
+    .stat:nth-child(even) { border-left: 1px solid ${LINE}; }
+    .stat:nth-child(n+3) { border-top: 1px solid ${LINE}; }
+    .lanehint { display: none; }
     .lanegrid { grid-template-columns: 1fr; }
   }
 `;
