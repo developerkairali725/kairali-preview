@@ -46,7 +46,6 @@ export default function Home() {
           <div className="container hero-grid">
             <div>
               <div className="accent-rule" aria-hidden="true" />
-              <p className="overline">An educational resource · Kairali Ayurvedic Group</p>
               <h1>What is Ayurveda?</h1>
               <p className="lede">
                 A clear, honest guide to the world&rsquo;s oldest system of
@@ -80,7 +79,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="trust-strip" aria-label="About the Kairali Group">
+        {/* Q-WIA-TRUST-STRIP ruled RELABEL (owner, 2026-07-20): the badges stay
+            as site-trust evidence; the row no longer announces the steward. */}
+        <section className="trust-strip" aria-label="Why trust this site">
           <div className="container">
             {TRUST.map((t) => (
               <dl className="trust-item" key={t.dt}>

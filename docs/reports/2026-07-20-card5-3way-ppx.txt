@@ -1,0 +1,22 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — PASS ===
+
+Most core claims in the spec about E‑E‑A‑T impacts of moving Kairali’s branding from masthead/hero to footer + About are broadly supported: E‑E‑A‑T does not require the publisher logo in the masthead, and clear About/footer attribution plus accurate metadata can be sufficient for publisher transparency, especially if trust-strip content with accurate publisher facts is retained.[1][2][6][7][9] However, presenting above-the-fold publisher branding as a strict E‑E‑A‑T requirement would be misleading; it is a defensible best practice for YMYL but not explicitly mandated in guidelines.[1][2][7][9] Ensure that all trust-strip facts about Kairali are verifiable, that the About and Contact pages are easy to reach from the main nav, and that the ARIA label continues to accurately describe the trust section for accessibility. Given the stakes for health content, I recommend erring on the side of more conspicuous publisher identity (e.g., nav-level “About Kairali” or equivalent) even if the masthead logo is removed.
+
+claims checked: 7 | problems: 1
+
+[MISLEADING] (HEALTH risk:medium) For a health/medical authority site, it is generally safer for E‑E‑A‑T to keep clear publisher branding somewhere above the fold on key pages (e.g., in or near the hero or nav), but this is a best-practice judgment rather than a strict requirement documented by Google.
+   evidence: Available E‑E‑A‑T resources emphasize clear organizational identification and About pages, but do not define above-the-fold brand placement as a requirement.[1][2][6][7][9]
+   correction: Best-practice E‑E‑A‑T resources stress that users should quickly understand who is behind the content; placing publisher branding above the fold can support this but is not specified as mandatory in official guidelines. It is an inferred UX/clarity recommendation, not a documented rule.
+
+SOURCES (10):
+  - https://searchengineland.com/guide/google-e-e-a-t-for-seo
+  - https://www.stateofdigitalpublishing.com/modules/experience-expertise-authoritativeness-and-trustworthiness/
+  - https://www.llmvlab.com/guides/eat-seo
+  - https://www.kairaliproducts.com/pages/terms-and-conditions
+  - https://kairaliorganic.com/kairali-ayurvedic-group.aspx
+  - https://healthus.ai/eeat-seo-healthcare-content/
+  - https://keywordseverywhere.com/blog/google-e-e-a-t-guidelines-an-overview/
+  - https://www.youtube.com/watch?v=v1gFxI-fVD4
+  - https://moz.com/learn/seo/google-eat
+  - https://ayurvedichealingvillage.com/legal-notice/

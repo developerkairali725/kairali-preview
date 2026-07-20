@@ -1,0 +1,26 @@
+CARD-5 CHANGE SPEC — whatisayurveda.com steward REDUCE
+(D-20260720-26, owner word "reduce"; per D-20260715-WIA-STEWARD; T8 3-way at authorization)
+Date: 2026-07-20 ~17:25 IST · Stacked on CARD-4(a)(b)(c)
+
+RULING (verbatim): "whatisayurveda.com Kairali steward presence reduces to footer + About only;
+masthead logo + hero overline come off; site leads with its own name."
+
+REMOVALS (exactly the two the ruling names):
+1. Masthead (chrome.tsx): the Kairali logo <img> comes off + the steward <small> line
+   ("by the Kairali Group · a family tradition since 1908") comes off; aria-label reduces
+   to "What is Ayurveda — home". The wordmark is the site's own name.
+2. Hero (page.tsx): the overline <p> "An educational resource · Kairali Ayurvedic Group"
+   comes off (the owner's literal instruction; accent-rule + h1 + lede stay).
+
+KEPT (the ruled steward homes):
+- Footer: publisher line "Published by the Kairali Ayurvedic Group…", "The Kairali Group" link
+  column, © computed Kairali Ayurvedic Group.
+- About: article.tsx publisher panel + content/about.json (full steward story).
+- Metadata description ("From the Kairali Group…") — a crawler surface, neither masthead nor
+  hero; not in the ruling's removal list.
+
+FLAGGED FOR ONE-WORDER (not silently changed): the homepage trust-strip section carries
+aria-label "About the Kairali Group" with dt/dd facts (Since 1908 / four generations …).
+It is neither masthead nor hero (not named by the ruling) but also neither footer nor About
+(the ruling's principle). Removing a designed section unbidden breaks the design freeze —
+owner call: KEEP (it is trust evidence) / RELABEL (aria to "Why trust this site") / REMOVE.

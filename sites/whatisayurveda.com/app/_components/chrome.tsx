@@ -18,12 +18,10 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container">
-        <Link className="logo-link" href="/" aria-label="What is Ayurveda — by the Kairali Ayurvedic Group, home">
-          <img src="/images/kairali-icon.svg" alt="Kairali Ayurvedic Group" width="64" height="44" />
-          <span className="logo-name">
-            What is Ayurveda
-            <small>by the Kairali Group · a family tradition since 1908</small>
-          </span>
+        {/* CARD-5 REDUCE (D-20260720-26): steward presence lives in footer +
+            About only — the masthead leads with the site's own name. */}
+        <Link className="logo-link" href="/" aria-label="What is Ayurveda — home">
+          <span className="logo-name">What is Ayurveda</span>
         </Link>
         <nav className="site-nav" aria-label="Sections">
           {NAV.map((n) => (

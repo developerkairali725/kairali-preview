@@ -1,0 +1,62 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: A CARD-5 (authorization) 3‑way change spec for whatisayurveda.com to execute the owner’s REDUCE ruling on the Kairali steward presence: remove masthead logo and hero overline; leave steward presence only in Footer and About; ensure the site leads with its own name; escalate any ambiguous surfaces.
+  for whom: Two audiences: (1) whatisayurveda readers (site should lead with its own name, minimal steward presence), and (2) the owner reviewing this reduction for compliance with their ruling.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: It unilaterally keeps the SEO meta description mentioning Kairali, despite the ruling’s plain language “reduces to footer + About only.” It also does not present a full surface inventory proving there are no other steward mentions (OG/Twitter/JSON‑LD/manifest/RSS/sitemap/title/site_name/schema). Thus the owner cannot see that the risk of over/under‑execution is eliminated.
+  they would think: Owner: You narrowed the ruling to just ‘masthead’ and ‘hero’ removals and quietly kept other surfaces. I still don’t have proof that steward presence is only in Footer and About. This under-executes the principle and leaves compliance risk. Reader: N/A (spec-stage), but the likely outcome is inconsistent branding across snippets/search if metadata remains.
+  The spec treats “not explicitly named in the removal list” as license to keep other steward surfaces, instead of applying the governing principle (“only Footer and About”). That’s a narrow reading and fails the owner’s intent.
+
+--- MY REASONING --- sound: false
+  FLAWED: Reading the ruling as two discrete removals instead of a scope principle (“presence reduces to Footer + About only”).
+  FLAWED: Keeping the SEO meta description because it’s a crawler surface “not in the ruling’s removal list,” which contradicts the principle.
+  FLAWED: Prioritizing a ‘design freeze’ over a clear owner directive; owner directives override freeze when they conflict.
+  FLAWED: Equating a terse spec with proof; there’s no machine evidence/inventory to prove compliance.
+  ASSUMED (never reasoned): That metadata/crawler surfaces are exempt from the ‘Footer + About only’ constraint.
+  ASSUMED (never reasoned): That masthead + hero are the only non‑Footer/About places steward presence exists.
+  ASSUMED (never reasoned): That changing masthead aria/text alone achieves ‘site leads with its own name’ across all head/OG/site_name/title surfaces.
+  ASSUMED (never reasoned): That the referenced files/sections (chrome.tsx, page.tsx) map 1:1 to all templates/layouts (e.g., article pages, error pages, RSS, AMP if any).
+
+--- VS PRIOR --- better for audience: false
+
+Quality: weak | expert would respect it: false | AI-filler risk: low
+  weakest point: Unilateral exception for SEO metadata that contradicts the ruling’s “Footer + About only” principle, with no owner escalation or evidence inventory.
+
+Step — claimed: T8 · CARD‑5 authorization (3‑way spec). | actual: Partial authorization draft lacking the mandatory surface inventory and owner decisions on all non‑Footer/About steward surfaces. | prereqs met: false
+  ORDER VIOLATION: Spec asserts compliance without an evidence-backed inventory of all steward mentions across code and metadata.
+  ORDER VIOLATION: Owner escalation applied to trust‑strip but not to SEO/OG/JSON‑LD surfaces that also violate the principle.
+
+MISSED STEPS (5):
+  [blocking] Full machine inventory of all steward mentions across repo and generated outputs (grep/logs) with disposition per surface.
+     evidence: No inventory provided; only three surfaces discussed (masthead, hero, one trust‑strip) plus an unapproved keep of meta description.
+  [blocking] Owner one‑word ruling on SEO meta/OG/Twitter/JSON‑LD/site_name/title usage of Kairali (keep/relable/remove).
+     evidence: Spec keeps meta description unilaterally and does not request owner decision.
+  [major] Cross‑template audit (home, article, 404, search, feeds, print) and head assets (manifest, favicon/apple-touch, RSS, sitemap, robots) for steward presence.
+     evidence: No mention of non-home templates or head assets.
+  [major] Acceptance criteria + machine proof for ‘site leads with its own name’ beyond masthead (document.title, og:site_name, schema WebSite.name).
+     evidence: Spec only changes masthead aria/wordmark; head surfaces unaddressed.
+  [minor] Attach code diffs or at least exact selectors/snippets to change for all surfaces, ensuring no ambiguity at implementation.
+     evidence: Spec names files and a few elements but not exhaustive selectors/snippets or tests.
+
+NEEDS FACT-CHECK (2) → run audit-perplexity.mjs:
+  - Keeping the metadata description “From the Kairali Group…” is acceptable because it’s a crawler surface and not in the named removals.
+  - Referenced components/paths (chrome.tsx, page.tsx) are the only relevant places to change.
+
+BLOCKING (4):
+  ✗ The spec undercuts the ruling by keeping Kairali in the SEO meta description without owner approval.
+  ✗ No evidence-based inventory proving steward presence exists only in Footer and About after changes.
+  ✗ Ambiguous homepage trust-strip unresolved; no interim behavior specified if owner delays decision.
+  ✗ No acceptance criteria validating ‘site leads with its own name’ across all head metadata, not just the masthead.
+
+RECOMMENDATIONS:
+  → Produce a surfaces matrix (body UI, head/meta, data feeds, structured data, assets) listing every Kairali/steward mention with file, selector, and proposed action (keep in Footer/About, remove elsewhere). Attach grep logs and snapshots.
+  → Escalate two one‑word owner decisions: (1) Homepage trust‑strip (KEEP/RELABEL/REMOVE) as already flagged; (2) All SEO/OG/JSON‑LD/title/site_name mentions (KEEP/RELABEL/REMOVE). Default to REMOVE to honor “Footer + About only.”
+  → Amend the spec to cover: document.title, meta description, og:title/og:site_name/og:description, twitter:*, JSON‑LD (WebSite/Organization/Publisher), RSS/Atom <channel><description>, sitemap <publisher> if any, manifest name/short_name, favicon/touch icon filenames and alt texts, 404/print pages.
+  → Define acceptance criteria: repo grep for “Kairali” passes with only two allowed directories/blocks (Footer component; About content). Include CI check to enforce.
+  → Once owner decisions land, issue precise diffs (selectors and code) per surface and a before/after render capture for each top template; rerun grep to prove compliance.
+
+tokens: prompt 2093 · completion 4463 (reasoning 2752)
