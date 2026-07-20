@@ -1,0 +1,126 @@
+{
+  "version": "0.1.20260717",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.1950 sec.",
+  "cost": 0.024036,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "07191904-2083-0265-0000-ac53ae68966e",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.1827 sec.",
+      "cost": 0.024036,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "backlinks",
+        "summary",
+        "live"
+      ],
+      "data": {
+        "api": "backlinks",
+        "function": "summary",
+        "target": "ayurvedichealingvillage.com",
+        "include_subdomains": true
+      },
+      "result": [
+        {
+          "target": "ayurvedichealingvillage.com",
+          "first_seen": "2019-01-16 11:51:33 +00:00",
+          "lost_date": null,
+          "rank": 305,
+          "backlinks": 11947,
+          "backlinks_spam_score": 16,
+          "crawled_pages": 1134,
+          "info": {
+            "server": "cloudflare",
+            "cms": "wordpress",
+            "platform_type": [
+              "cms",
+              "blogs",
+              "organization"
+            ],
+            "ip_address": "104.26.10.151",
+            "country": "IN",
+            "is_ip": false,
+            "target_spam_score": 0
+          },
+          "internal_links_count": 73436,
+          "external_links_count": 9254,
+          "broken_backlinks": 1,
+          "broken_pages": 349,
+          "referring_domains": 367,
+          "referring_domains_nofollow": 113,
+          "referring_main_domains": 313,
+          "referring_main_domains_nofollow": 95,
+          "referring_ips": 235,
+          "referring_subnets": 197,
+          "referring_pages": 8704,
+          "referring_pages_nofollow": 649,
+          "referring_links_tld": {
+            "org": 3830,
+            "com": 2879,
+            "blogspot.com": 1106,
+            "co.in": 477,
+            "info": 139,
+            "net": 87,
+            "in": 23,
+            "com.ar": 22,
+            "biz": 19,
+            "wixstudio.com": 12
+          },
+          "referring_links_types": {
+            "anchor": 7238,
+            "image": 1463,
+            "redirect": 3
+          },
+          "referring_links_attributes": {
+            "nofollow": 649,
+            "noopener": 606,
+            "noreferrer": 67,
+            "external": 37,
+            "sponsored": 1,
+            "ugc": 1
+          },
+          "referring_links_platform_types": {
+            "blogs": 4278,
+            "unknown": 3790,
+            "cms": 3722,
+            "organization": 3503,
+            "news": 13,
+            "ecommerce": 1,
+            "message-boards": 1,
+            "wikis": 1
+          },
+          "referring_links_semantic_locations": {
+            "": 4085,
+            "section": 3475,
+            "footer": 271,
+            "nav": 267,
+            "aside": 262,
+            "main": 253,
+            "article": 81,
+            "figure": 7,
+            "figcaption": 2,
+            "header": 1
+          },
+          "referring_links_countries": {
+            "IN": 4157,
+            "": 3979,
+            "WW": 310,
+            "US": 123,
+            "FR": 62,
+            "AR": 22,
+            "DE": 17,
+            "CO": 8,
+            "IO": 6,
+            "RU": 6
+          }
+        }
+      ]
+    }
+  ]
+}

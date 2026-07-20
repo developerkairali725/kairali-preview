@@ -1,0 +1,51 @@
+{
+  "version": "0.1.20260717",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.2212 sec.",
+  "cost": 0.012,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "07191901-2083-0381-0000-cf79d60e4ab6",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.2000 sec.",
+      "cost": 0.012,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "dataforseo_labs",
+        "google",
+        "ranked_keywords",
+        "live"
+      ],
+      "data": {
+        "api": "dataforseo_labs",
+        "function": "ranked_keywords",
+        "se_type": "google",
+        "target": "www.ayurvedichealingvillage.com",
+        "location_code": 2356,
+        "language_code": "en",
+        "limit": 1000,
+        "order_by": [
+          "ranked_serp_element.serp_item.etv,desc"
+        ]
+      },
+      "result": [
+        {
+          "se_type": "google",
+          "target": "www.ayurvedichealingvillage.com",
+          "location_code": 2356,
+          "language_code": "en",
+          "total_count": null,
+          "items_count": 0,
+          "metrics": null,
+          "metrics_absolute": null,
+          "items": null
+        }
+      ]
+    }
+  ]
+}

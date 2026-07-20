@@ -1,0 +1,28 @@
+{
+  "schema": "seo-baseline-pull/1",
+  "domain": "kairaliproducts.in",
+  "target": "www.kairaliproducts.in",
+  "location_code": 2356,
+  "language_code": "en",
+  "limit": 1000,
+  "generated": "2026-07-19 21:31:25 IST",
+  "collected_at_utc": "2026-07-19T16:01:22.388Z",
+  "account_balance_usd_before": 49.587456,
+  "calls": [
+    {
+      "name": "ranked-keywords",
+      "cost_usd": 0.132
+    },
+    {
+      "name": "domain-rank-overview",
+      "cost_usd": 0.01212
+    },
+    {
+      "name": "backlinks-summary",
+      "cost_usd": 0.024036
+    }
+  ],
+  "total_cost_usd": 0.168156,
+  "vendor": "dataforseo",
+  "api": "narrow REST (3 endpoints — §3.5 bake-off doctrine, not the MCP)"
+}

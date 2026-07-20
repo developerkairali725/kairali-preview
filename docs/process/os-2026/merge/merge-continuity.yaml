@@ -11,7 +11,7 @@ meta:
   note: "CM = normative CLAUDE.md units · GR = registry gates (generated, scripts/merge-continuity-gen-registry.mjs) · PKG = adopted package obligations · STD = seven shared standards (pending author, D-20260719-11) · REJ/DEF = exclusion-register seed (plan §8)"
   source_hashes:
     CLAUDE.md: "sha256:1761a932b907973baa15fc7c75f720f502c7f192353dabd64d7875ab8862a2e3"
-    gates/registry.yaml: "sha256:50d7d189fba57cde5820a99332b8da4b33a0804935fb6d84353f0765b29b64ea"
+    gates/registry.yaml: "sha256:3be9c3aa2674903e42bd9e7e71de9741ac80942fd69f0f8ba4626198db6e7843"
 rows:
   - source_id: CM-001
     source_file: "CLAUDE.md"
@@ -2640,7 +2640,7 @@ rows:
     new_home: "gates/registry.yaml (unchanged — Phase 5 battery per plan §2.1; registry classes supreme per §2.2; package checks ADD rows, never replace)"
     dimensions: [commerce-adapted, organic]
     trigger: "per PR (merge-blocking CI)"
-    enforcement: "GSC 16m UI snapshots committed for 13 properties (launches/*/baseline/raw/gsc-ui-export-2026-07-19/ + hashed manifests; see launches/README-gsc-snapshot-2026-07-19.md); the full register/PDF via the M3 seo-baseline script (DataForSEO, plan §3.4) and the strategy-row CI block in scripts/front-gate.mjs (M2) are NOT built yet"
+    enforcement: "scripts/seo-baseline.mjs BUILT at M3(a) 20 Jul (pull: narrow DataForSEO REST, 3 endpoints + free account check, cost-budget gate; register: vendor-neutral seo-baseline-register/1 with epistemology labels OBSERVED_FIRST_PARTY/THIRD_PARTY_ESTIMATE/CALCULATED/UNKNOWN, hashed sources, evidence-manifested raws; bakeoff: §3.5 vendor-vs-GSC comparison with RECOMMENDATION-labelled thresholds) + GSC 16m UI snapshots for 13 properties (launches/*/baseline/raw/gsc-ui-export-2026-07-19/; see launches/README-gsc-snapshot-2026-07-19.md). STILL NOT BUILT (why status stays partial): the strategy-row CI block in scripts/front-gate.mjs; GSC API/BigQuery lane (UI tables capped 1,000 rows); GA4 12m (Monday Admin grants); crawl/CWV fields; the date-stamped MONITOR/REJECT/IMPLEMENT PDF"
     evidence_path: null
     approver: "CI"
     test: "scripts/test/gate-registry-lint.test.js (registry contract) + scripts/test/merge-continuity-lint.test.js (coverage)"

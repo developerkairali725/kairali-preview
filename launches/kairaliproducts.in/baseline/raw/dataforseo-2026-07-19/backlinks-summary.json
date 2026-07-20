@@ -1,0 +1,118 @@
+{
+  "version": "0.1.20260717",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.2423 sec.",
+  "cost": 0.024036,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "07191901-2083-0265-0000-1d74ff668dcb",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.2312 sec.",
+      "cost": 0.024036,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "backlinks",
+        "summary",
+        "live"
+      ],
+      "data": {
+        "api": "backlinks",
+        "function": "summary",
+        "target": "www.kairaliproducts.in",
+        "include_subdomains": true
+      },
+      "result": [
+        {
+          "target": "www.kairaliproducts.in",
+          "first_seen": "2019-01-17 21:33:14 +00:00",
+          "lost_date": null,
+          "rank": 299,
+          "backlinks": 9729,
+          "backlinks_spam_score": 12,
+          "crawled_pages": 3525,
+          "info": {
+            "server": "cloudflare",
+            "cms": null,
+            "platform_type": null,
+            "ip_address": "23.227.38.74",
+            "country": "IN",
+            "is_ip": false,
+            "target_spam_score": 0
+          },
+          "internal_links_count": 70619,
+          "external_links_count": 3396,
+          "broken_backlinks": 2009,
+          "broken_pages": 1322,
+          "referring_domains": 323,
+          "referring_domains_nofollow": 211,
+          "referring_main_domains": 217,
+          "referring_main_domains_nofollow": 123,
+          "referring_ips": 190,
+          "referring_subnets": 170,
+          "referring_pages": 7843,
+          "referring_pages_nofollow": 521,
+          "referring_links_tld": {
+            "com": 5469,
+            "org": 684,
+            "blogspot.com": 598,
+            "biz": 594,
+            "net": 181,
+            "xyz": 159,
+            "info": 50,
+            "in": 19,
+            "co.in": 17,
+            "cz": 11
+          },
+          "referring_links_types": {
+            "anchor": 4986,
+            "alternate": 1751,
+            "image": 1103,
+            "redirect": 3
+          },
+          "referring_links_attributes": {
+            "nofollow": 521,
+            "noopener": 273,
+            "noreferrer": 59,
+            "external": 33,
+            "sponsored": 1,
+            "ugc": 1
+          },
+          "referring_links_platform_types": {
+            "unknown": 5660,
+            "blogs": 1055,
+            "ecommerce": 882,
+            "cms": 621,
+            "organization": 509,
+            "wikis": 3
+          },
+          "referring_links_semantic_locations": {
+            "": 7084,
+            "section": 530,
+            "main": 86,
+            "article": 73,
+            "nav": 61,
+            "aside": 5,
+            "header": 4
+          },
+          "referring_links_countries": {
+            "": 5144,
+            "IN": 1853,
+            "WW": 761,
+            "US": 27,
+            "CZ": 11,
+            "AR": 10,
+            "CA": 4,
+            "GB": 4,
+            "BR": 3,
+            "DE": 3
+          }
+        }
+      ]
+    }
+  ]
+}

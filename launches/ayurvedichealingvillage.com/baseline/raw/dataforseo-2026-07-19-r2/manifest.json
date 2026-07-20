@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "generated": "2026-07-19 21:34:46 IST",
+  "collected_at_utc": "2026-07-19T16:04:46Z",
+  "run_id": "2026-07-19-r1",
+  "producer": {
+    "session": "m3a-seo-baseline-2026-07-20",
+    "role": "builder"
+  },
+  "files": [
+    {
+      "path": "backlinks-summary.json",
+      "sha256": "e6c2187ff1e3990c30fbf8d688de79f8b434942fe14a9f4918d795f8abe3c6fb",
+      "bytes": 3305,
+      "run_id": "2026-07-19-r1"
+    },
+    {
+      "path": "domain-rank-overview.json",
+      "sha256": "8798ceb39f17d177cdc292f29afb7b57c0efb26df7681e4b54fb054d8f54428b",
+      "bytes": 2949,
+      "run_id": "2026-07-19-r1"
+    },
+    {
+      "path": "pull-meta.json",
+      "sha256": "92ca2404fee25906400eea61d5ad31b5da4e990acbcb8452e0c79a49c959b3e4",
+      "bytes": 699,
+      "run_id": "2026-07-19-r1"
+    },
+    {
+      "path": "ranked-keywords.json",
+      "sha256": "1d59ebe53d84a57232bb3ac8b96bac9e10cd78f49eca5966fa2cab60b17c15b4",
+      "bytes": 2912905,
+      "run_id": "2026-07-19-r1"
+    }
+  ]
+}

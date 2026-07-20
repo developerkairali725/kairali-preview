@@ -1,0 +1,28 @@
+{
+  "schema": "seo-baseline-pull/1",
+  "domain": "kairali.com",
+  "target": "www.kairali.com",
+  "location_code": 2356,
+  "language_code": "en",
+  "limit": 1000,
+  "generated": "2026-07-19 21:30:51 IST",
+  "collected_at_utc": "2026-07-19T16:00:49.221Z",
+  "account_balance_usd_before": 49.776684,
+  "calls": [
+    {
+      "name": "ranked-keywords",
+      "cost_usd": 0.0414
+    },
+    {
+      "name": "domain-rank-overview",
+      "cost_usd": 0.01212
+    },
+    {
+      "name": "backlinks-summary",
+      "cost_usd": 0.024036
+    }
+  ],
+  "total_cost_usd": 0.077556,
+  "vendor": "dataforseo",
+  "api": "narrow REST (3 endpoints — §3.5 bake-off doctrine, not the MCP)"
+}

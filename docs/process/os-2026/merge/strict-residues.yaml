@@ -20,17 +20,25 @@ meta:
   plan: "docs/plans/2026-07-19-os-v2-architecture-merge-plan.md §10 (M2 Mechanisms · M3 Data + tools)"
   note: "review_by = the date by which the entry must either be deleted (file built) or re-justified to the owner; dates are review checkpoints chosen at M1, not delivery promises."
 residues:
-  # decisions/index.json row (CM-073, CM-076) REMOVED 2026-07-19 19:41:00 IST — the decisions/
-  # store + index + Decision Guardian landed at M2 (decisions/README.md, scripts/decisions-index.mjs);
-  # the allowlist shrinks truthfully, per this file's own staleness rule.
-  # scripts/evidence-manifest.mjs row (PKG-020, PKG-077) REMOVED 2026-07-19 19:51:34 IST — the
-  # manifest writer/validator + EV-4 CI append-only check landed at M2 (scripts/evidence-manifest.mjs,
-  # factory-gate.yml brand-lint step); the allowlist shrinks truthfully, per this file's own staleness rule.
-  # evolution/radar.yaml row (PKG-059) REMOVED 2026-07-19 19:51:34 IST — the evolution registers +
-  # their validator landed at M2 (evolution/radar.yaml et al., scripts/evolution-lint.mjs in CI);
-  # same staleness rule.
-  - path: scripts/seo-baseline.mjs
-    rows: [PKG-002, PKG-068]
-    milestone: M3
-    reason: "seo-baseline script rides M3 data + tools, after the §7.2 owner one-worders (DataForSEO, plan §3.4/§10 M3); the baseline registry row honestly carries status partial meanwhile"
-    review_by: "2026-08-09"
+# (empty — every mechanism a continuity ROW names now exists on disk. NOT a claim of M3
+# completion: the baseline gate's enforcement tooth — the strategy-row CI block in
+# scripts/front-gate.mjs — plus the GSC API/BigQuery lane, GA4 12m, crawl/CWV fields and
+# the MONITOR/REJECT/IMPLEMENT PDF remain unbuilt; they are tracked loudly in the baseline
+# registry row (status: partial) because no continuity row pins them to a file path,
+# which is this allowlist's only jurisdiction.)
+# decisions/index.json row (CM-073, CM-076) REMOVED 2026-07-19 19:41:00 IST — the decisions/
+# store + index + Decision Guardian landed at M2 (decisions/README.md, scripts/decisions-index.mjs);
+# the allowlist shrinks truthfully, per this file's own staleness rule.
+# scripts/evidence-manifest.mjs row (PKG-020, PKG-077) REMOVED 2026-07-19 19:51:34 IST — the
+# manifest writer/validator + EV-4 CI append-only check landed at M2 (scripts/evidence-manifest.mjs,
+# factory-gate.yml brand-lint step); the allowlist shrinks truthfully, per this file's own staleness rule.
+# evolution/radar.yaml row (PKG-059) REMOVED 2026-07-19 19:51:34 IST — the evolution registers +
+# their validator landed at M2 (evolution/radar.yaml et al., scripts/evolution-lint.mjs in CI);
+# same staleness rule.
+# scripts/seo-baseline.mjs row (PKG-002, PKG-068) REMOVED 2026-07-19 22:03:24 IST (M3(a) night
+# session) — the R6 baseline register + §3.5 bake-off mechanism landed (scripts/seo-baseline.mjs
+# + 43 mocked tests after the 32-agent adversarial review; DataForSEO account verified, narrow
+# REST, owner-funded per D-15). The allowlist shrinks truthfully, per this file's own staleness
+# rule. The M3 remainder — including the strategy-row CI block in scripts/front-gate.mjs, the
+# baseline gate's enforcement tooth — is NOT covered by any allowlist row (no continuity row
+# pins those to a path); it stays loud in the baseline registry row (status: partial).

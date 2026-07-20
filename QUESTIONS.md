@@ -532,3 +532,12 @@ External pass 2 ruled guessed classification defaults out of gates/class-map.yam
 Also riding from the same review, for ratification not blocking: kairaliyoga.com entity_register=villa-raag-hospitality
 (bucket-fit — the enum has no generic wellness value) and the 04_SHOPIFY LP test vectors on platform=factory-next
 (LPs run on the factory /lp infrastructure; checkout stays Shopify).
+
+## 2026-07-19 22:12:00 IST — Q-BAKEOFF-VERDICT (DataForSEO consolidation one-worder, §3.5 doctrine)
+M3(a) bake-off ran live on 4 properties vs the committed GSC 16m exports (RPT-20260719-M3A). Against the
+proposed tolerances the vendor FAILS coverage everywhere (sees 3–39% of actual click-earning queries; ETV
+4–7× actuals on honest joins) while position agreement on covered keywords is solid on the two big
+properties. Recommendation on record: do NOT consolidate on the vendor; GSC/GA4 first-party stays the
+baseline spine, DataForSEO kept narrow-PAYG for backlink graph + vendor-only keyword discovery; re-judge
+after the GSC API lane (1,000-row UI cap depresses the measured denominator). One-worder: reply
+KEEP-NARROW (recommended) or WIDEN (vendor becomes a baseline source anyway) or DROP.

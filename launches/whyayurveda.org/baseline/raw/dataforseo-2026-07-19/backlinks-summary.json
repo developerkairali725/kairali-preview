@@ -1,0 +1,119 @@
+{
+  "version": "0.1.20260717",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.2061 sec.",
+  "cost": 0.024036,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "07191901-2083-0265-0000-15cf0e9799fa",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.1897 sec.",
+      "cost": 0.024036,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "backlinks",
+        "summary",
+        "live"
+      ],
+      "data": {
+        "api": "backlinks",
+        "function": "summary",
+        "target": "whyayurveda.org",
+        "include_subdomains": true
+      },
+      "result": [
+        {
+          "target": "whyayurveda.org",
+          "first_seen": "2019-01-16 16:57:38 +00:00",
+          "lost_date": null,
+          "rank": 290,
+          "backlinks": 8644,
+          "backlinks_spam_score": 8,
+          "crawled_pages": 4747,
+          "info": {
+            "server": "cloudflare",
+            "cms": "wordpress",
+            "platform_type": [
+              "cms",
+              "blogs",
+              "organization"
+            ],
+            "ip_address": "188.114.96.3",
+            "country": "IN",
+            "is_ip": false,
+            "target_spam_score": 0
+          },
+          "internal_links_count": 321248,
+          "external_links_count": 37348,
+          "broken_backlinks": 98,
+          "broken_pages": 146,
+          "referring_domains": 173,
+          "referring_domains_nofollow": 56,
+          "referring_main_domains": 155,
+          "referring_main_domains_nofollow": 55,
+          "referring_ips": 149,
+          "referring_subnets": 112,
+          "referring_pages": 5975,
+          "referring_pages_nofollow": 403,
+          "referring_links_tld": {
+            "com": 5374,
+            "net": 306,
+            "in": 79,
+            "biz": 62,
+            "blogspot.com": 35,
+            "ru": 29,
+            "": 24,
+            "org": 10,
+            "info": 8,
+            "co.uk": 6
+          },
+          "referring_links_types": {
+            "anchor": 5543,
+            "image": 432
+          },
+          "referring_links_attributes": {
+            "noopener": 619,
+            "noreferrer": 452,
+            "nofollow": 403,
+            "ugc": 50,
+            "external": 1
+          },
+          "referring_links_platform_types": {
+            "blogs": 2926,
+            "unknown": 2915,
+            "organization": 2866,
+            "cms": 2749,
+            "ecommerce": 66,
+            "news": 2
+          },
+          "referring_links_semantic_locations": {
+            "": 2845,
+            "main": 2253,
+            "footer": 506,
+            "article": 259,
+            "section": 110,
+            "figure": 1,
+            "header": 1
+          },
+          "referring_links_countries": {
+            "IN": 2908,
+            "": 2618,
+            "WW": 384,
+            "RU": 29,
+            "US": 17,
+            "GB": 6,
+            "CO": 4,
+            "AI": 3,
+            "CC": 1,
+            "DE": 1
+          }
+        }
+      ]
+    }
+  ]
+}

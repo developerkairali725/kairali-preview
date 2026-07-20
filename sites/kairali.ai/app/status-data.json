@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-07-19 20:48:18 IST",
-  "generated_utc": "2026-07-19T15:18:18Z",
+  "generated": "2026-07-19 22:06:41 IST",
+  "generated_utc": "2026-07-19T16:36:41Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot pending",
     "milestones": [
@@ -31,9 +31,9 @@
         "state": "pending"
       }
     ],
-    "strict_residues": 1,
-    "unacked_directives": 5,
-    "open_questions": 83,
+    "strict_residues": 0,
+    "unacked_directives": 4,
+    "open_questions": 84,
     "decisions": 15,
     "tests": null
   },

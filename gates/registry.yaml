@@ -1034,7 +1034,7 @@ gates:
     severity: blocker
     run: automated
     status: partial
-    script_or_agent_ref: "GSC 16m UI snapshots committed for 13 properties (launches/*/baseline/raw/gsc-ui-export-2026-07-19/ + hashed manifests; see launches/README-gsc-snapshot-2026-07-19.md); the full register/PDF via the M3 seo-baseline script (DataForSEO, plan §3.4) and the strategy-row CI block in scripts/front-gate.mjs (M2) are NOT built yet"
+    script_or_agent_ref: "scripts/seo-baseline.mjs BUILT at M3(a) 20 Jul (pull: narrow DataForSEO REST, 3 endpoints + free account check, cost-budget gate; register: vendor-neutral seo-baseline-register/1 with epistemology labels OBSERVED_FIRST_PARTY/THIRD_PARTY_ESTIMATE/CALCULATED/UNKNOWN, hashed sources, evidence-manifested raws; bakeoff: §3.5 vendor-vs-GSC comparison with RECOMMENDATION-labelled thresholds) + GSC 16m UI snapshots for 13 properties (launches/*/baseline/raw/gsc-ui-export-2026-07-19/; see launches/README-gsc-snapshot-2026-07-19.md). STILL NOT BUILT (why status stays partial): the strategy-row CI block in scripts/front-gate.mjs; GSC API/BigQuery lane (UI tables capped 1,000 rows); GA4 12m (Monday Admin grants); crawl/CWV fields; the date-stamped MONITOR/REJECT/IMPLEMENT PDF"
     source: "OS v2 merge plan §3.4 (R6 baseline gate) + §2.1 Phase 1; Digital_Growth_Agency_OS_2026 package Phase-1 baseline discipline; D-20260719-07 (GSC export)"
     applicability:
       commerce: { adapted: "Store migrations baseline PDP/collection organic + revenue analytics BEFORE any URL change (rule m: Vikash flagged first); greenfield stores declare greenfield" }
