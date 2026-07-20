@@ -287,3 +287,43 @@ intent) landed as a bonus.
 
 **STANDING RESULT: region = Mumbai asia-south1 · naming = searchconsole_<domain> — BOTH now proven
 paths for the remaining 7 GSC properties and the GA4 exports (same region, always).**
+
+---
+
+# ADDENDUM 8 — GO-EXPORTS EXECUTED: all 7 remaining GSC bulk exports ACTIVE in Mumbai (agent in owner's Chrome, 2026-07-20 ~19:35 IST)
+
+**LIVE STATE (GSC "Setup completed successfully / Bulk data export is active" confirmation read on
+screen per property, this session):** all seven remaining properties now export to
+**kairali-analytics-os · Mumbai (asia-south1)**, per-property dataset names per the addendum-7
+standing result:
+
+| # | GSC property | login | dataset |
+|---|---|---|---|
+| 1 | http://www.arogyakendra.com/ | u/0 | `searchconsole_arogyakendra` |
+| 2 | https://www.ayurvedichealingvillage.com/ | u/0 | `searchconsole_ayurvedichealingvillage` |
+| 3 | http://www.kairalihospitality.com/ | u/0 | `searchconsole_kairalihospitality` |
+| 4 | https://www.kairaliproducts.in/ | u/0 | `searchconsole_kairaliproducts` |
+| 5 | http://www.kairalitea.com/ | u/0 | `searchconsole_kairalitea` |
+| 6 | http://www.kairaliyoga.com/ | u/0 | `searchconsole_kairaliyoga` |
+| 7 | https://ayurvedichealingvillage.com/ | u/1 director@ | `searchconsole_ayurvedichealingvillage_nowww` |
+
+With whyayurveda.org (addendum 7) that is **8 of 8 property exports live, one region, one project** —
+the colocation rule is satisfied fleet-wide. First exports land ≤48h per property; NO backfill, so
+the continuous-history clock started today for all of them. Next: dataset hygiene pass (runbook
+step 11) once tables exist — M3.
+
+**OPERATIONAL FINDINGS (correct/extend the addendum-7 record):**
+1. **Addendum-7 finding 3 re-diagnosed:** the name field never garbles anything — it is a plain
+   input with a fixed `searchconsole_` PREFIX ADORNMENT, and after typing it horizontally scrolls
+   so the value's first characters hide UNDER the adornment (visually reading as "eaten" text,
+   e.g. `searchconsole_edichealingvillage_nowww`). The DOM value stays correct the whole time.
+   cmd+A+Delete clears the VALUE only (the adornment always renders). The law stands unchanged:
+   **trust only the Review-your-settings dialog**, which prints the full effective name.
+2. **Deep links work** for both logins: `search.google.com/search-console/settings/bulk-data-export?resource_id=<property>`
+   (u/0) and `search.google.com/u/1/search-console/settings/bulk-data-export?resource_id=…` (u/1);
+   the authuser=1 QUERY form 500s — use the /u/1/ PATH form.
+3. **Accounts-note truth-up (rule j):** director@'s AHV variant is **https://ayurvedichealingvillage.com/**
+   (https, no-www) — the runbook's "http-nowww" note was stale. Also https://www.kairaliproducts.in/
+   appears on BOTH logins (exported once, from u/0).
+4. The form's first fill attempt right after page load is sometimes swallowed — fill, VERIFY the
+   zoomed fields, and refill once if blank (took one retry on 3 of 7 properties).
