@@ -1,0 +1,45 @@
+CARD-4(a) CHANGE SPEC — ruled-wrong 1908 heritage form + hardcoded copyright literals
+(D-20260720-25 fix 1; findings B-144/B-142; T8 3-way check at authorization)
+Date: 2026-07-20 ~16:55 IST · Session: erosion-wave
+
+RULING BEING ENFORCED (DECISIONS.md, 16 Jul, Abilash primary source):
+- 1908 = the FAMILY lineage origin (great-grandfather's first clinic, Palakkad).
+- The GROUP was founded 1989 by K. V. Ramesh and Gita Ramesh (best-evidenced date on record).
+- LICENSED: "a family practising Ayurveda since 1908" / "a family tradition since 1908".
+- PROHIBITED: any group-attached 1908 ("Kairali Ayurvedic Group — Since 1908", "founded 1908").
+- D-ROLLING-NUMBER: time-rolling values are COMPUTED, never typed ("© 1908–2026" literals ban).
+Designs are FROZEN: text-only edits; no layout, structure, or style changes.
+
+EDITS (23 total, 6 sites) — WRONG FORM → RULED FORM:
+
+kairali.com (8):
+  layout.tsx:41  title "Kairali Ayurvedic Group — Since 1908" → "Kairali Ayurvedic Group — A Family Tradition Since 1908"
+  layout.tsx:43  desc "…Villa Raag — since 1908." → "…Villa Raag — a family tradition since 1908."
+  llms route:15  "health through ayurveda since 1908" → "health through ayurveda — a family tradition since 1908"
+  llms route:17  "Kairali Ayurvedic Group, founded 1908 (four generations, family-run)" → "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)"
+  page.tsx:151   img alt "…since 1908" → "…a family tradition since 1908"
+  page.tsx:180   h1 "Health through Ayurveda, since 1908" → "Health through Ayurveda — a family tradition since 1908" (the ruling's own fix template)
+  page.tsx:320   "a promise kept daily since 1908" → "a family promise kept daily since 1908"
+  page.tsx:340   footer "Since 1908 · Palakkad, Kerala, India" → "A family tradition since 1908 · Palakkad, Kerala, India"
+
+arogyakendra.com — LIVE (7): the same template fixes at layout.tsx:41, llms route:15+17, page.tsx:64 ("The group behind it all — health through ayurveda since 1908." → "…health through ayurveda, a family tradition since 1908."), page.tsx:181 overline "Kairali Ayurvedic Group · Since 1908" → "· A family tradition since 1908", page.tsx:279 promise, page.tsx:299 footer.
+
+kairalicenters.com (4):
+  page.tsx:50    overline "Kairali Ayurvedic Group · Since 1908" → "· A family tradition since 1908"
+  llms route:13  "founded 1908 (family-run)" → "founded 1989 (family-run; practising Ayurveda since 1908)"
+  chrome.tsx:21  masthead small "Health through ayurveda · since 1908" → "· a family tradition since 1908"
+  chrome.tsx:69  "© 1908–2026 Kairali Ayurvedic Group." → "© {new Date().getFullYear()} Kairali Ayurvedic Group." (computed)
+
+whatisayurveda.com (4):
+  layout.tsx:21  "From the Kairali Group, since 1908." → "From the Kairali Group — a family tradition since 1908."
+  llms route:16  "founded 1908 (four generations, family-run)" → "founded 1989 (four generations; a family practising Ayurveda since 1908)"
+  content/about.json:4 "from the Kairali Ayurvedic Group, working in Ayurveda since 1908" → "from the Kairali Ayurvedic Group — a family working in Ayurveda since 1908"
+  chrome.tsx:88  "© 1908–2026" → computed (as above)
+  NOTE: chrome.tsx:25 masthead "by the Kairali Group · since 1908" is NOT edited here — CARD-5 (D-20260720-26 REDUCE) removes that masthead line entirely in the same wave's next PR.
+
+bulkayurvedaoils.com (1): chrome.tsx:154 "© 1908–2026" → computed.
+bulkayurvedaproducts.com (1): chrome.tsx:153 "© 1908–2026" → computed.
+
+KEEP LIST (lineage-correct, deliberately untouched): trust-card dt "Since 1908" + dd "Four generations…" (lineage-attached); kairalicenters chrome.tsx:45 "a family of Ayurvedic physicians since 1908"; centres/[slug] "physicians since 1908" forms; llms lineage parentheticals "(physicians since 1908…)"; whatisayurveda article.tsx:48 "a family enterprise working in Ayurveda since 1908"; ALL bulk-site prose ("Since 1908, founded 1989" — the D-LIN-1989-WORDING canonical pairing); all kairaliorganic.com lines (already the ruled form).
+
+COPYRIGHT FORM PRECEDENT: healing.recipes chrome.tsx:66 / kairaliorganic page.tsx:405 — © {computed year} Kairali Ayurvedic Group (+ optional lineage tail). We adopt the computed year, preserving each footer's existing sentence around it.

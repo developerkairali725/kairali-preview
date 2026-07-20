@@ -148,7 +148,7 @@ export default function Home() {
           <a className="logo-link" href="#top" aria-label="Kairali Ayurvedic Group — home">
             <img
               src="/images/kairali-icon.svg"
-              alt="Kairali — health through ayurveda, since 1908"
+              alt="Kairali — health through ayurveda, a family tradition since 1908"
               width="75"
               height="52"
             />
@@ -177,7 +177,7 @@ export default function Home() {
             <div>
               <div className="accent-rule" aria-hidden="true" />
               <p className="overline">One Family · Six Doors · Palakkad, Kerala</p>
-              <h1>Health through Ayurveda, since 1908</h1>
+              <h1>Health through Ayurveda — a family tradition since 1908</h1>
               <p className="lede">
                 For four generations, one family has practised Ayurveda the
                 classical way — a NABH-accredited hospital in Kerala, medicines
@@ -317,7 +317,7 @@ export default function Home() {
           <div className="container">
             <p className="overline" id="promise-heading">Our Promise</p>
             <p className="promise-quote">
-              Health through ayurveda — a promise kept daily since 1908.
+              Health through ayurveda — a family promise kept daily since 1908.
             </p>
             <div className="cta-row">
               <a className="btn btn-inverse" href={WHATSAPP_URL} data-cta="whatsapp_click">
@@ -337,7 +337,7 @@ export default function Home() {
             <a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a> ·{" "}
             <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
           </p>
-          <p>Since 1908 · Palakkad, Kerala, India</p>
+          <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>
       </footer>
 

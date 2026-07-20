@@ -1,0 +1,183 @@
+CARD-4(a) MACHINE EVIDENCE — 1908-form purge, before/after (branch card4/erosion-1908 vs main @ ed98048)
+Generated: 2026-07-20 17:01:08 IST
+
+== BEFORE (main): prohibited forms ==
+
+== AFTER (working tree): prohibited forms ==
+(zero matches)
+
+== AFTER: typed copyright literals ©<year> in sites/ ==
+(zero matches)
+
+== AFTER: every remaining 1908 line in sites/ (all licensed lineage forms or code comments) ==
+sites/kairaliorganic.com/app/page.tsx:18://   1989 (K. V. Ramesh + Gita Ramesh); family practising Ayurveda since 1908;
+sites/kairaliorganic.com/app/page.tsx:20://   legacy "since its inception in 1908" / "100-year" forms are retired and
+sites/kairaliorganic.com/app/page.tsx:306:              Ayurveda since 1908. The Organics range is made by the
+sites/kairaliorganic.com/app/page.tsx:406:            &mdash; a family practising Ayurveda since 1908
+sites/kairaliorganic.com/app/llms.txt/route.ts:23:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908",
+sites/kairali.com/app/page.tsx:151:              alt="Kairali — health through ayurveda, a family tradition since 1908"
+sites/kairali.com/app/page.tsx:180:              <h1>Health through Ayurveda — a family tradition since 1908</h1>
+sites/kairali.com/app/page.tsx:224:                <dt>Since 1908</dt>
+sites/kairali.com/app/page.tsx:320:              Health through ayurveda — a family promise kept daily since 1908.
+sites/kairali.com/app/page.tsx:340:          <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
+sites/kairali.com/app/layout.tsx:41:    title: "Kairali Ayurvedic Group — A Family Tradition Since 1908",
+sites/kairali.com/app/layout.tsx:43:      `Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in ${COUNTRIES_PHRASE}, Ayurveda training, Villa Raag. A family tradition since 1908.`,
+sites/kairali.com/app/llms.txt/route.ts:15:      `Flagship site of the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. One family, five doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, treatment centres in ${COUNTRIES_PHRASE}, Ayurveda training, and Villa Raag in Goa.`,
+sites/kairali.com/app/llms.txt/route.ts:17:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
+sites/kairalicenters.com/app/page.tsx:15:  { dt: "Since 1908", dd: "Four generations of Ayurvedic physicians." },
+sites/kairalicenters.com/app/page.tsx:50:              <p className="overline">Kairali Ayurvedic Group · A family tradition since 1908</p>
+sites/kairalicenters.com/app/layout.tsx:21:      "Kairali Ayurvedic treatment centres across India and abroad — classical, physician-led Ayurveda from a family practising since 1908.",
+sites/kairalicenters.com/app/llms.txt/route.ts:11:      "The network of Kairali Ayurvedic treatment centres in India and abroad, part of the Kairali Ayurvedic Group (physicians since 1908; NABH hospital + WHO-GMP pharmacy). Each centre page lists its address, phone, and timings. Non-commercial directory; it helps people find a centre and book a consultation.",
+sites/kairalicenters.com/app/llms.txt/route.ts:13:      "Publisher: Kairali Ayurvedic Group, founded 1989 (family-run; practising Ayurveda since 1908)",
+sites/kairalicenters.com/app/centres/[slug]/page.tsx:26:    description: `Kairali Ayurvedic Centre in ${place}, ${c.country}. Address, timings and how to book a consultation. Classical Ayurvedic care from physicians since 1908.`.slice(0, 155),
+sites/kairalicenters.com/app/centres/[slug]/page.tsx:82:            <p className="article-lede">{c.name} in {place}. Classical Ayurvedic treatment from the Kairali Ayurvedic Group — physicians since 1908.</p>
+sites/kairalicenters.com/app/_components/chrome.tsx:21:            <small>Health through ayurveda · a family tradition since 1908</small>
+sites/kairalicenters.com/app/_components/chrome.tsx:45:              a family of Ayurvedic physicians since 1908, with an NABH-accredited
+sites/arogyakendra.com/app/page.tsx:64:    line: "The group behind it all — health through ayurveda, a family tradition since 1908.",
+sites/arogyakendra.com/app/page.tsx:181:              <p className="overline">Kairali Ayurvedic Group · A family tradition since 1908</p>
+sites/arogyakendra.com/app/page.tsx:222:                <dt>Since 1908</dt>
+sites/arogyakendra.com/app/page.tsx:279:              Health through ayurveda — a family promise kept daily since 1908.
+sites/arogyakendra.com/app/page.tsx:299:          <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
+sites/arogyakendra.com/app/layout.tsx:41:      "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. Find our centres, hospital-retreat, products, and more.",
+sites/arogyakendra.com/app/llms.txt/route.ts:15:      "Gateway site of the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. It directs visitors to the group's hospital-retreat, treatment centres, products, tea, and franchise sites.",
+sites/arogyakendra.com/app/llms.txt/route.ts:17:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
+sites/whatisayurveda.com/app/page.tsx:27:  { dt: "Since 1908", dd: "Four generations of Ayurvedic physicians." },
+sites/whatisayurveda.com/app/layout.tsx:21:      "A clear, honest, physician-reviewed guide to Ayurveda — the doshas, panchakarma, herbs, and what the evidence says. From the Kairali Group, a family tradition since 1908.",
+sites/whatisayurveda.com/app/llms.txt/route.ts:14:      "An educational authority site from the Kairali Ayurvedic Group (physicians since 1908). Evidence-honest explanations of Ayurveda — doshas, panchakarma, herbs, diet, and what the science says. Non-commercial; it educates and points to the group's NABH hospital and WHO-GMP pharmacy.",
+sites/whatisayurveda.com/app/llms.txt/route.ts:16:      "Publisher: Kairali Ayurvedic Group, founded 1989 (four generations; a family practising Ayurveda since 1908)",
+sites/whatisayurveda.com/app/_components/article.tsx:48:    body: "whatisayurveda.com is published by the Kairali Ayurvedic Group, a family enterprise working in Ayurveda since 1908.",
+sites/whatisayurveda.com/app/_components/chrome.tsx:25:            <small>by the Kairali Group · a family tradition since 1908</small>
+sites/whatisayurveda.com/content/about.json:4:  "metaDescription": "A free educational resource from the Kairali Ayurvedic Group — a family working in Ayurveda since 1908. Physician-reviewed pages carry the doctor's name and date.",
+sites/whatisayurveda.com/content/about.json:6:  "answerCapsule": "whatisayurveda.com is a free educational resource published by the Kairali Ayurvedic Group, a family business working in Ayurveda since 1908. It exists to explain Ayurveda honestly — what the evidence shows and what it does not. Pages that one of our Ayurvedic physicians has reviewed carry that physician's name and the date; pages that have not been reviewed yet say so. It sells nothing.",
+sites/whatisayurveda.com/content/about.json:25:      "capsule": "whatisayurveda.com is published by the Kairali Ayurvedic Group, a Kerala-based family enterprise that has worked in Ayurveda since 1908. Kairali runs an NABH-accredited Ayurvedic hospital and a WHO-GMP-certified pharmacy. whatisayurveda.com is its non-commercial educational arm: it explains the tradition and links out, but never sells anything on the page.",
+sites/whatisayurveda.com/content/about.json:26:      "body": "whatisayurveda.com is published by the **Kairali Ayurvedic Group**, a family-run organisation whose work in Ayurveda goes back to 1908. It is a free, non-commercial reference site. Nothing is sold here — there is no shop, no cart, and no consultation fee to read a page.\n\nWe built it because most of the clearest, best-ranked writing about Ayurveda online comes from institutions outside the tradition, while the practitioners who train in and practise it are largely absent from the conversation. This site is our attempt to explain Ayurveda from inside the tradition, in plain language, and to hold ourselves to the same evidence and disclosure standards a good medical library would.\n\nIf you want the plain-English overview of the subject itself, start with our pillar guide, [what is Ayurveda](/what-is-ayurveda). This page is about who stands behind it."
+sites/whatisayurveda.com/content/about.json:30:      "capsule": "Kairali is a family-run Ayurvedic group whose work in the tradition dates to 1908, now led by K.V. Ramesh and Gita Ramesh. Its practice spans Kairali — The Ayurvedic Healing Village, an NABH-accredited hospital in Palakkad, Kerala, a WHO-GMP-certified pharmacy, and Ayurvedic treatment centres across several countries.",
+sites/whatisayurveda.com/content/about.json:62:      "a": "It is published by the Kairali Ayurvedic Group, a family-run organisation working in Ayurveda since 1908. Kairali operates an NABH-accredited Ayurvedic hospital in Kerala and a WHO-GMP-certified pharmacy. This site is its free, non-commercial educational resource and sells nothing."
+sites/bulkayurvedaproducts.com/app/llms.txt/route.ts:16:      "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
+sites/bulkayurvedaproducts.com/app/about/page.tsx:1:// /about — the KAPPL story (STRATEGY §1 row 11). 1908/1989 framing EXACTLY as
+sites/bulkayurvedaproducts.com/app/about/page.tsx:14:    "The manufacturing-partnership desk of Kairali Ayurvedic Products Pvt. Ltd. — WHO-GMP manufacture at Pollachi. Since 1908, founded 1989.",
+sites/bulkayurvedaproducts.com/app/about/page.tsx:44:                The Kairali family has practised Ayurveda since 1908; the group
+sites/bulkayurvedaproducts.com/app/_components/chrome.tsx:108:              since 1908 — four generations of Ayurvedic manufacture.
+sites/kairalihospitality.com/app/llms.txt/route.ts:9:// no dates/counts beyond the locked 1908/1989 anchors.
+sites/kairalihospitality.com/app/llms.txt/route.ts:23:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908",
+sites/kairalihospitality.com/app/page.tsx:8://   Oetker) with dual Explore/Enquire CTAs (§5.10, COMO) · full-width 1908
+sites/kairalihospitality.com/app/page.tsx:46:const LINEAGE_YEARS = new Date().getFullYear() - 1908;
+sites/kairalihospitality.com/app/page.tsx:286:        {/* ---------- 1908 lineage pull-quote + honest counters (§5.6, §5.8) ---------- */}
+sites/kairalihospitality.com/app/page.tsx:290:              One family has practised Ayurveda since 1908, when
+sites/kairalihospitality.com/app/page.tsx:448:            practising Ayurveda since 1908
+sites/bulkayurvedaoils.com/app/page.tsx:64:              <p className="overline">WHO-GMP manufacturer · Since 1908, founded 1989</p>
+sites/bulkayurvedaoils.com/app/page.tsx:129:            <span className="heritage">Trusted since 1908 — four generations of Ayurvedic manufacture</span>
+sites/bulkayurvedaoils.com/app/llms.txt/route.ts:15:      "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
+sites/bulkayurvedaoils.com/app/quality/page.tsx:100:              Four generations of Ayurvedic manufacture: practising since 1908,
+sites/bulkayurvedaoils.com/app/about/page.tsx:1:// /about — the KAPPL story (STRATEGY §1 row 12). 1908/1989 framing EXACTLY as
+sites/bulkayurvedaoils.com/app/about/page.tsx:2:// published (D-1908 / D-LIN-1989-WORDING canonical forms); product-pharma
+sites/bulkayurvedaoils.com/app/about/page.tsx:15:    "The bulk-supply desk of Kairali Ayurvedic Products Pvt. Ltd. — the group's WHO-GMP manufacturer at Pollachi. Practising since 1908, founded 1989.",
+sites/bulkayurvedaoils.com/app/about/page.tsx:45:                The Kairali family has practised Ayurveda since 1908; the group
+sites/bulkayurvedaoils.com/app/_components/chrome.tsx:107:              since 1908 — four generations of Ayurvedic manufacture.
+sites/bulkayurvedaoils.com/app/for/distributors-importers/page.tsx:43:    a: "Kairali Ayurvedic Products Pvt. Ltd. — the group's WHO-GMP-certified manufacturer at Pollachi, Tamil Nadu (certifications as published: WHO-GMP, ISO, FSSAI), practising Ayurveda since 1908 and formally founded in 1989.",
+sites/abhilashkr/public/llms.txt:5:Abhilash Kalathil Ramesh is the eldest scion of the fourth generation of a Kerala-based Ayurveda-practising family (lineage since 1908). He serves as Executive Director of Kairali Ayurvedic Group, overseeing clinical operations (KTAHV, Palakkad), FMCG/pharmaceutical manufacturing (KAPPL, Kerala & Tamil Nadu), a global day-spa network (KAC), and the boutique wellness hospitality property Villa Raag in Goa. He is a founding board member of AYUSHEXCIL and an angel investor via Mumbai Angels Network.
+sites/abhilashkr/src/app/faq/page.tsx:46:      a: "Kairali represents a fourth-generation family Ayurvedic lineage dating back to 1908. KV Ramesh and Gita Ramesh formalized the modern corporate brand in 1989 by opening Kairali - The Ayurvedic Healing Village in Palakkad, Kerala."
+sites/abhilashkr/src/app/about/page.tsx:50:            Eldest scion of the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He serves as Executive Director at Kairali Ayurvedic Group, founding board member of AYUSHEXCIL, and an angel investor via Mumbai Angels Network.
+sites/abhilashkr/src/app/about/page.tsx:118:            {/* 1908 */}
+sites/abhilashkr/src/app/about/page.tsx:121:              <div className="text-primary font-bold mb-1">1908 — LINEAGE ORIGINS</div>
+sites/abhilashkr/src/app/page.tsx:59:            Eldest scion of the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. As Executive Director of Kairali Ayurvedic Group, he integrates operational AI and modern enterprise structures to scale traditional therapeutics across 27+ countries.
+sites/abhilashkr/src/app/page.tsx:65:              <LedgerRow label="Lineage" value="Fourth Generation · since 1908" />
+sites/abhilashkr/src/app/api/og/route.tsx:117:              {section} // EST. 1908
+sites/abhilashkr/src/components/site/bio-selector.tsx:14:    "100w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, preserving a traditional Indian medicine heritage since 1908. He oversees international growth, pharmaceutical manufacturing (KAPPL), day-spa clinics (KAC), and boutique hospitality (Villa Raag). Combining legacy family wisdom with operational AI, he standardizes treatments across 27+ countries. He is a founding board member of AYUSHEXCIL, advising the Ministry of AYUSH on global policy. As an angel investor, he backs startups in biotech, clean formulas, organic agriculture, and green hotel infrastructure.",
+sites/abhilashkr/src/components/site/bio-selector.tsx:15:    "400w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, representing the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He directs the group's global footprint, spanning the NABH-accredited hospital (Kairali – The Ayurvedic Healing Village, Palakkad), WHO-GMP-certified pharmaceutical manufacturing (KAPPL), a network of day-spas (KAC), and boutique wellness hospitality (Villa Raag, Goa). Under his leadership, Kairali has expanded to over 27+ countries, standardizing Ayurvedic wellness protocols for international audiences. Beyond corporate management, Abhilash is a founding board member of AYUSHEXCIL (the Ayush Export Promotion Council), established under the Ministry of AYUSH, Government of India, where he works with policymakers to establish global export standards for traditional herbs and holistic medicine. As an active angel investor, he backs early-stage founders in biotechnology, organic agriculture, clean personal care formulations, and regenerative hospitality infrastructures, providing regulatory intelligence and distribution channels. Integrating artificial intelligence into legacy processes, he scales operational systems while keeping Kairali clinically grounded."
+sites/abhilashkr/src/components/site/footer.tsx:19:            <LedgerRow label="Lineage" value="Fourth Gen · Since 1908" />
+sites/abhilashkr/src/components/site/command-menu.tsx:54:    "100w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, preserving a traditional Indian medicine heritage since 1908. He oversees international growth, pharmaceutical manufacturing (KAPPL), day-spa clinics (KAC), and boutique hospitality (Villa Raag). Combining legacy family wisdom with operational AI, he standardizes treatments across 27+ countries. He is a founding board member of AYUSHEXCIL, advising the Ministry of AYUSH on global policy. As an angel investor, he backs startups in biotech, clean formulas, organic agriculture, and green hotel infrastructure.",
+sites/abhilashkr/src/components/site/command-menu.tsx:55:    "400w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, representing the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He directs the group's global footprint, spanning the NABH-accredited hospital (Kairali – The Ayurvedic Healing Village, Palakkad), WHO-GMP-certified pharmaceutical manufacturing (KAPPL), a network of day-spas (KAC), and boutique wellness hospitality (Villa Raag, Goa). Under his leadership, Kairali has expanded to over 27+ countries, standardizing Ayurvedic wellness protocols for international audiences. Beyond corporate management, Abhilash is a founding board member of AYUSHEXCIL (the Ayush Export Promotion Council), established under the Ministry of AYUSH, Government of India, where he works with policymakers to establish global export standards for traditional herbs and holistic medicine. As an active angel investor, he backs early-stage founders in biotechnology, organic agriculture, clean personal care formulations, and regenerative hospitality infrastructures, providing regulatory intelligence and distribution channels. Integrating artificial intelligence into legacy processes, he scales operational systems while keeping Kairali clinically grounded."
+sites/healing.recipes/app/page.tsx:89:                practising Ayurveda since 1908 — including the cookbook named
+sites/healing.recipes/app/llms.txt/route.ts:20:      "Heritage: the Kairali Ayurvedic Group was founded in 1989 by K.V. Ramesh and Gita Ramesh (first centre, South Delhi); the family has practised Ayurveda since 1908, when Dr. Sankunny Vaidiar opened his first clinic in Palakkad",
+sites/healing.recipes/app/author/page.tsx:68:            since 1908, when Dr.&nbsp;Sankunny Vaidiar opened his first clinic
+sites/healing.recipes/app/_components/chrome.tsx:66:          © {year} Kairali Ayurvedic Group · a family practising Ayurveda since 1908
+sites/arogyashala.in/app/page.tsx:27:const LINEAGE_YEARS = new Date().getFullYear() - 1908;
+sites/arogyashala.in/app/page.tsx:259:                <dt>A family practising Ayurveda since 1908</dt>
+sites/arogyashala.in/app/page.tsx:359:            practising Ayurveda since 1908
+sites/arogyashala.in/app/llms.txt/route.ts:15:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908; Ayurvedic manufacturing in the family since 1948 (Dr. K.S. Vasudevan)",
+sites/kairaliyoga.com/app/llms.txt/route.ts:22:      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh (first centre, South Delhi); the family has practised Ayurveda since 1908",
+sites/kairaliyoga.com/app/page.tsx:36:const LINEAGE_YEARS = new Date().getFullYear() - 1908;
+sites/kairaliyoga.com/app/page.tsx:661:            since 1908 · {LINEAGE_YEARS} years of lineage
+sites/kairaliequipment.com/app/page.tsx:12://    1908 is FAMILY LINEAGE only ("A family practising Ayurveda since 1908").
+sites/kairaliequipment.com/app/page.tsx:297:                <div><b>1908</b><span>Family lineage</span></div>
+sites/kairaliequipment.com/app/page.tsx:369:            <h2>Equipment for the treatment room, from a family practising Ayurveda since 1908</h2>
+sites/kairaliequipment.com/app/page.tsx:421:                Group — founded in 1989, a family practising Ayurveda since 1908,
+sites/kairaliequipment.com/app/llms.txt/route.ts:12:      "Operator: Kairali Ayurvedic Group — founded 1989; a family practising Ayurveda since 1908",
+sites/kairaliequipment.com/app/faq/page.tsx:73:      "Kairali Equipment is the Ayurveda-equipment manufacturing division of the Kairali Ayurvedic Group — founded in 1989, a family practising Ayurveda since 1908, and the family group behind the NABH-accredited Kairali — The Ayurvedic Healing Village.",
+sites/kairaliequipment.com/app/about/page.tsx:20:      "The Kairali Ayurvedic Group: a family practising Ayurveda since 1908, the group founded in 1989 — and the equipment division that serves its record.",
+sites/kairaliequipment.com/app/about/page.tsx:24:  keywords: ["Kairali ayurvedic group heritage", "four generations ayurveda", "Kairali founded 1989", "family Ayurveda lineage since 1908"],
+sites/kairaliequipment.com/app/about/page.tsx:39:  { n: "1st", who: "Dr. Sankunny Vaidiar", what: "Opened his first clinic in Palakkad in 1908 — the family lineage begins; a second clinic in Pollachi soon after." },
+sites/kairaliequipment.com/app/about/page.tsx:52:          title="A family practising Ayurveda since 1908"
+sites/kairaliequipment.com/app/about/page.tsx:63:                  The dates below are the canonical family record — 1908 is the
+sites/kairaliequipment.com/app/_components/chrome.tsx:45:            <small>A family practising Ayurveda since 1908</small>
+sites/kairaliequipment.com/app/_components/chrome.tsx:95:              Ayurveda since 1908, and the family group behind the NABH-accredited
+
+== banned-string-lint (regression guard group-attached-1908 armed) ==
+
+PASS — 0 violations.
+
+
+== APPENDIX (pass-2 asks) ==
+
+-- (1) Structured-data / foundingDate audit: every founding* match in sites/ + packages/schema --
+sites/kairaliorganic.com/test/guards.test.js:74:  assert.match(page, /founded (?:in )?1989/i, "the Group's founding year is 1989 (D-1908)");
+sites/abhilashkr/src/app/about/page.tsx:50:            Eldest scion of the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He serves as Executive Director at Kairali Ayurvedic Group, founding board member of AYUSHEXCIL, and an angel investor via Mumbai Angels Network.
+sites/abhilashkr/src/app/about/page.tsx:177:                Becomes a founding board member of the AYUSH Export Promotion Council (AYUSHEXCIL) under the Ministry of AYUSH.
+sites/abhilashkr/src/app/faq/page.tsx:38:      a: "Abhilash Kalathil Ramesh is the Executive Director of Kairali Ayurvedic Group, a founding board member of AYUSHEXCIL (the Ayush Export Promotion Council under the Ministry of AYUSH, Government of India), and an angel investor backing biotech and wellness innovations."
+sites/abhilashkr/src/app/faq/page.tsx:50:      a: "AYUSHEXCIL (Ayush Export Promotion Council) is an export Promotion council established by the Ministry of AYUSH, Government of India, to support and scale global exports of traditional herbs and holistic medicine. Abhilash Ramesh is a founding board member."
+sites/abhilashkr/src/app/work/page.tsx:255:            Contributing as a founding board member of AYUSHEXCIL (Ayush Export Promotion Council) under the Ministry of AYUSH, Government of India, advising on export policy, international trade rules, and regulatory standardisation for botanical products.
+sites/abhilashkr/src/components/site/bio-selector.tsx:14:    "100w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, preserving a traditional Indian medicine heritage since 1908. He oversees international growth, pharmaceutical manufacturing (KAPPL), day-spa clinics (KAC), and boutique hospitality (Villa Raag). Combining legacy family wisdom with operational AI, he standardizes treatments across 27+ countries. He is a founding board member of AYUSHEXCIL, advising the Ministry of AYUSH on global policy. As an angel investor, he backs startups in biotech, clean formulas, organic agriculture, and green hotel infrastructure.",
+sites/abhilashkr/src/components/site/bio-selector.tsx:15:    "400w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, representing the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He directs the group's global footprint, spanning the NABH-accredited hospital (Kairali – The Ayurvedic Healing Village, Palakkad), WHO-GMP-certified pharmaceutical manufacturing (KAPPL), a network of day-spas (KAC), and boutique wellness hospitality (Villa Raag, Goa). Under his leadership, Kairali has expanded to over 27+ countries, standardizing Ayurvedic wellness protocols for international audiences. Beyond corporate management, Abhilash is a founding board member of AYUSHEXCIL (the Ayush Export Promotion Council), established under the Ministry of AYUSH, Government of India, where he works with policymakers to establish global export standards for traditional herbs and holistic medicine. As an active angel investor, he backs early-stage founders in biotechnology, organic agriculture, clean personal care formulations, and regenerative hospitality infrastructures, providing regulatory intelligence and distribution channels. Integrating artificial intelligence into legacy processes, he scales operational systems while keeping Kairali clinically grounded."
+sites/abhilashkr/src/components/site/command-menu.tsx:54:    "100w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, preserving a traditional Indian medicine heritage since 1908. He oversees international growth, pharmaceutical manufacturing (KAPPL), day-spa clinics (KAC), and boutique hospitality (Villa Raag). Combining legacy family wisdom with operational AI, he standardizes treatments across 27+ countries. He is a founding board member of AYUSHEXCIL, advising the Ministry of AYUSH on global policy. As an angel investor, he backs startups in biotech, clean formulas, organic agriculture, and green hotel infrastructure.",
+sites/abhilashkr/src/components/site/command-menu.tsx:55:    "400w": "Abhilash Kalathil Ramesh is the Executive Director of the Kairali Ayurvedic Group, representing the fourth generation of a family dedicated to authentic Ayurvedic medicine since 1908. He directs the group's global footprint, spanning the NABH-accredited hospital (Kairali – The Ayurvedic Healing Village, Palakkad), WHO-GMP-certified pharmaceutical manufacturing (KAPPL), a network of day-spas (KAC), and boutique wellness hospitality (Villa Raag, Goa). Under his leadership, Kairali has expanded to over 27+ countries, standardizing Ayurvedic wellness protocols for international audiences. Beyond corporate management, Abhilash is a founding board member of AYUSHEXCIL (the Ayush Export Promotion Council), established under the Ministry of AYUSH, Government of India, where he works with policymakers to establish global export standards for traditional herbs and holistic medicine. As an active angel investor, he backs early-stage founders in biotechnology, organic agriculture, clean personal care formulations, and regenerative hospitality infrastructures, providing regulatory intelligence and distribution channels. Integrating artificial intelligence into legacy processes, he scales operational systems while keeping Kairali clinically grounded."
+sites/kairaliequipment.com/app/about/page.tsx:64:                  family lineage, never a company founding; the group was founded
+sites/kairaliequipment.com/app/page.tsx:11://  · FLAG-3 / D-LIN-1989-WORDING — "Founded in 1989" is the group founding;
+sites/kairaliequipment.com/test/guards.test.js:10://     never a company founding; the group founding is 1989;
+sites/kairaliequipment.com/test/guards.test.js:76:test("heritage law: 1908 is family lineage only; the group founding is 1989 (FLAG-3)", () => {
+sites/kairaliequipment.com/test/guards.test.js:81:  assert.match(everything, /[Ff]ounded in 1989/, "the canonical group founding ships");
+packages/schema/src/index.js:10: * Locked facts (email, founding year, slogan) come from
+packages/schema/src/index.js:44: *          foundingDate?:string,slogan?:string,sameAs?:string[],parentId?:string}} o
+packages/schema/src/index.js:54:    foundingDate: o.foundingDate,
+packages/schema/src/index.js:75:    foundingDate: "1989",
+packages/schema/src/index.d.ts:15:  foundingDate?: string;
+packages/schema/test/schema.test.js:26:  // carried in description with the licensed phrasing — never foundingDate.
+packages/schema/test/schema.test.js:27:  assert.equal(org.foundingDate, "1989");
+
+-- schema package founding encoding + regression test --
+packages/schema/src/index.js:72:    // PR #65 / D-1908 ruling (16 Jul 2026): the GROUP was founded 1989;
+packages/schema/src/index.js:73:    // 1908 is the family lineage ONLY and must never attach to the Group.
+packages/schema/src/index.js:75:    foundingDate: "1989",
+packages/schema/src/index.js:77:      "Founded in 1989 by K. V. Ramesh and Gita Ramesh — a family practising Ayurveda since 1908.",
+packages/schema/test/schema.test.js:25:  // D-1908 regression (PR #65): Group founded 1989; 1908 = lineage only,
+packages/schema/test/schema.test.js:27:  assert.equal(org.foundingDate, "1989");
+packages/schema/test/schema.test.js:28:  assert.match(org.description, /family practising Ayurveda since 1908/);
+packages/schema/test/schema.test.js:29:  assert.doesNotMatch(JSON.stringify(org).replace(/family practising Ayurveda since 1908/g, ""), /1908/);
+
+-- (2) trust-card dt/dd pairs: the dt 'Since 1908' is one <div> unit with its lineage dd (rendered adjacent in <dl>) --
+sites/arogyakendra.com/app/page.tsx:                <dt>Since 1908</dt>
+sites/arogyakendra.com/app/page.tsx-                <dd>Four generations of classical Ayurvedic practice.</dd>
+sites/arogyakendra.com/app/page.tsx-              </div>
+sites/kairali.com/app/page.tsx:                <dt>Since 1908</dt>
+sites/kairali.com/app/page.tsx-                <dd>Four generations of classical Ayurvedic practice.</dd>
+sites/kairali.com/app/page.tsx-              </div>
+sites/kairalicenters.com/app/page.tsx:  { dt: "Since 1908", dd: "Four generations of Ayurvedic physicians." },
+sites/kairalicenters.com/app/page.tsx-  { dt: "NABH-Accredited", dd: "Our teaching hospital in Palakkad, Kerala." },
+sites/whatisayurveda.com/app/page.tsx:  { dt: "Since 1908", dd: "Four generations of Ayurvedic physicians." },
+sites/whatisayurveda.com/app/page.tsx-  { dt: "NABH-Accredited", dd: "Our teaching hospital in Palakkad, Kerala." },
+
+-- (3) banned-string-lint full output (probe machinery is self-testing on every run) --
+
+banned-string-lint — 8 rules · 364 files under sites
+control probe: 8/8 rules matched their known-present text · 32/32 negation probes stayed clean
+
+PASS — 0 violations.
+
+
+-- (4) test-run summaries (local, this session) --
+ℹ tests 719
+ℹ pass 719
+ℹ fail 0
+ℹ tests 77
+ℹ pass 77
+ℹ fail 0

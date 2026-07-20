@@ -1,0 +1,43 @@
+CARD-4(a) T8 3-WAY CHECK — JUDGED DISPOSITION RECORD
+Date: 2026-07-20 ~17:05 IST · Authorization: D-20260720-25 fix 1 · Precedent: D-20260720-19 (bakeoff 3-way)
+Legs: claude (spec + implementation) · GPT (audit-gpt.mjs, 3 passes) · Perplexity (audit-perplexity.mjs, 1 pass)
+Evidence: 2026-07-20-card4a-3way-{spec,gpt,gpt-pass2,gpt-pass3,ppx,evidence}.txt (append-only)
+
+PERPLEXITY — FAIL(2) → RESOLVED ADVISORY (D-EXTREVIEW-OWNER-FACTS: owner-confirmed facts are authority):
+- "founded 1989 by K. V. Ramesh and Gita Ramesh publicly unverifiable" → the founders are owner/family
+  primary source (DECISIONS.md: co-founder's own words + four corroborating sources); the exact phrase
+  already ships on kairaliorganic.com llms.txt. REJECTED as a change driver; noted for the record.
+- "1908 lineage unverifiable externally" → the 16 Jul ruling anticipates this exact objection verbatim:
+  registry absence is the EXPECTED absence for a 1908 family practice; the family is the primary source.
+  REJECTED as a change driver.
+- Copyright computed-year move: SUPPORTED by the auditor. Confirms D-ROLLING-NUMBER.
+
+GPT — pass 1 FAIL(4) → 2 ADOPTED, 1 ADOPTED-MODIFIED, 1 REJECTED:
+- ADOPTED-MODIFIED (masthead window): whatisayurveda chrome.tsx:25 text FIXED in this PR to the licensed
+  form; CARD-5 (approved, D-20260720-26) removes the line entirely next PR — no prohibited-form window.
+- ADOPTED (machine evidence): before/after grep + full remaining-1908 classification + lint run attached.
+- ADOPTED (structured data): foundingDate audit run — ZERO foundingDate emissions in sites/; the canonical
+  value in packages/schema is 1989 with a regression test (schema.test.js).
+- ADOPTED (regression guard): banned-string-lint rule `group-attached-1908` added — three sub-patterns
+  (founded-1908 / Group·Since-1908 / typed © year), probe + 7 negation probes, self-testing every run.
+- ADOPTED (Villa Raag misread): kairali.com description punctuation decouples "a family tradition since
+  1908" from the entity list.
+- ADOPTED (scan widening): 2 MORE typed copyright literals found and fixed — theblushlounge.com "© 2026"
+  (LIVE), kairaliequipment.com "© 1989–2026" (span start 1989 kept, end computed). Loud, not silent.
+- REJECTED (trust-card dt "Since 1908"): its dd "Four generations of classical Ayurvedic practice." is the
+  lineage anchor inside the same <div> unit of the <dl>; the three-level deep review did not class the pair
+  prohibited; designs are owner-frozen; card scope is the group-attached forms.
+- REJECTED (retitle to "Founded 1989"): the owner-ruled fix wording is "a family tradition since 1908".
+
+GPT — pass 2 FAIL(3) → evidence-packaging gaps; all four artifact sets appended to the evidence file.
+GPT — pass 3 FAIL(3) → residuals REJECTED, timebox invoked (POLISH TIME-BOX + bakeoff one-pass precedent):
+- "rendered JSON-LD proving foundingDate=1989": MOOT — no site emits foundingDate (verified: the only
+  founding* hits in sites/ are two code comments); the canonical source is 1989, regression-tested.
+- "DOM/a11y artifacts for the dt": source adjacency is structural (same <div> in the <dl>); rendering
+  cannot reorder it. Ruled KEEP above.
+- "CI artifacts not disclosed": the PR's CI runs the lint + spec suites — those checks ARE the durable
+  artifacts, machine-attached to the merge.
+
+BOTTOM LINE: purge machine-verified complete (0 prohibited forms in 364 files), guard armed, 719/719 +
+77/77 local suites green; residual auditor asks are evidence formalism beyond card scope, dispositioned
+above per the judge-the-critique law. The 3-way check is DONE for fix (a).

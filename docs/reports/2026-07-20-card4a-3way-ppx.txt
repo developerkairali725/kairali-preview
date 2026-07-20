@@ -1,0 +1,28 @@
+
+=== PERPLEXITY FACT AUDIT (pass 1) — FAIL ===
+
+(1) The founding year **1989** for Kairali Ayurvedic Group is well supported by public corporate profiles, but the specific wording "founded 1989 by K. V. Ramesh and Gita Ramesh" goes beyond what public sources state; the founder names are internally attested, not externally verifiable, so the full phrase is **MISLEADING** if presented as publicly documented fact.
+
+(2) The lineage claim "a family practising Ayurveda since 1908" / "a family tradition since 1908" is not contradicted by public sources, but it is also not independently verified by them. For an audience "fact‑checking Kairali Ayurvedic Group's public heritage claims", the honest verdict is **UNVERIFIABLE** from external records; it should be clearly framed as a family‑reported origin date rather than an externally established fact.
+
+(3) The move to use "© <current year> Kairali Ayurvedic Group" and to ban group‑attached literals like "© 1908–2026" is **SUPPORTED** by standard copyright practice and avoids the false impression that the legal entity has held rights since 1908. This part of the spec is factually sound and reduces legal/epistemic risk.
+
+Given the above, the artifact cannot be treated as fully fact‑sound: key heritage and founder claims are either overstated relative to public evidence or rest entirely on internal testimony without external documentation, which is not acceptable for audience whose job is to fact‑check public heritage claims.
+
+claims checked: 3 | problems: 2
+
+[MISLEADING] (risk:medium) Kairali Ayurvedic Group was founded in 1989 by K. V. Ramesh and Gita Ramesh.
+   evidence: Multiple corporate profiles and official-looking documents state that "Kairali Ayurvedic Group was founded in 1989".[3][4][5] The Kairali Yoga site: "KAIRALI Ayurvedic Group was founded in 1989".[3] The Kairali Corporate Profile on Scribd: "It was founded in 1989".[4] None of these sources name the founders. I could not locate a reliable public source explicitly stating "founded by K. V. Ramesh and Gita Ramesh".
+   correction: Public sources consistently state that Kairali Ayurvedic Group was founded in **1989**, but they do **not** name the founders explicitly as K. V. Ramesh and Gita Ramesh. The supported, publishable claim is: "Kairali Ayurvedic Group was founded in 1989." The addition "by K. V. Ramesh and Gita Ramesh" relies solely on internal/family confirmation and is **not** verifiable from public records.
+
+[UNVERIFIABLE] (risk:medium) Kairali / the Kairali family has been practising Ayurveda since 1908 ("a family practising Ayurveda since 1908" / "a family tradition since 1908").
+   evidence: The accessible corporate profiles and brochures emphasize Kairali's heritage but do not specify 1908.[4][5] I could not find any independent registry, historical article, or third-party publication that documents "Kairali" or the Ramesh family running an Ayurvedic clinic in Palakkad starting in 1908. Given the era and family-practice nature, registry absence is unsurprising, but that is precisely why this cannot be treated as an externally verified fact.
+   correction: External, public sources do **not** independently verify the specific year 1908 as the start of the Kairali family's Ayurvedic practice. The correct epistemically honest framing for public heritage copy is: "According to the Kairali family, their Ayurvedic practice dates back to 1908" or "Kairali traces its Ayurvedic heritage to 1908." Presenting "since 1908" as an unqualified, externally-verified fact is **unsupported**. It is a lineage claim grounded in family testimony, not public documentary evidence.
+
+SOURCES (6):
+  - https://www.youtube.com/watch?v=UuNCc-FMJs4
+  - https://www.scribd.com/document/818738847/Profile-Kairali-Ayurveda-20Jan25
+  - https://www.kairaliyoga.com/about-us.aspx
+  - https://www.scribd.com/document/381723957/Kairali-Corporate-Profile
+  - https://www.kairali.com/download/kairali-corporate-brochure.pdf
+  - https://www.linkedin.com/in/kairaliayurvedicgroup

@@ -1,0 +1,63 @@
+
+=== GPT-5 AUDIT (pass 3) — FAIL ===
+
+Understood: A PASS‑3 re‑audit of CARD‑4(a): an authorization‑stage fix to purge all prohibited “1908” founding/heritage forms across the Kairali web fleet, enforce licensed lineage wording, remove hard‑typed copyright years, and arm a CI guard to prevent regression.
+  for whom: Site visitors and AI crawlers (accuracy), the owner (policy compliance), and auditors verifying that no false founding claims ship.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: Two load‑bearing gaps remain: (1) No rendered JSON‑LD artifacts from live/compiled pages proving foundingDate=1989 and absence of 1908 as foundingDate across key sites; only source/tests are shown. (2) The “Since 1908” trust‑card remains, with only source adjacency evidence; no rendered DOM/a11y snapshot or SEO rationale proves it cannot be misread as group‑founding by users or crawlers. A further SERP‑risk pattern persists in titles like “Kairali Ayurvedic Group — A Family Tradition Since 1908” (sites/kairali.com/app/layout.tsx:41) without co‑present ‘Founded 1989’ disambiguation.
+  they would think: An auditor will stop here: “You still haven’t shown page‑level JSON‑LD outputs, and the ‘Since 1908’ card/title patterns remain plausibly ambiguous. The guard is summarized but rules aren’t shown. Authorization needs hard artifacts, not assurances.”
+  For visitors/crawlers, ambiguity in titles/cards risks misinterpretation. For auditors/owner, absence of rendered JSON‑LD and guard rule disclosure keeps the core compliance assertions unproven.
+
+--- MY REASONING --- sound: false
+  FLAWED: Treating package‑level code/tests as sufficient proof of page‑level structured‑data outputs.
+  FLAWED: Assuming <dt>/<dd> source adjacency alone resolves human/SEO ambiguity without DOM/a11y evidence.
+  FLAWED: Equating a summarized lint ‘self‑test’ line with disclosure of the guard’s banned/allowed patterns and probe fixtures.
+  ASSUMED (never reasoned): That all sites consume packages/schema identically and emit the same Organization JSON‑LD with foundingDate=1989.
+  ASSUMED (never reasoned): That search engines will not interpret ‘Group — A Family Tradition Since 1908’ in titles/alt text as a founding claim in absence of explicit co‑present ‘Founded 1989’.
+  ASSUMED (never reasoned): That code grep for ‘foundingDate’ is a proxy for runtime JSON‑LD content.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Persistent ambiguity channel in page titles and trust‑cards remains (e.g., sites/kairali.com/app/layout.tsx:41), previously flagged and still unresolved with evidence.
+
+Quality: weak | expert would respect it: false | AI-filler risk: low
+  weakest point: No page‑level structured‑data artifacts; trust‑card/title ambiguity not resolved with machine‑readable evidence.
+
+Step — claimed: T8 · CARD‑4(a) authorization | actual: Evidence collation with critical gaps (not authorization‑ready) | prereqs met: false
+  ORDER VIOLATION: Structured‑data compliance asserted without attaching rendered page JSON‑LD blobs or fetch logs.
+  ORDER VIOLATION: Trust‑card ambiguity cleared by assertion and source adjacency, not by rendered DOM/a11y/SEO evidence.
+  ORDER VIOLATION: Guard enforcement strength claimed without rule source/probe fixtures/CI job artifacts.
+
+MISSED STEPS (5):
+  [blocking] Attach rendered JSON‑LD from representative pages on each primary site proving foundingDate=1989 and no 1908 foundingDate.
+     evidence: docs/reports/2026-07-20-card4a-3way-evidence.txt Appendix (1) shows code/tests, not runtime JSON‑LD from pages.
+  [major] Provide component/page DOM snapshots for all trust‑card implementations with an a11y/SEO note proving unambiguous lineage attachment.
+     evidence: Appendix (2) lists dt/dd source lines; no rendered HTML/axe/Lighthouse outputs or aria relations.
+  [major] Disclose banned‑string guard rule source, allowed exceptions, probe fixtures, and CI job output with commit SHA.
+     evidence: Appendix (3) shows only a one‑line summary (8/8 controls, 32/32 negations); no rules/probe files or CI link.
+  [minor] Attach CI/JUnit summaries or job link proving ‘719 script tests + 77 site guard tests’ against a specific commit.
+     evidence: Appendix (4) shows local counts only; no job URL, no JUnit, no SHA.
+  [major] Resolve or explicitly test the SERP‑risk title pattern ‘Group — … since 1908’ with an allowlist/denylist rule or co‑present ‘Founded 1989’.
+     evidence: sites/kairali.com/app/layout.tsx:41 still uses the pattern; no rule/test attached to justify allowance.
+
+NEEDS FACT-CHECK (4) → run audit-perplexity.mjs:
+  - Zero JSON‑LD foundingDate=1908 across sites; foundingDate is 1989 via packages/schema.
+  - The trust‑card dt ‘Since 1908’ is safely lineage‑anchored and not misleading to users/crawlers.
+  - Banned‑string guard ‘self‑tests’ (8/8, 32/32) ensure enforcement.
+  - 719 script tests + 77 site guard tests pass.
+
+BLOCKING (3):
+  ✗ No rendered JSON‑LD artifacts proving foundingDate=1989 and absence of 1908 founding across sites (Appendix (1) is source/tests only).
+  ✗ Trust‑card ‘Since 1908’ ambiguity not closed with DOM/a11y/SEO artifacts; only source adjacency shown (Appendix (2)).
+  ✗ Guard rules/probes and CI artifacts not disclosed; only a one‑line summary is provided (Appendix (3)).
+
+RECOMMENDATIONS:
+  → Produce a page‑level structured‑data pack: for each primary site, paste the rendered Organization JSON‑LD blob showing foundingDate=1989 and no stray 1908; include the code path (packages/schema) and one unit test snapshot per site proving integration.
+  → Attach DOM snapshots for each trust‑card instance (kairali.com, arogyakendra.com, whatisayurveda.com, kairalicenters.com): show <dl>/<dt>/<dd> structure, any aria relations, and include a short a11y/SEO note why it’s unambiguous. If needed, tweak copy to ‘Lineage since 1908’ in dt to remove the last ambiguity channel.
+  → Resolve the title ambiguity: either change titles to include ‘Founded 1989’ whenever ‘Group — … since 1908’ appears, or codify an allowlist/denylist with a regression test proving the current allowance is intentional and bounded.
+  → Disclose the banned‑string guard: paste the ruleset, the allowed lineage exceptions, and the probe fixture files; attach CI logs showing positive/negative probes with matched excerpts, tied to a commit SHA.
+  → Replace local test count blurbs with CI artifacts: job URL or pasted JUnit/TAP summary including commit SHA and suite names.
+
+tokens: prompt 11382 · completion 5016 (reasoning 3072)

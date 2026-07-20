@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
     title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
     description:
-      "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda since 1908. Find our centres, hospital-retreat, products, and more.",
+      "Arogya Kendra is the gateway to the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. Centres, hospital-retreat, products.",
     siteName: "Arogya Kendra",
   }) as Metadata),
   icons: faviconIcons(),

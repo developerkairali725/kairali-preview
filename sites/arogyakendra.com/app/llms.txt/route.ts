@@ -12,9 +12,9 @@ export function GET() {
   const body = buildLlmsTxt(siteConfig, {
     name: "Arogya Kendra",
     summary:
-      "Gateway site of the Kairali Ayurvedic Group — health through ayurveda since 1908. It directs visitors to the group's hospital-retreat, treatment centres, products, tea, and franchise sites.",
+      "Gateway site of the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. It directs visitors to the group's hospital-retreat, treatment centres, products, tea, and franchise sites.",
     facts: [
-      "Kairali Ayurvedic Group, founded 1908 (four generations, family-run)",
+      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
       "Contact: info@kairali.com · WhatsApp +91 92898 38797",
       "Kairali — The Ayurvedic Healing Village: NABH-accredited Ayurvedic hospital-retreat, Palakkad, Kerala",
       "Kairali Ayurvedic Products: WHO-GMP-certified manufacturing",

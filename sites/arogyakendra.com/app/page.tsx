@@ -61,7 +61,7 @@ const BRANDS = [
   {
     name: "Kairali Ayurvedic Group",
     href: "https://www.kairali.com",
-    line: "The group behind it all — health through ayurveda since 1908.",
+    line: "The group behind it all — health through ayurveda, a family tradition since 1908.",
     slot: "brand-group",
     subject: "Founding family or heritage still-life: mortar, pestle, palm leaf",
     alt: "Heritage still-life of a stone mortar and pestle with fresh Ayurvedic herbs",
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="container hero-grid">
             <div>
               <div className="accent-rule" aria-hidden="true" />
-              <p className="overline">Kairali Ayurvedic Group · Since 1908</p>
+              <p className="overline">Kairali Ayurvedic Group · A family tradition since 1908</p>
               <h1>Arogya Kendra — The Centre of Health</h1>
               <p className="lede">
                 Arogya kendra means &ldquo;centre of health&rdquo;. For four
@@ -276,7 +276,7 @@ export default function Home() {
           <div className="container">
             <p className="overline" id="promise-heading">Our Promise</p>
             <p className="promise-quote">
-              Health through ayurveda — a promise kept daily since 1908.
+              Health through ayurveda — a family promise kept daily since 1908.
             </p>
             <div className="cta-row">
               <a className="btn btn-inverse" href={WHATSAPP_URL} data-cta="whatsapp_click">
@@ -296,7 +296,7 @@ export default function Home() {
             <a href={`mailto:${EMAIL}`} data-cta="email_click">{EMAIL}</a> ·{" "}
             <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
           </p>
-          <p>Since 1908 · Palakkad, Kerala, India</p>
+          <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>
       </footer>
 

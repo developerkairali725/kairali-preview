@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
     title: "What is Ayurveda? A Physician-Reviewed Guide",
     description:
-      "A clear, honest, physician-reviewed guide to Ayurveda — the doshas, panchakarma, herbs, and what the evidence says. From the Kairali Group, since 1908.",
+      "A clear, honest, physician-reviewed guide to Ayurveda — doshas, panchakarma, herbs, evidence. From the Kairali Group, a family tradition since 1908.",
     siteName: "What is Ayurveda",
     ogImage: "/og.jpg",
   }) as Metadata),

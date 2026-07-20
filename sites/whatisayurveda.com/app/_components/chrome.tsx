@@ -22,7 +22,7 @@ export function SiteHeader() {
           <img src="/images/kairali-icon.svg" alt="Kairali Ayurvedic Group" width="64" height="44" />
           <span className="logo-name">
             What is Ayurveda
-            <small>by the Kairali Group · since 1908</small>
+            <small>by the Kairali Group · a family tradition since 1908</small>
           </span>
         </Link>
         <nav className="site-nav" aria-label="Sections">
@@ -85,7 +85,7 @@ export function SiteFooter() {
           substitute for professional medical advice, diagnosis, or treatment.
           Ayurvedic therapies and herbs should be used under the guidance of a
           qualified physician. Always consult a doctor before starting any
-          treatment. © 1908–2026 Kairali Ayurvedic Group.
+          treatment. © {new Date().getFullYear()} Kairali Ayurvedic Group.
         </p>
       </div>
     </footer>

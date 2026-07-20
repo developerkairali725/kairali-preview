@@ -38,9 +38,9 @@ const lato = Lato({
 // of the Healing Village footbridge photograph (IMAGE_MANIFEST.md).
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
-    title: "Kairali Ayurvedic Group — Since 1908",
+    title: "Kairali Ayurvedic Group — A Family Tradition Since 1908",
     description:
-      `Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in ${COUNTRIES_PHRASE}, Ayurveda training, Villa Raag — since 1908.`,
+      `Kairali Ayurvedic Group: NABH-accredited hospital, WHO-GMP medicines, centres in ${COUNTRIES_PHRASE}, training, Villa Raag. A family tradition since 1908.`,
     siteName: "Kairali Ayurvedic Group",
     ogImage: "/og.jpg",
   }) as Metadata),

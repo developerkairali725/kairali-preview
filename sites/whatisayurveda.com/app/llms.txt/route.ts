@@ -13,7 +13,7 @@ export function GET() {
     summary:
       "An educational authority site from the Kairali Ayurvedic Group (physicians since 1908). Evidence-honest explanations of Ayurveda — doshas, panchakarma, herbs, diet, and what the science says. Non-commercial; it educates and points to the group's NABH hospital and WHO-GMP pharmacy.",
     facts: [
-      "Publisher: Kairali Ayurvedic Group, founded 1908 (four generations, family-run)",
+      "Publisher: Kairali Ayurvedic Group, founded 1989 (four generations; a family practising Ayurveda since 1908)",
       // TIERED HONESTY: coverage is per-page (`reviewedOn`); today 0 pages carry one.
       // A blanket claim here is the fabricated-review failure, aimed at the exact AI
       // engines we want citing us. State the RULE, never a coverage claim.

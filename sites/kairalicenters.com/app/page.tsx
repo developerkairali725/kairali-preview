@@ -47,7 +47,7 @@ export default function Home() {
           <div className="container hero-grid">
             <div>
               <div className="accent-rule" aria-hidden="true" />
-              <p className="overline">Kairali Ayurvedic Group · Since 1908</p>
+              <p className="overline">Kairali Ayurvedic Group · A family tradition since 1908</p>
               <h1>Find a Kairali Ayurvedic Centre</h1>
               <p className="lede">
                 Classical Ayurvedic treatment, close to you — from the same

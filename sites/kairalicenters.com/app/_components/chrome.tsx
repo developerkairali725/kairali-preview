@@ -18,7 +18,7 @@ export function SiteHeader() {
           <img src="/images/kairali-icon.svg" alt="Kairali Ayurvedic Group" width="64" height="44" />
           <span className="logo-name">
             Kairali Ayurvedic Centres
-            <small>Health through ayurveda · since 1908</small>
+            <small>Health through ayurveda · a family tradition since 1908</small>
           </span>
         </Link>
         <nav className="site-nav" aria-label="Sections">
@@ -66,7 +66,7 @@ export function SiteFooter() {
         <p className="footer-disclaimer">
           Ayurvedic treatment should be taken under the guidance of a qualified
           physician. Centre timings and details may change — please call the
-          centre before visiting. © 1908–2026 Kairali Ayurvedic Group.
+          centre before visiting. © {new Date().getFullYear()} Kairali Ayurvedic Group.
         </p>
       </div>
     </footer>

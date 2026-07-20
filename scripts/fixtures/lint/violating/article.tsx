@@ -24,6 +24,9 @@ export function Article({ page }: { page: { title: string } }) {
       <a className="btn" href={WHATSAPP_URL}>Ask a doctor on WhatsApp</a>
       <Link href="/contact">Call us on +91 92898 38777</Link>
       <p>Treatment centres across nine countries carry the tradition forward.</p>
+      {/* Failure B-144/B-142 shapes: group-attached 1908 + a typed rolling year. */}
+      <p>Kairali Ayurvedic Group · Since 1908 — founded 1908, and proud of it.</p>
+      <p>© 1908–2026 Kairali Ayurvedic Group.</p>
       <p>Published {LAUNCH_DATE}.</p>
     </article>
   );

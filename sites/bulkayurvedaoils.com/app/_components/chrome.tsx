@@ -151,8 +151,8 @@ export function SiteFooter() {
         <p className="footer-disclaimer">
           Certifications shown as published by KAPPL. Classical formulations are
           supplied for professional therapy use; Ayurvedic preparations should be
-          used under the guidance of a qualified physician. © 1908–2026 Kairali
-          Ayurvedic Group.
+          used under the guidance of a qualified physician. ©{" "}
+          {new Date().getFullYear()} Kairali Ayurvedic Group.
         </p>
       </div>
     </footer>

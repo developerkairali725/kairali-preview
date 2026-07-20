@@ -1,0 +1,61 @@
+
+=== GPT-5 AUDIT (pass 2) — FAIL ===
+
+Understood: A PASS-2 re-audit of CARD-4(a), an authorization-stage fix to purge all prohibited “1908” founding/heritage forms across the Kairali web fleet, enforce licensed lineage wording, remove typed copyright-year literals in favor of computed values, and arm a CI guard so the erosion does not recur.
+  for whom: - Site visitors and AI crawlers (so the public record they read is accurate)
+- The owner (policy compliance)
+- Auditors verifying that no false founding claims ship
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: Two places: (1) The trust-card dt “Since 1908” remains, was explicitly ‘REJECTED’ as a change, and is only defended by assertion; there is no machine evidence proving it is unambiguously lineage-attached in every occurrence (screen-reader/SEO-wise). (2) The structured-data check (no JSON-LD foundingDate 1908; founding 1989) is asserted but not evidenced. Auditors cannot accept unproven claims at authorization.
+  they would think: An auditor reading this will stop at the lack of attached grep/logs for JSON-LD and the unresolved ‘Since 1908’ dt instances. “You say it’s allowed and checked; show me the machine outputs. Otherwise this can still be misread or regress later.”
+  You provided a focused repo grep of remaining 1908 lines and a zero-violations summary for a banned-string lint, which is good. But PASS requires all pass‑1 blocks to be closed with artifacts. B3 was not fixed, only argued; B4 has no log. Claims of guard probes (8/8, 32/32 negation) and 719+77 tests passing are not backed by artifacts here.
+
+--- MY REASONING --- sound: false
+  FLAWED: Treating owner assertion and a prior internal audit as sufficient proof to overrule a pass-1 block (B3) without attaching that audit or objective checks.
+  FLAWED: Relying on a grep list that, by design, cannot show the dd pairing for trust-cards because the dd line doesn’t contain “1908”, then using that as evidence that the dt is lineage-anchored.
+  FLAWED: Claiming guard probe coverage (“8/8, 32/32 negation”) and global test pass counts without attaching the CI job output or probe definitions.
+  ASSUMED (never reasoned): Assuming that placing “A family tradition since 1908” adjacent to the Group name (e.g., in titles/overlines) cannot be misinterpreted by users or crawlers as a group-founding claim.
+  ASSUMED (never reasoned): Assuming JSON-LD cannot contain stray “1908” foundingDate because of package-level rules — but no repo-wide grep/log is attached to prove current state.
+  ASSUMED (never reasoned): Assuming designs being frozen justifies retaining ambiguous trust-card dt copy, despite it being a pass-1 blocking concern.
+
+--- VS PRIOR --- better for audience: true
+  REGRESSION: Title pattern like “Kairali Ayurvedic Group — A Family Tradition Since 1908” is still a borderline construction that risks perceived group-attachment in SERP contexts; not clearly a regression from wrong forms, but it keeps an ambiguity channel alive.
+
+Quality: average | expert would respect it: false | AI-filler risk: low
+  weakest point: Unproven closure of B3 and B4 — authorization attempted without the specific machine artifacts that were the reason for the pass‑1 blocks.
+
+Step — claimed: T8 · CARD-4(a) authorization | actual: Late implementation with partial evidence; not authorization-ready because two pass-1 blocks are not closed with artifacts. | prereqs met: false
+  ORDER VIOLATION: Declaring B3 closed by fiat (owner/design freeze) rather than producing machine/contextual evidence first.
+  ORDER VIOLATION: Asserting B4 structured-data compliance without attaching the grep/CI outputs that should precede authorization sign-off.
+
+MISSED STEPS (4):
+  [blocking] Attach JSON-LD/structured-data audit artifact for founding dates
+     evidence: No repo-wide grep/log showing zero occurrences of foundingDate=1908 (or equivalent) and explicit presence of foundingDate=1989 in publisher entities.
+  [major] Demonstrate trust-card dt lineage anchoring across all occurrences
+     evidence: Evidence file lists dt lines with 1908 but cannot show their dd pair (no 1908 on dd). No component snapshot/HTML rendering, no a11y/SEO evaluation to prove unambiguous lineage attachment.
+  [major] Provide CI artifacts for banned-string-lint guard probes
+     evidence: Claimed “8/8, 32/32 negation” coverage not attached; only a single PASS line is shown.
+  [minor] Attach CI summary proving “719 script tests + 77 site guard tests” pass
+     evidence: Numbers are asserted, not evidenced (no job URL/log, no junit summary).
+
+NEEDS FACT-CHECK (3) → run audit-perplexity.mjs:
+  - “foundingDate grep: ZERO JSON-LD foundingDate 1908; packages/schema encodes founding 1989/lineage 1908 with a regression test.”
+  - “lint guard armed with probes (8/8, 32/32 negation)”
+  - “719 script tests + 77 site guard tests pass.”
+
+BLOCKING (3):
+  ✗ B4 (structured data) is not evidenced — no machine proof that no JSON-LD encodes 1908 as foundingDate and that 1989 is set where appropriate.
+  ✗ B3 (trust-card dt 'Since 1908') remains by design; no machine/contextual evidence that it is lineage-anchored in every instance and not misleading to users/crawlers. Authorization cannot accept an unresolved pass‑1 block.
+  ✗ Guard probe and test-pass claims are assertion-only; without artifacts the enforcement strength is unproven at authorization.
+
+RECOMMENDATIONS:
+  → Attach a dedicated structured-data audit: repo grep logs for foundingDate and 1908; paste representative JSON-LD blobs from each site showing foundingDate=1989 and lineage phrasing elsewhere; include a test snapshot from packages/schema.
+  → Produce a component-level evidence pack for the trust-card: render HTML for each implementation (kairali.com, arogyakendra.com, whatisayurveda.com, kairalicenters.com), show dt+dd together, include aria associations if any, and a quick a11y/SEO note explaining why the phrasing cannot be misread as group founding.
+  → Add the banned-string-lint guard artifacts: rule source, list of banned/allowed patterns, probe fixtures, and CI output proving both positive and negative controls behave as intended.
+  → Attach the CI run summary (job link or pasted logs) showing 719 script tests + 77 site-guard tests pass at the referenced commit SHA.
+  → Optional but prudent: add an explicit regression test that fails on any pattern of “Group … Since 1908” even when the allowed clause follows, if the owner intends zero ambiguity in future titles. If not, encode the current allowance precisely and document examples.
+
+tokens: prompt 9042 · completion 6803 (reasoning 4928)

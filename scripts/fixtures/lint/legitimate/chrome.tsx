@@ -58,6 +58,13 @@ export function SiteFooter() {
         qualified physician. Always consult a doctor before starting any
         treatment. Launched {LAUNCH_DATE}. {String(PROTOCOL_RELATIVE)}
       </p>
+      <p>
+        {/* The ruled 1908 forms (D-1908 / D-ROLLING-NUMBER): lineage-attached
+            prose and a COMPUTED copyright year are the correct shapes. */}
+        Kairali Ayurvedic Group · A family tradition since 1908 — founded 1989;
+        a family practising Ayurveda since 1908. ©{" "}
+        {new Date().getFullYear()} Kairali Ayurvedic Group.
+      </p>
     </footer>
   );
 }

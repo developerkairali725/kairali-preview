@@ -1,0 +1,67 @@
+
+=== GPT-5 AUDIT (pass 1) — FAIL ===
+
+Understood: An erosion-control fix across 6 sites to purge every prohibited group-attached “1908” heritage claim and replace four hardcoded rolling copyright ranges with computed years, while preserving permitted lineage-attached 1908 mentions. Minor text-only edits; no design changes.
+  for whom: 1) Site visitors and AI crawlers (llms.txt) who must not be misled about founding; 2) the owner (Abilash) whose family history is described; 3) auditors verifying no false founding claims ship.
+  context sufficient: true
+
+--- END RESULT FOR THE AUDIENCE ---
+serves audience: false | meets purpose: false
+  where it loses them: At whatisayurveda.com chrome.tsx:25 the masthead line “by the Kairali Group · since 1908” is explicitly left live until the next PR. That’s a prohibited group-attached 1908 claim still shipping, violating the core purpose. Also, the kept trust-card dt “Since 1908” (without an explicit ‘family’ qualifier) risks being read as a group founding badge in UI and by crawlers.
+  they would think: A skeptical visitor or crawler still sees a top-of-page signal implying the Group is ‘since 1908’ on at least one site; trust erodes. Auditors cannot certify a purge when a known wrong form is knowingly deferred.
+  The spec improves many strings but leaves at least one prohibited instance live and provides no machine proof that all other 1908 occurrences were found and correctly classified. That fails the ‘fix-one-not-done’ standard and the purpose of preventing false founding claims.
+
+--- MY REASONING --- sound: false
+  FLAWED: Assuming deferring a known-wrong masthead to a subsequent PR is acceptable for an erosion purge — it isn’t if this card is authorized independently.
+  FLAWED: Relying on template-based edits without repo-wide machine proof that all instances (including schema, metadata, JSON, and content files) were found.
+  FLAWED: Assuming a dt: ‘Since 1908’ is safely lineage-attached because a dd clarifies later — UI and crawlers often parse headers in isolation.
+  ASSUMED (never reasoned): That coupling the lineage phrase to the brand in the title tag (‘Kairali Ayurvedic Group — A Family Tradition Since 1908’) cannot be misread by search or users as a group-since date.
+  ASSUMED (never reasoned): That no JSON-LD/structured data contains foundingDate: 1908 or similar — not checked.
+  ASSUMED (never reasoned): That four copyright literals are the only typed rolling years — no scan proof across all repos.
+  ASSUMED (never reasoned): That the phrase ‘Villa Raag — a family tradition since 1908’ cannot imply the property or brand itself dates to 1908.
+
+--- VS PRIOR --- better for audience: false
+  REGRESSION: A known prohibited masthead remains live on whatisayurveda.com until a later PR, so the purge is incomplete at ship time.
+  REGRESSION: Title tags now tie the brand and ‘Since 1908’ closer together syntactically; while clarified as ‘family tradition’, this may increase the chance of misinterpretation in SERPs vs simply stating ‘Founded 1989’.
+
+Quality: weak | expert would respect it: false | AI-filler risk: low
+  weakest point: Incomplete purge: knowingly shipping at least one prohibited group-attached 1908 string.
+
+Step — claimed: T8 · CARD-4(a) authorization (3-way check) | actual: Spec-only with partial edits allegedly live on one site; not a verified end-result. Lacks machine evidence and gating. | prereqs met: false
+  ORDER VIOLATION: No repo-wide machine scan (grep) evidence of 1908 occurrences before declaring purge complete.
+  ORDER VIOLATION: Defers removal of a known-wrong string to a separate PR without proof of atomic release gating.
+
+MISSED STEPS (5):
+  [blocking] Repo-wide machine evidence of purge (search logs, match counts before/after)
+     evidence: Spec lists files but provides no grep/ag/rg output or CI check artifacts showing zero remaining prohibited forms.
+  [major] Structured data and meta audit (JSON-LD, OpenGraph, Twitter, sitemap)
+     evidence: No mention of schema.org Organization foundingDate or meta tags; only visible text edited.
+  [major] Automated gate to prevent regressions
+     evidence: No lint/test preventing ‘founded 1908’, ‘Group — Since 1908’, or typed year ranges from reappearing.
+  [blocking] Coordinate PR dependency or include the masthead fix in this card
+     evidence: whatisayurveda chrome.tsx:25 remains wrong pending CARD-5, with no proof of atomic merge/deploy.
+  [major] Classification QA on ambiguous ‘Since 1908’ in UI headers
+     evidence: Keep-listed trust-card dt uses ‘Since 1908’ without explicit ‘family’ qualifier; no rationale provided beyond class label.
+
+NEEDS FACT-CHECK (3) → run audit-perplexity.mjs:
+  - “Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh.”
+  - “Four generations, family-run.”
+  - “Villa Raag — a family tradition since 1908.”
+
+BLOCKING (4):
+  ✗ Prohibited masthead remains live on whatisayurveda.com (chrome.tsx:25).
+  ✗ No machine evidence that all prohibited 1908 instances are removed across repos (violates fix-one-not-done).
+  ✗ Ambiguous keep-listed dt: ‘Since 1908’ can still read as a group claim in UI and to crawlers.
+  ✗ Structured data/meta not audited — a common place for foundingDate errors.
+
+RECOMMENDATIONS:
+  → : Make this card include the whatisayurveda chrome.tsx:25 masthead change now, or hard-block merge of CARD-4(a) until CARD-5 is merged and released atomically.
+  → Provide repo-wide machine evidence: before/after ripgrep for ‘1908’, with a classification table (file, line, allowed/prohibited, action taken). Attach logs/artifacts to the card.
+  → Add CI guards: a regex linter failing on prohibited forms (e.g., /(Group|Kairali)[^\n]{0,40}(Since|founded)\s*1908/i) and on typed year ranges like ©\s*1908–\d{4}.
+  → Tighten the keep-list phrasing: change trust-card dt from “Since 1908” to “Family lineage since 1908” (or similar) to remove ambiguity. Document why it is lineage-attached in UI.
+  → Consider amending title tags to remove any residual ambiguity and help SEO, e.g., “Kairali Ayurvedic Group — Founded 1989; a family tradition since 1908.” Keep within 55–60 chars if possible.
+  → Audit and fix structured data: search for foundingDate in JSON-LD/microdata across all sites; ensure it is 1989 and remove any 1908 from org-level data.
+  → Verify copyright changes render correctly in SSR/SSG contexts and don’t introduce hydration mismatches; add a unit test for computed year.
+  → Document and prove that no OpenGraph/Twitter/sitemap/meta descriptions still assert ‘since 1908’ at group level.
+
+tokens: prompt 3140 · completion 5111 (reasoning 3264)

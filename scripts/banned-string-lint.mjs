@@ -416,6 +416,53 @@ export const RULES = [
       "- **Dr. Deepu John, BAMS** — Chief Physician & Head of Department",
     ],
   },
+  {
+    id: "group-attached-1908",
+    appliesTo: "both",
+    why:
+      "DECISIONS.md 16 Jul (Abilash, primary source): 1908 is the FAMILY lineage origin; the GROUP was founded 1989. " +
+      '"Kairali Ayurvedic Group — Since 1908" / "founded 1908" conflates the two — the ruled fix is "a family tradition since 1908". ' +
+      "Four shipped sites carried the wrong form on main for three days after the ruling (findings B-144, CARD-4 / D-20260720-25). " +
+      "Companion typed-rolling ban (D-ROLLING-NUMBER): a copyright year is computed, never typed — \"© 1908–2026\" shipped on four footers.",
+    scan: (ctx) => {
+      /** @type {Hit[]} */
+      const hits = [];
+      ctx.lines.forEach((line, i) => {
+        // (a) "founded 1908" — always wrong: nothing of ours was FOUNDED in 1908
+        //     (the group: 1989; the first clinic was opened, and lineage prose
+        //     never uses "founded").
+        if (/\bfounded\s+(?:in\s+)?1908\b/i.test(line)) {
+          hits.push({ line: i + 1, message: `"founded 1908" — the group was founded 1989; 1908 is the family lineage. Ruled form: "founded 1989; a family practising Ayurveda since 1908".` });
+        }
+        // (b) "Group … Since 1908" with ONLY punctuation between — the exact
+        //     prohibited overline/title shape. Words between ("Group (physicians
+        //     since 1908", "Group — a family tradition since 1908") stay legal.
+        if (/\bGroup\s*[—–·,:-]?\s*(?:est\.?\s+)?since\s+1908\b/i.test(line)) {
+          hits.push({ line: i + 1, message: `Group-attached "Since 1908". The group dates to 1989; the ruled form is "· A family tradition since 1908".` });
+        }
+        // (c) a TYPED copyright year — "© 1908–2026", "© 2026", "© 1989–2026".
+        //     Rolling values are computed ({new Date().getFullYear()}), never
+        //     typed (D-ROLLING-NUMBER). A fixed span START before a computed end
+        //     ("© 1989–{…}") has no literal year token directly after © or the
+        //     dash, so it stays legal.
+        if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line)) {
+          hits.push({ line: i + 1, message: `Typed copyright year. Rolling values are computed, never typed (D-ROLLING-NUMBER): © {new Date().getFullYear()} …` });
+        }
+      });
+      return hits;
+    },
+    probe: "Kairali Ayurvedic Group · Since 1908",
+    antiProbes: [
+      // The ruled forms — the lint must never flag our own corrections.
+      "a family tradition since 1908",
+      "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
+      "part of the Kairali Ayurvedic Group (physicians since 1908; NABH hospital + WHO-GMP pharmacy)",
+      "Kairali Ayurvedic Group · A family tradition since 1908",
+      "WHO-GMP manufacturer · Since 1908, founded 1989",
+      "a family of Ayurvedic physicians since 1908",
+      "© 1989–{new Date().getFullYear()} Kairali Ayurvedic Group.",
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------

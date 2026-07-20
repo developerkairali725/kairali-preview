@@ -132,7 +132,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="footer__bottom">
-        <span>© 2026 Blush Lounge — Makeup by Sneha. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Blush Lounge — Makeup by Sneha. All rights reserved.</span>
         <span>Delhi · Worldwide</span>
       </div>
     </footer>

@@ -134,7 +134,7 @@ export function SiteFooter() {
         <p className="footer-disclaimer">
           Catalogue data on this preview carries owner-ordered placeholders (SKU / price
           lines) until the real catalogue lands — placeholder values are never real
-          offers. © 1989–2026 Kairali Ayurvedic Group.
+          offers. © 1989–{new Date().getFullYear()} Kairali Ayurvedic Group.
         </p>
       </div>
     </footer>
