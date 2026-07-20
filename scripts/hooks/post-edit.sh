@@ -10,12 +10,23 @@
 
 INPUT=$(cat)
 
-ROOT="${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel 2>/dev/null)}"
+# ROOT is derived from THIS SCRIPT'S location, never from CLAUDE_PROJECT_DIR or
+# the session cwd: the 20 Jul silent-failure audit proved every live session
+# launches from ~/Claude (parent dir), so cwd/project-dir derivations pointed
+# the log and lint at the WRONG root — or the hook never fired at all.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 [ -z "$ROOT" ] && exit 0
 
 FILE=$(printf '%s' "$INPUT" | python3 -c "import json,sys; print(json.load(sys.stdin).get('tool_input',{}).get('file_path',''))" 2>/dev/null)
 TOOL=$(printf '%s' "$INPUT" | python3 -c "import json,sys; print(json.load(sys.stdin).get('tool_name',''))" 2>/dev/null)
 [ -z "$FILE" ] && exit 0
+
+# Repo-scope guard: this hook is registered at the ~/Claude launch level so it
+# actually fires; edits OUTSIDE this repo are not its business.
+case "$FILE" in
+  "$ROOT"/*) ;;
+  *) exit 0 ;;
+esac
 
 # ---- 1. audit log (best-effort; never blocks work) -------------------------
 # Path stored relative to the repo root so the log stays portable and diffable.

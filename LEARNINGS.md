@@ -230,3 +230,18 @@ Three state the ask status. The fourth answers a question nobody asked (*is he r
 
 ## 2026-07-18 18:55:00 IST — subagent fabricated an owner rating; caught by the owner, verified false
 The pending-questions sweep agent reported four hospitality design calls as "already shipped in the 9.4 preview" — implying an owner rating that never happened (repo truth: internal critic scored 8.9 FAIL, then a fix pass; grep finds no "9.4" anywhere). The coordinator relayed it unverified; Abilash challenged it; grep confirmed fabrication. Rules reaffirmed: (1) any subagent claim that attributes a rating/approval/statement to a HUMAN is verified against repo evidence before being repeated; (2) sweep/summary agents must cite file:line for owner-attributed facts, and the coordinator spot-checks those citations before asking the owner to act on them.
+
+## 2026-07-20 08:25:00 IST — Silent activation failures are a CLASS; and workflow agents must get worktrees
+The taste-skill discovery (13 skills symlink-dangling for 6 days) generalized exactly as feared: the
+45-agent audit (RPT-20260720-SILENT) confirmed 31 instances of installed-but-never-fires across skills,
+hooks, MCPs, CI, registry wiring and local automation — including ALL THREE repo hooks (sessions launch
+from ~/Claude; the repo-level .claude/settings.json was read once ever, 13 Jul). Standing lessons:
+(1) REGISTRATION ≠ ACTIVATION — after installing anything, demand one machine-verified FIRING (a blocked
+probe, a written log line, a run record) before recording it as live; (2) path-dependent scripts derive
+their root from THEIR OWN location, never cwd/CLAUDE_PROJECT_DIR (three scripts fixed tonight:
+post-edit.sh, session-start.sh, wp-snapshot.mjs; seo-baseline.mjs shipped with the rule); (3) a fallback
+after a pipeline (`cmd | head || echo fail`) binds to the LAST pipe stage — dead code; bind to the real
+command's status. (4) WORKFLOW ISOLATION: a sweep subagent ran `git checkout main` in the shared tree
+mid-session and hijacked an in-flight commit (reflog-caught, relocated, origin untouched) — the existing
+per-agent-worktree rule BINDS ON WORKFLOW SPECS TOO: any workflow agent that may run git state commands
+gets isolation:'worktree', and prompts saying "read-only" are advice, not enforcement.

@@ -541,3 +541,21 @@ properties. Recommendation on record: do NOT consolidate on the vendor; GSC/GA4 
 baseline spine, DataForSEO kept narrow-PAYG for backlink graph + vendor-only keyword discovery; re-judge
 after the GSC API lane (1,000-row UI cap depresses the measured denominator). One-worder: reply
 KEEP-NARROW (recommended) or WIDEN (vendor becomes a baseline source anyway) or DROP.
+
+## 2026-07-20 08:26:00 IST — Q-PYTHON-SECURITY-GUIDANCE (one-worder: INSTALL or SKIP)
+The security-guidance plugin's LLM review (commit/push/Stop gate) has NEVER run: macOS ships Python 3.9.6,
+the plugin's SDK needs >=3.10, and it silently no-ops while its regex warnings create false assurance
+(RPT-20260720-SILENT #1). Fix = `brew install python` (system install on your machine — your word first).
+Reply INSTALL (I run it + verify the review fires on a test commit) or SKIP (documented risk).
+
+## 2026-07-20 08:27:00 IST — Q-AUDITORS-YML (one-worder: RELAND or DELETE)
+The 15-Jul external-auditor CI gate lived 6 minutes on a PR-less branch; GitHub still lists the workflow
+ACTIVE against a deleted file, and BOTH paid API keys (OpenAI + Perplexity) sit as repo secrets consumed by
+no workflow on main (RPT-20260720-SILENT #14/#29). Reply RELAND (I open the PR to land it properly through
+the guarded-workflow lane) or DELETE (kill branch + registration; keys stay for the local scripts).
+
+## 2026-07-20 08:28:00 IST — Q-A13-REQUIRED-CHECK (owner click)
+Ship Gate A-13 (/security-review on every release diff) runs in CI but is NOT a required status check, so
+auto-merge legally completes without it (RPT-20260720-SILENT C1). Fix is your branch-protection click:
+add `security-review` to required contexts (same screen as the M1 required-contexts click). Say GO and I
+prep the exact context name + verify after your click.

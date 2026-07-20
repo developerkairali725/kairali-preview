@@ -26,7 +26,14 @@
  *     `YYYY-MM-DD HH:MM:SS IST`; filenames use the same instant, `-` for `:`).
  */
 import { mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Backups anchor to the REPO, never to the caller's cwd — the 20 Jul
+// silent-failure audit proved a foreign-cwd run would say "Safe to proceed"
+// while landing the rollback layer outside the repo (same class as the
+// evidence-manifest cwd no-op fixed in seo-baseline.mjs).
+const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 kairali-wp-snapshot";
@@ -56,7 +63,7 @@ for (const raw of urls) {
   const slug =
     url.pathname.replace(/\/+$/, "").replace(/^\/+/, "").replace(/[^a-zA-Z0-9._-]+/g, "-") ||
     "home";
-  const dir = join("backups", url.hostname.replace(/^www\./, ""));
+  const dir = join(REPO_ROOT, "backups", url.hostname.replace(/^www\./, ""));
   const file = join(dir, `${slug}--${istStamp()}.html`);
   try {
     const res = await fetch(url, { headers: { "user-agent": UA }, redirect: "follow" });

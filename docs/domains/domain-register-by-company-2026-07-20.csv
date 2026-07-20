@@ -1,0 +1,90 @@
+Domain,Company,Company basis,Use case,Forwards to,Web-factory stage,Ruling / note,Sunaj's remark (14 Jul CSV),Active (Drive y/n),Expiry,Legacy hosting
+AROGYAKENDRA.COM,Kairali Group,confirmed,Site,,preview,,A single-page website,y,2027-04-14,Windows
+AROGYASHALA.IN,Kairali Group,confirmed,Site,,human_audit,Prompt-4 pilot done,Single Page Website,y,2027-05-15,Windows
+AYURVEDAFRANCHISE.COM,Kairali Group,confirmed,Franchise site (canonical),,preview,D#4: canonical franchise domain,Get it checked QA,y,2026-10-01,Linux
+KAIRALI.COM,Kairali Group,confirmed,Group corporate site,,preview,,Main group website ,y,2031-06-02,Windows
+KAIRALIYOGA.COM,Kairali Group,confirmed,Yoga site,,preview,,To be updated,y,2027-08-20,Windows
+AROGYAKENDRA.CO.IN,Kairali Group,confirmed,Forward,arogyakendra.com,,,Forward,n,2027-08-20,Windows
+AROGYASHALA.CO.IN,Kairali Group,confirmed,Forward,arogyashala.in,,,Forward,n,2027-08-20,Windows
+KAIRALI.CO.IN,Kairali Group,confirmed,Forward,kairali.com,,,Forward,y,2034-01-16,NA
+KAIRALIFRANCHISE.COM,Kairali Group,confirmed,Forward (301 at cutover),ayurvedafranchise.com,ideation,D#4: no separate build,Main franchise website,y,2027-03-06,Windows
+LIVELIFELIVEYOGA.COM,Kairali Group,inferred,Forward,kairaliyoga.com,,,Forward,n,2026-09-26,NA
+KAIRALICENTERS.COM,Kairali Group (Centres),confirmed,Centres site,,preview,,Main center website,y,2026-09-03,Linux
+HEALTHSPACENTER.COM,Kairali Group (Centres),inferred,Forward,family main (TBD),,,Forward,y,2027-02-25,NA
+HEALTHSPACENTERS.COM,Kairali Group (Centres),inferred,Forward,family main (TBD),,,Forward,y,2027-02-25,NA
+KAIRALICENTER.COM,Kairali Group (Centres),confirmed,Forward,kairalicenters.com,,,Forward,y,2026-09-03,Linux
+KAIRALICENTER.IN,Kairali Group (Centres),confirmed,Forward,kairalicenters.com,,,Forward,n,2026-09-03,Linux
+KAIRALICENTERS.IN,Kairali Group (Centres),confirmed,Forward,kairalicenters.com,,,Forward,n,2026-09-03,Linux
+KAIRALICENTRE.COM,Kairali Group (Centres),confirmed,Forward,kairalicenters.com,,,Forward,y,2027-05-15,Linux
+KAIRALICENTRES.COM,Kairali Group (Centres),confirmed,Forward,kairalicenters.com,,,Forward,y,2027-05-15,Linux
+KERALACENTERS.COM,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,y,2026-09-03,NA
+KERALACENTERS.IN,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,n,2026-09-03,Linux
+KERALACENTRE.COM,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,y,2026-09-03,Linux
+KERALACENTRE.IN,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,n,2026-09-03,Linux
+KERALACENTRES.COM,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,y,2026-09-03,Linux
+KERALACENTRES.IN,Kairali Group (Centres),inferred,Forward,kairalicenters.com,,,Forward,n,2026-09-03,Linux
+KAIRALIEQUIPMENT.COM,Kairali Group (B2B),confirmed,Equipment B2B site,,human_audit,preview-only lock D-EQ-CATALOG,To be created,y,2027-02-15,Windows
+KAIRALIEQUIPMENTS.COM,Kairali Group (B2B),confirmed,Forward,kairaliequipment.com,,,Forward,y,2027-05-15,Windows
+KERALAEQUIPMENTS.COM,Kairali Group (B2B),inferred,Forward,kairaliequipment.com,,,Forward,y,2027-05-15,NA
+KAIRALI.GURU,Kairali Group (education),confirmed,Training site,,live,Eeshal's rebuild; DNS still old host,Training Website,y,2027-06-12,Windows
+WHATISAYURVEDA.COM,Kairali Group (education),confirmed,Ayurveda education site,,preview,,to be created,y,2029-07-07,NA
+KAIRALIAYURVEDAINSTITUTE.COM,Kairali Group (education),confirmed,Forward,kairali.guru (TBD),,,Forward,y,2027-05-15,Windows
+KAIRALITRAINING.COM,Kairali Group (education),confirmed,Forward,kairali.guru (TBD),,,Forward,y,2027-04-14,Windows
+KERALAAYURVEDAINSTITUTE.COM,Kairali Group (education),inferred,Forward,kairali.guru (TBD),,,Forward,y,2027-04-20,Windows
+KERALATRAINING.COM,Kairali Group (education),confirmed,Forward,kairali.guru (TBD),,,Forward,y,2027-05-15,NA
+KIAPT.CO.IN,Kairali Group (education),inferred,Forward,family main (TBD),,,Forward,n,2027-08-20,NA
+TRAININGINAYURVEDA.COM,Kairali Group (education),inferred,Forward,kairali.guru (TBD),,,Forward,y,2027-02-20,NA
+WHATISAYURVEDA.ORG,Kairali Group (education),confirmed,"Forward (plain, at Wave-2 cutover)",whatisayurveda.com,,D#2,qa qc to be done ,y,2026-09-28,NA
+WHYAYURVEDA.ORG,Kairali Group (blog),confirmed,Blog (live WordPress),,live,,Forward,y,2031-02-20,NA
+WHYAYURVEDA.COM,Kairali Group (blog),confirmed,Forward,whyayurveda.org,,,Forward,y,2031-09-24,Linux
+WHYAYURVEDA.IN,Kairali Group (blog),confirmed,Forward,whyayurveda.org,,,Forward,y,2031-09-24,NA
+HEALING.RECIPES,Kairali Group (Gita Ramesh),confirmed,Cookbook site,,preview,,To be launched about the new cookbooks and then the latest book,y,2027-04-11,Windows
+AYURVEDICHEALINGVILLAGE.COM,KTAHV,confirmed,Hospital site (clinical),,research,,Get QA done,y,2027-04-14,Linux
+KAIRALIVILLAGE.COM,KTAHV,inferred,Forward,ayurvedichealingvillage.com (TBD),,,Forward,y,2026-09-21,NA
+KTAHV.COM,KTAHV,confirmed,Forward,ayurvedichealingvillage.com,,,Forward,y,2026-09-21,NA
+GOAWELLNESSHOLIDAYS.COM,Villa Raag,inferred,Parked / hold,,,,Hold for now,y,2027-02-05,NA
+VILLARAAG.COM,Villa Raag,confirmed,Boutique stay site,,preview,,to be updated ,y,2027-12-20,Linux
+CASARAAG.COM,Villa Raag,confirmed,Forward,villaraag.com,,forward-farm.csv,Forward,y,2027-07-31,NA
+RAAGCASA.COM,Villa Raag,confirmed,Forward,villaraag.com,,forward-farm.csv,Forward,y,2027-07-31,NA
+RAAGVILLA.COM,Villa Raag,confirmed,Forward,villaraag.com,,forward-farm.csv,Forward,y,2027-08-01,NA
+THERAAGVILLA.COM,Villa Raag,confirmed,Forward,villaraag.com,,forward-farm.csv,Forward,y,2027-08-01,NA
+KAIRALIHOSPITALITY.COM,Kairali Hospitality,confirmed,Hospitality ventures site,,preview,,Website that will have all the hospitality ventures and the consistency arm,y,2027-04-14,Windows
+BULKAYURVEDAOILS.COM,KAPPL,confirmed,B2B supply desk,,preview,,Multi-page website but with Shopify integration so purchases will be done on our Shopify website,y,2027-05-29,NA
+BULKAYURVEDAPRODUCTS.COM,KAPPL,confirmed,B2B manufacturing desk,,preview,,Multi-page website but with Shopify integration so purchases will be done on our Shopify website,y,2027-05-29,NA
+KAIRALIHERBALS.COM,KAPPL,confirmed,Commerce microsite (herbals),,ideation,Track B,To be created,y,2027-04-14,Windows
+KAIRALIOIL.COM,KAPPL,confirmed,Commerce microsite (oils),,ideation,Track B,To be created,y,2027-02-15,NA
+KAIRALIORGANIC.COM,KAPPL,confirmed,Commerce shell (organic range),,preview,PR #164; no cart (Track B),To be created,y,2027-02-15,NA
+KAIRALIPRODUCT.COM,KAPPL,confirmed,Commerce D2C intl (Shopify),,ideation,Track B,"To be updated: QA, QC",y,2027-05-24,Shopify
+KAIRALIPRODUCTS.CZ,KAPPL,confirmed,Commerce microsite,,ideation,Track B Wave-1,To be created,y,2026-11-18,Shopify
+KAIRALIPRODUCTS.IN,KAPPL,confirmed,Commerce D2C India (Shopify),,ideation,Track B,To get QA/QC done,y,2031-01-03,NA
+KAIRALIPRODUCTS.US,KAPPL,confirmed,Commerce microsite,,ideation,Track B Wave-1,To get updated,y,2028-06-17,NA
+KAIRALITEA.COM,KAPPL,confirmed,Commerce microsite (tea),,ideation,Track B,To be created,y,2027-02-15,Windows
+KAIRALITOWELS.COM,KAPPL,inferred,Parked / hold (towels),,,,Hold for now,y,2028-12-24,NA
+KAIRBYKAIRALI.COM,KAPPL,confirmed,KAIR brand site (rebuild-in-place canonical),,,owner-ruled canonical,Hold for now,y,2026-09-23,NA
+KAIRCIN.COM,KAPPL,inferred,Parked / hold,,,,Hold for now,y,2027-04-29,NA
+KAPPL.CO.IN,KAPPL,confirmed,KAPPL corporate site,,ideation,,To be created,y,2027-08-20,Windows
+RUDANTI.COM,KAPPL,inferred,Parked / hold (brand name),,,,Hold for now,n,2027-06-04,NA
+KAIRALIOILS.COM,KAPPL,confirmed,Forward,kairalioil.com,,,Forward,y,2027-02-15,NA
+KAIRALIORGANICS.COM,KAPPL,confirmed,Forward,kairaliorganic.com,,,Forward,y,2029-01-05,NA
+KAIRALIPRODUCTS.COM,KAPPL,confirmed,Forward,kairaliproduct.com (TBD),,,Forward,y,2027-05-15,Linux
+KAIRORGANICS.COM,KAPPL,confirmed,Forward (plain 301 at cutover),kairaliorganic.com,,ruled,To be created,y,2027-06-04,NA
+KAIRPRODUCTS.COM,KAPPL,confirmed,Forward,kairaliorganic.com family,,,To be updated,y,2027-06-04,NA
+KERALAHERBALS.COM,KAPPL,inferred,Forward,kairaliherbals.com,,,Forward,y,2027-05-15,NA
+KERALAPHARMA.COM,KAPPL,inferred,Forward,family main (TBD),,,Forward,y,2027-05-15,NA
+KERALATOWELS.COM,KAPPL,inferred,Forward,kairalitowels.com,,,Forward,y,2028-12-24,NA
+ABHILASHKR.COM,Personal,confirmed,Abhilash portfolio,,build,matrix-exempt,to be hosted - site created in next.js,y,2027-07-10,NA
+THEBLUSHLOUNGE.COM,Personal,confirmed,Sneha's salon site — THE PILOT,,human_audit,M4 pilot site,forward to sneha chowdhary or vice versa ,y,2026-10-28,Linux
+SNEHACHOWDHARY.COM,Personal,confirmed,Forward (301 at live),theblushlounge.com,preview,D#6,to be created for my wife ,y,2026-09-01,NA
+KAGAPP.COM,Internal,inferred,KAG app domain (Drive sheet only),,,CONFIRM,(only in Drive 'Domain List' Sheet1),n,,
+KAIRALI.AI,Internal,confirmed,Fleet Pulse dashboard + Playbook,,live,DNS flip pending (Sunaj),Backend Websites,y,2028-06-27,Windows
+AYURVEDAJOURNALS.COM,UNCONFIRMED,inferred,Unclassified (remark: 'Believe it'),,,CONFIRM use,Believe it,y,2027-06-01,Windows
+BALANCEGLOW.COM,UNCONFIRMED,inferred,Unclassified (Drive sheet only),,,CONFIRM — not in Sunaj CSV,(only in Drive 'Domain List' Sheet1),n,,
+DOCTORVEDA.COM,UNCONFIRMED,inferred,Parked / hold,,,Abishek-tagged in Drive sheet,Hold for now,y,2027-04-19,NA
+KAIRALITHAILAND.COM,UNCONFIRMED,inferred,Parked / hold (international),,,Abishek-tagged in Drive sheet,Hold for now,y,2027-03-06,NA
+MOBISTORR.COM,UNCONFIRMED,inferred,Unclassified (Drive sheet only),,,CONFIRM — likely unrelated,(only in Drive 'Domain List' Sheet1),n,,
+SANSKRITIVEDIC.COM,UNCONFIRMED,inferred,Parked / hold,,,,Hold for now,n,2028-01-16,NA
+SPAECOSYSTEM.COM,UNCONFIRMED,inferred,Parked / hold (spa vertical),,,,Hold for now,y,2027-02-13,NA
+SPALABS.IN,UNCONFIRMED,inferred,Parked / hold (spa vertical),,,,Hold for now,y,2027-05-15,NA
+TOURDENIGHT.COM,UNCONFIRMED,inferred,Unclassified (Drive sheet only),,,named in GSC cleanup list,(only in Drive 'Domain List' Sheet1),n,,
+TRUEINSTANTLOAN.COM,UNCONFIRMED,inferred,Unclassified (Drive sheet only),,,CONFIRM — likely unrelated,(only in Drive 'Domain List' Sheet1),n,,
+HOUSEOFAYURVEDA.IN,UNCONFIRMED,inferred,Forward,family main (TBD),,CONFIRM company,Forward,y,2026-11-15,NA

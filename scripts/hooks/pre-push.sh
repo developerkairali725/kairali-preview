@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # Pre-push gate: compliance lint + package tests + build. Fail = push blocked.
+# ROOT from THIS SCRIPT'S location (20 Jul audit, RPT-20260720-SILENT): with the
+# hook layer registered at the ~/Claude launch level, CLAUDE_PROJECT_DIR points
+# at the WRONG root and cwd is not the repo — the first live firing of this gate
+# proved it by resolving packages/compliance against ~/Claude.
 set -e
-cd "${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel)}"
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
 echo "pre-push gate: compliance lint…" >&2
 node packages/compliance/bin/lint.js >&2

@@ -1,0 +1,43 @@
+gpt-5.6-sol counter-check of RPT-20260720-SILENT — run 2026-07-20 ~08:35 IST via
+scripts/audit-gpt.mjs (--model gpt-5.6-sol; prompt 33,997 tok / completion 4,506).
+Captured from the run's final 60 lines (the structured verdict block); the head
+of the transcript was assumption-analysis leading into the same findings.
+VERDICT: FAIL — 6 blocking. All six dispositioned in the report's appendix.
+
+ASSUMED (never reasoned): That a live probe in the current session proves behavior after a fresh launch or application restart.
+ASSUMED (never reasoned): That future deployment timing makes a currently false gate claim acceptable.
+ASSUMED (never reasoned): That a backlog or QUESTIONS.md home is a valid substitute for implementation.
+ASSUMED (never reasoned): That CI workflow execution and CI merge-block enforcement are the same surface.
+ASSUMED (never reasoned): That a URL returning HTTP 200 means the intended deployment fired and serves approved bytes.
+ASSUMED (never reasoned): That no evidence of a hard-gate breach proves every hard gate was followed manually.
+
+Quality: weak | expert would respect it: false | AI-filler risk: medium
+  weakest point: The disposition layer is not evidence-safe: it preserves a refuted historical claim and treats confirmed broken controls as MONITOR or future work while presenting the OS as materially cured.
+
+ORDER VIOLATIONS:
+  The audit selected seven lanes before proving they covered the complete activation universe.
+  Findings were dispositioned before fix designs were checked against their own root causes (circular Monday self-test proposal).
+  The hook cluster was marked fixed/done before SessionStart activation was tested in a fresh session.
+  The summary was written as closure while multiple blocker mechanisms remained unresolved or merely scheduled.
+
+MISSED STEPS (6):
+  [blocking] Create a canonical activation-surface and mechanism inventory before claiming completeness.
+  [blocking] Run a fresh-session activation test for all three hook events before closing the hook finding.
+  [major] Apply a state model distinguishing accepted fix / implemented / activation-proven / blocked-awaiting-owner / deferred / monitor-only.
+  [blocking] Adversarially validate each proposed fix against the root cause before accepting its disposition (finding #7).
+  [blocking] Sweep enforcement and deployment control planes, not just source files and workflow definitions (branch protections/rulesets, GitHub App permissions, required-context registration, Vercel git integration/build-ignore/alias promotion, webhook trigger health).
+  [major] Prove the audit artifact itself passed report-deliverable + evidence-manifest requirements (commit hash).
+
+NEEDS FACT-CHECK (5): the worktree-destroyed-lines claim (WRONG — corrected: never written) · "conduct layer held every gate" (withdrawn) · "machine layer substantially theatre" (retained with scope) · "FIXED THIS SESSION" for all three hooks (reworded ⅔ proven) · 45-agent sweep supports completeness (withdrawn; Round 2 queued).
+
+BLOCKING (6):
+  1. Report contained the REFUTED version of the #23 log-gap story. → ADOPTED, corrected.
+  2. Activation sweep incomplete (enforcement/deployment control planes unswept; critic findings prove the omission). → ADOPTED, Round-2 lanes queued.
+  3. Confirmed broken mechanisms parked as MONITOR (#13/#19, C2) or deferred (#18, #1, C1) while described as binding. → ADOPTED: relabeled IMPLEMENT blocked-awaiting-owner; #18 claim truthed now, build scheduled with bounded exposure; #1/C1 are today's owner one-worders.
+  4. #7 fix was circular (SessionStart testing itself). → ADOPTED, redesigned onto the scheduled-task plane.
+  5. "Fixed" declared without full activation proof (SessionStart untested in a fresh session; machine-local registration not reproducible config). → ADOPTED, reworded; fresh-session proof is the next session's first checkpoint; the machine-local settings file is documented in the report as machine-local by design (owner's single-machine environment) with the repo copy as source of truth.
+  6. "Agent conduct layer held every gate" unsupported. → ADOPTED, summary rewritten.
+
+RECOMMENDATIONS 1–10: adopted as mapped in the report appendix (rec-9 state
+vocabulary carried inside the triad's reason column pending owner word on the
+ruled vocabulary; rec-8 lanes = the queued Round-2 sweep).

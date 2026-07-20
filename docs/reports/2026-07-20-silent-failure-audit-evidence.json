@@ -1,0 +1,341 @@
+{
+  "confirmed": [
+    {
+      "lane": "skills-plugins",
+      "severity": "blocker",
+      "title": "security-guidance LLM security review (commit/push/Stop gate) has NEVER run since install — silently no-ops on every fire",
+      "surface": "security-guidance@claude-plugins-official 2.0.6 — ~/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/ + ~/.claude/security/",
+      "evidence": "Two independent dead paths, both machine-verified. (1) SDK path: the only Python on the machine is 3.9.6 — probe of python3.13/3.12/3.11/3.10/python3/python found only 'python3 => /usr/bin/python3 => 3.9.6', and running the plugin's own shim returned 'shim picked: /Library/Developer/CommandLineTools/usr/bin/python3 3.9.6'. sg-python.sh lines 66-70 document the consequence: 'claude_agent_sdk requires Python >= 3.10; below that, pip install fails... and the LLM-powered review (Stop / commit / push) silently no-ops while pattern checks (PostToolUse regex) keep working. macOS ships 3.9.6 as the de",
+      "impact": "Every commit and push on this machine since 14 Jul — including all kairali-web-factory work — shipped without the LLM security review the plugin is installed and enabled to provide (enabledPlugins: security-guidance@claude-plugins-official: true). The visible pattern warnings create false assurance that the security gate is working; its main protection has fired zero times.",
+      "fix": "Install Python 3.10+ (brew install python). On next SessionStart, ensure_agent_sdk.py will build ~/.claude/security/agent-sdk-venv; the SDK path works with subscriber OAuth, no API key needed. Verify by checking ~/.claude/security/log.txt no longer prints 'LLM review disabled' after a test commit. Alternative: export ANTHROPIC_API_KEY, but the Python upgrade is the durable fix."
+    },
+    {
+      "lane": "skills-plugins",
+      "severity": "major",
+      "title": "Repo subagents declare MCP tools (mcp__context7, mcp__firecrawl) that exist in no MCP configuration — the capability can never resolve",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/agents/content-geo-writer.md, seo-aeo-geo-auditor.md, security-auditor.md",
+      "evidence": "content-geo-writer.md frontmatter: 'tools: Read, Write, WebFetch, mcp__context7, mcp__firecrawl'. seo-aeo-geo-auditor.md: 'tools: ... mcp__context7, mcp__playwright'. security-auditor.md description promises screening of content 'scraped from external/untrusted sources via Firecrawl'. But the configured MCP servers are (from ~/.claude.json): ['playwright', 'vercel', 'cloudflare-docs', 'next-devtools', 'clarity-ktahv', 'composio']; the project entry for kairali-web-factory has mcpServers: [] and the repo has no .mcp.json (verified absent). Neither 'context7' nor 'firecrawl' appears in any confi",
+      "impact": "The content-geo-writer and auditor agents load and run, but silently without the doc-lookup (context7) and scraping (firecrawl) capability their definitions and workflow descriptions rely on — they will improvise with WebFetch or skip research entirely, and the security-auditor's advertised Firecrawl prompt-injection screening flow cannot occur as described. Nobody sees an error because unknown tool names simply never appear in the agent's toolset.",
+      "fix": "Either add context7 and firecrawl servers to a repo .mcp.json (or ~/.claude.json) so the names resolve, or delete them from the agents' tools lines and reword security-auditor.md so the definitions match reality."
+    },
+    {
+      "lane": "skills-plugins",
+      "severity": "minor",
+      "title": "go-science plugin double-registered — same SKILL.md loads under two namespaces ('1.0.0:go-science' and 'go-science:go-science') because the cache install has no plugin.json",
+      "surface": "~/.claude/plugins/cache/go-science/go-science/1.0.0/ + ~/.claude/plugins/marketplaces/go-science/ + ~/.claude/settings.json",
+      "evidence": "Ground truth shows both '1.0.0:go-science' AND 'go-science:go-science' registered, yet installed_plugins.json has exactly one entry (go-science@go-science, installPath .../cache/go-science/go-science/1.0.0) and enabledPlugins has one. Mechanism: ls of the cache install's .claude-plugin/ shows ONLY marketplace.json — no plugin.json — because the vendor marketplace declares the plugin with source './', so the whole marketplace dir (marketplace.json included) was copied as the plugin. Every correctly-loading plugin has .claude-plugin/plugin.json with a name (verified: superpowers 6.1.1 '\"name\": \"",
+      "impact": "Duplicate skill descriptions in every session (wasted context, ambiguous /go-science triggering). The '1.0.0' namespace is version-coupled: a 1.0.1 reinstall silently renames it, breaking anything referencing '1.0.0:go-science'. If the two copies ever diverge (marketplace edited without reinstall), a stale copy keeps triggering. Same vendor setup.sh lineage as the already-fixed go-science dead-config-surface bug — this is its remaining residue.",
+      "fix": "Add a proper .claude-plugin/plugin.json ('name': 'go-science', 'version': ...) to the marketplace's plugin source (moving skills under a subdir instead of './'), remove the duplicate pluginMarketplaces entry in ~/.claude/settings.json, then uninstall/reinstall go-science and confirm only 'go-science:go-science' registers."
+    },
+    {
+      "lane": "skills-plugins",
+      "severity": "minor",
+      "title": "anthropic-agent-skills marketplace clone is registered but supplies nothing — the 'anthropic-skills' set actually loads from the desktop app's managed path",
+      "surface": "~/.claude/plugins/marketplaces/anthropic-agent-skills/ + ~/.claude/plugins/known_marketplaces.json",
+      "evidence": "known_marketplaces.json registers anthropic-agent-skills (github anthropics/skills, lastUpdated 2026-07-13) and it also sits in settings.json extraKnownMarketplaces; the clone exists on disk (README.md, skills/, spec/, template/). But installed_plugins.json contains ZERO plugins from this marketplace — nothing references it. The 'anthropic-skills:*' set in the ground-truth loaded list (docx, pptx, xlsx, slide-skill, morning, etc.) is delivered from a different, app-managed surface: mdfind located slide-skill at '~/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/75f30",
+      "impact": "A dormant registration surface that looks load-bearing: anyone auditing or editing ~/.claude/plugins/marketplaces/anthropic-agent-skills/ expecting it to change the loaded anthropic-skills behavior would be editing a directory nothing reads — a future variant of the go-science dead-surface exemplar.",
+      "fix": "Either install something from it deliberately or remove the marketplace registration (claude plugin marketplace remove anthropic-agent-skills) so the only registered surfaces are ones that actually feed sessions."
+    },
+    {
+      "lane": "hooks",
+      "severity": "blocker",
+      "title": "All three project hooks (guard.sh, post-edit.sh, session-start.sh) never fire — every live session launches from ~/Claude, where the repo's .claude/settings.json is never loaded",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/settings.json (hooks block) vs Claude Code projects registry ~/.claude/projects/",
+      "evidence": "Hooks are registered ONLY in the repo's project settings (PreToolUse guard.sh, PostToolUse post-edit.sh, SessionStart session-start.sh). ~/.claude/settings.json has no hooks key; ~/Claude/.claude/ contains only settings.local.json (permissions, no hooks). Projects registry: repo-root project = 1 session ever, latest 'Jul 13 17:12:49 2026' (hooks committed same day, a1aa435 2026-07-13 16:06:20); worktree project = 47 sessions, latest Jul 16 13:18:28, and the worktree dir no longer exists ('no .claude-worktrees dir'); parent ~/Claude project = 37 sessions, latest Jul 20 07:22:09 (the live dispat",
+      "impact": "Every mechanically-enforced hard gate is dead in every current session: the force-push block (gate 5), the production wp-admin/wp-config/xmlrpc block (gates 1,3), the Cloudflare DNS-change block, the Shopify Admin API read-only enforcement (rule k), and the pre-push gate (build+tests+compliance before any git push). The repo settings' deny list (sudo, git push --force, env/printenv) also never applies; worse, the parent ~/Claude settings.local.json explicitly ALLOWS 'Bash(git push *)'. CLAUDE.md calls these 'mechanically enforced' — since ~16 Jul enforcement is prose only. Identical class to the taste-skill dangling symlinks: installed 13 Jul, working script, dead registration surface.",
+      "fix": "Register the hooks on the surface sessions actually use: either add the hook block (with absolute paths instead of $CLAUDE_PROJECT_DIR) to ~/.claude/settings.json or ~/Claude/.claude/settings.json, or make launching from the repo root the enforced habit (and add an activation canary — see the Monday self-test finding). Do not fix by weakening (rule g)."
+    },
+    {
+      "lane": "hooks",
+      "severity": "major",
+      "title": "Rule (q) deterministic audit log never fires: agent-log.jsonl does not exist anywhere on disk despite daily Edit/Write activity, including edits made this morning",
+      "surface": "PostToolUse hook scripts/hooks/post-edit.sh → agent-log.jsonl (CLAUDE.md rule q, v1.5, PR #67)",
+      "evidence": "find /Users/kairalimacmini/Claude /Users/kairalimacmini/.claude -name 'agent-log*' → zero results. Yet repo files were edited TODAY by a Claude session: QUESTIONS.md, STATUS.yaml, DIRECTIVES.md, gates/registry.yaml all have 20 Jul 07:17 mtimes — zero log lines produced. .gitignore line 32 confirms agent-log.jsonl is machine-local, so if the hook had EVER fired on this surface the file would persist. Manual test proves the script works: piping a simulated PostToolUse JSON with CLAUDE_PROJECT_DIR set to a scratch dir wrote a perfect line: {\"timestamp\": \"2026-07-20T01:54:23Z\", \"actor\": \"claude-co",
+      "impact": "CLAUDE.md rule (q) ('every Edit/Write lands in agent-log.jsonl via the PostToolUse hook — deterministic') has been false since at latest 16 Jul. The audit trail the logger sub-agent's wiki/log.md rollups are supposed to curate from does not exist. The compliance lint half of the same hook (site edits under sites/* lint in <10s, exit 2 feeds findings back) is equally dead — site edits get no inline compliance gate. The green CI unit test actively masks the outage.",
+      "fix": "Same activation fix as the hooks finding, plus add an activation-level check (e.g., doctor.mjs contradiction: repo files modified more recently than the newest agent-log.jsonl line while a session ran) so a dead hook surfaces as a CONTRADICTION at boot."
+    },
+    {
+      "lane": "hooks",
+      "severity": "major",
+      "title": "Doctrine (c) Monday hook self-test has NO implementing mechanism — and its only reminder lives inside the dead hook it would have tested",
+      "surface": "CLAUDE.md doctrine (c) ('Same Monday pass: pnpm audit + Dependabot triage + hook self-test') — no cron, no workflow, no script",
+      "evidence": "Repo-wide grep for self-test: only content-lint.mjs's internal r23 scanner self-test and the reminder string 'Wiki lint every Monday (wiki/ + pnpm audit + hook self-test)' at scripts/hooks/session-start.sh line 9. Scheduled surfaces: .github/workflows has exactly one cron (uptime.yml, '*/10 * * * *' uptime checks); 'crontab: no crontab for kairalimacmini'; ~/Library/LaunchAgents contains only Perplexity/Google updaters; no scheduled-task implements it. scripts/test/ has no hook-activation test (post-edit-hook.test.js tests script logic only, in CI, not live-session activation). Today IS Monday",
+      "impact": "The one doctrine mechanism that would have caught this entire lane's outage (hooks silently not firing since ~16 Jul) exists only as prose, and its sole reminder is delivered by session-start.sh — a hook that never runs. Perfectly circular: the self-test's trigger is the dead mechanism it is supposed to test. Two Mondays have passed since hooks went dark.",
+      "fix": "Implement the self-test as something that cannot depend on hook activation: e.g., a CI/scheduled job or a doctor.mjs check that asserts (a) hook scripts exist and pass their unit tests AND (b) activation evidence is fresh (agent-log.jsonl newest line vs latest session/file mtimes; boot.json mtime vs session start)."
+    },
+    {
+      "lane": "hooks",
+      "severity": "blocker (for the security-auditor / rule-r injection-screening component; the other five agents remain major)",
+      "title": "Six repo sub-agents (.claude/agents/: logger, security-auditor, design-qa, seo-aeo-geo-auditor, content-geo-writer, catalog-compliance) sit on the same dead registration surface",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/agents/ (project-scoped agents)",
+      "evidence": "ls .claude/agents/ → catalog-compliance.md, content-geo-writer.md, design-qa.md, logger.md, security-auditor.md, seo-aeo-geo-auditor.md (all Jul 16). Project-scoped agents load from the session's startup project dir, and every session since ~16 Jul starts from ~/Claude (37 sessions, latest Jul 20 07:22), whose .claude/ contains no agents dir. Structural inference from the same proven mechanism as the hooks finding (registration surface never read), flagged for the agents-lane auditor to confirm from a live session's agent list.",
+      "impact": "Doctrine (n) design-qa + seo-aeo-geo-auditor after every build/visual change, (o) content drafts only from content-geo-writer, (p)/(l) catalog-compliance Mondays, (r) security-auditor injection screening of ALL scraped content BEFORE acting on it, (s) security-auditor pre-PR — all reference agents that are plausibly not loadable in current sessions. Rule (r) in particular is a believed-active security protection.",
+      "fix": "Cross-check in the live session (do the six agents appear as invocable?). If absent, move/mirror them to the surface sessions actually load, and fold agent presence into the Monday self-test."
+    },
+    {
+      "lane": "hooks",
+      "severity": "minor",
+      "title": "session-start.sh failure fallbacks can never fire, and its grep filter hides doctor's 'attention' findings even when the hook runs",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/scripts/hooks/session-start.sh lines 19-20",
+      "evidence": "Line 19: node boot-contract.mjs 2>&1 | head -12 || echo 'boot-contract failed...' — the || tests head's exit status (always 0), not node's, so the advertised fallback is dead code; same shape line 20. Also line 20's filter grep -E '^doctor|^CONTRADICTION|FAIL —' drops doctor's attention block: run live today, doctor printed 'attention  local commits not on origin (crash exposure — push them): 3a39ece / 2ec4331 / 37f8e52', but the filtered output a session would see is only 'doctor — GitHub-truth reconcile · 0 contradiction(s) · 1 attention item(s)' — the count survives, the actionable detail (",
+      "impact": "If boot-contract or doctor ever crashes mid-pipe, the 'run it by hand' instruction never prints (raw stderr may partially surface via 2>&1, truncated at 12 lines). Attention-class findings are structurally invisible at session start even after activation is fixed.",
+      "fix": "Use PIPESTATUS/pipefail or capture output in a variable and test node's exit code; either widen the grep to include the indented attention lines or have doctor prefix them matchably."
+    },
+    {
+      "lane": "mcp-servers",
+      "severity": "major",
+      "title": "Miro plugin MCP server (plugin:miro:miro) has NEVER connected in any session since install — OAuth Unauthorized every single session for 7 days",
+      "surface": "Managed miro plugin v1.3.0 at ~/Library/Application Support/Claude/local-agent-mode-sessions/355358d4-.../rpm/plugin_01XYoBMEPd2C7JxE1tsqPqpU/.mcp.json (declares {\"mcpServers\":{\"miro\":{\"type\":\"http\",\"url\":\"https://mcp.miro.com/\"}}}); logs at ~/Library/Caches/claude-cli-nodejs/*/mcp-logs-plugin-miro-miro/",
+      "evidence": "grep -h 'Successfully connected' across ALL 47 log files in ~/Library/Caches/claude-cli-nodejs/-Users-kairalimacmini-Claude/mcp-logs-plugin-miro-miro/*.jsonl returns count 0 (plus 0 in the worktree scope's 2 files). Every per-file last status from 2026-07-13T09-32 through 2026-07-20T01-35 is NEEDS-AUTH. Latest session log (2026-07-20T01-35-50-393Z.jsonl) shows the full failure: 'No access token in storage' -> OAuth URL generated for https://mcp.miro.com/authorize (scopes boards:read boards:write openid email) -> 'HTTP Connection failed after 863ms: Unauthorized' -> 'Authentication required for",
+      "impact": "All 7 miro:* skills (miro-browse, miro-diagram, miro-doc, miro-table, miro-code-review, miro-code-spec, miro-code-explain-on-board) load in every session and tell the model to 'use the Miro MCP server', but the plugin's own server has never once been authorized — it burns an OAuth round-trip and fails at every session start. Miro only works at all because a SEPARATE claude.ai Miro connector (UUID 34e28a1a) covers the tool surface, and that one itself required re-auth in the 20 Jul live session (its token also lapsed). Dual-registered capability with one permanently dead surface and one flaky one: any headless/scheduled/background session where the claude.ai connector token has lapsed has zero working Miro tools while the skills still load and claim the capability.",
+      "fix": "Run /mcp in an interactive session and complete the plugin's Miro OAuth once (token then persists in storage), or remove/disable the miro plugin's MCP declaration and standardize on the claude.ai Miro connector so there is exactly one auth surface to keep alive."
+    },
+    {
+      "lane": "mcp-servers",
+      "severity": "major",
+      "title": "claude.ai WordPress.com connector never authenticated once (0 successes, 13 failures) and silently vanished at the mid-July connector migration",
+      "surface": "claude.ai connector 'WordPress.com'; logs at ~/Library/Caches/claude-cli-nodejs/{-Users-kairalimacmini-Claude,-...-kairali-web-factory,-...-vigorous-swanson-7a2b7c}/mcp-logs-claude-ai-WordPress-com/",
+      "evidence": "grep -rh 'Successfully connected' over all mcp-logs-claude-ai-WordPress-com/*.jsonl in all three scopes: 0. grep -rh 'Authentication required': 13. Sample from 2026-07-13T11-42-52-820Z.jsonl: 'claude.ai proxy connection failed after 464ms: Streamable HTTP error: Error POSTing to endpoint: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\"...' then 'Authentication required for claude.ai proxy server'. Last log file anywhere is 2026-07-15; the connector has no UUID-era log dir, is absent from ~/.claude.json 'claudeAiMcpEverConnected' (which lists exactly: Google Drive, Tavily, Asana, Miro, G",
+      "impact": "A connector that was deliberately added for the WordPress workstream (memory doc kairali-wordpress-ai-tooling: Gutenberg two-track editing) has never fired in any session, ever — every WordPress task has silently proceeded without it, and after the ~16 Jul connector migration it no longer even attempts to connect, so no error will ever surface again to prompt a fix.",
+      "fix": "In claude.ai connector settings, re-add/authorize the WordPress.com connector (complete its OAuth), or formally drop it and record that WP editing runs exclusively through the Novamira/Block-MCP tracks."
+    },
+    {
+      "lane": "mcp-servers",
+      "severity": "minor",
+      "title": "GitHub MCP server: configured 13 Jul, never connected once (incompatible OAuth), then removed — a capability that appeared installed for 2 days but could never fire",
+      "surface": "Former 'github' entry in ~/.claude.json mcpServers (https://api.githubcopilot.com/mcp/); residual logs at ~/Library/Caches/claude-cli-nodejs/{-Users-kairalimacmini-Claude,-...-kairali-web-factory,-...-vigorous-swanson-7a2b7c}/mcp-logs-github/",
+      "evidence": "Repo-scope log 2026-07-13T10:38: 'HTTP Connection failed after 1179ms: Incompatible auth server: does not support dynamic client registration'; an OAuth attempt at 11:41 ('Using redirect port: 57841') never produced a token; all later sessions log 'Skipping connection (cached needs-auth)' (last: worktree scope 2026-07-14T09:04, same incompatible-auth error). Current config: grep -c githubcopilot ~/.claude.json = 0 — the server is gone from every scope (global mcpServers, all per-project mcpServers empty, no .mcp.json anywhere).",
+      "impact": "Zero current exposure (the entry was removed, and gh CLI + the working GitHub app integration cover the need — ~/.claude.json githubRepoPaths maps abhilashkairali/kairali-web-factory), but it is a third confirmed instance of the install-succeeds/activation-never-happens class: for 13-14 Jul any workflow written to use GitHub MCP tools would have silently had none. Worth a line in the audit log so nobody re-adds the same endpoint the same way.",
+      "fix": "If GitHub MCP is ever wanted again, add it with a PAT header (or a client version supporting its auth flow) instead of bare OAuth discovery, and verify one tool call before relying on it."
+    },
+    {
+      "lane": "ci-activation",
+      "severity": "major",
+      "title": "emit-verdicts has NEVER succeeded when armed — every site-affecting main merge since wiring fails at the push step (known: Q-EMITTER-PUSH-ALLOWANCE, verified)",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.github/workflows/factory-gate.yml (emit-verdicts job, lines 511-580)",
+      "evidence": "Job landed 3a81c86 18 Jul 18:52 (#135). Every armed run since = failure, sole failing job emit-verdicts: runs 29657341808 (18 Jul 19:12), 29679270381, 29689359127, 29689997783, 29692186206, 29692925198 (19 Jul 15:28). Every green main run had it SKIPPED (emit_affecting=false): 29693119157, 29689432152, 29674913242, 29674846401, 29674607474, 29671442489 all report 'emit-verdicts: skipped'. Step-level proof (job 88208758992): 'Emit verdicts' = success, 'Commit verdicts as github-actions[bot]' = failure; log shows 'remote: error: GH006: Protected branch update failed for refs/heads/main' → '! [re",
+      "impact": "The D-EMITTER-WIRING capability (verdicts committed with CI provenance so matrix-walk's 50-unproven count drops on real evidence) has never fired end-to-end — verdicts from 6 armed runs exist only as run artifacts, not ship evidence (§0.2). Second-order: factory-gate on main is red on EVERY site-affecting merge, so a red main run no longer signals anything — a new, unrelated main failure would be visually indistinguishable (all 12 matrix+lint jobs must be opened to notice). The fix is a 1-click owner action that has been pending since 18 Jul.",
+      "fix": "Surface to Abilash on the Monday chase sheet as a 1-click item: add the github-actions app to the branch-protection bypass list (QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE option 1, ruleset option 2 as fallback). The first main push after the click proves the lane; the persistent-red habituation risk disappears with it."
+    },
+    {
+      "lane": "ci-activation",
+      "severity": "major",
+      "title": "AI-auditor CI gate (auditors.yml) lived 6 minutes, was never re-landed, and its GitHub workflow registration is still ACTIVE pointing at a deleted file",
+      "surface": "GitHub workflow registration .github/workflows/auditors.yml (file deleted from repo 16 Jul; registration still 'active')",
+      "evidence": "gh api .../actions/workflows lists 'active  .github/workflows/auditors.yml  auditors' but the directory contains only factory-gate.yml, gate.yml, uptime.yml. History: added bad4d6d 2026-07-16 11:20 IST ('Wire both auditors into CI — with the stripper and the S2 gate (build item #2)'), removed 1547e61 2026-07-16 11:26 IST ('Move the auditor CI gate out of the remediation PR (it blocks its own fix)'). Total runs ever: ONE, conclusion=failure, 8s, 16 Jul (run 29474977998). The gate's own header cites Abilash's 15 Jul standing ruling ('every artifact goes to BOTH auditors') and was scoped to fire ",
+      "impact": "The blocking two-auditor check on content/template PRs — an owner standing ruling — has zero CI enforcement and has had none since 16 Jul; 'moved out of the remediation PR' implied re-landing that never happened. Every content PR merged since (the entire 16-18 Jul wave) shipped without it. The dangling ACTIVE registration also means anyone auditing 'which workflows exist' from the GitHub UI/API sees an auditors workflow that can never fire — the same dangling-symlink shape as the taste-skill exemplar.",
+      "fix": "Decide explicitly: either re-land the auditor gate as its own PR (its stated destination) or record a DECISIONS.md ruling that build-time design-review gates supersede it — then delete the dangling registration (pushing any commit with the file absent keeps it listed; it disappears only via 'gh api -X PUT .../workflows/{id}/disable' or GitHub support, so at minimum log it)."
+    },
+    {
+      "lane": "ci-activation",
+      "severity": "minor",
+      "title": "'main pushes are never cancelled (merged evidence always completes)' is provably false — 7 main-push factory-gate runs were cancelled after the concurrency block landed",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.github/workflows/factory-gate.yml (concurrency block, lines 19-21)",
+      "evidence": "Concurrency block landed da70ff5 2026-07-18T15:10:18+05:30 (=09:40Z). Same day, AFTER it: cancelled main-push runs 29642040058 (11:08Z), 29645626309/29645645700/29645674494/29645695905/29645718502 (13:09-13:12Z — 5 pushes in 3.5 min, only the last ran), and 29655844528 (18:25:53Z, headSha 716037330, 'Bump actions/setup-node from 4 to 7 (#6)') — all 'cancelled push main'. Mechanism: cancel-in-progress:false only protects the RUNNING run; GitHub always replaces the QUEUED run in a concurrency group when a newer run arrives, cancelling it regardless of the flag.",
+      "impact": "Intermediate main commits under rapid merges get NO factory-gate evidence at their own SHA — e.g. the Dependabot setup-node@v7 bump merge was never validated by factory-gate at its commit (only transitively by the next run's tree). The comment's guarantee of per-merge evidence is structurally unkeepable with a shared-group queue; anyone reading it will wrongly assume every main commit has a completed run.",
+      "fix": "Either accept latest-tree-only evidence and correct the comment to say so, or give main pushes per-commit groups (e.g. group: ${{ github.workflow }}-${{ github.event_name == 'push' && github.sha || github.ref }}) so no main run is ever queue-replaced."
+    },
+    {
+      "lane": "ci-activation",
+      "severity": "minor",
+      "title": "Uptime listener believed to check every 10 min actually fires ~hourly, and fired 2-3.5h apart during the real 19 Jul outage window",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.github/workflows/uptime.yml (cron '*/10 * * * *', line 8; issue-body text line 47)",
+      "evidence": "gh run list --workflow=uptime.yml shows scheduled runs at (UTC, 19-20 Jul): 01:10 → 04:36 (3h26m gap) → 07:09 (2h33m) → 09:14 (2h05m) → 10:43 → 11:42 → 12:37 → 14:08 → 15:10 → 16:11 → 17:16 → 18:10 → 19:33 → 20:25 → 21:11 → 22:09 → 23:07 → 00:07 — median interval ~60 min, never 10. The two failure runs (04:36, 07:09) are the real kairalicenters.com/kairalifranchise.com outage; the down-issue body the owner reads asserts 'Checked every 10 min from GitHub Actions.' (Alert delivery itself verified working: run 29673575857 commented on issue #44 at 04:37:29.)",
+      "impact": "Detection latency relied on as ≤10 min is actually ~60 min in the best case and was up to 3.5h during the one real outage — a site can be down for hours before the first probe. GitHub throttles scheduled workflows under load; the cron expression is honored only as a lower bound. The mechanism fires (not dead), but at 6-20x the believed interval, and the issue text tells the owner a cadence that is false.",
+      "fix": "Fix the issue-body text to state the observed cadence, and if ≤10 min detection matters, move the probe to an external monitor (the workflow header already marks this listener 'Interim… Replaced later by a proper monitor (BACKLOG)') — GitHub cron cannot deliver 10-min fidelity."
+    },
+    {
+      "lane": "ci-activation",
+      "severity": "minor",
+      "title": "Zero-page matrix exemptions (ayurvedichealingvillage.com, whyayurveda.org) have no mechanical exit — a first-page PR that forgets the matrix passes the lint and ships untested",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/scripts/factory-matrix-lint.mjs (EXEMPT map, lines 54-59) vs .github/workflows/factory-gate.yml matrices (lines 407, 456)",
+      "evidence": "Current state verified: 17 sites/ dirs all carry site.config.json; both matrices list the same 13 sites; branch protection's 29 contexts exactly match (3 singles + 13 factory-spec + 13 lighthouse) — the earlier 'matrix missing 4 sites' finding is RESOLVED via 4 EXEMPT entries. abhilashkr + kairali.ai are standing-ruling exemptions (D-RULE-MATRIX-EXEMPT). But the two scaffold exemptions say 'ZERO pages … joins BOTH matrices in the same PR that adds its first page. TEMPORARY, pending ratification: Q-SCAFFOLD-MATRIX' (confirmed pending at QUESTIONS.md:429). Page-lessness verified today: find site",
+      "impact": "If a first-page PR lands without touching the matrix, factory-matrix-lint passes (site is exempt), the 'factory-spec (sites/…)' and 'lighthouse (sites/…)' contexts are never created or required, and the site ships with the Playwright browser gate and Lighthouse gate never having run — the exact 16-Jul four-site dead-gate class this lint was built to make 'structurally impossible'. The workflow comments' '16 matrix jobs'/'16 required per-site contexts' figures are also stale (actual: 13), compounding the risk for anyone editing required checks by reading comments.",
+      "fix": "Make the exemption conditional in factory-matrix-lint.mjs: for the two scaffold entries, fail if any page file exists under the site (a ~5-line find/glob in fleetSites or lint()) — turning the written exit condition into a machine gate. Update the stale '16' comments to 13 in the same PR."
+    },
+    {
+      "lane": "registry-wiring",
+      "severity": "blocker",
+      "title": "KTAHV critical-flows gate is un-runnable: its documented command finds zero tests and no config or workflow includes it",
+      "surface": "tests/ktahv-critical-flows.spec.ts + playwright.config.ts + CLAUDE.md §TEST SUITE (repo /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory)",
+      "evidence": "The spec's own header documents `BASE_URL=https://staging.example.com npx playwright test ktahv-critical-flows.spec.ts`. Ran it: `BASE_URL=http://localhost:9999 pnpm exec playwright test ktahv-critical-flows.spec.ts --list` → `Error: No tests found. … Total: 0 tests in 0 files`, exit=1. Root cause: the ONLY playwright config in the repo (`find . -name 'playwright.config*'` → ./playwright.config.ts only) sets `testDir: \"tests/factory\"`, and its own comment admits the KTAHV suite \"is NOT run by this config (testDir scopes to factory)\". Invocation-site grep for \"ktahv-critical-flows\" across *.yml",
+      "impact": "CLAUDE.md §TEST SUITE declares this file \"the deterministic gate. Run against BASE_URL (staging) before ANY Tier-1 deploy and after ANY Lane-B change to consultation/enquiry/contact/how-to-reach pages. All tests green or the change does not ship.\" No mechanism — CI, script, or even the documented manual command — can execute it, so the KTAHV WordPress Tier-1 protection believed active can never fire. This is the third occurrence of the repo's own recorded dead-test class (factory-gate.yml l.326-329 memorializes the first two, citing this very file), and no gates/registry.yaml row covers the KTAHV WP suite, so gate-registry-lint cannot see the gap.",
+      "fix": "Add a second config (e.g. playwright.ktahv.config.ts with testDir 'tests') plus a package.json script (`\"ktahv-spec\": \"playwright test -c playwright.ktahv.config.ts\"`) so the documented command works; update the spec header; add a registry row for the KTAHV suite so the registry lint owns its existence."
+    },
+    {
+      "lane": "registry-wiring",
+      "severity": "major",
+      "title": "Verdict-emitter lane (D-EMITTER-WIRING, §0.2 CI-provenance evidence) has never landed a single verdict — every armed main push fails at the bot push with GH006",
+      "surface": ".github/workflows/factory-gate.yml emit-verdicts job + audits/ + QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE (l.448)",
+      "evidence": "`git log --author=\"github-actions\" -- audits/` → zero commits in the repo's entire history. `gh run list --workflow=factory-gate.yml --branch main` shows five consecutive substantive main-push runs on 19 Jul all `failure` (29692925198, 29692186206, 29689997783, 29689359127, 29679270381); for each, `gh run view <id> --json jobs` shows exactly one failing job: `emit-verdicts: failure`. The failed-run log quotes `remote: error: GH006: Protected branch update failed for refs/heads/main.` and the job's own error text pointing at QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE (raised 2026-07-18 18:08:30 IST,",
+      "impact": "The §0.2 verdict layer that registry row pre-launch-matrix-walk (severity: blocker) depends on cannot accumulate evidence: matrix-walk's unproven count can never drop, and the M2 OS v2 merge and Fleet Pulse v2 merge both rode through with zero CI-committed verdicts. Every substantive main push paints red (5/5 on 19 Jul), which trains everyone to ignore red main runs — the loud-failure design is decaying into background noise while the capability, ratified by the owner on 18 Jul, has fired 0 times.",
+      "fix": "Surface to the owner that the one-click bypass in QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE (option 1 classic-rule allowance or option 2 ruleset bypass for the github-actions app) is still ungranted two days after ratification; until granted, consider having the job end in a distinct 'blocked-awaiting-owner' state so real failures stay distinguishable."
+    },
+    {
+      "lane": "registry-wiring",
+      "severity": "minor",
+      "title": "scripts/shopify-catalog-lint.mjs is merged and unit-tested but invoked nowhere, while the registry row still declares it 'NOT YET IN THE REPO'",
+      "surface": "scripts/shopify-catalog-lint.mjs + gates/registry.yaml row catalog-compliance-audit (l.689-696) + CLAUDE.md rules (l)/(p)",
+      "evidence": "Script exists on main; merged 2026-07-18 18:39:51 +0530 as PR #134 (`git log --follow -- scripts/shopify-catalog-lint.mjs` → f157d92 \"O1 — shopify-catalog-lint: two-mode, read-only catalog findings tool (D-O1)\"). Invocation grep for \"shopify-catalog-lint\" across .github/, package.json, turbo.json, scripts/hooks/ → zero hits; the only cron in the repo is uptime.yml (`grep -rn cron .github/workflows/`). Its unit tests (scripts/test/shopify-catalog-lint.test.js) DO run via CI's find-discovery, so the checkmark is green while the tool itself never runs. Registry l.695 still reads: \"PLANNED: script",
+      "impact": "The operational law (registry) misstates reality in the direction that risks non-activation: a reader planning Monday work concludes the tool does not exist, while CLAUDE.md doctrine claims a weekly cadence with no mechanism to fire it — the exact saved-but-never-activated shape of the go-science exemplar. Today (20 Jul) is the first Monday since merge; nothing will trigger the run except a session remembering.",
+      "fix": "Truth-up the catalog-compliance-audit registry row (script exists; run trigger remains agent/Monday with the gap stated), and give the Monday trigger a mechanism: a scheduled read-only findings workflow, or a boot-contract/doctor Monday check that surfaces 'catalog lint due'."
+    },
+    {
+      "lane": "registry-wiring",
+      "severity": "minor",
+      "title": "pre-push.sh is cited as an enforcing artifact of the compliance-lint gate but is not installed as a git hook — it fires only inside Claude Code sessions",
+      "surface": "scripts/hooks/pre-push.sh + gates/registry.yaml compliance-lint row (l.79) + .git/hooks + .claude/settings.json",
+      "evidence": "Registry compliance-lint script_or_agent_ref: \"packages/compliance/bin/lint.js via .github/workflows/gate.yml + scripts/hooks/pre-push.sh\". Machine check: `git config core.hooksPath` → empty; `ls .git/hooks/ | grep -v sample` → empty (no real hooks installed). The only invocation of pre-push.sh is scripts/hooks/guard.sh's `git push` case, and guard.sh runs solely as the Claude Code PreToolUse Bash hook wired in .claude/settings.json — i.e., agent-session pushes only.",
+      "impact": "Any push made outside a Claude Code session (human terminal, other tooling, other machines) never runs the pre-push compliance/tests/build gate; the local half of the compliance-lint enforcement chain named in the registry silently does not exist for non-agent pushes. Exposure is bounded — gate.yml still lints every PR and main push — but the registry ref overstates the mechanism, and CLAUDE.md's Monday \"hook self-test\" would pass while the git-level hook was never installed.",
+      "fix": "Either install it for all git users (`git config core.hooksPath scripts/hooks` via session-start/doctor, with pre-push.sh named `pre-push`), or amend the registry ref to \"agent-session PreToolUse hook only\" so the enforcement claim matches the machine."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "blocker",
+      "title": "Repo Claude-hook gate layer (guard.sh PreToolUse battery + pre-push gate) has NEVER executed in any working session — all hard-gate 'mechanical enforcement' is dead",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/settings.json (hooks) + scripts/hooks/guard.sh + scripts/hooks/pre-push.sh",
+      "evidence": "(1) Root cause: 36 of 37 sessions in mcp ccd list_sessions have \"cwd\": \"/Users/kairalimacmini/Claude\" — the parent dir, NOT the repo. That dir is not a git repo; its .claude/ contains only settings.local.json (permissions-only, no \"hooks\" key — read in full) and launch.json; global ~/.claude/settings.json also has no \"hooks\" key (read in full). Project hooks load only from the session's project dir, so the repo's declared hooks (PreToolUse Bash -> scripts/hooks/guard.sh, PostToolUse Edit|Write -> post-edit.sh, SessionStart -> session-start.sh) never load. (2) Transcript census: python parse of",
+      "impact": "CLAUDE.md calls these gates 'mechanically enforced' and docs/process/inventory-existing-rules.md line 453 claims guard.sh runs on 'every Bash call'. In reality the force-push block, rm -rf block, curl|bash block, production-WordPress (wp-admin/wp-config/xmlrpc) block, Cloudflare DNS-write block, Shopify Admin-API write block (FOREVER-HUMAN rule k), and the pre-push compliance-lint+tests+build gate have protected zero of the ~36+ pushes and all Bash activity since 13 Jul. Every HARD GATE the owner believes is machine-backed is currently enforced by model goodwill only.",
+      "fix": "Either start repo sessions with cwd inside the repo, or replicate the three hook entries into a settings file that the actual sessions load (e.g. /Users/kairalimacmini/Claude/.claude/settings.json or ~/.claude/settings.json) with absolute paths instead of $CLAUDE_PROJECT_DIR, guarded so they no-op outside the repo. Add a hook self-test that asserts a hook FIRED in-session (e.g. SessionStart writes a beacon file checked by doctor.mjs), not just that the script works when invoked — today's Monday 'hook self-test' (scripts/test/post-edit-hook.test.js) passes while the hook never loads."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "major",
+      "title": "Rule (q) deterministic audit log has never written a single line — agent-log.jsonl does not exist anywhere; logger sub-agent's input stream is empty",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/agent-log.jsonl (absent) + scripts/hooks/post-edit.sh + .claude/agents/logger.md",
+      "evidence": "'ls agent-log.jsonl' at repo root: No such file or directory. 'find <repo> -name agent-log.jsonl' (excluding node_modules): zero hits including all 5 .claude/worktrees/agent-* checkouts. .gitignore line 32 lists it (machine-local by design), so absence means zero lines ever written on this machine. CLAUDE.md v1.5 changelog claims 'Enforcement built + tested in PR #67' and rule (q) states 'every Edit/Write lands in agent-log.jsonl via the PostToolUse hook (deterministic — the hook writes the line itself)'. The script works when tested (scratchpad invocation wrote a valid JSON line, exit 0); it ",
+      "impact": "The owner-ruled audit trail (D-RULE-Q, wording amended by Abilash 16 Jul) has zero data for the entire sprint. The logger sub-agent's curated wiki/log.md rollups are built on an input file that has never existed, and any future forensic 'who touched what' reconstruction from agent-log.jsonl is impossible for 13–20 Jul.",
+      "fix": "Fix the hook-loading root cause (blocker above); then have doctor.mjs flag 'agent-log.jsonl missing or stale vs recent commits' as a contradiction so this class of silent logging death is caught within one session."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "major",
+      "title": "SessionStart boot contract believed automatic never runs — banner (incl. today's Monday-ritual reminder) has appeared in zero working sessions",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/scripts/hooks/session-start.sh + CLAUDE.md 'SESSION STATE & DELIVERABLE RULES'",
+      "evidence": "CLAUDE.md: 'the SessionStart hook does this automatically; if it did not run, run them by hand'. Transcript census: the only SessionStart hooks that ever fire in the 37 working sessions are superpowers' run-hook.cmd (33x); zero executions of session-start.sh (which prints the 6-line banner: QUESTIONS.md count, 'Wiki lint every Monday (wiki/ + pnpm audit + hook self-test)', hard-gate reminders, then runs boot-contract.mjs + doctor.mjs). Mitigation observed: sessions run the boot contract MANUALLY per handover protocol — state/boot.json mtime 19 Jul 21:15, and transcript snippet from session loc",
+      "impact": "The 'automatic' half of the boot contract is fiction; freshness of state/boot.json depends entirely on each session's author remembering the handover protocol. Any session that skips the manual step boots on stale ground truth with no warning, and the in-session Monday/hard-gate reminder surface never exists.",
+      "fix": "Same root-cause fix as the blocker; until then, treat the manual boot-contract step as the only real mechanism and have doctor.mjs verify boot.json age at first tool use."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "minor",
+      "title": "VERIFIED ARMED (no failure) — monday-billing-verify-access-check will fire today 09:30 IST; scheduler alive; machine cannot sleep through it",
+      "surface": "~/.claude/scheduled-tasks/monday-billing-verify-access-check/ + scheduled-tasks MCP",
+      "evidence": "list_scheduled_tasks at 07:21 IST Mon 20 Jul: taskId monday-billing-verify-access-check, enabled: true, fireAt/nextRunAt 2026-07-20T04:00:00Z (= 09:30 IST today), no lastRunAt (not yet fired, correctly pending ~2h ahead). Scheduler provably alive TODAY: kairali-morning-brief lastRunAt 2026-07-20T01:35:49Z (07:05:49 IST, 16 min before my check) and its spawned session 'Kairali morning brief' isRunning in list_sessions. One-time tasks historically fire and self-disable: remind-pmset-power-config (lastRunAt 14 Jul, enabled:false), pr119-rerun-after-age-guard (lastRunAt 18 Jul, enabled:false). Pow",
+      "impact": "None — this is the lane's headline question answered: the 09:30 Monday task is genuinely armed, not a silent failure. One residual dependency to know: these tasks run inside the Claude desktop app, so the app must be running at 09:30 (it was at 07:05 today).",
+      "fix": "No action. If the 09:30 session has not appeared in list_sessions by ~09:45 IST, check that the Claude desktop app is running."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "minor",
+      "title": "go-science plugin double-registered — loads twice under two namespaces including a version-string namespace '1.0.0'",
+      "surface": "~/.claude/plugins/cache/go-science/go-science/1.0.0/ + ~/.claude/plugins/marketplaces/go-science + ~/.claude/settings.json",
+      "evidence": "The live dispatching session's skill list contains BOTH '1.0.0:go-science' and 'go-science:go-science' with identical descriptions (mission ground truth; also visible in this subagent's own skill listing). Cache layout explains the anomaly: installed_plugins.json installPath is ~/.claude/plugins/cache/go-science/go-science/1.0.0 — the version directory '1.0.0' is being consumed as a plugin namespace by one registration surface while 'go-science@go-science' registers the other. The marketplace is a local directory source whose marketplace.json declares plugin 'go-science', 'source': './', versi",
+      "impact": "Duplicate skill content injected into every session's context (prompt bloat), ambiguity about which registration fires on trigger, and a confusing '1.0.0' namespace that will break references if the version ever bumps (a '2.0.0:go-science' would silently become a different skill id).",
+      "fix": "Reinstall go-science through a single path (marketplace plugin only), then confirm exactly one 'go-science:go-science' entry appears in a fresh session's skill list."
+    },
+    {
+      "lane": "scheduled-local",
+      "severity": "minor",
+      "title": "uptime.yml declares a 10-minute cron but actually runs ~hourly — downtime detection latency is ~6x the declared value",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.github/workflows/uptime.yml",
+      "evidence": "uptime.yml lines 7-8: schedule: cron \"*/10 * * * *\". gh run list --workflow=uptime.yml --limit 5: runs at 2026-07-20T00:07:11Z, 19T23:07:09Z, 19T22:09:31Z, 19T21:11:50Z, 19T20:25:23Z — intervals of 58-67 minutes, all status success, workflow state 'active'. This is GitHub's well-known scheduled-workflow throttling of high-frequency crons, not a repo bug — but the declared cadence is what anyone reading the workflow believes.",
+      "impact": "A site outage can go undetected for up to ~an hour while the workflow file promises 10-minute checks. The mechanism fires (not a dead automation), but its believed granularity is false.",
+      "fix": "Either accept and document the real ~hourly cadence in the workflow file, or move the check to a scheduler that honors the interval (external uptime service, or the Claude scheduled-tasks runner)."
+    },
+    {
+      "lane": "silent-noop-spawns",
+      "severity": "major",
+      "title": "wp-snapshot.mjs writes its pre-publish backup to a cwd-relative path and says \"Safe to proceed\" from ANY cwd — the rollback layer can silently land outside the repo",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/scripts/wp-snapshot.mjs (line 59: const dir = join(\"backups\", url.hostname...)) — the one script in scripts/ that does NOT anchor to REPO_ROOT via import.meta.url",
+      "evidence": "Demonstrated read-only from a wrong cwd against a local server (no repo writes): `cd <scratchpad>/wrongcwd && node /Users/.../scripts/wp-snapshot.mjs http://127.0.0.1:4799/` → output `✓ http://127.0.0.1:4799/ → backups/127.0.0.1/home--2026-07-20T07-32-39.html (627 bytes)` + `wp-snapshot: all 1 page(s) backed up. Safe to proceed.` + `EXIT=0`; the file landed at `<scratchpad>/wrongcwd/backups/...` while the repo's backups/ dir was untouched (still only whyayurveda.org). backups/ IS meant to be committed: `git ls-files backups` → `backups/whyayurveda.org/home--2026-07-18T11-04-00.html`, and docs/",
+      "impact": "The exact exemplar class (exit-0 no-op from wrong cwd) on the WordPress rollback protection. Agents are instructed to invoke scripts by absolute path and subagent shells reset cwd between calls, so `node /abs/path/scripts/wp-snapshot.mjs <url>` from a scratchpad/worktree/home cwd reports success, the chained publish proceeds, and the backup is stray — never committed, deleted with the temp dir. When a publish goes wrong the \"two undo layers\" contain zero layers in git. Partial mitigation keeping this at major not blocker: the SOP's own invocation (`node scripts/wp-snapshot.mjs` relative) fails loudly with MODULE_NOT_FOUND from a wrong cwd — only absolute-path invocation (the agent norm) hits the silent path.",
+      "fix": "Anchor the output dir exactly like every sibling: const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), \"..\"); const dir = join(REPO_ROOT, \"backups\", ...); optionally print the ABSOLUTE path in the success line so a stray write is visible. Same one-line fix for the two evidence-kairaliyoga scripts."
+    },
+    {
+      "lane": "silent-noop-spawns",
+      "severity": "major",
+      "title": "The 15-Jul-ruled auditors CI gate (auditors.yml) never activated: parked on a PR-less branch since 16 Jul, listed \"active\" in GitHub Actions, with both paid API keys provisioned as repo secrets that NO workflow on main consumes",
+      "surface": ".github/workflows/auditors.yml — exists ONLY at origin/feat/auditor-ci-gate (tip bad4d6d, 2026-07-16 11:20:33 +0530, \"Wire both auditors into CI — with the stripper and the S2 gate (build item #2)\"); absent from origin/main",
+      "evidence": "gh api workflows: `{\"name\":\"auditors\",\"path\":\".github/workflows/auditors.yml\",\"state\":\"active\"}` — but `git ls-tree origin/main .github/workflows/` lists only factory-gate.yml, gate.yml, uptime.yml. Full run history: `gh api .../workflows/auditors.yml/runs?per_page=100` → exactly ONE run ever: `{\"event\":\"pull_request\",\"conclusion\":\"failure\",\"created_at\":\"2026-07-16T05:50:40Z\"}`. Commit 1547e61 (\"Move the auditor CI gate out of the remediation PR (it blocks its own fix)\") removed it from the branch that became merged PR #64; `gh pr list --state all --search auditor` (and a headRefName scan of t",
+      "impact": "A capability paid for (two paid-model API keys provisioned as secrets, the enabling step the 16-Jul commit said was missing — someone did their half) that provably never runs: the S2-audience-dossier content-truth CI gate has fired once ever, failed, and cannot fire on any PR because it is on no merged ref and no PR. The Actions tab listing it \"active\" is the registration anomaly that makes the dormancy invisible. Nuance for triage: the design lane later got merged CI coverage via PR #137 (design-review gates), and sessions run the auditors manually via scripts — it is the automatic, blocking CI lane for CONTENT that never activated; no DECISIONS.md entry supersedes or retires it, so it is unlanded work, not ruled-dead work. Matches the known squash-merge-strands-commits failure pattern.",
+      "fix": "Owner decision: either open the PR from feat/auditor-ci-gate (its preflight now has the secrets it lacked on 16 Jul) or formally retire it in DECISIONS.md as superseded by the design-review/registry gates — and if retired, remove the two unused repo secrets so paid keys aren't parked in CI with zero consumers."
+    },
+    {
+      "lane": "silent-noop-spawns",
+      "severity": "minor",
+      "title": "Uptime listener declares 10-minute probing but actually fires ~hourly — the auto-filed down-issue text (\"Checked every 10 min\") overstates detection 6x; plus a harness-crash path that alerts nobody",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.github/workflows/uptime.yml (cron \"*/10 * * * *\", line 8; issue body line 47; issue-step guard line 41)",
+      "evidence": "Declared: `cron: \"*/10 * * * *\"` = 144 runs/day. Actual (gh api, 12 most recent scheduled runs): 2026-07-19T12:37 → 14:08 → 15:10 → 16:11 → 17:16 → 18:10 → 19:33 → 20:25 → 21:11 → 22:09 → 23:07 → 2026-07-20T00:07 — every gap 52–67 minutes, ~24 runs/day (GitHub throttling/dropping busy schedule events; all runs \"success\"). The issue body hard-codes \"_Checked every 10 min from GitHub Actions._\". Separately, the alert step is guarded by `if: failure() && steps.probe.outputs.report != ''` where report is extracted via `sed -n '/::DOWN-REPORT::/,$p'` — a harness failure of check.mjs (e.g. malformed",
+      "impact": "Ship Gate B10's monitoring promise is silently degraded: worst-case downtime detection is ~70+ minutes, not ~10, and every green run reinforces the belief that the 10-minute net is active. The harness-crash path means the one failure mode that disables the monitor itself is also the one that files no issue.",
+      "fix": "Either accept and truth-up the cadence text (change the issue body / header comment to \"~hourly under GitHub scheduling\") or move to a denser trigger (two staggered crons, or an external ping service per the BACKLOG note). For the harness path: add a second step `if: failure() && steps.probe.outputs.report == ''` that files a \"uptime listener is broken\" issue."
+    },
+    {
+      "lane": "silent-noop-spawns",
+      "severity": "minor",
+      "title": "session-start.sh: both \"…failed — run it by hand\" fallbacks are provably dead code, and a doctor.mjs failure that escapes its internal try/catch produces ZERO output — the session proceeds with no sign the boot-contract reconcile didn't run",
+      "surface": "/Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/scripts/hooks/session-start.sh (lines: `node .../boot-contract.mjs 2>&1 | head -12 || echo \"boot-contract failed…\"` and `node .../doctor.mjs 2>&1 | grep -E \"^doctor|^CONTRADICTION|FAIL —\" | head -8 || echo \"doctor failed…\"`) — registered as the SessionStart hook in .claude/settings.json",
+      "evidence": "The `||` binds to the LAST pipeline command (`head`), which exits 0 even on empty input, so neither fallback message can ever print. Demonstrated with the exact pipeline: `bash -c 'node -e \"throw new Error(\\\"doctor exploded\\\")\" 2>&1 | grep -E \"^doctor|^CONTRADICTION|FAIL —\" | head -8 || echo \"doctor failed — run it by hand…\"'` → zero output, exit 0 (the stack trace lines match none of the grep anchors, and the fallback never fires; also proven minimally: `false | head -8 || echo fallback` prints nothing, exit 0). Partial mitigation verified in doctor.mjs lines 193–199: main() is wrapped in try",
+      "impact": "CLAUDE.md's session boot contract says every session starts with boot-contract + doctor \"automatically\" via this hook. In the escaping-failure class the session start looks normal minus one line and the agent proceeds believing the GitHub-truth reconcile ran — the same believed-active/never-fired shape as the exemplars, though narrow in practice. The dead fallbacks are also a self-test trap: the Monday \"hook self-test\" ritual could conclude the failure path works because the message exists in the source.",
+      "fix": "Capture exit codes instead of relying on pipeline-tail status, e.g.: `out=$(node \"$ROOT/scripts/doctor.mjs\" 2>&1); rc=$?; printf '%s\\n' \"$out\" | grep -E '^doctor|^CONTRADICTION|FAIL —' | head -8; [ $rc -ne 0 ] && echo \"doctor exited $rc — run it by hand: node scripts/doctor.mjs\"` (same pattern for boot-contract)."
+    }
+  ],
+  "refuted": [
+    {
+      "lane": "skills-plugins",
+      "title": "Taste-skill repair verified correct on disk, but zero sessions have loaded through it yet — actual activation still unproven",
+      "why": "The claim's observations are accurate but it does not meet the bar for a finding (a mechanism provably not firing, or a registration anomaly risking it). Re-ran all evidence: 13/13 symlinks (mtime Jul 20 07:19) resolve to dirs with valid SKILL.md frontmatter (13/13 name=1 desc=1); ~/.agents is gone;"
+    },
+    {
+      "lane": "skills-plugins",
+      "title": "Three official plugins pinned at version 'unknown' — they DO load (not a failure), but version tracking and in-place updates are degraded",
+      "why": "Every factual assertion reproduces: installed_plugins.json pins frontend-design, commit-commands, and skill-creator at version 'unknown' (installPath .../unknown), root cause is the absent 'version' field in each plugin.json — verified in the cache AND one layer deeper in the upstream marketplace cl"
+    },
+    {
+      "lane": "hooks",
+      "title": "SessionStart boot contract did not run this morning: state/boot.json is stale from last night while the live session edited doctrine files",
+      "why": "The claim mistakes a long-running overnight session for a morning session that skipped its boot contract. Machine evidence: (1) The dispatching live session (6a9e1402) started 2026-07-19T15:45:10Z = 21:15:10 IST on 19 Jul — its transcript runs continuously to 02:02Z/07:32 IST on 20 Jul, so the 07:05"
+    },
+    {
+      "lane": "hooks",
+      "title": "Historical: rule (q) audit-log lines written during the worktree era (13–16 Jul, 47 sessions) were destroyed with the worktree — the log location was inside a disposable checkout",
+      "why": "REFUTED: no rule (q) audit-log lines were ever written during the worktree era, so none were destroyed with the worktree. Machine evidence: (1) git log --follow -- scripts/hooks/post-edit.sh shows only two commits — a1aa435 (2026-07-13 16:06 IST) and 13e5db7 (2026-07-16 13:48 IST, PR #67 'Rule (q) m"
+    },
+    {
+      "lane": "mcp-servers",
+      "title": "vidIQ and Google Calendar connectors worked until 15 Jul, then disappeared from all sessions at the connector migration — silent deactivation if still assumed available",
+      "why": "The claim's narrative — 'worked until 15 Jul, then silently deactivated at the connector migration' — is refuted by the connectors' own logs. (1) The finder's counts reproduce (14 'Successfully connected' each, 13–15 Jul, claudeai-proxy) but those lines are transport-level pseudo-connects resolved '"
+    },
+    {
+      "lane": "scheduled-local",
+      "title": "Five MCP surfaces are cached as needing authentication — in headless/scheduled sessions (where OAuth is impossible) any task or skill relying on them silently cannot fire",
+      "why": "The file evidence is accurate (all five entries, timestamps confirmed: miro refreshed 2026-07-20 07:05:51 IST, the four claude.ai entries 15 Jul), but every claimed consequence fails under live testing from this headless session itself. (1) Miro: the 7 miro skills are server-agnostic ('pick the appr"
+    }
+  ],
+  "critic_extra": [
+    {
+      "title": "Ship Gate A-13 (Claude security review) can never block a merge — its job is not a required status check, and auto-merge only waits on required checks",
+      "surface": "GitHub branch protection required-status-check registration vs .github/workflows/gate.yml",
+      "severity": "blocker",
+      "evidence": "Doctrine (e) in /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/CLAUDE.md: \"/security-review must pass on every release diff (Ship Gate A-13)\". The enforcing job exists — .github/workflows/gate.yml lines 56–82 define job `security-review` running anthropics/claude-code-security-review with an \"A-13 zero-findings gate\" step that does `exit 1` on any finding. But `gh api repos/kairali-digital/kairali-web-factory/branches/main/protection` returns 29 required contexts — \"gate\", \"brand-lint\", \"front-gate\", 13× \"factory-spec (sites/…)\", 13× \"lighthouse (sites/…)\" — and \"security-review\" is NOT among them. Same response: `required_approving_review_count: 0` (no human approval required on unguarded paths). Auto-merge is in active use: `gh api …/pulls/173|174|179` each show `auto_merge` enabled (merge_method squash) — and GitHub auto-merge completes on required checks only; a failing non-required check does not stop it. The job has run green on the head SHA of all 8 recent merged PRs checked (`…/commits/<sha>/check-runs` → security-review conclusion=success), so the gap has been latent, never exercised — i.e. the blocking layer has never once been in a position to fire.",
+      "impact": "A PR whose diff carries high/critical security findings turns the security-review check red — and merges anyway: auto-merge is armed on routine PRs, zero approvals are required on unguarded paths, and the red check is not required. The gate the doctrine says \"must pass on every release diff\" is mechanically incapable of stopping a release. This is the same class as the dead guard.sh gate layer, one level up: the one security gate that DOES run in CI is unwired at the enforcement point.",
+      "suggested_fix": "Owner adds \"security-review\" to the required status check contexts on main (repo Settings → Branches, or `gh api -X PATCH repos/kairali-digital/kairali-web-factory/branches/main/protection/required_status_checks --input …` adding the context). Note gate.yml line 57 (`if: github.event_name == 'pull_request'`) is fine for a required context on PRs, but confirm doc-only PRs still emit the check (it has — success on all 8 sampled merges)."
+    },
+    {
+      "title": "Pilot theblushlounge.com: the Vercel production alias everyone is pointed at serves the PRE-FIX dirty-tree golden build — the owner promote believed imminent has not fired for ~36h, and no git integration exists to ever refresh it",
+      "surface": "Vercel project settings (git integration + production alias) for kairali-web-factory-theblushlounge; STATUS.yaml preview_url",
+      "severity": "major",
+      "evidence": "Vercel API (list_deployments, prj_hSpdFnnWoT4wAFbPBj5ve1zjsrmq): the project has exactly ONE production deployment — dpl_CDmw3PtGWtVHYYovEWu2vC1kpVFk, created 2026-07-18T14:48:54Z, commit cc68555 \"golden page render pass\", meta `gitDirty: \"1\"` (built from an uncommitted working tree). Three newer deployments (through the final-copy build dpl_mU2pptyo, 2026-07-18T19:02:54Z, commit 5cb6068) are all `target: null` previews. ZERO deployments exist after 19:02Z even though PR #154 \"theblushlounge.com FULL SITE — … all gates run\" merged at 2026-07-18T19:12:09Z — every deployment carries CLI-style meta (`gitCommitRef`/`gitDirty`, creator abilashkr-3402), none carries `githubCommitRef`, and the project has no git-main branch domain (compare kairali-web-factory-kairali-com / -kairali-ai / -bulkayurvedaoils, which all have `…-git-main-kairali.vercel.app` domains and deployed within seconds of today's #179 merge). The repo knows: /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/launches/theblushlounge.com/approvals.yaml line 97 records \"session permission gate blocked vercel promote; alias currently serves the pre-fix golden page\" pending \"ONE owner promote\" (18 Jul ~22:10 IST) — still un-promoted two days later. Meanwhile /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/STATUS.yaml line 288 hands Fleet Pulse `preview_url: \"https://kairali-web-factory-theblushlounge.vercel.app\"` (the stale production alias, curl → HTTP 200 today), and nine design-review evidence files including the 19 Jul Gate-2 passes 7–9 (launches/theblushlounge.com/design-review/post-build/2026-07-19-pass7..9.md) cite that same alias URL.",
+      "impact": "The PILOT site's canonical review URL — on the fleet dashboard and inside committed gate evidence — serves a build that predates the battery fixes (the unverified one-on-one claim, the missing mobile-CTA number, the dated poster) and whose bytes match no commit (gitDirty build). The owner chasing \"view the pilot\" sees the wrong site; evidence files cite a URL that provably serves different bytes than what passed the gates. And because the project is not git-connected, no merge to main can ever correct it — the only refresh path is a human promote that silently stalled.",
+      "suggested_fix": "Owner promotes the final build (vercel promote dpl_mU2pptyo… or redeploy from main), then connect the project to the GitHub repo (production branch main, root directory sites/theblushlounge.com) like the other site projects. Doctrine-level: STATUS.yaml preview_url entries should carry the deployment SHA they are believed to serve, and doctor.mjs (or the uptime probe) should reconcile alias-served SHA vs approved SHA."
+    },
+    {
+      "title": "Vercel project inventory drifts from the repo: two projects deploy sites that have no source directory, a self-labeled \"delete-me\" project persists, and today's kairali-com production deploy was CANCELED with zero build-log events",
+      "surface": "Vercel team project list vs sites/ directory; kairali-com deployment pipeline",
+      "severity": "minor",
+      "evidence": "Vercel list_projects (team_PcAcLkSAnWxQBKCjStgYNp4I) contains `kairali-web-factory-ayurvedafranchise` (created 1784385993878 = 18 Jul 14:46:33Z), `kairali-web-factory-villaraag` (1784387063424 = 18 Jul 15:04:23Z) and `stray-empty-bulkoils-delete-me` (18 Jul 14:53:32Z) — but `ls sites/` shows no ayurvedafranchise* and no villaraag* directory anywhere in the repo, so those two projects have no source that could ever deploy; conversely sites/whyayurveda.org exists with no Vercel project (it is a known zero-page exemption, but nothing records that its ABSENT deploy surface is intentional). Separately, kairali-com's deployments for today's #179 main merge — dpl_J46foAEUvruKr8b382i2spHXJx12 (target production) and the PR-branch build — are both state CANCELED, and `get_deployment_build_logs dpl_J46foAEUvruKr8b382i2spHXJx12` returns \"No build log events found\" (the build never started), while sibling project bulkayurvedaoils built READY for the same push and kairali-com itself built doc-only #174 READY yesterday. The kairali.com production alias therefore stopped at #174.",
+      "impact": "The per-project answer to \"does Vercel deploy this on merge?\" is yes/no/never with no registry declaring which — exactly the soil the installed-but-never-fires class grows in (the pilot finding above is the first fruit). The phantom projects imply deploy surfaces for sites that cannot exist; the un-logged kairali-com cancellation means a main merge silently produced no production deploy for one site with no failure signal anywhere — if that behavior is an ignore-build-step working as intended it is undocumented, and if not, kairali.com's auto-deploy just died silently.",
+      "suggested_fix": "Delete or document the sourceless projects (ayurvedafranchise, villaraag, stray-empty-bulkoils-delete-me); add a per-site row (Vercel project id, git-connected yes/no, production branch, root directory, ignore-build-step) to gates/registry.yaml or STATUS.yaml so drift is lintable; pull the kairali-com project's Ignored Build Step setting to classify today's CANCELED production deploy as intended skip vs silent failure."
+    }
+  ]
+}
