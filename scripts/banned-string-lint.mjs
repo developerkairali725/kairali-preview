@@ -372,9 +372,11 @@ export const RULES = [
       ),
     probe: "Treatment centres across nine countries",
     antiProbes: [
-      // "five doors" is the flagship's own summary line — numbers next to a
-      // different noun must never trip a countries/centres count ban.
-      "One family, five doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, Ayurveda training, and Villa Raag in Goa.",
+      // "six doors" is the flagship's own summary line (ruled composition,
+      // DECISIONS.md 14 Jul 19:05; count corrected five→six 21 Jul per
+      // RPT-20260721-DEEPC C-SC-01) — numbers next to a different noun must
+      // never trip a countries/centres count ban.
+      "One family, six doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, Ayurveda training, Villa Raag in Goa, and the Kairali franchise network.",
       // digit boundaries: 195 must not contain a "9 countries" / "5 countries" hit
       "Ayurveda is practised in 195 countries today.",
       // the constants-rendered form is the CORRECT shape — it must always pass
@@ -464,13 +466,79 @@ export const RULES = [
     probe: "Kairali Ayurvedic Group · Since 1908",
     antiProbes: [
       // The ruled forms — the lint must never flag our own corrections.
+      // ("WHO-GMP manufacturer · Since 1908, founded 1989" sat here until
+      // 21 Jul 2026: Phase C ruled the manufacture-attached form WRONG too
+      // (RPT-20260721-DEEPC C-LF-02/03) — it is now the PROBE of
+      // manufacture-attached-1908 below. Same string, opposite verdict, on
+      // the record.)
       "a family tradition since 1908",
       "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
       "part of the Kairali Ayurvedic Group (physicians since 1908; NABH hospital + WHO-GMP pharmacy)",
       "Kairali Ayurvedic Group · A family tradition since 1908",
-      "WHO-GMP manufacturer · Since 1908, founded 1989",
       "a family of Ayurvedic physicians since 1908",
       "© 1989–{new Date().getFullYear()} Kairali Ayurvedic Group.",
+    ],
+  },
+  {
+    id: "manufacture-attached-1908",
+    appliesTo: "both",
+    why:
+      "Phase-C findings C-LF-02/C-LF-03/C-SC-03 (RPT-20260721-DEEPC): both bulk-B2B sites shipped 1908 attached to MANUFACTURE " +
+      '("Trusted since 1908 — four generations of Ayurvedic manufacture", "WHO-GMP manufacturer · Since 1908, founded 1989"). ' +
+      "The ruled timeline (D-1908-DOC) puts Ayurvedic MANUFACTURING at 1948; 1908 is the family's first clinic. The licensed " +
+      'pairing is "founded 1989; a family practising Ayurveda since 1908" — a manufacture claim dates from 1948, never 1908.',
+    scan: (ctx) => {
+      /** 1948 in the same clause corrects the attachment — the canonical
+       *  "since 1908 — manufacturing since 1948" must always pass. The clause
+       *  runs from the match to the next `.` `;` or newline. */
+      const clauseCorrects1948 = (m, c) => /1948/.test(c.text.slice(m.index).split(/[.;\n]/, 1)[0]);
+      return [
+        // (a) manufactur* joined to "since 1908" by punctuation/space only —
+        //     "manufacturer · Since 1908", "manufacture since 1908". Words in
+        //     between ("manufacturer · founded 1989 · a family practising
+        //     Ayurveda since 1908") break the attachment and stay legal.
+        ...reScan(
+          ctx,
+          /\bmanufactur\w*\s*[—–·,:&()-]*\s*(?:est\.?\s+)?since\s+1908\b/gi,
+          (m) => `"${m[0].replace(/\s+/g, " ")}" — manufacture attached to 1908. Manufacturing dates from 1948; 1908 is the family's first clinic (D-1908-DOC). Ruled pairing: "founded 1989; a family practising Ayurveda since 1908".`
+        ),
+        // (b) "since 1908" with manufactur* later in the SAME clause and no
+        //     1948 correcting it — "Trusted since 1908 — four generations of
+        //     Ayurvedic manufacture".
+        ...reScan(
+          ctx,
+          /\bsince\s+1908\b[^.;\n]{0,90}?\bmanufactur\w*/gi,
+          (m) => `"${m[0].replace(/\s+/g, " ")}" — 1908 and manufacture in one clause with no 1948. Split the facts: family practice since 1908 · manufacturing since 1948 (D-1908-DOC).`,
+          clauseCorrects1948
+        ),
+        // (c) the dangling compression "Since 1908, founded 1989" — it attaches
+        //     1908 to whatever noun precedes it (on both bulk sites: the
+        //     manufacturer). The ruled order puts 1989 first, with the family
+        //     phrase carrying 1908.
+        ...reScan(
+          ctx,
+          /\bsince\s+1908\s*,\s*founded\s+(?:in\s+)?1989\b/gi,
+          (m) => `"${m[0].replace(/\s+/g, " ")}" — the "Since 1908, founded 1989" compression attaches 1908 to the preceding noun. Ruled form: "founded 1989; a family practising Ayurveda since 1908".`
+        ),
+        // (d) "four generations of … manufacture" — the generations count
+        //     belongs to the family PRACTICE (since 1908); manufacture spans
+        //     from 1948 only.
+        ...reScan(
+          ctx,
+          /\bfour\s+generations\s+of\s+(?:[A-Za-z]+\s+){0,2}?manufactur\w*/gi,
+          (m) => `"${m[0].replace(/\s+/g, " ")}" — "four generations" belongs to the family practice (since 1908); manufacture spans from 1948 (D-1908-DOC). Write "four generations practising Ayurveda" or date the manufacture from 1948.`
+        ),
+      ];
+    },
+    probe: "WHO-GMP manufacturer · Since 1908, founded 1989",
+    antiProbes: [
+      // The ruled corrections — the lint must never flag its own fix wave.
+      "A family practising Ayurveda since 1908 — manufacturing since 1948.",
+      "founded 1989; a family practising Ayurveda since 1908",
+      "Kairali Ayurvedic Group · A family tradition since 1908",
+      "Four generations practising Ayurveda since 1908; Ayurvedic manufacturing since 1948.",
+      "WHO-GMP manufacturer · founded 1989 · a family practising Ayurveda since 1908",
+      "WHO-GMP manufacture at Pollachi. Founded 1989; a family practising Ayurveda since 1908.",
     ],
   },
   {

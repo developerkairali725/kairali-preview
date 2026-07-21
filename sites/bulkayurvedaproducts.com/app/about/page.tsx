@@ -11,7 +11,7 @@ const SITE = "https://bulkayurvedaproducts.com";
 export const metadata: Metadata = buildMetadata(siteConfig, {
   title: "About KAPPL — Ayurvedic Manufacturer | Kairali",
   description:
-    "The manufacturing-partnership desk of Kairali Ayurvedic Products Pvt. Ltd. — WHO-GMP manufacture at Pollachi. Since 1908, founded 1989.",
+    "The manufacturing-partnership desk of Kairali Ayurvedic Products — WHO-GMP manufacture at Pollachi. Founded 1989; a family practising Ayurveda since 1908.",
   path: "/about",
 }) as Metadata;
 
@@ -39,7 +39,7 @@ export default function About() {
         <section className="section" aria-labelledby="story-heading">
           <div className="container">
             <div className="prose">
-              <h2 id="story-heading">Four generations of Ayurvedic manufacture</h2>
+              <h2 id="story-heading">Four generations in Ayurveda — manufacturing since 1948</h2>
               <p>
                 The Kairali family has practised Ayurveda since 1908; the group
                 was formally founded in 1989. The pharmaceutical arm, KAPPL,

@@ -91,8 +91,8 @@ export function SiteFooter() {
             <p>
               bulkayurvedaoils.com is the bulk-supply desk of Kairali Ayurvedic
               Products Pvt. Ltd. (KAPPL) — the Kairali Ayurvedic Group&rsquo;s
-              WHO-GMP-certified manufacturer in Pollachi, Tamil Nadu. Trusted
-              since 1908 — four generations of Ayurvedic manufacture.
+              WHO-GMP-certified manufacturer in Pollachi, Tamil Nadu. A family
+              practising Ayurveda since 1908 — manufacturing since 1948.
             </p>
           </div>
           <div className="footer-col">

@@ -30,6 +30,11 @@ export function Article({ page }: { page: { title: string } }) {
       {/* Failure B-144/B-142 shapes: group-attached 1908 + a typed rolling year. */}
       <p>Kairali Ayurvedic Group · Since 1908 — founded 1908, and proud of it.</p>
       <p>© 1908–2026 Kairali Ayurvedic Group.</p>
+      {/* Failure C-LF-02/03 + C-SC-03 shapes (RPT-20260721-DEEPC): 1908 attached
+          to MANUFACTURE — both bulk-B2B trust surfaces shipped these verbatim.
+          Manufacturing dates from 1948; 1908 is the family's first clinic. */}
+      <p>Trusted since 1908 — four generations of Ayurvedic manufacture.</p>
+      <p className="overline">WHO-GMP manufacturer · Since 1908, founded 1989</p>
       <p>Published {LAUNCH_DATE}.</p>
     </article>
   );

@@ -43,7 +43,7 @@ export default function FAQPage() {
     },
     {
       q: "What is the history and lineage of Kairali?",
-      a: "Kairali represents a fourth-generation family Ayurvedic lineage dating back to 1908. KV Ramesh and Gita Ramesh formalized the modern corporate brand in 1989 by opening Kairali - The Ayurvedic Healing Village in Palakkad, Kerala."
+      a: "Kairali represents a fourth-generation family Ayurvedic lineage dating back to 1908. KV Ramesh and Gita Ramesh founded the Kairali Ayurvedic Group in 1989 with the first Kairali Ayurvedic Centre in South Delhi; Kairali — The Ayurvedic Healing Village opened in Palakkad in 1999."
     },
     {
       q: "What is AYUSHEXCIL?",

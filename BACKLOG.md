@@ -179,3 +179,16 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
 - [ ] SCHEDULED (RPT-20260720-DEEPB, CARD-6 APPROVED 2026-07-20 ~16:55 IST, D-20260720-27): fold the 32 P2 activation-proof findings into the Phase A critical-path step-3 activation ledger — RULED: one home, no separate lane; list = findings index P2 section (docs/reports/2026-07-20-os-deep-review-b-findings-index.md); executes with the activation-ledger build (critical-path step 3); review_by 2026-07-24
 - [ ] SCHEDULED (RPT-20260720-DEEPB): records-hygiene batch for the 72 P3/unclassified findings — list = findings index P3 section; never blocking; review_by 2026-08-05
 - [ ] SCHEDULED (RPT-20260721-DEEPC, 2026-07-21 01:15:00 IST): Phase C records-hygiene batch — the 35 P2 + 33 P3 basic-mistake findings (dates-times, wiki-hygiene, links-paths, config/script remainder) per the dispositions triad; list = docs/reports/2026-07-21-os-deep-review-c-basics.md P2/P3 rows; folds into the Monday wiki-lint ritual; never blocking; review_by 2026-08-05
+
+- [ ] 2026-07-21 10:11:00 IST — DEFERRED behind PR #144 (file conflict, not risk): abhilashkr.com OG-image label
+  "EST. 1908" (src/app/api/og/route.tsx:117) renders on a card branded "Executive Director, Kairali
+  Ayurvedic Group" — reads as the GROUP est. 1908; the group was founded 1989 and only the family
+  practice may carry 1908 (D-1908 / D-LIN-1989-WORDING). PR #144 rewrites that exact line (ESLint
+  fix, keeps the label text), so fixing it now would conflict. Fix the LABEL (e.g. "SINCE 1908 —
+  FAMILY LINEAGE" or drop it) in a follow-up the moment #144 merges. Found by the P1-wave sweep
+  (RPT-20260721-DEEPC scope extension); the manufacture-attached-1908 lint does not scan this shape.
+- [ ] 2026-07-21 10:11:00 IST — doctor.mjs still reads the CLASSIC branch-protection API, which 404s since the 21 Jul
+  ruleset migration (19322788) — "branch protection unreadable, required-checks reconcile SKIPPED"
+  every boot. Teach it the rulesets API (GET /repos/{owner}/{repo}/rulesets + /rules/branches/main)
+  so the reconcile runs again; rule (g): fix the cause, never mute the warning. Routine technical PR.
+

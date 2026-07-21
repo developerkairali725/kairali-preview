@@ -648,3 +648,31 @@ would be a false claim, HARD GATE 6 class. Judgment call made during the D-20260
 execution, printed LOUDLY every lint run, needs your one-word ratification: RATIFY / REVERT.
 - **ANSWERED — RATIFIED (owner, in-chat, 20 Jul late night).** The entity-"personal" exemption is
   standing law; captured as D-20260720-40, rides PR #204.
+
+## 2026-07-21 10:11:00 IST · Q-PRIYA-LABEL — one number, two contradictory shipped labels (owner word needed before any edit)
+Phase C (RPT-20260721-DEEPC C-SC-02): the SAME WhatsApp number wa.me/919289838797 is labelled
+"Ask Priya, our AI assistant" on whatisayurveda.com (page.tsx:134, article.tsx:235) but promised as
+"A person answers, not a bot." on kairaliyoga.com (page.tsx:591). DECISIONS.md:271 rules the number
+is the Priya CHATBOT — which makes the kairaliyoga line the false-facing one — but no ruling licenses
+either fleet-wide form. One word aligns the fleet: PRIYA-BOT (fix kairaliyoga to the AI-assistant
+label) / PRIYA-HUMAN (a person really answers; whatisayurveda then needs the opposite fix + the
+DECISIONS.md record truthed up). Nothing edited on a guess (HARD GATE 6); the P1 lineage fix PR
+carries this ask only.
+
+## 2026-07-21 10:11:00 IST · Q-BULK-111-YEARS — "111+ Years of experience" counter on the manufacturing desk
+bulkayurvedaproducts.com homepage counters band (app/_components/facts.ts:28) prints "111+ Years of
+experience" — arithmetically anchored to ~1908, displayed on a MANUFACTURING desk (manufacture dates
+from 1948 → ~78 years). The counter is pinned by test/guards.test.js:53, so changing it is a
+deliberate two-file edit, not a slip. Phase C flagged it AMBIGUOUS (C-SC family adjacent). One word:
+KEEP-111 (family-practice anchor is the intended claim) / RECOUNT-78 (anchor to manufacture) /
+REWORD (e.g. "Four generations"). Until ruled, shipped copy is untouched.
+
+## 2026-07-21 10:11:00 IST · Q-KC-DATA addendum — a THIRD spelling had shipped; facts module now ships NO email for Prague
+The locked-facts module carried "info@katerinaresort.com" — matching neither the live-site verbatim
+("info@katrinaresort.com", org-inventory line 58) nor the resort's own domain (katerinaresort.cz).
+That hybrid spelling appeared nowhere else in the repo (Phase C C-LF-04, sweep-confirmed). Fixed in
+the P1 lineage PR per HARD GATE 6 ("leave empty and flag"): the Prague entry now ships WITHOUT an
+email (consumers render it conditionally; JSON-LD strips undefined; the centre page keeps the group
+contact info@kairali.com). The original Q-KC-DATA two-spelling question stands — on your ruling the
+verified address goes back into packages/facts/src/index.js:~53.
+

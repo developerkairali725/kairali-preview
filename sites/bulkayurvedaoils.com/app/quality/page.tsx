@@ -97,8 +97,9 @@ export default function Quality() {
               </div>
             </div>
             <p className="ledger-note">
-              Four generations of Ayurvedic manufacture: practising since 1908,
-              formally founded in 1989 — as the group publishes it.
+              Four generations practising Ayurveda since 1908; manufacturing
+              since 1948; the group formally founded in 1989 — as the group
+              publishes it.
             </p>
           </div>
         </section>

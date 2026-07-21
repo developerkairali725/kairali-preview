@@ -61,7 +61,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-heading">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="overline">WHO-GMP manufacturer · Since 1908, founded 1989</p>
+              <p className="overline">WHO-GMP manufacturer · founded 1989 · a family practising Ayurveda since 1908</p>
               <h1 id="hero-heading">
                 Classical Ayurvedic oils, <span className="accent">by the batch.</span>
               </h1>
@@ -126,7 +126,7 @@ export default function Home() {
             <span className="cert">
               Certified: <em>WHO-GMP</em> · ISO · FSSAI <span className="qual">(as published by KAPPL)</span>
             </span>
-            <span className="heritage">Trusted since 1908 — four generations of Ayurvedic manufacture</span>
+            <span className="heritage">A family practising Ayurveda since 1908 · manufacturing since 1948</span>
           </div>
         </section>
 

@@ -50,7 +50,15 @@ export const CENTRES = [
   { slug: "phoenix-mauritius", name: "Kairali Ayurvedic Health Spa", city: "Phoenix", region: "St. Phoenix", country: "Mauritius",
     address: "8, Remy Ollier St., Phoenix, Mauritius", phones: ["+230-698-4440"], email: "info@kairali.mu", partner: true },
   { slug: "prague-vinohrady", name: "Kairali Ayurvedic Spa — Resort Svatá Kateřina", city: "Prague", region: "Vinohrady", country: "Czech Republic",
-    address: "Riegrovy sady 38, 120 00 Prague – Vinohrady, Czech Republic", phones: ["+420-565-456-801"], email: "info@katerinaresort.com", partner: true, note: "Website/email domain spelling to be confirmed." },
+    address: "Riegrovy sady 38, 120 00 Prague – Vinohrady, Czech Republic", phones: ["+420-565-456-801"], partner: true,
+    // email WITHHELD until Q-KC-DATA is ruled (HARD GATE 6: leave empty and
+    // flag). The live site prints info@katrinaresort.com; the resort's own
+    // domain is katerinaresort.cz — the two-spelling discrepancy is the open
+    // question, and no third spelling may ship. Consumers render email
+    // conditionally and @kairali/schema strips undefined keys, so the Prague
+    // page keeps the group contact only. NOTE renders on the public centre
+    // page — keep it customer-facing; the tracker ID stays in this comment.
+    note: "Centre email being confirmed — please reach us via the group contact." },
   { slug: "kuwait", name: "Kairali Ayurvedic Centre", city: "Kuwait City", region: "Sharq", country: "Kuwait",
     address: "Khalid Bin Alwaleed Street, Injazat Tower, Floor 23, Sharq, Kuwait", phones: ["+965-97706554"], email: "kuwait@kairalicentres.com", partner: true },
 ];

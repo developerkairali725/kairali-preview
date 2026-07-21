@@ -12,7 +12,7 @@ export function GET() {
   const body = buildLlmsTxt(siteConfig, {
     name: "Kairali Ayurvedic Group",
     summary:
-      `Flagship site of the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. One family, five doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, treatment centres in ${COUNTRIES_PHRASE}, Ayurveda training, and Villa Raag in Goa.`,
+      `Flagship site of the Kairali Ayurvedic Group — health through ayurveda, a family tradition since 1908. One family, six doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, treatment centres in ${COUNTRIES_PHRASE}, Ayurveda training, Villa Raag in Goa, and the Kairali franchise network.`,
     facts: [
       "Kairali Ayurvedic Group founded 1989 by K. V. Ramesh and Gita Ramesh; the family has practised Ayurveda since 1908 (four generations, family-run)",
       "Contact: info@kairali.com · WhatsApp +91 92898 38797",
@@ -49,6 +49,11 @@ export function GET() {
             title: "Villa Raag",
             url: "https://villaraag.com",
             note: "boutique wellness villa in Agonda, South Goa",
+          },
+          {
+            title: "Kairali Franchise",
+            url: "https://www.kairalifranchise.com",
+            note: "partner with the Kairali network — franchise centres in India and abroad",
           },
         ],
       },

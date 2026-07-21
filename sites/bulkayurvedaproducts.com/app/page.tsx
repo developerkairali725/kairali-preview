@@ -50,7 +50,8 @@ export default function Home() {
                 Contract manufacturing of Ayurvedic and herbal products without
                 building your own plant — formulation, sourcing, production,
                 packaging and QA from our Pollachi, Tamil Nadu facility, with
-                in-house laboratories and herb extraction, four generations deep.
+                in-house laboratories and herb extraction — four generations
+                of Ayurvedic practice behind it.
               </p>
               <p className="forms-line">
                 Capsules · tablets · syrups &amp; tonics · churnams · lehyams · balms · lotions · powders

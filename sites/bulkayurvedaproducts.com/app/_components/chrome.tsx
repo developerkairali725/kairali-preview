@@ -92,8 +92,8 @@ export function SiteFooter() {
               bulkayurvedaproducts.com is the manufacturing-partnership desk of
               Kairali Ayurvedic Products Pvt. Ltd. (KAPPL) — private label,
               third-party and loan-licence manufacturing from the Kairali
-              Ayurvedic Group&rsquo;s Pollachi, Tamil Nadu facility. Trusted
-              since 1908 — four generations of Ayurvedic manufacture.
+              Ayurvedic Group&rsquo;s Pollachi, Tamil Nadu facility. A family
+              practising Ayurveda since 1908 — manufacturing since 1948.
             </p>
           </div>
           <div className="footer-col">

@@ -40,7 +40,7 @@ const FAQS = [
   },
   {
     q: "Who stands behind the product?",
-    a: "Kairali Ayurvedic Products Pvt. Ltd. — the group's WHO-GMP-certified manufacturer at Pollachi, Tamil Nadu (certifications as published: WHO-GMP, ISO, FSSAI), practising Ayurveda since 1908 and formally founded in 1989.",
+    a: "Kairali Ayurvedic Products Pvt. Ltd. (KAPPL) — the Kairali Ayurvedic Group's WHO-GMP-certified manufacturer at Pollachi, Tamil Nadu (certifications as published: WHO-GMP, ISO, FSSAI). The group was founded in 1989; the family behind it has practised Ayurveda since 1908.",
   },
 ];
 

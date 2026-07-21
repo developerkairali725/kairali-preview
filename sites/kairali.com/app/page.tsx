@@ -1,6 +1,7 @@
 // kairali.com — flagship group-corporate site (entity: group · register A).
 // IA harvested from the 14 Jul agency-build intake (docs/group-inputs/
-// kairali-com-agency-build-intake.md §3): five pillars + heritage lineage.
+// kairali-com-agency-build-intake.md §3), grown to the ruled SIX doors
+// (+ Franchise, DECISIONS.md 14 Jul 19:05): six pillars + heritage lineage.
 // Per-pillar register law: the Healing Village card speaks CLINICAL
 // (patient/physician/treatment/programme — KTAHV lock), Villa Raag speaks
 // hospitality, Products speak pharma. First Factory site with REAL

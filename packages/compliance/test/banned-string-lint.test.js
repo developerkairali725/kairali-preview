@@ -156,6 +156,49 @@ test("banned-string-allow suppresses on that line only, and is REPORTED, never s
   assert.equal(f[1].line, 2);
 });
 
+// --- manufacture-attached 1908 (C-LF-02/03 + C-SC-03, RPT-20260721-DEEPC) ----
+
+test("the bulk-site trust strip fails — 1908 attached to manufacture in one clause", () => {
+  const f = errors(scanText("<span>Trusted since 1908 — four generations of Ayurvedic manufacture</span>", { kind: "code" }));
+  assert.ok(ids(f).includes("manufacture-attached-1908"), `expected manufacture-attached-1908, got ${ids(f)}`);
+});
+
+test("the hero-overline compression fails — manufacturer · Since 1908, founded 1989", () => {
+  const f = errors(scanText('<p className="overline">WHO-GMP manufacturer · Since 1908, founded 1989</p>', { kind: "code" }));
+  assert.ok(ids(f).includes("manufacture-attached-1908"), `expected manufacture-attached-1908, got ${ids(f)}`);
+});
+
+test('the dangling "Since 1908, founded 1989" compression fails even without a manufacture noun nearby', () => {
+  const f = errors(scanText("WHO-GMP manufacture at Pollachi. Since 1908, founded 1989.", { kind: "plain" }));
+  assert.ok(ids(f).includes("manufacture-attached-1908"), `expected manufacture-attached-1908, got ${ids(f)}`);
+});
+
+test('"four generations of Ayurvedic manufacture" fails on its own — generations belong to the practice', () => {
+  const f = errors(scanText("Backed by four generations of Ayurvedic manufacture.", { kind: "plain" }));
+  assert.ok(ids(f).includes("manufacture-attached-1908"), `expected manufacture-attached-1908, got ${ids(f)}`);
+});
+
+test("the ruled 1948 split passes — the canonical corrections must never fail", () => {
+  const canonical = [
+    "A family practising Ayurveda since 1908 — manufacturing since 1948.",
+    "A family practising Ayurveda since 1908 · manufacturing since 1948",
+    "founded 1989; a family practising Ayurveda since 1908",
+    "Four generations practising Ayurveda since 1908; Ayurvedic manufacturing since 1948.",
+    "WHO-GMP manufacturer · founded 1989 · a family practising Ayurveda since 1908",
+    "WHO-GMP manufacture at Pollachi. Founded 1989; a family practising Ayurveda since 1908.",
+  ];
+  for (const line of canonical) {
+    const f = errors(scanText(line, { kind: "plain" })).filter((x) => x.rule === "manufacture-attached-1908");
+    assert.deepEqual(f, [], `flagged the ruled correction: ${line}`);
+  }
+});
+
+test("a clause boundary stops the 1908→manufacture window — semicolon-separated facts stay legal", () => {
+  const f = errors(scanText("A family practising Ayurveda since 1908; WHO-GMP manufacture at Pollachi.", { kind: "plain" }))
+    .filter((x) => x.rule === "manufacture-attached-1908");
+  assert.deepEqual(f, [], "the semicolon separates the claims — no attachment");
+});
+
 // --- the committed regression corpus ----------------------------------------
 
 test("the violating fixture FAILS, and every rule is exercised by it", () => {
