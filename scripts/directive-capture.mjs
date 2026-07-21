@@ -31,6 +31,7 @@
  * Exit codes: 0 = ok · 1 = harness/usage error · 2 = ack of unknown/already-acked id.
  */
 
+import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -69,11 +70,53 @@ export function parseDirectives(text) {
   return out;
 }
 
-/** Next id for the day: D-YYYYMMDD-NN (append-only ⇒ ids never reused). */
+/**
+ * Next id for the day: D-YYYYMMDD-NN (append-only ⇒ ids never reused).
+ *
+ * MAX+1, never COUNT+1. Counting reissues a live id the moment the day's
+ * sequence has a gap — and gaps are normal here: CARD-1 relanded stranded
+ * 18-Jul rows, and any hand-edit or partial cherry-pick leaves one. Three
+ * collisions are on record (the 18-Jul renumber, the D-20260719-33 pair, and
+ * D-20260721-09 on 21 Jul); the first two were gap-driven.
+ *
+ * The remaining collision cause is NOT fixable here and is deliberately left to
+ * the CLI's `collidesOnOtherRefs` check: this function only sees the working
+ * tree, so a directive captured on a still-open PR branch is invisible to it.
+ * Keeping this pure (no git) is what makes it testable offline.
+ */
 export function nextId(text, now = istNow()) {
   const day = now.slice(0, 10).replaceAll("-", "");
-  const taken = parseDirectives(text).filter((d) => d.id.startsWith(`D-${day}-`)).length;
-  return `D-${day}-${String(taken + 1).padStart(2, "0")}`;
+  const highest = parseDirectives(text)
+    .filter((d) => d.id.startsWith(`D-${day}-`))
+    .reduce((max, d) => Math.max(max, Number.parseInt(d.id.slice(-2), 10) || 0), 0);
+  return `D-${day}-${String(highest + 1).padStart(2, "0")}`;
+}
+
+/**
+ * Does `id` already exist on any OTHER git ref (an open PR branch, typically)?
+ *
+ * The 21-Jul case: PR #220 captured D-20260721-09 at 11:11 IST and sat open;
+ * main's register still ended at -08, so a 16:15 capture was handed -09 too.
+ * Both were legitimate — the register, not either session, was wrong.
+ *
+ * Impure by necessity (shells out to git), so it lives OUTSIDE nextId and is
+ * advisory: it WARNS, never blocks. A capture that fails because git is slow or
+ * a ref is unreachable would be a dropped directive, and a dropped directive is
+ * the exact failure the whole mechanism exists to prevent (owner's 16-Jul rule).
+ */
+export function collidesOnOtherRefs(id, { git } = {}) {
+  // execFile with an argv array, never a shell string: `id` is machine-made
+  // (D-YYYYMMDD-NN) but the injection doctrine binds regardless of provenance.
+  const run = git ?? ((args) => execFileSync("git", args, { cwd: REPO_ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }));
+  try {
+    const refs = run(["for-each-ref", "--format=%(refname)", "refs/remotes/origin/"]).split("\n").filter(Boolean);
+    if (refs.length === 0) return false;
+    // git grep exits 1 on "no match" — that throws, and the catch reads it as no collision.
+    const hits = run(["grep", "-l", "-F", `${id} ·`, ...refs, "--", INBOX]);
+    return hits.trim().length > 0;
+  } catch {
+    return false; // no match, or git unavailable ⇒ silence, never a failed capture
+  }
 }
 
 /** @returns {{text:string, id:string}} new file text + the id assigned */
@@ -119,6 +162,16 @@ function main(argv) {
     const { text, id } = addDirective(current, { directive, source: flag(argv, "--source", "chat (Abilash)") });
     writeFileSync(path, text);
     console.log(`captured ${id} — commit ${INBOX} this session (an uncommitted directive is still a dropped directive on the next crash).`);
+    // ADVISORY, never blocking: the capture already succeeded above. A directive
+    // that failed to record because git was slow is the failure this mechanism exists
+    // to prevent — so a collision is something the human is TOLD about, not stopped by.
+    if (collidesOnOtherRefs(id)) {
+      console.warn(
+        `\n⚠ ID COLLISION: ${id} already exists on an origin branch — almost certainly an open PR that captured it first.\n` +
+        `  Your capture stands and is correct. Records hygiene per the DIRECTIVES.md precedent: do NOT renumber either row.\n` +
+        `  Append an ID-COLLISION NOTE comment recording both captures and which artifacts cross-ref to which row.`
+      );
+    }
     return 0;
   }
   if (cmd === "list") {
