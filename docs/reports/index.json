@@ -210,6 +210,13 @@
     "supersedes": null
   },
   {
+    "report_id": "RPT-20260721-HANDOVER-NIGHT",
+    "date": "2026-07-21 16:50:00 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-21-handover-night-close.md",
+    "supersedes": "RPT-20260721-HANDOVER-EVENING"
+  },
+  {
     "report_id": "RPT-20260721-KC-FAQ-SCHEMA",
     "date": "2026-07-21 17:45:00 IST",
     "type": "audit",
