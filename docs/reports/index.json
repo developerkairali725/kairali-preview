@@ -250,5 +250,12 @@
     "type": "milestone-build",
     "file": "docs/reports/2026-07-21-ambuj-voice-profiles.md",
     "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260721-HANDOVER-PANEL-CLOSE",
+    "date": "2026-07-21 20:55:00 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-21-handover-panel-close.md",
+    "supersedes": "RPT-20260721-HANDOVER-SESSIONEND"
   }
 ]

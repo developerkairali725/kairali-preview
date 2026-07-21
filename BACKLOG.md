@@ -257,3 +257,8 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   but docs/sops/author-voices.md:148 records it DONE 2026-07-18 (owner-confirmed in-chat; the notes ARE the Control SOP
   v1.0 docx, already mapped). Fix the memory file at session-close. Rule: the repo outranks memory on recorded state.
   (Home for RPT-20260721-AMBUJ-VOICE-PROFILES dispositions row 3.)
+- [ ] 2026-07-21 22:39:01 IST — DRIVE-WRITE-VERIFY WATCH (standing caution, home for RPT-20260721-HANDOVER-PANEL-CLOSE
+  MONITOR row): every Drive create_file write is verified — byte-size always, sha256 via download-back for anything
+  that matters — INCLUDING the first write of a batch (the 11-byte placeholder incident, 21 Jul). The toolset has no
+  delete/rename/update, so a bad write is permanent until the owner's manual sweep. Watch closes only if the Drive
+  toolset grows a checksummed/verifiable write path; until then the caution rides every handover's STANDING CAUTIONS.
