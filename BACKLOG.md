@@ -78,6 +78,10 @@ _Owner is developing a new/improved workflow and will supply process files. Dire
   exporting a repo catalog to Drive — the tool takes inline content only, so a 503KB CSV cannot go whole
   (two upload attempts died mid-relay). Revisit only if a future export needs a different cut, or if the
   connector gains a file-path upload. Drive copies are convenience; docs/media/ stays source of truth.
+- [ ] 2026-07-21 17:45:00 IST — MONITOR (RPT-20260721-KC-FAQ-SCHEMA): hand-pasted JSON-LD in WordPress post
+  content is exposed to wpautop corruption (newlines rewritten to `<br />` INSIDE the script, making the JSON
+  unparsable) and nothing detects it — /ayurvedic-retreat/ only surfaced because Google complained. If a second
+  instance appears anywhere on the live WP estate, the answer is the wp_head route fleet-wide, not per-page repaste.
 
 ## WAITING ON (people)
 _**STALENESS SWEEP 2026-07-21 08:08:15 IST** (morning brief; evidence basis = the item-by-item mailbox reconcile of 2026-07-21 ~00:0x IST, not a re-derivation — reconcile-before-chasing rule). **STALE (>3 days silent):** **Deepu** — 14 Jul AHV compliance mail (DPDP consent checkbox ×3 forms · Resort→Hospital schema ×4 pages · DE meta/alt hygiene · staging confirmation) now **7 days unacknowledged**, flagged stale in the 18 and 19 Jul briefs too; this is the compliance set, and it is the longest-running unacked ask on the board. **Ambuj** — TWO Shopify Storefront tokens, asked 17 Jul 19:08 IST, **4 days**, and they gate Wave 1 which was due to open 20 Jul. **Shadab** — asked 18 Jul 17:08 IST, silent since 17:25, **3 days and at the threshold**; his Tue-noon deadline lands TODAY. **NOT stale:** Sunaj (Wednesday deadline, tomorrow) · Anupam (asked 20 Jul) · Gaurav/DME CRM (do-not-ping-before-rollout, by ruling)._
