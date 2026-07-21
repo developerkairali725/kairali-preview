@@ -1,0 +1,1078 @@
+{
+ "report_id": "RPT-20260721-DEEPC",
+ "pinned_commit": "7599bf6",
+ "level": "D-20260720-05 level 3 — granular first-timer/non-technical basic mistakes",
+ "method": "9 finder dimensions x 1 adversarial verifier each, all worktree-isolated (LEARNINGS 20 Jul rule 4), pinned at main@7599bf6; 18 agents, 753 tool uses, 0 errors; every surviving finding carries file+line+verbatim quote re-verified by its dimension verifier; verify:SC ran without the safety classifier (harness note) so the coordinator independently re-verified C-SC-01/04/05 at file:line — all three confirmed",
+ "stats": {
+  "findings_raw": 100,
+  "refuted": 11,
+  "surviving": 89,
+  "by_severity": {
+   "P1": 21,
+   "P2": 35,
+   "P3": 33
+  }
+ },
+ "dimensions": [
+  {
+   "dimension": "locked-facts-identity",
+   "coverage": "SCANNED (grep-verified, whole worktree minus node_modules/.git): (1) wrong-WhatsApp …38777 — every occurrence repo-wide (154× correct 38797 vs 60× 38777 references) individually contexted: ALL 38777 hits are ban-documentation, guards, or audit PASS lines; zero real usages. Also swept all 92898-prefix variants (caught the Sirifort pair 9289843222/9289853222 — verbatim-consistent with the inventory) and all phone-like strings in sites/ (ISBN false-positives eliminated; theblushlounge +91 88269 21110 is the client's own D-BL-WHATSAPP fact; healing.recipes IVR print-half verified present). (2) Public emails in sites/ — extracted every mailto: and email-like string across all 17 site dirs: only info@kairali.com (59×+), the blush-lounge client mailbox, and the dynamically-rendered @kairali/facts centre roster (→ C-LF-04); the in@kairali.com regression exists only inside guard tests. Repo-wide kairali-domain email census reviewed for near-misses (support@kairaliproduct.com is a live-site typo already caught by the audit, not a repo error) → C-LF-05/06. (3) Two-Deepus — grepped every Deepu occurrence near sign-off/clinical/publish contexts: NO conflation found; wiki, SOPs, MASTER_PIPELINE and physician-roster all keep the split correctly. (4) Owner-name spelling — canonical established (repo prose \\\"Abilash\\\"; \\\"Abhilash\\\" legitimate only in account handles, git author, sheet dropdown, mined content, and the personal site's own public spelling incl. deliberate schema alternateName variants); prose drift found only for brother Abishek → C-LF-08. (5) Org/repo name — kairali-digital/kairali-web-factory consistent in every command-bearing doc; AbhilashKairali references are dated history entries only. Also audited: packages/facts full roster vs its verbatim source, compliance/spec/sweep.sh locked-fact constants (all correct), lineage claims across sites (→ C-LF-01/02/03), Sankunny-Vaidiar spellings, KTAHV locale claims (EN/DE/FR consistent), STATUS.yaml sites block, wiki entity pages, date-only timestamps in the seven law-bound logs (one hit → C-LF-07). DELIBERATELY SKIPPED: content-mined/ (immutable raw legacy — its typos are source data), baseline registers + GSC CSV exports (third-party query data), docs/reports/*evidence.json session artifacts, KTAHV banned-word sweep and full timestamp/log-hygiene audit beyond spot checks (other Phase-C dimensions), and any live-URL verification (read-only repo scope).",
+   "notes": "Ranked P1→P3; no P0 because none of the affected sites is DNS-live yet (abhilashkr publish is HELD at PR #144; bulk sites and kairalicenters are preview-stage) — C-LF-01..04 each become P0 the day their site flips. Strongest pattern found: the 1908 lineage law is enforced by guards on arogyashala/kairaliyoga/healing.recipes but NOT on the two bulk-B2B sites, whose code comments claim canonical conformance while the strings drift — a guard-coverage gap worth a follow-up registry row. The developers6/developer6 pair (C-LF-05/06) needs a human check of which mailbox actually exists before any doc fix. All evidence quotes verified verbatim at the cited file+line in the worktree pinned at main.",
+   "raw_count": 9,
+   "refuted": 0,
+   "surviving": [
+    {
+     "id": "C-LF-01",
+     "severity": "P1",
+     "file": "sites/abhilashkr/src/app/faq/page.tsx",
+     "line": 46,
+     "claim": "The owner's personal-site FAQ says the group was founded in 1989 \"by opening Kairali - The Ayurvedic Healing Village in Palakkad\" — conflating two owner-locked lineage facts: 1989 = first Kairali Ayurvedic Centre in South Delhi (D-LIN-1989-WORDING), and the Healing Village opened 14 Feb 1999 (owner-locked ruling #53, docs/group-inputs/kairali-lineage.md line 29).",
+     "evidence_quote": "KV Ramesh and Gita Ramesh formalized the modern corporate brand in 1989 by opening Kairali - The Ayurvedic Healing Village in Palakkad, Kerala.",
+     "fix_suggestion": "Rewrite to the canonical form: \"founded the Kairali Ayurvedic Group in 1989 with the first Kairali Ayurvedic Centre in South Delhi; Kairali — The Ayurvedic Healing Village opened in Palakkad in 1999.\" (Also fixes the stray hyphen in the brand name.)",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches sites/abhilashkr/src/app/faq/page.tsx:46 verbatim. Canonical record contradicts it twice: kairali-lineage.md line 27/46 (D-LIN-1989-WORDING: 1989 = first Kairali Ayurvedic Centre, South Delhi) and line 29 (owner-locked ruling #53: Healing Village opened 14 Feb 1999). No open question, flag, or Phase A/B record tracks this FAQ conflation; the live-copy heritage freeze covers licensed 1908 wording, not a wrong 1989-AHV claim. P1 stands."
+    },
+    {
+     "id": "C-LF-02",
+     "severity": "P1",
+     "file": "sites/bulkayurvedaoils.com/app/page.tsx",
+     "line": 129,
+     "claim": "The heritage band (and the hero overline at line 64, \"WHO-GMP manufacturer · Since 1908, founded 1989\") attaches 1908 to MANUFACTURE — the canonical D-1908 form is \"a family practising Ayurveda since 1908\" (first CLINIC, Dr. Sankunny Vaidiar); the family's manufacturing track begins 1948 per the lineage record and per sites/kairaliequipment.com/app/about/page.tsx line 40. The site's own llms.txt (route.ts line 15) carries the correct form, so the page contradicts itself — despite the /about code comment claiming \"1908/1989 framing EXACTLY as published (D-1908 / D-LIN-1989-WORDING canonical forms)\".",
+     "evidence_quote": "<span className=\"heritage\">Trusted since 1908 — four generations of Ayurvedic manufacture</span>",
+     "fix_suggestion": "Change to the canonical lineage phrasing, e.g. \"A family practising Ayurveda since 1908 — manufacturing since 1948, founded 1989\"; fix the hero overline (line 64) and quality-page ledger-note (app/quality/page.tsx line 100) in the same pass.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Both quotes verified in sites/bulkayurvedaoils.com/app/page.tsx (hero overline line 64, heritage span line 129). Canonical D-1908 form attaches 1908 to family practice (first clinic); manufacture begins 1948 per kairali-lineage.md line 25 and sites/kairaliequipment.com/app/about/page.tsx:40. The site's own llms.txt (route.ts line 15) carries the correct form and the /about comment (lines 1-2) claims exact canonical framing — self-contradiction confirmed. No ruling blesses attaching 1908 to manufacture; lineage doc §2.1 explicitly rules 1908 defensible only as a family-lineage claim."
+    },
+    {
+     "id": "C-LF-03",
+     "severity": "P1",
+     "file": "sites/bulkayurvedaproducts.com/app/_components/chrome.tsx",
+     "line": 96,
+     "claim": "The sitewide footer (renders on every page) claims manufacture \"since 1908\" — same misattachment as C-LF-02: KAPPL/manufacture dates from 1948 (family track) / 1989 (group) / 2007 (KAPPL inc.), while 1908 is the family's first clinic; the about-page meta description (app/about/page.tsx line 14, \"Since 1908, founded 1989\") repeats the self-contradictory compression, contradicting the site's own llms.txt (\"founded 1989; a family practising Ayurveda since 1908\").",
+     "evidence_quote": "since 1908 — four generations of Ayurvedic manufacture.",
+     "fix_suggestion": "Footer: \"A family practising Ayurveda since 1908 — four generations; WHO-GMP manufacture at Pollachi.\" About meta: use the canonical \"founded 1989; a family practising Ayurveda since 1908\" wording.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Footer quote verified in sites/bulkayurvedaproducts.com/app/_components/chrome.tsx (\"Trusted since 1908 — four generations of Ayurvedic manufacture.\", lines 95-96, sitewide footer). About meta (app/about/page.tsx line 14) carries the \"Since 1908, founded 1989\" compression while the site's own llms.txt route (line 16) has the canonical \"founded 1989; a family practising Ayurveda since 1908\". Same misattachment as C-LF-02, independently verified; no tracking record or ruling exception found."
+    },
+    {
+     "id": "C-LF-04",
+     "severity": "P1",
+     "file": "packages/facts/src/index.js",
+     "line": 53,
+     "claim": "The Prague centre email in the locked-facts module is \"info@katerinaresort.com\" — a value that matches NEITHER the live-site verbatim (\"info@katrinaresort.com\", docs/group-inputs/kairalicenters-org-inventory.md line 58) NOR the resort's own domain (katerinaresort.cz); the module header promises \"transcribed VERBATIM from the live kairalicenters.com /locations/ page\", and sites/kairalicenters.com/app/centres/[slug]/page.tsx renders c.email as a public mailto link (line 102) and into JSON-LD (line 46), so an invented mailbox ships as the centre's public contact (HARD GATE 6).",
+     "evidence_quote": "email: \"info@katerinaresort.com\", partner: true, note: \"Website/email domain spelling to be confirmed.\"",
+     "fix_suggestion": "Until Q-KC-DATA is ruled, either carry the live verbatim value or set email to undefined for this centre (the page already handles a missing email) — never a third, invented spelling.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "packages/facts/src/index.js:53 carries email \"info@katerinaresort.com\" — a hybrid spelling found nowhere else in the repo (repo-wide grep: only this line). Live verbatim is \"info@katrinaresort.com\" (kairalicenters-org-inventory.md line 58) and the website is katerinaresort.cz (line 78), so the module violates its own header's VERBATIM-transcription promise, and the value ships publicly via sites/kairalicenters.com/app/centres/[slug]/page.tsx (mailto with data-cta email_click, ~line 102; JSON-LD email, line 46). Q-KC-DATA (QUESTIONS.md:147) records only the katrina-vs-katerina live-site question — the shipped third spelling sits on neither side of that record, so it is not already on record. HARD GATE 6 breach as claimed."
+    },
+    {
+     "id": "C-LF-05",
+     "severity": "P1",
+     "file": "docs/DELEGATION_PROTOCOL.md",
+     "line": 72,
+     "claim": "The live delegation routing table says the developer mailbox is \"developers6@kairali.com\" while every post-17-Jul authoritative record (wiki/people.md lines 6 and 14, DIRECTIVES.md D-20260718-09, DECISIONS.md line 64, STATUS.yaml line 43) says \"developer6@kairali.com\" — the two spellings are never reconciled anywhere, and a delegation email drafted from the protocol table goes to a likely-nonexistent mailbox and silently disappears (docs/delegation-log.md line 12 records a real 14-Jul draft to developers6@).",
+     "evidence_quote": "| developers6@kairali.com | NEW developer (name TBD — Abilash, 14 Jul) | Website/WordPress execution fixes (KTAHV live site technical tasks).",
+     "fix_suggestion": "Verify the real mailbox with Abilash/Sunaj, then correct DELEGATION_PROTOCOL.md (and annotate the four DECISIONS.md/delegation-log.md occurrences as the superseded spelling) so exactly one address survives.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "docs/DELEGATION_PROTOCOL.md:72 quote matches verbatim (\"developers6@kairali.com\"). Every post-17-Jul authoritative record verified with the other spelling: wiki/people.md lines 6 and 14, DIRECTIVES.md D-20260718-09 (line 32), DECISIONS.md line 64, STATUS.yaml line 43 — all \"developer6@kairali.com\". docs/delegation-log.md line 12 confirms a real 14-Jul draft to developers6@. Grep found no reconciliation anywhere (QUESTIONS/BACKLOG/wiki have no developers6 entry; the Phase B report mentions developers6@ only inside the unrelated Slaget stale-note and transcript-rule findings). P1 appropriate: the protocol is the operative routing table for owner-lane delegation emails."
+    },
+    {
+     "id": "C-LF-06",
+     "severity": "P2",
+     "file": "wiki/people.md",
+     "line": 6,
+     "claim": "people.md carries two contradictory rows for the same developer6@kairali.com person: line 6 (\"New engineer… Pending: Shopify staff acct (Sunaj), GitHub org invite (Abilash)\") was never merged with line 14, which names him (Shadab Ali) and records the org invite as DONE (\"kairali-digital org member since 16 Jul 2026\") — a routing source-of-truth with a stale duplicate identity entry.",
+     "evidence_quote": "New engineer (Shopify track + factory) — developer6@kairali.com (Abilash, 14 Jul). Pending: Shopify staff acct (Sunaj), GitHub org invite (Abilash), onboarding = NEW_DEVELOPER_PACKET.md",
+     "fix_suggestion": "Delete line 6 or collapse it into the Shadab Ali entry (line 14), keeping only the still-true pending items (Shopify staff account).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/people.md line 6 quote matches verbatim; line 14 is the same person (same mailbox developer6@kairali.com), named Shadab Ali, with \"kairali-digital org member since 16 Jul 2026\" — directly contradicting line 6's still-pending \"GitHub org invite (Abilash)\". The two rows were never merged and no record tracks the duplicate. P2 (internal routing source-of-truth with drift risk) is the right severity."
+    },
+    {
+     "id": "C-LF-07",
+     "severity": "P3",
+     "file": "wiki/log.md",
+     "line": 3,
+     "claim": "The first entry of the committed log spine is date-only (\"2026-07-13 ·\"), violating the CLAUDE.md law that every log entry in wiki/log.md is timestamped to the second in IST (\"date-only entries are a lint finding\"); every other entry in the file complies.",
+     "evidence_quote": "- 2026-07-13 · Repo created (AbhilashKairali/kairali-web-factory), launch pack",
+     "fix_suggestion": "Backfill the second-precision IST timestamp from the repo-creation commit (git log --format=%ci on the root commit) or annotate it as pre-law.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/log.md:3 verified: \"- 2026-07-13 · Repo created…\" is date-only, and a grep of all entry lines confirms it is the ONLY entry in the file without an HH:MM:SS IST timestamp. CLAUDE.md's timestamp law explicitly names wiki/log.md and states \"date-only entries are a lint finding\" with no grandfather clause. Not tracked anywhere. P3 correct."
+    },
+    {
+     "id": "C-LF-08",
+     "severity": "P3",
+     "file": "DIRECTIVES.md",
+     "line": 62,
+     "claim": "The owner's brother is written \"Abhishek\" in the directive prose, but the repo-canonical spelling is \"Abishek\" — the lineage register records \"K.R. Abishek (Director, Products division)\" / \"Abishek Ramesh\" (docs/group-inputs/kairali-lineage.md lines 38/69, VERIFIED-OWN-SITE), and the very same directive's ack uses the mailbox abishek@kairali.com.",
+     "evidence_quote": "finalize the prepared request to Abhishek/Gaurav Saraswat as a director@ Gmail draft",
+     "fix_suggestion": "DIRECTIVES.md is append-only, so log a one-line erratum (or fix at the next permitted mutation): the person is Abishek Ramesh (abishek@kairali.com), matching the lineage register.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "DIRECTIVES.md:62 (D-20260719-20) verified: prose says \"Abhishek/Gaurav Saraswat\" while the same entry's ack records the draft to abishek@kairali.com. Repo-canonical spelling is \"Abishek\" per the owner-confirmed lineage register (docs/group-inputs/kairali-lineage.md line 38 \"K.R. Abishek (Director, Products division)\", line 69 \"Abishek Ramesh\", both VERIFIED-OWN-SITE). The \"Abhishek\" variant also appears in BACKLOG.md:78 and QUESTIONS.md:516 — wider than the finding states, which strengthens it; no record tracks the spelling drift. P3 correct given DIRECTIVES.md is append-only."
+    },
+    {
+     "id": "C-LF-09",
+     "severity": "P3",
+     "file": "CLAUDE.md",
+     "line": 7,
+     "claim": "The KTAHV brand name is punctuated three ways across trust surfaces: CLAUDE.md uses an en-dash (\"Kairali – The…\"), the owner-ruled lineage doc and 42 shipped-site occurrences use an em-dash (\"Kairali — The…\"), 15 shipped occurrences use the en-dash, and one uses a plain hyphen (the C-LF-01 line) — entity-name inconsistency across the fleet's own entity-SEO surfaces.",
+     "evidence_quote": "- **KTAHV** (Kairali – The Ayurvedic Healing Village): NABH-accredited Ayurvedic hospital. CLINICAL REGISTER ONLY.",
+     "fix_suggestion": "Pick one canonical dash (the lineage doc's em-dash form \"Kairali — The Ayurvedic Healing Village\" is the owner-ruled publishable form) and normalise the 15 en-dash + 1 hyphen site occurrences; note the choice in the wiki entity page.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "All counts machine-verified exactly as claimed: sites/ grep yields 42 em-dash (\"Kairali — The\"), 15 en-dash (\"Kairali – The\"), 1 hyphen (\"Kairali - The\", the C-LF-01 line) occurrences; CLAUDE.md line 7 confirmed at byte level as U+2013 en-dash (cat -v: M-bM-^@M-^S). The owner-canonical lineage doc's publishable forms use the em-dash. No ruling names a canonical dash and no record tracks the inconsistency (grep for en-dash/em-dash in QUESTIONS/BACKLOG/DECISIONS/wiki: empty). P3 cosmetic is right."
+    }
+   ]
+  },
+  {
+   "dimension": "dates-times",
+   "coverage": "SCANNED IN FULL: QUESTIONS.md (all 646 lines via headers + targeted reads), DECISIONS.md (581 — all entry headers + tail block), DIRECTIVES.md (126, every row), LEARNINGS.md (247), wiki/log.md (109), BACKLOG.md (168); all 28 audits/*.md timestamp headers (all clean — every one carries second-precision IST audited+fetch-window stamps); launches/README-gsc-snapshot-2026-07-19.md; docs/reports/ filenames + all frontmatter date: fields (grep — all except the chase sheet carry HH:MM:SS IST). GREP SWEEPS across all target dirs: wrong-year candidates (2025/2027+ — none found beyond legitimate historical references), masked 'x'-digit times, unanchored relative phrases (today/tomorrow/tonight/this week), date-only headers. GIT CROSS-CHECKS (read-only): bypass-log commit 526591f (19:13:35 IST) vs the '21:1x' claim; D-20260719-33/34 capture commits 10c557a/8755dd9 (19 Jul 21:06/21:09 IST) vs the '20 Jul ~00:45/01:00' chat claims; D-20260720-41 capture 1d59bcc (22:33:25 IST) vs '21 Jul ~00:05'; weekday check (20 Jul 2026 = Monday, 21 Jul = Tuesday); IST-label spot checks PASSED where verifiable (#184 squash 2f551d6 16:18:56 +0530 and #197 squash 8cad5dc 20:05:49 +0530 both match their wiki/log IST claims exactly). DELIBERATELY SKIPPED: sites/ + packages/ source (other dimensions), docs/reports/*.txt raw 3-way evidence transcripts (verbatim external-AI dumps, not repo-authored records), launches/<domain>/ per-domain evidence bodies beyond the snapshot README (spot-grepped only), MORNING_BRIEF.md and STATUS.yaml (outside the assigned sweep list), content-mined/ (immutable raw layer). No silent truncation: 17 findings total, all reported.",
+   "notes": "Headline pattern: a systematically FAST clock source contaminates the human-estimated times in the records. Every impossible pairing runs the same direction — the estimated 'chat' time is ~40 min to ~3.7 h AHEAD of the machine capture/commit stamp (C-DT-01: 19:13 written as '21:1x'; C-DT-02: 19 Jul 21:04 chat recorded as 20 Jul ~00:45; C-DT-03: 20 Jul 22:33 recorded as 21 Jul ~00:05; C-DT-05: a dozen smaller offsets). Machine stamps (directive-capture.mjs + git %ci) are internally consistent and should be declared the sole time of record; the estimated chat-clock annotations should be dropped or derived. Two of the wrong times cross midnight, putting owner rulings on the wrong calendar DAY in three files at once (DIRECTIVES/DECISIONS/QUESTIONS) — worth a one-line owner-visible correction since downstream conformance reviews date rulings from these records. Positive results worth recording: all 28 audit files pass the second-precision rule; report frontmatters are near-universally compliant; IST labels spot-checked against git commit times matched exactly (no IST-vs-UTC mislabeling found); no wrong-year typos (2025/2027) found anywhere in the swept records.",
+   "raw_count": 17,
+   "refuted": 1,
+   "surviving": [
+    {
+     "id": "C-DT-01",
+     "severity": "P1",
+     "file": "wiki/log.md",
+     "line": 86,
+     "claim": "The HARD GATE 9 self-correction entry refers to 'the 21:1x bypass-log commit above', but the bypass-log commit (526591f) was authored 2026-07-19 19:13:35 IST and the '21:1x' text itself was written in commits bb151da/e3bfc23 at 19:18:08/19:31:04 IST — before any 21:1x event could exist. The hour in a governance/audit-trail record is wrong ('21:1x' should be '19:1x').",
+     "evidence_quote": "SELF-CORRECTION: the 21:1x bypass-log\ncommit above was itself pushed direct to main under the owner-credentialed identity",
+     "fix_suggestion": "Append a correction entry (log is append-only) stating the bypass-log commit time was 19:13:35 IST, not 21:1x.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at wiki/log.md:86-87. The bypass-log entry it references is headed '2026-07-19 19:13:35 IST' in the same file (line 72) and its commit 526591f is authored 2026-07-19 19:13:35 +0530; the self-correction text was committed at 19:18:08/19:31:04 (bb151da/e3bfc23), before any 21:1x moment existed. '21:1x' contradicts its own file and git; grep shows the wrong hour occurs nowhere else and no correction is on record. A wrong time inside a HARD GATE 9 audit-trail entry is a trust-surface record error — P1 stands."
+    },
+    {
+     "id": "C-DT-02",
+     "severity": "P1",
+     "file": "DIRECTIVES.md",
+     "line": 106,
+     "claim": "D-20260719-33 records the owner chat as '2026-07-20 ~00:45 IST' while its own capture stamp is 2026-07-19 21:04:59 IST — a capture 3.7 hours BEFORE the claimed chat, which is impossible. Git proves the capture side is truth: commit 10c557a ('Owner rulings D-20260719-33... Q-CLASSMAP-UNKNOWNS answered') is dated 2026-07-19 21:06:27 +0530, so the rulings existed on 19 Jul night. The wrong 20-Jul date propagates to D-20260719-34 (line 107, chat '2026-07-20 ~01:00 IST'), DECISIONS.md:592-593 ('entry chronologically 2026-07-20 00:50 IST') and QUESTIONS.md:593 ('2026-07-20 00:50:00 IST').",
+     "evidence_quote": "D-20260719-33 · 2026-07-19 21:04:59 IST · owner chat 2026-07-20 ~00:45 IST (Wispr voice)",
+     "fix_suggestion": "Append correction notes (rows are append-only) to DIRECTIVES/DECISIONS/QUESTIONS stating the chat occurred ~21:00 IST on 2026-07-19 per capture commit 10c557a; do not prose-edit the verbatim relanded rows.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "DIRECTIVES.md:106 quote verbatim: capture 2026-07-19 21:04:59 IST vs chat '2026-07-20 ~00:45 IST' — capture 3.7h before the chat it captures, impossible. Commit 10c557a (2026-07-19 21:06:27 +0530) matches the row's ack stamp, proving the ruling existed 19 Jul night. Propagation confirmed at DIRECTIVES.md:107 (chat '2026-07-20 ~01:00') and QUESTIONS.md:592-593 ('entry chronologically 2026-07-20 00:50 IST' / '2026-07-20 00:50:00 IST'). One cite correction: DECISIONS.md has only 581 lines — the 'DECISIONS.md:592-593' text actually lives at QUESTIONS.md:592. The CARD-3 id-collision note tracks only the id clash, not the date impossibility, so this is not already on record."
+    },
+    {
+     "id": "C-DT-03",
+     "severity": "P1",
+     "file": "DIRECTIVES.md",
+     "line": 125,
+     "claim": "D-20260720-41 records the owner chat as '2026-07-21 ~00:05 IST' but its machine capture stamp is 2026-07-20 22:33:12 IST and the capture commit 1d59bcc is dated 2026-07-20 22:33:25 +0530 — the chat time is ~1.5h in the future of its own capture and puts the ruling on the wrong calendar day. QUESTIONS.md:636 repeats the wrong date ('owner, in-chat, 21 Jul ~00:05 IST') while the sibling answer at QUESTIONS.md:645 says '20 Jul late night' for a ruling captured one minute earlier — the two answers contradict each other.",
+     "evidence_quote": "D-20260720-41 · 2026-07-20 22:33:12 IST · chat (Abilash), 2026-07-21 ~00:05 IST",
+     "fix_suggestion": "Append a correction: the INSTA-STAY-OFF ruling was given 2026-07-20 ~22:32 IST (per capture commit); fix the QUESTIONS.md:636 echo the same way.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "DIRECTIVES.md:125 quote verbatim: capture 2026-07-20 22:33:12 IST, ack 22:33:24, commit 1d59bcc 2026-07-20 22:33:25 +0530 — yet the chat is recorded as '2026-07-21 ~00:05 IST', ~1.5h after its own capture and on the wrong calendar day. QUESTIONS.md:636 repeats '21 Jul ~00:05 IST' while QUESTIONS.md:645 says '20 Jul late night' for the sibling ruling captured one minute earlier (D-40 at 22:32:08) — verified contradiction between two answers from the same conversation. No existing disposition found."
+    },
+    {
+     "id": "C-DT-04",
+     "severity": "P2",
+     "file": "DIRECTIVES.md",
+     "line": 67,
+     "claim": "D-20260719-25 sets the Sunaj+Vikash access deadline as 'Mon 21 Jul EOD', but 2026-07-21 is a TUESDAY (2026-07-20 is Monday) — the weekday and date contradict, leaving the deadline ambiguous by a day; the chase sheet (docs/reports/2026-07-20-monday-chase-sheet.md:137) resolves it as 'Tue 21 Jul', silently disagreeing with the directive record.",
+     "evidence_quote": "Sunaj+Vikash ordered to make director@ GSC Owner + GA4 Admin everywhere by Mon 21 Jul EOD",
+     "fix_suggestion": "Append a clarification note fixing the pairing (either 'Mon 20 Jul' or 'Tue 21 Jul' per the owner's intent; the chase sheet used Tue 21 Jul).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at DIRECTIVES.md:67; cal confirms 2026-07-20 = Monday and 2026-07-21 = Tuesday, so 'Mon 21 Jul EOD' self-contradicts and the deadline is ambiguous by a day. One sub-claim is wrong: chase-sheet line 137's '(Tue 21 Jul 12:00 noon)' is the Shadab pilot chase deadline, not this access item — the sheet actually renders this deadline as 'TODAY EOD' (line 18, i.e. Mon 20 Jul), which still disagrees with the directive's '21 Jul'. Core weekday/date contradiction verified; P2 stands."
+    },
+    {
+     "id": "C-DT-05",
+     "severity": "P2",
+     "file": "DIRECTIVES.md",
+     "line": 122,
+     "claim": "Systemic clock defect: the free-text 'chat' time annotations consistently POST-date their own machine capture stamps by ~40-95 minutes, which is physically impossible (a directive cannot be captured before it is spoken). Examples: D-20260720-38 captured 22:10:27 vs chat '~23:05'; D-20260720-40 captured 22:32:08 vs chat '~23:59'; D-20260719-13 captured 13:22:44 vs chat '~14:2x IST' (also a masked digit); D-20260720-18 captured 12:24:19 vs chat '~13:15'. Some clock source used for the chat estimates runs ~1h fast — the same direction as the C-DT-01/02/03 errors.",
+     "evidence_quote": "D-20260720-38 · 2026-07-20 22:10:27 IST · chat (Abilash), 2026-07-20 ~23:05 IST (Wispr voice)",
+     "fix_suggestion": "Treat the machine capture stamp as the sole time of record; stop writing estimated chat-clock times (or derive them from the capture stamp), and append one corrective note documenting the fast-clock artifact for past rows.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at DIRECTIVES.md:122. All four cited rows re-checked: D-20260719-13 captured 13:22:44 vs chat '~14:2x' (line 55), D-20260720-18 captured 12:24:19 vs '~13:15' (line 93), D-38 captured 22:10:27 vs '~23:05' (line 122), D-40 captured 22:32:08 vs '~23:59' (line 124). Sweep of 20 Jul rows shows ~20 further rows with chat annotations POST-dating their capture stamps (offsets actually +2 to +95 min, wider than the claimed 40-95) — a directive cannot be captured before it is spoken, and ack/capture stamps align with git commit times, so the free-text estimates are the defective side. Same direction as C-DT-01/02/03. No clock-skew record exists anywhere in QUESTIONS/DECISIONS/LEARNINGS. Systemic P2 confirmed."
+    },
+    {
+     "id": "C-DT-06",
+     "severity": "P2",
+     "file": "DECISIONS.md",
+     "line": 574,
+     "claim": "Entry header '## 2026-07-20 16:5x IST — D-RATES-V2' uses a masked, invalid timestamp ('16:5x') where the CLAUDE.md rule requires YYYY-MM-DD HH:MM:SS IST to the second; it also contradicts D-20260720-23's ack (2026-07-20 15:41:28 IST) which states 'DECISIONS D-RATES-V2 supersession recorded' — i.e. the entry already existed more than an hour before its own claimed stamp.",
+     "evidence_quote": "## 2026-07-20 16:5x IST — D-RATES-V2 (CARD-2 RESOLVED BY SUPERSESSION — Abilash + Anupam's files)",
+     "fix_suggestion": "Append a stamp-correction note giving the real second-precision time (on/before 15:41:28 IST per the D-23 ack).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "DECISIONS.md:574 quote verbatim: '## 2026-07-20 16:5x IST — D-RATES-V2' — a masked digit where the CLAUDE.md law requires HH:MM:SS to the second in a covered file. DIRECTIVES.md:103 confirms D-20260720-23's ack at 2026-07-20 15:41:28 IST already states 'DECISIONS D-RATES-V2 supersession recorded', so the entry pre-existed its own claimed ~16:5x stamp by over an hour. Both the masked-invalid format and the internal contradiction verified; P2 stands."
+    },
+    {
+     "id": "C-DT-07",
+     "severity": "P2",
+     "file": "BACKLOG.md",
+     "line": 9,
+     "claim": "The NOW section header still reads 'this week — Wave 0 / Days 1–6' while entries inside the same section reference Day 7 and Day 8 (lines 19-20) — the relative anchor is 2+ days stale in the file the 07:05 morning brief reads daily as the source of 'what and when'.",
+     "evidence_quote": "## NOW (this week — Wave 0 / Days 1–6)",
+     "fix_suggestion": "Update the header to the current sprint day range or replace the relative label with absolute dates (e.g. 'Wave 0+, from 2026-07-13').",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "BACKLOG.md:9 verbatim '## NOW (this week — Wave 0 / Days 1–6)' while line 19 says 'DUE TODAY (Day 7...)' and line 20 'DUE TOMORROW (Mon 20 Jul, Day 8...)' inside the same section — the header's day range is 2+ days stale in the file whose own rules block declares it the single source of 'what and when' read daily by the 07:05 morning brief. P2 stands."
+    },
+    {
+     "id": "C-DT-08",
+     "severity": "P2",
+     "file": "BACKLOG.md",
+     "line": 19,
+     "claim": "An open task line is labelled 'DUE TODAY (Day 7...)' with no absolute date anywhere in the line — 'today' resolved to 19 Jul only at write time and now silently misstates the deadline every day the item stays open (the sweep dimension's exact stale-relative-phrase class).",
+     "evidence_quote": "**DUE TODAY (Day 7, surfaced from handover next-session queue) — GOLDEN-GATE BATTERY → OWNER FEEDBACK → FULL-SITE BUILDS.**",
+     "fix_suggestion": "Anchor the line with the absolute date it was due ('DUE 2026-07-19') so staleness is visible instead of self-renewing.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "BACKLOG.md:19 quote verbatim; the line is still open ([ ]) and carries no absolute date — 'TODAY' bound to 19 Jul only via the adjacent line 20's 'DUE TOMORROW (Mon 20 Jul)', so every later day the open item silently misstates its deadline. Verified stale-relative-phrase defect in the daily-read planning file; P2 stands."
+    },
+    {
+     "id": "C-DT-09",
+     "severity": "P2",
+     "file": "launches/README-gsc-snapshot-2026-07-19.md",
+     "line": 1,
+     "claim": "The GSC snapshot record carries only a date-only header and contains ZERO second-precision IST timestamps anywhere in the file (grep 'IST' = 0 hits), although launches/ is explicitly in the CLAUDE.md list of surfaces where 'date-only entries are a lint finding' — and the afternoon addendum section is likewise untimed.",
+     "evidence_quote": "# GSC 16-month snapshot — 2026-07-19 (D-20260719-07)",
+     "fix_suggestion": "Add the export run's second-precision IST timestamp to the header and a timestamp on the AFTERNOON ADDENDUM section.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "File re-read in full: header is date-only ('# GSC 16-month snapshot — 2026-07-19'), grep -c 'IST' = 0 (zero timestamps anywhere), and the AFTERNOON ADDENDUM section is untimed. launches/ is explicitly enumerated in the CLAUDE.md second-precision timestamp law ('date-only entries are a lint finding'), and this is a committed evidence record. P2 stands."
+    },
+    {
+     "id": "C-DT-10",
+     "severity": "P3",
+     "file": "BACKLOG.md",
+     "line": 36,
+     "claim": "An open '[ ] DUE TODAY' line ('today' = 18 Jul from context) instructs re-running and merging Dependabot #93, but BACKLOG.md:56 records '[x] #93 CLOSED BY DEPENDABOT — superseded by #119' — the stale dated instruction survives as actionable two-plus days after its subject ceased to exist.",
+     "evidence_quote": "- [ ] **DUE TODAY (surfaced from SCHEDULED) — Dependabot [#93](https://github.com/kairali-digital/kairali-web-factory/pull/93) (minor+patch ×6): the 24h release-age hold on lucide-react@1.25.0 clears 18 Jul 13:58 IST.**",
+     "fix_suggestion": "Tick the line [x] with a pointer to the line-56 supersession record (per the file's move-to-DONE rule).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "BACKLOG.md:36 verbatim: an open '[ ] DUE TODAY' line instructing re-run + merge of Dependabot #93 (today = 18 Jul per the line's own '18 Jul 13:58 IST' clearance time), while line 56 records '[x] #93 CLOSED BY DEPENDABOT — superseded by #119'. A stale actionable instruction against a dead PR, surviving the file's own move-to-DONE rule; P3 appropriate."
+    },
+    {
+     "id": "C-DT-11",
+     "severity": "P3",
+     "file": "QUESTIONS.md",
+     "line": 3,
+     "claim": "Three session headers are date-only ('## 2026-07-13 · Day-0 scaffold session', plus 'Evening update' at line 14 and 'M2 master-setup session' at line 18) in a file the CLAUDE.md second-precision rule explicitly covers — date-only entries are, by the repo's own law, lint findings.",
+     "evidence_quote": "## 2026-07-13 · Day-0 scaffold session (Claude Code)",
+     "fix_suggestion": "Append a hygiene note recording best-known times for the three day-0 headers (or annotate them 'pre-rule, time unknown') so the lint exception is explicit.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified date-only session headers at QUESTIONS.md:3 ('## 2026-07-13 · Day-0 scaffold session'), :14 ('Evening update'), :18 ('M2 master-setup session'). QUESTIONS.md is in the CLAUDE.md second-precision list and the law grandfathers nothing; grep finds no existing hygiene note or exception on record. The headers predate the rule's same-day adoption (wiki/log.md:9, 16:30 IST) by hours, which is why P3 cosmetic is the right level — confirmed as flagged."
+    },
+    {
+     "id": "C-DT-12",
+     "severity": "P3",
+     "file": "QUESTIONS.md",
+     "line": 149,
+     "claim": "Entry header uses a date-only stamp with a vague qualifier — '## 2026-07-14 (late)' — instead of HH:MM:SS IST; the same '(late)' stamp appears in DECISIONS.md:190 for the twin entry, so neither record can be placed against the other 14-Jul entries that carry real times.",
+     "evidence_quote": "## 2026-07-14 (late) — kairalifranchise.com pre-build: BLOCKED on money + domain (Abilash)",
+     "fix_suggestion": "Append a note fixing both '(late)' stamps to their real times (PR #41 merge time 23:57:59 IST is the nearest machine anchor).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "QUESTIONS.md:149 verbatim '## 2026-07-14 (late) — kairalifranchise.com pre-build: BLOCKED...' and the twin '(late)' stamp at DECISIONS.md:190 both verified — date-only-plus-vague-qualifier stamps written well after the 13 Jul second-precision rule took effect, in two covered files. P3 stands."
+    },
+    {
+     "id": "C-DT-13",
+     "severity": "P3",
+     "file": "BACKLOG.md",
+     "line": 159,
+     "claim": "DONE entries violate BACKLOG's own binding rule ('Finishing work = move the line to DONE with a second-precision IST timestamp'): line 159 is date-only '2026-07-13 (day)', and lines 144/157/158 use approximate minute stamps '~09:20 IST', '~18:30 IST', '~17:30 IST'.",
+     "evidence_quote": "- [x] 2026-07-13 (day) — Factory stood up end-to-end: repo→org→Vercel Pro, hooks, CI, wiki, morning brief, migration playbook, Vercel deploy pipeline verified",
+     "fix_suggestion": "Backfill from git commit times (they carry second precision automatically) or annotate the four stamps as pre-rule approximations.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "BACKLOG.md's own binding rule (lines 3-5: 'Finishing work = move the line to DONE with a second-precision IST timestamp') verified, and the violating DONE stamps confirmed at lines 144 ('~09:20 IST'), 157 ('~18:30 IST'), 158 ('~17:30 IST'), 159 ('2026-07-13 (day)'). BACKLOG itself was created 18:47:18 on 13 Jul (after the rule), so these were written under the rule, not before it. P3 stands."
+    },
+    {
+     "id": "C-DT-14",
+     "severity": "P3",
+     "file": "wiki/log.md",
+     "line": 3,
+     "claim": "The log's first entry is date-only ('2026-07-13 ·') in the committed log spine where the same file's 9th line records that 'date-only entries are a lint finding' became law that very day — the rule's own home file opens with a violation.",
+     "evidence_quote": "- 2026-07-13 · Repo created (AbhilashKairali/kairali-web-factory), launch pack",
+     "fix_suggestion": "Append a hygiene note stamping the repo-creation entry from git history (first commit's %ci time) rather than editing the entry.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/log.md:3 verbatim '- 2026-07-13 · Repo created...' (date-only) and line 9 in the same file records the second-precision rule being added to CLAUDE.md that same day — the committed log spine opens with an entry that fails its own file's law, and no hygiene note or exception exists on record. P3 stands."
+    },
+    {
+     "id": "C-DT-15",
+     "severity": "P3",
+     "file": "DECISIONS.md",
+     "line": 426,
+     "claim": "Append-only files contain entries out of chronological order with no backfill marker: DECISIONS.md line 417 (16:41:07 IST) precedes line 426 (16:38:44 IST), and QUESTIONS.md shows the same (13:20:00 at line 262 before 13:08:00 at line 267; 16:35:00 at line 288 before 15:54:00 at line 298) — unlike wiki/log.md, which stamps such cases 'BACKFILLED', these look like silent insertion or backdating.",
+     "evidence_quote": "## 2026-07-17 16:38:44 IST — D-RAMP-STEPS step 1 of 3: leaf-700 (Abilash, in-chat ruling; applied same session)",
+     "fix_suggestion": "Adopt the wiki/log.md 'BACKFILLED' convention in DECISIONS/QUESTIONS whenever an entry is appended with an earlier timestamp.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "All three out-of-order pairs verified: DECISIONS.md:417 (16:41:07 IST) precedes :426 (16:38:44 IST); QUESTIONS.md:262 (13:20:00) precedes :267 (13:08:00) and :288 (16:35:00) precedes :298 (15:54:00) — no backfill marker on any. The contrasting 'BACKFILLED' convention genuinely exists in wiki/log.md (lines 33-41), so the inconsistency claim holds. P3 appropriate — entries drafted in-session can legitimately land slightly out of order, but the files' append-only framing plus the sibling convention makes the unmarked non-monotonicity a real hygiene gap."
+    },
+    {
+     "id": "C-DT-16",
+     "severity": "P3",
+     "file": "docs/reports/2026-07-20-team-pending-checklist.md",
+     "line": 21,
+     "claim": "A committed report record uses a masked, invalid time '20 Jul ~12:5x IST' where the repo's timestamp law requires second precision — the 'x' placeholder makes the completion time unverifiable.",
+     "evidence_quote": "- [x] ✔ DONE 20 Jul ~12:5x IST BY AGENT (D-20260720-17 click delegation): kfi5o3g1a promoted to Production",
+     "fix_suggestion": "Replace the masked digit with the real minute/second from the session record or Vercel deployment timestamp.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "docs/reports/2026-07-20-team-pending-checklist.md:21 quote verbatim: '✔ DONE 20 Jul ~12:5x IST BY AGENT...' — a masked digit in a committed report record where the repo law requires second precision, making the completion time unverifiable. P3 stands."
+    }
+   ]
+  },
+  {
+   "dimension": "links-paths",
+   "coverage": "SCANNED (repo root: /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/worktrees/wf_eddc744d-389-3): all 354 markdown files in scope (root *.md, docs/** recursive, wiki/** recursive) with an automated extractor over backticked path tokens, markdown link targets, and script invocations — every candidate tested for existence relative to BOTH repo root and the doc's own directory (~1.9k raw hits triaged to zero). Separately verified: (1) every `node/bash/python scripts/...` invocation in any markdown file — all invoked scripts exist; (2) every markdown anchor link (intra-file `#x` and cross-file `file.md#x`) in scope against GitHub-slugified headings of the target — 0 broken; (3) backticked bare filenames (no slash) against all repo basenames — 86 candidates triaged; (4) Q-*/D-* register IDs cited in CLAUDE.md, START_HERE.md, MORNING_BRIEF.md, STATUS.yaml, the four latest handovers and the team-pending checklist against QUESTIONS.md/DECISIONS.md/DIRECTIVES.md/decisions//wiki/log.md; (5) root-vs-docs mirrored doc pairs byte-compared (one divergent found); (6) site-relative refs (app/*, content/*) in docs/whatisayurveda-research/* verified against sites/whatisayurveda.com/ — all present except self-aware/planned ones; (7) os-2026 package + workflows trees fully walked. DELIBERATELY SKIPPED: external URLs (no network); references the citing line itself marks NOT BUILT / does-not-exist / proposed / build-#N (the dominant category — MASTER_PIPELINE, WIRING_PLAN, inventory-existing-rules and the research-* docs are systematically self-aware); explicitly git-ignored/local artifacts (state/boot.json, agent-log.jsonl, docs/archive/*.csv, ~/Claude/.../image-library/); per-site pipeline artifact conventions (seeds.json, business-case.md, 02-voc.md etc. — future deliverable names, not references); git branch names, npm package names, live-site URL paths, legacy-site URL inventories, DataForSEO API endpoint paths; non-markdown files (.yml workflows, STATUS.yaml beyond ID mining, scripts' internal paths) as outside the stated sweep; references to files in other repos (abhilashkr tenant AGENTS.md, KTAHV WP pipeline push_to_wp.py, CLAUDE_FLEET.md in the WP-fleet workspace, M2_MASTER_SETUP_FINAL_v2.md in the external launch pack).",
+   "notes": "Two scanner false-positive classes were caught and corrected during the run (lstrip('./') mangling .github/ paths; a /.git substring filter accidentally excluding .github/ from the basename inventory) — gate.yml/factory-gate.yml/uptime.yml and .github/workflows/* references are all VALID. Notable non-findings verified good: all boot/onboarding chain references (README -> START_HERE -> PROJECT_CONTEXT -> CLAUDE.md -> checklists) resolve; START_HERE.md does contain the Step-3 scaffold prompt the runbook promises; launches/<domain>/design-intake/REFERENCES.md exists for all 8 scaffolded launches; testimonials.json, scripts/lib/review-brief.mjs, packages/compliance/src/{lint,rules}.js, design-review/PROMPT.md (at scripts/), tests/factory/ all exist. The three unregistered Q-IDs (C-LF-01/02) are the highest-signal items: QUESTIONS.md is append-only so absence is structural, and all sibling IDs on the same lines resolve — classic log-the-ID-but-forget-the-register slips. C-LF-03/07 are one root cause (GPT ZIP shipped dangling standards links; repo re-homed the standards but never rewired the links) split by tree because the workflows/ tree is the adopted working copy while package/ is the archived deliverable.",
+   "raw_count": 9,
+   "refuted": 4,
+   "surviving": [
+    {
+     "id": "C-LF-01",
+     "severity": "P1",
+     "file": "MORNING_BRIEF.md",
+     "line": 28,
+     "claim": "The owner-facing morning brief asks Abilash for a ruling on Q-VR-DISTANCES, but that question ID is defined nowhere — not in QUESTIONS.md (which is append-only, so absence cannot mean 'closed and pruned'), not in DECISIONS.md, DIRECTIVES.md, or wiki/log.md. The three sibling IDs cited on the same line (Q-GATE1-LP-GOLDEN, Q-GO-SCIENCE-RUBRIC, Q-ORG-MARKETPLACE-URLS) all resolve. Same dangling ID also appears in STATUS.yaml:136 and docs/reports/2026-07-20-team-pending-checklist.md:32.",
+     "evidence_quote": "Also pending: **Q-GO-SCIENCE-RUBRIC**, **Q-VR-DISTANCES**, **Q-ORG-MARKETPLACE-URLS**.",
+     "fix_suggestion": "Either register Q-VR-DISTANCES in QUESTIONS.md (reconstruct the Villa Raag distances question from the VR lane context) or correct the three citing surfaces (MORNING_BRIEF.md:28, STATUS.yaml:136, docs/reports/2026-07-20-team-pending-checklist.md:32) to the real ID.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Repo-wide grep (no extension filter, .git excluded) finds Q-VR-DISTANCES only on citing surfaces: MORNING_BRIEF.md:28 (quote matches verbatim), STATUS.yaml:136, docs/reports/2026-07-20-team-pending-checklist.md:32, docs/reports/2026-07-18-handover-addendum-golden-pages.md:21, sites/kairali.ai/app/status-data.json:209. It has no defining entry in QUESTIONS.md (header confirms append-only), DECISIONS.md, DIRECTIVES.md, or wiki/log.md; even 'distance' yields zero QUESTIONS.md hits. Sibling IDs on the same line all resolve (Q-GO-SCIENCE-RUBRIC @QUESTIONS.md:467, Q-ORG-MARKETPLACE-URLS @475, Q-GATE1-LP-GOLDEN @479/488). No register tracks the dangling ID itself, so not already-on-record. Owner-facing brief asks for a ruling on an unregistered question — P1 stands."
+    },
+    {
+     "id": "C-LF-02",
+     "severity": "P2",
+     "file": "docs/reports/2026-07-19-handover-morning-fullsite.md",
+     "line": 25,
+     "claim": "The handover's one-word-rulings queue cites Q-BULK-POSTBUILD-VETO and Q-GATE2-LP-BATTERY; neither ID exists in QUESTIONS.md (append-only), DECISIONS.md, DIRECTIVES.md, or wiki/log.md, while every other ID on the same line resolves. Worse, STATUS.yaml:104 asserts 'Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY)' — a written ruling whose record resolves nowhere in the repo.",
+     "evidence_quote": "Q-EQ-GATE2-TRUTH-LANE · Q-BULK-POSTBUILD-VETO · Q-BL-GATE2-PERPLEXITY-DEADLOCK (+ Q-BL-BEAUTY-ENTITY, Q-BL NDFF ratification) · Q-GATE2-LP-BATTERY",
+     "fix_suggestion": "Register both questions in QUESTIONS.md with their context (bulkayurveda post-build veto; LP-battery Gate-2 reviewer alternation), recording the ruling text for Q-GATE2-LP-BATTERY if it was in fact given in chat; then reconcile STATUS.yaml:104 and 208.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches docs/reports/2026-07-19-handover-morning-fullsite.md:25 verbatim. grep for Q-BULK-POSTBUILD-VETO / Q-GATE2-LP-BATTERY across QUESTIONS.md, DECISIONS.md, DIRECTIVES.md, wiki/log.md returns nothing (exit 1); even the topic word 'alternation' has zero hits in all four registers. Both IDs appear only in STATUS.yaml (:104, :208), the handover, Phase-A evidence JSON, and status-data.json mirrors. STATUS.yaml:104 indeed asserts 'Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY)' — a written ruling resolving nowhere. Neighbor IDs on the same handover line resolve (Q-EQ-GATE2-TRUTH-LANE @QUESTIONS.md:496, Q-BL-GATE2-PERPLEXITY-DEADLOCK @487, Q-BL-BEAUTY-ENTITY @499). No existing record flags these danglers."
+    },
+    {
+     "id": "C-LF-04",
+     "severity": "P2",
+     "file": "docs/M2_SHOPIFY_SETUP_PROMPT.md",
+     "line": 1,
+     "claim": "docs/M2_SHOPIFY_SETUP_PROMPT.md is a stale v1 copy that has silently diverged from the root M2_SHOPIFY_SETUP_PROMPT.md (v2) by 86 diff lines — the docs copy lacks v2's complexity-triage block (E5 forever-human rule for irreversible store actions), the ≤4-scoped-MCP rule, and the sub-agent roster. Every other root/docs mirror pair (KAIRALI_WP_FLEET_OS_v1.0.md, PHASE0_STABILIZE_PLAYBOOK.md, DEVELOPER_RUNBOOK_DAY1.md) is byte-identical. DEVELOPER_RUNBOOK_DAY1.md:60 tells the Day-1 engineer to 'open `M2_SHOPIFY_SETUP_PROMPT.md`' by bare name, so which content he pastes depends on which copy he finds.",
+     "evidence_quote": "# M2 SHOPIFY SETUP PROMPT — paste as ONE message into Claude Code",
+     "fix_suggestion": "Overwrite docs/M2_SHOPIFY_SETUP_PROMPT.md with the root v2 content (or delete the docs copy and leave one canonical file), matching the byte-identical convention of the other mirrored pairs.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Root M2_SHOPIFY_SETUP_PROMPT.md header reads 'v2 — paste as ONE message' (mentor method: scoped MCPs ≤4, sub-agent roster, complexity triage); docs/M2_SHOPIFY_SETUP_PROMPT.md header matches the quoted v1 title and greps zero hits for '≤4', 'scoped MCP', 'sub-agent', 'triage' (root has all). Plain diff = 97 lines (finder said 86 — counting-method variance, divergence itself is real). Other mirror pairs byte-identical: docs/KAIRALI_WP_FLEET_OS_v1.0.md, docs/PHASE0_STABILIZE_PLAYBOOK.md, docs/team/DEVELOPER_RUNBOOK_DAY1.md (cmp identical). Both runbook copies' Step 5 (line 60) say 'open `M2_SHOPIFY_SETUP_PROMPT.md`' by bare name. One nit: the docs v1 copy DOES contain the E5 forever-human extension (its lines 9-10) — what it lacks is the complexity-triage block wrapping it — but the core stale-divergent-copy defect is verified. Aggravator: docs/process/inventory-existing-rules.md:20/:383 read the stale docs copy as a doctrine source."
+    },
+    {
+     "id": "C-LF-05",
+     "severity": "P2",
+     "file": "docs/reports/2026-07-19-handover-morning-fullsite.md",
+     "line": 3,
+     "claim": "The handover's read-first line points the next session at `docs/reports/2026-07-18-golden-gate-battery.md`, which does not exist on main — per docs/reports/2026-07-19-m1-frozen-pr-dispositions.md:38 it lives only on the frozen branch feature/golden-gate-battery (PR #163, HOLD-UNTIL-M4-PILOT), so a session booting from main follows a predecessor pointer that 404s (the exact squash-merge/orphaned-branch trap the repo's own learnings warn about).",
+     "evidence_quote": "the FULL battery report `docs/reports/2026-07-18-golden-gate-battery.md` (PR #163",
+     "fix_suggestion": "Annotate the reference in the handover with its actual location ('on feature/golden-gate-battery branch, PR #163 — not on main'), or cherry-pick the report file to main since it is cited by two handovers as required predecessor reading.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches docs/reports/2026-07-19-handover-morning-fullsite.md:3. ls confirms docs/reports/2026-07-18-golden-gate-battery.md does not exist on main; branch feature/golden-gate-battery exists (local + origin) and the dispositions report line 38 records PR #163 (326 files) as HOLD-UNTIL-M4-PILOT, so the file will not reach main until post-pilot. No register tracks the broken pointer (the dispositions report tracks the PR hold, not the handover's 404ing read-first reference). Mitigation noted but insufficient: the parenthetical '(PR #163' hints at the location without saying the file is absent from main, and launches/kairaliequipment.com/approvals.yaml:90 cites the same path as approval evidence ('battery branch a590d66'). Minor overstatement: only one handover cites it as predecessor reading (the 18 Jul addendum cites it as an in-flight deliverable). P2 stands."
+    },
+    {
+     "id": "C-LF-09",
+     "severity": "P3",
+     "file": "docs/process/MASTER_PIPELINE.md",
+     "line": 1993,
+     "claim": "The §12.3 'PHANTOM MACHINERY — named by doctrine, does not exist' list is now false on main for at least three entries: scripts/shopify-catalog-lint.mjs exists, docs/process/rubrics/ exists (README.md + G6-PRE-STRINGS.md), and .claude/agents/ exists containing all six agents (so 'the six sub-agents' invocability' is no longer phantom). The list is pinned 'verified at a206791', but as a standing doc it now tells readers to rebuild machinery that is already built; docs/process/inventory-existing-rules.md:620 carries the same stale 'all absent' assertion.",
+     "evidence_quote": "`agent-log.jsonl` · `scripts/shopify-catalog-lint.mjs` · `docs/SHOPIFY_AUDIT_2026-07-13.md` · `packages/product-card/CONTRACT.md` · `docs/THEME_TOKEN_MAP.md` · `wiki/shopify.md`",
+     "fix_suggestion": "Add a dated errata line under §12.3 marking which phantom entries have since been built (shopify-catalog-lint.mjs, docs/process/rubrics/, .claude/agents/ wiring), and mirror it at inventory-existing-rules.md:620.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches MASTER_PIPELINE.md §12.3 (phantom list at line ~1993). Re-checked existence on main: scripts/shopify-catalog-lint.mjs EXISTS; docs/process/rubrics/ EXISTS (README.md + G6-PRE-STRINGS.md); .claude/agents/ EXISTS with all six agents (catalog-compliance, content-geo-writer, design-qa, logger, security-auditor, seo-aeo-geo-auditor) — so 'the six sub-agents' invocability … .claude/agents/ does not [exist]' is now false. Five other list entries remain genuinely absent (agent-log.jsonl, SHOPIFY_AUDIT_2026-07-13.md, product-card/CONTRACT.md, THEME_TOKEN_MAP.md, wiki/shopify.md), so the list is partially stale, exactly as claimed. inventory-existing-rules.md:620 carries the same now-false 'all absent' assertion. The '(verified at a206791)' pin is an honest timestamp but no errata exists anywhere (grep for phantom/§12.3 staleness in QUESTIONS/DECISIONS/DIRECTIVES/LEARNINGS: nothing), so the standing doc misleads current readers. P3 as filed."
+    }
+   ]
+  },
+  {
+   "dimension": "config-manifests",
+   "coverage": "SCANNED (all in the worktree at main, read-only): (1) Manifests — root + 15 sites/* + 14 packages/* package.json all parse; name-vs-dir mapping tabulated; every main/module/types/exports/bin/files path existence-checked (0 broken); private:true on all 30; two config-only site dirs (ayurvedichealingvillage.com, whyayurveda.org) confirmed deliberate scaffolds via the loud EXEMPT entries in scripts/factory-matrix-lint.mjs. (2) Symlinks — `find -L . -type l` (excl. .git/node_modules): zero dangling. (3) Junk — `git ls-files` grepped for .DS_Store/*.log/swap/~/node_modules/.bak/.orig/.rej/Thumbs.db: zero; `git ls-files -i -c` (tracked-but-ignored): zero; the two git-quoted paths are em-dash brand-manual PDFs (deliberate). (4) .gitignore semantics via `git check-ignore -v`: agent-log.jsonl and state/ truly ignored as documented; found the .env.example negation defeat (C-CM-03). (5) YAML — 24 files parsed with the repo's own js-yaml 4.3.0 (python3 has no yaml module; no structural-eyeball fallback needed): 3 workflows + dependabot.yml, 4 gates/*.yaml, STATUS.yaml, pnpm-workspace.yaml, 8 launches/*/approvals.yaml, 3 evolution/*.yaml, 3 docs/process/os-2026/merge/*.yaml, content/ledger.yaml — all parse. (6) JSON — 17 site.config.json (schema fields complete, consistent extra `brand` key → C-CM-08), docs/reports/index.json (19 entries, every referenced file exists, no duplicate report_ids), decisions/index.json (15/15 files exist), turbo.json, tsconfig.base.json, .claude/settings.json + launch.json, scripts/uptime/sites.json, evolution/scout-schema.json, sites/kairali.ai/app/status-data.json — all parse; duplicate-JSON-key scan clean; state/ absent in worktree (gitignored, regenerated per session — by design, verified against .gitignore line 38). (7) Repo's own read-only lints executed: factory-matrix-lint PASS (17 sites, 4 loud exemptions), gate-registry-lint PASS (77 gates × 3 classes; all 77 script_or_agent_ref paths exist), class-map-lint PASS. (8) Cross-checks: approvals.yaml domain field vs folder 8/8 match; hooks referenced in .claude/settings.json all exist in scripts/hooks/; locked-fact greps (38777 only in ban-documentation/lint corpus; no stray contact-email variants in facts/social packages — retrofit@ verified verbatim against the mined inventory). DELIBERATELY SKIPPED: pnpm-lock.yaml (300KB machine-generated, only workspace file not parsed); .gitleaks.toml machine-parse (python <3.11, no tomllib/node toml parser — structural eyeball only, nothing suspicious); test/fixtures/**（several are INTENTIONALLY malformed, e.g. verdict.truncated.json); content-mined/ (immutable raw layer per doctrine a); markdown prose outside config surfaces, launches/audits report content, and site TSX code (other Phase-C dimensions); live-URL probing (read-only repo review).",
+   "notes": "Near-findings deliberately NOT filed: (a) audits/ filename convention drift (some files drop the TLD: kairalicenters-2026-07-16.md, villaraag-2026-07-16.md vs kairali.com-2026-07-16.md) — cosmetic, outside config/manifest surfaces; (b) STATUS.yaml snehachowdhary.com row carrying theblushlounge.com blocker text + preview_url — reads as copy-paste but \\\"this domain 301s at live (D#6)\\\" makes it plausibly deliberate (domain will redirect to the pilot), left to the owner-record dimension; (c) docs/reports/index.json RPT-20260720-CHASE dated 2026-07-19 22:40 — id/date mismatch is plausibly deliberate (Monday sheet prepared the night before); (d) uptime probe of whatisayurveda.org (site dir is .com) — the .org is the live legacy content per STATUS D#2, deliberate; (e) CODEOWNERS handle @AbhilashKairali vs the owner's \\\"Abilash\\\" spelling — used consistently and unverifiable against GitHub from here, and the sites/abhilashkr domain uses the same H-spelling, so treated as the real account spelling. Severity calls worth review: C-CM-01/C-CM-02 rated P1 because the dashboard and the down-alert listener are the two surfaces the owner personally relies on; both defects are invisible from inside a normal session. The two P1s compose badly: a stale dashboard AND a blind uptime monitor mean a live-site outage tonight would surface nowhere.",
+   "raw_count": 9,
+   "refuted": 0,
+   "surviving": [
+    {
+     "id": "C-CM-01",
+     "severity": "P1",
+     "file": "sites/kairali.ai/app/status-data.json",
+     "line": 3,
+     "claim": "The committed kairali.ai dashboard snapshot is stale against its own source of truth in the very same commit: status-data.json was generated 2026-07-20 21:41:11 IST, but STATUS.yaml (line 21) carries updated 2026-07-20 22:40:00 IST with a whole session-close narrative (SUNAJ CLAIM MACHINE-VERIFIED, NIGHT MAILBOX RECONCILE, CRM no-auth PII finding) that appears nowhere in the JSON (grep count 0). Both files last changed together in commit 7599bf6 — the regen ran BEFORE the final STATUS.yaml edit, inverting the CLAUDE.md session-end order (update STATUS.yaml, THEN run status-build.mjs). The live kairali.ai /status dashboard renders this JSON, so the owner-facing fleet-pulse view is an hour behind the truth file.",
+     "evidence_quote": "\"generated\": \"2026-07-20 21:41:11 IST\",",
+     "fix_suggestion": "Re-run `node scripts/status-build.mjs` after the current STATUS.yaml state and commit the regenerated sites/kairali.ai/app/status-data.json; consider making status-build.mjs (or a lint) fail when STATUS.yaml's updated stamp is newer than the JSON's generated stamp so the ordering mistake becomes mechanical.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Mechanically re-verified: status-data.json line 3 reads generated 2026-07-20 21:41:11 IST while STATUS.yaml meta.updated is 2026-07-20 22:40:00 IST carrying the SUNAJ/mailbox-reconcile/CRM-PII session-close narrative; grep for SUNAJ, MAILBOX RECONCILE, no-auth and 22:40 in the JSON all return 0; git log shows both files last changed together in 7599bf6, so the regen provably ran before the final STATUS.yaml edit, inverting the CLAUDE.md session-end order. No existing record in QUESTIONS.md/DECISIONS.md/DIRECTIVES.md. P1 fits: the owner-facing fleet-pulse dashboard renders a snapshot an hour behind the truth file."
+    },
+    {
+     "id": "C-CM-02",
+     "severity": "P1",
+     "file": "scripts/uptime/sites.json",
+     "line": 2,
+     "claim": "The uptime listener's probe list (the only down-alert mechanism, Ship Gate B10) has not been touched since its creation commit 56f6f77 on 2026-07-14 and omits live fleet sites: STATUS.yaml marks whyayurveda.org stage \"live\" with live_url https://whyayurveda.org (lines 306-313) and kairali.ai stage \"live\", yet `grep whyayurveda scripts/uptime/sites.json` returns nothing and kairali.ai is likewise absent; the theblushlounge.com exclusion note (\"until Sunaj restores its origin\") also predates the entire pilot rebuild. A live site that goes down today produces no GitHub issue and no email to the owner.",
+     "evidence_quote": "theblushlounge.com EXCLUDED until Sunaj restores its origin (known-down).",
+     "fix_suggestion": "Add whyayurveda.org (and kairali.ai if wanted) to scripts/uptime/sites.json, refresh the _doc's \"Sites verified live 14 Jul 2026\" stamp, and re-decide the theblushlounge.com exclusion against the current pilot state; longer-term, lint the probe list against STATUS.yaml stage==live so the two can never drift silently.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified: scripts/uptime/sites.json lists 10 sites; grep for whyayurveda and kairali.ai returns nothing; file history is only its creation commits (56f6f77/2d4560b, PR #28, 14 Jul 2026). STATUS.yaml lines 306-313 mark whyayurveda.org stage live with verified live_url. The theblushlounge.com known-down exclusion note predates the pilot rebuild (site is now human_audit, Deployed Ready). QUESTIONS.md:90 and BACKLOG.md:17 mention the uptime monitor but never the live-site coverage gap, so it is not already on record. A live fleet site going down today produces no alert - trust-surface mistake, P1 stands."
+    },
+    {
+     "id": "C-CM-03",
+     "severity": "P2",
+     "file": ".gitignore",
+     "line": 40,
+     "claim": "The `.env*` pattern appended at line 40 (commit 9ff96db, 19 Jul) re-ignores `.env.example`, silently defeating the deliberate `!.env.example` negation at line 15 — gitignore's last-match-wins rule makes line 40 the deciding pattern, proven by `git check-ignore -v .env.example` → \".gitignore:40:.env*\t.env.example\". No .env.example is currently tracked, so the documented escape hatch for committing env templates is dead. Lines 39-40 (`.vercel`, `.env*`) also duplicate the existing rules at lines 10 and 13-14 — a copy-paste append slip.",
+     "evidence_quote": ".env*",
+     "fix_suggestion": "Delete the redundant lines 39-40 (`.vercel` and `.env*` are already covered by lines 10 and 13-14, whose ordering keeps `!.env.example` working); verify with `git check-ignore -v .env.example` returning the negation rule.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-ran the proof: git check-ignore -v .env.example returns .gitignore:40:.env* (last-match-wins), so the deliberate !.env.example negation at line 15 is dead; no .env.example is tracked (git ls-files empty); lines 39-40 (.vercel, .env*) duplicate the coverage of lines 10 and 13-14 - a copy-paste append slip. No disposition in the records. P2 (internal config mistake with drift risk) is correct."
+    },
+    {
+     "id": "C-CM-04",
+     "severity": "P2",
+     "file": ".claude/launch.json",
+     "line": 120,
+     "claim": "Port collision from a copy-paste slip: the prod launch configs count up 4310→4315 but `kairaliequipment-prod` (added after `theblushlounge-prod`) reuses 4315 instead of taking 4316 — both its `-p 4315` runtimeArg (line 118) and its `\"port\": 4315` (line 120) duplicate theblushlounge-prod's port (line 96). The two servers can never run together, and port-keyed preview tooling can attach to the wrong site.",
+     "evidence_quote": "\"port\": 4315",
+     "fix_suggestion": "Change kairaliequipment-prod to a unique port (4316) in both the runtimeArgs `-p` value and the `port` field.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified in .claude/launch.json: theblushlounge-prod carries port 4315 (line 96) and kairaliequipment-prod, added after it, also carries -p 4315 in runtimeArgs plus \"port\": 4315 at line 120, breaking the 4310-4315 count-up sequence. The two prod servers cannot run simultaneously and port-keyed tooling can attach to the wrong site. No record dispositions it. P2 correct."
+    },
+    {
+     "id": "C-CM-05",
+     "severity": "P2",
+     "file": ".github/workflows/factory-gate.yml",
+     "line": 27,
+     "claim": "The change-detection contract comments carry stale matrix counts: line 27 says \"the two 8-site matrices below\" and lines 34/37 say \"the 16 required per-site contexts\" / \"all 16 jobs spawn and report SUCCESS\", but both `site: [...]` matrices (lines 418 and 467) now list 13 sites each — 26 jobs/contexts, not 16. These comments document the branch-protection required-checks contract; anyone configuring required contexts or auditing Actions spend from them works with numbers ~40% low.",
+     "evidence_quote": "# CHANGE DETECTION for the two 8-site matrices below. NOT a weakening of any",
+     "fix_suggestion": "Reword the three comment lines to a count-free formulation (\"the per-site matrices below\" / \"every required per-site context\") or state 13-site/26-context and accept re-editing on each site addition.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified in .github/workflows/factory-gate.yml: line 27 says 'the two 8-site matrices below' and the same comment block says '16 required per-site contexts' and 'all 16 jobs spawn and report SUCCESS', while both site matrices (lines 418 and 467) each list 13 sites - 26 per-site contexts. The comments document the branch-protection required-checks contract and are ~40% low. The only '8-site' record hit (DECISIONS.md:480) is an unrelated email-recipient note, not a disposition. P2 correct."
+    },
+    {
+     "id": "C-CM-06",
+     "severity": "P2",
+     "file": ".github/workflows/uptime.yml",
+     "line": 47,
+     "claim": "The GitHub-issue body the owner receives on a site-down alert contains a garbled sentence with dropped words that inverts its meaning: \"This issue auto-closes commentary is manual — close it once resolved.\" The trailing clause shows the issue does NOT auto-close (closing is manual), yet the mangled text opens by asserting it auto-closes — an owner reading it could leave a stale down-alert open forever expecting self-closure.",
+     "evidence_quote": "This issue auto-closes commentary is manual — close it once resolved.",
+     "fix_suggestion": "Rewrite as: \"This issue does not auto-close — commentary and closing are manual; close it once resolved.\"",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified: uptime.yml line 47 contains verbatim 'This issue auto-closes commentary is manual - close it once resolved.' The 53-line workflow has no close/recovery step anywhere, so the issue genuinely never auto-closes - the mangled opening asserts the opposite of reality in the exact GitHub-issue body the owner reads during an outage. P2 as claimed (arguably owner-facing, but no upgrade path needed)."
+    },
+    {
+     "id": "C-CM-07",
+     "severity": "P3",
+     "file": "sites/arogyashala.in/package.json",
+     "line": 2,
+     "claim": "Site package names follow two different conventions with no documented rule: 3 sites use scoped names (@kairali/site-abhilashkr, @kairali/site-arogyakendra, @kairali/site-kairali-ai) while the other 12 use bare domain names (arogyashala.in, kairali.com, theblushlounge.com, ...); even within the scoped trio, site-arogyakendra drops the .com its directory carries. Nothing breaks today (gate-emit.mjs reads the name from the manifest before filtering), but every turbo/pnpm --filter invocation must first look up which convention a site got.",
+     "evidence_quote": "\"name\": \"arogyashala.in\",",
+     "fix_suggestion": "Pick one convention (bare domain matches the sites/<domain> directory law), rename the three @kairali/site-* outliers, and update the two --filter references in .claude/launch.json that use the scoped names.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified across all 15 site package.json files: exactly 3 scoped names (@kairali/site-abhilashkr, @kairali/site-arogyakendra, @kairali/site-kairali-ai) vs 12 bare domain names, and site-arogyakendra drops the .com its directory (sites/arogyakendra.com) carries. sites/README.md documents no package-naming rule; DECISIONS.md's brand:none ruling is unrelated. Nothing breaks today - P3 cosmetic/consistency is the right level."
+    },
+    {
+     "id": "C-CM-08",
+     "severity": "P3",
+     "file": "sites/README.md",
+     "line": 12,
+     "claim": "The documented site.config.json schema (\"The compliance lint and shared packages read this file. Schema:\") lists only domain/entity/register/locales/targetMarkets/video, but every one of the 17 site.config.json files on disk also carries a `brand` key (e.g. sites/theblushlounge.com/site.config.json line 8: \"brand\": \"blush\") — a new scaffolder following the README verbatim would omit a field the whole fleet ships.",
+     "evidence_quote": "\"domain\": \"ayurvedichealingvillage.com\",",
+     "fix_suggestion": "Add the `brand` field (with its allowed values and which package consumes it) to the schema block in sites/README.md.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified: sites/README.md line 12 opens the documented schema (domain/entity/register/locales/targetMarkets/video) with no brand field, while grep -L '\"brand\"' over all 17 site.config.json files returns zero misses - every config on disk carries brand (e.g. theblushlounge.com line 8 brand: blush). A scaffolder following the README verbatim omits a fleet-universal field. P3 correct."
+    },
+    {
+     "id": "C-CM-09",
+     "severity": "P3",
+     "file": "sites/abhilashkr/site.config.json",
+     "line": 2,
+     "claim": "Directory-naming convention breach: sites/README.md line 3 states \"One Next.js app per domain: `sites/<domain>`\", and this site's own config declares domain \"abhilashkr.com\", but the directory is `sites/abhilashkr` — the only fleet site whose folder is not its domain (kairali.ai matches, healing.recipes matches). Any tooling that derives domain from the folder name gets \"abhilashkr\" instead of \"abhilashkr.com\".",
+     "evidence_quote": "\"domain\": \"abhilashkr.com\",",
+     "fix_suggestion": "Either rename the directory to sites/abhilashkr.com (touching the matrix-exempt entry in scripts/factory-matrix-lint.mjs and the @kairali/site-abhilashkr filter in .claude/launch.json) or add a loud README note that this imported site is the one sanctioned exception.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Re-verified: a directory-vs-domain comparison over all 17 site.config.json files finds exactly one mismatch - dir=abhilashkr, domain=abhilashkr.com - against sites/README.md line 3's 'One Next.js app per domain: sites/<domain>' law. Checked for an existing disposition: D-RULE-MATRIX-EXEMPT (DIRECTIVES.md:17, DECISIONS.md:400) sanctions only the CI-matrix exemption, and QUESTIONS.md Q10's resolution records the import destination without ruling on the naming breach - so not already on record. P3 correct."
+    }
+   ]
+  },
+  {
+   "dimension": "secrets-screen",
+   "coverage": "SCANNED (all 2,375 tracked files via git grep unless noted): token/key shapes — ghp_/gho_/github_pat_, AKIA (plus ASIA presigned-URL spot-check: Expires=1780574779 confirms the .gitleaks.toml-documented Perplexity S3 URLs are expired), AIza, sk-/sk-ant/sk-proj (word-boundary refined after a 744KB false-positive wave from words like 'ask-for-…'), JWT eyJ…, Bearer/Basic auth headers, BEGIN…PRIVATE KEY, Shopify shpat_/shpss_/shpca_/shppa_, Slack xox*, GitLab glpat-, npm_, SendGrid SG., Tavily tvly-, Perplexity pplx-, Mailchimp *-usN, basic-auth-in-URL (user:pass@host), password=/api_key=/token= assignments with real-looking values, provider env-var literal assignments (OPENAI/DATAFORSEO/VERCEL/etc.). Config surfaces: tracked .env files (none exist), .gitignore env rules, .gitleaks.toml all six allowlist entries cross-checked against their target files (both documented redactions verified — one found self-defeating), gate.yml gitleaks invocation (full-history scan, v8.30.1), .claude/settings.json + launch.json, scripts/hooks/*, scripts/dfs.sh (reads ~/.secrets, clean). PII sweep: freemail + phone-number greps across audits/, docs/reports/, docs/hg9/, docs/ops/ (staff/business numbers excluded per brief; Priya 38797 variants excluded), archive inventory CSVs greped for passport/visa/resume/patient/booking filename classes, GSC export CSVs (aggregate-only, clean), evidence JSON/TXT for auth headers (clean), docs/infra/SERVER_AUDIT. DELIBERATELY SKIPPED: binary evidence (PNG/JPG screenshots under audits/evidence/ and launches/ — no OCR pass, so a secret visible inside a screenshot would not be caught here), the referenced PDFs/DOCXs themselves (not in the repo — only their filenames are, which is what C-SS-01 covers), external liveness/restriction testing of the found Google Maps key (read-only session, no key exercised), and git history beyond tip (CI's full-history gitleaks covers pattern-matchable history; my manual screen was tip-only). One grep ('wp-admin…credentials') was blocked by the repo's guard.sh hook and re-run with equivalent non-triggering patterns — no coverage lost.",
+   "notes": "Ranked P1 → P3; 7 findings, well under the 25 cap, no truncation. Judgment calls: (1) C-SS-01 rated P1 not P0 — the repo is not a live site, but customer/guest PII distributed to all collaborators is a trust-surface exposure; the two sibling raw laptop inventories were already gitignored (lines 25-26), so the tracked categorized variant looks like an oversight, not a decision. (2) The Google Maps key rated P2 not P1: browser Maps keys are public-by-design on the source site; the finding is that it is uninspected/undocumented and structurally invisible to the CI scanner (terminator-charset gap in the default gcp-api-key regex — worth knowing beyond this one file). (3) NOT flagged: BACKLOG/QUESTIONS/DECISIONS entries describing credential incidents (Gmail-draft passwords, WhatsApp-shared creds, Eeshal's public-repo password) — all are docs-about-secrets with no values present, which is correct handling; scripts/test/seo-baseline.test.js uses obvious placeholders ('file-login'/'file-pass'); staff/vendor emails and group phone numbers in audits are in-policy internal records per the brief. All secret values in this report are redacted to first-6-chars + length per the dimension instruction (the verbatim-quote rule was subordinated to the redaction rule for those three quotes; file+line make each independently verifiable).",
+   "raw_count": 7,
+   "refuted": 1,
+   "surviving": [
+    {
+     "id": "C-SS-01",
+     "severity": "P1",
+     "file": "docs/archive/ARCHIVE_CATEGORIZED_BUSINESS.csv",
+     "line": 3532,
+     "claim": "A full inventory of a personal laptop's files is committed to the repo and exposes named private individuals tied to sensitive document types: guest/customer visa requests handled by KTAHV sales (line 3532 'Irene Request Visa', line 5617 'Restituta Request Visa'), passport scan images of a named person (lines 2256 'Passport_sneha_b.jpg' and 5427 'Passport_sneha_f.jpg'), a named individual's approved visa (line 2366), a guest room-booking form naming two customers with stay date (lines 2302-2303 'Room Booking Form - Lohita & Pooja on 18th March 2023'), plus 'Kairali_Patient_Directory' and six 'FrmPatientViewAllReport' patient-report export filenames (lines 2809-2816, 4127). Every repo collaborator (contract developers included) receives this personal-data map on clone — exactly the exposure class a security reviewer flags, and at odds with the repo's own privacy-policy stance (DPDP/GDPR, 'no data sale').",
+     "evidence_quote": "Laptop Download files/Irene Request Visa - sales ktahv.pdf,Sales & Marketing,Sales/Campaign,pdf,698265,2022-06-07",
+     "fix_suggestion": "Rebuild the CSV with sensitive personal rows removed or filenames generalized (e.g. 'visa-request-guest-01.pdf'), or move the raw inventory out of git to the Drive layer with only a hash-manifest pointer committed (the Evidence Law v2 off-repo pattern). Note the two sibling raw inventories are already gitignored (.gitignore lines 25-26) — this categorized variant escaped that same decision.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "All quoted rows verified verbatim in docs/archive/ARCHIVE_CATEGORIZED_BUSINESS.csv (3532 Irene visa, 5617 Restituta visa, 2256/5427 Passport_sneha, 2366 approved visa w/ name, 2302-2303 Room Booking Form naming two guests + stay date, 2809-2816 FrmPatientViewAllReport x8, 4127-4128 Kairali_Patient_Directory). The repo's own sanitization promise makes it a mistake, not a choice: ARCHIVE_CATEGORIZED.md:20-26 and DECISIONS.md:205 state sensitive rows are 'NOT in the committed index' and the CSV is 'every non-sensitive file' — these personal-data rows leaked through under business categories. Grep of QUESTIONS/DECISIONS/DIRECTIVES/LEARNINGS finds no existing flag for the leak (all 'Sneha' hits are the unrelated theblushlounge context). P1 (trust-surface/privacy record wrong) stands."
+    },
+    {
+     "id": "C-SS-02",
+     "severity": "P2",
+     "file": ".gitleaks.toml",
+     "line": 95,
+     "claim": "The final allowlist block suppresses the generic-api-key rule for ALL current and future files under content-mined/ and docs/ktahv-inputs/lp-mining/ by path alone — no line-content regex, no condition=\"AND\", no inspection date, no specific finding — directly contradicting the file's own header law (lines 2-4: every entry references its SPECIFIC inspected finding, 'never a broad pattern') and the documented reason global allowlists were banned (path-alone suppression). A real Kairali secret accidentally committed under content-mined/ that trips generic-api-key would now pass CI silently. The block is also structurally fragile: 'targetRules' is a global-[[allowlists]] key, but the block is written as [[rules.allowlists]], so TOML attaches it to whichever [[rules]] table happens to be last (currently generic-api-key, coincidentally matching).",
+     "evidence_quote": "    '''content-mined/.*''',",
+     "fix_suggestion": "Replace the blanket paths with per-finding AND-scoped entries (path + the specific nonce/site-key line regex) like findings 1-5 above it, or at minimum add a content regex pinning it to the known public-widget token shapes; move it to a proper global [[allowlists]] with targetRules if rule+path-only is genuinely the owner-approved intent, and record the inspection date either way.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified at .gitleaks.toml:91-96: the block is path-only (content-mined/.* + lp-mining .html), no condition=\"AND\", no line-content regex, no inspection date, no specific finding — directly contradicting the file's own header law (lines 2-8: 'never a broad pattern', global path-alone allowlists 'deliberately NOT used'). TOML mechanics confirmed: [[rules.allowlists]] appends to the last [[rules]] table (generic-api-key at line 47), and targetRules is a global-allowlist key, so the attachment is coincidence-dependent as claimed. Added in PR #147 (commit 2e1f381) whose only review is github-actions — no owner ruling exists in DECISIONS.md/DIRECTIVES.md/QUESTIONS.md exempting it from the per-finding law. A future real secret under content-mined/ tripping generic-api-key would pass silently. P2 stands."
+    },
+    {
+     "id": "C-SS-03",
+     "severity": "P3",
+     "file": ".gitleaks.toml",
+     "line": 83,
+     "claim": "The FINDING 5 allowlist regex reproduces the FULL 36-character Zendesk widget key verbatim — the very value that audits/ayurvedajournals.com-2026-07-16.md (lines 28 and 71) was deliberately redacted to first-8-chars with the stated reason 'not reproduced here so the secret gate stays meaningful'. The redaction is defeated by its own allowlist entry in a sibling tracked file: classic redact-in-one-file, paste-in-another slip. The key is a public client-side widget key, so exposure impact is low, but the practice contradiction breaks HARD GATE 14's 'never expose a secret in any artifact' as the repo itself interprets it.",
+     "evidence_quote": "regexes = ['''2b9735…[REDACTED — full 36-char UUID present verbatim in the file]''']",
+     "fix_suggestion": "Change the regex to match on the preserved first-8 fragment plus wildcard (e.g. '''2b97355b-[0-9a-f-]{27}''') — it still uniquely covers the pre-redaction historical blob while keeping the full value out of the tracked config.",
+     "verdict": "DOWNGRADED",
+     "refute_or_downgrade_reason": "Facts verified: .gitleaks.toml:83 carries the full 36-char Zendesk key verbatim while audits/ayurvedajournals.com-2026-07-16.md:28,71 redact to first-8 with the stated reason 'not reproduced here so the secret gate stays meaningful'. But this is not the claimed copy-paste slip: the entry's own comment (lines 73-79) documents the deliberate choice — 'The file at tip is REDACTED to first-8-chars; this entry covers the pre-redaction blob so history needs no rewrite. Scoped to the exact key'. The repo itself classifies the value as a PUBLIC client-side widget key served to every visitor (i.e., not a HARD GATE 14 secret), so the exposure impact is nil and there is no drift risk — the residue is an internal practice inconsistency between two files, cosmetic. The suggested partial-regex fix is still worth taking, at P3."
+    },
+    {
+     "id": "C-SS-04",
+     "severity": "P2",
+     "file": "content-mined/healing.recipes/contact-us.html",
+     "line": 477,
+     "claim": "A live Google Maps JavaScript API key (AIzaSy…, 39 chars) from the legacy healing.recipes site sits in tracked mined HTML — the only AIza-shape key in the repo. It silently escapes the CI gitleaks full-history scan: the default gcp-api-key rule requires a quote/whitespace/semicolon/EOL terminator after the 39-char key, but here the key is immediately followed by '&v=3.exp', so the rule never fires. Unlike the two other mined-content widget keys (acobot, Zendesk), it therefore has NO documented inspection entry in .gitleaks.toml — an uninspected, unlogged key exposure that the repo's own per-finding documentation law says must not exist. If the key is unrestricted (no referrer lock), anyone with repo access can bill Maps usage against it.",
+     "evidence_quote": "<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSy…[REDACTED — 39-char key]&v=3.exp&sensor=false&libraries=places\"></script>",
+     "fix_suggestion": "Inspect the key once (is it referrer-restricted? does the legacy site still depend on it?), record the verdict as a documented entry in .gitleaks.toml like findings 3-5 — content-mined is immutable per doctrine (a), so the documented-inspection route is the correct one — and flag rotation/restriction to the owner if it turns out unrestricted.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Key verified verbatim at content-mined/healing.recipes/contact-us.html:477 and it is the only AIzaSy occurrence in the repo. Escape mechanism proven, not just claimed: fetched the exact default gcp-api-key rule for the CI-pinned gitleaks 8.30.1 (gate.yml:49) — regex \\b(AIza[\\w-]{35})(?:[\\x60'\"\\s;]|\\\\[nr]|$) — and tested it against the actual line in Python: no match, because the key is immediately followed by '&v=3.exp' (not a permitted terminator). The blanket content-mined allowlist targets only generic-api-key, so this is genuinely an uninspected, undocumented key with no .gitleaks.toml entry, unlike the acobot/Zendesk keys (findings 3/5). No record in QUESTIONS/DECISIONS/DIRECTIVES (QUESTIONS.md:308 covers healing.recipes mining but not the key). P2 stands; restriction status of the key correctly left as a question, not asserted."
+    },
+    {
+     "id": "C-SS-05",
+     "severity": "P3",
+     "file": "docs/archive/ARCHIVE_CATEGORIZED_BUSINESS.csv",
+     "line": 7970,
+     "claim": "A Zoom meeting ID (836 2743 0725) with its embedded passcode parameter (pwd=…, 24-char value) is committed inside an archived download filename. The meeting dates to January 2022 so the credential is almost certainly dead, but a join-link passcode is exactly the string class a secrets screen exists to catch, and it rides along in every clone.",
+     "evidence_quote": "Laptop Download files/httpsus05web.zoom.usj83627430725pwd=ZHN4cz…[REDACTED — 24-char passcode].pdf,Uncategorized,(other),pdf,3784835,2022-01-17",
+     "fix_suggestion": "Strip or truncate the pwd= parameter from the filename in the CSV row (or drop the row) whenever C-SS-01's cleanup pass rewrites this file.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 7970 matches exactly: 'Laptop Download files/httpsus05web.zoom.usj83627430725pwd=ZHN4czh4ZnpUUUtOdUw1M3NtZzZxdz09.pdf,Uncategorized,(other),pdf,3784835,2022-01-17' — Zoom meeting ID 836 2743 0725 with the full 24-char pwd= passcode embedded in a committed filename; the only pwd= row in the CSV. January 2022 date makes the credential almost certainly dead, which the finding already prices in at P3. Not tracked in any record. P3 stands."
+    },
+    {
+     "id": "C-SS-06",
+     "severity": "P3",
+     "file": ".gitignore",
+     "line": 40,
+     "claim": "The trailing '.env*' (line 40) silently kills the '!.env.example' carve-out declared at line 15 — in gitignore, the later pattern wins, so .env.example files cannot be tracked despite the explicit negation five lines into the file. Lines 39-40 ('.vercel', '.env*') are a copy-paste re-add of what lines 10 and 13-14 already cover. Fails safe (stricter, not looser), but the dead negation will bite the first engineer who tries to commit a documented .env.example and gets a silent ignore.",
+     "evidence_quote": ".env*",
+     "fix_suggestion": "Delete the redundant lines 39-40 ('.vercel', '.env*') — lines 10 and 13-15 already express the intended policy, including the working .env.example exception.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Mechanically proven: 'git check-ignore -v .env.example' returns '.gitignore:40:.env*' — the trailing .env* at line 40 wins over the '!.env.example' negation at line 15, so .env.example files are silently ignored despite the explicit carve-out (and no .env.example is currently tracked). Lines 39-40 ('.vercel', '.env*') duplicate the coverage of lines 10 and 13-14 — the classic Vercel-CLI auto-append tail. Fails safe (stricter), no record of it anywhere, so P3 is the right severity. Confirmed."
+    }
+   ]
+  },
+  {
+   "dimension": "counts-claims",
+   "coverage": "SCANNED (all recounts mechanical, read-only, in the pinned worktree): (1) gates/registry.yaml row count: 77 (`grep -c \"^  - id:\"`) vs every \"63 gates\" claim repo-wide (`grep -rn \"63 gates|63-gate\"`) — changelog CLAUDE.md:133 (P3), stale generated checklist launches/arogyakendra.com/checklist-organic.md:7 (P2); plan-doc and 18-Jul-report occurrences are dated historical statements, not charged; cross-check: merge-continuity.yaml GR-001..GR-077 = 77 ✓, MORNING_BRIEF's \"~68 gates\" is an approximate as-of stamp, not charged. (2) CI matrices: factory-spec and lighthouse both list 13 sites (lines 418/467) vs 17 sites/ dirs, all 17 carrying site.config.json; 13 + 4 EXEMPT (factory-matrix-lint.mjs: abhilashkr, kairali.ai standing; ayurvedichealingvillage.com, whyayurveda.org zero-page scaffolds — page-lessness re-verified today, 2 files each) = 17 ✓ NO mismatch; but the workflow's own comments still say \"two 8-site matrices\"/\"16 required per-site contexts\"/\"all 16 jobs\" (P2). \"12 sites\" claims verified TRUE: footer true-up commit c5307a2 touched exactly 12 sites (`git show --stat | grep -o \"sites/[^/]*\" | sort -u | wc -l` = 12); 12 llms.txt routes on main ✓. (3) QUESTIONS.md: 646 lines, 100 \"## \" headers (`grep -c \"^## \"`), 25 RESOLVED markers; the \"67 open items in a 561-line\" figure exists ONLY in docs/reports/2026-07-20-os-deep-review-a-evidence.json:397, pinned as-of commit 4acb3f3 — no current surface restates 67 and no per-item closure convention exists to recount against, so no mismatch charged. (4) STATUS.yaml sites: 28 rows vs 17 sites/ dirs — superset by design (Shopify/ideation domains without repo dirs); all 17 dirs have a row ✓; per-row counts recounted against files: bulkayurvedaoils 13-vs-16 WRONG (P1), bulkayurvedaproducts 15 ✓, theblushlounge 6 ✓, kairaliequipment 29 vs MORNING_BRIEF 28 internal disagreement (P3); kairaliorganic full-site-vs-2-pages already on record in deep-review-B evidence, not re-charged. (5) docs/reports/: 42 .md files (73 files total) vs 19-entry index.json; ran `node scripts/report-store-lint.mjs --check` = PASS (index fresh per its own law); 8 post-cutover handovers with zero frontmatter are invisible to the index (P2). (6) Bonus recounts that MATCHED (not reported): GSC \"13 properties\" = 13 export zips; decisions store \"15 records\" = 15 D-*.md + index.json length 15; v2.0 \"seven registry rows\" = 7; HARD GATES 10–15 = 6 strict-union additions as described. DELIBERATELY SKIPPED: counts requiring network/GitHub/GA4/GSC state (30 required contexts, \"9/9 exports\", \"GA4 9/16\"), build-output route totals (need pnpm build), wiki/, audits/, content-mined/, shopify-agents/, packages/ internals, and timestamp-format/locked-fact sweeps (other finders' dimensions). No findings were silently truncated — 7 findings total, under the 25 cap.",
+   "notes": "Method: every stated count was re-derived from file bytes or read-only git commands in the worktree (pinned at main, HEAD 7599bf6); no files modified, no state-changing git. Key commands are embedded per finding. Two near-findings intentionally not charged: (a) the documented D-20260719-33 directive id collision — DIRECTIVES.md:105 already carries an ID-COLLISION NOTE, so it is on record, not a silent mistake; (b) STATUS.yaml `as_of_commit` lagging main by the #204 session — that is a Phase-B session-protocol conformance matter, out of this dimension. The C-CT-01 date component (built \"19 Jul\" vs merge 2026-07-18 23:11:58 IST) is folded into the count finding rather than split out, since both errors sit in the same row.",
+   "raw_count": 7,
+   "refuted": 1,
+   "surviving": [
+    {
+     "id": "C-CT-01",
+     "severity": "P1",
+     "file": "STATUS.yaml",
+     "line": 208,
+     "claim": "The bulkayurvedaoils.com row in the Fleet Pulse source of truth claims 'FULL SITE 13 routes built 19 Jul (PR #159)' but machine truth is 16 page.tsx routes on main, ALL 16 added in the single PR #159 squash commit acfd187 — which merged 2026-07-18 23:11:58 IST, not 19 Jul. Both the route count and the build date in the owner-facing record are wrong; the sibling bulkayurvedaproducts row (line 218) repeats the 'built 19 Jul' date error with a correct 15-route count.",
+     "evidence_quote": "blocker: \"FULL SITE 13 routes built 19 Jul (PR #159): go-science + beauty + Lighthouse strict PASS",
+     "fix_suggestion": "Next session-end STATUS.yaml pass: correct to 16 routes and merge date 18 Jul 23:11 IST (verify: `find sites/bulkayurvedaoils.com/app -name page.tsx | wc -l` → 16; `git log --diff-filter=A --format=%cs -- sites/bulkayurvedaoils.com/app/*/page.tsx` → all acfd187 2026-07-18; `git show -s --format=%ci acfd187` → 2026-07-18 17:41:58 +0000 = 23:11:58 IST). Fix the products-row date in the same pass.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches STATUS.yaml:208. Machine truth: 16 page.tsx under sites/bulkayurvedaoils.com/app, all added in the single #159 squash commit acfd187; gh pr view 159 shows mergedAt 2026-07-18T17:41:58Z = 23:11:58 IST 18 Jul, so both '13 routes' and 'built 19 Jul' are wrong in the owner-facing Fleet Pulse source of truth (the stale 13 was inherited from the PR title, whose sibling products count 15 IS correct — 15 page.tsx on main). No prior record of the discrepancy in QUESTIONS/DECISIONS/DIRECTIVES/BACKLOG."
+    },
+    {
+     "id": "C-CT-02",
+     "severity": "P2",
+     "file": ".github/workflows/factory-gate.yml",
+     "line": 34,
+     "claim": "The load-bearing branch-protection comment block still says the workflow has 'two 8-site matrices' (line 27), '16 required per-site contexts' (line 34) and 'all 16 jobs spawn' (line 37), but both the factory-spec matrix (line 418) and the lighthouse matrix (line 467) now list 13 sites each — i.e. 13-site matrices and 26 per-site contexts. Anyone reasoning about required-check freezes from this comment (its stated purpose, learned on PR #118) starts from numbers that are 10 contexts short.",
+     "evidence_quote": "# 16 required per-site contexts (\"factory-spec (sites/…)\") are never created",
+     "fix_suggestion": "Update the three comment lines to the current counts (13-site matrices, 26 per-site contexts) or reword to count-free language ('the two per-site matrices', 'every matrix job') so the comment can never go stale again. Verify: `grep -o 'sites/[a-z.]*' .github/workflows/factory-gate.yml | sort -u` inside each matrix line → 13 entries each.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches .github/workflows/factory-gate.yml:34; lines 27 and 37 also still say 'two 8-site matrices' / 'all 16 jobs spawn', while both site matrices (lines 418 and 467) each list 13 sites → 26 per-site contexts. The comment block's stated purpose is required-check-freeze reasoning, so the stale counts are load-bearing. No existing record of the staleness."
+    },
+    {
+     "id": "C-CT-03",
+     "severity": "P2",
+     "file": "launches/arogyakendra.com/checklist-organic.md",
+     "line": 7,
+     "claim": "The committed generated ship checklist for arogyakendra.com (a preview-stage site) states '63 gates in the registry' with the 50+6=56 / 7-n_a breakdown, but gates/registry.yaml now carries 77 gate rows (`grep -c \"^  - id:\" gates/registry.yaml` → 77); the checklist was generated 2026-07-18 16:12:25 IST at registry commit 16da515 and has never been regenerated, so a launch crew walking this file misses 14 gates (incl. the 7 M1 rows, beauty-conformance, go-science-conformance, both design-external-ai-review rows) — the file's own header says regenerating overwrites it.",
+     "evidence_quote": "**63 gates in the registry · 50 required + 6 adapted = 56 to clear for class organic · 7 explicitly n/a (collapsed at the end — each one decided, never silent).**",
+     "fix_suggestion": "Re-run `node scripts/gate-checklist-gen.mjs --domain arogyakendra.com --class organic` against the current registry and commit the regenerated checklist; consider a CI staleness check that compares each committed checklist's stated registry commit/count against gates/registry.yaml.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches launches/arogyakendra.com/checklist-organic.md:7. git show 16da515:gates/registry.yaml has 63 '- id:' rows; current registry has 77; the checklist was last committed 2026-07-18 (3573e5d) and never regenerated, its own header says regeneration overwrites it, and neither gate-checklist-gen nor CI carries any staleness check — a crew walking the committed file misses 14 gates. Not tracked in any record."
+    },
+    {
+     "id": "C-CT-04",
+     "severity": "P2",
+     "file": "docs/reports/2026-07-20-handover-night-close.md",
+     "line": 1,
+     "claim": "docs/reports/index.json holds 19 entries while docs/reports/ holds 42 .md reports, 27 of them dated on/after the 2026-07-19 frontmatter-law cutover; 8 post-cutover reports (all handovers: seven 2026-07-19-handover-*.md files plus this 2026-07-20 file) carry zero frontmatter, so report-store-lint classifies them 'legacy' via its no-frontmatter clause and they never enter the retrieval index — and confusingly, the index id RPT-20260720-HANDOVER-NIGHT points at 2026-07-20-handover-ivr-goexports-close.md while the file literally named handover-night-close is the one that is invisible.",
+     "evidence_quote": "# HANDOVER — night close 19→20 Jul (M1 ✓ MERGED · M2 ✓ MERGED · Fleet Pulse v2 ✓ · next: Monday chase → M3)",
+     "fix_suggestion": "Propose to the owner (do-not-edit-reports law makes this his call): retrofit frontmatter (report_id/date/type: handover) onto the 8 post-cutover handovers and regenerate the index with `node scripts/report-store-lint.mjs`, giving the night-close file a distinct id (e.g. RPT-20260720-HANDOVER-NIGHTCLOSE-19TO20) to avoid colliding with the existing RPT-20260720-HANDOVER-NIGHT. Verified via `node scripts/report-store-lint.mjs --check` (PASS: 42 scanned, 19 indexed, 23 legacy-unfrontmattered) and a head -1 sweep of 2026-07-19/20 files.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Mechanically verified: 42 .md files in docs/reports/, index.json holds 19 entries, and exactly 8 post-cutover reports have zero frontmatter (the seven 2026-07-19-handover-*.md files plus 2026-07-20-handover-night-close.md, which was added 2026-07-19 20:58:55 IST — after the lint landed 19:43:06 IST); index id RPT-20260720-HANDOVER-NIGHT points at handover-ivr-goexports-close.md while the night-close file is unindexed. The lint's no-frontmatter=LEGACY clause is a documented decidability grandfather for pre-law files, not a disposition covering reports the law itself says it binds ('CREATED FROM M2 (2026-07-19) ONWARD'); no QUESTIONS/BACKLOG record exists for these 8."
+    },
+    {
+     "id": "C-CT-05",
+     "severity": "P3",
+     "file": "STATUS.yaml",
+     "line": 200,
+     "claim": "Two owner-facing records disagree on the kairaliequipment.com PR #131 route count: STATUS.yaml says 'FULL SITE 29 routes' while MORNING_BRIEF.md:10 says '28 routes' for the same PR — one of the two is a transcription slip; static machine count (15 page.tsx + 2 route.ts + dynamic [category]/[sku]/[lane] segments) cannot arbitrate without a build, but they cannot both be right.",
+     "evidence_quote": "blocker: \"FULL SITE 29 routes (PR #131 all-green, owner's own auto-merge armed — fires on his review)",
+     "fix_suggestion": "On the next STATUS.yaml pass, take the route total from the PR #131 `pnpm build` output (the Next.js route table) and align both records; until then treat the count as unverified. Commands used: `find sites/kairaliequipment.com/app -name page.tsx | wc -l` → 15; `find sites/kairaliequipment.com/app -type d -name '*[*'` → 3 dynamic segments.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches STATUS.yaml:200. MORNING_BRIEF.md:10, BACKLOG.md:84 and the PR #131 title itself ('Foundry Ledger golden page + 28 routes') all say 28, making STATUS.yaml's 29 the lone transcription slip; static count (15 page.tsx + 3 dynamic segments) cannot arbitrate the built-route total, but three records against one settles the disagreement the finding claims. P3 is the right weight for a one-route slip in a blocker note."
+    },
+    {
+     "id": "C-CT-07",
+     "severity": "P3",
+     "file": "gates/registry.yaml",
+     "line": 42,
+     "claim": "The registry's self-declared freshness stamp says updated 2026-07-19 17:31:40 IST, but the file's content last changed in commit c5307a2 on 2026-07-20 22:49:41 IST (the footer-socials canonical true-up that refreshed the footer-socials-present row / GR-077 pin) — the single-source-of-truth file understates its own last update by a day.",
+     "evidence_quote": "updated: \"2026-07-19 17:31:40 IST\"",
+     "fix_suggestion": "Bump `updated:` in the next PR that touches the registry, and add a cheap check to scripts/gate-registry-lint.mjs that the `updated:` stamp is >= the newest row-level change when the file is modified. Verify: `git log -1 --format=%ci -- gates/registry.yaml` → 2026-07-20 17:19:41 +0000 (= 22:49:41 IST).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote matches gates/registry.yaml:42. The file's content changed twice on 20 Jul without a stamp bump — ea6b85a 2026-07-20 08:58:27 IST (M3(a)) and c5307a2 2026-07-20 22:49:41 IST (+13 lines, footer-socials-present/GR-077) — so the self-declared freshness stamp understates its own last update by a day; scripts/gate-registry-lint.mjs explicitly skips the 'updated:' line (line 88), and no record tracks it. P3 fits a metadata stamp."
+    }
+   ]
+  },
+  {
+   "dimension": "site-copy-basics",
+   "coverage": "Scanned (read-only, worktree root /Users/kairalimacmini/Claude/Kairali-Digital/kairali-web-factory/.claude/worktrees/wf_eddc744d-389-7): all 17 sites/* trees — every app/ and content/ TSX/TS/JSON/MDX file, plus site.config.json for all sites, shared packages that feed site copy (packages/facts roster vs docs/group-inputs/kairalicenters-org-inventory.md, packages/legal templates), STATUS.yaml stages, and kairali.ai content HTML (live site). Checks run: curated ~250-word misspelling list + domain-specific misspellings (Kairali/Ayurveda/Panchakarma variants, Kerala, therapy terms) — zero hits; doubled-word regex (Tailwind class false positives excluded); spacing/punctuation slips in JSON copy values (line-aware, zero real hits); placeholder text (lorem/TODO/TBD/XXX/coming soon — the kairaliequipment SKU placeholders are owner-ordered D-EQ-CATALOG and lint-guarded, healing.recipes launch band is ruled placeholder, abhilashkr TODOs are code comments; none flagged); KTAHV banned words incl. DE/FR equivalents across every file mentioning KTAHV/Healing Village (clean — only \"Resort Svatá Kateřina\" proper name and whatisayurveda \"not a cure/not spa\" disclaimers, both permitted); locked-fact greps (…38777 absent from site sources, info@kairali.com uniform, 92898 38797 uniform); phone/email format checks (all tel:/wa.me/mailto hrefs); count-claim cross-checks (4 books vs books.json, 3 yoga programmes, 4 KAPPL categories, 9 Organics formulations, 14 centres/5 countries computed constants, six doors — one mismatch found); internal-link targets in whatisayurveda content (all 29 slugs resolve); sitemap/robots/legal shared templates (config-driven, safe). Deliberately skipped: styles/CSS, test files (used only as corroboration), content-mined/ (immutable raw layer), docs/ and wiki/ (other Phase C dimensions), rendered/live pages (source-only per brief), whyayurveda.org + ayurvedichealingvillage.com (no app/content in this repo — config+styles only), shopify-agents/, scripts/, packages not feeding visible copy.",
+   "notes": "Verification notes: (1) \"Kairbossom\" is the real product name (bosom oil — confirmed in content-mined/arogyashala.co.in and the image-bank archive), NOT a Kairblossom typo; the agency doc's \"Kairblossom\" spelling is the outlier. (2) The kairalicenters per-centre mailboxes @kairalicentres.com (with r) and retrofit@ are verbatim from the mined live site and already FLAGGED in docs/group-inputs/kairalicenters-org-inventory.md — known legacy inconsistency, not a repo mistake. (3) kairali.com \"fifty acres of herbal farmland\" vs the 65-acre KTAHV campus (abhilashkr, comp-set docs) are different measures (farmland subset vs campus) and the fifty-acres line is sourced from the mined agency copy — noted, not flagged. (4) abhilashkr language-switcher \"coming soon\" tooltips are documented TODO(i18n) design, not shipped-placeholder class. (5) The \"day-spas (KAC)\" framing on abhilashkr is outside the KTAHV lock per the brief and was not flagged. (6) STATUS.yaml lists theblushlounge.com as human_audit while it is live per session memory — owner-record drift, but Phase B territory, not flagged here. Severity calls: C-SC-01/02/03 kept at P1 (trust-surface/fact contradictions) rather than P0 because every affected site is preview/build stage, not live; C-SC-12 is on the live pilot but cosmetic. No modifications were made to any file.",
+   "raw_count": 12,
+   "refuted": 1,
+   "surviving": [
+    {
+     "id": "C-SC-01",
+     "severity": "P1",
+     "file": "sites/kairali.com/app/llms.txt/route.ts",
+     "line": 15,
+     "claim": "Stale count on the machine-facts trust surface: llms.txt says \"One family, five doors\" and lists only 5 family sites, while the homepage it describes declares \"One Family · Six Doors\" (page.tsx:180) / \"One Group, Six Doors\" (page.tsx:247) and renders SIX pillars including \"Kairali Franchise\" (page.tsx:89). The Franchise door is missing from both the summary count and the sections links.",
+     "evidence_quote": "One family, five doors: an NABH-accredited Ayurvedic hospital, WHO-GMP medicine manufacturing, treatment centres in ${COUNTRIES_PHRASE}, Ayurveda training, and Villa Raag in Goa.",
+     "fix_suggestion": "Update the summary to \"six doors\", add Kairali Franchise to the enumeration, and add a kairalifranchise.com link row to the sections list (or compute the door count from the PILLARS data the page itself uses).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Evidence quote matches sites/kairali.com/app/llms.txt/route.ts:15 (\"One family, five doors\") and the sections list carries exactly 5 links with no Franchise row; the homepage it describes prints \"One Family · Six Doors\" (page.tsx:180) and \"One Group, Six Doors\" (page.tsx:247) with a six-pillar array including \"Kairali Franchise\" (page.tsx:89). DECISIONS.md:123 rules the six-door composition (\"six doors (Healing Village … Villa Raag · Franchise)\"). No disposition in DECISIONS/DIRECTIVES/QUESTIONS tracks the llms.txt count — the 20 Jul llms erosion wave (D-20260720-25) touched only the bulk sites' legal-entity purge. Genuine stale count on the machine-facts trust surface; P1 fits."
+    },
+    {
+     "id": "C-SC-02",
+     "severity": "P1",
+     "file": "sites/whatisayurveda.com/app/page.tsx",
+     "line": 134,
+     "claim": "Cross-site contradiction about the SAME WhatsApp number (wa.me/919289838797): whatisayurveda.com labels the CTA \"Ask Priya, our AI assistant\" (also article.tsx:235; chrome.tsx:6 comment says \"Priya = the Chatbase AI ASSISTANT\"), while kairaliyoga.com promises for the identical number \"A person answers, not a bot.\" (sites/kairaliyoga.com/app/page.tsx:591), and CLAUDE.md locked facts call it \"Priya's KTAHV WhatsApp\" (a person). One of these shipped copy claims is false-facing.",
+     "evidence_quote": "<a className=\"btn btn-primary\" href={WHATSAPP_URL} data-cta=\"whatsapp_click\">Ask Priya, our AI assistant</a>",
+     "fix_suggestion": "Ask Abilash which is true of the 919289838797 channel (human Priya vs Chatbase bot), then align all fleet copy to one answer — either drop \"AI assistant\" on whatisayurveda.com or drop \"A person answers, not a bot\" on kairaliyoga.com.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified both sides: whatisayurveda.com page.tsx:134 and article.tsx:235 print \"Ask Priya, our AI assistant\" for wa.me/919289838797 (chrome.tsx:6 comment: Chatbase AI assistant), while kairaliyoga.com page.tsx:591 promises \"A person answers, not a bot.\" for the identical WHATSAPP_URL wa.me/919289838797 (page.tsx:34). DECISIONS.md:271 rules \"+91 92898 38797 is the PRIYA CHATBOT, not a physician\" — so the kairaliyoga copy is the false-facing one; no ruling anywhere licenses a human-answered claim on that number and no open question tracks the contradiction. Real cross-site fact contradiction in shipped preview copy; P1 stands."
+    },
+    {
+     "id": "C-SC-03",
+     "severity": "P1",
+     "file": "sites/bulkayurvedaoils.com/app/page.tsx",
+     "line": 129,
+     "claim": "Heritage-fact conflation: the trust strip claims \"four generations of Ayurvedic manufacture\" dating to 1908, but the fleet's own established record says manufacturing began in 1948 (arogyashala.in/app/page.tsx:272 \"Ayurvedic manufacturing in the family since 1948\"; kairaliequipment.com/app/about/page.tsx:40 \"Began the family's Ayurvedic manufacturing in 1948\"; CLAUDE.md D-1908-DOC timeline: 1948 pharma company). Same conflation in the hero overline at line 64 (\"WHO-GMP manufacturer · Since 1908, founded 1989\") and in bulkayurvedaproducts.com/app/about/page.tsx:14.",
+     "evidence_quote": "<span className=\"heritage\">Trusted since 1908 — four generations of Ayurvedic manufacture</span>",
+     "fix_suggestion": "Reword to separate the two facts as sibling sites do: family practice since 1908, Ayurvedic manufacturing since 1948, group founded 1989 — e.g. \"A family in Ayurveda since 1908 · manufacturing since 1948\".",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at bulkayurvedaoils.com/app/page.tsx:129; hero overline conflation verified at line 64 (\"WHO-GMP manufacturer · Since 1908, founded 1989\"). The canonical ruled timeline (D-1908-DOC, DECISIONS.md:360, all seven flags ruled) puts Ayurvedic MANUFACTURING at 1948 (Dr. K.S. Vasudevan), confirmed in shipped sibling copy (arogyashala.in:272, kairaliequipment.com/about:40). \"Four generations of Ayurvedic manufacture … since 1908\" conflates the 1908 practice lineage with 1948 manufacturing — the same conflation class the erosion wave D-20260720-25 fixed on kairali.com/arogyakendra/kairalicenters/whatisayurveda; bulkayurvedaoils was NOT in that fix list and no record tracks it. P1 fits (fact-wrong trust strip)."
+    },
+    {
+     "id": "C-SC-04",
+     "severity": "P2",
+     "file": "sites/abhilashkr/src/lib/config.ts",
+     "line": 1,
+     "claim": "SITE_URL is hardcoded to a stale, foreign Vercel deployment (\"portfolio-website-six-pi-92\") that matches neither the site's own domain (site.config.json: abhilashkr.com) nor its recorded preview URL (STATUS.yaml:304 \"kairali-web-factory-abhilashkr.vercel.app\"). It feeds canonical, OG images, hreflang alternates, sitemap.ts and feed.xml — so all SEO surfaces point at a throwaway URL.",
+     "evidence_quote": "export const SITE_URL = \"https://portfolio-website-six-pi-92.vercel.app\";",
+     "fix_suggestion": "Set SITE_URL to https://abhilashkr.com (or derive it from site.config.json domain like the other sites) before any go-live; verify sitemap/canonical/OG after the change.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at sites/abhilashkr/src/lib/config.ts:1; site.config.json declares domain abhilashkr.com; STATUS.yaml:304 records preview_url kairali-web-factory-abhilashkr.vercel.app — neither matches the hardcoded portfolio-website-six-pi-92.vercel.app. Grep confirms SITE_URL feeds canonical + OG (layout.tsx:28-54, page.tsx:14-34), hreflang alternates (layout.tsx:85-86) and sitemap.ts:8. No tracking record exists (grep six-pi-92 across DECISIONS/QUESTIONS/DIRECTIVES/BACKLOG empty). Site is stage \"build\", matrix-exempt, so P2 (config mistake with drift risk) is the right level."
+    },
+    {
+     "id": "C-SC-05",
+     "severity": "P2",
+     "file": "sites/abhilashkr/src/components/site/bio-selector.tsx",
+     "line": 15,
+     "claim": "Doubled qualifier \"over 27+\" in the shipped 400-word bio (duplicated verbatim in command-menu.tsx:55); \"over\" and \"+\" say the same thing, and the 27-countries expansion figure appears nowhere in the repo's verified facts (the verified network is 14 centres in 5 countries per packages/facts).",
+     "evidence_quote": "Under his leadership, Kairali has expanded to over 27+ countries, standardizing Ayurvedic wellness protocols for international audiences.",
+     "fix_suggestion": "Drop one qualifier (\"to 27+ countries\" or \"to over 27 countries\") in both files, and confirm with Abilash what the 27 figure refers to (product-export markets vs centres) before it ships.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "\"expanded to over 27+ countries\" verbatim at bio-selector.tsx:15 and duplicated at command-menu.tsx:55; the doubled qualifier is real. packages/facts/src/index.js:7-8 documents the verified network as \"14 centres in 5 countries\" and no \"27\" appears in the facts package or any ruling (grep of DECISIONS/QUESTIONS/DIRECTIVES for 27-countries empty), so the figure is also unverified per HARD GATE 6. P2 appropriate for an unshipped (build-stage) but owner-facing bio."
+    },
+    {
+     "id": "C-SC-06",
+     "severity": "P2",
+     "file": "sites/kairali.ai/content/voices.html",
+     "line": 66,
+     "claim": "Stale status line on the LIVE kairali.ai playbook: the author card still says \"spelling unresolved\" for Dr. Ashikha Raj while the banner at line 12 of the same file records the question as RESOLVED by Abilash's 18 Jul ruling (D-ASHIKHA-SPELLING) — the card was never updated after the ruling landed.",
+     "evidence_quote": "<div class=\"meta\">drashikaraj · RMO, KTAHV (verify) · spelling unresolved — see top</div>",
+     "fix_suggestion": "Update the card to the ruled spelling (\"Dr. Ashikha Raj — ruled 18 Jul 2026\") and remove the ⚠️ + \"unresolved\" wording so the record carries one consistent state.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified in sites/kairali.ai/content/voices.html: line 12 records the spelling as RESOLVED 18 Jul 2026 (D-ASHIKHA-SPELLING, matching DECISIONS.md:469 and the closed QUESTIONS.md:222 entry) while line 66 still prints \"drashikaraj · RMO, KTAHV (verify) · spelling unresolved — see top\" and the card name at line 65 keeps the dual \"Dr. Ashika / Ashikha Raj ⚠️\" form. The QUESTIONS.md resolution notes \"voices guide updated\" — the banner was added but the card was never truthed, so the file carries two contradictory states. Not tracked as an open item. P2 correct."
+    },
+    {
+     "id": "C-SC-07",
+     "severity": "P3",
+     "file": "sites/abhilashkr/src/app/faq/page.tsx",
+     "line": 50,
+     "claim": "Mid-sentence capitalization slip in shipped FAQ copy: \"an export Promotion council\" — Promotion capitalized, export/council lowercase, in the same sentence that correctly writes \"Ayush Export Promotion Council\".",
+     "evidence_quote": "AYUSHEXCIL (Ayush Export Promotion Council) is an export Promotion council established by the Ministry of AYUSH",
+     "fix_suggestion": "Lowercase to \"an export promotion council\" (generic descriptive use).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at sites/abhilashkr/src/app/faq/page.tsx:50: \"is an export Promotion council established by the Ministry of AYUSH\" — mid-sentence capital on the generic descriptive phrase, in the same answer that correctly renders the proper noun \"Ayush Export Promotion Council\". Straightforward capitalization slip; P3 cosmetic is right."
+    },
+    {
+     "id": "C-SC-08",
+     "severity": "P3",
+     "file": "sites/abhilashkr/src/app/speaking/page.tsx",
+     "line": 100,
+     "claim": "Inconsistent title case in the speech-topics list: \"Medical Tourism & Insurance integration\" (lowercase \"integration\") sits beside fully title-cased siblings \"Globalising Ayurveda Without Dilution\", \"Futuristic Ayurveda Applications\", \"Wellness Startup Ecosystems\".",
+     "evidence_quote": "Medical Tourism & Insurance integration",
+     "fix_suggestion": "Capitalize to \"Medical Tourism & Insurance Integration\".",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at sites/abhilashkr/src/app/speaking/page.tsx:100 (\"Medical Tourism & Insurance integration\"); sibling topic headings at lines 82, 91, 109 are fully title-cased (\"Globalising Ayurveda Without Dilution\", \"Futuristic Ayurveda Applications\", \"Wellness Startup Ecosystems\"). Real title-case inconsistency; P3 correct."
+    },
+    {
+     "id": "C-SC-09",
+     "severity": "P3",
+     "file": "sites/kairalihospitality.com/app/page.tsx",
+     "line": 399,
+     "claim": "Half-encoded mailto subject: spaces are %20-encoded but a raw non-ASCII em dash (—) is left unencoded inside the URL; some mail clients garble the subject. Same slip at sites/arogyashala.in/app/page.tsx:248 and sites/kairaliyoga.com/app/page.tsx:609 and :627 (elsewhere the fleet correctly strips non-ASCII, e.g. \"Svata%20Katerina\").",
+     "evidence_quote": "href={`mailto:${EMAIL}?subject=Develop%20with%20Kairali%20—%20consultancy%20enquiry`}",
+     "fix_suggestion": "Percent-encode the dash (%E2%80%94) or replace it with a plain hyphen in all four subjects.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "All four instances verified verbatim: kairalihospitality.com/app/page.tsx:399, arogyashala.in/app/page.tsx:248, kairaliyoga.com/app/page.tsx:609 and :627 — each a mailto subject with %20-encoded spaces but a raw unencoded em dash. The fleet's own counter-example strips non-ASCII (kairalihospitality page.tsx:281 \"Svata%20Katerina\"). Modern browsers usually UTF-8 percent-encode the dash on click, so impact is limited to some clients — P3 cosmetic/hygiene is the right severity."
+    },
+    {
+     "id": "C-SC-10",
+     "severity": "P3",
+     "file": "sites/abhilashkr/src/app/contact/page.tsx",
+     "line": 57,
+     "claim": "Nonstandard phone grouping on the contact page: the group IVR prints as \"+91-9555-156-156\" (4-3-3 split) while every other fleet surface prints the same number as \"+91 95551 56156\" (kairali.com page.tsx:341, healing.recipes contact/page.tsx:37, kairalihospitality page.tsx:433).",
+     "evidence_quote": "<LedgerRow label=\"Phone (IVR)\" value=\"+91-9555-156-156\" />",
+     "fix_suggestion": "Print the fleet-standard form \"+91 95551 56156\" (and consider wrapping it in a tel:+919555156156 link, which the page currently lacks).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Quote verbatim at sites/abhilashkr/src/app/contact/page.tsx:57 (\"+91-9555-156-156\", no tel: link); the fleet-standard printed form \"+91 95551 56156\" verified at kairali.com/app/page.tsx:341, healing.recipes/app/contact/page.tsx:37, kairalihospitality.com/app/page.tsx:433 (all with tel:+919555156156). The number itself matches the ruled IVR (D-20260720-29), so only the grouping/format diverges — P3 cosmetic is correct."
+    },
+    {
+     "id": "C-SC-11",
+     "severity": "P3",
+     "file": "sites/healing.recipes/app/page.tsx",
+     "line": 234,
+     "claim": "Same-site location drift for the same fact: the homepage says the first Kairali Ayurvedic Centre opened in \"New Delhi in 1989\", while the author page (author/page.tsx:63) and llms.txt (llms.txt/route.ts:20 \"(first centre, South Delhi)\") both say South Delhi.",
+     "evidence_quote": "Gita Ramesh opened the first Kairali Ayurvedic Centre in\n                New Delhi in 1989",
+     "fix_suggestion": "Pick one form (the llms.txt fact line uses \"South Delhi\") and use it in all three places.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified: healing.recipes/app/page.tsx:233-234 prints \"first Kairali Ayurvedic Centre in New Delhi in 1989\" while author/page.tsx:63 and llms.txt/route.ts:20 say South Delhi. Stronger than same-site drift: D-LIN-1989-WORDING (DECISIONS.md:371) makes \"first Kairali Ayurvedic Centre in South Delhi\" the canonical phrasing, and the same ruling batch explicitly corrected the /author page from \"New Delhi\" (DECISIONS.md:379) — the homepage instance was simply missed (the fix-one ≠ done pattern). Not tracked as open anywhere. Confirmed at the finder's P3."
+    }
+   ]
+  },
+  {
+   "dimension": "script-basics",
+   "coverage": "SCANNED: all 8 shell scripts line-by-line (scripts/brief-snapshot.sh, dfs.sh, verify-forwards.sh, hooks/guard.sh, hooks/post-edit.sh, hooks/pre-push.sh, hooks/session-start.sh, root sweep.sh) plus .claude/settings.json hook wiring. All ~50 scripts/*.mjs greped for every mandated class: cwd/CLAUDE_PROJECT_DIR-derived repo roots (all but seo-baseline.mjs and the two evidence-kairaliyoga one-offs use the import.meta.url REPO_ROOT convention — verified per-file), pipeline-bound fallbacks (`| head || echo`, LEARNINGS.md:243 class), unguarded readFileSync on plausibly-absent state files (boot-contract/doctor/directive-capture/status-build/report-store-lint/front-gate all guard with existsSync; status-build's unguarded STATUS.yaml read judged non-plausible-absence), hardcoded /Users paths (none found anywhere in scripts/ or sweep.sh), execSync/spawnSync cwd assumptions, and IST timestamp helper formats (seo-baseline, launch-scaffold, job-spec-generate, neutralize-workflows, change-gates-resolve — all emit correct YYYY-MM-DD HH:MM:SS IST). Cross-checked every scripts/* path referenced from .github/workflows, package.json, CLAUDE.md and docs/*.md — all resolve. Empirical verification run for: tr range deletion, BSD sed I-flag (works on this macOS — deliberately NOT flagged), guard.sh force-push pattern (live hook block observed), brief-snapshot boundary commits + commit counts (80 vs 37), keyword grep counts, forward-farm.csv column order + LF endings (verify-forwards field mapping is correct — not flagged). DELIBERATELY SKIPPED: scripts/test/*.js internals, packages/* bin scripts, shopify-agents/, .github/workflows YAML logic, and deep line-by-line reads of the 12 largest .mjs lint engines (content-lint, keyword-validate, authenticated-approval, etc.) beyond the targeted class greps — those belong to other Phase C dimensions or would exceed this dimension's granular-basics mandate.",
+   "notes": "Ranking rationale: the three P1s all corrupt owner-facing or trust-surface records (billable baseline evidence written outside the repo; the morning-brief base double-counting a day of merges; the …38777 locked-fact detector false-negative on hyphenated formatting). C-SB-04 was confirmed by the live guard itself blocking a probe whose text merely contained the with-lease form — fixing it touches both scripts/hooks/guard.sh:13 and .claude/settings.json:45. Notable non-findings kept off the list after verification: verify-forwards.sh CSV field mapping (correct), sed I-flag portability (works on this Mac, titles present in committed sweep_results.csv), brief-snapshot line 44's gh fallback (pipefail actually rescues it from the LEARNINGS dead-code class), matrix-walk's cwd-relative --slice arg (correct CLI convention). SIGPIPE-under-pipefail theories for the head pipelines were investigated and dropped as unrealistic below the 64KB pipe buffer.",
+   "raw_count": 14,
+   "refuted": 1,
+   "surviving": [
+    {
+     "id": "C-SB-01",
+     "severity": "P1",
+     "file": "scripts/seo-baseline.mjs",
+     "line": 904,
+     "claim": "The CLI entry resolves the repo root from process.cwd() while every other script in scripts/ uses the import.meta.url convention (REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')) — the exact failure class the 20 Jul silent-failure audit (RPT-20260720-SILENT) documented: live sessions launch from ~/Claude, so a billable DataForSEO pull would write launches/<domain>/baseline/raw evidence OUTSIDE the repo (money spent, baseline-gate evidence lost), and the spawnSync calls at lines 672/684 would fail to find scripts/evidence-manifest.mjs relative to that wrong cwd.",
+     "evidence_quote": "const repoRoot = process.cwd();",
+     "fix_suggestion": "Replace with the repo convention used by the other ~45 scripts: const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), \"..\"); (keep the opts.repoRoot override for tests).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 904 reads exactly `const repoRoot = process.cwd();` while ~20+ sibling scripts (evidence-manifest.mjs:88, banned-string-lint.mjs:66, boot-contract.mjs:39, etc.) use REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..'). cmdPull writes raws to path.join(repoRoot, 'launches', domain, 'baseline', 'raw') AFTER the billable DataForSEO calls, and writeBundleManifest/verifyBundleIfManifested spawn `node scripts/evidence-manifest.mjs` with cwd:repoRoot (lines 672/684) — from a wrong cwd the spawn fails after money is spent and evidence lands outside the repo. The 20 Jul silent-failure audit (docs/reports/2026-07-20-silent-failure-audit.md) documented the exact class (36/37 sessions launch cwd=~/Claude; wp-snapshot #28 fixed, 'self-locating root, never cwd' declared the standard) but never touched seo-baseline.mjs — grep of the audit report, evidence JSON, QUESTIONS.md, BACKLOG.md, and the Phase-B evidence finds no existing record of this instance, so it is not 'already on record'."
+    },
+    {
+     "id": "C-SB-02",
+     "severity": "P1",
+     "file": "scripts/brief-snapshot.sh",
+     "line": 19,
+     "claim": "Off-by-one boundary: `-n 2 ... | tail -1` selects the SECOND-most-recent brief commit, so the owner-facing '### Merged since the last brief' section spans TWO briefs — verified live: the two newest matches are 'Morning brief 2026-07-19' (2fa4e00) and 'Morning brief 2026-07-18' (186f9a7); tail -1 picks 18 Jul, listing 80 commits instead of the 37 actually merged since the last (19 Jul) brief.",
+     "evidence_quote": "LAST=$(git log origin/main -i -E --grep=\"morning brief|MORNING_BRIEF|overnight wrap\" -n 2 --format=\"%H\" | tail -1)",
+     "fix_suggestion": "Use -n 1 (the newest brief commit IS the last brief at generation time, since today's brief is not yet committed): LAST=$(git log origin/main -i -E --grep=... -n 1 --format=\"%H\").",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 19 matches verbatim. Empirically reproduced in the worktree: the two newest grep matches are 2fa4e00 'Morning brief 2026-07-19' and 186f9a7 'Morning brief 2026-07-18'; `-n 2 | tail -1` selects 186f9a7 giving an 80-commit window, while `-n 1` gives the correct 37-commit window since the actual last brief. The script's own charter (lines 2-8) says 'Run it FIRST' — at generation time today's brief is uncommitted, so the newest match IS the last brief and -n 1 is correct; -n 2 spans two briefs and mislabels 43 already-reported commits as 'Merged since the last brief'. No existing record in QUESTIONS/DECISIONS/DIRECTIVES/LEARNINGS (only the original stale-brief fix D entry). Owner-facing generated base wrong → P1 stands."
+    },
+    {
+     "id": "C-SB-03",
+     "severity": "P1",
+     "file": "sweep.sh",
+     "line": 101,
+     "claim": "tr range gotcha defeats the locked-fact wrong-phone detector: in `tr -d ' -()'` the middle hyphen is parsed as a RANGE operator (space 0x20 through '(' 0x28), so literal hyphens are NOT deleted — empirically verified: '+91-92898-38777' flattens to '+91-92898-38777', which does not contain the WRONG_PHONE digits '9289838777', so a hyphen-grouped wrong number on a live site yields wrong_phone_found=N (false negative on the …38777 trust check; the sibling banned-string-lint.mjs correctly strips to digitsOf() for 'any formatting').",
+     "evidence_quote": "      flat=$(printf '%s' \"$lc\" | tr -d ' -()')",
+     "fix_suggestion": "Put the hyphen first or last in the tr set, or strip every non-digit: flat=$(printf '%s' \"$lc\" | tr -cd '0-9').",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "sweep.sh:101 matches verbatim. Empirically demonstrated: `printf '+91-92898-38777' | tr -d ' -()'` returns the string UNCHANGED (hyphen kept), and `printf 'a!b#c(d)e f-g' | tr -d ' -()'` returns 'abcdef-g' — proving ' -(' parses as the range 0x20-0x28 (deleting space,!,#,( plus literal )) while the hyphen survives. A hyphen-grouped occurrence of the locked-fact wrong number …38777 therefore never flattens to '9289838777' and wrong_phone_found stays N. The sibling scripts/banned-string-lint.mjs:234-235 correctly uses digitsOf = s.replace(/\\D/g,''). False negative on the CLAUDE.md LOCKED FACTS trust check ('any …38777 occurrence is WRONG') → P1 stands."
+    },
+    {
+     "id": "C-SB-04",
+     "severity": "P2",
+     "file": "scripts/hooks/guard.sh",
+     "line": 13,
+     "claim": "Substring over-match blocks the mandated form: the pattern *\"git push --force\"* also matches `git push --force-with-lease`, the ONLY force form CLAUDE.md gate 5 permits — so the guard blocks the exact command its own error message tells you to use (empirically confirmed: the live hook blocked a harmless probe command whose text merely contained the with-lease string). The same over-match exists in .claude/settings.json line 45 deny rule \"Bash(git push --force*)\".",
+     "evidence_quote": "  *\"git push --force\"*|*\"git push -f \"*|*\"git push -f\"$'\\n'*) block \"force push — use --force-with-lease only (CLAUDE.md gate 5)\";;",
+     "fix_suggestion": "Whitelist the lease form before blocking: add a preceding case arm `*\"git push --force-with-lease\"*) ;;` (and change the settings.json deny to not glob-match --force-with-lease), or match `--force` only when not followed by `-with-lease`.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "guard.sh:13 matches verbatim. Doubly proven live: (1) the repo's own PreToolUse hook BLOCKED my verification command because its text merely contained 'git push --force-with-lease' ('BLOCKED by guard.sh: force push — use --force-with-lease only'); (2) an isolated case-statement probe shows 'git push --force-with-lease origin main' → BLOCKED. .claude/settings.json line 45 deny 'Bash(git push --force*)' glob-matches the with-lease form too. CLAUDE.md HARD GATE 5 explicitly permits --force-with-lease and the block message itself instructs its use — the guard blocks the only form it tells you to use. No ruling found sanctioning the over-block (LEARNINGS.md:217 records one incident where the classifier block was a lucky save, not a disposition to always deny with-lease)."
+    },
+    {
+     "id": "C-SB-05",
+     "severity": "P2",
+     "file": "scripts/verify-forwards.sh",
+     "line": 65,
+     "claim": "Fail-open on missing input: the script runs under `set -u` only (line 9), so if $MASTER (docs/redirects/forward-farm.csv) is missing/renamed the `done < \"$MASTER\"` redirect fails, the loop body never runs, and the script continues to write an evidence file to audits/ reading 'Totals: 0 PASS · 0 FAIL · 0 not-flipped checks · 0 held rows.' and exits 0 (line 75 only exits 1 when fail>0) — a green forward-farm verification with zero data.",
+     "evidence_quote": "done < \"$MASTER\"",
+     "fix_suggestion": "Guard the input before the loop: [ -f \"$MASTER\" ] || { echo \"master CSV missing: $MASTER\" >&2; exit 2; } — and/or exit non-zero when pass+fail+notflipped+held are all 0.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Verified in scripts/verify-forwards.sh: line 9 is `set -u` only (no -e/pipefail), line 65 is `done < \"$MASTER\"`, the totals block (67-72) unconditionally appends to the already-created audits/ evidence file, and line 75 exits 1 only when fail>0. With the CSV missing, the redirect fails, counters stay 0, the file reads 'Totals: 0 PASS · 0 FAIL · 0 not-flipped checks · 0 held rows.' and the script exits 0 — a green forward-farm verification with zero data. docs/redirects/forward-farm.csv currently exists, so latent; P2 appropriate."
+    },
+    {
+     "id": "C-SB-06",
+     "severity": "P2",
+     "file": "scripts/brief-snapshot.sh",
+     "line": 34,
+     "claim": "grep-no-match time bomb under `set -euo pipefail` (line 8): grep exits 1 when a keyword has zero matches in both files, pipefail propagates it through awk, the N= assignment returns non-zero, and set -e kills the whole brief mid-generation — the awk `s+0` shows the zero case was meant to print '0 mention(s)', but set -e aborts before it can. Latent today (all 5 keywords currently have >0 mentions: HACKED 8, URGENT 6, BLOCKED 30, PAUSED 4, SECURITY 40); the first clean week silently truncates the brief. Same latent pattern at line 40 (grep -nE '^## ').",
+     "evidence_quote": "  N=$(grep -ric \"$kw\" QUESTIONS.md DECISIONS.md 2>/dev/null | awk -F: '{s+=$2} END{print s+0}')",
+     "fix_suggestion": "Neutralize the expected non-match exit inside the pipeline: N=$({ grep -ric \"$kw\" QUESTIONS.md DECISIONS.md 2>/dev/null || true; } | awk -F: '{s+=$2} END{print s+0}').",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 34 matches verbatim; line 8 is `set -euo pipefail`. Empirically reproduced in a sandbox with the identical construct: a zero-match `grep -ric | awk` pipeline kills the script before the next line (exit 1, 'reached after' never printed) — pipefail propagates grep's exit 1 through the assignment and errexit aborts. Re-ran the live counts: HACKED 8, URGENT 6, BLOCKED 30, PAUSED 4, SECURITY 40 — exactly as the finder stated, so the bomb is latent until the first zero-mention keyword. The awk `s+0` zero-case handling confirms the zero path was intended to print. Line 40's bare grep pipeline has the same latent kill."
+    },
+    {
+     "id": "C-SB-07",
+     "severity": "P2",
+     "file": "scripts/brief-snapshot.sh",
+     "line": 21,
+     "claim": "Silent truncation in the anti-silent-truncation tool: `head -30` caps the merged-commits list with no '(+N more)' marker — verified live: 80 commits fall in the current boundary window but only 30 would print, so the brief's machine-verifiable base under-reports merges by 50 with nothing signalling the cut (the script's own charter, lines 2-5, is that a brief must never understate what merged).",
+     "evidence_quote": "  git log origin/main --oneline \"${LAST}..origin/main\" | sed 's/^/- /' | head -30",
+     "fix_suggestion": "Capture the full list once to a variable, print the first 30, and append \"- (+N more — run git log ${LAST}..origin/main)\" when the count exceeds 30.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 21 matches verbatim: `head -30` with no overflow marker anywhere in the script. Empirically verified: the current boundary window holds 80 commits (and even with the C-SB-02 fix, 37) — both exceed 30, so the printed list silently drops commits. The script's stated charter (lines 2-5: the machine-verifiable base exists so a brief 'can never claim a stale nothing-merged as final') is contradicted by silent truncation of the merged list. P2 stands."
+    },
+    {
+     "id": "C-SB-08",
+     "severity": "P2",
+     "file": "sweep.sh",
+     "line": 4,
+     "claim": "Stale domain list vs the header claim 'all group domains': villaraag.com — a live group entity site monitored by scripts/uptime/sites.json (\"name\": \"Villa Raag\") and tracked in STATUS.yaml line 132 — is absent from the DOMAINS array (grep -c villaraag sweep.sh = 0; only casaraag.com is present), so the fleet recon sweep never checks it for wrong phone/email/cert expiry.",
+     "evidence_quote": "# Zero-access external sweep of all group domains. Needs only curl + openssl.",
+     "fix_suggestion": "Add villaraag.com to the DOMAINS array (and diff DOMAINS against scripts/uptime/sites.json + STATUS.yaml site lists whenever either changes).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Header line 4 matches verbatim ('all group domains'); `grep -c villaraag sweep.sh` = 0 while casaraag.com is in the DOMAINS array; scripts/uptime/sites.json line 8 actively monitors `https://villaraag.com/` with `\"name\": \"Villa Raag\", \"expect\": \"ok\"`; STATUS.yaml tracks villaraag.com as a fleet site (entity Villa Raag, stage preview). A group domain the uptime monitor watches is absent from the recon sweep's wrong-phone/email/cert checks. Minor overstatement in the claim's wording (the rebuilt site is preview-stage, live_url null — though the domain itself serves and is monitored live), which does not change the drift finding. P2 correct."
+    },
+    {
+     "id": "C-SB-09",
+     "severity": "P3",
+     "file": "scripts/uptime/check.mjs",
+     "line": 5,
+     "claim": "Broken path reference in the header comment: scripts/redirects/verify-forwards.sh does not exist (the script lives at scripts/verify-forwards.sh; there is no scripts/redirects/ directory), sending the next maintainer to a dead path.",
+     "evidence_quote": "// Judgement rules (mirrors scripts/redirects/verify-forwards.sh):",
+     "fix_suggestion": "Change the comment to scripts/verify-forwards.sh.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "scripts/uptime/check.mjs line 5 matches verbatim: '// Judgement rules (mirrors scripts/redirects/verify-forwards.sh):'. `ls scripts/redirects` → 'No such file or directory'; the script actually lives at scripts/verify-forwards.sh. Dead path in a maintainer-facing comment; P3 correct."
+    },
+    {
+     "id": "C-SB-10",
+     "severity": "P3",
+     "file": "scripts/hooks/guard.sh",
+     "line": 13,
+     "claim": "End-of-string bypass in the -f arm: the patterns require a trailing space (*\"git push -f \"*) or trailing newline after -f, so a command whose text ENDS exactly in `git push -f` (e.g. `git add -A && git commit -m x && git push -f`) matches neither pattern and passes the guard unblocked (the settings.json deny only catches it when the command STARTS with the prefix).",
+     "evidence_quote": "  *\"git push --force\"*|*\"git push -f \"*|*\"git push -f\"$'\\n'*) block \"force push — use --force-with-lease only (CLAUDE.md gate 5)\";;",
+     "fix_suggestion": "Add an end-of-string arm: *\"git push -f\") block ...;; (case patterns anchor both ends, so the bare pattern without a trailing * matches exactly the string ending there).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 13 matches verbatim. Empirically proven with an isolated case-statement probe: 'git add -A && git commit -m x && git push -f' (text ending exactly in `git push -f`) → PASS, while 'git push -f origin main' and 'git push --force origin main' → BLOCKED — the -f arms require a trailing space or newline, so an end-of-string -f slips through. The settings.json deny 'Bash(git push -f*)' is prefix-anchored and does not catch a compound command starting with git add. Edge-case bypass; P3 correct."
+    },
+    {
+     "id": "C-SB-11",
+     "severity": "P3",
+     "file": "scripts/hooks/session-start.sh",
+     "line": 6,
+     "claim": "Classic `grep -c || echo 0` double-zero: when QUESTIONS.md exists but has zero matching lines, grep -c itself prints '0' AND exits 1, so `|| echo 0` fires too and Q captures \"0\\n0\" — the unquoted $Q in the heredoc then breaks the banner line in two ('Open QUESTIONS.md items: 0 / 0 — answer or append...'). Ironic: lines 21-23 of this same file document fixing the sibling dead-fallback class. Latent (count currently non-zero). Also `^[0-9]*\\.` matches lines starting with a bare '.' (zero-or-more digits).",
+     "evidence_quote": "Q=$(grep -c '^[0-9]*\\.' \"$ROOT/QUESTIONS.md\" 2>/dev/null || echo 0)",
+     "fix_suggestion": "Drop the fallback's duplicate output: Q=$(grep -c '^[0-9][0-9]*\\.' \"$ROOT/QUESTIONS.md\" 2>/dev/null) || Q=0.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "scripts/hooks/session-start.sh line 6 matches verbatim. Mechanism verified: `grep -c` on an existing file with zero matches prints '0' AND exits 1, so `|| echo 0` fires and Q captures two lines, which the heredoc expansion at line 9 renders as a broken two-line banner. Currently latent — QUESTIONS.md has 67 matching lines. The irony is real: lines 21-23 of the same file document rebuilding the sibling dead `|| echo` fallbacks after the 20 Jul audit, and this one reintroduces the class in inverse form. The regex point (`^[0-9]*\\.` matching a bare leading '.') is also correct. P3 appropriate."
+    },
+    {
+     "id": "C-SB-12",
+     "severity": "P3",
+     "file": "scripts/evidence-kairaliyoga.mjs",
+     "line": 10,
+     "claim": "cwd-relative evidence path with no guard: OUT is relative and mkdirSync(OUT, {recursive:true}) succeeds from ANY cwd, so despite the 'run from the WORKTREE ROOT' comment, a session launched from ~/Claude (the documented 20 Jul failure mode) silently writes launch evidence screenshots outside the repo; scripts/evidence-kairaliyoga-it2.mjs line 24 has the identical pattern.",
+     "evidence_quote": "const OUT = \"launches/kairaliyoga.com/screens\";",
+     "fix_suggestion": "Anchor to the script location in both files: const OUT = new URL(\"../launches/kairaliyoga.com/screens\", import.meta.url).pathname; or fail fast if ./package.json is absent from cwd.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "scripts/evidence-kairaliyoga.mjs line 10 matches verbatim (`const OUT = \"launches/kairaliyoga.com/screens\";`) with `mkdirSync(OUT, { recursive: true })` on line 11 and the 'run from the WORKTREE ROOT' comment at lines 1-2 — no cwd guard, so from ~/Claude the screenshots land outside the repo silently, the exact class the 20 Jul audit fixed in wp-snapshot.mjs (#28) but not here. One citation slip: the identical pattern in evidence-kairaliyoga-it2.mjs is at line 22, not 24 — the quoted pattern itself is verbatim there, so the finding stands. P3 correct for a one-off launch-evidence script."
+    },
+    {
+     "id": "C-SB-13",
+     "severity": "P3",
+     "file": "scripts/brief-snapshot.sh",
+     "line": 43,
+     "claim": "Section header over-promises: '### Open PRs + branch-protection state' is followed only by the gh pr list line (line 44) and then EOF — nothing ever prints branch-protection state, so every generated brief carries a heading whose second half is never fulfilled.",
+     "evidence_quote": "echo \"### Open PRs + branch-protection state\"",
+     "fix_suggestion": "Either drop '+ branch-protection state' from the heading or add the check (e.g. gh api repos/{owner}/{repo}/branches/main/protection --jq of required checks, with its own failure fallback bound to gh).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Line 43 matches verbatim; the full file read confirms line 44 (gh pr list, with only a '(gh unavailable)' fallback) is the last command before EOF at line 45 — nothing anywhere in the script queries or prints branch-protection state, so every generated brief carries a heading whose second half is never fulfilled. P3 correct."
+    }
+   ]
+  },
+  {
+   "dimension": "wiki-hygiene",
+   "coverage": "SCANNED FULLY: README.md · START_HERE.md · all 18 wiki/ files (index, log, people, 6 entities, 7 integrations, marketing/social-profiles) · docs/sops/ all 9 files (team-website-lifecycle-sop.md read end-to-end; author-voices, batch-content-sops, LIVE-DEMO, email-vikash-transcripts, wordpress-gutenberg-setup read; deepu-publishing-guide + both access runbooks outline+pattern-scanned) · docs/process/ top-level .md files table-lint-scanned by script (all broken column counts found are reported) with WIRING_PLAN flagged sections read verbatim, MASTER_PIPELINE.md/DRAFT headers + supersession labels checked. FIVE LOAD-BEARING FACTS DIFFED ACROSS FILES: bot handle (abilashkrosbot-max vs kairali-os-bot nickname — CONSISTENT everywhere, truth-up landed) · pilot site theblushlounge.com (consistent) · sprint dates 13 Jul → 12 Aug 2026 (consistent across README/PROJECT_CONTEXT/SPRINT_STATE) · PR merge-order protocol (consistent across all handovers) · current wave (SPRINT_STATE.md stale vs STATUS.yaml → C-WH-08). DUPLICATE-ID SWEEP: DIRECTIVES.md (found the D-20260719-33 collision, C-WH-02), DECISIONS.md (D-RAMP-STEPS reuse verified legitimate — one ruling in 4 dated steps; one date-only heading → C-WH-11), QUESTIONS.md (100 headers; repeated Q-ids Q-AUTOMERGE-V2 / Q-BL-GATE2-PERPLEXITY-DEADLOCK / Q-CLASSMAP-UNKNOWNS verified as legitimate ADDENDUM/ANSWERED follow-ups, not collisions). Cross-checks run: locked facts (…38797/…38777, info@kairali.com) clean in scope dirs; lighthouse budgets 90/95/100 and content-lint 35-rule count in the Workbook verified against the actual scripts; checklist A3/A5 references in README verified; author-voice count (10) verified against the Voices source. DELIBERATELY SKIPPED (stated, not silent): docs/process/os-2026/, docs/process/rubrics/, docs/process/evidence/ subtrees (bulk research/critique corpus, low duplicated-fact density, budget); full line-by-line of MASTER_PIPELINE.md + DRAFT (~4000 lines — Phase A/B territory; table lint + header checks only); audits/, launches/, docs/reports/, MORNING_BRIEF.md, BACKLOG.md, LEARNINGS.md (records outside the assigned sweep dirs, consulted only as cross-reference evidence); QUESTIONS.md full prose (grep-level only); external URL liveness (no network fetches — the C-WH-01 dead link is proven from the repo's own deletion records, not a fetch).",
+   "notes": "Strongest three findings are all owner/team trust-surface: the marketing Workbook bookmarks a Vercel host the repo's own directives ledger records as deleted+404-verified (C-WH-01); the DIRECTIVES ledger has one id owning two different rulings, which poisons every D-20260719-33 cross-reference including D-34's 'extends -33c' (C-WH-02); and the wiki still asserts the kairali.guru claim (live Next.js, 5 locales) that the repo's own 16-Jul audit and locale register disproved and that SPRINT_STATE gap #14 ordered corrected on 14 Jul (C-WH-03). A pattern worth the Monday wiki-lint's attention: three of the stale-fact findings (C-WH-03/04/05) are wiki pages contradicted by wiki/log.md entries that landed the correction — the log spine is being maintained while the topic pages drift, i.e. doctrine (b) 'update the relevant wiki page at every launch' is executing for log.md but not for entities/integrations pages. The WIRING_PLAN broken tables (C-WH-06/07) silently drop the 'Exact edit' payload cells at render — including the seed-provenance rule the file itself marks as the finding that unblocks the LP track — so the damage is content loss, not cosmetics. No finding survives on: banned-word leakage into KTAHV-scoped docs, wrong phone/email anywhere in the sweep dirs, Deepu/Dr-Deepu-John conflation (every scoped doc handles the two-Deepus distinction correctly, the Workbook exemplarily so), or QUESTIONS.md id hygiene.",
+   "raw_count": 16,
+   "refuted": 2,
+   "surviving": [
+    {
+     "id": "C-WH-01",
+     "severity": "P1",
+     "file": "docs/sops/team-website-lifecycle-sop.md",
+     "line": 781,
+     "claim": "The team Workbook's Reference Library sends all of marketing to https://kairali-team-workbook.vercel.app (rows 2 and 3, Workbook + Voices page) — a Vercel project the repo's own record says was DELETED and 404-verified on 18 Jul 2026 (DIRECTIVES.md D-20260718-01 ack: 'kairali-team-workbook Vercel project deleted (404-verified)'; docs/reports/2026-07-18-batch-sops-and-setup-walk.md confirms the 404). The same section says 'Don't pass links around in chat… send them to this page — one place, always current.'",
+     "evidence_quote": "| 2 | [Team Workbook (this page)](https://kairali-team-workbook.vercel.app) | The one and only way we put pages and blogs online | Every time you build, hand off, or get a bounce-back |",
+     "fix_suggestion": "Repoint rows 2–3 (lines 781–782) to the surviving kairali.ai surfaces (per docs/reports/2026-07-18-content-pipeline-architecture.md: /guide/workbook and /guide/voices on the kairali.ai project URL), and re-render the guide pages from the corrected source.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Lines 781-782 verbatim-match; DIRECTIVES.md D-20260718-01 ack records 'kairali-team-workbook Vercel project deleted (404-verified)' and docs/reports/2026-07-18-batch-sops-and-setup-walk.md:8 confirms the 404. The dead links also survive in the rendered live content sites/kairali.ai/content/workbook.html:919 and :925, so the surviving /guide/workbook page itself sends marketing to the deleted URL. No QUESTIONS/DECISIONS record tracks the repoint. P1 stands (team-facing trust surface)."
+    },
+    {
+     "id": "C-WH-03",
+     "severity": "P1",
+     "file": "wiki/entities/group.md",
+     "line": 5,
+     "claim": "The wiki asserts kairali.guru is a 'live Next.js donor, EN/DE/FR/AR/RU' — contradicted by two committed sources: SITE_DESIGN_LOCALE_REGISTER.md:40 ('live site EN-ONLY, verified 13 Jul 2026 — /de/ 404s… EN/DE/FR/AR/RU exist only in Eeshal's repo') and audits/kairali-guru-2026-07-16.md ('LIVE legacy site', a 6-URL ASP.NET/IIS site with default.aspx and a stock IIS 404). This is the exact stale locale claim SPRINT_STATE gap #14 ordered corrected on 14 Jul; the wiki page still carries it uncorrected.",
+     "evidence_quote": "kairali.guru (live Next.js donor, EN/DE/FR/AR/RU), franchise arm.",
+     "fix_suggestion": "Reword to match the register + audit: 'kairali.guru (live legacy ASP.NET site, EN-only; 5-locale Next.js rebuild lives in Eeshal's repo — the component/i18n donor)'. Apply the same fix to PROJECT_CONTEXT.md lines 12/26/60 ('live Next.js').",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/entities/group.md:5 verbatim-matches 'kairali.guru (live Next.js donor, EN/DE/FR/AR/RU)'. Contradicted by SITE_DESIGN_LOCALE_REGISTER.md:40 ('live site EN-ONLY ... EN/DE/FR/AR/RU exist only in Eeshal's repo') and audits/kairali-guru-2026-07-16.md:1/:8 ('LIVE legacy site', 'legacy ASP.NET WebForms'). SPRINT_STATE gap #14 was closed for the register row + PROJECT_CONTEXT only; no record tracks the wiki page's stale claim. Both stack and locale claims are wrong in a LOCKED-FACTS-class wiki record."
+    },
+    {
+     "id": "C-WH-04",
+     "severity": "P2",
+     "file": "wiki/integrations/vercel.md",
+     "line": 3,
+     "claim": "The Vercel wiki page still records the team as '(Hobby)' and the GitHub app as 'connected to AbhilashKairali' — both stale since day one: wiki/log.md:11 (2026-07-13 17:33:53 IST) records 'Vercel Pro purchased by Abilash' and the 'Vercel GitHub App installed on org (kairali-web-factory only)' after the repo transfer to the kairali-digital org.",
+     "evidence_quote": "- Team: \"Kairali\" (Hobby) · GitHub app connected to AbhilashKairali.",
+     "fix_suggestion": "Update line 3 to: Team \"kairali\" (Pro, purchased 13 Jul 2026) · GitHub app installed on the kairali-digital org (kairali-web-factory only).",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/integrations/vercel.md:3 verbatim-matches 'Team: \"Kairali\" (Hobby) · GitHub app connected to AbhilashKairali.' wiki/log.md:11 (2026-07-13 17:33:53 IST) records 'Vercel Pro purchased by Abilash' and 'Vercel GitHub App installed on org (kairali-web-factory only)' after the org transfer. Both facts stale; no record tracks the fix. P2 appropriate."
+    },
+    {
+     "id": "C-WH-05",
+     "severity": "P2",
+     "file": "wiki/people.md",
+     "line": 6,
+     "claim": "A stale anonymous 'New engineer' row still lists developer6@kairali.com with 'Pending: Shopify staff acct (Sunaj), GitHub org invite (Abilash)' — while line 14 of the same file records the same email as Shadab Ali, 'kairali-digital org member since 16 Jul 2026'. Same person, two rows, one saying the org invite is still pending four days after the other says it landed.",
+     "evidence_quote": "- New engineer (Shopify track + factory) — developer6@kairali.com (Abilash, 14 Jul). Pending: Shopify staff acct (Sunaj), GitHub org invite (Abilash), onboarding = NEW_DEVELOPER_PACKET.md",
+     "fix_suggestion": "Delete the line-6 placeholder row (or fold any still-true pending item — the Shopify staff account — into Shadab's line-14 entry) so one person has one row.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/people.md:6 verbatim-matches the anonymous 'New engineer' row with 'Pending: ... GitHub org invite (Abilash)' for developer6@kairali.com, while line 14 records Shadab Ali at the same email as 'kairali-digital org member since 16 Jul 2026; READ on kairali-web-factory'. Same email, two rows, contradictory invite status. Not tracked anywhere. P2 appropriate."
+    },
+    {
+     "id": "C-WH-06",
+     "severity": "P2",
+     "file": "docs/process/WIRING_PLAN.md",
+     "line": 162,
+     "claim": "The §10 SEO_PLAYBOOK table header declares 2 columns ('| Action | Exact edit |') but every one of its 7 rows (lines 164–170) carries 3 cells (Action | verdict | exact edit) — GitHub-flavored markdown drops cells beyond the header count at render, so the load-bearing 'Exact edit' text of every row is silently truncated. Sibling §9 uses the correct 3-column header ('| Section | Action | Exact edit |'), showing the §10 header lost a column in copy-paste.",
+     "evidence_quote": "| Action | Exact edit |",
+     "fix_suggestion": "Change the §10 header (line 162) to a 3-column form matching the rows, e.g. '| Target | Action | Exact edit |' with a matching separator row.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Machine-verified cell counts: line 162 header has 2 cells, separator line 163 has 2, and all 7 rows (164-170) have 3 cells each — GFM drops cells beyond the header column count, truncating each row's 'Exact edit' text. Sibling §9 header at line 150 is the correct 3-column '| Section | Action | Exact edit |' form, consistent with a copy-paste column loss. P2 appropriate."
+    },
+    {
+     "id": "C-WH-07",
+     "severity": "P2",
+     "file": "docs/process/WIRING_PLAN.md",
+     "line": 111,
+     "claim": "The §6 DESIGN_DOCTRINE table (header 2 columns at line 111) mixes 2-cell rows with 3-cell rows (lines 115, 117), and the §7 LANDING_PAGE_DOCTRINE table (header at line 123) does the same (rows 127–131 have 3 cells) — the third cell of each mismatched row (the actual edit text, including the ★ 'SEED PROVENANCE RULE' that the file calls 'the finding that unblocks the track') is dropped when the table renders.",
+     "evidence_quote": "| Action | Exact edit |",
+     "fix_suggestion": "Normalize both tables to 3 columns (add a verdict/status column to the headers and an empty middle cell to the 2-cell rows), so no row's edit text is dropped at render.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Machine-verified: §6 header (line 111) is 2-column; rows 115 ('★ §1.4 exit-intent') and 117 ('DD-17 soul.md') carry 3 cells. §7 header (line 123) is 2-column; rows 127-131 all carry 3 cells, including line 127 whose dropped third cell contains the ★ SEED PROVENANCE RULE the file calls the track-unblocking finding. Render truncation is real. P2 appropriate."
+    },
+    {
+     "id": "C-WH-08",
+     "severity": "P2",
+     "file": "docs/SPRINT_STATE.md",
+     "line": 3,
+     "claim": "The self-described 'one-screen state of the sprint' still declares 'Day 2 of 30' (14 Jul) and states as present-tense fact things long false ('LEARNINGS.md is EMPTY' — now ~39KB; 'Ship Gate A5 Lighthouse budgets — gate.yml TODO' — built 17 Jul), despite its own line-4 rule 'Refresh: rewrite this file whenever the picture changes materially (each wave gate at minimum)'. STATUS.yaml (updated 2026-07-20 22:40 IST) is six days and several waves ahead; an agent reading SPRINT_STATE gets Day-2 state presented as current.",
+     "evidence_quote": "**2026-07-14 12:01:30 IST · Day 2 of 30 (13 Jul → 12 Aug 2026) · updated after the Wave-0 mechanization session (branch claude/vigorous-swanson-7a2b7c, PR pending — merge AFTER PR #2).**",
+     "fix_suggestion": "Either refresh it per its own header rule, or stamp a SUPERSEDED banner at the top pointing to STATUS.yaml as the Fleet Pulse source of truth (CLAUDE.md v1.9 rule) so the Day-2 snapshot cannot be read as current.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "docs/SPRINT_STATE.md:3 verbatim-matches the Day-2 header; line 32 still asserts 'LEARNINGS.md is EMPTY' (file is 39,839 bytes) and line 23 'Ship Gate A5 Lighthouse budgets — gate.yml TODO' (.github/workflows/gate.yml exists and contains Lighthouse). Its own line-4 rule mandates refresh; STATUS.yaml is stamped 2026-07-20 22:40 IST. No supersession banner or record exists (grep of CLAUDE.md/STATUS.yaml/QUESTIONS.md for SPRINT_STATE: zero hits). P2 appropriate."
+    },
+    {
+     "id": "C-WH-09",
+     "severity": "P2",
+     "file": "DIRECTIVES.md",
+     "line": 106,
+     "claim": "The second D-20260719-33 entry is timestamped captured 2026-07-19 21:04:59 IST and acked 21:06:27 IST — both BEFORE its own stated source event, 'owner chat 2026-07-20 ~00:45 IST'. Line 107 (D-20260719-34) has the same impossibility (entry/ack 2026-07-19 21:09:23 IST vs source chat 2026-07-20 ~01:00 IST). A directive cannot be captured three-plus hours before it was spoken; the entry timestamps were evidently copy-pasted from the neighbouring 19-Jul entries.",
+     "evidence_quote": "- [x] D-20260719-33 · 2026-07-19 21:04:59 IST · owner chat 2026-07-20 ~00:45 IST (Wispr voice)",
+     "fix_suggestion": "Append a correction entry recording the true capture timestamps (early hours of 20 Jul) for both rows; note that the 19-Jul times were a copy-paste slip so the ledger's chronology audits clean.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "Both rows verbatim-verified: D-20260719-33 (line 106) entry 2026-07-19 21:04:59 / ack 21:06:27 vs source 'owner chat 2026-07-20 ~00:45 IST'; D-20260719-34 (line 107) entry+ack 2026-07-19 21:09:23 vs source '2026-07-20 ~01:00 IST'. Capture cannot precede source by 3+ hours — one field per row is wrong. The on-record ID-COLLISION NOTE and handover report cover only the id collision (and even call these 'same-evening captures', compounding the contradiction); the chronology impossibility is tracked nowhere. P2 appropriate."
+    },
+    {
+     "id": "C-WH-10",
+     "severity": "P2",
+     "file": "wiki/index.md",
+     "line": 9,
+     "claim": "The wiki's own table of contents omits six existing wiki pages: entities/arogya-brands.md and entities/kairali-hospitality.md (Entities section lists only 4 of 6), integrations/quillrun.md and integrations/crm-centralized.md (Integrations lists only 5 of 7), marketing/social-profiles.md (no Marketing section at all), and people.md. Pages holding LOCKED FACTS (arogya-brands, kairali-hospitality) and the canonical social-profiles register are unreachable from the index that the Monday wiki lint treats as the entry point.",
+     "evidence_quote": "## Entities\n- [KTAHV](entities/ktahv.md) — hospital, clinical lock, EN/DE/FR",
+     "fix_suggestion": "Add the six missing links: arogya-brands + kairali-hospitality under Entities, quillrun + crm-centralized under Integrations, a Marketing section for social-profiles.md, and a People line for people.md.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/index.md lists 4 of 6 entity pages (arogya-brands.md and kairali-hospitality.md missing), 5 of 7 integrations (quillrun.md and crm-centralized.md missing), has no Marketing section (social-profiles.md unlinked) and no people.md link — verified against find output of wiki/*.md. No report or question tracks the index gaps. P2 appropriate."
+    },
+    {
+     "id": "C-WH-11",
+     "severity": "P2",
+     "file": "DECISIONS.md",
+     "line": 190,
+     "claim": "A DECISIONS.md entry heading is date-only — '2026-07-14 (late)' — violating the CLAUDE.md Crash Resilience law that every log entry in DECISIONS.md 'is timestamped to the SECOND in IST: YYYY-MM-DD HH:MM:SS IST — date-only entries are a lint finding'. It is the only date-only heading in the file (every sibling entry carries HH:MM:SS IST).",
+     "evidence_quote": "## 2026-07-14 (late) — kairalifranchise.com: pre-build BANKED, build PAUSED pending Abilash (no-rework discipline)",
+     "fix_suggestion": "Amend the heading to a best-known second-precision IST timestamp (bracketed as reconstructed if the exact time is unrecoverable, e.g. '2026-07-14 23:5x:00 IST [reconstructed]') per the file's amended-in-place convention.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "DECISIONS.md:190 verbatim-matches the date-only heading '## 2026-07-14 (late) — kairalifranchise.com...'. CLAUDE.md:96 names DECISIONS.md in the second-precision law and states 'date-only entries are a lint finding'. Grep confirms it is the only date-only entry heading (the other non-IST '## ' lines are RECOVERED provenance banners, not entries). The rule predates the entry (added 13 Jul 16:30). Not tracked in any report. P2 stands — the ledger's chronology is load-bearing for the repo's forensic/orphan-recovery audits."
+    },
+    {
+     "id": "C-WH-12",
+     "severity": "P3",
+     "file": "START_HERE.md",
+     "line": 44,
+     "claim": "Typo in the owner-facing launch guide: 'GREen' for GREEN in the RED/AMBER/GREEN triage instruction (a shift-key slip).",
+     "evidence_quote": "\"Triage RED/AMBER/GREen per PHASE0 Step 0 and re-cut the runbook waves.\"",
+     "fix_suggestion": "Change 'GREen' to 'GREEN'.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "START_HERE.md:44 verbatim-matches 'Triage RED/AMBER/GREen per PHASE0 Step 0'. Shift-key typo confirmed by grep. P3 appropriate."
+    },
+    {
+     "id": "C-WH-13",
+     "severity": "P3",
+     "file": "docs/sops/batch-content-sops.md",
+     "line": 41,
+     "claim": "The footer claims 'Timestamped per repo law' while providing only a date — the repo law it invokes (CLAUDE.md Crash Resilience) is precisely that timestamps are second-precision IST and 'date-only entries are a lint finding'. The doc violates the rule in the sentence citing it.",
+     "evidence_quote": "*Timestamped per repo law: written 2026-07-18 (session: playbook batch SOPs + one-time setup walk). Wizard implementation: `sites/kairali.ai/app/playbook/page.tsx`.*",
+     "fix_suggestion": "Add the HH:MM:SS IST time (recoverable from the session's commit, git log --format=%ci) or drop the 'per repo law' claim.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "docs/sops/batch-content-sops.md:41 verbatim-matches 'Timestamped per repo law: written 2026-07-18' with no HH:MM:SS. The invoked law (CLAUDE.md:96) is precisely that timestamps are second-precision IST with date-only a lint finding — the footer claims conformance while exhibiting the violation. Note docs/sops/ is not in the law's named-file list, so the defect is the false compliance claim, exactly as the finding frames it. P3 appropriate."
+    },
+    {
+     "id": "C-WH-14",
+     "severity": "P3",
+     "file": "docs/sops/team-website-lifecycle-sop.md",
+     "line": 681,
+     "claim": "The ledger status enum is stated twice with different value sets 13 lines apart: prose (line 681) lists 5 values 'build | gates | human_audit | ok_to_publish | live' as 'the fleet's real STATUS.yaml values', while the example block (lines 694–695) and STATUS.yaml:12 itself define 9 (adding ideation, research, preview, monitoring). Anyone validating ledger rows from the prose list would reject legal values like 'preview'.",
+     "evidence_quote": "The ledger's `status` reuses the fleet's real `STATUS.yaml` values — `build | gates | human_audit | ok_to_publish | live` — it does **not** invent new ones.",
+     "fix_suggestion": "Make line 681 quote the full 9-value STATUS.yaml enum (or explicitly say 'the subset a ledger item can reach: build | gates | human_audit | ok_to_publish | live') so the two in-file statements agree.",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "docs/sops/team-website-lifecycle-sop.md:681 verbatim states the ledger 'reuses the fleet's real STATUS.yaml values — build | gates | human_audit | ok_to_publish | live' (5), while line 694's example comment lists 'ideation|research|build|gates|preview|human_audit|ok_to_publish|live|monitoring' (9) and STATUS.yaml:12 defines the same 9-value stage enum. Two contradictory in-file statements confirmed. P3 appropriate."
+    },
+    {
+     "id": "C-WH-16",
+     "severity": "P3",
+     "file": "wiki/log.md",
+     "line": 3,
+     "claim": "The first wiki/log.md entry is date-only ('2026-07-13 ·' with no HH:MM:SS IST) — wiki/log.md is explicitly named in the CLAUDE.md second-precision timestamp law under which 'date-only entries are a lint finding'. It predates the rule (added 16:30 that day) but the law has no grandfather clause, and every later entry conforms.",
+     "evidence_quote": "- 2026-07-13 · Repo created (AbhilashKairali/kairali-web-factory), launch pack",
+     "fix_suggestion": "Amend the entry to a reconstructed second-precision timestamp from the repo-creation commit time (git log --reverse --format=%ci), marked [reconstructed].",
+     "verdict": "CONFIRMED",
+     "refute_or_downgrade_reason": "wiki/log.md:3 verbatim-matches the date-only first entry '- 2026-07-13 · Repo created...'. CLAUDE.md:96 names wiki/log.md and rules 'date-only entries are a lint finding' with no grandfather clause; every later entry in the file is second-precision. Mechanically a standing lint finding. P3 appropriate."
+    }
+   ]
+  }
+ ]
+}
