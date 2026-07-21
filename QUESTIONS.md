@@ -690,6 +690,7 @@ observation is accurate; her prescribed fix breaks the email lock and reverses t
 decision. One word each: EMAIL = KEEP-LOCK / EXCEPTION (per-domain info@kairalicenters.com);
 PHONE = PRIYA-STAYS / IVR (does the group IVR count as the "group number" the 13-Jul interim
 decision was waiting for?). Nothing edited until ruled.
+**PANEL VERDICT (all-three-agree, D-20260721-14 lane, 2026-07-21 ~20:15 IST): EMAIL = KEEP-LOCK** — the same review surfaced three shipped spellings of the legacy address; the one-truth law is the cure, not the casualty. **PHONE = IVR-CONDITIONAL** — the 13-Jul interim condition RESOLVED when the group IVR landed (D-20260720-29), so the IVR number replaces the AI-assistant WhatsApp on centers GATED on: (a) a live call-test proving a menu path to centers with a human answer, (b) confirming the CTA swap is a link-target change within the design freeze, (c) reversibility. Until the call-test passes, Priya stays.
 
 ## 2026-07-21 12:26:00 IST · Q-KH-KATERINA — Astha: "Svata Katerina is not our property" — collides with your locked facts (covers her hospitality items 1–5)
 Your 16 Jul locked facts + 17 Jul D-KH-JV-LABEL ship the Czech resort as the group's European joint
@@ -699,37 +700,44 @@ properties" DO lump it in as if owned. One word: REMOVE (counters flip to 2/1, c
 + meta + llms.txt edited in one PR) / KEEP (challenge her back with the locked-fact chain) /
 REFRAME (keep the panel, counters + footer become partner-aware: 2 owned properties + 1 partner
 resort). VYSOČINA is live text, not baked into any image — any outcome is a normal PR.
+**PANEL VERDICT: REFRAME WITH LOCKED WORDING** — GPT caught that my draft phrase 'partner resort' would breach the locked 'in cooperation with' phrasing. Counters become '2 owned + 1 in cooperation (Svata Katerina)', footer nav de-lumps, the JV panel and exact locked phrase stand untouched. One PR, diffs attached.
 
 ## 2026-07-21 12:26:00 IST · Q-KH-FAQ — add an FAQ to kairalihospitality.com?
 Astha item 6.8: no FAQ (factually correct). The frozen one-pager shipped gate-passed without one.
 ADD (you/marketing supply the Q&As — never invented) / DECLINE.
+**PANEL VERDICT: DECLINE this wave** — design frozen, no invented Q&As; a content-wave ticket carries it with marketing-supplied questions.
 
 ## 2026-07-21 12:26:00 IST · Q-AS-FORM — on-page inquiry form on arogyashala.in?
 Astha item 2.4: WhatsApp/Email CTAs redirect users away; an on-page form would improve conversions.
 Design is frozen and forms are a strategy-gate integrations decision (backend/CRM + consent wiring).
 APPROVE (name the backend) / DECLINE (two-CTA design stands).
+**PANEL VERDICT: DECLINE-FOR-NOW** — CRM endpoints HOT; auto-revisits the session the written auth lock lands (Satyam already confirmed no-live-without-CRM-form, so the form is coming — wiring it to an unauthenticated endpoint today is the one wrong move).
 
 ## 2026-07-21 12:26:00 IST · Q-CORP-ADDRESS — corporate office address in footers?
 Astha item 1.4 (arogyakendra). Address repo-verified: Kairali Ayurvedic Group, D-130, Block D,
 Ambedkar Colony, Mehrauli, New Delhi – 110030. NO fleet site renders it today, so this is a new
 content decision, not a parity restore. ARO-ONLY / FLEET-WIDE / NO.
+**PANEL VERDICT: POLICY-FIRST, not a footer stamp** (panel corrected my ARO-ONLY): a one-page fleet rule — HQ address on corporate About/Contact surfaces with Organization schema; LocalBusiness NAP only on location pages; arogyakendra pilots it. Perplexity: a single-site address is not harmful, but consistency binds the moment multiple sites publish addresses — hence the rule precedes the stamp.
 
 ## 2026-07-21 12:26:00 IST · Q-KY-LOGO — kairaliyoga hero mark prominence
 Astha item 7.1: "logo is not clearly visible." The 44px tri-colour icon blends into the green dawn
 hero (perception has merit; nothing broken). Repo carries the icon mark only — ch.02 forbids
 recreating the logo. KEEP / BIGGER (icon + stronger top scrim, small CSS PR) / LOCKUP (needs the
 brand-manual lockup asset from Drive — creative lane).
+**PANEL VERDICT: BIGGER now** — larger icon + stronger scrim, contrast ≥4.5:1 as the acceptance test, before/after screenshots attached; the LOCKUP upgrade rides when the brand-manual asset arrives (see Q-KAG-LOCKUP REQUEST-NOW).
 
 ## 2026-07-21 12:26:00 IST · Q-KY-GURU-LINK — timing for linking kairali.guru from the yoga training section
 Astha item 7.3 is a good add (zero guru links today) BUT guru live pages still print 2019-expired
 rates until Sunaj publishes the corrective (watch lane 1). LINK-NOW / AFTER-GURU-QA (auto-lands once
 the 5-page post-publish QA passes).
+**PANEL VERDICT: AFTER-QA** — auto-lands once the guru corrective publish passes post-publish QA; linking today routes users to 2019 prices.
 
 ## 2026-07-21 12:26:00 IST · Q-SITEMAP-VISIBLE — does Astha's "no sitemap" mean a visible sitemap link?
 She flagged "no sitemap" on 3 sites that ALL serve working XML sitemaps (robots-advertised; even the
 legacy live sites do) — the consistent reading is she means a HUMAN-VISIBLE sitemap, which no fleet
 site ships (convention). ADD (footer sitemap link fleet-wide — small PR) / DECLINE (XML + robots is
 the standard; reply explains /sitemap.xml).
+**PANEL VERDICT: DECLINE, with the explanatory reply** — corrected reasoning per Perplexity: HTML sitemaps are not 'dated', they are OPTIONAL and situational (large/deep sites); XML + robots is the standard and all three flagged sites serve it. The reply to Astha explains /sitemap.xml.
 
 ## 2026-07-21 15:12:00 IST · Q-D05-GPT-LANE — the GPT walkthrough ran on the stored API key, not your live-GPT lane: stand or re-run?
 Your queue said the GPT legs "need my live-GPT lane — tell me what you need from me to open it."
@@ -755,6 +763,7 @@ TRANSFER (move both to the kairali-digital org now, he keeps admin) / LEAVE (acc
 as ACCEPTED_RISK with an expiry) / MIRROR (org holds a mirror, he keeps working in his).
 Recommendation: TRANSFER — it costs him two clicks today and it is the same rule every other repo
 in the fleet already lives under.
+**PANEL VERDICT: TRANSFER (ratified)** — Perplexity: org ownership of vendor-worked repos is SUPPORTED continuity practice. The owner's 21 Jul 16:37 IST mail already asks exactly this; the watch lane collects Shadab's transfer confirmation + logs, branch protection follows.
 
 ## 2026-07-21 17:25:00 IST · Q-SHOPIFY-TOOLKIT-SUB — the prescribed Shopify AI Toolkit plugin does not exist
 Same reply: during setup he found the Shopify AI Toolkit plugin **was not available in the Claude
@@ -768,6 +777,7 @@ REQUIRE-TOOLKIT (he waits for the plugin; pilot slips) / ASSESS (I verify what t
 and cannot do versus the Toolkit before you rule).
 Recommendation: ASSESS then ACCEPT-SUB — the doc should describe what actually runs, but not before
 we know whether the substitute is equivalent in what it can touch.
+**PANEL VERDICT: ASSESS-THEN-ACCEPT (ratified)** — Perplexity: capability-assessment before ratifying a substituted tool is SUPPORTED risk practice. The owner's 16:37 mail already demands the connector permission list BEFORE any live theme; the assessment = a capability/permission matrix vs the prescribed Toolkit + end-to-end test logs, THEN the v2 doc amends to describe what actually runs.
 
 ## 2026-07-21 17:25:00 IST · Q-SHOPIFY-IN-ACCESS — you are not on the kairaliproducts.in staff list
 Machine-read from the same reply: on kairaliproducts.**com** you are listed as Administrator. On
@@ -776,3 +786,5 @@ Products (Store Owner), Vignesh, Zaki — **your name is absent**. Given the 20-
 where "access was given" turned out to mean one property and not the rest, this is worth closing
 rather than assuming it is a listing artefact.
 Ask Shadab to add director@ as Administrator on .in? YES / NO (you already reach it another way).
+**PANEL VERDICT: YES (ratified)** — close the gap; the GSC access-given-meant-one-property pattern says never assume a listing artefact. The owner's 16:37 mail already asks for director@ as Administrator on .in; evidence = before/after staff-list reads when Shadab replies.
+
