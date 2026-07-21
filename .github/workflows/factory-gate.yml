@@ -526,9 +526,23 @@ jobs:
     permissions:
       contents: write # push rights for the verdict commit — scoped to THIS job; the workflow default stays contents: read
     steps:
+      # Push credential = the kairali-verdict-writer GitHub App (id 4352058), ruleset
+      # 19322788's bypass actor — D-20260721-01 (owner word RULESET) executed as option D
+      # of the all-three-agree external consult (docs/research/
+      # emitter-lane-external-consult-2026-07-21.md). Token is short-lived, minted per
+      # run; the commit AUTHOR stays github-actions[bot], so verdict.mjs's §0.2
+      # provenance patterns are untouched.
+      - name: Mint verdict-writer app token
+        id: verdict-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: 4352058 # kairali-verdict-writer (org app, Contents: write only)
+          private-key: ${{ secrets.VERDICT_APP_KEY }}
+
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # the push step rebases onto wherever main moved meanwhile
+          token: ${{ steps.verdict-token.outputs.token }}
 
       - uses: pnpm/action-setup@v4
 
@@ -576,7 +590,7 @@ jobs:
             fi
             echo "$out"
             if echo "$out" | grep -Eqi "protected branch|GH006|pull request"; then
-              echo "::error::main's branch protection rejected the bot push — EXPECTED until the owner grants the github-actions app a bypass (QUESTIONS.md Q-EMITTER-PUSH-ALLOWANCE, 18 Jul 2026). The verdicts are preserved in this run's artifact but are NOT ship evidence until a CI job commits them (§0.2). The allowance is Abilash's click; weakening protection is never the agent's lane."
+              echo "::error::main's protection rejected the verdict push DESPITE the app lane (ruleset 19322788 · bypass Integration:4352058, live 21 Jul 2026, D-20260721-01). This is NOT the old pre-allowance expected-red: check that kairali-verdict-writer is still installed on the repo, that secret VERDICT_APP_KEY exists, and that the ruleset bypass list still carries the app. Verdicts are preserved in this run's artifact but are NOT ship evidence until a CI job commits them (§0.2)."
               exit 1
             fi
             git pull --rebase origin main || exit 1
