@@ -205,3 +205,20 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   batch (guarded file — rides its own reviewed PR, never weakened in passing; rule g). Same
   pre-push/guard class as the two 20-Jul bites in RPT-20260721-HANDOVER-MIDDAY §6.
 
+- [ ] 2026-07-21 13:24:00 IST — D-05 CANDIDATE A (owner-approve, HARD GATE 15): port nexu-io/open-design's anti-AI-slop
+  design rules into scripts/beauty-audit.mjs as P0/P1 checks (OUR code, no external dependency, adopt no
+  repo). Gated on the all-three-agree ChatGPT leg (confirm rules are current taste, not over-fitted —
+  e.g. a hardcoded hex blocklist could false-positive) + owner word. Register: docs/research/2026-07-21-os-review-repo-sweep.md §Card A.
+- [ ] 2026-07-21 13:24:00 IST — D-05 CANDIDATE B (owner-approve): make the Karpathy nuance explicit in our
+  code-review + simplify conventions — an out-of-scope defect is FLAGGED (spawn_task chip / review note),
+  never silently deleted in an unrelated change. One-line doctrine clarification; already largely our
+  behavior. Register §Card B.
+- [ ] 2026-07-21 13:24:00 IST — superpowers-version-check (owner marketplace decision): obra/superpowers publishes
+  plugin v6.1.1 (pushed 21 Jul); our installed version wasn't readable from the sweep subagent. A
+  marketplace-update check, not a re-adoption — owner runs /plugin update or confirms current. HARD GATE 15
+  keeps installs owner-side. Register: docs/research/2026-07-21-os-review-repo-sweep.md.
+- [ ] 2026-07-21 13:24:00 IST — D-05 REMAINING LEGS (owner/API-gated): (1) GPT step-by-step workflow walkthrough +
+  (2) all-three-agree adoption gate both need a live ChatGPT session or the API-keyed audit-gpt.mjs lane
+  (no ChatGPT MCP in-session; keys owner-side). (3) prompting-method review is Claude-doable from mailbox +
+  review-b evidence, not yet run. Nothing installed this session — the all-three-agree gate stays honestly
+  open. Register lists all three.
