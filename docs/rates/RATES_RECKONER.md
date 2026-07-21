@@ -21,6 +21,7 @@ All 6 source PDFs ingested (2026-07-14):
 | 4 | Yoga-KTAHV-USD-Sanskrit-V4-26-27.pdf | `sources/yoga-usd-26-27.md` | PASS (1 cosmetic dash-spacing fix) |
 | 5 | Yoga-KTAHV-EURO-Sanskrit-V4-26-27.pdf | `sources/yoga-eur-26-27.md` | PASS |
 | 6 | Yoga-KTAHV-INR-Sanskrit-V4-26-27.pdf | `sources/yoga-inr-26-27.md` | PASS |
+| 7 | Email: Anupam Singh Molpha (mkt@ktahv.com) 2026-07-20 16:11 IST — "Kairali Ayurvedic Centre – Ayurveda Training Program V2" (non-residential centres) | transcribed inline (§Kairali Ayurvedic Centre below), 2026-07-21 | verified against the mail body (msg 19f7f1e76d9dbda1) |
 
 Nothing pending. Rebuild yearly when Abilash re-fixes rates.
 
@@ -398,7 +399,39 @@ Identical clause-for-clause to the 25–26 Terms & Conditions block above, excep
 
 ---
 
+## Kairali Ayurvedic Centre (Delhi NCR) — Non-Residential Ayurveda Training Programs V2
+
+- **Source:** email from Anupam Singh Molpha (mkt@ktahv.com), 2026-07-20 16:11 IST, msg id `19f7f1e76d9dbda1`, thread `19f6ad26fc62bd96` — "Sharing the price list of Ayurveda training programs below." Table titled in the mail: **"Kairali Ayurvedic Centre – Ayurveda Training Program V2"**.
+- **Entity / venues:** Kairali Ayurvedic Centre — Mehrauli (New Delhi) · Siri Fort Sports Complex Centre (New Delhi) · Gurgaon/Gurugram (Haryana). **Non-residential** programs ("Accommodation & food facilities are not included in the package").
+- **Currencies quoted:** INR (₹), USD ($). No EURO column in the mail.
+- **Validity window: NONE GIVEN.** The mail says only "updated prices" — no w.e.f date, no through date. See FLAGS.
+
+### Programs and rates (as delivered — never round, never invent)
+
+| Sl No | Ayurveda Training Program | Program Code | Duration | INR (₹) | USD ($) |
+|---|---|---|---|---|---|
+| 1 | 1 Day Program | OAP | 3 Hours | 13,500 | 160 |
+| 2 | 3 Day Program | TAP | 3-hour sessions for 3 days | 37,000 | 495 |
+| 3 | 1 Week Program | WAP | 3-hour sessions for 5 Days | 61,000 | 655 |
+| 4 | 2 Weeks Program | AATP-1 | 3-hour sessions for 10 Days | 130,000 | 1,400 |
+| 5 | 4 Weeks Program | AALC-2 | 3-hour sessions for 20 Days | 250,000 | 2,700 |
+
+### Additional notes (as delivered)
+
+- Accommodation & food facilities are not included in the package.
+- Weekly off for centres: **Tuesday** — Mehrauli, New Delhi and Gurugram, Haryana (no classes); **Monday** — Siri Fort Sports Complex Centre (no classes).
+
+### Residential cross-check (same mail — CONFIRMS §KTAHV V2 above, no new numbers)
+
+The mail restates the KTAHV Palakkad residential per-night villa table: all 24 figures (4 villa types × INR/USD/EUR × Single/Double) are **identical to the KTAHV-Ayurveda-Training-Courses-V2.pdf table transcribed above** — an independent confirmation of source #1. One naming delta: the mail calls the top category **"Maharaja Suite"** where the PDF prints **"SUITE"** (same prices; do not treat as a fifth category). New operational facts the mail adds for the residential format, recorded here as delivered: classes conducted **Monday to Friday** (schedules may vary by batch) · **full advance payment** required for confirmed enrolment · **group discount** may be offered for groups of five or more students, as per current policy · **photography and videography are not permitted** during practical training sessions.
+
+---
+
 ## FLAGS (for downstream website use — not part of the source numbers)
+
+- **Centre (non-residential) V2 table has NO validity window — publication needs Abilash's word.** The legacy kairali.guru course pages carry "Above rates applicable from 1st Jan, 2019 to 31st March, 2020." — six years expired. The V2 mail gives no replacement window. Recommended interim (flagged, not ruled): update the numbers and DELETE the expired validity sentence, adding no new window until Abilash/Anupam fix one; a made-up "w.e.f 2026" would violate HARD GATE 6. ASK before shipping any validity wording.
+- **Centre program-code drift vs the legacy pages and the residential codes.** The mail's centre codes are OAP · TAP · WAP · **AATP-1** · **AALC-2**; the live kairali.guru pages print "AATP 1" and **"AALCT"**; the residential PDF codes are OAP-HV … **AALCT-HV**. AALC-2 vs AALCT is a real rename (or a mail abbreviation) — confirm with Anupam before changing any page's printed code; updating rates does not require renaming codes.
+- **Centre V2 implied ₹/$ cross-rates are internally inconsistent — transcribed as printed, do NOT normalise.** Implied rates: OAP ≈ 84.4 · TAP ≈ 74.7 · WAP ≈ 93.1 · AATP-1 ≈ 92.9 · AALC-2 ≈ 92.6. TAP's $495 sits ~20% off its siblings (at the ~93 rate it would be ≈ $398; at OAP's ~84 rate ≈ $438). The old 2019 table used a uniform ≈ 60. Possibly deliberate price-pointing, possibly a typo — flag to Anupam/Abilash; publish the printed numbers only if confirmed.
 
 - **Private-vs-group RULED (D-YOGA-PRIVATE, Abilash 17 Jul 2026) — the SOURCE PDFs need correction.** The 25–26 treatment inclusions print "group sunrise yoga; group guided evening meditation" while the 26–27 yoga inclusions print "Private"; Abilash rules the yoga side is the truth: **private one-on-one yoga sessions ARE offered, and one-on-one yoga packages too.** The "group" notation in the treatment lists is a source-document error — flag it to whoever prepares the next rate PDFs. kairaliyoga.com's "private" copy stands. Related facts on record (same ruling): externally-organised groups ARE hosted (evidence: the historical archives on the KTAHV site and kairali.com — cite those for any group-hosting claim); internally-run fixed group departures are a FUTURE plan only and must never be presented as a current offering; yoga teacher-training certification (TTC) is NOT offered.
 
