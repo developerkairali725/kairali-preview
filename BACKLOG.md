@@ -262,3 +262,16 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   that matters — INCLUDING the first write of a batch (the 11-byte placeholder incident, 21 Jul). The toolset has no
   delete/rename/update, so a bad write is permanent until the owner's manual sweep. Watch closes only if the Drive
   toolset grows a checksummed/verifiable write path; until then the caution rides every handover's STANDING CAUTIONS.
+- [ ] 2026-07-21 23:22:01 IST — KY-GURU-LINK AFTER-QA HOOK (panel verdict, Q-KY-GURU-LINK): add the kairali.guru
+  cross-link on kairaliyoga.com ONLY AFTER the guru site passes QA — which cannot start until Sunaj publishes the
+  10:50 wordings (homepage still carries Mumbai ×2, machine-probed 21 Jul 23:44 IST). Trigger: Mumbai count = 0 on
+  kairali.guru homepage + wordings live → run guru QA → on PASS, ship the link PR with before/after evidence.
+- [ ] 2026-07-21 23:22:01 IST — SCOPED MERGE-DENY REDESIGN (from closed #166, panel record
+  docs/research/pr166-disposition-panel-2026-07-21.md): the titled deny rule 'Bash(gh pr merge*)' never rode the PR
+  and as written would also block the owner-ruled arming command `gh pr merge <n> --auto --squash`
+  (D-AUTOMERGE-TIERS). Design: deny plain/interactive merges, allow --auto arming; land via settings PR with the
+  drift-authority provenance (D-20260719-02). Owner sees the design before it binds.
+- [ ] 2026-07-21 23:22:01 IST — KTM-2026 ADDRESS WATCH (feeds CORP-ADDRESS POLICY-FIRST execution): Anupam updated
+  numbers + images on the KTM seller portal; the ADDRESS FIELD IS LOCKED portal-side (his 17:38 IST mail; he is
+  chasing the handling team); KTM hard deadline 25 Jul 2026. A live instance of the conflict class the corp-address
+  policy page prevents — cite it as the incident basis when the policy page ships (never "industry norms").
