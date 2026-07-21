@@ -196,4 +196,12 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   ruleset migration (19322788) — "branch protection unreadable, required-checks reconcile SKIPPED"
   every boot. Teach it the rulesets API (GET /repos/{owner}/{repo}/rulesets + /rules/branches/main)
   so the reconcile runs again; rule (g): fix the cause, never mute the warning. Routine technical PR.
+- [ ] 2026-07-21 12:32:00 IST — guard.sh force-push pattern FALSE-POSITIVES on the exact flag it mandates: a bare
+  `git push --force-with-lease` is BLOCKED with "use --force-with-lease only" (its force-flag match
+  does not exclude the with-lease form), and the match runs over the WHOLE command string, so even a
+  commit message or heredoc BODY containing the flag literal is blocked. Bit twice this session on
+  records/astha-ingestion-21jul (amend push + backlog-entry heredoc); worked around by soft-reset +
+  follow-up commit via file tools (no history rewrite). Fix the pattern in the P2 scripts-hygiene
+  batch (guarded file — rides its own reviewed PR, never weakened in passing; rule g). Same
+  pre-push/guard class as the two 20-Jul bites in RPT-20260721-HANDOVER-MIDDAY §6.
 

@@ -152,5 +152,12 @@
     "type": "handover",
     "file": "docs/reports/2026-07-21-handover-morning-close.md",
     "supersedes": "RPT-20260721-HANDOVER-PHASEC"
+  },
+  {
+    "report_id": "RPT-20260721-ASTHA-INGEST",
+    "date": "2026-07-21 12:24:00 IST",
+    "type": "ingest-screen",
+    "file": "docs/reports/2026-07-21-astha-feedback-ingestion.md",
+    "supersedes": null
   }
 ]

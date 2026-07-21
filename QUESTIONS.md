@@ -681,3 +681,52 @@ email (consumers render it conditionally; JSON-LD strips undefined; the centre p
 contact info@kairali.com). The original Q-KC-DATA two-spelling question stands — on your ruling the
 verified address goes back into packages/facts/src/index.js:~53.
 
+
+## 2026-07-21 12:26:00 IST · Q-KCENTERS-CONTACT — Astha wants legacy contacts on kairalicenters.com; both halves hit locks
+Astha (19f7f731970e3d68, item 5.1): existing site shows +91-9555156156 + info@kairalicenters.com;
+the preview correctly renders info@kairali.com (LOCKED: public email everywhere) + the interim Priya
+WhatsApp 92898 38797 (13-Jul chat-first decision; D-20260721-07: it is the AI assistant). Her
+observation is accurate; her prescribed fix breaks the email lock and reverses the interim-phone
+decision. One word each: EMAIL = KEEP-LOCK / EXCEPTION (per-domain info@kairalicenters.com);
+PHONE = PRIYA-STAYS / IVR (does the group IVR count as the "group number" the 13-Jul interim
+decision was waiting for?). Nothing edited until ruled.
+
+## 2026-07-21 12:26:00 IST · Q-KH-KATERINA — Astha: "Svata Katerina is not our property" — collides with your locked facts (covers her hospitality items 1–5)
+Your 16 Jul locked facts + 17 Jul D-KH-JV-LABEL ship the Czech resort as the group's European joint
+venture, "in cooperation with" wording, no ownership claim. Astha wants it (and VYSOČINA) off the
+site. Nuance in her favour: the 3-properties/2-countries counters and the footer nav labelled "The
+properties" DO lump it in as if owned. One word: REMOVE (counters flip to 2/1, consultancy sentence
++ meta + llms.txt edited in one PR) / KEEP (challenge her back with the locked-fact chain) /
+REFRAME (keep the panel, counters + footer become partner-aware: 2 owned properties + 1 partner
+resort). VYSOČINA is live text, not baked into any image — any outcome is a normal PR.
+
+## 2026-07-21 12:26:00 IST · Q-KH-FAQ — add an FAQ to kairalihospitality.com?
+Astha item 6.8: no FAQ (factually correct). The frozen one-pager shipped gate-passed without one.
+ADD (you/marketing supply the Q&As — never invented) / DECLINE.
+
+## 2026-07-21 12:26:00 IST · Q-AS-FORM — on-page inquiry form on arogyashala.in?
+Astha item 2.4: WhatsApp/Email CTAs redirect users away; an on-page form would improve conversions.
+Design is frozen and forms are a strategy-gate integrations decision (backend/CRM + consent wiring).
+APPROVE (name the backend) / DECLINE (two-CTA design stands).
+
+## 2026-07-21 12:26:00 IST · Q-CORP-ADDRESS — corporate office address in footers?
+Astha item 1.4 (arogyakendra). Address repo-verified: Kairali Ayurvedic Group, D-130, Block D,
+Ambedkar Colony, Mehrauli, New Delhi – 110030. NO fleet site renders it today, so this is a new
+content decision, not a parity restore. ARO-ONLY / FLEET-WIDE / NO.
+
+## 2026-07-21 12:26:00 IST · Q-KY-LOGO — kairaliyoga hero mark prominence
+Astha item 7.1: "logo is not clearly visible." The 44px tri-colour icon blends into the green dawn
+hero (perception has merit; nothing broken). Repo carries the icon mark only — ch.02 forbids
+recreating the logo. KEEP / BIGGER (icon + stronger top scrim, small CSS PR) / LOCKUP (needs the
+brand-manual lockup asset from Drive — creative lane).
+
+## 2026-07-21 12:26:00 IST · Q-KY-GURU-LINK — timing for linking kairali.guru from the yoga training section
+Astha item 7.3 is a good add (zero guru links today) BUT guru live pages still print 2019-expired
+rates until Sunaj publishes the corrective (watch lane 1). LINK-NOW / AFTER-GURU-QA (auto-lands once
+the 5-page post-publish QA passes).
+
+## 2026-07-21 12:26:00 IST · Q-SITEMAP-VISIBLE — does Astha's "no sitemap" mean a visible sitemap link?
+She flagged "no sitemap" on 3 sites that ALL serve working XML sitemaps (robots-advertised; even the
+legacy live sites do) — the consistent reading is she means a HUMAN-VISIBLE sitemap, which no fleet
+site ships (convention). ADD (footer sitemap link fleet-wide — small PR) / DECLINE (XML + robots is
+the standard; reply explains /sitemap.xml).
