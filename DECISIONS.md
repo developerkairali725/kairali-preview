@@ -579,3 +579,45 @@ Delhi-centre training price page. The old $927 Yoga-suite cell does not exist in
 side.** Rates source of truth for training products = docs/ktahv-inputs/rates/ (transcription +
 SHA-pinned binaries). Flags for Anupam on record there (USD($g) typo; Delhi file lacks a validity
 window). Nothing publishes without the standing gates.
+
+## D-CARD-A-SKIP — open-design anti-slop rules are NOT adopted as blocking design checks (2026-07-21 18:00:00 IST)
+Owner ruling, "agree with your recommendations" (D-20260721-11), on the recommendation to SKIP.
+D-05 candidate card A proposed porting nexu-io/open-design's anti-AI-slop rules into
+scripts/beauty-audit.mjs as P0/P1 **blocking** checks. It went to the all-three-agree gate ordered by
+D-20260720-05 and **failed it**: Claude agreed with a caveat, GPT agreed, **Perplexity DISAGREED** —
+the rules are tuned to current LLM tells and contemporary frontend tropes, so encoding them as hard
+blocks freezes today's fashion into a fleet that must serve an Ayurvedic hospital, a hospitality
+property and a pharma manufacturer for years. Several banned patterns (status dots, split headers,
+dashboard-style layouts) are legitimate for clinical status or patient flows.
+**Not a rejection of the ideas — a rejection of the ENFORCEMENT LEVEL.** The rules remain available
+as advisory taste input to the beauty doctrine's judgment layer, where a human or the judging agent
+can weigh them per entity and page type. Nothing installed, no repo adopted (HARD GATE 15 intact).
+The all-three-agree bar did exactly the job it was created for: it stopped an adoption that looked
+obviously good to two of three reviewers.
+
+## D-CARD-B-DEADCODE — suspected dead code is flagged in review, never auto-deleted (2026-07-21 18:00:00 IST)
+Owner APPROVE, same ruling (D-20260721-11). D-05 candidate card B, and the ONLY one of the two to
+clear the all-three-agree bar — Claude, GPT-5 and Perplexity independently agreed, citing the same
+core reason: in a production monorepo "unused" code is routinely reachable by paths static reading
+cannot see (feature flags, cron/queue entry points, dynamic routes, WP hooks, Shopify theme
+includes), and proving deadness needs production telemetry an agent cannot gather in-session.
+**Landed as a mechanism, not a note:** docs/ENGINEERING_STANDARDS.md now carries the rule, binding
+the agent code-review stage (CLAUDE.md rule h) and any agent editing site or package code. Dead-code
+REMOVAL stays welcome as its own PR with its own reasoning — what is banned is a deletion riding
+along inside an unrelated change, which is how it gets approved on a green checklist and noticed a
+week later. No install, no dependency (HARD GATE 15 intact).
+
+## D-DESIGN-SOURCE-MATRIX — the per-use-case design-source matrix is ADOPTED as written (2026-07-21 18:00:00 IST)
+Owner GO, same ruling (D-20260721-11), on docs/design/design-source-matrix-2026-07-21.md (D-20260720-07,
+RPT-20260721-DESIGN-SOURCE-MATRIX): 11 use-cases × 6 sources, one PRIMARY + one FALLBACK per row.
+Operative from now: **claude.ai/design** is PRIMARY for MODE-B design direction and portfolio work
+(it is repo-aware, so doctrine (d) brand-manual supremacy survives) · **ChatGPT is capped at ASSIST
+in every row** — it audits Gates 1 and 2, and letting it author would collapse auditor independence ·
+**Akshar-prompts × Claude** is PRIMARY for the landing-page template and wireframe-first exploration,
+with the owner's improve-on-not-as-is caveat structural (Akshar = skeleton, Claude = skin and
+judgment) · **V0** is PRIMARY only for dashboard/internal · **motionsites.ai** is verified real (the
+Wispr spelling was correct) but capped at ASSIST as a prompt layer feeding Claude Code, not a design
+source of record.
+The matrix decides what FILLS the design-intake or MODE-B proposal step. It overrides nothing: MODE A
+stays the default lane, and front gates, Gate 1/2 external review and brand-manual supremacy are
+explicitly non-overridable.

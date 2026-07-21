@@ -49,5 +49,28 @@ only per the site's video/imagery policy code (never people on KTAHV).
 scale, and CTAs must be verified at mobile widths BEFORE desktop polish; sticky
 WhatsApp/enquiry CTAs on mobile where the register allows.
 
+## Code review: suspected dead code is FLAGGED, never auto-deleted
+Owner-approved 2026-07-21 (D-05 candidate card B, D-20260721-11) on an
+all-three-agree verdict — Claude, GPT-5 and Perplexity independently agreed, the
+only card of the two to clear that bar.
+
+An agent reviewing or editing code **names suspected-dead code in the review and
+leaves it in place.** Removing it is a separate, human-approved task.
+
+Why, in this repo specifically:
+- "Unused" here is frequently reachable by a path static reading cannot see —
+  feature flags, cron and queue entry points, dynamic routes, WordPress hooks,
+  Shopify theme includes, and content that references components by name.
+- Proving deadness needs production telemetry over time, which an agent cannot
+  gather inside one session — so its confidence is structurally lower than it
+  feels.
+- It keeps an agent's diff traceable to the change that was actually asked for.
+  A deletion riding along inside an unrelated PR is the kind of thing that gets
+  approved on a green checklist and noticed a week later.
+
+This binds the agent code-review stage (CLAUDE.md rule h) and any agent editing
+site or package code. Dead-code REMOVAL remains welcome — as its own PR, with
+its own reasoning, reviewed on its own merits.
+
 ## Amendments
 Via LEARNINGS.md-driven PRs only — same rule as the Ship Gate.

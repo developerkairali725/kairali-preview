@@ -132,6 +132,19 @@ this is a one-line doctrine clarification, not an install.
   + review-b owner-inputs evidence; not run in this leg (scoped to the repo sweep).
 - **all-three-agree adoption** — pending the ChatGPT leg above.
 
+**ALL THREE LEGS CLOSED 2026-07-21 (append-only annotation; the bullets above are the original
+register text and are NOT rewritten):**
+- GPT walkthrough — **EXECUTED** via the API lane: RPT-20260721-GPT-WALKTHROUGH (7 gated steps,
+  no-advance-without-output honoured, 50 findings GPTW-01..50) + TRX-20260721-GPT-WALKTHROUGH
+  (verbatim, inert-fenced). The "owner-gated" premise was FALSE — ~/.secrets/openai.env has held a
+  valid key since 14 Jul; nobody probed it (finding C12). Owner ruled **STAND** on the lane.
+- Prompting-method review — **EXECUTED**: RPT-20260721-PROMPTING-METHOD. Verdict: the owner's
+  prompting is not the loss channel (98.9% understood-PASS across 462 rows).
+- All-three-agree adoption — **RESOLVED, both cards ruled 2026-07-21 18:00 IST**: card A (anti-slop
+  rules as blocking checks) FAILED the bar on Perplexity's dissent → **SKIP** (D-CARD-A-SKIP); card B
+  (dead-code mention-not-delete) cleared it unanimously → **APPROVE**, landed in
+  docs/ENGINEERING_STANDARDS.md (D-CARD-B-DEADCODE). Nothing installed; HARD GATE 15 intact.
+
 Audit records preserved permanently per D-20260720-05 ("future revert/track-changes"): this register
 + the workflow journal are the append-only record; corrections get a new report id, never an
 overwrite.

@@ -741,6 +741,8 @@ secrets/injection screens clean, everything propose-only (HG15). STAND (evidence
 the same lane the design gates already use) / RE-RUN (void it; you open chatgpt.com in the browser
 lane and the walkthrough repeats interactively) — either word closes this.
 
+**ANSWERED 2026-07-21 18:00:00 IST — STAND** (owner: 'agree with your recommendations', D-20260721-11). The walkthrough's evidence is kept: RPT-20260721-GPT-WALKTHROUGH (50 findings, GPTW-01..50) + TRX-20260721-GPT-WALKTHROUGH committed. The API lane is ratified as the same lane the design gates already use. Adoption of any finding remains HG15 owner-gated — STAND ratifies the EVIDENCE, not the recommendations inside it.
+
 ## 2026-07-21 17:25:00 IST · Q-SHOPIFY-REPO-HOME — the two store repos live in a personal GitHub account
 Shadab's 21 Jul 15:04 reply (19f840769696165b) discloses that both theme repos —
 github.com/ShadabKairali/kairaliproducts.in and .../kairaliproducts.com — are **private repos under

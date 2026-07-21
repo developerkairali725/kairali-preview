@@ -196,6 +196,13 @@
     "supersedes": "RPT-20260720-RITU"
   },
   {
+    "report_id": "RPT-20260721-GPT-WALKTHROUGH",
+    "date": "2026-07-21 14:38:00 IST",
+    "type": "review",
+    "file": "docs/reports/2026-07-21-gpt-walkthrough-findings.md",
+    "supersedes": null
+  },
+  {
     "report_id": "RPT-20260721-HANDOVER-EVENING",
     "date": "2026-07-21 14:57:16 IST",
     "type": "handover",
@@ -222,5 +229,12 @@
     "type": "audit",
     "file": "docs/reports/2026-07-21-kairalicenters-faq-schema-diagnosis.md",
     "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260721-HANDOVER-SESSIONEND",
+    "date": "2026-07-21 17:53:02 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-21-handover-session-end.md",
+    "supersedes": "RPT-20260721-HANDOVER-NIGHT"
   }
 ]

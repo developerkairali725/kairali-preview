@@ -83,6 +83,31 @@ id = "generic-api-key"
     regexes = ['''2b97355b-bf6d-4a8c-83a9-ba5c0c52fc4b''']
     paths = ['''audits/ayurvedajournals\.com-2026-07-16\.md''']
 
+    # FINDING 6 — 1× generic-api-key in
+    # docs/research/2026-07-21-os-review-repo-sweep.md:137 (commit 43493bd).
+    # Inspected 2026-07-21: NO credential is present. The rule matched an internal
+    # REPORT ID — RPT-20260721-GPT-WALKTHROUGH, entropy 3.94 — because the prose
+    # places it immediately after the word "API" ("via the API lane: RPT-…"), and
+    # generic-api-key keys off an API-ish token followed by a high-entropy string.
+    # The same paragraph STATES that a key file exists at a path on the owner's
+    # machine; it does not contain the value. Reproduced locally with gitleaks
+    # 8.30.1 (the version gate.yml pins), scan scoped to origin/main..HEAD.
+    # Route chosen on external consult (GPT + Perplexity, 2026-07-21): an explicit,
+    # reviewable allowlist entry beats rewording prose to evade a scanner, because
+    # the exception stays on the record. Scoped to the exact line + path per the
+    # 14 Jul directive above; a real secret on this line or any other still fails.
+    # SCOPING NOTE — this entry deliberately does NOT use regexTarget = "line" like
+    # the four above it. Canary-proven 2026-07-21: with a line-targeted substring
+    # regex, appending a real sk-proj-… key to this SAME line was SUPPRESSED — the
+    # exemption leaked to anything sharing the line. Targeting the SECRET instead
+    # (default target), anchored ^…$, exempts exactly one literal value: the report
+    # id. Any other secret — on this line, in this file, anywhere — still fails.
+    # Canary re-run after the change: the planted key trips, this finding does not.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^RPT-20260721-GPT-WALKTHROUGH$''']
+    paths = ['''docs/research/2026-07-21-os-review-repo-sweep\.md''']
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;
