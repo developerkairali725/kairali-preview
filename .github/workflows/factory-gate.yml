@@ -566,7 +566,7 @@ jobs:
       - name: Preserve run evidence (verdicts survive even if the push lane is blocked)
         uses: actions/upload-artifact@v4
         with:
-          name: verdicts-${{ github.sha }}
+          name: verdicts-${{ github.sha }}-${{ github.run_attempt }} # run_attempt: v4 artifacts are immutable per name — a re-run attempt would 409 on the first attempt's upload and die before the guard/push loop ever runs
           path: audits/
           if-no-files-found: ignore
 
@@ -593,7 +593,44 @@ jobs:
               echo "::error::main's protection rejected the verdict push DESPITE the app lane (ruleset 19322788 · bypass Integration:4352058, live 21 Jul 2026, D-20260721-01). This is NOT the old pre-allowance expected-red: check that kairali-verdict-writer is still installed on the repo, that secret VERDICT_APP_KEY exists, and that the ruleset bypass list still carries the app. Verdicts are preserved in this run's artifact but are NOT ship evidence until a CI job commits them (§0.2)."
               exit 1
             fi
-            git pull --rebase origin main || exit 1
+            # Racing emitters land verdict commits touching the same audits/
+            # files — a plain rebase dies on those content conflicts (main @
+            # 3e0b2d7, run 29810242967: wave C's verdicts conflicted with wave
+            # A's landed commit and the job exited 1, leaving main's verdicts
+            # stale). The concurrency group serializes push runs (verdict-
+            # landing skew, not parallel execution, caused the incident), but
+            # a MANUAL RE-RUN of an old run replays a stale trigger — so the
+            # guard below ENFORCES the newest-wins invariant instead of
+            # assuming scheduling order: if any verdict commit landed upstream
+            # judged a commit that is NOT an ancestor of this run's trigger,
+            # THIS run is the stale one, and it aborts loudly rather than
+            # overwrite newer verdicts (a stale PASS over a fresh FAIL is
+            # evidence falsification — §0.2, rule g). The guard keys on the
+            # subject pattern alone, deliberately not authorship: a spoofed
+            # subject can only ADD a loud fail-closed abort, while an
+            # authorship filter gone stale would silently skip real verdict
+            # commits — over-triggering is the safe direction.
+            git fetch origin main
+            for judged in $(git log --format='%s' HEAD..origin/main | sed -n 's/^CI verdicts @ \([0-9a-f]\{9,\}\).*/\1/p'); do
+              if ! git merge-base --is-ancestor "$judged" "$GITHUB_SHA"; then
+                echo "::error::superseded run — upstream verdicts @ ${judged} are newer than this run's trigger ${GITHUB_SHA:0:9}; refusing to overwrite them (this run's output stays in the artifact)"
+                exit 1
+              fi
+            done
+            # Guard passed: every landed verdict commit judged an ancestor of
+            # this trigger, so this run's verdicts are the newest — on conflict
+            # the replayed side wins (-X theirs = the replayed side during a
+            # rebase; its diff is confined to audits/, the only staged path —
+            # see the commit step above).
+            # Rebase against the SAME origin/main snapshot the guard just
+            # checked (a pull would re-fetch and reopen the guard-to-rebase
+            # TOCTOU window; anything landing after our fetch makes the push
+            # non-fast-forward and the next iteration re-guards it).
+            git rebase -X theirs origin/main || {
+              git rebase --abort 2>/dev/null || true # abort exits 128 when the failure left no rebase in progress — without '|| true', bash -e would kill the block before the loud error below
+              echo "::error::rebase onto moved main failed even with -X theirs — verdicts preserved in this run's artifact; see the log above"
+              exit 1
+            }
           done
           echo "::error::push failed 3 times for a non-protection reason — see the log above"
           exit 1
