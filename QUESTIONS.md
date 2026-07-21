@@ -658,6 +658,9 @@ either fleet-wide form. One word aligns the fleet: PRIYA-BOT (fix kairaliyoga to
 label) / PRIYA-HUMAN (a person really answers; whatisayurveda then needs the opposite fix + the
 DECISIONS.md record truthed up). Nothing edited on a guess (HARD GATE 6); the P1 lineage fix PR
 carries this ask only.
+- **ANSWERED — PRIYA-BOT (owner, in-chat, 21 Jul ~10:45 IST, D-20260721-07):** the number IS the AI
+  assistant; kairaliyoga's "A person answers, not a bot." is the false-facing line and is fixed to
+  the Priya-AI-assistant label (fix PR rides this ruling).
 
 ## 2026-07-21 10:11:00 IST · Q-BULK-111-YEARS — "111+ Years of experience" counter on the manufacturing desk
 bulkayurvedaproducts.com homepage counters band (app/_components/facts.ts:28) prints "111+ Years of
@@ -666,6 +669,8 @@ from 1948 → ~78 years). The counter is pinned by test/guards.test.js:53, so ch
 deliberate two-file edit, not a slip. Phase C flagged it AMBIGUOUS (C-SC family adjacent). One word:
 KEEP-111 (family-practice anchor is the intended claim) / RECOUNT-78 (anchor to manufacture) /
 REWORD (e.g. "Four generations"). Until ruled, shipped copy is untouched.
+- **ANSWERED — REWORD (owner, in-chat, 21 Jul ~10:45 IST, D-20260721-08):** counter reworded to the
+  four-generations form (guard test updated in the same fix PR).
 
 ## 2026-07-21 10:11:00 IST · Q-KC-DATA addendum — a THIRD spelling had shipped; facts module now ships NO email for Prague
 The locked-facts module carried "info@katerinaresort.com" — matching neither the live-site verbatim

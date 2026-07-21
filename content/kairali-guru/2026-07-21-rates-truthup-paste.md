@@ -60,3 +60,20 @@ V2 states the centre weekly offs as: **Tuesday** — Mehrauli (New Delhi) and Gu
 ## EXECUTION (after approval)
 
 One mail to the IT lane (draft staged for Abilash's send) carrying the approved blocks page-by-page: five row-1 rewrites + footnote/weekly-off swaps + whatever D1–D3 ruled. Post-publish QA fetch of all 5 pages diffs the price block against this file (Lane B post-publish rule) and the result lands in audits/.
+
+## RULINGS — all five decisions closed (2026-07-21 10:46:10 IST, owner in-chat; captures D-20260721-03..06)
+
+- **D1 RULED (D-20260721-03): Mumbai centre is SHUT DOWN** → option (a): row-1 label on all five
+  pages = "Delhi NCR (Mehrauli · Siri Fort · Gurugram)"; Mumbai comes off the rows AND the T&C
+  "Other locations … are Delhi and Mumbai" line.
+- **D2 RULED (D-20260721-04): per-night villa rates** → option (a) verbatim: "Residential format at
+  Kairali – The Ayurvedic Healing Village, Palakkad: per-night villa rates, all-inclusive of stay,
+  meals, training & taxes — enquire for your villa category and dates." No numbers in the row.
+- **D3 RULED (D-20260721-05):** validity sentence on all five pages = "Above rates applicable from
+  1st Jan, 2026 to 30th September, 2027." (owner: "extend them till sept end 2027").
+- **D4 RESOLVED by source:** TAP $495 is verbatim on Anupam's V2 sheet (19f7f1e76d9dbda1) — ships.
+- **D5 RULED (D-20260721-06): AALCT stays** — no rename; h1/table/slug keep AALCT.
+
+Follow-up mail to Sunaj staged with these wordings (owner sends); post-publish QA fetch diffs the
+five live pages against THIS file including this section.
+
