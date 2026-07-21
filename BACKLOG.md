@@ -253,3 +253,7 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   (no ChatGPT MCP in-session; keys owner-side). (3) prompting-method review is Claude-doable from mailbox +
   review-b evidence, not yet run. Nothing installed this session — the all-three-agree gate stays honestly
   open. Register lists all three.
+- [ ] 2026-07-21 19:40:00 IST — MEMORY TRUTH-UP (kairali-author-voices): session memory says "pending: ChatGPT once-over"
+  but docs/sops/author-voices.md:148 records it DONE 2026-07-18 (owner-confirmed in-chat; the notes ARE the Control SOP
+  v1.0 docx, already mapped). Fix the memory file at session-close. Rule: the repo outranks memory on recorded state.
+  (Home for RPT-20260721-AMBUJ-VOICE-PROFILES dispositions row 3.)
