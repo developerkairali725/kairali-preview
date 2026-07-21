@@ -1,11 +1,11 @@
 {
   "judged_dir": "sites/arogyakendra.com",
-  "file_count": 18,
-  "tree_sha256": "7f404d8d5341c438d5c140d2278fa1e30d78c404e63a5d9dee66f1ce3a50d110",
+  "file_count": 19,
+  "tree_sha256": "5657e60bd2501bca3a02510ae5f6242a1d45e07b8115148fee50000e473e016b",
   "files": [
     {
       "path": "sites/arogyakendra.com/IMAGE_MANIFEST.md",
-      "sha256": "c0388ec2c679c19e84a426bbe72a5a8b3fcf72c0b9ba1d8d97b9a04d87ad631d"
+      "sha256": "158a271d943aaa05adf2d31089b82f24722fd7e9fc7565b6e0b705cf65dccd49"
     },
     {
       "path": "sites/arogyakendra.com/app/cookie-policy/page.tsx",
@@ -13,7 +13,7 @@
     },
     {
       "path": "sites/arogyakendra.com/app/globals.css",
-      "sha256": "a0ce1f99797bcf782814023ddc5395de3d72131fec7a6087205411c10bcceaeb"
+      "sha256": "459e2c633061be9524d5ab66470ff4ffbad2712f1e08b04a21df8284230aac1f"
     },
     {
       "path": "sites/arogyakendra.com/app/icon.png",
@@ -33,7 +33,7 @@
     },
     {
       "path": "sites/arogyakendra.com/app/page.tsx",
-      "sha256": "acd9f60a9ad4bb8cf7b1c450c223921832e1dcd0ee338cc4ab735dcf33ed6e2b"
+      "sha256": "c4c373c14f1bbaf457c375287e3dcae3bd015c71f1e96c195e3794084a61eba6"
     },
     {
       "path": "sites/arogyakendra.com/app/privacy/page.tsx",
@@ -62,6 +62,10 @@
     {
       "path": "sites/arogyakendra.com/package.json",
       "sha256": "fccde3153e53c1f13494eff34973a81f95848b0b8207577c83d540d3180d23d9"
+    },
+    {
+      "path": "sites/arogyakendra.com/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
     },
     {
       "path": "sites/arogyakendra.com/site.config.json",

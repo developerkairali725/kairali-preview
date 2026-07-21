@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/arogyashala.in/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "71b4d36dba71ef4d76ce0bf0fc03aa739c638283bef3860b37fb8b7df83fb76b",
+  "artifact_sha256": "b795d174a316c49737ed24129de948c50ab363c0415b0880bb0b0dd82c39a0d3",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=arogyashala.in"
   ],
   "exit_code": 0,
-  "started_at": "2026-07-21T12:51:07+05:30",
-  "finished_at": "2026-07-21T12:51:33+05:30",
+  "started_at": "2026-07-21T16:18:06+05:30",
+  "finished_at": "2026-07-21T16:18:32+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29809705344",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29823470031",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
