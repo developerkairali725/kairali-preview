@@ -9,10 +9,10 @@
     "pnpm exec turbo build --filter=kairalicenters.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-07-21T09:31:25+05:30",
-  "finished_at": "2026-07-21T09:31:53+05:30",
+  "started_at": "2026-07-21T10:42:35+05:30",
+  "finished_at": "2026-07-21T10:43:01+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29803159249",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,

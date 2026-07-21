@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/bulkayurvedaoils.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "c92cfae5b9e5d51de5b3f4b8e7294862c74b17417c167ff95571c037eaeec70c",
+  "artifact_sha256": "cdef16accb842969227977a14a3d254e74d93e224edf3368a66175be86dda4d4",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=bulkayurvedaoils.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-07-21T09:29:31+05:30",
-  "finished_at": "2026-07-21T09:30:01+05:30",
+  "started_at": "2026-07-21T10:40:45+05:30",
+  "finished_at": "2026-07-21T10:41:15+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29803159249",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
