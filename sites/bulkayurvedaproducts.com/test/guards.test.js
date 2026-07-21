@@ -50,9 +50,14 @@ test("the four engagement models lead with the canonical published wording", () 
 });
 
 test("published counters render with their provenance line", () => {
-  for (const n of ["10000+", "1200+", "900+", "111+"]) {
+  for (const n of ["10000+", "1200+", "900+"]) {
     assert.ok(homeSurface.includes(n), `published counter missing: ${n}`);
   }
+  // D-20260721-08: "111+ Years of experience" (a ~1908 anchor on a
+  // manufacturing desk) is REWORDED to the four-generations form — the
+  // generations belong to the family practice, never to manufacture.
+  assert.ok(homeSurface.includes("Generations practising Ayurveda"), "the ruled four-generations tile is missing");
+  assert.ok(!homeSurface.includes("111+"), "the retired 111+ counter must not return (D-20260721-08)");
   assert.match(homeSurface, /Figures as published by KAPPL/, "the provenance line travels with the counters");
 });
 

@@ -25,7 +25,7 @@ export const COUNTERS = [
   { n: "10000+", l: "Satisfied clients" },
   { n: "1200+", l: "Total distributors" },
   { n: "900+", l: "Product SKUs" },
-  { n: "111+", l: "Years of experience" },
+  { n: "4", l: "Generations practising Ayurveda" },
 ] as const;
 
 export const COUNTERS_PROVENANCE = "Figures as published by KAPPL — carried as-is, never restated";

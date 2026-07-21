@@ -587,8 +587,8 @@ export default function Home() {
                 <div className="ladder-body">
                   <h3>Just a question?</h3>
                   <p>
-                    Ask it on WhatsApp — programme fit, your month, anything.
-                    A person answers, not a bot.
+                    Ask Priya, our AI assistant, on WhatsApp — programme fit,
+                    your month, anything.
                   </p>
                   <a className="btn btn-primary" href={WHATSAPP_URL} data-cta="whatsapp_question">
                     <WhatsAppIcon />
