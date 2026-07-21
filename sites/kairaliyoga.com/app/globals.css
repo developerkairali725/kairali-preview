@@ -329,6 +329,9 @@ section[id], article[id] { scroll-margin-top: 24px; }
   object-fit: cover;
   aspect-ratio: 3 / 2;
 }
+/* Portrait sources keep their native ratio — a 1066×1600 shot in the 3:2
+   frame loses 55% of its height and beheads the subject (Astha 7.4). */
+.timeline img.img-portrait { aspect-ratio: 2 / 3; }
 
 /* ---------- What to expect ---------- */
 .expect-grid { display: grid; gap: 36px; }

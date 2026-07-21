@@ -286,6 +286,7 @@ export default function Home() {
                   </p>
                 </div>
                 <img
+                  className="img-portrait"
                   src="/images/ktahv-yoga-cobra-instructor-adjustment.jpg"
                   srcSet="/images/ktahv-yoga-cobra-instructor-adjustment-640.jpg 640w, /images/ktahv-yoga-cobra-instructor-adjustment-800.jpg 800w, /images/ktahv-yoga-cobra-instructor-adjustment.jpg 1066w"
                   sizes="(min-width: 760px) 420px, calc(100vw - 40px)"
@@ -365,6 +366,7 @@ export default function Home() {
                   </p>
                 </div>
                 <img
+                  className="img-portrait"
                   src="/images/ktahv-meditation-seated-chin-mudra.jpg"
                   srcSet="/images/ktahv-meditation-seated-chin-mudra-640.jpg 640w, /images/ktahv-meditation-seated-chin-mudra-800.jpg 800w, /images/ktahv-meditation-seated-chin-mudra.jpg 1066w"
                   sizes="(min-width: 760px) 420px, calc(100vw - 40px)"
