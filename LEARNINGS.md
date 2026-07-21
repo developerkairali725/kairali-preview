@@ -245,3 +245,21 @@ command's status. (4) WORKFLOW ISOLATION: a sweep subagent ran `git checkout mai
 mid-session and hijacked an in-flight commit (reflog-caught, relocated, origin untouched) — the existing
 per-agent-worktree rule BINDS ON WORKFLOW SPECS TOO: any workflow agent that may run git state commands
 gets isolation:'worktree', and prompts saying "read-only" are advice, not enforcement.
+
+## 2026-07-20 23:58:00 IST — The CONFLICTING-PR trap: a PR with merge conflicts gets NO CI runs and NO error
+PR #203 sat for ~4 hours looking like a CI outage: no check suites at all on its last two pushes. Two
+wrong hypotheses were chased with probe commits (d43b3fb "suspected spending cap", 89a05b1 "bot pushes
+stopped creating check suites") before the real cause surfaced: origin/main had moved (the D-37/D-38…41
+DIRECTIVES.md union from PR #202/#204), making #203 CONFLICTING — and GitHub cannot build the
+pull_request test-merge commit for a conflicting PR, so it creates NO check suites, shows NO red X, and
+raises NO error anywhere. The PR just silently shows nothing. The 30afbea merge of main into the branch
+(23:36:44 IST) resolved the conflict; CI immediately produced the full battery, all green, merged
+23:48:17 IST 20 Jul (handover's "~00:5x 21 Jul" was anticipatory — GitHub truth is 23:48). Rules:
+(1) A PR showing ZERO check runs (as opposed to red ones) means FIRST run
+`gh pr view N --json mergeable,mergeStateStatus` — CONFLICTING explains everything and costs one call;
+CI-outage hypotheses come only after mergeable=MERGEABLE.
+(2) Records branches touch the same append-only files every lane touches (DIRECTIVES.md, STATUS.yaml,
+docs/reports/index.json) — they conflict with ANY concurrent merge by construction. Merge origin/main
+into the records branch immediately before every push, not after CI goes quiet.
+(3) This is a member of the silent-failure CLASS (RPT-20260720-SILENT): absence of a signal is never a
+pass. A gate that did not run is a gate that did not pass — "no CI ran" blocks merge exactly like red.
