@@ -70,6 +70,20 @@ export function ChatbaseLoader({
       if (loaded) return;
       loaded = true;
       cleanup();
+      // Widget-coexistence CSS, injected with the embed so every consumer
+      // site gets it. At phone widths Chatbase's proactive message bubbles
+      // stack ~300px up from the launcher with pointer-events:auto on the
+      // whole container — burying and intercepting the page's own primary
+      // CTAs (Astha review item, RPT-20260721-ASTHA-INGEST: taps on the
+      // hero email button opened the chat instead). The launcher itself
+      // stays; desktop keeps the proactive nudges.
+      if (!document.getElementById("kairali-chat-coexistence")) {
+        const style = document.createElement("style");
+        style.id = "kairali-chat-coexistence";
+        style.textContent =
+          "@media (max-width: 767px) { #chatbase-message-bubbles { display: none !important; } }";
+        document.head.appendChild(style);
+      }
       window.embeddedChatbotConfig = {
         chatbotId,
         domain: "www.chatbase.co",
