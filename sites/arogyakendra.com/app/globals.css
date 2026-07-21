@@ -78,6 +78,7 @@ h1, h2, h3 {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  gap: 10px;
 }
 /* Scoped selector so the later .btn display rule cannot re-show it */
 .site-header .header-cta { display: none; }

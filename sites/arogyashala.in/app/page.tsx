@@ -168,6 +168,7 @@ export default function Home() {
         <div className="container">
           <a className="wordmark" href="/" aria-label="Arogya Shala — home">
             <img src="/images/kairali-icon.svg" alt="" aria-hidden="true" width="44" height="31" />
+            <span className="wordmark-name">Arogya Shala</span>
           </a>
           <p className="overline">A Kairali Retail Programme</p>
           <h1>Arogya Shala — the Kairali counter for your neighbourhood.</h1>

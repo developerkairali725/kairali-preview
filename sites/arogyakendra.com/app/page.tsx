@@ -161,6 +161,13 @@ export default function Home() {
       <header className="site-header">
         <div className="container">
           <a className="wordmark" href="#top" aria-label="Arogya Kendra — home">
+            <img
+              src="/images/kairali-icon.svg"
+              alt=""
+              aria-hidden="true"
+              width="44"
+              height="31"
+            />
             Arogya Kendra
           </a>
           <a

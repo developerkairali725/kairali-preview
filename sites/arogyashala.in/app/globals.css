@@ -70,7 +70,15 @@ p { margin: 0 0 1em; }
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  gap: 10px;
   margin-bottom: 28px;
+  text-decoration: none;
+}
+.hero-dark .wordmark-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--ivory);
+  white-space: nowrap;
 }
 .hero-dark .overline { color: var(--marigold-300); /* ch.08 dark-surface descriptor · brand-allow: marigold-text */ }
 .hero-dark h1 {
