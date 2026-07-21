@@ -275,3 +275,7 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   numbers + images on the KTM seller portal; the ADDRESS FIELD IS LOCKED portal-side (his 17:38 IST mail; he is
   chasing the handling team); KTM hard deadline 25 Jul 2026. A live instance of the conflict class the corp-address
   policy page prevents — cite it as the incident basis when the policy page ships (never "industry norms").
+- [ ] 2026-07-18 19:46:04 IST (session close) — **D-18 scoped-rubric PR:** implement scoped review feedback in scripts/design-review.mjs prompts (design reviews ask design feedback ONLY — the anti-goalpost-moving rule; see LEARNINGS 18 Jul + the advisory lane #146). Small PR, next-session queue item 4.
+- [ ] 2026-07-18 19:46:04 IST (session close) — **YMYL-widen build (D-YMYL-WIDEN, closes O5):** widen the honest-YMYL content lint from whatisayurveda.com to ALL organic health surfaces; per-site rule tuning as sites onboard.
+- [ ] 2026-07-18 19:46:04 IST (session close) — **Facts-package spelling PR + Abishek signboard round:** apply the ruled spellings from the owner-facts package across sites/ and queue the signboard verification round via Abishek.
+- [ ] 2026-07-18 19:46:04 IST (session close) — **Verdict-emitter tranche 2:** extend the CI-wired emitters (#126 T1, wiring #135) to the next gate tranche — keeps the 50-unproven count dropping.
