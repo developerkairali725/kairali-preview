@@ -740,3 +740,37 @@ flagged exactly that mid-run (disclosed in the PR). Artifacts: transcript + 50-f
 secrets/injection screens clean, everything propose-only (HG15). STAND (evidence stays; API lane =
 the same lane the design gates already use) / RE-RUN (void it; you open chatgpt.com in the browser
 lane and the walkthrough repeats interactively) — either word closes this.
+
+## 2026-07-21 17:25:00 IST · Q-SHOPIFY-REPO-HOME — the two store repos live in a personal GitHub account
+Shadab's 21 Jul 15:04 reply (19f840769696165b) discloses that both theme repos —
+github.com/ShadabKairali/kairaliproducts.in and .../kairaliproducts.com — are **private repos under
+his own GitHub account** (tied to developer6@kairali.com, so company email, but a personal account,
+not the kairali-digital org). He did the right things around them (backups in three places, live
+themes untouched), so this is not a discipline problem — it is a CONTINUITY one: if he leaves or
+loses the account, the fleet's Shopify theme history leaves with him, and no org policy, branch
+protection, CODEOWNERS or audit trail applies to those repos.
+TRANSFER (move both to the kairali-digital org now, he keeps admin) / LEAVE (accept the risk, log it
+as ACCEPTED_RISK with an expiry) / MIRROR (org holds a mirror, he keeps working in his).
+Recommendation: TRANSFER — it costs him two clicks today and it is the same rule every other repo
+in the fleet already lives under.
+
+## 2026-07-21 17:25:00 IST · Q-SHOPIFY-TOOLKIT-SUB — the prescribed Shopify AI Toolkit plugin does not exist
+Same reply: during setup he found the Shopify AI Toolkit plugin **was not available in the Claude
+Code plugin marketplace**, and substituted the Claude Connector + the Shopify Claude Connector App.
+He reports the environment works. But docs/process/shopify-agentic-rollout-instructions-v2.md names
+the Toolkit as the tool of record, and the OS's right-tool-right-time law (D-20260719-09) says every
+step DECLARES its tool and the system enforces that the declared capability actually fired. A
+substituted tool with different permissions is a different lane, not a detail.
+ACCEPT-SUB (ratify the connector path, and I amend the v2 doc so the declaration matches reality) /
+REQUIRE-TOOLKIT (he waits for the plugin; pilot slips) / ASSESS (I verify what the connector path can
+and cannot do versus the Toolkit before you rule).
+Recommendation: ASSESS then ACCEPT-SUB — the doc should describe what actually runs, but not before
+we know whether the substitute is equivalent in what it can touch.
+
+## 2026-07-21 17:25:00 IST · Q-SHOPIFY-IN-ACCESS — you are not on the kairaliproducts.in staff list
+Machine-read from the same reply: on kairaliproducts.**com** you are listed as Administrator. On
+kairaliproducts.**in** the staff list is Kumar-outreach@ (Custom Role, Pending), Astha, Kairali
+Products (Store Owner), Vignesh, Zaki — **your name is absent**. Given the 20-Jul GSC/GA4 pattern
+where "access was given" turned out to mean one property and not the rest, this is worth closing
+rather than assuming it is a listing artefact.
+Ask Shadab to add director@ as Administrator on .in? YES / NO (you already reach it another way).
