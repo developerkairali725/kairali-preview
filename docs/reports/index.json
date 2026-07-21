@@ -159,5 +159,12 @@
     "type": "ingest-screen",
     "file": "docs/reports/2026-07-21-astha-feedback-ingestion.md",
     "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260721-HANDOVER-AFTERNOON",
+    "date": "2026-07-21 13:28:00 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-21-handover-afternoon-close.md",
+    "supersedes": "RPT-20260721-HANDOVER-MORNING"
   }
 ]
