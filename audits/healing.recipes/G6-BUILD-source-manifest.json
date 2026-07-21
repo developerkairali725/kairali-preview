@@ -1,0 +1,139 @@
+{
+  "judged_dir": "sites/healing.recipes",
+  "file_count": 33,
+  "tree_sha256": "9d37e2de28cbab189cb40dd3578c09e0bdea6aefab216e7bf6e3dcea80a41428",
+  "files": [
+    {
+      "path": "sites/healing.recipes/DESIGN_NOTES.md",
+      "sha256": "a55165a301068a94df0062e89543d5024b06f35a5f9c693f1aed2484a7fbdc60"
+    },
+    {
+      "path": "sites/healing.recipes/IMAGE_MANIFEST.md",
+      "sha256": "f747cd22caad11c33391ab8f846d901ade25e3209003013e7d57ecc834f975f7"
+    },
+    {
+      "path": "sites/healing.recipes/app/_components/chrome.tsx",
+      "sha256": "b0fcbdd066d846b34f350e29320f34210a8f5afd589579376fa5aff1d1dbf7e7"
+    },
+    {
+      "path": "sites/healing.recipes/app/author/page.tsx",
+      "sha256": "7c4399843fca884adf4cc391907aeda1fe97cd461079bd36286c0f9538aab7d7"
+    },
+    {
+      "path": "sites/healing.recipes/app/books/[slug]/page.tsx",
+      "sha256": "b9fdf37432daef1f0679089d8969017738577e9b94a060969d8f8bacb9bea63c"
+    },
+    {
+      "path": "sites/healing.recipes/app/contact/page.tsx",
+      "sha256": "59e7bfea08791e0f5ffa36bf838929ecae809332ff5a327884aff03ccd796fe7"
+    },
+    {
+      "path": "sites/healing.recipes/app/cookie-policy/page.tsx",
+      "sha256": "f80dd8b1157eb32033d32d2a82cbe20d2d6bcc5cea8f83a7b38b429d95987229"
+    },
+    {
+      "path": "sites/healing.recipes/app/globals.css",
+      "sha256": "dce3bbc4bec82298071be2d2201ee6155a5e8680d5d9272b81144b5da28af575"
+    },
+    {
+      "path": "sites/healing.recipes/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/healing.recipes/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/healing.recipes/app/layout.tsx",
+      "sha256": "a9f7ca8ed99b16126f2a0027e2ed24dfbc0171839f85b85771dba8e4e8e65771"
+    },
+    {
+      "path": "sites/healing.recipes/app/llms.txt/route.ts",
+      "sha256": "d34e3931e1b78b06ebff56c02628bf865aab12167aa0f0c2a52c98a225a95e57"
+    },
+    {
+      "path": "sites/healing.recipes/app/page.tsx",
+      "sha256": "d66bd7643579987a485aa72d245b41f0f4e23bee1f19dcb5514b909a59462d6a"
+    },
+    {
+      "path": "sites/healing.recipes/app/press/page.tsx",
+      "sha256": "0d63f5538544666160691aa7370cbb77848eddee9f6cd2441fd411601e8b4b99"
+    },
+    {
+      "path": "sites/healing.recipes/app/privacy/page.tsx",
+      "sha256": "5a19204645edee5c6693ad9743a533fcb81c5ff7a383e0f173bd87135e9f955e"
+    },
+    {
+      "path": "sites/healing.recipes/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/healing.recipes/app/sitemap.ts",
+      "sha256": "ef9bf224880e4d6ba19cbc0f864796929896f2c61a4b09e828979a9a459fe1da"
+    },
+    {
+      "path": "sites/healing.recipes/app/terms/page.tsx",
+      "sha256": "b73177777a14b95c2ea2739ea66042029a525f37304791e558af926366250cc0"
+    },
+    {
+      "path": "sites/healing.recipes/content/books.json",
+      "sha256": "9d4492c782fd108165c5538969a173b54e1b3ac60b411892d0e4606b8bf3430d"
+    },
+    {
+      "path": "sites/healing.recipes/content/redirects.json",
+      "sha256": "8be0696bde89cd274e553b46dee73de9a00e9c93b7ee1481fb59745bd991fc59"
+    },
+    {
+      "path": "sites/healing.recipes/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/healing.recipes/next.config.ts",
+      "sha256": "f74577bb5e834ee3252b892f8c69268c26e14bcfb4a5b735e096bb01eff9c728"
+    },
+    {
+      "path": "sites/healing.recipes/package.json",
+      "sha256": "7c53630ee24a4c7d08d9af4021c9487d1ea96fcd82e6abb3ac5994f6ce65d8fe"
+    },
+    {
+      "path": "sites/healing.recipes/public/covers/ayurvedic-cookbook.jpg",
+      "sha256": "d2ecb253108fa46407fd5d1ed69776a06c2b95fbbaed4c11e0e9be4ef8295f52"
+    },
+    {
+      "path": "sites/healing.recipes/public/covers/harmony-mockup.jpg",
+      "sha256": "b8bc4a9ff3fb1b516e4cf48cebdb2aae93d7ae6363305d8431aecf5d41610d31"
+    },
+    {
+      "path": "sites/healing.recipes/public/covers/harmony.jpg",
+      "sha256": "3005acfd3a25a8a8ab27162b19b1fc15c477ccc632bacd1548abd41d065de60f"
+    },
+    {
+      "path": "sites/healing.recipes/public/covers/herbal-massage.jpg",
+      "sha256": "898192c021ec7b87e293cc9372ff6d2b3e6273864d3a17b19e2784305a17cd5e"
+    },
+    {
+      "path": "sites/healing.recipes/public/covers/wellness-cookbook.jpg",
+      "sha256": "0f8c59a8d712014537304e7068949b4ec0d2a50123e74da4a8dd5a4e6ec439ec"
+    },
+    {
+      "path": "sites/healing.recipes/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/healing.recipes/public/og.jpg",
+      "sha256": "65dbcd5a4b5a76ada4d3f370f2207172122211a047491570aca7920ac6f1affa"
+    },
+    {
+      "path": "sites/healing.recipes/site.config.json",
+      "sha256": "321dc62e11e369b4c8ae85cde755b8b20e19446368b9eb57446a9e46be9f2c6f"
+    },
+    {
+      "path": "sites/healing.recipes/test/books.test.js",
+      "sha256": "5335c14fcaf00646e8a13e389fa307898bb8f4fadae62a31dc5b93d457dd8a05"
+    },
+    {
+      "path": "sites/healing.recipes/tsconfig.json",
+      "sha256": "fc9fa6f6afe3e2f097b8a6660d9f4a819bdb0e1586f541385569022edc26f788"
+    }
+  ]
+}

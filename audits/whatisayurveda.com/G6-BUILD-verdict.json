@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/whatisayurveda.com/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "8b7ee05b761c7feac9d880eb6bec1c14c0eea56e82353a66bcfcf39f18b4ba8f",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=whatisayurveda.com"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:34:11+05:30",
+  "finished_at": "2026-07-21T09:34:40+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "whatisayurveda.com",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=whatisayurveda.com"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

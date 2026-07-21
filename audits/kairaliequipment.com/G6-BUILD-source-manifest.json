@@ -1,0 +1,175 @@
+{
+  "judged_dir": "sites/kairaliequipment.com",
+  "file_count": 42,
+  "tree_sha256": "f44a96e2752a861a78ca170baac2a591e79ea040d1980c710a09e96fb7e029e8",
+  "files": [
+    {
+      "path": "sites/kairaliequipment.com/.gitignore",
+      "sha256": "6fe16e5e5dad9408c6a9082604c816d8067641ae1b5e59aceb90eb51c1088c63"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/_components/chrome.tsx",
+      "sha256": "adb7ca33d147c2a73f4e1742617ab6dac184b2e564b00f8686c5c4e46be7244b"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/_components/page-chrome.tsx",
+      "sha256": "0e44ce9f3a3a78ec910abcef86cc3539c6769d2372b4e11eee8d2279a8138491"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/_lib/catalog.ts",
+      "sha256": "3fc7b6daa2f965c3b5c120f5a3e6991e2f11d10c598e2abb9dcfb7db8e875ded"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/about/page.tsx",
+      "sha256": "38704423adf3b66dded113401454672df77c95ab1da99b89e4560d8a6f355fd5"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/api/enquiry/route.ts",
+      "sha256": "cc14b6d7b5048a29e9d13b7d3d661f20baae502e12bf02436741eaec9e0eb978"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/certifications/page.tsx",
+      "sha256": "5429d9acc002b8eb06d684ccbc1a3fdd4592293569654cd14eb288e58228b258"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/contact/page.tsx",
+      "sha256": "a33008403e144e98919e771514dc48071e2b4ac2d52c23d4b35471026fc7cf36"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/cookie-policy/page.tsx",
+      "sha256": "d005b5082064a742be1cb5cc83aa25fe2ade51a31d213dc5a9aa8b7e47ac1599"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/equipment/[category]/[sku]/page.tsx",
+      "sha256": "7b6b98baf3dfa9d74e9d3a86aae463bed543d5ce091405e34519b36eacb30f94"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/equipment/[category]/page.tsx",
+      "sha256": "2dcc23371fc8171ced37a9607ed756182c14a2a476768ea578534b9503eb2f0c"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/equipment/page.tsx",
+      "sha256": "a45a05315393056e3aaacf6e1821edd4d7f296b6bed339d61aea789db022f287"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/faq/page.tsx",
+      "sha256": "fd9512fe8ea9f795788e774ef93215f3745dcee34faa79f351cef6b7fce77eb3"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/globals.css",
+      "sha256": "9c5ec254ea9bb1ef39a35c7a99b9ddd9da81f329e0fde2510b81e5792921e563"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/layout.tsx",
+      "sha256": "587a4814c881d6c082a2042a8a8a6058d6adf4b484371739d6e9028713a1b878"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/llms.txt/route.ts",
+      "sha256": "08f937f540cfc689a1a9bb53c4df88448939a9557ba23defc5023ce205b16936"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/manufacturing/page.tsx",
+      "sha256": "d15ca7ad3496ca39776f2e9d7891e41b8b7b40bcc8f7573f119f6b58f4e4d3bd"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/page.tsx",
+      "sha256": "58bd0462e2d11cdc3a99f5fab7bcf59eb08c7eb4bc8075f68105c769ccdd5120"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/privacy/page.tsx",
+      "sha256": "2dd869bfd6d86f1bd1dcd702750c6ef47c705ec67ab704039e866b9a80f07a35"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/request-a-quote/page.tsx",
+      "sha256": "f79cd287af31fcc280ffc96e2c3e1cdb9a7c6287c4c14526d8f59c8f56d2ff8c"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/sitemap.ts",
+      "sha256": "5721c4ef34d2176fa4a8762a96c437f4c90d562691f3a48353b4205e3acda681"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/terms/page.tsx",
+      "sha256": "f5fa010f2fedcd050bbf6ceb562bde39f4d4dac035bd7fcf447263bb0a037606"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/trade/[lane]/page.tsx",
+      "sha256": "0ea7cfc3b8e852e010ba3553d97bf2fad7748fb1c0b5ad7696c9276a78f567cf"
+    },
+    {
+      "path": "sites/kairaliequipment.com/app/trade/page.tsx",
+      "sha256": "cedee837024ccdf3c8de43f231c1ddc7126aa570bc0280fdf0562082df963e51"
+    },
+    {
+      "path": "sites/kairaliequipment.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/kairaliequipment.com/next.config.ts",
+      "sha256": "641b525da22d48690e4b90121e5dc4d1e006372fa89bfd1fbdabc8ede4a6d5d5"
+    },
+    {
+      "path": "sites/kairaliequipment.com/package.json",
+      "sha256": "68aa4aeb21c99f6280076dc8152a2fc7810da2b4a78d67ad9f6be627a187a91a"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/catalogue-placeholder.pdf",
+      "sha256": "7f770c99d53a8965dd0ef373fdda3b34d2069f3770ab2c0bae75c8f69dedba76"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/about-equipment.jpg",
+      "sha256": "f82bb4afe31c087bb57914ca2b03b820bef8e32d67725aaaae443ca8be986c47"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/ayurvedic-spa-equipments-oil.jpg",
+      "sha256": "bba1cc518c27d51fa6fad06462771d548ecd11ef215a3b18534559b88f4d41a6"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/droni-step.jpg",
+      "sha256": "47a9acbfdec050c69afe03daf76691cc936214f54118c852e30a70f0fb1a1153"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/shirodhara-equipment-set.jpg",
+      "sha256": "ab0b1462c314021c597103651799a65bb36eec086753326753355e2cf7a6776c"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/shirodhara-pot.jpg",
+      "sha256": "982d4910ea9441d83b637785206d37cc096d7149199994164bbf15435ea1b9c4"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/shirodhara-stand.jpg",
+      "sha256": "ca07444087c21d1d5f2c27639dfa94bc977ef7095b45133f4aa6b3e127fa4f4d"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/steam-bath.jpg",
+      "sha256": "e6e48b51ec4fc7a9369887c49d49f382d7c66cff1bf7c999b5f29ffc40c90069"
+    },
+    {
+      "path": "sites/kairaliequipment.com/public/images/wooden-massage-bed.jpg",
+      "sha256": "755deb19e7033100b99399a89fd5f86ff225a5502ddaa6855c4aec18684e7391"
+    },
+    {
+      "path": "sites/kairaliequipment.com/site.config.json",
+      "sha256": "c8a9359a9a2e3a530ecc2c37dc59f0dca31423f7da5dcb8e3101b26f7a2cdabc"
+    },
+    {
+      "path": "sites/kairaliequipment.com/test/guards.test.js",
+      "sha256": "bff36af68de87fec3d1a453a7111b032a1195fcfc30b024d54c84ac8f871d120"
+    },
+    {
+      "path": "sites/kairaliequipment.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

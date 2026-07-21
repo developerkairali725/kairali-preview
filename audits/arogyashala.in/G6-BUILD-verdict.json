@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/arogyashala.in/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "71b4d36dba71ef4d76ce0bf0fc03aa739c638283bef3860b37fb8b7df83fb76b",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=arogyashala.in"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:29:03+05:30",
+  "finished_at": "2026-07-21T09:29:31+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "arogyashala.in",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=arogyashala.in"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/kairaliequipment.com/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "f71549f83098bedd0cad653d64770093ba073279678fdded6d0dafd919cdcc99",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=kairaliequipment.com"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:31:53+05:30",
+  "finished_at": "2026-07-21T09:32:24+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "kairaliequipment.com",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=kairaliequipment.com"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

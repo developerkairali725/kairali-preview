@@ -1,0 +1,34 @@
+{
+  "gate": "G6-LINT",
+  "status": "PASS",
+  "artifact_path": "audits/whatisayurveda.com/G6-LINT-content-manifest.json",
+  "artifact_sha256": "ca95aad87472e47d85ff0b6a896adc3a06eef21451a68602538931ef9b12fd8c",
+  "rubric_sha256": null,
+  "command": "node scripts/content-lint.mjs --quiet",
+  "argv": [
+    "node /home/runner/work/kairali-web-factory/kairali-web-factory/scripts/content-lint.mjs --quiet"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:34:40+05:30",
+  "finished_at": "2026-07-21T09:34:40+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "whatisayurveda.com",
+  "registry_gate": "honest-ymyl-content-lint",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "node",
+        "/home/runner/work/kairali-web-factory/kairali-web-factory/scripts/content-lint.mjs",
+        "--quiet"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

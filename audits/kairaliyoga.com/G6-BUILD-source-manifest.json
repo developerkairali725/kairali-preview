@@ -1,0 +1,227 @@
+{
+  "judged_dir": "sites/kairaliyoga.com",
+  "file_count": 55,
+  "tree_sha256": "f4686f5033f78279bc323eb97eb55db52b733ae883642dc23e5e4d510ab9b53b",
+  "files": [
+    {
+      "path": "sites/kairaliyoga.com/IMAGE_MANIFEST.md",
+      "sha256": "5039260511e170023ae0a5395e9bbe22e9850b3ee77c852c8e41e9b943157a8b"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/cookie-policy/page.tsx",
+      "sha256": "4dcf426225422d7d1fd82077762e05aa595eca568a496f8848a490c480660258"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/globals.css",
+      "sha256": "10066c99a8c7f73d71dbf7db53e23177226f011d5ad6cdfea39140f751222d4d"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/layout.tsx",
+      "sha256": "fa6c602f85fc7c49c3438e55257e988b447d0bade46a8d67b298e0bcec1e1acf"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/llms.txt/route.ts",
+      "sha256": "b72564eda3b642acc4eafc9149aa486a2c314b632b71f31811ad9f7fa0cafa4c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/page.tsx",
+      "sha256": "04e79ad96e2d6380ace19c2283aa70df403435ed545f73b43d707b8365b9c473"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/privacy/page.tsx",
+      "sha256": "425aa61118495c097ea34d5cd0bcb1c80b7a9147048acac8a6717157596192b5"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/sitemap.ts",
+      "sha256": "8d19eb801d523b62d9f995753bbb30696d100dc8aa916e65f9a78f02771db416"
+    },
+    {
+      "path": "sites/kairaliyoga.com/app/terms/page.tsx",
+      "sha256": "62241242b0b1956c3d5b65b9ebb97f432a9496debfbbb18b35b6355c73018bf5"
+    },
+    {
+      "path": "sites/kairaliyoga.com/content/testimonials.json",
+      "sha256": "81b77bfd6813d1e6db4bbcbfd12ce5217d83879ee62b03ac44b804a511e925bc"
+    },
+    {
+      "path": "sites/kairaliyoga.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/kairaliyoga.com/next.config.ts",
+      "sha256": "e4f882f3b0a4de821bb49ce0d35058d26127dcdf15d7f9266f7c1cc6b54b8ca0"
+    },
+    {
+      "path": "sites/kairaliyoga.com/package.json",
+      "sha256": "51ae8546d5c11550ce838171a9485e0eeb00eb2b8bb49384695d7c760f9072dd"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ahv-food-idiyappam-veg-stew-1024.jpg",
+      "sha256": "68f285d222125385e4d1f2d0cd2e29bbb9e881d00225090734d79e07b4559779"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ahv-food-idiyappam-veg-stew-640.jpg",
+      "sha256": "999be4dca353d59c9469626ccbacc24cdffe29aa0aebdef7d8a12dd10f2aa12d"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ahv-food-idiyappam-veg-stew-800.jpg",
+      "sha256": "9623cf4d15b07918a08773139ed7074ba0c07f549f35383940feb637331f9a9c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ahv-food-idiyappam-veg-stew.jpg",
+      "sha256": "ebd9cc47cf304e23559ad86748d903dc0d7e4b8d8470583e2c545bf91d0f4854"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-grounds-water-channel-cottages-640.jpg",
+      "sha256": "c89ef49252780005beb7ddddc077283eb451d91caea1184abd21bf0d0bafa3f3"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-grounds-water-channel-cottages-800.jpg",
+      "sha256": "b40981ea630e22cde4e9d12c2119df7a2799f781dd842ce6f866952cbeb8af83"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-grounds-water-channel-cottages.jpg",
+      "sha256": "ba43a430180be5545f16328ca498b6b983c89614fd3f7b08185c0bb5df81b0ab"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-meditation-seated-chin-mudra-640.jpg",
+      "sha256": "20451f0fa4611ab7000799aea1909e63eff34b6a1fba738eee17397801e590ec"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-meditation-seated-chin-mudra-800.jpg",
+      "sha256": "b85b13b13e186aa345116b8a154d3a98fd2ebe822f4b4a20953e113834ebb654"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-meditation-seated-chin-mudra.jpg",
+      "sha256": "7924b5de2e9949f19bebcde5838fc0bc3d787ba6d6ccd0138b2f27ae42607c3d"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-organic-farm-rice-transplanting-1024.jpg",
+      "sha256": "52900fb8271b8ea29271c8e3a16fef4eb5438947a594aea29832b90b563ea973"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-organic-farm-rice-transplanting-640.jpg",
+      "sha256": "4f4cdcc45243334d55064bc2da1cfcee332a2b1d971a83e53cc018eebe6cc293"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-organic-farm-rice-transplanting-800.jpg",
+      "sha256": "b85443b4aceb71534b15bdfece5eb7368b8cee26e938efb735bc970091a23e4d"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-organic-farm-rice-transplanting.jpg",
+      "sha256": "bd596f04c702603b2b2964a758aca23e11446c2ea58bc0ab92217da19991cf36"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-physician-consultation-room-1024.jpg",
+      "sha256": "b83af31d741b51e5f58837dae42e1d39e14be04936b6bcd2c0410dc1c8d032b5"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-physician-consultation-room-640.jpg",
+      "sha256": "c3734fed00af1e4c6f2be989f0d5eefe9db025dc7efd692c8584068f9c55fdd4"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-physician-consultation-room-800.jpg",
+      "sha256": "ecbd9904decefce1c91ed2f2f046cee26a306fb66a8352998cec4fd5e5866f6f"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-physician-consultation-room.jpg",
+      "sha256": "2c6afd97c16c7faaf0c8288446d2ff3742eea832536d9762354ae006e4e1e66c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-round-stone-cottages-dawn-1280.jpg",
+      "sha256": "606402b14c75347ccb3e64de84b6f6fa42febc3662aa0ee67e16d6e82de8a157"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-round-stone-cottages-dawn-640.jpg",
+      "sha256": "6969c10e0ec94eeadabf900701b9f893bac48a99e5897f1a2e9493db8e7ebc7c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-round-stone-cottages-dawn-800.jpg",
+      "sha256": "c07fa07e5afb24a2b1b09b97de5c3b759663550c84c7764b3e34d962113d3d52"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-round-stone-cottages-dawn.jpg",
+      "sha256": "c67e570a7694147f06f089e750ebac2ef4ee69499035776b0e07542086ea323f"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-therapist-carrying-dhara-pot-sunrise-1024.jpg",
+      "sha256": "a55945a37036286eeabe21a2eef3c096f064f7984618215b3d11e23f2c9e8e23"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-therapist-carrying-dhara-pot-sunrise-640.jpg",
+      "sha256": "0047ca0ef7f225f305ffa0e3890007d420ecc596149e2f271f0beef4f5092d2c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-therapist-carrying-dhara-pot-sunrise-800.jpg",
+      "sha256": "f17b08f2c7fe57b963dbb4593d495f082b5774404e7ede26474de39e149655f4"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-therapist-carrying-dhara-pot-sunrise.jpg",
+      "sha256": "319b41746df417909831ea993723549ab9900f3460e979855eb8cdb959179863"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-cobra-instructor-adjustment-640.jpg",
+      "sha256": "f413fc79f84f3c621999bde5db29148e1aa0b786ae9898680d5fea05ee4c6b28"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-cobra-instructor-adjustment-800.jpg",
+      "sha256": "33de948a7327e915da6f13c22641d88a0828124d243a7958d3342cac6a526809"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-cobra-instructor-adjustment.jpg",
+      "sha256": "1028b97d2aca8f37da5576ddfa90c72ea32472eec462f796d8600809f3d10ab7"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-namaste-greeting-instructor-1024.jpg",
+      "sha256": "af8b6284e03042dff707c16b5e7420d28981645b5b67310ff8ba0e9017788e53"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-namaste-greeting-instructor-640.jpg",
+      "sha256": "be66f1877ba3cfd4868ed8cc326f1d33b92c8d23bb4928b4480b0991aca7fba4"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-namaste-greeting-instructor-800.jpg",
+      "sha256": "f4c7b6f51aab2bbbf0d92fdf67d055b6d3809848a211007d527d8c9396bf8b0e"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/images/ktahv-yoga-namaste-greeting-instructor.jpg",
+      "sha256": "c8dad3da1313be7c93c54e843bd5ec5094ac1b95ef349cce452bc12f068fd69c"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/logo.png",
+      "sha256": "efd7ecce99184310f1db4e1873039be8ed0aaa36c85a625a600520022056a221"
+    },
+    {
+      "path": "sites/kairaliyoga.com/public/og.jpg",
+      "sha256": "e07c51eeb679942aeed23849aeb9f3d64f54678c81abcfe50aa326ee206b84c1"
+    },
+    {
+      "path": "sites/kairaliyoga.com/site.config.json",
+      "sha256": "d3c00192fa4d697e5f030ed996fc6100830d1c8c0d776a37d1513de2226886b1"
+    },
+    {
+      "path": "sites/kairaliyoga.com/test/guards.test.js",
+      "sha256": "5fde9a2abfd0ba46750601ae91872d70aab1723fad82a9e43b20bfaadb829e64"
+    },
+    {
+      "path": "sites/kairaliyoga.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

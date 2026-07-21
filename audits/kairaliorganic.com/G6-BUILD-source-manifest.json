@@ -1,0 +1,99 @@
+{
+  "judged_dir": "sites/kairaliorganic.com",
+  "file_count": 23,
+  "tree_sha256": "68d3b3f12a43cc14039837840b8266f88a99462ee3476cba25fbd171fdf32673",
+  "files": [
+    {
+      "path": "sites/kairaliorganic.com/IMAGE_MANIFEST.md",
+      "sha256": "3421c27c1cb5a087a86f2051c056e7fbee978c7a67e42a702e09329935ff5623"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/globals.css",
+      "sha256": "7d6d4f00b56c581c685ab27292e6ed20aeb343b4e350786ec3e2ab9fd758cea0"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/layout.tsx",
+      "sha256": "1e5aff2ee42b4ce442fed2e3f657f87421738caec1c3ec02d3de1c83468a16e0"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/llms.txt/route.ts",
+      "sha256": "47e6a50f9f95f3c0e552f084a12ba745231631a032f9eb491925a1049fe7101e"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/page.tsx",
+      "sha256": "bc2e99e57ae4d06216e11736c4a663e0def4cb2ee23dd60338b0ea2728ee29b2"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/privacy/page.tsx",
+      "sha256": "30a169ce96748f56ebfe3b58f5fa2c21645be914c02f371325d9377fd87dcf36"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/kairaliorganic.com/app/sitemap.ts",
+      "sha256": "62e3ee9908d461c7a3bf66fcfa9399d6df4b7fd3ff3a417c068d82b12bbd5562"
+    },
+    {
+      "path": "sites/kairaliorganic.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/kairaliorganic.com/next.config.ts",
+      "sha256": "e3924cfd767469e90ca1712c146a8ad2fdd01ce6955715c38c9ddccf36c3dbf9"
+    },
+    {
+      "path": "sites/kairaliorganic.com/package.json",
+      "sha256": "ef6f0ec64f9b16c985073fff2acdbdc850fa0ac90fac91a43ac0d64f17dc575a"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/hero-organic-range-1200.jpg",
+      "sha256": "7e613081d2977a0d5d2d61d426e20f5be8229f9bcf5e391a196f4596c2d200c7"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/hero-organic-range-800.jpg",
+      "sha256": "cc1975d32c12ad360ff4de6ab5a8f2acd83199f7b58a63038d27bf349200130b"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/hero-organic-range.jpg",
+      "sha256": "0fc5e2892a0ef280ecac988361b02e5d069e4dc359169fdab946ba6bdaf74b09"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/still-life-apothecary-560.jpg",
+      "sha256": "c1ddee184dc75949ab3642a6342463bfe1858b5de705012bae6dd8e4a8b989c8"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/still-life-apothecary-800.jpg",
+      "sha256": "249d438e5631318f43ed6c4ecbc16bccabc01961bbf1063f0c8ae0b5bf03d2f1"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/images/still-life-apothecary.jpg",
+      "sha256": "dab34b9d8ba8026cdf5b02e8fc5b50ae0f7e576c773470ead3d115e9080d50f3"
+    },
+    {
+      "path": "sites/kairaliorganic.com/public/og.jpg",
+      "sha256": "b765c39cbfcf0bd671087e7fe736a972fbfc096f0b16f4df95a4904d004274a7"
+    },
+    {
+      "path": "sites/kairaliorganic.com/site.config.json",
+      "sha256": "2d4c49ae64932fdd28c3ca7f5fc9fba7b3f738fb53c47a1b21763dda488712ff"
+    },
+    {
+      "path": "sites/kairaliorganic.com/test/guards.test.js",
+      "sha256": "4f1156669ebe7daeaff02882beeeb62233b8f860dca315ded245cfdf259b1e06"
+    },
+    {
+      "path": "sites/kairaliorganic.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

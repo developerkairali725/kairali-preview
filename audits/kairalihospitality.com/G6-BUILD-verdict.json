@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/kairalihospitality.com/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "6bb2610b649e39351398a3b4c133e0db485e9624954c23b9a4ae1c8b9fdef7b2",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=kairalihospitality.com"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:32:24+05:30",
+  "finished_at": "2026-07-21T09:32:51+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "kairalihospitality.com",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=kairalihospitality.com"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

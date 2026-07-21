@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/theblushlounge.com/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "5177d5771fc90c14c3260e40f0883b20a21728e88dbd1167191bb6cbe5746516",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=theblushlounge.com"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:33:44+05:30",
+  "finished_at": "2026-07-21T09:34:11+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "theblushlounge.com",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=theblushlounge.com"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

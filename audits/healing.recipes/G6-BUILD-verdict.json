@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/healing.recipes/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "984a721924b8339ee8f35567b566ec6d4eeae0e08d7c968951a6c268657b2e85",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=healing.recipes"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-21T09:30:31+05:30",
+  "finished_at": "2026-07-21T09:30:58+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29799894467",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "healing.recipes",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=healing.recipes"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

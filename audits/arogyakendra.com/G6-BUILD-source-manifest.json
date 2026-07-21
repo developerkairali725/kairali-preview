@@ -1,0 +1,79 @@
+{
+  "judged_dir": "sites/arogyakendra.com",
+  "file_count": 18,
+  "tree_sha256": "6bfa20f25a42774de76de43e6bc31df5dbf1ebd90b75ce16596d1b1e14130858",
+  "files": [
+    {
+      "path": "sites/arogyakendra.com/IMAGE_MANIFEST.md",
+      "sha256": "c0388ec2c679c19e84a426bbe72a5a8b3fcf72c0b9ba1d8d97b9a04d87ad631d"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/cookie-policy/page.tsx",
+      "sha256": "63e44ee6a7e0f65409c816a665e173ea7614f4b0fa6e87999d933866d38c493d"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/globals.css",
+      "sha256": "a0ce1f99797bcf782814023ddc5395de3d72131fec7a6087205411c10bcceaeb"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/layout.tsx",
+      "sha256": "691c4c3df1e7e48ec040f0b5ecca2541ec338523448db66b8abf085150c2f043"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/llms.txt/route.ts",
+      "sha256": "60913f078b2e4eff7eac3cf29f7b1f6478141065d1a36db7078c7cd45342d23c"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/page.tsx",
+      "sha256": "b47a2c79acfc0ab1a093543759835ab02f8b04d11a34251cb4dd1470452e6471"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/privacy/page.tsx",
+      "sha256": "a5a57d466f57e3a034a795fc3808eb3a8a97adeaf7c6b864e723a13012c8eb56"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/sitemap.ts",
+      "sha256": "8d19eb801d523b62d9f995753bbb30696d100dc8aa916e65f9a78f02771db416"
+    },
+    {
+      "path": "sites/arogyakendra.com/app/terms/page.tsx",
+      "sha256": "3e62ae4a1fde24688050c69c9642d89b131b1c344e2058c6f029f26aa7bbd1f0"
+    },
+    {
+      "path": "sites/arogyakendra.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/arogyakendra.com/next.config.ts",
+      "sha256": "0a4e41063c8f5bb05c7d32f961d0ba090d965856efe7a249f3bc9a9bbcff6927"
+    },
+    {
+      "path": "sites/arogyakendra.com/package.json",
+      "sha256": "fccde3153e53c1f13494eff34973a81f95848b0b8207577c83d540d3180d23d9"
+    },
+    {
+      "path": "sites/arogyakendra.com/site.config.json",
+      "sha256": "2600701f933c1f88389fcff1764fcacbee4ba25b99e1fd10d203c2c6133d17b3"
+    },
+    {
+      "path": "sites/arogyakendra.com/test/guards.test.js",
+      "sha256": "3e5ed0172125715abc1972bdbde5ce6f06e040b924cfbb2b39443c1259af7a00"
+    },
+    {
+      "path": "sites/arogyakendra.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

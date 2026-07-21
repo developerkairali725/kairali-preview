@@ -1,0 +1,155 @@
+{
+  "judged_dir": "sites/bulkayurvedaproducts.com",
+  "file_count": 37,
+  "tree_sha256": "b76fb2f3a6aa335cae10bfad51a471095c81a740d7aff8fe530ccf2a5f228515",
+  "files": [
+    {
+      "path": "sites/bulkayurvedaproducts.com/IMAGE_MANIFEST.md",
+      "sha256": "900df9dfdd128019c0c0095b01035a87645f9fe4f42929ce7a5301fec092010a"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/_components/chrome.tsx",
+      "sha256": "915f8785195c251b70fee765c1b29b9f5c8132b93faebe380ef3e3f81772ee34"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/_components/facts.ts",
+      "sha256": "8463a83546ce05aeec6c49c39058b87a26af9667bb981f5a0c0f8fb87804047a"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/about/page.tsx",
+      "sha256": "407fd772c5a83cc8d28a681d0f12db6c41e53f26f8d5ed0abae32209e7c4a24c"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/api/enquiry/route.ts",
+      "sha256": "6bb94732794ac2d786b22ec52df35fc9a622b491c88a660ea6d4e360a05175fc"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/contact/page.tsx",
+      "sha256": "f32dd8758ff404d180d390ca077341396211b0ea831d943be0b49c02498d0a73"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/cookie-policy/page.tsx",
+      "sha256": "6eb0601a8ae6c1b23fec97470d7a04e3dbaba19d9a8421f5c15e911bddb09fd5"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/facility/page.tsx",
+      "sha256": "3338e75e0261149ca33025dde6da7d33d665d53abcbd5aa693ce8febca365b07"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/globals.css",
+      "sha256": "ed86ac34964eec78fb0decfc0f8c54ca39d26764407a0396767e470843e7e101"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/how-it-works/page.tsx",
+      "sha256": "4b55fcc998651889b33f14e680307004a2d651e46d0f96083484c1965c0c36cf"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/layout.tsx",
+      "sha256": "f3d65dbe43e8b1104bcb3093055cdde2b05a41fd0103cab72cddfe48e67f0077"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/llms.txt/route.ts",
+      "sha256": "9ee304576a314a7d65b069211f677b7b4da8b37de5a94809114bdfe09538162a"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/page.tsx",
+      "sha256": "7da3c92cba2e01e35ea5ebe1b75cb8af4597f95228fdb65d9e7d7b36088e4e31"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/privacy/page.tsx",
+      "sha256": "f64c0bb7094cc1222c253f832a3c2a457427824a2e8ad04e47599f6c11a5b086"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/products/[category]/page.tsx",
+      "sha256": "8f609f2dc0636f87f5360d71b4a8ff79dc525fa2f0fe18fbe0d2fbb22871154d"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/products/page.tsx",
+      "sha256": "d408709b661707189624a340cc3e92706a5ab25cd120a43851f3e75e043784c1"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/quality/page.tsx",
+      "sha256": "50d89293d2696b60a5323a179eced5690da680a75646b6e54ebc603ff56be810"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/services/loan-licence/page.tsx",
+      "sha256": "b486d379d13dc40d7afba2ca190cfb602e387c208f67c161f55a027728ec26bb"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/services/private-label/page.tsx",
+      "sha256": "f660d3299469684167450af2cda1d3e7e40557a05d997968f80bb34c9b342de8"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/services/third-party-manufacturing/page.tsx",
+      "sha256": "a0a79dc9f58e5bc5a9f560b53a1598f6f60ec9e59d30c3b20a7bb8979b812a40"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/sitemap.ts",
+      "sha256": "32d26181f33135740b0eb3b1cc72b50daf7b848d9a97ef5fe80f4e417d7c4b94"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/start-your-project/page.tsx",
+      "sha256": "f5d1fd2d64ad60c3b9c0f58c204a11ba8a136bdcd96c76fbc1daf1aeefa8bee7"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/app/terms/page.tsx",
+      "sha256": "bbf1a0ea3d5ba28ac071347653b11e9e19d02a70e5f480dd01a94ebe23c9f02c"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/lighthouse-urls.json",
+      "sha256": "10032fecc9c9696145334979d110573284c6314c79a58868567099b01a6a2a31"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/next.config.ts",
+      "sha256": "fce894ce687c06e1c867aeb3b9e29ca1df0e5f7275058333f13c5da648aaa42f"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/package.json",
+      "sha256": "fbaedb087366b99649caf1b8f1f4c0a6778f5cf84a43f8366faa4c03ca65e1a1"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/public/images/classical-range.jpg",
+      "sha256": "aad1fc8c2e52b3bc2cd0566f68dab75c077541921907c174461bb023f9d7ab5c"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/public/images/hero-product-line.jpg",
+      "sha256": "23c3a588b5faba9e239600adf70ad700ce221ce426614d2f9d9a7c482d1d21b9"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/public/og.jpg",
+      "sha256": "6c445a7abc3930fbc76390971412413017e6a3356e93ad1d1aac0f4abe133b4c"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/site.config.json",
+      "sha256": "3c00cd3179748d1948562984cbc5f5011a167990376bcfa75406b4230fea7ad2"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/test/guards.test.js",
+      "sha256": "1117daa47074b94e999249a346b6f20be465a5aacf21f7d25b1b71a832481d08"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

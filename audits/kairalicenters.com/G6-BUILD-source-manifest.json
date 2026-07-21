@@ -1,0 +1,95 @@
+{
+  "judged_dir": "sites/kairalicenters.com",
+  "file_count": 22,
+  "tree_sha256": "2480f65db432273e53f9abea0ce1682d387e714162b407dff7c44ace631fb833",
+  "files": [
+    {
+      "path": "sites/kairalicenters.com/app/_components/chrome.tsx",
+      "sha256": "5f99e03d3714dfecb3b244e3e3aab97ae0968ef6f9093a39d50386d1e11553d5"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/centres/[slug]/page.tsx",
+      "sha256": "f11c429449064678f3bc7385a2c4c18dc7bdef87aa1bae0aad7a2fea1568f2eb"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/cookie-policy/page.tsx",
+      "sha256": "51c0a9850d4fb660e3e261b3db27f8e4ca320f1cf9405ca4bcf5969710dd7b9d"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/globals.css",
+      "sha256": "de537abd2a0ba1adb1713c6b686db854d85b95a0a475277956ef216e0f830794"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/layout.tsx",
+      "sha256": "3e84c9f20c0d65886b1931bac325cd400fd39c77d18bdb5c8c35a475f642c134"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/lib/centres.ts",
+      "sha256": "bb263e2686358a8ffaf8d9dad60e146f3e9941e785a16baa1feadd015a6d7097"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/llms.txt/route.ts",
+      "sha256": "1f8734832b5444133394be8d80187debbec93e3d08134013cb46726a4c1afe04"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/page.tsx",
+      "sha256": "45e5b6418a7d5217c74e0ab95343960b3cbecd1d02a6a474357cc690b2310d87"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/privacy/page.tsx",
+      "sha256": "99e606d48adadfbdb906a2c62c6895b61f3402fa091a9af1641f607efb79553c"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/sitemap.ts",
+      "sha256": "5c84bd4cd7a752039eba0edeef1a3e8428bab56cae9d038b4846a0e3d30cf1e3"
+    },
+    {
+      "path": "sites/kairalicenters.com/app/terms/page.tsx",
+      "sha256": "18a35823195d6dac0664f78215f14c7ad124e2226c5b367a494e1e083b74582a"
+    },
+    {
+      "path": "sites/kairalicenters.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/kairalicenters.com/next.config.ts",
+      "sha256": "0a4e41063c8f5bb05c7d32f961d0ba090d965856efe7a249f3bc9a9bbcff6927"
+    },
+    {
+      "path": "sites/kairalicenters.com/package.json",
+      "sha256": "4e4916e2388296b11300b00d8f2f89abfffb7c335c0bdc659948a5c94a8abf67"
+    },
+    {
+      "path": "sites/kairalicenters.com/public/images/hero-reception.jpg",
+      "sha256": "f33410d11800c63f6f55195a003b3646601f341c5e3b444674b1c37c3214a90a"
+    },
+    {
+      "path": "sites/kairalicenters.com/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/kairalicenters.com/public/og.jpg",
+      "sha256": "670904b9409bf1820b94bd50023b485d223f0881bf2afde9bdef2d27515048fe"
+    },
+    {
+      "path": "sites/kairalicenters.com/site.config.json",
+      "sha256": "b2c1c713d7732d4ec904a7ccffad634d5107824c7cac926c4e8d2958b3c59584"
+    },
+    {
+      "path": "sites/kairalicenters.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

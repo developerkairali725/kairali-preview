@@ -1,0 +1,247 @@
+{
+  "judged_dir": "sites/whatisayurveda.com",
+  "file_count": 60,
+  "tree_sha256": "f5ebce7b5923c1fb1bc1e4376718a68ca6dfedcf86ad291f221936d1c920cef1",
+  "files": [
+    {
+      "path": "sites/whatisayurveda.com/app/[...slug]/page.tsx",
+      "sha256": "630e459dbd273059d1b4f4a9270d2964f6b48abf92b34d9e42482d829b565e46"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/_components/article.tsx",
+      "sha256": "a3863bdf5ad9acf41dd81cad084e5c71067f9b47a4669e77900bd24a37cecde0"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/_components/chrome.tsx",
+      "sha256": "06298c4a1a4a5b6ab4e061851d67c7f6c53246615ad2f8b90e9146bac1981659"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/cookie-policy/page.tsx",
+      "sha256": "cf95d98a7bdaa951eecebf40bec2c2f77284ada298a12a0e91867fbf8bbd02ca"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/globals.css",
+      "sha256": "634e6719b7b865ee780b66eca68ac9f2ee792c2fc8eaf21613043246ce2976b6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/layout.tsx",
+      "sha256": "f3fe4b0a030f02b0443d9e3f854481c657fed5619ccabc1f794431d6615da808"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/lib/content.ts",
+      "sha256": "4a2366b71afea7657cd5556115d8f1d321751bba6594bfb4c02f0dc69a5d251b"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/lib/medical-review.ts",
+      "sha256": "91e9a17a3072f8ed58ac635bfda31779f41a97671fa05f79181997550ee505d3"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/lib/meta.ts",
+      "sha256": "8d9533f241a04017f9f9388239611c3f2a782016ff607e739c337ef310ba1582"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/lib/render.tsx",
+      "sha256": "adfaf9ff54cc184ad959f2fa342e39726f2190fb8058f1e880ca9739234062be"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/llms.txt/route.ts",
+      "sha256": "a7626cf88183af1aa0238f68755c8cfd90fcba5bb0dfcf58e967bbfb1d2bfa59"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/page.tsx",
+      "sha256": "709061b12f1197cb5b92f0b90265b1771fb23342e98ff323250b673ca935d4de"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/privacy/page.tsx",
+      "sha256": "61a26ade52e3fdef59e083cd7ba95ad55de184373c969db6ccb19cb1ceb11ea8"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/robots.ts",
+      "sha256": "30e38c3075ba5210db299f158d0b6f3846a4054f6b883a4367d8675cb8fa0e41"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/sitemap.ts",
+      "sha256": "1795e07d4d5deefb2d2d9f620caa03d9529d0d553ddd2644dd05ac29acbba4e2"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/terms/page.tsx",
+      "sha256": "9fc397fb68d4c03adeef5e014fb34e5e87fa2f6b48cee47273d2eed8d00d95bb"
+    },
+    {
+      "path": "sites/whatisayurveda.com/app/what-is-ayurveda/page.tsx",
+      "sha256": "95858ce60b02ee01ff1d653f2fe94081519d5b27948ca8a580976449c4effee8"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/_manifest.json",
+      "sha256": "1279b92ae02fb91944d8253c1c9d958c8b3c4836eaad2c35b50be4ba2264d6f1"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/about.json",
+      "sha256": "a23d2b8510f99e35eb407025cfbff32b9eec897ca3130435f12801303c7c3ec3"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/diet.json",
+      "sha256": "e6fe6c8687b37403e92d5843c33f3e86d5de1adb64c4f2d3be69ea4461ca0c92"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/diet__eating-by-dosha.json",
+      "sha256": "a57d27b57073d76f18b8959ace759313c2ebc20fc532c9d4e21b4a24b5415831"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/doshas.json",
+      "sha256": "ef1b1794d10d554e0e64eb74f81f1a1e21edecfc4aff197365999847bfd8e5ee"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/doshas__kapha.json",
+      "sha256": "fc589937d70a13c5183d6fd04b18a945b90a0edd30fe0850e3eb90153fcfdb8e"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/doshas__pitta.json",
+      "sha256": "33ecae9ed143b871c7ce786e14bc38a5e5e5e2623248e7df06a737b8ed22c3af"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/doshas__vata.json",
+      "sha256": "678308162758acab034fb7b5054d8cf214a9f03bbdd7d007e35294b7dba1fcb3"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/faq.json",
+      "sha256": "cb456bcfc884ab5c375547d58752a0d82e97c2e7a3ef02608b6c9e73565103f2"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs.json",
+      "sha256": "25c654f095affdc0252aef365d3666094dc938c5382f90122bd972ae953c464e"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__amla.json",
+      "sha256": "b4da6e6030d4e43ced45453c8902935055e921e5bb69cb01fca8dee966408089"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__ashwagandha.json",
+      "sha256": "2336946be3436401f957afb328211c9166d712d896b571304c0279a8579e9e21"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__brahmi.json",
+      "sha256": "20775b786adce77e9c0447334e9c71539367277138a4e58d07ff86f31083db55"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__ginger.json",
+      "sha256": "76fddc12c7e81879abfe61212f0a05e39aec8eb302d81b5c3a6cce714dce6570"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__gotu-kola.json",
+      "sha256": "142733f128335a9fa9dfbf4d4e1ce894ad1bfe27b96ffaf0eee93c4cdc49e9d2"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__guduchi.json",
+      "sha256": "980f665964669c7f520540698a4e69b5f63031ed08ec3755df4969376a784b0f"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__neem.json",
+      "sha256": "30e1521b6388af3763bdea60913a0c9cfa47407db8b37ab70dec9eef03e44d5c"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__shatavari.json",
+      "sha256": "2e27b25d9170e8636e47825d22a5a206a8d43cc17265995109107e62cea8ad62"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__shilajit.json",
+      "sha256": "19812d7dfa8f1d7ba74eddf5e7655f4131ee06e777b42a1da3068a7f79f627ad"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__triphala.json",
+      "sha256": "6daf2a75d1c94ce064d1e904b436850a6b251efba260c48a827f0872f9cbd5ba"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__tulsi.json",
+      "sha256": "f818049ab9081b9b1f94e9b846734e62ed9eebcbe86d08301ea5ec7bee2de1e7"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/herbs__turmeric.json",
+      "sha256": "1f54bc04d842a5194f2b9e4fbaff782869dd10d7b8c2896426ec7c0c39085e08"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/history-of-ayurveda.json",
+      "sha256": "65c042a5941792a1ebd77ffa8608351e801965069a7aa09a693517b526f44f24"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/is-ayurveda-scientific.json",
+      "sha256": "aafeb97c792df32e3daab9d5247eb6830b61f5d1c69d701c237f34090dc5f281"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/lifestyle__dinacharya.json",
+      "sha256": "e24d7b92628d72469f5c186101d2ac0807dd469e88300cf44b071384a474698d"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/panchakarma.json",
+      "sha256": "8fdbe08bafea1e0476a90009188c685c6232d8312b132fcf37649422491e2fc6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/panchakarma__the-five-therapies.json",
+      "sha256": "c2935354a36e6e9865d4f080d2cc7ea5c1fdac3b1388445d39a31ad374bd06da"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/panchakarma__what-to-expect.json",
+      "sha256": "4c8ab44dddc1c7d4450da2feffdf56a8c7edaa099e1599a61ceca4888a5934e6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/content/what-is-ayurveda.json",
+      "sha256": "3833f1cf1fe3ee78f277ee42b70dfdb3f1f1f56c4aa7187cbb174a6b0392bf40"
+    },
+    {
+      "path": "sites/whatisayurveda.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/next.config.ts",
+      "sha256": "0a4e41063c8f5bb05c7d32f961d0ba090d965856efe7a249f3bc9a9bbcff6927"
+    },
+    {
+      "path": "sites/whatisayurveda.com/package.json",
+      "sha256": "0395b8150b248f1bb070ef37e99b61a032e4141577c8d670795e63cad006e52b"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/images/healing-village.jpg",
+      "sha256": "914cf16e53768a80fadc1bf9fdccf1cab133ec66a127c1529515092c56b6a2c4"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/images/herbs-tray.jpg",
+      "sha256": "729142cdc2f371a62b9c90e3e944980a09ec7ebec26e1abdfa3bf666e5d311b3"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/images/hero-herbs-oils.jpg",
+      "sha256": "e1eaef549fe341ed234c94dc59d9509d02e31d596d813d856ddb1f18699b8b71"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/images/kairali-icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/images/products-garden.jpg",
+      "sha256": "1890e7455161fb6272ade7ccc258bb1b87638684b13704d3ec138b4d1ca42d70"
+    },
+    {
+      "path": "sites/whatisayurveda.com/public/og.jpg",
+      "sha256": "670904b9409bf1820b94bd50023b485d223f0881bf2afde9bdef2d27515048fe"
+    },
+    {
+      "path": "sites/whatisayurveda.com/site.config.json",
+      "sha256": "3a380adb1b088726a5f5366362769075131cd7f13b4f0720d12797cee456a47f"
+    },
+    {
+      "path": "sites/whatisayurveda.com/test/medical-review.test.js",
+      "sha256": "a1e28049cd16482f83e1629f5982fabb474231c2fa4ef19b03b8eb11021d555f"
+    },
+    {
+      "path": "sites/whatisayurveda.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}
