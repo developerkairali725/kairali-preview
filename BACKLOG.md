@@ -205,6 +205,14 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   batch (guarded file — rides its own reviewed PR, never weakened in passing; rule g). Same
   pre-push/guard class as the two 20-Jul bites in RPT-20260721-HANDOVER-MIDDAY §6.
 
+- [ ] 2026-07-21 12:58:00 IST — DO-NOT-WIRE-CRM-UNTIL-AUTH (blocks OS measurement integration): the CRM endpoints
+  https://kairali-group-crm.vercel.app/api/{conversion,leads} serve real lead/conversion PII with NO
+  auth (re-verified from OUTSIDE 21 Jul 12:52 — /api/conversion = HTTP 200 8.4MB with KAPPL/KTAHV/
+  VILLARAAG real data; /api/leads hangs on volume, no 401/403). HARD GATE 14 territory (customer PII).
+  BLOCK: build NOTHING against these until Satyam confirms in writing that (a) both endpoints are
+  auth-gated (token/IP-allowlist) and (b) /api/leads is paginated. Owner escalation drafted in
+  RPT-20260721-WATCHLANE-MIDDAY §escalation. Sample bytes were curled to scratchpad to read shape
+  ONLY and purged immediately (never committed/logged, HARD GATE 14).
 - [ ] 2026-07-21 13:24:00 IST — D-05 CANDIDATE A (owner-approve, HARD GATE 15): port nexu-io/open-design's anti-AI-slop
   design rules into scripts/beauty-audit.mjs as P0/P1 checks (OUR code, no external dependency, adopt no
   repo). Gated on the all-three-agree ChatGPT leg (confirm rules are current taste, not over-fitted —
