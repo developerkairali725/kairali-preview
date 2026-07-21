@@ -161,6 +161,13 @@
     "supersedes": null
   },
   {
+    "report_id": "RPT-20260721-HANDOVER-MIDDAY",
+    "date": "2026-07-21 11:57:00 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-21-handover-midday-close.md",
+    "supersedes": "RPT-20260721-HANDOVER-MORNING"
+  },
+  {
     "report_id": "RPT-20260721-ASTHA-INGEST",
     "date": "2026-07-21 12:24:00 IST",
     "type": "ingest-screen",
