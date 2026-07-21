@@ -296,10 +296,18 @@ export default function Home() {
               founded in 1989 by K.&nbsp;V.&nbsp;Ramesh and Gita Ramesh,
               carries that practice into its places.
             </blockquote>
+            {/* Q-KH-KATERINA panel verdict (21 Jul 2026): REFRAME WITH LOCKED
+                WORDING — counters read "2 owned + 1 in cooperation"; the JV
+                panel and the locked 'in cooperation with' phrase (D-KH-JV-LABEL)
+                stand untouched. */}
             <dl className="counters">
               <div>
-                <dt>3</dt>
-                <dd>properties</dd>
+                <dt>2</dt>
+                <dd>owned properties</dd>
+              </div>
+              <div>
+                <dt>1</dt>
+                <dd>in cooperation &mdash; Resort Svatá Kateřina</dd>
               </div>
               <div>
                 <dt>2</dt>
@@ -433,10 +441,14 @@ export default function Home() {
             <a href={IVR_TEL} data-cta="call_click">Call +91 95551 56156</a> ·{" "}
             <a href={WHATSAPP_URL} data-cta="whatsapp_click">WhatsApp +91 92898 38797</a>
           </p>
-          <nav className="footer-nav" aria-label="The properties">
+          {/* Q-KH-KATERINA panel verdict: footer de-lumps — owned properties
+              and the cooperation are separate nav groups; locked phrase kept. */}
+          <nav className="footer-nav" aria-label="Our properties">
             <a href={RAAG_URL}>Villa Raag</a>
             <a href={KTAHV_URL}>Kairali &mdash; The Ayurvedic Healing Village</a>
-            <a href={KATERINA_URL}>Resort Svatá Kateřina</a>
+          </nav>
+          <nav className="footer-nav" aria-label="In cooperation with">
+            <a href={KATERINA_URL}>Resort Svatá Kateřina (in cooperation)</a>
           </nav>
           <nav className="footer-nav" aria-label="Kairali sites">
             <a href="https://www.kairali.com">Kairali Ayurvedic Group</a>
