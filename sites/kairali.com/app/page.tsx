@@ -344,6 +344,10 @@ export default function Home() {
           {/* D-20260718-04: the shared fleet social set — handles live in
               packages/social/src/config.ts ONLY (one-file true-up) */}
           <SocialLinks />
+          <p>
+            <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> ·{" "}
+            <a href="/cookie-policy">Cookies</a>
+          </p>
           <p>A family tradition since 1908 · Palakkad, Kerala, India</p>
         </div>
       </footer>

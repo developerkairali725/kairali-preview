@@ -82,6 +82,10 @@ export function SiteFooter() {
         {/* D-20260718-04: the shared fleet social set — handles live in
             packages/social/src/config.ts ONLY (one-file true-up) */}
         <SocialLinks />
+        <p>
+          <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> ·{" "}
+          <a href="/cookie-policy">Cookies</a>
+        </p>
         <p className="footer-disclaimer">
           The information on whatisayurveda.com is educational and is not a
           substitute for professional medical advice, diagnosis, or treatment.

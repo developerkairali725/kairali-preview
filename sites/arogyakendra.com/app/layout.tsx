@@ -55,8 +55,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         {children}
         <ChatbaseLoader />
-        {/* No privacyHref yet: /privacy doesn't exist — Ship Gate A12 gap
-            stays visible until the entity privacy page ships */}
         <ConsentBanner privacyHref="/privacy" />
       </body>
     </html>
