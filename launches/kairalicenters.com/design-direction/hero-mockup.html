@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- kairalicenters.com MODE B design direction — "The Healing Atlas" hero mockup.
+     Weekend rebrief lane, 2026-07-18. Tokens verbatim from packages/ui/brand-tokens.css
+     (doctrine (d): the brand manual wins). This file is a PROPOSAL artifact for the
+     design_direction gate — not production code. Counts shown (14/5, node badges)
+     mirror @kairali/facts; production renders them from the package, never typed. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kairali Ayurvedic Centers — hero mockup (The Healing Atlas)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kurale&family=Asap:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F7F4EA; --ink:#1C1B19;
+    --forest-500:#006038; --forest-700:#004226; --forest-800:#003720;
+    --leaf-500:#8E9D35; --leaf-700:#636E25;
+    --marigold-400:#EEB41E; --marigold-300:#F0BF3E;
+    --bronze-400:#C1882C; --bronze-600:#875F1F;
+    --font-display:"Kurale",Georgia,serif;
+    --font-body:"Asap","Trebuchet MS",sans-serif;
+    --font-caption:"Lato",system-ui,sans-serif;
+    --radius-3:16px; --radius-pill:999px;
+    --shadow-warm:0 2px 8px rgba(94,66,22,.08),0 12px 32px rgba(94,66,22,.10);
+    --measure-layout:1120px; --header-h:64px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--measure-layout);margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{height:var(--header-h);display:flex;align-items:center;background:var(--ivory);border-bottom:1px solid color-mix(in srgb,var(--bronze-400) 18%,transparent)}
+  header .wrap{display:flex;align-items:center;gap:32px;width:100%}
+  .wordmark{font-family:var(--font-display);font-size:22px;color:var(--forest-700);letter-spacing:.02em}
+  .wordmark small{display:block;font-family:var(--font-caption);font-size:10px;letter-spacing:.22em;color:var(--bronze-600);text-transform:uppercase}
+  nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;font-weight:500}
+  nav a{color:var(--forest-700);text-decoration:none}
+  .btn{font-family:var(--font-body);font-weight:600;font-size:15px;border-radius:var(--radius-pill);min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 26px;text-decoration:none;cursor:pointer}
+  .btn-primary{background:var(--forest-500);color:#fff;border:1.5px solid var(--forest-500)}
+  .btn-secondary{background:transparent;color:var(--forest-700);border:1.5px solid var(--forest-500)}
+  .header-cta{min-height:44px;padding:0 20px;font-size:14px}
+
+  /* hero */
+  .hero{padding:64px 0 24px}
+  .hero .wrap{display:grid;grid-template-columns:1.18fr .82fr;gap:44px;align-items:center}
+  .overline{font-family:var(--font-caption);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-600)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:52px;line-height:1.12;color:var(--forest-700);margin:18px 0 20px}
+  h1 em{font-style:normal;color:var(--forest-500)}
+  .lede{font-size:18px;line-height:1.6;color:color-mix(in srgb,var(--ink) 82%,transparent);max-width:46ch;margin-bottom:30px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .cta-note{font-family:var(--font-caption);font-size:13px;color:var(--bronze-600)}
+  .city-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .city-chips a{font-family:var(--font-caption);font-size:13px;font-weight:700;color:var(--forest-700);text-decoration:none;border:1px solid color-mix(in srgb,var(--forest-500) 45%,transparent);border-radius:var(--radius-pill);padding:7px 13px;min-height:32px;display:inline-flex;align-items:center}
+
+  /* atlas panel */
+  .atlas{position:relative;background:var(--forest-700);border-radius:24px;padding:26px 26px 20px;box-shadow:var(--shadow-warm)}
+  .atlas .panel-overline{font-family:var(--font-caption);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--marigold-300);margin-bottom:6px}
+  .atlas .panel-line{font-family:var(--font-display);font-size:19px;color:var(--ivory);margin-bottom:10px}
+  .atlas svg{width:100%;height:auto;display:block}
+  .photo-card{position:absolute;left:-42px;bottom:-34px;width:210px;border-radius:var(--radius-3);overflow:hidden;box-shadow:var(--shadow-warm);border:4px solid var(--ivory)}
+  .photo-card img{width:100%;display:block}
+  .photo-card figcaption{font-family:var(--font-caption);font-size:11.5px;color:var(--bronze-600);background:#fff;padding:7px 10px}
+
+  /* trust strip */
+  .trust{margin-top:84px;border-top:1px solid color-mix(in srgb,var(--bronze-400) 22%,transparent);padding:26px 0 40px}
+  .trust .wrap{display:flex;gap:38px;flex-wrap:wrap;align-items:baseline}
+  .cert-link{color:var(--forest-500);text-decoration:underline;text-underline-offset:2px}
+  .header-call{padding:0 16px}
+  .trust b{font-family:var(--font-caption);font-size:15px;font-weight:700;color:var(--forest-700);display:block}
+  .trust span{font-family:var(--font-caption);font-size:12.5px;color:var(--bronze-600);letter-spacing:.06em}
+
+  /* mobile */
+  .sticky-cta{display:none}
+  @media (max-width:760px){
+    nav,.header-cta{display:none}
+    .hero{padding:40px 0 12px}
+    .hero .wrap{grid-template-columns:1fr;gap:28px}
+    h1{font-size:34px}
+    .lede{font-size:16.5px}
+    /* Pass-2 (design-review 18 Jul, both auditors): the finder is the site's
+       primary job — "Find your center" stays the SINGLE filled primary in the
+       first viewport, with a city-chip selector under it. The sticky bar is
+       persistent contact UTILITY chrome (Call + WhatsApp), not a competing pill. */
+    .cta-row .btn-primary{width:100%;justify-content:center}
+    .cta-row .btn-secondary{flex:1;justify-content:center}
+    .cta-note{display:none}
+    .city-chips{display:flex}
+    .photo-card{position:static;width:100%;margin-top:14px;border:none;display:flex;align-items:center;gap:0;border-radius:12px}
+    .photo-card img{width:38%}
+    .trust{margin-top:36px}
+    .trust .wrap{gap:18px}
+    .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;background:var(--forest-700);min-height:52px}
+    .sticky-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:15px;font-family:var(--font-body);text-decoration:none;min-height:52px}
+    .sticky-cta a + a{border-left:1px solid rgba(247,244,234,.25)}
+    body{padding-bottom:52px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="wordmark">Kairali<small>Ayurvedic Centers</small></div>
+    <nav aria-label="primary">
+      <a href="#">Centers</a><a href="#">Therapies</a><a href="#">Conditions</a><a href="#">Doctors</a><a href="#">About</a>
+    </nav>
+    <a class="btn btn-secondary header-cta header-call" href="#" data-cta="call_click">Call</a>
+    <a class="btn btn-secondary header-cta" href="#" data-cta="whatsapp_click">Book on WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="overline">Kairali Ayurvedic Group</p>
+      <h1>Fourteen centers. Five countries. <em>One family tradition.</em></h1>
+      <p class="lede">Classical Kerala Ayurveda from the family behind the NABH-accredited Ayurvedic Healing Village — in your city, or by online consultation.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#" data-cta="browse_india">Find your center</a>
+        <a class="btn btn-secondary" href="#" data-cta="consult_book">Consult online</a>
+        <span class="cta-note">14 centers · five countries</span>
+      </div>
+      <!-- Mobile-first city selector (pass-2): real center cities from @kairali/facts only -->
+      <nav class="city-chips" aria-label="Find a center by city">
+        <a href="#" data-cta="region_centre_click">Delhi NCR</a>
+        <a href="#" data-cta="centre_click">Patna</a>
+        <a href="#" data-cta="centre_click">Vadodara</a>
+        <a href="#" data-cta="centre_click">Raipur</a>
+        <a href="#" data-cta="centre_click">Guwahati</a>
+        <a href="#" data-cta="browse_intl">International</a>
+      </nav>
+    </div>
+
+    <div class="atlas">
+      <p class="panel-overline">The Kairali network</p>
+      <p class="panel-line">From Kerala to the world</p>
+      <!-- Abstract network atlas: node size = centers per country (8/3/1/1/1, from @kairali/facts).
+           Marigold arcs live ONLY on this dark surface (manual: marigold-on-dark permitted;
+           one-accent-per-light-view preserved). Positions are decorative, not geographic claims. -->
+      <svg viewBox="0 0 460 300" role="img" aria-label="Abstract map: 14 Kairali centers across India, Japan, Mauritius, Czech Republic and Kuwait">
+        <defs>
+          <radialGradient id="glow" r="60%"><stop offset="0%" stop-color="#F0BF3E" stop-opacity=".28"/><stop offset="100%" stop-color="#F0BF3E" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- faint graticule -->
+        <g stroke="#F7F4EA" stroke-opacity=".07">
+          <path d="M0 75 H460"/><path d="M0 150 H460"/><path d="M0 225 H460"/>
+          <path d="M115 0 V300"/><path d="M230 0 V300"/><path d="M345 0 V300"/>
+        </g>
+        <!-- arcs from India hub -->
+        <g fill="none" stroke="#F0BF3E" stroke-width="1.6" stroke-opacity=".85">
+          <path d="M190 178 C 250 60, 340 52, 388 84"/>   <!-- Japan -->
+          <path d="M190 178 C 210 260, 250 272, 292 252"/> <!-- Mauritius -->
+          <path d="M190 178 C 140 90, 90 58, 64 72"/>      <!-- Czech -->
+          <path d="M190 178 C 150 150, 122 138, 96 142"/>  <!-- Kuwait -->
+        </g>
+        <!-- nodes -->
+        <circle cx="190" cy="178" r="46" fill="url(#glow)"/>
+        <g fill="#F7F4EA">
+          <circle cx="190" cy="178" r="13" fill="#F0BF3E"/>
+          <circle cx="388" cy="84" r="8"/>
+          <circle cx="292" cy="252" r="5.5"/>
+          <circle cx="64" cy="72" r="5.5"/>
+          <circle cx="96" cy="142" r="5.5"/>
+        </g>
+        <!-- labels + per-country center counts (facts: 8/3/1/1/1) -->
+        <g font-family="Lato,system-ui,sans-serif" font-size="12" fill="#F7F4EA">
+          <text x="190" y="215" text-anchor="middle" font-weight="700">INDIA · 8</text>
+          <text x="388" y="66" text-anchor="middle">JAPAN · 3</text>
+          <text x="292" y="274" text-anchor="middle">MAURITIUS · 1</text>
+          <text x="64" y="56" text-anchor="middle">CZECH REPUBLIC · 1</text>
+          <text x="96" y="128" text-anchor="middle">KUWAIT · 1</text>
+        </g>
+      </svg>
+      <figure class="photo-card">
+        <img src="hero-reception.jpg" alt="Reception at the Kairali center in New Delhi — Mehrauli">
+        <figcaption>New Delhi — Mehrauli · corporate office &amp; center</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div><b>Founded 1989</b><span>A FAMILY PRACTISING AYURVEDA SINCE 1908</span></div>
+    <div><b>NABH-accredited</b><span>THE AYURVEDIC HEALING VILLAGE · <a class="cert-link" href="#" data-cta="cert_view">VIEW CERTIFICATE</a></span></div>
+    <div><b>14 centers</b><span>ACROSS FIVE COUNTRIES</span></div>
+    <div><b>Physician-led</b><span>CONSULTATIONS AT KAIRALI-OWNED CENTERS</span></div>
+  </div>
+</section>
+
+<div class="sticky-cta">
+  <a href="#" data-cta="call_click">Call a center</a>
+  <a href="#" data-cta="whatsapp_click">WhatsApp</a>
+</div>
+
+</body>
+</html>
