@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-07-22 01:43:00 IST",
-  "generated_utc": "2026-07-21T20:13:00Z",
+  "generated": "2026-07-22 11:03:24 IST",
+  "generated_utc": "2026-07-22T05:33:24Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot pending",
     "milestones": [
@@ -133,14 +133,35 @@
         "entity_register": "group-corporate",
         "platform": "factory-next"
       },
-      "front_gates": [],
+      "front_gates": [
+        {
+          "gate": "brief",
+          "status": "pending"
+        },
+        {
+          "gate": "strategy",
+          "status": "pending"
+        },
+        {
+          "gate": "design_source",
+          "status": "pending"
+        },
+        {
+          "gate": "design_direction",
+          "status": "pending"
+        },
+        {
+          "gate": "golden_page",
+          "status": "pending"
+        }
+      ],
       "evidence": {
         "go_science": 0,
         "beauty": 0,
-        "design_review_pre": 1,
+        "design_review_pre": 5,
         "design_review_post": 0,
         "audits": 1,
-        "checklists": false
+        "checklists": true
       },
       "waiting_on": []
     },
@@ -906,7 +927,7 @@
         "beauty": 0,
         "design_review_pre": 0,
         "design_review_post": 0,
-        "audits": 0,
+        "audits": 1,
         "checklists": false
       },
       "waiting_on": []

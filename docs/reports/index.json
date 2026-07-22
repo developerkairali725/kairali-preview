@@ -264,5 +264,12 @@
     "type": "handover",
     "file": "docs/reports/2026-07-21-handover-midnight-close.md",
     "supersedes": "RPT-20260721-HANDOVER-PANEL-CLOSE"
+  },
+  {
+    "report_id": "RPT-20260722-DAILY-CLOSE",
+    "date": "2026-07-22 11:05:00 IST",
+    "type": "handover",
+    "file": "docs/reports/2026-07-22-daily-close.md",
+    "supersedes": "RPT-20260721-HANDOVER-MIDNIGHT-CLOSE"
   }
 ]
