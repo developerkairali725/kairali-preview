@@ -96,6 +96,20 @@
       "port": 4315
     },
     {
+      "name": "abhilashkr-prod",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "sites/abhilashkr",
+        "exec",
+        "next",
+        "start",
+        "-p",
+        "4316"
+      ],
+      "port": 4316
+    },
+    {
       "name": "kairali-ai",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": [

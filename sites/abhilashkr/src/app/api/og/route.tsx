@@ -103,7 +103,7 @@ export async function GET(request: NextRequest) {
                 color: "#4C5A50",
               }}
             >
-              portfolio-website-six-pi-92.vercel.app
+              abhilashkr.com
             </span>
             <span
               style={{
@@ -114,7 +114,7 @@ export async function GET(request: NextRequest) {
                 letterSpacing: "0.1em",
               }}
             >
-              {section} // EST. 1908
+              {`${section} // EST. 1908`}
             </span>
           </div>
         </div>
@@ -124,8 +124,8 @@ export async function GET(request: NextRequest) {
         height: 630,
       }
     );
-  } catch (e: any) {
-    console.error(`OG image generation failed: ${e.message}`);
+  } catch (e) {
+    console.error(`OG image generation failed: ${e instanceof Error ? e.message : String(e)}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
     });

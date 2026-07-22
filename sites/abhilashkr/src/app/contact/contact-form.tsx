@@ -12,15 +12,23 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const SUBJECT_LABELS: Record<string, string> = {
+    enterprise: "Kairali Group Operations",
+    ayushexcil: "AYUSHEXCIL Export Sourcing",
+    investing: "Angel Sourcing Pitch",
+    speaking: "Speaking Engagement",
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
-    // Simulate contact form submission
+
+    // Route via the visitor's own email client to the institutional inbox —
+    // no backend exists for this form, so a mailto compose is the honest path.
+    const subject = `[abhilashkr.com] ${SUBJECT_LABELS[formData.subject] ?? formData.subject}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    window.location.href = `mailto:info@kairali.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "enterprise", message: "" });
-    }, 3000);
   };
 
   return (
@@ -34,9 +42,10 @@ export default function ContactForm() {
           <div className="size-12 rounded-full border border-primary flex items-center justify-center text-primary">
             <Check className="h-6 w-6" />
           </div>
-          <h4 className="font-display text-2xl italic text-ink">Transmission Logged</h4>
+          <h4 className="font-display text-2xl italic text-ink">Draft Prepared</h4>
           <p className="font-sans text-xs text-ink-muted max-w-xs">
-            Your message has been processed. Our office will route it to the appropriate division.
+            Your email client has opened with the message addressed to info@kairali.com.
+            Press send there and our office will route it to the appropriate division.
           </p>
         </div>
       ) : (
