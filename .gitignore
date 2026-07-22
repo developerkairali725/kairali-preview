@@ -31,10 +31,18 @@ docs/archive/archive-categorized.csv
 # agent audit log — deterministic per-edit trail, machine-local (wiki/log.md is the committed spine)
 agent-log.jsonl
 
+# usage telemetry ledger — per-API-call token counts, machine-local (GPTW-44;
+# same law as agent-log.jsonl: committed rollups are a separate, curated act)
+usage-log.jsonl
+
 # TypeScript incremental build state (build artifact)
 *.tsbuildinfo
 
 # generated session state — re-derived from ground truth every session start (scripts/boot-contract.mjs)
 state/
+# writer lease — MACHINE-LOCAL advisory lock (scripts/writer-lease.mjs, GPTW-04/36/42); a COMMITTED
+# lease would race itself across checkouts — the exact bug it exists to prevent. Explicit line kept
+# even though state/ already covers it, so narrowing state/ can never silently start committing leases.
+state/writer-lease.local.json
 .vercel
 .env*

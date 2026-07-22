@@ -107,6 +107,30 @@
  *
  * RULE g: this gate is purely ADDITIVE — no existing gate is touched.
  *
+ * DUPLICATE-REPORT GUARD (GPTW-04/36/42, owner-ruled ADOPT — REPORT-ONLY):
+ *   Incident basis (docs/reports/2026-07-21-gpt-walkthrough-findings.md):
+ *   GPTW-04 step-1 finding 4 — "Concurrent writers (worktrees) have already
+ *   produced truncated duplicate reports; no contention control"; GPTW-36
+ *   (step 5 f9) and GPTW-42 (step 6 f6) are the same incident at build and
+ *   records altitude. Three signals:
+ *   (a) two reports sharing a report_id — ALREADY a hard VIOLATION above
+ *       (check #2, "one id lying twice") since this lint's first version;
+ *       deliberately LEFT ALONE (rule g: never weaken, and never re-plumb
+ *       what already bites);
+ *   (b) NEAR-DUP-BASENAME — two same-date files whose basenames differ only
+ *       by a numeric/copy suffix ("…-chase.md" vs "…-chase-2.md" /
+ *       "…-chase (copy).md") — the duplicate-creation signature;
+ *   (c) TRUNCATION-SUSPECT — a report under 200 bytes, the truncation
+ *       signature from the GPTW-04 incident (every real report in the store
+ *       is 3KB+; a sub-200-byte file is a write that died mid-stream).
+ *   (b) and (c) are LOUD LINES ONLY — never violations, never exit-affecting.
+ *   FLIP CONDITION (documented, not self-executing): after ONE WEEK of
+ *   false-positive baseline in the loud output, the owner RE-RULES whether
+ *   either signal graduates to a violation. Until that ruling this stays
+ *   report-only (house law: blocking behavior ships report-only first).
+ *   Companion mechanism: scripts/writer-lease.mjs (claim scope "reports"
+ *   before writing docs/reports/ — convention mechanized, same altitude).
+ *
  * Exit codes: 0 = clean · 2 = violations OR broken probe OR stale index
  * (CI blocks) · 1 = harness error.
  *
@@ -159,6 +183,75 @@ export const TRIAD_GRANDFATHER = new Map([
     "M1-era frozen-PR ledger (2026-07-19 17:31:03 IST) — rows carry the PR-fate vocabulary the freeze was ruled with; same falsify-history bar",
   ],
 ]);
+
+// ---------------------------------------------------------------------------
+// Duplicate-report guard (GPTW-04/36/42) — REPORT-ONLY loud lines (header ¶).
+// ---------------------------------------------------------------------------
+
+/** Truncation signature threshold (header ¶ c: sub-200-byte = died mid-write). */
+export const TRUNCATION_BYTES = 200;
+
+/**
+ * Numeric/copy suffix on a basename stem: "-2", " (2)", "-copy", " copy 2",
+ * "(copy)" — SEPARATOR-ANCHORED, so "step1"/"pass2" style names (digits glued
+ * to a word) are NOT stripped: those are content, not copy artefacts. Kept
+ * conservative on purpose — this is a report-only signal building an FP
+ * baseline, and a quiet week is the flip condition's evidence.
+ */
+export const COPY_SUFFIX_RE = /(?:[\s._-]+(?:copy(?:[\s._-]*\d+)?|\d+)|[\s._-]*\((?:copy|\d+)\))+$/i;
+
+/**
+ * Canonical stem of a report basename: the YYYY-MM-DD prefix is EXCLUDED from
+ * suffix-stripping (so "2026-07-20.md" and "2026-07-21.md" never collide into
+ * "2026"), then any trailing numeric/copy suffix is stripped from the topic
+ * part. Same stem => same date + same topic modulo a copy suffix.
+ * @param {string} base — basename without directory, ".md" included or not
+ */
+export function canonicalStem(base) {
+  const noExt = base.replace(/\.md$/i, "");
+  const m = noExt.match(/^(\d{4}-\d{2}-\d{2})(.*)$/);
+  const datePart = m ? m[1] : "";
+  const rest = (m ? m[2] : noExt).replace(COPY_SUFFIX_RE, "");
+  return (datePart + rest).toLowerCase();
+}
+
+/**
+ * REPORT-ONLY duplicate/truncation signals (header ¶ b, c). Returns loud
+ * lines only — the caller must NEVER route these into violations; the flip
+ * to blocking is a separate owner ruling after one week of FP baseline.
+ * (Signal (a), duplicate report_id, is NOT here: it is already a hard
+ * violation in lintReportStore check #2 and is left untouched.)
+ * @param {{file:string, text:string}[]} files
+ * @returns {string[]} loud lines
+ */
+export function duplicateReportSignals(files) {
+  const loud = [];
+
+  // (c) truncation signature — byte size, not char count (the incident is
+  // about bytes on disk).
+  for (const f of files) {
+    const bytes = Buffer.byteLength(f.text, "utf8");
+    if (bytes < TRUNCATION_BYTES) {
+      loud.push(`TRUNCATION-SUSPECT  ${f.file} is ${bytes} bytes (< ${TRUNCATION_BYTES}) — the GPTW-04 truncated-write signature; verify the report is whole [REPORT-ONLY: never a violation until the one-week FP baseline is re-ruled]`);
+    }
+  }
+
+  // (b) near-duplicate basenames — same canonical stem, distinct files.
+  const groups = new Map();
+  for (const f of files) {
+    const stem = canonicalStem(f.file.split("/").pop());
+    if (stem === "") continue;
+    if (!groups.has(stem)) groups.set(stem, []);
+    groups.get(stem).push(f.file);
+  }
+  for (const [stem, members] of [...groups].sort()) {
+    if (members.length >= 2) {
+      loud.push(`NEAR-DUP-BASENAME  ${members.sort().join(" · ")} differ only by a numeric/copy suffix (stem "${stem}") — the GPTW-04/42 duplicate-creation signature; one of these is probably the truncated twin [REPORT-ONLY: never a violation until the one-week FP baseline is re-ruled]`);
+    }
+  }
+
+  return loud;
+}
 
 // ---------------------------------------------------------------------------
 // Parsing
@@ -363,6 +456,11 @@ export function lintReportStore(files, grandfather = TRIAD_GRANDFATHER) {
   index.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : a.report_id < b.report_id ? -1 : 1));
   counts.indexed = index.length;
 
+  // Duplicate-report guard (GPTW-04/36/42) — LOUD ONLY, appended after every
+  // violation is already decided so it can never touch the verdict (header ¶:
+  // report-only until the one-week FP baseline is re-ruled).
+  loud.push(...duplicateReportSignals(files));
+
   return { violations, loud, index, counts };
 }
 
@@ -420,6 +518,18 @@ export function runControlProbes() {
 
   const unhomed = lintReportStore([{ file: "docs/reports/p.md", text: PROBE_NEW_GOOD.replace("watch via BACKLOG.md row PROBE-1", "keep an eye on it somehow") }], new Map());
   if (!unhomed.violations.some((v) => v.includes("MONITOR row names no monitoring home"))) broken.push("probe: an unhomed MONITOR row was NOT flagged");
+
+  // Duplicate-report guard probes (GPTW-04/36/42): the signals must FIRE as
+  // loud lines AND must never touch violations (the report-only contract is
+  // itself probed — a guard that silently went blocking is as broken as one
+  // that went silent).
+  const dupGuard = lintReportStore([
+    { file: "docs/reports/2026-07-20-topic.md", text: PROBE_NEW_GOOD },
+    { file: "docs/reports/2026-07-20-topic-2.md", text: PROBE_LEGACY },
+  ], new Map());
+  if (!dupGuard.loud.some((l) => l.startsWith("NEAR-DUP-BASENAME"))) broken.push("probe: same-date copy-suffix basenames were NOT loudly flagged");
+  if (!dupGuard.loud.some((l) => l.startsWith("TRUNCATION-SUSPECT"))) broken.push("probe: a sub-200-byte report was NOT loudly flagged");
+  if (dupGuard.violations.length !== 0) broken.push(`anti-probe: the duplicate-report guard raised a VIOLATION — it is ruled REPORT-ONLY (${dupGuard.violations[0]})`);
 
   return broken;
 }

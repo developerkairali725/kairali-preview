@@ -1,0 +1,43 @@
+# config/api-rates.yaml — API price table for scripts/usage-rollup.mjs.
+#
+# WHY THIS FILE SHIPS EMPTY (HARD GATE 6 — never invent prices):
+#   Token counts are facts — they come from API `usage` response objects and
+#   land in usage-log.jsonl (GPTW-44 telemetry, owner-ADOPTed 21 Jul 2026).
+#   MONEY IS NOT A FACT until a real, cited rate exists. STATUS.yaml's
+#   BUDGET-BURN NOTE keeps cost_inr null for exactly this reason. While the
+#   `rates:` map below is empty, usage-rollup.mjs reports cost_inr as null —
+#   honestly unknown — and REFUSES to compute cost from remembered or
+#   approximate prices.
+#
+# OWNER FILLS THIS FILE. Instructions:
+#   1. Read the price from the provider's OFFICIAL pricing page on the day you
+#      fill it in. CITE YOUR SOURCE: paste the pricing-page URL into `source`
+#      and the date you read it into `as_of`. An entry without both is
+#      REJECTED by the parser and its cost stays null — an uncited price is
+#      not usable (same law as LOCKED FACTS: read from source, never fill gaps).
+#   2. Convert to INR per 1,000 tokens if the provider quotes USD (note the
+#      FX rate + date you used inside `source`, e.g. "... @ 83.5 INR/USD RBI
+#      2026-07-21").
+#   3. Key each entry by the model id EXACTLY as it appears in
+#      usage-log.jsonl rows (e.g. gpt-5, sonar-pro) — the rollup matches on
+#      that string.
+#   4. Prices change: update `as_of` whenever you re-verify. A stale as_of is
+#      visible on purpose.
+#
+# SCHEMA (per entry; all four fields REQUIRED or the entry is rejected):
+#   rates:
+#     <model-id>:
+#       prompt_inr_per_1k: <number>      # INR per 1,000 prompt/input tokens
+#       completion_inr_per_1k: <number>  # INR per 1,000 completion/output tokens
+#       source: "<official pricing page URL (+ FX note if converted)>"
+#       as_of: "YYYY-MM-DD"              # date the price was read
+#
+# EXAMPLE (shape only — NOT a real price; do not uncomment without a source):
+#   rates:
+#     gpt-5:
+#       prompt_inr_per_1k: 0.0
+#       completion_inr_per_1k: 0.0
+#       source: "https://<provider pricing page>"
+#       as_of: "2026-07-21"
+
+rates: {}

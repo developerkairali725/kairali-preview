@@ -53,6 +53,7 @@ import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
 import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
 import { buildUserContent, describeImages, loadImageParts } from "./lib/image-input.mjs";
+import { appendUsageSafe } from "./lib/usage-ledger.mjs";
 import { istIso } from "./lib/verdict.mjs";
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -195,6 +196,19 @@ async function main() {
   });
   const data = await res.json();
   if (data.error) { console.error("API error:", data.error.message); process.exit(1); }
+  // GPTW-44 usage telemetry (owner-ADOPTed 21 Jul; STATUS.yaml BUDGET-BURN
+  // NOTE): record this run's API usage in the machine-local ledger. The 21 Jul
+  // walkthrough had to hand-log this exact number (findings report §1). Logged
+  // BEFORE the empty-response exit below — an empty completion still burned
+  // prompt tokens (usage absent -> nulls, visible as an incomplete call).
+  // Best-effort by construction — a ledger failure NEVER breaks an audit run.
+  appendUsageSafe({
+    script: "audit-gpt",
+    model: args.model,
+    prompt_tokens: data.usage?.prompt_tokens ?? null,
+    completion_tokens: data.usage?.completion_tokens ?? null,
+    meta: { pass: args.pass, gate: emitReq?.gate ?? null, site: emitReq?.site ?? null },
+  });
   const text = data.choices?.[0]?.message?.content;
   if (!text) { console.error("empty response; finish_reason:", data.choices?.[0]?.finish_reason); process.exit(1); }
   const v = JSON.parse(text);

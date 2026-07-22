@@ -45,6 +45,7 @@ import { fileURLToPath } from "node:url";
 import { loadKey, parseReviewArgs, buildBrief, BRUTAL } from "./lib/review-brief.mjs";
 import { parseEmitRequest, emitAuditVerdict } from "./lib/audit-verdict.mjs";
 import { buildUserContent, describeImages, loadImageParts } from "./lib/image-input.mjs";
+import { appendUsageSafe } from "./lib/usage-ledger.mjs";
 import { istIso } from "./lib/verdict.mjs";
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -131,6 +132,18 @@ async function main() {
   });
   const data = await res.json();
   if (data.error) { console.error("API error:", JSON.stringify(data.error).slice(0, 300)); process.exit(1); }
+  // GPTW-44 usage telemetry (owner-ADOPTed 21 Jul; STATUS.yaml BUDGET-BURN
+  // NOTE): this script never printed its usage object — the API returns one
+  // (data.usage, OpenAI-compatible shape) and the ledger is where it lands.
+  // Logged BEFORE the empty-response exit — an empty completion still burned
+  // prompt tokens. Best-effort: a ledger failure NEVER breaks an audit run.
+  appendUsageSafe({
+    script: "audit-perplexity",
+    model: args.model,
+    prompt_tokens: data.usage?.prompt_tokens ?? null,
+    completion_tokens: data.usage?.completion_tokens ?? null,
+    meta: { pass: args.pass, gate: emitReq?.gate ?? null, site: emitReq?.site ?? null },
+  });
   const text = data.choices?.[0]?.message?.content;
   if (!text) { console.error("empty response:", JSON.stringify(data).slice(0, 300)); process.exit(1); }
 
