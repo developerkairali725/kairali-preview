@@ -1,0 +1,92 @@
+# launches/ktahv-lp-batch/approvals.yaml — the signed FRONT-GATE ledger.
+#
+# hand-scaffolded 2026-07-18 19:05:00 IST (weekend-sprint LP lane, D-LP-LIST).
+# scripts/launch-scaffold.mjs was NOT used: it force-registers sites/<domain>
+# into the CI matrices, and "ktahv-lp-batch" is a BATCH (10 live-LP rebuilds +
+# 3 new LPs), not a sites/ domain — registering a nonexistent site would fail CI.
+# Structure mirrors the scaffold's output exactly; checklist-landing.md is
+# generated from gates/registry.yaml (class: landing) per the GATE REGISTRY law.
+#
+# THE RULE (CLAUDE.md "Design source" / "Golden page" / "Stop at each gate"):
+# the build runs to the next unsigned gate, posts the artifact, and STOPS. The
+# owner replies APPROVE <gate> or CHANGES <notes>, in one word, from his phone.
+# On APPROVE the agent writes the row below and commits it. The agent NEVER
+# self-approves a gate and NEVER merges its own PR.
+#
+# Order: brief → strategy → design_source (+ design_direction in MODE B)
+#        → [external AI design review, --stage pre, CLAUDE.md v1.11]
+#        → golden_page (LP #2 panchkarma-treatment is the named golden LP)
+#        → the other 9 rebuilds → the 3 new LPs.
+
+domain: ktahv-lp-batch
+
+# MODE B — agent-proposed. design-intake/ holds no human design for the LP
+# system and launches/ayurvedichealingvillage.com/design-intake/REFERENCES.md
+# is empty; the direction is anchored to the Kairali Brand Manual tokens
+# (packages/ui/brand-tokens.css — doctrine (d): the manual outranks any
+# reference anyway), the LP doctrine's structural law, and the owner's recorded
+# "sexy sells within clinical dignity" directive. Flagged honestly in
+# design-direction/DESIGN_DIRECTION.md — if the owner wants different anchors,
+# that is a CHANGES reply, not a silent assumption.
+mode: B
+
+approvals:
+  # What the batch is: the 10 LIVE ad-serving KTAHV LPs (docs/ktahv-inputs/
+  # live-lp-list.md) rebuilt first, then 3 new LPs. Golden page = LP #2
+  # panchkarma-treatment (named in the brief; overrides the homepage default).
+  # SIGNED per D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL — owner in-chat ~20:05
+  # IST, 18 Jul 2026 (veto waived; relayed by the session coordinator). Row
+  # written 2026-07-18 19:55:44 IST machine time (clock skew vs the chat stamp
+  # noted honestly, not smoothed).
+  - gate: brief
+    status: approved
+    owner: "Abilash — D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)"
+    date: "2026-07-18 19:55:44 IST"
+    artifact: launches/ktahv-lp-batch/BRIEF.md
+    artifact_sha256: ec0b4b4ff1e388e5d76924620d8d527de3950239356ab8f1f1f6a1b617c2b2f3
+
+  # ONE approval, everything plannable batched in: per-LP keyword/ad-intent map,
+  # host/URL + redirect plan (Vikash-gated), forms/CTA/consent plan, events.
+  # SIGNED — same ruling + waiver as the brief row above.
+  - gate: strategy
+    status: approved
+    owner: "Abilash — D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)"
+    date: "2026-07-18 19:55:44 IST"
+    artifact: launches/ktahv-lp-batch/STRATEGY.md
+    # HASH NOTE (honest): binds the artifact as committed at merge time,
+    # INCLUDING the 19 Jul GO-science declaration lift (c7df440, battery lane)
+    # that post-dates the 18 Jul in-chat approval the row records.
+    artifact_sha256: 7281f7b937a648fd6b3fad0958c7d554d10a88a9224c5e4097942ca64607c66f
+
+  # MODE B: confirmation the drop-box is legitimately empty + what the
+  # direction is anchored to instead.
+  - gate: design_source
+    status: pending
+    owner:
+    date:
+    artifact: launches/ktahv-lp-batch/design-intake/
+
+  # MODE B ONLY — the single proposed direction: tokens + ONE hero mockup for
+  # the golden LP (panchkarma-treatment). After APPROVE, the mockup image goes
+  # through the external AI design review (scripts/design-review.mjs --stage
+  # pre, ChatGPT + Perplexity must SEE the image) BEFORE any content build.
+  # SIGNED — same ruling + waiver as the brief row above. NOTE, stated loudly:
+  # the owner's waiver named brief/strategy/design_direction; design_source was
+  # NOT named and stays pending below — flagged, never assumed. (CI enforcement
+  # for sites/ayurvedichealingvillage.com pages runs against THAT domain's own
+  # fully-signed ledger; this batch ledger is the LP-lane record.)
+  - gate: design_direction
+    status: approved
+    owner: "Abilash — D-AUTOMERGE-TIERS + D-VETO-WAIVED-18JUL (owner in-chat ~20:05 IST)"
+    date: "2026-07-18 19:55:44 IST"
+    artifact: launches/ktahv-lp-batch/design-direction/DESIGN_DIRECTION.md
+    artifact_sha256: b88002dc5b007a2e00b6f3e97fed4d22b244b5e94647270fc1c5a00f6c7b3986
+
+  # ONE LP built first — panchkarma-treatment — then STOP. The other 9 rebuilds
+  # (then the 3 new LPs) only after this row is signed, each matching the
+  # approved golden LP.
+  - gate: golden_page
+    status: pending
+    owner:
+    date:
+    artifact:

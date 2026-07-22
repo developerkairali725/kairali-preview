@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOCKUP v5 — Panchakarma golden LP hero · KTAHV LP system (MODE B)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kurale&family=Asap:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Token values inlined from packages/ui/brand-tokens.css v1.1 (Kairali Brand Manual 2026 rev.2
+     + D-BRONZE-CONTRAST / D-RAMP-STEPS ruled steps). Self-contained mockup — do not ship.
+     v2 (Gate-1 pass-2 revisions, 18 Jul 2026):
+       · secondary hero link REMOVED — single CTA, 1:1 attention ratio restored (GPT blocking issue)
+       · REAL photography (live site's own consultation-room photo, color-true, not tinted)
+       · NABH chip carries the verifiable certificate ID AH-2024-0250 (NABH portal, 2024-2027);
+         official emblem artwork lands at build from the mined award-wall asset
+       · stat block truthed: "115+ years" → "Practising Ayurveda since 1908" (licensed lineage
+         phrasing, D-1908) · "103 countries" → "patients from over 100 countries" (auditor's
+         suggested framing) · "21+ physicians & therapists" → "Physician-led team" (qualitative)
+       · sub-copy: "designed for your condition" dropped (efficacy-implying) → "planned by our
+         physicians after an in-person assessment"
+       · physician identity above the fold on MOBILE (compact chip under the headline)
+       · diagonal etch texture removed; no starburst placeholder (visual noise down, photo is real)
+       · contrast (computed): ivory #F7F4EA on forest-800 #003720 = 12.9:1 AAA · ink #1C1B19 on
+         marigold #EEB41E = 10.9:1 AAA · #E9E4D2 sub on forest gradient ≥ 10:1
+     Image provenance (asset-mining manifest docs/media/ktahv-lp-asset-manifest.md):
+       · weight-loss__doc_cons.webp — physician consultation (pulse reading), live site's own asset
+       · weight-loss__hod-image-1.png — Dr. Deepu John portrait, live site's own asset
+       Physician-photo approval path: portraits "reusable pending their OK" (manifest) — Dr. Deepu
+       John's OK is queued with the HARD-GATE-7 clinical sign-off pass, before staging→production. */
+  :root{
+    --leaf-500:#8E9D35; --forest-500:#006038; --forest-700:#004226; --forest-800:#003720;
+    --marigold-400:#EEB41E; --bronze-400:#C1882C; --bronze-600:#875F1F;
+    --ivory:#F7F4EA; --ink:#1C1B19;
+    --font-display:"Kurale",Georgia,serif; --font-body:"Asap","Trebuchet MS",sans-serif;
+    --font-caption:"Lato",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-body);background:var(--ivory);color:var(--ink)}
+
+  /* ---------- HERO: consultation room, not brochure ---------- */
+  .hero{
+    min-height:88vh;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+    background:linear-gradient(160deg,var(--forest-700),var(--forest-800) 70%);
+    color:var(--ivory);position:relative;overflow:hidden;
+  }
+  .hero-copy{padding:8vh 4.5vw 6vh 6vw;display:flex;flex-direction:column;justify-content:center;gap:24px;position:relative;z-index:2}
+  /* v5: hero eyebrow renders in IVORY for WCAG AA on the dark ground (12.9:1) —
+     bronze-600 remains the ruled LIGHT-ground overline; bronze-400 on dark is reserved
+     for large/decorative type only (measured 4.35:1 < AA for 13px). Tokens only. */
+  .overline{font-family:var(--font-caption);font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    font-size:13px;color:var(--ivory)}
+  h1{font-family:var(--font-display);font-weight:400;font-size:clamp(34px,4.6vw,56px);line-height:1.12;max-width:15ch}
+  /* v3: emphasis is IVORY type (12.9:1 AAA on forest-800) with a leaf-500 underline —
+     the leaf is decorative (no 4.5:1 requirement on decoration), the words stay AAA. */
+  h1 em{font-style:normal;color:var(--ivory);border-bottom:3px solid var(--leaf-500)}
+  .sub{font-size:clamp(16px,1.35vw,19px);line-height:1.6;max-width:52ch;color:#E9E4D2}
+  /* physician chip — identity above the fold on mobile too */
+  .doc-chip{display:none;align-items:center;gap:12px;font-family:var(--font-caption)}
+  .doc-chip img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(247,244,234,.4)}
+  .doc-chip b{display:block;font-size:14px}
+  .doc-chip span{font-size:12px;color:#CFE3D3}
+  .cta-col{display:flex;flex-direction:column;gap:10px;margin-top:6px;align-items:flex-start}
+  /* THE one saturated object on the page — marigold, accent-only law. ONE action. */
+  .btn-wa{display:inline-flex;align-items:center;gap:12px;background:var(--marigold-400);color:var(--ink);
+    font-family:var(--font-body);font-weight:700;font-size:17px;padding:17px 30px;border-radius:999px;
+    text-decoration:none;box-shadow:0 10px 30px rgba(238,180,30,.28)}
+  .btn-wa svg{flex:none}
+  .wa-number{font-family:var(--font-caption);font-size:13px;letter-spacing:.06em;color:#CFE3D3}
+  /* credential strip — evidence before adjectives; every line verifiable */
+  .creds{display:flex;gap:0;margin-top:30px;border-top:1px solid rgba(247,244,234,.22);max-width:680px;flex-wrap:wrap}
+  .cred{padding:16px 22px 0 0;margin-right:18px}
+  .cred b{display:block;font-family:var(--font-caption);font-weight:700;font-size:17px;letter-spacing:.02em}
+  .cred span{font-family:var(--font-caption);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#BFD4C2}
+  .nabh-chip{display:inline-block;border:1px solid rgba(247,244,234,.45);border-radius:6px;
+    padding:2px 8px;font-size:15px}
+  /* physician panel — REAL consultation-room photograph (color-true).
+     v4: heavy double-card frame dropped (GPT pass-4) — one clean photo, one caption. */
+  .hero-visual{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;padding:0 3vw}
+  .visual-card{width:min(32vw,440px)}
+  .photo{height:460px;border-radius:14px 14px 0 0;position:relative;overflow:hidden;background:var(--forest-800)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .photo .doc{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 18px;
+    background:linear-gradient(180deg,transparent,rgba(0,42,24,.88) 70%);font-family:var(--font-caption)}
+  .doc b{display:block;font-size:15px;letter-spacing:.02em}
+  .doc span{font-size:12px;color:#CFE3D3}
+  /* sticky mobile CTA — same single action. MOTION SPEC (v3, GPT pass-3 blocking fix):
+     hidden by default; an IntersectionObserver shows it ONLY once the hero CTA has left
+     the viewport by ≥24px (rootMargin -24px). Exactly ONE marigold object is ever on
+     screen — the hero button above the fold, the sticky bar after scroll, never both. */
+  .sticky-hint{position:fixed;left:0;right:0;bottom:0;display:none;background:var(--forest-800);
+    border-top:1px solid rgba(247,244,234,.2);padding:12px 16px;z-index:9;
+    transform:translateY(100%);transition:transform .25s ease}
+  .sticky-hint.shown{transform:translateY(0)}
+  .sticky-hint .btn-wa{width:100%;justify-content:center;padding:14px;box-shadow:none}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:unset}
+    .hero-visual{display:none}
+    .doc-chip{display:flex}           /* physician identity above the fold on mobile */
+    .hero-copy{padding:56px 24px 40px}
+    .creds{flex-wrap:wrap} .cred{padding-right:0}
+    .sticky-hint{display:block}
+  }
+  /* token legend (mockup annotation only — proves token compliance, GPT pass-3 ask) */
+  .legend{background:var(--ivory);border-top:1px solid rgba(28,27,25,.15);padding:14px 20px;
+    font-family:var(--font-caption);font-size:11.5px;letter-spacing:.04em;color:var(--ink)}
+  .legend b{font-weight:700}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 4px 0 10px;
+    vertical-align:baseline;border:1px solid rgba(28,27,25,.25)}
+  /* annotation bar (mockup only) */
+  .note{background:var(--ink);color:var(--ivory);font-family:var(--font-caption);font-size:12.5px;
+    letter-spacing:.04em;padding:10px 16px;text-align:center}
+  .note b{color:var(--marigold-400)}
+</style>
+</head>
+<body>
+
+<div class="note">MOCKUP v5 — MODE B design direction, KTAHV LP system · golden LP hero (panchkarma-treatment) ·
+ clinical register · tokens from the Brand Manual · real mined photography · <b>not a shipped page</b></div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="overline">Kairali — The Ayurvedic Healing Village · NABH-accredited Ayurvedic hospital, Palakkad</span>
+    <h1>Panchakarma treatment in Kerala, <em>planned by physicians</em> — after your consultation.</h1>
+    <p class="sub">A physician-supervised programme at an NABH-accredited Ayurvedic hospital —
+       consultation first, then five-fold therapy, diet and follow-up care.</p>
+    <div class="doc-chip">
+      <img src="file:///Users/kairalimacmini/Claude/Kairali-Digital/image-library/legacy-ktahv-site/weight-loss__hod-image-1.png" alt="Dr. Deepu John, Chief Physician">
+      <div><b>Dr. Deepu John</b><span>Chief Physician — treatment planning &amp; admission</span></div>
+    </div>
+    <div class="cta-col">
+      <a class="btn-wa" href="https://wa.me/919289838797" data-cta="whatsapp_click">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.2-1.36A10 10 0 1 0 12 2Zm5.42 14.13c-.23.65-1.33 1.24-1.86 1.28-.5.04-1.12.19-3.76-.78-3.18-1.25-5.2-4.5-5.36-4.71-.15-.21-1.28-1.71-1.28-3.26s.81-2.3 1.1-2.62c.28-.31.62-.39.83-.39h.6c.19 0 .45-.07.7.53.26.62.88 2.16.96 2.31.08.16.13.34.02.55-.1.21-.16.34-.31.52-.16.18-.33.41-.47.55-.16.15-.32.32-.14.63.18.31.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.49 1.53.31.16.49.13.67-.08.18-.21.78-.9.98-1.21.21-.31.42-.26.7-.16.29.11 1.83.86 2.14 1.02.31.16.52.23.6.36.07.13.07.75-.16 1.39Z"/></svg>
+        Speak to Priya on WhatsApp
+      </a>
+      <span class="wa-number">+91 92898 38797</span>
+    </div>
+    <div class="creds">
+      <div class="cred"><b><span class="nabh-chip">NABH</span></b><span>accredited · AH-2024-0250</span></div>
+      <div class="cred"><b>Panchakarma</b><span>in NABH-accredited scope</span></div>
+      <div class="cred"><b>Clinical Establishment</b><span>permanent certificate · Kerala Act</span></div>
+      <div class="cred"><b>Physician-led</b><span>treatment team</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-card">
+      <div class="photo">
+        <img src="file:///Users/kairalimacmini/Claude/Kairali-Digital/image-library/legacy-ktahv-site/weight-loss__doc_cons.webp"
+             alt="Kairali physician reading a patient's pulse during an Ayurvedic consultation">
+        <div class="doc"><b>Dr. Deepu John</b><span>Chief Physician — treatment planning &amp; admission</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD-CONTENT STAND-IN (mockup only): the built LP continues ~5-7 viewports —
+     five-fold explainer, physician profiles, proof wall, FAQ, consultation form.
+     This spacer exists so the sticky-bar state is capturable in pixels. -->
+<div style="min-height:1400px;background:var(--ivory);display:flex;align-items:center;justify-content:center">
+  <p style="font-family:var(--font-caption);font-size:13px;letter-spacing:.08em;color:var(--ink);opacity:.55;max-width:46ch;text-align:center">
+    [ build content follows: five-fold therapy explainer · physician profiles · proof wall ·
+    FAQ · consultation form (consent + privacy) — per the approved STRATEGY ]</p>
+</div>
+
+<div class="sticky-hint" id="sticky"><a class="btn-wa" href="https://wa.me/919289838797" data-cta="whatsapp_click">Speak to Priya on WhatsApp</a></div>
+
+<div class="legend">
+  <b>TOKEN LEGEND (packages/ui/brand-tokens.css v1.1 — no invented hexes):</b>
+  <span class="sw" style="background:#EEB41E"></span>marigold-400 #EEB41E — CTA ONLY (accent-only law; one on screen at a time)
+  <span class="sw" style="background:#C1882C"></span>bronze-400 #C1882C — overline on dark ground (D-BRONZE-CONTRAST)
+  <span class="sw" style="background:#8E9D35"></span>leaf-500 #8E9D35 — decorative underline only, never body text
+  <span class="sw" style="background:#004226"></span>forest-700 #004226 → <span class="sw" style="background:#003720"></span>forest-800 #003720 — hero gradient stops
+  <span class="sw" style="background:#F7F4EA"></span>ivory #F7F4EA — type on forest (12.9:1 AAA) · ink #1C1B19 on marigold = 10.9:1 AAA · sub #E9E4D2 ≥ 10:1
+  · hero eyebrow = ivory (12.9:1 AAA); bronze-400 on forest-800 measured 4.35:1 &lt; AA for 13px text,
+  so on DARK ground bronze is reserved for large/decorative type; bronze-600 stays the light-ground
+  overline step (D-BRONZE-CONTRAST) — measured, disclosed, tokens only
+</div>
+
+<script>
+  // MOTION SPEC implemented, not promised: sticky bar appears only after the hero
+  // CTA exits the viewport by ≥24px; hides again when it returns. ONE marigold ever.
+  const heroCta = document.querySelector(".cta-col .btn-wa");
+  const sticky = document.getElementById("sticky");
+  new IntersectionObserver(
+    ([e]) => sticky.classList.toggle("shown", !e.isIntersecting),
+    { rootMargin: "-24px 0px 0px 0px" }
+  ).observe(heroCta);
+</script>
+
+</body>
+</html>

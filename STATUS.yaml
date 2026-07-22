@@ -99,10 +99,10 @@ sites:
     live_url: null
   - name: "ayurvedichealingvillage.com (KTAHV)"
     entity: "KTAHV"
-    stage: "research"
+    stage: "gates"
     owner: "Abilash"
-    blocker: "TARIFF_MODE + BOOKING_ROUTE machine blockers unanswered (full-rebuild scope only); clinical sign-off Dr. Deepu John. QA/QC batch waits on Deepu's Novamira install + Vikash's 11-URL list. 19 Jul: 10-LP REBUILD SET battery COMPLETE (PR #145) — GO-science + beauty PASS ×10, machine layer verified live, 6 real defects fixed (incl. 2 banned-word hero images caught at pixel level); Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY); 8 clinical clusters compiled for Dr. Deepu John (HARD GATE 7); owner disabled preview SSO 22:45 IST"
-    updated: "2026-07-19"
+    blocker: "10-LP set BUILT, full gate battery COMPLETE (PR #145): machine layer + GO-science + beauty all-PASS ×10, 6 real defects fixed (incl. 2 banned-word hero images caught at pixel level); Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY); Dr. Deepu John's 20 Jul review changes executed on-branch (c160274, HARD GATE 7 lane; 'resident' ×3 dropped, comparisons softened, dead video removed). Still open: Vikash per-URL redirect/slug plan · owner-gated facts (tariffs/stats/photos). Full KTAHV rebuild scope separately: TARIFF_MODE + BOOKING_ROUTE; QA/QC WP batch waits on Deepu's Novamira-on-staging"
+    updated: "2026-07-21"
     preview_url: "https://kairali-web-factory-ayurvedichealingvillage-rh8jwv4cf-kairali.vercel.app"
     live_url: null
   - name: "kairalicenters.com"

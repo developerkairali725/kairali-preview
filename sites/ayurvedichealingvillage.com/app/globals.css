@@ -1,0 +1,219 @@
+/* ===========================================================================
+   ayurvedichealingvillage.com — KTAHV LP system ("consultation room, not
+   brochure", launches/ktahv-lp-batch/design-direction, MODE B v5).
+   Tokens ONLY (packages/ui/brand-tokens.css). Overlays/veils via color-mix on
+   tokens — no raw color literals of any kind (brand-lint law).
+   LP laws in pixels: chromeless · ONE marigold object per viewport state ·
+   sticky mobile CTA after the hero CTA exits · proof before the form ·
+   AA/AAA text contrast (hero eyebrow ivory — bronze-400 measured 4.35:1 on
+   forest-800, below AA for 13px, reserved for large/decorative on dark).
+   ======================================================================== */
+
+:root {
+  --font-display: var(--font-kurale), Georgia, serif;
+  --font-body: var(--font-asap), "Trebuchet MS", sans-serif;
+  --font-caption: var(--font-lato), system-ui, sans-serif;
+  --ivory-veil: color-mix(in srgb, var(--ivory) 22%, transparent);
+  --ivory-line: color-mix(in srgb, var(--ivory) 24%, transparent);
+  --ink-line: color-mix(in srgb, var(--ink) 14%, transparent);
+  --ivory-soft: color-mix(in srgb, var(--ivory) 82%, transparent);
+  --forest-veil: color-mix(in srgb, var(--forest-800) 88%, transparent);
+  --hero-sub: color-mix(in srgb, var(--ivory) 90%, transparent);
+  --hero-caption: color-mix(in srgb, var(--ivory) 84%, var(--forest-500));
+  --shadow-cta: 0 10px 30px color-mix(in srgb, var(--marigold-400) 28%, transparent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.16; margin: 0; }
+h2, h3 { color: var(--forest-700); }
+p { margin: 0 0 1em; }
+img { max-width: 100%; }
+
+:focus-visible { outline: 3px solid var(--leaf-500); outline-offset: 2px; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- hero: deep-forest clinical-editorial ---------- */
+.lp-hero {
+  min-height: 86svh;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  background: linear-gradient(160deg, var(--forest-700), var(--forest-800) 70%);
+  color: var(--ivory);
+  overflow: hidden;
+}
+.lp-hero-copy {
+  padding: 7svh 4.5vw 6svh 6vw;
+  display: flex; flex-direction: column; justify-content: center; gap: 22px;
+}
+.lp-overline {
+  font-family: var(--font-caption); font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.8125rem; color: var(--ivory); margin: 0;
+}
+.lp-hero h1 {
+  font-size: clamp(33px, 4.5vw, 54px); max-width: 16ch; color: var(--ivory);
+}
+.lp-hero h1 em { font-style: normal; border-bottom: 3px solid var(--leaf-500); }
+.lp-sub { font-size: clamp(16px, 1.35vw, 19px); max-width: 52ch; color: var(--hero-sub); margin: 0; }
+
+.doc-chip { display: flex; align-items: center; gap: 12px; font-family: var(--font-caption); }
+.doc-chip img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ivory-line); }
+.doc-chip b { display: block; font-size: 0.875rem; }
+.doc-chip span { font-size: 0.75rem; color: var(--hero-caption); }
+
+.cta-col { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 4px; }
+.btn-wa {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  background: var(--marigold-400); color: var(--ink);
+  font-family: var(--font-body); font-weight: 700; font-size: 1.0625rem;
+  min-height: 56px; padding: 15px 30px; border-radius: var(--radius-pill);
+  text-decoration: none; box-shadow: var(--shadow-cta);
+}
+.btn-wa svg { flex: none; }
+.wa-number { font-family: var(--font-caption); font-size: 0.8125rem; letter-spacing: 0.06em; color: var(--hero-caption); }
+
+.lp-creds { display: flex; flex-wrap: wrap; margin-top: 26px; border-top: 1px solid var(--ivory-line); max-width: 680px; }
+.lp-cred { padding: 14px 22px 0 0; margin-right: 16px; }
+.lp-cred b { display: block; font-family: var(--font-caption); font-weight: 700; font-size: 1.0625rem; }
+.lp-cred span { font-family: var(--font-caption); font-size: 0.71875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--hero-caption); }
+.nabh-chip { display: inline-block; border: 1px solid var(--ivory-line); border-radius: var(--radius-1); padding: 2px 8px; }
+
+.lp-hero-visual { display: flex; align-items: flex-end; justify-content: center; padding: 0 3vw; }
+.lp-photo {
+  width: min(32vw, 440px); height: 460px; border-radius: var(--radius-3) var(--radius-3) 0 0;
+  position: relative; overflow: hidden; background: var(--forest-800);
+}
+.lp-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.lp-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 20px 16px;
+  background: linear-gradient(180deg, transparent, var(--forest-veil) 70%);
+  font-family: var(--font-caption); color: var(--ivory);
+}
+.lp-photo figcaption b { display: block; font-size: 0.9375rem; }
+.lp-photo figcaption span { font-size: 0.75rem; color: var(--hero-caption); }
+
+/* ---------- body sections ---------- */
+.lp-section { padding: 64px 0; }
+.lp-section.alt { background: color-mix(in srgb, var(--leaf-500) 7%, var(--ivory)); }
+.lp-section .overline {
+  font-family: var(--font-caption); font-weight: 700; font-size: 0.875rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze-600); margin: 0 0 10px;
+}
+.lp-section h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 14px; max-width: 24ch; }
+.lp-lead { max-width: 62ch; font-size: 1.0625rem; }
+
+.step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; margin-top: 30px; }
+.step-card { background: var(--ivory); border: 1px solid var(--ink-line); border-radius: var(--card-radius); padding: 22px; }
+.lp-section.alt .step-card { background: var(--ivory); }
+.step-card .k { font-family: var(--font-caption); font-weight: 700; font-size: 0.78125rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-600); }
+.step-card h3 { font-size: 1.25rem; margin: 6px 0 8px; }
+.step-card p { margin: 0; font-size: 0.9375rem; }
+
+.photo-band { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 30px; }
+.photo-band img { width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-2); }
+
+/* proof band */
+.proof-band { background: var(--forest-700); color: var(--ivory); }
+.proof-band h2, .proof-band h3 { color: var(--ivory); }
+.proof-band .overline { color: var(--ivory); }
+.proof-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; margin-top: 28px; }
+.proof-item { border-top: 1px solid var(--ivory-line); padding-top: 14px; font-family: var(--font-caption); }
+.proof-item b { display: block; font-size: 1.0625rem; }
+.proof-item span { font-size: 0.8125rem; color: var(--hero-caption); }
+
+/* physicians */
+.physician-row { display: flex; gap: 22px; align-items: center; margin-top: 26px; flex-wrap: wrap; }
+.physician-row img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink-line); }
+.physician-row .who b { display: block; font-family: var(--font-caption); font-size: 1.0625rem; }
+.physician-row .who span { font-family: var(--font-caption); font-size: 0.875rem; color: var(--forest-700); }
+.physician-note { font-size: 0.875rem; color: color-mix(in srgb, var(--ink) 72%, var(--ivory)); max-width: 62ch; }
+
+/* FAQ */
+.faq { margin-top: 26px; max-width: 760px; }
+.faq details { border-top: 1px solid var(--ink-line); padding: 14px 0; }
+.faq summary { font-family: var(--font-body); font-weight: 600; font-size: 1.0625rem; cursor: pointer; }
+.faq p { margin: 10px 0 0; font-size: 0.9375rem; max-width: 68ch; }
+
+/* testimonial video */
+.video-embed { margin-top: 26px; aspect-ratio: 16 / 9; max-width: 760px; }
+.video-embed iframe { width: 100%; height: 100%; border: 0; border-radius: var(--radius-2); }
+.video-note { font-size: 0.8125rem; font-family: var(--font-caption); color: color-mix(in srgb, var(--ink) 68%, var(--ivory)); max-width: 68ch; }
+
+/* ---------- consultation form ---------- */
+.form-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; margin-top: 30px; align-items: start; }
+.enquiry-form { background: var(--ivory); border: 1px solid var(--ink-line); border-radius: var(--card-radius); padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.enquiry-heading { font-family: var(--font-display); font-weight: 400; font-size: 1.375rem; margin: 0; color: var(--forest-700); }
+.field label, .consent span { font-family: var(--font-caption); font-size: 0.875rem; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-row { display: flex; gap: 10px; }
+.field-cc { width: 84px; flex: none; display: flex; flex-direction: column; gap: 6px; }
+.field-phone { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.field input, .field textarea, .field-cc input, .field-phone input {
+  font-family: var(--font-body); font-size: 1rem; color: var(--ink);
+  background: var(--ivory); border: 1px solid color-mix(in srgb, var(--ink) 30%, var(--ivory));
+  border-radius: var(--radius-1); padding: 11px 12px; min-height: 44px;
+}
+.consent { display: flex; gap: 10px; align-items: flex-start; }
+.consent input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--forest-500); }
+.consent a { color: var(--forest-500); }
+.enquiry-error { color: var(--color-error); font-size: 0.875rem; margin: 0; }
+.enquiry-sent { background: color-mix(in srgb, var(--leaf-500) 12%, var(--ivory)); border-radius: var(--radius-2); padding: 18px 20px; }
+.btn.btn-primary {
+  font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+  background: var(--forest-500); color: var(--ivory); border: 0;
+  min-height: 52px; border-radius: var(--radius-pill); padding: 0 28px; cursor: pointer;
+}
+.form-aside .k { font-family: var(--font-caption); font-weight: 700; font-size: 0.78125rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze-600); }
+.form-aside p { font-size: 0.9375rem; max-width: 48ch; }
+.form-aside a { color: var(--forest-500); }
+
+/* ---------- legal strip (the doctrine's permitted minimum) ---------- */
+.lp-legal {
+  border-top: 1px solid var(--ink-line); padding: 26px 0 90px;
+  font-family: var(--font-caption); font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--ink) 72%, var(--ivory));
+}
+.lp-legal a { color: var(--forest-500); }
+.lp-legal .row { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+/* ---------- sticky mobile CTA (one marigold at a time) ---------- */
+.lp-sticky {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: var(--forest-800); border-top: 1px solid var(--ivory-line);
+  padding: 12px 16px; display: none;
+  transform: translateY(110%); transition: transform 0.25s ease;
+}
+.lp-sticky.shown { transform: translateY(0); }
+.lp-sticky .btn-wa { width: 100%; box-shadow: none; min-height: 52px; }
+
+@media (max-width: 900px) {
+  .lp-hero { grid-template-columns: 1fr; min-height: unset; }
+  .lp-hero-visual { display: none; }
+  .lp-hero-copy { padding: 52px 24px 40px; }
+  .lp-creds { flex-wrap: wrap; }
+  .lp-cred { padding-right: 0; }
+  .lp-sticky { display: block; }
+  .form-wrap { grid-template-columns: 1fr; }
+  .lp-section { padding: 48px 0; }
+}
+
+/* D-20260718-04 fleet social strip — quiet, below the LP content, above the
+   consent banner. Tokens only; no competing CTA weight (LP 1:1 doctrine). */
+.lp-social-strip {
+  padding: 20px 24px 28px;
+  text-align: center;
+  background: var(--forest-800);
+}
+.lp-social-strip a { opacity: 0.7; }
+.lp-social-strip a:hover { opacity: 1; }

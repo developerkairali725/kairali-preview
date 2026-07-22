@@ -1,0 +1,269 @@
+# Ship checklist — ktahv-lp-batch · class: landing
+
+**Generated-by: `node scripts/gate-checklist-gen.mjs --domain ktahv-lp-batch --class landing` · registry: `gates/registry.yaml` @ 87bb77e · 2026-07-18 23:36:31 IST**
+
+**DO NOT HAND-EDIT — regenerate from gates/registry.yaml.** Per-site ship checklists are GENERATED from the registry by site class, never hand-written (CLAUDE.md §GATE REGISTRY). The launch crew fills marks and evidence IN PLACE — [x] done · [~] partial (gap stated) · [ ] pending (reason given); evidence is real command output or a named artifact, never self-reported success. Adding, removing, or rewording a gate happens ONLY in the registry (rule g); marking a gate n/a for a class is a REGISTRY decision, never a fill-time one. Regenerating overwrites this file.
+
+**68 gates in the registry · 30 required + 22 adapted = 52 to clear for class landing · 16 explicitly n/a (collapsed at the end — each one decided, never silent).**
+**run legend: automated = deterministic script/CI · agent = LLM subagent with structured PASS/FAIL output · human = a named person signs.**
+
+## Blocker — merge/ship-blocking: the site does not move (42)
+
+- [x] `build-clean` — **Clean production build** · run: automated · status: built · landing: required
+  - verifies: pnpm build completes clean; zero console errors on key templates
+  - enforcement: .github/workflows/factory-gate.yml (factory-spec job, pnpm build) + tests/factory/factory-site.spec.ts (A1 console errors)
+  - evidence: Vercel build READY twice on this branch — dpl_5PxMTQPD3aQ9kdPsC3ceDwrxCbmS (c7df440) + preview okudmx20l (2711105); all 10 /lp/ routes HTTP 200 (battery transcript, 2026-07-18 22:42–23:15 IST)
+- [ ] `factory-spec-suite` — **Factory Playwright spec suite** · run: automated · status: built · landing: adapted
+  - verifies: Locked facts (info@kairali.com, +91 92898 38797, …38777 absent), forms render + consent + privacy link, locale switcher + reciprocal hreflang, no mixed content, touch targets >=44px, visible focus rings, >=1 data-cta CTA
+  - enforcement: tests/factory/factory-site.spec.ts via .github/workflows/factory-gate.yml (factory-spec matrix)
+  - adapted for landing: Suite runs at host-site level; /lp/ routes are not individually visited today — LP-specific assertions live in lp-noindex-single-cta (flagged cross-class miss until an LP route walker exists)
+  - evidence:
+- [ ] `compliance-lint` — **Entity-register compliance lint** · run: automated · status: built · landing: required
+  - verifies: Entity register rules (KTAHV clinical lock incl. DE/FR equivalents), group banned filler, claims-jurisdiction lens for declared target markets — zero findings
+  - enforcement: packages/compliance/bin/lint.js via .github/workflows/gate.yml + scripts/hooks/pre-push.sh
+  - evidence:
+- [ ] `brand-lint` — **Brand-token lint** · run: automated · status: built · landing: required
+  - verifies: Only brand-token colors (no rogue hex), marigold never body text, focus rings present, touch targets >=44px, pill buttons
+  - enforcement: packages/ui/bin/brand-lint.js via .github/workflows/factory-gate.yml
+  - evidence:
+- [ ] `banned-string-lint` — **Banned-string lint (fabricated claims, locked facts)** · run: automated · status: built · landing: required
+  - verifies: Strings we actually shipped and later found false (fabricated review claims, wrong WhatsApp tail, process claims with no process) can never ship again
+  - enforcement: scripts/banned-string-lint.mjs via .github/workflows/factory-gate.yml
+  - evidence:
+- [ ] `cta-label-lint` — **CTA-label lint (no clinical claim on a bot channel)** · run: automated · status: built · landing: required
+  - verifies: A CTA whose href reaches the Priya WhatsApp bot may not use doctor/physician/clinician language
+  - enforcement: scripts/cta-label-lint.mjs via .github/workflows/factory-gate.yml
+  - evidence:
+- [ ] `honest-ymyl-content-lint` — **Honest-YMYL content lint** · run: automated · status: partial · landing: adapted
+  - verifies: The 35 honesty rules for YMYL health content (no invented reviewers, no false process claims, citation presence) — zero findings
+  - enforcement: scripts/content-lint.mjs via .github/workflows/factory-gate.yml — scoped to sites/whatisayurveda.com today; other organic sites are NOT covered (flagged cross-class AND cross-site miss)
+  - adapted for landing: LP claims run compliance-lint + lp-ad-policy (DMR/ASCI ad enforcement is stricter than page rules); YMYL article rules n/a to single-goal campaign pages
+  - evidence:
+- [ ] `factory-matrix-self-registration` — **Factory CI matrix self-registration** · run: automated · status: built · landing: adapted
+  - verifies: Every sites/<dir> with a site.config.json is present in EVERY CI site matrix (factory-spec + lighthouse); no dead entries; exemptions stay loud and paper-trailed
+  - enforcement: scripts/factory-matrix-lint.mjs via .github/workflows/factory-gate.yml
+  - adapted for landing: /lp/ pages ship inside a registered host site; no separate matrix entry exists or is needed
+  - evidence:
+- [ ] `launch-evidence-gate` — **Launch evidence completeness** · run: automated · status: built · landing: adapted
+  - verifies: Audit reports in launches/<domain>/ cannot ship without the full evidence set: filled checklists, wiki/log.md entry, LEARNINGS retro
+  - enforcement: scripts/launch-evidence-gate.mjs via .github/workflows/factory-gate.yml
+  - adapted for landing: Campaign launches file evidence under the host site's launches/<domain>/ keyed by campaign slug
+  - evidence:
+- [ ] `front-gate-approvals` — **Front gate (signed approvals ledger)** · run: automated · status: built · landing: required
+  - verifies: No page ships ahead of its signed approval: brief → strategy → design_source (+ design_direction in MODE B) → golden_page rows in launches/<domain>/approvals.yaml
+  - enforcement: scripts/front-gate.mjs via .github/workflows/factory-gate.yml (front-gate job)
+  - evidence:
+- [ ] `lighthouse-budgets` — **Lighthouse budgets** · run: automated · status: built · landing: adapted
+  - verifies: Performance >=90 · Accessibility >=95 · SEO = 100 on key templates, mobile emulation, local production build
+  - enforcement: scripts/lighthouse-gate.mjs via .github/workflows/factory-gate.yml (lighthouse matrix)
+  - adapted for landing: STRICTER speed budget (LP doctrine §6 — paid traffic pays per click); SEO=100 n/a on noindexed LPs per LANDING_PAGE_DOCTRINE §8 — perf/a11y budgets bind unchanged
+  - evidence:
+- [ ] `unit-tests-discovered` — **All unit tests (discovered, not globbed)** · run: automated · status: built · landing: required
+  - verifies: Every */test/*.test.js under packages, sites AND scripts runs — a test outside the glob is a dead gate
+  - enforcement: .github/workflows/factory-gate.yml (All tests step, find-discovered)
+  - evidence:
+- [ ] `secret-scan` — **Secret scan (gitleaks, full history)** · run: automated · status: built · landing: required
+  - verifies: No tokens/keys/secrets in code or git history
+  - enforcement: .github/workflows/gate.yml (gitleaks step) + .gitleaks.toml
+  - evidence:
+- [ ] `dependency-audit` — **Dependency audit** · run: automated · status: built · landing: required
+  - verifies: pnpm audit at high level — no known-vulnerable dependencies ship
+  - enforcement: .github/workflows/gate.yml (Dependency audit step); Monday ritual per CLAUDE.md doctrine (c)
+  - evidence:
+- [ ] `security-review-diff` — **Security review of the release diff** · run: automated · status: built · landing: required
+  - verifies: Claude security review on every PR diff: zero high/critical findings after FP filtering
+  - enforcement: .github/workflows/gate.yml (security-review job, anthropics/claude-code-security-review)
+  - evidence:
+- [ ] `pre-launch-matrix-walk` — **Pre-launch decision-matrix walk** · run: automated · status: partial · landing: adapted
+  - verifies: Before any 'ready to launch' claim: every pipeline stage has a verdict bound to artifact hash + exit code + CI provenance — no self-reported readiness
+  - enforcement: scripts/matrix-walk.mjs + scripts/lib/verdict.mjs — walk exists; verdict emitters for most gates are still being built (MASTER_PIPELINE §0.2)
+  - adapted for landing: LP variants under an approved campaign mandate walk the SΔ re-entry slice (MASTER_PIPELINE §0.3), not the full pre-launch walk
+  - evidence:
+- [ ] `meta-canonical-crawl-files` — **Metadata, canonicals and crawl files** · run: agent · status: partial · landing: adapted
+  - verifies: Meta title <=60ch + description <=155ch on every page; canonical set; robots.txt sane; sitemap.xml + llms.txt + AI-crawler files generated
+  - enforcement: .claude/agents/seo-aeo-geo-auditor.md + filled pagewise checklist — flagged FALSE-automated in MASTER_PIPELINE §8 review; a deterministic lint is not built
+  - adapted for landing: Meta present for QA but page is noindex BY DESIGN — the check inverts: verify noindex IS set (lp-noindex-single-cta) and the page is excluded from sitemap.xml
+  - evidence:
+- [ ] `schema-jsonld` — **Schema JSON-LD valid per template** · run: agent · status: partial · landing: adapted
+  - verifies: Organization + entity type (MedicalClinic/LocalBusiness/Product/Article), BreadcrumbList, FAQPage where Q&A exists, Person for bylines — parses and validates
+  - enforcement: .claude/agents/seo-aeo-geo-auditor.md (schema checks) + Rich Results spot-check pasted into launch evidence; deterministic parse lint not built
+  - adapted for landing: Organization schema only; FAQ/Article rich-result schema n/a on noindexed pages
+  - evidence:
+- [ ] `internal-link-crawl` — **Internal link crawl + 301 map** · run: human · status: planned · landing: adapted
+  - verifies: Zero 4xx/5xx internally; 301 map from the mined legacy inventory deployed; 10 random old URLs spot-checked to correct new targets
+  - enforcement: PLANNED: link-crawl script in CI — A11 flagged FALSE-automated; today run manually/Playwright MCP at launch and in the weekly QA rotation
+  - adapted for landing: No legacy 301 map for new /lp/ paths; internal + outbound links on the LP still crawled clean
+  - evidence:
+- [ ] `consent-mode` — **Consent banner + Google Consent Mode v2** · run: automated · status: partial · landing: adapted
+  - verifies: packages/consent active: banner, Consent Mode v2, privacy/terms pages per entity
+  - enforcement: packages/consent + tests/factory/factory-site.spec.ts (forms consent assertions); full Consent-Mode signal verification is a launch-evidence item
+  - adapted for landing: Even with the stripped LP footer, consent + privacy link REMAIN (LP doctrine §9 Q8 minimum set); consent boolean written to the CRM record explicitly
+  - evidence:
+- [ ] `ga4-stream` — **GA4 property + data stream** · run: agent · status: built · landing: required
+  - verifies: GA4 property + web data stream created; site ID wired in packages/analytics config
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B3 procedure + packages/analytics; evidence in launches/<domain>/
+  - evidence:
+- [ ] `gtm-conversion-events` — **GTM container + conversion events** · run: agent · status: built · landing: required
+  - verifies: GTM published: GA4 tag + conversion events mapped from data-cta (form_submit, whatsapp_click, call_click, add_to_cart_assist)
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B4 procedure; data-cta presence asserted by tests/factory/factory-site.spec.ts
+  - evidence:
+- [ ] `forms-crm-parity` — **Forms v1 CRM parity + live test lead** · run: agent · status: built · landing: adapted
+  - verifies: EXACT current CRM field schema + endpoint; one live test lead lands in CRM with consent flag + source attribution (screenshot evidence)
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B8 + FORMS v1-freeze section; render+consent asserted by tests/factory/factory-site.spec.ts
+  - adapted for landing: LP lead capture is store-first into our own DB with consent as an explicit boolean field (LP doctrine §4, Satyam spec) — same parity law, stricter field-minimization
+  - evidence:
+- [ ] `design-critic-review` — **Design-critic gate (skeptical-marketer review)** · run: agent · status: built · landing: adapted
+  - verifies: 375px-first then desktop review with computed-style audit; average >=9.0/10, no criterion <7, max 3 iterations; scorecard committed before preview goes to human gate
+  - enforcement: scripts/design-review/PROMPT.md; scorecard committed per-domain under launches/
+  - adapted for landing: Same rubric plus message-match awareness: the reviewer scores against the ad promise, not just the page in isolation
+  - evidence:
+- [ ] `design-external-ai-review` — **Design external-AI review (pre-content, mockup image)** · run: agent · status: built · landing: required
+  - verifies: BEFORE content starts on ANY site/LP: ChatGPT AND Perplexity review the proposed design SEEING the reference/mockup image (base64 image_url content parts, never a text description); dual strict-enum PASS required; per-pass evidence committed to launches/<domain>/design-review/
+  - enforcement: scripts/design-review.mjs --stage pre — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with --image; exit 0 only on dual PASS; evidence <date>-pass<N> files under launches/<domain>/design-review/
+  - evidence:
+- [ ] `design-external-ai-review-post` — **Design external-AI vet (post-build, element-by-element)** · run: agent · status: built · landing: required
+  - verifies: When a site/LP build is believed FINISHED: both external auditors vet EVERY element of a per-element checklist (seeded from the generated site checklist; the GPT auditor may extend it) against desktop AND mobile screenshots of the built pages; returned checklist + verdicts saved per pass under launches/<domain>/design-review/post-build/; caller iterates passes until dual PASS
+  - enforcement: scripts/design-review.mjs --stage post --checklist (seeded from scripts/gate-checklist-gen.mjs output) — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with screenshot --image flags
+  - evidence: [~] BLOCKED-PENDING-HUMAN — golden LP ran 4 passes (launches/ktahv-lp-batch/panchkarma-treatment/design-review/post-build/): both auditors individually PASSed the identical artifact (GPT p2+p4, PPX p3) but never in the same pass; alternation = the Q-GATE1 pattern reproduced (GATE2-VERDICT-REVIEW.md + QUESTIONS.md Q-GATE2-LP-BATTERY). Real catches fixed: two legacy banner heroes (2711105). Remaining 9 LPs: one recorded pass each, per the ruling. Gate NOT weakened.
+- [ ] `beauty-conformance` — **Beauty-conformance gate (BEAUTY_DOCTRINE rubric)** · run: agent · status: built · landing: adapted
+  - verifies: Rendered page (desktop AND mobile screenshots + source + strategy artifact) judged against the doctrine rubric for its entity and page type: desired-perception questions answered, entity communicate-list served, restraint/editing, fleet-system consistency, authenticity (show Kerala — never imitate Bali/Japan/generic wellness), price-perception ceiling, trust-before-beauty staging, copy deliberateness; performance and truth criteria READ existing gate evidence (lighthouse-budgets A5, design-external-ai-review, B-14) — never re-measured; findings per pillar; strict PASS/FAIL + advisory lane per D-EXTREVIEW-OWNER-FACTS
+  - enforcement: scripts/beauty-audit.mjs — parses the §R rubric from docs/design/BEAUTY_DOCTRINE.md, orchestrates scripts/audit-gpt.mjs with desktop+mobile --image (scripts/lib/image-input.mjs); exit 0 only on strict PASS; evidence append-only under launches/<domain>/beauty/
+  - adapted for landing: ROI-first — beauty serves conversion per doctrine §3
+  - evidence:
+- [ ] `design-qa-audit` — **Design-QA subagent audit** · run: agent · status: built · landing: required
+  - verifies: Brand-token conformance, design-mistakes checklist, design principles, WCAG AA contrast, mobile/tablet/desktop screenshots — structured PASS/FAIL
+  - enforcement: .claude/agents/design-qa.md — runs in parallel with seo-aeo-geo-auditor after EVERY build/visual change (CLAUDE.md rule n), both reports attached as evidence
+  - evidence:
+- [ ] `go-science-conformance` — **GO-science conformance — MCB + MoA + look (\"What would Akshar say?\")** · run: agent · status: built · landing: required
+  - verifies: Every site/LP page conforms to Akshar Yadav's GO science per docs/marketing/go-science/ — CONTENT: curiosity hook rooted in the declared MoA's secret desire, big-promise support, small non-pressuring CTA, signature-MCB anchoring, Market-2.0-specific MoA (ideal group, not misfits), NDFF grounded never invented; AND LOOK (amendment, 18 Jul 19:58 IST): the rendered page is psychologically attractive to its MoA at its awareness stage — visual hierarchy, imagery, CTA psychology, trust signals — judged on desktop AND mobile screenshots with ROI as the key metric. Applied DURING build (standing guideline) and AT THE LAST as the final pre-ship pass; both sections blocking; FAIL = content/look rebuilt or refixed, never shipped around
+  - enforcement: scripts/go-science-audit.mjs — rubric derived VERBATIM from docs/marketing/go-science/ (fail-closed on doc drift; ambiguities flagged to QUESTIONS.md Q-GO-SCIENCE-RUBRIC, never guessed); an evaluating agent answers the rubric against page source + strategy artifact + desktop/mobile screenshots; findings hash-bound to the judged bytes; evidence append-only at launches/<domain>/go-science/ — exit 0 only on all-criteria PASS
+  - evidence: strict PASS ×10 (exit 0), 2026-07-18 — launches/ktahv-lp-batch/<lp>/go-science/2026-07-18.md for all ten LPs; STRATEGY.md §1b declarations lift (commit c7df440) closed the GS-MCB-6/GS-MOA-1,3/GS-VIS-3 declaration gaps that failed the sibling sites
+- [ ] `seo-aeo-geo-audit` — **SEO/AEO/GEO subagent audit** · run: agent · status: built · landing: adapted
+  - verifies: SEO checklist (titles, H1 hierarchy, canonicals, CWV), AEO checklist (quotable answers, question H2s, FAQ schema), GEO checklist (AI crawlers, llms.txt, E-E-A-T, entity consistency, freshness), internal linking
+  - enforcement: .claude/agents/seo-aeo-geo-auditor.md — parallel with design-qa per CLAUDE.md rule (n)
+  - adapted for landing: SEO/AEO/GEO sections n/a on noindex pages — audit scope narrows to meta hygiene, mobile usability, CWV and schema minimum
+  - evidence:
+- [ ] `security-posture-audit` — **Security-auditor posture + access hygiene** · run: agent · status: built · landing: required
+  - verifies: Website security checklist (HTTPS, MFA, backups, WAF, least privilege), Shopify staff/token hygiene, settings-drift vs snapshot, MCP permission scope — pre-PR and monthly access review
+  - enforcement: .claude/agents/security-auditor.md — pre-PR + monthly per CLAUDE.md rule (s), alongside security-review-diff
+  - evidence:
+- [ ] `injection-screening` — **Prompt-injection screening of scraped content** · run: agent · status: built · landing: required
+  - verifies: ANY externally scraped/fetched content is screened for injection patterns BEFORE any agent acts on it; on detection: quarantine URL, downgrade action to human review
+  - enforcement: .claude/agents/security-auditor.md (injection screening section) per CLAUDE.md rule (r)
+  - evidence:
+- [ ] `content-draft-compliance` — **Content-draft compliance gate** · run: agent · status: built · landing: required
+  - verifies: Every content draft passes the repo compliance lint (register + claims lens + banned filler + locked facts) BEFORE it is returned; brainstorm gate run before drafting
+  - enforcement: .claude/agents/content-geo-writer.md (mandatory gates A+B) — drafts come ONLY from this agent per CLAUDE.md rule (o)
+  - evidence:
+- [ ] `checkout-flows` — **Checkout + revenue-critical flow suite** · run: automated · status: planned · landing: adapted
+  - verifies: Playwright on the five-six revenue-critical flows (checkout above all) against the theme preview; every buy action resolves to the main Shopify checkout — the one-checkout law
+  - enforcement: PLANNED: Playwright suite per roadmap §7 (mirror of tests/factory for the store); Track B prerequisite
+  - adapted for landing: Product LPs: same product-card handoff verification — the buy CTA must land on the store checkout
+  - evidence:
+- [ ] `price-inventory-integrity` — **Price + inventory integrity** · run: automated · status: planned · landing: adapted
+  - verifies: Real catalog, real SKUs, truthful price and stock — no invented prices anywhere (HARD GATE 6); price/inventory consistent between store and any surface rendering it
+  - enforcement: PLANNED: integrity check inside the catalog lint (MASTER_PIPELINE MM-11, kairalitea precedent DECISIONS.md:196); today enforced by HARD GATE 6 discipline + catalog-compliance-audit
+  - adapted for landing: Same product-card rule on product LPs
+  - evidence:
+- [x] `lp-noindex-single-cta` — **LP noindex + single CTA + events** · run: automated · status: planned · landing: required
+  - verifies: /lp/<campaign> is noindex, carries ONE conversion goal / single CTA (attention ratio), and fires data-cta events
+  - enforcement: PLANNED: LP route lint (LANDING_PAGE_DOCTRINE §9 Q7 names the checklist amendment; no lint exists — today verified by eye against the Factory rule); Factory rule is binding prose in CLAUDE.md §FACTORY RULES
+  - evidence: battery 2026-07-18 — all 10 served pages carry `<meta name="robots" content="noindex, nofollow"/>`; sitemap.xml lists zero /lp/ URLs; ONE conversion goal per page (2× whatsapp_click + 1× enquiry_submit data-cta nodes, WhatsApp-first + form as second modality); events verified FIRING live via Playwright gtag capture (dom-evidence-2026-07-18.md §6/§8)
+- [ ] `lp-message-match` — **LP message match with the ad** · run: human · status: planned · landing: required
+  - verifies: The LP headline repeats the phrasing of the ad/keyword that produced the click, measured per-campaign; awareness-stage template matches the traffic source
+  - enforcement: PLANNED: message-match verification against the live ad in the LP-specific pagewise checklist (LANDING_PAGE_DOCTRINE §9 Q7); today a human check in campaign review
+  - evidence:
+- [ ] `lp-ad-policy` — **LP ad-policy + claims compliance** · run: agent · status: partial · landing: required
+  - verifies: DMR Act/ASCI healthcare-claims scan on LP copy (no magical/guaranteed cures); Google Ads destination rules (no redirecting final-URL domain, LP on the brand's own domain); remarketing on non-sensitive signals only
+  - enforcement: packages/compliance/bin/lint.js (claims lens) covers the copy layer; the ad-policy layer (final-URL, remarketing signals) is a PLANNED checklist item per LANDING_PAGE_DOCTRINE §5–§7
+  - evidence:
+- [ ] `generated-checklists-filled` — **Generated ship checklists filled** · run: human · status: partial · landing: adapted
+  - verifies: The per-class ship checklist (GENERATED from this registry — never hand-written) is filled with evidence per item and committed to launches/<domain>/
+  - enforcement: docs/checklists/ masters (historical source texts) + launch-evidence-gate enforcement; the generator script from this registry is PLANNED — until it lands, filled checklists are transcribed from the masters
+  - adapted for landing: Landing-class checklist generated from this registry (LP-specific items per LANDING_PAGE_DOCTRINE §9 Q7)
+  - evidence:
+- [ ] `human-audit-round` — **Human audit round (Marketing / Deepu / Satyam / Sunaj)** · run: human · status: built · landing: adapted
+  - verifies: Marketing: copy/brand/offers/imagery (challengeable) · Deepu: code sanity + publish readiness · Satyam: forms CRM parity + test submissions · Sunaj: servers/DNS/SSL/redirect plan
+  - enforcement: docs/plans/2026-07-17-factory-audit-and-launch-roadmap.md §5 Gates B–E; audit-request packets prepared by the agent
+  - adapted for landing: Satyam verifies LP lead capture lands store-first with the consent boolean; Sunaj slot shrinks to routing (no DNS change for a path)
+  - evidence:
+- [ ] `preview-approval` — **Owner preview approval** · run: human · status: built · landing: required
+  - verifies: Abilash approves the Vercel preview (section-by-section for A-register flagships) — the logged OK-to-publish decision
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md C1 + roadmap §5 Gate F (decision logged in the repo; role emails drafted the moment it lands)
+  - evidence:
+- [ ] `ads-final-url-cutover` — **Ads final-URL cutover approval** · run: human · status: built · landing: required
+  - verifies: Where live spend exists, Abilash approves the final-URL cutover; final URL is never a redirecting domain (Google Ads destination policy)
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md C3; docs/design/LANDING_PAGE_DOCTRINE.md §7 (destination rules)
+  - evidence:
+
+## High — launch-evidence items: must pass before go-live (9)
+
+- [ ] `og-cards-render` — **OG/Twitter card render** · run: human · status: planned · landing: required
+  - verifies: Social cards render for every page type (1200x630 per Brand Manual ch.08) — validated render, not just tags present
+  - enforcement: PLANNED: render-validation script — A9 was flagged FALSE-automated (MASTER_PIPELINE: 'four of thirteen'); today verified by eye during the filled pagewise checklist
+  - evidence:
+- [ ] `alt-text-favicons` — **Alt text + favicon set** · run: agent · status: partial · landing: required
+  - verifies: Every image has descriptive alt text; favicons exported 16/32/180/512 per Brand Manual ch.08
+  - enforcement: .claude/agents/design-qa.md + .claude/agents/seo-aeo-geo-auditor.md (alt-text checks); favicon export verified in the filled checklist — A10 flagged FALSE-automated, deterministic lint not built
+  - evidence:
+- [ ] `ads-conversion-actions` — **Google Ads conversion actions** · run: agent · status: built · landing: required
+  - verifies: Conversion actions created + linked; final-URL cutover per PPC protocol where campaigns exist
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B5 procedure; human cutover approval is ads-final-url-cutover
+  - evidence:
+- [ ] `pixels-installed` — **Ad platform pixels** · run: agent · status: built · landing: required
+  - verifies: Meta pixel + domain verification (C/E register), LinkedIn Insight (A-register B2B), Bing UET where Ads run, Triple Whale pixel on every C-register site (UTM ms_<site> standard)
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B6 procedure; evidence in launches/<domain>/
+  - evidence:
+- [ ] `uptime-fleet-pulse` — **Uptime monitor + Fleet Pulse row** · run: agent · status: built · landing: adapted
+  - verifies: Uptime monitor added; Fleet Pulse row created with KPI baseline + 90-day target; STATUS.yaml stage current
+  - enforcement: .github/workflows/uptime.yml + scripts/uptime/ + STATUS.yaml (scripts/status-build.mjs)
+  - adapted for landing: Rides the host site's monitor; campaign tracked as a workstream/stage in STATUS.yaml rather than a separate uptime row
+  - evidence:
+- [ ] `runtime-monitoring` — **Runtime monitoring (Speed Insights + Sentry)** · run: agent · status: built · landing: adapted
+  - verifies: Vercel Speed Insights + Analytics enabled; Sentry project created, DSN wired, alert rule → email
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md B13 procedure
+  - adapted for landing: Covered by the host site's Vercel/Sentry project — verify LP routes report into it
+  - evidence:
+- [ ] `post-launch-verification` — **Post-launch Day-1 / Day-7 verification** · run: agent · status: built · landing: adapted
+  - verifies: Day 1: indexing, GSC coverage 0 errors, live analytics events, first live lead traced to CRM, bot answering · Day 7: CWV field sample, keyword spot-check, lead count vs baseline, broken-link recrawl
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md D procedure; reported in Fleet Pulse
+  - adapted for landing: Indexing checks invert (verify still noindexed); Day-1 = events firing + first lead in CRM; Day-7 = conversion rate vs campaign baseline
+  - evidence:
+- [ ] `launch-retro-learning-loop` — **Launch retro + wiki update** · run: agent · status: built · landing: required
+  - verifies: 15-minute retro appended to LEARNINGS.md; anything appearing twice becomes a packages/* or checklist PR within the week; wiki page updated at launch (doctrine b)
+  - enforcement: SITE_LAUNCH_CHECKLIST_v1.0.md E + CLAUDE.md doctrine (b); enforced in part by launch-evidence-gate (LEARNINGS entry required)
+  - evidence:
+- [ ] `cross-model-audit` — **Cross-model audit at phase boundary** · run: agent · status: built · landing: required
+  - verifies: Independent GPT-5.5-via-Codex audit note at every phase boundary; load-bearing claims triangulated (both external verifiers or pending-triangulation queue — never 'verified by one only')
+  - enforcement: scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs; triangulation rule per roadmap §3
+  - evidence:
+
+## Advisory — recurring/monitoring: findings routed, not blocking (1)
+
+- [ ] `weekly-qa-rotation` — **Weekly QA audit rotation** · run: agent · status: partial · landing: adapted
+  - verifies: Playwright MCP explore: broken links, 4xx/5xx, mixed content, mobile render, banned-word scan (KTAHV), schema presence, forms + consent, data-cta firing, images, hreflang → audits/<site>-<date>.md, findings only
+  - enforcement: CLAUDE.md §QA audit pass procedure + audits/ outputs — no scheduler exists (PROSE-ONLY per docs/process/inventory-existing-rules.md WF-QA); runs when invoked
+  - adapted for landing: Live campaign LPs join the host site's rotation while spend is active
+  - evidence:
+
+<details>
+<summary>Explicitly N/A for class landing — 16 gates (decided in the registry with a written reason, never silent)</summary>
+
+- `s3-keyword-gates` — **S3 keyword-rigor gates (seed-lint + keyword-validate)** · n/a: LPs are noindex by default (Factory rule); paid terms come from the approved campaign mandate, and term-to-page alignment is gated by lp-message-match, not organic demand data
+- `hreflang-reciprocal` — **hreflang complete and reciprocal** · n/a: Campaign LPs are single-locale by design; a locale variant is a separate campaign page with its own mandate
+- `keyword-map` — **Keyword map per page** · n/a: Paid terms come from the campaign mandate; term alignment gated by lp-message-match
+- `geo-ai-readiness` — **GEO/AI-readiness pass** · n/a: Noindexed campaign pages are not AI-answer surfaces; entity facts live on the host site's organic pages
+- `gsc-bing-verification` — **GSC + Bing verification and sitemap submission** · n/a: Noindex pages are not submitted; the host site's domain property already covers the URL space
+- `chatbase-entity-bot` — **Chatbase entity bot mapping** · n/a: Single-CTA law — no chatbot widget competes with the one conversion goal on a campaign LP
+- `chat-bubble-present` — **Chat bubble present (fleet-wide)** · n/a: Single-CTA law — no chat widget competes with the one conversion goal on /lp/ pages (same ruling as chatbase-entity-bot)
+- `forward-family-redirects` — **Forward-family domain redirects** · n/a: No forward family exists for an /lp/ path under an already-forwarded domain
+- `social-press-links` — **Social profiles + press/author pages** · n/a: Stripped-footer LPs carry no social/press links by design (attention ratio)
+- `catalog-compliance-audit` — **Catalog compliance audit** · n/a: Product LPs render packages/product-card fed by the Storefront API — catalog truth is linted at the store, once, upstream
+- `shopify-theme-check` — **Shopify theme-check** · n/a: LPs are Factory TSX pages; no theme layer
+- `payment-gateways-per-store` — **Payment gateways per store** · n/a: Same law — LPs never carry payment forms; money changes hands only at the store
+- `settings-drift-check` — **Store settings drift check** · n/a: No store settings surface exists
+- `myshopify-noindex` — **myshopify subdomain not indexed** · n/a: No myshopify surface
+- `legacy-mine-protection-map` — **Legacy mine + protection map** · n/a: New /lp/ paths have no legacy URLs; the host domain's map is owned by the host site's rebuild
+- `dns-go-live` — **DNS / go-live flip** · n/a: An /lp/ path under a live domain needs no DNS action; go-live is the Ads cutover
+
+</details>

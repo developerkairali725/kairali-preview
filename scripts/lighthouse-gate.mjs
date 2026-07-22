@@ -77,14 +77,36 @@ export const median = (xs) => {
  * Judge one URL's category scores (0–100) against the budgets.
  * Pure — the tests drive it in both directions.
  * @param {{performance:number, accessibility:number, seo:number}} scores
+ * @param {{seoNA?: boolean}} [opts] — seoNA per the registry's landing
+ *   adaptation (see seoWaived below); perf/a11y always bind.
  * @returns {string[]} violations (empty = within budget)
  */
-export function judge(scores) {
+export function judge(scores, opts = {}) {
   const v = [];
   if (scores.performance < BUDGETS.performance) v.push(`performance ${scores.performance} < ${BUDGETS.performance}`);
   if (scores.accessibility < BUDGETS.accessibility) v.push(`accessibility ${scores.accessibility} < ${BUDGETS.accessibility}`);
-  if (scores.seo < BUDGETS.seo) v.push(`SEO ${scores.seo} < ${BUDGETS.seo} (A5 says exactly 100)`);
+  if (!opts.seoNA && scores.seo < BUDGETS.seo) v.push(`SEO ${scores.seo} < ${BUDGETS.seo} (A5 says exactly 100)`);
   return v;
+}
+
+/**
+ * The landing-class SEO adaptation, ACTIVATED from its declared law — never a
+ * new judgment call. gates/registry.yaml `lighthouse-budgets` → landing:
+ * "SEO=100 n/a on noindexed LPs per LANDING_PAGE_DOCTRINE §8 — perf/a11y
+ * budgets bind unchanged"; the doctrine's own words (§8): "SEO gate n/a to
+ * noindexed LPs". BOTH conditions must hold — the measured page is an
+ * /lp/<campaign> route AND Lighthouse's is-crawlable audit reports it blocked
+ * from indexing (score 0). A noindexed NON-lp page gets NO waiver: outside the
+ * LP doctrine, noindex is a defect signal the SEO budget exists to catch.
+ * The registry's OTHER landing half ("STRICTER speed budget", doctrine §6)
+ * names no number and stays declared-dormant law — perf binds at the standard
+ * ≥90 here, never a made-up stricter figure (HARD GATE 6).
+ * Pure — tests drive it in all directions.
+ * @param {{finalPath: string, crawlableScore: number|null}} signals
+ * @returns {boolean}
+ */
+export function seoWaived({ finalPath, crawlableScore }) {
+  return typeof finalPath === "string" && /^\/lp\//.test(finalPath) && crawlableScore === 0;
 }
 
 /** Read the site's URL list; default home-only, loudly. */
@@ -134,7 +156,15 @@ function runLighthouse(url, outDir, tag) {
     if (typeof s !== "number") throw new Error(`lighthouse produced no ${cat} score for ${url} (runtimeError: ${report.runtimeError?.message ?? "none"})`);
     return Math.round(s * 100);
   };
-  return { performance: score("performance"), accessibility: score("accessibility"), seo: score("seo") };
+  // Signals for the landing-class SEO adaptation (seoWaived): where the run
+  // actually landed after redirects, and whether the page is noindexed.
+  let finalPath = null;
+  try { finalPath = new URL(report.finalDisplayedUrl ?? report.finalUrl ?? url).pathname; } catch { /* leave null */ }
+  const crawlable = report.audits?.["is-crawlable"]?.score;
+  return {
+    performance: score("performance"), accessibility: score("accessibility"), seo: score("seo"),
+    finalPath, crawlableScore: typeof crawlable === "number" ? crawlable : null,
+  };
 }
 
 async function main(argv) {
@@ -188,8 +218,12 @@ async function main(argv) {
         scores.performance = median(perfs);
         note = ` (perf median of ${perfs.join("/")})`;
       }
-      const v = judge(scores);
-      console.log(`  ${v.length === 0 ? "PASS" : "FAIL"}  ${path} → perf ${scores.performance} · a11y ${scores.accessibility} · seo ${scores.seo}${note}`);
+      const seoNA = seoWaived(scores);
+      if (seoNA) {
+        console.log(`  SEO-N/A  ${path} → landed on noindexed LP ${scores.finalPath} — registry lighthouse-budgets landing adaptation (LANDING_PAGE_DOCTRINE §8: "SEO gate n/a to noindexed LPs"); perf/a11y budgets bind unchanged`);
+      }
+      const v = judge(scores, { seoNA });
+      console.log(`  ${v.length === 0 ? "PASS" : "FAIL"}  ${path} → perf ${scores.performance} · a11y ${scores.accessibility} · seo ${seoNA ? `${scores.seo} (n/a — noindexed LP)` : scores.seo}${note}`);
       for (const violation of v) failures.push(`${path}: ${violation}`);
     }
 
