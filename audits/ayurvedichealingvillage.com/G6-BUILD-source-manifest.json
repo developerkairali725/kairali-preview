@@ -1,0 +1,183 @@
+{
+  "judged_dir": "sites/ayurvedichealingvillage.com",
+  "file_count": 44,
+  "tree_sha256": "fe1404adc46da862e5eaa359bb8fdc0274789e2611ec19f9fa2cb530708c4a53",
+  "files": [
+    {
+      "path": "sites/ayurvedichealingvillage.com/.gitignore",
+      "sha256": "6fe16e5e5dad9408c6a9082604c816d8067641ae1b5e59aceb90eb51c1088c63"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/_components/lp-form.tsx",
+      "sha256": "9cfc4ef6d147e3b1d7a5085f2d79de5340d8fbdf418a12f67bfa49b4ca213780"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/_components/lp-sticky.tsx",
+      "sha256": "5b454c56502d6dca010311fb1d77898e453e371193a9d265b424cf59c3296387"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/_components/lp.tsx",
+      "sha256": "0170b267f219a1881ad82ff28aaa9f3bc8765811ddca9c778d73be125ab38f48"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/api/enquiry/route.ts",
+      "sha256": "1c6066475e95f9250ff66ccbf5e38ca22380e9249fb0cfb8e7e6ee508fb34d97"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/cookie-policy/page.tsx",
+      "sha256": "641c121eff8d5a09af22a748e5666ce5fc3481b193f20e10920181db4843ff58"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/globals.css",
+      "sha256": "dee636c6e8695a953c0323479af87f3b0bdde568010c4c5b7202f4584d4373b7"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/icon.png",
+      "sha256": "265a2c526b7c81c2a41f79c6a1e044c5a41f0f1cc114ca85de6a3e4549cedc02"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/icon.svg",
+      "sha256": "91b2650bfa4ab62485907950b0c8e65887f75c5d24082af6250b9c0e400969e6"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/layout.tsx",
+      "sha256": "b63f1e1d534c2c140e28070a6603f22d7130d4073100faa93820b25c9652eaa5"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/ayurveda-treatment-south-india/page.tsx",
+      "sha256": "67754945c4338bcd5f0b9f65a43ed907d1a82709cf617ccf64482d27ad2f62bb"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/ayurvedic-hospital-kerala/page.tsx",
+      "sha256": "45da59a57686e26f20716c59cad134311e0630d245f406d8704f2eb1d685d106"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/behandlung-in-kerala/page.tsx",
+      "sha256": "944330f8fd536b3a91583c3ad31b17886cde9c7aceb0025675d286df7d598696"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/kairali-brand/page.tsx",
+      "sha256": "6564614ec90d815f79d74d4e485a18f47009345fc0cf49ff14da95fe11595258"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/kairali-cleansing-centre/page.tsx",
+      "sha256": "d910358cd687c360a5fee484c4dc76974b20aca3b52b2b88ecb726b80fca0d26"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/pain-management/page.tsx",
+      "sha256": "30d2a88b71b18eb0df514ad04dab24b56b615b82695a88f9f1c611fce2c9a6df"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/panchkarma-treatment/page.tsx",
+      "sha256": "c1e9be7a9c1c781303dfdc295c7850c826e1bab762721f2106cf7184c210e22f"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/treatment-in-kerala/page.tsx",
+      "sha256": "de20d1ea64675dac965d54c6716a9165ac1a8b9efc497e751f1e6694f91a0c21"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/treatment-packages/page.tsx",
+      "sha256": "26a0bb0adca676731ae57797315b55c42427b7418d3b5d4788f3c111ca2f44a2"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/lp/weight-loss/page.tsx",
+      "sha256": "fbe8fcf80090c71b95873c569ba67d61917fad89bf2d9f8aa50c247f2682e553"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/privacy/page.tsx",
+      "sha256": "9774d30df8b66ae824514792cecb16e5d5ee4e557e765c53d12331c1f622e23e"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/robots.ts",
+      "sha256": "520f7595fd43a45e78d239f01bd0c067052b8addaa4d897ccfbbd26d2f837f7b"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/sitemap.ts",
+      "sha256": "21833db98803edaf29ea1dfbcf4b68e1007746cba19a6cbff4cfa71eb4455c08"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/terms/page.tsx",
+      "sha256": "affc16b788e90400f57521a1164bdcf12974e90ea8d670b781e810fbebf9ce12"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/lighthouse-urls.json",
+      "sha256": "fa89a33664e0ac4be075ba47ed03a7b2553d873dc8d1fc0ee71f3f50e22e2824"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/next.config.ts",
+      "sha256": "faedb6ef8baab4ba63e260305b5244db8af5004a7b566f0ed6e9c0e6c54cff9e"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/package.json",
+      "sha256": "88ad7717ba7139488d979852ec18cb24be3868aa2e105b6db1e66663d8b658a6"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/consultation-pulse.webp",
+      "sha256": "06104b00005542c1542afe8d1795170f0d34c6b4a65705a2ff96e4dc55b9c991"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/dr-deepu-john-192.webp",
+      "sha256": "c84976ef6549e9a7e23557037392abb2a7987cdf646432e777015a8354fd3e28"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/healing-village-grounds.jpg",
+      "sha256": "9ff4655d27b2b3224d0653c27f5bc2eef457fac38e03bb1590d023f00a462ae6"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/hospital-campus.jpg",
+      "sha256": "f26d6c9a9043fd46c3bf23e0da20d4fe15938b36d90a7baa46a2e4e91fefb3b3"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/kairali-brand-header.jpg",
+      "sha256": "a5c2307e63841439526c0ea0a954c181830a35a944230ab8c31ae75a84071cbd"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/patient-villa-classic.jpg",
+      "sha256": "6dce1d58a674ccd06bfd0838ae80e7a7d564714411795161ff04461f6d81a411"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/patient-villa-maharaja.jpg",
+      "sha256": "9a5e61ba3798adc5f07c1af22936adcb82f0a24f222f69fd79d575a3919a82e0"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/physician-consult.png",
+      "sha256": "593cb14e908d208bdec3dd6aad5537563b71f5643604b61e9ff33c1d35e39109"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/therapy-abhyanga.jpg",
+      "sha256": "d85a6b5156954d549e5b4120cae0ab506d2cfc81648b53cc578c050a6ded7b51"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/therapy-pain-management.jpg",
+      "sha256": "b43bded92b82035d0f647f21999790a2b31cbbbe3cd1a5b2f707f8be92777aac"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/therapy-panchakarma.jpg",
+      "sha256": "329418c21bb0351343370f405b4c0cf1509591c588fd999f6d0b3c8445f9259b"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/therapy-south-india.jpg",
+      "sha256": "567bb393e39a5dd441bc775f2510bab3a25086ae2d9c1854e74b98cbb6da9c5a"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/images/treatment-context.jpg",
+      "sha256": "685e9413c1a95fec228988ed49fb9a5f42b45f01f7f08ef125f69efe7bc007a1"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/site.config.json",
+      "sha256": "c242a145ce89e91d05ec3e690bcd725a3171a7d6ca38656ad73660bbcdc34034"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/styles/tokens.css",
+      "sha256": "4dc32756c31b8d1c81e13169fa2a82c05afe9f30d94f49430213c12579e22418"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/tsconfig.json",
+      "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    }
+  ]
+}

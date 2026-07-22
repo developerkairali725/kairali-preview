@@ -1,0 +1,36 @@
+{
+  "gate": "G6-BUILD",
+  "status": "PASS",
+  "artifact_path": "audits/ayurvedichealingvillage.com/G6-BUILD-source-manifest.json",
+  "artifact_sha256": "b9b6ffd7c9e3950b51d8841c6c29cd4981aa7dd0e2a6d13f5a5b430a1fb1f844",
+  "rubric_sha256": null,
+  "command": "pnpm exec turbo build --filter=<site>",
+  "argv": [
+    "pnpm exec turbo build --filter=ayurvedichealingvillage.com"
+  ],
+  "exit_code": 0,
+  "started_at": "2026-07-22T10:24:44+05:30",
+  "finished_at": "2026-07-22T10:25:13+05:30",
+  "runner": "github-actions",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/29892204435",
+  "control_probe": {
+    "name": "harness-detects-nonzero-exit",
+    "expected": 2,
+    "observed": 2
+  },
+  "site": "ayurvedichealingvillage.com",
+  "registry_gate": "build-clean",
+  "registry_severity": "blocker",
+  "commands": [
+    {
+      "argv": [
+        "pnpm",
+        "exec",
+        "turbo",
+        "build",
+        "--filter=ayurvedichealingvillage.com"
+      ],
+      "exit_code": 0
+    }
+  ]
+}
