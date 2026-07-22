@@ -22,6 +22,10 @@ import {
   AUDITORS, STAGES, auditorArgv, decideExit, deriveVerdict,
   parseDesignArgs, runDesignReview,
 } from "../design-review.mjs";
+import {
+  extractBlockingFindings, parseReclassifierOutput, validateMappings,
+} from "../lib/facts-reclassify.mjs";
+import { PROVIDERS, parseFindingsPayload, parseReclassifyArgs } from "../audit-reclassify.mjs";
 
 const SITE = "whyayurveda.org";
 const STAMP = "2026-07-18 12:00:00 IST"; // deterministic evidence date
@@ -42,6 +46,12 @@ function makeRepo(t) {
   writeFileSync(join(root, "shot-desktop.png"), PNG_BYTES);
   writeFileSync(join(root, "shot-mobile.png"), PNG_BYTES);
   writeFileSync(join(root, "checklist.md"), "# Post-build element checklist\n- [ ] E1 hero renders\n- [ ] E2 CTA visible\n");
+  writeFileSync(join(root, "facts.md"), [
+    "# Canonical owner facts (D-EXTREVIEW-OWNER-FACTS authority)",
+    "- 14 centers across 5 countries is the canonical roster (owner's brother confirmed, 17 Jul 2026).",
+    "- A family practising Ayurveda since 1908 — Abilash confirmed the lineage date (D-LIN).",
+    "",
+  ].join("\n"));
   return root;
 }
 
@@ -323,6 +333,259 @@ test("post stage refuses a missing or empty checklist before any auditor is call
   writeFileSync(join(root, "empty.md"), "  \n");
   assert.throws(() => runDesignReview(argvFor(join(root, "empty.md")), { runAuditor: run, repoRoot: root, stamp: STAMP }), /checklist .*is empty/);
   assert.equal(calls.length, 0);
+});
+
+/* ==========================================================================
+ * 6 · ADVISORY LANE — D-EXTREVIEW-OWNER-FACTS (owner-confirmed facts are
+ *     authority; FAIL resting solely on them → ADVISORY, non-blocking).
+ *     Annotation only: raw verdicts/critiques stay verbatim; the strict enum
+ *     is untouched; every failure path stays BLOCKING.
+ * ========================================================================== */
+
+// A perplexity FAIL whose ONLY blocking finding doubts the owner-confirmed
+// 1908 lineage — the exact shape of the kairalicenters pass-4 gap.
+const PPLX_FACT_FAIL = {
+  status: 2,
+  stdout: JSON.stringify({
+    verdict: "FAIL",
+    summary: "1908 lineage externally unverifiable",
+    claims_checked: [
+      { claim: "14 centers in 5 countries", verdict: "SUPPORTED", evidence: "locations page", correction: "", is_health_claim: false, risk_to_this_audience: "low", confidence: "high" },
+      { claim: "family practising Ayurveda since 1908", verdict: "MISLEADING", evidence: "no external primary source", correction: "", is_health_claim: false, risk_to_this_audience: "low", confidence: "low" },
+    ],
+    data_faults: [],
+    fabricated_or_misrepresented_sources: [],
+  }),
+};
+
+/** Mock reclassifier: records requests, returns canned mapping runs. Never touches a network. */
+function mockReclassifier(fn) {
+  const calls = [];
+  const run = (req, opts) => { calls.push({ ...req, opts }); return fn(req); };
+  return { run, calls };
+}
+
+const mappingRun = (mappings) => ({ status: 0, stdout: JSON.stringify({ mappings }), stderr: "", error: null });
+const COVERED_1908 = { finding_id: "claims_checked[1]", covered: true, fact: "A family practising Ayurveda since 1908", reasoning: "owner-confirmed lineage date" };
+
+test("extractBlockingFindings: audit-gpt takes blocking_issues + blocking missed_steps only", () => {
+  const raw = {
+    blocking_issues: ["mobile has no persistent call CTA", "gold-on-cream contrast unproven"],
+    missed_steps: [
+      { step: "task-flow proof", evidence_it_was_missed: "no sticky CTA", severity: "blocking" },
+      { step: "city chips check", evidence_it_was_missed: "Gurgaon absent", severity: "major" },
+    ],
+  };
+  const f = extractBlockingFindings("audit-gpt", raw);
+  assert.deepEqual(f.map((x) => x.id), ["blocking_issues[0]", "blocking_issues[1]", "missed_steps[0]"]);
+  assert.match(f[2].text, /task-flow proof — evidence: no sticky CTA/);
+  assert.deepEqual(extractBlockingFindings("audit-gpt", {}), []);
+  assert.throws(() => extractBlockingFindings("audit-other", {}), /unknown auditor/);
+});
+
+test("extractBlockingFindings: audit-perplexity takes CONTRADICTED/MISLEADING, UNVERIFIABLE health claims, data faults, fabricated sources — never SUPPORTED", () => {
+  const raw = {
+    claims_checked: [
+      { claim: "true thing", verdict: "SUPPORTED", is_health_claim: false },
+      { claim: "wrong count", verdict: "CONTRADICTED", evidence: "roster says 14", correction: "14", is_health_claim: false },
+      { claim: "cures diabetes", verdict: "UNVERIFIABLE", is_health_claim: true },
+      { claim: "obscure history", verdict: "UNVERIFIABLE", is_health_claim: false },
+      { claim: "spun claim", verdict: "MISLEADING", is_health_claim: false },
+    ],
+    data_faults: ["zero volume implausible"],
+    fabricated_or_misrepresented_sources: ["cited study does not exist"],
+  };
+  const f = extractBlockingFindings("audit-perplexity", raw);
+  assert.deepEqual(f.map((x) => x.id), ["claims_checked[1]", "claims_checked[2]", "claims_checked[4]", "data_faults[0]", "fabricated_sources[0]"]);
+  assert.match(f[0].text, /\[CONTRADICTED\] wrong count — evidence: roster says 14 — correction: 14/);
+});
+
+test("★ validateMappings machine-checks the model's mapping: complete, once each, boolean, verbatim quotes", (t) => {
+  const root = makeRepo(t);
+  const facts = readFileSync(join(root, "facts.md"), "utf8");
+  const findings = [{ id: "a", text: "doubts 1908" }, { id: "b", text: "doubts roster" }];
+  const ok = validateMappings(findings, { mappings: [
+    { finding_id: "a", covered: true, fact: "practising Ayurveda since 1908", reasoning: "r" },
+    { finding_id: "b", covered: false, fact: "", reasoning: "independent" },
+  ] }, facts);
+  assert.equal(ok.length, 2);
+  // quote tolerance: case + punctuation differences still match the sheet
+  validateMappings([findings[0]], { mappings: [{ finding_id: "a", covered: true, fact: "PRACTISING  ayurveda, since 1908!", reasoning: "r" }] }, facts);
+  const one = (m) => ({ mappings: [m] });
+  assert.throws(() => validateMappings(findings, { mappings: [] }, facts), /unmapped finding/);
+  assert.throws(() => validateMappings([findings[0]], one({ finding_id: "zzz", covered: false, fact: "", reasoning: "" }), facts), /unknown finding_id/);
+  assert.throws(() => validateMappings([findings[0]], { mappings: [COVERED_1908, COVERED_1908].map((m) => ({ ...m, finding_id: "a" })) }, facts), /mapped more than once/);
+  assert.throws(() => validateMappings([findings[0]], one({ finding_id: "a", covered: "yes", fact: "x", reasoning: "" }), facts), /covered must be a boolean/);
+  assert.throws(() => validateMappings([findings[0]], one({ finding_id: "a", covered: true, fact: "", reasoning: "" }), facts), /substantive verbatim fact quote/);
+  assert.throws(() => validateMappings([findings[0]], one({ finding_id: "a", covered: true, fact: "a fact the sheet never declared anywhere", reasoning: "" }), facts),
+    /does not appear in the facts sheet/, "an asserted-but-unquoted covering fact is refused — coverage is machine-checked");
+  assert.equal(validateMappings(findings, { mappings: [
+    { finding_id: "a", covered: false, fact: "", reasoning: "" },
+    { finding_id: "b", covered: false, fact: "", reasoning: "" },
+  ] }, facts).every((m) => m.covered), false);
+});
+
+test("parseReclassifierOutput: every failure path yields error + no advisory flip", (t) => {
+  const root = makeRepo(t);
+  const facts = readFileSync(join(root, "facts.md"), "utf8");
+  const findings = [{ id: "claims_checked[1]", text: "doubts 1908" }];
+  const good = parseReclassifierOutput(findings, mappingRun([COVERED_1908]), facts);
+  assert.equal(good.error, null);
+  assert.equal(good.allCovered, true);
+  for (const run of [
+    { status: 1, stdout: "", stderr: "API error: boom", error: null },
+    { status: 0, stdout: "not json", stderr: "", error: null },
+    { status: 0, stdout: JSON.stringify({ mappings: [] }), stderr: "", error: null }, // incomplete
+    { status: 1, stdout: "", stderr: "", error: "spawn ENOENT" },
+  ]) {
+    const r = parseReclassifierOutput(findings, run, facts);
+    assert.ok(r.error, `run ${JSON.stringify(run)} must carry an error`);
+    assert.equal(r.allCovered, false);
+    assert.equal(r.mappings, null);
+  }
+});
+
+test("decideExit treats ADVISORY as non-blocking, raw verdicts untouched", () => {
+  const adv = { verdict: "FAIL", effective: "ADVISORY" };
+  const pass = { verdict: "PASS", effective: "PASS" };
+  const fail = { verdict: "FAIL", effective: "FAIL" };
+  assert.equal(decideExit([pass, adv]), 0);
+  assert.equal(decideExit([adv, adv]), 0);
+  assert.equal(decideExit([adv, fail]), 2);
+  assert.equal(decideExit([{ verdict: null, effective: null }, adv]), 1);
+});
+
+test("--facts is auto-attached to BOTH auditors as context (pre: first; post: after the checklist)", () => {
+  const pre = parseDesignArgs(["--site", SITE, "--image", "a.png", "--purpose", "p", "--audience", "aud", "--facts", "facts.md", "--context", "c.md"]);
+  const post = parseDesignArgs(["--site", SITE, "--stage", "post", "--image", "a.png", "--checklist", "cl.md", "--purpose", "p", "--audience", "aud", "--facts", "facts.md", "--context", "c.md"]);
+  for (const auditor of AUDITORS) {
+    const preCtx = auditorArgv(auditor, pre).filter((_, i, av) => av[i - 1] === "--context");
+    assert.deepEqual(preCtx, ["facts.md", "c.md"], `${auditor.name} pre: facts sheet attached before caller context`);
+    const postCtx = auditorArgv(auditor, post).filter((_, i, av) => av[i - 1] === "--context");
+    assert.deepEqual(postCtx, ["cl.md", "facts.md", "c.md"], `${auditor.name} post: checklist first, then facts, then caller context`);
+  }
+});
+
+test("★ a FAIL fully covered by owner facts → FAIL(raw) → ADVISORY, exit 0, raw critique verbatim, table in evidence", (t) => {
+  const root = makeRepo(t);
+  const { run } = mockRunner({ "audit-gpt": PASS_RUN, "audit-perplexity": PPLX_FACT_FAIL });
+  const reclass = mockReclassifier(() => mappingRun([COVERED_1908]));
+  const out = runDesignReview(preArgv(root, ["--facts", join(root, "facts.md")]),
+    { runAuditor: run, runReclassifier: reclass.run, repoRoot: root, stamp: STAMP });
+
+  assert.equal(out.exitCode, 0, "a FAIL resting solely on owner-confirmed facts is non-blocking (D-EXTREVIEW-OWNER-FACTS)");
+  // the reclassifier asked the SAME auditor model about ITS OWN findings
+  assert.equal(reclass.calls.length, 1, "only the raw-FAIL auditor is reclassified");
+  assert.equal(reclass.calls[0].auditor, "audit-perplexity");
+  assert.equal(reclass.calls[0].model, "sonar-pro");
+  assert.deepEqual(reclass.calls[0].findings.map((f) => f.id), ["claims_checked[1]"]);
+  assert.equal(reclass.calls[0].factsPath, join(root, "facts.md"));
+
+  const md = readFileSync(out.evidencePath, "utf8");
+  assert.match(md, /VERDICT audit-perplexity: FAIL\(raw\) → ADVISORY per D-EXTREVIEW-OWNER-FACTS/);
+  assert.match(md, /VERDICT audit-gpt: PASS/);
+  assert.match(md, /OVERALL: PASS \(advisory\)/);
+  assert.match(md, /## RECLASSIFICATION — D-EXTREVIEW-OWNER-FACTS/);
+  assert.match(md, /\| claims_checked\[1\] \| .*1908.* \| A family practising Ayurveda since 1908 \| ADVISORY \|/);
+  assert.match(md, /facts sheet .*facts\.md \(sha256 [0-9a-f]{64}\)/);
+  // the raw auditor output is preserved VERBATIM — annotation, never an edit
+  assert.match(md, /"verdict": "FAIL"/, "raw FAIL stays in the raw critique block");
+  assert.match(md, /"summary": "1908 lineage externally unverifiable"/);
+});
+
+test("★ a FAIL with one finding NOT covered by the sheet stays blocking: exit 2, table shows the blocking row", (t) => {
+  const root = makeRepo(t);
+  const GPT_MIXED_FAIL = {
+    status: 2,
+    stdout: JSON.stringify({
+      verdict: "FAIL",
+      blocking_issues: ["hero doubts the 14-center roster", "mobile drops the call CTA"],
+      missed_steps: [],
+    }),
+  };
+  const { run } = mockRunner({ "audit-gpt": GPT_MIXED_FAIL, "audit-perplexity": PASS_RUN });
+  const reclass = mockReclassifier(() => mappingRun([
+    { finding_id: "blocking_issues[0]", covered: true, fact: "14 centers across 5 countries is the canonical roster", reasoning: "owner ruling" },
+    { finding_id: "blocking_issues[1]", covered: false, fact: "", reasoning: "a design/conversion issue — no owner fact involved" },
+  ]));
+  const out = runDesignReview(preArgv(root, ["--facts", join(root, "facts.md")]),
+    { runAuditor: run, runReclassifier: reclass.run, repoRoot: root, stamp: STAMP });
+
+  assert.equal(out.exitCode, 2, "one uncovered blocking finding keeps the FAIL blocking");
+  assert.equal(reclass.calls[0].model, "gpt-5", "the gpt FAIL is mapped by the gpt model");
+  const md = readFileSync(out.evidencePath, "utf8");
+  assert.match(md, /VERDICT audit-gpt: FAIL\n/, "no advisory annotation — the raw verdict stands");
+  assert.match(md, /OVERALL: FAIL — audit-gpt returned FAIL/);
+  assert.match(md, /\| blocking_issues\[0\] \| .* \| 14 centers across 5 countries is the canonical roster \| ADVISORY \|/);
+  assert.match(md, /\| blocking_issues\[1\] \| .* \| — \| BLOCKING \|/);
+  assert.match(md, /EFFECTIVE audit-gpt: FAIL — 1 finding\(s\) not covered by the sheet keep the FAIL blocking/);
+  assert.match(md, /"verdict": "FAIL"/, "raw critique verbatim");
+});
+
+test("reclassifier failure or refused mapping leaves the raw FAIL blocking, recorded honestly", (t) => {
+  const root = makeRepo(t);
+  const { run } = mockRunner({ "audit-gpt": PASS_RUN, "audit-perplexity": PPLX_FACT_FAIL });
+  const reclass = mockReclassifier(() => ({ status: 1, stdout: "", stderr: "audit-reclassify failed: API error", error: null }));
+  const out = runDesignReview(preArgv(root, ["--facts", join(root, "facts.md")]),
+    { runAuditor: run, runReclassifier: reclass.run, repoRoot: root, stamp: STAMP });
+  assert.equal(out.exitCode, 2, "a broken reclassifier can only fail toward blocking");
+  const md = readFileSync(out.evidencePath, "utf8");
+  assert.match(md, /VERDICT audit-perplexity: FAIL\n/);
+  assert.match(md, /RECLASSIFICATION NOT APPLIED — reclassifier exited 1/);
+  assert.match(md, /stays BLOCKING/);
+});
+
+test("without --facts nothing is reclassified; a FAIL with no extractable blocking findings stays blocking too", (t) => {
+  const root = makeRepo(t);
+  // no --facts: reclassifier must never be called
+  const a = mockReclassifier(() => { throw new Error("must not be called"); });
+  const out1 = runDesignReview(preArgv(root), { runAuditor: mockRunner({ "audit-gpt": PASS_RUN, "audit-perplexity": FAIL_RUN }).run, runReclassifier: a.run, repoRoot: root, stamp: STAMP });
+  assert.equal(out1.exitCode, 2);
+  assert.equal(a.calls.length, 0);
+  assert.ok(!readFileSync(out1.evidencePath, "utf8").includes("RECLASSIFICATION"), "no facts sheet, no reclassification section");
+  // --facts but a FAIL whose critique carries no machine-extractable blocking findings
+  const HOLLOW_FAIL = { status: 2, stdout: JSON.stringify({ verdict: "FAIL", claims_checked: [], data_faults: [], fabricated_or_misrepresented_sources: [] }) };
+  const b = mockReclassifier(() => { throw new Error("must not be called"); });
+  const out2 = runDesignReview(preArgv(root, ["--pass", "2", "--facts", join(root, "facts.md")]),
+    { runAuditor: mockRunner({ "audit-gpt": PASS_RUN, "audit-perplexity": HOLLOW_FAIL }).run, runReclassifier: b.run, repoRoot: root, stamp: STAMP });
+  assert.equal(out2.exitCode, 2, "a FAIL that cannot be itemised cannot be shown to rest solely on owner facts");
+  assert.equal(b.calls.length, 0);
+  assert.match(readFileSync(out2.evidencePath, "utf8"), /no machine-extractable blocking findings/);
+});
+
+test("★ --facts refusals: a missing or empty sheet refuses the run BEFORE any auditor is called", (t) => {
+  const root = makeRepo(t);
+  const { run, calls } = mockRunner({});
+  assert.throws(
+    () => runDesignReview(preArgv(root, ["--facts", join(root, "no-such-facts.md")]), { runAuditor: run, repoRoot: root, stamp: STAMP }),
+    /--facts .*does not exist/,
+  );
+  writeFileSync(join(root, "empty-facts.md"), "  \n");
+  assert.throws(
+    () => runDesignReview(preArgv(root, ["--facts", join(root, "empty-facts.md")]), { runAuditor: run, repoRoot: root, stamp: STAMP }),
+    /--facts .*is empty/,
+  );
+  assert.equal(calls.length, 0, "no tokens may burn on a run that cannot be recorded");
+});
+
+test("audit-reclassify CLI plumbing: args + stdin payload validation, provider map covers exactly the two auditors", () => {
+  assert.deepEqual(Object.keys(PROVIDERS).sort(), ["audit-gpt", "audit-perplexity"]);
+  assert.equal(PROVIDERS["audit-gpt"].keyVar, "OPENAI_API_KEY");
+  assert.equal(PROVIDERS["audit-perplexity"].keyVar, "PERPLEXITY_API_KEY");
+  const ok = parseReclassifyArgs(["--auditor", "audit-gpt", "--model", "gpt-5", "--facts", "f.md"]);
+  assert.deepEqual(ok, { auditor: "audit-gpt", model: "gpt-5", facts: "f.md" });
+  assert.throws(() => parseReclassifyArgs(["--auditor", "audit-claude", "--model", "m", "--facts", "f"]), /--auditor must be one of/);
+  assert.throws(() => parseReclassifyArgs(["--auditor", "audit-gpt", "--facts", "f"]), /--model is required/);
+  assert.throws(() => parseReclassifyArgs(["--auditor", "audit-gpt", "--model", "m"]), /--facts is required/);
+  assert.deepEqual(parseFindingsPayload('{"findings":[{"id":"a","text":"t"}]}'), [{ id: "a", text: "t" }]);
+  assert.throws(() => parseFindingsPayload("not json"), /stdin is not JSON/);
+  assert.throws(() => parseFindingsPayload('{"findings":[]}'), /no findings/);
+  assert.throws(() => parseFindingsPayload('{"findings":[{"id":"","text":"t"}]}'), /malformed finding/);
+  // no key material in argv of the child the orchestrator spawns
+  for (const p of Object.values(PROVIDERS)) {
+    const body = p.body("m", "sys", "usr");
+    assert.ok(body.response_format, `${p.url} call is schema-constrained`);
+  }
 });
 
 test("STAGES map is the two directives and nothing else; a pass increments to a NEW file (the iterate loop)", (t) => {

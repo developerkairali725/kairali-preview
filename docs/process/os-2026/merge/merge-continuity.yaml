@@ -10,8 +10,8 @@ meta:
   milestone: "M0(b) — plan §10; external review pass 1 blocking finding #1 adopted"
   note: "CM = normative CLAUDE.md units · GR = registry gates (generated, scripts/merge-continuity-gen-registry.mjs) · PKG = adopted package obligations · STD = seven shared standards (pending author, D-20260719-11) · REJ/DEF = exclusion-register seed (plan §8)"
   source_hashes:
-    CLAUDE.md: "sha256:1761a932b907973baa15fc7c75f720f502c7f192353dabd64d7875ab8862a2e3"
-    gates/registry.yaml: "sha256:105e5500b87c54c3a06aa3b0e2b73656bc2c5c2637eeef757da1cd14083b8615"
+    CLAUDE.md: "sha256:541398485d74534b4cecd5deaab76d25be02dec1baeb4f112759ff1f477d7b3b"
+    gates/registry.yaml: "sha256:ade3e9e543afac6e2f6aa4e2ae463be4a0d7486e621f6cf05ed96adabfd3c026"
 rows:
   - source_id: CM-001
     source_file: "CLAUDE.md"

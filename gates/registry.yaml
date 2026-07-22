@@ -575,12 +575,12 @@ gates:
   # reason all 8 sites were redesigned.
   - id: design-external-ai-review
     name: "Design external-AI review (pre-content, mockup image)"
-    what_it_verifies: "BEFORE content starts on ANY site/LP: ChatGPT AND Perplexity review the proposed design SEEING the reference/mockup image (base64 image_url content parts, never a text description); dual strict-enum PASS required; per-pass evidence committed to launches/<domain>/design-review/"
+    what_it_verifies: "BEFORE content starts on ANY site/LP: ChatGPT AND Perplexity review the proposed design SEEING the reference/mockup image (base64 image_url content parts, never a text description); dual strict-enum PASS required; per-pass evidence committed to launches/<domain>/design-review/. ADVISORY lane (D-EXTREVIEW-OWNER-FACTS): with --facts <canonical owner facts sheet> attached, a FAIL whose EVERY blocking finding rests on an owner-confirmed fact (mapped by the SAME auditor model, machine-validated) is recorded FAIL(raw) → ADVISORY and is non-blocking; uncovered findings keep the FAIL blocking; raw critiques preserved verbatim"
     severity: blocker
     run: agent
     status: built
-    script_or_agent_ref: "scripts/design-review.mjs --stage pre — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with --image; exit 0 only on dual PASS; evidence <date>-pass<N> files under launches/<domain>/design-review/"
-    source: "DIRECTIVES.md D-20260718-12 (Abilash in-chat voice, 18 Jul 2026 ~18:05 IST); two-auditor law: 15 Jul 2026 standing ruling"
+    script_or_agent_ref: "scripts/design-review.mjs --stage pre [--facts <sheet>] — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with --image; exit 0 only when no blocking verdict remains (dual PASS, or FAIL(raw)→ADVISORY per D-EXTREVIEW-OWNER-FACTS via scripts/audit-reclassify.mjs); evidence <date>-pass<N> files under launches/<domain>/design-review/"
+    source: "DIRECTIVES.md D-20260718-12 (Abilash in-chat voice, 18 Jul 2026 ~18:05 IST); two-auditor law: 15 Jul 2026 standing ruling; advisory lane: DECISIONS.md D-EXTREVIEW-OWNER-FACTS (Abilash, 18 Jul 2026 18:55:33 IST)"
     applicability:
       commerce: required
       organic: required
@@ -588,12 +588,12 @@ gates:
 
   - id: design-external-ai-review-post
     name: "Design external-AI vet (post-build, element-by-element)"
-    what_it_verifies: "When a site/LP build is believed FINISHED: both external auditors vet EVERY element of a per-element checklist (seeded from the generated site checklist; the GPT auditor may extend it) against desktop AND mobile screenshots of the built pages; returned checklist + verdicts saved per pass under launches/<domain>/design-review/post-build/; caller iterates passes until dual PASS"
+    what_it_verifies: "When a site/LP build is believed FINISHED: both external auditors vet EVERY element of a per-element checklist (seeded from the generated site checklist; the GPT auditor may extend it) against desktop AND mobile screenshots of the built pages; returned checklist + verdicts saved per pass under launches/<domain>/design-review/post-build/; caller iterates passes until no blocking verdict remains. Same ADVISORY lane as the pre gate (D-EXTREVIEW-OWNER-FACTS): --facts arms the owner-facts reclassification; a FAIL resting solely on owner-confirmed facts is FAIL(raw) → ADVISORY, non-blocking; anything the sheet does not cover stays blocking"
     severity: blocker
     run: agent
     status: built
-    script_or_agent_ref: "scripts/design-review.mjs --stage post --checklist (seeded from scripts/gate-checklist-gen.mjs output) — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with screenshot --image flags"
-    source: "DIRECTIVES.md D-20260718-15 (Abilash in-chat voice, 18 Jul 2026 ~18:10 IST); companion to D-20260718-12"
+    script_or_agent_ref: "scripts/design-review.mjs --stage post --checklist (seeded from scripts/gate-checklist-gen.mjs output) [--facts <sheet>] — orchestrates scripts/audit-gpt.mjs + scripts/audit-perplexity.mjs with screenshot --image flags; advisory reclassification via scripts/audit-reclassify.mjs"
+    source: "DIRECTIVES.md D-20260718-15 (Abilash in-chat voice, 18 Jul 2026 ~18:10 IST); companion to D-20260718-12; advisory lane: DECISIONS.md D-EXTREVIEW-OWNER-FACTS (Abilash, 18 Jul 2026 18:55:33 IST)"
     applicability:
       commerce: required
       organic: required

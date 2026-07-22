@@ -36,9 +36,26 @@
  * enum is a verdict). A design may not proceed to content/build without a
  * PASSING evidence file here.
  *
- * EXIT CODES: 0 = BOTH auditors returned PASS · 2 = at least one FAIL ·
- * 1 = harness error or an auditor produced no strict verdict (an absent
- * verdict is never a pass — HARD GATE 6 / rule g).
+ * ADVISORY LANE (D-EXTREVIEW-OWNER-FACTS, Abilash 18 Jul 2026 — ratified):
+ * OWNER-CONFIRMED FACTS ARE AUTHORITY in these reviews. `--facts <sheet>`
+ * attaches the canonical owner facts sheet (relevant DECISIONS rulings +
+ * @kairali/facts; the kairalicenters context-rulings file is the template) as
+ * context to BOTH auditors, and arms a RECLASSIFICATION step after the
+ * verdicts: when an auditor's strict verdict is FAIL and EVERY one of its
+ * blocking findings maps to a fact declared in the sheet, the verdict is
+ * recorded as "FAIL(raw) → ADVISORY per D-EXTREVIEW-OWNER-FACTS" and treated
+ * as non-blocking. The mapping is made by the SAME auditor model against its
+ * own findings and validated mechanically (scripts/audit-reclassify.mjs +
+ * scripts/lib/facts-reclassify.mjs) — machine-checked, never self-asserted by
+ * us. Any finding the sheet does not cover keeps the FAIL blocking; any
+ * reclassifier failure leaves the raw FAIL blocking. Raw critiques and raw
+ * verdicts are ALWAYS preserved verbatim — reclassification is an annotation
+ * layer, never an edit; the strict enum law (audit-verdict.mjs) is untouched.
+ *
+ * EXIT CODES: 0 = no blocking verdict remains (both PASS, or a FAIL(raw)
+ * reclassified ADVISORY per D-EXTREVIEW-OWNER-FACTS) · 2 = at least one
+ * blocking FAIL · 1 = harness error or an auditor produced no strict verdict
+ * (an absent verdict is never a pass — HARD GATE 6 / rule g).
  *
  * Usage:
  *   node scripts/design-review.mjs \
@@ -47,6 +64,7 @@
  *     --purpose  "why the site exists, in one honest line" \
  *     --audience "who must be convinced, concretely" \
  *     [--stage pre|post] [--pass N] [--context file]... \
+ *     [--facts launches/<site>/design-review/context-rulings.md] \
  *     [--checklist launches/<site>/post-build-checklist.md]   (post: required)
  *     [--gpt-model gpt-5] [--perplexity-model sonar-pro]
  *
@@ -60,6 +78,7 @@ import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadImageParts, describeImages } from "./lib/image-input.mjs";
 import { istStamp, sha256 } from "./lib/verdict.mjs";
+import { extractBlockingFindings, parseReclassifierOutput } from "./lib/facts-reclassify.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -94,7 +113,7 @@ export const STAGES = Object.freeze({
 export function parseDesignArgs(argv) {
   const out = {
     site: "", stage: "pre", image: [], purpose: "", audience: "",
-    context: [], checklist: "", pass: "1", gptModel: "", perplexityModel: "",
+    context: [], checklist: "", facts: "", pass: "1", gptModel: "", perplexityModel: "",
   };
   const multi = new Set(["image", "context"]);
   const map = { "gpt-model": "gptModel", "perplexity-model": "perplexityModel" };
@@ -150,7 +169,15 @@ export function auditorArgv(auditor, args) {
   const artifactNote = args.stage === "pre"
     ? `The artifact under review is the proposed DESIGN itself, shown in the attached mockup/reference image(s): ${args.image.join(", ")}. There is no text artifact — judge the design AS SEEN in the image(s), per D-20260718-12.`
     : `The artifact under review is the BUILT site as shown in the attached page screenshot(s): ${args.image.join(", ")}. Vet it element-by-element against the checklist supplied in context, per D-20260718-15.`;
-  const contexts = args.stage === "post" ? [args.checklist, ...args.context] : args.context;
+  // D-EXTREVIEW-OWNER-FACTS: the canonical facts sheet is auto-attached as
+  // context so both auditors judge against the owner rulings, not stale web
+  // profiles. Order: checklist (post) first, then the facts sheet, then any
+  // caller context.
+  const contexts = [
+    ...(args.stage === "post" ? [args.checklist] : []),
+    ...(args.facts ? [args.facts] : []),
+    ...args.context,
+  ];
   const model = args[auditor.modelFlag] || auditor.defaultModel;
   return [
     "--purpose", args.purpose,
@@ -185,6 +212,26 @@ export function defaultRunAuditor(auditor, argv, { repoRoot = REPO_ROOT } = {}) 
 }
 
 /**
+ * Run the D-EXTREVIEW-OWNER-FACTS reclassifier (scripts/audit-reclassify.mjs)
+ * as a child process — the SAME auditor model maps its own blocking findings
+ * against the facts sheet. Injectable in tests (never call live APIs in
+ * tests); keys stay with the child, this script never sees them.
+ */
+export function defaultRunReclassifier({ auditor, model, factsPath, findings }, { repoRoot = REPO_ROOT } = {}) {
+  const r = spawnSync(
+    process.execPath,
+    [join(repoRoot, "scripts", "audit-reclassify.mjs"), "--auditor", auditor, "--model", model, "--facts", factsPath],
+    { cwd: repoRoot, encoding: "utf8", input: JSON.stringify({ findings }), maxBuffer: 64 * 1024 * 1024 },
+  );
+  return {
+    status: r.status === null ? 1 : r.status,
+    stdout: r.stdout ?? "",
+    stderr: r.stderr ?? "",
+    error: r.error ? String(r.error.message ?? r.error) : null,
+  };
+}
+
+/**
  * Derive the strict verdict from one auditor run. Only the schema-strict
  * PASS|FAIL enum counts (audit-verdict.mjs law), and it must AGREE with the
  * exit code the auditor's own contract promises (0=PASS, 2=FAIL) — a run that
@@ -210,26 +257,80 @@ export function deriveVerdict(run) {
   return { verdict: v, raw, reason: null };
 }
 
-/** @returns {0|1|2} 0 only when BOTH strict verdicts are PASS. */
+/**
+ * Apply the D-EXTREVIEW-OWNER-FACTS reclassification to the auditor results
+ * IN PLACE: every result gains `effective` (the verdict the exit code obeys)
+ * and `reclass` (the annotation record, or null). The effective verdict can
+ * move ONLY FAIL → ADVISORY, only when a facts sheet is attached, and only
+ * when the validated mapping covers every blocking finding; every error path
+ * leaves the raw FAIL blocking with the reason recorded.
+ */
+export function reclassifyResults(results, args, { runReclassifier = defaultRunReclassifier, repoRoot = REPO_ROOT } = {}) {
+  for (const r of results) {
+    r.effective = r.verdict;
+    r.reclass = null;
+    if (!args.facts || r.verdict !== "FAIL") continue;
+    const auditor = AUDITORS.find((a) => a.name === r.name);
+    const model = args[auditor.modelFlag] || auditor.defaultModel;
+    const findings = extractBlockingFindings(r.name, r.raw);
+    if (findings.length === 0) {
+      r.reclass = {
+        model, findings, mappings: null, allCovered: false,
+        error: "no machine-extractable blocking findings in the raw critique — a FAIL that cannot be itemised cannot be shown to rest solely on owner-confirmed facts; it stays blocking",
+      };
+      continue;
+    }
+    console.error(`── reclassification (D-EXTREVIEW-OWNER-FACTS): ${r.name} raw FAIL — mapping ${findings.length} blocking finding(s) against ${args.facts} via the same model (${model})`);
+    const run = runReclassifier({ auditor: r.name, model, factsPath: args.facts, findings }, { repoRoot });
+    const parsed = parseReclassifierOutput(findings, run, readFileSync(isAbsolute(args.facts) ? args.facts : resolve(repoRoot, args.facts), "utf8"));
+    r.reclass = { model, findings, ...parsed };
+    if (!parsed.error && parsed.allCovered) r.effective = "ADVISORY";
+    console.error(`── ${r.name} effective: ${r.effective}${r.reclass.error ? ` (reclassification not applied: ${r.reclass.error})` : ""}`);
+  }
+  return results;
+}
+
+/**
+ * @returns {0|1|2} 0 only when no blocking verdict remains — every effective
+ * verdict is PASS or ADVISORY (the D-EXTREVIEW-OWNER-FACTS non-blocking lane).
+ */
 export function decideExit(results) {
-  if (results.some((r) => r.verdict === null)) return 1;
-  if (results.some((r) => r.verdict === "FAIL")) return 2;
+  const eff = (r) => r.effective ?? r.verdict;
+  if (results.some((r) => eff(r) == null)) return 1;
+  if (results.some((r) => eff(r) === "FAIL")) return 2;
   return 0;
 }
 
 /* ----------------------------------------------------------- evidence file */
 
+/** Markdown-table cell: one line, pipes escaped, truncated — display only, the raw stays verbatim below. */
+function mdCell(s, max = 240) {
+  const one = String(s ?? "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
+  return one.length > max ? `${one.slice(0, max)}…` : one;
+}
+
+/** The per-auditor VERDICT line — the D-EXTREVIEW-OWNER-FACTS annotation form when reclassified. */
+function verdictLine(r) {
+  if (r.verdict === null) return `NONE (${r.reason})`;
+  if ((r.effective ?? r.verdict) === "ADVISORY") return "FAIL(raw) → ADVISORY per D-EXTREVIEW-OWNER-FACTS";
+  return r.verdict;
+}
+
 /**
  * Render the evidence markdown for this pass — metadata, image hashes, the
- * submitted checklist (post), one strict verdict line per auditor, and both
- * RAW critiques. Written even on FAIL/error: the record of the pass IS the
- * point; only success may proceed, but every pass is history.
+ * submitted checklist (post), one strict verdict line per auditor, the
+ * D-EXTREVIEW-OWNER-FACTS reclassification table when a facts sheet was
+ * attached, and both RAW critiques. Written even on FAIL/error: the record of
+ * the pass IS the point; only success may proceed, but every pass is history.
  */
-export function renderEvidence({ args, stamp, images, checklistText, results, exitCode }) {
+export function renderEvidence({ args, stamp, images, checklistText, factsText = "", results, exitCode }) {
   const stage = STAGES[args.stage];
+  const eff = (r) => r.effective ?? r.verdict;
+  const advisories = results.filter((r) => eff(r) === "ADVISORY");
   const overall =
-    exitCode === 0 ? `OVERALL: PASS — both external auditors returned PASS; the design proceeds to ${stage.proceedsTo}.`
-    : exitCode === 2 ? `OVERALL: FAIL — ${results.filter((r) => r.verdict === "FAIL").map((r) => r.name).join(" + ")} returned FAIL; the design may NOT proceed to ${stage.proceedsTo}. Judge the critique, revise, re-run as pass ${Number(args.pass) + 1}.`
+    exitCode === 0 && advisories.length === 0 ? `OVERALL: PASS — both external auditors returned PASS; the design proceeds to ${stage.proceedsTo}.`
+    : exitCode === 0 ? `OVERALL: PASS (advisory) — no blocking verdict remains: ${results.map((r) => `${r.name} ${eff(r) === "ADVISORY" ? "FAIL(raw)→ADVISORY" : "PASS"}`).join(" + ")}. Every raw-FAIL blocking finding maps to an owner-confirmed fact (D-EXTREVIEW-OWNER-FACTS: reviewer doubt on owner-confirmed facts is ADVISORY, never blocking; the owner's signature remains the deciding judgment). The design proceeds to ${stage.proceedsTo}; the advisory findings are recorded below for the owner to weigh.`
+    : exitCode === 2 ? `OVERALL: FAIL — ${results.filter((r) => eff(r) === "FAIL").map((r) => r.name).join(" + ")} returned FAIL; the design may NOT proceed to ${stage.proceedsTo}. Judge the critique, revise, re-run as pass ${Number(args.pass) + 1}.`
     : `OVERALL: ERROR — ${results.filter((r) => r.verdict === null).map((r) => r.name).join(" + ")} produced no strict verdict; an absent verdict is never a pass (HARD GATE 6 / rule g). Fix the cause and re-run this pass.`;
 
   const lines = [
@@ -244,16 +345,57 @@ export function renderEvidence({ args, stamp, images, checklistText, results, ex
     `- images (the auditors SAW these — base64 data-URI content parts, not descriptions):`,
     ...images.map((im) => `  - ${im.path} (${im.mime}, ${im.bytes} bytes, sha256 ${im.sha256})`),
     ...(args.stage === "post" ? [`- checklist: ${args.checklist} (sha256 ${sha256(checklistText)})`] : []),
+    ...(args.facts ? [`- facts sheet (owner-confirmed authority, D-EXTREVIEW-OWNER-FACTS — attached to both auditors as context): ${args.facts} (sha256 ${sha256(factsText)})`] : []),
     ...(args.context.length ? [`- context: ${args.context.join(", ")}`] : []),
     `- loop: critique → judge → revise is the CALLER's job (2–3+ passes, 15 Jul ruling); this file records pass ${args.pass} only.`,
     ``,
-    `## VERDICTS (strict PASS|FAIL enum — scripts/lib/audit-verdict.mjs law; nothing else is a verdict)`,
+    `## VERDICTS (strict PASS|FAIL enum — scripts/lib/audit-verdict.mjs law; nothing else is a verdict${args.facts ? "; ADVISORY is an annotation on a raw FAIL per D-EXTREVIEW-OWNER-FACTS, never a third enum value" : ""})`,
     ``,
-    ...results.map((r) => `VERDICT ${r.name}: ${r.verdict ?? `NONE (${r.reason})`}`),
+    ...results.map((r) => `VERDICT ${r.name}: ${verdictLine(r)}`),
     ``,
     overall,
     ``,
   ];
+
+  const reclassed = results.filter((r) => r.reclass);
+  if (reclassed.length) {
+    lines.push(
+      `## RECLASSIFICATION — D-EXTREVIEW-OWNER-FACTS (owner-confirmed facts are authority)`,
+      ``,
+      `An annotation layer, never an edit: the raw critiques below are preserved verbatim. For each raw-FAIL auditor, the SAME auditor model mapped its own blocking findings against the owner facts sheet (${args.facts}); the mapping is machine-validated (every finding mapped exactly once; covering facts quoted verbatim from the sheet). A FAIL becomes ADVISORY (non-blocking) ONLY when EVERY blocking finding is covered; anything the sheet does not cover stays blocking, and any reclassifier failure leaves the raw FAIL blocking.`,
+      ``,
+    );
+    for (const r of reclassed) {
+      lines.push(`### ${r.name} — raw FAIL, ${r.reclass.findings.length} blocking finding(s), mapped by the same model (${r.reclass.model})`, ``);
+      if (r.reclass.error) {
+        lines.push(
+          `RECLASSIFICATION NOT APPLIED — ${r.reclass.error}`,
+          `The raw FAIL stays BLOCKING (a broken or refused mapping can only fail toward blocking, never toward advisory — rule g).`,
+          ``,
+        );
+        continue;
+      }
+      const byId = new Map(r.reclass.mappings.map((m) => [m.finding_id, m]));
+      lines.push(
+        `| finding | blocking finding (truncated — raw critique below is verbatim) | covered by owner fact | effective |`,
+        `|---|---|---|---|`,
+        ...r.reclass.findings.map((f) => {
+          const m = byId.get(f.id);
+          return `| ${mdCell(f.id)} | ${mdCell(f.text)} | ${m.covered ? mdCell(m.fact) : "—"} | ${m.covered ? "ADVISORY" : "BLOCKING"} |`;
+        }),
+        ``,
+        `EFFECTIVE ${r.name}: ${r.effective === "ADVISORY"
+          ? `ADVISORY — all ${r.reclass.findings.length} blocking finding(s) rest on owner-confirmed facts; non-blocking per D-EXTREVIEW-OWNER-FACTS (the owner's signature remains the deciding judgment).`
+          : `FAIL — ${r.reclass.mappings.filter((m) => !m.covered).length} finding(s) not covered by the sheet keep the FAIL blocking.`}`,
+        ``,
+        `Raw mapping (verbatim):`,
+        "```json",
+        JSON.stringify({ mappings: r.reclass.mappings }, null, 2),
+        "```",
+        ``,
+      );
+    }
+  }
 
   if (args.stage === "post") {
     lines.push(
@@ -293,7 +435,7 @@ export function renderEvidence({ args, stamp, images, checklistText, results, ex
  * @param {string[]} argv raw CLI args
  * @param {{runAuditor?: typeof defaultRunAuditor, repoRoot?: string, stamp?: string}} deps
  */
-export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot = REPO_ROOT, stamp = istStamp() } = {}) {
+export function runDesignReview(argv, { runAuditor = defaultRunAuditor, runReclassifier = defaultRunReclassifier, repoRoot = REPO_ROOT, stamp = istStamp() } = {}) {
   const parsed = parseDesignArgs(argv);
   const abs = (p) => (isAbsolute(p) ? p : resolve(repoRoot, p));
   const args = {
@@ -301,6 +443,7 @@ export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot
     image: parsed.image.map(abs),
     context: parsed.context.map(abs),
     checklist: parsed.checklist ? abs(parsed.checklist) : "",
+    facts: parsed.facts ? abs(parsed.facts) : "",
   };
 
   // Fail-early validation, all BEFORE any API call.
@@ -311,6 +454,12 @@ export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot
     if (!existsSync(args.checklist)) throw new Error(`--checklist ${parsed.checklist}: file does not exist — seed it from the generated site checklist (scripts/gate-checklist-gen.mjs / gates/registry.yaml)`);
     checklistText = readFileSync(args.checklist, "utf8");
     if (!checklistText.trim()) throw new Error(`--checklist ${parsed.checklist} is empty — an element-by-element vet needs elements`);
+  }
+  let factsText = "";
+  if (args.facts) {
+    if (!existsSync(args.facts)) throw new Error(`--facts ${parsed.facts}: file does not exist — the canonical owner facts sheet must be a real, committed file (D-EXTREVIEW-OWNER-FACTS; the kairalicenters context-rulings file is the template)`);
+    factsText = readFileSync(args.facts, "utf8");
+    if (!factsText.trim()) throw new Error(`--facts ${parsed.facts} is empty — an authority sheet with no facts covers nothing`);
   }
   for (const c of args.context) {
     if (!existsSync(c)) throw new Error(`--context ${c}: file does not exist`);
@@ -325,8 +474,13 @@ export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot
     );
   }
 
-  // Record checklist path repo-relative in evidence (portable), keep abs for children.
-  const evidenceArgs = { ...args, checklist: args.checklist ? relative(repoRoot, args.checklist) : "", context: args.context.map((c) => relative(repoRoot, c)) };
+  // Record checklist/facts paths repo-relative in evidence (portable), keep abs for children.
+  const evidenceArgs = {
+    ...args,
+    checklist: args.checklist ? relative(repoRoot, args.checklist) : "",
+    facts: args.facts ? relative(repoRoot, args.facts) : "",
+    context: args.context.map((c) => relative(repoRoot, c)),
+  };
 
   const results = AUDITORS.map((auditor) => {
     const av = auditorArgv(auditor, args);
@@ -337,8 +491,12 @@ export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot
     return { name: auditor.name, role: auditor.role, argv: av, run, verdict, raw, reason };
   });
 
+  // D-EXTREVIEW-OWNER-FACTS reclassification — annotation only, after the raw
+  // verdicts are locked in; can move FAIL → ADVISORY, nothing else.
+  reclassifyResults(results, args, { runReclassifier, repoRoot });
+
   const exitCode = decideExit(results);
-  const markdown = renderEvidence({ args: evidenceArgs, stamp, images, checklistText, results, exitCode });
+  const markdown = renderEvidence({ args: evidenceArgs, stamp, images, checklistText, factsText, results, exitCode });
   mkdirSync(dirname(evidencePath), { recursive: true });
   writeFileSync(evidencePath, markdown + "\n");
 
@@ -347,11 +505,13 @@ export function runDesignReview(argv, { runAuditor = defaultRunAuditor, repoRoot
 
 function main() {
   const { results, exitCode, evidencePath } = runDesignReview(process.argv.slice(2));
+  const advisories = results.filter((r) => (r.effective ?? r.verdict) === "ADVISORY");
   console.log(`\n=== DESIGN EXTERNAL-AI REVIEW ===`);
-  for (const r of results) console.log(`VERDICT ${r.name}: ${r.verdict ?? `NONE (${r.reason})`}`);
+  for (const r of results) console.log(`VERDICT ${r.name}: ${verdictLine(r)}`);
   console.log(`evidence: ${relative(REPO_ROOT, evidencePath)}`);
   console.log(
-    exitCode === 0 ? `RESULT: PASS — both auditors positive; the design may proceed.`
+    exitCode === 0 && advisories.length === 0 ? `RESULT: PASS — both auditors positive; the design may proceed.`
+    : exitCode === 0 ? `RESULT: PASS (advisory) — no blocking findings remain; the raw FAIL(s) rest solely on owner-confirmed facts (D-EXTREVIEW-OWNER-FACTS). The design may proceed; weigh the advisory findings with the owner.`
     : exitCode === 2 ? `RESULT: FAIL — the design may NOT proceed; judge the critique, revise, and re-run with the next --pass.`
     : `RESULT: ERROR — at least one auditor produced no strict verdict; an absent verdict is never a pass.`,
   );
