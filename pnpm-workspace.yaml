@@ -19,3 +19,9 @@ overrides:
   # -33328/-35590/-35591. Direct/transitive image tooling. Remove at sharp's
   # own next bump.
   sharp: ">=0.35.0"
+  # 22 Jul 2026: pin the fleet's proven React — the security-override re-resolve
+  # floated react 19.2.4 -> 19.2.7 and next@15.5.20's vendored runtime skews
+  # against it (patchFetch server/client prerender failure, arogyashala +
+  # kairalihospitality). Remove when next bumps deliberately WITH react.
+  react: 19.2.4
+  react-dom: 19.2.4
