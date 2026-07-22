@@ -268,6 +268,19 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: node scripts/decisions-index.mjs --check
 
+      # DIRECTIVE-ID UNIQUENESS (records-hygiene consult, 21 Jul 2026 —
+      # docs/research/records-hygiene-consult-2026-07-21.md, all-three-agree).
+      # Every live DIRECTIVES.md row keys a unique id: ENTRY_RE consumers
+      # (capture script, boot-contract, status-build) parse by id, and a prose
+      # ID-COLLISION NOTE is an HTML comment no parser sees. Three collisions
+      # reached the register before this gate existed; the allocation bug is
+      # fixed (MAX+1, PR #237) but nothing REJECTED a duplicate until now.
+      # Grandfathered pairs are a pinned row-count ceiling in the script,
+      # never failed retroactively (report-store-lint posture: history is
+      # counted, not failed).
+      - name: Directive-id uniqueness (duplicate live ids are dropped directives — merge-blocking)
+        run: node scripts/directive-capture.mjs check
+
       # REPORT-STORE FRONTMATTER + DISPOSITIONS LAW (OS v2 M2, plan §3.3 R3).
       # Every report created from the M2 cutover carries complete frontmatter;
       # finding-type reports carry the IMPLEMENT|REJECT|MONITOR dispositions

@@ -27,8 +27,10 @@
  *   node scripts/directive-capture.mjs list            # unacknowledged only
  *   node scripts/directive-capture.mjs list --all
  *   node scripts/directive-capture.mjs ack <id> [--note "<where it landed>"]
+ *   node scripts/directive-capture.mjs check           # id-uniqueness lint (CI)
  *
- * Exit codes: 0 = ok · 1 = harness/usage error · 2 = ack of unknown/already-acked id.
+ * Exit codes: 0 = ok · 1 = harness/usage error · 2 = ack of unknown/already-acked
+ * id, or `check` found a non-grandfathered duplicate id.
  */
 
 import { execFileSync } from "node:child_process";
@@ -129,6 +131,44 @@ export function addDirective(text, { directive, source = "chat (Abilash)", now =
   return { text: body + entry + "\n", id };
 }
 
+/**
+ * The register's uniqueness law (records-hygiene consult, 2026-07-21,
+ * docs/research/records-hygiene-consult-2026-07-21.md, all-three-agree):
+ * every LIVE row carries a unique primary id, because ENTRY_RE-parsing
+ * consumers (this script, boot-contract, status-build) key on it — a prose
+ * ID-COLLISION NOTE is an HTML comment no parser can see. When a collision is
+ * found before both claims merge, the UNMERGED row renumbers and carries an
+ * alias naming the escaped id in its row text (CVE-REJECT-shaped: the old id
+ * still greps to the row); a MERGED row is never renumbered.
+ *
+ * Grandfathered: collisions that had already merged on BOTH sides before this
+ * law existed. Retro-renumbering merged history would orphan its cross-refs —
+ * the same reason the law renumbers only unmerged rows going forward. The
+ * exemption is a ROW-COUNT CEILING per id, not a blanket pass: a grandfathered
+ * pair gaining a THIRD row is a new collision and fails like any other.
+ */
+export const GRANDFATHERED_DUPLICATE_IDS = new Map([
+  // D-20260719-33 ×2 — the CARD-3 absorption (owner APPROVE, 20 Jul) landed
+  // PR #175's rows verbatim next to main's; both sides were merged history by
+  // the time the collision was seen. ID-COLLISION NOTE at DIRECTIVES.md:105.
+  ["D-20260719-33", 2],
+]);
+
+/**
+ * @param {string} text full DIRECTIVES.md text
+ * @returns {{id:string, rows:number[]}[]} ids held by more rows than allowed
+ */
+export function findDuplicateIds(text) {
+  const byId = new Map();
+  for (const d of parseDirectives(text)) {
+    if (!byId.has(d.id)) byId.set(d.id, []);
+    byId.get(d.id).push(d.line);
+  }
+  return [...byId.entries()]
+    .filter(([id, rows]) => rows.length > (GRANDFATHERED_DUPLICATE_IDS.get(id) ?? 1))
+    .map(([id, rows]) => ({ id, rows }));
+}
+
 /** Flip one entry's checkbox — the only permitted mutation. */
 export function ackDirective(text, id, { note = "", now = istNow() } = {}) {
   const lines = text.split(/\r?\n/);
@@ -168,11 +208,24 @@ function main(argv) {
     if (collidesOnOtherRefs(id)) {
       console.warn(
         `\n⚠ ID COLLISION: ${id} already exists on an origin branch — almost certainly an open PR that captured it first.\n` +
-        `  Your capture stands and is correct. Records hygiene per the DIRECTIVES.md precedent: do NOT renumber either row.\n` +
-        `  Append an ID-COLLISION NOTE comment recording both captures and which artifacts cross-ref to which row.`
+        `  Your capture stands, but YOUR row is the unmerged one — renumber IT to clear every id visible on origin refs\n` +
+        `  BEFORE committing, and note the vacated id as an alias in the row text if anything already cites it.\n` +
+        `  A MERGED row is never renumbered. Extend the ID-COLLISION NOTE with the resolution.\n` +
+        `  (Ruling: records-hygiene consult 2026-07-21, docs/research/records-hygiene-consult-2026-07-21.md.)`
       );
     }
     return 0;
+  }
+  if (cmd === "check") {
+    const dups = findDuplicateIds(current);
+    if (dups.length === 0) {
+      console.log(`directive-capture check: OK — ${parseDirectives(current).length} row(s), every live id unique (${GRANDFATHERED_DUPLICATE_IDS.size} grandfathered collision(s) documented in-file).`);
+      return 0;
+    }
+    for (const { id, rows } of dups) {
+      console.error(`VIOLATION  ${id} is held by ${rows.length} rows (lines ${rows.join(", ")}) — a duplicate live id is a dropped directive wearing a valid-looking number. Renumber the UNMERGED claim with an alias note; never renumber a merged row (records-hygiene consult 2026-07-21).`);
+    }
+    return 2;
   }
   if (cmd === "list") {
     const all = argv.includes("--all");
@@ -192,7 +245,7 @@ function main(argv) {
     console.log(`acked ${id}.`);
     return 0;
   }
-  console.error("usage: directive-capture.mjs <add|list|ack> …  (see file header)");
+  console.error("usage: directive-capture.mjs <add|list|ack|check> …  (see file header)");
   return 1;
 }
 

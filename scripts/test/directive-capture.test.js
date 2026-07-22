@@ -13,7 +13,7 @@
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { addDirective, nextId, parseDirectives, ackDirective, collidesOnOtherRefs } from "../directive-capture.mjs";
+import { addDirective, nextId, parseDirectives, ackDirective, collidesOnOtherRefs, findDuplicateIds, GRANDFATHERED_DUPLICATE_IDS } from "../directive-capture.mjs";
 
 const NOW = "2026-07-21 16:15:19 IST";
 const row = (id, when = NOW, acked = false) =>
@@ -122,4 +122,47 @@ test("collidesOnOtherRefs passes the id as an argv element, never a shell string
   assert.ok(Array.isArray(seen), "git must be invoked with an argument array");
   assert.ok(seen.includes("D-20260721-09 ·"), "the search term travels as its own argv element");
   assert.ok(!seen.some((a) => /[;&|$`]/.test(a)), "no argv element may carry shell metacharacters");
+});
+
+// --- findDuplicateIds: the uniqueness law (records-hygiene consult, 21 Jul) --
+
+test("findDuplicateIds flags an id held by two live rows, with both line numbers", () => {
+  // The 21-Jul shape: GO-DOCTOR-FIX and AMBUJ ASSET ACCESS both carrying -09.
+  const text = [row("D-20260721-09"), row("D-20260721-10"), row("D-20260721-09", NOW, true)].join("\n") + "\n";
+  const dups = findDuplicateIds(text);
+  assert.equal(dups.length, 1);
+  assert.equal(dups[0].id, "D-20260721-09");
+  assert.deepEqual(dups[0].rows, [1, 3]);
+});
+
+test("findDuplicateIds passes a clean register", () => {
+  const text = [row("D-20260721-09"), row("D-20260721-10")].join("\n") + "\n";
+  assert.deepEqual(findDuplicateIds(text), []);
+});
+
+test("grandfathered ids stay exempt — the law binds FORWARD, merged history is never failed", () => {
+  // D-20260719-33 ×2 merged on both sides before the law existed (CARD-3
+  // absorption). Retro-failing it would demand a renumber of merged rows,
+  // which is the exact mutation the law forbids.
+  const text = [row("D-20260719-33"), row("D-20260719-33", NOW, true)].join("\n") + "\n";
+  assert.deepEqual(findDuplicateIds(text), []);
+  assert.ok(GRANDFATHERED_DUPLICATE_IDS.has("D-20260719-33"));
+});
+
+test("a grandfathered id colliding a THIRD time still fails — the exemption is a ceiling, not a blanket", () => {
+  const text = [row("D-20260719-33"), row("D-20260719-33"), row("D-20260719-33")].join("\n") + "\n";
+  const dups = findDuplicateIds(text);
+  assert.equal(dups.length, 1);
+  assert.equal(dups[0].id, "D-20260719-33");
+  assert.equal(dups[0].rows.length, 3);
+});
+
+test("alias text inside a row body is invisible to the parser — the vacated id never re-parses as a row", () => {
+  // The renumber-with-alias mechanism depends on this: "(formerly D-20260721-09)"
+  // in a row's text must not make the parser see -09 as a second live claim.
+  const aliasRow = `- [x] D-20260721-12 · ${NOW} · chat (Abilash) — GO-DOCTOR-FIX (formerly D-20260721-09, see ID-COLLISION NOTE) — the doctor wave`;
+  const text = [row("D-20260721-09"), aliasRow].join("\n") + "\n";
+  assert.deepEqual(findDuplicateIds(text), []);
+  const ids = parseDirectives(text).map((d) => d.id);
+  assert.deepEqual(ids, ["D-20260721-09", "D-20260721-12"]);
 });
