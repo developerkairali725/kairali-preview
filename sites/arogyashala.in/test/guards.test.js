@@ -14,6 +14,7 @@ const page = readFileSync(join(site, "app/page.tsx"), "utf8")
   .replace(/^\s*\/\/[^\n]*$/gm, "") // full-line comments only — never URLs' "//"
   .replace(/\/\*[\s\S]*?\*\//g, "");
 const config = readFileSync(join(site, "next.config.ts"), "utf8");
+const layout = readFileSync(join(site, "app/layout.tsx"), "utf8");
 
 test("no outlet counts, locations, or commercial figures (roster blocked, commercials gated)", () => {
   // "tier-2/tier-3 cities" is legitimate; counted NOUNS are not.
@@ -55,4 +56,20 @@ test("locked contact facts only: info@kairali.com + the interim 38797 WhatsApp",
   assert.match(page, /info@kairali\.com/);
   assert.doesNotMatch(page, /38777/, "…38777 is the WRONG number, fix on sight");
   assert.match(page, /919289838797/);
+});
+
+test("third-party chat waits for a consent choice", () => {
+  assert.match(layout, /<ChatbaseLoader\s+consentGated\s*\/>/);
+});
+
+test("baseline browser security headers cover every route", () => {
+  assert.match(config, /source:\s*["']\/:path\*["']/);
+  for (const header of [
+    "X-Content-Type-Options",
+    "X-Frame-Options",
+    "Referrer-Policy",
+    "Permissions-Policy",
+  ]) {
+    assert.match(config, new RegExp(header));
+  }
 });

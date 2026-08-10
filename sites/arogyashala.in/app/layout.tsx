@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <ChatbaseLoader />
+        <ChatbaseLoader consentGated />
         <ConsentBanner privacyHref="/privacy" />
       </body>
     </html>

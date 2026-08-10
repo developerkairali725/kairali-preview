@@ -24,6 +24,22 @@ const LEGACY_PATHS = [
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/legal", "@kairali/social"],
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), geolocation=(), microphone=()",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return LEGACY_PATHS.map((source) => ({
       source,
