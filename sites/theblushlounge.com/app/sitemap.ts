@@ -12,5 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/academy", changeFrequency: "monthly", priority: 0.8 },
     { path: "/about", changeFrequency: "monthly", priority: 0.7 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/journal", changeFrequency: "monthly", priority: 0.7 },
+    {
+      path: "/journal/makeup-colour-correction-guide",
+      lastModified: "2026-08-11",
+      changeFrequency: "yearly",
+      priority: 0.7,
+    },
   ]) as MetadataRoute.Sitemap;
 }

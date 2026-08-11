@@ -32,6 +32,7 @@ const NAV = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/services", label: "Services" },
   { href: "/academy", label: "Academy" },
+  { href: "/journal", label: "Journal" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -101,6 +102,9 @@ export function SiteFooter() {
             </li>
             <li>
               <a href="/academy">Blush School of Beauty</a>
+            </li>
+            <li>
+              <a href="/journal">Makeup journal</a>
             </li>
             <li>
               <a href="/about">About Sneha</a>

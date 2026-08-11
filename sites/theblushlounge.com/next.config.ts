@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // WordPress published its article permalinks with trailing slashes. The
+  // default framework normalizer would create an avoidable first hop before
+  // the content redirect. middleware.ts owns slash normalization so those
+  // legacy URLs reach their final semantic targets in one permanent hop.
+  skipTrailingSlashRedirect: true,
   // consent + analytics ship TSX source (thin components over plain-JS cores).
   // NO @kairali/chat here — theblushlounge.com is bubble-EXEMPT by owner
   // ruling D-BL-BUBBLE-EXEMPT (18 Jul 2026): Sneha's own WhatsApp
@@ -38,8 +43,6 @@ const nextConfig: NextConfig = {
       { source: "/fashion-makeup.php", destination: "/services#party", permanent: true },
       { source: "/grooming-session.php", destination: "/services#grooming-men", permanent: true },
       { source: "/services.php", destination: "/services", permanent: true },
-      { source: "/blog", destination: "/", permanent: true },
-      { source: "/blog/:path*", destination: "/", permanent: true },
     ];
   },
 };
