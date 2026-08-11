@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/theblushlounge.com",
-  "file_count": 48,
-  "tree_sha256": "8ba44baec124191ae38048b417ecf6aaae98eac8bd585cf1999786615739ce9a",
+  "file_count": 52,
+  "tree_sha256": "93add032eada898b89e4726eb266b51cb9b07179c0517268b2d515809d203a79",
   "files": [
     {
       "path": "sites/theblushlounge.com/.gitignore",
@@ -12,8 +12,12 @@
       "sha256": "5b87d627066925faf89a8c023ae7bc13157e227e4508b161d6840cf6160059e0"
     },
     {
+      "path": "sites/theblushlounge.com/app/_components/breadcrumbs.tsx",
+      "sha256": "d2aeb884e0343e664fa2486501beead7972db537e5370b6af21097bcca83277d"
+    },
+    {
       "path": "sites/theblushlounge.com/app/_components/chrome.tsx",
-      "sha256": "f998ae0881d143a14f924e2fe7da8a2ee75d89206d769992e72251d0741deb8d"
+      "sha256": "d26ffe0210405759b5e3e0619799e5ca5c3e53e1c543aa98e90cc9cc9ba57f82"
     },
     {
       "path": "sites/theblushlounge.com/app/about/page.tsx",
@@ -53,7 +57,7 @@
     },
     {
       "path": "sites/theblushlounge.com/app/globals.css",
-      "sha256": "3b529a31717b4d8a23c4a342bb6ff26caaa85ae748ee15929b3df3eb3a7affc7"
+      "sha256": "0470b99806537528beba10225752f7cae5741b4cf74cb5b6bb915b30ea705746"
     },
     {
       "path": "sites/theblushlounge.com/app/icon.png",
@@ -62,6 +66,14 @@
     {
       "path": "sites/theblushlounge.com/app/icon.svg",
       "sha256": "80e586f8aaa86e7779bb7377bcdd8b449e293c08804bd34e93a215ea5afdce84"
+    },
+    {
+      "path": "sites/theblushlounge.com/app/journal/makeup-colour-correction-guide/page.tsx",
+      "sha256": "4541a7b6e6bb4597d98a8330645f2f3c5105c34e35ced108cf082b91bee085f6"
+    },
+    {
+      "path": "sites/theblushlounge.com/app/journal/page.tsx",
+      "sha256": "8d94ae050ab8e0795f2208d83f103157e92b82c5564c77d2471147dfe7aad5be"
     },
     {
       "path": "sites/theblushlounge.com/app/layout.tsx",
@@ -93,11 +105,15 @@
     },
     {
       "path": "sites/theblushlounge.com/app/sitemap.ts",
-      "sha256": "6d9a5710aaedde600df0b9db0e35153c75aa11d5b91a748b410568e6b4114900"
+      "sha256": "62fd3f50b87fa27188c2f46e374128516732fcb8067c7a4cf06e827c0353cd6a"
     },
     {
       "path": "sites/theblushlounge.com/lighthouse-urls.json",
-      "sha256": "5bd9e9b2d4f60ef55abbc7454607416b3fc6155b6b6947bcdd8a90091dceb7dd"
+      "sha256": "06fa64cb9bc81688ed4adb107d01170cf18cf175ae2577768157441bdf6a5c1e"
+    },
+    {
+      "path": "sites/theblushlounge.com/middleware.ts",
+      "sha256": "3db4c80e419b6ba14824da31427c64c8933f94667f1a180ae634949e1e0609d7"
     },
     {
       "path": "sites/theblushlounge.com/next-env.d.ts",
@@ -105,7 +121,7 @@
     },
     {
       "path": "sites/theblushlounge.com/next.config.ts",
-      "sha256": "49e13410ff3ef798a289a2d918f325852ff780ff208ca860ea23b605ca0375fa"
+      "sha256": "b0e82941ed7e47f01e7cbd08fe1040a8ebf2ca40ca1e1b7cc0e66d8f47370be8"
     },
     {
       "path": "sites/theblushlounge.com/package.json",
