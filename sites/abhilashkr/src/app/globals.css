@@ -33,6 +33,8 @@
   --ink-muted: #9BA69B;
   --zari: #C2A14D;
   --leaf: #7FA98C;
+  --night-overlay: #0E1712;
+  --night-ink: #EDEADF;
 
   /* Kasavu Light Specific Variables to inherit */
   --zari-dark: #8A6E2F;
@@ -67,6 +69,8 @@
   --ink-muted: #4C5A50;
   --zari: #7A5F28;
   --leaf: #2E5641;
+  --night-overlay: #0E1712;
+  --night-ink: #EDEADF;
 }
 
 @theme inline {

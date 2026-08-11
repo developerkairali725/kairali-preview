@@ -267,3 +267,17 @@ pass. A gate that did not run is a gate that did not pass — "no CI ran" blocks
 ## 2026-07-18 19:43:57 IST — SECOND stale Villa Raag asset blocker in one night; rule: check the standing stores before declaring an asset blocker
 Twice tonight a Villa Raag lane was declared blocked on an asset that was already in hand: (1) the brand manual — flagged "pending delivery" while it sat in-repo complete (the #133 lane found it and ran MODE A); (2) the photography — flagged "waiting on the 'Villa Raag- Images' Drive share" while `~/Claude/Kairali-Digital/image-library/raag` held 158 files (50 of them `raag-drive-*.jpg` already MINED from that very share) plus `raag-shoot-pro` with the 54-file professional shoot, ~1GB total, verified on disk 19:5x IST. The owner caught the second one himself.
 **Rule (lint-class):** before ANY lane declares an ASSET blocker (images, manuals, tokens, extracts), it MUST first check the standing stores — `~/Claude/Kairali-Digital/image-library/`, `brand-manuals/`, `archive-extracts/` — and the Drive MCP, and say so. **A blocker claim without a checked-stores note is a lint-class defect**, same category as a date-only timestamp. Trackers drift pessimistic (see the 17 Jul reconcile-before-chasing entry); asset blockers drift the same way: the flag is written when the asset is missing from the *lane's view* and nobody is tasked with noticing it arrived. The stores are the mailbox of assets — read them before writing "waiting on".
+
+## 2026-08-11 06:32:00 IST — On abhilashkr, `draft: true` was data, not an embargo
+
+Four essays carried `draft: true`, yet a publication surface can still leak a
+draft whenever any one of its consumers ignores the flag. The abhilashkr pilot
+had to prove the negative at every surface: content query, writing index,
+command search, RSS, sitemap, static params, metadata and the public route. A
+single filtered list was not enough. The cheap release rule is now: every draft
+flag gets named 404 probes plus absence checks against navigation, search, feed
+and sitemap; the proof belongs in the pagewise checklist. Also, a closed
+`dynamicParams=false` list returned the right 404 but made Next.js log an
+internal `NoFallbackError`; allowing the page to execute its explicit
+`notFound()` kept the embargo and removed log noise. Correct status plus noisy
+runtime is not a clean pass.

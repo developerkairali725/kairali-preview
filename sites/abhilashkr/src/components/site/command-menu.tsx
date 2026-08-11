@@ -70,7 +70,7 @@ export function CommandMenu() {
         className="hidden md:flex items-center gap-2 px-3 py-1.5 text-[10px] font-mono tracking-widest uppercase border border-border bg-card text-ink-muted hover:text-ink hover:border-primary transition-colors cursor-pointer"
       >
         <span>Search ledger</span>
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 bg-background px-1.5 font-mono text-[9px] text-[#9ba69b] border border-border">
+        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 border border-border bg-background px-1.5 font-mono text-[9px] text-ink-muted">
           <span className="text-[10px]">⌘</span>K
         </kbd>
       </button>
@@ -126,25 +126,9 @@ export function CommandMenu() {
           <CommandSeparator />
 
           <CommandGroup heading="Essays & Publications">
-            <CommandItem onSelect={() => runCommand(() => router.push("/writing/running-ayurveda-house-ai-ops"))}>
+            <CommandItem onSelect={() => runCommand(() => router.push("/writing/panchakarma-clinical-protocol-not-a-holiday"))}>
               <ArrowRight className="mr-2 h-3 w-3" />
-              <span>1. Running a 118-Year House on AI Ops</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/writing/german-wellness-travellers-ayurveda"))}>
-              <ArrowRight className="mr-2 h-3 w-3" />
-              <span>2. What German Wellness Travellers Taught Me</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/writing/panchakarma-clinical-protocol"))}>
-              <ArrowRight className="mr-2 h-3 w-3" />
-              <span>3. Panchakarma is a Clinical Protocol</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/writing/family-business-succession-systems"))}>
-              <ArrowRight className="mr-2 h-3 w-3" />
-              <span>4. Family-Business Succession</span>
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => router.push("/writing/palakkad-beppu-ayurveda-japan"))}>
-              <ArrowRight className="mr-2 h-3 w-3" />
-              <span>5. Taking Kerala Ayurveda to Japan</span>
+              <span>Panchakarma Is a Clinical Protocol, Not a Holiday</span>
             </CommandItem>
           </CommandGroup>
 

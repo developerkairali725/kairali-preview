@@ -14,30 +14,27 @@ import {
   SheetTitle
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { hrefFor, NAV_KEYS, NAV_LABELS, type Locale } from "@/lib/i18n";
 
-export function Header() {
+export function Header({ locale = "en" }: { locale?: Locale }) {
   const pathname = usePathname();
-  
-  const navLinks = [
-    { label: "About", href: "/about" },
-    { label: "Work", href: "/work" },
-    { label: "Investing", href: "/investing" },
-    { label: "Writing", href: "/writing" },
-    { label: "Media", href: "/media" },
-    { label: "Recognition", href: "/recognition" },
-    { label: "Speaking", href: "/speaking" },
-  ];
 
-  const isActive = (href: string) => pathname === href;
+  const navLinks = NAV_KEYS.map((key) => ({
+    label: NAV_LABELS[locale][key] ?? key,
+    href: hrefFor(locale, key),
+  }));
+
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:h-20 md:px-6">
         <Link 
-          href="/" 
+          href={hrefFor(locale, "home")}
           className="font-mono text-xs tracking-[0.25em] font-bold uppercase text-ink hover:text-primary transition-colors"
         >
-          ABHILASH K. RAMESH
+          <span className="md:hidden">AKR</span>
+          <span className="hidden md:inline">ABHILASH K. RAMESH</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -60,19 +57,19 @@ export function Header() {
           ))}
           
           <div className="w-[1px] h-4 bg-border mx-2" />
-          <LanguageSwitcher />
-          <CommandMenu />
+          <LanguageSwitcher locale={locale} />
+          {locale === "en" ? <CommandMenu /> : null}
           <ThemeToggle />
         </div>
 
         {/* Mobile Nav */}
-        <div className="flex items-center space-x-3 md:hidden">
-          <LanguageSwitcher />
-          <CommandMenu />
+        <div className="flex items-center gap-1 md:hidden">
+          <LanguageSwitcher locale={locale} />
+          {locale === "en" ? <CommandMenu /> : null}
           <ThemeToggle />
           <Sheet>
             <SheetTrigger render={
-              <button className="text-ink hover:text-primary p-1 cursor-pointer" aria-label="Open mobile nav">
+              <button className="inline-flex size-11 cursor-pointer items-center justify-center text-ink hover:text-primary" aria-label="Open mobile nav">
                 <Menu className="h-5 w-5" />
               </button>
             } />
@@ -80,17 +77,17 @@ export function Header() {
               <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
               <div className="flex flex-col space-y-6 pt-10">
                 <Link
-                  href="/"
-                  className="text-xs tracking-widest uppercase text-ink hover:text-primary transition-colors"
+                  href={hrefFor(locale, "home")}
+                  className="flex min-h-11 items-center text-xs uppercase tracking-widest text-ink transition-colors hover:text-primary"
                 >
-                  Index Page
+                  {NAV_LABELS[locale].home}
                 </Link>
                 <div className="h-[1px] bg-border w-full" />
                 {navLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`text-xs tracking-widest uppercase transition-colors ${
+                    className={`flex min-h-11 items-center text-xs uppercase tracking-widest transition-colors ${
                       isActive(link.href) ? "text-primary font-bold" : "text-ink-muted hover:text-ink"
                     }`}
                   >

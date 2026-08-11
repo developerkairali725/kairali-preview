@@ -13,7 +13,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "kasavu" : "dark")}
-      className="text-ink-muted hover:text-ink hover:bg-card size-8 cursor-pointer"
+      className="size-11 cursor-pointer text-ink-muted hover:bg-card hover:text-ink"
       title={`Switch to ${theme === "dark" ? "Kasavu (Light)" : "Night Ledger (Dark)"}`}
     >
       {theme === "dark" ? (

@@ -1,9 +1,32 @@
 import React from "react";
 import Link from "next/link";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
+import { hrefFor, NAV_LABELS, type Locale } from "@/lib/i18n";
 
-export function Footer() {
+const FOOTER_FACTS: Record<Locale, { role: string; location: string; lineage: string; rights: string }> = {
+  en: {
+    role: "Executive Director, Kairali Group",
+    location: "Delhi / Kerala, India",
+    lineage: "Fourth Gen · Since 1908",
+    rights: "ALL RIGHTS RESERVED.",
+  },
+  de: {
+    role: "Executive Director, Kairali Group",
+    location: "Delhi / Kerala, Indien",
+    lineage: "Vierte Generation · Seit 1908",
+    rights: "ALLE RECHTE VORBEHALTEN.",
+  },
+  fr: {
+    role: "Directeur exécutif, Kairali Group",
+    location: "Delhi / Kerala, Inde",
+    lineage: "Quatrième génération · Depuis 1908",
+    rights: "TOUS DROITS RÉSERVÉS.",
+  },
+};
+
+export function Footer({ locale = "en" }: { locale?: Locale }) {
   const currentYear = new Date().getFullYear();
+  const facts = FOOTER_FACTS[locale];
 
   return (
     <footer className="w-full mt-auto bg-background">
@@ -14,9 +37,9 @@ export function Footer() {
         <div className="col-span-1 md:col-span-6">
           <LedgerList className="max-w-md">
             <LedgerRow label="Subject" value="Abhilash Kalathil Ramesh" />
-            <LedgerRow label="Role" value="Executive Director, Kairali Group" />
-            <LedgerRow label="Location" value="Delhi / Kerala, India" />
-            <LedgerRow label="Lineage" value="Fourth Gen · Since 1908" />
+            <LedgerRow label={locale === "de" ? "Rolle" : locale === "fr" ? "Fonction" : "Role"} value={facts.role} />
+            <LedgerRow label={locale === "de" ? "Ort" : locale === "fr" ? "Lieu" : "Location"} value={facts.location} />
+            <LedgerRow label={locale === "de" ? "Linie" : locale === "fr" ? "Lignée" : "Lineage"} value={facts.lineage} />
             <LedgerRow label="Contact" value="info@kairali.com" />
           </LedgerList>
 
@@ -33,27 +56,28 @@ export function Footer() {
             >
               <span>LinkedIn</span>
             </a>
-            <Link href="/faq" className="text-ink-muted hover:text-primary transition-colors">
-              Frequently Asked Questions
+            <Link href={hrefFor(locale, "faq")} className="text-ink-muted hover:text-primary transition-colors">
+              {NAV_LABELS[locale].faq}
             </Link>
-            <Link href="/now" className="text-ink-muted hover:text-primary transition-colors">
-              Current Focus (/now)
+            <Link href={hrefFor(locale, "now")} className="text-ink-muted hover:text-primary transition-colors">
+              {NAV_LABELS[locale].now}
+            </Link>
+            <Link href={hrefFor(locale, "privacy")} className="text-ink-muted hover:text-primary transition-colors">
+              {NAV_LABELS[locale].privacy}
             </Link>
           </div>
 
           <div className="flex flex-col md:items-end space-y-1">
             <div className="font-mono text-[9px] tracking-widest uppercase text-ink-muted">
-              © {currentYear} ABHILASH K. RAMESH. ALL RIGHTS RESERVED.
+              © {currentYear} ABHILASH K. RAMESH. {facts.rights}
             </div>
-            <div className="font-mono text-[8px] tracking-widest uppercase text-ink-muted/50">
+            <div className="font-mono text-[9px] tracking-widest uppercase text-ink-muted">
               Colophon: Instrument Serif · Instrument Sans · IBM Plex Mono. Built with Next.js.
             </div>
           </div>
         </div>
       </div>
       
-      {/* Plausible/Umami Privacy-First Analytics Slot (No Cookies Banners Required) */}
-      {/* <script defer data-domain="abhilashramesh.com" src="https://plausible.io/js/script.js"></script> */}
     </footer>
   );
 }
