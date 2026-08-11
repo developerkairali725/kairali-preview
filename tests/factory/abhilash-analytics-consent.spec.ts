@@ -44,8 +44,30 @@ test.describe("Abhilash privacy-minimal Analytics", () => {
     await expect.poll(() => tagRequests).toEqual([
       "https://www.googletagmanager.com/gtag/js?id=G-SQR9PY0KZL",
     ]);
+    await expect
+      .poll(() =>
+        page.evaluate(() =>
+          (window.dataLayer ?? []).some((entry) => {
+            const call = Array.from(entry as ArrayLike<unknown>);
+            return call[0] === "config" && call[1] === "G-SQR9PY0KZL";
+          }),
+        ),
+      )
+      .toBe(true);
     const calls = await page.evaluate(() =>
       (window.dataLayer ?? []).map((entry) => Array.from(entry as ArrayLike<unknown>)),
+    );
+    const queuedCommandShapes = await page.evaluate(() =>
+      (window.dataLayer ?? []).map((entry) => ({
+        isArray: Array.isArray(entry),
+        tag: Object.prototype.toString.call(entry),
+      })),
+    );
+    expect(queuedCommandShapes.length).toBeGreaterThan(0);
+    expect(queuedCommandShapes).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ isArray: false, tag: "[object Arguments]" }),
+      ]),
     );
     expect(calls).toContainEqual([
       "consent",
