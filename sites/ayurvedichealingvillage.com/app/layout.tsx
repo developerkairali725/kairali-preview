@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { ChatbaseLoader } from "@kairali/chat";
@@ -31,10 +32,6 @@ import "./globals.css";
 //   · Lato 300 — no font-weight:300 anywhere in the site or its packages.
 // Preload set: 150.8KB/10 files → 85.4KB/5 files. Families/weights in use are
 // UNTOUCHED (the approved design's type ramp is not a perf lever).
-const kurale = Kurale({ weight: "400", subsets: ["latin"], display: "swap", variable: "--font-kurale" });
-const asap = Asap({ weight: ["400", "600", "700"], subsets: ["latin"], display: "swap", variable: "--font-asap" });
-const lato = Lato({ weight: ["400", "700"], subsets: ["latin"], display: "swap", variable: "--font-lato" });
-
 export const metadata: Metadata = {
   icons: faviconIcons(),
 };

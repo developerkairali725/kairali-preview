@@ -22,12 +22,23 @@
 // A missing fact renders as its honest absence ("—", "unarmed", "none"),
 // never a guess. STATUS.yaml is the truth; this board is a generated view.
 
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import type { CSSProperties } from "react";
 import type { Evidence, FrontGate, OsMilestone, Site2, Snapshot2 } from "./schema";
 
-const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "600"], display: "swap" });
+const grotesk = localFont({
+  src: "../../../packages/ui/fonts/assets/space-grotesk-variable.woff2",
+  weight: "300 700",
+  style: "normal",
+  display: "swap",
+});
+
+const mono = localFont({
+  src: "../../../packages/ui/fonts/assets/jetbrains-mono-variable.woff2",
+  weight: "100 800",
+  style: "normal",
+  display: "swap",
+});
 
 // ---- palette (internal-dashboard look; brand accents sampled, not imported)
 const BG = "#0C120E"; // ink surface

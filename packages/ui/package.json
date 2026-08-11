@@ -9,6 +9,11 @@
     "./brand-tokens.css": "./brand-tokens.css",
     "./raag-tokens.css": "./raag-tokens.css",
     "./blush-tokens.css": "./blush-tokens.css",
+    "./fonts/abhilash": "./fonts/src/abhilash.ts",
+    "./fonts/blush": "./fonts/src/blush.ts",
+    "./fonts/fleet-pulse": "./fonts/src/fleet-pulse.ts",
+    "./fonts/kairali": "./fonts/src/kairali.ts",
+    "./fonts/kairali.css": "./fonts/src/kairali.css",
     "./brand-lint": "./src/brand-lint.js"
   },
   "bin": {

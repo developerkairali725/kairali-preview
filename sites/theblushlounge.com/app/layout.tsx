@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Fraunces, Montserrat, Allura } from "next/font/google";
+import { allura, fraunces, montserrat } from "@kairali/ui/fonts/blush";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -27,26 +27,8 @@ export const metadata: Metadata = {
 // Fraunces (editorial display serif — her press-feature register, NOT the
 // AI-generic Playfair) · Montserrat (wordmark-caps continuity, UI/body) ·
 // Allura (the logo monogram's script lineage — HARD CAP one accent per page).
-// next/font self-hosts at build — no runtime Google Fonts CDN
-// (docs/ENGINEERING_STANDARDS.md).
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-fraunces",
-});
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-  variable: "--font-montserrat",
-});
-const allura = Allura({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-allura",
-});
+// Repository-local next/font assets remove both build-time and runtime Google
+// Fonts requests (docs/ENGINEERING_STANDARDS.md).
 
 // NO ChatbaseLoader on this site — theblushlounge.com is chat-bubble-EXEMPT
 // by owner ruling D-BL-BUBBLE-EXEMPT (18 Jul 2026): Sneha's own WhatsApp

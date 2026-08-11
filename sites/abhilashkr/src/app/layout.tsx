@@ -1,27 +1,38 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SITE_URL } from "@/lib/config";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/site/theme-provider";
 
-const instrumentSerif = Instrument_Serif({
+const instrumentSerif = localFont({
+  src: [
+    { path: "../../../../packages/ui/fonts/assets/instrument-serif-400.woff2", weight: "400", style: "normal" },
+    { path: "../../../../packages/ui/fonts/assets/instrument-serif-400-italic.woff2", weight: "400", style: "italic" },
+  ],
+  display: "swap",
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
 });
 
-const instrumentSans = Instrument_Sans({
+const instrumentSans = localFont({
+  src: "../../../../packages/ui/fonts/assets/instrument-sans-variable.woff2",
+  weight: "400 700",
+  style: "normal",
+  display: "swap",
   variable: "--font-sans",
-  subsets: ["latin"],
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const ibmPlexMono = localFont({
+  src: [
+    { path: "../../../../packages/ui/fonts/assets/ibm-plex-mono-300.woff2", weight: "300", style: "normal" },
+    { path: "../../../../packages/ui/fonts/assets/ibm-plex-mono-400.woff2", weight: "400", style: "normal" },
+    { path: "../../../../packages/ui/fonts/assets/ibm-plex-mono-500.woff2", weight: "500", style: "normal" },
+    { path: "../../../../packages/ui/fonts/assets/ibm-plex-mono-600.woff2", weight: "600", style: "normal" },
+    { path: "../../../../packages/ui/fonts/assets/ibm-plex-mono-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
   variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -104,5 +115,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

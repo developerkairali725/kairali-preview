@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -10,26 +11,8 @@ import { ChatbaseLoader } from "@kairali/chat";
 import siteConfig from "../site.config.json";
 
 // Brand Manual ch.04: Kurale (display, weight 400 only) · Asap (body/UI) ·
-// Lato (captions, overlines, numerals). next/font self-hosts at build —
-// no runtime Google Fonts CDN (docs/ENGINEERING_STANDARDS.md).
-const kurale = Kurale({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-kurale",
-});
-const asap = Asap({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-asap",
-});
-const lato = Lato({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-lato",
-});
+// Lato (captions, overlines, numerals). Repository-local next/font assets
+// remove both build-time and runtime Google Fonts requests.
 
 // OG/Twitter ship WITHOUT an image for now: no real 1200×630 asset exists
 // yet and fabricating one is banned. Spec lives in IMAGE_MANIFEST.md

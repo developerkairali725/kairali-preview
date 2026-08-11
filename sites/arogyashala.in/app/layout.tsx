@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -9,10 +10,8 @@ import "@kairali/ui/brand-tokens.css";
 import "./globals.css";
 import siteConfig from "../site.config.json";
 
-// Brand Manual ch.04 faces; next/font self-hosts at build.
-const kurale = Kurale({ weight: "400", subsets: ["latin"], display: "swap", variable: "--font-kurale" });
-const asap = Asap({ weight: ["400", "600", "700"], subsets: ["latin"], display: "swap", variable: "--font-asap" });
-const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"], display: "swap", variable: "--font-lato" });
+// Brand Manual ch.04 faces; repository-local next/font assets make builds
+// independent from the Google Fonts service.
 
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {

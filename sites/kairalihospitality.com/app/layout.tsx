@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -12,11 +13,8 @@ import siteConfig from "../site.config.json";
 // Brand Manual ch.04 faces; next/font self-hosts at build. Kairali tokens
 // ONLY — raag-tokens.css is deliberately NOT imported (design brief MUST NOT:
 // the umbrella is a Kairali surface; Raag's own look lives on villaraag.com).
-// latin-ext included: "Svatá Kateřina" / "VYSOČINA" must render in the brand
-// faces, not a fallback serif (č/ř/á are latin-ext codepoints).
-const kurale = Kurale({ weight: "400", subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-kurale" });
-const asap = Asap({ weight: ["400", "600", "700"], subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-asap" });
-const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-lato" });
+// Repository-local full-glyph assets keep "Svatá Kateřina" / "VYSOČINA" in
+// the brand faces without any build-time or runtime Google Fonts request.
 
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {

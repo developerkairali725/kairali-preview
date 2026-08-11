@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -11,26 +12,8 @@ import { SiteHeader, SiteFooter } from "./_components/chrome";
 import siteConfig from "../site.config.json";
 
 // Brand Manual ch.04: Kurale (display, weight 400 only) · Asap (body/UI) ·
-// Lato (captions, overlines, bibliographic lines). next/font self-hosts at
-// build — no runtime Google Fonts CDN (docs/ENGINEERING_STANDARDS.md).
-const kurale = Kurale({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-kurale",
-});
-const asap = Asap({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-asap",
-});
-const lato = Lato({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-lato",
-});
+// Lato (captions, overlines, bibliographic lines). Repository-local next/font
+// assets remove both build-time and runtime Google Fonts requests.
 
 // OG image: Harmony cover centred on brand ivory, 1200×630 (IMAGE_MANIFEST.md).
 export const metadata: Metadata = {

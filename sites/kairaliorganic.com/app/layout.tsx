@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Kurale, Asap, Lato } from "next/font/google";
+import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
+import "@kairali/ui/fonts/kairali.css";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
 import { ConsentScripts, ConsentBanner } from "@kairali/consent";
 import { Analytics } from "@kairali/analytics";
@@ -14,10 +15,6 @@ import siteConfig from "../site.config.json";
 // DESIGN_DIRECTION.md) uses the MASTER heritage voice — Kurale display,
 // Asap body, Lato captions/numerals. Kairali tokens ONLY (doctrine d);
 // Quicksand is the KAIR site's voice and never appears here (D3 distinctness).
-const kurale = Kurale({ weight: "400", subsets: ["latin"], display: "swap", variable: "--font-kurale" });
-const asap = Asap({ weight: ["400", "600", "700"], subsets: ["latin"], display: "swap", variable: "--font-asap" });
-const lato = Lato({ weight: ["300", "400", "700"], subsets: ["latin"], display: "swap", variable: "--font-lato" });
-
 export const metadata: Metadata = {
   ...(buildMetadata(siteConfig, {
     title: "Kairali Organics — Chemical-Free Ayurvedic Formulations",
