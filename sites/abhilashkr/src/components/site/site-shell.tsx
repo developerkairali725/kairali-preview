@@ -39,7 +39,7 @@ export function SiteShell({ children, locale }: SiteShellProps) {
             <Header locale={locale} />
             <main className="flex flex-grow flex-col">{children}</main>
             <Footer locale={locale} />
-            <Analytics />
+            <Analytics locale={locale} />
           </TooltipProvider>
         </ThemeProvider>
       </body>

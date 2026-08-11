@@ -14,12 +14,26 @@ export default function PrivacyPage() {
       <h1 className="mt-4 font-display text-5xl text-ink">Privacy</h1>
       <div className="mt-10 space-y-8 font-sans leading-relaxed text-ink-muted">
         <section>
+          <h2 className="font-display text-2xl text-ink">Controller</h2>
+          <p className="mt-2">
+            Abhilash Kalathil Ramesh controls the personal data processing described on this
+            website. Privacy questions may be sent to info@kairali.com.
+          </p>
+        </section>
+        <section>
           <h2 className="font-display text-2xl text-ink">Optional analytics</h2>
           <p className="mt-2">
             Google Analytics is disabled until you select “Allow analytics”. If enabled, Google
-            may process device, browser, approximate location and page-interaction data and may
-            set analytics cookies. Selecting “Necessary only” keeps analytics disabled. Your
-            choice is stored in this browser.
+            may process browser, coarse location and page-interaction data and may set analytics
+            cookies. Measurement is limited to page views, scrolls, outbound clicks and file
+            downloads. Google Signals and advertising personalisation are disabled, and user and
+            event data retention is set to two months. Selecting “Necessary only” keeps analytics
+            disabled. Your choice is stored in this browser.
+          </p>
+          <p className="mt-2">
+            You can change or withdraw your choice at any time using “Analytics settings” in the
+            footer. Withdrawing consent sends a denied consent signal and removes accessible
+            Google Analytics cookies from this domain.
           </p>
         </section>
         <section>
@@ -40,7 +54,7 @@ export default function PrivacyPage() {
             .
           </p>
         </section>
-        <p className="font-mono text-xs uppercase tracking-widest">Last updated: 10 August 2026</p>
+        <p className="font-mono text-xs uppercase tracking-widest">Last updated: 11 August 2026</p>
       </div>
     </article>
   );

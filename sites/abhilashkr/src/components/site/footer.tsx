@@ -3,24 +3,27 @@ import Link from "next/link";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import { hrefFor, NAV_LABELS, type Locale } from "@/lib/i18n";
 
-const FOOTER_FACTS: Record<Locale, { role: string; location: string; lineage: string; rights: string }> = {
+const FOOTER_FACTS: Record<Locale, { role: string; location: string; lineage: string; rights: string; analytics: string }> = {
   en: {
     role: "Executive Director, Kairali Group",
     location: "Delhi / Kerala, India",
     lineage: "Fourth Gen · Since 1908",
     rights: "ALL RIGHTS RESERVED.",
+    analytics: "Analytics settings",
   },
   de: {
     role: "Executive Director, Kairali Group",
     location: "Delhi / Kerala, Indien",
     lineage: "Vierte Generation · Seit 1908",
     rights: "ALLE RECHTE VORBEHALTEN.",
+    analytics: "Analyse-Einstellungen",
   },
   fr: {
     role: "Directeur exécutif, Kairali Group",
     location: "Delhi / Kerala, Inde",
     lineage: "Quatrième génération · Depuis 1908",
     rights: "TOUS DROITS RÉSERVÉS.",
+    analytics: "Préférences de mesure",
   },
 };
 
@@ -65,6 +68,13 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
             <Link href={hrefFor(locale, "privacy")} className="text-ink-muted hover:text-primary transition-colors">
               {NAV_LABELS[locale].privacy}
             </Link>
+            <button
+              type="button"
+              data-analytics-settings
+              className="min-h-11 text-ink-muted hover:text-primary transition-colors md:self-end"
+            >
+              {facts.analytics}
+            </button>
           </div>
 
           <div className="flex flex-col md:items-end space-y-1">

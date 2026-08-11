@@ -135,7 +135,8 @@ const de: Record<PageKey, LocalizedPageContent> = {
     title: "Datenschutz",
     intro: "Diese Übersetzung beschreibt den derzeitigen technischen Zustand der Website und ersetzt keine individuell vereinbarte rechtliche Beratung.",
     sections: [
-      { title: "Optionale Analyse", body: "Auf der produktiven Website ist derzeit kein GA4-Messcode aktiviert. Falls künftig optionale Analyse aktiviert wird, muss zuvor eine passende Einwilligungs- und Datenschutzerklärung veröffentlicht und geprüft werden." },
+      { title: "Verantwortlicher", body: "Abhilash Kalathil Ramesh ist für die auf dieser Website beschriebene Verarbeitung personenbezogener Daten verantwortlich. Datenschutzfragen können an info@kairali.com gesendet werden." },
+      { title: "Optionale Analyse", body: "Google Analytics bleibt ausgeschaltet, bis Sie „Analyse erlauben“ wählen. Bei Einwilligung werden Seitenaufrufe, Scrolls, ausgehende Klicks und Downloads gemessen. Google Signals, Werbepersonalisierung sowie detaillierte Standort- und Gerätedaten sind deaktiviert; Nutzer- und Ereignisdaten werden zwei Monate aufbewahrt. Über „Analyse-Einstellungen“ im Footer können Sie Ihre Auswahl jederzeit ändern oder widerrufen." },
       { title: "Kontakt", body: "Kontaktlinks öffnen das E-Mail-Programm des Besuchers. Die Website selbst übermittelt oder speichert dabei keine Formulardaten." },
       { title: "Fragen", body: "Fragen zu dieser Website können an info@kairali.com gesendet werden.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Datenschutz", label: "E-Mail senden" } },
     ],
@@ -264,7 +265,8 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     title: "Confidentialité",
     intro: "Cette traduction décrit l’état technique actuel du site et ne remplace pas un conseil juridique adapté à une situation particulière.",
     sections: [
-      { title: "Mesure d’audience facultative", body: "Aucun identifiant GA4 n’est actuellement actif sur le site public. Toute future mesure facultative devra être précédée d’une information et d’un mécanisme de consentement adaptés et vérifiés." },
+      { title: "Responsable du traitement", body: "Abhilash Kalathil Ramesh est responsable du traitement des données personnelles décrit sur ce site. Les questions de confidentialité peuvent être envoyées à info@kairali.com." },
+      { title: "Mesure d’audience facultative", body: "Google Analytics reste désactivé jusqu’à ce que vous choisissiez « Autoriser la mesure ». Après consentement, seuls les pages vues, défilements, clics sortants et téléchargements sont mesurés. Google Signals, la personnalisation publicitaire et les données détaillées de localisation et d’appareil sont désactivés ; les données utilisateur et événement sont conservées deux mois. Vous pouvez modifier ou retirer votre choix via « Préférences de mesure » dans le pied de page." },
       { title: "Contact", body: "Les liens de contact ouvrent le logiciel de messagerie du visiteur. Le site lui-même ne transmet ni ne stocke de données de formulaire." },
       { title: "Questions", body: "Les questions concernant ce site peuvent être envoyées à info@kairali.com.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Confidentialit%C3%A9", label: "Envoyer un courriel" } },
     ],

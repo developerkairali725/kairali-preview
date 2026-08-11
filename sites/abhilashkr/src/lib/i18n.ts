@@ -172,7 +172,7 @@ const SEO: Record<LocalizedLocale, Record<PageKey, { title: string; description:
     },
     privacy: {
       title: "Datenschutzhinweis | Abhilash K. Ramesh",
-      description: "Hinweise zur derzeit cookiefreien Website, zu Kontaktanfragen und zu möglichen künftigen optionalen Analysen.",
+      description: "Informationen zu Einwilligung, optionaler Analyse, kurzer Aufbewahrung und Kontaktanfragen auf abhilashkr.com.",
     },
   },
   fr: {
@@ -222,7 +222,7 @@ const SEO: Record<LocalizedLocale, Record<PageKey, { title: string; description:
     },
     privacy: {
       title: "Confidentialité | Abhilash K. Ramesh",
-      description: "Informations sur le site actuellement sans cookies, les demandes de contact et toute future mesure d’audience facultative.",
+      description: "Informations sur le consentement, la mesure facultative, la conservation courte et les demandes de contact sur abhilashkr.com.",
     },
   },
 };
