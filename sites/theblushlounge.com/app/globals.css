@@ -908,6 +908,10 @@ a {
   align-items: start;
 }
 
+.contact__lanes--single {
+  grid-template-columns: minmax(0, 680px);
+}
+
 .lane h2 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -952,105 +956,6 @@ a {
 
 .lane__meta a:hover {
   color: var(--blush-champagne-deep);
-}
-
-/* factory EnquiryForm skinned in blush tokens */
-
-.lane--form .enquiry-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  background: var(--blush-white);
-  border: 1px solid var(--blush-hairline);
-  padding: 34px 30px 38px;
-}
-
-.lane--form .enquiry-heading {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.lane--form .field label,
-.lane--form .field-row label {
-  display: block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--blush-ink-soft);
-  margin-bottom: 6px;
-}
-
-.lane--form input,
-.lane--form textarea {
-  width: 100%;
-  font-family: var(--font-ui);
-  font-size: 15px;
-  color: var(--blush-ink);
-  background: var(--blush-ivory);
-  border: 1px solid var(--blush-hairline);
-  padding: 12px 14px;
-  min-height: 44px; /* touch-target law */
-}
-
-.lane--form .field-row {
-  display: flex;
-  gap: 12px;
-}
-
-.lane--form .field-cc {
-  flex: 0 0 84px;
-}
-
-.lane--form .field-phone {
-  flex: 1;
-}
-
-.lane--form .consent {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 12.5px;
-  line-height: 1.6;
-  color: var(--blush-ink-soft);
-}
-
-.lane--form .consent input {
-  width: auto;
-  min-height: 0;
-  margin-top: 3px;
-}
-
-.lane--form .enquiry-error {
-  color: var(--blush-ink);
-  font-size: 13px;
-}
-
-.lane--form .btn-primary {
-  min-height: 48px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: var(--track-caps);
-  text-transform: uppercase;
-  background: var(--blush-ink);
-  color: var(--blush-ivory);
-  border: 0;
-  padding: 0 28px;
-  cursor: pointer;
-}
-
-.lane--form .btn-primary:hover {
-  background: var(--blush-champagne-deep);
-}
-
-.lane--form .enquiry-sent {
-  background: var(--blush-white);
-  border: 1px solid var(--blush-hairline);
-  padding: 34px 30px;
-  font-size: 15px;
-  line-height: 1.7;
 }
 
 /* ============================================================ CONSENT YIELD

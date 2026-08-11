@@ -127,7 +127,7 @@ export default function ServicesPage() {
             <ol className="steps">
               <li>
                 <b>One message.</b> Your date, your city, your occasion — on
-                WhatsApp or the enquiry form. You&rsquo;ll get what&rsquo;s
+                WhatsApp or through the contact page. You&rsquo;ll get what&rsquo;s
                 possible and what it costs, from Sneha directly.
               </li>
               <li>

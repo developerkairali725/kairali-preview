@@ -1,0 +1,21 @@
+{
+  "name": "Blush Lounge — Makeup by Sneha",
+  "short_name": "Blush Lounge",
+  "description": "Beauty, bridal and SFX makeup artistry by Sneha Chowdhary.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF6EF",
+  "theme_color": "#211A16",
+  "icons": [
+    {
+      "src": "/icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

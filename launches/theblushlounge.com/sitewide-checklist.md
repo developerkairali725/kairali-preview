@@ -52,3 +52,13 @@
 - Vercel stable-alias promote (one owner click / allowed session): the full site is deployed + Ready; the public alias still serves the pre-fix golden page.
 - Testimonial block waits for Sneha's confirmation (unattributed legacy quote unused).
 - GSC + Bing property, sitemap submission, GTM/GA4 IDs — post-DNS-flip lane.
+
+## 2026-08-11 pilot reconciliation (supersedes stale launch-state lines above)
+
+- Production is live at `https://theblushlounge.com`; apex 200, `www` 308, TLS/robots/sitemap healthy. The old “stable alias promote” item is closed.
+- Google Search Console Domain ownership is verified. The sitemap is Success with six URLs discovered; one homepage indexing request was accepted. Bing remains unverified.
+- GA4 property `549419603`, stream `15414784898`, ID `G-6K7HVLYXZQ` exists and is linked to Search Console. The tag is intentionally off pending Sneha's controller/privacy policy and consent QA; no data collection is claimed.
+- The unsafe form and false working-form claim were removed from production. The pilot also removes the unused API route, dead form CSS and stale Services reference. The shared forms package remains an inert build dependency so this routine site PR does not rewrite the owner-guarded fleet lockfile; it exposes no route or UI. WhatsApp and the two verified Instagram profiles are the live contact lanes.
+- Supabase keys are no longer a launch requirement because there is no public form. A future form is a new change requiring an approved datastore, controller, privacy/retention route and an end-to-end test lead.
+- The 77-gate pilot disposition is 50 cleared, 14 partial, 6 pending and 7 registry N/A. Exact evidence and gaps are in `checklist-organic.md` and `gate-status-2026-08-11.md`.
+- The remaining business/platform facts are explicit: GBP waits for staffed-location versus service-area, address and hours; domain renewal is due before 28 October 2026; interim-photo upgrades trigger a new visual/performance pass.

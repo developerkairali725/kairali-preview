@@ -40,3 +40,12 @@
 ## Priority Pages
 - [x] High-priority (/, /services, /portfolio, /contact): gated by A5 + the full battery; keyword targets per STRATEGY §2; rankings monitoring begins post-flip.
 - [x] Low-priority (/about, /academy): same standards applied; periodic review joins the fleet Monday ritual once live.
+
+## 2026-08-11 pilot reconciliation (current source and production truth)
+
+- All six pages were re-run at desktop and mobile: 12/12 returned 200 with no console errors, overlay or horizontal overflow; 6/6 internal targets returned 200.
+- Current Contact is deliberately form-free. Historical EnquiryForm/Supabase statements above describe the superseded pre-hotfix build and are not current functionality.
+- Services now says “WhatsApp or through the contact page”; no public page promises an enquiry form. `/api/enquiry` and dead form CSS are removed. The shared forms package remains inert so the routine site PR does not mutate the owner-guarded fleet lockfile.
+- Current metadata/canonical/H1/JSON-LD/alt checks pass on every page. Four Lighthouse templates scored performance 90–96, accessibility 100 and SEO 100.
+- English remains the only declared locale. No hreflang cluster is required.
+- Screenshots and route evidence: `screens/pilot-2026-08-11/`, `rendered-audit-2026-08-11.md`, `lighthouse-2026-08-11.md`.

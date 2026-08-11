@@ -1,17 +1,16 @@
 /**
- * /contact — WhatsApp-first + enquiry form with event-date field (signed
- * STRATEGY §4 booking model: premium-bridal pattern, NO instant-calendar).
+ * /contact — WhatsApp-first contact lane (signed STRATEGY §4 booking model:
+ * premium-bridal pattern, NO instant-calendar).
  * BeautySalon LocalBusiness schema. FACT LAW: email makeoverbysneha@gmail.com
  * and the 10:00–22:00 hours carry CONFIRM-before-launch flags (BRIEF locked
  * facts) — both stay OFF this page until confirmed; WhatsApp + the Shivalik
- * address are owner-ruled/mined facts and print. The form's consent line
- * speaks for "Blush Lounge" (brandName — no Kairali claim on a personal
- * brand) and renders linkless until her own privacy page exists (A12 gap,
- * loud in the launch checklist).
+ * address are owner-ruled/mined facts and print. The enquiry form stays off
+ * production until its datastore and
+ * site-specific privacy terms are approved (A12 gap, loud in the launch
+ * checklist); this prevents a form that cannot safely retain or route leads.
  */
 import { buildMetadata } from "@kairali/seo";
 import { localBusiness, person, graph, serializeJsonLd } from "@kairali/schema";
-import { EnquiryForm } from "@kairali/forms/form";
 import siteConfig from "../../site.config.json";
 import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL, IG_SCHOOL_URL } from "../_components/chrome";
 
@@ -20,7 +19,7 @@ const SITE_URL = `https://${siteConfig.domain}`;
 export const metadata = buildMetadata(siteConfig, {
   title: "Book Bridal Makeup in Delhi — Contact Blush Lounge by Sneha",
   description:
-    "WhatsApp Sneha on +91 88269 21110 or send an enquiry with your event date. Blush Lounge, Shivalik, New Delhi — Delhi & destination weddings worldwide.",
+    "WhatsApp Sneha on +91 88269 21110 for bridal, occasion and destination makeup enquiries. Blush Lounge, Shivalik, New Delhi — Delhi & worldwide.",
   path: "/contact",
   siteName: "Blush Lounge — Makeup by Sneha",
   ogImage: "/og.jpg",
@@ -51,13 +50,12 @@ export default function ContactPage() {
         </h1>
         <p className="section-lede">
           One message is all it takes — your date, your city, your occasion.
-          WhatsApp reaches me fastest; the form works just as well if
-          you&rsquo;d rather write it out.
+          WhatsApp reaches me fastest.
         </p>
       </section>
 
       <section className="section contact">
-        <div className="contact__lanes">
+        <div className="contact__lanes contact__lanes--single">
           <div className="lane">
             <h2>WhatsApp — the fast lane</h2>
             <p>
@@ -84,17 +82,6 @@ export default function ContactPage() {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="lane lane--form">
-            <EnquiryForm
-              site={siteConfig.domain}
-              formType="enquiry"
-              brandName="Blush Lounge"
-              privacyHref=""
-              heading="Send an enquiry"
-              submitLabel="Send enquiry"
-              eventDateLabel="Event date (if you have it)"
-            />
           </div>
         </div>
       </section>

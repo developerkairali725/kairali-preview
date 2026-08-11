@@ -1,5 +1,5 @@
 {
-  "_doc": "Interim uptime listener (Ship Gate B10). expect: 'ok' = 2xx/3xx; 'cf' = Cloudflare-fronted, a 403 bot-challenge still proves the edge+origin answer; 'method' defaults to HEAD, 'GET' where HEAD is rejected. Sites verified live 14 Jul 2026. theblushlounge.com EXCLUDED until Sunaj restores its origin (known-down).",
+  "_doc": "Interim uptime listener (Ship Gate B10). expect: 'ok' = 2xx/3xx; 'cf' = Cloudflare-fronted, a 403 bot-challenge still proves the edge+origin answer; 'method' defaults to HEAD, 'GET' where HEAD is rejected. Core list verified again 11 Aug 2026; theblushlounge.com is restored on Vercel and monitored directly.",
   "sites": [
     { "url": "https://www.ayurvedichealingvillage.com/", "expect": "cf", "name": "KTAHV (production)" },
     { "url": "https://www.kairaliproducts.com/", "expect": "ok", "name": "Shopify store .com" },
@@ -10,6 +10,7 @@
     { "url": "https://www.kairali.com/", "expect": "ok", "name": "Group site (current live)" },
     { "url": "https://www.kairalifranchise.com/", "expect": "ok", "method": "GET", "name": "Franchise" },
     { "url": "https://whatisayurveda.org/", "expect": "ok", "name": "WhatIsAyurveda .org (live content)" },
-    { "url": "https://arogyakendra.com/", "expect": "ok", "name": "Arogya Kendra (Factory/Vercel)" }
+    { "url": "https://arogyakendra.com/", "expect": "ok", "name": "Arogya Kendra (Factory/Vercel)" },
+    { "url": "https://theblushlounge.com/", "expect": "ok", "name": "Blush Lounge (Vercel)" }
   ]
 }

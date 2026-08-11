@@ -7,7 +7,23 @@ const nextConfig: NextConfig = {
   // (+91 88269 21110, D-BL-WHATSAPP) IS the chat surface on her personal
   // brand. The exemption is encoded loudly in scripts/chat-bubble-lint.mjs
   // (CHAT_EXEMPT), mirroring the abhilashkr pattern — never a silent skip.
-  transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/forms"],
+  transpilePackages: ["@kairali/consent", "@kairali/analytics"],
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+          },
+        ],
+      },
+    ];
+  },
   // Protection map — the signed STRATEGY §4 legacy-PHP 301 set, live now that
   // every target exists (full build). Single-hop, content-rich → content-rich.
   // snehachowdhary.com's domain-level 301 is a DNS/human action at flip (D1

@@ -68,15 +68,15 @@ export function stageToPhase(stage) {
 
 // ── milestone board (HAND-MAINTAINED per build — the one editorial constant;
 //    updated this build to: M0 done · M1 merged · M2 merged a220f82 ·
-//    M3 next · M4 pilot pending) ──────────────────────────────────────────────
+//    M3 next · M4 pilot done) ─────────────────────────────────────────────────
 export const MILESTONES = {
-  milestone: 'M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot pending',
+  milestone: 'M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done',
   milestones: [
     { id: 'M0', label: 'Continuity proof (dry-run + merge-continuity + acceptance harness)', state: 'done' },
     { id: 'M1', label: 'Doctrine merge (CLAUDE.md v2 + class-map + registry + strict flips)', state: 'done' },
     { id: 'M2', label: 'Mechanisms (evidence-manifest, decisions store, job-spec generator)', state: 'done' },
     { id: 'M3', label: 'Tools + data (DataForSEO, seo-baseline)', state: 'next' },
-    { id: 'M4', label: 'Pilot — theblushlounge.com', state: 'pending' },
+    { id: 'M4', label: 'Pilot — theblushlounge.com', state: 'done' },
   ],
 };
 
