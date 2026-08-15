@@ -10,11 +10,11 @@ import { alternatesFor } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Abhilash Kalathil Ramesh | Executive Director",
-  description: "Abhilash Kalathil Ramesh: Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, and angel investor.",
+  description: "Abhilash Kalathil Ramesh: Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, angel investor, and creator of AI-Human Workspace.",
   alternates: alternatesFor("home"),
   openGraph: {
     title: "Abhilash Kalathil Ramesh | Executive Director",
-    description: "Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, and angel investor.",
+    description: "Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, angel investor, and creator of AI-Human Workspace.",
     url: SITE_URL,
     type: "website",
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Abhilash Kalathil Ramesh | Executive Director",
-    description: "Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, and angel investor.",
+    description: "Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, angel investor, and creator of AI-Human Workspace.",
     images: [`${SITE_URL}/api/og?title=Abhilash%20Kalathil%20Ramesh&subtitle=Executive%20Director%2C%20Kairali%20Ayurvedic%20Group&section=Entity%20Verification%20Ledger`],
   },
 };
@@ -186,6 +186,66 @@ export default function HomePage() {
             </Link>
           </div>
 
+        </div>
+      </section>
+
+      <ZariRule />
+
+      {/* AI-Human Workspace */}
+      <section
+        id="ai-human-workspace"
+        aria-labelledby="ai-human-workspace-title"
+        className="mx-auto grid max-w-6xl scroll-mt-24 grid-cols-1 gap-8 px-6 py-20 lg:grid-cols-12 lg:gap-12"
+      >
+        <div className="lg:col-span-4">
+          <p className="mb-4 font-mono text-[10px] uppercase tracking-widest text-primary">
+            public project // human–AI systems
+          </p>
+          <h2
+            id="ai-human-workspace-title"
+            className="font-display text-3xl italic leading-tight text-ink md:text-4xl"
+          >
+            AI-Human Workspace
+          </h2>
+        </div>
+
+        <div className="flex flex-col lg:col-span-8">
+          <p className="max-w-2xl font-sans text-sm leading-relaxed text-ink-muted md:text-base">
+            Created by Abhilash K. Ramesh, AI-Human Workspace is a public,
+            versioned system for durable collaboration with Codex and Claude. It
+            keeps context, approvals, task state, evidence, updates, and rollback
+            explicit so people retain judgment and control.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="https://kairali-ai-method.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1.5 border border-primary bg-primary px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-background transition-colors hover:bg-transparent hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              <span>Visit the public site</span>
+              <ArrowUpRight size={12} />
+            </Link>
+            <Link
+              href="https://github.com/kairali-digital/ai-human-workspace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1.5 border border-border px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-ink transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              <span>Public repository</span>
+              <ArrowUpRight size={12} />
+            </Link>
+            <Link
+              href="https://github.com/kairali-digital/ai-human-workspace/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1.5 border border-border px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-ink transition-colors hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              <span>Latest release</span>
+              <ArrowUpRight size={12} />
+            </Link>
+          </div>
         </div>
       </section>
 

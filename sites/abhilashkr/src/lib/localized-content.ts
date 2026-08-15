@@ -22,6 +22,7 @@ const de: Record<PageKey, LocalizedPageContent> = {
       { title: "Kairali Ayurvedic Group", body: "Operative Verantwortung über ayurvedische Versorgung, Herstellung, Zentren und Gastlichkeit – mit klarer Trennung der jeweiligen Unternehmens- und Leistungsbereiche.", link: { href: "/de/arbeit", label: "Arbeitsbereiche ansehen" } },
       { title: "Investitionen", body: "Interesse an frühen Unternehmen in Biotechnologie, botanischen Lieferketten, sauberer Körperpflege und nachhaltiger Gastlichkeit.", link: { href: "/de/investitionen", label: "Investitionsansatz" } },
       { title: "Texte und Medien", body: "Beiträge zu Ayurveda, Familienunternehmen, internationaler Zusammenarbeit, Wellnessreisen und operativer Technologie.", link: { href: "/de/texte", label: "Texte lesen" } },
+      { title: "AI-Human Workspace", body: "Ein öffentliches, versioniertes Workspace-System, das Abhilash K. Ramesh für dauerhafte Zusammenarbeit zwischen Menschen, Codex und Claude entwickelt hat. Kontext, Freigaben, Aufgabenstatus, Nachweise, Aktualisierungen und Rollback bleiben ausdrücklich dokumentiert.", link: { href: "https://kairali-ai-method.vercel.app", label: "Öffentliche Website besuchen" } },
     ],
   },
   about: {
@@ -152,6 +153,7 @@ const fr: Record<PageKey, LocalizedPageContent> = {
       { title: "Kairali Ayurvedic Group", body: "Responsabilités opérationnelles dans les soins ayurvédiques, la fabrication, les centres et l’hospitalité, avec une distinction claire entre chaque activité.", link: { href: "/fr/travail", label: "Voir les activités" } },
       { title: "Investissements", body: "Intérêt pour les jeunes entreprises en biotechnologie, filières botaniques, soins personnels sobres et hospitalité durable.", link: { href: "/fr/investissements", label: "Approche d’investissement" } },
       { title: "Écrits et médias", body: "Contributions sur l’Ayurveda, l’entreprise familiale, la coopération internationale, le voyage de bien-être et la technologie opérationnelle.", link: { href: "/fr/ecrits", label: "Lire les textes" } },
+      { title: "AI-Human Workspace", body: "Un espace de travail public et versionné, créé par Abhilash K. Ramesh pour des collaborations durables entre humains, Codex et Claude. Le contexte, les validations, l’état des tâches, les preuves, les mises à jour et les procédures de retour arrière y restent explicites.", link: { href: "https://kairali-ai-method.vercel.app", label: "Visiter le site public" } },
     ],
   },
   about: {
