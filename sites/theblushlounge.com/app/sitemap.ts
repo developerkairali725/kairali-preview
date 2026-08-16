@@ -19,5 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.7,
     },
+    { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/cookie-policy", changeFrequency: "yearly", priority: 0.3 },
   ]) as MetadataRoute.Sitemap;
 }

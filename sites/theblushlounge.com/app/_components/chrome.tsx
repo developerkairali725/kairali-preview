@@ -137,6 +137,11 @@ export function SiteFooter() {
       </div>
       <div className="footer__bottom">
         <span>© {new Date().getFullYear()} Blush Lounge — Makeup by Sneha. All rights reserved.</span>
+        <nav className="footer__legal" aria-label="Privacy and legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/cookie-policy">Cookies</a>
+          <button type="button" data-consent-settings>Cookie settings</button>
+        </nav>
         <span>Delhi · Worldwide</span>
       </div>
     </footer>

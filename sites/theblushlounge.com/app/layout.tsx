@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { buildMetadata, faviconIcons } from "@kairali/seo";
-import { ConsentScripts, ConsentBanner } from "@kairali/consent";
-import { Analytics } from "@kairali/analytics";
 import "@kairali/ui/blush-tokens.css";
 import "./globals.css";
 import siteConfig from "../site.config.json";
+import { PrivacyConsent } from "./_components/privacy-consent";
 
 // A6 gate: buildMetadata THROWS on >60ch titles / >155ch descriptions, so a
 // non-conforming page fails `pnpm build` instead of shipping.
@@ -82,18 +82,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${montserrat.variable} ${allura.variable}`}>
       <head>
-        {/* Order is law: consent defaults (denied) BEFORE any tag loader */}
-        <ConsentScripts />
-        <Analytics />
+        {/* Basic Consent Mode: all optional storage and ad uses are denied
+            before hydration. The Google tag itself is rendered only after a
+            visitor deliberately allows Analytics in PrivacyConsent. */}
+        <Script id="blush-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=window.gtag||gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted'});gtag('set','ads_data_redaction',true);`}
+        </Script>
       </head>
       <body>
         {children}
-        {/* privacyHref deliberately omitted: the fleet's
-            shared legal pages name Kairali Ayurvedic Group as controller,
-            which would be a Kairali entity claim on Sneha's personal brand.
-            Sneha's controller/privacy decision remains a named launch-record
-            gap, so the banner must not link to a fabricated policy. */}
-        <ConsentBanner />
+        <PrivacyConsent />
       </body>
     </html>
   );
