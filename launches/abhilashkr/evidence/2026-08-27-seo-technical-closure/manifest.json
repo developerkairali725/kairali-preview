@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generated": "2026-08-27 20:47:05 IST",
+  "collected_at_utc": "2026-08-27T15:17:05Z",
+  "run_id": "2026-08-27-r3",
+  "producer": {
+    "session": "codex-2026-08-27-abhilash-seo-technical-closure",
+    "role": "builder"
+  },
+  "files": [
+    {
+      "path": "audit.md",
+      "sha256": "b1a0c336ffe3e9010256cbfa29de22111d205af2fe4a13bf07976ad8f1e0d6cf",
+      "bytes": 2088,
+      "run_id": "2026-08-27-r1"
+    },
+    {
+      "path": "change-gates.txt",
+      "sha256": "836592750fb7293e2dc2ce067d28677d6ae9b98e3347d48259272b8ab0307d44",
+      "bytes": 945,
+      "run_id": "2026-08-27-r1",
+      "superseded_by": "change-gates-v2.txt"
+    },
+    {
+      "path": "job-spec.yaml",
+      "sha256": "d035c96be570e5585e026f588e73797adeef0291bb0528d4645bf066b919015a",
+      "bytes": 24564,
+      "run_id": "2026-08-27-r1",
+      "superseded_by": "job-spec-staging-qa.yaml"
+    },
+    {
+      "path": "qa.md",
+      "sha256": "f8c697b2cf919057a984bdd732dac91cd92db48517b2150d011b5d400212ce1a",
+      "bytes": 4481,
+      "run_id": "2026-08-27-r1"
+    },
+    {
+      "path": "change-gates-v2.txt",
+      "sha256": "f590d175e2d1eac07f46a27c15ac3d067cc41b3f6c83a938c2984708915f4aad",
+      "bytes": 2764,
+      "run_id": "2026-08-27-r2"
+    },
+    {
+      "path": "job-spec-staging-qa.yaml",
+      "sha256": "e2e7b066555b909d6707a6b1eaff81d96cec2da82a54f0213cb7093ab4c5dfff",
+      "bytes": 24564,
+      "run_id": "2026-08-27-r3"
+    }
+  ]
+}
