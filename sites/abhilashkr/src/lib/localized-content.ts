@@ -136,7 +136,10 @@ const de: Record<PageKey, LocalizedPageContent> = {
     title: "Kontakt",
     intro: "Für Unternehmenskooperationen, Vorträge, Medienanfragen und passende Investitionsvorschläge nutzen Sie bitte die zentrale Kontaktadresse.",
     sections: [
-      { title: "E-Mail", body: "Bitte nennen Sie Ihr Anliegen, Ihre Organisation, den gewünschten Zeitrahmen und die beste Rückrufmöglichkeit. Die Website speichert keine Formulardaten.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Anfrage", label: "info@kairali.com schreiben" } },
+      { title: "E-Mail", body: "Bitte nennen Sie Ihr Anliegen, Ihre Organisation, den gewünschten Zeitrahmen und die beste Rückrufmöglichkeit. Der Link öffnet Ihr E-Mail-Programm; Sie müssen die Nachricht dort selbst senden. Die Website übermittelt oder speichert keine Nachricht.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Anfrage", label: "info@kairali.com schreiben" } },
+      { title: "Telefon (IVR)", body: "Zentrale Telefonnummer der Kairali Ayurvedic Group in Indien.", link: { href: "tel:+919555156156", label: "+91-9555-156-156" } },
+      { title: "LinkedIn", body: "Berufliches Profil von Abhilash Kalathil Ramesh.", link: { href: "https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/", label: "Abhilash Ramesh auf LinkedIn" } },
+      { title: "Kairali-Hauptsitz", body: "Neu-Delhi, Indien." },
       { title: "Hinweis", body: "Eine E-Mail-Anfrage ist keine medizinische Beratung und begründet keine Investitionszusage oder geschäftliche Verpflichtung." },
     ],
   },
@@ -289,7 +292,10 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     title: "Contact",
     intro: "Pour les collaborations, conférences, demandes médias et propositions d’investissement pertinentes, utilisez l’adresse centrale ci-dessous.",
     sections: [
-      { title: "Courriel", body: "Indiquez votre demande, votre organisation, le calendrier envisagé et le meilleur moyen de vous joindre. Le site ne stocke aucune donnée de formulaire.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Demande", label: "Écrire à info@kairali.com" } },
+      { title: "Courriel", body: "Indiquez votre demande, votre organisation, le calendrier envisagé et le meilleur moyen de vous joindre. Le lien ouvre votre logiciel de messagerie ; vous devez ensuite envoyer vous-même le message. Le site ne transmet ni ne stocke aucun message.", link: { href: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Demande", label: "Écrire à info@kairali.com" } },
+      { title: "Téléphone (serveur vocal)", body: "Numéro central de Kairali Ayurvedic Group en Inde.", link: { href: "tel:+919555156156", label: "+91-9555-156-156" } },
+      { title: "LinkedIn", body: "Profil professionnel d’Abhilash Kalathil Ramesh.", link: { href: "https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/", label: "Abhilash Ramesh sur LinkedIn" } },
+      { title: "Siège de Kairali", body: "New Delhi, Inde." },
       { title: "Précision", body: "Un courriel ne constitue ni un avis médical, ni un engagement d’investissement, ni une obligation commerciale." },
     ],
   },

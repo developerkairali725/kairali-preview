@@ -83,21 +83,46 @@ test.describe("Abhilash localized media and contact routing", () => {
     }
   });
 
-  test("makes the English contact coordinates actionable", async ({ page }) => {
-    await page.goto("/contact");
+  test("makes the contact coordinates actionable in all three languages", async ({ page }) => {
+    const linkedinHref =
+      "https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/";
 
+    await page.goto("/contact");
     await expect(page.getByRole("link", { name: "info@kairali.com", exact: true }).first()).toHaveAttribute(
       "href",
       "mailto:info@kairali.com",
     );
-    await expect(page.getByRole("link", { name: "+91-9555-156-156" })).toHaveAttribute(
-      "href",
-      "tel:+919555156156",
-    );
-    await expect(page.getByRole("link", { name: "Abhilash Ramesh" })).toHaveAttribute(
-      "href",
-      "https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/",
-    );
+    await expect(page.getByRole("link", { name: "+91-9555-156-156" })).toHaveAttribute("href", "tel:+919555156156");
+    await expect(page.getByRole("link", { name: "Abhilash Ramesh" })).toHaveAttribute("href", linkedinHref);
+
+    for (const localizedContact of [
+      {
+        route: "/de/kontakt",
+        emailName: "info@kairali.com schreiben",
+        emailHref: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Anfrage",
+        linkedinName: "Abhilash Ramesh auf LinkedIn",
+        disclosure: "Sie müssen die Nachricht dort selbst senden",
+      },
+      {
+        route: "/fr/contact",
+        emailName: "Écrire à info@kairali.com",
+        emailHref: "mailto:info@kairali.com?subject=abhilashkr.com%20%E2%80%94%20Demande",
+        linkedinName: "Abhilash Ramesh sur LinkedIn",
+        disclosure: "vous devez ensuite envoyer vous-même le message",
+      },
+    ]) {
+      await page.goto(localizedContact.route);
+      await expect(page.getByRole("link", { name: localizedContact.emailName })).toHaveAttribute(
+        "href",
+        localizedContact.emailHref,
+      );
+      await expect(page.getByRole("link", { name: "+91-9555-156-156" })).toHaveAttribute("href", "tel:+919555156156");
+      await expect(page.getByRole("link", { name: localizedContact.linkedinName })).toHaveAttribute(
+        "href",
+        linkedinHref,
+      );
+      await expect(page.getByText(localizedContact.disclosure, { exact: false })).toBeVisible();
+    }
   });
 
   test("states before and after form use that the site only prepares an email draft", async ({ page }) => {
