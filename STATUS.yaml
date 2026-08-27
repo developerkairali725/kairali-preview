@@ -297,9 +297,9 @@ sites:
     live_url: null
   - name: "abhilashkr.com"
     entity: "Personal"
-    stage: "preview"
+    stage: "live"
     owner: "Abilash"
-    blocker: "ISS-abhilashkr-com-0001 protected Preview ready; awaits PR CI and Abilash Preview approval before human merge/release"
+    blocker: "ISS-abhilashkr-com-0001 is LIVE_VERIFIED on dpl_HqJvDF728DFnWwYdwPRubYXTm2ED with 14/14 public mobile/desktop QA and PSI 90–98 mobile/100 desktop. ISS-abhilashkr-com-0002 is a narrow contact-heading accessibility follow-up in STAGING_QA; GTmetrix browser runs are quota-blocked pending an existing signed-in account or quota reset."
     updated: "2026-08-27"
     preview_url: "https://kairali-web-factory-abhilashkr-a6w0egkjx-kairali.vercel.app"
     live_url: "https://abhilashkr.com"

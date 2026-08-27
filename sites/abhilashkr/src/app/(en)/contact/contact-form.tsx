@@ -33,9 +33,9 @@ export default function ContactForm() {
 
   return (
     <div className="md:col-span-7 border border-border p-6 bg-card">
-      <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
+      <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
         Institutional Routing Form
-      </h3>
+      </h2>
 
       <p data-form-delivery-note className="mb-6 border-l border-primary pl-4 font-sans text-xs leading-relaxed text-ink-muted">
         This form does not send or store your message. It prepares an email to info@kairali.com in
@@ -47,7 +47,7 @@ export default function ContactForm() {
           <div className="size-12 rounded-full border border-primary flex items-center justify-center text-primary">
             <Check className="h-6 w-6" />
           </div>
-          <h4 className="font-display text-2xl italic text-ink">Email Draft Ready</h4>
+          <h3 className="font-display text-2xl italic text-ink">Email Draft Ready</h3>
           <p className="font-sans text-xs text-ink-muted max-w-xs">
             The site has requested your email app to open a draft addressed to info@kairali.com.
             Nothing has been sent or stored by this website. Review the draft and press Send in your

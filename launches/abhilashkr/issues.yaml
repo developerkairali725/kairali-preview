@@ -2,7 +2,7 @@ version: 1
 domain: abhilashkr.com
 issues:
   - id: ISS-abhilashkr-com-0001
-    state: STAGING_QA
+    state: LIVE_VERIFIED
     severity: P2
     site: abhilashkr.com
     class: organic
@@ -43,3 +43,45 @@ issues:
       - "2026-08-27 16:58:11 IST EVIDENCED→APPROVED evidence:DIRECTIVES.md#D-20260827-02"
       - "2026-08-27 17:12:00 IST APPROVED→IMPLEMENTING evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/job-spec.yaml"
       - "2026-08-27 17:34:00 IST IMPLEMENTING→STAGING_QA evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/qa.md"
+      - "2026-08-27 18:31:58 IST STAGING_QA→READY_FOR_RELEASE evidence:PR#288 protected checks green"
+      - "2026-08-27 18:37:57 IST READY_FOR_RELEASE→DEPLOYED evidence:dpl_HqJvDF728DFnWwYdwPRubYXTm2ED"
+      - "2026-08-27 18:42:00 IST DEPLOYED→LIVE_VERIFIED evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/live-release-and-performance.md"
+  - id: ISS-abhilashkr-com-0002
+    state: STAGING_QA
+    severity: P3
+    site: abhilashkr.com
+    class: organic
+    entity: personal
+    locales: [en]
+    scope: change
+    title: "Correct the English contact form heading hierarchy"
+    causal_hypothesis: "The contact form begins at h3 and its success heading is h4 even though the only preceding page heading is h1"
+    opportunity_economics:
+      value: "Restore sequential heading semantics and the missing PageSpeed accessibility point"
+      label: OBSERVED
+    evidence_refs:
+      - "launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/live-release-and-performance.md"
+    spec_intent: "Change only the contact form headings from h3/h4 to h2/h3 and prove their levels without altering visible copy or behavior"
+    spec_change_paths:
+      - "sites/abhilashkr/src/app/(en)/contact/contact-form.tsx"
+      - "tests/factory/abhilash-contact-i18n.spec.ts"
+    spec_change_kinds: []
+    spec_requested_tools: []
+    spec_output_schema: "Protected Preview URL + focused Playwright + post-release PageSpeed contact rerun"
+    definition_of_done: "The English contact page exposes h1 Direct Connect, h2 Institutional Routing Form and h3 Email Draft Ready; lint, build, focused mobile/desktop tests, protected checks and post-live PageSpeed accessibility pass"
+    retry_max_attempts: 2
+    timeout_minutes: 60
+    cost_budget:
+      tokens_max: 50000
+      usd_max: 1
+    builder_session: "codex-2026-08-27-abhilash-contact-heading-a11y"
+    verifier_session: "github-actions-pr-ci"
+    gate_subset_ref: "gates/class-map.yaml scope=change resolution for ISS-abhilashkr-com-0002"
+    approvals_ref: "owner current chat instruction to publish all fixes immediately"
+    monitoring_ref: "launches/abhilashkr/monitoring.yaml#ISS-abhilashkr-com-0002"
+    closure_grep: "Exact browser/Playwright heading-level read on /contact before and after the mail-draft action"
+    state_log:
+      - "2026-08-27 18:45:42 IST OPEN→EVIDENCED evidence:PageSpeed contact report 4xwq3ez5om"
+      - "2026-08-27 18:46:00 IST EVIDENCED→APPROVED evidence:owner current chat instruction"
+      - "2026-08-27 18:50:00 IST APPROVED→IMPLEMENTING evidence:source patch"
+      - "2026-08-27 18:55:28 IST IMPLEMENTING→STAGING_QA evidence:lint+build+14/14 local Playwright"
