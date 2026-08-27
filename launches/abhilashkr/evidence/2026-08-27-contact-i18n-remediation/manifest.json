@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated": "2026-08-27 17:32:21 IST",
-  "collected_at_utc": "2026-08-27T12:02:21Z",
-  "run_id": "2026-08-27-r7",
+  "generated": "2026-08-27 17:47:00 IST",
+  "collected_at_utc": "2026-08-27T12:17:00Z",
+  "run_id": "2026-08-27-r8",
   "producer": {
     "session": "codex-2026-08-27-abhilash-contact-i18n",
     "role": "builder"
@@ -52,6 +52,12 @@
       "sha256": "782b8d5af2d2c0f6d82f64e6583cb759574aa941a1e42097291aa3235fe811b2",
       "bytes": 2765,
       "run_id": "2026-08-27-r7"
+    },
+    {
+      "path": "preview-verification.md",
+      "sha256": "386d63e690833400d83e0c3b252a270406156137d804aeea7c8e65750a1e9749",
+      "bytes": 1648,
+      "run_id": "2026-08-27-r8"
     }
   ]
 }

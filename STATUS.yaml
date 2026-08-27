@@ -297,12 +297,12 @@ sites:
     live_url: null
   - name: "abhilashkr.com"
     entity: "Personal"
-    stage: "build"
+    stage: "preview"
     owner: "Abilash"
-    blocker: "Matrix-exempt (standing ruling); low priority"
-    updated: "2026-07-14"
-    preview_url: "https://kairali-web-factory-abhilashkr.vercel.app"
-    live_url: null
+    blocker: "ISS-abhilashkr-com-0001 protected Preview ready; awaits PR CI and Abilash Preview approval before human merge/release"
+    updated: "2026-08-27"
+    preview_url: "https://kairali-web-factory-abhilashkr-3okk1lz30-kairali.vercel.app"
+    live_url: "https://abhilashkr.com"
   - name: "whyayurveda.org"
     entity: "Kairali Group (blog)"
     stage: "live"
