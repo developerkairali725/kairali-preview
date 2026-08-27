@@ -854,6 +854,10 @@ a {
   background: var(--blush-champagne-deep);
 }
 
+.floating-whatsapp {
+  display: none;
+}
+
 .pagehero {
   padding-top: 72px;
   padding-bottom: 40px;
@@ -1137,6 +1141,12 @@ a {
   flex-wrap: wrap;
   gap: 8px;
   list-style: none;
+}
+
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .breadcrumbs li:not(:last-child)::after {
@@ -1529,6 +1539,60 @@ html[data-consent-open] body {
     margin-left: auto;
   }
 
+  .floating-whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 48px;
+    padding: 0 18px;
+    border: 1px solid var(--blush-champagne);
+    background: var(--blush-ink);
+    color: var(--blush-ivory);
+    box-shadow: var(--shadow-warm);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--track-caps);
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease,
+      visibility 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .floating-whatsapp[data-visible="true"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .floating-whatsapp:hover,
+  .floating-whatsapp:focus-visible {
+    background: var(--blush-champagne-deep);
+  }
+
+  .floating-whatsapp:active {
+    transform: translateY(1px);
+  }
+
+  html[data-consent-open] .floating-whatsapp {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+  }
+
   .pagehero {
     padding-top: 48px;
   }
@@ -1586,6 +1650,7 @@ html[data-consent-open] body {
   }
 
   .btn,
+  .floating-whatsapp,
   .service,
   .portfolio__item img,
   .journal-card__media img,

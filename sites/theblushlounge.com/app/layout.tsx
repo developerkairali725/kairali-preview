@@ -6,6 +6,7 @@ import { buildMetadata, faviconIcons } from "@kairali/seo";
 import "@kairali/ui/blush-tokens.css";
 import "./globals.css";
 import siteConfig from "../site.config.json";
+import { FloatingWhatsApp } from "./_components/floating-whatsapp";
 import { PrivacyConsent } from "./_components/privacy-consent";
 
 // A6 gate: buildMetadata THROWS on >60ch titles / >155ch descriptions, so a
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <FloatingWhatsApp />
         <PrivacyConsent />
       </body>
     </html>

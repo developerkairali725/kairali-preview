@@ -108,6 +108,23 @@ id = "generic-api-key"
     regexes = ['''^RPT-20260721-GPT-WALKTHROUGH$''']
     paths = ['''docs/research/2026-07-21-os-review-repo-sweep\.md''']
 
+    # FINDING 7 — 1x generic-api-key in
+    # docs/reports/2026-07-21-prompting-method-review.md (commit 92aace97).
+    # Inspected 2026-08-27 with gitleaks 8.30.1, the version gate.yml pins: NO
+    # credential is present. The rule matched the prose phrase
+    # "19.3M-token, 462-verdict-row", extracting "462-verdict-row" as the secret
+    # — an API-ish word ("token") followed by a hyphenated string is enough to
+    # trip generic-api-key. Both numbers are session statistics quoted in a
+    # method review.
+    # Anchored on the SECRET, not the line, exactly as the SCOPING NOTE above
+    # requires: a line-targeted regex here would exempt anything else sharing
+    # the line, which that note proved by canary. This exempts one literal
+    # string and nothing else.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^462-verdict-row$''']
+    paths = ['''docs/reports/2026-07-21-prompting-method-review\.md''']
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;
@@ -118,4 +135,19 @@ id = "generic-api-key"
   paths = [
     '''docs/ktahv-inputs/lp-mining/.*\.html''',
     '''content-mined/.*''',
+    # The migration lane captures the same class of artifact into its own
+    # evidence home, which did not exist when the two paths above were written.
+    # Added 2026-08-27 after `gitleaks git .` reported 3x generic-api-key on
+    # WPForms `data-token="…"` in a captured snapshot of the LIVE /about-us/
+    # page — the exact artifact the note above describes: a per-page-load
+    # anti-spam nonce the origin serves to every anonymous visitor.
+    #
+    # BOTH homes are listed on purpose. The snapshots live under launches/ per
+    # the placement rule (a captured .html under sites/ reads to the compliance
+    # lint as something we authored), and one was briefly committed under
+    # sites/ before being moved. That path is absent at HEAD, but this scan
+    # walks HISTORY, so omitting it would leave the gate red forever over a
+    # file that is already gone.
+    '''launches/[^/]+/migration/source-snapshots/.*\.html''',
+    '''sites/[^/]+/migration/source-snapshots/.*\.html''',
   ]
