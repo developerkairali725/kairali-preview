@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated": "2026-08-27 20:58:17 IST",
-  "collected_at_utc": "2026-08-27T15:28:17Z",
-  "run_id": "2026-08-27-r4",
+  "generated": "2026-08-28 01:52:35 IST",
+  "collected_at_utc": "2026-08-27T20:22:35Z",
+  "run_id": "2026-08-28-r2",
   "producer": {
-    "session": "codex-2026-08-27-abhilash-seo-technical-closure",
-    "role": "builder"
+    "session": "WOPS-ABHILASHKR-SEO-TECHNICAL-CLOSURE-001",
+    "role": "verifier"
   },
   "files": [
     {
@@ -44,13 +44,44 @@
       "path": "job-spec-staging-qa.yaml",
       "sha256": "e2e7b066555b909d6707a6b1eaff81d96cec2da82a54f0213cb7093ab4c5dfff",
       "bytes": 24564,
-      "run_id": "2026-08-27-r3"
+      "run_id": "2026-08-27-r3",
+      "superseded_by": "job-spec-live-verified.yaml"
     },
     {
       "path": "preview-verification.md",
       "sha256": "ee538be89d64618dc7fba4a28cf0803d3977bbd65350c11a781fcd30d0d4d5cc",
       "bytes": 2069,
       "run_id": "2026-08-27-r4"
+    },
+    {
+      "path": "job-spec-contact-heading-live-verified.yaml",
+      "sha256": "0a6bbdcf30930a0aa2ce23e1a59920393284bb8a1cfce451a62de6abe0dda26a",
+      "bytes": 30843,
+      "run_id": "2026-08-28-r1"
+    },
+    {
+      "path": "job-spec-live-verified.yaml",
+      "sha256": "9ebd8ac96c0dc3c9d8a95342e2edad8c9c131ff3ab53bf9530c47092e23623af",
+      "bytes": 24682,
+      "run_id": "2026-08-28-r1"
+    },
+    {
+      "path": "post-release.md",
+      "sha256": "e17cc1c0e0dca36fc2d0439e57f1306e1d1a888ae5f3f7a8ee48ff6a38218e80",
+      "bytes": 4194,
+      "run_id": "2026-08-28-r1"
+    },
+    {
+      "path": "automated-accessibility-security-closeout.md",
+      "sha256": "be4c9ed71f18237356c9fa3b2ff8ff76ae215044f3bfdd2b7f551958a3a7ab23",
+      "bytes": 2488,
+      "run_id": "2026-08-28-r2"
+    },
+    {
+      "path": "search-monitoring-closeout.md",
+      "sha256": "a8df4d224d0f3491e212dc91f1c9a37dd57de40993a84a83c57a96fee63b5861",
+      "bytes": 4667,
+      "run_id": "2026-08-28-r2"
     }
   ]
 }
