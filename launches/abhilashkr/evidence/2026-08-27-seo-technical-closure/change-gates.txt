@@ -1,0 +1,9 @@
+═══ change-gates-resolve — per-change gate resolution ═══
+mode: INFORMATIONAL (M2) — posted as CI evidence, the D-20260719-09 "declared capability actually fired" trail;
+      becomes BLOCKING when the job-spec envelope consumes this resolution at the M4 pilot. Broken resolver ⇒ exit 1, never a silent pass.
+law:  gates/class-map.yaml — per-change set = (change_relevant ∪ matched trigger adds) ∩ composed WHICH-set; fail-closed law lint-pinned.
+base: 6e83b8722fc3 → head: 6e83b8722fc3 · 0 diff entries · 0 path(s) incl. both rename sides
+kinds: (none) (route-rename/route-delete derived from the diff; content-only honored ONLY when path-proven)
+generated: 2026-08-27 20:34:12 IST (meta only — the block below is deterministic per diff)
+
+RESOLUTION: no site gates in scope — the diff touches no sites/<domain>/**, launches/<domain>/**, or trigger-matched shared surface (docs/scripts-only change). Clean no-op.

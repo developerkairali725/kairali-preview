@@ -176,7 +176,9 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
       expect(res.ok(), `${tag.href} fetch failed`).toBeTruthy();
       const html = await res.text();
       for (const locale of config.locales) {
-        expect(html, `${tag.href} lacks reciprocal hreflang ${locale}`).toContain(`hreflang="${locale}"`);
+        expect(html, `${tag.href} lacks reciprocal hreflang ${locale}`).toMatch(
+          new RegExp(`hreflang=["']${locale}["']`, "i"),
+        );
       }
     }
     // a visible locale switcher exists

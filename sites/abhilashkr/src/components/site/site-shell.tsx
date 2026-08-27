@@ -3,11 +3,12 @@ import type { ReactNode } from "react";
 import { Analytics } from "@/components/site/analytics";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
+import { JsonLd } from "@/components/site/json-ld";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Locale } from "@/lib/i18n";
 import { instrumentSans, instrumentSerif, ibmPlexMono } from "@/lib/fonts";
-import { getPersonSchema } from "@/lib/schema";
+import { getSiteSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
 type SiteShellProps = {
@@ -16,7 +17,7 @@ type SiteShellProps = {
 };
 
 export function SiteShell({ children, locale }: SiteShellProps) {
-  const schemaData = getPersonSchema();
+  const schemaData = getSiteSchema();
 
   return (
     <html
@@ -30,10 +31,7 @@ export function SiteShell({ children, locale }: SiteShellProps) {
       )}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <JsonLd data={schemaData} />
         <ThemeProvider>
           <TooltipProvider>
             <Header locale={locale} />

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { getAllEssays } from "@/lib/mdx";
 import { ZariRule } from "@/components/ui/ledger";
 import { Metadata } from "next";
@@ -38,6 +39,7 @@ export default function WritingIndexPage() {
   return (
     <div className="w-full bg-background text-foreground py-12 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
+        <Breadcrumbs locale="en" pageKey="writing" />
         
         {/* Header Section */}
         <div className="flex flex-col space-y-4 mb-12">

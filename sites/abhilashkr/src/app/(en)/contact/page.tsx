@@ -1,4 +1,5 @@
 import React from "react";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import ContactForm from "./contact-form";
 import { Metadata } from "next";
@@ -37,61 +38,62 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="w-full bg-background text-foreground py-12 md:py-20">
-      <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
-        
-        {/* Left Side: Contact Coordinates */}
-        <div className="md:col-span-5 flex flex-col space-y-6">
-          <div className="font-mono text-[10px] tracking-widest uppercase text-primary">
-            contact coordinates
-          </div>
-          <h1 className="font-display text-4xl md:text-5xl italic text-ink">
-            Direct Connect
-          </h1>
-          <p className="font-sans text-xs text-ink-muted leading-relaxed">
-            For institutional partnerships, speaking requests, or investment pitches, connect via the channels listed below.
-          </p>
+      <div className="max-w-4xl mx-auto px-6">
+        <Breadcrumbs locale="en" pageKey="contact" />
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+          {/* Left Side: Contact Coordinates */}
+          <div className="md:col-span-5 flex flex-col space-y-6">
+            <div className="font-mono text-[10px] tracking-widest uppercase text-primary">
+              contact coordinates
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl italic text-ink">
+              Direct Connect
+            </h1>
+            <p className="font-sans text-xs text-ink-muted leading-relaxed">
+              For institutional partnerships, speaking requests, or investment pitches, connect via the channels listed below.
+            </p>
 
-          <ZariRule />
+            <ZariRule />
 
-          <div className="pt-2">
-            <LedgerList>
-              <LedgerRow
-                label="Primary Email"
-                value={
-                  <a href="mailto:info@kairali.com" className={contactLinkClassName}>
-                    info@kairali.com
-                  </a>
-                }
-              />
-              <LedgerRow
-                label="Phone (IVR)"
-                value={
-                  <a href="tel:+919555156156" className={contactLinkClassName}>
-                    +91-9555-156-156
-                  </a>
-                }
-              />
-              <LedgerRow
-                label="LinkedIn"
-                value={
-                  <a
-                    href="https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={contactLinkClassName}
-                  >
-                    Abhilash Ramesh
-                  </a>
-                }
-              />
-              <LedgerRow label="Kairali HQ" value="New Delhi, India" />
-            </LedgerList>
+            <div className="pt-2">
+              <LedgerList>
+                <LedgerRow
+                  label="Primary Email"
+                  value={
+                    <a href="mailto:info@kairali.com" className={contactLinkClassName}>
+                      info@kairali.com
+                    </a>
+                  }
+                />
+                <LedgerRow
+                  label="Phone (IVR)"
+                  value={
+                    <a href="tel:+919555156156" className={contactLinkClassName}>
+                      +91-9555-156-156
+                    </a>
+                  }
+                />
+                <LedgerRow
+                  label="LinkedIn"
+                  value={
+                    <a
+                      href="https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={contactLinkClassName}
+                    >
+                      Abhilash Ramesh
+                    </a>
+                  }
+                />
+                <LedgerRow label="Kairali HQ" value="New Delhi, India" />
+              </LedgerList>
+            </div>
           </div>
+
+          {/* Right Side: Contact Form */}
+          <ContactForm />
         </div>
-
-        {/* Right Side: Contact Form */}
-        <ContactForm />
-
       </div>
     </div>
   );

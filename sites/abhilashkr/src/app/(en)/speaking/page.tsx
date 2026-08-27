@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import { Metadata } from "next";
 import { SITE_URL } from "@/lib/config";
@@ -36,6 +37,7 @@ export default function SpeakingPage() {
   return (
     <div className="w-full bg-background text-foreground py-12 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
+        <Breadcrumbs locale="en" pageKey="speaking" />
         
         {/* Header Section */}
         <div className="flex flex-col space-y-4 mb-12">
@@ -72,42 +74,42 @@ export default function SpeakingPage() {
 
         {/* Core Topics Ledger */}
         <section className="mb-16">
-          <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
+          <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
             Core Topics & Selected Speeches
-          </h3>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-border p-6 bg-card flex flex-col justify-between">
-              <h4 className="font-display text-xl italic text-ink mb-2">
+              <h3 className="font-display text-xl italic text-ink mb-2">
                 Globalising Ayurveda Without Dilution
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-ink-muted leading-relaxed">
                 Bridging East and West by scaling heritage clinical medicine internationally while preserving core therapeutic standards and lineages.
               </p>
             </div>
 
             <div className="border border-border p-6 bg-card flex flex-col justify-between">
-              <h4 className="font-display text-xl italic text-ink mb-2">
+              <h3 className="font-display text-xl italic text-ink mb-2">
                 Futuristic Ayurveda Applications
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-ink-muted leading-relaxed">
                 Harnessing AI, machine learning, and structured data systems to standardise legacy workflows and clinical diagnostic recording.
               </p>
             </div>
 
             <div className="border border-border p-6 bg-card flex flex-col justify-between">
-              <h4 className="font-display text-xl italic text-ink mb-2">
+              <h3 className="font-display text-xl italic text-ink mb-2">
                 Medical Tourism & Insurance integration
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-ink-muted leading-relaxed">
                 Structuring clinical precision, evidence-based integrative protocols, and safety standards to align with international health insurance frameworks.
               </p>
             </div>
 
             <div className="border border-border p-6 bg-card flex flex-col justify-between">
-              <h4 className="font-display text-xl italic text-ink mb-2">
+              <h3 className="font-display text-xl italic text-ink mb-2">
                 Wellness Startup Ecosystems
-              </h4>
+              </h3>
               <p className="font-sans text-xs text-ink-muted leading-relaxed">
                 Advising and investing in clean-label botanical formulations, organic agricultural supply chains, and regenerative hospitality models.
               </p>
@@ -121,9 +123,9 @@ export default function SpeakingPage() {
         <section className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8">
           
           <div className="md:col-span-6">
-            <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
+            <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
               Speaker Assets
-            </h3>
+            </h2>
             <div className="flex flex-col space-y-3 font-mono text-xs">
               <a 
                 href="/images/abhilash-portrait.png" 
@@ -144,9 +146,9 @@ export default function SpeakingPage() {
           </div>
 
           <div className="md:col-span-6">
-            <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
+            <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
               Identification
-            </h3>
+            </h2>
             <LedgerList>
               <LedgerRow label="Full Name" value="Abhilash Kalathil Ramesh" />
               <LedgerRow label="Affiliation" value="Executive Director, Kairali Group" />

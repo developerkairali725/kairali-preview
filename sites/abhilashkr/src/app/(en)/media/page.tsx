@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ZariRule } from "@/components/ui/ledger";
 import { Metadata } from "next";
 import { SITE_URL } from "@/lib/config";
@@ -71,6 +72,7 @@ export default function MediaPage() {
   return (
     <div className="w-full bg-background text-foreground py-12 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
+        <Breadcrumbs locale="en" pageKey="media" />
         
         {/* Header Section */}
         <div className="flex flex-col space-y-4 mb-12">

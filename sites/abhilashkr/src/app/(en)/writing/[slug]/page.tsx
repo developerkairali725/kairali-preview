@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { JsonLd } from "@/components/site/json-ld";
 import { getAllEssays, getEssayBySlug } from "@/lib/mdx";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import { ReadingProgressBar, CopyLinkButton } from "@/components/ui/primitives";
@@ -72,7 +74,7 @@ export default async function EssayDetailPage({ params }: PageProps) {
     "@id": `${SITE_URL}/writing/${essay.slug}#article`,
     "isPartOf": {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/writing/${essay.slug}`
+      "@id": `${SITE_URL}/writing/${essay.slug}#webpage`
     },
     "headline": essay.title,
     "description": essay.description,
@@ -84,21 +86,24 @@ export default async function EssayDetailPage({ params }: PageProps) {
       "name": "Abhilash Kalathil Ramesh"
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Kairali Ayurvedic Group",
-      "url": "https://www.kairali.com"
+      "@id": `${SITE_URL}/#person`
     }
   };
 
   return (
     <div className="w-full bg-background text-foreground min-h-screen py-12 md:py-20 relative">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={articleSchema} />
       <ReadingProgressBar />
       
       <div className="max-w-3xl mx-auto px-6">
+        <Breadcrumbs
+          locale="en"
+          pageKey="writing"
+          parentKey="writing"
+          currentLabel={essay.title}
+          currentPath={`/writing/${essay.slug}`}
+          pageType="WebPage"
+        />
         
         {/* Back navigation & Copy Utility */}
         <div className="flex justify-between items-center mb-8">

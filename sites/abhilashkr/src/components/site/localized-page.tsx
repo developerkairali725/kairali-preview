@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { JsonLd } from "@/components/site/json-ld";
 import { ZariRule } from "@/components/ui/ledger";
 import { hrefFor, type LocalizedLocale, type PageKey } from "@/lib/i18n";
 import { LOCALIZED_CONTENT, type LocalizedImage } from "@/lib/localized-content";
@@ -57,33 +59,27 @@ function FramedImage({
 export function LocalizedPage({ locale, pageKey }: LocalizedPageProps) {
   const content = LOCALIZED_CONTENT[locale][pageKey];
   const isFaq = pageKey === "faq";
-  const schema = isFaq
+  const faqSchema = isFaq
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": `${SITE_URL}${hrefFor(locale, pageKey)}#faq`,
         inLanguage: locale,
         url: `${SITE_URL}${hrefFor(locale, pageKey)}`,
+        isPartOf: { "@id": `${SITE_URL}${hrefFor(locale, pageKey)}#webpage` },
         mainEntity: content.sections.map((section) => ({
           "@type": "Question",
           name: section.title,
           acceptedAnswer: { "@type": "Answer", text: section.body },
         })),
       }
-    : {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        inLanguage: locale,
-        url: `${SITE_URL}${hrefFor(locale, pageKey)}`,
-        mainEntity: { "@id": `${SITE_URL}/#person` },
-      };
+    : null;
 
   return (
     <div className="w-full bg-background py-12 text-foreground md:py-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <div className="mx-auto max-w-5xl px-6">
+        <Breadcrumbs locale={locale} pageKey={pageKey} />
         <div className={content.heroImage ? "grid grid-cols-1 items-center gap-10 lg:grid-cols-12" : ""}>
           <header className={`flex max-w-3xl flex-col space-y-4 ${content.heroImage ? "lg:col-span-7" : ""}`}>
             <p className="font-mono text-[10px] uppercase tracking-widest text-primary">
