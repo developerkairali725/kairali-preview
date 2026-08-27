@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated": "2026-08-28 01:52:35 IST",
-  "collected_at_utc": "2026-08-27T20:22:35Z",
-  "run_id": "2026-08-28-r2",
+  "generated": "2026-08-28 02:21:29 IST",
+  "collected_at_utc": "2026-08-27T20:51:29Z",
+  "run_id": "2026-08-28-r3",
   "producer": {
     "session": "WOPS-ABHILASHKR-SEO-TECHNICAL-CLOSURE-001",
     "role": "verifier"
@@ -82,6 +82,12 @@
       "sha256": "a8df4d224d0f3491e212dc91f1c9a37dd57de40993a84a83c57a96fee63b5861",
       "bytes": 4667,
       "run_id": "2026-08-28-r2"
+    },
+    {
+      "path": "bing-webmaster-import.md",
+      "sha256": "9ad880840390a81c3c4cf4e7efb4107a4ee2b89b687d141527b212a6d82d1659",
+      "bytes": 3295,
+      "run_id": "2026-08-28-r3"
     }
   ]
 }
