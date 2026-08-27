@@ -162,6 +162,8 @@ export default function HomePage() {
             width={1400}
             height={2489}
             priority
+            fetchPriority="high"
+            quality={70}
             sizes="(max-width: 900px) 100vw, 53vw"
           />
           {/* battery pass-1: credit is now a LINK to her profile (IG-born

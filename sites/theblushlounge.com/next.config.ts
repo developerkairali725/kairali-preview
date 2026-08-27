@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Prefer AVIF for modern browsers. The portrait source is intentionally
+  // detailed, so AVIF reduces the homepage LCP transfer without softening the
+  // approved beauty image; WebP remains the compatibility fallback.
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
   // WordPress published its article permalinks with trailing slashes. The
   // default framework normalizer would create an avoidable first hop before
   // the content redirect. middleware.ts owns slash normalization so those

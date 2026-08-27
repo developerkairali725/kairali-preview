@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-08-27 18:15:59 IST",
-  "generated_utc": "2026-08-27T12:45:59Z",
+  "generated": "2026-08-27 18:19:33 IST",
+  "generated_utc": "2026-08-27T12:49:33Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -829,9 +829,9 @@
       "stage": "monitoring",
       "phase": 8,
       "owner": "Abilash",
-      "blocker": "Production live and healthy; Search Console property verified, six-URL sitemap accepted and indexing requested. GA4 property/stream G-6K7HVLYXZQ is prepared but the tag stays off until Sneha's controller/privacy decision and consent QA. GBP waits for exact staffed-location versus service-area, address and hours facts. Deepu's 77-card review and the protected hardening PR remain; renew the domain before 28 Oct 2026.",
-      "updated": "2026-08-11",
-      "preview_url": "https://kairali-web-factory-theblushlounge-4119ag1dh-kairali.vercel.app",
+      "blocker": "Production live and healthy. Journal breadcrumb alignment and the mobile-only WhatsApp CTA passed build, factory, consent, browser and Vercel Preview QA under WOPS-BLUSH-JOURNAL-WHATSAPP-UX-001; PR #286 is queued for protected merge and same-artifact production promotion. Search Console is verified; GA4 G-6K7HVLYXZQ remains off until Sneha's controller/privacy decision and consent QA. GBP still waits for exact staffed-location versus service-area, address and hours facts; renew the domain before 28 Oct 2026.",
+      "updated": "2026-08-27",
+      "preview_url": "https://kairali-web-factory-theblushlounge-etpiuvja8-kairali.vercel.app",
       "live_url": "https://theblushlounge.com",
       "vector": {
         "site_class": "organic",
@@ -870,9 +870,7 @@
         "audits": 2,
         "checklists": true
       },
-      "waiting_on": [
-        "Deepu"
-      ]
+      "waiting_on": []
     },
     {
       "name": "snehachowdhary.com",
