@@ -12,9 +12,12 @@ test.describe("Blush responsive page header", () => {
   test("keeps a compact two-tier header across phone widths", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "mobile-375", "Phone-width matrix runs once in the mobile project");
 
+    await page.setViewportSize({ width: 320, height: 915 });
+    await page.goto("/services", { waitUntil: "domcontentloaded" });
+
     for (const width of [320, 375, 412, 480]) {
       await page.setViewportSize({ width, height: 915 });
-      await page.goto("/services");
+      await expect(page.locator(".pagehead")).toBeVisible();
 
       const geometry = await page.evaluate(() => {
         const header = document.querySelector<HTMLElement>(".pagehead");
