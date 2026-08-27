@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { BioSelector } from "@/components/site/bio-selector";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import { Metadata } from "next";
 import { SITE_URL } from "@/lib/config";
@@ -36,6 +37,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-background text-foreground py-12 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
+        <Breadcrumbs locale="en" pageKey="about" />
         
         {/* Header Section */}
         <div className="flex flex-col space-y-4 mb-12">
@@ -78,9 +80,9 @@ export default function AboutPage() {
           {/* Details Column */}
           <div className="md:col-span-7 flex flex-col space-y-6">
             <div>
-              <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-3">
+              <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-3">
                 Details
-              </h3>
+              </h2>
               <LedgerList>
                 <LedgerRow label="Education" value="FIU — Bachelor's, Civil Engineering (2000–2004)" />
                 <LedgerRow 
@@ -98,9 +100,9 @@ export default function AboutPage() {
 
         {/* Bio Copying Suite */}
         <section className="mb-16">
-          <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
+          <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-4">
             Press & Speaking Bios
-          </h3>
+          </h2>
           <BioSelector />
         </section>
 
@@ -108,9 +110,9 @@ export default function AboutPage() {
 
         {/* Historical Timeline (Career-era only) */}
         <section className="mb-16">
-          <h3 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
+          <h2 className="font-mono text-xs tracking-widest uppercase text-ink-muted mb-6">
             Career Timeline
-          </h3>
+          </h2>
           
           <div className="flex flex-col space-y-8 font-mono text-xs border-l border-border pl-6 relative">
             

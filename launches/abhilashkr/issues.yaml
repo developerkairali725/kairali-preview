@@ -85,3 +85,49 @@ issues:
       - "2026-08-27 18:46:00 IST EVIDENCED→APPROVED evidence:owner current chat instruction"
       - "2026-08-27 18:50:00 IST APPROVED→IMPLEMENTING evidence:source patch"
       - "2026-08-27 18:55:28 IST IMPLEMENTING→STAGING_QA evidence:lint+build+14/14 local Playwright"
+  - id: ISS-abhilashkr-com-0003
+    state: STAGING_QA
+    severity: P2
+    site: abhilashkr.com
+    class: organic
+    entity: personal
+    locales: [en, de, fr]
+    scope: change
+    title: "Close production-safe technical SEO, structured-data and security gaps"
+    causal_hypothesis: "Inner routes lack visible and machine-readable breadcrumbs, the global entity data has no stable WebSite/Organization graph, and the response policy lacks CSP"
+    opportunity_economics:
+      value: "Give all inner routes consistent navigation context and reduce the remaining technical discovery and browser-security gaps"
+      label: OBSERVED
+    evidence_refs:
+      - "launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/audit.md sha256:0c26ce986e87c9b34823cac8b0ba030a835c1a372424094b53aeb91edb074dad"
+    spec_intent: "Add localized visible breadcrumbs plus BreadcrumbList and page schema, strengthen the global Person/WebSite/Organization graph, add a production-compatible CSP and focused browser regression coverage"
+    spec_change_paths:
+      - "sites/abhilashkr/src/components/site/breadcrumbs.tsx"
+      - "sites/abhilashkr/src/components/site/json-ld.tsx"
+      - "sites/abhilashkr/src/components/site/site-shell.tsx"
+      - "sites/abhilashkr/src/components/site/localized-page.tsx"
+      - "sites/abhilashkr/src/lib/schema.ts"
+      - "sites/abhilashkr/next.config.ts"
+      - "sites/abhilashkr/src/app/(en)"
+      - "tests/factory/abhilash-seo-security.spec.ts"
+      - "tests/factory/factory-site.spec.ts"
+    spec_change_kinds: [component, schema, headers, test]
+    spec_requested_tools: []
+    spec_output_schema: "Protected Preview URL + breadcrumb/schema/header crawl + focused mobile/desktop Playwright + Lighthouse + evidence manifest"
+    definition_of_done: "Every non-home EN/DE/FR sitemap route renders localized visible breadcrumbs and a valid BreadcrumbList tied to a WebPage node; the global graph exposes stable Person, WebSite and Organization IDs; CSP and complementary headers do not break navigation, imagery, contact or consent-gated analytics; lint, build, focused browser checks, security gates, Preview QA and post-live verification pass"
+    retry_max_attempts: 2
+    timeout_minutes: 180
+    cost_budget:
+      tokens_max: 200000
+      usd_max: 3
+    builder_session: "codex-2026-08-27-abhilash-seo-technical-closure"
+    verifier_session: "github-actions-pr-ci"
+    gate_subset_ref: "gates/class-map.yaml scope=change resolution for ISS-abhilashkr-com-0003"
+    approvals_ref: "DIRECTIVES.md#D-20260827-03"
+    monitoring_ref: "launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/post-release.md"
+    closure_grep: "Playwright crawl of all inner sitemap routes for localized visible breadcrumbs, BreadcrumbList/WebPage graph and security headers; public post-release crawl and PageSpeed"
+    state_log:
+      - "2026-08-27 20:13:20 IST OPEN→EVIDENCED evidence:launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/audit.md"
+      - "2026-08-27 20:13:40 IST EVIDENCED→APPROVED evidence:DIRECTIVES.md#D-20260827-03"
+      - "2026-08-27 20:13:57 IST APPROVED→IMPLEMENTING evidence:source branch codex/abhilash-seo-technical-closure-20260827"
+      - "2026-08-27 20:39:11 IST IMPLEMENTING→STAGING_QA evidence:launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/qa.md"

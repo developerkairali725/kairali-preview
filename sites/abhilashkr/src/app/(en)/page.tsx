@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { ZariRule, LedgerList, LedgerRow } from "@/components/ui/ledger";
 import { ArrowUpRight, BookOpen, Award } from "lucide-react";
 import { Metadata } from "next";
@@ -10,7 +11,7 @@ import { alternatesFor } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Abhilash Kalathil Ramesh | Executive Director",
-  description: "Abhilash Kalathil Ramesh: Executive Director of Kairali Ayurvedic Group, AYUSHEXCIL founding board member, angel investor, and creator of AI-Human Workspace.",
+  description: "Abhilash Kalathil Ramesh: Kairali Ayurvedic Group Executive Director, AYUSHEXCIL founding board member, angel investor, and AI-Human Workspace creator.",
   alternates: alternatesFor("home"),
   openGraph: {
     title: "Abhilash Kalathil Ramesh | Executive Director",
@@ -40,6 +41,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full bg-background text-foreground min-h-screen">
+      <Breadcrumbs locale="en" pageKey="home" />
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         

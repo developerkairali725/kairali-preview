@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { alternatesFor } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <article className="mx-auto w-full max-w-3xl px-6 py-20">
+      <Breadcrumbs locale="en" pageKey="privacy" />
       <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">Site notice</p>
       <h1 className="mt-4 font-display text-5xl text-ink">Privacy</h1>
       <div className="mt-10 space-y-8 font-sans leading-relaxed text-ink-muted">
