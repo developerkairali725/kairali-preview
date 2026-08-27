@@ -5,6 +5,9 @@ import { Metadata } from "next";
 import { SITE_URL } from "@/lib/config";
 import { alternatesFor } from "@/lib/i18n";
 
+const contactLinkClassName =
+  "underline decoration-primary/50 underline-offset-4 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
+
 export const metadata: Metadata = {
   title: "Direct Connect & Routing | Abhilash K. Ramesh",
   description: "Get in touch directly for institutional operations, speaking engagements, or investment proposals.",
@@ -52,9 +55,35 @@ export default function ContactPage() {
 
           <div className="pt-2">
             <LedgerList>
-              <LedgerRow label="Primary Email" value="info@kairali.com" />
-              <LedgerRow label="Phone (IVR)" value="+91-9555-156-156" />
-              <LedgerRow label="LinkedIn" value="Abhilash Ramesh" />
+              <LedgerRow
+                label="Primary Email"
+                value={
+                  <a href="mailto:info@kairali.com" className={contactLinkClassName}>
+                    info@kairali.com
+                  </a>
+                }
+              />
+              <LedgerRow
+                label="Phone (IVR)"
+                value={
+                  <a href="tel:+919555156156" className={contactLinkClassName}>
+                    +91-9555-156-156
+                  </a>
+                }
+              />
+              <LedgerRow
+                label="LinkedIn"
+                value={
+                  <a
+                    href="https://www.linkedin.com/in/abhilashkramesh-ayurvedicmedicine-ayurvedicherbalproducts/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={contactLinkClassName}
+                  >
+                    Abhilash Ramesh
+                  </a>
+                }
+              />
               <LedgerRow label="Kairali HQ" value="New Delhi, India" />
             </LedgerList>
           </div>

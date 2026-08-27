@@ -1,14 +1,58 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ZariRule } from "@/components/ui/ledger";
 import { hrefFor, type LocalizedLocale, type PageKey } from "@/lib/i18n";
-import { LOCALIZED_CONTENT } from "@/lib/localized-content";
+import { LOCALIZED_CONTENT, type LocalizedImage } from "@/lib/localized-content";
 import { SITE_URL } from "@/lib/config";
 
 type LocalizedPageProps = {
   locale: LocalizedLocale;
   pageKey: PageKey;
 };
+
+type ImageAspect = "portrait" | "square" | "wide" | "landscape";
+
+const imageAspectClasses: Record<ImageAspect, string> = {
+  portrait: "aspect-[4/5]",
+  square: "aspect-square",
+  wide: "aspect-[21/9]",
+  landscape: "aspect-[3/2]",
+};
+
+function FramedImage({
+  image,
+  aspect,
+  priority = false,
+  monochrome = false,
+  sizes,
+}: {
+  image: LocalizedImage;
+  aspect: ImageAspect;
+  priority?: boolean;
+  monochrome?: boolean;
+  sizes: string;
+}) {
+  return (
+    <div className={`relative w-full overflow-hidden border border-border bg-card p-1 ${imageAspectClasses[aspect]}`}>
+      <div className="relative size-full overflow-hidden border border-primary/20">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          priority={priority}
+          sizes={sizes}
+          className={`object-cover ${monochrome ? "grayscale transition-all duration-700 ease-in-out hover:grayscale-0" : ""}`}
+          style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+        />
+      </div>
+      <span aria-hidden="true" className="absolute left-0 top-0 size-3 border-l border-t border-primary" />
+      <span aria-hidden="true" className="absolute right-0 top-0 size-3 border-r border-t border-primary" />
+      <span aria-hidden="true" className="absolute bottom-0 left-0 size-3 border-b border-l border-primary" />
+      <span aria-hidden="true" className="absolute bottom-0 right-0 size-3 border-b border-r border-primary" />
+    </div>
+  );
+}
 
 export function LocalizedPage({ locale, pageKey }: LocalizedPageProps) {
   const content = LOCALIZED_CONTENT[locale][pageKey];
@@ -40,15 +84,41 @@ export function LocalizedPage({ locale, pageKey }: LocalizedPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div className="mx-auto max-w-5xl px-6">
-        <header className="flex max-w-3xl flex-col space-y-4">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-primary">
-            {content.eyebrow}
-          </p>
-          <h1 className="font-display text-4xl italic leading-tight text-ink md:text-6xl">
-            {content.title}
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-ink-muted">{content.intro}</p>
-        </header>
+        <div className={content.heroImage ? "grid grid-cols-1 items-center gap-10 lg:grid-cols-12" : ""}>
+          <header className={`flex max-w-3xl flex-col space-y-4 ${content.heroImage ? "lg:col-span-7" : ""}`}>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-primary">
+              {content.eyebrow}
+            </p>
+            <h1 className="font-display text-4xl italic leading-tight text-ink md:text-6xl">
+              {content.title}
+            </h1>
+            <p className="font-sans text-base leading-relaxed text-ink-muted">{content.intro}</p>
+          </header>
+
+          {content.heroImage ? (
+            <div className="mx-auto w-full max-w-sm lg:col-span-5">
+              <FramedImage
+                image={content.heroImage}
+                aspect={content.heroImage.aspect}
+                priority
+                monochrome
+                sizes="(max-width: 1024px) 100vw, 400px"
+              />
+            </div>
+          ) : null}
+        </div>
+
+        {content.bannerImage ? (
+          <div className="mt-12">
+            <FramedImage
+              image={content.bannerImage}
+              aspect="wide"
+              priority={pageKey === "speaking"}
+              monochrome={pageKey === "speaking"}
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </div>
+        ) : null}
 
         <ZariRule className="my-12" />
 
@@ -57,6 +127,22 @@ export function LocalizedPage({ locale, pageKey }: LocalizedPageProps) {
             const isExternal = section.link?.href.startsWith("http");
             return (
               <article key={section.title} className="flex min-h-56 flex-col border border-border bg-card p-6">
+                {section.images ? (
+                  <div className="mb-6 grid grid-cols-1 gap-3 md:grid-cols-2">
+                    {section.images.map((image, index) => (
+                      <div
+                        key={image.src}
+                        className={section.images?.length === 3 && index === 0 ? "md:col-span-2" : ""}
+                      >
+                        <FramedImage
+                          image={image}
+                          aspect="landscape"
+                          sizes="(max-width: 768px) 100vw, 480px"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
                 <h2 className="font-display text-2xl italic text-ink">{section.title}</h2>
                 <p className="mt-4 font-sans text-sm leading-relaxed text-ink-muted">{section.body}</p>
                 {section.link ? (

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generated": "2026-08-27 17:31:46 IST",
+  "collected_at_utc": "2026-08-27T12:01:46Z",
+  "run_id": "2026-08-27-r6",
+  "producer": {
+    "session": "codex-2026-08-27-abhilash-contact-i18n",
+    "role": "builder"
+  },
+  "files": [
+    {
+      "path": "audit.md",
+      "sha256": "aae4e531785dcbcb4e6a892fe8027920c64f96a81c3522f67dbb373fff964baa",
+      "bytes": 2091,
+      "run_id": "2026-08-27-r1"
+    },
+    {
+      "path": "job-spec.yaml",
+      "sha256": "48e10d2e1c7d1400ef14a63a404def5b729305e358fc2b8994b48ac7777f95cf",
+      "bytes": 23958,
+      "run_id": "2026-08-27-r2",
+      "superseded_by": "job-spec-implementing.yaml"
+    },
+    {
+      "path": "job-spec-implementing.yaml",
+      "sha256": "7c6d5a729d3ea935a5c1a8789df4f87b37b66a990600affed8d441e1d2468034",
+      "bytes": 23958,
+      "run_id": "2026-08-27-r3",
+      "superseded_by": "job-spec-staging-qa.yaml"
+    },
+    {
+      "path": "qa.md",
+      "sha256": "45e79994db1168f61b1ed9bb8c305655d91cec84c1e96dc7667d221d5191a05c",
+      "bytes": 3196,
+      "run_id": "2026-08-27-r4"
+    },
+    {
+      "path": "job-spec-staging-qa.yaml",
+      "sha256": "a0f9e04706ac0332286cc2238da0aa0919205696b2e13d3bc404f89f9ab1c91a",
+      "bytes": 23958,
+      "run_id": "2026-08-27-r5"
+    },
+    {
+      "path": "change-gates.txt",
+      "sha256": "9e4660c344dcf03d7d889090f4c517181f2672166b786f5e286102367680fe18",
+      "bytes": 945,
+      "run_id": "2026-08-27-r6"
+    }
+  ]
+}

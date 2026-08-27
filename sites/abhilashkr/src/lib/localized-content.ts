@@ -1,15 +1,24 @@
 import type { LocalizedLocale, PageKey } from "@/lib/i18n";
 
+export type LocalizedImage = {
+  src: string;
+  alt: string;
+  objectPosition?: string;
+};
+
 export type LocalizedSection = {
   title: string;
   body: string;
   link?: { href: string; label: string };
+  images?: LocalizedImage[];
 };
 
 export type LocalizedPageContent = {
   eyebrow: string;
   title: string;
   intro: string;
+  heroImage?: LocalizedImage & { aspect: "portrait" | "square" };
+  bannerImage?: LocalizedImage;
   sections: LocalizedSection[];
 };
 
@@ -18,6 +27,17 @@ const de: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Persönliches Unternehmensprofil",
     title: "Tradition bewahren. Systeme für die nächste Generation bauen.",
     intro: "Abhilash Kalathil Ramesh ist Executive Director der Kairali Ayurvedic Group, Gründungsmitglied des Vorstands von AYUSHEXCIL und Angel Investor.",
+    heroImage: {
+      src: "/images/abhilash-ramesh-event.jpg",
+      alt: "Abhilash Kalathil Ramesh bei einer internationalen Veranstaltung der Gastgewerbebranche.",
+      aspect: "portrait",
+      objectPosition: "60% 30%",
+    },
+    bannerImage: {
+      src: "/images/healing-village-property.jpg",
+      alt: "Kairali – The Ayurvedic Healing Village, ein NABH-akkreditiertes ayurvedisches Krankenhaus in einer Gartenanlage in Palakkad, Kerala.",
+      objectPosition: "center 40%",
+    },
     sections: [
       { title: "Kairali Ayurvedic Group", body: "Operative Verantwortung über ayurvedische Versorgung, Herstellung, Zentren und Gastlichkeit – mit klarer Trennung der jeweiligen Unternehmens- und Leistungsbereiche.", link: { href: "/de/arbeit", label: "Arbeitsbereiche ansehen" } },
       { title: "Investitionen", body: "Interesse an frühen Unternehmen in Biotechnologie, botanischen Lieferketten, sauberer Körperpflege und nachhaltiger Gastlichkeit.", link: { href: "/de/investitionen", label: "Investitionsansatz" } },
@@ -29,6 +49,12 @@ const de: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Biografie",
     title: "Über Abhilash Kalathil Ramesh",
     intro: "Ein persönliches Profil über Familiengeschichte, Ausbildung, Unternehmensführung und internationale Zusammenarbeit.",
+    heroImage: {
+      src: "/images/abhilash-portrait.png",
+      alt: "Abhilash Kalathil Ramesh – Executive Director der Kairali Ayurvedic Group.",
+      aspect: "square",
+      objectPosition: "center 20%",
+    },
     sections: [
       { title: "Familie und Ayurveda", body: "Abhilash gehört zur vierten Generation einer Kerala-Familie mit einer Ayurveda-Tradition seit 1908. Die heutige Kairali Ayurvedic Group wurde 1989 von K. V. Ramesh und Gita Ramesh gegründet." },
       { title: "Berufliche Rolle", body: "Als Executive Director arbeitet er an internationaler Entwicklung, institutionellen Beziehungen und operativen Systemen in den verschiedenen Unternehmen der Gruppe." },
@@ -40,10 +66,10 @@ const de: Record<PageKey, LocalizedPageContent> = {
     title: "Arbeit und Unternehmen",
     intro: "Die Einheiten der Gruppe werden hier nach ihrer tatsächlichen Funktion beschrieben – klinische Versorgung, Herstellung, Zentren und Gastlichkeit bleiben voneinander getrennt.",
     sections: [
-      { title: "Kairali – The Ayurvedic Healing Village", body: "KTAHV in Palakkad ist ein NABH-akkreditiertes ayurvedisches Krankenhaus mit ärztlich geleiteten klinischen Programmen. Es ist kein Spa oder Resort.", link: { href: "https://www.kairali.com", label: "Offizielle Website" } },
-      { title: "KAPPL", body: "Kairali Ayurvedic Products Private Limited ist der Herstellungsbereich für ayurvedische Produkte. Herstellung und klinische Versorgung werden nicht als dieselbe Leistung dargestellt." },
-      { title: "Kairali Ayurvedic Centre", body: "KAC bezeichnet das Netzwerk von Ayurveda-Zentren. Informationen zu einem Standort sollten immer auf der jeweiligen offiziellen Standortseite geprüft werden." },
-      { title: "Villa Raag", body: "Villa Raag in Agonda, Goa, ist ein eigenständiges Boutique-Angebot für Wellness und Gastlichkeit – kein medizinisches Krankenhausprogramm.", link: { href: "https://villaraag.com", label: "Villa Raag besuchen" } },
+      { title: "Kairali – The Ayurvedic Healing Village", body: "KTAHV in Palakkad ist ein NABH-akkreditiertes ayurvedisches Krankenhaus mit ärztlich geleiteten klinischen Programmen. Es ist kein Spa oder Resort.", link: { href: "https://www.kairali.com", label: "Offizielle Website" }, images: [{ src: "/images/healing-village-grounds.jpg", alt: "Kairali – The Ayurvedic Healing Village, ein NABH-akkreditiertes ayurvedisches Krankenhaus in Palakkad, Kerala.", objectPosition: "center 40%" }] },
+      { title: "KAPPL", body: "Kairali Ayurvedic Products Private Limited ist der Herstellungsbereich für ayurvedische Produkte. Herstellung und klinische Versorgung werden nicht als dieselbe Leistung dargestellt.", images: [{ src: "/images/kappl-product-range.png", alt: "Ayurvedische pharmazeutische Produkte und Körperpflegeprodukte von Kairali mit WHO-GMP-Zertifizierung." }] },
+      { title: "Kairali Ayurvedic Centre", body: "KAC bezeichnet das Netzwerk von Ayurveda-Zentren. Informationen zu einem Standort sollten immer auf der jeweiligen offiziellen Standortseite geprüft werden.", images: [{ src: "/images/kac-therapy.jpg", alt: "Ayurvedische Therapiesitzung bei einem Kairali Ayurvedic Centre." }, { src: "/images/kac-centre.jpg", alt: "Empfangsbereich eines Kairali Ayurvedic Centre." }] },
+      { title: "Villa Raag", body: "Villa Raag in Agonda, Goa, ist ein eigenständiges Boutique-Angebot für Wellness und Gastlichkeit – kein medizinisches Krankenhausprogramm.", link: { href: "https://villaraag.com", label: "Villa Raag besuchen" }, images: [{ src: "/images/villa-raag-exterior.jpg", alt: "Terrasse und Pool der Boutique-Wellness-Unterkunft Villa Raag mit Blick auf den Agonda Beach." }, { src: "/images/villa-raag-1.webp", alt: "Erholsamer Aufenthaltsbereich am Strand in der Villa Raag." }, { src: "/images/villa-raag-2.webp", alt: "Speisebereich für Wellness-Gastronomie in der Villa Raag." }] },
     ],
   },
   investing: {
@@ -93,6 +119,11 @@ const de: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Vorträge und Interviews",
     title: "Vorträge und Panels",
     intro: "Für Konferenzen, Panels und Mediengespräche stehen Themen zur Verfügung, die auf tatsächlicher operativer und institutioneller Arbeit beruhen.",
+    bannerImage: {
+      src: "/images/abhilash-speaking.jpg",
+      alt: "Abhilash Kalathil Ramesh bei einem Vortrag auf einer internationalen Branchenkonferenz.",
+      objectPosition: "center 25%",
+    },
     sections: [
       { title: "Ayurveda und internationale Märkte", body: "Verantwortungsvolle Positionierung traditioneller Medizin, Exportfragen und verständliche Kommunikation zwischen Märkten." },
       { title: "Familienunternehmen", body: "Nachfolge, Governance, operative Systeme und die Zusammenarbeit zwischen Generationen." },
@@ -149,6 +180,17 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Profil personnel et professionnel",
     title: "Préserver un héritage. Construire des systèmes durables.",
     intro: "Abhilash Kalathil Ramesh est directeur exécutif de Kairali Ayurvedic Group, membre fondateur du conseil d’AYUSHEXCIL et investisseur providentiel.",
+    heroImage: {
+      src: "/images/abhilash-ramesh-event.jpg",
+      alt: "Abhilash Kalathil Ramesh lors d’un événement international du secteur de l’hospitalité.",
+      aspect: "portrait",
+      objectPosition: "60% 30%",
+    },
+    bannerImage: {
+      src: "/images/healing-village-property.jpg",
+      alt: "Kairali – The Ayurvedic Healing Village, un hôpital ayurvédique accrédité NABH au milieu de jardins à Palakkad, au Kerala.",
+      objectPosition: "center 40%",
+    },
     sections: [
       { title: "Kairali Ayurvedic Group", body: "Responsabilités opérationnelles dans les soins ayurvédiques, la fabrication, les centres et l’hospitalité, avec une distinction claire entre chaque activité.", link: { href: "/fr/travail", label: "Voir les activités" } },
       { title: "Investissements", body: "Intérêt pour les jeunes entreprises en biotechnologie, filières botaniques, soins personnels sobres et hospitalité durable.", link: { href: "/fr/investissements", label: "Approche d’investissement" } },
@@ -160,6 +202,12 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Biographie",
     title: "À propos d’Abhilash Kalathil Ramesh",
     intro: "Un profil personnel consacré à l’histoire familiale, à la formation, à la direction d’entreprise et à la coopération internationale.",
+    heroImage: {
+      src: "/images/abhilash-portrait.png",
+      alt: "Abhilash Kalathil Ramesh — directeur exécutif de Kairali Ayurvedic Group.",
+      aspect: "square",
+      objectPosition: "center 20%",
+    },
     sections: [
       { title: "Famille et Ayurveda", body: "Abhilash appartient à la quatrième génération d’une famille du Kerala dont la tradition ayurvédique remonte à 1908. Kairali Ayurvedic Group a été fondé en 1989 par K. V. Ramesh et Gita Ramesh." },
       { title: "Rôle professionnel", body: "En tant que directeur exécutif, il travaille au développement international, aux relations institutionnelles et aux systèmes opérationnels des différentes entités du groupe." },
@@ -171,10 +219,10 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     title: "Travail et entreprises",
     intro: "Les entités sont présentées selon leur fonction réelle : soins cliniques, fabrication, centres et hospitalité restent des activités distinctes.",
     sections: [
-      { title: "Kairali – The Ayurvedic Healing Village", body: "KTAHV, à Palakkad, est un hôpital ayurvédique accrédité NABH proposant des programmes cliniques dirigés par des médecins. Ce n’est ni un spa ni un resort.", link: { href: "https://www.kairali.com", label: "Site officiel" } },
-      { title: "KAPPL", body: "Kairali Ayurvedic Products Private Limited est l’activité de fabrication de produits ayurvédiques. La fabrication n’est pas présentée comme un service clinique." },
-      { title: "Kairali Ayurvedic Centre", body: "KAC désigne le réseau de centres ayurvédiques. Les informations locales doivent toujours être vérifiées sur la page officielle du centre concerné." },
-      { title: "Villa Raag", body: "Villa Raag, à Agonda dans l’État de Goa, est une adresse indépendante d’hospitalité et de bien-être, et non un programme hospitalier.", link: { href: "https://villaraag.com", label: "Découvrir Villa Raag" } },
+      { title: "Kairali – The Ayurvedic Healing Village", body: "KTAHV, à Palakkad, est un hôpital ayurvédique accrédité NABH proposant des programmes cliniques dirigés par des médecins. Ce n’est ni un spa ni un resort.", link: { href: "https://www.kairali.com", label: "Site officiel" }, images: [{ src: "/images/healing-village-grounds.jpg", alt: "Kairali – The Ayurvedic Healing Village, un hôpital ayurvédique accrédité NABH à Palakkad, au Kerala.", objectPosition: "center 40%" }] },
+      { title: "KAPPL", body: "Kairali Ayurvedic Products Private Limited est l’activité de fabrication de produits ayurvédiques. La fabrication n’est pas présentée comme un service clinique.", images: [{ src: "/images/kappl-product-range.png", alt: "Produits pharmaceutiques ayurvédiques et soins personnels Kairali certifiés WHO-GMP." }] },
+      { title: "Kairali Ayurvedic Centre", body: "KAC désigne le réseau de centres ayurvédiques. Les informations locales doivent toujours être vérifiées sur la page officielle du centre concerné.", images: [{ src: "/images/kac-therapy.jpg", alt: "Séance de thérapie ayurvédique dans un Kairali Ayurvedic Centre." }, { src: "/images/kac-centre.jpg", alt: "Accueil clinique d’un Kairali Ayurvedic Centre." }] },
+      { title: "Villa Raag", body: "Villa Raag, à Agonda dans l’État de Goa, est une adresse indépendante d’hospitalité et de bien-être, et non un programme hospitalier.", link: { href: "https://villaraag.com", label: "Découvrir Villa Raag" }, images: [{ src: "/images/villa-raag-exterior.jpg", alt: "Terrasse et piscine de la propriété de bien-être Villa Raag avec vue sur la plage d’Agonda." }, { src: "/images/villa-raag-1.webp", alt: "Espace de séjour reposant en bord de plage à Villa Raag." }, { src: "/images/villa-raag-2.webp", alt: "Salle de restauration bien-être à Villa Raag." }] },
     ],
   },
   investing: {
@@ -224,6 +272,11 @@ const fr: Record<PageKey, LocalizedPageContent> = {
     eyebrow: "Conférences et entretiens",
     title: "Conférences et panels",
     intro: "Des sujets fondés sur un travail opérationnel et institutionnel réel, pour conférences, panels et entretiens médias.",
+    bannerImage: {
+      src: "/images/abhilash-speaking.jpg",
+      alt: "Abhilash Kalathil Ramesh intervenant lors d’une conférence internationale du secteur.",
+      objectPosition: "center 25%",
+    },
     sections: [
       { title: "Ayurveda et marchés internationaux", body: "Positionnement responsable de la médecine traditionnelle, exportations et communication claire entre différents marchés." },
       { title: "Entreprise familiale", body: "Succession, gouvernance, systèmes opérationnels et collaboration entre générations." },
