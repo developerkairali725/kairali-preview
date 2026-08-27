@@ -13,7 +13,7 @@ test.describe("Blush responsive page header", () => {
     test.skip(testInfo.project.name !== "mobile-375", "Phone-width matrix runs once in the mobile project");
 
     await page.setViewportSize({ width: 320, height: 915 });
-    await page.goto("/services", { waitUntil: "domcontentloaded" });
+    await page.goto("/contact", { waitUntil: "domcontentloaded" });
 
     for (const width of [320, 375, 412, 480]) {
       await page.setViewportSize({ width, height: 915 });
@@ -61,7 +61,7 @@ test.describe("Blush responsive page header", () => {
     test.skip(testInfo.project.name !== "desktop-1280", "Desktop header contract runs once in the desktop project");
 
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto("/services");
+    await page.goto("/contact");
 
     const navRows = await page.locator(".pagehead__nav a").evaluateAll((links) => [
       ...new Set(links.map((link) => Math.round(link.getBoundingClientRect().top))),
