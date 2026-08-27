@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated": "2026-08-27 17:31:46 IST",
-  "collected_at_utc": "2026-08-27T12:01:46Z",
-  "run_id": "2026-08-27-r6",
+  "generated": "2026-08-27 17:32:21 IST",
+  "collected_at_utc": "2026-08-27T12:02:21Z",
+  "run_id": "2026-08-27-r7",
   "producer": {
     "session": "codex-2026-08-27-abhilash-contact-i18n",
     "role": "builder"
@@ -44,7 +44,14 @@
       "path": "change-gates.txt",
       "sha256": "9e4660c344dcf03d7d889090f4c517181f2672166b786f5e286102367680fe18",
       "bytes": 945,
-      "run_id": "2026-08-27-r6"
+      "run_id": "2026-08-27-r6",
+      "superseded_by": "change-gates-v2.txt"
+    },
+    {
+      "path": "change-gates-v2.txt",
+      "sha256": "782b8d5af2d2c0f6d82f64e6583cb759574aa941a1e42097291aa3235fe811b2",
+      "bytes": 2765,
+      "run_id": "2026-08-27-r7"
     }
   ]
 }
