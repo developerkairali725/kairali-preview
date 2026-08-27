@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-08-27 17:43:17 IST",
-  "generated_utc": "2026-08-27T12:13:17Z",
+  "generated": "2026-08-27 18:15:59 IST",
+  "generated_utc": "2026-08-27T12:45:59Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -32,7 +32,7 @@
       }
     ],
     "strict_residues": 0,
-    "unacked_directives": 18,
+    "unacked_directives": 17,
     "open_questions": 120,
     "decisions": 15,
     "tests": null
@@ -912,7 +912,7 @@
       "owner": "Abilash",
       "blocker": "ISS-abhilashkr-com-0001 protected Preview ready; awaits PR CI and Abilash Preview approval before human merge/release",
       "updated": "2026-08-27",
-      "preview_url": "https://kairali-web-factory-abhilashkr-3okk1lz30-kairali.vercel.app",
+      "preview_url": "https://kairali-web-factory-abhilashkr-a6w0egkjx-kairali.vercel.app",
       "live_url": "https://abhilashkr.com",
       "vector": {
         "site_class": "organic",
