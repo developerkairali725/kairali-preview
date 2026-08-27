@@ -912,6 +912,74 @@ a {
 
 /* ---------- services page ---------- */
 
+.services-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
+  align-items: center;
+  gap: clamp(52px, 6vw, 92px);
+  padding-bottom: 76px;
+}
+
+.services-page-hero__copy h1 {
+  max-width: 13ch;
+}
+
+.services-page-hero__gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.52fr) minmax(0, 0.78fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  height: clamp(500px, 50vw, 650px);
+}
+
+.services-page-hero__look {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--blush-white);
+  box-shadow: var(--blush-shadow-warm);
+}
+
+.services-page-hero__look--feature {
+  grid-row: 1 / span 2;
+}
+
+.services-page-hero__look img {
+  object-fit: cover;
+}
+
+.services-page-hero__look--feature img {
+  object-position: 50% 20%;
+}
+
+.services-page-hero__look--occasion img {
+  object-position: 50% 24%;
+}
+
+.services-page-hero__look--editorial img {
+  object-position: 50% 18%;
+}
+
+.services-page-hero__look::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blush-scrim);
+  pointer-events: none;
+}
+
+.services-page-hero__look figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 1;
+  color: var(--blush-ivory);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
 .svc {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
@@ -1595,6 +1663,29 @@ html[data-consent-open] body {
 
   .pagehero {
     padding-top: 48px;
+  }
+
+  .services-page-hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-bottom: 58px;
+  }
+
+  .services-page-hero__copy h1 {
+    max-width: 15ch;
+  }
+
+  .services-page-hero__gallery {
+    grid-template-columns: minmax(0, 1.48fr) minmax(0, 0.78fr);
+    height: min(118vw, 470px);
+    gap: 9px;
+  }
+
+  .services-page-hero__look figcaption {
+    left: 12px;
+    bottom: 10px;
+    font-size: 8px;
+    letter-spacing: 0.2em;
   }
 
   .portfolio__grid--page {
