@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/theblushlounge.com",
-  "file_count": 56,
-  "tree_sha256": "0b4a35f79ed94dd5c6f49debf083cf58d68ea8d8c294a9d7895bfb9c27ab796e",
+  "file_count": 57,
+  "tree_sha256": "95cc4bcf03e5e731980ff8cc284a614d70b3af9a00ba56944c06feff19b061e9",
   "files": [
     {
       "path": "sites/theblushlounge.com/.gitignore",
@@ -18,6 +18,10 @@
     {
       "path": "sites/theblushlounge.com/app/_components/chrome.tsx",
       "sha256": "c3d7aca2d5f723889a195820b7b045abda36dabcbfcf93f3ba41cacdc629337e"
+    },
+    {
+      "path": "sites/theblushlounge.com/app/_components/floating-whatsapp.tsx",
+      "sha256": "215deaeb7faab56de2c50ae5b4b82db26067efe0c6e110f1809193124976302e"
     },
     {
       "path": "sites/theblushlounge.com/app/_components/legal-page.tsx",
@@ -69,7 +73,7 @@
     },
     {
       "path": "sites/theblushlounge.com/app/globals.css",
-      "sha256": "96063db8b798da9031766df480877eba0c3177ca7a5e080eb5bd18d886f35d91"
+      "sha256": "049c7cc5f12e04921e76762652fef6c669fafef8c20d7cc39032e637b69cbee7"
     },
     {
       "path": "sites/theblushlounge.com/app/icon.png",
@@ -89,7 +93,7 @@
     },
     {
       "path": "sites/theblushlounge.com/app/layout.tsx",
-      "sha256": "c69696481cba67a296b41a48341bb0514324ebf360ffe269e6e49c0a8300a5d4"
+      "sha256": "b2d80953985643d9a48228b8f0221ac4b06716b512f77f26f371f5f1095eef15"
     },
     {
       "path": "sites/theblushlounge.com/app/llms.txt/route.ts",
@@ -97,7 +101,7 @@
     },
     {
       "path": "sites/theblushlounge.com/app/page.tsx",
-      "sha256": "6a5393f7e665b3c83063987ecd533ed0de64daec2b4af13a8065f6947ded77cd"
+      "sha256": "08105ea6f02c2d1b58e24a4b0f2254e14b832381d7819f8fd77304d00b79e63f"
     },
     {
       "path": "sites/theblushlounge.com/app/portfolio/gallery.tsx",
@@ -137,7 +141,7 @@
     },
     {
       "path": "sites/theblushlounge.com/next.config.ts",
-      "sha256": "b0e82941ed7e47f01e7cbd08fe1040a8ebf2ca40ca1e1b7cc0e66d8f47370be8"
+      "sha256": "aebb63d6e72f90c26cd9b7843fe3418e57fce5be86e666fb935f902320b6bc37"
     },
     {
       "path": "sites/theblushlounge.com/package.json",

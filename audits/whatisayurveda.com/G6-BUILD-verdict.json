@@ -9,10 +9,10 @@
     "pnpm exec turbo build --filter=whatisayurveda.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-08-16T10:18:10+05:30",
-  "finished_at": "2026-08-16T10:18:39+05:30",
+  "started_at": "2026-08-27T18:21:13+05:30",
+  "finished_at": "2026-08-27T18:21:42+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/31927189726",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/33073202390",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
