@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated": "2026-08-28 01:23:33 IST",
-  "collected_at_utc": "2026-08-27T19:53:33Z",
-  "run_id": "2026-08-28-r1",
+  "generated": "2026-08-28 01:52:35 IST",
+  "collected_at_utc": "2026-08-27T20:22:35Z",
+  "run_id": "2026-08-28-r2",
   "producer": {
-    "session": "codex-2026-08-27-abhilash-seo-technical-closure",
-    "role": "builder"
+    "session": "WOPS-ABHILASHKR-SEO-TECHNICAL-CLOSURE-001",
+    "role": "verifier"
   },
   "files": [
     {
@@ -70,6 +70,18 @@
       "sha256": "e17cc1c0e0dca36fc2d0439e57f1306e1d1a888ae5f3f7a8ee48ff6a38218e80",
       "bytes": 4194,
       "run_id": "2026-08-28-r1"
+    },
+    {
+      "path": "automated-accessibility-security-closeout.md",
+      "sha256": "be4c9ed71f18237356c9fa3b2ff8ff76ae215044f3bfdd2b7f551958a3a7ab23",
+      "bytes": 2488,
+      "run_id": "2026-08-28-r2"
+    },
+    {
+      "path": "search-monitoring-closeout.md",
+      "sha256": "a8df4d224d0f3491e212dc91f1c9a37dd57de40993a84a83c57a96fee63b5861",
+      "bytes": 4667,
+      "run_id": "2026-08-28-r2"
     }
   ]
 }
