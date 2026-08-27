@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/theblushlounge.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "5495e41c97db31e45d15b6eec95169ddf7d77a8e015cac3ea2611da9faa77ecb",
+  "artifact_sha256": "9f8251167e3efbffbbfac89e8b85831648395bdca54ab6fa3cf40b833760d495",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=theblushlounge.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-08-27T21:43:51+05:30",
-  "finished_at": "2026-08-27T21:44:19+05:30",
+  "started_at": "2026-08-27T22:55:12+05:30",
+  "finished_at": "2026-08-27T22:55:41+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/33087415059",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/33097724355",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
