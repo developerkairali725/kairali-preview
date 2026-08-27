@@ -16,12 +16,23 @@ test("buildMetadata: canonical, OG, robots for a single-locale page", () => {
   const m = buildMetadata(mono, {
     title: "Arogya Kendra — Ayurvedic Care by the Kairali Group",
     description: "Gateway to the Kairali Ayurvedic Group.",
+    ogImage: "/og.jpg",
+    ogImageAlt: "A factual social preview",
   });
   assert.equal(m.alternates.canonical, "https://arogyakendra.com/");
   assert.equal(m.alternates.languages, undefined, "single-locale sites emit no hreflang");
   assert.equal(m.robots.index, true);
   assert.equal(m.openGraph.url, "https://arogyakendra.com/");
-  assert.equal(m.twitter.card, "summary", "no OG image → summary card, never a fabricated image");
+  assert.equal(m.openGraph.images[0].alt, "A factual social preview");
+  assert.equal(m.twitter.card, "summary_large_image");
+  assert.deepEqual(m.twitter.images, m.openGraph.images);
+});
+
+test("buildMetadata never fabricates a social image", () => {
+  const m = buildMetadata(mono, { title: "Arogya Kendra", description: "Gateway." });
+  assert.equal(m.openGraph.images, undefined);
+  assert.equal(m.twitter.images, undefined);
+  assert.equal(m.twitter.card, "summary");
 });
 
 test("buildMetadata THROWS on over-limit title/description and missing description (A6 gate)", () => {

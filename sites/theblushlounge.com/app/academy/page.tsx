@@ -9,30 +9,41 @@
  */
 import Image from "next/image";
 import { buildMetadata } from "@kairali/seo";
-import { course, person, graph, serializeJsonLd } from "@kairali/schema";
+import { course, graph, organization, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../site.config.json";
 import { PageHeader, SiteFooter, waUrl, IG_SCHOOL_URL } from "../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import {
+  OG_IMAGE_ALT,
+  SCHOOL_ID,
+  SITE_NAME,
+  SITE_URL,
+  snehaPerson,
+} from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Blush School of Beauty — Makeup Courses by Sneha Chowdhary",
   description:
     "Online bridal masterclasses, the PRO certification course and self-makeup classes — learn Sneha Chowdhary's approach from Delhi to wherever you are.",
   path: "/academy",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 const jsonLd = graph(
-  person({ id: `${SITE_URL}/#sneha`, name: "Sneha Chowdhary", jobTitle: "Beauty, Bridal & SFX Makeup Artist", url: SITE_URL, sameAs: [IG_SCHOOL_URL] }),
+  snehaPerson(),
+  organization({
+    id: SCHOOL_ID,
+    name: "Blush School of Beauty",
+    url: `${SITE_URL}/academy`,
+    sameAs: [IG_SCHOOL_URL],
+  }),
   course({
     id: `${SITE_URL}/academy#pro-course`,
     name: "Blush School of Beauty — PRO Course",
     description: "Sneha Chowdhary's professional makeup course: her complete approach to skin, structure and signature looks, taught online.",
     url: `${SITE_URL}/academy`,
-    providerName: "Blush School of Beauty",
-    providerUrl: SITE_URL,
+    providerId: SCHOOL_ID,
     courseMode: "online",
     inLanguage: "en",
   }),

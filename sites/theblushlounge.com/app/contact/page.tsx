@@ -1,40 +1,38 @@
 /**
  * /contact — WhatsApp-first contact lane (signed STRATEGY §4 booking model:
  * premium-bridal pattern, NO instant-calendar).
- * BeautySalon LocalBusiness schema. FACT LAW: email makeoverbysneha@gmail.com
+ * Service-area Organization schema. FACT LAW: email makeoverbysneha@gmail.com
  * and the 10:00–22:00 hours carry CONFIRM-before-launch flags (BRIEF locked
- * facts) — both stay OFF this page until confirmed; WhatsApp + the Shivalik
- * address are owner-ruled/mined facts and print. The enquiry form stays off
+ * facts) — both stay OFF this page until confirmed. The residential address
+ * stays private; the confirmed service-area model prints. The enquiry form stays off
  * production until its datastore and
  * site-specific privacy terms are approved (A12 gap, loud in the launch
  * checklist); this prevents a form that cannot safely retain or route leads.
  */
 import { buildMetadata } from "@kairali/seo";
-import { localBusiness, person, graph, serializeJsonLd } from "@kairali/schema";
+import { graph, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../site.config.json";
 import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL, IG_SCHOOL_URL } from "../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import {
+  OG_IMAGE_ALT,
+  SITE_NAME,
+  blushOrganization,
+  snehaPerson,
+} from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Book Bridal Makeup in Delhi — Contact Blush Lounge by Sneha",
   description:
-    "WhatsApp Sneha on +91 88269 21110 for bridal, occasion and destination makeup enquiries. Blush Lounge, Shivalik, New Delhi — Delhi & worldwide.",
+    "WhatsApp Sneha on +91 88269 21110 for bridal, occasion and destination makeup. Client-venue service across Delhi NCR; appointments only.",
   path: "/contact",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 const jsonLd = graph(
-  person({ id: `${SITE_URL}/#sneha`, name: "Sneha Chowdhary", jobTitle: "Beauty, Bridal & SFX Makeup Artist", url: SITE_URL, sameAs: [IG_URL] }),
-  localBusiness({
-    id: `${SITE_URL}/#studio`,
-    type: "BeautySalon",
-    name: "Blush Lounge — Makeup by Sneha",
-    url: SITE_URL,
-    telephone: "+91 88269 21110",
-    address: { addressLocality: "Shivalik, New Delhi", addressRegion: "Delhi", addressCountry: "IN" },
-  }),
+  snehaPerson(),
+  blushOrganization(),
 );
 
 export default function ContactPage() {
@@ -67,7 +65,12 @@ export default function ContactPage() {
             </a>
             <ul className="lane__meta">
               <li>
-                <b>Studio</b> Shivalik, New Delhi · Delhi &amp; worldwide
+                <b>Service area</b> Delhi, New Delhi, Gurugram, Faridabad,
+                Noida, Ghaziabad &amp; Greater Noida
+              </li>
+              <li>
+                <b>Appointments</b> Client-venue service; no walk-in studio.
+                Home trials only when arranged directly with Sneha.
               </li>
               <li>
                 <b>Instagram</b>{" "}

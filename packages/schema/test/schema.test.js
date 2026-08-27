@@ -13,6 +13,7 @@ import {
   article,
   medicalWebPage,
   medicalClinic,
+  localBusiness,
   product,
   book,
   itemList,
@@ -112,6 +113,22 @@ test("medicalClinic + product build with nested address/offer", () => {
   });
   assert.equal(p.offers["@type"], "Offer");
   assert.equal(p.offers.url, "https://shop.example/p");
+});
+
+test("service-area Organization carries coverage without inventing a location", () => {
+  const b = organization({
+    id: "https://example.com/#business",
+    name: "Example Business",
+    url: "https://example.com",
+    telephone: "+91 00000 00000",
+    description: "Appointment-only service with no walk-in storefront.",
+    areaServed: ["Delhi", "Noida"],
+    sameAs: ["https://www.instagram.com/example/"],
+  });
+  assert.equal(b["@type"], "Organization");
+  assert.deepEqual(b.areaServed, ["Delhi", "Noida"]);
+  assert.deepEqual(b.sameAs, ["https://www.instagram.com/example/"]);
+  assert.equal("address" in b, false);
 });
 
 test("book builds with author ref, offers carry NO price, gaps stay absent", () => {

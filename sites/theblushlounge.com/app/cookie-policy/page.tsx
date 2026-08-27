@@ -1,14 +1,16 @@
 import { buildMetadata } from "@kairali/seo";
 import siteConfig from "../../site.config.json";
 import { LegalPage } from "../_components/legal-page";
+import { OG_IMAGE_ALT, SITE_NAME } from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Cookie Policy | Blush Lounge by Sneha",
   description:
     "The essential consent record and optional Google Analytics cookies used on the Blush Lounge website.",
   path: "/cookie-policy",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 export default function CookiePolicyPage() {

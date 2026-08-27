@@ -1,11 +1,17 @@
 import Image from "next/image";
 import { buildMetadata } from "@kairali/seo";
-import { article, breadcrumbList, graph, person, serializeJsonLd } from "@kairali/schema";
+import { article, breadcrumbList, graph, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../../site.config.json";
 import { Breadcrumbs } from "../../_components/breadcrumbs";
 import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl } from "../../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import {
+  OG_IMAGE_ALT,
+  BUSINESS_ID,
+  SITE_NAME,
+  SITE_URL,
+  SNEHA_ID,
+  snehaPerson,
+} from "../../_lib/structured-data";
 const ARTICLE_PATH = "/journal/makeup-colour-correction-guide";
 const ARTICLE_URL = `${SITE_URL}${ARTICLE_PATH}`;
 const TITLE = "A Simple Guide to Makeup Colour Correction";
@@ -15,23 +21,20 @@ export const metadata = buildMetadata(siteConfig, {
   description:
     "Learn how peach, orange, green and lavender correctors work, when to use them, and why less product gives bridal makeup a cleaner finish.",
   path: ARTICLE_PATH,
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
   ogType: "article",
 });
 
 const jsonLd = graph(
-  person({
-    id: `${SITE_URL}/#sneha`,
-    name: "Sneha Chowdhary",
-    jobTitle: "Beauty, Bridal & SFX Makeup Artist",
-    url: `${SITE_URL}/about`,
-  }),
+  snehaPerson(),
   article({
     id: `${ARTICLE_URL}#article`,
     headline: TITLE,
     url: ARTICLE_URL,
-    authorId: `${SITE_URL}/#sneha`,
+    authorId: SNEHA_ID,
+    publisherId: BUSINESS_ID,
     datePublished: "2026-08-11",
     dateModified: "2026-08-11",
     image: `${SITE_URL}/images/portfolio-soft-precision.jpg`,

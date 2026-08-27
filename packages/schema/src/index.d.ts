@@ -11,10 +11,12 @@ export function organization(o: {
   name: string;
   url: string;
   email?: string;
+  telephone?: string;
   logo?: string;
   foundingDate?: string;
   description?: string;
   slogan?: string;
+  areaServed?: string | string[];
   sameAs?: string[];
   parentId?: string;
 }): JsonLdNode;
@@ -154,7 +156,7 @@ export function service(s: {
   url?: string;
   providerId?: string;
   serviceType?: string;
-  areaServed?: string;
+  areaServed?: string | string[];
 }): JsonLdNode;
 
 export function course(c: {

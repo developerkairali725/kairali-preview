@@ -2,14 +2,16 @@ import { buildMetadata } from "@kairali/seo";
 import siteConfig from "../../site.config.json";
 import { LegalPage } from "../_components/legal-page";
 import { WHATSAPP_DISPLAY, WHATSAPP_URL } from "../_components/chrome";
+import { OG_IMAGE_ALT, SITE_NAME } from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Privacy Notice | Blush Lounge by Sneha",
   description:
     "How Blush Lounge by Sneha handles website analytics, consent choices and privacy requests.",
   path: "/privacy",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 export default function PrivacyPage() {

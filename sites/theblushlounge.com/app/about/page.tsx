@@ -9,30 +9,22 @@
  */
 import Image from "next/image";
 import { buildMetadata } from "@kairali/seo";
-import { person, graph, serializeJsonLd } from "@kairali/schema";
+import { graph, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../site.config.json";
-import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL } from "../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl } from "../_components/chrome";
+import { OG_IMAGE_ALT, SITE_NAME, snehaPerson } from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "About Sneha Chowdhary — Bridal & SFX Makeup Artist, Delhi",
   description:
     "Cinema Makeup School LA certified, MAC Bridal collaborator, featured by Femina and Grazia — the story behind Blush Lounge, Delhi to destination weddings.",
   path: "/about",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
-const jsonLd = graph(
-  person({
-    id: `${SITE_URL}/#sneha`,
-    name: "Sneha Chowdhary",
-    jobTitle: "Beauty, Bridal & SFX Makeup Artist",
-    url: `${SITE_URL}/about`,
-    sameAs: [IG_URL],
-  }),
-);
+const jsonLd = graph(snehaPerson());
 
 const path = [
   {
@@ -132,7 +124,7 @@ export default function AboutPage() {
           ))}
         </p>
         <p className="approach__body">
-          Base: Shivalik, New Delhi. If your wedding travels, so does the kit —
+          Base: Delhi NCR. If your wedding travels, so does the kit —
           destination dates are planned early, so write the moment you have
           yours.
         </p>

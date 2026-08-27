@@ -6,20 +6,20 @@
  * destination-labelled frames exist (never invented).
  */
 import { buildMetadata } from "@kairali/seo";
-import { imageGallery, person, graph, serializeJsonLd } from "@kairali/schema";
+import { imageGallery, graph, serializeJsonLd } from "@kairali/schema";
 import siteConfig from "../../site.config.json";
 import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL } from "../_components/chrome";
 import { Gallery, type Work } from "./gallery";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import { OG_IMAGE_ALT, SITE_NAME, SITE_URL, snehaPerson } from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Bridal Makeup Looks & Portfolio | Blush Lounge by Sneha",
   description:
     "Real brides, cocktail glam and editorial work by Sneha Chowdhary — soft glam, minimal bridal and structured looks from Delhi to destination weddings.",
   path: "/portfolio",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 const works: Work[] = [
@@ -36,7 +36,7 @@ const works: Work[] = [
 ];
 
 const jsonLd = graph(
-  person({ id: `${SITE_URL}/#sneha`, name: "Sneha Chowdhary", jobTitle: "Beauty, Bridal & SFX Makeup Artist", url: SITE_URL, sameAs: [IG_URL] }),
+  snehaPerson(),
   imageGallery({
     id: `${SITE_URL}/portfolio#gallery`,
     name: "Blush Lounge portfolio — makeup by Sneha Chowdhary",

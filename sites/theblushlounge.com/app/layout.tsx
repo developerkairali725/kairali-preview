@@ -8,6 +8,7 @@ import "./globals.css";
 import siteConfig from "../site.config.json";
 import { FloatingWhatsApp } from "./_components/floating-whatsapp";
 import { PrivacyConsent } from "./_components/privacy-consent";
+import { OG_IMAGE_ALT, SITE_NAME } from "./_lib/structured-data";
 
 // A6 gate: buildMetadata THROWS on >60ch titles / >155ch descriptions, so a
 // non-conforming page fails `pnpm build` instead of shipping.
@@ -18,8 +19,9 @@ export const metadata: Metadata = {
     title: "Bridal & SFX Makeup Artist in Delhi | Blush Lounge by Sneha",
     description:
       "Soft glamour, precise drama — bridal, cocktail & editorial makeup by Sneha Chowdhary, Delhi & worldwide. Cinema Makeup School LA. WhatsApp to book.",
-    siteName: "Blush Lounge — Makeup by Sneha",
+    siteName: SITE_NAME,
     ogImage: "/og.jpg",
+    ogImageAlt: OG_IMAGE_ALT,
   }) as Metadata),
   icons: {
     ...faviconIcons(),

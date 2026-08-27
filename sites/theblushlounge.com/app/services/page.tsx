@@ -9,24 +9,41 @@
  * products; nail technician on request).
  */
 import { buildMetadata } from "@kairali/seo";
-import { person, graph, serializeJsonLd } from "@kairali/schema";
+import { graph, serializeJsonLd, service } from "@kairali/schema";
 import Image from "next/image";
 import siteConfig from "../../site.config.json";
-import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL } from "../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl } from "../_components/chrome";
+import {
+  OG_IMAGE_ALT,
+  SERVICE_AREAS,
+  SITE_NAME,
+  SITE_URL,
+  SNEHA_ID,
+  snehaPerson,
+} from "../_lib/structured-data";
 
 export const metadata = buildMetadata(siteConfig, {
   title: "Bridal & Occasion Makeup Services in Delhi | Blush Lounge",
   description:
     "Bridal, engagement, cocktail, party, editorial-SFX and grooming services by Sneha Chowdhary — airbrush or HD, at your venue. Dates and quotes on enquiry.",
   path: "/services",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 const jsonLd = graph(
-  person({ id: `${SITE_URL}/#sneha`, name: "Sneha Chowdhary", jobTitle: "Beauty, Bridal & SFX Makeup Artist", url: SITE_URL, sameAs: [IG_URL] }),
+  snehaPerson(),
+  service({
+    id: `${SITE_URL}/services#makeup-artistry`,
+    name: "Makeup artistry by Sneha Chowdhary",
+    description:
+      "Bridal, engagement, cocktail, party, editorial, SFX and grooming services provided at client venues, with destination work by enquiry.",
+    url: `${SITE_URL}/services`,
+    providerId: SNEHA_ID,
+    serviceType: "Bridal, occasion, editorial and SFX makeup artistry",
+    areaServed: SERVICE_AREAS,
+  }),
 );
 
 const services = [

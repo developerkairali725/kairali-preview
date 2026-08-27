@@ -40,8 +40,9 @@ export function graph(...nodes) {
 
 /**
  * Organization node. For the group itself prefer kairaliOrganization().
- * @param {{id?:string,name:string,url:string,email?:string,logo?:string,
- *          foundingDate?:string,slogan?:string,sameAs?:string[],parentId?:string}} o
+ * @param {{id?:string,name:string,url:string,email?:string,telephone?:string,
+ *          logo?:string,foundingDate?:string,description?:string,slogan?:string,
+ *          areaServed?:string|string[],sameAs?:string[],parentId?:string}} o
  */
 export function organization(o) {
   return clean({
@@ -50,10 +51,12 @@ export function organization(o) {
     name: o.name,
     url: o.url,
     email: o.email,
+    telephone: o.telephone,
     logo: o.logo,
     foundingDate: o.foundingDate,
     description: o.description,
     slogan: o.slogan,
+    areaServed: o.areaServed,
     sameAs: o.sameAs,
     parentOrganization: o.parentId ? { "@id": o.parentId } : undefined,
   });

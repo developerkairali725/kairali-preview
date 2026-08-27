@@ -22,6 +22,7 @@ export interface PageMeta {
   locale?: string;
   siteName?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   index?: boolean;
   ogType?: "website" | "article" | "book";
 }

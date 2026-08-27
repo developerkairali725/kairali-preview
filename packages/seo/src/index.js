@@ -66,6 +66,7 @@ function assertLength(kind, value, max, where) {
  * @param {string} [page.siteName]      OG site_name (defaults to title)
  * @param {string} [page.ogImage]       absolute or site-relative 1200×630 asset;
  *                                      OMIT until a real asset exists — never fabricate
+ * @param {string} [page.ogImageAlt]    factual accessible description of ogImage
  * @param {boolean} [page.index]        override indexability (default: true, except /lp/*)
  * @param {"website"|"article"} [page.ogType="website"]
  */
@@ -88,7 +89,14 @@ export function buildMetadata(config, page) {
   const multiLocale = declaredLocales(config).length > 1;
 
   const ogImages = page.ogImage
-    ? [{ url: page.ogImage, width: OG_IMAGE.width, height: OG_IMAGE.height }]
+    ? [
+        {
+          url: page.ogImage,
+          width: OG_IMAGE.width,
+          height: OG_IMAGE.height,
+          ...(page.ogImageAlt ? { alt: page.ogImageAlt } : {}),
+        },
+      ]
     : undefined;
 
   /** @type {Record<string, unknown>} */
@@ -116,6 +124,7 @@ export function buildMetadata(config, page) {
       card: page.ogImage ? "summary_large_image" : "summary",
       title: page.title,
       description: page.description,
+      ...(ogImages ? { images: ogImages } : {}),
     },
   };
   return metadata;

@@ -13,8 +13,14 @@
  * Contact facts kept OFF the golden page on purpose (HARD GATE 6):
  * makeoverbysneha@gmail.com and the 10:00–22:00 hours both carry
  * CONFIRM-before-launch flags in BRIEF.md — they join /contact at full build
- * once confirmed. WhatsApp + address are owner-ruled facts and print.
+ * once confirmed. The residential address remains private; the confirmed
+ * Delhi NCR service-area model prints instead.
  */
+
+import {
+  SCHOOL_INSTAGRAM_URL,
+  SNEHA_INSTAGRAM_URL,
+} from "../_lib/structured-data";
 
 export const WHATSAPP_DISPLAY = "+91 88269 21110"; // D-BL-WHATSAPP (owner, 18 Jul 2026)
 
@@ -25,8 +31,8 @@ export function waUrl(prefill: string) {
 }
 
 export const WHATSAPP_URL = waUrl("Hi Sneha — I'd like to enquire for my date.");
-export const IG_URL = "https://www.instagram.com/blushlounge_sneha/";
-export const IG_SCHOOL_URL = "https://www.instagram.com/blushschoolofbeauty/";
+export const IG_URL = SNEHA_INSTAGRAM_URL;
+export const IG_SCHOOL_URL = SCHOOL_INSTAGRAM_URL;
 
 const NAV = [
   { href: "/portfolio", label: "Portfolio" },
@@ -98,7 +104,7 @@ export function SiteFooter() {
           <p className="footer__meta" style={{ marginTop: 18 }}>
             Beauty, Bridal &amp; SFX artistry by Sneha Chowdhary.
             <br />
-            Shivalik, New Delhi · Delhi &amp; worldwide.
+            Delhi NCR · Destination work worldwide.
           </p>
         </div>
         <div>
@@ -147,7 +153,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="footer__bottom">
-        <span>© {new Date().getFullYear()} Blush Lounge — Makeup by Sneha. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Blush Lounge by Sneha. All rights reserved.</span>
         <nav className="footer__legal" aria-label="Privacy and legal">
           <a href="/privacy">Privacy</a>
           <a href="/cookie-policy">Cookies</a>

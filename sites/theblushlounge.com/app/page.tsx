@@ -17,31 +17,31 @@
  * the FULL build after golden_page approval — that is the law's sequence.
  */
 import Image from "next/image";
-import { person, webSite, graph, serializeJsonLd } from "@kairali/schema";
-import siteConfig from "../site.config.json";
+import { webSite, graph, serializeJsonLd } from "@kairali/schema";
 import {
   SiteFooter,
   WHATSAPP_DISPLAY,
   WHATSAPP_URL,
   IG_URL,
 } from "./_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import {
+  BUSINESS_ID,
+  SITE_NAME,
+  SITE_URL,
+  blushOrganization,
+  snehaPerson,
+} from "./_lib/structured-data";
 
 // A8: Person (the entity answer — AEO play from STRATEGY §3) + WebSite.
 // Facts limited to what is mined and owner-confirmed; nothing invented.
 const jsonLd = graph(
-  person({
-    id: `${SITE_URL}/#sneha`,
-    name: "Sneha Chowdhary",
-    jobTitle: "Beauty, Bridal & SFX Makeup Artist",
-    url: SITE_URL,
-    sameAs: [IG_URL],
-  }),
+  blushOrganization(),
+  snehaPerson(),
   webSite({
     id: `${SITE_URL}/#website`,
-    name: "Blush Lounge — Makeup by Sneha",
+    name: SITE_NAME,
     url: SITE_URL,
+    publisherId: BUSINESS_ID,
     inLanguage: "en",
   }),
 );

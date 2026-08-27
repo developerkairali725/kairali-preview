@@ -4,8 +4,7 @@ import { breadcrumbList, graph, itemList, serializeJsonLd } from "@kairali/schem
 import siteConfig from "../../site.config.json";
 import { Breadcrumbs } from "../_components/breadcrumbs";
 import { PageHeader, SiteFooter } from "../_components/chrome";
-
-const SITE_URL = `https://${siteConfig.domain}`;
+import { OG_IMAGE_ALT, SITE_NAME, SITE_URL } from "../_lib/structured-data";
 const ARTICLE_PATH = "/journal/makeup-colour-correction-guide";
 const ARTICLE_URL = `${SITE_URL}${ARTICLE_PATH}`;
 
@@ -14,8 +13,9 @@ export const metadata = buildMetadata(siteConfig, {
   description:
     "Practical makeup notes from Sneha Chowdhary on colour, bridal preparation and camera-ready finishes — written for real faces and real occasions.",
   path: "/journal",
-  siteName: "Blush Lounge — Makeup by Sneha",
+  siteName: SITE_NAME,
   ogImage: "/og.jpg",
+  ogImageAlt: OG_IMAGE_ALT,
 });
 
 const jsonLd = graph(
