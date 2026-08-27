@@ -47,7 +47,7 @@ issues:
       - "2026-08-27 18:37:57 IST READY_FOR_RELEASE→DEPLOYED evidence:dpl_HqJvDF728DFnWwYdwPRubYXTm2ED"
       - "2026-08-27 18:42:00 IST DEPLOYED→LIVE_VERIFIED evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/live-release-and-performance.md"
   - id: ISS-abhilashkr-com-0002
-    state: STAGING_QA
+    state: LIVE_VERIFIED
     severity: P3
     site: abhilashkr.com
     class: organic
@@ -61,6 +61,7 @@ issues:
       label: OBSERVED
     evidence_refs:
       - "launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/live-release-and-performance.md"
+      - "launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/post-release.md"
     spec_intent: "Change only the contact form headings from h3/h4 to h2/h3 and prove their levels without altering visible copy or behavior"
     spec_change_paths:
       - "sites/abhilashkr/src/app/(en)/contact/contact-form.tsx"
@@ -85,8 +86,11 @@ issues:
       - "2026-08-27 18:46:00 IST EVIDENCED→APPROVED evidence:owner current chat instruction"
       - "2026-08-27 18:50:00 IST APPROVED→IMPLEMENTING evidence:source patch"
       - "2026-08-27 18:55:28 IST IMPLEMENTING→STAGING_QA evidence:lint+build+14/14 local Playwright"
+      - "2026-08-28 00:54:02 IST STAGING_QA→READY_FOR_RELEASE evidence:PR#292 protected checks green and human merge"
+      - "2026-08-28 00:55:00 IST READY_FOR_RELEASE→DEPLOYED evidence:dpl_2juvGPYsUi8kPYn4CMAgJU7MSd4p"
+      - "2026-08-28 01:18:43 IST DEPLOYED→LIVE_VERIFIED evidence:launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/post-release.md"
   - id: ISS-abhilashkr-com-0003
-    state: STAGING_QA
+    state: LIVE_VERIFIED
     severity: P2
     site: abhilashkr.com
     class: organic
@@ -100,6 +104,7 @@ issues:
       label: OBSERVED
     evidence_refs:
       - "launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/audit.md sha256:0c26ce986e87c9b34823cac8b0ba030a835c1a372424094b53aeb91edb074dad"
+      - "launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/post-release.md"
     spec_intent: "Add localized visible breadcrumbs plus BreadcrumbList and page schema, strengthen the global Person/WebSite/Organization graph, add a production-compatible CSP and focused browser regression coverage"
     spec_change_paths:
       - "sites/abhilashkr/src/components/site/breadcrumbs.tsx"
@@ -131,3 +136,6 @@ issues:
       - "2026-08-27 20:13:40 IST EVIDENCED→APPROVED evidence:DIRECTIVES.md#D-20260827-03"
       - "2026-08-27 20:13:57 IST APPROVED→IMPLEMENTING evidence:source branch codex/abhilash-seo-technical-closure-20260827"
       - "2026-08-27 20:39:11 IST IMPLEMENTING→STAGING_QA evidence:launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/qa.md"
+      - "2026-08-28 00:54:02 IST STAGING_QA→READY_FOR_RELEASE evidence:PR#292 protected checks green and human merge"
+      - "2026-08-28 00:55:00 IST READY_FOR_RELEASE→DEPLOYED evidence:dpl_2juvGPYsUi8kPYn4CMAgJU7MSd4p"
+      - "2026-08-28 01:18:43 IST DEPLOYED→LIVE_VERIFIED evidence:launches/abhilashkr/evidence/2026-08-27-seo-technical-closure/post-release.md"
