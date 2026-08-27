@@ -1,0 +1,45 @@
+version: 1
+domain: abhilashkr.com
+issues:
+  - id: ISS-abhilashkr-com-0001
+    state: STAGING_QA
+    severity: P2
+    site: abhilashkr.com
+    class: organic
+    entity: personal
+    locales: [en, de, fr]
+    scope: change
+    title: "Restore localized image parity and actionable, honest contact routing"
+    causal_hypothesis: "The shared localized renderer has no media model, contact ledger values are plain strings, and the browser-only form presents a mailto draft as if routing completed"
+    opportunity_economics:
+      value: "Restore 11 missing localized image placements and 3 primary contact actions"
+      label: OBSERVED
+    evidence_refs:
+      - "launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/ sha256:50ca9cd64266e7938a1de97930881ae274613c903acad3904092598285f9dadf"
+    spec_intent: "Reuse the approved English assets on German and French counterparts; link English email, phone, and LinkedIn; clarify that the form only prepares an email draft"
+    spec_change_paths:
+      - "sites/abhilashkr/src/lib/localized-content.ts"
+      - "sites/abhilashkr/src/components/site/localized-page.tsx"
+      - "sites/abhilashkr/src/app/(en)/contact/page.tsx"
+      - "sites/abhilashkr/src/app/(en)/contact/contact-form.tsx"
+      - "tests/factory/abhilash-contact-i18n.spec.ts"
+    spec_change_kinds: []
+    spec_requested_tools: []
+    spec_output_schema: "Protected Preview URL + focused Playwright coverage + source diff + evidence manifest"
+    definition_of_done: "DE/FR home, about, work, and speaking render all 11 approved image placements per locale; English email, phone, and LinkedIn are semantic links; form states before and after interaction that the site neither sends nor stores the message; lint, build, focused mobile/desktop Playwright, and protected Preview checks pass"
+    retry_max_attempts: 2
+    timeout_minutes: 120
+    cost_budget:
+      tokens_max: 200000
+      usd_max: 3
+    builder_session: "codex-2026-08-27-abhilash-contact-i18n"
+    verifier_session: "github-actions-pr-ci"
+    gate_subset_ref: "gates/class-map.yaml scope=change resolution for ISS-abhilashkr-com-0001"
+    approvals_ref: "DIRECTIVES.md#D-20260827-02 (owner chat instruction: fix it)"
+    monitoring_ref: "launches/abhilashkr/monitoring.yaml#ISS-abhilashkr-com-0001"
+    closure_grep: "Playwright audit of all 24 DE/FR sitemap routes plus focused image-count checks on DE/FR home, about, work, and speaking; source grep for plain-string contact ledger values and misleading Send Message copy"
+    state_log:
+      - "2026-08-27 16:47:00 IST OPEN→EVIDENCED evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/"
+      - "2026-08-27 16:58:11 IST EVIDENCED→APPROVED evidence:DIRECTIVES.md#D-20260827-02"
+      - "2026-08-27 17:12:00 IST APPROVED→IMPLEMENTING evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/job-spec.yaml"
+      - "2026-08-27 17:34:00 IST IMPLEMENTING→STAGING_QA evidence:launches/abhilashkr/evidence/2026-08-27-contact-i18n-remediation/qa.md"

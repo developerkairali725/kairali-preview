@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Send } from "lucide-react";
+import { Check, Mail } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ export default function ContactForm() {
     subject: "enterprise",
     message: ""
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [draftPrepared, setDraftPrepared] = useState(false);
 
   const SUBJECT_LABELS: Record<string, string> = {
     enterprise: "Kairali Group Operations",
@@ -28,7 +28,7 @@ export default function ContactForm() {
     const subject = `[abhilashkr.com] ${SUBJECT_LABELS[formData.subject] ?? formData.subject}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
     window.location.href = `mailto:info@kairali.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    setDraftPrepared(true);
   };
 
   return (
@@ -37,23 +37,38 @@ export default function ContactForm() {
         Institutional Routing Form
       </h3>
 
-      {submitted ? (
+      <p data-form-delivery-note className="mb-6 border-l border-primary pl-4 font-sans text-xs leading-relaxed text-ink-muted">
+        This form does not send or store your message. It prepares an email to info@kairali.com in
+        your email app; you must review it and press Send there.
+      </p>
+
+      {draftPrepared ? (
         <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
           <div className="size-12 rounded-full border border-primary flex items-center justify-center text-primary">
             <Check className="h-6 w-6" />
           </div>
-          <h4 className="font-display text-2xl italic text-ink">Draft Prepared</h4>
+          <h4 className="font-display text-2xl italic text-ink">Email Draft Ready</h4>
           <p className="font-sans text-xs text-ink-muted max-w-xs">
-            Your email client has opened with the message addressed to info@kairali.com.
-            Press send there and our office will route it to the appropriate division.
+            The site has requested your email app to open a draft addressed to info@kairali.com.
+            Nothing has been sent or stored by this website. Review the draft and press Send in your
+            email app.
           </p>
+          <a
+            href="mailto:info@kairali.com"
+            className="font-mono text-[10px] uppercase tracking-widest text-primary underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          >
+            Email info@kairali.com directly
+          </a>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4 font-mono text-xs">
           <div className="flex flex-col space-y-1">
-            <label className="text-ink-muted uppercase">Your Name</label>
-            <input 
+            <label htmlFor="contact-name" className="text-ink-muted uppercase">Your Name</label>
+            <input
+              id="contact-name"
+              name="name"
               type="text"
+              autoComplete="name"
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -63,9 +78,12 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col space-y-1">
-            <label className="text-ink-muted uppercase">Email Address</label>
-            <input 
+            <label htmlFor="contact-email" className="text-ink-muted uppercase">Email Address</label>
+            <input
+              id="contact-email"
+              name="email"
               type="email"
+              autoComplete="email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -75,8 +93,10 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col space-y-1">
-            <label className="text-ink-muted uppercase">Subject Division</label>
-            <select 
+            <label htmlFor="contact-subject" className="text-ink-muted uppercase">Subject Division</label>
+            <select
+              id="contact-subject"
+              name="subject"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
               className="w-full bg-background border border-border text-ink p-3 outline-none focus:border-primary transition-colors font-sans text-sm rounded-none"
@@ -89,8 +109,10 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col space-y-1">
-            <label className="text-ink-muted uppercase">Message Details</label>
-            <textarea 
+            <label htmlFor="contact-message" className="text-ink-muted uppercase">Message Details</label>
+            <textarea
+              id="contact-message"
+              name="message"
               required
               rows={5}
               value={formData.message}
@@ -102,10 +124,10 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 font-mono text-xs tracking-widest uppercase border border-primary bg-primary text-background hover:bg-transparent hover:text-primary transition-colors cursor-pointer mt-4"
+            className="mt-4 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 border border-primary bg-primary px-6 py-3 font-mono text-xs uppercase tracking-widest text-background transition-colors hover:bg-transparent hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
-            <Send className="h-3 w-3" />
-            <span>Send Message</span>
+            <Mail className="h-3 w-3" />
+            <span>Prepare Email Draft</span>
           </button>
         </form>
       )}

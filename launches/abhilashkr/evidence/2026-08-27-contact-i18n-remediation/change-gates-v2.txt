@@ -1,0 +1,14 @@
+═══ change-gates-resolve — per-change gate resolution ═══
+mode: INFORMATIONAL (M2) — posted as CI evidence, the D-20260719-09 "declared capability actually fired" trail;
+      becomes BLOCKING when the job-spec envelope consumes this resolution at the M4 pilot. Broken resolver ⇒ exit 1, never a silent pass.
+law:  gates/class-map.yaml — per-change set = (change_relevant ∪ matched trigger adds) ∩ composed WHICH-set; fail-closed law lint-pinned.
+base: 02294e16410f → head: 571e085036f8 · 14 diff entries · 14 path(s) incl. both rename sides
+kinds: (none) (route-rename/route-delete derived from the diff; content-only honored ONLY when path-proven)
+generated: 2026-08-27 17:32:21 IST (meta only — the block below is deterministic per diff)
+
+── RESOLUTION site=abhilashkr
+   vector: (none — see fail-closed)
+   FAIL-CLOSED [unclassified-site]: sites/launches path(s) touched for "abhilashkr" but gates/class-map.yaml declares no such property — no vector, no class floor, no subset: FULL registry battery (77 gates). Add the property row (with its full vector) to gates/class-map.yaml.
+   matched triggers: (none)
+   resolved gates (77): ads-conversion-actions, ads-final-url-cutover, alt-text-favicons, axe-core-a11y, banned-string-lint, baseline, beauty-conformance, brand-lint, build-clean, catalog-compliance-audit, chat-bubble-present, chatbase-entity-bot, checkout-flows, compliance-lint, consent-mode, content-draft-compliance, cross-model-audit, cta-label-lint, dependency-audit, design-critic-review, design-external-ai-review, design-external-ai-review-post, design-qa-audit, dns-go-live, factory-matrix-self-registration, factory-spec-suite, footer-socials-present, forms-crm-parity, forward-family-redirects, front-gate-approvals, ga4-stream, generated-checklists-filled, geo-ai-readiness, go-science-conformance, gsc-bing-verification, gtm-conversion-events, honest-ymyl-content-lint, hreflang-reciprocal, human-audit-round, injection-screening, internal-link-crawl, keyword-map, launch-certificate, launch-evidence-gate, launch-retro-learning-loop, legacy-mine-protection-map, lighthouse-budgets, lp-ad-policy, lp-message-match, lp-noindex-single-cta, meta-canonical-crawl-files, myshopify-noindex, og-cards-render, payment-gateways-per-store, pixels-installed, placeholder-preview-lock, post-launch-verification, pre-launch-matrix-walk, preview-approval, price-inventory-integrity, redirect-map-tests, rollback-verification, runtime-monitoring, s3-keyword-gates, scaled-content, schema-jsonld, secret-scan, security-posture-audit, security-review-diff, seo-aeo-geo-audit, settings-drift-check, shopify-theme-check, social-press-links, unit-tests-discovered, uptime-fleet-pulse, weekly-qa-rotation, zap-baseline
+

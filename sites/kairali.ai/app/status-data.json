@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-08-27 16:52:16 IST",
-  "generated_utc": "2026-08-27T11:22:16Z",
+  "generated": "2026-08-27 18:19:33 IST",
+  "generated_utc": "2026-08-27T12:49:33Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -905,13 +905,13 @@
     {
       "name": "abhilashkr.com",
       "entity": "Personal",
-      "stage": "build",
-      "phase": 4,
+      "stage": "preview",
+      "phase": 5,
       "owner": "Abilash",
-      "blocker": "Matrix-exempt (standing ruling); low priority",
-      "updated": "2026-07-14",
-      "preview_url": "https://kairali-web-factory-abhilashkr.vercel.app",
-      "live_url": null,
+      "blocker": "ISS-abhilashkr-com-0001 protected Preview ready; awaits PR CI and Abilash Preview approval before human merge/release",
+      "updated": "2026-08-27",
+      "preview_url": "https://kairali-web-factory-abhilashkr-a6w0egkjx-kairali.vercel.app",
+      "live_url": "https://abhilashkr.com",
       "vector": {
         "site_class": "organic",
         "business_model": "b2c",
@@ -928,7 +928,9 @@
         "audits": 1,
         "checklists": false
       },
-      "waiting_on": []
+      "waiting_on": [
+        "Abilash"
+      ]
     },
     {
       "name": "whyayurveda.org",
