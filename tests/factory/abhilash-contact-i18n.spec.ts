@@ -128,6 +128,8 @@ test.describe("Abhilash localized media and contact routing", () => {
   test("states before and after form use that the site only prepares an email draft", async ({ page }) => {
     await page.goto("/contact");
 
+    await expect(page.getByRole("heading", { level: 1, name: "Direct Connect" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Institutional Routing Form" })).toBeVisible();
     await expect(page.locator("[data-form-delivery-note]")).toContainText(
       "This form does not send or store your message",
     );
@@ -138,7 +140,7 @@ test.describe("Abhilash localized media and contact routing", () => {
     await page.getByLabel("Message Details").fill("Preview verification only.");
     await page.getByRole("button", { name: "Prepare Email Draft" }).click();
 
-    await expect(page.getByRole("heading", { name: "Email Draft Ready" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 3, name: "Email Draft Ready" })).toBeVisible();
     await expect(page.getByText("Nothing has been sent or stored by this website")).toBeVisible();
     await expect(page.getByRole("link", { name: "Email info@kairali.com directly" })).toHaveAttribute(
       "href",
