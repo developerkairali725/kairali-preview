@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
   // approved beauty image; WebP remains the compatibility fallback.
   images: {
     formats: ["image/avif", "image/webp"],
+    // Beauty layouts use narrow portrait columns on mobile. Supplying 320px
+    // and 480px candidates prevents those columns jumping from 384px straight
+    // to 640px on high-density screens while preserving the larger homepage
+    // candidates for desktop displays.
+    deviceSizes: [320, 480, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   // WordPress published its article permalinks with trailing slashes. The
   // default framework normalizer would create an avoidable first hop before

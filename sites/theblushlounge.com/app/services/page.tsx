@@ -10,6 +10,7 @@
  */
 import { buildMetadata } from "@kairali/seo";
 import { person, graph, serializeJsonLd } from "@kairali/schema";
+import Image from "next/image";
 import siteConfig from "../../site.config.json";
 import { PageHeader, SiteFooter, WHATSAPP_DISPLAY, waUrl, IG_URL } from "../_components/chrome";
 
@@ -83,16 +84,55 @@ export default function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <PageHeader current="/services" />
 
-      <section className="section pagehero">
-        <p className="eyebrow">Services</p>
-        <h1 className="display">
-          Every occasion has a <em>face</em>. Let&rsquo;s design yours.
-        </h1>
-        <p className="section-lede">
-          Bridal to editorial, one standard: luminous skin, precise structure,
-          and a look that&rsquo;s unmistakably you. Your enquiry goes straight
-          to Sneha — dates and quotes on enquiry.
-        </p>
+      <section className="section pagehero services-page-hero">
+        <div className="services-page-hero__copy">
+          <p className="eyebrow">Services</p>
+          <h1 className="display">
+            Every occasion has a <em>face</em>. Let&rsquo;s design yours.
+          </h1>
+          <p className="section-lede">
+            Bridal to editorial, one standard: luminous skin, precise structure,
+            and a look that&rsquo;s unmistakably you. Your enquiry goes straight
+            to Sneha — dates and quotes on enquiry.
+          </p>
+        </div>
+
+        <div className="services-page-hero__gallery" aria-label="Selected makeup looks by Sneha Chowdhary">
+          <figure className="services-page-hero__look services-page-hero__look--feature">
+            <Image
+              src="/images/portfolio-bridal.jpg"
+              alt="Red bridal look with luminous skin and softly defined eyes by Sneha Chowdhary"
+              fill
+              priority
+              fetchPriority="high"
+              quality={68}
+              sizes="(max-width: 900px) 62vw, 34vw"
+            />
+            <figcaption>Bridal</figcaption>
+          </figure>
+          <figure className="services-page-hero__look services-page-hero__look--occasion">
+            <Image
+              src="/images/portfolio-fresh-glam.jpg"
+              alt="Fresh occasion makeup with dewy skin and precise definition by Sneha Chowdhary"
+              fill
+              loading="eager"
+              quality={65}
+              sizes="(max-width: 900px) 38vw, 18vw"
+            />
+            <figcaption>Occasion</figcaption>
+          </figure>
+          <figure className="services-page-hero__look services-page-hero__look--editorial">
+            <Image
+              src="/images/portfolio-sculpted-glam.jpg"
+              alt="Sculpted camera-ready glamour by Sneha Chowdhary"
+              fill
+              loading="lazy"
+              quality={65}
+              sizes="(max-width: 900px) 38vw, 18vw"
+            />
+            <figcaption>Editorial</figcaption>
+          </figure>
+        </div>
       </section>
 
       {services.map((s, i) => (

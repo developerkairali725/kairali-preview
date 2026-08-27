@@ -15,14 +15,14 @@ renditions, not camera originals.
 |---|---|---|---|---|
 | public/images/hero-cocktail-glam.jpg | ig-DUsF6VCjFHW.jpg | 2304×4096 | w1400 q72 | HERO (pass-2 mockup image — cocktail glam) |
 | public/images/approach-traditional-bridal.jpg | ig-DaXxRCLvS9_.jpg | 900×1600 | w900 q80 | approach section (traditional bridal — clean, no baked text) |
-| public/images/portfolio-bridal.jpg | ig-DQnp1_Fkg6O.jpg | 2268×4032 | w900 q78 | portfolio strip — bridal |
+| public/images/portfolio-bridal.jpg | ig-DQnp1_Fkg6O.jpg | 2268×4032 | w900 q78 | portfolio strip — bridal; /services visual lead |
 | public/images/portfolio-minimal-bridal.jpg | ig-DGPuMSBIvO6.jpg | 2268×4032 | w900 q78 | portfolio strip — minimal bridal |
 | public/images/portfolio-soft-glam.jpg | ig-Da5JDSlsbfm.jpg | 1218×2160 | w900 q78 | portfolio strip — soft glam |
 | public/images/portfolio-structured-glam.jpg | ig-DavCczUyOLi.jpg | 1217×2160 | w900 q78 | portfolio strip — structured glam |
 | public/images/academy-masterclass.jpg | ig-DaSkt3uvEo7-1.jpg | 1856×2320 | w1100 q78 | academy teaser (her masterclass post) |
 | public/og.jpg | ig-DUsF6VCjFHW.jpg | 2304×4096 | 1200×630 crop | OG/Twitter card (Brand Manual ch.08 size) |
-| public/images/portfolio-sculpted-glam.jpg | ig-DasKkOMvfBE.jpg | 1217×2160 | w900 q78 | /portfolio — editorial (full build) |
-| public/images/portfolio-fresh-glam.jpg | ig-Dappy7YvHKI.jpg | 1217×2160 | w900 q78 | /portfolio — cocktail & party (full build) |
+| public/images/portfolio-sculpted-glam.jpg | ig-DasKkOMvfBE.jpg | 1217×2160 | w900 q78 | /portfolio — editorial (full build); /services editorial visual |
+| public/images/portfolio-fresh-glam.jpg | ig-Dappy7YvHKI.jpg | 1217×2160 | w900 q78 | /portfolio — cocktail & party (full build); /services occasion visual |
 | public/images/portfolio-radiant-glam.jpg | ig-DanCGtpv7ny.jpg | 1216×2160 | w900 q78 | /portfolio — cocktail & party (full build) |
 | public/images/portfolio-soft-precision.jpg | ig-DaVKk7Fvt42.jpg | 1215×2160 | w900 q78 | /portfolio — editorial (full build) |
 | public/images/about-sneha.jpg | ig-profilepic.jpg | 1080×1080 | w800 q80 | /about portrait + Person schema (full build) |
