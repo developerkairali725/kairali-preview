@@ -9,10 +9,10 @@
     "pnpm exec turbo build --filter=kairalihospitality.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-08-27T19:01:55+05:30",
-  "finished_at": "2026-08-27T19:02:25+05:30",
+  "started_at": "2026-08-27T19:56:30+05:30",
+  "finished_at": "2026-08-27T19:56:57+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/33076731416",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/33081692548",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
