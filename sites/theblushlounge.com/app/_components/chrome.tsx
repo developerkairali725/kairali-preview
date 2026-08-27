@@ -61,8 +61,19 @@ export function PageHeader({ current }: { current: string }) {
           </a>
         ))}
       </nav>
-      <a className="pagehead__wa" href={WHATSAPP_URL} data-cta="whatsapp_click" rel="noopener">
-        WhatsApp Sneha
+      <a
+        className="pagehead__wa"
+        href={WHATSAPP_URL}
+        data-cta="whatsapp_click"
+        rel="noopener"
+        aria-label="WhatsApp Sneha"
+      >
+        <span className="pagehead__wa-label pagehead__wa-label--wide" aria-hidden="true">
+          WhatsApp Sneha
+        </span>
+        <span className="pagehead__wa-label pagehead__wa-label--compact" aria-hidden="true">
+          WhatsApp
+        </span>
       </a>
     </header>
   );
