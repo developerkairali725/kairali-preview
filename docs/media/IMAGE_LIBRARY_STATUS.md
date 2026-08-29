@@ -1,6 +1,6 @@
 # Image Library — current location and catalog status
 
-_Verified 2026-08-29 13:02:00 IST. This is the same library that was moved on
+_Verified 2026-08-29 13:28:36 IST. This is the same library that was moved on
 2026-08-07, not a new source. Originals remain outside Git; this file records their
 current physical location, compatibility paths, catalog coverage and review limits._
 
@@ -48,9 +48,66 @@ canonical bank. They are discovery candidates, not approved additions:
   Movie by Emily Spurling - 19th Nov 2020 - Full HD 1080p.mp4` — preferred source
   among five local encodes of the same archival film. None is in `VIDEO_CATALOG.csv`;
   confirm rights before reuse.
+- `Laptop Download files/drive-download-20230426T100239Z-001/Swimming Pool.mp4`
+  — unique official 4K KTAHV source candidate (44.278 seconds; 254,089,065 bytes),
+  absent from the canonical library. The indexed Drive source is file
+  `1q2nDPjrIuawUiaF_oEinL5mIUvFFBWmr`; a likely public counterpart is the 0:44
+  swimming-pool YouTube row in `VIDEO_CATALOG.csv`. Model/usage-rights review is
+  required.
 
 The three `drive-download-20230426T105012Z-*` folders under `Laptop Download files/`
 are a split near-duplicate of `ahv-edited/`; do not give both sets to a reviewer.
+
+## Current Mac Downloads — official-site video encodes
+
+Four KTAHV website clips were downloaded to `/Users/kairalimacmini/Downloads/` on
+2026-08-29 and verified through Finder's `kMDItemWhereFroms` metadata against the
+official `ayurvedichealingvillage.com` WordPress upload URLs:
+
+| File | Website source | Duration | Bytes | Review note |
+|---|---|---:|---:|---|
+| `Therapy.mp4` | `/wp-content/uploads/2025/02/Therapy.mp4` | 7.700 s | 729,940 | Identifiable guest; treatment/consent review |
+| `villa.mp4` | `/wp-content/uploads/2025/02/villa.mp4` | 8.900 s | 1,310,777 | Room label and continuing rights review |
+| `Yoga.mp4` | `/wp-content/uploads/2025/02/Yoga.mp4` | 7.067 s | 648,537 | Identifiable model; consent review |
+| `Consultation.mp4` | `/wp-content/uploads/2025/02/Consultation.mp4` | 8.067 s | 1,165,538 | Two identifiable people; role/consent review |
+
+All four are silent H.264, 1280×720 web encodes totalling 3,854,792 bytes and
+31.734 seconds. They are not byte/size matches for files in the external image
+library. Their scenes align with the longer 2023 KTAHV professional footage, so treat
+them as website derivatives/reference encodes rather than new masters. `villa.mp4`
+visually matches the canonical accommodation-room-2 footage; the other edit-level
+relationships remain probable, not proven.
+
+The four source URLs returned HTTP 200 `video/mp4`; fresh downloads matched the local
+SHA-256 hashes. The live English, German and French homepages each reference all four
+once in their desktop hero slider. They remain absent from `VIDEO_CATALOG.csv`,
+`MEDIA_CATALOG.csv` and the current repository site build.
+
+Use `KTAHV_SITE_VIDEO_DOWNLOADS.csv` for their URLs, exact local paths, hashes,
+descriptions and rights notes. Give Claude only these four named files—not the whole
+Downloads folder, which contains unrelated personal material.
+
+## Other KTAHV video candidates in relocated Laptop Downloads
+
+`KTAHV_LOCAL_VIDEO_SUPPLEMENTS.csv` records seven unique/probable KTAHV clips outside
+the canonical library: 1,978,576,341 bytes total. Give Claude the following only as
+review-gated supplements:
+
+- `Swimming Pool.mp4` — offer for pool/property review; official 4K source.
+- `video_20230407.mp4` — offer as a long outdoor Om/yoga-session source.
+- `video_20230409_173144.mp4` — offer as a long staff-led guest-session source.
+- `video_20230407_173823.mp4` — optional shorter take of the Om/yoga session.
+
+Keep the two low-resolution vertical guest-event clips reference-only, and reject the
+2.78-second grass/accidental-lead-in clip. All identifiable guest/model/staff footage
+requires rights and consent review.
+
+The 2023 professional-shoot download set is otherwise duplication/revision evidence,
+not another bank: 18 files in `drive-download-20230426T100239Z-*` plus root-level
+`Kairali Overview_Final.mp4` are SHA-256-identical to canonical videos 01–19. Root
+`Drone.mp4`, `Pharmacy and Consultation.mp4`, and `Quite Room & Therapy Area.mp4` are
+alternate revisions of canonical scenes; prefer the canonical copies and do not give
+both to a reviewer.
 
 ## Committed descriptor status
 
@@ -86,7 +143,14 @@ label; the files are real professional photography, not generated illustrations.
 - `IMAGE_INVENTORY.csv` is the earlier download register and includes only the
   original 50 KTAHV stills. It is not a complete KTAHV inventory.
 - `VIDEO_CATALOG.csv` has 458 data rows overall and maps the 103 files under
-  `video/ktahv/`; it does not cover `video/ktahv-2025-extra/`.
+  `video/ktahv/`; it does not cover `video/ktahv-2025-extra/`, the four current-site
+  encodes, the seven local supplements or all 15 Drive-only items in the official
+  `Ayurvedic Health Resort` source folder.
+- `KTAHV_SITE_VIDEO_DOWNLOADS.csv` describes the four current Mac Downloads website
+  encodes. It is a supplemental provenance descriptor, not a rights clearance or a
+  replacement for the higher-quality canonical 2023 footage.
+- `KTAHV_LOCAL_VIDEO_SUPPLEMENTS.csv` describes the seven unique/probable KTAHV local
+  clips, including offer/reference/reject decisions and consent gates.
 - `MEDIA_CATALOG.csv` is a historical 2026-07-13 discovery snapshot. Its
   `access-pending` notes are superseded by the verified local status above.
 - `legacy-ktahv-site/manifest.tsv` is the file/URL record for the 83 legacy stills.
@@ -105,6 +169,10 @@ Read the status page before the private catalog mirrors:
    `https://docs.google.com/spreadsheets/d/1TZThGxtOqBXBfBMRFdnogiptRzOh2XLFHIisTF6cr2g/edit`
 5. Complete Ambuj/Claude handoff folder —
    `https://drive.google.com/drive/folders/1Lk9-vjgOV8AWQ2K4wBpBW50DMA5j09UW`
+6. Official `Ayurvedic Health Resort` video source folder —
+   `https://drive.google.com/drive/folders/1XY2zZBzH84fvnhDGAu1FNvCClycHU0Lp`
+   (35 MP4 files; 20 local name/size matches and 15 Drive-only items; review/index
+   only—do not bulk-copy for this handoff).
 
 ## Publication and caption rules
 
