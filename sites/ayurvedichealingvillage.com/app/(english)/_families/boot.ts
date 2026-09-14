@@ -102,12 +102,15 @@ export const BOOT_SCRIPT = `
     if (!sourceHost && url.origin !== window.location.origin) return;
     // Source media links are downloads, not website page navigation.
     if (/[.](pdf|jpg|jpeg|png|webp|gif|svg|mp4|zip)$/i.test(url.pathname)) return;
-    // Four source links use older spellings; resolve to the approved pages.
+    // Source links use older spellings; resolve to the approved pages.
     var aliases = {
       "/ayurveda-training-program": "/ayurveda-training-programs/",
       "/sight-seeing": "/sightseeing/",
       "/programs/yoga-meditation-programs": "/yoga-meditation-programs/",
-      "/our-villa": "/our-villas/"
+      "/our-villa": "/our-villas/",
+      "/programs/wellness-programs": "/wellness-programs/",
+      "/programs/treatment-programs": "/treatment-programs/",
+      "/programs/training-programs": "/training-programs/"
     };
     var path = aliases[url.pathname.replace(/[/]$/, "")] || url.pathname;
     var next = path + url.search + url.hash;
