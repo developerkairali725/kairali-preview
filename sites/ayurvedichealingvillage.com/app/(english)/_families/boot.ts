@@ -97,11 +97,21 @@ export const BOOT_SCRIPT = `
     var url;
     try { url = new URL(raw, window.location.href); } catch (_) { return; }
     if (url.protocol !== "https:" && url.protocol !== "http:") return;
-    if (url.hostname !== "ayurvedichealingvillage.com" &&
-        url.hostname !== "www.ayurvedichealingvillage.com") return;
+    var sourceHost = url.hostname === "ayurvedichealingvillage.com" ||
+      url.hostname === "www.ayurvedichealingvillage.com";
+    if (!sourceHost && url.origin !== window.location.origin) return;
     // Source media links are downloads, not website page navigation.
     if (/[.](pdf|jpg|jpeg|png|webp|gif|svg|mp4|zip)$/i.test(url.pathname)) return;
-    anchor.setAttribute("href", url.pathname + url.search + url.hash);
+    // Four source links use older spellings; resolve to the approved pages.
+    var aliases = {
+      "/ayurveda-training-program": "/ayurveda-training-programs/",
+      "/sight-seeing": "/sightseeing/",
+      "/programs/yoga-meditation-programs": "/yoga-meditation-programs/",
+      "/our-villa": "/our-villas/"
+    };
+    var path = aliases[url.pathname.replace(/[/]$/, "")] || url.pathname;
+    var next = path + url.search + url.hash;
+    if ((sourceHost || path !== url.pathname) && raw !== next) anchor.setAttribute("href", next);
   }
   function localizeLinks(root) {
     if (root.nodeType !== 1) return;
