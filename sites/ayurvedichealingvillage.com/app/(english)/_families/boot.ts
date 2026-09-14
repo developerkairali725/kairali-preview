@@ -224,9 +224,9 @@ export const BOOT_SCRIPT = `
     if (tries > 0) setTimeout(function () { bindRoute(tries - 1); }, 60);
   }
 
-  // credentials omitted so the request matches the crossorigin preload the
-  // page emits; without the match the browser downloads the payload twice.
-  fetch(cfg.payloadBase + id + ".json", { credentials: "omit" })
+  // Same-origin credentials preserve Preview authentication and match the
+  // anonymous CORS preload, which also includes same-origin credentials.
+  fetch(cfg.payloadBase + id + ".json", { credentials: "same-origin" })
     .then(function (r) {
       if (!r.ok) throw new Error("view " + id + " -> HTTP " + r.status);
       return r.json();
