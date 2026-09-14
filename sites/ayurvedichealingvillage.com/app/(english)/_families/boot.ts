@@ -87,6 +87,42 @@ export const BOOT_SCRIPT = `
     e.preventDefault();
   }, true);
 
+  // The source designs retain canonical production URLs. Keep navigation
+  // within this deployment while leaving external destinations, downloads,
+  // mail, telephone links, metadata and source provenance untouched.
+  function localizeLink(anchor) {
+    if (!anchor || !anchor.getAttribute) return;
+    var raw = anchor.getAttribute("href");
+    if (!raw) return;
+    var url;
+    try { url = new URL(raw, window.location.href); } catch (_) { return; }
+    if (url.protocol !== "https:" && url.protocol !== "http:") return;
+    if (url.hostname !== "ayurvedichealingvillage.com" &&
+        url.hostname !== "www.ayurvedichealingvillage.com") return;
+    // Source media links are downloads, not website page navigation.
+    if (/[.](pdf|jpg|jpeg|png|webp|gif|svg|mp4|zip)$/i.test(url.pathname)) return;
+    anchor.setAttribute("href", url.pathname + url.search + url.hash);
+  }
+  function localizeLinks(root) {
+    if (root.nodeType !== 1) return;
+    if (root.matches("a[href], area[href]")) localizeLink(root);
+    root.querySelectorAll("a[href], area[href]").forEach(localizeLink);
+  }
+  new MutationObserver(function (changes) {
+    changes.forEach(function (change) {
+      if (change.type === "attributes") localizeLink(change.target);
+      else change.addedNodes.forEach(localizeLinks);
+    });
+  }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+  // Also normalize synchronously before native activation, including middle
+  // clicks and copied link addresses, without overriding browser behavior.
+  ["click", "auxclick", "contextmenu", "focusin"].forEach(function (event) {
+    host.addEventListener(event, function (e) {
+      var target = e.target;
+      if (target && target.closest) localizeLink(target.closest("a[href], area[href]"));
+    }, true);
+  });
+
   // Step 1 — sibling component map. Also makes support.js skip its
   // location.href re-fetch, which would look for an <x-dc> this page does not
   // serve (the template arrives as JSON).
