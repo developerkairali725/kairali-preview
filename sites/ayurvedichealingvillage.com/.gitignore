@@ -1,2 +1,12 @@
 .vercel
 .env*
+
+# Runtime binaries: pinned private GitHub staging asset bundle.
+/public/ahv/**/*.jpeg
+/public/ahv/**/*.jpg
+/public/ahv/**/*.mp4
+/public/ahv/**/*.pdf
+/public/ahv/**/*.png
+/public/ahv/**/*.ttf
+/public/ahv/**/*.webp
+

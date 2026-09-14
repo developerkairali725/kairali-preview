@@ -1,0 +1,1662 @@
+{
+ "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
+ "source": "final-english-portable-candidate",
+ "generated": "2026-09-14T20:24:21.815Z",
+ "rule": "CLAUDE.md \"KTAHV LANGUAGE LOCK\" — banned words on KTAHV pages",
+ "bannedWords": [
+  "spa",
+  "resort",
+  "holiday",
+  "holidays",
+  "luxury",
+  "luxurious",
+  "cure",
+  "cures",
+  "journey",
+  "journeys",
+  "guest",
+  "guests",
+  "getaway",
+  "getaways",
+  "escape",
+  "escapes"
+ ],
+ "method": "Word-boundary scan of the served desktop+mobile templates and the resolved per-route title/description. Reported only: the approved design is never rewritten by this tool (owner instruction, 15 Sep 2026).",
+ "routesWithHits": 191,
+ "routesTotal": 252,
+ "totalsByWord": {
+  "spa": 322,
+  "luxury": 738,
+  "luxurious": 19,
+  "journey": 485,
+  "guest": 149,
+  "guests": 328,
+  "resort": 560,
+  "getaway": 46,
+  "escape": 53,
+  "journeys": 23,
+  "getaways": 5,
+  "holiday": 22,
+  "cure": 18,
+  "cures": 4
+ },
+ "routes": [
+  {
+   "path": "/",
+   "surface": "view",
+   "hits": {
+    "spa": 16,
+    "luxury": 12,
+    "luxurious": 6,
+    "journey": 10,
+    "guest": 4,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 12,
+    "resort": 3,
+    "luxury": 12,
+    "luxurious": 2,
+    "guests": 4,
+    "getaway": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 12,
+    "resort": 8,
+    "luxury": 15,
+    "guests": 4,
+    "getaway": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/about-us/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 3,
+    "luxury": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/accreditations/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxurious": 1
+   }
+  },
+  {
+   "path": "/alcohol-free/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2,
+    "journey": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/animal-husbandry/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/apply-now/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/archive-yoga-retreat/",
+   "surface": "view",
+   "hits": {
+    "journeys": 2
+   }
+  },
+  {
+   "path": "/archive/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 5
+   }
+  },
+  {
+   "path": "/arogya-kendra/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/arogya-shala/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+   "surface": "view",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/attractions-above-50kms/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1,
+    "getaways": 2
+   }
+  },
+  {
+   "path": "/attractions-under-10kms/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1
+   }
+  },
+  {
+   "path": "/awards-and-accreditations/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 7
+   }
+  },
+  {
+   "path": "/ayurveda-offers/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 5,
+    "journey": 5
+   }
+  },
+  {
+   "path": "/ayurveda-retreat-kerala.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 13,
+    "resort": 5,
+    "luxury": 33,
+    "guests": 1
+   }
+  },
+  {
+   "path": "/ayurveda-retreats-for-everyone/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2,
+    "holiday": 5,
+    "getaway": 2
+   }
+  },
+  {
+   "path": "/ayurveda-training/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 10
+   }
+  },
+  {
+   "path": "/ayurveda-treatment/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 5,
+    "guests": 1
+   }
+  },
+  {
+   "path": "/ayurveda-workshop/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 4
+   }
+  },
+  {
+   "path": "/ayurveda/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/ayurvedic-classical-medicines/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/ayurvedic-cuisine/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 4
+   }
+  },
+  {
+   "path": "/ayurvedic-franchise/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "resort": 1,
+    "journey": 2
+   }
+  },
+  {
+   "path": "/ayurvedic-herbal-tea/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/ayurvedic-links/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 7,
+    "holiday": 11,
+    "luxury": 2
+   }
+  },
+  {
+   "path": "/ayurvedic-products/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guests": 4
+   }
+  },
+  {
+   "path": "/ayurvedic-proprietary-medicines/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/ayurvedic-proprietary-organics/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1
+   }
+  },
+  {
+   "path": "/ayurvedic-treatment-packages.html",
+   "surface": "view",
+   "hits": {
+    "spa": 4,
+    "resort": 2,
+    "luxury": 6,
+    "luxurious": 2,
+    "guest": 2,
+    "guests": 10,
+    "getaway": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/ayurvedic-treatments/",
+   "surface": "view",
+   "hits": {
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/back-water-tour/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/beauty-care-and-eye-care/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 8
+   }
+  },
+  {
+   "path": "/book-now/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/books/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "journey": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/brief-on-kairali/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 2
+   }
+  },
+  {
+   "path": "/butterfly-booklet/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 6
+   }
+  },
+  {
+   "path": "/cancellation-and-refund-policy/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 2,
+    "guests": 12
+   }
+  },
+  {
+   "path": "/careers/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/chef-retreat-food-to-wellness/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 6
+   }
+  },
+  {
+   "path": "/classic-villa/",
+   "surface": "view",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/consultancy/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/contact-us-old/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "journey": 1
+   }
+  },
+  {
+   "path": "/contact-us/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/contact-us/thank-you/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1
+   }
+  },
+  {
+   "path": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/defence-and-paramilitary-forces/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 6,
+    "luxury": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/deluxe-villa/",
+   "surface": "view",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/destination-palakkad/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/digestive-wellness-gut-health-yoga-therapy/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/disclaimer/",
+   "surface": "view + dataset record",
+   "hits": {
+    "cure": 2,
+    "guest": 8,
+    "guests": 28
+   }
+  },
+  {
+   "path": "/elephant-safari/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/emailsubscriber/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 5
+   }
+  },
+  {
+   "path": "/enquiry-form-old/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxurious": 1
+   }
+  },
+  {
+   "path": "/enquiry-form/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 2
+   }
+  },
+  {
+   "path": "/family-ayurvedic-retreat-kerala.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "resort": 5,
+    "luxury": 8,
+    "luxurious": 1,
+    "cure": 1,
+    "journey": 4,
+    "journeys": 1,
+    "guest": 13,
+    "getaway": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/faqs-downloads/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 4,
+    "luxury": 12,
+    "journey": 9,
+    "guest": 2,
+    "guests": 15,
+    "getaways": 2
+   }
+  },
+  {
+   "path": "/food-sadhana/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 4
+   }
+  },
+  {
+   "path": "/founders-message/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/givefeedback/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 3,
+    "guest": 4,
+    "guests": 4
+   }
+  },
+  {
+   "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guest": 2,
+    "guests": 8
+   }
+  },
+  {
+   "path": "/house-boat-tour/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxurious": 2,
+    "journey": 2,
+    "guest": 1,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/how-to-reach-old/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "journey": 3,
+    "escape": 1
+   }
+  },
+  {
+   "path": "/how-to-reach/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 4,
+    "resort": 2,
+    "journey": 3
+   }
+  },
+  {
+   "path": "/immunity-enhancement-executive-health-assessment-therapy/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/in-house-products/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/internships-at-kairali/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 2
+   }
+  },
+  {
+   "path": "/kair-by-kairali/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-air-india-maharaja-club.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 6
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-centre/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "journey": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-equipment/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-group/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-products-pvt-ltd/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-treatment-center/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-ayurvedic-way-of-weight-management/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 4,
+    "guest": 1,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/kairali-cleansing-centre.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 58,
+    "resort": 204,
+    "luxury": 63,
+    "journey": 4,
+    "journeys": 2,
+    "guests": 6,
+    "getaway": 11
+   }
+  },
+  {
+   "path": "/kairali-hospitality/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 1,
+    "guest": 1,
+    "guests": 4
+   }
+  },
+  {
+   "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/kairali-the-ayurvedic-healing-village/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 8,
+    "journey": 2,
+    "guest": 1,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/karma-being-retreat-2019/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 8,
+    "resort": 2,
+    "journey": 12
+   }
+  },
+  {
+   "path": "/karma-being-retreat/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 10,
+    "luxury": 12,
+    "journey": 5
+   }
+  },
+  {
+   "path": "/katha-wellness-retreat-2019/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 5,
+    "escape": 3
+   }
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2017/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 3
+   }
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2018/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2
+   }
+  },
+  {
+   "path": "/learn-about-ayurveda/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 4,
+    "luxury": 4,
+    "guests": 10
+   }
+  },
+  {
+   "path": "/learn-more-about-yoga/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/legal-notice/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 2
+   }
+  },
+  {
+   "path": "/live-to-100-with-panchkarma/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/maharaja-suite/",
+   "surface": "view",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/meditation/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 6,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/mindfulness-retreat/",
+   "surface": "view",
+   "hits": {
+    "luxury": 4
+   }
+  },
+  {
+   "path": "/mountain-jeep-safari/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "journeys": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/nature-walk/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/new-privacy-policy/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 2
+   }
+  },
+  {
+   "path": "/new-to-ayurveda/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 6,
+    "journey": 8,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/new-to-yoga-teacher-training/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/new-to-yoga/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 12,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/no-caffeine/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1,
+    "guests": 14
+   }
+  },
+  {
+   "path": "/no-preservatives/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 1,
+    "guests": 6
+   }
+  },
+  {
+   "path": "/no-refridgeration/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/no-smoking/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 1,
+    "guests": 20
+   }
+  },
+  {
+   "path": "/offers/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "journeys": 6,
+    "guest": 4,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/offers/new/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 1,
+    "luxury": 8,
+    "luxurious": 1,
+    "journey": 8,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/offers/senior-citizen-offer/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 1,
+    "luxury": 8,
+    "luxurious": 1,
+    "journey": 8,
+    "guest": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/online-consultation/",
+   "surface": "view + dataset record",
+   "hits": {
+    "cure": 1
+   }
+  },
+  {
+   "path": "/organic-farm/",
+   "surface": "view + dataset record",
+   "hits": {
+    "cures": 2,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/our-accolades/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 3,
+    "luxury": 12,
+    "guest": 1
+   }
+  },
+  {
+   "path": "/our-partners/",
+   "surface": "view",
+   "hits": {
+    "luxury": 2
+   }
+  },
+  {
+   "path": "/our-story/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "luxury": 1
+   }
+  },
+  {
+   "path": "/our-villas/",
+   "surface": "view",
+   "hits": {
+    "luxury": 3
+   }
+  },
+  {
+   "path": "/packages/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guests": 2,
+    "getaway": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/panchakarma-therapy/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 12,
+    "guest": 6,
+    "guests": 6
+   }
+  },
+  {
+   "path": "/panchakarma/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 5,
+    "cure": 2
+   }
+  },
+  {
+   "path": "/panchkarma-treatment.html",
+   "surface": "view",
+   "hits": {
+    "spa": 4,
+    "resort": 6,
+    "holiday": 2,
+    "luxury": 1,
+    "guest": 6,
+    "guests": 4
+   }
+  },
+  {
+   "path": "/payment-policy-compliance/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 6
+   }
+  },
+  {
+   "path": "/personalized-customized-healing-program/",
+   "surface": "view",
+   "hits": {
+    "luxury": 6,
+    "journey": 6,
+    "guest": 2,
+    "guests": 6
+   }
+  },
+  {
+   "path": "/photo-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/post-pregnancy-health-programme/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 8
+   }
+  },
+  {
+   "path": "/postulez-maintenant/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 1
+   }
+  },
+  {
+   "path": "/prav-simona-monsoon-yoga-retreat/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2,
+    "luxury": 5
+   }
+  },
+  {
+   "path": "/prav-simona-yoga-retreat/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 5,
+    "journey": 3
+   }
+  },
+  {
+   "path": "/preventive-and-regenerative-treatment/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 8,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/preventive-rejuvenation-detoxification.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 8,
+    "resort": 1,
+    "luxury": 17,
+    "cure": 6,
+    "journey": 7,
+    "guests": 2,
+    "escape": 4
+   }
+  },
+  {
+   "path": "/privacy-policy/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 3,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/privacy-statement/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/product-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/product-range/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2
+   }
+  },
+  {
+   "path": "/property-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/read-feedback/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 10
+   }
+  },
+  {
+   "path": "/retreats-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 4,
+    "escape": 1
+   }
+  },
+  {
+   "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 4
+   }
+  },
+  {
+   "path": "/revitalizing-and-strengthening/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 12,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/royal-villa/",
+   "surface": "view",
+   "hits": {
+    "luxury": 4
+   }
+  },
+  {
+   "path": "/search-results/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 3,
+    "journey": 3,
+    "guests": 5
+   }
+  },
+  {
+   "path": "/sight-seeing-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/sitemap/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 5,
+    "luxury": 1
+   }
+  },
+  {
+   "path": "/sleep-restoration-therapy/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/social-cultural-environmental-commitment/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 2
+   }
+  },
+  {
+   "path": "/social-responsibilities/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 2
+   }
+  },
+  {
+   "path": "/special-offers/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxurious": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/terms-and-conditions/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guest": 8,
+    "guests": 24
+   }
+  },
+  {
+   "path": "/test-page-2/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 16,
+    "resort": 4,
+    "luxury": 30,
+    "journey": 2
+   }
+  },
+  {
+   "path": "/testing/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/things-to-do-in-kerala/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 6,
+    "getaway": 2
+   }
+  },
+  {
+   "path": "/things-to-do/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 6,
+    "getaway": 2
+   }
+  },
+  {
+   "path": "/training/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guest": 1,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-arthritis-and-spondylitis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 12,
+    "journeys": 2,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/treatment-for-bronchial-diseases/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-cervical-spondylosis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6
+   }
+  },
+  {
+   "path": "/treatment-for-chronic-back-pain/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-diabetes/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-facial-paralysis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-hypertension/",
+   "surface": "view",
+   "hits": {
+    "resort": 2,
+    "luxury": 8,
+    "cures": 2,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-nervous-disability/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-paralysis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-psoriasis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 8,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-sinusitis-and-migraine/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-skin-diseases/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 4
+   }
+  },
+  {
+   "path": "/treatment-for-slip-disc/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-for-spondylitis/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 8,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatment-in-kerala.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 30,
+    "resort": 14,
+    "luxury": 32,
+    "cure": 1,
+    "journey": 1,
+    "guests": 1,
+    "getaway": 4
+   }
+  },
+  {
+   "path": "/treatment-to-remove-stress-and-strain/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 4,
+    "journeys": 6,
+    "guest": 6,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/treatments-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/vegetarian/",
+   "surface": "view + dataset record",
+   "hits": {
+    "getaway": 2
+   }
+  },
+  {
+   "path": "/video-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "resort": 9,
+    "luxury": 1,
+    "guest": 5,
+    "guests": 1
+   }
+  },
+  {
+   "path": "/villa-raag/",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 2,
+    "resort": 1,
+    "holiday": 4,
+    "luxury": 45,
+    "journey": 2,
+    "guest": 2,
+    "guests": 6,
+    "escape": 8
+   }
+  },
+  {
+   "path": "/villas-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/visit-kerala/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 6,
+    "getaway": 2,
+    "escape": 3
+   }
+  },
+  {
+   "path": "/walk-in-ayurveda-treatment/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/weight-loss-programme/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 10,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/weight-loss.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 9,
+    "resort": 6,
+    "luxury": 15,
+    "journey": 20,
+    "journeys": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/wellness-resort-kerala.html",
+   "surface": "view + dataset record",
+   "hits": {
+    "spa": 58,
+    "resort": 228,
+    "luxury": 54,
+    "cure": 2,
+    "guests": 2,
+    "getaway": 9
+   }
+  },
+  {
+   "path": "/what-is-ayurvedic-food/",
+   "surface": "view + dataset record",
+   "hits": {
+    "guests": 4
+   }
+  },
+  {
+   "path": "/what-is-yoga/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2,
+    "guests": 2,
+    "getaway": 2
+   }
+  },
+  {
+   "path": "/why-get-training-in-ayurveda/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/why-pick-a-yoga-or-yoga-retreat/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 2
+   }
+  },
+  {
+   "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+   "surface": "view + dataset record",
+   "hits": {
+    "cure": 3
+   }
+  },
+  {
+   "path": "/wildlife-drive/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 4,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/womens-hormonal-balance-endocrine-therapy/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guests": 2,
+    "escape": 2
+   }
+  },
+  {
+   "path": "/yoga-and-meditation-package/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 2
+   }
+  },
+  {
+   "path": "/yoga-based-stress-energy-reset-program/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/yoga-classes-practical/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1
+   }
+  },
+  {
+   "path": "/yoga-classes-theory/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 4
+   }
+  },
+  {
+   "path": "/yoga-gallery/",
+   "surface": "view + dataset record",
+   "hits": {
+    "escape": 1
+   }
+  },
+  {
+   "path": "/yoga-meditation-program/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/yoga-meditation-programs/",
+   "surface": "view",
+   "hits": {
+    "luxury": 2
+   }
+  },
+  {
+   "path": "/yoga-meditation-training/",
+   "surface": "view",
+   "hits": {
+    "luxury": 8,
+    "journey": 6,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/yoga-retreats-for-everyone/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1,
+    "guest": 2,
+    "guests": 2
+   }
+  },
+  {
+   "path": "/yoga-therapy-individual/",
+   "surface": "view + dataset record",
+   "hits": {
+    "journey": 1,
+    "getaways": 1
+   }
+  }
+ ]
+}

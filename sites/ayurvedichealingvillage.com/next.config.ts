@@ -21,16 +21,32 @@ import type { NextConfig } from "next";
 //   /pain-management.html                     → /lp/pain-management
 //   /de/behandlung-in-kerala/                 → /lp/behandlung-in-kerala        (DE)
 //   /treatment-in-kerala.html                 → /lp/treatment-in-kerala
+// STAGING LOCK (WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001). The English
+// candidate lane is a review build. X-Robots-Tag is the authoritative
+// no-index control here because the approved design writes its own <head> at
+// runtime (the family renderers call applyHead with the source's
+// "index, follow"): a response header is the one directive page JavaScript
+// cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
+// when the owner takes this to production.
+const IS_STAGING = process.env.AHV_STAGING !== "0";
+
 const nextConfig: NextConfig = {
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
-  async redirects() {
+  async headers() {
+    if (!IS_STAGING) return [];
     return [
-      // Interim only: the factory site has no organic homepage yet, and the
-      // factory spec suite exercises "/" — route it to the golden LP. The
-      // KTAHV rebuild replaces this with the real homepage.
-      { source: "/", destination: "/lp/panchkarma-treatment", permanent: false },
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive, noimageindex" },
+        ],
+      },
     ];
   },
+  // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
+  // English homepage now exists at "/" (app/(english)/page.tsx), which is the
+  // replacement its own comment anticipated. The commented legacy -> /lp/
+  // cutover map above stays commented; nothing about the live Ads URLs changes.
 };
 
 export default nextConfig;
