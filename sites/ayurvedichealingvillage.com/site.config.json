@@ -2,8 +2,20 @@
   "domain": "ayurvedichealingvillage.com",
   "entity": "ktahv",
   "register": "A",
-  "locales": ["en"],
-  "targetMarkets": ["IN", "DE", "FR"],
+  "locales": [
+    "en"
+  ],
+  "targetMarkets": [
+    "IN",
+    "DE",
+    "FR"
+  ],
   "video": "real",
-  "brand": "kairali"
+  "brand": "kairali",
+  "compliance": {
+    "vendored": [
+      "public/ahv"
+    ],
+    "note": "public/ahv is the imported approved design payload. tools/import-english-candidate.mjs rewrites it wholesale on every run, so it is vendored source, not authored here. Findings are still reported, at warning severity. Owner ruling D-20260915-07."
+  }
 }

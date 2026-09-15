@@ -169,6 +169,13 @@ export const LOCKED_COUNT_PATTERNS = [
 /** Locked facts (PROJECT_CONTEXT §3 / CLAUDE.md) — wrong values are bugs. */
 export const LOCKED_FACTS = {
   contactEmail: "info@kairali.com",
+  /**
+   * Departmental mailboxes the owner has ruled permitted alongside the public
+   * contact address. The rule still fires on every OTHER @kairali.com local
+   * part, so a typo like infoo@ is still caught. Owner ruling D-20260915-06
+   * (2026-09-15): career@ is correct on careers/apply routes.
+   */
+  permittedDepartmentEmails: ["career@kairali.com"],
   ktahvWhatsApp: "+91 92898 38797",
   /** Known-bad number — remove on sight, any formatting. */
   knownBadNumberDigits: "9289838777",

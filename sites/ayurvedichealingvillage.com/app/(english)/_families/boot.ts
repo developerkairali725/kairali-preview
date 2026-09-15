@@ -207,9 +207,10 @@ export const BOOT_SCRIPT = `
   // The real address is NOT invented — it is recoverable from the captured
   // hex, which is the address XORed byte-by-byte with its first byte. Decoded
   // across the payload: 46x info@kairali.com, 2x info@kairalil.com (a typo
-  // domain on the legacy site), 1x infoo@kairali.com (the legacy typo already
-  // recorded in BUILD-STATUS) and 1x mylinkexchangepartner@gmail.com (SEO
-  // link-exchange plumbing). Owner ruling D-20260915-04: restore the real
+  // domain on the legacy site), 1x the doubled-letter local part already
+  // recorded in BUILD-STATUS, and 1x mylinkexchangepartner@gmail.com (SEO
+  // link-exchange plumbing; the local part is the public one with a doubled
+  // letter). Owner ruling D-20260915-04: restore the real
   // ones and NORMALISE all three non-standard addresses to the locked public
   // address, so nothing that bounces and no link-exchange mailbox ships.
   var PUBLIC_EMAIL = "info@kairali.com";
