@@ -231,7 +231,7 @@ export const BOOT_SCRIPT = `
       if (isNaN(c)) return null;
       out += String.fromCharCode(c ^ key);
     }
-    return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(out) ? out : null;
+    return /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(out) ? out : null;
   }
   // Locked facts: info@kairali.com is the public contact address everywhere.
   // career@kairali.com is a separate approved departmental address and is NOT
@@ -252,7 +252,7 @@ export const BOOT_SCRIPT = `
       a.setAttribute("href", "mailto:" + address);
       // Replace the placeholder wherever it is shown, including when the
       // anchor wraps other markup.
-      if (/\[email\s*protected\]/i.test(a.textContent || "")) a.textContent = address;
+      if (/\\[email\\s*protected\\]/i.test(a.textContent || "")) a.textContent = address;
       a.__ahvEmailFixed = true;
       emailsFixed++;
     });
@@ -263,10 +263,10 @@ export const BOOT_SCRIPT = `
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
     var stray = [], node;
     while ((node = walker.nextNode())) {
-      if (node.nodeValue && /\[email\s*protected\]/i.test(node.nodeValue)) stray.push(node);
+      if (node.nodeValue && /\\[email\\s*protected\\]/i.test(node.nodeValue)) stray.push(node);
     }
     stray.forEach(function (t) {
-      t.nodeValue = t.nodeValue.replace(/\[email\s*protected\]/gi, PUBLIC_EMAIL);
+      t.nodeValue = t.nodeValue.replace(/\\[email\\s*protected\\]/gi, PUBLIC_EMAIL);
       emailsFixed++;
     });
   }
@@ -343,7 +343,7 @@ export const BOOT_SCRIPT = `
     // The mobile menu's static locale line.
     root.querySelectorAll("div, p, span").forEach(function (el) {
       if (el.childElementCount !== 0) return;
-      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      var t = (el.textContent || "").replace(/\\s+/g, " ").trim();
       // Separator-agnostic: the captured line uses a middot, but the same
       // static line appears with other separators across the chrome variants.
       if (t.length > 64) return;
@@ -516,6 +516,59 @@ export const BOOT_SCRIPT = `
     if (consentChoice() === "accepted") startMeasurement();
   }
 
+  // Enquiry form placement. On /enquiry-form/ the form sat ~6,000px down an
+  // ~8,400px page -- about fifteen phone screens of scrolling before a patient
+  // could enquire, on the page whose entire job is enquiries. The approved
+  // design does ship a "Skip to the enquiry form" link, but it is a 1px
+  // visually-hidden skip link: real for a keyboard or screen reader, invisible
+  // to everyone else. Owner-reported ("format looked bad, the original was
+  // better"); owner ruled BOTH remedies, 2026-09-15.
+  //
+  // Nothing is deleted, re-worded or re-styled. The form element is MOVED to
+  // the top of the column it already lives in, and self-referencing CTAs are
+  // pointed at it. Every section, all copy and all styling survive unchanged.
+  var formLifted = false;
+  function liftEnquiryForm() {
+    if (formLifted) return;
+    var form = host.querySelector("form[id]");
+    if (!form) return;
+    var column = form.parentElement;
+    if (!column || column.children.length < 2) return;
+    // Keep the skip link first so it still precedes what it targets; the form
+    // goes immediately after it, ahead of the long editorial block.
+    var first = column.firstElementChild;
+    var afterSkip = first && first.tagName === "A" && /^#/.test(first.getAttribute("href") || "")
+      ? first.nextSibling
+      : first;
+    if (form === afterSkip) { formLifted = true; return; }
+    column.insertBefore(form, afterSkip);
+    formLifted = true;
+  }
+
+  // A call to action that points at the page you are already on does nothing.
+  // The sticky bar's "Enquire" is exactly that on the enquiry page. Where the
+  // page carries a form with an id, those self-links scroll to it instead.
+  function retargetSelfLinks(root) {
+    if (!root || root.nodeType !== 1) return;
+    var form = host.querySelector("form[id]");
+    if (!form || !form.id) return;
+    var here = window.location.pathname.replace(/[/]$/, "");
+    var links = [];
+    if (root.matches && root.matches("a[href]")) links.push(root);
+    root.querySelectorAll("a[href]").forEach(function (a) { links.push(a); });
+    links.forEach(function (a) {
+      if (a.__ahvSelfRetargeted) return;
+      var raw = a.getAttribute("href") || "";
+      if (/^#/.test(raw)) return;
+      var url;
+      try { url = new URL(raw, window.location.href); } catch (e) { return; }
+      if (url.origin !== window.location.origin) return;
+      if (url.pathname.replace(/[/]$/, "") !== here) return;
+      a.setAttribute("href", "#" + form.id);
+      a.__ahvSelfRetargeted = true;
+    });
+  }
+
   var hpNames = [];
   function hideHoneypots(root) {
     if (!root || root.nodeType !== 1) return;
@@ -552,6 +605,8 @@ export const BOOT_SCRIPT = `
     repairEmailLinks(host);
     upgradeLanguageControls(host);
     applyConsent();
+    liftEnquiryForm();
+    retargetSelfLinks(host);
     // Keep going while EITHER repair still has nothing to show for itself —
     // stopping at the honeypot alone would cut the email repair short on the
     // enquiry page, which carries both.
@@ -569,6 +624,7 @@ export const BOOT_SCRIPT = `
         repairEmailLinks(node);
         upgradeLanguageControls(node);
         applyConsent();
+        retargetSelfLinks(node);
       });
     });
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
