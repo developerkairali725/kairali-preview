@@ -121,10 +121,57 @@ export const BOOT_SCRIPT = `
     if (root.matches("a[href], area[href]")) localizeLink(root);
     root.querySelectorAll("a[href], area[href]").forEach(localizeLink);
   }
+
+  // The approved homepage views are the only two that use <image-slot>. Its
+  // shadow stylesheet sets touch-action:none on the framed <img> and on the
+  // .spill layer so a photo can be dragged to reposition inside its frame in
+  // the design tool. That drag is correctly gated on data-editable, which is
+  // never set here (it requires window.omelette.writeFile), but the CSS is
+  // unconditional — so on a touch device a finger landing on any homepage
+  // photo suppressed the browser's own pan gesture and the page would not
+  // scroll. Measured: drag from a slot scrolled 0px; with touch-action back to
+  // auto the same drag scrolled 237-285px.
+  //
+  // Fixed from our own stylesheet rather than by editing the payload:
+  // image-slot.js is imported source, and tools/import-english-candidate.mjs
+  // rewrites public/ahv/ wholesale on every run, so a payload edit would not
+  // survive a re-import. The slot's shadow root is mode:"open", so an adopted
+  // sheet reaches it without touching approved bytes. Scoped to slots that are
+  // NOT editable, so authoring behaviour is unchanged wherever it does apply.
+  var slotSheet = null;
+  function slotScrollSheet() {
+    if (slotSheet === null) {
+      try {
+        slotSheet = new CSSStyleSheet();
+        slotSheet.replaceSync(".frame img,.spill{touch-action:auto}");
+      } catch (e) { slotSheet = false; }
+    }
+    return slotSheet;
+  }
+  function restoreSlotScroll(slot) {
+    if (!slot || slot.__ahvTouchFixed) return;
+    var shadow = slot.shadowRoot;
+    var sheet = slotScrollSheet();
+    if (!shadow || !sheet || slot.hasAttribute("data-editable")) return;
+    try {
+      if (shadow.adoptedStyleSheets.indexOf(sheet) === -1) {
+        shadow.adoptedStyleSheets = shadow.adoptedStyleSheets.concat(sheet);
+      }
+      slot.__ahvTouchFixed = true;
+    } catch (e) { /* a browser without adoptedStyleSheets keeps source behaviour */ }
+  }
+  function restoreSlotScrolling(root) {
+    if (!root || root.nodeType !== 1) return;
+    if (root.matches("image-slot")) restoreSlotScroll(root);
+    root.querySelectorAll("image-slot").forEach(restoreSlotScroll);
+  }
   new MutationObserver(function (changes) {
     changes.forEach(function (change) {
       if (change.type === "attributes") localizeLink(change.target);
-      else change.addedNodes.forEach(localizeLinks);
+      else change.addedNodes.forEach(function (node) {
+        localizeLinks(node);
+        restoreSlotScrolling(node);
+      });
     });
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
   // Also normalize synchronously before native activation, including middle
@@ -253,6 +300,15 @@ export const BOOT_SCRIPT = `
   var pendingTemplate = null;
   var templatePushed = false;
 
+  // A slot upgrades when image-slot.js runs, which is AFTER its element is in
+  // the DOM, so the MutationObserver above can see the node before it has a
+  // shadow root. Sweep on the same retry cadence as bindRoute so late upgrades
+  // and <sc-for>-rendered list slots are covered too.
+  function sweepSlots(tries) {
+    restoreSlotScrolling(host);
+    if (tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
+  }
+
   function bindRoute(tries) {
     if (typeof window.__dcSetProps === "function" && typeof window.__dcRootName === "function") {
       var name = window.__dcRootName();
@@ -326,6 +382,7 @@ export const BOOT_SCRIPT = `
       });
 
       bindRoute(40);
+      sweepSlots(40);
     })
     .catch(fail);
 })();
