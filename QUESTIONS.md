@@ -807,3 +807,40 @@ Resolution notes appended per the append-only law; the original question rows fo
 
 ## Q-CHATBOT-WRONG-NUMBER — the interim Priya Chatbase bot prints a WRONG WhatsApp number (…38794) + no AI disclosure + off-register greeting — FLEET-WIDE, owner's Chatbase dashboard [2026-07-18 23:10:47 IST]
 Opening the interim Chatbase bubble on the ayurvedafranchise build (runtime screenshot: launches/ayurvedafranchise.com/evidence/chat-bubble-open-disclosure.png + zoom chat-bubble-footer-zoom-WRONG-NUMBER.png) shows the bot's own footer printing "WhatsApp: +91-92898-38794" — NOT the locked +91 92898 38797. The locked-facts law is fix-on-sight, but the bot config lives in the owner's Chatbase dashboard, not this repo — so this is the loudest flag the lane can raise. Same screenshot shows three more config-level issues: (a) the bot presents as "Priya Sharma - Kairali" with a HUMAN avatar photo and NO honest-AI disclosure (the D-20260718-05 lane docs and every audit demand "Priya, our AI assistant"; the page copy discloses AI-first, the widget itself does not); (b) the greeting is KTAHV consumer content ("Free Consultation … Certified Ayurvedic Doctors", "Healing Village awaits you") — off-MoA on a B2B franchise site (the interim-bot ruling covers its PRESENCE, but the greeting will read strangely to an investor); (c) the footer says "Trusted since 1908" — the group-claim conflation D-1908-WORDING bans. Every fleet site carrying the interim bot shows the same config. Needed: Chatbase dashboard edits (number → …38797; AI disclosure in name/greeting; drop "Trusted since 1908" or use the licensed lineage wording) — or say the word and the lane drafts the exact replacement copy for whoever holds the dashboard.
+
+## Q-MAIN-GUARD-ENCODING — 31 scripts silently no-op on any path containing a space (2026-09-15 16:14:52 IST)
+
+**Found during:** AHV English staging session, while executing the CLAUDE.md-mandated
+directive capture. `node scripts/directive-capture.mjs add "…"` exited 0, printed
+nothing, and wrote nothing.
+
+**Cause.** The main-module guard in these scripts is
+
+```js
+if (import.meta.url === `file://${process.argv[1]}`)
+```
+
+`import.meta.url` percent-encodes the path; `process.argv[1]` does not. This fleet is
+checked out under `/Volumes/Extreme SSD - Blue 2nd/…`, so the two strings never match,
+`main()` never runs, and the script exits 0 **having done nothing**. It does not fail —
+it reports success.
+
+**Why this matters more than one broken command.** The affected list is the governance
+machinery itself: `boot-contract.mjs`, `doctor.mjs`, `front-gate.mjs`,
+`gate-registry-lint.mjs`, `launch-evidence-gate.mjs`, `status-build.mjs`,
+`class-map-lint.mjs`, `beauty-audit.mjs`, `go-science-audit.mjs`, `content-lint.mjs`,
+`authenticated-approval.mjs` and 20 more. Any local run of these from this drive is a
+green light that checked nothing. GitHub Actions paths have no spaces so CI would be
+unaffected — but the AHV evidence records GitHub Actions as blocked on billing, so for
+that work these gates may not have executed anywhere.
+
+**Fixed here:** `scripts/directive-capture.mjs` only, because this session was required
+to use it. Guard is now `resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])`.
+
+**Open for the owner — deliberately NOT done in this session:** the other 30 scripts.
+Fixing them makes gates that currently pass vacuously start actually running, which can
+turn green checks red. That is correct behaviour and rule (g) says fix the cause, never
+weaken the gate — but it is a fleet-wide change that belongs in its own PR with its own
+review, not a silent rider on an AHV staging branch.
+
+Full list: `grep -rln 'import\.meta\.url === `file://\${process\.argv\[1\]}`' scripts/`
