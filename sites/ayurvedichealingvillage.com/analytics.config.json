@@ -41,8 +41,25 @@
     "facebookDomainVerification": "2x5q2slnwezqdexrhga0w1pdez0g3p"
   },
   "absent": {
-    "googleAdsConversion": "NONE. No AW- tag exists on the live site (homepage, contact and enquiry all checked) and the KTAHV Google Ads account 214-403-0919 is CANCELLED. Nothing to port; creating a conversion action is an owner/Vikash decision.",
-    "bingUet": "NONE. No bat.bing.com tag on the live site. Net-new if Bing Ads is ever run.",
+    "bingUet": "UNVERIFIED, not absent. No bat.bing.com tag on the live pages fetched, but the Microsoft Advertising account identity is BLOCKED pending the owner or Vikash. Bing Webmaster Tools does not identify an advertising account.",
     "googleTagManager": "NONE. The live site uses gtag directly, not GTM."
+  },
+  "googleAds": {
+    "_comment": [
+      "SUPERSEDES the earlier 'no conversion action exists' statement, which was WRONG:",
+      "it was read from the MANAGER account 163-034-6910, and manager accounts do not hold",
+      "conversion actions. Verified read-only in the Ads UI on 2026-09-15."
+    ],
+    "clientAccount": "AHV-NEO 712-961-0573",
+    "managerAccount": "Kairali Ayurveda 163-034-6910",
+    "cancelledAccountNotToUse": "KTAHV 214-403-0919 (cancelled, separate)",
+    "conversionAction": "EnquirySubmission",
+    "conversionTypeId": "15644955",
+    "sendTo": "AW-972059125/fqrBCJvyugcQ9ePBzwM",
+    "firedFrom": "live WordPress /ppc-thanks/ via the HFCM plugin, on PAGE LOAD",
+    "countingRule": "Every conversion",
+    "includedInAccountGoals": false,
+    "status": "NOT ported to the new stack. Candidate prepared and tested but NOT activated: app/(english)/_families/lead-conversion.mjs",
+    "decision": "Activation is an owner/Vikash decision - see docs/reports/2026-09-15-ahv-enquirysubmission-trace.md section 10"
   }
 }

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "assets:restore": "node tools/restore-runtime-assets.mjs"
+    "assets:restore": "node tools/restore-runtime-assets.mjs",
+    "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "next": "^15.4.0",

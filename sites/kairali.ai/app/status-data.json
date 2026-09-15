@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-09-15 20:44:19 IST",
-  "generated_utc": "2026-09-15T15:14:19Z",
+  "generated": "2026-09-15 21:33:46 IST",
+  "generated_utc": "2026-09-15T16:03:46Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -33,7 +33,7 @@
     ],
     "strict_residues": 0,
     "unacked_directives": 28,
-    "open_questions": 121,
+    "open_questions": 122,
     "decisions": 15,
     "tests": null
   },
@@ -72,7 +72,7 @@
       "stage": "preview",
       "phase": 5,
       "owner": "Abilash",
-      "blocker": "AHV ENGLISH STAGING CANDIDATE (PR #309, 15 commits, MERGEABLE but BLOCKED and still DRAFT): 252 approved English routes live on a protected Vercel preview. This session fixed 8 owner-reported and audit-found defects -- homepage touch-scroll (touch-action:none blocked scrolling over every homepage photo), a visible spam honeypot on the enquiry form, 85 Cloudflare [email-protected] placeholders decoded to the locked public address, a dead locale control (now EN current + DE/FR 'coming soon'), a cookie notice that existed on 2 of 136 templates (now site-wide), and the enquiry form sitting 6,028px down its own page (now 391px). Full UI/UX sweep of all 68 design families at both widths: ZERO hard defects (no overflow, no JS errors, no 4xx, no broken images, no missing alt). Measurement ids recorded in analytics.config.json and deliberately INERT on staging (AHV_ANALYTICS unset) so reviewers never reach production GA4/Clarity. BLOCKERS TO GO-LIVE: (1) server-side rendering of the page body -- owner ruled it a blocker, a non-JS crawler currently sees 254-296 chars per route against 1,200-16,100 rendered; (2) Deepu must sign off the enquiry/contact forms, which fail closed today; (3) KTAHV clinical language lock -- 191 of 252 routes, 2,772 occurrences, a GST-exposure decision for the owner and Dr. Deepu John; (4) PR #309's five required checks cannot START due to the GitHub Actions billing limit. Google Ads: no conversion action exists and the KTAHV account 214-403-0919 is CANCELLED. Go-live steps: docs/reports/2026-09-15-ahv-go-live-checklist.md",
+      "blocker": "AHV ENGLISH STAGING CANDIDATE (PR #309, 15 commits, MERGEABLE but BLOCKED and still DRAFT): 252 approved English routes live on a protected Vercel preview. This session fixed 8 owner-reported and audit-found defects -- homepage touch-scroll (touch-action:none blocked scrolling over every homepage photo), a visible spam honeypot on the enquiry form, 85 Cloudflare [email-protected] placeholders decoded to the locked public address, a dead locale control (now EN current + DE/FR 'coming soon'), a cookie notice that existed on 2 of 136 templates (now site-wide), and the enquiry form sitting 6,028px down its own page (now 391px). Full UI/UX sweep of all 68 design families at both widths: ZERO hard defects (no overflow, no JS errors, no 4xx, no broken images, no missing alt). Measurement ids recorded in analytics.config.json and deliberately INERT on staging (AHV_ANALYTICS unset) so reviewers never reach production GA4/Clarity. BLOCKERS TO GO-LIVE: (1) server-side rendering of the page body -- owner ruled it a blocker, a non-JS crawler currently sees 254-296 chars per route against 1,200-16,100 rendered; (2) Deepu must sign off the enquiry/contact forms, which fail closed today; (3) KTAHV clinical language lock -- 191 of 252 routes, 2,772 occurrences, a GST-exposure decision for the owner and Dr. Deepu John; (4) PR #309's five required checks cannot START due to the GitHub Actions billing limit. Google Ads CORRECTED 2026-09-15: the earlier 'no conversion action' note was read from the MANAGER account and was wrong. Active client AHV-NEO 712-961-0573 runs 66 campaigns, Rs 650,776/30d, with 27 conversion actions; EnquirySubmission (ctId 15644955) fires AW-972059125/fqrBCJvyugcQ9ePBzwM from the live /ppc-thanks/ page and is NOT ported to the new stack - a tested, unactivated candidate exists. Go-live steps: docs/reports/2026-09-15-ahv-go-live-checklist.md",
       "updated": "2026-09-15",
       "preview_url": "https://kairali-web-factory-ayurvedichealingvillage-qrb3rtdg5-kairali.vercel.app",
       "live_url": null,
