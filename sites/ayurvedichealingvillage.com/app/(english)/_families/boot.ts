@@ -198,6 +198,161 @@ export const BOOT_SCRIPT = `
     });
     return names;
   }
+  // Cloudflare email obfuscation, inherited from the legacy WordPress site.
+  // The capture preserved it verbatim: 85 visible "[email protected]"
+  // strings and 58 <a href="/cdn-cgi/l/email-protection#<hex>"> links that
+  // 404 here, because this deployment is not behind Cloudflare. Patients saw
+  // the literal placeholder where an address should be.
+  //
+  // The real address is NOT invented — it is recoverable from the captured
+  // hex, which is the address XORed byte-by-byte with its first byte. Decoded
+  // across the payload: 46x info@kairali.com, 2x info@kairalil.com (a typo
+  // domain on the legacy site), 1x infoo@kairali.com (the legacy typo already
+  // recorded in BUILD-STATUS) and 1x mylinkexchangepartner@gmail.com (SEO
+  // link-exchange plumbing). Owner ruling D-20260915-04: restore the real
+  // ones and NORMALISE all three non-standard addresses to the locked public
+  // address, so nothing that bounces and no link-exchange mailbox ships.
+  var PUBLIC_EMAIL = "info@kairali.com";
+  function decodeCfEmail(hex) {
+    if (!hex || hex.length < 4 || hex.length % 2) return null;
+    var key = parseInt(hex.substr(0, 2), 16);
+    if (isNaN(key)) return null;
+    var out = "";
+    for (var i = 2; i < hex.length; i += 2) {
+      var c = parseInt(hex.substr(i, 2), 16);
+      if (isNaN(c)) return null;
+      out += String.fromCharCode(c ^ key);
+    }
+    return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(out) ? out : null;
+  }
+  // Locked facts: info@kairali.com is the public contact address everywhere.
+  // career@kairali.com is a separate approved departmental address and is NOT
+  // cf-encoded, so it never reaches this function (D-20260915-06).
+  function publicAddress(decoded) {
+    return decoded === PUBLIC_EMAIL ? decoded : PUBLIC_EMAIL;
+  }
+  function repairEmailLinks(root) {
+    if (!root || root.nodeType !== 1) return;
+    var links = [];
+    if (root.matches && root.matches('a[href*="email-protection"]')) links.push(root);
+    root.querySelectorAll('a[href*="/cdn-cgi/l/email-protection"]').forEach(function (a) { links.push(a); });
+    links.forEach(function (a) {
+      if (a.__ahvEmailFixed) return;
+      var raw = a.getAttribute("href") || "";
+      var hash = raw.split("#")[1] || "";
+      var address = publicAddress(decodeCfEmail(hash));
+      a.setAttribute("href", "mailto:" + address);
+      // Replace the placeholder wherever it is shown, including when the
+      // anchor wraps other markup.
+      if (/\[email\s*protected\]/i.test(a.textContent || "")) a.textContent = address;
+      a.__ahvEmailFixed = true;
+      emailsFixed++;
+    });
+    // Placeholders captured as plain text with no surrounding link. The
+    // substring test first: walking every text node of a 24,000px page on
+    // each sweep tick is not free, and most pages carry no placeholder.
+    if ((root.textContent || "").indexOf("[email") === -1) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var stray = [], node;
+    while ((node = walker.nextNode())) {
+      if (node.nodeValue && /\[email\s*protected\]/i.test(node.nodeValue)) stray.push(node);
+    }
+    stray.forEach(function (t) {
+      t.nodeValue = t.nodeValue.replace(/\[email\s*protected\]/gi, PUBLIC_EMAIL);
+      emailsFixed++;
+    });
+  }
+  var emailsFixed = 0;
+
+  // Language switcher. The approved chrome ships a DECORATIVE locale control:
+  // the header "EN" is a bare <span> with no handler, and the mobile menu
+  // carries a plain <div> reading "ENGLISH - FRANCAIS - DEUTSCH". Neither is
+  // wired to anything, and this build is English-only by instruction, so there
+  // is nothing for them to point at. grep -c 'lang' over the header component
+  // returns 0. Owner-reported 15 Sep 2026; ruling D-20260915-05: show EN as
+  // current and DE/FR as visibly unavailable rather than hiding the control,
+  // so the multilingual signal survives and the day translations ship this
+  // becomes a real switcher.
+  //
+  // Built here rather than in the payload: public/ahv/components/*.dc.html is
+  // approved source that the importer rewrites wholesale. The visual language
+  // (1px #C9BFA8 border, 4px radius, 44px min target) is copied from the
+  // existing EN badge so nothing is re-themed.
+  var LOCALES = [
+    { code: "EN", name: "English", live: true },
+    { code: "DE", name: "Deutsch", live: false },
+    { code: "FR", name: "Fran\u00e7ais", live: false }
+  ];
+  function localePill(loc) {
+    var el = document.createElement("span");
+    el.textContent = loc.code;
+    el.setAttribute("data-ahv-locale", loc.code);
+    var base = "border:1px solid #C9BFA8;border-radius:4px;padding:0 clamp(6px,1.7vw,11px);" +
+      "min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;" +
+      "font-weight:700;font-size:13px;letter-spacing:1px;";
+    if (loc.live) {
+      el.setAttribute("aria-current", "true");
+      el.style.cssText = base + "color:#2A2118;";
+    } else {
+      // Not a link and not focusable: there is no page to go to yet. Announced
+      // as unavailable rather than silently inert.
+      el.setAttribute("aria-disabled", "true");
+      el.setAttribute("title", loc.name + " \u2014 coming soon");
+      el.setAttribute("aria-label", loc.name + " \u2014 coming soon");
+      el.style.cssText = base + "color:#A79C89;border-color:#E2DACA;cursor:default;";
+    }
+    return el;
+  }
+  function localeGroup() {
+    var nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "Language");
+    nav.setAttribute("data-ahv-locale-switcher", "");
+    nav.style.cssText = "display:inline-flex;align-items:center;gap:6px;";
+    LOCALES.forEach(function (loc) { nav.appendChild(localePill(loc)); });
+    return nav;
+  }
+  function upgradeLanguageControls(root) {
+    if (!root || root.nodeType !== 1) return;
+    // EVERY header badge, not the first: non-homepage routes mount a duplicate
+    // hidden <header> ahead of the visible one, so upgrading only the first
+    // left the real header decorative and put the new control where nobody
+    // could see it. Both are upgraded; whichever is displayed is correct.
+    root.querySelectorAll("header span, header div, header button, header a").forEach(function (el) {
+      if ((el.textContent || "").trim() !== "EN") return;
+      if (el.hasAttribute("data-ahv-locale")) return;
+      // Innermost match only. The desktop header wraps the badge as
+      // <span><svg/>EN</span> while the mobile header uses a bare <span>, so a
+      // childless test skipped the desktop one and a naive test would replace
+      // an outer wrapper and take the icon with it.
+      var inner = false;
+      el.querySelectorAll("*").forEach(function (d) {
+        if ((d.textContent || "").trim() === "EN") inner = true;
+      });
+      if (inner) return;
+      el.replaceWith(localeGroup());
+      localesUpgraded++;
+    });
+    // The mobile menu's static locale line.
+    root.querySelectorAll("div, p, span").forEach(function (el) {
+      if (el.childElementCount !== 0) return;
+      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      // Separator-agnostic: the captured line uses a middot, but the same
+      // static line appears with other separators across the chrome variants.
+      if (t.length > 64) return;
+      if (!/ENGLISH/i.test(t) || !/FRAN\u00c7AIS/i.test(t) || !/DEUTSCH/i.test(t)) return;
+      var wrap = document.createElement("div");
+      wrap.style.cssText = "display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;";
+      wrap.appendChild(localeGroup());
+      var note = document.createElement("span");
+      note.textContent = "Deutsch and Fran\u00e7ais coming soon";
+      note.style.cssText = "font-size:12px;letter-spacing:.3px;color:#75695A;";
+      wrap.appendChild(note);
+      el.replaceWith(wrap);
+      localesUpgraded++;
+    });
+  }
+  var localesUpgraded = 0;
+
   var hpNames = [];
   function hideHoneypots(root) {
     if (!root || root.nodeType !== 1) return;
@@ -231,7 +386,14 @@ export const BOOT_SCRIPT = `
   var hpHidden = 0;
   function sweepHoneypots(tries) {
     hideHoneypots(host);
-    if (hpHidden === 0 && tries > 0) setTimeout(function () { sweepHoneypots(tries - 1); }, 80);
+    repairEmailLinks(host);
+    upgradeLanguageControls(host);
+    // Keep going while EITHER repair still has nothing to show for itself —
+    // stopping at the honeypot alone would cut the email repair short on the
+    // enquiry page, which carries both.
+    if ((hpHidden === 0 || emailsFixed === 0 || localesUpgraded === 0) && tries > 0) {
+      setTimeout(function () { sweepHoneypots(tries - 1); }, 80);
+    }
   }
   new MutationObserver(function (changes) {
     changes.forEach(function (change) {
@@ -240,6 +402,8 @@ export const BOOT_SCRIPT = `
         localizeLinks(node);
         restoreSlotScrolling(node);
         hideHoneypots(node);
+        repairEmailLinks(node);
+        upgradeLanguageControls(node);
       });
     });
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
