@@ -59,6 +59,13 @@ export interface BootConfig {
   previewSrc: string;
   /** window.__resources entries for every <dc-import> sibling. */
   resources: Record<string, string>;
+  /**
+   * Measurement ids, present ONLY when the build sets AHV_ANALYTICS=1.
+   * Absent (the staging default) means the boot script has nothing to start,
+   * so no tag can load however the visitor answers the cookie notice. The
+   * consent gate is the second lock, not the only one.
+   */
+  measurement?: { ga4?: string; clarity?: string; metaPixel?: string };
 }
 
 export const ROUTE_CONFIG_ID = "ahv-route-config";
@@ -354,6 +361,161 @@ export const BOOT_SCRIPT = `
   }
   var localesUpgraded = 0;
 
+  // Cookie notice. The approved design HAS a real consent mechanism — the home
+  // view logic writes localStorage["ktahv-consent"] = "accepted" | "declined"
+  // and shows the notice only while the value is absent — but the notice markup
+  // lives in the two HOME views only: 2 of 136 templates. 250 of the 252 routes
+  // offered no way to accept or decline, so anyone arriving on a programme page
+  // from search had no choice at all. Owner-reported 15 Sep 2026.
+  //
+  // This EXTENDS the approved mechanism rather than replacing it: the same
+  // storage key, the same two values, the same copy and the same styling lifted
+  // from the approved home view. A choice made on any page therefore suppresses
+  // the notice on every page, including the design's own homepage banner, so
+  // the two can never both appear or disagree.
+  var CONSENT_KEY = "ktahv-consent";
+  function consentChoice() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return "unavailable"; }
+  }
+  function recordConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode: honour the choice for this page view only */ }
+    var el = document.getElementById("ahv-consent");
+    if (el) el.remove();
+    if (value === "accepted") startMeasurement();
+  }
+  function consentNotice() {
+    var narrow = window.matchMedia && window.matchMedia("(max-width: 700px)").matches;
+    var wrap = document.createElement("div");
+    wrap.id = "ahv-consent";
+    wrap.setAttribute("role", "region");
+    wrap.setAttribute("aria-label", "Cookie notice");
+    // Sits above the design's fixed bottom action bar on narrow screens, which
+    // is why the approved home notice uses bottom:74px there.
+    wrap.style.cssText = "position:fixed;left:12px;right:12px;bottom:" + (narrow ? "74px" : "18px") +
+      ";z-index:60;max-width:" + (narrow ? "406px" : "520px") + ";margin:0 auto;background:#fff;" +
+      "border:1px solid #E9E2D3;border-radius:4px;box-shadow:0 7px 25px rgba(60,45,20,.08);padding:18px 20px";
+    var copy = document.createElement("div");
+    copy.style.cssText = "font-size:14.5px;color:#514a3f;line-height:1.55";
+    copy.appendChild(document.createTextNode("We use cookies to improve your experience and analyse site traffic. See our "));
+    var policy = document.createElement("a");
+    policy.setAttribute("href", "/privacy-policy/");
+    policy.style.cssText = "font-weight:700";
+    policy.textContent = "Privacy Policy";
+    copy.appendChild(policy);
+    copy.appendChild(document.createTextNode("."));
+    var row = document.createElement("div");
+    row.style.cssText = "display:flex;gap:12px;align-items:center;margin-top:14px";
+    var decline = document.createElement("button");
+    decline.type = "button";
+    decline.textContent = "Decline";
+    decline.style.cssText = "flex:1;background:none;border:1px solid #C9BFA8;border-radius:4px;" +
+      "font-family:'Mulish',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;color:#75695A;" +
+      "cursor:pointer;text-transform:uppercase;padding:14px 6px;min-height:44px";
+    decline.addEventListener("click", function () { recordConsent("declined"); });
+    var accept = document.createElement("button");
+    accept.type = "button";
+    accept.textContent = "Accept All";
+    accept.style.cssText = "flex:1;background:#5A4420;color:#F7F4EA;border:none;border-radius:4px;" +
+      "padding:14px 6px;font-family:'Mulish',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:1.5px;" +
+      "cursor:pointer;text-transform:uppercase;min-height:44px";
+    accept.addEventListener("click", function () { recordConsent("accepted"); });
+    row.appendChild(decline);
+    row.appendChild(accept);
+    wrap.appendChild(copy);
+    wrap.appendChild(row);
+    return wrap;
+  }
+  /** The design's own notice, if this view renders one. Excludes ours. */
+  function designNotice() {
+    var found = null;
+    document.querySelectorAll("button").forEach(function (b) {
+      if (found || b.closest("#ahv-consent")) return;
+      if (/^accept all$/i.test((b.textContent || "").trim())) found = b;
+    });
+    return found;
+  }
+  function ensureConsentNotice() {
+    var choice = consentChoice();
+    var mine = document.getElementById("ahv-consent");
+    // The home views render the approved notice THEMSELVES, and they render it
+    // after the design mounts — later than the first sweep tick. So this cannot
+    // be a one-shot check: it has to keep looking and withdraw ours the moment
+    // theirs appears, or the homepage shows two banners. That exact double-up
+    // is why this lane has its own root layout in the first place.
+    if (designNotice()) {
+      if (mine) mine.remove();
+      return;
+    }
+    if (mine) return;
+    if (choice === "accepted" || choice === "declined") return;
+    if (choice === "unavailable") return; // cannot record a choice; do not pretend to offer one
+    // Wait for the design to mount before adding ours, so a view that carries
+    // its own notice is never briefly given a second one.
+    if (!host.firstElementChild) return;
+    document.body.appendChild(consentNotice());
+  }
+
+  /**
+   * Verification metas. Some approved programme views write their own copies
+   * client-side, carrying the SAME tokens this build serves from
+   * analytics.config.json. Two of each is untidy and pointless, and the
+   * server-rendered one is the copy a crawler actually reads, so the first of
+   * each name wins and later duplicates are dropped — the same governed-head
+   * rule the head guard above already applies per slot.
+   */
+  function dedupeVerificationMetas() {
+    ["google-site-verification", "msvalidate.01", "facebook-domain-verification"].forEach(function (name) {
+      var nodes = document.head.querySelectorAll('meta[name="' + name + '"]');
+      for (var i = 1; i < nodes.length; i++) nodes[i].remove();
+    });
+  }
+
+  // Measurement. Every id comes from analytics.config.json, which records what
+  // the LIVE site already runs; nothing is invented. Two independent locks:
+  // the build must set AHV_ANALYTICS=1, AND the visitor must have accepted.
+  // Both are off on staging by the owner's 15 Sep ruling, so a preview reviewer
+  // never lands in the production GA4 and Clarity data.
+  var measurementStarted = false;
+  function startMeasurement() {
+    if (measurementStarted) return;
+    var m = cfg.measurement;
+    if (!m) return; // build-time switch is off: nothing to start
+    measurementStarted = true;
+    if (m.ga4) {
+      var g = document.createElement("script");
+      g.async = true;
+      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(m.ga4);
+      document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", m.ga4);
+    }
+    if (m.clarity) {
+      window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+      var c = document.createElement("script");
+      c.async = true;
+      c.src = "https://www.clarity.ms/tag/" + encodeURIComponent(m.clarity);
+      document.head.appendChild(c);
+    }
+    if (m.metaPixel) {
+      var f = document.createElement("script");
+      f.async = true;
+      f.src = "https://connect.facebook.net/en_US/fbevents.js";
+      document.head.appendChild(f);
+      window.fbq = window.fbq || function () {
+        (window.fbq.queue = window.fbq.queue || []).push(arguments);
+      };
+      window.fbq("init", m.metaPixel);
+      window.fbq("track", "PageView");
+    }
+  }
+  function applyConsent() {
+    ensureConsentNotice();
+    dedupeVerificationMetas();
+    if (consentChoice() === "accepted") startMeasurement();
+  }
+
   var hpNames = [];
   function hideHoneypots(root) {
     if (!root || root.nodeType !== 1) return;
@@ -389,6 +551,7 @@ export const BOOT_SCRIPT = `
     hideHoneypots(host);
     repairEmailLinks(host);
     upgradeLanguageControls(host);
+    applyConsent();
     // Keep going while EITHER repair still has nothing to show for itself —
     // stopping at the honeypot alone would cut the email repair short on the
     // enquiry page, which carries both.
@@ -405,6 +568,7 @@ export const BOOT_SCRIPT = `
         hideHoneypots(node);
         repairEmailLinks(node);
         upgradeLanguageControls(node);
+        applyConsent();
       });
     });
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });

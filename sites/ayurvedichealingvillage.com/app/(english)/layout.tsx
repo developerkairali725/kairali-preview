@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { faviconIcons } from "@kairali/seo";
+import analyticsConfig from "../../analytics.config.json";
 
 /**
  * AHV English candidate — root layout for the approved-design lane.
@@ -13,12 +14,25 @@ import { faviconIcons } from "@kairali/seo";
  * and cookie notice. Wrapping the design in the LP layout would have shown the
  * reviewer two footers and two consent banners, i.e. not the approved design.
  *
- * DELIBERATELY ABSENT, pending the owner's word (staging build, 15 Sep 2026):
- * consent scripts, analytics, and the chat loader. The task forbids tracking
- * and consent changes, and this lane has never had any; adding the fleet set
- * here would BE that change. Flagged in BUILD-STATUS.md as a pre-production
- * decision, not a silent omission.
+ * CONSENT AND ANALYTICS (owner ruling, 15 Sep 2026 — supersedes the note this
+ * replaces, which recorded them as deliberately absent pending his word):
+ *   · The cookie notice is now SITE-WIDE. The approved design carried one, but
+ *     only in the two home views — 250 of 252 routes offered no choice at all.
+ *     boot.ts extends the design's own mechanism, reusing its storage key and
+ *     values so one choice covers every page and two notices can never appear.
+ *   · Measurement ids load only when the build sets AHV_ANALYTICS=1 AND the
+ *     visitor has accepted. Both locks are off on staging, so reviewers never
+ *     reach the production GA4/Clarity properties.
+ *   · The chat loader remains absent; it was not part of the ruling.
+ *
+ * The verification metas below are ownership proof, not tracking: they set no
+ * cookie and are not consent-gated. They are emitted under the same build flag
+ * because they only mean anything on the production domain — and if they are
+ * missing at the DNS flip, Search Console and Bing verification break.
  */
+const verification = analyticsConfig.verification;
+const analyticsOn =
+  process.env[analyticsConfig.activation.env] === analyticsConfig.activation.enabledWhen;
 export const metadata: Metadata = {
   icons: faviconIcons(),
   // No robots meta here BY DESIGN: the approved design writes its own, and a
@@ -30,6 +44,15 @@ export const metadata: Metadata = {
 export default function EnglishCandidateLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-US">
+      <head>
+        {analyticsOn ? (
+          <>
+            <meta name="google-site-verification" content={verification.googleSiteVerification} />
+            <meta name="msvalidate.01" content={verification.msvalidate01} />
+            <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
+          </>
+        ) : null}
+      </head>
       <body>
         {/* Two rules, both load-bearing.
             1. Paper tone from the approved design, so the first paint before

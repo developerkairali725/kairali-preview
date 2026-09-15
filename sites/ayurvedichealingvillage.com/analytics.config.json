@@ -1,0 +1,48 @@
+{
+  "_comment": [
+    "Analytics identities for ayurvedichealingvillage.com, READ FROM THE LIVE SITE'S OWN TAGS on 2026-09-15,",
+    "never invented (HARD GATE 6). These are public identifiers — they are visible in the page source of the",
+    "live site today — not secrets, which is why they are committed. No API keys or tokens live here.",
+    "",
+    "ACTIVATION IS OFF BY DEFAULT. Nothing below loads unless AHV_ANALYTICS=1 AND the visitor has accepted",
+    "cookies. Owner ruling 2026-09-15: keep the IDs recorded but inert on staging, so six reviewers clicking",
+    "around a preview never land in the real GA4 and Clarity data, and switch them on at go-live.",
+    "See docs/reports/2026-09-15-ahv-go-live-checklist.md."
+  ],
+  "activation": {
+    "env": "AHV_ANALYTICS",
+    "enabledWhen": "1",
+    "default": "off",
+    "consentKey": "ktahv-consent",
+    "consentAcceptedValue": "accepted",
+    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page."
+  },
+  "measurement": {
+    "ga4": {
+      "id": "G-PZBX8G4Y9N",
+      "source": "gtag('config', …) on https://ayurvedichealingvillage.com/, 2026-09-15",
+      "consentRequired": true
+    },
+    "clarity": {
+      "id": "rf5s9ugok4",
+      "source": "cross-checked: the Clarity console project URL AND the live clarity.ms tag agree",
+      "consentRequired": true
+    },
+    "metaPixel": {
+      "id": "1305161823266727",
+      "source": "fbq('init', …) on the live site, 2026-09-15",
+      "consentRequired": true
+    }
+  },
+  "verification": {
+    "_comment": "Ownership proof, not tracking: these carry no cookies and are NOT consent-gated. They matter at the DNS flip — if they are missing when the domain moves, Search Console and Bing verification break.",
+    "googleSiteVerification": "wRX83HPNYkjhwhq2L0pjVwMjxccJyNivs0RERF97nWc",
+    "msvalidate01": "8150125AE0C703A62B4F0EBD68520434",
+    "facebookDomainVerification": "2x5q2slnwezqdexrhga0w1pdez0g3p"
+  },
+  "absent": {
+    "googleAdsConversion": "NONE. No AW- tag exists on the live site (homepage, contact and enquiry all checked) and the KTAHV Google Ads account 214-403-0919 is CANCELLED. Nothing to port; creating a conversion action is an owner/Vikash decision.",
+    "bingUet": "NONE. No bat.bing.com tag on the live site. Net-new if Bing Ads is ever run.",
+    "googleTagManager": "NONE. The live site uses gtag directly, not GTM."
+  }
+}

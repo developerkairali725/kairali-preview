@@ -14,6 +14,21 @@ import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
 import componentMap from "../../../english-candidate/component-map.json";
+import analyticsConfig from "../../../analytics.config.json";
+
+/**
+ * Measurement ids reach the browser ONLY when the build asks for them.
+ * AHV_ANALYTICS is unset on staging by the owner's 15 Sep 2026 ruling, so a
+ * preview reviewer accepting cookies still sends nothing to the production
+ * GA4 and Clarity properties. Switching it on is a go-live step, recorded in
+ * docs/reports/2026-09-15-ahv-go-live-checklist.md.
+ */
+function measurementForBuild(): BootConfig["measurement"] {
+  const a = analyticsConfig.activation;
+  if (process.env[a.env] !== a.enabledWhen) return undefined;
+  const m = analyticsConfig.measurement;
+  return { ga4: m.ga4.id, clarity: m.clarity.id, metaPixel: m.metaPixel.id };
+}
 
 const PAYLOAD_BASE = "/ahv/views/";
 const SUPPORT_SRC = "/ahv/support.js";
@@ -30,6 +45,7 @@ export function buildBootConfig(route: CandidateRoute): BootConfig {
     supportSrc: SUPPORT_SRC,
     previewSrc: PREVIEW_SRC,
     resources: componentMap.resources as Record<string, string>,
+    measurement: measurementForBuild(),
   };
 }
 
