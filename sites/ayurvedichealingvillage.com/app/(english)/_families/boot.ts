@@ -165,12 +165,81 @@ export const BOOT_SCRIPT = `
     if (root.matches("image-slot")) restoreSlotScroll(root);
     root.querySelectorAll("image-slot").forEach(restoreSlotScroll);
   }
+
+  // Spam honeypots must not be visible to a patient filling the form in.
+  // The approved datasets already say which field is one: /contact-us/ carries
+  // form.honeypot = { name:"company", omitted:true } and its renderer omits it,
+  // but /enquiry-form/ marks its field inline as { name:"website",
+  // honeypot:true } and the enquiry renderer never reads that flag — so the
+  // real enquiry page shipped a full-width text input labelled "Leave this
+  // empty" in the middle of the form. Owner-reported, 15 Sep 2026.
+  //
+  // Fixed from the DATA, not by guessing at names or editing the payload:
+  // the dataset globals are the same records the renderer used, and
+  // public/ahv/assets/*.js is imported source that the importer rewrites
+  // wholesale. Hidden the way a honeypot is meant to be — removed from sight,
+  // from the accessibility tree and from tab order, while staying in the DOM
+  // and in the submitted payload so it still traps bots.
+  function honeypotNames() {
+    var names = [];
+    Object.keys(window).forEach(function (key) {
+      if (key.indexOf("AHV_") !== 0) return;
+      var seen = 0;
+      (function scan(node) {
+        if (!node || typeof node !== "object" || seen++ > 20000) return;
+        if (Array.isArray(node)) { node.forEach(scan); return; }
+        if (node.honeypot === true && typeof node.name === "string") {
+          if (names.indexOf(node.name) === -1) names.push(node.name);
+        } else if (node.honeypot && typeof node.honeypot === "object" && typeof node.honeypot.name === "string") {
+          if (names.indexOf(node.honeypot.name) === -1) names.push(node.honeypot.name);
+        }
+        Object.keys(node).forEach(function (k) { scan(node[k]); });
+      })(window[key]);
+    });
+    return names;
+  }
+  var hpNames = [];
+  function hideHoneypots(root) {
+    if (!root || root.nodeType !== 1) return;
+    // Recomputed until it finds something: the dataset global is loaded by the
+    // family script, which runs AFTER the first sweep tick, so caching an empty
+    // first result would disable this permanently.
+    if (!hpNames.length) { try { hpNames = honeypotNames(); } catch (e) { hpNames = []; } }
+    if (!hpNames.length) return;
+    hpNames.forEach(function (name) {
+      root.querySelectorAll('input[name="' + name + '"]').forEach(function (input) {
+        if (input.__ahvHoneypotHidden) return;
+        var field = input.closest("label") || input.parentElement || input;
+        // Off-screen rather than display:none — a bot reading the DOM still
+        // sees a fillable field, which is the whole point of a honeypot.
+        field.style.position = "absolute";
+        field.style.left = "-9999px";
+        field.style.width = "1px";
+        field.style.height = "1px";
+        field.style.overflow = "hidden";
+        field.setAttribute("aria-hidden", "true");
+        input.setAttribute("tabindex", "-1");
+        input.setAttribute("autocomplete", "off");
+        input.__ahvHoneypotHidden = true;
+        hpHidden++;
+      });
+    });
+  }
+  // The dataset global is loaded by the family script and the form is rendered
+  // after it, both later than the 2.4s slot sweep — so honeypots get their own
+  // longer watch that stops as soon as it has actually hidden one.
+  var hpHidden = 0;
+  function sweepHoneypots(tries) {
+    hideHoneypots(host);
+    if (hpHidden === 0 && tries > 0) setTimeout(function () { sweepHoneypots(tries - 1); }, 80);
+  }
   new MutationObserver(function (changes) {
     changes.forEach(function (change) {
       if (change.type === "attributes") localizeLink(change.target);
       else change.addedNodes.forEach(function (node) {
         localizeLinks(node);
         restoreSlotScrolling(node);
+        hideHoneypots(node);
       });
     });
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
@@ -306,6 +375,7 @@ export const BOOT_SCRIPT = `
   // and <sc-for>-rendered list slots are covered too.
   function sweepSlots(tries) {
     restoreSlotScrolling(host);
+    hideHoneypots(host);
     if (tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
   }
 
@@ -383,6 +453,7 @@ export const BOOT_SCRIPT = `
 
       bindRoute(40);
       sweepSlots(40);
+      sweepHoneypots(150);
     })
     .catch(fail);
 })();
