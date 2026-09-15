@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-08-27 18:57:57 IST",
-  "generated_utc": "2026-08-27T13:27:57Z",
+  "generated": "2026-09-15 20:44:19 IST",
+  "generated_utc": "2026-09-15T15:14:19Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -32,8 +32,8 @@
       }
     ],
     "strict_residues": 0,
-    "unacked_directives": 17,
-    "open_questions": 120,
+    "unacked_directives": 28,
+    "open_questions": 121,
     "decisions": 15,
     "tests": null
   },
@@ -69,12 +69,12 @@
     {
       "name": "ayurvedichealingvillage.com (KTAHV)",
       "entity": "KTAHV",
-      "stage": "gates",
+      "stage": "preview",
       "phase": 5,
       "owner": "Abilash",
-      "blocker": "10-LP set BUILT, full gate battery COMPLETE (PR #145): machine layer + GO-science + beauty all-PASS ×10, 6 real defects fixed (incl. 2 banned-word hero images caught at pixel level); Gate-2 reviewer-alternation ruled in writing (Q-GATE2-LP-BATTERY); Dr. Deepu John's 20 Jul review changes executed on-branch (c160274, HARD GATE 7 lane; 'resident' ×3 dropped, comparisons softened, dead video removed). Still open: Vikash per-URL redirect/slug plan · owner-gated facts (tariffs/stats/photos). Full KTAHV rebuild scope separately: TARIFF_MODE + BOOKING_ROUTE; QA/QC WP batch waits on Deepu's Novamira-on-staging",
-      "updated": "2026-07-21",
-      "preview_url": "https://kairali-web-factory-ayurvedichealingvillage-rh8jwv4cf-kairali.vercel.app",
+      "blocker": "AHV ENGLISH STAGING CANDIDATE (PR #309, 15 commits, MERGEABLE but BLOCKED and still DRAFT): 252 approved English routes live on a protected Vercel preview. This session fixed 8 owner-reported and audit-found defects -- homepage touch-scroll (touch-action:none blocked scrolling over every homepage photo), a visible spam honeypot on the enquiry form, 85 Cloudflare [email-protected] placeholders decoded to the locked public address, a dead locale control (now EN current + DE/FR 'coming soon'), a cookie notice that existed on 2 of 136 templates (now site-wide), and the enquiry form sitting 6,028px down its own page (now 391px). Full UI/UX sweep of all 68 design families at both widths: ZERO hard defects (no overflow, no JS errors, no 4xx, no broken images, no missing alt). Measurement ids recorded in analytics.config.json and deliberately INERT on staging (AHV_ANALYTICS unset) so reviewers never reach production GA4/Clarity. BLOCKERS TO GO-LIVE: (1) server-side rendering of the page body -- owner ruled it a blocker, a non-JS crawler currently sees 254-296 chars per route against 1,200-16,100 rendered; (2) Deepu must sign off the enquiry/contact forms, which fail closed today; (3) KTAHV clinical language lock -- 191 of 252 routes, 2,772 occurrences, a GST-exposure decision for the owner and Dr. Deepu John; (4) PR #309's five required checks cannot START due to the GitHub Actions billing limit. Google Ads: no conversion action exists and the KTAHV account 214-403-0919 is CANCELLED. Go-live steps: docs/reports/2026-09-15-ahv-go-live-checklist.md",
+      "updated": "2026-09-15",
+      "preview_url": "https://kairali-web-factory-ayurvedichealingvillage-qrb3rtdg5-kairali.vercel.app",
       "live_url": null,
       "vector": {
         "site_class": "organic",
@@ -111,7 +111,6 @@
       },
       "waiting_on": [
         "owner",
-        "Vikash",
         "Deepu",
         "Dr. Deepu John"
       ]
@@ -908,9 +907,9 @@
       "stage": "live",
       "phase": 7,
       "owner": "Abilash",
-      "blocker": "ISS-abhilashkr-com-0001 is LIVE_VERIFIED on dpl_HqJvDF728DFnWwYdwPRubYXTm2ED with 14/14 public mobile/desktop QA and PSI 90–98 mobile/100 desktop. ISS-abhilashkr-com-0002 is a narrow contact-heading accessibility follow-up in STAGING_QA; GTmetrix browser runs are quota-blocked pending an existing signed-in account or quota reset.",
-      "updated": "2026-08-27",
-      "preview_url": "https://kairali-web-factory-abhilashkr-a6w0egkjx-kairali.vercel.app",
+      "blocker": "PR #292 is live on production deployment dpl_2juvGPYsUi8kPYn4CMAgJU7MSd4p and both public aliases. Public verification passed 18/18 tests over all 37 sitemap routes; PageSpeed samples scored mobile Performance 94-99, desktop 96-100, and Accessibility / Best Practices / SEO 100 throughout. ISS-abhilashkr-com-0002 and ISS-abhilashkr-com-0003 are LIVE_VERIFIED. Legal certification, complete manual WCAG review, OWASP ZAP assessment, GTmetrix account/quota access, and account-gated webmaster verification remain separate.",
+      "updated": "2026-08-28",
+      "preview_url": "https://kairali-web-factory-abhilashkr-ppigvczf3-kairali.vercel.app",
       "live_url": "https://abhilashkr.com",
       "vector": {
         "site_class": "organic",

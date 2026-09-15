@@ -432,6 +432,13 @@ function main() {
   );
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Main-module guard. NOT `import.meta.url === \`file://${process.argv[1]}\``:
+// import.meta.url percent-encodes the path while process.argv[1] does not, so on
+// any checkout whose path contains a space -- this fleet lives under
+// "/Volumes/Extreme SSD - Blue 2nd/..." -- the comparison is always false and this
+// generator exits 0 having regenerated NOTHING. The session-end rule in CLAUDE.md
+// depends on it running, and the dashboard snapshot had silently gone stale.
+// Same class as QUESTIONS.md Q-MAIN-GUARD-ENCODING; 29 scripts still carry it.
+if (process.argv[1] && resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])) {
   main();
 }
