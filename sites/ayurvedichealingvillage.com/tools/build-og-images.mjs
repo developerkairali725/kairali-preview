@@ -44,7 +44,10 @@ const slug = (p) => { const c = p.replace(/^\/+|\/+$/g, ""); return (c === "" ? 
 const dims = (f) => { try { const o = execFileSync("sips", ["-g", "pixelWidth", "-g", "pixelHeight", f], { encoding: "utf8" });
   const w = /pixelWidth:\s*(\d+)/.exec(o), h = /pixelHeight:\s*(\d+)/.exec(o); return w && h ? { w: +w[1], h: +h[1] } : null; } catch { return null; } };
 
-const map = {}; let made = 0, reused = 0, failed = 0, over = 0;
+// --only must MERGE into the existing map, not replace it: a single-route rerun
+// once rewrote the map with one entry and silently unmapped the other 247 pages.
+const map = fs.existsSync(MAP) ? JSON.parse(fs.readFileSync(MAP, "utf8")) : {};
+let made = 0, reused = 0, failed = 0, over = 0;
 for (const r of routes) {
   if (only && r.path !== only) continue;
   const src = plan[r.path] && fs.existsSync(plan[r.path]) ? plan[r.path] : FALLBACK;
@@ -73,7 +76,7 @@ for (const r of routes) {
 }
 fs.writeFileSync(MAP, JSON.stringify(map, null, 1));
 const sizes = Object.values(map).map((p) => { try { return fs.statSync(path.join(SITE, "public", p.replace(/^\//, ""))).size; } catch { return 0; } }).filter(Boolean);
-console.log(`routes covered : ${Object.keys(map).length} of ${routes.length}`);
+console.log(`routes covered : ${Object.keys(map).length} of ${routes.length}${only ? "  (merged; --only run)" : ""}`);
 console.log(`generated      : ${made}   reused: ${reused}   failed: ${failed}`);
 console.log(`over ${MAX_KB} KB     : ${over}`);
 if (sizes.length) console.log(`card size      : min ${Math.round(Math.min(...sizes)/1024)} KB · median ${Math.round(sizes.sort((a,b)=>a-b)[Math.floor(sizes.length/2)]/1024)} KB · max ${Math.round(Math.max(...sizes)/1024)} KB`);
