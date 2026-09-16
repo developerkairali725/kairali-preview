@@ -315,3 +315,74 @@ knows both the language and the lock — before those locales ship.
    country/query export for ayurvedichealingvillage.com to propose a ranked list.
 4. **Villa Raag's actual run:** its code is not in this monorepo. If the batch scripts
    still exist, they are the fastest possible start — where do they live?
+
+---
+
+# ADDENDUM 2 — the batch pipeline, specified
+
+## G. "Single batch run" means one orchestrated pipeline, not one giant prompt
+
+This is the most important correction to how the work gets built. A batch API takes a
+**JSONL file of many independent bounded requests** — one per semantic unit per locale —
+with a strict output schema, and returns JSONL. That avoids the three failure modes of
+one enormous prompt: context-window omissions, JSON corruption, and one bad response
+invalidating the whole site.
+
+Eleven stages, each with the failure it prevents:
+
+| # | Stage | Prevents |
+|---|---|---|
+| 1 | Crawl + inventory canonical EN URLs; capture body, headings, labels, **image alt**, captions, forms, validation messages, title, meta description, OG/Twitter, **JSON-LD text fields**, breadcrumbs, slugs. Record `pageId`, route, DOM location, content hash. | Translating body but not metadata — the single most common miss. |
+| 2 | Extract code strings by **AST, not regex**. | Broken JSX, unstable line-number keys, untranslated `aria-label`s. |
+| 3 | Parse content to an AST; strip scripts and nav duplication, keep paragraph/list/table boundaries. | Spending 13,000 HTML tokens where 1,500 Markdown tokens carry the same text. |
+| 4 | Normalise to one manifest: `{id, source, locale, contentType, pageId, route, context, neighbors, maxLength, placeholders, dntTerms, sourceHash}`. Dedupe **only** when source *and* context match. | "Free", "Book", "Apply" collapsing to one translation across different senses. |
+| 5 | Segment semantically — related UI strings by component, prose by section, each carrying page summary + neighbouring headings. | Context-free labels; inconsistent terminology. |
+| 6 | Replace DNT terms, URLs, code and fragile markup with **typed sentinel tokens**. | The #1 reported crash: `{count}` translated to `{数量}`. Note: do **not** use ordinary-looking placeholders like `TERM1` — models inflect them. |
+| 7 | One JSONL batch, one request per unit × locale, strict schema, per-locale concurrency caps, retry only failed IDs, cache on `sourceHash + locale + promptVersion + glossaryVersion`. | Retranslating unchanged material; rate-limit storms; non-deterministic overwrites. |
+| 8 | Validate: key parity, schema, ICU compiles, placeholder multiset, DNT equality, markup structure, URL preservation, target length, source-language residue. | Fluent output that crashes at runtime or silently drops a variable. |
+| 9 | **A different model** judges source vs target against an MQM rubric, naming the offending span. Then native review. | A model approving its own plausible-but-wrong output. LLM judges favour fluency — useful for ordering the review queue, never a certificate. |
+| 10 | Reinject by **immutable ID**, never fuzzy text match. PR with source+target diffs and QA reports. | Injecting a translation into the wrong occurrence; clobbering manual corrections. |
+| 11 | Build every locale, crawl, screenshot at mobile+desktop, compare routes and metadata, **publish only locales that pass**. | A valid translation batch creating thousands of bad URLs. |
+
+## H. Corrections to my §A/§C above
+
+- **CJK contracts, it does not expand.** Simplified Chinese ~20–40% *shorter* than English,
+  Japanese ~10–55% shorter, Korean ~10–15% shorter. Arabic runs 25–30% *longer*. So the
+  same hero can overflow in Arabic and look sparse and under-filled in Chinese — both are
+  layout bugs, and only real-content screenshots catch the second one.
+- **Never synthesise italics in CJK** — those typefaces have no italic tradition. Use
+  weight, colour, brackets, a contrasting face, or Japanese emphasis dots.
+- **Korean** needs `word-break: keep-all`; **Japanese** needs kinsoku (a closing bracket,
+  comma or small kana must not begin a line); **Chinese** wraps between characters — do
+  not reach for `word-break: break-all` as a blanket fix.
+- **Per-locale CJK fonts, not one pan-CJK fallback** — glyph forms differ by region.
+  `:lang(zh-Hans)`, `:lang(ja)`, `:lang(ko)` each get their own stack. These fonts are
+  large: subsetting, `font-display` and preload strategy are Core Web Vitals items.
+- **Canonical:** each translated locale page carries a **self-referential** canonical.
+  Canonicalising translations back to English asks Google to consolidate them away — and
+  a page whose canonical points elsewhere has *all* its hreflang annotations dropped.
+- **`zh-Hans`** is the correct tag for Simplified Chinese (ISO 15924 script subtag).
+
+## I. The cautionary tale, and it is our exact adjacent technology
+
+An r/SEO report: a site went from ~2 million pageviews to under 100,000 after a **proxy
+translation** implementation generated roughly **7 million malformed/duplicate URLs** with
+partial translations and missing or wrong canonical/hreflang. It is one anecdote, but the
+engineering lesson is the one to adopt: **stage a small URL cohort, crawl it, watch Search
+Console, then expand.** Not 2,520 URLs on day one.
+
+That technology class is GTranslate — the same widget approach the Factory already
+rejected for kairali.com. Worth remembering when someone offers a fast shortcut.
+
+## J. Recommended split
+
+Do not make one tool do all three jobs:
+
+- **Rendering/routing:** `next-intl` (App Router standard: `/[locale]`, middleware,
+  localised pathnames, ICU, hreflang via `generateMetadata`).
+- **Human workflow:** a TMS (Crowdin / Lokalise / Tolgee / Weblate / Smartling) for
+  glossary, translation memory, screenshots and reviewer routing.
+- **The 10-locale backfill:** a separate batch worker, exactly as §G.
+
+`packages/i18n` already gives the locale gates and the build-time throw on a missing key;
+it is not, and should not become, the content pipeline.
