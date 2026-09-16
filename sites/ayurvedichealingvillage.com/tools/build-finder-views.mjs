@@ -82,12 +82,18 @@ function patchShared(view) {
     `const COURSES = ${courseMap};\nconst COURSE_RATE = ${rateMap};\nconst metaFor = (href, cur) => {\n  const p = href.replace('${HOST}', '');\n  if (COURSES[p]) return COURSES[p] + ' · stay from ' + COURSE_RATE[cur] + ' per night';\n  const row = PRICING[p];\n  if (!row) return 'Tailored programme — fee follows the doctor’s plan';`,
     "metaFor");
   L = once(L, `'All 33 governed programmes, as published.'`, `'All ' + PROGRAMMES.length + ' governed programmes, as published.'`, "count copy");
-  L = once(L, `minusOne: -1,`, `minusOne: -1, total: PROGRAMMES.length, heritageLine: (new Date().getFullYear() - 1908) + '+ Years Heritage',`, "renderVals extras");
+  L = once(L, `minusOne: -1,`, `minusOne: -1, total: PROGRAMMES.length, countAll: PROGRAMMES.length, countW: PROGRAMMES.filter(p => p.c.indexOf('W') >= 0).length, countT: PROGRAMMES.filter(p => p.c.indexOf('T') >= 0).length, countR: PROGRAMMES.filter(p => p.c.indexOf('R') >= 0).length, countY: PROGRAMMES.filter(p => p.c.indexOf('Y') >= 0).length, heritageLine: (new Date().getFullYear() - 1908) + '+ Years Heritage',`, "renderVals extras");
   view.logic = L;
 
   const B = SPEC.sharedBlock;
   let T = view.template;
   T = once(T, "show all 33 programmes", "show all {{ total }} programmes", "show-all copy");
+  // Every category chip printed its count as a literal (33 / 1 / 29 / 1 / 5);
+  // the counts now come from the dataset, so five courses read "Training 6".
+  const chipRe = /(<button type="button" onClick="\{\{ set(All|W|T|R|Y) \}\}"[\s\S]*?opacity:\.75">)\d+(<\/span><\/button>)/g;
+  const chips = (T.match(chipRe) || []).length;
+  if (chips !== 5) throw new Error(`chip counts: expected 5 literal chip counts, found ${chips}`);
+  T = T.replace(chipRe, (m, a, k, z) => `${a}{{ count${k} }}${z}`);
   const list = `<ul style="margin:0 auto 22px;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:10px 24px;max-width:640px;text-align:left"> ` +
     B.items.map((it) => `<li style="display:flex;gap:10px;align-items:baseline"><span aria-hidden="true" style="color:#C1882C">◆</span><span>${it}</span></li>`).join(" ") + ` </ul> `;
   T = once(T, /<h2([^>]*)>Not sure which programme fits\?<\/h2>/, (m, a) => list + `<h2${a}>Not sure which programme fits?</h2>`, "not-sure heading");
