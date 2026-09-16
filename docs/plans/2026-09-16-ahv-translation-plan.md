@@ -465,3 +465,96 @@ the shape Google demoted at scale through 2026 (§B), and 1,764 new pages is squ
 within it. The mitigation that costs nothing is already in this plan — **stage a small
 URL cohort, crawl it, watch Search Console, then expand** (§I). Shipping one locale
 first would give real numbers before the other six commit.
+
+---
+
+# SEARCH CONSOLE EVIDENCE — 2026-09-16
+
+Source: `launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19{,-www}/`
+— the committed, SHA-manifested 16-month export from the `director@` session
+(~2025-03-18 → 2026-07-17), both the root and `www` properties summed.
+**88,432 clicks / 3,800,375 impressions.**
+
+A fresh pull was attempted and is not available: the Chrome session on this machine is
+signed in as `abilash.kr@gmail.com`, which has **zero** GSC properties (it lands on the
+"Add a website" onboarding), and no other Google account is signed in. This matches the
+note in `launches/README-gsc-snapshot-2026-07-19.md`. The committed export stands as the
+evidence; a refresh needs the `director@` session.
+
+## Ranked non-English opportunity, weighted country → language
+
+| Rank | Language | Clicks | Impressions | Where it comes from | In owner's list? |
+|---:|---|---:|---:|---|:--:|
+| 1 | **German** | 3,022 | 114,512 | Germany 2,042 · Switzerland 604 · Austria 346 | yes |
+| 2 | **French** | 2,998 | 95,413 | France 2,023 · Canada 480 · Switzerland 220 | yes |
+| 3 | Arabic | 1,557 | 53,453 | UAE 811 · Saudi 305 · Qatar 113 | yes (Wave 2) |
+| 4 | **Dutch** | 778 | 18,475 | Netherlands 629 · Belgium 149 | **NO** |
+| 5 | **Italian** | 680 | 30,465 | Italy 600 · Switzerland 76 | **NO** |
+| 6 | Spanish | 639 | 52,793 | Spain 409 · Mexico 82 | yes |
+| 7 | Chinese (Simp.) | 624 | 15,458 | Singapore 405 · Malaysia 131 · HK 63 · **China 24** | yes |
+| 8 | Nordics (4 langs) | 593 | 16,806 | Sweden 269 · Denmark 139 · Norway 128 · Finland 48 | "maybe" |
+| 9 | Russian | 284 | 23,355 | Russia 171 · Israel 38 · Kazakhstan 16 | yes |
+| 10 | Portuguese | 226 | 50,475 | Portugal 152 · Brazil 61 | **NO** |
+| 11 | Japanese | 208 | 8,073 | Japan 208 | yes |
+| 12 | Hebrew | 179 | 3,919 | Israel 179 | yes (Wave 2) |
+| 13 | Polish | 167 | 5,823 | Poland 167 | **NO** |
+| 14 | **Korean** | **16** | 13,939 | South Korea 16 | yes |
+
+**English-first markets are 84% of all traffic** (74,686 clicks). India alone is 49,968 —
+**56% of the entire site**.
+
+## Query-level evidence — who is already searching in their own language
+
+Top 2,000 queries (the GSC UI caps each property at 1,000 rows, so this is the head only):
+
+```
+Cyrillic (ru)      0 queries          CJK Han (zh/ja)   0 queries
+Arabic (ar)        0 queries          Kana (ja)         0 queries
+Hebrew (he)        0 queries          Hangul (ko)       0 queries
+Devanagari (hi/mr) 4 queries, 2,345 impressions   e.g. "पंचकर्म म्हणजे काय" (Marathi)
+Malayalam (ml)     1 query               "കൈരളി"
+Latin-script non-English markers:
+  French  8 queries,  31 clicks, 1,968 impr  "cure ayurvédique inde kerala"
+  Spanish 8 queries,  54 clicks, 2,813 impr  "ayurveda india retreat"
+  German 18 queries,   6 clicks,   886 impr  "ayurveda kur indien kerala", "panchakarma kur"
+  Italian 1 query,     2 clicks,   374 impr
+```
+
+## How to read this honestly
+
+**This is a floor, not a ceiling.** The site is English-only, so Google rarely surfaces it
+for a Korean or Japanese query. The data measures demand that reached an English site
+*despite* the language barrier — it systematically **under-counts** markets whose users
+search in their own language. Zero Hangul queries does not prove no Korean demand; it
+partly reflects that there is nothing for Google to show them. That is the whole argument
+*for* translating.
+
+What the data can legitimately settle is **relative priority among comparable markets**,
+and there it disagrees with the proposed list in four places:
+
+1. **Dutch (778) and Italian (680) are not on the list**, yet both beat Spanish, Chinese,
+   Japanese, Hebrew and Korean. The Netherlands alone sends more traffic than Spain.
+2. **Korean is the weakest market on the whole board — 16 clicks.** It does have 13,939
+   impressions, i.e. a 0.1% CTR, which is either a genuine untapped opportunity or noise.
+   Worth one look before committing a locale to it.
+3. **Chinese is mostly Singapore/Malaysia/Hong Kong, not the mainland** — China itself is
+   24 clicks. Singapore and Malaysia are English-comfortable, and Hong Kong reads
+   Traditional, not Simplified. So `zh-Hans` may be aimed at the wrong audience.
+4. **Hindi/Marathi is absent from the list**, yet India is 56% of the site and Devanagari
+   queries already appear in the head with 2,345 impressions. The 2026-07-15 ruling put
+   DE ahead of Hindi; the traffic mix is worth re-reading before that stands unchallenged.
+
+Russian (284) and Portuguese (226) sit close together; Russian is on the list, Portuguese
+is not, on roughly equal evidence.
+
+## Suggested Wave 1, on the evidence
+
+`de` · `fr` · `nl` · `it` · `es` — the top five LTR languages by actual demand, all close
+European pairs where the language-distance risk is lowest and a terminology pass suffices.
+
+Then reassess `zh-Hans` / `ja` / `ko` / `ru` with a small staged cohort (§I) rather than
+committing 252 pages each up front, and put **Hindi/Marathi** into the conversation on the
+strength of India being 56% of the traffic.
+
+This is a recommendation from the evidence available, not a ruling — the locale set is
+the owner's call (D-20260916-02).
