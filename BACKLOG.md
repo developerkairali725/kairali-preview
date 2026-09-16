@@ -279,3 +279,16 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
 - [ ] 2026-07-18 19:46:04 IST (session close) — **YMYL-widen build (D-YMYL-WIDEN, closes O5):** widen the honest-YMYL content lint from whatisayurveda.com to ALL organic health surfaces; per-site rule tuning as sites onboard.
 - [ ] 2026-07-18 19:46:04 IST (session close) — **Facts-package spelling PR + Abishek signboard round:** apply the ruled spellings from the owner-facts package across sites/ and queue the signboard verification round via Abishek.
 - [ ] 2026-07-18 19:46:04 IST (session close) — **Verdict-emitter tranche 2:** extend the CI-wired emitters (#126 T1, wiring #135) to the next gate tranche — keeps the 50-unproven count dropping.
+- [ ] 2026-09-16 21:40:00 IST — **AHV TRANSLATION (trigger: EN frozen in staging; owner's ask this session).** Process
+  written up at docs/plans/2026-09-16-ahv-translation-plan.md. Villa Raag is the precedent and it is REAL locale pages
+  with reciprocal hreflang (verified live 2026-09-16: en/de/fr/ru/es/he/zh-Hans + x-default, zero translation-plugin
+  fingerprints) — but villaraag.com's site code is NOT in this monorepo, only its launch evidence, so the in-repo
+  template to copy is sites/abhilashkr (EN/DE/FR; src/lib/i18n.ts + src/lib/localized-content.ts). THREE things need
+  an owner ruling before any translation is bought: (1) locale set — CLAUDE.md LOCKED FACTS and the locale register
+  both lock KTAHV to EN/DE/FR, so "all the other languages like Villa Raag" (seven) would change a locked fact;
+  (2) the sourceSha256 pin on the 136 view payloads, which translated payloads cannot satisfy by definition;
+  (3) translated slugs => a per-locale route manifest. HARD PRECONDITION: the EN clinical language lock (191/252
+  routes, owner + Dr. Deepu John) must close FIRST — translating before it means every fix lands three times. The
+  clinical lock binds in DE/FR too (Kur/Urlaub/Luxus, cure/vacances/luxe), compliance already emits clinical-lock-de
+  and clinical-lock-fr, and Dr. Deepu John's HARD GATE 7 sign-off is per locale. The three non-English /sitemap/ links
+  left open by the SSR work belong to this lane.
