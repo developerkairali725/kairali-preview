@@ -1,0 +1,1528 @@
+{
+ "generated": "2026-09-16T06:21:39.856Z",
+ "base": "http://127.0.0.1:4321",
+ "min": 600,
+ "summary": {
+  "checked": 252,
+  "failed": 0,
+  "below": 0,
+  "median": 6259,
+  "min": 1438,
+  "max": 30020,
+  "noH1": 0
+ },
+ "routes": [
+  {
+   "path": "/",
+   "status": 200,
+   "chars": 18322,
+   "hasH1": true
+  },
+  {
+   "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+   "status": 200,
+   "chars": 13359,
+   "hasH1": true
+  },
+  {
+   "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "status": 200,
+   "chars": 8643,
+   "hasH1": true
+  },
+  {
+   "path": "/about-us/",
+   "status": 200,
+   "chars": 8610,
+   "hasH1": true
+  },
+  {
+   "path": "/accreditations/",
+   "status": 200,
+   "chars": 7283,
+   "hasH1": true
+  },
+  {
+   "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+   "status": 200,
+   "chars": 9206,
+   "hasH1": true
+  },
+  {
+   "path": "/alcohol-free/",
+   "status": 200,
+   "chars": 4290,
+   "hasH1": true
+  },
+  {
+   "path": "/all-programs/",
+   "status": 200,
+   "chars": 8865,
+   "hasH1": true
+  },
+  {
+   "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+   "status": 200,
+   "chars": 8328,
+   "hasH1": true
+  },
+  {
+   "path": "/animal-husbandry/",
+   "status": 200,
+   "chars": 4730,
+   "hasH1": true
+  },
+  {
+   "path": "/apply-now/",
+   "status": 200,
+   "chars": 6471,
+   "hasH1": true
+  },
+  {
+   "path": "/archive-yoga-retreat/",
+   "status": 200,
+   "chars": 5339,
+   "hasH1": true
+  },
+  {
+   "path": "/archive/",
+   "status": 200,
+   "chars": 3696,
+   "hasH1": true
+  },
+  {
+   "path": "/arogya-kendra/",
+   "status": 200,
+   "chars": 4740,
+   "hasH1": true
+  },
+  {
+   "path": "/arogya-shala/",
+   "status": 200,
+   "chars": 4863,
+   "hasH1": true
+  },
+  {
+   "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+   "status": 200,
+   "chars": 6067,
+   "hasH1": true
+  },
+  {
+   "path": "/attractions-15kms-and-below/",
+   "status": 200,
+   "chars": 4899,
+   "hasH1": true
+  },
+  {
+   "path": "/attractions-25kms-to-50kms/",
+   "status": 200,
+   "chars": 5753,
+   "hasH1": true
+  },
+  {
+   "path": "/attractions-above-50kms/",
+   "status": 200,
+   "chars": 7459,
+   "hasH1": true
+  },
+  {
+   "path": "/attractions-under-10kms/",
+   "status": 200,
+   "chars": 5309,
+   "hasH1": true
+  },
+  {
+   "path": "/awards-and-accolades/",
+   "status": 200,
+   "chars": 6289,
+   "hasH1": true
+  },
+  {
+   "path": "/awards-and-accreditations/",
+   "status": 200,
+   "chars": 3676,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-gallery/",
+   "status": 200,
+   "chars": 2972,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-offers/",
+   "status": 200,
+   "chars": 3006,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-package/",
+   "status": 200,
+   "chars": 4002,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-retreat-kerala.html",
+   "status": 200,
+   "chars": 14796,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-retreats-for-everyone/",
+   "status": 200,
+   "chars": 3958,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-training-programme/",
+   "status": 200,
+   "chars": 4865,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-training-programs/",
+   "status": 200,
+   "chars": 9020,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-training/",
+   "status": 200,
+   "chars": 5107,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-treatment/",
+   "status": 200,
+   "chars": 3828,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda-workshop/",
+   "status": 200,
+   "chars": 7466,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurveda/",
+   "status": 200,
+   "chars": 5963,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-classical-medicines/",
+   "status": 200,
+   "chars": 3556,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-cuisine/",
+   "status": 200,
+   "chars": 6287,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-franchise/",
+   "status": 200,
+   "chars": 6635,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-herbal-tea/",
+   "status": 200,
+   "chars": 5592,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-links/",
+   "status": 200,
+   "chars": 4506,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-new-year-yala-2018/",
+   "status": 200,
+   "chars": 13633,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-products/",
+   "status": 200,
+   "chars": 6221,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-proprietary-medicines/",
+   "status": 200,
+   "chars": 5635,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-proprietary-organics/",
+   "status": 200,
+   "chars": 8097,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+   "status": 200,
+   "chars": 4139,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-treatment-packages.html",
+   "status": 200,
+   "chars": 12164,
+   "hasH1": true
+  },
+  {
+   "path": "/ayurvedic-treatments/",
+   "status": 200,
+   "chars": 12284,
+   "hasH1": true
+  },
+  {
+   "path": "/ayuryoga/",
+   "status": 200,
+   "chars": 6656,
+   "hasH1": true
+  },
+  {
+   "path": "/back-to-roots/",
+   "status": 200,
+   "chars": 6459,
+   "hasH1": true
+  },
+  {
+   "path": "/back-water-tour/",
+   "status": 200,
+   "chars": 4273,
+   "hasH1": true
+  },
+  {
+   "path": "/beauty-care-and-eye-care/",
+   "status": 200,
+   "chars": 27408,
+   "hasH1": true
+  },
+  {
+   "path": "/book-now/",
+   "status": 200,
+   "chars": 2825,
+   "hasH1": true
+  },
+  {
+   "path": "/books/",
+   "status": 200,
+   "chars": 5473,
+   "hasH1": true
+  },
+  {
+   "path": "/brief-on-kairali/",
+   "status": 200,
+   "chars": 4720,
+   "hasH1": true
+  },
+  {
+   "path": "/butterfly-booklet/",
+   "status": 200,
+   "chars": 4719,
+   "hasH1": true
+  },
+  {
+   "path": "/cancellation-and-refund-policy/",
+   "status": 200,
+   "chars": 6249,
+   "hasH1": true
+  },
+  {
+   "path": "/careers/",
+   "status": 200,
+   "chars": 3255,
+   "hasH1": true
+  },
+  {
+   "path": "/cart/",
+   "status": 200,
+   "chars": 2397,
+   "hasH1": true
+  },
+  {
+   "path": "/checkout/",
+   "status": 200,
+   "chars": 2414,
+   "hasH1": true
+  },
+  {
+   "path": "/chef-retreat-food-to-wellness/",
+   "status": 200,
+   "chars": 6253,
+   "hasH1": true
+  },
+  {
+   "path": "/classic-villa/",
+   "status": 200,
+   "chars": 5307,
+   "hasH1": true
+  },
+  {
+   "path": "/consultancy/",
+   "status": 200,
+   "chars": 5386,
+   "hasH1": true
+  },
+  {
+   "path": "/contact-us-old/",
+   "status": 200,
+   "chars": 12566,
+   "hasH1": true
+  },
+  {
+   "path": "/contact-us/",
+   "status": 200,
+   "chars": 8126,
+   "hasH1": true
+  },
+  {
+   "path": "/contact-us/thank-you/",
+   "status": 200,
+   "chars": 2508,
+   "hasH1": true
+  },
+  {
+   "path": "/cookie-policy/",
+   "status": 200,
+   "chars": 5711,
+   "hasH1": true
+  },
+  {
+   "path": "/cooking-classes/",
+   "status": 200,
+   "chars": 4799,
+   "hasH1": true
+  },
+  {
+   "path": "/cultural-events/",
+   "status": 200,
+   "chars": 6836,
+   "hasH1": true
+  },
+  {
+   "path": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "status": 200,
+   "chars": 28893,
+   "hasH1": true
+  },
+  {
+   "path": "/defence-and-paramilitary-forces/",
+   "status": 200,
+   "chars": 6867,
+   "hasH1": true
+  },
+  {
+   "path": "/deluxe-villa/",
+   "status": 200,
+   "chars": 5365,
+   "hasH1": true
+  },
+  {
+   "path": "/destination-palakkad/",
+   "status": 200,
+   "chars": 7311,
+   "hasH1": true
+  },
+  {
+   "path": "/digestive-wellness-gut-health-yoga-therapy/",
+   "status": 200,
+   "chars": 28895,
+   "hasH1": true
+  },
+  {
+   "path": "/disclaimer/",
+   "status": 200,
+   "chars": 8980,
+   "hasH1": true
+  },
+  {
+   "path": "/elephant-safari/",
+   "status": 200,
+   "chars": 4922,
+   "hasH1": true
+  },
+  {
+   "path": "/emailsubscriber/",
+   "status": 200,
+   "chars": 2500,
+   "hasH1": true
+  },
+  {
+   "path": "/enquiry-form-old/",
+   "status": 200,
+   "chars": 6521,
+   "hasH1": true
+  },
+  {
+   "path": "/enquiry-form/",
+   "status": 200,
+   "chars": 7641,
+   "hasH1": true
+  },
+  {
+   "path": "/experience/",
+   "status": 200,
+   "chars": 3972,
+   "hasH1": true
+  },
+  {
+   "path": "/family-ayurvedic-retreat-kerala.html",
+   "status": 200,
+   "chars": 27599,
+   "hasH1": true
+  },
+  {
+   "path": "/faqs-downloads/",
+   "status": 200,
+   "chars": 22341,
+   "hasH1": true
+  },
+  {
+   "path": "/festivals/",
+   "status": 200,
+   "chars": 5788,
+   "hasH1": true
+  },
+  {
+   "path": "/food-sadhana/",
+   "status": 200,
+   "chars": 8595,
+   "hasH1": true
+  },
+  {
+   "path": "/founders-message/",
+   "status": 200,
+   "chars": 7534,
+   "hasH1": true
+  },
+  {
+   "path": "/gallery/",
+   "status": 200,
+   "chars": 2395,
+   "hasH1": true
+  },
+  {
+   "path": "/gift-test/",
+   "status": 200,
+   "chars": 2354,
+   "hasH1": true
+  },
+  {
+   "path": "/gift-vouchers/",
+   "status": 200,
+   "chars": 2839,
+   "hasH1": true
+  },
+  {
+   "path": "/givefeedback/",
+   "status": 200,
+   "chars": 3953,
+   "hasH1": true
+  },
+  {
+   "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+   "status": 200,
+   "chars": 29019,
+   "hasH1": true
+  },
+  {
+   "path": "/house-boat-tour/",
+   "status": 200,
+   "chars": 5228,
+   "hasH1": true
+  },
+  {
+   "path": "/how-to-reach-old/",
+   "status": 200,
+   "chars": 4356,
+   "hasH1": true
+  },
+  {
+   "path": "/how-to-reach/",
+   "status": 200,
+   "chars": 10820,
+   "hasH1": true
+  },
+  {
+   "path": "/immunity-enhancement-executive-health-assessment-therapy/",
+   "status": 200,
+   "chars": 28875,
+   "hasH1": true
+  },
+  {
+   "path": "/in-house-products/",
+   "status": 200,
+   "chars": 6067,
+   "hasH1": true
+  },
+  {
+   "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+   "status": 200,
+   "chars": 6320,
+   "hasH1": true
+  },
+  {
+   "path": "/internships-at-kairali/",
+   "status": 200,
+   "chars": 5000,
+   "hasH1": true
+  },
+  {
+   "path": "/jobs/business-development-manager/",
+   "status": 200,
+   "chars": 4561,
+   "hasH1": true
+  },
+  {
+   "path": "/kair-by-kairali/",
+   "status": 200,
+   "chars": 3925,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-air-india-maharaja-club.html",
+   "status": 200,
+   "chars": 7247,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-centre/",
+   "status": 200,
+   "chars": 7965,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-equipment/",
+   "status": 200,
+   "chars": 6938,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-group/",
+   "status": 200,
+   "chars": 7094,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-products-pvt-ltd/",
+   "status": 200,
+   "chars": 7390,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-treatment-center/",
+   "status": 200,
+   "chars": 4888,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-ayurvedic-way-of-weight-management/",
+   "status": 200,
+   "chars": 5619,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-cleansing-centre.html",
+   "status": 200,
+   "chars": 21347,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-hospitality/",
+   "status": 200,
+   "chars": 4985,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+   "status": 200,
+   "chars": 5646,
+   "hasH1": true
+  },
+  {
+   "path": "/kairali-the-ayurvedic-healing-village/",
+   "status": 200,
+   "chars": 5541,
+   "hasH1": true
+  },
+  {
+   "path": "/karma-being-retreat-2019/",
+   "status": 200,
+   "chars": 11466,
+   "hasH1": true
+  },
+  {
+   "path": "/karma-being-retreat/",
+   "status": 200,
+   "chars": 7926,
+   "hasH1": true
+  },
+  {
+   "path": "/katha-wellness-retreat-2019/",
+   "status": 200,
+   "chars": 6259,
+   "hasH1": true
+  },
+  {
+   "path": "/knowledge-centre/",
+   "status": 200,
+   "chars": 2993,
+   "hasH1": true
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2017/",
+   "status": 200,
+   "chars": 5670,
+   "hasH1": true
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2018/",
+   "status": 200,
+   "chars": 4799,
+   "hasH1": true
+  },
+  {
+   "path": "/lakshya-yoga-retreat/",
+   "status": 200,
+   "chars": 4247,
+   "hasH1": true
+  },
+  {
+   "path": "/lakshya-yoga/",
+   "status": 200,
+   "chars": 6818,
+   "hasH1": true
+  },
+  {
+   "path": "/learn-about-ayurveda/",
+   "status": 200,
+   "chars": 7115,
+   "hasH1": true
+  },
+  {
+   "path": "/learn-more-about-ayurveda/",
+   "status": 200,
+   "chars": 2869,
+   "hasH1": true
+  },
+  {
+   "path": "/learn-more-about-yoga/",
+   "status": 200,
+   "chars": 4550,
+   "hasH1": true
+  },
+  {
+   "path": "/legal-notice/",
+   "status": 200,
+   "chars": 8402,
+   "hasH1": true
+  },
+  {
+   "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+   "status": 200,
+   "chars": 6715,
+   "hasH1": true
+  },
+  {
+   "path": "/live-to-100-with-panchkarma/",
+   "status": 200,
+   "chars": 4412,
+   "hasH1": true
+  },
+  {
+   "path": "/maharaja-suite/",
+   "status": 200,
+   "chars": 5120,
+   "hasH1": true
+  },
+  {
+   "path": "/map/",
+   "status": 200,
+   "chars": 3108,
+   "hasH1": true
+  },
+  {
+   "path": "/meditation/",
+   "status": 200,
+   "chars": 6648,
+   "hasH1": true
+  },
+  {
+   "path": "/mindfulness-retreat/",
+   "status": 200,
+   "chars": 11236,
+   "hasH1": true
+  },
+  {
+   "path": "/mountain-jeep-safari/",
+   "status": 200,
+   "chars": 6718,
+   "hasH1": true
+  },
+  {
+   "path": "/my-account/",
+   "status": 200,
+   "chars": 2317,
+   "hasH1": true
+  },
+  {
+   "path": "/nature-walk/",
+   "status": 200,
+   "chars": 4261,
+   "hasH1": true
+  },
+  {
+   "path": "/new-privacy-policy/",
+   "status": 200,
+   "chars": 9604,
+   "hasH1": true
+  },
+  {
+   "path": "/new-to-ayurveda/",
+   "status": 200,
+   "chars": 6700,
+   "hasH1": true
+  },
+  {
+   "path": "/new-to-yoga-teacher-training/",
+   "status": 200,
+   "chars": 4826,
+   "hasH1": true
+  },
+  {
+   "path": "/new-to-yoga/",
+   "status": 200,
+   "chars": 6415,
+   "hasH1": true
+  },
+  {
+   "path": "/no-caffeine/",
+   "status": 200,
+   "chars": 5991,
+   "hasH1": true
+  },
+  {
+   "path": "/no-preservatives/",
+   "status": 200,
+   "chars": 6364,
+   "hasH1": true
+  },
+  {
+   "path": "/no-refridgeration/",
+   "status": 200,
+   "chars": 3130,
+   "hasH1": true
+  },
+  {
+   "path": "/no-smoking/",
+   "status": 200,
+   "chars": 6428,
+   "hasH1": true
+  },
+  {
+   "path": "/offers/",
+   "status": 200,
+   "chars": 7640,
+   "hasH1": true
+  },
+  {
+   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+   "status": 200,
+   "chars": 1438,
+   "hasH1": true
+  },
+  {
+   "path": "/offers/new/",
+   "status": 200,
+   "chars": 9884,
+   "hasH1": true
+  },
+  {
+   "path": "/offers/olympics-and-paralympics-offer/",
+   "status": 200,
+   "chars": 2501,
+   "hasH1": true
+  },
+  {
+   "path": "/offers/senior-citizen-offer/",
+   "status": 200,
+   "chars": 9758,
+   "hasH1": true
+  },
+  {
+   "path": "/one-day-ayurveda-workshop-program-kerala/",
+   "status": 200,
+   "chars": 5874,
+   "hasH1": true
+  },
+  {
+   "path": "/online-consultation-old/",
+   "status": 200,
+   "chars": 8508,
+   "hasH1": true
+  },
+  {
+   "path": "/online-consultation/",
+   "status": 200,
+   "chars": 8200,
+   "hasH1": true
+  },
+  {
+   "path": "/onlinebookingthankyou/",
+   "status": 200,
+   "chars": 2471,
+   "hasH1": true
+  },
+  {
+   "path": "/onlineconsultation-thanks/",
+   "status": 200,
+   "chars": 2474,
+   "hasH1": true
+  },
+  {
+   "path": "/organic-farm/",
+   "status": 200,
+   "chars": 4070,
+   "hasH1": true
+  },
+  {
+   "path": "/our-accolades/",
+   "status": 200,
+   "chars": 3553,
+   "hasH1": true
+  },
+  {
+   "path": "/our-partners/",
+   "status": 200,
+   "chars": 4004,
+   "hasH1": true
+  },
+  {
+   "path": "/our-story/",
+   "status": 200,
+   "chars": 8144,
+   "hasH1": true
+  },
+  {
+   "path": "/our-villas/",
+   "status": 200,
+   "chars": 5373,
+   "hasH1": true
+  },
+  {
+   "path": "/packages/",
+   "status": 200,
+   "chars": 7273,
+   "hasH1": true
+  },
+  {
+   "path": "/pain-management.html",
+   "status": 200,
+   "chars": 14804,
+   "hasH1": true
+  },
+  {
+   "path": "/panchakarma-therapy/",
+   "status": 200,
+   "chars": 26173,
+   "hasH1": true
+  },
+  {
+   "path": "/panchakarma/",
+   "status": 200,
+   "chars": 5426,
+   "hasH1": true
+  },
+  {
+   "path": "/panchkarma-treatment.html",
+   "status": 200,
+   "chars": 17364,
+   "hasH1": true
+  },
+  {
+   "path": "/payment-policy-compliance/",
+   "status": 200,
+   "chars": 5712,
+   "hasH1": true
+  },
+  {
+   "path": "/personalized-customized-healing-program/",
+   "status": 200,
+   "chars": 27929,
+   "hasH1": true
+  },
+  {
+   "path": "/photo-gallery/",
+   "status": 200,
+   "chars": 3409,
+   "hasH1": true
+  },
+  {
+   "path": "/post-pregnancy-health-programme/",
+   "status": 200,
+   "chars": 26994,
+   "hasH1": true
+  },
+  {
+   "path": "/postulez-maintenant/",
+   "status": 200,
+   "chars": 6713,
+   "hasH1": true
+  },
+  {
+   "path": "/ppc-thanks/",
+   "status": 200,
+   "chars": 2458,
+   "hasH1": true
+  },
+  {
+   "path": "/prav-simona-monsoon-yoga-retreat/",
+   "status": 200,
+   "chars": 10119,
+   "hasH1": true
+  },
+  {
+   "path": "/prav-simona-yoga-retreat/",
+   "status": 200,
+   "chars": 6737,
+   "hasH1": true
+  },
+  {
+   "path": "/preventive-and-regenerative-treatment/",
+   "status": 200,
+   "chars": 27147,
+   "hasH1": true
+  },
+  {
+   "path": "/preventive-rejuvenation-detoxification.html",
+   "status": 200,
+   "chars": 19227,
+   "hasH1": true
+  },
+  {
+   "path": "/privacy-policy/",
+   "status": 200,
+   "chars": 7887,
+   "hasH1": true
+  },
+  {
+   "path": "/privacy-statement/",
+   "status": 200,
+   "chars": 13072,
+   "hasH1": true
+  },
+  {
+   "path": "/product-gallery/",
+   "status": 200,
+   "chars": 2434,
+   "hasH1": true
+  },
+  {
+   "path": "/product-range/",
+   "status": 200,
+   "chars": 5665,
+   "hasH1": true
+  },
+  {
+   "path": "/property-gallery/",
+   "status": 200,
+   "chars": 3009,
+   "hasH1": true
+  },
+  {
+   "path": "/read-feedback/",
+   "status": 200,
+   "chars": 2925,
+   "hasH1": true
+  },
+  {
+   "path": "/retreats-for-everyone/",
+   "status": 200,
+   "chars": 4286,
+   "hasH1": true
+  },
+  {
+   "path": "/retreats-gallery/",
+   "status": 200,
+   "chars": 2768,
+   "hasH1": true
+  },
+  {
+   "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+   "status": 200,
+   "chars": 6563,
+   "hasH1": true
+  },
+  {
+   "path": "/revitalizing-and-strengthening/",
+   "status": 200,
+   "chars": 27361,
+   "hasH1": true
+  },
+  {
+   "path": "/royal-villa/",
+   "status": 200,
+   "chars": 5373,
+   "hasH1": true
+  },
+  {
+   "path": "/search-results/",
+   "status": 200,
+   "chars": 2679,
+   "hasH1": true
+  },
+  {
+   "path": "/sight-seeing-gallery/",
+   "status": 200,
+   "chars": 3014,
+   "hasH1": true
+  },
+  {
+   "path": "/sightseeing/",
+   "status": 200,
+   "chars": 4892,
+   "hasH1": true
+  },
+  {
+   "path": "/sitemap/",
+   "status": 200,
+   "chars": 8173,
+   "hasH1": true
+  },
+  {
+   "path": "/sleep-restoration-therapy/",
+   "status": 200,
+   "chars": 28481,
+   "hasH1": true
+  },
+  {
+   "path": "/social-cultural-environmental-commitment/",
+   "status": 200,
+   "chars": 5231,
+   "hasH1": true
+  },
+  {
+   "path": "/social-responsibilities/",
+   "status": 200,
+   "chars": 8685,
+   "hasH1": true
+  },
+  {
+   "path": "/special-offers/",
+   "status": 200,
+   "chars": 5013,
+   "hasH1": true
+  },
+  {
+   "path": "/terms-and-conditions/",
+   "status": 200,
+   "chars": 13594,
+   "hasH1": true
+  },
+  {
+   "path": "/test-page-2/",
+   "status": 200,
+   "chars": 5579,
+   "hasH1": true
+  },
+  {
+   "path": "/test-page/",
+   "status": 200,
+   "chars": 2364,
+   "hasH1": true
+  },
+  {
+   "path": "/testing/",
+   "status": 200,
+   "chars": 2592,
+   "hasH1": true
+  },
+  {
+   "path": "/thanks-old/",
+   "status": 200,
+   "chars": 2461,
+   "hasH1": true
+  },
+  {
+   "path": "/thanks/",
+   "status": 200,
+   "chars": 2502,
+   "hasH1": true
+  },
+  {
+   "path": "/the-baoli-advert-box-deal/",
+   "status": 200,
+   "chars": 2772,
+   "hasH1": true
+  },
+  {
+   "path": "/the-baoli-special-deal/",
+   "status": 200,
+   "chars": 2766,
+   "hasH1": true
+  },
+  {
+   "path": "/things-to-do-in-kerala/",
+   "status": 200,
+   "chars": 6208,
+   "hasH1": true
+  },
+  {
+   "path": "/things-to-do-in-property/",
+   "status": 200,
+   "chars": 7272,
+   "hasH1": true
+  },
+  {
+   "path": "/things-to-do/",
+   "status": 200,
+   "chars": 9832,
+   "hasH1": true
+  },
+  {
+   "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+   "status": 200,
+   "chars": 6202,
+   "hasH1": true
+  },
+  {
+   "path": "/training-course-fees/",
+   "status": 200,
+   "chars": 4302,
+   "hasH1": true
+  },
+  {
+   "path": "/training-programs/",
+   "status": 200,
+   "chars": 2786,
+   "hasH1": true
+  },
+  {
+   "path": "/training/",
+   "status": 200,
+   "chars": 6558,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-arthritis-and-spondylitis/",
+   "status": 200,
+   "chars": 27522,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-bronchial-diseases/",
+   "status": 200,
+   "chars": 30020,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-cervical-spondylosis/",
+   "status": 200,
+   "chars": 26185,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-chronic-back-pain/",
+   "status": 200,
+   "chars": 28141,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-diabetes/",
+   "status": 200,
+   "chars": 27701,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-facial-paralysis/",
+   "status": 200,
+   "chars": 28581,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-hypertension/",
+   "status": 200,
+   "chars": 27350,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-nervous-disability/",
+   "status": 200,
+   "chars": 27238,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-paralysis/",
+   "status": 200,
+   "chars": 27051,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-psoriasis/",
+   "status": 200,
+   "chars": 26723,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-sinusitis-and-migraine/",
+   "status": 200,
+   "chars": 27473,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-skin-diseases/",
+   "status": 200,
+   "chars": 28016,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-slip-disc/",
+   "status": 200,
+   "chars": 27989,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-for-spondylitis/",
+   "status": 200,
+   "chars": 26518,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-in-kerala.html",
+   "status": 200,
+   "chars": 22532,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-programs/",
+   "status": 200,
+   "chars": 6376,
+   "hasH1": true
+  },
+  {
+   "path": "/treatment-to-remove-stress-and-strain/",
+   "status": 200,
+   "chars": 26803,
+   "hasH1": true
+  },
+  {
+   "path": "/treatments-gallery/",
+   "status": 200,
+   "chars": 2979,
+   "hasH1": true
+  },
+  {
+   "path": "/vegetarian/",
+   "status": 200,
+   "chars": 2882,
+   "hasH1": true
+  },
+  {
+   "path": "/video-gallery/",
+   "status": 200,
+   "chars": 4382,
+   "hasH1": true
+  },
+  {
+   "path": "/villa-raag/",
+   "status": 200,
+   "chars": 9919,
+   "hasH1": true
+  },
+  {
+   "path": "/village-facilities/",
+   "status": 200,
+   "chars": 7056,
+   "hasH1": true
+  },
+  {
+   "path": "/villas-gallery/",
+   "status": 200,
+   "chars": 2916,
+   "hasH1": true
+  },
+  {
+   "path": "/virtual-tour/",
+   "status": 200,
+   "chars": 2787,
+   "hasH1": true
+  },
+  {
+   "path": "/vision-and-mission/",
+   "status": 200,
+   "chars": 4715,
+   "hasH1": true
+  },
+  {
+   "path": "/visit-kerala/",
+   "status": 200,
+   "chars": 6998,
+   "hasH1": true
+  },
+  {
+   "path": "/walk-in-ayurveda-treatment/",
+   "status": 200,
+   "chars": 5708,
+   "hasH1": true
+  },
+  {
+   "path": "/weight-loss-programme/",
+   "status": 200,
+   "chars": 27319,
+   "hasH1": true
+  },
+  {
+   "path": "/weight-loss.html",
+   "status": 200,
+   "chars": 17743,
+   "hasH1": true
+  },
+  {
+   "path": "/wellness-programs/",
+   "status": 200,
+   "chars": 2848,
+   "hasH1": true
+  },
+  {
+   "path": "/wellness-resort-kerala.html",
+   "status": 200,
+   "chars": 21652,
+   "hasH1": true
+  },
+  {
+   "path": "/what-is-ayurvedic-food/",
+   "status": 200,
+   "chars": 6224,
+   "hasH1": true
+  },
+  {
+   "path": "/what-is-panchkarma/",
+   "status": 200,
+   "chars": 4478,
+   "hasH1": true
+  },
+  {
+   "path": "/what-is-yoga/",
+   "status": 200,
+   "chars": 6505,
+   "hasH1": true
+  },
+  {
+   "path": "/why-get-training-in-ayurveda/",
+   "status": 200,
+   "chars": 6937,
+   "hasH1": true
+  },
+  {
+   "path": "/why-get-training-in-yoga/",
+   "status": 200,
+   "chars": 4478,
+   "hasH1": true
+  },
+  {
+   "path": "/why-pick-a-yoga-or-yoga-retreat/",
+   "status": 200,
+   "chars": 6844,
+   "hasH1": true
+  },
+  {
+   "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+   "status": 200,
+   "chars": 4138,
+   "hasH1": true
+  },
+  {
+   "path": "/wildlife-drive/",
+   "status": 200,
+   "chars": 6339,
+   "hasH1": true
+  },
+  {
+   "path": "/womens-hormonal-balance-endocrine-therapy/",
+   "status": 200,
+   "chars": 25267,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-and-ayurveda/",
+   "status": 200,
+   "chars": 3556,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-and-meditation-package/",
+   "status": 200,
+   "chars": 4124,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-based-stress-energy-reset-program/",
+   "status": 200,
+   "chars": 24344,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-classes-practical/",
+   "status": 200,
+   "chars": 7214,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-classes-theory/",
+   "status": 200,
+   "chars": 6605,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-gallery/",
+   "status": 200,
+   "chars": 2880,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-meditation-program/",
+   "status": 200,
+   "chars": 21472,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-meditation-programs/",
+   "status": 200,
+   "chars": 6276,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-meditation-training/",
+   "status": 200,
+   "chars": 22138,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-retreats-for-everyone/",
+   "status": 200,
+   "chars": 6934,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-retreats/",
+   "status": 200,
+   "chars": 5394,
+   "hasH1": true
+  },
+  {
+   "path": "/yoga-therapy-individual/",
+   "status": 200,
+   "chars": 6515,
+   "hasH1": true
+  }
+ ]
+}

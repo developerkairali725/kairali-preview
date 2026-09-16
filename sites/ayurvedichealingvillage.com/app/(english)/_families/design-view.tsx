@@ -13,8 +13,41 @@
 import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import componentMap from "../../../english-candidate/component-map.json";
 import analyticsConfig from "../../../analytics.config.json";
+
+/**
+ * Server-rendered body (owner ruling D-20260915-03: a blocker before any DNS flip).
+ *
+ * The approved design is a client-side runtime, so the server response carried a
+ * correct <head> and no page text: measured, 254-296 characters per route against
+ * 1,200-16,100 rendered. tools/prerender-english.mjs renders each route in a real
+ * browser and serialises the design's OWN compiled output; this reads that
+ * snapshot at build time and ships it in the HTML.
+ *
+ * The design is not rebuilt or re-themed. On hydration the boot script replaces
+ * the snapshot with the live view exactly as it does today, so what a visitor
+ * interacts with is unchanged - the snapshot is what a crawler reads.
+ *
+ * Missing snapshot is NOT an error: the route simply serves as it does now
+ * (client-rendered), so a partial prerender can never break a page.
+ */
+function snapshotName(routePath: string): string {
+  const cleaned = routePath.replace(/^\/+|\/+$/g, "");
+  return (cleaned === "" ? "index" : cleaned.replace(/[^a-z0-9._-]+/gi, "_")) + ".html";
+}
+
+const PRERENDER_DIR = join(process.cwd(), "english-candidate", "prerender");
+
+function prerenderedBody(routePath: string): string {
+  try {
+    return readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8");
+  } catch {
+    return "";
+  }
+}
 
 /**
  * Measurement ids reach the browser ONLY when the build asks for them.
@@ -89,7 +122,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
         id={DESIGN_ROOT_ID}
         data-ahv-route={route.path}
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: "" }}
+        dangerouslySetInnerHTML={{ __html: prerenderedBody(route.path) }}
       />
 
       <noscript>
