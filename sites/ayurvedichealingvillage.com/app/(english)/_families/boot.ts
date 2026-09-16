@@ -98,6 +98,30 @@ export const BOOT_SCRIPT = `
   if (window.__ahvBooted) return;
   window.__ahvBooted = true;
 
+  // The server's share-card tags, captured before the runtime mounts. Some
+  // templates' head writers do not merely duplicate og:image -- they replace
+  // the server node outright, and the travel renderer deletes twitter:image --
+  // so deduplication alone cannot keep them. These values are re-asserted on
+  // every head mutation, so the rendered DOM matches what scrapers (which never
+  // run JavaScript) read from the server HTML.
+  var SHARE_KEYS = ["og:image", "og:image:secure_url", "og:image:width", "og:image:height", "og:image:type", "og:image:alt",
+    "twitter:card", "twitter:image", "twitter:image:alt", "twitter:image:width", "twitter:image:height"];
+  var SERVER_SHARE = {};
+  SHARE_KEYS.forEach(function (key) {
+    var m = document.head.querySelector('meta[property="' + key + '"], meta[name="' + key + '"]');
+    if (m && m.getAttribute("content")) SERVER_SHARE[key] = { attr: m.hasAttribute("property") ? "property" : "name", content: m.getAttribute("content") };
+  });
+  function assertShareTags() {
+    Object.keys(SERVER_SHARE).forEach(function (key) {
+      var want = SERVER_SHARE[key];
+      var nodes = document.head.querySelectorAll('meta[property="' + key + '"], meta[name="' + key + '"]');
+      var keep = nodes.length ? nodes[0] : null;
+      for (var i = 1; i < nodes.length; i++) nodes[i].parentNode && nodes[i].parentNode.removeChild(nodes[i]);
+      if (!keep) { keep = document.createElement("meta"); keep.setAttribute(want.attr, key); document.head.appendChild(keep); }
+      if (keep.getAttribute("content") !== want.content) keep.setAttribute("content", want.content);
+    });
+  }
+
   var cfgEl = document.getElementById(${JSON.stringify(ROUTE_CONFIG_ID)});
   var host = document.getElementById(${JSON.stringify(DESIGN_ROOT_ID)});
   if (!cfgEl || !host) return;
@@ -922,17 +946,30 @@ export const BOOT_SCRIPT = `
       (byKey[key] = byKey[key] || []).push(el);
     }
     Object.keys(byKey).forEach(function (key) {
-      if (byKey[key].length > 1) {
-        governedWins(
-          'meta[property="' + key + '"], meta[name="' + key + '"]'
-        );
+      if (byKey[key].length < 2) return;
+      // The share-card image and its subproperties are the SERVER's to set:
+      // metadata.ts emits a generated 1200x630 card per route, replacing the
+      // source's og:image (71 routes had none, 180 pointed at /wp-content/,
+      // the homepage's 404s). The design's own head writer re-adds the source
+      // value after mount; for image keys the server node must win so the
+      // rendered DOM agrees with what scrapers -- which never run JS -- read.
+      if (key.indexOf("og:image") === 0 || key.indexOf("twitter:image") === 0) {
+        var nodes = byKey[key];
+        var server = nodes.filter(function (n) { return !n.hasAttribute("data-ahv-head"); });
+        var keepNode = server.length ? server[server.length - 1] : nodes[nodes.length - 1];
+        nodes.forEach(function (n) { if (n !== keepNode) drop(n); });
+        return;
       }
+      governedWins(
+        'meta[property="' + key + '"], meta[name="' + key + '"]'
+      );
     });
 
     // STAGING ONLY. On a production build this must not run at all: forcing
     // noindex here would override the approved design's own robots value and
     // silently deindex the live site. The deduplication above still runs in
     // both modes, because two robots metas are wrong either way.
+    assertShareTags();
     var keep = governedWins('meta[name="robots"]');
     if (!STAGING) return;
     if (!keep) {
