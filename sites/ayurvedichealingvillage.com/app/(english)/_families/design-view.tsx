@@ -83,6 +83,9 @@ export function buildBootConfig(route: CandidateRoute): BootConfig {
 }
 
 export function DesignView({ route }: { route: CandidateRoute }) {
+  // Served once, read once: the snapshot body and the "held" state that keeps
+  // a desktop viewport from painting it (see the layout's third style rule).
+  const snapshot = prerenderedBody(route.path);
   const cfg = buildBootConfig(route);
   const narrowMedia = `(max-width: ${BREAKPOINT - 1}px)`;
   const wideMedia = `(min-width: ${BREAKPOINT}px)`;
@@ -121,8 +124,9 @@ export function DesignView({ route }: { route: CandidateRoute }) {
       <div
         id={DESIGN_ROOT_ID}
         data-ahv-route={route.path}
+        data-ahv-snapshot-state={snapshot ? "held" : undefined}
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: prerenderedBody(route.path) }}
+        dangerouslySetInnerHTML={{ __html: snapshot }}
       />
 
       <noscript>

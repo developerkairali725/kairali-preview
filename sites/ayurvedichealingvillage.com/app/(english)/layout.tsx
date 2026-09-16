@@ -72,9 +72,18 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
                <img loading="lazy" src="{{ expr }}"> tags. Visible for even one
                frame, the browser resolves "{{ expr }}" as a URL and 404s.
                Hidden from the start, lazy loading never begins and the runtime
-               replaces the node with the compiled design. */}
+               replaces the node with the compiled design.
+            3. The prerendered snapshot is taken at phone width. While the
+               root is "held" (server state, before the runtime renders) a
+               desktop viewport keeps it invisible on the paper tone rather
+               than painting a phone layout; once boot pushes the template the
+               root is "released" and the snapshot leaves the flow so the live
+               view is the only thing on screen. Phones keep the snapshot
+               visible throughout - that is the mobile-first paint. */}
         <style>
-          {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}"}
+          {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" +
+            "#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}" +
+            "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{visibility:hidden!important}}"}
         </style>
         {children}
       </body>

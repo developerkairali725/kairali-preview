@@ -127,6 +127,53 @@ export const BOOT_SCRIPT = `
   if (!cfgEl || !host) return;
   var cfg = JSON.parse(cfgEl.textContent || "{}");
 
+  // The server response carries the prerendered snapshot (phone width, for
+  // the mobile crawler). It stays on screen until the runtime has rendered
+  // the live view: wiping it first left a desktop visitor a phone layout and
+  // then up to five seconds of empty paper on a slow connection, because the
+  // family scripts and the runtime load only AFTER the payload arrives.
+  // Every snapshot node is marked so the served stylesheet can hide it the
+  // moment the live template is pushed, and the runtime's own #dc-root id is
+  // taken off the copy so only the live root ever carries it.
+  var snapshotNodes = [];
+  (function () {
+    var kids = host.children;
+    for (var i = 0; i < kids.length; i++) {
+      kids[i].setAttribute("data-ahv-snapshot", "");
+      if (kids[i].id === "dc-root") kids[i].removeAttribute("id");
+      snapshotNodes.push(kids[i]);
+    }
+  })();
+  function liveRoot() {
+    var kids = host.children;
+    for (var i = 0; i < kids.length; i++) {
+      var k = kids[i];
+      if (k.hasAttribute("data-ahv-snapshot") || k.tagName === "SCRIPT" || k.tagName === "X-DC") continue;
+      return k;
+    }
+    return null;
+  }
+  function retireSnapshot(tries) {
+    var live = liveRoot();
+    if (live && (live.innerText || "").trim().length > 200) {
+      for (var i = 0; i < snapshotNodes.length; i++) {
+        if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
+      }
+      snapshotNodes = [];
+      host.setAttribute("data-ahv-snapshot-state", "retired");
+      return;
+    }
+    if (tries > 0) { setTimeout(function () { retireSnapshot(tries - 1); }, 100); return; }
+    // The runtime never rendered: give the visitor the snapshot back rather
+    // than an empty page.
+    host.setAttribute("data-ahv-snapshot-state", "held");
+  }
+  function releaseSnapshot() {
+    if (!snapshotNodes.length) return;
+    host.setAttribute("data-ahv-snapshot-state", "released");
+    retireSnapshot(40);
+  }
+
   // A design-preview query must never override the real website route.
   var currentUrl = new URL(window.location.href);
   if (currentUrl.searchParams.has("route")) {
@@ -1040,6 +1087,7 @@ export const BOOT_SCRIPT = `
           window.__dcUpdate(name, "html", pendingTemplate, false);
           templatePushed = true;
           host.setAttribute("data-ahv-template", "source");
+          releaseSnapshot();
         } catch (e) {
           fail(e);
         }
@@ -1072,7 +1120,9 @@ export const BOOT_SCRIPT = `
       // Mounting empty also means the 281 interpolated lazy images never exist
       // as DOM nodes before compilation, so no "{{ expr }}" is ever resolved
       // as a URL.
-      host.innerHTML = "<x-dc></x-dc>";
+      // The snapshot stays where it is (see releaseSnapshot): the runtime takes
+      // the first <x-dc> in the document and replaces it with its own root.
+      host.appendChild(document.createElement("x-dc"));
       pendingTemplate = view.template;
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
