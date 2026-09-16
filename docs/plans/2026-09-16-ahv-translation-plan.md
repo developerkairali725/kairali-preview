@@ -386,3 +386,45 @@ Do not make one tool do all three jobs:
 
 `packages/i18n` already gives the locale gates and the build-time throw on a missing key;
 it is not, and should not become, the content pipeline.
+
+---
+
+# DECIDED — 2026-09-16 (owner, in chat)
+
+Captured as **D-20260916-02** (locale set) and **D-20260916-03** (wave split).
+
+## Locale set
+
+Supersedes the EN/DE/FR lock for KTAHV in `CLAUDE.md` LOCKED FACTS and
+`SITE_DESIGN_LOCALE_REGISTER.md`. Those two files should be amended by the owner-approved
+route rather than silently diverging from this plan.
+
+## Wave split — RULED
+
+| Wave | Locales | Gate |
+|---|---|---|
+| **1** | `de` `fr` `ru` `es` `zh-Hans` `ja` `ko` | EN frozen + EN clinical lock closed |
+| **2** | `he` `ar` | Wave 1 shipped **and** the design's spacing layer rebuilt on CSS logical properties |
+
+Owner's reasoning, accepted: ship the seven LTR locales now, hold Hebrew and Arabic
+rather than ship two languages whose layout is visibly broken. Nothing is lost — they
+come second.
+
+**Wave 2 has a hard prerequisite that is not a translation task:** ~9,878 physical
+direction properties must become logical ones, and the change must land in the **source
+design package**, not the built output — `tools/import-english-candidate.mjs` rewrites
+`public/ahv/` wholesale on every run, so a fix applied downstream is erased on the next
+import. That is design-owner work and should be scoped separately.
+
+## What Wave 1 still needs decided
+
+- Quality model: how much native review per locale (§B — YMYL medical, and the 2026 spam
+  enforcement is aimed at exactly the bulk-translation shape).
+- Any locales added from Search Console country data — **the owner asked to be asked**.
+- Whether Villa Raag's batch scripts still exist and where; they are not in this monorepo
+  and would be the fastest possible start.
+- `zh-Hans`, `ja`, `ko` still need per-locale font stacks, `keep-all`/kinsoku handling and
+  contraction-aware layout checks (§H). Not RTL, but still typography work.
+- Seven of these locales have **no banned-register list** in `packages/compliance` yet
+  (only `clinical-lock-de` and `clinical-lock-fr` exist), so the GST language lock would be
+  unenforced in `ru`, `es`, `zh-Hans`, `ja`, `ko` on day one. Those lists must be authored.
