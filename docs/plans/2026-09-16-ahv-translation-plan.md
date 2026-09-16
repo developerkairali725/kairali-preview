@@ -565,7 +565,7 @@ the owner's call (D-20260916-02).
 
 | | Locales | Count | Pages | Gate |
 |---|---|---:|---:|---|
-| **Wave 1** (D-20260916-05) | `de` `fr` `nl` `it` `es` `ru` `zh-Hans` `ja` `ko` | 9 | 2,268 | EN frozen · EN clinical lock closed |
+| **Wave 1** (D-20260916-05, extended -07) | `de` `fr` `nl` `it` `es` `ru` `zh-Hans` `ja` `ko` `hi` | 10 | 2,520 | EN frozen |
 | **Wave 2** (D-20260916-03) | `he` `ar` | 2 | 504 | Wave 1 shipped · design spacing layer rebuilt on logical properties |
 
 Dutch and Italian were **added** to the owner's original list on the Search Console
@@ -612,3 +612,19 @@ Quality model: **batch only, no native review** (D-20260916-04).
 5. **`CLAUDE.md` LOCKED FACTS and `SITE_DESIGN_LOCALE_REGISTER.md`** still say KTAHV is
    EN/DE/FR-locked. D-20260916-02 supersedes that; the two files need amending by the
    owner-approved route so they do not silently contradict this plan.
+
+## Wave 1 extended to ten — Hindi added, Korean kept (D-20260916-07)
+
+- **Hindi added.** India is 56% of site traffic and Devanagari queries already reach the
+  English site (4 in the query head, 2,345 impressions — one of them Marathi, which is a
+  separate language and a separate later question). Needs a Devanagari font stack; it is a
+  distant language pair, so it sits with ru/zh/ja/ko on the quality-risk side.
+- **Korean kept**, on the owner's reading that 13,939 impressions against 16 clicks is an
+  untapped market rather than noise. That is a defensible read: an English page cannot win
+  a Korean click, which is exactly the floor-not-ceiling caveat in the GSC section.
+
+Wave 1 is now **10 locales × 252 routes = 2,520 pages**.
+
+Also note: the EN clinical-lock precondition is **withdrawn** from Wave 1's gate per
+D-20260916-06 — the owner ruled inherited claim issues are not go-live blockers because
+the English build is a port of already-published content. Translations remain new text.
