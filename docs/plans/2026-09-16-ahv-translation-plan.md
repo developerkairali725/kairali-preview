@@ -428,3 +428,40 @@ import. That is design-owner work and should be scoped separately.
 - Seven of these locales have **no banned-register list** in `packages/compliance` yet
   (only `clinical-lock-de` and `clinical-lock-fr` exist), so the GST language lock would be
   unenforced in `ru`, `es`, `zh-Hans`, `ja`, `ko` on day one. Those lists must be authored.
+
+## Quality model — owner ruled BATCH ONLY (D-20260916-04), with one unresolved gate
+
+The owner ruled: batch translation, **no native-speaker review**, launch and watch Search
+Console, fix what gets flagged. Recorded as his decision.
+
+**One conflict is NOT resolved by that ruling, and it is in the house rulebook, not my
+opinion.** `CLAUDE.md` **HARD GATE 7**: "Medical/clinical content changes require
+Dr. Deepu John's sign-off before staging→production." A translated clinical page is a
+clinical content change. Dr. Deepu John cannot sign off text in a language he does not
+read. HARD GATES 1–9 are marked "NEVER VIOLATE" and "verbatim and supreme", so this is
+not something a delivery decision quietly overrides — it needs an explicit owner
+resolution, one of:
+
+1. **Scope the gate to the clinical subset.** The safety-critical strings — contra-
+   indications, what a treatment does and does not treat, admission and discharge
+   language, consent and privacy text, anything that reads as a medical claim — are a
+   small fraction of 252 pages, not the whole site. Translate and check **only those**
+   with a qualified reader per locale. Cheapest honest route, and it leaves the marketing
+   copy on the batch path the owner chose.
+2. **Owner waives HARD GATE 7 for translated pages**, in writing, in `DECISIONS.md`, with
+   the exposure stated. Per the OS v2 doctrine an `ACCEPTED_RISK` is owner-only, needs a
+   ruling plus an expiry that auto-reopens, and explicitly **cannot** apply to a HARD
+   GATE — so this route may not be available without amending the gate itself.
+3. **Dr. Deepu John signs the ENGLISH clinical master** and the batch pipeline is
+   constrained so clinical strings are locked to an approved translation per locale,
+   never freely regenerated.
+
+Route 1 is the recommendation: it honours the owner's cost decision for the bulk of the
+site while keeping the one class of error that is a patient-safety issue rather than an
+SEO issue out of the batch lane.
+
+Separately, and stated once for the record rather than argued: the batch-only route is
+the shape Google demoted at scale through 2026 (§B), and 1,764 new pages is squarely
+within it. The mitigation that costs nothing is already in this plan — **stage a small
+URL cohort, crawl it, watch Search Console, then expand** (§I). Shipping one locale
+first would give real numbers before the other six commit.
