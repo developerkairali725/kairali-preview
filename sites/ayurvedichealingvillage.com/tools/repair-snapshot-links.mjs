@@ -111,6 +111,15 @@ const RENDER_ORIGIN = /(href|src)="https?:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)
  */
 const EAGER_COUNT = 3;
 
+/**
+ * Image aliases: english-candidate/image-aliases.json, the same file boot.ts
+ * inlines. One entry today -- the directions page's stock toy-figure-on-a-map
+ * hero, replaced by the site's own photograph of the path into the property.
+ * The stock file is referenced by how-to-reach and its retired -old copy only
+ * (audited), so the swap reaches nothing else.
+ */
+const IMAGE_ALIASES = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/image-aliases.json"), "utf8"));
+
 /** Locked fact (CLAUDE.md LOCKED FACTS): the public contact address. */
 const PUBLIC_EMAIL = "info@kairali.com";
 const CF_EMAIL = /href="\/cdn-cgi\/l\/email-protection[^"]*"/g;
@@ -123,6 +132,7 @@ let absoluteLinks = 0;
 let malformedLinks = 0;
 let insecureLinks = 0;
 let originLinks = 0;
+let imageAliases = 0;
 let unlazied = 0;
 let lazied = 0;
 const perAlias = {};
@@ -132,7 +142,12 @@ for (const file of files) {
   const before = fs.readFileSync(full, "utf8");
   // Order matters: repair the malformed scheme first, then collapse absolute self-links
   // to paths, then map legacy spellings -- so an absolute URL to a renamed page gets both.
-  let after = before.replace(RENDER_ORIGIN, (_w, attr, path) => {
+  let after = before;
+  for (const [from, to] of Object.entries(IMAGE_ALIASES)) {
+    const n = after.split(`src="${from}"`).length - 1;
+    if (n) { imageAliases += n; after = after.split(`src="${from}"`).join(`src="${to}"`); }
+  }
+  after = after.replace(RENDER_ORIGIN, (_w, attr, path) => {
     originLinks++;
     return `${attr}="${path || "/"}"`;
   });
@@ -191,6 +206,7 @@ console.log(`snapshots changed   : ${changedFiles}`);
 console.log(`absolute -> relative : ${absoluteLinks}`);
 console.log(`malformed URLs fixed: ${malformedLinks}`);
 console.log(`render origin fixed : ${originLinks}`);
+console.log(`image aliases       : ${imageAliases}`);
 console.log(`LCP image un-lazied : ${unlazied}`);
 console.log(`below-fold lazied   : ${lazied}`);
 console.log(`http -> https       : ${insecureLinks}`);

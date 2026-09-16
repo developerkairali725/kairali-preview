@@ -96,7 +96,7 @@
           R('span', null, 'I have read and agree to ayurvedichealingvillage.com ',
             href
               ? R('a', { href: href, 'data-source-href': ca.sourceHref, 'data-source-pointer': ca.ptr,
-                  onClick: e => e.preventDefault(), style: { textUnderlineOffset: '2px' } }, linkText)
+                  onClick: undefined, /* preview-only nav guard neutralised for the published site */ style: { textUnderlineOffset: '2px' } }, linkText)
               : R('span', null, linkText))));
         return;
       }
@@ -247,7 +247,7 @@
   const emptyVals = () => ({ route: null, title: '', path: '', h1El: null, bodyEl: null, formEl: null,
     hasForm: false, canonical: '', robots: '', indexable: '', layoutFit: '', headingDecision: '',
     flags: [], imageCount: '0', blockCount: '0', notFound: false, found: false, requestedRoute: '', validRoutes: [],
-    showBreadcrumb: false, crumbs: [], crumbLast: '', guard: (e) => { if (e && e.preventDefault) e.preventDefault(); } });
+    showBreadcrumb: false, crumbs: [], crumbLast: '', guard: () => {} /* preview-only nav guard neutralised for the published site */ });
 
   // A source embed, never mounted: no provider frame, no provider request. The visitor sees a plain label
   // and a real (inert) link to the source destination. The technical accounting — provider, pointer,
@@ -268,7 +268,7 @@
       R('figcaption', { style: { padding: '16px', fontSize: '17px', lineHeight: 1.6, color: '#2A2118',
           display: 'flex', flexWrap: 'wrap', gap: '6px 14px', alignItems: 'baseline' } },
         R('span', null, label),
-        R('a', { href: b.sourceUrl, onClick: e => e.preventDefault(),
+        R('a', { href: b.sourceUrl, onClick: undefined, /* preview-only nav guard neutralised for the published site */
           style: { textUnderlineOffset: '2px', minHeight: '44px', display: 'inline-flex', alignItems: 'center' } },
           linkText)));
   }

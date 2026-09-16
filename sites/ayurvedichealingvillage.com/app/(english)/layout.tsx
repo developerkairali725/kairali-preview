@@ -53,6 +53,11 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             is a separate Vikash decision) would have broken Search Console, Bing
             Webmaster and Meta domain verification on day one, during the exact
             week the migration data matters most. */}
+        {/* Layout for the directions page and the gold primary on contact/enquiry.
+            Scoped by data-ahv-route, so loading it site-wide is inert elsewhere.
+            Lives in public/design/, outside public/ahv/, so a design re-import
+            cannot erase it. */}
+        <link rel="stylesheet" href="/design/directions.css" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />

@@ -50,6 +50,7 @@
  */
 
 import LINK_ALIASES from "../../../english-candidate/link-aliases.json";
+import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
   path: string;
@@ -183,6 +184,150 @@ export const BOOT_SCRIPT = `
       slot.__ahvTouchFixed = true;
     } catch (e) { /* a browser without adoptedStyleSheets keeps source behaviour */ }
   }
+  // Same map as tools/repair-snapshot-links.mjs applies to the snapshots, so
+  // the server HTML and the mounted runtime show the same picture.
+  var IMG_ALIASES = ${JSON.stringify(IMAGE_ALIASES)};
+  function aliasImages(root) {
+    if (!root || root.nodeType !== 1) return;
+    var imgs = root.matches("img") ? [root] : root.querySelectorAll("img[src]");
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      var cur = img.getAttribute("src") || "";
+      var key = cur.replace(new RegExp("^https?://[^/]+"), "");
+      if (IMG_ALIASES[key] && cur !== IMG_ALIASES[key]) img.setAttribute("src", IMG_ALIASES[key]);
+    }
+  }
+
+  /**
+   * Directions page layout (/how-to-reach/) — tags containers for
+   * public/design/directions.css.
+   *
+   * The reader renders the page as one flat prose column and emits no classes,
+   * only data-source-pointer paths. Sections, cards and the "Good to know"
+   * pairs live in anonymous <div>s with no pointer of their own, so CSS cannot
+   * reach them. This climbs from a known pointer to the nearest ancestor that
+   * holds ONLY that group's blocks, and tags it. Nothing is moved, reordered or
+   * reworded; the FAQ split is presentational — the source has the question
+   * and its answer as one run of text with no break after the "?".
+   *
+   * Runs once per mount. The prerender runs after boot, so the next snapshot
+   * of the route carries these tags too.
+   */
+  // Finds the elements of one source group and returns a single container
+  // that holds exactly them. The renderer FLATTENS the source tree, so a
+  // group's blocks are usually siblings in one big column with no wrapper of
+  // their own -- in that case the consecutive run is wrapped in a new element.
+  // Where the renderer did keep a wrapper that holds only this group, that
+  // wrapper is tagged instead and nothing moves.
+  function tagGroup(main, prefix, cls, attr, val) {
+    var all = main.querySelectorAll('[data-source-pointer^="' + prefix + '"]');
+    if (!all.length) return null;
+    // Scope to the first match's own top-level section. The sticky call bar
+    // reuses the closing CTA's pointers OUTSIDE the content section, and
+    // letting a group span both climbed to <main> and wrapped the whole page.
+    var scope = all[0].closest('section[data-source-pointer], [data-source-pointer="/sections/3"]') || main;
+    if (scope === all[0]) scope = all[0].parentElement || main;
+    // A nested call passes a grid or fact-set as the container; the nearest
+    // section lies OUTSIDE it, and escaping the container resolved the run to
+    // the wrong parent and silently made no cards. Never scope past the
+    // container this call was given.
+    if (!main.contains(scope) || scope === main) scope = main;
+    var els = [];
+    for (var i = 0; i < all.length; i++) if (scope.contains(all[i]) && all[i] !== scope) els.push(all[i]);
+    if (!els.length) return null;
+    var first = els[0], last = els[els.length - 1];
+    var parent = first.parentElement;
+    while (parent && parent !== scope && parent !== main && !parent.contains(last)) parent = parent.parentElement;
+    if (!parent || parent === main && scope !== main) parent = scope;
+    if (!parent) return null;
+    var foreign = parent.querySelector('[data-source-pointer]:not([data-source-pointer^="' + prefix + '"])');
+    if (!foreign && parent !== main) {
+      if (!parent.classList.contains(cls)) { parent.classList.add(cls); if (attr) parent.setAttribute(attr, val); }
+      return parent;
+    }
+    var run = [];
+    for (var c = parent.firstElementChild; c; c = c.nextElementSibling) {
+      var owns = (c.hasAttribute("data-source-pointer") && c.getAttribute("data-source-pointer").indexOf(prefix) === 0) ||
+                 !!c.querySelector('[data-source-pointer^="' + prefix + '"]');
+      if (owns) run.push(c);
+    }
+    if (!run.length) return null;
+    if (run.length === 1 && run[0].classList.contains(cls)) return run[0];
+    var box = document.createElement("div");
+    box.className = cls;
+    if (attr) box.setAttribute(attr, val);
+    parent.insertBefore(box, run[0]);
+    run.forEach(function (el) { box.appendChild(el); });
+    return box;
+  }
+  function enhanceDirections(host) {
+    if (!host || host.__ahvDirectionsDone) return;
+    if (host.getAttribute("data-ahv-route") !== "/how-to-reach/") return;
+    var main = host.querySelector("#main-content") || host;
+    if (!main.querySelector('[data-source-pointer="/sections/3/c/19/c/1/c/3"]')) return; // not rendered yet
+    host.__ahvDirectionsDone = true;
+    // bands: one per top-level section of the directions content
+    [1, 3, 5, 7, 9, 11, 13, 15, 17, 19].forEach(function (n) {
+      tagGroup(main, "/sections/3/c/" + n + "/", "ahv-band", "data-ahv-band", String(n));
+    });
+    // Grids first (the outer wrapper around a whole card set), then the cards
+    // inside them. Order matters in a flat layout: tagging the cards' shared
+    // parent as the grid would turn the entire page column into a grid.
+    [["/sections/3/c/3/c/1/c/5/", [1, 3], "2"],
+     ["/sections/3/c/5/c/1/c/7/", [1, 3, 5], "3"],
+     ["/sections/3/c/15/c/1/c/5/", [1, 3], "2"]].forEach(function (g) {
+      var grid = tagGroup(main, g[0], "ahv-grid", "data-ahv-cols", g[2]);
+      if (!grid) return;
+      g[1].forEach(function (k) { tagGroup(grid, g[0] + "c/" + k + "/", "ahv-card"); });
+    });
+    // "Good to know": the pair set, then each label/value pair
+    var facts = tagGroup(main, "/sections/3/c/9/c/1/c/1/c/3/c/15/", "ahv-facts");
+    if (facts) [1, 3, 5, 7].forEach(function (k) { tagGroup(facts, "/sections/3/c/9/c/1/c/1/c/3/c/15/c/" + k + "/", "ahv-fact"); });
+    // FAQ: question and answer share one paragraph with no break after "?"
+    main.querySelectorAll('p[data-source-pointer^="/sections/3/c/17/c/1/c/"]').forEach(function (p) {
+      var ptr = p.getAttribute("data-source-pointer");
+      if (new RegExp("/c/(1|3)$").test(ptr) || p.children.length) return;
+      var t = p.textContent || "";
+      var i = t.indexOf("?");
+      if (i < 8 || i > t.length - 8) return;
+      var q = document.createElement("strong"); q.className = "ahv-q"; q.textContent = t.slice(0, i + 1);
+      var a = document.createElement("span"); a.className = "ahv-a"; a.textContent = t.slice(i + 1).trim();
+      p.textContent = ""; p.appendChild(q); p.appendChild(a);
+    });
+  }
+
+  /**
+   * The contact page's clock. The design carries status.clockPlaceholder
+   * "— IST" for a live clock the design tool never populated, so the pill
+   * shipped reading "— IST" with nothing in front of it. Fills it with the
+   * current time at the hospital; hides the pill if the browser cannot
+   * compute Asia/Kolkata rather than show a broken placeholder.
+   */
+  var clockStarted = false;
+  function istNow() {
+    return new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit", hour12: true })
+      .format(new Date()).replace(/am|pm/i, function (m) { return m.toUpperCase(); }) + " IST";
+  }
+  function startIstClock(root) {
+    if (!root || root.nodeType !== 1) return;
+    var spans = root.querySelectorAll("span.sc-interp");
+    var found = [];
+    for (var i = 0; i < spans.length; i++) {
+      var sp = spans[i];
+      if (sp.__ahvClock || (sp.textContent || "").trim() !== String.fromCharCode(8212) + " IST") continue;
+      sp.__ahvClock = true; found.push(sp);
+    }
+    if (!found.length) return;
+    var paint = function () {
+      var t; try { t = istNow(); } catch (_) { t = null; }
+      found.forEach(function (sp) {
+        if (t) sp.textContent = "Now " + t; else if (sp.parentElement) sp.parentElement.hidden = true;
+      });
+    };
+    paint();
+    if (!clockStarted) { clockStarted = true; setInterval(paint, 60000); }
+  }
+
   function restoreSlotScrolling(root) {
     if (!root || root.nodeType !== 1) return;
     if (root.matches("image-slot")) restoreSlotScroll(root);
@@ -694,6 +839,9 @@ export const BOOT_SCRIPT = `
         localizeLinks(node);
         restoreSlotScrolling(node);
         deferSlotImages(node);
+        aliasImages(node);
+        enhanceDirections(host);
+        startIstClock(node);
         hideHoneypots(node);
         repairEmailLinks(node);
         upgradeLanguageControls(node);
@@ -840,6 +988,9 @@ export const BOOT_SCRIPT = `
   function sweepSlots(tries) {
     restoreSlotScrolling(host);
     deferSlotImages(host);
+    aliasImages(host);
+    enhanceDirections(host);
+    startIstClock(host);
     hideHoneypots(host);
     if (tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
   }

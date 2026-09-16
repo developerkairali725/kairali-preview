@@ -1,0 +1,129 @@
+/* AHV — directions page layout (/how-to-reach/).
+ *
+ * WHY. The page is served by the generic article-reader template: one stock
+ * photo and a single 91-block prose column. The content underneath is
+ * well-structured (eyebrows, h2/h3 groups, a steps list, a "Good to know"
+ * grid, a distances table, addresses, a 10-question FAQ, a closing CTA), and
+ * the reader flattens all of it. This lays that structure out with the
+ * homepage's own tokens. No word of content changes.
+ *
+ * HOW IT TARGETS. The renderer emits no classes, only stable
+ * data-source-pointer paths, so every rule below keys on a pointer. Card and
+ * band containers carry no pointer at all, so boot.ts tags them
+ * (.ahv-band / .ahv-card / .ahv-grid / .ahv-facts) by climbing from the
+ * pointer to its own container — this file only styles those tags.
+ *
+ * TOKENS are the homepage's: paper #F7F4EA · ink #2A2118 · muted #75695A ·
+ * gold #C1882C (eyebrows) · gold button #EEB41E · brown #5A4420 · green
+ * #006038 · Marcellus display over Mulish body · 1.2px-tracked eyebrows.
+ * Served from public/design/, not public/ahv/, so a design re-import cannot
+ * erase it. */
+
+[data-ahv-route="/how-to-reach/"] { --paper:#F7F4EA; --raise:#FFFFFF; --ink:#2A2118; --muted:#75695A; --hair:#E4DCC8;
+       --gold:#C1882C; --gold-btn:#EEB41E; --brown:#5A4420; --green:#006038; --focus:#6B7726; }
+
+/* ---- rhythm & type ---------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] { font-size:17px !important; line-height:1.65 !important; color:var(--ink) !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main h2[data-source-pointer] { font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:clamp(26px,3vw,34px) !important;
+  line-height:1.15 !important; color:var(--ink) !important; margin:6px 0 18px !important; text-wrap:balance !important; }
+[data-ahv-route="/how-to-reach/"] main h3[data-source-pointer] { font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:21px !important; line-height:1.25 !important;
+  color:var(--ink) !important; margin:0 0 10px !important; }
+
+/* eyebrows: the first label of every section and every card */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer$="/c/1/c/1"] { font-family:Mulish,sans-serif !important; font-size:12px !important; font-weight:800 !important; letter-spacing:1.2px !important;
+  text-transform:uppercase !important; color:var(--gold) !important; margin:0 0 8px !important; }
+/* three pseudo-headings the source renders as paragraphs */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/1"],
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/9"],
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/13"] { font-family:Marcellus,Georgia,serif !important; font-size:21px !important; line-height:1.25 !important;
+  color:var(--ink) !important; margin:30px 0 10px !important; max-width:none !important; }
+
+/* ---- hero -------------------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { display:block !important; width:100%; aspect-ratio:16/10; object-fit:cover;
+  border-radius:10px !important; margin:6px 0 34px !important; }
+@media (min-width:900px) { [data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { aspect-ratio:21/9; } }
+
+/* ---- bands (tagged by boot.ts) ---------------------------------------- */
+[data-ahv-route="/how-to-reach/"] .ahv-band { padding-block:36px; border-top:1px solid var(--hair); }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] { border-top:0; padding-top:0; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="9"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] {
+  background:var(--raise) !important; margin-inline:0 !important; padding-inline:20px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
+@media (min-width:900px) {
+  [data-ahv-route="/how-to-reach/"] .ahv-band { padding-block:56px; }
+  [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="9"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] {
+    margin-inline:0; padding-inline:40px; border-radius:14px !important; border:1px solid var(--hair) !important; }
+}
+/* closing call to action: the one bold moment on the page */
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] { background:var(--brown) !important; color:var(--paper) !important; margin-inline:0 !important; padding:40px 20px !important;
+  border:0 !important; border-radius:12px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] h2[data-source-pointer], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] p[data-source-pointer] { color:var(--paper) !important; }
+@media (min-width:900px) { [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] { margin-inline:0; padding:56px 48px !important; border-radius:14px !important; } }
+
+/* ---- cards & grids (tagged by boot.ts) -------------------------------- */
+[data-ahv-route="/how-to-reach/"] .ahv-grid { display:grid !important; grid-template-columns:1fr; gap:16px; margin:8px 0 22px !important; }
+@media (min-width:640px) { [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="2"], [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="3"] { grid-template-columns:1fr 1fr; } }
+@media (min-width:960px) { [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="3"] { grid-template-columns:1fr 1fr 1fr; } }
+[data-ahv-route="/how-to-reach/"] .ahv-card { background:var(--raise) !important; border:1px solid var(--hair) !important; border-radius:10px !important; padding:22px 20px !important; min-width:0; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"] .ahv-card, [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] .ahv-card { background:var(--paper) !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer] { font-size:16px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer]:last-child { margin-bottom:0 !important; }
+
+/* "Good to know" label / value pairs */
+[data-ahv-route="/how-to-reach/"] .ahv-facts { display:grid !important; grid-template-columns:1fr; gap:14px 24px; margin:8px 0 22px !important; }
+@media (min-width:560px) { [data-ahv-route="/how-to-reach/"] .ahv-facts { grid-template-columns:1fr 1fr; } }
+[data-ahv-route="/how-to-reach/"] .ahv-fact { border-inline-start:3px solid var(--gold); padding-inline-start:14px; }
+[data-ahv-route="/how-to-reach/"] .ahv-fact > p[data-source-pointer]:first-child { font-weight:800 !important; font-size:15px !important; margin:0 0 2px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-fact > p[data-source-pointer]:last-child { color:var(--muted) !important; font-size:15.5px !important; margin:0 !important; }
+
+/* ---- the link pairs that ran together into one sentence ---------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href^="https://wa.me"]),
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href^="tel:"]),
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href*="google.com/maps"]) { display:flex !important; flex-wrap:wrap; gap:12px; max-width:none !important; margin:18px 0 8px !important; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="https://wa.me"], [data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="tel:"], [data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href*="google.com/maps"] {
+  display:inline-flex !important; align-items:center; justify-content:center; min-height:48px; padding:0 22px !important; border-radius:6px !important;
+  font-family:Mulish,sans-serif !important; font-size:13.5px !important; font-weight:800 !important; letter-spacing:1.1px !important; text-transform:uppercase !important;
+  text-decoration:none !important; border:2px solid var(--brown) !important; color:var(--ink) !important; background:transparent !important; flex:1 1 220px; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="https://wa.me"] { background:var(--gold-btn) !important; border-color:var(--gold-btn) !important; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] p[data-source-pointer] > a[href^="tel:"] { border-color:var(--paper) !important; color:var(--paper) !important; }
+
+/* ---- steps ------------------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] { list-style:none; counter-reset:ahv; padding:0 !important; margin:12px 0 22px !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] > li { counter-increment:ahv; position:relative; padding-inline-start:48px; margin-bottom:14px !important; font-size:16.5px !important; line-height:1.6 !important; }
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] > li::before { content:counter(ahv); position:absolute; inset-inline-start:0; top:0; width:34px; height:34px;
+  border-radius:50% !important; background:var(--gold-btn) !important; color:var(--ink) !important; font-weight:800 !important; font-size:14px !important; display:grid !important; place-items:center;
+  font-variant-numeric:tabular-nums; }
+[data-ahv-route="/how-to-reach/"] main ul[data-source-pointer] { padding-inline-start:22px; margin:10px 0 18px !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main ul[data-source-pointer] > li { margin-bottom:6px !important; line-height:1.55 !important; }
+
+/* ---- distances table --------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] { display:block !important; overflow-x:auto; width:100%; border:1px solid var(--hair) !important; border-radius:10px !important; margin:14px 0 10px !important;
+  font-variant-numeric:tabular-nums; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] th { background:var(--brown) !important; color:var(--paper) !important; font-family:Mulish,sans-serif !important; font-size:12px !important; font-weight:800 !important;
+  letter-spacing:1px !important; text-transform:uppercase !important; text-align:start; padding:12px 14px !important; white-space:nowrap; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] td { padding:12px 14px !important; border-top:1px solid var(--hair); font-size:15.5px !important; vertical-align:top; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] tr:nth-child(even) td { background:var(--paper) !important; }
+
+/* ---- FAQ (boot.ts splits the question from the answer) ----------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer^="/sections/3/c/17/c/1/c/"]:not([data-source-pointer$="/c/1"]):not([data-source-pointer$="/c/3"]) { max-width:none !important; padding:18px 0 !important; margin:0 !important;
+  border-top:1px solid var(--hair); }
+[data-ahv-route="/how-to-reach/"] .ahv-q { display:block !important; font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:19px !important; line-height:1.3 !important; margin-bottom:6px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-a { display:block !important; color:var(--muted) !important; font-size:16px !important; line-height:1.6 !important; max-width:68ch !important; }
+
+/* ---- contact-us & enquiry: gold primary, matching the homepage ---------- */
+[data-ahv-route="/contact-us/"] a[data-dc-tpl="252"], [data-ahv-route="/enquiry-form/"] a[data-dc-tpl="252"] {
+  background:#EEB41E !important; border-color:#EEB41E !important; color:#2A2118 !important; }
+
+/* ---- consent notice must not sit on top of the last footer links ------- */
+@media (max-width:699px) { body:has(#ahv-consent) { padding-bottom:156px; } }
+
+/* Adjacent source runs the reader glues together ("nearest~62 km",
+ * "corridorCoimbatore–Kochi"): the second unclassed run is a detail line and
+ * sits on its own line beneath its label. No text is touched. */
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer] > span:not([class]) + span:not([class]),
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="7"] p[data-source-pointer] > span:not([class]) + span:not([class]) {
+  display:block !important; color:var(--muted) !important; font-size:15.5px !important; margin-top:2px !important; }
+/* Dead band between the hero and the first section. */
+[data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { margin-bottom:22px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] { border-top:0 !important; padding-top:0 !important; margin-top:0 !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > *:first-child, [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > div:first-child > *:first-child { margin-top:0 !important; }

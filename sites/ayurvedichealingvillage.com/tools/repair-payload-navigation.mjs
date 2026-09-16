@@ -39,6 +39,13 @@ import { fileURLToPath } from "node:url";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIR = path.join(SITE, "public/ahv/views");
+// The family RENDERERS carry guards too, in shapes the view payloads do not use.
+// campaign-nine-render.js binds e => e.preventDefault() as onClick on the
+// privacy-policy link inside the consent checkbox and on a figure-caption source
+// link -- both real destinations -- and a third guard shape on its value bag.
+// Only onClick is touched: the same file's onSubmit guard on the enquiry FORM is
+// correct (submissions fail closed on staging) and is left exactly as written.
+const RENDERERS = path.join(SITE, "public/ahv/assets");
 const DRY = process.argv.includes("--dry");
 
 // The design writes the guard in two shapes: a local const, and an object
@@ -49,11 +56,16 @@ const NOTE = "/* preview-only nav guard neutralised for the published site */";
 const FORMS = [
   { from: "const guard = (e) => { e.preventDefault(); };", to: `const guard = () => {}; ${NOTE}` },
   { from: "guard: (e) => { e.preventDefault(); }", to: `guard: () => {} ${NOTE}` },
+  { from: "guard: (e) => { if (e && e.preventDefault) e.preventDefault(); }", to: `guard: () => {} ${NOTE}` },
+  { from: "onClick: e => e.preventDefault(),", to: `onClick: undefined, ${NOTE}` },
 ];
 
 let changed = 0, already = 0;
-for (const f of fs.readdirSync(DIR).filter((n) => n.endsWith(".json"))) {
-  const full = path.join(DIR, f);
+const targets = [
+  ...fs.readdirSync(DIR).filter((n) => n.endsWith(".json")).map((n) => path.join(DIR, n)),
+  ...fs.readdirSync(RENDERERS).filter((n) => n.endsWith("-render.js")).map((n) => path.join(RENDERERS, n)),
+];
+for (const full of targets) {
   const before = fs.readFileSync(full, "utf8");
   let after = before;
   for (const { from, to } of FORMS) if (after.includes(from)) after = after.split(from).join(to);
