@@ -1,0 +1,21 @@
+{
+  "why": "D-20260916-10 (owner, 2026-09-16): the Ayurveda training hub is /ayurveda-training-programme/ - the URL Google already rates (70,193 impressions, position 7.5) - carrying the hub layout that /ayurveda-training-programs/ had; /ayurveda-training-programs/ keeps serving the same page and canonicalises to the hub. Its legacy title ('Kairali Memberships | Affiliations | Accreditations') was wrong for the page and is replaced by the hub's approved title. Applied by tools/repair-route-manifest.mjs after every import.",
+  "routes": {
+    "/ayurveda-training-programme/": {
+      "desktopView": "ahv-page-ayurveda-training-programme-desktop",
+      "mobileView": "ahv-page-ayurveda-training-programme-mobile",
+      "dataset": null,
+      "metadata": {
+        "title": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
+        "description": "@from:/ayurveda-training-programs/",
+        "ogTitle": "@from:/ayurveda-training-programs/",
+        "ogDescription": "@from:/ayurveda-training-programs/",
+        "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
+      }
+    },
+    "/ayurveda-training-programs/": {
+      "metadata": { "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/" },
+      "sitemapExclude": true
+    }
+  }
+}

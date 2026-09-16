@@ -11,8 +11,11 @@ const IS_STAGING = process.env.AHV_STAGING !== "0";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   if (IS_STAGING) return [];
+  // A route that canonicalises to another approved route (route-overrides.json,
+  // sitemapExclude) still serves its page but is not a sitemap entry: listing
+  // a URL whose canonical points elsewhere is a Search Console warning.
   return buildSitemap(
     siteConfig,
-    routes.map((r) => ({ path: r.path })),
+    routes.filter((r) => !r.sitemapExclude).map((r) => ({ path: r.path })),
   ) as MetadataRoute.Sitemap;
 }

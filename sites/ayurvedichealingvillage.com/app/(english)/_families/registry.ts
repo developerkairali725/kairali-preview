@@ -37,6 +37,12 @@ export interface CandidateRoute {
   /** Where the head facts came from — the dataset record or the view helmet. */
   metadataSource: "dataset" | "view-helmet";
   metadata: RouteMetadata;
+  /**
+   * Set by english-candidate/route-overrides.json when the route canonicalises
+   * to another approved route: it still serves its page, but is left out of
+   * the sitemap.
+   */
+  sitemapExclude?: boolean;
 }
 
 /**

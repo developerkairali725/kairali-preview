@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-16T15:54:22.757Z",
+ "generated": "2026-09-16T15:58:58.354Z",
  "base": "http://127.0.0.1:4321",
  "count": 252,
  "failures": 0,
@@ -251,19 +251,21 @@
    "path": "/ayurveda-training-programme/",
    "ok": true,
    "file": "ayurveda-training-programme.html",
-   "bytes": 82044,
-   "textChars": 4815,
-   "imgs": 5,
-   "rebuilt": "from disk 2026-09-16"
+   "bytes": 97879,
+   "textChars": 6801,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
    "path": "/ayurveda-training-programs/",
    "ok": true,
    "file": "ayurveda-training-programs.html",
-   "bytes": 97067,
-   "textChars": 8976,
+   "bytes": 97879,
+   "textChars": 6801,
    "imgs": 8,
-   "rebuilt": "from disk 2026-09-16"
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
    "path": "/ayurveda-training/",

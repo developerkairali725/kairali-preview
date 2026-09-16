@@ -525,16 +525,16 @@
    "segments": [
     "ayurveda-training-programme"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
-   "dataset": "assets/training7-family-data.js",
+   "desktopView": "ahv-page-ayurveda-training-programme-desktop",
+   "mobileView": "ahv-page-ayurveda-training-programme-mobile",
+   "dataset": null,
    "metadataSource": "dataset",
    "metadata": {
-    "title": "Kairali Memberships | Affiliations | Accreditations | Ayurvedic Hospital",
-    "description": "Kairali’s The Ayurvedic Healing Village holds the highest accreditations and awards possible to achieve in Kerala, making it one of the leading Ayurvedic Destinations and hospitals in India.",
+    "title": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
+    "description": "Explore Ayurveda training courses and workshops at Kairali in Kerala. Compare course durations, training hours and levels, and enquire about current dates and fees.",
     "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/",
-    "ogTitle": null,
-    "ogDescription": null,
+    "ogTitle": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
+    "ogDescription": "Explore Ayurveda training courses and workshops at Kairali in Kerala. Compare course durations, training hours and levels, and enquire about current dates and fees.",
     "ogImage": null,
     "ogType": null
    }
@@ -551,12 +551,13 @@
    "metadata": {
     "title": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
     "description": "Explore Ayurveda training courses and workshops at Kairali in Kerala. Compare course durations, training hours and levels, and enquire about current dates and fees.",
-    "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programs/",
+    "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/",
     "ogTitle": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
     "ogDescription": "Explore Ayurveda training courses and workshops at Kairali in Kerala. Compare course durations, training hours and levels, and enquire about current dates and fees.",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/4-17-1.jpg",
     "ogType": "website"
-   }
+   },
+   "sitemapExclude": true
   },
   {
    "path": "/ayurveda-training/",

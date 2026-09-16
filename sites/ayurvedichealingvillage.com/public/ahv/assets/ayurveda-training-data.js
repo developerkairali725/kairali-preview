@@ -2,11 +2,11 @@
 window.AHV_AYURVEDA_TRAINING = {
   route: "/ayurveda-training-programs/",
   courses: [
-    { code: "OAP-HV", name: "One Day Ayurveda Workshop With Certificate, Kerala", days: 1, hours: 3, audience: "Various groups across all fields like corporates, group travellers, various associations and clubs.", level: "Beginner" },
-    { code: "TAP-HV", name: "Three Day Short Term Ayurveda Certificate Program", days: 3, hours: 9, audience: "Spa & wellness industry professionals, spa & salon managers & owners, IT professionals and diplomats.", level: "Beginner" },
-    { code: "WAP-HV", name: "Intensive Ayurveda Training Program", days: 5, hours: 15, audience: "Spa & wellness professionals, trainers, therapists, doctors, holistic healers, dieticians.", level: "Intermediate" },
-    { code: "AATP1-HV", name: "Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala", days: 10, hours: 40, audience: "Spa & wellness fraternity, therapists and wellness counsellors.", level: "Advanced" },
-    { code: "AALCT-HV", name: "Advanced Ayurveda Lifestyle Consultant & Therapist Training Program, Kerala", days: 20, hours: 80, audience: "Those who are from the health care; wellness sector, lifestyle consultant and therapist.", level: "Advanced" }
+    { code: "OAP-HV", href: "/one-day-ayurveda-workshop-program-kerala/", name: "One Day Ayurveda Workshop With Certificate, Kerala", days: 1, hours: 3, audience: "Various groups across all fields like corporates, group travellers, various associations and clubs.", level: "Beginner" },
+    { code: "TAP-HV", href: "/three-day-short-term-ayurveda-certificate-program-tap-hv/", name: "Three Day Short Term Ayurveda Certificate Program", days: 3, hours: 9, audience: "Spa & wellness industry professionals, spa & salon managers & owners, IT professionals and diplomats.", level: "Beginner" },
+    { code: "WAP-HV", href: "/intensive-ayurveda-training-program-learn-practice-ayurveda/", name: "Intensive Ayurveda Training Program", days: 5, hours: 15, audience: "Spa & wellness professionals, trainers, therapists, doctors, holistic healers, dieticians.", level: "Intermediate" },
+    { code: "AATP1-HV", href: "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/", name: "Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala", days: 10, hours: 40, audience: "Spa & wellness fraternity, therapists and wellness counsellors.", level: "Advanced" },
+    { code: "AALCT-HV", href: "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", name: "Advanced Ayurveda Lifestyle Consultant & Therapist Training Program, Kerala", days: 20, hours: 80, audience: "Those who are from the health care; wellness sector, lifestyle consultant and therapist.", level: "Advanced" }
   ],
   process: [
     "The Ayurveda Training Program at Kairali – The Ayurvedic Healing Village is a comprehensive and immersive experience that introduces participants to the principles and practices of ancient Ayurveda. The process is meticulously designed to balance theoretical knowledge with practical application, ensuring holistic understanding and skill development.",
