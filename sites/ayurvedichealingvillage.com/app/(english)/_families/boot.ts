@@ -49,6 +49,8 @@
  * client-side state changes still run and nothing fakes a success.
  */
 
+import LINK_ALIASES from "../../../english-candidate/link-aliases.json";
+
 export interface BootConfig {
   path: string;
   desktopView: string | null;
@@ -109,16 +111,13 @@ export const BOOT_SCRIPT = `
     if (!sourceHost && url.origin !== window.location.origin) return;
     // Source media links are downloads, not website page navigation.
     if (/[.](pdf|jpg|jpeg|png|webp|gif|svg|mp4|zip)$/i.test(url.pathname)) return;
-    // Source links use older spellings; resolve to the approved pages.
-    var aliases = {
-      "/ayurveda-training-program": "/ayurveda-training-programs/",
-      "/sight-seeing": "/sightseeing/",
-      "/programs/yoga-meditation-programs": "/yoga-meditation-programs/",
-      "/our-villa": "/our-villas/",
-      "/programs/wellness-programs": "/wellness-programs/",
-      "/programs/treatment-programs": "/treatment-programs/",
-      "/programs/training-programs": "/training-programs/"
-    };
+    // Source links use older spellings; resolve to the approved pages. The map
+    // is english-candidate/link-aliases.json so that ONE list serves both this
+    // runtime pass and tools/apply-link-aliases.mjs, which rewrites the same
+    // hrefs inside the prerendered snapshots. Before that, a legacy spelling
+    // was corrected for a visitor but still shipped broken in the server HTML,
+    // which is what a crawler and a no-JS first paint actually read.
+    var aliases = ${JSON.stringify(LINK_ALIASES)};
     var path = aliases[url.pathname.replace(/[/]$/, "")] || url.pathname;
     var next = path + url.search + url.hash;
     if ((sourceHost || path !== url.pathname) && raw !== next) anchor.setAttribute("href", next);

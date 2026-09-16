@@ -212,6 +212,16 @@ const run = async () => {
     JSON.stringify({ generated: new Date().toISOString(), base: BASE, count: index.length, failures, routes: index }, null, 1),
   );
   console.log(`\nprerendered ${index.length - failures}/${index.length} routes -> ${OUT} (${failures} failed)`);
+
+  // A fresh snapshot carries the design's own legacy link spellings and the
+  // legacy site's Cloudflare email links, both of which boot.ts corrects at
+  // runtime but the server response would otherwise ship broken. Chained here
+  // so a re-render can never silently drop the repair.
+  const { execFileSync } = await import("node:child_process");
+  execFileSync(process.execPath, [path.join(HERE, "repair-snapshot-links.mjs"), "--dir", outDir], {
+    stdio: "inherit",
+  });
+
   if (failures) process.exitCode = 1;
 };
 
