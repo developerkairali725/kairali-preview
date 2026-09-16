@@ -230,11 +230,24 @@ const run = async () => {
   }
 
   await browser.close();
+  // A partial run (--only / --limit) MERGES into the existing index instead of
+  // replacing it: a single-route re-render once overwrote the 252-route index
+  // with count 1 while every snapshot file on disk was intact, which made the
+  // index lie about what the build ships. Full runs still replace it outright.
+  const indexPath = path.join(outDir, "index.json");
+  let merged = index;
+  if ((ONLY || LIMIT) && fs.existsSync(indexPath)) {
+    const prev = JSON.parse(fs.readFileSync(indexPath, "utf8")).routes || [];
+    const fresh = new Map(index.map((r) => [r.path, r]));
+    merged = prev.map((r) => fresh.get(r.path) || r);
+    for (const r of index) if (!prev.some((p) => p.path === r.path)) merged.push(r);
+  }
+  const mergedFailures = merged.filter((r) => !r.ok).length;
   fs.writeFileSync(
-    path.join(outDir, "index.json"),
-    JSON.stringify({ generated: new Date().toISOString(), base: BASE, count: index.length, failures, routes: index }, null, 1),
+    indexPath,
+    JSON.stringify({ generated: new Date().toISOString(), base: BASE, count: merged.length, failures: mergedFailures, routes: merged }, null, 1),
   );
-  console.log(`\nprerendered ${index.length - failures}/${index.length} routes -> ${OUT} (${failures} failed)`);
+  console.log(`\nprerendered ${index.length - failures}/${index.length} routes -> ${OUT} (${failures} failed; index now ${merged.length})`);
 
   // A fresh snapshot carries the design's own legacy link spellings and the
   // legacy site's Cloudflare email links, both of which boot.ts corrects at
