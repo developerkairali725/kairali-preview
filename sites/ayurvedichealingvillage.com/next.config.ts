@@ -31,10 +31,32 @@ import type { NextConfig } from "next";
 const IS_STAGING = process.env.AHV_STAGING !== "0";
 
 const nextConfig: NextConfig = {
+  // The approved content, its canonicals, the sitemap and the legacy WordPress
+  // URLs that hold the rankings ALL use a trailing slash. Next's default is the
+  // opposite, so before this line 238 of 252 routes answered 308 and redirected,
+  // 228 of 230 canonicals pointed at a URL that redirected away from the
+  // indexable one, and 23,403 of 23,669 internal links (98.9%) were a redirect
+  // hop. One line aligns served URL, canonical, sitemap, internal link and
+  // legacy URL -- and matters most at the DNS flip, when every ranked URL would
+  // otherwise land on a redirect.
+  trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
   async headers() {
-    if (!IS_STAGING) return [];
+    // The design package is content-addressed and rewritten wholesale by the
+    // importer, never edited in place, so it is safe to cache hard. Before this
+    // rule every one of its assets was served Cache-Control: max-age=0 --
+    // measured, 105 of 110 subresources revalidated on every page view, and on
+    // the homepage 32 images were downloaded TWICE in a single load, because the
+    // prerendered snapshot fetches them and then the runtime re-mounts them and
+    // the browser cannot reuse what it just fetched. Fonts, the runtime bundle
+    // and the view payloads were all in that set.
+    const assets = {
+      source: "/ahv/:path*",
+      headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+    };
+    if (!IS_STAGING) return [assets];
     return [
+      assets,
       {
         source: "/:path*",
         headers: [

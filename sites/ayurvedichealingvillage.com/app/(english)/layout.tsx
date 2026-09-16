@@ -26,13 +26,13 @@ import analyticsConfig from "../../analytics.config.json";
  *   · The chat loader remains absent; it was not part of the ruling.
  *
  * The verification metas below are ownership proof, not tracking: they set no
- * cookie and are not consent-gated. They are emitted under the same build flag
- * because they only mean anything on the production domain — and if they are
- * missing at the DNS flip, Search Console and Bing verification break.
+ * cookie, identify no visitor and are not consent-gated. They are emitted
+ * ALWAYS, and deliberately not behind the analytics flag — that coupling bundled
+ * two unrelated decisions, so a go-live with tracking still off would have
+ * broken Search Console, Bing Webmaster and Meta verification on day one.
+ * Corrected 2026-09-16 (D-20260916-09).
  */
 const verification = analyticsConfig.verification;
-const analyticsOn =
-  process.env[analyticsConfig.activation.env] === analyticsConfig.activation.enabledWhen;
 export const metadata: Metadata = {
   icons: faviconIcons(),
   // No robots meta here BY DESIGN: the approved design writes its own, and a
@@ -45,13 +45,17 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
   return (
     <html lang="en-US">
       <head>
-        {analyticsOn ? (
-          <>
-            <meta name="google-site-verification" content={verification.googleSiteVerification} />
-            <meta name="msvalidate.01" content={verification.msvalidate01} />
-            <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
-          </>
-        ) : null}
+        {/* ALWAYS emitted, deliberately NOT behind the analytics flag.
+            Ownership proof is not tracking: these set no cookie, identify no
+            visitor and are not a consent matter. They were previously gated on
+            AHV_ANALYTICS, which bundled two unrelated decisions together -- so a
+            go-live with tracking still off (a live possibility, since activation
+            is a separate Vikash decision) would have broken Search Console, Bing
+            Webmaster and Meta domain verification on day one, during the exact
+            week the migration data matters most. */}
+        <meta name="google-site-verification" content={verification.googleSiteVerification} />
+        <meta name="msvalidate.01" content={verification.msvalidate01} />
+        <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
       </head>
       <body>
         {/* Two rules, both load-bearing.

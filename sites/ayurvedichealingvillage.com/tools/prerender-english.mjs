@@ -106,11 +106,34 @@ const EXTRACT = () => {
     const src = live[i] && live[i].shadowRoot && live[i].shadowRoot.querySelector(".frame img");
     const el = copies[i];
     const img = document.createElement("img");
-    const resolved = src ? src.currentSrc || src.getAttribute("src") : el.getAttribute("src");
+    // currentSrc is FULLY RESOLVED, so it carries the render origin -- which on a
+    // build machine is http://127.0.0.1:4321. Shipping that bakes a localhost
+    // address into production HTML: broken for every visitor, and blocked as
+    // mixed content on https. 92 such URLs reached the deployed homepage before
+    // this was caught, and every test missed it because the tests ran on
+    // localhost, where they resolve. Strip the origin back to a site-root path.
+    const raw = src ? src.currentSrc || src.getAttribute("src") : el.getAttribute("src");
+    let resolved = raw;
+    if (resolved) {
+      try {
+        const u = new URL(resolved, "http://localhost/");
+        if (u.origin === "http://localhost" || /^https?:$/.test(u.protocol)) {
+          if (u.hostname === "localhost" || u.hostname === "127.0.0.1") resolved = u.pathname + u.search;
+        }
+      } catch { /* leave a relative value alone */ }
+    }
     if (!resolved) continue;
     img.setAttribute("src", resolved);
     img.setAttribute("alt", el.getAttribute("placeholder") || "");
-    img.setAttribute("loading", "lazy");
+    // The LCP candidate sits among the first images (image 1 is the header logo,
+    // the hero is image 2), so the first three are never lazy-loaded. Lazy on the
+    // LCP element defers its request until after layout and inflates LCP, which is
+    // the opposite of what the prerender exists to do.
+    if (flattened < 3) {
+      img.setAttribute("fetchpriority", "high");
+    } else {
+      img.setAttribute("loading", "lazy");
+    }
     img.setAttribute("decoding", "async");
     img.setAttribute("style", "width:100%;height:100%;object-fit:cover");
     el.replaceWith(img);

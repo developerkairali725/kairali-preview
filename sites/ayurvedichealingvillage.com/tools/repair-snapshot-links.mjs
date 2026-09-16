@@ -93,6 +93,24 @@ const INSECURE = new RegExp(
   "g",
 );
 
+/**
+ * A render-origin that leaked into the snapshot. The extractor reads an image's
+ * currentSrc, which is fully resolved, so on a build machine it carries
+ * http://127.0.0.1:4321. Shipped, that is a localhost address in production HTML:
+ * broken for every visitor and blocked as mixed content on https. Fixed at source
+ * in prerender-english.mjs; this repairs snapshots already on disk.
+ */
+const RENDER_ORIGIN = /(href|src)="https?:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?(\/[^"]*)?"/g;
+
+/**
+ * The LCP candidate is among the first images, but it is NOT the first: that slot
+ * is the header logo. On the homepage the logo is image 1 and the hero is image 2.
+ * So the first three images are treated as above-the-fold on a phone and are never
+ * lazy-loaded -- lazy on the LCP element defers its request until after layout and
+ * directly inflates LCP, which is the opposite of the point.
+ */
+const EAGER_COUNT = 3;
+
 /** Locked fact (CLAUDE.md LOCKED FACTS): the public contact address. */
 const PUBLIC_EMAIL = "info@kairali.com";
 const CF_EMAIL = /href="\/cdn-cgi\/l\/email-protection[^"]*"/g;
@@ -104,6 +122,9 @@ let emailLinks = 0;
 let absoluteLinks = 0;
 let malformedLinks = 0;
 let insecureLinks = 0;
+let originLinks = 0;
+let unlazied = 0;
+let lazied = 0;
 const perAlias = {};
 
 for (const file of files) {
@@ -111,7 +132,31 @@ for (const file of files) {
   const before = fs.readFileSync(full, "utf8");
   // Order matters: repair the malformed scheme first, then collapse absolute self-links
   // to paths, then map legacy spellings -- so an absolute URL to a renamed page gets both.
-  let after = before.replace(MALFORMED_SCHEME, (_w, uri) => {
+  let after = before.replace(RENDER_ORIGIN, (_w, attr, path) => {
+    originLinks++;
+    return `${attr}="${path || "/"}"`;
+  });
+  // Above the fold loads immediately; everything else waits.
+  //
+  // This cuts BOTH ways and the second half is the one that matters. The design
+  // leaves many images with no loading attribute at all, which means eager: on
+  // the homepage 26 of 70 images were fetched up front, 16.7 MB of them, and
+  // under a throttled mobile connection that starves the hero and LCP sat at
+  // 36.6s with a 1.4s first paint. So the first three are made eager and
+  // prioritised, and every image after them is made explicitly lazy.
+  let seen = 0;
+  after = after.replace(/<img\b[^>]*>/g, (tag) => {
+    seen++;
+    if (seen <= EAGER_COUNT) {
+      if (!/loading="lazy"/.test(tag)) return tag;
+      unlazied++;
+      return tag.replace(' loading="lazy"', '').replace("<img", '<img fetchpriority="high"');
+    }
+    if (/loading=/.test(tag)) return tag;
+    lazied++;
+    return tag.replace("<img", '<img loading="lazy"');
+  });
+  after = after.replace(MALFORMED_SCHEME, (_w, uri) => {
     malformedLinks++;
     return `href="${uri}"`;
   });
@@ -145,6 +190,9 @@ console.log(`snapshots scanned   : ${files.length}`);
 console.log(`snapshots changed   : ${changedFiles}`);
 console.log(`absolute -> relative : ${absoluteLinks}`);
 console.log(`malformed URLs fixed: ${malformedLinks}`);
+console.log(`render origin fixed : ${originLinks}`);
+console.log(`LCP image un-lazied : ${unlazied}`);
+console.log(`below-fold lazied   : ${lazied}`);
 console.log(`http -> https       : ${insecureLinks}`);
 console.log(`legacy hrefs fixed  : ${changedLinks}`);
 console.log(`cf email links fixed: ${emailLinks} -> mailto:${PUBLIC_EMAIL}`);

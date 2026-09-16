@@ -70,11 +70,28 @@ export interface BootConfig {
   measurement?: { ga4?: string; clarity?: string; metaPixel?: string };
 }
 
+/**
+ * The go-live switch, read here the same way next.config.ts, robots.ts and
+ * sitemap.ts read it.
+ *
+ * This existed nowhere in this file until 2026-09-16, and that was a go-live
+ * trap: enforceStagingHead() wrote "noindex, nofollow" into every page
+ * UNCONDITIONALLY and re-armed it through a MutationObserver, while
+ * BUILD-STATUS.md promised "all flips are one env var". Flipping AHV_STAGING=0
+ * would therefore have served an allow-all robots.txt and published a 252-URL
+ * sitemap while every rendered page still told Google not to index it. Google
+ * renders JavaScript, so it would have read that -- full deindexation of a
+ * ranked site, with nofollow discarding internal link equity as well.
+ * Found by an independent audit, verified, and gated here.
+ */
+const IS_STAGING = process.env.AHV_STAGING !== "0";
+
 export const ROUTE_CONFIG_ID = "ahv-route-config";
 export const DESIGN_ROOT_ID = "ahv-design-root";
 
 /** Emitted inline, ASCII-safe, and small enough to stay in the document. */
 export const BOOT_SCRIPT = `
+  var STAGING = ${JSON.stringify(IS_STAGING)};
 (function () {
   // React may re-insert this inline script during hydration; boot exactly once.
   if (window.__ahvBooted) return;
@@ -170,6 +187,44 @@ export const BOOT_SCRIPT = `
     if (!root || root.nodeType !== 1) return;
     if (root.matches("image-slot")) restoreSlotScroll(root);
     root.querySelectorAll("image-slot").forEach(restoreSlotScroll);
+  }
+
+  /**
+   * Defer the off-screen slot photographs.
+   *
+   * The homepage mounts 46 <image-slot> elements and each holds its <img> in a
+   * shadow root with no loading attribute, so the browser fetched all of them at
+   * once: measured, 91 image requests and 16.7 MB on a single mobile load, which
+   * starves the hero and left LCP at 35.8s against a 1.4s first paint. The
+   * snapshot's own lazy attributes cannot help here, because the runtime replaces
+   * that markup when it mounts.
+   *
+   * The first few are left eager -- they are the LCP candidates -- and every slot
+   * after them is marked lazy, so the gallery loads as the patient scrolls to it
+   * rather than competing with the hero. Applied from our side, on the shadow
+   * root, so no approved byte is edited and a re-import cannot undo it.
+   */
+  var slotsSeen = 0;
+  function deferSlotImage(slot) {
+    if (!slot || slot.__ahvLazySet) return;
+    var shadow = slot.shadowRoot;
+    if (!shadow) return;
+    var img = shadow.querySelector(".frame img");
+    if (!img) return;
+    slot.__ahvLazySet = true;
+    slotsSeen++;
+    if (slotsSeen <= 3) {
+      img.setAttribute("fetchpriority", "high");
+      img.removeAttribute("loading");
+      return;
+    }
+    if (!img.getAttribute("loading")) img.setAttribute("loading", "lazy");
+    if (!img.getAttribute("decoding")) img.setAttribute("decoding", "async");
+  }
+  function deferSlotImages(root) {
+    if (!root || root.nodeType !== 1) return;
+    if (root.matches("image-slot")) deferSlotImage(root);
+    root.querySelectorAll("image-slot").forEach(deferSlotImage);
   }
 
   // Spam honeypots must not be visible to a patient filling the form in.
@@ -285,6 +340,17 @@ export const BOOT_SCRIPT = `
   // approved source that the importer rewrites wholesale. The visual language
   // (1px #C9BFA8 border, 4px radius, 44px min target) is copied from the
   // existing EN badge so nothing is re-themed.
+  // One rule, installed once: the pending locale pills are display:none below the
+  // design's own 700px breakpoint, which is the same width at which the design
+  // swaps to its Mobile view.
+  (function () {
+    if (document.getElementById("ahv-locale-narrow")) return;
+    var st = document.createElement("style");
+    st.id = "ahv-locale-narrow";
+    st.textContent = "@media (max-width:699px){[data-ahv-locale-pending]{display:none !important}}";
+    document.head.appendChild(st);
+  })();
+
   var LOCALES = [
     { code: "EN", name: "English", live: true },
     { code: "DE", name: "Deutsch", live: false },
@@ -301,6 +367,14 @@ export const BOOT_SCRIPT = `
       el.setAttribute("aria-current", "true");
       el.style.cssText = base + "color:#2A2118;";
     } else {
+      // HIDDEN ON PHONES. Three pills plus BOOK NOW overran the header row by up
+      // to 39px, and 94% of routes scrolled sideways at 360px because of it --
+      // a mobile-usability fault Google flags, on a site that is 80% mobile.
+      // These two are non-functional "coming soon" placeholders, so on a narrow
+      // screen they were costing real layout to advertise pages that do not
+      // exist yet. They return by themselves once de/fr ship, because the pill
+      // becomes live and takes the branch above.
+      el.setAttribute("data-ahv-locale-pending", "");
       // Not a link and not focusable: there is no page to go to yet. Announced
       // as unavailable rather than silently inert.
       el.setAttribute("aria-disabled", "true");
@@ -619,6 +693,7 @@ export const BOOT_SCRIPT = `
       else change.addedNodes.forEach(function (node) {
         localizeLinks(node);
         restoreSlotScrolling(node);
+        deferSlotImages(node);
         hideHoneypots(node);
         repairEmailLinks(node);
         upgradeLanguageControls(node);
@@ -706,7 +781,12 @@ export const BOOT_SCRIPT = `
       }
     });
 
+    // STAGING ONLY. On a production build this must not run at all: forcing
+    // noindex here would override the approved design's own robots value and
+    // silently deindex the live site. The deduplication above still runs in
+    // both modes, because two robots metas are wrong either way.
     var keep = governedWins('meta[name="robots"]');
+    if (!STAGING) return;
     if (!keep) {
       keep = document.createElement("meta");
       keep.setAttribute("name", "robots");
@@ -759,6 +839,7 @@ export const BOOT_SCRIPT = `
   // and <sc-for>-rendered list slots are covered too.
   function sweepSlots(tries) {
     restoreSlotScrolling(host);
+    deferSlotImages(host);
     hideHoneypots(host);
     if (tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
   }
