@@ -558,3 +558,57 @@ strength of India being 56% of the traffic.
 
 This is a recommendation from the evidence available, not a ruling — the locale set is
 the owner's call (D-20260916-02).
+
+---
+
+# FINAL SCOPE AS RULED — 2026-09-16
+
+| | Locales | Count | Pages | Gate |
+|---|---|---:|---:|---|
+| **Wave 1** (D-20260916-05) | `de` `fr` `nl` `it` `es` `ru` `zh-Hans` `ja` `ko` | 9 | 2,268 | EN frozen · EN clinical lock closed |
+| **Wave 2** (D-20260916-03) | `he` `ar` | 2 | 504 | Wave 1 shipped · design spacing layer rebuilt on logical properties |
+
+Dutch and Italian were **added** to the owner's original list on the Search Console
+evidence — both outrank Spanish, Chinese, Japanese, Hebrew and Korean on real traffic.
+Nothing was removed: Russian, Chinese, Japanese and Korean stay in, on the owner's
+reasoning that the GSC floor under-counts markets the English-only site cannot reach today.
+
+Quality model: **batch only, no native review** (D-20260916-04).
+
+## Build order once the trigger fires
+
+1. Freeze EN and snapshot it (a moving source invalidates every translation in flight).
+2. Build the string extractor — the 136 sha-pinned view payloads and 69 family data
+   scripts, into one context-rich manifest (§G stages 1–5). **This does not exist yet and
+   is the real engineering.**
+3. Author the do-not-translate glossary (§D.4) and the five missing banned-register lists
+   (`ru` `es` `zh-Hans` `ja` `ko` have none — `de`/`fr` exist; `nl`/`it` also needed).
+4. Decide the sha-pin and per-locale slug model (§3.2, §3.3).
+5. Batch-translate as JSONL, one bounded request per unit per locale, strict schema (§G.7).
+6. Validate: placeholders, DNT, ICU, key parity, length, source residue (§G.8).
+7. Wire routing on the `sites/abhilashkr` pattern; hreflang **in the XML sitemap**, not
+   head tags, at this URL count (§C).
+8. Per-locale typography: CJK font stacks, `keep-all` for Korean, kinsoku for Japanese,
+   contraction-aware layout checks (§H).
+9. Prerender + `verify-ssr.mjs` + the 390/1280 browser sweep, **per locale**
+   (2,268 snapshots, budget ~4h).
+10. Publish only the locales that pass. Stage a small URL cohort first and watch Search
+    Console before the full 2,268 go live (§I) — still the cheapest insurance available,
+    and it does not conflict with the batch-only ruling.
+
+## Still open, owner's to close
+
+1. **HARD GATE 7 — unresolved.** Dr. Deepu John's clinical sign-off cannot be given in
+   nine languages he does not read, and the batch-only ruling does not waive a hard gate.
+   Recommended resolution stands: scope the gate to the clinical subset only. Raised
+   2026-09-16, not yet answered.
+2. **Villa Raag's batch scripts** — not in this monorepo. If they still exist they are the
+   fastest possible start and would save building §G from scratch. Where do they live?
+3. **Korean sanity check** — 13,939 impressions against 16 clicks (0.1% CTR). Worth one
+   look at what those impressions actually are before committing a locale to them.
+4. **Hindi/Marathi** — absent from both waves, though India is 56% of the site and
+   Devanagari queries already reach it. The 2026-07-15 ruling put DE ahead of Hindi; worth
+   re-reading against the traffic mix.
+5. **`CLAUDE.md` LOCKED FACTS and `SITE_DESIGN_LOCALE_REGISTER.md`** still say KTAHV is
+   EN/DE/FR-locked. D-20260916-02 supersedes that; the two files need amending by the
+   owner-approved route so they do not silently contradict this plan.
