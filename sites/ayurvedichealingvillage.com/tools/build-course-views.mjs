@@ -66,18 +66,21 @@ for (const c of SPEC.courses) {
     const base = JSON.parse(fs.readFileSync(path.join(VIEWS, `ahv-page-ayurveda-training-programs-${v}.json`), "utf8"));
     const view = JSON.parse(JSON.stringify(base));
     let T = view.template;
+    // Course-specific text first, then the template-wide rename, then the head
+    // and h1 - so a course whose own name contains "Ayurveda Training Program"
+    // (the Five-Day Intensive, Level One) is never renamed twice.
+    T = once(T, />Introducing our Ayurveda Training Program[^<]*<\/p>/, `>${esc(c.intro)}</p>`, `${c.code} ${v} intro`);
+    T = once(T, /<img src="\/ahv\/assets\/img\/AHV-Ayurveda-Training-About\.png" alt="[^"]*"/, `<img src="${c.image}" alt="${esc(c.alt)}"`, `${c.code} ${v} image`);
+    T = once(T, "Courses &amp; workshops at Kairali", esc(c.eyebrow), `${c.code} ${v} eyebrow`);
+    // Breadcrumb current label and the section headings name the course.
+    T = T.split("Ayurveda Training Program").join(esc(c.short));
+    T = once(T, new RegExp(`(<h1[^>]*>)${rx(esc(c.short))}(<\\/h1>)`), (m, a, z) => `${a}${esc(c.name)}${z}`, `${c.code} ${v} h1`);
     T = once(T, /<title>[^<]*<\/title>/, `<title>${esc(md.title)}</title>`, `${c.code} ${v} title`);
     T = once(T, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(md.description)}">`, `${c.code} ${v} description`);
     T = once(T, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${esc(md.canonical)}">`, `${c.code} ${v} canonical`);
     T = once(T, /<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${esc(md.ogTitle || md.title)}">`, `${c.code} ${v} og:title`);
     T = once(T, /<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(md.ogDescription || md.description)}">`, `${c.code} ${v} og:description`);
     T = once(T, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${esc(md.canonical)}">`, `${c.code} ${v} og:url`);
-    T = once(T, "Courses &amp; workshops at Kairali", esc(c.eyebrow), `${c.code} ${v} eyebrow`);
-    T = once(T, /(<h1[^>]*>)Ayurveda Training Program(<\/h1>)/, (m, a, z) => `${a}${esc(c.name)}${z}`, `${c.code} ${v} h1`);
-    T = once(T, />Introducing our Ayurveda Training Program[^<]*<\/p>/, `>${esc(c.intro)}</p>`, `${c.code} ${v} intro`);
-    T = once(T, /<img src="\/ahv\/assets\/img\/AHV-Ayurveda-Training-About\.png" alt="[^"]*"/, `<img src="${c.image}" alt="${esc(c.alt)}"`, `${c.code} ${v} image`);
-    // Breadcrumb current label and the remaining section headings name the course.
-    T = T.split("Ayurveda Training Program").join(esc(c.short));
     view.template = T;
     view.scripts = (view.scripts || []).map((s) => (s.endsWith("/ayurveda-training-data.js") ? `/ahv/assets/${dataFile}` : s));
     if (!view.scripts.includes(`/ahv/assets/${dataFile}`)) throw new Error(`${c.code} ${v}: hub script tag not found`);
