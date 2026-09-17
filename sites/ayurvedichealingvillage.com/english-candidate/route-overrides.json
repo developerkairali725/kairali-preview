@@ -1,5 +1,5 @@
 {
-  "why": "D-20260916-10 (owner, 2026-09-16): the Ayurveda training hub is /ayurveda-training-programme/ - the URL Google already rates (70,193 impressions, position 7.5) - carrying the hub layout that /ayurveda-training-programs/ had; /ayurveda-training-programs/ keeps serving the same page and canonicalises to the hub. Its legacy title ('Kairali Memberships | Affiliations | Accreditations') was wrong for the page and is replaced by the hub's approved title. Applied by tools/repair-route-manifest.mjs after every import.",
+  "why": "D-20260916-10 (owner, 2026-09-16): the Ayurveda training hub is /ayurveda-training-programme/ - the URL Google already rates (70,193 impressions, position 7.5) - carrying the hub layout that /ayurveda-training-programs/ had; /ayurveda-training-programs/ keeps serving the same page and canonicalises to the hub. Its legacy title ('Kairali Memberships | Affiliations | Accreditations') was wrong for the page and is replaced by the hub's approved title. Applied by tools/repair-route-manifest.mjs after every import. 2026-09-17: the five training course routes mount their generated course views (tools/build-course-views.mjs) instead of the generic article reader; their approved head metadata is unchanged.",
   "routes": {
     "/ayurveda-training-programme/": {
       "desktopView": "ahv-page-ayurveda-training-programme-desktop",
@@ -14,8 +14,35 @@
       }
     },
     "/ayurveda-training-programs/": {
-      "metadata": { "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/" },
+      "metadata": {
+        "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
+      },
       "sitemapExclude": true
+    },
+    "/one-day-ayurveda-workshop-program-kerala/": {
+      "desktopView": "ahv-page-course-one-day-workshop-desktop",
+      "mobileView": "ahv-page-course-one-day-workshop-mobile",
+      "dataset": null
+    },
+    "/three-day-short-term-ayurveda-certificate-program-tap-hv/": {
+      "desktopView": "ahv-page-course-three-day-certificate-desktop",
+      "mobileView": "ahv-page-course-three-day-certificate-mobile",
+      "dataset": null
+    },
+    "/intensive-ayurveda-training-program-learn-practice-ayurveda/": {
+      "desktopView": "ahv-page-course-five-day-intensive-desktop",
+      "mobileView": "ahv-page-course-five-day-intensive-mobile",
+      "dataset": null
+    },
+    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": {
+      "desktopView": "ahv-page-course-level-one-advanced-desktop",
+      "mobileView": "ahv-page-course-level-one-advanced-mobile",
+      "dataset": null
+    },
+    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": {
+      "desktopView": "ahv-page-course-consultant-therapist-desktop",
+      "mobileView": "ahv-page-course-consultant-therapist-mobile",
+      "dataset": null
     }
   }
 }

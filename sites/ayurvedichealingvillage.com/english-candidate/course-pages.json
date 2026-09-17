@@ -1,0 +1,202 @@
+{
+  "why": "D-20260916-10 / owner 2026-09-17 ('do as per recommendation'): the five Ayurveda training courses get their own pages on the training family's detail template (the /ayurveda-training-programs/ hub view), each driven by its own dataset in the same shape as ayurveda-training-data.js. Content is rewritten from the courses' own legacy pages on ayurvedichealingvillage.com and from the training tariff (docs/rates/RATES_RECKONER.md, KAHR/AY-TRG/2026-2027/04/GBL); kairali.guru was read for framing only. No fee beyond the tariff's per-night villa rates is stated anywhere. Register: KTAHV clinical lock (no spa/resort/holiday/luxury/cure/journey/guest).",
+  "stay": "Residential participants stay in the hospital's villas, charged per night under the 2026–27 training tariff (from 1 October 2026): Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382). Classic, Royal and Suite categories are quoted on enquiry.",
+  "courses": [
+    {
+      "route": "/one-day-ayurveda-workshop-program-kerala/",
+      "id": "ahv-page-course-one-day-workshop",
+      "code": "OAP-HV",
+      "name": "One-Day Ayurveda Workshop",
+      "short": "the One-Day Workshop",
+      "eyebrow": "Ayurveda training course · OAP-HV · 1 day",
+      "image": "/ahv/assets/img/AHV-Ananda-Workshop.jpg",
+      "alt": "One-Day Ayurveda Workshop — training at Kairali – The Ayurvedic Healing Village",
+      "intro": "A three-hour introduction to Ayurveda at the hospital: two hours of guided theory with an Ayurvedic doctor, then a 45-minute Abhyangam session so the principles are felt as well as heard. No prior knowledge is needed, and a participation certificate is awarded at the close.",
+      "processLead": "The workshop runs as a single structured session — theory first, then a supervised therapy experience — and is scheduled around a group's visit.",
+      "steps": [
+        "Understanding Ayurveda: what it is, where it began, its branches, the classical texts, and why it still matters in the 21st century.",
+        "Ayurvedic medicines: an introduction to classical and proprietary preparations, with a demonstration of Kairali's own products.",
+        "Therapies on screen: a live video demonstration of the principal Ayurvedic therapies and how each is carried out.",
+        "Abhyangam experience: a 45-minute full-body oil massage given by a trained therapist, so the theory is understood in practice.",
+        "Certificate: a participation certificate at the end of the session."
+      ],
+      "features": [
+        "Format: two hours of theory and one hour of practical therapy, in one day.",
+        "Who it suits: corporate groups, group travellers, associations and clubs, and anyone taking a first look at Ayurveda.",
+        "Faculty: Ayurvedic doctors and trainers of Kairali.",
+        "Stay: optional. Participants who stay overnight are accommodated in the villas at the per-night training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."
+      ],
+      "learning": [
+        "Core ideas: explain the doshas, the meaning of 'the science of life' and the place of daily routine in Ayurveda.",
+        "Therapies: recognise the main Ayurvedic therapies and what each is for.",
+        "Medicines: know how classical and proprietary Ayurvedic medicines differ.",
+        "Daily life: take home practical ways to bring Ayurveda into a daily routine."
+      ],
+      "faq": [
+        { "question": "Do I need any background in Ayurveda?", "answer": "No. The workshop is an introduction and suits complete beginners as well as professionals wanting an orientation." },
+        { "question": "Is there a certificate?", "answer": "Yes. A participation certificate is issued at the end of the session." },
+        { "question": "Can a group book the workshop?", "answer": "Yes. Corporate groups, travelling groups, clubs and associations are the usual participants; contact the patient care team with your dates and group size." },
+        { "question": "Do I have to stay at the hospital?", "answer": "No. The workshop is a one-day programme. Participants who wish to stay are accommodated in the villas at the per-night training tariff." },
+        { "question": "Where is the workshop held?", "answer": "At Kairali – The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad, Kerala." }
+      ]
+    },
+    {
+      "route": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "id": "ahv-page-course-three-day-certificate",
+      "code": "TAP-HV",
+      "name": "Three-Day Ayurveda Certificate Program",
+      "short": "the Three-Day Certificate Program",
+      "eyebrow": "Ayurveda training course · TAP-HV · 3 days",
+      "image": "/ahv/assets/img/AHV-Ayurveda-Training-Practice.jpg",
+      "alt": "Three-Day Ayurveda Certificate Program — training at Kairali – The Ayurvedic Healing Village",
+      "intro": "Three days at the hospital, each with an hour of theory, an hour of practical learning and a personal therapy session — Abhyangam, Shirodhara and Podikizhi — so every therapy is studied and then experienced. A certificate of completion is awarded on the third day.",
+      "processLead": "Each day pairs a theory hour with a practical hour and closes with the therapy the day has covered, given to the participant by the hospital's therapists.",
+      "steps": [
+        "Day 1 — Foundations: what Ayurveda is, its origin and history, its branches and its relevance today; theory and a full Abhyangam experience, including procedure, contraindications and the do's and don'ts.",
+        "Day 2 — Therapies and concepts: Panchamahabhuta, Tridosha, Saptadhatu, Trimala and Agni; how Ayurveda defines health and disease; theory and a personal Shirodhara session — procedure, benefits, types and contraindications.",
+        "Day 3 — Practice: Prakriti and Ojas; classical and proprietary Ayurvedic medicines with a Kairali products demonstration; theory and a practical Podikizhi session, including how the herbal bolus is prepared.",
+        "Certificate: an official certificate of completion at the end of the third day."
+      ],
+      "features": [
+        "Format: nine hours of instruction over three days — one hour of theory and one hour of practical daily — plus a therapy session each day.",
+        "Who it suits: wellness-industry professionals, salon managers and owners, IT professionals and diplomats, small travelling groups, and mind-body enthusiasts.",
+        "Faculty: Ayurvedic doctors and senior trainers.",
+        "Stay: three nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."
+      ],
+      "learning": [
+        "Principles: describe the Tridosha and Panchamahabhuta concepts and how Ayurveda defines health.",
+        "Three therapies: know the procedure, benefits and contraindications of Abhyangam, Shirodhara and Podikizhi.",
+        "Medicines: distinguish classical from proprietary Ayurvedic medicines.",
+        "Application: apply Ayurvedic principles in a personal routine and, for professionals, in conversations with clients."
+      ],
+      "faq": [
+        { "question": "Do I need prior knowledge of Ayurveda?", "answer": "No. The course begins from the foundations and is designed as an introduction." },
+        { "question": "Is this a clinical qualification?", "answer": "No. It is an introductory certificate course; it does not confer a medical degree or a licence to practise." },
+        { "question": "Which therapies will I receive?", "answer": "One therapy session each day — Abhyangam, Shirodhara and Podikizhi — given by the hospital's therapists." },
+        { "question": "Is there a certificate?", "answer": "Yes. A certificate of completion is issued at the end of the third day." },
+        { "question": "Where do I stay?", "answer": "In the hospital's villas for three nights, charged per night under the training tariff." }
+      ]
+    },
+    {
+      "route": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "id": "ahv-page-course-five-day-intensive",
+      "code": "WAP-HV",
+      "name": "Five-Day Intensive Ayurveda Training Program",
+      "short": "the Five-Day Intensive",
+      "eyebrow": "Ayurveda training course · WAP-HV · 5 days",
+      "image": "/ahv/assets/img/AHV-Ayurveda-Training-Therapies.jpg",
+      "alt": "Five-Day Intensive Ayurveda Training Program — training at Kairali – The Ayurvedic Healing Village",
+      "intro": "Five days on the five principal therapies — Abhyangam, Shirodhara, Podikizhi, Udwarthanam and Kativasti — each studied in theory, practised under supervision and received as a therapy session, alongside the philosophical foundations of Ayurveda. A certificate of completion is awarded.",
+      "processLead": "One hour of theory and one hour of practical each day; every day ends with the therapy just studied, given to the participant.",
+      "steps": [
+        "Day 1 — Abhyangam: the origin, branches and benefits of Ayurveda; Abhyangam technique, benefits, contraindications and procedure; a 45-minute Abhyangam session.",
+        "Day 2 — Shirodhara and concepts: Panchamahabhuta, Tridosha, Saptadhatu, Trimala, Agni and Swastha Lakshana; the types, procedure and benefits of Shirodhara; a 55-minute Shirodhara session.",
+        "Day 3 — Podikizhi and Prakriti: Prakriti and Ojas in depth; Podikizhi theory, preparation demonstration, procedure and contraindications; a 50-minute Podikizhi session.",
+        "Day 4 — Udwarthanam and medicines: classical and proprietary Ayurvedic medicines and Kairali products; Udwarthanam theory, types, procedure and applications; a 50-minute Udwarthanam session.",
+        "Day 5 — Kativasti and assessment: the Prakriti assessment questionnaire; Kativasti theory, its importance, do's and don'ts and dough preparation; a 45-minute Kativasti session; closing Q&A.",
+        "Certificate: a certificate of completion on successful participation."
+      ],
+      "features": [
+        "Format: fifteen hours over five days — one hour of theory and one hour of practical daily — with the day's therapy received in full.",
+        "Who it suits: wellness-industry professionals, trainers, therapists, doctors, holistic practitioners and dieticians who want authentic Ayurvedic methods in their practice.",
+        "Faculty: Ayurvedic doctors and senior trainers of the hospital.",
+        "Stay: five nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."
+      ],
+      "learning": [
+        "Five therapies: carry out Abhyangam, Shirodhara, Podikizhi, Udwarthanam and Kativasti correctly, with their indications and contraindications.",
+        "The Ayurvedic model of health: explain doshas, dhatus, agni and ojas, and how Prakriti is assessed.",
+        "Preparation: prepare what each therapy needs — the Podikizhi bolus, the Kativasti dough.",
+        "Practice: bring authentic Ayurvedic methods into an existing wellness or healthcare practice."
+      ],
+      "faq": [
+        { "question": "What level is this course?", "answer": "Intermediate. It is designed for wellness and healthcare professionals; the Three-Day Certificate Program is the introductory option." },
+        { "question": "How much of each day is hands-on?", "answer": "One hour of practical learning per day, plus the day's therapy received in full — 45 to 55 minutes." },
+        { "question": "Is there a certificate?", "answer": "Yes. A certificate of completion is awarded after successful participation." },
+        { "question": "Where do I stay?", "answer": "In the hospital's villas for five nights, charged per night under the training tariff." },
+        { "question": "Can I continue to a longer course?", "answer": "Yes. The ten-day Level One programme and the twenty-day consultant and therapist programme build on the same therapies." }
+      ]
+    },
+    {
+      "route": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "id": "ahv-page-course-level-one-advanced",
+      "code": "AATP1-HV",
+      "name": "Level One Advanced Ayurveda Training Program",
+      "short": "the Level One Advanced Program",
+      "eyebrow": "Ayurveda training course · AATP1-HV · 10 days",
+      "image": "/ahv/assets/img/AHV-Ayurveda-Training-About.png",
+      "alt": "Level One Advanced Ayurveda Training Program — training at Kairali – The Ayurvedic Healing Village",
+      "intro": "A ten-day residential programme for wellness professionals: two hours of theory and two hours of practical each day, building from the foundations of Ayurveda to the confident performance of Abhyangam, Shirodhara, Nasyam, Podikizhi, Udwarthanam and Kativasti, and to basic Ayurvedic wellness consultations. Certification on successful completion.",
+      "processLead": "Ten days, each pairing a theory block with a practical block. Therapies are learnt in stages — head, neck and body, then the prone position, then full body — before the next therapy is introduced.",
+      "steps": [
+        "Day 1 — Introduction to Ayurveda, its history, branches and divisions; Abhyangam of the head, neck and body.",
+        "Day 2 — Panchamahabhuta, Tridosha, Saptadhatu, Agni and Ama; Abhyangam in the prone position.",
+        "Day 3 — Swastha Lakshana, the Trigunas, health and disease; full-body Abhyangam.",
+        "Day 4 — Treatment modalities and Shirodhara theory; Shirodhara practical.",
+        "Day 5 — Abhyangam and Shirodhara review, Nasyam theory; Nasyam practical.",
+        "Day 6 — Dosha, Dhatu and Mala, the classification of disease, Podikizhi theory; Podikizhi preparation, tying and application.",
+        "Day 7 — Dinacharya, Ritucharya, anatomy and physiology; Podikizhi practical.",
+        "Day 8 — Ahara and Vihara, the basics of Dravyaguna, anatomy part two; Udwarthanam theory and practical.",
+        "Day 9 — Roga and Rogi Pareeksha, an introduction to Panchakarma, Kativasti theory; Kativasti practical.",
+        "Day 10 — Prakriti basics and the analysis questionnaire; review of all therapies and closing Q&A."
+      ],
+      "features": [
+        "Format: forty hours — two hours of theory and two hours of practical daily over ten days — with group yoga and meditation sessions.",
+        "Who it suits: therapists, wellness counsellors and the wider wellness fraternity; yoga instructors and holistic practitioners.",
+        "Included: villa stay with ensuite amenities, all vegetarian meals, daily herbal water, group yoga and meditation, lectures and demonstrations, a village walk, lifestyle and fitness evaluations, and use of the pool, gym and library. Additional food, individual sessions, factory visits and internal medicines are charged separately.",
+        "Stay: ten nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."
+      ],
+      "learning": [
+        "Six therapies: perform Abhyangam, Shirodhara, Nasyam, Podikizhi, Udwarthanam and Kativasti to the hospital's standard.",
+        "Consultation: conduct a basic Ayurvedic wellness consultation, including Prakriti analysis.",
+        "Foundations: explain Ayurvedic anatomy and physiology, the daily routine (Dinacharya) and the seasonal regimen (Ritucharya).",
+        "Diet and regimen: advise on Ahara and Vihara from Ayurvedic principles."
+      ],
+      "faq": [
+        { "question": "Do I need prior Ayurveda training?", "answer": "The programme is designed for people already working in wellness or therapy. It begins from the foundations of Ayurveda, so formal prior study is not required." },
+        { "question": "Can the schedule be adapted?", "answer": "Within the ten-day structure the schedule can be adjusted to a candidate's needs; discuss this at enquiry." },
+        { "question": "Is there a certificate?", "answer": "Yes. Certification is awarded on successful completion." },
+        { "question": "What is included in the stay?", "answer": "Villa accommodation, all vegetarian meals, daily herbal water, group yoga and meditation, lectures, demonstrations and a village walk, lifestyle and fitness evaluations, and the pool, gym and library. Additional food, individual sessions, factory visits and internal medicines are charged separately." },
+        { "question": "What comes after Level One?", "answer": "The twenty-day Advanced Ayurveda Lifestyle Consultant & Therapist Training, Kairali's practitioner certification." }
+      ]
+    },
+    {
+      "route": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "id": "ahv-page-course-consultant-therapist",
+      "code": "AALCT-HV",
+      "name": "Advanced Ayurveda Lifestyle Consultant & Therapist Training",
+      "short": "the Consultant & Therapist Training",
+      "eyebrow": "Ayurveda training course · AALCT-HV · 20 days",
+      "image": "/ahv/assets/img/Ayurvedic-Training-why-min.jpg",
+      "alt": "Advanced Ayurveda Lifestyle Consultant & Therapist Training — training at Kairali – The Ayurvedic Healing Village",
+      "intro": "Kairali's practitioner certification: twenty residential days covering the principles of Ayurveda, Panchakarma and eight classical therapies, Ayurvedic dietetics, Prakriti analysis, patient examination and wellness consultation — closing with theory and practical examinations. Graduates receive a practitioner certificate, and outstanding candidates may be considered for Ayurvedic Wellness Consultant roles at Kairali's centres.",
+      "processLead": "Twenty days in four movements: foundations and Abhyangam; the classical therapies one by one; Panchakarma, medicines and dietetics; consultation practice, professional etiquette and examinations.",
+      "steps": [
+        "Days 1–5 — Foundations and Abhyangam: introduction, history and branches; Panchamahabhuta, Tridosha, Saptadhatu, Agni and Ama; health and disease; Abhyangam learnt from head and neck to the full body; Shirodhara and Nasyam in theory and practice.",
+        "Days 6–10 — Therapies in depth: Dhatu, Mala, Agni and Ama and the classification of disease; Dinacharya and Ritucharya; human anatomy and physiology; Podikizhi, Udwarthanam, Udhgarshanam and Kativasti; Roga and Rogi Pareeksha; Prakriti definition, analysis questionnaire and body-constitution analysis.",
+        "Days 11–15 — Dietetics, medicines and Panchakarma: Ahara and Vihara, Dravyaguna and the actions of substances (Guna, Virya, Vipaka, Prabhava); classical and proprietary medicines with a products demonstration; Snehanam and Swedanam, Poorva and Pashchat Karma, Vamanam, Virechanam, Nasyam, Vasti and Raktamoksha with their precautions and contraindications; Njavara Kizhi and Elakizhi prepared and applied.",
+        "Days 16–19 — Consultation and practice: Nadee Pareeksha and vital readings; Ayurvedic wellness consultation, body-constitution analysis and programme development with case-file preparation; complete revision of theory and practical; therapy etiquette, treatment-room and tray preparation, steam-generator and pharmacy operations, statutory requirements and the regulatory bodies of Ayurveda.",
+        "Day 20 — Examinations: an objective theory paper and a practical examination, then the concluding session and certification."
+      ],
+      "features": [
+        "Format: eighty hours over twenty days — theory and practical every day — with examinations at the end.",
+        "Who it suits: people from the healthcare and wellness sector, lifestyle consultants and therapists who want a recognised practitioner certificate.",
+        "After the course: successful candidates may take part in projects and hands-on work at Kairali's domestic and international centres; outstanding candidates may be considered for Ayurvedic Wellness Consultant roles.",
+        "Stay: twenty nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."
+      ],
+      "learning": [
+        "Eight therapies: perform Abhyangam, Shirodhara, Nasyam, Podikizhi, Udwarthanam, Kativasti, Njavara Kizhi and Elakizhi to the hospital's standard.",
+        "Consultation: examine a patient (Roga and Rogi Pareeksha, Nadee Pareeksha), analyse body constitution and develop a programme with a case file.",
+        "Panchakarma: explain the two aspects of Panchakarma, its five procedures and their precautions.",
+        "Dietetics and medicines: apply Dravyaguna and Ahara–Vihara principles and know the classical and proprietary preparations.",
+        "Professional practice: run a treatment room to the hospital's etiquette and understand the statutory framework of Ayurveda."
+      ],
+      "faq": [
+        { "question": "Who is this programme for?", "answer": "Healthcare professionals, wellness consultants and therapists, and serious Ayurveda students seeking practitioner-level training." },
+        { "question": "Do I need prior Ayurveda training?", "answer": "The programme is designed for people already in healthcare or wellness. It starts from first principles, so formal prior Ayurveda study is not required." },
+        { "question": "Is there an examination?", "answer": "Yes. Day 20 is an objective theory paper and a practical examination; the practitioner certificate follows successful completion." },
+        { "question": "Does the course lead to work with Kairali?", "answer": "Outstanding candidates may be considered for Ayurvedic Wellness Consultant roles at Kairali's centres. This is a consideration, not a guarantee." },
+        { "question": "Is this a medical degree?", "answer": "No. It is a practitioner certificate for lifestyle consultancy and therapy, not a medical degree or a licence to practise medicine." }
+      ]
+    }
+  ]
+}

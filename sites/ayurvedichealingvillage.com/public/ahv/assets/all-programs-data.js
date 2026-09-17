@@ -59,7 +59,8 @@ window.AHV_FINDER = {
       "name": "Ayurvedic Panchakarma Detoxification Therapy",
       "sanskrit": "Pañchakarma",
       "categories": [
-        "Treatment"
+        "Treatment",
+        "Wellness"
       ],
       "minimumNights": 14,
       "from": {
@@ -105,7 +106,8 @@ window.AHV_FINDER = {
       "name": "Complete Rejuvenation & Detoxification Therapy",
       "sanskrit": "Shodhanam Karma",
       "categories": [
-        "Treatment"
+        "Treatment",
+        "Wellness"
       ],
       "minimumNights": 7,
       "from": {
@@ -198,7 +200,8 @@ window.AHV_FINDER = {
       "name": "Immunity Enhancement & Executive Health Assessment Therapy",
       "sanskrit": "Ojasvardhana Chikitsa",
       "categories": [
-        "Treatment"
+        "Treatment",
+        "Wellness"
       ],
       "minimumNights": 7,
       "from": {
@@ -219,7 +222,8 @@ window.AHV_FINDER = {
       "name": "Sleep Restoration Therapy",
       "sanskrit": "Nidrā Chikitsa",
       "categories": [
-        "Treatment"
+        "Treatment",
+        "Wellness"
       ],
       "minimumNights": 7,
       "from": {
@@ -490,7 +494,8 @@ window.AHV_FINDER = {
       "name": "Comprehensive Stress Relief & Mental Wellness Program",
       "sanskrit": "Manas Shānthi Chikitsa",
       "categories": [
-        "Treatment"
+        "Treatment",
+        "Wellness"
       ],
       "minimumNights": 7,
       "from": {
@@ -933,7 +938,7 @@ window.AHV_FINDER = {
   "counts": {
     "unique": 38,
     "Treatment": 29,
-    "Wellness": 2,
+    "Wellness": 7,
     "Yoga & Meditation": 5,
     "Training": 6
   },
