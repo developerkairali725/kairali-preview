@@ -75,6 +75,8 @@ for (const c of SPEC.courses) {
     // Breadcrumb current label and the section headings name the course.
     T = T.split("Ayurveda Training Program").join(esc(c.short));
     T = once(T, new RegExp(`(<h1[^>]*>)${rx(esc(c.short))}(<\\/h1>)`), (m, a, z) => `${a}${esc(c.name)}${z}`, `${c.code} ${v} h1`);
+    // The breadcrumb's current label is the course name, not the short form used in headings.
+    T = once(T, new RegExp(`(<span aria-current="page"[^>]*>)${rx(esc(c.short))}(<\\/span>)`), (m, a, z) => `${a}${esc(c.name)}${z}`, `${c.code} ${v} breadcrumb`);
     T = once(T, /<title>[^<]*<\/title>/, `<title>${esc(md.title)}</title>`, `${c.code} ${v} title`);
     T = once(T, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(md.description)}">`, `${c.code} ${v} description`);
     T = once(T, /<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${esc(md.canonical)}">`, `${c.code} ${v} canonical`);
