@@ -26,3 +26,14 @@ Branch `codex/ahv-english-staging-20260915`, commits `231c7ed0` → `df6a9eb2`, 
 
 ## Tools (run order after any import)
 `repair-payload-navigation` → `repair-payload-schema` → `repair-finder-dataset` → `repair-finder-shortlist` → `build-finder-views` → `repair-training-hub` → `build-training-hub-route` → `repair-route-manifest` → `prerender-english` → `repair-snapshot-links`.
+
+## 2026-09-17 — the open items, closed
+
+| Item | Owner's word | What is live |
+|---|---|---|
+| Five course pages | "do as per recommendation" | each course is a data-driven instance of the training family's detail view (the hub template): own head, eyebrow (code · duration), h1, intro, real training photograph, and dataset — process lead + day-by-day modules, features, learning outcomes, course table with all five linked, FAQ, related. Content rewritten from each course's own legacy page and the training tariff; kairali.guru read for framing only after an injection screen (clean); guru course fees are not used. KTAHV word-lock lint on the copy: clean. The legacy sidebar that rendered as body text is gone. `tools/build-course-views.mjs`, `english-candidate/course-pages.json`. |
+| `/all-programs/` | keep + add block | keeps search, shortlist, compare; carries the shared block, lifted verbatim from the benchmark. `tools/repair-all-programs-block.mjs` |
+| Wellness | "add them" | Preventive + Personalized, Rejuvenation & Detox, Immunity & Executive Health, Stress Relief, Sleep Restoration, Panchakarma — chips read Wellness 7 on every finder |
+| Design audit | "go ahead" | resumed from cache (28 templates cached, 38 + verification + synthesis running against an isolated HEAD build on 4321) |
+
+Proof: browser at 1280 and 390 on all five course pages — right names, eyebrow, five course links, no legacy menu, 0 errors, 0 overflow; 252-route sweep on the deployed build 0/0/0/0; authenticated preview checked in the owner's Chrome (AALCT page). Preview `…-5gg3459oo-kairali.vercel.app` (breadcrumb fix redeployed after).
