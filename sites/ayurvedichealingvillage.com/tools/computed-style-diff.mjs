@@ -66,6 +66,9 @@ const PAGES = [
 ];
 const WIDTHS = [320, 1280];
 
+/** The id boot.ts gives the design root; its data-ahv-snapshot-state is the readiness signal. */
+const DESIGN_ROOT_ID = "ahv-design-root";
+
 /** The properties that decide what the page looks like. */
 const PROPS = [
   "display", "position", "top", "right", "bottom", "left", "float", "clear",
@@ -109,6 +112,30 @@ async function capture(page, url, width) {
   // /treatment-programs/ at 320px mid-render once — body height 1,056 against
   // its real 26,273, element count 1,060 against 1,143 — and the pair read as
   // "changed" when nothing had. Wait until the document stops growing.
+  // Settle on the RUNTIME'S OWN SIGNAL first. Two earlier versions of this
+  // wait were wrong the same way and cost two invalid runs: a fixed 2.5s, and
+  // then "poll until scrollHeight stops changing". Both caught
+  // /treatment-programs/ at 320px mid-render - body height 1,056 against its
+  // real 26,273, 1,060 elements against 1,143. The height poll fails because
+  // the page HOLDS its initial height while the design runtime is still
+  // fetching, so four stable samples elapse before the view mounts and the
+  // poll declares victory on the pre-render state.
+  // boot.ts stamps the root itself: held -> released (or retired when there is
+  // no snapshot to swap). Waiting for that is the app telling us it finished,
+  // instead of us guessing that it has.
+  await page
+    .waitForFunction(
+      (rootId) => {
+        const el = document.getElementById(rootId);
+        if (!el) return true; // no design root on this page: nothing to wait for
+        const s = el.getAttribute("data-ahv-snapshot-state");
+        return s === "released" || s === "retired";
+      },
+      DESIGN_ROOT_ID,
+      { timeout: 45000, polling: 200 },
+    )
+    .catch(() => {});
+  // Then the height still has to stop moving - images and fonts land after the swap.
   await page.waitForFunction(
     () => {
       const h = document.body.scrollHeight;

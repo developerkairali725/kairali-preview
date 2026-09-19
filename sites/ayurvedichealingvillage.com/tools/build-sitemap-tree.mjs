@@ -30,7 +30,7 @@
  * Run order: after repair-route-manifest (it reads the repaired manifest).
  *   node tools/build-sitemap-tree.mjs
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -112,6 +112,24 @@ function auditedTemplates() {
 }
 const isAudited = auditedTemplates();
 
+/**
+ * The owner's twelve 301s (english-candidate/redirect-map.json, 5ba80574).
+ * Every one of their sources IS one of the 252 active routes, so at the DNS
+ * flip those routes stop being pages and become redirects. A register that
+ * still lists them as live pages would be wrong the day it matters most.
+ */
+function redirects() {
+  const file = join(CAND, "redirect-map.json");
+  if (!existsSync(file)) return {};
+  const { redirects: r = {}, statusCode = 301 } = readJson(file);
+  const out = {};
+  for (const [from, v] of Object.entries(r)) {
+    out[from] = { to: typeof v === "string" ? v : v.to, reason: typeof v === "string" ? null : v.reason ?? null, statusCode };
+  }
+  return out;
+}
+const REDIRECTS = redirects();
+
 const manifest = readJson(join(CAND, "route-manifest.json"));
 const overrides = readJson(join(CAND, "route-overrides.json")).routes;
 
@@ -143,6 +161,8 @@ const routes = sorted.map((r, i) => {
     inFooterNav: footer.includes(r.path),
     section: rule?.id ?? "unclassified",
     designAudited: isAudited(o.desktopView ?? r.desktopView),
+    redirectsTo: REDIRECTS[r.path]?.to ?? null,
+    redirectReason: REDIRECTS[r.path]?.reason ?? null,
   };
 });
 
@@ -165,6 +185,7 @@ const tree = {
     inHeaderNav: routes.filter((r) => r.inHeaderNav).length,
     inFooterNav: routes.filter((r) => r.inFooterNav).length,
     templatesNotDesignAudited: new Set(routes.filter((r) => !r.designAudited).map((r) => r.desktopView)).size,
+    redirectedAtFlip: routes.filter((r) => r.redirectsTo).length,
   },
   // A chrome link that resolves to no approved route is a real defect, so it is
   // reported rather than quietly dropped from the tree.

@@ -1053,3 +1053,24 @@ The report also notes `ahv-page-yoga-meditation-programs` (#248) has since becom
 the benchmark finder, so it may need only a confirmation pass rather than a full audit.
 
 No decision needed from you — recorded so the number stops drifting between sessions.
+
+## Q-AHV-POSTULEZ-MAINTENANT - the French apply-now, measured (2026-09-19 19:55:12 IST)
+
+Handed over as "not in the owner's 301 list, still serves, needs his word". Measured before asking,
+because the numbers change the recommendation:
+
+- `#161 /postulez-maintenant/` — "Postulez Maintenant | Kairali - Le Village de Guérison Ayurvédique"
+- Same approved template as `/apply-now/` (`ahv-page-enquiry-desktop`); it is the French twin of it.
+- **Already OUT of the sitemap** — it was one of the ten orphans excluded on 2026-09-19 under the
+  owner's own page-by-page pass ("a stray French apply-now"). It still serves; nothing was unpublished.
+- No header link, no footer link, no canonical pointing elsewhere, not marked a duplicate.
+- Search Console, lifetime: **0 clicks, 8 impressions, average position 29.88.**
+
+**Recommendation: leave it exactly as it is — serving, out of the sitemap — and revisit when FR ships.**
+A 301 to `/apply-now/` is the obvious tidy move and I think it is the wrong one right now. Translations
+are parked until after go-live (owner, 2026-09-19). When FR does ship, this is the natural French
+apply-now slug, and it already carries French impressions however few. Redirecting it now buys nothing
+measurable — 0 clicks — and would have to be undone. Doing nothing costs nothing and keeps the option.
+
+The only thing that would change my answer: if FR is not shipping at all, in which case 301 it to
+`/apply-now/` with the other twelve and be done. **That is the actual question — is FR still coming?**
