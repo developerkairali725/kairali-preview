@@ -81,23 +81,79 @@ const PROPS = [
   "flex-direction", "flex-wrap", "justify-content", "align-items", "align-self",
   "flex-grow", "flex-shrink", "flex-basis", "gap", "row-gap", "column-gap",
   "grid-template-columns", "grid-template-rows",
-  "overflow-x", "overflow-y", "box-shadow", "transform", "z-index", "object-fit",
+  "overflow-x", "overflow-y", "box-shadow", "z-index", "object-fit",
+  // `transform` is deliberately ABSENT. The approved homepage carries
+  // auto-advancing sections whose transform is mid-animation at any instant,
+  // so including it made two captures of an unchanged page disagree. Layout
+  // movement is still caught: getBoundingClientRect reflects the transformed
+  // box, and it is part of every row.
 ];
 
 async function capture(page, url, width) {
   await page.setViewportSize({ width, height: 900 });
-  await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
-  // The approved runtime swaps the prerendered snapshot for the live view;
-  // settle before measuring or the fingerprint catches the handover.
-  await page.waitForTimeout(1200);
+  // networkidle is the wrong bar here: the approved runtime keeps fetching
+  // payloads and lazy images, so it either never idles or aborts the
+  // navigation. Wait for the document, then give the runtime a fixed settle
+  // window — the same window for BEFORE and AFTER, which is what makes the
+  // two captures comparable. One retry absorbs a transient abort.
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+      break;
+    } catch (err) {
+      if (attempt >= 1) throw err;
+      await page.waitForTimeout(1000);
+    }
+  }
+  // Settle on EVIDENCE, not on a guess. A fixed 2.5s wait caught
+  // /treatment-programs/ at 320px mid-render once — body height 1,056 against
+  // its real 26,273, element count 1,060 against 1,143 — and the pair read as
+  // "changed" when nothing had. Wait until the document stops growing.
+  await page.waitForFunction(
+    () => {
+      const h = document.body.scrollHeight;
+      const w = window;
+      if (w.__lastH === h) { w.__stable = (w.__stable ?? 0) + 1; } else { w.__stable = 0; w.__lastH = h; }
+      return w.__stable >= 4;
+    },
+    undefined,
+    { timeout: 45000, polling: 250 },
+  ).catch(() => {}); // a page that never settles is measured as-is, not skipped
+  await page.waitForTimeout(800);
   return page.evaluate((props) => {
+    // TRANSIENT CHROME IS EXCLUDED, and this exclusion is the difference
+    // between a proof and a coin toss. Measured: with NOTHING changed between
+    // two captures, the first version of this tool reported 3 of 16 pairs
+    // "changed", and a different 3 each run. Two culprits, neither of them
+    // design:
+    //   · <next-route-announcer> — Next.js injects and removes it around
+    //     client-side navigations, so whether it exists at the moment of
+    //     capture is a race.
+    //   · #ahv-consent — the cookie notice boot.ts mounts, which is present
+    //     or absent depending on the localStorage consent state of the
+    //     browser profile that happens to run the capture.
+    // Because elements were keyed by child INDEX, one transient element
+    // shifted every sibling after it and the whole subtree read as changed.
+    const SKIP = (el) =>
+      el.tagName.toLowerCase() === "next-route-announcer" ||
+      el.id === "ahv-consent" ||
+      el.closest("#ahv-consent") != null;
+
     const out = [];
     const walk = (el, at) => {
+      if (SKIP(el)) return;
       const cs = getComputedStyle(el);
       const r = el.getBoundingClientRect();
       const style = props.map((p) => cs.getPropertyValue(p)).join("|");
       out.push(`${at}\t${el.tagName.toLowerCase()}\t${Math.round(r.x)},${Math.round(r.y)},${Math.round(r.width)},${Math.round(r.height)}\t${style}`);
-      [...el.children].forEach((c, i) => walk(c, `${at}/${c.tagName.toLowerCase()}[${i}]`));
+      // Index among the children that SURVIVE the skip, so a transient
+      // sibling cannot renumber the ones that matter.
+      let i = 0;
+      for (const c of el.children) {
+        if (SKIP(c)) continue;
+        walk(c, `${at}/${c.tagName.toLowerCase()}[${i}]`);
+        i++;
+      }
     };
     walk(document.body, "body");
     return out;
@@ -139,6 +195,19 @@ for (const k of keys) {
   const diffs = [];
   if (a.length !== b.length) diffs.push(`element count ${a.length} -> ${b.length}`);
   const n = Math.min(a.length, b.length);
+  // Rects carry a 1px tolerance; computed styles do not. An element whose
+  // resting position lands on a sub-pixel rounds to y=582 on one capture and
+  // y=581 on the next, and calling that "the design moved" would make the
+  // proof cry wolf on every run. A style PROPERTY changing is never rounding,
+  // so that stays exact. Anything that shifts a box by 2px or more still
+  // fails, which is well below anything a person would call unchanged.
+  const RECT_TOLERANCE = 1;
+  const rectMoved = (ra, rb) => {
+    if (ra === rb) return false;
+    const x = ra.split(",").map(Number);
+    const y = rb.split(",").map(Number);
+    return x.some((v, i) => Math.abs(v - y[i]) > RECT_TOLERANCE);
+  };
   for (let i = 0; i < n && diffs.length < 6; i++) {
     if (a[i] === b[i]) continue;
     const [pa, , ra] = a[i].split("\t");
@@ -146,7 +215,9 @@ for (const k of keys) {
     const sa = a[i].split("\t")[3].split("|");
     const sb = b[i].split("\t")[3].split("|");
     const moved = PROPS.filter((_, j) => sa[j] !== sb[j]);
-    diffs.push(`${pa}${ra !== rb ? ` rect ${ra} -> ${rb}` : ""}${moved.length ? ` [${moved.join(", ")}]` : ""}`);
+    const boxMoved = rectMoved(ra, rb);
+    if (!moved.length && !boxMoved) continue;
+    diffs.push(`${pa}${boxMoved ? ` rect ${ra} -> ${rb}` : ""}${moved.length ? ` [${moved.join(", ")}]` : ""}`);
   }
   if (diffs.length) {
     changed++;
