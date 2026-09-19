@@ -1,0 +1,205 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>enquiry-family-qa</title>
+<style>body{font:12px/1.4 monospace;margin:0;background:#fff}iframe{border:0;position:fixed;left:0;top:0;height:900px;z-index:0;pointer-events:none;opacity:0}pre{padding:8px 10px;white-space:pre-wrap;margin:0;position:relative;z-index:2;background:#fff;min-height:900px}</style></head>
+<body><pre id="out">idle — runRoute('contact-us') | runAll()</pre><iframe id="fr"></iframe>
+<script src="../assets/enquiry-family-data.js"></script>
+<script>
+const A='https://ayurvedichealingvillage.com';const sleep=ms=>new Promise(r=>setTimeout(r,ms));const norm=s=>String(s).replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim();
+const FILES=['AHV Page Enquiry Desktop.dc.html','AHV Page Enquiry Mobile.dc.html'];let netLog=[];
+const tt=t=>(t||[]).map(n=>n.k==='t'?n.v:n.tag==='br'?' ':tt(n.c)).join('');
+async function load(fr,f,w,route){fr.style.width=w+'px';await new Promise(r=>{fr.onload=r;fr.src=encodeURI('../'+f)+'?route='+encodeURIComponent(route)+'&w='+w;});const d=fr.contentDocument,W=d.defaultView;
+ netLog=[];try{const of=W.fetch.bind(W);W.fetch=(u,o)=>{if(!/\.dc\.html(\?|$)|\.js(\?|$)|\.json(\?|$)|\/serve\//.test(String(u&&u.url||u))||(o&&o.method&&o.method!=='GET'))netLog.push('fetch:'+(u&&u.url||u));return of(u,o);};W.navigator.sendBeacon=function(u){netLog.push('beacon:'+u);return true;};W.open=function(u){netLog.push('open:'+u);return null;};const oX=W.XMLHttpRequest.prototype.open;W.XMLHttpRequest.prototype.open=function(m,u){if(!/\/serve\//.test(String(u)))netLog.push('xhr:'+u);return oX.apply(this,arguments);};['gtag','fbq','clarity','dataLayer'].forEach(k=>{if(k in W)netLog.push('global:'+k);});}catch(e){}
+ for(let k=0;k<160&&!(d.querySelector('main [data-variant]')&&d.querySelector('footer')&&d.head.querySelector('[data-ahv-head]'));k++)await sleep(250);try{await d.fonts.ready;}catch(e){}return d;}
+function setVal(W,el,v){const proto=el.tagName==='TEXTAREA'?W.HTMLTextAreaElement.prototype:W.HTMLInputElement.prototype;const setter=Object.getOwnPropertyDescriptor(proto,'value').set;setter.call(el,v);el.dispatchEvent(new W.Event('input',{bubbles:true}));el.dispatchEvent(new W.Event('change',{bubbles:true}));}
+function click(W,el){el.dispatchEvent(new W.MouseEvent('click',{bubbles:true,cancelable:true}));}
+async function settleEnd(W,de,b){await Promise.race([Promise.all([...b.querySelectorAll('img')].map(i=>i.decode().catch(()=>{}))),sleep(6000)]);let lastH=0,stable=0;for(let k=0;k<40&&stable<3;k++){W.scrollTo({top:de.scrollHeight,behavior:'instant'});await sleep(200);if(Math.abs(W.scrollY+W.innerHeight-de.scrollHeight)<=2&&lastH===de.scrollHeight)stable++;else stable=0;lastH=de.scrollHeight;}}
+window.runRoute=async function(slug){const D=window.AHV_ENQUIRY;const R=D.routes.find(r=>r.slug===slug||r.path===slug);const fr=document.getElementById('fr');const out=[];const pre=document.getElementById('out');
+ for(const [f,ws] of [[FILES[0],[1024,1280,1440,1920]],[FILES[1],[320,390,430]]]){for(const w of ws){const d=await load(fr,f,w,R.path);const W=d.defaultView,de=d.documentElement,b=d.body;const isM=f.includes('Mobile');const F=[];const ok=(n,c,t)=>{if(!c)F.push('✗'+n+(t?':'+t:''));};const main=b.querySelector('main');const mt=()=>norm(main.textContent);const initialText=norm(main.textContent);
+  for(let k=0;k<3;k++){W.scrollTo({top:de.scrollHeight,behavior:'instant'});await sleep(300);}W.scrollTo({top:0,behavior:'instant'});await sleep(200);
+  const M=R.metadata;const g=s=>(d.querySelector(s)||{}).content;const cnt=s=>d.querySelectorAll(s).length;
+  ok('title',d.title===M.title);ok('desc',g('meta[name=description]')===M.description&&cnt('meta[name=description]')===1);ok('canonical',(d.querySelector('link[rel=canonical]')||{}).href===M.canonical&&cnt('link[rel=canonical]')===1);ok('robots',g('meta[name=robots]')===M.robots);
+  ok('og',g('meta[property="og:type"]')===M.og.type&&g('meta[property="og:title"]')===M.og.title&&g('meta[property="og:url"]')===M.og.url&&g('meta[property="og:image"]')===M.og.image.url&&g('meta[property="og:image:width"]')===String(M.og.image.width)&&cnt('meta[property="og:image"]')===1);ok('twitter',g('meta[name="twitter:card"]')==='summary_large_image');ok('hreflang',cnt('link[rel=alternate][hreflang]')===0);ok('lang',de.lang==='en-US');
+  const h1=b.querySelectorAll('h1');ok('h1',h1.length===1&&norm(h1[0].textContent)===R.h1,h1.length);
+  const bc=[...b.querySelector('nav[aria-label="Breadcrumb"]').querySelectorAll('a,[aria-current]')].map(e=>(e.getAttribute('href')||'').replace(A,'')+'|'+norm(e.textContent)).join(' > ');ok('crumb',bc===R.breadcrumb.map((c,i)=>(i<R.breadcrumb.length-1?c.path:'')+'|'+c.label).join(' > '),bc);
+  const imgs=[...b.querySelectorAll('main img')];const I=D.images;const lg=/^legacy/.test(R.variant);
+  // legacy: only the always-visible cover + lotus are geometry-checked here; the consultation step images
+  // sit inside a hidden tab panel at load and are asserted while that tab is active (lcStepImage1..3).
+  const expImgs=lg?[I.legacyCover,I.legacyLotus]:(R.hero?[I[R.hero]]:[]);
+  const geomImgs=lg?imgs.slice(0,2):imgs;ok('imgs',geomImgs.length===expImgs.length&&(!lg||imgs.length===(R.variant==='legacy-contact'?3:2))&&expImgs.every((e,i)=>{const im=geomImgs[i];const r=im.getBoundingClientRect();return im.getAttribute('src')===e.src&&im.getAttribute('alt')===e.alt&&im.naturalWidth===e.width&&im.naturalHeight===e.height&&r.width<=e.width+.5&&Math.abs(r.width/r.height-e.width/e.height)<.02&&r.right<=W.innerWidth+.5;}),imgs.length+'/'+expImgs.length);
+  if(lg&&R.variant==='legacy-contact'){const si=imgs[2];ok('stepImgSelfHosted',si&&si.getAttribute('src')===I.legacyStep1.src&&si.naturalWidth===I.legacyStep1.width&&si.naturalHeight===I.legacyStep1.height,si?si.naturalWidth+'x'+si.naturalHeight:'none');}
+  // full copy presence per variant
+  const exp=[];const push=(...x)=>x.forEach(v=>{if(v)exp.push(typeof v==='string'?v:v.tree?tt(v.tree):v.text||'');});
+  if(R.variant==='contact'){push(R.eyebrow,R.sub,R.status.open,R.status.clockPlaceholder,R.status.badge);R.heroCtas.forEach(a=>push(a.label));push(R.router.h2,R.router.sub);R.router.tiles.forEach(t=>push(t.h3,t.p,t.go));push(R.router.also);push(R.channels.h2,R.channels.sub);R.channels.items.forEach(c=>{push(c.h3,c.meta,c.best);c.links.forEach(l=>push(l.label));});push(R.form.h2,R.form.sub,R.form.note,R.form.submit);R.form.fields.forEach(f=>{if(f.name!=='country_code')push(f.label);});ok('ccAriaLabel',main.querySelector('#cc').getAttribute('aria-label')==='Country code');push(R.aside.h3,R.aside.p);R.aside.rows.forEach(r=>push(r));push(R.priya.h3,R.priya.role,R.priya.quote,R.visit.h2,R.visit.sub,R.visit.lbl1,R.visit.h3a,R.visit.addr1,R.visit.lbl2,R.visit.h3b,R.visit.addr2,R.visit.phone2,R.visit.ext2,R.visit.hoursLbl,...R.visit.hours);R.visit.pairs.forEach(p=>push(p.t,p.v,p.s));R.visit.links.forEach(l=>push(l.label));push(R.founder.quote,R.founder.by,R.faq.h2);R.faq.items.forEach(f=>push(f.q,f.a));
+   ok('honeypotOmitted',!main.querySelector('[name=company]'));ok('noAdminH1',!/^Contact Us$/.test(norm(h1[0].textContent)));ok('noMaps',!main.querySelector('iframe'));ok('noExternalImg',![...imgs].some(i=>/chatbase|whyayurveda/.test(i.src)));
+   const sel=main.querySelector('#programme');ok('programmeOptions',sel&&[...sel.options].map(o=>o.textContent).join('|')===R.form.fields.find(f=>f.name==='programme').options.join('|'));
+   ok('requiredness',['txtName','txtPhone','txtEmail','cc'].every(id=>main.querySelector('#'+id).required)&&!main.querySelector('#programme').required&&!main.querySelector('#txtMessage').required);
+   // Stale expectation replaced: this route's approved e-mail recovery overlay (route.emailOverlay, applied in an
+   // earlier approved pass) removes the encoded placeholders, so assert the overlay outcome instead of their presence.
+   const ov=R.emailOverlay;const mailLinks=[...main.querySelectorAll('a[href^="mailto:"]')].map(a=>a.getAttribute('href'));
+   ok('emailOverlayApplied',!!ov&&ov.fixes.every(fx=>mailLinks.includes(fx.afterHref))&&main.querySelectorAll('[data-recovered-email]').length>0,'links='+mailLinks.length);
+   ok('noEncodedEmailLeft',main.querySelectorAll('[data-encoded-email]').length===0&&!main.querySelector('a[href*="cdn-cgi"]')&&!/\[email.{0,3}protected\]/i.test(main.textContent));ok('labels',[...main.querySelectorAll('form input:not([type=checkbox]):not([type=radio]),form select,form textarea')].every(i=>i.labels&&i.labels.length||i.getAttribute('aria-label')));
+   ok('faq6',main.querySelectorAll('details[data-faq]').length===6);
+   // validation state
+   const form=main.querySelector('[data-form=contact]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('errFocus',d.activeElement&&d.activeElement.id==='txtName'&&main.querySelectorAll('[data-form=contact] [role=alert]').length===3);
+   setVal(W,main.querySelector('#txtName'),'Test Person');setVal(W,main.querySelector('#cc'),'+91');setVal(W,main.querySelector('#txtPhone'),'9876543210');setVal(W,main.querySelector('#txtEmail'),'test@example.com');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('localValid',!!main.querySelector('[data-local-valid]')&&main.querySelectorAll('[data-form=contact] [role=alert]').length===0);
+  }
+  if(R.variant==='careers-apply'){push(R.intro,R.formH2,R.aboutH2);R.about.forEach(g=>{push(g.heading);g.links.forEach(l=>push(l.label));});R.form.groups.forEach(g=>{push(g.group);(g.options||[]).slice(0,3).forEach(o=>push(o));});push(R.form.submit);
+   const form=main.querySelector('[data-form=apply]');const names=[...form.querySelectorAll('input,select,textarea')].map(i=>i.name).filter(Boolean);const uniq=[...new Set(names)];ok('fieldNames',uniq.length===23&&['checkbox-758[]','fname','lname','post-applied-for','job-reference-code','gender','dob','address','country','state','city','phone','mobile','email','highest-qualification','select-461','select-159','current-organizatione','current-designation','current-location','radio-448','file-803','file-809'].every(n=>uniq.includes(n)),uniq.length);
+   const cs=form.querySelector('select[name=country]');ok('country229',cs&&cs.options.length===229&&cs.options[1].textContent==='Afghanistan'&&cs.options[228].textContent==='Zimbabwe');ok('year23',form.querySelector('select[name="select-461"]').options.length===23);ok('month13',form.querySelector('select[name="select-159"]').options.length===13);
+   ok('req12',[...form.querySelectorAll('[required]')].length===12);ok('noHidden',!form.querySelector('input[type=hidden]')&&!/_wpcf7|utm_/.test(form.innerHTML));ok('fieldsets',form.querySelectorAll('fieldset').length===4&&[...form.querySelectorAll('legend')].map(l=>norm(l.textContent)).join('|')==='Industry|Gender|Total Experience|Valid Passport');
+   ok('labels',[...form.querySelectorAll('input:not([type=checkbox]):not([type=radio]),select,textarea')].every(i=>i.labels&&i.labels.length||i.getAttribute('aria-label')));ok('onlyOneH1',main.querySelectorAll('h1').length===1&&[...main.querySelectorAll('h2')].filter(h=>norm(h.textContent)==='Apply Now').length===1);
+   form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('errFocus',main.querySelectorAll('[data-form=apply] [role=alert]').length===12&&d.activeElement&&d.activeElement.name==='fname');
+   ['fname','lname','post-applied-for','job-reference-code','state','city','phone','mobile','email','current-organizatione','current-designation','current-location'].forEach(n=>setVal(W,form.querySelector('[name="'+n+'"]'),n==='email'?'test@example.com':'x1'));form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('localValid',!!main.querySelector('[data-local-valid]'));
+  }
+  if(R.variant==='job-detail'){push(R.jobDetailsLabel,R.applyH2,R.form.fileNote,R.form.submit);R.sections.forEach(s=>{push(s.heading);s.blocks.forEach(bl=>{if(bl.p)push(bl.p);else bl.ul.forEach(li=>push({tree:li}));});});R.form.fields.forEach(f=>push(f.label));
+   const h2s=[...main.querySelectorAll('h2')].map(h=>norm(h.textContent));ok('h2order',h2s.join('|')===R.sections.map(s=>s.heading).concat([R.applyH2]).join('|'),h2s.join('|'));ok('noH3',main.querySelectorAll('h3,h4').length===0);
+   const em=main.querySelector('a[data-recovered-email]');ok('careerEmail',em&&em.getAttribute('href')==='mailto:career@kairali.com'&&norm(em.textContent)==='career@kairali.com'&&!main.querySelector('a[href*="cdn-cgi"]')&&!mt().includes('[email protected]'));
+   const form=main.querySelector('[data-form=job]');ok('fields7',[...form.querySelectorAll('input,textarea')].map(i=>i.name).join()==='awsm_applicant_name,awsm_applicant_email,awsm_applicant_phone,awsm_applicant_letter,awsm_file,awsm_form_privacy_policy');ok('allRequired',[...form.querySelectorAll('input,textarea')].every(i=>i.required));ok('accept',form.querySelector('[name=awsm_file]').getAttribute('accept')==='.pdf, .doc, .docx');ok('labels',[...form.querySelectorAll('input,textarea')].every(i=>i.labels&&i.labels.length));ok('noHidden',!form.querySelector('input[type=hidden]')&&!/awsm_nonce|awsm_job_id/.test(form.innerHTML));
+   form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('errFocus',main.querySelectorAll('[data-form=job] [role=alert]').length===5&&d.activeElement&&d.activeElement.name==='awsm_applicant_name');
+   ['awsm_applicant_name','awsm_applicant_email','awsm_applicant_phone','awsm_applicant_letter'].forEach(n=>setVal(W,form.querySelector('[name="'+n+'"]'),n.includes('email')?'test@example.com':'x1'));const cb=form.querySelector('#awsm_form_privacy_policy');cb.click();await sleep(50);form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('localValid',!!main.querySelector('[data-local-valid]'));
+  }
+  if(lg){
+   const F0=(R.variant==='legacy-contact')?R.write:R.enquiry;
+   const flat=fm=>fm.fields.filter(f=>!(f.control==='input'&&f.type==='submit'));
+   const labels=fm=>flat(fm).map(f=>f.label);
+   push(R.intro);if(R.h2)push(R.h2);
+   // exact head + governance
+   ok('governedNoindex',g('meta[name=robots]')==='noindex, follow'&&R.governance.indexable===false&&R.governance.xmlCandidate===false);
+   ok('sourceRobotsRecorded',typeof R.metadata.sourceRobots==='string'&&R.metadata.sourceRobots.length>0,R.metadata.sourceRobots);
+   ok('selfCanonical',(d.querySelector('link[rel=canonical]')||{}).href===A+R.path);
+   ok('registerUnchanged',/^T04/.test(R.governance.register)&&/PROPOSED/.test(R.governance.componentReuse));
+   ok('noRedirectClaim',/No redirect/.test(R.governance.noRedirect)&&!mt().toLowerCase().includes('redirect'));
+   ok('noLegacyNotesInCopy',!/legacy|overhaul|successor|prototype boundary|unresolved/i.test(mt().replace(/Design review prototype[^]*?claimed\./g,'').replace(/Submission is disabled[^]*?acknowledged\./g,'').replace(/Source populates[^]*?invented\./g,'').replace(/Rendered for field-definition review only[^]*?transmitted\./g,'').replace(/Source last-step control[^]*?review\./g,'').replace(/Map not loaded in review[^]*?requested\./g,'')));
+   // requiredness semantics
+   ok('noHtmlRequiredInSource',R.requiredness.htmlRequiredPresent===false&&flat(F0).every(f=>f.htmlRequired===false));
+   ok('cf7ClassRetained',flat(F0).some(f=>/wpcf7-validates-as-required/.test(f.sourceClass||''))&&flat(F0).every(f=>typeof f.validatesAsRequired==='boolean'));
+   // per-route form identity
+   if(R.variant==='legacy-enquiry'){
+     const fm=b.querySelector('#le-form');
+     ok('leForm',!!fm);
+     const vis=[...fm.querySelectorAll('input:not([type=hidden]),select,textarea')];
+     ok('le12controls',vis.length+fm.querySelectorAll('button[type=submit]').length===12&&vis.length===11,''+vis.length);
+     ok('leNames',['fname','age','gender','email','phone','country','state','city','subject','message'].every(n=>!!fm.querySelector('[name="'+n+'"]')));
+     ok('leHidden13',fm.querySelectorAll('input[type=hidden]').length===13);
+     ok('leHiddenEmpty',[...fm.querySelectorAll('input[type=hidden]')].every(i=>i.value===''));
+     ok('leNoConsent',fm.querySelectorAll('input[type=checkbox]').length===0&&!/agree|consent/i.test(norm(fm.textContent)));
+     ok('leNoUpload',fm.querySelectorAll('input[type=file]').length===0);
+     ok('leCountry248',[...fm.querySelector('[name=country]').options].length===248,''+[...fm.querySelector('[name=country]').options].length);
+     ok('leStateCityDisabled',fm.querySelector('[name=state]').disabled&&fm.querySelector('[name=city]').disabled&&[...fm.querySelector('[name=state]').options].map(o=>norm(o.textContent)).join()==='Select State'&&[...fm.querySelector('[name=city]').options].map(o=>norm(o.textContent)).join()==='Select City');
+     ok('leLabelsBound',vis.filter(x=>x.type!=='radio').every(x=>!!fm.querySelector('label[for="'+x.id+'"]')));
+     ok('leRadioLabels',[...fm.querySelectorAll('input[type=radio]')].every(x=>!!fm.querySelector('label[for="'+x.id+'"]')));
+     ok('leAriaRequired',fm.querySelector('[name=fname]').getAttribute('aria-required')==='true'&&fm.querySelector('[name=country]').getAttribute('aria-required')==='true'&&fm.querySelector('[name=message]').getAttribute('aria-required')==='false');
+     ok('leCopyExact',labels(R.enquiry).every(l=>mt().includes(norm(l))));
+     let ev=null;fm.addEventListener('submit',e=>{ev=e;},false);
+     setVal(W,fm.querySelector('[name=fname]'),'QA');click(W,fm.querySelector('button[type=submit]'));await sleep(250);
+     ok('leNoSubmit',ev&&ev.defaultPrevented&&/Submission is disabled/i.test(mt()));
+     ok('leNoReceipt',!/thank you|we have received|request received|we will call/i.test(mt()));
+   } else {
+     // three tabs, one visible panel
+     const tabs=[...b.querySelectorAll('[role=tab]')];
+     ok('lcTabs3',tabs.length===3&&tabs.map(t2=>norm(t2.textContent)).join('|')===R.tabs.map(t2=>t2.title).join('|'),tabs.map(t2=>norm(t2.textContent)).join('|'));
+     const panels=R.tabs.map(t2=>d.getElementById('lc-panel-'+t2.id));
+     ok('lcPanelsExist',panels.every(p=>!!p));
+     const visP=()=>panels.filter(p=>W.getComputedStyle(p).display!=='none'&&p.getBoundingClientRect().height>0);
+     ok('lcOnePanelInitial',visP().length===1&&visP()[0].id==='lc-panel-contact'&&tabs[0].getAttribute('aria-selected')==='true',visP().length+' visible');
+     ok('lcRovingTabindex',tabs.filter(t2=>t2.tabIndex===0).length===1);
+     // contact details verbatim + recovered e-mail + no maps embed
+     const dt=norm(panels[0].textContent);
+     ok('lcDetailsCopy',R.details.blocks.every(bl=>bl.kind==='h3'?dt.includes(norm(bl.text)):((bl.lines||[]).every(l=>dt.includes(norm(l)))&&(!bl.email||dt.includes(bl.email))&&(!bl.phone||dt.includes(bl.phone)))));
+     ok('lcBrSpace',dt.includes('Pvt. Ltd.D – 130, Block D, Ambedkar Colony')||dt.includes('Block D, Ambedkar'),'br boundary');
+     ok('lcRecoveredEmail',panels[0].querySelectorAll('a[data-recovered-email]').length===2&&!/\[email.{0,3}protected\]/i.test(b.textContent)&&!/cdn-cgi/.test(b.innerHTML));
+     ok('lcNoMapEmbed',!b.querySelector('iframe')&&dt.includes(norm(R.details.map.notLoaded)));
+     // keyboard tabs
+     tabs[0].focus();
+     const key=(el,k)=>el.dispatchEvent(new W.KeyboardEvent('keydown',{key:k,bubbles:true,cancelable:true}));
+     key(d.activeElement,'ArrowRight');await sleep(200);
+     let t2=[...b.querySelectorAll('[role=tab]')];
+     ok('lcArrowRight',t2[1].getAttribute('aria-selected')==='true'&&d.activeElement===t2[1]&&visP().length===1&&visP()[0].id==='lc-panel-write');
+     key(d.activeElement,'End');await sleep(200);
+     t2=[...b.querySelectorAll('[role=tab]')];
+     ok('lcEnd',t2[2].getAttribute('aria-selected')==='true'&&d.activeElement===t2[2]);
+     // write form (12 controls, no consent, no upload)
+     click(W,[...b.querySelectorAll('[role=tab]')][1]);await sleep(220);
+     const wf=b.querySelector('#lc-write-form');
+     const wv=[...wf.querySelectorAll('input:not([type=hidden]),select,textarea')];
+     ok('lcWrite12',wv.length+wf.querySelectorAll('button[type=submit]').length===12&&wv.length===11,''+wv.length);
+     ok('lcWriteNames',['fname','age','gender','email','phone','country','state','city','subject','message'].every(n=>!!wf.querySelector('[name="'+n+'"]')));
+     ok('lcWriteNoConsent',wf.querySelectorAll('input[type=checkbox]').length===0&&!/agree|consent/i.test(norm(wf.textContent)));
+     ok('lcWriteNoUpload',wf.querySelectorAll('input[type=file]').length===0);
+     ok('lcWriteCountry248',[...wf.querySelector('[name=country]').options].length===248);
+     ok('lcWriteHidden13',wf.querySelectorAll('input[type=hidden]').length===13&&[...wf.querySelectorAll('input[type=hidden]')].every(i=>i.value===''));
+     ok('lcWriteLabels',wv.filter(x=>x.type!=='radio').every(x=>!!wf.querySelector('label[for="'+x.id+'"]')));
+     let ev1=null;wf.addEventListener('submit',e=>{ev1=e;},false);
+     click(W,wf.querySelector('button[type=submit]'));await sleep(250);
+     ok('lcWriteNoSubmit',ev1&&ev1.defaultPrevented&&/Submission is disabled/i.test(norm(wf.textContent)));
+     // consultation form: three steps, sequencing, back navigation, upload guarded
+     click(W,[...b.querySelectorAll('[role=tab]')][2]);await sleep(250);
+     const cf=()=>b.querySelector('#lc-consult-form');
+     const stepText=()=>norm(cf().textContent);
+     ok('lcConsultStep1',stepText().includes('Step 1 of 3')&&!!cf().querySelector('[name=nationality]'));
+     ok('lcNationality193',[...cf().querySelector('[name=nationality]').options].length===193,''+[...cf().querySelector('[name=nationality]').options].length);
+     ok('lcNatPlaceholderDisabled',cf().querySelector('[name=nationality]').options[0].disabled===true);
+     ok('lcStep1Labels',R.consult.steps[0].fields.map(f=>f.label).every(l=>stepText().includes(norm(l))));
+     ok('lcStepImage1',cf().querySelector('img').getAttribute('src')===I.legacyStep1.src);
+     ok('lcNoStep2Fields',!cf().querySelector('[name=bp]')&&!cf().querySelector('[name="functional-history[]"]'));
+     click(W,d.getElementById('lc-cf7mls_next-1'));await sleep(280);
+     ok('lcConsultStep2',stepText().includes('Step 2 of 3')&&!!cf().querySelector('[name=bp]')&&!cf().querySelector('[name=nationality]'));
+     ok('lcStep2Labels',R.consult.steps[1].fields.map(f=>f.label).every(l=>stepText().includes(norm(l))));
+     ok('lcStepImage2',cf().querySelector('img').getAttribute('src')===I.legacyStep2.src);
+     ok('lcDependenceOn6',cf().querySelectorAll('input[name="dependence-on[]"]').length===6&&cf().querySelectorAll('input[name="past-history[]"]').length===5);
+     const fi=cf().querySelector('input[type=file]');
+     ok('lcUploadGuarded',!!fi&&/cleared immediately/i.test(norm(cf().textContent))&&!!cf().querySelector('label[for="'+fi.id+'"]'));
+     ok('lcStepFocus',d.activeElement&&d.activeElement.id==='lc-consult-step');
+     click(W,d.getElementById('lc-cf7mls_next-2'));await sleep(280);
+     ok('lcConsultStep3',stepText().includes('Step 3 of 3')&&cf().querySelectorAll('input[name="functional-history[]"]').length===9);
+     ok('lcStep3Labels',R.consult.steps[2].fields.map(f=>f.label).every(l=>stepText().includes(norm(l))));
+     ok('lcStepImage3',cf().querySelector('img').getAttribute('src')===I.legacyStep3.src);
+     let ev2b=null;cf().addEventListener('submit',e=>{ev2b=e;},false);
+     click(W,cf().querySelector('button[type=submit]'));await sleep(250);
+     ok('lcConsultNoSubmit',ev2b&&ev2b.defaultPrevented&&/Submission is disabled/i.test(stepText())&&!/thank you|request received/i.test(stepText()));
+     // back navigation all the way to step 1
+     click(W,d.getElementById('lc-cf7mls_back-3'));await sleep(280);
+     ok('lcBackTo2',stepText().includes('Step 2 of 3')&&!!cf().querySelector('[name=bp]'));
+     click(W,d.getElementById('lc-cf7mls_back-2'));await sleep(280);
+     ok('lcBackTo1',stepText().includes('Step 1 of 3')&&!!cf().querySelector('[name=nationality]'));
+     ok('lcNoConsentAdded',!/I have read|agree to/i.test(norm(cf().textContent)));
+     // both forms keep their own inventories
+     const wCount=R.write.fields.filter(f2=>!(f2.control==='input'&&f2.type==='submit')).reduce((a2,f2)=>a2+(f2.options?f2.options.length:1),0)+1;
+     const cCount=R.consult.steps.reduce((a2,s2)=>a2+s2.fields.filter(f2=>!(f2.control==='input'&&f2.type==='submit')).reduce((a3,f2)=>a3+(f2.options?f2.options.length:1),0)+s2.nav.length,0)+1;
+     ok('lcTwoDistinctForms',wCount===12&&cCount===56&&R.write.sourceAction!==R.consult.sourceAction&&R.write.formTabId!==R.consult.formTabId,wCount+'/'+cCount);
+     click(W,[...b.querySelectorAll('[role=tab]')][0]);await sleep(200);
+   }
+   ok('noNetwork',netLog.length===0,netLog.join(','));
+  }else if(R.variant==='consultation'){push(R.eyebrow,...R.h2x,R.lede,...R.trustLine,R.physician.name,R.physician.role,R.card.h2,R.card.sub,R.card.badge,R.card.wa.badge,R.card.wa.line,R.card.wa.label,R.card.wa.callLbl,R.card.wa.telLabel,R.card.wa.or);R.card.step1.forEach(f=>{if(!f.ariaLabel)push(f.label);});push(R.card.step1Next,R.band.eyebrow,R.band.h2,R.band.sub);R.band.steps.forEach(s=>push(s.n,s.h3,s.p,s.meta));push(R.band.previewBtn,R.creds.eyebrow,R.creds.h2,R.creds.lede);R.creds.stats.forEach(s=>push(s.k,s.v));push(R.creds.quote,R.creds.by,R.creds.byRole,R.creds.byBook,R.reviews.eyebrow,R.reviews.h2,R.reviews.lede,R.reviews.link.label,R.faq.eyebrow,R.faq.h2);R.faq.items.forEach(f=>push(f.q,f.a));push(R.more.eyebrow);R.more.links.forEach(l=>push(l.label));
+   ok('noFalseReceipt',!mt().includes('Request received')&&!mt().includes('has your request'));ok('faq8',main.querySelectorAll('details[data-faq]').length===8);ok('moreLinks',[...main.querySelectorAll('nav[aria-labelledby=more-h] a')].map(a=>a.getAttribute('href')).join()===R.more.links.map(l=>A+l.href).join());
+   // flow: step1 errors → fill → step2 → concern error → chips → review → consent error → consent → done → retry link; modal
+   const area=()=>main.querySelector('#ktahv-oc-formArea');let form=area().querySelector('[data-step="1"]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('s1err',area().querySelectorAll('[role=alert]').length===4&&d.activeElement&&d.activeElement.id==='ktahv-oc-fName');
+   setVal(W,area().querySelector('#ktahv-oc-fName'),'Test Person');setVal(W,area().querySelector('#ktahv-oc-fCode'),'+49');setVal(W,area().querySelector('#ktahv-oc-fPhone'),'1512345678');setVal(W,area().querySelector('#ktahv-oc-fEmail'),'test@example.com');setVal(W,area().querySelector('#ktahv-oc-fCountry'),'Germany');form=area().querySelector('[data-step="1"]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(200);
+   ok('s2shown',!!area().querySelector('[data-step="2"]')&&norm(main.querySelector('[data-progress]').textContent).includes('2 of 2'));R.card.step2.chips.forEach(g=>{});const step2Text=norm(area().textContent);ok('s2copy',[R.card.step2.concern.label,...R.card.step2.chips.map(c=>c.label),...R.card.step2.chips.flatMap(c=>c.options),R.card.step2.back,R.card.step2.next].every(t=>step2Text.includes(norm(t))));
+   form=area().querySelector('[data-step="2"]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('concernErr',area().querySelectorAll('[role=alert]').length===1&&d.activeElement&&d.activeElement.id==='ktahv-oc-fConcern');
+   setVal(W,area().querySelector('#ktahv-oc-fConcern'),'Synthetic test concern');const chips=[...area().querySelectorAll('[data-chip]')];const pick=(k,lbl)=>{const c=chips.find(x=>x.getAttribute('data-chip')===k&&norm(x.textContent)===lbl);click(W,c);};pick('duration','1–6 months');pick('who','Myself');pick('lang','English');pick('time','Morning');await sleep(150);ok('chipsPressed',[...area().querySelectorAll('[data-chip][aria-pressed=true]')].length===4);
+   form=area().querySelector('[data-step="2"]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(200);ok('reviewShown',!!area().querySelector('[data-step=review]'));const rv=norm(area().textContent);ok('reviewRows',['Test Person','+49 1512345678','test@example.com','Germany','Synthetic test concern','1–6 months','Myself','English','Morning'].every(v=>rv.includes(v))&&rv.includes(norm(tt(R.card.review.consent.tree)))&&rv.includes(norm(tt(R.card.review.note.tree))));
+   form=area().querySelector('[data-step=review]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(150);ok('consentErr',area().querySelectorAll('[role=alert]').length===1&&d.activeElement&&d.activeElement.id==='ktahv-oc-fConsent');
+   area().querySelector('#ktahv-oc-fConsent').click();await sleep(50);form=area().querySelector('[data-step=review]');form.dispatchEvent(new W.Event('submit',{bubbles:true,cancelable:true}));await sleep(700);
+   const done=area().querySelector('[data-step=done]');ok('doneShown',!!done&&norm(done.textContent).includes(R.card.done.heading)&&norm(done.textContent).includes(R.card.done.body)&&!norm(done.textContent).includes('Request received'));ok('doneFocus',d.activeElement===done,'active='+(d.activeElement&&(d.activeElement.tagName+'#'+d.activeElement.id+'.'+(d.activeElement.getAttribute('data-step')||'')))+' tabindex='+(done&&done.getAttribute('tabindex'))+' hasFocus='+d.hasFocus());
+   const wa=done&&done.querySelector('[data-wa-draft]');const decoded=wa?decodeURIComponent(wa.getAttribute('href').split('text=')[1]):'';ok('waDraft',wa&&wa.getAttribute('href').startsWith('https://wa.me/919289838797?text=')&&decoded.includes('Name: Test Person')&&decoded.includes('Phone: +49 1512345678')&&decoded.includes('Concern: Synthetic test concern')&&decoded.includes('Consent: given on /online-consultation/'));
+   const ev=new W.MouseEvent('click',{bubbles:true,cancelable:true});wa.dispatchEvent(ev);ok('waPrevented',ev.defaultPrevented);
+   // modal from done
+   const pv=done.querySelector('#ktahv-oc-previewFromDone');pv.focus();click(W,pv);await sleep(700);const modal=main.querySelector('#ktahv-oc-previewModal');ok('modalOpen',!!modal&&modal.getAttribute('role')==='dialog'&&modal.getAttribute('aria-modal')==='true');ok('modalFocus',modal&&modal.contains(d.activeElement),'active='+(d.activeElement&&(d.activeElement.tagName+'#'+d.activeElement.id))+' asideTab='+(modal&&modal.querySelector('aside')&&modal.querySelector('aside').getAttribute('tabindex')));
+   const mtx=modal?norm(modal.textContent):'';ok('modalCopy',[R.preview.eyebrow,R.preview.h3,tt(R.preview.note.tree),...R.preview.sections.flatMap(s=>[s.h4,s.desc||'',...s.items.flatMap(i=>[i.label||'',...(i.chips||[]),i.text||''])]),R.preview.close2].every(t=>mtx.includes(norm(t))));ok('modalInputsInert',[...modal.querySelectorAll('input')].every(i=>i.readOnly));
+   modal.dispatchEvent(new W.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));await sleep(200);ok('escCloses',!main.querySelector('#ktahv-oc-previewModal'));ok('focusReturn',d.activeElement&&d.activeElement.id==='ktahv-oc-previewFromDone',d.activeElement&&d.activeElement.id);
+   // back from done keeps data
+   click(W,done.querySelector('button[type=button]:last-of-type'));await sleep(200);ok('backKeepsData',area().querySelector('#ktahv-oc-fConcern')&&area().querySelector('#ktahv-oc-fConcern').value==='Synthetic test concern');
+   // band preview button opens modal too
+   const ob=main.querySelector('#ktahv-oc-openPreview');ob.focus();click(W,ob);await sleep(200);const m2=main.querySelector('#ktahv-oc-previewModal');ok('modal2',!!m2);if(m2){click(W,m2.querySelector('#ktahv-oc-closePreview'));await sleep(200);ok('closeBtn',!main.querySelector('#ktahv-oc-previewModal')&&d.activeElement===ob);}
+  }
+  const text=initialText+' '+mt();const missing=exp.map(norm).filter(t=>t&&!text.includes(t));ok('copy',missing.length===0,missing.length+' e.g. '+JSON.stringify(missing.slice(0,2)));
+  ok('noNet',netLog.length===0,netLog.join(','));ok('noSubmitNav',W.location.href.includes(f.replace(/ /g,'%20')));
+  const ctrls=[...b.querySelectorAll('main a,main button,main summary,main input:not([type=hidden]),main select,main textarea')].filter(e=>{const q=e.getBoundingClientRect();return q.width&&q.height&&!e.closest('[data-step=done]');});const bad=ctrls.filter(e=>{let q=e.getBoundingClientRect();const inl=e.tagName==='A'&&e.closest('p,li,dd,address,span');if(e.tagName==='INPUT'&&(e.type==='checkbox'||e.type==='radio')&&e.closest('label'))q=e.closest('label').getBoundingClientRect();return !inl&&(q.height<43.5||(q.width<43.5&&e.tagName!=='INPUT'));});ok('44px',bad.length===0,bad.length+' e.g. '+(bad[0]&&(bad[0].tagName+':'+norm(bad[0].textContent||bad[0].name).slice(0,20))));
+  ok('fs',[...main.querySelectorAll('p,li,dd,address,label,legend')].every(e=>parseFloat(W.getComputedStyle(e).fontSize)>=14),[...main.querySelectorAll('p,li,dd,address,label,legend')].filter(e=>parseFloat(W.getComputedStyle(e).fontSize)<14).map(e=>e.tagName+parseFloat(W.getComputedStyle(e).fontSize)).slice(0,3).join(','));
+  const first=b.querySelector('nav[aria-label="Breadcrumb"] a');first.focus();const ev2=new W.MouseEvent('click',{bubbles:true,cancelable:true});first.dispatchEvent(ev2);ok('kbGuard',d.activeElement===first&&ev2.defaultPrevented);
+  const top=de.scrollWidth===de.clientWidth;await settleEnd(W,de,b);const end=de.scrollWidth===de.clientWidth;let footer=null;for(let k=0;k<40&&!footer;k++){footer=[...b.querySelectorAll('footer')].filter(x=>x.getBoundingClientRect().height>0).pop();if(!footer)await sleep(250);}const fbDoc=footer?Math.round(footer.getBoundingClientRect().bottom+W.scrollY-de.scrollHeight):NaN;const inner=isM?de.querySelector('[data-screen-label]'):null;ok('contain',top&&end&&(!inner||inner.scrollWidth<=inner.clientWidth+.5),de.scrollWidth+'/'+de.clientWidth);ok('footerEnd',footer&&Math.abs(fbDoc)<=1,'Δ'+fbDoc+' footers='+b.querySelectorAll('footer').length+' sameDoc='+(fr.contentDocument===d)+' liveFooters='+fr.contentDocument.querySelectorAll('footer').length+' href='+fr.contentWindow.location.search.slice(0,40)+' modalOpen='+!!main.querySelector('#ktahv-oc-previewModal')+' sh='+de.scrollHeight);
+  out.push(R.slug+' '+(isM?'M':'D')+w+' '+(F.length?F.join(' '):'PASS'));pre.textContent=out.join('\n');}}
+ window.scrollTo(0,0);pre.textContent='DONE '+R.slug+' '+out.filter(l=>l.endsWith('PASS')).length+'/'+out.length+'\n'+out.join('\n');window.__qa=(window.__qa||[]).concat(out);return out;};
+window.runAll=async function(){window.__qa=[];const all=[];for(const r of window.AHV_ENQUIRY.routes){all.push(...await runRoute(r.slug));}window.scrollTo(0,0);document.getElementById('out').textContent='ALL DONE '+all.filter(l=>l.endsWith('PASS')).length+'/'+all.length+' PASS\n'+all.join('\n');return all;};
+if(location.hash==='#all')runAll();else if(location.hash.length>1)runRoute(location.hash.slice(1));
+</script></body></html>
