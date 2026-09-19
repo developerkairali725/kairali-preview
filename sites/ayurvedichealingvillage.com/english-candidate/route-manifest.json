@@ -2217,7 +2217,8 @@
     "ogDescription": "Kairali Ayurvedic Group provides an introduction to the Ayurvedic dosha system, including Vata, Pitta, Kapha and offers retreat programs, Ayurvedic massage and training in Kerala.",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
     "ogType": "article"
-   }
+   },
+   "sitemapExclude": false
   },
   {
    "path": "/learn-more-about-ayurveda/",
@@ -2652,12 +2653,15 @@
    "metadata": {
     "title": "Senior Citizen Wellness Offer – Up to 20% Off at Kairali",
     "description": "Enjoy up to 20% off Ayurvedic wellness packages at Kairali. Rejuvenate with tailored therapies, yoga, and holistic healing in a serene retreat.",
-    "canonical": null,
+    "canonical": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/",
     "ogTitle": null,
     "ogDescription": null,
     "ogImage": null,
     "ogType": null
-   }
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/",
+   "duplicateNote": "93% identical to the senior citizen offer, which earns 236 clicks while this earns 0"
   },
   {
    "path": "/offers/olympics-and-paralympics-offer/",
@@ -2864,12 +2868,15 @@
    "metadata": {
     "title": "Our Story - Ayurvedic Healing Village",
     "description": "",
-    "canonical": "https://ayurvedichealingvillage.com/our-story/",
+    "canonical": "https://ayurvedichealingvillage.com/about-us/",
     "ogTitle": "Our Story",
     "ogDescription": "“I found true joy there, and remembered my reason for living.” Live &amp; Breathe Goodness with Kairali Ayurvedic Village &#8211; Personalised Wellness Formula Kairali Ayurvedic Group’s flagship ayurvedic destination, Kairali-The Ayurvedic Healing Village, Palakkad, Kerala is one-of-its-kind of a holistic space, which heals you internally and externally with traditional and authentic Ayurvedic therapies, treatments and [&hellip;]",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
     "ogType": "article"
-   }
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/about-us/",
+   "duplicateNote": "96% identical to /about-us/"
   },
   {
    "path": "/our-villas/",
@@ -2959,12 +2966,15 @@
    "metadata": {
     "title": "Panchakarma Therapy | Luxury Ayurvedic Detox & Rejuvenation",
     "description": "Experience the transformative power of Panchakarma at Kairali’s luxury Ayurvedic retreat. This ancient detox therapy balances the doshas, purifies the body, and enhances overall well-being with herbal treatments, oil massages, and holistic healing in Kerala.",
-    "canonical": null,
+    "canonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
     "ogTitle": "Panchkarma",
     "ogDescription": "Experience the transformative power of Panchakarma at Kairali’s luxury Ayurvedic retreat. This ancient detox therapy balances the doshas, purifies the body, and enhances overall well-being with herbal treatments, oil massages, and holistic healing in Kerala.",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/panchkarma.webp",
     "ogType": "article"
-   }
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
+   "duplicateNote": "thin 5k-char legacy page on the same subject as the 26k programme page"
   },
   {
    "path": "/panchkarma-treatment.html",
@@ -3340,12 +3350,15 @@
    "metadata": {
     "title": "Yoga retreats for everyone",
     "description": "This section deals with the benefits and implications of living in a yoga retreat.",
-    "canonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+    "canonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
     "ogTitle": "Revitalizing and Strengthening Treatment for Cancer Patients",
     "ogDescription": "This section deals with the benefits and implications of living in a yoga retreat.",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
     "ogType": "article"
-   }
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
+   "duplicateNote": "same subject as the programme page but a thin 6k-char legacy version against 27k; consolidate the signal"
   },
   {
    "path": "/revitalizing-and-strengthening/",
@@ -3452,8 +3465,8 @@
    "dataset": "assets/utility7-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
-    "title": "Kairali's Special Ayurveda Discount Offers, Coupons and Gift Vouchers",
-    "description": "treatment offers, special offers today, special offers, ayurvedic festival, ayurveda offers, Kairali offers, ayurvedic healing offer, ayurvedic retreat offer, ayurveda best offers, ayurveda coupon, ayurvedic promo codes, ayurveda discounts, discount and offer, ayurveda discount coupon, discount promo code, cashback, deal, giftcard,",
+    "title": "Site Map | Kairali - The Ayurvedic Healing Village",
+    "description": "Every page on the Kairali - The Ayurvedic Healing Village website, grouped by section.",
     "canonical": "https://ayurvedichealingvillage.com/sitemap/",
     "ogTitle": "Sitemap",
     "ogDescription": "treatment offers, special offers today, special offers, ayurvedic festival, ayurveda offers, Kairali offers, ayurvedic healing offer, ayurvedic retreat offer, ayurveda best offers, ayurveda coupon, ayurvedic promo codes, ayurveda discounts, discount and offer, ayurveda discount coupon, discount promo code, cashback, deal, giftcard,",
