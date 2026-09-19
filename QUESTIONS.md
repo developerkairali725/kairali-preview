@@ -1074,3 +1074,59 @@ measurable — 0 clicks — and would have to be undone. Doing nothing costs not
 
 The only thing that would change my answer: if FR is not shipping at all, in which case 301 it to
 `/apply-now/` with the other twelve and be done. **That is the actual question — is FR still coming?**
+
+## Q-AHV-ENQUIRY-ENDPOINT — 2026-09-19 19:12:44 IST
+**Where do the enquiry forms actually send?** Measured across the rebuild: no enquiry form
+has a working endpoint. `/contact-us/` and `/online-consultation/` validate every required
+field and then have nowhere to post. `/ayurveda-retreat-kerala.html` and
+`/treatment-in-kerala.html` still post to `https://ayurvedichealingvillage.com/submitContactForm.php`
+— the live WordPress host — while displaying "Design review prototype — nothing is submitted".
+Eight sitemap routes carry that disclaimer. Same gap as item 7 of the long-form advertising
+handover. Launch blocker. Evidence: docs/reports/2026-09-19-ahv-deepu-review-reconciled.md.
+
+## Q-AHV-SEARCH-CONTROL — 2026-09-19 19:12:44 IST
+**Build search, or remove the icon?** The header search control is
+`<a href="#search" aria-label="Search">`; there is no `#search` target and no search input
+anywhere in the document. Deepu reported it; it is confirmed. Shipping a dead control is the
+one option that is not defensible.
+
+## Q-AHV-LANGUAGE-SWITCHER — 2026-09-19 19:12:44 IST
+**The `EN ▾` pill advertises DE and FR and has no menu.** No `aria-haspopup`, no submenu
+nodes, `href="/"`. Remove the caret until the locales exist, or wire it. Related: the open
+question on whether FR is still coming.
+
+## Q-AHV-ORPHAN-LEGACY-PAGES — 2026-09-19 19:12:44 IST
+**Two live indexable pages have no fate assigned** (BUILD DECISION MATRIX §2 — build, merge
+or 301). `/karkidaka-chikitsha-or-monsoon-wellness.html` (live 200, index,follow, canonical
+points at a URL that 404s) and `/deaddiction-treatment-program.html` (live 200, titled
+"**Luxury** Ayurvedic Deaddiction Treatment at Kairali" — banned word, live today, clinical
+page, needs Dr. Deepu John). Neither is in the live XML sitemap; neither is in the rebuild.
+A near-sibling is already built: `/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/`.
+
+## Q-AHV-MAPS-IFRAME — 2026-09-19 19:12:44 IST
+**Deepu asks for live `<iframe>` maps on the attractions and contact pages.** Three things
+collide: the 252-route sweep fails any state containing an iframe; an embedded Google Map
+sets third-party cookies before consent and HARD GATE 11 forbids changing consent logic;
+`tools/repair-how-to-reach-maps.mjs` already exists and chose a static map that links out.
+Static map, or a real embed behind the consent gate?
+
+## Q-AHV-FORM-ROW-LAYOUT — 2026-09-19 19:12:44 IST
+**Does Deepu's form-layout request carry the owner's authority?** He asks for email and phone
+in the same row, in the first row. MODE A says the supplied design is the authority and the
+agent does not restyle it; Deepu is the web developer, not the designer. Same question applies
+to "header should have a contact option" (confirmed — the header's only action is Book Your
+Stay, which leaves the site).
+
+## Q-AHV-STRUCTURED-DATA — 2026-09-19 19:12:44 IST
+**Zero of the 252 rebuilt routes emit any `ld+json`.** The only structured data in the
+codebase is in `app/(lp)/_components/lp.tsx`, the landing-page lane, which none of these
+routes use. Surfaced twice today — the long-form handover flags a wrong `@graph` on
+`/wellness-resort-kerala.html`, and the page in this repo has no JSON-LD at all. Schema for
+252 routes is a design decision, not a repair.
+
+## Q-AHV-CONTACT-ADDRESSES — 2026-09-19 19:12:44 IST
+**Do `partners@ayurvedichealingvillage.com` and `press@ayurvedichealingvillage.com` exist?**
+Both are on `/contact-us/`, against the locked fact "public contact email everywhere:
+info@kairali.com". Same class as the open `career@kairali.com` question. Also on that page:
+the same phone number in two `tel:` formats (`+91-9555156156` ×2, `+919555156156` ×16), and a
+third number `+91-9555-156-156` in the `/panchkarma-treatment.html` header.
