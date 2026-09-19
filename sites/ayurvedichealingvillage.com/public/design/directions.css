@@ -127,3 +127,57 @@
 [data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { margin-bottom:22px !important; }
 [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] { border-top:0 !important; padding-top:0 !important; margin-top:0 !important; }
 [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > *:first-child, [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > div:first-child > *:first-child { margin-top:0 !important; }
+
+/* ---- the four maps ----------------------------------------------------- */
+/* Injected into the shared article template by tools/repair-how-to-reach-maps.mjs
+   and hidden everywhere by default, because 129 routes share that template.
+   Only this page shows them. */
+[data-ahv-maps] { display:none !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] { display:block !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] h2 {
+  font-family:Marcellus,Georgia,serif !important; font-weight:400 !important;
+  font-size:clamp(24px,2.2vw,30px) !important; color:#2A2118 !important;
+  margin:52px 0 10px !important; padding-top:18px !important;
+  border-top:1px solid #E4DCC8 !important;
+}
+/* The shared article template makes its first image a full-bleed hero and
+   the page's own rules size images too. Inside the maps grid neither applies:
+   each map is one cell, or every map paints 1280px wide and the page scrolls
+   sideways - measured. */
+/* SPECIFICITY, learned by measuring: the article template makes the page's
+   first image a full-bleed hero -
+     [data-ahv-family="article-reader"] main img:first-of-type   = (0,2,2)
+   and on this page the first image is the first MAP, so it painted 1280px
+   wide with a -435px left margin and the page scrolled sideways. Both rules
+   carry !important, so specificity decides. Chaining the two root attributes
+   here gives (0,3,1) and these win.
+
+   boot.ts tags containers on this page for the bands-and-cards layout and
+   re-lays them out, which was overriding the inline grid and painting each
+   map at the full 1280px. Pin the grid here so it wins. */
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:26px !important; align-items:end !important;
+  width:100% !important; max-width:100% !important; margin:22px 0 30px !important;
+  float:none !important;
+}
+@media (max-width:699px) {
+  [data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+    grid-template-columns:1fr !important;
+  }
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figure {
+  margin:0 !important; width:100% !important; max-width:100% !important; min-width:0 !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] img {
+  width:100% !important; max-width:100% !important;
+  margin-left:0 !important; border-radius:0 !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img {
+  height:auto !important; border-radius:4px !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption { margin-bottom:0 !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] p {
+  font-size:17.5px !important; line-height:1.72 !important; color:#2A2118 !important; max-width:66ch !important;
+}

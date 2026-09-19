@@ -58,3 +58,79 @@
   color:var(--brown) !important; text-decoration:none !important;
   font-weight:700 !important; font-size:15px !important;
 }
+
+/* =======================================================================
+   THE CAMPAIGN PAGES AS A TEMPLATE (added 2026-09-19).
+   Owner: the Air India tie-up page has "two Kairali logos on top", its
+   design and spacing are wrong, and the family retreat's "design, colour
+   scheme, and everything are wrong".
+
+   Measured at 1280px before this:
+     · the shared site header carries the Kairali logo at y22 - correct, it
+       is the site chrome. Two of these pages then print a SECOND Kairali
+       logo inside main, in their own page nav: y107 on the Air India page
+       and y165 on the family page. That is the doubled mark.
+     · the family page's promo bar is rgb(15,87,55), which is not the brand
+       green rgb(0,96,56), and its phone number is set in a dark colour on
+       that dark bar - effectively unreadable.
+     · the hero is a flat brown block 1,028-1,036px tall with no image at
+       all, so the short text column leaves half a screen of empty brown.
+   ======================================================================= */
+
+/* ---- one Kairali mark, not two ---------------------------------------- */
+/* The site header already brands the page. A partner lockup keeps its
+   PARTNER logo - only the duplicated Kairali half goes. */
+[data-ahv-family="campaign-retreat"] main img[src*="AHV-V3-kairali-logo"],
+[data-ahv-family="campaign-retreat"] main img[src$="/logo.svg"],
+[data-ahv-family="campaign-nine"] main img[src*="AHV-V3-kairali-logo"] {
+  display:none !important;
+}
+
+/* ---- the promo bar: brand green, readable text ------------------------ */
+[data-ahv-family="campaign-retreat"] [style*="rgb(15, 87, 55)"],
+[data-ahv-family="campaign-retreat"] [style*="#0F5737"],
+[data-ahv-family="campaign-retreat"] [style*="#0f5737"] {
+  background:#006038 !important;
+}
+/* Anything sitting on the green bar reads in paper, including the phone
+   link, which was dark-on-dark. */
+[data-ahv-family="campaign-retreat"] [style*="rgb(15, 87, 55)"] *,
+[data-ahv-family="campaign-retreat"] [style*="#0F5737"] *,
+[data-ahv-family="campaign-retreat"] [style*="#0f5737"] * {
+  color:#F7F4EA !important;
+  border-color:rgba(247,244,234,.42) !important;
+}
+
+/* ---- the hero: a photograph, not a brown rectangle -------------------- */
+/* One image for the family, so the template has a sane default; the Air
+   India tie-up takes the garden pathway, which suits a partnership page.
+   A dark wash keeps the overlaid text at full contrast. */
+[data-ahv-family="campaign-retreat"] main section:first-of-type {
+  background-image:linear-gradient(rgba(42,33,24,.74),rgba(42,33,24,.80)),url(/ahv/assets/img/wx-pathway.jpg) !important;
+  background-size:cover !important;
+  background-position:center 45% !important;
+  background-repeat:no-repeat !important;
+}
+[data-ahv-route="/family-ayurvedic-retreat-kerala.html"] main section:first-of-type {
+  background-image:linear-gradient(rgba(42,33,24,.74),rgba(42,33,24,.80)),url(/ahv/assets/img/AHV-V2-hero_img.jpg) !important;
+}
+
+/* ---- spacing and the button voice ------------------------------------- */
+[data-ahv-family="campaign-retreat"] main h1 {
+  font-family:Marcellus,Georgia,serif !important;
+  line-height:1.14 !important;
+  text-wrap:balance !important;
+  max-width:20ch !important;
+}
+/* The house button: uppercase, tracked, 52px. The campaign pages set their
+   own sentence-case labels at arbitrary heights. */
+[data-ahv-family="campaign-retreat"] main a[style*="background:#EEB41E"],
+[data-ahv-family="campaign-retreat"] main a[style*="background: rgb(238, 180, 30)"] {
+  min-height:52px !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  padding:0 30px !important;
+  font-family:Mulish,system-ui,sans-serif !important;
+  font-weight:700 !important; font-size:14px !important;
+  letter-spacing:1.5px !important; text-transform:uppercase !important;
+  border-radius:4px !important;
+}
