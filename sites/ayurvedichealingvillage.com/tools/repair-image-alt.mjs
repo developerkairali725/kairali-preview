@@ -116,8 +116,14 @@ for (const f of fs.readdirSync(path.join(SITE, "public/ahv/assets"))) {
     const a = jsonEsc(alt);
     const before = out;
     for (const key of ["src", "file"]) {
-      out = out.replace(new RegExp('("' + key + '":"' + s + '"[^}]{0,400}?"alt":)""', "g"), '$1"' + a + '"');
-      out = out.replace(new RegExp('("alt":)""([^}]{0,400}?"' + key + '":"' + s + '")', "g"), '$1"' + a + '"$2');
+      // The window used to be [^}]{0,400}, which stops at the FIRST closing
+      // brace — so an entry carrying a nested object, e.g.
+      // "placement":{"type":"hero"}, hid its own "alt":"" from this tool. The
+      // guard is now "do not cross into ANOTHER image": braces are allowed,
+      // a second src/file key is not.
+      const within = '(?:(?!"(?:src|file)":)[\\s\\S]){0,400}?';
+      out = out.replace(new RegExp('("' + key + '":"' + s + '"' + within + '"alt":)""', "g"), '$1"' + a + '"');
+      out = out.replace(new RegExp('("alt":)""(' + within + '"' + key + '":"' + s + '")', "g"), '$1"' + a + '"$2');
     }
     // Count the alt fields this pass actually FILLED, not every occurrence of
     // the text in the file: the old form re-counted alts that were already
