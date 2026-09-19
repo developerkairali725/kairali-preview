@@ -1,0 +1,60 @@
+/* AHV — the two legacy campaign families (15 routes).
+ *
+ * WHY THESE MATTER. 987 clicks and 616,098 impressions over 16 months.
+ * /ayurveda-retreat-kerala.html alone carries 241k impressions and
+ * /wellness-resort-kerala.html 184k. They are ranking assets, not dead pages.
+ *
+ * WHAT IS ACTUALLY WRONG WITH THEM. Measured, not assumed. They are ALREADY on
+ * the site's design system: Mulish and Marcellus, the same paper ground
+ * #F7F4EA, the same ink #2A2118, the same h1 sizes, no horizontal overflow at
+ * either width. The audit called both families major-drift and a rebuild was
+ * approved on that basis; the measurement does not support a rebuild and one
+ * would put those impressions at risk for cosmetic gain.
+ *
+ * The one real defect is the call to action. On campaign-nine all 56 CTA
+ * links render as 37px plain text where the benchmark uses a 52px filled
+ * button: the homepage paints 40 solid buttons, campaign-nine paints one.
+ * "Book My Treatment" on a page with six figures of impressions should not
+ * look like body copy. This file gives them the benchmark's button.
+ *
+ * NOT FIXED HERE, because it is not a styling question: 43 of those CTAs
+ * point at "/" — the homepage — rather than an enquiry form. Restyling them
+ * would make a wrong destination look more clickable, so the destination is
+ * the owner's call and the rule below deliberately does not match href="/".
+ * Once the destinations are corrected these rules pick them up automatically.
+ *
+ * SCOPE. Nested under the two campaign families, so no other template can be
+ * reached. Tokens are the homepage's own. */
+
+[data-ahv-family="campaign-nine"], [data-ahv-family="campaign-retreat"] {
+  --ink:#2A2118; --gold-btn:#EEB41E; --brown:#5A4420; --green:#006038;
+}
+
+/* Primary: the actions that lead to a real enquiry. */
+[data-ahv-family="campaign-nine"] main a[href="/enquiry-form/"],
+[data-ahv-family="campaign-nine"] main a[href="/online-consultation/"],
+[data-ahv-family="campaign-nine"] main a[href*="bookings."],
+[data-ahv-family="campaign-retreat"] main a[href="/enquiry-form/"],
+[data-ahv-family="campaign-retreat"] main a[href="/online-consultation/"],
+[data-ahv-family="campaign-retreat"] main a[href*="bookings."] {
+  box-sizing:border-box !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  min-height:52px !important; padding:0 30px !important; max-width:100% !important;
+  background:var(--gold-btn) !important; color:var(--ink) !important;
+  border-radius:4px !important; text-decoration:none !important;
+  font-family:Mulish,system-ui,sans-serif !important; font-weight:700 !important;
+  font-size:14px !important; letter-spacing:1.5px !important; text-transform:uppercase !important;
+}
+
+/* Secondary: calling the hospital. An outline button, and a real tap target. */
+[data-ahv-family="campaign-nine"] main a[href^="tel:"],
+[data-ahv-family="campaign-retreat"] main a[href^="tel:"],
+[data-ahv-family="campaign-nine"] main a[href*="wa.me"],
+[data-ahv-family="campaign-retreat"] main a[href*="wa.me"] {
+  box-sizing:border-box !important;
+  display:inline-flex !important; align-items:center !important; gap:8px !important;
+  min-height:44px !important; padding:0 18px !important; max-width:100% !important;
+  border:1.5px solid var(--brown) !important; border-radius:4px !important;
+  color:var(--brown) !important; text-decoration:none !important;
+  font-weight:700 !important; font-size:15px !important;
+}

@@ -59,6 +59,7 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             cannot erase it. */}
         <link rel="stylesheet" href="/design/directions.css" />
         <link rel="stylesheet" href="/design/article-reader.css" />
+        <link rel="stylesheet" href="/design/campaign.css" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
