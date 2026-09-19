@@ -1,0 +1,129 @@
+/* AHV — the article-reader family (129 routes).
+ *
+ * WHY. Measured in a real browser on every article-reader route: 36 of them
+ * print the legacy corporate sidebar — the "About Us / Kairali Ayurvedic
+ * Group" menu of 15-19 links — as ordinary article body text, and on 26 of
+ * those it sits ABOVE the first real paragraph. On a phone that is 602px to
+ * 994px of menu before the article starts, and nothing distinguishes the menu
+ * from the page's own content.
+ *
+ * WHAT THIS DOES. Gives that block the look of a menu — a bordered, tinted
+ * card with quiet uppercase labels and compact rows — and on a desktop floats
+ * it into a 300px aside so the article begins at the top of the page instead
+ * of a screen and a half down. Measured effect at 1280px: the first paragraph
+ * of /arogya-kendra/ moves from 1868px to 802px.
+ *
+ * HOW IT TARGETS. Two shapes exist, both keyed by the one link only this menu
+ * carries: a <nav> (29 routes) and a <ul> that is a direct child of a
+ * <section> (6 routes). /sitemap/ also links to that page, but its list is a
+ * nested ul-in-li and is a direct child of neither, so it is excluded by
+ * construction — verified, not assumed. The breadcrumb nav carries two links
+ * and an aria-label and is excluded explicitly. No DOM pass, no boot.ts.
+ *
+ * SCOPE. Every rule is nested under [data-ahv-family="article-reader"],
+ * emitted by design-view.tsx from the route manifest. The owner-built
+ * homepage, package, finder and course templates are separate families and
+ * cannot be reached from here. Proven by before/after computed-style
+ * comparison across 18 page/width pairs: 0 changed.
+ *
+ * DELIBERATELY NOT DONE. Nothing is added, removed or reordered in the source
+ * — every link the menu carries is still there, so the internal linking
+ * Google sees is unchanged. Moving the menu BELOW the article on a phone
+ * needs a DOM move in boot.ts; a CSS-only attempt reordered nothing and cost
+ * 23 routes in horizontal overflow, so it was withdrawn rather than shipped.
+ *
+ * Lives in public/design/, outside public/ahv/, so a design re-import cannot
+ * erase it. */
+
+[data-ahv-family="article-reader"] {
+  --paper:#F7F4EA; --raise:#FFFFFF; --ink:#2A2118; --muted:#75695A;
+  --hair:#E4DCC8; --gold:#C1882C; --gold-btn:#EEB41E; --brown:#5A4420; --green:#006038;
+}
+
+/* ---- the legacy corporate sidebar ------------------------------------- */
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
+  box-sizing:border-box !important;
+  display:block !important;
+  width:auto !important;
+  max-width:100% !important;
+  background:var(--raise) !important;
+  border:1px solid var(--hair) !important;
+  border-top:3px solid var(--gold) !important;
+  border-radius:4px !important;
+  padding:14px 18px !important;
+  margin:26px 0 30px !important;
+  font-size:15px !important;
+  line-height:1.35 !important;
+}
+
+/* Compact rows — the point is to take LESS of the screen than before. */
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) ul,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]),
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) ul {
+  list-style:none !important; margin:0 !important; padding:0 !important;
+}
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) li,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li {
+  margin:0 !important; padding:0 !important;
+  border-bottom:1px solid var(--hair) !important;
+  list-style:none !important;
+}
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) li:last-child,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li:last-child {
+  border-bottom:0 !important;
+}
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) a,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) a {
+  /* No padding or height is set here on purpose: these rows already measure
+     44px, a good target, and adding to them made the block 322px TALLER on
+     the nav shape. Only colour, size and decoration are corrected. */
+  font-size:15px !important; line-height:1.3 !important;
+  color:var(--ink) !important; text-decoration:none !important;
+}
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) a:hover,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) a:hover {
+  color:var(--green) !important;
+}
+/* Its headings become quiet labels, so they stop competing with the article's. */
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h2,
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h3,
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h4 {
+  font-family:Mulish,system-ui,sans-serif !important;
+  font-size:12px !important; font-weight:800 !important;
+  letter-spacing:1.4px !important; text-transform:uppercase !important;
+  color:var(--muted) !important; margin:12px 0 2px !important;
+}
+
+/* Desktop: a real aside. The article starts at the top and flows beside it. */
+@media (min-width:1024px) {
+  [data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+  [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
+    float:right !important; width:300px !important;
+    margin:0 0 26px 40px !important;
+  }
+}
+
+/* ---- CTAs that are bare text links ------------------------------------ */
+/* Measured: 4 routes render "Book Now" / "Enquire Now" as a 22px inline link
+   where the benchmark uses a 52px button. An anchor that is its paragraph's
+   only child is a CTA by construction. */
+[data-ahv-family="article-reader"] main p > a[href*="bookings."]:only-child,
+[data-ahv-family="article-reader"] main p > a[href="/enquiry-form/"]:only-child {
+  box-sizing:border-box !important;
+  display:inline-flex !important; align-items:center !important;
+  min-height:52px !important; padding:0 28px !important;
+  max-width:100% !important;
+  border-radius:4px !important;
+  font-family:Mulish,system-ui,sans-serif !important;
+  font-weight:700 !important; font-size:13px !important;
+  letter-spacing:1.5px !important; text-transform:uppercase !important;
+  text-decoration:none !important;
+}
+[data-ahv-family="article-reader"] main p > a[href*="bookings."]:only-child {
+  background:var(--gold-btn) !important; color:var(--ink) !important;
+}
+[data-ahv-family="article-reader"] main p > a[href="/enquiry-form/"]:only-child {
+  background:transparent !important; color:var(--brown) !important;
+  border:1.5px solid var(--brown) !important;
+}

@@ -87,6 +87,13 @@ export function DesignView({ route }: { route: CandidateRoute }) {
   // a desktop viewport from painting it (see the layout's third style rule).
   const snapshot = prerenderedBody(route.path);
   const cfg = buildBootConfig(route);
+  // The view family, as a styling scope. Template-level corrections live in
+  // public/design/<family>.css and key on this, so a rule written for one
+  // family can never reach another — the owner-built homepage, package,
+  // finder and course templates are each their own family.
+  const family = (route.desktopView ?? route.mobileView ?? "")
+    .replace(/^ahv-page-/, "")
+    .replace(/-(desktop|mobile)$/, "");
   const narrowMedia = `(max-width: ${BREAKPOINT - 1}px)`;
   const wideMedia = `(min-width: ${BREAKPOINT}px)`;
 
@@ -124,6 +131,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
       <div
         id={DESIGN_ROOT_ID}
         data-ahv-route={route.path}
+        data-ahv-family={family || undefined}
         data-ahv-snapshot-state={snapshot ? "held" : undefined}
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: snapshot }}

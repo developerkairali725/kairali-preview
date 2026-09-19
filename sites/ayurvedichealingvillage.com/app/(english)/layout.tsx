@@ -58,6 +58,7 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             Lives in public/design/, outside public/ahv/, so a design re-import
             cannot erase it. */}
         <link rel="stylesheet" href="/design/directions.css" />
+        <link rel="stylesheet" href="/design/article-reader.css" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
