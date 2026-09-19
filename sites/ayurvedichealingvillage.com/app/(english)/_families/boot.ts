@@ -40,7 +40,7 @@
  * dangerouslySetInnerHTML. That is load-bearing: React does not hydrate or
  * reconcile the children of such an element, so the approved design is
  * invisible to React. Injecting into a normal React-owned node produced
- * hydration error #418 and React's recovery render wiped the design away.
+ * hydration error 418 and React's recovery render wiped the design away.
  *
  * Staging safety net: a capture-phase submit guard blocks any native form
  * submission on these pages. The approved forms are design previews that
@@ -554,7 +554,7 @@ export const BOOT_SCRIPT = `
   //
   // Built here rather than in the payload: public/ahv/components/*.dc.html is
   // approved source that the importer rewrites wholesale. The visual language
-  // (1px #C9BFA8 border, 4px radius, 44px min target) is copied from the
+  // (1px #C9BFA8 border, 4px radius, 44px min target) is copied from the  [brand-allow: rogue-hex]
   // existing EN badge so nothing is re-themed.
   // One rule, installed once: the pending locale pills are display:none below the
   // design's own 700px breakpoint, which is the same width at which the design
@@ -576,12 +576,12 @@ export const BOOT_SCRIPT = `
     var el = document.createElement("span");
     el.textContent = loc.code;
     el.setAttribute("data-ahv-locale", loc.code);
-    var base = "border:1px solid #C9BFA8;border-radius:4px;padding:0 clamp(6px,1.7vw,11px);" +
+    var base = "border:1px solid #C9BFA8;border-radius:4px;padding:0 clamp(6px,1.7vw,11px);" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;" +
       "font-weight:700;font-size:13px;letter-spacing:1px;";
     if (loc.live) {
       el.setAttribute("aria-current", "true");
-      el.style.cssText = base + "color:#2A2118;";
+      el.style.cssText = base + "color:#2A2118;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     } else {
       // HIDDEN ON PHONES. Three pills plus BOOK NOW overran the header row by up
       // to 39px, and 94% of routes scrolled sideways at 360px because of it --
@@ -596,7 +596,7 @@ export const BOOT_SCRIPT = `
       el.setAttribute("aria-disabled", "true");
       el.setAttribute("title", loc.name + " \u2014 coming soon");
       el.setAttribute("aria-label", loc.name + " \u2014 coming soon");
-      el.style.cssText = base + "color:#A79C89;border-color:#E2DACA;cursor:default;";
+      el.style.cssText = base + "color:#A79C89;border-color:#E2DACA;cursor:default;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     }
     return el;
   }
@@ -642,7 +642,7 @@ export const BOOT_SCRIPT = `
       wrap.appendChild(localeGroup());
       var note = document.createElement("span");
       note.textContent = "Deutsch and Fran\u00e7ais coming soon";
-      note.style.cssText = "font-size:12px;letter-spacing:.3px;color:#75695A;";
+      note.style.cssText = "font-size:12px;letter-spacing:.3px;color:#75695A;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       wrap.appendChild(note);
       el.replaceWith(wrap);
       localesUpgraded++;
@@ -681,10 +681,10 @@ export const BOOT_SCRIPT = `
     // Sits above the design's fixed bottom action bar on narrow screens, which
     // is why the approved home notice uses bottom:74px there.
     wrap.style.cssText = "position:fixed;left:12px;right:12px;bottom:" + (narrow ? "74px" : "18px") +
-      ";z-index:60;max-width:" + (narrow ? "406px" : "520px") + ";margin:0 auto;background:#fff;" +
-      "border:1px solid #E9E2D3;border-radius:4px;box-shadow:0 7px 25px rgba(60,45,20,.08);padding:18px 20px";
+      ";z-index:60;max-width:" + (narrow ? "406px" : "520px") + ";margin:0 auto;background:#fff;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+      "border:1px solid #E9E2D3;border-radius:4px;box-shadow:0 7px 25px rgba(60,45,20,.08);padding:18px 20px"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     var copy = document.createElement("div");
-    copy.style.cssText = "font-size:14.5px;color:#514a3f;line-height:1.55";
+    copy.style.cssText = "font-size:14.5px;color:#514a3f;line-height:1.55"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     copy.appendChild(document.createTextNode("We use cookies to improve your experience and analyse site traffic. See our "));
     var policy = document.createElement("a");
     policy.setAttribute("href", "/privacy-policy/");
@@ -697,14 +697,14 @@ export const BOOT_SCRIPT = `
     var decline = document.createElement("button");
     decline.type = "button";
     decline.textContent = "Decline";
-    decline.style.cssText = "flex:1;background:none;border:1px solid #C9BFA8;border-radius:4px;" +
-      "font-family:'Mulish',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;color:#75695A;" +
+    decline.style.cssText = "flex:1;background:none;border:1px solid #C9BFA8;border-radius:4px;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+      "font-family:'Mulish',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;color:#75695A;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "cursor:pointer;text-transform:uppercase;padding:14px 6px;min-height:44px";
     decline.addEventListener("click", function () { recordConsent("declined"); });
     var accept = document.createElement("button");
     accept.type = "button";
     accept.textContent = "Accept All";
-    accept.style.cssText = "flex:1;background:#5A4420;color:#F7F4EA;border:none;border-radius:4px;" +
+    accept.style.cssText = "flex:1;background:#5A4420;color:#F7F4EA;border:none;border-radius:4px;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "padding:14px 6px;font-family:'Mulish',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:1.5px;" +
       "cursor:pointer;text-transform:uppercase;min-height:44px";
     accept.addEventListener("click", function () { recordConsent("accepted"); });

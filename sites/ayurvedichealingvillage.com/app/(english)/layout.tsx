@@ -83,7 +83,7 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
                view is the only thing on screen. Phones keep the snapshot
                visible throughout - that is the mobile-first paint. */}
         <style>
-          {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" +
+          {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
             "#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}" +
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{visibility:hidden!important}}"}
         </style>

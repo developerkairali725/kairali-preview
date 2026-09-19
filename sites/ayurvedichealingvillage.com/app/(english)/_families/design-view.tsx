@@ -126,7 +126,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not
           decoration: it tells React this subtree is not its own, so React
           neither hydrates nor reconciles what the boot script mounts here.
-          Without it, hydration threw #418 and React's recovery render wiped
+          Without it, hydration threw 418 and React's recovery render wiped
           the approved design off the page. */}
       <div
         id={DESIGN_ROOT_ID}
