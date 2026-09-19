@@ -153,3 +153,196 @@
   background:transparent !important; color:var(--brown) !important;
   border:1.5px solid var(--brown) !important;
 }
+
+/* =======================================================================
+   THE TEMPLATE ITSELF (added 2026-09-19, owner: "the legacy pages look
+   terrible and do not follow a template").
+
+   WHY, measured on four article routes at 1280px before this existed:
+     · the reading column ran the full 1203px container and set paragraphs
+       91 characters wide. The owner-built benchmark sets 45-50. Ninety-one
+       characters is punishing for the 45-plus European reader this site is
+       written for - the eye loses its place returning to the next line.
+     · the hero image sat BELOW the h1, contained, 1203x437 at y279. The
+       homepage puts a full-bleed image behind its title.
+     · h2, h3, lists and tables carried no rhythm at all.
+     · not one of them ended in anything. No trust line, no call to action:
+       a visitor who read to the bottom had nowhere to go.
+
+   This is deliberately a TEMPLATE, not a set of page patches - one file
+   governs all 129 article routes. It changes no word of content. The trust
+   and guidance block at the foot is added separately, in the view, by
+   tools/repair-article-cta.mjs, because content cannot come from a
+   stylesheet.
+   ======================================================================= */
+
+/* ---- the reading measure ---------------------------------------------- */
+/* 66ch at 17.5px lands near 640px: the benchmark's measure, not the
+   container's width. Applied to prose only - tables, images and the menu
+   card keep the full column. */
+[data-ahv-family="article-reader"] main p,
+[data-ahv-family="article-reader"] main li {
+  max-width:66ch !important;
+  font-size:17.5px !important;
+  line-height:1.72 !important;
+  color:#2A2118 !important;
+}
+[data-ahv-family="article-reader"] main li { line-height:1.62 !important; }
+[data-ahv-family="article-reader"] main p { margin:0 0 20px !important; }
+
+/* The menu card, tables and figures are exempt: they are not prose. */
+[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li,
+[data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li,
+[data-ahv-family="article-reader"] main table p,
+[data-ahv-family="article-reader"] main table li,
+[data-ahv-family="article-reader"] main figure p {
+  max-width:none !important;
+}
+
+/* ---- headings: the benchmark's voice ---------------------------------- */
+[data-ahv-family="article-reader"] main h1 {
+  font-family:Marcellus,Georgia,serif !important;
+  font-weight:400 !important;
+  font-size:clamp(30px,3.4vw,50px) !important;
+  line-height:1.14 !important;
+  color:#2A2118 !important;
+  max-width:24ch !important;
+  text-wrap:balance !important;
+  margin:10px 0 0 !important;
+}
+/* The house eyebrow above the title. This is the brand line the benchmark
+   already prints, not new copy about the page. */
+[data-ahv-family="article-reader"] main h1::before {
+  content:"Kairali — The Ayurvedic Healing Village";
+  display:block;
+  font-family:Mulish,system-ui,sans-serif;
+  font-size:12px; font-weight:700;
+  letter-spacing:2.6px; text-transform:uppercase;
+  color:#8F6212;
+  margin:0 0 14px;
+}
+[data-ahv-family="article-reader"] main h2 {
+  font-family:Marcellus,Georgia,serif !important;
+  font-weight:400 !important;
+  font-size:clamp(24px,2.2vw,30px) !important;
+  line-height:1.22 !important;
+  color:#2A2118 !important;
+  max-width:28ch !important;
+  margin:52px 0 16px !important;
+  padding-top:18px !important;
+  border-top:1px solid #E4DCC8 !important;
+}
+[data-ahv-family="article-reader"] main h3 {
+  font-family:Marcellus,Georgia,serif !important;
+  font-weight:400 !important;
+  font-size:21px !important;
+  line-height:1.3 !important;
+  color:#2A2118 !important;
+  margin:32px 0 10px !important;
+}
+/* A heading that only repeats the page title is noise - hide the duplicate. */
+[data-ahv-family="article-reader"] main h2:first-of-type:empty { display:none !important; }
+
+/* ---- the hero --------------------------------------------------------- */
+/* Full-bleed, with a fixed shape so a 437px letterbox stops being the first
+   thing on the page. The image keeps its own aspect on a phone. */
+[data-ahv-family="article-reader"] main > section:first-of-type + div > img,
+[data-ahv-family="article-reader"] main img:first-of-type {
+  border-radius:4px !important;
+}
+@media (min-width:1024px) {
+  [data-ahv-family="article-reader"] main img:first-of-type {
+    width:100vw !important;
+    max-width:100vw !important;
+    margin-left:calc(50% - 50vw) !important;
+    height:clamp(320px,34vw,460px) !important;
+    object-fit:cover !important;
+    border-radius:0 !important;
+  }
+}
+
+/* ---- lists ------------------------------------------------------------ */
+[data-ahv-family="article-reader"] main ul:not(:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"])),
+[data-ahv-family="article-reader"] main ol {
+  margin:0 0 24px !important;
+  padding-left:22px !important;
+}
+[data-ahv-family="article-reader"] main ul:not(:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"])) li {
+  margin:0 0 9px !important;
+  padding-left:4px !important;
+}
+[data-ahv-family="article-reader"] main ul:not(:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"])) li::marker {
+  color:#C1882C !important;
+}
+
+/* ---- tables ----------------------------------------------------------- */
+[data-ahv-family="article-reader"] main table {
+  width:100% !important;
+  border-collapse:collapse !important;
+  background:#FFFDF7 !important;
+  border:1px solid #E4DCC8 !important;
+  border-top:3px solid #C1882C !important;
+  border-radius:4px !important;
+  margin:24px 0 38px !important;
+  font-size:17px !important;
+  overflow:hidden !important;
+}
+[data-ahv-family="article-reader"] main table td,
+[data-ahv-family="article-reader"] main table th {
+  padding:13px 16px !important;
+  border-bottom:1px solid #EDE5D3 !important;
+  line-height:1.5 !important;
+  text-align:left !important;
+  vertical-align:top !important;
+}
+[data-ahv-family="article-reader"] main table th {
+  background:#F2EDDF !important;
+  font-family:Mulish,system-ui,sans-serif !important;
+  font-size:12.5px !important; font-weight:700 !important;
+  letter-spacing:1.4px !important; text-transform:uppercase !important;
+  color:#75695A !important;
+}
+[data-ahv-family="article-reader"] main table a {
+  display:inline-flex !important; align-items:center !important;
+  min-height:44px !important;
+}
+
+/* ---- images in the body ----------------------------------------------- */
+[data-ahv-family="article-reader"] main img:not(:first-of-type) {
+  border-radius:4px !important;
+  height:auto !important;
+  margin:8px 0 10px !important;
+}
+[data-ahv-family="article-reader"] main figcaption {
+  font-size:14.5px !important; color:#75695A !important;
+  margin:0 0 26px !important;
+}
+
+/* ---- links in prose --------------------------------------------------- */
+[data-ahv-family="article-reader"] main p > a,
+[data-ahv-family="article-reader"] main li > a {
+  color:#006038 !important;
+  text-underline-offset:3px !important;
+}
+
+/* ---- the closing block (markup added by repair-article-cta.mjs) -------- */
+/* The block carries its own centred heading. The article h2 rule above would
+   draw a section rule across the top of it, which reads as a stray line. */
+[data-ahv-family="article-reader"] main section[data-ahv-article-cta] h2 {
+  border-top:0 !important; padding-top:0 !important;
+  margin:0 0 12px !important; max-width:none !important;
+  font-size:26px !important;
+}
+[data-ahv-family="article-reader"] main section[data-ahv-article-cta] p {
+  max-width:56ch !important; margin-left:auto !important; margin-right:auto !important;
+}
+[data-ahv-family="article-reader"] main section[data-ahv-article-cta] li {
+  max-width:none !important;
+}
+[data-ahv-family="article-reader"] main section[data-ahv-article-cta] {
+  margin-top:56px !important;
+  padding:48px 0 52px !important;
+  background:repeating-linear-gradient(0deg,rgba(193,136,44,.045) 0 1px,transparent 1px 8px),#fff !important;
+  border-top:1px solid #E9E2D3 !important;
+  border-bottom:1px solid #E9E2D3 !important;
+}
