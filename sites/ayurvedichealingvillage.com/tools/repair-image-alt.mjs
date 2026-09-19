@@ -35,7 +35,37 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const MAP = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/image-alt-map.json"), "utf8")).alt;
+const RENDERED_ALT = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/image-alt-map.json"), "utf8")).alt;
+
+/**
+ * The map is keyed on the src the BROWSER ends up showing. Two things break a
+ * naive lookup against the payload, and both were measured, not guessed:
+ *
+ *  1. ALIASES. boot.ts rewrites some srcs at runtime from
+ *     english-candidate/image-aliases.json, so the payload says
+ *     ".../travel/5b42479….jpg" while the page shows ".../wx-pathway.jpg" and
+ *     the map is keyed on the latter. 2 occurrences.
+ *  2. A SECOND SHAPE. Reader families do not write {"src":…,"alt":…}; they write
+ *     {"kind":"image","file":"/ahv/assets/img/…","placement":"hero","alt":""}.
+ *     This tool only ever looked at "src", so it was blind to all of them.
+ *     38 occurrences across 5 datasets.
+ *
+ * MAP is therefore keyed by the PAYLOAD src — alias sources folded in — and both
+ * key names are searched below. Nothing else about the contract changes: an alt
+ * is written only where it is currently EMPTY, and existing words are never
+ * overwritten.
+ *
+ * Deliberately NOT used: the `preparedAltPrivate` field sitting beside 16 of
+ * these. It is named private, its provenance is the design tool rather than
+ * someone who looked at the image, and where both exist the map's text is the
+ * fuller one ("A therapist pouring warm herbal powder over a patient during an
+ * Udwarthanam treatment" against "Ayurvedic herbal powder treatment").
+ */
+const ALIASES = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/image-aliases.json"), "utf8"));
+const MAP = { ...RENDERED_ALT };
+for (const [payloadSrc, renderedSrc] of Object.entries(ALIASES)) {
+  if (RENDERED_ALT[renderedSrc] && !MAP[payloadSrc]) MAP[payloadSrc] = RENDERED_ALT[renderedSrc];
+}
 const DRY = process.argv.includes("--dry");
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const jsonEsc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
@@ -85,9 +115,20 @@ for (const f of fs.readdirSync(path.join(SITE, "public/ahv/assets"))) {
     const s = src.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const a = jsonEsc(alt);
     const before = out;
-    out = out.replace(new RegExp('("src":"' + s + '"[^}]{0,400}?"alt":)""', "g"), '$1"' + a + '"');
-    out = out.replace(new RegExp('("alt":)""([^}]{0,400}?"src":"' + s + '")', "g"), '$1"' + a + '"$2');
-    if (out !== before) { unseen.delete(src); n += (out.match(new RegExp('"' + a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + '"', "g")) || []).length; }
+    for (const key of ["src", "file"]) {
+      out = out.replace(new RegExp('("' + key + '":"' + s + '"[^}]{0,400}?"alt":)""', "g"), '$1"' + a + '"');
+      out = out.replace(new RegExp('("alt":)""([^}]{0,400}?"' + key + '":"' + s + '")', "g"), '$1"' + a + '"$2');
+    }
+    // Count the alt fields this pass actually FILLED, not every occurrence of
+    // the text in the file: the old form re-counted alts that were already
+    // written and reported 63 where the true number was 37. A tool that
+    // over-reports its own work is a tool you cannot verify with.
+    if (out !== before) {
+      unseen.delete(src);
+      const emptyBefore = (before.match(/"alt":""/g) || []).length;
+      const emptyAfter = (out.match(/"alt":""/g) || []).length;
+      n += emptyBefore - emptyAfter;
+    }
   }
   if (n && !DRY) fs.writeFileSync(file, out);
   if (n) { files++; dataFields += n; }
