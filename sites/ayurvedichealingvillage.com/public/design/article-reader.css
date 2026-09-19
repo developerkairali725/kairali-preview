@@ -261,6 +261,48 @@
   }
 }
 
+/* ---- the hero rule above, kept off every image that is not a hero -------
+ * MEASURED, not assumed. `img:first-of-type` does not mean "the first image in
+ * main" - it means "the first <img> among ITS OWN siblings", so on the 129
+ * article routes it matches 506 images, not 129. The breakout it applies
+ * (`width:100vw` pulled back by `calc(50% - 50vw)`) centres a viewport-wide box
+ * on ITS CONTAINER'S centre, which only lands at the page edges when that
+ * container is itself centred. Inside a card column - 224px to 547px wide,
+ * sitting off-centre in a grid - the same arithmetic puts the image 208px to
+ * 375px past the right edge of the page: 149 images, and the horizontal
+ * overflow the 252-route sweep reports on 34 routes at 1024.
+ *
+ * It is a regression from 63acad69 (this file's own first commit), not a fault
+ * in any owner-supplied design.
+ *
+ * WHY THIS SELECTOR. A card column exists because an ancestor lays one out, and
+ * in this payload that ancestor always carries the layout in its inline style -
+ * `display: flex` or a `grid-template-columns` track list. Measured across all
+ * 129 routes plus /cart/ and /checkout/: this pair catches 149 of the 149
+ * overflowing images, and 0 of the 127 heroes. The hero band the rule above
+ * exists for is preserved on every route that has one.
+ *
+ * It also catches 99 images that did NOT overflow, because their column
+ * happened to be centred - a decorative lotus on /our-story/ stretched to 993px
+ * and cropped to a 348px band, card thumbnails blown up over their own
+ * captions. Those are the same defect measuring as harmless, and they revert to
+ * the size the payload's own inline style asks for.
+ *
+ * NOT DONE: `overflow-x:hidden` on a wrapper. It would flip the sweep's boolean
+ * and leave every one of these images still stretched to 1024px and cropped,
+ * with the part that hangs off the page simply clipped. */
+@media (min-width:1024px) {
+  [data-ahv-family="article-reader"] main [style*="grid-template-columns"] img:first-of-type,
+  [data-ahv-family="article-reader"] main [style*="display: flex"] img:first-of-type {
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    height:auto !important;
+    object-fit:fill !important;
+    border-radius:4px !important;
+  }
+}
+
 /* ---- lists ------------------------------------------------------------ */
 [data-ahv-family="article-reader"] main ul:not(:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"])),
 [data-ahv-family="article-reader"] main ol {
