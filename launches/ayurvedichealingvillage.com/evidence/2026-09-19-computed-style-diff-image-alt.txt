@@ -1,12 +1,30 @@
-AHV image-alt repair — benchmark-pages computed-style diff
-Run 2026-09-19 IST on commit 48e8d70e, server: next start :4321
-Tool: sites/ayurvedichealingvillage.com/tools/computed-style-diff.mjs
-BEFORE = session-start 8133e50a · AFTER = the alt repair applied
+AHV image-alt repair — benchmark-pages computed-style diff (VALID RUN)
+Run 2026-09-19 IST · commit a8234c06 · server: next start :4321
+Tool: tools/computed-style-diff.mjs (waits on boot.ts's held->released signal)
+BEFORE = the 8 datasets at session-start 8133e50a, swapped in by FILE COPY (git index untouched)
+AFTER  = the alt repair applied
+Swap sanity: BEFORE served 0 occurrences of the new alt, AFTER served 1.
 
-BEFORE state restored (session start)
-before2 captured
-AFTER state restored
-diff exit=0
+TOOL VALIDATED FIRST — three consecutive runs against an UNCHANGED state:
+  run 1: 0 of 16 · run 2: 0 of 16 · run 3: 0 of 16
+  /treatment-programs/@320 stable at 1060 elements in all three
+
+--- the run ---
+captured  320px /  (1279 elements)
+captured 1280px /  (1473 elements)
+captured  320px /packages/  (757 elements)
+captured 1280px /packages/  (756 elements)
+captured  320px /ayurvedic-treatments/  (1233 elements)
+captured 1280px /ayurvedic-treatments/  (1119 elements)
+captured  320px /all-programs/  (1143 elements)
+captured 1280px /all-programs/  (1126 elements)
+captured  320px /treatment-programs/  (1060 elements)
+captured 1280px /treatment-programs/  (973 elements)
+captured  320px /wellness-programs/  (560 elements)
+captured 1280px /wellness-programs/  (539 elements)
+captured  320px /ayurveda-training-programme/  (666 elements)
+captured 1280px /ayurveda-training-programme/  (651 elements)
+captured  320px /one-day-ayurveda-workshop-program-kerala/  (616 elements)
 captured 1280px /one-day-ayurveda-workshop-program-kerala/  (601 elements)
 
 same     /@1280  (1473 elements)
@@ -27,5 +45,3 @@ same     /wellness-programs/@1280  (539 elements)
 same     /wellness-programs/@320  (560 elements)
 
 0 of 16 page/width pairs changed
-
-[exited with code 0]

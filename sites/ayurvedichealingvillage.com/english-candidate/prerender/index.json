@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-19T09:15:04.381Z",
- "base": "http://127.0.0.1:4322",
- "count": 252,
+ "generated": "2026-09-19T11:18:29.222Z",
+ "base": "http://127.0.0.1:4321",
+ "count": 240,
  "failures": 0,
  "routes": [
   {
@@ -555,30 +555,10 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/cart/",
-   "ok": true,
-   "file": "cart.html",
-   "bytes": 52142,
-   "textChars": 802,
-   "imgs": 5,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/checkout/",
-   "ok": true,
-   "file": "checkout.html",
-   "bytes": 52155,
-   "textChars": 815,
-   "imgs": 5,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/chef-retreat-food-to-wellness/",
    "ok": true,
    "file": "chef-retreat-food-to-wellness.html",
-   "bytes": 77855,
+   "bytes": 77940,
    "textChars": 4912,
    "imgs": 10,
    "flattened": 0,
@@ -601,16 +581,6 @@
    "bytes": 81263,
    "textChars": 3952,
    "imgs": 10,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/contact-us-old/",
-   "ok": true,
-   "file": "contact-us-old.html",
-   "bytes": 149864,
-   "textChars": 1666,
-   "imgs": 7,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -745,16 +715,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/enquiry-form-old/",
-   "ok": true,
-   "file": "enquiry-form-old.html",
-   "bytes": 87310,
-   "textChars": 4908,
-   "imgs": 6,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/enquiry-form/",
    "ok": true,
    "file": "enquiry-form.html",
@@ -808,7 +768,7 @@
    "path": "/food-sadhana/",
    "ok": true,
    "file": "food-sadhana.html",
-   "bytes": 83925,
+   "bytes": 84016,
    "textChars": 7298,
    "imgs": 12,
    "flattened": 0,
@@ -828,19 +788,9 @@
    "path": "/gallery/",
    "ok": true,
    "file": "gallery.html",
-   "bytes": 64599,
+   "bytes": 64688,
    "textChars": 1150,
    "imgs": 12,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/gift-test/",
-   "ok": true,
-   "file": "gift-test.html",
-   "bytes": 58057,
-   "textChars": 1077,
-   "imgs": 8,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -858,7 +808,7 @@
    "path": "/givefeedback/",
    "ok": true,
    "file": "givefeedback.html",
-   "bytes": 66069,
+   "bytes": 66231,
    "textChars": 2651,
    "imgs": 12,
    "flattened": 0,
@@ -885,20 +835,10 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/how-to-reach-old/",
-   "ok": true,
-   "file": "how-to-reach-old.html",
-   "bytes": 81001,
-   "textChars": 3065,
-   "imgs": 13,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/how-to-reach/",
    "ok": true,
    "file": "how-to-reach.html",
-   "bytes": 98098,
+   "bytes": 98184,
    "textChars": 9801,
    "imgs": 9,
    "flattened": 0,
@@ -1078,7 +1018,7 @@
    "path": "/karma-being-retreat-2019/",
    "ok": true,
    "file": "karma-being-retreat-2019.html",
-   "bytes": 88419,
+   "bytes": 88510,
    "textChars": 10201,
    "imgs": 13,
    "flattened": 0,
@@ -1088,7 +1028,7 @@
    "path": "/karma-being-retreat/",
    "ok": true,
    "file": "karma-being-retreat.html",
-   "bytes": 75121,
+   "bytes": 75206,
    "textChars": 6620,
    "imgs": 12,
    "flattened": 0,
@@ -1098,7 +1038,7 @@
    "path": "/katha-wellness-retreat-2019/",
    "ok": true,
    "file": "katha-wellness-retreat-2019.html",
-   "bytes": 86050,
+   "bytes": 86141,
    "textChars": 4941,
    "imgs": 13,
    "flattened": 0,
@@ -1118,7 +1058,7 @@
    "path": "/lakshya-yoga-retreat-2017/",
    "ok": true,
    "file": "lakshya-yoga-retreat-2017.html",
-   "bytes": 71419,
+   "bytes": 71504,
    "textChars": 4354,
    "imgs": 10,
    "flattened": 0,
@@ -1128,7 +1068,7 @@
    "path": "/lakshya-yoga-retreat-2018/",
    "ok": true,
    "file": "lakshya-yoga-retreat-2018.html",
-   "bytes": 71875,
+   "bytes": 71960,
    "textChars": 3482,
    "imgs": 12,
    "flattened": 0,
@@ -1138,7 +1078,7 @@
    "path": "/lakshya-yoga-retreat/",
    "ok": true,
    "file": "lakshya-yoga-retreat.html",
-   "bytes": 70086,
+   "bytes": 70177,
    "textChars": 2981,
    "imgs": 9,
    "flattened": 0,
@@ -1265,16 +1205,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/my-account/",
-   "ok": true,
-   "file": "my-account.html",
-   "bytes": 57482,
-   "textChars": 1032,
-   "imgs": 8,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/nature-walk/",
    "ok": true,
    "file": "nature-walk.html",
@@ -1385,16 +1315,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/offers/new/",
-   "ok": true,
-   "file": "offers_new.html",
-   "bytes": 70822,
-   "textChars": 9865,
-   "imgs": 29,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/offers/olympics-and-paralympics-offer/",
    "ok": true,
    "file": "offers_olympics-and-paralympics-offer.html",
@@ -1421,16 +1341,6 @@
    "bytes": 89708,
    "textChars": 5102,
    "imgs": 8,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/online-consultation-old/",
-   "ok": true,
-   "file": "online-consultation-old.html",
-   "bytes": 107769,
-   "textChars": 6893,
-   "imgs": 7,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -1628,7 +1538,7 @@
    "path": "/prav-simona-monsoon-yoga-retreat/",
    "ok": true,
    "file": "prav-simona-monsoon-yoga-retreat.html",
-   "bytes": 84390,
+   "bytes": 84475,
    "textChars": 8776,
    "imgs": 11,
    "flattened": 0,
@@ -1638,7 +1548,7 @@
    "path": "/prav-simona-yoga-retreat/",
    "ok": true,
    "file": "prav-simona-yoga-retreat.html",
-   "bytes": 73681,
+   "bytes": 73766,
    "textChars": 5400,
    "imgs": 11,
    "flattened": 0,
@@ -1718,7 +1628,7 @@
    "path": "/read-feedback/",
    "ok": true,
    "file": "read-feedback.html",
-   "bytes": 63058,
+   "bytes": 63220,
    "textChars": 1614,
    "imgs": 12,
    "flattened": 0,
@@ -1865,40 +1775,10 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/test-page-2/",
-   "ok": true,
-   "file": "test-page-2.html",
-   "bytes": 80544,
-   "textChars": 4293,
-   "imgs": 13,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/test-page/",
-   "ok": true,
-   "file": "test-page.html",
-   "bytes": 58062,
-   "textChars": 1082,
-   "imgs": 8,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/testing/",
-   "ok": true,
-   "file": "testing.html",
-   "bytes": 63658,
-   "textChars": 1318,
-   "imgs": 13,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/thanks-old/",
    "ok": true,
    "file": "thanks-old.html",
-   "bytes": 52688,
+   "bytes": 52873,
    "textChars": 857,
    "imgs": 6,
    "flattened": 0,
