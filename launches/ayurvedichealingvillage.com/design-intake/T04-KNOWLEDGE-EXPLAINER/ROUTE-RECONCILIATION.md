@@ -73,11 +73,30 @@ two contradictory signals is the intended one?"** — because the live site curr
 the noindex is intended, both routes leave the sitemap. If it is not, the noindex goes and they keep
 their sitemap entries. Either way the current state is wrong and has been for some time.
 
+## OWNER RULING, 2026-09-19 — the noindex is a MISTAKE
+
+The owner has ruled: **both pages are live pages, the `noindex` is an error, and both STAY in the XML
+sitemap.** The content will be fixed later. So of the two contradicting signals the live site asserts,
+the sitemap entry is the correct one and the `noindex` is the defect.
+
+Recorded honestly: I first applied `sitemapExclude` to both on the opposite reading of the same
+instruction, and reversed it when the owner clarified. Both are back in the sitemap, and
+`route-overrides.json` carries a `robotsNote` on each saying why.
+
+**The good news, checked rather than assumed: the mistake does not propagate.** The rebuilt site
+emits **no per-route `robots` meta at all** — the staging lock is `robots.txt Disallow: /` alone,
+which lifts with `AHV_STAGING=0`. Title and `og:title` are served server-side. So at the DNS flip
+these two pages become indexable, without anyone having to undo the live `noindex` first; the
+WordPress fix is tidy-up on a site that is being replaced, not a blocker.
+
+What still needs doing on the live site is the owner's own follow-up: the `noindex` should come off
+`/learn-about-ayurveda/` and `/retreats-for-everyone/` there too, so Search Console stops reporting
+the conflict in the meantime. That is a WordPress change and therefore Deepu's lane, not the agent's.
+
 ## What to change before building
 
-1. Set `sitemapExclude` on `/learn-about-ayurveda/` in `english-candidate/route-overrides.json`, so
-   the built sitemap matches what live actually serves. **Pending the owner's answer to (b)** — if
-   the noindex was accidental, do the opposite.
+1. ~~Set `sitemapExclude` on `/learn-about-ayurveda/`~~ — **superseded by the ruling above.** Both
+   routes stay in the sitemap; `sitemapExclude: false` is explicit on both, with a `robotsNote`.
 2. Leave `/retreats-for-everyone/` alone until the owner confirms the 301 direction the evidence
    points at.
 3. Nothing else. Group A is clean.

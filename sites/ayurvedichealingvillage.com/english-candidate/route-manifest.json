@@ -2218,7 +2218,9 @@
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
     "ogType": "article"
    },
-   "sitemapExclude": false
+   "sitemapExclude": false,
+   "sitemapExcludeReason": "live serves robots:noindex, no canonical — owner confirmed intentional 2026-09-19",
+   "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
   },
   {
    "path": "/learn-more-about-ayurveda/",
@@ -3317,7 +3319,10 @@
     "ogDescription": "This section deals with the benefits and implications of living in a yoga retreat.",
     "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
     "ogType": "article"
-   }
+   },
+   "sitemapExclude": false,
+   "sitemapExcludeReason": "live serves robots:noindex, no canonical — owner confirmed intentional 2026-09-19",
+   "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
   },
   {
    "path": "/retreats-gallery/",

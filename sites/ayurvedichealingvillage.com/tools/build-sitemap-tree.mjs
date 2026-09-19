@@ -152,7 +152,11 @@ const routes = sorted.map((r, i) => {
     desktopView: o.desktopView ?? r.desktopView ?? null,
     mobileView: o.mobileView ?? r.mobileView ?? null,
     dataset: o.dataset ?? r.dataset ?? null,
-    sitemap: !o.sitemapExclude,
+    // app/sitemap.ts filters BOTH sitemapExclude AND any route with a 301, so
+    // a register that only read sitemapExclude over-counted by 2 — it claimed
+    // 235 where the built sitemap.xml emits 233. A generated view that does not
+    // match what ships is the same failure as a stale verification file.
+    sitemap: !o.sitemapExclude && !REDIRECTS[r.path],
     duplicateOf: o.duplicateOf ?? null,
     duplicateNote: o.duplicateNote ?? null,
     canonicalElsewhere:
