@@ -26,11 +26,19 @@
  * cannot be reached from here. Proven by before/after computed-style
  * comparison across 18 page/width pairs: 0 changed.
  *
- * DELIBERATELY NOT DONE. Nothing is added, removed or reordered in the source
- * — every link the menu carries is still there, so the internal linking
- * Google sees is unchanged. Moving the menu BELOW the article on a phone
- * needs a DOM move in boot.ts; a CSS-only attempt reordered nothing and cost
- * 23 routes in horizontal overflow, so it was withdrawn rather than shipped.
+ * PHONES. On 26 of the 36 the menu sat ABOVE the article, so it is ordered
+ * last below 700px. Measured across every affected route, the article prose
+ * is a DIRECT SIBLING of the menu on 36 of 37, under three parents: main
+ * itself (23), a div (7), a section (7). A first attempt selected only the
+ * div and the section, missed the 23 that hang off main, reordered almost
+ * nothing and — before the card was given box-sizing — cost 23 routes in
+ * horizontal overflow. Both causes are fixed here and the result is measured,
+ * not assumed. No DOM move and no boot.ts change is needed.
+ *
+ * DELIBERATELY NOT DONE. Nothing is added or removed: every link the menu
+ * carries is still in the markup and in the source order a crawler reads, so
+ * the internal linking Google sees is unchanged. Only the painted order
+ * changes, and only on a phone.
  *
  * Lives in public/design/, outside public/ahv/, so a design re-import cannot
  * erase it. */
@@ -93,6 +101,24 @@
   font-size:12px !important; font-weight:800 !important;
   letter-spacing:1.4px !important; text-transform:uppercase !important;
   color:var(--muted) !important; margin:12px 0 2px !important;
+}
+
+/* Phone: the menu follows the article. Ordering the one container that holds
+   both is enough - the prose is a direct sibling on 36 of 37 routes. */
+@media (max-width:699px) {
+  /* NOTE: :has() may not be nested inside :has() - "main:has(> nav:has(a))"
+     is invalid and the whole rule is dropped silently, which is exactly how
+     the first attempt failed. Reach the anchor with a descendant combinator
+     inside ONE :has() instead. */
+  [data-ahv-family="article-reader"] main:has(> nav a[href="/kairali-ayurvedic-products-pvt-ltd/"]),
+  [data-ahv-family="article-reader"] main div:has(> nav a[href="/kairali-ayurvedic-products-pvt-ltd/"]),
+  [data-ahv-family="article-reader"] main section:has(> ul a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
+    display:flex !important; flex-direction:column !important;
+  }
+  [data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+  [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
+    order:99 !important; margin-top:34px !important;
+  }
 }
 
 /* Desktop: a real aside. The article starts at the top and flows beside it. */
