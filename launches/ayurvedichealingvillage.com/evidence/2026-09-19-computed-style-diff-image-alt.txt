@@ -1,0 +1,31 @@
+AHV image-alt repair — benchmark-pages computed-style diff
+Run 2026-09-19 IST on commit 48e8d70e, server: next start :4321
+Tool: sites/ayurvedichealingvillage.com/tools/computed-style-diff.mjs
+BEFORE = session-start 8133e50a · AFTER = the alt repair applied
+
+BEFORE state restored (session start)
+before2 captured
+AFTER state restored
+diff exit=0
+captured 1280px /one-day-ayurveda-workshop-program-kerala/  (601 elements)
+
+same     /@1280  (1473 elements)
+same     /@320  (1279 elements)
+same     /all-programs/@1280  (1126 elements)
+same     /all-programs/@320  (1143 elements)
+same     /ayurveda-training-programme/@1280  (651 elements)
+same     /ayurveda-training-programme/@320  (666 elements)
+same     /ayurvedic-treatments/@1280  (1119 elements)
+same     /ayurvedic-treatments/@320  (1233 elements)
+same     /one-day-ayurveda-workshop-program-kerala/@1280  (601 elements)
+same     /one-day-ayurveda-workshop-program-kerala/@320  (616 elements)
+same     /packages/@1280  (756 elements)
+same     /packages/@320  (757 elements)
+same     /treatment-programs/@1280  (973 elements)
+same     /treatment-programs/@320  (1060 elements)
+same     /wellness-programs/@1280  (539 elements)
+same     /wellness-programs/@320  (560 elements)
+
+0 of 16 page/width pairs changed
+
+[exited with code 0]
