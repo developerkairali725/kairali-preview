@@ -866,3 +866,119 @@ curl or wp-cli invocation) rather than any occurrence of the word in any command
 as-is is defensible - the cost is that any documentation about WordPress must avoid shell heredocs,
 which is a trap the next session hits blind, and the natural escape is to describe the thing
 imprecisely, which makes the records worse.
+
+## Q-AHV-CI-BILLING - all five failing checks on PR #309 are one account-level cause (2026-09-19 16:12:04 IST)
+
+Not a code fault, and nothing in the PR causes it. All five jobs (`changes`, `gate`, `brand-lint`,
+`security-review`, `front-gate`) completed in 1-2 seconds with `runner_id: 0`, `runner_name: ""` and
+an EMPTY `steps` array - no step ever executed. Every one carries the same failure annotation:
+
+> "The job was not started because recent account payments have failed or your spending limit needs
+> to be increased. Please check the 'Billing & plans' section in your settings"
+
+Repo-wide, the last 200 workflow runs are 200/200 failures back to 2026-09-17 22:51 UTC, including
+scheduled `uptime` runs on `main` that touch none of this branch's code. Last green run of any kind:
+`gate` on 2026-09-12, `factory-gate` on 2026-08-29. Org `kairali-digital` is on the **team** plan,
+8/8 seats. The billing API now needs `admin:org`, which this token does not carry, so the exact
+figure could not be read from here.
+
+**Owner action, and only the owner can take it:** GitHub → Organization settings → Billing & plans.
+Either a payment method has failed or the Actions spending limit is at its default. Until that is
+cleared, NO check on this PR can run and the PR cannot legitimately go green - so it stays a draft.
+
+## Q-AHV-CHAT-BUBBLE-ENGLISH-LANE - the branch drops the mandatory chat bubble and the shared consent layer from 252 routes (2026-09-19 16:12:04 IST)
+
+`scripts/chat-bubble-lint.mjs` FAILS on this branch and PASSES on `origin/main`. Verified by running
+both at the same commit pair. It is a step in the merge-blocking `brand-lint` job, so it will block
+#309 the moment billing is restored.
+
+What changed: `sites/ayurvedichealingvillage.com/app/layout.tsx` is **DELETED** on this branch
+(git status `D`). On `main` that one root layout rendered `<ConsentScripts/>`, `<ChatbaseLoader/>`,
+`<ConsentBanner/>`, `<SocialLinks/>` and `<Analytics/>` for the whole site. It was replaced by two
+route-group root layouts, which is the only way Next.js allows two independent roots:
+
+  - `app/(lp)/layout.tsx`  - KEPT `ConsentScripts` + `ChatbaseLoader`, correct order.
+  - `app/(english)/layout.tsx` - has NEITHER. This is the lane that serves all 252 approved routes.
+
+So the English lane currently ships with no `@kairali/chat` bubble and no `@kairali/consent` scripts.
+Consent is instead re-implemented locally inside `_families/boot.ts` (`localStorage["ktahv-consent"]`,
+accept/decline buttons), and the chat affordance is the approved design's own "Chat with Priya" link.
+
+Why this is the owner's call and not the agent's, three ways:
+  1. **D-20260718-05** makes the bubble mandatory fleet-wide and says it is "always the ONE shared
+     component, never a local copy". A local copy is exactly what the English lane now has.
+  2. **HARD GATE 11 - never change consent, analytics or payment logic.** This branch changed consent
+     logic for 252 routes, from the shared audited component to a local one.
+  3. Fixing it the obvious way (render the shared components in `app/(english)/layout.tsx`) puts a
+     Chatbase bubble on 252 owner-approved MODE A pages, including the benchmark homepage, package
+     and treatment pages. That is a visible change to an approved design, which MODE A forbids the
+     agent from making on its own.
+
+Note the lint also hard-codes `app/layout.tsx` as the only root-layout location, so a site using
+route-group roots reads to it as "no root layout" rather than "two roots, one of them non-compliant".
+Teaching it to check every root layout would STRENGTHEN it (it would then also judge `(lp)`), but it
+is a fleet-wide gate change and belongs in its own PR - and it would still fail `(english)` until the
+question above is answered.
+
+**Decision needed:** does the approved AHV English design take the shared Chatbase bubble and the
+shared consent scripts, or is the design's own consent + "Chat with Priya" the ratified substitute?
+If the latter, that is a written exemption for the EXEMPT ledger, and it is yours to grant.
+
+## Q-AHV-BANNED-STRINGS - 1,182 locked-fact violations, three of them real and one site-wide (2026-09-19 16:12:04 IST)
+
+`scripts/banned-string-lint.mjs` FAILS on this branch - 1,182 violations, every one inside
+`sites/ayurvedichealingvillage.com/`. It is a step in the merge-blocking `brand-lint` job. It was
+reported as PASSING by an earlier local run; that run was wrong - see Q-AHV-PATH-SPACES below.
+Measured by distinct file rather than by raw match count, because the raw count is inflated by large
+JSON payloads matching many times:
+
+| rule | violations | distinct files | verdict after checking the bytes |
+|---|---|---|---|
+| `group-attached-1908` | 563 | **255** | **REAL, and effectively site-wide** |
+| `wrong-contact-email` | 601 | 10 | one real, one false positive (see below) |
+| `deepu-name-conflation` | 16 | 7 | **REAL** - needs Dr. Deepu John (HARD GATE 7) |
+| `ask-a-doctor` | 2 | 2 | **REAL** - false medical claim on a YMYL page |
+
+1. **`Since 1908` attached to the GROUP - the big one.** Nearly every page footer renders
+   `© Kairali Ayurvedic Group Since 1908.` and hero eyebrows render
+   `Kairali — The Ayurvedic Healing Village · Since 1908`. DECISIONS.md 16 Jul (your own primary-source
+   ruling) is explicit: 1908 is the FAMILY lineage origin, the GROUP was founded 1989, and the ruled
+   form is "· A family tradition since 1908". The same footer also TYPES the copyright year, which
+   the companion D-ROLLING-NUMBER bans (a copyright year is computed, never typed).
+   This is a factual correction you already ruled on, but applying it rewrites rendered text on all
+   252 routes including the benchmark pages, so it is not something to do without your word.
+2. **`career@kairali.com`** on the jobs page - a real rendered `mailto:` link. `boot.ts:506` records a
+   previous session's judgment that it is "a separate approved departmental address"; the lint does
+   not know that. Locked facts say the public contact email everywhere is info@kairali.com.
+   **Is career@kairali.com an approved departmental address, or does the jobs page use info@?**
+3. **`infoo@kairali.com` - FALSE POSITIVE.** It appears only inside an import provenance annotation
+   (`"sourceFragmentDecoded":"infoo@kairali.com"`), which is a record of a typo on the OLD live site.
+   Nothing renders it. Worth knowing the legacy site had the typo; nothing to fix here.
+4. **`ask the physician`** on `/online-consultation/` and in the enquiry family data, where the
+   number is the Priya AI assistant. This is precisely the MR-3 defect (DECISIONS.md 15 Jul 18:31:07)
+   - a false human-clinical claim on a YMYL page. **Clinical copy: HARD GATE 7, Dr. Deepu John.**
+5. **`Deepu` not written as `Dr. Deepu John`** on the panchkarma and campaign pages. Same gate.
+
+Nothing above was changed. Items 1, 4 and 5 are clinical- or fact-register changes on a hospital
+site; 2 is a locked fact. All of them want your ruling (and 4/5 want Dr. Deepu John's) first.
+
+## Q-AHV-PATH-SPACES - lints silently PASS when the checkout path contains spaces (2026-09-19 16:12:04 IST)
+
+This worktree lives at `/Volumes/Extreme SSD - Blue 2nd/...`. Scripts and tests that derive repo
+paths from `import.meta.url` do not decode the resulting `file://` URL, so the path arrives as
+`/Volumes/Extreme%20SSD%20-%20Blue%202nd/...`, the read fails, and the lint finds **nothing and exits
+0**. A green local run on this machine is therefore not evidence.
+
+Measured: run from the spaces path, `brand-lint`'s 17 steps reported "17 passed, 0 failed". Re-run
+from a space-free checkout of the identical commit, the same 17 steps reported **2 real failures**
+(`banned-string`, `chat-bubble`) - both merge-blocking, both invisible from the normal worktree. The
+full test suite told the same story: 7 test files failing on the spaces path, of which 5 were purely
+this artifact; from the clean path it is 1,085 of 1,088 passing.
+
+Workaround used this session, and the one the next session should use: `git worktree add` into a
+space-free directory and run the gates there.
+
+**Owner decision:** this is a booby trap - it makes every local gate run on this machine untrustworthy
+in the safest-looking direction. Either the scripts decode `import.meta.url` (one shared helper,
+`fileURLToPath`, fleet-wide), or the working copy moves off a path with spaces. Related but distinct
+from the already-open entry about `import.meta.url === \`file://${process.argv[1]}\`` main-detection.
