@@ -1,0 +1,68 @@
+{
+  "why": "Owner ruling, Abilash in chat, 2026-09-19: 'make all these pages 301'. These twelve routes were surfaced by the template-family audit (docs/reports/2026-09-19-ahv-article-template-families-and-design-brief.md §7) as pages that needed a fate rather than a design: six WordPress leftovers with no subject, three '-old' duplicates of pages that now exist properly, two WooCommerce routes on a site that has no commerce, and one 93% copy of a page that earns 236 clicks while it earns 0. Every source measures ZERO clicks in the Search Console export (launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19{,-www}/Pages.csv), so no ranking value is being moved; every target is an existing, content-rich approved route, which is the CLAUDE.md BUILD DECISION MATRIX rule 2 condition ('content-rich ranking pages are never redirected to thin targets'). Single hop only: no target here is itself a source. Supersedes the earlier 'Keep outside navigation' ownerAction recorded against /cart/ and /checkout/ in confirmation-family-data.js, and the sitemapExclude-only treatment in route-overrides.json, both of which left the pages serving.",
+  "scope": "Applies at the DNS flip, like every other route rule in this lane. Nothing changes on the production WordPress host from here (HARD GATE 1); these redirects take effect when this build becomes the live site.",
+  "statusCode": 301,
+  "statusNote": "301 explicitly, not Next's permanent:true (which emits 308). The owner asked for 301 and there is no reason to substitute a different code.",
+  "redirects": {
+    "/test-page/": {
+      "to": "/",
+      "reason": "h1 'Test Page'. A WordPress scratch page with no subject and nothing to consolidate.",
+      "gsc": { "clicks": 0, "impressions": 1 }
+    },
+    "/test-page-2/": {
+      "to": "/givefeedback/",
+      "reason": "h1 'Test Page' but the head title is 'Write a Review | Give Testimonials | Opinions | Feedback' - it is a scratch copy of the feedback page, so the signal belongs there.",
+      "gsc": { "clicks": 0, "impressions": 9 }
+    },
+    "/testing/": {
+      "to": "/",
+      "reason": "h1 'Testing'. A WordPress scratch page with no subject.",
+      "gsc": { "clicks": 0, "impressions": 44 }
+    },
+    "/gift-test/": {
+      "to": "/gift-vouchers/",
+      "reason": "h1 'Shop' - a WooCommerce shop-page test. There is no shop; gift vouchers are the nearest real page on the same subject.",
+      "gsc": { "clicks": 0, "impressions": 271 }
+    },
+    "/my-account/": {
+      "to": "/",
+      "reason": "WooCommerce account page. No commerce, no accounts, nothing equivalent to send it to.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/how-to-reach-old/": {
+      "to": "/how-to-reach/",
+      "reason": "Superseded duplicate. The current page carries all four maps and earns 410 clicks.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/contact-us-old/": {
+      "to": "/contact-us/",
+      "reason": "Superseded duplicate. The current page earns 310 clicks.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/enquiry-form-old/": {
+      "to": "/enquiry-form/",
+      "reason": "Superseded duplicate of the enquiry form.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/online-consultation-old/": {
+      "to": "/online-consultation/",
+      "reason": "Superseded duplicate. The current page earns 379 clicks, the most of any page in scope.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/cart/": {
+      "to": "/packages/",
+      "reason": "WooCommerce cart on a site with no commerce. A visitor who reached a cart was choosing something to book; /packages/ is the content-rich equivalent (733 words, 27 cards, 118 clicks).",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/checkout/": {
+      "to": "/packages/",
+      "reason": "WooCommerce checkout on a site with no commerce. Same target and same reason as /cart/.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    },
+    "/offers/new/": {
+      "to": "/offers/senior-citizen-offer/",
+      "reason": "93% identical to the senior-citizen offer, which earns 236 clicks while this earns 0. Its canonical already pointed here (route-overrides.json); the 301 makes the consolidation real instead of advisory.",
+      "gsc": { "clicks": 0, "impressions": 0 }
+    }
+  }
+}

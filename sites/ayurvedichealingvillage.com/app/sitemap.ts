@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { buildSitemap } from "@kairali/seo";
 import siteConfig from "../site.config.json";
 import { routes } from "./(english)/_families/registry";
+import redirectMap from "../english-candidate/redirect-map.json";
 
 // STAGING LOCK (WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001): a noindexed
 // review build publishes no sitemap. The 252 approved English routes are
@@ -14,8 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // A route that canonicalises to another approved route (route-overrides.json,
   // sitemapExclude) still serves its page but is not a sitemap entry: listing
   // a URL whose canonical points elsewhere is a Search Console warning.
+  //
+  // A route in the protection map (english-candidate/redirect-map.json) no
+  // longer serves at all — it 301s. Reading the map here rather than relying on
+  // a matching sitemapExclude flag means the two can never drift: adding a
+  // redirect removes the URL from the sitemap in the same edit.
+  const redirected = new Set(Object.keys(redirectMap.redirects));
   return buildSitemap(
     siteConfig,
-    routes.filter((r) => !r.sitemapExclude).map((r) => ({ path: r.path })),
+    routes
+      .filter((r) => !r.sitemapExclude && !redirected.has(r.path))
+      .map((r) => ({ path: r.path })),
   ) as MetadataRoute.Sitemap;
 }

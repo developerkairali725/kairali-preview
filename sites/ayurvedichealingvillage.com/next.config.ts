@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 // KTAHV LP lane (launches/ktahv-lp-batch — D-LP-LIST). This site dir is the
 // factory home of the ayurvedichealingvillage.com rebuild; TONIGHT it ships
@@ -29,6 +31,35 @@ import type { NextConfig } from "next";
 // cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
 // when the owner takes this to production.
 const IS_STAGING = process.env.AHV_STAGING !== "0";
+
+/**
+ * PROTECTION MAP — the twelve legacy URLs the owner ruled 301 on 2026-09-19
+ * ("make all these pages 301"). The map itself, with a reason and the measured
+ * Search Console figures per URL, is english-candidate/redirect-map.json; this
+ * only turns it into routes so the fate lives in ONE place and the reasons
+ * travel with it.
+ *
+ * 301 explicitly rather than `permanent: true`, which emits 308. Google treats
+ * the two the same, but the owner asked for 301 and substituting a different
+ * status code is not the agent's call.
+ *
+ * Every source measures zero clicks and every target is an existing approved
+ * route, so nothing that ranks is being moved into a thin page (CLAUDE.md
+ * BUILD DECISION MATRIX rule 2). test/redirect-map.test.mjs asserts the map's
+ * integrity per URL — sources real, targets real, no chains, single hop.
+ */
+interface RedirectRule {
+  to: string;
+  reason: string;
+  gsc: { clicks: number; impressions: number };
+}
+interface RedirectMap {
+  statusCode: number;
+  redirects: Record<string, RedirectRule>;
+}
+const REDIRECT_MAP = JSON.parse(
+  readFileSync(join(process.cwd(), "english-candidate/redirect-map.json"), "utf8"),
+) as RedirectMap;
 
 const nextConfig: NextConfig = {
   // The approved content, its canonicals, the sitemap and the legacy WordPress
@@ -64,6 +95,16 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
+  },
+  async redirects() {
+    // Sources carry the trailing slash the whole site is normalised to
+    // (trailingSlash: true above), so the served URL and the redirect source
+    // are the same string and no request pays two hops.
+    return Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+      source,
+      destination: rule.to,
+      statusCode: REDIRECT_MAP.statusCode,
+    }));
   },
   // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
   // English homepage now exists at "/" (app/(english)/page.tsx), which is the

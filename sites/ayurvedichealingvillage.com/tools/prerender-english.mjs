@@ -174,7 +174,18 @@ const EXTRACT = () => {
 const run = async () => {
   const outDir = path.isAbsolute(OUT) ? OUT : path.join(SITE, OUT);
   fs.mkdirSync(outDir, { recursive: true });
-  let list = ONLY ? routes.filter((r) => r.path === ONLY) : routes;
+  // A route in the protection map 301s, so fetching it returns the TARGET's
+  // HTML. Snapshotting that would file another page's markup under this path.
+  const redirected = new Set(
+    Object.keys(
+      JSON.parse(
+        fs.readFileSync(path.join(SITE, "english-candidate/redirect-map.json"), "utf8"),
+      ).redirects,
+    ),
+  );
+  let list = (ONLY ? routes.filter((r) => r.path === ONLY) : routes).filter(
+    (r) => !redirected.has(r.path),
+  );
   if (LIMIT) list = list.slice(0, LIMIT);
 
   const browser = await chromium.launch();
