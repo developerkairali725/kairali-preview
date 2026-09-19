@@ -1,5 +1,6 @@
 {
- "templatesAudited": 58,
+ "templatesAudited": 60,
+ "routeCoverage": "243/250",
  "perTemplate": [
   {
    "template": "ahv-page-enquiry",
@@ -8187,119 +8188,430 @@
     {
      "severity": "HIGH",
      "category": "readability-45plus",
-     "title": "Pricing-conditions paragraphs and card meta render at 14\u201314.5px muted text (below the 15px floor, far below the 17px body floor)",
-     "evidence": "Both widths: p 'Programme fees are \u201cfrom\u201d totals\u2026' and p 'Every programme begins with an Ayurvedic doctor's consultation\u2026' = 14.5px Mulish, colour rgb(117,105,90), line-height 24.65px (mobile w359 \u224849ch; desktop w766 \u2248106ch). Card meta 'India's Most Authentic Ayurvedic Treatment | 30,000+ Lives Transformed' = 14.5px; 'Kairali's Preventive & Regenerative Treatment' = 14px; night chips '7 nights'/'3 nights' = 14px. Helper text 'Type it however you would say it\u2026' = 16px (below the 17px body floor). Small-text census (<15px, visible text nodes): 56 elements at 390, 61 at 1280. These are the only prose paragraphs on the page that explain money and medical caveats \u2014 the text a 45-plus reader most needs. Screenshot m390-chunk03.png shows the two grey notes visibly smaller and lighter than the 16.5\u201318px body around them.",
-     "benchmarkRule": "HARD RULE: body text >=17px; no text under 15px anywhere. Benchmark body Mulish 15\u201316px is itself below the floor.",
-     "proposedFix": "Scoped stylesheet keyed on [data-ahv-route=\"/wellness-programs/\"]: raise the two tariff/consultation note paragraphs to 17px/1.6 and cap their width (max-width: 68ch); raise the helper note to 17px; raise card meta line and night/price chips to 15\u201316px. No content change.",
+     "title": "Fee and consultation disclaimer paragraphs are 14.5px muted text, 106ch wide on desktop",
+     "evidence": "Two <p> elements directly below the card grid ('Programme fees are \"from\" totals at minimum stay\u2026' and 'Every programme begins with an Ayurvedic doctor's consultation\u2026'): computed font-size 14.5px, color rgb(117,105,90) on rgb(247,244,234) (4.85:1), line-height 24.65px on BOTH widths. 390: width 359px = 49ch. 1280: width 766px (max-width 765.6px) = 106ch per line. Visible in now-m390-03.png and now-d1280-02.png as the smallest running text on the page. Body font is 17px; the 45+ hard floor is 17px, 15px minimum anywhere. These are the price-basis and medical-outcome disclaimers a 45+ patient must be able to read.",
+     "benchmarkRule": "HARD RULE: body text >=17px, no text under 15px, line length 45-75ch. Benchmark body Mulish 15-16px is itself below the floor; larger is not a defect.",
+     "proposedFix": "Scoped stylesheet keyed on [data-ahv-route=\"/wellness-programs/\"]: target the two muted <p> siblings after the card grid (e.g. via a small DOM pass adding class .ahv-wp-disclaimer to <p> elements whose computed color is rgb(117,105,90) inside the 'Choose Your Programme' section) and set font-size:17px; line-height:1.6; max-width:68ch; color: var(--ink) or keep muted only if >=4.5:1. No content change.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] section:nth-of-type(2) p[style*='117, 105, 90'] (text anchors: 'Programme fees are', 'Every programme begins'); mobile y=~3000-3170, desktop y=~2090-2190",
      "width": "both"
     },
     {
-     "severity": "HIGH",
-     "category": "layout-desktop",
-     "title": "Desktop filter bar is a 170px-tall sticky band with 0.97 alpha; it eats 19% of the viewport and content ghosts through it while scrolling",
-     "evidence": "1280: nav (filter chips + 'How can we help you?' label + search input) position: sticky; top: 0; z-index 35; height 170px; background rgba(247,244,234,0.97). Screenshots d1280-chunk01.png and d1280-chunk02.png (scrolled 900px and 1800px) show the h2 'Choose Your Programme', its yellow mark highlight, the currency buttons and the card image tops bleeding faintly through the band at y\u2248100\u2013180 \u2014 it reads as a rendering glitch. At 390 the same nav is static (position: static, h 381px) so mobile is unaffected.",
-     "benchmarkRule": "Calm section rhythm with clear separation; desktop must scale sensibly rather than pin large chrome.",
-     "proposedFix": "Scoped CSS on the desktop variant: either make the sticky band opaque (background: #F7F4EA) and collapse it to the chip row only when stuck (move the label+search out of the sticky element via a small DOM pass), or drop sticky entirely (position: static) \u2014 the page has only 2 cards so pinning the filters buys nothing here.",
+     "severity": "MEDIUM",
+     "category": "typography",
+     "title": "Desktop headings render Marcellus at synthesized weight 700 (faux bold); homepage and packages use 400",
+     "evidence": "1280 computed styles: H1 46.08px Marcellus weight 700; H2 35.84px 700; H3 22px 700 (x2); H2 26px 700. document.fonts loaded only 'Marcellus 400' (plus Mulish 400/600/700), so the browser fakes the bold. Same page at 390: every heading is weight 400. Comparison on the same server: / desktop H1 71.68px 400, H2 46.08px 400, H3 28px 400; /packages/ desktop H1 46.08px 400, H2 30.72px 400. In now-d1280-00.png the H1 strokes are visibly heavier/smeared compared with the packages H1.",
+     "benchmarkRule": "Marcellus display face for h1/h2/h3 over Mulish body (benchmark Marcellus 28-30px h1, 25-26px h2, regular weight as rendered on home/packages).",
+     "proposedFix": "Scoped CSS: [data-ahv-route=\"/wellness-programs/\"][data-ahv-variant=\"desktop\"] h1, h2, h3, .sc-interp[style*='Marcellus'] { font-weight: 400 !important; font-synthesis: none; }. Optionally also drop the numeric filter-count badges (Marcellus 14px 700) to 400.",
+     "selectorOrPointer": "[data-ahv-view=\"ahv-page-wellness-programs-desktop\"] h1, h2, h3 (H1 y=229, H2 y=1024, H3 y=1511, H2 y=2338)",
      "width": "1280"
     },
     {
      "severity": "MEDIUM",
      "category": "typography",
-     "title": "Desktop headings render in synthesised faux-bold Marcellus (weight 700) while mobile and the benchmark use Marcellus 400",
-     "evidence": "1280: h1 'Ayurvedic Wellness Programmes' computed font-weight 700, 46.08px (inline style clamp(34px,3.6vw,52px) sets no weight, so the UA h1 bold default applies); h2 'Choose Your Programme' 35.84px weight 700; h3 card titles 22px weight 700; h2 'Not sure which programme fits?' 26px weight 700. document.fonts loaded on desktop: Marcellus 400, Mulish 400/600/700 \u2014 no Marcellus 700 exists, so the browser fakes it. 390: same headings computed weight 400 (h1 30px, h2 26/21/24px). Visible in d1280-chunk00.png: the h1 strokes are noticeably heavier than the Marcellus in the mobile capture.",
-     "benchmarkRule": "Benchmark h1 Marcellus 28\u201330px, h2 25\u201326px, regular weight display face over Mulish body.",
-     "proposedFix": "Scoped CSS: [data-ahv-route=\"/wellness-programs/\"] h1, h2, h3 { font-weight: 400 }. Optionally soften desktop h1 clamp upper bound (e.g. clamp(32px, 3vw, 44px)) to sit closer to the benchmark scale.",
-     "width": "1280"
-    },
-    {
-     "severity": "MEDIUM",
-     "category": "buttons-ctas",
-     "title": "Button labels are 12.5\u201314px and button heights vary 44/46/48/50/52/54px instead of one 52px system",
-     "evidence": "Measured heights: header 'Book Now' 44px (390) / 'Book Your Stay' 46px (1280); filter chips 44px, label 13.5px (390) / 14px (1280); currency buttons 48px, 15px; card 'Read More' (brown filled) and 'Book Now' (brown outline) 50px (390) / 48px (1280), label 13px uppercase ls 1.5px; final 'Free Doctor Consultation' 52px gold #EEB41E ink text, 'WhatsApp Patient Care' 54px green outline, 'Enquire Now' 54px brown outline, labels 14px; footer 'Subscribe' 48px, 12.5px; mobile bottom bar Call/Enquire/Free Consult 52px, labels 12.5px. Radius is a consistent 4px and colours match the benchmark (gold #EEB41E primary with ink text, brown #5A4420 secondary) \u2014 the drift is size only.",
-     "benchmarkRule": "Consistent button system: 52px tall, uppercase tracked label, gold primary / brown outline secondary; HARD RULE no text under 15px.",
-     "proposedFix": "Scoped CSS: set min-height: 52px on card CTAs, currency buttons, filter chips and footer Subscribe; set button/chip label font-size to 15px (keep uppercase + letter-spacing 1.5px). The header 'Book Now', bottom bar and footer are shared chrome \u2014 apply the same rule in the shared stylesheet rather than per-template.",
-     "width": "both"
-    },
-    {
-     "severity": "MEDIUM",
-     "category": "structure-hierarchy",
-     "title": "Only one eyebrow on the page, in the wrong gold; section headings 'Choose Your Programme' and 'Not sure which programme fits?' have no eyebrow",
-     "evidence": "Eyebrow census (uppercase \u226414px text): the single heading eyebrow is the div 'Kairali \u2014 The Ayurvedic Healing Village \u00b7 Since 1908' above the h1 \u2014 12px, letter-spacing 2.6px, colour rgb(143,98,18) #8F6212 (benchmark gold is #C1882C rgb(193,136,44)). h2 'Choose Your Programme' previousElementSibling = the 74/120px '1908' watermark span; h2 'Not sure which programme fits?' previousElementSibling = the trust ul. Neither has an uppercase gold label above it.",
-     "benchmarkRule": "Small uppercase gold (#C1882C) eyebrow labels with letter-spacing above section headings; homepage 12px/4px, packages 11px/1px.",
-     "proposedFix": "Small DOM pass: insert an eyebrow element above the two section h2s (e.g. 'Programmes' / 'Next step') styled via scoped CSS: 12px (or 15px to honour the no-sub-15px rule), uppercase, letter-spacing 3px, colour #C1882C; recolour the existing h1 eyebrow from #8F6212 to #C1882C.",
+     "title": "Template-owned labels below the 15px minimum: filter pills, card CTA labels, meta chips, card taglines",
+     "evidence": "Measured (template body only, excluding shared header/footer chrome): filter pills 'ALL 38 / WELLNESS 2 / TREATMENT 29 / TRAINING 7 / YOGA & MEDITATION 5' = 13.5px at 390 (5 buttons + 5 Marcellus count badges 13.5px), 14px at 1280; card buttons 'READ MORE' and 'BOOK NOW' = 13px uppercase ls 1.5px on both widths (4 buttons); mobile meta chips '7 nights' / '3 nights' = 14px; card taglines 'India's Most Authentic Ayurvedic Treatment | 30,000+ Lives Transformed' and 'Kairali's Preventive & Regenerative Treatment' = 14.5px (both widths); eyebrow 12px (benchmark-conformant, listed for completeness). Whole-page text-element histogram under 15px: 56 elements at 390, 61 at 1280 (majority in shared header/footer chrome which matches /packages/ exactly). Homepage benchmark itself uses 12.5-13.5px button labels, so this is benchmark-consistent but breaks the hard floor.",
+     "benchmarkRule": "HARD RULE: no text under 15px anywhere (overrides benchmark's 12-13.5px button labels).",
+     "proposedFix": "Scoped CSS on [data-ahv-route=\"/wellness-programs/\"]: [data-ahv-finder-block] button { font-size:15px } and its count badge span { font-size:15px }; card a[href^='/'][style*='uppercase'] (the READ MORE / BOOK NOW buttons, class scp2/scp3) { font-size:15px; letter-spacing:1.2px }; card meta chips and tagline spans { font-size:15px }. Keep uppercase tracked style so the button system still reads as the site's.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] [data-ahv-finder-block] button; .scp2, .scp3 inside the programme cards; card tagline span.sc-interp (14.5px)",
      "width": "both"
     },
     {
      "severity": "MEDIUM",
      "category": "tap-targets",
-     "title": "Inline 'Read More' link inside each card is 85\u00d721px, duplicating the 'Read More' button directly beneath it",
-     "evidence": "Both widths: a 'Read More' (inline, 16.5px, green rgb(0,96,56), font-weight 700) 85\u00d721px at y1841/y2595 (390) and y1781 (1280, first card) \u2014 the only tap targets under 44\u00d744 on the page. Each is followed 39px later by a 313\u00d750 (390) / 144\u00d748 (1280) brown 'Read More' button with the identical href. Card-2 desktop inline link wraps to 326\u00d749 so only card 1 fails there. Screenshot m390-chunk02.png shows both 'Read More's stacked.",
-     "benchmarkRule": "HARD RULE: every tap target >=44\u00d744px.",
-     "proposedFix": "Scoped CSS: give the inline link display:inline-flex; min-height:44px; padding:8px 0 (keeps the truncated-text idiom), or hide it (display:none) since the button beneath carries the same destination.",
+     "title": "Inline 'Read More' link inside each card excerpt is 85x21px and duplicates the READ MORE button beneath it",
+     "evidence": "Tap-target scan (all <a>/<button>): the only targets under 44px on the page are two inline <a> 'Read More' (href /personalized-customized-healing-program/ and /preventive-and-regenerative-treatment/), each 85x21px, 16.5px green, at 390 y=1841 and y=2595 (1280: y=1781, both cards). Each sits immediately above a full-width 50px brown 'READ MORE' button pointing at the same href (now-m390-02.png shows the green link and the brown button 40px apart). Each card therefore carries 5 links (image, inline Read More, READ MORE, BOOK NOW, 'Check suitability on WhatsApp') for 3 destinations.",
+     "benchmarkRule": "HARD RULE: every tap target >=44x44px; consistent button system.",
+     "proposedFix": "Small DOM pass on [data-ahv-route=\"/wellness-programs/\"]: hide the inline excerpt link (a.sc-interp inside the excerpt <p> whose href equals the sibling READ MORE button's href) or convert it to display:inline-block; min-height:44px; padding:10px 0. Preferred: hide, since the button already exists.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] .sc-interp p > a[href='/personalized-customized-healing-program/'], a[href='/preventive-and-regenerative-treatment/'] (inline, 85x21px)",
      "width": "both"
     },
     {
      "severity": "MEDIUM",
+     "category": "layout-desktop",
+     "title": "Sticky filter/finder bar is 170px tall with a 97%-alpha background, ghosting page content through it while scrolling",
+     "evidence": "1280: <nav> position:sticky top:0 height 170px background rgba(247,244,234,0.97) (the only sticky element on the page besides nothing else; header is position:relative). It occupies 19% of the 900px viewport for the whole 'Choose Your Programme' section. In now-d1280-01.png and now-d1280-02.png the gold highlight under 'Choose Your Programme' and the '1908' watermark bleed through the bar at y~100-180 as blurred ghost shapes. Homepage desktop has only a 73px fixed header; /packages/ has no sticky bar at all. At 390 the same nav is position:static (no issue).",
+     "benchmarkRule": "Calm section rhythm with clear separation; desktop must be a considered layout, not the phone layout stretched.",
+     "proposedFix": "Scoped CSS for the desktop variant: [data-ahv-view=\"ahv-page-wellness-programs-desktop\"] nav[style*='sticky'] { background: rgb(247,244,234); backdrop-filter: blur(6px); } and either collapse the search row when stuck (keep only the 44px pill row sticky, e.g. position:sticky on the pill wrapper only) or set position:static on desktop so the bar scrolls with the page.",
+     "selectorOrPointer": "[data-ahv-view=\"ahv-page-wellness-programs-desktop\"] nav[style*='position: sticky'] (h=170, contains [data-ahv-finder-block] pills + 'How can we help you?' input)",
+     "width": "1280"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "layout-desktop",
+     "title": "Programme card grid is 3 columns but this category has 2 programmes, leaving the right third of the section empty",
+     "evidence": "1280: card container display:grid, grid-template-columns resolves to 3 tracks, children 2, width 1203px (y=1254). Cards are 384px wide at x=38-421 and 449-831; x=831-1242 is empty paper for the full 570px card height (now-d1280-01.png). The section heading '2 in Wellness Programs' confirms the count is fixed at 2 for this route.",
+     "benchmarkRule": "Card grid of packages with consistent card language; multi-column where content is parallel, sensible max-width.",
+     "proposedFix": "Scoped CSS: [data-ahv-view=\"ahv-page-wellness-programs-desktop\"] .programme-grid (the display:grid div at y~1254 inside section 2) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; } or repeat(auto-fit, minmax(340px, 1fr)) with justify-content:start and a 2-column cap; alternatively let the two cards fill 2 x 590px with image aspect-ratio 16/10.",
+     "selectorOrPointer": "[data-ahv-view=\"ahv-page-wellness-programs-desktop\"] section:nth-of-type(2) div[style*='grid'] (cols 3, kids 2, w 1203, y 1254)",
+     "width": "1280"
+    },
+    {
+     "severity": "MEDIUM",
      "category": "readability-45plus",
-     "title": "Desktop pricing notes and helper text run 87\u2013106 characters per line",
-     "evidence": "1280: p 'Programme fees are \u201cfrom\u201d\u2026' width 766px at 14.5px \u2248106ch; p 'Every programme begins\u2026' 766px \u2248106ch; p 'Type it however you would say it\u2026' 768px at 16px (inline max-width: 80ch resolves to \u224887 real ch, 96 by 0.5em estimate). Intro p is 684px at 19px \u224872ch (within range). 390: all paragraphs 359px wide \u224840\u201349ch \u2014 the floor of 45 is physically unreachable at 17px+ on a 390px screen and is not reported.",
-     "benchmarkRule": "Line length 45\u201375ch (benchmark 43\u201350ch).",
-     "proposedFix": "Scoped CSS on the desktop variant: max-width: 68ch on the two note paragraphs and 64ch on the helper note.",
+     "title": "Finder helper paragraph runs 96 characters per line on desktop",
+     "evidence": "1280: <p> 'Type it however you would say it, in English, German or French \u2014 spelling slips are fine\u2026' font-size 16px, color rgb(143,98,18) on paper (4.85:1), width 768px (max-width 768px) = 96ch per line, line-height 25.6px (now-d1280-01.png y~290-330). At 390 the same paragraph is 45ch. Compare the hero intro on the same page: max-width 661px at 19px = 72ch (within range).",
+     "benchmarkRule": "HARD RULE: line length 45-75ch; body >=17px.",
+     "proposedFix": "Scoped CSS: [data-ahv-route=\"/wellness-programs/\"] [data-ahv-finder-block] ~ p, or the gold helper <p> by its color, { max-width: 66ch; font-size: 17px; }.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] p[style*='143, 98, 18'] (text anchor 'Type it however you would say it')",
      "width": "1280"
     },
     {
      "severity": "LOW",
-     "category": "layout-desktop",
-     "title": "Desktop card row fills 2 of 3 grid columns, leaving the right third of the section empty",
-     "evidence": "1280: article cards at x38 w384 and x448 w384 inside a 1203px section (3\u00d7384 + 2\u00d725.5 gap); nothing occupies x832\u20131241. Trust list and CTA block below are centred (ul x320 w640), so the eye jumps from a left-anchored card row to a centred block. Visible in d1280-chunk01.png.",
-     "benchmarkRule": "Desktop multi-column where content is parallel, sensible max-width, not a stretched phone column.",
-     "proposedFix": "Scoped CSS: for this route set the card grid to grid-template-columns: repeat(2, minmax(0, 1fr)) with max-width ~860px and margin-inline:auto, or justify-content:center \u2014 either keeps the shared card language.",
-     "width": "1280"
+     "category": "structure-hierarchy",
+     "title": "Programme card titles are <h2> on mobile but <h3> on desktop",
+     "evidence": "390 heading outline: H1 'Ayurvedic Wellness Programmes' > H2 'Choose Your Programme' > H2 'Kairali's Personalized & Customized Healing Program' (21px) > H2 'Preventive Health & Regenerative\u2026' (21px) > H2 'Not sure which programme fits?'. 1280 outline for the same content: H1 > H2 > H3 > H3 > H2. No level skips on either width, but the mobile card titles are siblings of the section heading rather than children, and the two variants disagree.",
+     "benchmarkRule": "Clear structure/hierarchy; card language for groups of parallel items.",
+     "proposedFix": "DOM pass on the mobile variant: retag the two card-title <h2> elements inside the card grid as <h3> (preserve classes/inline style). Style is already 21px Marcellus so no visual change.",
+     "selectorOrPointer": "[data-ahv-view=\"ahv-page-wellness-programs-mobile\"] section:nth-of-type(2) article h2 / card h2 (y=1561 and y=2326)",
+     "width": "390"
     },
     {
      "severity": "LOW",
      "category": "imagery",
-     "title": "Hero reuses the second card's photo and carries no overlaid title; card images have 0px radius inside 4px cards",
-     "evidence": "Hero div 390\u00d7230 (390) / 1280\u00d7384 (1280) background-image /ahv/assets/img/preventive.webp \u2014 the same file as card 2's <img> (rw357\u00d7210 @2x, natural 1920\u00d71000). Hero has no text child (text ''), only a lotus SVG on desktop; the h1 sits above it in the header block. Card <img> border-radius 0px; parent article radius 4px overflow hidden, border-top 3px solid #C1882C. Both photos are real treatment photography (F-6.jpg 1200\u00d7857, preventive.webp 1920\u00d71000), rendered at \u22652\u00d7 density, descriptive alt present \u2014 no stock or placeholder imagery.",
-     "benchmarkRule": "Real photography, rounded corners, full-bleed hero with overlaid title; consistent card language.",
-     "proposedFix": "Swap the hero background to a photo not used by a card on this page (content team supplies; flag, do not invent). Optionally scoped CSS to bump card radius to match the homepage card radius once known.",
+     "title": "Card photos have square corners inside a 4px-radius card; packages page rounds its photos",
+     "evidence": "Card images F-6.jpg (1200x857 natural, rendered 357x210 / 382x230, object-fit cover) and preventive.webp (1920x1000 natural) have border-radius 0px and parent overflow visible; the card wrapper is border-radius 4px, background rgb(255,253,247), border-top 3px solid rgb(193,136,44). /packages/ renders its photos with border-radius 4px; homepage clips photos inside overflow:hidden 4px parents. Photography is real (spa-free clinical treatment imagery), no stock or placeholder detected, alt text present and descriptive on both photos.",
+     "benchmarkRule": "Real photography, rounded corners, consistent card language.",
+     "proposedFix": "Scoped CSS: [data-ahv-route=\"/wellness-programs/\"] .programme-card { overflow:hidden } or .programme-card img { border-radius: 2px 2px 0 0 }.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] section:nth-of-type(2) a > img (2 images, radius 0px)",
      "width": "both"
     },
     {
      "severity": "LOW",
-     "category": "spacing-rhythm",
-     "title": "Mobile '1908' watermark overlaps the 'Choose Your Programme' heading",
-     "evidence": "390: span '1908' 74px Marcellus rgba(193,136,44,0.1) absolute at x216\u2013378, y1045\u20131119; h2 at x16\u2013375, y1077\u20131121 \u2014 the glyphs sit behind 'Programme'. Screenshot m390-chunk01.png shows the ghosted digits behind the heading. On 1280 the watermark (120px, x984\u20131247) is clear of the h2 (x38\u2013449).",
-     "benchmarkRule": "Calm section rhythm with clear separation.",
-     "proposedFix": "Scoped CSS at \u2264600px: hide the watermark span (display:none) or push it above the heading (top offset) so it never underlays text.",
+     "category": "navigation",
+     "title": "Fixed 'P' chat bubble overlaps the wrapped card title on mobile",
+     "evidence": "390: fixed div 'CHAT WITH PRIYA' (h 58, top 714) plus sticky bottom bar 'CALL / ENQUIRE / FREE CONSULT' (52px) plus sticky 64px header leave ~670px of the 844px viewport. In now-m390-01.png the bubble sits over the last word of 'Kairali's Personalized & Customized Healing Program' (card title, y~1490-1540). Same chrome exists on the homepage (identical sticky list measured on /), so this is shared chrome, not template drift, but it lands on this template's long right-wrapping titles.",
+     "benchmarkRule": "Readable for a 45+ reader on a phone; content must not be occluded.",
+     "proposedFix": "Not a template stylesheet change; if addressed, give the card title/price rows padding-right: 84px on the mobile variant of this route, or move the bubble above the bottom bar's left edge in shared chrome (owner decision).",
+     "selectorOrPointer": "[data-ahv-view=\"ahv-page-wellness-programs-mobile\"] card h2 vs fixed div (text 'Chat with Priya', top 714px)",
      "width": "390"
     },
     {
      "severity": "LOW",
      "category": "typography",
-     "title": "Shared chrome (header nav, footer, mobile bottom bar) contributes the bulk of the sub-15px text on this route",
-     "evidence": "1280 header nav links 12.5px uppercase (5 links); locale spans EN/DE/FR 13px; footer legal links 12\u201313px (Terms & Conditions \u2026 Sitemap XML), footer strapline row 12px, 'English | How to Reach \u00b7 360 View \u00b7 Map' 12px. 390 footer link columns 14.5px (20 links), legal links 13.5px, address 14px, mobile bottom bar labels 12.5px, Subscribe 12.5px. These blocks are not template-specific.",
-     "benchmarkRule": "HARD RULE: no text under 15px anywhere.",
-     "proposedFix": "Raise in the shared header/footer/bottom-bar stylesheet (15px minimum for nav and legal links, 15px bottom-bar labels) rather than per-template; noted here so the count is not misattributed to this template.",
+     "title": "Card excerpts and CTA-block paragraph are 16.5px, just under the 17px body floor",
+     "evidence": "Both widths: card excerpt <p> 'Program details About Personalized & Customized Healing Program\u2026' 16.5px (x2, width 313/330px = 38-40ch), and 'Share your goal in your own words\u2026' 16.5px (359px = 43ch at 390; 554px = 67ch at 1280). Body computed font-size is 17px, so these carry an explicit 16.5px override.",
+     "benchmarkRule": "HARD RULE: body text >=17px.",
+     "proposedFix": "Scoped CSS: [data-ahv-route=\"/wellness-programs/\"] p[style*='16.5px'] { font-size: 17px; }.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] section:nth-of-type(2) card p (16.5px) and section:nth-of-type(3) p (16.5px)",
+     "width": "both"
+    },
+    {
+     "severity": "LOW",
+     "category": "structure-hierarchy",
+     "title": "Only one eyebrow on the page (above the H1); the two section H2s carry none",
+     "evidence": "Eyebrow scan: 'KAIRALI \u2014 THE AYURVEDIC HEALING VILLAGE \u00b7 SINCE 1908' 12px uppercase rgb(143,98,18) letter-spacing 2.6px above the H1 (matches homepage eyebrows: 12-12.5px rgb(143,98,18) ls 2.2-2.6px). 'Choose Your Programme' (H2, with a '1908' Marcellus watermark and gold underline) and 'Not sure which programme fits?' (H2) have no eyebrow. /packages/ also has zero eyebrows, so the benchmark is split on this.",
+     "benchmarkRule": "Small uppercase gold eyebrow labels above section headings (home has 8; packages has 0).",
+     "proposedFix": "Optional polish only: a DOM pass could insert an eyebrow span (12px uppercase, gold, ls 2.6px, reusing the H1 eyebrow's inline style) before the two H2s using the existing section labels ('2 in Wellness Programs', 'Guidance'). Do not invent copy without owner text.",
+     "selectorOrPointer": "[data-ahv-route=\"/wellness-programs/\"] h2 (y=1077/3424 at 390; y=1024/2338 at 1280)",
      "width": "both"
     }
    ],
    "checkedAndClean": [
-    "Route root present: [data-ahv-route=\"/wellness-programs/\"]; HTTP 200; title 'Ayurvedic Wellness Programmes in Kerala | Kairali'.",
-    "Horizontal overflow: documentElement.scrollWidth == clientWidth at both widths (390/390, 1280/1280); zero elements extend past the right edge.",
-    "Palette matches benchmark: body background rgb(247,244,234) #F7F4EA; ink rgb(42,33,24) on headings/body; muted rgb(117,105,90); gold #C1882C on card top borders and watermark; gold button rgb(238,180,30) #EEB41E with ink text; brown rgb(90,68,32) #5A4420 filled/outline buttons; green rgb(0,96,56) #006038 links and WhatsApp outline; footer rgb(42,32,20).",
-    "Type families match: body Mulish 17px (computed on <body>), display Marcellus for h1/h2/h3 and card subtitles; fonts loaded Marcellus 400, Mulish 400/600/700.",
-    "Mobile heading scale matches benchmark: h1 Marcellus 30px/400, h2 26px/400, card h2 21px, closing h2 24px.",
-    "Heading hierarchy has no skips at either width (390: h1\u2192h2\u2192h2\u2192h2\u2192h2; 1280: h1\u2192h2\u2192h3\u2192h3\u2192h2). No body-text elements masquerade as headings; card subtitles 'Swasthya Anukula Chikitsa' are styled as subtitles, not headings.",
-    "Desktop is not the phone column stretched: separate header (horizontal nav + locale + search + Book Your Stay), 2-column card row, 2-column trust list, 4-column footer, fluid h1 clamp(34px,3.6vw,52px); intro paragraph 684px \u224872ch.",
-    "Card language consistent across both cards: article radius 4px, background rgb(255,253,247), 3px #C1882C top rule, photo \u2192 Marcellus title \u2192 Sanskrit subtitle \u2192 nights/price chips \u2192 meta \u2192 excerpt \u2192 brown filled 'Read More' + brown outline 'Book Now' + green WhatsApp link. Same structure on both widths.",
-    "Imagery is real treatment photography (F-6.jpg 1200\u00d7857, preventive.webp 1920\u00d71000), rendered at or above 2\u00d7 device density, object-fit cover, descriptive alt on every content <img>; no stock, placeholder or empty-alt content photos; all images loaded (complete && naturalWidth>0).",
-    "Tap targets: every button/link measured \u226544\u00d744 except the two inline 'Read More' links reported above; breadcrumb links, filter chips, currency buttons, social icons (46\u00d746), footer links (44px rows), bottom bar (52px) all pass.",
-    "Links do not run together: adjacent-link scan found 0 pairs with <6px horizontal gap; footer legal links separated by '\u00b7' on desktop and wrapped rows on mobile.",
-    "Contrast: muted rgb(117,105,90) on #F7F4EA \u22484.8:1 and helper rgb(143,98,18) on #F7F4EA \u22484.9:1 both pass WCAG AA; footer rgba(247,244,234,0.7) on rgb(42,32,20) \u22489:1.",
-    "Section rhythm: 390 \u2014 header 64 \u2192 intro section pad 18/24 \u2192 hero 230 \u2192 filter band \u2192 programme section pad 26 top \u2192 white CTA section pad 40/46 \u2192 footer pad 40/44; 1280 \u2014 intro 26/30, programme 34 top, CTA 50/56. Consistent gutters: width min(1220px, 92%) mobile / 94% desktop, 16px side gutter at 390.",
-    "Cookie notice suppressed via ktahv-consent=accepted; mobile sticky bottom bar (52px) and Priya chat FAB are accounted for by wrapper padding-bottom 64px so the footer copyright line is not covered (m390-chunk06.png).",
-    "Body-copy locked-register check incidental: page uses 'programme', 'physician', 'consultation', 'treatment'; the only trust bullet 'World Luxury Award Winner' is a named award, outside this design audit's scope but noted for the compliance lint owner."
+    "Route resolves: GET http://127.0.0.1:4321/wellness-programs/ -> 200, title 'Ayurvedic Wellness Programmes in Kerala | Kairali', page root <div id=ahv-design-root data-ahv-route=\"/wellness-programs/\" data-ahv-template=source data-ahv-view=ahv-page-wellness-programs-{desktop|mobile}>. Note: the DOM carries NO data-source-pointer attributes; blocks are keyed by data-dc-tpl (378 nodes), data-sc-name (Root / AHV Chrome Header / AHV Chrome Footer) and data-ahv-finder-block. Pointers above use route/view attributes plus text anchors. Zero console errors on either width.",
+    "Body tokens match the site: body Mulish 17px (>=17px floor met), color rgb(42,33,24) ink, background rgb(247,244,234) paper on html and body, line-height 28.9px; fonts loaded Marcellus 400 + Mulish 400/600/700; paper/ink/muted/gold/brown/green all in use (gold button rgb(238,180,30), brown rgb(90,68,32), green rgb(0,96,56), eyebrow gold rgb(143,98,18)).",
+    "No horizontal overflow: document.documentElement.scrollWidth == clientWidth on both widths (390/390, 1280/1280; body.scrollWidth identical).",
+    "Mobile heading scale matches the benchmark exactly: H1 Marcellus 30px/400 (benchmark 30px), H2 26px/400 (benchmark 26px), CTA H2 24px, card titles 21px. Desktop scales type (H1 46.08px, same as /packages/ desktop H1 46.08px; H2 35.84px vs packages 30.72px).",
+    "Eyebrow above H1 matches homepage language: 12px uppercase rgb(143,98,18) letter-spacing 2.6px vs homepage eyebrows 12-12.5px rgb(143,98,18) ls 2.2-2.6px.",
+    "Button system in the 'Not sure which programme fits?' block matches the benchmark: FREE DOCTOR CONSULTATION gold rgb(238,180,30) with ink text, 52px (390) / 54px (1280) tall, 4px radius, uppercase 14px ls 1.5px; WHATSAPP PATIENT CARE green outline 54px; ENQUIRE NOW brown outline 54px; header BOOK NOW brown 44px; card READ MORE brown filled 48-50px / BOOK NOW brown outline 48-50px \u2014 same brown-primary/gold-consult hierarchy as the homepage (homepage BOOK NOW brown 49-56px, CONNECT FOR FREE DOCTOR CONSULTATION gold 54-61px).",
+    "Tap targets: every <a>/<button> except the two inline 'Read More' links (finding above) is >=44px tall: header links 44px, filter pills 44px, currency toggles 48px, card buttons 48-50px, CTA block 52-54px, footer links 44px, social icons 46px.",
+    "Imagery: real clinical photography only \u2014 F-6.jpg 1200x857 and preventive.webp 1920x1000 (also used as the full-bleed hero background 1280x384 / 390x230); both card <img> have descriptive alt text; no stock/placeholder images; card language consistent across both cards (radius 4px, bg rgb(255,253,247), 3px gold top rule, same layout).",
+    "Card language and chrome parity: shared header and footer measure identically to /packages/ on both widths (same nav link sizes 12.5px/44px, same footer size list ['18px','17px','15.5px','26px','16px','14.5px','15px','12.5px','13px','12px'] on desktop and ['16px','23px','15.5px','13.5px','14.5px','13px'] on mobile), so chrome sub-15px text is site-wide, not this template's drift.",
+    "Desktop is not the phone column stretched: header nav row with 5 links + locale + CTA; 3-track card grid (used by 2 cards \u2014 see finding); trust list <ul> 2 columns; footer 4-column grid (1203px); paragraphs carry max-widths (661px intro, 554px CTA copy). Mobile stacks to one column with pills wrapping onto 3 rows.",
+    "Line length within 45-75ch except the two desktop paragraphs reported: hero intro 19px 72ch (1280) / 18px 40ch (390); card excerpts 38-40ch; CTA copy 43ch (390) / 67ch (1280).",
+    "Heading outline has no level skips on either width (390: h1>h2>h2>h2>h2; 1280: h1>h2>h3>h3>h2); no run-together adjacent links (0 found); section rhythm is calm: mobile section padding 18/24, 26/0, 40/46 (+44px top margin on the white trust/CTA section), desktop 26/30, 34/0, 50/56.",
+    "Inline styles: 155 (390) / 192 (1280) styled nodes, all consistent with the design-package runtime (tokens above); none fight the site language except the explicit 14.5px/16.5px/13-14px sizes already reported.",
+    "Language-lock note (outside design scope, not a finding here): 'World Luxury Award Winner' appears in the trust list on this route; the same award name appears on the homepage and english-candidate/language-lock-audit.json already carries 81 'luxury' entries, so it is a tracked lock item for the owner, not new drift from this template."
+   ]
+  },
+  {
+   "template": "ahv-page-yoga-stress-reset",
+   "routesAudited": [
+    "/yoga-based-stress-energy-reset-program/"
+   ],
+   "overallVerdict": "minor-drift",
+   "findings": [
+    {
+     "severity": "HIGH",
+     "category": "readability-45plus",
+     "title": "Three-quarters of body paragraphs and list items render below the 17px floor",
+     "evidence": "Mobile 390: visible <p>/<li> font-size histogram = 15px:8, 15.5px:17, 16px:28, 16.5px:44, 17px:17, 17.5px:15, 18.5px:1 -> 97 of 130 (75%) are under 17px. Identical sizes at 1280. By section (data-dc-tpl of the section content): 'What we offer' inclusions 16.5px x13; 'Daily activities' cards 16px x27 bullets + 15.5px x7 + 15px x7 subtitles + 16.5px x7 (tpl 272); 'Routine (Dinacharya)' timeline 16.5px x19 (tpl 296/304); awards descriptions 15.5px x4 (tpl 129/140 mobile, 114/123 desktop); package notes 15.5px x5; related-programme blurbs 16.5px x3; 'Doctor might change...' note 15px. Body element itself is 17px Mulish and the About/Approach/Why/Process copy is 17-17.5px, so the floor is only met in the top third of the page.",
+     "benchmarkRule": "HARD RULE: body text >= 17px for the 45-plus reader (overrides the benchmark's 15-16px).",
+     "proposedFix": "Scoped stylesheet keyed on [data-ahv-route=\"/yoga-based-stress-energy-reset-program/\"]: `main p, main li { font-size: max(17px, 1em) !important; line-height: 1.6 }` (the design payload sets sizes inline, so !important is required). Exclude the eyebrow divs and button labels by scoping to p/li only; then re-measure the Daily Activities and Routine sections, which will grow ~6% taller.",
+     "selectorOrPointer": "[data-ahv-route] section p, section li; data-dc-tpl 272, 289, 296, 304, 129, 140, 114, 123",
+     "width": "both"
+    },
+    {
+     "severity": "HIGH",
+     "category": "layout-mobile",
+     "title": "Awards list is a nested scroll box: 10,649px of cards inside a 420px window",
+     "evidence": "#recognitions > details (summary tpl 133 mobile / 118 desktop) wraps a div (tpl 134 / 119) with inline `max-height: 420px; overflow-y: auto` (560px on desktop). After opening: mobile box clientHeight 430, scrollHeight 10,649 (29 award cards, ~367px each, single column) -> ~25 inner screens to scroll inside a box that occupies half the viewport; desktop box 570px vs scrollHeight 3,072 (4-col grid). Screenshot m390-awards-open.png shows the page scroll stopping while the inner box scrolls. All 29 h3 titles return empty innerText while collapsed (hidden content), so nothing inside is reachable by find-in-page either.",
+     "benchmarkRule": "Calm section rhythm with clear separation; every group of parallel items uses card language, not a scroll trap. A 45-plus reader on a phone should never have to scroll inside a scrolling page.",
+     "proposedFix": "Scoped CSS: `#recognitions details > div[style*=\"max-height\"] { max-height: none !important; overflow: visible !important }` so the disclosure expands in the page flow (keep it collapsed by default). Optionally a small DOM pass that shows the first 8 cards and appends a second 'Show remaining N' summary, so an opened list is never longer than ~3 screens on mobile.",
+     "selectorOrPointer": "#recognitions details div[data-dc-tpl=\"134\"] (390) / [data-dc-tpl=\"119\"] (1280)",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "buttons-ctas",
+     "title": "'View all recognitions' summary label fractures into three lines / loses its space",
+     "evidence": "summary (tpl 133/118) is `display: inline-flex`, so the text node 'View all recognitions (', the <span>29</span> and ' more)' are laid out as three separate flex items. innerText returns \"VIEW ALL RECOGNITIONS (\\n29\\nMORE)\". Mobile screenshot m390-part01.png renders it as 'VIEW ALL RECOGNITIONS (' on one line with '29MORE) +' displaced to the right; desktop renders '(29MORE)' with the whitespace collapsed. summary is 15px/700/uppercase, 51px tall, 310px wide on mobile.",
+     "benchmarkRule": "Consistent button system: one uppercase tracked label per control, never a broken label.",
+     "proposedFix": "Scoped CSS: `#recognitions summary { display: block !important; line-height: 48px; white-space: normal }` (or `display:flex; gap:0; flex-wrap:nowrap` with the label wrapped in a single span via a DOM pass). Re-check both widths for the '(29 more)' spacing.",
+     "selectorOrPointer": "#recognitions summary[data-dc-tpl=\"133\"] / [data-dc-tpl=\"118\"]",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "readability-45plus",
+     "title": "Tariff card labels sit at 10.5-13.5px on the page's key decision block",
+     "evidence": "#package villa cards (card tpl 335/319): 'SINGLE'/'DOUBLE' 11.5px Mulish uppercase #75695A on #FFFDF7 (5.26:1) x8; 'per night' 13.5px x8; 'SIGNATURE' badge 10.5px #EEB41E on #3B332A x1. Prices themselves are 22px Marcellus. Same values at 390 and 1280. Currency toggles are 15px, 48px tall (fine).",
+     "benchmarkRule": "HARD RULE: no text under 15px anywhere; the tariff card is the block a 45-plus reader must read most carefully.",
+     "proposedFix": "Scoped CSS on the tariff cards: `#package [style*=\"font-size: 11.5px\"], #package [style*=\"font-size: 13.5px\"] { font-size: 15px !important; letter-spacing: 1.4px }` and `#package [style*=\"font-size: 10.5px\"] { font-size: 15px !important }`; verify the 4-up desktop grid (287px columns) still fits SINGLE/DOUBLE side by side.",
+     "selectorOrPointer": "#package div[data-dc-tpl=\"335\"] descendants (390) / [data-dc-tpl=\"319\"] (1280)",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "buttons-ctas",
+     "title": "CTA labels are 12-14.5px uppercase; below the 15px floor on every button in the template body",
+     "evidence": "Mobile: FREE DOCTOR CONSULTATION / ENQUIRE NOW / BOOK MY TREATMENT / BEGIN TREATMENT / BOOK NOW = 14px, 700, uppercase, ls 1.5px, 56-58px tall (a.scp2/scp3/scp4, 10 instances); related-programme BOOK NOW 13px x3 (48px tall); footer SUBSCRIBE 12.5px; header BOOK NOW 12px (shared chrome). Desktop: same buttons 14.5px, sticky in-page nav (ABOUT ... FAQS) 13.5px Mulish uppercase x7, header nav 12.5px x5 (shared chrome). Heights (44-58px), gold #EEB41E/ink and brown #5A4420 solid/outline, 4px radius all match the benchmark; only the label size fails. The owner homepage uses the same 12-14px labels, so this is a site-wide pattern rather than template drift.",
+     "benchmarkRule": "Button system 52px tall, uppercase tracked label (matched) + HARD RULE no text under 15px (failed).",
+     "proposedFix": "Scoped CSS: `[data-ahv-route] a[style*=\"text-transform: uppercase\"][style*=\"letter-spacing: 1.5px\"], [data-ahv-route] nav a[style*=\"font-size: 13.5px\"] { font-size: 15px !important }` (keep letter-spacing 1.5px and padding so height stays 56px). Header/footer chrome should be fixed once site-wide, not per template.",
+     "selectorOrPointer": "a.scp2, a.scp3, a.scp4 (generated classes) \u2014 match on inline style; desktop nav a[data-dc-tpl] under the sticky nav",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "layout-mobile",
+     "title": "Narrow side-by-side columns leave 14-27ch reading widths on the phone",
+     "evidence": "390: NABH feature card text column 146px = 14.3ch at 17px (badge 72px left, 4-5 words per line in m390-part01.png); four featured award cards 174px = 18.7ch at 15.5px; Routine (Dinacharya) timeline descriptions 180px = 18.2ch at 16.5px for 20 entries (section height 3,517px, ragged 3-word lines in m390-part06/07.png); Process steps 280px = 26.7ch. Desktop equivalents are 25.9-47.6ch.",
+     "benchmarkRule": "Line length 45-75ch (hard rule); on a 350px column the only way to approach it is to stop splitting the column.",
+     "proposedFix": "Scoped CSS at max-width 480px: award cards `flex-direction: column !important` (badge above text, text 100%); Routine timeline rows `grid-template-columns: 44px 1fr !important` or stack time above title (`display:block`); keep the Process number column at 40px. No content change.",
+     "selectorOrPointer": "#recognitions [data-dc-tpl=\"121\"] and [data-dc-tpl=\"129\"] card rows; Routine rows tpl 296/304; process rows tpl 153/159",
+     "width": "390"
+    },
+    {
+     "severity": "LOW",
+     "category": "typography",
+     "title": "'Who is This Program For?' h3s use bold Mulish instead of the Marcellus display face",
+     "evidence": "8 x <h3> (tpl 113 mobile / 99 desktop) computed: Mulish 600 18.5px #F7F4EA on #43331E. Every other h3 on the page (awards, Pre-Program, villa names, days, routine, programmes) is Marcellus 400 18-23px, as on the homepage. Also functioning-as-headings-but-not-headings: Daily Activities titles ('Organic Farm Visit' etc.) are <p> 17.5px/700 under the day h3 (7x), inclusion icon captions are <p> 16.5px/700 (5x).",
+     "benchmarkRule": "Marcellus display face for h1/h2/h3 over Mulish body.",
+     "proposedFix": "Scoped CSS: `[data-ahv-route] h3[style*=\"font-weight: 600\"] { font-family: Marcellus, serif; font-weight: 400; font-size: 20px }`. Optional DOM pass converting the bold activity-title <p> to <h4> for outline correctness (no visual change needed).",
+     "selectorOrPointer": "h3[data-dc-tpl=\"113\"] (390) / [data-dc-tpl=\"99\"] (1280); p[data-dc-tpl] inside 'Daily activities' cards",
+     "width": "both"
+    },
+    {
+     "severity": "LOW",
+     "category": "imagery",
+     "title": "Stock-looking composite in the related-programmes grid and square corners on those cards",
+     "evidence": "Related-programme card 1 image /ahv/assets/img/Wright-Loss-1.jpg (428x285 natural, rendered 348x230 / 384x230) is a three-figure body-progression composite of the same model in a white shirt on a grey studio background \u2014 the only image on the page that does not read as Kairali photography (about-image.png and Holistic.jpg in the same grid are real). The three card images render with border-radius 0 while every other photo on the page uses 4px (hero-side photos 596x397 r=4px, therapy photo 513x517 r=4px). Award badges (37 PNGs, 300x300 -> 64/72px) carry alt=\"\" but each h3 names the award, so that is acceptable.",
+     "benchmarkRule": "Real photography, rounded corners, no stock imagery.",
+     "proposedFix": "Asset swap is an owner/creative decision \u2014 flag it (do not invent a replacement). Corners: scoped CSS `[data-ahv-route] a[href=\"/weight-loss-programme/\"] img, a[href=\"/panchakarma-therapy/\"] img, a[href^=\"/holistic-treatment\"] img { border-radius: 4px 4px 0 0 }`.",
+     "selectorOrPointer": "section[aria-label=\"Related programmes\"] img[src*=\"Wright-Loss-1.jpg\"]",
+     "width": "both"
+    },
+    {
+     "severity": "LOW",
+     "category": "layout-desktop",
+     "title": "Four desktop paragraphs run past 75ch across the full 1203px container",
+     "evidence": "1280: FAQ intro (tpl 449) 108.3ch at 18.5px / 1203px wide; trust strip 'NABH Certified Hospital \u00b7 118+ Years Heritage \u00b7 ...' (tpl 486) 125.2ch at 16px / 1203px (single centred line); routine disclaimer (tpl 289) 79.9ch at 15.5px / 744px; NABH description (tpl 107) 78ch at 17px / 796px. All other desktop copy measures 33.7-68ch. Desktop otherwise is genuinely multi-column (about/approach 2-col 596+552px, who-for 3-col, awards 4-col, process 2-col, activities 3-col, routine 2-col, testimonials 2-col max-width 960, tariffs 4-col, programmes 3-col) inside width:min(1220px,94%).",
+     "benchmarkRule": "Line length 45-75ch; desktop is not the phone column stretched (passes).",
+     "proposedFix": "Scoped CSS: `#faqs > p, section[aria-label=\"Next steps\"] p, [data-dc-tpl=\"289\"], [data-dc-tpl=\"107\"] { max-width: 70ch }` (centre the Next-steps strip with margin-inline:auto).",
+     "selectorOrPointer": "p[data-dc-tpl=\"449\"], p[data-dc-tpl=\"486\"], p[data-dc-tpl=\"289\"], p[data-dc-tpl=\"107\"]",
+     "width": "1280"
+    },
+    {
+     "severity": "LOW",
+     "category": "other",
+     "title": "Content register: KTAHV-locked words appear in award titles, inclusions and copy (not a design defect \u2014 flag for owner/compliance)",
+     "evidence": "Rendered text includes award names 'Worlds Luxury Spa Awards Winner 2024', 'World(s) Luxury Hotel Awards 2024', 'World Luxury Spa Awards 2017-2023' (7 cards), award blurbs 'Best Luxury Yoga & Wellness Retreat', 'Wellness Resort of the Year'; inclusion bullet 'Luxury, vastu-compliant villas'; Royal Villa subtitle 'Premium luxury experience'; trust strip 'World Luxury Award Winner'; FAQ intro 'questions guests most often ask'; testimonial 'made the journey incredibly soothing'; 'Stay in our serene retreat'. Awards are third-party proper names, the rest is site copy.",
+     "benchmarkRule": "CLAUDE.md KTAHV language lock (banned: spa, resort, luxury, journey, guests) \u2014 outside the visual benchmark, reported for completeness.",
+     "proposedFix": "No stylesheet fix. Route to the content/compliance lane: decide whether third-party award names are exempt, and re-word the site-authored instances (inclusions, villa subtitle, trust strip, FAQ intro, 'Why' bullet). Do not change award names without the owner's ruling.",
+     "selectorOrPointer": "#recognitions h3/p; 'What we offer' inclusions li; #package Royal Villa subtitle; section[aria-label=\"Next steps\"] p; #faqs > p; #why li",
+     "width": "both"
+    }
+   ],
+   "checkedAndClean": [
+    "Route root present: [data-ahv-route=\"/yoga-based-stress-energy-reset-program/\"] on a DIV (data-ahv-template=source); blocks carry data-dc-tpl (no data-source-pointer attributes exist on this template \u2014 pointers above use data-dc-tpl ids).",
+    "Horizontal overflow: none \u2014 documentElement.scrollWidth/clientWidth = 390/390 and 1280/1280.",
+    "Tap targets: 0 of 103 (390) and 0 of 129 (1280) interactive elements under 44x44px; smallest are the 44x44 menu button and 46x46 social icons; CTAs 56-58px tall, currency toggles 48px, FAQ summaries 94px (390) / 66px (1280).",
+    "Body type: body computed Mulish 17px, colour ink #2A2118 (rgb 42,33,24) on paper #F7F4EA \u2014 fonts load (Marcellus + Mulish via /ahv/fonts/ahv-33eeac48ab44.css).",
+    "Headings: single H1 Marcellus 30px (390) / 43.5px (1280); H2 Marcellus 26px / 35.8-38.4px; hierarchy H1>H2>H3>H4 with no skips. Matches homepage 30px/26px on mobile.",
+    "Eyebrows: 'PROGRAM DETAILS', 'OUR APPROACH TO', 'INCLUSIONS', 'TESTIMONIALS', 'VIEW VILLA OPTIONS', 'MORE PROGRAMS' = 13px Mulish 700 uppercase, letter-spacing 2.6px, #8F6212 (4.86:1 on paper) \u2014 same colour and treatment the owner homepage actually renders (12px #8F6212 ls 2.2px); 'DOCTOR GUIDANCE' on the dark band uses #EEB41E (6.46:1).",
+    "Palette: paper #F7F4EA, ink #2A2118, muted #75695A (5.35:1 on white), gold #C1882C bullets/rules/lotus, gold button #EEB41E with ink text (8.41:1), brown #5A4420 solid/outline (8.36:1), green #006038 links, dark bands #43331E \u2014 all on-token; no foreign colours found.",
+    "Button system: gold primary / brown solid / brown 1.5px outline, 4px radius, uppercase tracked 1.5px, 56-58px tall, full-width on mobile \u2014 same family as the homepage (54/53px).",
+    "Card language consistent across inclusions, tariffs, daily activities, testimonials, programmes: #FFFDF7 or white surface, 1px #E9E2D3 border, 3px gold top rule, 4px radius.",
+    "Imagery: hero yoga-reset-hero-instructor-guiding.jpg full-bleed (300px tall at 390, 486px at 1280), three 1200x800 Kairali yoga-hall photos rendered 350x233 / 596x397 at 4px radius with descriptive alts, therapy photo 675x680 -> 513x517; no upscaling beyond ~1.1x anywhere; lotus.svg decorative with alt=\"\".",
+    "Hero treatment: breadcrumb + title + Sanskrit subtitle + gold-rule lede above a full-bleed photo (not overlaid as on the homepage) \u2014 an acceptable programme-page variant of the same language; noted, not counted as drift.",
+    "Desktop is a real desktop layout: container width:min(1220px,94%) = 1203px, 2/3/4/5-column grids in every parallel-item section, type scales (H1 30->43.5px, H2 26->38.4px, lede 17->19px), sticky in-page anchor nav at 1280 vs static 2-col anchor grid at 390.",
+    "Section rhythm: 16 sections, 44px (390) / 56-64px (1280) top padding, alternating paper / dark-brown / white bands; page height 25,734px at 390 (homepage 24,060px) and 13,756px at 1280.",
+    "Links do not run together: 0 adjacent-link pairs closer than 8px at either width; breadcrumb links 44px min-height.",
+    "Consent notice suppressed via ktahv-consent=accepted; sticky mobile action bar (CALL / ENQUIRE / FREE CONSULT) and Chat-with-Priya widget render identically to the homepage."
+   ]
+  },
+  {
+   "template": "ahv-page-stress-strain",
+   "routesAudited": [
+    "/treatment-to-remove-stress-and-strain/"
+   ],
+   "overallVerdict": "major-drift",
+   "findings": [
+    {
+     "severity": "HIGH",
+     "category": "readability-45plus",
+     "title": "65% of body copy sits below the 17px floor at both widths",
+     "evidence": "Measured on main p/li/dd: 137 of 209 elements < 17px (identical at 390 and 1280 \u2014 body copy does not scale on desktop). Paragraph histogram: 15.5px Mulish x46 (awards descriptions, tariff sub-copy, 'The above rates\u2026', muted notes), 16.5px x36 ('What We Offer' labels, inclusion cards, 'Bring: Cotton clothes\u2026'), 16px x1, 15px x8 (Daily Activities subtitle lines e.g. 'Connect with Nature's Pharmacy', 'Doctor might change as subject to availability.'), 13px x13 (tariff inclusion labels). Text-node histogram at 390: 15px x51, 15.5px x55, 16.5px x44, 16px x34, 14.5px x18, 13.5px x15, 13px x26, 11.5px x8. Body computed font-size is 17px but blocks override it inline (e.g. p style=\"font-size: 15.5px; line-height: 1.6; color: rgb(81, 74, 63)\").",
+     "benchmarkRule": "HARD RULE: body text >= 17px for the 45-plus European on a phone (overrides benchmark's 15-16px); no text under 15px anywhere.",
+     "proposedFix": "Scoped stylesheet keyed on [data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"]: raise every p, li, dd, blockquote inside main to min 17px (e.g. `#ahv-design-root[data-ahv-route=...] main :is(p,li,dd){font-size:max(17px,1em)!important;line-height:1.6}`), and set desktop body copy to 17.5\u201318px under @media (min-width:1024px). Keep colour and family; no content change.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] main p, main li (no data-source-pointer attrs exist on this page; blocks carry data-dc-tpl ids)",
+     "width": "both"
+    },
+    {
+     "severity": "HIGH",
+     "category": "readability-45plus",
+     "title": "Package tariff price labels and inclusion labels rendered at 10.5\u201313.5px",
+     "evidence": "Package Tariffs cards: 'SINGLE'/'DOUBLE' labels 11.5px rgb(117,105,90) ls 1.8px (8 instances), 'per night' 13.5px (8 instances), 'SIGNATURE' badge 10.5px rgb(238,180,30), and the 13 inclusion/T&C category labels ('Arrival & Accommodation', 'Nourishment', 'INR', 'Euro', 'USD', 'Check-in & Check-out', 'Cancellation :', 'Child Policy :') are <strong>/<p> at 13px rgb(143,98,18). Same values at 390 and 1280. Screenshot: price rows read as fine print next to 23px Marcellus prices.",
+     "benchmarkRule": "HARD RULE: no text under 15px anywhere; contrast readable. Price information is decision-critical for the 45-plus reader.",
+     "proposedFix": "Scoped CSS: within the tariff section (section with h2 'Package Tariffs', id #package) set the SINGLE/DOUBLE labels and 'per night' to 15px min (`[data-ahv-route=...] #package div[style*=\"11.5px\"], [style*=\"13.5px\"]{font-size:15px!important}` or target by data-dc-tpl ids), SIGNATURE badge to 15px, and the 13px category <strong> labels to 15px with the same gold/tracking. No layout change needed \u2014 cards have room (mobile card 350px, desktop 4 cols x ~285px).",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section#package (h2 'Package Tariffs'), label divs at 11.5px / 13.5px, span 'SIGNATURE' 10.5px, strong 13px inside details",
+     "width": "both"
+    },
+    {
+     "severity": "HIGH",
+     "category": "layout-mobile",
+     "title": "Dinacharya routine on mobile squeezes descriptions into a ~150px column (~18ch) for 29 rows",
+     "evidence": "Section 'Routine (Dinacharya)' at 390: two-column grid (time | text) inside a 310px inner width; 29 description <p> elements measure 150px wide at 16.5\u201317px (\u224818ch per line, e.g. 'Wake up and perform / self-care practices / (dinacharya) such as / tongue scraping, oil / pulling, and washing / the face.' = 6 lines for one sentence). Section height 4359px on mobile (the tallest block on the page). At 1280 the same block is a 2-col timeline with 436px text columns (\u224851ch) and reads well.",
+     "benchmarkRule": "HARD RULE: line length 45\u201375ch; 45-plus reader on a phone. Benchmark: calm section rhythm with clear separation.",
+     "proposedFix": "Scoped CSS for the routine timeline at max-width 767px: collapse each row to a single column (`grid-template-columns: 1fr`), render the time as an inline gold label above the title (`display:block; font-size:17px`), and let the description use the full 310\u2013350px (\u224840ch). Halves the section height without touching copy.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section containing h2 'Routine (Dinacharya)' \u2192 2-col grid rows (div[style*=\"grid-template-columns\"] w=302px) with p width 150px",
+     "width": "390"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "readability-45plus",
+     "title": "Awards cards on mobile put 15.5px body text in a 146\u2013180px column beside the 72px logo",
+     "evidence": "At 390 the 'Awards & Accreditations' cards are display:flex row (logo 72x72 + text). NABH card text width 146px (measured 17ch, 15.5px, 15 wrapped lines for one sentence); the four visible award cards have 180px text columns (~23ch) at 15.5px. Desktop cards are 4-col with 237px text (~30ch) and the NABH text runs 796px (94ch) \u2014 both outside 45\u201375ch.",
+     "benchmarkRule": "HARD RULE: line length 45\u201375ch; body >=17px. Benchmark: card language for parallel items.",
+     "proposedFix": "Scoped CSS: on mobile stack the card (`flex-direction:column; align-items:flex-start`) with the logo above the title so text gets the full 300px; on desktop cap the NABH card's text at `max-width:70ch`. Raise card body to 17px (covered by finding 1).",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section h2 'Awards & Accreditations' \u2192 div[style*=\"display: flex; gap: 18px; align-items: flex-start\"] cards",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "imagery",
+     "title": "Hero does not use the benchmark's full-bleed image with overlaid title; image has no rounded corners",
+     "evidence": "H1 (Marcellus 30px/43.5px, ink rgb(42,33,24)) sits in a paper block above a separate background-image div (390: 300px tall, 1280: 486px tall, border-radius 0px, style=\"height: clamp(380px, 38vw, 540px); background-image: url(/ahv/assets/img/stress-hero-thalapothichil-3.jpg)\"). Homepage measured: h1 colour rgb(255,255,255) with text-shadow over the hero. In-body photos use 4px radius (about/history images 350x233 r=4px) while the hero and the three 'More Programs' card images are r=0px.",
+     "benchmarkRule": "Benchmark imagery: 'real photography, rounded corners, full-bleed hero with overlaid title'.",
+     "proposedFix": "Either accept as the programme-page pattern (title-above keeps the h1 readable for 45+, which is a defensible deviation) or, via scoped CSS, give the hero div `border-radius:4px` inside a 20px gutter on mobile and add a 4px radius to the More Programs card images to match the in-body photo language. Do not move the title over the photo unless the owner asks \u2014 contrast for 45+ is better as-is.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] div[style*=\"stress-hero-thalapothichil-3.jpg\"]; More Programs img (Wright-Loss-1.jpg, about-image.png, Holistic.jpg) r=0px",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "imagery",
+     "title": "Stock-looking weight-loss image and under-sized photos upscaled on retina in 'More Programs'",
+     "evidence": "Card 1 image /ahv/assets/img/Wright-Loss-1.jpg (natural 428x285, rendered 348x230 at DPR2 \u2192 needs 696px; desktop 384x230) shows a repeated white-T-shirt torso before/after silhouette on a white background \u2014 reads as stock, not Kairali photography, and clashes with the two real treatment photos beside it. Card 3 /Holistic.jpg natural 380x253 rendered 348x230@2x (upscaled 1.8x). Also 'Why choose' image Why-Treatment-for-Stress-and-Strain.jpg 580x386 \u2192 350x233@2x and Benefits image 580x386 \u2192 350x233@2x are slightly under 2x. All content photos carry descriptive alt text.",
+     "benchmarkRule": "Benchmark: real photography, no stock imagery; images should render sharp at the delivered size.",
+     "proposedFix": "Asset swap only (no design change): replace Wright-Loss-1.jpg with a Kairali therapy photo from the approved library at >=700px wide, and supply >=700px versions of Holistic.jpg / the two 580px treatment photos. If none exists, flag via the missing-asset protocol (7-part spec) rather than inventing.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section h2 'Discover More Customizable Programs' \u2192 article img[alt=\"Weight Reduction/ Obesity  Management\"]",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "buttons-ctas",
+     "title": "CTA labels run 12.5\u201314.5px and heights drift from the 52px system",
+     "evidence": "Measured buttons: primary gold rgb(238,180,30)/ink, 4px radius, uppercase 1.5px tracking \u2014 correct family \u2014 but labels are 14px (390) / 14.5px (1280) on 'FREE DOCTOR CONSULTATION', 'ENQUIRE NOW', 'BOOK MY TREATMENT', 'BEGIN TREATMENT'; card 'BOOK NOW' outlines 48px tall at 13px; header 'BOOK NOW' 44x99 at 12px; sticky mobile bar 'CALL / ENQUIRE / FREE CONSULT' 52px tall at 12.5px; footer 'SUBSCRIBE' 48px at 12.5px; desktop footer 'ENQUIRE NOW'/'BOOK YOUR STAY' 48px at 13px. Heights 56/58/59/62px for the main CTAs vs 52px benchmark.",
+     "benchmarkRule": "HARD RULE: no text under 15px. Benchmark: consistent button system, 52px tall, uppercase tracked label, gold primary / brown outline secondary.",
+     "proposedFix": "Scoped CSS: `[data-ahv-route=...] a[class^=scp][style*=\"uppercase\"], button{font-size:15px!important; min-height:52px}` for the page CTAs (a.scp2/.scp3/.scp4 and the card a.scp3), and 15px for the sticky-bar labels and SUBSCRIBE. Keep tracking 1.5px and colours.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] a.scp2 (gold), a.scp3 (outline), a.scp4 (brown), a.scpb header BOOK NOW, fixed bottom bar div (52px), button 'SUBSCRIBE'",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "layout-desktop",
+     "title": "Desktop measure runs to 82\u2013139ch in the intro, NABH card and the Inclusions accordion",
+     "evidence": "At 1280: hero lede p 775px at 19px = 82ch; NABH award card p 796px at 17px = 94ch; the 23 <li> inside the 'Inclusions \u2014 Your Holistic Wellness Journey Includes' accordion are laid out at 1183px (139ch at 17px) \u2014 full container width once expanded. Other desktop copy is fine (about/history columns 552px \u2248 65\u201372ch; routine 436px \u2248 51ch).",
+     "benchmarkRule": "HARD RULE: line length 45\u201375ch; desktop must not be the phone layout stretched \u2014 sensible max-width.",
+     "proposedFix": "Scoped CSS at min-width 1024px: `max-width:70ch` on the hero lede p, the NABH card text block and the accordion <ul>/<li> (or render the 23 inclusions as a 2-col grid `columns:2; gap:48px`).",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] hero p[style*=\"border-left: 3px solid\"]; awards NABH card p; #package details > ul li (139ch)",
+     "width": "1280"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "navigation",
+     "title": "Mobile breadcrumb wraps to four lines with an orphaned '/' and the full 52-char page title",
+     "evidence": "At 390 the breadcrumb nav (15px, flex-wrap, gap 8px) renders 'Home / All Programmes / Ayurvedic Treatments' then a lone '/' on its own line, then 'Comprehensive Stress Relief & Mental Wellness Program' in muted rgb(117,105,90) across two lines, directly above the 30px h1 that repeats the same words (screenshot ms-0, y\u2248150\u2013235). Desktop renders on one line correctly.",
+     "benchmarkRule": "Benchmark: calm section rhythm with clear separation; navigation legible at 15px+; 45-plus reader should not parse duplicated wrapped chrome above the title.",
+     "proposedFix": "Scoped CSS + tiny DOM pass on mobile: hide the current-page crumb and its separator (`nav[aria-label] > span:last-of-type, nav > span:nth-last-of-type(2){display:none}` at max-width 767px) or keep separators attached to the following item with `white-space:nowrap` per crumb pair. Bump crumb links to 17px.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section:first-of-type nav[style*=\"font-size: 15px\"] (breadcrumb)",
+     "width": "390"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "spacing-rhythm",
+     "title": "Eyebrow labels appear above only 6 of 16 section headings",
+     "evidence": "H2s with an eyebrow (13px uppercase gold rgb(143,98,18), ls 2.6px): 'About\u2026' (PROGRAM DETAILS), 'History\u2026' (HISTORY), 'Personalized Doctor-Guided Program' (DOCTOR GUIDANCE), 'Transformative Results' (TESTIMONIALS), 'Discover More\u2026' (MORE PROGRAMS). Without: 'Who is This Program For?', 'Awards & Accreditations', 'Process Involved\u2026' (preceded by a lotus img), 'Why Choose\u2026', 'Benefits\u2026', 'What We Offer', 'Daily Activities', 'Routine (Dinacharya)', 'Package Tariffs' (eyebrow 'VIEW VILLA OPTIONS' sits below the h2 instead), 'FAQs', 'Not sure which programme fits?'. Same at both widths.",
+     "benchmarkRule": "Benchmark visual language: small uppercase gold eyebrow labels with letter-spacing above section headings; calm, consistent section rhythm.",
+     "proposedFix": "Small DOM pass: inject the existing eyebrow element pattern (div 13\u219215px uppercase, gold rgb(143,98,18), ls 2.6px) above the 10 h2s that lack one, using short labels derived from the h2 text (e.g. 'WHO IT IS FOR', 'RECOGNITION', 'PROCESS', 'BENEFITS', 'INCLUSIONS', 'WEEKLY PROGRAMME', 'DAILY ROUTINE', 'TARIFFS', 'FAQS') \u2014 labels only, no copy change. Alternatively remove the 6 existing ones for consistency (less preferred).",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] main section > h2 (16 total; previousElementSibling null for 10)",
+     "width": "both"
+    },
+    {
+     "severity": "MEDIUM",
+     "category": "layout-desktop",
+     "title": "Floating 'CHAT WITH PRIYA' + WhatsApp widgets cover right-column content and CTAs at 1280",
+     "evidence": "Fixed a.scp8 'CHAT WITH PRIYA' 230x58 at right:22px bottom:24px (x 1028\u20131258) plus a.scp7 WhatsApp 58x58 above it; the content column runs to x=1242 (width min(1220px,94%)). In chunk01 the widget sits over the secondary 'ENQUIRE NOW' button and the bullet 'World Luxury Award Win\u2026' at y\u22481725\u20131783; in chunk08 it covers the fifth 'What We Offer' label. On mobile the fixed 52px CTA bar + 54px chat bubble are accounted for by the wrapper's padding-bottom, so only in-flow text scrolls beneath them.",
+     "benchmarkRule": "Desktop must not simply be the phone layout stretched: sensible max-width; every CTA reachable and legible.",
+     "proposedFix": "Site-level (shared component), not this template: add `scroll-padding-bottom`/`padding-bottom:110px` to main on desktop or reduce the container to 90% at >=1200px so the last 60px of the right column is never under the widget; or collapse the chat pill to the 58px bubble while scrolling. Flag rather than fix here.",
+     "selectorOrPointer": "a.scp8 (fixed, 'CHAT WITH PRIYA'), a.scp7 (WhatsApp) \u2014 shared chrome, present on all desktop routes",
+     "width": "1280"
+    },
+    {
+     "severity": "LOW",
+     "category": "structure-hierarchy",
+     "title": "List items and card labels are marked up as headings / bold paragraphs, inflating the outline to 105 headings",
+     "evidence": "'Who is This Program For?' renders its 10 bullet sentences as <h3> (Mulish 600 18.5px, not Marcellus) \u2014 the only non-Marcellus headings on the page; 'What We Offer' icon captions are bold <p> 16.5px; Daily Activities card titles are bold <p> 17.5px under an <h3> weekday; tariff inclusion categories are 13px <strong> inside <p>; 'Villas \u2014 Minimum Duration is 7 Nights' is a bold <p> acting as a heading. Heading level order itself has no skips (h1\u2192h2\u2192h3\u2192h4).",
+     "benchmarkRule": "Benchmark: Marcellus for h1/h2/h3 over Mulish body; card language for parallel items; clear hierarchy.",
+     "proposedFix": "Scoped CSS only: style the 10 'Who is it for' h3s as list text (Mulish 400 17px, remove bold) or, in a small DOM pass, convert them to <li> in a <ul>; give the bold-p card titles the Marcellus h4 treatment (font-family Marcellus, 20px) so card language matches the Daily Activities/Inclusions cards.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] section[style*=\"rgb(67, 51, 30)\"] h3 (x10, Mulish 600); 'What We Offer' p[style*=\"font-weight\"]",
+     "width": "both"
+    },
+    {
+     "severity": "LOW",
+     "category": "other",
+     "title": "Awards 'View all' summary wraps badly on mobile and hides 29 cards in a 420px nested scroll box",
+     "evidence": "<summary> 'View all recognitions (<span class=sc-interp>29</span> more)' renders uppercase-tracked as 'VIEW ALL RECOGNITIONS (' on one line and '29MORE) +' right-aligned on the next at 390 (screenshot ms-1 y\u22484740); at 1280 it reads '(29MORE)' with the space collapsed. When opened, the 29 extra cards live in div[style*=\"max-height: 420px; overflow-y: auto\"] \u2014 a nested scroll region inside the page scroll, each card with the 180px text column noted above.",
+     "benchmarkRule": "Benchmark: card language for parallel items, calm rhythm; 45-plus phone user should not meet a scroll-within-scroll.",
+     "proposedFix": "Scoped CSS: `summary{white-space:nowrap; font-size:15px}` and `.sc-interp{margin-right:.3em}`; on mobile replace the inner `max-height:420px; overflow-y:auto` with `max-height:none` (let the details expand in-flow) or show 8 cards + a second 'show more' step.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] awards section details > summary; details > div[style*=\"max-height: 420px\"]",
+     "width": "both"
+    },
+    {
+     "severity": "LOW",
+     "category": "colour-tokens",
+     "title": "Minor token inconsistencies: pure white heading on the doctor band and lime-green icon set",
+     "evidence": "H2 'Personalized Doctor-Guided Program' is rgb(255,255,255) while the other dark-band H2 'Who is This Program For?' and body on the same bands use paper rgb(247,244,234); the five 'What We Offer' icons (Group-1\u20264.png, 64x64) are a yellow-green (~#8DAE4C) not in the ink/gold/brown/green #006038 set \u2014 colour is baked into the PNGs. Awards and testimonial cards use rgb(255,255,255) card faces on the paper ground, consistent with the packages page card language.",
+     "benchmarkRule": "Benchmark palette: paper #F7F4EA, ink #2A2118, muted #75695A, gold #C1882C, button gold #EEB41E, brown #5A4420, green #006038.",
+     "proposedFix": "Scoped CSS: set that h2 to rgb(247,244,234); for the icons apply `filter: sepia(1) hue-rotate(95deg) saturate(2) brightness(.55)` as a stop-gap or request SVG icons tinted #006038/#C1882C from the creative team.",
+     "selectorOrPointer": "#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"] h2[style*=\"color: rgb(255, 255, 255)\"]; img[src*=\"/Group-\"]",
+     "width": "both"
+    }
+   ],
+   "checkedAndClean": [
+    "No horizontal overflow: documentElement.scrollWidth = clientWidth at both widths (390/390, 1280/1280).",
+    "Tap targets: 0 of 105 (390) and 0 of 131 (1280) interactive elements measure under 44x44 \u2014 breadcrumb links padded to 44px, 'Read more' links 44px, social icons 46px, sticky mobile bar 52px, chat bubble 54px.",
+    "Type families match the benchmark: h1 Marcellus 30px (390) / 43.5px (1280), h2 Marcellus 26px / 35.8\u201338.4px, h3/h4 Marcellus 18\u201324px, body Mulish; fonts loaded: Marcellus 400, Mulish 400/600/700. Body base is 17px on <body> (blocks override it lower \u2014 see findings).",
+    "Colour tokens: body background rgb(247,244,234) paper, ink rgb(42,33,24), muted rgb(117,105,90), secondary text rgb(81,74,63), gold accent rgb(193,136,44), button gold rgb(238,180,30) with ink text, brown rgb(90,68,32), green links rgb(0,96,56), dark bands rgb(67,51,30). Eyebrow gold rgb(143,98,18) is identical to the homepage's measured eyebrow colour, so it is the site token, not drift.",
+    "Button system is the same family as the homepage: gold primary / brown solid / brown outline, 4px radius, uppercase 1.5px tracking, weight 700; three consistent CTA groups (about, tariffs, closing) plus BEGIN TREATMENT / FREE DOCTOR CONSULTATION.",
+    "Heading highlight <mark> (linear-gradient(transparent 62%, rgb(243,223,168) 62%)) is the same element the homepage uses on 'Healing Power of Ayurveda' \u2014 not drift.",
+    "Desktop is a genuine desktop layout, not the phone column: container min(1220px, 94%); 2-col about/history/why/benefits with 596px photos, 3-col 'who for', 4-col awards and tariffs, 5-col offer icons, 3-col daily activities / testimonials / more programmes, 2-col routine timeline; section padding 64px desktop vs 44px mobile; doc height 15109 vs 28781.",
+    "Heading hierarchy has no level skips (h1 \u2192 h2 \u2192 h3 \u2192 h4); one h1; 17 <section> elements with consistent 44px/64px rhythm and two dark-brown bands for contrast.",
+    "Imagery is real Kairali photography with descriptive alt text on all content photos (thalapothichil hero/about/history, shirodhara, head massage, poultice); award logos use alt=\"\" with adjacent visible titles (acceptable); no unsplash/pexels/placeholder sources found.",
+    "No adjacent links running together; no inline style fighting the site language (the page is entirely inline-styled by construction \u2014 813 styled elements \u2014 all within the token set).",
+    "Mobile paragraph measure is 39\u201341ch (350px at 17px), the maximum a 390px viewport with 20px gutters allows without shrinking type; not reported as a defect.",
+    "Sticky sub-navigation (desktop, 50px, ABOUT\u2026FAQS) and mobile in-page anchor grid (7 links, 50px rows) both work and keep targets >= 44px.",
+    "Note for the fix author: this page carries NO data-source-pointer attributes; the root is div#ahv-design-root[data-ahv-route=\"/treatment-to-remove-stress-and-strain/\"][data-ahv-view=\"ahv-page-stress-strain-mobile|desktop\"] and blocks carry data-dc-tpl numeric ids \u2014 scope stylesheets on data-ahv-route / data-ahv-variant.",
+    "Evidence files: /tmp/claude-501/audit-ahv-page-stress-strain/results.json (measurements), probe.out, m390-full.png + ms-0..9.png strips, d1280-chunk00..16.png, m390-scrolled.png, measure.mjs / probe.mjs / probe2.mjs."
    ]
   }
  ]
