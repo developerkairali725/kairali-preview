@@ -1,0 +1,80 @@
+{
+  "family": "T04 — Knowledge / explainer",
+  "packagedAt": "2026-09-19",
+  "packageRoot": "launches/ayurvedichealingvillage.com/design-intake/T04-KNOWLEDGE-EXPLAINER/",
+  "selfContained": true,
+  "verification": {
+    "method": "served over HTTP, all three route states opened at 1440px and 390px",
+    "consoleErrors": 0,
+    "network404s": 0,
+    "harness": "notes/knowledge-explainer-family-qa-harness.html — runAll() → 38 pass / 0 fail"
+  },
+  "containedFiles": {
+    "views": [
+      "AHV Template Knowledge Explainer Desktop.dc.html"
+    ],
+    "chrome": [
+      "AHV Chrome Header.dc.html",
+      "AHV Chrome Footer.dc.html",
+      "notes/AHV Chrome Header.dc.html",
+      "notes/AHV Chrome Footer.dc.html"
+    ],
+    "runtime": [
+      "support.js",
+      "notes/support.js"
+    ],
+    "images": [
+      { "path": "assets/img/article/our-story.png", "usedBy": "hero image band, all 3 routes", "source": "live /wp-content/uploads/2023/11/our-story.png, already self-hosted" },
+      { "path": "assets/img/AHV-Consultation-Therapy-Hands.jpg", "usedBy": "/new-to-ayurveda/ breakout figure", "source": "workspace library" },
+      { "path": "assets/img/Supportive-Care-Hero-Shirodhara.jpg", "usedBy": "/new-to-ayurveda/ second figure", "source": "workspace library" },
+      { "path": "assets/img/gal-herbal-powder-massage-wakem.jpg", "usedBy": "/learn-about-ayurveda/ breakout figure", "source": "workspace library" },
+      { "path": "assets/img/sinus-migraine-hero-shirodhara-6.jpg", "usedBy": "continue-reading card 1", "source": "workspace library" },
+      { "path": "assets/img/AHV-Ayurveda-Training-Practice.jpg", "usedBy": "continue-reading card 2", "source": "workspace library" },
+      { "path": "assets/img/ktahv-bashpa-swedana-herbal-steam-bath-2025.jpg", "usedBy": "continue-reading card 3", "source": "workspace library" },
+      { "path": "assets/img/AHV-Yoga-Retreats-Practice.jpg", "usedBy": "continue-reading card 4", "source": "workspace library" },
+      { "path": "assets/img/kairali-colorful-logo.png", "usedBy": "AHV Chrome Header (both breakpoints)", "source": "workspace library" },
+      { "path": "assets/img/ktahv-logo-white-brand.svg", "usedBy": "AHV Chrome Footer (both breakpoints)", "source": "workspace library" }
+    ],
+    "externalRuntimeDependency": [
+      "fonts.googleapis.com — Marcellus 400, Mulish 400/500/600/700 + 400 italic. Network font, intentionally not vendored; matches every other AHV family."
+    ]
+  },
+  "requiredButNotContained": [
+    {
+      "id": "live-source-images",
+      "state": "NOT SUPPLIED — substitutes from the workspace library are in place and are generic therapy/facility photography, not stand-ins for named people or documents",
+      "items": [
+        "wp-content/uploads/2023/07/kairalismostaffordableayurvedatrainingcourses.jpg",
+        "wp-content/uploads/2023/07/Shirodhara-treatment-as-part-of-Panchakarma-therapy.jpg.webp",
+        "wp-content/uploads/2024/10/takradhara-therpy.jpg",
+        "wp-content/uploads/2023/09/panchakarma-package-1.jpg",
+        "wp-content/uploads/2024/10/Yoga-Retreats-About-us-min.png"
+      ],
+      "action": "Codex to download and self-host under assets/img/knowledge/, then swap the four continue-reading card images and the two /new-to-ayurveda/ figures. Do not hotlink."
+    },
+    {
+      "id": "gita-ramesh-manual-extracts",
+      "state": "NOT SUPPLIED",
+      "detail": "/learn-about-ayurveda/ ends on 'The following extracts are taken from her excellent manual' — the extracts are absent from the live page. No placeholder text has been invented. Owner must supply the extracts or approve cutting that sentence.",
+      "action": "owner decision"
+    },
+    {
+      "id": "gita-ramesh-portrait",
+      "state": "NOT SUPPLIED",
+      "detail": "If the approved extracts carry an author credit, a real portrait of Mrs. Gita Ramesh is required. No stock substitute has been or may be used for a named person.",
+      "action": "owner to supply"
+    },
+    {
+      "id": "sitemap-final",
+      "state": "NOT SUPPLIED",
+      "detail": "sitemap/sitemap-final.json has not landed. Breadcrumb chains in all three route states are provisional, derived from URL hierarchy (Home / Knowledge Centre / page).",
+      "action": "re-derive breadcrumbs when the sitemap lands"
+    },
+    {
+      "id": "build-sets",
+      "state": "NOT AVAILABLE IN THIS WORKSPACE",
+      "detail": "launches/ayurvedichealingvillage.com/design-intake/BUILD-SETS.md is in the repo, not here. The three-way route split in the handover is derived from coverage evidence (frozen lock 608 + live robots headers) and is marked UNVERIFIED.",
+      "action": "reconcile the split against BUILD-SETS.md before building"
+    }
+  ]
+}

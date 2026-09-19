@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T04 Knowledge explainer — QA harness</title>
+<style>
+body{margin:0;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;background:#12100c;color:#e8e2d3}
+header{padding:16px 20px;border-bottom:1px solid #3a3227;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+button{font:inherit;padding:8px 16px;border-radius:999px;border:1px solid #C1882C;background:transparent;color:#EEB41E;cursor:pointer}
+#out{padding:16px 20px;white-space:pre-wrap}
+.pass{color:#8FBF6A}.fail{color:#FF8A7A}.head{color:#EEB41E}
+iframe{width:1440px;height:900px;border:0;background:#fff;display:block}
+#frame-wrap{overflow:auto;border-top:1px solid #3a3227;resize:both}
+</style>
+</head>
+<body>
+<header>
+  <strong class="head">T04 Knowledge explainer — QA harness</strong>
+  <button onclick="runAll()">runAll()</button>
+  <button onclick="setWidth(1440)">desktop 1440</button>
+  <button onclick="setWidth(390)">mobile 390</button>
+  <span id="score"></span>
+</header>
+<div id="out">Press runAll().</div>
+<div id="frame-wrap"><iframe id="f" src="../AHV Template Knowledge Explainer Desktop.dc.html"></iframe></div>
+<script>
+const out = document.getElementById('out');
+let pass = 0, fail = 0;
+function log(s, cls){ out.innerHTML += '<div class="' + (cls||'') + '">' + s + '</div>'; }
+function eq(label, actual, expected){
+  const ok = actual === expected;
+  ok ? pass++ : fail++;
+  log((ok ? 'PASS  ' : 'FAIL  ') + label + '  → got ' + actual + ', expected ' + expected, ok ? 'pass' : 'fail');
+}
+function setWidth(w){ document.getElementById('f').style.width = w + 'px'; }
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function doc(){ return document.getElementById('f').contentDocument; }
+function win(){ return document.getElementById('f').contentWindow; }
+function q(sel){ return doc().querySelectorAll(sel); }
+function article(){ return doc().querySelector('main article'); }
+
+async function go(labelFragment){
+  const btns = [...q('button')];
+  const b = btns.find(x => x.textContent.includes(labelFragment));
+  if (!b) { fail++; log('FAIL  route tab not found: ' + labelFragment, 'fail'); return false; }
+  b.click();
+  await sleep(450);
+  return true;
+}
+
+async function runAll(){
+  out.innerHTML = ''; pass = 0; fail = 0;
+  await sleep(700);
+
+  // ---------- /new-to-ayurveda/ : 644 words, lists + images ----------
+  log('\n/new-to-ayurveda/  (644 words · 8 lists · sub-headings)', 'head');
+  await go('New to Ayurveda');
+  eq('h1 count', q('h1').length, 1);
+  eq('h1 text', doc().querySelector('h1').textContent.trim(), 'New to Ayurveda');
+  eq('breadcrumb steps', q('nav[aria-label="Breadcrumb"] > *').length, 5);
+  eq('contents rail present', q('nav[aria-label="On this page"]').length, 1);
+  eq('contents rail links', q('nav[aria-label="On this page"] a').length, 7);
+  eq('article h2', article().querySelectorAll('h2').length, 7);
+  eq('article figures', article().querySelectorAll('figure').length, 2);
+  eq('bulleted list items', article().querySelectorAll('ul li').length, 4);
+  eq('definition-row terms', article().querySelectorAll('dl dt').length, 10);
+  eq('FAQ questions', article().querySelectorAll('#a-faq h3').length, 3);
+  eq('rail anchors resolve', [...q('nav[aria-label="On this page"] a')].filter(a => doc().querySelector(a.getAttribute('href'))).length, 7);
+
+  // ---------- /learn-about-ayurveda/ : the prose wall ----------
+  log('\n/learn-about-ayurveda/  (722 words · ZERO lists · wall of prose)', 'head');
+  await go('Learn About Ayurveda');
+  eq('h1 text', doc().querySelector('h1').textContent.trim(), 'Learn About Ayurveda');
+  eq('contents rail links', q('nav[aria-label="On this page"] a').length, 5);
+  eq('article h2', article().querySelectorAll('h2').length, 3);
+  eq('article h3', article().querySelectorAll('h3').length, 2);
+  eq('article paragraphs', article().querySelectorAll('p').length, 13);
+  eq('article bullet lists (must stay 0)', article().querySelectorAll('ul,ol').length, 0);
+  eq('article figures', article().querySelectorAll('figure').length, 1);
+  eq('pull quote is decorative', article().querySelectorAll('[aria-hidden="true"] p').length, 1);
+  eq('glossary aside terms', article().querySelectorAll('aside dl dt').length, 3);
+
+  // ---------- /learn-more-about-ayurveda/ : 87 words ----------
+  log('\n/learn-more-about-ayurveda/  (87 words · no sub-headings · must not look empty)', 'head');
+  await go('Learn More');
+  eq('h1 text', doc().querySelector('h1').textContent.trim(), 'Learn More About Ayurveda');
+  eq('contents rail suppressed', q('nav[aria-label="On this page"]').length, 0);
+  eq('article paragraphs', article().querySelectorAll('p').length, 1);
+  eq('article CTAs', article().querySelectorAll('a').length, 2);
+  eq('knowledge index groups', q('main > div > div > div').length, 5);
+  eq('knowledge index links', q('main > div > div > div a').length, 9);
+
+  // ---------- fixed closing block, present on every route ----------
+  log('\nFixed closing block (all routes)', 'head');
+  eq('continue-reading card images', q('[aria-label="Continue reading"] img').length, 4);
+  eq('continue-reading links (4 cards + All explainers)', q('[aria-label="Continue reading"] a').length, 5);
+  eq('consultation band CTAs', q('[aria-label="Speak to a physician"] a').length, 2);
+  eq('chrome header mounted', q('header').length > 0, true);
+  eq('chrome footer mounted', q('footer').length > 0, true);
+
+  // ---------- integrity ----------
+  log('\nIntegrity', 'head');
+  const imgs = [...q('img')];
+  eq('images present', imgs.length > 0, true);
+  eq('images loaded (naturalWidth > 0)', imgs.filter(i => i.naturalWidth > 0).length, imgs.length);
+  const deadLinks = [...q('a')].filter(a => { const h = a.getAttribute('href'); return !h || h === '#'; });
+  eq('links with no destination', deadLinks.length, 0);
+  eq('no horizontal overflow', doc().documentElement.scrollWidth <= win().innerWidth + 1, true);
+  const body = win().getComputedStyle(doc().body);
+  eq('body font-size >= 17px (45+/55+ audience)', parseFloat(body.fontSize) >= 17, true);
+  eq('body line-height >= 1.6', parseFloat(body.lineHeight) / parseFloat(body.fontSize) >= 1.6, true);
+  const small = [...q('main a, nav a')].filter(a => a.getBoundingClientRect().height < 44 && a.offsetParent !== null);
+  eq('interactive targets under 44px', small.length, 0);
+
+  document.getElementById('score').innerHTML =
+    '<span class="' + (fail ? 'fail' : 'pass') + '">' + pass + ' pass / ' + fail + ' fail</span>';
+}
+</script>
+</body>
+</html>
