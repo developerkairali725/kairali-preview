@@ -982,3 +982,74 @@ space-free directory and run the gates there.
 in the safest-looking direction. Either the scripts decode `import.meta.url` (one shared helper,
 `fileURLToPath`, fleet-wide), or the working copy moves off a path with spaces. Related but distinct
 from the already-open entry about `import.meta.url === \`file://${process.argv[1]}\`` main-detection.
+
+## Q-AHV-POLICY-PLACEMENT - the two policy pages, measured and put in context (2026-09-19 18:40:11 IST)
+
+You asked for `/payment-policy-compliance/` and `/new-privacy-policy/` to be "checked and put in the
+right place". Checked. Both sit on the approved policy-reader template already, so the *template* is
+right; what is wrong is that they are the only two of the nine policy pages with no way to reach them.
+
+| # | route | in sitemap | in footer |
+|---|---|---|---|
+| 53 | /cancellation-and-refund-policy/ | yes | yes |
+| 63 | /cookie-policy/ | yes | yes |
+| 71 | /disclaimer/ | yes | yes |
+| 119 | /legal-notice/ | yes | yes |
+| **129** | **/new-privacy-policy/** | **yes** | **NO** |
+| **157** | **/payment-policy-compliance/** | **yes** | **NO** |
+| 167 | /privacy-policy/ | yes | yes |
+| 168 | /privacy-statement/ | yes | yes |
+| 186 | /terms-and-conditions/ | yes | yes |
+
+Seven of nine are in the footer legal row. These two are in the sitemap but in no menu — indexable and
+unreachable, which is the worst of both.
+
+**`/payment-policy-compliance/` is NOT a duplicate of anything.** Its headings are Accepted Payment
+Methods · Transaction Security · Refund Policies · Currency Information · Payment Policy & Compliance
+for Payment Gateways (India, EU, USA, GCC, Japan). That is a substantive compliance document, and a
+publicly reachable payment policy is the sort of thing card gateways ask for. Its Refund Policies
+section does overlap `/cancellation-and-refund-policy/`, which is worth a read for contradictions.
+**Recommendation: add it to the footer legal row.** I have not done it — the footer is an approved
+chrome component the importer rewrites wholesale, so it needs a repair tool, and adding a link changes
+the footer on all 252 pages including your benchmark ones. That is a MODE A design change and yours.
+
+**`/new-privacy-policy/` is a legal question, not a layout one, so I have not touched it.** It is a
+near-relative of `/privacy-policy/`, not a copy: they share Security · How we use cookies · Credit Card
+information, but `/privacy-policy/` also has "What we collect" and "What we do with the information we
+gather", which `/new-privacy-policy/` lacks — while `/new-privacy-policy/` carries MORE body text
+overall (9,503 characters against 7,792). So the older page has the broader structure and the newer one
+the fuller prose. Two live pages both claiming to be the privacy policy, one of them literally named
+"new", is a legacy artefact: somebody wrote a replacement and never retired the original.
+
+**Decision needed — which one governs?** Either (a) the new one supersedes: swap the footer link and
+canonicalise `/privacy-policy/` → `/new-privacy-policy/`; or (b) it is a stale draft: canonicalise
+`/new-privacy-policy/` → `/privacy-policy/` and drop it from the sitemap, as the four other thin
+duplicates already were. **Which text is legally operative is not a call the agent may make** (ESCALATION:
+legal language → Abilash), and whichever survives should probably be re-read before go-live given it
+mentions Credit Card information.
+
+**Separate defect found while measuring:** five of the nine policy pages carry the generic sitewide
+title "Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India" instead
+of a page title — including `/privacy-policy/` and `/terms-and-conditions/`. Four (cookie-policy,
+legal-notice, privacy-statement, and the two above's siblings) have proper ones. Duplicate titles across
+five indexable pages is an SEO defect; fixing it is head metadata only, no design impact, and needs
+nothing from you beyond a yes.
+
+## Q-AHV-TEMPLATE-AUDIT-COUNT - it is 14 unaudited templates, and the handover's 7 was right at the time (2026-09-19 18:40:11 IST)
+
+Reconciled rather than contradicted. The 2026-09-16 audit reports "60 of 67 templates"; the branch now
+carries **74**. The difference is not a miscount, it is the calendar:
+
+- **7 templates existed on 15 Sep and the audit skipped them** — the report's own "7 unaudited".
+- **1 more landed on 16 Sep**: `ahv-page-ayurveda-training-programme`, the hub created by D-20260916-10.
+- **5 more landed on 17 Sep**: the course views built by `tools/build-course-views.mjs`. They did not
+  exist when the audit ran and could not have been in it.
+- **1 is `home-hi-fi-v4` — the homepage, which IS the benchmark.** Auditing it against itself is
+  meaningless, so its absence is correct and should stay.
+
+So: 74 templates, 60 audited, 14 not — of which 1 is the benchmark and 13 are real audit candidates.
+Routes: #4, #27, #43, #92, #120, #142, #197, #228, #240, #247, #248, #249, #251 (plus #1, the benchmark).
+The report also notes `ahv-page-yoga-meditation-programs` (#248) has since become a derived instance of
+the benchmark finder, so it may need only a confirmation pass rather than a full audit.
+
+No decision needed from you — recorded so the number stops drifting between sessions.
