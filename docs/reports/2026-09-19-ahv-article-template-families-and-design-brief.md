@@ -1,13 +1,18 @@
-# AHV — the 129 non-programme pages, their template families, and the Claude Design brief
+# AHV — the 186 shared-template pages, their families, and the Claude Design brief
 
 **Written:** 2026-09-19 17:42:05 IST
 **Branch:** `codex/ahv-english-staging-20260915`
-**Scope:** the 129 routes that currently render through the single shared view pair
-`ahv-page-article-reader-desktop` / `-mobile`. These are the "about 120 odd pages" — everything
-that is not the homepage, a programme/package page, a campaign, an enquiry/confirmation page,
-a gallery or a policy page.
+**Scope:** **186 of the 252 active English routes** — every route that renders through a SHARED
+template rather than its own owner-approved page. That is the 129 article-reader routes plus the
+gallery, policy, enquiry, confirmation, campaign and attractions families.
+The remaining **66** are owner-approved one-offs (homepage, programmes, villas, courses, finders)
+and are **out of scope**.
 **Reason:** the owner has rejected the current design for these pages and is taking them back to
 Claude Design, one template at a time.
+
+**Revision, 2026-09-19 18:20:11 IST:** scope widened from 129 to 186 on the owner's instruction
+("include the gallery etc as well"). Seven families added — T12 GALLERY, T13 POLICY, T14 ENQUIRY,
+T15 CONFIRMATION, T16 CAMPAIGN-LONG, T17 CAMPAIGN-SHORT, T18 ATTRACTIONS.
 
 ---
 
@@ -16,10 +21,11 @@ Claude Design, one template at a time.
 Every number below is read from the shipped datasets, not estimated.
 
 - Site total: **252 active English routes**, **74 distinct desktop views**.
-- Of those, **129 routes share ONE view** — the article reader. That is the design being replaced.
-- The other 123 routes are the homepage, 8 campaign routes, 10 enquiry, 10 confirmation,
-  9 gallery, 9 policy, 4 attractions, and ~66 owner-approved one-off pages (programmes, villas,
-  courses, finders). **None of those are in scope here.**
+- **186 of them render through a SHARED template** and are in scope: 129 on the article reader,
+  plus 10 enquiry, 10 confirmation, 9 gallery, 9 policy, 8 long campaign, 7 short campaign and
+  4 attractions.
+- The remaining **66** are owner-approved one-off pages — homepage, programmes, villas, course
+  pages, finders. They were re-verified unchanged by computed-style diff and are **out of scope**.
 - The 129 draw their content from 14 datasets under `public/ahv/assets/`. Those dataset names
   (`reader25a`, `hist9`, `utility7`…) are **import batches, not content families** — they tell you
   when a page was imported, not what kind of page it is. That is why the site looks like one
@@ -48,6 +54,13 @@ All 129 routes are assigned. No route appears twice; none is unassigned.
 | T10 | **TRAINING** — course & training information | 7 | 132 – 261 – 583 | 0–2 | 137 | 10,957 |
 | T11 | **UTILITY** — system & leftover page | 9 | 1 – 248 – 486 | 0–7 | 143 | 14,108 |
 | U | **UNIQUE** — needs its own template, one each | 5 | 660 – 794 – 2,308 | 0–3 | 536 | 55,794 |
+| T12 | **GALLERY** — photo collections | 9 | 0 – 56 – 142 | 6–69 | 110 | 10,781 |
+| T13 | **POLICY** — legal & policy text | 9 | 404 – 852 – 1,493 | 0–1 | 64 | 9,200 |
+| T14 | **ENQUIRY** — the forms | 10 | 0 – 5 – 871 | 0–2 | **1,111** | 110,474 |
+| T15 | **CONFIRMATION** — thank-you pages | 10 | 0 – 0 – 83 | 0–2 | 11 | 717 |
+| T16 | **CAMPAIGN-LONG** — long-form landers | 8 | 189 – 2,512 – 3,506 | 0–116 | 569 | **368,721** |
+| T17 | **CAMPAIGN-SHORT** — short landers & offers | 7 | 2 – 22 – 916 | 0 | 418 | 247,377 |
+| T18 | **ATTRACTIONS** — places near, by distance | 4 | 14 – 55 – 66 | 4–7 | 262 | 45,681 |
 
 Clicks/impressions are lifetime figures from the Search Console export in
 `launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19{,-www}/Pages.csv`,
@@ -147,29 +160,92 @@ Claude Design session. Two do earn clicks and belong elsewhere.
 - `/revitalizing-and-strengthening-treatment-for-cancer-patients/` — 660w. **Clinical content:
   HARD GATE 7 — any wording change needs Dr. Deepu John's sign-off before it leaves staging.**
 
+**T12 GALLERY (9)** — 181 image placements over 124 unique originals. **Six of the nine show the
+identical photo set twice** — once as a slider, then again as a grid directly below it. Verified:
+`/property-gallery/` slider 13 = grid 13, same files; same for retreats, sight-seeing, treatments,
+villas and yoga. That duplication is the main reason these read as broken.
+`/photo-gallery/` (**69 images**, one grid, 93 clicks) · `/property-gallery/` (13+13) ·
+`/treatments-gallery/` (9+9) · `/villas-gallery/` (9+9) · `/sight-seeing-gallery/` (7+7) ·
+`/yoga-gallery/` (6+6) · `/retreats-gallery/` (5+5) · `/product-gallery/` (**6 images**) ·
+`/ayurveda-gallery/` (content lives in the view itself, no dataset record)
+
+**T13 POLICY (9)** — long legal prose, no imagery, nothing to look at. Readability is the whole job.
+`/terms-and-conditions/` (1,493w, 25 clicks) · `/privacy-statement/` (1,459w) ·
+`/new-privacy-policy/` (1,106w) · `/disclaimer/` (874w) · `/privacy-policy/` (852w) ·
+`/legal-notice/` (819w) · `/cancellation-and-refund-policy/` (554w) · `/cookie-policy/` (449w) ·
+`/payment-policy-compliance/` (404w)
+Note: `/new-privacy-policy/` and `/payment-policy-compliance/` measured 38% and 7% similar to
+`/privacy-policy/` — neither is a clean duplicate, and both still await the owner's decision
+(handover item B6).
+
+**T14 ENQUIRY (10) — the highest-earning family on the entire site: 1,111 clicks.** The form *is*
+the page; the prose is near zero. This is where money is won or lost.
+`/online-consultation/` (**379 clicks**, 44,680 imp) · `/apply-now/` (**350 clicks**, 0 words) ·
+`/contact-us/` (**310 clicks**, 49,397 imp) · `/jobs/business-development-manager/` (62 clicks) ·
+`/enquiry-form/` (871w, 10 headings — the fullest one) · `/walk-in-ayurveda-treatment/` (394w) ·
+`/postulez-maintenant/` (French) · `/contact-us-old/`, `/enquiry-form-old/`,
+`/online-consultation-old/` (legacy, 0 traffic)
+
+**T15 CONFIRMATION (10)** — what a person sees after they submit. Eight of ten are literally empty.
+`/thanks-old/` (83w) · `/emailsubscriber/` (78w) · `/book-now/` (61w, 9 clicks) · `/cart/` (33w) ·
+`/checkout/`, `/contact-us/thank-you/`, `/onlinebookingthankyou/`, `/onlineconsultation-thanks/`,
+`/ppc-thanks/`, `/thanks/` (all 0 words)
+`/cart/` and `/checkout/` exist although **this site has no commerce** — they need a decision.
+
+**T16 CAMPAIGN-LONG (8)** — 368,721 impressions, the biggest search surface on the site. Enormous
+long-form landers.
+`/wellness-resort-kerala.html` (3,506w, 67 img, **184,480 imp**) ·
+`/kairali-cleansing-centre.html` (3,372w, 69 img, 175 clicks) ·
+`/preventive-rejuvenation-detoxification.html` (2,951w, 103 img, **117 headings**) ·
+`/weight-loss.html` (2,772w, **116 images, 110 headings**, 134 clicks) ·
+`/Ayurveda_Treatment_Neo_S.India_Cities.html` (2,063w) · `/pain-management.html` (2,053w) ·
+`/Kairali_Brand_and_Competition_Neo-original.html` (1,313w, 148,337 imp) ·
+`/offers/defence-paramilitary-personnel-get-upto-30-off/` (189w, 0 img)
+**Register trap:** `/wellness-resort-kerala.html` carries a banned word in its URL. The URL is
+legacy and stays; the word must never appear in new copy.
+
+**T17 CAMPAIGN-SHORT (7)** — 247,377 impressions on very little content.
+`/offers/senior-citizen-offer/` (16w, **236 clicks**) ·
+`/ayurveda-retreat-kerala.html` (120w, **241,541 imp**, 163 clicks) ·
+`/family-ayurvedic-retreat-kerala.html` (916w) · `/kairali-air-india-maharaja-club.html` (22w) ·
+`/treatment-in-kerala.html` (153w) · `/offers/olympics-and-paralympics-offer/` (2w) ·
+`/offers/new/` (20w) — a 93% copy of the senior-citizen offer, 0 clicks against its 236.
+
+**T18 ATTRACTIONS (4)** — places near the hospital, banded by distance. Four near-identical pages
+that currently read as four orphans.
+`/attractions-25kms-to-50kms/` (6 sections, **162 clicks**, 29,559 imp) ·
+`/attractions-under-10kms/` (5 sections, 51 clicks) · `/attractions-above-50kms/` (7 sections,
+47 clicks) · `/attractions-15kms-and-below/` (4 sections, 2 clicks)
+
 ---
 
 ## 3. Recommended order
 
-Ordered so that each template earns the next one — the early ones establish typography and card
-rhythm the later ones inherit, and the highest-value pages are reached early.
+Nineteen templates. Ordered by what each one earns, and by which templates teach the next.
 
-| Order | Family | Pages | Why here |
+| # | Family | Pages | Why here |
 |---|---|---:|---|
-| 1 | T1 EXPLAIN | 22 | The reading spine. T2, T3, T4, T7 all inherit its typography — get it right once and five families are half-done. |
-| 2 | T5 EXPERIENCE | 20 | 275k impressions. Sets the image/card rhythm T6 and T9 inherit. |
-| 3 | T3 ABOUT | 11 | Most clicks in scope (728), incl. `/ayurvedic-franchise/` at 433. |
-| 4 | T2 ENTITY | 13 | Inherits T1 typography; adds the "go to that entity" ending. |
-| 5 | U UNIQUE ×5 | 5 | `/how-to-reach/` alone is 410 clicks. Five separate small sessions. |
-| 6 | T9 INDEX | 9 | 147k impressions; pure grid, fast once T5's cards exist. |
-| 7 | T4 STANDARD | 8 | Trivial once T1 exists. |
-| 8 | T6 PRODUCT | 8 | Inherits T5 cards. |
-| 9 | T10 TRAINING | 7 | Tables are the only new problem. |
-| 10 | T7 ARCHIVE | 11 | Low traffic, but 11 pages for one template. |
-| 11 | T8 OFFER | 6 | Hold if the "each offer its own landing page" decision is imminent. |
-| 12 | T11 UTILITY | 9 | **Decide, don't design.** |
+| 1 | **T14 ENQUIRY** | 10 | **1,111 clicks — the highest-earning family on the site.** This is where the money is won. Design it first. |
+| 2 | **T15 CONFIRMATION** | 10 | Same flow as T14. Design them in one sitting or the two halves won't match. |
+| 3 | **T1 EXPLAIN** | 22 | The reading spine. T2, T3, T4, T7 and T13 all inherit its typography — get it right once and five more families are half-done. |
+| 4 | **T16 CAMPAIGN-LONG** | 8 | 368,721 impressions, the biggest search surface. Also the hardest: 116 images on one page. |
+| 5 | **T5 EXPERIENCE** | 20 | 275,617 impressions. Sets the image/card rhythm T6, T9 and T12 inherit. |
+| 6 | **T12 GALLERY** | 9 | Visibly broken today — six pages show the same photos twice. Fast, obvious win. |
+| 7 | **T3 ABOUT** | 11 | 728 clicks, incl. `/ayurvedic-franchise/` at 433. |
+| 8 | **T17 CAMPAIGN-SHORT** | 7 | 247,377 impressions on almost no content. |
+| 9 | **T2 ENTITY** | 13 | Inherits T1; adds the "go to that entity" ending. |
+| 10 | **T18 ATTRACTIONS** | 4 | 262 clicks, four pages, one small template. Cheap. |
+| 11 | **U UNIQUE ×5** | 5 | `/how-to-reach/` alone is 410 clicks. Five short separate sessions. |
+| 12 | **T9 INDEX** | 9 | 147k impressions; pure grid, fast once T5 and T12 exist. |
+| 13 | **T4 STANDARD** | 8 | Trivial once T1 exists. |
+| 14 | **T6 PRODUCT** | 8 | Inherits T5 cards. |
+| 15 | **T10 TRAINING** | 7 | Tables are the only new problem. |
+| 16 | **T13 POLICY** | 9 | Pure long-form text; inherits T1. |
+| 17 | **T7 ARCHIVE** | 11 | Low traffic, but 11 pages for one template. |
+| 18 | **T8 OFFER** | 6 | Hold if "each offer its own landing page" is imminent. |
+| 19 | **T11 UTILITY** | 9 | **Decide, don't design.** |
 
----
+Doing 1–6 covers **79 pages** and every high-traffic surface on the site.
 
 ## 4. How the work actually splits
 
@@ -491,6 +567,173 @@ Fees are facts I will supply. [TO CONFIRM] for anything I have not given you.
 
 ---
 
+**T12 — GALLERY (9 pages)**
+```
+Family: photo collections — the property, the villas, treatments, yoga, retreats,
+sight-seeing, products, and one big mixed gallery.
+
+Design against: /property-gallery/ — 13 photographs.
+Extremes: /photo-gallery/ (69 photographs in one collection, 93 clicks) and
+/product-gallery/ (6 photographs).
+
+FIX THIS FIRST — it is why these pages look broken today: six of the nine currently
+show the SAME photo set twice. The identical 13 images run as a slider, and then
+again as a grid immediately below it. Verified in the data. Choose ONE presentation
+and make it good. Never show a photo twice on one page.
+
+It needs: a hero, a short intro line, and one photo collection that looks composed at
+6 photographs and still composed at 69. A photograph that is portrait must not break
+the row. Tapping a photo opens it larger, closeable, and keyboard-navigable.
+Captions where they exist, nothing where they do not.
+
+At 69 images, images below the fold must load lazily — the page cannot be a 20MB
+download on an Indian mobile connection.
+```
+
+---
+
+**T13 — POLICY (9 pages)**
+```
+Family: the legal pages — terms, privacy, disclaimer, cookies, refunds, legal notice.
+
+Design against: /terms-and-conditions/ — 1,493 words, no images.
+Extremes: /privacy-statement/ (1,459 words) and /payment-policy-compliance/ (404 words).
+
+There is nothing to look at here and nothing to sell. The entire job is making a very
+long legal document READABLE and navigable: numbered sections, a sticky list of
+sections on desktop that jumps down the page, a clear "last updated" date, generous
+line spacing, and a 66-character measure that does not fight the eye.
+
+Do not decorate it. Do not add imagery. Quiet, precise, easy to find a clause in.
+The fixed closing block still goes at the bottom, but keep it visually subdued here —
+nobody reading a refund policy wants to be sold to.
+```
+
+---
+
+**T14 — ENQUIRY (10 pages) — DESIGN THIS ONE FIRST**
+```
+Family: the forms. Online consultation, contact us, enquiry, apply now, walk-in,
+one job application.
+
+THIS IS THE HIGHEST-EARNING FAMILY ON THE SITE — 1,111 clicks, more than any other
+group of pages. /online-consultation/ 379 clicks, /apply-now/ 350, /contact-us/ 310.
+Every other template on this list matters less than this one.
+
+Design against: /enquiry-form/ — the fullest version, 871 words, 10 headings, 2 images.
+Extremes: /apply-now/ (ZERO words — the form IS the entire page) and
+/online-consultation/ (19 words, 44,680 impressions).
+
+The form is the page. Design the form itself with real care:
+  - Fields stacked in one column, labels ABOVE the field, never placeholder-only.
+  - Inputs at least 52px tall with a visible border — not a faint underline.
+  - Errors appear next to the field that caused them, in words, not just red.
+  - A consent checkbox with a link to the privacy policy, both visible before the
+    submit button. This is required, not optional.
+  - The submit button is the brightest thing on the page.
+  - Show what happens next: who replies, and how soon.
+  - On a 390px phone the whole form must be usable one-handed with no zooming.
+
+Alongside the form: the reasons to trust sending it — NABH accreditation, a physician
+reads it, response time. Keep them beside the form on desktop, above it on mobile.
+
+Do NOT design any payment step. There is no payment on this site.
+One page in this family is in French (/postulez-maintenant/) — the layout must survive
+longer French labels without breaking.
+```
+
+---
+
+**T15 — CONFIRMATION (10 pages)**
+```
+Family: what a person sees immediately after they submit a form.
+
+Design against: /thanks-old/ — 83 words, 2 images. That is the richest one.
+EIGHT OF THE TEN ARE COMPLETELY EMPTY TODAY — zero words. Somebody fills in a form,
+presses send, and lands on nothing. That is the problem to solve.
+
+It needs, in this order:
+  1. Unmistakable confirmation that it WAS sent — not a shrug, a receipt.
+  2. What happens next, in plain words, with a real timeframe.
+  3. What to do if they need an answer sooner: WhatsApp +91 92898 38797 and
+     info@kairali.com, both tappable.
+  4. Somewhere useful to go next, so the page is not a dead end.
+
+Design it as a calm, reassuring, deliberately quiet page. No celebration animation.
+Somebody who has just asked a hospital about their health does not want confetti.
+
+Note: /cart/ and /checkout/ are in this family although this site has NO commerce.
+Ignore them — I am getting a decision on those separately.
+```
+
+---
+
+**T16 — CAMPAIGN-LONG (8 pages)**
+```
+Family: the long-form advertising landing pages. 368,721 impressions — the biggest
+search surface on the whole site.
+
+Design against: /wellness-resort-kerala.html — 3,506 words, 67 images, 53 headings,
+184,480 impressions.
+Extremes, and they are brutal:
+  - /weight-loss.html — 2,772 words, 116 IMAGES, 110 HEADINGS on a single page.
+  - /preventive-rejuvenation-detoxification.html — 117 headings.
+  - /offers/defence-paramilitary-personnel-get-upto-30-off/ — 189 words, NO images.
+
+The design problem is pure navigation of length. A reader must be able to land
+anywhere, know where they are, and reach the enquiry without scrolling past 100
+headings. Consider a persistent section index, a sticky call-to-action, clear
+chaptering, and a strict repeating rhythm so 110 headings do not read as noise.
+
+REGISTER WARNING: one of these URLs contains a banned word ("resort"). The URL is
+legacy and cannot change. The word must never appear in any copy you write.
+
+These are advertising pages, so they must convert — but this is a hospital. Persuade
+with specificity, credentials and clarity, never with urgency tricks, fake scarcity
+or countdown timers.
+```
+
+---
+
+**T17 — CAMPAIGN-SHORT (7 pages)**
+```
+Family: short campaign landers and standing offers — senior citizen, Air India
+Maharaja Club, family retreat, Olympics/Paralympics.
+
+Design against: /ayurveda-retreat-kerala.html — 120 words and 241,541 IMPRESSIONS.
+Extremes: /family-ayurvedic-retreat-kerala.html (916 words) and
+/offers/olympics-and-paralympics-offer/ (TWO words).
+
+The whole problem: almost no content, enormous search exposure. A two-word page has
+to look intentional, not empty. Build the template so a very small amount of real
+content is presented with confidence — one strong image, one clear promise, the
+eligibility terms, and one action. Never padding.
+
+/offers/senior-citizen-offer/ earns 236 clicks. Whatever you design has to make an
+offer's TERMS unmissable: who qualifies, what it includes, when it expires. I will
+supply every number — mark anything I have not given you as [TO CONFIRM].
+```
+
+---
+
+**T18 — ATTRACTIONS (4 pages)**
+```
+Family: places worth visiting near the hospital, banded by distance — under 10km,
+15km and below, 25 to 50km, above 50km.
+
+Design against: /attractions-above-50kms/ — 7 places, one photograph each.
+Range: 4 to 7 places per page. /attractions-25kms-to-50kms/ earns 162 clicks.
+
+These four pages are near-identical in structure and currently read as four unrelated
+orphans. Design them as ONE SET: a visible distance switcher at the top of every page
+so a reader can move between bands without going back, and a consistent place card —
+photograph, name, distance, one or two lines, and what it is good for.
+
+Distances and place names are facts I will supply. Never estimate a distance.
+```
+
+---
+
 ## 6. What to send me back
 
 For each family, I need:
@@ -511,9 +754,17 @@ family, your word, not mine.
 
 ## 7. Decisions needed from the owner
 
-1. **T11 UTILITY — six leftover pages.** `/test-page/`, `/test-page-2/`, `/testing/`, `/gift-test/`,
-   `/my-account/`, `/how-to-reach-old/`. These should not be designed. They need a fate: noindex,
-   301, or leave. I will not change any page's status without your word (HARD GATE 2).
+1. **Pages that need a fate, not a design.** None of these should cost a Claude Design session.
+   They need noindex / 301 / leave — and I will not change any page's status without your word
+   (HARD GATE 2):
+   - T11 leftovers: `/test-page/`, `/test-page-2/`, `/testing/`, `/gift-test/`, `/my-account/`,
+     `/how-to-reach-old/`
+   - Legacy form duplicates: `/contact-us-old/`, `/enquiry-form-old/`, `/online-consultation-old/`
+     — all three at zero traffic
+   - `/cart/` and `/checkout/` — this site has no commerce, yet both routes exist
+   - `/offers/new/` — a 93% copy of `/offers/senior-citizen-offer/`, 0 clicks against its 236
+   - `/new-privacy-policy/` and `/payment-policy-compliance/` — 38% and 7% similar to
+     `/privacy-policy/`, so neither is a clean duplicate; still open from handover item B6
 2. **Header, footer and the closing block are locked** in the brief above, because they are shared
    with pages you have already approved — changing them changes all 252 routes, not 129. Say the
    word and I will unlock them, but that becomes a separate, bigger approval.
@@ -521,6 +772,9 @@ family, your word, not mine.
    skip T8 in this pass.
 4. **The cancer supportive-care page** carries clinical wording. HARD GATE 7: Dr. Deepu John signs
    it before it leaves staging, whatever the design does.
+4b. **T14 ENQUIRY depends on Deepu.** The three WPForms confirmation settings (IDs 11965, 18926,
+   8055) and switching the forms on is still the real go-live blocker. The design can proceed
+   without it; the working form cannot.
 5. **The register cleanup is still parked** by your 2026-09-19 ruling — ~595 descriptive uses of
    *journey*, *guests*, *holiday* across ~93 routes, left until after go-live. New designs will not
    reintroduce them; the existing copy still carries them.
