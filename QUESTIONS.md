@@ -1082,7 +1082,15 @@ field and then have nowhere to post. `/ayurveda-retreat-kerala.html` and
 `/treatment-in-kerala.html` still post to `https://ayurvedichealingvillage.com/submitContactForm.php`
 — the live WordPress host — while displaying "Design review prototype — nothing is submitted".
 Eight sitemap routes carry that disclaimer. Same gap as item 7 of the long-form advertising
-handover. Launch blocker. Evidence: docs/reports/2026-09-19-ahv-deepu-review-reconciled.md.
+handover. Evidence: docs/reports/2026-09-19-ahv-deepu-review-reconciled.md.
+
+**ANSWERED 2026-09-20, Abilash:** "forms not priority will get fixed before we flip dns deepu
+will do it". So this is owner-assigned to Deepu (web developer) and sits in the pre-flip gate,
+not in this lane. Two things stay on the agent side and are NOT covered by that answer: the
+"Design review prototype - nothing is submitted" line is factually wrong on
+/ayurveda-retreat-kerala.html and /treatment-in-kerala.html, which post to the live
+submitContactForm.php while displaying it; and patient contact details posting cross-property
+to the WordPress host is a data-path question, not a form-wiring one. Both stay open here.
 
 ## Q-AHV-SEARCH-CONTROL — 2026-09-19 19:12:44 IST
 **Build search, or remove the icon?** The header search control is
@@ -1090,11 +1098,19 @@ handover. Launch blocker. Evidence: docs/reports/2026-09-19-ahv-deepu-review-rec
 anywhere in the document. Deepu reported it; it is confirmed. Shipping a dead control is the
 one option that is not defensible.
 
+
+**ANSWERED 2026-09-20, Abilash:** "search and translation is a to do to do before live keep it
+pending". Both stay as they are, both are pre-live gate items, neither is agent work this
+session.
 ## Q-AHV-LANGUAGE-SWITCHER — 2026-09-19 19:12:44 IST
 **The `EN ▾` pill advertises DE and FR and has no menu.** No `aria-haspopup`, no submenu
 nodes, `href="/"`. Remove the caret until the locales exist, or wire it. Related: the open
 question on whether FR is still coming.
 
+
+**ANSWERED 2026-09-20, Abilash:** "search and translation is a to do to do before live keep it
+pending". Both stay as they are, both are pre-live gate items, neither is agent work this
+session.
 ## Q-AHV-ORPHAN-LEGACY-PAGES — 2026-09-19 19:12:44 IST
 **Two live indexable pages have no fate assigned** (BUILD DECISION MATRIX §2 — build, merge
 or 301). `/karkidaka-chikitsha-or-monsoon-wellness.html` (live 200, index,follow, canonical
@@ -1103,6 +1119,24 @@ points at a URL that 404s) and `/deaddiction-treatment-program.html` (live 200, 
 page, needs Dr. Deepu John). Neither is in the live XML sitemap; neither is in the rebuild.
 A near-sibling is already built: `/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/`.
 
+**WIDENED 2026-09-20** after Abilash asked what was left, checked against the workspace and the
+history: it is **four** URLs, not two, and the reason none of them surfaced is that the fate
+register (§7 of the template-family audit, which became the twelve 301s) ran over the 252 routes
+already in the manifest, and the manifest was built from the live XML sitemap plus the Search
+Console set. These four are in neither, and a crawl of five live hubs finds no internal link to
+any of them - they are ad-only destinations.
+
+| URL | live | GSC Jul 2026 | what it needs |
+|---|---|---|---|
+| `/treatment-in-kerala-russian.html` | 200 | **6 clicks / 5,609 impr** | out of EN scope like `/ru/`, or a 301 - it 404s at the flip either way today |
+| `/karkidaka-chikitsha-or-monsoon-wellness.html` | 200, index,follow | none | build or 301; its canonical points at a URL that 404s |
+| `/deaddiction-treatment-program.html` | 200 | none | build or 301; title carries a banned word, Dr. Deepu John's item |
+| `/panchakarma-treatment.html` | **404** | 0 / 6 | 301 to the correctly-spelled `/panchkarma-treatment.html` (499 clicks / 29,346 impr) |
+
+Full working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md. The complete
+enumeration of ad destinations exists only in the WordPress page list (Deepu) and the Google Ads
+destination URLs (Vikash) - worth pulling both once before the flip.
+
 ## Q-AHV-MAPS-IFRAME — 2026-09-19 19:12:44 IST
 **Deepu asks for live `<iframe>` maps on the attractions and contact pages.** Three things
 collide: the 252-route sweep fails any state containing an iframe; an embedded Google Map
@@ -1110,6 +1144,14 @@ sets third-party cookies before consent and HARD GATE 11 forbids changing consen
 `tools/repair-how-to-reach-maps.mjs` already exists and chose a static map that links out.
 Static map, or a real embed behind the consent gate?
 
+
+**ANSWERED 2026-09-20, Abilash:** "maps also i answered whatever is easier for cleitns to use
+and no consent is what we decided". The iframe is the one option that ruling excludes - an
+embedded Google Map sets third-party cookies on load, which is precisely what would force a
+consent gate in front of the map. CLOSED as implemented in ba4bfd0a: /how-to-reach/ already had
+the full set (static map, two directions links, larger map, 360 view, no iframe); the enquiry
+family's visit card had only a place link and now carries "Get directions" on the same
+destination coordinates. 0 of 16 benchmark pairs moved.
 ## Q-AHV-FORM-ROW-LAYOUT — 2026-09-19 19:12:44 IST
 **Does Deepu's form-layout request carry the owner's authority?** He asks for email and phone
 in the same row, in the first row. MODE A says the supplied design is the authority and the
