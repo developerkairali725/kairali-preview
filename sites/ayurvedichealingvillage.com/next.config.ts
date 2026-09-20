@@ -97,9 +97,15 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    // Sources carry the trailing slash the whole site is normalised to
-    // (trailingSlash: true above), so the served URL and the redirect source
-    // are the same string and no request pays two hops.
+    // The twelve routes of 2026-09-19 carry the trailing slash the whole site is
+    // normalised to (trailingSlash: true above), so the served URL and the
+    // redirect source are the same string and no request pays two hops.
+    //
+    // The two `legacy: true` entries of 2026-09-20 are .html files, not
+    // directories, and trailingSlash leaves an extension alone - so they are
+    // also a single hop, just by the other rule. They are ad-landing URLs that
+    // were never in the manifest: unlisted in the sitemap and linked from no
+    // page on the live site, which is why nothing surfaced them until now.
     return Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,

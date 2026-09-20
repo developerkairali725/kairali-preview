@@ -7,62 +7,120 @@
     "/test-page/": {
       "to": "/",
       "reason": "h1 'Test Page'. A WordPress scratch page with no subject and nothing to consolidate.",
-      "gsc": { "clicks": 0, "impressions": 1 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 1
+      }
     },
     "/test-page-2/": {
       "to": "/givefeedback/",
       "reason": "h1 'Test Page' but the head title is 'Write a Review | Give Testimonials | Opinions | Feedback' - it is a scratch copy of the feedback page, so the signal belongs there.",
-      "gsc": { "clicks": 0, "impressions": 9 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 9
+      }
     },
     "/testing/": {
       "to": "/",
       "reason": "h1 'Testing'. A WordPress scratch page with no subject.",
-      "gsc": { "clicks": 0, "impressions": 44 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 44
+      }
     },
     "/gift-test/": {
       "to": "/gift-vouchers/",
       "reason": "h1 'Shop' - a WooCommerce shop-page test. There is no shop; gift vouchers are the nearest real page on the same subject.",
-      "gsc": { "clicks": 0, "impressions": 271 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 271
+      }
     },
     "/my-account/": {
       "to": "/",
       "reason": "WooCommerce account page. No commerce, no accounts, nothing equivalent to send it to.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/how-to-reach-old/": {
       "to": "/how-to-reach/",
       "reason": "Superseded duplicate. The current page carries all four maps and earns 410 clicks.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/contact-us-old/": {
       "to": "/contact-us/",
       "reason": "Superseded duplicate. The current page earns 310 clicks.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/enquiry-form-old/": {
       "to": "/enquiry-form/",
       "reason": "Superseded duplicate of the enquiry form.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/online-consultation-old/": {
       "to": "/online-consultation/",
       "reason": "Superseded duplicate. The current page earns 379 clicks, the most of any page in scope.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/cart/": {
       "to": "/packages/",
       "reason": "WooCommerce cart on a site with no commerce. A visitor who reached a cart was choosing something to book; /packages/ is the content-rich equivalent (733 words, 27 cards, 118 clicks).",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/checkout/": {
       "to": "/packages/",
       "reason": "WooCommerce checkout on a site with no commerce. Same target and same reason as /cart/.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
     },
     "/offers/new/": {
       "to": "/offers/senior-citizen-offer/",
       "reason": "93% identical to the senior-citizen offer, which earns 236 clicks while this earns 0. Its canonical already pointed here (route-overrides.json); the 301 makes the consolidation real instead of advisory.",
-      "gsc": { "clicks": 0, "impressions": 0 }
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/deaddiction-treatment-program.html": {
+      "to": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "legacy": true,
+      "liveStatus": 200,
+      "reason": "A live, unlisted ad destination with a rebuilt sibling that says the same thing properly. Zero Search Console presence, so no ranking value moves. Its title - 'Luxury Ayurvedic Deaddiction Treatment at Kairali' - carries a banned word on a clinical page; that is a live-site fix for Dr. Deepu John (HARD GATE 7) and is not resolved by this redirect.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0,
+        "note": "no row in the 2026-07-19 Search Console export"
+      }
+    },
+    "/panchakarma-treatment.html": {
+      "to": "/panchkarma-treatment.html",
+      "legacy": true,
+      "liveStatus": 404,
+      "reason": "A misspelling of /panchkarma-treatment.html, which earns 499 clicks against 29,346 impressions. This spelling is already 404 on the live site and has never earned a click. The 301 costs nothing and stops the six impressions landing on an error page.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 6
+      }
     }
-  }
+  },
+  "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
 }
