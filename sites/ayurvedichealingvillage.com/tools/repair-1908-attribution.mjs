@@ -25,16 +25,27 @@
  * Widening past the ruled shape would be the agent rewriting approved copy on
  * its own authority.
  *
- * THE OTHER 234 ARE NOT A COPY PROBLEM. They are `© 1908 — ` with NOTHING after
- * the dash, and they exist only in english-candidate/prerender/. The chrome
- * footer source reads `© 1908 — {{ yearNow }}` with yearNow computed from
- * getFullYear(), which the lint deliberately permits. The snapshots were
- * captured before that interpolation resolved, so the server HTML a crawler
- * reads carries a dangling copyright line. That is a PRERENDER TIMING defect,
- * not wording, and baking a literal year into the snapshots to silence it would
- * be the typed-rolling-year the companion ruling (D-ROLLING-NUMBER) bans. It is
- * fixed by re-running the prerender once the runtime has resolved, and reported
- * here rather than papered over.
+ * THE OTHER 234 WERE MY OWN FALSE POSITIVE, and this is the correction.
+ *
+ * I reported 234 snapshots carrying `© 1908 — ` with nothing after the dash, and
+ * called it a prerender timing defect fixed by re-running the prerender. Then I
+ * re-ran the prerender and the count went UP, to 236 — which is exactly two,
+ * the number of routes added that day. So it was never resolving because there
+ * was never anything to resolve.
+ *
+ * What the snapshots actually carry is:
+ *
+ *   © 1908 — <span class="sc-interp">2026</span> Kairali — The Ayurvedic …
+ *
+ * The year IS there. The detector's regex ended in `(?=<|\s*$)` — treating
+ * "followed by a tag" as "nothing after the dash" — and the tag that follows is
+ * the span HOLDING the year. Measured against a reader, the line is complete and
+ * correct.
+ *
+ * The check below now reads the tag-stripped text, which is what a crawler and a
+ * person both see, so a year inside markup counts as a year. It is the same
+ * lesson this file's headline number taught: a count is a claim, and a claim
+ * that has not survived measurement is not a finding.
  *
  * Idempotent. Re-run after any design import.
  *   node tools/repair-1908-attribution.mjs [--dry]
@@ -76,17 +87,23 @@ for (const p of walk(join(SITE, "public/ahv"))) {
   }
 }
 
-// Report the prerender defect without touching it.
+// A copyright line with genuinely nothing after the dash. Read from the
+// TAG-STRIPPED text: the year lives inside <span class="sc-interp">, so markup
+// between the dash and the year is normal, not a defect.
 let dangling = 0;
 for (const p of walk(join(SITE, "english-candidate/prerender"))) {
-  const t = readFileSync(p, "utf8");
-  const m = t.match(/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?=<|\s*$)/g);
+  const text = readFileSync(p, "utf8").replace(/<[^>]+>/g, " ");
+  // The whitespace goes INSIDE the lookahead. Written as `\s*(?!\w)` the engine
+  // backtracks one space, sees a space, and the negative lookahead succeeds on a
+  // line that is perfectly fine - which is how the first version of this check
+  // reported 234 defects that did not exist.
+  const m = text.match(/©\s*(?:19|20)\d{2}\s*[—–-](?!\s*[0-9A-Za-z])/g);
   if (m) dangling += m.length;
 }
 
 console.log(`${DRY ? "[dry] " : ""}1908 attribution: ${fixed} group-attached instance(s) rewritten to the ruled form, across ${touched.length} file(s)`);
 for (const t of touched) console.log(`  · ${t}`);
 if (dangling) {
-  console.log(`\n  SEPARATE DEFECT, not fixed here: ${dangling} snapshot(s) carry "© <year> — " with nothing after the dash.`);
-  console.log(`  The footer computes its year; the prerender captured before it resolved. Re-run prerender-english.`);
+  console.log(`\n  SEPARATE DEFECT, not fixed here: ${dangling} copyright line(s) really do end at the dash.`);
+  console.log(`  Read from the tag-stripped text, so a year inside <span class="sc-interp"> counts as present.`);
 }

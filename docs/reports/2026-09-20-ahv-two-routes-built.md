@@ -116,3 +116,41 @@ This is deliberately **not** the same call as `/learn-about-ayurveda/` and
 and both stay in the sitemap. Those pages read correctly and pass the register. This one does
 neither yet, and the note says so, so the difference is on the record rather than in my head.
 `/karkidaka-…` is in the sitemap normally — it has neither problem.
+
+---
+
+## Correction: the "234 dangling copyright lines" were my own false positive
+
+Recorded because it was reported to the owner twice — in
+`docs/reports/2026-09-19-ahv-1908-attribution` work and in commit `79cd8ee8`.
+
+**The claim.** 234 prerendered snapshots carried `© 1908 — ` with nothing after the dash; the
+footer computes its year from `getFullYear()`; the snapshots were captured before that resolved;
+re-run the prerender to fix it.
+
+**What happened when I did.** The count went **up**, to 236 — exactly two more, which is the
+number of routes added that day. Nothing was resolving because there was nothing to resolve.
+
+**What the snapshots actually carry:**
+
+```html
+© 1908 — <span class="sc-interp">2026</span> Kairali — The Ayurvedic Healing Village.
+```
+
+Read by a crawler or a person: *"© 1908 — 2026 Kairali — The Ayurvedic Healing Village."* The
+line is complete and always was.
+
+**The bug was in my detector**, twice over. It ended in `(?=<|\s*$)` — treating "followed by a
+tag" as "nothing after the dash", when the tag that follows is the span **holding the year**. And
+the first attempt to fix it, `\s*(?![0-9A-Za-z])`, still reported 236: the engine backtracks one
+space, the lookahead sees a space rather than a digit, and succeeds. Moving the whitespace inside
+the lookahead — `[—–-](?!\s*[0-9A-Za-z])` — is what actually holds, and it is now pinned by two
+assertions in the tool: a complete line yields 0 findings, a genuinely truncated one yields 1.
+
+The tool now reports **0**. No site code was ever changed for this, so nothing shipped wrong —
+but a false finding was in the repo and in the owner's inbox, and the count that disproved it only
+appeared because the "fix" was actually run. **A count is a claim.** This one had not survived
+measurement, and it is the fourth time this session that a generated view turned out to describe
+something other than what ships — the others being the stale `route-verification.json`, the
+computed-style tool comparing a reverted state against itself, and my own register over-counting
+235 routes where the sitemap emits 233.
