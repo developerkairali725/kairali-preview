@@ -78,3 +78,89 @@ up from one review comment; there is no way to know from inside this repo whethe
 more. **The complete list lives in two places neither of which is here** — the WordPress page
 list and the Google Ads destination URLs. Worth pulling both before the flip, once, rather than
 finding the next one the way we found these.
+
+---
+
+# Addendum, same day: two corrections and one page that is unreadable
+
+Written after starting the builds the owner ruled on. Both corrections are to the section above.
+
+## Correction 1 — the Russian page was not invisible. Its design was never started.
+
+I wrote that all four URLs fell outside the decision process because the manifest was built from
+the sitemap plus Search Console and these are unlisted, unlinked ad destinations. That holds for
+`/karkidaka-…`. It is **wrong** for the Russian page.
+
+`/treatment-in-kerala-russian.html` **has a complete source kit** —
+`phases/phase-02-tier-1-campaign-ppc-offer-16-pages/pages/13-treatment-in-kerala-russian-html`,
+36 MB, `sourceKitComplete: true`, `pass: true`, live response captured, three viewport
+screenshots, normalised record, sections, headings, assets, SEO. It was mined on 2026-09-01 with
+the other fifteen campaign pages. What never happened is the next step: `designStarted: false`.
+No design pass, so no view, so no dataset record, so no manifest entry.
+
+Reconciled every kit against the rebuild to see how far that goes. **Of 241 page kits, exactly
+two never reached the rebuild**, and both are the Russian ones:
+
+| kit | route | sourceKitComplete | designStarted |
+|---|---|---|---|
+| `phase-02/…/13-treatment-in-kerala-russian-html` | `/treatment-in-kerala-russian.html` | true | **false** |
+| `phase-15/…/05-ru` | `/ru/` | true | **false** |
+
+Every other one of the 241 is built or redirected. So the mining pass missed nothing; the design
+pass stopped one short of the end twice, and nothing downstream noticed because the manifest is
+generated from what the design package contains, not from what was mined. That is the same
+failure shape this session keeps meeting — **a generated view that cannot report what is absent
+from its own input.**
+
+## Correction 2 — `/ru/` is not a Russian page
+
+I described `/ru/` as "a Russian locale root an EN-only build would not carry", and used it as the
+reason the sitemap check came out at 239 of 240. Measured: `/ru/` returns 200 and is **entirely
+in English** — title "Authentic Ayurveda and Wellness Retreat in Kerala | Kairali – The Ayurvedic
+Healing Village", zero Cyrillic characters in 1,028,403 bytes. It is an English page at a Russian
+URL. There is no Russian tree behind it.
+
+## The thing that changes the ruling: the page is unreadable
+
+`/treatment-in-kerala-russian.html` is served as **mojibake**. Measured on the live bytes:
+
+```
+bytes                     277,280
+declared charset          UTF-8
+valid UTF-8               yes
+real Cyrillic letters     0
+mojibake character pairs  14,640
+```
+
+The file is valid UTF-8 — it just encodes the *corruption* rather than the language. Its Russian
+was decoded once as a Western single-byte codepage and re-encoded as UTF-8, so where a reader
+should see `Лучший` the page serves `Ð›ÑƒÑ‡ÑˆÐ¸Ð¹`. Every Russian character on the page, all
+14,640 of them, is in that state. The English twin `/treatment-in-kerala.html` and `/ru/` are both
+clean, so this is one page, not a server setting.
+
+**A Russian speaker cannot read a single word of it, and has not been able to for as long as it
+has been live.** It carries **5,609 impressions and 6 clicks — a 0.11% click-through rate**, which
+is what a search result looks like when its title is gibberish. That number was the reason to keep
+the page; it is really a measure of how long it has been broken.
+
+**The text is recoverable, losslessly.** The double-encoding reverses — proven on the title:
+
+```
+served    Ð›ÑƒÑ‡ÑˆÐ¸Ð¹ ÐÑŽÑ€Ð²ÐµÐ´Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ð ÐµÑ‚Ñ€Ð¸Ñ‚ Ð² ÐšÐµÑ€Ð°Ð»Ðµ | Ð Ð¾ÑÐºÐ¾ÑˆÐ½Ñ‹Ðµ ÐºÑƒÑ€Ð¾Ñ€Ñ‚Ñ‹ ÐšÐµÑ€Ð°Ð»Ñ‹.
+recovered Лучший Аюрведический Ретрит в Керале | Роскошные курорты Кералы.
+```
+
+So the page can be rebuilt readable. Two things have to be settled first, and neither is a build
+decision:
+
+1. **The recovered title is off-register.** "Роскошные курорты" is *luxury resorts* — both words
+   are on the KTAHV banned list, in the page's own title tag. And **Russian is not a declared
+   locale**: CLAUDE.md locks EN / DE / FR, so no banned-word equivalents have ever been defined
+   for it. Rebuilding the page means either shipping the banned register or writing new Russian
+   copy, and writing new copy is not something this lane can do.
+2. **Nobody here reads Russian.** Recovery is mechanical and verifiable byte-for-byte, but whether
+   the recovered sentences are *correct Russian* is not something I can check. It needs a Russian
+   speaker before it goes anywhere near production.
+
+This does not change the owner's ruling — it changes what the ruling costs, so it goes back to him
+before the build rather than after.
