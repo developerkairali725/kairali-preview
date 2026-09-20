@@ -10,3 +10,18 @@
 /public/ahv/**/*.ttf
 /public/ahv/**/*.webp
 
+# EXCEPTION: the two routes Abilash ruled BUILD on 2026-09-20.
+#
+# The ignore rules above exist because the design package's 2,053 runtime
+# binaries ship from a pinned GitHub release, hash-verified by
+# tools/restore-runtime-assets.mjs, which REFUSES any archive member the
+# manifest does not name. These 79 images cannot go in that bundle: they belong
+# to /karkidaka-chikitsha-or-monsoon-wellness.html and
+# /treatment-in-kerala-russian.html, which the package does not contain, and
+# adding them means cutting a new release - an owner action, not an agent one.
+#
+# So they are tracked here instead, deliberately: 2.3 MB, and the alternative is
+# two routes whose pictures exist on one laptop. When the package is next cut
+# WITH these routes in it, they move into the bundle and this exception goes.
+!/public/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/**
+!/public/ahv/assets/img/legacy/treatment-in-kerala-russian/**
