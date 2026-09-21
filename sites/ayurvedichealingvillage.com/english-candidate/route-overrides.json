@@ -1,165 +1,196 @@
 {
-  "why": "D-20260916-10 (owner, 2026-09-16): the Ayurveda training hub is /ayurveda-training-programme/ - the URL Google already rates (70,193 impressions, position 7.5) - carrying the hub layout that /ayurveda-training-programs/ had; /ayurveda-training-programs/ keeps serving the same page and canonicalises to the hub. Its legacy title ('Kairali Memberships | Affiliations | Accreditations') was wrong for the page and is replaced by the hub's approved title. Applied by tools/repair-route-manifest.mjs after every import. 2026-09-17: the five training course routes mount their generated course views (tools/build-course-views.mjs) instead of the generic article reader; their approved head metadata is unchanged. 2026-09-19: ten orphaned routes with no inbound links and no search traffic - three shop leftovers on a site with no shop, four '-old' duplicates of pages that now exist properly, two test pages and a stray French apply-now - are excluded from the sitemap. They still serve; nothing is unpublished. 2026-09-19 (owner, page-by-page): four thin legacy pages canonicalise to the fuller page on the same subject and leave the sitemap - /our-story/ (96% identical to /about-us/), /offers/new/ (93% identical to the senior-citizen offer), the cancer supportive-care legacy page and /panchakarma/. /learn-about-ayurveda/ is explicitly kept IN the sitemap. The /sitemap/ page carried an offers-page title and now carries its own. 2026-09-19 (owner, in-chat, CORRECTED): the live robots:noindex on /learn-about-ayurveda/ and /retreats-for-everyone/ is a MISTAKE, not a decision. Both are live pages and both STAY in the XML sitemap; the content will be fixed later. This reverses a sitemapExclude I had applied an hour earlier on the opposite reading of the same instruction. Recorded because the live site still serves the noindex and still lists both in its own sitemap - the contradiction is real, and the owner has now ruled which half is wrong: the noindex.",
-  "routes": {
-    "/ayurveda-training-programme/": {
-      "desktopView": "ahv-page-ayurveda-training-programme-desktop",
-      "mobileView": "ahv-page-ayurveda-training-programme-mobile",
-      "dataset": null,
-      "metadata": {
-        "title": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
-        "description": "@from:/ayurveda-training-programs/",
-        "ogTitle": "@from:/ayurveda-training-programs/",
-        "ogDescription": "@from:/ayurveda-training-programs/",
-        "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
-      }
-    },
-    "/ayurveda-training-programs/": {
-      "metadata": {
-        "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
-      },
-      "sitemapExclude": true
-    },
-    "/one-day-ayurveda-workshop-program-kerala/": {
-      "desktopView": "ahv-page-course-one-day-workshop-desktop",
-      "mobileView": "ahv-page-course-one-day-workshop-mobile",
-      "dataset": null
-    },
-    "/three-day-short-term-ayurveda-certificate-program-tap-hv/": {
-      "desktopView": "ahv-page-course-three-day-certificate-desktop",
-      "mobileView": "ahv-page-course-three-day-certificate-mobile",
-      "dataset": null
-    },
-    "/intensive-ayurveda-training-program-learn-practice-ayurveda/": {
-      "desktopView": "ahv-page-course-five-day-intensive-desktop",
-      "mobileView": "ahv-page-course-five-day-intensive-mobile",
-      "dataset": null
-    },
-    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": {
-      "desktopView": "ahv-page-course-level-one-advanced-desktop",
-      "mobileView": "ahv-page-course-level-one-advanced-mobile",
-      "dataset": null
-    },
-    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": {
-      "desktopView": "ahv-page-course-consultant-therapist-desktop",
-      "mobileView": "ahv-page-course-consultant-therapist-mobile",
-      "dataset": null
-    },
-    "/cart/": {
-      "sitemapExclude": true
-    },
-    "/checkout/": {
-      "sitemapExclude": true
-    },
-    "/my-account/": {
-      "sitemapExclude": true
-    },
-    "/contact-us-old/": {
-      "sitemapExclude": true
-    },
-    "/enquiry-form-old/": {
-      "sitemapExclude": true
-    },
-    "/how-to-reach-old/": {
-      "sitemapExclude": true
-    },
-    "/online-consultation-old/": {
-      "sitemapExclude": true
-    },
-    "/testing/": {
-      "sitemapExclude": true
-    },
-    "/test-page/": {
-      "sitemapExclude": true
-    },
-    "/postulez-maintenant/": {
-      "sitemapExclude": true
-    },
-    "/our-story/": {
-      "metadata": {
-        "canonical": "https://ayurvedichealingvillage.com/about-us/"
-      },
-      "sitemapExclude": true,
-      "duplicateOf": "https://ayurvedichealingvillage.com/about-us/",
-      "duplicateNote": "96% identical to /about-us/"
-    },
-    "/offers/new/": {
-      "metadata": {
-        "canonical": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/"
-      },
-      "sitemapExclude": true,
-      "duplicateOf": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/",
-      "duplicateNote": "93% identical to the senior citizen offer, which earns 236 clicks while this earns 0"
-    },
-    "/revitalizing-and-strengthening-treatment-for-cancer-patients/": {
-      "metadata": {
-        "canonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/"
-      },
-      "sitemapExclude": true,
-      "duplicateOf": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
-      "duplicateNote": "same subject as the programme page but a thin 6k-char legacy version against 27k; consolidate the signal"
-    },
-    "/panchakarma/": {
-      "metadata": {
-        "canonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/"
-      },
-      "sitemapExclude": true,
-      "duplicateOf": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
-      "duplicateNote": "thin 5k-char legacy page on the same subject as the 26k programme page"
-    },
-    "/learn-about-ayurveda/": {
-      "sitemapExclude": false,
-      "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
-    },
-    "/sitemap/": {
-      "metadata": {
-        "title": "Site Map | Kairali - The Ayurvedic Healing Village",
-        "description": "Every page on the Kairali - The Ayurvedic Healing Village website, grouped by section."
-      }
-    },
-    "/retreats-for-everyone/": {
-      "sitemapExclude": false,
-      "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
-    },
-    "/treatment-in-kerala-russian.html": {
-      "sitemapExclude": true,
-      "releaseNote": "HELD OUT OF THE SITEMAP, and this is a gate rather than a judgement about the page. Two things are true of it that are true of no other route: its copy has never been read by anyone who reads Russian - it was served as mojibake until 2026-09-20 and the text here is a byte-verified recovery, not a proofread one - and it fails the clinical register in a locale the language lock does not yet cover (13x luxury, 5x resort, 7x cure, 1x spa; the title itself recovers to 'Luxury resorts of Kerala'). Submitting it to Google at the DNS flip would index that. REMOVE THIS LINE when both close: a Russian speaker has proofed the copy, and docs/ktahv-inputs/ktahv-register-ru.md is signed and its failures cleared. NOT the same call as /learn-about-ayurveda/ and /retreats-for-everyone/, where the owner ruled on 2026-09-19 that a live noindex was a mistake and both stay in the sitemap - those pages read correctly and pass the register; this one does neither yet."
-    }
+ "why": "D-20260916-10 (owner, 2026-09-16): the Ayurveda training hub is /ayurveda-training-programme/ - the URL Google already rates (70,193 impressions, position 7.5) - carrying the hub layout that /ayurveda-training-programs/ had; /ayurveda-training-programs/ keeps serving the same page and canonicalises to the hub. Its legacy title ('Kairali Memberships | Affiliations | Accreditations') was wrong for the page and is replaced by the hub's approved title. Applied by tools/repair-route-manifest.mjs after every import. 2026-09-17: the five training course routes mount their generated course views (tools/build-course-views.mjs) instead of the generic article reader; their approved head metadata is unchanged. 2026-09-19: ten orphaned routes with no inbound links and no search traffic - three shop leftovers on a site with no shop, four '-old' duplicates of pages that now exist properly, two test pages and a stray French apply-now - are excluded from the sitemap. They still serve; nothing is unpublished. 2026-09-19 (owner, page-by-page): four thin legacy pages canonicalise to the fuller page on the same subject and leave the sitemap - /our-story/ (96% identical to /about-us/), /offers/new/ (93% identical to the senior-citizen offer), the cancer supportive-care legacy page and /panchakarma/. /learn-about-ayurveda/ is explicitly kept IN the sitemap. The /sitemap/ page carried an offers-page title and now carries its own. 2026-09-19 (owner, in-chat, CORRECTED): the live robots:noindex on /learn-about-ayurveda/ and /retreats-for-everyone/ is a MISTAKE, not a decision. Both are live pages and both STAY in the XML sitemap; the content will be fixed later. This reverses a sitemapExclude I had applied an hour earlier on the opposite reading of the same instruction. Recorded because the live site still serves the noindex and still lists both in its own sitemap - the contradiction is real, and the owner has now ruled which half is wrong: the noindex. 2026-09-21: tools/audit-live-robots.mjs checked all 236 sitemap-eligible routes against the LIVE site. Two classes were fixed here. (a) Five confirmation pages serve noindex on live and would have been SUBMITTED in the sitemap at the flip - a conflicting signal Search Console flags - so they are sitemapExclude. (b) Four routes carry a SELF-canonical on live and had none in the rebuild; the self-canonical is restored, which is what live already asserts. NOT fixed here and deliberately: /family-ayurvedic-retreat-kerala.html's live canonical points at /family-retreat, which does not exist as a route in this rebuild - copying it would point a canonical at a 404. And ELEVEN further routes are noindex on live including /training-programs/, /yoga-meditation-programs/ and /yoga-retreats/, each linked from 237 pages: noindexing a page you link sitewide is almost certainly a live-site mistake, and inheriting it silently would be the opposite of protecting SEO. Owner ruling needed - Q-AHV-NOINDEX-HUBS.",
+ "routes": {
+  "/ayurveda-training-programme/": {
+   "desktopView": "ahv-page-ayurveda-training-programme-desktop",
+   "mobileView": "ahv-page-ayurveda-training-programme-mobile",
+   "dataset": null,
+   "metadata": {
+    "title": "Ayurveda Training Courses & Workshops in Kerala | Kairali",
+    "description": "@from:/ayurveda-training-programs/",
+    "ogTitle": "@from:/ayurveda-training-programs/",
+    "ogDescription": "@from:/ayurveda-training-programs/",
+    "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
+   }
   },
-  "addRoutes": {
-    "/karkidaka-chikitsha-or-monsoon-wellness.html": {
-      "ruling": "Abilash, 2026-09-20. Two live pages absent from the rebuild: 'Keep it, build it' (Russian LP) and 'Build monsoon, 301 the rest'. Neither is in the approved package - their source kits completed 2026-09-01 and designStarted was never set, so the manifest, which is generated from the package, had nothing to report. Of 241 page kits these are the only two that never reached the rebuild.",
-      "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
-      "segments": [
-        "karkidaka-chikitsha-or-monsoon-wellness.html"
-      ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/article-family-data.js",
-      "metadataSource": "tools/build-legacy-route.mjs (live capture, recovered where damaged)",
-      "metadata": {
-        "title": "Monsoon Ayurvedic Treatment Kerala | Karkidaka Chikitsa Reset | Kairali",
-        "description": "Monsoon Ayurvedic treatment in Kerala at Kairali. Karkidaka Chikitsa with Panchakarma, Rasayana, Karkidaka Kanji for complete body reset. 7/14/21 day programs.",
-        "canonical": "https://ayurvedichealingvillage.com/karkidaka-chikitsha-or-monsoon-wellness.html",
-        "htmlLang": "en"
-      }
-    },
-    "/treatment-in-kerala-russian.html": {
-      "ruling": "Abilash, 2026-09-20. Two live pages absent from the rebuild: 'Keep it, build it' (Russian LP) and 'Build monsoon, 301 the rest'. Neither is in the approved package - their source kits completed 2026-09-01 and designStarted was never set, so the manifest, which is generated from the package, had nothing to report. Of 241 page kits these are the only two that never reached the rebuild.",
-      "path": "/treatment-in-kerala-russian.html",
-      "segments": [
-        "treatment-in-kerala-russian.html"
-      ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/article-family-data.js",
-      "metadataSource": "tools/build-legacy-route.mjs (live capture, recovered where damaged)",
-      "metadata": {
-        "title": "Лучший Аюрведический Ретрит в Керале | Роскошные курорты Кералы.",
-        "description": "Лучший Аюрведический Ретрит в Керале, 100% Безопасные ретриты йоги в Индии, лечение Панчакарма в Керале и Центр Панчакармы Аюрведы в Индии.",
-        "canonical": "https://ayurvedichealingvillage.com/treatment-in-kerala-russian.html",
-        "htmlLang": "ru-RU"
-      }
-    }
+  "/ayurveda-training-programs/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/"
+   },
+   "sitemapExclude": true
   },
-  "addRoutesNote": "addRoutes creates a manifest row the approved package does not contain. Every entry names the owner ruling that created it: the manifest is otherwise generated from the package, so a row without provenance is indistinguishable from one the package produced. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
+  "/one-day-ayurveda-workshop-program-kerala/": {
+   "desktopView": "ahv-page-course-one-day-workshop-desktop",
+   "mobileView": "ahv-page-course-one-day-workshop-mobile",
+   "dataset": null
+  },
+  "/three-day-short-term-ayurveda-certificate-program-tap-hv/": {
+   "desktopView": "ahv-page-course-three-day-certificate-desktop",
+   "mobileView": "ahv-page-course-three-day-certificate-mobile",
+   "dataset": null
+  },
+  "/intensive-ayurveda-training-program-learn-practice-ayurveda/": {
+   "desktopView": "ahv-page-course-five-day-intensive-desktop",
+   "mobileView": "ahv-page-course-five-day-intensive-mobile",
+   "dataset": null
+  },
+  "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": {
+   "desktopView": "ahv-page-course-level-one-advanced-desktop",
+   "mobileView": "ahv-page-course-level-one-advanced-mobile",
+   "dataset": null
+  },
+  "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": {
+   "desktopView": "ahv-page-course-consultant-therapist-desktop",
+   "mobileView": "ahv-page-course-consultant-therapist-mobile",
+   "dataset": null
+  },
+  "/cart/": {
+   "sitemapExclude": true
+  },
+  "/checkout/": {
+   "sitemapExclude": true
+  },
+  "/my-account/": {
+   "sitemapExclude": true
+  },
+  "/contact-us-old/": {
+   "sitemapExclude": true
+  },
+  "/enquiry-form-old/": {
+   "sitemapExclude": true
+  },
+  "/how-to-reach-old/": {
+   "sitemapExclude": true
+  },
+  "/online-consultation-old/": {
+   "sitemapExclude": true
+  },
+  "/testing/": {
+   "sitemapExclude": true
+  },
+  "/test-page/": {
+   "sitemapExclude": true
+  },
+  "/postulez-maintenant/": {
+   "sitemapExclude": true
+  },
+  "/our-story/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/about-us/"
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/about-us/",
+   "duplicateNote": "96% identical to /about-us/"
+  },
+  "/offers/new/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/"
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/",
+   "duplicateNote": "93% identical to the senior citizen offer, which earns 236 clicks while this earns 0"
+  },
+  "/revitalizing-and-strengthening-treatment-for-cancer-patients/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/"
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
+   "duplicateNote": "same subject as the programme page but a thin 6k-char legacy version against 27k; consolidate the signal"
+  },
+  "/panchakarma/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/"
+   },
+   "sitemapExclude": true,
+   "duplicateOf": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
+   "duplicateNote": "thin 5k-char legacy page on the same subject as the 26k programme page"
+  },
+  "/learn-about-ayurveda/": {
+   "sitemapExclude": false,
+   "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow",
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/learn-about-ayurveda/"
+   }
+  },
+  "/sitemap/": {
+   "metadata": {
+    "title": "Site Map | Kairali - The Ayurvedic Healing Village",
+    "description": "Every page on the Kairali - The Ayurvedic Healing Village website, grouped by section."
+   }
+  },
+  "/retreats-for-everyone/": {
+   "sitemapExclude": false,
+   "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow",
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/retreats-for-everyone/"
+   }
+  },
+  "/treatment-in-kerala-russian.html": {
+   "sitemapExclude": true,
+   "releaseNote": "HELD OUT OF THE SITEMAP, and this is a gate rather than a judgement about the page. Two things are true of it that are true of no other route: its copy has never been read by anyone who reads Russian - it was served as mojibake until 2026-09-20 and the text here is a byte-verified recovery, not a proofread one - and it fails the clinical register in a locale the language lock does not yet cover (13x luxury, 5x resort, 7x cure, 1x spa; the title itself recovers to 'Luxury resorts of Kerala'). Submitting it to Google at the DNS flip would index that. REMOVE THIS LINE when both close: a Russian speaker has proofed the copy, and docs/ktahv-inputs/ktahv-register-ru.md is signed and its failures cleared. NOT the same call as /learn-about-ayurveda/ and /retreats-for-everyone/, where the owner ruled on 2026-09-19 that a live noindex was a mistake and both stay in the sitemap - those pages read correctly and pass the register; this one does neither yet."
+  },
+  "/contact-us/thank-you/": {
+   "sitemapExclude": true
+  },
+  "/onlinebookingthankyou/": {
+   "sitemapExclude": true
+  },
+  "/onlineconsultation-thanks/": {
+   "sitemapExclude": true
+  },
+  "/thanks/": {
+   "sitemapExclude": true
+  },
+  "/thanks-old/": {
+   "sitemapExclude": true
+  },
+  "/kairali-cleansing-centre.html": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/kairali-cleansing-centre.html"
+   }
+  },
+  "/offers/olympics-and-paralympics-offer/": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/offers/olympics-and-paralympics-offer/"
+   }
+  }
+ },
+ "addRoutes": {
+  "/karkidaka-chikitsha-or-monsoon-wellness.html": {
+   "ruling": "Abilash, 2026-09-20. Two live pages absent from the rebuild: 'Keep it, build it' (Russian LP) and 'Build monsoon, 301 the rest'. Neither is in the approved package - their source kits completed 2026-09-01 and designStarted was never set, so the manifest, which is generated from the package, had nothing to report. Of 241 page kits these are the only two that never reached the rebuild.",
+   "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "segments": [
+    "karkidaka-chikitsha-or-monsoon-wellness.html"
+   ],
+   "desktopView": "ahv-page-article-reader-desktop",
+   "mobileView": "ahv-page-article-reader-mobile",
+   "dataset": "assets/article-family-data.js",
+   "metadataSource": "tools/build-legacy-route.mjs (live capture, recovered where damaged)",
+   "metadata": {
+    "title": "Monsoon Ayurvedic Treatment Kerala | Karkidaka Chikitsa Reset | Kairali",
+    "description": "Monsoon Ayurvedic treatment in Kerala at Kairali. Karkidaka Chikitsa with Panchakarma, Rasayana, Karkidaka Kanji for complete body reset. 7/14/21 day programs.",
+    "canonical": "https://ayurvedichealingvillage.com/karkidaka-chikitsha-or-monsoon-wellness.html",
+    "htmlLang": "en"
+   }
+  },
+  "/treatment-in-kerala-russian.html": {
+   "ruling": "Abilash, 2026-09-20. Two live pages absent from the rebuild: 'Keep it, build it' (Russian LP) and 'Build monsoon, 301 the rest'. Neither is in the approved package - their source kits completed 2026-09-01 and designStarted was never set, so the manifest, which is generated from the package, had nothing to report. Of 241 page kits these are the only two that never reached the rebuild.",
+   "path": "/treatment-in-kerala-russian.html",
+   "segments": [
+    "treatment-in-kerala-russian.html"
+   ],
+   "desktopView": "ahv-page-article-reader-desktop",
+   "mobileView": "ahv-page-article-reader-mobile",
+   "dataset": "assets/article-family-data.js",
+   "metadataSource": "tools/build-legacy-route.mjs (live capture, recovered where damaged)",
+   "metadata": {
+    "title": "Лучший Аюрведический Ретрит в Керале | Роскошные курорты Кералы.",
+    "description": "Лучший Аюрведический Ретрит в Керале, 100% Безопасные ретриты йоги в Индии, лечение Панчакарма в Керале и Центр Панчакармы Аюрведы в Индии.",
+    "canonical": "https://ayurvedichealingvillage.com/treatment-in-kerala-russian.html",
+    "htmlLang": "ru-RU"
+   }
+  }
+ },
+ "addRoutesNote": "addRoutes creates a manifest row the approved package does not contain. Every entry names the owner ruling that created it: the manifest is otherwise generated from the package, so a row without provenance is indistinguishable from one the package produced. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
 }

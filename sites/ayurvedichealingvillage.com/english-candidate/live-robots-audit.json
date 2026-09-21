@@ -1,0 +1,2183 @@
+{
+  "why": "Live indexing signals for every URL app/sitemap.ts emits once AHV_STAGING=0",
+  "generated": "2026-09-21T14:20:50.392Z",
+  "origin": "https://ayurvedichealingvillage.com",
+  "routesChecked": 236,
+  "totals": {
+    "noindexInSitemap": 16,
+    "canonicalElsewhere": 2,
+    "canonicalLostInRebuild": 5,
+    "fetchErrors": 0
+  },
+  "routes": {
+    "/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/about-us/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/about-us/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/about-us/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/accreditations/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/accreditations/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/accreditations/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/alcohol-free/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/alcohol-free/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/alcohol-free/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/all-programs/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/all-programs/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/all-programs/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ananda-lahari-yoga-and-ayurveda-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/animal-husbandry/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/animal-husbandry/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/animal-husbandry/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/apply-now/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/apply-now/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/apply-now/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/archive-yoga-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/archive-yoga-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/archive-yoga-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/archive/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/archive/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/archive/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/arogya-kendra/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/arogya-kendra/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/arogya-kendra/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/arogya-shala/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/arogya-shala/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/arogya-shala/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ashtanga-yoga-and-ayurveda-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ashtanga-yoga-and-ayurveda-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ashtanga-yoga-and-ayurveda-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/attractions-15kms-and-below/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/attractions-15kms-and-below/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/attractions-15kms-and-below/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/attractions-25kms-to-50kms/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/attractions-above-50kms/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/attractions-above-50kms/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/attractions-above-50kms/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/attractions-under-10kms/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/attractions-under-10kms/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/attractions-under-10kms/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/awards-and-accolades/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/awards-and-accolades/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/awards-and-accolades/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/awards-and-accreditations/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/awards-and-accreditations/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/awards-and-accreditations/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/Ayurveda_Treatment_Neo_S.India_Cities.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-offers/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-offers/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-offers/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-package/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-package/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-package/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-retreat-kerala.html": {
+      "liveStatus": 200,
+      "liveRobots": null,
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-retreats-for-everyone/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-training-programme/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-training-programme/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-training/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-training/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-training/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-treatment/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-treatment/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-treatment/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda-workshop/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda-workshop/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda-workshop/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurveda/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-classical-medicines/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-cuisine/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-cuisine/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-cuisine/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-franchise/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-franchise/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-franchise/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-herbal-tea/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-links/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-links/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-links/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-new-year-yala-2018/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-new-year-yala-2018/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-new-year-yala-2018/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-products/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-products/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-products/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-proprietary-medicines/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-proprietary-organics/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-resturant-and-cooking-at-healing-village/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-treatment-packages.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayurvedic-treatments/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayurvedic-treatments/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayurvedic-treatments/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ayuryoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ayuryoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ayuryoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/back-to-roots/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/back-to-roots/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/back-to-roots/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/back-water-tour/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/back-water-tour/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/back-water-tour/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/beauty-care-and-eye-care/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/beauty-care-and-eye-care/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/beauty-care-and-eye-care/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/book-now/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/book-now/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/book-now/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/books/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/books/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/books/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/brief-on-kairali/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/brief-on-kairali/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/brief-on-kairali/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/butterfly-booklet/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/butterfly-booklet/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/butterfly-booklet/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/cancellation-and-refund-policy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/cancellation-and-refund-policy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/cancellation-and-refund-policy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/careers/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/careers/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/careers/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/chef-retreat-food-to-wellness/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/chef-retreat-food-to-wellness/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/chef-retreat-food-to-wellness/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/classic-villa/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/classic-villa/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/classic-villa/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/consultancy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/consultancy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/consultancy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/contact-us/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/contact-us/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/contact-us/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/contact-us/thank-you/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/contact-us/thank-you/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/cookie-policy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/cookie-policy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/cookie-policy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/cooking-classes/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/cooking-classes/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/cooking-classes/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/cultural-events/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/cultural-events/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/cultural-events/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/defence-and-paramilitary-forces/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/defence-and-paramilitary-forces/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/defence-and-paramilitary-forces/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/deluxe-villa/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/deluxe-villa/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/deluxe-villa/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/destination-palakkad/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/destination-palakkad/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/destination-palakkad/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/digestive-wellness-gut-health-yoga-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/digestive-wellness-gut-health-yoga-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/digestive-wellness-gut-health-yoga-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/disclaimer/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/disclaimer/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/disclaimer/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/elephant-safari/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/elephant-safari/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/elephant-safari/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/emailsubscriber/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/emailsubscriber/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/emailsubscriber/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/enquiry-form/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/enquiry-form/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/enquiry-form/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/experience/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/experience/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/experience/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/family-ayurvedic-retreat-kerala.html": {
+      "liveStatus": 200,
+      "liveRobots": "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/family-retreat",
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-POINTS-ELSEWHERE",
+        "CANONICAL-LOST-IN-REBUILD"
+      ]
+    },
+    "/faqs-downloads/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/faqs-downloads/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/faqs-downloads/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/festivals/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/festivals/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/festivals/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/food-sadhana/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/food-sadhana/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/food-sadhana/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/founders-message/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/founders-message/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/founders-message/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/gift-vouchers/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/gift-vouchers/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/gift-vouchers/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/givefeedback/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/givefeedback/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/givefeedback/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/holistic-treatment-for-rejuvenation-and-detoxification/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/house-boat-tour/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/house-boat-tour/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/house-boat-tour/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/how-to-reach/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/how-to-reach/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/how-to-reach/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/immunity-enhancement-executive-health-assessment-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/immunity-enhancement-executive-health-assessment-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/immunity-enhancement-executive-health-assessment-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/in-house-products/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/in-house-products/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/in-house-products/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/intensive-ayurveda-training-program-learn-practice-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/internships-at-kairali/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/internships-at-kairali/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/internships-at-kairali/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/jobs/business-development-manager/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/jobs/business-development-manager/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/jobs/business-development-manager/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kair-by-kairali/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kair-by-kairali/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kair-by-kairali/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/Kairali_Brand_and_Competition_Neo-original.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-air-india-maharaja-club.html": {
+      "liveStatus": 200,
+      "liveRobots": null,
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-centre/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-equipment/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-group/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-group/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-group/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-products-pvt-ltd/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-treatment-center/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-treatment-center/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-treatment-center/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-ayurvedic-way-of-weight-management/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-way-of-weight-management/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-ayurvedic-way-of-weight-management/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-cleansing-centre.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-cleansing-centre.html",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-LOST-IN-REBUILD"
+      ]
+    },
+    "/kairali-hospitality/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-hospitality/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-hospitality/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-institute-of-ayurveda-and-panchakarma-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/kairali-the-ayurvedic-healing-village/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/karkidaka-chikitsha-or-monsoon-wellness.html": {
+      "liveStatus": 200,
+      "liveRobots": "index,follow,max-image-preview:large",
+      "liveCanonical": "https://www.ayurvedichealingvillage.com/karkidaka-Chikitsa-or-monsoon-wellness",
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-POINTS-ELSEWHERE"
+      ]
+    },
+    "/karma-being-retreat-2019/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/karma-being-retreat-2019/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/karma-being-retreat-2019/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/karma-being-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/karma-being-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/karma-being-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/katha-wellness-retreat-2019/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/katha-wellness-retreat-2019/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/katha-wellness-retreat-2019/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/knowledge-centre/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/knowledge-centre/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/knowledge-centre/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/lakshya-yoga-retreat-2017/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat-2017/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat-2017/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/lakshya-yoga-retreat-2018/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat-2018/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat-2018/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/lakshya-yoga-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/lakshya-yoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/lakshya-yoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/learn-about-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/learn-about-ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-LOST-IN-REBUILD"
+      ]
+    },
+    "/learn-more-about-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/learn-more-about-ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/learn-more-about-ayurveda/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/learn-more-about-yoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/learn-more-about-yoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/learn-more-about-yoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/legal-notice/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/legal-notice/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/legal-notice/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/live-to-100-with-panchkarma/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/maharaja-suite/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/maharaja-suite/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/maharaja-suite/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/map/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/map/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/map/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/meditation/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/meditation/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/meditation/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/mindfulness-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/mindfulness-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/mindfulness-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/mountain-jeep-safari/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/mountain-jeep-safari/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/mountain-jeep-safari/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/nature-walk/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/nature-walk/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/nature-walk/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/new-privacy-policy/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/new-privacy-policy/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/new-to-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/new-to-ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/new-to-ayurveda/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/new-to-yoga-teacher-training/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/new-to-yoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/new-to-yoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/new-to-yoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/no-caffeine/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/no-caffeine/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/no-caffeine/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/no-preservatives/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/no-preservatives/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/no-preservatives/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/no-refridgeration/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/no-smoking/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/no-smoking/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/no-smoking/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/offers/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/offers/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/offers/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/offers/defence-paramilitary-personnel-get-upto-30-off/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/offers/olympics-and-paralympics-offer/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/offers/olympics-and-paralympics-offer/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-LOST-IN-REBUILD"
+      ]
+    },
+    "/offers/senior-citizen-offer/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, nofollow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/one-day-ayurveda-workshop-program-kerala/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/one-day-ayurveda-workshop-program-kerala/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/one-day-ayurveda-workshop-program-kerala/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/online-consultation/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/online-consultation/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/online-consultation/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/onlinebookingthankyou/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/onlinebookingthankyou/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/onlineconsultation-thanks/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/onlineconsultation-thanks/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/organic-farm/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/organic-farm/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/organic-farm/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/our-accolades/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/our-accolades/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/our-accolades/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/our-partners/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/our-partners/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/our-partners/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/our-villas/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/our-villas/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/our-villas/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/packages/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/packages/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/packages/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/pain-management.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/panchakarma-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/panchkarma-treatment.html": {
+      "liveStatus": 200,
+      "liveRobots": null,
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/panchkarma-treatment.html",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/payment-policy-compliance/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/payment-policy-compliance/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/personalized-customized-healing-program/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/personalized-customized-healing-program/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/personalized-customized-healing-program/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/photo-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/photo-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/photo-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/post-pregnancy-health-programme/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/post-pregnancy-health-programme/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/post-pregnancy-health-programme/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/ppc-thanks/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/ppc-thanks/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/ppc-thanks/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/prav-simona-monsoon-yoga-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/prav-simona-monsoon-yoga-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/prav-simona-monsoon-yoga-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/prav-simona-yoga-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/prav-simona-yoga-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/prav-simona-yoga-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/preventive-and-regenerative-treatment/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/preventive-and-regenerative-treatment/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/preventive-and-regenerative-treatment/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/preventive-rejuvenation-detoxification.html": {
+      "liveStatus": 200,
+      "liveRobots": null,
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/privacy-policy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/privacy-policy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/privacy-policy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/privacy-statement/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/privacy-statement/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/privacy-statement/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/product-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/product-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/product-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/product-range/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/product-range/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/product-range/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/property-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/property-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/property-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/read-feedback/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/read-feedback/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/read-feedback/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/retreats-for-everyone/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/retreats-for-everyone/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "CANONICAL-LOST-IN-REBUILD"
+      ]
+    },
+    "/retreats-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/retreats-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/retreats-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/revitalizing-and-strengthening/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/royal-villa/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/royal-villa/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/royal-villa/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/search-results/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/search-results/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/search-results/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/sight-seeing-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/sight-seeing-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/sight-seeing-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/sightseeing/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/sightseeing/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/sightseeing/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/sitemap/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/sitemap/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/sitemap/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/sleep-restoration-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/sleep-restoration-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/sleep-restoration-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/social-cultural-environmental-commitment/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/social-responsibilities/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/social-responsibilities/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/social-responsibilities/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/special-offers/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/special-offers/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/special-offers/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/terms-and-conditions/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/terms-and-conditions/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/terms-and-conditions/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/thanks-old/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, nofollow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/thanks-old/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/thanks/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/thanks/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/the-baoli-advert-box-deal/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/the-baoli-advert-box-deal/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/the-baoli-advert-box-deal/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/the-baoli-special-deal/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/the-baoli-special-deal/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/the-baoli-special-deal/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/things-to-do-in-kerala/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/things-to-do-in-kerala/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/things-to-do-in-kerala/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/things-to-do-in-property/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/things-to-do-in-property/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/things-to-do-in-property/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/things-to-do/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/things-to-do/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/things-to-do/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/three-day-short-term-ayurveda-certificate-program-tap-hv/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/training-course-fees/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/training-course-fees/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/training-course-fees/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/training-programs/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/training-programs/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/training/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/training/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/training/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-arthritis-and-spondylitis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-arthritis-and-spondylitis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-arthritis-and-spondylitis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-bronchial-diseases/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-bronchial-diseases/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-bronchial-diseases/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-cervical-spondylosis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-cervical-spondylosis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-cervical-spondylosis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-chronic-back-pain/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-chronic-back-pain/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-chronic-back-pain/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-diabetes/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-diabetes/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-diabetes/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-facial-paralysis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-facial-paralysis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-facial-paralysis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-hypertension/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-hypertension/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-hypertension/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-nervous-disability/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-nervous-disability/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-nervous-disability/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-paralysis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-paralysis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-paralysis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-psoriasis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-psoriasis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-psoriasis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-sinusitis-and-migraine/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-sinusitis-and-migraine/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-sinusitis-and-migraine/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-skin-diseases/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-skin-diseases/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-skin-diseases/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-slip-disc/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-slip-disc/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-slip-disc/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-for-spondylitis/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-for-spondylitis/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-for-spondylitis/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-in-kerala.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatment-programs/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-programs/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/treatment-to-remove-stress-and-strain/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatment-to-remove-stress-and-strain/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatment-to-remove-stress-and-strain/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/treatments-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/treatments-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/treatments-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/vegetarian/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/vegetarian/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/vegetarian/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/video-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/video-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/video-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/villa-raag/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/villa-raag/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/villa-raag/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/village-facilities/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/village-facilities/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/village-facilities/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/villas-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/villas-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/villas-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/virtual-tour/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/virtual-tour/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/virtual-tour/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/vision-and-mission/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/vision-and-mission/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/vision-and-mission/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/visit-kerala/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/visit-kerala/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/visit-kerala/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/walk-in-ayurveda-treatment/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/walk-in-ayurveda-treatment/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/walk-in-ayurveda-treatment/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/weight-loss-programme/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/weight-loss-programme/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/weight-loss-programme/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/weight-loss.html": {
+      "liveStatus": 200,
+      "liveRobots": null,
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/wellness-programs/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/wellness-programs/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/wellness-resort-kerala.html": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/what-is-ayurvedic-food/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/what-is-panchkarma/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/what-is-yoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/what-is-yoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/what-is-yoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/why-get-training-in-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/why-get-training-in-yoga/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/why-get-training-in-yoga/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/why-get-training-in-yoga/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/why-pick-a-yoga-or-yoga-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/why-pick-a-yoga-or-yoga-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/why-pick-a-yoga-or-yoga-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/wildlife-drive/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/wildlife-drive/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/wildlife-drive/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/womens-hormonal-balance-endocrine-therapy/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/womens-hormonal-balance-endocrine-therapy/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/womens-hormonal-balance-endocrine-therapy/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-and-ayurveda/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": null,
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/yoga-and-meditation-package/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-and-meditation-package/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-and-meditation-package/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-based-stress-energy-reset-program/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-based-stress-energy-reset-program/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-based-stress-energy-reset-program/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-classes-practical/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-classes-practical/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-classes-practical/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-classes-theory/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-classes-theory/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-classes-theory/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-gallery/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-gallery/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-gallery/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-meditation-program/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-meditation-program/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-meditation-program/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-meditation-programs/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-meditation-programs/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/yoga-meditation-training/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-meditation-training/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-meditation-training/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-retreats-for-everyone/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-retreats-for-everyone/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-retreats-for-everyone/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    },
+    "/yoga-retreats/": {
+      "liveStatus": 200,
+      "liveRobots": "noindex, follow",
+      "liveCanonical": null,
+      "liveCanonicalIsSelf": false,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-retreats/",
+      "wouldBeSubmitted": true,
+      "flags": [
+        "NOINDEX-BUT-IN-SITEMAP"
+      ]
+    },
+    "/yoga-therapy-individual/": {
+      "liveStatus": 200,
+      "liveRobots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "liveCanonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
+      "liveCanonicalIsSelf": true,
+      "repoCanonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
+      "wouldBeSubmitted": true,
+      "flags": []
+    }
+  }
+}

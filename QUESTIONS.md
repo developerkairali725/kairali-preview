@@ -1448,3 +1448,52 @@ between rewrite and 301 whenever this is re-opened — and it is the one fact no
 **What would close it:** either Kairali's own workshop copy replacing the itinerary, or a decision
 that the page 301s. Both need the GSC numbers first.
 
+## Q-AHV-NOINDEX-HUBS — eleven live pages are noindex, three of them linked from every page (2026-09-21 20:05:00 IST)
+
+Found by `tools/audit-live-robots.mjs`, which asked the LIVE site what it says about indexing for
+every one of the 236 URLs `app/sitemap.ts` will emit the moment `AHV_STAGING=0`. All 236 return
+200. Sixteen serve **noindex** — and would have been submitted in the sitemap anyway, which is a
+conflicting signal Search Console flags.
+
+**Five were unambiguous and are fixed** (confirmation pages, now `sitemapExclude`):
+`/contact-us/thank-you/`, `/onlinebookingthankyou/`, `/onlineconsultation-thanks/`, `/thanks/`,
+`/thanks-old/`.
+
+**Eleven are not mine to decide, and three of them are the reason this entry exists:**
+
+| route | live robots | pages linking to it |
+|---|---|---|
+| `/training-programs/` | noindex, follow | **237** |
+| `/yoga-meditation-programs/` | noindex, follow | **237** |
+| `/yoga-retreats/` | noindex, follow | **237** |
+| `/treatment-programs/` | noindex, follow | 3 |
+| `/wellness-programs/` | noindex, follow | 2 |
+| `/offers/senior-citizen-offer/` | noindex, **nofollow** | 2 |
+| `/offers/defence-paramilitary-personnel-get-upto-30-off/` | noindex, follow | — |
+| `/yoga-and-ayurveda/` | noindex, follow | — |
+| `/payment-policy-compliance/` | noindex, follow | — |
+| `/new-privacy-policy/` | noindex, follow | — |
+| `/no-refridgeration/` | noindex, follow | — |
+
+**You do not noindex a page you link from all 237 pages.** Three sitewide navigation hubs being
+noindex on live reads as a mistake rather than a decision, and `/offers/senior-citizen-offer/` is
+`nofollow` as well while earning 236 clicks.
+
+**Why this is a ruling and not a repair:** the rebuild can either COPY live's robots (inherit the
+mistake) or INDEX them (change a live signal on eleven URLs at the moment of a migration). Both
+are defensible; neither is the agent's call. Doing nothing is the worst of the three — the sitemap
+would submit eleven noindex URLs on day one.
+
+**Recommend:** index the five programme hubs and the two offers; leave the policy pages and
+`/no-refridgeration/` noindex but `sitemapExclude` them so the signals stop contradicting.
+
+**Also found, NOT fixed, needs your eye:** `/family-ayurvedic-retreat-kerala.html`'s live canonical
+points at `/family-retreat` — **a URL that does not exist in this rebuild**. Copying it would aim a
+canonical at a 404, so it was deliberately left out. Either the page is missing from the rebuild or
+the live canonical is wrong.
+
+**Fixed alongside:** four routes carried a SELF-canonical on live and none in the rebuild
+(`/kairali-cleansing-centre.html`, `/learn-about-ayurveda/`,
+`/offers/olympics-and-paralympics-offer/`, `/retreats-for-everyone/`) — restored, since it is what
+live already asserts. Sitemap now emits 231 rather than 236; routes with no canonical 18 → 14.
+
