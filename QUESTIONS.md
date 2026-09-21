@@ -1159,6 +1159,24 @@ agent does not restyle it; Deepu is the web developer, not the designer. Same qu
 to "header should have a contact option" (confirmed — the header's only action is Book Your
 Stay, which leaves the site).
 
+**ANSWERED 2026-09-21, Abilash (in-chat):** **neither — the design stands.** Both items go to the
+designer as change requests; the build changes when the design does. A ruling about AUTHORITY, not
+about merit — recorded because item 2 has merit.
+
+CLOSED as routed: `launches/ayurvedichealingvillage.com/requests/2026-09-21-design-change-requests.md`
+carries both, measured.
+
+- **CR-1, form order** — measured as built: `fname · country_code · phone · programme · email ·
+  message`, so phone and email are not adjacent. A layout preference against an approved design;
+  no defect, every control labelled with a placeholder and autocomplete.
+- **CR-2, header contact — CONFIRMED and a real functional gap.** The header's only action on all
+  254 routes is "Book Your Stay", which sends the visitor OFF-SITE to the bookings subdomain.
+  There is no call, WhatsApp or contact link in the persistent chrome anywhere. On an audience
+  that skews 45+/55+, a visitor who wants to ask rather than book has no affordance. Recommended
+  to the designer: a secondary action on the locked number beside the booking CTA. **Not built** —
+  it changes the header on every page, so it needs the designer's treatment and the owner's
+  approval of the changed design.
+
 ## Q-AHV-STRUCTURED-DATA — 2026-09-19 19:12:44 IST
 **Zero of the 252 rebuilt routes emit any `ld+json`.** The only structured data in the
 codebase is in `app/(lp)/_components/lp.tsx`, the landing-page lane, which none of these
