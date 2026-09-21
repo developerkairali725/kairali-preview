@@ -1753,3 +1753,18 @@ rewrite is a one-pass copy edit at apply — a clinical-lock decision for the ow
 John, since this is an offer aimed at serving and retired personnel. Not asked now, per
 instruction.
 
+
+### Q-AHV-CANCER-PAGE-CLINICAL-COPY — 2026-09-22 01:58:12 IST
+Context: U-5 (sheet item 11) `/revitalizing-and-strengthening-treatment-for-cancer-patients/`
+designed in Claude Design from the record copy verbatim (owner brief: "do not change a single
+word of the clinical copy"). The record copy (english-candidate/prerender/…, 749 words) contains
+lines that read as cure/superiority claims and hospitality register on a KTAHV clinical page:
+"health resort" ×2 ("Ayurvedic Health Resort"), "It is a form of killer in disguise… kills the
+person from inside" (about chemo-radiation), "might be is free from being a cancer victim",
+"Ayurvedic therapies are considered to be the best medicines", "It increases the positivity and
+longevity of life". Ported verbatim into the design, flagged, nothing rewritten (HARD GATE 6/7).
+Needs Dr. Deepu John's ruling on the wording before apply → production; a "speak to a physician
+first" path is designed with locked contacts only and a [TO CONFIRM — physician wording]
+supportive-care slot left empty. Also: EUR/USD tariff tabs have no figures in the record →
+[TO CONFIRM]; INR tariff table carried as-is (Deluxe 26,700/50,310 … Maharaja 53,400/75,300, min 7
+nights).
