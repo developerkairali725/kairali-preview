@@ -1,6 +1,12 @@
 ---
+report_id: RPT-20260919-AHV-SWEEP-BASELINE
+date: "2026-09-19 16:57:09 IST"
+task: "Re-run the 252-route sweep against a fresh baseline and account for the difference"
+project: "AHV English staging rebuild (codex/ahv-english-staging-20260915, PR #309)"
+source_tool: "claude-code (single-writer session)"
+type: audit
+supersedes: null
 title: The sweep is not green, and the reason was four days old
-date: 2026-09-19
 status: complete
 topic: qa
 site: ayurvedichealingvillage.com
@@ -114,3 +120,13 @@ template, all at ≥1024px.
   actually ship; 98 correctly `aria-hidden` and deliberately untouched.
 - Benchmark pages: **0 of 16** page/width pairs changed, from a tool validated against an unchanged
   state first (three consecutive runs at 0 of 16).
+
+## Dispositions (R3 triad — every finding rowed)
+
+_Added 2026-09-21._
+
+| # | Finding | Disposition | Reason / outcome |
+|---|---|---|---|
+| 1 | The committed `route-verification.json` read 504/504 with 0 overflow, and its own stamp said it was generated four days before the article template landed | **IMPLEMENT** | The stale file was replaced with a real run, and every change since has been measured against that baseline rather than against a claim. Standing practice now: the sweep is re-run and diffed after every payload change, and "0 new failures against baseline" is the phrase that means something. |
+| 2 | 34 routes scroll sideways at 1024px — a real defect in the shared article template | **MONITOR** | Deliberately not fixed here: it lives in the template the owner is replacing family by family, and the fix is layout work inside a design he is redesigning. Carried in **BACKLOG** against the T1 EXPLAIN redesign, and in the flip-readiness report; it belongs to that redesign, not to a patch. |
+| 3 | 44 further failing states across 23 routes are baseline drift, not defects | **REJECT** | Correctly classified as drift (the owner's canonicals, the 17 Sep course views, the D-20260916-10 hub title). No action; recording it stops the next session re-reporting 78 failures as if they were all real. |

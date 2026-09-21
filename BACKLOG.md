@@ -292,3 +292,17 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
   clinical lock binds in DE/FR too (Kur/Urlaub/Luxus, cure/vacances/luxe), compliance already emits clinical-lock-de
   and clinical-lock-fr, and Dr. Deepu John's HARD GATE 7 sign-off is per locale. The three non-English /sitemap/ links
   left open by the SSR work belong to this lane.
+- [ ] 2026-09-21 19:05:00 IST — **MONITOR: AHV Actions billing is the single blocking dependency for the whole
+  flip proof chain.** Not merely PR #309: `scripts/lib/verdict.mjs` refuses any verdict whose `runner` is `local`
+  or whose last committer is not a CI job ("a hand-authored verdict is a .md file in a different costume"), so
+  **no machine gate can become ship evidence until GitHub Actions runs**. Root cause measured 2026-09-21 on the
+  billing pages: **no payment method on file**, $77.67 metered Actions usage, automatic recurring payments
+  disabled — the Actions budget is fine ($57.85 of $500). Owner-only, one click at
+  `github.com/organizations/kairali-digital/settings/billing/payment_information`. Homed here from
+  RPT-20260919-AHV-CI-DIAGNOSIS disposition 1. Review at every session close until it clears.
+- [ ] 2026-09-21 19:05:00 IST — **MONITOR: 34 routes scroll sideways at 1024px**, clean at 320 and 768. Reproduced
+  at 1024 and 1280; caused by a full-bleed treatment applied to images sitting in narrow grid cells, and it arrived
+  with the article template (63acad69, 19 Sep). Deliberately NOT patched: it lives in the shared article-reader
+  template, which is exactly what the **T1 EXPLAIN** redesign replaces — patching it now is work thrown away, and
+  the redesign has to solve the same layout question anyway. Belongs to that family's build. Homed here from
+  RPT-20260919-AHV-SWEEP-BASELINE disposition 2.

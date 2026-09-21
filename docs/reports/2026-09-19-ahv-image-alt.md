@@ -1,6 +1,12 @@
 ---
+report_id: RPT-20260919-AHV-IMAGE-ALT
+date: "2026-09-19 16:21:00 IST"
+task: "Measure the real empty-alt count across the rebuilt routes and fix the causes"
+project: "AHV English staging rebuild (codex/ahv-english-staging-20260915, PR #309)"
+source_tool: "claude-code (single-writer session)"
+type: audit
+supersedes: null
 title: The image alt that never landed — measured, and it was not 93
-date: 2026-09-19
 status: complete
 topic: accessibility
 site: ayurvedichealingvillage.com
@@ -145,3 +151,13 @@ checkout; the two failures that remain are the pre-existing ones raised in
   work is one you cannot verify with.
 - `tools/computed-style-diff.mjs` — the benchmark-pages proof, as a tool rather than a number in a
   report, with the noise sources documented in the file so the next session does not rediscover them.
+
+## Dispositions (R3 triad — every finding rowed)
+
+_Added 2026-09-21._
+
+| # | Finding | Disposition | Reason / outcome |
+|---|---|---|---|
+| 1 | 257 empty alt of 4,989 rendered images — not the 93 the handover claimed | **IMPLEMENT** | Measured, not accepted. 98 of the 257 are correctly `aria-hidden` decoration; the remainder had two causes, both fixed: runtime `src` aliases, and a second dataset shape keyed on `file` the tool was blind to. 46 alt fields filled. |
+| 2 | The alt tool's search window stopped at a nested brace, so whole dataset shapes were invisible to it | **IMPLEMENT** | Fixed in the same pass. The lesson generalised on 2026-09-21: the same attribute is spelled three ways in this codebase, and only counting the rendered output catches the spelling a tool misses. |
+| 3 | Alt text quality was not assessed, only presence | **IMPLEMENT** | Followed up 2026-09-21: scanning all 4,845 alt attributes found **162 carrying a KTAHV-locked word**. "guest" — 226 values across 86 files — is now corrected to "patient", 0 remaining. The rest are award proper nouns, which the register rule exempts. |
