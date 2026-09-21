@@ -1678,4 +1678,13 @@ Both are defensible and this entry does not need re-answering to proceed: the En
 continues either way, and nothing in the EN lane depends on it. It is recorded so the flip-order
 decision is made deliberately rather than discovered on the day.
 
+## Q-AHV-PACKAGE-EXTENSION — extending the "read-only" design package for new families (2026-09-21 IST)
+
+The importer's only input is the SHA-sealed package at
+`…/code-handoff/final-english-portable-candidate/`. The 19-Sep Enquiry/Confirmation designs were
+applied by copying newer `.dc.html` into it (package copies 14 Sep, intake copies 19 Sep, bytes
+differ). Applying families 6–18 the same way extends that package 13 more times. I will proceed on
+the established practice; if you would rather the package stay sealed and new families live in an
+overlay the importer also reads, say so once and I build the overlay instead. No answer needed
+before generation — only before apply.
 
