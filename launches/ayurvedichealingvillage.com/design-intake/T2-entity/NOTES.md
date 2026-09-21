@@ -31,3 +31,8 @@
   worth of contact facts for the owner at apply time. None invented.
 - Strain: no T2 route is below ~150 words (`/kair-by-kairali/` at 228 is the floor) or likely past
   ~8 long sections; the products page's 13 headings is why it chose side-headings over a rail.
+
+## Its own self-check — completed, no fixes needed
+
+Check ran to completion, uninterrupted, and reported nothing to fix. **T2 is complete: desktop +
+mobile + check.**
