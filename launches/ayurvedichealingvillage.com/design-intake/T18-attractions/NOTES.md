@@ -75,3 +75,16 @@ correction, not a restyle. Verify at apply that the closing block still matches 
 byte-for-byte in copy and structure.
 
 Re-check ran to completion, uninterrupted, nothing further. **T18 is complete: desktop + mobile + checks.**
+
+## Filing note (2026-09-22)
+
+The project archive carried no new notes file for this session — the `.md` that came out is the
+**8-Sep candidate's** `attractions-family-page.md`, renamed here to
+`previous-candidate-notes-2026-09-08.md` so it does not pose as this session's. This session's
+comments are the verbatim blocks above. `attractions-family-data.js` / `-render.js` beside this
+note are also the 8-Sep family's files, kept for reference only.
+
+One fact from the old note that still applies (the new template keeps source distances verbatim):
+**Tipu's Fort sits under `/attractions-under-10kms/` with a "14 Km" distance line in the source** —
+a source conflict retained, not corrected. Owner decides at apply which band it belongs in.
+Downloaded 2026-09-22 from `Kairali Healing Village Redesign (7).zip`.
