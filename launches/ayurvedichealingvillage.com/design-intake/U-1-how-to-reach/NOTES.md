@@ -45,3 +45,20 @@ data carries nothing beyond the live page's copy and the five supplied facts.
 > rhythm holds). Inline prose links left as they were.
 
 Check ran to completion, uninterrupted. **U-1 is complete: desktop + mobile + check.**
+
+## From its notes file (`claude-design-notes.md`) — facts the chat comment did not carry
+
+- **Steps 1–2 load `world-atlas@2.0.2 countries-110m` via CDN** (d3-geo, Mercator). At apply this
+  becomes a runtime third-party fetch unless the topojson is self-hosted — self-host it.
+- **Marker coordinates:** hospital 10.727275, 76.710507 — taken from the live page's own Google
+  Maps links (source-derived, fine). **CJB (11.0297, 77.0434) and COK (10.152, 76.401) came from
+  its web search** — numbers not supplied by the owner and not on the live page. Geodata, not a
+  price/date/phone, but still unsupplied → verify or `[TO CONFIRM]` at apply.
+- The exported desktop file still matches `openstreetmap|tile.|leaflet` somewhere — it dropped
+  Leaflet, so this is likely a comment or the notes text; **verify at apply that no tile request
+  fires at runtime.**
+- Its Codex asks: (a) download `mpas.jpg` and other live banner assets into `assets/img/`;
+  (b) tile provider decision for steps 3–4 or keep as diagrams; (c) supply/commission the grounds
+  plan; (d) a higher-resolution Kerala outline if 110m is too coarse at step 2.
+- Head contract is **verbatim from live** (unlike T17/T3/T2). Register check clean.
+- Downloaded 2026-09-22 from `Kairali Healing Village Redesign (8).zip`.
