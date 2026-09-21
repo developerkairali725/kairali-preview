@@ -1270,10 +1270,21 @@ and expertise with Études—the cat…") wrapped around three `Get Upto 30% OFF
 `robots: noindex, follow`.
 
 Found while correcting the defence discount; deliberately left alone, since a placeholder page is
-not a discount claim. **The question is whether it should exist at all** — it is a WordPress test
-page that got mined with everything else. If it ships, the site carries another studio's marketing
-copy on a live URL. Recommend a 410 or simply dropping it from the route manifest; either way it is
-a ruling, not a repair.
+not a discount claim.
+
+**WITHDRAWN 2026-09-21 — already handled, and I should have checked before raising it.**
+`/testing/` is one of **12 of the 14 entries in `english-candidate/redirect-map.json`**: it 301s at
+the flip, so it stops being a page. That is also why `tools/prerender-english.mjs` skips it — the
+tool filters out anything in the redirect map, which is correct and deliberate.
+
+Same for the rest of the leftovers raised elsewhere: `/cart/`, `/checkout/`, `/gift-test/`,
+`/my-account/`, `/test-page/`, `/test-page-2/`, `/offers/new/` and the four `-old` form routes are
+**all already in the redirect map**. Nothing needs a ruling here.
+
+One consequence worth knowing, not a defect: because the prerender skips them, those 12 snapshots
+are frozen at an older state and will not pick up payload changes — they still carry the previous
+phone format, for instance. Harmless, because after the flip the URL redirects and the snapshot is
+never served. Only the pre-flip staging preview shows them.
 
 ## Q-AHV-SWEEP-IFRAME-TIMING — the "no iframe" assertion is now timing-dependent (2026-09-21 17:09:04 IST)
 
@@ -1312,3 +1323,45 @@ WordPress guard blocking documentation, not just operations) and Q-MAIN-GUARD-EN
 The failure mode matters: an agent that needs the leased form is pushed toward either giving up or
 reaching for something the gate would like even less. The fix is a one-line ordering change, but it
 is a hook and rule g says fix the cause with your word, not quietly loosen the gate.
+
+## Q-AHV-WORKSHOP-PAGE — a third party's 2022 itinerary is an indexed page, CARRIED FORWARD by owner ruling (2026-09-21 18:05:00 IST)
+
+Surfaced by the owner supplying the missing `ayurvedaworkshop-in-kairali.pdf`. Reading the PDF
+before wiring it turned up the larger thing: **the PDF is a copy of what `/ayurveda-workshop/`
+already renders as a full page.**
+
+**What the page is**, measured in the rebuild and on live:
+
+```
+heading   "In Kairali (9 Days) Organized by Oriental Spa Ayus (Via Singapore Airlines)"
+heading   "Itinerary"
+table     Date | City | Flight | Time | Schedule | Meal
+          1 | Mar 26 (Sat.) | Depart Narita airport | ...
+para      "The above itinerary is subject to change due to local transportation conditions."
+1,193 words · names an individual ("Ms. Gita") · in the sitemap · self-canonical · indexed
+title       "9-Day Luxury Ayurveda Workshop in Kerala | Kairali Healing Retreat"
+description "... Luxury wellness, personalize..."
+```
+
+Four things in one page: **another operator's branding** on a Kairali URL, a **dated 2022 group
+itinerary** presented as current (Mar 26 last fell on a Saturday in 2022), a **named staff member**
+in public copy, and **"Luxury" in both the title tag and the meta description** — a KTAHV clinical
+lock violation on an indexed page, i.e. in the two fields Google actually shows.
+
+**Owner ruling, 2026-09-21, in-chat, after being shown the above:** *leave it — it's live copy.*
+He was offered noindex, a 301 to `/training-programs/`, and a rewrite, and chose to carry it
+forward. Same position as Q-AHV-87-PERCENT: the rebuild is not re-opening every legacy page.
+
+**Recorded so nobody later reads this as reviewed:** the page has NOT been reviewed or approved by
+anyone. It is carried forward unchanged.
+
+**DONE under the same ruling:** the PDF download links were removed (owner ruled "drop the 5
+links"), so the page no longer offers a download that has 404'd since before the rebuild. The page
+body is untouched.
+
+**Not known from here:** its Search Console clicks and impressions. That number should decide
+between rewrite and 301 whenever this is re-opened — and it is the one fact nobody has measured.
+
+**What would close it:** either Kairali's own workshop copy replacing the itinerary, or a decision
+that the page 301s. Both need the GSC numbers first.
+
