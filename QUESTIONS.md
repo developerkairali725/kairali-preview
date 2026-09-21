@@ -1688,3 +1688,13 @@ the established practice; if you would rather the package stay sealed and new fa
 overlay the importer also reads, say so once and I build the overlay instead. No answer needed
 before generation — only before apply.
 
+## Q-AHV-GALLERY-RESORT-IN-SOURCE — banned word burned into gallery IMAGES and in source intro copy (2026-09-21 IST)
+
+Surfaced by Claude Design's T12 notes (not its design): the Kairali estate-map photograph carries
+"Resort Map" / "Resort" as text inside the image, a signage photograph reads "…Prohibited In The
+Resort", and `/property-gallery/`'s source intro says "wellness retreat" / "retreat for rejuvenation".
+KTAHV clinical lock bans "resort"; burned-in text cannot be fixed in CSS or copy. Needs either a
+re-exported map without the label, a replacement photograph from the image library, or a ruling
+that these two photographs are dropped from the collection. The intro copy is a one-line rewrite
+once ruled. Not asked now per the owner's instruction; recorded for apply time.
+

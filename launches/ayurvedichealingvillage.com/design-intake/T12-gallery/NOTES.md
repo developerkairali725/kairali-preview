@@ -84,3 +84,22 @@ QA, not a defect in the template.
 
 Contrast 4.86:1 passes WCAG AA for normal text — relevant to D-20260921-14 (45+ European
 reader). Check ran to completion, uninterrupted. **T12 is complete: desktop + mobile + both checks.**
+
+## From its notes file (`claude-design-notes.md`) — facts the chat comment did not carry
+
+- **Register flags in SOURCE material, not introduced by the design:** `/property-gallery/` intro
+  contains "wellness retreat" and "retreat for rejuvenation"; the Kairali estate-map photograph has
+  "Resort Map" / "Resort" **burned into the image**; one signage photograph reads "…Prohibited In The
+  Resort". Banned words on a KTAHV page — the design cannot fix burned-in text. → QUESTIONS.md
+  `Q-AHV-GALLERY-RESORT-IN-SOURCE` (owner; no ask now).
+- **Its own apply asks:** (1) re-export the estate map without the "Resort Map" label or supply a
+  replacement; (2) confirm the 3 duplicate files in `/photo-gallery/` (69 slots → 66 unique);
+  (3) QA justified rows at 360 / 768 / 1024 / 1440 / 1920, no sideways scroll.
+- **Head contract present:** title / description / canonical / robots come verbatim from the route
+  record, applied on mount and route change (`syncHead`). Unlike T17, SEO metadata is in scope here.
+- **DRAFT content:** intro lines for every route except `/property-gallery/` (the only route with a
+  source intro) — in `photo-collections-data.js` → `intro.text`, `intro.source:false`; plus the
+  "Photographs" heading and tally line. Approve or replace at apply.
+- **Captions:** no source collection carries per-image captions, so none render; the template holds
+  them if supplied.
+- Mobile two-up rejection explicitly cites the "45+/55+ audience" — the ruling reached the tool.
