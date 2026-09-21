@@ -32,3 +32,7 @@ clean data file before designing, and read the How-To-Reach page for consistency
 - Answers are verbatim from the record — no clinical copy was written. Any `[TO CONFIRM]` in the
   answers is inherited from the record, not introduced.
 - Strain limits (≥3 groups, ≤25 per group) are both comfortably met by the live page (12 groups).
+
+## Its own self-check — completed, no fixes needed
+
+Check ran to completion, uninterrupted, nothing to fix. **U-2 is complete: desktop + mobile + check.**
