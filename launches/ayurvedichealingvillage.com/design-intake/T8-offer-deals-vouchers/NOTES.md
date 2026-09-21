@@ -42,3 +42,47 @@ Its "Checking the design for issues…" pass ran clean (no fixes). Reply sent: a
 closing questions stay, adjacency flagged in the notes (owner's call at apply); every
 amount/date/validity stays [TO CONFIRM]; build 390px mobile, 64-word single-offer extreme, strain
 note, checks on both views.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~06:25 IST)
+
+> Mobile built as two 390px screens side by side: /offers/ at 808 words, and the single-offer
+> extreme modelled on The Baoli Special Deal.
+>
+> It's a different layout, not a squeeze. The hero sidebar card becomes a two-cell fact strip; an
+> action strip with the two live contact routes sits directly under it; the jump chips become a
+> collapsible "On this page"; the four deal-detail panels become an accordion with the first open;
+> offer cards become 110px-thumbnail rows with a full-width Enquire bar; "How Healing Begins"
+> becomes a vertical numbered rail.
+>
+> Mobile strain note — the single-offer extreme holds because the accordion gives five titled rows
+> of structure to sixty words of prose, but that same accordion is the strain at the fat end: past
+> about six panels the screen becomes a wall of closed bars with nothing visible between hero and
+> closing block, and the first two should be forced open or split under a second h2.
+>
+> Checks run on all three views: one h1 each, no skipped heading levels, nothing overflowing the
+> page box, no tap target under 44px, no body copy under 16px. The only sub-16px text is the 13px
+> placeholder label, which doesn't ship.
+>
+> Closing-question adjacency is now flagged in notes/offers-page.md with your ruling recorded,
+> along with the mobile layout log and the self-check results. All 28 mobile and 34 desktop figure
+> slots remain [TO CONFIRM].
+
+## Mobile self-check — "Found issues — fixing…", its own fix (verbatim)
+
+> Replacing the three default-open disclosures with plain always-visible blocks — more reliable
+> and better for a 45+ audience than depending on a default-open state.
+
+> Fixed. The three panels that were meant to start open now can't close at all — I replaced them
+> with always-visible blocks rather than relying on a default-open state:
+>
+> "On this page" is a plain list, five links visible
+> "What the offer includes" is a visible block on both screens, so the single-offer extreme now
+> shows real detail immediately after the hero
+>
+> Remaining panels stay click-toggled. Re-probed both screens: inclusions visible, one h1 each, no
+> skipped heading levels, scrollWidth 390, zero overflow, zero sub-44px targets. Notes updated —
+> the earlier "open by default" lines were wrong and are corrected.
+
+Check ran to completion uninterrupted. T8 (item 18) COMPLETE in the project, 2026-09-22 06:31 IST.
+Not downloaded (export failing) — end-of-run attempt follows. 28 mobile + 34 desktop figure slots
+[TO CONFIRM] → the owner's figures at apply.
