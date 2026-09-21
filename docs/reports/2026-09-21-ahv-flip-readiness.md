@@ -18,11 +18,44 @@ will pass the moment they are run. The point is that none of them has been.
 **Scope:** 77 gates in the registry, **64 required for an organic site**, 47 of them blockers.
 26 automated · 29 agent · 9 human. 46 built · 9 partial · 9 planned.
 
+## The one fact that governs all of this
+
+**No machine gate can become ship evidence unless a GitHub Actions job commits its verdict.**
+Not my reading — `scripts/lib/verdict.mjs`, the module that owns the contract:
+
+```js
+if (v.runner === "local") {
+  p.push('runner "local": a local run has no CI provenance, so it is
+          iteration evidence, not ship evidence (§0.2)');
+}
+if (!prov.isCi) {
+  p.push('the verdict was last committed by "..." — a human or agent edit,
+          not a CI job. A hand-authored verdict is a .md file in a
+          different costume (§0.2)');
+}
+```
+
+The file says plainly why: *"Forging a clean matrix walk required writing one JSON file."* Rule 5 —
+committed by CI — is the one that makes the other four mean anything, and it is the rule an agent
+cannot satisfy on its own. Correctly so.
+
+**Consequence, and it is the whole picture:** every machine gate on this list is blocked on GitHub
+Actions running, and Actions is blocked on the missing payment method. Fixing billing does not
+merely unblock PR #309 — it unblocks the entire proof chain. Until then the ledger reads
+DO-NOT-SHIP no matter how good the site gets, and no amount of local work moves it.
+
+**What is NOT blocked:** the site itself. Content, images, missing elements, SEO, schema, design
+wiring — all of that is the work that makes the gates pass *when* CI finally runs, and none of it
+needs CI to be done. That is what the loop is working on.
+
+**HUMAN gates are the exception** — they require a person's commit and are explicitly NOT allowed
+to be CI-signed: *"a machine cannot sign for a person."*
+
 ## Who can clear what
 
 | bucket | count | meaning |
 |---|---|---|
-| **Script** | 16 | a command exists; the agent runs it |
+| **Script** | 16 | a command is named — but only **2** of those scripts exist; 7 were never built and 3 are CI jobs |
 | **External AI** | 12 | a GPT / Perplexity pass over a real input artifact |
 | **No machine assigned** | 15 | agent judgement or a decision — no runner exists yet |
 | **Human** | 8 | owner or Deepu signature, cannot be delegated |
