@@ -65,3 +65,63 @@ checks on both.
 - §13 says contact details are in "Section 24"; they are in §25.
 - ≈20 × "Guest" + booking/stay/wellness vocabulary in the governed legal text (KTAHV register) —
   legal copy; GST-language sensitivity → Abilash's ruling at apply, logged in QUESTIONS.md.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~05:12 IST)
+
+> Can't reach /payment-policy-compliance/ from this session (only /terms-and-conditions/ and
+> /privacy-statement/ are fetchable), so I won't invent its body. Building mobile with the Terms
+> document live, and the short extreme as a real structural state with the copy withheld under
+> [TO CONFIRM].
+
+> Now running my own checks on both views.
+
+> Mobile scroll-spy confirmed: at scrollTop 6000 the bar reads "12 · Additional Services and
+> Charges"; frame scrollWidth 388 = clientWidth 388, so no sideways scroll. Sheet opens and lists
+> all 25.
+
+> Mobile view is up alongside the desktop, notes updated.
+>
+> Mobile is a different layout, not the desktop squeezed. The 288px rail is gone; in its place a
+> sticky 60px "You are reading" bar names the current section and opens a full-height "Jump to
+> section" sheet listing all 25 at 52px rows. That is how the 25-section list stays findable on a
+> phone. Section numbers drop to a 28px hanging column, body runs full width inside 20px padding
+> (~40 characters), H1 34px, h2 22px, body still 18px/1.7, closing-block buttons stack full-width
+> at 52px.
+>
+> My checks: at scrollTop 6000 the bar correctly reads "12 · Additional Services and Charges";
+> frame scrollWidth 388 = clientWidth 388, so nothing scrolls sideways; sheet opens, lists all 25,
+> closes on selection. Desktop came back clean after the scroll-spy fix.
+>
+> One thing you need to decide. I could not fetch /payment-policy-compliance/ — only
+> /terms-and-conditions/ and /privacy-statement/ were reachable this session. Rather than invent
+> legal copy, the short-extreme frame is geometry only: H1, standfirst, dates, section count and
+> all four bodies are visible [TO CONFIRM]. It does show the real behaviour I wanted you to see —
+> the jump bar is suppressed below 5 sections, because a short document is already scannable and
+> the bar would cost a screen of height for nothing. Send me the drop or paste the body and that
+> frame becomes real in one pass.
+>
+> Mobile strain note: the sticky bar truncates to one line, so the two longest titles
+> ("Cancellation, Amendments, and Refund Policy", "Check-in, Check-out, and Stay Policies")
+> ellipsise to roughly half at 390px — fine as a position cue, not as a full title — and past
+> about 60 sections the jump sheet becomes a long unsegmented scroll that would need grouping.
+
+## Mobile self-check — two rounds of its own fixes (verbatim)
+
+> Breadcrumb "Home" now carries the same inline-flex / min-height:44px treatment as the §25
+> contact links, with the breadcrumb nav given min-height:44px so it no longer collapses to the
+> text line — applied in all three places (desktop, and both mobile frames).
+
+> Added the horizontal floor the vertical one was missing: min-width:44px;
+> justify-content:center; padding-inline:6px on the breadcrumb anchors, with a -6px inline-start
+> margin so the optical left edge still aligns with the text column. Applied in all three places.
+
+Both rounds ran to completion uninterrupted. Toggles: stickyJumpBar, showReadingTime. T13 (item
+16) COMPLETE in the project, 2026-09-22 05:16 IST. Not downloaded (export failing) — end-of-run
+attempt.
+
+Apply notes: the record holds ALL legal-family pages (`english-candidate/prerender/`:
+terms-and-conditions, privacy-statement, privacy-policy, new-privacy-policy,
+payment-policy-compliance [820 words in the record, not 404], cookie-policy, disclaimer,
+legal-notice, cancellation-and-refund-policy) — the short-extreme [TO CONFIRM] frame is filled
+from the record at apply, no paste-back to the tool needed (its "decide" ask is answered by the
+apply pipeline, not by the owner). "Last updated" dates come from the record/owner.
