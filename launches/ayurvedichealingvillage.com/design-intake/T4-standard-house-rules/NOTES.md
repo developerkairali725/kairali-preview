@@ -88,3 +88,18 @@ owner's sheet says 71 — the record copy is the apply-time source either way.
 Follow-up sent (record facts): rail labels = the record pages' own H1s verbatim — Alcohol Free,
 No Smoking, No Caffeine, No Preservatives, No Refridgeration, Vegetarian, Organic Farming, Animal
 Husbandry — drop the LABEL TO CONFIRM chip, run checks.
+
+## Label follow-up — Claude Design's closing comment (verbatim, 2026-09-22 ~03:40 IST)
+
+> Labels applied on both views, chip gone. Nothing else touched.
+>
+> Checks: both rails read No Smoking · Alcohol Free · No Caffeine · No Preservatives · No
+> Refridgeration · Vegetarian · Organic Farming · Animal Husbandry, hrefs unchanged and correct in
+> each frame (each omits its own page, which carries the "You are here" row). Zero TO CONFIRM
+> markers left anywhere on the page. Tap targets all ≥44×44, rail rows minimum 58px, no overflow at
+> 360px, no console errors.
+
+Edited 3 files; check clean. T4 (item 13) COMPLETE in the project, 2026-09-22 03:41 IST. Not
+downloaded (project export still failing) — end-of-run export attempt. Apply notes: record copy
+(not the live fetch) is the source at apply; images from the record; guests ×3 / journey ×1 in the
+/no-preservatives/ record copy → QUESTIONS.md apply-time register item.
