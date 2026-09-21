@@ -62,7 +62,7 @@ const TREES = ["public/ahv/assets", "public/ahv/views", "english-candidate/prere
  * has its period, and "-John" follows.
  */
 // banned-string-allow: deepu-name-conflation — this line IS the defect pattern.
-const WRONG = /Dr(?!\.)(?:\\n|\s)+Deepu(?! John)(?!-John)/g;
+const WRONG = /Dr(?!\.)(?:\\n|\s)+Deepu(?! John)(?!-John)/g; // banned-string-allow: deepu-name-conflation — this literal IS the banned shape
 const RIGHT = "Dr. Deepu John";
 
 let fixed = 0, files = 0;

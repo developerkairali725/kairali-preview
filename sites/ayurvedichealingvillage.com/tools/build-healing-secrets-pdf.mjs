@@ -42,6 +42,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { CENTRES_COUNT, COUNTRIES_PHRASE, COUNTRIES_WORD, CENTRES_NETWORK_LINE } from "@kairali/facts";
 
 const HERE = fileURLToPath(new URL(".", import.meta.url));
 const SITE = resolve(HERE, "..");
@@ -88,7 +89,35 @@ const img = (name) => {
 };
 
 /* ---------- content ---------- */
-const blocks = JSON.parse(readFileSync(CONTENT, "utf8"));
+/**
+ * NETWORK COUNTS ARE COMPUTED, NEVER TYPED (hardcoded-centres-count rule).
+ *
+ * The source booklet typed "span five countries". Five is CORRECT today — it is
+ * exactly what @kairali/facts computes — which is the whole reason the rule
+ * exists: a typed count that is right today rots silently the day a centre opens
+ * in a sixth country, and a PDF rots worse than a page because nobody re-reads a
+ * shipped booklet. The 12x "nine countries" retro-audit of 17 Jul 2026 was that
+ * failure at fleet scale.
+ *
+ * So the content file carries TOKENS and this builder resolves them from the
+ * constants at build time. Unknown tokens throw rather than render as literal
+ * braces in a customer-facing booklet.
+ */
+const FACT_TOKENS = {
+  COUNTRIES_PHRASE,          // "five countries"
+  COUNTRIES_WORD,            // "five"
+  CENTRES_COUNT: String(CENTRES_COUNT),
+  CENTRES_NETWORK_LINE,      // "14 treatment centres across five countries"
+};
+function resolveFactTokens(raw) {
+  return raw.replace(/\{\{\s*([A-Z_]+)\s*\}\}/g, (m, key) => {
+    if (!(key in FACT_TOKENS)) {
+      throw new Error(`healing-secrets content references unknown fact token {{${key}}} — add it to @kairali/facts or fix the token.`);
+    }
+    return FACT_TOKENS[key];
+  });
+}
+const blocks = JSON.parse(resolveFactTokens(readFileSync(CONTENT, "utf8")));
 const esc = (s) => String(s).replace(/&amp;/g, "&").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 /** The leaf mark that sits beside every heading in the original. */

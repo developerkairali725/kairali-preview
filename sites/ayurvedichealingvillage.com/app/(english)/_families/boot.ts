@@ -504,7 +504,7 @@ export const BOOT_SCRIPT = `
     return /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(out) ? out : null;
   }
   // Locked facts: info@kairali.com is the public contact address everywhere.
-  // career@kairali.com is a separate approved departmental address and is NOT
+  // career@kairali.com is a separate approved departmental address and is NOT  // banned-string-allow: wrong-contact-email — D-20260915-06 names the address
   // cf-encoded, so it never reaches this function (D-20260915-06).
   function publicAddress(decoded) {
     return decoded === PUBLIC_EMAIL ? decoded : PUBLIC_EMAIL;

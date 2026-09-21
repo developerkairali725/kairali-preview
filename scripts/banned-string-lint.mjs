@@ -388,10 +388,36 @@ export const RULES = [
     id: "wrong-contact-email",
     appliesTo: "both",
     why: `CLAUDE.md LOCKED FACTS: the public contact email everywhere is ${CONTACT_EMAIL}.`,
-    scan: (ctx) =>
-      reScan(ctx, /[A-Za-z0-9._%+-]+@kairali\.com/g, (m) =>
-        m[0].toLowerCase() === CONTACT_EMAIL ? "" : `"${m[0]}" — the public contact email everywhere is ${CONTACT_EMAIL}.`
-      ).filter((h) => h.message !== ""),
+    scan: (ctx) => {
+      // (?<!\\) — an address may not START immediately after a backslash. Without
+      // it the class below eats the "n" of a JSON "\n" escape and reports
+      // "ninfo@kairali.com", i.e. it renames the CORRECT address and then fails
+      // it: 791 findings on one AHV evidence file, every one of them the right
+      // address. The engine simply retries one character later and matches
+      // info@kairali.com, which passes.
+      const ADDRESS = /(?<!\\)[A-Za-z0-9._%+-]+@kairali\.com/g;
+
+      // D-20260915-06 (Abilash, 15 Sep 2026): career@kairali.com is a PERMITTED
+      // departmental address on careers/apply routes, and his ruling was
+      // explicit about the shape of the fix — "add a scoped documented exception
+      // to the locked-facts rule rather than changing the address". SCOPED is
+      // the operative word: the exception is bound to the careers surfaces, so
+      // the same address on the contact page or in a footer still FAILS, naming
+      // the ruling that permits it elsewhere. A blanket allow would have retired
+      // the rule for that address across the fleet.
+      const CAREERS_SURFACE = /(?:job|career|recruit|apply|vacanc|enquiry-family)/i;
+      const careersScoped = CAREERS_SURFACE.test(ctx.path ?? ctx.file ?? "");
+
+      return reScan(ctx, ADDRESS, (m) => {
+        const addr = m[0].toLowerCase();
+        if (addr === CONTACT_EMAIL) return "";
+        if (addr === "career@kairali.com" && careersScoped) return "";
+        if (addr === "career@kairali.com") {
+          return `"${m[0]}" — permitted on careers/apply routes only (D-20260915-06); this file is not one. The public contact email everywhere else is ${CONTACT_EMAIL}.`;
+        }
+        return `"${m[0]}" — the public contact email everywhere is ${CONTACT_EMAIL}.`;
+      }).filter((h) => h.message !== "");
+    },
     probe: "reservations@kairali.com",
     antiProbes: [CONTACT_EMAIL, "info@kairalicentres.com", "info@kairali.mu"],
   },
@@ -414,7 +440,17 @@ export const RULES = [
       const hits = [];
       ctx.lines.forEach((line, i) => {
         // Remove every correct rendering, then see if the name survives.
-        const rest = line.replace(/Dr\.\s+Deepu\s+John/g, "");
+        //
+        // An IMAGE PATH is not prose. The mined legacy asset
+        // karDr.-Deepu-John.webp carries the physician's name in full already,
+        // its bytes are the provenance record of the live file, and renaming it
+        // would break the mined-asset mapping — so it can never be "fixed", only
+        // mis-flagged. The rule is about a byline a PATIENT READS; a src=""
+        // value is not one. Stripped before the test rather than special-cased
+        // after it, so a bare "Deepu" elsewhere on the same line still fails.
+        const rest = line
+          .replace(/[^\s"'<>()]*\.(?:webp|jpe?g|png|svg|gif|avif)\b/gi, " ")
+          .replace(/Dr\.\s+Deepu\s+John/g, "");
         if (/\bDeepu\b/.test(rest)) {
           hits.push({ line: i + 1, message: `"Deepu" not written as the full "Dr. Deepu John". Two Deepus (CLAUDE.md): the developer and the chief physician — never conflate on a shipped page.` });
         }
@@ -426,6 +462,9 @@ export const RULES = [
       "Medically reviewed by Dr. Deepu John (BAMS)",
       '  "deepu-john": {',
       "- **Dr. Deepu John, BAMS** — Chief Physician & Head of Department",
+      // the mined legacy asset path — a filename, never a byline (21 Sep 2026)
+      '"src": "/ahv/assets/img/legacy/karkidaka/karDr.-Deepu-John.webp",',
+      '<img src="/ahv/assets/img/legacy/karDr.-Deepu-John.webp" alt="Dr. Deepu John">',
     ],
   },
   {
