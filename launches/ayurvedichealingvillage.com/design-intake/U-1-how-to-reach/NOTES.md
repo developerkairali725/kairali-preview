@@ -37,3 +37,11 @@ data carries nothing beyond the live page's copy and the five supplied facts.
   consent/third-party implications under the site's Consent Mode), and whether a grounds plan
   artwork exists for step 4 — QUESTIONS.md `Q-AHV-HOW-TO-REACH-MAPS`.
 - This is a single page (not a family), so the fixed-four-step rail limit is fine as-is.
+
+## Its own self-check — completed, one fix applied (verbatim)
+
+> Both flagged links now sit in 44px-high hit boxes: the breadcrumb "Home" on desktop and mobile,
+> and "Open live directions" under the map stepper (moved onto its own flex line so the footnote
+> rhythm holds). Inline prose links left as they were.
+
+Check ran to completion, uninterrupted. **U-1 is complete: desktop + mobile + check.**
