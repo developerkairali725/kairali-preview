@@ -57,3 +57,54 @@ the phone), 156-word no-image extreme, strain note, checks on both views.
 Apply notes: "Concluded. Not open for admission." and "PAST RETREAT" are the tool's record-card
 labels (not source copy) — owner rules the wording at apply; the 2019 dates come from the kit.
 Register words in the source (journey, Spa Treatment, Resorts) → apply-time QUESTIONS item.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~05:48 IST)
+
+> Mobile built as its own layout — AHV Template Past Retreat Record Mobile.dc.html, showing the
+> design route and the /archive/ short extreme side by side.
+>
+> Pastness is read before the title on mobile: a full-width ink strip carries PAST RETREAT · 2019
+> in bright gold with "Concluded. Not open for admission." (the desktop's side record card has no
+> phone equivalent, so this replaces it). Breadcrumb collapses to one 48px back link; the contents
+> rail becomes a tap-to-open jump list; the About Us groups become four accordions. Photography
+> goes full-bleed edge to edge — the intro pair as a stacked 240px strip, the montage at full width
+> — so it gains presence on the phone rather than shrinking.
+>
+> Mobile strain note: the top ink strip is the only thing that can break — a route with both an
+> undated state and a long qualifier ("Karma Being Yoga and Ayurveda Retreat") pushes it to three
+> lines and shoves the H1 below the fold, so it must cap at two lines and move the date under the
+> title when it does; everything below is a single 18px column that collapses cleanly from 1,670
+> words to 156.
+>
+> My own checks on both views: one h1 each, no heading skips, zero overflow (388px content in a
+> 390px frame), every non-inline target ≥44px, no hover-only disclosure, no motion. Two things I
+> fixed from those checks:
+>
+> Mobile eyebrow was 11.5px; restored to the brand's 12.5px, and raised the strip line and captions
+> to 17px/15px for the 45+ audience.
+> Worth knowing: CSS ch units over-measure badly for Mulish — max-width:66ch was rendering about
+> 80 real characters, so the desktop was quietly breaking the 66-character rule everywhere, not
+> just in the band the review caught. I measured the font and re-derived every cap: body prose
+> 51ch, standfirst 48ch, closing paragraph 43ch (your 56-character spec). Noted in the sidecar so
+> it doesn't recur on the next template.
+>
+> Still open and untouched per your call: the undated year-card wording [TO CONFIRM], the unlinked
+> Accommodation heading, and the register flags in source copy.
+
+## Mobile self-check — "Found issues — fixing…", its own fix (verbatim)
+
+> Both fixed. The intro pair now sits two-up in a single <figure> with the shared <figcaption>
+> correctly parented — images at height:auto, no object-fit, no crop, downscaled from 265×273 to
+> ~193px wide with native ratio intact, as the kit requires. The notes' "no crops, native ratios
+> preserved" claim is now true of both views.
+
+Check ran to completion uninterrupted. T7 (item 17) COMPLETE in the project, 2026-09-22 05:52 IST.
+Not downloaded (export failing) — end-of-run attempt.
+
+### CROSS-TEMPLATE FINDING (apply-time, all families in this run)
+Claude Design measured that `max-width: 66ch` in Mulish renders ≈80 real characters; the
+66-character measure in the standing brief is therefore only met with ≈51ch (body), 48ch
+(standfirst), 43ch (closing paragraph, the 56-char spec). Every earlier template in this run
+(T12, T3, T17, T2, T18, U-1…U-5, T9, T4, T6, T10, T13) used `66ch` literally. Not re-opened now
+(owner: let each family finish; no double work) — logged for the apply step as a single global
+CSS correction candidate, owner's call whether to apply it across the family set.
