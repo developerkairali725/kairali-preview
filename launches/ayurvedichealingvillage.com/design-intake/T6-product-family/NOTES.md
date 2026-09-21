@@ -46,3 +46,27 @@ Check ran to completion uninterrupted. Reply sent: keep every product name verba
 dropped — the owner's no-word-changes rule, not a new decision); drafted standfirst + "not sold
 here" line stay marked as drafts for the owner at apply; placeholders stay labelled; mobile
 approved incl. the two extremes.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~04:08 IST)
+
+> Mobile built as a separate layout: entry images run full-width above the heading, the group nav
+> becomes four collapsible <details> groups below the entries instead of a rail, the three CTAs
+> stack full-width, and the hero band drops to 220px. A small "7 ranges / The range" count sits
+> above the list so the page reads the same whether it holds seven entries or one.
+>
+> Checks I ran (at 390 and 360): no horizontal overflow anywhere; zero tap targets under 44×44
+> after I enlarged the breadcrumb Home link and the entry title links — both fixes also applied to
+> desktop; details summaries 56px, rail links 52px, CTAs 320×52; one h1, h1→h2→h3 unskipped; body
+> 18px/1.7; zero <img> tags. Rendered both extremes: with images off the entry collapses to heading
+> + paragraph with no empty slot, and the single-entry page keeps the same rhythm.
+>
+> Mobile strain note: with images on and seven entries the page runs past 6,000px, so the rail is
+> buried below a long scroll — if a page in this family ever exceeds ~10 ranges, the entry images
+> should drop to a 120px thumbnail beside the heading rather than full-width.
+>
+> Notes file updated with the mobile section and the check results.
+
+Edited 3 files; its "Checking the design for issues…" pass ran clean. T6 (item 14) COMPLETE in the
+project, 2026-09-22 04:09 IST. Not downloaded (export failing) — end-of-run attempt. Apply notes:
+record copy + record images at apply; the drafted standfirst and "not sold here" line are owner
+decisions at apply (never shipped as drafted).
