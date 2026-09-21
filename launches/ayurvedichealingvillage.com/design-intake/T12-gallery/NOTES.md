@@ -76,3 +76,11 @@ Files now: `AHV Template Photo Collections Desktop.dc.html`, `…Mobile.dc.html`
 **For apply:** the 6-photo routes (`/product-gallery/`, `/retreats-gallery/` at 5–6) will show the
 closing block as ~⅓ of the mobile page — the tool's own note; a decision for the owner at apply
 QA, not a defect in the template.
+
+## Mobile self-check — completed, one fix applied (verbatim)
+
+> Fixed: 66ch cap on the mobile standfirst, per-photo caption and the source-notes list; "Tap to
+> enlarge" text is now #8F6212 (4.86:1) with only the ◆ left in gold.
+
+Contrast 4.86:1 passes WCAG AA for normal text — relevant to D-20260921-14 (45+ European
+reader). Check ran to completion, uninterrupted. **T12 is complete: desktop + mobile + both checks.**
