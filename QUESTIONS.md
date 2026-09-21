@@ -1563,3 +1563,49 @@ read it before it governs anything.
 Redirecting first would point visitors at the 867-word document and lose the only GDPR/DPDP
 text on the site — strictly worse than today.
 
+## Q-AHV-DE-FR-FATE — 354 live /de/ and /fr/ URLs have no fate assigned, and earn ~nothing (2026-09-21 21:05:00 IST)
+
+**The gap, measured against the live sitemap index.** The live site publishes **594 unique URLs**
+across separate EN, DE and FR sitemaps. The rebuild covers them like this:
+
+```
+English : 239 of 240  covered by a route or a redirect   ✓
+/de/    :   0 of 178
+/fr/    :   0 of 176
+```
+
+The only uncovered English URL is `/ru/`, already a known deferred route. The English migration is
+essentially complete. **354 non-English URLs have neither a route nor a redirect**, and the rebuild
+returns 404 for `/de/`, `/fr/` and every path under them — verified against the running build.
+
+That is a BUILD DECISION MATRIX §2 gap: every legacy URL is supposed to carry an explicit fate
+(KEEP-AS-PAGE, MERGE, or 301) before a flip. These 354 carry none.
+
+**I called this "the biggest flip risk" before measuring it. With the data it is much smaller.**
+Search Console, 3 months, the property this account can see
+(`https://www.ayurvedichealingvillage.com/`):
+
+| filter | clicks | impressions |
+|---|---|---|
+| whole property | **2,750** | 60,900 |
+| pages containing `/de/` | **0** | 2 |
+| pages containing `/fr/` | **0** | 20 |
+
+**Zero clicks and 22 impressions between them**, across 354 URLs, in three months — about 0.03% of
+impressions and 0% of clicks. Losing them outright would cost almost nothing measurable.
+
+**Caveat, stated rather than buried:** that is the *www* property and the site serves non-www, and
+the repo elsewhere cites far larger figures (184,480 impressions for `/wellness-resort-kerala.html`
+alone) which must come from DataForSEO or a different property. So treat the 2,750/60,900 as a
+partial view. The RATIO is the robust part: whatever the true totals, DE and FR are a rounding
+error within the same property.
+
+**Recommend: 301 each `/de/` and `/fr/` URL to its English equivalent at the flip.** Cheap, correct
+hygiene, keeps any residual equity and stops 354 soft-404s appearing in Search Console on day one.
+The mapping is mechanical — the locale prefix comes off and the slug is matched against the
+manifest — and I can generate it and report the ones that do not match rather than guessing.
+
+**The alternative, and it is yours:** the parked translation plan (BACKLOG, 2026-09-16) rebuilds
+DE/FR properly. The numbers above say that is a product decision about serving German and French
+patients, not an SEO rescue — there is no ranking value to protect.
+
