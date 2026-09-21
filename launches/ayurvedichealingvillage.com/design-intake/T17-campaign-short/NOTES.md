@@ -37,3 +37,11 @@
 Register lock incl. the "World Luxury Award Winner" proper-noun exception · Marcellus 400 /
 Mulish 18/1.7 · 66ch cap · min(1220px, 94%) · 44px targets / 52px buttons · no sideways scroll at
 360 · reduced-motion · single h1 · facts only as given, else `[TO CONFIRM]`.
+
+## Its own self-check — completed, one fix applied (verbatim)
+
+> Fixed: closing-block buttons now 20px side padding and 12px gap, so all three sit on one row at
+> 760px on desktop. Mobile unchanged (stacked by design).
+
+Check ran to completion, uninterrupted. The fix touched only the fixed closing block's button
+spacing — the block's spec (three buttons in a row, wrapping on mobile) is unchanged.
