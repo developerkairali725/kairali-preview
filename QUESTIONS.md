@@ -1058,6 +1058,24 @@ legal-notice, privacy-statement, and the two above's siblings) have proper ones.
 five indexable pages is an SEO defect; fixing it is head metadata only, no design impact, and needs
 nothing from you beyond a yes.
 
+**ANSWERED 2026-09-21, Abilash — "agree, do all four".** HALF implemented, and the other half comes
+back to you, because the ruling was taken on my one-line summary and the detail changes it.
+
+**DONE:** `/payment-policy-compliance/` now has a footer link, labelled **Payment Policy**, beside
+Cancellation & Refund. Added by `tools/repair-footer-policy-links.mjs` rather than by hand, because
+`import-english-candidate.mjs` rewrites `public/ahv/` wholesale and a hand edit is erased by the
+next import. Idempotent — the third consecutive run reports "already applied".
+
+**NOT DONE, deliberately:** `/new-privacy-policy/`. The footer already carries **two** privacy
+links — Privacy Policy (`/privacy-policy/`, 1,252 words) and Privacy Statement
+(`/privacy-statement/`, 1,911 words) — and this is a **third** privacy document of 1,474 words
+whose `<title>` is byte-identical to `/privacy-policy/`'s. A third link would have to read "New
+Privacy Policy", which looks unfinished on a hospital footer and still would not tell a visitor
+which document governs.
+
+**The real question, which the missing link was hiding:** three privacy documents, which one is
+canonical? The other two should probably 301 to it. That needs your word, not a link.
+
 ## Q-AHV-TEMPLATE-AUDIT-COUNT - it is 14 unaudited templates, and the handover's 7 was right at the time (2026-09-19 18:40:11 IST)
 
 Reconciled rather than contradicted. The 2026-09-16 audit reports "60 of 67 templates"; the branch now
@@ -1097,6 +1115,9 @@ measurable — 0 clicks — and would have to be undone. Doing nothing costs not
 
 The only thing that would change my answer: if FR is not shipping at all, in which case 301 it to
 `/apply-now/` with the other twelve and be done. **That is the actual question — is FR still coming?**
+
+**ANSWERED 2026-09-21, Abilash — "agree, do all four".** LEAVE IT. 0 clicks, already out of the
+sitemap, a natural French slug for a French page. No change made, and none needed. CLOSED.
 
 ## Q-AHV-ENQUIRY-ENDPOINT — 2026-09-19 19:12:44 IST
 **Where do the enquiry forms actually send?** Measured across the rebuild: no enquiry form
@@ -1336,6 +1357,12 @@ it, which is exactly the kind of silent drift the registry rule exists to preven
 known third-party widget iframes by id and keep asserting on the rest, or state plainly that the
 assertion covers the pre-interaction state only. Recommend the former.
 
+**ANSWERED 2026-09-21, Abilash — "agree, do all four".** FIXED as recommended: the sweep now splits
+iframes by origin. A known third-party widget (Chatbase) is counted separately and **reported** in
+the route's record; anything else is still a failure exactly as before. Nothing is hidden — an
+empty problems list can no longer be mistaken for "this page embeds nothing", because the widget
+shows up in its own field. `tools/verify-english-candidate.mjs`. CLOSED.
+
 ## Q-GUARD-LEASE-FLAG — the guard blocks the one push form CLAUDE.md mandates (2026-09-21 17:09:04 IST)
 
 `scripts/hooks/guard.sh` rejected a push that used the `--force-with-lease` flag:
@@ -1357,6 +1384,28 @@ WordPress guard blocking documentation, not just operations) and Q-MAIN-GUARD-EN
 The failure mode matters: an agent that needs the leased form is pushed toward either giving up or
 reaching for something the gate would like even less. The fix is a one-line ordering change, but it
 is a hook and rule g says fix the cause with your word, not quietly loosen the gate.
+
+**ANSWERED 2026-09-21, Abilash — "agree, do all four".** FIXED, along with its two siblings, and
+all three are now pinned by tests.
+
+- **The push rule** neutralises the leased spelling before testing what is left, so the mandated
+  form passes while a bare flag still blocks — **even when both appear in the same command**.
+- **The production-WordPress rule** (Q-GUARD-WPADMIN-LITERAL) now fires only when a transfer or
+  wp-cli invocation is present. Every real operation still blocks; talking about one no longer
+  does. The config file keeps its local-edit protection by naming the WRITE rather than the word.
+- **The main-guard encoding bug** (Q-MAIN-GUARD-ENCODING / Q-AHV-PATH-SPACES) is fixed in **28
+  scripts** by normalising `process.argv[1]` through `URL()` — one line, no new import.
+
+`scripts/test/guard.test.js`, 7 tests, both directions.
+
+**WHAT THE 28-SCRIPT FIX IMMEDIATELY EXPOSED**, and this is the point of it: gates that had been
+silently exiting 0 on this worktree now actually run. Two report real failures —
+`report-store-lint` **FAIL, 21 violations**, and `banned-string-lint` exit 2 (the known
+Q-AHV-BANNED-STRINGS set). Neither is new breakage; both were invisible. `class-map-lint`,
+`gate-registry-lint`, `factory-matrix-lint`, `front-gate`, `doctor`, `evolution-lint`,
+`footer-socials-lint`, `cta-label-lint` and `launch-evidence-gate` all now genuinely PASS.
+
+**New, needs your word:** the 21 `report-store-lint` violations. Nobody has seen them before today.
 
 ## Q-AHV-WORKSHOP-PAGE — a third party's 2022 itinerary is an indexed page, CARRIED FORWARD by owner ruling (2026-09-21 18:05:00 IST)
 

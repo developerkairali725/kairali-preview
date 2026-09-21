@@ -601,7 +601,11 @@ function main(argv) {
   return 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// NOTE: comparing import.meta.url to process.argv[1] as raw STRINGS silently
+// broke on any checkout path containing a space — import.meta.url percent-encodes
+// it, argv[1] does not — so main() never ran and the script exited 0 having
+// checked NOTHING. Normalising argv[1] through URL() fixes it with no new import.
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {

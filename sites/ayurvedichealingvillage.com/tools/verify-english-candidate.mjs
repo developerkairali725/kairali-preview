@@ -126,7 +126,20 @@ async function checkState(browser, route, width) {
         .map((e) => e.innerText),
       canonical: [...document.querySelectorAll("link[rel=canonical]")].map((e) => e.href),
       robots: [...document.querySelectorAll("meta[name=robots]")].map((e) => e.content),
-      iframes: document.querySelectorAll("iframe").length,
+      // Iframes, split by origin. The blanket count was written when the site had
+      // none, and it is the assertion cited whenever an embed is proposed — it is
+      // why the maps question was settled with a static map. Since the owner ruled
+      // the Chatbase bubble ships (D-20260921-06), a bare count would have meant
+      // "the sweep finished before the widget loaded" rather than "no iframe", and
+      // the gate's meaning would have drifted without anyone deciding it.
+      // So: a KNOWN third-party widget is counted separately and reported, never
+      // silently dropped; anything else is still a failure, exactly as before.
+      iframes: [...document.querySelectorAll("iframe")]
+        .filter((f) => !/(?:^|\/\/)(?:[\w-]+\.)*chatbase\.co\//.test(f.src || ""))
+        .length,
+      widgetIframes: [...document.querySelectorAll("iframe")]
+        .filter((f) => /(?:^|\/\/)(?:[\w-]+\.)*chatbase\.co\//.test(f.src || ""))
+        .map((f) => f.src.split("?")[0]),
       overflow: document.documentElement.scrollWidth > innerWidth + 1,
       actualView: document.getElementById("ahv-design-root")?.getAttribute("data-ahv-view-file") ?? null,
       previewMarker: document.documentElement.getAttribute("data-ahv-preview-target"),
@@ -170,6 +183,9 @@ async function checkState(browser, route, width) {
     if (s.overflow) result.problems.push("horizontal overflow");
     if (s.brokenImages.length) result.problems.push(`broken images: ${s.brokenImages.slice(0, 3).join(", ")}`);
     if (s.iframes) result.problems.push(`${s.iframes} iframe(s)`);
+    // Reported, not a problem: a ruled third-party widget. Visible so nobody
+    // later mistakes an empty problems list for "this page embeds nothing".
+    if (s.widgetIframes?.length) result.widgetIframes = s.widgetIframes;
   }
   if (errors.length) result.problems.push(`page error: ${errors[0]}`);
   if (external.length) result.problems.push(`off-origin: ${external[0]}`);

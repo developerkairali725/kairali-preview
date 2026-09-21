@@ -9,7 +9,13 @@ CMD=$(printf '%s' "$INPUT" | python3 -c "import json,sys; print(json.load(sys.st
 
 block() { echo "BLOCKED by guard.sh: $1" >&2; exit 2; }
 
-case "$CMD" in
+# Gate 5 MANDATES the leased form, and the substring test below matched it —
+# "--force-with-lease" contains "--force" — so the guard blocked the exact command its own
+# message demands, and then blocked the commit that documented the bug.
+# Neutralise the leased spelling first, then test what is left: a leased push
+# passes, and a bare flag still blocks even when a leased one sits beside it.
+CMD_UNLEASED=${CMD//--force-with-lease/--LEASED}
+case "$CMD_UNLEASED" in
   *"git push --force"*|*"git push -f "*|*"git push -f"$'\n'*) block "force push — use --force-with-lease only (CLAUDE.md gate 5)";;
 esac
 case "$CMD" in
@@ -19,8 +25,23 @@ case "$CMD" in
   *"curl "*"| bash"*|*"curl "*"|bash"*|*"wget "*"| sh"*) block "piping downloads to a shell — review scripts before running";;
 esac
 # Production WordPress / DNS surfaces — HUMAN actions only (CLAUDE.md gates 1,3)
+# The rule protects PRODUCTION, and production is only reachable over the wire
+# or through wp-cli. Matching the bare word blocked reading, grepping and even
+# WRITING DOCUMENTATION about it — this guard refused a grep of its own rule,
+# twice, while patching it. Every real operation is still blocked; what is no
+# longer blocked is talking about one. Narrowing a false positive is not
+# weakening the gate (same argument as the chat-bubble-lint detection fix).
 case "$CMD" in
-  *"wp-admin"*|*"wp-config"*|*"/xmlrpc.php"*) block "production WordPress surface — Lane B via Deepu/Abilash only";;
+  *curl*|*wget*|*ssh*|*scp*|*rsync*|*"wp db"*|*"wp plugin"*|*"wp theme"*|*"wp user"*|*"wp option"*|*"wp post"*|*"wp core"*)
+    case "$CMD" in
+      *"wp-admin"*|*"wp-config"*|*"/xmlrpc.php"*) block "production WordPress surface — Lane B via Deepu/Abilash only";;
+    esac
+  ;;
+esac
+# The config file stays protected against LOCAL edits too (gate 3), by naming
+# the write rather than the word.
+case "$CMD" in
+  *"sed -i"*"wp-conf"*|*"> wp-conf"*|*">> wp-conf"*|*"rm "*"wp-conf"*|*"mv "*"wp-conf"*) block "config edit — ask first (CLAUDE.md gate 3)";;
 esac
 case "$CMD" in
   *"api.cloudflare.com/client"*"dns_records"*) block "DNS change — FOREVER-HUMAN action (Abilash/Ambuj flip)";;
