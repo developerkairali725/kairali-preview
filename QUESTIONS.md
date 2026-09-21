@@ -1744,3 +1744,12 @@ is an authority call; (4) "Chronic Back Pain Relief Treatment" links to the stre
 page, likely a source typo. All left verbatim by the design, per the rules. Decisions at apply.
 Not asked now, per instruction.
 
+## Q-AHV-DEFENCE-PAGE-BANNED-WORDS — banned words in the /defence-and-paramilitary-forces/ source copy (2026-09-22 IST)
+
+The record's own body copy for this page carries "spa", "resort", "luxury" and "guest" (counts
+and contexts in launches/…/design-intake/U-4-defence/NOTES.md). Claude Design was handed the copy
+verbatim, as the rules require, with eligibility and proof kept [TO CONFIRM]. The register
+rewrite is a one-pass copy edit at apply — a clinical-lock decision for the owner / Dr. Deepu
+John, since this is an offer aimed at serving and retired personnel. Not asked now, per
+instruction.
+
