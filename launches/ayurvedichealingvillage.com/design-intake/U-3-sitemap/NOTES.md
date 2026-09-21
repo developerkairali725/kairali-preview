@@ -61,3 +61,13 @@ Tweaks: `showFilter`, `density` (comfortable / compact).
 Files now: `AHV Page Sitemap Desktop.dc.html`, `…Mobile.dc.html`, `notes/sitemap-page.md` (both
 views). Tweaks: `showFilter`, `sectionsOpen`. Its "no href='#', no corrupted hrefs" on desktop
 confirms the two broken source targets render as `[TO CONFIRM]` markers, not as dead links.
+
+## Its own self-check — completed, one fix applied (verbatim)
+
+> Fixed. The closing block on mobile now matches the specification exactly: 56px spacer above the
+> band, trust items back to 17px with the 32px column gap and 10px diamond spacing. Nothing else in
+> that block was touched.
+
+Check ran to completion, uninterrupted. It caught its own drift in the FIXED closing block on
+mobile and restored it to the standing-brief spec. **U-3 is complete: desktop + mobile + check.**
+Export deferred per `Q-AHV-DESIGN-EXPORT-SIZE`; files intact in the project.
