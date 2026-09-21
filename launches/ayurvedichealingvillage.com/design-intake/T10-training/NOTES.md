@@ -36,3 +36,34 @@ No "Checking the design for issues…" pass ran on the desktop post (waited ~30s
 not start one). Reply sent: approved; every fee/duration/schedule cell stays [TO CONFIRM], villa
 table verbatim; build 390px mobile with the stacked row-card table, 132-word extreme, strain note,
 run checks on both views.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~04:32 IST)
+
+> Running my own checks on both views now.
+
+> Both views check out: mobile reflows clean at 360px with no sideways scroll, fee/villa cards'
+> label column aligns at the same x down the whole page so you can read a column vertically, all
+> tap rows ≥48px, and the fee table wrapper matches its table height exactly on desktop (no
+> clipping — the cut row in an earlier capture was a screenshot artifact).
+>
+> AHV Template Course and Fees Mobile.dc.html — genuinely re-laid out: no rail (its anchor list
+> becomes a white "On this page" band under the hero, arrows down), breadcrumb collapses to a
+> single "← Training Courses" back link, hero image band 240px, and both tables become stacked
+> row-cards — sand title bar per row, then a 104px uppercase label column against left-aligned
+> values, so Duration/Schedule/Fee sit on the same vertical line in every card. Every fee, duration
+> and schedule cell is the TO CONFIRM chip; the four villa rows carry the verbatim rupee figures.
+> Closing block reproduced with the three buttons full-width stacked. The 132-word extreme is the
+> "short" tweak: one course card, one prose section, no in-body image.
+>
+> Mobile strain note: at the 132-word extreme the villa table (4 cards, ~640px) becomes the
+> longest thing on the page, so a page with almost no prose reads as a rate sheet with a headline
+> — and at the 583-word extreme the "On this page" band only lists three anchors while the body
+> runs to eight-plus headings, so it stops being a real index unless you let me generate it from
+> the headings.
+
+It ran its own checks on both views (screenshots ×5) instead of the automatic "Checking the
+design" pass. T10 (item 15) COMPLETE in the project, 2026-09-22 04:33 IST. Not downloaded (export
+failing) — end-of-run attempt. Apply notes: course fees/durations/schedules from the owner (or the
+2024-25 rates PDF) replace the [TO CONFIRM] chips; the "On this page" index generated from the
+route's real headings at apply (mechanical, not content); the 132-word rate-sheet strain is an
+owner decision.
