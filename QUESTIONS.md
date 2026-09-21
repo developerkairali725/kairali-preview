@@ -1715,3 +1715,11 @@ step 4 (the grounds) is a framed artwork slot marked [TO CONFIRM]. Two decisions
 which tile provider, if any — note any third-party tile server is a consent/Consent-Mode matter;
 (b) whether a grounds-plan artwork exists to drop into step 4. Not asked now, per instruction.
 
+## Q-AHV-FAQ-INTRO-BANNED-WORDS — banned words in the /faqs-downloads/ source intro (2026-09-22 IST)
+
+The record's own intro paragraph says "navigate your wellness journey" and "contact our guest
+relations team" — "journey" and "guest" are both banned under the KTAHV clinical lock. Claude
+Design ported it verbatim, correctly. It needs a one-paragraph rewrite in register at apply (e.g.
+"patient care team"), and the 44 verbatim answers need a banned-string pass before wiring. Not
+asked now, per instruction; recorded for apply.
+

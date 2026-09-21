@@ -36,3 +36,19 @@ clean data file before designing, and read the How-To-Reach page for consistency
 ## Its own self-check — completed, no fixes needed
 
 Check ran to completion, uninterrupted, nothing to fix. **U-2 is complete: desktop + mobile + check.**
+
+## Register flag in SOURCE copy — seen in the rendered design (2026-09-22)
+
+The page's verbatim intro (from the record, not written by the design) reads:
+> "Namaste and welcome to Healing Village's comprehensive FAQ page. We've organized these
+> questions to help you navigate your wellness **journey** with ease. If you don't find what you're
+> looking for, please contact our **guest** relations team."
+
+"journey" and "guest" are both on the KTAHV ban list. The design ports source copy verbatim, so
+this ships unless the intro is rewritten at apply → QUESTIONS.md `Q-AHV-FAQ-INTRO-BANNED-WORDS`.
+The 44 answers are also verbatim from the record — run `banned-string-lint` over the data file at
+apply before wiring.
+
+## Export status
+Project-archive export failed twice ("ZIP download failed — please try again" toast) — the archive
+is now >1.2 GB. Files not yet downloaded; retrying, with per-file Standalone export as fallback.
