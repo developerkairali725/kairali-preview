@@ -63,3 +63,44 @@ draft, stand-in images stay labelled, breadcrumb stays provisional; build 390px 
   the owner; never shipped as drafted.
 - Image stand-ins → real record assets at apply (the record has them; the tool fetched the live
   site, not the record).
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~03:02 IST)
+
+> Mobile is up: AHV Template Index Directory Mobile.dc.html, same data file, same three stress
+> modes.
+>
+> Three things are genuinely re-laid-out rather than narrowed. Filters become a stacked full-width
+> link list with 56px rows instead of a pill row, so nothing scrolls sideways. Tiles become list
+> rows — 92px square thumbnail left, label and full excerpt right, with the Book Now / Read More
+> pair on its own line beneath so both keep 52px and a comfortable width. Sparse mode swaps the
+> list for a 2-up square image grid with the label beneath, which is the right shape for a gallery
+> or virtual-tour index.
+>
+> Strain note, one line: at 38 tiles the list runs past 14,000px of scroll with no in-page way back
+> to the filters — a page in this family with that many tiles wants a jump-to-top or sticky filter
+> affordance, which isn't in the approved chrome.
+>
+> Checks I ran: zero horizontal overflow at 360 measured against every descendant; one h1 with
+> h1→h2→h3 intact; all links ≥44px — tile headings were 25px, so they got a 44px floor and I
+> applied the same fix to desktop; buttons 52px; all three modes render; console clean.
+>
+> Draft chip, stand-in image labelling and the provisional breadcrumb are all unchanged, as you
+> asked.
+
+## Mobile self-check — "Found issues — fixing…", its own fixes (verbatim)
+
+> Both fixed, on desktop and mobile.
+>
+> The section H2 is now a data slot (sectionHeading in assets/packages-index-data.js) rather than
+> literal markup, so each route poured into the template supplies its own heading. The draft chip
+> is driven off sectionHeadingApproved — flip it to true and the chip disappears without touching
+> the template. Notes updated to say so.
+>
+> Mobile eyebrow restored to 12.5px / 2.6px and the standfirst to 18px, matching the brief and the
+> desktop view.
+
+Edited 4 files; check ran to completion uninterrupted. T9 (item 12) COMPLETE in the project,
+2026-09-22 03:05 IST. Not downloaded (project export still failing) — end-of-run export attempt.
+Apply note added: the 38-tile strain (jump-to-top / sticky filter not in the approved chrome) is an
+owner design decision at apply, logged not actioned; per-route `sectionHeading` comes from the
+record at apply, `sectionHeadingApproved` stays false until the owner rules.
