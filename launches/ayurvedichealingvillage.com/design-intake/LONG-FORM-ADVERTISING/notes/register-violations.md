@@ -74,3 +74,27 @@
   carrying a 30% discount claim. The computed-style benchmark was NOT run and should not be: its
   own documentation excludes text from the fingerprint and assigns body text to the sweep, and
   reflow risk is covered by the sweep's overflow check at four widths.
+
+## 2026-09-21 — "Dr Deepu" → "Dr. Deepu John" (owner-authorised, locked fact)
+
+- **Strings:** `Dr Deepu` — no period, no surname — **10 occurrences** in
+  `campaign-nine-data.js` (6) and the two `ahv-page-panchkarma-treatment-*` view payloads (2 each).
+- **Changed to:** `Dr. Deepu John`.
+- **Rendered on:** `/panchkarma-treatment.html`, `/preventive-rejuvenation-detoxification.html`,
+  `/weight-loss.html`. All three re-prerendered; 0 defective forms remain.
+- **Authority:** Abilash, in-chat 2026-09-21 — *"I'll fix the conflations, he takes the claims."*
+  Backed by CLAUDE.md LOCKED FACTS: two Deepus, and on a shipped page the physician's name is
+  always written in full.
+- **IT IS INSIDE A PATIENT TESTIMONIAL**, so it is a deviation from verbatim live copy and is
+  logged here as one. The sentence reads *"…has a distintive advantage of having Dr Deepu as an
+  experienced doctor…"*.
+- **NOT changed, deliberately:** the live copy's own misspelling **"distintive"** in the same
+  sentence. Correcting a physician's name on a hospital page is a locked fact; tidying a patient's
+  spelling inside their own quote is not ours to do, and doing both would make the quote read as
+  freshly edited rather than reproduced.
+- **NOT changed:** the image filename `karDr.-Deepu-John.webp` and its `sourceUrl`. The lint flags
+  them, but the filename already carries the full name in hyphenated form and renaming a mined
+  asset changes a path for no reader's benefit. Left as a visible false positive rather than
+  silenced.
+- **28 occurrences were already correct** and were not touched. The tool asserts the count of
+  correct forms rises by exactly the number it fixed, so it cannot quietly damage one.
