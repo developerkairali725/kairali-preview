@@ -1768,3 +1768,12 @@ first" path is designed with locked contacts only and a [TO CONFIRM — physicia
 supportive-care slot left empty. Also: EUR/USD tariff tabs have no figures in the record →
 [TO CONFIRM]; INR tariff table carried as-is (Deluxe 26,700/50,310 … Maharaja 53,400/75,300, min 7
 nights).
+
+### Q-AHV-LEGAL-PAGES-SOURCE-DEFECTS — 2026-09-22 04:58:40 IST
+Context: T13 POLICY (sheet item 16) designed in Claude Design from the live /terms-and-conditions/
+verbatim (25 sections). Surfaced, not fixed: (1) the page's head <title> and meta description both
+read "Privacy Policy"; (2) §13 refers readers to "Section 24" for contact details, which sit in
+§25; (3) ≈20 uses of "Guest" plus booking/stay/wellness vocabulary inside the governed legal text
+(banned KTAHV register; legal/GST language → Abilash's ruling per ESCALATION). Also to rule: the
+"last updated" date the template shows must come from the owner/record, not the design (left as
+the live page's value or [TO CONFIRM] at apply).
