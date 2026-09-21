@@ -1698,3 +1698,11 @@ re-exported map without the label, a replacement photograph from the image libra
 that these two photographs are dropped from the collection. The intro copy is a one-line rewrite
 once ruled. Not asked now per the owner's instruction; recorded for apply time.
 
+## Q-AHV-ENTITY-SEPARATION-WORDING — legal wording of the entity separation statement (2026-09-21 IST)
+
+The T2 ENTITY template carries a fixed, green-ruled statement on every group-company page saying
+the entity is a separate company, the hospital does not sell or dispatch its products, and orders
+go to the company. Claude Design drafted that sentence and asked that the group confirm it. It is
+a legal-identity claim on a hospital site, so the wording needs the owner's (or counsel's) word
+before apply — the design element itself is right and stays. Not asked now, per instruction.
+

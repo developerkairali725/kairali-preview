@@ -36,3 +36,18 @@
 
 Check ran to completion, uninterrupted, and reported nothing to fix. **T2 is complete: desktop +
 mobile + check.**
+
+## From its notes file (`claude-design-notes.md`) — facts the chat comment did not carry
+
+- **The separation statement's legal wording is DRAFTED by the tool** — "separate company, hospital
+  does not sell or dispatch, orders go to the company" — and its own Codex ask #3 is to confirm the
+  wording with the group. Legal copy on a hospital site → QUESTIONS.md `Q-AHV-ENTITY-SEPARATION-WORDING`.
+- **Six-row fact list per entity** (type, what it does, registered name, established, based at,
+  licences) — every unknown renders as bronze `[TO CONFIRM]`; entity website + email render as
+  dashed pending chips, never dead links; `info@kairali.com` is the routing fallback.
+- Head contracts `[TO CONFIRM]`; breadcrumb assumed Home / Kairali Ayurvedic Group / entity until
+  the final sitemap. Metadata from the route record at apply, as for T17/T3.
+- **Register:** Villa Raag written as accommodation for patients and accompanying family members —
+  correct for a KTAHV page (the clinical lock applies here even though Villa Raag's own site is
+  hospitality register).
+- Downloaded 2026-09-21 from `Kairali Healing Village Redesign (6).zip`; files beside this note.
