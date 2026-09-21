@@ -1733,3 +1733,14 @@ image is already in the site repo under public/ahv) so the archive shrinks; or (
 app on the owner's machine. Generation continues meanwhile; the agent re-attempts one export after
 item 18. Not asked now, per instruction.
 
+## Q-AHV-SITEMAP-SOURCE-DEFECTS — four defects in the live /sitemap/ source, carried verbatim (2026-09-22 IST)
+
+Surfaced by Claude Design while porting /sitemap/ from a live fetch (223 links): (1) the live
+<title> and meta description are an offers-page string, not a sitemap's — needs a rewrite;
+(2) the Media Gallery link's href is corrupted HTML and the four Villa Gallery child links are
+href="#" — both rendered [TO CONFIRM]; (3) 25 URLs present in sitemap_index.xml are absent from
+the page (terms, disclaimer, cookie policy, all-programs, gallery, others) — whether to add them
+is an authority call; (4) "Chronic Back Pain Relief Treatment" links to the stress-and-strain
+page, likely a source typo. All left verbatim by the design, per the rules. Decisions at apply.
+Not asked now, per instruction.
+
