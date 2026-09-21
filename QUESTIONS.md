@@ -1706,3 +1706,12 @@ go to the company. Claude Design drafted that sentence and asked that the group 
 a legal-identity claim on a hospital site, so the wording needs the owner's (or counsel's) word
 before apply — the design element itself is right and stays. Not asked now, per instruction.
 
+## Q-AHV-HOW-TO-REACH-MAPS — map tiles and grounds plan for /how-to-reach/ (2026-09-22 IST)
+
+Claude Design built the four-step map sequence with real Natural Earth geometry for India and
+Kerala, but could not load OpenStreetMap tiles (403) and would not fake district or site
+geography. So step 3 (Palakkad) is a road diagram built only from the page's own distances, and
+step 4 (the grounds) is a framed artwork slot marked [TO CONFIRM]. Two decisions at apply: (a)
+which tile provider, if any — note any third-party tile server is a consent/Consent-Mode matter;
+(b) whether a grounds-plan artwork exists to drop into step 4. Not asked now, per instruction.
+
