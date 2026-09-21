@@ -35,3 +35,20 @@ after its self-check completed; mobile is required by the standing brief, so no 
 - Lightbox is keyboard-complete (Esc/arrows/trapped Tab/focus return) — an a11y point the sheet
   asked for and the 7-Sep design did not have.
 - "Past ~100 wants a show-more" — no route is near it (max 66).
+
+## Its own self-check — completed, THREE fixes applied (verbatim)
+
+> Fixed all three:
+>
+> Grid thumbnails render as resolved nodes, so the streaming pass no longer requests the literal
+> `{{ p.src }}` URL — console is clean.
+>
+> Hero columns top-aligned: eyebrow → H1 now contiguous (12px, was a 341px void), standfirst sits
+> beside it and can grow to any length without moving the H1.
+>
+> Row basis is min(ar × rowHeight, 48%), so the wide 2.24:1 collections stay 2-up below 1220px
+> instead of collapsing to one per row (measured 420px each at a 854px column).
+
+Check ran to completion, uninterrupted. The 341px eyebrow→H1 void would have shipped as a visible
+layout defect; the `{{ p.src }}` literal would have produced a console error per thumbnail — both
+are the class of thing the owner's "let it finish its checks" rule exists to catch.
