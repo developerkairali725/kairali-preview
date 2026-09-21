@@ -845,6 +845,12 @@ review, not a silent rider on an AHV staging branch.
 
 Full list: `grep -rln 'import\.meta\.url === `file://\${process\.argv\[1\]}`' scripts/`
 
+**FIXED 2026-09-21** (owner: "agree, do all four"). All **28** affected scripts now normalise
+`process.argv[1]` through `URL()` before comparing — one line, no new import. Fixing it immediately
+exposed two gates that had been silently exiting 0 on this checkout: `report-store-lint`
+(21 violations, since driven to PASS) and `banned-string-lint`. `scripts/test/guard.test.js` pins
+the behaviour. CLOSED.
+
 ## Q-GUARD-WPADMIN-LITERAL - the WordPress guard blocks documentation, not just operations (2026-09-15 21:14:39 IST)
 
 `scripts/hooks/guard.sh` line 23 refuses any bash command whose TEXT contains one of three literal
@@ -866,6 +872,12 @@ curl or wp-cli invocation) rather than any occurrence of the word in any command
 as-is is defensible - the cost is that any documentation about WordPress must avoid shell heredocs,
 which is a trap the next session hits blind, and the natural escape is to describe the thing
 imprecisely, which makes the records worse.
+
+**FIXED 2026-09-21** (same ruling). The rule now fires only when a transfer or wp-cli invocation is
+present, so every real operation against production still blocks while reading, grepping and
+documenting the surface no longer does — this guard refused a grep of its own rule twice while
+being patched. The config file keeps its local-edit protection by naming the WRITE rather than the
+word. 7 tests, both directions. CLOSED.
 
 ## Q-AHV-CI-BILLING - all five failing checks on PR #309 are one account-level cause (2026-09-19 16:12:04 IST)
 
@@ -1005,6 +1017,12 @@ space-free directory and run the gates there.
 in the safest-looking direction. Either the scripts decode `import.meta.url` (one shared helper,
 `fileURLToPath`, fleet-wide), or the working copy moves off a path with spaces. Related but distinct
 from the already-open entry about `import.meta.url === \`file://${process.argv[1]}\`` main-detection.
+
+**FIXED 2026-09-21** — same root cause as Q-MAIN-GUARD-ENCODING and closed by the same change
+across 28 scripts. The specific trap recorded here (17 steps reporting "17 passed" from this
+worktree while a space-free checkout of the same commit reported 2 merge-blocking failures) can no
+longer happen: the guard compares resolved paths, and a script that cannot run now fails rather
+than exiting 0. CLOSED.
 
 ## Q-AHV-POLICY-PLACEMENT - the two policy pages, measured and put in context (2026-09-19 18:40:11 IST)
 
@@ -1181,6 +1199,12 @@ Full working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md. The 
 enumeration of ad destinations exists only in the WordPress page list (Deepu) and the Google Ads
 destination URLs (Vikash) - worth pulling both once before the flip.
 
+**RULED 2026-09-20, Abilash: "Build monsoon, 301 the rest."** Executed: the monsoon page and the
+Russian page were built, `/deaddiction-treatment-program.html` and `/panchakarma-treatment.html`
+got their 301s. The remaining open item is not a question but an ASK of two people — the full ad
+destination list from Deepu's WordPress page list and Vikash's Google Ads destinations, worth
+pulling once before the flip. CLOSED as a question.
+
 ## Q-AHV-MAPS-IFRAME — 2026-09-19 19:12:44 IST
 **Deepu asks for live `<iframe>` maps on the attractions and contact pages.** Three things
 collide: the 252-route sweep fails any state containing an iframe; an embedded Google Map
@@ -1291,6 +1315,10 @@ as clearing it.
 
 **What would close it:** the survey behind the number — what "satisfactory" measured, the sample
 size, the period, and the source document — or its removal. Either needs Dr. Deepu John.
+
+**RULED 2026-09-21, Abilash: leave it — it is live copy.** Carried forward unchanged and recorded
+as NOT reviewed by Dr. Deepu John; HARD GATE 7 still applies to it. No further owner input needed
+unless he re-opens it. See the body above for the seven routes it renders on.
 
 ## Q-AHV-TARIFF-REFRESH — 32 of 38 programme prices are still on the OLD tariff year (2026-09-21 17:09:04 IST)
 
