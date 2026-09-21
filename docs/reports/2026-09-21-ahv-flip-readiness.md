@@ -40,9 +40,30 @@ committed by CI — is the one that makes the other four mean anything, and it i
 cannot satisfy on its own. Correctly so.
 
 **Consequence, and it is the whole picture:** every machine gate on this list is blocked on GitHub
-Actions running, and Actions is blocked on the missing payment method. Fixing billing does not
-merely unblock PR #309 — it unblocks the entire proof chain. Until then the ledger reads
-DO-NOT-SHIP no matter how good the site gets, and no amount of local work moves it.
+Actions running. ~~and Actions is blocked on the missing payment method~~ — **see the correction
+immediately below; this premise expired on 2026-09-21.**
+
+> **CORRECTED 2026-09-21 20:05 IST — Actions is NOT blocked, and has not been.** PR #309 ran a
+> **49-check** matrix today: **42 SUCCESS, 6 FAILURE, 1 SKIPPED**. The owner said so in-session
+> ("there is no issue on github also it was just a warning or notification") and the run data
+> agrees. The billing page I read was a notification, not a stop.
+>
+> This file asserted a stale absolute as if it were final — the exact failure mode the BRIEFS &
+> STATE-TRUTH rule exists to prevent — and it mattered, because it told the reader that *no local
+> work could move the ledger*. That was wrong: the proof chain has been available all along, and
+> the 50 "unproven" gates are unproven because they have not been run, not because they cannot be.
+>
+> **The real blockers, each now named and measured**, replace the single billing claim:
+>
+> | check | cause | whose |
+> |---|---|---|
+> | `brand-lint` | 1108 → **2** findings today; both are one clinical question on `/online-consultation/` | Dr. Deepu John |
+> | `factory-spec` | `A1: zero console errors` drowns in 404s — **the images are not in git** | owner ruling |
+> | `lighthouse` | same images, **plus** every `/lp/` route 404s unless `AHV_STAGING=0`, which CI never sets | owner ruling |
+> | `front-gate` | PR touches guarded `scripts/*`; needs an authenticated owner approval **at the head commit** | owner, one click, last |
+> | `Vercel – kairaliherbals-com` | a different site's project | not this branch |
+>
+> Full analysis: `docs/reports/2026-09-21-ahv-images-are-not-in-the-repo.md`.
 
 **What is NOT blocked:** the site itself. Content, images, missing elements, SEO, schema, design
 wiring — all of that is the work that makes the gates pass *when* CI finally runs, and none of it
@@ -153,6 +174,26 @@ Measured today:
 - `honest-ymyl-content-lint` — missing `answersQuestion`, which §4b.3 marks REQUIRED
 
 ## Images — the owner's standing complaint, quantified
+
+> **UPDATE 2026-09-21 21:40 IST — the weight half is fixed; the deployment half is an owner call.**
+>
+> | | before | after | reference |
+> |---|---|---|---|
+> | homepage image payload | 16.62 MB | **7.06 MB** | live WordPress: 6.95 MB |
+> | whole referenced set | 224.5 MB | **127.9 MB** | — |
+> | the jpg/png half | 169.6 MB | **72.6 MB** | — |
+>
+> `tools/convert-images-webp.mjs`: 1,489 files encoded, 7,518 references repointed across 438
+> files, idempotent. Proven in a browser at 375px across 6 pages: **0 failed requests, 0 console
+> errors**, and every one of 1,857 referenced media URLs resolves on disk.
+>
+> **Still open, and it is the flip blocker:** only **97** of those 1,847 files are in git, so CI and
+> Vercel still build a site with no images. 127.9 MB is now the size of that decision.
+>
+> **Still oversized, measured in the browser rather than guessed:** images are drawn at 56px from
+> 1200px sources. `<img width>` in this tree is INTRINSIC, not display (10 of 13 sampled), so it
+> cannot be used as a resize target — `tools/measure-image-render-sizes.mjs` walks every route at
+> desktop and mobile and records the largest width each file is actually painted at.
 
 1,716 distinct images across 254 routes; **1,459 appear on exactly one route**, so the tail is not
 recycled. The offenders are specific: four `travel/` photographs on **131 routes each** and one
