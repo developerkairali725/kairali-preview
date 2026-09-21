@@ -924,6 +924,29 @@ question above is answered.
 shared consent scripts, or is the design's own consent + "Chat with Priya" the ratified substitute?
 If the latter, that is a written exemption for the EXEMPT ledger, and it is yours to grant.
 
+**ANSWERED + BUILT 2026-09-21, Abilash:** *"add the bubble now, as-is"*, taken after being shown the
+three open Chatbase config defects. And because adding it alone would have been a gate passing
+while the thing it guards got worse — `startMeasurement()` calls `gtag("config")` and never
+`gtag("consent")`, so a denied default would never have been lifted — he also ruled **"wire Consent
+Mode properly"**, his explicit word for HARD GATE 11.
+
+CLOSED as implemented: `<ChatbaseLoader/>` on every English route; `<ConsentScripts/>` setting the
+v2 signals denied in `<head>`; and a bridge in `boot.ts` that calls `gtag("consent","update")` on
+whichever notice records the choice — ours or the approved design's own "Accept all" — mirroring
+the record into the fleet key so the head snippet re-applies it synchronously on the next load.
+Measured end to end: denied default → accept → one update with analytics and ad storage granted →
+next page load re-applies before boot.
+
+**The gate's own two bugs are fixed, which is the part worth keeping.** It looked only for
+`app/layout.tsx`, so this site — split into `(english)` and `(lp)` route-group roots — read as "no
+root layout at all" and its real layouts were NEVER INSPECTED; it now checks every root, because
+route-group roots are independent documents. And its main guard compared `import.meta.url` to
+`process.argv[1]` as strings, so on any path containing a space `main()` never ran and the gate
+**exited 0 having checked nothing**. `chat-bubble-lint` now PASSES for real; 13 tests.
+
+The bot-config defects remain open: **Q-CHATBOT-WRONG-NUMBER**, paste-ready copy at
+`docs/drafts/chatbase-priya-config-fix.md`.
+
 ## Q-AHV-BANNED-STRINGS - 1,182 locked-fact violations, three of them real and one site-wide (2026-09-19 16:12:04 IST)
 
 `scripts/banned-string-lint.mjs` FAILS on this branch - 1,182 violations, every one inside
@@ -1183,6 +1206,17 @@ codebase is in `app/(lp)/_components/lp.tsx`, the landing-page lane, which none 
 routes use. Surfaced twice today — the long-form handover flags a wrong `@graph` on
 `/wellness-resort-kerala.html`, and the page in this repo has no JSON-LD at all. Schema for
 252 routes is a design decision, not a repair.
+
+**ANSWERED + BUILT 2026-09-21, Abilash:** *"match live, generated per route."* It turned out not to
+be a gap but a **REGRESSION**: the live site emits WebPage / ImageObject / BreadcrumbList / WebSite
+/ Organization on every page, so the flip would have dropped the Organization entity, breadcrumb
+rich results and the sitelinks searchbox sitewide. CLOSED as implemented — **254 of 254 routes emit
+exactly one valid `@graph`**, generated from each route's own manifest metadata and generated share
+image: 1,261 emitted text fields, 0 of them a string not already in that route's (or its parent's)
+metadata. Three live defects deliberately NOT reproduced: the duplicate hand-rolled WebPage whose
+name carries escaped HTML, the breadcrumb crumb containing a locked word and two unsourced claims,
+and the invented `/programs/` crumb pointing at no URL. SearchAction is omitted until a real search
+endpoint exists (Q-AHV-SEARCH-CONTROL) — a test fails if it reappears.
 
 ## Q-AHV-CONTACT-ADDRESSES — 2026-09-19 19:12:44 IST
 **Do `partners@ayurvedichealingvillage.com` and `press@ayurvedichealingvillage.com` exist?**
