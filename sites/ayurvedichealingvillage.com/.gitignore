@@ -25,3 +25,15 @@
 # WITH these routes in it, they move into the bundle and this exception goes.
 !/public/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/**
 !/public/ahv/assets/img/legacy/treatment-in-kerala-russian/**
+
+# EXCEPTION: long-form advertising route assets (owner rulings, 2026-09-21).
+#
+# Same reasoning as the block above, same shape. The long-form advertising
+# routes are not in the pinned design package either, so their assets cannot go
+# into the hash-verified bundle without cutting a new release - an owner action.
+# restore-runtime-assets.mjs only extracts members its manifest names and never
+# deletes anything else, so a tracked file here is safe from it.
+#
+# When the package is next cut WITH these routes in it, these move into the
+# bundle and this exception goes, exactly like the one above.
+!/public/ahv/assets/img/longform/**
