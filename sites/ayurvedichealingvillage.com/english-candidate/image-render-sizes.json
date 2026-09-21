@@ -1,0 +1,3747 @@
+{
+  "generated": "2026-09-21T16:27:54.810Z",
+  "base": "http://127.0.0.1:4399",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 812
+    }
+  ],
+  "distinctLayouts": 74,
+  "pageLoads": 148,
+  "failedRoutes": [],
+  "note": "maxRenderedWidth is the LARGEST CSS-pixel width the image is drawn at across every sampled layout and viewport. A resize target must be a multiple of this, never below it.",
+  "images": [
+    {
+      "url": "/ahv/assets/img/1-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/2-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/4-17-1.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/About-Holistic-Treatment-for-Rejuvenation-and-Detoxification-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/about-image.webp",
+      "maxRenderedWidth": 397,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/About-Preventive-Regenerative-Treatment-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/About-Treatment-for-Cervical-Spondylosis-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/About.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/addiction-recover.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-698image.webp",
+      "maxRenderedWidth": 503,
+      "naturalWidth": 698
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-d1-2.webp",
+      "maxRenderedWidth": 200,
+      "naturalWidth": 267
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-1-lotus_cer.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 928
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-2-All-Pages-1-scaled.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 927
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-3-All-Pages-2-scaled.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 927
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-4-All-Pages-3-scaled.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 927
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-5-qawsdq.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 928
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-6-All-Pages-6-scaled.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 927
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Doc-7-All-Pages-5-scaled.webp",
+      "maxRenderedWidth": 223,
+      "naturalWidth": 927
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-GITA-RAMESH-min.webp",
+      "maxRenderedWidth": 200,
+      "naturalWidth": 264
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Gita-Ramesh.webp",
+      "maxRenderedWidth": 503,
+      "naturalWidth": 698
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-K.R.-ABHILASH-min.webp",
+      "maxRenderedWidth": 200,
+      "naturalWidth": 264
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-K.R.-ABISHEK-min.webp",
+      "maxRenderedWidth": 200,
+      "naturalWidth": 264
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Landscape.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-lotus.svg",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 95
+    },
+    {
+      "url": "/ahv/assets/img/AHV-About-Wellness-section.webp",
+      "maxRenderedWidth": 448,
+      "naturalWidth": 448
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Alcohol-Free.webp",
+      "maxRenderedWidth": 450,
+      "naturalWidth": 450
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Landscape.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Massage.webp",
+      "maxRenderedWidth": 500,
+      "naturalWidth": 500
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Village.webp",
+      "maxRenderedWidth": 832,
+      "naturalWidth": 832
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Workshop.webp",
+      "maxRenderedWidth": 832,
+      "naturalWidth": 832
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ananda-Yoga.webp",
+      "maxRenderedWidth": 500,
+      "naturalWidth": 500
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ashtanga-Hero.webp",
+      "maxRenderedWidth": 772,
+      "naturalWidth": 772
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ashtanga-Intro.webp",
+      "maxRenderedWidth": 560,
+      "naturalWidth": 560
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ashtanga-Panels.webp",
+      "maxRenderedWidth": 560,
+      "naturalWidth": 560
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Attractions-a-15-1.webp",
+      "maxRenderedWidth": 414,
+      "naturalWidth": 728
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Attractions-a-15-2.webp",
+      "maxRenderedWidth": 414,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Attractions-a-15-3.webp",
+      "maxRenderedWidth": 414,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Attractions-a-15-4.webp",
+      "maxRenderedWidth": 414,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Attractions-Landscape.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-01.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-02.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-03.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-04.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-05.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-06.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-07.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-08.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-09.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-10.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-11.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-12.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-13.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-14.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-15.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-16.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-17.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-18.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-19.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-20.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-21.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Award-22.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Awards-Landscape.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ayurveda-Training-About.webp",
+      "maxRenderedWidth": 542,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ayurveda-Training-Practice.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ayurveda-Training-Therapies.webp",
+      "maxRenderedWidth": 582,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ayuryoga-01.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Ayuryoga-02.webp",
+      "maxRenderedWidth": 264,
+      "naturalWidth": 264
+    },
+    {
+      "url": "/ahv/assets/img/AHV-BackToRoots-Landscape.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Campaign-google.webp",
+      "maxRenderedWidth": 75,
+      "naturalWidth": 712
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Campaign-kairali-colorful-logo.webp",
+      "maxRenderedWidth": 205,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Campaign-logo-ktahv.webp",
+      "maxRenderedWidth": 280,
+      "naturalWidth": 280
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Campaign-tripadvisor.webp",
+      "maxRenderedWidth": 75,
+      "naturalWidth": 712
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G01.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G02.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G03.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G04.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G05.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G06.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G07.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G08.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G09.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G10.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G11.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G12.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G13.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G14.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G15.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G16.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G17.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G18.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G19.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G20.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G21.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G22.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G23.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G24.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G25.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G26.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G27.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G28.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G29.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-G30.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Hero.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Rel-Deluxe.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Rel-Maharaja.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Rel-Royal.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-ashwathy.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-attam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-avittam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-chatayam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-karthika.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-pooradam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-punartham.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-revathy.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-thiruvathira.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-uthradam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Classic-Z-vishakam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Confirm-Landscape-1440.webp",
+      "maxRenderedWidth": 578,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G01.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G02.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G03.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G04.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G05.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G06.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G07.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G08.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G09.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G10.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G11.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G12.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G13.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G14.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G15.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G16.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G17.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G18.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G19.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G20.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G21.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G22.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G23.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G24.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G25.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G26.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G27.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G28.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G29.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-G30.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Rel-Classic.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Rel-Maharaja.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Rel-Royal.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-aiyilyam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-bharani.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-chittira.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-makayiram.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-pooyam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-pururttathi.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Deluxe-Z-thiruvonam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Enquiry-Resume-Clipboard.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1500
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-01.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-02.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-03.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-04.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-05.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-06.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-07.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-08.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Gallery-Landscape.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Ayurveda.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Cuisine.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Hero.webp",
+      "maxRenderedWidth": 635,
+      "naturalWidth": 772
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Products.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Programmes.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Knowledge-Yoga.webp",
+      "maxRenderedWidth": 384,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Lakshya-01.webp",
+      "maxRenderedWidth": 772,
+      "naturalWidth": 772
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Lakshya-02.webp",
+      "maxRenderedWidth": 560,
+      "naturalWidth": 560
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Lakshya-03.webp",
+      "maxRenderedWidth": 1024,
+      "naturalWidth": 1024
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Lakshya-04.webp",
+      "maxRenderedWidth": 150,
+      "naturalWidth": 150
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Lakshya-05.webp",
+      "maxRenderedWidth": 105,
+      "naturalWidth": 105
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G01.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G02.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G03.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G04.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G05.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G06.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G07.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G08.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G09.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G10.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G11.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G12.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G13.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G14.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G15.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G16.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G17.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G18.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G19.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G20.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G21.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G22.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-G23.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-Rel-Classic.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-Rel-Deluxe.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-Rel-Royal.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-Z-makayiram.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Maharaja-Z-swan.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Anita-Prem-Anand.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Hero.webp",
+      "maxRenderedWidth": 772,
+      "naturalWidth": 772
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Nidhi-Jain.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Poster.webp",
+      "maxRenderedWidth": 300,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Raageshwari.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Santhosh-Babu.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Sharanya-Naik.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Shivani-Hariharan.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Mindfulness-Shruti-Poddar.webp",
+      "maxRenderedWidth": 140,
+      "naturalWidth": 140
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Classic-1.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Classic-2.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Classic-3.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Closing.webp",
+      "maxRenderedWidth": 271,
+      "naturalWidth": 271
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-1.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-2.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-3.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-4.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-5.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Deluxe-6.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Hero.webp",
+      "maxRenderedWidth": 1024,
+      "naturalWidth": 1024
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-1.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-2.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-3.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-4.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-5.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Maharaja-6.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Royal-1.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Royal-2.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Royal-3.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Royal-4.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-OurVillas-Royal-5.webp",
+      "maxRenderedWidth": 248,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-01-BalanceBoat-Destination.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-02-healingGuide.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-03-fit-REISEN-GROUP.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-04-Global-Spa.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-05-Spafinder-Wellness-365.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partner-06-PATA-New-York.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Partners-Landscape.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Policy-Terms-Banner.webp",
+      "maxRenderedWidth": 832,
+      "naturalWidth": 832
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-_R6_3888-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3429-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3465-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3660-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3676-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3754-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-247A3955-1-(1).webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-about.webp",
+      "maxRenderedWidth": 457,
+      "naturalWidth": 457
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-add1.svg",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 60
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-add2.svg",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 118
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-add3.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 61
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-add4.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 67
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-01.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-02.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-03.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-04.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-05.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-06.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-07.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-08.webp",
+      "maxRenderedWidth": 592,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Archive-Landscape.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-award1.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 116
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-award2.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 129
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-award3.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 99
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-award5.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 129
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-book-left.webp",
+      "maxRenderedWidth": 551,
+      "naturalWidth": 551
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-client-0.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 343
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-client.webp",
+      "maxRenderedWidth": 598,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-corrien.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 645
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Dr_aashika.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 287
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Dr_deepu.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 287
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-email-box.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 66
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-f-logo.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 118
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-facebook-icon.webp",
+      "maxRenderedWidth": 24,
+      "naturalWidth": 24
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-gallery1.webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 357
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-gallery2.webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-gallery3.webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-gallery4.webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-gallery5.webp",
+      "maxRenderedWidth": 194,
+      "naturalWidth": 357
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Group-110278-_2_.webp",
+      "maxRenderedWidth": 13,
+      "naturalWidth": 13
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Group-110810.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 420
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-image-7-(1).webp",
+      "maxRenderedWidth": 83,
+      "naturalWidth": 83
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-insta-icon.webp",
+      "maxRenderedWidth": 20,
+      "naturalWidth": 20
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-jan-michle.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 647
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-loc-box.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 66
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-luxury-spa-award.webp",
+      "maxRenderedWidth": 84,
+      "naturalWidth": 150
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-metro_food_awards.webp",
+      "maxRenderedWidth": 84,
+      "naturalWidth": 150
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-mobile-box.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 66
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-NABH.webp",
+      "maxRenderedWidth": 84,
+      "naturalWidth": 150
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-national_geography.webp",
+      "maxRenderedWidth": 84,
+      "naturalWidth": 150
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-natural1.webp",
+      "maxRenderedWidth": 394,
+      "naturalWidth": 860
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-natural2.webp",
+      "maxRenderedWidth": 394,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-natural3.webp",
+      "maxRenderedWidth": 394,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-natural4.webp",
+      "maxRenderedWidth": 394,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-1.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 915
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-2.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 915
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-3.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 910
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-4.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 910
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-5.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 910
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-pic-6.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 910
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-ratelist-book.webp",
+      "maxRenderedWidth": 320,
+      "naturalWidth": 483
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-303-(1).webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-303-(2).webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9315.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9316.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9318.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9319.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9321.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9322.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9345.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 420
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Rectangle-9346.webp",
+      "maxRenderedWidth": 389,
+      "naturalWidth": 420
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-retreat-kerala-banner.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1280
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-rupak-man.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 648
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-supriya.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 646
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-testemonial.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 165
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-testimonial-1.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 189
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-testimonial-2.webp",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 165
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-tp_advisor.webp",
+      "maxRenderedWidth": 84,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-1.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-10.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-11.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-12.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-13.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 72
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-14.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-16.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-17.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-18.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-2.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-20.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-21.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-3.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 72
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-4.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 72
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-5.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 72
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-6.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-7.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-8.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat-9.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-Treat1-9.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 71
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-villas-slide.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 915
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-villas-slide1.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 680
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-villas-slide1png_1.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 636
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-villas-slide2_1.webp",
+      "maxRenderedWidth": 197,
+      "naturalWidth": 636
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Retreat-you-tube-icon.webp",
+      "maxRenderedWidth": 30,
+      "naturalWidth": 30
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G01.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G02.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G03.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G04.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G05.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G06.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G07.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G08.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G09.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G10.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G11.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G12.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G13.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G14.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G15.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G16.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G17.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G18.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G19.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G20.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G21.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G22.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G23.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G24.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G25.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G26.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G27.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G28.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G29.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-G30.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Rel-Classic.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Rel-Deluxe.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Rel-Maharaja.webp",
+      "maxRenderedWidth": 378,
+      "naturalWidth": 378
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-anizham.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-chothi.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-makam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-moolam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-pooram.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-rohini.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-thrikketta.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-utharam.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Royal-Z-uttararhi.webp",
+      "maxRenderedWidth": 48,
+      "naturalWidth": 120
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Yala-01.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Yala-03.webp",
+      "maxRenderedWidth": 538,
+      "naturalWidth": 834
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Yoga-Retreats-About.webp",
+      "maxRenderedWidth": 555,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/AHV-Yoga-Retreats-Practice.webp",
+      "maxRenderedWidth": 582,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/ancient-secrets-of-healing-corporate-video.webp",
+      "maxRenderedWidth": 623,
+      "naturalWidth": 537
+    },
+    {
+      "url": "/ahv/assets/img/ann-01-karkidakam-monsoon-detox.webp",
+      "maxRenderedWidth": 609,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ann-02-tripadvisor-travelers-choice-2026.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ann-10-lotus-travel-quality-partner-2026.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 200
+    },
+    {
+      "url": "/ahv/assets/img/ann-12-world-luxury-spa-awards-2025.webp",
+      "maxRenderedWidth": 353,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Approach-for-Treating-skin-diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Approach-of-Arthiritis.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/approach-of-diabetes-treatment.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Approach-of-Facial-Paralysis-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Approach-of-Facial-Paralysis.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Approach-of-Paralysis.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Approach-of-Treatment-for-Nervous-Disability.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/APWC-2024-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Arthritis-Treatment.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Athritis2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 523
+    },
+    {
+      "url": "/ahv/assets/img/award-haute-grandeur-2026-web.webp",
+      "maxRenderedWidth": 78,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/award-natgeo-traveller-spa-wellness-2026-kit.webp",
+      "maxRenderedWidth": 78,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ayurveda-training.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Ayurvedic-Therapies-and-Treatments.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Ayurvedic-Training-aboutus-min.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Ayurvedic-Training-why-min.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/AYUSH-Brand-of-the-Year-2015-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/back.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 475
+    },
+    {
+      "url": "/ahv/assets/img/benefits-of-diabetes-treatment.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Holistic-Treatment-for-Rejuvenation-and-Detoxification.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-of-Facial-Paralysis-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-of-Facial-Paralysis.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Post-Pregnancy-Health-Program.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Therapy.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-Of-Treatment-for-Bronchial-Diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Treatment-for-Nervous-Disability.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Treatment-to-Remove-Stress-and-Strain.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits-of-Weight-Loss-Treatment.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Benefits.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Best-Asian-Healthcare-Brand-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Best-Wellness-Destination-2019-2-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/bloodpressure.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/breating.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/bronchial-hero-nasyam.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/38a-copy-min.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/38b-copy-min.webp",
+      "maxRenderedWidth": 1024,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/classic-villa.webp",
+      "maxRenderedWidth": 356,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/delux-villa.webp",
+      "maxRenderedWidth": 356,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/maharaja-suite-ppc.webp",
+      "maxRenderedWidth": 356,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/images/royal-villa-ppc.webp",
+      "maxRenderedWidth": 356,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/about-kairali.webp",
+      "maxRenderedWidth": 900,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/ancient-secrets-of-healing-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/ancient-secrets-of-healing.webp",
+      "maxRenderedWidth": 537,
+      "naturalWidth": 537
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/chaggan-bhujbal.webp",
+      "maxRenderedWidth": 158,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/fitrsn.webp",
+      "maxRenderedWidth": 233,
+      "naturalWidth": 233
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/image-1.webp",
+      "maxRenderedWidth": 352,
+      "naturalWidth": 352
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/image-2.webp",
+      "maxRenderedWidth": 360,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/image-3.webp",
+      "maxRenderedWidth": 360,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/kairali-colorful-logo.webp",
+      "maxRenderedWidth": 290,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/kathakali.webp",
+      "maxRenderedWidth": 239,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/mohiniyattam.webp",
+      "maxRenderedWidth": 239,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/nat-geo.webp",
+      "maxRenderedWidth": 158,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/ngt-new.webp",
+      "maxRenderedWidth": 160,
+      "naturalWidth": 160
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/ngt.webp",
+      "maxRenderedWidth": 233,
+      "naturalWidth": 233
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/pramod-mahajan.webp",
+      "maxRenderedWidth": 158,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/testimonial-video-01-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/testimonial-video-01.webp",
+      "maxRenderedWidth": 270,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/thenari.webp",
+      "maxRenderedWidth": 239,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/thiruvalathoor.webp",
+      "maxRenderedWidth": 239,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/tiimes-of-india.webp",
+      "maxRenderedWidth": 158,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/tripadvisor-hall-of-fame-2025.webp",
+      "maxRenderedWidth": 233,
+      "naturalWidth": 233
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/tripadvisor-hall-of-fame-new.webp",
+      "maxRenderedWidth": 160,
+      "naturalWidth": 160
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/tripadvisor-rationg.webp",
+      "maxRenderedWidth": 160,
+      "naturalWidth": 160
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-1-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-1.webp",
+      "maxRenderedWidth": 270,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-2-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-2.webp",
+      "maxRenderedWidth": 270,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-3-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/video-3.webp",
+      "maxRenderedWidth": 270,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/wlsaw-2022.webp",
+      "maxRenderedWidth": 233,
+      "naturalWidth": 233
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/wlsaw-new.webp",
+      "maxRenderedWidth": 160,
+      "naturalWidth": 160
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/yoga-meditation-new.webp",
+      "maxRenderedWidth": 240,
+      "naturalWidth": 240
+    },
+    {
+      "url": "/ahv/assets/img/camp9/neo/web/yoga-meditation.webp",
+      "maxRenderedWidth": 569,
+      "naturalWidth": 569
+    },
+    {
+      "url": "/ahv/assets/img/Certificate-of-Excellence-2018-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Certificate-of-Excellence-2019-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/cervical-hero-greeva-pichu.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/cervical-image-1-3.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 604
+    },
+    {
+      "url": "/ahv/assets/img/chaggan-bhujbal.webp",
+      "maxRenderedWidth": 104,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/chronic-back-hero-kati-vasti.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/COSIDICI-National-Awards-2016-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/cronic.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 475
+    },
+    {
+      "url": "/ahv/assets/img/De-addiction-and-Rehabilitation-Treatment1-1.jpg.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/diabaties.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Diabetes-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 380
+    },
+    {
+      "url": "/ahv/assets/img/digestive.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/ebook-essence-of-ayurveda.webp",
+      "maxRenderedWidth": 420,
+      "naturalWidth": 496
+    },
+    {
+      "url": "/ahv/assets/img/eye-freepik-vision.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1000
+    },
+    {
+      "url": "/ahv/assets/img/eye2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 523
+    },
+    {
+      "url": "/ahv/assets/img/F-6.jpg",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/F-6.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1400
+    },
+    {
+      "url": "/ahv/assets/img/facial-paralysis-hero-mukha-abhyanga.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/facialpralysis.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Fastest-Growing-Ayurvedic-Chain-2016-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/FI-Preventive-2-2.webp",
+      "maxRenderedWidth": 397,
+      "naturalWidth": 380
+    },
+    {
+      "url": "/ahv/assets/img/FI-Preventive-2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 380
+    },
+    {
+      "url": "/ahv/assets/img/FICCI-Travel-and-Tourism-2019-2-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/First-Panchakarma-Clinic-In-India-2017-300x300.webp",
+      "maxRenderedWidth": 96,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Fit-Premium-certificate-2020-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Fit-Premium-certificate-2024-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/gal-herbal-powder-massage-wakem.webp",
+      "maxRenderedWidth": 602,
+      "naturalWidth": 960
+    },
+    {
+      "url": "/ahv/assets/img/gal-poolside-rest-palakkad-2026.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/gal-post-therapy-stillness-wakem.webp",
+      "maxRenderedWidth": 614,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/gal-tender-coconut-welcome-drink-palakkad-2026.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/gal-yoga-poolside-palakkad-2026.webp",
+      "maxRenderedWidth": 602,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/gen-postpartum.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/Group-1.webp",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 64
+    },
+    {
+      "url": "/ahv/assets/img/Group-2.webp",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 64
+    },
+    {
+      "url": "/ahv/assets/img/Group-3.webp",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 64
+    },
+    {
+      "url": "/ahv/assets/img/Group-4.webp",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 64
+    },
+    {
+      "url": "/ahv/assets/img/Group.webp",
+      "maxRenderedWidth": 64,
+      "naturalWidth": 64
+    },
+    {
+      "url": "/ahv/assets/img/haute-grandeur-2026.webp",
+      "maxRenderedWidth": 93,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/History-of-De-addiction-and-Rehabilitation-Therapy.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/History-of-Preventive-Regenerative-Treatment.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/History-of-Treatment-to-Remove-Stress-and-Strain-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/ho-bashpa-c.webp",
+      "maxRenderedWidth": 293,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ho-pizhichil.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ho-shiro.webp",
+      "maxRenderedWidth": 293,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ho-sleep.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/ho-thakra.webp",
+      "maxRenderedWidth": 293,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/Holistic.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 380
+    },
+    {
+      "url": "/ahv/assets/img/hormonal-about-udara-abhyanga-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/hormonal-hero-udara-abhyanga-2.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/hypertension-benefits-shirodhara.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/hypertension-hero-thakaradhara.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/image-1.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 352
+    },
+    {
+      "url": "/ahv/assets/img/image-2.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/image-3.webp",
+      "maxRenderedWidth": 392,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/immune-1.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/immune.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/immunity.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Indian-Salon-Wellness-Awards-2015-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Indias-Most-Promising-Brand-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/J-3.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/kairali-colorful-logo-white.webp",
+      "maxRenderedWidth": 273,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/kairali-colorful-logo.webp",
+      "maxRenderedWidth": 239,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/kairali-khasgiwala-173.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/kAIRALI-PALAK-KAD_DEPICTIONS-BY-PRACHI-KHASGIWALA-173-scaled-1.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/kAIRALI-PALAK-KAD_DEPICTIONS-BY-PRACHI-KHASGIWALA-230-6.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/kAIRALI%20PALAK%20KAD_DEPICTIONS%20BY%20PRACHI%20KHASGIWALA-200.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/kathakali.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/kt-164.webp",
+      "maxRenderedWidth": 293,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/kt-201.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-abhyanga-5.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-bashpa-swedana-herbal-steam-bath-2025.webp",
+      "maxRenderedWidth": 600,
+      "naturalWidth": 1068
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-janu-vasti-2.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-kati-vasti-2025-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-kati-vasti-2025-1.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-kati-vasti-2025-2.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-kati-vasti-2025-4.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-logo-white-brand.svg",
+      "maxRenderedWidth": 136,
+      "naturalWidth": 513
+    },
+    {
+      "url": "/ahv/assets/img/ktahv-udwarthanam-herbal-powder-massage-2025.webp",
+      "maxRenderedWidth": 600,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Leaders-in-the-wellness-industry-2018-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Leading-Women-in-Ayurveda-2016-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/location-kerala-palakkad-map.webp",
+      "maxRenderedWidth": 1022,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/logo-apswc.webp",
+      "maxRenderedWidth": 211,
+      "naturalWidth": 211
+    },
+    {
+      "url": "/ahv/assets/img/logo-patwa.webp",
+      "maxRenderedWidth": 139,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/logo-ta.webp",
+      "maxRenderedWidth": 62,
+      "naturalWidth": 200
+    },
+    {
+      "url": "/ahv/assets/img/logo-tripadvisor-2026.webp",
+      "maxRenderedWidth": 56,
+      "naturalWidth": 200
+    },
+    {
+      "url": "/ahv/assets/img/lotus.svg",
+      "maxRenderedWidth": 430,
+      "naturalWidth": 95
+    },
+    {
+      "url": "/ahv/assets/img/Med-Travel-Excellence-Awards-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/MICE-Business-Awards-2018-19-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/model_img.webp",
+      "maxRenderedWidth": 521,
+      "naturalWidth": 675
+    },
+    {
+      "url": "/ahv/assets/img/mohiniyattam.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/nabh.webp",
+      "maxRenderedWidth": 117,
+      "naturalWidth": 200
+    },
+    {
+      "url": "/ahv/assets/img/nat-geo.webp",
+      "maxRenderedWidth": 88,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/national-geographic-traveller-spa-wellness-2026.webp",
+      "maxRenderedWidth": 79,
+      "naturalWidth": 200
+    },
+    {
+      "url": "/ahv/assets/img/neck-upper-back-pain.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/neurological-about-shiro-abhyanga.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/neurological-hero-shiro-abhyanga.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/Neurological.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Our-Approach-of-Treatment-for-Bronchial-Diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Our-Approach-of-Treatment-for-Chronic-Back-Pain.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/p12-fivefold-1.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/p12-fivefold-2.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 640
+    },
+    {
+      "url": "/ahv/assets/img/p12-fivefold-3.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/p12-fivefold-4.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 640
+    },
+    {
+      "url": "/ahv/assets/img/p12-fivefold-5.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/p12-google-reviews.webp",
+      "maxRenderedWidth": 131,
+      "naturalWidth": 360
+    },
+    {
+      "url": "/ahv/assets/img/p12-memories-1.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/p12-memories-4.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/p12-memories-6.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 289
+    },
+    {
+      "url": "/ahv/assets/img/p12-memories-7.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 290
+    },
+    {
+      "url": "/ahv/assets/img/p12-memories-9.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 288
+    },
+    {
+      "url": "/ahv/assets/img/p12-package-2.webp",
+      "maxRenderedWidth": 570,
+      "naturalWidth": 393
+    },
+    {
+      "url": "/ahv/assets/img/p12-who-logo.webp",
+      "maxRenderedWidth": 46,
+      "naturalWidth": 230
+    },
+    {
+      "url": "/ahv/assets/img/p12-why-1-villas.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 915
+    },
+    {
+      "url": "/ahv/assets/img/p12-why-2-consultation.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/p12-why-3-features.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 910
+    },
+    {
+      "url": "/ahv/assets/img/p12-why-4-therapist.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/p12-why-6-organic.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/panchkarma.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Paralysis-2.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/paralysis-about-pinda-sweda-10.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/paralysis-benefits-pizhichil.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/paralysis-hero-pinda-sweda.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/partner-01-balance-boat.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/partner-02-healingguide.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/partner-03-fit-reisen.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/partner-04-globalspa.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/partner-05-spafinder.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/partner-06-pata-ny.webp",
+      "maxRenderedWidth": 287,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/Postpartum.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/pp-heritage-mukha-abhyanga.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Preventive-About-Abhyanga.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/preventive.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Psoriasis-2.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/psoriasis-about-back-udwarthanam-2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/psoriasis-benefits-bashpa-swedana-3.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/psoriasis-hero-back-udwarthanam.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/psoriasis-history-thakaradhara-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/psoriasis-why-leg-udwarthanam.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Rehab.jpg.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 380
+    },
+    {
+      "url": "/ahv/assets/img/sAA.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Service-Excellence-by-Assocham-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/sinus-migrain.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/sinus-migraine-about-shiro-pichu-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/sinus-migraine-approach-shirodhara-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/sinus-migraine-benefits-shirodhara-7.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/sinus-migraine-hero-shirodhara-6.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/skin_problems.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/skin-vitality-about-abhyanga-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/skin-vitality-benefits-mukha-abhyanga-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/sleep-res.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/Sleep-Restoration-Hero-Shiro-Pichu.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/sleep-restoration.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/sleeprestore.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/sleeprestoreeeee.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/South-Asian-Travel-Awards-2018-2-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/South-Asian-Travel-Awards-2019-2-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Spinal-Disc.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/spondylitis-about-kati-greeva-vasti-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/spondylitis-benefits-kati-vasti-5.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/spondylitis-hero-kati-greeva-vasti-1.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/spondylitis-history-kati-vasti-3.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/stress-about-thalapothichil-2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/stress-hero-thalapothichil-3.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/stress-history-thalapothichil-0.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/stress-relief.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Supportive-Care-Hero-Shirodhara.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/Supportive-Care-History-1200.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/team-akhila-oommen-c.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/team-anju-s.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/team-ashikha-raj.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/team-deepu-john.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/assets/img/team-krishnapriya-k-nurse.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/team-r-sivadas.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/team-rahul-r-c.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/team-sreeyuktha-c.webp",
+      "maxRenderedWidth": 286,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/testimonial-video-01.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/thenari.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/thiruvalathoor.webp",
+      "maxRenderedWidth": 351,
+      "naturalWidth": 239
+    },
+    {
+      "url": "/ahv/assets/img/tiimes-of-india.webp",
+      "maxRenderedWidth": 88,
+      "naturalWidth": 158
+    },
+    {
+      "url": "/ahv/assets/img/Travelers-Choice-Award-2023-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Travelers-Choice-Award-2025.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 400
+    },
+    {
+      "url": "/ahv/assets/img/video-1.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/video-2.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/video-3.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 270
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-3vWviQfW1Ug.webp",
+      "maxRenderedWidth": 645,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-3Xirq7h0bEo.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 640
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 480
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-nVqrUDzinmg.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-qMNfz4fcVgo.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-rASffMR25u4.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-UIeYZ0BqJic.webp",
+      "maxRenderedWidth": 754,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/video-thumb-ZgjrEXTiICw.webp",
+      "maxRenderedWidth": 531,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/villa-classic-named.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/villa-deluxe-named.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/villa-maharaja-named.webp",
+      "maxRenderedWidth": 602,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/villa-royal-named.webp",
+      "maxRenderedWidth": 595,
+      "naturalWidth": 356
+    },
+    {
+      "url": "/ahv/assets/img/vision.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/wdawda.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/weight-history.webp",
+      "maxRenderedWidth": 631,
+      "naturalWidth": 1600
+    },
+    {
+      "url": "/ahv/assets/img/weight-loss.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1600
+    },
+    {
+      "url": "/ahv/assets/img/weightloss.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/Wellness-Brand-of-the-Year-2016-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Wellness-Brand-of-the-year-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/What-is-Post-Pregnancy-Health-Program.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-De-addiction-and-Rehabilitation.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Holistic-Treatment-for-Rejuvenation-and-Detoxification.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy-2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy-3.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy-4.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy-6.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-this-therapy.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-with-this-therapy-1.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-with-this-therapy-2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-with-this-therapy.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-one-should-go-with-this-treatment.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Post-Pregnancy-Health-Program.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/why-should-woman.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/Why-Treatment-for-Bronchial-Diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Treatment-for-Sinusitis-Migraine.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Treatment-for-Skin-Diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Treatment-for-Stress-and-Strain.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/Why-Weight-Loss-Therapy.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/woman-hormonal-therapy.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/woman.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Hotel-Awards-2024-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2017-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2018-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2019-1-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2020-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2023-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Luxury-Spa-Awards-2024-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/World-Travel-Award-2016-300x300.png",
+      "maxRenderedWidth": 72,
+      "naturalWidth": 300
+    },
+    {
+      "url": "/ahv/assets/img/Wright-Loss-1.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 428
+    },
+    {
+      "url": "/ahv/assets/img/wx-dining.webp",
+      "maxRenderedWidth": 345,
+      "naturalWidth": 800
+    },
+    {
+      "url": "/ahv/assets/img/wx-food.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/wx-hero.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/wx-monsoon.webp",
+      "maxRenderedWidth": 602,
+      "naturalWidth": 900
+    },
+    {
+      "url": "/ahv/assets/img/wx-pathway.jpg",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/wx-pathway.webp",
+      "maxRenderedWidth": 584,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/y-based.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/YOGA-AND-MEDITATION-benefits-min.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/yoga-based.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 676
+    },
+    {
+      "url": "/ahv/assets/img/yoga-based2.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 676
+    },
+    {
+      "url": "/ahv/assets/img/yoga-basedddd.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 676
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation-about-seated-meditation.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 960
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation-features-raised-arms-lunge.webp",
+      "maxRenderedWidth": 524,
+      "naturalWidth": 960
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation-hero-namaste-greeting.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation-history-crescent-lunge.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation.jpg",
+      "maxRenderedWidth": 582,
+      "naturalWidth": 569
+    },
+    {
+      "url": "/ahv/assets/img/yoga-meditation.webp",
+      "maxRenderedWidth": 388,
+      "naturalWidth": 1920
+    },
+    {
+      "url": "/ahv/assets/img/yoga-reset-about-cobra-guidance.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/yoga-reset-approach-tree-pose.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/assets/img/yoga-reset-hero-instructor-guiding.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/yoga-reset-why-verandah.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 672
+    },
+    {
+      "url": "/ahv/assets/img/yoga-training-about-cobra-guided.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 960
+    },
+    {
+      "url": "/ahv/assets/img/yoga-training-features-tree-pose.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 720
+    },
+    {
+      "url": "/ahv/assets/img/yoga-training-hero-y-based.webp",
+      "maxRenderedWidth": 1440,
+      "naturalWidth": null
+    },
+    {
+      "url": "/ahv/assets/img/yoga-training-history-instructor-adjusting.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 1200
+    },
+    {
+      "url": "/ahv/assets/img/Your-Ayurvedic-Treatment-for-Bronchial-Diseases.webp",
+      "maxRenderedWidth": 605,
+      "naturalWidth": 580
+    },
+    {
+      "url": "/ahv/images/038871f8adc96ddb65f9928fd8e1006c90e72e663ec2dd38f9d33e8d1487dc11.svg",
+      "maxRenderedWidth": 92,
+      "naturalWidth": 121
+    },
+    {
+      "url": "/ahv/images/21b6fc5f629e55c39c009fde813e28a07ad1d63d10633b7872fb20eaada1a230.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/images/56404034b3c4e09d50f79d116fc9c861904ba7b84f34eab70c090a54c452f728.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp",
+      "maxRenderedWidth": 1220,
+      "naturalWidth": 640
+    },
+    {
+      "url": "/ahv/images/7e41077c901e1978b997a46ab7bc07e7c61db093ffc14df63a0f942f8d5c28ae.webp",
+      "maxRenderedWidth": 343,
+      "naturalWidth": 600
+    },
+    {
+      "url": "/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 480
+    },
+    {
+      "url": "/ahv/images/9fda6b26cf361aa29de1d7dbfd70a5d243981ba21e608da6d55d48e1201ec823.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 480
+    },
+    {
+      "url": "/ahv/images/ad83198eacd55a67cab2a6d74e8cf2b2e935634769520511515e605d6c392fae.svg",
+      "maxRenderedWidth": 52,
+      "naturalWidth": 121
+    },
+    {
+      "url": "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp",
+      "maxRenderedWidth": 390,
+      "naturalWidth": 480
+    }
+  ]
+}

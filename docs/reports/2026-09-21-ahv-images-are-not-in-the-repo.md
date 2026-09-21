@@ -96,18 +96,26 @@ I do not recommend it for a site that is days from flipping.
 **My recommendation is (a) then (b).** (a) is not optional under A5; (b) is the smallest change that
 makes the site deployable.
 
-### Also fix regardless: 4 references that are broken on every machine
+### ~~Also fix regardless: 4 references that are broken on every machine~~ — RETRACTED, there are **0**
 
-```
-/ahv/assets/img/Rehab.jpg
-/ahv/assets/img/kAIRALI%20PALAK%20KAD_DEPICTIONS%20BY%20PRACHI%20KHASGIWALA-200.jpg
-/ahv/assets/img/De-addiction-and-Rehabilitation-Treatment1-1.jpg
-/ahv/assets/img/article/careers-5148-150x150.jpg
-```
+**This section was wrong twice and is corrected here rather than edited away.** I first reported 4
+broken references, then 3. The true number is **zero**: all 1,857 referenced media URLs resolve on
+disk, verified by walking every one of them.
 
-These 404 locally too, so they are not a git problem — they are missing assets. Per the
-missing-asset protocol (CLAUDE.md §7) these get a creative-team request draft, or are sourced from
-the 70 GB image library, before flip.
+Both counts came from the same defect in my own measuring regex, not from the site. WordPress
+exports carry **double extensions** — `/ahv/assets/img/Rehab.jpg.webp` is one file, already WebP —
+and my pattern `\.(?:jpe?g|png)` had no trailing anchor, so it matched the `.jpg` *prefix* of
+`Rehab.jpg.webp` and then looked for a `Rehab.jpg` that never existed. The fourth "missing" file
+was a second, unrelated bug in the same pass: I had not URL-decoded `%20`.
+
+The converter did not corrupt those three files into `Rehab.webp.webp` only because its rewrite
+refuses to point at a path that is not on disk. That guard caught a bug it was not written for.
+The actual fix is the anchor `(?![A-Za-z0-9.])`, now on **both** copies of the pattern — the second
+copy, inside the postcondition, is what kept reporting the phantom after the first was fixed.
+
+Lesson, and it is the same one this file already records about the "234 dangling copyright years":
+**a count is a claim, and a claim that has not survived measurement is not a finding.** I published
+this number in a report and a commit message before walking the files.
 
 ## The LP 404 — `lighthouse`'s other, independent cause
 

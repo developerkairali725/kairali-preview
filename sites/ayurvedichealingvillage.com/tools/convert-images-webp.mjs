@@ -67,7 +67,21 @@ const DRY = process.argv.includes("--dry");
 /** The surfaces a browser actually reads. Tools and evidence are NOT rewritten. */
 const SURFACES = ["english-candidate/prerender", "public/ahv/views", "public/ahv/assets", "public/ahv/components"];
 const TEXTY = /\.(html|json|js)$/;
-const MEDIA_RE = /\/ahv\/[A-Za-z0-9_\-./%()]+?\.(?:jpe?g|png)/gi;
+/**
+ * The trailing lookahead is load-bearing. WordPress exports carry DOUBLE
+ * extensions - /ahv/assets/img/Rehab.jpg.webp is one file, already WebP - and
+ * without `(?![A-Za-z0-9.])` this pattern matches the ".jpg" PREFIX of it. The
+ * first run did exactly that: it reported Rehab.jpg, careers-5148-150x150.jpg
+ * and De-addiction-and-Rehabilitation-Treatment1-1.jpg as "source missing",
+ * and I wrote that up as three images broken on every machine. All three exist.
+ * There were never any broken references.
+ *
+ * It did not corrupt anything only because the rewrite refuses to point at a
+ * file that is not on disk ("Rehab.webp" was not), so `Rehab.jpg.webp` was left
+ * alone instead of becoming `Rehab.webp.webp`. That guard caught a bug it was
+ * not written for; the anchor below is the actual fix.
+ */
+const MEDIA_RE = /\/ahv\/[A-Za-z0-9_\-./%()]+?\.(?:jpe?g|png)(?![A-Za-z0-9.])/gi;
 const LEDGER = join(SITE, "english-candidate", "image-webp-conversion.json");
 
 const walk = (d, out = []) => {
@@ -167,7 +181,10 @@ if (!DRY) {
   for (const p of surfaceFiles) {
     const s = readFileSync(p, "utf8");
     for (const m of s.match(MEDIA_RE) ?? []) if (!skipUrls.has(m)) stillRaw.add(m);
-    for (const m of s.match(/\/ahv\/[A-Za-z0-9_\-./%()]+?\.(?:jpe?g|png|webp|svg|avif|mp4|pdf)/gi) ?? []) {
+    // Same double-extension anchor as MEDIA_RE — a second, unanchored copy of
+    // this pattern is what made the postcondition report three files as
+    // missing when all three exist as .jpg.webp.
+    for (const m of s.match(/\/ahv\/[A-Za-z0-9_\-./%()]+?\.(?:jpe?g|png|webp|svg|avif|mp4|pdf)(?![A-Za-z0-9.])/gi) ?? []) {
       if (!existsSync(diskPath(m))) unresolved.add(m);
     }
   }
