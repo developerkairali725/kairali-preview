@@ -154,6 +154,11 @@
    "metadata": {
     "canonical": "https://ayurvedichealingvillage.com/offers/olympics-and-paralympics-offer/"
    }
+  },
+  "/family-ayurvedic-retreat-kerala.html": {
+   "metadata": {
+    "canonical": "https://ayurvedichealingvillage.com/family-ayurvedic-retreat-kerala.html"
+   }
   }
  },
  "addRoutes": {
@@ -192,5 +197,13 @@
    }
   }
  },
- "addRoutesNote": "addRoutes creates a manifest row the approved package does not contain. Every entry names the owner ruling that created it: the manifest is otherwise generated from the package, so a row without provenance is indistinguishable from one the package produced. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
+ "addRoutesNote": "addRoutes creates a manifest row the approved package does not contain. Every entry names the owner ruling that created it: the manifest is otherwise generated from the package, so a row without provenance is indistinguishable from one the package produced. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md.",
+ "robotsOverrides": {
+  "_why": "Owner ruling 2026-09-21 (Q-AHV-NOINDEX-HUBS): INDEX ALL ELEVEN routes that serve noindex on the live site while the rebuild's sitemap would submit them. Measured afterwards, only FIVE need an override: the other six carry no robots value in any payload at all, so at production they emit nothing and are indexable by default — the ruling is already satisfied for them, including the three hubs linked from 237 pages each (/training-programs/, /yoga-meditation-programs/, /yoga-retreats/), plus /treatment-programs/, /wellness-programs/ and /offers/senior-citizen-offer/. Applied by tools/repair-robots-overrides.mjs, which MUST RE-RUN AFTER THE GO-LIVE IMPORT: that import regenerates payloads with the original live robots values and would restore the noindex. Staging is unaffected either way — the payload value is one lock of four (X-Robots-Tag header, robots.txt Disallow, payload robots, boot head guard), and every staging route renders noindex regardless.",
+  "/offers/defence-paramilitary-personnel-get-upto-30-off/": "index, follow",
+  "/yoga-and-ayurveda/": "index, follow",
+  "/new-privacy-policy/": "index, follow",
+  "/payment-policy-compliance/": "index, follow",
+  "/no-refridgeration/": "index, follow"
+ }
 }
