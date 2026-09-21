@@ -59,7 +59,7 @@ const CONCURRENCY = Number(flag("--concurrency", "4"));
 const ONLY = list("--routes");
 const WIDTHS = (list("--widths") ?? ["320", "1024"]).map(Number);
 const REQUIRE_BODY = argv.includes("--require-body");
-const OUT = flag("--out", path.join(SITE, "english-candidate", "route-verification.json"));
+const OUT = flag("--out", path.join(SITE, "..", "..", "launches", "ayurvedichealingvillage.com", "evidence", "route-verification", "route-verification.json"));
 
 const BREAKPOINT = 700;
 

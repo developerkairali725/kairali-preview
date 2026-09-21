@@ -457,7 +457,17 @@ export const RULES = [
         //     typed (D-ROLLING-NUMBER). A fixed span START before a computed end
         //     ("© 1989–{…}") has no literal year token directly after © or the
         //     dash, so it stays legal.
-        if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line)) {
+        //     A dc-runtime template renders its computed end as a <span> rather
+        //     than as `{…}`, so the exemption above could not see it and fired on
+        //     236 correctly-computed AHV footers. Normalising the MARKED span back
+        //     to `{…}` lets the two regexes below stay exactly as ruled — and,
+        //     because this rewrites the line rather than short-circuiting it, a
+        //     TYPED year elsewhere on the same line still fails (minified HTML
+        //     puts a whole page on one line). Only `data-dc-computed` is trusted:
+        //     bare `class="sc-interp"` also carries nav labels, so trusting it
+        //     would blind the rule to a typed year inside any interpolation span.
+        const line_ = line.replace(/<span\b[^>]*\bdata-dc-computed\b[^>]*>\s*(?:19|20)\d{2}\s*<\/span>/gi, "{…}");
+        if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line_) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line_)) {
           hits.push({ line: i + 1, message: `Typed copyright year. Rolling values are computed, never typed (D-ROLLING-NUMBER): © {new Date().getFullYear()} …` });
         }
       });

@@ -38,7 +38,7 @@ const CONCURRENCY = Number(flag("--concurrency", "4"));
 // Default subject: exactly the routes the last sweep flagged, read from its own
 // output rather than retyped, so this can never drift from what CI measured.
 const ROUTES = list("--routes") ?? (() => {
-  const v = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-verification.json"), "utf8"));
+  const v = JSON.parse(fs.readFileSync(path.join(SITE, "..", "..", "launches", "ayurvedichealingvillage.com", "evidence", "route-verification", "route-verification.json"), "utf8"));
   return [...new Set(v.results.filter((r) => (r.problems || []).some((p) => /horizontal overflow/.test(String(p)))).map((r) => r.route))];
 })();
 
