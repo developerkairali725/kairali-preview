@@ -34,3 +34,8 @@ how-to-claim, validity and any figure not in the text stay `[TO CONFIRM]`. Sourc
 in that copy ("spa franchises", "two further resorts", "modern holistic luxury", "for guests
 seeking") → QUESTIONS.md `Q-AHV-DEFENCE-PAGE-BANNED-WORDS`; the tool was told to port them
 verbatim and flag them, never to add more.
+
+## Desktop self-check — completed, no fixes needed
+
+Check ran to completion, uninterrupted, nothing to fix. Hand-over (verbatim copy + mobile
+go-ahead) sent after it (2026-09-22 IST).
