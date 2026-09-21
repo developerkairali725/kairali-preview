@@ -35,3 +35,42 @@
   provisional registration (through 2028-05-02) are both current. The first run of the tool
   reported the 2028 registration as lapsed; that was a date-parsing fault in the tool, fixed and
   pinned, not a fact about the document.
+
+## 2026-09-21 — "30%" → "20%" on the defence/paramilitary offer (owner-authorised, resolves a parked gate)
+
+- **Authority:** Abilash, in-chat, 2026-09-21, answering a direct question: *"20% is real — fix the
+  30s in the copy"*, slug untouched.
+- **What made it answerable without guessing:** the two SIBLING offer pages were measured first.
+  `/offers/senior-citizen-offer/` reads "Up to 20% Off"; `/offers/olympics-and-paralympics-offer/`
+  reads "Up to 20% OFF" with tiers 10% / 15% / 20% by nights; the defence offer page's own H1 reads
+  "upto 20% OFF" with the identical tiers. **All three destination pages say 20 with the same
+  structure.** The 30% survived only in the defence long-form body and in the shared offer band.
+- **Strings changed (8):**
+  - `article-family-data.js` ×2 — `Kairali is offering 30% discount enchantingly on all our
+    treatment packages` → `… offering up to 20% discount …`
+  - `article-family-data.js` ×2 — `Kairali will provide up to 30% discount on Booking amount only.`
+    → `… up to 20% …`
+  - `campaign-family-data.js` ×2 — the offer band figure `"30%"` → `"20%"` (desktop + mobile)
+  - `campaign-family-data.js` ×2 — `Up to 30% Off for Senior Citizen, Olympic and Paralympics
+    Athlete, Defence and Paramilitary Personnel` → `Up to 20% Off …` (and the `Upto` variant)
+- **Rendered on:** `/defence-and-paramilitary-forces/` and `/ayurveda-retreat-kerala.html`. Both
+  prerendered snapshots re-rendered — the payload alone would have left crawlers reading 30%.
+- **A PARKED GATE, now closed.** `article-family-data.js` carried its own governance record of this
+  exact discrepancy: `discountWording.ruling` preserving both phrasings, and a privateGate reading
+  *"30% body and up-to 30% terms differ; preserve both exact source statements pending current
+  business confirmation."* Today's ruling **is** that business confirmation. The metadata itself is
+  left byte-identical: it describes the LIVE SOURCE, which still says 30, and that remains true.
+- **NOT changed, deliberately:** the slug `/offers/defence-paramilitary-personnel-get-upto-30-off/`
+  (a live ranking URL — changing it is a redirect, not an edit, and the owner ruled it stays); the
+  `30%` non-refundable deposit in `hist9-family-data.js` (a deposit is not a discount); a CSS
+  `min(112px,30%)`; and the 9 `Get Upto 30% OFF` strings on `/testing/`, a noindex placeholder page
+  carrying Études boilerplate — reported every run, and whether that page ships at all is its own
+  question.
+- **LIVE WILL DISAGREE UNTIL SOMEONE UPDATES IT.** The WordPress site still says 30% on both
+  surfaces. Until Deepu changes it, the rebuild and live differ on a discount figure — that is the
+  intended direction of travel, not a defect, but it is worth knowing before the flip.
+- **Verification:** sweep over the two changed routes plus two sibling offer pages, 8/8 states pass
+  the accepted-baseline bar (0 errors, 0 overflow, 0 broken images, 0 iframes); 0 snapshots left
+  carrying a 30% discount claim. The computed-style benchmark was NOT run and should not be: its
+  own documentation excludes text from the fingerprint and assigns body text to the sweep, and
+  reflow risk is covered by the sweep's overflow check at four widths.
