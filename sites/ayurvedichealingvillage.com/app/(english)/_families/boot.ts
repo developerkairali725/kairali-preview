@@ -663,6 +663,57 @@ export const BOOT_SCRIPT = `
   // the notice on every page, including the design's own homepage banner, so
   // the two can never both appear or disagree.
   var CONSENT_KEY = "ktahv-consent";
+
+  // ---- Consent Mode v2 bridge (owner ruling, 2026-09-21) -------------------
+  //
+  // The layout now renders <ConsentScripts/> from @kairali/consent, which sets
+  // all Consent Mode v2 signals to DENIED in <head> before any tag loads, and
+  // re-applies a stored fleet choice synchronously. Without the code below that
+  // default would never be lifted: startMeasurement() calls gtag("config") and
+  // never gtag("consent"), so an accepting visitor would have been measured in
+  // denied mode forever. The gate would have gone green while the thing it
+  // guards got quietly worse.
+  //
+  // Two paths can record a choice on this site and BOTH must reach this: our
+  // own notice (recordConsent, below) and the approved design's own "Accept
+  // all" on the home views, which writes CONSENT_KEY itself. So the sweep tick
+  // in ensureConsentNotice() applies it too, and applyConsentMode is
+  // idempotent - it fires once per distinct choice.
+  var FLEET_CONSENT_KEY = "kairali-consent-v1";
+  var CONSENT_SIGNALS = ["ad_storage", "ad_user_data", "ad_personalization",
+    "analytics_storage", "functionality_storage", "personalization_storage",
+    "security_storage"];
+  var consentApplied = null;
+  function consentState(granted) {
+    var out = {};
+    for (var i = 0; i < CONSENT_SIGNALS.length; i++) {
+      // security_storage is granted in both states - it is the strictly
+      // necessary bucket, and @kairali/consent's DENIED_ALL does the same.
+      out[CONSENT_SIGNALS[i]] = (granted || CONSENT_SIGNALS[i] === "security_storage") ? "granted" : "denied";
+    }
+    return out;
+  }
+  function applyConsentMode(choice) {
+    if (choice !== "accepted" && choice !== "declined") return;
+    if (consentApplied === choice) return;
+    consentApplied = choice;
+    var granted = choice === "accepted";
+    var state = consentState(granted);
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== "function") {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+    }
+    window.gtag("consent", "update", state);
+    // Mirror into the fleet record so the head snippet re-applies this choice
+    // SYNCHRONOUSLY on the next page load, before any tag can fire. The
+    // visitor-facing key and notice are unchanged; this is a second, silent
+    // copy for the head, not a second question.
+    try {
+      localStorage.setItem(FLEET_CONSENT_KEY, JSON.stringify({
+        v: 1, granted: granted, consent: state, at: new Date().toISOString()
+      }));
+    } catch (e) { /* private mode: this page view only, same as CONSENT_KEY */ }
+  }
   function consentChoice() {
     try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return "unavailable"; }
   }
@@ -670,6 +721,7 @@ export const BOOT_SCRIPT = `
     try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode: honour the choice for this page view only */ }
     var el = document.getElementById("ahv-consent");
     if (el) el.remove();
+    applyConsentMode(value);
     if (value === "accepted") startMeasurement();
   }
   function consentNotice() {
@@ -725,6 +777,9 @@ export const BOOT_SCRIPT = `
   }
   function ensureConsentNotice() {
     var choice = consentChoice();
+    // Catches the design's OWN "Accept all" on the home views, which writes
+    // CONSENT_KEY directly and never calls recordConsent.
+    applyConsentMode(choice);
     var mine = document.getElementById("ahv-consent");
     // The home views render the approved notice THEMSELVES, and they render it
     // after the design mounts — later than the first sweep tick. So this cannot
@@ -776,7 +831,12 @@ export const BOOT_SCRIPT = `
       g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(m.ga4);
       document.head.appendChild(g);
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
+      // Do NOT clobber: <ConsentScripts/> installed this shim in <head> and the
+      // consent defaults were pushed through it. Replacing it here would be
+      // harmless today (same one-line push) and a trap the day it is not.
+      if (typeof window.gtag !== "function") {
+        window.gtag = function () { window.dataLayer.push(arguments); };
+      }
       window.gtag("js", new Date());
       window.gtag("config", m.ga4);
     }
@@ -802,6 +862,7 @@ export const BOOT_SCRIPT = `
   function applyConsent() {
     ensureConsentNotice();
     dedupeVerificationMetas();
+    applyConsentMode(consentChoice());
     if (consentChoice() === "accepted") startMeasurement();
   }
 

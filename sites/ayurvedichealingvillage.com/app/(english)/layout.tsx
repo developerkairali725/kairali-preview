@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { faviconIcons } from "@kairali/seo";
+import { ChatbaseLoader } from "@kairali/chat";
+import { ConsentScripts } from "@kairali/consent";
 import analyticsConfig from "../../analytics.config.json";
 
 /**
@@ -45,6 +47,23 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
   return (
     <html lang="en-US">
       <head>
+        {/* Consent Mode v2 defaults, DENIED, before any loader — the pilot
+            security-audit ordering contract, added on the owner's ruling of
+            2026-09-21 ("wire Consent Mode properly") alongside the chat bubble.
+
+            This lane keeps its OWN visitor-facing notice (the approved design's,
+            extended site-wide in _families/boot.ts on localStorage
+            "ktahv-consent") — nothing here adds a second banner or asks a second
+            question. What this adds is the signal layer underneath it: boot.ts
+            now calls gtag("consent","update", …) on whichever notice records the
+            choice, and mirrors the record into the fleet key so THIS snippet can
+            re-apply it synchronously on the next page load.
+
+            Before this pair, adding the script alone would have set everything
+            denied with nothing in the lane to grant it — startMeasurement()
+            calls gtag("config") and never gtag("consent") — and an accepting
+            visitor would have been measured in denied mode forever. */}
+        <ConsentScripts />
         {/* ALWAYS emitted, deliberately NOT behind the analytics flag.
             Ownership proof is not tracking: these set no cookie, identify no
             visitor and are not a consent matter. They were previously gated on
@@ -88,6 +107,29 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{visibility:hidden!important}}"}
         </style>
         {children}
+        {/* Mandatory fleet chat bubble (D-20260718-05), added on the owner's
+            explicit ruling of 2026-09-21 after he was shown the three open
+            defects in the shared Chatbase config and chose to ship anyway:
+            the bot's footer prints WhatsApp +91-92898-38794 against the locked
+            +91 92898 38797, it presents as a human "Priya Sharma" with no
+            honest-AI disclosure, and it says "Trusted since 1908", the
+            group-attached wording D-1908-WORDING bans. None of those live in
+            this repo -- they are dashboard config -- so the flag is the loudest
+            thing this lane can raise: QUESTIONS.md Q-CHATBOT-WRONG-NUMBER, and
+            the exact replacement copy is drafted in
+            docs/drafts/chatbase-priya-config-fix.md for whoever holds the
+            dashboard.
+
+            DEFAULT (ungated) DELIBERATELY, and this is a consent decision:
+            consentGated reads @kairali/consent's own storage key, which THIS
+            lane never writes -- it runs the approved design's own notice via
+            localStorage["ktahv-consent"] in _families/boot.ts. Passing
+            consentGated here would defer the bubble on a key nobody sets, i.e.
+            silently never load it. The fleet default changes no consent logic
+            (HARD GATE 11) and matches the owner's standing "no consent" ruling;
+            the loader still defers injection to first interaction or a 6s idle,
+            so it never competes with LCP. */}
+        <ChatbaseLoader />
       </body>
     </html>
   );

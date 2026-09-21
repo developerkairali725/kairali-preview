@@ -8,12 +8,12 @@
 // house style: plain ESM + node --test.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import {
   PKG, PROBE_BAD_ORDER, PROBE_GOOD, PROBE_MISSING, REPO_ROOT,
-  checkLayoutSource, fleetSites, main, runControlProbes,
+  checkLayoutSource, fleetSites, main, rootLayouts, runControlProbes,
 } from "../chat-bubble-lint.mjs";
 import { EXEMPT } from "../factory-matrix-lint.mjs";
 
@@ -75,4 +75,38 @@ test("fleet discovery finds the eight preview-stage sites", () => {
   ]) {
     assert.ok(sites.includes(s), `fleet discovery missing ${s}`);
   }
+});
+
+// ── root-layout discovery ───────────────────────────────────────────────────
+// Both directions, same detector: a single-root site and a route-group-root
+// site must BOTH be found. Before 2026-09-21 the lint looked only for
+// app/layout.tsx, so a site that had split into route-group roots read as
+// "no root layout at all" and its real layouts were never inspected — the gate
+// could not have seen a bubble that WAS there.
+
+test("rootLayouts finds a single app/layout.tsx", () => {
+  const found = rootLayouts(join(REPO_ROOT, "sites", "kairali.com"));
+  assert.equal(found.length, 1, "single-root site should yield exactly one root");
+  assert.ok(found[0].endsWith(join("app", "layout.tsx")));
+});
+
+test("rootLayouts finds EVERY route-group root when there is no app/layout.tsx", () => {
+  const site = join(REPO_ROOT, "sites", "ayurvedichealingvillage.com");
+  assert.equal(existsSync(join(site, "app", "layout.tsx")), false,
+    "fixture assumption: AHV has no single root layout");
+  const found = rootLayouts(site);
+  assert.ok(found.length >= 2, `expected both route-group roots, got ${found.length}`);
+  assert.ok(found.some((f) => f.includes("(english)")), "missed the (english) root");
+  assert.ok(found.some((f) => f.includes("(lp)")), "missed the (lp) root");
+});
+
+test("rootLayouts returns nothing for a directory with no app/", () => {
+  assert.deepEqual(rootLayouts(join(REPO_ROOT, "docs")), []);
+});
+
+test("the AHV English root really does render the bubble, consent-first", () => {
+  const english = rootLayouts(join(REPO_ROOT, "sites", "ayurvedichealingvillage.com"))
+    .find((f) => f.includes("(english)"));
+  assert.ok(english, "no (english) root layout found");
+  assert.deepEqual(checkLayoutSource(readFileSync(english, "utf8"), "ahv-english"), []);
 });

@@ -47,7 +47,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
-import { join, resolve, dirname } from "node:path";
+import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
 
@@ -85,6 +85,30 @@ export function checkLayoutSource(src, site) {
     v.push(`${site}: <ChatbaseLoader/> appears BEFORE <ConsentScripts/> — denied-before-loaders order regressed (pilot security-audit contract)`);
   }
   return v;
+}
+
+/**
+ * Every ROOT layout of a site.
+ *
+ * app/layout.tsx is the single-root case. Next.js also allows one root layout
+ * PER ROUTE GROUP — app/(english)/layout.tsx, app/(lp)/layout.tsx — which is
+ * the only way to serve two independent documents from one app. This lint
+ * previously looked for app/layout.tsx alone, so a site that had split into
+ * route-group roots read as "no root layout at all" and its actual layouts
+ * were never inspected. That is a detection bug, not a policy: the gate was
+ * reporting the wrong reason and, worse, could not have seen a bubble that WAS
+ * there. Fixed 2026-09-21 on the AHV English lane.
+ */
+export function rootLayouts(siteDir) {
+  const appDir = join(siteDir, "app");
+  if (!existsSync(appDir)) return [];
+  const single = join(appDir, "layout.tsx");
+  if (existsSync(single)) return [single];
+  return readdirSync(appDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && /^\(.+\)$/.test(d.name))
+    .map((d) => join(appDir, d.name, "layout.tsx"))
+    .filter((f) => existsSync(f))
+    .sort();
 }
 
 /** Discover fleet sites: sites/<dir> with a site.config.json. */
@@ -156,12 +180,19 @@ export function main(argv = []) {
       console.log(`  EXEMPT ${key} — ${CHAT_EXEMPT.get(key)}`);
       continue;
     }
-    const layoutPath = join(sitesDir, name, "app", "layout.tsx");
-    if (!existsSync(layoutPath)) {
-      violations.push(`${key}: no app/layout.tsx and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
+    const roots = rootLayouts(join(sitesDir, name));
+    if (roots.length === 0) {
+      violations.push(`${key}: no root layout (app/layout.tsx, nor any app/(group)/layout.tsx) and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
       continue;
     }
-    violations.push(...checkLayoutSource(readFileSync(layoutPath, "utf8"), key));
+    // EVERY root is checked, not just the first. Next.js route-group roots are
+    // independent documents: a visitor on a route served by one of them never
+    // sees the other, so a bubble in only one root is a bubble missing from
+    // every route the other root serves.
+    for (const r of roots) {
+      const label = roots.length === 1 ? key : `${key} [${relative(join(sitesDir, name), r)}]`;
+      violations.push(...checkLayoutSource(readFileSync(r, "utf8"), label));
+    }
 
     const pkgPath = join(sitesDir, name, "package.json");
     if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
@@ -182,7 +213,13 @@ export function main(argv = []) {
   return 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// A path containing a space made this guard false forever: import.meta.url
+// percent-encodes it as %20 and process.argv[1] does not, so main() never ran
+// and the gate exited 0 having checked NOTHING — a silent pass, the worst kind
+// of gate failure. Compare resolved paths instead of strings.
+// (QUESTIONS.md Q-MAIN-GUARD-ENCODING / Q-AHV-PATH-SPACES: ~31 scripts share
+// this bug; this is the one this session touched.)
+if (process.argv[1] && resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {
