@@ -1802,3 +1802,16 @@ T7's record-card labels "PAST RETREAT" / "Concluded. Not open for admission." ar
 not source — owner wording; T9's drafted H2 "Browse all packages" and T6's drafted standfirst +
 "Products are not sold on this site" line are drafts, never shipped as drafted; T7's finding that
 `66ch` renders ≈80 Mulish characters (global CSS correction candidate for every family in the run).
+
+### Q-AHV-EXPLAINER-8-ROUTES-DATASET — 2026-09-22 07:38:10 IST
+Context: FETCH-PROMPT-8-EXPLAINER-ROUTES.md carried out by Claude Design from the repo's verbatim
+record (pasted as three chunks). It produced `uploads/knowledge-explainer-8-routes.json` (prompt
+schema, 8 routes) + `notes/knowledge-explainer-8-routes-dataset.md` in the project. Owner rulings
+it needs (verbatim list in launches/ayurvedichealingvillage.com/design-intake/T1-explain/
+FETCH-PROMPT-8-run-NOTES.md): in-main "Knowledge Center / Things To Do" sidebar = chrome, body or
+separate nav record; h1 null on all 8 (title rendered as h2 twice) — confirm; two slug-identity
+defects (/why-pick-an-ayurveda-treatment-orayurvedic-retreat/ missing hyphen; restaurant vs
+resturant) → link-audit/redirect decision; empty doubled <a> artefacts dropped on port — confirm;
+hero our-story.png reused on 6/8 routes → per-page banner from the image library; og:image not
+in main on two routes; 11 head meta fields [TO CONFIRM] on all 8 (og image dims, ogType/Locale,
+twitterCard, readingTime, modified, hreflang) — a head-only pass over the 8 live URLs fills them.
