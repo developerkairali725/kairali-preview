@@ -73,3 +73,5 @@ Note: the second fix touches the FIXED closing block (trust-item hanging indent)
 block is unchanged — four items, gold diamond prefix, two-column grid — it is a wrap-rendering
 correction, not a restyle. Verify at apply that the closing block still matches the standing brief
 byte-for-byte in copy and structure.
+
+Re-check ran to completion, uninterrupted, nothing further. **T18 is complete: desktop + mobile + checks.**
