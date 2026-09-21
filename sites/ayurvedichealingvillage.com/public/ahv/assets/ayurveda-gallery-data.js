@@ -9,12 +9,12 @@ window.AHV_AYURVEDA_GALLERY = {
   gallery: [
     { file: "AHV-Gallery-08.jpg", image: "/ahv/assets/img/AHV-Gallery-08.jpg", width: 1280, height: 572, alt: "Therapists applying cloth-wrapped compresses during a treatment.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-8.jpg" },
     { file: "AHV-Gallery-07.jpg", image: "/ahv/assets/img/AHV-Gallery-07.jpg", width: 1280, height: 572, alt: "An illustration of traditional Ayurvedic care.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-7.jpg" },
-    { file: "AHV-Gallery-06.jpg", image: "/ahv/assets/img/AHV-Gallery-06.jpg", width: 1280, height: 572, alt: "Therapists pouring oil along a guest’s legs.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-6.jpg" },
+    { file: "AHV-Gallery-06.jpg", image: "/ahv/assets/img/AHV-Gallery-06.jpg", width: 1280, height: 572, alt: "Therapists pouring oil along a patient’s legs.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-6.jpg" },
     { file: "AHV-Gallery-05.jpg", image: "/ahv/assets/img/AHV-Gallery-05.jpg", width: 1280, height: 572, alt: "Herbal boluses, towels and treatment accessories.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-5.jpg" },
     { file: "AHV-Gallery-04.jpg", image: "/ahv/assets/img/AHV-Gallery-04.jpg", width: 1280, height: 572, alt: "Cloth boluses and bowls of powders arranged on a leaf.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-4.jpg" },
     { file: "AHV-Gallery-03.jpg", image: "/ahv/assets/img/AHV-Gallery-03.jpg", width: 1280, height: 572, alt: "Green leaves arranged on a wooden surface.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-3.jpg" },
     { file: "AHV-Gallery-02.jpg", image: "/ahv/assets/img/AHV-Gallery-02.jpg", width: 1280, height: 572, alt: "Roots, spices and a mortar and pestle.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-2.jpg" },
-    { file: "AHV-Gallery-01.jpg", image: "/ahv/assets/img/AHV-Gallery-01.jpg", width: 1280, height: 572, alt: "A therapist applying a herbal paste to a guest’s back.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-1.jpg" }
+    { file: "AHV-Gallery-01.jpg", image: "/ahv/assets/img/AHV-Gallery-01.jpg", width: 1280, height: 572, alt: "A therapist applying a herbal paste to a patient’s back.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/p-1.jpg" }
   ],
   footerLinks: [
     { label: "Social Responsibility", href: "/social-responsibilities/" },
