@@ -35,3 +35,7 @@ brief requires mobile, so the go-ahead is sent once its self-check completes (no
   flagged phrases are on the ban list; this is a tone edit, reversible at apply if the owner wants
   the sentence verbatim.
 - Strain is real but bounded: Mangalam Dam's one-sentence entry; the 4-place page reads sparse.
+
+## Desktop self-check — completed, no fixes needed
+
+Check ran to completion, uninterrupted, nothing to fix. Mobile go-ahead sent after it (2026-09-22 IST).
