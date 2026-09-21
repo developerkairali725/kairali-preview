@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #EFEADD; }
+  a { color: #006038; }
+  a:hover { color: #004226; }
+  *:focus-visible { outline: 3px solid #5A4420; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div style="width: 1440px; box-sizing: border-box; background: #F7F4EA; color: #2A2118; font-family: Mulish, sans-serif; font-size: 18px; line-height: 1.7;">
+
+  <div style="height: 72px; background: #D9D5CC; display: flex; align-items: center; justify-content: center; color: #5C564C; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Site header — approved, not redesigned</div>
+
+  <main>
+
+    <section style="box-sizing: border-box; padding: 40px 0 38px;">
+      <div style="width: min(1220px, 94%); margin: 0 auto;">
+        <nav aria-label="Breadcrumb" style="font-size: 14.5px; color: #75695A; margin-bottom: 26px;">
+          <a href="#" style="color: #006038;">Home</a> <span style="color: #C9BFA8; padding: 0 8px;">/</span> <a href="#" style="color: #006038;">Offers</a> <span style="color: #C9BFA8; padding: 0 8px;">/</span> <span>{{ crumb }}</span>
+        </nav>
+        <p style="margin: 0 0 14px; font-size: 12.5px; letter-spacing: 2.6px; text-transform: uppercase; color: #8F6212;">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+        <h1 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 58px; line-height: 1.12; letter-spacing: -0.2px; max-width: 17ch;">{{ title }}</h1>
+        <sc-if value="{{ hasStandfirst }}" hint-placeholder-val="{{ true }}">
+          <div style="display: flex; gap: 18px; margin-top: 28px; max-width: 660px;">
+            <div style="width: 3px; background: #C1882C; flex: 0 0 3px;"></div>
+            <div>
+              <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #514A3F; max-width: 62ch; text-wrap: pretty;">{{ standfirst }}</p>
+              <p style="margin: 10px 0 0; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft — approve or replace</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <div role="img" aria-label="Photograph slot — one warm, unstyled photograph of the hospital or a treatment room" style="box-sizing: border-box; width: 100%; height: 430px; background: #E0D7C4; border-top: 1px solid #E9E2D3; border-bottom: 1px solid #E9E2D3; display: flex; align-items: flex-end; justify-content: flex-start;">
+      <p style="margin: 0; padding: 20px 26px; font-size: 12.5px; letter-spacing: 2.2px; text-transform: uppercase; color: #5A4420; background: rgba(247,244,234,0.92); border-top-right-radius: 4px;">Image slot · 1440 × 430 · one photograph, warm and unstyled</p>
+    </div>
+
+    <section aria-labelledby="terms-h" style="box-sizing: border-box; padding: 56px 0 0;">
+      <div style="width: min(1220px, 94%); margin: 0 auto;">
+        <div style="box-sizing: border-box; background: #FFFFFF; border: 1.5px solid #C1882C; border-radius: 4px; overflow: hidden;">
+
+          <div style="box-sizing: border-box; background: #F3EADA; border-bottom: 1px solid #E0D7C4; padding: 20px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+            <h2 id="terms-h" style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 30px; line-height: 1.2;">Offer terms</h2>
+            <sc-if value="{{ showStatus }}" hint-placeholder-val="{{ true }}">
+              <p style="margin: 0; box-sizing: border-box; border: 1px solid #C1882C; border-radius: 4px; padding: 8px 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #5A4420; background: #FFFFFF;">{{ statusLabel }}</p>
+            </sc-if>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #E9E2D3;">
+            <sc-for list="{{ terms }}" as="t" hint-placeholder-count="4">
+              <div style="box-sizing: border-box; background: #FFFFFF; padding: 26px 36px 28px;">
+                <p style="margin: 0 0 8px; font-size: 12.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #8F6212;">{{ t.label }}</p>
+                <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2A2118; max-width: 40ch; text-wrap: pretty;">{{ t.value }}</p>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="box-sizing: border-box; border-top: 1px solid #E9E2D3; padding: 26px 36px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
+            <p style="margin: 0; font-size: 16.5px; color: #514A3F; max-width: 52ch;">Mention this offer when you enquire and the patient care team will apply it to your admission. <span style="font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft</span></p>
+            <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; background: #EEB41E; color: #2A2118; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;">Claim this offer</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ hasBody }}">
+      <section aria-labelledby="body-h" style="box-sizing: border-box; padding: 64px 0 8px;">
+        <div style="width: min(1220px, 94%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 72px; align-items: start;">
+          <div>
+            <h2 id="body-h" style="margin: 0 0 22px; font-family: Marcellus, serif; font-weight: 400; font-size: 34px; line-height: 1.22;">{{ bodyHeading }}</h2>
+            <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="3">
+              <sc-if value="{{ b.isHeading }}">
+                <h3 style="margin: 34px 0 12px; font-family: Marcellus, serif; font-weight: 400; font-size: 23px; line-height: 1.3;">{{ b.text }}</h3>
+              </sc-if>
+              <sc-if value="{{ b.isText }}">
+                <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.7; color: #2A2118; max-width: 66ch; text-wrap: pretty;">{{ b.text }}</p>
+              </sc-if>
+              <sc-if value="{{ b.isItem }}">
+                <p style="margin: 0 0 12px; padding-left: 22px; border-left: 2px solid #E0D7C4; font-size: 18px; line-height: 1.7; color: #2A2118; max-width: 64ch;">{{ b.text }}</p>
+              </sc-if>
+            </sc-for>
+            <p style="margin: 26px 0 0; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">{{ bodySourceNote }}</p>
+          </div>
+
+          <aside style="box-sizing: border-box; background: #FFFFFF; border: 1px solid #E9E2D3; border-radius: 4px; padding: 26px 28px;">
+            <p style="margin: 0 0 16px; font-size: 12.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #8F6212;">Speak to a doctor</p>
+            <p style="margin: 0 0 20px; font-size: 16.5px; line-height: 1.6; color: #514A3F;">A physician reviews your history before any programme is recommended.</p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a href="https://ayurvedichealingvillage.com/online-consultation/" style="box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 20px; border: 1.5px solid #006038; color: #006038; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;">Free doctor consultation</a>
+              <a href="mailto:info@kairali.com" style="box-sizing: border-box; display: inline-flex; align-items: center; min-height: 44px; font-size: 16.5px; color: #006038;">info@kairali.com</a>
+            </div>
+            <sc-if value="{{ showRelated }}">
+              <div style="margin-top: 26px; padding-top: 22px; border-top: 1px solid #E9E2D3;">
+                <p style="margin: 0 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #8F6212;">Related programmes</p>
+                <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+                  <p style="margin: 0 0 10px;"><a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 16.5px; color: #006038;">{{ r.label }}</a></p>
+                </sc-for>
+              </div>
+            </sc-if>
+          </aside>
+        </div>
+      </section>
+    </sc-if>
+
+    <div style="height: 56px;"></div>
+    <section aria-labelledby="close-h" style="box-sizing: border-box; width: 100%; background: #FFFFFF; background-image: repeating-linear-gradient(135deg, rgba(193,136,44,0.055) 0 1px, transparent 1px 7px); border-top: 1px solid #E9E2D3; border-bottom: 1px solid #E9E2D3; padding: 54px 0 58px;">
+      <div style="width: min(760px, 92%); margin: 0 auto; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; text-align: left; margin-bottom: 38px;">
+          <p style="margin: 0; font-size: 16.5px; color: #2A2118;"><span style="color: #C1882C; padding-right: 10px;">◆</span>NABH Certified Hospital</p>
+          <p style="margin: 0; font-size: 16.5px; color: #2A2118;"><span style="color: #C1882C; padding-right: 10px;">◆</span>118+ Years Heritage</p>
+          <p style="margin: 0; font-size: 16.5px; color: #2A2118;"><span style="color: #C1882C; padding-right: 10px;">◆</span>Individualised Programmes</p>
+          <p style="margin: 0; font-size: 16.5px; color: #2A2118;"><span style="color: #C1882C; padding-right: 10px;">◆</span>World Luxury Award Winner</p>
+        </div>
+        <h2 id="close-h" style="margin: 0 0 14px; font-family: Marcellus, serif; font-weight: 400; font-size: 26px; line-height: 1.3;">Not sure which programme fits?</h2>
+        <p style="margin: 0 auto 30px; font-size: 16.5px; line-height: 1.6; color: #514A3F; max-width: 56ch;">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+          <a href="https://ayurvedichealingvillage.com/online-consultation/" style="box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 20px; background: #EEB41E; color: #2A2118; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;">Free Doctor Consultation</a>
+          <a href="https://wa.me/919289838797" style="box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 20px; border: 1.5px solid #006038; color: #006038; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;">WhatsApp Patient Care</a>
+          <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 20px; border: 1.5px solid #5A4420; color: #5A4420; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div style="height: 620px; background: #D9D5CC; display: flex; align-items: center; justify-content: center; color: #5C564C; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Site footer — approved, not redesigned</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;contentState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;minimal&quot;,&quot;typical&quot;,&quot;maximum&quot;],&quot;default&quot;:&quot;typical&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content extremes&quot;},&quot;showStatus&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content extremes&quot;},&quot;showRelated&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content extremes&quot;}}">
+const TERMS = [
+  { label: "Who qualifies", value: "[TO CONFIRM] — eligibility wording supplied by the owner." },
+  { label: "What it includes", value: "[TO CONFIRM] — discount or inclusion, in the owner's words." },
+  { label: "Valid until", value: "[TO CONFIRM] — expiry date, or \u201cstanding offer, no end date\u201d." },
+  { label: "How to claim", value: "[TO CONFIRM] — proof required at admission, if any." }
+];
+
+const STRESS = "Stress text — layout measure only, not copy. Aliquam erat volutpat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.";
+
+const STATES = {
+  minimal: {
+    crumb: "Olympics and Paralympics Offer",
+    title: "Olympics and Paralympics Offer",
+    standfirst: null,
+    statusLabel: "Offer",
+    bodyHeading: null,
+    blocks: [],
+    bodySourceNote: ""
+  },
+  typical: {
+    crumb: "Ayurveda Retreat Kerala",
+    title: "Ayurveda Retreat in Kerala",
+    standfirst: "An Ayurvedic hospital in Palakkad where every admission begins with a physician's assessment and ends with a discharge plan you take home.",
+    statusLabel: "Standing offer",
+    bodyHeading: "About this programme",
+    blocks: [
+      { isText: true, text: "Treatment is planned by an Ayurvedic doctor after consultation, then delivered by the same therapists for the length of your stay. Panchakarma, diet and daily routine are set against your own history rather than a fixed package." },
+      { isText: true, text: "The hospital is NABH accredited and has been run by the same family since 1908. Admission lengths, medicines and follow-up are confirmed at consultation." },
+      { isText: true, text: "[TO CONFIRM] — programme length, price and inclusions." }
+    ],
+    bodySourceNote: "Draft — approve or replace"
+  },
+  maximum: {
+    crumb: "Family Ayurvedic Retreat Kerala",
+    title: "Family Ayurvedic Retreat in Kerala",
+    standfirst: "A programme written for two or three generations admitted together, with separate treatment plans and one shared daily routine.",
+    statusLabel: "Standing offer",
+    bodyHeading: "About this programme",
+    blocks: [
+      { isText: true, text: "Treatment is planned by an Ayurvedic doctor after consultation, then delivered by the same therapists for the length of your stay. Panchakarma, diet and daily routine are set against your own history rather than a fixed package." },
+      { isHeading: true, text: "Who it is for" },
+      { isText: true, text: STRESS },
+      { isText: true, text: STRESS },
+      { isHeading: true, text: "What a day looks like" },
+      { isItem: true, text: "Stress item — layout measure only. Consultation, therapy, rest, review." },
+      { isItem: true, text: "Stress item — layout measure only. Consultation, therapy, rest, review." },
+      { isItem: true, text: "Stress item — layout measure only. Consultation, therapy, rest, review." },
+      { isHeading: true, text: "Accommodation" },
+      { isText: true, text: STRESS },
+      { isText: true, text: STRESS },
+      { isHeading: true, text: "Before you are admitted" },
+      { isText: true, text: STRESS }
+    ],
+    bodySourceNote: "Stress state — Latin filler marks the 916-word extreme, it is not copy"
+  }
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const key = (this.props.contentState || "typical").toLowerCase();
+    const s = STATES[key] || STATES.typical;
+    return {
+      crumb: s.crumb,
+      title: s.title,
+      standfirst: s.standfirst,
+      hasStandfirst: !!s.standfirst,
+      statusLabel: s.statusLabel,
+      showStatus: this.props.showStatus !== false,
+      terms: TERMS,
+      hasBody: s.blocks.length > 0,
+      bodyHeading: s.bodyHeading,
+      blocks: s.blocks,
+      bodySourceNote: s.bodySourceNote,
+      showRelated: this.props.showRelated !== false,
+      related: [
+        { label: "Panchakarma Therapy" },
+        { label: "Preventive & Regenerative" },
+        { label: "Yoga & Meditation" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

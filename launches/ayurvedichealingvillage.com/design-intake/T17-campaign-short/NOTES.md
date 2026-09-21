@@ -45,3 +45,17 @@ Mulish 18/1.7 · 66ch cap · min(1220px, 94%) · 44px targets / 52px buttons · 
 
 Check ran to completion, uninterrupted. The fix touched only the fixed closing block's button
 spacing — the block's spec (three buttons in a row, wrapping on mobile) is unchanged.
+
+## Downloaded 2026-09-21 22:47 IST — Project archive export, `Kairali Healing Village Redesign (3).zip`
+
+Files placed beside this note: `AHV Template Campaign Offer Desktop.dc.html`, `…Mobile.dc.html`,
+and its own `claude-design-notes.md` (= `notes/campaign-offer-template-page.md`, verbatim).
+
+Additional facts from those notes, not in the chat comment:
+- **Image band is an EMPTY captioned slot** (1440×430 desktop / 390×240 mobile). No photograph
+  chosen, nothing hotlinked → a real photo is chosen at apply time from the image library.
+- Related-programme links are `#` pending `sitemap/sitemap-final.json`; breadcrumb chain provisional.
+- "Retreat" retained only where it is the live route's own title (URL-locked), never introduced.
+- Done-bar confirms body **18px/1.7 desktop, 17px/1.7 mobile** — conforms to D-20260921-14.
+- Declared OPEN by the tool: head contract / SEO metadata not written — layout template only.
+  → metadata comes from the route's existing record at apply time, not from the design.
