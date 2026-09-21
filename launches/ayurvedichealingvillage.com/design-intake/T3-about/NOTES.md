@@ -50,3 +50,10 @@ Desktop AND mobile delivered in one pass (no pause). Tweaks: `route` (4 extremes
 - Application path uses `mailto:info@kairali.com` — the locked contact, as the sheet required.
 - The approved chrome components are in the Design project; swapping them for the placeholders is
   a one-line change per view at apply time.
+
+## Its own self-check — completed, one fix applied (verbatim)
+
+> Fixed: added `justify-content:center` to the body grid, so brief mode's 760px column now centres
+> instead of hanging left. No effect on prose mode, which fills its tracks.
+
+Check ran to completion, uninterrupted. **T3 is complete: desktop + mobile + check.**
