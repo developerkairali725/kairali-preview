@@ -277,7 +277,7 @@ window.AHV_OUR_VILLAS = {
   "heading": "Kairali ,Pure Bliss, once in a lifetime experience!",
   "text": "A soul-soothing haven where nature and Ayurveda unite for an unforgettable retreat of rejuvenation and bliss.",
   "image": {
-   "image": "/ahv/assets/img/AHV-OurVillas-Closing.png",
+   "image": "/ahv/assets/img/AHV-OurVillas-Closing.webp",
    "width": 271,
    "height": 276,
    "alt": "Decorative flowers",

@@ -5,7 +5,7 @@ window.AHV_ASHTANGA = {
  "historicalNotice": "This is a past retreat. The original description, programme and inclusions below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.",
  "sourceHeadingLabel": "Historical retreat description",
  "hero": {
-  "image": "/ahv/assets/img/AHV-Ashtanga-Hero.jpg",
+  "image": "/ahv/assets/img/AHV-Ashtanga-Hero.webp",
   "width": 772,
   "height": 289,
   "alt": "Ayurvedic treatment with herbal powder",
@@ -15,7 +15,7 @@ window.AHV_ASHTANGA = {
   {
    "id": "retreat",
    "heading": "Ashtanga Yoga & Ayurveda Retreat",
-   "image": "/ahv/assets/img/AHV-Ashtanga-Intro.jpg",
+   "image": "/ahv/assets/img/AHV-Ashtanga-Intro.webp",
    "width": 560,
    "height": 280,
    "alt": "Yoga forward fold on a grassy lawn",
@@ -69,7 +69,7 @@ window.AHV_ASHTANGA = {
     }
    ],
    "imageAfter": {
-    "image": "/ahv/assets/img/AHV-Ashtanga-Panels.jpg",
+    "image": "/ahv/assets/img/AHV-Ashtanga-Panels.webp",
     "width": 560,
     "height": 200,
     "alt": "Three-panel image of yoga practice and head massage",

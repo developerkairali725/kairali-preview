@@ -40,7 +40,7 @@ window.AHV_CLASSIC = {
   {
    "order": 1,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G01.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G01.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a pink Classic Villa bedroom",
@@ -49,7 +49,7 @@ window.AHV_CLASSIC = {
   {
    "order": 2,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G02.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G02.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa desk and seating area",
@@ -58,7 +58,7 @@ window.AHV_CLASSIC = {
   {
    "order": 3,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G03.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G03.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds beside bedroom windows",
@@ -67,7 +67,7 @@ window.AHV_CLASSIC = {
   {
    "order": 4,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G04.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G04.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bathroom with glass shower",
@@ -76,7 +76,7 @@ window.AHV_CLASSIC = {
   {
    "order": 5,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G05.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G05.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bathroom shower and basin",
@@ -85,7 +85,7 @@ window.AHV_CLASSIC = {
   {
    "order": 6,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G06.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G06.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Green Classic Villa bedroom",
@@ -94,7 +94,7 @@ window.AHV_CLASSIC = {
   {
    "order": 7,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G07.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G07.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bedroom opening onto the garden",
@@ -103,7 +103,7 @@ window.AHV_CLASSIC = {
   {
    "order": 8,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G08.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G08.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bedroom and seating area",
@@ -112,7 +112,7 @@ window.AHV_CLASSIC = {
   {
    "order": 9,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G09.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G09.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bedroom and chairs beside the garden doorway",
@@ -121,7 +121,7 @@ window.AHV_CLASSIC = {
   {
    "order": 10,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G10.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G10.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bathroom basin and shower",
@@ -130,7 +130,7 @@ window.AHV_CLASSIC = {
   {
    "order": 11,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G11.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G11.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Two chairs beside the Classic Villa doorway",
@@ -139,7 +139,7 @@ window.AHV_CLASSIC = {
   {
    "order": 12,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G12.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G12.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a Classic Villa bedroom",
@@ -148,7 +148,7 @@ window.AHV_CLASSIC = {
   {
    "order": 13,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G13.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G13.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a brick-walled Classic Villa",
@@ -157,7 +157,7 @@ window.AHV_CLASSIC = {
   {
    "order": 14,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G14.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G14.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bedroom with chairs and garden doorway",
@@ -166,7 +166,7 @@ window.AHV_CLASSIC = {
   {
    "order": 15,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Classic-G15.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G15.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa bedroom and seating area",
@@ -175,7 +175,7 @@ window.AHV_CLASSIC = {
   {
    "order": 16,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G16.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G16.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa veranda beside the water channel",
@@ -184,7 +184,7 @@ window.AHV_CLASSIC = {
   {
    "order": 17,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G17.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G17.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa seen through garden foliage",
@@ -193,7 +193,7 @@ window.AHV_CLASSIC = {
   {
    "order": 18,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G18.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G18.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa beside a garden path",
@@ -202,7 +202,7 @@ window.AHV_CLASSIC = {
   {
    "order": 19,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G19.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G19.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa exterior among palms",
@@ -211,7 +211,7 @@ window.AHV_CLASSIC = {
   {
    "order": 20,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G20.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G20.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villas beside a lawn",
@@ -220,7 +220,7 @@ window.AHV_CLASSIC = {
   {
    "order": 21,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G21.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G21.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa exterior and covered porch",
@@ -229,7 +229,7 @@ window.AHV_CLASSIC = {
   {
    "order": 22,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G22.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G22.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Green-trimmed Classic Villa among palms",
@@ -238,7 +238,7 @@ window.AHV_CLASSIC = {
   {
    "order": 23,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G23.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G23.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa covered veranda",
@@ -247,7 +247,7 @@ window.AHV_CLASSIC = {
   {
    "order": 24,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G24.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G24.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Arched Classic Villa entrance",
@@ -256,7 +256,7 @@ window.AHV_CLASSIC = {
   {
    "order": 25,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G25.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G25.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa exterior surrounded by palms",
@@ -265,7 +265,7 @@ window.AHV_CLASSIC = {
   {
    "order": 26,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G26.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G26.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa roof and garden path",
@@ -274,7 +274,7 @@ window.AHV_CLASSIC = {
   {
    "order": 27,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G27.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G27.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa veranda with wicker chairs",
@@ -283,7 +283,7 @@ window.AHV_CLASSIC = {
   {
    "order": 28,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G28.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G28.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa veranda and open doorway",
@@ -292,7 +292,7 @@ window.AHV_CLASSIC = {
   {
    "order": 29,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G29.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G29.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Wicker chairs on a Classic Villa veranda",
@@ -301,7 +301,7 @@ window.AHV_CLASSIC = {
   {
    "order": 30,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Classic-G30.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-G30.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Classic Villa exterior beside the water channel",
@@ -705,7 +705,7 @@ window.AHV_CLASSIC = {
   {
    "label": "Maharaja Suites",
    "href": "/maharaja-suite/",
-   "image": "/ahv/assets/img/AHV-Classic-Rel-Maharaja.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-Rel-Maharaja.webp",
    "width": 378,
    "height": 335,
    "alt": "Maharaja Suites",
@@ -714,7 +714,7 @@ window.AHV_CLASSIC = {
   {
    "label": "Deluxe Villa",
    "href": "/deluxe-villa/",
-   "image": "/ahv/assets/img/AHV-Classic-Rel-Deluxe.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-Rel-Deluxe.webp",
    "width": 378,
    "height": 335,
    "alt": "Deluxe Villa",
@@ -723,7 +723,7 @@ window.AHV_CLASSIC = {
   {
    "label": "Royal Villa",
    "href": "/royal-villa/",
-   "image": "/ahv/assets/img/AHV-Classic-Rel-Royal.jpg",
+   "image": "/ahv/assets/img/AHV-Classic-Rel-Royal.webp",
    "width": 378,
    "height": 335,
    "alt": "Royal Villa",
@@ -753,7 +753,7 @@ window.AHV_CLASSIC = {
   }
  ],
  "hero": {
-  "image": "/ahv/assets/img/AHV-Classic-Hero.jpg",
+  "image": "/ahv/assets/img/AHV-Classic-Hero.webp",
   "width": 1440,
   "height": 731,
   "alt": "Classic Villa surrounded by palms and garden planting",

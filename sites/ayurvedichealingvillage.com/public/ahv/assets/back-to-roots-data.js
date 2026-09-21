@@ -20,7 +20,7 @@ window.AHV_BACK_TO_ROOTS = {
   }
  ],
  "hero": {
-  "image": "/ahv/assets/img/AHV-BackToRoots-Landscape.png",
+  "image": "/ahv/assets/img/AHV-BackToRoots-Landscape.webp",
   "width": 1440,
   "height": 524,
   "alt": "Green fields and paths among coconut palms",

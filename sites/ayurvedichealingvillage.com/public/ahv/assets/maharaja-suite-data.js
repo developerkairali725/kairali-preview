@@ -68,7 +68,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 1,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G01.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G01.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick-walled suite bedroom",
@@ -77,7 +77,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 2,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G02.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G02.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom with desk and golden floor",
@@ -86,7 +86,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 3,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G03.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G03.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite hallway with a decorative lamp",
@@ -95,7 +95,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 4,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G04.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G04.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom and dressing mirror",
@@ -104,7 +104,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 5,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G05.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G05.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a brick-walled suite",
@@ -113,7 +113,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 6,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G06.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G06.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom overlooking the garden",
@@ -122,7 +122,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 7,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G07.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G07.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick-walled suite bedroom and television",
@@ -131,7 +131,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 8,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G08.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G08.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom and sitting area",
@@ -140,7 +140,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 9,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G09.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G09.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Decorative console and stained-glass mirror",
@@ -149,7 +149,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 10,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G10.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G10.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Mirror and lamp in a suite hallway",
@@ -158,7 +158,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 11,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G11.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G11.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite dining and seating area",
@@ -167,7 +167,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 12,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G12.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G12.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite seating room",
@@ -176,7 +176,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 13,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G13.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G13.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom and dressing area",
@@ -185,7 +185,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 14,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G14.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G14.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom opening onto seating area",
@@ -194,7 +194,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 15,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G15.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G15.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite bedroom and desk",
@@ -203,7 +203,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 16,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G16.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G16.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Maharaja Suite exterior and courtyard",
@@ -212,7 +212,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 17,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G17.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G17.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Garden channel and palms beside the suites",
@@ -221,7 +221,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 18,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G18.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G18.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Maharaja Suite exterior and garden path",
@@ -230,7 +230,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 19,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G19.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G19.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone suite entrance with shaded seating",
@@ -239,7 +239,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 20,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G20.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G20.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suites beside the garden water channel",
@@ -248,7 +248,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 21,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G21.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G21.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Maharaja Suite courtyard and entrance",
@@ -257,7 +257,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 22,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G22.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G22.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick suite entrance and chairs",
@@ -266,7 +266,7 @@ window.AHV_MAHARAJA = {
   {
    "order": 23,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Maharaja-G23.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-G23.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Suite veranda with circular window",
@@ -353,7 +353,7 @@ window.AHV_MAHARAJA = {
   {
    "label": "Classic Villas",
    "href": "/classic-villa/",
-   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Classic.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Classic.webp",
    "width": 378,
    "height": 335,
    "alt": "Classic Villas",
@@ -362,7 +362,7 @@ window.AHV_MAHARAJA = {
   {
    "label": "Deluxe Villas",
    "href": "/deluxe-villa/",
-   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Deluxe.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Deluxe.webp",
    "width": 378,
    "height": 335,
    "alt": "Deluxe Villas",
@@ -371,7 +371,7 @@ window.AHV_MAHARAJA = {
   {
    "label": "Royal Villa",
    "href": "/royal-villa/",
-   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Royal.jpg",
+   "image": "/ahv/assets/img/AHV-Maharaja-Rel-Royal.webp",
    "width": 378,
    "height": 335,
    "alt": "Royal Villa",
@@ -401,7 +401,7 @@ window.AHV_MAHARAJA = {
   }
  ],
  "hero": {
-  "image": "/ahv/assets/img/AHV-Maharaja-G18.jpg",
+  "image": "/ahv/assets/img/AHV-Maharaja-G18.webp",
   "width": 1400,
   "height": 1000,
   "alt": "Maharaja Suite exterior and garden path",

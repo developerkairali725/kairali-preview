@@ -67,7 +67,7 @@ window.AHV_ROYAL = {
   {
    "order": 1,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G01.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G01.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom and dressing mirror",
@@ -76,7 +76,7 @@ window.AHV_ROYAL = {
   {
    "order": 2,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G02.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G02.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom and seating area",
@@ -85,7 +85,7 @@ window.AHV_ROYAL = {
   {
    "order": 3,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G03.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G03.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bathroom basin and mirror",
@@ -94,7 +94,7 @@ window.AHV_ROYAL = {
   {
    "order": 4,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G04.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G04.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a Royal Villa bedroom",
@@ -103,7 +103,7 @@ window.AHV_ROYAL = {
   {
    "order": 5,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G05.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G05.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom with garden doorway",
@@ -112,7 +112,7 @@ window.AHV_ROYAL = {
   {
    "order": 6,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G06.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G06.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom with orange walls",
@@ -121,7 +121,7 @@ window.AHV_ROYAL = {
   {
    "order": 7,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G07.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G07.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom and chairs by the window",
@@ -130,7 +130,7 @@ window.AHV_ROYAL = {
   {
    "order": 8,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G08.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G08.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom and seating area",
@@ -139,7 +139,7 @@ window.AHV_ROYAL = {
   {
    "order": 9,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G09.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G09.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Tea-making counter beside a Royal Villa doorway",
@@ -148,7 +148,7 @@ window.AHV_ROYAL = {
   {
    "order": 10,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G10.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G10.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a Royal Villa bedroom",
@@ -157,7 +157,7 @@ window.AHV_ROYAL = {
   {
    "order": 11,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G11.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G11.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Chairs and table beside a bedroom window",
@@ -166,7 +166,7 @@ window.AHV_ROYAL = {
   {
    "order": 12,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G12.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G12.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bedroom corner with brick walls",
@@ -175,7 +175,7 @@ window.AHV_ROYAL = {
   {
    "order": 13,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G13.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G13.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds and dressing mirror",
@@ -184,7 +184,7 @@ window.AHV_ROYAL = {
   {
    "order": 14,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G14.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G14.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick-walled Royal Villa bedroom",
@@ -193,7 +193,7 @@ window.AHV_ROYAL = {
   {
    "order": 15,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Royal-G15.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G15.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa bathroom with glass shower",
@@ -202,7 +202,7 @@ window.AHV_ROYAL = {
   {
    "order": 16,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G16.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G16.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa entrance beneath green trim",
@@ -211,7 +211,7 @@ window.AHV_ROYAL = {
   {
    "order": 17,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G17.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G17.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Yellow Royal Villa exterior",
@@ -220,7 +220,7 @@ window.AHV_ROYAL = {
   {
    "order": 18,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G18.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G18.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone Royal Villa covered entrance",
@@ -229,7 +229,7 @@ window.AHV_ROYAL = {
   {
    "order": 19,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G19.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G19.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Chairs on a stone Royal Villa veranda",
@@ -238,7 +238,7 @@ window.AHV_ROYAL = {
   {
    "order": 20,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G20.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G20.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone Royal Villa exterior among palms",
@@ -247,7 +247,7 @@ window.AHV_ROYAL = {
   {
    "order": 21,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G21.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G21.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Covered Royal Villa entrance with green trim",
@@ -256,7 +256,7 @@ window.AHV_ROYAL = {
   {
    "order": 22,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G22.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G22.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Wicker chairs on a Royal Villa veranda",
@@ -265,7 +265,7 @@ window.AHV_ROYAL = {
   {
    "order": 23,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G23.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G23.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick arches on a Royal Villa veranda",
@@ -274,7 +274,7 @@ window.AHV_ROYAL = {
   {
    "order": 24,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G24.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G24.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Yellow Royal Villa beside a garden channel",
@@ -283,7 +283,7 @@ window.AHV_ROYAL = {
   {
    "order": 25,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G25.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G25.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Rounded Royal Villa exterior",
@@ -292,7 +292,7 @@ window.AHV_ROYAL = {
   {
    "order": 26,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G26.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G26.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Chairs on a shaded stone villa veranda",
@@ -301,7 +301,7 @@ window.AHV_ROYAL = {
   {
    "order": 27,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G27.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G27.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Rounded stone Royal Villa beside the water channel",
@@ -310,7 +310,7 @@ window.AHV_ROYAL = {
   {
    "order": 28,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G28.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G28.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Blue-trimmed Royal Villa exterior",
@@ -319,7 +319,7 @@ window.AHV_ROYAL = {
   {
    "order": 29,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G29.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G29.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Royal Villa entrance surrounded by palms",
@@ -328,7 +328,7 @@ window.AHV_ROYAL = {
   {
    "order": 30,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Royal-G30.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-G30.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Covered stone villa doorway",
@@ -695,7 +695,7 @@ window.AHV_ROYAL = {
   {
    "label": "Classic Villas",
    "href": "/classic-villa/",
-   "image": "/ahv/assets/img/AHV-Royal-Rel-Classic.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-Rel-Classic.webp",
    "width": 378,
    "height": 335,
    "alt": "Classic Villas",
@@ -704,7 +704,7 @@ window.AHV_ROYAL = {
   {
    "label": "Deluxe Villas",
    "href": "/deluxe-villa/",
-   "image": "/ahv/assets/img/AHV-Royal-Rel-Deluxe.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-Rel-Deluxe.webp",
    "width": 378,
    "height": 335,
    "alt": "Deluxe Villas",
@@ -713,7 +713,7 @@ window.AHV_ROYAL = {
   {
    "label": "Maharaja Suites",
    "href": "/maharaja-suite/",
-   "image": "/ahv/assets/img/AHV-Royal-Rel-Maharaja.jpg",
+   "image": "/ahv/assets/img/AHV-Royal-Rel-Maharaja.webp",
    "width": 378,
    "height": 335,
    "alt": "Maharaja Suites",
@@ -743,7 +743,7 @@ window.AHV_ROYAL = {
   }
  ],
  "hero": {
-  "image": "/ahv/assets/img/AHV-Royal-G29.jpg",
+  "image": "/ahv/assets/img/AHV-Royal-G29.webp",
   "width": 1400,
   "height": 1000,
   "alt": "Royal Villa entrance surrounded by palms",

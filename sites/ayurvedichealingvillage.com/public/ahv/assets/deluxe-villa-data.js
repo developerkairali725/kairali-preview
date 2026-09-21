@@ -42,7 +42,7 @@ window.AHV_DELUXE = {
   {
    "order": 1,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G01.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G01.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa bathroom with glass shower and basin",
@@ -51,7 +51,7 @@ window.AHV_DELUXE = {
   {
    "order": 2,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G02.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G02.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a pink Deluxe Villa bedroom",
@@ -60,7 +60,7 @@ window.AHV_DELUXE = {
   {
    "order": 3,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G03.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G03.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Single bed and wardrobe in a Deluxe Villa bedroom",
@@ -69,7 +69,7 @@ window.AHV_DELUXE = {
   {
    "order": 4,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G04.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G04.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa bathroom with shower and basin",
@@ -78,7 +78,7 @@ window.AHV_DELUXE = {
   {
    "order": 5,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G05.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G05.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds beneath a brick arch in a stone-walled Deluxe Villa",
@@ -87,7 +87,7 @@ window.AHV_DELUXE = {
   {
    "order": 6,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G06.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G06.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Dressing area through an interior arch",
@@ -96,7 +96,7 @@ window.AHV_DELUXE = {
   {
    "order": 7,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G07.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G07.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa bedroom and seating area",
@@ -105,7 +105,7 @@ window.AHV_DELUXE = {
   {
    "order": 8,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G08.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G08.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa bathroom with enclosed shower",
@@ -114,7 +114,7 @@ window.AHV_DELUXE = {
   {
    "order": 9,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G09.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G09.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa bathroom shower and basin",
@@ -123,7 +123,7 @@ window.AHV_DELUXE = {
   {
    "order": 10,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G10.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G10.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds beside a garden doorway",
@@ -132,7 +132,7 @@ window.AHV_DELUXE = {
   {
    "order": 11,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G11.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G11.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa desk and dressing mirror",
@@ -141,7 +141,7 @@ window.AHV_DELUXE = {
   {
    "order": 12,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G12.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G12.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Blue Deluxe Villa bedroom overlooking the garden",
@@ -150,7 +150,7 @@ window.AHV_DELUXE = {
   {
    "order": 13,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G13.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G13.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Green Deluxe Villa bedroom and entrance",
@@ -159,7 +159,7 @@ window.AHV_DELUXE = {
   {
    "order": 14,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G14.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G14.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Twin beds in a Deluxe Villa bedroom",
@@ -168,7 +168,7 @@ window.AHV_DELUXE = {
   {
    "order": 15,
    "group": "Interior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G15.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G15.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Blue Deluxe Villa bedroom beside a garden doorway",
@@ -177,7 +177,7 @@ window.AHV_DELUXE = {
   {
    "order": 16,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G16.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G16.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick Deluxe Villa entrance among palms",
@@ -186,7 +186,7 @@ window.AHV_DELUXE = {
   {
    "order": 17,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G17.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G17.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Rounded Deluxe Villa beside the garden channel",
@@ -195,7 +195,7 @@ window.AHV_DELUXE = {
   {
    "order": 18,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G18.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G18.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick Deluxe Villa exterior and covered entrance",
@@ -204,7 +204,7 @@ window.AHV_DELUXE = {
   {
    "order": 19,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G19.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G19.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Garden path beside a rounded Deluxe Villa",
@@ -213,7 +213,7 @@ window.AHV_DELUXE = {
   {
    "order": 20,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G20.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G20.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa veranda beside the water channel",
@@ -222,7 +222,7 @@ window.AHV_DELUXE = {
   {
    "order": 21,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G21.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G21.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa exterior along the garden channel",
@@ -231,7 +231,7 @@ window.AHV_DELUXE = {
   {
    "order": 22,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G22.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G22.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Covered veranda and doorway of a Deluxe Villa",
@@ -240,7 +240,7 @@ window.AHV_DELUXE = {
   {
    "order": 23,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G23.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G23.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone Deluxe Villa exterior among palms",
@@ -249,7 +249,7 @@ window.AHV_DELUXE = {
   {
    "order": 24,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G24.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G24.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone Deluxe Villa with shaded veranda",
@@ -258,7 +258,7 @@ window.AHV_DELUXE = {
   {
    "order": 25,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G25.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G25.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Brick Deluxe Villa and shaded entrance",
@@ -267,7 +267,7 @@ window.AHV_DELUXE = {
   {
    "order": 26,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G26.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G26.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villa entrance beneath a tiled roof",
@@ -276,7 +276,7 @@ window.AHV_DELUXE = {
   {
    "order": 27,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G27.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G27.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villas beside a curved water channel",
@@ -285,7 +285,7 @@ window.AHV_DELUXE = {
   {
    "order": 28,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G28.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G28.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Deluxe Villas beneath tall palms",
@@ -294,7 +294,7 @@ window.AHV_DELUXE = {
   {
    "order": 29,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G29.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G29.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Stone villa doorway with room 208 plaque",
@@ -303,7 +303,7 @@ window.AHV_DELUXE = {
   {
    "order": 30,
    "group": "Exterior",
-   "image": "/ahv/assets/img/AHV-Deluxe-G30.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-G30.webp",
    "width": 1400,
    "height": 1000,
    "alt": "Green-trimmed Deluxe Villa exterior",
@@ -634,7 +634,7 @@ window.AHV_DELUXE = {
   {
    "label": "Classic Villa",
    "href": "/classic-villa/",
-   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Classic.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Classic.webp",
    "width": 378,
    "height": 335,
    "alt": "Classic Villa"
@@ -642,7 +642,7 @@ window.AHV_DELUXE = {
   {
    "label": "Maharaja Suites",
    "href": "/maharaja-suite/",
-   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Maharaja.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Maharaja.webp",
    "width": 378,
    "height": 335,
    "alt": "Maharaja Suites"
@@ -650,7 +650,7 @@ window.AHV_DELUXE = {
   {
    "label": "Royal Villa",
    "href": "/royal-villa/",
-   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Royal.jpg",
+   "image": "/ahv/assets/img/AHV-Deluxe-Rel-Royal.webp",
    "width": 378,
    "height": 335,
    "alt": "Royal Villa"
@@ -679,7 +679,7 @@ window.AHV_DELUXE = {
   }
  ],
  "hero": {
-  "image": "/ahv/assets/img/AHV-Deluxe-G17.jpg",
+  "image": "/ahv/assets/img/AHV-Deluxe-G17.webp",
   "width": 1400,
   "height": 1000,
   "alt": "Rounded Deluxe Villa beside the garden channel"

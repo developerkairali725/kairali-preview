@@ -12,8 +12,8 @@ window.AHV_AYURYOGA = {
     { path: "/ayuryoga/", label: "Ayuryoga" }
   ],
   images: {
-    lead: { image: "/ahv/assets/img/AHV-Ayuryoga-01.png", width: 1440, height: 524, alt: "Palm trees and fields seen from above.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png", sha256: "ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd" },
-    description: { image: "/ahv/assets/img/AHV-Ayuryoga-02.jpg", width: 264, height: 300, alt: "A person practising yoga outdoors beside cottages.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/ayuryoga-yoga.jpg", sha256: "f212e6a487a06b432f610a39ecdcda5d97793fc90de75e65b232801bc20f03c1" }
+    lead: { image: "/ahv/assets/img/AHV-Ayuryoga-01.webp", width: 1440, height: 524, alt: "Palm trees and fields seen from above.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png", sha256: "ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd" },
+    description: { image: "/ahv/assets/img/AHV-Ayuryoga-02.webp", width: 264, height: 300, alt: "A person practising yoga outdoors beside cottages.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/ayuryoga-yoga.jpg", sha256: "f212e6a487a06b432f610a39ecdcda5d97793fc90de75e65b232801bc20f03c1" }
   },
   description: {
     heading: "Kairali’s Ayurvedic Healing Village in God’s Own Country Kerala",

@@ -5,7 +5,7 @@ window.AHV_MINDFULNESS = {
  "historicalNotice": "This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.",
  "sourceHeadingLabel": "Historical retreat description",
  "hero": {
-  "image": "/ahv/assets/img/AHV-Mindfulness-Hero.jpg",
+  "image": "/ahv/assets/img/AHV-Mindfulness-Hero.webp",
   "width": 772,
   "height": 289,
   "alt": "Ayurvedic treatment with herbal powder",
@@ -28,7 +28,7 @@ window.AHV_MINDFULNESS = {
     "The Retreat is engaging, and each hour at Kairali will guarantee that the body and mind are in harmony. A usual day would include yoga, expert workshops, various Ayurveda massages, music, and evaluations. Organic vegetarian cuisine, specially crafted by the Ayurveda centre, will enhance the transformative experience.",
     "Santhosh Babu, the founder and managing director of Organisation Development Alternatives, assists organizations in transforming via leadership development and cultural change. Santhosh Babu, the writer of India’s inaugural book on coaching, is also a columnist and author. He instructs healers in hypnosis and is recognized for his hypnosis demonstrations at IIT Delhi, Mumbai, IIM Ahmedabad, and IIM Calcutta."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Poster.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Poster.webp",
    "width": 300,
    "height": 250,
    "alt": "Historical Mindfulness Retreat poster: June 26–30, 2014, four nights and five days",
@@ -43,7 +43,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "Celebrity Coach Santhosh Babu invites you to join him on a 5-day Mindfulness Journey with experts who will share their knowledge of Tibetan Yoga, Vibrational Healing, Integrated Transpersonal work, Pranic Healing Tools and Holotropic Breathwork for the first time in India. The retreat is designed as an all-inclusive, deeply engaging experience that brings you in touch with yourself and others who are on their own journey of Mindfulness."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Santhosh-Babu.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Santhosh-Babu.webp",
    "width": 140,
    "height": 121,
    "alt": "Santhosh Babu — source retreat portrait",
@@ -55,7 +55,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "RAAGESHWARI is an actress, singer, Tibetan Yoga expert and Motivational Speaker. She has a fan following that cuts across all age groups. Struck with Bell’s Palsy in 2000 made her turn a corner and nose-dive into Mind-Power. A student of Jack Canfield and having worked on a motivational affirmation CD with Louise Hay, Raageshwari believes that for any transformation the mind, body, heart and soul must be in synergy. Hence, she creates an ambience in her seminars conducive to joy and positivity that impacts you on a visual, auditory, kinesthetic and spiritual level. Raageshwari is teaching the Power of Affirmations and Tibetan Yoga."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Raageshwari.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Raageshwari.webp",
    "width": 140,
    "height": 121,
    "alt": "Raageshwari — source retreat portrait",
@@ -67,7 +67,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "SHARANYA NAIK is a school teacher, practitioner and facilitator of Holotropic Breathwork, – an unusual, but highly effective, approach to healing the mind, body and spirit. The practice provides a safe and caring container for deep exploration in non-ordinary states of consciousness. Participants use their breath to access these non-ordinary states and, in doing so, surrender to a natural process of spiritual and psychological healing. This healing takes many, often mysterious forms and becomes a collaboration of mind, body, and spirit. Sharanya conducts workshops in Maryland, New Jersey, and New York City and is co-editor of The Inner Door, a journal for Holotropic Breathwork practitioners. Sharanya will teach Holotropic Breathwork to seekers for the first time in India."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Sharanya-Naik.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Sharanya-Naik.webp",
    "width": 140,
    "height": 121,
    "alt": "Sharanya Naik — source retreat portrait",
@@ -79,7 +79,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "ANITA PREM ANAND is a Kundalini Yoga Teacher, Integrative, Transpersonal Therapist. She is a powerful Holistic Therapist who has helped hundreds of people heal themselves of debilitating emotional and physical conditions for over a decade. Anita has a rich, varied background – A Transpersonal and Psychodynamic counselor and Senior Accredited Journey Practitioner (Brandon Bays), an Art Therapist and Hatha and Kundalini Yoga teacher with over 15 years of International teaching experience, conducting workshops worldwide. Anita uses creativity and intuition, encouraging one to feel inwardly to the inner guide and wisdom of the body. The principle philosophy behind Anita’s work is the path of direct experience. Anita will teach elements of ‘The Journey’."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Anita-Prem-Anand.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Anita-Prem-Anand.webp",
    "width": 140,
    "height": 121,
    "alt": "Anita Prem Anand — source retreat portrait",
@@ -91,7 +91,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "SHRUTI PODDAR is an internationally renowned musician, educationist, healer, wellness expert, and leading practitioner of traditional knowledge systems. The pioneer of the vibrational and sound healing ecosystem called Nada Vibronics, Shruti works with indigenous knowledge and sonic systems for healing and curing various health conditions. Her audio CDs, healing methods and music are now used for curing various health conditions internationally. Shruti uses the power of music, seed sounds, visualization, breath and the five elemental states (pancha-kosha) in aiding changes at the levels of organ, tissue and cell, and to make us peaceful, vibrant and energetically rejuvenated in everyday life."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Shruti-Poddar.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Shruti-Poddar.webp",
    "width": 140,
    "height": 121,
    "alt": "Shruti Poddar — source retreat portrait",
@@ -103,7 +103,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "Shivani Hariharan holds a postgraduate degree in finance from Melbourne University. She has been in the field of energy well-being and a life coach for over ten years. She is a certified trainer and an exceptional healer. Her understanding and experience in human emotions and psychology, along with a highly intelligent and practical approach to solving problems, make her an excellent mentor. They will be teaching a specially designed Pranic Healing module that aids mindfulness."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Shivani-Hariharan.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Shivani-Hariharan.webp",
    "width": 140,
    "height": 121,
    "alt": "Shivani Hariharan — source retreat portrait",
@@ -115,7 +115,7 @@ window.AHV_MINDFULNESS = {
    "paragraphs": [
     "Jewellery designer Nidhi Jain has been trained by the pioneers of pranic healing and is now a trainer at the World Pranic Healing Foundation, in India. She has been practicing and leading workshops for over 15 years all over India and abroad. Her warm, nurturing, good-humoured style makes learning easy and fun."
    ],
-   "image": "/ahv/assets/img/AHV-Mindfulness-Nidhi-Jain.jpg",
+   "image": "/ahv/assets/img/AHV-Mindfulness-Nidhi-Jain.webp",
    "width": 140,
    "height": 121,
    "alt": "Nidhi Jain — source retreat portrait",

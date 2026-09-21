@@ -12,8 +12,8 @@ window.AHV_YALA = {
     { path: "/ayurvedic-new-year-yala-2018/", label: "Ayurvedic New Year: Yala 2018!" }
   ],
   images: {
-    lead: { image: "/ahv/assets/img/AHV-Yala-01.png", width: 1440, height: 524, alt: "Palm trees and fields seen from above.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png", sha256: "ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd" },
-    yoga: { image: "/ahv/assets/img/AHV-Yala-03.jpg", width: 834, height: 100, alt: "Two photographs of yoga practice outdoors beside cottages.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/33.jpg", sha256: "6f896b50191cfdb359f29a34f5258968fd65b49fcb0272f478c2f82861e1d49f" }
+    lead: { image: "/ahv/assets/img/AHV-Yala-01.webp", width: 1440, height: 524, alt: "Palm trees and fields seen from above.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png", sha256: "ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd" },
+    yoga: { image: "/ahv/assets/img/AHV-Yala-03.webp", width: 834, height: 100, alt: "Two photographs of yoga practice outdoors beside cottages.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/33.jpg", sha256: "6f896b50191cfdb359f29a34f5258968fd65b49fcb0272f478c2f82861e1d49f" }
   },
   // Source emphasis (YALA-INTRO-STRUCTURE.json): paragraph 6 = <em>, paragraph 8 = <strong>NOTE:</strong> + rest.
   description: {

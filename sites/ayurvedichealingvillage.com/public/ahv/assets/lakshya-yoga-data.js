@@ -13,11 +13,11 @@ window.AHV_LAKSHYA = {
     { path: "/lakshya-yoga/", label: "Lakshya Yoga" }
   ],
   images: {
-    lead: { image: "/ahv/assets/img/AHV-Lakshya-01.jpg", width: 772, height: 289, alt: "An Ayurvedic treatment with a herbal preparation.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/09/TREATMENTS-24-min.jpg" },
-    description: { image: "/ahv/assets/img/AHV-Lakshya-02.jpg", width: 560, height: 280, alt: "A person practising yoga beside a pond and cottages.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/yoga-ayurveda-retreat-july.jpg" },
-    collage: { image: "/ahv/assets/img/AHV-Lakshya-03.jpg", width: 1024, height: 372, alt: "A collage of cottages, yoga practice and an Ayurvedic treatment.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/lakshyayoga-kairaliyoga-2016-1024x372.jpg" },
-    teacher: { image: "/ahv/assets/img/AHV-Lakshya-04.jpg", width: 150, height: 150, alt: "A woman holding her hands together.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/lakshya.jpg" },
-    logo: { image: "/ahv/assets/img/AHV-Lakshya-05.png", width: 105, height: 100, alt: "Lakshya Yoga logo.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/lakshyayoga-logo.png" }
+    lead: { image: "/ahv/assets/img/AHV-Lakshya-01.webp", width: 772, height: 289, alt: "An Ayurvedic treatment with a herbal preparation.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/09/TREATMENTS-24-min.jpg" },
+    description: { image: "/ahv/assets/img/AHV-Lakshya-02.webp", width: 560, height: 280, alt: "A person practising yoga beside a pond and cottages.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/yoga-ayurveda-retreat-july.jpg" },
+    collage: { image: "/ahv/assets/img/AHV-Lakshya-03.webp", width: 1024, height: 372, alt: "A collage of cottages, yoga practice and an Ayurvedic treatment.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/lakshyayoga-kairaliyoga-2016-1024x372.jpg" },
+    teacher: { image: "/ahv/assets/img/AHV-Lakshya-04.webp", width: 150, height: 150, alt: "A woman holding her hands together.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/lakshya.jpg" },
+    logo: { image: "/ahv/assets/img/AHV-Lakshya-05.webp", width: 105, height: 100, alt: "Lakshya Yoga logo.", legacyUrl: "https://www.ayurvedichealingvillage.com/images/lakshyayoga-logo.png" }
   },
   description: {
     heading: "Historical retreat description",
