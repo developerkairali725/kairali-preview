@@ -52,3 +52,27 @@ after its self-check completed; mobile is required by the standing brief, so no 
 Check ran to completion, uninterrupted. The 341px eyebrow→H1 void would have shipped as a visible
 layout defect; the `{{ p.src }}` literal would have produced a console error per thumbnail — both
 are the class of thing the owner's "let it finish its checks" rule exists to catch.
+
+## Mobile — its closing comment, verbatim (after the go-ahead)
+
+> Separate layout, not a squeeze: stacked hero (breadcrumb → eyebrow → H1 32px → standfirst),
+> full-bleed hero band, sticky narrow header. The collection is a single full-width column served
+> in batches of 12 with a 52px "Show 12 more" button and a live "Showing 12 of 13 photographs"
+> line; each photograph carries an "n / total" ordinal and a tap-to-enlarge affordance. Two-up was
+> rejected — at 390px a 2.24:1 photograph in a half cell is 76px tall. Same viewer,
+> keyboard-complete (Esc, ← / →, trapped Tab, live counter), and it navigates the whole collection
+> including photographs outside the current batch; closing returns focus to the thumbnail, or to
+> "Show more" if that photograph isn't rendered yet. First two eager, rest lazy. Checked at 360px:
+> nothing scrolls sideways.
+>
+> Where mobile strains: at 6 photographs the batching never appears and the fixed closing block
+> becomes a third of the page; at 66 it stays light but the ordinal line is the only wayfinding, so
+> past ~100 it would need a jump-to-index.
+
+Files now: `AHV Template Photo Collections Desktop.dc.html`, `…Mobile.dc.html`,
+`notes/photo-collections-template-page.md` (updated with mobile). Tweaks: `route` (8 routes),
+`rowHeight` (desktop, 230px), `batchSize` (mobile, 12).
+
+**For apply:** the 6-photo routes (`/product-gallery/`, `/retreats-gallery/` at 5–6) will show the
+closing block as ~⅓ of the mobile page — the tool's own note; a decision for the owner at apply
+QA, not a defect in the template.
