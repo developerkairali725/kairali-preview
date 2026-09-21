@@ -1723,3 +1723,13 @@ Design ported it verbatim, correctly. It needs a one-paragraph rewrite in regist
 "patient care team"), and the 44 verbatim answers need a banned-string pass before wiring. Not
 asked now, per instruction; recorded for apply.
 
+## Q-AHV-DESIGN-EXPORT-SIZE — Claude Design project export failing at >1.2 GB (2026-09-22 IST)
+
+From U-2 onward, every Project-archive and Standalone export returns "ZIP download failed — please
+try again" (four attempts). The project bundles the full photo library, so each archive is >1.2 GB
+and grows per session. The designs are intact in the project; only the download is blocked. Two
+ways through, either is the owner's: (a) prune the photo library from the Design project (every
+image is already in the site repo under public/ahv) so the archive shrinks; or (b) export from the
+app on the owner's machine. Generation continues meanwhile; the agent re-attempts one export after
+item 18. Not asked now, per instruction.
+

@@ -52,3 +52,16 @@ apply before wiring.
 ## Export status
 Project-archive export failed twice ("ZIP download failed — please try again" toast) — the archive
 is now >1.2 GB. Files not yet downloaded; retrying, with per-file Standalone export as fallback.
+
+## Export — FAILED four times (2026-09-22, ~01:00–01:20 IST); files remain in the project
+
+"ZIP download failed — please try again" on three Project-archive attempts and one Standalone
+attempt. The archive is >1.2 GB (the project bundles the whole photo library) and has grown with
+every session; earlier exports (T17, T12, T3, T2, T18, U-1) succeeded at 1.2 GB, so this is a
+size/timeout threshold, not a design fault. The two U-2 files, its data file and its notes are
+intact in the Claude Design project (`AHV Page FAQs and Downloads Desktop/Mobile.dc.html`,
+`notes/faqs-downloads-page.md`). **Not lost; not yet on disk.** Its comments are verbatim above.
+
+Retry plan: one archive export after all remaining sessions (12–18) finish, or the owner exports
+from the app; if it still fails, prune the photo library from the project (the images are already
+in the site repo) and export again.

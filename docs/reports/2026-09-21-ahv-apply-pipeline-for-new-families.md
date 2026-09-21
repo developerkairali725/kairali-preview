@@ -46,3 +46,12 @@ For each family: download desktop + mobile `.dc.html` and the data/render JS Cla
 → read its comments/strain notes → place in package → repoint the family's routes in `routes.json`
 → re-run importer → re-run the repair chain → prerender the family's routes → build → verify in a
 browser at 1440 and 390 (zero console errors, zero failed requests, register lock, motifs) → commit.
+
+## Export note (2026-09-22)
+
+Project-archive export from Claude Design succeeded for T17, T12, T3, T2, T18 and U-1 (each ~1.2 GB,
+3–4 min to land), then began failing at U-2 ("ZIP download failed") on both archive and standalone
+routes. Designs from U-2 onward remain in the project until one of: a single export after item 18;
+the owner exporting from the app; or pruning the bundled photo library (already in the repo) so
+the archive shrinks. Apply for those families waits on that download; their comments and notes
+are already recorded verbatim in each family folder's NOTES.md.
