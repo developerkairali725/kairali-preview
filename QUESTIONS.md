@@ -1609,3 +1609,23 @@ manifest — and I can generate it and report the ones that do not match rather 
 DE/FR properly. The numbers above say that is a product decision about serving German and French
 patients, not an SEO rescue — there is no ranking value to protect.
 
+**ANSWERED 2026-09-21, Abilash:** *"no — once we freeze english in all ways we translate the
+foreign languages."* So **no 301s**. The 354 URLs are not redirected away; they are rebuilt in DE
+and FR after the English freeze, which is exactly the precondition the parked translation plan
+already states (BACKLOG 2026-09-16: *"HARD PRECONDITION: the EN clinical language lock must close
+FIRST — translating before it means every fix lands three times"*). The redirect-mapping work is
+CANCELLED, not deferred.
+
+**The one consequence worth stating once, because it changes the flip order:** the flip and the
+translation are now coupled. Either
+
+- the flip waits for DE/FR, and the whole 594-URL set moves together; or
+- the flip happens first and those 354 URLs 404 until the translation lands — which costs 0 clicks
+  and 22 impressions by the measurement above, but does put 354 soft-404s into Search Console for
+  however long the gap lasts.
+
+Both are defensible and this entry does not need re-answering to proceed: the English work
+continues either way, and nothing in the EN lane depends on it. It is recorded so the flip-order
+decision is made deliberately rather than discovered on the day.
+
+
