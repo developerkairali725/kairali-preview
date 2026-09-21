@@ -73,7 +73,15 @@ const walk = (d, out = []) => {
 
 let fixed = 0;
 const touched = [];
-for (const p of walk(join(SITE, "public/ahv"))) {
+// THIRD PASS (21 Sep 2026). This loop walked public/ahv only, so two instances
+// in a prerender snapshot survived every "0 remaining" report: /offers/new/
+// carries the OLD SITE's footer ("(c) Kairali Ayurvedic Group Since 1908."),
+// not the design's, because it is a legacy duplicate page. It 301s at flip and
+// so never serves - but a defect that only survives because a redirect hides it
+// is still in the repo, and the next person to reconsider that redirect inherits
+// it. The prerender tree is now rewritten too, not merely inspected below.
+const GROUP_TREES = ["public/ahv", "english-candidate/prerender"];
+for (const p of GROUP_TREES.flatMap((t) => walk(join(SITE, t)))) {
   const before = readFileSync(p, "utf8");
   if (!GROUP_1908.test(before)) { GROUP_1908.lastIndex = 0; continue; }
   GROUP_1908.lastIndex = 0;

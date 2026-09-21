@@ -39,10 +39,30 @@ import { fileURLToPath } from "node:url";
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DRY = process.argv.includes("--dry");
-const TREES = ["public/ahv/assets", "public/ahv/views"];
+const TREES = ["public/ahv/assets", "public/ahv/views", "english-candidate/prerender"];
 
-/** No period, no surname — and never inside an already-correct full form. */
-const WRONG = /Dr Deepu(?! John)/g;
+/**
+ * No period, no surname — and never inside an already-correct full form.
+ *
+ * SECOND PASS (21 Sep 2026). The first version matched a single space and
+ * reported "0 defective spellings survive", which was true of the shape it
+ * looked for and false of the page. The live copy wraps the byline mid-name:
+ *
+ *   ... distintive advantage of having Dr
+ *                                       Deepu as an experienced doctor ...
+ *
+ * so the defect sat behind a line break — a real newline in the prerender
+ * snapshot, the two-character escape \n inside the JSON payloads. Rendered, a
+ * reader sees "Dr Deepu", the truncation the rulebook forbids on a medical
+ * byline. The separator class below covers both spellings, and the prerender
+ * tree is now scanned because that is where two of them were hiding.
+ *
+ * Deliberately NOT matched: karDr.-Deepu-John.webp (a live asset filename whose
+ * bytes are provenance, and which already carries the full name) — "Dr." there
+ * has its period, and "-John" follows.
+ */
+// banned-string-allow: deepu-name-conflation — this line IS the defect pattern.
+const WRONG = /Dr(?!\.)(?:\\n|\s)+Deepu(?! John)(?!-John)/g;
 const RIGHT = "Dr. Deepu John";
 
 let fixed = 0, files = 0;
@@ -58,8 +78,8 @@ for (const rel of TREES) {
     if (!n) continue;
     const after = before.replace(WRONG, RIGHT);
     // Postcondition: the correct form must only ever increase, never decrease.
-    const wasOk = (before.match(/Dr\. Deepu John/g) ?? []).length;
-    const nowOk = (after.match(/Dr\. Deepu John/g) ?? []).length;
+    const wasOk = (before.match(/Dr\. Deepu John/g) ?? []).length; // banned-string-allow: deepu-name-conflation
+    const nowOk = (after.match(/Dr\. Deepu John/g) ?? []).length; // banned-string-allow: deepu-name-conflation
     if (nowOk !== wasOk + n) {
       console.error(`FAIL — ${name}: expected ${wasOk + n} correct forms after the fix, got ${nowOk}.`);
       process.exit(1);
@@ -83,6 +103,6 @@ if (!DRY && left) { console.error(`FAIL — ${left} defective spelling(s) surviv
 
 console.log(`${DRY ? "[dry] " : ""}physician name: ${fixed} occurrence(s) corrected across ${files} file(s)`);
 for (const l of lines) console.log(l);
-console.log(`\nremaining "Dr Deepu" without the surname: ${left}`);
+console.log(`\nremaining truncated physician bylines: ${left}`);
 console.log(`Left alone on purpose: the live copy's own misspelling "distintive", and the`);
-console.log(`  karDr.-Deepu-John.webp filename, which already carries the full name.`);
+console.log(`  legacy asset filename, which already carries the full name.`);
