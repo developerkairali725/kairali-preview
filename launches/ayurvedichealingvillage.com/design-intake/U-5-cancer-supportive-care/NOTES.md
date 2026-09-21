@@ -45,3 +45,42 @@ Edited the desktop file. Toggles exposed: showToConfirm, showTariff, showWhereWe
 Reply sent after its check completed: approved; keep the seven images as labelled placeholders
 (no drawn maps/grounds plan — the real record assets go in at apply); build 390px mobile with the
 physician-first panel directly under the hero; strain note; run checks.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~02:25 IST)
+
+> Mobile is up — AHV Page Cancer Supportive Care Mobile.dc.html, 390px, genuinely re-laid out rather
+> than scaled: physician-first panel sits as a full-bleed white band directly under the hero image
+> with four stacked 60px contact rows; both Daily Activities tables become day-labelled stacked rows
+> (no horizontal scroll, no table squeeze); the tariff table becomes four villa cards with
+> Single/Double rows; inclusions run single-column with hairline rules; highlights become stacked
+> cards; maps stack one per row; closing buttons go full-width.
+>
+> My checks: one h1, heading order h1→h2→h3 with no skips, zero horizontal overflow at 360px
+> (scrollWidth 360), all eight links in the permitted set only, no tap target under 44px. The
+> breadcrumb "Home" link was 18px tall — fixed to a 44px target on both mobile and desktop, which is
+> the only change the desktop file picked up.
+>
+> Mobile strain note: the seven stacked Daily Activities rows plus four tariff cards put the closing
+> CTA roughly 6,800px down, so a family page with materially more schedule or tariff rows pushes the
+> closing block far enough that the physician-first panel at the top is doing all the conversion
+> work — worth a second contact affordance if a page in this family runs much longer.
+
+## Mobile self-check — "Found issues — fixing…", its own fixes (verbatim)
+
+> Both fixed and re-measured on the reloaded page:
+>
+> Each mobile activity list now carries a header band with the source column names — "Day ·
+> Activity · Place" and "Day · Activity · Timing" — styled like the desktop table header, so the
+> second list is unambiguous and the third value in each row has its label. Breadcrumb "Home" is now
+> 44×44 on both files. Still zero overflow at 360px.
+
+Edited 2 files; check ran to completion, uninterrupted. U-5 COMPLETE in the project (2026-09-22
+02:27 IST). Files: `AHV Page Cancer Supportive Care Desktop.dc.html`, `…Mobile.dc.html`,
+`notes/revitalizing-and-strengthening-treatment-for-cancer-patients-page.md`.
+
+Not downloaded — project export still failing ("ZIP download failed"); end-of-run export attempt.
+Apply notes: real record images (hero, two photographs, three maps, grounds plan) replace the seven
+labelled placeholders; the standfirst [TO CONFIRM — physician wording] slot and the source register
+lines wait on Dr. Deepu John (QUESTIONS.md Q-AHV-CANCER-PAGE-CLINICAL-COPY); EUR/USD tariff tabs
+[TO CONFIRM]. Its strain note (second contact affordance on long pages) is an apply-time design
+decision for the owner, logged here, not actioned.
