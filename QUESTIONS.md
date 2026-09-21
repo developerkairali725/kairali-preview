@@ -1525,3 +1525,41 @@ the live canonical is wrong.
 `/offers/olympics-and-paralympics-offer/`, `/retreats-for-everyone/`) — restored, since it is what
 live already asserts. Sitemap now emits 231 rather than 236; routes with no canonical 18 → 14.
 
+## Q-AHV-PRIVACY-MERGE — the three-way merge is assembled and waiting on one read (2026-09-21 20:40:00 IST)
+
+Owner ruling 2026-09-21: *"Merge all content into one and 301 the other two, whichever has better
+older created date or whatever."* Done as far as it can honestly go without a human reading legal
+text: `launches/ayurvedichealingvillage.com/requests/2026-09-21-privacy-merge.md` carries the
+section-by-section plan with the source of every section named, plus all three sources verbatim.
+
+**What the measurement settled.** `/new-privacy-policy/` is very nearly a SUPERSET of
+`/privacy-policy/` — 30 of the latter's 38 long sentences appear in it verbatim — and it is also
+the oldest by creation (2024-12-18) and the newest by modification (2026-07-03), despite the name.
+`/privacy-statement/` shares **zero** sentences with either: an independent document, and the only
+one of the three that names a law (DPDP, GDPR, CCPA) or a retention period (7, 3 and 8 years).
+Nothing contradicts; they cover different ground, so the union is additive.
+
+**Recommended survivor: `/privacy-policy/`** — the conventional URL the footer links, not the
+oldest-created one, because `/new-privacy-policy/` is an unshippable name for a public legal page.
+
+**Three things in the source text that want your eye before it ships:**
+1. the effective date reads **"1 st April, 2017"** while `/privacy-statement/` says "Last Update:
+   February 18, 2025" — the merged page cannot honestly carry both;
+2. the contact block is a **New Delhi** address (D-130, Ambedkar Colony, Mehrauli), not the
+   Palakkad hospital — presumably the registered office, but it is the address a data subject
+   writes to;
+3. the contact email is Cloudflare-obfuscated and decodes to a typo elsewhere on live.
+
+**Why it is prepared rather than shipped:** this is legal text governing patient data on a
+NABH-accredited hospital, and the merged document would cite GDPR, DPDP and CCPA with specific
+retention periods. Everything is assembled, not authored, with provenance — but a person should
+read it before it governs anything.
+
+**The two 301s ship WITH the content, not before it:**
+```
+/privacy-statement/    301 -> /privacy-policy/
+/new-privacy-policy/   301 -> /privacy-policy/
+```
+Redirecting first would point visitors at the 867-word document and lose the only GDPR/DPDP
+text on the site — strictly worse than today.
+
