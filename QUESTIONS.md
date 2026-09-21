@@ -997,6 +997,56 @@ JSON payloads matching many times:
 Nothing above was changed. Items 1, 4 and 5 are clinical- or fact-register changes on a hospital
 site; 2 is a locked fact. All of them want your ruling (and 4/5 want Dr. Deepu John's) first.
 
+---
+
+**UPDATE 2026-09-21 — four of the five are closed; one correction to the list above; one left for
+Dr. Deepu John.** banned-string-lint went 1108 -> 2 on AHV this session. What changed:
+
+- **Item 2 (`career@kairali.com`) — CLOSED by your own ruling.** D-20260915-06 (15 Sep) already
+  answered it: a PERMITTED departmental address on careers/apply routes, with the instruction to
+  "add a scoped documented exception to the locked-facts rule rather than changing the address".
+  Implemented scoped — the address now passes on careers surfaces and still FAILS anywhere else,
+  naming the ruling. Nothing on the jobs page changed.
+- **Item 3 (`infoo@`) — CLOSED, and confirmed a false positive exactly as written above.** The whole
+  `copyChanges` audit trail has moved to `launches/<domain>/evidence/copy-provenance/`, its ruled
+  home under Evidence Law v2. It was being shipped to every visitor's browser and read by nothing.
+  The record survives verbatim, including the note that the LIVE site's encoded mailto decodes to a
+  doubled-o address.
+- **Item 5 (`Deepu` not written in full) — HALF was a REAL defect and is FIXED; half was never one.**
+  The real one: the live copy wraps the byline mid-name, so six pages rendered *"a distintive
+  advantage of having Dr Deepu as an experienced doctor"* — the previous repair matched a single
+  space and missed a line break, then reported zero remaining. Corrected, rendered output verified.
+  The rest were the asset filename `karDr.-Deepu-John.webp`, which already carries the name in full
+  and whose bytes are provenance; the lint now ignores asset paths. **No clinical ruling needed —
+  no claim changed, only a truncation repaired.**
+- **Item 4 (`ask the physician`) — STILL OPEN, and the description above needs one correction.**
+
+**CORRECTION to item 4:** it says the number on that page "is the Priya AI assistant". It is not.
+Measured from the rendered page, `/online-consultation/` carries **+91 9555 156 156**, not Priya's
++91 92898 38797. The page also answers the disclosure question directly, in its own FAQ:
+
+> *"Who will I actually be speaking with? — A registered Ayurvedic physician (BAMS) from our medical
+> team, led by our Chief Physician, Dr. Deepu John."*
+
+and the flagged sentence is about a family member joining a booked consultation: *"you are welcome
+to join the call, help complete the health summary on their behalf, and ask the physician your own
+questions about their care."* On the face of it the claim is true and disclosed.
+
+**Why it is still open anyway, and what is actually being asked.** The consultation is delivered
+*"by WhatsApp video or call"* — the same surface Priya's bot answers on. WhatsApp-as-doctor is the
+exact confusion MR-3 ruled on, so "is this page's disclosure sufficient given the channel overlap"
+is a clinical judgement under HARD GATE 7, not a lint I get to narrow on my own authority.
+
+**Dr. Deepu John, one of:**
+- **(a) The copy is accurate and adequately disclosed** — then the lint gets an anti-probe for this
+  sentence and the gate goes green, no copy change.
+- **(b) The WhatsApp overlap needs an explicit line** (e.g. naming that the booked consultation is a
+  scheduled call with a physician, distinct from the Priya assistant on the same number-space) —
+  tell me the wording and I ship it.
+
+Until then AHV's brand-lint stays RED on these 2 findings. That is the honest state: it is not a
+tooling problem and I have not dressed it as one.
+
 ## Q-AHV-PATH-SPACES - lints silently PASS when the checkout path contains spaces (2026-09-19 16:12:04 IST)
 
 This worktree lives at `/Volumes/Extreme SSD - Blue 2nd/...`. Scripts and tests that derive repo
