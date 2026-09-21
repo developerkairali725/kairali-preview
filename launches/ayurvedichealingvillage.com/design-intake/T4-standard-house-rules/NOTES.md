@@ -51,3 +51,40 @@ the refrigeration slug stays misspelt as the record has it (a slug change is an 
 not made here); /in-house-products/ exists in the record but is not in the owner's family list →
 left out of the rail. guests/journey kept verbatim + flagged (live-copy register; QUESTIONS.md
 apply-time item). Image placeholders stay labelled — record assets go in at apply. Mobile approved.
+
+## Mobile — Claude Design's comment (verbatim, 2026-09-22 ~03:33 IST)
+
+> Desktop rail patched, and I fetched /vegetarian/ so the extreme frame uses its real live copy
+> rather than invented text.
+
+> Mobile is up as two 390px frames on one board: A = /no-preservatives/ (595 words), B =
+> /vegetarian/ (57 words, live copy verbatim — I fetched it so the extreme is real, not simulated).
+> Desktop rail now carries all eight record slugs, both TO CONFIRM chips gone, refrigeration typo
+> retained.
+>
+> How the rail behaves on mobile: it stops being a rail. The sticky white sidebar card becomes a
+> full-bleed sand band that sits after the prose and before the closing block — eight edge-to-edge
+> rows at 58px, hairline-separated, current page filled with a bronze "You are here" label instead
+> of a link. Two other real changes: numbered lists break the Marcellus numeral above the text
+> rather than beside it, and the CTA buttons go full-width stacked.
+>
+> Mobile strain note: at the 57-word extreme the page reads header → hero → one paragraph → rail,
+> so the sibling band becomes the whole second half and the prose reads as an introduction to it;
+> below roughly 40 words the hero band plus rail outweigh the copy about ten to one.
+>
+> My checks: 360px squeeze on both frames — scrollWidth 358 = clientWidth, zero overflowing
+> children, no sideways scroll. 24 links, none under 44×44 after I enlarged the breadcrumb "Home"
+> (was 36×24 — also fixed in the desktop file). Rail rows minimum 58px, all six CTA buttons exactly
+> 52px. One h1 per frame, h1→h2→h3 unskipped. Marcellus and Mulish both resolving, body
+> 18px/30.6px. Banned-word scan of rendered text returns only luxury (award proper noun), journey
+> and guests (live verbatim, flagged) — nothing introduced.
+>
+> One thing still open: the nav label for /alcohol-free/. I render "No Alcohol" with a LABEL TO
+> CONFIRM chip on desktop, since you gave me slugs rather than labels.
+
+Edited 3 files; its check ran clean. Note: the live /vegetarian/ it fetched is 57 words; the
+owner's sheet says 71 — the record copy is the apply-time source either way.
+
+Follow-up sent (record facts): rail labels = the record pages' own H1s verbatim — Alcohol Free,
+No Smoking, No Caffeine, No Preservatives, No Refridgeration, Vegetarian, Organic Farming, Animal
+Husbandry — drop the LABEL TO CONFIRM chip, run checks.
