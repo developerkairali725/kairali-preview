@@ -39,3 +39,32 @@ verbatim and flag them, never to add more.
 
 Check ran to completion, uninterrupted, nothing to fix. Hand-over (verbatim copy + mobile
 go-ahead) sent after it (2026-09-22 IST).
+
+## Closing comment after the hand-over (Claude Design, verbatim — 2026-09-22 01:52 IST)
+
+> Both views done. Copy is verbatim throughout; no drafted prose remains on either view — the
+> standfirst is now the record's own "Defence and Paramilitary Forces Offer" line, and the panel's
+> discount cell carries the confirmed 20% ("on Booking amount only"). Eligibility, proof,
+> how-to-claim, validity and the "Click Here" target stay as [TO CONFIRM].
+>
+> Source-register flags logged in notes/defence-and-paramilitary-forces-page.md: luxury, resorts,
+> spa (×3), guests, retreat/Kerala Retreat — all inside the About Kairali block, plus the source
+> typos (sacfrificing, enchantingly, defense, others lives) kept as-is.
+>
+> Mobile strain note, one line: the layout takes any amount of prose, but if a route's eligibility
+> list grows past roughly six items the discount band and Enquire button get pushed well below the
+> fold, so that band must stay above the eligibility stack.
+>
+> Two things for you: the "Where we are" run was map-image captions in the record — I ported it as
+> body text since this route has no images, and you may prefer it dropped; and the head contract is
+> still outstanding.
+
+Edited 3 files. Its own check ("Checking the design for issues…") ran to completion on both views
+with no fixes. Files in the project: `AHV Page Defence and Paramilitary Forces Desktop.dc.html`,
+`AHV Page Defence and Paramilitary Forces Mobile.dc.html`, `notes/defence-and-paramilitary-forces-
+page.md`. Toggles exposed: showAboutKairali, showWhereWeAre, showDraftMarkers.
+
+Not downloaded — project export still failing ("ZIP download failed"); files stay in the Claude
+Design project until the end-of-run export attempt. Apply notes: the "Where we are" caption-as-body
+question, the source typos and the About-Kairali register words are the owner's to rule at apply
+(QUESTIONS.md Q-AHV-DEFENCE-PAGE-BANNED-WORDS).
