@@ -57,3 +57,17 @@ Desktop AND mobile delivered in one pass (no pause). Tweaks: `route` (4 extremes
 > instead of hanging left. No effect on prose mode, which fills its tracks.
 
 Check ran to completion, uninterrupted. **T3 is complete: desktop + mobile + check.**
+
+## From its notes file (`claude-design-notes.md`) — facts the chat comment did not carry
+
+- **Head contracts are `[TO CONFIRM]` placeholders** (title/description/canonical/robots) — at apply,
+  metadata comes verbatim from each route's existing record, as for T17. Breadcrumbs provisional
+  from URL hierarchy until `sitemap/sitemap-final.json`.
+- **Register check (its own):** no banned word introduced; "World Luxury Award Winner" only inside
+  the fixed closing block as the proper name; stand-in copy uses patient / physician / treatment /
+  programme / Panchakarma / admission / discharge / consultation throughout.
+- **Facts:** only the five supplied; every other number, date, fee or distance is `[TO CONFIRM]`.
+- **Its "Codex asks":** (3) confirm the header/footer swap — the approved `AHV Chrome Header.dc.html`
+  / `AHV Chrome Footer.dc.html` exist in the project and drop in with one line each.
+
+Downloaded 2026-09-21 from `Kairali Healing Village Redesign (5).zip`; files placed beside this note.
