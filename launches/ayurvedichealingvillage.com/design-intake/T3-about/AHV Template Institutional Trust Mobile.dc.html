@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script src="assets/institutional-trust-data.js"></script>
+<style>
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:17px;line-height:1.7}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px}
+h1,h2,h3{font-weight:400;margin:0}
+*{box-sizing:border-box}
+summary::-webkit-details-marker{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+<title>Internships at Kairali | Kairali - The Ayurvedic Healing Village</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://ayurvedichealingvillage.com/internships-at-kairali/">
+<meta name="robots" content="index, follow">
+</helmet>
+<div data-screen-label="Institutional trust + recruitment template — Mobile 390" style="max-width:430px;margin:0 auto;overflow-x:hidden">
+<a href="#main-content" style="position:absolute;left:-9999px;top:8px;z-index:220;background:#5A4420;color:#F7F4EA;padding:12px 18px;border-radius:4px;font-weight:700;font-size:15px" style-focus="left:12px">Skip to main content</a>
+
+<div role="presentation" aria-hidden="true" style="height:72px;background:#D8D5CE;border-bottom:1px solid #C7C3BA;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6E6A62;text-align:center;padding:0 16px">Approved site header</div>
+
+<main id="main-content">
+
+  <p style="display:{{ stressDisplay }};margin:16px 18px 0;border:1px dashed #C1882C;border-radius:4px;padding:11px 13px;font-size:13.5px;line-height:1.5;color:#5A4420;background:rgba(224,215,196,.35)">Template stress test — stand-in copy at the real page’s volume ({{ volumeNote }}). Not live copy.</p>
+
+  <section style="padding:22px 18px 26px">
+    <nav aria-label="Breadcrumb" style="font-size:14.5px;color:#75695A;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <sc-for list="{{ crumbs }}" as="c" hint-placeholder-count="1">
+        <a href="{{ c.url }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;min-height:44px">{{ c.label }}</a>
+        <span aria-hidden="true" style="color:#C9BFA8">/</span>
+      </sc-for>
+      <span aria-current="page" style="color:#2A2118">{{ crumbLast }}</span>
+    </nav>
+    <p style="margin:0 0 10px;font-weight:700;font-size:11.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212;line-height:1.5">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+    <h1 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.16;margin-bottom:16px;text-wrap:balance">{{ h1 }}</h1>
+    <p style="font-size:17px;line-height:1.7;color:#514A3F;margin:0;border-left:3px solid #C1882C;padding-left:16px;text-wrap:pretty">{{ standfirst }}</p>
+    <p style="display:{{ draftDisplay }};margin:10px 0 0 19px;font-weight:700;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#8F6212">Draft — approve or replace</p>
+  </section>
+
+  <div style="background:#E0D7C4">{{ heroEl }}</div>
+
+  <details style="display:{{ indexDisplay }};margin:22px 18px 0;border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF">
+    <summary style="display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;padding:0 16px;cursor:pointer;font-weight:700;font-size:12.5px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;list-style:none">On this page<span aria-hidden="true" style="color:#C1882C;font-size:15px">▾</span></summary>
+    <ul style="list-style:none;margin:0;padding:0 16px 10px;border-top:1px solid #E9E2D3">
+      <sc-for list="{{ railItems }}" as="r" hint-placeholder-count="5">
+        <li style="margin:0;border-bottom:1px solid #F0EADD"><a href="{{ r.href }}" style="display:flex;gap:10px;align-items:baseline;min-height:48px;padding:6px 0;font-size:16px;line-height:1.4;color:#514A3F"><span aria-hidden="true" style="color:#C9BFA8;font-size:12px;font-weight:700">{{ r.n }}</span>{{ r.label }}</a></li>
+      </sc-for>
+    </ul>
+  </details>
+
+  <div style="padding:26px 18px 8px">
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <section id="{{ s.id }}" aria-labelledby="{{ s.hId }}" style="padding:0 0 38px;scroll-margin-top:12px">
+        <p aria-hidden="true" style="margin:0;border-top:1px solid #E9E2D3;padding-top:18px;font-weight:700;font-size:12px;letter-spacing:2px;color:#C1882C">{{ s.n }}</p>
+        <h2 id="{{ s.hId }}" style="font-family:'Marcellus',serif;font-size:27px;line-height:1.22;margin:6px 0 16px;text-wrap:balance">{{ s.h2 }}</h2>
+
+        <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="2">
+          <div style="min-width:0">
+            <p style="display:{{ b.dP }};margin:0 0 18px;font-size:17px;line-height:1.7;text-wrap:pretty">{{ b.text }}</p>
+            <h3 style="display:{{ b.dH3 }};font-family:'Marcellus',serif;font-size:20px;line-height:1.3;margin:22px 0 10px">{{ b.text3 }}</h3>
+            <ul style="display:{{ b.dList }};list-style:none;margin:0 0 22px;padding:0;flex-direction:column;gap:11px">
+              <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="4">
+                <li style="display:flex;gap:11px;align-items:baseline;font-size:17px;line-height:1.6;text-wrap:pretty"><span aria-hidden="true" style="color:{{ it.markColor }};font-weight:700;font-size:{{ it.markSize }};flex:none;min-width:15px">{{ it.mark }}</span>{{ it.text }}</li>
+              </sc-for>
+            </ul>
+            <dl style="display:{{ b.dPairs }};margin:0 0 22px;padding:0;flex-direction:column">
+              <sc-for list="{{ b.pairs }}" as="pr" hint-placeholder-count="4">
+                <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;border-bottom:1px solid #E9E2D3;padding:12px 0">
+                  <dt style="font-size:16px;color:#75695A">{{ pr.k }}</dt>
+                  <dd style="margin:0;font-size:16px;font-weight:700;color:{{ pr.vColor }};text-align:right">{{ pr.v }}</dd>
+                </div>
+              </sc-for>
+            </dl>
+            <p style="display:{{ b.dNote }};margin:0 0 22px;border-left:3px solid #C9BFA8;padding:2px 0 2px 15px;font-size:16px;line-height:1.6;color:#75695A;font-style:italic">{{ b.text }}</p>
+            <figure style="display:{{ b.dFig }};margin:6px 0 24px">
+              <div style="background:#E0D7C4;border-radius:4px;overflow:hidden">{{ b.figEl }}</div>
+              <figcaption style="margin-top:9px;font-size:15.5px;line-height:1.55;color:#75695A">{{ b.caption }}</figcaption>
+            </figure>
+            <ul style="display:{{ b.dGrid }};list-style:none;margin:6px 0 24px;padding:0;flex-direction:column;gap:12px">
+              <sc-for list="{{ b.gridItems }}" as="g" hint-placeholder-count="2">
+                <li style="margin:0;background:#E0D7C4;border-radius:4px;overflow:hidden">{{ g.el }}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </section>
+    </sc-for>
+
+    <section id="plates" aria-labelledby="plates-h" style="display:{{ galleryDisplay }};padding:0 0 10px">
+      <p aria-hidden="true" style="margin:0;border-top:1px solid #E9E2D3;padding-top:18px;font-weight:700;font-size:12px;letter-spacing:2px;color:#C1882C">01</p>
+      <h2 id="plates-h" style="font-family:'Marcellus',serif;font-size:27px;line-height:1.22;margin:6px 0 18px">{{ galleryHeading }}</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <sc-for list="{{ plates }}" as="p" hint-placeholder-count="6">
+          <li style="margin:0;grid-column:span {{ p.mspan }};position:relative;background:#E0D7C4;border-radius:4px;overflow:hidden">{{ p.mel }}<span aria-hidden="true" style="position:absolute;left:9px;bottom:7px;font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:#F7F4EA;text-shadow:0 1px 3px rgba(26,20,12,.85)">{{ p.n }}</span></li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section id="apply" aria-labelledby="apply-h" style="display:{{ applyDisplay }};background:#E0D7C4;border-left:4px solid #C1882C;border-radius:4px;padding:26px 20px;margin-top:6px;scroll-margin-top:12px">
+      <h2 id="apply-h" style="font-family:'Marcellus',serif;font-size:25px;line-height:1.22;margin-bottom:10px">{{ applyHeading }}</h2>
+      <p style="margin:0 0 18px;font-size:16.5px;line-height:1.65;color:#3E372D;text-wrap:pretty">{{ applyIntro }}</p>
+      <p style="margin:0 0 10px;font-weight:700;font-size:11.5px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420">Include with your application</p>
+      <ul style="list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:9px">
+        <sc-for list="{{ applyItems }}" as="a" hint-placeholder-count="4">
+          <li style="display:flex;gap:11px;align-items:baseline;font-size:16.5px;line-height:1.55"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span>{{ a.text }}</li>
+        </sc-for>
+      </ul>
+      <a href="mailto:info@kairali.com" style="display:flex;align-items:center;justify-content:center;height:52px;border-radius:4px;background:#5A4420;color:#F7F4EA;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none" style-hover="background:#402F14;color:#F7F4EA;text-decoration:none">Apply by email</a>
+      <p style="margin:12px 0 0;font-size:16px;text-align:center"><a href="mailto:info@kairali.com" style="color:#006038">info@kairali.com</a></p>
+      <p style="display:{{ applyNoteDisplay }};margin:14px 0 0;font-size:15px;line-height:1.55;color:#5A4420;font-style:italic">{{ applyNote }}</p>
+    </section>
+
+  </div>
+
+  <section aria-labelledby="closing-h" style="margin-top:56px;background:#FFFFFF;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;padding:40px 18px;background-image:repeating-linear-gradient(135deg,rgba(193,136,44,.05) 0 1px,transparent 1px 9px)">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <ul style="list-style:none;margin:0 auto 28px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;text-align:left">
+        <li style="display:flex;gap:9px;align-items:baseline;font-size:15.5px;line-height:1.45;color:#2A2118"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span>NABH Certified Hospital</li>
+        <li style="display:flex;gap:9px;align-items:baseline;font-size:15.5px;line-height:1.45;color:#2A2118"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span>118+ Years Heritage</li>
+        <li style="display:flex;gap:9px;align-items:baseline;font-size:15.5px;line-height:1.45;color:#2A2118"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span>Individualised Programmes</li>
+        <li style="display:flex;gap:9px;align-items:baseline;font-size:15.5px;line-height:1.45;color:#2A2118"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span>World Luxury Award Winner</li>
+      </ul>
+      <h2 id="closing-h" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.25;margin:0 0 12px">Not sure which programme fits?</h2>
+      <p style="font-size:16.5px;line-height:1.7;color:#514A3F;max-width:56ch;margin:0 auto 24px;text-wrap:pretty">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="https://ayurvedichealingvillage.com/online-consultation/" onClick="{{ guard }}" style="display:flex;flex:1 1 100%;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none">Free Doctor Consultation</a>
+        <a href="https://wa.me/919289838797" onClick="{{ guard }}" style="display:flex;flex:1 1 100%;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;border:1.5px solid #006038;color:#006038;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none">WhatsApp Patient Care</a>
+        <a href="https://ayurvedichealingvillage.com/enquiry-form/" onClick="{{ guard }}" style="display:flex;flex:1 1 100%;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;border:1.5px solid #5A4420;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none">Enquire Now</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div role="presentation" aria-hidden="true" style="height:620px;background:#D8D5CE;border-top:1px solid #C7C3BA;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6E6A62">Approved site footer</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390},&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;/internships-at-kairali/&quot;,&quot;options&quot;:[&quot;/internships-at-kairali/&quot;,&quot;/social-responsibilities/&quot;,&quot;/our-story/&quot;,&quot;/careers/&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;},&quot;stressNote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Template stress test&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { document.documentElement.lang = 'en-US'; this.syncHead(); }
+  componentDidUpdate() { this.syncHead(); }
+  route() {
+    const D = window.AHV_INSTITUTIONAL;
+    if (!D) return null;
+    const want = this.props.route || '/internships-at-kairali/';
+    return D.routes.find(r => r.path === want) || D.routes[0];
+  }
+  syncHead() {
+    const R = this.route(); if (!R || this._head === R.path) return;
+    this._head = R.path;
+    document.title = R.head.title;
+    const set = (sel, attr, val) => { const el = document.head.querySelector(sel); if (el) el.setAttribute(attr, val); };
+    set('meta[name="description"]', 'content', R.head.description);
+    set('link[rel="canonical"]', 'href', R.head.canonical);
+    set('meta[name="robots"]', 'content', R.head.robots);
+  }
+  img(src, alt, style) {
+    return React.createElement('img', { src, alt: alt || '', loading: 'lazy', decoding: 'async', style });
+  }
+  renderVals() {
+    const R = this.route();
+    const guard = (e) => { e.preventDefault(); };
+    if (!R) return { guard, sections: [], crumbs: [], railItems: [], plates: [], applyItems: [] };
+
+    const A = 'https://ayurvedichealingvillage.com';
+    const pad2 = (n) => (n < 10 ? '0' + n : '' + n);
+    const mode = R.mode;
+    const marks = {
+      diamond: { mark: '◆', markColor: '#C1882C', markSize: '14px' },
+      plain:   { mark: '—', markColor: '#C9BFA8', markSize: '14px' }
+    };
+
+    const sections = R.sections.map((s, si) => ({
+      id: s.id, hId: s.id + '-h', h2: s.h2, n: pad2(si + 1),
+      blocks: s.blocks.map((b) => {
+        const d = { dP: 'none', dH3: 'none', dList: 'none', dPairs: 'none', dNote: 'none', dFig: 'none', dGrid: 'none',
+          text: '', text3: '', caption: '', items: [], pairs: [], gridItems: [], figEl: null };
+        if (b.t === 'p') { d.dP = 'block'; d.text = b.text; }
+        else if (b.t === 'note') { d.dNote = 'block'; d.text = b.text; }
+        else if (b.t === 'h3') { d.dH3 = 'block'; d.text3 = b.text; }
+        else if (b.t === 'list') {
+          d.dList = 'flex';
+          const stepped = b.style === 'steps';
+          d.items = b.items.map((t, i) => stepped
+            ? { text: t, mark: pad2(i + 1), markColor: '#8F6212', markSize: '12.5px' }
+            : Object.assign({ text: t }, marks[b.style] || marks.plain));
+        }
+        else if (b.t === 'pairs') {
+          d.dPairs = 'flex';
+          d.pairs = b.items.map(([k, v]) => ({ k, v, vColor: v.indexOf('[TO CONFIRM]') === 0 ? '#8F6212' : '#2A2118' }));
+        }
+        else if (b.t === 'figure') {
+          d.dFig = 'block'; d.caption = b.caption || '';
+          d.figEl = this.img(b.src, b.alt, { width: '100%', aspectRatio: '3 / 2', objectFit: 'cover', display: 'block' });
+        }
+        else if (b.t === 'grid') {
+          d.dGrid = 'flex';
+          d.gridItems = b.items.map(g => ({ el: this.img(g.src, g.alt, { width: '100%', aspectRatio: '3 / 2', objectFit: 'cover', display: 'block' }) }));
+        }
+        return d;
+      })
+    }));
+
+    // Mobile gallery rhythm: two full-width plates, then a pair, repeating.
+    const mspans = [2, 1, 1, 2, 1, 1], mheights = [230, 150, 150, 230, 150, 150];
+    const plates = (R.gallery || []).map((g, i) => ({
+      n: pad2(i + 1), mspan: mspans[i % 6],
+      mel: React.createElement('img', { src: g.src, alt: g.alt || '', loading: i < 3 ? 'eager' : 'lazy', decoding: 'async',
+        style: { width: '100%', height: mheights[i % 6] + 'px', objectFit: 'cover', display: 'block' } })
+    }));
+
+    const volumeNotes = {
+      '/internships-at-kairali/': '367 words, 4 images, 7 lists',
+      '/social-responsibilities/': '977 words, 10 lists',
+      '/our-story/': '18 images, no prose',
+      '/careers/': '150 words, no images'
+    };
+
+    return {
+      guard,
+      crumbs: R.crumbs.slice(0, -1).map(c => ({ label: c.label, url: A + c.path })),
+      crumbLast: R.crumbs[R.crumbs.length - 1].label,
+      h1: R.h1, standfirst: R.standfirst,
+      draftDisplay: R.standfirstDraft ? 'block' : 'none',
+      stressDisplay: (this.props.stressNote ?? true) ? 'block' : 'none',
+      volumeNote: volumeNotes[R.path] || '',
+      heroEl: this.img(R.hero.src, R.hero.alt, { width: '100%', height: mode === 'brief' ? '190px' : '240px', objectFit: 'cover', display: 'block' }),
+      indexDisplay: (mode === 'prose' && R.sections.length >= 3) ? 'block' : 'none',
+      railItems: sections.map(s => ({ href: '#' + s.id, n: s.n, label: s.h2 })),
+      sections,
+      galleryDisplay: plates.length ? 'block' : 'none',
+      galleryHeading: R.galleryHeading || 'Photographs',
+      plates,
+      applyDisplay: R.apply ? 'block' : 'none',
+      applyHeading: R.apply ? R.apply.heading : '',
+      applyIntro: R.apply ? R.apply.intro : '',
+      applyItems: R.apply ? R.apply.items.map(t => ({ text: t })) : [],
+      applyNote: R.apply && R.apply.note ? R.apply.note : '',
+      applyNoteDisplay: R.apply && R.apply.note ? 'block' : 'none'
+    };
+  }
+}
+</script>
+</body>
+</html>
