@@ -39,3 +39,26 @@ brief requires mobile, so the go-ahead is sent once its self-check completes (no
 ## Desktop self-check — completed, no fixes needed
 
 Check ran to completion, uninterrupted, nothing to fix. Mobile go-ahead sent after it (2026-09-22 IST).
+
+## Mobile — its closing comment, verbatim (after the go-ahead)
+
+> Mobile built: AHV Template Attractions By Distance Mobile.dc.html. It's a separate layout, not
+> the desktop reduced — photograph first at full frame width, then distance chip, name, summary and
+> "Good for" stacked; the four-band switcher is a 2×2 grid of 52px pills under the hero, and the
+> three other bands repeat as a full-width list at the end of the cards so a reader who has scrolled
+> seven places doesn't have to go back up.
+>
+> Checks run on the live render: one h1, heading order h1 → h2 → h3 with no skips in every band,
+> no broken images, all [TO CONFIRM] distances intact (6 on the 15 km band, 5 on under-10 km), no
+> horizontal overflow at 390 or 360, and all tap targets ≥44px — the breadcrumb links were 17px, so
+> I raised them on both views.
+>
+> Where mobile strains: at 7 places the page runs about 4,900px before the closing block, so the
+> switcher at the top is long out of sight by card four — the repeated band list at the bottom is
+> the mitigation, not a fix; at 4 places the page is short enough that the bottom band list and the
+> closing block stack almost adjacently and read as two competing exits.
+
+**For apply:** the breadcrumb tap-target fix (17px → ≥44px) was applied to BOTH views — verify it
+survives in the exported files. `[TO CONFIRM]` distance counts as stated by the tool: desktop
+comment said "four of five under-10 km"; mobile check says "5 on under-10 km" — reconcile against
+the data file at apply, do not assume either.
