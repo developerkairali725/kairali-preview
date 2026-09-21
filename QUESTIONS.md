@@ -1777,3 +1777,28 @@ read "Privacy Policy"; (2) §13 refers readers to "Section 24" for contact detai
 (banned KTAHV register; legal/GST language → Abilash's ruling per ESCALATION). Also to rule: the
 "last updated" date the template shows must come from the owner/record, not the design (left as
 the live page's value or [TO CONFIRM] at apply).
+
+### Q-AHV-DESIGN-EXPORT-SIZE — update 2026-09-22 06:41:20 IST
+End-of-run export attempt after item 18 (Share → Project HTML → Project archive → Export) failed
+again with the same toast, "ZIP download failed — please try again." Project is now 207 pages.
+Families NOT on disk (exist only in the Claude Design project): U-2 faqs-downloads, U-3 sitemap,
+U-4 defence, U-5 cancer supportive care, T9 index-directory, T4 house-rules, T6 product-family,
+T10 training, T13 policy-legal, T7 archive, T8 offers. Their verbatim notes are in
+launches/ayurvedichealingvillage.com/design-intake/<family>/NOTES.md. Owner-side options (not
+tried — outside the agent's lane or need the owner's word): (a) export from the owner's own
+Claude Design session on another network/browser; (b) archive a duplicated, trimmed project (only
+the 22 new .dc.html + assets + notes); (c) per-file "Standalone HTML" export (the UI says it "uses
+Claude" — a paid/model action, owner's call); (d) Claude Design's Edit → Code tab is element-level
+only, not file source. The apply step is blocked on one of these.
+
+### Q-AHV-FAMILIES-12-18-SOURCE-REGISTER — 2026-09-22 06:41:20 IST
+Register words present in the RECORD/LIVE copy the tool ported verbatim (flagged by it, not
+fixed), all KTAHV-banned, all owner rulings at apply: T9 /packages/ excerpts "guests", "journey"
+(page LOCKED by D-20260921-14); T4 /no-preservatives/ "guests" ×3, "journey" ×1; T7
+/karma-being-retreat-2019/ "journey", "Spa Treatment", "Resorts"; T8 /offers/ "guest" ×3,
+"Journeys"/"The Journey" ×3, "wellness"; T13 /terms-and-conditions/ ≈20 × "Guest" (see
+Q-AHV-LEGAL-PAGES-SOURCE-DEFECTS); U-5 (see Q-AHV-CANCER-PAGE-CLINICAL-COPY). Also for apply:
+T7's record-card labels "PAST RETREAT" / "Concluded. Not open for admission." are the tool's,
+not source — owner wording; T9's drafted H2 "Browse all packages" and T6's drafted standfirst +
+"Products are not sold on this site" line are drafts, never shipped as drafted; T7's finding that
+`66ch` renders ≈80 Mulish characters (global CSS correction candidate for every family in the run).
