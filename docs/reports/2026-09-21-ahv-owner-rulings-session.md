@@ -68,6 +68,11 @@ a candidate, not a fact.
   "no root layout at all" and its real layouts were never inspected. Separately, its main guard
   compared `import.meta.url` to `process.argv[1]` as strings, so on any path containing a space
   `main()` never ran and the gate **exited 0 having checked nothing**. Both fixed; 13 tests.
+- **A correction I owe the record.** I first reported the programme tariff as "32 of 38 prices
+  expire in nine days". Wrong framing: the dataset holds a validity *window*, the new tariff year
+  runs **2026-10-01 → 2027-09-30**, and five training programmes already carry it. The rates run to
+  2027; 32 rows simply have not been refreshed. Same date, different meaning — a refresh task, not a
+  cliff.
 - **The hero the owner picked was a WordPress derivative.** Option E existed in the repo at
   1024×458, below the 1200px slot. Its `legacyUrl` carried WordPress's own `-1024x458` suffix; the
   unsuffixed original is 1280×572 *and a smaller file*.
@@ -92,7 +97,7 @@ tests             site suite 46/46 · chat-bubble-lint 13/13 · chat-bubble-lint
 1. **GitHub Actions billing** — nothing on this PR can go green until it clears.
 2. **The Chatbase dashboard** — wrong WhatsApp number, no AI disclosure, banned 1908 wording. The
    exact replacement copy is drafted; one edit fixes every fleet site.
-3. **The 2026-27 tariff** — 32 of 38 programme prices expire 2026-09-30.
+3. **The 2026-27 numbers for 32 programmes.** Corrected by the owner after this report's first draft: the tariff year runs to **September 2027**, not out in nine days. Five training programmes already carry `2026-10-01 → 2027-09-30`; the other 32 are still on the 2025-26 window. A data refresh due at the 1 October changeover — and the three linked price-list PDFs are still named `25-26`.
 4. **Dr. Deepu John** — the 87% claim, carried forward on the owner's ruling, *not* reviewed.
 5. **Deepu** — the real enquiry endpoint; the live site's own `infoo@kairali.com` typo.
 6. **The designer** — the two change requests, one of them a real functional gap (no contact

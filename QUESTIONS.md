@@ -1237,17 +1237,30 @@ as clearing it.
 **What would close it:** the survey behind the number — what "satisfactory" measured, the sample
 size, the period, and the source document — or its removal. Either needs Dr. Deepu John.
 
-## Q-AHV-TARIFF-EXPIRY — 32 of 38 programme prices expire 2026-09-30 (2026-09-21 17:09:04 IST)
+## Q-AHV-TARIFF-REFRESH — 32 of 38 programme prices are still on the OLD tariff year (2026-09-21 17:09:04 IST)
 
-`window.AHV_FINDER.programmes` (public/ahv/assets/all-programs-data.js, the canonical owner-decided
-dataset behind the /all-programs/ finder) carries `validTo` per programme. **32 of the 38 rows read
-`2026-09-30`** — nine days from this entry. One row (`Kairali's Personalized Yoga Program`) carries
-no price at all; the rest run to 2027-09-30.
+**CORRECTED 2026-09-21 by the owner, and the correction matters.** I first wrote this as "32 of 38
+prices EXPIRE on 2026-09-30", which reads as a cliff where the rates stop being valid. That is not
+what the data says. `window.AHV_FINDER.programmes` (public/ahv/assets/all-programs-data.js, the
+canonical dataset behind the /all-programs/ finder) carries a validity WINDOW per programme:
 
-Surfaced while building the long-form chapter-08 programme set, which prints "from" prices. Nothing
-is wrong today and nothing was changed. But the finder, the programme pages and anything built from
-this dataset go stale on 1 October, and a go-live after that date ships prices the dataset itself
-declares expired. **Needed: the 2026-27 tariff**, or a ruling that the pages print no prices.
+```
+  32 programmes   2025-04-01 → 2026-09-30     the OLD tariff year
+   5 programmes   2026-10-01 → 2027-09-30     the NEW tariff year, already loaded
+   1 programme    no price at all             (Kairali's Personalized Yoga Program)
+```
+
+So **the tariff year runs to September 2027**, exactly as the owner said. The five training
+programmes already carry their 2026-27 numbers — which is the proof that the new tariff exists.
+The other 32 are simply still on last year's figures and have not been refreshed.
+
+The date is the same; the meaning is not. This is a **data-refresh task with a 1 October
+changeover**, not an expiry. From 1 October the finder, the programme pages and anything built from
+this dataset (including the long-form chapter-08 set) would print last year's prices as current.
+
+**Needed: the 2026-27 numbers for the remaining 32 programmes.** The same changeover applies to the
+three price-list PDFs the site links, all still named for the old year:
+`KTAHV-Ayurveda-Packages-{INR,USD,EURO}-Price-List-25-26.pdf`.
 
 ## Q-AHV-TESTING-PAGE — a placeholder page with third-party boilerplate is in the rebuild (2026-09-21 17:09:04 IST)
 
