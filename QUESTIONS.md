@@ -1173,6 +1173,24 @@ info@kairali.com". Same class as the open `career@kairali.com` question. Also on
 the same phone number in two `tel:` formats (`+91-9555156156` ×2, `+919555156156` ×16), and a
 third number `+91-9555-156-156` in the `/panchkarma-treatment.html` header.
 
+**ANSWERED 2026-09-21, Abilash (in-chat):** the two department mailboxes **do not exist**. Both
+replaced with the locked `info@kairali.com`, department labels kept. CLOSED as implemented:
+8 strings in `enquiry-family-data.js` (4 `mailto:partners@`, 2 `mailto:press@`, 1 visible text
+node, 1 overlay `afterText`), `/contact-us/` re-prerendered, snapshot now carries 0 of either
+address and 16 of the locked one. The `?subject=` lines were KEPT — with both addresses collapsed
+into one inbox they are now the only thing telling whoever reads info@ which department a mail is
+for. One occurrence of each address remains inside the "obfuscated e-mails RECOVERED 8 Sep per
+overlay" provenance note and is left verbatim: it records what the LIVE SOURCE carried, and the
+repair tool FAILS rather than writing if that sentence is altered. Sweep: 2/2 states pass.
+
+**STILL OPEN on that page, and NOT answered by this ruling:** the same landline renders in three
+formats sitewide — `+91-9555156156` ×78, `+919555156156` ×45, `+91-9555-156-156` ×41. Raised in
+the same question as a non-blocking aside; no ruling was given, so nothing was normalised. Also
+noted while measuring, neither of them a defect in this repo: `you@example.com` / `your@email.com`
+are form-field placeholder attributes (correct), and `infoo@kairali.com` appears ONCE, inside a
+provenance field recording what a Cloudflare-obfuscated address on the LIVE site decodes to — it
+renders on no page here, but it does mean **the live site carries a typo'd contact address**.
+
 ## Q-AHV-87-PERCENT — unsourced clinical outcome claim, CARRIED FORWARD by owner ruling, NOT clinically reviewed (2026-09-21 17:09:04 IST)
 
 **The claim:** *"Kairali has performed more than 300,000 Treatments with an 87% satisfactory
