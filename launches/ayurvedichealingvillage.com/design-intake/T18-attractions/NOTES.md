@@ -62,3 +62,14 @@ Check ran to completion, uninterrupted, nothing to fix. Mobile go-ahead sent aft
 survives in the exported files. `[TO CONFIRM]` distance counts as stated by the tool: desktop
 comment said "four of five under-10 km"; mobile check says "5 on under-10 km" — reconcile against
 the data file at apply, do not assume either.
+
+## Mobile self-check — found issues, two fixes applied (verbatim), then re-checked
+
+> Both fixed on desktop and mobile: breadcrumb links now 44×44 minimum (8px horizontal padding,
+> pulled back with a matching negative left margin so the crumb stays flush with the content
+> column), and the four trust items hang their wrapped second line past the gold diamond.
+
+Note: the second fix touches the FIXED closing block (trust-item hanging indent). Spec-wise the
+block is unchanged — four items, gold diamond prefix, two-column grid — it is a wrap-rendering
+correction, not a restyle. Verify at apply that the closing block still matches the standing brief
+byte-for-byte in copy and structure.
