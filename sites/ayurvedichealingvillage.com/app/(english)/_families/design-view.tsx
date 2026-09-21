@@ -13,6 +13,7 @@
 import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
+import { routeSchema } from "./schema";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import componentMap from "../../../english-candidate/component-map.json";
@@ -99,6 +100,17 @@ export function DesignView({ route }: { route: CandidateRoute }) {
 
   return (
     <>
+      {/* Structured data. The live site emits this on every page and the
+          rebuild emitted none — the flip would have dropped the Organization
+          entity, breadcrumb rich results and the sitelinks searchbox sitewide.
+          Server-rendered, so a crawler that runs no JavaScript still reads it.
+          Every value comes from the route's own manifest metadata and the
+          generated share image; see _families/schema.ts for what is
+          deliberately NOT copied from live. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(routeSchema(route)) }}
+      />
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
       {route.mobileView ? (
