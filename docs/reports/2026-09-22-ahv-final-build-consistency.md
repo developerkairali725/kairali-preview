@@ -8,7 +8,7 @@ final build; content/draft approvals by MCQ; remove all previous staging deploym
 **Rulings used:** D-20260922-10 ([TO CONFIRM] fact chips stay visible), D-20260922-11 (FAQ PDFs self-hosted),
 D-20260922-12 (drafted lines approved as written), D-20260921-14 (homepage + package pages untouched).
 
-**Preview (the ONE deployment kept):** https://kairali-web-factory-ayurvedichealingvillage-o84n2ywra-kairali.vercel.app (Vercel SSO, owner logged in; verified from the owner's Chrome: campaign-nine carries the chrome, 0 notes, the FAQ shelf serves 5 PDFs, no overflow)
+**Preview (the ONE deployment kept, after the chrome fixes of §6):** https://kairali-web-factory-ayurvedichealingvillage-he1sz139j-kairali.vercel.app — earlier that evening: https://kairali-web-factory-ayurvedichealingvillage-o84n2ywra-kairali.vercel.app (Vercel SSO, owner logged in; verified from the owner's Chrome: campaign-nine carries the chrome, 0 notes, the FAQ shelf serves 5 PDFs, no overflow)
 
 ## 1. What was measured before anything was changed
 
@@ -190,3 +190,29 @@ All previous AHV preview deployments removed after the final one was verified; t
 ### 5.2 Remaining in the project after the sweep
 - https://kairali-web-factory-ayurvedichealingvillage-o84n2ywra-kairali.vercel.app
 
+
+## 6. Chrome audit and fixes (same evening; owner rulings D-20260922-14..-20)
+
+A background audit of every route (254 × 390/1440 = 508 records; `scratchpad/chrome-audit.json`) after §3 found the
+site chrome was NOT yet one thing:
+
+| Finding (audit) | Routes | Fix |
+|---|---|---|
+| Desktop header rendered at 390 (233px, five-link nav, no burger — the Menu button sat inside the hidden mobile half) | 21: campaign-nine ×8 + the 13 Claude Design pages | Root cause: their mobile views carried the desktop chrome import; the package's own mobile views pass `narrow="true"` (+ sticky style, 64px/900px hints). `repair-claude-design-chrome` and `repair-campaign-chrome` now emit the narrow imports on mobile views. |
+| Own header/footer instead of the shared chrome (logo + e-mail/phone as the nav, no burger, no language switch, footer without socials) | campaign-retreat ×7, /panchkarma-treatment.html (3 `<footer>`s), /ayurvedic-treatment-packages.html | `repair-campaign-chrome` swaps the page-level header and the dark page footer for the shared imports (testimonial `<footer>`s untouched). The packages listing was in my consistency lock; the owner ruled its chrome shared (D-20260922-20). |
+| Shared header wraps to two rows at desktop (123px) on 241 routes — logo 171 + nav 612 + utilities 395 + gaps = 1226px against a 1220px row | every non-home page | `public/design/chrome.css`: from 1180px no wrap, nav gaps 22→16, tracking 2→1.6px, utilities gap 14→10 (fits 1166px in the 1203px a 1280 viewport gives). Header now 73px, same as the homepage. EN/DE/FR kept (D-20260922-17). |
+| No copyright line on the desktop footer or the homepage footer (mobile has one) | all | `public/design/chrome.js` appends "© 1908 — <year> Kairali — The Ayurvedic Healing Village." to any footer without one (D-20260922-18). |
+| No footer carries WhatsApp +91 92898 38797 (only the hospital line +91 9555 156 156) | all 508 | chrome.js adds a wa.me link under the phone in every footer (D-20260922-19). |
+| /my-account/, /test-page/, /testing/ render the homepage design | 3 | `robotsOverrides` noindex, nofollow (production) + 410 note in the go-live checklist (D-20260922-20). |
+| Second `<header>` element: the Claude Design page heroes are `<header>` elements outside `<main>` | faqs, how-to-reach, sitemap, product-range, attractions-above-50kms, terms, training-course-fees | Left: a `<header>` outside `<main>` is a landmark nit, not a second site header; noted for the designer. |
+
+Verification (local build, 13 routes × 390/1280/1440 incl. home, campaign, retreat, panchkarma, packages listing,
+a package page, and the Claude Design pages): header 64px + burger on every route at 390; header 73px (one row) at
+1280 and 1440 on every shared-chrome route; one page footer everywhere with © line, hospital phone and the WhatsApp
+link; no overflow. The homepage header is untouched (its own single row); its footer gained the © line and the
+WhatsApp link on the owner's explicit word.
+
+Housekeeping: the audit's temporary script was swept into commit 60501836 by the concurrent commit and removed in
+c8158d6a.
+
+Preview after the chrome fixes: https://kairali-web-factory-ayurvedichealingvillage-he1sz139j-kairali.vercel.app (the previous preview o84n2ywra removed; verified in the owner's Chrome: retreat page on the shared 73px header with burger, one footer with © and WhatsApp; homepage untouched by the layer, its footer carrying © and WhatsApp).
