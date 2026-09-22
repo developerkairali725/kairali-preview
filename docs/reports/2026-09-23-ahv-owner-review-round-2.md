@@ -3,7 +3,7 @@
 Owner's review of preview `…-8r3mqjl0y-…` (chat, 2026-09-23 ~00:20–01:40 IST, captured as D-20260923-01).
 Twenty-four findings across fourteen pages, plus the /sitemap/ question. Every fix below is a re-runnable
 tool or a design-layer file, nothing hand-edited in `public/ahv/` (a re-import survives it). Evidence: the
-Playwright sweep in §3 and the screenshots it wrote; the preview URL in §4.
+Playwright sweep in §3 and the screenshots it wrote; the preview URL is in §6.
 
 ## 1. The big one — ONE section navigation for every content family
 
@@ -97,3 +97,9 @@ the missing-page list is theirs to absorb; I have not changed the sitemap page.
 ## 5. Open for the owner
 
 Q-AHV-SANSKRIT-YOGA · Q-AHV-AKHILA-PHOTO · Q-AHV-OFFER-PHOTOS (QUESTIONS.md, 23 Sep 2026).
+
+## 6. Preview
+
+Commit e3bc2b17 on `codex/ahv-english-staging-20260915`, prebuilt and deployed: **https://kairali-web-factory-ayurvedichealingvillage-he04otg43-kairali.vercel.app** (SSO-protected; the
+earlier 8r3mqjl0y preview stays up for side-by-side comparison). Local build 2 verified before deploy: 25 routes × 1366/390,
+0 console errors, 0 failed requests, 0 legacy menus, rail on every in-scope route.
