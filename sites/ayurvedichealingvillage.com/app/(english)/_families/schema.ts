@@ -44,6 +44,28 @@ import { routes } from "./registry";
 import { imageGallery, imageObject, itemList, videoObject } from "@kairali/schema";
 import OG_IMAGES from "../../../english-candidate/og-images.json";
 import GALLERIES from "../../../english-candidate/galleries-2026.json";
+import FAQ_VIEW from "../../../public/ahv/views/ahv-page-faqs-and-downloads-desktop.json";
+
+/**
+ * /faqs-downloads/ — the 58 question/answer pairs the page renders (<details data-q id="q-NN"> blocks written by
+ * tools/repair-faq-content.mjs), read from the served desktop view at build time so the structured data can never
+ * drift from the visible text. Emitted as WebPage + FAQPage with mainEntity (Yoast's live shape). Google restricts
+ * FAQ rich results to government/health authorities since Aug 2023 (SEO audit 2026-09-23), so this is for answer
+ * engines and parity, not a SERP accordion promise.
+ */
+const FAQ_ROUTE = "/faqs-downloads/";
+function faqEntities(): Array<Record<string, unknown>> {
+  const t = (FAQ_VIEW as { template: string }).template;
+  const decode = (h: string) =>
+    h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+  const out: Array<Record<string, unknown>> = [];
+  for (const m of t.matchAll(/<details data-q="\d+" id="(q-\d+)"[^>]*>([\s\S]*?)<\/details>/g)) {
+    const q = decode((m[2].match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
+    const a = decode(m[2].slice(m[2].indexOf("</summary>") + 10));
+    if (q && a) out.push({ "@type": "Question", "@id": `${abs(FAQ_ROUTE)}#${m[1]}`, name: q, acceptedAnswer: { "@type": "Answer", text: a } });
+  }
+  return out;
+}
 
 const ORIGIN = "https://ayurvedichealingvillage.com";
 const LANG = "en-US";
@@ -235,6 +257,10 @@ export function routeSchema(route: CandidateRoute): Record<string, unknown> {
     inLanguage: LANG,
   };
   if (route.metadata.description) webPage.description = route.metadata.description;
+  if (route.path === FAQ_ROUTE) {
+    const faqs = faqEntities();
+    if (faqs.length) { webPage["@type"] = ["WebPage", "FAQPage"]; webPage.mainEntity = faqs; }
+  }
   if (image) {
     webPage.primaryImageOfPage = { "@id": image["@id"] };
     webPage.image = { "@id": image["@id"] };

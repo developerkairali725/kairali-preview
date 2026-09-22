@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import vm from "node:vm";
+import { siteChrome } from "./site-chrome";
 
 /**
  * /search/?q=… — the results page behind the header search (Option B-lite,
@@ -76,6 +77,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
   const raw = Array.isArray(sp.q) ? sp.q[0] ?? "" : sp.q;
   const typed = String(raw || "").slice(0, 120).trim();
   const { engine: eng, index } = engine();
+  const chrome = siteChrome();
   const ui = index.ui;
   const res = typed.length >= 2 ? eng.query(typed, { scope: "site" }) : null;
   const status = !res ? "" : res.total === 0 ? ui.zero.replace("{q}", typed) : res.corrected
@@ -85,17 +87,14 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
   const rowA: React.CSSProperties = { fontSize: 15, lineHeight: 1.45, color: muted };
   const chevron = <span aria-hidden="true" style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", color: gold, fontSize: 22 }}>›</span>;
   return (
-    <div style={{ minHeight: "100vh", background: paper, color: ink, fontFamily: "Mulish, sans-serif", fontSize: 17, lineHeight: 1.5 }}>
+    // id="ahv-design-root": chrome.js (© line, WhatsApp, one chat link) and consistency.js scope their passes to this
+    // id, so the lifted footer gets the same additions here as on every design page; overflow-x clip is what the
+    // mobile views' root carries (the narrow header's right-hand group is wider than a 390px viewport by design).
+    <div id="ahv-design-root" style={{ minHeight: "100vh", background: paper, color: ink, fontFamily: "Mulish, sans-serif", fontSize: 17, lineHeight: 1.5, overflowX: "clip" }}>
       <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css" />
-      <header style={{ background: "rgba(247,244,234,.97)", borderBottom: "1px solid #E9E2D3" }}>
-        <div style={{ width: "min(1220px,94%)", margin: "0 auto", minHeight: 72, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", minHeight: 44 }}><img src="/ahv/assets/img/kairali-colorful-logo.webp" alt="Kairali — The Ayurvedic Healing Village" width={290} height={68} style={{ height: 40, width: "auto", display: "block" }} /></a>
-          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-            <a href="/ayurvedic-treatments/" style={{ color: ink, fontWeight: 700, fontSize: 12.5, letterSpacing: 2, textTransform: "uppercase", minHeight: 44, display: "inline-flex", alignItems: "center", textDecoration: "none" }}>Ayurveda Treatment</a>
-            <button type="button" aria-label="Search" aria-haspopup="dialog" aria-controls="ahv-search-dialog" aria-expanded="false" style={{ width: 44, height: 44, background: "none", border: 0, cursor: "pointer", color: ink, fontSize: 20 }}>⌕</button>
-          </div>
-        </div>
-      </header>
+      {/* the site's own header + footer, lifted from the design's prerendered snapshot (site-chrome.ts) */}
+      <style dangerouslySetInnerHTML={{ __html: chrome.css }} />
+      <div dangerouslySetInnerHTML={{ __html: chrome.header }} />
       <main style={{ width: "min(760px,94%)", margin: "0 auto", padding: "26px 0 40px" }}>
         <h1 style={{ fontFamily: "Marcellus, serif", fontWeight: 400, fontSize: 32, margin: "0 0 14px" }}>{ui.dialogTitle}</h1>
         <form action="/search/" method="get" role="search" style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 56, border: "1px solid #C7BCA4", borderRadius: 4, background: "#fff", padding: "0 6px 0 14px" }}>
@@ -133,16 +132,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
           </div>
         </div>
       </main>
-      <footer style={{ borderTop: "1px solid #E9E2D3", background: "#fff" }}>
-        <div style={{ width: "min(1220px,94%)", margin: "0 auto", padding: "18px 0", display: "flex", gap: "8px 22px", flexWrap: "wrap", fontSize: 14.5, color: muted }}>
-          <a href="/" style={{ color: green }}>Home</a>
-          <a href="/ayurvedic-treatments/" style={{ color: green }}>Programmes</a>
-          <a href="/faqs-downloads/" style={{ color: green }}>FAQs</a>
-          <a href="/how-to-reach/" style={{ color: green }}>How to reach</a>
-          <a href="/contact-us/" style={{ color: green }}>Contact</a>
-          <a href="mailto:info@kairali.com" style={{ color: green }}>info@kairali.com</a>
-        </div>
-      </footer>
+      <div dangerouslySetInnerHTML={{ __html: chrome.footer }} />
+      {chrome.script ? <script dangerouslySetInnerHTML={{ __html: chrome.script }} /> : null}
     </div>
   );
 }
