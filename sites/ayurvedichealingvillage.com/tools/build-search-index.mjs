@@ -9,7 +9,7 @@
  *   english-candidate/finder-benchmark/…       the finder's card images per route (design payload, not typed here)
  *   english-candidate/route-manifest.json      every active route + approved metadata description
  *   english-candidate/prerender/<route>.html   the page's own rendered H1 — the governed result label
- *   public/ahv/views/ahv-page-faqs-and-downloads-desktop.json   the 44 FAQ Q&A + 12 topics
+ *   public/ahv/views/ahv-page-faqs-and-downloads-desktop.json   the FAQ Q&A (44 + the content pass's additions) + 12 topics
  *   public/ahv/views/<programme view>.json     whoFor lines per programme page
  *
  *   → public/ahv/search-index.json
@@ -133,18 +133,24 @@ const faqs = [];
   let n = 0;
   for (const g of groups) {
     const topic = decode(g.slice(0, g.indexOf('"')));
-    for (const d of g.split(/<details data-q="[^"]*"[^>]*>/).slice(1)) {
+    // the id comes from the tag, never from the position: the content pass (tools/repair-faq-content.mjs) appends
+    // q-45… inside their topics, so position ≠ id and the existing ids (intents, faqKeywords, the query set) hold
+    const parts = g.split(/(<details data-q="[^"]*" id="q-\d+"[^>]*>)/).slice(1);
+    for (let k = 0; k < parts.length; k += 2) {
+      const open = parts[k], d = parts[k + 1];
       n += 1;
       const q = decode((d.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1]);
       const body = d.slice(d.indexOf("</summary>"), d.indexOf("</details>"));
       const a = decode(body);
-      const id = "q-" + String(n).padStart(2, "0");
+      const id = open.match(/id="(q-\d+)"/)[1];
       const rec = { id, n, topic, q, a: clip(a, 400), kw: V.faqKeywords[id] || [] };
       if (locked(q) || locked(topic)) registerLog.faqCarrying.push(id + " " + (locked(q) ? "question" : "topic"));
       faqs.push(rec);
     }
   }
-  if (faqs.length !== 44) throw new Error("expected 44 FAQ questions, found " + faqs.length);
+  const declared = (t.match(/<details data-q="\d+" id="q-\d+"/g) || []).length;
+  if (faqs.length < 44 || faqs.length !== declared) throw new Error(`expected ${declared} (≥44) FAQ questions, found ${faqs.length}`);
+  if (new Set(faqs.map((f) => f.id)).size !== faqs.length) throw new Error("duplicate FAQ ids in the view");
   for (const id of Object.keys(V.faqKeywords)) if (!faqs.find((f) => f.id === id)) throw new Error("faqKeywords id not in the FAQ view: " + id);
 }
 

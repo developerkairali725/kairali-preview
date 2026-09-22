@@ -173,7 +173,10 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
   await nojs.close();
   // ---- WebSite SearchAction in the page's JSON-LD (Rich Results shape)
   await page.goto(BASE + "/about-us/", { waitUntil: "networkidle" });
-  const sa = await page.evaluate(() => { for (const s of document.querySelectorAll('script[type="application/ld+json"]')) { try { const j = JSON.parse(s.textContent); const g = j["@graph"] || [j]; const w = g.find((n) => n["@type"] === "WebSite"); if (w) return w.potentialAction || null; } catch (e) {} } return null; });
+  // The live page carries TWO ld+json blocks (schema.ts header): the design's own in <head> and the route
+  // schema in <body>, whose WebSite nodes share @id …/#website — consumers merge nodes by @id, so the check
+  // merges too instead of trusting whichever block comes first (the first is the design's, without the action).
+  const sa = await page.evaluate(() => { const byId = {}; for (const s of document.querySelectorAll('script[type="application/ld+json"]')) { try { const j = JSON.parse(s.textContent); for (const n of (j["@graph"] || [j])) { if (n["@type"] !== "WebSite") continue; const k = n["@id"] || "-"; byId[k] = Object.assign(byId[k] || {}, n); } } catch (e) {} } const ws = Object.values(byId); return ws.length === 1 ? (ws[0].potentialAction || null) : { error: ws.length + " WebSite ids" }; });
   const saOk = !!sa && sa["@type"] === "SearchAction" && sa.target && sa.target["@type"] === "EntryPoint" && sa.target.urlTemplate === "https://ayurvedichealingvillage.com/search/?q={search_term_string}" && sa["query-input"] === "required name=search_term_string";
   ok(`${W} schema: WebSite.potentialAction is a valid SearchAction → /search/?q={search_term_string}`, saOk, JSON.stringify(sa));
   }
