@@ -94,3 +94,37 @@ doc of 19 Sep (Google Doc 18r4P1AM…), the 508-record chrome audit and the 1,77
   automation browser window prevented a second in-browser check this time — the deployment is the same prebuilt output
   the local checks ran against).
 
+## 6. Final assembly (23 Sep, evening IST) — galleries + search landed, whole-site verification
+
+- **Galleries** (d1145c3b, builder report docs/reports/2026-09-23-ahv-galleries-build.md): eight chaptered, captioned
+  galleries from the mined bank — photo 60, property 37, treatments 40, villas 30, retreats 31, product 18, sightseeing
+  10, yoga 10 (236 photographs, 0 pixel duplicates across the themed galleries), six videos behind a click-to-play
+  facade, ImageGallery/ImageObject/VideoObject structured data, image sitemap entries (staging gate untouched);
+  33/33 Playwright checks at 390/768/1440/1920.
+- **Search** (757ac101, builder report docs/reports/2026-09-23-ahv-search-build.md): one vocabulary, one prebuilt
+  index (31.7 KB gzip), one engine behind the header overlay on every page (incl. the homepage), the six finder hubs
+  (rebuilt: sticky search + chips + duration + budget, first result on screen at 390 and 1440, /all-programs/ folded
+  in) and the FAQ filter (typo-tolerant, deep links); homepage "I am looking for / dates" submits to the pre-filtered
+  finder. Acceptance 176/176 site queries and 61/61 FAQ queries top-1; Playwright smoke 88/88.
+- **/video-gallery/** — the twenty cards printed "Video disabled in this preview"; the renderer never passed the
+  record's youtubeId. Now a paper-toned play facade per card (0 YouTube requests before play), youtube-nocookie player
+  on press (tools/repair-video-gallery.mjs).
+- **Whole-site sweep after the final build** (254 routes × 390/768/1440 = 762 loads): 0 horizontal overflow, 0
+  broken images, 0 leftover note strings, 0 page errors (28 measurement races at 768 re-run clean; the two content
+  flags — the video hub and one linked breadcrumb line — fixed above and re-verified).
+- **Gallery + search spot check on the final build** (10 routes × 390/1440): 0 overflow, 0 broken images, 0 empty
+  alts on gallery tiles, 0 third-party requests before a play click, Kairoil hero 1600px, consultation panel with
+  three photographs.
+- **Trap recorded:** a file added to public/ after `next start` began is 404 until the next build (the Kairoil
+  hero measured 0px until the rebuild) — memory + this note.
+
+**Preview (the ONE deployment kept):** https://kairali-web-factory-ayurvedichealingvillage-gx7qni82u-kairali.vercel.app
+
+## 7. Owner questions carried forward (next MCQ)
+- Image credit line in the markup: "© Kairali Ayurvedic Group" is a placeholder wording [TO CONFIRM].
+- Should a YouTube play click sit behind the cookie notice? (youtube-nocookie loads nothing before the click.)
+- FAQ: 25 proposed new questions and 38 proofread findings (search report §7) — questions only, answers are yours.
+- Search: /search/ results page + SearchAction, an analytics event for searches, shortlist/compare from the old
+  /all-programs/, physician sign-off on the vocabulary (HARD GATE 7), enquiry-form date prefill.
+- Finder empty-state line "Many guests come to us" → "Many patients come to us" (register).
+
