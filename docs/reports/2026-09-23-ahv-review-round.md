@@ -166,3 +166,16 @@ postconditions). Served: **58 questions in 13 topics** (was 44 in 12).
   tagline "A serene retreat in India" (not on the banned list; register review for the owner, chrome-level, untouched).
 - Post-build audits (doctrine n) run in parallel: docs/reports/2026-09-23-ahv-faq-search-seo-audit.md and
   docs/reports/2026-09-23-ahv-faq-search-design-qa.md — findings below when they land.
+
+**Post-build audits (doctrine n) — both landed, findings fixed (commit after 98bc668a):**
+- SEO/AEO/GEO (docs/reports/2026-09-23-ahv-faq-search-seo-audit.md): PASS with three fails on the FAQ page — banned
+  j-word in the meta description (fixed via record-field override, dataset + manifest), no FAQPage structured data
+  (added: WebPage+FAQPage with the 58 Q&A read from the served view at build time), no canonical (measured sitewide:
+  13 routes, not all — server-side canonical for exactly those, english-candidate/canonical-server-routes.json).
+  Warning kept for the owner: the FAQ page's title (QUESTIONS.md Q-AHV-FAQ-TITLE). /search/ + SearchAction: PASS.
+- Design QA (docs/reports/2026-09-23-ahv-faq-search-design-qa.md, screenshots under launches/…/design-review/
+  faq-search-2026-09-23/): FAQ page PASS on every measured check; /search/ FAILED for its hand-rolled header → the page
+  now serves the site's own header/footer lifted from the design's prerendered snapshot (site-chrome.ts), burger and
+  all; re-verified at 1440/390, 0 overflow, © + WhatsApp present, smoke 104/104. Carried as polish (time-box):
+  the FAQ page's gold WhatsApp card vs the green used elsewhere (the approved design's own choice), 12.5px group
+  labels on /search/, footer links under 44px in the shared chrome.

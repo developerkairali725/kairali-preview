@@ -1890,3 +1890,11 @@ Q41 follow-up cadence · new q-47 (age policy, from the reckoner) · q-48 (child
 (what a treatment day feels like, from the inclusions sheet + the existing side-effects answer) · q-58
 (discharge summary) · plus the eight withheld clinical questions above once answered. List with ids:
 english-candidate/faq-content-2026.json (`signoff` field) and docs/content/ahv-faq-content-pass-2026-09-23.md §5.
+
+## Q-AHV-FAQ-TITLE — 2026-09-22 23:00:16 IST
+**/faqs-downloads/ keeps the live site's <title> "Ayurvedic FAQs & Hormonal Balance at Kairali Retreat".** The SEO
+audit (docs/reports/2026-09-23-ahv-faq-search-seo-audit.md) flags that it names one topic of thirteen and differs
+from the page's own og:title "FAQs & Downloads". It is an SEO title on a ranking page, so it was not changed on my
+own judgment (protection-map rule: no ranking signal dropped without the owner). The meta description WAS rewritten
+(it carried the banned j-word). Options: keep · "FAQs & Downloads | Kairali – The Ayurvedic Healing Village" · your
+wording. One line in english-candidate/record-field-overrides.json applies it to the dataset and the manifest.
