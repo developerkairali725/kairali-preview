@@ -1835,3 +1835,21 @@ english-candidate/route-overrides.json (applied by repair-route-manifest) — th
 obvious candidate but choosing it is a content decision. Also: the importer now prefers a route's
 own declared dataset when resolving its metadata record (tools/import-english-candidate.mjs
 findRouteRecord), which removes the order-dependence that could have masked this elsewhere.
+
+## Q-AHV-SITEMAP-SOURCE-GAPS — 2026-09-22 15:31:55 IST
+**Two sitemap entries have no destination in the source; what should they point to?** The
+22 Sep Claude Design sitemap carried two on-page notes about the record: the "Media Gallery"
+group heading's link is broken in the WordPress source, and the Villa Gallery sub-entries
+(Classic Villa, Deluxe Villa, Royal Villas, Maharaja Suite) exist as labels with no URL. Per
+D-20260922-13 (no internal notes in the final build) tools/repair-internal-notes.mjs removed
+both notes from /sitemap/; the heading and the lists remain. The gap itself is unchanged and
+needs the owner's word: link Media Gallery to /photo-gallery/ (the served gallery hub) and the
+four villa sub-entries to /classic-villa/, /deluxe-villa/, /royal-villa/, /maharaja-suite/
+(all served routes), or leave them unlinked. Not guessed (HARD GATE 6).
+
+## Q-AHV-PANCHKARMA-PHYSICIAN-QUOTE — 2026-09-22 15:31:55 IST
+**Dr. Ashikha Raj's card on /panchkarma-treatment.html has no quote.** The live source repeats
+Dr. Deepu John's quote under Dr. Ashikha Raj's name; the 19 Sep build withheld it and printed a
+builder note in the card. The note is removed (D-20260922-13); the card now shows her name,
+qualification and expertise with no quotation. A correct quote from Dr. Ashikha Raj, or the
+decision to leave the card without one, is the owner's (clinical copy, HARD GATE 7).

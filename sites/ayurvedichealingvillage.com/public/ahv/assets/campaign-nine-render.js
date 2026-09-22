@@ -191,7 +191,7 @@
       route: R, title: R.metadata.title, path: R.path,
       h1El: h1,
       bodyEl: el,
-      formEl: formEl(R.form, 'Prototype only — this form does not submit, store or transmit anything.'),
+      formEl: formEl(R.form, 'This form is being connected. Until then, please write to info@kairali.com or message us on WhatsApp at +91 92898 38797.'),
       hasForm: !!(R.form && R.form.fields && R.form.fields.length),
       canonical: R.metadata.effectiveCanonical,
       robots: R.metadata.robots,

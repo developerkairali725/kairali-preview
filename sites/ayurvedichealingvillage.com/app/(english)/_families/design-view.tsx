@@ -18,6 +18,10 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import componentMap from "../../../english-candidate/component-map.json";
 import analyticsConfig from "../../../analytics.config.json";
+import consistencyLock from "../../../english-candidate/consistency-locked-families.json";
+
+/** Families the sitewide consistency layer must not reach (tools/build-consistency-lock.mjs). */
+const lockedFamilies = new Set(Object.keys(consistencyLock.families));
 
 /**
  * Server-rendered body (owner ruling D-20260915-03: a blocker before any DNS flip).
@@ -95,6 +99,14 @@ export function DesignView({ route }: { route: CandidateRoute }) {
   const family = (route.desktopView ?? route.mobileView ?? "")
     .replace(/^ahv-page-/, "")
     .replace(/-(desktop|mobile)$/, "");
+  // The sitewide consistency layer (public/design/consistency.css + .js,
+  // 22 Sep 2026) keys on data-ahv-consistency="1". It is emitted for every
+  // family EXCEPT the locked ones — the homepage and the package pages
+  // (D-20260921-14, the gold standard of D-20260922-13), the finder hubs and
+  // the course family. The lock list is derived from the served views by
+  // tools/build-consistency-lock.mjs, never hand-typed; a family absent from
+  // the list gets the layer, so a new family is consistent by default.
+  const consistency = lockedFamilies.has(family.replace(/^ahv-template-/, "")) ? undefined : "1";
   const narrowMedia = `(max-width: ${BREAKPOINT - 1}px)`;
   const wideMedia = `(min-width: ${BREAKPOINT}px)`;
 
@@ -144,6 +156,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
         id={DESIGN_ROOT_ID}
         data-ahv-route={route.path}
         data-ahv-family={family || undefined}
+        data-ahv-consistency={consistency}
         data-ahv-snapshot-state={snapshot ? "held" : undefined}
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: snapshot }}

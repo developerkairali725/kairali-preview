@@ -79,6 +79,20 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
         <link rel="stylesheet" href="/design/directions.css" />
         <link rel="stylesheet" href="/design/article-reader.css" />
         <link rel="stylesheet" href="/design/campaign.css" />
+        {/* Sitewide consistency layer (owner's 22 Sep 2026 final-build
+            directive, D-20260922-13): the homepage and package pages are the
+            gold standard; every OTHER family is brought to their type floor,
+            button system, tap targets, prose measure and motifs. Both files
+            key on data-ahv-consistency="1", which design-view.tsx emits only
+            for the unlocked families (english-candidate/
+            consistency-locked-families.json, derived by
+            tools/build-consistency-lock.mjs) — the locked families are
+            unreachable by construction. The script is the one part CSS
+            cannot do: a computed-size floor on inline-sized micro labels and
+            data-labels for phone-stacked tables. It runs its own observer on
+            the design root and never touches boot.ts. */}
+        <link rel="stylesheet" href="/design/consistency.css" />
+        <script defer src="/design/consistency.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
