@@ -1853,3 +1853,40 @@ Dr. Deepu John's quote under Dr. Ashikha Raj's name; the 19 Sep build withheld i
 builder note in the card. The note is removed (D-20260922-13); the card now shows her name,
 qualification and expertise with no quotation. A correct quote from Dr. Ashikha Raj, or the
 decision to leave the card without one, is the owner's (clinical copy, HARD GATE 7).
+
+## Q-AHV-FAQ-NO-RECORDED-FACT — 2026-09-22 22:33:20 IST
+**Eleven of the 25 approved FAQ questions (D-20260922-36) have NO recorded fact to answer them and were
+NOT added to /faqs-downloads/** (the other 14 are live on staging as q-45..q-58). Nothing was invented
+(HARD GATE 6). Who must supply the answer, in the writer's words (docs/content/ahv-faq-content-pass-2026-09-23.md §2):
+- **Dr. Deepu John (clinical, HARD GATE 7):** continuing allopathic medicines during treatment · physician
+  availability at night/weekends · what NABH accreditation means for a patient · which conditions are NOT
+  treated (a DECLINE list exists in the old programme-search.js but is unsigned) · Panchakarma with diabetes /
+  hypertension · treatment during menstruation or pregnancy.
+- **Patient care team / Dr. Deepu John:** the arrival-day admission process · whether medical reports should be
+  sent before arrival.
+- **Owner / reservations:** is the advance refundable if a visa is refused.
+- **Owner / facilities:** remote work during a stay (only common-area Wi-Fi is recorded).
+- **Owner / HR:** which languages the physicians and therapists speak (EN/DE/FR site locales are not evidence).
+When an answer arrives, add it to english-candidate/faq-content-2026.json (status "drafted") and re-run
+tools/repair-faq-content.mjs — nothing else to touch.
+
+## Q-AHV-FAQ-FACT-CONFLICTS — 2026-09-22 22:33:20 IST
+Four facts the FAQ pass could not settle from the sources; the FAQ now avoids each rather than picking:
+1. **Advance payment:** old FAQ 50% · RATES_RECKONER.md "Deposit: 40% to secure booking" · live
+   /cancellation-and-refund-policy/ 100%. Q34 now lists payment methods only. Which is current?
+2. **Founding year:** 1908 / 1989 / "115+ years" / "25 years" all appear in the roster mine; the rewritten
+   "Why Kairali" topic states four generations and no year. Owner's line, please (D-1908-WORDING context).
+3. **"Luxury Sedan"** is the tariff PDF's vehicle class; the FAQ prints "Sedan (premium)" because the word is
+   banned on KTAHV pages. Tariff owner to confirm the public name.
+4. **Vastu / Vaastu:** our-villas-data.js spells "Vastu", about-us-data.js "Vaastu Shastra". One spelling sitewide.
+Also carried unverified as-authored (confirm with the desk): drive times in Q23, the facilities list in Q17
+(natural-filtration pool, gift shop), "48 hours advance booking" for transfers in Q24, and the 1/3/6-month
+follow-up cadence in Q41 (physician). The public rate chart Q19 points to is the PDF shelf on the same page.
+
+## Q-AHV-FAQ-CLINICAL-SIGNOFF — 2026-09-22 22:33:20 IST
+**Twelve FAQ items ship to STAGING marked for Dr. Deepu John's sign-off before production (HARD GATE 7):**
+Q13 programme durations restated to the dataset minimum nights · Q14 stay-length tiers (3/7/14/21 nights) ·
+Q41 follow-up cadence · new q-47 (age policy, from the reckoner) · q-48 (children accompanying) · q-49
+(what a treatment day feels like, from the inclusions sheet + the existing side-effects answer) · q-58
+(discharge summary) · plus the eight withheld clinical questions above once answered. List with ids:
+english-candidate/faq-content-2026.json (`signoff` field) and docs/content/ahv-faq-content-pass-2026-09-23.md §5.

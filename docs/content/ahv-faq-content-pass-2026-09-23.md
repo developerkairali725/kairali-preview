@@ -93,7 +93,9 @@ Item 17's "Get Upto 30% OFF" figures (senior citizens, Olympics/Paralympics athl
 
 ---
 
-## 3. Outstanding fixes this JSON structure cannot carry (topic-level, not per-question)
+## 3. Outstanding fixes this JSON structure cannot carry (topic-level, not per-question) — LANDED by the applier
+
+> Lead note 2026-09-22 22:45 IST: both renames below were applied by `tools/repair-faq-content.mjs` (label, heading, rail and the section id `topic-for-international-patients`), together with the intro/closing paragraphs' register fix, a new **Consultation & Admission** topic (second position) for the writer's proposed questions, and a q-37 register fix the §5.4 table had missed. Lead review also trimmed five 'not in our records' sentences from patient-facing answers and removed a 30% offer sourced from the noindexed /testing/ route. Served result: 58 questions in 13 topics.
 
 These are dataset/topic fields, not individual Q&A fields, so they fall outside the `edits`/`additions` schema this task specified. Flagging them explicitly so they aren't lost:
 

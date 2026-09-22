@@ -128,3 +128,41 @@ doc of 19 Sep (Google Doc 18r4P1AM…), the 508-record chrome audit and the 1,77
   /all-programs/, physician sign-off on the vocabulary (HARD GATE 7), enquiry-form date prefill.
 - Finder empty-state line "Many guests come to us" → "Many patients come to us" (register).
 
+
+## 8. Late round (2026-09-22 22:33:51 IST) — the three MCQ rulings of ~04:20 IST executed (D-20260922-35/-36/-37)
+
+**D-35 galleries credit + video play.** Credit line "© Kairali Ayurvedic Group" confirmed → manifest status flipped
+from placeholder to CONFIRMED and the eight galleries regenerated (commit fc4e371c). Video plays on click, no consent
+gate — already how the facade was built; nothing to change.
+
+**D-37 search extras (search agent, commit eec13846 + 3c41a89d).** `/search/?q=` server-rendered results page
+(works with JavaScript off; noindex; grouped results, correction line, six-button zero state, permanent
+WhatsApp/consultation/call fallback row) · WebSite **SearchAction** in the route schema
+(`https://ayurvedichealingvillage.com/search/?q={search_term_string}`) · consent-gated `site_search` gtag event
+that fires only once boot.ts has started measurement (no consent logic touched, HARD GATE 11) · "Many patients come
+to us" stands. Smoke on the served build 104/104 after one test fix of my own: the live page carries two ld+json
+blocks whose WebSite nodes share `@id …/#website`; the check now merges by @id as consumers do instead of trusting
+the first block (commit e3644efa). Report: docs/reports/2026-09-23-ahv-search-build.md §11–§12.
+
+**D-36 FAQ content pass (commit 98bc668a).** content-geo-writer drafted from recorded facts only; a new applier,
+`tools/repair-faq-content.mjs`, patches both FAQ views and both design-overlay components (idempotent, loud
+postconditions). Served: **58 questions in 13 topics** (was 44 in 12).
+- 36 corrections (F1–F38 + q-37, which the table's count had missed). "Why Choose Kairali?" no longer names the seven
+  competitors (HARD GATE 13) — rebuilt on NABH, ISO/Green Leaf, four generations, BAMS physicians, the villa and
+  programme range; the unsourced Laurie-Baker and on-site-preparation claims were dropped, not carried.
+- 14 new questions live (q-45..q-58; free first consultation, companion charges, age/child policy, what a treatment
+  day feels like, currencies + GST, cancellation tiers, discounts, AC/Wi-Fi, sharing a villa, dress code, Coimbatore
+  transfer, invitation letter, discharge summary) in a new **Consultation & Admission** topic and existing ones.
+- 11 withheld for want of a recorded fact → QUESTIONS.md Q-AHV-FAQ-NO-RECORDED-FACT (six are Dr. Deepu John's).
+- Four fact conflicts avoided rather than guessed (advance 40/50/100 %, founding year, "Luxury Sedan", Vastu/Vaastu)
+  → Q-AHV-FAQ-FACT-CONFLICTS. Twelve clinical items flagged for sign-off before production → Q-AHV-FAQ-CLINICAL-SIGNOFF.
+- Lead review of the draft: five "not in our records" sentences trimmed from patient-facing text; a 30 % offer the
+  writer had sourced from the noindexed /testing/ route removed; cash currencies added from the reckoner.
+- Search follows: faqKeywords re-keyed, 21 typo/plain-language FAQ queries added; acceptance 176/176 + 82/82;
+  index carries 0 FAQ rows with a locked word (was 6).
+- Verified on the served build at 1440 and 390: 58 live questions, badges = rail counts = rendered counts, q-09
+  bullets render, "cancelation policy" → "Showing 2 questions for “cancellation policy”", 0 console errors, no
+  overflow. Register scan of the rendered page: only "World Luxury Award Winner" (allowed) and the sitewide footer
+  tagline "A serene retreat in India" (not on the banned list; register review for the owner, chrome-level, untouched).
+- Post-build audits (doctrine n) run in parallel: docs/reports/2026-09-23-ahv-faq-search-seo-audit.md and
+  docs/reports/2026-09-23-ahv-faq-search-design-qa.md — findings below when they land.
