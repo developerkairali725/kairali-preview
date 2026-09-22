@@ -35,3 +35,42 @@ Claude Design's two scope notes: "No Preservatives has zero markers in either vi
 that is genuinely complete rather than unmarked." and "Legal Policy's Desktop view carries only the
 hero draft label; the full [TO CONFIRM] section skeleton exists in the Mobile file only, so the two
 views are out of sync."
+
+## Exact quotes received (Claude Design, 2026-09-22 ~08:50 IST, verbatim)
+
+| Where | Exact text |
+|---|---|
+| Sitemap — standfirst | "Every page on this site, in one list. Sections follow the order of the main navigation. Type a word to narrow the list to the pages that match it." |
+| Index Directory — section heading | Prop-driven, two drafted defaults: "Browse all collections" (sparse state) and "Browse all" (fallback when no sectionHeading is supplied) |
+| Product Family — standfirst | "The medicines, organics, teas, books and equipment manufactured by the Kairali Ayurvedic Group. Each range is described here and ordered separately." |
+| Product Family — not-sold line | "Products are not sold on this site. Each range links onward to its own page." — OWNER NOTE: "we sell medicines on site" |
+| Course and Fees — standfirst | "Course structure, duration, schedule and fees for study at the Kairali Institute of Ayurveda and Panchakarma Therapy, with accommodation rates listed separately." — Claude Design flags "with accommodation rates listed separately" as contradicting the record (the rate IS the accommodation; no separate course fee) |
+| Course and Fees — fees intro | WAS "Fees are quoted per course and cover tuition only. Accommodation is charged separately at the villa rates below." — REPLACED by Claude Design with the record's own basis note (per night, Deluxe Villa, single occupancy, all-inclusive) because it contradicted the tariff; draft label removed |
+| Legal Policy — standfirst | "These terms govern bookings, admission, treatment and use of this website. Please read them before confirming a reservation or beginning a programme." |
+
+## Slot fill from the record (D-20260922-04) — Claude Design's report, verbatim
+> A. Course and Fees — all six courses filled, both views. Per-night INR 18,410 / USD 263 / EUR
+> 230 shown as held, with duration, validity window and the KAHR source reference per row. No
+> totals calculated. Hub row carries its umbrella note. Schedule cells and the daily timetable stay
+> [TO CONFIRM] — the record holds no schedule.
+>
+> B. Offers — filled from the record's own pages, both views. Senior Wellness as the featured
+> offer (title, description, "Up to 20% off", inclusions, who it applies to, conditions). Olympics
+> and Defence as cards with their verbatim discount tiers and T&Cs. Baoli Special Deal shown as the
+> record has it — body is a single dash, so the description is [TO CONFIRM] with the page's email
+> and phone. Gift vouchers carry both record paragraphs plus the email and Call/WhatsApp number.
+>
+> Checks: block tags balanced in all four (69/69, 56/56, 230/230, 273/273); no expressions in
+> template holes; no console output. Remaining markers — Course and Fees 8 each view, Offers 15
+> desktop / 31 mobile, all genuinely uncovered by the record.
+>
+> Still open: offer validity windows and minimum stay (no record page states them), voucher
+> denominations, the two telephone numbers on the Olympic and Defence journey cards, and the
+> senior offer's claim procedure. The "Offers listed" counter now reads 4, reflecting what the page
+> shows rather than a record figure — say if you'd rather it counted the six offer pages.
+
+Explainer nav (D-20260922-01) — its decision, verbatim: "the injected nav moves below the article
+on all eight routes, replaced by one consistent always-open 'More in the Knowledge Center' block
+(no accordion — collapsing fails the same 45+ readers rule 9 protects), current page marked not
+linked, plus prev/next. Everything live is retained verbatim underneath." Its veto ask: "reusing
+the Knowledge Center list onto the four routes that lack it moves existing content between pages."
