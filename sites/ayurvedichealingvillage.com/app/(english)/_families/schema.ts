@@ -33,11 +33,11 @@
  *   · logo url + 290x68                — the chrome's own <img>, and the file's
  *                                        real canvas size, which agree
  *
- * DELIBERATELY OMITTED: the WebSite SearchAction. Live points it at
- * `/?s={search_term_string}`, a WordPress endpoint this rebuild does not serve
- * — site search is still an open item (QUESTIONS.md Q-AHV-SEARCH-CONTROL).
- * Emitting a potentialAction for a URL that 404s would be asserting something
- * false to a crawler. It lands with search, not before.
+ * WebSite SearchAction (D-20260922-37, 23 Sep 2026): points at /search/?q={search_term_string},
+ * the real results page (app/(english)/search/page.tsx, server-rendered from the search
+ * index — Option B-lite). Until then it was DELIBERATELY OMITTED: live pointed it at
+ * `/?s={search_term_string}`, a WordPress endpoint this rebuild does not serve, and a
+ * potentialAction for a URL that 404s asserts something false to a crawler.
  */
 import type { CandidateRoute } from "./registry";
 import { routes } from "./registry";
@@ -251,8 +251,13 @@ export function routeSchema(route: CandidateRoute): Record<string, unknown> {
     name: ORG_NAME,
     publisher: { "@id": ORG_ID },
     inLanguage: LANG,
-    // No potentialAction/SearchAction: see the header note — the endpoint does
-    // not exist yet, and a crawler should not be told otherwise.
+    // Sitelinks search box shape (schema.org SearchAction + EntryPoint): the target is the
+    // real /search/ results page, the query-input name matches the template placeholder.
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: abs("/search/") + "?q={search_term_string}" },
+      "query-input": "required name=search_term_string",
+    },
   });
   // Gallery routes: ImageGallery (with ImageObject nodes + chapter ItemLists) and VideoObject per facade.
   for (const node of galleryNodes(route, url)) graph.push(node);

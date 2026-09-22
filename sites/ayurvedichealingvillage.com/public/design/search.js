@@ -384,13 +384,33 @@
     return indexPromise;
   }
 
-  var api = { version: "2026-09-23a", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
+  /* Consent-gated search event (D-20260922-37): gtag "site_search" {search_term, result_count, surface}.
+   * Emitted ONLY when the site's measurement is ACTIVE — boot.ts startMeasurement() runs solely when the build set
+   * AHV_ANALYTICS=1 AND the visitor accepted the cookie notice, and it is the only code that injects the gtag/js
+   * loader; that loader tag is the signal read here. No consent logic is touched (HARD GATE 11); on staging the
+   * loader never exists, so nothing fires. One event per distinct query per surface. */
+  var tracked = {};
+  function measurementActive() {
+    if (!root.document) return false;
+    return typeof root.gtag === "function" && !!root.document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]');
+  }
+  function track(surface, term, count) {
+    try {
+      var key = surface + "|" + fold(term);
+      if (tracked[key] || !String(term || "").trim()) return false;
+      if (!measurementActive()) return false;
+      tracked[key] = 1;
+      root.gtag("event", "site_search", { search_term: String(term).slice(0, 100), result_count: count | 0, surface: surface });
+      return true;
+    } catch (e) { return false; }
+  }
+  var api = { track: track, measurementActive: measurementActive, version: "2026-09-23b", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
   root.AHVSearch = api;
   if (!root.document) return;
 
   /* ============================================================ overlay */
   var doc = root.document;
-  var dialog = null, input = null, status = null, body = null, engine = null, ui = null, trigger = null, open = false, cur = "INR", timer = null, pendingQ = null, chipsMode = false, uncorrected = false;
+  var dialog = null, input = null, status = null, body = null, engine = null, ui = null, trigger = null, open = false, cur = "INR", timer = null, trackTimer = null, pendingQ = null, chipsMode = false, uncorrected = false;
   try { cur = localStorage.getItem("ahv-cur") || "INR"; } catch (e) { /* private mode */ }
   var TRIGGER = 'button[aria-controls="ahv-search-dialog"], a[href="#search"], [data-ahv-search-trigger]';
 
@@ -573,6 +593,7 @@
       return;
     }
     status.innerHTML = line;
+    clearTimeout(trackTimer); trackTimer = setTimeout(function () { track("overlay", q, res.total); }, 900);
     res.order.forEach(function (k) {
       if (k === "programmes") html += group("programmes", res.programmes, rowProgramme);
       if (k === "questions") html += group("questions", res.questions, rowQuestion);

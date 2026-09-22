@@ -262,6 +262,7 @@ ${scroll}
   componentWillUnmount() {
     window.removeEventListener('scroll', this._onScroll);
     if (this._wait) clearInterval(this._wait);
+    if (this._track) clearTimeout(this._track);
   }
 
   pick(cat) { this.setState({ cat: cat }); }
@@ -274,6 +275,7 @@ ${scroll}
       const r = this._engine.query(q, { scope: 'programmes' });
       const hits = new Map();
       r.programmes.forEach((p, n) => hits.set(p.route, n));
+      clearTimeout(this._track); this._track = setTimeout(() => { if (window.AHVSearch && window.AHVSearch.track) window.AHVSearch.track('finder', q, hits.size); }, 900);
       return { cls: r.cls, hits: hits, caveats: r.caveats, handoff: r.handoff, corrected: r.corrected, nights: r.nights, urgent: r.urgent };
     }
     // Fallback until the engine arrives: every typed word must appear in name / Sanskrit / aliases / vocabulary / "for what".

@@ -237,3 +237,56 @@ search-ui smoke: 88/88 checks passed — PASS
 - Unverified: the two layout tags and the three new static files on a real `next build` (the smoke injects/serves them; the running build predates them); DE/FR behaviour (EN only, by scope); the design's mobile home header now carries a 44px search button with a 6px gap — measured at 390 only.
 - Hard gates: staging only; no page status changed; no credentials; nothing installed; no facts invented — gaps are asks in §8; the push gate is honoured by not pushing.
 - Register: locked words appear in this document only where a finding requires the exact string, one per line, each with an allow marker.
+
+---
+
+## 11. Addendum — owner rulings D-20260922-37 (written 2026-09-22 22:12:05 IST)
+
+Rulings: BUILD the `/search/?q=` results page (B-lite), the WebSite SearchAction, and a consent-gated `site_search` event; NOT approved: shortlist/compare; the finder empty-state line "Many patients come to us" APPROVED.
+
+### 11.1 `/search/?q=` — `app/(english)/search/page.tsx` (new)
+
+- Route registration: the (english) lane answers the 252 manifest routes through `[...slug]` with `dynamicParams = false`; a static segment (`search/page.tsx`) takes priority over the catch-all, exactly as `(lp)/privacy` and `/terms` do. `/search/` is not in the manifest (only the legacy `/search-results/` is), so nothing collides. `dynamic = "force-dynamic"` because the page reads `?q=`; `robots: noindex, follow`.
+- Server-side results, no client code needed: the page loads `public/design/search.js` in a node `vm` and `public/ahv/search-index.json` once per server process, runs `engine.query(q, {scope:"site"})` and renders the grouped rows (Programmes / Questions / Pages, capped at 12 each), the one-line programme answer (`engine.answerLine`, INR), the safety notes (URGENT / NOT_TREATED / CONSULT_FIRST), the "Showing results for … — you typed …" line, the zero state with the six buttons, and the permanent fallback row (WhatsApp +91 92898 38797 · Free online consultation · Call +91 9555 156 156). Plain page on the design's paper/ink tokens and fonts; a header strip with the logo, an "Ayurveda Treatment" link and the same `button[aria-controls="ahv-search-dialog"]` the layout's `search.js` hooks, so the instant overlay is one tap away here too; a footer strip with the five main links and info@kairali.com.
+- OBSERVED_FIRST_PARTY — offline server render (Next's bundled swc → `react-dom/server`, the HTML a no-JS visitor receives), five queries:
+
+```
+exports: [ 'default', 'dynamic', 'metadata' ] | dynamic: force-dynamic | robots: {"index":false,"follow":true}
+{"q":"psoriasis","rows":["/treatment-for-psoriasis/","/treatment-for-skin-diseases/","/faqs-downloads/?q=psoriasis#q-12"],"rowCount":3,"status":"3 results for “psoriasis”","input":true,"fallback":[true,true,true],"urgent":false,"trigger":true}
+{"q":"panchkarma","rows":["/panchakarma-therapy/","/ayurveda-training-programme/","/faqs-downloads/?q=panchkarma#q-13", …],"rowCount":18,"status":"Showing results for “panchakarma” — you typed “panchkarma”","fallback":[true,true,true]}
+{"q":"chest pain","rowCount":6,"status":"6 results for “chest pain”","urgent":true,"fallback":[true,true,true]}
+{"q":"asdfgh","rowCount":0,"status":"No page matches “asdfgh”. Try a condition (back pain, psoriasis), a place (airport) or a question (visa).","sixButtons":1,"fallback":[true,true,true]}
+{"q":"","rowCount":0,"sixButtons":1,"fallback":[true,true,true]}
+```
+
+- `tsc --noEmit` over the site: clean (one `noUncheckedIndexedAccess` finding of mine fixed on the way).
+- Browser verification of the served route (JS on AND off at 390/1440) is written into `tests/search-ui.smoke.mjs` and is SKIPPED loudly — printed as `SKIP … the served build predates the route (404)` — because the route only exists after the next `next build`, which the permission layer blocked in this session (it rewrites `.next` under the live :4321 workload) and which the push hook performs. UNVERIFIED in a browser until then; the offline render above is the evidence for the no-JS contract.
+
+### 11.2 WebSite SearchAction — `app/(english)/_families/schema.ts`
+
+The deliberate omission is lifted: the WebSite node now carries `potentialAction: { "@type": "SearchAction", target: { "@type": "EntryPoint", urlTemplate: "https://ayurvedichealingvillage.com/search/?q={search_term_string}" }, "query-input": "required name=search_term_string" }` (the header note rewritten to say why it is now true). OBSERVED_FIRST_PARTY — the node evaluated offline through `routeSchema()` for `/about-us/`:
+
+```
+"potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://ayurvedichealingvillage.com/search/?q={search_term_string}" }, "query-input": "required name=search_term_string" }
+SearchAction Rich-Results shape: VALID
+```
+
+The smoke asserts the same shape on the served JSON-LD once the route exists (same SKIP rule).
+
+### 11.3 Consent-gated `site_search` event — `public/design/search.js` `AHVSearch.track(surface, term, count)`
+
+- Emits `gtag("event", "site_search", { search_term, result_count, surface })` with `surface` ∈ overlay | finder | faq, once per distinct query per surface, 900 ms after the results settle.
+- Gate: `boot.ts` `startMeasurement()` runs ONLY when the build set `AHV_ANALYTICS=1` AND the visitor accepted the notice, and it is the only code that injects the `https://www.googletagmanager.com/gtag/js` loader (`packages/consent` installs the gtag shim and the consent defaults, never the loader — grep-verified). `track()` reads exactly that signal (`script[src^="https://www.googletagmanager.com/gtag/js"]` present AND `typeof gtag === "function"`), so it hooks the measurement state without touching `boot.ts` or any consent logic (HARD GATE 11). On staging the loader never exists → nothing fires.
+- OBSERVED_FIRST_PARTY (smoke, both widths): `ok 1440 analytics: site_search does not fire on staging — {"r":false,"evt":false,"after":1,"active":false}` and the same at 390 (`r` = track's return, `evt` = a site_search entry on the dataLayer, `active` = measurementActive()).
+- Wired into the overlay (`render`), the finder logic (`tools/build-finder-views.mjs`, views regenerated) and the FAQ logic (`tools/repair-faq-search.mjs` v2026-09-23d, served + overlay re-applied, idempotent).
+
+### 11.4 Re-verification after the changes
+
+- Acceptance: SITE 176/176 = 100 %, FAQ 61/61 = 100 % (unchanged).
+- Smoke against the running :4321 (route interception for the three static files + injected tags, as before): **90/90 checks passed**, 0 console errors, 0 overflow; the `/search/` + SearchAction section skipped on both widths for the reason above.
+- Prerender: the seven design routes whose views changed (`/ayurvedic-treatments/`, the four hubs, `/all-programs/`, `/faqs-downloads/`) re-snapshotted against the stable :4321 BEFORE any build attempt, links repaired.
+- Shortlist/compare: not built (ruling). The finder empty-state wording stands as approved.
+
+### 11.5 Push
+
+Attempted after `git pull --rebase` (§12 below records the outcome). The pre-push hook builds the site; the lead restarts :4321 afterwards and re-runs `node tests/search-ui.smoke.mjs` — the two SKIPs become four live checks (JS on/off at both widths + SearchAction).
