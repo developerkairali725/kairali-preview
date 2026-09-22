@@ -119,7 +119,8 @@
     var ps = main.querySelectorAll("p");
     for (var i = 0; i < ps.length; i++) {
       var t = (ps[i].textContent || "").replace(/\s+/g, " ").trim();
-      if (/^Home [–»>] .{1,80}$/.test(t) && !ps[i].querySelector("a, img")) ps[i].parentNode.removeChild(ps[i]);
+      // a breadcrumb line: "Home – Page" as text, or the same with "Home" linked to /
+      if (/^Home [–»>] .{1,80}$/.test(t) && !ps[i].querySelector("img") && ps[i].querySelectorAll("a").length <= 2 && ![...ps[i].querySelectorAll("a")].some(function (a) { return !/^(\/|https?:\/\/(www\.)?ayurvedichealingvillage\.com\/?)(index\.php)?$/.test(a.getAttribute("href") || ""); })) ps[i].parentNode.removeChild(ps[i]);
     }
   }
   // D-20260922-28: the contact page's live map, CONSENT-GATED. The static
@@ -222,6 +223,24 @@
     scheduled = true;
     setTimeout(pass, 0);
   }
+  // Video facades (the /video-gallery/ cards, tools/repair-video-gallery.mjs):
+  // nothing is requested from YouTube until the visitor presses play; then the
+  // button becomes a youtube-nocookie player in place.
+  root.addEventListener("click", function (ev) {
+    var btn = ev.target && ev.target.closest ? ev.target.closest("[data-ahv-video]") : null;
+    if (!btn) return;
+    var id = (btn.getAttribute("data-ahv-video") || "").replace(/[^A-Za-z0-9_-]/g, "");
+    if (!id) return;
+    ev.preventDefault();
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    frame.setAttribute("title", (btn.getAttribute("aria-label") || "Video").replace(/^Play video: /, ""));
+    frame.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    frame.setAttribute("allowfullscreen", "");
+    frame.setAttribute("loading", "lazy");
+    frame.style.cssText = "display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:3px;background:#000;";
+    btn.parentNode.replaceChild(frame, btn);
+  });
   if (window.MutationObserver) new MutationObserver(schedule).observe(root, { childList: true, subtree: true });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);

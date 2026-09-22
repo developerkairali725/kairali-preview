@@ -154,7 +154,7 @@
         'data-source-pointer': R.heroVideo.ptr,
         style: { display: 'block', width: '100%', maxWidth: R.heroVideo.width + 'px', height: 'auto', background: '#000' } }) : null,
       hasVideoCards: !!R.videoCards,
-      videoCards: R.videoCards ? R.videoCards.items.map(v => ({
+      videoCards: R.videoCards ? R.videoCards.items.map(v => ({ youtubeId: v.youtubeId || '',
         key: 'v' + v.order, order: String(v.order), title: v.title, ptr: v.ptr,
         // Short functional label only. The exact destination, provider and activation gate stay in the private
         // dataset and the manifest — never as visitor-facing prose.
