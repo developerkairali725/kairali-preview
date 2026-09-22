@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F7F5F0; }
+  a { color: #7A5C2E; }
+  a:hover { color: #4A3A20; }
+</style>
+</helmet>
+<div style="max-width: 860px; margin: 0 auto; padding: 48px 28px 96px; font-family: 'Source Sans 3', system-ui, sans-serif; color: #2B2620; font-size: 17px; line-height: 1.6;">
+
+  <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A5C2E; margin-bottom: 14px;">Knowledge explainer routes · slug decision</div>
+  <h1 style="font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.18; margin: 0 0 18px;">Two slugs to rule on</h1>
+  <p style="margin: 0 0 12px; max-width: 62ch; text-wrap: pretty;">On two of the eight routes the live Knowledge Center sidebar links to a different slug than the page's own canonical. Both spellings resolve today.</p>
+
+  <div style="margin: 26px 0 40px; padding: 20px 24px; background: #EAF0E6; border: 1px solid #C4D2B8;">
+    <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6138; margin-bottom: 10px;">Ruled — 22 Sep 2026</div>
+    <p style="margin: 0 0 10px; max-width: 62ch; text-wrap: pretty;">Fix the spelling, 301 the old slug. In both pairs the correctly-spelled URL wins; the malformed one redirects to it. Redirect map: <code style="font-family: ui-monospace, monospace; font-size: 14px;">sitemap/redirects-knowledge-explainers.json</code>.</p>
+    <p style="margin: 0; max-width: 62ch; font-size: 15px; color: #4A5540; text-wrap: pretty;">One thing to confirm: on the cuisine route the correctly-spelled URL also drops the word "and", so the ported slug changes in two ways, not one. See that card below.</p>
+  </div>
+
+  <p style="margin: 0 0 40px; max-width: 62ch; font-size: 15px; color: #6B6257; text-wrap: pretty;">Links open the live site in a new tab. The record keeps the live canonical as truth — the ruling is recorded alongside it as <code style="font-family: ui-monospace, monospace; font-size: 14px;">slugRuling</code>, not written over it.</p>
+
+  <div style="display: flex; flex-direction: column; gap: 34px;">
+
+    <div style="background: #FFFFFF; border: 1px solid #E2DBCE; border-radius: 2px; padding: 28px 30px;">
+      <div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8174; margin-bottom: 8px;">Route 7</div>
+      <h2 style="font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25; margin: 0 0 22px;">Ayurvedic Restaurant &amp; Cooking at Healing Village</h2>
+
+      <div style="display: grid; gap: 16px;">
+        <div style="display: grid; grid-template-columns: minmax(0,1fr); gap: 7px; padding: 16px 18px; background: #F4F1EA; border-left: 3px solid #7A5C2E;">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #7A5C2E;">Canonical — what the head declares</div>
+          <a href="https://www.ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/" target="_blank" rel="noopener" style="font-size: 16px; word-break: break-all;">/ayurvedic-resturant-and-cooking-at-healing-village/</a>
+          <div style="font-size: 15px; color: #6B6257;">Misspells "restaurant", includes "and". This is the slug in the record and in <code style="font-family: ui-monospace, monospace; font-size: 14px;">og:url</code>.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0,1fr); gap: 7px; padding: 16px 18px; background: #F4F1EA; border-left: 3px solid #A99C85;">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8174;">Sidebar link — what the live nav points to</div>
+          <a href="https://www.ayurvedichealingvillage.com/ayurvedic-restaurant-cooking-at-healing-village/" target="_blank" rel="noopener" style="font-size: 16px; word-break: break-all;">/ayurvedic-restaurant-cooking-at-healing-village/</a>
+          <div style="font-size: 15px; color: #6B6257;">Correct spelling, drops "and". <strong style="color: #4A6138;">Ruled: this becomes the ported slug</strong> — the old canonical 301s here. Note it changes two things, not just the spelling; if you wanted spelling only, say so and the target becomes <code style="font-family: ui-monospace, monospace; font-size: 14px;">/ayurvedic-restaurant-and-cooking-at-healing-village/</code>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E2DBCE; border-radius: 2px; padding: 28px 30px;">
+      <div style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8174; margin-bottom: 8px;">Route 6</div>
+      <h2 style="font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 25px; line-height: 1.25; margin: 0 0 22px;">Why pick an Ayurveda Treatment or Ayurvedic Retreat?</h2>
+
+      <div style="display: grid; gap: 16px;">
+        <div style="display: grid; grid-template-columns: minmax(0,1fr); gap: 7px; padding: 16px 18px; background: #F4F1EA; border-left: 3px solid #7A5C2E;">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #7A5C2E;">Canonical — what the head declares</div>
+          <a href="https://www.ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/" target="_blank" rel="noopener" style="font-size: 16px; word-break: break-all;">/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/</a>
+          <div style="font-size: 15px; color: #6B6257;">Hyphen present in "or-ayurvedic". This is the slug in the record and in <code style="font-family: ui-monospace, monospace; font-size: 14px;">og:url</code>. <strong style="color: #4A6138;">Ruled: unchanged</strong> — it was already correct; the sidebar URL 301s here.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0,1fr); gap: 7px; padding: 16px 18px; background: #F4F1EA; border-left: 3px solid #A99C85;">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8174;">Sidebar link — what the live nav points to</div>
+          <a href="https://www.ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/" target="_blank" rel="noopener" style="font-size: 16px; word-break: break-all;">/why-pick-an-ayurveda-treatment-orayurvedic-retreat/</a>
+          <div style="font-size: 15px; color: #6B6257;">Missing hyphen — reads "orayurvedic".</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 42px; padding: 22px 24px; background: #EFEBE1; border: 1px solid #E2DBCE;">
+    <div style="font-family: Marcellus, Georgia, serif; font-size: 19px; margin-bottom: 14px;">Outcome</div>
+    <div style="display: grid; gap: 12px; margin-bottom: 16px;">
+      <div style="display: grid; gap: 4px;">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8174;">Cuisine — ported slug</div>
+        <div style="font-family: ui-monospace, monospace; font-size: 15px; word-break: break-all;">/ayurvedic-restaurant-cooking-at-healing-village/</div>
+        <div style="font-size: 15px; color: #6B6257;">301 from <span style="font-family: ui-monospace, monospace;">/ayurvedic-resturant-and-cooking-at-healing-village/</span> (the old canonical).</div>
+      </div>
+      <div style="display: grid; gap: 4px;">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A8174;">Why-pick — ported slug</div>
+        <div style="font-family: ui-monospace, monospace; font-size: 15px; word-break: break-all;">/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/</div>
+        <div style="font-size: 15px; color: #6B6257;">Unchanged. 301 from <span style="font-family: ui-monospace, monospace;">/why-pick-an-ayurveda-treatment-orayurvedic-retreat/</span> (the malformed sidebar URL).</div>
+      </div>
+    </div>
+    <p style="margin: 0 0 14px; max-width: 62ch; font-size: 15px; color: #6B6257; text-wrap: pretty;">Redirect map: <code style="font-family: ui-monospace, monospace; font-size: 14px;">sitemap/redirects-knowledge-explainers.json</code>. Per-route ruling recorded as <code style="font-family: ui-monospace, monospace; font-size: 14px;">meta.slugRuling</code>; the live canonical stays in the record as truth. The SEO exposure of moving an indexed canonical was weighed and accepted in making this call.</p>
+    <div style="padding: 16px 18px; background: #FBF4E2; border-left: 3px solid #C9A227;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8A6D10; margin-bottom: 6px;">Still open — one item</div>
+      <p style="margin: 0; max-width: 62ch; font-size: 15px; text-wrap: pretty;">The cuisine target drops the word "and" as well as fixing the spelling. If the intent was spelling only, the slug should be <code style="font-family: ui-monospace, monospace; font-size: 14px;">/ayurvedic-restaurant-and-cooking-at-healing-village/</code> — which does not resolve today and would need creating.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

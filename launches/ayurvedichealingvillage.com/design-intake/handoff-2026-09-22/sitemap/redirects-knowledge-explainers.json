@@ -1,0 +1,27 @@
+{
+  "generated": "2026-09-22",
+  "source": "Owner ruling — fix the spelling, 301 the old slug",
+  "scope": "Knowledge explainer routes (8). Only routes with a slug change appear here.",
+  "redirects": [
+    {
+      "from": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "to": "/ayurvedic-restaurant-cooking-at-healing-village/",
+      "status": 301,
+      "permanent": true,
+      "reason": "Misspelled canonical (resturant). Target is the correctly-spelled slug already linked from the live Knowledge Center sidebar.",
+      "warning": "Target also drops the word \"and\" relative to the old canonical. If the intent was spelling only, the target should be /ayurvedic-restaurant-and-cooking-at-healing-village/ instead — confirm before deploy."
+    },
+    {
+      "from": "/why-pick-an-ayurveda-treatment-orayurvedic-retreat/",
+      "to": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "status": 301,
+      "permanent": true,
+      "reason": "Malformed sidebar URL (missing hyphen, orayurvedic). Canonical was already correct and is unchanged."
+    }
+  ],
+  "followUps": [
+    "Update the Knowledge Center sidebar links on all 8 ported pages to the new canonicals — the live sidebar currently carries both malformed forms.",
+    "og:url and the canonical link tag on the cuisine page must be updated to the new slug; the record keeps the live value as truth.",
+    "Re-check inbound links, the XML sitemap and the 608-route matrix for the old cuisine slug before deploy."
+  ]
+}
