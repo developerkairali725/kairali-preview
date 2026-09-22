@@ -748,7 +748,7 @@ const manifest = {
   imageRoot: IMG_ROOT_URL,
   creditText: CREDIT,
   copyrightNotice: COPYRIGHT,
-  copyrightNoticeStatus: "[TO CONFIRM] exact wording and whether an image-licence page should exist (spec §6.11) — owner",
+  copyrightNoticeStatus: "CONFIRMED by the owner, D-20260922-35 (2026-09-23): © Kairali Ayurvedic Group; no licence page requested",
   register: "KTAHV clinical lock enforced on every alt, caption, chapter title, intro and video text (build fails on a hit)",
   routes: built.map(({ route, hero, chapters }) => {
     const images = chapters.flatMap((ch) => ch.images);
