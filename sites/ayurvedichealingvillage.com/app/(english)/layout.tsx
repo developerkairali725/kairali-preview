@@ -101,6 +101,13 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             the header and footer are one component on every family. */}
         <link rel="stylesheet" href="/design/chrome.css" />
         <script defer src="/design/chrome.js" />
+        {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
+            (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
+            search control on every page, the programme finder and the FAQ filter.
+            search.js takes over the header's inert dialog at runtime, like chrome.js
+            does for the footer; the package component is never edited. */}
+        <link rel="stylesheet" href="/design/search.css" />
+        <script defer src="/design/search.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
