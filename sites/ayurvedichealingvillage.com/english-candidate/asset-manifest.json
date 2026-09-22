@@ -1,11 +1,11 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-14T20:24:21.815Z",
+ "generated": "2026-09-22T08:41:26.263Z",
  "publicPrefix": "/ahv/",
  "totals": {
-  "files": 2159,
-  "bytes": 420702362,
+  "files": 2160,
+  "bytes": 10913351,
   "binaryFiles": 2053,
   "binaryBytes": 409832848
  },
@@ -18764,6 +18764,15 @@
    "bytes": 7382,
    "sourceSha256": "b4326e4ed90aceee03e9f4982547f4f38d894282e2af1592ab07cc5740f38578",
    "servedSha256": "4b59dba499e705bc26b128a22b64ff8713116a94294f06d49718ffb4bae96fd0",
+   "transform": "url-prefix",
+   "binary": false
+  },
+  {
+   "path": "/ahv/assets/photo-collections-data.js",
+   "source": "assets/photo-collections-data.js",
+   "bytes": 43837,
+   "sourceSha256": "5be05a7a7784c0620814ef5c43d9c4b1d140e846f02cb4c693e6edbb190241bd",
+   "servedSha256": "c3272a69dac080d608ec652f77ad1d3c9dc0739c7fc1873e19a626ffac7af2e4",
    "transform": "url-prefix",
    "binary": false
   },

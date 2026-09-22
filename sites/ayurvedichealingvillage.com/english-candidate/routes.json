@@ -1,2025 +1,2025 @@
 {
- "taskId": "WOPS-AHV-CLAUDE-CONTINUATION-002",
- "activeEnglishRoutes": 252,
- "note": "Route -> view pair + dataset binding, exactly as supplied in the phase B/C packet. Mobile view is the intended narrow variant, Desktop the wide one. Deferred /ru/ and /treatment-in-kerala-russian.html are absent from this active list and are not exposed as pages.",
- "distinctViews": 136,
- "distinctDatasets": 21,
- "routes": [
-  {
-   "path": "/",
-   "views": [
-    "Home Hi-Fi v4.dc.html",
-    "Home Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/Kairali_Brand_and_Competition_Neo-original.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/about-us/",
-   "views": [
-    "AHV Page About Us Desktop.dc.html",
-    "AHV Page About Us Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/accreditations/",
-   "views": [
-    "AHV Page Accreditations Desktop.dc.html",
-    "AHV Page Accreditations Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/alcohol-free/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/all-programs/",
-   "views": [
-    "AHV Page All Programs Desktop.dc.html",
-    "AHV Page All Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
-   "views": [
-    "AHV Page Ananda Lahari Retreat Desktop.dc.html",
-    "AHV Page Ananda Lahari Retreat Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/animal-husbandry/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/apply-now/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/archive-yoga-retreat/",
-   "views": [
-    "AHV Page Past Retreats Desktop.dc.html",
-    "AHV Page Past Retreats Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/archive/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/arogya-kendra/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/arogya-shala/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ashtanga-yoga-and-ayurveda-retreat/",
-   "views": [
-    "AHV Page Ashtanga Retreat Desktop.dc.html",
-    "AHV Page Ashtanga Retreat Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/attractions-15kms-and-below/",
-   "views": [
-    "AHV Page Attractions Desktop.dc.html",
-    "AHV Page Attractions Mobile.dc.html"
-   ],
-   "dataset": "assets/attractions-family-data.js"
-  },
-  {
-   "path": "/attractions-25kms-to-50kms/",
-   "views": [
-    "AHV Page Attractions Desktop.dc.html",
-    "AHV Page Attractions Mobile.dc.html"
-   ],
-   "dataset": "assets/attractions-family-data.js"
-  },
-  {
-   "path": "/attractions-above-50kms/",
-   "views": [
-    "AHV Page Attractions Desktop.dc.html",
-    "AHV Page Attractions Mobile.dc.html"
-   ],
-   "dataset": "assets/attractions-family-data.js"
-  },
-  {
-   "path": "/attractions-under-10kms/",
-   "views": [
-    "AHV Page Attractions Desktop.dc.html",
-    "AHV Page Attractions Mobile.dc.html"
-   ],
-   "dataset": "assets/attractions-family-data.js"
-  },
-  {
-   "path": "/awards-and-accolades/",
-   "views": [
-    "AHV Page Awards and Accolades Desktop.dc.html",
-    "AHV Page Awards and Accolades Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/awards-and-accreditations/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurveda-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ayurveda-offers/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurveda-package/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurveda-retreat-kerala.html",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/ayurveda-retreats-for-everyone/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurveda-training-programme/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/ayurveda-training-programs/",
-   "views": [
-    "AHV Page Ayurveda Training Programs Desktop.dc.html",
-    "AHV Page Ayurveda Training Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ayurveda-training/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurveda-treatment/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/ayurveda-workshop/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-classical-medicines/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-cuisine/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-franchise/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-herbal-tea/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-links/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-new-year-yala-2018/",
-   "views": [
-    "AHV Page Yala 2018 Retreat Desktop.dc.html",
-    "AHV Page Yala 2018 Retreat Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ayurvedic-products/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-proprietary-medicines/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-proprietary-organics/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/ayurvedic-treatment-packages.html",
-   "views": [
-    "AHV Page Ayurvedic Treatment Packages Desktop.dc.html",
-    "AHV Page Ayurvedic Treatment Packages Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ayurvedic-treatments/",
-   "views": [
-    "AHV Page Ayurvedic Treatments Desktop.dc.html",
-    "AHV Page Ayurvedic Treatments Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/ayuryoga/",
-   "views": [
-    "AHV Page Ayuryoga Desktop.dc.html",
-    "AHV Page Ayuryoga Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/back-to-roots/",
-   "views": [
-    "AHV Page Back to Roots Desktop.dc.html",
-    "AHV Page Back to Roots Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/back-water-tour/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/beauty-care-and-eye-care/",
-   "views": [
-    "AHV Page Vision Eye Rejuvenation Desktop.dc.html",
-    "AHV Page Vision Eye Rejuvenation Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/book-now/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/books/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/brief-on-kairali/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/butterfly-booklet/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/cancellation-and-refund-policy/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/careers/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/cart/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/checkout/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/chef-retreat-food-to-wellness/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/classic-villa/",
-   "views": [
-    "AHV Page Classic Villa Desktop.dc.html",
-    "AHV Page Classic Villa Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/consultancy/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/contact-us-old/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/contact-us/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/contact-us/thank-you/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/cookie-policy/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/cooking-classes/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/cultural-events/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
-   "views": [
-    "AHV Page De-Addiction Rehabilitation Desktop.dc.html",
-    "AHV Page De-Addiction Rehabilitation Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/defence-and-paramilitary-forces/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/deluxe-villa/",
-   "views": [
-    "AHV Page Deluxe Villa Desktop.dc.html",
-    "AHV Page Deluxe Villa Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/destination-palakkad/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/digestive-wellness-gut-health-yoga-therapy/",
-   "views": [
-    "AHV Page Digestive Wellness Gut Health Desktop.dc.html",
-    "AHV Page Digestive Wellness Gut Health Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/disclaimer/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/elephant-safari/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/emailsubscriber/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/enquiry-form-old/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/enquiry-form/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/experience/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/family-ayurvedic-retreat-kerala.html",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/faqs-downloads/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/festivals/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/food-sadhana/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/founders-message/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/gallery/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/gift-test/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/exception-five-family-data.js"
-  },
-  {
-   "path": "/gift-vouchers/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/exception-five-family-data.js"
-  },
-  {
-   "path": "/givefeedback/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/exception-five-family-data.js"
-  },
-  {
-   "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
-   "views": [
-    "AHV Page Holistic Rejuvenation Detoxification Desktop.dc.html",
-    "AHV Page Holistic Rejuvenation Detoxification Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/house-boat-tour/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/how-to-reach-old/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/travel-family-data.js"
-  },
-  {
-   "path": "/how-to-reach/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/travel-family-data.js"
-  },
-  {
-   "path": "/immunity-enhancement-executive-health-assessment-therapy/",
-   "views": [
-    "AHV Page Immunity Executive Health Desktop.dc.html",
-    "AHV Page Immunity Executive Health Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/in-house-products/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/internships-at-kairali/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/jobs/business-development-manager/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/kair-by-kairali/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-air-india-maharaja-club.html",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-centre/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-equipment/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-group/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-products-pvt-ltd/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-treatment-center/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-ayurvedic-way-of-weight-management/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-cleansing-centre.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/kairali-hospitality/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/kairali-the-ayurvedic-healing-village/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/karma-being-retreat-2019/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/karma-being-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/katha-wellness-retreat-2019/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/knowledge-centre/",
-   "views": [
-    "AHV Page Knowledge Centre Desktop.dc.html",
-    "AHV Page Knowledge Centre Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/lakshya-yoga-retreat-2017/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/lakshya-yoga-retreat-2018/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/lakshya-yoga-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/lakshya-recovered-family-data.js"
-  },
-  {
-   "path": "/lakshya-yoga/",
-   "views": [
-    "AHV Page Lakshya Yoga Desktop.dc.html",
-    "AHV Page Lakshya Yoga Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/learn-about-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/learn-more-about-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/learn-more-about-yoga/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/legal-notice/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/live-to-100-with-panchkarma/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/maharaja-suite/",
-   "views": [
-    "AHV Page Maharaja Suite Desktop.dc.html",
-    "AHV Page Maharaja Suite Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/map/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/travel-family-data.js"
-  },
-  {
-   "path": "/meditation/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/mindfulness-retreat/",
-   "views": [
-    "AHV Page Mindfulness Retreat Desktop.dc.html",
-    "AHV Page Mindfulness Retreat Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/mountain-jeep-safari/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/my-account/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/nature-walk/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/new-privacy-policy/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/new-to-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/new-to-yoga-teacher-training/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/new-to-yoga/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/no-caffeine/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/no-preservatives/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/no-refridgeration/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/no-smoking/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/offers/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/offers/new/",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/offers/olympics-and-paralympics-offer/",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/offers/senior-citizen-offer/",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/one-day-ayurveda-workshop-program-kerala/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/online-consultation-old/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/online-consultation/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/onlinebookingthankyou/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/onlineconsultation-thanks/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/organic-farm/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/our-accolades/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/our-partners/",
-   "views": [
-    "AHV Page Our Partners Desktop.dc.html",
-    "AHV Page Our Partners Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/our-story/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/story-family-data.js"
-  },
-  {
-   "path": "/our-villas/",
-   "views": [
-    "AHV Page Our Villas Desktop.dc.html",
-    "AHV Page Our Villas Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/packages/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/pain-management.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/panchakarma-therapy/",
-   "views": [
-    "AHV Page Panchakarma Therapy Desktop.dc.html",
-    "AHV Page Panchakarma Therapy Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/panchakarma/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25b-family-data.js"
-  },
-  {
-   "path": "/panchkarma-treatment.html",
-   "views": [
-    "AHV Page Panchkarma Treatment Desktop.dc.html",
-    "AHV Page Panchkarma Treatment Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/payment-policy-compliance/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/personalized-customized-healing-program/",
-   "views": [
-    "AHV Page Personalized Customized Healing Desktop.dc.html",
-    "AHV Page Personalized Customized Healing Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/photo-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/post-pregnancy-health-programme/",
-   "views": [
-    "AHV Page Post Pregnancy Health Programme Desktop.dc.html",
-    "AHV Page Post Pregnancy Health Programme Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/postulez-maintenant/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/ppc-thanks/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/prav-simona-monsoon-yoga-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/prav-simona-yoga-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/hist9-family-data.js"
-  },
-  {
-   "path": "/preventive-and-regenerative-treatment/",
-   "views": [
-    "AHV Page Preventive Regenerative Desktop.dc.html",
-    "AHV Page Preventive Regenerative Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/preventive-rejuvenation-detoxification.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/privacy-policy/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/privacy-statement/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/product-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/product-range/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/property-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/read-feedback/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/exception-five-family-data.js"
-  },
-  {
-   "path": "/retreats-for-everyone/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/retreats-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/exception-five-family-data.js"
-  },
-  {
-   "path": "/revitalizing-and-strengthening/",
-   "views": [
-    "AHV Page Supportive Care Cancer Desktop.dc.html",
-    "AHV Page Supportive Care Cancer Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/royal-villa/",
-   "views": [
-    "AHV Page Royal Villa Desktop.dc.html",
-    "AHV Page Royal Villa Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/search-results/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/sight-seeing-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/sightseeing/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/sitemap/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/sleep-restoration-therapy/",
-   "views": [
-    "AHV Page Sleep Restoration Desktop.dc.html",
-    "AHV Page Sleep Restoration Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/social-cultural-environmental-commitment/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/social-responsibilities/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader6c-family-data.js"
-  },
-  {
-   "path": "/special-offers/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/terms-and-conditions/",
-   "views": [
-    "AHV Page Policy Reader Desktop.dc.html",
-    "AHV Page Policy Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/policy-family-data.js"
-  },
-  {
-   "path": "/test-page-2/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/test-page/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/testing/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/utility7-family-data.js"
-  },
-  {
-   "path": "/thanks-old/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/thanks/",
-   "views": [
-    "AHV Page Confirmation Desktop.dc.html",
-    "AHV Page Confirmation Mobile.dc.html"
-   ],
-   "dataset": "assets/confirmation-family-data.js"
-  },
-  {
-   "path": "/the-baoli-advert-box-deal/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/the-baoli-special-deal/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/things-to-do-in-kerala/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/things-to-do-in-property/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/things-to-do/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/training7-family-data.js"
-  },
-  {
-   "path": "/training-course-fees/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/article-family-data.js"
-  },
-  {
-   "path": "/training-programs/",
-   "views": [
-    "AHV Page Training Programs Desktop.dc.html",
-    "AHV Page Training Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/training/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/treatment-for-arthritis-and-spondylitis/",
-   "views": [
-    "AHV Page Joint Rehabilitation Arthritis Desktop.dc.html",
-    "AHV Page Joint Rehabilitation Arthritis Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-bronchial-diseases/",
-   "views": [
-    "AHV Page Breath Respiratory Desktop.dc.html",
-    "AHV Page Breath Respiratory Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-cervical-spondylosis/",
-   "views": [
-    "AHV Page Neck Upper Back Desktop.dc.html",
-    "AHV Page Neck Upper Back Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-chronic-back-pain/",
-   "views": [
-    "AHV Page Chronic Back Pain Desktop.dc.html",
-    "AHV Page Chronic Back Pain Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-diabetes/",
-   "views": [
-    "AHV Page Diabetes Metabolic Balance Desktop.dc.html",
-    "AHV Page Diabetes Metabolic Balance Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-facial-paralysis/",
-   "views": [
-    "AHV Page Facial Paralysis Desktop.dc.html",
-    "AHV Page Facial Paralysis Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-hypertension/",
-   "views": [
-    "AHV Page Hypertension Desktop.dc.html",
-    "AHV Page Hypertension Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-nervous-disability/",
-   "views": [
-    "AHV Page Nervous Disability Desktop.dc.html",
-    "AHV Page Nervous Disability Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-paralysis/",
-   "views": [
-    "AHV Page Paralysis Recovery Desktop.dc.html",
-    "AHV Page Paralysis Recovery Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-psoriasis/",
-   "views": [
-    "AHV Page Psoriasis Desktop.dc.html",
-    "AHV Page Psoriasis Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-sinusitis-and-migraine/",
-   "views": [
-    "AHV Page Sinus Migraine Desktop.dc.html",
-    "AHV Page Sinus Migraine Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-skin-diseases/",
-   "views": [
-    "AHV Page Skin Vitality Desktop.dc.html",
-    "AHV Page Skin Vitality Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-slip-disc/",
-   "views": [
-    "AHV Page Spinal Disc Nerve Restoration Desktop.dc.html",
-    "AHV Page Spinal Disc Nerve Restoration Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-for-spondylitis/",
-   "views": [
-    "AHV Page Spondylitis Desktop.dc.html",
-    "AHV Page Spondylitis Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-in-kerala.html",
-   "views": [
-    "AHV Page Campaign Retreat Desktop.dc.html",
-    "AHV Page Campaign Retreat Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-family-data.js"
-  },
-  {
-   "path": "/treatment-programs/",
-   "views": [
-    "AHV Page Treatment Programs Desktop.dc.html",
-    "AHV Page Treatment Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatment-to-remove-stress-and-strain/",
-   "views": [
-    "AHV Page Stress Strain Desktop.dc.html",
-    "AHV Page Stress Strain Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/treatments-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/vegetarian/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/video-gallery/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/travel-family-data.js"
-  },
-  {
-   "path": "/villa-raag/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/village-facilities/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/villas-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/virtual-tour/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/travel-family-data.js"
-  },
-  {
-   "path": "/vision-and-mission/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/visit-kerala/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/walk-in-ayurveda-treatment/",
-   "views": [
-    "AHV Page Enquiry Desktop.dc.html",
-    "AHV Page Enquiry Mobile.dc.html"
-   ],
-   "dataset": "assets/enquiry-family-data.js"
-  },
-  {
-   "path": "/weight-loss-programme/",
-   "views": [
-    "AHV Page Weight Loss Programme Desktop.dc.html",
-    "AHV Page Weight Loss Programme Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/weight-loss.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/wellness-programs/",
-   "views": [
-    "AHV Page Wellness Programs Desktop.dc.html",
-    "AHV Page Wellness Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/wellness-resort-kerala.html",
-   "views": [
-    "AHV Page Campaign Nine Desktop.dc.html",
-    "AHV Page Campaign Nine Mobile.dc.html"
-   ],
-   "dataset": "assets/campaign-nine-data.js"
-  },
-  {
-   "path": "/what-is-ayurvedic-food/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/what-is-panchkarma/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/what-is-yoga/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/why-get-training-in-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/why-get-training-in-yoga/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/why-pick-a-yoga-or-yoga-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/wildlife-drive/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/reader25a-family-data.js"
-  },
-  {
-   "path": "/womens-hormonal-balance-endocrine-therapy/",
-   "views": [
-    "AHV Page Womens Hormonal Balance Desktop.dc.html",
-    "AHV Page Womens Hormonal Balance Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-and-ayurveda/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/collection-family-data.js"
-  },
-  {
-   "path": "/yoga-and-meditation-package/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/commercial-family-data.js"
-  },
-  {
-   "path": "/yoga-based-stress-energy-reset-program/",
-   "views": [
-    "AHV Page Yoga Stress Reset Desktop.dc.html",
-    "AHV Page Yoga Stress Reset Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-classes-practical/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/yoga-classes-theory/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/yoga-gallery/",
-   "views": [
-    "AHV Page Ayurveda Gallery Desktop.dc.html",
-    "AHV Page Ayurveda Gallery Mobile.dc.html"
-   ],
-   "dataset": "assets/gallery-family-data.js"
-  },
-  {
-   "path": "/yoga-meditation-program/",
-   "views": [
-    "AHV Page Yoga Meditation Program Desktop.dc.html",
-    "AHV Page Yoga Meditation Program Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-meditation-programs/",
-   "views": [
-    "AHV Page Yoga Meditation Programs Desktop.dc.html",
-    "AHV Page Yoga Meditation Programs Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-meditation-training/",
-   "views": [
-    "AHV Page Yoga Meditation Training Desktop.dc.html",
-    "AHV Page Yoga Meditation Training Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-retreats-for-everyone/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  },
-  {
-   "path": "/yoga-retreats/",
-   "views": [
-    "AHV Page Yoga Retreats Desktop.dc.html",
-    "AHV Page Yoga Retreats Mobile.dc.html"
-   ],
-   "dataset": null
-  },
-  {
-   "path": "/yoga-therapy-individual/",
-   "views": [
-    "AHV Page Article Reader Desktop.dc.html",
-    "AHV Page Article Reader Mobile.dc.html"
-   ],
-   "dataset": "assets/seven-informational-data.js"
-  }
- ]
+  "taskId": "WOPS-AHV-CLAUDE-CONTINUATION-002",
+  "activeEnglishRoutes": 252,
+  "note": "Route -> view pair + dataset binding, exactly as supplied in the phase B/C packet. Mobile view is the intended narrow variant, Desktop the wide one. Deferred /ru/ and /treatment-in-kerala-russian.html are absent from this active list and are not exposed as pages. | OVERLAY 2026-09-22: 21 routes repointed at Claude Design families 6-18 (english-candidate/package-overlay/OVERLAY.md); datasets kept for head metadata",
+  "distinctViews": 162,
+  "distinctDatasets": 21,
+  "routes": [
+    {
+      "path": "/",
+      "views": [
+        "Home Hi-Fi v4.dc.html",
+        "Home Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/about-us/",
+      "views": [
+        "AHV Page About Us Desktop.dc.html",
+        "AHV Page About Us Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/accreditations/",
+      "views": [
+        "AHV Page Accreditations Desktop.dc.html",
+        "AHV Page Accreditations Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/alcohol-free/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/all-programs/",
+      "views": [
+        "AHV Page All Programs Desktop.dc.html",
+        "AHV Page All Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "views": [
+        "AHV Page Ananda Lahari Retreat Desktop.dc.html",
+        "AHV Page Ananda Lahari Retreat Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/animal-husbandry/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/apply-now/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/archive-yoga-retreat/",
+      "views": [
+        "AHV Page Past Retreats Desktop.dc.html",
+        "AHV Page Past Retreats Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/archive/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/arogya-kendra/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/arogya-shala/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+      "views": [
+        "AHV Page Ashtanga Retreat Desktop.dc.html",
+        "AHV Page Ashtanga Retreat Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/attractions-15kms-and-below/",
+      "views": [
+        "AHV Page Attractions Desktop.dc.html",
+        "AHV Page Attractions Mobile.dc.html"
+      ],
+      "dataset": "assets/attractions-family-data.js"
+    },
+    {
+      "path": "/attractions-25kms-to-50kms/",
+      "views": [
+        "AHV Page Attractions Desktop.dc.html",
+        "AHV Page Attractions Mobile.dc.html"
+      ],
+      "dataset": "assets/attractions-family-data.js"
+    },
+    {
+      "path": "/attractions-above-50kms/",
+      "views": [
+        "AHV Template Attractions By Distance Desktop.dc.html",
+        "AHV Template Attractions By Distance Mobile.dc.html"
+      ],
+      "dataset": "assets/attractions-family-data.js"
+    },
+    {
+      "path": "/attractions-under-10kms/",
+      "views": [
+        "AHV Page Attractions Desktop.dc.html",
+        "AHV Page Attractions Mobile.dc.html"
+      ],
+      "dataset": "assets/attractions-family-data.js"
+    },
+    {
+      "path": "/awards-and-accolades/",
+      "views": [
+        "AHV Page Awards and Accolades Desktop.dc.html",
+        "AHV Page Awards and Accolades Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/awards-and-accreditations/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurveda-gallery/",
+      "views": [
+        "AHV Page Ayurveda Gallery Desktop.dc.html",
+        "AHV Page Ayurveda Gallery Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ayurveda-offers/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurveda-package/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurveda-retreat-kerala.html",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/ayurveda-retreats-for-everyone/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurveda-training-programme/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/ayurveda-training-programs/",
+      "views": [
+        "AHV Page Ayurveda Training Programs Desktop.dc.html",
+        "AHV Page Ayurveda Training Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ayurveda-training/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurveda-treatment/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/ayurveda-workshop/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-classical-medicines/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-cuisine/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-franchise/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-herbal-tea/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-links/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-new-year-yala-2018/",
+      "views": [
+        "AHV Page Yala 2018 Retreat Desktop.dc.html",
+        "AHV Page Yala 2018 Retreat Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ayurvedic-products/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-proprietary-medicines/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-proprietary-organics/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/ayurvedic-treatment-packages.html",
+      "views": [
+        "AHV Page Ayurvedic Treatment Packages Desktop.dc.html",
+        "AHV Page Ayurvedic Treatment Packages Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ayurvedic-treatments/",
+      "views": [
+        "AHV Page Ayurvedic Treatments Desktop.dc.html",
+        "AHV Page Ayurvedic Treatments Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/ayuryoga/",
+      "views": [
+        "AHV Page Ayuryoga Desktop.dc.html",
+        "AHV Page Ayuryoga Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/back-to-roots/",
+      "views": [
+        "AHV Page Back to Roots Desktop.dc.html",
+        "AHV Page Back to Roots Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/back-water-tour/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/beauty-care-and-eye-care/",
+      "views": [
+        "AHV Page Vision Eye Rejuvenation Desktop.dc.html",
+        "AHV Page Vision Eye Rejuvenation Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/book-now/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/books/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/brief-on-kairali/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/butterfly-booklet/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/cancellation-and-refund-policy/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/careers/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/cart/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/checkout/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/chef-retreat-food-to-wellness/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/classic-villa/",
+      "views": [
+        "AHV Page Classic Villa Desktop.dc.html",
+        "AHV Page Classic Villa Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/consultancy/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/contact-us-old/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/contact-us/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/contact-us/thank-you/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/cookie-policy/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/cooking-classes/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/cultural-events/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "views": [
+        "AHV Page De-Addiction Rehabilitation Desktop.dc.html",
+        "AHV Page De-Addiction Rehabilitation Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/defence-and-paramilitary-forces/",
+      "views": [
+        "AHV Page Defence and Paramilitary Forces Desktop.dc.html",
+        "AHV Page Defence and Paramilitary Forces Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/deluxe-villa/",
+      "views": [
+        "AHV Page Deluxe Villa Desktop.dc.html",
+        "AHV Page Deluxe Villa Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/destination-palakkad/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/digestive-wellness-gut-health-yoga-therapy/",
+      "views": [
+        "AHV Page Digestive Wellness Gut Health Desktop.dc.html",
+        "AHV Page Digestive Wellness Gut Health Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/disclaimer/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/elephant-safari/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/emailsubscriber/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/enquiry-form-old/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/enquiry-form/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/experience/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/family-ayurvedic-retreat-kerala.html",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/faqs-downloads/",
+      "views": [
+        "AHV Page FAQs and Downloads Desktop.dc.html",
+        "AHV Page FAQs and Downloads Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/festivals/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/food-sadhana/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/founders-message/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/gallery/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/gift-test/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/exception-five-family-data.js"
+    },
+    {
+      "path": "/gift-vouchers/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/exception-five-family-data.js"
+    },
+    {
+      "path": "/givefeedback/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/exception-five-family-data.js"
+    },
+    {
+      "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "views": [
+        "AHV Page Holistic Rejuvenation Detoxification Desktop.dc.html",
+        "AHV Page Holistic Rejuvenation Detoxification Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/house-boat-tour/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/how-to-reach-old/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/travel-family-data.js"
+    },
+    {
+      "path": "/how-to-reach/",
+      "views": [
+        "AHV Page How To Reach Desktop.dc.html",
+        "AHV Page How To Reach Mobile.dc.html"
+      ],
+      "dataset": "assets/travel-family-data.js"
+    },
+    {
+      "path": "/immunity-enhancement-executive-health-assessment-therapy/",
+      "views": [
+        "AHV Page Immunity Executive Health Desktop.dc.html",
+        "AHV Page Immunity Executive Health Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/in-house-products/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/internships-at-kairali/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/jobs/business-development-manager/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/kair-by-kairali/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-air-india-maharaja-club.html",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-centre/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-equipment/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-group/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-products-pvt-ltd/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-treatment-center/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-ayurvedic-way-of-weight-management/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-cleansing-centre.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/kairali-hospitality/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/kairali-the-ayurvedic-healing-village/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/karma-being-retreat-2019/",
+      "views": [
+        "AHV Template Past Retreat Record Desktop.dc.html",
+        "AHV Template Past Retreat Record Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/karma-being-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/katha-wellness-retreat-2019/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/knowledge-centre/",
+      "views": [
+        "AHV Page Knowledge Centre Desktop.dc.html",
+        "AHV Page Knowledge Centre Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/lakshya-yoga-retreat-2017/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/lakshya-yoga-retreat-2018/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/lakshya-yoga-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/lakshya-recovered-family-data.js"
+    },
+    {
+      "path": "/lakshya-yoga/",
+      "views": [
+        "AHV Page Lakshya Yoga Desktop.dc.html",
+        "AHV Page Lakshya Yoga Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/learn-about-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/learn-more-about-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/learn-more-about-yoga/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/legal-notice/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/live-to-100-with-panchkarma/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/maharaja-suite/",
+      "views": [
+        "AHV Page Maharaja Suite Desktop.dc.html",
+        "AHV Page Maharaja Suite Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/map/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/travel-family-data.js"
+    },
+    {
+      "path": "/meditation/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/mindfulness-retreat/",
+      "views": [
+        "AHV Page Mindfulness Retreat Desktop.dc.html",
+        "AHV Page Mindfulness Retreat Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/mountain-jeep-safari/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/my-account/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/nature-walk/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/new-privacy-policy/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/new-to-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/new-to-yoga-teacher-training/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/new-to-yoga/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/no-caffeine/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/no-preservatives/",
+      "views": [
+        "AHV Page No Preservatives Desktop.dc.html",
+        "AHV Page No Preservatives Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/no-refridgeration/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/no-smoking/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/offers/",
+      "views": [
+        "AHV Template Offers Deals and Gift Vouchers Desktop.dc.html",
+        "AHV Template Offers Deals and Gift Vouchers Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/offers/new/",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/offers/olympics-and-paralympics-offer/",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/offers/senior-citizen-offer/",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/one-day-ayurveda-workshop-program-kerala/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/online-consultation-old/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/online-consultation/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/onlinebookingthankyou/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/onlineconsultation-thanks/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/organic-farm/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/our-accolades/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/our-partners/",
+      "views": [
+        "AHV Page Our Partners Desktop.dc.html",
+        "AHV Page Our Partners Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/our-story/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/story-family-data.js"
+    },
+    {
+      "path": "/our-villas/",
+      "views": [
+        "AHV Page Our Villas Desktop.dc.html",
+        "AHV Page Our Villas Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/packages/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/pain-management.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/panchakarma-therapy/",
+      "views": [
+        "AHV Page Panchakarma Therapy Desktop.dc.html",
+        "AHV Page Panchakarma Therapy Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/panchakarma/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25b-family-data.js"
+    },
+    {
+      "path": "/panchkarma-treatment.html",
+      "views": [
+        "AHV Page Panchkarma Treatment Desktop.dc.html",
+        "AHV Page Panchkarma Treatment Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/payment-policy-compliance/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/personalized-customized-healing-program/",
+      "views": [
+        "AHV Page Personalized Customized Healing Desktop.dc.html",
+        "AHV Page Personalized Customized Healing Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/photo-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/post-pregnancy-health-programme/",
+      "views": [
+        "AHV Page Post Pregnancy Health Programme Desktop.dc.html",
+        "AHV Page Post Pregnancy Health Programme Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/postulez-maintenant/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/ppc-thanks/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/prav-simona-monsoon-yoga-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/prav-simona-yoga-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/hist9-family-data.js"
+    },
+    {
+      "path": "/preventive-and-regenerative-treatment/",
+      "views": [
+        "AHV Page Preventive Regenerative Desktop.dc.html",
+        "AHV Page Preventive Regenerative Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/preventive-rejuvenation-detoxification.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/privacy-policy/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/privacy-statement/",
+      "views": [
+        "AHV Page Policy Reader Desktop.dc.html",
+        "AHV Page Policy Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/product-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/product-range/",
+      "views": [
+        "AHV Template Product Family Desktop.dc.html",
+        "AHV Template Product Family Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/property-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/read-feedback/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/exception-five-family-data.js"
+    },
+    {
+      "path": "/retreats-for-everyone/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/retreats-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+      "views": [
+        "AHV Page Cancer Supportive Care Desktop.dc.html",
+        "AHV Page Cancer Supportive Care Mobile.dc.html"
+      ],
+      "dataset": "assets/exception-five-family-data.js"
+    },
+    {
+      "path": "/revitalizing-and-strengthening/",
+      "views": [
+        "AHV Page Supportive Care Cancer Desktop.dc.html",
+        "AHV Page Supportive Care Cancer Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/royal-villa/",
+      "views": [
+        "AHV Page Royal Villa Desktop.dc.html",
+        "AHV Page Royal Villa Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/search-results/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/sight-seeing-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/sightseeing/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/sitemap/",
+      "views": [
+        "AHV Page Sitemap Desktop.dc.html",
+        "AHV Page Sitemap Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/sleep-restoration-therapy/",
+      "views": [
+        "AHV Page Sleep Restoration Desktop.dc.html",
+        "AHV Page Sleep Restoration Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/social-cultural-environmental-commitment/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/social-responsibilities/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader6c-family-data.js"
+    },
+    {
+      "path": "/special-offers/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/terms-and-conditions/",
+      "views": [
+        "AHV Template Legal Policy Desktop.dc.html",
+        "AHV Template Legal Policy Mobile.dc.html"
+      ],
+      "dataset": "assets/policy-family-data.js"
+    },
+    {
+      "path": "/test-page-2/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/test-page/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/testing/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/utility7-family-data.js"
+    },
+    {
+      "path": "/thanks-old/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/thanks/",
+      "views": [
+        "AHV Page Confirmation Desktop.dc.html",
+        "AHV Page Confirmation Mobile.dc.html"
+      ],
+      "dataset": "assets/confirmation-family-data.js"
+    },
+    {
+      "path": "/the-baoli-advert-box-deal/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/the-baoli-special-deal/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/things-to-do-in-kerala/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/things-to-do-in-property/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/things-to-do/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/training7-family-data.js"
+    },
+    {
+      "path": "/training-course-fees/",
+      "views": [
+        "AHV Template Course and Fees Desktop.dc.html",
+        "AHV Template Course and Fees Mobile.dc.html"
+      ],
+      "dataset": "assets/article-family-data.js"
+    },
+    {
+      "path": "/training-programs/",
+      "views": [
+        "AHV Page Training Programs Desktop.dc.html",
+        "AHV Page Training Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/training/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/treatment-for-arthritis-and-spondylitis/",
+      "views": [
+        "AHV Page Joint Rehabilitation Arthritis Desktop.dc.html",
+        "AHV Page Joint Rehabilitation Arthritis Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-bronchial-diseases/",
+      "views": [
+        "AHV Page Breath Respiratory Desktop.dc.html",
+        "AHV Page Breath Respiratory Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-cervical-spondylosis/",
+      "views": [
+        "AHV Page Neck Upper Back Desktop.dc.html",
+        "AHV Page Neck Upper Back Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-chronic-back-pain/",
+      "views": [
+        "AHV Page Chronic Back Pain Desktop.dc.html",
+        "AHV Page Chronic Back Pain Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-diabetes/",
+      "views": [
+        "AHV Page Diabetes Metabolic Balance Desktop.dc.html",
+        "AHV Page Diabetes Metabolic Balance Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-facial-paralysis/",
+      "views": [
+        "AHV Page Facial Paralysis Desktop.dc.html",
+        "AHV Page Facial Paralysis Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-hypertension/",
+      "views": [
+        "AHV Page Hypertension Desktop.dc.html",
+        "AHV Page Hypertension Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-nervous-disability/",
+      "views": [
+        "AHV Page Nervous Disability Desktop.dc.html",
+        "AHV Page Nervous Disability Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-paralysis/",
+      "views": [
+        "AHV Page Paralysis Recovery Desktop.dc.html",
+        "AHV Page Paralysis Recovery Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-psoriasis/",
+      "views": [
+        "AHV Page Psoriasis Desktop.dc.html",
+        "AHV Page Psoriasis Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-sinusitis-and-migraine/",
+      "views": [
+        "AHV Page Sinus Migraine Desktop.dc.html",
+        "AHV Page Sinus Migraine Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-skin-diseases/",
+      "views": [
+        "AHV Page Skin Vitality Desktop.dc.html",
+        "AHV Page Skin Vitality Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-slip-disc/",
+      "views": [
+        "AHV Page Spinal Disc Nerve Restoration Desktop.dc.html",
+        "AHV Page Spinal Disc Nerve Restoration Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-for-spondylitis/",
+      "views": [
+        "AHV Page Spondylitis Desktop.dc.html",
+        "AHV Page Spondylitis Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-in-kerala.html",
+      "views": [
+        "AHV Page Campaign Retreat Desktop.dc.html",
+        "AHV Page Campaign Retreat Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-family-data.js"
+    },
+    {
+      "path": "/treatment-programs/",
+      "views": [
+        "AHV Page Treatment Programs Desktop.dc.html",
+        "AHV Page Treatment Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatment-to-remove-stress-and-strain/",
+      "views": [
+        "AHV Page Stress Strain Desktop.dc.html",
+        "AHV Page Stress Strain Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/treatments-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/vegetarian/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/video-gallery/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/travel-family-data.js"
+    },
+    {
+      "path": "/villa-raag/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/village-facilities/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/villas-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/virtual-tour/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/travel-family-data.js"
+    },
+    {
+      "path": "/vision-and-mission/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/visit-kerala/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/walk-in-ayurveda-treatment/",
+      "views": [
+        "AHV Page Enquiry Desktop.dc.html",
+        "AHV Page Enquiry Mobile.dc.html"
+      ],
+      "dataset": "assets/enquiry-family-data.js"
+    },
+    {
+      "path": "/weight-loss-programme/",
+      "views": [
+        "AHV Page Weight Loss Programme Desktop.dc.html",
+        "AHV Page Weight Loss Programme Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/weight-loss.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/wellness-programs/",
+      "views": [
+        "AHV Page Wellness Programs Desktop.dc.html",
+        "AHV Page Wellness Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/wellness-resort-kerala.html",
+      "views": [
+        "AHV Page Campaign Nine Desktop.dc.html",
+        "AHV Page Campaign Nine Mobile.dc.html"
+      ],
+      "dataset": "assets/campaign-nine-data.js"
+    },
+    {
+      "path": "/what-is-ayurvedic-food/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/what-is-panchkarma/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/what-is-yoga/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/why-get-training-in-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/why-get-training-in-yoga/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/why-pick-a-yoga-or-yoga-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/wildlife-drive/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/reader25a-family-data.js"
+    },
+    {
+      "path": "/womens-hormonal-balance-endocrine-therapy/",
+      "views": [
+        "AHV Page Womens Hormonal Balance Desktop.dc.html",
+        "AHV Page Womens Hormonal Balance Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-and-ayurveda/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/collection-family-data.js"
+    },
+    {
+      "path": "/yoga-and-meditation-package/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/commercial-family-data.js"
+    },
+    {
+      "path": "/yoga-based-stress-energy-reset-program/",
+      "views": [
+        "AHV Page Yoga Stress Reset Desktop.dc.html",
+        "AHV Page Yoga Stress Reset Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-classes-practical/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/yoga-classes-theory/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/yoga-gallery/",
+      "views": [
+        "AHV Template Photo Collections Desktop.dc.html",
+        "AHV Template Photo Collections Mobile.dc.html"
+      ],
+      "dataset": "assets/gallery-family-data.js"
+    },
+    {
+      "path": "/yoga-meditation-program/",
+      "views": [
+        "AHV Page Yoga Meditation Program Desktop.dc.html",
+        "AHV Page Yoga Meditation Program Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-meditation-programs/",
+      "views": [
+        "AHV Page Yoga Meditation Programs Desktop.dc.html",
+        "AHV Page Yoga Meditation Programs Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-meditation-training/",
+      "views": [
+        "AHV Page Yoga Meditation Training Desktop.dc.html",
+        "AHV Page Yoga Meditation Training Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-retreats-for-everyone/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    },
+    {
+      "path": "/yoga-retreats/",
+      "views": [
+        "AHV Page Yoga Retreats Desktop.dc.html",
+        "AHV Page Yoga Retreats Mobile.dc.html"
+      ],
+      "dataset": null
+    },
+    {
+      "path": "/yoga-therapy-individual/",
+      "views": [
+        "AHV Page Article Reader Desktop.dc.html",
+        "AHV Page Article Reader Mobile.dc.html"
+      ],
+      "dataset": "assets/seven-informational-data.js"
+    }
+  ]
 }

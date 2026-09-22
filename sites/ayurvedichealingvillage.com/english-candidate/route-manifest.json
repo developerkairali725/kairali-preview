@@ -1,9 +1,9 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-14T20:24:21.815Z",
+ "generated": "2026-09-22T08:41:26.263Z",
  "activeEnglishRoutes": 252,
- "distinctViews": 136,
+ "distinctViews": 162,
  "deferred": [
   "/ru/",
   "/treatment-in-kerala-russian.html"
@@ -316,8 +316,8 @@
    "segments": [
     "attractions-above-50kms"
    ],
-   "desktopView": "ahv-page-attractions-desktop",
-   "mobileView": "ahv-page-attractions-mobile",
+   "desktopView": "ahv-template-attractions-by-distance-desktop",
+   "mobileView": "ahv-template-attractions-by-distance-mobile",
    "dataset": "assets/attractions-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -1272,8 +1272,8 @@
    "segments": [
     "defence-and-paramilitary-forces"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-defence-and-paramilitary-forces-desktop",
+   "mobileView": "ahv-page-defence-and-paramilitary-forces-mobile",
    "dataset": "assets/article-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -1482,8 +1482,8 @@
    "segments": [
     "faqs-downloads"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-faqs-and-downloads-desktop",
+   "mobileView": "ahv-page-faqs-and-downloads-mobile",
    "dataset": "assets/article-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -1692,8 +1692,8 @@
    "segments": [
     "how-to-reach"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-how-to-reach-desktop",
+   "mobileView": "ahv-page-how-to-reach-mobile",
    "dataset": "assets/travel-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -2070,8 +2070,8 @@
    "segments": [
     "karma-being-retreat-2019"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-template-past-retreat-record-desktop",
+   "mobileView": "ahv-template-past-retreat-record-mobile",
    "dataset": "assets/hist9-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -2236,7 +2236,6 @@
     "ogType": "article"
    },
    "sitemapExclude": false,
-   "sitemapExcludeReason": "live serves robots:noindex, no canonical — owner confirmed intentional 2026-09-19",
    "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
   },
   {
@@ -2568,8 +2567,8 @@
    "segments": [
     "no-preservatives"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-no-preservatives-desktop",
+   "mobileView": "ahv-page-no-preservatives-mobile",
    "dataset": "assets/reader25b-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -2625,8 +2624,8 @@
    "segments": [
     "offers"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-template-offers-deals-and-gift-vouchers-desktop",
+   "mobileView": "ahv-template-offers-deals-and-gift-vouchers-mobile",
    "dataset": "assets/commercial-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3059,8 +3058,8 @@
    "segments": [
     "photo-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3250,8 +3249,8 @@
    "segments": [
     "product-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3269,8 +3268,8 @@
    "segments": [
     "product-range"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-template-product-family-desktop",
+   "mobileView": "ahv-template-product-family-mobile",
    "dataset": "assets/collection-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3288,8 +3287,8 @@
    "segments": [
     "property-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3340,7 +3339,6 @@
     "ogType": "article"
    },
    "sitemapExclude": false,
-   "sitemapExcludeReason": "live serves robots:noindex, no canonical — owner confirmed intentional 2026-09-19",
    "robotsNote": "live serves robots:noindex — owner ruled 2026-09-19 that this is a MISTAKE; page stays indexed and in the sitemap, content fix to follow"
   },
   {
@@ -3348,8 +3346,8 @@
    "segments": [
     "retreats-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3367,8 +3365,8 @@
    "segments": [
     "revitalizing-and-strengthening-treatment-for-cancer-patients"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-cancer-supportive-care-desktop",
+   "mobileView": "ahv-page-cancer-supportive-care-mobile",
    "dataset": "assets/exception-five-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3446,8 +3444,8 @@
    "segments": [
     "sight-seeing-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3484,8 +3482,8 @@
    "segments": [
     "sitemap"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-page-sitemap-desktop",
+   "mobileView": "ahv-page-sitemap-mobile",
    "dataset": "assets/utility7-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3579,8 +3577,8 @@
    "segments": [
     "terms-and-conditions"
    ],
-   "desktopView": "ahv-page-policy-reader-desktop",
-   "mobileView": "ahv-page-policy-reader-mobile",
+   "desktopView": "ahv-template-legal-policy-desktop",
+   "mobileView": "ahv-template-legal-policy-mobile",
    "dataset": "assets/policy-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -3811,8 +3809,8 @@
    "segments": [
     "training-course-fees"
    ],
-   "desktopView": "ahv-page-article-reader-desktop",
-   "mobileView": "ahv-page-article-reader-mobile",
+   "desktopView": "ahv-template-course-and-fees-desktop",
+   "mobileView": "ahv-template-course-and-fees-mobile",
    "dataset": "assets/article-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -4209,8 +4207,8 @@
    "segments": [
     "treatments-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -4304,8 +4302,8 @@
    "segments": [
     "villas-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {
@@ -4741,8 +4739,8 @@
    "segments": [
     "yoga-gallery"
    ],
-   "desktopView": "ahv-page-ayurveda-gallery-desktop",
-   "mobileView": "ahv-page-ayurveda-gallery-mobile",
+   "desktopView": "ahv-template-photo-collections-desktop",
+   "mobileView": "ahv-template-photo-collections-mobile",
    "dataset": "assets/gallery-family-data.js",
    "metadataSource": "dataset",
    "metadata": {

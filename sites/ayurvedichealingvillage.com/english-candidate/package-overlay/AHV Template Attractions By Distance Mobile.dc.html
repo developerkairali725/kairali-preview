@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attractions by distance — template (mobile)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F7F4EA; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color:#006038; }
+  a:hover { color:#004226; }
+  :focus-visible { outline:3px solid #8E9D35; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</helmet>
+
+<div style="width:390px; max-width:100%; margin:0 auto; background:#F7F4EA; font-family:Mulish, sans-serif; color:#2A2118; overflow-x:hidden">
+
+  <div style="height:72px; background:#DCD8CC; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 16px; font:600 11px/1.4 Mulish, sans-serif; letter-spacing:1.6px; color:#6E675C; text-transform:uppercase">Approved site header — not redesigned</div>
+
+  <header>
+    <div style="width:100%; height:200px; background:#E0D7C4; overflow:hidden">
+      <img src="assets/img/AHV-Attractions-Landscape.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block">
+    </div>
+    <div style="padding:26px 18px 0">
+      <nav aria-label="Breadcrumb" style="font-size:13px; line-height:1.6; color:#75695A; margin-bottom:18px">
+        <a href="#" style="display:inline-flex; align-items:center; justify-content:center; min-height:44px; min-width:44px; padding:0 8px; margin-left:-8px; color:#006038; text-decoration:none">Home</a>
+        <span style="padding:0 6px; color:#C9BFA8">/</span>
+        <a href="#" style="display:inline-flex; align-items:center; justify-content:center; min-height:44px; min-width:44px; padding:0 8px; margin-left:-8px; color:#006038; text-decoration:none">Things to Do</a>
+      </nav>
+      <p style="margin:0 0 12px; font-size:12.5px; line-height:1.5; letter-spacing:2.6px; text-transform:uppercase; color:#8F6212; font-weight:600">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+      <h1 style="margin:0 0 18px; font-family:Marcellus, serif; font-weight:400; font-size:33px; line-height:1.18">{{ h1 }}</h1>
+      <p style="margin:0; padding-left:16px; border-left:3px solid #C1882C; font-size:17px; line-height:1.7; color:#514A3F">{{ standfirst }}</p>
+    </div>
+  </header>
+
+  <nav aria-label="Attractions by distance" style="margin-top:28px; padding:20px 18px; background:#FFFFFF; border-top:1px solid #E9E2D3; border-bottom:1px solid #E9E2D3">
+    <p style="margin:0 0 14px; font-size:12px; line-height:1.5; letter-spacing:2px; text-transform:uppercase; color:#75695A; font-weight:700">Distance from the hospital</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+      <sc-for list="{{ bands }}" as="b" hint-placeholder-count="4">
+        <a href="{{ b.href }}" aria-current="{{ b.current }}" onClick="{{ b.go }}" style="{{ b.style }}">
+          <span style="display:block; font-size:15px; font-weight:700; line-height:1.25">{{ b.label }}</span>
+          <span style="display:block; font-size:12.5px; line-height:1.25; margin-top:3px; opacity:0.78">{{ b.countLabel }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </nav>
+
+  <main style="padding:30px 18px 0">
+    <h2 style="margin:0 0 8px; font-family:Marcellus, serif; font-weight:400; font-size:25px; line-height:1.25">{{ listHeading }}</h2>
+    <p style="margin:0 0 22px; font-size:16px; line-height:1.65; color:#75695A">{{ listCount }}</p>
+
+    <p style="margin:0 0 26px; padding:13px 15px; border:1px dashed #C1882C; border-radius:4px; background:#FFFFFF; font-size:15px; line-height:1.65; color:#5A4420">DRAFT — approve or replace: the one-line summaries below are the opening sentences of the live page copy, and the “Good for” labels are drafted from that same copy. Distances marked [TO CONFIRM] are not stated on the live page.</p>
+
+    <div style="display:flex; flex-direction:column; gap:22px">
+      <sc-for list="{{ places }}" as="p" hint-placeholder-count="7">
+        <article style="background:#FFFFFF; border:1px solid #E9E2D3; border-radius:4px; overflow:hidden">
+          <div style="background:#E0D7C4; height:208px">
+            <img src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block">
+          </div>
+          <div style="padding:20px 18px 22px; display:flex; flex-direction:column; gap:12px; align-items:flex-start">
+            <span style="font-size:12.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#5A4420; background:#E0D7C4; border-radius:4px; padding:6px 10px">{{ p.distance }}</span>
+            <h3 style="margin:0; font-family:Marcellus, serif; font-weight:400; font-size:24px; line-height:1.25">{{ p.name }}</h3>
+            <p style="margin:0; font-size:17px; line-height:1.7; color:#2A2118">{{ p.summary }}</p>
+            <div style="display:flex; flex-direction:column; gap:9px; margin-top:2px">
+              <span style="font-size:12px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:#75695A">Good for</span>
+              <div style="display:flex; gap:8px; flex-wrap:wrap">
+                <sc-for list="{{ p.goodFor }}" as="g" hint-placeholder-count="3">
+                  <span style="font-size:14.5px; line-height:1.4; color:#514A3F; border:1px solid #E9E2D3; border-radius:4px; padding:6px 10px">{{ g }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <nav aria-label="Other distance bands" style="margin-top:34px; padding:20px 0 0; border-top:1px solid #E9E2D3">
+      <p style="margin:0 0 14px; font-size:12px; line-height:1.5; letter-spacing:2px; text-transform:uppercase; color:#75695A; font-weight:700">Other distances</p>
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <sc-for list="{{ others }}" as="b" hint-placeholder-count="3">
+          <a href="{{ b.href }}" onClick="{{ b.go }}" style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px; padding:0 16px; border:1px solid #E9E2D3; border-radius:4px; background:#FFFFFF; text-decoration:none; color:#514A3F">
+            <span style="font-size:16px; font-weight:700; color:#2A2118">{{ b.label }}</span>
+            <span style="font-size:13px; color:#75695A">{{ b.countLabel }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </nav>
+  </main>
+
+  <section style="margin-top:56px; background:#FFFFFF; border-top:1px solid #E9E2D3; border-bottom:1px solid #E9E2D3; background-image:radial-gradient(#F3E6CC 1px, transparent 1px); background-size:14px 14px">
+    <div style="padding:40px 18px; text-align:center">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; margin:0 auto 30px; text-align:left">
+        <p style="margin:0; padding-left:19px; text-indent:-19px; font-size:15px; line-height:1.55; color:#2A2118"><span style="color:#C1882C; margin-right:7px">◆</span>NABH Certified Hospital</p>
+        <p style="margin:0; padding-left:19px; text-indent:-19px; font-size:15px; line-height:1.55; color:#2A2118"><span style="color:#C1882C; margin-right:7px">◆</span>118+ Years Heritage</p>
+        <p style="margin:0; padding-left:19px; text-indent:-19px; font-size:15px; line-height:1.55; color:#2A2118"><span style="color:#C1882C; margin-right:7px">◆</span>Individualised Programmes</p>
+        <p style="margin:0; padding-left:19px; text-indent:-19px; font-size:15px; line-height:1.55; color:#2A2118"><span style="color:#C1882C; margin-right:7px">◆</span>World Luxury Award Winner</p>
+      </div>
+      <h2 style="margin:0 0 12px; font-family:Marcellus, serif; font-weight:400; font-size:26px; line-height:1.3">Not sure which programme fits?</h2>
+      <p style="margin:0 0 26px; font-size:16.5px; line-height:1.7; color:#514A3F">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center">
+        <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display:flex; align-items:center; justify-content:center; width:100%; height:52px; padding:0 18px; border-radius:4px; background:#EEB41E; color:#2A2118; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:1.5px">Free Doctor Consultation</a>
+        <a href="https://wa.me/919289838797" style="display:flex; align-items:center; justify-content:center; width:100%; height:52px; padding:0 18px; border-radius:4px; border:1.5px solid #006038; color:#006038; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:1.5px">WhatsApp Patient Care</a>
+        <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:flex; align-items:center; justify-content:center; width:100%; height:52px; padding:0 18px; border-radius:4px; border:1.5px solid #5A4420; color:#5A4420; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:1.5px">Enquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:620px; background:#DCD8CC; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 16px; font:600 11px/1.4 Mulish, sans-serif; letter-spacing:1.6px; color:#6E675C; text-transform:uppercase">Approved site footer — not redesigned</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390}}">
+const TBC = '[TO CONFIRM]';
+
+const DATA = [
+  {
+    key: 'under10',
+    label: 'Under 10 km',
+    crumb: 'Attractions — Under 10 km',
+    href: '/attractions-under-10kms/',
+    h1: 'Attractions – 10 Kms & Under',
+    standfirst: 'Kairali – The Ayurvedic Healing Village is located in the beautiful town of Palakkad, which has an unending number of tourist attractions with a cultural, historical, and religious value that would astound any traveler.',
+    heading: 'Places under 10 km',
+    places: [
+      { name: 'Thiruvalathoor', distance: TBC, img: 'assets/img/AHV-Attractions-aa-1.jpg',
+        summary: 'Thiruvalathoor is known for its ancient temple, which features excellent woodwork and stone sculptures.',
+        goodFor: ['Temple architecture', 'Woodwork and stone sculpture'] },
+      { name: 'Thenari', distance: TBC, img: 'assets/img/AHV-Attractions-aa-2.jpg',
+        summary: 'Thenari is a holy shrine located on the Pollachi Road from Palakkad town. The famed Sree Rama temple in Thenari is devoted to Lord Rama.',
+        goodFor: ['Pilgrimage', 'Sacred spring'] },
+      { name: 'Jain Temple of Jainimedu', distance: TBC, img: 'assets/img/AHV-Attractions-aa-3.jpg',
+        summary: 'Jainimedu is a Jain temple located 3 kilometres from Palakkad’s centre. It was built in the 15th century.',
+        goodFor: ['Jain heritage', 'Granite sculpture', 'Malayalam literary history'] },
+      { name: 'Tipu’s Fort', distance: '14 km', img: 'assets/img/AHV-Attractions-aa-4.jpg',
+        summary: 'Tipu’s Fort, also known as the Palakkad Fort, stands high in the middle of Palakkad. Hyder Ali built this fort in 1766.',
+        goodFor: ['Protected monument', 'Open-air auditorium', 'Children’s park'] },
+      { name: 'Kalpathy Shiva Temple', distance: TBC, img: 'assets/img/AHV-Attractions-aa-5.jpg',
+        summary: 'Kalpathy is one of Kerala’s oldest ‘Brahmin Agraharams’, situated in the heart of the town.',
+        goodFor: ['Ratholsavam festival', 'Heritage streets'] }
+    ]
+  },
+  {
+    key: 'under15',
+    label: '15 km & below',
+    crumb: 'Attractions — 15 km & Below',
+    href: '/attractions-15kms-and-below/',
+    h1: 'Attractions (15 Kms & Below)',
+    standfirst: 'Palakkad has evolved as an excellent tourist destination, offering wilderness excursions, cultural tours, ancient sites, and temples. The following places are easily accessible and close to Kairali – The Ayurvedic Healing Village.',
+    heading: 'Places 15 km and below',
+    places: [
+      { name: 'Rock Garden', distance: TBC, img: 'assets/img/AHV-Attractions-a-15-1.jpg', alt: ' The Malampuzha Rock Garden',
+        summary: 'Padmashree Nekchand Saini, a world-renowned sculptor who also designed India’s first rock garden in Chandigarh, created the Malampuzha Rock Garden.',
+        goodFor: ['Sculpture', 'Planted garden'] },
+      { name: 'Chittur Gurumadam', distance: TBC, img: 'assets/img/AHV-Attractions-a-15-2.jpg',
+        summary: 'Chittur Gurumadam is a memorial to Thunchath Ramanujan Ezhuthachan, the father of the Malayalam language, on the banks of the Sokanasdini River.',
+        goodFor: ['Malayalam literary history', 'Antique manuscripts'] },
+      { name: 'Fantasy Park', distance: TBC, img: 'assets/img/AHV-Attractions-a-15-3.jpg',
+        summary: 'Fantasy Park, located near Malampuzha Dam in Palakkad, is Kerala’s first amusement park, and it is a fun place for the entire family.',
+        goodFor: ['Families', 'Rides and water park'] },
+      { name: 'Malampuzha (The Reservoir)', distance: TBC, img: 'assets/img/AHV-Attractions-a-15-4.jpg', alt: ' The Malampuzha Rock Garden',
+        summary: 'The Malampuzha Reservoir is a popular tourist attraction. It is bordered by lovely gardens, amusement parks, fish-shaped aquariums, and a snake park.',
+        goodFor: ['Boating', 'Gardens', 'Snake park'] }
+    ]
+  },
+  {
+    key: 'mid',
+    label: '25 to 50 km',
+    crumb: 'Attractions — 25–50 km',
+    href: '/attractions-25kms-to-50kms/',
+    h1: 'Attractions (25 to 50 Kms)',
+    standfirst: 'Although Palakkad is a small town, its development into a significant tourist destination is unsurprising given its rich culture, abundant greenery, and diverse flora and wildlife.',
+    heading: 'Places 25 to 50 km away',
+    places: [
+      { name: 'Thiruvegappura Sankaranarayana Temple', distance: '25 km', img: 'assets/img/AHV-Attractions-a-25-1.jpg',
+        summary: 'This ancient 14th-century temple, also known as Moonnumoorthy temple, was built on the banks of Thootha, a tributary of the Bharathapuzha river.',
+        goodFor: ['14th-century temple', 'Koothambalam theatre'] },
+      { name: 'Meenvallam', distance: '30 km', img: 'assets/img/AHV-Attractions-a-25-2.jpg',
+        summary: 'The Meenvallam waterfalls, which originate at the mouth of the Thuppanadu River, are a hidden treasure in Kerala.',
+        goodFor: ['Waterfall', 'Forest walking'] },
+      { name: 'Meenkara', distance: '32 km', img: 'assets/img/AHV-Attractions-a-25-3.jpg',
+        summary: 'Meenkara is a tourist destination because of the dam built across the Meenkara River, a sub-tributary of Gayathripuzha.',
+        goodFor: ['Picnics', 'Fish farm', 'Gardens'] },
+      { name: 'Kanjirapuzha Dam & Garden', distance: '40 km', img: 'assets/img/AHV-Attractions-a-25-4.jpg',
+        summary: 'Surrounded by mountains, dense evergreen forests, and cotton clouds, Kanjirapuzha Dam is an alluring natural dam with three islands in its reservoir.',
+        goodFor: ['Quiet', 'Reservoir views'] },
+      { name: 'Pothundy', distance: '45 km', img: 'assets/img/AHV-Attractions-a-25-5.jpg',
+        summary: 'Constructed across the Meenichiladipuzha and Padipuzha rivers, Pothundy Dam is considered to be one of the oldest dams in India.',
+        goodFor: ['Picnics', 'One-day trip'] },
+      { name: 'Mangalam Dam', distance: '50 km', img: 'assets/img/AHV-Attractions-a-25-4.jpg',
+        summary: 'It is a renowned tourist destination and is located across the river Cherukunnath, a branch of the Mangalam River.',
+        goodFor: ['Reservoir views'] }
+    ]
+  },
+  {
+    key: 'above50',
+    label: 'Above 50 km',
+    crumb: 'Attractions — Above 50 km',
+    href: '/attractions-above-50kms/',
+    h1: 'Attractions (Above 50 Kms)',
+    standfirst: 'Palakkad, with its diverse natural scenery and man-made wonders, has carved its place into the Kerala tourism landscape. Apart from the sights found inside and near Palakkad’s borders, there are additional places to visit if you are willing to venture a bit further into the wilderness.',
+    heading: 'Places above 50 km',
+    places: [
+      { name: 'Nelliampathy', distance: '75 km', img: 'assets/img/AHV-Attractions-a-50-1.jpg',
+        summary: 'Nelliyampathy, the ‘Queen of Palakkad Hills’, is a lovely place surrounded by wispy clouds and has a charm all its own.',
+        goodFor: ['Hill air', 'Tea and coffee plantations', 'Trekking'] },
+      { name: 'Kalamandalam', distance: '70 km', img: 'assets/img/AHV-Attractions-a-50-2.jpg',
+        summary: 'Kalamandalam, a world-renowned Kathakali training facility, is based near Cheruthuruthy hamlet. It was founded in 1930 by the poet Vallathol Narayana Menon.',
+        goodFor: ['Kathakali', 'Classical performing arts'] },
+      { name: 'Thrithala', distance: '75 km', img: 'assets/img/AHV-Attractions-a-50-3.jpg',
+        summary: 'Thrithala, known for its medieval ruins, is of significant archeological significance. Notable monuments are a massive mud fort with a laterite moat and the Siva temple.',
+        goodFor: ['Archaeology', 'Medieval ruins'] },
+      { name: 'Attappadi (Mountain Valley)', distance: '80 km', img: 'assets/img/AHV-Attractions-a-50-4.jpg',
+        summary: 'Attappadi is a large mountain valley located near the headwaters of the Bhavani River, below the Western Ghats’ Nilgiri Hills.',
+        goodFor: ['Valley scenery', 'Flora and wildlife'] },
+      { name: 'Silent Valley National Park', distance: '80 km', img: 'assets/img/AHV-Attractions-a-50-5.jpg',
+        summary: 'Silent Valley National Park is Kerala’s second-largest national park and one of the last untouched areas of the South-Western Ghats. Road transport reaches only Mukkali, 24 km from the park.',
+        goodFor: ['Rainforest', 'Walking beyond Mukkali'] },
+      { name: 'Guruvayur', distance: '100 km', img: 'assets/img/AHV-Attractions-a-50-6.jpg',
+        summary: 'Guruvayur is regarded as one of Kerala’s most important pilgrimage sites, known as the Dwaraka of the South.',
+        goodFor: ['Pilgrimage', 'Thulabharam offering', 'Annual festival'] },
+      { name: 'Parambikulam Wild Life Sanctuary', distance: '100 km', img: 'assets/img/AHV-Attractions-a-50-7.jpg',
+        summary: 'Parambikulam Wildlife Sanctuary is a 391-square-kilometre protected area in Chittur Taluk, spread across the Anaimalai and Nelliampathy Hills.',
+        goodFor: ['Wildlife', 'Teak and rosewood forest'] }
+    ]
+  }
+];
+
+const PILL = {
+  display: 'flex', flexDirection: 'column', justifyContent: 'center',
+  minHeight: '52px', padding: '0 14px', borderRadius: '4px',
+  textDecoration: 'none', border: '1px solid #E9E2D3'
+};
+
+class Component extends DCLogic {
+  state = { key: 'above50' };
+
+  band(d) {
+    return {
+      label: d.label,
+      href: d.href,
+      countLabel: d.places.length + ' places',
+      go: (e) => { e.preventDefault(); this.setState({ key: d.key }); window.scrollTo({ top: 0 }); }
+    };
+  }
+
+  renderVals() {
+    const active = DATA.find(d => d.key === this.state.key) || DATA[3];
+    const bands = DATA.map(d => {
+      const on = d.key === active.key;
+      return Object.assign(this.band(d), {
+        current: on ? 'page' : null,
+        style: Object.assign({}, PILL, on
+          ? { background: '#5A4420', borderColor: '#5A4420', color: '#FFFFFF' }
+          : { background: '#FFFFFF', color: '#514A3F' })
+      });
+    });
+    const n = active.places.length;
+    const known = active.places.filter(p => p.distance !== TBC).length;
+    return {
+      bands,
+      others: DATA.filter(d => d.key !== active.key).map(d => this.band(d)),
+      crumb: active.crumb,
+      h1: active.h1,
+      standfirst: active.standfirst,
+      listHeading: active.heading,
+      listCount: known === n
+        ? n + ' places, in the order they appear on the live page.'
+        : n + ' places, in the order they appear on the live page. ' + (n - known) + ' distances are not stated on the live page and are marked [TO CONFIRM].',
+      places: active.places.map(p => ({
+        name: p.name,
+        distance: p.distance,
+        img: p.img,
+        alt: p.alt || '',
+        summary: p.summary,
+        goodFor: p.goodFor
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

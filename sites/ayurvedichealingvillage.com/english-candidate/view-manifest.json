@@ -1,7 +1,7 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-14T20:24:21.815Z",
+ "generated": "2026-09-22T08:41:26.263Z",
  "views": {
   "AHV Page About Us Desktop.dc.html": {
    "id": "ahv-page-about-us-desktop",
@@ -609,6 +609,34 @@
    "propsValid": true,
    "title": null
   },
+  "AHV Page Cancer Supportive Care Desktop.dc.html": {
+   "id": "ahv-page-cancer-supportive-care-desktop",
+   "payload": "/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+   "sourceSha256": "0fd2ce31b4f321282e2551e276adf4d9085045b0cf99ab0e20d955fe9892c799",
+   "sourceBytes": 38422,
+   "payloadBytes": 39068,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Page Cancer Supportive Care Mobile.dc.html": {
+   "id": "ahv-page-cancer-supportive-care-mobile",
+   "payload": "/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+   "sourceSha256": "dd9cf60a748a15ee3f3719218ae8dd8a6b19bf3a3ecdb658256ed203d4ee07ab",
+   "sourceBytes": 38122,
+   "payloadBytes": 38733,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
   "AHV Page Chronic Back Pain Desktop.dc.html": {
    "id": "ahv-page-chronic-back-pain-desktop",
    "payload": "/ahv/views/ahv-page-chronic-back-pain-desktop.json",
@@ -730,6 +758,34 @@
    "propsRepaired": 0,
    "propsValid": true,
    "title": "Ayurvedic Addiction Recovery & Detox Program | Kairali"
+  },
+  "AHV Page Defence and Paramilitary Forces Desktop.dc.html": {
+   "id": "ahv-page-defence-and-paramilitary-forces-desktop",
+   "payload": "/ahv/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
+   "sourceSha256": "4c1f46cf2e1d7dc0545f0b08bc82d3791758db8b5533a30d0e0182deff9e2ffd",
+   "sourceBytes": 20765,
+   "payloadBytes": 21003,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Page Defence and Paramilitary Forces Mobile.dc.html": {
+   "id": "ahv-page-defence-and-paramilitary-forces-mobile",
+   "payload": "/ahv/views/ahv-page-defence-and-paramilitary-forces-mobile.json",
+   "sourceSha256": "cc7bb13569da097587f3ccab7585becaa15b98c5e6469b7a757f48f1fed757f8",
+   "sourceBytes": 19709,
+   "payloadBytes": 19919,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
   },
   "AHV Page Deluxe Villa Desktop.dc.html": {
    "id": "ahv-page-deluxe-villa-desktop",
@@ -853,6 +909,34 @@
    "propsValid": true,
    "title": null
   },
+  "AHV Page FAQs and Downloads Desktop.dc.html": {
+   "id": "ahv-page-faqs-and-downloads-desktop",
+   "payload": "/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+   "sourceSha256": "d926ae7063f1cc129279f9de11698bac09d2a14bf52e5ec4d55aa411364b6f86",
+   "sourceBytes": 88040,
+   "payloadBytes": 90272,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Page FAQs and Downloads Mobile.dc.html": {
+   "id": "ahv-page-faqs-and-downloads-mobile",
+   "payload": "/ahv/views/ahv-page-faqs-and-downloads-mobile.json",
+   "sourceSha256": "937c03227247b8fc74866474023a8a63acba36d24ff4765c8779d487068f85d7",
+   "sourceBytes": 88245,
+   "payloadBytes": 90463,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
   "AHV Page Facial Paralysis Desktop.dc.html": {
    "id": "ahv-page-facial-paralysis-desktop",
    "payload": "/ahv/views/ahv-page-facial-paralysis-desktop.json",
@@ -908,6 +992,40 @@
    "propsRepaired": 0,
    "propsValid": true,
    "title": "Ayurvedic Detox & Rejuvenation Program in Kerala"
+  },
+  "AHV Page How To Reach Desktop.dc.html": {
+   "id": "ahv-page-how-to-reach-desktop",
+   "payload": "/ahv/views/ahv-page-how-to-reach-desktop.json",
+   "sourceSha256": "aa4b4ea2ac82c9c2a6c6e59cd7580251e89b8da15da76631cbe2cf0a467de1d2",
+   "sourceBytes": 53522,
+   "payloadBytes": 54487,
+   "variant": "desktop",
+   "scripts": [
+    "/ahv/https://unpkg.com/d3@7.9.0/dist/d3.min.js",
+    "/ahv/https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
+   ],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Page How To Reach Mobile.dc.html": {
+   "id": "ahv-page-how-to-reach-mobile",
+   "payload": "/ahv/views/ahv-page-how-to-reach-mobile.json",
+   "sourceSha256": "ff2ccdbc82863060241acb880982a16b04c4ba7580adbd39bb792a7303c932d5",
+   "sourceBytes": 46520,
+   "payloadBytes": 47325,
+   "variant": "mobile",
+   "scripts": [
+    "/ahv/https://unpkg.com/d3@7.9.0/dist/d3.min.js",
+    "/ahv/https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
+   ],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
   },
   "AHV Page Hypertension Desktop.dc.html": {
    "id": "ahv-page-hypertension-desktop",
@@ -996,9 +1114,9 @@
   "AHV Page Knowledge Centre Desktop.dc.html": {
    "id": "ahv-page-knowledge-centre-desktop",
    "payload": "/ahv/views/ahv-page-knowledge-centre-desktop.json",
-   "sourceSha256": "954d7822fcbfeb47d36d66437c9bc00d1625df69641373983362efc99fe08856",
-   "sourceBytes": 8374,
-   "payloadBytes": 8684,
+   "sourceSha256": "0c29072421734bb88eeaa6687fa1d7c63963db6bcdfdcf74d51cdfa2479fb432",
+   "sourceBytes": 8533,
+   "payloadBytes": 8843,
    "variant": "desktop",
    "scripts": [
     "/ahv/assets/knowledge-centre-data.js"
@@ -1012,9 +1130,9 @@
   "AHV Page Knowledge Centre Mobile.dc.html": {
    "id": "ahv-page-knowledge-centre-mobile",
    "payload": "/ahv/views/ahv-page-knowledge-centre-mobile.json",
-   "sourceSha256": "73adec003ed0ef4347fc5c882150b4a4ed8e15209d5f915c4f50443887003e49",
-   "sourceBytes": 9006,
-   "payloadBytes": 9335,
+   "sourceSha256": "4f6819bee7a2124984eff1b680fcec84eb3dd687e1d75164fc402a1013912b01",
+   "sourceBytes": 9165,
+   "payloadBytes": 9494,
    "variant": "mobile",
    "scripts": [
     "/ahv/assets/knowledge-centre-data.js"
@@ -1176,6 +1294,34 @@
    "propsRepaired": 0,
    "propsValid": true,
    "title": "Ayurvedic Neurological Therapy for Nervous System Health"
+  },
+  "AHV Page No Preservatives Desktop.dc.html": {
+   "id": "ahv-page-no-preservatives-desktop",
+   "payload": "/ahv/views/ahv-page-no-preservatives-desktop.json",
+   "sourceSha256": "482bdd4eee044e536e48938d4061a1d7a585fa21225e8471deb73faa199f723d",
+   "sourceBytes": 25214,
+   "payloadBytes": 25618,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "Fresh and Natural Ayurvedic Food at Kairali for Holistic Wellness"
+  },
+  "AHV Page No Preservatives Mobile.dc.html": {
+   "id": "ahv-page-no-preservatives-mobile",
+   "payload": "/ahv/views/ahv-page-no-preservatives-mobile.json",
+   "sourceSha256": "dbf94a679f6891a41f84092279f3c52ce7ca2191db3e90474dd755a0a11f4efc",
+   "sourceBytes": 34590,
+   "payloadBytes": 35264,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "AHV — House rule page template, mobile 390"
   },
   "AHV Page Our Partners Desktop.dc.html": {
    "id": "ahv-page-our-partners-desktop",
@@ -1562,6 +1708,34 @@
    "propsRepaired": 0,
    "propsValid": true,
    "title": "Sinus & Migraine Ayurvedic Relief at Kairali Healing Village"
+  },
+  "AHV Page Sitemap Desktop.dc.html": {
+   "id": "ahv-page-sitemap-desktop",
+   "payload": "/ahv/views/ahv-page-sitemap-desktop.json",
+   "sourceSha256": "7a52f5063e79eb2bd508e414d8e81bd54e8b4c787d8cbc53d84598292e2acc75",
+   "sourceBytes": 52528,
+   "payloadBytes": 53863,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Page Sitemap Mobile.dc.html": {
+   "id": "ahv-page-sitemap-mobile",
+   "payload": "/ahv/views/ahv-page-sitemap-mobile.json",
+   "sourceSha256": "1ae41009c0bbf551dd11afa3dfe626d17116f03b3b88cc5201a6622bc05c2103",
+   "sourceBytes": 57151,
+   "payloadBytes": 58684,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
   },
   "AHV Page Skin Vitality Desktop.dc.html": {
    "id": "ahv-page-skin-vitality-desktop",
@@ -2078,6 +2252,206 @@
    "propsRepaired": 0,
    "propsValid": true,
    "title": "Stress & Energy Reset with Yoga | Kairali Ayurveda"
+  },
+  "AHV Template Attractions By Distance Desktop.dc.html": {
+   "id": "ahv-template-attractions-by-distance-desktop",
+   "payload": "/ahv/views/ahv-template-attractions-by-distance-desktop.json",
+   "sourceSha256": "8ab88527bd086c1825b308bdba28125078771a2a3bfb01aeb6d6362b51309c07",
+   "sourceBytes": 20433,
+   "payloadBytes": 20981,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "Attractions by distance — template (desktop)"
+  },
+  "AHV Template Attractions By Distance Mobile.dc.html": {
+   "id": "ahv-template-attractions-by-distance-mobile",
+   "payload": "/ahv/views/ahv-template-attractions-by-distance-mobile.json",
+   "sourceSha256": "51d4d05237972d1b63e1deae2ad7a995d72d3042f699e0fae2389c32a82791e9",
+   "sourceBytes": 20787,
+   "payloadBytes": 21354,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "Attractions by distance — template (mobile)"
+  },
+  "AHV Template Course and Fees Desktop.dc.html": {
+   "id": "ahv-template-course-and-fees-desktop",
+   "payload": "/ahv/views/ahv-template-course-and-fees-desktop.json",
+   "sourceSha256": "af71297f6fcdb30665f19d27c79131bdd2746facb3726c01eec0d049883cef84",
+   "sourceBytes": 35427,
+   "payloadBytes": 36155,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "AHV Template — Course & Fees (Desktop 1440)"
+  },
+  "AHV Template Course and Fees Mobile.dc.html": {
+   "id": "ahv-template-course-and-fees-mobile",
+   "payload": "/ahv/views/ahv-template-course-and-fees-mobile.json",
+   "sourceSha256": "e7f1673ce4b33aa01ceaf73addfc1807d9c828a3f00b47268e909e868fe2c274",
+   "sourceBytes": 34579,
+   "payloadBytes": 35263,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "AHV Template — Course & Fees (Mobile 390)"
+  },
+  "AHV Template Legal Policy Desktop.dc.html": {
+   "id": "ahv-template-legal-policy-desktop",
+   "payload": "/ahv/views/ahv-template-legal-policy-desktop.json",
+   "sourceSha256": "14d68cc0ea781d5fa6be39adf606949048fd2cbe979e0f33d9240249054265f5",
+   "sourceBytes": 62615,
+   "payloadBytes": 63970,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Legal Policy Mobile.dc.html": {
+   "id": "ahv-template-legal-policy-mobile",
+   "payload": "/ahv/views/ahv-template-legal-policy-mobile.json",
+   "sourceSha256": "86dde163ffb9f97976b22de33383d38388cf9e2a60291121a1864ddb9ee0a6fe",
+   "sourceBytes": 70042,
+   "payloadBytes": 71592,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Offers Deals and Gift Vouchers Desktop.dc.html": {
+   "id": "ahv-template-offers-deals-and-gift-vouchers-desktop",
+   "payload": "/ahv/views/ahv-template-offers-deals-and-gift-vouchers-desktop.json",
+   "sourceSha256": "18223353b4c6d475e5168851de33faeef542caaedf7e5284b51a59e444408d52",
+   "sourceBytes": 51039,
+   "payloadBytes": 52425,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": false,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Offers Deals and Gift Vouchers Mobile.dc.html": {
+   "id": "ahv-template-offers-deals-and-gift-vouchers-mobile",
+   "payload": "/ahv/views/ahv-template-offers-deals-and-gift-vouchers-mobile.json",
+   "sourceSha256": "ad83071fe8cefa98eca07347e85028469e2096d6c396a9e34c42bc9835ca9e65",
+   "sourceBytes": 61541,
+   "payloadBytes": 63201,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Past Retreat Record Desktop.dc.html": {
+   "id": "ahv-template-past-retreat-record-desktop",
+   "payload": "/ahv/views/ahv-template-past-retreat-record-desktop.json",
+   "sourceSha256": "45fe81682fcaad44feb31bd2d8d36e9c745f29e9d71916fbcf73dd534c6ab92f",
+   "sourceBytes": 32986,
+   "payloadBytes": 33920,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": false,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Past Retreat Record Mobile.dc.html": {
+   "id": "ahv-template-past-retreat-record-mobile",
+   "payload": "/ahv/views/ahv-template-past-retreat-record-mobile.json",
+   "sourceSha256": "5ec19984a34684c0cf6abceb755619fa71d4c032b45d39f57a456eb03c666839",
+   "sourceBytes": 39272,
+   "payloadBytes": 40326,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": false,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": null
+  },
+  "AHV Template Photo Collections Desktop.dc.html": {
+   "id": "ahv-template-photo-collections-desktop",
+   "payload": "/ahv/views/ahv-template-photo-collections-desktop.json",
+   "sourceSha256": "cbcf011b675553e946131fc722c62d205581f6062f247e2ce2a94fb6a9772edc",
+   "sourceBytes": 16403,
+   "payloadBytes": 16546,
+   "variant": "desktop",
+   "scripts": [
+    "/ahv/assets/photo-collections-data.js"
+   ],
+   "hasLogic": true,
+   "hasRouteProp": true,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "Property Gallery | Kairali - The Ayurvedic Healing Village"
+  },
+  "AHV Template Photo Collections Mobile.dc.html": {
+   "id": "ahv-template-photo-collections-mobile",
+   "payload": "/ahv/views/ahv-template-photo-collections-mobile.json",
+   "sourceSha256": "c647d3866ae236ba1aa3d0ab709472472d92640ff0936b73b7daa5c00328bbeb",
+   "sourceBytes": 16765,
+   "payloadBytes": 16922,
+   "variant": "mobile",
+   "scripts": [
+    "/ahv/assets/photo-collections-data.js"
+   ],
+   "hasLogic": true,
+   "hasRouteProp": true,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "Property Gallery | Kairali - The Ayurvedic Healing Village"
+  },
+  "AHV Template Product Family Desktop.dc.html": {
+   "id": "ahv-template-product-family-desktop",
+   "payload": "/ahv/views/ahv-template-product-family-desktop.json",
+   "sourceSha256": "343f3979ffefa5e7d50b8262de2af1667ca538d0ebe1498ef15375e684e04709",
+   "sourceBytes": 16146,
+   "payloadBytes": 16310,
+   "variant": "desktop",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "AHV Template — Product Family (Desktop 1440)"
+  },
+  "AHV Template Product Family Mobile.dc.html": {
+   "id": "ahv-template-product-family-mobile",
+   "payload": "/ahv/views/ahv-template-product-family-mobile.json",
+   "sourceSha256": "caaa3de22ed41f72dfd05421112c9ff131646bfab025c3e847f145faaa14ff16",
+   "sourceBytes": 16692,
+   "payloadBytes": 16863,
+   "variant": "mobile",
+   "scripts": [],
+   "hasLogic": true,
+   "hasRouteProp": false,
+   "propsRepaired": 0,
+   "propsValid": true,
+   "title": "AHV Template — Product Family (Mobile 390)"
   },
   "Home Hi-Fi v4.dc.html": {
    "id": "home-hi-fi-v4",

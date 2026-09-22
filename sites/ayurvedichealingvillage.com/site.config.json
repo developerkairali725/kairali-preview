@@ -15,7 +15,8 @@
   "compliance": {
     "vendored": [
       "public/ahv",
-      "english-candidate/prerender"
+      "english-candidate/prerender",
+      "english-candidate/package-overlay"
     ],
     "note": "public/ahv is the imported approved design payload; tools/import-english-candidate.mjs rewrites it wholesale on every run. english-candidate/prerender is the SAME approved bytes compiled by a browser (tools/prerender-english.mjs) so the body can be server-rendered - it is generated output, contains no authored content, and is regenerated wholesale. Reporting the identical approved copy twice at error severity would double-count vendored source; the KTAHV clinical-lock decision on that copy is already flagged once, as an owner and Dr. Deepu John decision (191 of 252 routes, english-candidate/language-lock-audit.json). Findings in both trees are still reported, at warning. Owner ruling D-20260915-07."
   }

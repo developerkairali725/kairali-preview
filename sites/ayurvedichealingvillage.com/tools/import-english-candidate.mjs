@@ -53,6 +53,20 @@ const PKG =
   process.env.AHV_CANDIDATE_DIR ??
   "/Volumes/Extreme SSD - Blue 2nd/Claude Workspaces/10x WordPress and Websites/deliverables/WOPS-AHV-CLAUDE-CONTINUATION-002/code-handoff/final-english-portable-candidate";
 
+/**
+ * Repo-local OVERLAY (2026-09-22): the Claude Design families finished after the
+ * package was sealed live here — new view pairs, their datasets, and a
+ * routes.json whose rows point at them. The overlay LAYERS over the package:
+ * a file present in both is read from the overlay; everything else from the
+ * package. The package itself is never written (Q-AHV-PACKAGE-EXTENSION).
+ */
+const OVERLAY =
+  process.env.AHV_CANDIDATE_OVERLAY ?? path.join(SITE, "english-candidate", "package-overlay");
+const src = (relPath) => {
+  const o = path.join(OVERLAY, relPath);
+  return fs.existsSync(o) ? o : path.join(PKG, relPath);
+};
+
 const OUT_TEXT = path.join(SITE, "english-candidate");
 const OUT_PUBLIC = path.join(SITE, "public", "ahv");
 const PUBLIC_PREFIX = "/ahv/";
@@ -264,7 +278,7 @@ function evalDatasets(files) {
       console: { log() {}, warn() {}, error() {} },
     };
     try {
-      vm.runInNewContext(fs.readFileSync(path.join(PKG, file), "utf8"), sandbox, {
+      vm.runInNewContext(fs.readFileSync(src(file), "utf8"), sandbox, {
         timeout: 15000,
       });
     } catch (err) {
@@ -283,7 +297,14 @@ function evalDatasets(files) {
  * object. Nothing is guessed: a route with no matching record falls back to
  * its own view's helmet.
  */
-function findRouteRecord(globals, routePath) {
+function findRouteRecord(globals, routePath, preferredDataset) {
+  // The route's OWN dataset is searched first: two datasets can both carry a
+  // record whose path is this route (a sibling that links to it), and the
+  // first one met in file order is not necessarily the owner.
+  if (preferredDataset && globals[preferredDataset]) {
+    const own = findRouteRecord({ [preferredDataset]: globals[preferredDataset] }, routePath);
+    if (own) return own;
+  }
   let found = null;
   const seen = new Set();
   const walk = (node, depth) => {
@@ -371,21 +392,26 @@ const TEXT_EXT = new Set([".js", ".css", ".json", ".svg", ".txt", ".html"]);
 const PAYLOAD_EXCLUDE = new Set(["assets/img/SOURCES.txt", "assets/icons-inclusion-256/README.md"]);
 
 function collectPackageRefs() {
-  const out = [];
-  const walk = (relDir) => {
-    const abs = path.join(PKG, relDir);
+  // Both trees are walked; a relative path is listed once, and src() resolves
+  // it overlay-first when the file is read.
+  const out = new Set();
+  const walk = (base, relDir) => {
+    const abs = path.join(base, relDir);
     if (!fs.existsSync(abs)) return;
     for (const name of fs.readdirSync(abs)) {
       if (name.startsWith(".")) continue;
       const rel = `${relDir}/${name}`;
       if (PAYLOAD_EXCLUDE.has(rel)) continue;
-      const st = fs.statSync(path.join(PKG, rel));
-      if (st.isDirectory()) walk(rel);
-      else if (st.isFile()) out.push(rel);
+      const st = fs.statSync(path.join(base, rel));
+      if (st.isDirectory()) walk(base, rel);
+      else if (st.isFile()) out.add(rel);
     }
   };
-  for (const root of ROOTS) walk(root);
-  return out.sort();
+  for (const root of ROOTS) {
+    walk(PKG, root);
+    walk(OVERLAY, root);
+  }
+  return [...out].sort();
 }
 
 /* ------------------------------------------------------------------ *
@@ -398,10 +424,11 @@ function main() {
     process.exit(2);
   }
   console.log(`source package : ${PKG}`);
+  console.log(`overlay        : ${fs.existsSync(OVERLAY) ? rel(OVERLAY) : "(none)"}`);
   console.log(`text records   : ${rel(OUT_TEXT)}`);
   console.log(`served payload : ${rel(OUT_PUBLIC)}`);
 
-  const routesRaw = fs.readFileSync(path.join(PKG, "routes.json"));
+  const routesRaw = fs.readFileSync(src("routes.json"));
   const routes = JSON.parse(routesRaw.toString("utf8")).routes;
 
   const viewFiles = [];
@@ -415,7 +442,7 @@ function main() {
   const parsedByFile = new Map();
   const idsSeen = new Map();
   for (const file of viewFiles) {
-    const buf = fs.readFileSync(path.join(PKG, file));
+    const buf = fs.readFileSync(src(file));
     const parsed = parseView(buf.toString("utf8"));
     const id = viewId(file);
     if (idsSeen.has(id)) throw new Error(`view id collision: ${id} (${file} vs ${idsSeen.get(id)})`);
@@ -468,12 +495,12 @@ function main() {
   const componentMap = {};
   const queue = [];
   for (const file of viewFiles)
-    for (const name of dcImports(fs.readFileSync(path.join(PKG, file), "utf8")))
+    for (const name of dcImports(fs.readFileSync(src(file), "utf8")))
       if (!queue.includes(name)) queue.push(name);
   const componentManifest = {};
   for (let i = 0; i < queue.length; i += 1) {
     const name = queue[i];
-    const srcPath = path.join(PKG, `${name}.dc.html`);
+    const srcPath = src(`${name}.dc.html`);
     if (!fs.existsSync(srcPath)) {
       console.warn(`  ! <dc-import name="${name}"> has no ${name}.dc.html in the package`);
       continue;
@@ -497,8 +524,10 @@ function main() {
   console.log(`components     : ${Object.keys(componentMap).length} (${queue.join(", ") || "none"})`);
 
   /* ---- routes -> manifest ---- */
-  const allData = fs
-    .readdirSync(path.join(PKG, "assets"))
+  const allData = [...new Set([
+    ...fs.readdirSync(path.join(PKG, "assets")),
+    ...(fs.existsSync(path.join(OVERLAY, "assets")) ? fs.readdirSync(path.join(OVERLAY, "assets")) : []),
+  ])]
     .filter((f) => /-data\.js$/.test(f))
     .map((f) => "assets/" + f)
     .sort();
@@ -515,7 +544,7 @@ function main() {
     const desktop = desktopFile ? parsedByFile.get(desktopFile) : null;
     const mobile = mobileFile ? parsedByFile.get(mobileFile) : null;
 
-    const dsRecord = findRouteRecord(globals, r.path);
+    const dsRecord = findRouteRecord(globals, r.path, r.dataset);
     const dsMeta = dsRecord?.metadata ?? null;
     if (dsMeta) fromDataset += 1;
     if (r.dataset && desktop && !/"route"\s*:/.test(desktop.parsed.props))
@@ -582,7 +611,7 @@ function main() {
     });
   };
   for (const r of refs) {
-    const buf = fs.readFileSync(path.join(PKG, r));
+    const buf = fs.readFileSync(src(r));
     const ext = path.extname(r).toLowerCase();
     const isText = TEXT_EXT.has(ext);
     const isFontCss = r.startsWith("fonts/") && ext === ".css"; // sibling-relative already
@@ -604,7 +633,7 @@ function main() {
     emit(r, buf, outBuf);
   }
   for (const entry of ["support.js", "image-slot.js"]) {
-    const buf = fs.readFileSync(path.join(PKG, entry));
+    const buf = fs.readFileSync(src(entry));
     let t = rewriteUrls(buf.toString("utf8"));
     if (entry === "image-slot.js") {
       // The editor sidecar is a document sibling in the package; here every
@@ -622,7 +651,7 @@ function main() {
     bytes += outBuf.length;
     emit(entry, buf, outBuf);
   }
-  const sidecarSrc = path.join(PKG, ".image-slots.state.json");
+  const sidecarSrc = src(".image-slots.state.json");
   writeFile(
     path.join(OUT_PUBLIC, SIDECAR_NAME),
     fs.existsSync(sidecarSrc) ? fs.readFileSync(sidecarSrc) : Buffer.from("{}"),
@@ -635,12 +664,12 @@ function main() {
   // They are carried over byte-for-byte (URL rewrite only) and applied by the
   // same marker contract — this build invents no layout fix of its own.
   for (const f of ["english-responsive-override.css", "portable-preview.js"]) {
-    const src = path.join(PKG, "preview", f);
-    if (!fs.existsSync(src)) {
+    const previewSrc = src(path.join("preview", f));
+    if (!fs.existsSync(previewSrc)) {
       console.warn(`  ! accepted preview layer missing from package: preview/${f}`);
       continue;
     }
-    const buf = fs.readFileSync(src);
+    const buf = fs.readFileSync(previewSrc);
     const outBuf = Buffer.from(rewriteUrls(buf.toString("utf8")), "utf8");
     writeFile(path.join(OUT_PUBLIC, "preview", f), outBuf);
     copied += 1;

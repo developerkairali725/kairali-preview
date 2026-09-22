@@ -1,7 +1,7 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-14T20:24:21.815Z",
+ "generated": "2026-09-22T08:41:26.263Z",
  "note": "window.__resources entries the page installs before support.js loads, so the runtime resolves each <dc-import> sibling from /ahv/components/ instead of the document root.",
  "resources": {
   "./AHV%20Chrome%20Header.dc.html": "/ahv/components/AHV%20Chrome%20Header.dc.html",

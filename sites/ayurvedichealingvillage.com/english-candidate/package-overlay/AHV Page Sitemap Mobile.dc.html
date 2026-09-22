@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#F7F4EA; }
+  a { color:#006038; }
+  a:hover { color:#004226; }
+  :focus-visible { outline:2px solid #006038; outline-offset:2px; }
+  summary::-webkit-details-marker { display:none; }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="width:100%;max-width:100%;overflow-x:hidden;background:#F7F4EA;color:#2A2118;font-family:Mulish,sans-serif;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;box-sizing:border-box;">
+
+  <div style="height:72px;background:#DAD5CA;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#6B6459;box-sizing:border-box;padding:0 12px;">Approved site header — not redesigned</div>
+
+  <header style="padding:26px 20px 24px;box-sizing:border-box;">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;flex-wrap:wrap;font-size:14px;color:#75695A;margin:0 0 6px;">
+      <a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 10px 0 0;color:#006038;text-decoration:none;">Home</a>
+      <span style="padding:0 8px 0 0;color:#C9BFA8;">›</span>
+      <span aria-current="page">Sitemap</span>
+    </nav>
+    <p style="font-size:11.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212;margin:0 0 12px;line-height:1.5;">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+    <h1 style="font-family:Marcellus,serif;font-weight:400;font-size:38px;line-height:1.14;margin:0 0 18px;color:#2A2118;text-wrap:pretty;">Site Map</h1>
+    <p style="font-size:17px;line-height:1.7;color:#514A3F;margin:0;border-left:2px solid #C1882C;padding-left:16px;">Every page on this site, in one list. Sections follow the order of the main navigation. Type a word to narrow the list to the pages that match it.</p>
+  </header>
+
+  <div style="width:100%;box-sizing:border-box;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;background:#E0D7C4;">
+    <img src="assets/img/article/our-story.png" alt="" style="display:block;width:100%;height:170px;object-fit:cover;">
+  </div>
+
+  <div style="position:sticky;top:0;z-index:20;width:100%;box-sizing:border-box;background:#F7F4EA;border-bottom:1px solid #E9E2D3;padding:12px 20px;">
+    <div data-filterbar="1" style="display:flex;align-items:center;gap:8px;border:1px solid #C9BFA8;border-radius:4px;background:#FFFFFF;padding:0 12px;box-sizing:border-box;">
+      <span aria-hidden="true" style="color:#8F6212;font-size:17px;">⌕</span>
+      <label for="sm-filter-m" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Filter pages</label>
+      <input id="sm-filter-m" data-filter="1" type="search" autocomplete="off" placeholder="Type a word — villa, gallery…" style="flex:1;min-width:0;height:52px;border:0;outline:none;background:transparent;font-family:Mulish,sans-serif;font-size:17px;color:#2A2118;">
+      <button type="button" data-clear="1" style="display:none;align-items:center;min-height:44px;border:0;background:transparent;color:#006038;font-family:Mulish,sans-serif;font-size:15px;cursor:pointer;padding:0 2px;">Clear</button>
+    </div>
+    <p data-status="1" aria-live="polite" style="margin:8px 0 0;font-size:15px;line-height:1.5;color:#75695A;">Showing every page</p>
+  </div>
+
+  <main style="padding:20px 20px 0;box-sizing:border-box;">
+
+    <p data-empty="1" style="display:none;font-size:17px;line-height:1.7;color:#514A3F;margin:0 0 28px;border-left:2px solid #C1882C;padding-left:16px;">No page title matches that word. Clear the filter to see the whole list, or ask the patient care team on WhatsApp — <a href="https://wa.me/919289838797">+91 92898 38797</a>.</p>
+
+    <details data-jump="1" style="margin:0 0 20px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 18px;box-sizing:border-box;">
+        <span style="flex:1;font-size:12.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212;font-weight:700;">Jump to a section</span>
+        <span aria-hidden="true" data-jumpmark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px;box-sizing:border-box;">
+        <a data-chip="1" href="#g-treatment" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Ayurveda Treatment</a>
+        <a data-chip="1" href="#g-villas" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Villas</a>
+        <a data-chip="1" href="#g-about" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">About</a>
+        <a data-chip="1" href="#g-offers" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Offers</a>
+        <a data-chip="1" href="#g-training" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Training</a>
+        <a data-chip="1" href="#g-yoga" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Yoga</a>
+        <a data-chip="1" href="#g-ayurveda" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Ayurveda</a>
+        <a data-chip="1" href="#g-things" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Things to do</a>
+        <a data-chip="1" href="#g-awards" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Awards</a>
+        <a data-chip="1" href="#g-packages" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Packages</a>
+        <a data-chip="1" href="#g-archive" style="display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #E9E2D3;border-radius:4px;font-size:15px;color:#2A2118;text-decoration:none;box-sizing:border-box;">Archive</a>
+      </div>
+    </details>
+
+    <ul style="list-style:none;margin:0 0 20px;padding:0;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com" style="display:flex;align-items:center;min-height:56px;padding:8px 18px;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;box-sizing:border-box;">Home</a></li>
+    </ul>
+
+    <details data-grp="1" data-screen-label="Ayurveda Treatment" id="g-treatment" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;text-wrap:pretty;">Ayurveda Treatment</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/ayurvedic-treatments/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Ayurveda Treatment — section page</a></li>
+          <sc-for list="{{ treatments }}" as="l" hint-placeholder-count="12">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Villas" id="g-villas" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Villas</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/our-villas/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Villas — section page</a></li>
+          <sc-for list="{{ villas }}" as="l" hint-placeholder-count="4">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <p style="font-size:12.5px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212;font-weight:700;margin:26px 0 12px;">More</p>
+
+    <details data-grp="1" data-screen-label="About" id="g-about" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">About</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/about-us/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">About — section page</a></li>
+          <sc-for list="{{ aboutMain }}" as="l" hint-placeholder-count="5">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/kairali-ayurvedic-group/" style="color:#8F6212;text-decoration:none;">Kairali Ayurvedic Group</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ aboutGroup }}" as="l" hint-placeholder-count="9">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://www.ayurvedichealingvillage.com/product-range" style="color:#8F6212;text-decoration:none;">Product Range</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ aboutProducts }}" as="l" hint-placeholder-count="7">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Offers" id="g-offers" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Offers</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/offers/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Offers — section page</a></li>
+          <sc-for list="{{ offers }}" as="l" hint-placeholder-count="4">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Training" id="g-training" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Training</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/training/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Training — section page</a></li>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/ayurveda-training-programme/" style="color:#8F6212;text-decoration:none;">Ayurveda Training Programme</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ trAyur }}" as="l" hint-placeholder-count="6">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">Yoga Training Program</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ trYoga }}" as="l" hint-placeholder-count="4">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <ul style="list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1.5px solid #C9BFA8;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/training-course-fees/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;box-sizing:border-box;">Training Course Fees</a></li>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Yoga" id="g-yoga" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Yoga</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <sc-for list="{{ yoga }}" as="l" hint-placeholder-count="6">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Ayurveda" id="g-ayurveda" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Ayurveda</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/ayurveda/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Ayurveda — section page</a></li>
+          <sc-for list="{{ ayurveda }}" as="l" hint-placeholder-count="3">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Things to do" id="g-things" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Things to do</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/things-to-do/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Things to do — section page</a></li>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/things-to-do-in-property/" style="color:#8F6212;text-decoration:none;">Things to do in Healing Village</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ thingsHV }}" as="l" hint-placeholder-count="6">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/things-to-do-in-kerala/" style="color:#8F6212;text-decoration:none;">Things to do in Kerala</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ thingsKerala }}" as="l" hint-placeholder-count="9">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/sightseeing/" style="color:#8F6212;text-decoration:none;">Sightseeing</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ sightseeing }}" as="l" hint-placeholder-count="4">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Awards" id="g-awards" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Awards</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <sc-for list="{{ awards }}" as="l" hint-placeholder-count="2">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Packages" id="g-packages" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Packages</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/packages/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Packages — section page</a></li>
+          <sc-for list="{{ pkgTop }}" as="l" hint-placeholder-count="2">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">Media Gallery</h3>
+        <p style="margin:0 0 4px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#75695A;">[TO CONFIRM] link broken in source</p>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ pkgGallery }}" as="l" hint-placeholder-count="9">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.6;color:#75695A;">Villa Gallery sub-entries — Classic Villa, Deluxe Villa, Royal Villas, Maharaja Suite — have no destination in the source. [TO CONFIRM]</p>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">Feedback</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ pkgFeedback }}" as="l" hint-placeholder-count="2">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <ul style="list-style:none;margin:20px 0 0;padding:0;">
+          <sc-for list="{{ pkgMain }}" as="l" hint-placeholder-count="12">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">Others</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ pkgOthers }}" as="l" hint-placeholder-count="13">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">PPC Landing page</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ pkgPPC }}" as="l" hint-placeholder-count="14">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <details data-grp="1" data-screen-label="Archive" id="g-archive" style="scroll-margin-top:110px;margin:0 0 14px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;box-sizing:border-box;">
+      <summary style="list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 18px;box-sizing:border-box;">
+        <h2 style="flex:1;margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;color:#2A2118;">Archive</h2>
+        <span data-count="1" style="flex:none;font-size:13px;color:#75695A;"></span>
+        <span aria-hidden="true" data-mark="1" style="flex:none;color:#C1882C;font-size:22px;line-height:1;">+</span>
+      </summary>
+      <div style="padding:0 18px 16px;box-sizing:border-box;">
+        <p style="margin:0 0 10px;font-size:16px;line-height:1.6;color:#75695A;">Past programmes and superseded pages, kept live in the source.</p>
+        <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/archive/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;font-weight:700;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Archive — section page</a></li>
+          <li style="margin:0;"><a data-link="1" href="https://ayurvedichealingvillage.com/consultancy/" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">Consultancy</a></li>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;color:#8F6212;">Retreat</h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ archRetreat }}" as="l" hint-placeholder-count="18">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <h3 style="font-family:Mulish,sans-serif;font-weight:700;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;margin:20px 0 2px;"><a href="https://ayurvedichealingvillage.com/panchkarma/" style="color:#8F6212;text-decoration:none;">Panchakarma</a></h3>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <sc-for list="{{ archPanch }}" as="l" hint-placeholder-count="3">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+        <ul style="list-style:none;margin:20px 0 0;padding:0;">
+          <sc-for list="{{ archRest }}" as="l" hint-placeholder-count="22">
+            <li style="margin:0;"><a data-link="1" href="{{ l.h }}" style="display:flex;align-items:center;min-height:52px;padding:8px 0;font-size:17px;line-height:1.4;color:#006038;text-decoration:none;border-bottom:1px solid #E9E2D3;box-sizing:border-box;">{{ l.t }}</a></li>
+          </sc-for>
+        </ul>
+      </div>
+    </details>
+
+    <p style="font-size:16px;line-height:1.6;color:#75695A;margin:20px 0 0;">Machine-readable index: <a href="https://ayurvedichealingvillage.com/sitemap_index.xml">sitemap.xml</a></p>
+  </main>
+
+  <div style="height:56px;"></div>
+  <section style="width:100%;box-sizing:border-box;background:#FFFFFF;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;background-image:repeating-linear-gradient(135deg, rgba(193,136,44,0.045) 0 1px, transparent 1px 9px);padding:44px 20px;">
+    <div style="max-width:760px;margin:0 auto;">
+      <ul style="list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 32px;">
+        <li style="font-size:17px;line-height:1.5;color:#2A2118;"><span style="color:#C1882C;padding-right:10px;">◆</span>NABH Certified Hospital</li>
+        <li style="font-size:17px;line-height:1.5;color:#2A2118;"><span style="color:#C1882C;padding-right:10px;">◆</span>118+ Years Heritage</li>
+        <li style="font-size:17px;line-height:1.5;color:#2A2118;"><span style="color:#C1882C;padding-right:10px;">◆</span>Individualised Programmes</li>
+        <li style="font-size:17px;line-height:1.5;color:#2A2118;"><span style="color:#C1882C;padding-right:10px;">◆</span>World Luxury Award Winner</li>
+      </ul>
+      <h2 style="font-family:Marcellus,serif;font-weight:400;font-size:26px;line-height:1.3;margin:0 0 14px;color:#2A2118;text-align:center;">Not sure which programme fits?</h2>
+      <p style="font-size:16.5px;line-height:1.7;color:#514A3F;margin:0 auto 26px;max-width:56ch;text-align:center;">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+        <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display:flex;align-items:center;justify-content:center;flex:1 1 100%;height:52px;border-radius:4px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:0 18px;box-sizing:border-box;text-align:center;">Free Doctor Consultation</a>
+        <a href="https://wa.me/919289838797" style="display:flex;align-items:center;justify-content:center;flex:1 1 100%;height:52px;border-radius:4px;border:1.5px solid #006038;color:#006038;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:0 18px;box-sizing:border-box;text-align:center;">WhatsApp Patient Care</a>
+        <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:flex;align-items:center;justify-content:center;flex:1 1 100%;height:52px;border-radius:4px;border:1.5px solid #5A4420;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:0 18px;box-sizing:border-box;text-align:center;">Enquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="height:620px;background:#DAD5CA;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#6B6459;box-sizing:border-box;padding:0 16px;">Approved site footer — not redesigned</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:1400},&quot;showFilter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Directory&quot;},&quot;sectionsOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Directory&quot;}}">
+const B = 'https://ayurvedichealingvillage.com';
+const L = (t, h) => ({ t, h: h.indexOf('http') === 0 ? h : B + h });
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rootRef: (el) => { this.root = el; },
+      treatments: [
+        L('Complete Rejuvenation & Detoxification Therapy', '/holistic-treatment-for-rejuvenation-and-detoxification/'),
+        L('Preventive Health & Regenerative Ayurvedic Detox Program', '/preventive-and-regenerative-treatment/'),
+        L('Ayurvedic Panchakarma Detoxification Therapy', '/panchakarma-therapy/'),
+        L('Weight Management & Metabolism Therapy', 'https://www.ayurvedichealingvillage.com/weight-loss-programme'),
+        L('Diabetes & Metabolic Balance Therapy', '/treatment-for-diabetes/'),
+        L('Joint Rehabilitation & Arthritis Treatment', '/treatment-for-arthritis-and-spondylitis/'),
+        L('Treatment for Chronic Back Pain', '/treatment-for-chronic-back-pain/'),
+        L('Stress & Strain Relief Treatment', '/treatment-to-remove-stress-and-strain/'),
+        L('Chronic Back Pain Relief Treatment', '/treatment-to-remove-stress-and-strain/'),
+        L('Sinus & Migraine Relief Treatment', '/treatment-for-sinusitis-and-migraine/'),
+        L('Spinal Disc & Nerve Restoration Treatment', '/treatment-for-slip-disc/'),
+        L('Breath Enhancement & Respiratory Health Therapy', '/treatment-for-bronchial-diseases/'),
+        L('Neck & Upper Back Rehabilitation Treatment', '/treatment-for-cervical-spondylosis/'),
+        L('Spine Care & Spondylitis Treatment', '/treatment-for-spondylitis/'),
+        L('Ayurveda Skin Vitality Revival Treatment', '/treatment-for-skin-diseases/'),
+        L('Neurological Wellness & Function Therapy', '/treatment-for-nervous-disability/'),
+        L('Psoriasis & Chronic Skin Treatment', '/treatment-for-psoriasis/'),
+        L('Paralysis Recovery & Rehabilitation Therapy', '/treatment-for-paralysis/'),
+        L('Facial Paralysis & Nerve Rehabilitation Therapy', '/treatment-for-facial-paralysis/'),
+        L('Vision Health & Eye Rejuvenation Therapy', '/beauty-care-and-eye-care/'),
+        L('Cardiovascular Health & Blood Pressure Treatment', '/treatment-for-hypertension/'),
+        L('Postpartum Rejuvenation Therapy', '/post-pregnancy-health-programme/'),
+        L('Addiction Recovery & Behavioral Health Therapy', '/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/'),
+        L('Supportive Care Therapy for Cancer Patients', '/revitalizing-and-strengthening/'),
+        L('Women\u2019s Hormonal Balance & Endocrine Therapy', '/womens-hormonal-balance-endocrine-therapy/'),
+        L('Sleep Restoration Therapy', '/sleep-restoration-therapy/'),
+        L('Immunity Enhancement & Executive Health Assessment Therapy', '/immunity-enhancement-executive-health-assessment-therapy/'),
+        L('Yoga-Based Stress & Energy Reset Program', '/yoga-based-stress-energy-reset-program/'),
+        L('Digestive Wellness & Gut Health Yoga Therapy', '/digestive-wellness-gut-health-yoga-therapy/'),
+        L('Kairali\u2019s Personalized & Customized Healing Program', '/personalized-customized-healing-program/'),
+        L('Yoga & Meditation Program', '/yoga-meditation-program/')
+      ],
+      villas: [
+        L('Classic Villa', '/classic-villa/'),
+        L('Deluxe Villa', '/deluxe-villa/'),
+        L('Royal Villa', '/royal-villa/'),
+        L('Maharaja Suite', '/maharaja-suite/')
+      ],
+      aboutMain: [
+        L('Brief on Kairali', '/brief-on-kairali/'),
+        L('Founder\u2019s Message and Meet the Directors', '/founders-message/'),
+        L('Vision and Mission', '/vision-and-mission/'),
+        L('Corporate Social Responsibility (CSR)', '/social-responsibilities/'),
+        L('Social, Cultural & Environmental commitment', '/social-cultural-environmental-commitment/')
+      ],
+      aboutGroup: [
+        L('Kairali Hospitality', '/kairali-hospitality/'),
+        L('Kairali \u2013 The Ayurvedic Healing Village', '/kairali-the-ayurvedic-healing-village/'),
+        L('Villa Raag', '/villa-raag/'),
+        L('Kairali Ayurvedic Products', '/kairali-ayurvedic-products-pvt-ltd/'),
+        L('Arogya Shala', '/arogya-shala/'),
+        L('Arogya Kendra', 'https://www.ayurvedichealingvillage.com/arogya-kendra'),
+        L('Kairali Ayurvedic Centre', '/kairali-ayurvedic-centre/'),
+        L('Kairali Ayurveda Franchise', '/ayurvedic-franchise/'),
+        L('Kairali Ayurvedic Treatment Center', '/kairali-ayurvedic-treatment-center/')
+      ],
+      aboutProducts: [
+        L('Ayurvedic Herbal Tea', 'https://www.ayurvedichealingvillage.com/ayurvedic-herbal-tea'),
+        L('Ayurvedic Proprietary Organics', 'https://www.ayurvedichealingvillage.com/ayurvedic-proprietary-organics'),
+        L('Kair-By Kairali', '/kair-by-kairali/'),
+        L('Ayurvedic Proprietary Products', 'https://www.ayurvedichealingvillage.com/ayurvedic-proprietary-medicines'),
+        L('Ayurvedic Classial Products', '/ayurvedic-classical-medicines/'),
+        L('Books', '/books/'),
+        L('Kairali Ayurvedic Equipment', '/kairali-ayurvedic-equipment/')
+      ],
+      offers: [
+        L('Ayurveda Special Offers', '/special-offers/'),
+        L('Senior Citizen Offer', '/offers/senior-citizen-offer/'),
+        L('Olympics and Paralympics Offer', '/offers/olympics-and-paralympics-offer/'),
+        L('Defence and Paramilitary Forces Offer', '/defence-and-paramilitary-forces/')
+      ],
+      trAyur: [
+        L('Intensive Ayurveda Training Program (WAP-HV)', '/intensive-ayurveda-training-program-learn-practice-ayurveda/'),
+        L('Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala (AATP 1-HV)', '/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/'),
+        L('Advanced Ayurveda Lifestyle Consultant and Therapist Training Program, Kerala (AALCT- HV)', '/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/'),
+        L('One Day Ayurveda Workshop Program Kerala (OAP-HV)', '/one-day-ayurveda-workshop-program-kerala/'),
+        L('Three Day Short Term Ayurveda Certificate Program (TAP-HV)', '/three-day-short-term-ayurveda-certificate-program-tap-hv/'),
+        L('\u201CWhy get Training in Ayurveda?\u201D', '/why-get-training-in-ayurveda/')
+      ],
+      trYoga: [
+        L('Yoga & Meditation Training', '/yoga-meditation-training/'),
+        L('Why Get Training in Yoga?', '/why-get-training-in-yoga/'),
+        L('Yoga Classes (Theory)', '/yoga-classes-theory/'),
+        L('Yoga Classes (Practical)', '/yoga-classes-practical/')
+      ],
+      yoga: [
+        L('Yoga Therapy Individual', '/yoga-therapy-individual/'),
+        L('New to Yoga', '/new-to-yoga/'),
+        L('What is Yoga?', '/what-is-yoga/'),
+        L('Why pick a Yoga or Yoga Retreat?', '/why-pick-a-yoga-or-yoga-retreat/'),
+        L('Learn More About Yoga', '/learn-more-about-yoga/'),
+        L('Meditation', '/meditation/')
+      ],
+      ayurveda: [
+        L('New to Ayurveda', '/new-to-ayurveda/'),
+        L('Ayurvedic Links', '/ayurvedic-links/'),
+        L('LEARN MORE ABOUT AYURVEDA', '/learn-more-about-ayurveda/')
+      ],
+      thingsHV: [
+        L('Village Facilities', '/village-facilities/'),
+        L('Butterfly Booklet', '/butterfly-booklet/'),
+        L('Nature Walk', '/nature-walk/'),
+        L('Cooking classes', '/cooking-classes/'),
+        L('Organic Farm', '/organic-farm/'),
+        L('Animal Husbandry', '/animal-husbandry/')
+      ],
+      thingsKerala: [
+        L('Visit Kerala', '/visit-kerala/'),
+        L('Destination Palakkad', '/destination-palakkad/'),
+        L('Wildlife Drive', '/wildlife-drive/'),
+        L('Elephant Safari', '/elephant-safari/'),
+        L('House Boat Tour', '/house-boat-tour/'),
+        L('Back Water Tour', '/back-water-tour/'),
+        L('Mountain Jeep Safari', '/mountain-jeep-safari/'),
+        L('Cultural Events', '/cultural-events/'),
+        L('Festivals', '/festivals/')
+      ],
+      sightseeing: [
+        L('Attractions (10 Kms & Under)', '/attractions-under-10kms/'),
+        L('Attractions (15 Kms & Below)', '/attractions-15kms-and-below/'),
+        L('Attractions (25 to 50 Kms)', '/attractions-25kms-to-50kms/'),
+        L('Attractions (Above 50 Kms)', '/attractions-above-50kms/')
+      ],
+      awards: [
+        L('Awards & Accreditations', '/awards-and-accreditations/'),
+        L('Awards and Accolades', '/awards-and-accolades/')
+      ],
+      pkgTop: [
+        L('Ayurveda Packages', '/ayurveda-package/'),
+        L('Yoga & Meditation Package', '/yoga-and-meditation-package/')
+      ],
+      pkgGallery: [
+        L('I wish to view Image Gallery', '/photo-gallery/'),
+        L('I wish to view Product Gallery', '/product-gallery/'),
+        L('I wish to view Property Gallery', '/property-gallery/'),
+        L('I wish to view Sight Seeing Gallery', 'https://www.ayurvedichealingvillage.com/sight-seeing-gallery'),
+        L('I wish to view Treatments Gallery', '/treatments-gallery/'),
+        L('Video Gallery', '/video-gallery/'),
+        L('Virtual Tour', '/virtual-tour/'),
+        L('I wish to view Yoga Gallery', '/yoga-gallery/'),
+        L('I wish to view Villa Gallery', '/villas-gallery/')
+      ],
+      pkgFeedback: [
+        L('Read Feedback', '/read-feedback/'),
+        L('Give Feedback', '/givefeedback/')
+      ],
+      pkgMain: [
+        L('Our Partners', '/our-partners/'),
+        L('Careers', '/careers/'),
+        L('Internships at Kairali', '/internships-at-kairali/'),
+        L('Apply Now', '/apply-now/'),
+        L('Contact Us', '/contact-us/'),
+        L('Location', '/map/'),
+        L('How to Reach?', '/how-to-reach/'),
+        L('Enquire Now', '/enquiry-form/'),
+        L('Online Consultation', '/online-consultation/'),
+        L('OPD', '/opd/'),
+        L('Book Now', '/book-now/'),
+        L('Blog & News', 'https://whyayurveda.org/')
+      ],
+      pkgOthers: [
+        L('Experience', '/experience/'),
+        L('Alcohol Free', '/alcohol-free/'),
+        L('No Smoking', '/no-smoking/'),
+        L('No Caffeine', '/no-caffeine/'),
+        L('Vegetarian', '/vegetarian/'),
+        L('No Preservatives', '/no-preservatives/'),
+        L('FAQ\u2019s & Downloads', '/faqs-downloads/'),
+        L('Privacy Policy', '/privacy-policy/'),
+        L('Sitemap', '/sitemap'),
+        L('sitemap.xml', '/sitemap_index.xml'),
+        L('THANKS', '/thanks/'),
+        L('Search', '/search-results/'),
+        L('EMAIL SUBSCRIBER', '/emailsubscriber/')
+      ],
+      pkgPPC: [
+        L('Ayurveda Retreat Kerala', '/ayurveda-retreat-kerala.html'),
+        L('Ayurveda Treatment Neo S.India Cities', '/Ayurveda_Treatment_Neo_S.India_Cities.html'),
+        L('Ayurvedic Treatment Packages', '/ayurvedic-treatment-packages.html'),
+        L('Holistic Treatment For Rejuvenation & Detoxification', '/preventive-rejuvenation-detoxification.html'),
+        L('Kairali Brand and Competition Neo Original', '/Kairali_Brand_and_Competition_Neo-original.html'),
+        L('Kairali Cleansing Centre', '/kairali-cleansing-centre.html'),
+        L('Lose weight Naturally & Effectively in 3 weeks', '/weight-loss.html'),
+        L('Pain Management', '/pain-management.html'),
+        L('Panchkarma Restores Wellness', '/panchkarma-treatment.html'),
+        L('Treatment in Kerala', '/treatment-in-kerala.html'),
+        L('Treatment in Kerala German', 'https://www.ayurvedichealingvillage.com/de/behandlung-in-kerala.html'),
+        L('Treatment in Kerala Russian', '/treatment-in-kerala-russian.html'),
+        L('Wellness Resort Kerala', '/wellness-resort-kerala.html'),
+        L('PPC Thanks', '/ppc-thanks/')
+      ],
+      archRetreat: [
+        L('LAKSHYA YOGA RETREAT', '/lakshya-yoga-retreat/'),
+        L('KATHA WELLNESS RETREAT 2019 (25 \u2013 31 JULY 2019)', '/katha-wellness-retreat-2019/'),
+        L('KARMA BEING YOGA AND AYURVEDA RETREAT (14-24 NOVEMBER 2019)', '/karma-being-retreat-2019/'),
+        L('AYURVEDA RETREATS FOR EVERYONE', '/ayurveda-retreats-for-everyone/'),
+        L('\u201CAyuryoga 2020 Yoga & Ayurveda Retreats\u201D', '/ayuryoga/'),
+        L('Yoga retreat by Prav and Simona from Denmark', '/prav-simona-yoga-retreat/'),
+        L('PRAV-SIMONA MONSOON YOGA RETREAT', '/prav-simona-monsoon-yoga-retreat/'),
+        L('Why pick an Ayurveda Treatment or Ayurvedic Retreat?', '/why-pick-an-ayurveda-treatment-orayurvedic-retreat/'),
+        L('Lakshya Yoga Retreat 2017', 'https://www.ayurvedichealingvillage.com/de/lakshya-yoga-retreat-2017'),
+        L('Lakshya Yoga Retreat 2018', '/lakshya-yoga-retreat-2018/'),
+        L('Ashtanga Yoga & Ayurveda Retreat', '/ashtanga-yoga-and-ayurveda-retreat/'),
+        L('Karma Being Retreat', '/karma-being-retreat/'),
+        L('Mindfulness Retreat', '/mindfulness-retreat/'),
+        L('Ananda Lahari Yoga and Ayurveda Retreat', '/ananda-lahari-yoga-and-ayurveda-retreat/'),
+        L('Yoga Retreat', '/archive-yoga-retreat/'),
+        L('Lakshya Yoga', '/lakshya-yoga/'),
+        L('Yoga Retreats for Everyone', '/yoga-retreats-for-everyone/'),
+        L('Ayurveda Workshop', '/ayurveda-workshop/')
+      ],
+      archPanch: [
+        L('What is Panchkarma?', '/what-is-panchkarma/'),
+        L('Kairali Institute of Ayurveda and Panchakarma Therapy', '/kairali-institute-of-ayurveda-and-panchakarma-therapy/'),
+        L('LIVE TO 100 WITH PANCHAKARMA', '/live-to-100-with-panchkarma/')
+      ],
+      archRest: [
+        L('Healing Recipes: Back to Roots', '/chef-retreat-food-to-wellness/'),
+        L('Ayurvedic New Year: Yala 2018!', '/ayurvedic-new-year-yala-2018/'),
+        L('the-baoli-special-deal', '/the-baoli-special-deal/'),
+        L('the-baoli-advert-box-deal', '/the-baoli-advert-box-deal/'),
+        L('Kairali Ayurvedic Way of Weight Management', '/kairali-ayurvedic-way-of-weight-management/'),
+        L('FOOD SADHANA: THE ESSENCE OF PURITY', '/food-sadhana/'),
+        L('Knowledge Centre', '/knowledge-centre/'),
+        L('Ayurvedic Cuisine', '/ayurvedic-cuisine/'),
+        L('What is Ayurvedic Food?', '/what-is-ayurvedic-food/'),
+        L('Ayurvedic Restaurant & Cooking at Healing Village', '/ayurvedic-resturant-and-cooking-at-healing-village/'),
+        L('BACK TO ROOTS', '/back-to-roots/'),
+        L('Gift Vouchers', '/gift-vouchers/'),
+        L('Ayurveda Offers', '/ayurveda-offers/'),
+        L('Ayurvedic Products', '/ayurvedic-products/'),
+        L('Our Accolades', '/our-accolades/'),
+        L('Accreditations', '/accreditations/'),
+        L('AYURVEDIC TREATMENT', '/ayurveda-treatment/'),
+        L('Ayurveda Training', '/ayurveda-training/'),
+        L('Villa', '/villas/'),
+        L('In House Products', '/in-house-products/'),
+        L('Ayurveda Gallery', '/ayurveda-gallery/'),
+        L('I wish to view Retreats Gallery', '/retreats-gallery/')
+      ]
+    };
+  }
+
+  componentDidMount() { this.wire(); }
+  componentDidUpdate() { this.wire(); }
+
+  wire() {
+    const root = this.root;
+    if (!root || this.wired) return;
+    const input = root.querySelector('[data-filter]');
+    if (!input) return;
+    this.wired = true;
+    const status = root.querySelector('[data-status]');
+    const clear = root.querySelector('[data-clear]');
+    const empty = root.querySelector('[data-empty]');
+    const bar = root.querySelector('[data-filterbar]');
+    const jump = root.querySelector('[data-jump]');
+    const groups = Array.from(root.querySelectorAll('[data-grp]'));
+    const links = Array.from(root.querySelectorAll('[data-link]'));
+    const total = links.length;
+    const startOpen = this.props.sectionsOpen === true;
+
+    if (this.props.showFilter === false && bar) bar.style.display = 'none';
+
+    const sync = (d) => {
+      const m = d.querySelector('[data-mark]');
+      if (m) m.textContent = d.open ? '\u2212' : '+';
+    };
+    groups.forEach(g => {
+      const c = g.querySelector('[data-count]');
+      if (c) c.textContent = g.querySelectorAll('[data-link]').length + ' pages';
+      g.open = startOpen;
+      sync(g);
+      g.addEventListener('toggle', () => sync(g));
+    });
+    if (jump) {
+      const jm = jump.querySelector('[data-jumpmark]');
+      const jsync = () => { if (jm) jm.textContent = jump.open ? '\u2212' : '+'; };
+      jump.addEventListener('toggle', jsync);
+      jsync();
+      jump.querySelectorAll('[data-chip]').forEach(a => {
+        a.addEventListener('click', () => {
+          const t = root.querySelector(a.getAttribute('href'));
+          if (t) t.open = true;
+          if (t) sync(t);
+        });
+      });
+    }
+
+    const apply = () => {
+      const q = (input.value || '').trim().toLowerCase();
+      let hits = 0;
+      links.forEach(a => {
+        const match = !q || a.textContent.toLowerCase().indexOf(q) !== -1;
+        a.parentElement.style.display = match ? '' : 'none';
+        if (match) hits++;
+      });
+      groups.forEach(g => {
+        const visible = Array.from(g.querySelectorAll('[data-link]')).filter(a => a.parentElement.style.display !== 'none');
+        g.style.display = visible.length ? '' : 'none';
+        const c = g.querySelector('[data-count]');
+        if (c) c.textContent = visible.length + ' pages';
+        if (q) { g.open = true; } else { g.open = startOpen; }
+        sync(g);
+      });
+      if (empty) empty.style.display = hits ? 'none' : '';
+      if (clear) clear.style.display = q ? '' : 'none';
+      if (status) status.textContent = q
+        ? (hits === 0 ? 'No page matches \u201C' + input.value.trim() + '\u201D' : hits + (hits === 1 ? ' page matches ' : ' pages match ') + '\u201C' + input.value.trim() + '\u201D')
+        : total + ' links in 11 sections — tap a section to open it';
+    };
+    input.addEventListener('input', apply);
+    if (clear) clear.addEventListener('click', () => { input.value = ''; apply(); input.focus(); });
+    apply();
+  }
+}
+</script>
+</body>
+</html>

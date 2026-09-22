@@ -1825,3 +1825,13 @@ none) and six of eight share the generic our-story.png as og:image. One repo def
 logged): `sites/ayurvedichealingvillage.com/tools/fetch-explainer-routes.mjs` records `robots:
 null` on every route while the live heads declare `index, follow, max-image-preview:large,
 max-snippet:-1, max-video-preview:-1`.
+
+### Q-AHV-CANCER-ROUTE-TITLE — 2026-09-22 15:20:40 IST
+Pre-existing (identical at HEAD before today's apply): the approved package's dataset record for
+`/revitalizing-and-strengthening-treatment-for-cancer-patients/` (exception-five-family-data.js)
+carries `title: "Yoga retreats for everyone"`, so the served <title> of the cancer supportive-care
+page is wrong. Not a design issue; a package metadata defect. Fix path: an owner-supplied title in
+english-candidate/route-overrides.json (applied by repair-route-manifest) — the record's H1 is the
+obvious candidate but choosing it is a content decision. Also: the importer now prefers a route's
+own declared dataset when resolving its metadata record (tools/import-english-candidate.mjs
+findRouteRecord), which removes the order-dependence that could have masked this elsewhere.

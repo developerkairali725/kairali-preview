@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHV Template — Product Family (Desktop 1440)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F7F4EA; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family:'Mulish', sans-serif; color:#2A2118; -webkit-font-smoothing:antialiased; }
+  a { color:#006038; }
+  a:hover { color:#004226; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</helmet>
+
+<div style="width:1440px;background:#F7F4EA;font-family:'Mulish',sans-serif;color:#2A2118;font-size:18px;line-height:1.7;">
+
+  <div role="presentation" style="height:72px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#6B665E;font-weight:700;">Site header — fixed, not redesigned</div>
+
+  <header style="padding:40px 0 0;">
+    <div style="width:min(1220px,94%);margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="font-size:14px;line-height:1.5;color:#75695A;margin-bottom:26px;">
+        <a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;margin-left:-8px;padding:0 8px;color:#006038;text-decoration:none;">Home</a>
+        <span style="padding:0 10px;color:#C9BFA8;">•</span>
+        <span aria-current="page">Product Range</span>
+      </nav>
+      <p style="margin:0 0 14px;font-size:12.5px;line-height:1.5;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;font-weight:700;">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+      <h1 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:56px;line-height:1.12;letter-spacing:-0.4px;color:#2A2118;max-width:16ch;">Product Range</h1>
+      <p style="margin:26px 0 0;padding-left:22px;border-left:3px solid #C1882C;font-size:21px;line-height:1.6;color:#514A3F;max-width:56ch;">The medicines, organics, teas, books and equipment manufactured by the Kairali Ayurvedic Group. Each range is described here and ordered separately.</p>
+    </div>
+  </header>
+
+  <div style="width:100%;margin-top:44px;">
+    <div style="width:100%;height:420px;background:#E0D7C4;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:0 24px;">
+      <span style="font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#5A4420;font-weight:700;">Hero image band — self-host required</span>
+      <span style="font-size:14px;color:#75695A;">/wp-content/uploads/2023/11/our-story.png — 1440×524</span>
+    </div>
+  </div>
+
+  <main style="width:min(1220px,94%);margin:0 auto;padding:64px 0 0;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:80px;align-items:start;">
+
+    <div>
+      <h2 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:34px;line-height:1.2;color:#2A2118;">Product Range</h2>
+      <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 28px;"></div>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;">Our product line at Kairali Ayurvedic Group reflects more than a century of Ayurvedic knowledge and experience. Natural, carefully selected ingredients are used to create each composition to guarantee purity, effectiveness, and compatibility with the age-old Ayurvedic knowledge. Our products, which range from restorative oils to therapeutic powders, are made to address certain health issues and encourage overall well-being.</p>
+
+      <p style="margin:34px 0 0;padding:14px 18px;background:#EFEADD;border:1px solid #E9E2D3;border-radius:4px;font-size:15.5px;line-height:1.6;color:#514A3F;max-width:66ch;">Products are not sold on this website. Each range can be bought from the Kairali product website, <a href="https://www.kairaliproducts.com">www.kairaliproducts.com</a>, and from the hospital’s own pharmacy as prescribed by the doctors. <span style="display:inline-block;margin-left:8px;border:1px dashed #C1882C;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;letter-spacing:1.4px;color:#8F6212;text-transform:uppercase;vertical-align:middle">Draft — approve or replace</span></p>
+
+      <div style="margin-top:8px;">
+        <sc-for list="{{ entries }}" as="e" hint-placeholder-count="7">
+          <article style="display:flex;gap:40px;align-items:flex-start;border-top:1px solid #E9E2D3;padding:40px 0;">
+            <sc-if value="{{ withImages }}" hint-placeholder-val="{{ true }}">
+              <div style="flex:0 0 320px;height:214px;background:#E0D7C4;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:16px;">
+                <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;font-weight:700;">Image — self-host</span>
+                <span style="font-size:12.5px;line-height:1.5;color:#75695A;word-break:break-word;">{{ e.file }}</span>
+              </div>
+            </sc-if>
+            <div style="flex:1 1 auto;min-width:0;">
+              <h3 style="margin:0 0 6px;font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.25;">
+                <a href="{{ e.href }}" style="display:inline-flex;align-items:center;min-height:44px;color:#2A2118;text-decoration:none;border-bottom:1px solid #C1882C;padding-bottom:2px;">{{ e.name }}</a>
+              </h3>
+              <p style="margin:0;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;"><strong style="font-weight:700;">{{ e.name }}</strong> {{ e.body }}</p>
+              <a href="{{ e.href }}" style="display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#006038;text-decoration:none;">Read about this range →</a>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+
+    <aside aria-labelledby="rail-h" style="position:sticky;top:24px;border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;padding:28px 26px;">
+      <h2 id="rail-h" style="margin:0 0 4px;font-family:'Marcellus',serif;font-weight:400;font-size:24px;line-height:1.25;">About Us</h2>
+      <div style="width:40px;height:2px;background:#C1882C;margin:14px 0 22px;"></div>
+      <sc-for list="{{ railGroups }}" as="g" hint-placeholder-count="4">
+        <div style="margin-bottom:26px;">
+          <h3 style="margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8F6212;line-height:1.5;">{{ g.title }}</h3>
+          <ul style="list-style:none;margin:0;padding:0;border-top:1px solid #E9E2D3;">
+            <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="5">
+              <li style="border-bottom:1px solid #E9E2D3;">
+                <a href="{{ l.href }}" style="display:flex;align-items:center;min-height:44px;padding:8px 0;font-size:15.5px;line-height:1.5;color:#006038;text-decoration:none;">{{ l.label }}</a>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </aside>
+
+  </main>
+
+  <div style="height:56px;"></div>
+
+  <section aria-labelledby="close-h" style="width:100%;background:#FFFFFF;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;background-image:repeating-linear-gradient(135deg, rgba(193,136,44,.05) 0 1px, transparent 1px 9px);padding:56px 24px;">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <ul style="list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;text-align:left;">
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>NABH Certified Hospital</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>118+ Years Heritage</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>Individualised Programmes</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>World Luxury Award Winner</li>
+      </ul>
+      <h2 id="close-h" style="margin:0 0 14px;font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.3;color:#2A2118;">Not sure which programme fits?</h2>
+      <p style="margin:0 auto 30px;font-size:16.5px;line-height:1.6;color:#514A3F;max-width:56ch;">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;background:#EEB41E;color:#2A2118;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">Free Doctor Consultation</a>
+        <a href="https://wa.me/919289838797" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border:1.5px solid #006038;color:#006038;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">WhatsApp Patient Care</a>
+        <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border:1.5px solid #5A4420;color:#5A4420;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">Enquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div role="presentation" style="height:620px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#6B665E;font-weight:700;">Site footer — fixed, not redesigned</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;stressTest&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;example (437 words, 7 ranges, images)&quot;,&quot;options&quot;:[&quot;example (437 words, 7 ranges, images)&quot;,&quot;no images (758-word extreme)&quot;,&quot;short (161-word extreme)&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;},&quot;showRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Template stress test&quot;}}">
+const B = 'https://ayurvedichealingvillage.com';
+
+const ENTRIES = [
+  { name: 'Kairali Ayurvedic Herbal Tea', href: B + '/ayurvedic-herbal-tea/', file: '2024/12/tea.jpg.webp',
+    body: 'is designed to promote holistic wellness, Kairali Ayurvedic Herbal Tea is a carefully crafted blend of authentic Ayurvedic herbs. The tea boosts immunity, offers natural detoxification, and soothes the mind and body with each sip. Embrace a healthier lifestyle with the calming essence of Ayurveda in every cup.' },
+  { name: 'Ayurvedic Proprietary Organics', href: B + '/ayurvedic-proprietary-organics/', file: '2023/09/Ayurvedic-Proprietary-Organics.jpg',
+    body: 'represents the knowledge of Ayurveda and the purity of nature. Our carefully formulated organic products are designed to promote energy, balance, and wellness. Kairali’s dependable organic line offers genuine, sustainable Ayurvedic treatment.' },
+  { name: 'Kair by Kairali', href: B + '/kair-by-kairali/', file: '2024/12/Kair.jpg.webp',
+    body: 'is a premium range of Ayurvedic wellness products that revitalize the body and soul. Kair provides a variety of treatments for modern living, all based on true Ayurvedic principles. Kair by Kairali captures the essence of timeless healing.' },
+  { name: 'Kairali Ayurvedic Proprietary Medicines', href: B + '/ayurvedic-proprietary-medicines/', file: '2023/09/Ayurvedic-Proprietary-Medicines.jpg',
+    body: 'are precisely created to address a variety of health conditions using the wisdom of Ayurveda. These tried-and-tested formulations combine real herbs with natural substances to promote effective, holistic healing.' },
+  { name: 'Kairali Ayurvedic Classical Medicines', href: B + '/ayurvedic-classical-medicines/', file: '2023/09/Ayurvedic-Classial-Medicines.jpg',
+    body: 'capture the essence of traditional Ayurvedic learning in its purest form. These authentic compositions, based on ancient scriptures, are designed to promote balance and comprehensive health. Kairali’s tried-and-tested classical treatments provide the ageless efficacy of Ayurvedic medicine.' },
+  { name: 'Books', href: B + '/books/', file: '2023/09/Books.jpg',
+    body: 'The founder of Kairali Ayurvedic Group, Gita Ramesh, has written Ayurvedic cookbooks namely- “Get Fit in Just 2 Weeks, Ayurvedic Herbal Massage, and Ayurvedic Wellness Cookbook”, that masterfully blend traditional knowledge with useful recipes for contemporary living.' },
+  { name: 'Kairali Ayurvedic Equipment', href: B + '/kairali-ayurvedic-equipment/', file: '2023/09/Kairali-Ayurvedic-Equipment.jpg',
+    body: 'is intended to accompany real Ayurvedic treatments with accuracy and care. Each product, from basic massage tables to modern therapy equipment, meets the highest quality and functional criteria. Kairali’s trusted Ayurvedic equipment can help you empower your health practice.' }
+];
+
+const L = (label, path) => ({ label, href: B + path });
+
+const RAIL = [
+  { title: 'Kairali Ayurvedic Group', links: [
+    L('Kairali Hospitality', '/kairali-hospitality/'),
+    L('Kairali Ayurvedic Products Pvt.ltd.', '/kairali-ayurvedic-products-pvt-ltd/'),
+    L('Product Range', '/product-range/'),
+    L('Ayurvedic Herbal Tea', '/ayurvedic-herbal-tea/'),
+    L('Ayurvedic Proprietary Organics', '/ayurvedic-proprietary-organics/'),
+    L('Kair by Kairali', '/kair-by-kairali/'),
+    L('Ayurvedic Proprietary Medicines', '/ayurvedic-proprietary-medicines/'),
+    L('Ayurvedic Classical Medicines', '/ayurvedic-classical-medicines/'),
+    L('Books', '/books/'),
+    L('Kairali Ayurvedic Equipment', '/kairali-ayurvedic-equipment/'),
+    L('Arogya Kendra', '/arogya-kendra/'),
+    L('Arogya Shala', '/arogya-shala/'),
+    L('Kairali Ayurvedic Center', '/kairali-ayurvedic-treatment-center/'),
+    L('Kairali Ayurveda Franchise', '/ayurvedic-franchise/'),
+    L('Kairali Institute Of Ayurveda And Panchakarma Therapy', '/kairali-institute-of-ayurveda-and-panchakarma-therapy/')
+  ]},
+  { title: 'Vision and Mission', links: [ L('Vision and Mission', '/vision-and-mission/') ]},
+  { title: 'Corporate Social Responsibility (CSR)', links: [ L('Social, Cultural & Environmental Commitment', '/social-cultural-environmental-commitment/') ]},
+  { title: 'Awards & Accreditations', links: [
+    L('Awards & Accreditations', '/awards-and-accreditations/'),
+    L('Accreditations', '/accreditations/')
+  ]}
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    const stress = this.props.stressTest ?? 'example (437 words, 7 ranges, images)';
+    const short = stress.indexOf('short') === 0;
+    return {
+      entries: short ? ENTRIES.slice(0, 1) : ENTRIES,
+      withImages: stress.indexOf('no images') !== 0 && !short,
+      railGroups: (this.props.showRail ?? true) ? RAIL : []
+    };
+  }
+}
+
+</script>
+</body>
+</html>

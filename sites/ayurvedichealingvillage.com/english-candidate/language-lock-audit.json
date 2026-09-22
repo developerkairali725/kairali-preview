@@ -1,7 +1,7 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-14T20:24:21.815Z",
+ "generated": "2026-09-22T08:41:26.263Z",
  "rule": "CLAUDE.md \"KTAHV LANGUAGE LOCK\" — banned words on KTAHV pages",
  "bannedWords": [
   "spa",
@@ -22,20 +22,20 @@
   "escapes"
  ],
  "method": "Word-boundary scan of the served desktop+mobile templates and the resolved per-route title/description. Reported only: the approved design is never rewritten by this tool (owner instruction, 15 Sep 2026).",
- "routesWithHits": 191,
+ "routesWithHits": 192,
  "routesTotal": 252,
  "totalsByWord": {
-  "spa": 322,
-  "luxury": 738,
+  "spa": 340,
+  "luxury": 798,
   "luxurious": 19,
-  "journey": 485,
-  "guest": 149,
-  "guests": 328,
-  "resort": 560,
-  "getaway": 46,
+  "journey": 502,
+  "guest": 165,
+  "guests": 384,
+  "resort": 566,
+  "getaway": 47,
   "escape": 53,
-  "journeys": 23,
-  "getaways": 5,
+  "journeys": 29,
+  "getaways": 7,
   "holiday": 22,
   "cure": 18,
   "cures": 4
@@ -157,6 +157,7 @@
    "path": "/attractions-above-50kms/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "journey": 1,
     "getaways": 2
    }
@@ -433,9 +434,9 @@
    "path": "/defence-and-paramilitary-forces/",
    "surface": "view + dataset record",
    "hits": {
-    "spa": 6,
-    "luxury": 2,
-    "guests": 2
+    "spa": 12,
+    "luxury": 6,
+    "guests": 4
    }
   },
   {
@@ -519,12 +520,12 @@
    "path": "/faqs-downloads/",
    "surface": "view + dataset record",
    "hits": {
-    "spa": 4,
-    "luxury": 12,
-    "journey": 9,
-    "guest": 2,
-    "guests": 15,
-    "getaways": 2
+    "spa": 8,
+    "luxury": 28,
+    "journey": 15,
+    "guest": 4,
+    "guests": 35,
+    "getaways": 4
    }
   },
   {
@@ -584,8 +585,9 @@
    "path": "/how-to-reach/",
    "surface": "view + dataset record",
    "hits": {
-    "spa": 4,
-    "resort": 2,
+    "spa": 8,
+    "resort": 4,
+    "luxury": 2,
     "journey": 3
    }
   },
@@ -723,9 +725,10 @@
    "path": "/karma-being-retreat-2019/",
    "surface": "view + dataset record",
    "hits": {
-    "spa": 8,
+    "spa": 12,
     "resort": 2,
-    "journey": 12
+    "luxury": 3,
+    "journey": 19
    }
   },
   {
@@ -872,9 +875,11 @@
    "path": "/no-preservatives/",
    "surface": "view + dataset record",
    "hits": {
-    "journey": 2,
+    "luxury": 3,
+    "journey": 4,
     "guest": 1,
-    "guests": 6
+    "guests": 12,
+    "getaway": 1
    }
   },
   {
@@ -897,10 +902,11 @@
    "path": "/offers/",
    "surface": "view + dataset record",
    "hits": {
-    "journey": 2,
-    "journeys": 6,
-    "guest": 4,
-    "guests": 2
+    "luxury": 3,
+    "journey": 4,
+    "journeys": 12,
+    "guest": 8,
+    "guests": 6
    }
   },
   {
@@ -1033,6 +1039,7 @@
    "path": "/photo-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1109,6 +1116,7 @@
    "path": "/product-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1116,13 +1124,15 @@
    "path": "/product-range/",
    "surface": "view + dataset record",
    "hits": {
-    "resort": 2
+    "resort": 2,
+    "luxury": 2
    }
   },
   {
    "path": "/property-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1138,6 +1148,7 @@
    "path": "/retreats-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "journey": 4,
     "escape": 1
    }
@@ -1146,7 +1157,8 @@
    "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
    "surface": "view + dataset record",
    "hits": {
-    "resort": 4
+    "resort": 8,
+    "luxury": 2
    }
   },
   {
@@ -1178,6 +1190,7 @@
    "path": "/sight-seeing-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1186,7 +1199,7 @@
    "surface": "view + dataset record",
    "hits": {
     "resort": 5,
-    "luxury": 1
+    "luxury": 3
    }
   },
   {
@@ -1225,8 +1238,9 @@
    "path": "/terms-and-conditions/",
    "surface": "view + dataset record",
    "hits": {
-    "guest": 8,
-    "guests": 24
+    "luxury": 3,
+    "guest": 18,
+    "guests": 48
    }
   },
   {
@@ -1260,6 +1274,13 @@
    "hits": {
     "journey": 6,
     "getaway": 2
+   }
+  },
+  {
+   "path": "/training-course-fees/",
+   "surface": "view + dataset record",
+   "hits": {
+    "luxury": 2
    }
   },
   {
@@ -1430,6 +1451,7 @@
    "path": "/treatments-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1468,6 +1490,7 @@
    "path": "/villas-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },
@@ -1611,6 +1634,7 @@
    "path": "/yoga-gallery/",
    "surface": "view + dataset record",
    "hits": {
+    "luxury": 2,
     "escape": 1
    }
   },

@@ -136,13 +136,16 @@ for (const url of [...refs].sort()) {
   const src = diskPath(url);
   if (!existsSync(src)) { missing.push(url); continue; }
   const outUrl = webpUrl(url);
-  if (claimed.has(outUrl.toLowerCase())) { collisions.push([url, claimed.get(outUrl.toLowerCase())]); continue; }
   const out = diskPath(outUrl);
-
   const bIn = statSync(src).size;
+  // A .webp that already sits beside its source and is newer than it is THIS
+  // tool's own earlier output (a re-import resets the references to .jpg while
+  // the encoded file stays on disk). That is a repoint, not a collision — the
+  // collision rule guards two DIFFERENT sources contending for one name.
   if (existsSync(out) && statSync(out).mtimeMs >= statSync(src).mtimeMs) {
     skippedExisting++; bytesBefore += bIn; bytesAfter += statSync(out).size; continue;
   }
+  if (claimed.has(outUrl.toLowerCase())) { collisions.push([url, claimed.get(outUrl.toLowerCase())]); continue; }
   const iw = intrinsicWidth(src);
   const d = declared.get(url);
   const target = Math.min(iw ?? CAP, d && iw && d < iw ? d : (iw ?? CAP), CAP);

@@ -38,20 +38,45 @@ for (const [route, o] of Object.entries(OVR)) {
   const target = o.duplicateOf;
   if (!target) continue;
   const row = MANIFEST.find((r) => r.path === route);
-  if (!row || !row.dataset) throw new Error(`no dataset for ${route}`);
+  if (!row) throw new Error(`no manifest row for ${route}`);
+  if (!row.dataset) {
+    // A route whose view bakes its own content (the 2026-09-22 Claude Design
+    // pages) has no dataset record to carry a canonical. Reported, not thrown:
+    // its head is the view's own, and the canonical for it is set there.
+    console.log(`${route}: NO DATASET (view ${row.desktopView ?? row.views?.[0] ?? "?"}) — canonical ${target} must live in the view head; not written here`);
+    continue;
+  }
   const file = path.join(SITE, "public/ahv", row.dataset);
   const raw = fs.readFileSync(file, "utf8");
-  // Find this route's record, then the FIRST canonical inside it.
-  const at = raw.indexOf(`"path":"${route}"`);
+  // Find this route's record, then the FIRST canonical KEY inside it. A record
+  // starts at `"path":"<route>","slug":` and ends where the next record's
+  // `"path":"/…","slug":` begins — breadcrumb items also carry "path", so the
+  // "slug" that follows is what tells a record head from a breadcrumb item.
+  // (The old fixed 4,000-char window broke once a record's provenance note
+  // grew past it and the word "canonical" inside that note matched first.)
+  const at = raw.indexOf(`"path":"${route}","slug":`);
   if (at < 0) throw new Error(`${row.dataset} has no record for ${route}`);
-  const window = raw.slice(at, at + 4000);
+  const nextRec = /"path":"\/[^"]*","slug":/g;
+  nextRec.lastIndex = at + 1;
+  const nx = nextRec.exec(raw);
+  const end = nx ? nx.index : raw.length;
+  const window = raw.slice(at, end);
   const m = window.match(/"canonical":\s*(?:"[^"]*"|null)/);
-  if (!m) throw new Error(`${route}: no canonical field within its record`);
-  if (window.slice(0, m.index).includes(`"path":"/`) && window.indexOf(`"path":"/`) > 0 && window.indexOf(`"path":"/`) < m.index)
-    throw new Error(`${route}: the next record starts before the canonical - refusing to write into the wrong one`);
   const next = `"canonical":"${target}"`;
-  if (m[0] === next) { console.log(`${route}: already canonical to ${target}`); continue; }
-  const out = raw.slice(0, at) + window.replace(m[0], next) + raw.slice(at + 4000);
+  let patched;
+  if (!m) {
+    // The campaign-family record for /offers/new/ carries no canonical key at
+    // all (the runtime then writes none). Add one right after the slug field —
+    // additive, and exactly what applyHead() reads.
+    const slugEnd = window.indexOf('"', window.indexOf('"slug":') + 7 + 1) + 1;
+    if (slugEnd < 8) throw new Error(`${route}: no canonical field and no slug field to anchor one`);
+    patched = window.slice(0, slugEnd) + "," + next + window.slice(slugEnd);
+    console.log(`${DRY ? "[dry] " : ""}${route}: record had no canonical field — added ${target}`);
+  } else {
+    if (m[0] === next) { console.log(`${route}: already canonical to ${target}`); continue; }
+    patched = window.replace(m[0], next);
+  }
+  const out = raw.slice(0, at) + patched + raw.slice(end);
   if (!DRY) fs.writeFileSync(file, out);
   done++;
   console.log(`${DRY ? "[dry] " : ""}${route} -> canonical ${target}   (${row.dataset})`);
