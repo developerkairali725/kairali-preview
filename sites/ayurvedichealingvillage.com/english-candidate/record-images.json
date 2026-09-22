@@ -1,0 +1,1362 @@
+{
+ "generated": "2026-09-22T08:58:23.310Z",
+ "source": "pre-apply prerender snapshots at git 9a605c14^ (the served page before the Claude Design families were wired) — main-content <img> tags in DOM order, chrome/logo/svg excluded",
+ "routes": {
+  "/attractions-above-50kms/": [
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-Landscape.webp",
+    "alt": "",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-1.webp",
+    "alt": "Reservoir ringed by forested hills and a rocky peak, seen from a green hillside",
+    "width": 1024,
+    "height": 768
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-2.webp",
+    "alt": "Traditional Kerala temple with tiered tiled roofs and carved wooden walls on a sandy courtyard",
+    "width": 800,
+    "height": 539
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-3.webp",
+    "alt": "Kerala temple complex with a tiled pyramidal shrine and low surrounding buildings",
+    "width": 800,
+    "height": 600
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-4.webp",
+    "alt": "Shallow rocky river running through dense greenery below a forested hill",
+    "width": 1024,
+    "height": 768
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-5.webp",
+    "alt": "Curving stone ramparts of a hill fort above green valleys and a distant lake",
+    "width": 800,
+    "height": 600
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-6.webp",
+    "alt": "Large ochre-walled temple with gold-finialled tiled roofs and people crossing the open ground",
+    "width": 800,
+    "height": 600
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Attractions-a-50-7.webp",
+    "alt": "Wooden treehouse on stilts with a blue slide in a leafy garden",
+    "width": 800,
+    "height": 490
+   }
+  ],
+  "/defence-and-paramilitary-forces/": [
+   {
+    "src": "/ahv/assets/img/article/our-story.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/article/defence-image.webp",
+    "alt": "Book titled Healing Secrets of Kairali, with an engraving of ancient physicians treating a patient",
+    "width": 496,
+    "height": 422
+   },
+   {
+    "src": "/ahv/assets/img/article/defence-treatment-centres.webp",
+    "alt": "treatment centres",
+    "width": 400,
+    "height": 320
+   },
+   {
+    "src": "/ahv/assets/img/article/defence-hospitality.webp",
+    "alt": "hospitality",
+    "width": 400,
+    "height": 320
+   },
+   {
+    "src": "/ahv/assets/img/article/defence-ppc-army-4.webp",
+    "alt": "ayurvedic products",
+    "width": 400,
+    "height": 320
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/faqs-downloads/": [
+   {
+    "src": "/ahv/assets/img/faq/faqs-downloads-hero.webp",
+    "alt": "",
+    "width": 1440,
+    "height": 459
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/how-to-reach/": [
+   {
+    "src": "/ahv/assets/img/wx-pathway.webp",
+    "alt": "A paved path winding past tile-roofed villas, palms and flowering shrubs in the garden",
+    "width": 1280,
+    "height": 600
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/karma-being-retreat-2019/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/hist9/7088881a47f630680e29d929573dd00c49113c91145ba4ba25a488db91bd0cd0.webp",
+    "alt": "Karma Being Retreat",
+    "width": 265,
+    "height": 273
+   },
+   {
+    "src": "/ahv/assets/img/hist9/f44c0a7ff7f0b8b58e446529be9de6efdc7ad2f63765f893285654ed70deb2da.webp",
+    "alt": "Kairali Treatment",
+    "width": 265,
+    "height": 273
+   },
+   {
+    "src": "/ahv/assets/img/hist9/1c2a20cc8c483e225141c557cdf729b6fab0571715f36583a71c540cb04acd2f.webp",
+    "alt": "Karma Being Retreat",
+    "width": 834,
+    "height": 200
+   },
+   {
+    "src": "/ahv/assets/img/hist9/03ac8a89ad2ddecc70d0b7703a1e0842ffe54205f0e92a2d1c495acc10b3da4a.webp",
+    "alt": "Ayurveda &amp; Yoga, Kerala India, 14-24 November 2019",
+    "width": 200,
+    "height": 240
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/knowledge-centre/": [
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Hero.webp",
+    "alt": "A therapist applying herbal powder during a treatment.",
+    "width": 772,
+    "height": 289
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Cuisine.webp",
+    "alt": "A vegetarian meal served with rice, vegetables and curries.",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Ayurveda.webp",
+    "alt": "Herbal boluses, towels and treatment accessories.",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Programmes.webp",
+    "alt": "A patient seated between two therapists during an Ayurvedic treatment.",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Yoga.webp",
+    "alt": "A woman practising yoga on a mat.",
+    "width": 720,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/AHV-Knowledge-Products.webp",
+    "alt": "A selection of Kairali products displayed outdoors.",
+    "width": 1400,
+    "height": 1000
+   }
+  ],
+  "/no-preservatives/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/reader25b/6ca1dd59833947b993ff0e64200c346f975c79456219177733004976c3da579d.webp",
+    "alt": "No Preservatives",
+    "width": 450,
+    "height": 400
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/offers/": [
+   {
+    "src": "/ahv/assets/img/commercial/6bdeb945c4b304d1c1a8a31abcafac18d02b4fd4bfd3ac097a50393e353697d5.webp",
+    "alt": "Herb leaves, turmeric, stone mortar and pestle, oil bottles and a hanging brass vessel",
+    "width": 1024,
+    "height": 156
+   },
+   {
+    "src": "/ahv/assets/img/commercial/775c5adec97f99fbd773ee36cf4903844f79ea13635db974cf00821263818e82.webp",
+    "alt": "Healing at Kairali",
+    "width": 1000,
+    "height": 667
+   },
+   {
+    "src": "/ahv/assets/img/commercial/8b7554df0dfba8ff5a0851801f3c2a0154577ea3bd2a8b7fe2a249867ff05bcb.webp",
+    "alt": "Senior Wellness at Kairali",
+    "width": 1000,
+    "height": 667
+   },
+   {
+    "src": "/ahv/assets/img/commercial/89f77332ca59e7ab6a7ea204951c3fab743488be21f624fecde06b084a846509.webp",
+    "alt": "Athletes and Recovery",
+    "width": 800,
+    "height": 534
+   },
+   {
+    "src": "/ahv/assets/img/commercial/6c7db61940f19d249ee3e9df66e490e2bbf966d01d31f372cb87f5e2f5c86c58.webp",
+    "alt": "Wellness for Defence Personnel",
+    "width": 800,
+    "height": 534
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/photo-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/0e2518644d9c275cbc52dbcb369c930bc749df89075c3132a821177ab0055917.webp",
+    "alt": "A grid of photographs from the healing village: therapies, meals, yoga, villas, paddy fields and a Kathakali performer",
+    "width": 1440,
+    "height": 683
+   },
+   {
+    "src": "/ahv/assets/img/gallery/00bdeed5700358e5d06bfabca8f8dd4c0d6a22e2f34c03a01ad04ef879870331.webp",
+    "alt": "A woman in a red blouse and gold wrap at a wooden railing among coconut palms",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/b151f92f5c5921185eb6a7e47eddfdad871f242bc8423257ff9818fff70b321f.webp",
+    "alt": "Wood-framed corridor with patterned floor tiles leading to carved chairs at a garden window",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/310f6b2b58c91e8247d4f0b78c16ea9397c2f1924726c334171347cf5bf11475.webp",
+    "alt": "",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/94101cff180faef1d186c7b4e3710201fd421e8c6e950c40b3ae287305793022.webp",
+    "alt": "A woman in green holding a crescent lunge with arms raised on a yoga mat",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e05c453405ccf131a3b7442582b2e19bd2c66a150ec6bc01d101be96f5a55328.webp",
+    "alt": "Red-brick tiled-roof Kerala villa with a pillared porch, fountain and coconut palms behind",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c85431bfe4af5e697f1de8e0917993d67ac14a12c0c5da73734abc88a3bb9d84.webp",
+    "alt": "Open lounge with cane chairs, patterned tiles and tall windows facing forest trees",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/74a483d478b505a0e33f7422c32b8f0437cf1a7c2cd46b5eb215cb5002edf1a3.webp",
+    "alt": "Concrete-walled reception area with a lit carved stone panel, towel cabinet and cane baskets",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/0d293a22b2f447b132ab6693b3d23c22907b7ff483280e2603f8e67fbe4865b1.webp",
+    "alt": "Tile-roofed villas among coconut palms beside a still pond and paved garden path",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/0c995d67fb557c9abce0b5952af34bcd3a74cc87191c2987375dbc5261f9b208.webp",
+    "alt": "Therapist pressing warm herbal poultices onto a patient's neck and shoulder",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c096572876b9e037bb75a46cdf312194b9a74a9f15d182e4713bdaa6855fa33b.webp",
+    "alt": "Two therapists pouring warm oil into a dough ring placed on a patient's back",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/4cb0cc0d99ec46252cecfd50d8387841edca96c95e9117a96af5999cd2237c63.webp",
+    "alt": "Therapist massaging warm oil into a patient's scalp against a brick wall",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/8e467d4a3b6c3b3f7c26aa5a8777e0d6bb61d127ccf4b5dfd93302dca57d82f5.webp",
+    "alt": "Corridor lined with frosted-glass treatment cubicles and a potted plant at the far end",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/4ebfa149f77d23e3611e1606c4bc07dde1dbe9405738b3d5c0e4ae2ec9d1bfed.webp",
+    "alt": "Patient on a wooden treatment table receiving a full-body oil massage from two therapists",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/d4a6bf55905f4eded5da1749421cf781f6ac01046691a5292d04d24d72a3af39.webp",
+    "alt": "A therapist pouring a stream of warm herbal oil onto a patient's forehead during Shirodhara",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/55f6515f791fd681d6417101f88d18785314ff843b4fef85ec220dd2e1be53cc.webp",
+    "alt": "Two therapists applying herbal powder to a smiling patient seated on a wooden treatment table",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/7891259588419a05c93dec1f76df9cc095b19f7a64d6d1b8c63e0908d009f4a0.webp",
+    "alt": "Woman in a cream cotton kaftan standing on a wooden garden bridge",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/76b9857562bcee5b7c35211e31b061847755efef23ace76c2c3077b185a0bd10.webp",
+    "alt": "Therapist rubbing warm herbal powder across a patient's chest during a powder massage",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c85ef566317c2aa142cf575b30b8b8c077eefae49267cdb8d0089b3369254b8e.webp",
+    "alt": "Therapist's oiled hands working along a patient's jaw and neck during a face massage",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/9f51c2fa498ffb5995b38b8bd332059e9779117b62572ae72561758f8a2cd5e6.webp",
+    "alt": "Patient in a green checked robe speaking with a physician in a white coat on a veranda",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/5c638cccc2a89f756ba4a27e20d56777d775d5a9e9b241a39b75050be499b4dd.webp",
+    "alt": "Two therapists applying white herbal paste to a patient's leg on a wooden table",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/092fe180cd8348825a160b0db1d562e6d44f4d5b486b98607fd2b47ba1f28cba.webp",
+    "alt": "Smiling patient in a green robe flanked by two therapists in brown Kairali aprons",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c15cb7a5a979801da89540cbf2e042d7c5e125a5ad786b0e163d4e7ef30a7b31.webp",
+    "alt": "Patient laughing while covered in brown herbal paste, flanked by two therapists",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/cf5c43b8aa1aab68a12e49443e1f8aea11ff6bf6a2f089b57f70b8e38b129f86.webp",
+    "alt": "Yoga teacher and student greeting each other with folded hands in a bright hall",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/d3a16509cf6d3a333205948820a271adc2272ec057734796cd0cc1f9fd25e9da.webp",
+    "alt": "Woman in a cream kaftan standing before a tile-roofed building and coconut palms",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/558cceeb1e35766431a61203cd38068d8a567f0ef429ada966eecd02dce88776.webp",
+    "alt": "Tiled entrance gate signed &quot;Kairali Ayurvedic Health Resort&quot; with an electric buggy parked outside",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f767aae21816aa524487586043cca2e6b58059dd4ae9fbeea839a40a2788aa3f.webp",
+    "alt": "Therapist smoothing warm oil over a patient's shoulder and neck",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e2c0d58f3e03cde8fb0037270290002c8ac416e165f236a588a0e3cb7b6c8d30.webp",
+    "alt": "A therapist massaging warm oil into a patient's shoulder and neck, her eyes closed",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/bf07d7631d39bd7a92c0a7f0176f7a1cada85f43b2f7884aec976889b4e194da.webp",
+    "alt": "Two therapists pressing herbal powder along a patient's back in synchronised strokes",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/80dcdaa938c16c5fa30b028f0c8cdd398f05131d676766265ee054cc196191c1.webp",
+    "alt": "Exposed-brick villa bedroom with a double bed, wooden doors and a curtained seating alcove",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/dcd3d3522a6b9df87115358ac1dbc09225db2709629df0a459d2818c9c16bfa9.webp",
+    "alt": "Therapists pressing warm herbal poultice boluses onto a patient's shoulder during kizhi treatment",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/98b025d70fb6ecaeb193489c7421ee78326fe352ef93ff4ca0b35c98ea3a2273.webp",
+    "alt": "Two therapists massaging oil across the chest and shoulders of a draped patient",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/fdd3dd7302872afa201957c8a80aeaf1d62cd463a3dbbd688ff3bf805b78d044.webp",
+    "alt": "Therapist steadying a cotton band as oil streams from a hanging brass vessel onto a patient's forehead",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/b88333ae44d4f5c86e537aa0e4eb94d14bb2218d84b894bd6682cff6e71ae2af.webp",
+    "alt": "Minimal white villa room with a low platform bed, framed artwork and a garden window",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/aa8b7500349c4b91b63863eb2f29012778150254cc055646c701f29dce929213.webp",
+    "alt": "Two therapists massaging herbal powder into a patient's bare feet",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c91dde4d85df3462931f20d8decd4ed0f5ed47643730d896796b8ed378b55c6a.webp",
+    "alt": "Oil streaming from a brass Kairali vessel onto a patient's forehead during Shirodhara",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e51096ae97d2b8f882a455c8e7cc657b0fbbb46b36508c8f1792f8e76dcb679e.webp",
+    "alt": "Therapist in a brown apron working oil into a seated patient's scalp against a brick wall",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/05a99d221c41ca228df13643da14c4ea8a2d1008043d1e4d5bf809c095c9d785.webp",
+    "alt": "Therapist heaping fine herbal powder onto a patient's shoulder during a powder treatment",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/ef43de9171669bf953d992c85c88c6cd14926d090fe5501ecc0713b538086a97.webp",
+    "alt": "Brick-walled villa bedroom with a brass bed, television and window onto the lawn",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c7f5d1ba6520c90bee318d2844e11c443e58346b4fe84454f21f9798676f96d4.webp",
+    "alt": "Villa bedroom with terracotta moulded ceiling, inlaid wooden bed and blue glass lamps",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/00421858296c250f85e248d125810476a3baf98b02252e36f43a881f08947e85.webp",
+    "alt": "Wide view of a villa bedroom with patterned tiled floor, writing desk and rocking chair",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/dbc8093fc9369afc386f87b9f8f1ee65717ed459bdc12c80dd7592275bbd4182.webp",
+    "alt": "Blue-walled bedroom with a wooden bed and an arched doorway opening onto a garden pond",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f6fd4658de0358f64d32ade4b89150b2aafc39edc3ad56bf5ecbe5742a5ff1f7.webp",
+    "alt": "Twin-bedded room with red oxide floor, magenta curtains and coloured decorative wall niches",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/beec239597e0c766d47dbf4affd9347c6e2aedab0d2aa11cf2795d375482748d.webp",
+    "alt": "Small brick cottage with a tiled roof and arched porch seating in the garden",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/df9b9e5f938bb2962b5ff3aba7c8c50dc13d861ffc17d311f29238154a4fdc49.webp",
+    "alt": "Stone cottage with tiled roof and arched porch among coconut palms and flowering shrubs",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/cb78365c446ac684a49e3845241201704dab82e4c14e1d9283ab8c79523bcf06.webp",
+    "alt": "Villa bedroom with a vaulted terracotta ceiling, patterned tiled floor and writing desk",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/0d94d003dbeb9e2af58e3ff477b5cd8afd17a76a6869e8e5beb02d2461b7daf6.webp",
+    "alt": "Panchakarma Institutes in Kerala",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/162e6d4ec30740e495323321bf48234b88a2fd08984c72ad6f5cb42190546adb.webp",
+    "alt": "Twin-bedded villa room with red oxide flooring, white walls and a garden-facing window",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/ed8e3a0959006d0b45c5bf15aaecf97491881a22129c2d3949468564563544d9.webp",
+    "alt": "Yellow tile-roofed villa with an arched porch beside a garden water channel",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/32fefc36937099b8571bcf0e3a10ff64b531a5d6f2d1fb6649b7900294b7dfb8.webp",
+    "alt": "Exposed-brick villa with a tiled roof set among palms on a green lawn",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/d7071df3fff82dba8ed13c1109fa49688f8eb1897bf0ffe8b2aec13bee58940f.webp",
+    "alt": "Villa bedroom with cane armchairs and arched wooden doors opening onto the garden",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/65b2be3df04ecbab777a9c95ca83979dab9e5a2f90b2dbf8ac5c47ffd50a6a07.webp",
+    "alt": "A therapist pouring warm herbal oil into a Shirovasti cap on a patient's head",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/19db466728f69b37d2f0692dd288cb9c7e21a78b0a8710e44ac2ba0aa9e48a6b.webp",
+    "alt": "Twin beds against an exposed brick wall in a villa room with red oxide floor",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/cdf7221ea6737aa57504eac264d2105bcb14f068210e959d2dbfe17d0894b67f.webp",
+    "alt": "Octagonal brick pavilion with a tiled roof and arched veranda on the lawn",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/6e735b8c51f19a4f05c1f72cc6edb48013abd04d0ae029bd339bf079da0f5565.webp",
+    "alt": "A therapist tying a patient's hair up before treatment in a brick therapy room",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/57ad812092a0374915e50223ac23398f176df6f0b6c8454bc3a1f954e74b847f.webp",
+    "alt": "Brick villa with a pillared porch and cane chairs beside a garden path",
+    "width": 1400,
+    "height": 1000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c3231a3ecb16682e1744e03154d560ac2d057792f1c399388d2e4d4fd5300f16.webp",
+    "alt": "A yoga teacher correcting a woman's neck and shoulder alignment on a mat",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/1ccb19928d63a9fea94891c29c58fbce2a69167937f9b23d0329afdd7fd49e44.webp",
+    "alt": "A woman balancing in tree pose with palms joined in a yoga hall",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/699cd6030b6b6571edc89220ca1345f4d2ff6339d2055eb3828fc733e8357f48.webp",
+    "alt": "A yoga teacher guiding a woman's back in cobra pose on a mat",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/27a65c7e92304da7667c40c28558e38ca85c5c05af2f729e33fc6ecdf8ccb462.webp",
+    "alt": "A woman meditating cross-legged with eyes closed on a mat by tall windows",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/1b247d0b6b2eec047e51f7a54923155c2e16c2d802774b571b22b84d2620209b.webp",
+    "alt": "A woman in a kneeling lunge with palms joined above her head",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/513f3075b9eecfe316525d991b8459740bb1d5c6eb40d96f24cb5177aa892e90.webp",
+    "alt": "Four therapist hands massaging herbal powder into a patient's back and shoulders",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/180f765452a78088290dc8ce1d99d86a943241151650c36124f8cc8f766ee316.webp",
+    "alt": "Two therapists giving a synchronised oil massage on a wooden treatment table",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/6a09d1cba660ae51b6700da488ac0573780f12d355071c84b3d7657b924223c6.webp",
+    "alt": "Brass Shirodhara vessel suspended above a patient with a cloth band over her eyes",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/9f0d2083e6f739340edeeafa66efe91914cee771d7ab53740321b94bb081a2c0.webp",
+    "alt": "Therapist pouring warm herbal oil from a brass vessel into a dough ring on a patient's knee",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/0ff3a00c24c98483a396a4819dde0b51e206de1131bed48aba77bdddf653484c.webp",
+    "alt": "Medicated oil dripped into dough rings built around a patient's eyes during Netra Tarpana",
+    "width": 1400,
+    "height": 2000
+   },
+   {
+    "src": "/ahv/assets/img/gallery/9a6978acefb372ab9e951dbd1e89bd27f1339eaaaee33da62c4db1ccd33712d7.webp",
+    "alt": "Two therapists in Kairali aprons giving a patient an oil massage on a wooden table",
+    "width": 1400,
+    "height": 2000
+   }
+  ],
+  "/product-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ed49c6df143d26b75b74ae44234bb52bbaf3a9ee8aa916246251c7aafa169576.webp",
+    "alt": "",
+    "width": 1440,
+    "height": 459
+   },
+   {
+    "src": "/ahv/assets/img/gallery/8164cac9964d49004397690d7ff9bf893005f11e5dd921a766882bcfc0ed1e11.webp",
+    "alt": "Kairali Kairwash Ayurvedic Hair Cleansing Powder 75g jar beside a clay dish of dried herbs",
+    "width": 1024,
+    "height": 458
+   },
+   {
+    "src": "/ahv/assets/img/gallery/7c6994e8f4b69c5531e18cc730da16a9155e3e7e32e98afd0ee14470f7e886a2.webp",
+    "alt": "Kairali Kairpack Ayurvedic Face Pack Powder 85g jar beside dried bark on a wooden table",
+    "width": 1024,
+    "height": 458
+   },
+   {
+    "src": "/ahv/assets/img/gallery/dd54dafcd21bbfd4129763a2f4890697fff245d28ce4d7867af02569afef5749.webp",
+    "alt": "Kairali Kairpack, Kairwash and Kairbal powder jars standing on stone amid grass",
+    "width": 1024,
+    "height": 458
+   },
+   {
+    "src": "/ahv/assets/img/gallery/1c7bb3cb952a07cc3b4d00fc03a3379e8d6efcf9363ee4f78b7cc00a8bdc2f4d.webp",
+    "alt": "Two green dropper bottles of Kairali Kaircin Ayurvedic Facial Oil, 10ml and 25ml, outdoors",
+    "width": 1024,
+    "height": 458
+   },
+   {
+    "src": "/ahv/assets/img/gallery/4df7024ff64e4316b0aac28cc97c760d6b18df5a06956cab5766a013bfde9679.webp",
+    "alt": "Dark glass bottle of Kairali Kairbosom Ayurvedic Oil 200ml resting on a rock",
+    "width": 1024,
+    "height": 458
+   },
+   {
+    "src": "/ahv/assets/img/gallery/a0068627b1b98e53b93c7580ed867e8d831ba343e091179e63fb925487e11577.webp",
+    "alt": "Round red Kairali-embossed soap bar on a woven mat with rolled towels and roses",
+    "width": 1024,
+    "height": 458
+   }
+  ],
+  "/product-range/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/collection/78361410860a0a83f90c750688ff062f9d51316793e4e11057a697e4a7855a91.webp",
+    "alt": "Kairali Ayurvedic Herbal Tea",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/492506d69e9549019bf84523266bfcf4505ed17e6740abbf0cc3bc580022089e.webp",
+    "alt": "Ayurvedic-Proprietary-Organics",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/e12b9ef615f4d4a3be65cdd09da860c7746f47643f422614a773d2c4a0abd204.webp",
+    "alt": "Kairali branded cartons, oil bottle, dropper bottles and jars displayed outdoors with pink flowers",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/ee3b169ac5c40f957ab95f5fcad9da9024c2ee65c4e6aea592eace4c34a9717c.webp",
+    "alt": "Kair by Kairali",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/23f159a1885856b0e65b1c53fd11c5d2c4c47f05eda607656574440cdfeb673f.webp",
+    "alt": "Kairali Ayurvedic Proprietary Medicines",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/6dfc66cb60492e2f17d82ee37a75d0d11584b3c4d28abcc80ac5a2d79121657e.webp",
+    "alt": "Book covers: The Ayurvedic Cookbook by Gita Ramesh, and Ayurvedic Herbal Massage",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/collection/30d2350871755612d1b65e4c05c9eb1e9241472406a6e714ea1b509eafeb8aaf.webp",
+    "alt": "Wooden Ayurvedic treatment table with a brass oil vessel suspended from a carved stand",
+    "width": 400,
+    "height": 179
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/property-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/8096f57d3787ab72f4d893924e162a235a0fc163ad93794a8cfb97c23172eee1.webp",
+    "alt": "Aerial site map numbering Reception, Ayurvedic Hospital, Yoga Centre, Herbal Garden, Ladies and Gents Wings",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/72148fbb089a381fe88da2010f026b0b1d0c6a2981df6729011a613ccc2177d7.webp",
+    "alt": "Signboards prohibiting smoking and alcohol beside tiled-roof villas and a wooden direction post",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/a5340555d384edc72099bc9f721bde48ec6e61c57202a233cb9c498d9680b505.webp",
+    "alt": "Stone pathway winding through planted gardens to a tiled-roof building among palms",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/fb6c6782c383ba30c13a0df542951bd434e5cfd1e6dbe19da033fbc159e7d597.webp",
+    "alt": "Two loungers beside a blue outdoor swimming pool edged by tropical garden planting",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/5353b10499689b5b4bd173b468617092be90a5ddd96d80cc0f3da60fb3a045b6.webp",
+    "alt": "White hammocks slung between palm trunks on a sunlit lawn beside a wooden bench",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/82e20493d656252b19663bcf8bf1c94e647b303337ae8359ab1d96afc19686ef.webp",
+    "alt": "Yellow painted bullock cart displayed on a lawn beside a carved stone planter",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/ee0ac4ff3f7f668fd61f0e85d95a0ccc0fc79b9f1e4470fdf793a45de923f2eb.webp",
+    "alt": "Seminar room with rows of chairs facing a projector screen and stone walls",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/42c9ab09330c73442d8f4f4a716023cadb71bea6e581e63b38e4ee8c30eea29d.webp",
+    "alt": "Water fountain playing in a garden pond surrounded by palms and flowering shrubs",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/8c01e5eeeaa3a578b347ce71e45db11bfedf4b64b36736cbd611614c3ea85692.webp",
+    "alt": "Aerial view of coconut palms and earth footpaths dividing bright green paddy fields",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/5eb352e32dd8513a51c72b11056e2720dd29758cd4e707d76f33cfbb2f0b444c.webp",
+    "alt": "Black and white butterfly resting with open wings on a sunlit green leaf",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c236d1fae2ba8e140b2ab645a2200a054841b8f28bb316f8399e8fd620b37e22.webp",
+    "alt": "Flooded paddy field backed by palmyra palms and dense forest under a pale sky",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/24ba2f123ec27201025843b6059481c9c3d04e2e46f97954a9184e5d70d9df6d.webp",
+    "alt": "Dense green paddy seedlings filling the frame in bright sunlight",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/4cc426a06f36277ef67be58edefa5cd3cdf865353a16deb856d21a7b972fad06.webp",
+    "alt": "A black and white cow walking a grassy path through a coconut palm grove",
+    "width": 1280,
+    "height": 572
+   }
+  ],
+  "/retreats-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/20f21346b575f55911f8501cc677a2b148a4331a26fb3daa3402a840dce321dd.webp",
+    "alt": "Woman in a white Kerala sari standing on a lawn with palms joined in namaste",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e89e82543d393667f25b3e1f4a4c67640ea85d66615b654e3bd719bf182e24ad.webp",
+    "alt": "Group sitting cross-legged in meditation on blue matting on a lawn beside palms",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/270e5a23da7f2cc6a5a23408abceee909620bff7aac70141ab8b23a7e68faa61.webp",
+    "alt": "Outdoor yoga class holding warrior pose on coloured mats on a paved terrace",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/9d524aaaf14e4accb1930f115b5f03d7d4a0e5378cc8c60ab265e633308ecfe3.webp",
+    "alt": "Woman holding a standing yoga balance on stepping stones between tiled-roof villas",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/eaf30a76acabb2b25e0990d5cc67959421f801077c14cacca54b8296ba6c7660.webp",
+    "alt": "Group lying face down on mats during yoga relaxation in an open thatched hall",
+    "width": 1280,
+    "height": 572
+   }
+  ],
+  "/revitalizing-and-strengthening-treatment-for-cancer-patients/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/01f4224b5f7119af679287af2e8ae0fc517f98fe6ec892a3aeb9aa26135dcfbd.webp",
+    "alt": "Kairali",
+    "width": 500,
+    "height": 420
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f4f5011957cced0d1c3aa4a75dde1829f21297d5809c0e7071a756c3cf0239c8.webp",
+    "alt": "Kairali",
+    "width": 500,
+    "height": 720
+   },
+   {
+    "src": "/ahv/assets/img/gallery/84de1c019b59c01defd9eebb1ea90b444808b8f9d320ea0287e2114450e2f298.webp",
+    "alt": "Ayurveda helps in detoxification of the imbalanced doshas in the body",
+    "width": 40,
+    "height": 40
+   },
+   {
+    "src": "/ahv/assets/img/gallery/96e341c6879640e326cfcb34996548d2ce63b331edb8fbf96e5d6b4089e1d736.webp",
+    "alt": "It serves to be a motivator for cancer patients",
+    "width": 39,
+    "height": 37
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/sight-seeing-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/6f1f3f3583e22d8e9b3bd556e13016ebd16fa8f22f1b007fc50263383688bc32.webp",
+    "alt": "Cantilevered Chinese fishing nets and a wooden boat silhouetted against an orange sunset over water",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/1ad3bbce05f603f4771055d736f6035126acc3d2abd93a36cf272a86b9611bba.webp",
+    "alt": "Palm trees and dense green undergrowth beside a wide river below forested hills",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/861feeb33c991bd9229b525eb98760d3b17c381edb4ac6ff38a8cbc9b4d473f0.webp",
+    "alt": "Colourful metal swings and see-saws on a grassy slope overlooking a river and hills",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c4268f1558ee71d7350a460c47e7893f0ec5db89a698135ef2350860297c284e.webp",
+    "alt": "Golden sunset sky with scattered clouds above a silhouetted forested hillside",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/1523c93c85757c26d7e996ad47a2b9f017ce6c4a6c80047f31eaab3a0c2c57f5.webp",
+    "alt": "Wide waterfall plunging into a river between forested hills under a cloudy sky",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c40f8f2b9b36712deae090abaf27a40e12c9716f7a2b4c3cd9b429f8a3e46748.webp",
+    "alt": "People sheltering under a large umbrella while watching a wide waterfall in forested hills",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/ffc9d8d34379c3c41f0f6c48d5daf6a872f842ac2d1a39a1bae2113ed858f23f.webp",
+    "alt": "Macaque monkeys grooming one another on a bamboo rack beside forest trees",
+    "width": 1280,
+    "height": 572
+   }
+  ],
+  "/sitemap/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/terms-and-conditions/": [
+   {
+    "src": "/ahv/assets/img/AHV-Policy-Terms-Banner.webp",
+    "alt": "Two people reviewing and signing documents at a desk",
+    "width": 832,
+    "height": 400
+   }
+  ],
+  "/training-course-fees/": [
+   {
+    "src": "/ahv/assets/img/article/TREATMENTS-24-min.webp",
+    "alt": "A therapist pouring warm herbal powder over a patient during an Udwarthanam treatment",
+    "width": 772,
+    "height": 289
+   },
+   {
+    "src": "/ahv/assets/img/article/ayurveda-training-new.webp",
+    "alt": "Training Course Fees",
+    "width": 200,
+    "height": 267
+   },
+   {
+    "src": "/ahv/assets/img/travel/9653d662c2fc437a5f8c23e8bef405d70675dedd13aa48633614f1e30dc79abf.webp",
+    "alt": "Map of India with Kerala highlighted in the south west, and Delhi and Mumbai marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/f36802a3b9f5345de250dc23004d4b5e14396915f863443e0466434a125d9b9e.webp",
+    "alt": "Map of Kerala with Palakkad district highlighted, and Cochin and Trivandrum marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/04afbaee86de67ca8098ebe956cd7dcd3904bb93a88c8e7cbf8507a92dca27cd.webp",
+    "alt": "Map of Palakkad district with the location of Kairali - The Ayurvedic Healing Village marked",
+    "width": null,
+    "height": null
+   },
+   {
+    "src": "/ahv/assets/img/travel/89310cfa7faa54ee1eecf73b427105b0af81fd179ce8fad0e6992eaa563b51c1.webp",
+    "alt": "Illustrated aerial map of the grounds, numbering the reception, Ayurvedic hospital, yoga centre, meditation hall, villas, herbal garden and other facilities",
+    "width": null,
+    "height": null
+   }
+  ],
+  "/treatments-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/2e470ae9a15e01e084582c199b07e7552fa4a15e651ec2e1874a1f912a47063c.webp",
+    "alt": "Therapist pouring warm herbal oil from a brass vessel into a hanging Shirodhara pot",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/ae0f7af4be508fd530476be9dfbf2149799d0712e7b5adc03651708757ed8634.webp",
+    "alt": "Therapist pouring warm oil from a brass vessel into a dough ring on a patient's lower back",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/d3c80a1ca11d8498b4432aaeb89016fb390faafc46b6e07eb2d9447977c83faf.webp",
+    "alt": "Therapist massaging oil along a patient's back while a second therapist assists",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/9282d10f3633bd7fe4511521f87bee1e96d503b686c442f0c1f665120fa24a39.webp",
+    "alt": "Two therapists massaging warm oil into a woman's back on a wooden treatment table",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/19e40ef8a33521b51ee2351855391958d6404495ff6cd122a8d0b7f81aa0764f.webp",
+    "alt": "Therapists in Kairali uniforms pressing warm herbal poultice bundles along a patient's legs",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/4cbf1a88b63f037d5cc1556ecfd02eeddf21b4a02126a3a1ed96171d417af311.webp",
+    "alt": "Four hands working herbal powder across a patient's lower back",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/16f81442f61daa0a46e0c1a1ee0b0d73730bbeeea9596f2e9ab45e547ef6e4e0.webp",
+    "alt": "Two therapists squeezing warm herbal oil over a patient's oiled legs",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f69541f6cfd34411bff1eda14ec8b1591742c41fd13f07c9213d294fcc081f35.webp",
+    "alt": "Two pairs of hands massaging herbal powder across a patient's back",
+    "width": 1280,
+    "height": 572
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f8c2e8e0a8bb4358e5364fdf220b199809024ada4499cf6118d3dbcfd4f7ddcd.webp",
+    "alt": "Therapist instilling medicated oil into a patient's nostril during Nasya",
+    "width": 1280,
+    "height": 572
+   }
+  ],
+  "/villas-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/5c8ae296a98de0c65cf50c15a3c7796f82cc5c543eef2297974c2b2894b746bb.webp",
+    "alt": "Red-brick Kerala villa with tiled roof and carved wooden door on a lawn with lamp posts",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/f52bfe64b2e7278e53b359c757becb14641d164e7880b49c4cf4eb67fd04d7e6.webp",
+    "alt": "Round stone villa with curved blue-edged roof and pillared porch among coconut palms",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/2bc18ee7130c2837e6bd3c7a1a95d9ee6ecd2d9755f4734cc028981146e6afdf.webp",
+    "alt": "Brick villa with wide overhanging eaves, arched wooden door and red steps framed by croton plants",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/05e2fe387869c66052e37cea3c0c1f79b13aa4e93abdaa973054411ae01e07f3.webp",
+    "alt": "Octagonal villa with patterned red and white brickwork and arched doorway beside a water channel",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/24c8c8f178ae1a9992e78e0f2f4892fd00f00e5f26fb763f46f74bea74fa7026.webp",
+    "alt": "Small brick villa with moss-covered tiled roof and arched veranda beside a circular pond",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/3fdfcce029ed538b2f41a67f2e8dc52eae8577c79b461dbfedac2dc1dbac7bec.webp",
+    "alt": "Paved path between a pink-trimmed brick villa and a round stone villa beside a water channel",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/85c39662ab51740bc4f9c70f650878be3179835c6a7aa264dd47bce29763a5ee.webp",
+    "alt": "Row of brick villas with tiled roofs beside a narrow water channel and lawn",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/fe4a96f4e553840e924fd84df33cfa185b053d424a96675777a29db767aabf98.webp",
+    "alt": "Stone and brick villa with arched porch and bay windows set in a palm garden",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e45a66110eeb08aa3a17b3abe7e9841d258034200f34a70429e599c3ab9457a6.webp",
+    "alt": "Brick villa with bright yellow trim, circular patterned window and red entrance steps",
+    "width": 1000,
+    "height": 500
+   }
+  ],
+  "/yoga-gallery/": [
+   {
+    "src": "/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp",
+    "alt": "Aerial view of paddy fields and coconut palms in the Kerala countryside around the hospital",
+    "width": 1440,
+    "height": 524
+   },
+   {
+    "src": "/ahv/assets/img/gallery/e5f7c1a8a35b4263d3938e7a3c39902395046cb61045a95bf54dfab83a5afe99.webp",
+    "alt": "Three yoga images: seated meditation, a kneeling backbend, and a teacher correcting a cobra pose",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1.webp",
+    "alt": "Woman practising a low lunge with arms raised on a mat in a sunlit hall",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/20f33c6fe4bfea2ae709d1902dea3815ba3aec89321c3ef1097c7972d6cc9b55.webp",
+    "alt": "Yoga teacher correcting a woman's neck and shoulders in cobra pose on a mat",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/0477765ec84b58ef04d7c6663914dab082703c6f72ae8755b6552376cd641700.webp",
+    "alt": "Yoga teacher in white in side-angle pose, and seated meditation on a stone bridge",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/c9453c854174de247741ead3d2fb521e7514683b5a133419693d6bd0982fee3d.webp",
+    "alt": "Woman holding dancer pose on the lawn between tiled-roof brick villas and coconut palms",
+    "width": 1000,
+    "height": 500
+   },
+   {
+    "src": "/ahv/assets/img/gallery/2df5b6f04cd88943aae4b9eb3a9f58c8f54bb3e296a3cc887b909c5307637224.webp",
+    "alt": "Yoga collage: tree pose on a mat, prayer posture, and a teacher adjusting a back bend",
+    "width": 1000,
+    "height": 500
+   }
+  ]
+ }
+}

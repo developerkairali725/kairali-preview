@@ -1,7 +1,7 @@
 {
  "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
  "source": "final-english-portable-candidate",
- "generated": "2026-09-22T08:41:26.263Z",
+ "generated": "2026-09-22T09:00:44.282Z",
  "views": {
   "AHV Page About Us Desktop.dc.html": {
    "id": "ahv-page-about-us-desktop",
@@ -998,11 +998,11 @@
    "payload": "/ahv/views/ahv-page-how-to-reach-desktop.json",
    "sourceSha256": "aa4b4ea2ac82c9c2a6c6e59cd7580251e89b8da15da76631cbe2cf0a467de1d2",
    "sourceBytes": 53522,
-   "payloadBytes": 54487,
+   "payloadBytes": 54477,
    "variant": "desktop",
    "scripts": [
-    "/ahv/https://unpkg.com/d3@7.9.0/dist/d3.min.js",
-    "/ahv/https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
+    "https://unpkg.com/d3@7.9.0/dist/d3.min.js",
+    "https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
    ],
    "hasLogic": true,
    "hasRouteProp": false,
@@ -1015,11 +1015,11 @@
    "payload": "/ahv/views/ahv-page-how-to-reach-mobile.json",
    "sourceSha256": "ff2ccdbc82863060241acb880982a16b04c4ba7580adbd39bb792a7303c932d5",
    "sourceBytes": 46520,
-   "payloadBytes": 47325,
+   "payloadBytes": 47315,
    "variant": "mobile",
    "scripts": [
-    "/ahv/https://unpkg.com/d3@7.9.0/dist/d3.min.js",
-    "/ahv/https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
+    "https://unpkg.com/d3@7.9.0/dist/d3.min.js",
+    "https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
    ],
    "hasLogic": true,
    "hasRouteProp": false,

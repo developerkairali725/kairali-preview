@@ -141,6 +141,16 @@ for (const id of ids) {
   if (PLACEHOLDER_HDR.test(t)) { t = t.replace(PLACEHOLDER_HDR, HEADER_IMPORT); did.push("header"); }
   if (PLACEHOLDER_FTR.test(t)) { t = t.replace(PLACEHOLDER_FTR, FOOTER_IMPORT); did.push("footer"); }
   const w = widths(t); if (w.n) { t = w.t; did.push(`width×${w.n}`); }
+  // 5. The design file's own <title> ("AHV Template — Product Family (Desktop
+  //    1440)") is a file name, not a page title. The governed head writes the
+  //    route's title from the manifest; a helmet title left here won the race
+  //    on four routes. Removed; nothing else in the helmet is touched.
+  const helmetTitle = /<title>[^<]*<\/title>\s*/i;
+  const helmetEnd = t.indexOf("</helmet>");
+  if (helmetEnd > 0 && helmetTitle.test(t.slice(0, helmetEnd))) {
+    t = t.slice(0, helmetEnd).replace(helmetTitle, "") + t.slice(helmetEnd);
+    did.push("helmet title");
+  }
   // Postconditions for a treated view.
   // The helmet's own <title> may say "(Desktop 1440)"; it is never rendered,
   // the governed head replaces it. Only the body is judged.
@@ -149,9 +159,18 @@ for (const id of ids) {
   if (LABEL_RE.test(bodyText)) problems.push(`${id}: board label still present`);
   const imports = (t.match(/<dc-import\b/g) || []).length;
   if (imports !== 2) problems.push(`${id}: expected 2 chrome imports, found ${imports}`);
-  if (t !== before) {
+  // 6. The governed head owns <title> (boot.ts: "exactly one canonical, and
+  //    the governed one wins"). A view whose logic writes document.title from
+  //    its own dataset (Photo Collections) overrode the manifest title on every
+  //    gallery route. The assignment becomes a no-op; the record's other head
+  //    fields (description, canonical) are still applied by the same logic.
+  let logic = view.logic || "";
+  const logicBefore = logic;
+  logic = logic.replace(/document\.title\s*=\s*([^;]+);/g, "void ($1); /* title governed by the route manifest */");
+  if (logic !== logicBefore) did.push("document.title→governed");
+  if (t !== before || logic !== logicBefore) {
     touched += 1;
-    if (!DRY) { view.template = t; writeFileSync(file, JSON.stringify(view)); }
+    if (!DRY) { view.template = t; view.logic = logic; writeFileSync(file, JSON.stringify(view)); }
   }
   console.log(`${did.length ? "fixed  " : "as-is  "}${id}${did.length ? "  (" + did.join(", ") + ")" : ""}`);
 }

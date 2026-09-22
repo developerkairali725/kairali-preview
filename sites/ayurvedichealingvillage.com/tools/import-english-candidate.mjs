@@ -247,7 +247,10 @@ export function parseView(src) {
     props,
     propsRepaired: propsFix.repaired,
     propsValid: propsFix.valid,
-    scripts: scripts.map((s) => PUBLIC_PREFIX + s),
+    // A template may load a library from an absolute URL (the How To Reach
+    // maps pull d3 + topojson from unpkg); only package-relative paths are
+    // served from /ahv/. Prefixing an absolute URL produced /ahv/https://…
+    scripts: scripts.map((s) => (/^https?:\/\//i.test(s) ? s : PUBLIC_PREFIX + s)),
     head: {
       title: pick(/<title>([\s\S]*?)<\/title>/i),
       description: pick(/<meta[^>]*\bname="description"[^>]*\bcontent="([^"]*)"/i),
