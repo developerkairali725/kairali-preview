@@ -290,3 +290,10 @@ The smoke asserts the same shape on the served JSON-LD once the route exists (sa
 ### 11.5 Push
 
 Attempted after `git pull --rebase` (§12 below records the outcome). The pre-push hook builds the site; the lead restarts :4321 afterwards and re-runs `node tests/search-ui.smoke.mjs` — the two SKIPs become four live checks (JS on/off at both widths + SearchAction).
+
+## 12. Push record (2026-09-22 22:13:53 IST)
+
+- `git fetch`: remote had 0 new commits, local had 3 → fast-forward push, no rebase needed (the rebase was refused by other sessions' unstaged files, which are not mine to stash).
+- `git push origin codex/ahv-english-staging-20260915`: **dbef384e..eec13846** — commits 757ac101 (Option A), eec13846 (D-37 additions) and the lead's fc4e371c in between.
+- `.next/BUILD_ID` after the push: MsRbX5-6I6Y8VA-s_tYHm built 22:13:18 IST; /search route in build: yes — the lead restarts :4321 and re-runs `node tests/search-ui.smoke.mjs` to turn the two SKIPs into live checks.
+- Left unstaged on purpose: the lead's in-flight FAQ content pass (`tools/repair-faq-content.mjs`, its edits to `tools/build-search-index.mjs` and the regenerated `public/ahv/search-index.json`), `english-candidate/prerender/index.json`, and everything the galleries builder owns.
