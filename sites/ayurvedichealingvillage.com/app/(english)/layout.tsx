@@ -93,6 +93,14 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             the design root and never touches boot.ts. */}
         <link rel="stylesheet" href="/design/consistency.css" />
         <script defer src="/design/consistency.js" />
+        {/* Shared chrome, every page INCLUDING the homepage (owner rulings
+            D-20260922-17/-18/-19, 22 Sep 2026): the desktop header on one row
+            with the EN/DE/FR switch kept (chrome.css, ≥1180px), the copyright
+            line on every footer and WhatsApp +91 92898 38797 under the hospital
+            phone (chrome.js). Not scoped by data-ahv-consistency on purpose —
+            the header and footer are one component on every family. */}
+        <link rel="stylesheet" href="/design/chrome.css" />
+        <script defer src="/design/chrome.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />

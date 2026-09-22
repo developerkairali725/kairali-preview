@@ -86,3 +86,6 @@ own tags on 2026-09-15 and cross-checked where possible. They are public identif
 - [ ] **7d and 28d:** rankings and organic traffic against baseline. This is the window where the
       server-rendering decision shows up in the numbers, for better or worse.
 - [ ] Keep the previous WordPress site restorable until 28d looks right. Rollback authority is human.
+
+## Redirect-map note — 2026-09-22 16:14:43 IST (D-20260922-20)
+- `/my-account/`, `/test-page/`, `/testing/` render the homepage design and carry no content of their own (508-record chrome audit, 2026-09-22). Owner ruling: **noindex, nofollow now** (english-candidate/route-overrides.json robotsOverrides, applied by tools/repair-robots-overrides.mjs) and a **410 Gone at the flip** — add all three to the redirect map as 410, not 301 (no target page exists to inherit their value; Search Console shows no clicks for them).

@@ -35,8 +35,15 @@ const DRY = process.argv.includes("--dry");
 const VIEWS = join(SITE, "public/ahv/views");
 const OVERLAY_ROUTES = join(SITE, "english-candidate/package-overlay/ROUTES-REPOINTED.json");
 
+// The chrome component renders its DESKTOP half unless the import carries
+// narrow="true" — the package's own mobile views pass it (with the sticky
+// style and the phone hint sizes). Measured 22 Sep on the deployed preview:
+// without it, 21 routes showed the 233px desktop header at 390px and no
+// burger. Desktop and mobile therefore get different imports.
 const HEADER_IMPORT = '<dc-import name="AHV Chrome Header" hint-size="100%,72px"></dc-import>';
 const FOOTER_IMPORT = '<dc-import name="AHV Chrome Footer" hint-size="100%,560px"></dc-import>';
+const HEADER_IMPORT_NARROW = '<dc-import name="AHV Chrome Header" narrow="true" style="position:sticky;top:0;z-index:80" hint-size="100%,64px"></dc-import>';
+const FOOTER_IMPORT_NARROW = '<dc-import name="AHV Chrome Footer" narrow="true" hint-size="100%,900px"></dc-import>';
 
 /** Views the overlay repointed, derived from the repoint ledger, not hand-listed. */
 function treatedViews() {
@@ -137,9 +144,16 @@ for (const id of ids) {
   const before = view.template;
   let t = before;
   const did = [];
+  const narrow = /-mobile$/.test(id);
+  const HDR = narrow ? HEADER_IMPORT_NARROW : HEADER_IMPORT;
+  const FTR = narrow ? FOOTER_IMPORT_NARROW : FOOTER_IMPORT;
   const ub = unwrapBoard(t); if (ub.changed) { t = ub.t; did.push("board→frame A"); }
-  if (PLACEHOLDER_HDR.test(t)) { t = t.replace(PLACEHOLDER_HDR, HEADER_IMPORT); did.push("header"); }
-  if (PLACEHOLDER_FTR.test(t)) { t = t.replace(PLACEHOLDER_FTR, FOOTER_IMPORT); did.push("footer"); }
+  if (PLACEHOLDER_HDR.test(t)) { t = t.replace(PLACEHOLDER_HDR, HDR); did.push("header"); }
+  if (PLACEHOLDER_FTR.test(t)) { t = t.replace(PLACEHOLDER_FTR, FTR); did.push("footer"); }
+  // A mobile view already carrying the desktop import (earlier runs of this
+  // tool) is upgraded to the narrow one.
+  if (narrow && t.includes(HEADER_IMPORT)) { t = t.replace(HEADER_IMPORT, HEADER_IMPORT_NARROW); did.push("header→narrow"); }
+  if (narrow && t.includes(FOOTER_IMPORT)) { t = t.replace(FOOTER_IMPORT, FOOTER_IMPORT_NARROW); did.push("footer→narrow"); }
   const w = widths(t); if (w.n) { t = w.t; did.push(`width×${w.n}`); }
   // 4b. Review chips the designer pinned to the page ("PROVISIONAL — PENDING
   //     SITEMAP" beside the breadcrumb) are design-board annotations, not
