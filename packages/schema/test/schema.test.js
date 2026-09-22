@@ -18,6 +18,9 @@ import {
   book,
   itemList,
   service,
+  imageGallery,
+  imageObject,
+  videoObject,
 } from "../src/index.js";
 
 test("kairaliOrganization carries the locked facts and never invents", () => {
@@ -169,6 +172,9 @@ test("itemList numbers items in order and never invents fields", () => {
   assert.equal(l.itemListElement[0].position, 1);
   assert.equal(l.itemListElement[1].name, "Udwarthanam Powder");
   assert.equal("url" in l.itemListElement[1], false);
+  const refs = itemList({ name: "Chapter", items: [{ id: "https://x/#image-1" }] });
+  assert.deepEqual(refs.itemListElement[0].item, { "@id": "https://x/#image-1" });
+  assert.equal("name" in refs.itemListElement[0], false);
 });
 
 test("service carries the quote model — provider by @id, no offers/price surface", () => {
@@ -182,4 +188,69 @@ test("service carries the quote model — provider by @id, no offers/price surfa
   assert.deepEqual(s.provider, { "@id": "https://bulkayurvedaproducts.com/#organization" });
   assert.equal("offers" in s, false);
   assert.equal("price" in s, false);
+});
+
+test("imageObject: contentUrl required; credit + copyright pass through; nothing invented", () => {
+  const i = imageObject({
+    id: "https://ayurvedichealingvillage.com/treatments-gallery/#img-1",
+    contentUrl: "https://ayurvedichealingvillage.com/ahv/assets/img/gallery-2026/treatments/oil-abhyanga-01.webp",
+    name: "Abhyanga: two therapists work herbal oil along a patient's legs.",
+    caption: "Abhyanga: two therapists work herbal oil along a patient's legs.",
+    description: "Abhyanga, two therapists working herbal oil along a patient's legs on a wooden therapy table",
+    width: 1067, height: 1600,
+    creditText: "Kairali – The Ayurvedic Healing Village",
+    copyrightNotice: "© Kairali Ayurvedic Group",
+    creatorName: "Kairali – The Ayurvedic Healing Village",
+    representativeOfPage: false,
+  });
+  assert.equal(i["@type"], "ImageObject");
+  assert.equal(i.url, i.contentUrl, "url defaults to contentUrl");
+  assert.equal(i.creator.name, "Kairali – The Ayurvedic Healing Village");
+  assert.equal("license" in i, false, "no licence page → no license field");
+  assert.equal("acquireLicensePage" in i, false);
+  assert.equal("representativeOfPage" in i, false, "false is omitted; only the hero says true");
+  assert.throws(() => imageObject({ name: "x" }), /contentUrl/);
+});
+
+test("videoObject: name + thumbnail required; uploadDate/duration only when supplied", () => {
+  const full = videoObject({
+    id: "https://ayurvedichealingvillage.com/treatments-gallery/#video-DehKsHYtoJM",
+    name: "The quiet room and therapy area",
+    description: "The quiet room and the therapy area of the treatment block.",
+    thumbnailUrl: "https://ayurvedichealingvillage.com/ahv/assets/img/gallery-2026/video/DehKsHYtoJM.webp",
+    uploadDate: "2023-05-05",
+    duration: "PT47S",
+    embedUrl: "https://www.youtube-nocookie.com/embed/DehKsHYtoJM",
+    publisherId: "https://ayurvedichealingvillage.com/#organization",
+    isFamilyFriendly: true,
+    inLanguage: "en-US",
+  });
+  assert.equal(full["@type"], "VideoObject");
+  assert.equal(full.duration, "PT47S");
+  assert.deepEqual(full.publisher, { "@id": "https://ayurvedichealingvillage.com/#organization" });
+  const lean = videoObject({ name: "A few minutes of yoga", thumbnailUrl: "https://x/y.webp" });
+  assert.equal("uploadDate" in lean, false, "never typed in");
+  assert.equal("duration" in lean, false);
+  assert.throws(() => videoObject({ name: "x" }), /thumbnailUrl/);
+});
+
+test("imageGallery: accepts ImageObject nodes, hasPart chapters and videos; string form unchanged", () => {
+  const strings = imageGallery({ name: "Portfolio", images: ["https://x/a.jpg"] });
+  assert.deepEqual(strings.image, ["https://x/a.jpg"]);
+  assert.equal("hasPart" in strings, false);
+  const node = imageObject({ contentUrl: "https://x/b.webp", creditText: "Kairali" });
+  const g = imageGallery({
+    id: "https://ayurvedichealingvillage.com/yoga-gallery/#gallery",
+    name: "Yoga Gallery",
+    url: "https://ayurvedichealingvillage.com/yoga-gallery/",
+    mainEntityOfPageId: "https://ayurvedichealingvillage.com/yoga-gallery/",
+    inLanguage: "en-US",
+    images: [node],
+    videos: [videoObject({ name: "v", thumbnailUrl: "https://x/p.webp" })],
+    hasPart: [itemList({ name: "The yoga hall", items: [{ name: "img", url: "https://x/b.webp" }] })],
+  });
+  assert.equal(g.image[0]["@type"], "ImageObject");
+  assert.equal(g.video[0]["@type"], "VideoObject");
+  assert.equal(g.hasPart[0]["@type"], "ItemList");
+  assert.deepEqual(g.mainEntityOfPage, { "@id": "https://ayurvedichealingvillage.com/yoga-gallery/" });
 });

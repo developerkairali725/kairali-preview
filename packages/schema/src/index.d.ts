@@ -146,7 +146,8 @@ export function book(b: {
 export function itemList(l: {
   id?: string;
   name?: string;
-  items: Array<{ name: string; url?: string }>;
+  /** {name, url?} entries, or {id} references to nodes already in the graph. */
+  items: Array<{ name?: string; url?: string; id?: string }>;
 }): JsonLdNode;
 
 export function service(s: {
@@ -176,5 +177,48 @@ export function imageGallery(g: {
   name: string;
   description?: string;
   url?: string;
-  images?: string[];
+  mainEntityOfPageId?: string;
+  inLanguage?: string;
+  /** URL strings (blushlounge form) or ImageObject nodes from imageObject(). */
+  images?: Array<string | JsonLdNode>;
+  /** VideoObject nodes from videoObject(). */
+  videos?: JsonLdNode[];
+  /** One ItemList per chapter (itemList()). */
+  hasPart?: JsonLdNode[];
+}): JsonLdNode;
+
+export function imageObject(i: {
+  id?: string;
+  contentUrl: string;
+  url?: string;
+  thumbnailUrl?: string;
+  name?: string;
+  caption?: string;
+  description?: string;
+  width?: number;
+  height?: number;
+  creditText?: string;
+  copyrightNotice?: string;
+  creatorName?: string;
+  creatorId?: string;
+  license?: string;
+  acquireLicensePage?: string;
+  representativeOfPage?: boolean;
+  inLanguage?: string;
+}): JsonLdNode;
+
+export function videoObject(v: {
+  id?: string;
+  name: string;
+  description?: string;
+  thumbnailUrl: string | string[];
+  uploadDate?: string;
+  duration?: string;
+  embedUrl?: string;
+  contentUrl?: string;
+  url?: string;
+  publisherId?: string;
+  publisherName?: string;
+  isFamilyFriendly?: boolean;
+  inLanguage?: string;
 }): JsonLdNode;

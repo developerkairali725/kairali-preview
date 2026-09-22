@@ -50,6 +50,8 @@ export interface SitemapPage {
     | "yearly"
     | "never";
   priority?: number;
+  /** Absolute or site-relative image URLs for the image sitemap extension (≤1,000). */
+  images?: string[];
 }
 
 export function buildSitemap(

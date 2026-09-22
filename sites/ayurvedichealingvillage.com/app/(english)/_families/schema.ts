@@ -41,7 +41,9 @@
  */
 import type { CandidateRoute } from "./registry";
 import { routes } from "./registry";
+import { imageGallery, imageObject, itemList, videoObject } from "@kairali/schema";
 import OG_IMAGES from "../../../english-candidate/og-images.json";
+import GALLERIES from "../../../english-candidate/galleries-2026.json";
 
 const ORIGIN = "https://ayurvedichealingvillage.com";
 const LANG = "en-US";
@@ -125,6 +127,96 @@ function primaryImage(route: CandidateRoute) {
   };
 }
 
+/* ------------------------------------------------------------------ *
+ * Galleries (22 Sep 2026, D-20260922-31): ImageGallery + ImageObject per
+ * photograph + VideoObject per embedded facade, generated from the SAME
+ * manifest the page renders from (english-candidate/galleries-2026.json,
+ * written by tools/build-galleries-2026.mjs), so the markup can never say
+ * something the page does not show. creditText / copyrightNotice come from
+ * the manifest (the notice wording is an open owner question and is flagged
+ * there, not decided here); license / acquireLicensePage are NOT emitted —
+ * no licence page exists and none is invented. uploadDate / duration appear
+ * only where the video register carried them.
+ * ------------------------------------------------------------------ */
+interface GalleryImage { src: string; width: number; height: number; alt: string; caption: string }
+interface GalleryVideo { youtubeId: string; title: string; description: string; poster: { src: string }; uploadDate?: string; duration?: string }
+interface GalleryChapter { id: string; title: string; images: GalleryImage[]; video: GalleryVideo | null }
+interface GalleryRoute { path: string; h1: string; intro: string; hero: GalleryImage; chapters: GalleryChapter[] }
+interface GalleryManifest { creditText: string; copyrightNotice: string; routes: GalleryRoute[] }
+
+const GALLERY_MANIFEST = GALLERIES as unknown as GalleryManifest;
+const GALLERY_BY_PATH = new Map(GALLERY_MANIFEST.routes.map((g) => [g.path, g]));
+
+/** Every image the route's gallery shows — the hero first — as absolute URLs (sitemap image extension). */
+export function galleryImageUrls(routePath: string): string[] {
+  const g = GALLERY_BY_PATH.get(routePath);
+  if (!g) return [];
+  return [g.hero, ...g.chapters.flatMap((ch) => ch.images)].map((im) => `${ORIGIN}${im.src}`);
+}
+
+function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, unknown>> {
+  const g = GALLERY_BY_PATH.get(route.path);
+  if (!g) return [];
+  const all = [g.hero, ...g.chapters.flatMap((ch) => ch.images)];
+  const idFor = (im: GalleryImage) => `${url}#image-${im.src.split("/").pop()!.replace(/\.webp$/, "")}`;
+  const imageNodes = all.map((im, i) =>
+    imageObject({
+      id: idFor(im),
+      contentUrl: `${ORIGIN}${im.src}`,
+      // caption = the visible figcaption; description = the alt. `name` would repeat the caption verbatim.
+      caption: im.caption,
+      description: im.alt,
+      width: im.width,
+      height: im.height,
+      creditText: GALLERY_MANIFEST.creditText,
+      copyrightNotice: GALLERY_MANIFEST.copyrightNotice,
+      // The page's own Organization node (same name the chrome prints) — a
+      // reference, not a repeated inline object, so 60 images do not carry 60 copies.
+      creatorId: ORG_ID,
+      representativeOfPage: i === 0,
+    }),
+  );
+  // One ItemList per chapter, listing that chapter's ImageObject @ids in order
+  // (spec §6.5) — references only; the captions live once, on the ImageObjects.
+  const chapters = g.chapters.map((ch) =>
+    itemList({
+      id: `${url}#${ch.id}`,
+      name: ch.title,
+      items: ch.images.map((im) => ({ id: idFor(im) })),
+    }),
+  );
+  const videos = g.chapters
+    .filter((ch) => ch.video)
+    .map((ch) => {
+      const v = ch.video as GalleryVideo;
+      return videoObject({
+        id: `${url}#video-${v.youtubeId}`,
+        name: v.title,
+        description: v.description,
+        thumbnailUrl: `${ORIGIN}${v.poster.src}`,
+        ...(v.uploadDate ? { uploadDate: v.uploadDate } : {}),
+        ...(v.duration ? { duration: v.duration } : {}),
+        embedUrl: `https://www.youtube-nocookie.com/embed/${v.youtubeId}`,
+        url: `${url}#${ch.id}`,
+        publisherId: ORG_ID,
+        isFamilyFriendly: true,
+        inLanguage: LANG,
+      });
+    });
+  const gallery = imageGallery({
+    id: `${url}#gallery`,
+    name: g.h1,
+    description: g.intro,
+    url,
+    mainEntityOfPageId: url,
+    inLanguage: LANG,
+    images: imageNodes,
+    videos: videos.map((v) => ({ "@id": v["@id"] as string })),
+    hasPart: chapters,
+  });
+  return [gallery, ...videos];
+}
+
 /**
  * The route's @graph. Shape follows the live site's valid block so the flip is
  * parity rather than a redesign of the site's entity model.
@@ -162,6 +254,8 @@ export function routeSchema(route: CandidateRoute): Record<string, unknown> {
     // No potentialAction/SearchAction: see the header note — the endpoint does
     // not exist yet, and a crawler should not be told otherwise.
   });
+  // Gallery routes: ImageGallery (with ImageObject nodes + chapter ItemLists) and VideoObject per facade.
+  for (const node of galleryNodes(route, url)) graph.push(node);
   graph.push({
     "@type": "Organization",
     "@id": ORG_ID,

@@ -276,7 +276,10 @@ export function book(b) {
 /**
  * ItemList for catalog hubs (Ship-Gate schema plan: "ItemList on catalog
  * hubs"). Items are {name, url?} in display order — never invented entries.
- * @param {{id?:string, name?:string, items: Array<{name:string,url?:string}>}} l
+ * An item may instead be {id} — a reference to a node already in the graph
+ * (e.g. a gallery chapter listing its ImageObject @ids); added 22 Sep 2026,
+ * additive: the {name, url} form is unchanged.
+ * @param {{id?:string, name?:string, items: Array<{name?:string,url?:string,id?:string}>}} l
  */
 export function itemList(l) {
   return clean({
@@ -285,7 +288,13 @@ export function itemList(l) {
     name: l.name,
     numberOfItems: l.items.length,
     itemListElement: l.items.map((item, i) =>
-      clean({ "@type": "ListItem", position: i + 1, name: item.name, url: item.url }),
+      clean({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: item.url,
+        item: item.id ? { "@id": item.id } : undefined,
+      }),
     ),
   });
 }
@@ -332,8 +341,13 @@ export function service(s) {
 }
 
 /**
- * ImageGallery (portfolio pages). Images are absolute or site-relative URLs.
- * Added 18 Jul 2026, theblushlounge full build; additive only.
+ * ImageGallery (portfolio pages). Images are absolute or site-relative URLs,
+ * OR full ImageObject nodes from imageObject() (Google's image-licence
+ * metadata needs the node form: contentUrl + creditText/copyrightNotice).
+ * Added 18 Jul 2026, theblushlounge full build; extended 22 Sep 2026 for the
+ * AHV chaptered galleries (hasPart = one ItemList per chapter, video =
+ * VideoObject nodes, mainEntityOfPage); additive only — the string form and
+ * every existing field are unchanged.
  */
 export function imageGallery(g) {
   return clean({
@@ -342,6 +356,85 @@ export function imageGallery(g) {
     name: g.name,
     description: g.description,
     url: g.url,
+    mainEntityOfPage: g.mainEntityOfPageId ? { "@id": g.mainEntityOfPageId } : undefined,
+    inLanguage: g.inLanguage,
     image: g.images && g.images.length ? g.images : undefined,
+    video: g.videos && g.videos.length ? g.videos : undefined,
+    hasPart: g.hasPart && g.hasPart.length ? g.hasPart : undefined,
+  });
+}
+
+/**
+ * ImageObject for gallery photographs (Google image-licence metadata:
+ * contentUrl REQUIRED plus at least one of creator / creditText /
+ * copyrightNotice / license). `name`/`caption` are the visible figcaption and
+ * `description` the alt — the markup must match what the page shows.
+ * license / acquireLicensePage are emitted only when supplied (never invented).
+ * Added 22 Sep 2026, AHV galleries; additive only.
+ * @param {{id?:string, contentUrl:string, url?:string, name?:string, caption?:string,
+ *          description?:string, width?:number, height?:number, creditText?:string,
+ *          copyrightNotice?:string, creatorName?:string, creatorId?:string,
+ *          license?:string, acquireLicensePage?:string, representativeOfPage?:boolean,
+ *          inLanguage?:string, thumbnailUrl?:string}} i
+ */
+export function imageObject(i) {
+  if (!i.contentUrl) throw new Error("schema: imageObject needs contentUrl");
+  return clean({
+    "@type": "ImageObject",
+    "@id": i.id,
+    contentUrl: i.contentUrl,
+    url: i.url ?? i.contentUrl,
+    thumbnailUrl: i.thumbnailUrl,
+    name: i.name,
+    caption: i.caption,
+    description: i.description,
+    width: i.width,
+    height: i.height,
+    creditText: i.creditText,
+    copyrightNotice: i.copyrightNotice,
+    creator: i.creatorId
+      ? { "@id": i.creatorId }
+      : i.creatorName
+        ? { "@type": "Organization", name: i.creatorName }
+        : undefined,
+    license: i.license,
+    acquireLicensePage: i.acquireLicensePage,
+    representativeOfPage: i.representativeOfPage === true ? true : undefined,
+    inLanguage: i.inLanguage,
+  });
+}
+
+/**
+ * VideoObject for an embedded (facade) video. Google REQUIRES name,
+ * thumbnailUrl and uploadDate for the video rich result — uploadDate and
+ * duration are passed through ONLY when the caller has them from the platform
+ * record (never typed or estimated); when absent the node is still valid
+ * schema.org and simply not eligible for the rich result (HARD GATE 6: a gap
+ * stays visible, it is never filled). Added 22 Sep 2026, AHV galleries.
+ * @param {{id?:string, name:string, description?:string, thumbnailUrl:string|string[],
+ *          uploadDate?:string, duration?:string, embedUrl?:string, contentUrl?:string,
+ *          url?:string, publisherId?:string, publisherName?:string,
+ *          isFamilyFriendly?:boolean, inLanguage?:string}} v
+ */
+export function videoObject(v) {
+  if (!v.name || !v.thumbnailUrl) throw new Error("schema: videoObject needs name + thumbnailUrl");
+  return clean({
+    "@type": "VideoObject",
+    "@id": v.id,
+    name: v.name,
+    description: v.description,
+    thumbnailUrl: v.thumbnailUrl,
+    uploadDate: v.uploadDate,
+    duration: v.duration,
+    embedUrl: v.embedUrl,
+    contentUrl: v.contentUrl,
+    url: v.url,
+    publisher: v.publisherId
+      ? { "@id": v.publisherId }
+      : v.publisherName
+        ? { "@type": "Organization", name: v.publisherName }
+        : undefined,
+    isFamilyFriendly: v.isFamilyFriendly,
+    inLanguage: v.inLanguage,
   });
 }

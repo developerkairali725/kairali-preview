@@ -120,3 +120,19 @@ test("buildLlmsTxt: llmstxt.org shape; throws without name/summary", () => {
 test("siteUrl", () => {
   assert.equal(siteUrl(mono), "https://arogyakendra.com");
 });
+
+test("buildSitemap: images pass through as absolute URLs; absent when a page lists none; >1000 throws", () => {
+  const s = buildSitemap(mono, [
+    { path: "/photo-gallery/", images: ["/ahv/assets/img/gallery-2026/photo/a.webp", "https://cdn.example/b.webp"] },
+    { path: "/about/" },
+  ]);
+  assert.deepEqual(s[0].images, [
+    "https://arogyakendra.com/ahv/assets/img/gallery-2026/photo/a.webp",
+    "https://cdn.example/b.webp",
+  ]);
+  assert.equal("images" in s[1], false);
+  assert.throws(
+    () => buildSitemap(mono, [{ path: "/x/", images: Array.from({ length: 1001 }, (_, i) => `/i${i}.webp`) }]),
+    /max 1,000/,
+  );
+});
