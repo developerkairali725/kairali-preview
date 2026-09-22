@@ -54,3 +54,16 @@
   text-decoration: none;
 }
 #ahv-design-root footer a[data-ahv-whatsapp]:hover { color: #EEB41E; }
+
+/* ---- responsiveness catches from the 254-route sweep (22 Sep, 7 widths) ----
+   The programme (package) pages carry a decorative watermark image
+   (width:430px; opacity:.08) whose right edge runs to 804–854px at a 768px
+   tablet — the only horizontal overflow left on the site. The page design is
+   untouched: the watermark simply may not exceed its column, and a package
+   page never scrolls sideways. The legal page's one unbroken link wraps. */
+@media (max-width:1023px) {
+  #ahv-design-root main img[style*="opacity:.08"],
+  #ahv-design-root main img[style*="opacity: 0.08"] { max-width:100% !important; }
+  #ahv-design-root main { overflow-x:clip; }   /* clip, not hidden: sticky rails keep working */
+}
+#ahv-design-root[data-ahv-family="ahv-template-legal-policy"] main a { overflow-wrap:anywhere; }

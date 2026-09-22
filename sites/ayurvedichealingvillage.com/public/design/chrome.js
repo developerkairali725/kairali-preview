@@ -71,11 +71,38 @@
     bar.appendChild(span);
   }
 
+  // D-20260922-21: ONE chat. The footer's "Chat with Priya" pointed at
+  // chat.kairali.com (dead); the Chatbase bubble is the chat that works. The
+  // link now opens that bubble: wake the deferred loader, wait for the widget,
+  // open it. If the widget never arrives (blocked, offline) the link falls back
+  // to the locked WhatsApp number — never a dead end.
+  function openChat(ev) {
+    ev.preventDefault();
+    try { window.dispatchEvent(new Event("pointerdown")); window.dispatchEvent(new Event("scroll")); window.dispatchEvent(new Event("keydown")); } catch (e) {}
+    var tries = 0;
+    (function poll() {
+      if (typeof window.chatbase === "function") { try { window.chatbase("open"); return; } catch (e) {} }
+      var btn = document.getElementById("chatbase-bubble-button");
+      if (btn) { btn.click(); return; }
+      if (++tries < 40) setTimeout(poll, 150); else window.location.href = WA_HREF;
+    })();
+  }
+  function chatLinks(f) {
+    var links = f.querySelectorAll('a[href^="https://chat.kairali.com"]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.getAttribute("data-ahv-chat") === "1") continue;
+      a.setAttribute("data-ahv-chat", "1");
+      a.setAttribute("href", "#chat");
+      a.removeAttribute("target");
+      a.addEventListener("click", openChat);
+    }
+  }
   function pass() {
     scheduled = false;
     try {
       var fs = footers();
-      for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); }
+      for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
     } catch (e) { /* never break the page */ }
   }
   function schedule() {

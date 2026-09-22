@@ -97,11 +97,69 @@
     }
   }
 
+  // A sticky side rail taller than the window pins its top and hides its
+  // bottom links for ever (measured on /books/: a 19-link rail, top:96px,
+  // links below the fold unreachable — "the navigation links are not
+  // clickable"). If the rail cannot fit, it scrolls with the page instead.
+  function tallStickyRails(main) {
+    var els = main.querySelectorAll("nav, aside");
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i]; var cs = window.getComputedStyle(el);
+      if (cs.position !== "sticky") continue;
+      var top = parseFloat(cs.top) || 0;
+      if (el.offsetHeight + top > window.innerHeight - 24) el.style.setProperty("position", "static", "important");
+      else if (el.getAttribute("data-ahv-unstuck") === "1") el.style.removeProperty("position");
+      el.setAttribute("data-ahv-unstuck", el.style.position === "static" ? "1" : "0");
+    }
+  }
+  // The WordPress source printed its own breadcrumb ("Home – Kair by Kairali")
+  // as the first paragraph of a few legacy articles and the capture kept it as
+  // body text. It is never content: the site has a real breadcrumb above it.
+  function strayBreadcrumbs(main) {
+    var ps = main.querySelectorAll("p");
+    for (var i = 0; i < ps.length; i++) {
+      var t = (ps[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (/^Home [–»>] .{1,80}$/.test(t) && !ps[i].querySelector("a, img")) ps[i].parentNode.removeChild(ps[i]);
+    }
+  }
+  // D-20260922-28: the contact page's live map, CONSENT-GATED. The static
+  // map (an <img> inside the map link, data-source-embed="map") shows first;
+  // once the visitor has accepted cookies (the design's own notice writes
+  // localStorage "ktahv-consent" = "accepted") it becomes a Google Maps
+  // embed of the hospital. No API key, no script: an <iframe> with the
+  // public embed URL, lazy, titled. Declined or undecided: the static map
+  // stays and the Get-directions button beside it still works.
+  function liveMap(main) {
+    if (root.getAttribute("data-ahv-route") !== "/contact-us/") return;
+    var link = main.querySelector('a[data-source-embed="map"]');
+    if (!link || link.getAttribute("data-ahv-live-map") === "1") return;
+    var accepted = false;
+    try { accepted = window.localStorage.getItem("ktahv-consent") === "accepted"; } catch (e) {}
+    if (!accepted) return;
+    var img = link.querySelector("img");
+    if (!img) return;
+    var frame = document.createElement("iframe");
+    frame.setAttribute("title", "Map: Kairali \u2013 The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad");
+    frame.setAttribute("loading", "lazy");
+    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    frame.setAttribute("allowfullscreen", "");
+    frame.src = "https://www.google.com/maps?q=Kairali+-+The+Ayurvedic+Healing+Village,+Olassery,+Kodumbu,+Palakkad&z=15&output=embed";
+    frame.style.cssText = "display:block;width:100%;height:" + Math.max(300, Math.round(img.getBoundingClientRect().height || 340)) + "px;border:0;border-radius:4px;";
+    img.parentNode.replaceChild(frame, img);
+    link.setAttribute("data-ahv-live-map", "1");
+    // the link wrapper must not swallow clicks inside the map
+    link.style.pointerEvents = "none"; frame.style.pointerEvents = "auto";
+    var caption = link.querySelector("span"); if (caption) caption.style.pointerEvents = "auto";
+  }
   function pass() {
     scheduled = false;
     var main = root.querySelector("main") || root;
-    try { typeFloor(main); tables(main); campaignSliderStubs(main); } catch (e) { /* never break the page */ }
+    try { typeFloor(main); tables(main); campaignSliderStubs(main); tallStickyRails(main); strayBreadcrumbs(main); liveMap(main); } catch (e) { /* never break the page */ }
   }
+  // consent can be given after load: re-run on the notice's click and on storage
+  document.addEventListener("click", function () { setTimeout(schedule, 50); }, true);
+  window.addEventListener("storage", schedule);
+  window.addEventListener("resize", schedule);
   // setTimeout, NOT requestAnimationFrame: a frame callback never fires in a
   // hidden tab (measured on the deployed preview opened in a background tab —
   // the pass never ran and the slider stubs stayed), and a page opened in the

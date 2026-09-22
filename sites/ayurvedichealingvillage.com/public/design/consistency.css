@@ -44,9 +44,12 @@
 }
 
 /* ---- prose measure: 66ch, the owner's global ruling --------------------- */
+/* a list item or definition that is itself a laid-out card (inline display:
+   grid / flex — the about-us director rows, feature rows) is not prose: the
+   cap once shrank the director rows to 673px on a 1220px column */
 #ahv-design-root[data-ahv-consistency="1"] main p,
-#ahv-design-root[data-ahv-consistency="1"] main li,
-#ahv-design-root[data-ahv-consistency="1"] main dd,
+#ahv-design-root[data-ahv-consistency="1"] main li:not([style*="display:grid"]):not([style*="display: grid"]):not([style*="display:flex"]):not([style*="display: flex"]),
+#ahv-design-root[data-ahv-consistency="1"] main dd:not([style*="display:grid"]):not([style*="display:flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main blockquote { max-width:66ch !important; }
 /* a centred standfirst stays centred once it has a measure */
 #ahv-design-root[data-ahv-consistency="1"] main [style*="text-align:center"] p,

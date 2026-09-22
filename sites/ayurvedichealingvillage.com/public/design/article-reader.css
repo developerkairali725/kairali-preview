@@ -49,7 +49,7 @@
 }
 
 /* ---- the legacy corporate sidebar ------------------------------------- */
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul), [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul), [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul),
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
   box-sizing:border-box !important;
   display:block !important;
@@ -66,22 +66,22 @@
 }
 
 /* Compact rows — the point is to take LESS of the screen than before. */
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) ul,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) ul, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) ul, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) ul,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]),
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) ul {
   list-style:none !important; margin:0 !important; padding:0 !important;
 }
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) li,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) li,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li {
   margin:0 !important; padding:0 !important;
   border-bottom:1px solid var(--hair) !important;
   list-style:none !important;
 }
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) li:last-child,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) li:last-child, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) li:last-child, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) li:last-child,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li:last-child {
   border-bottom:0 !important;
 }
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) a,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) a, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) a, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) a,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) a {
   /* No padding or height is set here on purpose: these rows already measure
      44px, a good target, and adding to them made the block 322px TALLER on
@@ -89,14 +89,14 @@
   font-size:15px !important; line-height:1.3 !important;
   color:var(--ink) !important; text-decoration:none !important;
 }
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) a:hover,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) a:hover, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) a:hover, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) a:hover,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) a:hover {
   color:var(--green) !important;
 }
 /* Its headings become quiet labels, so they stop competing with the article's. */
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h2,
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h3,
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]) h4 {
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) h2, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) h2, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) h2,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) h3, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) h3, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) h3,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) h4, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) h4, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) h4 {
   font-family:Mulish,system-ui,sans-serif !important;
   font-size:12px !important; font-weight:800 !important;
   letter-spacing:1.4px !important; text-transform:uppercase !important;
@@ -115,18 +115,58 @@
   [data-ahv-family="article-reader"] main section:has(> ul a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
     display:flex !important; flex-direction:column !important;
   }
-  [data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+  [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul), [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul), [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul),
   [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
     order:99 !important; margin-top:34px !important;
   }
 }
 
-/* Desktop: a real aside. The article starts at the top and flows beside it. */
+/* Desktop: a real two-column layout (owner, 22 Sep: the left rail on /books/
+   "looks a lot better"; the 254-route sweep measured the floated rail pinned to
+   the viewport edge at x=0 on 71 routes while the text sat at 350 — and on the
+   five right-floated routes a 577px gap at 1920). The legacy menu is a direct
+   child of <main>, a sibling of the content sections, so <main> itself becomes
+   the grid: column 1 = the 300px rail, column 2 = everything after it. The
+   title + hero sections above the rail, and the closing CTA/footer sections
+   after the content, span both columns. The gap is 40px at every width.
+   NOTE: a :has() may not be nested inside another :has() — the first draft
+   did, the browser dropped the rule, and a sibling width rule flattened the
+   pages. Every selector below is a single-level :has(). */
 @media (min-width:1024px) {
-  [data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]):not([aria-label="Breadcrumb"]),
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) {
+    display:grid !important;
+    grid-template-columns:300px minmax(0,1fr) !important;
+    column-gap:40px !important;
+    width:min(1220px,94%) !important;
+    margin:0 auto !important;
+    align-items:start !important;
+  }
+  /* everything spans both columns … */
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > * { grid-column:1 / -1; }
+  /* … except the rail (column 1) and the content block that follows it (column 2, same row) */
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > nav:not([aria-label="Breadcrumb"]) {
+    grid-column:1 !important; align-self:start !important;
+    width:auto !important; float:none !important; margin:0 0 26px !important;
+    position:sticky; top:96px;
+  }
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > nav:not([aria-label="Breadcrumb"]) + section,
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > nav:not([aria-label="Breadcrumb"]) + div {
+    grid-column:2 !important; min-width:0;
+  }
+  /* the inner containers were sized for a full-width main; inside the grid they fill their cell */
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > section[style*="min(1220px"],
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > div[style*="min(1220px"],
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > * > [style*="min(1220px"] { width:100% !important; }
+  /* body images stay inside the content column (the full-bleed treatment
+     below was written for a single-column page) */
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > nav + section img,
+  [data-ahv-family="article-reader"] main:has(> nav:not([aria-label="Breadcrumb"]) > ul) > nav + div img {
+    width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important; left:auto !important; transform:none !important;
+  }
+  /* the ul-shaped menu inside a section keeps the float, now on the left */
   [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) {
-    float:right !important; width:300px !important;
-    margin:0 0 26px 40px !important;
+    float:left !important; width:300px !important;
+    margin:0 40px 26px 0 !important;
   }
 }
 
@@ -191,7 +231,7 @@
 [data-ahv-family="article-reader"] main p { margin:0 0 20px !important; }
 
 /* The menu card, tables and figures are exempt: they are not prose. */
-[data-ahv-family="article-reader"] main nav:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li,
+[data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) li,
 [data-ahv-family="article-reader"] main section > ul:has(a[href="/kairali-ayurvedic-products-pvt-ltd/"]) li,
 [data-ahv-family="article-reader"] main table p,
 [data-ahv-family="article-reader"] main table li,
