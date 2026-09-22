@@ -87,3 +87,11 @@ Abhilash
 
 Until these arrive the build keeps: the existing (older) leadership photographs, a three-physician panel, the 12
 on-campus frames for sightseeing, and flagged slots — nothing invented (HARD GATE 6).
+
+---
+**SENT 2026-09-22 17:46:01 IST** on the owner's word ("ask anupam for these photos") from director@kairali.com → mkt@ktahv.com,
+cc gm.hv@kairali.com, director@kairali.com · Gmail message id 1a0c90ac6bdf468b · subject "Stills for the new
+website — please add to the 28–30 Sep virtual-tour shoot (exact list inside)". The sent text states that the bank
+already holds several hundred treatment photographs and asks only for the named gaps (Nasyam, Vamana/Virechana
+preparation, consultation, Karkidaka session, Netra Tarpana, Kizhi, Shirodhara head-end) plus the labelling of the
+165 unlabelled archive frames. Chase: reply expected before the shoot days; nothing is invented meanwhile.
