@@ -63,3 +63,53 @@ in main). Items 8–11 are in the sidecar file in the project (not downloadable 
 
 Not downloaded (export failing). No design was built in this session — the prompt produces the
 dataset the T1 EXPLAIN template consumes.
+
+## Follow-up — the head-only pass it asked for (2026-09-22 07:45–08:05 IST)
+
+Owner asked "did you give design the fetch details it asked?" — its post-run ask (11 head meta
+fields) had not been actioned. Sent: run the head-only pass yourself over the 8 live URLs; sidebar
+and slug rulings stay the owner's; blocks untouched. It did 4 routes, then could not fetch the
+other four (URLs no longer in its context) — the four URLs were pasted, it finished 8/8.
+
+### Claude Design's closing comment (verbatim)
+
+> 8/8 routes head-verified. All checks pass: JSON valid, blocks untouched, zero [TO CONFIRM] left in
+> the file.
+>
+> The four new ones:
+>
+> route og image type reading modified alternate
+> live-to-100-with-panchkarma 1920×1000 webp 2 min 2025-07-15 none
+> why-pick-an-ayurveda-treatment 1440×524 png 2 min 2026-04-13 fr_FR
+> ayurvedic-resturant-and-cooking 1440×524 png 2 min 2025-03-31 fr_FR
+> ayurveda-retreats-for-everyone 1440×524 png 2 min 2024-12-10 none
+>
+> One process note: I wrote the cuisine route's values before its fetch result was fully readable
+> on my end, so I re-fetched and confirmed each field matched. It did — no correction needed.
+>
+> Findings now in the sidecar:
+>
+> robots: null was wrong on all 8 — every live head declares the full index, follow,
+> max-image-preview:large… string. Extractor gap, corrected throughout.
+> No hreflang on any of the 8, despite /de/ and /fr/ site versions. Live SEO defect, not missing
+> data.
+> og:locale:alternate inconsistent — fr_FR on four, absent on four, de_DE nowhere. Six of eight
+> also share the same generic banner as og:image.
+> Two slug mismatches in the live sidebar, bearing on your two open decisions: it links to
+> /ayurvedic-restaurant-cooking-at-healing-village/ and
+> /why-pick-an-ayurveda-treatment-orayurvedic-retreat/, neither matching the canonical. Recorded as
+> evidence only — rulings still yours, blocks unchanged.
+>
+> h1: null confirmed genuine across all eight; Codex task C can be dropped.
+
+First four (its earlier turn, verbatim table): why-get-training 1440×524 png 3 min 2025-02-10
+none · new-to-yoga 1440×459 jpeg 5 min 2025-03-24 none · what-is-ayurvedic-food 1440×524 png 3
+min 2025-02-07 fr_FR · what-is-panchkarma 1920×1000 webp 2 min 2025-07-15 fr_FR. All eight:
+ogType article, ogLocale en_US, twitterCard summary_large_image, twitterLabel1 "Est. reading time".
+
+It also wrote `notes/codex-ask-explainer-8-routes.md` (seven tasks A–G for the repo side, "report,
+don't repair") — task A (head fields) is now done by itself, task C (h1) dropped by its own
+finding; the rest are apply-time items. Not downloadable (export failing).
+
+Repo-side defect it exposed: `tools/fetch-explainer-routes.mjs` recorded `robots: null` on all 8
+routes while every live head declares a robots string — extractor gap, to fix in the tool.

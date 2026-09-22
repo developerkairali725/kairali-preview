@@ -1815,3 +1815,13 @@ resturant) → link-audit/redirect decision; empty doubled <a> artefacts dropped
 hero our-story.png reused on 6/8 routes → per-page banner from the image library; og:image not
 in main on two routes; 11 head meta fields [TO CONFIRM] on all 8 (og image dims, ogType/Locale,
 twitterCard, readingTime, modified, hreflang) — a head-only pass over the 8 live URLs fills them.
+
+### Q-AHV-EXPLAINER-8-ROUTES-DATASET — update 2026-09-22 08:07:30 IST
+Head pass done by Claude Design itself, 8/8 live heads, zero [TO CONFIRM] left in its
+`uploads/knowledge-explainer-8-routes.json`. Two LIVE-SITE findings for the owner beyond the
+earlier list: (1) no hreflang/alternate link tag on any of the 8 heads although /de/ and /fr/
+exist (live SEO defect); (2) og:locale:alternate inconsistent (fr_FR on 4, absent on 4, de_DE on
+none) and six of eight share the generic our-story.png as og:image. One repo defect (mine to fix,
+logged): `sites/ayurvedichealingvillage.com/tools/fetch-explainer-routes.mjs` records `robots:
+null` on every route while the live heads declare `index, follow, max-image-preview:large,
+max-snippet:-1, max-video-preview:-1`.
