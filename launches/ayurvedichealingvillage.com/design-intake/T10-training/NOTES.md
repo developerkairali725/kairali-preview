@@ -67,3 +67,14 @@ failing) — end-of-run attempt. Apply notes: course fees/durations/schedules fr
 2024-25 rates PDF) replace the [TO CONFIRM] chips; the "On this page" index generated from the
 route's real headings at apply (mechanical, not content); the 132-word rate-sheet strain is an
 owner decision.
+
+## 2026-09-22 ~09:25 IST — rulings applied in the project (D-20260922-07/-09)
+Standfirst approved. Full V2 rate sheet (KAHR/AY-TRG/2026-2027/04/GBL) applied on both views —
+five programmes, 4-villa × single/double × INR/USD/EUR table, inclusions, notes, transport,
+policies (`rate-sheet-facts-v2-2026-27.txt`). Course-fee column REMOVED on both views per the
+owner's all-inclusive ruling. Claude Design's closing check (paraphrase of its report, screen
+read): tags balanced (163/163 mobile), column headers 5 → 4 with no orphaned cells, no expression
+holes, no draft chips; [TO CONFIRM] markers now 9 per view, all schedule/timetable — the only
+thing the sheet doesn't cover; every rate-sheet figure present in both views; sidecar
+`notes/course-and-fees-template-page.md` updated. Source word "luxury" ("luxury villa
+accommodation" in the sheet) ported as "villa accommodation" and recorded in its notes.
