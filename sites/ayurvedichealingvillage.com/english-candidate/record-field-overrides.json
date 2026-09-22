@@ -1,0 +1,9 @@
+{
+  "_why": "Small sourced corrections to dataset record fields, applied by tools/repair-record-fields.mjs after every import. Every value cites its source; nothing is invented (HARD GATE 6).",
+  "routes": {
+    "/walk-in-ayurveda-treatment/": {
+      "h1": "Walk-in Ayurveda Treatment",
+      "_source": "The page's own breadcrumb name and <title> ('Walk-in Ayurveda Treatment – Authentic OPD & Panchakarma Therapies'); the record's h1 was the bare word 'OPD' (owner, 23 Sep: the page 'is stuck'/'old style'). Directive D-20260922-23."
+    }
+  }
+}

@@ -290,8 +290,13 @@
 [data-ahv-family="article-reader"] main img:first-of-type {
   border-radius:4px !important;
 }
+/* HERO ONLY. `main img:first-of-type` matched the first <img> inside ANY
+   parent — on /map/ four thumbnail buttons each held a "first" image and 90px
+   maps were stretched to 1440×460 (measured 23 Sep). The hero is the image
+   inside the first two blocks of <main>. */
 @media (min-width:1024px) {
-  [data-ahv-family="article-reader"] main img:first-of-type {
+  [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type,
+  [data-ahv-family="article-reader"] main > section:first-of-type + div > img {
     width:100vw !important;
     max-width:100vw !important;
     margin-left:calc(50% - 50vw) !important;

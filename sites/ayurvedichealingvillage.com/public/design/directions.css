@@ -133,8 +133,10 @@
    and hidden everywhere by default, because 129 routes share that template.
    Only this page shows them. */
 [data-ahv-maps] { display:none !important; }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] { display:block !important; }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] h2 {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps],
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] { display:block !important; }  /* /map/: the legacy location page shows the same four maps (23 Sep) */
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] h2,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] h2 {
   font-family:Marcellus,Georgia,serif !important; font-weight:400 !important;
   font-size:clamp(24px,2.2vw,30px) !important; color:#2A2118 !important;
   margin:52px 0 10px !important; padding-top:18px !important;
@@ -155,7 +157,8 @@
    boot.ts tags containers on this page for the bands-and-cards layout and
    re-lays them out, which was overriding the inline grid and painting each
    map at the full 1280px. Pin the grid here so it wins. */
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
   display:grid !important;
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
   gap:26px !important; align-items:end !important;
@@ -163,21 +166,30 @@
   float:none !important;
 }
 @media (max-width:699px) {
-  [data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+  [data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div,
+  [data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
     grid-template-columns:1fr !important;
   }
 }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figure {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figure,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] figure {
   margin:0 !important; width:100% !important; max-width:100% !important; min-width:0 !important;
 }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] img {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] img,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] img {
   width:100% !important; max-width:100% !important;
   margin-left:0 !important; border-radius:0 !important;
 }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img {
   height:auto !important; border-radius:4px !important;
 }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption { margin-bottom:0 !important; }
-[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] p {
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption { margin-bottom:0 !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] p,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] p {
   font-size:17.5px !important; line-height:1.72 !important; color:#2A2118 !important; max-width:66ch !important;
 }
+
+/* /map/: the maps block is a direct child of a full-width main — give it the page column */
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] { width:min(1220px,94%) !important; margin:32px auto 0 !important; }

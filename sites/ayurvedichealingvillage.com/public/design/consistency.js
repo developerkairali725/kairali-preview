@@ -151,10 +151,63 @@
     link.style.pointerEvents = "none"; frame.style.pointerEvents = "auto";
     var caption = link.querySelector("span"); if (caption) caption.style.pointerEvents = "auto";
   }
+  // /map/ (D-20260922-24 "no broken pages"): the legacy location page holds
+  // six <li data-map-slot> boxes where the WordPress page embedded Google
+  // route maps ("Map disabled in this preview" — a builder note). Each slot's
+  // section heading names the route ("Route 1: Via Coimbatore Airport", "By
+  // Road from Bangalore"); the origin is read from that heading, the
+  // destination is the hospital. Before consent: a plain line and a
+  // Get-directions link (no cookies). After consent: a Google Maps
+  // directions embed in the box. Nothing typed by hand: origins come from
+  // the page's own headings.
+  var DEST = "Kairali - The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad";
+  function mapSlots(main) {
+    var slots = main.querySelectorAll("li[data-map-slot]");
+    if (!slots.length) return;
+    var accepted = false;
+    try { accepted = window.localStorage.getItem("ktahv-consent") === "accepted"; } catch (e) {}
+    for (var i = 0; i < slots.length; i++) {
+      var li = slots[i];
+      if (li.getAttribute("data-ahv-map") === "live") continue;
+      // the route heading: the h2/h3 whose source pointer shares the longest
+      // prefix with the slot's (the renderer collects every map into one
+      // "Maps" list at the end, so document order says nothing)
+      var ptr = li.getAttribute("data-source-pointer") || "", h = null, best = 0;
+      var hs = main.querySelectorAll("h2[data-source-pointer], h3[data-source-pointer]");
+      for (var k = 0; k < hs.length; k++) {
+        var hp = hs[k].getAttribute("data-source-pointer") || "", n = 0;
+        while (n < hp.length && n < ptr.length && hp[n] === ptr[n]) n++;
+        n = hp.slice(0, n).lastIndexOf("/") + 1;            // whole segments only
+        if (n > best && /^\/sections\/\d+\//.test(hp.slice(0, n))) { best = n; h = hs[k]; }
+      }
+      var heading = h ? h.textContent.replace(/\s+/g, " ").trim() : "";
+      var m = heading.match(/(?:via|from)\s+(.+)$/i);
+      origin = m ? m[1].trim() : "";
+      var label = origin ? "Route map: " + origin + " to Kairali" : "Map: Kairali \u2013 The Ayurvedic Healing Village, Palakkad";
+      var dirUrl = origin ? "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(origin) + "&destination=" + encodeURIComponent(DEST) : "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(DEST);
+      if (li.getAttribute("data-ahv-map") !== "static") {
+        li.innerHTML = '<div data-ahv-map-box style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between">' +
+          '<span style="font-size:16px;line-height:1.5;color:#514A3F">' + label.replace(/</g, "&lt;") + '<br><span style="font-size:14.5px;color:#75695A">The live map appears once you accept cookies.</span></span>' +
+          '<a href="' + dirUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1.5px solid #5A4420;border-radius:4px;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none">Open directions</a></div>';
+        li.setAttribute("data-ahv-map", "static");
+      }
+      if (accepted) {
+        var box = li.querySelector("[data-ahv-map-box]");
+        var frame = document.createElement("iframe");
+        frame.setAttribute("title", label);
+        frame.setAttribute("loading", "lazy");
+        frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        frame.src = origin ? "https://www.google.com/maps?saddr=" + encodeURIComponent(origin) + "&daddr=" + encodeURIComponent(DEST) + "&output=embed" : "https://www.google.com/maps?q=" + encodeURIComponent(DEST) + "&z=14&output=embed";
+        frame.style.cssText = "display:block;width:100%;height:360px;border:0;border-radius:4px;margin-top:12px;";
+        if (box) box.appendChild(frame); else li.appendChild(frame);
+        li.setAttribute("data-ahv-map", "live");
+      }
+    }
+  }
   function pass() {
     scheduled = false;
     var main = root.querySelector("main") || root;
-    try { typeFloor(main); tables(main); campaignSliderStubs(main); tallStickyRails(main); strayBreadcrumbs(main); liveMap(main); } catch (e) { /* never break the page */ }
+    try { typeFloor(main); tables(main); campaignSliderStubs(main); tallStickyRails(main); strayBreadcrumbs(main); liveMap(main); mapSlots(main); } catch (e) { /* never break the page */ }
   }
   // consent can be given after load: re-run on the notice's click and on storage
   document.addEventListener("click", function () { setTimeout(schedule, 50); }, true);
