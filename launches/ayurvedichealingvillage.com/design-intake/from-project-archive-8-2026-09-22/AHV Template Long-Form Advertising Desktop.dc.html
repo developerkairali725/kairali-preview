@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:18px;line-height:1.75}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px;box-shadow:0 0 0 6px rgba(247,244,234,.85)}
+h1,h2,h3,h4,h5{font-weight:400;margin:0}
+p{margin:0}
+section[data-chapter]{scroll-margin-top:24px}
+</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#F7F4EA"/><rect x="120" y="90" width="160" height="120" rx="10" fill="#2A2014"/><text x="200" y="168" font-family="Georgia,serif" font-size="58" fill="#EEB41E" text-anchor="middle">K</text></svg></template>
+</helmet>
+<div data-screen-label="Long-form advertising landing — desktop template">
+
+<div style="background:#2A2014;color:#F7F4EA;padding:12px 0">
+  <div style="width:min(1320px,94%);margin:0 auto;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <span style="font-family:'Marcellus',serif;font-size:18px;color:#EEB41E">Long-form advertising landing</span>
+    <span style="font-size:14px;color:#E4DECF">One template, two real routes — the length extremes of the family:</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-left:auto">
+      <button type="button" onClick="{{ pickLong }}" style="{{ tabLong }}">wellness-resort-kerala.html — 3,506w / 53 headings</button>
+      <button type="button" onClick="{{ pickShort }}" style="{{ tabShort }}">defence-paramilitary offer — 189w / no images</button>
+    </div>
+  </div>
+</div>
+
+<dc-import name="AHV Chrome Header" hint-size="100%,72px"></dc-import>
+
+<sc-if value="{{ isLong }}" hint-placeholder-val="{{ true }}">
+<div>
+<section style="width:min(1320px,94%);margin:0 auto;padding:40px 0 0">
+  <nav aria-label="Breadcrumb" style="font-size:14px;color:#75695A;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a href="/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><a href="/ayurvedic-treatments/" style="display:inline-flex;align-items:center;min-height:44px">Ayurvedic Treatments</a><span aria-hidden="true">/</span><span style="color:#2A2118">Wellness in Kerala</span></nav>
+  <div style="display:flex;gap:28px 56px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;padding:6px 0 30px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+      <h1 style="font-family:'Marcellus',serif;font-size:clamp(38px,4.2vw,58px);line-height:1.08;margin:14px 0 0;max-width:20ch;text-wrap:balance">Experience the Ultimate Harmony of Wellness and Serenity</h1>
+    </div>
+    <p style="font-size:19px;line-height:1.6;color:#514a3f;max-width:46ch;margin:0;border-left:3px solid #C1882C;padding-left:22px">Find out how we can help you receive holistic therapies to reduce stress at Kairali - The Ayurvedic Healing Village.</p>
+  </div>
+</section>
+<div style="height:clamp(260px,28vw,380px);background-image:url(assets/img/ppc/hero-layer8.jpg);background-size:cover;background-position:center" role="img" aria-label="Kairali — The Ayurvedic Healing Village, Palakkad, Kerala"></div>
+
+<div style="background:#FFFFFF;border-bottom:1px solid #EAE3D2">
+  <div style="width:min(1320px,94%);margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 44px;align-items:center;padding:18px 0;font-size:15px;color:#514a3f">
+    <span style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">NABH-accredited hospital</span>
+    <span>Patients from 103 countries</span>
+    <span>3 lakh treatments performed</span>
+    <span>87% satisfactory rate</span>
+    <a href="https://www.tripadvisor.in/Hotel_Review-g1096235-d530306-Reviews-Kairali_The_Ayurvedic_Healing_Village-Palakkad_Palakkad_District_Kerala.html" target="_blank" rel="noopener noreferrer" style="margin-left:auto;display:inline-flex;align-items:center;min-height:44px">Tripadvisor reviews</a>
+  </div>
+</div>
+
+<main style="width:min(1320px,94%);margin:0 auto;padding:52px 0 0;display:grid;grid-template-columns:264px minmax(0,1fr);gap:0 72px;align-items:start">
+
+  <div style="position:sticky;top:20px;display:flex;flex-direction:column;gap:20px;max-height:calc(100vh - 40px)">
+    <nav aria-label="On this page" id="chapter-rail" style="overflow:auto;min-height:0">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #DCD3BF">On this page</div>
+      <ol style="list-style:none;margin:0;padding:12px 0 0;display:flex;flex-direction:column;gap:1px;counter-reset:ch">
+        <li><a href="#c1" data-rail="c1" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">01</span><span>Kerala — God's Own Country</span></a></li>
+        <li><a href="#c2" data-rail="c2" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">02</span><span>Why Kairali — the hospital</span></a></li>
+        <li><a href="#c3" data-rail="c3" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">03</span><span>Our best features</span></a></li>
+        <li><a href="#c4" data-rail="c4" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">04</span><span>Ayurveda and the three doshas</span></a></li>
+        <li><a href="#c5" data-rail="c5" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">05</span><span>Treatments &amp; therapies</span></a></li>
+        <li><a href="#c6" data-rail="c6" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">06</span><span>Awards &amp; accreditations</span></a></li>
+        <li><a href="#c7" data-rail="c7" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">07</span><span>Ayurveda — is it for me?</span></a></li>
+        <li><a href="#c8" data-rail="c8" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">08</span><span>Programmes we offer</span></a></li>
+        <li><a href="#c9" data-rail="c9" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">09</span><span>Patient accounts</span></a></li>
+        <li><a href="#c10" data-rail="c10" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">10</span><span>Yoga retreat</span></a></li>
+        <li><a href="#c11" data-rail="c11" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">11</span><span>In the press</span></a></li>
+        <li><a href="#c12" data-rail="c12" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">12</span><span>Villas and tariffs</span></a></li>
+        <li><a href="#c13" data-rail="c13" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">13</span><span>After you leave</span></a></li>
+        <li><a href="#c14" data-rail="c14" style="display:flex;gap:12px;font-size:15px;line-height:1.4;padding:9px 10px 9px 0;color:#514a3f;border-left:3px solid transparent;padding-left:12px"><span style="color:#A08C6A;font-variant-numeric:tabular-nums">14</span><span>Enquiry</span></a></li>
+      </ol>
+    </nav>
+    <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:14px;padding:18px 18px 20px;box-shadow:0 10px 24px rgba(90,68,32,.08);flex:none">
+      <div style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25">Speak to a physician</div>
+      <p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin:8px 0 14px">Consultation before booking is free. Our doctors answer within one working day.</p>
+      <a href="#c14" style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:15.5px;border-radius:999px;padding:0 18px">Request a consultation</a>
+      <a href="tel:+919555156156" style="display:flex;align-items:center;justify-content:center;min-height:44px;font-size:15px;margin-top:8px">+91-9555156156</a>
+    </div>
+  </div>
+
+  <article style="min-width:0" data-comment-anchor="lfa-article">
+
+    <section data-chapter="c1" id="c1">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">01 · Setting</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 4px">KERALA</h2>
+      <p style="font-family:'Marcellus',serif;font-size:22px;color:#5A5045;margin-bottom:22px">GOD'S OWN COUNTRY</p>
+      <div style="max-width:68ch;display:flex;flex-direction:column;gap:18px">
+        <p>Kairali - The Ayurvedic Healing Village is a unique holistic setting designed to heal you from the inside out using our authentic and traditional Ayurvedic medicines, therapies, and treatments, as well as yoga and meditation. We offer the essence of Kerala Ayurveda, complete with at this renowned kerala ayurvedic treatment center knowledgeable doctors, organic, chemical-free formulations, and treatments tailored to your individual needs.</p>
+        <p>Situated between the foothills of the Annamalai and Nilgiri Ranges, our 30 Premium luxury resort in kerala Vastu-compliant Villas are encircled by rivers, fertile valleys, mountains, and lush green forests. Each villa has a gentle stream that flows around it, red oxide flooring, a rare Valambari Conch shell, and the aroma of Pala trees, all of which contribute to the villas' healing and restorative atmosphere.</p>
+        <p>These villas are spacious, comfortable, elegant, and opulent; you will be enchanted by the atmosphere and feel completely uplifted. Nothing is more comforting than being welcomed into nature's home, isn't it? You may unwind and infuse your body and mind with freshness with our award-winning Ayurvedic spa services. The Ayurvedic Healing Village is a genuine Ayurvedic healing retreat because of all of these factors.</p>
+        <p>Kairali - The Ayurvedic Healing Village in Kerala stands out as a unique jewel despite the increasing number of retreats popping up and using all the marketing tricks. This explains why our former clients continue to return! We guide you to a world free of illness with our effective, genuine Ayurvedic therapy, kind staff, opulent amenities, an upbeat atmosphere, and charming surroundings.</p>
+        <p>The retreat schedule includes yoga, meditation, spiritual training, therapy, nutrition, and much more. The Ayurvedic Healing Village, a masterfully intuitive design derived from ageless knowledge, is the pinnacle of Kairali's expertise in holistic hospitality concepts.</p>
+        <p style="font-size:14px;color:#75695A">Source: Kerala Tourism Website</p>
+      </div>
+      <figure style="margin:34px 0 0;border-left:3px solid #C1882C;padding:4px 0 4px 26px;max-width:72ch">
+        <blockquote style="font-family:'Marcellus',serif;font-size:26px;line-height:1.35;margin:0">"Kerala is one of the safest states to travel in India, People are friendly and it is a clean state. I have visited Kerala for the 10th Time, It is a God's Own Country"</blockquote>
+        <figcaption style="font-size:14.5px;color:#5A5045;margin-top:14px"><span style="font-weight:700">HANNAH, GERMANY</span> · Last Visted December 2021</figcaption>
+      </figure>
+    </section>
+
+    <section data-chapter="c2" id="c2" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">02 · The hospital</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 6px;max-width:26ch;text-wrap:pretty">WHY KAIRALI - The Ayurvedic Healing Village is one of the best Ayurvedic treatment hospitals in Kerala</h2>
+      <p style="font-size:17px;color:#5A5045;margin-bottom:24px">India's Safest, Most Trusted, and Awarded Health &amp; Wellness Ayurvedic Retreat</p>
+      <div style="max-width:68ch;display:flex;flex-direction:column;gap:18px">
+        <p>The finest natural healing method is thought to be Ayurvedic treatments, which have been used for centuries. Ayurvedic remedies, which originated in the Indian subcontinent about 5,000 years ago, are said to be natural methods of curing and enhancing human mental, physical, and emotional health. Ayurveda is a lifestyle philosophy that teaches people how to improve their lifestyles healthily and recognize the various changes that take place in the body.</p>
+        <p>Kairali - The Ayurvedic Healing Village, located in Palakkad, Kerala, is the finest Ayurveda and wellness resort our country has to offer. Our world-class expert team of experienced doctors and physicians prescribe the appropriate treatments and measures to our patients. The hospital and retreat facility are NABH-certified and are widely regarded as the best WELLNESS RESORT in India. Kairali - The Ayurvedic Healing Village has gained awards as well as thousands of hearts by staying faithful to the foundation of Ayurveda.</p>
+      </div>
+    </section>
+
+    <section data-chapter="c3" id="c3" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">03 · What the village is</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">OUR BEST FEATURES</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Living With Nature</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Modern Classical Architecture</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Trained Professionals For Therapies</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Local Grown Food From Farm To Table</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Strict Vegetarian Diet</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">In House Products</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">No Preservatives</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">No Refrigeration</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px 22px;font-size:16.5px;line-height:1.5">Organic Farming</li>
+      </ul>
+      <div style="margin-top:26px;background:#FFFFFF;border:1px solid #DCD3BF;border-left:3px solid #C1882C;border-radius:14px;padding:24px 28px;display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center">
+        <div>
+          <h3 style="font-family:'Marcellus',serif;font-size:24px;line-height:1.3">Wellness Package Starts From $201</h3>
+          <h3 style="font-family:'Marcellus',serif;font-size:24px;line-height:1.3">Treatment Package Starts From $270</h3>
+        </div>
+        <a href="#c14" style="margin-left:auto;display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">Tell Me More</a>
+      </div>
+      <figure style="margin:34px 0 0;background:#2A2014;color:#F7F4EA;border-radius:16px;padding:30px 34px">
+        <blockquote style="margin:0;font-size:17px;line-height:1.75;color:#F1EBDD">"I visited Kairali Ayurveda Resort with my family for a massage treatment. This place offers you the best Ayurveda treatment. We visited many places all over Kerala and India we never got an excellent treatment like Kairali anywhere. They offers you two treatments every day, if you have massage in the morning there will be KIZHY in the afternoon. Excellent doctors with great knowledge available anytime you need, professional and best staff whenever you want, best scenic view inside and outside the resort. Excellent vegetarian food prepared by the best chefs. The whole atmosphere gives you calm, quite and peaceful mind. After the treatment my wife and myself feeling very good, no aches and pains. We are very grateful to the entire KAIRALI TEAM. Keep up the good work. GOD BLESS YOU ALL. See you next year."</blockquote>
+        <figcaption style="margin-top:18px;font-size:15px;color:#EEB41E">THOMAS PAUL · Visited July 2022 For Ayurvedic Treatment</figcaption>
+      </figure>
+    </section>
+
+    <section data-chapter="c4" id="c4" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">04 · The method</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px;max-width:26ch;text-wrap:pretty">WHY KAIRALI - THE AYURVEDIC HEALING VILLAGE IS ONE OF THE BEST AYURVEDA WELLNESS SPAS IN INDIA</h2>
+      <div style="max-width:68ch;display:flex;flex-direction:column;gap:18px">
+        <p>Ayurvedic treatments are an ancient tradition that is thought to be the most natural way of healing. Ayurvedic remedies, which originated some 5,000 years ago in the Indian subcontinent, are natural techniques used to cure, heal, and improve individuals' mental, physical, and emotional well-being. Ayurveda is a philosophy of life that teaches people how to live healthier lifestyles and comprehend the various changes that occur in the body.</p>
+        <h3 style="font-weight:700;font-size:13px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;margin-top:12px">Ayurveda and Treatments:</h3>
+        <p>Kairali - The Ayurvedic Healing Village, located in Palakkad, Kerala, is one of the best Ayurveda retreats India has to offer, providing elite Ayurvedic treatments from our world-class expert team of experienced doctors and physicians who prescribe the appropriate treatments and measures to our patients. The hospital is NABH-certified and is widely regarded as one of the greatest wellness clinics and resort in kerala.</p>
+        <h3 style="font-weight:700;font-size:13px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;margin-top:12px">Ayurvedic Treatments - Your Answer to all Health Issues:</h3>
+        <p>The human body is made up of three components as per Ayurveda - <strong>Vata</strong>, <strong>Pitta</strong>, and <strong>Kapha</strong>.</p>
+        <p>Space and air make up the vata dosha, which controls all mental and physical movement. It regulates breathing, the flow of blood, the removal of waste, and mental cognitive processes. Fire and water, which make up Pitta dosha, control all heat, metabolism, and mental and physical metamorphosis. It regulates how we process our sensory inputs and how we break down food. We can distinguish between right and wrong because of it. Finally, all structure and lubrication in the body and mind are governed by kapha, which is composed of earth and water. It regulates the weight, development, and lubrication of the lungs and joints as well as the production of every bodily tissue.</p>
+      </div>
+      <div style="margin-top:30px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:22px 26px">
+        <span style="font-size:17px;color:#5A5045">Kairali Has Treated Clients From More Than</span>
+        <span style="font-family:'Marcellus',serif;font-size:36px;color:#2A2118">103 Countries</span>
+      </div>
+    </section>
+
+    <section data-chapter="c5" id="c5" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">05 · Therapies</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 6px">AYURVEDIC TREATMENTS &amp; Therapies</h2>
+      <p style="font-size:17px;color:#5A5045;margin-bottom:24px">The Path To A Healthy &amp; Successful Lifestyle</p>
+      <div style="max-width:68ch;display:flex;flex-direction:column;gap:18px">
+        <p>Kairali - The Ayurvedic Healing Village, has advanced this idea by serving as an example of the ancient and genuine discipline because Ayurveda is not just a medical science but a way of life. It has been the pinnacle of health and well-being, offering the best lodging and hospitality options. This health resort welcomes all tired travelers and those with physical health concerns, thanks to the presence of skilled and knowledgeable doctors, physicians, and therapists.</p>
+        <p>Kairali Ayurvedic Group's primary strength is its Ayurvedic therapies. At the healing village, a variety of Ayurvedic treatments are offered in a genuine Ayurvedic manner, including body, head, and foot massages, among many others.</p>
+      </div>
+      <div style="margin-top:34px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:34px;align-items:center">
+        <div>
+          <h3 style="font-family:'Marcellus',serif;font-size:25px;line-height:1.3;margin-bottom:14px">Benefits of Living the Ayurvedic Way of Life &amp; Succeeding In Life</h3>
+          <p style="margin-bottom:18px">Ayurveda always inspires people to follow natural and authentic ways of life. In order to balance the doshas and pacify the toxins present in the body, Ayurveda offers the following</p>
+          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>A preventive way to lead a disease-free and stress-free life</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>A beautiful skin where the natural glow is restored</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Complete relaxation</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Rejuvenates and detoxifies the body</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Improves the immunity of the body</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Helps in de-stressing</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Provides a natural way to lose weight</span></li>
+            <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:baseline;font-size:17px"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Provides an Ayurvedic routine for the body to function properly</span></li>
+          </ul>
+        </div>
+        <img src="assets/img/ppc/yogaimg.png" alt="Yoga and Meditation" style="width:100%;height:auto;border-radius:14px">
+      </div>
+      <div style="margin-top:30px;background:#FFFFFF;border:1px solid #DCD3BF;border-left:3px solid #C1882C;border-radius:14px;padding:24px 28px;display:flex;flex-wrap:wrap;gap:18px 40px;align-items:center">
+        <h3 style="font-family:'Marcellus',serif;font-size:24px;line-height:1.3;max-width:34ch">Kairali has performed more than 3 Lacs Treatments with an 87% satisfactory rate</h3>
+        <a href="#c14" style="margin-left:auto;display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">Book My Ayurvedic Retreat</a>
+      </div>
+    </section>
+
+    <section data-chapter="c6" id="c6" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">06 · Credentials</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 18px"><a href="/awards-and-accreditations.aspx" style="color:#2A2118">Awards &amp; Accreditations</a></h2>
+      <p style="max-width:68ch;margin-bottom:26px">Kairali - The Ayurvedic Healing Village has received numerous accolades for its outstanding contribution to Ayurveda and its world-class Ayurvedic Health Retreat located in Palakkad, Kerala.</p>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-tripadvisor-2025.jpg" alt="Trip Advisor Hall of Fame 2025" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">Trip Advisor Hall of Fame 2025</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Achieving the Certificate of Excellence for the 5th time in 2025, Kairali Health Resorts has been placed in the Hall of Fame by Trip Advisor.</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-world-luxury-2024.png" alt="World Luxury Awards Winner 2024" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">World Luxury Awards Winner 2024</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Kairali -The Ayurvedic Healing Village awarded as Best Luxury Wellness Healing Retreat in Asia World Luxury Spa Award 2024 ( all 4 awards )</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-fit-reisen.png" alt="Fit Premium certificate 2024" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">Fit Premium certificate 2024</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Received Fit Premium certificate in 2024.</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-apswc-2024.png" alt="APSWC 2024" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">APSWC 2024</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Awarded Wellness Resort of the Year APSWC – 2024</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-nabh-2018.jpg" alt="NABH Certificate and Accreditation from the year 2018-2021" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">National Accreditation Board for Hospitals and Healthcare Providers</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Honorary holder of NABH Certificate and Accreditation from the year 2018-2021.</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-natgeo-2013.jpg" alt="Top 50 Wellness Destinations in the World" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">National Geographic</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Kairali is one of the Top 50 Wellness Destinations in the World</p></div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:18px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/award-green-leaf.jpg" alt="Green leaf certified" style="width:96px;height:auto;border-radius:8px"><div><div style="font-weight:700;font-size:16px">Green Leaf</div><p style="font-size:14.5px;line-height:1.6;color:#5A5045;margin-top:6px">Kairali's Ayurvedic health center and the hospital are "Green leaf certified".</p></div></li>
+      </ul>
+      <div style="margin-top:22px;background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:22px 26px">
+        <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:14px;border-bottom:1px solid #EAE3D2">Earlier awards on record</div>
+        <dl style="margin:0;display:grid;grid-template-columns:minmax(0,22ch) minmax(0,1fr);gap:0 26px;font-size:15px;line-height:1.6">
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Luxury Spa Award, 2019</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village won the World Luxury Spa Awards, 2019 for Luxury Ayurveda Spa in Asia Continent.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Trip Advisor Hall of Fame 2019</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Achieving the Certificate of Excellence for the 5th time in 2019, Kairali Health Resorts has been placed in the Hall of Fame by Trip Advisor.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">MICE Business Award, 2018-19</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Delivering the best Ayurvedic services has made Kairali the winner of MICE Business Award.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Luxury Spa and Restaurant Awards 2018</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Winner of World Luxury Spa Awards, 2018 for the best Luxury Ayurveda Spa in South-West Asia and India.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Certificate of Excellence 2018</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Delivering the best Ayurvedic services has made Kairali the winner of MICE Business Award.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Best Destination Spa</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village toasts 2015, bags "Best Destination Spa".</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Luxury Spa Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village, World Luxury Spa Award 2017</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Travel Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village, Wins The World Travel Award 2016</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Health and Medical Travel Destination</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">'Health and Medical Travel Destination of the Year Award 2017'</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Travel Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">World Travel Awards 2015, The "Oscar" Of The Travel Industry!</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Safari India</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Safari India National Tourism Awards- Best Professional Marketing, 2007</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Luxury Spa Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">World Luxury Spa Award 2012 goes to Kairali - The Ayurvedic Healing Village.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">PATWA Award 2007</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village has been awarded the prestigious.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">World Travel Awards, 2009</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">The Ayurvedic Healing Village nominated as India's Leading Resort</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Spa Asia Crystal Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">The Spa Asia Crystal Award, 2005 for 'Best Ayurveda Centre'</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">ITM 2010 Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">ITM 2010 Award for Best Ayurvedic Health Resort</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">No. 1 Hip Getaway as per Elle</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">The Ayurvedic Healing Village - No. 1 Hip Getaway as per Elle magazine February 2012</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">FIT Premium Quality Certificate</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali - The Ayurvedic Healing Village receives the FIT Premium Quality Certificate.</dd>
+          <dt style="font-weight:700;padding:12px 0;border-bottom:1px solid #F0EADC">Hospitality Excellence Award</dt><dd style="margin:0;padding:12px 0;border-bottom:1px solid #F0EADC;color:#5A5045">Kairali Ayurvedic Resort Wins the Hospitality Excellence Award By Brands Academy</dd>
+          <dt style="font-weight:700;padding:12px 0">Neue Wege Preferred Partner Ayurveda Resort</dt><dd style="margin:0;padding:12px 0;color:#5A5045">Ayurvedic Healing Village Selected as The Preferred Partner Ayurveda Resort.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section data-chapter="c7" id="c7" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">07 · Suitability</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">AYURVEDA - IS IT FOR ME?</h2>
+      <div style="max-width:68ch;display:flex;flex-direction:column;gap:18px">
+        <p>Ayurveda, as a medical science, contains solutions for practically every health problem and promotes a natural way of life. The ancient knowledge and practice of the age-old discipline complement any type of lifestyle and teach how to implement a healthy routine for stress-free living. Ayurvedic treatment is open to people of all ages. Everyone, from youth to the elderly, can receive therapies and treatments without worry. It is preferable if people begin at an early age and remain health conscious to avoid any unnecessary and undesirable changes in their lifestyle later on.</p>
+        <p>Kairali - The Ayurvedic Healing Village provides the most genuine Ayurvedic treatments. We have observed that individuals ranging in age from 18 to 90 years old visit for consultations on a variety of health-related matters. More significantly, it is encouraging to see patients seeking treatment for both medical disorders and preventative purposes.</p>
+      </div>
+    </section>
+
+    <section data-chapter="c8" id="c8" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">08 · The programmes</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">Programs we offer:-</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 26px">
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0;align-content:start">
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Preventive Health &amp; Regenerative Ayurvedic Detox Program</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Breath Enhancement &amp; Respiratory Health Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Sinus &amp; Migraine Relief Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Vision Health &amp; Eye Rejuvenation Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Cardiovascular Health &amp; Blood Pressure Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Complete Rejuvenation &amp; Detoxification Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Comprehensive Stress Relief &amp; Mental Wellness Program</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Immunity Enhancement &amp; Executive Health Assessment Therapy</li>
+        </ul>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0;align-content:start">
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Neurological Wellness &amp; Function Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Sleep Restoration Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Supportive Care Therapy for Cancer Patients</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Ayurveda Skin Vitality Revival Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Chronic Back Pain Relief Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Joint Rehabilitation &amp; Arthritis Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Neck &amp; Upper Back Rehabilitation Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Spinal Disc &amp; Nerve Restoration Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Spine Care &amp; Spondylitis Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Postpartum Rejuvenation Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Weight Management &amp; Metabolism Therapy</li>
+        </ul>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:0;align-content:start">
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Addiction Recovery &amp; Behavioral Health Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Ayurvedic Panchakarma Detoxification Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Diabetes &amp; Metabolic Balance Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Facial Paralysis &amp; Nerve Rehabilitation Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Paralysis Recovery &amp; Rehabilitation Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Psoriasis &amp; Chronic Skin Treatment</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Women's Hormonal Balance &amp; Endocrine Therapy</li>
+          <li style="padding:11px 0;border-bottom:1px solid #EAE3D2;font-size:16px;line-height:1.5">Kairali's Personalized &amp; Customized Healing Program</li>
+        </ul>
+      </div>
+      <div style="margin-top:26px"><a href="#c14" style="display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">Book My Treatment</a></div>
+    </section>
+
+    <section data-chapter="c9" id="c9" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">09 · Patient accounts</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">In their words</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:24px 26px"><p style="font-size:16.5px;line-height:1.7">After the hectic street life in India it's like arriving in an oasis of calm. Right after the arrival you get a 1 1/2 hrs doctor appointment. She set me on a strict diet for 17 days. During the stay I felt that my body was detoxing, physically and mentally. All the wonderful, friendly and nice staff makes the stay very pleasant. If you decide to do an Ayurvedic treatment I really recommend this place. It was an awesome experience.</p><div style="margin-top:14px;font-size:15px"><span style="color:#8F6212;letter-spacing:2px">★★★★★</span><br><span style="font-weight:700">Katina S</span> · Zurich, Switzerland</div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:24px 26px"><p style="font-size:16.5px;line-height:1.7">I had the pleasure of spending 21 days in the care of this incredible group of professionals. From your arrival to your departure, you're made to feel special! Rooms are impeccably clean; the resort is serene and calm; the Ayurvedic treatments are simple second to none; but most importantly the staff are incredibly helpful! I highly recommend Kairali Healing Village whether it be for treatments or simply to relax.</p><div style="margin-top:14px;font-size:15px"><span style="color:#8F6212;letter-spacing:2px">★★★★☆</span><br><span style="font-weight:700">Joelle R</span> · Montreal, Canada</div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:24px 26px"><p style="font-size:16.5px;line-height:1.7">I spent the last two weeks in this wonderful place. The service was outstanding, from my first contact with Kairali throughout my visit. The daily treatments and consulting with the doctor at the Ayurvedic hospital was very professional and everyone was concerned with my health. The food was very well cooked. The yoga and meditation classes were a good opportunity to more wellbeing and something I will continue with. All of the staff was very eager to do the best of my visit. I also appreciated the clean facilities. If you are considering to go on an Ayurvedic trip I highly recommend Kairali</p><div style="margin-top:14px;font-size:15px"><span style="color:#8F6212;letter-spacing:2px">★★★★★</span><br><span style="font-weight:700">Annika B</span> · Nyköping, Sweden</div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:24px 26px"><p style="font-size:16.5px;line-height:1.7">We stayed at Kairali for a month (January-February 2018), though 3 weeks could have been enough. Would definitely come again. There we were in hands of Most professional and caring doctors, very attentive and warm therapeuts, very tasty and diverse food without any amount limitation (we were never starving as one might think), beautiful and cosy territory. And the most important is the RESULT! It is even better than expected. Our bodies are in tone, skin is shining, we feel a lot of extra energy.</p><div style="margin-top:14px;font-size:15px"><span style="color:#8F6212;letter-spacing:2px">★★★★☆</span><br><span style="font-weight:700">Olga Korf</span> · Vienna, Austria</div></li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:24px 26px;grid-column:span 2"><p style="font-size:16.5px;line-height:1.7">I had a fabulous time at Kairali over January. I was there for a week on the rejuvenation and detox package. The grounds are absolutely beautiful and the daily treatments by my wonderful therapists were amazing. All the staff, especially the kitchen staff and waiters, are so friendly and helpful. The food was also fantastic and so healthy. I will definitely come back.</p><div style="margin-top:14px;font-size:15px"><span style="color:#8F6212;letter-spacing:2px">★★★★★</span><br><span style="font-weight:700">Serena S</span> · London, United Kingdom</div></li>
+      </ul>
+      <div style="margin-top:26px;background:#FFFFFF;border:1px solid #DCD3BF;border-left:3px solid #C1882C;border-radius:14px;padding:26px 28px">
+        <p style="font-size:17px;line-height:1.7;max-width:68ch">Our goals lie in the health and happiness of individuals and we prefer to endorse the same. This is how we stand the test of time and continue to be the best in this field.</p>
+        <h3 style="font-family:'Marcellus',serif;font-size:25px;margin-top:16px">Let us head towards a disease-free world, hand in hand!</h3>
+        <a href="#c14" style="margin-top:18px;display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">Book Your Visit Now</a>
+      </div>
+    </section>
+
+    <section data-chapter="c10" id="c10" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">10 · Also available</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">YOU CAN ALSO BOOK FOR YOGA RETREAT</h2>
+      <div style="display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:34px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <p>At Kairali - The Ayurvedic Healing Village, experience a revitalizing yoga retreat to find the ideal balance of body, mind, and spirit. Our retreat blends the age-old disciplines of yoga and Ayurveda to create a life-changing experience, all while being surrounded by peaceful settings and an abundance of flora.</p>
+          <p>The retreat provides daily yoga and meditation classes for all skill levels, from novices to experts, under the direction of skilled yoga instructors. Add genuine Ayurvedic treatments, detox courses, and a sattvic diet to your practice to help your body and your path to wellness.Kairali's calm atmosphere and holistic philosophy guarantee a transformative getaway, whether your goals are physical renewal, increased self-awareness, or stress reduction. Plan your yoga getaway now to experience yoga at its best and the ageless knowledge of Ayurveda.</p>
+          <div><a href="#c14" style="display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">Book My Yoga Retreat</a></div>
+        </div>
+        <a href="https://res.cloudinary.com/n2fdigital/video/upload/v1662979200/Lakshya_Yoga_Retreat_-_KAIRALI_VERSION_-_Final_full_film_w_changes_hylhha.mp4" rel="noopener noreferrer"><img src="assets/img/ppc/yoga-video.jpg" alt="Yoga &amp; Meditation" style="width:100%;height:auto;border-radius:14px"></a>
+      </div>
+      <h3 style="font-family:'Marcellus',serif;font-size:26px;margin:44px 0 18px">Video Testimonials</h3>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+        <li><a href="https://www.youtube.com/embed/4x01PtWfNnk?autoplay=1" rel="noopener noreferrer" style="display:block"><img src="assets/img/ppc/testimonial-video-01.jpg" alt="Michaela &amp; Jan's experience at Kairali" style="width:100%;height:auto;border-radius:12px"><span style="display:block;font-size:14.5px;line-height:1.55;color:#514a3f;margin-top:10px">Michaela &amp; Jan's Experience at Kairali - The Ayurvedic Healing Village</span></a></li>
+        <li><a href="https://www.youtube.com/embed/vkVNhtPxO2Y?autoplay=1" rel="noopener noreferrer" style="display:block"><img src="assets/img/ppc/video-1.jpg" alt="Guest testimonials from Kairali" style="width:100%;height:auto;border-radius:12px"><span style="display:block;font-size:14.5px;line-height:1.55;color:#514a3f;margin-top:10px">Guests share their testimonials from Kairali-The Ayurvedic Healing Village, highlighting positive results and their desire to return.</span></a></li>
+        <li><a href="https://www.youtube.com/embed/Z64LLGvQMfY" rel="noopener noreferrer" style="display:block"><img src="assets/img/ppc/video-2.jpg" alt="Kairali — The Ayurvedic Healing Village" style="width:100%;height:auto;border-radius:12px"><span style="display:block;font-size:14.5px;line-height:1.55;color:#514a3f;margin-top:10px">Kairali-The Ayurvedic Healing Village is a secret haven to recuperate from the regular stress and chaos.</span></a></li>
+        <li><a href="https://www.youtube.com/embed/2YsKiE7pESY?autoplay=1" rel="noopener noreferrer" style="display:block"><img src="assets/img/ppc/video-3.jpg" alt="Ayurvedic remedies" style="width:100%;height:auto;border-radius:12px"><span style="display:block;font-size:14.5px;line-height:1.55;color:#514a3f;margin-top:10px">Ayurveda is a wonderful blessing for humans. This ancient Indian medicinal knowledge comes with several incredibly efficient remedies.</span></a></li>
+      </ul>
+    </section>
+
+    <section data-chapter="c11" id="c11" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">11 · On record</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">Testimonials and press</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">Testimonials</div>
+          <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/pramod-mahajan.jpg" alt="Feedback by Pramod Mahajan" style="width:96px;height:auto;border-radius:10px"><div><h3 style="font-weight:700;font-size:16px">Pramod Mahajan</h3><p style="font-size:15px;line-height:1.65;color:#5A5045;margin-top:6px">"Paradise on Earth in the God's own Country- the perfect place for rejuvenation; mentally, physically and spiritually."</p></div></div>
+          <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><img src="assets/img/ppc/chaggan-bhujbal.jpg" alt="Reviews by Chaggan Bhujbal" style="width:96px;height:auto;border-radius:10px"><div><h3 style="font-weight:700;font-size:16px">Chaggan Bhujbal</h3><p style="font-size:15px;line-height:1.65;color:#5A5045;margin-top:6px">"I really felt the difference between city life and life on the resort, which is free from pollution. The area is beautifully cultivated with vegetables and fruits. I am sure that Ayurvedic Treatments can do a lot of good for those who need timely rejuvenation after a city life."</p></div></div>
+          <div><a class="enquirenow" href="https://whyayurveda.org/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px">View more</a></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">Article</div>
+          <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><a href="https://whyayurveda.org/the-healing-village-listed-as-one-of-indias-5-leading-ayurveda-destinations-by-times-of-india/" target="_blank" rel="noopener noreferrer"><img src="assets/img/ppc/times-of-india.jpg" alt="India's Leading Destinations" style="width:96px;height:auto;border-radius:10px"></a><div><h3 style="font-weight:700;font-size:16px"><a href="https://whyayurveda.org/the-healing-village-listed-as-one-of-indias-5-leading-ayurveda-destinations-by-times-of-india/" target="_blank" rel="noopener noreferrer">The Times Of India</a></h3><p style="font-size:15px;line-height:1.65;color:#5A5045;margin-top:6px">The Healing Village is listed as one of India's 5 Leading Ayurveda Destinations by Times of India.</p></div></div>
+          <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:20px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center"><a href="https://whyayurveda.org/nat-geo-designates-the-ayurvedic-healing-village-as-top-luxury-spa-destination/" target="_blank" rel="noopener noreferrer"><img src="assets/img/ppc/nat-geo.jpg" alt="Luxury Spa Destinations" style="width:96px;height:auto;border-radius:10px"></a><div><h3 style="font-weight:700;font-size:16px"><a href="https://whyayurveda.org/nat-geo-designates-the-ayurvedic-healing-village-as-top-luxury-spa-destination/" target="_blank" rel="noopener noreferrer">National Geographic Traveller</a></h3><p style="font-size:15px;line-height:1.65;color:#5A5045;margin-top:6px">At Kairali- The Ayurvedic Healing Village in Kerala, ancient science and natural beauty help heal frayed bodies and minds.</p></div></div>
+          <div><a class="enquirenow" href="https://whyayurveda.org/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px">View more</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-chapter="c12" id="c12" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">12 · Accommodation</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 18px">Villas at the Retreat</h2>
+      <p style="max-width:68ch;margin-bottom:28px">Hospitality and comfort are the two hallmark points of Kairali Ayurvedic Retreat, and we are keen to make you feel at home. There are 30 villas with a homely ambiance and a magnificent view. Designed by the principles of Vastu Shastra, the ancient system of architecture, these villas are of four genres based on the amenities and comfort they bestow- Classic Villa, Deluxe Villa, Royal Villa, and Maharaja Suite.</p>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)">
+          <img src="assets/img/ppc/classic-villa.jpg" alt="Kairali Classic Villa" style="width:100%;height:100%;object-fit:cover">
+          <div style="padding:24px 28px">
+            <h3 style="font-family:'Marcellus',serif;font-size:26px">Classic Villa</h3>
+            <p style="font-size:16.5px;line-height:1.7;margin:12px 0 18px">This is where simplicity meets sophistication. When it comes to comfort and tastefulness, the Classic villa is everything. Enwreathed with lush greens and margined with a perkily poppling stream, this villa harbours the tranquillity you've been yearning for.</p>
+            <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #EAE3D2">Tariff (per night) · inclusive treatment*</div>
+            <table style="width:100%;border-collapse:collapse;font-size:15.5px"><thead><tr><th scope="col" style="text-align:left;padding:10px 0;font-weight:600;color:#75695A">Currency</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Single</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Double</th></tr></thead><tbody><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">INR</th><td style="text-align:right;font-variant-numeric:tabular-nums">29,145</td><td style="text-align:right;font-variant-numeric:tabular-nums">52,515</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">Euro</th><td style="text-align:right;font-variant-numeric:tabular-nums">364</td><td style="text-align:right;font-variant-numeric:tabular-nums">656</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">USD</th><td style="text-align:right;font-variant-numeric:tabular-nums">416</td><td style="text-align:right;font-variant-numeric:tabular-nums">750</td></tr></tbody></table>
+            <a href="#c14" style="margin-top:16px;display:inline-flex;align-items:center;min-height:44px;padding:0 24px;border:1px solid #5A4420;border-radius:999px;color:#2A2118;font-weight:600;font-size:15px">Book This Villa For Me</a>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)">
+          <img src="assets/img/ppc/delux-villa.jpg" alt="Kairali Deluxe Villa" style="width:100%;height:100%;object-fit:cover">
+          <div style="padding:24px 28px">
+            <h3 style="font-family:'Marcellus',serif;font-size:26px">Deluxe Villa</h3>
+            <p style="font-size:16.5px;line-height:1.7;margin:12px 0 18px">Imbibed with the simplicity that lures anyone, the Deluxe Villa is an elite and elegant space one will ever see. Surrounded by the freshness of the air and the serenity of nature, this Villa is going to cast a spell on you.</p>
+            <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #EAE3D2">Tariff (per night) · inclusive treatment*</div>
+            <table style="width:100%;border-collapse:collapse;font-size:15.5px"><thead><tr><th scope="col" style="text-align:left;padding:10px 0;font-weight:600;color:#75695A">Currency</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Single</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Double</th></tr></thead><tbody><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">INR</th><td style="text-align:right;font-variant-numeric:tabular-nums">26,700</td><td style="text-align:right;font-variant-numeric:tabular-nums">50,310</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">Euro</th><td style="text-align:right;font-variant-numeric:tabular-nums">334</td><td style="text-align:right;font-variant-numeric:tabular-nums">629</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">USD</th><td style="text-align:right;font-variant-numeric:tabular-nums">381</td><td style="text-align:right;font-variant-numeric:tabular-nums">719</td></tr></tbody></table>
+            <a href="#c14" style="margin-top:16px;display:inline-flex;align-items:center;min-height:44px;padding:0 24px;border:1px solid #5A4420;border-radius:999px;color:#2A2118;font-weight:600;font-size:15px">Book This Villa For Me</a>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)">
+          <img src="assets/img/ppc/royal-villa.jpg" alt="Kairali Royal Villa" style="width:100%;height:100%;object-fit:cover">
+          <div style="padding:24px 28px">
+            <h3 style="font-family:'Marcellus',serif;font-size:26px">Royal Villa</h3>
+            <p style="font-size:16.5px;line-height:1.7;margin:12px 0 18px">Get ready for a royal experience with high-class amenities and construction at the height of designer chic. This well-furnished and enhanced villa will appeal to you, no doubt. By offering a royal treatment, these elite villas are sure to make you feel like royalty.</p>
+            <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #EAE3D2">Tariff (per night) · inclusive treatment*</div>
+            <table style="width:100%;border-collapse:collapse;font-size:15.5px"><thead><tr><th scope="col" style="text-align:left;padding:10px 0;font-weight:600;color:#75695A">Currency</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Single</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Double</th></tr></thead><tbody><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">INR</th><td style="text-align:right;font-variant-numeric:tabular-nums">33,450</td><td style="text-align:right;font-variant-numeric:tabular-nums">56,400</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">Euro</th><td style="text-align:right;font-variant-numeric:tabular-nums">418</td><td style="text-align:right;font-variant-numeric:tabular-nums">705</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">USD</th><td style="text-align:right;font-variant-numeric:tabular-nums">478</td><td style="text-align:right;font-variant-numeric:tabular-nums">806</td></tr></tbody></table>
+            <a href="#c14" style="margin-top:16px;display:inline-flex;align-items:center;min-height:44px;padding:0 24px;border:1px solid #5A4420;border-radius:999px;color:#2A2118;font-weight:600;font-size:15px">Book This Villa For Me</a>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)">
+          <img src="assets/img/ppc/maharaja-suite.jpg" alt="Kairali Maharaja Suite" style="width:100%;height:100%;object-fit:cover">
+          <div style="padding:24px 28px">
+            <h3 style="font-family:'Marcellus',serif;font-size:26px">Maharaja Suite</h3>
+            <p style="font-size:16.5px;line-height:1.7;margin:12px 0 18px">The Suite is the definition of luxury. The villa, a literal feast to the eyes, surpasses an emperor's extravagance, but in a more affordable way. Spacious interiors, flawless furnishing, soothing tones, beautiful patio. You might find yourself at a loss for words to describe its magnificence—prepare to be thoroughly amazed.</p>
+            <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid #EAE3D2">Tariff (per night) · inclusive treatment*</div>
+            <table style="width:100%;border-collapse:collapse;font-size:15.5px"><thead><tr><th scope="col" style="text-align:left;padding:10px 0;font-weight:600;color:#75695A">Currency</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Single</th><th scope="col" style="text-align:right;padding:10px 0;font-weight:600;color:#75695A">Double</th></tr></thead><tbody><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">INR</th><td style="text-align:right;font-variant-numeric:tabular-nums">53,400</td><td style="text-align:right;font-variant-numeric:tabular-nums">75,300</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">Euro</th><td style="text-align:right;font-variant-numeric:tabular-nums">668</td><td style="text-align:right;font-variant-numeric:tabular-nums">941</td></tr><tr><th scope="row" style="text-align:left;padding:8px 0;font-weight:400">USD</th><td style="text-align:right;font-variant-numeric:tabular-nums">763</td><td style="text-align:right;font-variant-numeric:tabular-nums">1,076</td></tr></tbody></table>
+            <a href="#c14" style="margin-top:16px;display:inline-flex;align-items:center;min-height:44px;padding:0 24px;border:1px solid #5A4420;border-radius:999px;color:#2A2118;font-weight:600;font-size:15px">Book This Villa For Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-chapter="c13" id="c13" style="margin-top:72px;padding-top:30px;border-top:1px solid #EAE3D2">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">13 · After you leave</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:10px 0 24px">POST TREATMENT CARE</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:22px 24px;font-size:16.5px;line-height:1.6">Our Doctors will call you to follow up with you every 15-Days</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:22px 24px;font-size:16.5px;line-height:1.6">We give a list of DOs and DONTs when you checkout</li>
+        <li style="background:#FFFFFF;border:1px solid #EAE3D2;border-radius:14px;padding:22px 24px;font-size:16.5px;line-height:1.6">We provide you with a Detailed DIET CHART which is easy to maintain</li>
+      </ul>
+      <div style="margin-top:20px"><a href="#c14" style="display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">I Want Free Doctor Consultation</a></div>
+      <h3 style="font-family:'Marcellus',serif;font-size:26px;margin:44px 0 18px">STEPS TO GET YOUR PERSONALIZED AYURVEDIC TREATMENT</h3>
+      <img src="assets/img/ppc/steps-desktop.png" alt="Steps to get your personalized Ayurvedic treatment" style="width:100%;height:auto">
+      <div style="margin-top:20px"><a href="#c14" style="display:inline-flex;align-items:center;min-height:48px;padding:0 30px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:16px;border-radius:999px">I Want To Know More</a></div>
+    </section>
+
+    <section data-chapter="c14" id="c14" style="margin:72px 0 96px;background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:16px;padding:34px 36px 38px;box-shadow:0 12px 28px rgba(90,68,32,.07)">
+      <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">14 · Enquiry</div>
+      <h2 style="font-family:'Marcellus',serif;font-size:32px;line-height:1.2;margin:10px 0 6px">Exclusive Healing Secrets Of Kairali</h2>
+      <p style="max-width:62ch;color:#5A5045;margin-bottom:24px">Send your details and a physician will review them before replying. No payment is taken at this stage.</p>
+      <form action="https://ayurvedichealingvillage.com/wellness-resort-kerala.html" method="post" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px;max-width:760px">
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">Full name<input name="fname" type="text" required="required" style="min-height:48px;border:1px solid #C9BFA8;border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">Phone<input name="phone" type="tel" required="required" style="min-height:48px;border:1px solid #C9BFA8;border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">Email<input name="email" type="email" required="required" style="min-height:48px;border:1px solid #C9BFA8;border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">Country<input name="country" type="text" style="min-height:48px;border:1px solid #C9BFA8;border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></label>
+        <fieldset style="grid-column:span 2;border:0;margin:0;padding:0"><legend style="font-size:15px;font-weight:600;padding:0 0 8px">Gender</legend><div style="display:flex;gap:22px"><label style="display:flex;align-items:center;gap:9px;min-height:44px;font-size:16px"><input name="rdogender" value="Male" type="radio">Male</label><label style="display:flex;align-items:center;gap:9px;min-height:44px;font-size:16px"><input name="rdogender" value="Female" type="radio">Female</label></div></fieldset>
+        <label style="grid-column:span 2;display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">What would you like help with?<textarea name="message" rows="4" style="border:1px solid #C9BFA8;border-radius:10px;padding:12px 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></textarea></label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:15px;font-weight:600">Verification — enter the code shown<input name="result" type="text" required="required" style="min-height:48px;border:1px solid #C9BFA8;border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#FFFDF7"></label>
+        <label style="grid-column:span 2;display:flex;gap:11px;align-items:flex-start;font-size:15.5px;line-height:1.6;font-weight:400"><input name="chkAgree" type="checkbox" required="required" style="margin-top:5px;width:20px;height:20px">I have read and agree to ayurvedichealingvillage.com <a target="_blank" href="/privacy-policy/">privacy &amp; terms of use.</a></label>
+        <div style="grid-column:span 2;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <button type="submit" style="display:inline-flex;align-items:center;min-height:52px;padding:0 34px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:17px;font-family:inherit;border:0;border-radius:999px;cursor:pointer">Send my enquiry</button>
+          <a href="tel:+919555156156" style="display:inline-flex;align-items:center;min-height:44px;font-size:16px">Or call +91-9555156156</a>
+        </div>
+      </form>
+    </section>
+
+  </article>
+</main>
+</div>
+</sc-if>
+
+<sc-if value="{{ isShort }}" hint-placeholder-val="{{ false }}">
+<div>
+<section style="width:min(1320px,94%);margin:0 auto;padding:40px 0 0">
+  <nav aria-label="Breadcrumb" style="font-size:14px;color:#75695A;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a href="/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><a href="/offers/" style="display:inline-flex;align-items:center;min-height:44px">Offers</a><span aria-hidden="true">/</span><span style="color:#2A2118">Defence &amp; Paramilitary Personnel</span></nav>
+  <div style="display:flex;gap:28px 56px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;padding:6px 0 30px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+      <h1 style="font-family:'Marcellus',serif;font-size:clamp(38px,4.2vw,58px);line-height:1.08;margin:14px 0 0;max-width:20ch;text-wrap:balance">Defence &amp; Paramilitary Personnel get upto 20% OFF</h1>
+    </div>
+    <p style="font-size:19px;line-height:1.6;color:#514a3f;max-width:46ch;margin:0;border-left:3px solid #C1882C;padding-left:22px">Treatment programmes for serving personnel of the Army, Navy and Air Force, discounted by length of stay.</p>
+  </div>
+</section>
+<div style="height:clamp(240px,24vw,330px);background-image:url(assets/img/ppc/hero-layer8.jpg);background-size:cover;background-position:center" role="img" aria-label="Kairali — The Ayurvedic Healing Village, Palakkad"></div>
+
+<main style="width:min(1320px,94%);margin:0 auto;padding:56px 0 0;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0 72px;align-items:start">
+  <article style="max-width:66ch;min-width:0">
+    <p style="font-size:21px;line-height:1.72;color:#3B3226">India's Defence and Paramilitary Forces function in harsh conditions, facing physical strain, environmental obstacles, and significant mental pressure. Ayurveda, the traditional Indian holistic healing system, provides a proven method for rejuvenating energy, boosting immunity, and improving overall health.</p>
+    <p style="font-size:21px;line-height:1.72;color:#3B3226;margin-top:22px">At Kairali – The Ayurvedic Healing Village, we are proud to provide personalized wellness programs specifically designed for the members of our Defence and Paramilitary Forces. These treatment programs assist with stress reduction, pain alleviation, injury rehabilitation, mental focus, and stamina improvement, ensuring our guardians stay in optimal health.</p>
+    <h2 style="font-family:'Marcellus',serif;font-size:30px;line-height:1.2;margin:56px 0 0;padding-top:26px;border-top:1px solid #EAE3D2">Terms and Conditions:</h2>
+    <ul style="list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0">
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Bookings made under the Military Citizen Discount Scheme are changeable and cancellable.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>This offer is only applicable for online/offline booking.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>10% Discount for ayurvedic treatment package between 3 to 14 Nights</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>15% Discount for ayurvedic treatment package between 14 to 21 Nights</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>20% Discount for ayurvedic treatment package above 21 Nights.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>All applicable fees/taxes payable by the Customer.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>This offer is applicable to citizens serving in the Army, Navy, and Air Force.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #EAE3D2;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>Rates and inclusions are subject to change.</span></li>
+      <li style="display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:baseline;padding:13px 0;font-size:17px;line-height:1.6"><span style="height:2px;background:#C1882C;position:relative;top:-5px"></span><span>This Offer can't be clubbed with other offers.</span></li>
+    </ul>
+    <div style="margin:34px 0 96px"><a href="/enquiry-form/" style="display:inline-flex;align-items:center;min-height:52px;padding:0 34px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:17px;border-radius:999px">ENQUIRE NOW</a></div>
+  </article>
+  <aside style="position:sticky;top:24px;background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:16px;padding:24px 26px 26px;box-shadow:0 10px 24px rgba(90,68,32,.08)">
+    <div style="font-family:'Marcellus',serif;font-size:22px;line-height:1.25">Discount by length of stay</div>
+    <dl style="margin:16px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 18px;font-size:16px">
+      <dt style="font-family:'Marcellus',serif;font-size:24px;padding:10px 0;border-bottom:1px solid #F0EADC">10%</dt><dd style="margin:0;padding:14px 0 10px;border-bottom:1px solid #F0EADC;color:#5A5045">3 to 14 nights</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:24px;padding:10px 0;border-bottom:1px solid #F0EADC">15%</dt><dd style="margin:0;padding:14px 0 10px;border-bottom:1px solid #F0EADC;color:#5A5045">14 to 21 nights</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:24px;padding:10px 0">20%</dt><dd style="margin:0;padding:14px 0 10px;color:#5A5045">above 21 nights</dd>
+    </dl>
+    <a href="/enquiry-form/" style="margin-top:18px;display:flex;align-items:center;justify-content:center;min-height:48px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:15.5px;border-radius:999px">Request a consultation</a>
+    <a href="tel:+919555156156" style="display:flex;align-items:center;justify-content:center;min-height:44px;font-size:15px;margin-top:8px">+91-9555156156</a>
+  </aside>
+</main>
+</div>
+</sc-if>
+
+<dc-import name="AHV Chrome Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;wellness&quot;,&quot;offer&quot;],&quot;default&quot;:&quot;wellness&quot;,&quot;tsType&quot;:&quot;'wellness' | 'offer'&quot;,&quot;section&quot;:&quot;Route&quot;}}">
+class Component extends DCLogic {
+  state = { route: null };
+  get route() { return this.state.route || this.props.route || 'wellness'; }
+  tab(on) {
+    return {
+      minHeight: '40px', padding: '0 16px', borderRadius: '999px', cursor: 'pointer',
+      fontFamily: 'inherit', fontSize: '13.5px', fontWeight: on ? 700 : 500,
+      border: on ? '1px solid #EEB41E' : '1px solid #6A5B44',
+      background: on ? '#EEB41E' : 'transparent', color: on ? '#2A2118' : '#E4DECF'
+    };
+  }
+  componentDidMount() {
+    this.onScroll = () => this.spy();
+    window.addEventListener('scroll', this.onScroll, true);
+    window.addEventListener('resize', this.onScroll);
+    this.spy();
+  }
+  componentDidUpdate() { this.spy(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll, true);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  spy() {
+    const secs = Array.from(document.querySelectorAll('section[data-chapter]'));
+    if (!secs.length) return;
+    let active = secs[0].id;
+    secs.forEach(s => { if (s.getBoundingClientRect().top <= 170) active = s.id; });
+    document.querySelectorAll('[data-rail]').forEach(a => {
+      const on = a.getAttribute('data-rail') === active;
+      a.style.borderLeftColor = on ? '#C1882C' : 'transparent';
+      a.style.color = on ? '#2A2118' : '#514a3f';
+      a.style.fontWeight = on ? '700' : '400';
+      a.style.background = on ? '#FFFFFF' : 'transparent';
+    });
+  }
+  renderVals() {
+    const r = this.route;
+    return {
+      isLong: r === 'wellness',
+      isShort: r === 'offer',
+      tabLong: this.tab(r === 'wellness'),
+      tabShort: this.tab(r === 'offer'),
+      pickLong: () => this.setState({ route: 'wellness' }),
+      pickShort: () => this.setState({ route: 'offer' })
+    };
+  }
+}
+</script>
+</body>
+</html>

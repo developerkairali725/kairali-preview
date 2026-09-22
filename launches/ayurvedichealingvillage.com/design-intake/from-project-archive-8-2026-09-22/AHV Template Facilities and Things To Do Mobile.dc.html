@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EFE9DA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:17px;line-height:1.7}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px;box-shadow:0 0 0 6px rgba(247,244,234,.85)}
+a:active,button:active{filter:brightness(.88)}
+h1,h2,h3,h4{font-weight:400;margin:0}
+p{margin:0 0 20px}
+summary::-webkit-details-marker{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+@media print{[data-review]{display:none !important}}
+</style>
+</helmet>
+
+<div data-review="bar" style="background:#2A2014;color:#F7F4EA;padding:12px 0;position:sticky;top:0;z-index:110">
+  <div style="max-width:430px;margin:0 auto;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <span style="font-family:'Marcellus',serif;font-size:15px;color:#EEB41E;width:100%">Image-led template — mobile</span>
+    <button type="button" onClick="{{ goA }}" style="font-family:'Mulish',sans-serif;cursor:pointer;flex:1;border:1px solid #6b5a3c;background:{{ bgA }};color:{{ fgA }};border-radius:4px;min-height:44px;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase">Facilities</button>
+    <button type="button" onClick="{{ goB }}" style="font-family:'Mulish',sans-serif;cursor:pointer;flex:1;border:1px solid #6b5a3c;background:{{ bgB }};color:{{ fgB }};border-radius:4px;min-height:44px;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase">Things to Do</button>
+    <button type="button" onClick="{{ goC }}" style="font-family:'Mulish',sans-serif;cursor:pointer;flex:1;border:1px solid #6b5a3c;background:{{ bgC }};color:{{ fgC }};border-radius:4px;min-height:44px;font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase">Experience</button>
+  </div>
+</div>
+
+<div style="max-width:430px;margin:0 auto;background:#F7F4EA;box-shadow:0 0 40px rgba(70,50,20,.15);position:relative;box-sizing:border-box">
+<a href="#main-content" style="position:fixed;left:-9999px;top:12px;z-index:120;background:#5A4420;color:#F7F4EA;padding:14px 24px;border-radius:4px;font-weight:700;font-size:15px" style-focus="left:16px">Skip to main content</a>
+<dc-import name="AHV Chrome Header" narrow="true" style="position:sticky;top:0;z-index:80" hint-size="100%,64px"></dc-import>
+
+<main id="main-content">
+
+<article data-screen-label="Village Facilities — Mobile" style="display:{{ showA }}">
+  <section style="padding:18px 18px 20px">
+    <nav aria-label="Breadcrumb" style="font-size:15px;color:#75695A;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;line-height:1.4"><a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px">Village Facilities</span></nav>
+    <div style="font-weight:700;font-size:12px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;margin-top:2px">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+    <h1 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.12;margin:10px 0 0;text-wrap:balance">Village Facilities</h1>
+    <p style="font-size:17px;line-height:1.6;color:#514a3f;margin:16px 0 0;border-left:3px solid #C1882C;padding-left:16px">What is on the grounds, and what a patient can use between treatment hours — accommodation, the treatment centre, the pavilion, the farm, and the seventeen facilities the village keeps open.</p>
+  </section>
+  <div style="height:200px;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-top:1px solid #E0D7C4;border-bottom:1px solid #E0D7C4">
+    <span aria-hidden="true" style="width:30px;height:2px;background:#C1882C"></span>
+    <span style="font-size:10.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212">Hero band — source asset</span>
+    <span style="font-size:12px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">our-story.png</span>
+  </div>
+
+  <div style="padding:20px 18px 0">
+    <details style="border:1px solid #DCD3BF;border-radius:4px;background:#fff">
+      <summary style="display:flex;align-items:center;gap:12px;min-height:52px;padding:0 16px;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;color:#8F6212;list-style:none">On this page<span aria-hidden="true" style="margin-left:auto;color:#C1882C;font-size:18px">+</span></summary>
+      <ol style="list-style:none;margin:0;padding:0 16px 10px">
+        <li><a href="#m-vf-1" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">01</span>Accommodation</a></li>
+        <li><a href="#m-vf-2" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">02</span>Treatment centres</a></li>
+        <li><a href="#m-vf-3" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">03</span>Yoga pavilion</a></li>
+        <li><a href="#m-vf-4" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">04</span>Farm &amp; gardens</a></li>
+        <li><a href="#m-vf-5" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">05</span>Dining</a></li>
+        <li><a href="#m-vf-6" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">06</span>Facilities list</a></li>
+        <li><a href="#m-vf-7" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">07</span>Every detail</a></li>
+        <li><a href="#m-vf-9" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">08</span>Around the village</a></li>
+      </ol>
+    </details>
+  </div>
+
+  <div style="padding:24px 18px 0">
+    <p style="font-size:19px;line-height:1.65;color:#3d3528">More than just a wellness retreat, Kairali—The Ayurvedic Healing Village in Palakkad, Kerala—is a haven created to offer a full healing experience. The community, which spans verdant landscapes, offers a variety of amenities to improve your stay and is a wonderful fusion of nature, tradition, and contemporary. Every area of the village has been carefully planned to promote rest, renewal, and overall health.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:34px;padding-top:22px"></div>
+    <h2 id="m-vf-1" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Accommodation: Traditional Elegance Meets Modern Comfort</h2>
+    <p>Built following Vastu Shastra, an ancient architectural technique that encourages good energy flow, the Ayurvedic Healing Village provides eco-friendly lodging. Every villa is different, with features that complement your zodiac sign to promote peace and well-being.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-2" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Ayurvedic Treatment Centers</h2>
+    <p>Modern Ayurvedic treatment facilities amid the healing village offer visitors real healing treatments. While keeping the essence of ancient Ayurveda, the center is furnished with modern amenities.</p>
+    <p>Experienced therapists and Ayurvedic practitioners perform the therapies, offering individualized care based on your medical requirements.</p>
+    <p style="margin-bottom:12px">Key treatments include:</p>
+    <ul style="list-style:none;margin:0 0 20px;padding:0">
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Panchakarma detoxification.</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Abhyanga (warm oil massage).</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Shirodhara (oil therapy for stress relief).</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Herbal steam baths.</li>
+    </ul>
+    <p>The treatment facility provides a calm and clean setting where visitors may unwind and give their whole attention to the healing process.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-3" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Yoga and Meditation Pavilion</h2>
+    <p style="margin-bottom:12px">There is a dedicated yoga and meditation pavilion in the village, which is a peaceful, open area perfect for reestablishing inner harmony. Professional teachers lead the daily lessons and include:</p>
+    <ul style="list-style:none;margin:0 0 20px;padding:0">
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Hatha Yoga for physical flexibility and strength.</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Pranayama to enhance breathing and energy flow.</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Meditation practices for mental clarity and stress relief.</li>
+    </ul>
+    <p>The design of the pavilion, encircled by breathtaking scenery, guarantees a serene and motivating setting for you to develop your practice.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-4" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Organic Farm and Herbal Gardens</h2>
+    <p>Kairali’s organic farm and herbal gardens demonstrate their dedication to sustainable living. Fresh fruits, vegetables, and herbs are grown on the farm and utilized to make Ayurvedic medications and meals. Visitors are encouraged to tour the gardens and gain a deeper grasp of Ayurveda by learning about the many plants’ therapeutic qualities.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-5" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Dining: Nourishing the Body and Soul</h2>
+    <p>Meals at the Ayurvedic Healing Village are just as restorative as the treatments. A dosha-specific diet made with locally grown organic products is served at the onsite restaurant. The meals aim to improve general health, balance the doshas, and purify the body.</p>
+    <p style="margin-bottom:12px">Key features of the dining experience:</p>
+    <ul style="list-style:none;margin:0;padding:0">
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Wholesome vegetarian meals.</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>Freshly prepared herbal teas and drinks.</li>
+      <li style="display:flex;gap:12px;align-items:baseline;font-size:17px;line-height:1.6;padding:8px 0"><span aria-hidden="true" style="width:18px;height:1px;background:#C1882C;flex:none;transform:translateY(-5px)"></span>A calm and inviting dining space.</li>
+    </ul>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-6" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Facilities Provided at The Healing Village:</h2>
+    <ul style="list-style:none;margin:0;padding:0">
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Private villas for accommodation</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Separate treatment rooms for Men &amp; Women</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Yoga &amp; Meditation hall</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>In-House Pharmacy</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Consultation Room</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Fitness Centre</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Swimming pool</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Indoor games</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Tennis Court</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Herbal/Organic Garden</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Paddy Field</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Coconut Plantation</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Front Desk Service if needed for any tour</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Wi-fi facility</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Telephone</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Library</li>
+      <li style="display:flex;gap:12px;align-items:center;font-size:17px;line-height:1.5;padding:12px 0;border-bottom:1px solid #E6DECB"><span aria-hidden="true" style="width:16px;height:1px;background:#C1882C;flex:none"></span>Antique Shop</li>
+    </ul>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:34px;padding-top:22px"></div>
+    <h2 id="m-vf-7" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Holistic Experience in Every Detail</h2>
+    <p>Every element of your stay at Kairali- The Ayurvedic Healing Village is designed to promote your well-being. The tranquil surroundings, well-thought-out amenities, and individualized services combine to provide a comprehensive experience that is consistent with Ayurvedic principles. The village provides the ideal environment for renewal and change, whether you’re looking for a tranquil retreat, a health-focused experience, or a chance to learn more about Ayurveda.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:30px;padding-top:22px"></div>
+    <h2 id="m-vf-8" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:0 0 16px;scroll-margin-top:84px">Conclusion</h2>
+    <p style="margin:0">Kairali – The Ayurvedic Healing Village is a lifestyle experience that blends sustainable living, opulent comfort, and true Ayurveda. A true sanctuary for holistic well-being, the carefully chosen amenities guarantee that each visitor feels cared for and rejuvenated. Discover the village’s unmatched tranquility in the center of Kerala and immerse yourself in the therapeutic benefits of Ayurveda.</p>
+  </div>
+
+  <section id="m-vf-9" aria-labelledby="m-vf-9-h" style="padding:44px 18px 0;scroll-margin-top:84px">
+    <div style="border-top:2px solid #2A2118;padding-top:18px;margin-bottom:18px">
+      <h2 id="m-vf-9-h" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.15">Around the village</h2>
+      <p style="margin:8px 0 0;font-size:15.5px;color:#75695A">Ten places on the grounds.</p>
+    </div>
+    <a href="https://ayurvedichealingvillage.com/ayurvedic-treatments/" style="display:block;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118;margin-bottom:14px">
+      <div style="aspect-ratio:16/6;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-bottom:1px solid #E0D7C4"><span aria-hidden="true" style="width:24px;height:2px;background:#C1882C"></span><span style="font-size:11px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-1.jpg</span></div>
+      <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:21px;line-height:1.25">Ayurvedic Treatment</span><span aria-hidden="true" style="color:#8F6212;font-size:16px">&rarr;</span></div>
+    </a>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+      <a href="https://ayurvedichealingvillage.com/what-is-ayurvedic-food/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-2</span></div>
+        <div style="padding:12px 14px;flex:1;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Fine Dining</span></div>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/yoga-retreats-for-everyone/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-3</span></div>
+        <div style="padding:12px 14px;flex:1;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Yoga &amp; Meditation</span></div>
+      </a>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-4</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Herbal Garden</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-5</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Charm Science Experts</span></div>
+      </div>
+      <a href="https://ayurvedichealingvillage.com/beauty-care-and-eye-care/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-6</span></div>
+        <div style="padding:12px 14px;flex:1;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Beauty Therapy</span></div>
+      </a>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-7</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Conference Hall</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-8</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Swimming Pool</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-9</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Recreation &amp; Business Centre</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="aspect-ratio:4/3;background:#EDE5D3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E0D7C4"><span style="font-size:10.5px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">Village-10</span></div>
+        <div style="padding:12px 14px;flex:1"><span style="font-family:'Marcellus',serif;font-size:17px;line-height:1.25">Amphitheatre</span></div>
+      </div>
+    </div>
+  </section>
+
+  <aside aria-labelledby="m-vf-ttd" style="padding:44px 18px 0">
+    <div style="border-top:2px solid #2A2118;padding-top:18px;margin-bottom:16px">
+      <h2 id="m-vf-ttd" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.15">Also in Things to Do</h2>
+      <p style="margin:8px 0 0;font-size:15.5px;color:#75695A">Twenty-two more pages, grouped by how far they are from the villa.</p>
+    </div>
+    <details style="border:1px solid #DCD3BF;border-radius:4px;background:#fff;margin-bottom:10px">
+      <summary style="display:flex;align-items:center;gap:12px;min-height:54px;padding:0 16px;cursor:pointer;list-style:none"><span style="font-family:'Marcellus',serif;font-size:19px">In Healing Village</span><span aria-hidden="true" style="margin-left:auto;font-size:12px;font-weight:700;color:#8F6212">8</span><span aria-hidden="true" style="color:#C1882C;font-size:18px">+</span></summary>
+      <ul style="list-style:none;margin:0;padding:0 16px 10px">
+        <li><a href="https://ayurvedichealingvillage.com/things-to-do-in-property/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">In Healing Village</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/nature-walk/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Nature Walk</a></li>
+        <li><span aria-current="page" style="display:flex;align-items:center;gap:10px;min-height:48px;font-size:16px;color:#2A2118;font-weight:600;border-top:1px solid #E6DECB"><span aria-hidden="true" style="width:12px;height:2px;background:#C1882C;flex:none"></span>Village Facilities</span></li>
+        <li><a href="https://ayurvedichealingvillage.com/butterfly-booklet/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Butterfly Booklet</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/cooking-classes/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Cooking Classes</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/meditation/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Meditation</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/yoga-classes-theory/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Yoga Classes (Theory)</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/yoga-classes-practical/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Yoga Classes (Practical)</a></li>
+      </ul>
+    </details>
+    <details style="border:1px solid #DCD3BF;border-radius:4px;background:#fff;margin-bottom:10px">
+      <summary style="display:flex;align-items:center;gap:12px;min-height:54px;padding:0 16px;cursor:pointer;list-style:none"><span style="font-family:'Marcellus',serif;font-size:19px">In Kerala</span><span aria-hidden="true" style="margin-left:auto;font-size:12px;font-weight:700;color:#8F6212">10</span><span aria-hidden="true" style="color:#C1882C;font-size:18px">+</span></summary>
+      <ul style="list-style:none;margin:0;padding:0 16px 10px">
+        <li><a href="https://ayurvedichealingvillage.com/things-to-do-in-kerala/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">In Kerala</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/visit-kerala/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Visit Kerala</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/destination-palakkad/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Destination Palakkad</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/wildlife-drive/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Wildlife Drive</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/elephant-safari/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Elephant Safari</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/house-boat-tour/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">House Boat Tour</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/back-water-tour/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Backwater Tour</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/mountain-jeep-safari/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Mountain Jeep Safari</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/cultural-events/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Cultural Events</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/festivals/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Festivals</a></li>
+      </ul>
+    </details>
+    <details style="border:1px solid #DCD3BF;border-radius:4px;background:#fff">
+      <summary style="display:flex;align-items:center;gap:12px;min-height:54px;padding:0 16px;cursor:pointer;list-style:none"><span style="font-family:'Marcellus',serif;font-size:19px">Sightseeing</span><span aria-hidden="true" style="margin-left:auto;font-size:12px;font-weight:700;color:#8F6212">4</span><span aria-hidden="true" style="color:#C1882C;font-size:18px">+</span></summary>
+      <ul style="list-style:none;margin:0;padding:0 16px 10px">
+        <li><a href="https://ayurvedichealingvillage.com/attractions-under-10kms/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Attractions 10 Kms &amp; Under</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/attractions-15kms-and-below/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Attractions 15 Kms &amp; Below</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Attractions 25 to 50 Kms</a></li>
+        <li><a href="https://ayurvedichealingvillage.com/attractions-above-50kms/" style="display:flex;align-items:center;min-height:48px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB">Attractions Above 50 Kms</a></li>
+      </ul>
+    </details>
+  </aside>
+
+  <section style="background:#2A2014;color:#F7F4EA;margin-top:44px;padding:32px 18px">
+    <h2 style="font-family:'Marcellus',serif;font-size:25px;line-height:1.2;color:#F7F4EA">Speak to a physician before you book</h2>
+    <p style="margin:10px 0 18px;font-size:16px;line-height:1.65;color:#E4DBC6">A consultation decides the programme, the length of stay and which facilities form part of it.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="https://ayurvedichealingvillage.com/online-consultation/" style="background:#EEB41E;color:#2A2118;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Free doctor consultation</a>
+      <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="border:1px solid #C1882C;color:#F7F4EA;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Enquire now</a>
+    </div>
+  </section>
+</article>
+
+<article data-screen-label="Things to do — Mobile" style="display:{{ showB }}">
+  <section style="padding:18px 18px 20px">
+    <nav aria-label="Breadcrumb" style="font-size:15px;color:#75695A;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;line-height:1.4"><a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px">Things to do</span></nav>
+    <div style="font-weight:700;font-size:12px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;margin-top:2px">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+    <h1 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.12;margin:10px 0 0;text-wrap:balance">Things to do</h1>
+    <p style="font-size:17px;line-height:1.6;color:#514a3f;margin:16px 0 0;border-left:3px solid #C1882C;padding-left:16px">Hours outside treatment: what is walkable on the grounds, and what Palakkad and the rest of Kerala put within reach of a stay.</p>
+  </section>
+  <div style="height:200px;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-top:1px solid #E0D7C4;border-bottom:1px solid #E0D7C4">
+    <span aria-hidden="true" style="width:30px;height:2px;background:#C1882C"></span>
+    <span style="font-size:10.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212">Hero band — source asset</span>
+    <span style="font-size:12px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">our-story.png</span>
+  </div>
+
+  <div style="padding:20px 18px 0">
+    <details style="border:1px solid #DCD3BF;border-radius:4px;background:#fff">
+      <summary style="display:flex;align-items:center;gap:12px;min-height:52px;padding:0 16px;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;color:#8F6212;list-style:none">On this page<span aria-hidden="true" style="margin-left:auto;color:#C1882C;font-size:18px">+</span></summary>
+      <ol style="list-style:none;margin:0;padding:0 16px 10px">
+        <li><a href="#m-td-1" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">01</span>In Healing Village</a></li>
+        <li><a href="#m-td-2" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">02</span>In Kerala</a></li>
+        <li><a href="#m-td-3" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">03</span>Sight Seeing</a></li>
+        <li><a href="#m-td-4" style="display:flex;gap:10px;align-items:center;min-height:46px;font-size:16px;color:#2A2118;border-top:1px solid #E6DECB"><span aria-hidden="true" style="color:#C1882C;font-size:12px;font-weight:700;width:18px;flex:none">04</span>Browse by place</a></li>
+      </ol>
+    </details>
+  </div>
+
+  <div style="padding:24px 18px 0">
+    <h2 id="m-td-1" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.2;margin:0 0 16px;scroll-margin-top:84px">Things to do in Healing Village</h2>
+    <p style="font-size:19px;line-height:1.65;color:#3d3528">Kairali – The Ayurvedic Healing Village, which is tucked away in the tranquil surroundings of Palakkad, Kerala, is a sanctuary for comprehensive relaxation and rejuvenation in addition to health treatments. The village allows you to try a variety of experiences and activities that will make your stay more enjoyable, even though Ayurveda is the core offering.</p>
+    <p>Kairali, which is surrounded by peaceful scenery and lush gardens, provides guided yoga and meditation programs that let you balance your body, mind, and soul. Take part in immersive workshops on Ayurvedic living concepts, traditional performances, or cookery demonstrations to fully immerse yourself in Kerala’s rich cultural legacy. The Healing Village is the perfect place for nature lovers to take strolls, observe birds, or just take in the tranquil beauty of its natural surroundings.</p>
+    <p>The village offers outdoor activities that encourage movement and vitality, as well as a gym and swimming pool for fitness lovers. Discover the neighboring countryside with carefully planned village trips that provide an insight into Keralan customs, including stops at temples, paddy fields, and local craftspeople.</p>
+    <p>Kairali – The Ayurvedic Healing Village guarantees a remarkable experience that goes well with its genuine wellness programs, whether you’re looking for peace, cultural enrichment, or a connection with nature.</p>
+
+    <dl style="margin:26px 0 0">
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Nature Walk</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Taking a nature walk at Kairali – The Ayurvedic Healing Village offers a peaceful experience amidst verdant surroundings. Reconnect with nature as you stroll through aromatic herbal plantations, organic gardens, and serene surroundings. The village’s comprehensive wellness philosophy is complemented by this restorative experience that calms the senses.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Village Facilities</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Kairali – The Ayurvedic Healing Village provides top-notch amenities for relaxation and overall health. Traditional Ayurvedic treatment facilities, yoga and meditation areas, an organic restaurant, a fitness facility, a swimming pool, and exquisitely decorated eco-friendly villas are all available to visitors. A revitalizing and enriching experience is guaranteed by the tranquil surroundings.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Cooking Classes</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">The cooking classes offer a special chance to master the art of making nutritious, traditional Ayurvedic meals. Under the direction of skilled chefs, participants explore how to combine culinary techniques with holistic nutrition to produce well-balanced meals that support health and vitality using fresh, organic foods and spices.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Organic Farm</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">The Ayurvedic Healing Village’s organic farm is a bustling area where sustainable farming methods are used to grow fresh, chemical-free produce. In addition to enjoying the abundance of seasonal fruits, vegetables, and herbs utilized in the village’s healthful Ayurvedic meals, visitors can tour the farm and learn about traditional farming methods.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Herbal Garden</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Kairali’s herbal garden is a verdant haven of therapeutic plants and herbs that are utilized in conventional Ayurvedic therapies. The essence of Ayurveda in its purest form can be experienced by visitors as they stroll about this tranquil area and discover the therapeutic benefits of different herbs.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Meditation</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Kairali provides a calm setting for meditation that promotes inner peace and mental clarity. The village’s holistic approach to wellness is well complemented by guided sessions in a peaceful setting that helps visitors connect with their inner selves, lower stress levels, and improve general well-being.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Yoga Classes ( Theory)</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Kairali offers yoga theory lessons that shed light on the tenets and philosophy of yoga. These classes explore yoga’s ancient origins, going over ideas like asanas, pranayama, and meditation, giving participants a better grasp of how yoga contributes to overall harmony and wellness.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Yoga Classes (Practical)</dt>
+      <dd style="margin:0;padding-bottom:18px;border-bottom:1px solid #DCD3BF;font-size:16.5px;line-height:1.7;color:#3d3528">At Kairali – The Ayurvedic Healing Village, practical yoga lessons emphasize facilitated sessions that combine meditation, pranayama (breathing methods), and asanas (postures). These programs, taught by knowledgeable teachers, promote mindfulness, strength, and flexibility while fostering a peaceful, balanced body-mind relationship.</dd>
+    </dl>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:36px;padding-top:22px"></div>
+    <h2 id="m-td-2" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.2;margin:0 0 16px;scroll-margin-top:84px">Things to do in Kerala</h2>
+    <p>Kerala, a paradise of golden beaches, tranquil backwaters, verdant hills, and a thriving culture, is tucked away on the southern coast of India and lapped by the Arabian Sea. From its captivating backwaters and lagoons to its rich history and customs, Kerala, sometimes referred to as “<strong>God’s own Country</strong>” exudes unspoiled natural beauty. Kerala, a genuine representative of Indian tourism, provides a fantastic vacation experience that combines charm, culture, and nature.</p>
+    <p>Many locations throughout the world boast beautiful scenery and expansive vistas. Many of these locations are just over-marketed tourist destinations that have benefited from the powerful wave of globalization and are using it to further their allure. Nonetheless, some locations are gifts from God to humanity. These locations are so beautiful, charming, and full of memorable moments that they seem like they belong in a fairy tale.</p>
+    <p style="margin:0">Kerala is home to stunning forests and glistening water bodies. Among the many things this state has to offer is a houseboat tour that offers tranquility or a drive through the vast canopy of Pala trees that will excite your spirit. It’s no surprise that Kerala has the fastest pace of tourist growth. It is a once-in-a-lifetime experience.</p>
+
+    <div style="border-top:1px solid #DCD3BF;margin-top:36px;padding-top:22px"></div>
+    <h2 id="m-td-3" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.2;margin:0;scroll-margin-top:84px">Sight Seeing:</h2>
+    <dl style="margin:20px 0 0">
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Wildlife Drive</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">An incredible journey through Kerala’s verdant woods and wildlife reserves may be had with a wildlife driving tour. Visit places like Parambikulam, Wayanad, and Periyar, which are home to tigers, leopards, elephants, and other bird species. Experience the captivating beauty of Kerala’s wildlife and plants while blending adventure with the tranquility of nature.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Elephant Safari</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">Kerala’s lush woods and sceneries may be experienced in a unique way with an elephant safari. You may get up close and personal with nature and wildlife by riding magnificent elephants along beautiful paths. This incredible experience, which combines adventure, culture, and Kerala’s natural beauty, is well-liked in Thekkady and Wayanad.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Houseboat tour</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">A Kerala houseboat cruise offers a tranquil getaway along the stunning backwaters of Alleppey and Kumarakom. Cruise along peaceful canals with beautiful villages, coconut trees, and green vegetation all around. Immerse yourself in the delicious cuisine, the laid-back pace of life by the sea, and traditional Kerala hospitality for an incredible journey.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Mountain jeep safari</dt>
+      <dd style="margin:0 0 6px;font-size:16.5px;line-height:1.7;color:#3d3528">In Kerala, a mountain jeep safari is an exhilarating journey through lush plantations, misty hills, and steep terrain. Explore charming locations like Munnar and Wayanad, where winding paths lead to breathtaking vistas, undiscovered waterfalls, and opportunities to interact with wildlife. It’s a thrilling way to experience the wildlife, beauty, and mountains of Kerala.</dd>
+      <dt style="font-family:'Marcellus',serif;font-size:20px;line-height:1.25;padding:16px 0 6px;border-top:1px solid #DCD3BF">Cultural events</dt>
+      <dd style="margin:0;padding-bottom:18px;border-bottom:1px solid #DCD3BF;font-size:16.5px;line-height:1.7;color:#3d3528">Kerala’s cultural festivals showcase the state’s diverse customs and rich history. These festivities honor Kerala’s art, music, and spirituality, from the grand celebrations of Onam and Thrissur Pooram to the captivating performances of Kathakali, Theyyam, and Mohiniyattam. Discover the cultural essence of the state by taking in its colorful festivals and customs.</dd>
+    </dl>
+  </div>
+
+  <section id="m-td-4" aria-labelledby="m-td-4-h" style="padding:44px 18px 0;scroll-margin-top:84px">
+    <div style="border-top:2px solid #2A2118;padding-top:18px;margin-bottom:18px">
+      <h2 id="m-td-4-h" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.15">Browse by place</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <a href="https://ayurvedichealingvillage.com/things-to-do-in-property/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:16/10;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-bottom:1px solid #E0D7C4"><span aria-hidden="true" style="width:24px;height:2px;background:#C1882C"></span><span style="font-size:11px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">9-13.jpg</span></div>
+        <div style="padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:23px;line-height:1.2">In Healing Village</span><span aria-hidden="true" style="color:#8F6212;font-size:16px">&rarr;</span></div>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/things-to-do-in-kerala/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:16/10;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-bottom:1px solid #E0D7C4"><span aria-hidden="true" style="width:24px;height:2px;background:#C1882C"></span><span style="font-size:11px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">kerala1.jpg</span></div>
+        <div style="padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:23px;line-height:1.2">In Kerala</span><span aria-hidden="true" style="color:#8F6212;font-size:16px">&rarr;</span></div>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/sight-seeing-gallery/" style="display:flex;flex-direction:column;border:1px solid #E9E2D3;border-radius:4px;overflow:hidden;background:#fff;color:#2A2118">
+        <div style="aspect-ratio:16/10;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-bottom:1px solid #E0D7C4"><span aria-hidden="true" style="width:24px;height:2px;background:#C1882C"></span><span style="font-size:11px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">img0.jpg</span></div>
+        <div style="padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;box-sizing:border-box"><span style="font-family:'Marcellus',serif;font-size:23px;line-height:1.2">Sight Seeing</span><span aria-hidden="true" style="color:#8F6212;font-size:16px">&rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section style="background:#2A2014;color:#F7F4EA;margin-top:44px;padding:32px 18px">
+    <h2 style="font-family:'Marcellus',serif;font-size:25px;line-height:1.2;color:#F7F4EA">Plan the hours around the treatment</h2>
+    <p style="margin:10px 0 18px;font-size:16px;line-height:1.65;color:#E4DBC6">Tell us the dates and the programme you are considering, and the front desk will set out what is possible alongside it.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="background:#EEB41E;color:#2A2118;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Enquire now</a>
+      <a href="https://ayurvedichealingvillage.com/how-to-reach/" style="border:1px solid #C1882C;color:#F7F4EA;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">How to reach</a>
+    </div>
+  </section>
+</article>
+
+<article data-screen-label="Experience — Mobile" style="display:{{ showC }}">
+  <section style="padding:18px 18px 20px">
+    <nav aria-label="Breadcrumb" style="font-size:15px;color:#75695A;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;line-height:1.4"><a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px">Experience</span></nav>
+    <div style="font-weight:700;font-size:12px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;margin-top:2px">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+    <h1 style="font-family:'Marcellus',serif;font-size:34px;line-height:1.12;margin:10px 0 0;text-wrap:balance">Experience</h1>
+    <p style="font-size:17px;line-height:1.6;color:#514a3f;margin:16px 0 0;border-left:3px solid #C1882C;padding-left:16px">Eight standing house rules that shape the food, the air and the day. They apply to every patient, for the whole stay.</p>
+  </section>
+  <div style="height:200px;background:#EDE5D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-top:1px solid #E0D7C4;border-bottom:1px solid #E0D7C4">
+    <span aria-hidden="true" style="width:30px;height:2px;background:#C1882C"></span>
+    <span style="font-size:10.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212">Hero band — source asset</span>
+    <span style="font-size:12px;color:#75695A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">our-story.png</span>
+  </div>
+
+  <div style="padding:28px 18px 0">
+    <p style="font-size:20px;line-height:1.6;color:#3d3528;margin:0">Kairali – The Ayurvedic care Village offers authentic well-being and holistic care, where tranquility meets tradition. Our retreat is alcohol-free, non-smoking, and caffeine-free, providing a clean and revitalizing environment for total mind-body harmony. Immerse yourself in traditional Ayurvedic remedies, yoga, meditation, and organic living for an authentic transforming and healing experience in Kerala.</p>
+  </div>
+
+  <section aria-labelledby="m-ex-h" style="padding:40px 18px 0">
+    <div style="border-top:2px solid #2A2118;padding-top:18px;margin-bottom:16px">
+      <h2 id="m-ex-h" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.15">The house rules</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <a href="https://ayurvedichealingvillage.com/alcohol-free/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">01</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">Alcohol Free</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">We, at Kairali, encourage an alcohol free environment which helps to produce a healing effect on the human system.</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/no-smoking/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">02</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">No Smoking</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">Smoking is injurious to health. Kairali-The Ayurvedic Healing Village, being a health farm, always says no to smoking.</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/no-caffeine/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">03</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">No Caffeine</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">‘‘Say No to Caffeine’ is what the hospital and retreat practices. Caffeine increases the domain of doshas and causes illness.</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/vegetarian/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">04</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">Vegetarian</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">The health farm of Kairali follows a complete vegetarian diet. It believes that vegetarian food is easy to digest and contains antioxidants,</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/in-house-products/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">05</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">In House Products</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">To suit the modern lifestyle of the masses, Kairali Ayurvedic Products stresses on continuous Research and Development</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/no-preservatives/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">06</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">No Preservatives</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">Kairali promotes food without preservatives. It believes that ‘prana’ is the vitality of food.</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/no-refridgeration/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">07</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">No Refridgeration</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">Kairali is a follower of the policy of ‘no refrigeration’. A royal castle that renders healthy living,</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+      <a href="https://ayurvedichealingvillage.com/organic-farm/" style="display:flex;flex-direction:column;gap:8px;border:1px solid #E9E2D3;border-top:3px solid #C1882C;border-radius:4px;background:#fff;color:#2A2118;padding:16px 18px 18px">
+        <span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:13px;color:#8F6212;letter-spacing:1px">08</span>
+        <span style="font-family:'Marcellus',serif;font-size:22px;line-height:1.2">Organic Farming</span>
+        <span style="font-size:16px;line-height:1.65;color:#514a3f">Kairali has its own organic garden that are free from pesticides, chemicals and preservatives that snatch away</span>
+        <span aria-hidden="true" style="font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;padding-top:4px">Read more &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section style="background:#2A2014;color:#F7F4EA;margin-top:44px;padding:32px 18px">
+    <h2 style="font-family:'Marcellus',serif;font-size:25px;line-height:1.2;color:#F7F4EA">Questions about the house rules?</h2>
+    <p style="margin:10px 0 18px;font-size:16px;line-height:1.65;color:#E4DBC6">Dietary requirements and medication are reviewed at consultation, before arrival.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="https://ayurvedichealingvillage.com/online-consultation/" style="background:#EEB41E;color:#2A2118;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Free doctor consultation</a>
+      <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="border:1px solid #C1882C;color:#F7F4EA;border-radius:4px;min-height:52px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Enquire now</a>
+    </div>
+  </section>
+</article>
+
+</main>
+<dc-import name="AHV Chrome Footer" narrow="true" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:900},&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;],&quot;default&quot;:null,&quot;tsType&quot;:&quot;'a'|'b'|'c'&quot;,&quot;section&quot;:&quot;Review&quot;}}">
+class Component extends DCLogic {
+  state = { tab: 'a' };
+  renderVals() {
+    const t = this.props.route || this.state.tab;
+    const on = '#EEB41E', off = 'transparent', onFg = '#2A2014', offFg = '#E4DBC6';
+    const set = k => () => this.setState({ tab: k });
+    return {
+      showA: t === 'a' ? 'block' : 'none',
+      showB: t === 'b' ? 'block' : 'none',
+      showC: t === 'c' ? 'block' : 'none',
+      bgA: t === 'a' ? on : off, fgA: t === 'a' ? onFg : offFg,
+      bgB: t === 'b' ? on : off, fgB: t === 'b' ? onFg : offFg,
+      bgC: t === 'c' ? on : off, fgC: t === 'c' ? onFg : offFg,
+      goA: set('a'), goB: set('b'), goC: set('c')
+    };
+  }
+}
+</script>
+</body>
+</html>
