@@ -141,6 +141,11 @@ for (const id of ids) {
   if (PLACEHOLDER_HDR.test(t)) { t = t.replace(PLACEHOLDER_HDR, HEADER_IMPORT); did.push("header"); }
   if (PLACEHOLDER_FTR.test(t)) { t = t.replace(PLACEHOLDER_FTR, FOOTER_IMPORT); did.push("footer"); }
   const w = widths(t); if (w.n) { t = w.t; did.push(`width×${w.n}`); }
+  // 4b. Review chips the designer pinned to the page ("PROVISIONAL — PENDING
+  //     SITEMAP" beside the breadcrumb) are design-board annotations, not
+  //     page content. The breadcrumb they annotate is the site's own.
+  const chipRe = /<[a-z][a-z0-9-]*\b[^>]*>\s*PROVISIONAL — PENDING SITEMAP\s*<\/[a-z][a-z0-9-]*>\s*/gi;
+  if (chipRe.test(t)) { t = t.replace(chipRe, ""); did.push("review chip"); }
   // 5. The design file's own <title> ("AHV Template — Product Family (Desktop
   //    1440)") is a file name, not a page title. The governed head writes the
   //    route's title from the manifest; a helmet title left here won the race
