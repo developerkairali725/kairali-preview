@@ -55,19 +55,30 @@ doc of 19 Sep (Google Doc 18r4P1AM…), the 508-record chrome audit and the 1,77
 - **Search brainstorm:** pending (docs/research/2026-09-23-ahv-search-brainstorm.md when it lands) — top-bar search,
   programme finder and the FAQ filter on one typo-tolerant engine.
 
-## 4. Open decisions for the owner (asked next, MCQ)
+## 4. Rulings taken since (MCQ, ~02:25 IST) and what landed
 
-1. Consultation panel wording (Anoop) — unanswered in the last MCQ.
-2. /walk-in-ayurveda-treatment/ — re-render through the article family now (left rail, prose system) vs a proper
-   designed OPD page later; its H1 reads "OPD".
-3. Hero/product photographs for article pages that show the generic aerial (kair-by-kairali and ~120 others) —
-   assign per page from the bank candidates; kair needs its product shot.
-4. /about-us/ leadership: the bank holds NO newer portraits (best: KVR and Abishek 400×400 from 2021, Gita 1000×618,
-   Abhilash 999×562 award photo) — shoot new ones at the 28–30 Sep session, or use these; the "Asia's Best
-   Ayurvedic Retreat Since 1999" banner remade as HTML text over a photograph.
-5. Galleries: GO on the chaptered rebuild per the research spec, using the mined candidates; sightseeing needs a shoot.
-6. Homepage "I am looking for / preferred dates" — where it should send the visitor.
-7. /offers/ and /map/ image slots — fill from the bank.
+| Ruling | Landed |
+|---|---|
+| Consultation panel = three physicians with photographs, no years (D-20260922-30) | tools/repair-consultation-panel.mjs: `physicians[3]` on the record + a three-tile panel in both enquiry views (Dr. Deepu John · Chief Physician & HOD · BAMS; Dr. Akhila Oommen; Dr. Rahul R). The empty grey circle is gone. Dr. Aashitha PS / Dr. Adhina UB join when the GM sends photographs (asset request below). |
+| Galleries GO, all 8 (D-20260922-31) | Builder running (chaptered galleries from the mined candidates, video facade, schema, image sitemap) — its own report follows. |
+| Search Option A (D-20260922-32) + FAQ filter on the same engine (D-20260922-26) | Builder running (vocabulary → index → engine → overlay → finder → FAQ, with the 176 + 61 query acceptance sets) — its own report follows. |
+| Homepage "I am looking for / dates" → programme finder pre-filtered (D-20260922-33) | Part of the search build (URL contract `/ayurvedic-treatments/?q=&from=&to=`). |
+| /kair-by-kairali/ hero | tools/repair-article-heroes.mjs + english-candidate/article-heroes.json: the Kairoil product photograph from the bank (6000×4000 master → 1600px webp) replaces the paddy-field aerial; the same map extends to every article page once the gallery manifest lands. |
+| /about-us/ | Banner remade as markup (photograph + card + logo + the SAME words as text, AI-readable; the photograph is the garden pathway from the property gallery, not the aerial); one factual note per certificate from its printed evidence (number, validity); director rows un-shrunk. No newer leadership portraits or certificate scans exist in the bank — asset request below. |
+| /map/ | Was genuinely broken: the article hero rule stretched 90px map thumbnails to 1440×460, and six "MAP — disabled in this preview" boxes stood where the WordPress page embedded Google maps. Now: hero rule scoped to the hero; the four location maps shown; each slot reads its route from the page's own heading and becomes a consent-gated Google directions map (Coimbatore Airport, Cochin Airport, Palakkad and Otapalam railway stations, Bangalore, the hospital), with an "Open directions" link before consent. |
+| /walk-in-ayurveda-treatment/ | H1 "OPD" → "Walk-in Ayurveda Treatment" (its own title). A designed OPD page is still open (below). |
+
+## 4b. Still open
+1. **Photographs the bank does not hold** — leadership portraits, two new doctors, off-campus sightseeing,
+   treatment coverage: draft shoot list for the 28–30 Sep crew at
+   launches/ayurvedichealingvillage.com/asset-requests/2026-09-23-shoot-list-leadership-doctors-sightseeing.md
+   (owner sends).
+2. **/walk-in-ayurveda-treatment/** — a proper OPD page layout (today: long prose on the enquiry template).
+3. **/offers/ image slots (4–5)** — fill from the gallery manifest once the builder lands (villa/property frames).
+4. **Article heroes for the ~120 pages on the aerial** — extend article-heroes.json from the gallery manifest.
+5. **Deepu's remaining items** — field validation (forms lane), the "dropdown on hover" he meant (page unknown).
+6. **Tariff refresh** — the V4 2026-27 price list is on Drive (mkt@ktahv.com, 22 Sep); the search index refuses
+   expired prices after 30 Sep unless told otherwise — the sheet must come into the repo before 1 Oct.
 
 ## 5. Verification (this round)
 - Sweep after the fixes (local build, 254 routes × 390/768/1440 = 762 loads): **0 horizontal overflow, 0 leftover
