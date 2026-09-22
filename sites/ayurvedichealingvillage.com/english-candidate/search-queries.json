@@ -1,244 +1,1330 @@
 {
-  "why": "Acceptance query sets for the AHV site search (docs/research/2026-09-23-ahv-search-brainstorm.md §2.2 = 176 site rows, §5.5 = 61 FAQ rows). top1 is the assertion: a route, a FAQ id, a list of acceptable routes, {\"nights\": n} for a duration facet (any programme with that minimum stay), or null for the zero-result screen; cls asserts the governed class. Run: node tests/search-acceptance.mjs",
+  "why": "Acceptance query sets for the AHV site search (docs/research/2026-09-23-ahv-search-brainstorm.md §2.2 = 176 site rows, §5.5 = 61 FAQ rows). top1 is the assertion: a route, a FAQ id, a list of acceptable routes, {\"nights\": n} for a duration facet (any programme with that minimum stay), or null for the zero-result screen; cls asserts the governed class. Run: node tests/search-acceptance.mjs FAQ rows 62+ added 2026-09-23 for the content pass's new questions (q-45..q-58).",
   "site": [
-    { "n": 1, "q": "back pain", "top1": "/treatment-for-chronic-back-pain/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 2, "q": "lower back pain", "top1": "/treatment-for-chronic-back-pain/" },
-    { "n": 3, "q": "slip disc", "top1": "/treatment-for-slip-disc/" },
-    { "n": 4, "q": "slipped disc", "top1": "/treatment-for-slip-disc/" },
-    { "n": 5, "q": "herniated disc", "top1": "/treatment-for-slip-disc/" },
-    { "n": 6, "q": "sciatica", "top1": "/treatment-for-slip-disc/" },
-    { "n": 7, "q": "neck pain", "top1": "/treatment-for-cervical-spondylosis/" },
-    { "n": 8, "q": "cervical spondylosis", "top1": "/treatment-for-cervical-spondylosis/" },
-    { "n": 9, "q": "spondylitis", "top1": "/treatment-for-spondylitis/" },
-    { "n": 10, "q": "ankylosing spondylitis", "top1": "/treatment-for-spondylitis/" },
-    { "n": 11, "q": "arthritis", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 12, "q": "knee pain", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 13, "q": "rheumatoid arthritis", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 14, "q": "joint pain", "top1": "/treatment-for-arthritis-and-spondylitis/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 15, "q": "psoriasis", "top1": "/treatment-for-psoriasis/" },
-    { "n": 16, "q": "eczema", "top1": "/treatment-for-skin-diseases/" },
-    { "n": 17, "q": "skin problems", "top1": "/treatment-for-skin-diseases/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 18, "q": "diabetes", "top1": "/treatment-for-diabetes/" },
-    { "n": 19, "q": "sugar", "top1": "/treatment-for-diabetes/" },
-    { "n": 20, "q": "type 2 diabetes", "top1": "/treatment-for-diabetes/" },
-    { "n": 21, "q": "weight loss", "top1": "/weight-loss-programme/" },
-    { "n": 22, "q": "obesity", "top1": "/weight-loss-programme/" },
-    { "n": 23, "q": "belly fat", "top1": "/weight-loss-programme/" },
-    { "n": 24, "q": "stress", "top1": "/treatment-to-remove-stress-and-strain/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 25, "q": "anxiety", "top1": "/treatment-to-remove-stress-and-strain/" },
-    { "n": 26, "q": "burnout", "top1": "/yoga-based-stress-energy-reset-program/" },
-    { "n": 27, "q": "sleep", "top1": "/sleep-restoration-therapy/" },
-    { "n": 28, "q": "insomnia", "top1": "/sleep-restoration-therapy/" },
-    { "n": 29, "q": "cannot sleep", "top1": "/sleep-restoration-therapy/" },
-    { "n": 30, "q": "high blood pressure", "top1": "/treatment-for-hypertension/" },
-    { "n": 31, "q": "bp", "top1": "/treatment-for-hypertension/" },
-    { "n": 32, "q": "cholesterol", "top1": "/treatment-for-hypertension/" },
-    { "n": 33, "q": "migraine", "top1": "/treatment-for-sinusitis-and-migraine/" },
-    { "n": 34, "q": "headache", "top1": "/treatment-for-sinusitis-and-migraine/" },
-    { "n": 35, "q": "sinus", "top1": "/treatment-for-sinusitis-and-migraine/" },
-    { "n": 36, "q": "asthma", "top1": "/treatment-for-bronchial-diseases/" },
-    { "n": 37, "q": "breathing problem", "top1": "/treatment-for-bronchial-diseases/" },
-    { "n": 38, "q": "digestion", "top1": "/digestive-wellness-gut-health-yoga-therapy/" },
-    { "n": 39, "q": "constipation", "top1": "/digestive-wellness-gut-health-yoga-therapy/" },
-    { "n": 40, "q": "acidity", "top1": "/digestive-wellness-gut-health-yoga-therapy/" },
-    { "n": 41, "q": "ibs", "top1": "/digestive-wellness-gut-health-yoga-therapy/" },
-    { "n": 42, "q": "thyroid", "top1": "/womens-hormonal-balance-endocrine-therapy/" },
-    { "n": 43, "q": "pcos", "top1": "/womens-hormonal-balance-endocrine-therapy/" },
-    { "n": 44, "q": "menopause", "top1": "/womens-hormonal-balance-endocrine-therapy/" },
-    { "n": 45, "q": "after delivery", "top1": "/post-pregnancy-health-programme/" },
-    { "n": 46, "q": "postpartum", "top1": "/post-pregnancy-health-programme/" },
-    { "n": 47, "q": "paralysis", "top1": "/treatment-for-paralysis/" },
-    { "n": 48, "q": "stroke rehabilitation", "top1": "/treatment-for-paralysis/", "notCls": "URGENT_MEDICAL_HELP" },
-    { "n": 49, "q": "bells palsy", "top1": "/treatment-for-facial-paralysis/" },
-    { "n": 50, "q": "numbness in hands", "top1": "/treatment-for-nervous-disability/" },
-    { "n": 51, "q": "neuropathy", "top1": "/treatment-for-nervous-disability/" },
-    { "n": 52, "q": "multiple sclerosis", "top1": "/treatment-for-nervous-disability/" },
-    { "n": 53, "q": "immunity", "top1": "/immunity-enhancement-executive-health-assessment-therapy/" },
-    { "n": 54, "q": "executive health check", "top1": "/immunity-enhancement-executive-health-assessment-therapy/" },
-    { "n": 55, "q": "eye care", "top1": "/beauty-care-and-eye-care/" },
-    { "n": 56, "q": "dry eyes", "top1": "/beauty-care-and-eye-care/" },
-    { "n": 57, "q": "alcohol addiction", "top1": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/" },
-    { "n": 58, "q": "quit smoking", "top1": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/" },
-    { "n": 59, "q": "cancer support", "top1": "/revitalizing-and-strengthening/" },
-    { "n": 60, "q": "chemotherapy side effects", "top1": "/revitalizing-and-strengthening/" },
-    { "n": 61, "q": "detox", "top1": "/panchakarma-therapy/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 62, "q": "rejuvenation", "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/" },
-    { "n": 63, "q": "tired all the time", "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/" },
-    { "n": 64, "q": "preventive", "top1": "/preventive-and-regenerative-treatment/" },
-    { "n": 65, "q": "annual checkup ayurveda", "top1": "/preventive-and-regenerative-treatment/" },
-    { "n": 66, "q": "back pain and diabetes", "top1": "/personalized-customized-healing-program/", "cls": "MULTIPLE_POSSIBLE_MATCHES" },
-    { "n": 67, "q": "more than one problem", "top1": "/personalized-customized-healing-program/" },
-    { "n": 68, "q": "not sure what i need", "top1": "/personalized-customized-healing-program/" },
-    { "n": 69, "q": "panchkarma", "top1": "/panchakarma-therapy/" },
-    { "n": 70, "q": "panchakarama", "top1": "/panchakarma-therapy/" },
-    { "n": 71, "q": "pancha karma", "top1": "/panchakarma-therapy/" },
-    { "n": 72, "q": "punchakarma", "top1": "/panchakarma-therapy/" },
-    { "n": 73, "q": "ayurveda treatement", "top1": "/ayurvedic-treatments/" },
-    { "n": 74, "q": "ayurvedic treatmnt", "top1": "/ayurvedic-treatments/" },
-    { "n": 75, "q": "ayurved", "top1": ["/ayurveda/", "/ayurvedic-treatments/"] },
-    { "n": 76, "q": "slip disk", "top1": "/treatment-for-slip-disc/" },
-    { "n": 77, "q": "siatica", "top1": "/treatment-for-slip-disc/" },
-    { "n": 78, "q": "scaitica", "top1": "/treatment-for-slip-disc/" },
-    { "n": 79, "q": "spondilitis", "top1": "/treatment-for-spondylitis/" },
-    { "n": 80, "q": "spondylosis", "top1": "/treatment-for-cervical-spondylosis/" },
-    { "n": 81, "q": "spondolitis", "top1": "/treatment-for-spondylitis/" },
-    { "n": 82, "q": "arthritus", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 83, "q": "arthiritis", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 84, "q": "psorisis", "top1": "/treatment-for-psoriasis/" },
-    { "n": 85, "q": "soriasis", "top1": "/treatment-for-psoriasis/" },
-    { "n": 86, "q": "diabetis", "top1": "/treatment-for-diabetes/" },
-    { "n": 87, "q": "diabeties", "top1": "/treatment-for-diabetes/" },
-    { "n": 88, "q": "sugar problem", "top1": "/treatment-for-diabetes/" },
-    { "n": 89, "q": "migrane", "top1": "/treatment-for-sinusitis-and-migraine/" },
-    { "n": 90, "q": "insomia", "top1": "/sleep-restoration-therapy/" },
-    { "n": 91, "q": "hypertention", "top1": "/treatment-for-hypertension/" },
-    { "n": 92, "q": "rheuma", "top1": "/treatment-for-arthritis-and-spondylitis/" },
-    { "n": 93, "q": "obesety", "top1": "/weight-loss-programme/" },
-    { "n": 94, "q": "wieght loss", "top1": "/weight-loss-programme/" },
-    { "n": 95, "q": "strees", "top1": "/treatment-to-remove-stress-and-strain/" },
-    { "n": 96, "q": "sleeep", "top1": "/sleep-restoration-therapy/" },
-    { "n": 97, "q": "paralisis", "top1": "/treatment-for-paralysis/" },
-    { "n": 98, "q": "shirodara", "top1": "/treatment-to-remove-stress-and-strain/" },
-    { "n": 99, "q": "abhyangam", "top1": "/one-day-ayurveda-workshop-program-kerala/" },
-    { "n": 100, "q": "price", "top1": "/ayurveda-package/" },
-    { "n": 101, "q": "cost of panchakarma", "top1": "/panchakarma-therapy/" },
-    { "n": 102, "q": "how much does it cost", "top1": "/ayurveda-package/" },
-    { "n": 103, "q": "14 days", "top1": { "nights": 14 } },
-    { "n": 104, "q": "2 weeks", "top1": { "nights": 14 } },
-    { "n": 105, "q": "7 days", "top1": { "nights": 7 } },
-    { "n": 106, "q": "21 days", "top1": { "nights": 21 } },
-    { "n": 107, "q": "3 days", "top1": { "nights": 3 } },
-    { "n": 108, "q": "one week detox", "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/" },
-    { "n": 109, "q": "cheapest programme", "top1": "/preventive-and-regenerative-treatment/" },
-    { "n": 110, "q": "price list pdf", "top1": "/ayurveda-package/" },
-    { "n": 111, "q": "rates 2026", "top1": "/ayurveda-package/" },
-    { "n": 112, "q": "euro price", "top1": "/ayurveda-package/" },
-    { "n": 113, "q": "how to reach", "top1": "/how-to-reach/" },
-    { "n": 114, "q": "airport", "top1": "/how-to-reach/" },
-    { "n": 115, "q": "nearest airport", "top1": "/how-to-reach/" },
-    { "n": 116, "q": "coimbatore to kairali", "top1": "/how-to-reach/" },
-    { "n": 117, "q": "pickup from airport", "top1": "/how-to-reach/" },
-    { "n": 118, "q": "railway station", "top1": "/how-to-reach/" },
-    { "n": 119, "q": "visa", "top1": "q-36" },
-    { "n": 120, "q": "medical visa india", "top1": "q-36" },
-    { "n": 121, "q": "map", "top1": "/map/" },
-    { "n": 122, "q": "palakkad", "top1": "/destination-palakkad/" },
-    { "n": 123, "q": "weather", "top1": "q-27" },
-    { "n": 124, "q": "best time to visit", "top1": "q-28" },
-    { "n": 125, "q": "villa", "top1": "/our-villas/" },
-    { "n": 126, "q": "deluxe villa", "top1": "/deluxe-villa/" },
-    { "n": 127, "q": "maharaja suite", "top1": "/maharaja-suite/" },
-    { "n": 128, "q": "rooms", "top1": "/our-villas/" },
-    { "n": 129, "q": "vegetarian food", "top1": "/vegetarian/" },
-    { "n": 130, "q": "food", "top1": "/ayurvedic-cuisine/" },
-    { "n": 131, "q": "vegan", "top1": "q-21" },
-    { "n": 132, "q": "alcohol", "top1": "/alcohol-free/" },
-    { "n": 133, "q": "wifi", "top1": "q-17" },
-    { "n": 134, "q": "swimming pool", "top1": "q-17" },
-    { "n": 135, "q": "what to pack", "top1": "q-29" },
-    { "n": 136, "q": "laundry", "top1": "q-31" },
-    { "n": 137, "q": "doctor consultation", "top1": "/online-consultation/" },
-    { "n": 138, "q": "free consultation", "top1": "/online-consultation/" },
-    { "n": 139, "q": "talk to a doctor", "top1": "/online-consultation/" },
-    { "n": 140, "q": "contact", "top1": "/contact-us/" },
-    { "n": 141, "q": "phone number", "top1": "/contact-us/" },
-    { "n": 142, "q": "whatsapp", "top1": "/contact-us/" },
-    { "n": 143, "q": "book", "top1": "/book-now/" },
-    { "n": 144, "q": "enquiry", "top1": "/enquiry-form/" },
-    { "n": 145, "q": "kairali palakkad", "top1": "/" },
-    { "n": 146, "q": "kairali ayurvedic healing village", "top1": "/" },
-    { "n": 147, "q": "nabh", "top1": "/accreditations/" },
-    { "n": 148, "q": "awards", "top1": "/awards-and-accolades/" },
-    { "n": 149, "q": "reviews", "top1": "/read-feedback/" },
-    { "n": 150, "q": "offers", "top1": "/offers/" },
-    { "n": 151, "q": "senior citizen", "top1": "/offers/senior-citizen-offer/" },
-    { "n": 152, "q": "discount", "top1": "/offers/" },
-    { "n": 153, "q": "army discount", "top1": "/offers/defence-paramilitary-personnel-get-upto-30-off/" },
-    { "n": 154, "q": "gift voucher", "top1": "/gift-vouchers/" },
-    { "n": 155, "q": "yoga retreat", "top1": "/yoga-retreats/" },
-    { "n": 156, "q": "meditation", "top1": "/yoga-and-meditation-package/" },
-    { "n": 157, "q": "yoga teacher training", "top1": "/yoga-meditation-training/" },
-    { "n": 158, "q": "training course", "top1": "/ayurveda-training-programme/" },
-    { "n": 159, "q": "ayurveda course fees", "top1": "/training-course-fees/" },
-    { "n": 160, "q": "panchakarma therapist training", "top1": "/ayurveda-training-programme/" },
-    { "n": 161, "q": "tap-hv", "top1": "/three-day-short-term-ayurveda-certificate-program-tap-hv/" },
-    { "n": 162, "q": "internship", "top1": "/internships-at-kairali/" },
-    { "n": 163, "q": "jobs", "top1": "/careers/" },
-    { "n": 164, "q": "gallery", "top1": "/gallery/" },
-    { "n": 165, "q": "video", "top1": "/video-gallery/" },
-    { "n": 166, "q": "faq", "top1": "/faqs-downloads/" },
-    { "n": 167, "q": "cancellation policy", "top1": "/cancellation-and-refund-policy/" },
-    { "n": 168, "q": "walk in treatment", "top1": "/walk-in-ayurveda-treatment/" },
-    { "n": 169, "q": "monsoon treatment", "top1": "/karkidaka-chikitsha-or-monsoon-wellness.html" },
-    { "n": 170, "q": "what is panchakarma", "top1": "/what-is-panchkarma/" },
-    { "n": 171, "q": "chest pain", "cls": "URGENT_MEDICAL_HELP" },
-    { "n": 172, "q": "face drooping since this morning", "cls": "URGENT_MEDICAL_HELP" },
-    { "n": 173, "q": "hiv", "cls": "NOT_TREATED" },
-    { "n": 174, "q": "fertility", "cls": "CONSULT_FIRST" },
-    { "n": 175, "q": "hair fall", "cls": "CONSULT_FIRST" },
-    { "n": 176, "q": "asdfgh", "top1": null, "cls": "OUT_OF_SCOPE" }
+    {
+      "n": 1,
+      "q": "back pain",
+      "top1": "/treatment-for-chronic-back-pain/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 2,
+      "q": "lower back pain",
+      "top1": "/treatment-for-chronic-back-pain/"
+    },
+    {
+      "n": 3,
+      "q": "slip disc",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 4,
+      "q": "slipped disc",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 5,
+      "q": "herniated disc",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 6,
+      "q": "sciatica",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 7,
+      "q": "neck pain",
+      "top1": "/treatment-for-cervical-spondylosis/"
+    },
+    {
+      "n": 8,
+      "q": "cervical spondylosis",
+      "top1": "/treatment-for-cervical-spondylosis/"
+    },
+    {
+      "n": 9,
+      "q": "spondylitis",
+      "top1": "/treatment-for-spondylitis/"
+    },
+    {
+      "n": 10,
+      "q": "ankylosing spondylitis",
+      "top1": "/treatment-for-spondylitis/"
+    },
+    {
+      "n": 11,
+      "q": "arthritis",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 12,
+      "q": "knee pain",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 13,
+      "q": "rheumatoid arthritis",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 14,
+      "q": "joint pain",
+      "top1": "/treatment-for-arthritis-and-spondylitis/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 15,
+      "q": "psoriasis",
+      "top1": "/treatment-for-psoriasis/"
+    },
+    {
+      "n": 16,
+      "q": "eczema",
+      "top1": "/treatment-for-skin-diseases/"
+    },
+    {
+      "n": 17,
+      "q": "skin problems",
+      "top1": "/treatment-for-skin-diseases/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 18,
+      "q": "diabetes",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 19,
+      "q": "sugar",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 20,
+      "q": "type 2 diabetes",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 21,
+      "q": "weight loss",
+      "top1": "/weight-loss-programme/"
+    },
+    {
+      "n": 22,
+      "q": "obesity",
+      "top1": "/weight-loss-programme/"
+    },
+    {
+      "n": 23,
+      "q": "belly fat",
+      "top1": "/weight-loss-programme/"
+    },
+    {
+      "n": 24,
+      "q": "stress",
+      "top1": "/treatment-to-remove-stress-and-strain/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 25,
+      "q": "anxiety",
+      "top1": "/treatment-to-remove-stress-and-strain/"
+    },
+    {
+      "n": 26,
+      "q": "burnout",
+      "top1": "/yoga-based-stress-energy-reset-program/"
+    },
+    {
+      "n": 27,
+      "q": "sleep",
+      "top1": "/sleep-restoration-therapy/"
+    },
+    {
+      "n": 28,
+      "q": "insomnia",
+      "top1": "/sleep-restoration-therapy/"
+    },
+    {
+      "n": 29,
+      "q": "cannot sleep",
+      "top1": "/sleep-restoration-therapy/"
+    },
+    {
+      "n": 30,
+      "q": "high blood pressure",
+      "top1": "/treatment-for-hypertension/"
+    },
+    {
+      "n": 31,
+      "q": "bp",
+      "top1": "/treatment-for-hypertension/"
+    },
+    {
+      "n": 32,
+      "q": "cholesterol",
+      "top1": "/treatment-for-hypertension/"
+    },
+    {
+      "n": 33,
+      "q": "migraine",
+      "top1": "/treatment-for-sinusitis-and-migraine/"
+    },
+    {
+      "n": 34,
+      "q": "headache",
+      "top1": "/treatment-for-sinusitis-and-migraine/"
+    },
+    {
+      "n": 35,
+      "q": "sinus",
+      "top1": "/treatment-for-sinusitis-and-migraine/"
+    },
+    {
+      "n": 36,
+      "q": "asthma",
+      "top1": "/treatment-for-bronchial-diseases/"
+    },
+    {
+      "n": 37,
+      "q": "breathing problem",
+      "top1": "/treatment-for-bronchial-diseases/"
+    },
+    {
+      "n": 38,
+      "q": "digestion",
+      "top1": "/digestive-wellness-gut-health-yoga-therapy/"
+    },
+    {
+      "n": 39,
+      "q": "constipation",
+      "top1": "/digestive-wellness-gut-health-yoga-therapy/"
+    },
+    {
+      "n": 40,
+      "q": "acidity",
+      "top1": "/digestive-wellness-gut-health-yoga-therapy/"
+    },
+    {
+      "n": 41,
+      "q": "ibs",
+      "top1": "/digestive-wellness-gut-health-yoga-therapy/"
+    },
+    {
+      "n": 42,
+      "q": "thyroid",
+      "top1": "/womens-hormonal-balance-endocrine-therapy/"
+    },
+    {
+      "n": 43,
+      "q": "pcos",
+      "top1": "/womens-hormonal-balance-endocrine-therapy/"
+    },
+    {
+      "n": 44,
+      "q": "menopause",
+      "top1": "/womens-hormonal-balance-endocrine-therapy/"
+    },
+    {
+      "n": 45,
+      "q": "after delivery",
+      "top1": "/post-pregnancy-health-programme/"
+    },
+    {
+      "n": 46,
+      "q": "postpartum",
+      "top1": "/post-pregnancy-health-programme/"
+    },
+    {
+      "n": 47,
+      "q": "paralysis",
+      "top1": "/treatment-for-paralysis/"
+    },
+    {
+      "n": 48,
+      "q": "stroke rehabilitation",
+      "top1": "/treatment-for-paralysis/",
+      "notCls": "URGENT_MEDICAL_HELP"
+    },
+    {
+      "n": 49,
+      "q": "bells palsy",
+      "top1": "/treatment-for-facial-paralysis/"
+    },
+    {
+      "n": 50,
+      "q": "numbness in hands",
+      "top1": "/treatment-for-nervous-disability/"
+    },
+    {
+      "n": 51,
+      "q": "neuropathy",
+      "top1": "/treatment-for-nervous-disability/"
+    },
+    {
+      "n": 52,
+      "q": "multiple sclerosis",
+      "top1": "/treatment-for-nervous-disability/"
+    },
+    {
+      "n": 53,
+      "q": "immunity",
+      "top1": "/immunity-enhancement-executive-health-assessment-therapy/"
+    },
+    {
+      "n": 54,
+      "q": "executive health check",
+      "top1": "/immunity-enhancement-executive-health-assessment-therapy/"
+    },
+    {
+      "n": 55,
+      "q": "eye care",
+      "top1": "/beauty-care-and-eye-care/"
+    },
+    {
+      "n": 56,
+      "q": "dry eyes",
+      "top1": "/beauty-care-and-eye-care/"
+    },
+    {
+      "n": 57,
+      "q": "alcohol addiction",
+      "top1": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/"
+    },
+    {
+      "n": 58,
+      "q": "quit smoking",
+      "top1": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/"
+    },
+    {
+      "n": 59,
+      "q": "cancer support",
+      "top1": "/revitalizing-and-strengthening/"
+    },
+    {
+      "n": 60,
+      "q": "chemotherapy side effects",
+      "top1": "/revitalizing-and-strengthening/"
+    },
+    {
+      "n": 61,
+      "q": "detox",
+      "top1": "/panchakarma-therapy/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 62,
+      "q": "rejuvenation",
+      "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/"
+    },
+    {
+      "n": 63,
+      "q": "tired all the time",
+      "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/"
+    },
+    {
+      "n": 64,
+      "q": "preventive",
+      "top1": "/preventive-and-regenerative-treatment/"
+    },
+    {
+      "n": 65,
+      "q": "annual checkup ayurveda",
+      "top1": "/preventive-and-regenerative-treatment/"
+    },
+    {
+      "n": 66,
+      "q": "back pain and diabetes",
+      "top1": "/personalized-customized-healing-program/",
+      "cls": "MULTIPLE_POSSIBLE_MATCHES"
+    },
+    {
+      "n": 67,
+      "q": "more than one problem",
+      "top1": "/personalized-customized-healing-program/"
+    },
+    {
+      "n": 68,
+      "q": "not sure what i need",
+      "top1": "/personalized-customized-healing-program/"
+    },
+    {
+      "n": 69,
+      "q": "panchkarma",
+      "top1": "/panchakarma-therapy/"
+    },
+    {
+      "n": 70,
+      "q": "panchakarama",
+      "top1": "/panchakarma-therapy/"
+    },
+    {
+      "n": 71,
+      "q": "pancha karma",
+      "top1": "/panchakarma-therapy/"
+    },
+    {
+      "n": 72,
+      "q": "punchakarma",
+      "top1": "/panchakarma-therapy/"
+    },
+    {
+      "n": 73,
+      "q": "ayurveda treatement",
+      "top1": "/ayurvedic-treatments/"
+    },
+    {
+      "n": 74,
+      "q": "ayurvedic treatmnt",
+      "top1": "/ayurvedic-treatments/"
+    },
+    {
+      "n": 75,
+      "q": "ayurved",
+      "top1": [
+        "/ayurveda/",
+        "/ayurvedic-treatments/"
+      ]
+    },
+    {
+      "n": 76,
+      "q": "slip disk",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 77,
+      "q": "siatica",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 78,
+      "q": "scaitica",
+      "top1": "/treatment-for-slip-disc/"
+    },
+    {
+      "n": 79,
+      "q": "spondilitis",
+      "top1": "/treatment-for-spondylitis/"
+    },
+    {
+      "n": 80,
+      "q": "spondylosis",
+      "top1": "/treatment-for-cervical-spondylosis/"
+    },
+    {
+      "n": 81,
+      "q": "spondolitis",
+      "top1": "/treatment-for-spondylitis/"
+    },
+    {
+      "n": 82,
+      "q": "arthritus",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 83,
+      "q": "arthiritis",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 84,
+      "q": "psorisis",
+      "top1": "/treatment-for-psoriasis/"
+    },
+    {
+      "n": 85,
+      "q": "soriasis",
+      "top1": "/treatment-for-psoriasis/"
+    },
+    {
+      "n": 86,
+      "q": "diabetis",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 87,
+      "q": "diabeties",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 88,
+      "q": "sugar problem",
+      "top1": "/treatment-for-diabetes/"
+    },
+    {
+      "n": 89,
+      "q": "migrane",
+      "top1": "/treatment-for-sinusitis-and-migraine/"
+    },
+    {
+      "n": 90,
+      "q": "insomia",
+      "top1": "/sleep-restoration-therapy/"
+    },
+    {
+      "n": 91,
+      "q": "hypertention",
+      "top1": "/treatment-for-hypertension/"
+    },
+    {
+      "n": 92,
+      "q": "rheuma",
+      "top1": "/treatment-for-arthritis-and-spondylitis/"
+    },
+    {
+      "n": 93,
+      "q": "obesety",
+      "top1": "/weight-loss-programme/"
+    },
+    {
+      "n": 94,
+      "q": "wieght loss",
+      "top1": "/weight-loss-programme/"
+    },
+    {
+      "n": 95,
+      "q": "strees",
+      "top1": "/treatment-to-remove-stress-and-strain/"
+    },
+    {
+      "n": 96,
+      "q": "sleeep",
+      "top1": "/sleep-restoration-therapy/"
+    },
+    {
+      "n": 97,
+      "q": "paralisis",
+      "top1": "/treatment-for-paralysis/"
+    },
+    {
+      "n": 98,
+      "q": "shirodara",
+      "top1": "/treatment-to-remove-stress-and-strain/"
+    },
+    {
+      "n": 99,
+      "q": "abhyangam",
+      "top1": "/one-day-ayurveda-workshop-program-kerala/"
+    },
+    {
+      "n": 100,
+      "q": "price",
+      "top1": "/ayurveda-package/"
+    },
+    {
+      "n": 101,
+      "q": "cost of panchakarma",
+      "top1": "/panchakarma-therapy/"
+    },
+    {
+      "n": 102,
+      "q": "how much does it cost",
+      "top1": "/ayurveda-package/"
+    },
+    {
+      "n": 103,
+      "q": "14 days",
+      "top1": {
+        "nights": 14
+      }
+    },
+    {
+      "n": 104,
+      "q": "2 weeks",
+      "top1": {
+        "nights": 14
+      }
+    },
+    {
+      "n": 105,
+      "q": "7 days",
+      "top1": {
+        "nights": 7
+      }
+    },
+    {
+      "n": 106,
+      "q": "21 days",
+      "top1": {
+        "nights": 21
+      }
+    },
+    {
+      "n": 107,
+      "q": "3 days",
+      "top1": {
+        "nights": 3
+      }
+    },
+    {
+      "n": 108,
+      "q": "one week detox",
+      "top1": "/holistic-treatment-for-rejuvenation-and-detoxification/"
+    },
+    {
+      "n": 109,
+      "q": "cheapest programme",
+      "top1": "/preventive-and-regenerative-treatment/"
+    },
+    {
+      "n": 110,
+      "q": "price list pdf",
+      "top1": "/ayurveda-package/"
+    },
+    {
+      "n": 111,
+      "q": "rates 2026",
+      "top1": "/ayurveda-package/"
+    },
+    {
+      "n": 112,
+      "q": "euro price",
+      "top1": "/ayurveda-package/"
+    },
+    {
+      "n": 113,
+      "q": "how to reach",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 114,
+      "q": "airport",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 115,
+      "q": "nearest airport",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 116,
+      "q": "coimbatore to kairali",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 117,
+      "q": "pickup from airport",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 118,
+      "q": "railway station",
+      "top1": "/how-to-reach/"
+    },
+    {
+      "n": 119,
+      "q": "visa",
+      "top1": "q-36"
+    },
+    {
+      "n": 120,
+      "q": "medical visa india",
+      "top1": "q-36"
+    },
+    {
+      "n": 121,
+      "q": "map",
+      "top1": "/map/"
+    },
+    {
+      "n": 122,
+      "q": "palakkad",
+      "top1": "/destination-palakkad/"
+    },
+    {
+      "n": 123,
+      "q": "weather",
+      "top1": "q-27"
+    },
+    {
+      "n": 124,
+      "q": "best time to visit",
+      "top1": "q-28"
+    },
+    {
+      "n": 125,
+      "q": "villa",
+      "top1": "/our-villas/"
+    },
+    {
+      "n": 126,
+      "q": "deluxe villa",
+      "top1": "/deluxe-villa/"
+    },
+    {
+      "n": 127,
+      "q": "maharaja suite",
+      "top1": "/maharaja-suite/"
+    },
+    {
+      "n": 128,
+      "q": "rooms",
+      "top1": "/our-villas/"
+    },
+    {
+      "n": 129,
+      "q": "vegetarian food",
+      "top1": "/vegetarian/"
+    },
+    {
+      "n": 130,
+      "q": "food",
+      "top1": "/ayurvedic-cuisine/"
+    },
+    {
+      "n": 131,
+      "q": "vegan",
+      "top1": "q-21"
+    },
+    {
+      "n": 132,
+      "q": "alcohol",
+      "top1": "/alcohol-free/"
+    },
+    {
+      "n": 133,
+      "q": "wifi",
+      "top1": "q-17"
+    },
+    {
+      "n": 134,
+      "q": "swimming pool",
+      "top1": "q-17"
+    },
+    {
+      "n": 135,
+      "q": "what to pack",
+      "top1": "q-29"
+    },
+    {
+      "n": 136,
+      "q": "laundry",
+      "top1": "q-31"
+    },
+    {
+      "n": 137,
+      "q": "doctor consultation",
+      "top1": "/online-consultation/"
+    },
+    {
+      "n": 138,
+      "q": "free consultation",
+      "top1": "/online-consultation/"
+    },
+    {
+      "n": 139,
+      "q": "talk to a doctor",
+      "top1": "/online-consultation/"
+    },
+    {
+      "n": 140,
+      "q": "contact",
+      "top1": "/contact-us/"
+    },
+    {
+      "n": 141,
+      "q": "phone number",
+      "top1": "/contact-us/"
+    },
+    {
+      "n": 142,
+      "q": "whatsapp",
+      "top1": "/contact-us/"
+    },
+    {
+      "n": 143,
+      "q": "book",
+      "top1": "/book-now/"
+    },
+    {
+      "n": 144,
+      "q": "enquiry",
+      "top1": "/enquiry-form/"
+    },
+    {
+      "n": 145,
+      "q": "kairali palakkad",
+      "top1": "/"
+    },
+    {
+      "n": 146,
+      "q": "kairali ayurvedic healing village",
+      "top1": "/"
+    },
+    {
+      "n": 147,
+      "q": "nabh",
+      "top1": "/accreditations/"
+    },
+    {
+      "n": 148,
+      "q": "awards",
+      "top1": "/awards-and-accolades/"
+    },
+    {
+      "n": 149,
+      "q": "reviews",
+      "top1": "/read-feedback/"
+    },
+    {
+      "n": 150,
+      "q": "offers",
+      "top1": "/offers/"
+    },
+    {
+      "n": 151,
+      "q": "senior citizen",
+      "top1": "/offers/senior-citizen-offer/"
+    },
+    {
+      "n": 152,
+      "q": "discount",
+      "top1": "/offers/"
+    },
+    {
+      "n": 153,
+      "q": "army discount",
+      "top1": "/offers/defence-paramilitary-personnel-get-upto-30-off/"
+    },
+    {
+      "n": 154,
+      "q": "gift voucher",
+      "top1": "/gift-vouchers/"
+    },
+    {
+      "n": 155,
+      "q": "yoga retreat",
+      "top1": "/yoga-retreats/"
+    },
+    {
+      "n": 156,
+      "q": "meditation",
+      "top1": "/yoga-and-meditation-package/"
+    },
+    {
+      "n": 157,
+      "q": "yoga teacher training",
+      "top1": "/yoga-meditation-training/"
+    },
+    {
+      "n": 158,
+      "q": "training course",
+      "top1": "/ayurveda-training-programme/"
+    },
+    {
+      "n": 159,
+      "q": "ayurveda course fees",
+      "top1": "/training-course-fees/"
+    },
+    {
+      "n": 160,
+      "q": "panchakarma therapist training",
+      "top1": "/ayurveda-training-programme/"
+    },
+    {
+      "n": 161,
+      "q": "tap-hv",
+      "top1": "/three-day-short-term-ayurveda-certificate-program-tap-hv/"
+    },
+    {
+      "n": 162,
+      "q": "internship",
+      "top1": "/internships-at-kairali/"
+    },
+    {
+      "n": 163,
+      "q": "jobs",
+      "top1": "/careers/"
+    },
+    {
+      "n": 164,
+      "q": "gallery",
+      "top1": "/gallery/"
+    },
+    {
+      "n": 165,
+      "q": "video",
+      "top1": "/video-gallery/"
+    },
+    {
+      "n": 166,
+      "q": "faq",
+      "top1": "/faqs-downloads/"
+    },
+    {
+      "n": 167,
+      "q": "cancellation policy",
+      "top1": "/cancellation-and-refund-policy/"
+    },
+    {
+      "n": 168,
+      "q": "walk in treatment",
+      "top1": "/walk-in-ayurveda-treatment/"
+    },
+    {
+      "n": 169,
+      "q": "monsoon treatment",
+      "top1": "/karkidaka-chikitsha-or-monsoon-wellness.html"
+    },
+    {
+      "n": 170,
+      "q": "what is panchakarma",
+      "top1": "/what-is-panchkarma/"
+    },
+    {
+      "n": 171,
+      "q": "chest pain",
+      "cls": "URGENT_MEDICAL_HELP"
+    },
+    {
+      "n": 172,
+      "q": "face drooping since this morning",
+      "cls": "URGENT_MEDICAL_HELP"
+    },
+    {
+      "n": 173,
+      "q": "hiv",
+      "cls": "NOT_TREATED"
+    },
+    {
+      "n": 174,
+      "q": "fertility",
+      "cls": "CONSULT_FIRST"
+    },
+    {
+      "n": 175,
+      "q": "hair fall",
+      "cls": "CONSULT_FIRST"
+    },
+    {
+      "n": 176,
+      "q": "asdfgh",
+      "top1": null,
+      "cls": "OUT_OF_SCOPE"
+    }
   ],
   "faq": [
-    { "n": 1, "q": "airport", "top1": "q-23" },
-    { "n": 2, "q": "flight", "top1": "q-23" },
-    { "n": 3, "q": "coimbatore", "top1": "q-23" },
-    { "n": 4, "q": "cochin airport", "top1": "q-23" },
-    { "n": 5, "q": "train", "top1": "q-23" },
-    { "n": 6, "q": "pickup", "top1": "q-24" },
-    { "n": 7, "q": "taxi", "top1": "q-24" },
-    { "n": 8, "q": "transfer cost", "top1": "q-24" },
-    { "n": 9, "q": "from delhi", "top1": "q-25" },
-    { "n": 10, "q": "visa", "top1": "q-36" },
-    { "n": 11, "q": "vissa", "top1": "q-36" },
-    { "n": 12, "q": "e visa", "top1": "q-36" },
-    { "n": 13, "q": "medical visa", "top1": "q-36" },
-    { "n": 14, "q": "insurance", "top1": "q-32" },
-    { "n": 15, "q": "insurence", "top1": "q-32" },
-    { "n": 16, "q": "reimbursement", "top1": "q-32" },
-    { "n": 17, "q": "cashless", "top1": "q-32" },
-    { "n": 18, "q": "payment", "top1": "q-34" },
-    { "n": 19, "q": "credit card", "top1": "q-34" },
-    { "n": 20, "q": "upi", "top1": "q-34" },
-    { "n": 21, "q": "advance", "top1": "q-34" },
-    { "n": 22, "q": "food", "top1": "q-20" },
-    { "n": 23, "q": "veg", "top1": "q-20" },
-    { "n": 24, "q": "vegan", "top1": "q-21" },
-    { "n": 25, "q": "gluten", "top1": "q-21" },
-    { "n": 26, "q": "allergy", "top1": "q-21" },
-    { "n": 27, "q": "alcohol", "top1": "q-22" },
-    { "n": 28, "q": "coffee", "top1": "q-22" },
-    { "n": 29, "q": "wifi", "top1": "q-17" },
-    { "n": 30, "q": "internet", "top1": "q-17" },
-    { "n": 31, "q": "pool", "top1": "q-17" },
-    { "n": 32, "q": "villa", "top1": "q-16" },
-    { "n": 33, "q": "price", "top1": "q-19" },
-    { "n": 34, "q": "rates", "top1": "q-19" },
-    { "n": 35, "q": "what to pack", "top1": "q-29" },
-    { "n": 36, "q": "clothes", "top1": "q-30" },
-    { "n": 37, "q": "laundry", "top1": "q-31" },
-    { "n": 38, "q": "laundary", "top1": "q-31" },
-    { "n": 39, "q": "weather", "top1": "q-27" },
-    { "n": 40, "q": "monsoon", "top1": "q-28" },
-    { "n": 41, "q": "best time", "top1": "q-28" },
-    { "n": 42, "q": "how long", "top1": "q-14" },
-    { "n": 43, "q": "duration", "top1": "q-14" },
-    { "n": 44, "q": "side effects", "top1": "q-15" },
-    { "n": 45, "q": "doctors qualified", "top1": "q-11" },
-    { "n": 46, "q": "bams", "top1": "q-11" },
-    { "n": 47, "q": "senior", "top1": "q-35" },
-    { "n": 48, "q": "elderly", "top1": "q-35" },
-    { "n": 49, "q": "wheelchair", "top1": "q-35" },
-    { "n": 50, "q": "emergency", "top1": "q-37" },
-    { "n": 51, "q": "medicines take home", "top1": "q-40" },
-    { "n": 52, "q": "follow up", "top1": "q-41" },
-    { "n": 53, "q": "online consultation after", "top1": "q-41" },
-    { "n": 54, "q": "training", "top1": "q-44" },
-    { "n": 55, "q": "cooking class", "top1": "q-42" },
-    { "n": 56, "q": "dosha", "top1": "q-10" },
-    { "n": 57, "q": "psoriasis", "top1": "q-12" },
-    { "n": 58, "q": "diabetes", "top1": "q-12" },
-    { "n": 59, "q": "panchakarma", "top1": "q-13" },
-    { "n": 60, "q": "panchkarma", "top1": "q-13" },
-    { "n": 61, "q": "xyzzy", "top1": null }
+    {
+      "n": 1,
+      "q": "airport",
+      "top1": "q-23"
+    },
+    {
+      "n": 2,
+      "q": "flight",
+      "top1": "q-23"
+    },
+    {
+      "n": 3,
+      "q": "coimbatore",
+      "top1": "q-23"
+    },
+    {
+      "n": 4,
+      "q": "cochin airport",
+      "top1": "q-23"
+    },
+    {
+      "n": 5,
+      "q": "train",
+      "top1": "q-23"
+    },
+    {
+      "n": 6,
+      "q": "pickup",
+      "top1": "q-24"
+    },
+    {
+      "n": 7,
+      "q": "taxi",
+      "top1": "q-24"
+    },
+    {
+      "n": 8,
+      "q": "transfer cost",
+      "top1": "q-24"
+    },
+    {
+      "n": 9,
+      "q": "from delhi",
+      "top1": "q-25"
+    },
+    {
+      "n": 10,
+      "q": "visa",
+      "top1": "q-36"
+    },
+    {
+      "n": 11,
+      "q": "vissa",
+      "top1": "q-36"
+    },
+    {
+      "n": 12,
+      "q": "e visa",
+      "top1": "q-36"
+    },
+    {
+      "n": 13,
+      "q": "medical visa",
+      "top1": "q-36"
+    },
+    {
+      "n": 14,
+      "q": "insurance",
+      "top1": "q-32"
+    },
+    {
+      "n": 15,
+      "q": "insurence",
+      "top1": "q-32"
+    },
+    {
+      "n": 16,
+      "q": "reimbursement",
+      "top1": "q-32"
+    },
+    {
+      "n": 17,
+      "q": "cashless",
+      "top1": "q-32"
+    },
+    {
+      "n": 18,
+      "q": "payment",
+      "top1": "q-34"
+    },
+    {
+      "n": 19,
+      "q": "credit card",
+      "top1": "q-34"
+    },
+    {
+      "n": 20,
+      "q": "upi",
+      "top1": "q-34"
+    },
+    {
+      "n": 21,
+      "q": "advance",
+      "top1": "q-34"
+    },
+    {
+      "n": 22,
+      "q": "food",
+      "top1": "q-20"
+    },
+    {
+      "n": 23,
+      "q": "veg",
+      "top1": "q-20"
+    },
+    {
+      "n": 24,
+      "q": "vegan",
+      "top1": "q-21"
+    },
+    {
+      "n": 25,
+      "q": "gluten",
+      "top1": "q-21"
+    },
+    {
+      "n": 26,
+      "q": "allergy",
+      "top1": "q-21"
+    },
+    {
+      "n": 27,
+      "q": "alcohol",
+      "top1": "q-22"
+    },
+    {
+      "n": 28,
+      "q": "coffee",
+      "top1": "q-22"
+    },
+    {
+      "n": 29,
+      "q": "wifi",
+      "top1": "q-17"
+    },
+    {
+      "n": 30,
+      "q": "internet",
+      "top1": "q-17"
+    },
+    {
+      "n": 31,
+      "q": "pool",
+      "top1": "q-17"
+    },
+    {
+      "n": 32,
+      "q": "villa",
+      "top1": "q-16"
+    },
+    {
+      "n": 33,
+      "q": "price",
+      "top1": "q-19"
+    },
+    {
+      "n": 34,
+      "q": "rates",
+      "top1": "q-19"
+    },
+    {
+      "n": 35,
+      "q": "what to pack",
+      "top1": "q-29"
+    },
+    {
+      "n": 36,
+      "q": "clothes",
+      "top1": "q-30"
+    },
+    {
+      "n": 37,
+      "q": "laundry",
+      "top1": "q-31"
+    },
+    {
+      "n": 38,
+      "q": "laundary",
+      "top1": "q-31"
+    },
+    {
+      "n": 39,
+      "q": "weather",
+      "top1": "q-27"
+    },
+    {
+      "n": 40,
+      "q": "monsoon",
+      "top1": "q-28"
+    },
+    {
+      "n": 41,
+      "q": "best time",
+      "top1": "q-28"
+    },
+    {
+      "n": 42,
+      "q": "how long",
+      "top1": "q-14"
+    },
+    {
+      "n": 43,
+      "q": "duration",
+      "top1": "q-14"
+    },
+    {
+      "n": 44,
+      "q": "side effects",
+      "top1": "q-15"
+    },
+    {
+      "n": 45,
+      "q": "doctors qualified",
+      "top1": "q-11"
+    },
+    {
+      "n": 46,
+      "q": "bams",
+      "top1": "q-11"
+    },
+    {
+      "n": 47,
+      "q": "senior",
+      "top1": "q-35"
+    },
+    {
+      "n": 48,
+      "q": "elderly",
+      "top1": "q-35"
+    },
+    {
+      "n": 49,
+      "q": "wheelchair",
+      "top1": "q-35"
+    },
+    {
+      "n": 50,
+      "q": "emergency",
+      "top1": "q-37"
+    },
+    {
+      "n": 51,
+      "q": "medicines take home",
+      "top1": "q-40"
+    },
+    {
+      "n": 52,
+      "q": "follow up",
+      "top1": "q-41"
+    },
+    {
+      "n": 53,
+      "q": "online consultation after",
+      "top1": "q-41"
+    },
+    {
+      "n": 54,
+      "q": "training",
+      "top1": "q-44"
+    },
+    {
+      "n": 55,
+      "q": "cooking class",
+      "top1": "q-42"
+    },
+    {
+      "n": 56,
+      "q": "dosha",
+      "top1": "q-10"
+    },
+    {
+      "n": 57,
+      "q": "psoriasis",
+      "top1": "q-12"
+    },
+    {
+      "n": 58,
+      "q": "diabetes",
+      "top1": "q-12"
+    },
+    {
+      "n": 59,
+      "q": "panchakarma",
+      "top1": "q-13"
+    },
+    {
+      "n": 60,
+      "q": "panchkarma",
+      "top1": "q-13"
+    },
+    {
+      "n": 61,
+      "q": "xyzzy",
+      "top1": null
+    },
+    {
+      "n": 62,
+      "q": "free consultaton",
+      "top1": "q-45"
+    },
+    {
+      "n": 63,
+      "q": "is the consultation free",
+      "top1": "q-45"
+    },
+    {
+      "n": 64,
+      "q": "can my wife stay with me",
+      "top1": "q-46"
+    },
+    {
+      "n": 65,
+      "q": "does a companion pay",
+      "top1": "q-46"
+    },
+    {
+      "n": 66,
+      "q": "age limit",
+      "top1": "q-47"
+    },
+    {
+      "n": 67,
+      "q": "can i bring my kids",
+      "top1": "q-48"
+    },
+    {
+      "n": 68,
+      "q": "children",
+      "top1": "q-48"
+    },
+    {
+      "n": 69,
+      "q": "is panchakarma painful",
+      "top1": "q-49"
+    },
+    {
+      "n": 70,
+      "q": "pay in dollars",
+      "top1": [
+        "q-50",
+        "q-34"
+      ]
+    },
+    {
+      "n": 71,
+      "q": "is gst included",
+      "top1": "q-50"
+    },
+    {
+      "n": 72,
+      "q": "cancelation policy",
+      "top1": "q-51"
+    },
+    {
+      "n": 73,
+      "q": "refund",
+      "top1": "q-51"
+    },
+    {
+      "n": 74,
+      "q": "senior citizen discount",
+      "top1": "q-52"
+    },
+    {
+      "n": 75,
+      "q": "wifi in villa",
+      "top1": [
+        "q-53",
+        "q-17"
+      ]
+    },
+    {
+      "n": 76,
+      "q": "is there ac",
+      "top1": "q-53"
+    },
+    {
+      "n": 77,
+      "q": "mobile signal",
+      "top1": "q-53"
+    },
+    {
+      "n": 78,
+      "q": "share a villa",
+      "top1": "q-54"
+    },
+    {
+      "n": 79,
+      "q": "dress code",
+      "top1": [
+        "q-55",
+        "q-30"
+      ]
+    },
+    {
+      "n": 80,
+      "q": "late night taxi from coimbatore",
+      "top1": "q-56"
+    },
+    {
+      "n": 81,
+      "q": "invitation letter for visa",
+      "top1": [
+        "q-57",
+        "q-36"
+      ]
+    },
+    {
+      "n": 82,
+      "q": "discharge summary",
+      "top1": "q-58"
+    }
   ]
 }
