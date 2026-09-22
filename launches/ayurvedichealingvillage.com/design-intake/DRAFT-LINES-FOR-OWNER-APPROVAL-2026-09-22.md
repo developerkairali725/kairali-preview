@@ -74,3 +74,47 @@ on all eight routes, replaced by one consistent always-open 'More in the Knowled
 (no accordion — collapsing fails the same 45+ readers rule 9 protects), current page marked not
 linked, plus prev/next. Everything live is retained verbatim underneath." Its veto ask: "reusing
 the Knowledge Center list onto the four routes that lack it moves existing content between pages."
+
+## Owner rulings (AskUserQuestion, 2026-09-22 ~09:00–09:12 IST) and what was applied
+- T7 four lines, T8 four lines, Sitemap, Index Directory, Legal Policy standfirsts — APPROVED as
+  written (D-20260922-08).
+- T6 — standfirst approved; not-sold line replaced with the owner's ruling (D-20260922-06):
+  "Products are not sold on this website. Each range can be bought from the Kairali product
+  website, www.kairaliproducts.com, and from the hospital's own pharmacy as prescribed by the
+  doctors." (DRAFT chip kept on this one line for the owner's final look.)
+- T10 — standfirst approved (D-20260922-07); course fees RULED all-inclusive per-night model, the
+  separate course-fee column removed (D-20260922-09); full V2 rate sheet applied.
+
+### Claude Design's report after applying (verbatim)
+> All three rulings applied.
+>
+> 1. Chips removed, text kept — Past Retreat Record (both standfirsts, Archive banner; the
+> "Concluded. Not open for admission." card never carried one), Offers (Special Offers standfirst,
+> Current offers intro, Gift vouchers intro, Baoli standfirst), Sitemap, Index Directory, Legal
+> Policy. Also removed the Course and Fees standfirst chip, since you approved that line.
+>
+> 2. Product Family — standfirst chip removed; not-sold line replaced with your wording verbatim,
+> www.kairaliproducts.com linked, DRAFT chip kept on that line only.
+>
+> 3. Course and Fees — rebuilt on the complete sheet, both views. Five programmes with durations,
+> codes and descriptions; full villa table (4 categories × single/double × INR/USD/EUR);
+> inclusions in the sheet's three groups; programme notes; transport; booking and payment
+> policies. Every course-fee cell stays [TO CONFIRM], schedule cells too. No totals anywhere. The
+> superseded 2024-25 PDF and the 7 Sep tariff extract are no longer cited.
+>
+> Checks: tags balanced in all 14 touched files; no expressions in template holes; zero chips left
+> except the one you asked to keep; spot-checked ₹18,410 through ₹55,520, $644, €694, all five
+> course codes, the 20% group discount, transport rates, 40% deposit and the certification body —
+> all present in both views.
+>
+> Two things to note. "luxury" → "villa accommodation" as instructed, with the source word
+> recorded in the new notes/course-and-fees-template-page.md. My register scan also caught "World
+> Luxury Award Winner" already on the page — an award title, pre-existing, left alone; say if the
+> ban covers award names.
+>
+> And the approved standfirst says accommodation rates are "listed separately" while the sheet is
+> all-inclusive. The body now states the all-inclusive basis plainly, so read together they hold,
+> but "separately" could still be taken as "charged extra" by someone skimming.
+
+Edited 15 files. Then (D-20260922-09) the course-fee column and its cells were removed on both
+views; its check ran after. ("World Luxury Award Winner" is the standing exception — no action.)
