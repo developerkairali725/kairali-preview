@@ -8,7 +8,7 @@ final build; content/draft approvals by MCQ; remove all previous staging deploym
 **Rulings used:** D-20260922-10 ([TO CONFIRM] fact chips stay visible), D-20260922-11 (FAQ PDFs self-hosted),
 D-20260922-12 (drafted lines approved as written), D-20260921-14 (homepage + package pages untouched).
 
-**Preview (the ONE deployment kept, after the chrome fixes of §6):** https://kairali-web-factory-ayurvedichealingvillage-he1sz139j-kairali.vercel.app — earlier that evening: https://kairali-web-factory-ayurvedichealingvillage-o84n2ywra-kairali.vercel.app (Vercel SSO, owner logged in; verified from the owner's Chrome: campaign-nine carries the chrome, 0 notes, the FAQ shelf serves 5 PDFs, no overflow)
+**Preview (the ONE deployment kept, after §6 and the hero-header fix):** https://kairali-web-factory-ayurvedichealingvillage-lcoihgtog-kairali.vercel.app — earlier: https://kairali-web-factory-ayurvedichealingvillage-he1sz139j-kairali.vercel.app — earlier that evening: https://kairali-web-factory-ayurvedichealingvillage-o84n2ywra-kairali.vercel.app (Vercel SSO, owner logged in; verified from the owner's Chrome: campaign-nine carries the chrome, 0 notes, the FAQ shelf serves 5 PDFs, no overflow)
 
 ## 1. What was measured before anything was changed
 
@@ -204,7 +204,7 @@ site chrome was NOT yet one thing:
 | No copyright line on the desktop footer or the homepage footer (mobile has one) | all | `public/design/chrome.js` appends "© 1908 — <year> Kairali — The Ayurvedic Healing Village." to any footer without one (D-20260922-18). |
 | No footer carries WhatsApp +91 92898 38797 (only the hospital line +91 9555 156 156) | all 508 | chrome.js adds a wa.me link under the phone in every footer (D-20260922-19). |
 | /my-account/, /test-page/, /testing/ render the homepage design | 3 | `robotsOverrides` noindex, nofollow (production) + 410 note in the go-live checklist (D-20260922-20). |
-| Second `<header>` element: the Claude Design page heroes are `<header>` elements outside `<main>` | faqs, how-to-reach, sitemap, product-range, attractions-above-50kms, terms, training-course-fees | Left: a `<header>` outside `<main>` is a landmark nit, not a second site header; noted for the designer. |
+| Second `<header>` element: the Claude Design page heroes are `<header>` elements outside `<main>` | faqs, how-to-reach, sitemap, product-range, attractions-above-50kms, terms, training-course-fees | FIXED on the owner's word ("fix those 7 hero header tags too"): `repair-claude-design-chrome` step 7 turns each hero `<header>` into a `<section>` (same attributes and styles; no CSS or logic targeted the tag). Verified: exactly one visible header on all 8 routes (incl. /how-to-reach-old/) at 390/1280/1440. |
 
 Verification (local build, 13 routes × 390/1280/1440 incl. home, campaign, retreat, panchkarma, packages listing,
 a package page, and the Claude Design pages): header 64px + burger on every route at 390; header 73px (one row) at
