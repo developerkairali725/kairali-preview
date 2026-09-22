@@ -119,6 +119,9 @@
     var ps = main.querySelectorAll("p");
     for (var i = 0; i < ps.length; i++) {
       var t = (ps[i].textContent || "").replace(/\s+/g, " ").trim();
+      // a paragraph that is only a dash ("–") is a WordPress separator the
+      // capture kept as copy (the hero of /things-to-do/, /village-facilities/)
+      if (/^[-–—]$/.test(t) && !ps[i].querySelector("img,a")) { ps[i].parentNode.removeChild(ps[i]); continue; }
       // a breadcrumb line: "Home – Page" as text, or the same with "Home" linked to /
       if (/^Home [–»>] .{1,80}$/.test(t) && !ps[i].querySelector("img") && ps[i].querySelectorAll("a").length <= 2 && ![...ps[i].querySelectorAll("a")].some(function (a) { return !/^(\/|https?:\/\/(www\.)?ayurvedichealingvillage\.com\/?)(index\.php)?$/.test(a.getAttribute("href") || ""); })) ps[i].parentNode.removeChild(ps[i]);
     }

@@ -134,3 +134,20 @@
   letter-spacing:1.5px !important; text-transform:uppercase !important;
   border-radius:4px !important;
 }
+
+/* ---- the offer hero reads in paper on its dark wash --------------------
+   (owner, 23 Sep 2026, /offers/senior-citizen-offer/: the wash above made the
+   hero a photograph but the offer variant's h1, lead and stats kept the ink
+   colour they were designed with for a paper ground — dark on dark). The
+   pill keeps its white card. */
+[data-ahv-family="campaign-retreat"] main section:first-of-type h1,
+[data-ahv-family="campaign-retreat"] main section:first-of-type h1 *,
+[data-ahv-family="campaign-retreat"] main section:first-of-type p:not([style*="background:#fff"]):not([style*="background: rgb(255, 255, 255)"]),
+[data-ahv-family="campaign-retreat"] main section:first-of-type dl, [data-ahv-family="campaign-retreat"] main section:first-of-type dt, [data-ahv-family="campaign-retreat"] main section:first-of-type dd,
+[data-ahv-family="campaign-retreat"] main section:first-of-type li, [data-ahv-family="campaign-retreat"] main section:first-of-type span:not([class*="pill"]) {
+  color:#F7F4EA !important;
+}
+[data-ahv-family="campaign-retreat"] main section:first-of-type p[style*="border-left"] { border-left-color:#EEB41E !important; }
+[data-ahv-family="campaign-retreat"] main section:first-of-type p[style*="background:#fff"] *,
+[data-ahv-family="campaign-retreat"] main section:first-of-type p[style*="background: rgb(255, 255, 255)"] * { color:#5A4420 !important; }
+[data-ahv-family="campaign-retreat"] main section:first-of-type { padding-bottom:36px !important; border-radius:4px; }

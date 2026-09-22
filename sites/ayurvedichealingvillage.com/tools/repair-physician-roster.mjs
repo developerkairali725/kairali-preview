@@ -151,6 +151,29 @@ for (const id of ["home-hi-fi-v4", "home-mobile"]) {
   if (NAME_RE.test(t) || SRC_RE.test(t)) problems.push(`${id}: a mention survives`);
 }
 
+/* 4. Dr. Akhila Oommen's OWN photograph (owner, 23 Sep 2026: "homepage akhila
+      oommen photo is of ashika — change it"). Looked at side by side: the
+      woman in team-akhila-oommen-c/.jpg is the woman wearing the "DR. ASHIKHA"
+      badge in team-ashika.jpg; the woman in team-akhila.jpg (studio, lanyard)
+      is the woman in the garden portrait that the archive filed under
+      Ashikha's name. So the garden portrait IS Akhila: it ships as
+      team-akhila-oommen-2.webp (a copy under her own name — the old filename
+      may never be referenced again, see the postcondition) and every tile,
+      avatar and dataset that painted the "-c" file now paints it. */
+{
+  const OLD = /\/ahv\/assets\/img\/team-akhila-oommen-c\.(webp|jpg)/g, NEW = "/ahv/assets/img/team-akhila-oommen-2.$1";
+  for (const dir of [ASSETS, VIEWS]) for (const f of readdirSync(dir)) {
+    if (!/\.(js|json)$/.test(f)) continue;
+    const p = join(dir, f), s = readFileSync(p, "utf8");
+    if (!OLD.test(s)) { OLD.lastIndex = 0; continue; }
+    OLD.lastIndex = 0;
+    const n = (s.match(OLD) || []).length;
+    if (!DRY) writeFileSync(p, s.replace(OLD, NEW));
+    removed += n;
+    console.log(`${DRY ? "[dry] " : "fixed  "}${f}  (${n} photo reference(s) → team-akhila-oommen-2)`);
+  }
+}
+
 /* Postcondition across every served payload. */
 if (!DRY) {
   for (const dir of [ASSETS, VIEWS]) for (const f of readdirSync(dir)) {

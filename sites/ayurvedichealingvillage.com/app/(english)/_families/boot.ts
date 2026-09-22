@@ -182,6 +182,12 @@ export const BOOT_SCRIPT = `
   }
 
   document.addEventListener("submit", function (e) {
+    // A GET search form (the homepage finder, the search dialog) submits no
+    // data anywhere: it is navigation to /ayurvedic-treatments/?q=… and must
+    // work (owner, 23 Sep 2026: "Find a programme" did nothing). Everything
+    // else stays blocked.
+    var f = e.target;
+    if (f && f.getAttribute && f.getAttribute("role") === "search" && /^get$/i.test(f.getAttribute("method") || "")) return;
     e.preventDefault();
   }, true);
 

@@ -77,3 +77,14 @@
 }
 @media (prefers-reduced-motion:reduce){.ahvs-panel{animation:none}}
 @media print{.ahvs{display:none!important}}
+
+/* ---- homepage "I am looking for" suggestions (combobox under the input) ---- */
+.ahvs-home-list{position:absolute;left:0;right:0;top:100%;z-index:60;margin:6px 0 0;padding:6px;list-style:none;background:#fff;border:1px solid #E4DCC8;border-top:3px solid #C1882C;border-radius:4px;box-shadow:0 14px 34px rgba(60,45,20,.18);max-height:min(420px,60vh);overflow:auto}
+.ahvs-home-list li{margin:0;padding:0;display:block}
+.ahvs-home-list li::marker{content:none}
+.ahvs-home-row{display:flex;flex-direction:column;gap:2px;min-height:48px;padding:10px 12px;border-radius:3px;text-decoration:none;color:#2A2118;font-family:Mulish,system-ui,sans-serif;text-align:left}
+.ahvs-home-t{font-size:17px;line-height:1.35}
+.ahvs-home-t mark{background:transparent;color:#006038;font-weight:800}
+.ahvs-home-a{font-size:13.5px;line-height:1.4;color:#75695A}
+.ahvs-home-list li[aria-selected="true"] .ahvs-home-row,.ahvs-home-row:hover{background:#F7F4EA;border-left:3px solid #C1882C;padding-left:9px}
+@media (max-width:699px){.ahvs-home-list{max-height:50vh}}

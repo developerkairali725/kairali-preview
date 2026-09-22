@@ -1898,3 +1898,28 @@ from the page's own og:title "FAQs & Downloads". It is an SEO title on a ranking
 own judgment (protection-map rule: no ranking signal dropped without the owner). The meta description WAS rewritten
 (it carried the banned j-word). Options: keep · "FAQs & Downloads | Kairali – The Ayurvedic Healing Village" · your
 wording. One line in english-candidate/record-field-overrides.json applies it to the dataset and the manifest.
+
+## Q-AHV-SANSKRIT-YOGA — 2026-09-23 00:49:06 IST
+**Two package pages have no Sanskrit name in the owner's programme register**, so the line under the H1 could not be
+added (HARD GATE 6): /yoga-meditation-program/ (not in all-programs-data.js at all) and /yoga-meditation-training/
+(register entry `sanskrit: null`). The other three missing ones (Panchakarma → Pañchakarma, Addiction Recovery →
+Madātyaya Chikitsa, Joint Rehabilitation → Sandhivātam Chikitsa) were filled from the register by
+tools/repair-sanskrit-names.mjs. Please supply the two names (or say they carry none).
+
+## Q-AHV-AKHILA-PHOTO — 2026-09-23 00:49:06 IST
+**Please confirm the photograph now used for Dr. Akhila Oommen.** Looked at side by side: the woman in
+team-akhila-oommen-c.jpg is the woman wearing the "DR. ASHIKHA" badge in team-ashika.jpg (so that file was Ashikha's,
+as you said); the woman in team-akhila.jpg (studio, lanyard) is the same woman as the garden portrait the archive had
+filed as team-ashikha-raj.jpg. That garden portrait now ships as team-akhila-oommen-2.webp on the homepage roster and
+the consultation panel. If that is NOT Akhila, name the right file (or send her photo) and one line in
+tools/repair-physician-roster.mjs step 4 swaps it everywhere.
+
+## Q-AHV-OFFER-PHOTOS — 2026-09-23 00:49:06 IST
+**Photographs I chose for the offers pages — swap any you dislike, all are files the site already serves:**
+/offers/senior-citizen-offer/ hero and the /offers/ featured block → patient with physician on the verandah
+(gallery/9f51c2fa…); senior card → janu vasti treatment (gallery-2026/treatments/vasti-janu-vasti-04); athletes card →
+yoga side-stretch (gallery-2026/photo/yoga-side-female-patient-02); defence card → herbal poultice
+(gallery-2026/treatments/hero-detail-cloth-herbal-poultice-01); gift vouchers → Kairtis oil canister. The stock
+"senior couple in a park" is gone from both pages; the second stock image on the senior page (woman with older woman,
+AHV-V2-465) is still there — say the word and it goes the same way. Paths are in tools/repair-offers-cards.mjs and
+tools/repair-senior-offer.mjs.

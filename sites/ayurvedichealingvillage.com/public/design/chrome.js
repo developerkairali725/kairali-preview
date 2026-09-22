@@ -98,11 +98,30 @@
       a.addEventListener("click", openChat);
     }
   }
+  // ONE chat bubble (owner, 23 Sep 2026: "why are there two chat bubbles in
+  // desktop mode — chat with priya and the circle bubble"). The homepage and
+  // the package pages carry the design's own floating "CHAT WITH PRIYA"
+  // button (a chat.kairali.com link, dead); Chatbase then adds its round
+  // launcher beside it. Where the design's button exists it becomes THE
+  // opener and Chatbase's launcher and nudge bubbles are hidden; elsewhere
+  // Chatbase's launcher stays as the only chat control.
+  function priyaWidget() {
+    var links = root.querySelectorAll('a[aria-label="Chat with Priya"][href^="https://chat.kairali.com"], a[aria-label="Chat with Priya"][href="#chat"]');
+    if (!links.length) return;
+    chatLinks(root);
+    if (!document.getElementById("ahv-one-chat")) {
+      var st = document.createElement("style");
+      st.id = "ahv-one-chat";
+      st.textContent = "#chatbase-bubble-button,#chatbase-message-bubbles{display:none !important}";
+      document.head.appendChild(st);
+    }
+  }
   function pass() {
     scheduled = false;
     try {
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
+      priyaWidget();
     } catch (e) { /* never break the page */ }
   }
   function schedule() {

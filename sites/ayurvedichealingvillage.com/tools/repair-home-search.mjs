@@ -42,7 +42,10 @@ function once(text, re, repl, label) {
   if (n !== 1) throw new Error(`${label}: expected exactly one match, found ${n}`);
   return text.replace(re, repl);
 }
-const SEARCH_BTN = (style, inner, label) => `<button type="button" aria-label="${label}" aria-haspopup="dialog" aria-controls="ahv-search-dialog" aria-expanded="false" data-ahv-home-search="1" style="${style};background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit">${inner}</button>`;
+// `color:inherit` only when the anchor set no colour of its own: the hero
+// header's SEARCH is white on the film and must stay white (owner, 23 Sep 2026:
+// "search icon text is brown … make it white").
+const SEARCH_BTN = (style, inner, label) => `<button type="button" aria-label="${label}" aria-haspopup="dialog" aria-controls="ahv-search-dialog" aria-expanded="false" data-ahv-home-search="1" style="${style};background:none;border:0;padding:0;cursor:pointer;font:inherit${/(^|;)\s*color:/.test(style) ? "" : ";color:inherit"}">${inner}</button>`;
 const inputStyle = (size) => `width:100%;min-width:0;box-sizing:border-box;min-height:44px;border:0;border-bottom:1.5px solid #D8D1C0;background:transparent;outline:none;font-family:'Mulish',sans-serif;font-size:${size};color:#2A2118;padding:4px 0`;
 const dateStyle = `flex:1;min-width:0;box-sizing:border-box;min-height:44px;border:0;border-bottom:1.5px solid #D8D1C0;background:transparent;outline:none;font-family:'Mulish',sans-serif;font-size:16px;color:#2A2118;padding:4px 0`;
 
@@ -50,6 +53,13 @@ function repair(id) {
   const file = path.join(VIEWS, id + ".json");
   const view = JSON.parse(fs.readFileSync(file, "utf8"));
   let T = view.template;
+  // Post-passes (23 Sep 2026), idempotent on an already-wired view: the white
+  // SEARCH keeps its colour, and the bar's Enquire link stays on this origin
+  // (an absolute production URL left the preview for the live site).
+  let P = T;
+  P = P.replace(/(<button[^>]*data-ahv-home-search="1"[^>]*style="color:#fff;[^"]*?);color:inherit"/g, '$1"');
+  P = P.replace(/(<form[^>]*data-ahv-home-finder="1"[\s\S]*?<\/form>)/, (m) => m.replace(/href="https:\/\/ayurvedichealingvillage\.com\//g, 'href="/'));
+  if (P !== T) { T = P; view.template = T; if (!DRY) fs.writeFileSync(file, JSON.stringify(view, null, 1) + "\n"); console.log(`post   ${id}: white SEARCH / same-origin links`); }
   if (T.includes('data-ahv-home-finder="1"')) { console.log(`as-is  ${id}`); return; }
   const desktop = id === "home-hi-fi-v4";
 

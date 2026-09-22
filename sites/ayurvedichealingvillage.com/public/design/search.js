@@ -617,5 +617,62 @@
     openDialog(t);
   }, true);
   doc.addEventListener("pointerenter", function (e) { if (e.target && e.target.closest && e.target.closest(TRIGGER)) load().catch(function () {}); }, true);
+
+  /* ---- the homepage "I am looking for" bar: live suggestions (owner, 23 Sep 2026:
+     "should have auto suggest or auto complete"). The same engine and index as the
+     dialog; a combobox listbox under the input with up to six rows (programmes first,
+     then questions and pages), arrow keys + Enter to follow a row, Escape to close,
+     Enter with nothing chosen submits the form to the finder as before. Rows are
+     ≥48px, 17px type. Nothing here fires analytics. */
+  function homeSuggest() {
+    var form = doc.querySelector('form[data-ahv-home-finder="1"]');
+    if (!form || form.getAttribute("data-ahvs-suggest") === "1") return;
+    var inp = form.querySelector('input[name="q"]');
+    if (!inp) return;
+    form.setAttribute("data-ahvs-suggest", "1");
+    var host = inp.parentNode;
+    if (getComputedStyle(host).position === "static") host.style.position = "relative";
+    var box = doc.createElement("ul");
+    box.id = "ahvs-home-list"; box.className = "ahvs-home-list"; box.setAttribute("role", "listbox");
+    box.setAttribute("aria-label", "Suggestions"); box.hidden = true;
+    host.appendChild(box);
+    inp.setAttribute("role", "combobox"); inp.setAttribute("aria-autocomplete", "list");
+    inp.setAttribute("aria-controls", box.id); inp.setAttribute("aria-expanded", "false");
+    var active = -1, rows = [], t2 = null;
+    function hide() { box.hidden = true; box.innerHTML = ""; rows = []; active = -1; inp.setAttribute("aria-expanded", "false"); inp.removeAttribute("aria-activedescendant"); }
+    function paint() {
+      rows.forEach(function (r, i) { r.setAttribute("aria-selected", i === active ? "true" : "false"); });
+      if (active >= 0) inp.setAttribute("aria-activedescendant", rows[active].id); else inp.removeAttribute("aria-activedescendant");
+    }
+    function show() {
+      var q = inp.value.trim();
+      if (q.length < 2 || !engine) { hide(); return; }
+      var res = engine.query(q, { scope: "site" });
+      var list = [];
+      res.programmes.slice(0, 4).forEach(function (r) { var p = r.data; list.push({ href: p.route, t: p.name, a: p.sanskrit || (p.durationDisplay || ""), k: "Programme" }); });
+      res.questions.slice(0, 2).forEach(function (r) { var qd = r.data; list.push({ href: qd.href || ("/faqs-downloads/#" + qd.id), t: qd.q, a: qd.topic || "", k: "Question" }); });
+      res.pages.slice(0, 2).forEach(function (r) { var p = r.data; list.push({ href: p.route, t: p.label, a: p.desc || "", k: "Page" }); });
+      list = list.slice(0, 6);
+      if (!list.length) { hide(); return; }
+      box.innerHTML = list.map(function (it, i) {
+        return '<li id="ahvs-home-opt-' + i + '" role="option" aria-selected="false"><a class="ahvs-home-row" href="' + esc(it.href) + '" tabindex="-1"><span class="ahvs-home-t">' + mark(it.t, res.tokens || []) + '</span><span class="ahvs-home-a">' + esc(it.k) + (it.a ? " · " + esc(String(it.a).slice(0, 70)) : "") + "</span></a></li>";
+      }).join("");
+      rows = Array.prototype.slice.call(box.querySelectorAll("li"));
+      active = -1; box.hidden = false; inp.setAttribute("aria-expanded", "true"); paint();
+    }
+    inp.addEventListener("input", function () { clearTimeout(t2); load().then(function (index) { if (!engine) { engine = createEngine(index); ui = ui || index.ui; } t2 = setTimeout(show, 90); }).catch(function () {}); });
+    inp.addEventListener("focus", function () { load().catch(function () {}); if (inp.value.trim().length >= 2) show(); });
+    inp.addEventListener("keydown", function (e) {
+      if (box.hidden) return;
+      if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(rows.length - 1, active + 1); paint(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(-1, active - 1); paint(); }
+      else if (e.key === "Escape") { e.preventDefault(); hide(); }
+      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); var a = rows[active].querySelector("a"); if (a) root.location.href = a.getAttribute("href"); }
+    });
+    box.addEventListener("mousedown", function (e) { var a = e.target.closest("a"); if (a) { e.preventDefault(); root.location.href = a.getAttribute("href"); } });
+    doc.addEventListener("click", function (e) { if (!host.contains(e.target)) hide(); });
+  }
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", homeSuggest); else homeSuggest();
+  if (root.MutationObserver) { var hsRoot = doc.getElementById("ahv-design-root"); if (hsRoot) new MutationObserver(function () { setTimeout(homeSuggest, 0); }).observe(hsRoot, { childList: true, subtree: true }); }
   // a[href="#search"] in a snapshot without JS would jump to nothing; with JS the capture handler above owns it
 })(typeof window !== "undefined" ? window : globalThis);

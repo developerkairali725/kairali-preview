@@ -67,3 +67,18 @@
   #ahv-design-root main { overflow-x:clip; }   /* clip, not hidden: sticky rails keep working */
 }
 #ahv-design-root[data-ahv-family="ahv-template-legal-policy"] main a { overflow-wrap:anywhere; }
+
+/* ---- the shared header sticks on desktop too (owner, 23 Sep 2026: "the top
+   bar doesn't stick when you scroll down" on /no-smoking/). The mobile half
+   is already sticky (narrow="true" import); the desktop half was static on
+   every page except the homepage, whose own header is fixed. Sticky, not
+   fixed, so nothing is covered and the page needs no offset. The design root
+   clips only on the x axis, which leaves sticky intact. */
+@media (min-width:700px) {
+  /* the header is wrapped in two 73px mount divs; a sticky header can only
+     stick inside its parent, so the OUTER mount (whose parent is the page)
+     is the element that sticks */
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) div:has(> div > header[data-dc-tpl="4"]) {
+    position:sticky !important; top:0 !important; z-index:80 !important;
+  }
+}

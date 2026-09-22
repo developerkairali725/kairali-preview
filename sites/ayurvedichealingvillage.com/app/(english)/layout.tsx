@@ -108,6 +108,14 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             does for the footer; the package component is never edited. */}
         <link rel="stylesheet" href="/design/search.css" />
         <script defer src="/design/search.js" />
+        {/* ONE section navigation for every content family (owner, 23 Sep 2026):
+            the captured WordPress sidebars are removed and a governed rail built
+            from the owner-authorised breadcrumbs takes their place — data from
+            tools/build-section-nav.mjs, layout in section-nav.css, DOM in
+            section-nav.js. Loaded after search.js; runs only on listed routes. */}
+        <link rel="stylesheet" href="/design/section-nav.css" />
+        <script defer src="/design/section-nav.data.js" />
+        <script defer src="/design/section-nav.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />

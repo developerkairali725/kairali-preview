@@ -183,7 +183,9 @@ const run = async () => {
       ).redirects,
     ),
   );
-  let list = (ONLY ? routes.filter((r) => r.path === ONLY) : routes).filter(
+  // --only takes one route or a comma-separated list (23 Sep 2026: one browser for a 120-route partial run)
+  const onlySet = ONLY ? new Set(ONLY.split(",").map((s) => s.trim()).filter(Boolean)) : null;
+  let list = (onlySet ? routes.filter((r) => onlySet.has(r.path)) : routes).filter(
     (r) => !redirected.has(r.path),
   );
   if (LIMIT) list = list.slice(0, LIMIT);

@@ -37,7 +37,10 @@ const VIEWS = join(SITE, "public/ahv/views");
 
 const PANEL = [
   { name: "Dr. Deepu John", role: "Chief Physician & Head of Department · BAMS", src: "/ahv/assets/img/team-deepu-john.webp" },
-  { name: "Dr. Akhila Oommen", role: "Ayurvedic Physician · BAMS", src: "/ahv/assets/img/team-akhila-oommen-c.webp" },
+  // team-akhila-oommen-2.webp (23 Sep 2026): the "-c" file painted Dr. Ashikha
+  // (owner: "akhila oommen photo is of ashika"; the badge photograph confirms
+  // it) — see tools/repair-physician-roster.mjs step 4.
+  { name: "Dr. Akhila Oommen", role: "Ayurvedic Physician · BAMS", src: "/ahv/assets/img/team-akhila-oommen-2.webp" },
   { name: "Dr. Rahul R", role: "Ayurvedic Physician · BAMS", src: "/ahv/assets/img/team-rahul-r-c.webp" },
 ];
 for (const p of PANEL) if (!existsSync(join(SITE, "public", p.src.replace(/^\//, "")))) { console.error(`photo missing on disk: ${p.src}`); process.exit(1); }
