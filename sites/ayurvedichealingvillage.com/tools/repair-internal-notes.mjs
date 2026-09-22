@@ -200,6 +200,13 @@ forBoth("ahv-page-sitemap", (v, did) => {
   v.template = v.template.replace(/\s*<(span|p)[^>]*>\[TO CONFIRM\] link broken in source<\/\1>/g, "");
   if (v.template !== b) did.push("source-link note");
   let n; [v.template, n] = dropElements(v.template, "p", "have no destination in the source."); if (n) did.push(`villa-gallery note×${n}`);
+  // D-20260922-14: the "Media Gallery" group heading links to the served
+  // gallery hub. (The four villa pages already link from the Villas group.)
+  const headRe = /(<h[34]\b[^>]*>)Media Gallery(<\/h[34]>)/;
+  if (headRe.test(v.template)) {
+    v.template = v.template.replace(headRe, '$1<a href="/photo-gallery/" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;">Media Gallery</a>$2');
+    did.push("Media Gallery → /photo-gallery/");
+  }
 });
 
 /* 9. the forms' "design review prototype" notices. The enquiry, campaign and
