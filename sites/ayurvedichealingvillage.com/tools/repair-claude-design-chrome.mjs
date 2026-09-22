@@ -170,12 +170,31 @@ for (const id of ids) {
     t = t.slice(0, helmetEnd).replace(helmetTitle, "") + t.slice(helmetEnd);
     did.push("helmet title");
   }
+  // 7. The page hero as a <header> element. Seven of the designs wrap their
+  //    title block in <header>; outside <main> that is a second banner
+  //    landmark beside the site header (508-record chrome audit, 22 Sep; owner:
+  //    "fix those 7 hero header tags too"). It becomes a <section> — same
+  //    attributes, same styles; no CSS or logic in any treated view targets
+  //    the tag (checked before this step was written).
+  {
+    const helmetEnd2 = t.indexOf("</helmet>");
+    const bodyAt = helmetEnd2 < 0 ? 0 : helmetEnd2 + 9;
+    let n = 0, at = t.indexOf("<header", bodyAt);
+    while (at >= 0) {
+      const [s0, e0] = elementSpan(t, at);
+      const el = t.slice(s0, e0).replace(/^<header\b/, "<section").replace(/<\/header>$/, "</section>");
+      t = t.slice(0, s0) + el + t.slice(e0);
+      n += 1; at = t.indexOf("<header", s0 + 8);
+    }
+    if (n) did.push(`hero header→section×${n}`);
+  }
   // Postconditions for a treated view.
   // The helmet's own <title> may say "(Desktop 1440)"; it is never rendered,
   // the governed head replaces it. Only the body is judged.
   const bodyText = textOf(t.slice(t.indexOf("</helmet>") + 9));
   if (/(Approved (site|mobile) (header|footer)|Site (header|footer) — (approved|fixed))/i.test(bodyText)) problems.push(`${id}: placeholder text still present`);
   if (LABEL_RE.test(bodyText)) problems.push(`${id}: board label still present`);
+  if (/<header\b/.test(t.slice(t.indexOf("</helmet>") + 9))) problems.push(`${id}: a <header> element survives in the body`);
   const imports = (t.match(/<dc-import\b/g) || []).length;
   if (imports !== 2) problems.push(`${id}: expected 2 chrome imports, found ${imports}`);
   // 6. The governed head owns <title> (boot.ts: "exactly one canonical, and
