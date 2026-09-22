@@ -70,4 +70,16 @@ doc of 19 Sep (Google Doc 18r4P1AM…), the 508-record chrome audit and the 1,77
 7. /offers/ and /map/ image slots — fill from the bank.
 
 ## 5. Verification (this round)
-VERIFICATION_PLACEHOLDER
+- Sweep after the fixes (local build, 254 routes × 390/768/1440 = 762 loads): **0 horizontal overflow, 0 leftover
+  note strings, 0 page errors** (the 35 tablet overflows of the audit are gone).
+- Article rail grid measured on 6 routes at 1024/1440/1920: rail at the container's left edge, 40px gap to the text,
+  0 overflow; tall rails static, short rails sticky.
+- Homepage team tiles in the snapshot: Dr. Deepu John, Dr. Rahul R, Dr. Akhila Oommen — each on its own photograph;
+  Dr. Ashikha Raj: 0 mentions in any served payload or snapshot (postcondition of the roster tool).
+- Contact page with consent accepted: the map link holds the Google Maps iframe (embed URL, no key); without consent
+  the static map stays. Footer "Chat with Priya" → `#chat`, opens the Chatbase bubble.
+- /our-villas/ tagline: "Kairali, Pure Bliss, once in a lifetime experience!".
+- Deployed: https://kairali-web-factory-ayurvedichealingvillage-4y0ckyest-kairali.vercel.app (previous lcoihgtog removed; the Vercel SSO login in the
+  automation browser window prevented a second in-browser check this time — the deployment is the same prebuilt output
+  the local checks ran against).
+
