@@ -16,7 +16,7 @@
  * The Google 360 link is kept as the Virtual Tour card's target only if the
  * site has no /virtual-tour/ route (it has one, so it is not duplicated).
  * Nothing is written by hand: titles and images come from the manifests.
- * Idempotent (marked record.galleryHub).   node tools/repair-gallery-hub.mjs [--dry]
+ * Deterministic: the card list is rebuilt from the manifests on every run.   node tools/repair-gallery-hub.mjs [--dry]
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -35,10 +35,13 @@ const firstImage = (obj) => { const m = JSON.stringify(obj).match(/(\/ahv\/asset
 
 const cards = [];
 // 1. the eight photo collections, in manifest order
-for (const [route, g] of Object.entries(g2026.routes)) {
+// galleries-2026.json `routes` is an ARRAY of records ({ path, h1, … }); iterating it with
+// Object.entries once gave keys "0"–"7" as the card hrefs (dead links, caught by the 23 Sep review)
+for (const g of (Array.isArray(g2026.routes) ? g2026.routes : Object.entries(g2026.routes).map(([path, v]) => ({ path, ...v })))) {
+  const route = g.path;
   const cover = firstImage(g);
   const count = (g.chapters || []).reduce((n, c) => n + ((c.images || c.items || []).length || 0), 0) || null;
-  cards.push({ route, title: g.title || g.h1, cover, alt: g.title, note: count ? `${count} photographs` : "" });
+  cards.push({ route, title: g.h1 || g.title, cover, alt: g.h1 || g.title, note: count ? `${count} photographs` : "" });
 }
 // 2. the other gallery routes the site serves
 const extra = ["/ayurveda-gallery/", "/video-gallery/", "/virtual-tour/"];
@@ -74,8 +77,9 @@ for (const c of cards) if (!c.cover) console.warn("no cover for " + c.route);
 const D = loadDataset(FILE);
 const R = D.routes.find((r) => r.path === "/gallery/");
 if (!R) throw new Error("/gallery/ not in seven-informational-data.js");
-if (R.galleryHub) { console.log("as-is  /gallery/"); process.exit(0); }
-const list = R.components.find((c) => c.blocks.some((b) => b.kind === "para" && JSON.stringify(b.tree).includes("/photo-gallery/")));
+// rebuilt on every run (the card list is generated, so a fix to this tool reaches the page)
+const list = R.components.find((c) => c.blocks.some((b) => b.kind === "card" && /\/g0$/.test(b.ptr))) ||
+  R.components.find((c) => c.blocks.some((b) => b.kind === "para" && JSON.stringify(b.tree).includes("/photo-gallery/")));
 if (!list) throw new Error("/gallery/: the gallery list section not found");
 list.component = "collection-cards";
 list.blocks = cards.map((c, i) => ({

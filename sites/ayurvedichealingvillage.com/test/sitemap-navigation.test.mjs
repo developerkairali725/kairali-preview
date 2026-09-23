@@ -1,63 +1,72 @@
+// ONE site tree drives the /sitemap/ page AND the left section rail (owner, 23 Sep 2026).
+// tools/build-site-tree.mjs -> english-candidate/site-tree.json
+//   -> tools/build-sitemap-navigation.mjs (sitemap views) + tools/build-section-nav.mjs (rail data)
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-const read = (p) => JSON.parse(fs.readFileSync(new URL('../' + p, import.meta.url), 'utf8'));
-const data = read('english-candidate/sitemap-navigation.json');
-const baseline = read('english-candidate/sitemap-navigation-baseline.json');
+const url = (p) => new URL('../' + p, import.meta.url);
+const read = (p) => JSON.parse(fs.readFileSync(url(p), 'utf8'));
+const tree = read('english-candidate/site-tree.json');
 const manifest = read('english-candidate/route-manifest.json');
 const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
-const APP_ROUTES = new Set(['/search/', '/sitemap.xml']);
-// the WordPress-era hrefs the curation pass re-points (tools/curate-sitemap-navigation.mjs)
-const ALIAS = { '/opd/': '/walk-in-ayurveda-treatment/', '/panchkarma/': '/panchakarma-therapy/', '/panchakarma/': '/panchakarma-therapy/', '/search-results/': '/search/' };
-const DROPPED = new Set(['/sitemap_index.xml', '/thanks/', '/ppc-thanks/']);
-const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|new-privacy-policy|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|apply-now|ru|treatment-in-kerala-russian\.html|sitemap)\/?$/;
-const slashed = (h) => (/^\//.test(h) && !/\.(html|xml)$/.test(h) && !h.endsWith('/') ? h + '/' : h);
+const overrides = fs.existsSync(url('english-candidate/site-tree-overrides.json')) ? read('english-candidate/site-tree-overrides.json') : { drops: [] };
+const dropped = new Set((overrides.drops || []).map((d) => d.path));
+const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|new-privacy-policy|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|ru|treatment-in-kerala-russian\.html)\/?$/;
+const BANNED = /\b(spa|resort|holiday|luxury|cure|journey|guests?)\b/i;
+const nodes = [];
+const walk = (list) => list.forEach((n) => { nodes.push(n); walk(n.children); });
+tree.sections.forEach((s) => walk(s.children));
 
-test('the original 214 entries all survive, resolved through the alias map, or are documented drops', () => {
-  assert.equal(baseline.length, 214);
-  const after = new Set(data.links.map((l) => l.href));
-  for (const b of baseline) {
-    const h = slashed(b.href);
-    if (DROPPED.has(h)) continue;
-    assert.ok(after.has(ALIAS[h] || h), b.href);
+test('every indexable page is in the tree exactly once, and every entry is a served page', () => {
+  const expected = manifest.routes.filter((r) => r.path !== '/' && !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !dropped.has(r.path)).map((r) => r.path).sort();
+  assert.deepEqual(Object.keys(tree.index).sort(), expected);
+  const paths = nodes.filter((n) => n.path).map((n) => n.path);
+  assert.equal(new Set(paths).size, paths.length, 'a page is listed twice');
+  for (const p of Object.keys(tree.index)) assert.ok(byPath.has(p), 'not served: ' + p);
+});
+test('parents are real pages (the only non-link parents are concern headings and hub-less sections)', () => {
+  for (const n of nodes) if (n.children.length && !n.path) assert.ok(n.group, 'a parent with no page: ' + n.title);
+  for (const s of tree.sections) if (!s.hub) assert.match(s.id, /^(campaigns|site)$/);
+});
+test('children read in their intended order (ladders, hub card order)', () => {
+  const o = overrides.order || {};
+  const find = (list, p) => { for (const n of list) { if (n.path === p) return n; const f = find(n.children, p); if (f) return f; } return null; };
+  for (const [parent, want] of Object.entries(o)) {
+    const sec = tree.sections.find((s) => s.hub === parent);
+    const kids = (sec ? sec.children : (find(tree.sections.flatMap((s) => s.children), parent) || { children: [] }).children).map((n) => n.path).filter((p) => want.includes(p));
+    assert.deepEqual(kids, want.filter((p) => kids.includes(p)), parent);
   }
 });
-test('every entry is a served page, listed once, with its trailing slash and no banned word', () => {
-  assert.equal(new Set(data.links.map((l) => l.id)).size, data.links.length);
-  assert.equal(new Set(data.links.map((l) => l.href)).size, data.links.length, 'duplicate href');
-  for (const l of data.links) {
-    assert.ok(data.roots.includes(l.branch[0]), l.href);
-    assert.ok(l.branch.length >= 1 && l.branch.length <= 3);
-    if (/^\//.test(l.href)) { assert.ok(byPath.has(l.href) || APP_ROUTES.has(l.href), 'not served: ' + l.href); assert.equal(l.href, slashed(l.href)); }
-    else assert.match(l.href, /^https:\/\//);
-    assert.doesNotMatch(l.title, /\b(spa|resort|holiday|luxury|cure|journey|guests?)\b/i, l.title);
-    const r = byPath.get(l.href); if (r) assert.ok(!r.sitemapExclude, 'canonicalised duplicate listed: ' + l.href);
+test('owner rulings: villas sit under Our Villas; the Air India page is a partnership under About', () => {
+  for (const v of ['/classic-villa/', '/deluxe-villa/', '/royal-villa/', '/maharaja-suite/']) assert.equal(tree.index[v].section, 'villas', v);
+  const ai = tree.index['/kairali-air-india-maharaja-club.html'];
+  assert.equal(ai.section, 'about'); assert.ok(ai.ancestors.includes('/our-partners/'));
+});
+test('no KTAHV-locked word in any label or section title', () => {
+  for (const n of nodes) assert.doesNotMatch(n.title, BANNED, n.title);
+  for (const s of tree.sections) assert.doesNotMatch(s.title, BANNED, s.title);
+});
+test('the rail renders the same tree the sitemap renders', () => {
+  const w = {}; vm.runInNewContext(fs.readFileSync(url('public/design/section-nav.data.js'), 'utf8'), { window: w });
+  const rail = JSON.parse(JSON.stringify(w.AHV_SECTION_NAV));   // out of the VM realm, so deepEqual compares values
+  const shape = (list) => list.map((n) => [n.path, n.children.length ? shape(n.children) : 0]);
+  for (const s of tree.sections.filter((x) => x.hub)) {
+    assert.deepEqual(shape(rail.sections[s.id].items), shape(s.children), 'rail differs from sitemap in ' + s.id);
+    assert.equal(rail.sections[s.id].label, s.title);
   }
+  for (const [p, r] of Object.entries(rail.routes)) { const at = tree.index[p] || (tree.unlisted || {})[p]; assert.ok(at, p); assert.deepEqual(r.crumbs, [...at.ancestors, p], p); }
+  // unlisted (dropped) pages still draw the rail, so their old WordPress sidebar never returns
+  for (const p of Object.keys(tree.unlisted || {})) assert.ok(!(p in tree.index), p);
 });
-test('every served, indexable page is in the tree (junk/test/old/confirmation routes stay out)', () => {
-  const listed = new Set(data.links.map((l) => l.href));
-  const missing = manifest.routes.filter((r) => !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !listed.has(r.path)).map((r) => r.path);
-  assert.deepEqual(missing, []);
-});
-test('programme entries carry the register name', () => {
-  const w = {}; vm.runInNewContext(fs.readFileSync(new URL('../public/ahv/assets/all-programs-data.js', import.meta.url), 'utf8'), { window: w });
-  const reg = new Map(Object.values(w)[0].programmes.map((p) => [p.route, p.name.toLowerCase()]));
-  for (const l of data.links) if (reg.has(l.href)) assert.equal(l.title.toLowerCase(), reg.get(l.href), l.href);
-});
-test('desktop and mobile use identical trees and all destinations are present in each payload', () => {
+test('both sitemap views carry every page; mobile imports the narrow chrome; the filter is typo-tolerant', () => {
   const d = read('public/ahv/views/ahv-page-sitemap-desktop.json'), m = read('public/ahv/views/ahv-page-sitemap-mobile.json');
-  // identical trees; the mobile view differs only in importing the chrome's narrow half
-  const strip = (t) => t.replace(/<dc-import[^>]*>/g, '<dc-import>');
-  assert.equal(strip(d.template), strip(m.template)); assert.equal(d.logic, m.logic);
+  for (const p of Object.keys(tree.index)) { assert.ok(d.template.includes('href="' + p + '"'), p); assert.ok(m.template.includes('href="' + p + '"'), p); }
   assert.match(m.template, /AHV Chrome Header" narrow="true"/);
-  assert.equal((d.template.match(/data-leaf /g) || []).length, data.links.length);
-  for (const l of data.links) assert.ok(d.template.includes('href="' + l.href + '"'), l.href);
-  assert.equal((d.template.match(/class="sm-branch sm-depth-0"/g) || []).length, data.roots.length);
-  assert.ok(d.logic.includes('const hit='), 'typo-tolerant filter');
+  assert.ok(d.logic.includes('const hit='));
 });
-test('server-rendered sitemap contains every destination', () => {
-  const ssr = fs.readFileSync(new URL('../english-candidate/prerender/sitemap.html', import.meta.url), 'utf8');
-  for (const l of data.links) assert.ok(ssr.includes('href="' + l.href + '"'), l.href);
+test('the server-rendered sitemap carries every page', () => {
+  const ssr = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
+  for (const p of Object.keys(tree.index)) assert.ok(ssr.includes('href="' + p + '"'), p);
   assert.ok(!ssr.includes('{{')); assert.ok(!ssr.includes('<dc-import'));
 });

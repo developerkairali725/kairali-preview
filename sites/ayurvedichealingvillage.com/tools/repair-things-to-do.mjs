@@ -16,7 +16,7 @@
  * lead with no page of its own (Herbal Garden) stays a paragraph.
  *
  * Idempotent (marked record.thingsToDoCards). Run after import and after
- * tools/build-section-nav.mjs.   node tools/repair-things-to-do.mjs [--dry]
+ * tools/build-site-tree.mjs.   node tools/repair-things-to-do.mjs [--dry]
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -27,17 +27,18 @@ const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ASSETS = path.join(SITE, "public/ahv/assets");
 const DRY = process.argv.includes("--dry");
 const FILE = path.join(ASSETS, "collection-family-data.js");
-const nav = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/section-nav.json"), "utf8"));
+const tree = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/site-tree.json"), "utf8"));
 
 function loadDataset(file) { const w = {}; vm.runInNewContext(fs.readFileSync(file, "utf8"), { window: w }); return Object.values(w)[0]; }
 const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
 // label → path from the Things to Do + Village Facilities trees (the pages these leads name)
 const byLabel = new Map();
-for (const hub of ["/things-to-do/", "/village-facilities/", "/knowledge-centre/", "/training-programs/"]) {
-  const walk = (nodes) => nodes.forEach((n) => { if (n.link) byLabel.set(norm(n.label), n.path); walk(n.children || []); });
-  walk(nav.sections[hub].items);
-  byLabel.set(norm(nav.sections[hub].label), hub);
+// label → path from the site tree (tools/build-site-tree.mjs): the pages these leads name
+for (const sec of tree.sections.filter((x) => ["/things-to-do/", "/village-facilities/", "/knowledge-centre/", "/training-programs/"].includes(x.hub))) {
+  const walk = (nodes) => nodes.forEach((n) => { if (n.path) byLabel.set(norm(n.title), n.path); walk(n.children || []); });
+  walk(sec.children);
+  byLabel.set(norm(sec.title), sec.hub);
 }
 // synonyms the source spells differently from the breadcrumb label (both name the same page)
 const ALIAS = { "houseboat tour": "houseboat tour", "yoga classes theory": "yoga classes theory", "yoga classes practical": "practical yoga classes" };

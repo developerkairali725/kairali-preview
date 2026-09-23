@@ -30,19 +30,25 @@
   var scheduled = false;
 
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
-  function isAncestor(node) {
-    // a node whose subtree holds the current page (its crumbs list the node's path)
-    return info.crumbs.indexOf(node.path) >= 0 && node.path !== route;
+  // a node is "on the path" when it is the current page or one of its ancestors;
+  // a concern heading (group) is on the path when a descendant is
+  function onPath(node) {
+    if (node.path) return info.crumbs.indexOf(node.path) >= 0;
+    for (var i = 0; i < (node.children || []).length; i++) if (onPath(node.children[i])) return true;
+    return false;
   }
+  function count(node) { var n = 0; for (var i = 0; i < (node.children || []).length; i++) n += (node.children[i].path ? 1 : 0) + count(node.children[i]); return n; }
+  // Progressive disclosure (owner, 23 Sep 2026: easy for an older visitor): the
+  // section's first level is always shown; a branch opens only when you are in it.
   function list(nodes) {
     var h = '<ul class="ahv-rail-list">';
     for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      var cur = n.path === route;
-      h += '<li' + (isAncestor(n) ? ' class="ahv-rail-open"' : "") + ">";
-      if (n.link) h += '<a href="' + esc(n.path) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
+      var n = nodes[i], here = onPath(n), cur = n.path === route, kids = n.children && n.children.length;
+      h += "<li" + (here && !cur ? ' class="ahv-rail-open"' : "") + ">";
+      if (n.link) h += '<a href="' + esc(n.path) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) +
+        (kids && !here ? '<span class="ahv-rail-count" aria-label="' + count(n) + ' pages inside"> · ' + count(n) + "</span>" : "") + "</a>";
       else h += '<span class="ahv-rail-plain">' + esc(n.label) + "</span>";
-      if (n.children && n.children.length) h += list(n.children);
+      if (kids && (here || n.group && here)) h += list(n.children);
       h += "</li>";
     }
     return h + "</ul>";
@@ -138,11 +144,40 @@
     if (top + cur.offsetHeight > box.clientHeight) box.scrollTop = top - Math.round(box.clientHeight / 3);
   }
 
+  // The visible breadcrumb follows the SAME tree as the rail and the sitemap:
+  // Home / section / ancestors / this page (owner, 23 Sep 2026; reviewers found 15
+  // moved pages whose captured breadcrumb named their old section). Rebuilt from the
+  // page's own breadcrumb elements so it keeps the design's look.
+  var TITLE = {};
+  (function () {
+    TITLE[section.hub] = section.label;
+    var walk = function (list) { for (var i = 0; i < list.length; i++) { if (list[i].path) TITLE[list[i].path] = list[i].label; walk(list[i].children || []); } };
+    walk(section.items);
+  })();
+  function rewriteCrumbs(main) {
+    var bc = root.querySelector('nav[aria-label="Breadcrumb"]');
+    if (!bc || bc.getAttribute("data-ahv-crumbs") === "1") return;
+    var link = bc.querySelector("a"), sep = bc.querySelector('span[aria-hidden="true"]'), last = bc.querySelector('[aria-current="page"]');
+    if (!link || !last) return;
+    var chain = [section.hub].concat(info.crumbs.slice(0, -1)).filter(function (p, i, a) { return p && p !== route && a.indexOf(p) === i; });
+    var parts = [{ href: "/", label: "Home" }].concat(chain.map(function (p) { return { href: p, label: TITLE[p] || p }; }));
+    var frag = document.createDocumentFragment();
+    parts.forEach(function (c) {
+      var a = link.cloneNode(false); a.setAttribute("href", c.href); a.textContent = c.label; frag.appendChild(a);
+      if (sep) frag.appendChild(sep.cloneNode(true)); else frag.appendChild(document.createTextNode(" / "));
+    });
+    var cur = last.cloneNode(false); cur.textContent = TITLE[route] || last.textContent; frag.appendChild(cur);
+    while (bc.firstChild) bc.removeChild(bc.firstChild);
+    bc.appendChild(frag);
+    bc.setAttribute("data-ahv-crumbs", "1");
+  }
+
   function pass() {
     scheduled = false;
     var main = root.querySelector("main");
     if (!main || main.children.length < 2) return;
     try {
+      rewriteCrumbs(main);
       removeLegacy(main);
       if (!main.querySelector("nav[data-ahv-section-nav]")) {
         var nav = place(main);

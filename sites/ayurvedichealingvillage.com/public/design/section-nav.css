@@ -57,6 +57,7 @@ nav[data-ahv-section-nav] a[aria-current="page"] { font-weight:800; color:var(--
 nav[data-ahv-section-nav] a.ahv-rail-hub { font-family:Marcellus,Georgia,serif; font-size:18.5px; border-bottom:1px solid var(--rail-hair); border-radius:0; margin-bottom:4px; }
 nav[data-ahv-section-nav] a.ahv-rail-hub[aria-current="page"] { border-bottom-color:var(--rail-hair); }
 nav[data-ahv-section-nav] .ahv-rail-open > a:not([aria-current]) { font-weight:700; }
+nav[data-ahv-section-nav] .ahv-rail-count { color:var(--rail-muted); font-weight:400; font-size:15px; white-space:nowrap; }
 
 /* ---- phone and tablet: a closed bar under the title ---------------------- */
 @media (max-width:1023px) {

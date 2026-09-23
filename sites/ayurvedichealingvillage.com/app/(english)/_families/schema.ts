@@ -39,6 +39,7 @@
  * `/?s={search_term_string}`, a WordPress endpoint this rebuild does not serve, and a
  * potentialAction for a URL that 404s asserts something false to a crawler.
  */
+import SITE_TREE from "../../../english-candidate/site-tree.json";
 import type { CandidateRoute } from "./registry";
 import { routes } from "./registry";
 import { imageGallery, imageObject, itemList, videoObject } from "@kairali/schema";
@@ -100,11 +101,38 @@ function crumbName(title: string | null, fallback: string): string {
   return head || title.trim();
 }
 
-/** Home → (parent, only if it is a real route) → self. */
+/**
+ * The site tree (tools/build-site-tree.mjs): the same hierarchy the /sitemap/ page
+ * and the left rail show (owner, 23 Sep 2026: one navigation, consistent everywhere).
+ * path -> { section hub, ancestors, titles }.
+ */
+type TreeNode = { path: string | null; title: string; children: TreeNode[] };
+const TREE = SITE_TREE as unknown as {
+  sections: Array<{ id: string; title: string; hub: string | null; children: TreeNode[] }>;
+  index: Record<string, { section: string; ancestors: string[] }>;
+};
+const TREE_TITLE = new Map<string, string>();
+const TREE_HUB = new Map<string, string | null>();
+for (const s of TREE.sections) {
+  TREE_HUB.set(s.id, s.hub);
+  if (s.hub) TREE_TITLE.set(s.hub, s.title);
+  const walk = (list: TreeNode[]) => list.forEach((n) => { if (n.path) TREE_TITLE.set(n.path, n.title); walk(n.children); });
+  walk(s.children);
+}
+
+/** Home → section hub → tree ancestors → self (the site tree); else Home → (URL parent, if a real route) → self. */
 function breadcrumb(route: CandidateRoute) {
   const items: Array<Record<string, unknown>> = [
     { "@type": "ListItem", position: 1, name: "Home", item: abs("/") },
   ];
+  const placed = TREE.index[route.path];
+  if (placed) {
+    const hub = TREE_HUB.get(placed.section);
+    const chain = [...(hub && hub !== route.path ? [hub] : []), ...placed.ancestors.filter((a) => a !== hub)];
+    for (const a of chain) items.push({ "@type": "ListItem", position: items.length + 1, name: TREE_TITLE.get(a) ?? a, item: abs(a) });
+    items.push({ "@type": "ListItem", position: items.length + 1, name: TREE_TITLE.get(route.path) ?? crumbName(route.metadata.title, route.path) });
+    return { "@type": "BreadcrumbList", "@id": `${abs(route.path)}#breadcrumb`, itemListElement: items };
+  }
   if (route.path !== "/") {
     if (route.segments.length > 1) {
       const parentPath = `/${route.segments.slice(0, -1).join("/")}/`;

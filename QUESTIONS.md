@@ -1923,3 +1923,28 @@ yoga side-stretch (gallery-2026/photo/yoga-side-female-patient-02); defence card
 "senior couple in a park" is gone from both pages; the second stock image on the senior page (woman with older woman,
 AHV-V2-465) is still there — say the word and it goes the same way. Paths are in tools/repair-offers-cards.mjs and
 tools/repair-senior-offer.mjs.
+
+## Q-AHV-YOGA-TEACHER-TRAINING — 2026-09-24 00:19:28 IST
+Is any page actually **yoga teacher training**? The yoga hub card for /yoga-meditation-training/ says "For: yoga
+teacher training" and the header's "Yoga & Training" link points there, but the page is a patient practice programme
+("No prior experience is required") and /new-to-yoga-teacher-training/ says "Coming Soon". If a real teacher
+training exists, it moves to the Training section. (Content review of every page, docs/reports/2026-09-24-ahv-site-tree.md.)
+
+## Q-AHV-TWIN-PAGES — 2026-09-24 00:19:28 IST
+Keep or merge these near-twins (the tree lists both today): /yoga-meditation-program/ (3-night) vs
+/yoga-meditation-training/ (7-night, 84% same text); /yoga-and-meditation-package/ vs /yoga-meditation-training/;
+/enquiry-form/ vs /contact-us/ (94%); /map/ vs /how-to-reach/ (conflicting distances); /back-water-tour/ vs
+/house-boat-tour/; the two Prav & Simona and three Lakshya pages. Merging is a protection-map (301) decision — yours.
+
+## Q-AHV-TARIFF-CONFLICTS — 2026-09-24 00:19:28 IST
+Which figures are current? The package price lists are the 2025–26 PDFs ("valid to 31 Oct 2026" on the programme
+pages, "to 30 Sep 2026" elsewhere) while /faqs-downloads/ and /training-course-fees/ quote 2026–27. The Deluxe
+single rate reads ₹16,264 (rates page), ₹17,786 (/yoga-and-meditation-package/) and ₹18,410 (/training-course-fees/).
+Also: Ayurveda "5,000 years" vs "over two thousand years"; "5th-generation" vs "four generations"; the defence offer
+URL says 30% while the page says up to 20%.
+
+## Q-AHV-PRICE-PDF-WORDS — 2026-09-24 00:19:28 IST
+Every Ayurveda, Yoga and Training price list PDF already carries the airport/railway transfer table (MPV and sedan
+from Palakkad station, Coimbatore airport, Cochin/Calicut airport); the OPD list correctly has none. If the "new PDF
+versions awaiting team feedback" are somewhere other than AHV-PDF-DESIGN-FAMILY-2026-09-22, send the location. The
+same PDFs print "Luxury Sedan" and "Spa & Wellness Collection" — KTAHV-locked words (Q-AHV-FAQ-FACT-CONFLICTS item 3).
