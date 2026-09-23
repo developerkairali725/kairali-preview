@@ -53,11 +53,15 @@ const logic=`class Component extends DCLogic {
   const clear=root.querySelector('[data-clear]'),status=root.querySelector('[data-status]'),empty=root.querySelector('[data-empty]');
   const expand=root.querySelector('[data-expand]'),collapse=root.querySelector('[data-collapse]');
   const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+  // typo-tolerant, like every search on the site (D-20260922-26): a query word hits when the text contains it,
+  // a text word starts with it, or (5+ letters) a text word is within one edit of it
+  const dl=(a,b)=>{if(Math.abs(a.length-b.length)>1)return 2;const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];}for(let j=0;j<=b.length;j++){d[0][j]=j;}for(let i=1;i<=a.length;i++){for(let j=1;j<=b.length;j++){const c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1);}}return d[a.length][b.length];};
+  const hit=(text,w)=>{if(text.includes(w))return true;const tw=text.split(' ');if(tw.some(t=>t.startsWith(w)))return true;return w.length>=5&&tw.some(t=>t.length>=4&&dl(t,w)<=1);};
   let saved=null;
   const apply=()=>{
    const words=norm(input.value).split(' ').filter(Boolean);const active=words.length>0;
    if(active&&!saved)saved=new Map(branches.map(d=>[d,d.open]));
-   let hits=0;leaves.forEach(li=>{const text=norm(li.getAttribute('data-search')||'');li.hidden=!words.every(w=>text.includes(w));if(!li.hidden)hits++;});
+   let hits=0;leaves.forEach(li=>{const text=norm(li.getAttribute('data-search')||'');li.hidden=!words.every(w=>hit(text,w));if(!li.hidden)hits++;});
    branches.slice().reverse().forEach(d=>{const any=Array.from(d.querySelectorAll('[data-leaf]')).some(l=>!l.hidden);d.hidden=!any;if(d.parentElement.hasAttribute('data-child'))d.parentElement.hidden=!any;if(active&&any)d.open=true;else if(!active&&saved)d.open=saved.get(d);});
    if(!active)saved=null;clear.hidden=!input.value;empty.hidden=hits>0;expand.disabled=active;collapse.disabled=active;
    status.textContent=active ? hits+' matching links — shown with their parent sections' : leaves.length+' links across ${data.roots.length} sections';
@@ -72,7 +76,9 @@ const logic=`class Component extends DCLogic {
 }`;
 for(const variant of ['desktop','mobile']){
  const file=path.join(SITE,'public/ahv/views/ahv-page-sitemap-'+variant+'.json');
- const payload=JSON.parse(fs.readFileSync(file,'utf8'));payload.template=template;payload.logic=logic;
+ // a MOBILE view imports the chrome's narrow half (sticky burger bar); without narrow="true" the desktop header renders at 390
+ const tpl=variant==='mobile'?template.replace('<dc-import name="AHV Chrome Header" hint-size="100%,72px"></dc-import>','<dc-import name="AHV Chrome Header" narrow="true" style="position:sticky;top:0;z-index:80" hint-size="100%,64px"></dc-import>').replace('<dc-import name="AHV Chrome Footer" hint-size="100%,560px"></dc-import>','<dc-import name="AHV Chrome Footer" narrow="true" hint-size="100%,900px"></dc-import>'):template;
+ const payload=JSON.parse(fs.readFileSync(file,'utf8'));payload.template=tpl;payload.logic=logic;
  fs.writeFileSync(file,JSON.stringify(payload));
  const cap=variant[0].toUpperCase()+variant.slice(1);
  fs.writeFileSync(path.join(SITE,'english-candidate/package-overlay/AHV Page Sitemap '+cap+'.dc.html'),`<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="./support.js"></script></head><body><x-dc>${template}</x-dc><script type="text/x-dc" data-dc-script>${logic}</script></body></html>`);

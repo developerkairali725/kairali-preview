@@ -1,2339 +1,2448 @@
 {
-  "source": "Original sitemap link lists, linked section headings and footer policies; owner hierarchy request 23 September 2026",
-  "roots": [
+ "source": "Original sitemap link lists, linked section headings and footer policies; owner hierarchy request 23 September 2026",
+ "roots": [
+  "Treatments & clinical care",
+  "Stay & village experiences",
+  "Yoga & meditation",
+  "Training & education",
+  "Ayurveda library",
+  "Packages & offers",
+  "About Kairali",
+  "Galleries & reviews",
+  "Contact & plan your visit",
+  "Past programmes & events",
+  "Campaign pages",
+  "Site services & policies"
+ ],
+ "links": [
+  {
+   "id": "link-001",
+   "title": "Weight management & metabolism therapy",
+   "href": "/weight-loss-programme/",
+   "branch": [
     "Treatments & clinical care",
+    "Treatments by concern",
+    "Metabolic, digestive & cardiovascular health"
+   ],
+   "originalTitle": "Weight Management & Metabolism Therapy"
+  },
+  {
+   "id": "link-002",
+   "title": "All programmes",
+   "href": "/all-programs/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatment directories"
+   ],
+   "originalTitle": "Ayurveda, Yoga & Training Programmes in Kerala | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-003",
+   "title": "Treatment programmes",
+   "href": "/treatment-programs/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatment directories"
+   ],
+   "originalTitle": "Ayurvedic Treatment Programmes in Kerala | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-004",
+   "title": "Wellness programmes",
+   "href": "/wellness-programs/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatment directories"
+   ],
+   "originalTitle": "Ayurvedic Wellness Programmes in Kerala | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-005",
+   "title": "Complete rejuvenation & detoxification therapy",
+   "href": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+   "branch": [
+    "Treatments & clinical care",
+    "Rejuvenation, detoxification & personalised care"
+   ],
+   "originalTitle": "Complete Rejuvenation & Detoxification Therapy"
+  },
+  {
+   "id": "link-006",
+   "title": "Preventive health & regenerative Ayurvedic detox program",
+   "href": "/preventive-and-regenerative-treatment/",
+   "branch": [
+    "Treatments & clinical care",
+    "Rejuvenation, detoxification & personalised care"
+   ],
+   "originalTitle": "Preventive Health & Regenerative Ayurvedic Detox Program"
+  },
+  {
+   "id": "link-007",
+   "title": "Ayurvedic Panchakarma detoxification therapy",
+   "href": "/panchakarma-therapy/",
+   "branch": [
+    "Treatments & clinical care",
+    "Rejuvenation, detoxification & personalised care"
+   ],
+   "originalTitle": "Ayurvedic Panchakarma Detoxification Therapy"
+  },
+  {
+   "id": "link-008",
+   "title": "Diabetes & metabolic balance therapy",
+   "href": "/treatment-for-diabetes/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Metabolic, digestive & cardiovascular health"
+   ],
+   "originalTitle": "Diabetes & Metabolic Balance Therapy"
+  },
+  {
+   "id": "link-009",
+   "title": "Joint rehabilitation & arthritis treatment",
+   "href": "/treatment-for-arthritis-and-spondylitis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Joints, back & spine"
+   ],
+   "originalTitle": "Joint Rehabilitation & Arthritis Treatment"
+  },
+  {
+   "id": "link-010",
+   "title": "Chronic back pain relief treatment",
+   "href": "/treatment-for-chronic-back-pain/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Joints, back & spine"
+   ],
+   "originalTitle": "Treatment for Chronic Back Pain"
+  },
+  {
+   "id": "link-011",
+   "title": "Comprehensive stress relief & mental wellness program",
+   "href": "/treatment-to-remove-stress-and-strain/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Stress, sleep & headaches"
+   ],
+   "originalTitle": "Stress & Strain Relief Treatment"
+  },
+  {
+   "id": "link-012",
+   "title": "Sinus & migraine relief treatment",
+   "href": "/treatment-for-sinusitis-and-migraine/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Stress, sleep & headaches"
+   ],
+   "originalTitle": "Sinus & Migraine Relief Treatment"
+  },
+  {
+   "id": "link-013",
+   "title": "Spinal disc & nerve restoration treatment",
+   "href": "/treatment-for-slip-disc/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Joints, back & spine"
+   ],
+   "originalTitle": "Spinal Disc & Nerve Restoration Treatment"
+  },
+  {
+   "id": "link-014",
+   "title": "Breath enhancement & respiratory health therapy",
+   "href": "/treatment-for-bronchial-diseases/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Respiratory health"
+   ],
+   "originalTitle": "Breath Enhancement & Respiratory Health Therapy"
+  },
+  {
+   "id": "link-015",
+   "title": "Neck & upper back rehabilitation treatment",
+   "href": "/treatment-for-cervical-spondylosis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Joints, back & spine"
+   ],
+   "originalTitle": "Neck & Upper Back Rehabilitation Treatment"
+  },
+  {
+   "id": "link-016",
+   "title": "Spine care & spondylitis treatment",
+   "href": "/treatment-for-spondylitis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Joints, back & spine"
+   ],
+   "originalTitle": "Spine Care & Spondylitis Treatment"
+  },
+  {
+   "id": "link-017",
+   "title": "Ayurveda skin vitality revival treatment",
+   "href": "/treatment-for-skin-diseases/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Skin & eye health"
+   ],
+   "originalTitle": "Ayurveda Skin Vitality Revival Treatment"
+  },
+  {
+   "id": "link-018",
+   "title": "Neurological wellness & function therapy",
+   "href": "/treatment-for-nervous-disability/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Neurological care & rehabilitation"
+   ],
+   "originalTitle": "Neurological Wellness & Function Therapy"
+  },
+  {
+   "id": "link-019",
+   "title": "Psoriasis & chronic skin treatment",
+   "href": "/treatment-for-psoriasis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Skin & eye health"
+   ],
+   "originalTitle": "Psoriasis & Chronic Skin Treatment"
+  },
+  {
+   "id": "link-020",
+   "title": "Paralysis recovery & rehabilitation therapy",
+   "href": "/treatment-for-paralysis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Neurological care & rehabilitation"
+   ],
+   "originalTitle": "Paralysis Recovery & Rehabilitation Therapy"
+  },
+  {
+   "id": "link-021",
+   "title": "Facial paralysis & nerve rehabilitation therapy",
+   "href": "/treatment-for-facial-paralysis/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Neurological care & rehabilitation"
+   ],
+   "originalTitle": "Facial Paralysis & Nerve Rehabilitation Therapy"
+  },
+  {
+   "id": "link-022",
+   "title": "Vision health & eye rejuvenation therapy",
+   "href": "/beauty-care-and-eye-care/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Skin & eye health"
+   ],
+   "originalTitle": "Vision Health & Eye Rejuvenation Therapy"
+  },
+  {
+   "id": "link-023",
+   "title": "Cardiovascular health & blood pressure treatment",
+   "href": "/treatment-for-hypertension/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Metabolic, digestive & cardiovascular health"
+   ],
+   "originalTitle": "Cardiovascular Health & Blood Pressure Treatment"
+  },
+  {
+   "id": "link-024",
+   "title": "Postpartum rejuvenation therapy",
+   "href": "/post-pregnancy-health-programme/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Women’s health"
+   ],
+   "originalTitle": "Postpartum Rejuvenation Therapy"
+  },
+  {
+   "id": "link-025",
+   "title": "Addiction recovery & behavioral health therapy",
+   "href": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Neurological care & rehabilitation"
+   ],
+   "originalTitle": "Addiction Recovery & Behavioral Health Therapy"
+  },
+  {
+   "id": "link-026",
+   "title": "Supportive care therapy for cancer patients",
+   "href": "/revitalizing-and-strengthening/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Supportive cancer care"
+   ],
+   "originalTitle": "Supportive Care Therapy for Cancer Patients"
+  },
+  {
+   "id": "link-027",
+   "title": "Women's hormonal balance & endocrine therapy",
+   "href": "/womens-hormonal-balance-endocrine-therapy/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Women’s health"
+   ],
+   "originalTitle": "Women’s Hormonal Balance & Endocrine Therapy"
+  },
+  {
+   "id": "link-028",
+   "title": "Sleep restoration therapy",
+   "href": "/sleep-restoration-therapy/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Stress, sleep & headaches"
+   ],
+   "originalTitle": "Sleep Restoration Therapy"
+  },
+  {
+   "id": "link-029",
+   "title": "Immunity enhancement & executive health assessment therapy",
+   "href": "/immunity-enhancement-executive-health-assessment-therapy/",
+   "branch": [
+    "Treatments & clinical care",
+    "Rejuvenation, detoxification & personalised care"
+   ],
+   "originalTitle": "Immunity Enhancement & Executive Health Assessment Therapy"
+  },
+  {
+   "id": "link-030",
+   "title": "Yoga-based stress & energy reset program",
+   "href": "/yoga-based-stress-energy-reset-program/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Stress, sleep & headaches"
+   ],
+   "originalTitle": "Yoga-Based Stress & Energy Reset Program"
+  },
+  {
+   "id": "link-031",
+   "title": "Digestive wellness & gut health yoga therapy",
+   "href": "/digestive-wellness-gut-health-yoga-therapy/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatments by concern",
+    "Metabolic, digestive & cardiovascular health"
+   ],
+   "originalTitle": "Digestive Wellness & Gut Health Yoga Therapy"
+  },
+  {
+   "id": "link-032",
+   "title": "Kairali's personalized & customized healing program",
+   "href": "/personalized-customized-healing-program/",
+   "branch": [
+    "Treatments & clinical care",
+    "Rejuvenation, detoxification & personalised care"
+   ],
+   "originalTitle": "Kairali’s Personalized & Customized Healing Program"
+  },
+  {
+   "id": "link-033",
+   "title": "Ayurvedic treatment",
+   "href": "/ayurveda-treatment/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatment directories"
+   ],
+   "originalTitle": "AYURVEDIC TREATMENT"
+  },
+  {
+   "id": "link-034",
+   "title": "Ayurveda treatment",
+   "href": "/ayurvedic-treatments/",
+   "branch": [
+    "Treatments & clinical care",
+    "Treatment directories"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-035",
+   "title": "No refrigeration",
+   "href": "/no-refridgeration/",
+   "branch": [
     "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "Kairali- The Ayurvedic Healing Village No Refrigeration",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-036",
+   "title": "Classic villa",
+   "href": "/classic-villa/",
+   "branch": [
+    "Stay & village experiences",
+    "Accommodation",
+    "Villas & suites"
+   ],
+   "originalTitle": "Classic Villa"
+  },
+  {
+   "id": "link-037",
+   "title": "Deluxe villa",
+   "href": "/deluxe-villa/",
+   "branch": [
+    "Stay & village experiences",
+    "Accommodation",
+    "Villas & suites"
+   ],
+   "originalTitle": "Deluxe Villa"
+  },
+  {
+   "id": "link-038",
+   "title": "Royal villa",
+   "href": "/royal-villa/",
+   "branch": [
+    "Stay & village experiences",
+    "Accommodation",
+    "Villas & suites"
+   ],
+   "originalTitle": "Royal Villa"
+  },
+  {
+   "id": "link-039",
+   "title": "Maharaja suite",
+   "href": "/maharaja-suite/",
+   "branch": [
+    "Stay & village experiences",
+    "Accommodation",
+    "Villas & suites"
+   ],
+   "originalTitle": "Maharaja Suite"
+  },
+  {
+   "id": "link-040",
+   "title": "Village facilities",
+   "href": "/village-facilities/",
+   "branch": [
+    "Stay & village experiences"
+   ],
+   "originalTitle": "Village Facilities"
+  },
+  {
+   "id": "link-041",
+   "title": "Butterfly booklet",
+   "href": "/butterfly-booklet/",
+   "branch": [
+    "Stay & village experiences",
+    "Food, farm & nature"
+   ],
+   "originalTitle": "Butterfly Booklet"
+  },
+  {
+   "id": "link-042",
+   "title": "Nature walk",
+   "href": "/nature-walk/",
+   "branch": [
+    "Stay & village experiences",
+    "Food, farm & nature"
+   ],
+   "originalTitle": "Nature Walk"
+  },
+  {
+   "id": "link-043",
+   "title": "Cooking classes",
+   "href": "/cooking-classes/",
+   "branch": [
+    "Stay & village experiences",
+    "Food, farm & nature"
+   ],
+   "originalTitle": "Cooking classes"
+  },
+  {
+   "id": "link-044",
+   "title": "Organic farm",
+   "href": "/organic-farm/",
+   "branch": [
+    "Stay & village experiences",
+    "Food, farm & nature"
+   ],
+   "originalTitle": "Organic Farm"
+  },
+  {
+   "id": "link-045",
+   "title": "Animal husbandry",
+   "href": "/animal-husbandry/",
+   "branch": [
+    "Stay & village experiences",
+    "Food, farm & nature"
+   ],
+   "originalTitle": "Animal Husbandry"
+  },
+  {
+   "id": "link-046",
+   "title": "Visit Kerala",
+   "href": "/visit-kerala/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Destinations"
+   ],
+   "originalTitle": "Visit Kerala"
+  },
+  {
+   "id": "link-047",
+   "title": "Destination Palakkad",
+   "href": "/destination-palakkad/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Destinations"
+   ],
+   "originalTitle": "Destination Palakkad"
+  },
+  {
+   "id": "link-048",
+   "title": "Wildlife drive",
+   "href": "/wildlife-drive/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Excursions"
+   ],
+   "originalTitle": "Wildlife Drive"
+  },
+  {
+   "id": "link-049",
+   "title": "Elephant safari",
+   "href": "/elephant-safari/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Excursions"
+   ],
+   "originalTitle": "Elephant Safari"
+  },
+  {
+   "id": "link-050",
+   "title": "House boat tour",
+   "href": "/house-boat-tour/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Excursions"
+   ],
+   "originalTitle": "House Boat Tour"
+  },
+  {
+   "id": "link-051",
+   "title": "Back water tour",
+   "href": "/back-water-tour/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Excursions"
+   ],
+   "originalTitle": "Back Water Tour"
+  },
+  {
+   "id": "link-052",
+   "title": "Mountain jeep safari",
+   "href": "/mountain-jeep-safari/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Excursions"
+   ],
+   "originalTitle": "Mountain Jeep Safari"
+  },
+  {
+   "id": "link-053",
+   "title": "Cultural events",
+   "href": "/cultural-events/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Culture & festivals"
+   ],
+   "originalTitle": "Cultural Events"
+  },
+  {
+   "id": "link-054",
+   "title": "Festivals",
+   "href": "/festivals/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Culture & festivals"
+   ],
+   "originalTitle": "Festivals"
+  },
+  {
+   "id": "link-055",
+   "title": "Attractions (10 kms & under)",
+   "href": "/attractions-under-10kms/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Attractions by distance"
+   ],
+   "originalTitle": "Attractions (10 Kms & Under)"
+  },
+  {
+   "id": "link-056",
+   "title": "Attractions (15 kms & below)",
+   "href": "/attractions-15kms-and-below/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Attractions by distance"
+   ],
+   "originalTitle": "Attractions (15 Kms & Below)"
+  },
+  {
+   "id": "link-057",
+   "title": "Attractions (25 to 50 kms)",
+   "href": "/attractions-25kms-to-50kms/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Attractions by distance"
+   ],
+   "originalTitle": "Attractions (25 to 50 Kms)"
+  },
+  {
+   "id": "link-058",
+   "title": "Attractions (above 50 kms)",
+   "href": "/attractions-above-50kms/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Attractions by distance"
+   ],
+   "originalTitle": "Attractions (Above 50 Kms)"
+  },
+  {
+   "id": "link-059",
+   "title": "Experience",
+   "href": "/experience/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village"
+   ],
+   "originalTitle": "Experience"
+  },
+  {
+   "id": "link-060",
+   "title": "Alcohol free",
+   "href": "/alcohol-free/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "Alcohol Free"
+  },
+  {
+   "id": "link-061",
+   "title": "No smoking",
+   "href": "/no-smoking/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "No Smoking"
+  },
+  {
+   "id": "link-062",
+   "title": "No caffeine",
+   "href": "/no-caffeine/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "No Caffeine"
+  },
+  {
+   "id": "link-063",
+   "title": "Vegetarian",
+   "href": "/vegetarian/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "Vegetarian"
+  },
+  {
+   "id": "link-064",
+   "title": "No preservatives",
+   "href": "/no-preservatives/",
+   "branch": [
+    "Stay & village experiences",
+    "Life at the village",
+    "Food & lifestyle commitments"
+   ],
+   "originalTitle": "No Preservatives"
+  },
+  {
+   "id": "link-065",
+   "title": "Ayurvedic cuisine",
+   "href": "/ayurvedic-cuisine/",
+   "branch": [
+    "Stay & village experiences",
+    "Food & cuisine"
+   ],
+   "originalTitle": "Ayurvedic Cuisine"
+  },
+  {
+   "id": "link-066",
+   "title": "Ayurvedic restaurant & cooking at Healing Village",
+   "href": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+   "branch": [
+    "Stay & village experiences",
+    "Food & cuisine"
+   ],
+   "originalTitle": "Ayurvedic Restaurant & Cooking at Healing Village"
+  },
+  {
+   "id": "link-067",
+   "title": "Villa",
+   "href": "/our-villas/",
+   "branch": [
+    "Stay & village experiences",
+    "Accommodation",
+    "Villa directory"
+   ],
+   "originalTitle": "Villa"
+  },
+  {
+   "id": "link-068",
+   "title": "Things to do",
+   "href": "/things-to-do/",
+   "branch": [
+    "Stay & village experiences",
+    "Village experiences"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-069",
+   "title": "Things to do in Healing Village",
+   "href": "/things-to-do-in-property/",
+   "branch": [
+    "Stay & village experiences",
+    "Village experiences"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-070",
+   "title": "Things to do in Kerala",
+   "href": "/things-to-do-in-kerala/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-071",
+   "title": "Sightseeing",
+   "href": "/sightseeing/",
+   "branch": [
+    "Stay & village experiences",
+    "Explore Kerala",
+    "Attractions by distance"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-072",
+   "title": "Yoga & meditation programmes",
+   "href": "/yoga-meditation-programs/",
+   "branch": [
+    "Yoga & meditation"
+   ],
+   "originalTitle": "Yoga and Meditation Program for Holistic Wellness in Kerala",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-073",
+   "title": "Kairali’s personalized yoga program",
+   "href": "/yoga-retreats/",
+   "branch": [
     "Yoga & meditation",
+    "Therapeutic programmes"
+   ],
+   "originalTitle": "Personalized Yoga Program in Kerala | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-074",
+   "title": "Yoga retreats for everyone",
+   "href": "/retreats-for-everyone/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "Yoga retreats for everyone",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-075",
+   "title": "Yoga & Ayurveda",
+   "href": "/yoga-and-ayurveda/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "Yoga Retreat",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-076",
+   "title": "Yoga & meditation program",
+   "href": "/yoga-meditation-program/",
+   "branch": [
+    "Yoga & meditation",
+    "Therapeutic programmes"
+   ],
+   "originalTitle": "Yoga & Meditation Program"
+  },
+  {
+   "id": "link-077",
+   "title": "Yoga therapy individual",
+   "href": "/yoga-therapy-individual/",
+   "branch": [
+    "Yoga & meditation",
+    "Individual therapy"
+   ],
+   "originalTitle": "Yoga Therapy Individual"
+  },
+  {
+   "id": "link-078",
+   "title": "New to yoga",
+   "href": "/new-to-yoga/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "New to Yoga"
+  },
+  {
+   "id": "link-079",
+   "title": "What is yoga?",
+   "href": "/what-is-yoga/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "What is Yoga?"
+  },
+  {
+   "id": "link-080",
+   "title": "Why pick a yoga or yoga retreat?",
+   "href": "/why-pick-a-yoga-or-yoga-retreat/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "Why pick a Yoga or Yoga Retreat?"
+  },
+  {
+   "id": "link-081",
+   "title": "Learn more about yoga",
+   "href": "/learn-more-about-yoga/",
+   "branch": [
+    "Yoga & meditation",
+    "Getting started"
+   ],
+   "originalTitle": "Learn More About Yoga"
+  },
+  {
+   "id": "link-082",
+   "title": "Meditation",
+   "href": "/meditation/",
+   "branch": [
+    "Yoga & meditation"
+   ],
+   "originalTitle": "Meditation"
+  },
+  {
+   "id": "link-083",
+   "title": "Training programmes",
+   "href": "/training-programs/",
+   "branch": [
     "Training & education",
+    "Overview & fees"
+   ],
+   "originalTitle": "Ayurveda Training Programmes in Kerala | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-084",
+   "title": "New to yoga teacher training",
+   "href": "/new-to-yoga-teacher-training/",
+   "branch": [
+    "Training & education",
+    "Yoga teacher training",
+    "Overview & guidance"
+   ],
+   "originalTitle": "Therapeutic Yoga | Yoga Training Center | Yoga Therapy Training | Yoga Retreat Training",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-085",
+   "title": "Five-day intensive Ayurveda training program",
+   "href": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Professional programmes"
+   ],
+   "originalTitle": "Intensive Ayurveda Training Program (WAP-HV)"
+  },
+  {
+   "id": "link-086",
+   "title": "Level one advanced Ayurveda training program",
+   "href": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Professional programmes"
+   ],
+   "originalTitle": "Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala (AATP 1-HV)"
+  },
+  {
+   "id": "link-087",
+   "title": "Advanced Ayurveda lifestyle consultant & therapist training",
+   "href": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Professional programmes"
+   ],
+   "originalTitle": "Advanced Ayurveda Lifestyle Consultant and Therapist Training Program, Kerala (AALCT- HV)"
+  },
+  {
+   "id": "link-088",
+   "title": "One-day Ayurveda workshop",
+   "href": "/one-day-ayurveda-workshop-program-kerala/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Workshops & short courses"
+   ],
+   "originalTitle": "One Day Ayurveda Workshop Program Kerala (OAP-HV)"
+  },
+  {
+   "id": "link-089",
+   "title": "Three-day Ayurveda certificate program",
+   "href": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Workshops & short courses"
+   ],
+   "originalTitle": "Three Day Short Term Ayurveda Certificate Program (TAP-HV)"
+  },
+  {
+   "id": "link-090",
+   "title": "“Why get training in Ayurveda?”",
+   "href": "/why-get-training-in-ayurveda/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Why train in Ayurveda?"
+   ],
+   "originalTitle": "“Why get Training in Ayurveda?”"
+  },
+  {
+   "id": "link-091",
+   "title": "Yoga & meditation training program",
+   "href": "/yoga-meditation-training/",
+   "branch": [
+    "Training & education",
+    "Yoga teacher training",
+    "Overview & guidance"
+   ],
+   "originalTitle": "Yoga & Meditation Training"
+  },
+  {
+   "id": "link-092",
+   "title": "Why get training in yoga?",
+   "href": "/why-get-training-in-yoga/",
+   "branch": [
+    "Training & education",
+    "Yoga teacher training",
+    "Overview & guidance"
+   ],
+   "originalTitle": "Why Get Training in Yoga?"
+  },
+  {
+   "id": "link-093",
+   "title": "Yoga classes (theory)",
+   "href": "/yoga-classes-theory/",
+   "branch": [
+    "Training & education",
+    "Yoga teacher training",
+    "Theory & practice"
+   ],
+   "originalTitle": "Yoga Classes (Theory)"
+  },
+  {
+   "id": "link-094",
+   "title": "Yoga classes (practical)",
+   "href": "/yoga-classes-practical/",
+   "branch": [
+    "Training & education",
+    "Yoga teacher training",
+    "Theory & practice"
+   ],
+   "originalTitle": "Yoga Classes (Practical)"
+  },
+  {
+   "id": "link-095",
+   "title": "Kairali institute of Ayurveda and Panchakarma therapy",
+   "href": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+   "branch": [
+    "Training & education",
+    "Institutes"
+   ],
+   "originalTitle": "Kairali Institute of Ayurveda and Panchakarma Therapy"
+  },
+  {
+   "id": "link-096",
+   "title": "Ayurveda training",
+   "href": "/ayurveda-training/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Overview"
+   ],
+   "originalTitle": "Ayurveda Training"
+  },
+  {
+   "id": "link-097",
+   "title": "Training",
+   "href": "/training/",
+   "branch": [
+    "Training & education",
+    "Overview & fees"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-098",
+   "title": "Ayurveda training programmes",
+   "href": "/ayurveda-training-programme/",
+   "branch": [
+    "Training & education",
+    "Ayurveda training",
+    "Overview"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-099",
+   "title": "Training course fees",
+   "href": "/training-course-fees/",
+   "branch": [
+    "Training & education",
+    "Overview & fees"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-100",
+   "title": "Learn about Ayurveda",
+   "href": "/learn-about-ayurveda/",
+   "branch": [
     "Ayurveda library",
+    "Getting started & further reading"
+   ],
+   "originalTitle": "Kairali – The Ayurvedic Healing Village | Ayurveda Pitta | Ayurveda Vata | Ayurvedic Massage in Kerala",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-101",
+   "title": "New to Ayurveda",
+   "href": "/new-to-ayurveda/",
+   "branch": [
+    "Ayurveda library",
+    "Getting started & further reading"
+   ],
+   "originalTitle": "New to Ayurveda"
+  },
+  {
+   "id": "link-102",
+   "title": "Ayurvedic links",
+   "href": "/ayurvedic-links/",
+   "branch": [
+    "Ayurveda library",
+    "Getting started & further reading"
+   ],
+   "originalTitle": "Ayurvedic Links"
+  },
+  {
+   "id": "link-103",
+   "title": "Learn more about Ayurveda",
+   "href": "/learn-more-about-ayurveda/",
+   "branch": [
+    "Ayurveda library",
+    "Getting started & further reading"
+   ],
+   "originalTitle": "LEARN MORE ABOUT AYURVEDA"
+  },
+  {
+   "id": "link-104",
+   "title": "Blog & news",
+   "href": "https://whyayurveda.org/",
+   "branch": [
+    "Ayurveda library",
+    "Articles & news"
+   ],
+   "originalTitle": "Blog & News"
+  },
+  {
+   "id": "link-105",
+   "title": "Why pick an Ayurveda treatment or Ayurvedic retreat?",
+   "href": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+   "branch": [
+    "Ayurveda library",
+    "Choosing Ayurvedic care"
+   ],
+   "originalTitle": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?"
+  },
+  {
+   "id": "link-106",
+   "title": "What is Panchkarma?",
+   "href": "/what-is-panchkarma/",
+   "branch": [
+    "Ayurveda library",
+    "Panchakarma"
+   ],
+   "originalTitle": "What is Panchkarma?"
+  },
+  {
+   "id": "link-107",
+   "title": "Live to 100 with Panchakarma",
+   "href": "/live-to-100-with-panchkarma/",
+   "branch": [
+    "Ayurveda library",
+    "Panchakarma"
+   ],
+   "originalTitle": "LIVE TO 100 WITH PANCHAKARMA"
+  },
+  {
+   "id": "link-108",
+   "title": "Kairali Ayurvedic way of weight management",
+   "href": "/kairali-ayurvedic-way-of-weight-management/",
+   "branch": [
+    "Ayurveda library",
+    "Weight management"
+   ],
+   "originalTitle": "Kairali Ayurvedic Way of Weight Management"
+  },
+  {
+   "id": "link-109",
+   "title": "Food sadhana: the essence of purity",
+   "href": "/food-sadhana/",
+   "branch": [
+    "Ayurveda library",
+    "Food & Ayurvedic cuisine"
+   ],
+   "originalTitle": "FOOD SADHANA: THE ESSENCE OF PURITY"
+  },
+  {
+   "id": "link-110",
+   "title": "Knowledge centre",
+   "href": "/knowledge-centre/",
+   "branch": [
+    "Ayurveda library"
+   ],
+   "originalTitle": "Knowledge Centre"
+  },
+  {
+   "id": "link-111",
+   "title": "What is Ayurvedic food?",
+   "href": "/what-is-ayurvedic-food/",
+   "branch": [
+    "Ayurveda library",
+    "Food & Ayurvedic cuisine"
+   ],
+   "originalTitle": "What is Ayurvedic Food?"
+  },
+  {
+   "id": "link-112",
+   "title": "Back to roots",
+   "href": "/back-to-roots/",
+   "branch": [
+    "Ayurveda library",
+    "Food & Ayurvedic cuisine"
+   ],
+   "originalTitle": "BACK TO ROOTS"
+  },
+  {
+   "id": "link-113",
+   "title": "Ayurveda",
+   "href": "/ayurveda/",
+   "branch": [
+    "Ayurveda library",
+    "Getting started & further reading"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-114",
+   "title": "Defence & paramilitary personnel offer",
+   "href": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+   "branch": [
     "Packages & offers",
+    "Special offers"
+   ],
+   "originalTitle": "Ayurvedic Wellness for Defence & Paramilitary Forces – Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-115",
+   "title": "Ayurveda special offers",
+   "href": "/special-offers/",
+   "branch": [
+    "Packages & offers",
+    "Special offers"
+   ],
+   "originalTitle": "Ayurveda Special Offers"
+  },
+  {
+   "id": "link-116",
+   "title": "Senior citizen offer",
+   "href": "/offers/senior-citizen-offer/",
+   "branch": [
+    "Packages & offers",
+    "Special offers"
+   ],
+   "originalTitle": "Senior Citizen Offer"
+  },
+  {
+   "id": "link-117",
+   "title": "Olympics and Paralympics offer",
+   "href": "/offers/olympics-and-paralympics-offer/",
+   "branch": [
+    "Packages & offers",
+    "Special offers"
+   ],
+   "originalTitle": "Olympics and Paralympics Offer"
+  },
+  {
+   "id": "link-118",
+   "title": "Defence and paramilitary forces offer",
+   "href": "/defence-and-paramilitary-forces/",
+   "branch": [
+    "Packages & offers",
+    "Special offers"
+   ],
+   "originalTitle": "Defence and Paramilitary Forces Offer"
+  },
+  {
+   "id": "link-119",
+   "title": "Ayurveda packages",
+   "href": "/ayurveda-package/",
+   "branch": [
+    "Packages & offers",
+    "Treatment & yoga packages"
+   ],
+   "originalTitle": "Ayurveda Packages"
+  },
+  {
+   "id": "link-120",
+   "title": "Kairali's yoga & meditation package",
+   "href": "/yoga-and-meditation-package/",
+   "branch": [
+    "Packages & offers",
+    "Treatment & yoga packages"
+   ],
+   "originalTitle": "Yoga & Meditation Package"
+  },
+  {
+   "id": "link-121",
+   "title": "Gift vouchers",
+   "href": "/gift-vouchers/",
+   "branch": [
+    "Packages & offers"
+   ],
+   "originalTitle": "Gift Vouchers"
+  },
+  {
+   "id": "link-122",
+   "title": "Ayurveda offers",
+   "href": "/ayurveda-offers/",
+   "branch": [
+    "Packages & offers",
+    "Offers directory"
+   ],
+   "originalTitle": "Ayurveda Offers"
+  },
+  {
+   "id": "link-123",
+   "title": "Offers",
+   "href": "/offers/",
+   "branch": [
+    "Packages & offers",
+    "Offers directory"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-124",
+   "title": "Packages",
+   "href": "/packages/",
+   "branch": [
+    "Packages & offers",
+    "Treatment & yoga packages"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-125",
+   "title": "Arogya Kendra",
+   "href": "/arogya-kendra/",
+   "branch": [
     "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Centres & franchise"
+   ],
+   "originalTitle": "Arogya Kendra"
+  },
+  {
+   "id": "link-126",
+   "title": "Ayurvedic herbal tea",
+   "href": "/ayurvedic-herbal-tea/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Ayurvedic Herbal Tea"
+  },
+  {
+   "id": "link-127",
+   "title": "Ayurvedic proprietary organics",
+   "href": "/ayurvedic-proprietary-organics/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Ayurvedic Proprietary Organics"
+  },
+  {
+   "id": "link-128",
+   "title": "Ayurvedic proprietary products",
+   "href": "/ayurvedic-proprietary-medicines/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Ayurvedic Proprietary Products"
+  },
+  {
+   "id": "link-129",
+   "title": "Product range",
+   "href": "/product-range/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-130",
+   "title": "Business development manager (apply)",
+   "href": "/jobs/business-development-manager/",
+   "branch": [
+    "About Kairali",
+    "Careers & internships"
+   ],
+   "originalTitle": "Apply Now | Ayurveda Retreat Job | Careers | Massage Therapists",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-131",
+   "title": "Brief on Kairali",
+   "href": "/brief-on-kairali/",
+   "branch": [
+    "About Kairali",
+    "Our story & leadership"
+   ],
+   "originalTitle": "Brief on Kairali"
+  },
+  {
+   "id": "link-132",
+   "title": "Founder’s message and meet the directors",
+   "href": "/founders-message/",
+   "branch": [
+    "About Kairali",
+    "Our story & leadership"
+   ],
+   "originalTitle": "Founder’s Message and Meet the Directors"
+  },
+  {
+   "id": "link-133",
+   "title": "Vision and mission",
+   "href": "/vision-and-mission/",
+   "branch": [
+    "About Kairali",
+    "Our story & leadership"
+   ],
+   "originalTitle": "Vision and Mission"
+  },
+  {
+   "id": "link-134",
+   "title": "Corporate social responsibility (CSR)",
+   "href": "/social-responsibilities/",
+   "branch": [
+    "About Kairali",
+    "Responsibility & commitments"
+   ],
+   "originalTitle": "Corporate Social Responsibility (CSR)"
+  },
+  {
+   "id": "link-135",
+   "title": "Social, cultural & environmental commitment",
+   "href": "/social-cultural-environmental-commitment/",
+   "branch": [
+    "About Kairali",
+    "Responsibility & commitments"
+   ],
+   "originalTitle": "Social, Cultural & Environmental commitment"
+  },
+  {
+   "id": "link-136",
+   "title": "Kairali hospitality",
+   "href": "/kairali-hospitality/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Properties & hospitality"
+   ],
+   "originalTitle": "Kairali Hospitality"
+  },
+  {
+   "id": "link-137",
+   "title": "Kairali – the Ayurvedic Healing Village",
+   "href": "/kairali-the-ayurvedic-healing-village/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Properties & hospitality"
+   ],
+   "originalTitle": "Kairali – The Ayurvedic Healing Village"
+  },
+  {
+   "id": "link-138",
+   "title": "Villa Raag",
+   "href": "/villa-raag/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Properties & hospitality"
+   ],
+   "originalTitle": "Villa Raag"
+  },
+  {
+   "id": "link-139",
+   "title": "Kairali Ayurvedic products",
+   "href": "/kairali-ayurvedic-products-pvt-ltd/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Products business"
+   ],
+   "originalTitle": "Kairali Ayurvedic Products"
+  },
+  {
+   "id": "link-140",
+   "title": "Arogya Shala",
+   "href": "/arogya-shala/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Centres & franchise"
+   ],
+   "originalTitle": "Arogya Shala"
+  },
+  {
+   "id": "link-141",
+   "title": "Kairali Ayurvedic centre",
+   "href": "/kairali-ayurvedic-centre/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Centres & franchise"
+   ],
+   "originalTitle": "Kairali Ayurvedic Centre"
+  },
+  {
+   "id": "link-142",
+   "title": "Kairali Ayurveda franchise",
+   "href": "/ayurvedic-franchise/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Centres & franchise"
+   ],
+   "originalTitle": "Kairali Ayurveda Franchise"
+  },
+  {
+   "id": "link-143",
+   "title": "Kairali Ayurvedic treatment center",
+   "href": "/kairali-ayurvedic-treatment-center/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Centres & franchise"
+   ],
+   "originalTitle": "Kairali Ayurvedic Treatment Center"
+  },
+  {
+   "id": "link-144",
+   "title": "Kair-by Kairali",
+   "href": "/kair-by-kairali/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Kair-By Kairali"
+  },
+  {
+   "id": "link-145",
+   "title": "Ayurvedic classical products",
+   "href": "/ayurvedic-classical-medicines/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Ayurvedic Classial Products"
+  },
+  {
+   "id": "link-146",
+   "title": "Books",
+   "href": "/books/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Books"
+  },
+  {
+   "id": "link-147",
+   "title": "Kairali Ayurvedic equipment",
+   "href": "/kairali-ayurvedic-equipment/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Kairali Ayurvedic Equipment"
+  },
+  {
+   "id": "link-148",
+   "title": "Awards & accreditations",
+   "href": "/awards-and-accreditations/",
+   "branch": [
+    "About Kairali"
+   ],
+   "originalTitle": "Awards & Accreditations"
+  },
+  {
+   "id": "link-149",
+   "title": "Awards and accolades",
+   "href": "/awards-and-accolades/",
+   "branch": [
+    "About Kairali",
+    "Awards & accreditations"
+   ],
+   "originalTitle": "Awards and Accolades"
+  },
+  {
+   "id": "link-150",
+   "title": "Our partners",
+   "href": "/our-partners/",
+   "branch": [
+    "About Kairali",
+    "Partners"
+   ],
+   "originalTitle": "Our Partners"
+  },
+  {
+   "id": "link-151",
+   "title": "Careers",
+   "href": "/careers/",
+   "branch": [
+    "About Kairali",
+    "Careers & internships"
+   ],
+   "originalTitle": "Careers"
+  },
+  {
+   "id": "link-152",
+   "title": "Internships at Kairali",
+   "href": "/internships-at-kairali/",
+   "branch": [
+    "About Kairali",
+    "Careers & internships"
+   ],
+   "originalTitle": "Internships at Kairali"
+  },
+  {
+   "id": "link-153",
+   "title": "Apply now",
+   "href": "/apply-now/",
+   "branch": [
+    "About Kairali",
+    "Careers & internships"
+   ],
+   "originalTitle": "Apply Now"
+  },
+  {
+   "id": "link-154",
+   "title": "Ayurvedic products",
+   "href": "/ayurvedic-products/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "Ayurvedic Products"
+  },
+  {
+   "id": "link-155",
+   "title": "Our accolades",
+   "href": "/our-accolades/",
+   "branch": [
+    "About Kairali",
+    "Awards & accreditations"
+   ],
+   "originalTitle": "Our Accolades"
+  },
+  {
+   "id": "link-156",
+   "title": "Accreditations",
+   "href": "/accreditations/",
+   "branch": [
+    "About Kairali",
+    "Awards & accreditations"
+   ],
+   "originalTitle": "Accreditations"
+  },
+  {
+   "id": "link-157",
+   "title": "In house products",
+   "href": "/in-house-products/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Product range"
+   ],
+   "originalTitle": "In House Products"
+  },
+  {
+   "id": "link-158",
+   "title": "About Kairali",
+   "href": "/about-us/",
+   "branch": [
+    "About Kairali",
+    "Our story & leadership"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-159",
+   "title": "Kairali Ayurvedic Group",
+   "href": "/kairali-ayurvedic-group/",
+   "branch": [
+    "About Kairali"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-160",
+   "title": "Consultancy",
+   "href": "/consultancy/",
+   "branch": [
+    "About Kairali",
+    "Kairali Ayurvedic Group",
+    "Business enquiries"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-161",
+   "title": "Sight seeing gallery",
+   "href": "/sight-seeing-gallery/",
+   "branch": [
     "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Sight Seeing Gallery"
+  },
+  {
+   "id": "link-162",
+   "title": "All galleries",
+   "href": "/gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "Gallery",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-163",
+   "title": "Photo gallery",
+   "href": "/photo-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Image Gallery"
+  },
+  {
+   "id": "link-164",
+   "title": "Product gallery",
+   "href": "/product-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Product Gallery"
+  },
+  {
+   "id": "link-165",
+   "title": "Property gallery",
+   "href": "/property-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Property Gallery"
+  },
+  {
+   "id": "link-166",
+   "title": "Treatments gallery",
+   "href": "/treatments-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Treatments Gallery"
+  },
+  {
+   "id": "link-167",
+   "title": "Video gallery",
+   "href": "/video-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Video & virtual tour"
+   ],
+   "originalTitle": "Video Gallery"
+  },
+  {
+   "id": "link-168",
+   "title": "Virtual tour",
+   "href": "/virtual-tour/",
+   "branch": [
+    "Galleries & reviews",
+    "Video & virtual tour"
+   ],
+   "originalTitle": "Virtual Tour"
+  },
+  {
+   "id": "link-169",
+   "title": "Yoga gallery",
+   "href": "/yoga-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Yoga Gallery"
+  },
+  {
+   "id": "link-170",
+   "title": "Villa gallery",
+   "href": "/villas-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Villa Gallery"
+  },
+  {
+   "id": "link-171",
+   "title": "Read feedback",
+   "href": "/read-feedback/",
+   "branch": [
+    "Galleries & reviews",
+    "Patient feedback"
+   ],
+   "originalTitle": "Read Feedback"
+  },
+  {
+   "id": "link-172",
+   "title": "Give feedback",
+   "href": "/givefeedback/",
+   "branch": [
+    "Galleries & reviews",
+    "Patient feedback"
+   ],
+   "originalTitle": "Give Feedback"
+  },
+  {
+   "id": "link-173",
+   "title": "Ayurveda gallery",
+   "href": "/ayurveda-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "Ayurveda Gallery"
+  },
+  {
+   "id": "link-174",
+   "title": "Retreats gallery",
+   "href": "/retreats-gallery/",
+   "branch": [
+    "Galleries & reviews",
+    "Photo galleries"
+   ],
+   "originalTitle": "I wish to view Retreats Gallery"
+  },
+  {
+   "id": "link-175",
+   "title": "Walk-in Ayurveda treatment (OPD)",
+   "href": "/walk-in-ayurveda-treatment/",
+   "branch": [
     "Contact & plan your visit",
+    "Consultations & appointments"
+   ],
+   "originalTitle": "OPD"
+  },
+  {
+   "id": "link-176",
+   "title": "Contact us",
+   "href": "/contact-us/",
+   "branch": [
+    "Contact & plan your visit",
+    "Contact & enquiries"
+   ],
+   "originalTitle": "Contact Us"
+  },
+  {
+   "id": "link-177",
+   "title": "Location",
+   "href": "/map/",
+   "branch": [
+    "Contact & plan your visit",
+    "Location & travel"
+   ],
+   "originalTitle": "Location"
+  },
+  {
+   "id": "link-178",
+   "title": "How to reach?",
+   "href": "/how-to-reach/",
+   "branch": [
+    "Contact & plan your visit",
+    "Location & travel"
+   ],
+   "originalTitle": "How to Reach?"
+  },
+  {
+   "id": "link-179",
+   "title": "Enquire now",
+   "href": "/enquiry-form/",
+   "branch": [
+    "Contact & plan your visit",
+    "Contact & enquiries"
+   ],
+   "originalTitle": "Enquire Now"
+  },
+  {
+   "id": "link-180",
+   "title": "Online consultation",
+   "href": "/online-consultation/",
+   "branch": [
+    "Contact & plan your visit",
+    "Consultations & appointments"
+   ],
+   "originalTitle": "Online Consultation"
+  },
+  {
+   "id": "link-181",
+   "title": "Book now",
+   "href": "/book-now/",
+   "branch": [
+    "Contact & plan your visit",
+    "Booking"
+   ],
+   "originalTitle": "Book Now"
+  },
+  {
+   "id": "link-182",
+   "title": "FAQs & downloads",
+   "href": "/faqs-downloads/",
+   "branch": [
+    "Contact & plan your visit"
+   ],
+   "originalTitle": "FAQ’s & Downloads"
+  },
+  {
+   "id": "link-183",
+   "title": "Home",
+   "href": "/",
+   "branch": [
+    "Contact & plan your visit",
+    "Start here"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-184",
+   "title": "Lakshya yoga retreat",
+   "href": "/lakshya-yoga-retreat/",
+   "branch": [
     "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "LAKSHYA YOGA RETREAT"
+  },
+  {
+   "id": "link-185",
+   "title": "Katha wellness retreat 2019 (25 – 31 July 2019)",
+   "href": "/katha-wellness-retreat-2019/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2019"
+   ],
+   "originalTitle": "KATHA WELLNESS RETREAT 2019 (25 – 31 JULY 2019)"
+  },
+  {
+   "id": "link-186",
+   "title": "Karma Being yoga and Ayurveda retreat (14-24 November 2019)",
+   "href": "/karma-being-retreat-2019/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2019"
+   ],
+   "originalTitle": "KARMA BEING YOGA AND AYURVEDA RETREAT (14-24 NOVEMBER 2019)"
+  },
+  {
+   "id": "link-187",
+   "title": "Ayurveda retreats for everyone",
+   "href": "/ayurveda-retreats-for-everyone/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "AYURVEDA RETREATS FOR EVERYONE"
+  },
+  {
+   "id": "link-188",
+   "title": "“Ayuryoga 2020 yoga & Ayurveda retreats”",
+   "href": "/ayuryoga/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2020"
+   ],
+   "originalTitle": "“Ayuryoga 2020 Yoga & Ayurveda Retreats”"
+  },
+  {
+   "id": "link-189",
+   "title": "Yoga retreat by Prav and Simona from Denmark",
+   "href": "/prav-simona-yoga-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Yoga retreat by Prav and Simona from Denmark"
+  },
+  {
+   "id": "link-190",
+   "title": "Prav-Simona monsoon yoga retreat",
+   "href": "/prav-simona-monsoon-yoga-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "PRAV-SIMONA MONSOON YOGA RETREAT"
+  },
+  {
+   "id": "link-191",
+   "title": "Lakshya yoga retreat 2017",
+   "href": "/lakshya-yoga-retreat-2017/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2017"
+   ],
+   "originalTitle": "Lakshya Yoga Retreat 2017"
+  },
+  {
+   "id": "link-192",
+   "title": "Lakshya yoga retreat 2018",
+   "href": "/lakshya-yoga-retreat-2018/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2018"
+   ],
+   "originalTitle": "Lakshya Yoga Retreat 2018"
+  },
+  {
+   "id": "link-193",
+   "title": "Ashtanga yoga & Ayurveda retreat",
+   "href": "/ashtanga-yoga-and-ayurveda-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Ashtanga Yoga & Ayurveda Retreat"
+  },
+  {
+   "id": "link-194",
+   "title": "Karma Being retreat",
+   "href": "/karma-being-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Karma Being Retreat"
+  },
+  {
+   "id": "link-195",
+   "title": "Mindfulness retreat",
+   "href": "/mindfulness-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Mindfulness Retreat"
+  },
+  {
+   "id": "link-196",
+   "title": "Ananda Lahari yoga and Ayurveda retreat",
+   "href": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Ananda Lahari Yoga and Ayurveda Retreat"
+  },
+  {
+   "id": "link-197",
+   "title": "Yoga retreat",
+   "href": "/archive-yoga-retreat/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Yoga Retreat"
+  },
+  {
+   "id": "link-198",
+   "title": "Lakshya yoga",
+   "href": "/lakshya-yoga/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Lakshya Yoga"
+  },
+  {
+   "id": "link-199",
+   "title": "Yoga retreats for everyone",
+   "href": "/yoga-retreats-for-everyone/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Yoga & Ayurveda retreats"
+   ],
+   "originalTitle": "Yoga Retreats for Everyone"
+  },
+  {
+   "id": "link-200",
+   "title": "Ayurveda workshop",
+   "href": "/ayurveda-workshop/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats & workshops",
+    "Ayurveda workshops"
+   ],
+   "originalTitle": "Ayurveda Workshop"
+  },
+  {
+   "id": "link-201",
+   "title": "Healing recipes: back to roots",
+   "href": "/chef-retreat-food-to-wellness/",
+   "branch": [
+    "Past programmes & events",
+    "Food programmes"
+   ],
+   "originalTitle": "Healing Recipes: Back to Roots"
+  },
+  {
+   "id": "link-202",
+   "title": "Ayurvedic new year: Yala 2018!",
+   "href": "/ayurvedic-new-year-yala-2018/",
+   "branch": [
+    "Past programmes & events",
+    "Retreats by year",
+    "2018"
+   ],
+   "originalTitle": "Ayurvedic New Year: Yala 2018!"
+  },
+  {
+   "id": "link-203",
+   "title": "The Baoli special deal",
+   "href": "/the-baoli-special-deal/",
+   "branch": [
+    "Past programmes & events",
+    "Past promotions"
+   ],
+   "originalTitle": "the-baoli-special-deal"
+  },
+  {
+   "id": "link-204",
+   "title": "The Baoli advert box deal",
+   "href": "/the-baoli-advert-box-deal/",
+   "branch": [
+    "Past programmes & events",
+    "Past promotions"
+   ],
+   "originalTitle": "the-baoli-advert-box-deal"
+  },
+  {
+   "id": "link-205",
+   "title": "Archive",
+   "href": "/archive/",
+   "branch": [
+    "Past programmes & events",
+    "Archive directory"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-206",
+   "title": "Family Ayurveda programme, Kerala (campaign page)",
+   "href": "/family-ayurvedic-retreat-kerala.html",
+   "branch": [
     "Campaign pages",
-    "Site services & policies"
-  ],
-  "links": [
-    {
-      "id": "link-001",
-      "title": "Complete rejuvenation & detoxification therapy",
-      "href": "/holistic-treatment-for-rejuvenation-and-detoxification/",
-      "branch": [
-        "Treatments & clinical care",
-        "Rejuvenation, detoxification & personalised care"
-      ],
-      "originalTitle": "Complete Rejuvenation & Detoxification Therapy"
-    },
-    {
-      "id": "link-002",
-      "title": "Preventive health & regenerative Ayurvedic detox program",
-      "href": "/preventive-and-regenerative-treatment/",
-      "branch": [
-        "Treatments & clinical care",
-        "Rejuvenation, detoxification & personalised care"
-      ],
-      "originalTitle": "Preventive Health & Regenerative Ayurvedic Detox Program"
-    },
-    {
-      "id": "link-003",
-      "title": "Ayurvedic Panchakarma detoxification therapy",
-      "href": "/panchakarma-therapy/",
-      "branch": [
-        "Treatments & clinical care",
-        "Rejuvenation, detoxification & personalised care"
-      ],
-      "originalTitle": "Ayurvedic Panchakarma Detoxification Therapy"
-    },
-    {
-      "id": "link-004",
-      "title": "Weight management & metabolism therapy",
-      "href": "/weight-loss-programme",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Metabolic, digestive & cardiovascular health"
-      ],
-      "originalTitle": "Weight Management & Metabolism Therapy"
-    },
-    {
-      "id": "link-005",
-      "title": "Diabetes & metabolic balance therapy",
-      "href": "/treatment-for-diabetes/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Metabolic, digestive & cardiovascular health"
-      ],
-      "originalTitle": "Diabetes & Metabolic Balance Therapy"
-    },
-    {
-      "id": "link-006",
-      "title": "Joint rehabilitation & arthritis treatment",
-      "href": "/treatment-for-arthritis-and-spondylitis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Joints, back & spine"
-      ],
-      "originalTitle": "Joint Rehabilitation & Arthritis Treatment"
-    },
-    {
-      "id": "link-007",
-      "title": "Treatment for chronic back pain",
-      "href": "/treatment-for-chronic-back-pain/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Joints, back & spine"
-      ],
-      "originalTitle": "Treatment for Chronic Back Pain"
-    },
-    {
-      "id": "link-008",
-      "title": "Stress & strain relief treatment",
-      "href": "/treatment-to-remove-stress-and-strain/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Stress, sleep & headaches"
-      ],
-      "originalTitle": "Stress & Strain Relief Treatment"
-    },
-    {
-      "id": "link-009",
-      "title": "Chronic back pain relief treatment",
-      "href": "/treatment-to-remove-stress-and-strain/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Stress, sleep & headaches"
-      ],
-      "originalTitle": "Chronic Back Pain Relief Treatment"
-    },
-    {
-      "id": "link-010",
-      "title": "Sinus & migraine relief treatment",
-      "href": "/treatment-for-sinusitis-and-migraine/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Stress, sleep & headaches"
-      ],
-      "originalTitle": "Sinus & Migraine Relief Treatment"
-    },
-    {
-      "id": "link-011",
-      "title": "Spinal disc & nerve restoration treatment",
-      "href": "/treatment-for-slip-disc/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Joints, back & spine"
-      ],
-      "originalTitle": "Spinal Disc & Nerve Restoration Treatment"
-    },
-    {
-      "id": "link-012",
-      "title": "Breath enhancement & respiratory health therapy",
-      "href": "/treatment-for-bronchial-diseases/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Respiratory health"
-      ],
-      "originalTitle": "Breath Enhancement & Respiratory Health Therapy"
-    },
-    {
-      "id": "link-013",
-      "title": "Neck & upper back rehabilitation treatment",
-      "href": "/treatment-for-cervical-spondylosis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Joints, back & spine"
-      ],
-      "originalTitle": "Neck & Upper Back Rehabilitation Treatment"
-    },
-    {
-      "id": "link-014",
-      "title": "Spine care & spondylitis treatment",
-      "href": "/treatment-for-spondylitis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Joints, back & spine"
-      ],
-      "originalTitle": "Spine Care & Spondylitis Treatment"
-    },
-    {
-      "id": "link-015",
-      "title": "Ayurveda skin vitality revival treatment",
-      "href": "/treatment-for-skin-diseases/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Skin & eye health"
-      ],
-      "originalTitle": "Ayurveda Skin Vitality Revival Treatment"
-    },
-    {
-      "id": "link-016",
-      "title": "Neurological wellness & function therapy",
-      "href": "/treatment-for-nervous-disability/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Neurological care & rehabilitation"
-      ],
-      "originalTitle": "Neurological Wellness & Function Therapy"
-    },
-    {
-      "id": "link-017",
-      "title": "Psoriasis & chronic skin treatment",
-      "href": "/treatment-for-psoriasis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Skin & eye health"
-      ],
-      "originalTitle": "Psoriasis & Chronic Skin Treatment"
-    },
-    {
-      "id": "link-018",
-      "title": "Paralysis recovery & rehabilitation therapy",
-      "href": "/treatment-for-paralysis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Neurological care & rehabilitation"
-      ],
-      "originalTitle": "Paralysis Recovery & Rehabilitation Therapy"
-    },
-    {
-      "id": "link-019",
-      "title": "Facial paralysis & nerve rehabilitation therapy",
-      "href": "/treatment-for-facial-paralysis/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Neurological care & rehabilitation"
-      ],
-      "originalTitle": "Facial Paralysis & Nerve Rehabilitation Therapy"
-    },
-    {
-      "id": "link-020",
-      "title": "Vision health & eye rejuvenation therapy",
-      "href": "/beauty-care-and-eye-care/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Skin & eye health"
-      ],
-      "originalTitle": "Vision Health & Eye Rejuvenation Therapy"
-    },
-    {
-      "id": "link-021",
-      "title": "Cardiovascular health & blood pressure treatment",
-      "href": "/treatment-for-hypertension/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Metabolic, digestive & cardiovascular health"
-      ],
-      "originalTitle": "Cardiovascular Health & Blood Pressure Treatment"
-    },
-    {
-      "id": "link-022",
-      "title": "Postpartum rejuvenation therapy",
-      "href": "/post-pregnancy-health-programme/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Women’s health"
-      ],
-      "originalTitle": "Postpartum Rejuvenation Therapy"
-    },
-    {
-      "id": "link-023",
-      "title": "Addiction recovery & behavioral health therapy",
-      "href": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Neurological care & rehabilitation"
-      ],
-      "originalTitle": "Addiction Recovery & Behavioral Health Therapy"
-    },
-    {
-      "id": "link-024",
-      "title": "Supportive care therapy for cancer patients",
-      "href": "/revitalizing-and-strengthening/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Supportive cancer care"
-      ],
-      "originalTitle": "Supportive Care Therapy for Cancer Patients"
-    },
-    {
-      "id": "link-025",
-      "title": "Women’s hormonal balance & endocrine therapy",
-      "href": "/womens-hormonal-balance-endocrine-therapy/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Women’s health"
-      ],
-      "originalTitle": "Women’s Hormonal Balance & Endocrine Therapy"
-    },
-    {
-      "id": "link-026",
-      "title": "Sleep restoration therapy",
-      "href": "/sleep-restoration-therapy/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Stress, sleep & headaches"
-      ],
-      "originalTitle": "Sleep Restoration Therapy"
-    },
-    {
-      "id": "link-027",
-      "title": "Immunity enhancement & executive health assessment therapy",
-      "href": "/immunity-enhancement-executive-health-assessment-therapy/",
-      "branch": [
-        "Treatments & clinical care",
-        "Rejuvenation, detoxification & personalised care"
-      ],
-      "originalTitle": "Immunity Enhancement & Executive Health Assessment Therapy"
-    },
-    {
-      "id": "link-028",
-      "title": "Yoga-based stress & energy reset program",
-      "href": "/yoga-based-stress-energy-reset-program/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Stress, sleep & headaches"
-      ],
-      "originalTitle": "Yoga-Based Stress & Energy Reset Program"
-    },
-    {
-      "id": "link-029",
-      "title": "Digestive wellness & gut health yoga therapy",
-      "href": "/digestive-wellness-gut-health-yoga-therapy/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatments by concern",
-        "Metabolic, digestive & cardiovascular health"
-      ],
-      "originalTitle": "Digestive Wellness & Gut Health Yoga Therapy"
-    },
-    {
-      "id": "link-030",
-      "title": "Kairali’s personalized & customized healing program",
-      "href": "/personalized-customized-healing-program/",
-      "branch": [
-        "Treatments & clinical care",
-        "Rejuvenation, detoxification & personalised care"
-      ],
-      "originalTitle": "Kairali’s Personalized & Customized Healing Program"
-    },
-    {
-      "id": "link-031",
-      "title": "Yoga & meditation program",
-      "href": "/yoga-meditation-program/",
-      "branch": [
-        "Yoga & meditation",
-        "Therapeutic programmes"
-      ],
-      "originalTitle": "Yoga & Meditation Program"
-    },
-    {
-      "id": "link-032",
-      "title": "Classic villa",
-      "href": "/classic-villa/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation",
-        "Villas & suites"
-      ],
-      "originalTitle": "Classic Villa"
-    },
-    {
-      "id": "link-033",
-      "title": "Deluxe villa",
-      "href": "/deluxe-villa/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation",
-        "Villas & suites"
-      ],
-      "originalTitle": "Deluxe Villa"
-    },
-    {
-      "id": "link-034",
-      "title": "Royal villa",
-      "href": "/royal-villa/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation",
-        "Villas & suites"
-      ],
-      "originalTitle": "Royal Villa"
-    },
-    {
-      "id": "link-035",
-      "title": "Maharaja suite",
-      "href": "/maharaja-suite/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation",
-        "Villas & suites"
-      ],
-      "originalTitle": "Maharaja Suite"
-    },
-    {
-      "id": "link-036",
-      "title": "Brief on Kairali",
-      "href": "/brief-on-kairali/",
-      "branch": [
-        "About Kairali",
-        "Our story & leadership"
-      ],
-      "originalTitle": "Brief on Kairali"
-    },
-    {
-      "id": "link-037",
-      "title": "Founder’s message and meet the directors",
-      "href": "/founders-message/",
-      "branch": [
-        "About Kairali",
-        "Our story & leadership"
-      ],
-      "originalTitle": "Founder’s Message and Meet the Directors"
-    },
-    {
-      "id": "link-038",
-      "title": "Vision and mission",
-      "href": "/vision-and-mission/",
-      "branch": [
-        "About Kairali",
-        "Our story & leadership"
-      ],
-      "originalTitle": "Vision and Mission"
-    },
-    {
-      "id": "link-039",
-      "title": "Corporate social responsibility (CSR)",
-      "href": "/social-responsibilities/",
-      "branch": [
-        "About Kairali",
-        "Responsibility & commitments"
-      ],
-      "originalTitle": "Corporate Social Responsibility (CSR)"
-    },
-    {
-      "id": "link-040",
-      "title": "Social, cultural & environmental commitment",
-      "href": "/social-cultural-environmental-commitment/",
-      "branch": [
-        "About Kairali",
-        "Responsibility & commitments"
-      ],
-      "originalTitle": "Social, Cultural & Environmental commitment"
-    },
-    {
-      "id": "link-041",
-      "title": "Kairali hospitality",
-      "href": "/kairali-hospitality/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Properties & hospitality"
-      ],
-      "originalTitle": "Kairali Hospitality"
-    },
-    {
-      "id": "link-042",
-      "title": "Kairali – the Ayurvedic Healing Village",
-      "href": "/kairali-the-ayurvedic-healing-village/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Properties & hospitality"
-      ],
-      "originalTitle": "Kairali – The Ayurvedic Healing Village"
-    },
-    {
-      "id": "link-043",
-      "title": "Villa Raag",
-      "href": "/villa-raag/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Properties & hospitality"
-      ],
-      "originalTitle": "Villa Raag"
-    },
-    {
-      "id": "link-044",
-      "title": "Kairali Ayurvedic products",
-      "href": "/kairali-ayurvedic-products-pvt-ltd/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Products business"
-      ],
-      "originalTitle": "Kairali Ayurvedic Products"
-    },
-    {
-      "id": "link-045",
-      "title": "Arogya Shala",
-      "href": "/arogya-shala/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Centres & franchise"
-      ],
-      "originalTitle": "Arogya Shala"
-    },
-    {
-      "id": "link-046",
-      "title": "Arogya Kendra",
-      "href": "/arogya-kendra",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Centres & franchise"
-      ],
-      "originalTitle": "Arogya Kendra"
-    },
-    {
-      "id": "link-047",
-      "title": "Kairali Ayurvedic centre",
-      "href": "/kairali-ayurvedic-centre/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Centres & franchise"
-      ],
-      "originalTitle": "Kairali Ayurvedic Centre"
-    },
-    {
-      "id": "link-048",
-      "title": "Kairali Ayurveda franchise",
-      "href": "/ayurvedic-franchise/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Centres & franchise"
-      ],
-      "originalTitle": "Kairali Ayurveda Franchise"
-    },
-    {
-      "id": "link-049",
-      "title": "Kairali Ayurvedic treatment center",
-      "href": "/kairali-ayurvedic-treatment-center/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Centres & franchise"
-      ],
-      "originalTitle": "Kairali Ayurvedic Treatment Center"
-    },
-    {
-      "id": "link-050",
-      "title": "Ayurvedic herbal tea",
-      "href": "/ayurvedic-herbal-tea",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Ayurvedic Herbal Tea"
-    },
-    {
-      "id": "link-051",
-      "title": "Ayurvedic proprietary organics",
-      "href": "/ayurvedic-proprietary-organics",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Ayurvedic Proprietary Organics"
-    },
-    {
-      "id": "link-052",
-      "title": "Kair-by Kairali",
-      "href": "/kair-by-kairali/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Kair-By Kairali"
-    },
-    {
-      "id": "link-053",
-      "title": "Ayurvedic proprietary products",
-      "href": "/ayurvedic-proprietary-medicines",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Ayurvedic Proprietary Products"
-    },
-    {
-      "id": "link-054",
-      "title": "Ayurvedic classical products",
-      "href": "/ayurvedic-classical-medicines/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Ayurvedic Classial Products"
-    },
-    {
-      "id": "link-055",
-      "title": "Books",
-      "href": "/books/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Books"
-    },
-    {
-      "id": "link-056",
-      "title": "Kairali Ayurvedic equipment",
-      "href": "/kairali-ayurvedic-equipment/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Kairali Ayurvedic Equipment"
-    },
-    {
-      "id": "link-057",
-      "title": "Ayurveda special offers",
-      "href": "/special-offers/",
-      "branch": [
-        "Packages & offers",
-        "Special offers"
-      ],
-      "originalTitle": "Ayurveda Special Offers"
-    },
-    {
-      "id": "link-058",
-      "title": "Senior citizen offer",
-      "href": "/offers/senior-citizen-offer/",
-      "branch": [
-        "Packages & offers",
-        "Special offers"
-      ],
-      "originalTitle": "Senior Citizen Offer"
-    },
-    {
-      "id": "link-059",
-      "title": "Olympics and Paralympics offer",
-      "href": "/offers/olympics-and-paralympics-offer/",
-      "branch": [
-        "Packages & offers",
-        "Special offers"
-      ],
-      "originalTitle": "Olympics and Paralympics Offer"
-    },
-    {
-      "id": "link-060",
-      "title": "Defence and paramilitary forces offer",
-      "href": "/defence-and-paramilitary-forces/",
-      "branch": [
-        "Packages & offers",
-        "Special offers"
-      ],
-      "originalTitle": "Defence and Paramilitary Forces Offer"
-    },
-    {
-      "id": "link-061",
-      "title": "Intensive Ayurveda training program (WAP-HV)",
-      "href": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Professional programmes"
-      ],
-      "originalTitle": "Intensive Ayurveda Training Program (WAP-HV)"
-    },
-    {
-      "id": "link-062",
-      "title": "Level one advance Ayurveda training program for wellness professionals, Kerala (AATP 1-HV)",
-      "href": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Professional programmes"
-      ],
-      "originalTitle": "Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala (AATP 1-HV)"
-    },
-    {
-      "id": "link-063",
-      "title": "Advanced Ayurveda lifestyle consultant and therapist training program, Kerala (AALCT- HV)",
-      "href": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Professional programmes"
-      ],
-      "originalTitle": "Advanced Ayurveda Lifestyle Consultant and Therapist Training Program, Kerala (AALCT- HV)"
-    },
-    {
-      "id": "link-064",
-      "title": "One day Ayurveda workshop program Kerala (OAP-HV)",
-      "href": "/one-day-ayurveda-workshop-program-kerala/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Workshops & short courses"
-      ],
-      "originalTitle": "One Day Ayurveda Workshop Program Kerala (OAP-HV)"
-    },
-    {
-      "id": "link-065",
-      "title": "Three day short term Ayurveda certificate program (TAP-HV)",
-      "href": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Workshops & short courses"
-      ],
-      "originalTitle": "Three Day Short Term Ayurveda Certificate Program (TAP-HV)"
-    },
-    {
-      "id": "link-066",
-      "title": "“Why get training in Ayurveda?”",
-      "href": "/why-get-training-in-ayurveda/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Why train in Ayurveda?"
-      ],
-      "originalTitle": "“Why get Training in Ayurveda?”"
-    },
-    {
-      "id": "link-067",
-      "title": "Yoga & meditation training",
-      "href": "/yoga-meditation-training/",
-      "branch": [
-        "Training & education",
-        "Yoga teacher training",
-        "Overview & guidance"
-      ],
-      "originalTitle": "Yoga & Meditation Training"
-    },
-    {
-      "id": "link-068",
-      "title": "Why get training in yoga?",
-      "href": "/why-get-training-in-yoga/",
-      "branch": [
-        "Training & education",
-        "Yoga teacher training",
-        "Overview & guidance"
-      ],
-      "originalTitle": "Why Get Training in Yoga?"
-    },
-    {
-      "id": "link-069",
-      "title": "Yoga classes (theory)",
-      "href": "/yoga-classes-theory/",
-      "branch": [
-        "Training & education",
-        "Yoga teacher training",
-        "Theory & practice"
-      ],
-      "originalTitle": "Yoga Classes (Theory)"
-    },
-    {
-      "id": "link-070",
-      "title": "Yoga classes (practical)",
-      "href": "/yoga-classes-practical/",
-      "branch": [
-        "Training & education",
-        "Yoga teacher training",
-        "Theory & practice"
-      ],
-      "originalTitle": "Yoga Classes (Practical)"
-    },
-    {
-      "id": "link-071",
-      "title": "Yoga therapy individual",
-      "href": "/yoga-therapy-individual/",
-      "branch": [
-        "Yoga & meditation",
-        "Individual therapy"
-      ],
-      "originalTitle": "Yoga Therapy Individual"
-    },
-    {
-      "id": "link-072",
-      "title": "New to yoga",
-      "href": "/new-to-yoga/",
-      "branch": [
-        "Yoga & meditation",
-        "Getting started"
-      ],
-      "originalTitle": "New to Yoga"
-    },
-    {
-      "id": "link-073",
-      "title": "What is yoga?",
-      "href": "/what-is-yoga/",
-      "branch": [
-        "Yoga & meditation",
-        "Getting started"
-      ],
-      "originalTitle": "What is Yoga?"
-    },
-    {
-      "id": "link-074",
-      "title": "Why pick a yoga or yoga retreat?",
-      "href": "/why-pick-a-yoga-or-yoga-retreat/",
-      "branch": [
-        "Yoga & meditation",
-        "Getting started"
-      ],
-      "originalTitle": "Why pick a Yoga or Yoga Retreat?"
-    },
-    {
-      "id": "link-075",
-      "title": "Learn more about yoga",
-      "href": "/learn-more-about-yoga/",
-      "branch": [
-        "Yoga & meditation",
-        "Getting started"
-      ],
-      "originalTitle": "Learn More About Yoga"
-    },
-    {
-      "id": "link-076",
-      "title": "Meditation",
-      "href": "/meditation/",
-      "branch": [
-        "Yoga & meditation"
-      ],
-      "originalTitle": "Meditation"
-    },
-    {
-      "id": "link-077",
-      "title": "New to Ayurveda",
-      "href": "/new-to-ayurveda/",
-      "branch": [
-        "Ayurveda library",
-        "Getting started & further reading"
-      ],
-      "originalTitle": "New to Ayurveda"
-    },
-    {
-      "id": "link-078",
-      "title": "Ayurvedic links",
-      "href": "/ayurvedic-links/",
-      "branch": [
-        "Ayurveda library",
-        "Getting started & further reading"
-      ],
-      "originalTitle": "Ayurvedic Links"
-    },
-    {
-      "id": "link-079",
-      "title": "Learn more about Ayurveda",
-      "href": "/learn-more-about-ayurveda/",
-      "branch": [
-        "Ayurveda library",
-        "Getting started & further reading"
-      ],
-      "originalTitle": "LEARN MORE ABOUT AYURVEDA"
-    },
-    {
-      "id": "link-080",
-      "title": "Village facilities",
-      "href": "/village-facilities/",
-      "branch": [
-        "Stay & village experiences"
-      ],
-      "originalTitle": "Village Facilities"
-    },
-    {
-      "id": "link-081",
-      "title": "Butterfly booklet",
-      "href": "/butterfly-booklet/",
-      "branch": [
-        "Stay & village experiences",
-        "Food, farm & nature"
-      ],
-      "originalTitle": "Butterfly Booklet"
-    },
-    {
-      "id": "link-082",
-      "title": "Nature walk",
-      "href": "/nature-walk/",
-      "branch": [
-        "Stay & village experiences",
-        "Food, farm & nature"
-      ],
-      "originalTitle": "Nature Walk"
-    },
-    {
-      "id": "link-083",
-      "title": "Cooking classes",
-      "href": "/cooking-classes/",
-      "branch": [
-        "Stay & village experiences",
-        "Food, farm & nature"
-      ],
-      "originalTitle": "Cooking classes"
-    },
-    {
-      "id": "link-084",
-      "title": "Organic farm",
-      "href": "/organic-farm/",
-      "branch": [
-        "Stay & village experiences",
-        "Food, farm & nature"
-      ],
-      "originalTitle": "Organic Farm"
-    },
-    {
-      "id": "link-085",
-      "title": "Animal husbandry",
-      "href": "/animal-husbandry/",
-      "branch": [
-        "Stay & village experiences",
-        "Food, farm & nature"
-      ],
-      "originalTitle": "Animal Husbandry"
-    },
-    {
-      "id": "link-086",
-      "title": "Visit Kerala",
-      "href": "/visit-kerala/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Destinations"
-      ],
-      "originalTitle": "Visit Kerala"
-    },
-    {
-      "id": "link-087",
-      "title": "Destination Palakkad",
-      "href": "/destination-palakkad/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Destinations"
-      ],
-      "originalTitle": "Destination Palakkad"
-    },
-    {
-      "id": "link-088",
-      "title": "Wildlife drive",
-      "href": "/wildlife-drive/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Excursions"
-      ],
-      "originalTitle": "Wildlife Drive"
-    },
-    {
-      "id": "link-089",
-      "title": "Elephant safari",
-      "href": "/elephant-safari/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Excursions"
-      ],
-      "originalTitle": "Elephant Safari"
-    },
-    {
-      "id": "link-090",
-      "title": "House boat tour",
-      "href": "/house-boat-tour/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Excursions"
-      ],
-      "originalTitle": "House Boat Tour"
-    },
-    {
-      "id": "link-091",
-      "title": "Back water tour",
-      "href": "/back-water-tour/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Excursions"
-      ],
-      "originalTitle": "Back Water Tour"
-    },
-    {
-      "id": "link-092",
-      "title": "Mountain jeep safari",
-      "href": "/mountain-jeep-safari/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Excursions"
-      ],
-      "originalTitle": "Mountain Jeep Safari"
-    },
-    {
-      "id": "link-093",
-      "title": "Cultural events",
-      "href": "/cultural-events/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Culture & festivals"
-      ],
-      "originalTitle": "Cultural Events"
-    },
-    {
-      "id": "link-094",
-      "title": "Festivals",
-      "href": "/festivals/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Culture & festivals"
-      ],
-      "originalTitle": "Festivals"
-    },
-    {
-      "id": "link-095",
-      "title": "Attractions (10 kms & under)",
-      "href": "/attractions-under-10kms/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Attractions by distance"
-      ],
-      "originalTitle": "Attractions (10 Kms & Under)"
-    },
-    {
-      "id": "link-096",
-      "title": "Attractions (15 kms & below)",
-      "href": "/attractions-15kms-and-below/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Attractions by distance"
-      ],
-      "originalTitle": "Attractions (15 Kms & Below)"
-    },
-    {
-      "id": "link-097",
-      "title": "Attractions (25 to 50 kms)",
-      "href": "/attractions-25kms-to-50kms/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Attractions by distance"
-      ],
-      "originalTitle": "Attractions (25 to 50 Kms)"
-    },
-    {
-      "id": "link-098",
-      "title": "Attractions (above 50 kms)",
-      "href": "/attractions-above-50kms/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Attractions by distance"
-      ],
-      "originalTitle": "Attractions (Above 50 Kms)"
-    },
-    {
-      "id": "link-099",
-      "title": "Awards & accreditations",
-      "href": "/awards-and-accreditations/",
-      "branch": [
-        "About Kairali"
-      ],
-      "originalTitle": "Awards & Accreditations"
-    },
-    {
-      "id": "link-100",
-      "title": "Awards and accolades",
-      "href": "/awards-and-accolades/",
-      "branch": [
-        "About Kairali",
-        "Awards & accreditations"
-      ],
-      "originalTitle": "Awards and Accolades"
-    },
-    {
-      "id": "link-101",
-      "title": "Ayurveda packages",
-      "href": "/ayurveda-package/",
-      "branch": [
-        "Packages & offers",
-        "Treatment & yoga packages"
-      ],
-      "originalTitle": "Ayurveda Packages"
-    },
-    {
-      "id": "link-102",
-      "title": "Yoga & meditation package",
-      "href": "/yoga-and-meditation-package/",
-      "branch": [
-        "Packages & offers",
-        "Treatment & yoga packages"
-      ],
-      "originalTitle": "Yoga & Meditation Package"
-    },
-    {
-      "id": "link-103",
-      "title": "Photo gallery",
-      "href": "/photo-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Image Gallery"
-    },
-    {
-      "id": "link-104",
-      "title": "Product gallery",
-      "href": "/product-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Product Gallery"
-    },
-    {
-      "id": "link-105",
-      "title": "Property gallery",
-      "href": "/property-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Property Gallery"
-    },
-    {
-      "id": "link-106",
-      "title": "Sight seeing gallery",
-      "href": "/sight-seeing-gallery",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Sight Seeing Gallery"
-    },
-    {
-      "id": "link-107",
-      "title": "Treatments gallery",
-      "href": "/treatments-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Treatments Gallery"
-    },
-    {
-      "id": "link-108",
-      "title": "Video gallery",
-      "href": "/video-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Video & virtual tour"
-      ],
-      "originalTitle": "Video Gallery"
-    },
-    {
-      "id": "link-109",
-      "title": "Virtual tour",
-      "href": "/virtual-tour/",
-      "branch": [
-        "Galleries & reviews",
-        "Video & virtual tour"
-      ],
-      "originalTitle": "Virtual Tour"
-    },
-    {
-      "id": "link-110",
-      "title": "Yoga gallery",
-      "href": "/yoga-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Yoga Gallery"
-    },
-    {
-      "id": "link-111",
-      "title": "Villa gallery",
-      "href": "/villas-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Villa Gallery"
-    },
-    {
-      "id": "link-112",
-      "title": "Read feedback",
-      "href": "/read-feedback/",
-      "branch": [
-        "Galleries & reviews",
-        "Patient feedback"
-      ],
-      "originalTitle": "Read Feedback"
-    },
-    {
-      "id": "link-113",
-      "title": "Give feedback",
-      "href": "/givefeedback/",
-      "branch": [
-        "Galleries & reviews",
-        "Patient feedback"
-      ],
-      "originalTitle": "Give Feedback"
-    },
-    {
-      "id": "link-114",
-      "title": "Our partners",
-      "href": "/our-partners/",
-      "branch": [
-        "About Kairali",
-        "Partners"
-      ],
-      "originalTitle": "Our Partners"
-    },
-    {
-      "id": "link-115",
-      "title": "Careers",
-      "href": "/careers/",
-      "branch": [
-        "About Kairali",
-        "Careers & internships"
-      ],
-      "originalTitle": "Careers"
-    },
-    {
-      "id": "link-116",
-      "title": "Internships at Kairali",
-      "href": "/internships-at-kairali/",
-      "branch": [
-        "About Kairali",
-        "Careers & internships"
-      ],
-      "originalTitle": "Internships at Kairali"
-    },
-    {
-      "id": "link-117",
-      "title": "Apply now",
-      "href": "/apply-now/",
-      "branch": [
-        "About Kairali",
-        "Careers & internships"
-      ],
-      "originalTitle": "Apply Now"
-    },
-    {
-      "id": "link-118",
-      "title": "Contact us",
-      "href": "/contact-us/",
-      "branch": [
-        "Contact & plan your visit",
-        "Contact & enquiries"
-      ],
-      "originalTitle": "Contact Us"
-    },
-    {
-      "id": "link-119",
-      "title": "Location",
-      "href": "/map/",
-      "branch": [
-        "Contact & plan your visit",
-        "Location & travel"
-      ],
-      "originalTitle": "Location"
-    },
-    {
-      "id": "link-120",
-      "title": "How to reach?",
-      "href": "/how-to-reach/",
-      "branch": [
-        "Contact & plan your visit",
-        "Location & travel"
-      ],
-      "originalTitle": "How to Reach?"
-    },
-    {
-      "id": "link-121",
-      "title": "Enquire now",
-      "href": "/enquiry-form/",
-      "branch": [
-        "Contact & plan your visit",
-        "Contact & enquiries"
-      ],
-      "originalTitle": "Enquire Now"
-    },
-    {
-      "id": "link-122",
-      "title": "Online consultation",
-      "href": "/online-consultation/",
-      "branch": [
-        "Contact & plan your visit",
-        "Consultations & appointments"
-      ],
-      "originalTitle": "Online Consultation"
-    },
-    {
-      "id": "link-123",
-      "title": "Outpatient department (OPD)",
-      "href": "/opd/",
-      "branch": [
-        "Contact & plan your visit",
-        "Consultations & appointments"
-      ],
-      "originalTitle": "OPD"
-    },
-    {
-      "id": "link-124",
-      "title": "Book now",
-      "href": "/book-now/",
-      "branch": [
-        "Contact & plan your visit",
-        "Booking"
-      ],
-      "originalTitle": "Book Now"
-    },
-    {
-      "id": "link-125",
-      "title": "Blog & news",
-      "href": "https://whyayurveda.org/",
-      "branch": [
-        "Ayurveda library",
-        "Articles & news"
-      ],
-      "originalTitle": "Blog & News"
-    },
-    {
-      "id": "link-126",
-      "title": "Experience",
-      "href": "/experience/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village"
-      ],
-      "originalTitle": "Experience"
-    },
-    {
-      "id": "link-127",
-      "title": "Alcohol free",
-      "href": "/alcohol-free/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village",
-        "Food & lifestyle commitments"
-      ],
-      "originalTitle": "Alcohol Free"
-    },
-    {
-      "id": "link-128",
-      "title": "No smoking",
-      "href": "/no-smoking/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village",
-        "Food & lifestyle commitments"
-      ],
-      "originalTitle": "No Smoking"
-    },
-    {
-      "id": "link-129",
-      "title": "No caffeine",
-      "href": "/no-caffeine/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village",
-        "Food & lifestyle commitments"
-      ],
-      "originalTitle": "No Caffeine"
-    },
-    {
-      "id": "link-130",
-      "title": "Vegetarian",
-      "href": "/vegetarian/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village",
-        "Food & lifestyle commitments"
-      ],
-      "originalTitle": "Vegetarian"
-    },
-    {
-      "id": "link-131",
-      "title": "No preservatives",
-      "href": "/no-preservatives/",
-      "branch": [
-        "Stay & village experiences",
-        "Life at the village",
-        "Food & lifestyle commitments"
-      ],
-      "originalTitle": "No Preservatives"
-    },
-    {
-      "id": "link-132",
-      "title": "FAQs & downloads",
-      "href": "/faqs-downloads/",
-      "branch": [
-        "Contact & plan your visit"
-      ],
-      "originalTitle": "FAQ’s & Downloads"
-    },
-    {
-      "id": "link-133",
-      "title": "Privacy policy",
-      "href": "/privacy-policy/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": "Privacy Policy"
-    },
-    {
-      "id": "link-134",
-      "title": "Sitemap",
-      "href": "/sitemap",
-      "branch": [
-        "Site services & policies",
-        "Navigation & indexes"
-      ],
-      "originalTitle": "Sitemap"
-    },
-    {
-      "id": "link-135",
-      "title": "XML sitemap",
-      "href": "/sitemap_index.xml",
-      "branch": [
-        "Site services & policies",
-        "Navigation & indexes"
-      ],
-      "originalTitle": "sitemap.xml"
-    },
-    {
-      "id": "link-136",
-      "title": "Thank you",
-      "href": "/thanks/",
-      "branch": [
-        "Site services & policies",
-        "Confirmation pages"
-      ],
-      "originalTitle": "THANKS"
-    },
-    {
-      "id": "link-137",
-      "title": "Search",
-      "href": "/search-results/",
-      "branch": [
-        "Site services & policies",
-        "Navigation & indexes"
-      ],
-      "originalTitle": "Search"
-    },
-    {
-      "id": "link-138",
-      "title": "Email subscription",
-      "href": "/emailsubscriber/",
-      "branch": [
-        "Site services & policies",
-        "Subscriptions"
-      ],
-      "originalTitle": "EMAIL SUBSCRIBER"
-    },
-    {
-      "id": "link-139",
-      "title": "Ayurveda retreat Kerala",
-      "href": "/ayurveda-retreat-kerala.html",
-      "branch": [
-        "Campaign pages",
-        "Regional & brand campaigns"
-      ],
-      "originalTitle": "Ayurveda Retreat Kerala"
-    },
-    {
-      "id": "link-140",
-      "title": "Ayurveda treatment neo South India cities",
-      "href": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
-      "branch": [
-        "Campaign pages",
-        "Regional & brand campaigns"
-      ],
-      "originalTitle": "Ayurveda Treatment Neo S.India Cities"
-    },
-    {
-      "id": "link-141",
-      "title": "Ayurvedic treatment packages",
-      "href": "/ayurvedic-treatment-packages.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Ayurvedic Treatment Packages"
-    },
-    {
-      "id": "link-142",
-      "title": "Holistic treatment for rejuvenation & detoxification",
-      "href": "/preventive-rejuvenation-detoxification.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Holistic Treatment For Rejuvenation & Detoxification"
-    },
-    {
-      "id": "link-143",
-      "title": "Kairali brand and competition neo original",
-      "href": "/Kairali_Brand_and_Competition_Neo-original.html",
-      "branch": [
-        "Campaign pages",
-        "Regional & brand campaigns"
-      ],
-      "originalTitle": "Kairali Brand and Competition Neo Original"
-    },
-    {
-      "id": "link-144",
-      "title": "Kairali cleansing centre",
-      "href": "/kairali-cleansing-centre.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Kairali Cleansing Centre"
-    },
-    {
-      "id": "link-145",
-      "title": "Lose weight naturally & effectively in 3 weeks",
-      "href": "/weight-loss.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Lose weight Naturally & Effectively in 3 weeks"
-    },
-    {
-      "id": "link-146",
-      "title": "Pain management",
-      "href": "/pain-management.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Pain Management"
-    },
-    {
-      "id": "link-147",
-      "title": "Panchkarma restores wellness",
-      "href": "/panchkarma-treatment.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment campaigns"
-      ],
-      "originalTitle": "Panchkarma Restores Wellness"
-    },
-    {
-      "id": "link-148",
-      "title": "Treatment in Kerala",
-      "href": "/treatment-in-kerala.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment in Kerala & language editions"
-      ],
-      "originalTitle": "Treatment in Kerala"
-    },
-    {
-      "id": "link-149",
-      "title": "Treatment in Kerala German",
-      "href": "/treatment-in-kerala.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment in Kerala & language editions"
-      ],
-      "originalTitle": "Treatment in Kerala German"
-    },
-    {
-      "id": "link-150",
-      "title": "Treatment in Kerala Russian",
-      "href": "/treatment-in-kerala.html",
-      "branch": [
-        "Campaign pages",
-        "Treatment in Kerala & language editions"
-      ],
-      "originalTitle": "Treatment in Kerala Russian"
-    },
-    {
-      "id": "link-151",
-      "title": "Wellness resort Kerala",
-      "href": "/wellness-resort-kerala.html",
-      "branch": [
-        "Campaign pages",
-        "Regional & brand campaigns"
-      ],
-      "originalTitle": "Wellness Resort Kerala"
-    },
-    {
-      "id": "link-152",
-      "title": "PPC thanks",
-      "href": "/ppc-thanks/",
-      "branch": [
-        "Campaign pages",
-        "Confirmation pages"
-      ],
-      "originalTitle": "PPC Thanks"
-    },
-    {
-      "id": "link-153",
-      "title": "Lakshya yoga retreat",
-      "href": "/lakshya-yoga-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "LAKSHYA YOGA RETREAT"
-    },
-    {
-      "id": "link-154",
-      "title": "Katha wellness retreat 2019 (25 – 31 July 2019)",
-      "href": "/katha-wellness-retreat-2019/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2019"
-      ],
-      "originalTitle": "KATHA WELLNESS RETREAT 2019 (25 – 31 JULY 2019)"
-    },
-    {
-      "id": "link-155",
-      "title": "Karma Being yoga and Ayurveda retreat (14-24 November 2019)",
-      "href": "/karma-being-retreat-2019/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2019"
-      ],
-      "originalTitle": "KARMA BEING YOGA AND AYURVEDA RETREAT (14-24 NOVEMBER 2019)"
-    },
-    {
-      "id": "link-156",
-      "title": "Ayurveda retreats for everyone",
-      "href": "/ayurveda-retreats-for-everyone/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "AYURVEDA RETREATS FOR EVERYONE"
-    },
-    {
-      "id": "link-157",
-      "title": "“Ayuryoga 2020 yoga & Ayurveda retreats”",
-      "href": "/ayuryoga/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2020"
-      ],
-      "originalTitle": "“Ayuryoga 2020 Yoga & Ayurveda Retreats”"
-    },
-    {
-      "id": "link-158",
-      "title": "Yoga retreat by Prav and Simona from Denmark",
-      "href": "/prav-simona-yoga-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Yoga retreat by Prav and Simona from Denmark"
-    },
-    {
-      "id": "link-159",
-      "title": "Prav-Simona monsoon yoga retreat",
-      "href": "/prav-simona-monsoon-yoga-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "PRAV-SIMONA MONSOON YOGA RETREAT"
-    },
-    {
-      "id": "link-160",
-      "title": "Why pick an Ayurveda treatment or Ayurvedic retreat?",
-      "href": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
-      "branch": [
-        "Ayurveda library",
-        "Choosing Ayurvedic care"
-      ],
-      "originalTitle": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?"
-    },
-    {
-      "id": "link-161",
-      "title": "Lakshya yoga retreat 2017",
-      "href": "/lakshya-yoga-retreat-2017/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2017"
-      ],
-      "originalTitle": "Lakshya Yoga Retreat 2017"
-    },
-    {
-      "id": "link-162",
-      "title": "Lakshya yoga retreat 2018",
-      "href": "/lakshya-yoga-retreat-2018/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2018"
-      ],
-      "originalTitle": "Lakshya Yoga Retreat 2018"
-    },
-    {
-      "id": "link-163",
-      "title": "Ashtanga yoga & Ayurveda retreat",
-      "href": "/ashtanga-yoga-and-ayurveda-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Ashtanga Yoga & Ayurveda Retreat"
-    },
-    {
-      "id": "link-164",
-      "title": "Karma Being retreat",
-      "href": "/karma-being-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Karma Being Retreat"
-    },
-    {
-      "id": "link-165",
-      "title": "Mindfulness retreat",
-      "href": "/mindfulness-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Mindfulness Retreat"
-    },
-    {
-      "id": "link-166",
-      "title": "Ananda Lahari yoga and Ayurveda retreat",
-      "href": "/ananda-lahari-yoga-and-ayurveda-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Ananda Lahari Yoga and Ayurveda Retreat"
-    },
-    {
-      "id": "link-167",
-      "title": "Yoga retreat",
-      "href": "/archive-yoga-retreat/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Yoga Retreat"
-    },
-    {
-      "id": "link-168",
-      "title": "Lakshya yoga",
-      "href": "/lakshya-yoga/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Lakshya Yoga"
-    },
-    {
-      "id": "link-169",
-      "title": "Yoga retreats for everyone",
-      "href": "/yoga-retreats-for-everyone/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Yoga & Ayurveda retreats"
-      ],
-      "originalTitle": "Yoga Retreats for Everyone"
-    },
-    {
-      "id": "link-170",
-      "title": "Ayurveda workshop",
-      "href": "/ayurveda-workshop/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats & workshops",
-        "Ayurveda workshops"
-      ],
-      "originalTitle": "Ayurveda Workshop"
-    },
-    {
-      "id": "link-171",
-      "title": "What is Panchkarma?",
-      "href": "/what-is-panchkarma/",
-      "branch": [
-        "Ayurveda library",
-        "Panchakarma"
-      ],
-      "originalTitle": "What is Panchkarma?"
-    },
-    {
-      "id": "link-172",
-      "title": "Kairali institute of Ayurveda and Panchakarma therapy",
-      "href": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
-      "branch": [
-        "Training & education",
-        "Institutes"
-      ],
-      "originalTitle": "Kairali Institute of Ayurveda and Panchakarma Therapy"
-    },
-    {
-      "id": "link-173",
-      "title": "Live to 100 with Panchakarma",
-      "href": "/live-to-100-with-panchkarma/",
-      "branch": [
-        "Ayurveda library",
-        "Panchakarma"
-      ],
-      "originalTitle": "LIVE TO 100 WITH PANCHAKARMA"
-    },
-    {
-      "id": "link-174",
-      "title": "Healing recipes: back to roots",
-      "href": "/chef-retreat-food-to-wellness/",
-      "branch": [
-        "Past programmes & events",
-        "Food programmes"
-      ],
-      "originalTitle": "Healing Recipes: Back to Roots"
-    },
-    {
-      "id": "link-175",
-      "title": "Ayurvedic new year: Yala 2018!",
-      "href": "/ayurvedic-new-year-yala-2018/",
-      "branch": [
-        "Past programmes & events",
-        "Retreats by year",
-        "2018"
-      ],
-      "originalTitle": "Ayurvedic New Year: Yala 2018!"
-    },
-    {
-      "id": "link-176",
-      "title": "The Baoli special deal",
-      "href": "/the-baoli-special-deal/",
-      "branch": [
-        "Past programmes & events",
-        "Past promotions"
-      ],
-      "originalTitle": "the-baoli-special-deal"
-    },
-    {
-      "id": "link-177",
-      "title": "The Baoli advert box deal",
-      "href": "/the-baoli-advert-box-deal/",
-      "branch": [
-        "Past programmes & events",
-        "Past promotions"
-      ],
-      "originalTitle": "the-baoli-advert-box-deal"
-    },
-    {
-      "id": "link-178",
-      "title": "Kairali Ayurvedic way of weight management",
-      "href": "/kairali-ayurvedic-way-of-weight-management/",
-      "branch": [
-        "Ayurveda library",
-        "Weight management"
-      ],
-      "originalTitle": "Kairali Ayurvedic Way of Weight Management"
-    },
-    {
-      "id": "link-179",
-      "title": "Food sadhana: the essence of purity",
-      "href": "/food-sadhana/",
-      "branch": [
-        "Ayurveda library",
-        "Food & Ayurvedic cuisine"
-      ],
-      "originalTitle": "FOOD SADHANA: THE ESSENCE OF PURITY"
-    },
-    {
-      "id": "link-180",
-      "title": "Knowledge centre",
-      "href": "/knowledge-centre/",
-      "branch": [
-        "Ayurveda library"
-      ],
-      "originalTitle": "Knowledge Centre"
-    },
-    {
-      "id": "link-181",
-      "title": "Ayurvedic cuisine",
-      "href": "/ayurvedic-cuisine/",
-      "branch": [
-        "Stay & village experiences",
-        "Food & cuisine"
-      ],
-      "originalTitle": "Ayurvedic Cuisine"
-    },
-    {
-      "id": "link-182",
-      "title": "What is Ayurvedic food?",
-      "href": "/what-is-ayurvedic-food/",
-      "branch": [
-        "Ayurveda library",
-        "Food & Ayurvedic cuisine"
-      ],
-      "originalTitle": "What is Ayurvedic Food?"
-    },
-    {
-      "id": "link-183",
-      "title": "Ayurvedic restaurant & cooking at Healing Village",
-      "href": "/ayurvedic-resturant-and-cooking-at-healing-village/",
-      "branch": [
-        "Stay & village experiences",
-        "Food & cuisine"
-      ],
-      "originalTitle": "Ayurvedic Restaurant & Cooking at Healing Village"
-    },
-    {
-      "id": "link-184",
-      "title": "Back to roots",
-      "href": "/back-to-roots/",
-      "branch": [
-        "Ayurveda library",
-        "Food & Ayurvedic cuisine"
-      ],
-      "originalTitle": "BACK TO ROOTS"
-    },
-    {
-      "id": "link-185",
-      "title": "Gift vouchers",
-      "href": "/gift-vouchers/",
-      "branch": [
-        "Packages & offers"
-      ],
-      "originalTitle": "Gift Vouchers"
-    },
-    {
-      "id": "link-186",
-      "title": "Ayurveda offers",
-      "href": "/ayurveda-offers/",
-      "branch": [
-        "Packages & offers",
-        "Offers directory"
-      ],
-      "originalTitle": "Ayurveda Offers"
-    },
-    {
-      "id": "link-187",
-      "title": "Ayurvedic products",
-      "href": "/ayurvedic-products/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "Ayurvedic Products"
-    },
-    {
-      "id": "link-188",
-      "title": "Our accolades",
-      "href": "/our-accolades/",
-      "branch": [
-        "About Kairali",
-        "Awards & accreditations"
-      ],
-      "originalTitle": "Our Accolades"
-    },
-    {
-      "id": "link-189",
-      "title": "Accreditations",
-      "href": "/accreditations/",
-      "branch": [
-        "About Kairali",
-        "Awards & accreditations"
-      ],
-      "originalTitle": "Accreditations"
-    },
-    {
-      "id": "link-190",
-      "title": "Ayurvedic treatment",
-      "href": "/ayurveda-treatment/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatment directories"
-      ],
-      "originalTitle": "AYURVEDIC TREATMENT"
-    },
-    {
-      "id": "link-191",
-      "title": "Ayurveda training",
-      "href": "/ayurveda-training/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Overview"
-      ],
-      "originalTitle": "Ayurveda Training"
-    },
-    {
-      "id": "link-192",
-      "title": "Villa",
-      "href": "/our-villas/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation",
-        "Villa directory"
-      ],
-      "originalTitle": "Villa"
-    },
-    {
-      "id": "link-193",
-      "title": "In house products",
-      "href": "/in-house-products/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Product range"
-      ],
-      "originalTitle": "In House Products"
-    },
-    {
-      "id": "link-194",
-      "title": "Ayurveda gallery",
-      "href": "/ayurveda-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "Ayurveda Gallery"
-    },
-    {
-      "id": "link-195",
-      "title": "Retreats gallery",
-      "href": "/retreats-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": "I wish to view Retreats Gallery"
-    },
-    {
-      "id": "link-196",
-      "title": "Home",
-      "href": "/",
-      "branch": [
-        "Contact & plan your visit",
-        "Start here"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-197",
-      "title": "Ayurveda treatment",
-      "href": "/ayurvedic-treatments/",
-      "branch": [
-        "Treatments & clinical care",
-        "Treatment directories"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-198",
-      "title": "Villas",
-      "href": "/our-villas/",
-      "branch": [
-        "Stay & village experiences",
-        "Accommodation"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-199",
-      "title": "About Kairali",
-      "href": "/about-us/",
-      "branch": [
-        "About Kairali",
-        "Our story & leadership"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-200",
-      "title": "Kairali Ayurvedic Group",
-      "href": "/kairali-ayurvedic-group/",
-      "branch": [
-        "About Kairali"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-201",
-      "title": "Product range",
-      "href": "/product-range",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-202",
-      "title": "Things to do",
-      "href": "/things-to-do/",
-      "branch": [
-        "Stay & village experiences",
-        "Village experiences"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-203",
-      "title": "Things to do in Healing Village",
-      "href": "/things-to-do-in-property/",
-      "branch": [
-        "Stay & village experiences",
-        "Village experiences"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-204",
-      "title": "Things to do in Kerala",
-      "href": "/things-to-do-in-kerala/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-205",
-      "title": "Sightseeing",
-      "href": "/sightseeing/",
-      "branch": [
-        "Stay & village experiences",
-        "Explore Kerala",
-        "Attractions by distance"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-206",
-      "title": "Offers",
-      "href": "/offers/",
-      "branch": [
-        "Packages & offers",
-        "Offers directory"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-207",
-      "title": "Training",
-      "href": "/training/",
-      "branch": [
-        "Training & education",
-        "Overview & fees"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-208",
-      "title": "Ayurveda training programme",
-      "href": "/ayurveda-training-programme/",
-      "branch": [
-        "Training & education",
-        "Ayurveda training",
-        "Overview"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-209",
-      "title": "Training course fees",
-      "href": "/training-course-fees/",
-      "branch": [
-        "Training & education",
-        "Overview & fees"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-210",
-      "title": "Ayurveda",
-      "href": "/ayurveda/",
-      "branch": [
-        "Ayurveda library",
-        "Getting started & further reading"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-211",
-      "title": "Packages",
-      "href": "/packages/",
-      "branch": [
-        "Packages & offers",
-        "Treatment & yoga packages"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-212",
-      "title": "Media gallery",
-      "href": "/photo-gallery/",
-      "branch": [
-        "Galleries & reviews",
-        "Photo galleries"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-213",
-      "title": "Archive",
-      "href": "/archive/",
-      "branch": [
-        "Past programmes & events",
-        "Archive directory"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-214",
-      "title": "Consultancy",
-      "href": "/consultancy/",
-      "branch": [
-        "About Kairali",
-        "Kairali Ayurvedic Group",
-        "Business enquiries"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-215",
-      "title": "Panchakarma",
-      "href": "/panchkarma/",
-      "branch": [
-        "Ayurveda library"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-216",
-      "title": "Terms & conditions",
-      "href": "/terms-and-conditions/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-217",
-      "title": "Disclaimer",
-      "href": "/disclaimer/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-218",
-      "title": "Cancellation & refund",
-      "href": "/cancellation-and-refund-policy/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-219",
-      "title": "Payment policy",
-      "href": "/payment-policy-compliance/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-220",
-      "title": "Cookie policy",
-      "href": "/cookie-policy/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-221",
-      "title": "Legal notice",
-      "href": "/legal-notice/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-222",
-      "title": "Privacy statement",
-      "href": "/privacy-statement/",
-      "branch": [
-        "Site services & policies",
-        "Policies"
-      ],
-      "originalTitle": null
-    },
-    {
-      "id": "link-223",
-      "title": "XML sitemap",
-      "href": "/sitemap.xml",
-      "branch": [
-        "Site services & policies",
-        "Navigation & indexes"
-      ],
-      "originalTitle": null
-    }
-  ]
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Kairali – Family Ayurveda Retreat Kerala | Multi‑Generational Wellness",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-207",
+   "title": "Kairali × Air India Maharaja Club (campaign page)",
+   "href": "/kairali-air-india-maharaja-club.html",
+   "branch": [
+    "Campaign pages",
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Kairali x Air India Maharaja Club - Premium Kerala Ayurveda Retreat",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-208",
+   "title": "Monsoon Ayurvedic treatment — Karkidaka Chikitsa",
+   "href": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Monsoon Ayurvedic Treatment Kerala | Karkidaka Chikitsa Reset | Kairali",
+   "added": "tools/curate-sitemap-navigation.mjs (served page the WordPress sitemap never listed)"
+  },
+  {
+   "id": "link-209",
+   "title": "Ayurveda programme in Kerala (campaign page)",
+   "href": "/ayurveda-retreat-kerala.html",
+   "branch": [
+    "Campaign pages",
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Ayurveda Retreat Kerala"
+  },
+  {
+   "id": "link-210",
+   "title": "Ayurvedic treatment in south India (campaign page)",
+   "href": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+   "branch": [
+    "Campaign pages",
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Ayurveda Treatment Neo S.India Cities"
+  },
+  {
+   "id": "link-211",
+   "title": "Ayurvedic treatment program (campaign page)",
+   "href": "/ayurvedic-treatment-packages.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Ayurvedic Treatment Packages"
+  },
+  {
+   "id": "link-212",
+   "title": "Preventive rejuvenation & detoxification in Kerala (campaign page)",
+   "href": "/preventive-rejuvenation-detoxification.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Holistic Treatment For Rejuvenation & Detoxification"
+  },
+  {
+   "id": "link-213",
+   "title": "Best Ayurvedic treatment packages in Kerala (campaign page)",
+   "href": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "branch": [
+    "Campaign pages",
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Kairali Brand and Competition Neo Original"
+  },
+  {
+   "id": "link-214",
+   "title": "Kairali cleansing centre (campaign page)",
+   "href": "/kairali-cleansing-centre.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Kairali Cleansing Centre"
+  },
+  {
+   "id": "link-215",
+   "title": "Effective Ayurvedic weight loss treatments in Kerala, India (campaign page)",
+   "href": "/weight-loss.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Lose weight Naturally & Effectively in 3 weeks"
+  },
+  {
+   "id": "link-216",
+   "title": "Effective pain management with Ayurvedic treatments in Kerala (campaign page)",
+   "href": "/pain-management.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Pain Management"
+  },
+  {
+   "id": "link-217",
+   "title": "Panchakarma treatment in Kerala (campaign page)",
+   "href": "/panchkarma-treatment.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment campaigns"
+   ],
+   "originalTitle": "Panchkarma Restores Wellness"
+  },
+  {
+   "id": "link-218",
+   "title": "Treatment in Kerala (campaign page)",
+   "href": "/treatment-in-kerala.html",
+   "branch": [
+    "Campaign pages",
+    "Treatment in Kerala & language editions"
+   ],
+   "originalTitle": "Treatment in Kerala"
+  },
+  {
+   "id": "link-219",
+   "title": "Ayurveda in Kerala (campaign page)",
+   "href": "/wellness-resort-kerala.html",
+   "branch": [
+    "Campaign pages",
+    "Regional & brand campaigns"
+   ],
+   "originalTitle": "Wellness Resort Kerala"
+  },
+  {
+   "id": "link-220",
+   "title": "Sitemap",
+   "href": "/sitemap/",
+   "branch": [
+    "Site services & policies",
+    "Navigation & indexes"
+   ],
+   "originalTitle": "Sitemap"
+  },
+  {
+   "id": "link-221",
+   "title": "Search the site",
+   "href": "/search/",
+   "branch": [
+    "Site services & policies",
+    "Navigation & indexes"
+   ],
+   "originalTitle": "Search"
+  },
+  {
+   "id": "link-222",
+   "title": "Privacy policy",
+   "href": "/privacy-policy/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": "Privacy Policy"
+  },
+  {
+   "id": "link-223",
+   "title": "Email subscription",
+   "href": "/emailsubscriber/",
+   "branch": [
+    "Site services & policies",
+    "Subscriptions"
+   ],
+   "originalTitle": "EMAIL SUBSCRIBER"
+  },
+  {
+   "id": "link-224",
+   "title": "Terms & conditions",
+   "href": "/terms-and-conditions/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-225",
+   "title": "Disclaimer",
+   "href": "/disclaimer/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-226",
+   "title": "Cancellation & refund",
+   "href": "/cancellation-and-refund-policy/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-227",
+   "title": "Payment policy",
+   "href": "/payment-policy-compliance/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-228",
+   "title": "Cookie policy",
+   "href": "/cookie-policy/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-229",
+   "title": "Legal notice",
+   "href": "/legal-notice/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-230",
+   "title": "Privacy statement",
+   "href": "/privacy-statement/",
+   "branch": [
+    "Site services & policies",
+    "Policies"
+   ],
+   "originalTitle": null
+  },
+  {
+   "id": "link-231",
+   "title": "XML sitemap",
+   "href": "/sitemap.xml",
+   "branch": [
+    "Site services & policies",
+    "Navigation & indexes"
+   ],
+   "originalTitle": null
+  }
+ ],
+ "curated": {
+  "by": "tools/curate-sitemap-navigation.mjs",
+  "at": "2026-09-23T03:31:15.471Z",
+  "repointed": 4,
+  "dropped": 3,
+  "deduped": 6,
+  "slashed": 8,
+  "added": 17,
+  "relabelled": 11,
+  "renamed": 12
+ }
 }

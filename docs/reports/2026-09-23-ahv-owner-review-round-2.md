@@ -103,3 +103,39 @@ Q-AHV-SANSKRIT-YOGA · Q-AHV-AKHILA-PHOTO · Q-AHV-OFFER-PHOTOS (QUESTIONS.md, 2
 Commit e3bc2b17 on `codex/ahv-english-staging-20260915`, prebuilt and deployed: **https://kairali-web-factory-ayurvedichealingvillage-he04otg43-kairali.vercel.app** (SSO-protected; the
 earlier 8r3mqjl0y preview stays up for side-by-side comparison). Local build 2 verified before deploy: 25 routes × 1366/390,
 0 console errors, 0 failed requests, 0 legacy menus, rail on every in-scope route.
+
+## 7. /sitemap/ — the Codex concept, battle-tested and improved (owner, 23 Sep 2026 ~03:00 IST)
+
+**Kept as delivered:** twelve subject roots, the collapsible tree with counts, the section index, the filter,
+Expand/Collapse all, print styles, one tree for desktop and mobile, a no-JS fallback (all links visible).
+Committed first exactly as found (e03c42ae), then improved on top so the diff is honest.
+
+**What the battle test found (measured against the route manifest, the programme register and a HEAD request
+per link), and what changed — `tools/curate-sitemap-navigation.mjs` runs before Codex's build tool:**
+
+| Finding | Count | Fix |
+|---|---|---|
+| Dead links carried over from the WordPress sitemap (/opd/, /panchkarma/, /sitemap_index.xml, /search-results/) | 4 | /opd/ → the OPD page (/walk-in-ayurveda-treatment/), /panchkarma/ → its canonical (/panchakarma-therapy/), /search-results/ → /search/, the XML index artefact dropped |
+| hrefs without a trailing slash (each a redirect hop) | 8 | slashed |
+| Duplicate entries, incl. /treatment-in-kerala.html listed three times as English/German/Russian "editions" that do not exist | 6 | one entry per page |
+| Confirmation pages listed as destinations (/thanks/, /ppc-thanks/) | 2 | dropped |
+| Served pages missing: the five programme finders, /gallery/, the OPD page, the defence offer, the family and Air-India campaign pages, the monsoon page, six articles, a job page | 17 | added under their subject, titled from the register or the page's own title; test/junk routes stay out |
+| Programme titles not the register's current names | 12 | register names |
+| Campaign titles that were WordPress slugs ("Kairali brand and competition neo original") or carried a banned word ("Wellness resort Kerala") | 11 | the page's own title + "(campaign page)"; the banned word gone |
+| Filter was exact-substring only (the site rule is predictive + typo-tolerant, D-20260922-26) | — | prefix + one-edit tolerance: "panchkarma" now finds Panchakarma |
+| Phone view imported the DESKTOP header (no burger) | — | narrow chrome on the mobile payload |
+
+Result: 231 links, 12 roots, 94 branches; every internal link answers < 400 (230 checked by HEAD on the build);
+`test/sitemap-navigation.test.mjs` rewritten to the new contract (every served indexable page listed once, no dead
+link, trailing slashes, no banned word, register names, narrow mobile chrome, SSR carries every link) — 6/6.
+
+**Which campaign pages the old sitemap answer had "dismissed":** the /sitemap/ page (Codex's inventory) already
+listed twelve legacy campaign pages under "Campaign pages"; it lacked three — the family programme page
+(/family-ayurvedic-retreat-kerala.html), Kairali × Air India Maharaja Club (/kairali-air-india-maharaja-club.html)
+and the monsoon page (/karkidaka-chikitsha-or-monsoon-wellness.html) — plus the defence & paramilitary offer
+(/offers/defence-paramilitary-personnel-get-upto-30-off/). All four are now listed. The Russian edition
+(/treatment-in-kerala-russian.html) stays out because the route is deferred (404).
+
+**Pushback recorded:** Codex's test demanded that all 214 WordPress-era entries survive verbatim, which is how four
+dead links and a phantom German edition reached a public page. Fidelity to the old sitemap is the wrong contract for
+a page whose job is to reach every page that exists today; the contract is now the served site.
