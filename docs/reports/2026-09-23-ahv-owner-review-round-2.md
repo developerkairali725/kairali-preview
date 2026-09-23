@@ -139,3 +139,5 @@ and the monsoon page (/karkidaka-chikitsha-or-monsoon-wellness.html) — plus th
 **Pushback recorded:** Codex's test demanded that all 214 WordPress-era entries survive verbatim, which is how four
 dead links and a phantom German edition reached a public page. Fidelity to the old sitemap is the wrong contract for
 a page whose job is to reach every page that exists today; the contract is now the served site.
+
+Deployed with §7: commit 98308f56 → **https://kairali-web-factory-ayurvedichealingvillage-quqpieawy-kairali.vercel.app**.
