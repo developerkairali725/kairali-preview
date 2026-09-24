@@ -109,22 +109,31 @@
     controls.querySelector("button").addEventListener("click", openChat);
     document.body.appendChild(controls);
   }
-  function reachExternalLinks() {
-    if (window.location.pathname.replace(/\/$/, '') !== '/how-to-reach') return;
-    root.querySelectorAll('a[href]').forEach(function (a) {
-      var u; try { u = new URL(a.getAttribute('href'), window.location.href); } catch (_) { return; }
-      if (!/^https?:$/.test(u.protocol) || u.origin === window.location.origin || /^(www\.)?ayurvedichealingvillage\.com$/.test(u.hostname)) return;
+  // Shared policy, including carousel href changes and links outside the design root.
+  var externalOriginals = new WeakMap();
+  function externalLink(a) {
+    var u; try { u = new URL(a.getAttribute('href'), window.location.href); } catch (_) { return; }
+    var external = /^https?:$/.test(u.protocol) && ((u.origin !== window.location.origin && !/^(www\.)?ayurvedichealingvillage\.com$/.test(u.hostname)) || /^\/wp-content\//.test(u.pathname));
+    if (external) {
+      if (!externalOriginals.has(a)) externalOriginals.set(a, { target: a.getAttribute('target'), rel: a.getAttribute('rel') });
       a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-    });
+      a.rel = Array.from(new Set((a.rel || '').split(/\s+/).filter(Boolean).concat(['noopener', 'noreferrer']))).join(' ');
+    } else if (externalOriginals.has(a)) {
+      var old = externalOriginals.get(a);
+      ['target', 'rel'].forEach(function (key) { if (old[key] === null) a.removeAttribute(key); else a.setAttribute(key, old[key]); });
+      externalOriginals.delete(a);
+    }
   }
+  function externalLinks() { document.querySelectorAll('a[href]').forEach(externalLink); }
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) externalLink(a); }, true);
+  document.addEventListener('auxclick', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) externalLink(a); }, true);
   function pass() {
     scheduled = false;
     try {
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();
-      reachExternalLinks();
+      externalLinks();
     } catch (e) { /* never break the page */ }
   }
   function schedule() {
@@ -132,7 +141,7 @@
     scheduled = true;
     setTimeout(pass, 0);
   }
-  if (window.MutationObserver) new MutationObserver(schedule).observe(root, { childList: true, subtree: true });
+  if (window.MutationObserver) new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
 })();
