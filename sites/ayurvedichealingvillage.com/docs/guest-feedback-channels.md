@@ -1,4 +1,4 @@
-# Guest feedback channels — 24 September 2026
+# Patient feedback channels — 24 September 2026
 
 Task WOPS-AHV-FINAL-DRAFT-20260924-001; AHV candidate only.
 
@@ -6,7 +6,7 @@ The native `/givefeedback/` page replaces the old generic article while retainin
 
 The owner explicitly selected `info@kairali.com` for management feedback. Email quick actions and the message builder set a `For management:` subject and prefilled body. WhatsApp uses the existing patient-care number `919289838797`, addresses Priya and explicitly requests escalation to management. The owner confirms automatic escalation already exists; this UI change does not modify or independently verify that Chatbase/WhatsApp workflow.
 
-The message builder accepts optional name/stay reference, a topic, and required non-whitespace feedback. It opens the guest's email client or WhatsApp with an editable draft, or copies the message. No site submission endpoint, persistence, analytics payload or automatic send is added. The guest sends from their chosen application. If no email client is configured, the page provides the address and a copy option; clipboard failure reveals selectable message text. Delivery and management receipt are not claimed by opening a draft.
+The message builder accepts optional name/stay reference, a topic, and required non-whitespace feedback. It opens the patient's email client or WhatsApp with an editable draft, or copies the message. No site submission endpoint, persistence, analytics payload or automatic send is added. The patient sends from their chosen application. If no email client is configured, the page provides the address and a copy option; clipboard failure reveals selectable message text. Delivery and management receipt are not claimed by opening a draft.
 
 Both private quick links work without JavaScript. The interactive builder requires JavaScript and its fieldset stays disabled until hydration, preventing a no-JavaScript GET submission from putting feedback into the URL; native browser required validation and explicit whitespace validation prevent empty handoffs. Inputs are 16px and actions at least 50px high. Shared consent, patient-care controls and the collapsible section rail are reused. `ReviewsShell` only gains an optional route argument, defaulting to the existing reviews route.
 

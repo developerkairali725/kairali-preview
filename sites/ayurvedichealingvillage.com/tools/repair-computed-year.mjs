@@ -55,7 +55,7 @@
  * at the SOURCE, where it can actually be fixed, instead of at the artifact.
  *
  * Idempotent. Re-run after any prerender or design import.
- *   node tools/repair-computed-year.mjs [--dry]
+ *   node tools/repair-computed-year.mjs [--dry] [--batch=0]
  */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join, dirname, basename } from "node:path";
@@ -99,7 +99,13 @@ function assertSourceBindingLive() {
 const bindings = assertSourceBindingLive();
 
 let filesTouched = 0, spansMarked = 0, alreadyMarked = 0;
-const files = readdirSync(PRERENDER).filter((f) => f.endsWith(".html")).sort();
+const allFiles = readdirSync(PRERENDER).filter((f) => f.endsWith(".html")).sort();
+const batchArg = process.argv.find(a => a.startsWith("--batch="));
+const batch = batchArg ? Number(batchArg.slice(8)) : 0;
+if (!Number.isInteger(batch) || batch < 0) throw new Error("--batch must be a non-negative integer");
+// Explicit, independently verified batches; never mutate more than 25 pages per run.
+const files = allFiles.slice(batch * 25, (batch + 1) * 25);
+console.log(`batch ${batch + 1}/${Math.ceil(allFiles.length / 25)} (at most 25 snapshots)`);
 
 for (const f of files) {
   const p = join(PRERENDER, f);

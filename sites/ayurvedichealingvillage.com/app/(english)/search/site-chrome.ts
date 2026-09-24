@@ -1,3 +1,4 @@
+import { computedFooterYear } from "../_families/computed-footer-year";
 import { youtubeNewTabs } from "../_families/youtube-links";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -70,7 +71,7 @@ const show = (html: string, cls: string, display: string) =>
 export function siteChrome(): Chrome {
   if (cached) return cached;
   let t = "";
-  try { t = youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8")); } catch { t = ""; }
+  try { t = computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))); } catch { t = ""; }
   const deskHeader = block(t, "header", 0), narrowHeader = block(t, "header", 1);
   const panel = narrowHeader ? nextElement(t, narrowHeader) : null;
   const deskFooter = block(t, "footer", 0), narrowFooter = block(t, "footer", 1);

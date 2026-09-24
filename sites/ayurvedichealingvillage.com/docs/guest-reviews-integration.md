@@ -1,10 +1,10 @@
-# AHV guest reviews — native Next.js candidate, 24 September 2026
+# AHV patient reviews — native Next.js candidate, 24 September 2026
 
 Task: WOPS-AHV-FINAL-DRAFT-20260924-001. Site: ayurvedichealingvillage.com. Candidate only; no WordPress plugin or paid widget account.
 
 `app/(english)/read-feedback/page.tsx` now overrides the old catch-all route. The old design payload remains intact for rollback. Remove the added route, API, helper, widget and test to restore the previous route at base commit de86828d. No existing implementation files were modified.
 
-The page server-renders seven sourced editorial excerpts and three existing guest films. India/international labels are used only when the source gives a location. Dates distinguish historical testimonials from dated Google excerpts. Hindi, German, French and Russian are labelled translations with English originals accessible; this does not translate the whole website. No invented portraits, ratings, review counts, medical claims or Review/AggregateRating schema were added.
+The page server-renders seven sourced editorial excerpts and three existing patient films. India/international labels are used only when the source gives a location. Dates distinguish historical testimonials from dated Google excerpts. Hindi, German, French and Russian are labelled translations with English originals accessible; this does not translate the whole website. No invented portraits, ratings, review counts, medical claims or Review/AggregateRating schema were added.
 
 ## Official integrations
 
@@ -34,4 +34,4 @@ Reddit discussions were checked for Next.js integration experience; official pla
 - https://developers.google.com/my-business/reference/rest/v4/accounts.locations.reviews/list
 - https://www.tripadvisor.com/business/insights/hotels/resources/display-rating-and-latest-tripadvisor-review-on-website
 
-Published story sources are linked on each card. Google excerpts were already published on the existing AHV website; they are labelled September/October 2024, not represented as current API results. Kairali's official testimonials page and Healing Village profile PDF identify the archived guests and locations. Existing original YouTube thumbnails supply the guest imagery.
+Published story sources are linked on each card. Google excerpts were already published on the existing AHV website; they are labelled September/October 2024, not represented as current API results. Kairali's official testimonials page and Healing Village profile PDF identify the archived patients and locations. Existing original YouTube thumbnails supply the patient imagery.

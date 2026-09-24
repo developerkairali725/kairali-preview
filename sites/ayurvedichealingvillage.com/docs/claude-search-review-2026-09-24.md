@@ -18,7 +18,7 @@ I only read files in `sites/ayurvedichealingvillage.com`, about 20 of them acros
    - Search results only show a price that is current (`search.js:68-73`). The duration sort now ranks non-current prices last (`:290`), and the price sort drops them (`:295`).
    - The finder's expiry check matches, and when there is no price it shows "Request a quote".
 6. **`/emailsubscriber/`** is skipped by the search index (`build-search-index.mjs:174`). None of the internal or junk routes appear in `search-index.json`, and those junk routes are in the redirect map.
-7. **FAQ q-16** now states: Suite 1001 has one king bedroom plus a living room, Suite 1002 has a king room and a twin room, and every category provides hairdryers. The banned heading "For International Guests" appears only in the notes of `faq-content-2026.json`, not in the rendered FAQ or the search index.
+7. **FAQ q-16** now states: Suite 1001 has one king bedroom plus a living room, Suite 1002 has a king room and a twin room, and every category provides hairdryers. The banned heading "For International patients" appears only in the notes of `faq-content-2026.json`, not in the rendered FAQ or the search index.
 
 ## Material item for the release plan
 

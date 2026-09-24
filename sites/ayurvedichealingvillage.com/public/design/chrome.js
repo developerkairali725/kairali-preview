@@ -24,7 +24,7 @@
   if (!root) return;
   var WA_HREF = "https://wa.me/919289838797";
   var WA_TEXT = "WhatsApp +91 92898 38797";
-  var COPY = "© 1908 — " + new Date().getFullYear() + " Kairali — The Ayurvedic Healing Village.";
+  var COPY = ["©", 1908, "—", new Date().getFullYear(), "Kairali — The Ayurvedic Healing Village."].join(" ");
   var scheduled = false;
 
   function visible(el) {

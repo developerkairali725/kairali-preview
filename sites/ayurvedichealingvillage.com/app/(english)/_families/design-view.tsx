@@ -1,3 +1,4 @@
+import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
 /**
  * AHV English candidate — the shared route component.
@@ -50,7 +51,7 @@ const PRERENDER_DIR = join(process.cwd(), "english-candidate", "prerender");
 
 function prerenderedBody(routePath: string): string {
   try {
-    return youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8"));
+    return computedFooterYear(youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8")));
   } catch {
     return "";
   }
