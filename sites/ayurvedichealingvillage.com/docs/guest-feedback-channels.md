@@ -12,4 +12,6 @@ Both private quick links work without JavaScript. The interactive builder requir
 
 Tests: three feedback-link tests cover Unicode/newlines/reserved URL characters, fixed recipients, optional values, topic allowlisting and ready-to-edit quick drafts. Existing three Google review tests and TypeScript also pass. Browser checks cover desktop/mobile layout, empty and whitespace validation, exact copied message, a real separate WhatsApp tab containing the draft (not sent), public-review access and shared chrome. No employee email or WhatsApp message was sent.
 
-Rollback: restore the backed-up `ReviewsShell.tsx` from a17b5036 and remove this change's added feedback route/test/doc. The old article route remains intact. No production/DNS change.
+The catch-all static-parameter list excludes the two native feedback pages, preventing duplicate build output from overwriting either redesign. Both remain in the route registry and sitemap.
+
+Rollback: restore the backed-up `ReviewsShell.tsx` and catch-all page from a17b5036 and remove this change's added feedback route/test/doc. The catch-all exclusion should remain for any native route that is retained. The old article route remains intact. No production/DNS change.

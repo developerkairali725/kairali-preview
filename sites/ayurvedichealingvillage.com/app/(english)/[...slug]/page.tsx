@@ -19,7 +19,10 @@ import { findRoute, subRoutes } from "../_families/registry";
 export const dynamicParams = false;
 
 export function generateStaticParams(): Array<{ slug: string[] }> {
-  return subRoutes().map((r) => ({ slug: r.segments }));
+  // Native pages must not also be emitted by this catch-all: duplicate static
+  // output can overwrite them during production builds despite route priority.
+  const nativePages = new Set(["/read-feedback/", "/givefeedback/"]);
+  return subRoutes().filter((r) => !nativePages.has(r.path)).map((r) => ({ slug: r.segments }));
 }
 
 export async function generateMetadata({
