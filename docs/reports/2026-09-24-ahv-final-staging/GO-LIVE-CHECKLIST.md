@@ -18,6 +18,8 @@ A checked item has recorded evidence. An unchecked item is a required verificati
 
 ## 1. Questions requiring a human answer
 
+**End-of-day authority:** use [the consolidated 23-question queue and team-input register](OWNER-DECISIONS-AND-TEAM-INPUTS.md) one question at a time, starting with the latest approved rates PDF. The list below is the earlier launch-gate grouping; settled decisions must not be re-asked. Historic CI descriptions require fresh verification because campaign/LP behaviour has since changed.
+
 1. **Abhilash — launch window and authority:** Who gives the final go/no-go, who operates the cutover, and what time window is acceptable? The current instruction establishes staging, not an immediate domain flip.
 2. **Abhilash / Deepu — enquiry routing:** Confirm the destination inbox and CRM/queue for general enquiries, consultations, OPD, training, careers, and newsletter subscriptions. `info@kairali.com` is already confirmed for management feedback; do not ask for that decision again.
 3. **Patient care — operational response:** Who owns each incoming lead, what response commitment can the site truthfully display, and who handles unattended/out-of-hours messages?
@@ -194,3 +196,20 @@ The source audit, earlier page-family checks and this checklist are evidence of 
 COS's records-only handoff on 24 September confirms receipt of Deepu's 21 September WordPress inventory: https://docs.google.com/spreadsheets/d/1J9RIHQh418NIXirA5dMKSta6GYLLgTXB9trQxWoQUnc/edit . His reported removal of noindex on `/learn-about-ayurveda/` and `/retreats-for-everyone/`, retained sitemap inclusion and monsoon self-canonical repair are recorded under existing **MID-18813** (due 27 September) and **MID-13695** (due 24 September), both still Pending. These are reported WordPress corrections, not proof of complete Next.js migration coverage.
 
 His 19 September WPForms report identifies 11965/18926 → `/emailsubscriber/` and 8055 → the booklet PDF. Use this as input to the form inventory, not proof that the new Next.js forms deliver. Attachments were reported, not independently inspected in this handoff. The nine-day workshop PDF search was already acknowledged; the archive response from Sunaj remains a separate missing-file dependency. COS has already sent the acknowledgement; no duplicate email or assignment is needed.
+
+## End-of-day additions — rates, feedback freeze and translation
+
+- [x] Consolidate outstanding AHV workspace inputs, settled decisions and team references in OWNER-DECISIONS-AND-TEAM-INPUTS.md.
+- [x] Repair mobile home hero cropping and remove redundant footer year range; preserve the copyright and heritage tagline.
+- [ ] Triage team feedback due Saturday 26 September 18:00 IST against this same staging alias.
+- [ ] Receive the owner’s latest approved rates PDF; record source/version/hash, approval, effective dates, currencies and superseded documents.
+- [ ] Reconcile PDF prices with accommodation, programme pages, finders/search totals, offers, campaign/LP copy, FAQs and download links in batches of at most 25; validate tax/occupancy/minimum-stay/inclusion assumptions.
+- [ ] Expiry boundary: test 30 September/1 October; do not publish expired totals merely because a build permits expired source data. Training/yoga/OPD validity must be checked separately.
+- [ ] Receive Vikash’s 25 September source handoff; reconcile received ad/WordPress inventories and test final imports without restoring old layouts.
+- [ ] Complete developer form delivery and clinical review separately; identify developer Deepu Sahani versus Dr. Deepu John clearly.
+- [ ] Freeze approved English content before batch translation; confirm language priority, reviewers, market currencies/PDFs and release timing.
+- [ ] Translate UI, forms, validation, search, metadata, alt text and approved medical copy along with pages; human-review each batch.
+- [ ] Verify locale routes, lang/hreflang, canonicals, sitemap coverage, redirects, search and mobile layouts; retain working legacy non-English paid URLs until replacement is ready.
+- [ ] After rates/translation release, monitor stale PDFs/cache/search snippets, incorrect language redirects, form delivery by locale and conversion changes. CDN and search-index updates have processing windows; verify rather than repeatedly redeploy.
+
+The existing before-launch, immediate-release, 24–48-hour, days-3–7 and weeks-2–4 checks remain required. Today’s 108 passing site tests are scoped evidence, not a declaration that GitHub release gates or real form delivery are complete.

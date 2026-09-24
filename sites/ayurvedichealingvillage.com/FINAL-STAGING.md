@@ -34,3 +34,7 @@ The stable staging address is a label, not permission to bypass branch protectio
 Keep historical deployments protected/noindex. PR284/285 contain unmerged migration work; preserve them as historical context and reconcile only necessary legacy-route requirements before cutover. Do not merge older designs on top of this handoff.
 
 No launch date is invented. No new employee assignment or email is created by this document.
+
+## End-of-day feedback freeze — 24 September
+
+Use the same alias for Saturday feedback. [Consolidated owner questions and team inputs](../../docs/reports/2026-09-24-ahv-final-staging/OWNER-DECISIONS-AND-TEAM-INPUTS.md) is the current pending-input queue. Latest rates PDF and later batch translation remain explicit dependencies. Production is not switched.

@@ -57,6 +57,11 @@
   }
 
   function copyright(f) {
+    // Keep the date range once, in the copyright; retain the location label.
+    f.querySelectorAll("div,span").forEach(function(el) {
+      if (!/^\s*Ayurvedic Healing Village · Palakkad · 1908/.test(el.innerHTML)) return;
+      el.innerHTML = el.innerHTML.replace(/(Ayurvedic Healing Village · Palakkad)\s*·\s*1908\s*[—–-]\s*(?:<span[^>]*>\d{4}<\/span>|\d{4})/, "$1");
+    });
     if (f.querySelector("[data-ahv-copyright]")) return;
     if (/©/.test(f.textContent || "")) return;
     // the bottom bar: the footer's last element block
