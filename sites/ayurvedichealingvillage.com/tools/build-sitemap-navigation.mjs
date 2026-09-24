@@ -100,3 +100,10 @@ console.log('Built sitemap from the site tree: '+data.links.length+' pages, '+da
 const footerFile=path.join(SITE,'public/ahv/components/AHV Chrome Footer.dc.html');
 const footer=fs.readFileSync(footerFile,'utf8');
 fs.writeFileSync(footerFile,footer.replace(/(<a\s[^>]*href=")https:\/\/ayurvedichealingvillage.com\/givefeedback\/("[^>]*>Reviews<\/a>)/g,'$1https://ayurvedichealingvillage.com/read-feedback/$2'));
+
+// Keep server-rendered content in step with the interactive directory.
+const snapshotFile=path.join(SITE,'english-candidate/prerender/sitemap.html');
+const snapshot=fs.readFileSync(snapshotFile,'utf8');
+const main=template.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+if(!main || !/<main\b[\s\S]*?<\/main>/.test(snapshot)) throw new Error('Sitemap snapshot main missing');
+fs.writeFileSync(snapshotFile,snapshot.replace(/<main\b[\s\S]*?<\/main>/,main));

@@ -129,6 +129,42 @@
         "clicks": null,
         "impressions": null
       }
+    },
+    "/attractions-under-10kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-15kms-and-below/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-25kms-to-50kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-above-50kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."

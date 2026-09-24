@@ -151,34 +151,6 @@
    "label": "Mountain jeep safari"
   },
   {
-   "path": "/attractions-under-10kms/",
-   "section": "things",
-   "parent": "/sightseeing/",
-   "why": "Changed after review (reviewer 2, verified): the H1 says '10 Kms & Under', but the only distance on the page is Tipu's Fort at 14 km, so a number in the label would be contradicted by the page. The four band labels now read as a ladder: nearest, within 15 km, 25–50 km, over 50 km.",
-   "label": "Nearest places to visit"
-  },
-  {
-   "path": "/attractions-15kms-and-below/",
-   "section": "things",
-   "parent": "/sightseeing/",
-   "why": "Changed after review (reviewer 2): lists different places from the nearest-places page (Rock Garden, Chittur Gurumadam, Fantasy Park, Malampuzha) and states no distances, so 'More' keeps it from reading as a superset of the first band. Distance taken from its H1.",
-   "label": "More places within 15 km"
-  },
-  {
-   "path": "/attractions-25kms-to-50kms/",
-   "section": "things",
-   "parent": "/sightseeing/",
-   "why": "Accepted. Every distance on the page falls in this band.",
-   "label": "Places 25–50 km away"
-  },
-  {
-   "path": "/attractions-above-50kms/",
-   "section": "things",
-   "parent": "/sightseeing/",
-   "why": "Accepted. Every place listed is over 50 km away.",
-   "label": "Places over 50 km away"
-  },
-  {
    "path": "/alcohol-free/",
    "section": "facilities",
    "parent": "/experience/",
@@ -590,7 +562,7 @@
   {
    "path": "/sightseeing/",
    "label": "Sightseeing near Kairali",
-   "why": "Matches its meta title; tells a visitor these are trips from the hospital. It becomes the parent of the four bands."
+   "why": "Owner-approved single guide with all 22 destinations and approximate road distances."
   },
   {
    "path": "/experience/",
@@ -938,6 +910,22 @@
   {
    "path": "/emailsubscriber/",
    "why": "21-word subscription endpoint that cannot even confirm the subscription; pure utility."
+  },
+  {
+   "path": "/attractions-under-10kms/",
+   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+  },
+  {
+   "path": "/attractions-15kms-and-below/",
+   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+  },
+  {
+   "path": "/attractions-25kms-to-50kms/",
+   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+  },
+  {
+   "path": "/attractions-above-50kms/",
+   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
   }
  ],
  "sectionTitles": [
@@ -1291,12 +1279,6 @@
    "/mountain-jeep-safari/",
    "/cultural-events/",
    "/festivals/"
-  ],
-  "/sightseeing/": [
-   "/attractions-under-10kms/",
-   "/attractions-15kms-and-below/",
-   "/attractions-25kms-to-50kms/",
-   "/attractions-above-50kms/"
   ],
   "/knowledge-centre/": [
    "/new-to-ayurveda/",

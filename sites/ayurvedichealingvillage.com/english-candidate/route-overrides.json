@@ -166,6 +166,25 @@
         "canonical": "https://ayurvedichealingvillage.com/about-us/"
       },
       "reason": "Owner-approved 301 consolidation into About Us, 24 September 2026."
+    },
+    "/attractions-under-10kms/": {
+      "sitemapExclude": true
+    },
+    "/attractions-15kms-and-below/": {
+      "sitemapExclude": true
+    },
+    "/attractions-25kms-to-50kms/": {
+      "sitemapExclude": true
+    },
+    "/attractions-above-50kms/": {
+      "sitemapExclude": true
+    },
+    "/sightseeing/": {
+      "metadata": {
+        "title": "Sightseeing near Kairali | Places to Visit from Palakkad",
+        "description": "Explore 22 places to visit from Kairali in Palakkad, with approximate road distances, directions and practical notes for temples, gardens, dams and forest visits.",
+        "canonical": "https://ayurvedichealingvillage.com/sightseeing/"
+      }
     }
   },
   "addRoutes": {

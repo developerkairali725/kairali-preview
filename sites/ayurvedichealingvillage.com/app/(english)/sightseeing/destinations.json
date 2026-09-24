@@ -1,0 +1,273 @@
+[
+  {
+    "id": "thiruvalathoor",
+    "name": "Thiruvalathoor Temple",
+    "group": "heritage",
+    "description": "An ancient Bhagavathy temple known for its woodwork and stone sculpture. Local tradition tells of a surrounding wall left unfinished before daybreak.",
+    "km": 6,
+    "endpoint": "Temple approach",
+    "coordinates": [
+      10.7428633,
+      76.6867728
+    ]
+  },
+  {
+    "id": "chittur-gurumadam",
+    "name": "Chittur Gurumadam",
+    "group": "heritage",
+    "description": "A riverside memorial to Thunchath Ezhuthachan, whose Malayalam retellings of the Ramayana and Mahabharata shaped the language’s literary tradition. Manuscripts and objects associated with the poet are part of its heritage.",
+    "km": 7,
+    "endpoint": "Gurumadam approach",
+    "coordinates": [
+      10.6927625,
+      76.7410389
+    ]
+  },
+  {
+    "id": "thenari",
+    "name": "Thenari Sree Rama Temple",
+    "group": "heritage",
+    "description": "A place of worship associated with the Ramayana, with a sacred spring beside the temple. Its water is revered in local tradition.",
+    "km": 9,
+    "endpoint": "Sree Rama Theertham approach",
+    "coordinates": [
+      10.75066,
+      76.76034
+    ]
+  },
+  {
+    "id": "palakkad-fort",
+    "name": "Palakkad Fort · Tipu’s Fort",
+    "group": "heritage",
+    "description": "Built by Hyder Ali in 1766, this protected fort is one of Palakkad’s best-known landmarks. Its moat, ramparts and grounds offer a view of the town’s history; the Anjaneya shrine stands inside.",
+    "km": 10,
+    "endpoint": "Fort road approach; walk to entrance",
+    "coordinates": [
+      10.7636555,
+      76.6568119
+    ]
+  },
+  {
+    "id": "jainimedu",
+    "name": "Jainimedu Jain Temple",
+    "group": "heritage",
+    "description": "A historic granite temple dedicated to Chandraprabha, with images of Jain Tirthankaras. The surrounding neighbourhood is also associated with poet Kumaran Asan and Veenapoovu.",
+    "km": 14,
+    "endpoint": "Temple approach",
+    "coordinates": [
+      10.785667,
+      76.642556
+    ]
+  },
+  {
+    "id": "kalpathy",
+    "name": "Kalpathy Shiva Temple",
+    "group": "heritage",
+    "description": "Visit the Vishwanatha Swamy temple and the surrounding agraharam streets. Kalpathy is especially known for its annual chariot festival, Ratholsavam.",
+    "km": 16,
+    "endpoint": "Vishwanatha Swamy temple",
+    "coordinates": [
+      10.7949649,
+      76.648137
+    ]
+  },
+  {
+    "id": "kalamandalam",
+    "name": "Kerala Kalamandalam",
+    "group": "heritage",
+    "description": "At Cheruthuruthy, this renowned institution preserves Kerala’s traditional performing arts. Arrange a visitor programme in advance if you hope to see teaching or performances.",
+    "km": 65,
+    "endpoint": "Campus road approach",
+    "coordinates": [
+      10.7371278,
+      76.279064
+    ]
+  },
+  {
+    "id": "thiruvegappura",
+    "name": "Thiruvegappura Sankaranarayana Temple",
+    "group": "heritage",
+    "description": "Also known as the Moonnumoorthy temple, this riverside temple is associated with Shiva, Vishnu and Sankaranarayana. Its traditional koothambalam, or temple theatre, is an important architectural feature.",
+    "km": 80,
+    "endpoint": "Temple approach",
+    "coordinates": [
+      10.8801815,
+      76.1165487
+    ]
+  },
+  {
+    "id": "thrithala",
+    "name": "Thrithala",
+    "group": "heritage",
+    "description": "Explore a village on the Bharathapuzha known for its temple traditions and the historic Kattil Madom monument nearby. Allow additional travel for individual sites around the village.",
+    "km": 80,
+    "endpoint": "Thrithala village centre",
+    "coordinates": [
+      10.8032717,
+      76.1289891
+    ]
+  },
+  {
+    "id": "guruvayur",
+    "name": "Guruvayur",
+    "group": "heritage",
+    "description": "The Sree Krishna temple is one of Kerala’s important pilgrimage destinations, known for devotional offerings such as Thulabharam. Check temple entry rules and arrangements before travelling.",
+    "km": 100,
+    "endpoint": "Road approach near Sree Krishna temple",
+    "coordinates": [
+      10.5942942,
+      76.0394112
+    ]
+  },
+  {
+    "id": "fantasy-park",
+    "name": "Fantasy Park",
+    "group": "water",
+    "description": "An amusement and water park near Malampuzha, with activities for families. Check the park’s current opening schedule, available rides and entry requirements before visiting.",
+    "km": 19,
+    "endpoint": "Park entrance approach",
+    "coordinates": [
+      10.8241294,
+      76.670231
+    ]
+  },
+  {
+    "id": "rock-garden",
+    "name": "Malampuzha Rock Garden",
+    "group": "water",
+    "description": "Designed by Nek Chand, the garden turns discarded tiles, bangles, stones and other materials into sculpture. A distinctive art stop in the Malampuzha area.",
+    "km": 19,
+    "endpoint": "Rock Garden approach",
+    "coordinates": [
+      10.8244125,
+      76.6886616
+    ],
+    "notice": "Kerala Tourism currently reports the main Malampuzha Garden closed, with the dam and ropeway open. Check the latest notice and access to individual attractions before setting out.",
+    "source": "https://www.keralatourism.org/destination/malampuzha-dam-garden-palakkad/124/"
+  },
+  {
+    "id": "malampuzha",
+    "name": "Malampuzha Dam & Gardens",
+    "group": "water",
+    "description": "The reservoir, dam and gardens sit below the surrounding hills. The area is also known for Kanayi Kunhiraman’s Yakshi sculpture and the aerial ropeway.",
+    "km": 20,
+    "endpoint": "Dam approach",
+    "coordinates": [
+      10.8285282,
+      76.685703
+    ],
+    "notice": "Kerala Tourism currently reports the main Malampuzha Garden closed, with the dam and ropeway open. Check the latest notice and access to individual attractions before setting out.",
+    "source": "https://www.keralatourism.org/destination/malampuzha-dam-garden-palakkad/124/"
+  },
+  {
+    "id": "meenkara",
+    "name": "Meenkara Dam",
+    "group": "water",
+    "description": "A reservoir set in the countryside near the Kerala–Tamil Nadu border. The dam and surrounding landscape make a quieter stop for views of the water and hills.",
+    "km": 20,
+    "endpoint": "Dam road approach",
+    "coordinates": [
+      10.6208088,
+      76.7973264
+    ]
+  },
+  {
+    "id": "pothundy",
+    "name": "Pothundy Dam",
+    "group": "water",
+    "description": "An old earthen dam near Nenmara, with reservoir views and a backdrop of the Nelliyampathy hills. It can be a stop on the route towards Nelliyampathy.",
+    "km": 35,
+    "endpoint": "Dam approach",
+    "coordinates": [
+      10.5453659,
+      76.6253256
+    ]
+  },
+  {
+    "id": "meenvallam",
+    "name": "Meenvallam Waterfalls",
+    "group": "water",
+    "description": "A forest waterfall on the Thuppanadu river in the Kalladikodan hills. Access involves walking beyond the road approach; check seasonal restrictions and local entry arrangements.",
+    "km": 40,
+    "endpoint": "Nearest mapped road; final walk extra",
+    "coordinates": [
+      10.9225194,
+      76.5910097
+    ],
+    "source": "https://www.keralatourism.org/destination/meenvallam-waterfalls-palakkad/554/"
+  },
+  {
+    "id": "mangalam",
+    "name": "Mangalam Dam",
+    "group": "water",
+    "description": "A reservoir bordered by wooded hills and countryside. A place to take in the landscape, with access to visitor areas subject to local conditions.",
+    "km": 45,
+    "endpoint": "Dam approach",
+    "coordinates": [
+      10.5154388,
+      76.5332031
+    ]
+  },
+  {
+    "id": "kanjirapuzha",
+    "name": "Kanjirapuzha Dam & Garden",
+    "group": "water",
+    "description": "A broad reservoir framed by hills and forest, with a garden near the dam. Its wooded surroundings and islands form the main attraction.",
+    "km": 45,
+    "endpoint": "Visitor garden approach",
+    "coordinates": [
+      10.9886978,
+      76.5357096
+    ]
+  },
+  {
+    "id": "nelliyampathy",
+    "name": "Nelliyampathy",
+    "group": "nature",
+    "description": "A hill area of plantations, wooded slopes and viewpoints reached by a winding mountain road. The estimate is to Nelliyampathy village; individual viewpoints and estates are farther on.",
+    "km": 55,
+    "endpoint": "Nelliyampathy village",
+    "coordinates": [
+      10.534929,
+      76.6932696
+    ]
+  },
+  {
+    "id": "silent-valley",
+    "name": "Silent Valley National Park",
+    "group": "nature",
+    "description": "A protected rainforest landscape in the Western Ghats. Plan entry through Mukkali with the forest department; organised park transport and entry arrangements are separate from the drive to Mukkali.",
+    "km": 65,
+    "endpoint": "Mukkali; park transport extra",
+    "coordinates": [
+      11.0644273,
+      76.5400622
+    ],
+    "source": "https://www.keralatourism.org/destination/silent-valley-national-park-palakkad/157/"
+  },
+  {
+    "id": "parambikulam",
+    "name": "Parambikulam Tiger Reserve",
+    "group": "nature",
+    "description": "A protected forest landscape in the Anamalai hills, home to diverse wildlife. Contact the reserve about permitted activities, reservations and entry times; wildlife sightings are never guaranteed.",
+    "km": 65,
+    "endpoint": "Anappady information centre approach",
+    "coordinates": [
+      10.447006,
+      76.815691
+    ],
+    "source": "https://www.parambikulam.org/ContactUs"
+  },
+  {
+    "id": "attappadi",
+    "name": "Attappadi",
+    "group": "nature",
+    "description": "A wide mountain valley around the upper Bhavani river, beneath the Nilgiri hills. The estimate is to Agali, a practical starting point for the area; onward travel depends on your destination.",
+    "km": 70,
+    "endpoint": "Agali road approach",
+    "coordinates": [
+      11.0612423,
+      76.5744675
+    ]
+  }
+]

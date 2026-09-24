@@ -803,28 +803,7 @@
     {
      "path": "/sightseeing/",
      "title": "Sightseeing near Kairali",
-     "children": [
-      {
-       "path": "/attractions-under-10kms/",
-       "title": "Nearest places to visit",
-       "children": []
-      },
-      {
-       "path": "/attractions-15kms-and-below/",
-       "title": "More places within 15 km",
-       "children": []
-      },
-      {
-       "path": "/attractions-25kms-to-50kms/",
-       "title": "Places 25–50 km away",
-       "children": []
-      },
-      {
-       "path": "/attractions-above-50kms/",
-       "title": "Places over 50 km away",
-       "children": []
-      }
-     ]
+     "children": []
     }
    ]
   },
@@ -1271,30 +1250,6 @@
    "section": "news",
    "ancestors": [
     "/archive-yoga-retreat/"
-   ]
-  },
-  "/attractions-15kms-and-below/": {
-   "section": "things",
-   "ancestors": [
-    "/sightseeing/"
-   ]
-  },
-  "/attractions-25kms-to-50kms/": {
-   "section": "things",
-   "ancestors": [
-    "/sightseeing/"
-   ]
-  },
-  "/attractions-above-50kms/": {
-   "section": "things",
-   "ancestors": [
-    "/sightseeing/"
-   ]
-  },
-  "/attractions-under-10kms/": {
-   "section": "things",
-   "ancestors": [
-    "/sightseeing/"
    ]
   },
   "/awards-and-accolades/": {
@@ -2330,6 +2285,22 @@
   }
  },
  "unlisted": {
+  "/attractions-15kms-and-below/": {
+   "section": "things",
+   "ancestors": []
+  },
+  "/attractions-25kms-to-50kms/": {
+   "section": "things",
+   "ancestors": []
+  },
+  "/attractions-above-50kms/": {
+   "section": "things",
+   "ancestors": []
+  },
+  "/attractions-under-10kms/": {
+   "section": "things",
+   "ancestors": []
+  },
   "/ayurveda-offers/": {
    "section": "offers",
    "ancestors": []

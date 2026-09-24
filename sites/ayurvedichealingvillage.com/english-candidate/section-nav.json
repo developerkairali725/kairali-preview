@@ -935,32 +935,7 @@
      "path": "/sightseeing/",
      "label": "Sightseeing near Kairali",
      "link": true,
-     "children": [
-      {
-       "path": "/attractions-under-10kms/",
-       "label": "Nearest places to visit",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/attractions-15kms-and-below/",
-       "label": "More places within 15 km",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/attractions-25kms-to-50kms/",
-       "label": "Places 25–50 km away",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/attractions-above-50kms/",
-       "label": "Places over 50 km away",
-       "link": true,
-       "children": []
-      }
-     ]
+     "children": []
     }
    ]
   },
@@ -1360,38 +1335,6 @@
     ],
     "blockPrefixes": []
    }
-  },
-  "/attractions-15kms-and-below/": {
-   "section": "things",
-   "crumbs": [
-    "/sightseeing/",
-    "/attractions-15kms-and-below/"
-   ],
-   "remove": null
-  },
-  "/attractions-25kms-to-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/sightseeing/",
-    "/attractions-25kms-to-50kms/"
-   ],
-   "remove": null
-  },
-  "/attractions-above-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/sightseeing/",
-    "/attractions-above-50kms/"
-   ],
-   "remove": null
-  },
-  "/attractions-under-10kms/": {
-   "section": "things",
-   "crumbs": [
-    "/sightseeing/",
-    "/attractions-under-10kms/"
-   ],
-   "remove": null
   },
   "/awards-and-accolades/": {
    "section": "about",
@@ -2539,6 +2482,34 @@
    "crumbs": [
     "/yoga-meditation-programs/",
     "/yoga-therapy-individual/"
+   ],
+   "remove": null
+  },
+  "/attractions-15kms-and-below/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-15kms-and-below/"
+   ],
+   "remove": null
+  },
+  "/attractions-25kms-to-50kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-25kms-to-50kms/"
+   ],
+   "remove": null
+  },
+  "/attractions-above-50kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-above-50kms/"
+   ],
+   "remove": null
+  },
+  "/attractions-under-10kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-under-10kms/"
    ],
    "remove": null
   },
