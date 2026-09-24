@@ -112,7 +112,7 @@ A checked item has recorded evidence. An unchecked item is a required verificati
 ## 6. Technical release, SEO and AI discoverability
 
 - [ ] Freeze one commit with an installable lockfile, successful production build, unit/search tests and all required CI/review evidence. Resolve unrelated monorepo failures with their owners; AHV completion cannot claim another site's deployment is healthy.
-- [ ] Resolve the inherited factory-test contract conflicts and missing CTA instrumentation before merge. Tests must represent the approved site behaviour; do not silently weaken them.
+- [ ] Resolve the 87 inherited evidence-manifest findings through a provenance-preserving migration; retain original source bytes and producer history. Resolve the inherited factory-test contract conflicts and missing CTA instrumentation before merge. Tests must represent the approved site behaviour; do not silently weaken them.
 - [ ] Review dependency/security findings by severity and applicability; fix release-relevant issues and record accepted risks. A build pass alone is not a security audit.
 - [ ] Confirm environment variables and server secrets separately for Preview and Production; restrict access and avoid copying production patient data into preview.
 - [ ] Build a **new production-configured artifact** with the approved settings. Do not blindly promote the noindex, form-blocked staging artifact: `AHV_STAGING` affects build-time output.

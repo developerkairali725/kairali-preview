@@ -17,3 +17,11 @@ Task WOPS-AHV-FINAL-DRAFT-20260924-001. Source snapshot: PR309 head `12743836786
 | Other site Vercel | kairaliherbals-com deployment failed | Separate project owner/configuration; cannot claim AHV release resolves it |
 
 Main remains protected and unchanged. One stable staging URL exists independently of merge readiness. Older PR284/285 are historical migration work with unique commits, not alternate final English staging releases; do not merge them over the final candidate without a separate reviewed reconciliation.
+
+## Follow-up found after the handoff push
+
+The refreshed `brand-lint` job at head `37ae9a85` passes its colour/copy stages but then exposes **87 evidence-manifest findings** in three inherited 22 September AHV design-intake bundles. Their legacy array manifests lack the required version/timestamps/run/producer/files schema. This is an evidence-registration issue, not 87 broken pages. The files are historical append-only evidence; do not silently rewrite their provenance or invent the original producer. A reviewed, provenance-preserving manifest migration remains a release dependency.
+
+Authenticated Dependabot and the package registry identified critical advisories affecting AHV's Next.js 15.5.23. AHV alone is updated to **15.5.24**, resolving to **sharp 0.35.4** in its dependency graph. No other site's dependency importer is changed. The patched local production build and 86 unit tests pass. A fresh production-dependency audit reports no AHV paths; it still reports 16 advisories in other sites' production dependency graphs. This is scoped remediation, not a fleet-wide clean security claim.
+
+Sources: the repository's authenticated Dependabot alerts 64/65 and the [official Next.js 15 upgrade guide](https://nextjs.org/docs/app/guides/upgrading/version-15). The final release must rerun checks at its exact head; default-branch alerts may remain until the protected merge is completed.
