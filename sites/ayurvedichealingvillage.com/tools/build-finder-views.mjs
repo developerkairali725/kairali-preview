@@ -440,7 +440,16 @@ function derive(base, d, variant) {
   return view;
 }
 
-const write = (view) => {
+const write = (input) => {
+  const view = JSON.parse(JSON.stringify(input));
+  // Owner-requested presentation correction, scoped to the treatment finder.
+  if (/^ahv-page-ayurvedic-treatments-(desktop|mobile)$/.test(view.id)) {
+    const desktop = view.id.endsWith('-desktop');
+    view.logic = view.logic.replace("'All ' + DATASET.length + ' governed programmes, as published.'", "'Explore all ' + DATASET.length + ' programmes.'");
+    view.template = view.template
+      .replace(desktop ? 'padding:34px 0 0;position:relative' : 'padding:26px 0 0;position:relative', desktop ? 'padding:34px 0 64px;position:relative' : 'padding:26px 0 40px;position:relative')
+      .replace('</a>. Programme fees are', '</a></p>\n    <p style="margin:12px 0 0;color:#75695A;font-size:14.5px;line-height:1.7;max-width:88ch">Programme fees are');
+  }
   const file = path.join(VIEWS, view.id + ".json");
   if (!DRY) fs.writeFileSync(file, JSON.stringify(view, null, 1) + "\n");
   console.log(`${DRY ? "[dry] " : ""}wrote ${view.id} (template ${view.template.length} chars, logic ${view.logic.length})`);
