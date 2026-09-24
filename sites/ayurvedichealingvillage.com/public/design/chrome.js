@@ -109,12 +109,22 @@
     controls.querySelector("button").addEventListener("click", openChat);
     document.body.appendChild(controls);
   }
+  function reachExternalLinks() {
+    if (window.location.pathname.replace(/\/$/, '') !== '/how-to-reach') return;
+    root.querySelectorAll('a[href]').forEach(function (a) {
+      var u; try { u = new URL(a.getAttribute('href'), window.location.href); } catch (_) { return; }
+      if (!/^https?:$/.test(u.protocol) || u.origin === window.location.origin || /^(www\.)?ayurvedichealingvillage\.com$/.test(u.hostname)) return;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+  }
   function pass() {
     scheduled = false;
     try {
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();
+      reachExternalLinks();
     } catch (e) { /* never break the page */ }
   }
   function schedule() {

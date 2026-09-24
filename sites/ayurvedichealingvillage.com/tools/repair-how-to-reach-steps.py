@@ -16,6 +16,13 @@ EXTRA='''
   }
   closeZoom() { const d = this.root.querySelector('[data-map-dialog]'); if (d) d.close(); }
 '''
+def external_links(html):
+ def fix(m):
+  tag=m[0];href=re.search(r'href="([^"]+)"',tag).group(1)
+  if not href.startswith(('https://','http://')) or re.match(r'https?://(?:www\.)?ayurvedichealingvillage\.com(?:/|$)',href):return tag
+  tag=re.sub(r' (?:target|rel)="[^"]*"','',tag)
+  return tag[:-1]+' target="_blank" rel="noopener noreferrer">'
+ return re.sub(r'<a\b[^>]*href="[^"]+"[^>]*>',fix,html)
 for variant in ['desktop','mobile']:
  p=SITE/f'public/ahv/views/ahv-page-how-to-reach-{variant}.json'; d=json.loads(p.read_text());t=d['template']
  if 'data-map-dialog' not in t:
@@ -67,6 +74,8 @@ for variant in ['desktop','mobile']:
   t=t[:start]+actions+t[end:]
  d['logic']=re.sub(r'\s*this\.waitForLibs\(\);','',d['logic'])
  t=re.sub(r'(?m)^[ \t]+$', '', t)
+ t=t.replace('>Get directions</a>','>Open in Google Maps</a>')
+ t=external_links(t)
  d['template']=t
  p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
  if variant=='mobile': mobile=t
@@ -74,7 +83,7 @@ p=SITE/'english-candidate/prerender/how-to-reach.html';html=p.read_text()
 def bounds(s):
  h=s.index('Four steps in');return s.rfind('<section',0,h),s.index('</section>',h)+len('</section>')
 a,b=bounds(mobile);section=mobile[a:b];section=re.sub(r' onClick="[^"]*"','',section)
-a,b=bounds(html);html=html[:a]+section+html[b:];p.write_text(html)
+a,b=bounds(html);html=external_links(html[:a]+section+html[b:]);p.write_text(html)
 p=SITE/'english-candidate/prerender/index.json';d=json.loads(p.read_text())
 for r in d['routes']:
  if r['path']=='/how-to-reach/':r['bytes']=len(html.encode())
