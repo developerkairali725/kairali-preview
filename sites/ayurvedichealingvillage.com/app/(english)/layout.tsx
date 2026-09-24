@@ -102,6 +102,8 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
         <link rel="stylesheet" href="/design/chrome.css" />
         <script defer src="/design/chrome.js" />
         <link rel="stylesheet" href="/design/newsletter.css" />
+        <link rel="stylesheet" href="/design/film-player.css" />
+        <script src="/design/film-player.js" defer />
         <script defer src="/design/newsletter.js" />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
