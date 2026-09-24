@@ -156,7 +156,7 @@ nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; 
   margin-left:0 !important; margin-right:0 !important;
 }
 /* Comparable source-labelled photo cards use a consistent frame. */
-#ahv-design-root main[data-ahv-rail] [data-source-card] img[data-source-pointer] {
+#ahv-design-root[data-ahv-route^="/things-to-do"] main[data-ahv-rail] [data-source-card] img[data-source-pointer] {
   width:100% !important; height:auto !important; aspect-ratio:8 / 5;
   max-height:none; object-fit:cover !important;
 }
@@ -168,7 +168,7 @@ nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; 
 @media(max-width:600px) {
   #ahv-design-root main[data-ahv-rail] article img:not([class]),
   #ahv-design-root main[data-ahv-rail] [data-ahv-rail-col="2"] img[data-source-pointer] {max-height:360px;}
-  #ahv-design-root main[data-ahv-rail] [data-source-card] img[data-source-pointer],
+  #ahv-design-root[data-ahv-route^="/things-to-do"] main[data-ahv-rail] [data-source-card] img[data-source-pointer],
   #ahv-design-root main[data-ahv-rail] article img[src*="/house-rules/"] {max-height:none;}
 }
 /* A portrait poster is not a panoramic hero: show it complete at a readable\n   size without letting it consume multiple screens. */
