@@ -71,7 +71,9 @@ for (const [p, info] of [...Object.entries(tree.index), ...Object.entries(tree.u
   const r = byPath.get(p);
   if (!sec || !r) continue;
   const fam = familyOf(r);
-  if (EXCLUDE_FAMILIES.has(fam) || lock.families[fam]) { skipped.push(p); continue; }
+  // OPD is a visit-information destination despite using the enquiry family.
+  const ownerIncluded = p === "/walk-in-ayurveda-treatment/";
+  if (!ownerIncluded && (EXCLUDE_FAMILIES.has(fam) || lock.families[fam])) { skipped.push(p); continue; }
   routes[p] = { section: info.section, crumbs: [...info.ancestors, p], remove: removeByPath.get(p) || null };
 }
 
