@@ -327,3 +327,8 @@
 .campaign-more>summary::after {content:'Read details';display:block;font:600 15px/1.5 Mulish,system-ui,sans-serif;color:#006038;margin-top:8px;}
 .campaign-more[open]>summary {margin-bottom:24px;}
 .campaign-more[open]>summary::after {content:'Close details';}
+
+/* Hero copy is light, but enquiry-card text sits on cream. */
+#ahv-design-root[data-ahv-family="campaign-retreat"]:not([data-ahv-route="/kairali-air-india-maharaja-club.html"]) form :is(h2,h3,label,p,span) {
+  color: #2A2118 !important;
+}
