@@ -174,3 +174,10 @@
   [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){grid-template-columns:minmax(0,1fr);gap:6px!important}
   [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]) > span{display:none}
 }
+
+/* Centre the tariff/consultation reading block across every programme finder. */
+section[aria-label="Treatment and wellness programmes"] > p:has(a[href*="/ahv/assets/doc/"]),
+section[aria-label="Treatment and wellness programmes"] > p:has(a[href*="/ahv/assets/doc/"]) ~ p{
+  width:100%;max-width:88ch!important;margin-inline:auto!important;line-height:1.7!important;box-sizing:border-box;text-align:left;
+}
+section[aria-label="Treatment and wellness programmes"]:has(> p a[href*="/ahv/assets/doc/"]){padding-bottom:clamp(32px,4vw,56px)!important}
