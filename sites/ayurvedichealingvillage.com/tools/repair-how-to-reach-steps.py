@@ -52,6 +52,23 @@ for variant in ['desktop','mobile']:
   logic=logic.replace('this.root = el;', 'this.root = el; requestAnimationFrame(() => this.sync());')
   d['template']=t;d['logic']=logic;d['scripts']=[]
   p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
+ # Keep the orientation controls together and make the grounds image operable.
+ t=t.replace('Palakkad District · road diagram, not to scale','Palakkad District · road connections').replace('Road diagram, not to scale','Road connections to Palakkad')
+ if 'data-map-image-zoom' not in t:
+  pattern=r'<img src="/ahv/assets/img/travel/89310cfa[^>]+>'
+  def image_button(m):
+   img=re.sub(r' style="[^"]*"', ' style="width:100%;height:100%;object-fit:contain;display:block;"',m[0])
+   return '<button type="button" data-map-image-zoom="1" onClick="{{ onZoom }}" aria-label="Enlarge map of the village grounds" style="display:block;width:100%;flex:1 1 auto;min-height:0;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in;">'+img+'</button>'
+  t,n=re.subn(pattern,image_button,t,count=1);assert n==1
+  t=re.sub(r'<a href="https://www.google.com/maps/dir/[^>]+>(?:Get directions in Google Maps|Open directions in Google Maps)</a>','',t)
+  start=t.index('<div style="margin:0 0 16px;"><button type="button" data-map-zoom')
+  end=t.index('</div>',start)+6
+  actions='<div data-map-actions="1" style="display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px;align-items:center;"><button type="button" data-map-zoom="1" onClick="{{ onZoom }}" style="'+BUTTON+'">Enlarge map</button><a href="https://www.google.com/maps/dir/?api=1&amp;destination=10.727275,76.710507" style="display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:10px 20px;border:1px solid #5A4420;border-radius:4px;color:#5A4420;font:700 14px Mulish,sans-serif;text-decoration:none;">Get directions</a></div>'
+  t=t[:start]+actions+t[end:]
+ d['logic']=re.sub(r'\s*this\.waitForLibs\(\);','',d['logic'])
+ t=re.sub(r'(?m)^[ \t]+$', '', t)
+ d['template']=t
+ p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
  if variant=='mobile': mobile=t
 p=SITE/'english-candidate/prerender/how-to-reach.html';html=p.read_text()
 def bounds(s):
