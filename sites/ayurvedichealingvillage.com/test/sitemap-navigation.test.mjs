@@ -61,12 +61,31 @@ test('the rail renders the same tree the sitemap renders', () => {
 });
 test('both sitemap views carry every page; mobile imports the narrow chrome; the filter is typo-tolerant', () => {
   const d = read('public/ahv/views/ahv-page-sitemap-desktop.json'), m = read('public/ahv/views/ahv-page-sitemap-mobile.json');
-  for (const p of Object.keys(tree.index)) { assert.ok(d.template.includes('href="' + p + '"'), p); assert.ok(m.template.includes('href="' + p + '"'), p); }
+  for (const p of Object.keys(tree.index).filter(p=>tree.index[p].section!=='campaigns')) { assert.ok(d.template.includes('href="' + p + '"'), p); assert.ok(m.template.includes('href="' + p + '"'), p); }
   assert.match(m.template, /AHV Chrome Header" narrow="true"/);
   assert.ok(d.logic.includes('const hit='));
 });
 test('the server-rendered sitemap carries every page', () => {
   const ssr = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
-  for (const p of Object.keys(tree.index)) assert.ok(ssr.includes('href="' + p + '"'), p);
+  for (const p of Object.keys(tree.index).filter(p=>tree.index[p].section!=='campaigns')) assert.ok(ssr.includes('href="' + p + '"'), p);
   assert.ok(!ssr.includes('{{')); assert.ok(!ssr.includes('<dc-import'));
+});
+
+test('visitor sitemap excludes campaign links while offering both programme entry paths', () => {
+  for (const variant of ['desktop', 'mobile']) {
+    const view = read('public/ahv/views/ahv-page-sitemap-' + variant + '.json');
+    for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(!view.template.includes('href="' + p + '"'), p);
+    assert.match(view.template, /class="sm-entry-paths"/);
+    assert.match(view.template, /Browse our main pages/);
+    assert.ok(view.logic.includes("hits===1?'page':'pages'"));
+  }
+  const footer = fs.readFileSync(url('public/ahv/components/AHV Chrome Footer.dc.html'), 'utf8');
+  assert.match(footer, /href="https:\/\/ayurvedichealingvillage.com\/read-feedback\/"[^>]*>Reviews<\/a>/);
+});
+
+test('server sitemap mirrors the corrected visitor directory', () => {
+  const html = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
+  assert.match(html, /206 pages across 14 sections/);
+  assert.match(html, /class="sm-entry-paths"/);
+  for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(!html.includes('href="' + p + '"'), p);
 });
