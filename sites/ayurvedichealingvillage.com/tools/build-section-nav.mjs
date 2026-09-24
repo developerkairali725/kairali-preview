@@ -36,7 +36,7 @@ const EXCLUDE_FAMILIES = new Set([
   "enquiry", "confirmation", "policy-reader", "ahv-template-legal-policy",
   "campaign-nine", "campaign-retreat", "ahv-template-offers-deals-and-gift-vouchers",
   "sitemap", "faqs-and-downloads", "how-to-reach", "ahv-template-photo-collections",
-  "ahv-template-past-retreat-record", "ahv-template-product-family", "ahv-template-course-and-fees",
+  "ahv-template-past-retreat-record", "ahv-template-course-and-fees",
   "no-preservatives", "defence-and-paramilitary-forces", "cancer-supportive-care", "supportive-care-cancer",
   "ayurveda-gallery", "past-retreats", "ananda-lahari-retreat", "ashtanga-retreat", "yala-2018-retreat",
   "ayuryoga", "back-to-roots", "lakshya-yoga", "mindfulness-retreat", "our-villas",

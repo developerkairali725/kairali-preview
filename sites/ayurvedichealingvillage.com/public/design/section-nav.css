@@ -16,8 +16,8 @@
  *            sits under it in the same column.
  * Under 1024px the rail is a <details> bar under the page title: one 56px
  * row "In this section · <Section>", tap to open. Every row is ≥48px, 17px
- * type, the current page is bold with a gold bar, groups are never hidden
- * behind toggles on desktop, and a rail taller than the window scrolls
+ * type, the current page is bold with a gold bar, branches have separate expand/collapse buttons
+ * on both desktop and mobile, and a rail taller than the window scrolls
  * inside its own box so no link is ever out of reach.
  * Tokens are the site's own. */
 
@@ -68,8 +68,6 @@ nav[data-ahv-section-nav] .ahv-rail-count { color:var(--rail-muted); font-weight
 
 /* ---- desktop: the rail is always open, and sticks while it fits -------- */
 @media (min-width:1024px) {
-  nav[data-ahv-section-nav] summary { pointer-events:none; }
-  nav[data-ahv-section-nav] .ahv-rail-chev { display:none; }
   nav[data-ahv-section-nav] details { position:sticky; top:92px; max-height:calc(100vh - 108px); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; }
 
   main[data-ahv-rail="grid"] {
@@ -99,4 +97,28 @@ nav[data-ahv-section-nav] .ahv-rail-count { color:var(--rail-muted); font-weight
   main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] [style*="width:100vw"], main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] [style*="width: 100vw"] { width:100% !important; }
   /* the attractions family: the rail sits under "On this page", the article spans both rows */
   main[data-ahv-rail="toc"] nav[data-ahv-section-nav] { margin-top:22px; }
+}
+
+/* Independent, keyboard-accessible branch controls on every viewport. */
+nav[data-ahv-section-nav] .ahv-rail-row { display:flex; align-items:stretch; }
+nav[data-ahv-section-nav] .ahv-rail-row > a,
+nav[data-ahv-section-nav] .ahv-rail-row > .ahv-rail-plain { flex:1; min-width:0; overflow-wrap:anywhere; }
+nav[data-ahv-section-nav] .ahv-rail-toggle {
+  display:flex; align-items:center; justify-content:center; flex:0 0 44px;
+  min-width:44px; min-height:48px; padding:0; border:0; border-radius:3px;
+  background:transparent; color:var(--rail-green); font:700 23px Mulish, sans-serif; cursor:pointer;
+}
+nav[data-ahv-section-nav] .ahv-rail-toggle:hover { background:var(--rail-paper); }
+nav[data-ahv-section-nav] .ahv-rail-toggle:focus-visible { outline:3px solid #6B7726; outline-offset:-3px; }
+nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; }
+@media (prefers-reduced-motion:reduce) {
+  nav[data-ahv-section-nav] .ahv-rail-chev { transition:none; }
+}
+@media (min-width:1024px) {
+  main[data-ahv-rail="toc"] > div:has(> nav[data-ahv-section-nav]),
+  main[data-ahv-rail="inline"] > div:has(> nav[data-ahv-section-nav]) {
+    display:grid !important; grid-template-columns:300px minmax(0,1fr) !important; gap:40px !important;
+  }
+  main[data-ahv-rail="inline"] > div > nav[data-ahv-section-nav] { width:300px; }
+  main[data-ahv-rail="inline"] > div:has(> nav[data-ahv-section-nav]) > article { max-width:100% !important; }
 }

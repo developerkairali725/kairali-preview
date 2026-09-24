@@ -175,16 +175,3 @@
   margin-left:auto !important;
   margin-right:auto !important;
 }
-
-/* Product Range: keep the contextual navigation on the left on desktop. */
-@media (min-width:1024px) {
-  [data-ahv-route="/product-range/"] main {
-    grid-template-columns:300px minmax(0,1fr) !important;
-    column-gap:40px !important;
-  }
-  [data-ahv-route="/product-range/"] main > div { grid-column:2; grid-row:1; min-width:0; }
-  [data-ahv-route="/product-range/"] main > aside[aria-labelledby="rail-h"] {
-    grid-column:1; grid-row:1; top:92px !important;
-    max-height:calc(100vh - 108px); overflow:auto; box-sizing:border-box;
-  }
-}

@@ -38,24 +38,27 @@
     return false;
   }
   function count(node) { var n = 0; for (var i = 0; i < (node.children || []).length; i++) n += (node.children[i].path ? 1 : 0) + count(node.children[i]); return n; }
-  // Progressive disclosure (owner, 23 Sep 2026: easy for an older visitor): the
-  // section's first level is always shown; a branch opens only when you are in it.
+  // Links navigate; adjacent buttons independently reveal every branch.
+  var branchId = 0;
   function list(nodes) {
     var h = '<ul class="ahv-rail-list">';
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i], here = onPath(n), cur = n.path === route, kids = n.children && n.children.length;
-      h += "<li" + (here && !cur ? ' class="ahv-rail-open"' : "") + ">";
-      if (n.link) h += '<a href="' + esc(n.path) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) +
-        (kids && !here ? '<span class="ahv-rail-count" aria-label="' + count(n) + ' pages inside"> · ' + count(n) + "</span>" : "") + "</a>";
+      var id = "ahv-rail-branch-" + (++branchId);
+      h += '<li><div class="ahv-rail-row">';
+      if (n.link) h += '<a href="' + esc(n.path) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
       else h += '<span class="ahv-rail-plain">' + esc(n.label) + "</span>";
-      if (kids && (here || n.group && here)) h += list(n.children);
+      if (kids) h += '<button type="button" class="ahv-rail-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '" aria-label="' + (here ? "Collapse " : "Expand ") + esc(n.label) + '" data-branch-label="' + esc(n.label) + '"><span aria-hidden="true">' + (here ? "−" : "+") + '</span></button>';
+      h += "</div>";
+      if (kids) h += '<div id="' + id + '" class="ahv-rail-children"' + (here ? "" : " hidden") + '>' + list(n.children) + '</div>';
       h += "</li>";
     }
     return h + "</ul>";
   }
   function build() {
+    branchId = 0;
     var nav = document.createElement("nav");
-    nav.setAttribute("data-ahv-section-nav", "1");
+    nav.setAttribute("data-ahv-section-nav", "2");
     nav.setAttribute("aria-label", "In this section: " + section.label);
     var hubCur = section.hub === route;
     nav.innerHTML =
@@ -66,6 +69,27 @@
           list(section.items) +
         "</div>" +
       "</details>";
+    // Some retained legacy routes are not nodes in the public tree.
+    // Keep their current location explicit without inventing a parent link.
+    if (!nav.querySelector('[aria-current="page"]')) {
+      var current = document.createElement("a");
+      current.href = route;
+      current.setAttribute("aria-current", "page");
+      var heading = root.querySelector("h1");
+      current.textContent = heading ? heading.textContent.trim() : route;
+      nav.querySelector(".ahv-rail-body").appendChild(current);
+    }
+    nav.addEventListener("click", function (event) {
+      var button = event.target.closest("button.ahv-rail-toggle");
+      if (!button || !nav.contains(button)) return;
+      var child = nav.querySelector("#" + button.getAttribute("aria-controls"));
+      if (!child) return;
+      var expanded = button.getAttribute("aria-expanded") !== "true";
+      button.setAttribute("aria-expanded", String(expanded));
+      button.setAttribute("aria-label", (expanded ? "Collapse " : "Expand ") + button.getAttribute("data-branch-label"));
+      button.firstElementChild.textContent = expanded ? "−" : "+";
+      child.hidden = !expanded;
+    });
     return nav;
   }
 
@@ -117,6 +141,15 @@
       nav.style.gridColumn = "1"; nav.style.gridRow = "2"; nav.style.alignSelf = "start";
       art.style.gridColumn = "2"; art.style.gridRow = "1 / span 2";
       main.setAttribute("data-ahv-rail", "toc");
+      return nav;
+    }
+    // Product Range has its title above main and an old right-hand sidebar.
+    if (route === "/product-range/" || main.children.length === 1) {
+      var legacy = main.querySelector('[aria-labelledby="rail-h"]');
+      if (legacy) legacy.remove();
+      for (var item = main.firstElementChild; item; item = item.nextElementSibling) item.setAttribute("data-ahv-rail-col", "2");
+      main.insertBefore(nav, main.firstChild);
+      main.setAttribute("data-ahv-rail", "grid");
       return nav;
     }
     // grid: after the title block (breadcrumb + h1), main becomes the grid
@@ -175,10 +208,17 @@
   function pass() {
     scheduled = false;
     var main = root.querySelector("main");
-    if (!main || main.children.length < 2) return;
+    if (!main || !main.children.length) return;
     try {
       rewriteCrumbs(main);
       removeLegacy(main);
+      var existing = main.querySelector("nav[data-ahv-section-nav]");
+      if (existing && existing.getAttribute("data-ahv-section-nav") !== "2") {
+        var upgraded = build();
+        upgraded.style.cssText = existing.style.cssText;
+        existing.parentNode.replaceChild(upgraded, existing);
+        keepCurrentVisible(upgraded);
+      }
       if (!main.querySelector("nav[data-ahv-section-nav]")) {
         var nav = place(main);
         if (nav) keepCurrentVisible(nav);

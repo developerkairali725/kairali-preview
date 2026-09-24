@@ -2203,6 +2203,19 @@
    ],
    "remove": null
   },
+  "/product-range/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/"
+   ],
+   "remove": {
+    "navPrefixes": [],
+    "blockPrefixes": [
+     "/sections/3/c/1"
+    ]
+   }
+  },
   "/read-feedback/": {
    "section": "reviews",
    "crumbs": [
@@ -2664,7 +2677,6 @@
   "/post-pregnancy-health-programme/",
   "/preventive-and-regenerative-treatment/",
   "/product-gallery/",
-  "/product-range/",
   "/property-gallery/",
   "/retreats-gallery/",
   "/revitalizing-and-strengthening/",
