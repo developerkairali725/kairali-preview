@@ -86,7 +86,10 @@ export function siteChrome(): Chrome {
     show(deskHeader as string, "ahv-sc-desk", "flex") +
     `<div class="ahv-sc-narrow" style="position:relative">` + show(narrowHeader as string, "ahv-sc-narrow-h", "flex") + (panel as string).replace(/^(<div)/, `$1 data-ahv-sc-panel="1"`) + `</div>`;
   const footer = show(deskFooter as string, "ahv-sc-desk", "block") + show(narrowFooter as string, "ahv-sc-narrow", "flex");
-  const css = `@media (min-width:${BREAK}px){.ahv-sc-narrow{display:none!important}}@media (max-width:${BREAK - 0.02}px){.ahv-sc-desk{display:none!important}}`;
+  // The extracted markup does not include the design runtime's anchor reset.
+  // Ship the shared header rule with SSR chrome, including the mobile menu.
+  // Keep article/breadcrumb link underlines and keyboard focus styling intact.
+  const css = `header.ahv-sc-desk a,header.ahv-sc-narrow-h a,[data-ahv-sc-panel] a{text-decoration:none}@media (min-width:${BREAK}px){.ahv-sc-narrow{display:none!important}}@media (max-width:${BREAK - 0.02}px){.ahv-sc-desk{display:none!important}}`;
   const script = `(function(){var p=document.querySelector('[data-ahv-sc-panel]');if(!p)return;var b=document.querySelector('.ahv-sc-narrow-h [aria-label="Menu"]');var c=p.querySelector('[aria-label="Close menu"]');function set(o){p.style.display=o?'flex':'none';if(b)b.setAttribute('aria-expanded',o?'true':'false');}if(b)b.addEventListener('click',function(){set(p.style.display==='none');});if(c)c.addEventListener('click',function(){set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();`;
   cached = { header, footer, css, script };
   return cached;
