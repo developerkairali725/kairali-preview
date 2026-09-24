@@ -95,3 +95,50 @@
     line-height: 1.5 !important;
   }
 }
+
+/* Package pages: keep the primary site header sticky; section links stay
+   in the document flow instead of competing for the same top:0 position.
+   Scope: the 38 programme routes in the current programme index. */
+#ahv-design-root:is(
+  [data-ahv-route="/panchakarma-therapy/"],
+  [data-ahv-route="/weight-loss-programme/"],
+  [data-ahv-route="/holistic-treatment-for-rejuvenation-and-detoxification/"],
+  [data-ahv-route="/personalized-customized-healing-program/"],
+  [data-ahv-route="/digestive-wellness-gut-health-yoga-therapy/"],
+  [data-ahv-route="/yoga-based-stress-energy-reset-program/"],
+  [data-ahv-route="/immunity-enhancement-executive-health-assessment-therapy/"],
+  [data-ahv-route="/sleep-restoration-therapy/"],
+  [data-ahv-route="/womens-hormonal-balance-endocrine-therapy/"],
+  [data-ahv-route="/preventive-and-regenerative-treatment/"],
+  [data-ahv-route="/treatment-for-diabetes/"],
+  [data-ahv-route="/yoga-meditation-training/"],
+  [data-ahv-route="/ayurveda-training-programme/"],
+  [data-ahv-route="/yoga-retreats/"],
+  [data-ahv-route="/yoga-and-meditation-package/"],
+  [data-ahv-route="/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/"],
+  [data-ahv-route="/treatment-for-sinusitis-and-migraine/"],
+  [data-ahv-route="/treatment-for-bronchial-diseases/"],
+  [data-ahv-route="/beauty-care-and-eye-care/"],
+  [data-ahv-route="/treatment-to-remove-stress-and-strain/"],
+  [data-ahv-route="/treatment-for-hypertension/"],
+  [data-ahv-route="/treatment-for-nervous-disability/"],
+  [data-ahv-route="/revitalizing-and-strengthening/"],
+  [data-ahv-route="/treatment-for-slip-disc/"],
+  [data-ahv-route="/treatment-for-arthritis-and-spondylitis/"],
+  [data-ahv-route="/treatment-for-chronic-back-pain/"],
+  [data-ahv-route="/post-pregnancy-health-programme/"],
+  [data-ahv-route="/treatment-for-skin-diseases/"],
+  [data-ahv-route="/treatment-for-facial-paralysis/"],
+  [data-ahv-route="/treatment-for-paralysis/"],
+  [data-ahv-route="/treatment-for-cervical-spondylosis/"],
+  [data-ahv-route="/treatment-for-spondylitis/"],
+  [data-ahv-route="/treatment-for-psoriasis/"],
+  [data-ahv-route="/one-day-ayurveda-workshop-program-kerala/"],
+  [data-ahv-route="/three-day-short-term-ayurveda-certificate-program-tap-hv/"],
+  [data-ahv-route="/intensive-ayurveda-training-program-learn-practice-ayurveda/"],
+  [data-ahv-route="/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/"],
+  [data-ahv-route="/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/"]
+) nav[aria-label="On this page"] {
+  position: static !important;
+  top: auto !important;
+}
