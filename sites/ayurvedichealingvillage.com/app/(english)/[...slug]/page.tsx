@@ -21,7 +21,7 @@ export const dynamicParams = false;
 export function generateStaticParams(): Array<{ slug: string[] }> {
   // Native pages must not also be emitted by this catch-all: duplicate static
   // output can overwrite them during production builds despite route priority.
-  const nativePages = new Set(["/read-feedback/", "/givefeedback/", "/sightseeing/"]);
+  const nativePages = new Set(["/read-feedback/", "/givefeedback/", "/sightseeing/", "/video-gallery/"]);
   return subRoutes().filter((r) => !nativePages.has(r.path)).map((r) => ({ slug: r.segments }));
 }
 
