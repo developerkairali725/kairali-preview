@@ -142,3 +142,22 @@
   position: static !important;
   top: auto !important;
 }
+
+/* Shared contact controls replace template-specific and vendor launchers.
+   Content/footer contact links and the existing Chatbase loader stay intact. */
+#ahv-design-root a[aria-label="Chat with Priya"],
+#ahv-design-root a[aria-label="WhatsApp us"],
+#chatbase-bubble-button, #chatbase-message-bubbles { display:none !important; }
+#ahv-contact-controls { position:fixed;right:22px;bottom:24px;z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:12px; }
+#ahv-contact-controls a, #ahv-contact-controls button { box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:54px;height:58px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 0 0 2px #F7F4EA,0 8px 24px rgba(60,45,20,.25); }
+#ahv-contact-controls .ahv-contact-wa { width:58px;border-radius:50%;background:#25D366; }
+#ahv-contact-controls .ahv-contact-chat { gap:11px;padding:0 20px 0 14px;border-radius:4px;background:#5A4420;color:#F7F4EA;font:700 13px Mulish,sans-serif;letter-spacing:1px;text-transform:uppercase; }
+#ahv-contact-controls .ahv-contact-symbol { display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:50%;background:#F7F4EA; }
+#ahv-contact-controls :is(a,button):focus-visible { outline:3px solid #006038;outline-offset:5px; }
+#ahv-contact-controls .ahv-contact-chat:hover { background:#483616; }
+@media(max-width:699px) {
+  #ahv-contact-controls { right:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));flex-direction:row;gap:12px; }
+  #ahv-contact-controls a, #ahv-contact-controls button { width:54px;height:54px;min-width:54px; }
+  #ahv-contact-controls .ahv-contact-chat { padding:0;border-radius:50%; }
+  #ahv-contact-controls .ahv-contact-label { display:none; }
+}
