@@ -85,7 +85,10 @@ test('visitor sitemap excludes campaign links while offering both programme entr
 
 test('server sitemap mirrors the corrected visitor directory', () => {
   const html = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
-  assert.match(html, /206 pages across 14 sections/);
+  const pageCount = Object.values(tree.index).filter(x => x.section !== "campaigns").length;
+  const sectionCount = tree.sections.filter(x => x.id !== "campaigns").length;
+  assert.ok(html.includes(`${pageCount} pages across ${sectionCount} sections`));
+  assert.ok(!html.includes("/founders-message/"));
   assert.match(html, /class="sm-entry-paths"/);
   for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(!html.includes('href="' + p + '"'), p);
 });

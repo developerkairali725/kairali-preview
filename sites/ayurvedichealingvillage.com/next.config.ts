@@ -51,7 +51,7 @@ const IS_STAGING = process.env.AHV_STAGING !== "0";
 interface RedirectRule {
   to: string;
   reason: string;
-  gsc: { clicks: number; impressions: number };
+  gsc: { clicks: number | null; impressions: number | null };
 }
 interface RedirectMap {
   statusCode: number;
