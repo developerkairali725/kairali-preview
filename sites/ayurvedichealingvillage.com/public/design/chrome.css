@@ -161,3 +161,12 @@ a.ahv-home-partner:focus-visible {outline:3px solid #EEB41E;outline-offset:6px}
 #partner-logos .ahv-partner-action {font-size:16px;line-height:1.5;color:#006038;text-decoration:underline;text-underline-offset:4px}
 #partner-logos .ahv-partner-link:hover {background:#F7F4EA}
 #partner-logos .ahv-partner-link:focus-visible {outline:3px solid #006038;outline-offset:3px}
+
+/* Keep the same launcher available to minimize an open chat, including phones. */
+body[data-ahv-chat-open="true"] #ahv-contact-controls{z-index:2147483647}
+body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:none}
+#ahv-contact-controls .ahv-contact-chat[aria-expanded="true"] .ahv-contact-symbol svg{display:none}
+#ahv-contact-controls .ahv-contact-chat[aria-expanded="true"] .ahv-contact-symbol::after{content:"−";font:700 27px/1 Mulish,sans-serif;color:#5A4420}
+@media(max-width:699px){
+ body[data-ahv-chat-open="true"] #chatbase-bubble-window{top:12px!important;bottom:calc(144px + env(safe-area-inset-bottom,0px))!important;right:12px!important;left:auto!important;width:calc(100% - 24px)!important;height:calc(100dvh - 156px - env(safe-area-inset-bottom,0px))!important;max-height:none!important;border-radius:14px!important}
+}

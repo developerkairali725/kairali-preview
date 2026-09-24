@@ -76,15 +76,51 @@
   // link now opens that bubble: wake the deferred loader, wait for the widget,
   // open it. If the widget never arrives (blocked, offline) the link falls back
   // to the locked WhatsApp number — never a dead end.
+  // Reuse the provider's own toggle; its aria-expanded is the source of truth.
+  // A second click during loading cancels the pending open instead of queuing two.
+  var chatPending = false, chatTimer = null, chatObserver = null;
+  var observedChatButton = null, observedChatWindow = null;
+  function chatAttribute(el, name, value) {
+    if (el && el.getAttribute(name) !== value) el.setAttribute(name, value);
+  }
+  function syncChatState() {
+    var nativeButton = document.getElementById("chatbase-bubble-button");
+    var panel = document.getElementById("chatbase-bubble-window");
+    var expanded = nativeButton ? nativeButton.getAttribute("aria-expanded") === "true" : !!(panel && visible(panel));
+    var button = document.querySelector("#ahv-contact-controls .ahv-contact-chat");
+    var label = expanded ? "Minimize chat" : chatPending ? "Opening chat…" : "Chat with Priya";
+    chatAttribute(document.body, "data-ahv-chat-open", expanded ? "true" : "false");
+    chatAttribute(button, "aria-expanded", expanded ? "true" : "false");
+    chatAttribute(button, "aria-label", chatPending ? "Cancel opening chat" : label);
+    chatAttribute(button, "title", chatPending ? "Cancel opening chat" : label);
+    chatAttribute(button, "aria-busy", chatPending ? "true" : "false");
+    if (panel) chatAttribute(button, "aria-controls", "chatbase-bubble-window");
+    var text = button && button.querySelector(".ahv-contact-label");
+    if (text && text.textContent !== label) text.textContent = label;
+    if (window.MutationObserver && (nativeButton !== observedChatButton || panel !== observedChatWindow)) {
+      if (chatObserver) chatObserver.disconnect();
+      chatObserver = new MutationObserver(syncChatState);
+      if (nativeButton) chatObserver.observe(nativeButton, { attributes: true, attributeFilter: ["aria-expanded"] });
+      if (panel) chatObserver.observe(panel, { attributes: true, attributeFilter: ["style", "hidden"] });
+      observedChatButton = nativeButton; observedChatWindow = panel;
+    }
+  }
   function openChat(ev) {
     ev.preventDefault();
+    if (chatPending) {
+      clearTimeout(chatTimer); chatTimer = null; chatPending = false; syncChatState(); return;
+    }
+    var nativeButton = document.getElementById("chatbase-bubble-button");
+    if (nativeButton) { nativeButton.click(); syncChatState(); return; }
+    chatPending = true; syncChatState();
     try { window.dispatchEvent(new Event("pointerdown")); window.dispatchEvent(new Event("scroll")); window.dispatchEvent(new Event("keydown")); } catch (e) {}
     var tries = 0;
     (function poll() {
-      if (typeof window.chatbase === "function") { try { window.chatbase("open"); return; } catch (e) {} }
+      if (!chatPending) return;
       var btn = document.getElementById("chatbase-bubble-button");
-      if (btn) { btn.click(); return; }
-      if (++tries < 40) setTimeout(poll, 150); else window.location.href = WA_HREF;
+      if (btn) { chatPending = false; chatTimer = null; btn.click(); syncChatState(); return; }
+      if (++tries < 40) chatTimer = setTimeout(poll, 150);
+      else { chatPending = false; chatTimer = null; syncChatState(); window.location.href = WA_HREF; }
     })();
   }
   function chatLinks(f) {
@@ -133,6 +169,7 @@
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();
+      syncChatState();
       externalLinks();
     } catch (e) { /* never break the page */ }
   }
