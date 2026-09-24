@@ -42,7 +42,7 @@ type Result = {
   typed: string; cls: string; total: number; order: string[]; corrected: string | null; caveats: string[];
   programmes: Row[]; questions: Row[]; pages: Row[];
 };
-type Engine = { query: (q: string, o: { scope: string; limit?: number }) => Result; answerLine: (p: any, cur: string, ui: any) => string };
+type Engine = { priceAvailable: (p: any) => boolean; query: (q: string, o: { scope: string; limit?: number }) => Result; answerLine: (p: any, cur: string, ui: any) => string };
 
 let cached: { engine: Engine; index: any } | null = null;
 function engine(): { engine: Engine; index: any } {
@@ -69,7 +69,7 @@ function Group({ title, rows, render }: { title: string; rows: Row[]; render: (r
     <section aria-label={title} style={{ marginTop: 18 }}>
       <h2 style={{ font: "700 12.5px Mulish, sans-serif", letterSpacing: 2.4, textTransform: "uppercase", color: "var(--bronze-600)", margin: "0 0 6px" }}>{title}</h2>
       <ul style={{ listStyle: "none", margin: 0, padding: 0, border: "1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))", borderRadius: 4, background: "var(--card-bg)" }}>
-        {rows.slice(0, 12).map((r, i) => <li key={`${r.route ?? r.id ?? "row"}-${i}`}>{render(r)}</li>)}
+        {rows.map((r, i) => <li key={`${r.route ?? r.id ?? "row"}-${i}`}>{render(r)}</li>)}
       </ul>
     </section>
   );
@@ -132,7 +132,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
         {res && res.cls === "MULTIPLE_POSSIBLE_MATCHES" && res.programmes.length > 1 ? <p style={{ margin: "12px 0 0", fontSize: 15.5, color: "var(--bronze-600)" }}>{ui.multi}</p> : null}
         {res ? res.caveats.map((c) => <p key={c} style={{ margin: "12px 0 0", fontSize: 15.5, color: muted, borderLeft: `3px solid ${gold}`, paddingLeft: 12 }}>{c}</p>) : null}
         {res ? res.order.map((k) => {
-          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, "INR", ui) + (p.from && p.basis !== "night" && p.priceState === "valid" ? " " + ui.basis : ""); return <a href={p.route} style={rowStyle}><span style={rowT}>{p.name}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "var(--bronze-600)", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
+          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, "INR", ui) + (eng.priceAvailable(p) && p.basis !== "night" ? " " + ui.basis : ""); return <a href={p.route} style={rowStyle}><span style={rowT}>{p.name}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "var(--bronze-600)", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
           if (k === "questions") return <Group key={k} title={ui.groups.questions} rows={res.questions} render={(r) => { const q = r.data; return <a href={`/faqs-downloads/?q=${encodeURIComponent(typed)}#${q.id}`} style={rowStyle}><span style={rowT}>{q.q}</span><span style={rowA}>{q.topic}</span>{chevron}</a>; }} />;
           return <Group key={k} title={ui.groups.pages} rows={res.pages} render={(r) => { const p = r.data; return <a href={p.route} style={rowStyle}><span style={rowT}>{p.label}</span>{p.desc ? <span style={rowA}>{p.desc}</span> : null}{chevron}</a>; }} />;
         }) : null}

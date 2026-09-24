@@ -1,3 +1,4 @@
+import { routeRobots } from "./robots-policy";
 /**
  * AHV English candidate — the shared route component.
  *
@@ -77,6 +78,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 export function buildBootConfig(route: CandidateRoute): BootConfig {
   return {
     path: route.path,
+    robots: routeRobots(route),
     desktopView: route.desktopView,
     mobileView: route.mobileView,
     breakpoint: BREAKPOINT,

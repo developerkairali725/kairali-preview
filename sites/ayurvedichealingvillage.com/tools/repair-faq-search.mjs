@@ -61,7 +61,7 @@ class Component extends DCLogic {
         if (!d.id) d.id = 'q-' + String(items.length + 1).padStart(2, '0');
         const h = d.querySelector('h3, h2, summary > span:last-child') || d.querySelector('summary');
         d._ahvH = h; d._ahvHtml = h ? h.innerHTML : ''; d._ahvText = h ? h.textContent.trim() : '';
-        d._ahvAnswer = (d.textContent || '').replace(d._ahvText, '').replace(/\\s+/g, ' ').trim().slice(0, 400);
+        d._ahvAnswer = (d.textContent || '').replace(d._ahvText, '').replace(/\\s+/g, ' ').trim().slice(0, 1500);
         d._ahvTopic = g.getAttribute('data-label') || '';
         items.push(d);
       });

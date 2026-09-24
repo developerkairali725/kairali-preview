@@ -155,7 +155,7 @@
     },
     "q-16": {
       "summary": "What types of accommodation do you offer?",
-      "answerHtml": "<ul><li><strong>Deluxe Villa</strong> — comfortable rooms with garden views, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Classic Villa</strong> — Kerala-style architecture, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Royal Villa</strong> — larger villas with additional space and amenities</li><li><strong>Maharaja Suite</strong> — a suite with two separate rooms, one with a king-size bed, and a private lawn</li></ul><p>All villas are built to Vastu principles amid the campus gardens.</p><p>See every villa on our <a href=\"/our-villas/\">villas page</a>.</p>",
+      "answerHtml": "<ul><li><strong>Deluxe Villa</strong> — comfortable rooms with garden views, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Classic Villa</strong> — Kerala-style architecture, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Royal Villa</strong> — larger villas with additional space and amenities</li><li><strong>Maharaja Suite</strong> — Suite 1001 has a king bedroom and a separate living room. Suite 1002 has two bedrooms: one with a king bed and one with twin beds. Each room in both suites has its own bathroom and wardrobe</li></ul><p>All categories provide hairdryers. All villas are built to Vastu principles amid the campus gardens.</p><p>See every villa on our <a href=\"/our-villas/\">villas page</a>.</p>",
       "findings": [
         "F14",
         "F15"
@@ -164,7 +164,8 @@
       "flags": [
         "Dropped the original 'private verandas' claim for Classic Villa — not found in the villa dataset; confirm with facilities before restoring.",
         "Used 'Vastu' spelling (matches our-villas-data.js 'Vastu-Inspired Villas'); the about-us source instead spells it 'Vaastu Shastra' — F15 flags this as UNVERIFIED which the brand manual prefers; pick one sitewide."
-      ]
+      ],
+      "ownerFactUpdate": "24 September 2026: owner confirmed 1001 king bedroom plus living room; 1002 king and twin bedrooms; bathroom and wardrobe in each room; hairdryers in all categories. Other factual and clinical sign-off flags remain."
     },
     "q-18": {
       "summary": "What's included in the accommodation package?",

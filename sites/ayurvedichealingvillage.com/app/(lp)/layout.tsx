@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   // The authorized staging candidate exposes the approved English routes only.
   // Retain the older LP implementation for a separate future release.
-  if (process.env.AHV_STAGING !== "0") notFound();
+  if (process.env.AHV_STAGING !== "0" || process.env.AHV_LP_LIVE !== "1") notFound();
   return (
     <html lang="en" className={`${kurale.variable} ${asap.variable} ${lato.variable}`}>
       <head>

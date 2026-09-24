@@ -49,3 +49,38 @@ test('blank and punctuation-only queries have a defined zero count', () => {
 test('test and submission-confirmation pages are excluded from public search', () => {
   assert.ok(index.pages.every(p => !/\/(testing|test-page(?:-2)?|gift-test|thanks(?:-old)?|thank-you|onlinebookingthankyou|onlineconsultation-thanks|ppc-thanks)\//.test(p.route)));
 });
+
+test('visitor family questions prefer the children policy over packing', () => {
+  for (const q of ['can I bring my child', 'can I bring my kids', 'travel with children']) {
+    const r = engine.query(q);
+    assert.equal(r.order[0], 'questions');
+    assert.equal(r.questions[0].id, 'q-48');
+  }
+});
+test('unknown words cannot silently become a duration-only recommendation', () => {
+  assert.equal(engine.query('xyzzy 7 days').total, 0);
+  assert.ok(engine.query('7 days').programmes.length);
+  assert.ok(engine.query('cheapest 7 nights').programmes.length);
+});
+test('public results exclude redirects, duplicate and internal pages', () => {
+  const redirects = JSON.parse(fs.readFileSync('english-candidate/redirect-map.json')).redirects;
+  const excluded = new Set(JSON.parse(fs.readFileSync('english-candidate/route-manifest.json')).routes.filter(r => r.sitemapExclude).map(r => r.path));
+  for (const p of index.pages) assert.ok(!redirects[p.route] && !excluded.has(p.route), p.route);
+});
+test('expired and future tariffs are not shown or sorted as current prices', () => {
+  const make = date => {
+    const c = { Date: class extends Date { constructor(...a) { super(...(a.length ? a : [date])); } } };
+    vm.runInNewContext(fs.readFileSync('public/design/search.js', 'utf8'), c);
+    return c.AHVSearch.createEngine(index);
+  };
+  const before = make('2026-09-24T12:00:00Z');
+  const after = make('2026-10-01T12:00:00Z');
+  const course = index.programmes.find(p => p.validFrom === '2026-10-01');
+  assert.ok(course);
+  assert.equal(before.priceAvailable(course), false);
+  assert.equal(after.priceAvailable(course), true);
+  const p = index.programmes.find(p => p.validTo === '2026-09-30' && p.from);
+  assert.equal(after.priceAvailable(p), false);
+  assert.match(after.answerLine(p, 'INR', index.ui), /Request a quote/);
+  assert.equal(after.query('cheapest 7 nights').programmes.length, 0);
+});

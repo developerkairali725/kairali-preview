@@ -65,6 +65,12 @@
     if (cur === "INR") { var last3 = s.slice(-3), rest = s.slice(0, -3); return "₹" + (rest ? rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," : "") + last3; }
     return (cur === "USD" ? "$" : "€") + s.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  function priceAvailable(p) {
+    var now = new Date();
+    return !!p.from && p.priceState !== "expired" &&
+      (!p.validFrom || now >= new Date(p.validFrom + "T00:00:00Z")) &&
+      (!p.validTo || now <= new Date(p.validTo + "T23:59:59Z"));
+  }
   function fmt(tpl, vars) { return String(tpl).replace(/\{(\w+)\}/g, function (m, k) { return vars[k] == null ? m : vars[k]; }); }
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 
@@ -278,15 +284,15 @@
 
       // duration facet
       if (T.nights != null && scope !== "faq") {
-        var pool = progs.length ? progs : docs.filter(function (d4) { return d4.kind === "programme"; }).map(function (d4) { return { doc: d4, score: 1, strong: false, full: true, hits: {}, corr: {}, cov: 1 }; });
+        var pool = progs.length ? progs : T.tokens.length && !out.sort ? [] : docs.filter(function (d4) { return d4.kind === "programme"; }).map(function (d4) { return { doc: d4, score: 1, strong: false, full: true, hits: {}, corr: {}, cov: 1 }; });
         var exact = pool.filter(function (s) { return s.doc.data.nights === T.nights; });
         progs = exact.length ? exact : pool.filter(function (s) { return s.doc.data.nights != null && s.doc.data.nights <= T.nights; });
-        if (!T.tokens.length) progs.sort(function (a, b) { return (a.doc.data.from ? a.doc.data.from.INR : 9e9) - (b.doc.data.from ? b.doc.data.from.INR : 9e9); });
+        if (!T.tokens.length) progs.sort(function (a, b) { return (priceAvailable(a.doc.data) ? a.doc.data.from.INR : 9e9) - (priceAvailable(b.doc.data) ? b.doc.data.from.INR : 9e9); });
       }
       if (out.sort === "priceAsc" && scope !== "faq") {
         var named = progs.some(function (s) { return s.strong; });
         var pool2 = (named || T.nights != null) ? progs : docs.filter(function (d5) { return d5.kind === "programme"; }).map(function (d5) { return { doc: d5, score: 1, strong: false, full: true, exact: 0, hits: {}, corr: {}, cov: 1 }; });
-        progs = pool2.filter(function (s) { return s.doc.data.from && s.doc.data.from.INR != null && s.doc.data.basis !== "night"; }).sort(function (a, b) { return a.doc.data.from.INR - b.doc.data.from.INR; });
+        progs = pool2.filter(function (s) { return priceAvailable(s.doc.data) && s.doc.data.from.INR != null && s.doc.data.basis !== "night"; }).sort(function (a, b) { return a.doc.data.from.INR - b.doc.data.from.INR; });
       }
 
       // comorbidity: two or more strong programme hits joined in one sentence → the Personalised Programme leads
@@ -363,7 +369,7 @@
       var parts = [];
       if (p.course) parts.push(fmt(ui.days, { n: p.nights }));
       else if (p.nights != null) parts.push(fmt(ui.nights, { n: p.nights }));
-      if (p.priceState === "expired" || (p.validTo && new Date() > new Date(p.validTo + "T23:59:59"))) parts.push(ui.requestQuote);
+      if (!priceAvailable(p) && (p.from || p.priceState === "expired")) parts.push(ui.requestQuote);
       else if (p.from && p.from[cur] != null) parts.push(p.basis === "night" ? fmt(ui.perNight, { price: fmtNum(p.from[cur], cur) }) : fmt(ui.from, { price: fmtNum(p.from[cur], cur) }));
       return parts.join(" · ");
     }
@@ -372,7 +378,7 @@
       if (p.forWhat) a += (a ? " · " : "") + p.forWhat;
       return a;
     }
-    return { query: query, tokenise: tokenise, priceLine: priceLine, answerLine: answerLine, docs: docs, index: index };
+    return { priceAvailable: priceAvailable, query: query, tokenise: tokenise, priceLine: priceLine, answerLine: answerLine, docs: docs, index: index };
   }
 
   /* --------------------------------------------------------- index load */
@@ -527,7 +533,7 @@
   function rowProgramme(r) {
     var p = r.data, name = mark(p.name, r.hits);
     var a = engine.answerLine(p, cur, ui);
-    return '<li><a class="ahvs-row" href="' + esc(p.route) + '"><span class="ahvs-row-t">' + name + (p.sanskrit ? ' <span class="ahvs-sk">' + esc(p.sanskrit) + "</span>" : "") + '</span><span class="ahvs-row-a">' + esc(a) + (p.from && p.basis !== "night" && p.priceState === "valid" ? " " + esc(ui.basis) : "") + "</span></a></li>";
+    return '<li><a class="ahvs-row" href="' + esc(p.route) + '"><span class="ahvs-row-t">' + name + (p.sanskrit ? ' <span class="ahvs-sk">' + esc(p.sanskrit) + "</span>" : "") + '</span><span class="ahvs-row-a">' + esc(a) + (priceAvailable(p) && p.basis !== "night" ? " " + esc(ui.basis) : "") + "</span></a></li>";
   }
   function rowQuestion(r) {
     var q = r.data, href = "/faqs-downloads/?q=" + encodeURIComponent(input.value.trim()) + "#" + q.id;

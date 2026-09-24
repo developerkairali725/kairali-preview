@@ -1,3 +1,4 @@
+import { routeRobots } from "./(english)/_families/robots-policy";
 import type { MetadataRoute } from "next";
 import { buildSitemap } from "@kairali/seo";
 import siteConfig from "../site.config.json";
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return buildSitemap(
     siteConfig,
     routes
-      .filter((r) => !r.sitemapExclude && !redirected.has(r.path))
+      .filter((r) => !r.sitemapExclude && !redirected.has(r.path) && routeRobots(r, false).startsWith("index"))
       .map((r) => {
         const images = galleryImageUrls(r.path);
         return images.length ? { path: r.path, images } : { path: r.path };

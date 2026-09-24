@@ -33,7 +33,8 @@ import { fileURLToPath } from "node:url";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ARGS = process.argv.slice(2);
-const DRY = ARGS.includes("--dry");
+const CHECK = ARGS.includes("--check");
+const DRY = ARGS.includes("--dry") || CHECK;
 const ALLOW_EXPIRED = ARGS.includes("--allow-expired");
 const VERBOSE = ARGS.includes("--verbose");
 const OUT = path.join(SITE, "public/ahv/search-index.json");
@@ -101,6 +102,7 @@ const programmes = FINDER.programmes.map((p) => {
     basis: /per night/i.test(p.priceBasisNote || "") ? "night" : "total",
     from: p.from && p.from.INR != null && !expired ? { INR: p.from.INR, USD: p.from.USD, EUR: p.from.EUR } : null,
     validTo: p.validTo || null,
+    validFrom: p.validFrom || null,
     priceState: !(p.from && p.from.INR != null) ? "unpriced" : expired ? "expired" : "valid",
     aliases: (p.aliases || []).map(decode),
     terms: V.terms[p.route] || [],
@@ -143,7 +145,7 @@ const faqs = [];
       const body = d.slice(d.indexOf("</summary>"), d.indexOf("</details>"));
       const a = decode(body);
       const id = open.match(/id="(q-\d+)"/)[1];
-      const rec = { id, n, topic, q, a: clip(a, 400), kw: V.faqKeywords[id] || [] };
+      const rec = { id, n, topic, q, a: clip(a, 1500), kw: V.faqKeywords[id] || [] };
       if (locked(q) || locked(topic)) registerLog.faqCarrying.push(id + " " + (locked(q) ? "question" : "topic"));
       faqs.push(rec);
     }
@@ -168,10 +170,11 @@ for (const i of V.intents) if (i.target.startsWith("/") && !ROUTES.has(i.target)
 for (const i of V.intents) if (!i.target.startsWith("/") && !faqs.find((f) => f.id === i.target)) throw new Error("intent target FAQ id unknown: " + i.target);
 for (const b of V.ui.emptyButtons) if (b.href && !ROUTES.has(b.href)) throw new Error("empty-state button route not in manifest: " + b.href);
 
-const SKIP = new Set(["/founders-message/","/search-results/", "/thank-you/", "/thankyou/", "/contact-us/thank-you/", "/onlinebookingthankyou/", "/onlineconsultation-thanks/", "/ppc-thanks/", "/thanks-old/", "/thanks/", "/gift-test/", "/test-page/", "/test-page-2/", "/testing/"]);
+const REDIRECTS = json("english-candidate/redirect-map.json").redirects;
+const SKIP = new Set(["/emailsubscriber/","/founders-message/","/search-results/", "/thank-you/", "/thankyou/", "/contact-us/thank-you/", "/onlinebookingthankyou/", "/onlineconsultation-thanks/", "/ppc-thanks/", "/thanks-old/", "/thanks/", "/gift-test/", "/test-page/", "/test-page-2/", "/testing/"]);
 const pages = [];
 for (const r of MANIFEST) {
-  if (PROGRAMME_ROUTES.has(r.path) || SKIP.has(r.path)) continue;
+  if (PROGRAMME_ROUTES.has(r.path) || SKIP.has(r.path) || REDIRECTS[r.path] || r.sitemapExclude) continue;
   if (r.status && r.status !== "active") continue;
   if (/^\/ru\//.test(r.path)) continue;
   const v = V.pages[r.path] || {};
@@ -217,4 +220,13 @@ let fail = false;
 if (expiredRoutes.length && !ALLOW_EXPIRED) { console.error(`REFUSED: ${expiredRoutes.length} programme price(s) past validTo — re-read the V4 2026-27 tariff sheet, or pass --allow-expired to emit them price-less ("Request a quote").`); fail = true; }
 if (gz > GZIP_CAP) { console.error(`REFUSED: index ${gz} bytes gzip exceeds the ${GZIP_CAP} cap`); fail = true; }
 if (fail) process.exit(2);
+if (CHECK) {
+  const existing = JSON.parse(fs.readFileSync(OUT, "utf8"));
+  const expected = { ...index, generated: null };
+  if (JSON.stringify({ ...existing, generated: null }) !== JSON.stringify(expected)) {
+    console.error("REFUSED: stale search index; run node tools/build-search-index.mjs");
+    process.exit(2);
+  }
+  console.log("search index matches current sources");
+}
 if (!DRY) { fs.writeFileSync(OUT, text + "\n"); console.log("wrote", path.relative(SITE, OUT)); }

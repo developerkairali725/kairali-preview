@@ -47,6 +47,8 @@ const SPEC = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/finde
 const ADD = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/finder-additions.json"), "utf8"));
 const MANIFEST = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8")).routes;
 const INDEX = JSON.parse(fs.readFileSync(path.join(SITE, "public/ahv/search-index.json"), "utf8"));
+if (process.argv.includes("--help")) { console.log("Usage: node tools/build-finder-views.mjs [--dry]. Reapply tools/apply-yoga-film.py after regeneration."); process.exit(0); }
+if (process.argv.slice(2).some(a => a !== "--dry")) throw new Error("Unknown argument; use --help");
 const DRY = process.argv.includes("--dry");
 const MARK = 'data-ahv-finder-block="1"';
 const SMARK = 'data-ahv-finder-search="1"';
@@ -134,7 +136,7 @@ function patchShared(view) {
 /* ------------------------------------------------------------------ search surface */
 const S = SPEC.search;
 const DATASET = INDEX.programmes.map((p) => ({
-  r: p.route, t: p.name, s: p.sanskrit || "", c: p.cats, n: p.nights, from: p.from, vt: p.validTo, ps: p.priceState, basis: p.basis,
+  r: p.route, t: p.name, s: p.sanskrit || "", c: p.cats, n: p.nights, from: p.from, vt: p.validTo, vf: p.validFrom, ps: p.priceState, basis: p.basis,
   fw: p.forWhat, i: p.image || "/ahv/assets/img/F-6.jpg", a: (p.aliases || []), k: p.terms
 }));
 for (const d of DATASET) if (!MANIFEST.find((r) => r.path === d.r)) throw new Error("dataset route not in manifest: " + d.r);
@@ -219,11 +221,12 @@ const LABELS = { A:'All programmes', W:'Wellness Programs', T:'Treatment Program
 const gINR = n => { const s = String(n), last3 = s.slice(-3), rest = s.slice(0, -3); return '₹' + (rest ? rest.replace(/\\B(?=(\\d{2})+(?!\\d))/g, ',') + ',' : '') + last3; };
 const gr = n => String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',');
 const money = (n, cur) => cur === 'INR' ? gINR(n) : (cur === 'USD' ? '$' : '€') + gr(n);
-const expired = p => p.ps === 'expired' || (p.vt && new Date() > new Date(p.vt + 'T23:59:59'));
+const expired = p => p.ps === 'expired' || (p.vt && new Date() > new Date(p.vt + 'T23:59:59Z')) || (p.vf && new Date() < new Date(p.vf + 'T00:00:00Z'));
 const metaFor = (p, cur) => {
   const parts = [];
   if (p.basis === 'night' && p.n != null) parts.push(p.n + (p.n === 1 ? '-day' : '-day') + (p.c.indexOf('R') >= 0 && p.r !== '/ayurveda-training-programme/' ? ' course' : ''));
-  else if (p.n != null) parts.push('Minimum stay: ' + p.n + ' nights');
+  else if (p.n != null) parts.push('Minimum stay: ' + p.n + (p.n === 1 ? ' night' : ' nights'));
+  if (p.ps === 'expired' && !p.from) { parts.push('Request a quote'); return parts.join(' · '); }
   if (!p.from) return parts.length ? parts.join(' · ') : 'Tailored programme — fee follows the doctor’s plan';
   if (expired(p)) parts.push(${js(UI.requestQuote)});
   else parts.push(p.basis === 'night' ? 'stay from ' + money(p.from[cur], cur) + ' per night' : 'From ' + money(p.from[cur], cur));
@@ -265,7 +268,7 @@ ${scroll}
     if (this._track) clearTimeout(this._track);
   }
 
-  pick(cat) { this.setState({ cat: cat }); }
+  pick(cat) { this.setState({ cat: cat, chip: '', dur: '', budget: '' }); }
 
   // Engine result → { cls, hits: Map(route -> order) | null, caveats, handoff, corrected, nights, urgent }
   search(raw) {
@@ -294,8 +297,10 @@ ${scroll}
     const cls = res.cls, hits = res.hits;
     const blocked = cls === 'CONSULT_FIRST' || cls === 'NOT_TREATED';
     const chip = CHIPS.filter(c => c.id === st.chip)[0];
-    const band = st.budget ? Number(st.budget) : 0;
-    const inDur = p => { if (!st.dur || p.n == null) return !st.dur; if (st.dur === '7') return p.n <= 7; if (st.dur === '14') return p.n === 14; return p.n >= 21; };
+    const categoryRows = DATASET.filter(p => cat === 'A' || p.c.indexOf(cat) >= 0);
+    const hasCurrentTotals = categoryRows.some(p => p.from && p.basis !== 'night' && !expired(p));
+    const band = st.budget && hasCurrentTotals ? Number(st.budget) : 0;
+    const inDur = p => { if (!st.dur || p.n == null) return !st.dur; if (st.dur === '7') return p.n <= 7; if (st.dur === '21') return p.n >= 21; return p.n === Number(st.dur); };
     const inBudget = p => !band || (p.from && p.basis !== 'night' && !expired(p) && p.from[cur] <= band);
     const list = DATASET
       .filter(p => cat === 'A' || p.c.indexOf(cat) >= 0)
@@ -313,9 +318,9 @@ ${scroll}
     const count = list.length;
     const filtered = !!(chip || st.dur || st.budget);
     const sel = (on) => ({ on: on ? 'true' : 'false', bg: on ? '#5A4420' : '#fff', fg: on ? '#F7F4EA' : '#2A2118', bd: on ? '#5A4420' : '#C9BFA8' });
-    const chips = CHIPS.map(c => Object.assign({ id: c.id, label: c.label, pick: () => this.setState({ chip: st.chip === c.id ? '' : c.id }) }, sel(st.chip === c.id)));
-    const durations = [['', 'Any'], ['7', 'Up to 7 nights'], ['14', '14 nights'], ['21', '21+ nights']].map(pair => Object.assign({ label: pair[1], pick: () => this.setState({ dur: pair[0] }) }, sel(st.dur === pair[0])));
-    const budgets = [{ v: '', label: 'Any' }].concat((BANDS[cur] || []).map(b => ({ v: String(b), label: 'Up to ' + money(b, cur) }))).map(b => Object.assign({ label: b.label, pick: () => this.setState({ budget: b.v }) }, sel(st.budget === b.v)));
+    const chips = CHIPS.filter(c => categoryRows.some(p => c.routes.indexOf(p.r) >= 0)).map(c => Object.assign({ id: c.id, label: c.label, pick: () => this.setState({ chip: st.chip === c.id ? '' : c.id }) }, sel(st.chip === c.id)));
+    const durations = [['', 'Any'], ['7', 'Up to 7 nights'], ['10', '10 nights'], ['14', '14 nights'], ['20', '20 nights'], ['21', '21+ nights']].filter(pair => !pair[0] || pair[0] === st.dur || categoryRows.some(p => p.n != null && (pair[0] === '7' ? p.n <= 7 : pair[0] === '21' ? p.n >= 21 : p.n === Number(pair[0])))).map(pair => Object.assign({ label: pair[1], pick: () => this.setState({ dur: pair[0] }) }, sel(st.dur === pair[0])));
+    const budgets = [{ v: '', label: 'Any' }].concat((hasCurrentTotals ? (BANDS[cur] || []).filter(b => categoryRows.some(p => p.from && p.basis !== 'night' && !expired(p) && p.from[cur] <= b)) : []).map(b => ({ v: String(b), label: 'Up to ' + money(b, cur) }))).map(b => Object.assign({ label: b.label, pick: () => this.setState({ budget: b.v }) }, sel(st.budget === b.v)));
     const currencies = [['₹', 'INR'], ['$', 'USD'], ['€', 'EUR']].map(pair => Object.assign({ label: pair[0], pick: () => this.setState({ cur: pair[1], budget: '' }) }, sel(cur === pair[1])));
     const on = k => cat === k, bg = k => cat === k ? '#5A4420' : '#fff', fg = k => cat === k ? '#F7F4EA' : '#2A2118', bd = k => cat === k ? '#5A4420' : '#C9BFA8';
     const TARIFF = {
@@ -328,14 +333,15 @@ ${scroll}
     let resultLine;
     if (cls === 'NOT_TREATED') resultLine = 'This is not something we treat.';
     else if (cls === 'CONSULT_FIRST') resultLine = 'We would rather talk to you about “' + typed + '” than point you at a programme.';
+    else if (res.handoff) resultLine = 'Find travel and visitor information below.';
     else if (hits) resultLine = count === 0
       ? 'No close match for “' + typed + '” — a personalised programme may suit you'
       : (res.corrected ? 'Showing ' + count + (count === 1 ? ' programme' : ' programmes') + ' for “' + res.corrected + '” — you typed “' + typed + '”' : count + (count === 1 ? ' programme matches ' : (cls === 'MULTIPLE_POSSIBLE_MATCHES' ? ' programmes may apply to ' : ' programmes match ')) + '“' + typed + '”') + where;
     else if (filtered) resultLine = count + (count === 1 ? ' programme' : ' programmes') + (chip ? ' for ' + chip.label : '') + where;
-    else resultLine = cat === 'A' ? 'All ' + DATASET.length + ' governed programmes, as published.' : count + ' in ' + LABELS[cat];
+    else resultLine = cat === 'A' ? 'Explore all ' + DATASET.length + ' programmes.' : count + ' in ' + LABELS[cat];
     return {
       list: list, resultLine: resultLine,
-      isEmpty: count === 0 && !blocked,
+      isEmpty: count === 0 && !blocked && !res.handoff,
       isUrgent: cls === 'URGENT_MEDICAL_HELP',
       isConsult: cls === 'CONSULT_FIRST' || (cls === 'URGENT_MEDICAL_HELP' && count === 0),
       isDeclined: cls === 'NOT_TREATED',
@@ -445,7 +451,7 @@ const write = (input) => {
   // Owner-requested presentation correction, scoped to the treatment finder.
   if (/^ahv-page-ayurvedic-treatments-(desktop|mobile)$/.test(view.id)) {
     const desktop = view.id.endsWith('-desktop');
-    view.logic = view.logic.replace("'All ' + DATASET.length + ' governed programmes, as published.'", "'Explore all ' + DATASET.length + ' programmes.'");
+    view.logic = view.logic.replace("'Explore all ' + DATASET.length + ' programmes.'", "'Explore all ' + DATASET.length + ' programmes.'");
     view.template = view.template
       .replace(desktop ? 'padding:34px 0 0;position:relative' : 'padding:26px 0 0;position:relative', desktop ? 'padding:34px 0 64px;position:relative' : 'padding:26px 0 40px;position:relative')
       .replace('</a>. Programme fees are', '</a></p>\n    <p style="margin:12px 0 0;color:#75695A;font-size:14.5px;line-height:1.7;max-width:88ch">Programme fees are');

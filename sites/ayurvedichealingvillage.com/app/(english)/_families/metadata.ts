@@ -1,3 +1,4 @@
+import { routeRobots } from "./robots-policy";
 /**
  * AHV English candidate — per-route head metadata.
  *
@@ -6,17 +7,10 @@
  * improved or invented (HARD GATE 6) — including the source's own duplicate
  * and mismatched titles, which are preserved and reported, not fixed.
  *
- * DELIBERATELY NOT EMITTED: canonical and robots.
- * The approved design writes both itself once the runtime boots — the helmet
- * for a view-owned route, applyHead() for a dataset-bound one. Emitting them
- * here as well put TWO <link rel="canonical"> and TWO <meta name="robots"> in
- * every head, which the independent 320px review flagged on all 25 routes it
- * checked. The design's single canonical is the approved one, and the staging
- * noindex is enforced three ways that do not duplicate a tag:
- *   · X-Robots-Tag response header (next.config.ts) — JS cannot overwrite it
- *   · robots.txt Disallow: /
- *   · the served payload's own robots values, rewritten to noindex at import,
- *     plus the boot script's head guard for anything a renderer re-adds.
+ * Robots are emitted server-side from the production policy; boot.ts enforces
+ * the same value after imported designs write their head. Staging retains its
+ * response-header and robots.txt locks. Canonicals retain their route-specific
+ * server emission and runtime deduplication.
  */
 import type { Metadata } from "next";
 import type { CandidateRoute } from "./registry";
@@ -58,7 +52,9 @@ function shareImage(route: CandidateRoute) {
 
 export function routeMetadata(route: CandidateRoute): Metadata {
   const m = route.metadata;
+  const robots = routeRobots(route);
   const meta: Metadata = {
+    robots: { index: !robots.includes("noindex"), follow: !robots.includes("nofollow") },
     title: m.title ?? "Kairali — The Ayurvedic Healing Village",
   };
   if (m.description) meta.description = m.description;

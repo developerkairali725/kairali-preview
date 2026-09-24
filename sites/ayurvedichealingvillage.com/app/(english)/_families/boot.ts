@@ -55,6 +55,7 @@ import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
   path: string;
+  robots?: string;
   desktopView: string | null;
   mobileView: string | null;
   breakpoint: number;
@@ -888,20 +889,18 @@ export const BOOT_SCRIPT = `
       );
     });
 
-    // STAGING ONLY. On a production build this must not run at all: forcing
-    // noindex here would override the approved design's own robots value and
-    // silently deindex the live site. The deduplication above still runs in
-    // both modes, because two robots metas are wrong either way.
+    // Keep one robots value in both modes. Imported payloads carry staging
+    // values, so production must enforce the server's explicit route policy.
     assertShareTags();
     var keep = governedWins('meta[name="robots"]');
-    if (!STAGING) return;
+    var expectedRobots = STAGING ? "noindex, nofollow" : (cfg.robots || "noindex, follow");
     if (!keep) {
       keep = document.createElement("meta");
       keep.setAttribute("name", "robots");
       document.head.appendChild(keep);
     }
-    if (keep.getAttribute("content") !== "noindex, nofollow") {
-      keep.setAttribute("content", "noindex, nofollow");
+    if (keep.getAttribute("content") !== expectedRobots) {
+      keep.setAttribute("content", expectedRobots);
     }
   }
   var headScheduled = false;
