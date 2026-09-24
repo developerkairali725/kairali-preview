@@ -161,3 +161,16 @@
   #ahv-contact-controls .ahv-contact-chat { padding:0;border-radius:50%; }
   #ahv-contact-controls .ahv-contact-label { display:none; }
 }
+
+/* Keep native date segments and their calendar controls visible in the home finder. */
+[data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){display:grid!important;grid-template-columns:minmax(160px,1fr) 12px minmax(160px,1fr);gap:12px!important}
+[data-ahv-home-finder] input[type="date"]{width:100%;min-width:160px!important;padding-inline:4px!important}
+@media(min-width:700px){
+  [data-ahv-home-finder]{column-gap:16px!important;padding-left:24px!important}
+  [data-ahv-home-finder] > div:has(input[type="search"]){min-width:190px!important}
+  [data-ahv-home-finder] > div:has(input[type="date"]){flex:1 1 356px!important;min-width:356px!important}
+}
+@media(max-width:429px){
+  [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){grid-template-columns:minmax(0,1fr);gap:6px!important}
+  [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]) > span{display:none}
+}
