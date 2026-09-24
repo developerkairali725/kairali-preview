@@ -4,14 +4,14 @@
   "note": "path/title/template/sitemap/canonical/nav are FACTS from the approved package and the owner's overrides. `section` is DERIVED by tools/build-sitemap-tree.mjs and carries no approval.",
   "totals": {
     "routes": 252,
-    "inSitemap": 235,
-    "excludedFromSitemap": 17,
+    "inSitemap": 234,
+    "excludedFromSitemap": 18,
     "canonicalElsewhere": 5,
     "distinctDesktopViews": 74,
     "inHeaderNav": 9,
     "inFooterNav": 39,
     "templatesNotDesignAudited": 14,
-    "redirectedAtFlip": 12
+    "redirectedAtFlip": 13
   },
   "navLinksWithNoRoute": [],
   "sections": [
@@ -2431,14 +2431,14 @@
       "redirectReason": null
     },
     {
-      "n": 123,
+      "n": 124,
       "path": "/map/",
       "title": "Location Palakkad | Western Ghats | Major Tourist Attractions | Ayurvedic and Yogic Hub",
       "description": "This section deals with the exact location of the Ayurvedic village in the district of Palakkad, Kerala and formulates ways to reach the place effectively.",
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/travel-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -2446,8 +2446,8 @@
       "inFooterNav": true,
       "section": "contact",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/how-to-reach/",
+      "redirectReason": "Owner-approved consolidation of Map into How to Reach, retaining origin-specific directions including Ottapalam railway station and Bengaluru."
     },
     {
       "n": 124,

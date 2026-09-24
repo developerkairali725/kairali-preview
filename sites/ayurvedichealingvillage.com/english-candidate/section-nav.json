@@ -678,14 +678,7 @@
      "path": "/how-to-reach/",
      "label": "How to reach us",
      "link": true,
-     "children": [
-      {
-       "path": "/map/",
-       "label": "Route maps to the hospital",
-       "link": true,
-       "children": []
-      }
-     ]
+     "children": []
     },
     {
      "path": "/online-consultation/",
@@ -1951,19 +1944,6 @@
     "blockPrefixes": []
    }
   },
-  "/map/": {
-   "section": "visit",
-   "crumbs": [
-    "/how-to-reach/",
-    "/map/"
-   ],
-   "remove": {
-    "navPrefixes": [
-     "/sections/3"
-    ],
-    "blockPrefixes": []
-   }
-  },
   "/meditation/": {
    "section": "things",
    "crumbs": [
@@ -2555,6 +2535,18 @@
     "/learn-more-about-ayurveda/"
    ],
    "remove": null
+  },
+  "/map/": {
+   "section": "visit",
+   "crumbs": [
+    "/map/"
+   ],
+   "remove": {
+    "navPrefixes": [
+     "/sections/3"
+    ],
+    "blockPrefixes": []
+   }
   },
   "/special-offers/": {
    "section": "offers",

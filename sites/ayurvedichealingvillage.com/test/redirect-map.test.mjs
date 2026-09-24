@@ -38,8 +38,8 @@ const isLegacy = (s) => map.redirects[s].legacy === true;
 const manifestSources = sources.filter((s) => !isLegacy(s));
 const legacySources = sources.filter(isLegacy);
 
-test("both rulings are carried in full — seventeen manifest routes and two legacy destinations", () => {
-  assert.equal(manifestSources.length, 17, `expected 17 manifest redirects, found ${manifestSources.length}`);
+test("both rulings are carried in full — eighteen manifest routes and two legacy destinations", () => {
+  assert.equal(manifestSources.length, 18, `expected 18 manifest redirects, found ${manifestSources.length}`);
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 
@@ -99,6 +99,12 @@ test("original zero-click rulings and explicit owner consolidations are distingu
       assert.equal(rule.ownerApproval, "2026-09-24 explicit consolidation request");
       assert.equal(rule.gsc.clicks, null);
       assert.equal(rule.gsc.impressions, null);
+      continue;
+    }
+    if (s === "/map/") {
+      assert.equal(rule.to, "/how-to-reach/");
+      assert.equal(rule.ownerApproval, "2026-09-24 explicit consolidation request");
+      assert.equal(rule.gsc.clicks, null);
       continue;
     }
     if (s === "/founders-message/") {

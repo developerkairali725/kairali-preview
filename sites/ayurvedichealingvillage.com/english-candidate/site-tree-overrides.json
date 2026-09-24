@@ -401,13 +401,6 @@
    "label": "A patient’s stay in photos"
   },
   {
-   "path": "/map/",
-   "section": "visit",
-   "parent": "/how-to-reach/",
-   "why": "Changed after review (reviewer 1, verified): the page's unique content is the embedded route maps (Coimbatore and Cochin airports, Palakkad and Ottapalam stations, Bangalore). 'Route maps & directions' made this older, thinner page look like the authority on directions, and its distances contradict How to reach us (flagged, not recomputed).",
-   "label": "Route maps to the hospital"
-  },
-  {
    "path": "/property-gallery/",
    "section": "gallery",
    "parent": "/photo-gallery/",
@@ -926,6 +919,10 @@
   {
    "path": "/attractions-above-50kms/",
    "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+  },
+  {
+   "path": "/map/",
+   "why": "Owner-approved 301 consolidation into /how-to-reach/ on 24 September 2026."
   }
  ],
  "sectionTitles": [
