@@ -151,3 +151,85 @@
 [data-ahv-family="campaign-retreat"] main section:first-of-type p[style*="background:#fff"] *,
 [data-ahv-family="campaign-retreat"] main section:first-of-type p[style*="background: rgb(255, 255, 255)"] * { color:#5A4420 !important; }
 [data-ahv-family="campaign-retreat"] main section:first-of-type { padding-bottom:36px !important; border-radius:4px; }
+
+/* 24 Sep 2026: membership-only redesign. Keep other campaign variants intact. */
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] .air-membership {color:#2A2118;background:#F7F4EA}
+.air-membership > div:first-child {background:#F7F4EA!important}
+.air-membership > div:first-child > div {padding:8px 0!important;gap:8px 24px!important}
+.air-membership > div:first-child > div > div > a,
+.air-membership > div:first-child > div > div > span {display:none!important}
+.air-membership nav ul {gap:4px 20px!important}
+.air-membership nav a {font-size:16px!important}
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] #v3-hero {background:#EFE9DA!important;background-image:none!important;padding:0!important;border-radius:0!important;color:#2A2118!important}
+.air-membership #v3-hero > div {padding:32px 0!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,520px)!important;gap:32px!important;align-items:start!important}
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] #v3-hero :is(h1,p,strong,span,label,h2) {color:#2A2118!important}
+.air-membership #v3-h1 {font-size:clamp(34px,3.6vw,48px)!important;line-height:1.16!important;margin-bottom:16px!important}
+.air-membership #v3-hero > div > div:first-child > p:first-child {padding:0!important;border:0!important;border-radius:0!important;font-size:14px!important;margin-bottom:12px!important;letter-spacing:.5px!important}
+.air-membership #v3-hero > div > div:first-child > p:first-child > span[aria-hidden] {display:none!important}
+.air-membership #v3-hero > div > div:first-child > p:nth-of-type(2) {font-size:17px!important;line-height:1.6!important;padding-left:16px!important;margin-bottom:16px!important;border-color:#8F6212!important}
+.air-membership #v3-hero > div > div:first-child > p:nth-of-type(3) {font-size:17px!important}
+.air-membership .air-hero-photo {display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin-top:22px;border-radius:4px}
+.air-membership #v3-form {padding:24px!important;background:#fff!important;border:1px solid #DAD5CA;border-radius:4px!important;box-shadow:0 6px 20px rgba(70,50,20,.05)}
+.air-membership #v3-form-h {margin:0 0 18px!important;font-size:28px!important}
+.air-membership .air-form-fields {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px 16px!important}
+.air-membership .air-form-fields > div {min-width:0}
+.air-membership .air-form-fields > :is(div:nth-child(3),div:nth-child(4),button,p) {grid-column:1/-1}
+.air-membership #v3-form label {font-size:15px!important;line-height:1.4!important;margin-bottom:6px!important}
+.air-membership #v3-form label span {font-size:15px!important}
+.air-membership #v3-form :is(input:not([type=hidden]),select) {width:100%;max-width:100%;min-width:0;min-height:48px!important;padding:10px 12px!important;font:16px/1.4 Mulish,system-ui,sans-serif!important;color:#2A2118!important;background:#fff!important;border-color:#A49A88!important}
+.air-membership #v3-form :is(input,select):focus-visible {outline:2px solid #006038;outline-offset:2px}
+.air-membership #v3-membership-help {font-size:14px!important;line-height:1.4!important;margin:5px 0 0!important}
+.air-membership #v3-result-help:empty {display:none}
+.air-membership #v3-form p[aria-live] {font-size:14px!important;line-height:1.5!important}
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] #v3-form button,
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] #v3-form button span {color:#F7F4EA!important}
+.air-membership > section:not(#v3-hero) > div {padding:40px 0!important;gap:28px!important}
+.air-membership :is(h2,h3) {text-wrap:balance}
+.air-membership > section p {max-width:65ch}
+.air-membership :is(#v3-features,section[aria-labelledby="v3-diff-h"]) ul {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 28px!important}
+.air-membership :is(#v3-features,section[aria-labelledby="v3-diff-h"]) li {background:transparent!important;border:0!important;border-top:1px solid #D3C9B6!important;border-radius:0!important;padding:20px 0!important}
+.air-membership :is(#v3-features,section[aria-labelledby="v3-diff-h"]) li > span[aria-hidden] {display:none!important}
+.air-membership #v3-programs ul {grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}
+.air-membership #v3-programs li > div {padding:18px!important;gap:8px!important}
+.air-membership #v3-programs img {aspect-ratio:16/10!important}
+.air-membership #v3-programs h3 {font-size:21px!important}
+.air-membership section[aria-labelledby="v3-banner-h"] {background:#43331E!important}
+.air-membership section[aria-labelledby="v3-banner-h"] img {max-height:250px;object-fit:contain}
+.air-membership section[aria-labelledby="v3-banner-h"] div > span[aria-hidden] {display:none!important}
+.air-membership #v3-routine ol {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 28px!important;counter-reset:air-step}
+.air-membership #v3-routine li {background:transparent!important;border:0!important;border-top:1px solid #D3C9B6!important;padding:18px 0!important;border-radius:0!important;gap:16px!important;counter-increment:air-step}
+.air-membership #v3-routine li::before {content:counter(air-step,decimal-leading-zero);font:24px/1.2 Marcellus,serif;color:#8F6212;flex:none}
+.air-membership #v3-routine li > span[aria-hidden] {display:none!important}
+.air-membership #v3-contact > div {grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+.air-membership #v3-contact h2 {font-size:30px!important}
+.air-membership .air-partnership {width:min(1220px,94%);margin:0 auto;padding:0 0 24px;color:#75695A;font-size:15px}
+.air-membership :is(a,button):focus-visible {outline:2px solid #006038;outline-offset:4px}
+@media(max-width:900px){
+ .air-membership #v3-hero > div {grid-template-columns:minmax(0,1fr)!important;gap:24px!important;padding:24px 0!important}
+ .air-membership .air-hero-photo {max-height:300px;object-position:center 55%}
+ .air-membership #v3-programs ul {grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .air-membership #v3-contact > div {grid-template-columns:minmax(0,1fr)!important}
+}
+@media(max-width:600px){
+ .air-membership > div:first-child > div {flex-direction:column!important;align-items:flex-start!important;gap:0!important}
+ .air-membership > div:first-child img {height:26px!important}
+ .air-membership nav {width:100%;overflow-x:auto}
+ .air-membership nav ul {flex-wrap:nowrap!important;gap:0 18px!important}
+ .air-membership nav a {white-space:nowrap;font-size:15px!important}
+ .air-membership #v3-form {padding:18px!important}
+ .air-membership .air-form-fields {grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+ .air-membership .air-form-fields > * {grid-column:1!important}
+ .air-membership #v3-h1 {font-size:34px!important}
+ .air-membership > section:not(#v3-hero) > div {padding:28px 0!important;gap:20px!important}
+ .air-membership :is(#v3-features,#v3-programs,section[aria-labelledby="v3-diff-h"]) ul,.air-membership #v3-routine ol {grid-template-columns:minmax(0,1fr)!important}
+ .air-membership #v3-programs li {display:grid!important;grid-template-columns:110px minmax(0,1fr)}
+ .air-membership #v3-programs img {height:100%!important;min-height:150px;aspect-ratio:auto!important;object-fit:cover}
+ .air-membership #v3-programs li > div {padding:14px!important}
+ .air-membership #v3-programs h3 {font-size:19px!important}
+ .air-membership #v3-programs p {font-size:16px!important;line-height:1.5!important}
+}
+@media(max-width:350px){.air-membership #v3-programs li{grid-template-columns:minmax(0,1fr)}.air-membership #v3-programs img{height:160px!important}}
+
+.air-membership .air-enquire-link {display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:#006038;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.air-membership #v3-form {scroll-margin-top:100px}
+@media(max-width:600px){.air-membership #v3-hero > div > div:first-child > p:nth-of-type(3){font-size:16px!important}.air-membership .air-hero-photo{margin-top:12px}.air-membership nav{scrollbar-width:thin}}
