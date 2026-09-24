@@ -233,3 +233,10 @@
 .air-membership .air-enquire-link {display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:#006038;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .air-membership #v3-form {scroll-margin-top:100px}
 @media(max-width:600px){.air-membership #v3-hero > div > div:first-child > p:nth-of-type(3){font-size:16px!important}.air-membership .air-hero-photo{margin-top:12px}.air-membership nav{scrollbar-width:thin}}
+
+/* Clear purpose and hierarchy for the member enquiry, owner request. */
+.air-membership #v3-form {border-top:3px solid #8F6212}
+[data-ahv-route="/kairali-air-india-maharaja-club.html"] #v3-form .air-form-kicker {margin:0 0 8px!important;color:#8F6212!important;font-size:13px!important;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.air-membership #v3-form-h {font-size:29px!important;margin-bottom:10px!important;max-width:18ch}
+.air-membership #v3-form .air-form-intro {margin:0 0 20px!important;font-size:16px!important;line-height:1.5!important;color:#514A3F!important}
+@media(max-width:600px){.air-membership #v3-form-h{font-size:27px!important}.air-membership #v3-form .air-form-intro{margin-bottom:16px!important}}
