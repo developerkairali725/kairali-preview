@@ -82,3 +82,16 @@
     position:sticky !important; top:0 !important; z-index:80 !important;
   }
 }
+
+/* Owner, 24 Sep 2026: tighter desktop footer text spacing. The three link
+   columns share this structure across home, family and search footers.
+   Keep mobile/touch rows and the separate social/contact/CTA blocks intact. */
+@media (min-width: 1024px) and (pointer: fine) {
+  #ahv-design-root footer > div:first-child > div:has(> a:nth-of-type(7)) {
+    gap: 4px !important;
+  }
+  #ahv-design-root footer > div:first-child > div:has(> a:nth-of-type(7)) > a {
+    min-height: 30px !important;
+    line-height: 1.5 !important;
+  }
+}
