@@ -197,3 +197,15 @@
   new MutationObserver(schedule).observe(root, { childList:true, subtree:true });
   update();
 })();
+
+// Guide email stays in this tab only until the production lead-delivery integration.
+// Never place a visitor's email in URLs, analytics, or localStorage.
+document.addEventListener('submit', function (event) {
+  var form = event.target;
+  if (!form.matches || !form.matches('[data-ahv-guide-form]')) return;
+  event.preventDefault();
+  var email = form.querySelector('input[type="email"]');
+  if (!email || !form.reportValidity()) return;
+  try { sessionStorage.setItem('ahv-guide-email-draft', email.value.trim()); } catch (_) { /* downloads remain accessible if storage is unavailable */ }
+  window.location.assign('/faqs-downloads/#downloads');
+});
