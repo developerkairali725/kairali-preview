@@ -37,7 +37,7 @@ const EXCLUDE_FAMILIES = new Set([
   "campaign-nine", "campaign-retreat", "ahv-template-offers-deals-and-gift-vouchers",
   "sitemap", "faqs-and-downloads", "how-to-reach", "ahv-template-photo-collections",
   "ahv-template-past-retreat-record", "ahv-template-course-and-fees",
-  "no-preservatives", "defence-and-paramilitary-forces", "cancer-supportive-care", "supportive-care-cancer",
+  "defence-and-paramilitary-forces", "cancer-supportive-care", "supportive-care-cancer",
   "ayurveda-gallery", "past-retreats", "ananda-lahari-retreat", "ashtanga-retreat", "yala-2018-retreat",
   "ayuryoga", "back-to-roots", "lakshya-yoga", "mindfulness-retreat", "our-villas",
   "classic-villa", "deluxe-villa", "royal-villa", "maharaja-suite", "yoga-retreats", "panchkarma-treatment",

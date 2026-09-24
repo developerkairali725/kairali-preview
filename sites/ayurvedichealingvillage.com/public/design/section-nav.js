@@ -124,6 +124,21 @@
 
   function place(main) {
     var nav = build();
+    // The bespoke food page retained a separate right-hand menu.
+    if (route === "/no-preservatives/") {
+      var rules = main.querySelector('aside[aria-labelledby="house-rules-heading"], nav[aria-labelledby="rules-a"]');
+      if (rules) {
+        var article = main.querySelector("article");
+        if (rules.tagName === "ASIDE") {
+          rules.parentNode.style.gridTemplateColumns = "300px minmax(0, 1fr)";
+          rules.parentNode.style.gap = "40px";
+        }
+        article.parentNode.insertBefore(nav, article);
+        rules.remove();
+        main.setAttribute("data-ahv-rail", "inline");
+        return nav;
+      }
+    }
     // inline: the article family's own left column
     var old = main.querySelector('nav[aria-labelledby="ctx-h"]');
     if (old && old.parentNode) {
