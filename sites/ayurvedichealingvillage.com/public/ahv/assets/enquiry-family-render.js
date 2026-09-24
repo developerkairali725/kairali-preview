@@ -14,7 +14,7 @@
       const k = key + '-' + i;
       if (n.tag === 'br') return React.createElement('br', { key: k });
       if (n.encodedEmail) return React.createElement('span', { key: k, 'data-encoded-email': 'true', style: { fontStyle: 'italic', color: '#75695A' }, title: 'Source e-mail is Cloudflare-encoded; recovery not authorised in this packet' }, ...inline(n.c, k, guard));
-      if (n.tag === 'a') { const h = n.attrs.href || ''; const props = { key: k, href: h.startsWith('/') ? A + h : h, onClick: guard, style: { color: '#006038', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 } }; if (n.recovered) props['data-recovered-email'] = 'true'; if (/^https?:/.test(h) && !h.startsWith(A)) props.rel = 'noopener'; return React.createElement('a', props, ...inline(n.c, k, guard)); }
+      if (n.tag === 'a') { const h = n.attrs.href || ''; const props = { key: k, href: h.startsWith('/') ? A + h : h, onClick: guard, style: { color: '#006038', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 } }; if (n.recovered) props['data-recovered-email'] = 'true'; if (/^https?:/.test(h) && !h.startsWith(A)) props.rel = 'noopener'; return React.createElement('a', props, /^(mailto:|tel:|https:\/\/(wa\.me|ig\.me|m\.me)\/)/.test(h) ? channelIcon(h) : null, ...inline(n.c, k, guard)); }
       const st = n.tag === 'strong' || n.tag === 'b' ? { fontWeight: 700 } : (n.tag === 'em' || n.tag === 'i') ? { fontStyle: 'italic' } : undefined;
       return React.createElement(n.tag === 'b' ? 'strong' : n.tag === 'i' ? 'em' : n.tag, { key: k, style: st }, ...inline(n.c, k, guard));
     });
@@ -29,6 +29,18 @@
     const map = { name: s.fName, code: s.fCode, phone: s.fPhone, email: s.fEmail, country: s.fCountry, concern: s.fConcern, duration: s.duration || '-', who: s.who || '-', lang: s.lang || '-', time: s.time || '-', date: new Date().toISOString().slice(0, 10) };
     const text = R.flow.waTemplate.map(l => l.replace(/\{(\w+)\}/g, (_, k) => map[k] ?? '')).join('\n');
     return 'https://wa.me/' + R.flow.waNumber + '?text=' + encodeURIComponent(text);
+  }
+  function channelIcon(href) {
+    const h = href || '';
+    let path = 'M14 3h7v7m0-7L10 14M10 3H3v18h18v-7';
+    if (h.startsWith('mailto:')) path = 'M3 5h18v14H3zM3 5l9 7 9-7';
+    else if (h.startsWith('tel:')) path = 'M5 3h4l2 5-3 2a14 14 0 0 0 6 6l2-3 5 2v4c0 2-3 3-5 2C9 19 5 15 3 8c-1-2 0-5 2-5z';
+    else if (h.includes('wa.me')) path = 'M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11zM8 7c0 5 4 9 8 9l1-3-3-1-1 2-3-3 2-1-1-3z';
+    else if (h.includes('ig.me')) path = 'M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zM16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0M17 7h.01';
+    else if (h.includes('m.me') || h === '#chat') path = 'M21 11c0 5-4 8-9 8H8l-5 3 1-6a8 8 0 0 1-1-5c0-5 4-8 9-8s9 3 9 8zM7 13l4-4 3 3 3-3';
+    else if (h.includes('bookings.')) path = 'M3 5h18v16H3zM7 3v4m10-4v4M3 10h18M7 14h3m4 0h3';
+    else if (h.includes('#message') || h.includes('consultation')) path = 'M5 3h14v18H5zM8 8h8M8 12h8M8 16h5';
+    return React.createElement('svg', {width:22,height:22,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.7,strokeLinecap:'round',strokeLinejoin:'round','aria-hidden':'true',focusable:'false',style:{flexShrink:0,verticalAlign:'middle',marginRight:8}}, React.createElement('path',{d:path}));
   }
   function homeEnquiryDraft() {
     if (location.pathname !== '/enquiry-form/' || !location.hash.startsWith('#message?')) return null;
@@ -130,5 +142,5 @@
       return null;
     });
   }
-  window.AHV_ENQUIRY_RENDER = { homeEnquiryDraft, focusEnquiry, sourceBlocks, resolveRoute, inline, treeText, V, waDraft, applyHead, legacyFields, A, DEFAULT_ROUTE };
+  window.AHV_ENQUIRY_RENDER = { channelIcon, homeEnquiryDraft, focusEnquiry, sourceBlocks, resolveRoute, inline, treeText, V, waDraft, applyHead, legacyFields, A, DEFAULT_ROUTE };
 })();
