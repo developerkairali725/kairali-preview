@@ -73,17 +73,11 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
   async headers() {
-    // The design package is content-addressed and rewritten wholesale by the
-    // importer, never edited in place, so it is safe to cache hard. Before this
-    // rule every one of its assets was served Cache-Control: max-age=0 --
-    // measured, 105 of 110 subresources revalidated on every page view, and on
-    // the homepage 32 images were downloaded TWICE in a single load, because the
-    // prerendered snapshot fetches them and then the runtime re-mounts them and
-    // the browser cannot reuse what it just fetched. Fonts, the runtime bundle
-    // and the view payloads were all in that set.
+    // The payload URLs are stable across deployments; they are not content-addressed.
+    // Revalidate with ETags so returning visitors receive updated views and consent UI.
     const assets = {
       source: "/ahv/:path*",
-      headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
     };
     if (!IS_STAGING) return [assets];
     return [

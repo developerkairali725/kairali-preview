@@ -1,3 +1,6 @@
+import "@kairali/ui/brand-tokens.css";
+import { CONSENT_RUNTIME } from "../_families/consent-runtime";
+import analyticsConfig from "../../../analytics.config.json";
 import type { Metadata } from "next";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -56,16 +59,16 @@ function engine(): { engine: Engine; index: any } {
 const WA = "https://wa.me/919289838797";
 const TEL = "tel:+919555156156";
 const CONSULT = "/online-consultation/";
-const paper = "#F7F4EA", ink = "#2A2118", muted = "#514a3f", gold = "#C1882C", green = "#006038", brown = "#5A4420";
-const rowStyle: React.CSSProperties = { display: "flex", flexDirection: "column", justifyContent: "center", gap: 2, minHeight: 64, padding: "10px 40px 10px 16px", color: ink, textDecoration: "none", position: "relative", borderTop: "1px solid #E9E2D3" };
+const paper = "var(--ivory)", ink = "var(--ink)", muted = "color-mix(in srgb, var(--ink) 78%, var(--ivory))", gold = "var(--bronze-400)", green = "var(--forest-500)", brown = "var(--forest-700)";
+const rowStyle: React.CSSProperties = { display: "flex", flexDirection: "column", justifyContent: "center", gap: 2, minHeight: 64, padding: "10px 40px 10px 16px", color: ink, textDecoration: "none", position: "relative", borderTop: "1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))" };
 const btn: React.CSSProperties = { display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 48, padding: "0 16px", borderRadius: 4, fontWeight: 700, fontSize: 14, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none", flex: "1 1 180px", textAlign: "center" };
 
 function Group({ title, rows, render }: { title: string; rows: Row[]; render: (r: Row) => React.ReactNode }) {
   if (!rows.length) return null;
   return (
     <section aria-label={title} style={{ marginTop: 18 }}>
-      <h2 style={{ font: "700 12.5px Mulish, sans-serif", letterSpacing: 2.4, textTransform: "uppercase", color: "#8F6212", margin: "0 0 6px" }}>{title}</h2>
-      <ul style={{ listStyle: "none", margin: 0, padding: 0, border: "1px solid #E9E2D3", borderRadius: 4, background: "#FFFDF7" }}>
+      <h2 style={{ font: "700 12.5px Mulish, sans-serif", letterSpacing: 2.4, textTransform: "uppercase", color: "var(--bronze-600)", margin: "0 0 6px" }}>{title}</h2>
+      <ul style={{ listStyle: "none", margin: 0, padding: 0, border: "1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))", borderRadius: 4, background: "var(--card-bg)" }}>
         {rows.slice(0, 12).map((r, i) => <li key={`${r.route ?? r.id ?? "row"}-${i}`}>{render(r)}</li>)}
       </ul>
     </section>
@@ -78,6 +81,21 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
   const typed = String(raw || "").slice(0, 120).trim();
   const { engine: eng, index } = engine();
   const chrome = siteChrome();
+  const measurement = process.env[analyticsConfig.activation.env] === analyticsConfig.activation.enabledWhen
+    ? { ga4: analyticsConfig.measurement.ga4.id, clarity: analyticsConfig.measurement.clarity.id, metaPixel: analyticsConfig.measurement.metaPixel.id }
+    : undefined;
+  const consentScript = `(function () {
+    var cfg = ${JSON.stringify({ breakpoint: 700, measurement })};
+    var host = document.getElementById("ahv-design-root");
+    ${CONSENT_RUNTIME}
+    ensureConsentNotice();
+    if (consentChoice() === "accepted") startMeasurement();
+    window.addEventListener("resize", function () {
+      var notice = document.getElementById("ahv-consent");
+      if (notice) notice.remove();
+      ensureConsentNotice();
+    });
+  })();`;
   const ui = index.ui;
   const res = typed.length >= 2 ? eng.query(typed, { scope: "site" }) : null;
   const status = !res ? "" : res.total === 0 ? ui.zero.replace("{q}", typed) : res.corrected
@@ -97,8 +115,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
       <div dangerouslySetInnerHTML={{ __html: chrome.header }} />
       <main style={{ width: "min(760px,94%)", margin: "0 auto", padding: "26px 0 40px" }}>
         <h1 style={{ fontFamily: "Marcellus, serif", fontWeight: 400, fontSize: 32, margin: "0 0 14px" }}>{ui.dialogTitle}</h1>
-        <form action="/search/" method="get" role="search" style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 56, border: "1px solid #C7BCA4", borderRadius: 4, background: "#fff", padding: "0 6px 0 14px" }}>
-          <span aria-hidden="true" style={{ color: "#8F6212", fontSize: 20 }}>⌕</span>
+        <form action="/search/" method="get" role="search" style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 56, border: "1px solid var(--bronze-400)", borderRadius: 4, background: "var(--card-bg)", padding: "0 6px 0 14px" }}>
+          <span aria-hidden="true" style={{ color: "var(--bronze-600)", fontSize: 20 }}>⌕</span>
           <label htmlFor="search-q" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap" }}>{ui.dialogTitle}</label>
           <input id="search-q" name="q" type="search" defaultValue={typed} placeholder={ui.placeholder} autoComplete="off" style={{ flex: 1, minWidth: 0, minHeight: 54, border: 0, outline: "none", background: "transparent", font: "18px Mulish, sans-serif", color: ink }} />
           <button type="submit" style={{ minHeight: 44, padding: "0 18px", border: 0, borderRadius: 4, background: brown, color: paper, font: "700 14px Mulish, sans-serif", letterSpacing: 1.2, textTransform: "uppercase", cursor: "pointer" }}>Search</button>
@@ -108,31 +126,32 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
         ) : (
           <p style={{ margin: "12px 0 0", fontSize: 15.5, color: muted }}>{ui.emptyHeading}</p>
         )}
-        {res && res.cls === "URGENT_MEDICAL_HELP" ? <div role="note" style={{ display: "flex", gap: 12, borderLeft: "3px solid #8C2F1B", background: "#FFF8F6", padding: "12px 16px", margin: "12px 0 0" }}><span aria-hidden="true" style={{ fontFamily: "Marcellus, serif", color: "#8C2F1B" }}>!</span><p style={{ margin: 0, fontSize: 15.5 }}>{ui.urgent}</p></div> : null}
-        {res && res.cls === "NOT_TREATED" ? <p style={{ borderLeft: `3px solid ${gold}`, background: "#fff", padding: "12px 16px", margin: "12px 0 0", fontSize: 15.5 }}>{ui.declined}</p> : null}
-        {res && res.cls === "CONSULT_FIRST" ? <p style={{ borderLeft: `3px solid ${gold}`, background: "#fff", padding: "12px 16px", margin: "12px 0 0", fontSize: 15.5 }}>{ui.consultFirst}</p> : null}
-        {res && res.cls === "MULTIPLE_POSSIBLE_MATCHES" && res.programmes.length > 1 ? <p style={{ margin: "12px 0 0", fontSize: 15.5, color: "#8F6212" }}>{ui.multi}</p> : null}
+        {res && res.cls === "URGENT_MEDICAL_HELP" ? <div role="note" style={{ display: "flex", gap: 12, borderLeft: "3px solid var(--color-error)", background: "color-mix(in srgb, var(--color-error) 4%, var(--card-bg))", padding: "12px 16px", margin: "12px 0 0" }}><span aria-hidden="true" style={{ fontFamily: "Marcellus, serif", color: "var(--color-error)" }}>!</span><p style={{ margin: 0, fontSize: 15.5 }}>{ui.urgent}</p></div> : null}
+        {res && res.cls === "NOT_TREATED" ? <p style={{ borderLeft: `3px solid ${gold}`, background: "var(--card-bg)", padding: "12px 16px", margin: "12px 0 0", fontSize: 15.5 }}>{ui.declined}</p> : null}
+        {res && res.cls === "CONSULT_FIRST" ? <p style={{ borderLeft: `3px solid ${gold}`, background: "var(--card-bg)", padding: "12px 16px", margin: "12px 0 0", fontSize: 15.5 }}>{ui.consultFirst}</p> : null}
+        {res && res.cls === "MULTIPLE_POSSIBLE_MATCHES" && res.programmes.length > 1 ? <p style={{ margin: "12px 0 0", fontSize: 15.5, color: "var(--bronze-600)" }}>{ui.multi}</p> : null}
         {res ? res.caveats.map((c) => <p key={c} style={{ margin: "12px 0 0", fontSize: 15.5, color: muted, borderLeft: `3px solid ${gold}`, paddingLeft: 12 }}>{c}</p>) : null}
         {res ? res.order.map((k) => {
-          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, "INR", ui) + (p.from && p.basis !== "night" && p.priceState === "valid" ? " " + ui.basis : ""); return <a href={p.route} style={rowStyle}><span style={rowT}>{p.name}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "#8F6212", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
+          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, "INR", ui) + (p.from && p.basis !== "night" && p.priceState === "valid" ? " " + ui.basis : ""); return <a href={p.route} style={rowStyle}><span style={rowT}>{p.name}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "var(--bronze-600)", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
           if (k === "questions") return <Group key={k} title={ui.groups.questions} rows={res.questions} render={(r) => { const q = r.data; return <a href={`/faqs-downloads/?q=${encodeURIComponent(typed)}#${q.id}`} style={rowStyle}><span style={rowT}>{q.q}</span><span style={rowA}>{q.topic}</span>{chevron}</a>; }} />;
           return <Group key={k} title={ui.groups.pages} rows={res.pages} render={(r) => { const p = r.data; return <a href={p.route} style={rowStyle}><span style={rowT}>{p.label}</span>{p.desc ? <span style={rowA}>{p.desc}</span> : null}{chevron}</a>; }} />;
         }) : null}
         {!res || res.total === 0 ? (
           <div style={{ marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 10 }}>
-            {ui.emptyButtons.map((b: any) => <a key={b.label} href={b.href || "/ayurvedic-treatments/"} style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 72, padding: "8px 12px", border: "1.5px solid #C9BFA8", borderRadius: 4, background: "#fff", fontSize: 18, color: ink, textDecoration: "none" }}>{b.label}</a>)}
+            {ui.emptyButtons.map((b: any) => <a key={b.label} href={b.href || "/ayurvedic-treatments/"} style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 72, padding: "8px 12px", border: "1.5px solid color-mix(in srgb, var(--bronze-400) 35%, var(--ivory))", borderRadius: 4, background: "var(--card-bg)", fontSize: 18, color: ink, textDecoration: "none" }}>{b.label}</a>)}
           </div>
         ) : null}
-        <div style={{ marginTop: 28, borderTop: "1px solid #E9E2D3", paddingTop: 14 }}>
+        <div style={{ marginTop: 28, borderTop: "1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))", paddingTop: 14 }}>
           <p style={{ margin: "0 0 10px", fontSize: 15, color: muted }}>{ui.notSure}</p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <a href={WA} target="_blank" rel="noopener noreferrer" style={{ ...btn, background: green, color: paper }}>{ui.fallback.whatsapp}</a>
-            <a href={CONSULT} style={{ ...btn, background: "#EEB41E", color: ink }}>{ui.fallback.consultation}</a>
-            <a href={TEL} style={{ ...btn, border: `1.5px solid ${brown}`, color: brown, background: "#fff" }}>{ui.fallback.call}</a>
+            <a href={CONSULT} style={{ ...btn, background: "var(--marigold-400)", color: ink }}>{ui.fallback.consultation}</a>
+            <a href={TEL} style={{ ...btn, border: `1.5px solid ${brown}`, color: brown, background: "var(--card-bg)" }}>{ui.fallback.call}</a>
           </div>
         </div>
       </main>
       <div dangerouslySetInnerHTML={{ __html: chrome.footer }} />
+      <script dangerouslySetInnerHTML={{ __html: consentScript }} />
       {chrome.script ? <script dangerouslySetInnerHTML={{ __html: chrome.script }} /> : null}
     </div>
   );

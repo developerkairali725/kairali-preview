@@ -92,12 +92,13 @@ test("every route with a share image has one on disk at the declared 1200x630", 
   }
 });
 
-test("the SearchAction stays out until a search endpoint exists", () => {
-  // Live points it at /?s={search_term_string}; this rebuild does not serve that,
-  // and telling a crawler otherwise would be a false assertion.
-  // Match the emitted NODE, not the header comment that explains the omission.
-  assert.ok(!/"@type":\s*"SearchAction"/.test(schemaSrc), "a SearchAction node was added — is there a real search endpoint now?");
-  assert.ok(!/potentialAction\s*:/.test(schemaSrc), "a potentialAction was added without a live endpoint");
+test("SearchAction targets the implemented search results endpoint", () => {
+  assert.match(schemaSrc, /"@type": "SearchAction"/);
+  assert.ok(schemaSrc.includes('abs("/search/") + "?q={search_term_string}"'));
+  const endpoint = readFileSync(join(SITE, "app/(english)/search/page.tsx"), "utf8");
+  assert.match(endpoint, /searchParams/);
+  assert.match(endpoint, /eng\.query\(typed/);
+  assert.ok(!schemaSrc.includes('urlTemplate: abs("/") + "?s='), "do not advertise the legacy WordPress search");
 });
 
 test("the live site's broken second WebPage block is not reproduced", () => {

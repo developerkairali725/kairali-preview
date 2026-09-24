@@ -1,0 +1,50 @@
+{
+  "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+  "timestamp": "2026-09-24 10:43:28 IST",
+  "browser": "Codex IAB; local Next development plus production build",
+  "sitemapChecks": {
+    "desktop1280": 206,
+    "mobile390": 206,
+    "failures": 0
+  },
+  "extraChecks": {
+    "desktop1280": 48,
+    "mobile390": 48,
+    "navigationErrors": 0,
+    "note": "Includes home, search, campaigns, confirmations and existing redirect sources; redirect targets repeat. Hidden source template buttons were excluded from final homepage verification."
+  },
+  "breakpoints": [
+    {
+      "viewport": 320,
+      "width": 281,
+      "direction": "column"
+    },
+    {
+      "viewport": 699,
+      "width": 406,
+      "direction": "column"
+    },
+    {
+      "viewport": 700,
+      "width": 661,
+      "direction": "row"
+    },
+    {
+      "viewport": 1280,
+      "width": 880,
+      "direction": "row"
+    }
+  ],
+  "persistence": {
+    "declineRoomToSearchToHome": "PASS",
+    "acceptGalleryToRoomAndReload": "PASS"
+  },
+  "checks": {
+    "siteTests": "56/56 PASS",
+    "typescript": "PASS",
+    "brandLint": "0 errors, 0 warnings",
+    "nextProductionBuild": "PASS",
+    "runtimeAssets": "2053 pinned SHA-256 matches"
+  },
+  "scope": "Consent presentation/storage persistence; not consent-law certification or completed forms integration"
+}

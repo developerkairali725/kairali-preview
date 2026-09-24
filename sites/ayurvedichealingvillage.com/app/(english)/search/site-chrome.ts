@@ -76,7 +76,7 @@ export function siteChrome(): Chrome {
   const ok = deskHeader && narrowHeader && panel && deskFooter && narrowFooter && /aria-label="Primary"/.test(deskHeader) && /aria-label="Menu"/.test(narrowHeader) && /aria-label="Close menu"/.test(panel);
   if (!ok) {
     console.error(`[search/site-chrome] snapshot ${SNAPSHOT} lacks a chrome block — plain strip used (header:${!!deskHeader}/${!!narrowHeader} panel:${!!panel} footer:${!!deskFooter}/${!!narrowFooter})`);
-    cached = { header: `<header class="ahv-sc-plain"><a href="/"><img src="/ahv/assets/img/kairali-colorful-logo.webp" alt="Kairali — The Ayurvedic Healing Village" width="290" height="68" style="height:40px;width:auto;display:block"></a></header>`, footer: "", css: ".ahv-sc-plain{display:flex;align-items:center;min-height:72px;padding:0 3%;border-bottom:1px solid #E9E2D3}", script: "" };
+    cached = { header: `<header class="ahv-sc-plain"><a href="/"><img src="/ahv/assets/img/kairali-colorful-logo.webp" alt="Kairali — The Ayurvedic Healing Village" width="290" height="68" style="height:40px;width:auto;display:block"></a></header>`, footer: "", css: ".ahv-sc-plain{display:flex;align-items:center;min-height:72px;padding:0 3%;border-bottom:1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))}", script: "" };
     return cached;
   }
   const header =
