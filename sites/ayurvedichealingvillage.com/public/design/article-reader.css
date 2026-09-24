@@ -183,9 +183,9 @@
 @media (min-width:1024px) {
   [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type,
   [data-ahv-family="article-reader"] main > section:first-of-type + div > img {
-    width:100vw !important;
-    max-width:100vw !important;
-    margin-left:calc(50% - 50vw) !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
     height:clamp(320px,34vw,460px) !important;
     object-fit:cover !important;
     border-radius:0 !important;

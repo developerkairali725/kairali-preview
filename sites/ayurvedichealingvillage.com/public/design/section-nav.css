@@ -147,3 +147,43 @@ nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; 
   #ahv-design-root [data-ahv-reader-columns] { display:block !important; }
   #ahv-design-root [data-ahv-reader-columns] > nav[data-ahv-section-nav] { width:100%; margin:0 0 24px; }
 }
+
+/* Editorial images keep their proportions inside the section rail. */
+#ahv-design-root main[data-ahv-rail] article img:not([class]),
+#ahv-design-root main[data-ahv-rail] [data-ahv-rail-col="2"] img[data-source-pointer] {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:480px; object-fit:contain !important;
+  margin-left:0 !important; margin-right:0 !important;
+}
+/* Comparable source-labelled photo cards use a consistent frame. */
+#ahv-design-root main[data-ahv-rail] [data-source-card] img[data-source-pointer] {
+  width:100% !important; height:auto !important; aspect-ratio:8 / 5;
+  max-height:none; object-fit:cover !important;
+}
+#ahv-design-root main[data-ahv-rail] article img[src*="/house-rules/"] {
+  display:block; width:min(100%,560px) !important; height:auto !important;
+  max-height:none; object-fit:contain !important; margin:0 auto !important;
+}
+#ahv-design-root main[data-ahv-rail] figure:has(> img[src*="/house-rules/"]) {margin:28px 0 36px !important;}
+@media(max-width:600px) {
+  #ahv-design-root main[data-ahv-rail] article img:not([class]),
+  #ahv-design-root main[data-ahv-rail] [data-ahv-rail-col="2"] img[data-source-pointer] {max-height:360px;}
+  #ahv-design-root main[data-ahv-rail] [data-source-card] img[data-source-pointer],
+  #ahv-design-root main[data-ahv-rail] article img[src*="/house-rules/"] {max-height:none;}
+}
+/* A portrait poster is not a panoramic hero: show it complete at a readable\n   size without letting it consume multiple screens. */
+#ahv-design-root main[data-ahv-rail] > [data-ahv-rail-col="full"] img[data-source-pointer] {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:460px; object-fit:contain !important;
+  margin-left:auto !important; margin-right:auto !important;
+}
+#ahv-design-root main[data-ahv-rail] img[src$="/kar5-19.webp"] {
+  width:auto !important; height:auto !important; max-width:100% !important;
+  max-height:460px; object-fit:contain !important; margin-inline:auto !important;
+}
+/* Card headings should not inherit long-article section spacing. */
+#ahv-design-root main[data-ahv-rail] [data-source-card] {gap:14px !important;}
+#ahv-design-root main[data-ahv-rail] [data-source-card] > div:has(img),
+#ahv-design-root main[data-ahv-rail] [data-source-card] > h3,
+#ahv-design-root main[data-ahv-rail] [data-source-card] > p {margin:0 !important;}
+#ahv-design-root main[data-ahv-rail] [data-source-card] > h3 {min-height:0 !important; line-height:1.35 !important;}
