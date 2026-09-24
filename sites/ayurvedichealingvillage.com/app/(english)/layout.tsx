@@ -101,6 +101,8 @@ export default function EnglishCandidateLayout({ children }: { children: ReactNo
             the header and footer are one component on every family. */}
         <link rel="stylesheet" href="/design/chrome.css" />
         <script defer src="/design/chrome.js" />
+        <link rel="stylesheet" href="/design/newsletter.css" />
+        <script defer src="/design/newsletter.js" />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
             search control on every page, the programme finder and the FAQ filter.

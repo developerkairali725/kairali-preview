@@ -1,3 +1,4 @@
+import { formPostSafety } from "./form-post-safety.mjs";
 import { CONSENT_RUNTIME } from "./consent-runtime";
 /**
  * AHV English candidate — page bootstrap.
@@ -998,7 +999,7 @@ export const BOOT_SCRIPT = `
       // The snapshot stays where it is (see releaseSnapshot): the runtime takes
       // the first <x-dc> in the document and replaces it with its own root.
       host.appendChild(document.createElement("x-dc"));
-      pendingTemplate = view.template;
+      pendingTemplate = (${formPostSafety.toString()})(view.template);
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");

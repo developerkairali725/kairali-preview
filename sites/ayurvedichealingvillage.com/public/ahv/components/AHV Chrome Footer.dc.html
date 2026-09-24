@@ -69,7 +69,12 @@
     </div>
     <div>
       <div style="font-size:14.5px;color:rgba(247,244,234,.75);margin-bottom:12px;white-space:nowrap">Newsletter — programmes &amp; seasonal detox calendars</div>
-      <div style="display:flex;gap:0;border:1px solid rgba(247,244,234,.3);border-radius:{{ btnR }};padding:5px 5px 5px 20px;align-items:center"><div style="flex:1;min-width:0;font-size:15px;color:rgba(247,244,234,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Your email address</div><a href="https://ayurvedichealingvillage.com/enquiry-form/" style="background:#EEB41E;color:#2A2014;border-radius:{{ btnR }};padding:11px 20px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap" style-hover="filter:brightness(.94);text-decoration:none">Subscribe</a></div>
+      <form class="ahv-newsletter" data-ahv-newsletter="1" action="/api/newsletter" method="post" aria-label="Newsletter signup">
+<label class="ahv-newsletter-label">Email address<input type="email" name="email" autocomplete="email" inputmode="email" required="required" maxlength="254" placeholder="you@example.com" autocapitalize="none" spellcheck="false"></label>
+<button type="submit">Subscribe</button>
+<p class="ahv-newsletter-permission">By subscribing, you agree to receive Kairali news and programme updates. Unsubscribe any time. <a href="/privacy-policy/">Privacy policy</a></p>
+<p class="ahv-newsletter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</form>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap"><a href="https://ayurvedichealingvillage.com/enquiry-form/" style="border:1px solid rgba(247,244,234,.45);border-radius:{{ btnR }};padding:12px 24px;color:#fff;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase" style-hover="text-decoration:none;background:rgba(247,244,234,.1);color:#fff">Enquire Now</a><a href="https://bookings.ayurvedichealingvillage.com/" style="border:1px solid rgba(247,244,234,.45);border-radius:{{ btnR }};padding:12px 24px;color:#fff;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase" style-hover="text-decoration:none;background:rgba(247,244,234,.1);color:#fff">Book Your Stay</a></div>
   </div>
@@ -89,8 +94,12 @@
   <a href="tel:+91 9555 156 156" style="color:#fff;font-family:'Marcellus',serif;font-size:23px;display:inline-flex;align-items:center;min-height:44px">+91 9555 156 156</a>
   <a href="mailto:info@kairali.com" style="display:inline-flex;align-items:center;min-height:44px;font-size:15.5px;color:rgba(247,244,234,.85)">info@kairali.com</a>
   <a href="https://chat.kairali.com/" style="display:inline-flex;align-items:center;min-height:44px;font-size:15.5px;color:rgba(247,244,234,.85)">Chat with Priya</a>
-  <div style="display:flex;align-items:center;gap:10px;margin-top:14px"><label for="ftr-mail-m" style="font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:rgba(247,244,234,.78);white-space:nowrap">Email address</label><input id="ftr-mail-m" type="email" placeholder="you@example.com" style="flex:1;min-width:0;min-height:48px;box-sizing:border-box;padding:0 14px;border-radius:4px;border:1px solid rgba(247,244,234,.4);background:rgba(247,244,234,.06);color:#F7F4EA;font-family:'Mulish',sans-serif;font-size:16px"></div>
-  <button type="button" style="min-height:48px;margin-top:8px;border:none;border-radius:4px;background:#EEB41E;color:#2A2118;font-family:'Mulish',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer">Subscribe</button>
+  <form class="ahv-newsletter" data-ahv-newsletter="1" action="/api/newsletter" method="post" aria-label="Newsletter signup">
+<label class="ahv-newsletter-label">Email address<input type="email" name="email" autocomplete="email" inputmode="email" required="required" maxlength="254" placeholder="you@example.com" autocapitalize="none" spellcheck="false"></label>
+<button type="submit">Subscribe</button>
+<p class="ahv-newsletter-permission">By subscribing, you agree to receive Kairali news and programme updates. Unsubscribe any time. <a href="/privacy-policy/">Privacy policy</a></p>
+<p class="ahv-newsletter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</form>
   <div style="font-size:13.5px;color:rgba(247,244,234,.7);margin-top:8px">Newsletter — treatment programmes &amp; seasonal detox calendars</div>
   <nav aria-label="Site" style="display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;font-size:14.5px;margin:22px 0 4px">
     <sc-for list="{{ allLinks }}" as="l" hint-placeholder-count="12"><a href="{{ l.href }}" style="color:rgba(247,244,234,.88);display:flex;align-items:center;min-height:44px;box-sizing:border-box">{{ l.label }}</a></sc-for>

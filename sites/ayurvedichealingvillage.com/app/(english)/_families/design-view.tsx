@@ -1,3 +1,5 @@
+import { formPostSafety } from "./form-post-safety.mjs";
+import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
 /**
@@ -51,7 +53,7 @@ const PRERENDER_DIR = join(process.cwd(), "english-candidate", "prerender");
 
 function prerenderedBody(routePath: string): string {
   try {
-    return computedFooterYear(youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8")));
+    return formPostSafety(newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8")))));
   } catch {
     return "";
   }
