@@ -625,6 +625,34 @@
      then questions and pages), arrow keys + Enter to follow a row, Escape to close,
      Enter with nothing chosen submits the form to the finder as before. Rows are
      ≥48px, 17px type. Nothing here fires analytics. */
+  // Carry only visitor-entered interests/dates into an editable enquiry draft.
+  function homeEnquiryMessage(form) {
+    var lines = [], q = form.querySelector('[name="q"]').value.trim().slice(0, 120);
+    var from = form.querySelector('[name="from"]').value, to = form.querySelector('[name="to"]').value;
+    if (q) lines.push("I am looking for: " + q);
+    if (from) lines.push("Preferred arrival: " + from);
+    if (to) lines.push("Preferred departure: " + to);
+    return lines.join("\n");
+  }
+  doc.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    var home = doc.querySelector('form[data-ahv-home-finder="1"]');
+    var url; try { url = new URL(a.href, root.location.href); } catch (_) { return; }
+    if (home && url.origin === root.location.origin && url.pathname === "/enquiry-form/") {
+      var message = homeEnquiryMessage(home);
+      a.href = "/enquiry-form/#message" + (message ? "?draft=" + encodeURIComponent(message) : "");
+    }
+    if (url.hostname === "wa.me" && url.pathname === "/919289838797") {
+      var field = doc.querySelector('form[data-form="contact"] textarea[name="message"]');
+      var draft = home ? homeEnquiryMessage(home) : (root.location.pathname === "/enquiry-form/" && field ? field.value.trim() : "");
+      if (home || (root.location.pathname === "/enquiry-form/" && field)) {
+        if (draft) url.searchParams.set("text", "Hello Kairali, I would like to enquire.\n\n" + draft);
+        else url.searchParams.delete("text");
+        a.href = url.href;
+      }
+    }
+  }, true);
   function homeSuggest() {
     var form = doc.querySelector('form[data-ahv-home-finder="1"]');
     if (!form || form.getAttribute("data-ahvs-suggest") === "1") return;

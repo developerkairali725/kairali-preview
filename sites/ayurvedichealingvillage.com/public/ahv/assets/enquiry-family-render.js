@@ -30,6 +30,17 @@
     const text = R.flow.waTemplate.map(l => l.replace(/\{(\w+)\}/g, (_, k) => map[k] ?? '')).join('\n');
     return 'https://wa.me/' + R.flow.waNumber + '?text=' + encodeURIComponent(text);
   }
+  function homeEnquiryDraft() {
+    if (location.pathname !== '/enquiry-form/' || !location.hash.startsWith('#message?')) return null;
+    const draft = new URLSearchParams(location.hash.slice(9)).get('draft');
+    return draft ? draft.slice(0, 1000) : null;
+  }
+  function focusEnquiry(n) {
+    const section = Array.from(document.querySelectorAll('#message')).find(el => el.getBoundingClientRect().height > 0);
+    const input = section && section.querySelector('input[name="fname"]');
+    if (input) { section.style.scrollMarginTop = '90px'; input.focus({ preventScroll: true }); section.scrollIntoView({ block: 'start' }); return; }
+    if ((n || 0) < 30) setTimeout(() => focusEnquiry((n || 0) + 1), 50);
+  }
   function applyHead(R) {
     const d = document, H = d.head, M = R.metadata;
     [...H.querySelectorAll('[data-ahv-head]')].forEach(n => n.remove());
@@ -119,5 +130,5 @@
       return null;
     });
   }
-  window.AHV_ENQUIRY_RENDER = { sourceBlocks, resolveRoute, inline, treeText, V, waDraft, applyHead, legacyFields, A, DEFAULT_ROUTE };
+  window.AHV_ENQUIRY_RENDER = { homeEnquiryDraft, focusEnquiry, sourceBlocks, resolveRoute, inline, treeText, V, waDraft, applyHead, legacyFields, A, DEFAULT_ROUTE };
 })();
