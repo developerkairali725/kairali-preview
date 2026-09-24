@@ -2,7 +2,7 @@
 import {useEffect,useRef,type ReactNode} from 'react';
 // The legacy shared chrome mutates its root. Attach it only after React has
 // hydrated this native page and the layout's initial deferred scripts finished.
-export function ReviewsShell({children,consentScript,headerScript}:{children:ReactNode;consentScript:string;headerScript:string}){
+export function ReviewsShell({children,consentScript,headerScript,route='/read-feedback/'}:{children:ReactNode;consentScript:string;headerScript:string;route?:string}){
  const ref=useRef<HTMLDivElement>(null);
  useEffect(()=>{
   let cancelled=false;
@@ -18,5 +18,5 @@ export function ReviewsShell({children,consentScript,headerScript}:{children:Rea
   if(document.readyState==='complete')void boot();else window.addEventListener('load',boot,{once:true});
   return()=>{cancelled=true;window.removeEventListener('load',boot);};
  },[consentScript,headerScript]);
- return <div ref={ref} id="ahv-reviews-root" data-ahv-route="/read-feedback/" data-ahv-family="guest-reviews" className="rv-page">{children}</div>;
+ return <div ref={ref} id="ahv-reviews-root" data-ahv-route={route} data-ahv-family="guest-reviews" className="rv-page">{children}</div>;
 }
