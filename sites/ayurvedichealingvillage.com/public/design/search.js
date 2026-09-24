@@ -116,7 +116,7 @@
 
     /* ---- tokenising: filler out, misspellings mapped, number words + durations lifted out as a facet, adjacent tokens joined */
     function tokenise(raw) {
-      var q = fold(raw);
+      var q = fold(String(raw || "").slice(0, 120)).replace(/\btwenty (one|two|three|four|five|six|seven|eight|nine)\b/g, function (_, unit) { return String(20 + NUMWORDS[unit]); });
       var parts = q.split(" ").filter(Boolean);
       var nights = null, i, out = [], corrections = [];
       for (i = 0; i < parts.length; i++) {
@@ -126,7 +126,7 @@
           nights = /^(week|weeks|wochen|semaines)$/.test(unit) ? n * 7 : n; i++; continue;
         }
         if (/^(fortnight|fortnights)$/.test(w)) { nights = 14; continue; }
-        if (/^\d+$/.test(w)) continue; // bare numbers never fuzzy-match text
+        // Bare numbers are exact identifiers (e.g. suite numbers), never fuzzy text.
         if (FILLER[w]) continue;
         if (MISSPELL[w]) { var to = fold(MISSPELL[w]); corrections.push({ from: w, to: to, how: "misspell" }); to.split(" ").forEach(function (x) { out.push(x); }); continue; }
         out.push(w);
@@ -146,6 +146,7 @@
       var best = null, i, w, list = f.wordList, tol, d;
       if (f.words[tok]) return { factor: 1, word: tok };
       if (f.phraseWords[tok]) best = { factor: 0.5, word: tok };
+      if (/^\d+$/.test(tok)) return best;
       if (tok.length >= 3) {
         for (i = 0; i < list.length; i++) { w = list[i]; if (w.length > tok.length && w.indexOf(tok) === 0) { if (!best || best.factor < 0.9) best = { factor: 0.9, word: w }; break; } }
         if (!best || best.factor < 0.45) { list = f.pwList; for (i = 0; i < list.length; i++) { w = list[i]; if (w.length > tok.length && w.indexOf(tok) === 0) { if (!best || best.factor < 0.45) best = { factor: 0.45, word: w }; break; } } }
@@ -162,7 +163,7 @@
       return best;
     }
     function matchTrigram(tok, f) {
-      if (tok.length < 6) return null;
+      if (tok.length < 6 || /^\d+$/.test(tok)) return null;
       var tg = trigrams(tok), best = null, i, list = f.wordList.concat(f.pwList), j;
       for (i = 0; i < list.length; i++) { j = jaccard(tg, trigrams(list[i])); if (j >= 0.45 && (!best || j > best.j)) best = { factor: 0.5, word: list[i], corrected: true, j: j }; }
       return best;
@@ -211,7 +212,7 @@
       var T = tokenise(raw);
       var qRaw = T.q, qJoined = T.corrected;
       var out = { typed: String(raw || "").trim(), q: qRaw, tokens: T.tokens, nights: T.nights, cls: CLS.NONE, urgent: false, declined: null, consult: null,
-        programmes: [], questions: [], pages: [], caveats: [], corrections: T.corrections.slice(), corrected: null, didYouMean: [], handoff: null, sort: null, generic: null, order: [] };
+        total: 0, shown: 0, counts: { programmes: 0, questions: 0, pages: 0 }, programmes: [], questions: [], pages: [], caveats: [], corrections: T.corrections.slice(), corrected: null, didYouMean: [], handoff: null, sort: null, generic: null, order: [] };
       if (!qRaw && !T.nights) return out;
 
       // safety phrases: exact/normalised only, never fuzzy
@@ -248,7 +249,7 @@
       });
       hitIntents.forEach(function (it) {
         if (it.sort) { out.sort = it.sort; return; }
-        if (progStrong) return;
+        if (progStrong || scope === "faq") return;
         var target = byKey[it.target]; if (!target) return;
         var ex = scored.filter(function (s) { return s.doc === target; })[0];
         if (ex) ex.score += 8; else scored.push({ doc: target, score: 8, full: false, strong: false, hits: {}, corr: {}, cov: 0 });
@@ -257,7 +258,7 @@
       // generic (ambiguous) symptom → several programmes, unless a longer vocabulary phrase matched
       var g = null;
       generic.forEach(function (gg) { if ((hasPhrase(qJoined, gg.term) || hasPhrase(qRaw, gg.term)) && (!g || gg.len > g.len)) g = gg; });
-      if (g) {
+      if (g && scope !== "faq") {
         var longer = scored.some(function (s) { return s.doc.kind === "programme" && s.doc.fields[0].phrases.some(function (p) { return p.split(" ").length > g.len && (hasPhrase(qJoined, p) || hasPhrase(qRaw, p)); }); });
         if (!longer) {
           out.generic = g.term;
@@ -276,15 +277,15 @@
       var pgs = scored.filter(function (s) { return s.doc.kind === "page"; });
 
       // duration facet
-      if (T.nights != null) {
+      if (T.nights != null && scope !== "faq") {
         var pool = progs.length ? progs : docs.filter(function (d4) { return d4.kind === "programme"; }).map(function (d4) { return { doc: d4, score: 1, strong: false, full: true, hits: {}, corr: {}, cov: 1 }; });
         var exact = pool.filter(function (s) { return s.doc.data.nights === T.nights; });
         progs = exact.length ? exact : pool.filter(function (s) { return s.doc.data.nights != null && s.doc.data.nights <= T.nights; });
         if (!T.tokens.length) progs.sort(function (a, b) { return (a.doc.data.from ? a.doc.data.from.INR : 9e9) - (b.doc.data.from ? b.doc.data.from.INR : 9e9); });
       }
-      if (out.sort === "priceAsc") {
+      if (out.sort === "priceAsc" && scope !== "faq") {
         var named = progs.some(function (s) { return s.strong; });
-        var pool2 = named ? progs : docs.filter(function (d5) { return d5.kind === "programme"; }).map(function (d5) { return { doc: d5, score: 1, strong: false, full: true, exact: 0, hits: {}, corr: {}, cov: 1 }; });
+        var pool2 = (named || T.nights != null) ? progs : docs.filter(function (d5) { return d5.kind === "programme"; }).map(function (d5) { return { doc: d5, score: 1, strong: false, full: true, exact: 0, hits: {}, corr: {}, cov: 1 }; });
         progs = pool2.filter(function (s) { return s.doc.data.from && s.doc.data.from.INR != null && s.doc.data.basis !== "night"; }).sort(function (a, b) { return a.doc.data.from.INR - b.doc.data.from.INR; });
       }
 
@@ -329,7 +330,8 @@
       // hand-off for the finder: a non-programme intent shows one grey row instead of "no close match"
       if (scope === "programmes" && !progs.length && pgs.length && pgs[0].score >= 8) out.handoff = { route: pgs[0].doc.key, label: pgs[0].doc.label };
 
-      var cap = o.limit || 12;
+      var cap = o.limit || (scope === "site" ? 12 : docs.length);
+      out.counts = { programmes: progs.length, questions: qs.length, pages: pgs.length };
       out.programmes = progs.slice(0, cap).map(function (s) { return { route: s.doc.key, score: round(s.score), hits: Object.keys(s.hits), data: s.doc.data }; });
       out.questions = qs.slice(0, cap).map(function (s) { return { id: s.doc.key, score: round(s.score), hits: Object.keys(s.hits), data: s.doc.data }; });
       out.pages = pgs.slice(0, cap).map(function (s) { return { route: s.doc.key, score: round(s.score), hits: Object.keys(s.hits), data: s.doc.data }; });
@@ -347,7 +349,8 @@
       ["programmes", "questions", "pages"].forEach(function (k) { if (k !== first && out[k].length) order.push(k); });
       if (out[first].length) order.unshift(first);
       out.order = order;
-      out.total = out.programmes.length + out.questions.length + out.pages.length;
+      out.total = progs.length + qs.length + pgs.length;
+      out.shown = out.programmes.length + out.questions.length + out.pages.length;
       return out;
     }
     function round(x) { return Math.round(x * 100) / 100; }
@@ -404,7 +407,7 @@
       return true;
     } catch (e) { return false; }
   }
-  var api = { track: track, measurementActive: measurementActive, version: "2026-09-23b", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
+  var api = { track: track, measurementActive: measurementActive, version: "2026-09-24a", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
   root.AHVSearch = api;
   if (!root.document) return;
 
@@ -429,16 +432,16 @@
         '<div class="ahvs-head"><h2 id="ahvs-title" class="ahvs-title">Search Kairali</h2>' +
           '<div class="ahvs-cur" role="group" aria-label="Currency"><button type="button" data-cur="INR">₹</button><button type="button" data-cur="USD">$</button><button type="button" data-cur="EUR">€</button></div>' +
           '<button type="button" class="ahvs-close" data-close="1" aria-label="Close search">✕</button></div>' +
-        '<form class="ahvs-form" action="/ayurvedic-treatments/" method="get" role="search"><span class="ahvs-glyph" aria-hidden="true">⌕</span>' +
+        '<form class="ahvs-form" action="/search/" method="get" role="search"><span class="ahvs-glyph" aria-hidden="true">⌕</span>' +
           '<label for="ahvs-input" class="ahvs-sr">Search Kairali</label>' +
-          '<input id="ahvs-input" class="ahvs-input" name="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Condition, price, airport, visa…">' +
+          '<input id="ahvs-input" class="ahvs-input" name="q" type="search" maxlength="120" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Condition, price, airport, visa…">' +
           '<button type="button" class="ahvs-clear" aria-label="Clear" hidden>✕</button></form>' +
         '<p class="ahvs-status" aria-live="polite"></p>' +
         '<div class="ahvs-body"></div>' +
-        '<div class="ahvs-fallback"><p class="ahvs-notsure"></p><div class="ahvs-fb-row">' +
-          '<a href="' + WA_HREF + '" target="_blank" rel="noopener noreferrer" data-fb="whatsapp"></a>' +
-          '<a href="' + CONSULT_HREF + '" data-fb="consultation"></a>' +
-          '<a href="' + TEL_HREF + '" data-fb="call"></a></div></div>' +
+        '<div class="ahvs-fallback"><p class="ahvs-notsure">Need help finding the right information?</p><div class="ahvs-fb-row">' +
+          '<a href="' + WA_HREF + '" target="_blank" rel="noopener noreferrer" data-fb="whatsapp">WhatsApp patient care</a>' +
+          '<a href="' + CONSULT_HREF + '" data-fb="consultation">Free online consultation</a>' +
+          '<a href="' + TEL_HREF + '" data-fb="call">Call +91 9555 156 156</a></div></div>' +
       '</div>';
     doc.body.appendChild(dialog);
     input = dialog.querySelector(".ahvs-input");
@@ -448,17 +451,14 @@
       var t = e.target;
       if (t.closest("[data-close]")) { e.preventDefault(); close(); return; }
       var cb = t.closest("[data-cur]"); if (cb) { setCur(cb.getAttribute("data-cur")); return; }
-      if (t.closest(".ahvs-clear")) { input.value = ""; input.focus(); render(); return; }
+      if (t.closest(".ahvs-clear")) { chipsMode = false; uncorrected = false; input.value = ""; input.focus(); render(); return; }
       var chip = t.closest("[data-q]"); if (chip) { e.preventDefault(); uncorrected = false; input.value = chip.getAttribute("data-q"); input.focus(); render(); return; }
       var raw = t.closest("[data-raw]"); if (raw) { e.preventDefault(); uncorrected = true; render(); return; }
       var cond = t.closest("[data-chips]"); if (cond) { e.preventDefault(); chipsMode = true; render(); return; }
       var cchip = t.closest("[data-chip]"); if (cchip) { e.preventDefault(); chipsMode = false; renderChip(cchip.getAttribute("data-chip")); return; }
       var more = t.closest("[data-more]"); if (more) { e.preventDefault(); var grp = more.closest(".ahvs-group"); grp.classList.add("ahvs-open"); more.remove(); return; }
     });
-    dialog.querySelector(".ahvs-form").addEventListener("submit", function (e) {
-      var first = body.querySelector("a.ahvs-row"); if (first) { e.preventDefault(); first.click(); }
-      // no result yet: the native GET submits to the programme finder (/ayurvedic-treatments/?q=)
-    });
+    // Enter in the input opens all results; Enter on a focused result follows that link.
     input.addEventListener("input", function () { uncorrected = false; chipsMode = false; clearTimeout(timer); timer = setTimeout(render, 80); });
     dialog.addEventListener("keydown", onKey);
     setCur(cur, true);
@@ -482,7 +482,7 @@
   }
   function onKey(e) {
     if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
-    var rows = Array.prototype.slice.call(dialog.querySelectorAll("a.ahvs-row, .ahvs-empty a, .ahvs-empty button"));
+    var rows = Array.prototype.filter.call(dialog.querySelectorAll("a.ahvs-row, .ahvs-empty a, .ahvs-empty button"), function (el) { return el.getClientRects().length > 0; });
     if ((e.key === "ArrowDown" || e.key === "ArrowUp") && rows.length) {
       e.preventDefault();
       var i = rows.indexOf(doc.activeElement);
@@ -549,8 +549,8 @@
     if (!rows.length) return "";
     var shown = rows.slice(0, 3), rest = rows.slice(3);
     return '<section class="ahvs-group" aria-label="' + esc(ui.groups[key]) + '"><h3 class="ahvs-h">' + esc(ui.groups[key]) + '</h3><ul class="ahvs-list">' +
-      shown.map(renderer).join("") + (rest.length ? '<div class="ahvs-rest">' + rest.map(renderer).join("") + "</div>" : "") + "</ul>" +
-      (rest.length ? '<button type="button" class="ahvs-more" data-more="1">' + esc(fmt(ui.showAll, { n: rows.length })) + "</button>" : "") + "</section>";
+      shown.map(renderer).join("") + "</ul>" + (rest.length ? '<ul class="ahvs-list ahvs-rest">' + rest.map(renderer).join("") + "</ul>" : "") +
+      (rest.length ? '<button type="button" class="ahvs-more" data-more="1">' + esc(fmt(ui.showAll, { n: rows.length }).replace(/^Show all /, "Show ")) + "</button>" : "") + "</section>";
   }
   function emptyState(heading) {
     var b = ui.emptyButtons.map(function (x) { return x.action === "chips" ? '<button type="button" data-chips="1">' + esc(x.label) + "</button>" : '<a href="' + esc(x.href) + '">' + esc(x.label) + "</a>"; }).join("");
@@ -584,7 +584,7 @@
     res.caveats.forEach(function (c) { html += '<p class="ahvs-caveat">' + esc(c) + "</p>"; });
     var line;
     if (res.corrected && !uncorrected && res.total) {
-      line = esc(fmt(ui.showingFor, { corrected: res.corrected, typed: res.typed })) + ' <a href="#" data-raw="1">' + esc(fmt(ui.searchInstead, { typed: res.typed })) + "</a>";
+      line = esc(fmt(ui.showingFor, { corrected: res.corrected, typed: res.typed }));
     } else line = esc(fmt(res.total === 1 ? ui.resultOne : ui.results, { n: res.total, q: res.typed }));
     if (res.didYouMean.length) html += '<p class="ahvs-dym"><span>' + esc(ui.didYouMean) + "</span> " + res.didYouMean.map(function (w) { return '<button type="button" data-q="' + esc(w) + '">' + esc(w) + "</button>"; }).join(" · ") + "</p>";
     if (!res.total) {
@@ -599,6 +599,7 @@
       if (k === "questions") html += group("questions", res.questions, rowQuestion);
       if (k === "pages") html += group("pages", res.pages, rowPage);
     });
+    html += '<p><a class="ahvs-all" href="/search/?q=' + encodeURIComponent(q) + '">View all ' + res.total + (res.total === 1 ? ' result' : ' results') + ' →</a></p>';
     body.innerHTML = html;
   }
 
@@ -636,6 +637,7 @@
     box.id = "ahvs-home-list"; box.className = "ahvs-home-list"; box.setAttribute("role", "listbox");
     box.setAttribute("aria-label", "Suggestions"); box.hidden = true;
     host.appendChild(box);
+    inp.setAttribute("maxlength", "120");
     inp.setAttribute("role", "combobox"); inp.setAttribute("aria-autocomplete", "list");
     inp.setAttribute("aria-controls", box.id); inp.setAttribute("aria-expanded", "false");
     var active = -1, rows = [], t2 = null;
@@ -649,9 +651,14 @@
       if (q.length < 2 || !engine) { hide(); return; }
       var res = engine.query(q, { scope: "site" });
       var list = [];
-      res.programmes.slice(0, 4).forEach(function (r) { var p = r.data; list.push({ href: p.route, t: p.name, a: p.sanskrit || (p.durationDisplay || ""), k: "Programme" }); });
-      res.questions.slice(0, 2).forEach(function (r) { var qd = r.data; list.push({ href: qd.href || ("/faqs-downloads/#" + qd.id), t: qd.q, a: qd.topic || "", k: "Question" }); });
-      res.pages.slice(0, 2).forEach(function (r) { var p = r.data; list.push({ href: p.route, t: p.label, a: p.desc || "", k: "Page" }); });
+      res.order.forEach(function (kind) {
+        res[kind].slice(0, 6).forEach(function (r) {
+          var p = r.data;
+          if (kind === "programmes") list.push({ href: p.route, t: p.name, a: p.sanskrit || p.durationDisplay || "", k: "Programme" });
+          else if (kind === "questions") list.push({ href: p.href || "/faqs-downloads/#" + p.id, t: p.q, a: p.topic || "", k: "Question" });
+          else list.push({ href: p.route, t: p.label, a: p.desc || "", k: "Page" });
+        });
+      });
       list = list.slice(0, 6);
       if (!list.length) { hide(); return; }
       box.innerHTML = list.map(function (it, i) {

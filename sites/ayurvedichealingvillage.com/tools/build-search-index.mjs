@@ -168,7 +168,7 @@ for (const i of V.intents) if (i.target.startsWith("/") && !ROUTES.has(i.target)
 for (const i of V.intents) if (!i.target.startsWith("/") && !faqs.find((f) => f.id === i.target)) throw new Error("intent target FAQ id unknown: " + i.target);
 for (const b of V.ui.emptyButtons) if (b.href && !ROUTES.has(b.href)) throw new Error("empty-state button route not in manifest: " + b.href);
 
-const SKIP = new Set(["/search-results/", "/thank-you/", "/thankyou/"]);
+const SKIP = new Set(["/search-results/", "/thank-you/", "/thankyou/", "/contact-us/thank-you/", "/onlinebookingthankyou/", "/onlineconsultation-thanks/", "/ppc-thanks/", "/thanks-old/", "/thanks/", "/gift-test/", "/test-page/", "/test-page-2/", "/testing/"]);
 const pages = [];
 for (const r of MANIFEST) {
   if (PROGRAMME_ROUTES.has(r.path) || SKIP.has(r.path)) continue;

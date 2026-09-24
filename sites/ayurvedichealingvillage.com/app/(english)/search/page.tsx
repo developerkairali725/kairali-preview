@@ -42,7 +42,7 @@ type Result = {
   typed: string; cls: string; total: number; order: string[]; corrected: string | null; caveats: string[];
   programmes: Row[]; questions: Row[]; pages: Row[];
 };
-type Engine = { query: (q: string, o: { scope: string }) => Result; answerLine: (p: any, cur: string, ui: any) => string };
+type Engine = { query: (q: string, o: { scope: string; limit?: number }) => Result; answerLine: (p: any, cur: string, ui: any) => string };
 
 let cached: { engine: Engine; index: any } | null = null;
 function engine(): { engine: Engine; index: any } {
@@ -97,7 +97,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
     });
   })();`;
   const ui = index.ui;
-  const res = typed.length >= 2 ? eng.query(typed, { scope: "site" }) : null;
+  const res = typed.length >= 2 ? eng.query(typed, { scope: "site", limit: 1000 }) : null;
   const status = !res ? "" : res.total === 0 ? ui.zero.replace("{q}", typed) : res.corrected
     ? ui.showingFor.replace("{corrected}", res.corrected).replace("{typed}", typed)
     : (res.total === 1 ? ui.resultOne : ui.results).replace("{n}", String(res.total)).replace("{q}", typed);
@@ -118,7 +118,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<Rec
         <form action="/search/" method="get" role="search" style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 56, border: "1px solid var(--bronze-400)", borderRadius: 4, background: "var(--card-bg)", padding: "0 6px 0 14px" }}>
           <span aria-hidden="true" style={{ color: "var(--bronze-600)", fontSize: 20 }}>⌕</span>
           <label htmlFor="search-q" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap" }}>{ui.dialogTitle}</label>
-          <input id="search-q" name="q" type="search" defaultValue={typed} placeholder={ui.placeholder} autoComplete="off" style={{ flex: 1, minWidth: 0, minHeight: 54, border: 0, outline: "none", background: "transparent", font: "18px Mulish, sans-serif", color: ink }} />
+          <input id="search-q" name="q" type="search" maxLength={120} defaultValue={typed} placeholder={ui.placeholder} autoComplete="off" style={{ flex: 1, minWidth: 0, minHeight: 54, border: 0, outline: "none", background: "transparent", font: "18px Mulish, sans-serif", color: ink }} />
           <button type="submit" style={{ minHeight: 44, padding: "0 18px", border: 0, borderRadius: 4, background: brown, color: paper, font: "700 14px Mulish, sans-serif", letterSpacing: 1.2, textTransform: "uppercase", cursor: "pointer" }}>Search</button>
         </form>
         {res ? (

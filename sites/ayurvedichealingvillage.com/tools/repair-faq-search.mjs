@@ -71,6 +71,7 @@ class Component extends DCLogic {
     items.forEach(d => { sync(d); d.addEventListener('toggle', () => sync(d)); });
     const docs = items.map((d, i) => ({ id: d.id, n: i + 1, topic: d._ahvTopic, q: d._ahvText, a: d._ahvAnswer, kw: [] }));
     let engine = null;
+    let deepLinkActive = true;
     const mark = (d, hits) => {
       if (!d._ahvH) return;
       if (!hits || !hits.length) { d._ahvH.innerHTML = d._ahvHtml; return; }
@@ -96,7 +97,7 @@ class Component extends DCLogic {
           });
         }
       }
-      const forced = ranked && location.hash && /^#q-\\d+$/.test(location.hash) ? location.hash.slice(1) : null;
+      const forced = deepLinkActive && location.hash && /^#q-\\d+$/.test(location.hash) ? location.hash.slice(1) : null;
       let hits = 0;
       const open = ranked && ranked.size <= 5;
       groups.forEach(g => {
@@ -108,7 +109,7 @@ class Component extends DCLogic {
         its.forEach(d => {
           const on = shown.indexOf(d) >= 0;
           d.style.display = on ? '' : 'none';
-          d.open = ranked ? (on && (open || d.id === forced)) : false;
+          d.open = on && (d.id === forced || (ranked && open));
           mark(d, ranked && on && ranked.has(d.id) ? ranked.get(d.id).hits : null);
           sync(d);
         });
@@ -127,8 +128,8 @@ class Component extends DCLogic {
             ? 'Showing ' + qn(hits) + ' for \\u201C' + corrected + '\\u201D \\u2014 you typed \\u201C' + typed + '\\u201D'
             : qn(hits) + (hits === 1 ? ' matches ' : ' match ') + '\\u201C' + typed + '\\u201D';
     };
-    input.addEventListener('input', apply);
-    if (clear) clear.addEventListener('click', () => { input.value = ''; apply(); input.focus(); });
+    input.addEventListener('input', () => { deepLinkActive = false; apply(); });
+    if (clear) clear.addEventListener('click', () => { deepLinkActive = false; input.value = ''; apply(); input.focus(); });
     // deep links: ?q=<text> pre-fills the filter, #q-NN opens that question
     try {
       const u = new URLSearchParams(location.search);
