@@ -10,6 +10,7 @@
  * It deliberately adds no markup of its own inside the design root: whatever
  * the page shows is the approved view, unchanged.
  */
+import { youtubeNewTabs } from "./youtube-links";
 import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
@@ -48,7 +49,7 @@ const PRERENDER_DIR = join(process.cwd(), "english-candidate", "prerender");
 
 function prerenderedBody(routePath: string): string {
   try {
-    return readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8");
+    return youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8"));
   } catch {
     return "";
   }
