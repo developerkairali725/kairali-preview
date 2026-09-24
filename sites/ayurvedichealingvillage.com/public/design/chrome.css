@@ -181,3 +181,6 @@ section[aria-label="Treatment and wellness programmes"] > p:has(a[href*="/ahv/as
   width:100%;max-width:88ch!important;margin-inline:auto!important;line-height:1.7!important;box-sizing:border-box;text-align:left;
 }
 section[aria-label="Treatment and wellness programmes"]:has(> p a[href*="/ahv/assets/doc/"]){padding-bottom:clamp(32px,4vw,56px)!important}
+
+/* Keep partner artwork restrained despite shared responsive-image rules. */
+#partner-logos img{width:100%!important;max-width:180px!important;height:100px!important;object-fit:contain}
