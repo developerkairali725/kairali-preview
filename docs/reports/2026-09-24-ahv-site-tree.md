@@ -99,3 +99,18 @@ no locked word, rail = sitemap, children in their intended order, both views and
 - Fact conflicts (tariff year, three different Deluxe rates, antiquity figure, generations): QUESTIONS.md
   Q-AHV-TARIFF-CONFLICTS.
 - Locales: labels are EN only; DE/FR need the same moves and translated labels.
+
+## Handover to Codex (owner, 24 Sep 2026)
+
+Branch `codex/ahv-english-staging-20260915`, clean and pushed. Latest preview: https://kairali-web-factory-ayurvedichealingvillage-evyapnghg-kairali.vercel.app.
+
+- **Change a page's place or label:** edit `english-candidate/site-tree-overrides.json` (moves / relabels / drops /
+  order), then run `node tools/build-site-tree.mjs && node tools/build-section-nav.mjs && node tools/build-sitemap-navigation.mjs`,
+  then `node --test test/sitemap-navigation.test.mjs`. Never hand-edit site-tree.json, section-nav.data.js or the sitemap views.
+- **After an import:** the run order is in the tool headers; site-tree first, then the rail and sitemap, then
+  repair-things-to-do, repair-gallery-hub, repair-wrong-links, prerender (`--only` takes a comma list), build.
+- **Next content work (not started):** hub pages that should link their new children (list above); the /offers/
+  [TO CONFIRM] fields; the package FAQ fixes in docs/reports/2026-09-23-ahv-package-faq-audit.md — start with the
+  68 shared-template findings; all clinical copy needs Dr. Deepu John's sign-off and drafts go through content-geo-writer.
+- **Owner questions open:** Q-AHV-YOGA-TEACHER-TRAINING, Q-AHV-TWIN-PAGES, Q-AHV-TARIFF-CONFLICTS,
+  Q-AHV-PRICE-PDF-WORDS, Q-AHV-SANSKRIT-YOGA, Q-AHV-AKHILA-PHOTO, Q-AHV-OFFER-PHOTOS.
