@@ -55,6 +55,6 @@ Because you asked for read-only, I haven't saved this review to `docs/reports/`.
 
 ## Codex verification after review
 
-Production-mode build, TypeScript, 78 unit tests and 258 acceptance queries passed. 241 nonredirect static pages contain H1 content with no conflicting robots values. Six finder routes at desktop/mobile render index/follow; search and confirmation routes render noindex/follow; canonical consolidation /our-story/ remains index/follow; the gated LP returns404. This is local production-mode evidence, not a live domain release.
+Production-mode build, TypeScript, 79 unit tests and 258 acceptance queries passed. 241 nonredirect static pages contain H1 content with no conflicting robots values. Six finder routes at desktop/mobile render index/follow; search and confirmation routes render noindex/follow; canonical consolidation /our-story/ remains index/follow; the gated LP returns404. This is local production-mode evidence, not a live domain release.
 
 Two review factual corrections: the index has32 programme records valid through30September2026, five courses valid1October2026–30September2027, and one unpriced record. Therefore not every price expires on30September. Served FAQ templates already use1500characters; the older repair-tool source has now been aligned. Data sync replacement now uses a callback, and the owner room-fact confirmation is recorded with q-16. Clinical sign-offs remain separate.

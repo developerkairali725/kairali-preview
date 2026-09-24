@@ -18,7 +18,7 @@ The owner requested every English search interface be battle-tested with Claude 
 
 ## Verification
 
-78 unit tests and 258 acceptance examples pass. Production-mode build and TypeScript pass. Local desktop 1280/mobile390 verification covers all six finders, FAQ, global search, homepage suggestions, full results and sitemap filter. All six finder travel handoffs at both widths show the correct link, no irrelevant medical fallback and no horizontal overflow. Production HTML audit: 241 nonredirect static routes have H1 content, zero conflicting robots values; native reviews/feedback use implicit indexability. Production utility noindex, canonical consolidation and closed campaign route checked.
+79 unit tests and 258 acceptance examples pass. Production-mode build and TypeScript pass. Local desktop 1280/mobile390 verification covers all six finders, FAQ, global search, homepage suggestions, full results and sitemap filter. All six finder travel handoffs at both widths show the correct link, no irrelevant medical fallback and no horizontal overflow. Production HTML audit: 241 nonredirect static routes have H1 content, zero conflicting robots values; native reviews/feedback use implicit indexability. Production utility noindex, canonical consolidation and closed campaign route checked.
 
 Google's current guidance: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide . Indexable, accessible, useful content is the foundation; no special AI schema or llms.txt is required for Google. This is technical readiness testing, not a guarantee of indexing/rankings or an AI answer-engine integration. Search results stay noindex.
 
