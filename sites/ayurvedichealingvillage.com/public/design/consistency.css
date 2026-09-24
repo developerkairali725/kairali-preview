@@ -165,3 +165,13 @@
 #ahv-design-root[data-ahv-consistency="1"][data-ahv-family="campaign-nine"] main ul:has(> li > a[href^="tel:"]):has(> li > a[href^="mailto:"]) > li::marker { content:""; }
 /* a list emptied by consistency.js (the slider's "Image 01…06" stubs) leaves no gap */
 #ahv-design-root[data-ahv-consistency="1"] main ul:empty { display:none !important; }
+
+/* Offers: centre the closing invitation within the full-width panel. */
+[data-ahv-route="/offers/"] [aria-labelledby="not-sure-which"] {
+  text-align:center;
+}
+[data-ahv-route="/offers/"] [aria-labelledby="not-sure-which"] > div > p,
+[data-ahv-route="/offers/"] [aria-labelledby="not-sure-which"] > div > div {
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
