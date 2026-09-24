@@ -225,7 +225,7 @@ img { max-width: 100%; }
 .lp-hero-visual { padding:32px; align-items:center; }
 .lp-photo { width:100%; max-width:520px; height:auto; aspect-ratio:4/5; }
 .lp-photo img { height:100%; object-fit:cover; }
-.lp-enquire-link { color:#fff; min-height:44px; display:inline-flex; align-items:center; text-underline-offset:4px; }
+.lp-enquire-link { color:var(--ivory); min-height:44px; display:inline-flex; align-items:center; text-underline-offset:4px; }
 .lp-cred span { font-size:14px; letter-spacing:.02em; text-transform:none; }
 .lp-legal { font-size:15px; }
 .lp-legal a { min-height:44px; display:inline-flex; align-items:center; }
@@ -248,29 +248,29 @@ img { max-width: 100%; }
  .photo-band img { max-height:280px; object-fit:cover; }
 }
 @media(prefers-reduced-motion:reduce){.lp-sticky{transition:none;}}
-.lp-page {--font-body:Mulish,system-ui,sans-serif;--font-display:Marcellus,Georgia,serif;--font-caption:Mulish,system-ui,sans-serif;--ivory:#F7F4EA;--ink:#2A2118;}
-.lp-brand-link {color:#f7f4ea;font-family:Marcellus,Georgia,serif;font-size:20px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;}
+.lp-page {--font-body:Mulish,system-ui,sans-serif;--font-display:Marcellus,Georgia,serif;--font-caption:Mulish,system-ui,sans-serif;}
+.lp-brand-link {color:var(--ivory);font-family:Marcellus,Georgia,serif;font-size:20px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;}
 /* The LP lane now uses the same paper, gold and brown visual language as the
    final English site; legacy full-screen green sales layouts are retired. */
-.lp-hero {background:#f7f4ea;color:#2a2118;max-width:1240px;margin:auto;}
+.lp-hero {background:var(--ivory);color:var(--ink);max-width:1240px;margin:auto;}
 .lp-hero-copy {padding:28px 32px 36px;}
-.lp-brand-link {order:-5;color:#2a2118;align-self:flex-start;}
+.lp-brand-link {order:-5;color:var(--ink);align-self:flex-start;}
 .lp-brand-link img {width:180px;height:66px;object-fit:contain;}
-.lp-overline {order:-4;font-size:14px;color:#675532;letter-spacing:.03em;text-transform:none;}
-.lp-hero h1 {order:-3;color:#2a2118;font-size:clamp(32px,3.6vw,49px);}
-.lp-hero h1 em {border:0;color:#006038;}
-.lp-sub {order:-2;color:#4c4439;font-size:18px;}
+.lp-overline {order:-4;font-size:14px;color:color-mix(in srgb, var(--ink) 78%, var(--ivory));letter-spacing:.03em;text-transform:none;}
+.lp-hero h1 {order:-3;color:var(--ink);font-size:clamp(32px,3.6vw,49px);}
+.lp-hero h1 em {border:0;color:var(--forest-500);}
+.lp-sub {order:-2;color:color-mix(in srgb, var(--ink) 78%, var(--ivory));font-size:18px;}
 .cta-col {order:-1;}
-.btn-wa {background:#eeb41e;border-radius:4px;box-shadow:none;padding:13px 22px;line-height:1.4;text-align:center;}
-.btn-wa:hover {background:#e2a813;color:#2a2118;}
-.lp-enquire-link {color:#5a4420;}
-.doc-chip span,.wa-number {color:#5b5347;font-size:14px;letter-spacing:0;}
-.lp-creds {border-color:#dbd1bf;gap:16px;}
+.btn-wa {background:var(--marigold-400);border-radius:4px;box-shadow:none;padding:13px 22px;line-height:1.4;text-align:center;}
+.btn-wa:hover {background:color-mix(in srgb, var(--marigold-400) 92%, var(--ink));color:var(--ink);}
+.lp-enquire-link {color:var(--bronze-600);}
+.doc-chip span,.wa-number {color:color-mix(in srgb, var(--ink) 78%, var(--ivory));font-size:14px;letter-spacing:0;}
+.lp-creds {border-color:var(--ink-line);gap:16px;}
 .lp-cred {flex:1 1 40%;margin:0;padding:12px 0 0;}
-.lp-cred span {color:#5b5347;font-size:14px;letter-spacing:0;text-transform:none;}
-.nabh-chip {border-color:#bdb092;}
+.lp-cred span {color:color-mix(in srgb, var(--ink) 78%, var(--ivory));font-size:14px;letter-spacing:0;text-transform:none;}
+.nabh-chip {border-color:color-mix(in srgb, var(--ink) 30%, var(--ivory));}
 .lp-photo {border-radius:4px;}
-.lp-photo figcaption span {color:#f7f4ea;font-size:14px;}
+.lp-photo figcaption span {color:var(--ivory);font-size:14px;}
 .lp-section {padding:48px 0;}
 .lp-section .container {max-width:1160px;}
 .lp-section h2 {max-width:34ch;}
