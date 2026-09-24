@@ -170,3 +170,19 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
 @media(max-width:699px){
  body[data-ahv-chat-open="true"] #chatbase-bubble-window{top:12px!important;bottom:calc(144px + env(safe-area-inset-bottom,0px))!important;right:12px!important;left:auto!important;width:calc(100% - 24px)!important;height:calc(100dvh - 156px - env(safe-area-inset-bottom,0px))!important;max-height:none!important;border-radius:14px!important}
 }
+
+/* Mobile footer: trim empty spacing while retaining comfortable touch rows. */
+@media (max-width: 699px) {
+  #ahv-design-root footer:has(> a[href^="tel:"]) {
+    padding-top: 32px !important;
+  }
+  #ahv-design-root footer > div[style*="grid-template-columns"]:has(> a:nth-of-type(7)) {
+    row-gap: 4px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  #ahv-design-root footer > div[style*="grid-template-columns"]:has(> a:nth-of-type(7)) > a {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+}
