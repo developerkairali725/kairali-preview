@@ -44,7 +44,9 @@ window.AHV_PARTNERS = {
       "label": "Lotus Travel",
       "href": "https://whyayurveda.org/kairali-lotus-travel-quality-partner-recognition/",
       "target": "_blank",
-      "rel": "noopener noreferrer"
+      "rel": "noopener noreferrer",
+      "id": "lotus-travel",
+      "linkLabel": "Read the recognition ↗ (new tab)"
     },
     {
       "src": "/images/og/kairali-air-india-maharaja-club.html.jpg",
@@ -52,7 +54,9 @@ window.AHV_PARTNERS = {
       "label": "Air India Maharaja Club",
       "href": "/kairali-air-india-maharaja-club.html",
       "target": "_self",
-      "rel": ""
+      "rel": "",
+      "id": "air-india",
+      "linkLabel": "Explore member benefits →"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-01-BalanceBoat-Destination.webp",
@@ -62,7 +66,12 @@ window.AHV_PARTNERS = {
       "height": 250,
       "alt": "BalanceBoat Destination logo",
       "label": "BalanceBoat Destination",
-      "sourceOrder": 1
+      "sourceOrder": 1,
+      "id": "balance-boat",
+      "href": "/contact-us/#message",
+      "target": "_self",
+      "rel": "",
+      "linkLabel": "Ask about this partner →"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-02-healingGuide.webp",
@@ -72,7 +81,12 @@ window.AHV_PARTNERS = {
       "height": 250,
       "alt": "healingGuide logo",
       "label": "healingGuide",
-      "sourceOrder": 2
+      "sourceOrder": 2,
+      "id": "healingguide",
+      "href": "/contact-us/#message",
+      "target": "_self",
+      "rel": "",
+      "linkLabel": "Ask about this partner →"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-03-fit-REISEN-GROUP.webp",
@@ -85,7 +99,9 @@ window.AHV_PARTNERS = {
       "sourceOrder": 3,
       "href": "https://whyayurveda.org/kairali-the-ayurvedic-healing-village-wins-fit-reisen-award-for-premium-partner-ayurveda-and-yoga-2024/",
       "target": "_blank",
-      "rel": "noopener noreferrer"
+      "rel": "noopener noreferrer",
+      "id": "fit-reisen",
+      "linkLabel": "Read the recognition ↗ (new tab)"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-04-Global-Spa.webp",
@@ -95,7 +111,12 @@ window.AHV_PARTNERS = {
       "height": 250,
       "alt": "Global Spa logo",
       "label": "Global Spa",
-      "sourceOrder": 4
+      "sourceOrder": 4,
+      "id": "globalspa",
+      "href": "/contact-us/#message",
+      "target": "_self",
+      "rel": "",
+      "linkLabel": "Ask about this partner →"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-05-Spafinder-Wellness-365.webp",
@@ -105,7 +126,12 @@ window.AHV_PARTNERS = {
       "height": 250,
       "alt": "Spafinder Wellness 365 logo",
       "label": "Spafinder Wellness 365",
-      "sourceOrder": 5
+      "sourceOrder": 5,
+      "id": "spafinder",
+      "href": "/contact-us/#message",
+      "target": "_self",
+      "rel": "",
+      "linkLabel": "Ask about this partner →"
     },
     {
       "src": "/ahv/assets/img/AHV-Partner-06-PATA-New-York.webp",
@@ -115,7 +141,12 @@ window.AHV_PARTNERS = {
       "height": 250,
       "alt": "PATA New York Chapter — Pacific Asia Travel Association logo",
       "label": "PATA New York Chapter — Pacific Asia Travel Association",
-      "sourceOrder": 6
+      "sourceOrder": 6,
+      "id": "pata-new-york",
+      "href": "/contact-us/#message",
+      "target": "_self",
+      "rel": "",
+      "linkLabel": "Ask about this partner →"
     }
   ],
   "breadcrumb": [
