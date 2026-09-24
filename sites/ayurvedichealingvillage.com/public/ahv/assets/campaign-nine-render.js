@@ -62,75 +62,29 @@
 
   // The source form, control for control: exact names, types, order and requiredness, with a real visible label
   // for each (the source relied on placeholders alone). Inert by contract — nothing is posted anywhere.
-  function formEl(F, note) {
-    if (!F || !F.fields || !F.fields.length) return null;
-    const R = React.createElement;
-    const base = { width: '100%', boxSizing: 'border-box', minHeight: '48px', padding: '12px 14px', fontSize: '17px', lineHeight: 1.5,
-      border: '1px solid #9A8E78', borderRadius: '4px', background: '#fff', color: '#2A2118',
-      fontFamily: "'Mulish',sans-serif" };
-    const rows = [];
-    const radios = F.fields.filter(f => f.type === 'radio');
-    const seen = {};
-    F.fields.forEach((f, i) => {
-      const k = 'f' + i;
-      if (f.type === 'submit') return;
-      if (f.type === 'radio') {
-        if (seen[f.name]) return; seen[f.name] = true;
-        rows.push(R('fieldset', { key: k, style: { border: 0, margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', gap: '18px', alignItems: 'center' } },
-          R('legend', { style: { padding: 0, fontSize: '17px', fontWeight: 700, marginBottom: '8px' } }, LBL[f.name] || f.name),
-          ...radios.filter(r => r.name === f.name).map((r, j) => R('label', { key: k + '-' + j,
-            style: { display: 'inline-flex', alignItems: 'center', gap: '10px', minHeight: '44px', fontSize: '17px' } },
-            R('input', { type: 'radio', name: r.name, value: r.value, 'data-source-pointer': r.ptr,
-              style: { width: '22px', height: '22px' } }), r.value))));
-        return;
-      }
-      if (f.type === 'checkbox') {
-        // The consent anchor comes from the route's own source node — href and link text both. The Neo
-        // routes' source href has no trailing slash; hardcoding one would overwrite source evidence.
-        const ca = F.consentAnchor;
-        const href = ca ? (/^https?:/.test(ca.sourceHref) ? ca.sourceHref : A + ca.sourceHref) : null;
-        const linkText = (ca && ca.text) ? ca.text.replace(/\s+/g, ' ') : 'privacy & terms of use.';
-        rows.push(R('label', { key: k, style: { display: 'flex', gap: '12px', alignItems: 'flex-start', minHeight: '44px', fontSize: '17px', lineHeight: 1.6 } },
-          R('input', { type: 'checkbox', name: f.name, 'data-source-pointer': f.ptr, required: f.required || undefined,
-            style: { width: '22px', height: '22px', marginTop: '3px', flex: '0 0 auto' } }),
-          R('span', null, 'I have read and agree to ayurvedichealingvillage.com ',
-            href
-              ? R('a', { href: href, 'data-source-href': ca.sourceHref, 'data-source-pointer': ca.ptr,
-                  onClick: undefined, /* preview-only nav guard neutralised for the published site */ style: { textUnderlineOffset: '2px' } }, linkText)
-              : R('span', null, linkText))));
-        return;
-      }
-      const id = 'c9-' + f.name + '-' + i;
-      rows.push(R('div', { key: k, style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
-        R('label', { htmlFor: id, style: { fontSize: '17px', fontWeight: 700 } },
-          (LBL[f.name] || f.placeholder || f.name), f.required ? R('span', { style: { color: '#8A2B1F' } }, ' *') : null),
-        f.control === 'textarea'
-          ? R('textarea', { id, name: f.name, rows: f.rows || 4, placeholder: f.placeholder || undefined,
-              required: f.required || undefined, 'data-source-pointer': f.ptr, style: Object.assign({}, base, { resize: 'vertical' }) })
-          : R('input', { id, type: f.type, name: f.name, placeholder: f.placeholder || undefined,
-              required: f.required || undefined, 'data-source-pointer': f.ptr, style: base })));
-    });
-    // The source submit control, with the source's own visible label. Cleansing and Wellness ship
-    // <button type="button" id="btnSubmit">Submit</button>; the Neo/Preventive/WeightLoss routes ship
-    // input[type=submit] with no value, whose visible text is the browser default. Either way the label is
-    // not invented, and the control's source tag/type/id/name travel with it.
-    const sub = F.submit;
-    return R('form', { 'data-source-pointer': F.ptr, 'data-source-action': F.sourceAction,
-        'data-source-method': F.sourceMethod, noValidate: true, onSubmit: e => e.preventDefault(),
-        style: { display: 'flex', flexDirection: 'column', gap: '18px', maxWidth: '560px', width: '100%',
-          boxSizing: 'border-box', minWidth: 0,
-          background: '#FBF8F1', border: '1px solid #E0D7C4', borderRadius: '6px', padding: 'clamp(16px,4vw,24px)' } },
-      ...rows,
-      R('button', { key: 'sub', type: 'submit',
-        'data-source-pointer': sub ? sub.ptr : undefined,
-        'data-source-control': sub ? sub.control + '[type=' + sub.type + ']' : undefined,
-        'data-source-id': sub && sub.id ? sub.id : undefined,
-        'data-source-name': sub && sub.name ? sub.name : undefined,
-        style: { minHeight: '52px', padding: '0 28px', border: '1px solid #0F5737', borderRadius: '4px',
-          background: '#0F5737', color: '#F7F4EA', fontSize: '17px', fontWeight: 700, cursor: 'pointer',
-          fontFamily: "'Mulish',sans-serif" } }, sub ? sub.renderedLabel : 'Submit'),
-      R('p', { key: 'note', style: { margin: 0, fontSize: '17px', lineHeight: 1.65, color: '#5A5245' } }, note));
+  function CampaignForm() {
+    const E=React.createElement, [error,setError]=React.useState(''),[sending,setSending]=React.useState(false);
+    async function submit(event){
+      event.preventDefault(); const form=event.currentTarget;
+      if(!form.reportValidity()||sending)return;
+      setSending(true);setError('');
+      try{
+        const response=await fetch('/api/forms-unavailable',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
+        if(!response.ok)throw new Error('This preview does not send enquiries. Nothing has been sent. Your details are still here; please use WhatsApp or email info@kairali.com.');
+        // This endpoint must never claim successful delivery before integration.
+        setError('Please contact our patient care team to complete your enquiry.');
+      }catch(e){setError(e.message||'Unable to send. Please retry or contact patient care.');}finally{setSending(false);}
+    }
+    const field=(name,label,type,required)=>E('label',{key:name,className:'campaign-field'},E('span',null,label),E(type==='textarea'?'textarea':'input',{name,type:type==='textarea'?undefined:type,required,rows:type==='textarea'?3:undefined,autoComplete:name==='fullName'?'name':name==='email'?'email':name==='phone'?'tel':undefined,maxLength:name==='message'?3000:254,pattern:name==='phone'?'[+0-9() .-]{7,30}':name==='fullName'?'.*\\S.*':undefined}));
+    return E('form',{action:'/api/forms-unavailable',method:'post',onSubmit:submit,className:'campaign-short-form'},
+      field('fullName','Your name','text',true),field('email','Email','email',true),field('phone','Phone / WhatsApp (optional, include country code)','tel',false),field('message','How can we help? (optional)','textarea',false),
+      E('input',{type:'hidden',name:'landingPage',value:location.href}),
+      E('label',{className:'campaign-consent'},E('input',{type:'checkbox',name:'consent',required:true}),E('span',null,'I agree to be contacted about my enquiry. ',E('a',{href:'/privacy-policy/'},'Privacy policy'))),
+      E('button',{type:'submit',disabled:sending,className:'campaign-primary'},sending?'Sending…':'Send enquiry'),
+      error?E('p',{role:'alert'},error):null,
+      E('p',null,'Prefer to talk? ',E('a',{href:'https://wa.me/919289838797',target:'_blank',rel:'noopener noreferrer'},'WhatsApp patient care ↗')));
   }
+  function formEl() { return React.createElement(CampaignForm); }
 
   // The page H1, at the campaign scale. A source H1 arrives inside the ordered block stream, so it is rendered
   // here rather than by the shared T04 block reader — that reader has no h1 case (the collection routes render
@@ -183,10 +137,108 @@
     })(blocks);
   }
 
+  function campaignAnchor(event) {
+    const url=new URL(event.currentTarget.href,location.href);
+    if(url.pathname!==location.pathname||!url.hash)return;
+    const target=document.getElementById(url.hash.slice(1));if(!target)return;
+    event.preventDefault();
+    for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
+    history.pushState(null,'',location.pathname+location.search+url.hash);
+    target.scrollIntoView({block:'start'});
+    // Secondary navigation takes over after the first scroll; realign once
+    // its measured height and placeholder have settled.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>target.scrollIntoView({block:'start'})));
+  }
+  // September redesign: source content is organised into readable sections,
+  // not a restoration of the legacy CSS or duplicated responsive wrappers.
+  const CAMPAIGN_PRESENTATION = {
+    '/weight-loss.html': ['Ayurvedic weight management in Kerala','/images/consultation-pulse.webp',7,311],
+    '/preventive-rejuvenation-detoxification.html': ['Ayurvedic rejuvenation & detoxification in Kerala','/ahv/assets/img/wx-pathway.jpg',7,304],
+    '/pain-management.html': ['Ayurvedic pain management in Kerala','/images/therapy-pain-management.jpg',3,124],
+    '/kairali-cleansing-centre.html': ['Ayurvedic cleansing programmes in Kerala','/images/therapy-panchakarma.jpg',2,238],
+    '/wellness-resort-kerala.html': ['Ayurvedic treatment at the Healing Village','/ahv/assets/img/wx-hero.webp',2,235],
+    '/Ayurveda_Treatment_Neo_S.India_Cities.html': ['Ayurvedic treatment in Kerala','/ahv/assets/img/wx-welcome.webp',5,140],
+    '/Kairali_Brand_and_Competition_Neo-original.html': ['Discover Kairali — The Ayurvedic Healing Village','/ahv/assets/img/wx-hero.webp',5,124]
+  };
+  function campaignBody(route, bp) {
+    const E=React.createElement, CR=window.AHV_COLLECTION_RENDER;
+    const config=CAMPAIGN_PRESENTATION[route.path];
+    if(!config)return bodyEls(forBreakpoint(route.blocks,bp),undefined);
+    const norm=s=>(s||'').replace(/\s+/g,' ').trim();
+    const local=id=>A+route.path+(typeof location!=='undefined'?location.search:'')+'#'+id;
+    const isDecor=b=>b.kind==='image'&&(/leaf|dumbles|tape-image|top-bar-img|floral|border.items|star-rating|facebook-icon|insta-icon|you-tube-icon|play-icon|\/play\.|Logo_new|kairali-logo|logo-ktahv|colorful-logo|f-logo|104-cal|9-kgs/i.test((b.src||'')+' '+(b.sourceClass||'')));
+    let blocks=forBreakpoint(route.blocks.slice(config[2],config[3]),bp).filter(b=>!isDecor(b));
+    // Copy only the rendered tree; frozen source provenance remains intact.
+    blocks=JSON.parse(JSON.stringify(blocks));
+    const imageTargets=blocks.filter(b=>b.kind==='image'&&/five-folds-images\/(doc_cons|image-[2-5])\./.test(b.src||''));
+    imageTargets.forEach((b,i)=>b.campaignId='image-'+(i+1));
+    const whyNames=['Premium Villas','Personal Consultation','Unique Features','Trained Therapist','Own Manufacturing of Medicines','Organic Farming'];
+    whyNames.forEach((name,i)=>{const b=blocks.find(b=>b.kind==='heading'&&norm(b.text).toLowerCase()===name.toLowerCase());if(b)b.campaignId='why-'+(i+1);});
+    const available=new Set(blocks.map(b=>b.campaignId).filter(Boolean));
+    const videoLinks={'videostory-three':'https://www.youtube.com/watch?v=CcDPOeSR67E','videostory-two':'https://www.youtube.com/watch?v=3vWviQfW1Ug','videostory':'/video-gallery/#featured-film'};
+    function links(n){
+      if(!n||typeof n!=='object')return;
+      if(n.tag==='a' && n.c && !n.c.some(c=>(c.v||'').trim() || c.tag==='img')) {n.tag='span';delete n.attrs;}
+      if(n.linkHref && !n.alt) n.linkHref=null;
+      for(const [k,v]of Object.entries(n)){
+        if(typeof v==='string'&&(k==='href'||k==='linkHref')){
+          if(v.startsWith('#')){const id=v.slice(1);n[k]=videoLinks[id]||local(available.has(id)?id:'campaign-enquiry');}
+          else if(/\/enquiry-form\/?$/.test(v))n[k]=local('campaign-enquiry');
+          else if(/email-protection/.test(v))n[k]='mailto:info@kairali.com';
+        } else if(typeof v==='object')links(v);
+      }
+    }
+    blocks.forEach(links);
+    blocks.forEach(b=>{if(b.kind==='image'&&/header-atp|header-mobile|38[ab]-copy|Layer(?:%20| )8/i.test(b.src||'')){b.src='/ahv/assets/img/wx-hero.webp';b.alt='Palm-lined gardens and traditional buildings at Kairali';b.width=1200;b.height=800;}});
+    const groups=[];let current=null;const seen=new Set(),seenImages=new Set();
+    for(const b of blocks){
+      const text=norm(b.text),key=b.kind+':'+text;
+      const sectionImageKey=(b.ptr||'').split('/').slice(0,4).join('/')+':'+b.src;
+      if(b.kind==='image'){if(seenImages.has(sectionImageKey))continue;seenImages.add(sectionImageKey);}
+      if(text&&((b.kind==='heading'||text.length>80)&&seen.has(key)))continue;
+      if(text)seen.add(key);
+      if(!text&&b.kind==='line')continue;
+      if(/^[“”"]$/.test(text))continue;
+      // Remove obsolete embed pointing at the video confirmed unavailable in July.
+      if(b.kind==='inertEmbed'&&/JztT26hwdnA/.test(b.sourceUrl||''))continue;
+      const section=(b.ptr||'').match(/^\/sections\/(?:c\/)?\d+/)?.[0]||'offer';
+      if(!current||current.source!==section||(b.kind==='heading'&&b.tag==='h2'&&current.blocks.length>6)){
+        current={source:section,blocks:[]};groups.push(current);
+      }
+      current.blocks.push(b);
+    }
+    function renderBlock(b,i){
+      if(b.kind==='inertEmbed')return inertEmbedEl(b,'em'+i);
+      if(b.kind==='heading')return E(/^h[1-3]$/.test(b.tag)?(b.tag==='h1'?'h2':b.tag):'p',{key:i,id:b.campaignId,className:/^h[1-3]$/.test(b.tag)?'campaign-heading':'campaign-eyebrow'},...CR.inline(b.tree,'h'+i,campaignAnchor));
+      if(b.kind==='image')return E('figure',{key:i,id:b.campaignId,className:'campaign-photo'},E('img',{src:b.src,alt:b.alt||'',width:b.width,height:b.height,loading:'lazy',decoding:'async'}));
+      return E('div',{key:i,id:b.campaignId,className:'campaign-copy-block'},...CR.sourceBlocks([b],'c'+i,campaignAnchor));
+    }
+    const sections=groups.map((g,gi)=>{
+      const children=[];
+      for(let i=0;i<g.blocks.length;i++){
+        const b=g.blocks[i],next=g.blocks[i+1];
+        if(b.kind==='heading'&&/faq-title/.test(b.sourceClass||'')&&next){children.push(E('details',{key:i,className:'campaign-faq'},E('summary',null,norm(b.text)),renderBlock(next,i+'a')));i++;continue;}
+        if(b.kind==='image'){
+          const images=[];let j=i;
+          while(j<g.blocks.length&&g.blocks[j].kind==='image'){images.push(renderBlock(g.blocks[j],j));j++;}
+          children.push(E('div',{key:'photos'+i,className:'campaign-photo-grid'},...images));i=j-1;continue;
+        }
+        children.push(renderBlock(b,i));
+      }
+      const textSize=n=>typeof n==='string'?n.length:Array.isArray(n)?n.reduce((sum,c)=>sum+textSize(c),0):n&&typeof n==='object'?textSize(n.props?.children||n.children||[]):0;
+      const textLength=textSize(children);
+      const heading=g.blocks.find(b=>b.kind==='heading'&&/^h[1-3]$/.test(b.tag));
+      const label=heading?norm(heading.text):'Programme details';
+      const optional=textLength>2200&&!g.blocks.some(b=>/faq-title/.test(b.sourceClass||''));
+      return E('section',{key:gi,className:'campaign-section',id:'campaign-section-'+gi},...(optional?[E('details',{className:'campaign-more',key:'more'},E('summary',null,label),...children)]:children));
+    });
+    const cta=E('div',{className:'campaign-actions'},E('a',{href:local('campaign-enquiry'),onClick:campaignAnchor,className:'campaign-primary'},'Enquire about this programme'),E('a',{href:'https://wa.me/919289838797?text='+encodeURIComponent('Hello, I would like to know more about '+config[0]+'.'),target:'_blank',rel:'noopener noreferrer'},'WhatsApp patient care ↗'));
+    return [E('header',{key:'hero',className:'campaign-hero'},E('div',null,E('p',{className:'campaign-eyebrow'},'Kairali · Palakkad, Kerala'),E('h1',null,config[0]),E('p',null,'Plan your visit with our patient care team. Your Ayurvedic doctor will help you choose the programme and duration suited to you.'),cta),E('img',{src:config[1],alt:config[1].includes('consultation')?'Ayurvedic physician examining a patient during consultation':config[1].includes('therapy')?'Therapists providing an Ayurvedic treatment':'Palm-lined gardens and buildings at the Healing Village',width:960,height:720,fetchPriority:'high'})),E('nav',{key:'nav','aria-label':'On this page',className:'campaign-nav'},E('a',{href:local('campaign-section-0'),onClick:campaignAnchor},'Programme'),E('a',{href:local('campaign-enquiry'),onClick:campaignAnchor},'Enquire'),E('a',{href:'/how-to-reach/'},'Travel')),E('div',{key:'sections',className:'campaign-sections'},...sections)];
+  }
   function nineVals(R, guard, bp) {
-    const el = bodyEls(forBreakpoint(R.blocks, bp || 'wide'), guard);
+    const el = campaignBody(R, bp || 'wide');
     // Route-level H1 only where the source stream carries none (the short-offer route: see its heading decision).
-    const h1 = R.h1 ? React.createElement('h1', { style: H1_STYLE }, R.h1) : null;
+    const h1 = R.h1 && !CAMPAIGN_PRESENTATION[R.path] ? React.createElement('h1', { style: H1_STYLE }, R.h1) : null;
     return {
       route: R, title: R.metadata.title, path: R.path,
       h1El: h1,
@@ -273,5 +325,5 @@
           linkText)));
   }
 
-  window.AHV_CAMPAIGN_NINE_RENDER = { resolveRoute, applyHead, applyNotFoundHead, nineVals, bodyEls, forBreakpoint, formEl, inertEmbedEl, emptyVals, notFoundVals, A };
+  window.AHV_CAMPAIGN_NINE_RENDER = { resolveRoute, applyHead, applyNotFoundHead, nineVals, campaignBody, bodyEls, forBreakpoint, formEl, inertEmbedEl, emptyVals, notFoundVals, A };
 })();

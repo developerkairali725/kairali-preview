@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     // (banned word "journey" in pixels), a painted BOOK NOW pseudo-button and
     // a "Trusted and awardes health retreat" typo line. Swapped to the clean
     // mined campus photograph; banner stays mined-only, never rendered.
-    ogImage: "/images/hospital-campus.jpg",
+    ogImage: "/ahv/assets/img/wx-hero.webp",
   }) as Metadata),
   keywords: [
     "kairali ayurvedic healing village",
@@ -54,7 +54,7 @@ export default function Page() {
           </>
         }
         sub="Right place: Kairali's NABH-accredited Ayurvedic hospital in Palakkad, Kerala — the family's flagship, where programmes are planned by physicians after an in-person consultation."
-        photo="/images/hospital-campus.jpg"
+        photo="/ahv/assets/img/wx-hero.webp"
         photoAlt="Kairali — The Ayurvedic Healing Village campus"
         photoCaption={{ b: "The Healing Village, Palakkad", s: "Kairali's flagship hospital" }}
       />

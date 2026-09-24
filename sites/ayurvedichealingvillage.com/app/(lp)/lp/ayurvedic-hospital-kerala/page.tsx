@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "Searching for wellness in Kerala? Kairali is the NABH-accredited Ayurvedic hospital behind the famous gardens — physician-planned care, village quiet.", // compliance-allow: wellness
     path: "/lp/ayurvedic-hospital-kerala",
     siteName: "Kairali — The Ayurvedic Healing Village",
-    ogImage: "/images/hospital-campus.jpg",
+    ogImage: "/ahv/assets/img/wx-hero.webp",
   }) as Metadata),
   keywords: [
     "ayurvedic hospital kerala",
@@ -59,7 +59,7 @@ export default function Page() {
           </>
         }
         sub="Kairali's Healing Village is an NABH-accredited Ayurvedic hospital set in treatment gardens: physician-planned programmes, admission and discharge, quiet villas — care first, scenery second."
-        photo="/images/hospital-campus.jpg"
+        photo="/ahv/assets/img/wx-hero.webp"
         photoAlt="The Healing Village campus in Palakkad — treatment buildings among gardens"
         photoCaption={{ b: "The Healing Village, Palakkad", s: "A hospital in treatment gardens" }}
       />
@@ -85,13 +85,13 @@ export default function Page() {
         lead="The fortnight after a programme matters as much as the programme. Discharge comes with diet and routine guidance, and our physicians remain reachable for follow-up questions as you settle back home."
       >
         <div className="photo-band">
-          <img src="/images/healing-village-grounds.jpg" loading="lazy" decoding="async" alt="Gardens between treatment buildings at the Healing Village" />
+          <img src="/ahv/assets/img/wx-pathway.jpg" loading="lazy" decoding="async" alt="Gardens between treatment buildings at the Healing Village" />
           <img src="/images/therapy-abhyanga.jpg" loading="lazy" decoding="async" alt="Therapists at work in a Healing Village treatment room" />
           <img src="/images/patient-villa-classic.jpg" loading="lazy" decoding="async" alt="A patient villa at the Healing Village" />
         </div>
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250 · Panchakarma within accredited scope</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

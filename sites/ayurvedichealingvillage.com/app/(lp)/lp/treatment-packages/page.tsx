@@ -86,11 +86,11 @@ export default function Page() {
         <div className="photo-band">
           <img src="/images/patient-villa-classic.jpg" loading="lazy" decoding="async" alt="Classic patient villa at the Healing Village" />
           <img src="/images/patient-villa-maharaja.jpg" loading="lazy" decoding="async" alt="Maharaja patient villa exterior among the trees" />
-          <img src="/images/healing-village-grounds.jpg" loading="lazy" decoding="async" alt="Treatment gardens at the Healing Village, Palakkad" />
+          <img src="/ahv/assets/img/wx-pathway.jpg" loading="lazy" decoding="async" alt="Treatment gardens at the Healing Village, Palakkad" />
         </div>
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250 · Panchakarma within accredited scope</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

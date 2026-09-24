@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { ReviewsShell } from "../(english)/read-feedback/ReviewsShell";
+import { CONSENT_RUNTIME } from "../(english)/_families/consent-runtime";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { asap, kurale, lato } from "@kairali/ui/fonts/kairali";
@@ -38,18 +39,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  // The authorized staging candidate exposes the approved English routes only.
-  // Retain the older LP implementation for a separate future release.
-  if (process.env.AHV_STAGING !== "0" || process.env.AHV_LP_LIVE !== "1") notFound();
+  // Owner reopened the LP lane for the same final staging release.
+  const consentScript = `(function(){var cfg={breakpoint:700};var host=document.getElementById("ahv-design-root");${CONSENT_RUNTIME}\nensureConsentNotice();window.addEventListener("resize",function(){var notice=document.getElementById("ahv-consent");if(notice)notice.remove();ensureConsentNotice();});})();`;
   return (
     <html lang="en" className={`${kurale.variable} ${asap.variable} ${lato.variable}`}>
       <head>
         {/* Order is law: consent defaults (denied) BEFORE any tag loader */}
         <ConsentScripts />
-        <Analytics />
+        {process.env.AHV_ANALYTICS === "1" && process.env.AHV_STAGING === "0" ? <Analytics /> : null}
       </head>
-      <body>
-        {children}
+      <body className="lp-page">
+        <link rel="stylesheet" href="/design/chrome.css" />
+        <link rel="stylesheet" href="/ahv/fonts/ahv-b6a82009abac.css" />
+        <ReviewsShell route="/lp/" consentScript={consentScript} headerScript="">{children}</ReviewsShell>
         {/* D-20260718-05: chat bubble mandatory fleet-wide, always the ONE
             shared component. The LP lane's 1:1-attention doctrine has no
             registry exemption for this site — if the owner wants the LPs
@@ -62,7 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="lp-social-strip">
           <SocialLinks />
         </footer>
-        <ConsentBanner privacyHref="/privacy" />
+
       </body>
     </html>
   );

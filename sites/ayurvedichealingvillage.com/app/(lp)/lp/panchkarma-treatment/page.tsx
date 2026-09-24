@@ -85,7 +85,7 @@ export default function Page() {
         sub="A physician-supervised programme at an NABH-accredited Ayurvedic hospital — consultation first, then five-fold therapy, diet and follow-up care."
         photo="/images/consultation-pulse.webp"
         photoAlt="Kairali physician reading a patient's pulse during an Ayurvedic consultation"
-        photoCaption={{ b: "Dr. Deepu John", s: "Chief Physician — treatment planning & admission" }}
+        photoCaption={{ b: "Ayurvedic consultation", s: "Treatment planning at Kairali" }}
       />
 
       <Section
@@ -112,13 +112,13 @@ export default function Page() {
         <div className="photo-band">
           <img src="/images/therapy-panchakarma.jpg" loading="lazy" decoding="async" alt="Panchakarma therapy in progress at the Healing Village" />
           <img src="/images/therapy-abhyanga.jpg" loading="lazy" decoding="async" alt="Two therapists performing synchronised Abhyanga massage" />
-          <img src="/images/healing-village-grounds.jpg" loading="lazy" decoding="async" alt="Treatment buildings and gardens at the Healing Village, Palakkad" />
+          <img src="/ahv/assets/img/wx-pathway.jpg" loading="lazy" decoding="async" alt="Treatment buildings and gardens at the Healing Village, Palakkad" />
         </div>
       </Section>
 
       <Section
         proof
-        overline="Evidence before adjectives"
+        overline="Why choose Kairali"
         title="An accredited hospital, on the record"
       >
         <div className="proof-list">

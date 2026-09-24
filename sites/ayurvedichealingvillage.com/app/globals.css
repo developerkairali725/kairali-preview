@@ -217,3 +217,71 @@ img { max-width: 100%; }
 }
 .lp-social-strip a { opacity: 0.7; }
 .lp-social-strip a:hover { opacity: 1; }
+
+/* September campaign carryover: readable controls and imagery on phones. */
+.lp-hero { min-height:0; }
+.lp-hero-copy { padding-block:52px; gap:18px; }
+.lp-hero h1 { font-size:clamp(32px,3.8vw,54px); max-width:24ch; }
+.lp-hero-visual { padding:32px; align-items:center; }
+.lp-photo { width:100%; max-width:520px; height:auto; aspect-ratio:4/5; }
+.lp-photo img { height:100%; object-fit:cover; }
+.lp-enquire-link { color:#fff; min-height:44px; display:inline-flex; align-items:center; text-underline-offset:4px; }
+.lp-cred span { font-size:14px; letter-spacing:.02em; text-transform:none; }
+.lp-legal { font-size:15px; }
+.lp-legal a { min-height:44px; display:inline-flex; align-items:center; }
+.enquiry-form { min-width:0; }
+.enquiry-form input,.enquiry-form textarea { width:100%; }
+.enquiry-form .consent input { width:20px; height:20px; flex:none; }
+.enquiry-form .field span { font-weight:400; }
+.enquiry-form button { white-space:normal; }
+#ahv-contact-controls { z-index:75; }
+@media(max-width:900px){
+ .lp-hero-copy { padding:30px 20px 24px; }
+ .lp-hero-visual { display:flex; padding:0 20px 28px; }
+ .lp-photo { aspect-ratio:16/10; max-width:560px; }
+ .lp-creds { margin-top:10px; gap:10px; }
+ .lp-cred { flex:1 1 42%; margin:0; }
+ .lp-sticky { padding:8px 88px 8px 12px; }
+ .lp-sticky .btn-wa { font-size:15px; padding:10px; line-height:1.3; }
+ .lp-social-strip { padding-bottom:100px; }
+ .photo-band { grid-template-columns:1fr; }
+ .photo-band img { max-height:280px; object-fit:cover; }
+}
+@media(prefers-reduced-motion:reduce){.lp-sticky{transition:none;}}
+.lp-page {--font-body:Mulish,system-ui,sans-serif;--font-display:Marcellus,Georgia,serif;--font-caption:Mulish,system-ui,sans-serif;--ivory:#F7F4EA;--ink:#2A2118;}
+.lp-brand-link {color:#f7f4ea;font-family:Marcellus,Georgia,serif;font-size:20px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;}
+/* The LP lane now uses the same paper, gold and brown visual language as the
+   final English site; legacy full-screen green sales layouts are retired. */
+.lp-hero {background:#f7f4ea;color:#2a2118;max-width:1240px;margin:auto;}
+.lp-hero-copy {padding:28px 32px 36px;}
+.lp-brand-link {order:-5;color:#2a2118;align-self:flex-start;}
+.lp-brand-link img {width:180px;height:66px;object-fit:contain;}
+.lp-overline {order:-4;font-size:14px;color:#675532;letter-spacing:.03em;text-transform:none;}
+.lp-hero h1 {order:-3;color:#2a2118;font-size:clamp(32px,3.6vw,49px);}
+.lp-hero h1 em {border:0;color:#006038;}
+.lp-sub {order:-2;color:#4c4439;font-size:18px;}
+.cta-col {order:-1;}
+.btn-wa {background:#eeb41e;border-radius:4px;box-shadow:none;padding:13px 22px;line-height:1.4;text-align:center;}
+.btn-wa:hover {background:#e2a813;color:#2a2118;}
+.lp-enquire-link {color:#5a4420;}
+.doc-chip span,.wa-number {color:#5b5347;font-size:14px;letter-spacing:0;}
+.lp-creds {border-color:#dbd1bf;gap:16px;}
+.lp-cred {flex:1 1 40%;margin:0;padding:12px 0 0;}
+.lp-cred span {color:#5b5347;font-size:14px;letter-spacing:0;text-transform:none;}
+.nabh-chip {border-color:#bdb092;}
+.lp-photo {border-radius:4px;}
+.lp-photo figcaption span {color:#f7f4ea;font-size:14px;}
+.lp-section {padding:48px 0;}
+.lp-section .container {max-width:1160px;}
+.lp-section h2 {max-width:34ch;}
+.step-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.step-card {box-shadow:none;border-radius:4px;}
+@media(max-width:900px){
+ .lp-hero-copy {padding:20px;gap:16px;}
+ .lp-hero h1 {font-size:32px;}
+ .lp-sub {font-size:17px;}
+ .cta-col {align-items:stretch;}
+ .lp-section {padding:36px 0;}
+ .step-grid {grid-template-columns:1fr;}
+}
+@media(max-width:900px){.lp-sticky{padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));}}

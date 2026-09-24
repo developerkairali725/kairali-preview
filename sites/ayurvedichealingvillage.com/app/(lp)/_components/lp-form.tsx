@@ -1,4 +1,4 @@
-import { EnquiryForm } from "@kairali/forms/form";
+import { CampaignEnquiryForm } from "./campaign-enquiry-form";
 import { CONTACT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "./lp";
 
 // Consultation-request section — the same single conversion goal as the
@@ -18,12 +18,10 @@ export function LpFormSection({
 }) {
   return (
     <div className="form-wrap">
-      <EnquiryForm
-        site="ayurvedichealingvillage.com"
+      <CampaignEnquiryForm
         formType={formType}
         heading={heading}
         submitLabel="Request consultation"
-        subject="Consultation request"
       />
       <div className="form-aside">
         <span className="k">What happens next</span>
@@ -34,7 +32,7 @@ export function LpFormSection({
         <p>
           {/* no data-cta on this utility link: tracked CTAs are the >=44px
               hero/sticky buttons; a 44px rule applies to every [data-cta] */}
-          Prefer to talk now? <a href={WHATSAPP_URL}>WhatsApp {WHATSAPP_DISPLAY}</a>
+          Prefer to talk now? <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
           <br />
           International patients: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </p>

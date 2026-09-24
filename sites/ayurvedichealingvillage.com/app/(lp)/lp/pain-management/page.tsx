@@ -98,7 +98,7 @@ export default function Page() {
         <Steps items={THERAPIES} />
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

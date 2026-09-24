@@ -29,11 +29,6 @@ export const CONTACT_EMAIL = "info@kairali.com";
  *  no fact changed (HARD GATE 6). */
 export const DR_DEEPU_AVATAR = "/images/dr-deepu-john-192.webp";
 
-/** Transparent SVG stand-in (real photo's 471×720 aspect) for image slots a
- *  viewport never renders — see LpHero's media-split <picture>. */
-const BLANK_PHOTO =
-  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='471' height='720'/%3E";
-
 export function WaIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -46,7 +41,7 @@ export function WaIcon() {
  *  Priya channel (scripts/cta-label-lint.mjs). */
 export function WaButton({ id, label = "Speak to Priya on WhatsApp" }: { id?: string; label?: string }) {
   return (
-    <a id={id} className="btn-wa" href={WHATSAPP_URL} data-cta="whatsapp_click">
+    <a id={id} className="btn-wa" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-cta="whatsapp_click">
       <WaIcon />
       {label}
     </a>
@@ -89,7 +84,8 @@ export function LpHero({
   return (
     <header className="lp-hero">
       <div className="lp-hero-copy">
-        <p className="lp-overline">{overline}</p>
+        <a className="lp-brand-link" href="/"><img src="/ahv/assets/img/kairali-colorful-logo.webp" width={180} height={66} alt="Kairali — The Ayurvedic Healing Village" /></a>
+        <p className="lp-overline">{overline.replace(/^Kairali — The Ayurvedic Healing Village · /, "")}</p>
         <h1>{title}</h1>
         <p className="lp-sub">{sub}</p>
         {showDocChip ? (
@@ -103,6 +99,7 @@ export function LpHero({
         ) : null}
         <div className="cta-col">
           <WaButton id="lp-hero-cta" label={waLabel} />
+          <a className="lp-enquire-link" href="#consult">Request a consultation ↓</a>
           <span className="wa-number">{waNumberNote}</span>
         </div>
         <div className="lp-creds">
@@ -116,17 +113,7 @@ export function LpHero({
       </div>
       <div className="lp-hero-visual">
         <figure className="lp-photo" style={{ margin: 0 }}>
-          {/* Media-split, not decoration: globals.css hides .lp-hero-visual
-              entirely at ≤900px, yet a plain <img> still downloaded (and SSR
-              still preloaded) the ~100KB hero photo on phones — Lighthouse
-              offscreen-images measured all 100,274 bytes wasted on mobile,
-              on the LCP critical path (A5 evidence, 21 Jul). The <source>
-              media query mirrors the CSS breakpoint exactly: desktop loads
-              the same photo as before; mobile loads a 120-byte blank. */}
-          <picture>
-            <source media="(min-width: 901px)" srcSet={photo} />
-            <img src={BLANK_PHOTO} alt={photoAlt} />
-          </picture>
+          <img src={photo} alt={photoAlt} width={720} height={720} fetchPriority="high" />
           {photoCaption ? (
             <figcaption>
               <b>{photoCaption.b}</b>
@@ -159,7 +146,7 @@ export function Section({
   return (
     <section id={id} className={`lp-section${alt ? " alt" : ""}${proof ? " proof-band" : ""}`}>
       <div className="container">
-        {overline ? <p className="overline">{overline}</p> : null}
+        {overline ? <p className="overline">{overline.replace(/^Kairali — The Ayurvedic Healing Village · /, "")}</p> : null}
         {title ? <h2>{title}</h2> : null}
         {lead ? <p className="lp-lead">{lead}</p> : null}
         {children}
@@ -221,9 +208,9 @@ export function LpLegal({ lang = "en" }: { lang?: "en" | "de" }) {
       <div className="container row">
         <span>© Kairali — The Ayurvedic Healing Village, Palakkad, Kerala</span>
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-        <a href="/privacy">{de ? "Datenschutz (EN)" : "Privacy"}</a>
-        <a href="/terms">{de ? "Nutzungsbedingungen (EN)" : "Terms"}</a>
-        <a href="/cookie-policy">{de ? "Cookie-Richtlinie (EN)" : "Cookie policy"}</a>
+        <a href="/privacy-policy/">{de ? "Datenschutz (EN)" : "Privacy"}</a>
+        <a href="/terms-and-conditions/">{de ? "Nutzungsbedingungen (EN)" : "Terms"}</a>
+        <a href="/cookie-policy/">{de ? "Cookie-Richtlinie (EN)" : "Cookie policy"}</a>
       </div>
     </footer>
   );

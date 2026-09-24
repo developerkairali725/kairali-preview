@@ -75,13 +75,13 @@ export default function Page() {
             procedures happens somewhere real), and this LP lacked any
             Kerala/place imagery. */}
         <div className="photo-band">
-          <img src="/images/healing-village-grounds.jpg" loading="lazy" decoding="async" alt="Treatment gardens between the Healing Village's buildings, Palakkad" />
+          <img src="/ahv/assets/img/wx-pathway.jpg" loading="lazy" decoding="async" alt="Treatment gardens between the Healing Village's buildings, Palakkad" />
           <img src="/images/therapy-abhyanga.jpg" loading="lazy" decoding="async" alt="Preparatory oleation therapy in a hospital treatment room" />
           <img src="/images/patient-villa-classic.jpg" loading="lazy" decoding="async" alt="A quiet patient villa where patients rest between procedures" />
         </div>
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250 · Panchakarma within accredited scope</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

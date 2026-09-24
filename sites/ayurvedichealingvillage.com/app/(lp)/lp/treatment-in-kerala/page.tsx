@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Physician-planned Ayurvedic treatment at Kairali's NABH-accredited hospital in Palakkad, Kerala — consultation, therapy, diet and follow-up, on the record.",
     path: "/lp/treatment-in-kerala",
     siteName: "Kairali — The Ayurvedic Healing Village",
-    ogImage: "/images/healing-village-grounds.jpg",
+    ogImage: "/ahv/assets/img/wx-pathway.jpg",
   }) as Metadata),
   keywords: [
     "ayurvedic treatment kerala",
@@ -68,7 +68,7 @@ export default function Page() {
           </>
         }
         sub="Kairali's Healing Village runs classical Ayurvedic programmes under physician supervision: assessment, therapy, hospital-kitchen diet, and follow-up at discharge."
-        photo="/images/healing-village-grounds.jpg"
+        photo="/ahv/assets/img/wx-pathway.jpg"
         photoAlt="Treatment buildings and gardens of the Healing Village in Palakkad"
         photoCaption={{ b: "The Healing Village, Palakkad", s: "An accredited Ayurvedic hospital" }}
       />
@@ -96,13 +96,13 @@ export default function Page() {
         {/* Battery nit-fix: hero already serves healing-village-grounds.jpg —
             band leads with the other campus photograph instead of repeating it. */}
         <div className="photo-band">
-          <img src="/images/hospital-campus.jpg" loading="lazy" decoding="async" alt="Treatment buildings of the Healing Village campus" />
+          <img src="/ahv/assets/img/wx-hero.webp" loading="lazy" decoding="async" alt="Treatment buildings of the Healing Village campus" />
           <img src="/images/therapy-abhyanga.jpg" loading="lazy" decoding="async" alt="Therapists at work in a treatment room" />
           <img src="/images/patient-villa-classic.jpg" loading="lazy" decoding="async" alt="A patient villa in the treatment gardens" />
         </div>
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250 · Panchakarma within accredited scope</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

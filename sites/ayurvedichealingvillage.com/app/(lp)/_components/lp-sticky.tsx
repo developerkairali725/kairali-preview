@@ -8,6 +8,8 @@ export function LpSticky({ label = "Speak to Priya on WhatsApp" }: { label?: str
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
+    const message = "Hello, I would like to enquire about " + document.title + " (" + window.location.pathname + ").";
+    document.querySelectorAll<HTMLAnchorElement>('main a[href="https://wa.me/919289838797"]').forEach(a => { a.href = "https://wa.me/919289838797?text=" + encodeURIComponent(message); });
     const heroCta = document.getElementById("lp-hero-cta");
     if (!heroCta) return;
     const io = new IntersectionObserver(([e]) => setShown(!e.isIntersecting), {
@@ -22,6 +24,7 @@ export function LpSticky({ label = "Speak to Priya on WhatsApp" }: { label?: str
       <a
         className="btn-wa"
         href="https://wa.me/919289838797"
+        target="_blank" rel="noopener noreferrer"
         data-cta="whatsapp_click"
         tabIndex={shown ? 0 : -1}
       >

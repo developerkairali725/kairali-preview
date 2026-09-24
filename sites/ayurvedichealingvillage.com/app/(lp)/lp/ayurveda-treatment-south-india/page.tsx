@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     // (HARD GATE 6) + banned-register words in pixels. Swapped to the clean
     // mined campus photograph; the banner stays in the repo as a mined asset
     // only, never rendered.
-    ogImage: "/images/treatment-context.jpg",
+    ogImage: "/ahv/assets/img/wx-welcome.webp",
   }) as Metadata),
   keywords: [
     "ayurvedic treatment south india",
@@ -58,7 +58,7 @@ export default function Page() {
           </>
         }
         sub="From Bengaluru, Chennai or Hyderabad, Palakkad is a straightforward trip by rail or air — and what waits at the end is an NABH-accredited Ayurvedic hospital, not a weekend salon."
-        photo="/images/treatment-context.jpg"
+        photo="/ahv/assets/img/wx-welcome.webp"
         photoAlt="A patient villa amid the treatment gardens at the Healing Village, Palakkad"
         photoCaption={{ b: "The Healing Village, Palakkad", s: "Physician-planned programmes" }}
       />
@@ -77,7 +77,7 @@ export default function Page() {
         />
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>

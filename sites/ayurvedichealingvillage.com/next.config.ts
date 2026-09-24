@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -100,11 +101,11 @@ const nextConfig: NextConfig = {
     // also a single hop, just by the other rule. They are ad-landing URLs that
     // were never in the manifest: unlisted in the sitemap and linked from no
     // page on the live site, which is why nothing surfaced them until now.
-    return Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+    return [...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
-    }));
+    })), ...adSitelinks.map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
   },
   // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
   // English homepage now exists at "/" (app/(english)/page.tsx), which is the

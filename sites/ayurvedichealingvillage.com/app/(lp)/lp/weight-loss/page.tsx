@@ -53,14 +53,14 @@ export const metadata: Metadata = {
 const CREDS_WL: Cred[] = [
   { b: <span className="nabh-chip">NABH</span>, s: "accredited · AH-2024-0250" },
   { b: "Physician-assessed", s: "admission after consultation" },
-  { b: "Honest advertising", s: "no outcome figures, by policy and by law" },
+  { b: "Individual care", s: "programme planned after consultation" },
   { b: "Hospital kitchen", s: "programme diets prepared in-house" },
 ];
 
 const FAQ = [
   {
     q: "How much weight will I lose?",
-    a: "We will not name a number, and you should distrust any advertisement that does. Bodies differ, and Indian law on medical advertising exists precisely because promised outcomes mislead. What we commit to is the programme itself: assessment, supervised therapy, a disciplined diet, and honest physician review of your progress.",
+    a: "Results vary from person to person. Your physician will discuss your health, goals and suitable programme during consultation, and review your progress during your stay.",
   },
   {
     q: "What does the programme involve day to day?",
@@ -84,14 +84,14 @@ export default function Page() {
         overline="Kairali — The Ayurvedic Healing Village · NABH-accredited Ayurvedic hospital, Palakkad"
         title={
           <>
-            Ayurvedic weight-loss treatment in Kerala — <em>a programme, not a promise</em>.
+            Ayurvedic weight-loss treatment in Kerala — <em>care planned around you</em>.
           </>
         }
-        sub="Physician-assessed, hospital-admitted weight management: supervised therapies, a prescribed diet, daily routine and follow-up. No numbers promised — a method, honestly run."
+        sub="Physician-assessed, hospital-admitted weight management: supervised therapies, a prescribed diet, daily routine and follow-up. Your physician plans your care after a consultation."
         creds={CREDS_WL}
         photo="/images/consultation-pulse.webp"
         photoAlt="Kairali physician assessing a patient at consultation"
-        photoCaption={{ b: "Dr. Deepu John", s: "Chief Physician — treatment planning & admission" }}
+        photoCaption={{ b: "Ayurvedic consultation", s: "Treatment planning at Kairali" }}
       />
 
       <Section
@@ -125,18 +125,18 @@ export default function Page() {
             setting is half its method (quiet, gardens, hospital kitchen), and
             this was the only LP of the ten without a Kerala/place band. */}
         <div className="photo-band">
-          <img src="/images/healing-village-grounds.jpg" loading="lazy" decoding="async" alt="Treatment gardens between the Healing Village's buildings, Palakkad" />
+          <img src="/ahv/assets/img/wx-pathway.jpg" loading="lazy" decoding="async" alt="Treatment gardens between the Healing Village's buildings, Palakkad" />
           <img src="/images/therapy-abhyanga.jpg" loading="lazy" decoding="async" alt="Supervised therapy in a Healing Village treatment room" />
           <img src="/images/patient-villa-classic.jpg" loading="lazy" decoding="async" alt="A quiet patient villa inside the treatment gardens" />
         </div>
       </Section>
 
-      <Section proof overline="Evidence before adjectives" title="On the record">
+      <Section proof overline="Why choose Kairali" title="Care you can plan around">
         <div className="proof-list">
           <div className="proof-item"><b>NABH accreditation</b><span>Certificate AH-2024-0250</span></div>
           <div className="proof-item"><b>Clinical Establishment</b><span>Permanent certificate under the Kerala Act</span></div>
           <div className="proof-item"><b>Physician-led</b><span>Assessment before admission, review through the stay</span></div>
-          <div className="proof-item"><b>Honest advertising</b><span>No outcome figures, by policy and by law</span></div>
+          <div className="proof-item"><b>Individual care</b><span>Programme planned after consultation</span></div>
         </div>
       </Section>
 
