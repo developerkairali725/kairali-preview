@@ -145,3 +145,55 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
 })();
+
+// Owner correction, 24 September 2026: secondary navigation takes over on scroll.
+(function () {
+  var root = document.getElementById('ahv-design-root');
+  if (!root) return;
+  var nav, marker, mount, active = false, queued = false;
+  function reset() {
+    root.removeAttribute('data-ahv-secondary-active');
+    if (mount) { mount.removeAttribute('inert'); mount.removeAttribute('data-ahv-primary-mount'); }
+    if (marker && marker.isConnected) marker.remove();
+    active = false;
+  }
+  function update() {
+    queued = false;
+    var next = root.querySelector('nav[aria-label="On this page"]');
+    if (next !== nav || (marker && !marker.isConnected)) {
+      reset(); nav = next;
+      if (!nav) { root.removeAttribute('data-ahv-secondary-page'); return; }
+      nav.setAttribute('data-ahv-secondary', '1');
+      root.setAttribute('data-ahv-secondary-page', '1');
+      marker = document.createElement('div');
+      marker.setAttribute('data-ahv-secondary-placeholder', '1');
+      marker.setAttribute('aria-hidden', 'true');
+      nav.parentNode.insertBefore(marker, nav);
+    }
+    if (!nav || !marker) return;
+    var header = root.querySelector('[data-sc-name="AHV Chrome Header"]');
+    if (header !== mount) {
+      if (mount) { mount.removeAttribute('inert'); mount.removeAttribute('data-ahv-primary-mount'); }
+      mount = header;
+      if (mount) mount.setAttribute('data-ahv-primary-mount', '1');
+    }
+    var rect = marker.getBoundingClientRect();
+    var shouldStick = rect.top <= 0;
+    root.style.setProperty('--ahv-secondary-left', rect.left + 'px');
+    root.style.setProperty('--ahv-secondary-width', rect.width + 'px');
+    if (shouldStick !== active) {
+      active = shouldStick;
+      root.toggleAttribute('data-ahv-secondary-active', active);
+      if (mount) mount.toggleAttribute('inert', active);
+    }
+    var height = nav.getBoundingClientRect().height;
+    marker.style.height = active ? height + 'px' : '0px';
+    root.style.setProperty('--ahv-secondary-height', height + 'px');
+  }
+  function schedule() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', schedule, { passive:true });
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', schedule);
+  new MutationObserver(schedule).observe(root, { childList:true, subtree:true });
+  update();
+})();

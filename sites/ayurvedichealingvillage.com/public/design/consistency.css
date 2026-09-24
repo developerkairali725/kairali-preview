@@ -136,8 +136,6 @@
   #ahv-design-root[data-ahv-consistency="1"] main table[data-ahv-stack="1"] tr { display:block !important; padding:12px 0 !important; border-bottom:1px solid var(--ahv-hair) !important; }
   #ahv-design-root[data-ahv-consistency="1"] main table[data-ahv-stack="1"] td { display:grid !important; grid-template-columns:minmax(0,38%) minmax(0,1fr) !important; gap:6px 12px !important; padding:5px 0 !important; border:0 !important; width:auto !important; }
   #ahv-design-root[data-ahv-consistency="1"] main table[data-ahv-stack="1"] td::before { content:attr(data-label); font-family:Mulish,system-ui,sans-serif; font-weight:700; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ahv-label); }
-  /* an in-page jump nav stops pinning a quarter of the phone screen */
-  #ahv-design-root[data-ahv-consistency="1"] main nav[style*="sticky"] { position:static !important; top:auto !important; }
   /* a two-column intro with a fixed image column becomes one column */
   #ahv-design-root[data-ahv-consistency="1"] main [style*="grid-template-columns"][style*="560px"],
   #ahv-design-root[data-ahv-consistency="1"] main [style*="grid-template-columns"][style*="520px"] { grid-template-columns:minmax(0,1fr) !important; }
