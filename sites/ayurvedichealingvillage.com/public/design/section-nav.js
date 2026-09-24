@@ -220,6 +220,29 @@
     bc.setAttribute("data-ahv-crumbs", "1");
   }
 
+  // Separate section navigation from in-page anchors in the two-column readers.
+  function separatePageNav(main) {
+    var toc = main.querySelector('nav[aria-labelledby="contents-h"], nav[aria-label="On this page"]');
+    var rail = main.querySelector('nav[data-ahv-section-nav]');
+    var article = main.querySelector('#attractions-body, #accreditations-body');
+    if (!toc || !rail || !article || toc.hasAttribute('data-ahv-page-bar')) return;
+    var column = article.parentNode;
+    var disclosure = toc.parentNode.tagName === 'DETAILS' ? toc.parentNode : null;
+    var oldMarker = toc.previousElementSibling;
+    if (oldMarker && oldMarker.hasAttribute('data-ahv-secondary-placeholder')) oldMarker.remove();
+    main.insertBefore(toc, column);
+    if (disclosure) disclosure.remove();
+    column.insertBefore(rail, article);
+    rail.style.gridColumn = ''; rail.style.gridRow = '';
+    article.style.gridColumn = ''; article.style.gridRow = '';
+    toc.style.gridColumn = ''; toc.style.gridRow = '';
+    toc.removeAttribute('aria-labelledby');
+    toc.setAttribute('aria-label', 'On this page');
+    toc.setAttribute('data-ahv-page-bar', '1');
+    column.setAttribute('data-ahv-reader-columns', '1');
+    main.setAttribute('data-ahv-rail', 'page-bar');
+  }
+
   function pass() {
     scheduled = false;
     var main = root.querySelector("main");
@@ -238,6 +261,7 @@
         var nav = place(main);
         if (nav) keepCurrentVisible(nav);
       }
+      separatePageNav(main);
     } catch (e) { /* never break the page */ }
   }
   function schedule() { if (scheduled) return; scheduled = true; setTimeout(pass, 0); }
