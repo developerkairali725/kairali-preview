@@ -17,6 +17,10 @@
  *        single/double occupancy → 1/2); ":00" minutes on converted 12h times;
  *      – zh/ja/ko counters for "per night/day/person", "daily" (→ 1泊, 1日);
  *      – repeating a number the source already states (24-hour → 24 h/24);
+ *      – English quantity words as numerals, each bound to the word in the source:
+ *        ordinals (second-largest → 2番目), "two decades" → 20, "a decade" → 10,
+ *        "a/one <unit>" (a week → 1週間, a century → 1世紀/100年), and in zh/ja/ko
+ *        millions expressed in 万 (1.4M → 140万);
  *    anything else (an added amount, duration, percentage, date) is a factual
  *    change and is rejected for retry;
  *  · respects SEO length gates, [TO CONFIRM] chips, placeholder and script checks.
@@ -40,6 +44,7 @@ const BANNED_EN = /\b(spa|resort|holiday|luxur\w*|cure|journey|guests?)\b/i;
 const BRAND = /Kairali\s*[–—-]?\s*(The\s+)?Ayurvedic Healing Village|Ayurvedic Healing Village|Kairali|Thankam Hospital|Pulse Doctors and Labs|Priya|WhatsApp|YouTube|Facebook|Instagram|LinkedIn|Tripadvisor|Google/gi;
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"];
 NUMBER_WORDS[30] = "thirty"; NUMBER_WORDS[40] = "forty"; NUMBER_WORDS[50] = "fifty"; NUMBER_WORDS[100] = "hundred";
+const ORDINALS = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"];
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 const tokenList = (s) => s.match(/\[\[[A-Z]+_\d+\]\]/g) || [];
 
@@ -76,6 +81,7 @@ export function numberDiff(src, t, locale) {
     }
   }
   const lower = src.toLowerCase();
+  const missingIndex = (raw) => missing.indexOf(raw.replace(/\D/g, "").replace(/^0+(?=\d)/, ""));
   const allow = (value, times = 1) => { for (let c = 0; c < times; c++) { const j = got.indexOf(String(value)); if (j >= 0) got.splice(j, 1); } };
   const count = (re) => (lower.match(re) || []).length;
   // English number words written as digits (three day → 3日, level one → Niveau 1)
@@ -83,7 +89,19 @@ export function numberDiff(src, t, locale) {
   allow(1, count(/\b(single|once)\b/g)); allow(2, count(/\b(twice|double)\b/g));
   // 24-hour times written with minutes (10 PM → 22:00): the ":00" adds no fact
   if (/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) allow(0, count(/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/gi));
+  // English quantity words written as numerals (reviewed; each requires the word in the source):
+  //   ordinals (second-largest → 2番目), "N decades" (two decades → 20年), "a decade" (→ 10),
+  //   "a/an/one <unit>" (a week → 1週間, a century → 1世紀 / 100年, one of → 一つ… as 1)
+  ORDINALS.forEach((w, n) => { if (w) allow(n, count(new RegExp("\\b" + w + "\\b", "g"))); });
+  NUMBER_WORDS.forEach((w, n) => { if (w && n > 0) allow(n * 10, count(new RegExp("\\b" + w + "\\s+decades?\\b", "g"))); });
+  allow(10, count(/\b(a|one)\s+decade\b/g));
   if (["zh-Hans", "ja", "ko"].includes(locale)) {
+    // CJK counters render the English article as 1 (a week → 1週間; a villa → 1室); not in European locales
+    allow(1, count(/\b(a|an|one)\s+(year|month|week|day|hour|century|decade|villa|room|time|course|visit|place)\b/g));
+    allow(1, count(/\bone of\b/g));
+    allow(100, count(/\bcentur(y|ies)\b/g));
+    // millions in 万 units: 1.4M → 140万 (numerically identical)
+    for (const m of src.matchAll(/(\d+(?:\.\d+)?)\s*(?:M\b|million\b)/gi)) { const v = Math.round(parseFloat(m[1]) * 100); allow(String(v).replace(/^0+(?=\d)/, "")); const k = missingIndex(m[1]); if (k >= 0) missing.splice(k, 1); }
     // month names/abbreviations → month numbers in CJK/Korean date formats
     MONTHS.forEach((name, i) => allow(i + 1, count(new RegExp("\\b(" + name + "|" + name.slice(0, 3) + ")\\b", "g"))));
     // counters: per night / per day / daily → 1泊, 1日, 每晚 1 …

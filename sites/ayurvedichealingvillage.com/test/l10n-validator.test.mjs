@@ -70,3 +70,13 @@ test("source-bound exceptions apply only to the named unit/hash/locale; banned-t
   assert.ok(!BANNED.ru.test("спасибо"), "спа inside спасибо is not a finding");
   assert.ok(BANNED.ru.test("спа-процедуры") || BANNED.ru.test("спа"));
 });
+test("POSITIVE/NEGATIVE: English quantity words as numerals are source-bound", () => {
+  assert.deepEqual(run("With two decades of experience", "当院は20年にわたる経験", "ja").errs, []);
+  assert.deepEqual(run("After a week at Kairali", "Kairaliで1週間過ごした後", "ja").errs, []);
+  assert.deepEqual(run("Kerala's second-largest park", "ケーララ州で2番目に大きな公園", "ja").errs, []);
+  assert.deepEqual(run("Zero adverse reactions in over 1.4M+ therapies", "140万件以上の療法で有害反応ゼロ", "ja").errs, []);
+  assert.deepEqual(run("more than a century of knowledge", "1世紀以上にわたる知識", "ja").errs, []);
+  assert.ok(run("With experience", "20年の経験", "ja").errs.some((e) => /added 20/.test(e)), "no quantity word → rejected");
+  assert.ok(run("After a week at Kairali", "Kairaliで2週間過ごした後", "ja").errs.some((e) => /added 2/.test(e)), "different quantity still rejected");
+  assert.ok(run("1.4M therapies", "1400万件", "ja").errs.length, "wrong scale rejected");
+});

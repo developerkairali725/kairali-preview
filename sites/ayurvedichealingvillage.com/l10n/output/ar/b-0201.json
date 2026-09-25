@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0201",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_66c312dcd47f3cd958f9",
+   "sourceHash": "66c312dcd47f3cd958f9b32188b5c911cb41ce8f6d8ed7cdce20816dee5c40f3",
+   "text": "[[OPEN_1]]الرؤية والرسالة[[CLOSE_1]][[OPEN_2]]+[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7298e9f6651885b7c186",
+   "sourceHash": "7298e9f6651885b7c1867b84559e33aaef1043c4425671e5817afe3ea047d87a",
+   "text": "[[OPEN_1]]المسؤولية الاجتماعية للشركات (CSR)[[CLOSE_1]][[OPEN_2]]+[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_46a57a16e9b2e2f9f7e9",
+   "sourceHash": "46a57a16e9b2e2f9f7e935b22b7990695a36a2bf3f8ec4fed4e1d72de181c893",
+   "text": "[[OPEN_1]]الجوائز والاعتمادات[[CLOSE_1]][[OPEN_2]]+[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d534be829e32196b4d1e",
+   "sourceHash": "d534be829e32196b4d1e53b67103cf1e376b1d60071857572598c196abfefbc6",
+   "text": "فيديو",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f33d69aae06c2bb24fb",
+   "sourceHash": "1f33d69aae06c2bb24fb914fe5ae506609520309c470ea342868d841a4d2f275",
+   "text": "المشاهدة على YouTube (يُفتح في علامة تبويب جديدة)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59526b83f2f105e9fe32",
+   "sourceHash": "59526b83f2f105e9fe32f959f3e8467509406be60b94b9cbee92c49644edb38f",
+   "text": "إغلاق[[OPEN_1]]✕[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fbc0a5250bd6e4a7dbe8",
+   "sourceHash": "fbc0a5250bd6e4a7dbe8f2d2aaeae8e6bf18e1ea71ce779d37712e03f13b83e5",
+   "text": "صور من Kairali – قرية الشفاء الأيورفيدية، بالاكاد: المستشفى وعلاجاته والمناطق المحيطة به.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Used the approved term 'The Ayurvedic Healing Village, Palakkad' → 'قرية الشفاء الأيورفيدية، بالاكاد' with 'Kairali' kept in Latin script."
+   ]
+  },
+  {
+   "id": "t_12ee6556916d21976ecb",
+   "sourceHash": "12ee6556916d21976ecb5e7abce4c1e3eac58c3eb40e8411d49831e003ae99fd",
+   "text": "768w,",
+   "status": "translated",
+   "unchangedReason": "Technical srcset width descriptor; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_39d6998d37d7d8c8a7b7",
+   "sourceHash": "39d6998d37d7d8c8a7b76aa198b490e494f1633bdd3684c56f3f7a3351783ff6",
+   "text": "1600w",
+   "status": "translated",
+   "unchangedReason": "Technical srcset width descriptor; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_807405d188ed9402f7ba",
+   "sourceHash": "807405d188ed9402f7ba7efbf07df398be194538891ee9b3f1b9ca23b1173529",
+   "text": "?autoplay=1&rel=0&modestbranding=1",
+   "status": "translated",
+   "unchangedReason": "URL query string; must not be translated.",
+   "issues": []
+  },
+  {
+   "id": "t_abd3bfe7381be6eedf98",
+   "sourceHash": "abd3bfe7381be6eedf983382df9dc08d499c4c80ddcf23ce529f82393e84280f",
+   "text": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+   "status": "translated",
+   "unchangedReason": "Technical iframe 'allow' permission-policy tokens; must not be translated.",
+   "issues": []
+  },
+  {
+   "id": "t_5432bf84e2cdfdb0799a",
+   "sourceHash": "5432bf84e2cdfdb0799a05af4146d9cb232490f44be4a5d5071ddda131843396",
+   "text": "تشغيل:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4dca6225679fb1526394",
+   "sourceHash": "4dca6225679fb152639438e36b632deea41bf70a402a70c861faa25a2c4ee0a6",
+   "text": "إطار الغلاف للفيلم:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7482d5802c3c27987ced",
+   "sourceHash": "7482d5802c3c27987ced2beb1d3527c78661deb4e54a9b7ee7106bd7524b0792",
+   "text": "صورة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04c8916b86362310a684",
+   "sourceHash": "04c8916b86362310a68487d25f1fb8fd175672d65bb3bd7c1596de8e336b092c",
+   "text": "صور ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18ab26282a64115fc94f",
+   "sourceHash": "18ab26282a64115fc94fe9272cd0cabea09e5c6063c3e02228aa8d2774ebe20b",
+   "text": "فصول",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0cab1c9617404faf2b24",
+   "sourceHash": "0cab1c9617404faf2b24e221e189ca5945813e14d3f766345b09ca13bbe28ffc",
+   "text": "فيديو",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_26760e7ce5a56f4b0280",
+   "sourceHash": "26760e7ce5a56f4b028077f59b3d8382cb7cbb3acbd791dd5385eb3b04616893",
+   "text": "فيديوهات",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6ef7c9b15ecdd6908372",
+   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
+   "text": "high",
+   "status": "translated",
+   "unchangedReason": "Appears to be a technical attribute value (e.g. fetchpriority/quality 'high') in template script; kept unchanged to avoid breaking behaviour.",
+   "issues": [
+    "Verify whether 'high' is user-visible; if so, Arabic would be 'عالية'."
+   ]
+  },
+  {
+   "id": "t_7b599573401f0f881844",
+   "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
+   "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]مجموعة المنتجات[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18a8d9dad8194709f63d",
+   "sourceHash": "18a8d9dad8194709f63d7e7e382f35e368593a8dcbcb791fbfeddba57a968d88",
+   "text": "الأدوية والمنتجات العضوية وأنواع الشاي والكتب والمعدات التي تصنّعها Kairali Ayurvedic Group. نصف هنا كل مجموعة على حدة، ويُطلب كل منها بشكل منفصل.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2f91486d3d6899bfbc1",
+   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
+   "text": "تعكس مجموعة منتجاتنا في Kairali Ayurvedic Group أكثر من قرن من المعرفة والخبرة الأيورفيدية. تُستخدم مكوّنات طبيعية منتقاة بعناية في إعداد كل تركيبة لضمان النقاء والفعالية والتوافق مع المعرفة الأيورفيدية العريقة. وقد صُمّمت منتجاتنا، التي تتنوّع بين الزيوت المجدِّدة والمساحيق العلاجية، للتعامل مع مشكلات صحية معيّنة وتعزيز العافية العامة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains a 'guarantee purity, effectiveness' claim; translated faithfully without strengthening — flag for clinical/compliance review."
+   ]
+  },
+  {
+   "id": "t_8e864e83d49edc613a4d",
+   "sourceHash": "8e864e83d49edc613a4dabe6769fc840685a7b1c435435f5f9064be3b2562e23",
+   "text": "التسوّق عبر الإنترنت: [[OPEN_1]]الهند[[CLOSE_1]] — [[OPEN_2]]kairaliproducts.in[[CLOSE_2]]؛ [[OPEN_3]]العملاء الدوليون[[CLOSE_3]] — [[OPEN_4]]kairaliproducts.com[[CLOSE_4]]. تتوفّر المنتجات أيضًا في صيدلية المستشفى وفق ما يصفه الأطباء.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5412e28b9b70abb1709b",
+   "sourceHash": "5412e28b9b70abb1709b8207489c223257c2a759f1bb0c9f0ce196dc0166917a",
+   "text": "اقرأ عن هذه المجموعة ←",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Arrow mirrored (→ to ←) for right-to-left reading direction."
+   ]
+  },
+  {
+   "id": "t_024c84ce1fa23565a771",
+   "sourceHash": "024c84ce1fa23565a7713569c0ee8b3f1e18b8529e7d153ef57bce54690d2a17",
+   "text": "شاي الأعشاب الأيورفيدي من Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

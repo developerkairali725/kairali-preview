@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0203",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_02bd136cf3a504e963df",
+   "sourceHash": "02bd136cf3a504e963dfa6ebcc9c83d538bc71c05b96677274fb31006174fe73",
+   "text": "환영합니다 · 세계 최고의 웰니스 리트리트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Superlative 'World's Best' translated faithfully from source; appears to reference an award — owner may confirm the award attribution."
+   ]
+  },
+  {
+   "id": "t_4ad25390d643bb3cc093",
+   "sourceHash": "4ad25390d643bb3cc093ca45e08623ef6efafee491684bb08c757eef7571ea60",
+   "text": "Kairali – The Ayurvedic Healing Village에서 몸과 마음, 영혼에 새로운 활력을 되찾으십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_372b7b64ee273d95aba3",
+   "sourceHash": "372b7b64ee273d95aba36561919ad442b1d9286afabf33b683fbc32348d128ca",
+   "text": "케랄라주 팔라카드에 자리한 Kairali – The Ayurvedic Healing Village에 오신 것을 환영합니다. 저희는 전인적 치유를 위한 정통 아유르베다 경험을 제공하는 인증 웰니스 리트리트입니다. 65에이커 규모의 빌리지는 푸른 녹음과 야자나무로 둘러싸여 있어 회복을 위한 평온한 환경을 제공합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_95371a4176e8e64070ff",
+   "sourceHash": "95371a4176e8e64070ff2a89906291c866226b7b68e65d4855b542ec411f1e86",
+   "text": "25년의 전통을 지닌 저희 숙련된 치료사들은 아유르베다의 오랜 지혜를 바탕으로 개인에게 맞춘 요법, 치료 및 약제를 제공합니다. 유기농 현지 식재료로 만든 팜투테이블 식단으로 몸속부터 영양을 채우실 수 있습니다. 매일 진행되는 요가와 명상 세션을 통해 자신을 발견하고 내면의 평화를 찾으실 수 있습니다. Kairali Ayurvedic Healing Village에서 자연과 전통 치유 요법에 몰입하며 삶의 변화를 이끄는 웰니스 과정을 경험해 보십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'journey' rendered as 과정 (process/path). Source says '25 years' legacy while other units say 35 years/since 1908 — translated as-is; owner may wish to reconcile."
+   ]
+  },
+  {
+   "id": "t_822bf6033490f5fd0858",
+   "sourceHash": "822bf6033490f5fd0858388621ca4e62dacb884e4e2df2f26dc0ae8cef2b80e0",
+   "text": "및 AYUR Diamond 인증",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment continuing a preceding accreditation (e.g. NABH-accredited …); certification name kept in Latin script."
+   ]
+  },
+  {
+   "id": "t_c540c2febe20bccd83b5",
+   "sourceHash": "c540c2febe20bccd83b5417504e1c6f40e37a31781d01ebc0af13870816bcaac",
+   "text": "100K+",
+   "status": "translated",
+   "unchangedReason": "Numeric statistic; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_3fb5f18ef3d83977caf6",
+   "sourceHash": "3fb5f18ef3d83977caf60a772a353c6f10f38ba58e7c4fe07e056e9214a67917",
+   "text": "35년간 치료받은 환자",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b9a89c972d90b175f75",
+   "sourceHash": "2b9a89c972d90b175f75d958400c77a2d652d58681bb361ab2c7df12b5c1f6b8",
+   "text": "1.4M+",
+   "status": "translated",
+   "unchangedReason": "Numeric statistic; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_b6631e7b4bd95b9a230d",
+   "sourceHash": "b6631e7b4bd95b9a230d8ab077d222b05e576db660d2a7d9142b5f2fe08f7525",
+   "text": "건의 치료 시행",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Label under a numeric stat; rendered with Korean counter '건'."
+   ]
+  },
+  {
+   "id": "t_dc33ef656556e58f94ca",
+   "sourceHash": "dc33ef656556e58f94ca9a44b5cc292f5a0e456de9a369aad7459c305f1ba386",
+   "text": "년의 아유르베다 역사, 1908년부터",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment follows a number of years; Korean counter '년' added."
+   ]
+  },
+  {
+   "id": "t_3c6f2d02e69b3375d561",
+   "sourceHash": "3c6f2d02e69b3375d561c4df7c2b7ec5b94469a8aa14dd0cc2a4190fc9bec7af",
+   "text": "Travellers' Choice & Hall of Fame",
+   "status": "translated",
+   "unchangedReason": "Award title; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_dc94889f076259f167be",
+   "sourceHash": "dc94889f076259f167bec408fa5111961875c9cbfdc9b52247515320088f730d",
+   "text": "2011 — 2026년 매년 수상",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_edbd99f8e0f6ae07a50e",
+   "sourceHash": "edbd99f8e0f6ae07a50e987d63b490046f87842e00a1203bd8d74ea65dad9ebf",
+   "text": "Tripadvisor Awards",
+   "status": "translated",
+   "unchangedReason": "Award programme name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_1d02b30517e52e72d9bf",
+   "sourceHash": "1d02b30517e52e72d9bfd24fdcd7a219425eac9923a3997cce72a0fbe5bf38b4",
+   "text": "[[OPEN_1]]2011[[CLOSE_1]][[OPEN_2]][[CLOSE_2]][[OPEN_3]]2014[[CLOSE_3]][[OPEN_4]][[CLOSE_4]][[OPEN_5]]2017[[CLOSE_5]][[OPEN_6]][[CLOSE_6]][[OPEN_7]]2019 · Hall of Fame[[CLOSE_7]][[OPEN_8]][[CLOSE_8]][[OPEN_9]]2022[[CLOSE_9]][[OPEN_10]][[CLOSE_10]][[OPEN_11]]2026[[CLOSE_11]]",
+   "status": "translated",
+   "unchangedReason": "Years and award title (Hall of Fame) only; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_1ee42c2fb9247995894c",
+   "sourceHash": "1ee42c2fb9247995894cd66f69167acc59910d027cbccfcb3a0fba60072b6437",
+   "text": "모든 수상 내역 보기 →",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48691b0672365625db18",
+   "sourceHash": "48691b0672365625db1859bdbaa24f544c9bc086ee0dac2bdb0cb6b28dbd8b6d",
+   "text": "[[OPEN_1]]아유르베다[[CLOSE_1]]의 치유력",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e716342a63b70c9e035",
+   "sourceHash": "0e716342a63b70c9e0357c1c77951ea3a1ac46b72d9eea7ab036d97a556ec90a",
+   "text": "몸과 마음, 정신의 변화를 위해 – 나에게 꼭 맞는 웰니스 프로그램을 찾아보십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a410b30264694dcfb14",
+   "sourceHash": "2a410b30264694dcfb1411e0a469f229b3328f2cfe74a6916fe508b9f4615af1",
+   "text": "프로그램 선택하기 →",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4de8f16455c3f32b2f18",
+   "sourceHash": "4de8f16455c3f32b2f18a81e1cf6afb15b9625524edf136ece0f3701590c288a",
+   "text": "자연스러운 완화와 지속적인 치유를 위해 – 건강 상태에 맞는 아유르베다 치료 프로그램을 찾아보십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_28ae7be2a8bc11013068",
+   "sourceHash": "28ae7be2a8bc11013068f83883cc16f27b00321382257e2c3a062a563c4a0894",
+   "text": "요가 및 명상",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c32f0cb1d391c76bb715",
+   "sourceHash": "c32f0cb1d391c76bb715c04fafbc9ad9e90c69e78ac8176599ef2e0f39f6bfed",
+   "text": "몸과 마음, 영혼의 균형을 되찾으십시오 – 요가 및 명상 프로그램으로 평온함을 경험해 보십시오!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_308d28059326b6b0403c",
+   "sourceHash": "308d28059326b6b0403c6487a10b773d94c956ce756a523a2971ed52a26176a9",
+   "text": "몸과 마음, 영혼에 새로운 활력을 —",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment is followed by the property name; Korean word order requires the location after the verb phrase, so rendered as a lead-in ending in a dash."
+   ]
+  },
+  {
+   "id": "t_3bcc927d368587023238",
+   "sourceHash": "3bcc927d368587023238ccc65d7ac1c8370bc3662189f23fef3e923cf481431e",
+   "text": "아유르베다 치료 프로그램",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b123ccd3e1f8018b5f0",
+   "sourceHash": "7b123ccd3e1f8018b5f08e0e37d79ffd34f19d6fb28ac1fe2f807e8eb7fc0c27",
+   "text": "지금 예약하기 →",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f0e8aa7d8527a8e457c",
+   "sourceHash": "0f0e8aa7d8527a8e457c655b1a67909f253ccc1fee6358e29c3256dd53c82556",
+   "text": "전체 29개 프로그램: [[OPEN_1]]아유르베다 치료 개요 →[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
