@@ -1,0 +1,157 @@
+{
+ "batchId": "b-0092",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_2d7e670798378d907bb9",
+   "sourceHash": "2d7e670798378d907bb957718c103055cc70f0d865ce3def58af465ac2b59a76",
+   "text": "[[OPEN_1]]طلب النقل عبر WhatsApp[[CLOSE_1]] [[OPEN_2]]اتصال[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7c142f14798bb5560b6a",
+   "sourceHash": "7c142f14798bb5560b6a407d0cb974a1fbc194b70311dbb880febfc6c4403012",
+   "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]جميع البرامج[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]العلاجات الأيورفيدية[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]علاج صحة القلب والأوعية الدموية وضغط الدم[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09a41ecd2676af807b8e",
+   "sourceHash": "09a41ecd2676af807b8e017969db54cb73e10c068cd0f39431ceb58462d128ae",
+   "text": "علاج أيورفيدي طبيعي لارتفاع ضغط الدم وصحة القلب. رعاية مخصّصة بالعلاجات العشبية واليوغا والنظام الغذائي. احجز علاجًا بإشراف طبيب.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e8d8277e67211c043f8",
+   "sourceHash": "1e8d8277e67211c043f83d8ccf74ff3bbb87e40e576dc3745ccb12b670ff43ae",
+   "text": "نبذة عن [[OPEN_1]]علاج صحة القلب والأوعية الدموية وضغط الدم[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0be064eb1058fde1250",
+   "sourceHash": "f0be064eb1058fde12507398e09e50d5cae9b6ac0ac11e2715c8bf999e3a8cf6",
+   "text": "يشكّل ارتفاع ضغط الدم مخاطر صحية جسيمة مثل النوبات القلبية والسكتات الدماغية وغيرها. وتسهم عوامل نمط الحياة، مثل سوء التغذية والتوتر والإرهاق في العمل، في الإصابة بهذه الحالة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a6e3dba4e27d5e212793",
+   "sourceHash": "a6e3dba4e27d5e2127930167032d5dce32f53091fe1f56c5f4da68789887c2a6",
+   "text": "تقدّم Kairali – The Ayurvedic Healing Village علاجًا أيورفيديًا لضغط الدم لمدة 14/21/28 يومًا. يحدّد الخبراء الأسباب الجذرية ويقدّمون علاجات مصمّمة لكل حالة. وتعمل الإجراءات الأيورفيدية والمنتجات العشبية والتدليكات (مثل شيرودارا (Shirodhara) وتاكرادارا (Thakaradhara) وAbhyangam (أبهيانغام)) على التخلّص من السموم واستعادة الصحة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_a6e3dba4e27d5e212793 banned-term سبا"
+   ]
+  },
+  {
+   "id": "t_32d734f7090197a1a63c",
+   "sourceHash": "32d734f7090197a1a63cbdf6a1aacba8c4d36c01bd6153046dd0f053493cf030",
+   "text": "تؤدي مشكلات الهضم دورًا في ذلك، ويحرص المستشفى على الالتزام بنظام غذائي أيورفيدي موصوف يساعد على التنقية وتقوية الهضم. كما تساعد تقنيات إرخاء الذهن مثل التأمل واليوغا في بيئة هادئة على تخفيف التوتر.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the resort' rendered as 'المستشفى' (the hospital) per banned-word rule (resort)."
+   ]
+  },
+  {
+   "id": "t_0e769600933790607b2a",
+   "sourceHash": "0e769600933790607b2a13b33ddfade0fa17810eb62c3b28ee23e59516516491",
+   "text": "التاريخ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e53ec362567115c72735",
+   "sourceHash": "e53ec362567115c72735a8b938ade3bfffcca7f32944a05c9058e224c8139e65",
+   "text": "تاريخ [[OPEN_1]]علاج صحة القلب والأوعية الدموية وضغط الدم[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ccc54339ab5c2d121f42",
+   "sourceHash": "ccc54339ab5c2d121f42f55263e78ed142bad2cdfa6c814742f7cebf710d14b7",
+   "text": "بخبرة تزيد على [[VAR_1]] عامًا، تتخصّص Kairali – The Ayurvedic Healing Village في الرعاية الأيورفيدية الأصيلة. ويتعامل الأيورفيدا، وهو نظام هندي قديم للاستشفاء، مع ارتفاع ضغط الدم باعتباره اختلالًا في الدوشا، ولا سيما دوشا بيتا (Pitta) وفاتا. ويشمل نهجنا تقييمات مخصّصة لكل شخص، مع استخدام علاجات مثل Abhyangam (أبهيانغام) (التدليك بالزيت) وشيرودارا (Shirodhara) (انسياب الزيت على الجبهة) وناسيام (Nasyam) (الزيوت العشبية الأنفية) لتخفيف التوتر وتهدئة الأعصاب وتحسين الدورة الدموية. وتدعم العلاجات العشبية المخصّصة صحة القلب والأوعية الدموية وتنظيم ضغط الدم. ونولي الأولوية لتغييرات نمط الحياة والأنظمة الغذائية المصمّمة لكل شخص، مع التركيز على التوازن والتغذية وإدارة التوتر وممارسة الرياضة والنوم. ويتعامل الأيورفيدا مع ارتفاع ضغط الدم من جذوره، معزّزًا العافية الدائمة وتحسين صحة القلب. ثق بخبرتنا في إدارة شاملة وفعّالة لارتفاع ضغط الدم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_481cb6eb96d0cfb4d51b",
+   "sourceHash": "481cb6eb96d0cfb4d51bf208a4cb555103cb92a5cc6df96385665a1f0848c609",
+   "text": "المراحل المتّبعة في [[OPEN_1]]علاج صحة القلب والأوعية الدموية وضغط الدم[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d1044211297a42d839d",
+   "sourceHash": "0d1044211297a42d839da56047c47a903e0a3ba95fe413667675d705a5ac56ab",
+   "text": "غالبًا ما تشمل خطوات العلاج الطبيعي لارتفاع ضغط الدم ما يلي:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33aefdba11365179f131",
+   "sourceHash": "33aefdba11365179f13129a9fcff335ec8592bea5d49fc8e3e42e3281944b499",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]ينظر الأيورفيدا إلى الجسم ككل، ويتناول العافية الجسدية والذهنية والعاطفية لمعالجة الأسباب الجذرية لارتفاع ضغط الدم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_33aefdba11365179f131 banned-term سبا"
+   ]
+  },
+  {
+   "id": "t_e5ffc162d165e4d5d625",
+   "sourceHash": "e5ffc162d165e4d5d625068e8abce2bbb0d04f57abc31d2167598f443ef58bdc",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]تُصمَّم العلاجات وفقًا لبنية كل شخص وحالته الصحية واحتياجاته، لضمان نهج فريد في إدارة ارتفاع ضغط الدم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d9f2c403fd0660a0105",
+   "sourceHash": "1d9f2c403fd0660a0105cd3b5a43ff799ad078e745af71c5ad742274b3c2dedd",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]توفّر العلاجات الأيورفيدية والأدوية العشبية بدائل طبيعية، مما يقلّل الاعتماد على الأدوية المصنّعة وآثارها الجانبية المحتملة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_334af0c858882261525c",
+   "sourceHash": "334af0c858882261525cd826576f85992a432cc93a5b43fb5ba00e688de1679a",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]يركّز الأيورفيدا على حلول دائمة من خلال معالجة الاختلالات الكامنة وتعزيز الصحة العامة، بما في ذلك تعديلات نمط الحياة لإدارة ارتفاع ضغط الدم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3ba095701ed0d20b6bfe",
+   "sourceHash": "3ba095701ed0d20b6bfecbb1cca68eee4d0433af733af4ce3d6ea898defcda40",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]يوازن ضغط الدم، ويخفّف التوتر، ويعزّز صحة القلب والأوعية الدموية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a10a263de7729fade0d3",
+   "sourceHash": "a10a263de7729fade0d3c7e566d9d6d2a102a7d888b72aed1c40f4686001eef8",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]يحسّن الدورة الدموية، ويدعم مستويات الكوليسترول الصحية، ويعزّز الاسترخاء.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

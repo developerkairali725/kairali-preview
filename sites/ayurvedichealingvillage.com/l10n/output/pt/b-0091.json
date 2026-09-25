@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0091",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_37a8eec1ce19687d132f",
+   "sourceHash": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f",
+   "text": "default",
+   "status": "translated",
+   "unchangedReason": "CSS cursor keyword (code value), not display text",
+   "issues": [
+    "Role is js:display but value appears to be a CSS cursor value; left unchanged."
+   ]
+  },
+  {
+   "id": "t_1cdf95bd12e993d5aaf2",
+   "sourceHash": "1cdf95bd12e993d5aaf216f5f4ac1148b4b003ed0a253b781b25866eeaa27af3",
+   "text": "pointer",
+   "status": "translated",
+   "unchangedReason": "CSS cursor keyword (code value), not display text",
+   "issues": [
+    "Role is js:display but value appears to be a CSS cursor value; left unchanged."
+   ]
+  },
+  {
+   "id": "t_a5458802386cd51988c3",
+   "sourceHash": "a5458802386cd51988c341025a94eaeb73e83afbe2b1f2799a23b0199053c790",
+   "text": "[data-map-zoom]",
+   "status": "translated",
+   "unchangedReason": "CSS selector (code)",
+   "issues": []
+  },
+  {
+   "id": "t_b99dc9a8079847f3c43e",
+   "sourceHash": "b99dc9a8079847f3c43e16a56b648b31afff8ba7206c9ac11fceb555041e3dec",
+   "text": "[data-step]",
+   "status": "translated",
+   "unchangedReason": "CSS selector (code)",
+   "issues": []
+  },
+  {
+   "id": "t_3e64cc41cf8e07b43936",
+   "sourceHash": "3e64cc41cf8e07b43936d7bc4eaf8bdb8e2abcec1f44c7b915ac0a0c27ebc41a",
+   "text": "step",
+   "status": "translated",
+   "unchangedReason": "Data-attribute key (code identifier), not display text",
+   "issues": [
+    "Role is js:display but value appears to be a dataset key ('step'); left unchanged."
+   ]
+  },
+  {
+   "id": "t_063aa684aacb52731763",
+   "sourceHash": "063aa684aacb5273176323126899ef6edfebf0819543602ae624e13246c839e9",
+   "text": "[data-panel]",
+   "status": "translated",
+   "unchangedReason": "CSS selector (code)",
+   "issues": []
+  },
+  {
+   "id": "t_b4088bfb65ad251ef961",
+   "sourceHash": "b4088bfb65ad251ef96199b72e32cdd1a0fbfcc23f22fd9a30ef3754c4e2de51",
+   "text": "[data-cap]",
+   "status": "translated",
+   "unchangedReason": "CSS selector (code)",
+   "issues": []
+  },
+  {
+   "id": "t_dfe04569290252ffa064",
+   "sourceHash": "dfe04569290252ffa0644e74e24aa5a04d4d94d15087dc6df79f834d2f861fe5",
+   "text": "[data-panel=\"",
+   "status": "translated",
+   "unchangedReason": "CSS selector fragment (code)",
+   "issues": []
+  },
+  {
+   "id": "t_3af8fd34a9e4c3c4295d",
+   "sourceHash": "3af8fd34a9e4c3c4295dd8b77bd79f5ff23d6c6482237dd1f84a0b225cf29a8d",
+   "text": "\"] img",
+   "status": "translated",
+   "unchangedReason": "CSS selector fragment (code)",
+   "issues": []
+  },
+  {
+   "id": "t_abd149214539d9f222d2",
+   "sourceHash": "abd149214539d9f222d25de6358735b9fa0efd3956f66102b2c119ae2d9f6348",
+   "text": "Índia",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1297a3c92b0324f97c4d",
+   "sourceHash": "1297a3c92b0324f97c4d24ea59b2b2f44eb508d1dfcfcf159faf92bc65867786",
+   "text": "Kerala",
+   "status": "translated",
+   "unchangedReason": "Place name, identical in Portuguese",
+   "issues": []
+  },
+  {
+   "id": "t_029807d6f9b97094fac6",
+   "sourceHash": "029807d6f9b97094fac647d5450e518c09b257d7fc0f2f64a4a61d64bbd64232",
+   "text": "Palakkad",
+   "status": "translated",
+   "unchangedReason": "Place name, identical in Portuguese",
+   "issues": []
+  },
+  {
+   "id": "t_03decea44e7e22f4ef56",
+   "sourceHash": "03decea44e7e22f4ef564d54c6bbba596bb69f8c0aa406fec2f55e545b3bd595",
+   "text": "O recinto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da4a085a8e498f5f26fa",
+   "sourceHash": "da4a085a8e498f5f26fa22891e3303e731b3dde548007876d213e461182f43ac",
+   "text": "Copiar a morada",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2d9bff576e3a803287c8",
+   "sourceHash": "2d9bff576e3a803287c8e5a7fe43f74455db70d1cb729395382f86636e4bc35a",
+   "text": "Kerala situa-se na costa sudoeste da Índia. O distrito de Palakkad fica no interior, na fronteira entre Kerala e Tamil Nadu, no sopé dos Gates Ocidentais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b2691b9e5939f9092e8c",
+   "sourceHash": "b2691b9e5939f9092e8c87e2f7f2759a96d39f13a0a0557b8c01c1f02b93ef9f",
+   "text": "[[OPEN_1]]Passo 3[[CLOSE_1]] [[OPEN_2]]Palakkad[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7c0873785a0edc51e761",
+   "sourceHash": "7c0873785a0edc51e761dcfaa6d5e4a235c6d0f6ac3a9bdadc6b194502a01bed",
+   "text": "[[OPEN_1]]Passo 4[[CLOSE_1]] [[OPEN_2]]Recinto[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_263657f4271eb49e5fd0",
+   "sourceHash": "263657f4271eb49e5fd0a482308168ca519cb685defe1f25e4daca62f8cd37af",
+   "text": "Ligações rodoviárias para Palakkad",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_388ea64c6c4536fd5e41",
+   "sourceHash": "388ea64c6c4536fd5e41d03434d95bff1d7064c517a9e6c5d0962e3645ce5361",
+   "text": "~62 km · ~1½–2 h por estrada, NH544",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_458e2ebc615e406a93f4",
+   "sourceHash": "458e2ebc615e406a93f45d71e0e783b0930af36ccaac32c0aec4de4860ccea36",
+   "text": "~115 km · ~2½–3 h por estrada",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ee5799df90a3e1d42fd",
+   "sourceHash": "4ee5799df90a3e1d42fdc55e4494e0122025c085596fd92ec07a6b53097e946e",
+   "text": "~18 km · ~35 min, para oeste, passando por Kodumbu",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01aa088b9be2805742aa",
+   "sourceHash": "01aa088b9be2805742aacd1bc039258ef6533dfca7f3cd9d66d16b54c046201e",
+   "text": "O hospital, no sopé dos Gates Ocidentais",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06dd7a4ce8a8ec223d08",
+   "sourceHash": "06dd7a4ce8a8ec223d08a95a13e51812aad0e2f03af816e0ac7695f0482bd034",
+   "text": "Por estrada · ~62 km · ~1½–2 h",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcc42f772bdd26176efd",
+   "sourceHash": "dcc42f772bdd26176efd01d3824a2a238ee3979a79526fe16c3ed49df64af2d1",
+   "text": "Por estrada · ~115 km · ~2½–3 h",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_345ad0dac4ccba1af934",
+   "sourceHash": "345ad0dac4ccba1af9344c375556cc8e19daef9c78a18419841419a363351d32",
+   "text": "Por estrada · ~18 km · ~35 min",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

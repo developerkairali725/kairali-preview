@@ -49,6 +49,11 @@ for (const loc of LOCS) {
 }
 const strict = run(["tools/l10n/build.mjs", "--strict"]);
 if (/EXIT \d|STRICT:/.test(strict)) fail.push("build --strict: untranslated units remain (" + (strict.match(/missingUnits=\d+/g) || []).slice(0, 12).join(" ") + ")");
+// A unit blocked for clinical/legal reasons in ANY locale is held in EVERY locale
+// until ruled (other locales may have translated the same unapproved claim).
+const held = new Set();
+for (const loc of LOCS) { const d = rel(`l10n/output/${loc}`); if (fs.existsSync(d)) for (const f of fs.readdirSync(d)) for (const u of JSON.parse(fs.readFileSync(`${d}/${f}`, "utf8")).units) if (u.status === "blocked") held.add(u.id); }
+if (held.size) fail.push(`${held.size} source unit(s) clinically held in all locales pending owner/Dr. Deepu John ruling: ${[...held].join(", ")}`);
 const routes = JSON.parse(fs.readFileSync(rel("l10n/routes.json"), "utf8")).routes;
 const LOCINFO = JSON.parse(fs.readFileSync(rel("l10n/locales.json"), "utf8"));
 const man = fs.existsSync(rel("l10n/prerender-manifest.json")) ? JSON.parse(fs.readFileSync(rel("l10n/prerender-manifest.json"), "utf8")).locales : {};

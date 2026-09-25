@@ -1,0 +1,42 @@
+{
+ "_about": "Source-bound, reviewed numeric exceptions. Each entry applies ONLY to the named unit id, its exact frozen sourceHash and the listed locale, and only to the listed numbers. A change of source text voids the entry. Reviewed by the coordinator against parent review PARENT-RELEASE-GATE-REVIEW.md (26 Sep 2026); no general loosening of the numeric check.",
+ "entries": [
+  {
+   "id": "t_925e1c8551f5218828c2",
+   "sourceHash": "925e1c8551f5218828c2cbb2da7b1cd284aa0d5b01e8c230a82d2e0d89a72eee",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'share a villa' → 1つのヴィラ: Japanese counter for the indefinite article; no new fact"
+  },
+  {
+   "id": "t_713d6e5818e75f50f459",
+   "sourceHash": "713d6e5818e75f50f45939d19f4f577b6f2d3434f39c3b2f377a5f36460d1d5f",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'share a villa' → 1つのヴィラ: Japanese counter for the indefinite article; no new fact"
+  },
+  {
+   "id": "t_dc2f0f854f42d0836968",
+   "sourceHash": "dc2f0f854f42d0836968e90617d84cff6688c918a4ab1d8d44bafc18923b1316",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'Weekly' → 週1回 (once a week): standard Japanese rendering of 'weekly'; no new fact"
+  },
+  {
+   "id": "t_e58b9a94a0df59bf6d5c",
+   "sourceHash": "e58b9a94a0df59bf6d5c4cb594cf90e9355c6aca3fefa1ff517aee9f0ff9a5bf",
+   "locale": "zh-Hans",
+   "allowMissing": [
+    "5"
+   ],
+   "requireText": "第五代",
+   "reason": "'5th-generation' → 第五代: Chinese ordinal generation written with 五; the fact (fifth) is present as text"
+  }
+ ]
+}

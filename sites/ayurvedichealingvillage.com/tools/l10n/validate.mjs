@@ -13,7 +13,8 @@
  *      – 12-hour clock → 24-hour (10 PM → 22:00) when the source has am/pm;
  *      – English month names/abbreviations → month numbers (September 2026 →
  *        2026年9月) in zh/ja/ko date formats, one per source month name;
- *      – English number words → digits (three day → 3日; level one → Niveau 1);
+ *      – English number words → digits (three day → 3日; level one → Niveau 1;
+ *        single/double occupancy → 1/2); ":00" minutes on converted 12h times;
  *      – zh/ja/ko counters for "per night/day/person", "daily" (→ 1泊, 1日);
  *      – repeating a number the source already states (24-hour → 24 h/24);
  *    anything else (an added amount, duration, percentage, date) is a factual
@@ -21,13 +22,18 @@
  *  · respects SEO length gates, [TO CONFIRM] chips, placeholder and script checks.
  */
 import crypto from "node:crypto";
+import fs from "node:fs";
 
 const sha256 = (s) => crypto.createHash("sha256").update(s, "utf8").digest("hex");
 export const NONLATIN = { hi: /[ऀ-ॿ]/, ru: /[Ѐ-ӿ]/, ar: /[؀-ۿ]/, "zh-Hans": /[一-鿿]/, ja: /[぀-ヿ一-鿿]/, ko: /[가-힯]/ };
 export const BANNED = {
   de: /\b(Kur|Kuren|Urlaub|Luxus\w*|luxuriös\w*|Gäste?n?|Reise|Spa|Resort)\b/i, fr: /\b(cure|vacances|luxe|luxueu\w*|séjour de rêve|clients?|invités?|voyage|spa|resort|station thermale)\b/i,
   es: /\b(spa|resort|vacaciones|lujo\w*|huésped\w*|viaje|cura)\b/i, it: /\b(spa|resort|vacanz\w+|luss\w+|ospit[ei]|viaggio)\b/i, pt: /\b(spa|resort|férias|luxo\w*|luxuos\w*|hóspedes?|viagem|jornada)\b/i,
-  nl: /\b(spa|resort|vakantie|luxe\w*|gasten|reis)\b/i, ru: /(спа|курорт|отпуск|роскош\w*|люкс|гост[ьяи]\w*|путешестви\w*)/i, hi: /(स्पा|रिसॉर्ट|छुट्टी|विलासिता|लक्ज़री|मेहमान|अतिथि|यात्रा)/, ar: /(منتجع|سبا|عطلة|فاخر|فخام|ضيوف|ضيف|رحلة)/,
+  nl: /\b(spa|resort|vakantie|luxe\w*|gasten|reis)\b/i,
+  // Cyrillic/Devanagari/Arabic: \b is ASCII-only, so use Unicode letter boundaries (a substring inside an ordinary word is not a finding)
+  ru: /(?<![\p{L}])(спа|курорт\p{L}*|отпуск\p{L}*|роскош\p{L}*|люкс|гост[ьяие]\p{L}*|путешестви\p{L}*)(?![\p{L}])/iu,
+  hi: /(?<![\p{L}\p{M}])(स्पा|रिसॉर्ट|छुट्टी|विलासिता|लक्ज़री|मेहमान|अतिथि|यात्रा)(?![\p{L}\p{M}])/u,
+  ar: /(?<![\p{L}])(?:ال)?(منتجع|سبا|عطلة|فاخر\p{L}*|فخام\p{L}*|ضيوف|ضيف|رحلة)(?![\p{L}])/u,
   "zh-Hans": /(水疗|度假|奢华|豪华|宾客|客人|旅程|治愈)/, ja: /(スパ|リゾート|休暇|ラグジュアリー|贅沢|豪華|ゲスト|宿泊客|旅)/, ko: /(스파|리조트|휴가|럭셔리|호화|고급스러운|게스트|손님|여정)/,
 };
 const BANNED_EN = /\b(spa|resort|holiday|luxur\w*|cure|journey|guests?)\b/i;
@@ -74,7 +80,9 @@ export function numberDiff(src, t, locale) {
   const count = (re) => (lower.match(re) || []).length;
   // English number words written as digits (three day → 3日, level one → Niveau 1)
   NUMBER_WORDS.forEach((w, n) => { if (w) allow(n, count(new RegExp("\\b" + w + "\\b", "g"))); });
-  allow(1, count(/\b(single|once)\b/g)); allow(2, count(/\btwice\b/g));
+  allow(1, count(/\b(single|once)\b/g)); allow(2, count(/\b(twice|double)\b/g));
+  // 24-hour times written with minutes (10 PM → 22:00): the ":00" adds no fact
+  if (/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) allow(0, count(/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/gi));
   if (["zh-Hans", "ja", "ko"].includes(locale)) {
     // month names/abbreviations → month numbers in CJK/Korean date formats
     MONTHS.forEach((name, i) => allow(i + 1, count(new RegExp("\\b(" + name + "|" + name.slice(0, 3) + ")\\b", "g"))));
@@ -92,6 +100,13 @@ export function numberDiff(src, t, locale) {
  * @param input job input {locale, units:[{id, src, roles}]}
  * @param source Map id → frozen source unit {source, sourceHash}
  */
+const EXCEPTIONS = (() => {
+  try {
+    const p = new URL("../../l10n/validator-exceptions.json", import.meta.url);
+    return JSON.parse(fs.readFileSync(p, "utf8")).entries;
+  } catch { return []; }
+})();
+
 export function validate(res, input, source) {
   const errs = [], warn = [];
   const want = new Map(input.units.map((u) => [u.id, u]));
@@ -113,7 +128,14 @@ export function validate(res, input, source) {
     if ((t.match(/\[TO CONFIRM/g) || []).length !== (w.src.match(/\[TO CONFIRM/g) || []).length) errs.push(`${id} [TO CONFIRM] chip count changed`);
     if ([...tokenList(t)].sort().join() !== [...tokenList(w.src)].sort().join()) errs.push(`${id} tokens ${tokenList(w.src).join("")} != ${tokenList(t).join("")}`);
     else { const ne = nestingError(t); if (ne) errs.push(`${id} ${ne}`); }
-    const { missing, added } = numberDiff(w.src, t, input.locale);
+    let { missing, added } = numberDiff(w.src, t, input.locale);
+    // source-bound reviewed exceptions (l10n/validator-exceptions.json): exact id + frozen hash + locale + numbers
+    const ex = EXCEPTIONS.find((e) => e.id === id && e.locale === input.locale && cur && e.sourceHash === cur.sourceHash && (!e.requireText || t.includes(e.requireText)));
+    if (ex) {
+      // each listed number excuses exactly ONE occurrence
+      for (const d of ex.allowAdded || []) { const i = added.indexOf(d); if (i >= 0) added.splice(i, 1); }
+      for (const d of ex.allowMissing || []) { const i = missing.indexOf(d); if (i >= 0) missing.splice(i, 1); }
+    }
     if (missing.length) errs.push(`${id} numbers missing ${missing.join(",")}`);
     if (added.length) errs.push(`${id} numbers added ${added.join(",")}`);
     const roles = Array.isArray(w.roles) ? w.roles.join(",") : String(w.roles || "");

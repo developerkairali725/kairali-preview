@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0079",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_114d1655e1ee9a04579f",
+   "sourceHash": "114d1655e1ee9a04579f2f314a77137a31123e554a84bd8f56b2340cd9eac9b4",
+   "text": "Можете ли вы организовать такси из аэропорта Коимбатура поздно ночью?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65f73110576c07c4c3c3",
+   "sourceHash": "65f73110576c07c4c3c32053c1f4c04c2a803863123f36d0f0a656827e092dba",
+   "text": "Да, индивидуальный трансфер из аэропорта Коимбатура доступен по цене ₹6,775 (минивэн, MPV) или ₹23,711 (Седан, премиум) в одну сторону; тарифы действуют с 1 Oct 2026 по 30 Sep 2027 и включают 5% GST. При бронировании, пожалуйста, подтвердите время прибытия в службе по работе с пациентами.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dates '1 Oct 2026' and '30 Sep 2027' and prices kept verbatim per the keep-unchanged rule."
+   ]
+  },
+  {
+   "id": "t_0db7826eba20221320d3",
+   "sourceHash": "0db7826eba20221320d3cf538f50c139d3f1c3b077b12b1743bd4a9086bdb30e",
+   "text": "Предоставляете ли вы приглашение для получения медицинской визы и что в нём указано?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f21f28d20d3d4fa57b4d",
+   "sourceHash": "f21f28d20d3d4fa57b4d245a3ff279ba021916e84459439cb77e1fbf9249cc34",
+   "text": "Да, по запросу мы можем предоставить приглашение для подачи заявления на медицинскую визу. Что именно будет указано в письме, служба по работе с пациентами уточнит при получении вашего запроса.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3257d9ae0ed913c74e3b",
+   "sourceHash": "3257d9ae0ed913c74e3b477fb23386b64acb2de2e5962e0f6b9607bc83d75eb5",
+   "text": "После курса процедур",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Approved term 'Treatment' → 'Процедура' applied (inflected as 'процедур')."
+   ]
+  },
+  {
+   "id": "t_560a38f7830c10285cad",
+   "sourceHash": "560a38f7830c10285cadf82debe2f5b6d058b8ed7802ff6f8fc4e3641b1ddb54",
+   "text": "Как продолжить аюрведический режим после возвращения домой?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_76499f3bef07590f7c5e",
+   "sourceHash": "76499f3bef07590f7c5ebc005bd1f38ad086e64d06340e751a5c6ed354abe9f9",
+   "text": "По завершении программы наши врачи составляют для вас индивидуальный план дальнейшего наблюдения с рекомендациями по питанию и образу жизни, домашними средствами, подобранными практиками йоги и медитации, а также травяными препаратами, приём которых можно продолжить дома (доступны для приобретения). Также доступны Онлайн-консультации для последующего наблюдения.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb033fa21aab1b6b6cc4",
+   "sourceHash": "bb033fa21aab1b6b6cc4f04ecdd058075ae2f964c854e636529bdcb486927a8c",
+   "text": "Можно ли приобрести аюрведические препараты, чтобы взять их домой?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_995cf933d656a821fb52",
+   "sourceHash": "995cf933d656a821fb52ac88c3b0f6f553b59ba0b3106c39fc4ab158671eee32",
+   "text": "Да. Наша собственная аптека готовит аутентичные аюрведические препараты по назначению наших врачей и может подготовить для вас запас, чтобы вы продолжили лечение дома.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_95b81d9b5fa71eca7502",
+   "sourceHash": "95b81d9b5fa71eca7502061dca52e51585e0df30ffffb398a16764a2f9282ffe",
+   "text": "Проводите ли вы повторные консультации после моего отъезда?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_45a08c4cfc696fc35cf1",
+   "sourceHash": "45a08c4cfc696fc35cf10042a7e50ff8187c4d7ba928be0fbf690b54f735b990",
+   "text": "Получу ли я выписной эпикриз, который смогу передать своему врачу дома?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d58f44f1ac541b160e31",
+   "sourceHash": "d58f44f1ac541b160e3159cd7aef94f70e26011450ad44ff62b75d76d7d1abdb",
+   "text": "Да. Мы можем предоставить документы о госпитализации и выписке, а также выписки о проведённом лечении и назначения, которые вы сможете передать своему врачу дома, — это те же документы, которые мы готовим для заявлений на страховое возмещение.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9459e12f91695e9b3e84",
+   "sourceHash": "9459e12f91695e9b3e8402d1cdb38231e47736580a5b7aa2f9de98d41b6786ee",
+   "text": "Дополнительные материалы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9546c61e99f970f84926",
+   "sourceHash": "9546c61e99f970f84926461997efbcc7c0efb8c1d3d281779def0596273ca397",
+   "text": "Проводите ли вы образовательные программы по аюрведе?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc2f0f854f42d0836968",
+   "sourceHash": "dc2f0f854f42d0836968e90617d84cff6688c918a4ab1d8d44bafc18923b1316",
+   "text": "Да. Во время вашего пребывания еженедельно проводятся семинары по принципам аюрведы и самопомощи, а также занятия по аюрведической кулинарии. Кроме того, Kairali проводит пять учебных курсов для специалистов — от однодневного семинара до 20-дневного курса Advanced Ayurveda Lifestyle Consultant & Therapist Training.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Course title kept in English as a proper name."
+   ]
+  },
+  {
+   "id": "t_e4f7cb9d8d170e52b3c3",
+   "sourceHash": "e4f7cb9d8d170e52b3c34967ff7cb17a1d299e0cf72ea6a2bd41c3fcc03ff00e",
+   "text": "Подробности о курсах — на странице [[OPEN_1]]учебных программ[[CLOSE_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_96891e371d61fa325d61",
+   "sourceHash": "96891e371d61fa325d615923089c1f81648aa42750e213ea542db39bdd09b16d",
+   "text": "Где можно больше узнать об аюрведе до приезда?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e8e3068614331921e17d",
+   "sourceHash": "e8e3068614331921e17d0043483623118400740a1e7768972a3aceab9762b893",
+   "text": "Загляните в наш [[OPEN_1]]Центр знаний[[CLOSE_1]] со статьями о принципах аюрведы, на страницу [[OPEN_2]]книг[[CLOSE_2]] и в нашу [[OPEN_3]]видеогалерею[[CLOSE_3]] с образовательными видео.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c9f68e44d3132b0f91bb",
+   "sourceHash": "c9f68e44d3132b0f91bb90b6140cc9d85f373a701a4b2fe8cdcbe9b51a7959a3",
+   "text": "Предлагаете ли вы сертификационные или учебные программы для практикующих специалистов аюрведы?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_867397d9033cf2a6363a",
+   "sourceHash": "867397d9033cf2a6363a1d66b839053957ad6ed9a174e1ef98e5b6cce4494171",
+   "text": "Да. Kairali предлагает пять учебных курсов с проживанием в больнице:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01442deb4cbdb622374b",
+   "sourceHash": "01442deb4cbdb622374bd47acd9efae689146ea02a4807b5892e15d63aebb4f4",
+   "text": "Однодневный семинар по аюрведе (1 день)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8389c037f1dd2192ad26",
+   "sourceHash": "8389c037f1dd2192ad264e3125a9caca5a5d5a73416f48adc0bcddb8e6f61414",
+   "text": "Трёхдневная сертификационная программа по аюрведе (3 дня)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_252fc12b0a33a8ca3dd8",
+   "sourceHash": "252fc12b0a33a8ca3dd86723ad6ddfcd6ff19089d3ca9df961184126911f6f95",
+   "text": "Пятидневная интенсивная программа обучения аюрведе (5 дней)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e8cd91a2b57f9dea126d",
+   "sourceHash": "e8cd91a2b57f9dea126db9138e6224a52f287848aa3b5c7b326743042c003095",
+   "text": "Продвинутая программа обучения аюрведе, первый уровень (10 дней)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f49fcd212e5deb9ed0fb",
+   "sourceHash": "f49fcd212e5deb9ed0fb4fdf24d321a4a63edcfc02e3f7ef3906a922c2fa096d",
+   "text": "Продвинутый курс подготовки консультантов по аюрведическому образу жизни и терапевтов (20 дней)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0075",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_5c6dc689b654644846a6",
+   "sourceHash": "5c6dc689b654644846a6da73f6a2567756eadd3041f42cf8cd67a4e93bf509f3",
+   "text": "Consultations initiales et de suivi avec nos médecins",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_03d34049848d55be5478",
+   "sourceHash": "03d34049848d55be5478bfca6f6a1ca3f67e54e7709c559e8ae0b937c9341cc3",
+   "text": "Thérapies quotidiennes prescrites selon votre programme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f73aa926ce42641455c6",
+   "sourceHash": "f73aa926ce42641455c60b47912858ffd307a49a312a2558c694370da2d382bb",
+   "text": "Médicaments et préparations à base de plantes pendant votre séjour",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9f47c3430869d5fc3ffd",
+   "sourceHash": "9f47c3430869d5fc3ffd6c9dedcea375de07d24f21ac47e58606dd971d299817",
+   "text": "Séances quotidiennes de yoga et de méditation",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e214977cab7200d7b08",
+   "sourceHash": "8e214977cab7200d7b0804e0beca8b7e33974463e8087d6fafae262c6755d55b",
+   "text": "Accès aux installations de l’hôpital",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ce28c2fb32420ff8348",
+   "sourceHash": "9ce28c2fb32420ff83484114a141a435cdb89f7874f314884925a7a902eda6cb",
+   "text": "Ateliers hebdomadaires, cours de cuisine et visites de la ferme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88e0e6cd3bcc055f9683",
+   "sourceHash": "88e0e6cd3bcc055f96835d703576b9739107659544e766890154d808e6dcccd3",
+   "text": "Wi-Fi dans les espaces communs",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_95508f934633fce32ac1",
+   "sourceHash": "95508f934633fce32ac19cbd7621617620e62cb6a65cccc52616ddb1fa369b7e",
+   "text": "Les services supplémentaires payants comprennent les transferts depuis l’aéroport ou la gare, la blanchisserie, les excursions spécialisées, les séances privées de yoga ou de méditation et les soins au-delà de votre planning prescrit.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6c71c35cb831766e46f9",
+   "sourceHash": "6c71c35cb831766e46f92a4e426336bdf398dcb95c7a270e1e40c6f6d5a85d55",
+   "text": "Puis-je consulter le détail des tarifs ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c9f5922438b6207a937a",
+   "sourceHash": "c9f5922438b6207a937a3d8035a75718afbd1e1ca0a502c44f2fe065e3a85dbc",
+   "text": "Oui. Notre grille tarifaire indique les prix par type de villa (Deluxe, Classic, Royal, Maharaja Suite) en occupation simple ou double. Pour un devis détaillé incluant les repas et les soins supplémentaires, contactez l’équipe d’accompagnement des patients au +91 9555 156 156.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d2ede9aed50f8069080",
+   "sourceHash": "0d2ede9aed50f8069080873f5e7a6b9d41273c3df2bb56d19aa41a4abcbbcc7a",
+   "text": "Un membre de ma famille peut-il séjourner avec moi, et un accompagnant doit-il payer ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84fc4dbddb678786b383",
+   "sourceHash": "84fc4dbddb678786b383432636dc98ac283a68093941502a2a8c00732d5017a0",
+   "text": "Oui, un membre de votre famille peut séjourner avec vous. Un adulte supplémentaire est facturé pour un lit d’appoint et des repas supplémentaires : les tarifs en vigueur (valables du 1 Oct 2026 au 30 Sep 2027) indiquent un lit d’appoint à ₹3,000 / $43 / €38 par nuit et des repas supplémentaires à ₹5,500 / $79 / €69 par nuit, en plus du tarif de votre programme.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dates and prices kept exactly as in the source (1 Oct 2026 – 30 Sep 2027; ₹3,000 etc.) per the keep-unchanged rule; editor may localise date format (1er octobre 2026 – 30 septembre 2027) if permitted."
+   ]
+  },
+  {
+   "id": "t_bf554a149082d1495ad9",
+   "sourceHash": "bf554a149082d1495ad9cd5a3d63d9eae089716b28245ee40a3a4ccb81ecb07c",
+   "text": "Les villas disposent-elles de la climatisation, du Wi-Fi et d’un réseau mobile ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f118e96ca81e43ddf4fd",
+   "sourceHash": "f118e96ca81e43ddf4fd7821244b5744effee4e9d8799d4d5d715e12cd5fdf2d",
+   "text": "Oui, toutes les villas sont climatisées. Le Wi-Fi est disponible dans les espaces communs. Pour le Wi-Fi dans la villa et la couverture du réseau mobile, veuillez vous renseigner auprès de l’équipe d’accompagnement des patients lors de votre réservation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_925e1c8551f5218828c2",
+   "sourceHash": "925e1c8551f5218828c2cbb2da7b1cd284aa0d5b01e8c230a82d2e0d89a72eee",
+   "text": "Deux personnes peuvent-elles partager une villa et suivre des programmes différents ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_713d6e5818e75f50f459",
+   "sourceHash": "713d6e5818e75f50f45939d19f4f577b6f2d3434f39c3b2f377a5f36460d1d5f",
+   "text": "Oui, les villas sont proposées en occupation simple ou double, deux personnes peuvent donc partager une villa. Les tarifs s’entendent par personne et par programme, et le programme de chaque patient est fixé par le médecin lors de la consultation — indiquez à l’équipe d’accompagnement des patients, lors de la réservation, que vous souhaitez suivre des programmes différents.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2222a1700d631104199a",
+   "sourceHash": "2222a1700d631104199a0540361f57fc3951a081b2d556e54541d6db5bbdccf1",
+   "text": "Informations alimentaires",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_228c096d748c1decf991",
+   "sourceHash": "228c096d748c1decf991f32116cea49b73e68b6f61b69cba1ecd5fa25b50a08f",
+   "text": "Quel type de repas est servi chez Kairali ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b3241adac297b69acece",
+   "sourceHash": "b3241adac297b69acece1649b7c80e0a01736a33817fbbf7ad4552cae3229a69",
+   "text": "Nous servons une cuisine végétarienne fraîche et biologique, préparée selon les principes ayurvédiques. Les repas sont adaptés pour équilibrer votre dosha et accompagner votre programme de soins. Nos ingrédients proviennent principalement de nos jardins biologiques sur place ou de producteurs locaux, afin de préserver au mieux leur valeur nutritionnelle et de limiter l’impact environnemental.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'ensuring maximum nutritional value' softened to 'préserver au mieux' to avoid an absolute guarantee."
+   ]
+  },
+  {
+   "id": "t_3f224a85ce27654e82b1",
+   "sourceHash": "3f224a85ce27654e82b11bb7ab5cfa5fb027844b26e930d300a8be786a396e1a",
+   "text": "Pouvez-vous tenir compte des restrictions alimentaires ou des allergies ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d31581c30ecb46ad6286",
+   "sourceHash": "d31581c30ecb46ad6286177a2acbb69516cdd89e1cb718ec6fc32a3b8c9c2929",
+   "text": "Oui, nous tenons compte de divers besoins alimentaires, notamment les régimes végétaliens, sans gluten et les exigences liées aux allergies. Merci de nous signaler toute allergie ou restriction alimentaire lors de votre réservation afin que notre cuisine puisse s’organiser en conséquence.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_75b60fa8748c50343fc7",
+   "sourceHash": "75b60fa8748c50343fc704365ce588c3a24ff04b7a67f188e9f44fca630e88da",
+   "text": "L’alcool ou le café sont-ils autorisés pendant la période de traitement ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8115f1c142466cdeebf6",
+   "sourceHash": "8115f1c142466cdeebf646caa20646dedfed48eb7f088d26964fe978ae6f1923",
+   "text": "Nous déconseillons vivement la consommation d’alcool pendant votre période de traitement, car il nuit à l’efficacité des médicaments ayurvédiques et au processus de détoxification. Le campus est sans alcool et sans caféine afin de soutenir votre traitement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e504655782ef9cadb6f",
+   "sourceHash": "8e504655782ef9cadb6f26d7a6f06ba6df2e244ae5852acaf026eaf2ab270c56",
+   "text": "Voyage et logistique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_8e504655782ef9cadb6f banned-term Voyage"
+   ]
+  },
+  {
+   "id": "t_3a2d816ef67909552ed4",
+   "sourceHash": "3a2d816ef67909552ed4aa8a4073b32ae56591d87eeba7fcf9a1d4fd07e043c1",
+   "text": "Quels sont les aéroports et les gares les plus proches ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

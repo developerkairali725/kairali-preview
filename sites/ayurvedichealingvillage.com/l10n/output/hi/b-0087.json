@@ -1,0 +1,212 @@
+{
+ "batchId": "b-0087",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_ce8fdb9a260c562cb25a",
+   "sourceHash": "ce8fdb9a260c562cb25a636b9f916492fa15eaae11711de8ee701ca243e430a6",
+   "text": "मानचित्र बंद करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_440cf9f7c2d670b85698",
+   "sourceHash": "440cf9f7c2d670b85698c90b1eb4f0a61b24be46c75ae715341b5b86640edf95",
+   "text": "हीलिंग विलेज तक के मार्ग-मानचित्र",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3805f5d94fa0f56ad035",
+   "sourceHash": "3805f5d94fa0f56ad03593b5db27be866778f56a8c10f24b9252d2701a883dab",
+   "text": "Google Maps में ड्राइविंग दिशा-निर्देश नए टैब में खोलने के लिए अपना आगमन स्थल चुनें। यदि आप ओट्टापलम रेलवे स्टेशन पर पहुँचते हैं या बेंगलुरु से आते हैं, तो हमारी पेशेंट केयर टीम अंतिम चरण के रास्ते की योजना बनाने में आपकी सहायता कर सकती है। वर्तमान दूरी और यात्रा-समय के लिए लाइव मार्ग देखें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'final journey' rendered as 'अंतिम चरण का रास्ता' (final leg/route) per the banned-word rule on 'journey'.",
+    "t_3805f5d94fa0f56ad035 banned-term-from-source यात्रा"
+   ]
+  },
+  {
+   "id": "t_889abe7a1070aa94eb3f",
+   "sourceHash": "889abe7a1070aa94eb3f6e9b23b965ed79f16122b94c5edb91010224762781cb",
+   "text": "[[OPEN_1]]कोयंबटूर हवाई अड्डा (CJB) — दिशा-निर्देश खोलें ↗[[CLOSE_1]][[OPEN_2]]कोच्चि / कोचीन हवाई अड्डा (COK) — दिशा-निर्देश खोलें ↗[[CLOSE_2]][[OPEN_3]]पालक्काड रेलवे स्टेशन — दिशा-निर्देश खोलें ↗[[CLOSE_3]][[OPEN_4]]ओट्टापलम रेलवे स्टेशन — दिशा-निर्देश खोलें ↗[[CLOSE_4]][[OPEN_5]]बेंगलुरु / बैंगलोर — दिशा-निर्देश खोलें ↗[[CLOSE_5]][[OPEN_6]]आपका वर्तमान स्थान — दिशा-निर्देश खोलें ↗[[CLOSE_6]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4750c5e0707d42aad69a",
+   "sourceHash": "4750c5e0707d42aad69ad8f568667cfeee39158c5af84227b2f9a4a4820caf01",
+   "text": "हम तक पहुँचने के तरीके",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9587da1a0c868d665e69",
+   "sourceHash": "9587da1a0c868d665e691c09373d5b9f547d4b82f9bae9f51407e39c884179ca",
+   "text": "हवाई, रेल और सड़क मार्ग से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e972cc6b8ce6409a2f12",
+   "sourceHash": "e972cc6b8ce6409a2f125be4d7e492c3b88588125f462d69563052f7d983d315",
+   "text": "आप किसी भी तरह यात्रा करें, हम हवाई अड्डे या रेलवे स्टेशन पर नामित ड्राइवर के साथ आपको लेने आ सकते हैं — पहुँचने पर आपको टैक्सी ढूँढ़ने की ज़रूरत नहीं पड़ती।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_e972cc6b8ce6409a2f12 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_85cf7e820d7647926968",
+   "sourceHash": "85cf7e820d76479269685bd52b9804607063de8d2180f7b533d5d514acbef34a",
+   "text": "हवाई मार्ग से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f904a274e573ebea5c82",
+   "sourceHash": "f904a274e573ebea5c82f4ac64a9ae736e7cacfcba828a14465d6e5c016e3a0a",
+   "text": "कोयंबटूर (CJB) — सबसे नज़दीकी",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f837058f8880dbf78124",
+   "sourceHash": "f837058f8880dbf78124af7c5a59484b9b69cabc377409c4e9b71f4e2537dbd5",
+   "text": "कोच्चि / कोचीन (COK) — वैकल्पिक",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2356ced2dbcef86ad214",
+   "sourceHash": "2356ced2dbcef86ad214676b83a5480c46c8603b72e64165f3b88e55a31262e8",
+   "text": "[[OPEN_1]]आगमन पर:[[CLOSE_1]] अपना फ़्लाइट नंबर और लैंडिंग का समय हमें पहले से बता दें, और नाम-पट्टिका के साथ एक कार आपकी प्रतीक्षा कर सकती है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88617279fd3e0610dc26",
+   "sourceHash": "88617279fd3e0610dc26267aeae09b8fced7a7183ea179cbda98f7ca73907eef",
+   "text": "रेल मार्ग से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_52caa8c8de564c61c1bc",
+   "sourceHash": "52caa8c8de564c61c1bc2a0921b654c53f8758ca3da1fdf54371ea047a234f24",
+   "text": "पालक्काड जंक्शन (PGT) — अनुशंसित",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10c7d14c4b1ed4ff64dc",
+   "sourceHash": "10c7d14c4b1ed4ff64dcc9f768c9f87cd6c96bc33b48c594f0c55741b39c3913",
+   "text": "[[OPEN_1]]आगमन पर:[[CLOSE_1]] स्टेशन पर टैक्सियाँ उपलब्ध रहती हैं, या हमें अपना ट्रेन नंबर और पहुँचने का समय भेजें — हम आपको लेने आएँगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc3120c4bd46ea2b1de8",
+   "sourceHash": "bc3120c4bd46ea2b1de8bc7041029dadd84a6952df6f95900b97ac5ab7d2a007",
+   "text": "सड़क मार्ग से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4824ab53cf0c5b90dfdb",
+   "sourceHash": "4824ab53cf0c5b90dfdba81c492247ace2d607c254785f6851526b58d9b8441a",
+   "text": "NH544 मार्ग पर",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ffb5b7d043644f2ee710",
+   "sourceHash": "ffb5b7d043644f2ee710782a3798b7027f3c2db5740638b53492780dca4c4fae",
+   "text": "कोयंबटूर–कोच्चि",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01d364ba86ed5ac223fe",
+   "sourceHash": "01d364ba86ed5ac223fe3297079fcd45ad18be34a1fde01222168dc6f159378b",
+   "text": "स्वयं गाड़ी चलाकर या निजी टैक्सी से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9ee23b57ba4d12fca2d",
+   "sourceHash": "e9ee23b57ba4d12fca2d2f1ee3b82c0295ad9a295114ac8d33854dc19f017cd0",
+   "text": "पालक्काड होते हुए",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a83e55038b7c2c9b18ae",
+   "sourceHash": "a83e55038b7c2c9b18aeb32e602ee7b7564477d2ab8cf07ac739b5fc2a17dbdc",
+   "text": "[[OPEN_1]]आगमन पर:[[CLOSE_1]] कोडुम्बु और ओलास्सेरी के संकेतों का पालन करें; उस दिन दिशा-निर्देश चाहिए हों तो मुख्य नंबर पर कॉल करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d90d204942635ba70771",
+   "sourceHash": "d90d204942635ba707719897dc0ac77999f86d34225ab15247ed6ec4b90a865f",
+   "text": "हवाई अड्डे और स्टेशन से ट्रांसफ़र",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_36fa4477e7e006143d57",
+   "sourceHash": "36fa4477e7e006143d577cca7e837e9b93c0b44c5c4cdc6e6db1e39df6a238c0",
+   "text": "अंतिम हिस्सा हम पर छोड़ दें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22389f089ab80b3bd5c6",
+   "sourceHash": "22389f089ab80b3bd5c6ec06c3240113fca3fbd8eeab77024b781ce5295f0765",
+   "text": "अस्पताल हवाई अड्डे या रेलवे स्टेशन से आपके आगमन के लिए निजी कार की व्यवस्था कर सकता है। इसके अनुरोध के लिए हमारी पेशेंट केयर कोऑर्डिनेटर, Priya, को WhatsApp पर संदेश भेजें, या मुख्य नंबर पर कॉल करें। कृपया हमें बताएँ:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e20d670d6805e5d7bcbe",
+   "sourceHash": "e20d670d6805e5d7bcbeb3f328b333a89401b5947b152b614a82f6eec1131da3",
+   "text": "आपके आगमन की तारीख और समय",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d01264be8f48c489086",
+   "sourceHash": "7d01264be8f48c48908696d9b4cf1c56add1a9e1828b2196426fd473ba878e84",
+   "text": "फ़्लाइट या ट्रेन नंबर",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

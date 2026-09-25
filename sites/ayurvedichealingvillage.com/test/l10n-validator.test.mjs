@@ -48,3 +48,25 @@ test("POSITIVE/NEGATIVE: reviewed normalizations are bounded", () => {
   assert.ok(run("Three-Day program", "Programme de 5 jours", "fr").errs.length, "a different number is still rejected");
   assert.ok(run("24-hour assistance", "Assistance 24 h/24 et 7 j/7", "fr").errs.some((e) => /added 7/.test(e)), "a new number beside a repeated one is rejected");
 });
+test("POSITIVE: 12h→24h with minutes; double occupancy → 2", () => {
+  assert.deepEqual(run("sleep by 10 PM", "vada a dormire entro le 22:00", "it").errs, []);
+  assert.deepEqual(run("Single: one person; double: two people sharing", "1名：1名様、2名利用：2名様で共有", "ja").errs, []);
+  assert.ok(run("sleep by 10", "entro le 22:00", "it").errs.length, "no am/pm → no minutes allowance");
+});
+test("source-bound exceptions apply only to the named unit/hash/locale; banned-term boundaries", async () => {
+  const { validate: v, BANNED } = await import("../tools/l10n/validate.mjs");
+  const src = JSON.parse((await import("node:fs")).readFileSync(new URL("../l10n/source/units.json", import.meta.url), "utf8")).units;
+  const S = new Map(src.map((u) => [u.id, u]));
+  const id = "t_dc2f0f854f42d0836968", u = S.get(id);
+  const ja = "はい。滞在中は週1回のワークショップと料理教室を行います。専門家向けに5つの研修コースがあり、1日のワークショップから20日間の上級プログラムまであります。";
+  const ok = v({ units: [{ id, text: ja, status: "translated" }] }, { locale: "ja", units: [{ id, src: u.source, roles: [] }] }, S);
+  assert.ok(!ok.errs.some((e) => /numbers/.test(e)), JSON.stringify(ok.errs));
+  const three = ja.replace("週1回", "週1回、週1回");
+  assert.ok(v({ units: [{ id, text: three, status: "translated" }] }, { locale: "ja", units: [{ id, src: u.source, roles: [] }] }, S).errs.some((e) => /added 1\b/.test(e)), "exception excuses exactly one occurrence");
+  const ko = "네. 주 1회 워크숍과 요리 수업이 있습니다. 전문가를 위한 5개 과정이 1일 워크숍부터 20일 과정까지 있습니다.";
+  assert.ok(v({ units: [{ id, text: ko, status: "translated" }] }, { locale: "ko", units: [{ id, src: u.source, roles: [] }] }, S).errs.some((e) => /added 1\b/.test(e)), "exception does not leak to another locale");
+  assert.ok(!BANNED.ar.test("حمام السباحة"), "سبا inside سباحة is not a finding");
+  assert.ok(BANNED.ar.test("منتجع صحي"));
+  assert.ok(!BANNED.ru.test("спасибо"), "спа inside спасибо is not a finding");
+  assert.ok(BANNED.ru.test("спа-процедуры") || BANNED.ru.test("спа"));
+});
