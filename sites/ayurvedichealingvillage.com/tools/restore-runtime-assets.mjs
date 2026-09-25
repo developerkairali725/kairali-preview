@@ -6,10 +6,10 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { downloadReleaseAsset } from './download-release-asset.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const spec=JSON.parse(fs.readFileSync(path.join(site,process.argv.includes('--gallery') ? 'english-candidate/gallery-assets-release.json' : 'english-candidate/runtime-assets-release.json'),'utf8'));
+const spec=JSON.parse(fs.readFileSync(path.join(site,process.argv.includes('--documents') ? 'english-candidate/document-assets-release.json' : process.argv.includes('--gallery') ? 'english-candidate/gallery-assets-release.json' : 'english-candidate/runtime-assets-release.json'),'utf8'));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 for(const f of spec.files){
- if(!f.file.startsWith('public/ahv/')||f.file.split('/').includes('..'))throw Error('Invalid asset path');
+ if(!(f.file.startsWith(process.argv.includes('--documents') ? 'public/documents/' : 'public/ahv/'))||f.file.split('/').includes('..'))throw Error('Invalid asset path');
  const dest=path.join(site,f.file);
  if(fs.existsSync(dest)&&hash(dest)!==f.sha256)throw Error('Refusing to overwrite modified asset: '+f.file);
 }

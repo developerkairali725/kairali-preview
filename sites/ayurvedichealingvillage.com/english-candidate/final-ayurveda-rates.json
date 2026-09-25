@@ -1,0 +1,741 @@
+{
+  "document": "ayurveda",
+  "title_ref": "Ayurvedic Treatment charges with Admission",
+  "rate_basis": "per night, per villa, single or double occupancy, all government taxes included",
+  "villas": [
+    {
+      "id": "deluxe",
+      "source_name": "DELUXE VILLA",
+      "print_name": "Deluxe Villa",
+      "url": "https://ayurvedichealingvillage.com/deluxe-villa/"
+    },
+    {
+      "id": "classic",
+      "source_name": "CLASSIC VILLA",
+      "print_name": "Classic Villa",
+      "url": "https://ayurvedichealingvillage.com/classic-villa/"
+    },
+    {
+      "id": "royal",
+      "source_name": "ROYAL VILLA",
+      "print_name": "Royal Villa",
+      "url": "https://ayurvedichealingvillage.com/royal-villa/"
+    },
+    {
+      "id": "suite",
+      "source_name": "SUITE",
+      "print_name": "Maharaja Suite",
+      "note": "Source tariff prints 'Suite'. Printed as 'Maharaja Suite' by owner ruling, 22 Sep 2026 (design review round 3). Rate master 'Day Rate' sheet also uses 'MAHARAJA SUITE'.",
+      "url": "https://ayurvedichealingvillage.com/maharaja-suite/"
+    }
+  ],
+  "groups": [
+    {
+      "id": "I",
+      "programmes": [
+        {
+          "id": "swasthya-rakshana",
+          "name": "Preventive Health & Regenerative Ayurvedic Detox Program",
+          "sanskrit": "Swasthya Rakshana Chikitsa",
+          "min_nights": 3,
+          "url": "https://ayurvedichealingvillage.com/preventive-and-regenerative-treatment/"
+        }
+      ],
+      "note": "one_therapy_note"
+    },
+    {
+      "id": "II",
+      "programmes": [
+        {
+          "id": "shwasa-roga",
+          "name": "Breath Enhancement & Respiratory Health Therapy",
+          "sanskrit": "Shwasa Roga Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-bronchial-diseases/"
+        },
+        {
+          "id": "nasyam",
+          "name": "Sinus & Migraine Relief Treatment",
+          "sanskrit": "Nasyam Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-sinusitis-and-migraine/"
+        },
+        {
+          "id": "netram",
+          "name": "Vision Health & Eye Rejuvenation Therapy",
+          "sanskrit": "Netram Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/beauty-care-and-eye-care/"
+        }
+      ]
+    },
+    {
+      "id": "III",
+      "programmes": [
+        {
+          "id": "rakta-samadama",
+          "name": "Cardiovascular Health & Blood Pressure Treatment",
+          "sanskrit": "Rakta Samadama Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-hypertension/"
+        },
+        {
+          "id": "shodhanam",
+          "name": "Complete Rejuvenation & Detoxification Therapy",
+          "sanskrit": "Shodhanam Karma",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/holistic-treatment-for-rejuvenation-and-detoxification/"
+        },
+        {
+          "id": "manas-shanthi",
+          "name": "Comprehensive Stress Relief & Mental Wellness Program",
+          "sanskrit": "Manas Shānthi Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/treatment-to-remove-stress-and-strain/"
+        },
+        {
+          "id": "ojasvardhana",
+          "name": "Immunity Enhancement & Executive Health Assessment Therapy",
+          "sanskrit": "Ojasvardhana Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/immunity-enhancement-executive-health-assessment-therapy/"
+        },
+        {
+          "id": "majja-poshanam",
+          "name": "Neurological Wellness & Function Therapy",
+          "sanskrit": "Majjā Poshanam Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-nervous-disability/"
+        },
+        {
+          "id": "nidra",
+          "name": "Sleep Restoration Therapy",
+          "sanskrit": "Nidrā Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/sleep-restoration-therapy/"
+        },
+        {
+          "id": "karkaroga",
+          "name": "Supportive Care Therapy for Cancer Patients",
+          "sanskrit": "Karkaroga Sahāyam Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/"
+        }
+      ]
+    },
+    {
+      "id": "IV",
+      "programmes": [
+        {
+          "id": "tvacha",
+          "name": "Ayurveda Skin Vitality Revival Treatment",
+          "sanskrit": "Tvachā Navīkarana Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-skin-diseases/"
+        },
+        {
+          "id": "kati-shula",
+          "name": "Chronic Back Pain Relief Treatment",
+          "sanskrit": "Kaṭi Shūla Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-chronic-back-pain/"
+        },
+        {
+          "id": "sandhivatam",
+          "name": "Joint Rehabilitation & Arthritis Treatment",
+          "sanskrit": "Sandhivātam Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-arthritis-and-spondylitis/"
+        },
+        {
+          "id": "manyastambha",
+          "name": "Neck & Upper Back Rehabilitation Treatment",
+          "sanskrit": "Manyastambha Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-cervical-spondylosis/"
+        },
+        {
+          "id": "snayu-bala",
+          "name": "Spinal Disc & Nerve Restoration Treatment",
+          "sanskrit": "Snāyu Bala Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-slip-disc/"
+        },
+        {
+          "id": "merudanda",
+          "name": "Spine Care & Spondylitis Treatment",
+          "sanskrit": "Merudanḍa Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-spondylitis/"
+        },
+        {
+          "id": "sutika",
+          "name": "Postpartum Rejuvenation Therapy",
+          "sanskrit": "Sutikā Paricharya",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/post-pregnancy-health-programme/"
+        },
+        {
+          "id": "sthoulyaghna",
+          "name": "Weight Management & Metabolism Therapy",
+          "sanskrit": "Sthoulyaghna Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/weight-loss-programme/"
+        }
+      ]
+    },
+    {
+      "id": "V",
+      "programmes": [
+        {
+          "id": "panchakarma",
+          "name": "Ayurvedic Panchakarma Detoxification Therapy",
+          "sanskrit": "Pañchakarma",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/panchakarma-therapy/"
+        },
+        {
+          "id": "madhumeha",
+          "name": "Diabetes & Metabolic Balance Therapy",
+          "sanskrit": "Madhumeha Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-diabetes/"
+        },
+        {
+          "id": "ardita",
+          "name": "Facial Paralysis & Nerve Rehabilitation Therapy",
+          "sanskrit": "Ardita Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-facial-paralysis/"
+        },
+        {
+          "id": "pakshaghata",
+          "name": "Paralysis Recovery & Rehabilitation Therapy",
+          "sanskrit": "Pakshāghāta Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-paralysis/"
+        },
+        {
+          "id": "kushtham",
+          "name": "Psoriasis & Chronic Skin Treatment",
+          "sanskrit": "Kushṭham Shamana Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/treatment-for-psoriasis/"
+        },
+        {
+          "id": "madatyaya",
+          "name": "Addiction Recovery & Behavioral Health Therapy",
+          "sanskrit": "Madātyaya Chikitsa",
+          "min_nights": 21,
+          "url": "https://ayurvedichealingvillage.com/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/"
+        },
+        {
+          "id": "stri-swasthyam",
+          "name": "Women's Hormonal Balance & Endocrine Therapy",
+          "sanskrit": "Strī Swāsthyam Rakshana",
+          "min_nights": 21,
+          "url": "https://ayurvedichealingvillage.com/womens-hormonal-balance-endocrine-therapy/"
+        }
+      ]
+    },
+    {
+      "id": "VI",
+      "programmes": [
+        {
+          "id": "swasthya-anukula",
+          "name": "Kairali's Personalized & Customized Healing Program",
+          "sanskrit": "Swasthya Anukūla Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/personalized-customized-healing-program/"
+        }
+      ],
+      "note": "group_vi_note"
+    }
+  ],
+  "editions": {
+    "EUR": {
+      "symbol": "€",
+      "iso": "EUR",
+      "tables": {
+        "I": {
+          "deluxe": [
+            203,
+            368
+          ],
+          "classic": [
+            234,
+            396
+          ],
+          "royal": [
+            288,
+            444
+          ],
+          "suite": [
+            537,
+            680
+          ]
+        },
+        "II": {
+          "deluxe": [
+            256,
+            474
+          ],
+          "classic": [
+            287,
+            501
+          ],
+          "royal": [
+            341,
+            550
+          ],
+          "suite": [
+            590,
+            786
+          ]
+        },
+        "III": {
+          "deluxe": [
+            270,
+            501
+          ],
+          "classic": [
+            300,
+            528
+          ],
+          "royal": [
+            354,
+            577
+          ],
+          "suite": [
+            603,
+            813
+          ]
+        },
+        "IV": {
+          "deluxe": [
+            277,
+            514
+          ],
+          "classic": [
+            307,
+            542
+          ],
+          "royal": [
+            361,
+            591
+          ],
+          "suite": [
+            610,
+            827
+          ]
+        },
+        "V": {
+          "deluxe": [
+            285,
+            531
+          ],
+          "classic": [
+            315,
+            558
+          ],
+          "royal": [
+            369,
+            607
+          ],
+          "suite": [
+            619,
+            843
+          ]
+        },
+        "VI": {
+          "deluxe": [
+            285,
+            531
+          ],
+          "classic": [
+            315,
+            558
+          ],
+          "royal": [
+            369,
+            607
+          ],
+          "suite": [
+            619,
+            843
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 38,
+        "extra_meals": 69,
+        "child_extra_bed": 38,
+        "child_extra_meals": 34
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 49,
+          "sedan": 171
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 85,
+          "sedan": 296
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 99,
+          "sedan": 348
+        }
+      ],
+      "worked_example": {
+        "group": "V",
+        "programme": "panchakarma",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 14,
+        "rate": 558,
+        "total": 7812
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S014 prints 1 April 2025 – 30 September 2026 (ref KAHR/AY-PKG/2025-2026/03/EURO). Extension to 30 September 2027 rests on the owner's design-review instruction of 22 Sep 2026 and on Anupam's email of 22 Sep 2026 ('prices and day tariffs remain unchanged; only the validity period has been updated'). No EURO V4 PDF was found in the V4 Drive folder. REVIEW DRAFT until an EURO 2026-27 tariff PDF is issued or the owner confirms.",
+      "sources": [
+        "S014 KTAHV EURO Price List 2025-26 (KAHR/AY-PKG/2025-2026/03/EURO)",
+        "Rate master workbook, sheet 'Ayurvedic Packages', Euro columns H/I rows 28-59",
+        "Owner decision 22 Sep 2026 (handoff DECISIONS-AND-OPEN-ITEMS §4)"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master Euro columns; validity to 30 Sep 2027 per owner decision 22 Sep 2026 (no EURO V4 PDF located — source-document gap only)",
+      "review_status_previous": "REVIEW DRAFT — validity beyond 30 Sep 2026 owner-instructed, no EURO V4 PDF located"
+    },
+    "INR": {
+      "symbol": "₹",
+      "iso": "INR",
+      "tables": {
+        "I": {
+          "deluxe": [
+            16264,
+            29439
+          ],
+          "classic": [
+            18709,
+            31644
+          ],
+          "royal": [
+            23014,
+            35529
+          ],
+          "suite": [
+            42964,
+            54429
+          ]
+        },
+        "II": {
+          "deluxe": [
+            20495,
+            37900
+          ],
+          "classic": [
+            22940,
+            40105
+          ],
+          "royal": [
+            27245,
+            43990
+          ],
+          "suite": [
+            47195,
+            62890
+          ]
+        },
+        "III": {
+          "deluxe": [
+            21567,
+            40043
+          ],
+          "classic": [
+            24012,
+            42248
+          ],
+          "royal": [
+            28317,
+            46133
+          ],
+          "suite": [
+            48267,
+            65033
+          ]
+        },
+        "IV": {
+          "deluxe": [
+            22125,
+            41159
+          ],
+          "classic": [
+            24570,
+            43364
+          ],
+          "royal": [
+            28875,
+            47249
+          ],
+          "suite": [
+            48825,
+            66149
+          ]
+        },
+        "V": {
+          "deluxe": [
+            22780,
+            42470
+          ],
+          "classic": [
+            25225,
+            44675
+          ],
+          "royal": [
+            29530,
+            48560
+          ],
+          "suite": [
+            49480,
+            67460
+          ]
+        },
+        "VI": {
+          "deluxe": [
+            22780,
+            42470
+          ],
+          "classic": [
+            25225,
+            44675
+          ],
+          "royal": [
+            29530,
+            48560
+          ],
+          "suite": [
+            49480,
+            67460
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 3000,
+        "extra_meals": 5500,
+        "child_extra_bed": 3000,
+        "child_extra_meals": 2750
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 3900,
+          "sedan": 13649
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 6775,
+          "sedan": 23711
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 7950,
+          "sedan": 27824
+        }
+      ],
+      "worked_example": {
+        "group": "V",
+        "programme": "panchakarma",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 14,
+        "rate": 44675,
+        "total": 625450
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S012 (KAHR/AY-PKG/2025-2026/01/INR) prints 1 April 2025 – 30 September 2026; the Drive file 'KTAHV INR Price List 25-26 Sanskrit V4.pdf' (ref KAHR/AY-PKG/2026-2027/04/INR, w.e.f. 1 October 2026 through 30 September 2027) carries identical per-night values. Both periods are therefore source-backed at the same prices.",
+      "sources": [
+        "S012 KTAHV INR Price List 25-26 (F) (KAHR/AY-PKG/2025-2026/01/INR)",
+        "Drive 1V75LxTtwBmC7WN1XxHVUjLY7QvTzXsnJ 'KTAHV INR Price List 25-26 Sanskrit V4.pdf' (KAHR/AY-PKG/2026-2027/04/INR), read via authenticated Drive 22 Sep 2026",
+        "Rate master workbook, sheet 'Ayurvedic Packages', INR columns B/C rows 28-59"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master and V4",
+      "review_status_previous": "REVIEW DRAFT — values reconciled to master and V4; commercial sign-off pending"
+    },
+    "USD": {
+      "symbol": "$",
+      "iso": "USD",
+      "tables": {
+        "I": {
+          "deluxe": [
+            232,
+            421
+          ],
+          "classic": [
+            267,
+            452
+          ],
+          "royal": [
+            329,
+            508
+          ],
+          "suite": [
+            614,
+            778
+          ]
+        },
+        "II": {
+          "deluxe": [
+            293,
+            541
+          ],
+          "classic": [
+            328,
+            573
+          ],
+          "royal": [
+            389,
+            628
+          ],
+          "suite": [
+            674,
+            898
+          ]
+        },
+        "III": {
+          "deluxe": [
+            308,
+            572
+          ],
+          "classic": [
+            343,
+            604
+          ],
+          "royal": [
+            405,
+            659
+          ],
+          "suite": [
+            690,
+            929
+          ]
+        },
+        "IV": {
+          "deluxe": [
+            316,
+            588
+          ],
+          "classic": [
+            351,
+            619
+          ],
+          "royal": [
+            412,
+            675
+          ],
+          "suite": [
+            697,
+            945
+          ]
+        },
+        "V": {
+          "deluxe": [
+            325,
+            607
+          ],
+          "classic": [
+            360,
+            638
+          ],
+          "royal": [
+            422,
+            694
+          ],
+          "suite": [
+            707,
+            964
+          ]
+        },
+        "VI": {
+          "deluxe": [
+            325,
+            607
+          ],
+          "classic": [
+            360,
+            638
+          ],
+          "royal": [
+            422,
+            694
+          ],
+          "suite": [
+            707,
+            964
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 43,
+        "extra_meals": 79,
+        "child_extra_bed": 43,
+        "child_extra_meals": 39
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 56,
+          "sedan": 195
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 97,
+          "sedan": 339
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 114,
+          "sedan": 397
+        }
+      ],
+      "worked_example": {
+        "group": "V",
+        "programme": "panchakarma",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 14,
+        "rate": 638,
+        "total": 8932
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S013 (KAHR/AY-PKG/2025-2026/03/USD) prints 1 April 2025 – 30 September 2026; the Drive file 'KTAHV USD Price List 25-26 Sanskrit V4.pdf' (ref KAHR/AY-PKG/2026-2027/04/USD, w.e.f. 1 October 2026 through 30 September 2027) carries identical per-night values.",
+      "sources": [
+        "S013 KTAHV USD Price List 2025-26 (KAHR/AY-PKG/2025-2026/03/USD)",
+        "Drive 1B9EC_XrClwmEzWZ-tZyCfKg7bUZZFFCo 'KTAHV USD Price List 25-26 Sanskrit V4.pdf' (KAHR/AY-PKG/2026-2027/04/USD), read via authenticated Drive 22 Sep 2026",
+        "Rate master workbook, sheet 'Ayurvedic Packages', USD columns E/F rows 28-59"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master and V4",
+      "review_status_previous": "REVIEW DRAFT — values reconciled to master and V4; commercial sign-off pending"
+    }
+  },
+  "site_base": "https://ayurvedichealingvillage.com"
+}

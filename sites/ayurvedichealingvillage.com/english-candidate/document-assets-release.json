@@ -1,0 +1,378 @@
+{
+  "repository": "kairali-digital/kairali-web-factory",
+  "tag": "ahv-english-staging-20260915",
+  "asset": "ahv-final-screen-documents-20260925-r1.tar.gz",
+  "sha256": "9effc51913550fdbd5d16fd456462ad299a6bfc6ec1d998fb1e7c9c996b9dfbc",
+  "bytes": 238689995,
+  "note": "78 final screen editions, self-hosted fonts and covers. Exact source hashes retained; print originals remain in owner final folder.",
+  "files": [
+    {
+      "file": "public/documents/logo.svg",
+      "sha256": "1db1b756b5712f7bec5e761027019bbb6285a986628517fc03f03413dbb58538"
+    },
+    {
+      "file": "public/documents/favicon.svg",
+      "sha256": "8ccf948c887434965f6d4aac59a82ffc92929aa4d8aa0ac1b18d3e35fcaa1819"
+    },
+    {
+      "file": "public/documents/covers/ayurveda.jpg",
+      "sha256": "2e7d480a491f23f5228367a42e406a96be6b7124ac2b7cf91fa6780a9083e972"
+    },
+    {
+      "file": "public/documents/covers/healing-secrets.jpg",
+      "sha256": "cbfa592cfad9f0031f30a184391f5daa91823b645b57bdf5ce7b3a220b6fd7d2"
+    },
+    {
+      "file": "public/documents/covers/training.jpg",
+      "sha256": "6118d0e75d9abd2feaeaaa240133e6469298c61367cfdb3baf5bb20e5a9b91cf"
+    },
+    {
+      "file": "public/documents/covers/opd.jpg",
+      "sha256": "5ae15f8807d4ae3b45122a6370ca08522476cbf859d04df436fd8233b3c0695c"
+    },
+    {
+      "file": "public/documents/covers/yoga.jpg",
+      "sha256": "146645ac9dc0153c9952d933b5e387390113fb3b90ec2807bf83f734d6ccc322"
+    },
+    {
+      "file": "public/documents/covers/accommodation.jpg",
+      "sha256": "6980067d6636ad3cdd304292a2ce007297d83b5411bc8c6b1d0313ef1c2258fb"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/ja/KTAHV-Yoga-Meditation-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+      "sha256": "df507bc4eac05aa0ca40546ceb696b63b3de8b60928f748945f1368c86174834"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/it/KTAHV-Yoga-Meditation-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+      "sha256": "88d23de8267fd23df748fb61a3766f6256104b94acdeb49e653f35433da16829"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/ru/KTAHV-Yoga-Meditation-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+      "sha256": "d5f05c1587f756f1091a2ce0e6eeff8814a2615c8488f853e08d55cda2e97d2d"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/pt/KTAHV-Yoga-Meditation-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+      "sha256": "8d737e8c7ec901a6005fb1e28d80e714fbdc00404bb58ff9bed843d19ef924c4"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/zh/KTAHV-Yoga-Meditation-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+      "sha256": "77565d46a0f9cb4a58f9959b35349258b3e7343fe782c51202bc8745e0f51c7c"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/ar/KTAHV-Yoga-Meditation-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+      "sha256": "19419b1d01cd615741dd2f68766c2a38cddb33a49011a22e7478cf0c37586213"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/nl/KTAHV-Yoga-Meditation-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+      "sha256": "c994ce48faf81c66f105779d54d2541e65711376151a13a406052c7b0aac6c0f"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/hi/KTAHV-Yoga-Meditation-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+      "sha256": "38c451240dc5256f4bd5cf8c50f1919c17dddf2e3a052ebed900dadb2721bcd9"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/de/KTAHV-Yoga-Meditation-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+      "sha256": "ea676fb00d089d3300198bb3142d60583a764911feb6b25b40d67ea404116541"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/ko/KTAHV-Yoga-Meditation-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+      "sha256": "48e025cf7696172b187e750a6d27ee269af9d59bed78485e7d662fde8810117c"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/fr/KTAHV-Yoga-Meditation-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+      "sha256": "b841481fd94bd01cbf91b2b7cf7aeaf1a0ad3cc3b3275ccdf9408f0646d7efa6"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/es/KTAHV-Yoga-Meditation-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+      "sha256": "829e68f153dcaeb849aee0aa34f2a95e74fea86faf43f2b6d096889a8a2ff3ad"
+    },
+    {
+      "file": "public/documents/pdf/yoga-meditation-programmes-tariff/en/KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "sha256": "11ae80c2a664f2b83cc420fa89ef443f225269ef3532e2805f8fe770e3177735"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/ja/KTAHV-Outpatient-Day-Treatment-Rates-JA-USD_20260925-R1.pdf",
+      "sha256": "2aae5bd1e370618ee2b6f53efbc844cf40a53c5d083e28740c35977905e7c8f5"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/it/KTAHV-Outpatient-Day-Treatment-Rates-IT-EUR_20260925-R1.pdf",
+      "sha256": "04f4427cb71c1333b151f8c7899c9596b1cf9c304247629c22ae207cdfd61723"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/ru/KTAHV-Outpatient-Day-Treatment-Rates-RU-USD_20260925-R1.pdf",
+      "sha256": "9e7c2b6803b71197aff82e489906eeacba95ba816e3ce6cb67b00815fd095eb5"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/pt/KTAHV-Outpatient-Day-Treatment-Rates-PT-EUR_20260925-R1.pdf",
+      "sha256": "bd2948ede1bc72ffeb9be8a0ecfb051e3399751daaf5d66571b0a616685d19eb"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/zh/KTAHV-Outpatient-Day-Treatment-Rates-ZH-USD_20260925-R1.pdf",
+      "sha256": "c151b0aa28856613ab98bd6184dea7827eba1f7f43c7b1d2bad373082aa50743"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/ar/KTAHV-Outpatient-Day-Treatment-Rates-AR-USD_20260925-R1.pdf",
+      "sha256": "832869ff396d04968bb804382bf0f8a94610d8b01201c3778b8a1b118006f76e"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/nl/KTAHV-Outpatient-Day-Treatment-Rates-NL-EUR_20260925-R1.pdf",
+      "sha256": "8a7c3b294b8d04b2c8f74725eca8e36d4b260a1dcb6f6e6d61024278331a4faa"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/hi/KTAHV-Outpatient-Day-Treatment-Rates-HI-INR_20260925-R1.pdf",
+      "sha256": "384b2e63242236cacd4802fa9d9e7e9c1f715959b89bddad9baac8638eeeb39b"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/de/KTAHV-Outpatient-Day-Treatment-Rates-DE-EUR_20260925-R1.pdf",
+      "sha256": "adfe628e6fc5e69212adbe6c006e1bc087d33c124b3ae5bacac12d7bd8599b60"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/ko/KTAHV-Outpatient-Day-Treatment-Rates-KO-USD_20260925-R1.pdf",
+      "sha256": "d80cda20667593588d435c2062076dd9a43991438cdb10e0046d7a748c9a4515"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/fr/KTAHV-Outpatient-Day-Treatment-Rates-FR-EUR_20260925-R1.pdf",
+      "sha256": "79116e03565ed2199ae7688838f8f9bfbfdb8087d8cb3fcf168610733ee240f3"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/es/KTAHV-Outpatient-Day-Treatment-Rates-ES-EUR_20260925-R1.pdf",
+      "sha256": "c59ab83449bb645fda3d83a859ea8a2fdefd7fe4df805c045a0650b8070abdbf"
+    },
+    {
+      "file": "public/documents/pdf/outpatient-day-treatment-rates/en/KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+      "sha256": "20ff8f31b4f01fc47564fa77e87001c8d277fe33a62528bacb98856043cada5c"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/ja/KTAHV-Ayurveda-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+      "sha256": "19d49f587be4c1ab009235d7b1d91dba9e5ffa888b287faccbb0a4a0324be4ec"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/it/KTAHV-Ayurveda-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+      "sha256": "8d1138eb7712f742cee866f91c2156defe510b04cab1cdd6e0998056713e7612"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/ru/KTAHV-Ayurveda-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+      "sha256": "3303056c85de22281573642cf74a50b5f7a3805cb3e93b14823c5090da7234f8"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/pt/KTAHV-Ayurveda-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+      "sha256": "a4b15dfb5ff1233a521e517213a84d6c12f36d876ef036562fc0a02bc9c06384"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/zh/KTAHV-Ayurveda-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+      "sha256": "5a728884a0fcbec7f096e05973ccd36619dc71a3a21cbd101395132c15112d5e"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/ar/KTAHV-Ayurveda-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+      "sha256": "1eac0e0e3457164a8bdb6dff2df9764deab0e988bdca517ca174da095738abdf"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/nl/KTAHV-Ayurveda-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+      "sha256": "1da0c89e0f551a66b8bd240d55367da78ca8bb70cc1356a34047811f954186e8"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/hi/KTAHV-Ayurveda-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+      "sha256": "42735aa73bfeca9e7eefe4f39aa704ceb09005131e24424b0f4c657e17a88ff2"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/de/KTAHV-Ayurveda-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+      "sha256": "8aad79a7d06547403674f3541cc8ea62af2d9b46a9ad5e7d44d027ad0b261942"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/ko/KTAHV-Ayurveda-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+      "sha256": "1ab28b0fc28cb120283e3ebebd39a0447cbb3048a44586c017e506a447a3daca"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/fr/KTAHV-Ayurveda-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+      "sha256": "62b9eb74b10018d9c05db2f67ec503d2d765cc2a87414f7db3cdeecabd0ac5e5"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/es/KTAHV-Ayurveda-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+      "sha256": "efde8d40a205a795cb50a2a821ba9694163358af937149166da93254da49486d"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-programmes-tariff/en/KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "sha256": "ab46d497f1545137e0e9d5ffed72b0ac1fe542874797a8abaed7cfc78d330e1a"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/ja/Healing-Secrets-of-Kairali-JA_20260925-R1.pdf",
+      "sha256": "5ff12a66f76443393fc8848671817812bd906b78d7998c69f83f7f50dcc8e3b3"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/it/Healing-Secrets-of-Kairali-IT_20260925-R1.pdf",
+      "sha256": "1edc64f22a93a9f0b5851440fa98200cc0f00e92f1ec64bf73d683d604833f8f"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/ru/Healing-Secrets-of-Kairali-RU_20260925-R1.pdf",
+      "sha256": "cb755ac35074a04a890a1cc1b823c3f589ecc509ad6393a4133a51c425e13a3e"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/pt/Healing-Secrets-of-Kairali-PT_20260925-R1.pdf",
+      "sha256": "5074eaa166aff5e61296a78521320dc080a0e352f4a32be1fcb3efd59a95424f"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/zh/Healing-Secrets-of-Kairali-ZH_20260925-R1.pdf",
+      "sha256": "f0a36731b874b971196dd8ea2ebdb595b742f3b80a47d92b2c37666516baeea7"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/ar/Healing-Secrets-of-Kairali-AR_20260925-R1.pdf",
+      "sha256": "7f0257b9cc6fa4bc61aae280219dd7062a7cfa744ad0cc33726c7614ec1cde47"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/nl/Healing-Secrets-of-Kairali-NL_20260925-R1.pdf",
+      "sha256": "5755cd5fd6f8f274de1f8277b9e873db07a6102d32eeec232b3945834cbfe68b"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/hi/Healing-Secrets-of-Kairali-HI_20260925-R1.pdf",
+      "sha256": "db841ce66402e58724b649491b4bff7ae201812e4b447e487967de487c63e883"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/de/Healing-Secrets-of-Kairali-DE_20260925-R1.pdf",
+      "sha256": "21e3b8f9ffe7d3b8292b8233e9b828cfb6c40f4ae342fb3657eca12251cb0d86"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/ko/Healing-Secrets-of-Kairali-KO_20260925-R1.pdf",
+      "sha256": "577e7697e88f04b0c29fce572fd328d38dfcd446cdacb047fa5b173dc8084f21"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/fr/Healing-Secrets-of-Kairali-FR_20260925-R1.pdf",
+      "sha256": "7290714c29ae3ea6d8c4db57bad4eb12b80c7fc47f2e986b41095d46616b7d60"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/es/Healing-Secrets-of-Kairali-ES_20260925-R1.pdf",
+      "sha256": "cd323e0d667e6019e734bbdadd8aaaa732bead31794f7c318cbba08bd95fbacc"
+    },
+    {
+      "file": "public/documents/pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+      "sha256": "a0c86fc12021bfd8a8561a7455f0f4025643a9c4bf65413304ae6e3620c853da"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/ja/KTAHV-Daily-Admission-Tariff-JA-USD_20260925-R1.pdf",
+      "sha256": "1919ba8b89bdf512ea54fafd07ce23bd7e862e7524dcc65e27b5477a7e8dcc96"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/it/KTAHV-Daily-Admission-Tariff-IT-EUR_20260925-R1.pdf",
+      "sha256": "385734a6900e20493a54a089736531bd42ee4244a6e31e6f079cc0039199d0ec"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/ru/KTAHV-Daily-Admission-Tariff-RU-USD_20260925-R1.pdf",
+      "sha256": "f2202ec4d182cb5a0fd1c5b91acd9d5dba88db65663d56ed5ac22d7a585515d0"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/pt/KTAHV-Daily-Admission-Tariff-PT-EUR_20260925-R1.pdf",
+      "sha256": "eb86a74dfe69411c377baca14aa24481d3e48564201bd179b4da167236deccbf"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/zh/KTAHV-Daily-Admission-Tariff-ZH-USD_20260925-R1.pdf",
+      "sha256": "39ac855a9d7348d921a1387a178bbfb35d33515f82886bd0e04c6318ab26f8bb"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/ar/KTAHV-Daily-Admission-Tariff-AR-USD_20260925-R1.pdf",
+      "sha256": "11fb88a7f7013381d6f2cd0161729ac4cbfa90b28b614e67d313c7590fa8d09f"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/nl/KTAHV-Daily-Admission-Tariff-NL-EUR_20260925-R1.pdf",
+      "sha256": "410c74bb4d6c7208f4078a79951b607fed2e8dcb3ec0bace6dfb24375e3eede7"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/hi/KTAHV-Daily-Admission-Tariff-HI-INR_20260925-R1.pdf",
+      "sha256": "30400b12ed7dc52b54ad2c158ebc08b362028af0942524f8d490f1e19d826d6e"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/de/KTAHV-Daily-Admission-Tariff-DE-EUR_20260925-R1.pdf",
+      "sha256": "53a8f489be57a4f8447ba5d17852b4f148d3bf8e0c7c4c014c2bb5647e343c6e"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/ko/KTAHV-Daily-Admission-Tariff-KO-USD_20260925-R1.pdf",
+      "sha256": "d205d079964a71397a479c1cea41cb7416f17b55b3aaf54224d74cfe070b4853"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/fr/KTAHV-Daily-Admission-Tariff-FR-EUR_20260925-R1.pdf",
+      "sha256": "3b4232af176b44beeaf69d97f29451ff84116793d5d4acd17d5c575222215e9d"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/es/KTAHV-Daily-Admission-Tariff-ES-EUR_20260925-R1.pdf",
+      "sha256": "99bfc0ef1e90b354a3b182b0df5bd52eebee98d2a9b0c1b58c936cd510400623"
+    },
+    {
+      "file": "public/documents/pdf/daily-admission-tariff/en/KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+      "sha256": "c42f072c3fce27c75c0f7e5ea9b50a9a1fe21e55b4dde3be937143926140f9d0"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/ja/KTAHV-Ayurveda-Training-Courses-Tariff-JA-USD_20260925-R1.pdf",
+      "sha256": "4706d82b8e8a72c14711c184156669ceb7eea8cf31502db181c60151b343ce76"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/it/KTAHV-Ayurveda-Training-Courses-Tariff-IT-EUR_20260925-R1.pdf",
+      "sha256": "57826d926573e6e0d641edf4521d22d5a2a3791beb2a19f77d8743fec49b6c27"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/ru/KTAHV-Ayurveda-Training-Courses-Tariff-RU-USD_20260925-R1.pdf",
+      "sha256": "b99447d20cf1c760f5c1ca763ab0cffc6698a5bdd7c11e24ffc8d5a53ec5fe3c"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/pt/KTAHV-Ayurveda-Training-Courses-Tariff-PT-EUR_20260925-R1.pdf",
+      "sha256": "793f5a2001287727460480f37bd4d7124dc694f67ff6553d5706c6d7c8acd3ec"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/zh/KTAHV-Ayurveda-Training-Courses-Tariff-ZH-USD_20260925-R1.pdf",
+      "sha256": "f35c591f7a8b3b576286977c7edfe97b0d05ff7501828218de94b21231c31ea1"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/ar/KTAHV-Ayurveda-Training-Courses-Tariff-AR-USD_20260925-R1.pdf",
+      "sha256": "7144c8fccea9c30c2b6e8844081e6713a8d5a15db7710de1af45695b8afc3f4e"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/nl/KTAHV-Ayurveda-Training-Courses-Tariff-NL-EUR_20260925-R1.pdf",
+      "sha256": "f8213aeb7a519ee424062b794e4bd950bb43e1860f0aac85f2f963947b14dadd"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/hi/KTAHV-Ayurveda-Training-Courses-Tariff-HI-INR_20260925-R1.pdf",
+      "sha256": "5a5d1f3e894669b0b035e6a6212b6cb9c9bccce960affdc0de48fd0a68d8871d"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/de/KTAHV-Ayurveda-Training-Courses-Tariff-DE-EUR_20260925-R1.pdf",
+      "sha256": "7834cce79bc65f720a55f0e0a2db820c852aa478dc997f7ddb7e716098cb4c08"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/ko/KTAHV-Ayurveda-Training-Courses-Tariff-KO-USD_20260925-R1.pdf",
+      "sha256": "d3b65b82d3511b034e00903df958127ad2f93b961e8c2e104c2fa55954fa060f"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/fr/KTAHV-Ayurveda-Training-Courses-Tariff-FR-EUR_20260925-R1.pdf",
+      "sha256": "cabe1e33ff64e3e67835ab1070a13a85548f2c18b166e685401a27a4e6f15236"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/es/KTAHV-Ayurveda-Training-Courses-Tariff-ES-EUR_20260925-R1.pdf",
+      "sha256": "fb01dccada563ffa06c5182fe01340556c74b0d0ba72c70708b982428241fa36"
+    },
+    {
+      "file": "public/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+      "sha256": "6caa4a8029d9aecd6271276ee17995f46d2bf02a27c09e6896c69d292ba6975a"
+    },
+    {
+      "file": "public/documents/fonts/Marcellus-Regular.ttf",
+      "sha256": "1cf0cd10b17d35e852729962cc1ffaffed94514895972458345e2df34abb2f81"
+    },
+    {
+      "file": "public/documents/fonts/Mulish-Regular.ttf",
+      "sha256": "569e31c23d644fca39eff48620a4491f560c8677b729ee539a31ef3ce85d11b2"
+    },
+    {
+      "file": "public/documents/fonts/OFL-mulish.txt",
+      "sha256": "097e9ac414d9251c8580c073a13f8899798c66db746de60662148789ca693f19"
+    },
+    {
+      "file": "public/documents/fonts/Mulish-Bold.ttf",
+      "sha256": "1feab9c1a2861d3e9ec2e8bf398ad987a68c23f862c5d8861d52f98aab513657"
+    },
+    {
+      "file": "public/documents/fonts/OFL-marcellus.txt",
+      "sha256": "715ba72697e14daa9b29a333545f69bde7c497b9f77d0a2a4c4a5a752d961801"
+    },
+    {
+      "file": "public/documents/fonts/Mulish-SemiBold.ttf",
+      "sha256": "6ac0d435cc67fc3d8d8e42b62f64898ff8daaca2f5a5e79993a1772d0201e25b"
+    }
+  ]
+}

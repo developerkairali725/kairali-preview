@@ -47,10 +47,11 @@ const fmtDate = (d) => `${MONTHS[d.mo - 1]} ${d.y}`;
 const fmtSize = (b) => (b >= 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.round(b / 1024)} KB`);
 
 const docs = MANIFEST.documents.map((d) => {
-  const file = join(DOCS, d.file);
+  if (d.kind === "catalogue") return { ...d, size: "13 languages", date: "September 2026" };
+  const file = d.href ? join(SITE, "public", d.href) : join(DOCS, d.file);
   if (!existsSync(file)) throw new Error(`manifest document not on disk: ${d.file}`);
   const bytes = statSync(file).size;
-  return { ...d, href: `/ahv/assets/doc/${d.file}`, size: fmtSize(bytes), bytes, date: fmtDate(pdfDate(file)) };
+  return { ...d, href: d.href || `/ahv/assets/doc/${d.file}`, size: fmtSize(bytes), bytes, date: fmtDate(pdfDate(file)) };
 });
 
 const INTRO = "Documents from the hospital you may want to keep: the price lists for the Ayurveda packages, the free e-book and the village's fauna booklet.";
@@ -58,10 +59,10 @@ const INTRO = "Documents from the hospital you may want to keep: the price lists
 function card(d, side) {
   const pad = side === "desktop" ? "24px" : "20px";
   return `<article style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;padding:${pad};box-sizing:border-box;display:flex;flex-direction:column;gap:10px;" data-ahv-download="${esc(d.file)}">` +
-    `<span style="font-size:12.5px;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;">PDF · ${esc(d.size)}</span>` +
+    `<span style="font-size:12.5px;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;">${d.kind === "catalogue" ? "Documents" : "PDF"} · ${esc(d.size)}</span>` +
     `<h3 style="margin:0;font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.3;color:#2A2118;">${esc(d.title)}</h3>` +
     `<p style="margin:0;font-size:16px;line-height:1.6;color:#75695A;">Last updated ${esc(d.date)}</p>` +
-    `<a href="${esc(d.href)}" download style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:6px;border-radius:4px;border:1.5px solid #5A4420;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:0 18px;box-sizing:border-box;">Download PDF</a>` +
+    `<a href="${esc(d.href)}" ${d.kind === "catalogue" ? "" : "download"} style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:6px;border-radius:4px;border:1.5px solid #5A4420;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:0 18px;box-sizing:border-box;">${d.kind === "catalogue" ? "Browse all editions" : "Download PDF"}</a>` +
     `</article>`;
 }
 

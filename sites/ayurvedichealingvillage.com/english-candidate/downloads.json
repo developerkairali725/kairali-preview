@@ -1,35 +1,65 @@
 {
-  "_why": "The FAQs & Downloads design (22 Sep 2026) carries three empty document slots; the live /faqs-downloads/ page attaches no files at all (fetched 2026-09-22: only the WPForms 'Download E-Book' popup). Owner ruling D-20260922-11: download the site's PDFs and self-host them. These are every PDF the served record links, already self-hosted under public/ahv/assets/doc/. Titles come from the record's own link text or the file's name — nothing invented. Size and date are read from the file by tools/repair-faq-downloads.mjs at run time.",
+  "_why": "Owner-approved final family, issue 20260925-R1; exact web PDFs in 13 languages. Print originals retained in the final source bundle.",
   "documents": [
     {
-      "file": "healing-secrets.pdf",
-      "title": "Healing Secrets of Kairali — free e-book",
-      "titleSource": "record link text on the campaign pages: 'Download Free E-book Healing Secrets of Kairali'",
-      "sourceHref": "site e-book (WPForms 'Download E-Book' popup on the live FAQ page)"
+      "file": "KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/ayurveda-programmes-tariff/en/KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Ayurvedic Treatment Programmes & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
     },
     {
-      "file": "KTAHV-Ayurveda-Packages-INR-Price-List-2025-26.pdf",
-      "title": "Ayurveda packages price list 2025–26 (INR)",
-      "titleSource": "file name; linked from the packages pages",
-      "sourceHref": "https://www.kairali.com/download/KTAHV-Ayurveda-Packages-INR-Price-List-2025-26.pdf"
+      "file": "KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/yoga-meditation-programmes-tariff/en/KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Yoga & Meditation Programmes & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
     },
     {
-      "file": "KTAHV-Ayurveda-Packages-USD-Price-List-25-26.pdf",
-      "title": "Ayurveda packages price list 2025–26 (USD)",
-      "titleSource": "file name; linked from the packages pages",
-      "sourceHref": "https://www.kairali.com/download/KTAHV-Ayurveda-Packages-USD-Price-List-25-26.pdf"
+      "file": "KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/daily-admission-tariff/en/KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Daily Admission Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
     },
     {
-      "file": "KTAHV-Ayurveda-Packages-EURO-Price-List-25-26.pdf",
-      "title": "Ayurveda packages price list 2025–26 (EURO)",
-      "titleSource": "file name; linked from the packages pages",
-      "sourceHref": "https://www.kairali.com/download/KTAHV-Ayurveda-Packages-EURO-Price-List-25-26.pdf"
+      "file": "KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/outpatient-day-treatment-rates/en/KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+      "title": "Outpatient & Day Treatment Rates — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Ayurveda Training Courses & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+      "href": "/documents/pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+      "title": "Healing Secrets of Kairali",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
     },
     {
       "file": "fauna-booklet.pdf",
       "title": "Butterfly Booklet — the fauna of the village",
       "titleSource": "record page /butterfly-booklet/ (H1 'Butterfly Booklet'), whose 'DOWNLOAD PDF' link is this file",
       "sourceHref": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/fauna-booklet.pdf"
+    },
+    {
+      "file": "documents-catalogue",
+      "href": "/documents/",
+      "title": "All languages and currencies",
+      "kind": "catalogue"
     }
   ],
   "notLinked": [

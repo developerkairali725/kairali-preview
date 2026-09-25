@@ -1,0 +1,2153 @@
+{
+  "generated": "2026-09-25T17:34",
+  "source_build": "rate-build-20260925-1611",
+  "currency_mapping": {
+    "en": "INR",
+    "hi": "INR",
+    "de": "EUR",
+    "fr": "EUR",
+    "es": "EUR",
+    "it": "EUR",
+    "pt": "EUR",
+    "nl": "EUR",
+    "ru": "USD",
+    "ar": "USD",
+    "zh": "USD",
+    "ja": "USD",
+    "ko": "USD"
+  },
+  "files": [
+    {
+      "id": "ayurveda-en-inr",
+      "ref": "KTAHV/AYT/EN-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "en",
+      "language": "English",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/en/KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 2771903,
+        "sha256": "ab46d497f1545137e0e9d5ffed72b0ac1fe542874797a8abaed7cfc78d330e1a",
+        "pages": 10
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/en/KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 8917391,
+        "sha256": "dc6d6f3b0a5d5ee7d93c973ceff46a4ede66d3d389a18c0950a254ad0bef3ab3",
+        "pages": 10
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-hi-inr",
+      "ref": "KTAHV/AYT/HI-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/hi/KTAHV-Ayurveda-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 2902187,
+        "sha256": "42735aa73bfeca9e7eefe4f39aa704ceb09005131e24424b0f4c657e17a88ff2",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/hi/KTAHV-Ayurveda-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 9047679,
+        "sha256": "3ea58a91f3af81d82a6eab393ffb9e3660abeda0886a797785e505c118b77df7",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-de-eur",
+      "ref": "KTAHV/AYT/DE-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "de",
+      "language": "German",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/de/KTAHV-Ayurveda-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 2778426,
+        "sha256": "8aad79a7d06547403674f3541cc8ea62af2d9b46a9ad5e7d44d027ad0b261942",
+        "pages": 10
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/de/KTAHV-Ayurveda-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 8923919,
+        "sha256": "5699b88427c95807b91c9113be131c94adff623c297b1bd9b6bf39b6410809f4",
+        "pages": 10
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-fr-eur",
+      "ref": "KTAHV/AYT/FR-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "fr",
+      "language": "French",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/fr/KTAHV-Ayurveda-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 2778187,
+        "sha256": "62b9eb74b10018d9c05db2f67ec503d2d765cc2a87414f7db3cdeecabd0ac5e5",
+        "pages": 10
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/fr/KTAHV-Ayurveda-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 8923663,
+        "sha256": "4115c7963140396549b04831fc361026d106b6301c6b69a59ce213e1bfbe29d5",
+        "pages": 10
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-es-eur",
+      "ref": "KTAHV/AYT/ES-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/es/KTAHV-Ayurveda-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 2797883,
+        "sha256": "efde8d40a205a795cb50a2a821ba9694163358af937149166da93254da49486d",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/es/KTAHV-Ayurveda-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 8943380,
+        "sha256": "404751843580754820a67dc239a7eb73d97a517937661fdc595f34724a8a9bc7",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-it-eur",
+      "ref": "KTAHV/AYT/IT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "it",
+      "language": "Italian",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/it/KTAHV-Ayurveda-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 2796057,
+        "sha256": "8d1138eb7712f742cee866f91c2156defe510b04cab1cdd6e0998056713e7612",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/it/KTAHV-Ayurveda-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 8941547,
+        "sha256": "a3bf29d333fd0e087ed0366e7bbbb40cdff9776dc59693f48410cae9d73c1c21",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-pt-eur",
+      "ref": "KTAHV/AYT/PT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/pt/KTAHV-Ayurveda-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 2798299,
+        "sha256": "a4b15dfb5ff1233a521e517213a84d6c12f36d876ef036562fc0a02bc9c06384",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/pt/KTAHV-Ayurveda-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 8943787,
+        "sha256": "2ebc2fd393e565f4a44d099e8ff7dbbf0c9444d7e895d0ca62f2cf1fd88bf067",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-nl-eur",
+      "ref": "KTAHV/AYT/NL-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/nl/KTAHV-Ayurveda-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 2798340,
+        "sha256": "1da0c89e0f551a66b8bd240d55367da78ca8bb70cc1356a34047811f954186e8",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/nl/KTAHV-Ayurveda-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 8943833,
+        "sha256": "1bed52d15bd34b53351f4e5d3bf6adfd5f2eb7e71c0248dd74e5fbaab123082a",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-ru-usd",
+      "ref": "KTAHV/AYT/RU-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/ru/KTAHV-Ayurveda-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 2851861,
+        "sha256": "3303056c85de22281573642cf74a50b5f7a3805cb3e93b14823c5090da7234f8",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/ru/KTAHV-Ayurveda-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 8997363,
+        "sha256": "ba9368cbb6431ee91f0eb635842f0cad8d69a24e81c58ece04c4ebdefdefd7bc",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-ar-usd",
+      "ref": "KTAHV/AYT/AR-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/ar/KTAHV-Ayurveda-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 2936258,
+        "sha256": "1eac0e0e3457164a8bdb6dff2df9764deab0e988bdca517ca174da095738abdf",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/ar/KTAHV-Ayurveda-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 9081750,
+        "sha256": "10f01227d04164e77478377f947c0918f19e6665e312572ed7147781654da01e",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-zh-usd",
+      "ref": "KTAHV/AYT/ZH-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/zh/KTAHV-Ayurveda-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 3012891,
+        "sha256": "5a728884a0fcbec7f096e05973ccd36619dc71a3a21cbd101395132c15112d5e",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/zh/KTAHV-Ayurveda-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 9158380,
+        "sha256": "295fcc6e74e6e8f8952114fa68c246349af2c74aed4f85a19c87e807928f3a4d",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-ja-usd",
+      "ref": "KTAHV/AYT/JA-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/ja/KTAHV-Ayurveda-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 3024248,
+        "sha256": "19d49f587be4c1ab009235d7b1d91dba9e5ffa888b287faccbb0a4a0324be4ec",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/ja/KTAHV-Ayurveda-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 9169736,
+        "sha256": "96e9ea00dbcaef597fea6f4bd71004eb32980598107bcdd3790bb2ea4d0ca0ac",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "ayurveda-ko-usd",
+      "ref": "KTAHV/AYT/KO-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurvedic Treatment Programmes & Tariff",
+      "doc": "ayurveda",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-programmes-tariff/ko/KTAHV-Ayurveda-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 2979920,
+        "sha256": "1ab28b0fc28cb120283e3ebebd39a0447cbb3048a44586c017e506a447a3daca",
+        "pages": 13
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-programmes-tariff/ko/KTAHV-Ayurveda-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 9125403,
+        "sha256": "7c9b0ecb6a01cba22325986ab94f41dd82c20795ac6d9a6300b81acb8be39bd8",
+        "pages": 13
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-en-inr",
+      "ref": "KTAHV/YMT/EN-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "en",
+      "language": "English",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/en/KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 1834254,
+        "sha256": "11ae80c2a664f2b83cc420fa89ef443f225269ef3532e2805f8fe770e3177735",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/en/KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 5548294,
+        "sha256": "7948511445e02ad2efaeae9a85677f5e5aa32ce3151d10a400214f83456761e8",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-hi-inr",
+      "ref": "KTAHV/YMT/HI-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/hi/KTAHV-Yoga-Meditation-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 1929643,
+        "sha256": "38c451240dc5256f4bd5cf8c50f1919c17dddf2e3a052ebed900dadb2721bcd9",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/hi/KTAHV-Yoga-Meditation-Programmes-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 5643682,
+        "sha256": "95c6ee9b42170cbc41112f1b2840c396cd9b57b5933235be418000e15d42a605",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-de-eur",
+      "ref": "KTAHV/YMT/DE-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "de",
+      "language": "German",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/de/KTAHV-Yoga-Meditation-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 1839443,
+        "sha256": "ea676fb00d089d3300198bb3142d60583a764911feb6b25b40d67ea404116541",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/de/KTAHV-Yoga-Meditation-Programmes-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 5553484,
+        "sha256": "f27c66ec80734b7d67588187aad7dc40f0b9a0d0dd947f4f4db3b2727d5945c1",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-fr-eur",
+      "ref": "KTAHV/YMT/FR-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "fr",
+      "language": "French",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/fr/KTAHV-Yoga-Meditation-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 1839005,
+        "sha256": "b841481fd94bd01cbf91b2b7cf7aeaf1a0ad3cc3b3275ccdf9408f0646d7efa6",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/fr/KTAHV-Yoga-Meditation-Programmes-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 5553041,
+        "sha256": "d6af04f118db40914efb68cc871b441d5af1195a3f3b12d381415635376cb411",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-es-eur",
+      "ref": "KTAHV/YMT/ES-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/es/KTAHV-Yoga-Meditation-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 1838051,
+        "sha256": "829e68f153dcaeb849aee0aa34f2a95e74fea86faf43f2b6d096889a8a2ff3ad",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/es/KTAHV-Yoga-Meditation-Programmes-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 5552093,
+        "sha256": "42aa675ee127cc5d836b369634cb3d9e0cdbf0fcaa9882a822b586ba78a5bfc1",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-it-eur",
+      "ref": "KTAHV/YMT/IT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "it",
+      "language": "Italian",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/it/KTAHV-Yoga-Meditation-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 1836404,
+        "sha256": "88d23de8267fd23df748fb61a3766f6256104b94acdeb49e653f35433da16829",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/it/KTAHV-Yoga-Meditation-Programmes-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 5550440,
+        "sha256": "17ce4b5efa5e30b16f711cda6abc04a60a7347b116598a15059080830e0415e7",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-pt-eur",
+      "ref": "KTAHV/YMT/PT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/pt/KTAHV-Yoga-Meditation-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 1838723,
+        "sha256": "8d737e8c7ec901a6005fb1e28d80e714fbdc00404bb58ff9bed843d19ef924c4",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/pt/KTAHV-Yoga-Meditation-Programmes-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 5552761,
+        "sha256": "c0cbbccba4af0d134d13622b155ccfa581febf5b4e34cd530c7e1089d86dcc08",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-nl-eur",
+      "ref": "KTAHV/YMT/NL-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/nl/KTAHV-Yoga-Meditation-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 1839753,
+        "sha256": "c994ce48faf81c66f105779d54d2541e65711376151a13a406052c7b0aac6c0f",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/nl/KTAHV-Yoga-Meditation-Programmes-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 5553794,
+        "sha256": "8c09a2311d190d4dc38fd99ea0db98ed03a909715e35c08b12cc854e1eb93cef",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-ru-usd",
+      "ref": "KTAHV/YMT/RU-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/ru/KTAHV-Yoga-Meditation-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 1885656,
+        "sha256": "d5f05c1587f756f1091a2ce0e6eeff8814a2615c8488f853e08d55cda2e97d2d",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/ru/KTAHV-Yoga-Meditation-Programmes-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 5599707,
+        "sha256": "1555580fa348a86b4ced83188cd2104a8f10a8b8441bf06bd68d1821c31b6c64",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-ar-usd",
+      "ref": "KTAHV/YMT/AR-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/ar/KTAHV-Yoga-Meditation-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 1943110,
+        "sha256": "19419b1d01cd615741dd2f68766c2a38cddb33a49011a22e7478cf0c37586213",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/ar/KTAHV-Yoga-Meditation-Programmes-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 5657151,
+        "sha256": "53e271f2f0997a25ec11d2e37f1c9d55c1567a0a8fac2f075a17daf2c3c21e76",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-zh-usd",
+      "ref": "KTAHV/YMT/ZH-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/zh/KTAHV-Yoga-Meditation-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 2004966,
+        "sha256": "77565d46a0f9cb4a58f9959b35349258b3e7343fe782c51202bc8745e0f51c7c",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/zh/KTAHV-Yoga-Meditation-Programmes-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 5719001,
+        "sha256": "4c9e310c4ae63801a3fc356c57401297e9e793dbdfc2c71ff541fc40db34a069",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-ja-usd",
+      "ref": "KTAHV/YMT/JA-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/ja/KTAHV-Yoga-Meditation-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 2023595,
+        "sha256": "df507bc4eac05aa0ca40546ceb696b63b3de8b60928f748945f1368c86174834",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/ja/KTAHV-Yoga-Meditation-Programmes-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 5737629,
+        "sha256": "42373548b2fa03c04848b272de06d347074433fc69e30bd6141a89afad323062",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "yoga-ko-usd",
+      "ref": "KTAHV/YMT/KO-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Yoga & Meditation Programmes & Tariff",
+      "doc": "yoga",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/yoga-meditation-programmes-tariff/ko/KTAHV-Yoga-Meditation-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 1981028,
+        "sha256": "48e025cf7696172b187e750a6d27ee269af9d59bed78485e7d662fde8810117c",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/yoga-meditation-programmes-tariff/ko/KTAHV-Yoga-Meditation-Programmes-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 5695070,
+        "sha256": "22bda05c6584246da1336011e40ff723334a0ffb2998748597de0650d51aa89f",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-en-inr",
+      "ref": "KTAHV/DAT/EN-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "en",
+      "language": "English",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/en/KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 2677951,
+        "sha256": "c42f072c3fce27c75c0f7e5ea9b50a9a1fe21e55b4dde3be937143926140f9d0",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/en/KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 8823443,
+        "sha256": "5a93e157588f35a149f460c0351f4eafabc0626e2acfadd0e65cbedcd1d6a2b7",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-hi-inr",
+      "ref": "KTAHV/DAT/HI-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/hi/KTAHV-Daily-Admission-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 2746296,
+        "sha256": "30400b12ed7dc52b54ad2c158ebc08b362028af0942524f8d490f1e19d826d6e",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/hi/KTAHV-Daily-Admission-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 8891789,
+        "sha256": "d2230120336244bcdb3a667a1bd4fbe7bfceb6c017acdfc4eeef446eb72ad276",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-de-eur",
+      "ref": "KTAHV/DAT/DE-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "de",
+      "language": "German",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/de/KTAHV-Daily-Admission-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 2683282,
+        "sha256": "53a8f489be57a4f8447ba5d17852b4f148d3bf8e0c7c4c014c2bb5647e343c6e",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/de/KTAHV-Daily-Admission-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 8828783,
+        "sha256": "501e744dcd3664505780cf0537d8a4f1bf4a1466fee55ac344d1eedff521da54",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-fr-eur",
+      "ref": "KTAHV/DAT/FR-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "fr",
+      "language": "French",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/fr/KTAHV-Daily-Admission-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 2682818,
+        "sha256": "3b4232af176b44beeaf69d97f29451ff84116793d5d4acd17d5c575222215e9d",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/fr/KTAHV-Daily-Admission-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 8828314,
+        "sha256": "1498e9a48e936570d7d2b0f012fc205de675edbb040cd1ea3ad72b22e3086c5a",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-es-eur",
+      "ref": "KTAHV/DAT/ES-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/es/KTAHV-Daily-Admission-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 2677557,
+        "sha256": "99bfc0ef1e90b354a3b182b0df5bd52eebee98d2a9b0c1b58c936cd510400623",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/es/KTAHV-Daily-Admission-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 8823060,
+        "sha256": "c875a05f19d932709d2f711bedb80b02783095e203c92beabb9633c40147eaf8",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-it-eur",
+      "ref": "KTAHV/DAT/IT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "it",
+      "language": "Italian",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/it/KTAHV-Daily-Admission-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 2683686,
+        "sha256": "385734a6900e20493a54a089736531bd42ee4244a6e31e6f079cc0039199d0ec",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/it/KTAHV-Daily-Admission-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 8829173,
+        "sha256": "a7dbf85e252f6982c0930c1ac19658b11aa1562106b4a548c3c01b0834b52f24",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-pt-eur",
+      "ref": "KTAHV/DAT/PT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/pt/KTAHV-Daily-Admission-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 2678672,
+        "sha256": "eb86a74dfe69411c377baca14aa24481d3e48564201bd179b4da167236deccbf",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/pt/KTAHV-Daily-Admission-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 8824152,
+        "sha256": "62270923f7737bdb4f8c192aee6400ae648c11ca20cd3f45733ed42a02036487",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-nl-eur",
+      "ref": "KTAHV/DAT/NL-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/nl/KTAHV-Daily-Admission-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 2678675,
+        "sha256": "410c74bb4d6c7208f4078a79951b607fed2e8dcb3ec0bace6dfb24375e3eede7",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/nl/KTAHV-Daily-Admission-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 8824171,
+        "sha256": "51086a522b47ad2cfbd4ff3b631aa7d6b2a92591634ae97dfe96ac0f82d5925e",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-ru-usd",
+      "ref": "KTAHV/DAT/RU-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/ru/KTAHV-Daily-Admission-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 2717903,
+        "sha256": "f2202ec4d182cb5a0fd1c5b91acd9d5dba88db65663d56ed5ac22d7a585515d0",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/ru/KTAHV-Daily-Admission-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 8863421,
+        "sha256": "64c4a848f0f649cc8fb5ac656d67e0a9be799212fc64aaf605fff01ca1eb5f38",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-ar-usd",
+      "ref": "KTAHV/DAT/AR-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/ar/KTAHV-Daily-Admission-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 2782893,
+        "sha256": "11fb88a7f7013381d6f2cd0161729ac4cbfa90b28b614e67d313c7590fa8d09f",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/ar/KTAHV-Daily-Admission-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 8928381,
+        "sha256": "4badb05302cfa58f8127ddfc8ae979946e0476488eacac960397487c0d7fed6b",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-zh-usd",
+      "ref": "KTAHV/DAT/ZH-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/zh/KTAHV-Daily-Admission-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 2829754,
+        "sha256": "39ac855a9d7348d921a1387a178bbfb35d33515f82886bd0e04c6318ab26f8bb",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/zh/KTAHV-Daily-Admission-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 8975237,
+        "sha256": "624ab42379d47a1376b6a6c40197f373fd3a4d2bf6999aa04406b12ab7f76d93",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-ja-usd",
+      "ref": "KTAHV/DAT/JA-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/ja/KTAHV-Daily-Admission-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 2833438,
+        "sha256": "1919ba8b89bdf512ea54fafd07ce23bd7e862e7524dcc65e27b5477a7e8dcc96",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/ja/KTAHV-Daily-Admission-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 8978928,
+        "sha256": "b99baf990b193b6f91fe2cb45b4e7b572887759eff554daee260f52e9bd5ba17",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "accommodation-ko-usd",
+      "ref": "KTAHV/DAT/KO-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Daily Admission Tariff",
+      "doc": "accommodation",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/daily-admission-tariff/ko/KTAHV-Daily-Admission-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 2776262,
+        "sha256": "d205d079964a71397a479c1cea41cb7416f17b55b3aaf54224d74cfe070b4853",
+        "pages": 7
+      },
+      "print": {
+        "path": "pdf-print/daily-admission-tariff/ko/KTAHV-Daily-Admission-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 8921754,
+        "sha256": "3a512b234542750e86dff7f7ae98a58e80207bc05f13f1e61b819af5531f492f",
+        "pages": 7
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "opd-en-inr",
+      "ref": "KTAHV/OPD/EN-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "en",
+      "language": "English",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/en/KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+        "bytes": 1725512,
+        "sha256": "20ff8f31b4f01fc47564fa77e87001c8d277fe33a62528bacb98856043cada5c",
+        "pages": 6
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/en/KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+        "bytes": 6316256,
+        "sha256": "36b0bdc56df48b01d7e3bf269f3fab3c7072d8b47386b65b3b71483b96621055",
+        "pages": 6
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-hi-inr",
+      "ref": "KTAHV/OPD/HI-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/hi/KTAHV-Outpatient-Day-Treatment-Rates-HI-INR_20260925-R1.pdf",
+        "bytes": 1802052,
+        "sha256": "384b2e63242236cacd4802fa9d9e7e9c1f715959b89bddad9baac8638eeeb39b",
+        "pages": 6
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/hi/KTAHV-Outpatient-Day-Treatment-Rates-HI-INR_20260925-R1.pdf",
+        "bytes": 6392793,
+        "sha256": "f48d829dfddaf01863ff49fea65ac592f187efc53cb5d50cc21b4867f47a1288",
+        "pages": 6
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-de-eur",
+      "ref": "KTAHV/OPD/DE-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "de",
+      "language": "German",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/de/KTAHV-Outpatient-Day-Treatment-Rates-DE-EUR_20260925-R1.pdf",
+        "bytes": 1703019,
+        "sha256": "adfe628e6fc5e69212adbe6c006e1bc087d33c124b3ae5bacac12d7bd8599b60",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/de/KTAHV-Outpatient-Day-Treatment-Rates-DE-EUR_20260925-R1.pdf",
+        "bytes": 6293750,
+        "sha256": "f50b351ab4173f5a2cd5d3a1bc711b5a11d26e2f64808e7ac1648cf7f55b1e17",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-fr-eur",
+      "ref": "KTAHV/OPD/FR-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "fr",
+      "language": "French",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/fr/KTAHV-Outpatient-Day-Treatment-Rates-FR-EUR_20260925-R1.pdf",
+        "bytes": 1704023,
+        "sha256": "79116e03565ed2199ae7688838f8f9bfbfdb8087d8cb3fcf168610733ee240f3",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/fr/KTAHV-Outpatient-Day-Treatment-Rates-FR-EUR_20260925-R1.pdf",
+        "bytes": 6294761,
+        "sha256": "8883bc3be1ad17bea800e922c0f3a89aebf9afa20cca02ad5ffbf3867beeb5f4",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-es-eur",
+      "ref": "KTAHV/OPD/ES-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/es/KTAHV-Outpatient-Day-Treatment-Rates-ES-EUR_20260925-R1.pdf",
+        "bytes": 1701716,
+        "sha256": "c59ab83449bb645fda3d83a859ea8a2fdefd7fe4df805c045a0650b8070abdbf",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/es/KTAHV-Outpatient-Day-Treatment-Rates-ES-EUR_20260925-R1.pdf",
+        "bytes": 6292450,
+        "sha256": "8291d019cb68159e70f923c2e56097538fc0d78f2289926dc12e1a9d8e47468b",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-it-eur",
+      "ref": "KTAHV/OPD/IT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "it",
+      "language": "Italian",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/it/KTAHV-Outpatient-Day-Treatment-Rates-IT-EUR_20260925-R1.pdf",
+        "bytes": 1700839,
+        "sha256": "04f4427cb71c1333b151f8c7899c9596b1cf9c304247629c22ae207cdfd61723",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/it/KTAHV-Outpatient-Day-Treatment-Rates-IT-EUR_20260925-R1.pdf",
+        "bytes": 6291581,
+        "sha256": "7db39994257963f3e3bfaf298ec60e1a64b3dcb4f27d1643aa5903637bf2eceb",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-pt-eur",
+      "ref": "KTAHV/OPD/PT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/pt/KTAHV-Outpatient-Day-Treatment-Rates-PT-EUR_20260925-R1.pdf",
+        "bytes": 1701541,
+        "sha256": "bd2948ede1bc72ffeb9be8a0ecfb051e3399751daaf5d66571b0a616685d19eb",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/pt/KTAHV-Outpatient-Day-Treatment-Rates-PT-EUR_20260925-R1.pdf",
+        "bytes": 6292278,
+        "sha256": "d43394dea00c6c80a0642788255d10627c0a1dc725ff10ae4d64159e0b856774",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-nl-eur",
+      "ref": "KTAHV/OPD/NL-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/nl/KTAHV-Outpatient-Day-Treatment-Rates-NL-EUR_20260925-R1.pdf",
+        "bytes": 1701239,
+        "sha256": "8a7c3b294b8d04b2c8f74725eca8e36d4b260a1dcb6f6e6d61024278331a4faa",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/nl/KTAHV-Outpatient-Day-Treatment-Rates-NL-EUR_20260925-R1.pdf",
+        "bytes": 6291975,
+        "sha256": "5814eb4e154c0811cd271d01137a9c160b6a2433eb51e7e8e933583ad0fd413b",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-ru-usd",
+      "ref": "KTAHV/OPD/RU-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/ru/KTAHV-Outpatient-Day-Treatment-Rates-RU-USD_20260925-R1.pdf",
+        "bytes": 1746554,
+        "sha256": "9e7c2b6803b71197aff82e489906eeacba95ba816e3ce6cb67b00815fd095eb5",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/ru/KTAHV-Outpatient-Day-Treatment-Rates-RU-USD_20260925-R1.pdf",
+        "bytes": 6337286,
+        "sha256": "7dd805fcbd9fa9b553be158177f29505676fde3aa853c0ee070bcef87168bf63",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-ar-usd",
+      "ref": "KTAHV/OPD/AR-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/ar/KTAHV-Outpatient-Day-Treatment-Rates-AR-USD_20260925-R1.pdf",
+        "bytes": 1784704,
+        "sha256": "832869ff396d04968bb804382bf0f8a94610d8b01201c3778b8a1b118006f76e",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/ar/KTAHV-Outpatient-Day-Treatment-Rates-AR-USD_20260925-R1.pdf",
+        "bytes": 6375447,
+        "sha256": "2fe6316d36e058b2d9df3590c5188ef412311bc847e247795df7fee9d5614c57",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-zh-usd",
+      "ref": "KTAHV/OPD/ZH-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/zh/KTAHV-Outpatient-Day-Treatment-Rates-ZH-USD_20260925-R1.pdf",
+        "bytes": 1840394,
+        "sha256": "c151b0aa28856613ab98bd6184dea7827eba1f7f43c7b1d2bad373082aa50743",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/zh/KTAHV-Outpatient-Day-Treatment-Rates-ZH-USD_20260925-R1.pdf",
+        "bytes": 6431136,
+        "sha256": "db694d1a529a7ed968e2f7f5b0264a29d7154643a8884f2419705691a26b732c",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-ja-usd",
+      "ref": "KTAHV/OPD/JA-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/ja/KTAHV-Outpatient-Day-Treatment-Rates-JA-USD_20260925-R1.pdf",
+        "bytes": 1840957,
+        "sha256": "2aae5bd1e370618ee2b6f53efbc844cf40a53c5d083e28740c35977905e7c8f5",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/ja/KTAHV-Outpatient-Day-Treatment-Rates-JA-USD_20260925-R1.pdf",
+        "bytes": 6431695,
+        "sha256": "9b2524b03ad070b8b072ebba79c35412929173a167df9f28622288269d87f756",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "opd-ko-usd",
+      "ref": "KTAHV/OPD/KO-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Outpatient & Day Treatment Rates",
+      "doc": "opd",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/outpatient-day-treatment-rates/ko/KTAHV-Outpatient-Day-Treatment-Rates-KO-USD_20260925-R1.pdf",
+        "bytes": 1816475,
+        "sha256": "d80cda20667593588d435c2062076dd9a43991438cdb10e0046d7a748c9a4515",
+        "pages": 5
+      },
+      "print": {
+        "path": "pdf-print/outpatient-day-treatment-rates/ko/KTAHV-Outpatient-Day-Treatment-Rates-KO-USD_20260925-R1.pdf",
+        "bytes": 6407213,
+        "sha256": "0a2940deb30062f7da6d3e4a2795e0264b066ac0a7083c6239d3862da9ac4e8b",
+        "pages": 5
+      },
+      "validity": {
+        "from": "2025-10-01",
+        "to": null
+      }
+    },
+    {
+      "id": "training-en-inr",
+      "ref": "KTAHV/TRG/EN-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "en",
+      "language": "English",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 2740404,
+        "sha256": "6caa4a8029d9aecd6271276ee17995f46d2bf02a27c09e6896c69d292ba6975a",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+        "bytes": 8885895,
+        "sha256": "ccc8e2ac42dcb2c06a56033b7164b97d3cf9bd6296a8c54b10957b071432e611",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-hi-inr",
+      "ref": "KTAHV/TRG/HI-INR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": "INR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/hi/KTAHV-Ayurveda-Training-Courses-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 2830925,
+        "sha256": "5a5d1f3e894669b0b035e6a6212b6cb9c9bccce960affdc0de48fd0a68d8871d",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/hi/KTAHV-Ayurveda-Training-Courses-Tariff-HI-INR_20260925-R1.pdf",
+        "bytes": 8976415,
+        "sha256": "c4b8bfb0374ba89ec55ead8077df697dc5fac86866c50bf8cf85deb776fe45be",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-de-eur",
+      "ref": "KTAHV/TRG/DE-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "de",
+      "language": "German",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/de/KTAHV-Ayurveda-Training-Courses-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 2745726,
+        "sha256": "7834cce79bc65f720a55f0e0a2db820c852aa478dc997f7ddb7e716098cb4c08",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/de/KTAHV-Ayurveda-Training-Courses-Tariff-DE-EUR_20260925-R1.pdf",
+        "bytes": 8891220,
+        "sha256": "58b333b5f665dda162e425a61e9c2264b63b1163ec46101db5f8c3d0d6013986",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-fr-eur",
+      "ref": "KTAHV/TRG/FR-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "fr",
+      "language": "French",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/fr/KTAHV-Ayurveda-Training-Courses-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 2748767,
+        "sha256": "cabe1e33ff64e3e67835ab1070a13a85548f2c18b166e685401a27a4e6f15236",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/fr/KTAHV-Ayurveda-Training-Courses-Tariff-FR-EUR_20260925-R1.pdf",
+        "bytes": 8896745,
+        "sha256": "2d11d4a68c3df5bb26699bbe36a959e168097b1bd195bc387bb86d61c6fc79c3",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-es-eur",
+      "ref": "KTAHV/TRG/ES-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/es/KTAHV-Ayurveda-Training-Courses-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 2743441,
+        "sha256": "fb01dccada563ffa06c5182fe01340556c74b0d0ba72c70708b982428241fa36",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/es/KTAHV-Ayurveda-Training-Courses-Tariff-ES-EUR_20260925-R1.pdf",
+        "bytes": 8888937,
+        "sha256": "552b981e08f68eef81c34a55d273aa1fa718632167afabf641fd0cac10adbe2e",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-it-eur",
+      "ref": "KTAHV/TRG/IT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "it",
+      "language": "Italian",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/it/KTAHV-Ayurveda-Training-Courses-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 2742269,
+        "sha256": "57826d926573e6e0d641edf4521d22d5a2a3791beb2a19f77d8743fec49b6c27",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/it/KTAHV-Ayurveda-Training-Courses-Tariff-IT-EUR_20260925-R1.pdf",
+        "bytes": 8887762,
+        "sha256": "5bf50c38e683b86d72d34e21e6714d9bf08344f58ba2e88a19cb3b71d80236b3",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-pt-eur",
+      "ref": "KTAHV/TRG/PT-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/pt/KTAHV-Ayurveda-Training-Courses-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 2744174,
+        "sha256": "793f5a2001287727460480f37bd4d7124dc694f67ff6553d5706c6d7c8acd3ec",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/pt/KTAHV-Ayurveda-Training-Courses-Tariff-PT-EUR_20260925-R1.pdf",
+        "bytes": 8889667,
+        "sha256": "917c35ee8812c576fa87f9c50b7ddcc25a79e4daf97a818ea1114bab36d810d5",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-nl-eur",
+      "ref": "KTAHV/TRG/NL-EUR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": "EUR",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/nl/KTAHV-Ayurveda-Training-Courses-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 2744002,
+        "sha256": "f8213aeb7a519ee424062b794e4bd950bb43e1860f0aac85f2f963947b14dadd",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/nl/KTAHV-Ayurveda-Training-Courses-Tariff-NL-EUR_20260925-R1.pdf",
+        "bytes": 8889495,
+        "sha256": "933ff0da56c6521afc17e6be8271f476b37d70e512c5703d13040a4ae02d6f86",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-ru-usd",
+      "ref": "KTAHV/TRG/RU-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/ru/KTAHV-Ayurveda-Training-Courses-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 2790538,
+        "sha256": "b99447d20cf1c760f5c1ca763ab0cffc6698a5bdd7c11e24ffc8d5a53ec5fe3c",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/ru/KTAHV-Ayurveda-Training-Courses-Tariff-RU-USD_20260925-R1.pdf",
+        "bytes": 8936042,
+        "sha256": "de27d1a5ce64c078148388322d9cd4e8c2cde08fdad00fb22c2a07ac85d8a567",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-ar-usd",
+      "ref": "KTAHV/TRG/AR-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/ar/KTAHV-Ayurveda-Training-Courses-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 2853587,
+        "sha256": "7144c8fccea9c30c2b6e8844081e6713a8d5a15db7710de1af45695b8afc3f4e",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/ar/KTAHV-Ayurveda-Training-Courses-Tariff-AR-USD_20260925-R1.pdf",
+        "bytes": 8999080,
+        "sha256": "bd04ccdbde25af80328f9f80b35b12ebe3002db6c9c8589b89d882a1acf64f69",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-zh-usd",
+      "ref": "KTAHV/TRG/ZH-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/zh/KTAHV-Ayurveda-Training-Courses-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 2942964,
+        "sha256": "f35c591f7a8b3b576286977c7edfe97b0d05ff7501828218de94b21231c31ea1",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/zh/KTAHV-Ayurveda-Training-Courses-Tariff-ZH-USD_20260925-R1.pdf",
+        "bytes": 9088454,
+        "sha256": "7b3765e440dade2bad19d27c6cdd350b16c4bd16c72ae0eb1385ba5c12178a19",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-ja-usd",
+      "ref": "KTAHV/TRG/JA-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/ja/KTAHV-Ayurveda-Training-Courses-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 2934633,
+        "sha256": "4706d82b8e8a72c14711c184156669ceb7eea8cf31502db181c60151b343ce76",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/ja/KTAHV-Ayurveda-Training-Courses-Tariff-JA-USD_20260925-R1.pdf",
+        "bytes": 9080124,
+        "sha256": "ab41a5982f1ac8e2bf8c8ec38e3b9d06f8bb1a468bd05391fd645a9364bf7328",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "training-ko-usd",
+      "ref": "KTAHV/TRG/KO-USD/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Ayurveda Training Courses & Tariff",
+      "doc": "training",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": "USD",
+      "screen": {
+        "path": "pdf/ayurveda-training-courses-tariff/ko/KTAHV-Ayurveda-Training-Courses-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 2891338,
+        "sha256": "d3b65b82d3511b034e00903df958127ad2f93b961e8c2e104c2fa55954fa060f",
+        "pages": 8
+      },
+      "print": {
+        "path": "pdf-print/ayurveda-training-courses-tariff/ko/KTAHV-Ayurveda-Training-Courses-Tariff-KO-USD_20260925-R1.pdf",
+        "bytes": 9036828,
+        "sha256": "98476bfda9c514231c92d9d1e5c2e2f24d9f19b76ded9af2d27570833721b434",
+        "pages": 8
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      }
+    },
+    {
+      "id": "healing-secrets-en",
+      "ref": "KTAHV/HSK/EN/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "en",
+      "language": "English",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+        "bytes": 6824870,
+        "sha256": "a0c86fc12021bfd8a8561a7455f0f4025643a9c4bf65413304ae6e3620c853da",
+        "pages": 54
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+        "bytes": 23339012,
+        "sha256": "b273b1d6698002e2e124d326fd3c3ef8e940eaa72fd2cd377c398f48d08c899d",
+        "pages": 54
+      }
+    },
+    {
+      "id": "healing-secrets-hi",
+      "ref": "KTAHV/HSK/HI/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "hi",
+      "language": "Hindi",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/hi/Healing-Secrets-of-Kairali-HI_20260925-R1.pdf",
+        "bytes": 6900455,
+        "sha256": "db841ce66402e58724b649491b4bff7ae201812e4b447e487967de487c63e883",
+        "pages": 55
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/hi/Healing-Secrets-of-Kairali-HI_20260925-R1.pdf",
+        "bytes": 23414564,
+        "sha256": "f386bb4591acf98c79d96745dfef461c80020107a301fd1bf820d3015dee8510",
+        "pages": 55
+      }
+    },
+    {
+      "id": "healing-secrets-de",
+      "ref": "KTAHV/HSK/DE/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "de",
+      "language": "German",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/de/Healing-Secrets-of-Kairali-DE_20260925-R1.pdf",
+        "bytes": 6858808,
+        "sha256": "21e3b8f9ffe7d3b8292b8233e9b828cfb6c40f4ae342fb3657eca12251cb0d86",
+        "pages": 58
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/de/Healing-Secrets-of-Kairali-DE_20260925-R1.pdf",
+        "bytes": 23372929,
+        "sha256": "18250af4150e6719a5503b4b887864e93fc657efe56c3192ad84b9439e502f62",
+        "pages": 58
+      }
+    },
+    {
+      "id": "healing-secrets-fr",
+      "ref": "KTAHV/HSK/FR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "fr",
+      "language": "French",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/fr/Healing-Secrets-of-Kairali-FR_20260925-R1.pdf",
+        "bytes": 6855854,
+        "sha256": "7290714c29ae3ea6d8c4db57bad4eb12b80c7fc47f2e986b41095d46616b7d60",
+        "pages": 58
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/fr/Healing-Secrets-of-Kairali-FR_20260925-R1.pdf",
+        "bytes": 23369978,
+        "sha256": "798091188fad6b3a089ae660467e1ec7c3811b88e3a39a8715499c6c336d9ae7",
+        "pages": 58
+      }
+    },
+    {
+      "id": "healing-secrets-es",
+      "ref": "KTAHV/HSK/ES/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "es",
+      "language": "Spanish",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/es/Healing-Secrets-of-Kairali-ES_20260925-R1.pdf",
+        "bytes": 6850931,
+        "sha256": "cd323e0d667e6019e734bbdadd8aaaa732bead31794f7c318cbba08bd95fbacc",
+        "pages": 57
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/es/Healing-Secrets-of-Kairali-ES_20260925-R1.pdf",
+        "bytes": 23365050,
+        "sha256": "883b13801e0381e8a7d4e3fc89951738179a32b0b4818464f4bf94739f9778d4",
+        "pages": 57
+      }
+    },
+    {
+      "id": "healing-secrets-it",
+      "ref": "KTAHV/HSK/IT/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "it",
+      "language": "Italian",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/it/Healing-Secrets-of-Kairali-IT_20260925-R1.pdf",
+        "bytes": 6849057,
+        "sha256": "1edc64f22a93a9f0b5851440fa98200cc0f00e92f1ec64bf73d683d604833f8f",
+        "pages": 57
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/it/Healing-Secrets-of-Kairali-IT_20260925-R1.pdf",
+        "bytes": 23363197,
+        "sha256": "20586221e3a052aa8956f5ac42a84c3466565bbdf58c59e97d8977ffc8c465c5",
+        "pages": 57
+      }
+    },
+    {
+      "id": "healing-secrets-pt",
+      "ref": "KTAHV/HSK/PT/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "pt",
+      "language": "Portuguese",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/pt/Healing-Secrets-of-Kairali-PT_20260925-R1.pdf",
+        "bytes": 6849018,
+        "sha256": "5074eaa166aff5e61296a78521320dc080a0e352f4a32be1fcb3efd59a95424f",
+        "pages": 57
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/pt/Healing-Secrets-of-Kairali-PT_20260925-R1.pdf",
+        "bytes": 23363157,
+        "sha256": "492cc11287eddd549cbce954d9a4228474cf54905c39de41a5038566bdb9a230",
+        "pages": 57
+      }
+    },
+    {
+      "id": "healing-secrets-nl",
+      "ref": "KTAHV/HSK/NL/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "nl",
+      "language": "Dutch",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/nl/Healing-Secrets-of-Kairali-NL_20260925-R1.pdf",
+        "bytes": 6851348,
+        "sha256": "5755cd5fd6f8f274de1f8277b9e873db07a6102d32eeec232b3945834cbfe68b",
+        "pages": 58
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/nl/Healing-Secrets-of-Kairali-NL_20260925-R1.pdf",
+        "bytes": 23365474,
+        "sha256": "48065bc29c7735993330736323e598e690e7d908666de6063ee84a7450c8d345",
+        "pages": 58
+      }
+    },
+    {
+      "id": "healing-secrets-ru",
+      "ref": "KTAHV/HSK/RU/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "ru",
+      "language": "Russian",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/ru/Healing-Secrets-of-Kairali-RU_20260925-R1.pdf",
+        "bytes": 6884498,
+        "sha256": "cb755ac35074a04a890a1cc1b823c3f589ecc509ad6393a4133a51c425e13a3e",
+        "pages": 64
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/ru/Healing-Secrets-of-Kairali-RU_20260925-R1.pdf",
+        "bytes": 23398648,
+        "sha256": "09b565fae853fec1bfb946e508c654ee4a87850b3d624c00aa58de7de90ecee8",
+        "pages": 64
+      }
+    },
+    {
+      "id": "healing-secrets-ar",
+      "ref": "KTAHV/HSK/AR/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "ar",
+      "language": "Arabic",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/ar/Healing-Secrets-of-Kairali-AR_20260925-R1.pdf",
+        "bytes": 6982179,
+        "sha256": "7f0257b9cc6fa4bc61aae280219dd7062a7cfa744ad0cc33726c7614ec1cde47",
+        "pages": 59
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/ar/Healing-Secrets-of-Kairali-AR_20260925-R1.pdf",
+        "bytes": 23496311,
+        "sha256": "10bf7409c5c94f7f7c19b81605cf866872c95543545afb351f6ddf061fc97277",
+        "pages": 59
+      }
+    },
+    {
+      "id": "healing-secrets-zh",
+      "ref": "KTAHV/HSK/ZH/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "zh",
+      "language": "Chinese (Simplified)",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/zh/Healing-Secrets-of-Kairali-ZH_20260925-R1.pdf",
+        "bytes": 7052811,
+        "sha256": "f0a36731b874b971196dd8ea2ebdb595b742f3b80a47d92b2c37666516baeea7",
+        "pages": 54
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/zh/Healing-Secrets-of-Kairali-ZH_20260925-R1.pdf",
+        "bytes": 23566957,
+        "sha256": "7e6787dc0762e71ec1053ec30f51159e7edac7a0cae0332f84cb53abeef719c9",
+        "pages": 54
+      }
+    },
+    {
+      "id": "healing-secrets-ja",
+      "ref": "KTAHV/HSK/JA/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "ja",
+      "language": "Japanese",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/ja/Healing-Secrets-of-Kairali-JA_20260925-R1.pdf",
+        "bytes": 7041506,
+        "sha256": "5ff12a66f76443393fc8848671817812bd906b78d7998c69f83f7f50dcc8e3b3",
+        "pages": 62
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/ja/Healing-Secrets-of-Kairali-JA_20260925-R1.pdf",
+        "bytes": 23555633,
+        "sha256": "728e852f1867a8bab7b097058f07507094f18bbbfe7abdc85abf2faa99864287",
+        "pages": 62
+      }
+    },
+    {
+      "id": "healing-secrets-ko",
+      "ref": "KTAHV/HSK/KO/20260925-R1",
+      "issued": "2026-09-25",
+      "status": "final",
+      "open_questions": [],
+      "family": "Healing Secrets of Kairali",
+      "doc": "healing-secrets",
+      "lang": "ko",
+      "language": "Korean",
+      "currency": null,
+      "screen": {
+        "path": "pdf/healing-secrets/ko/Healing-Secrets-of-Kairali-KO_20260925-R1.pdf",
+        "bytes": 6901959,
+        "sha256": "577e7697e88f04b0c29fce572fd328d38dfcd446cdacb047fa5b173dc8084f21",
+        "pages": 55
+      },
+      "print": {
+        "path": "pdf-print/healing-secrets/ko/Healing-Secrets-of-Kairali-KO_20260925-R1.pdf",
+        "bytes": 23416083,
+        "sha256": "ae9e1c1421cca2ba942e7152c27e8f613d2d73606768999ba54106e5d4165b2a",
+        "pages": 55
+      }
+    }
+  ]
+}

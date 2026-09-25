@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-25T11:29:46.129Z",
-  "base": "http://127.0.0.1:4470",
+  "generated": "2026-09-25T13:08:00.374Z",
+  "base": "http://localhost:3125",
   "count": 242,
   "failures": 0,
   "routes": [
@@ -8,8 +8,8 @@
       "path": "/",
       "ok": true,
       "file": "index.html",
-      "bytes": 209780,
-      "textChars": 13600,
+      "bytes": 212447,
+      "textChars": 14778,
       "imgs": 70,
       "flattened": 46,
       "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -239,8 +239,8 @@
       "path": "/ayurveda-package/",
       "ok": true,
       "file": "ayurveda-package.html",
-      "bytes": 90163,
-      "textChars": 2399,
+      "bytes": 99771,
+      "textChars": 2511,
       "imgs": 33,
       "flattened": 0,
       "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -745,8 +745,8 @@
       "path": "/faqs-downloads/",
       "ok": true,
       "file": "faqs-downloads.html",
-      "bytes": 179273,
-      "textChars": 7706,
+      "bytes": 183307,
+      "textChars": 7989,
       "imgs": 5,
       "flattened": 0,
       "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1320,8 +1320,8 @@
       "path": "/offers/",
       "ok": true,
       "file": "offers.html",
-      "bytes": 107686,
-      "textChars": 8818,
+      "bytes": 108011,
+      "textChars": 8930,
       "imgs": 12,
       "flattened": 0,
       "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"

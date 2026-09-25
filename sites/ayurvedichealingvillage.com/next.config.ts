@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
 import { readFileSync } from "node:fs";
@@ -74,6 +75,7 @@ const nextConfig: NextConfig = {
   // otherwise land on a redirect.
   trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
+  async rewrites() { return [{ source: "/documents/", destination: "/documents/index.html" }]; },
   async headers() {
     // The payload URLs are stable across deployments; they are not content-addressed.
     // Revalidate with ETags so returning visitors receive updated views and consent UI.
@@ -81,9 +83,10 @@ const nextConfig: NextConfig = {
       source: "/ahv/:path*",
       headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
     };
-    if (!IS_STAGING) return [assets];
+    const documents = { source: "/documents/:path*.pdf", headers: [{ key: "Content-Type", value: "application/pdf" }, { key: "Cache-Control", value: "public, max-age=86400" }] };
+    if (!IS_STAGING) return [assets, documents];
     return [
-      assets,
+      assets, documents,
       {
         source: "/:path*",
         headers: [
@@ -106,7 +109,7 @@ const nextConfig: NextConfig = {
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
-    })), ...[...adSitelinks, ...legacyEnglishRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
+    })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
   },
   // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
   // English homepage now exists at "/" (app/(english)/page.tsx), which is the
