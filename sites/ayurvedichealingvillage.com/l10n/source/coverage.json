@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "eef18c44c17f8918205ca407adb10b382dc55d07351ba427f9abd7d084f523a2",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -9,7 +9,7 @@
   },
   {
    "file": "public/ahv/components/AHV Chrome Header.dc.html",
-   "sha256": "7bef2ebf36bc360761eb7a10ccfdc615badd982acb852f81dd0e46cd511e9511",
+   "sha256": "ddc572d8e7317b3ac38b9495689267d20ee05a4fee4f02925efb0ea4c2a623a0",
    "units": 39,
    "status": "covered"
   },
@@ -316,13 +316,13 @@
   {
    "file": "public/ahv/views/ahv-page-de-addiction-rehabilitation-desktop.json",
    "sha256": "74c2df99ff3d35e453c0af9490223ab724e02b950b7c16b2b507d4c7d874945f",
-   "units": 503,
+   "units": 502,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-de-addiction-rehabilitation-mobile.json",
    "sha256": "af871523d110b7cc06859945d0bd94d2614e2aefd952ac174dc080cec4ac0e7a",
-   "units": 511,
+   "units": 510,
    "status": "covered"
   },
   {
@@ -712,13 +712,13 @@
   {
    "file": "public/ahv/views/ahv-page-sinus-migraine-desktop.json",
    "sha256": "d2d31380d3a9f48c631d453e2c92f099dd20c26848ce54df12cf7bf489dc1d7b",
-   "units": 464,
+   "units": 463,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sinus-migraine-mobile.json",
    "sha256": "aeb8c793a9173a83c389d47c4932da53066c54ed8d102a8ad34dbe27647934a0",
-   "units": 471,
+   "units": 470,
    "status": "covered"
   },
   {
@@ -1035,13 +1035,13 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "3e4239b0e11ad98da17ff94ac6d78f9e7827cd6cd86dc57cfb9ed0467582f790",
+   "sha256": "3b6c1ec3d988200f93bca1fcf45d8081ff7ba3a11b4bd6b220187b18c4299520",
    "units": 686,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "c5d978528a08d621d0014419486054facdf1d2d49bfcc58e6e6a3bc14727bdee",
+   "sha256": "934124f14273a78c2633058e43e06d38f7444d25d8ffeaaf85f49065f2afdb0b",
    "units": 619,
    "status": "covered"
   },
@@ -1458,6 +1458,126 @@
    "sha256": "8db445d4b54405dbfe936fb53ea04003061e7e0014ff5b2ef26db34268b50442",
    "units": 39,
    "status": "covered"
+  },
+  {
+   "file": "public/design/chrome.js",
+   "sha256": "b0db863c2e02b10a250e764c55f8af216ead8f5666b1b335b7547d64a2ed8cb6",
+   "units": 12,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/consistency.js",
+   "sha256": "de46aee15406fa302a1842176d94bbf8ddf4297e25e1b20e3f46300deaf35c8b",
+   "units": 6,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/film-player.js",
+   "sha256": "b2a9df659205374745fa7bcb349547ae96a58dc262833f93534823d7fe6493b0",
+   "units": 4,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/newsletter.js",
+   "sha256": "53694087a223dcac7e444c33eec44dd904a4f79e48a10fc2a6b25833c5b12b02",
+   "units": 7,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/search.js",
+   "sha256": "0ac162cdaff68c939587c8d58513b02d84ebd26bf567149dc4eec07e04a7836d",
+   "units": 16,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/section-nav.js",
+   "sha256": "ecb5d97e17bc119a168f20b46b36730e62f1bf3ecf5c4ce2c67b18ded7cf3cbf",
+   "units": 9,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/section-nav.data.js",
+   "sha256": "92a00f2e546ba39eb5957f7507683115d1e65eaae0be162b0ef2658621f938a2",
+   "units": 202,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/search-index.json",
+   "sha256": "eeb64b31d9b4a3fe2b12eb7fd038af681fd03d52478b00f1013830b219b63a1b",
+   "units": 701,
+   "status": "covered (key whitelist)"
+  },
+  {
+   "file": "english-candidate/site-tree.json",
+   "sha256": "8d7b0ef8b24b495325dea56d08a8c830a0822ecbae17cc76b236fc85d6bc3603",
+   "units": 222,
+   "status": "covered (key whitelist)"
+  },
+  {
+   "file": "app/(english)/sightseeing/destinations.json",
+   "sha256": "d35b55f123a188214f2e665a6a11a727de30547c69c8eef06deb61357a339b83",
+   "units": 66,
+   "status": "covered (key whitelist)"
+  },
+  {
+   "file": "app/(english)/video-gallery/films.json",
+   "sha256": "21d7dd9d2d0ee5c9d74f84ba7b097934c02e90ea774a9cb30fabe9ce482c1486",
+   "units": 66,
+   "status": "covered (key whitelist)"
+  },
+  {
+   "file": "app/(english)/sightseeing/page.tsx",
+   "sha256": "a1fb6d925534cb4e38a0e894b9cee9404fed8a73e15e23958fd6082764c85503",
+   "units": 40,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/video-gallery/page.tsx",
+   "sha256": "1b2f26a3d28bd9aed71fe0040e2bb1a504c67548967fbb655a79dacb78dc7c2e",
+   "units": 32,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/read-feedback/page.tsx",
+   "sha256": "c22abaf1a7f26eb343b5c208b6f5b7523f923dfdcb01d868a44b8f343ba13902",
+   "units": 44,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/read-feedback/ReviewsClient.tsx",
+   "sha256": "c368200b344bec720089b2a4f41d36af1611ac51b9ff81092abc5505d0e5c547",
+   "units": 40,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/read-feedback/ReviewsShell.tsx",
+   "sha256": "0a1f8c70b40cf6b66054fbbc3f234a8ce49e8b2071e67daaf7466c5012b4bef9",
+   "units": 0,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/givefeedback/page.tsx",
+   "sha256": "904ed19af2180d972b0d0348b87ad9cf9a5cdaff9034789f31ee9f00eb6b3113",
+   "units": 62,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/givefeedback/FeedbackComposer.tsx",
+   "sha256": "fc884c33822b4a86e7dcbfc35fbe6e3f5e5b4f300180b796c616786128287b27",
+   "units": 17,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/givefeedback/feedback-links.ts",
+   "sha256": "3b27273a086786afecd7f7eac644947951a4ab68deb26fbdfa8fa5e934123794",
+   "units": 1,
+   "status": "covered (native page)"
+  },
+  {
+   "file": "app/(english)/search/page.tsx",
+   "sha256": "9fe5c6bbf7486ff5e223f1023f9d0c6631c91763d83007b981945af51a6b6f7b",
+   "units": 2,
+   "status": "covered (native page)"
   }
  ],
  "errors": []

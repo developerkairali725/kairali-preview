@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0009",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_ec654fac9599f62e79e2",
+   "sourceHash": "ec654fac9599f62e79e2706abef23dfb7c07c08185aa86db4d8695f0b718d1b3",
+   "text": "действительно",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Single-word display label with no surrounding context. Translated as the neutral predicate 'действительно' (e.g. 'valid until'). Please check against the UI; if it's an adjective agreeing with a noun, use 'действительный/-ая'."
+   ]
+  },
+  {
+   "id": "t_1a6b41749ceef25aa0a0",
+   "sourceHash": "1a6b41749ceef25aa0a056bf2d213534b1ea9e4196be851e562425c5173527fe",
+   "text": "Терапия Панчакарма",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06c8faf69a5d9197e254",
+   "sourceHash": "06c8faf69a5d9197e254e932aecc53bb075ddd3dc7bd18549acef302ae04db78",
+   "text": "Терапия для контроля веса и обмена веществ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_228d06591c7e1d499ce9",
+   "sourceHash": "228d06591c7e1d499ce927c6dfc22afc97dcabd641b516433aebff4eb49464c4",
+   "text": "Sthoulyaghna Chikitsa (Стхоульягхна Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern: Latin form first, Cyrillic transliteration in parentheses."
+   ]
+  },
+  {
+   "id": "t_e632b7095b0bf32c260f",
+   "sourceHash": "e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3",
+   "text": "T",
+   "status": "translated",
+   "unchangedReason": "Single-letter JS enum/argument value (a code, not display prose); changing it could break logic.",
+   "issues": []
+  },
+  {
+   "id": "t_4e976510c738578ed2da",
+   "sourceHash": "4e976510c738578ed2da2ac8d1dd4a1934960c940d7c150982538ce49a1bf293",
+   "text": "Программа снижения веса",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7cf958663262033c3b9",
+   "sourceHash": "d7cf958663262033c3b9219cf959ad4c7b6c3c9ce07714c3f0f5d7307149ecd8",
+   "text": "Комплексная терапия омоложения и детоксикации",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af34f995027400b3d0db",
+   "sourceHash": "af34f995027400b3d0dbb10a21450fb99fdc6564a3b72d7dcb306b926c31bc24",
+   "text": "Shodhanam Karma (Шодханам Карма)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Follows the approved term 'Shodhanam (Шодханам)', with 'Karma' transliterated the same way."
+   ]
+  },
+  {
+   "id": "t_1834b8b21a0ef0420ca8",
+   "sourceHash": "1834b8b21a0ef0420ca8392ed4a3aa2643932519d80799bedbc014ed3074b5fd",
+   "text": "Целостное омоложение и детоксикация",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebb650cb8e02389876ea",
+   "sourceHash": "ebb650cb8e02389876eacc199c0c2ba2ba7b9882468f70b2492bde63e984c54a",
+   "text": "Лечебная программа омоложения и детоксикации Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69ea57f0439a6208de96",
+   "sourceHash": "69ea57f0439a6208de96ab5dde57cb17578484843781ab126539db4c65b49909",
+   "text": "Персонализированная индивидуальная лечебная программа Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_37b8664a87563b918ad9",
+   "sourceHash": "37b8664a87563b918ad9dd28b85acf810b5114f5b314b537e821cae90cb83c76",
+   "text": "Swasthya Anukūla Chikitsa (Свастхья Анукула Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern."
+   ]
+  },
+  {
+   "id": "t_ac218601af62e72b8a72",
+   "sourceHash": "ac218601af62e72b8a726754af9648fa08b56d9d05e5720fa545241724236725",
+   "text": "Персонализированная индивидуальная лечебная программа Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_912e232812af1b3f78c4",
+   "sourceHash": "912e232812af1b3f78c449799fe32dc78d9aad14e0d1ff85db77f4f330d13ef9",
+   "text": "Йога-терапия для здоровья пищеварения и кишечника",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ecdc05ba7fcf3b5b30a",
+   "sourceHash": "5ecdc05ba7fcf3b5b30a2466450dcd170b6239d3325f1d2bb1eea00446dd3cb9",
+   "text": "Agni Dīpanam Yoga Chikitsa (Агни Дипанам Йога Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern."
+   ]
+  },
+  {
+   "id": "t_7ea31b20b69e98c5df70",
+   "sourceHash": "7ea31b20b69e98c5df70da9161c7a0e89b8bdeaf40847af9fa4d60a2319b4223",
+   "text": "Программа на основе йоги для снижения стресса и восстановления энергии",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_558532609b0bd4967663",
+   "sourceHash": "558532609b0bd4967663bc32d6900ccc1d72a4ce405e257123d666d27cb8bd2b",
+   "text": "Prāṇa Sāmya Yoga Chikitsa (Прана Самья Йога Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern."
+   ]
+  },
+  {
+   "id": "t_f8779d8b665281ad12f3",
+   "sourceHash": "f8779d8b665281ad12f33459b82e688ad193b1da2226d19e7707109b7c35080c",
+   "text": "Терапия для укрепления иммунитета и оценка здоровья руководителей",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81f385012e90afd3aba5",
+   "sourceHash": "81f385012e90afd3aba5df2f60d352edf1baa0cb9bc7324b59ead65bd914f3c4",
+   "text": "Ojasvardhana Chikitsa (Оджасвардхана Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern."
+   ]
+  },
+  {
+   "id": "t_cbef05ef679d46bbbae1",
+   "sourceHash": "cbef05ef679d46bbbae11d1be646625d60fbb801e199383bdaed1b57cc4a5980",
+   "text": "Терапия для восстановления сна",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82766829d0a4f408b235",
+   "sourceHash": "82766829d0a4f408b23534140ccb4d470c98cfc5bb85b3385e8b2be8480c97c4",
+   "text": "Nidrā Chikitsa (Нидра Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Follows the approved 'Chikitsa (Чикитса)' pattern."
+   ]
+  },
+  {
+   "id": "t_f143c255fc713c88cc94",
+   "sourceHash": "f143c255fc713c88cc94eed70c062a29dfa539cf756d65c7adf2076899c98e48",
+   "text": "Терапия для гормонального баланса и эндокринной системы у женщин",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1373cdff40f11caceb0e",
+   "sourceHash": "1373cdff40f11caceb0ebb211cc09c541fa6d7cc1b6c438a246486b0b263c8b4",
+   "text": "Strī Swāsthyam Rakshana (Стри Свастхьям Ракшана)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name. Uses the same Latin + Cyrillic-in-parentheses pattern as the other Sanskrit names, for consistency."
+   ]
+  },
+  {
+   "id": "t_669c987c37cb0a0a5ce6",
+   "sourceHash": "669c987c37cb0a0a5ce623042758b1302d31040019488d59753988e3154f1c85",
+   "text": "Терапия для гормонального баланса и эндокринной системы у женщин",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48d9a920842e55ce5e23",
+   "sourceHash": "48d9a920842e55ce5e23bb4bb1756e91b84efc16b0d3357c0b09e2fd445a98fb",
+   "text": "Программа профилактики и регенеративной аюрведической детоксикации",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

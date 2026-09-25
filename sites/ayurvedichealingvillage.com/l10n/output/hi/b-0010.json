@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0010",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_f77046b21ae4f99ed75e",
+   "sourceHash": "f77046b21ae4f99ed75ecb837b3b6a3ba79991fd24a040517b3b7e2c084a16cd",
+   "text": "स्वास्थ्य रक्षण चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8d12c2101f8012a57e43",
+   "sourceHash": "8d12c2101f8012a57e43b9629ba2778a6ba69ff0c1dc5e45a6a85383be004155",
+   "text": "मधुमेह एवं चयापचय संतुलन चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6257666674a1ec5d734f",
+   "sourceHash": "6257666674a1ec5d734fd5c446cb8e090d84f910032a043783eb396cf24208b1",
+   "text": "मधुमेह चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fa8f2e0dd972fc43651",
+   "sourceHash": "7fa8f2e0dd972fc43651e1fce8f2e5b7243a758f35c2d5390488f2e47b192767",
+   "text": "योग–ध्यान अभ्यास — योग एवं ध्यान प्रशिक्षण",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18f5384d58bcb1bba0bc",
+   "sourceHash": "18f5384d58bcb1bba0bcd9e6a6781d1a6ac2cc280c330ecbab6cb7931b721552",
+   "text": "Y",
+   "status": "translated",
+   "unchangedReason": "Single-letter enum/code value used as a JS argument; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_8b5f9a1383f8d58f452b",
+   "sourceHash": "8b5f9a1383f8d58f452b5d61ca33b787b1cfbce662da7cf8ca69d0b942fb9144",
+   "text": "आयुर्वेद प्रशिक्षण कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8c2574892063f995fdf7",
+   "sourceHash": "8c2574892063f995fdf756bce07f46c1a5193e54cd52837ed91e32008ccf41ac",
+   "text": "R",
+   "status": "translated",
+   "unchangedReason": "Single-letter enum/code value used as a JS argument; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_c2fb788c7deedbeaa296",
+   "sourceHash": "c2fb788c7deedbeaa296e424d4c2921b871a4f6cb4cf393c1c1105653ab399b4",
+   "text": "प्रशिक्षण",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a908043ed469f361cd51",
+   "sourceHash": "a908043ed469f361cd516f3bdd781341912b731a6ea3a5385af8514ec9ec02cc",
+   "text": "पाठ्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_936e5cc5021d8a075f91",
+   "sourceHash": "936e5cc5021d8a075f91b7864bf0cec8099c220cc450bead14e2f25e8dba549f",
+   "text": "पाठ्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f613567ce0a6344ca49e",
+   "sourceHash": "f613567ce0a6344ca49ee15fe4522f27c4bbeb4f30f049571c3dc6d96952b9dd",
+   "text": "आयुर्वेद सीखें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44574a894b1108b9e43c",
+   "sourceHash": "44574a894b1108b9e43c327dba070863d0b13a982687a8df97610fba340186ed",
+   "text": "आयुर्वेद प्रशिक्षण कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89e002d259b8fd3e0b0b",
+   "sourceHash": "89e002d259b8fd3e0b0bf3595139843d43a7caaefbaad6f32d17be2402190b84",
+   "text": "वैयक्तिक योग साधना — व्यक्तिगत योग",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b894c55492d4803f6cc8",
+   "sourceHash": "b894c55492d4803f6cc8d09de04f533eb36d0f960f711f825a2a560aa7743b1b",
+   "text": "मूल्य निर्धारित नहीं",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_466d6ed024c121c8336a",
+   "sourceHash": "466d6ed024c121c8336ace8a3925cadba4a4141a425df5cf821ddbc92ef0530c",
+   "text": "आवासीय योग कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'residential programmes' (आवासीय कार्यक्रम) to keep the clinical register and avoid resort/holiday connotations."
+   ]
+  },
+  {
+   "id": "t_62b429668a48290f6693",
+   "sourceHash": "62b429668a48290f66934f0b3992fa318504609080f142d1cfca2c6871a587bd",
+   "text": "व्यक्तिगत योग कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5eb38847a695d93a4bd4",
+   "sourceHash": "5eb38847a695d93a4bd4a5ceeb4a79c0140690ec4a8bb36f2241b4a4df0f1c62",
+   "text": "Kairali का योग एवं ध्यान पैकेज",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1567e69f75ddfccb5664",
+   "sourceHash": "1567e69f75ddfccb5664cc1355242a10110c2b7a03d0f2c669527a8e7e864ba9",
+   "text": "ध्यान-योग शिबिरम्",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_972b6b3edb8791d69e57",
+   "sourceHash": "972b6b3edb8791d69e57f49ab5a62011d810963ea3f55e3010e72100c1d2f6dc",
+   "text": "Kairali का योग एवं ध्यान पैकेज",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ccc843f563c5ee72bbbc",
+   "sourceHash": "ccc843f563c5ee72bbbcdf659c06abe813e5ace7a63c0fad6b9d94ce40ef49c1",
+   "text": "व्यसन-मुक्ति एवं व्यवहारिक स्वास्थ्य चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f75354ae91f99759acb2",
+   "sourceHash": "f75354ae91f99759acb2644338bba62a153d140cc12a4d6ebd0c8c9943814ec1",
+   "text": "मदात्यय चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69c0a78d29563f73eea8",
+   "sourceHash": "69c0a78d29563f73eea8b5f2ea95406ae27ec1f70f660698c20ccb1d7379b0c1",
+   "text": "नशा-मुक्ति एवं पुनर्वास",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3386410b8174aa5ab65f",
+   "sourceHash": "3386410b8174aa5ab65f0cac9fbb5551e1a07736535d6c60a4120b4a4cd5f09d",
+   "text": "साइनस एवं माइग्रेन राहत उपचार",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0905347911aab86a1d12",
+   "sourceHash": "0905347911aab86a1d12f272da96dc9a33d322df780d6e0ea01bcc5fe721f4f3",
+   "text": "नस्यम् चिकित्सा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4d59a09f6c533a2c33a2",
+   "sourceHash": "4d59a09f6c533a2c33a208a79d6d86642eaffc8bdcfba2ae0e674b5ac9d14058",
+   "text": "साइनुसाइटिस एवं माइग्रेन",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

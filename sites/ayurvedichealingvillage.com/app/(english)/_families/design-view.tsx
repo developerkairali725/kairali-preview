@@ -19,8 +19,10 @@ import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
 import { routeSchema } from "./schema";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { gunzipSync } from "node:zlib";
+import { LOCALE_INFO, LOCALE_CODES, localizedPath, t, type LocaleCode } from "./l10n";
 import componentMap from "../../../english-candidate/component-map.json";
 import analyticsConfig from "../../../analytics.config.json";
 import consistencyLock from "../../../english-candidate/consistency-locked-families.json";
@@ -51,8 +53,16 @@ function snapshotName(routePath: string): string {
 
 const PRERENDER_DIR = join(process.cwd(), "english-candidate", "prerender");
 
-function prerenderedBody(routePath: string): string {
+function prerenderedBody(routePath: string, locale: LocaleCode = "en"): string {
   try {
+    if (locale !== "en") {
+      // Localized snapshots: the SAME prerender of the localized runtime
+      // (tools/prerender-english.mjs --locale), stored gzip-compressed. A missing
+      // snapshot serves client-rendered, exactly like the English lane.
+      const gz = join(process.cwd(), "l10n", "prerender", locale, snapshotName(routePath) + ".gz");
+      if (!existsSync(gz)) return "";
+      return formPostSafety(computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8"))));
+    }
     return formPostSafety(newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(PRERENDER_DIR, snapshotName(routePath)), "utf8")))));
   } catch {
     return "";
@@ -78,26 +88,43 @@ const SUPPORT_SRC = "/ahv/support.js";
 /** The package's own accepted preview layer, carried over unchanged. */
 const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
-export function buildBootConfig(route: CandidateRoute): BootConfig {
+export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
+  const info = LOCALE_INFO[locale];
+  const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
+  const resources = Object.fromEntries(
+    Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
+  );
   return {
+    // `path` stays the ENGLISH route: it binds the design's record (datasets are
+    // keyed by the English path) and scopes route-specific styling. The URL the
+    // visitor sees is locale.path.
     path: route.path,
     robots: routeRobots(route),
     desktopView: route.desktopView,
     mobileView: route.mobileView,
     breakpoint: BREAKPOINT,
-    payloadBase: PAYLOAD_BASE,
+    payloadBase: locale === "en" ? PAYLOAD_BASE : `${base}/views/`,
     supportSrc: SUPPORT_SRC,
     previewSrc: PREVIEW_SRC,
-    resources: componentMap.resources as Record<string, string>,
+    resources,
     measurement: measurementForBuild(),
+    locale: {
+      code: locale,
+      lang: info.htmlLang,
+      dir: info.dir,
+      path: localizedPath(route.path, locale) ?? route.path,
+      options: LOCALE_CODES.map((c) => ({ code: c, name: LOCALE_INFO[c].name, lang: LOCALE_INFO[c].htmlLang, href: localizedPath(route.path, c) })).filter((o) => o.href) as Array<{ code: string; name: string; lang: string; href: string }>,
+      ui: { language: t(locale, "Language"), choose: t(locale, "Choose language"), current: t(locale, "Current language") },
+      privacyHref: localizedPath("/privacy-policy/", locale) ?? "/privacy-policy/",
+    },
   };
 }
 
-export function DesignView({ route }: { route: CandidateRoute }) {
+export function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const snapshot = prerenderedBody(route.path);
-  const cfg = buildBootConfig(route);
+  const snapshot = prerenderedBody(route.path, locale);
+  const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
   // family can never reach another — the owner-built homepage, package,
@@ -127,7 +154,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
           deliberately NOT copied from live. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(routeSchema(route)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(routeSchema(route, locale)) }}
       />
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
@@ -137,7 +164,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
           as="fetch"
           crossOrigin="anonymous"
           media={narrowMedia}
-          href={`${PAYLOAD_BASE}${route.mobileView}.json`}
+          href={`${cfg.payloadBase}${route.mobileView}.json`}
         />
       ) : null}
       {route.desktopView ? (
@@ -146,7 +173,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
           as="fetch"
           crossOrigin="anonymous"
           media={wideMedia}
-          href={`${PAYLOAD_BASE}${route.desktopView}.json`}
+          href={`${cfg.payloadBase}${route.desktopView}.json`}
         />
       ) : null}
       <link rel="preload" as="script" href={SUPPORT_SRC} />
@@ -161,6 +188,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
       <div
         id={DESIGN_ROOT_ID}
         data-ahv-route={route.path}
+        data-ahv-locale={locale === "en" ? undefined : locale}
         data-ahv-family={family || undefined}
         data-ahv-consistency={consistency}
         data-ahv-snapshot-state={snapshot ? "held" : undefined}
@@ -170,8 +198,7 @@ export function DesignView({ route }: { route: CandidateRoute }) {
 
       <noscript>
         <p style={{ font: "17px/1.6 system-ui, sans-serif", margin: "40px auto", maxWidth: "62ch", padding: "0 20px" }}>
-          This page renders the approved Kairali design with JavaScript. Please
-          enable JavaScript, or contact us at info@kairali.com.
+          {t(locale, "This page renders the approved Kairali design with JavaScript. Please enable JavaScript, or contact us at info@kairali.com.")}
         </p>
       </noscript>
 

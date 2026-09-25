@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0003",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_29bb79c76e769dc048e9",
+   "sourceHash": "29bb79c76e769dc048e9506b5b054d1bcdb715c991af718a428809408b5910fd",
+   "text": "الإلغاء واسترداد المبالغ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee290b3ddbc8e7e90bd0",
+   "sourceHash": "ee290b3ddbc8e7e90bd0028e8315a02570ee24d83cc8b0c14f860146bb24fd80",
+   "text": "سياسة ملفات تعريف الارتباط",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_129c678fce59acee7ac6",
+   "sourceHash": "129c678fce59acee7ac6a6fdb67b63107a6fece4ff4dbbcaca8bb40bcc92874a",
+   "text": "إخلاء المسؤولية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c9479b65293d6205cccf",
+   "sourceHash": "c9479b65293d6205cccfaf3cf186adcc6b181651b90f866b98a462ac9a62d67f",
+   "text": "disclaimer",
+   "status": "translated",
+   "unchangedReason": "Lowercase footer value appears to be an internal key/slug rather than display copy; kept verbatim so it does not break anything.",
+   "issues": [
+    "Please check: if this is visible text rather than a key, use 'إخلاء المسؤولية'."
+   ]
+  },
+  {
+   "id": "t_304230dd7b9f3933b298",
+   "sourceHash": "304230dd7b9f3933b298ca10edfea6b9b30904af3c650e1b8428d20fd7d50829",
+   "text": "خريطة الموقع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b0d1c558c93b0e25f36",
+   "sourceHash": "6b0d1c558c93b0e25f36d2f8bf8211a847f599ea2287c626d85fd9975e6c79f9",
+   "text": "sitemap",
+   "status": "translated",
+   "unchangedReason": "Lowercase footer value appears to be an internal key/slug rather than display copy; kept verbatim so it does not break anything.",
+   "issues": [
+    "Please check: if this is visible text rather than a key, use 'خريطة الموقع'."
+   ]
+  },
+  {
+   "id": "t_140bedbf9c3f6d56a984",
+   "sourceHash": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+   "text": "none",
+   "status": "translated",
+   "unchangedReason": "CSS display value (code), not translatable text.",
+   "issues": []
+  },
+  {
+   "id": "t_496aca80e4d8f29fb8e8",
+   "sourceHash": "496aca80e4d8f29fb8e8cd816c3afb48d3f103970b3a2ee1600c08ca67326dee",
+   "text": "block",
+   "status": "translated",
+   "unchangedReason": "CSS display value (code), not translatable text.",
+   "issues": []
+  },
+  {
+   "id": "t_222f930b87524636da58",
+   "sourceHash": "222f930b87524636da58b1987eabd52f1285cb0ef7dad72f28fcd026fbb3f73f",
+   "text": "flex",
+   "status": "translated",
+   "unchangedReason": "CSS display value (code), not translatable text.",
+   "issues": []
+  },
+  {
+   "id": "t_e60bb2881c605be569e2",
+   "sourceHash": "e60bb2881c605be569e2f4d55748eda8777607e2da788a6a5b48f1715038984f",
+   "text": "[[OPEN_1]]العلاج الأيورفيدي[[CLOSE_1]] [[OPEN_2]]الفلل[[CLOSE_2]] [[OPEN_3]]اليوغا والتدريب[[CLOSE_3]] [[OPEN_4]]العروض[[CLOSE_4]] [[OPEN_5]]من نحن[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69374b09b1681162ba2d",
+   "sourceHash": "69374b09b1681162ba2d6bba92d6a167ea5ca5921eb172eb173e999e3be5d8ba",
+   "text": "EN",
+   "status": "translated",
+   "unchangedReason": "Language code indicator; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_f412b03c170059cffed4",
+   "sourceHash": "f412b03c170059cffed499f4f3c411596e9cc15b715ac9f3fe8ed68ab9d76e67",
+   "text": "احجز إقامتك",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01032daded4935f9380f",
+   "sourceHash": "01032daded4935f9380f52d62b11f069f1af2f6376459da50baa0b5ab6a0582a",
+   "text": "[[OPEN_1]]EN[[CLOSE_1]] [[OPEN_2]]احجز الآن[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99af6606ff9d6cd5154d",
+   "sourceHash": "99af6606ff9d6cd5154d4d4e9c21e325086d3e904677cdb41d363c8a3480f862",
+   "text": "القائمة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7ace2df4d65c32b46fa4",
+   "sourceHash": "7ace2df4d65c32b46fa4a9ab496f03206ff39e50f73e74b48745065af2234e62",
+   "text": "[[OPEN_1]][[OPEN_2]]01[[CLOSE_2]][[OPEN_3]]الرئيسية[[CLOSE_3]][[OPEN_4]]→[[CLOSE_4]][[CLOSE_1]] [[OPEN_5]][[OPEN_6]]02[[CLOSE_6]][[OPEN_7]]العلاج الأيورفيدي[[CLOSE_7]][[OPEN_8]]→[[CLOSE_8]][[CLOSE_5]] [[OPEN_9]][[OPEN_10]]03[[CLOSE_10]][[OPEN_11]]الفلل[[CLOSE_11]][[OPEN_12]]→[[CLOSE_12]][[CLOSE_9]] [[OPEN_13]][[OPEN_14]]04[[CLOSE_14]][[OPEN_15]]اليوغا والتدريب[[CLOSE_15]][[OPEN_16]]→[[CLOSE_16]][[CLOSE_13]] [[OPEN_17]][[OPEN_18]]05[[CLOSE_18]][[OPEN_19]]العروض[[CLOSE_19]][[OPEN_20]]→[[CLOSE_20]][[CLOSE_17]] [[OPEN_21]][[OPEN_22]]06[[CLOSE_22]][[OPEN_23]]من نحن[[CLOSE_23]][[OPEN_24]]→[[CLOSE_24]][[CLOSE_21]] [[OPEN_25]][[OPEN_26]]07[[CLOSE_26]][[OPEN_27]]اتصل بنا[[CLOSE_27]][[OPEN_28]]→[[CLOSE_28]][[CLOSE_25]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "The arrow glyphs (→) are kept as in the source. For RTL layout, consider mirroring them in CSS."
+   ]
+  },
+  {
+   "id": "t_76d6daa32551f2a34e7d",
+   "sourceHash": "76d6daa32551f2a34e7d24b3fe0c95a69396e97275ebdb82b032b9b534341484",
+   "text": "⌕ بحث",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e01aa4f4a22cfc85923",
+   "sourceHash": "4e01aa4f4a22cfc8592392c1f3c2b229de8346f3dbb57c2bc8c652e6849a858d",
+   "text": "[[OPEN_1]]البانشاكارما[[CLOSE_1]] [[OPEN_2]]استشارة عبر الإنترنت[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4be313456f390c2a8df6",
+   "sourceHash": "4be313456f390c2a8df6b7918d2fdbc3d630afe6196ce3a0a60e85264e0b5399",
+   "text": "تحدّث إلينا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_79a6f0ef4f0b3e55cbb3",
+   "sourceHash": "79a6f0ef4f0b3e55cbb3650019218a041eee912ece706a49dc402a7e9c711e17",
+   "text": "[[OPEN_1]]+91 9555 156 156[[CLOSE_1]] [[OPEN_2]]info@kairali.com[[CLOSE_2]] [[OPEN_3]]استشارة مجانية مع الطبيب[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_28a5a4dcd1c1b6978acb",
+   "sourceHash": "28a5a4dcd1c1b6978acbdc0e85e43bc3a6c4b0188aa39e87d8e237e9252adf46",
+   "text": "ENGLISH · FRANÇAIS · DEUTSCH",
+   "status": "translated",
+   "unchangedReason": "Language-switcher labels are shown in each language's own name, so they stay the same.",
+   "issues": [
+    "If an Arabic option is added to the switcher, its label would be 'العربية'. That is not added here."
+   ]
+  },
+  {
+   "id": "t_49c266baaaa70981ea18",
+   "sourceHash": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9",
+   "text": "بحث",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_67310a7cb7d07790b8d7",
+   "sourceHash": "67310a7cb7d07790b8d73f87d86e390dd32067df8933d724e3a4e5d2baf32a83",
+   "text": "ابحث في الموقع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59a7f4620d38d3948f7a",
+   "sourceHash": "59a7f4620d38d3948f7a49e3dd5c6a0eaac9e1f19b8a07da3ae2f70fe6f92e69",
+   "text": "البحث غير متاح.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_533545eae75a8bc97109",
+   "sourceHash": "533545eae75a8bc971094315053c4372b2c11fe703f3a84e64caa2e4c9ba085c",
+   "text": "حالة تصميم غير فعّالة — لم يُحدَّد نظام البحث الخلفي بعد. لا يُرسَل أي طلب من نسخة المراجعة هذه.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This is an internal notice for the review build. It probably should not ship on the public site."
+   ]
+  },
+  {
+   "id": "t_efe10c80ec8a9f38624c",
+   "sourceHash": "efe10c80ec8a9f38624cbb47103010a8cf32488a503e4b4bfe4f92307a9cefa7",
+   "text": "الرئيسية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This is the aria-label for the primary navigation. 'الرئيسية' is used as the common Arabic label, but it is the same word as 'Home'. 'التنقل الرئيسي' is an alternative if a distinct label is needed."
+   ]
+  }
+ ]
+}

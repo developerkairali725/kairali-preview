@@ -46,6 +46,9 @@ import { imageGallery, imageObject, itemList, videoObject } from "@kairali/schem
 import OG_IMAGES from "../../../english-candidate/og-images.json";
 import GALLERIES from "../../../english-candidate/galleries-2026.json";
 import FAQ_VIEW from "../../../public/ahv/views/ahv-page-faqs-and-downloads-desktop.json";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { LOCALE_INFO, localizedPath, translate, localeData, type LocaleCode } from "./l10n";
 
 /**
  * /faqs-downloads/ — the 58 question/answer pairs the page renders (<details data-q id="q-NN"> blocks written by
@@ -56,7 +59,11 @@ import FAQ_VIEW from "../../../public/ahv/views/ahv-page-faqs-and-downloads-desk
  */
 const FAQ_ROUTE = "/faqs-downloads/";
 function faqEntities(): Array<Record<string, unknown>> {
-  const t = (FAQ_VIEW as { template: string }).template;
+  // Localized pages read the localized FAQ view: the schema answers are the
+  // SAME catalogue entries the visible <details> render (one data source).
+  const t = CTX.loc === "en"
+    ? (FAQ_VIEW as { template: string }).template
+    : (JSON.parse(readFileSync(join(process.cwd(), "public", "ahv", "l10n", LOCALE_INFO[CTX.loc].prefix, "views", "ahv-page-faqs-and-downloads-desktop.json"), "utf8")) as { template: string }).template;
   const decode = (h: string) =>
     h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
   const out: Array<Record<string, unknown>> = [];
@@ -69,7 +76,13 @@ function faqEntities(): Array<Record<string, unknown>> {
 }
 
 const ORIGIN = "https://ayurvedichealingvillage.com";
-const LANG = "en-US";
+/**
+ * Locale context for one routeSchema() call (25 Sep 2026). Human-readable values
+ * come from the accepted catalogue (the same entries the visible page renders);
+ * URLs are the reviewed localized routes; entity @ids of the organization,
+ * website and logo stay stable across languages.
+ */
+let CTX: { loc: LocaleCode; lang: string; t: (s: string) => string } = { loc: "en", lang: "en-US", t: (s) => s };
 const SITE_ID = `${ORIGIN}/#website`;
 const ORG_ID = `${ORIGIN}/#organization`;
 const LOGO_ID = `${ORIGIN}/#/schema/logo/image/`;
@@ -86,7 +99,7 @@ const BY_PATH = new Map(routes.map((r) => [r.path, r]));
 
 /** Absolute URL for a route path, using the locked public origin. */
 function abs(path: string): string {
-  return `${ORIGIN}${path}`;
+  return `${ORIGIN}${CTX.loc === "en" ? path : localizedPath(path, CTX.loc) ?? path}`;
 }
 
 /**
@@ -95,7 +108,8 @@ function abs(path: string): string {
  * the page's own name. Nothing is invented — if a title has no separator the
  * whole title is used.
  */
-function crumbName(title: string | null, fallback: string): string {
+function crumbName(rawTitle: string | null, fallback: string): string {
+  const title = rawTitle ? CTX.t(rawTitle) : rawTitle;
   if (!title) return fallback;
   const head = title.split(/\s*[|–—]\s*/)[0].trim();
   return head || title.trim();
@@ -123,14 +137,14 @@ for (const s of TREE.sections) {
 /** Home → section hub → tree ancestors → self (the site tree); else Home → (URL parent, if a real route) → self. */
 function breadcrumb(route: CandidateRoute) {
   const items: Array<Record<string, unknown>> = [
-    { "@type": "ListItem", position: 1, name: "Home", item: abs("/") },
+    { "@type": "ListItem", position: 1, name: CTX.t("Home"), item: abs("/") },
   ];
   const placed = TREE.index[route.path];
   if (placed) {
     const hub = TREE_HUB.get(placed.section);
     const chain = [...(hub && hub !== route.path ? [hub] : []), ...placed.ancestors.filter((a) => a !== hub)];
-    for (const a of chain) items.push({ "@type": "ListItem", position: items.length + 1, name: TREE_TITLE.get(a) ?? a, item: abs(a) });
-    items.push({ "@type": "ListItem", position: items.length + 1, name: TREE_TITLE.get(route.path) ?? crumbName(route.metadata.title, route.path) });
+    for (const a of chain) items.push({ "@type": "ListItem", position: items.length + 1, name: CTX.t(TREE_TITLE.get(a) ?? a), item: abs(a) });
+    items.push({ "@type": "ListItem", position: items.length + 1, name: TREE_TITLE.has(route.path) ? CTX.t(TREE_TITLE.get(route.path)!) : crumbName(route.metadata.title, route.path) });
     return { "@type": "BreadcrumbList", "@id": `${abs(route.path)}#breadcrumb`, itemListElement: items };
   }
   if (route.path !== "/") {
@@ -168,7 +182,7 @@ function primaryImage(route: CandidateRoute) {
   if (!src) return null;
   return {
     "@type": "ImageObject",
-    inLanguage: LANG,
+    inLanguage: CTX.lang,
     "@id": `${abs(route.path)}#primaryimage`,
     url: `${ORIGIN}${src}`,
     contentUrl: `${ORIGIN}${src}`,
@@ -214,8 +228,8 @@ function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, 
       id: idFor(im),
       contentUrl: `${ORIGIN}${im.src}`,
       // caption = the visible figcaption; description = the alt. `name` would repeat the caption verbatim.
-      caption: im.caption,
-      description: im.alt,
+      caption: CTX.t(im.caption),
+      description: CTX.t(im.alt),
       width: im.width,
       height: im.height,
       creditText: GALLERY_MANIFEST.creditText,
@@ -231,7 +245,7 @@ function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, 
   const chapters = g.chapters.map((ch) =>
     itemList({
       id: `${url}#${ch.id}`,
-      name: ch.title,
+      name: CTX.t(ch.title),
       items: ch.images.map((im) => ({ id: idFor(im) })),
     }),
   );
@@ -241,8 +255,8 @@ function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, 
       const v = ch.video as GalleryVideo;
       return videoObject({
         id: `${url}#video-${v.youtubeId}`,
-        name: v.title,
-        description: v.description,
+        name: CTX.t(v.title),
+        description: CTX.t(v.description),
         thumbnailUrl: `${ORIGIN}${v.poster.src}`,
         ...(v.uploadDate ? { uploadDate: v.uploadDate } : {}),
         ...(v.duration ? { duration: v.duration } : {}),
@@ -250,16 +264,16 @@ function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, 
         url: `${url}#${ch.id}`,
         publisherId: ORG_ID,
         isFamilyFriendly: true,
-        inLanguage: LANG,
+        inLanguage: CTX.lang,
       });
     });
   const gallery = imageGallery({
     id: `${url}#gallery`,
-    name: g.h1,
-    description: g.intro,
+    name: CTX.t(g.h1),
+    description: CTX.t(g.intro),
     url,
     mainEntityOfPageId: url,
-    inLanguage: LANG,
+    inLanguage: CTX.lang,
     images: imageNodes,
     videos: videos.map((v) => ({ "@id": v["@id"] as string })),
     hasPart: chapters,
@@ -271,20 +285,23 @@ function galleryNodes(route: CandidateRoute, url: string): Array<Record<string, 
  * The route's @graph. Shape follows the live site's valid block so the flip is
  * parity rather than a redesign of the site's entity model.
  */
-export function routeSchema(route: CandidateRoute): Record<string, unknown> {
-  const url = route.metadata.canonical ?? abs(route.path);
+export function routeSchema(route: CandidateRoute, locale: LocaleCode = "en"): Record<string, unknown> {
+  CTX = locale === "en" ? { loc: "en", lang: "en-US", t: (s) => s } : { loc: locale, lang: LOCALE_INFO[locale].htmlLang, t: (s) => translate(locale, s) };
+  const lmeta = locale === "en" ? null : localeData(locale)?.meta[route.path] ?? null;
+  const url = locale === "en" ? route.metadata.canonical ?? abs(route.path) : abs(route.path);
   const image = primaryImage(route);
 
   const webPage: Record<string, unknown> = {
     "@type": "WebPage",
     "@id": url,
     url,
-    name: route.metadata.title ?? ORG_NAME,
+    name: lmeta?.title ?? route.metadata.title ?? ORG_NAME,
     isPartOf: { "@id": SITE_ID },
     breadcrumb: { "@id": `${abs(route.path)}#breadcrumb` },
-    inLanguage: LANG,
+    inLanguage: CTX.lang,
   };
-  if (route.metadata.description) webPage.description = route.metadata.description;
+  const desc = lmeta?.description ?? route.metadata.description;
+  if (desc) webPage.description = desc;
   if (route.path === FAQ_ROUTE) {
     const faqs = faqEntities();
     if (faqs.length) { webPage["@type"] = ["WebPage", "FAQPage"]; webPage.mainEntity = faqs; }
@@ -301,10 +318,10 @@ export function routeSchema(route: CandidateRoute): Record<string, unknown> {
   graph.push({
     "@type": "WebSite",
     "@id": SITE_ID,
-    url: abs("/"),
+    url: `${ORIGIN}/`,
     name: ORG_NAME,
     publisher: { "@id": ORG_ID },
-    inLanguage: LANG,
+    inLanguage: CTX.lang,
     // Sitelinks search box shape (schema.org SearchAction + EntryPoint): the target is the
     // real /search/ results page, the query-input name matches the template placeholder.
     potentialAction: {
@@ -319,10 +336,10 @@ export function routeSchema(route: CandidateRoute): Record<string, unknown> {
     "@type": "Organization",
     "@id": ORG_ID,
     name: ORG_NAME,
-    url: abs("/"),
+    url: `${ORIGIN}/`,
     logo: {
       "@type": "ImageObject",
-      inLanguage: LANG,
+      inLanguage: CTX.lang,
       "@id": LOGO_ID,
       url: LOGO.url,
       contentUrl: LOGO.url,

@@ -1,0 +1,212 @@
+{
+ "batchId": "b-0583",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_f6a214f7a5fcda0c2cee",
+   "sourceHash": "f6a214f7a5fcda0c2cee9660b7fc29f5649e3c68aad48e20e950137c98913a68",
+   "text": "результат",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Russian has 3 plural forms (1 результат / 2–4 результата / 5+ результатов); a concat with only singular/plural cannot be fully correct for 2–4 counts. Pluralisation logic may be needed."
+   ]
+  },
+  {
+   "id": "t_c099142bc3186ded7278",
+   "sourceHash": "c099142bc3186ded72786ba27e9ea6d2da240fb9fd3fe79b479ecf8e734b2850",
+   "text": "результатов",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Chosen genitive plural (correct for 0 and 5+); for counts 2–4 Russian needs 'результата'. Pluralisation logic may be needed."
+   ]
+  },
+  {
+   "id": "t_5fd76e9ee8d4e9243c80",
+   "sourceHash": "5fd76e9ee8d4e9243c8053f86ad1944a790cbaf156043c77c3bb4bb9e783e041",
+   "text": "Меня интересует:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6236a440291069e29dda",
+   "sourceHash": "6236a440291069e29dda39492f581ca87234d355927103b1e68039775ba1e650",
+   "text": "Предпочтительная дата заезда:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00f3108dc6414224ed48",
+   "sourceHash": "00f3108dc6414224ed48cbbfa69ffcce12eaa25783434b3745c60811582fc7c3",
+   "text": "Предпочтительная дата отъезда:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd6098814a356b7a1898",
+   "sourceHash": "bd6098814a356b7a189835a385f2a712ec6cf7ad6cc0c5bed7da072925056506",
+   "text": "Здравствуйте, Kairali! Я хотел(а) бы сделать запрос.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16c1d601fc66950402ca",
+   "sourceHash": "16c1d601fc66950402ca8d54257acea0f5d21be1e00b9eb99224e436da66c950",
+   "text": "Подсказки",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be6eb1fc3b05bf9dceeb",
+   "sourceHash": "be6eb1fc3b05bf9dceebad2eac7841d1b2f40bda9aa2da34df8ca22af02bc3ed",
+   "text": "Свернуть",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_07548c2c6511d4d17805",
+   "sourceHash": "07548c2c6511d4d1780564de8a237a1966cf9c99a97cf5c8a185e6c2aeacff09",
+   "text": "Развернуть",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_681c8ead56e5a735c3fc",
+   "sourceHash": "681c8ead56e5a735c3fc2155e1be8347f783062d629efe3c95a4164e80a7f14c",
+   "text": "В этом разделе:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4b1dbff1e62245f2ca8",
+   "sourceHash": "a4b1dbff1e62245f2ca86afd97d0c24613891a1a331b4c58cf74e3ba15e4f43b",
+   "text": "В этом разделе",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3aa2c56937b208f8ce89",
+   "sourceHash": "3aa2c56937b208f8ce8958946dd4fa31161d16b1ca330ba9fe46efd3263b9770",
+   "text": "— обзор",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6520485c32960d6b832",
+   "sourceHash": "d6520485c32960d6b832924b25ece3e906ca280d949fc1662a104c034b055f96",
+   "text": "OAP",
+   "status": "translated",
+   "unchangedReason": "Programme code/search alias; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_71feee9e08c7311b5e95",
+   "sourceHash": "71feee9e08c7311b5e95f02bc6b191ae2445c0718f331ea76d022b0f54c56f8c",
+   "text": "TAP",
+   "status": "translated",
+   "unchangedReason": "Programme code/search alias; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_48b40073e0456603a1a1",
+   "sourceHash": "48b40073e0456603a1a184d2fdae9962c46ab36c6f2b52b64ce54bfe810232b2",
+   "text": "WAP",
+   "status": "translated",
+   "unchangedReason": "Programme code/search alias; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_eba94723b3e5350ae539",
+   "sourceHash": "eba94723b3e5350ae5392ed9f49dcdc080ed81399fa99aebb472e0d01f151fb0",
+   "text": "Kairali – The Ayurvedic Healing Village — аюрведическая больница с аккредитацией NABH; планы лечения составляются под руководством врачей с квалификацией BAMS. В основе работы — аюрведическая практика четырёх поколений семьи основателей; пациенты проживают, получают лечение и питаются на территории единого стационарного комплекса в Палаккаде (Керала). Подробнее — в разделах об аккредитациях и вариантах вилл.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Treatment' in running prose rendered as 'лечение' (approved term 'Процедура' fits the label sense, not 'treatment plans')."
+   ]
+  },
+  {
+   "id": "t_b9a0eb63febfa0c7391c",
+   "sourceHash": "b9a0eb63febfa0c7391c8d04dad2d9308c411a8ba61b1bece5c4c101eb437434",
+   "text": "Kairali – The Ayurvedic Healing Village имеет аккредитацию NABH и сертификацию ISO в отношении стандартов работы, а также сертификат Green Leaf от Департамента туризма Кералы за аюрведические и экологичные практики. Полный список — на нашей странице аккредитаций .",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e1b9051c666e677894c",
+   "sourceHash": "7e1b9051c666e677894c801d9c595b083da16ed00c424187f46d1f1253d99889",
+   "text": "Каждая программа в Kairali начинается с оценки вашей конституции врачом, после чего составляется индивидуальный план процедур, питания и распорядка дня. Лечение проводят врачи с квалификацией BAMS по всему спектру аюрведических программ больницы. См. аюрведические лечебные программы .",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Treatment' in prose rendered as 'лечение'/'лечебные' rather than the label term 'Процедура'."
+   ]
+  },
+  {
+   "id": "t_d06e537b591d0a3cd377",
+   "sourceHash": "d06e537b591d0a3cd377b266f94fc19aaf05c885ab0a247dc81c96960a1a619f",
+   "text": "Пребывание включает проживание в вилле, назначенные ежедневные процедуры, повторные консультации с нашими врачами и органическое вегетарианское питание — всё на территории единого стационарного комплекса. Пациенты проживают, проходят лечение и питаются на одной территории, не перемещаясь между отдельными учреждениями. Узнайте, что включено в каждый тип виллы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44f2834947be06d39e8a",
+   "sourceHash": "44f2834947be06d39e8a2ab53f9775634cf8676da9be9c6e78835004c717ec7c",
+   "text": "Да. Программы Kairali варьируются от 3-ночного профилактического пребывания до 21-ночных программ при хронических заболеваниях, поэтому ваш врач может рекомендовать продолжительность, соответствующую вашим целям в отношении здоровья. Полный перечень — на странице программ .",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4201c8a2c743ca44d072",
+   "sourceHash": "4201c8a2c743ca44d072e0b749eb4c2a812b197caa22429ab0305598bb1b2c3b",
+   "text": "Планы лечения ведут аюрведические врачи с квалификацией BAMS: они оценивают ваше состояние на консультации и контролируют ваш прогресс в течение всего пребывания. Главный врач и заведующий отделением осуществляет медицинский надзор по всем программам. По вопросам госпитализации обращайтесь в службу по работе с пациентами .",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_05fd73162a59fc054696",
+   "sourceHash": "05fd73162a59fc0546963cee7807d5f357b90de79fe4d9cccac8a9871c2012ee",
+   "text": "Kairali — семейное аюрведическое учреждение; его управляющий директор K.V. Ramesh представляет четыре поколения, посвятивших себя аюрведической практике. Kairali – The Ayurvedic Healing Village в Палаккаде (Керала) — стационарный больничный комплекс группы. Подробнее — на странице «О нас» .",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_436715a0b82b6fd35825",
+   "sourceHash": "436715a0b82b6fd358254c43094730e888badaa656a88739523249a66635a4fe",
+   "text": "Бронирование должен оформлять пациент в возрасте от 18 лет; несовершеннолетние могут находиться в сопровождении родителя или законного опекуна. Максимальный возраст не установлен. Дети до 5 лет проживают бесплатно, с детей 5–12 лет взимается 50% стоимости питания и дополнительного спального места, с лиц старше 12 лет — полная стоимость.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_436715a0b82b6fd35825 banned-term спа"
+   ]
+  },
+  {
+   "id": "t_d3449b513d94711d3bdb",
+   "sourceHash": "d3449b513d94711d3bdb30f684a52ebb9a3e96fc30486e81152bab8af6abf7d8",
+   "text": "Просыпайтесь до восхода солнца и ложитесь спать до 10 PM Питайтесь осознанно, выбирая свежие сезонные продукты Поддерживайте водный баланс, выпивая тёплую воду в течение дня Включите мягкую физическую активность, например йогу или прогулки Практикуйте полоскание рта маслом и самомассаж (абхьянга) с подходящими маслами Корректируйте рацион в соответствии с вашей преобладающей дошей (конституцией тела) Наши врачи дают индивидуальные рекомендации во время вашего пребывания.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Time '10 PM' kept verbatim per rules; list items concatenated without punctuation mirrored from source.",
+    "t_d3449b513d94711d3bdb banned-term спа"
+   ]
+  }
+ ]
+}

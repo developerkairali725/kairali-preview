@@ -385,7 +385,7 @@ export function jsonLdUnits(json, offset) {
     let value;
     try { value = JSON.parse('"' + m[1] + '"'); } catch { continue; }
     const source = norm(value);
-    if (!meaningful(source) || /^https?:/.test(source)) continue;
+    if (!meaningful(source) || /^https?:/.test(source) || /^[a-z0-9]+(-[a-z0-9]+)+$/.test(source)) continue;
     units.push({ start: offset + m.index, end: offset + m.index + m[1].length + 2, source, kind: "jsonld:" + key,
       render: (tr) => JSON.stringify(tr).replace(/</g, "\\u003c") });
     void before;

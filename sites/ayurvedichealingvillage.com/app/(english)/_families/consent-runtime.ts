@@ -94,7 +94,7 @@ export const CONSENT_RUNTIME = `
     var wrap = document.createElement("div");
     wrap.id = "ahv-consent";
     wrap.setAttribute("role", "region");
-    wrap.setAttribute("aria-label", "Cookie notice");
+    wrap.setAttribute("aria-label", T("Cookie notice"));
     // Sits above the design's fixed bottom action bar on narrow screens, which
     // is why the approved home notice uses bottom:74px there.
     wrap.style.cssText = "position:fixed;left:12px;right:12px;bottom:" + (narrow ? "74px" : "24px") +
@@ -103,25 +103,25 @@ export const CONSENT_RUNTIME = `
       "box-sizing:border-box;display:flex;gap:20px;align-items:center;flex-direction:" + (narrow ? "column" : "row") + ";"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     var copy = document.createElement("div");
     copy.style.cssText = "flex:1;min-width:0;font-size:14.5px;color:#514a3f;line-height:1.55"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-    copy.appendChild(document.createTextNode("We use cookies to improve your experience and analyse site traffic. See our "));
+    copy.appendChild(document.createTextNode(T("We use cookies to improve your experience and analyse site traffic. See our") + " "));
     var policy = document.createElement("a");
-    policy.setAttribute("href", "/privacy-policy/");
+    policy.setAttribute("href", (cfg.locale && cfg.locale.privacyHref) || "/privacy-policy/");
     policy.style.cssText = "font-weight:700";
-    policy.textContent = "Privacy Policy";
+    policy.textContent = T("Privacy Policy");
     copy.appendChild(policy);
     copy.appendChild(document.createTextNode("."));
     var row = document.createElement("div");
     row.style.cssText = "display:flex;gap:12px;align-items:center;flex-shrink:0;" + (narrow ? "width:100%" : "min-width:250px");
     var decline = document.createElement("button");
     decline.type = "button";
-    decline.textContent = "Decline";
+    decline.textContent = T("Decline");
     decline.style.cssText = "flex:1;background:none;border:1px solid #C9BFA8;border-radius:4px;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "font-family:'Mulish',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;color:#75695A;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "cursor:pointer;text-transform:uppercase;padding:14px 6px;min-height:44px";
     decline.addEventListener("click", function () { recordConsent("declined"); });
     var accept = document.createElement("button");
     accept.type = "button";
-    accept.textContent = "Accept All";
+    accept.textContent = T("Accept All");
     accept.style.cssText = "flex:1;background:#5A4420;color:#F7F4EA;border:none;border-radius:4px;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "padding:14px 6px;font-family:'Mulish',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:1.5px;" +
       "cursor:pointer;text-transform:uppercase;min-height:44px";
@@ -137,7 +137,9 @@ export const CONSENT_RUNTIME = `
     var found = null;
     document.querySelectorAll("button").forEach(function (b) {
       if (found || b.closest("#ahv-consent")) return;
-      if (/^accept all$/i.test((b.textContent || "").trim())) found = b;
+      // Localized views carry the translated label of the SAME button (26 Sep 2026): match either.
+      var label = (b.textContent || "").trim();
+      if (/^accept all$/i.test(label) || label === T("Accept all")) found = b;
     });
     return found;
   }

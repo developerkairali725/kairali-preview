@@ -1915,3 +1915,8 @@
 !/public/ahv/assets/img/gallery-2026/treatments/vasti-janu-vasti-04.webp
 !/public/ahv/assets/img/gallery-2026/photo/yoga-side-female-patient-02.webp
 !/public/ahv/assets/img/gallery-2026/treatments/hero-detail-cloth-herbal-poultice-01.webp
+
+# Localization build outputs (tools/l10n/build.mjs regenerates them from the committed catalogue before next build)
+/public/ahv/l10n/
+/l10n/generated/
+/l10n/prerender-tmp/

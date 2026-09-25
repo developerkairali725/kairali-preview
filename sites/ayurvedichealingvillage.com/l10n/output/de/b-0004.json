@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0004",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_6ccd5c7856042d36476f",
+   "sourceHash": "6ccd5c7856042d36476ffd35a41b54518be95621cc741ac3ed55b8108ea41586",
+   "text": "Menü schließen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55656b5e434f4c069877",
+   "sourceHash": "55656b5e434f4c069877f0c12174a14e67ef9619d30e796834b1216a03d9f677",
+   "text": "Suche schließen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_23ae806319e9c957de90",
+   "sourceHash": "23ae806319e9c957de908e8c1ef6d5c58df5bce6ec6ab03ef9c5c2d616aebacf",
+   "text": "Suche nicht verfügbar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5bea41b6c623f7c09f1",
+   "sourceHash": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+   "text": "true",
+   "status": "translated",
+   "unchangedReason": "Boolean code value (js:display), language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_fcbcf165908dd18a9e49",
+   "sourceHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+   "text": "false",
+   "status": "translated",
+   "unchangedReason": "Boolean code value (js:display), language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_26c7cd22f326e9c49695",
+   "sourceHash": "26c7cd22f326e9c49695a177434ae3d9c5d7e681b901f5647d30a7a81eafedd3",
+   "text": "22px 18px",
+   "status": "translated",
+   "unchangedReason": "CSS dimension values, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_b0a497a28375675c3e06",
+   "sourceHash": "b0a497a28375675c3e066813ecfc0d9abe8693cdca724c5eb969c2e6c9934fce",
+   "text": "26px 22px",
+   "status": "translated",
+   "unchangedReason": "CSS dimension values, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_c887f134c26ea8310e1f",
+   "sourceHash": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a",
+   "text": "Zum Hauptinhalt springen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80a86a62f4a8b733ae4a",
+   "sourceHash": "80a86a62f4a8b733ae4af0a113783a794d1f55f1f08cc492294e32b5ba99e0a2",
+   "text": "[[OPEN_1]]Startseite[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Über uns[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_547b0035a15a7a1c3a64",
+   "sourceHash": "547b0035a15a7a1c3a642a6704105684acce64fb0e461f4dc8b47a48f63a89d0",
+   "text": "Kairali — The Ayurvedic Healing Village · Seit 1908",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8ecfe1ae17f1a168f778",
+   "sourceHash": "8ecfe1ae17f1a168f778b0d95fd5b032f1c95aa317b425da1a37fe9cd2d87aff",
+   "text": "[[OPEN_1]]Asiens bestes Ayurveda-Retreat seit 1999[[CLOSE_1]][[OPEN_2]]Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, ist ein ganzheitlicher Ort seiner Art, der mit traditionellen und authentischen ayurvedischen Therapien von innen und außen heilt.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Asia's Best Ayurvedic Retreat Since 1999' appears to be an award title; rendered as 'Asiens bestes Ayurveda-Retreat seit 1999' keeping the award wording. Owner may wish to confirm whether the award name should stay verbatim in English."
+   ]
+  },
+  {
+   "id": "t_9fe7b21fbef9dc098dfd",
+   "sourceHash": "9fe7b21fbef9dc098dfd65bdbd69adbff8f92de9b10eda1cdc8c6e3c860724e1",
+   "text": "Ein Brief von K.V. Ramesh",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_713231a2352ca5c027f4",
+   "sourceHash": "713231a2352ca5c027f43da7de4bf77edbcc4d2a2e761c28729d8da4ce976187",
+   "text": "Liebe Besucherinnen und Besucher,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'Guests' replaced with 'Besucherinnen und Besucher' (visitors) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_8efc98596483557860c2",
+   "sourceHash": "8efc98596483557860c293122024bcee512787b8ff96d24fe65b3cf30693f384",
+   "text": "Herzliche Grüße aus Kairali – The Ayurvedic Healing Village, einem Ort, an dem das zeitlose Wissen des Ayurveda mit den Anforderungen des modernen Lebens verbunden wird. Es ist mir eine große Freude, Ihnen die Grundwerte von Kairali näherzubringen: das Engagement für ganzheitliches Wohlbefinden, echte ayurvedische Therapie und den Fortschritt der Menschheit.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a3be5970ca7bc2c6d421",
+   "sourceHash": "a3be5970ca7bc2c6d421f9e3962a192c0c09cb208fb7e40077ed6cb92d9f8c85",
+   "text": "Meine Vision für die Kairali Ayurvedic Group gründete sich stets fest auf die jahrhundertealte Wissenschaft des Ayurveda, die ich für den besten Weg zu Harmonie und Gesundheit halte. Da ich in einem Haushalt aufgewachsen bin, der von ayurvedischen Traditionen geprägt war, habe ich selbst erlebt, welch großen Einfluss sie auf das Leben der Menschen hat. Das hat mich motiviert, mein Leben dem Schutz dieses unschätzbaren Erbes zu widmen und es der Welt näherzubringen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4b134fc35db6938fdccd",
+   "sourceHash": "4b134fc35db6938fdccdfd52ca938473ead058224078795a7d7b433e18ba4396",
+   "text": "Authentizität und Exzellenz waren schon immer die Grundpfeiler von Kairali. Dieser Gedanke spiegelt sich in Kairali – The Ayurvedic Healing Village wider. Von den Therapien und Behandlungen bis hin zur ruhigen, umweltfreundlichen Umgebung wurde jedes Element dieses Hauses so geplant, dass es eine umfassende ayurvedische Erfahrung ermöglicht. Hier schaffen wir einen Rückzugsort, an dem Besucherinnen und Besucher Ruhe, Erneuerung und Ausgeglichenheit finden können, indem wir traditionelle Bräuche mit zeitgemäßen Standards der Gastfreundschaft verbinden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'this retreat' rendered as 'dieses Hauses' (this facility) to keep clinical register."
+   ]
+  },
+  {
+   "id": "t_b0f7e500146966f97b04",
+   "sourceHash": "b0f7e500146966f97b0496ce1737353b90437144ccda33ea4a2b8e429ce54b5a",
+   "text": "Unser Ziel geht über die ayurvedische Versorgung hinaus. Wir möchten eine Lebensweise fördern, die geistiges, spirituelles und körperliches Wohlbefinden wertschätzt. Mit unseren individuell abgestimmten Therapien, therapeutischen Diäten, Yogastunden und Meditationstechniken möchten wir unseren Patientinnen und Patienten ein besseres, erfüllteres Leben ermöglichen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'guests' replaced with 'Patientinnen und Patienten' (patients) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_4e2d1947f02a5d1251bf",
+   "sourceHash": "4e2d1947f02a5d1251bf72fc6bfffedc41277838c33417075e62e8f82fa6e776",
+   "text": "Auch wenn die Kairali Ayurvedic Group im Laufe der Jahre weltweit zu einer bekannten Marke geworden ist, haben sich unsere Grundsätze nicht verändert. Wir verstehen uns als Hüter des Ayurveda: Wir bieten seinen therapeutischen Nutzen allen an, die ihn suchen, und wahren dabei die Integrität, die unseren Ruf als führende Autorität für ganzheitliche Gesundheit begründet hat.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00033cfb22b3b01328c3",
+   "sourceHash": "00033cfb22b3b01328c3593efadf2e525cee8048d1ea05cf7bbb9752807d0268",
+   "text": "Allen, die Kairali – The Ayurvedic Healing Village besuchen, danke ich von Herzen. Ihr Vertrauen in den Ayurveda und in Kairali motiviert uns, uns ständig weiterzuentwickeln und zu verbessern. Ich lade Sie ein, sich auf diesen verwandelnden Weg der Selbstentdeckung, Heilung und Regeneration zu begeben, geleitet von den zeitlosen Prinzipien des Ayurveda.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'journey' replaced with 'Weg' (path) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_f3a919feaaac058f8c4e",
+   "sourceHash": "f3a919feaaac058f8c4e8666acae92501ac7bd1d2baee4aa77b826f6417211df",
+   "text": "Lassen Sie uns gemeinsam eine gesündere, glücklichere Welt schaffen.[[TAG_1]][[TAG_2]]Herzliche Grüße[[TAG_3]][[OPEN_4]]K.V. Ramesh[[TAG_5]][[CLOSE_4]]Managing Director, Kairali Ayurvedic Group",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Job title 'Managing Director' kept in English to avoid inventing a German corporate title; owner may prefer 'Geschäftsführer'."
+   ]
+  },
+  {
+   "id": "t_fdb26a4edfca1ba309d5",
+   "sourceHash": "fdb26a4edfca1ba309d51562455b2bc599c3f5f321fe8ffea8e1d6b430cce2c6",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]LinkedIn",
+   "status": "translated",
+   "unchangedReason": "Brand name LinkedIn with decorative symbol; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_328882d651b65ad544c7",
+   "sourceHash": "328882d651b65ad544c777b3ef69e5b019d3a679830e1f1c9bb1118d5ad30305",
+   "text": "[[OPEN_1]][[VAR_1]][[CLOSE_1]][[OPEN_2]][[VAR_2]][[CLOSE_2]][[OPEN_3]]Dokument ansehen[[OPEN_4]]→[[CLOSE_4]][[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a11e6fd6ee8988263af1",
+   "sourceHash": "a11e6fd6ee8988263af1dee6cbc2717a468645b0eb8a5fda029bfab3e6dbe83d",
+   "text": "Dokument schließen[[OPEN_1]]✕[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4316cc6e175db19fd44c",
+   "sourceHash": "4316cc6e175db19fd44cc710645973b0cf683f5e74b920e98ccf8f8355981eb2",
+   "text": "[[OPEN_1]]←[[CLOSE_1]]Vorheriges Dokument",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2261c080c2178d466f9",
+   "sourceHash": "e2261c080c2178d466f9afa752c2ae4e8c82679e07ee43e7cd00d63823a5af94",
+   "text": "Nächstes Dokument[[OPEN_1]]→[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

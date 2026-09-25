@@ -31,7 +31,10 @@ const RULES = [
   "Use the provided 'terms' (approved translations from the owner-approved PDF family) whenever the English term occurs.",
 ];
 const jobs = [];
-const pending = Object.fromEntries(locales.map((l) => [l, B.batches.filter((b) => !done(l, b.id) && !inflight.has(l + "/" + b.id))]));
+// batches frozen after the first freeze (b-0582+) carry shared chrome/runtime/UI strings: schedule them first
+const FIRST_FREEZE = 581;
+const prio = (b) => (+b.id.slice(2) > FIRST_FREEZE ? 0 : 1);
+const pending = Object.fromEntries(locales.map((l) => [l, B.batches.filter((b) => !done(l, b.id) && !inflight.has(l + "/" + b.id)).sort((a, b) => prio(a) - prio(b) || (a.id < b.id ? -1 : 1))]));
 let progressed = true;
 while (jobs.length < count && progressed) {
   progressed = false;
@@ -46,7 +49,9 @@ while (jobs.length < count && progressed) {
     for (const [en, m] of Object.entries(G.terms)) if (en.length > 3 && text.includes(en) && m[l]) terms[en] = m[l];
     const file = path.join(WORK, "in", l, b.id + ".json");
     fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, JSON.stringify({ batchId: b.id, locale: l, targetLanguage: LANG[l], rules: RULES, terms, units }, null, 1));
+    const rej = path.join(WORK, "rejected", l, b.id + ".json");
+    const previousRejection = fs.existsSync(rej) ? JSON.parse(fs.readFileSync(rej, "utf8")).errs : undefined;
+    fs.writeFileSync(file, JSON.stringify({ batchId: b.id, locale: l, targetLanguage: LANG[l], rules: RULES, terms, ...(previousRejection ? { previousRejection: ["A previous attempt was rejected by machine validation for these reasons; fix them:", ...previousRejection] } : {}), units }, null, 1));
     jobs.push({ locale: l, batchId: b.id, file, n: units.length });
   }
 }

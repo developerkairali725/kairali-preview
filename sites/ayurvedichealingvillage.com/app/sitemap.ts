@@ -5,6 +5,7 @@ import siteConfig from "../site.config.json";
 import { routes } from "./(english)/_families/registry";
 import { galleryImageUrls } from "./(english)/_families/schema";
 import redirectMap from "../english-candidate/redirect-map.json";
+import { TARGET_CODES, alternates, localizedPath, ORIGIN } from "./(english)/_families/l10n";
 
 // STAGING LOCK (WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001): a noindexed
 // review build publishes no sitemap. The 252 approved English routes are
@@ -29,13 +30,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // discovers the set without crawling the tiles. Other routes carry none.
   // Still [] under the staging lock above — nothing here runs until AHV_STAGING=0.
   const redirected = new Set(Object.keys(redirectMap.redirects));
-  return buildSitemap(
+  const indexable = routes.filter((r) => !r.sitemapExclude && !redirected.has(r.path) && routeRobots(r, false).startsWith("index"));
+  const english = buildSitemap(
     siteConfig,
-    routes
-      .filter((r) => !r.sitemapExclude && !redirected.has(r.path) && routeRobots(r, false).startsWith("index"))
-      .map((r) => {
-        const images = galleryImageUrls(r.path);
-        return images.length ? { path: r.path, images } : { path: r.path };
-      }),
+    indexable.map((r) => {
+      const images = galleryImageUrls(r.path);
+      return images.length ? { path: r.path, images } : { path: r.path };
+    }),
   ) as MetadataRoute.Sitemap;
+  // Locale equivalents (25 Sep 2026): the same indexable set, at each locale's
+  // reviewed URL (legacy German/French URLs where they are served), every entry
+  // carrying the full reciprocal hreflang cluster + x-default. Routes without a
+  // locale equivalent (campaign pages) simply have none — no cross-language
+  // fallback URL is ever listed.
+  const withAlternates = english.map((e) => {
+    const path = e.url.replace(ORIGIN, "");
+    const langs = alternates(path);
+    return Object.keys(langs).length > 2 ? { ...e, alternates: { languages: langs } } : e;
+  });
+  const locales = indexable.flatMap((r) => {
+    const langs = alternates(r.path);
+    const images = galleryImageUrls(r.path);
+    return TARGET_CODES.map((c) => localizedPath(r.path, c)).filter((p): p is string => !!p).map((p) => ({
+      url: ORIGIN + p,
+      ...(images.length ? { images } : {}),
+      alternates: { languages: langs },
+    }));
+  });
+  return [...withAlternates, ...locales] as MetadataRoute.Sitemap;
 }

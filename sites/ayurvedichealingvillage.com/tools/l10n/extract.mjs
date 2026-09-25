@@ -39,6 +39,36 @@ for (const file of [...files.components, ...files.views, ...files.scripts]) {
   coverage.push({ file, sha256: sha256(text), units: count, status: count ? "covered" : "technical-only" });
 }
 
+// sitewide runtime scripts, rail data, JSON data, UI strings, native pages
+{
+  const X = await import("./extras.mjs");
+  for (const f of X.RUNTIME_SCRIPTS) {
+    const file = "public/design/" + f, text = fs.readFileSync(rel(file), "utf8");
+    const us = leafSources(X.runtimeScriptUnits(file, text));
+    for (const l of us) add(l.source, "runtime:" + l.kind, file);
+    coverage.push({ file, sha256: sha256(text), units: us.length, status: "covered (curated allowlist)" });
+  }
+  {
+    const file = "public/design/section-nav.data.js", text = fs.readFileSync(rel(file), "utf8");
+    const us = jsUnits(text).units.filter((u) => /(^|\.)label$/.test(u.key || ""));
+    for (const l of us) add(l.source, "rail:" + l.kind, file);
+    coverage.push({ file, sha256: sha256(text), units: us.length, status: "covered" });
+  }
+  for (const spec of X.JSON_SOURCES) {
+    const text = fs.readFileSync(rel(spec.file), "utf8");
+    const us = X.jsonUnits(JSON.parse(text), spec);
+    for (const u of us) add(u.source, u.kind, spec.file);
+    coverage.push({ file: spec.file, sha256: sha256(text), units: us.length, status: "covered (key whitelist)" });
+  }
+  for (const u of X.uiStrings()) add(u.source, "ui", "l10n/source/ui-strings.json");
+  for (const file of X.NATIVE_TSX) {
+    const text = fs.readFileSync(rel(file), "utf8");
+    const us = X.tsxUnits(text);
+    for (const u of us) add(u.source, u.kind, file);
+    coverage.push({ file, sha256: sha256(text), units: us.length, status: "covered (native page)" });
+  }
+}
+
 // head metadata from the manifest (title/description/og) — one unit per string
 const META_FIELDS = ["title", "description", "ogTitle", "ogDescription"];
 for (const r of includedRoutes()) {

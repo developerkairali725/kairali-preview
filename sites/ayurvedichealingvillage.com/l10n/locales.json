@@ -1,0 +1,143 @@
+{
+ "en": {
+  "prefix": "",
+  "lang": "en",
+  "htmlLang": "en-US",
+  "dir": "ltr",
+  "og": "en_US",
+  "currency": "INR",
+  "name": "English"
+ },
+ "hi": {
+  "prefix": "hi",
+  "lang": "hi",
+  "dir": "ltr",
+  "og": "hi_IN",
+  "currency": "INR",
+  "pdf": "hi",
+  "name": "हिन्दी",
+  "label": "Hindi",
+  "htmlLang": "hi"
+ },
+ "de": {
+  "prefix": "de",
+  "lang": "de",
+  "dir": "ltr",
+  "og": "de_DE",
+  "currency": "EUR",
+  "pdf": "de",
+  "name": "Deutsch",
+  "label": "German",
+  "htmlLang": "de"
+ },
+ "fr": {
+  "prefix": "fr",
+  "lang": "fr",
+  "dir": "ltr",
+  "og": "fr_FR",
+  "currency": "EUR",
+  "pdf": "fr",
+  "name": "Français",
+  "label": "French",
+  "htmlLang": "fr"
+ },
+ "es": {
+  "prefix": "es",
+  "lang": "es",
+  "dir": "ltr",
+  "og": "es_ES",
+  "currency": "EUR",
+  "pdf": "es",
+  "name": "Español",
+  "label": "Spanish",
+  "htmlLang": "es"
+ },
+ "it": {
+  "prefix": "it",
+  "lang": "it",
+  "dir": "ltr",
+  "og": "it_IT",
+  "currency": "EUR",
+  "pdf": "it",
+  "name": "Italiano",
+  "label": "Italian",
+  "htmlLang": "it"
+ },
+ "pt": {
+  "prefix": "pt",
+  "lang": "pt",
+  "dir": "ltr",
+  "og": "pt_PT",
+  "currency": "EUR",
+  "pdf": "pt",
+  "name": "Português",
+  "label": "Portuguese",
+  "htmlLang": "pt"
+ },
+ "nl": {
+  "prefix": "nl",
+  "lang": "nl",
+  "dir": "ltr",
+  "og": "nl_NL",
+  "currency": "EUR",
+  "pdf": "nl",
+  "name": "Nederlands",
+  "label": "Dutch",
+  "htmlLang": "nl"
+ },
+ "ru": {
+  "prefix": "ru",
+  "lang": "ru",
+  "dir": "ltr",
+  "og": "ru_RU",
+  "currency": "USD",
+  "pdf": "ru",
+  "name": "Русский",
+  "label": "Russian",
+  "htmlLang": "ru"
+ },
+ "ar": {
+  "prefix": "ar",
+  "lang": "ar",
+  "dir": "rtl",
+  "og": "ar_AR",
+  "currency": "USD",
+  "pdf": "ar",
+  "name": "العربية",
+  "label": "Arabic",
+  "htmlLang": "ar"
+ },
+ "zh-Hans": {
+  "prefix": "zh",
+  "lang": "zh-Hans",
+  "dir": "ltr",
+  "og": "zh_CN",
+  "currency": "USD",
+  "pdf": "zh",
+  "name": "简体中文",
+  "label": "Chinese (Simplified)",
+  "htmlLang": "zh-Hans"
+ },
+ "ja": {
+  "prefix": "ja",
+  "lang": "ja",
+  "dir": "ltr",
+  "og": "ja_JP",
+  "currency": "USD",
+  "pdf": "ja",
+  "name": "日本語",
+  "label": "Japanese",
+  "htmlLang": "ja"
+ },
+ "ko": {
+  "prefix": "ko",
+  "lang": "ko",
+  "dir": "ltr",
+  "og": "ko_KR",
+  "currency": "USD",
+  "pdf": "ko",
+  "name": "한국어",
+  "label": "Korean",
+  "htmlLang": "ko"
+ }
+}

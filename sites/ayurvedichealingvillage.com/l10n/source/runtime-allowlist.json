@@ -1,0 +1,9 @@
+{
+ "_about": "Curated display strings in the sitewide runtime scripts (public/design/*.js). Literal-level extraction there is noisy (attribute names, CSS, markup fragments), so ONLY these normalised sources are localized in the locale copies; everything else in those files is code. HTML inside JS strings (js-html) is localized through its text runs.",
+ "chrome.js": ["Kairali — The Ayurvedic Healing Village.", "Minimize chat", "Opening chat…", "Chat with Priya", "Cancel opening chat", "Contact Kairali"],
+ "consistency.js": ["Map: Kairali – The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad", "Route map:", "to Kairali", "Map: Kairali – The Ayurvedic Healing Village, Palakkad", "Video"],
+ "film-player.js": ["Kairali film"],
+ "newsletter.js": ["Subscribing…", "Check your email to confirm your subscription. If it does not arrive, check your spam folder.", "Newsletter signup is not connected yet. Nothing has been saved or sent. Please try again later.", "Please wait a little before trying again. Your email is still here.", "We could not confirm your signup. Please check your email address and try again.", "We could not confirm your signup. Check your connection and try again. Your email is still here.", "Subscribe"],
+ "search.js": ["Search could not load. Please use WhatsApp or the consultation link below.", "Loading search…", "I am looking for:", "Preferred arrival:", "Preferred departure:", "Hello Kairali, I would like to enquire.", "Suggestions", "result", "results"],
+ "section-nav.js": ["Collapse", "Expand", "In this section:", "Home", "On this page"]
+}

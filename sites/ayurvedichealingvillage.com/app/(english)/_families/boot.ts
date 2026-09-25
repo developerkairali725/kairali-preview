@@ -72,6 +72,20 @@ export interface BootConfig {
    * consent gate is the second lock, not the only one.
    */
   measurement?: { ga4?: string; clarity?: string; metaPixel?: string };
+  /**
+   * The page's locale (25 Sep 2026): code, document language/direction, the
+   * localized URL, every language that has THIS page (for the switcher), and
+   * the switcher's own UI labels. Generated from l10n/routes.json.
+   */
+  locale?: {
+    code: string;
+    lang: string;
+    dir: "ltr" | "rtl";
+    path: string;
+    options: Array<{ code: string; name: string; lang: string; href: string }>;
+    ui: { language: string; choose: string; current: string };
+    privacyHref?: string;
+  };
 }
 
 /**
@@ -401,7 +415,7 @@ export const BOOT_SCRIPT = `
     var paint = function () {
       var t; try { t = istNow(); } catch (_) { t = null; }
       found.forEach(function (sp) {
-        if (t) sp.textContent = "Now " + t; else if (sp.parentElement) sp.parentElement.hidden = true;
+        if (t) sp.textContent = T("Now") + " " + t; else if (sp.parentElement) sp.parentElement.hidden = true;
       });
     };
     paint();
@@ -551,114 +565,142 @@ export const BOOT_SCRIPT = `
   }
   var emailsFixed = 0;
 
-  // Language switcher. The approved chrome ships a DECORATIVE locale control:
-  // the header "EN" is a bare <span> with no handler, and the mobile menu
-  // carries a plain <div> reading "ENGLISH - FRANCAIS - DEUTSCH". Neither is
-  // wired to anything, and this build is English-only by instruction, so there
-  // is nothing for them to point at. grep -c 'lang' over the header component
-  // returns 0. Owner-reported 15 Sep 2026; ruling D-20260915-05: show EN as
-  // current and DE/FR as visibly unavailable rather than hiding the control,
-  // so the multilingual signal survives and the day translations ship this
-  // becomes a real switcher.
-  //
-  // Built here rather than in the payload: public/ahv/components/*.dc.html is
-  // approved source that the importer rewrites wholesale. The visual language
-  // (1px #C9BFA8 border, 4px radius, 44px min target) is copied from the  [brand-allow: rogue-hex]
-  // existing EN badge so nothing is re-themed.
-  // One rule, installed once: the pending locale pills are display:none below the
-  // design's own 700px breakpoint, which is the same width at which the design
-  // swaps to its Mobile view.
+  // Language switcher (25 Sep 2026, localization — replaces the decorative
+  // EN/DE/FR pills of D-20260915-05 now that the locales exist). Built from
+  // cfg.locale, which the server generates from the reviewed route table: every
+  // option is a real, crawlable link to THIS page's equivalent in that language
+  // (deep-link preserving, never a reset to the locale home). Hooks are data
+  // attributes (data-ahv-lang-badge / data-ahv-drawer / data-ahv-lang-line,
+  // tools/repair-language-hooks.mjs) because visible text and aria-labels are
+  // translated. The choice is remembered for the visitor's own next visit; the
+  // site never redirects by IP or browser language.
+  var LOC = cfg.locale || { code: "en", options: [], ui: {} };
+  var LOC_UI = LOC.ui || {};
+  var LANG_SHORT = { "zh-Hans": "ZH" };
+  function shortCode(code) { return LANG_SHORT[code] || String(code).slice(0, 2).toUpperCase(); }
   (function () {
-    if (document.getElementById("ahv-locale-narrow")) return;
+    if (document.getElementById("ahv-lang-style")) return;
     var st = document.createElement("style");
-    st.id = "ahv-locale-narrow";
-    st.textContent = "@media (max-width:699px){[data-ahv-locale-pending]{display:none !important}}";
+    st.id = "ahv-lang-style";
+    st.textContent =
+      ".ahv-lang{position:relative;display:inline-flex}" +
+      ".ahv-lang-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;box-sizing:border-box;padding:0 clamp(6px,1.7vw,11px);border:1px solid #C9BFA8;border-radius:4px;background:transparent;color:#2A2118;font:inherit;font-weight:700;font-size:13px;letter-spacing:1px;cursor:pointer}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+      ".ahv-lang-btn:focus-visible,.ahv-lang-list a:focus-visible,.ahv-lang-inline a:focus-visible{outline:3px solid #6B7726;outline-offset:2px}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-list{position:absolute;top:calc(100% + 6px);inset-inline-end:0;z-index:120;margin:0;padding:6px;list-style:none;background:#FFFDF7;border:1px solid #E2DACA;border-radius:6px;box-shadow:0 14px 34px rgba(42,32,20,.18);min-width:190px;max-height:min(70vh,520px);overflow:auto}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-list[hidden]{display:none}" +
+      ".ahv-lang-list a,.ahv-lang-inline a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;border-radius:4px;color:#2A2118;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;white-space:nowrap}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-list a:hover,.ahv-lang-inline a:hover{background:#F3EEDF;text-decoration:none}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-list a[aria-current],.ahv-lang-inline a[aria-current]{background:#EFE6CF;color:#006038}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-code{display:inline-block;min-width:26px;font-size:11.5px;font-weight:700;letter-spacing:1px;color:#75695A}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-inline{margin-top:16px;border-top:1px solid #E9E2D3;padding-top:12px}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-inline-h{font-size:11.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#75695A;margin:0 0 6px}" + /* brand-allow: rogue-hex */
+      ".ahv-lang-inline ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px 8px}";
     document.head.appendChild(st);
   })();
-
-  var LOCALES = [
-    { code: "EN", name: "English", live: true },
-    { code: "DE", name: "Deutsch", live: false },
-    { code: "FR", name: "Fran\u00e7ais", live: false }
-  ];
-  function localePill(loc) {
-    var el = document.createElement("span");
-    el.textContent = loc.code;
-    el.setAttribute("data-ahv-locale", loc.code);
-    var base = "border:1px solid #C9BFA8;border-radius:4px;padding:0 clamp(6px,1.7vw,11px);" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-      "min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;" +
-      "font-weight:700;font-size:13px;letter-spacing:1px;";
-    if (loc.live) {
-      el.setAttribute("aria-current", "true");
-      el.style.cssText = base + "color:#2A2118;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-    } else {
-      // HIDDEN ON PHONES. Three pills plus BOOK NOW overran the header row by up
-      // to 39px, and 94% of routes scrolled sideways at 360px because of it --
-      // a mobile-usability fault Google flags, on a site that is 80% mobile.
-      // These two are non-functional "coming soon" placeholders, so on a narrow
-      // screen they were costing real layout to advertise pages that do not
-      // exist yet. They return by themselves once de/fr ship, because the pill
-      // becomes live and takes the branch above.
-      el.setAttribute("data-ahv-locale-pending", "");
-      // Not a link and not focusable: there is no page to go to yet. Announced
-      // as unavailable rather than silently inert.
-      el.setAttribute("aria-disabled", "true");
-      el.setAttribute("title", loc.name + " \u2014 coming soon");
-      el.setAttribute("aria-label", loc.name + " \u2014 coming soon");
-      el.style.cssText = base + "color:#A79C89;border-color:#E2DACA;cursor:default;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-    }
-    return el;
+  function langLink(o) {
+    var a = document.createElement("a");
+    a.href = o.href;
+    a.setAttribute("hreflang", o.lang);
+    a.setAttribute("lang", o.lang);
+    a.setAttribute("data-ahv-lang-option", o.code);
+    var code = document.createElement("span");
+    code.className = "ahv-lang-code";
+    code.setAttribute("aria-hidden", "true");
+    code.textContent = shortCode(o.code);
+    var name = document.createElement("span");
+    name.textContent = o.name;
+    a.appendChild(code);
+    a.appendChild(name);
+    if (o.code === LOC.code) a.setAttribute("aria-current", "true");
+    a.addEventListener("click", function () {
+      try { localStorage.setItem("ahv-locale", o.code); } catch (_) { /* storage blocked: the link still works */ }
+    });
+    return a;
   }
+  var langSeq = 0;
   function localeGroup() {
+    var wrap = document.createElement("div");
+    wrap.className = "ahv-lang";
+    wrap.setAttribute("data-ahv-locale-switcher", "");
+    var id = "ahv-lang-list-" + (++langSeq);
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "ahv-lang-btn";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", id);
+    var current = null;
+    LOC.options.forEach(function (o) { if (o.code === LOC.code) current = o; });
+    btn.setAttribute("aria-label", (LOC_UI.choose || "Choose language") + " — " + (LOC_UI.current || "Current language") + ": " + (current ? current.name : "English"));
+    btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.4"></circle><ellipse cx="8" cy="8" rx="2.8" ry="6.3" stroke="currentColor" stroke-width="1.1"></ellipse><path d="M2 8h12" stroke="currentColor" stroke-width="1.1"></path></svg>';
+    var lbl = document.createElement("span");
+    lbl.textContent = shortCode(LOC.code);
+    btn.appendChild(lbl);
+    var list = document.createElement("ul");
+    list.id = id;
+    list.className = "ahv-lang-list";
+    list.hidden = true;
+    list.setAttribute("aria-label", LOC_UI.language || "Language");
+    LOC.options.forEach(function (o) { var li = document.createElement("li"); li.appendChild(langLink(o)); list.appendChild(li); });
+    function close(focusBtn) { list.hidden = true; btn.setAttribute("aria-expanded", "false"); if (focusBtn) btn.focus(); }
+    function open() {
+      list.hidden = false; btn.setAttribute("aria-expanded", "true");
+      var cur = list.querySelector("a[aria-current]") || list.querySelector("a");
+      if (cur) cur.focus();
+    }
+    btn.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); if (list.hidden) open(); else close(false); });
+    wrap.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !list.hidden) { e.preventDefault(); close(true); return; }
+      if (list.hidden || (e.key !== "ArrowDown" && e.key !== "ArrowUp" && e.key !== "Home" && e.key !== "End")) return;
+      var links = Array.prototype.slice.call(list.querySelectorAll("a"));
+      var i = links.indexOf(document.activeElement);
+      e.preventDefault();
+      if (e.key === "Home") i = 0; else if (e.key === "End") i = links.length - 1;
+      else i = (i + (e.key === "ArrowDown" ? 1 : -1) + links.length) % links.length;
+      links[i].focus();
+    });
+    wrap.addEventListener("focusout", function (e) { if (!wrap.contains(e.relatedTarget)) close(false); });
+    document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) close(false); });
+    wrap.appendChild(btn);
+    wrap.appendChild(list);
+    return wrap;
+  }
+  function inlineLanguages() {
     var nav = document.createElement("nav");
-    nav.setAttribute("aria-label", "Language");
-    nav.setAttribute("data-ahv-locale-switcher", "");
-    nav.style.cssText = "display:inline-flex;align-items:center;gap:6px;";
-    LOCALES.forEach(function (loc) { nav.appendChild(localePill(loc)); });
+    nav.className = "ahv-lang-inline";
+    nav.setAttribute("aria-label", LOC_UI.language || "Language");
+    nav.setAttribute("data-ahv-locale-inline", "");
+    var h = document.createElement("p");
+    h.className = "ahv-lang-inline-h";
+    h.textContent = LOC_UI.language || "Language";
+    nav.appendChild(h);
+    var ul = document.createElement("ul");
+    LOC.options.forEach(function (o) { var li = document.createElement("li"); li.appendChild(langLink(o)); ul.appendChild(li); });
+    nav.appendChild(ul);
     return nav;
   }
   function upgradeLanguageControls(root) {
-    if (!root || root.nodeType !== 1) return;
-    // EVERY header badge, not the first: non-homepage routes mount a duplicate
-    // hidden <header> ahead of the visible one, so upgrading only the first
-    // left the real header decorative and put the new control where nobody
-    // could see it. Both are upgraded; whichever is displayed is correct.
-    root.querySelectorAll("header span, header div, header button, header a").forEach(function (el) {
-      if ((el.textContent || "").trim() !== "EN") return;
-      if (el.hasAttribute("data-ahv-locale")) return;
-      // Innermost match only. The desktop header wraps the badge as
-      // <span><svg/>EN</span> while the mobile header uses a bare <span>, so a
-      // childless test skipped the desktop one and a naive test would replace
-      // an outer wrapper and take the icon with it.
-      var inner = false;
-      el.querySelectorAll("*").forEach(function (d) {
-        if ((d.textContent || "").trim() === "EN") inner = true;
-      });
-      if (inner) return;
-      el.replaceWith(localeGroup());
+    if (!root || root.nodeType !== 1 || !LOC.options.length) return;
+    // EVERY badge, not the first: non-homepage routes mount a duplicate hidden
+    // header ahead of the visible one; whichever is displayed is correct.
+    root.querySelectorAll("[data-ahv-lang-badge]").forEach(function (el) {
+      if (el.hasAttribute("data-ahv-locale-done")) return;
+      var g = localeGroup();
+      g.setAttribute("data-ahv-locale-done", "");
+      el.replaceWith(g);
       localesUpgraded++;
     });
-    // The mobile menu's static locale line.
-    root.querySelectorAll("div, p, span").forEach(function (el) {
-      if (el.childElementCount !== 0) return;
-      var t = (el.textContent || "").replace(/\\s+/g, " ").trim();
-      // Separator-agnostic: the captured line uses a middot, but the same
-      // static line appears with other separators across the chrome variants.
-      if (t.length > 64) return;
-      if (!/ENGLISH/i.test(t) || !/FRAN\u00c7AIS/i.test(t) || !/DEUTSCH/i.test(t)) return;
-      var wrap = document.createElement("div");
-      wrap.style.cssText = "display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;";
-      wrap.appendChild(localeGroup());
-      var note = document.createElement("span");
-      note.textContent = "Deutsch and Fran\u00e7ais coming soon";
-      note.style.cssText = "font-size:12px;letter-spacing:.3px;color:#75695A;"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-      wrap.appendChild(note);
-      el.replaceWith(wrap);
+    root.querySelectorAll("[data-ahv-lang-line], [data-ahv-drawer]").forEach(function (el) {
+      if (el.querySelector("[data-ahv-locale-inline]")) return;
+      if (el.hasAttribute("data-ahv-lang-line")) { el.replaceWith(inlineLanguages()); localesUpgraded++; return; }
+      el.appendChild(inlineLanguages());
       localesUpgraded++;
     });
   }
   var localesUpgraded = 0;
 
+  // Locale UI dictionary (English source -> accepted translation), installed by
+  // the locale layout as window.__AHV_T; English pages have none and fall through.
+  function T(s) { var d = window.__AHV_T; return (d && d[s]) || s; }
   ${CONSENT_RUNTIME}
 
   /**

@@ -40,11 +40,14 @@ function validate(res, input) {
     if (tokens(t).join() !== tokens(w.src).join()) errs.push(`${id} tokens ${tokens(w.src).join("")} != ${tokens(t).join("")}`);
     for (const m of t.matchAll(/\[\[OPEN_(\d+)\]\]/g)) if (t.indexOf(`[[CLOSE_${m[1]}]]`) >= 0 && t.indexOf(`[[CLOSE_${m[1]}]]`) < m.index) errs.push(`${id} CLOSE_${m[1]} before OPEN`);
     const ds = digits(w.src), dt = digits(t);
-    const missing = ds.filter((d) => { const i = dt.indexOf(d); if (i < 0) return true; dt.splice(i, 1); return false; });
+    let missing = ds.filter((d) => { const i = dt.indexOf(d); if (i < 0) return true; dt.splice(i, 1); return false; });
+    // 12-hour clock times localized to 24-hour (10 PM → 22 Uhr) are display formatting, not a changed fact
+    if (/\b(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(w.src)) missing = missing.filter((d) => { const n = +d; if (n < 1 || n > 12) return true; const alt = String(n === 12 ? 0 : n + 12); const i = dt.indexOf(alt); if (i < 0 && !(n === 12 && dt.includes("12"))) return true; if (i >= 0) dt.splice(i, 1); return false; });
     if (missing.length) errs.push(`${id} numbers missing ${missing.join(",")}`);
     if (w.roles.includes("seo.title") && utf16(t) > 60) errs.push(`${id} seo.title ${utf16(t)}>60`);
     if (w.roles.includes("seo.description") && utf16(t) > 155) errs.push(`${id} seo.description ${utf16(t)}>155`);
-    const words = (w.src.replace(/\[\[[A-Z]+_\d+\]\]/g, " ").match(/[A-Za-z]{3,}/g) || []).length;
+    const BRAND = /Kairali\s*[–—-]?\s*(The\s+)?Ayurvedic Healing Village|Ayurvedic Healing Village|Kairali|Thankam Hospital|Pulse Doctors and Labs|Priya|WhatsApp|YouTube|Facebook|Instagram|LinkedIn|Tripadvisor|Google/gi;
+    const words = (w.src.replace(/\[\[[A-Z]+_\d+\]\]/g, " ").replace(BRAND, " ").match(/[A-Za-z]{3,}/g) || []).length;
     if (t.trim() === w.src.trim() && words >= 2 && !u.unchangedReason) errs.push(`${id} unchanged without reason`);
     const re = NONLATIN[input.locale];
     if (re && words >= 3 && !re.test(t) && !u.unchangedReason) errs.push(`${id} no ${input.locale} script`);

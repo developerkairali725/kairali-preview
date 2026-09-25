@@ -119,20 +119,6 @@
   "Arabic: Modern Standard Arabic; Latin names/IDs/numbers stay as-is. Chinese: Simplified. Portuguese: neutral (PDF variant). Hindi: Devanagari, clear formal register (aap)."
  ],
  "terms": {
-  "English": {
-   "hi": "हिन्दी",
-   "de": "Deutsch",
-   "fr": "Français",
-   "es": "Español",
-   "it": "Italiano",
-   "pt": "Português",
-   "nl": "Nederlands",
-   "ru": "Русский",
-   "ar": "العربية",
-   "zh-Hans": "简体中文",
-   "ja": "日本語",
-   "ko": "한국어"
-  },
   "Palakkad · Kerala · India": {
    "hi": "पालक्काड · केरल · भारत",
    "de": "Palakkad · Kerala · Indien",
@@ -10089,5 +10075,14 @@
    "ja": "患者向け情報資料 · 第2.0版 · 2026年7月",
    "ko": "환자 정보 자료 · 2.0판 · 2026년 7월"
   }
- }
+ },
+ "amendments": [
+  {
+   "at": "2026-09-25",
+   "removed": [
+    "English"
+   ],
+   "reason": "PDF language_name self-label (EN->Deutsch etc.) is not a translation of the word English; misapplied by a worker to a language label"
+  }
+ ]
 }

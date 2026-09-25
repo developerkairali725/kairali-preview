@@ -70,15 +70,22 @@ const arg = (n, d) => {
   return i > -1 ? process.argv[i + 1] : d;
 };
 const BASE = arg("base", "http://127.0.0.1:4321");
-const OUT = arg("out", "english-candidate/prerender");
+// --locale <code> (25 Sep 2026): snapshot the LOCALIZED runtime at each route's
+// reviewed locale URL (l10n/routes.json); files are written, link-repaired, then
+// stored gzip-compressed under l10n/prerender/<code>/ (read by design-view.tsx).
+const LOCALE = arg("locale", null);
+const CONCURRENCY = Math.max(1, Number(arg("concurrency", "1")) || 1);
+const OUT = arg("out", LOCALE ? `l10n/prerender-tmp/${LOCALE}` : "english-candidate/prerender");
 const ONLY = arg("only", null);
 const LIMIT = Number(arg("limit", "0")) || 0;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
+const L10N_ROUTES = LOCALE ? JSON.parse(fs.readFileSync(path.join(SITE, "l10n/routes.json"), "utf8")).routes : null;
 const routes = JSON.parse(
   fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"),
-).routes;
+).routes.filter((r) => !L10N_ROUTES || (L10N_ROUTES[r.path] && L10N_ROUTES[r.path][LOCALE]));
+const urlPath = (r) => (L10N_ROUTES ? L10N_ROUTES[r.path][LOCALE] : r.path);
 
 /** Stable, filesystem-safe name for a route path. */
 export function snapshotName(routePath) {
@@ -194,7 +201,9 @@ const run = async () => {
   const index = [];
   let failures = 0;
 
-  for (const [i, route] of list.entries()) {
+  const queue = [...list.entries()];
+  const worker = async () => { for (let item = queue.shift(); item; item = queue.shift()) await one(...item); };
+  const one = async (i, route) => {
     const ctx = await browser.newContext({
       viewport: { width: 390, height: 900 },
       hasTouch: true,
@@ -204,7 +213,7 @@ const run = async () => {
     const page = await ctx.newPage();
     let rec = { path: route.path, ok: false };
     try {
-      await page.goto(BASE + route.path, { waitUntil: "networkidle", timeout: 60000 });
+      await page.goto(BASE + urlPath(route), { waitUntil: "networkidle", timeout: 60000 });
       // The runtime mounts, compiles the template and binds the route's dataset.
       await page.waitForFunction(
         () => {
@@ -237,10 +246,11 @@ const run = async () => {
     index.push(rec);
     if (i % 10 === 0 || !rec.ok) {
       console.log(
-        `[${i + 1}/${list.length}] ${route.path} ${rec.ok ? `${rec.textChars} chars, ${rec.imgs} imgs` : "FAILED " + rec.error}`,
+        `[${i + 1}/${list.length}] ${urlPath(route)} ${rec.ok ? `${rec.textChars} chars, ${rec.imgs} imgs` : "FAILED " + rec.error}`,
       );
     }
-  }
+  };
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
   await browser.close();
   // A partial run (--only / --limit) MERGES into the existing index instead of
@@ -271,6 +281,17 @@ const run = async () => {
     stdio: "inherit",
   });
 
+  if (LOCALE) {
+    // store compressed; the uncompressed working copies are removed
+    const { gzipSync } = await import("node:zlib");
+    const final = path.join(SITE, "l10n", "prerender", LOCALE);
+    fs.mkdirSync(final, { recursive: true });
+    for (const f of fs.readdirSync(outDir)) {
+      const src = path.join(outDir, f);
+      if (f.endsWith(".html")) { fs.writeFileSync(path.join(final, f + ".gz"), gzipSync(fs.readFileSync(src), { level: 9 })); fs.rmSync(src); }
+      else if (f === "index.json") fs.copyFileSync(src, path.join(final, f));
+    }
+  }
   if (failures) process.exitCode = 1;
 };
 

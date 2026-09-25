@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
+import l10nRoutes from "./l10n/routes.json";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -109,7 +110,15 @@ const nextConfig: NextConfig = {
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
-    })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
+    })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 })),
+    // Legacy German/French/Russian URLs of the WordPress site that the locale
+    // lane does not serve in place (l10n/routes.json, generated from the verified
+    // l10n/legacy-map.json): one 301 hop each. Case-only variants are NOT here -
+    // custom-route matching is case-insensitive, so they would match the served
+    // lowercase page and loop; middleware.ts lower-cases those instead.
+    ...Object.entries((l10nRoutes as unknown as { redirects: Record<string, { to: string }> }).redirects)
+      .filter(([source, rule]) => source.toLowerCase() !== rule.to.toLowerCase())
+      .map(([source, rule]) => ({ source, destination: rule.to, statusCode: 301 as const }))];
   },
   // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
   // English homepage now exists at "/" (app/(english)/page.tsx), which is the

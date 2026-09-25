@@ -16,6 +16,7 @@ import type { Metadata } from "next";
 import type { CandidateRoute } from "./registry";
 import OG_IMAGES from "../../../english-candidate/og-images.json";
 import CANONICAL_SERVER from "../../../english-candidate/canonical-server-routes.json";
+import { LOCALE_INFO, TARGET_CODES, alternates, localeData, localizedPath, ORIGIN, type LocaleCode } from "./l10n";
 
 /**
  * Exception to "canonical is the design's to write" (header note): a 254-route
@@ -42,23 +43,52 @@ const CANONICAL_SERVER_ROUTES = new Set<string>(CANONICAL_SERVER.routes);
  */
 const SITE_ORIGIN = "https://ayurvedichealingvillage.com";
 const OG_MAP: Record<string, string> = OG_IMAGES as Record<string, string>;
-function shareImage(route: CandidateRoute) {
+function shareImage(route: CandidateRoute, altText?: string | null) {
   const path = OG_MAP[route.path];
   if (!path) return null;
   const url = SITE_ORIGIN + path;
   return { url, secureUrl: url, width: 1200, height: 630, type: "image/jpeg",
-    alt: route.metadata.ogTitle ?? route.metadata.title ?? "Kairali – The Ayurvedic Healing Village" };
+    alt: altText ?? route.metadata.ogTitle ?? route.metadata.title ?? "Kairali – The Ayurvedic Healing Village" };
 }
 
-export function routeMetadata(route: CandidateRoute): Metadata {
+/**
+ * Localized head (25 Sep 2026). Title/description/OG come from the SAME
+ * accepted catalogue as the page body (l10n/generated/<locale>.json, built by
+ * tools/l10n/build.mjs); a field without an accepted translation keeps the
+ * English value. Canonical is the page's own localized URL (never the English
+ * one); hreflang lists every real equivalent plus x-default = English. Both are
+ * generated from the reviewed route table, not translated.
+ */
+function localizedFields(route: CandidateRoute, locale: LocaleCode) {
   const m = route.metadata;
+  if (locale === "en") return m;
+  const d = localeData(locale)?.meta[route.path];
+  const canonical = ORIGIN + (localizedPath(route.path, locale) ?? route.path);
+  return {
+    ...m,
+    title: d?.title ?? m.title,
+    description: d?.description ?? m.description,
+    ogTitle: d?.ogTitle ?? d?.title ?? m.ogTitle,
+    ogDescription: d?.ogDescription ?? d?.description ?? m.ogDescription,
+    canonical,
+  };
+}
+
+export function routeMetadata(route: CandidateRoute, locale: LocaleCode = "en"): Metadata {
+  const m = localizedFields(route, locale);
   const robots = routeRobots(route);
   const meta: Metadata = {
     robots: { index: !robots.includes("noindex"), follow: !robots.includes("nofollow") },
     title: m.title ?? "Kairali — The Ayurvedic Healing Village",
   };
   if (m.description) meta.description = m.description;
-  if (m.canonical && CANONICAL_SERVER_ROUTES.has(route.path)) meta.alternates = { canonical: m.canonical };
+  const langs = alternates(route.path);
+  const hasCluster = Object.keys(langs).length > 2;
+  if (locale !== "en") meta.alternates = { canonical: m.canonical, ...(hasCluster ? { languages: langs } : {}) };
+  else {
+    if (m.canonical && CANONICAL_SERVER_ROUTES.has(route.path)) meta.alternates = { canonical: m.canonical };
+    if (hasCluster) meta.alternates = { ...(meta.alternates ?? {}), languages: langs };
+  }
 
   const ogTitle = m.ogTitle ?? m.title;
   const ogDescription = m.ogDescription ?? m.description;
@@ -66,14 +96,15 @@ export function routeMetadata(route: CandidateRoute): Metadata {
     meta.openGraph = {
       ...(ogTitle ? { title: ogTitle } : {}),
       ...(ogDescription ? { description: ogDescription } : {}),
-      ...((): object => { const img = shareImage(route); return img ? { images: [img] } : m.ogImage ? { images: [m.ogImage] } : {}; })(),
+      ...((): object => { const img = shareImage(route, m.ogTitle ?? m.title); return img ? { images: [img] } : m.ogImage ? { images: [m.ogImage] } : {}; })(),
       ...(m.canonical ? { url: m.canonical } : {}),
       type: m.ogType === "article" ? "article" : "website",
       siteName: "Kairali – The Ayurvedic Healing Village",
-      locale: "en_US",
+      locale: LOCALE_INFO[locale].og,
+      alternateLocale: (["en", ...TARGET_CODES] as LocaleCode[]).filter((c) => c !== locale && localizedPath(route.path, c)).map((c) => LOCALE_INFO[c].og),
     };
   }
-  const share = shareImage(route);
+  const share = shareImage(route, m.ogTitle ?? m.title);
   if (share) {
     meta.twitter = {
       card: "summary_large_image",
