@@ -15,7 +15,7 @@
   };
   var suite = {
     groups: [
-      { title: 'Comfort', items: ['Air conditioning', 'LED television'] },
+      { title: 'Comfort', items: ['Air conditioning', 'LED television', 'Refrigerator in both suites 1001 and 1002', 'Coffee maker in both suites 1001 and 1002'] },
       { title: 'Bathroom essentials', items: bathroom },
       { title: 'Useful extras', items: extras }
     ],
