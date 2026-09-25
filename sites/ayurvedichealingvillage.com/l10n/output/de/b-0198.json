@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0198",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_4366a893ff5683c7b438",
+   "sourceHash": "4366a893ff5683c7b4382850934d5d8df6e2c798624cda9d52cf89394e0e7211",
+   "text": "06:30 am bis 07:30 am – Yogaeinheit",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0811d4eba5a5b11e3695",
+   "sourceHash": "0811d4eba5a5b11e3695d765fa9d1971c4512244aa7050ecf5a2ff72ec0cd752",
+   "text": "08:00 am bis 09:00 am – Frühstück",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_093da1d61935df334ac9",
+   "sourceHash": "093da1d61935df334ac93fc3b593d90ccc65f4fd28aebae418d940d0b308f6fc",
+   "text": "09:00 am bis 01:00 pm – 1. Behandlung des Tages, 1 Stunde",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a00d8c9f45bc1bd836b4",
+   "sourceHash": "a00d8c9f45bc1bd836b45c92bf81861a9d61bfc3b551899d88fde4988ce7742f",
+   "text": "01:00 pm bis 02:30 pm – Mittagessen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6488958b6196398ecf7",
+   "sourceHash": "d6488958b6196398ecf735c9898307dd46247aa748072ccfe3cbbff5a11a9b6b",
+   "text": "03:00 pm bis 06:00 pm – 2. Behandlung des Tages, 1 Stunde",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6126373920d6c4edf5dd",
+   "sourceHash": "6126373920d6c4edf5dd44c721f6b98c1cabd65c7b437633cde71105c704fe4d",
+   "text": "06:30 pm bis 07:30 pm – Meditationseinheit",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2abd164c349cc158c72",
+   "sourceHash": "d2abd164c349cc158c721e22c2387787ac7372539283a166a5e1c1ea1dcc05f3",
+   "text": "07:30 pm bis 09:00 pm – Abendessen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b6f18eee0469b55a753",
+   "sourceHash": "7b6f18eee0469b55a753f350a62a5ff49084b0d6fd8f642c9e0d5cb321c33336",
+   "text": "24. November",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9c8bd4282e23da20cef",
+   "sourceHash": "b9c8bd4282e23da20cefc9c9e9cf1c7884901f15c3a2d6d9437af5f335e754fa",
+   "text": "6:30am Yoga",
+   "status": "translated",
+   "unchangedReason": "Time and 'Yoga' are identical in German; kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_2b646d80b345d0cbceac",
+   "sourceHash": "2b646d80b345d0cbceac384126c8325d094e2c615eb75272170fd84697cde3fa",
+   "text": "8am Frühstück",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99e71f48c48f121baddd",
+   "sourceHash": "99e71f48c48f121baddd4def9d50fa3363580ae26c2d22dfe364c23f6da15240",
+   "text": "Kasse",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_36819b628331c0e96c5b",
+   "sourceHash": "36819b628331c0e96c5b043e7b884497ab9e5ad0db6682ef97f26900e15b7221",
+   "text": "Mittagessen und ayurvedische Behandlung",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa Treatment' rendered as 'ayurvedische Behandlung' per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_a632416079feba019841",
+   "sourceHash": "a632416079feba019841318ec77675d8aef80c27d16030151279457a9d65ac68",
+   "text": "4pm kostenloser später Check-out möglich; Mittagessen und zusätzliche Behandlungen auf eigene Kosten. Anschließend setzen Sie Ihren Weg fort oder nutzen den Flughafentransfer zurück nach Kochi",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'spa treatments' rendered as 'Behandlungen' and 'onward journey' as 'Ihren Weg fort' per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_c3c93f102c5aa34c3847",
+   "sourceHash": "c3c93f102c5aa34c3847de53fc6091ee221e294f7ecdbc4f36b52913231fce65",
+   "text": "Historische Reisehinweise [[OPEN_1]]Abgeleitete Bezeichnung[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_90920dc31ec722dcc31e",
+   "sourceHash": "90920dc31ec722dcc31e5ae46639769c230ea5c692941f96d4d8073af288d57b",
+   "text": "Diese Reisehinweise stammen vom Retreat 2019 und sind keine aktuellen Reise- oder Visahinweise.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_90920dc31ec722dcc31e banned-term Reise"
+   ]
+  },
+  {
+   "id": "t_604062d724a066664c88",
+   "sourceHash": "604062d724a066664c88c68c134a2d6e7a886e92d00540b03e5f4cfc4af26b54",
+   "text": "[[OPEN_1]]BITTE BEACHTEN[[CLOSE_1]][[TAG_2]]Nächstgelegener Flughafen Thiruvananthapuram, Flüge nicht inbegriffen[[TAG_3]]Nächstgelegener Flughafen ist der Cochin International Airport. Flüge sind nicht inbegriffen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source states two different 'closest airports' (Thiruvananthapuram vs Cochin); both preserved verbatim, flag for owner review."
+   ]
+  },
+  {
+   "id": "t_5acb463dd636dc0c2a20",
+   "sourceHash": "5acb463dd636dc0c2a202d828a0560f7536a7048c6b78068c8a17044aec3f72e",
+   "text": "Hinweise zum Retreat",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_530ce732a05f1d373a19",
+   "sourceHash": "530ce732a05f1d373a191747f0cb3a3054b9f241528ce3579ccd3cf36b265295",
+   "text": "Visa",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de08ec4c6c962b659c0e",
+   "sourceHash": "de08ec4c6c962b659c0e19fc56ab0537561ee039806fda6db7e5c2c706091014",
+   "text": "Für das Visum ist jeder Reisende selbst verantwortlich; derzeit kann das E-Visum 34 Tage vor der Ankunft beantragt werden. Die Einreisebestimmungen können sich jederzeit ändern. Aktuelle Informationen finden Sie daher unter https://indianvisaonline.gov.in/visa/tvoa.html.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c405fb442ba827e75af",
+   "sourceHash": "9c405fb442ba827e75af8f22e515e3d27ce5f7711cb004ed227d948e1e351332",
+   "text": "INDIEN:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_575da4eecda598ddeb5b",
+   "sourceHash": "575da4eecda598ddeb5b7eb562bdcfd990468d1ac27587c7043f4fa73613aa9c",
+   "text": "Für Inhaber von Reisepässen zahlreicher Länder steht ein E-Touristenvisum (eVT) zur Verfügung. Damit können sich Reisende vor der Reise nach Indien vorab registrieren und ihr Visum bezahlen. Das Visum wird bei der Ankunft an einem von 16 dafür vorgesehenen Flughäfen in Indien ausgehändigt. Bitte beachten Sie die strengen Vorgaben auf der unten genannten Website.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_575da4eecda598ddeb5b banned-term Reise"
+   ]
+  },
+  {
+   "id": "t_bc71df2657503a9602e7",
+   "sourceHash": "bc71df2657503a9602e7c94816baccaf17439b3077f315da8b2495a29619cb9b",
+   "text": "Ein E-Touristenvisum (eVT) bei Ankunft ist für ausgewählte Staatsangehörigkeiten erhältlich, unter anderem für die folgenden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce04cf02c3d28af9884c",
+   "sourceHash": "ce04cf02c3d28af9884c5262525fb1468a902efcda61beca1d2641b5b73beea7",
+   "text": "Australische, kanadische, neuseeländische, deutsche, britische und US-amerikanische Reisepässe.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec4c41f641d1a6b5fb39",
+   "sourceHash": "ec4c41f641d1a6b5fb39ef5147aaab4201bc36790d5a9da4e77ea62f3e5cb967",
+   "text": "Inhaber von Reisepässen dieser Länder können ein E-Touristenvisum (eVT) beantragen, das bei der Ankunft an 16 großen Flughäfen in Indien, darunter Chennai und Trivandrum, ausgestellt wird.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e18c420a84eff85edfb4",
+   "sourceHash": "e18c420a84eff85edfb4a385f89a6c12c68400d131de2f990680c3a1d7e0917f",
+   "text": "Bitte folgen Sie den Anweisungen unter – https://indianvisaonline.gov.in/visa/tvoa.html – und füllen Sie den Antrag für Ihr E-Touristenvisum aus.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

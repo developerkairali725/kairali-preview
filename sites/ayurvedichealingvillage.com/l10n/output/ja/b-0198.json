@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0198",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_4366a893ff5683c7b438",
+   "sourceHash": "4366a893ff5683c7b4382850934d5d8df6e2c798624cda9d52cf89394e0e7211",
+   "text": "06:30～07:30 – ヨガセッション",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0811d4eba5a5b11e3695",
+   "sourceHash": "0811d4eba5a5b11e3695d765fa9d1971c4512244aa7050ecf5a2ff72ec0cd752",
+   "text": "08:00～09:00 – 朝食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_093da1d61935df334ac9",
+   "sourceHash": "093da1d61935df334ac93fc3b593d90ccc65f4fd28aebae418d940d0b308f6fc",
+   "text": "09:00～13:00 – その日の1回目の治療（1時間）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a00d8c9f45bc1bd836b4",
+   "sourceHash": "a00d8c9f45bc1bd836b45c92bf81861a9d61bfc3b551899d88fde4988ce7742f",
+   "text": "13:00～14:30 – 昼食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6488958b6196398ecf7",
+   "sourceHash": "d6488958b6196398ecf735c9898307dd46247aa748072ccfe3cbbff5a11a9b6b",
+   "text": "15:00～18:00 – その日の2回目の治療（1時間）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6126373920d6c4edf5dd",
+   "sourceHash": "6126373920d6c4edf5dd44c721f6b98c1cabd65c7b437633cde71105c704fe4d",
+   "text": "18:30～19:30 – 瞑想セッション",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2abd164c349cc158c72",
+   "sourceHash": "d2abd164c349cc158c721e22c2387787ac7372539283a166a5e1c1ea1dcc05f3",
+   "text": "19:30～21:00 – 夕食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b6f18eee0469b55a753",
+   "sourceHash": "7b6f18eee0469b55a753f350a62a5ff49084b0d6fd8f642c9e0d5cb321c33336",
+   "text": "11月24日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9c8bd4282e23da20cef",
+   "sourceHash": "b9c8bd4282e23da20cefc9c9e9cf1c7884901f15c3a2d6d9437af5f335e754fa",
+   "text": "6:30 ヨガ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b646d80b345d0cbceac",
+   "sourceHash": "2b646d80b345d0cbceac384126c8325d094e2c615eb75272170fd84697cde3fa",
+   "text": "8:00 朝食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99e71f48c48f121baddd",
+   "sourceHash": "99e71f48c48f121baddd4def9d50fa3363580ae26c2d22dfe364c23f6da15240",
+   "text": "チェックアウト",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_36819b628331c0e96c5b",
+   "sourceHash": "36819b628331c0e96c5b043e7b884497ab9e5ad0db6682ef97f26900e15b7221",
+   "text": "昼食と治療",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa Treatment' rendered as 治療 (treatment) per register lock."
+   ]
+  },
+  {
+   "id": "t_a632416079feba019841",
+   "sourceHash": "a632416079feba019841318ec77675d8aef80c27d16030151279457a9d65ac68",
+   "text": "16:00までの無料レイトチェックアウトが可能です。昼食および追加の治療は各自負担となります。次の目的地へご出発いただくか、コーチへの空港送迎をご利用ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'spa treatments' rendered as 治療 and 'onward journey' as 次の目的地 per register lock."
+   ]
+  },
+  {
+   "id": "t_c3c93f102c5aa34c3847",
+   "sourceHash": "c3c93f102c5aa34c3847de53fc6091ee221e294f7ecdbc4f36b52913231fce65",
+   "text": "過去の移動に関する案内 [[OPEN_1]]派生ラベル[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_90920dc31ec722dcc31e",
+   "sourceHash": "90920dc31ec722dcc31e5ae46639769c230ea5c692941f96d4d8073af288d57b",
+   "text": "これらの移動に関する案内は2019年のリトリート当時のものを保存しており、現在の渡航・ビザに関する案内ではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_604062d724a066664c88",
+   "sourceHash": "604062d724a066664c88c68c134a2d6e7a886e92d00540b03e5f4cfc4af26b54",
+   "text": "[[OPEN_1]]ご注意ください[[CLOSE_1]][[TAG_2]]最寄りの空港はティルヴァナンタプラム、航空券は含まれません[[TAG_3]]最寄りの空港はコーチン国際空港です。航空券は含まれません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source states two different 'closest airport' values (Thiruvananthapuram vs Cochin); both preserved as in the historical source."
+   ]
+  },
+  {
+   "id": "t_5acb463dd636dc0c2a20",
+   "sourceHash": "5acb463dd636dc0c2a202d828a0560f7536a7048c6b78068c8a17044aec3f72e",
+   "text": "リトリートに関する注意事項",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_530ce732a05f1d373a19",
+   "sourceHash": "530ce732a05f1d373a191747f0cb3a3054b9f241528ce3579ccd3cf36b265295",
+   "text": "ビザ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de08ec4c6c962b659c0e",
+   "sourceHash": "de08ec4c6c962b659c0e19fc56ab0537561ee039806fda6db7e5c2c706091014",
+   "text": "ビザの取得は渡航者ご本人の責任となります。現在、eビザは到着の34日前から申請できます。入国要件は随時変更される可能性がありますので、最新情報は必ず https://indianvisaonline.gov.in/visa/tvoa.html でご確認ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c405fb442ba827e75af",
+   "sourceHash": "9c405fb442ba827e75af8f22e515e3d27ce5f7711cb004ed227d948e1e351332",
+   "text": "インド：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_575da4eecda598ddeb5b",
+   "sourceHash": "575da4eecda598ddeb5b7eb562bdcfd990468d1ac27587c7043f4fa73613aa9c",
+   "text": "多くの国のパスポート所持者は、e-観光ビザ（eVT）制度を利用できます。この制度では、インドへの渡航前にビザの事前登録と支払いを行うことができます。ビザはインド国内の指定16空港のいずれかに到着した際に受け取ります。下記ウェブサイトの厳格なガイドラインにご注意ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc71df2657503a9602e7",
+   "sourceHash": "bc71df2657503a9602e7c94816baccaf17439b3077f315da8b2495a29619cb9b",
+   "text": "e-観光ビザ（eVT）による到着時ビザは、以下を含む（ただしこれらに限らない）特定の国籍の方が利用できます",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce04cf02c3d28af9884c",
+   "sourceHash": "ce04cf02c3d28af9884c5262525fb1468a902efcda61beca1d2641b5b73beea7",
+   "text": "オーストラリア、カナダ、ニュージーランド、ドイツ、英国、米国のパスポート。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec4c41f641d1a6b5fb39",
+   "sourceHash": "ec4c41f641d1a6b5fb39ef5147aaab4201bc36790d5a9da4e77ea62f3e5cb967",
+   "text": "これらの国のパスポート所持者は、e-観光ビザ（eVT）を申請することで、チェンナイやトリヴァンドラムを含むインドの主要16空港に到着した際にビザの発給を受けることができます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e18c420a84eff85edfb4",
+   "sourceHash": "e18c420a84eff85edfb4a385f89a6c12c68400d131de2f990680c3a1d7e0917f",
+   "text": "https://indianvisaonline.gov.in/visa/tvoa.html の案内に従って、e-観光ビザの申請を完了してください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

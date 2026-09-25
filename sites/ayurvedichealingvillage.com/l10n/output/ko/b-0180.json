@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0180",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_0ad15b75bcd0f5d9e904",
+   "sourceHash": "0ad15b75bcd0f5d9e904fbdf3ea1beb75397fa83690d9ad4db842c03bea3c87a",
+   "text": "무칼리 너머 도보 탐방",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80238a8abbcd0f75a126",
+   "sourceHash": "80238a8abbcd0f75a12641c66b7894df8f33d173edf676af4db9160b8cf95f82",
+   "text": "구루바유르",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f5fe20c999278a863cde",
+   "sourceHash": "f5fe20c999278a863cdeb59e1a05ef7cb6666efbc6d6951d9b321bff276956f3",
+   "text": "100 km",
+   "status": "translated",
+   "unchangedReason": "Distance value and unit are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_1781ca3bb30facc2e691",
+   "sourceHash": "1781ca3bb30facc2e6913c0be6d5c50ff730c08a6edd9207eaffc0b70df2b0b2",
+   "text": "‘남인도의 드와라카’로 알려진 구루바유르는 케랄라에서 가장 중요한 순례지 중 하나로 여겨집니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c44864e96a5622ac47f3",
+   "sourceHash": "c44864e96a5622ac47f3392cffabae27981f0dff7c98f35cdbb9998945a662f1",
+   "text": "툴라바람 봉헌",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b0fde0f40317461d8198",
+   "sourceHash": "b0fde0f40317461d8198b3b654724bb496f0c959317157b3ce60e022e3f861f7",
+   "text": "연례 축제",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2476b864b9c19e177cc4",
+   "sourceHash": "2476b864b9c19e177cc4d5daf524ab4f118e01a565aca75bacbf961a9c96c4ca",
+   "text": "파람비쿨람 야생동물 보호구역",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297bc9caedf9474a4cb3",
+   "sourceHash": "297bc9caedf9474a4cb389aa7fd2330182a31d5defd26ceaa90c204749a5dfbf",
+   "text": "파람비쿨람 야생동물 보호구역은 치투르 탈루크에 있는 391제곱킬로미터 규모의 보호 지역으로, 아나이말라이 구릉과 넬리암파티 구릉에 걸쳐 펼쳐져 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5992efb65bfbfba5d8dc",
+   "sourceHash": "5992efb65bfbfba5d8dc0f5fd68dcf4f5f06787558d4915e05206d5a69f7d106",
+   "text": "야생동물",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c88ae27eb2676ec64619",
+   "sourceHash": "c88ae27eb2676ec646194eedcdde13118a8ca7464394378eb90b1fb717d7e544",
+   "text": "티크·자단나무 숲",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_881d5fb60090f59aabba",
+   "sourceHash": "881d5fb60090f59aabba4f287d7596317ca7091d00c2180b6cbc8ab018b9febd",
+   "text": "column",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/layout keyword used by the renderer, not user-facing copy; translating it could break layout.",
+   "issues": []
+  },
+  {
+   "id": "t_f179a509d32bd92c923f",
+   "sourceHash": "f179a509d32bd92c923f236324daef85551c03a761bf0188be286a585281b4ac",
+   "text": "center",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/layout alignment keyword used by the renderer, not user-facing copy; translating it could break layout.",
+   "issues": []
+  },
+  {
+   "id": "t_a48fcb713243b3d460ca",
+   "sourceHash": "a48fcb713243b3d460ca7f05e4e4e5ef1cd4d8ce4981ce20cdd3e98a39d4fd38",
+   "text": "곳",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment, assumed to follow a number (e.g. '12 places' → '12곳')."
+   ]
+  },
+  {
+   "id": "t_f74a71128cfb2aadb7ee",
+   "sourceHash": "f74a71128cfb2aadb7eebdca9faa39efe3c91afb471471a1d35d31731d79d313",
+   "text": "곳이며, 실제 페이지에 나오는 순서대로 표시했습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment, assumed to follow a number."
+   ]
+  },
+  {
+   "id": "t_246dcd81a3323d39dbfe",
+   "sourceHash": "246dcd81a3323d39dbfe3ff9ca4a7ca32dde6c5bd942cee666a58d5575d92ba6",
+   "text": "거리는 실제 페이지에 명시되어 있지 않아 [TO CONFIRM]으로 표시되어 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment; preceding text unknown, translated to fit after a number or subject."
+   ]
+  },
+  {
+   "id": "t_3f4d891f7b02bc84e4d9",
+   "sourceHash": "3f4d891f7b02bc84e4d9d6cc65e7ee471f95cb21cbcecdca8444a52fe51b6bc9",
+   "text": "[[OPEN_1]]홈[[CLOSE_1]] [[OPEN_2]]/[[CLOSE_2]] [[OPEN_3]]즐길 거리[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92b81c6096dc758e13ca",
+   "sourceHash": "92b81c6096dc758e13caf07c0b106e4e9c56c5f6e93103b5d0006d67896f53bc",
+   "text": "다른 거리",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5cce882d57a24cf0236d",
+   "sourceHash": "5cce882d57a24cf0236dc7d184913091597de543a54fd04e32e6028a78c5ba4e",
+   "text": "다른 거리 구간",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a14512a20945b6be4530",
+   "sourceHash": "a14512a20945b6be4530d74b6751e7b7efcc338efde4d06d90e3b0db7c19282f",
+   "text": "[[OPEN_1]]홈[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]교육 과정[[CLOSE_3]] [[OPEN_4]]•[[CLOSE_4]] [[OPEN_5]]교육 과정 수강료[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e09545cafa2f04431b8",
+   "sourceHash": "3e09545cafa2f04431b8d10737a968343800f4a04426aefd24fa3b2029d07732",
+   "text": "교육 과정 수강료",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f528c30710528de30edc",
+   "sourceHash": "f528c30710528de30edc3c0dbfffbb9c8644fa97b662380cf0451b180e2c2573",
+   "text": "Kairali Institute of Ayurveda and Panchakarma Therapy에서의 수학을 위한 과정 구성, 기간, 일정 및 수강료 안내입니다. 숙박 요금은 별도로 안내되어 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e0ee38cc17dec284bd1",
+   "sourceHash": "4e0ee38cc17dec284bd177a780503a1e08016731a7c2bd7657805ef9c10e149b",
+   "text": "과정 수강료, 기간 및 일정",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21e1ef55178c09283c23",
+   "sourceHash": "21e1ef55178c09283c23fb20211980610fd26848d591b7d39ca2246d69920320",
+   "text": "요금은 [[OPEN_1]]1박 기준[[CLOSE_1]]으로 부과되며 숙박, 식사, 교육 및 세금이 모두 포함되어 있습니다. 요금표에는 별도의 과정 수강료가 표기되어 있지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38750feaad02072bd4e1",
+   "sourceHash": "38750feaad02072bd4e15b2f2854fa2d499aeeb64a2e719dfba34015ecff688f",
+   "text": "출처: KTAHV Ayurveda Training Courses V2, 참조 번호 KAHR/AY-TRG/2026-2027/04/GBL, 2026년 10월 1일부터 2027년 9월 30일까지 적용. 수치는 보유 자료 그대로 표시했으며, 여기서 합계는 계산하지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c62934da80468187b27f",
+   "sourceHash": "c62934da80468187b27f96393f59a47023f0261ab4872236e69afaadff07f932",
+   "text": "교육 프로그램 — KAHR/AY-TRG/2026-2027/04/GBL",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

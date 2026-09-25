@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0187",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_36a17185f8ff24fb1440",
+   "sourceHash": "36a17185f8ff24fb14409fcb533251684c45f186c75c29c9efc0860e04b6b70f",
+   "text": "[[OPEN_1]]Steuern und Abgaben:[[CLOSE_1]] Alle anfallenden Steuern, staatlichen Abgaben und Servicegebühren werden gemäß den gesetzlichen Vorschriften der Rechnung hinzugefügt.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21802cc13e021c20fe22",
+   "sourceHash": "21802cc13e021c20fe228307eb708152ab0b9d9dfe77c62cedb15cae6e8fc269",
+   "text": "Richtlinie zu Stornierung, Änderungen und Rückerstattung",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ca9c02c323c25e1dce1",
+   "sourceHash": "2ca9c02c323c25e1dce12eb13c41a89d1be2d5cedb32b767c0f83cb8301af4bc",
+   "text": "Stornierungsfristen:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f9976fd7f741364400f",
+   "sourceHash": "0f9976fd7f741364400f61e7978b184e0b77a330bfcfb00f1d68143f4bd1d490",
+   "text": "Bis 30 Tage vor dem Aufenthalt: vollständige Rückerstattung.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcd2470602c1966784c0",
+   "sourceHash": "bcd2470602c1966784c06b48fcd288c15ef6cf71617917e92236cfabe45333aa",
+   "text": "Zwischen 15 und 30 Tagen vor dem Aufenthalt: Rückerstattung von 50%.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74cbb8dddd9163358655",
+   "sourceHash": "74cbb8dddd9163358655750a627c824482c2951c449d564225c08b3c112cb51b",
+   "text": "Weniger als 15 Tage vor dem Aufenthalt oder bei Änderungen während des Aufenthalts: keine Rückerstattung.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d0a41c826d3f0feedb7",
+   "sourceHash": "6d0a41c826d3f0feedb726447f60021e55b1cd1366dc57f584b331d0bf25a23e",
+   "text": "[[OPEN_1]]Änderungen:[[CLOSE_1]] Änderungen von Reservierungsdaten, Behandlungen oder Zimmerkategorien sind abhängig von der Verfügbarkeit und können zusätzliche Kosten verursachen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a517e829dc6c7210985",
+   "sourceHash": "0a517e829dc6c7210985509942663ef847c810a6ab7177884314e859b6f75e01",
+   "text": "[[OPEN_1]]Ablauf der Rückerstattung:[[CLOSE_1]] Genehmigte Rückerstattungen werden innerhalb einer angemessenen Frist über dieselbe Zahlungsmethode abgewickelt, die für die ursprüngliche Transaktion verwendet wurde.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5fcc1ff036c2b8b59c1d",
+   "sourceHash": "5fcc1ff036c2b8b59c1d7f39bff42e880f16bb7580afe087979a93f143af60e0",
+   "text": "Richtlinien zu Check-in, Check-out und Aufenthalt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d9e8398054cc05f95ee",
+   "sourceHash": "0d9e8398054cc05f95ee5f5653393bd3caef4d99885785f1e6fa2173f21f73ef",
+   "text": "[[OPEN_1]]Check-in-Zeit:[[CLOSE_1]] 12:00 PM",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Time kept verbatim as in source (12:00 PM) per rule to keep every time unchanged."
+   ]
+  },
+  {
+   "id": "t_40178f88c5db1e63960d",
+   "sourceHash": "40178f88c5db1e63960df6d805dd8c6f83eedb8802cac955d7942c3a6b85ff6d",
+   "text": "[[OPEN_1]]Check-out-Zeit:[[CLOSE_1]] 10:00 AM",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Time kept verbatim as in source (10:00 AM) per rule to keep every time unchanged."
+   ]
+  },
+  {
+   "id": "t_4d02bcc8c741b6095bd4",
+   "sourceHash": "4d02bcc8c741b6095bd468cfedfb2179d9251fec9e1a87ebf1b853272bc5c346",
+   "text": "[[OPEN_1]]Früher Check-in / später Check-out:[[CLOSE_1]] Ein früher Check-in und ein später Check-out sind abhängig von der Verfügbarkeit und können zusätzliche Kosten verursachen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9072dfa1069fb031a1d",
+   "sourceHash": "b9072dfa1069fb031a1dafd34814dd98c8d10a7d46931b60d795a4ef4a44e07e",
+   "text": "[[OPEN_1]]Aufenthaltsdauer:[[CLOSE_1]] In bestimmten Saisons, bei Angeboten oder Veranstaltungen können Mindest- oder Höchstaufenthaltsdauern gelten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dea75ce4932e114d1df1",
+   "sourceHash": "dea75ce4932e114d1df139fd9d3bfae9bd76e7d6c1ee062074a94c1723ef6668",
+   "text": "Verhaltensregeln und Nutzungsbeschränkungen für Patienten und Besucher",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Guest' rendered as 'Patienten und Besucher'."
+   ]
+  },
+  {
+   "id": "t_98e3d5e06e8729b88f15",
+   "sourceHash": "98e3d5e06e8729b88f15f080b6f06836bb56c9cb797a66f80eb6e7a6272ed2cf",
+   "text": "[[OPEN_1]]Ayurvedische Richtlinien:[[CLOSE_1]] Von Patienten und Besuchern wird erwartet, dass sie die von unseren Fachleuten vorgegebenen ayurvedischen Richtlinien befolgen und die Ruhe der Umgebung wahren.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Guests' rendered as 'Patienten und Besucher'."
+   ]
+  },
+  {
+   "id": "t_b1dd0085434f9b35f79d",
+   "sourceHash": "b1dd0085434f9b35f79d8df9cb9995d3ebbeb63e985e7bf978cfb3b0f0688b1f",
+   "text": "[[OPEN_1]]Verbotene Gegenstände und Verhaltensweisen:[[CLOSE_1]] Rauchen, Alkoholkonsum und nicht-vegetarische Speisen sind strengstens untersagt.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbf6c7b5eaa6ef02fc48",
+   "sourceHash": "cbf6c7b5eaa6ef02fc487ccba127bb4cf7de8f125bc3ff806c7391a281a987a8",
+   "text": "[[OPEN_1]]Störendes Verhalten:[[CLOSE_1]] Inakzeptables Verhalten oder Verstöße gegen die Hausordnung können zur sofortigen Beendigung des Aufenthalts ohne Rückerstattung führen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80ff39c82d5721d9f653",
+   "sourceHash": "80ff39c82d5721d9f6537a1a15fdc4b9e71ff2ca078dfaba06828dccd988513c",
+   "text": "Zusätzliche Leistungen und Gebühren",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f9dd6992566dfe8de64",
+   "sourceHash": "1f9dd6992566dfe8de64bc8b7e41a6966e4f26548c8b640af65046d4ffd174f8",
+   "text": "[[OPEN_1]]Nutzung der Einrichtungen:[[CLOSE_1]] Patienten und Besucher können Freizeitflächen, Yogaräume und Schwimmbecken während der Betriebszeiten nutzen und müssen die ausgehängten Regeln beachten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Guests' rendered as 'Patienten und Besucher'."
+   ]
+  },
+  {
+   "id": "t_255151f285332a0b4c7b",
+   "sourceHash": "255151f285332a0b4c7b034bd283842070cad07e623862306a4e774edd250f5e",
+   "text": "[[OPEN_1]]Sachschäden:[[CLOSE_1]] Patienten und Besucher haften für alle Schäden an Einrichtungen oder Ausstattung des Hauses. Reparatur- oder Ersatzkosten werden dem Konto der betreffenden Person belastet.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Guests'/'Guest's account' rendered as 'Patienten und Besucher' / 'Konto der betreffenden Person'."
+   ]
+  },
+  {
+   "id": "t_8363865d3df465429313",
+   "sourceHash": "8363865d3df465429313fe036c101a1420dd8d1b461f40cf8cbcf87acc1cd903",
+   "text": "[[OPEN_1]]Zusätzliche Leistungen:[[CLOSE_1]] Für zusätzliche Leistungen wie Wäscheservice, geführte Touren oder spezielle Diäten können weitere Kosten anfallen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7454f2f3120af0b88e68",
+   "sourceHash": "7454f2f3120af0b88e68a5eb5da0a762a6ce28a9d2f489ef4ef427f7c7427c03",
+   "text": "Privatsphäre und Datenschutz",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4923b9209ef7afc3277a",
+   "sourceHash": "4923b9209ef7afc3277a6f5550b1cb2a0e2587c07ffa2e2c1db55cb810a5be95",
+   "text": "Unsere Datenschutzerklärung erläutert den Umgang mit Anfragen, medizinischen Befunden, Zahlungsunterlagen und Bewerbungsdaten, einschließlich Auskunft, Aufbewahrung, Wahlmöglichkeiten und Besuchern aus dem Ausland. Eine Anfrage oder ein Behandlungswunsch führt nicht automatisch zu einer Anmeldung für Marketingmitteilungen. Siehe /privacy-policy/ oder kontaktieren Sie info@kairali.com.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00ea1f1374a90d7bff7c",
+   "sourceHash": "00ea1f1374a90d7bff7cf8b0145852641c8fef2a5f30497d2ea65a6bc43a57cd",
+   "text": "Leistungen und Links Dritter",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74eb4a98275b38ac5a0d",
+   "sourceHash": "74eb4a98275b38ac5a0d14c9ad857a4f3ec0688988c93d71e1808acc0451b069",
+   "text": "Unsere Website oder andere Materialien können auf Leistungen, Links oder Ressourcen Dritter verweisen. Wir haben keinen Einfluss auf diese externen Stellen, befürworten sie nicht und sind nicht verantwortlich für Inhalte, Datenschutzpraktiken oder Leistungen Dritter.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

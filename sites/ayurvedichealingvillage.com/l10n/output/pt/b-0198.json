@@ -1,0 +1,220 @@
+{
+ "batchId": "b-0198",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_4366a893ff5683c7b438",
+   "sourceHash": "4366a893ff5683c7b4382850934d5d8df6e2c798624cda9d52cf89394e0e7211",
+   "text": "06:30 am às 07:30 am – Sessão de ioga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0811d4eba5a5b11e3695",
+   "sourceHash": "0811d4eba5a5b11e3695d765fa9d1971c4512244aa7050ecf5a2ff72ec0cd752",
+   "text": "08:00 am às 09:00 am – Pequeno-almoço",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_093da1d61935df334ac9",
+   "sourceHash": "093da1d61935df334ac93fc3b593d90ccc65f4fd28aebae418d940d0b308f6fc",
+   "text": "09:00 am às 01:00 pm – 1.º tratamento do dia, com duração de 1 hora",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a00d8c9f45bc1bd836b4",
+   "sourceHash": "a00d8c9f45bc1bd836b45c92bf81861a9d61bfc3b551899d88fde4988ce7742f",
+   "text": "01:00 pm às 02:30 pm – Almoço",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6488958b6196398ecf7",
+   "sourceHash": "d6488958b6196398ecf735c9898307dd46247aa748072ccfe3cbbff5a11a9b6b",
+   "text": "03:00 pm às 06:00 pm – 2.º tratamento do dia, com duração de 1 hora",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6126373920d6c4edf5dd",
+   "sourceHash": "6126373920d6c4edf5dd44c721f6b98c1cabd65c7b437633cde71105c704fe4d",
+   "text": "06:30 pm às 07:30 pm – Sessão de meditação",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2abd164c349cc158c72",
+   "sourceHash": "d2abd164c349cc158c721e22c2387787ac7372539283a166a5e1c1ea1dcc05f3",
+   "text": "07:30 pm às 09:00 pm – Jantar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b6f18eee0469b55a753",
+   "sourceHash": "7b6f18eee0469b55a753f350a62a5ff49084b0d6fd8f642c9e0d5cb321c33336",
+   "text": "24 de novembro",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9c8bd4282e23da20cef",
+   "sourceHash": "b9c8bd4282e23da20cefc9c9e9cf1c7884901f15c3a2d6d9437af5f335e754fa",
+   "text": "6:30am Ioga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b646d80b345d0cbceac",
+   "sourceHash": "2b646d80b345d0cbceac384126c8325d094e2c615eb75272170fd84697cde3fa",
+   "text": "8am Pequeno-almoço",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99e71f48c48f121baddd",
+   "sourceHash": "99e71f48c48f121baddd4def9d50fa3363580ae26c2d22dfe364c23f6da15240",
+   "text": "Checkout",
+   "status": "translated",
+   "unchangedReason": "'Checkout' is an established loanword in Portuguese for this page label.",
+   "issues": [
+    "Source context ambiguous (stay check-out vs. order checkout); loanword kept to cover both senses."
+   ]
+  },
+  {
+   "id": "t_36819b628331c0e96c5b",
+   "sourceHash": "36819b628331c0e96c5b043e7b884497ab9e5ad0db6682ef97f26900e15b7221",
+   "text": "Almoço e tratamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' omitted per clinical register lock (spa treatment → tratamento)."
+   ]
+  },
+  {
+   "id": "t_a632416079feba019841",
+   "sourceHash": "a632416079feba019841318ec77675d8aef80c27d16030151279457a9d65ac68",
+   "text": "4pm: check-out tardio disponível sem custo adicional; almoço e tratamentos adicionais por conta própria. Continuação da viagem para o próximo destino ou transfer de regresso ao aeroporto de Kochi",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' omitted (extra spa treatments → tratamentos adicionais) and 'journey' rendered as 'viagem para o próximo destino' per register lock.",
+    "t_a632416079feba019841 banned-term-from-source viagem"
+   ]
+  },
+  {
+   "id": "t_c3c93f102c5aa34c3847",
+   "sourceHash": "c3c93f102c5aa34c3847de53fc6091ee221e294f7ecdbc4f36b52913231fce65",
+   "text": "Notas históricas de viagem [[OPEN_1]]Rótulo derivado[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_c3c93f102c5aa34c3847 banned-term viagem"
+   ]
+  },
+  {
+   "id": "t_90920dc31ec722dcc31e",
+   "sourceHash": "90920dc31ec722dcc31e5ae46639769c230ea5c692941f96d4d8073af288d57b",
+   "text": "Estas notas de viagem foram preservadas do retiro de 2019 e não constituem orientações atuais sobre viagens ou vistos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_90920dc31ec722dcc31e banned-term viagem"
+   ]
+  },
+  {
+   "id": "t_604062d724a066664c88",
+   "sourceHash": "604062d724a066664c88c68c134a2d6e7a886e92d00540b03e5f4cfc4af26b54",
+   "text": "[[OPEN_1]]NOTA IMPORTANTE[[CLOSE_1]][[TAG_2]]Aeroporto mais próximo: Thiruvananthapuram; voos não incluídos[[TAG_3]]O aeroporto mais próximo é o Aeroporto Internacional de Cochin. Os voos não estão incluídos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains two contradictory 'closest airport' statements (Thiruvananthapuram vs. Cochin); translated faithfully, not resolved."
+   ]
+  },
+  {
+   "id": "t_5acb463dd636dc0c2a20",
+   "sourceHash": "5acb463dd636dc0c2a202d828a0560f7536a7048c6b78068c8a17044aec3f72e",
+   "text": "Notas do retiro",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_530ce732a05f1d373a19",
+   "sourceHash": "530ce732a05f1d373a191747f0cb3a3054b9f241528ce3579ccd3cf36b265295",
+   "text": "Vistos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de08ec4c6c962b659c0e",
+   "sourceHash": "de08ec4c6c962b659c0e19fc56ab0537561ee039806fda6db7e5c2c706091014",
+   "text": "A obtenção do visto é da responsabilidade de cada viajante e, atualmente, o E-Visa pode ser solicitado até 34 dias antes da chegada. Os requisitos de entrada podem mudar a qualquer momento, por isso consulte https://indianvisaonline.gov.in/visa/tvoa.html para obter informações atualizadas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c405fb442ba827e75af",
+   "sourceHash": "9c405fb442ba827e75af8f22e515e3d27ce5f7711cb004ed227d948e1e351332",
+   "text": "ÍNDIA:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_575da4eecda598ddeb5b",
+   "sourceHash": "575da4eecda598ddeb5b7eb562bdcfd990468d1ac27587c7043f4fa73613aa9c",
+   "text": "Está disponível um serviço de E-Tourist Visa (eVT) para titulares de passaportes de vários países. Este serviço permite aos viajantes fazer o pré-registo e pagar o visto antes de viajarem para a Índia. O visto é levantado à chegada num dos 16 aeroportos designados na Índia. Tenha em atenção as regras rigorosas indicadas no site abaixo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc71df2657503a9602e7",
+   "sourceHash": "bc71df2657503a9602e7c94816baccaf17439b3077f315da8b2495a29619cb9b",
+   "text": "O E-Tourist Visa (eVT) com emissão à chegada está disponível para determinadas nacionalidades, incluindo, entre outras, as seguintes",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce04cf02c3d28af9884c",
+   "sourceHash": "ce04cf02c3d28af9884c5262525fb1468a902efcda61beca1d2641b5b73beea7",
+   "text": "Passaportes da Austrália, do Canadá, da Nova Zelândia, da Alemanha, do Reino Unido e dos EUA.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec4c41f641d1a6b5fb39",
+   "sourceHash": "ec4c41f641d1a6b5fb39ef5147aaab4201bc36790d5a9da4e77ea62f3e5cb967",
+   "text": "Os titulares de passaportes destes países podem solicitar um E-Tourist Visa (eVT) para que o visto seja emitido à chegada em 16 grandes aeroportos da Índia, incluindo Chennai e Trivandrum.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e18c420a84eff85edfb4",
+   "sourceHash": "e18c420a84eff85edfb4a385f89a6c12c68400d131de2f990680c3a1d7e0917f",
+   "text": "Siga as instruções em – https://indianvisaonline.gov.in/visa/tvoa.html e preencha o pedido do seu E-Tourist Visa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

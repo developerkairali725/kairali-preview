@@ -1,0 +1,176 @@
+{
+ "batchId": "b-0199",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_650e7f84c17a9e276935",
+   "sourceHash": "650e7f84c17a9e276935d463993a1f0bff6155885d5f167a11a64c1d48948563",
+   "text": "– Tenha em atenção as condições rigorosas relativas ao pedido e à viagem (consulte a secção ELIGIBILITY).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'ELIGIBILITY' kept in English as it names a section of the English-language official visa website.",
+    "t_650e7f84c17a9e276935 banned-term viagem"
+   ]
+  },
+  {
+   "id": "t_7567f57542ae0dbaff89",
+   "sourceHash": "7567f57542ae0dbaff897779bfc98245d77e5b64fd7cbc2dae7d3a8b303dd792",
+   "text": "– Os e-vistos só estão disponíveis para estadias até 30 dias. Se planeia permanecer na Índia por mais tempo, terá de pedir um visto de turista num centro de pedidos de visto indiano no seu país de origem.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e5b66a9ffd4850074043",
+   "sourceHash": "e5b66a9ffd48500740435757687e7625c20a31e9e59ce2df0eaa7d183a1b71b0",
+   "text": "No seu pedido de visto, deve incluir as seguintes informações na secção de contacto local, perto do final do formulário:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb57c3f04f3ffdf04c54",
+   "sourceHash": "fb57c3f04f3ffdf04c5481eacb6e063a52df98439e303668d64d9673a6531b8f",
+   "text": "Fragrant Nature Retreat & Resorts Pvt Ltd.[[TAG_1]]CP II/709, Nedungolam P.O, Paravur –[[TAG_2]]Kollam, Kerala, India PIN:691334.",
+   "status": "translated",
+   "unchangedReason": "Company proper name and postal address kept verbatim for courier/visa-form use.",
+   "issues": [
+    "'Resorts' retained only because it is part of a registered company name."
+   ]
+  },
+  {
+   "id": "t_610b5fc54bfbe499b484",
+   "sourceHash": "610b5fc54bfbe499b4846aa0c5e347d33d80102a10878a7f1e657ffadbec1202",
+   "text": "Tenha em atenção que estas informações podem mudar a qualquer momento. Consulte sempre https://indianvisaonline.gov.in/visa/tvoa.html . Este é o site oficial de vistos online. Há relatos de outros sites não oficiais, aos quais os viajantes devem estar atentos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e6bbcd066f49b1849db3",
+   "sourceHash": "e6bbcd066f49b1849db39f42768a864a818b11cea10fbaedcb18c86633d77b88",
+   "text": "O formulário de pedido de visto poderá exigir que indique as datas de entrada e de saída do país. Sugerimos que indique como data de entrada alguns dias antes e como data de saída alguns dias depois das datas previstas, para o caso de surgirem atrasos ou problemas durante a viagem.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_e6bbcd066f49b1849db3 banned-term viagem"
+   ]
+  },
+  {
+   "id": "t_04afcf5c3c77f4c295fc",
+   "sourceHash": "04afcf5c3c77f4c295fcb56c17d59fe1c7fad1534eac939e3a9d1030dc03a364",
+   "text": "Se preferir que o seu visto seja tratado por uma agência, recomendamos a Vina Visas www.vinavisas.com",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_948b33404d9e81cff473",
+   "sourceHash": "948b33404d9e81cff473793998c487b100f52c9484a81ced139c4c5035faeef8",
+   "text": "Alojamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c44a563aa2eeb93569d7",
+   "sourceHash": "c44a563aa2eeb93569d7ae6031ce25d115e88055fd2182c271f01c7d82325a57",
+   "text": "2 noites[[TAG_1]]Old Lighthouse Bristow Hotel, Fort Kochi",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74790aad3eed40955e83",
+   "sourceHash": "74790aad3eed40955e83d6d656eccc2f40050841337120b20dbacef1dcf943ec",
+   "text": "8 noites[[TAG_1]]O Ayurvedic Healing Village, em Kerala, é o local do nosso retiro. Para saber mais, visite: https://www.ayurvedichealingvillage.com/",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e4eb18069d65aaa901ce",
+   "sourceHash": "e4eb18069d65aaa901cecb66371155f389643796428e9d54c5f5127c91ab3fdc",
+   "text": "Alimentação",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6f07f3ca62ee6bb03a40",
+   "sourceHash": "6f07f3ca62ee6bb03a40118b05fc492bb730cc3e68947ed650a0b1b412f8d67a",
+   "text": "Deliciosa cozinha de Kerala, preparada segundo os princípios tradicionais do Ayurveda, com produtos sem pesticidas da própria quinta do retiro.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06b59e2c60066e4c7a38",
+   "sourceHash": "06b59e2c60066e4c7a380b3a97e19409bbdd731396f97858aafc845465e1719a",
+   "text": "Como chegar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_590d94fea65832188255",
+   "sourceHash": "590d94fea65832188255072cb581a5faa317a54d33bedfb12f57676703ac773f",
+   "text": "O aeroporto mais próximo é o de Kochi. Voos não incluídos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c1c281344147040c2c3c",
+   "sourceHash": "c1c281344147040c2c3ce115193e82ea814a545ddd910f16712b59a1c90bdde0",
+   "text": "Se desejar viajar com a professora, a Emily viajará na Singapore Airlines[[TAG_1]]Partida de Brisbane na Quinta-feira, 14 de novembro, às 09:10, no voo SQ256 para Kochi (via Singapura)[[TAG_2]]Chegada ao Aeroporto Internacional de Cochin às 22:05",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d838ad0c4fac59c87bc0",
+   "sourceHash": "d838ad0c4fac59c87bc0d5268f65d1219943b311a5878bc238cd77bff7e7b762",
+   "text": "REGRESSO[[TAG_1]]Partida de Kochi no Domingo, 24 de novembro, às 22:55, no voo M1467 para Brisbane (via Singapura), com chegada às 16:55 de 25 de novembro.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typos 'at at' and 'the the' not reproduced."
+   ]
+  },
+  {
+   "id": "t_66e73bede43864f9e7ea",
+   "sourceHash": "66e73bede43864f9e7ea60c2806a51cd4b087826163ad7d6218ea5c220fc08a6",
+   "text": "A Emily é professora de ioga e mindfulness e coach certificada em saúde holística. Reconhecida como especialista na sua área, a Emily conquistou grande reconhecimento junto do público de www.fmtv.com, onde surge ao lado de outras referências do setor, como Deepak Chopra, Wayne Dyer e Dr Bruce Lipton, entre outros.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0ae4faeb9665719b524f",
+   "sourceHash": "0ae4faeb9665719b524fc0bd5f3baca4cae97b9ba24db3addfafaa487c8e5bd7",
+   "text": "Com uma década de experiência no ensino, a Emily é também uma eterna estudante de ioga a nível global, com formação em Hatha e Vinyasa flow. Combinou estes estilos de forma harmoniosa para criar a sua própria experiência de ioga, muito apreciada. Este estilo de ‘fusão’ é o equilíbrio perfeito entre luz e sombra: uma sequência leva-o a gerar calor e a desenvolver músculo magro, e a seguinte leva-o a um profundo relaxamento numa sequência restaurativa lenta e de abertura.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8f0e80c05d6f800ef0a6",
+   "sourceHash": "8f0e80c05d6f800ef0a6b86fae3e0237d6655067f89c6baf671ac08e00549422",
+   "text": "“Adoro observar o efeito profundo que o ioga tem nos meus alunos: dá-se uma transformação desde o momento em que sobem para o tapete até abrirem os olhos depois do Savasana. O ioga tem sido inestimável na minha vida como mãe de duas crianças pequenas e também no meu anterior emprego corporativo. Seja qual for a sua situação, o ioga pode ajudá-lo a navegar pela montanha-russa que é a vida. É um prazer partilhar este dom consigo.”",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_050f96d31fe0b8071fd2",
+   "sourceHash": "050f96d31fe0b8071fd20155cfd05eec2cf32e3c77191d6848d30d2a33112808",
+   "text": "Kairali Ayurvedic Products Pvt.ltd.",
+   "status": "translated",
+   "unchangedReason": "Registered company proper name.",
+   "issues": []
+  }
+ ]
+}
