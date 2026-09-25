@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 import type { CandidateRoute } from "./registry";
 import OG_IMAGES from "../../../english-candidate/og-images.json";
 import CANONICAL_SERVER from "../../../english-candidate/canonical-server-routes.json";
-import { LOCALE_INFO, TARGET_CODES, alternates, localeData, localizedPath, ORIGIN, type LocaleCode } from "./l10n";
+import { LOCALE_INFO, TARGET_CODES, alternates, canonicalUrl, localeData, localizedPath, type LocaleCode } from "./l10n";
 
 /**
  * Exception to "canonical is the design's to write" (header note): a 254-route
@@ -63,7 +63,7 @@ function localizedFields(route: CandidateRoute, locale: LocaleCode) {
   const m = route.metadata;
   if (locale === "en") return m;
   const d = localeData(locale)?.meta[route.path];
-  const canonical = ORIGIN + (localizedPath(route.path, locale) ?? route.path);
+  const canonical = canonicalUrl(route.path, locale);
   return {
     ...m,
     title: d?.title ?? m.title,

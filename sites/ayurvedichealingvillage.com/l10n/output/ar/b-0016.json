@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0016",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_9674da5dc1333ab8833a",
+   "sourceHash": "9674da5dc1333ab8833aa7755251f957dbf21d36d516a7a43ee7b77ff1521cd0",
+   "text": "برامج مطابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenated after a count; Arabic plural form used for all counts."
+   ]
+  },
+  {
+   "id": "t_2bc23b0eef52a990f68a",
+   "sourceHash": "2bc23b0eef52a990f68ab246be398d8730a4a0077ad373ebb8346b907157cdfb",
+   "text": "برامج قد تنطبق على",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_626b6d5b176f4922d478",
+   "sourceHash": "626b6d5b176f4922d4784a688f963a34a0d0837a8244f21d57ea8235a9989995",
+   "text": "برامج مطابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10c22bcf4c768b515be4",
+   "sourceHash": "10c22bcf4c768b515be4e94bcafc71bf3e8fb5f70b2584bcc8c7533217f2e7f9",
+   "text": "لـ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preposition in a concatenated string; verify rendering with the following term."
+   ]
+  },
+  {
+   "id": "t_5d79b54837c31a9ec076",
+   "sourceHash": "5d79b54837c31a9ec0767cf41d7300901db999ef61c2109daff3862ea324813f",
+   "text": "استكشف جميع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fcb5f40df9be6bae66c1",
+   "sourceHash": "fcb5f40df9be6bae66c1d77a6c15968866a9e6cbd7314ca432b019d17392f6f4",
+   "text": "W",
+   "status": "translated",
+   "unchangedReason": "Single-letter code used as a JS argument/enum value; not user-facing prose.",
+   "issues": []
+  },
+  {
+   "id": "t_816c8d28dc8adf760c07",
+   "sourceHash": "816c8d28dc8adf760c07ef25fe90c77c8ffb627bb42e38038af4c198ebba998a",
+   "text": "+ عامًا من الإرث",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d42ef1497900bc6e542c",
+   "sourceHash": "d42ef1497900bc6e542c641a896c88694d15069b8a11247f66ba7342b6c21cd9",
+   "text": "visible",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/state keyword (visibility value); translating could break behaviour.",
+   "issues": [
+    "Kept in English; translate only if confirmed as user-visible text."
+   ]
+  },
+  {
+   "id": "t_e564b4081d7a9ea4b00d",
+   "sourceHash": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c",
+   "text": "hidden",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/state keyword (visibility value); translating could break behaviour.",
+   "issues": [
+    "Kept in English; translate only if confirmed as user-visible text."
+   ]
+  },
+  {
+   "id": "t_c702bbe4904da4f269a0",
+   "sourceHash": "c702bbe4904da4f269a0a7991dc36f9ded63edc45be7a411591a02a309914f7c",
+   "text": "[[OPEN_1]]P[[CLOSE_1]] [[OPEN_2]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Only a single-letter glyph/initial inside markup; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_de20e849879a9d0e1fb0",
+   "sourceHash": "de20e849879a9d0e1fb0988aa862426fe9e8a7157eb3645488aaa01ab861a048",
+   "text": "[[OPEN_1]]اتصل[[CLOSE_1]] [[OPEN_2]]استفسر[[CLOSE_2]] [[OPEN_3]]استشارة مجانية[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_13cd408610e3bf74c755",
+   "sourceHash": "13cd408610e3bf74c755fa18d253f2e8cac88f5cd977ecd13488b271d9276114",
+   "text": "راسلنا عبر WhatsApp",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e1717a78ac3e532a5025",
+   "sourceHash": "e1717a78ac3e532a502594f9f497141e450d23ce589b1a717bd8d526ec3d4618",
+   "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]الأخبار والفعاليات السابقة[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]الخلوات السابقة[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]خلوة أناندا لاهاري لليوغا والأيورفيدا[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb7d19b639c6cc2facf3",
+   "sourceHash": "bb7d19b639c6cc2facf39960ac15db4f2eee6abf19f4d1470ded0f8ab37a3a45",
+   "text": "خلوة سابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb255ac3b0fafcbff36f",
+   "sourceHash": "bb255ac3b0fafcbff36f0e30b4ede413bf0dccf89fdf7c333cbaa0ebb4eb598b",
+   "text": "خلوة أناندا لاهاري لليوغا والأيورفيدا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Event name translated with 'Ananda Lahari' transliterated; keep consistent with other locales."
+   ]
+  },
+  {
+   "id": "t_683f7d0ddadea67b319e",
+   "sourceHash": "683f7d0ddadea67b319e472b0f6ee2c4210c5d74d9730ccf203da6842bf761b3",
+   "text": "هذه خلوة سابقة. الوصف أدناه محفوظ من صفحة الخلوة الأصلية. لا توجد مواعيد حالية أو حجوزات متاحة لهذه الخلوة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d281d3a7d544ad532d1d",
+   "sourceHash": "d281d3a7d544ad532d1d0f016b0890d0aa8e82b5764379980d7b5343c9b99d7f",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]الخلوات السابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce0825c01c6dd8910e57",
+   "sourceHash": "ce0825c01c6dd8910e573400ecc91f9d1033058c56554dc32cdf02db70b2cf3c",
+   "text": "الوصف الأرشيفي للخلوة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c4c1d5e16b977f8ef4b",
+   "sourceHash": "9c4c1d5e16b977f8ef4b3d180903af0584f726a1fd4c26e5bd083abb6f49e3f0",
+   "text": "استكشف البرامج الحالية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_acae5b482e0044fdd804",
+   "sourceHash": "acae5b482e0044fdd804c654a790160ef7ce1d4ab3ecf8fbf980808a623f4a46",
+   "text": "اقرأ قصة خلوة أناندا لاهاري لليوغا والأيورفيدا في كيرالي – قرية الشفاء الأيورفيدية، بما فيها برنامجها الأصلي لليوغا والأيورفيدا وجدولها اليومي.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand rendered with the approved term 'قرية الشفاء الأيورفيدية' for 'The Ayurvedic Healing Village'."
+   ]
+  },
+  {
+   "id": "t_b4d42b9c1e4b4113304e",
+   "sourceHash": "b4d42b9c1e4b4113304ebd761130df6996c2bc2e5d69a2d78a1f5cec856da825",
+   "text": "خلوة أناندا لاهاري لليوغا والأيورفيدا | خلوة سابقة | كيرالي",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5943698d0edcb07dbc06",
+   "sourceHash": "5943698d0edcb07dbc06b2e2867f83dc37ab958c3a2e14707bc6f62aa52ce824",
+   "text": "الأخبار والفعاليات السابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e02d78882579db962f4e",
+   "sourceHash": "e02d78882579db962f4e03b593b5f471c9e6eb44f04545b10540f6dd1be362f6",
+   "text": "الخلوات السابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48a06233aa9160e0f40f",
+   "sourceHash": "48a06233aa9160e0f40fedda5312f02aa7a85b45a3286441f28e5e774b0ae2bb",
+   "text": "خلوة أناندا لاهاري لليوغا والأيورفيدا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c129ec10196f8b59032a",
+   "sourceHash": "c129ec10196f8b59032ad8544cd2edd8fe8aeb262761345fea03552c2a8da905",
+   "text": "تنبيه: خلوة سابقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

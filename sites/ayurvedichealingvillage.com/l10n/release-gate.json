@@ -1,0 +1,110 @@
+{
+ "at": "2026-09-25T15:59:46.231Z",
+ "verdict": "FAIL",
+ "perLocale": {
+  "hi": {
+   "translated": 1030,
+   "missing": 13099,
+   "blocked": 0,
+   "stale": 0
+  },
+  "de": {
+   "translated": 1030,
+   "missing": 13099,
+   "blocked": 0,
+   "stale": 0
+  },
+  "fr": {
+   "translated": 980,
+   "missing": 13149,
+   "blocked": 0,
+   "stale": 0
+  },
+  "es": {
+   "translated": 1010,
+   "missing": 13119,
+   "blocked": 0,
+   "stale": 0
+  },
+  "it": {
+   "translated": 960,
+   "missing": 13169,
+   "blocked": 0,
+   "stale": 0
+  },
+  "pt": {
+   "translated": 935,
+   "missing": 13194,
+   "blocked": 0,
+   "stale": 0
+  },
+  "nl": {
+   "translated": 935,
+   "missing": 13194,
+   "blocked": 0,
+   "stale": 0
+  },
+  "ru": {
+   "translated": 928,
+   "missing": 13201,
+   "blocked": 0,
+   "stale": 0
+  },
+  "ar": {
+   "translated": 960,
+   "missing": 13169,
+   "blocked": 0,
+   "stale": 0
+  },
+  "zh-Hans": {
+   "translated": 985,
+   "missing": 13144,
+   "blocked": 0,
+   "stale": 0
+  },
+  "ja": {
+   "translated": 955,
+   "missing": 13174,
+   "blocked": 0,
+   "stale": 0
+  },
+  "ko": {
+   "translated": 903,
+   "missing": 13226,
+   "blocked": 0,
+   "stale": 0
+  }
+ },
+ "revalidate": {
+  "checked": 471,
+  "passed": 471,
+  "withdrawn": 0,
+  "reasons": {}
+ },
+ "failures": [
+  "hi: missing 13099, blocked 0, stale 0",
+  "de: missing 13099, blocked 0, stale 0",
+  "fr: missing 13149, blocked 0, stale 0",
+  "es: missing 13119, blocked 0, stale 0",
+  "it: missing 13169, blocked 0, stale 0",
+  "pt: missing 13194, blocked 0, stale 0",
+  "nl: missing 13194, blocked 0, stale 0",
+  "ru: missing 13201, blocked 0, stale 0",
+  "ar: missing 13169, blocked 0, stale 0",
+  "zh-Hans: missing 13144, blocked 0, stale 0",
+  "ja: missing 13174, blocked 0, stale 0",
+  "ko: missing 13226, blocked 0, stale 0",
+  "hi (hi): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "de (de): 236 SSR snapshot(s) missing, 0 not matching manifest",
+  "fr (fr): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "es (es): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "it (it): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "pt (pt): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "nl (nl): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "ru (ru): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "ar (ar): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "zh-Hans (zh): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "ja (ja): 239 SSR snapshot(s) missing, 0 not matching manifest",
+  "ko (ko): 239 SSR snapshot(s) missing, 0 not matching manifest"
+ ]
+}

@@ -44,10 +44,38 @@ export function localeSegments(loc: LocaleCode): string[][] {
   const prefix = "/" + LOCALE_INFO[loc].prefix + "/";
   return Object.values(TABLE).map((row) => row[loc]).filter(Boolean).map((p) => p.slice(prefix.length).split("/").filter(Boolean));
 }
+import MANIFEST from "../../../english-candidate/route-manifest.json";
+import { routeRobots } from "./robots-policy";
+type ManifestRoute = { path: string; sitemapExclude?: boolean; metadata?: { canonical?: string | null } };
+const MAN = new Map((MANIFEST as unknown as { routes: ManifestRoute[] }).routes.map((r) => [r.path, r]));
+/** The route an alias consolidates to (its approved canonical), or null when self-canonical. */
+export function aliasTarget(enPath: string): string | null {
+  const c = MAN.get(enPath)?.metadata?.canonical;
+  if (!c) return null;
+  const p = new URL(c).pathname;
+  return p !== enPath && TABLE[p] ? p : null;
+}
+/**
+ * hreflang eligibility: only self-canonical routes that are indexable under the
+ * PRODUCTION robots policy. Aliases (canonical → another route) and noindex
+ * utility routes never join an alternate cluster, in any language.
+ */
+export function clusterEligible(enPath: string): boolean {
+  const r = MAN.get(enPath);
+  if (!r || !TABLE[enPath]) return false;
+  if (aliasTarget(enPath)) return false;
+  return routeRobots({ path: enPath, sitemapExclude: r.sitemapExclude }, false).startsWith("index");
+}
+/** Canonical URL of a route in a locale: aliases keep their approved consolidation (to the localized target). */
+export function canonicalUrl(enPath: string, loc: LocaleCode): string {
+  const target = aliasTarget(enPath) ?? enPath;
+  return ORIGIN + (localizedPath(target, loc) ?? target);
+}
+
 /** hreflang cluster for a route: every locale that has this page, fully qualified. */
 export function alternates(enPath: string): Record<string, string> {
   const row = TABLE[enPath];
-  if (!row) return {};
+  if (!row || !clusterEligible(enPath)) return {};
   const out: Record<string, string> = {};
   for (const c of LOCALE_CODES) if (row[c]) out[LOCALE_INFO[c].htmlLang === "en-US" ? "en" : LOCALE_INFO[c].lang] = ORIGIN + row[c];
   out["x-default"] = ORIGIN + row.en;
