@@ -448,6 +448,8 @@ jobs:
 
       - name: Build (turbo)
         if: needs.changes.outputs.site_affecting == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: pnpm build
 
       - name: Install Playwright chromium
@@ -497,6 +499,8 @@ jobs:
 
       - name: Build (turbo)
         if: needs.changes.outputs.site_affecting == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: pnpm build
 
       - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)

@@ -225,3 +225,15 @@ test("chrome.tsx still documents that Priya is an AI assistant, not a physician"
   assert.match(chrome, /NOT a physician/i);
   assert.match(chrome, /ask a doctor/i);
 });
+
+// Owner-approved CV deletion channel: scoped exceptions must not turn into a fleet allowlist.
+test("AHV CV privacy notices permit career email while general contact copy still fails", () => {
+  const violation = (text, file) => scanText(text, {file, kind: "code"}).some(f => f.rule === "wrong-contact-email");
+  const base = "sites/ayurvedichealingvillage.com/";
+  assert.equal(violation("career@kairali.com", base + "english-candidate/prerender/privacy-policy.html"), false);
+  assert.equal(violation("career@kairali.com", base + "english-candidate/prerender/contact.html"), true);
+  const article = base + "public/ahv/assets/article-family-data.js";
+  assert.equal(violation("Request deletion at career@kairali.com; the target is 30 days, with any documented exception explained.", article), false);
+  assert.equal(violation("Contact career@kairali.com", article), true);
+  assert.equal(violation("career@kairali.com", "sites/example.com/privacy-policy.html"), true);
+});

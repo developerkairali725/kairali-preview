@@ -1,4 +1,5 @@
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { lintBrandText, lintBrandDir } from "../src/brand-lint.js";
 
@@ -59,12 +60,12 @@ test("outline:none without replacement = error; with box-shadow/--focus-ring = p
 });
 
 test("arogyakendra.com passes the brand lint today (fixture = the real site)", () => {
-  const findings = lintBrandDir(new URL("../../../sites/arogyakendra.com", import.meta.url).pathname);
+  const findings = lintBrandDir(fileURLToPath(new URL("../../../sites/arogyakendra.com", import.meta.url)));
   assert.deepEqual(errs(findings), [], JSON.stringify(errs(findings), null, 2));
 });
 
 test("brand 'none' sites are exempt with an info trail; missing config is an error", () => {
-  const none = lintBrandDir(new URL("../../../sites/kairali.ai", import.meta.url).pathname);
+  const none = lintBrandDir(fileURLToPath(new URL("../../../sites/kairali.ai", import.meta.url)));
   assert.equal(errs(none).length, 0);
   assert.equal(none[0].severity, "info");
   const missing = lintBrandDir("/nonexistent-dir-for-test");

@@ -406,12 +406,21 @@ export const RULES = [
       // the ruling that permits it elsewhere. A blanket allow would have retired
       // the rule for that address across the fleet.
       const CAREERS_SURFACE = /(?:job|career|recruit|apply|vacanc|enquiry-family)/i;
-      const careersScoped = CAREERS_SURFACE.test(ctx.path ?? ctx.file ?? "");
+      // Owner 25 Sep 2026: the AHV privacy notices also carry the CV deletion channel.
+      // Exact policy surfaces only: contact pages and unrelated fleet sites still fail.
+      const surface = (ctx.path ?? ctx.file ?? "").replace(/\\/g, "/");
+      const ahvCvPolicy = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/(?:public\/ahv\/assets\/policy-family-data\.js|english-candidate\/policy-review-20260925\.json|english-candidate\/prerender\/(?:privacy-policy|privacy-statement|new-privacy-policy)\.html)$/.test(surface);
+      const careersScoped = CAREERS_SURFACE.test(surface) || ahvCvPolicy;
 
       return reScan(ctx, ADDRESS, (m) => {
         const addr = m[0].toLowerCase();
         if (addr === CONTACT_EMAIL) return "";
-        if (addr === "career@kairali.com" && careersScoped) return "";
+        // The shared AHV article dataset includes the careers notice. Permit only
+        // its explicit deletion-request sentence, never a general contact address.
+        const articleCvDeletion = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/public\/ahv\/assets\/article-family-data\.js$/.test(surface)
+          && ctx.text.slice(Math.max(0, m.index - 20), m.index).endsWith("Request deletion at ")
+          && ctx.text.slice(m.index + m[0].length).startsWith("; the target is 30 days, with any documented exception explained.");
+        if (addr === "career@kairali.com" && (careersScoped || articleCvDeletion)) return "";
         if (addr === "career@kairali.com") {
           return `"${m[0]}" — permitted on careers/apply routes only (D-20260915-06); this file is not one. The public contact email everywhere else is ${CONTACT_EMAIL}.`;
         }

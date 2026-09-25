@@ -1,37 +1,66 @@
-[
-  {
-    "path": "AHV Template Long-Form Advertising Desktop.dc.html",
-    "bytes": 85145,
-    "sha256": "fa9beede7637341b43428d96831d8628bd7adb5d6c4da514cd13fce3a4613d9a"
+{
+  "version": 1,
+  "generated": "2026-09-25 17:16:03 IST",
+  "collected_at_utc": "2026-09-25T11:46:03Z",
+  "run_id": "2026-09-25-r1",
+  "producer": {
+    "session": "01a0d7a6-5a2b-77d1-8e57-789488c4716d",
+    "role": "builder"
   },
-  {
-    "path": "AHV Template Long-Form Advertising Mobile.dc.html",
-    "bytes": 83719,
-    "sha256": "72111c7a8abaa109a54d306a4a587749ea0ae56f7d621d75f635f3c912b21450"
-  },
-  {
-    "path": "notes/long-form-advertising-family-page.md",
-    "bytes": 14188,
-    "sha256": "8c22962d3f5ed0c69b644b77863e81b73ebf741892918ff401481a1ed560e672"
-  },
-  {
-    "path": "notes/long-form-advertising-claude-code-handover.md",
-    "bytes": 9328,
-    "sha256": "e84695bdde7911aa57a708158f6461e1851d137a395e1b8fc9887ded473d26de"
-  },
-  {
-    "path": "notes/register-violations.md",
-    "bytes": 3082,
-    "sha256": "091749b342ee77ecc1cfce4f8f593049a5851c9be459a0ba02c34fe0111682c6"
-  },
-  {
-    "path": "support.js",
-    "bytes": 69150,
-    "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
-  },
-  {
-    "totalFiles": 6,
-    "totalBytes": 264612,
-    "generated": "2026-09-22T08:19:54.844Z"
-  }
-]
+  "files": [
+    {
+      "path": "AHV Template Long-Form Advertising Desktop.dc.html",
+      "sha256": "fa9beede7637341b43428d96831d8628bd7adb5d6c4da514cd13fce3a4613d9a",
+      "bytes": 85145,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "AHV Template Long-Form Advertising Mobile.dc.html",
+      "sha256": "72111c7a8abaa109a54d306a4a587749ea0ae56f7d621d75f635f3c912b21450",
+      "bytes": 83719,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "EVIDENCE-WRAPPER-20260925.md",
+      "sha256": "f08f7fc86b4993dc56e52692041918c31c08f1c3097de6dfd1df5ca499d5ca3e",
+      "bytes": 295,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1fb4c251644b51f991f9356f2e8c276288ce87857cf895079e9778620434e9f2",
+      "bytes": 1264,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/long-form-advertising-claude-code-handover.md",
+      "sha256": "e84695bdde7911aa57a708158f6461e1851d137a395e1b8fc9887ded473d26de",
+      "bytes": 9328,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/long-form-advertising-family-page.md",
+      "sha256": "8c22962d3f5ed0c69b644b77863e81b73ebf741892918ff401481a1ed560e672",
+      "bytes": 14188,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/register-violations.md",
+      "sha256": "091749b342ee77ecc1cfce4f8f593049a5851c9be459a0ba02c34fe0111682c6",
+      "bytes": 3082,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "source-package-manifest.json",
+      "sha256": "1b615f7cec9fc927a2c61272e51ace36adef1de1266ada2a9f465c6c58b67421",
+      "bytes": 1086,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "support.js",
+      "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "bytes": 69150,
+      "run_id": "2026-09-25-r1"
+    }
+  ]
+}

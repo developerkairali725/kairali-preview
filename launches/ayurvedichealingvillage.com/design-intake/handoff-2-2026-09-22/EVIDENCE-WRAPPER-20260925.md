@@ -1,0 +1,1 @@
+The original design-package manifest is preserved byte-for-byte as source-package-manifest.json. The new manifest.json records current builder integrity verification, not historical collection or independent approval. Imported source files are unchanged. Task WOPS-AHV-FINAL-DRAFT-20260924-001.

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node tools/check-selected-gallery-assets.mjs && node tools/build-search-index.mjs --allow-expired && node tools/sync-finder-search-data.mjs && next build",
+    "build": "npm run assets:restore && node tools/check-selected-gallery-assets.mjs && node tools/build-search-index.mjs --allow-expired && node tools/sync-finder-search-data.mjs && next build",
     "start": "next start",
     "assets:restore": "node tools/restore-runtime-assets.mjs && node tools/restore-runtime-assets.mjs --gallery",
     "test": "node --test test/*.test.mjs",

@@ -14,7 +14,7 @@ for (let offset=0;offset<rows.length;offset+=25) test(`approved FAQ visible copy
    assert.equal(sections.length,1,row.route);
    const visible=[...sections[0][1].matchAll(/<summary[^>]*>(.*?)<\/summary><p[^>]*>(.*?)<\/p>/g)].map(m=>({q:decode(m[1]),a:decode(m[2])}));
    assert.deepEqual(visible,row.faqs,row.route);
-   const schemas=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>{try{return JSON.parse(m[1]);}catch{return {};}}).filter(s=>s['@type']==='FAQPage');
+   const schemas=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>{try{return JSON.parse(m[1]);}catch{return {};}}).flatMap(s=>Array.isArray(s)?s:(s['@graph']||[s])).filter(s=>s['@type']==='FAQPage'||(Array.isArray(s['@type'])&&s['@type'].includes('FAQPage')));
    assert.equal(schemas.length,1,row.route);
    assert.deepEqual(schemas[0].mainEntity.map(s=>({q:s.name,a:s.acceptedAnswer.text})),row.faqs,row.route);
    assert.ok(visible.some(f=>f.a.includes('four remote follow-up consultations')&&f.a.includes('dates are not fixed')),row.route);

@@ -11,3 +11,7 @@ test('historical content is not rolled forward', () => {
   const input='Tariff 2025–2026. Reviewed <span class="sc-interp">2026</span>. Founded 1908.';
   assert.equal(computedFooterYear(input, 2027), input);
 });
+
+test('bare footer copyright rolls forward without changing historical prose', () => {
+  assert.equal(computedFooterYear('<p>Since 1908. Tariff 2026.</p><footer>© 2026 Kairali</footer>', 2027), '<p>Since 1908. Tariff 2026.</p><footer>© <span class="sc-interp" data-dc-computed="yearNow">2027</span> Kairali</footer>');
+});
