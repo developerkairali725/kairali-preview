@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const spec=JSON.parse(fs.readFileSync(path.join(site,'english-candidate/runtime-assets-release.json'),'utf8'));
+const spec=JSON.parse(fs.readFileSync(path.join(site,process.argv.includes('--gallery') ? 'english-candidate/gallery-assets-release.json' : 'english-candidate/runtime-assets-release.json'),'utf8'));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 for(const f of spec.files){
  if(!f.file.startsWith('public/ahv/')||f.file.split('/').includes('..'))throw Error('Invalid asset path');
