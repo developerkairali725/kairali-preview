@@ -84,3 +84,17 @@ test('expired and future tariffs are not shown or sorted as current prices', () 
   assert.match(after.answerLine(p, 'INR', index.ui), /Request a quote/);
   assert.equal(after.query('cheapest 7 nights').programmes.length, 0);
 });
+
+test('everyday wording and compressed or misspelled names retain the intended programme', () => {
+  for (const [q, route] of [
+    ['weightloss', '/weight-loss-programme/'],
+    ['stomach trouble', '/digestive-wellness-gut-health-yoga-therapy/'],
+    ['panchakram', '/panchakarma-therapy/'],
+  ]) {
+    for (const scope of ['site', 'programmes']) {
+      const r = engine.query(q, { scope });
+      assert.equal(r.order[0], 'programmes', q);
+      assert.equal(r.programmes[0].route, route, q);
+    }
+  }
+});
