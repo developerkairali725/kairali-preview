@@ -35,6 +35,18 @@ Keep historical deployments protected/noindex. PR284/285 contain unmerged migrat
 
 No launch date is invented. No new employee assignment or email is created by this document.
 
-## End-of-day feedback freeze — 24 September
+## Historical feedback freeze — 24 September
 
-Use the same alias for Saturday feedback. [Consolidated owner questions and team inputs](../../docs/reports/2026-09-24-ahv-final-staging/OWNER-DECISIONS-AND-TEAM-INPUTS.md) is the current pending-input queue. Latest rates PDF and later batch translation remain explicit dependencies. Production is not switched.
+Use the same alias for Saturday feedback. [Consolidated owner questions and team inputs](../../docs/reports/2026-09-24-ahv-final-staging/OWNER-DECISIONS-AND-TEAM-INPUTS.md) is the historical pending-input queue; the 25 September update below supersedes its answered items. Latest rates PDF and later batch translation remain explicit dependencies. Production is not switched.
+
+## Consolidation update — 25 September
+
+All 31 programme pages now carry the completed staging FAQ set, including the 22 remaining programme-specific questions. Approved Sanskrit yoga names, teacher training Coming Soon, Maharaja suite amenities, consultation choices, patient preparation and report/CV notices are incorporated. No physician sign-off or working backend retention process is inferred from published copy.
+
+The owner has requested one main-branch handoff and permits the dependency work to be consolidated in whichever order is necessary. The reviewed fleet dependency commit `37f189baba375539f60d1098a1af0e29be15ef6c` is included in this branch, with a regenerated combined lockfile and residual dependency fixes. PR314's branch is not edited. A fresh whole-repository dependency audit reports zero advisories. Main is not considered updated until a verified merge commit is recorded.
+
+To preserve the owner's staging-only restriction, 13 existing Git-linked app roots carry `git.deploymentEnabled.main=false`. The KairaliHerbals project has no application root; its automatic Git deployments were separately disabled and read back through the project API. These holds preserve current production deployments. Restore them only during a separately authorized release. Preview branches and the manually deployed AHV staging site remain available.
+
+The review gate currently requires AbhilashKairali to approve a PR that was also created as AbhilashKairali; GitHub prohibits self-approval. A real authorized collaborator can create a replacement PR from the final consolidated branch, followed by the owner's review. The agent must not impersonate a collaborator, manufacture approval or use admin bypass.
+
+Current technical results and remaining integration checks are recorded in the linked CI findings. The web developer's actual form delivery and policy-process implementation, Claude's rates/Healing Secrets, Anupam's offer details, translations and production release remain their separate dependencies. The current staging artifact deliberately remains noindex with submissions isolated; a DNS change alone is not its production release procedure.
