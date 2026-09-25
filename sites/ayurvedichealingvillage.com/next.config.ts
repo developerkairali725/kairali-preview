@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -105,7 +106,7 @@ const nextConfig: NextConfig = {
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
-    })), ...adSitelinks.map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
+    })), ...[...adSitelinks, ...legacyEnglishRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 }))];
   },
   // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
   // English homepage now exists at "/" (app/(english)/page.tsx), which is the
