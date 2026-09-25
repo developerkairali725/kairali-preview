@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0161",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_53729e46c2619ba2172a",
+   "sourceHash": "53729e46c2619ba2172a03cec43a067e3e1968df0e133336457309a1bd6ef789",
+   "text": "Fasi del [[OPEN_1]]Trattamento[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b68eccbd3fb91ee986d",
+   "sourceHash": "2b68eccbd3fb91ee986d5e6125555624a625c2890836b655babd8ad9ec1845dd",
+   "text": "La Terapia di supporto per pazienti oncologici prevede un approccio completo volto a ottimizzare la salute e il benessere. Questo metodo olistico attinge alle antiche tradizioni ayurvediche e si concentra sulla prevenzione dei disturbi e sulla rigenerazione dell’organismo. Ecco una guida passo passo a questo processo di trasformazione:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8182ca8a5bbcf6b76968",
+   "sourceHash": "8182ca8a5bbcf6b76968a752cc334e7f6a0ea78e61e9ac5b2646d758e5b938de",
+   "text": "[[OPEN_1]]Perché[[CLOSE_1]] scegliere questa terapia?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3c0d50f28a1c39f3afd1",
+   "sourceHash": "3c0d50f28a1c39f3afd127944e8c9a94e6f887450c6b1880e93beeb4edfc13ae",
+   "text": "Pacchetto Terapia di supporto per pazienti oncologici",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_94dd22c5f7fd39f1f92e",
+   "sourceHash": "94dd22c5f7fd39f1f92e90480721f1e0f1e332ea838d41688a405b7039d852dd",
+   "text": "Un percorso Panchakarma trasformativo presso Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Journey' substituted with 'percorso'."
+   ]
+  },
+  {
+   "id": "t_9b3790d5a12db1d9143e",
+   "sourceHash": "9b3790d5a12db1d9143e7b0333b2de2db8a4c2dc0437aca76d2542393afdc50a",
+   "text": "La mia esperienza di Panchakarma presso Kairali è stata a dir poco straordinaria. Ho percepito una profonda purificazione, sia fisica sia mentale. Le terapie disintossicanti, gli oli tiepidi e le erbe medicinali mi hanno dato un nuovo livello di energia e lucidità. Sono ripartito più leggero, ristorato e completamente rigenerato. È stato davvero un percorso di trasformazione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'journey' substituted with 'percorso'. Testimonial attributed to two people; masculine singular agreement used — please confirm."
+   ]
+  },
+  {
+   "id": "t_df95c6cabde75504771f",
+   "sourceHash": "df95c6cabde75504771feb0a471e0bfa6b72979694f6876f38989fedf4875624",
+   "text": "[[OPEN_1]]Sig. Steven e Sig.ra Liz[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5c51370e656f95a6eb03",
+   "sourceHash": "5c51370e656f95a6eb03b868cd52c33a43740393de8620be2f63823fec2fb48d",
+   "text": "Posso partecipare durante la chemioterapia, la radioterapia o altri trattamenti oncologici?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9eadc93d42484ffcdc12",
+   "sourceHash": "9eadc93d42484ffcdc12f0a755f7519f6d0f5e571ee47131d8417d0cf4047a2d",
+   "text": "Discuta qualsiasi trattamento complementare proposto con il Suo team oncologico prima di apportare modifiche o di mettersi in viaggio. Chieda a entrambi i team se un soggiorno sia appropriato nell’attuale fase del Suo trattamento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_9eadc93d42484ffcdc12 banned-term viaggio"
+   ]
+  },
+  {
+   "id": "t_823614e6af36a03a8a7f",
+   "sourceHash": "823614e6af36a03a8a7f6f3f41c66f7b7158ab1de48ce0a3e12feb25e217648f",
+   "text": "Terapia di supporto per pazienti oncologici Karkaroga Sahayam Chikitsa (Trattamento Kairali di rivitalizzazione e rafforzamento per pazienti oncologici)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source lacks a space between 'Patients' and 'Karkaroga'; a space was inserted. 'Treatment for Cancer' rendered as 'per pazienti oncologici' to avoid implying treatment of cancer itself."
+   ]
+  },
+  {
+   "id": "t_b5443886cc25e7224c6b",
+   "sourceHash": "b5443886cc25e7224c6bea3062b53dc0eca048c25af75d4963457b0ae1cc6ce4",
+   "text": "Programma ayurvedico di supporto oncologico | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Shortened for ≤60 chars; 'Cancer Recovery & Strengthening' rendered as 'supporto oncologico' to avoid a recovery/efficacy claim. Clinical content — needs Dr. Deepu John sign-off."
+   ]
+  },
+  {
+   "id": "t_b7da947aa9f5fe037eba",
+   "sourceHash": "b7da947aa9f5fe037eba45593c9383b38a7cd64b2dd2816596eb048ba91ab6fb",
+   "text": "Terapista Kairali che assiste una paziente distesa, con impacchi sugli occhi, durante una terapia Shirodhara con versamento di olio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'guest' substituted with 'paziente'."
+   ]
+  },
+  {
+   "id": "t_f283acfaf1fa03103077",
+   "sourceHash": "f283acfaf1fa03103077d0b0eb0e4cb23cab33a0cf9100d428b2d8ce1ce02459",
+   "text": "Statua di Ganesha all’ingresso di Kairali, circondata da piante medicinali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1280831bcef781b42ef9",
+   "sourceHash": "1280831bcef781b42ef97e765dee1e0ebdc626fb44ff8de0321385018d3b8481",
+   "text": "Due terapiste Kairali massaggiano la schiena di una paziente distesa durante una terapia con olio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f061dff56c0f0da155de",
+   "sourceHash": "f061dff56c0f0da155deef7b494c6f3c4e9f4c69a752f83fe6176f69f23afcab",
+   "text": "Vista dall’alto di un thali vegetariano sattvico con riso, curry e insalata presso Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08a3cebed86f3cbae9b5",
+   "sourceHash": "08a3cebed86f3cbae9b5f47dfbce0266a00c2959d0b145e224c1992d65b69815",
+   "text": "Sperimenti un rinnovamento grazie a terapie specifiche. Il Panchakarma, un processo completo di disintossicazione, aiuta a eliminare le tossine dall’organismo. I massaggi ayurvedici, come Abhyanga e Shirodhara, favoriscono il rilassamento e stimolano la capacità di guarigione dell’organismo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cba7401df814b642cde5",
+   "sourceHash": "cba7401df814b642cde5c4bf6e9de29b9e89a332244479cf4e4ebf32e663f685",
+   "text": "Pazienti in fase di recupero dopo la chemioterapia",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_701cd9bd150cdb901df8",
+   "sourceHash": "701cd9bd150cdb901df891124452cd151276e69e9fc6c5c2a1856f0df75a0e0b",
+   "text": "Pazienti sottoposti a chemioterapia per un tumore",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4c7a9b7de8ca1aecdbf4",
+   "sourceHash": "4c7a9b7de8ca1aecdbf4e6593b5d59c7b21251877dc7b224a36f6a7e5abc5531",
+   "text": "[[OPEN_1]]Home[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Tutti i Programmi[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Programmi di formazione[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3db7e1b3b6398381af59",
+   "sourceHash": "3db7e1b3b6398381af590b2f98f5afec4f3c8e0afda9e158682d723320db97e1",
+   "text": "Scopra la formazione in Ayurveda presso Kairali: corsi, durata dei workshop e approccio didattico. Poi ci contatti per parlare dei Suoi progetti.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5c4ebaf4a2ab54d10cc",
+   "sourceHash": "a5c4ebaf4a2ab54d10cce8114cc2441a30da5dc8c34e07628f11437279826344",
+   "text": "Programmi di formazione in Ayurveda in Kerala | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ae32b00c8111a01fa10d",
+   "sourceHash": "ae32b00c8111a01fa10ded9b2b7b7e2b1cf66f86e0c59c029e6e86a26dc9f297",
+   "text": "[[OPEN_1]]Home[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Tutti i Programmi[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Programmi di trattamento[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_283ac1b59629c4fd9090",
+   "sourceHash": "283ac1b59629c4fd909073ca9c656dc561848f7be085964a442714cb0ebab452",
+   "text": "Programmi di trattamento ayurvedico",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d8c4890737fd76312e3f",
+   "sourceHash": "d8c4890737fd76312e3f98a208fe2f62476dce8c7a4426213b7271452138614d",
+   "text": "Scopra i programmi di trattamento ayurvedico di Kairali in Kerala. Legga i dettagli dei programmi e parli con un medico ayurvedico delle opzioni che sta valutando.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6281ead786e3b8abe343",
+   "sourceHash": "6281ead786e3b8abe343b36dde6905e0c8cf6241f8fdcab50171dbe647cf617e",
+   "text": "I programmi di trattamento ayurvedico di Kairali in Kerala: consulti i dettagli e fissi una prima consulenza online gratuita con un medico ayurvedico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

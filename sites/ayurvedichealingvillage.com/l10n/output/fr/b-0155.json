@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0155",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_337405e8258c57681bf7",
+   "sourceHash": "337405e8258c57681bf7f5fce09cedd9094d6aff1bc1e07559cec24b3035e22a",
+   "text": "Personnes recherchant un médecin ayurvédique expérimenté, ayant fait ses preuves dans le soin de la hernie discale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e8196b1633506f593d4",
+   "sourceHash": "5e8196b1633506f593d4c7139883318c6105eba1118d1d5bae996aaeb154c108",
+   "text": "Déroulement du [[OPEN_1]]soin de restauration des disques vertébraux et des nerfs[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de2166f839f968e25c82",
+   "sourceHash": "de2166f839f968e25c821d237b846e0915d85a1113965bf06ca0635cc21d7351",
+   "text": "Dans notre établissement, nous suivons un processus complet pour traiter la hernie discale, associant thérapies ayurvédiques et prise en charge personnalisée :",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 'notre établissement' (resort-type term avoided)."
+   ]
+  },
+  {
+   "id": "t_95e2aa389674ddd982f8",
+   "sourceHash": "95e2aa389674ddd982f8e4ed1a9410723c8c0eca949a44f4834d257f7f8c754a",
+   "text": "[[OPEN_1]]Pourquoi[[CLOSE_1]] choisir notre soin de la hernie discale",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7872f386f1867382e361",
+   "sourceHash": "7872f386f1867382e36160a9e9a4b7de91039c689211ee1d27c6570ddad5b20d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Bénéficiez de plus de [[VAR_1]] ans de savoir-faire spécialisé et de l’expérience reconnue de notre médecin ayurvédique, qui a pris en charge plus de 30,000+ patients atteints de hernie discale.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Number '30,000+' kept verbatim per rules (French typography would be '30 000'); 'plus de' duplicates '+' — consider rendering. Patient-count claim is a source fact; may merit verification."
+   ]
+  },
+  {
+   "id": "t_b2efdac1506a9d3898ca",
+   "sourceHash": "b2efdac1506a9d3898cade0ff6c8e59730fc4bc04a140cebb95f1f8ee0a287f6",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Découvrez une approche holistique qui cible la cause profonde de la hernie discale et rétablit l’équilibre du corps grâce aux thérapies ayurvédiques, aux médicaments à base de plantes et à des ajustements du mode de vie.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82d0b4b332f2120cca99",
+   "sourceHash": "82d0b4b332f2120cca993e4de76a95729426bc8a38b07a0b65eb812b5985078e",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Bénéficiez d’une prise en charge individualisée avec un plan de soins sur mesure, conçu pour une guérison efficace et précise adaptée à vos besoins particuliers.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source wording 'ensuring effective and precise healing' softened slightly to 'conçu pour' to avoid a guarantee; may merit clinical review."
+   ]
+  },
+  {
+   "id": "t_5a2f0c8a1a8005b1a735",
+   "sourceHash": "5a2f0c8a1a8005b1a735911b68e49991052eaa41f0ff0e791688993364f365c1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Profitez d’un environnement bienveillant, doté d’installations modernes, de thérapeutes ayurvédiques qualifiés et de méthodes de soin naturelles. Notre approche vise un soulagement durable, la prévention et un bien-être global, pour transformer votre parcours de rétablissement après une hernie discale.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'parcours' (path); 'ensures long-term relief' rendered as 'vise' to avoid a guarantee."
+   ]
+  },
+  {
+   "id": "t_80cdccd1efc758c12d7c",
+   "sourceHash": "80cdccd1efc758c12d7c4089776100bd8396d30326f760dcd7a0a88b8a259b53",
+   "text": "[[OPEN_1]]Bienfaits[[CLOSE_1]] du soin de restauration des disques vertébraux et des nerfs",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d07d2edce6626513b31f",
+   "sourceHash": "d07d2edce6626513b31f5edd61719df3770f843869ac412e5913ffe0b6d7cb1a",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Bénéficiez d’un soulagement naturel et efficace de la douleur, qui réduit le besoin d’antalgiques, grâce aux thérapies ayurvédiques et aux médicaments à base de plantes.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c65ba2ecca94d615881e",
+   "sourceHash": "c65ba2ecca94d615881e03871db6b2ab3c6403dbdf272e41cdc9097562d979b1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Améliorez votre souplesse, retrouvez votre mobilité et renforcez votre colonne vertébrale, en soutenant les disques concernés et en prévenant d’autres problèmes.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d00aa923d55495a337e",
+   "sourceHash": "7d00aa923d55495a337e78122229cbeb9de226190c5376703f61f47a76709bd3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Bénéficiez d’une prise en charge personnalisée et holistique, avec des plans de soins adaptés à votre état, favorisant la guérison et le bien-être général.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e142a37ddcf63c33c06",
+   "sourceHash": "9e142a37ddcf63c33c06606578ae1ab44c46b2db23da185e4b85f706c6abca9d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Corrigez les déséquilibres, prévenez les récidives de hernie discale et améliorez votre bien-être grâce à des conseils d’hygiène de vie, dans un environnement propice à la guérison, centré sur votre parcours.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'parcours' (path)."
+   ]
+  },
+  {
+   "id": "t_6145541a269ef64e173c",
+   "sourceHash": "6145541a269ef64e173cda0ef867d9ea4ca663ab80f773d2ce8eb517a4317d7b",
+   "text": "Soin de restauration des disques vertébraux et des nerfs",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e9e49e4e590477d3724",
+   "sourceHash": "6e9e49e4e590477d3724935f1e213f463e885ef3102e31e2a9e9d772c1b8ff1a",
+   "text": "Guérir naturellement : témoignages de patients sur le soin de la hernie discale à KTAHV",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guest Experiences' rendered as 'témoignages de patients' (banned term 'guests')."
+   ]
+  },
+  {
+   "id": "t_1c492cc643bae99843bb",
+   "sourceHash": "1c492cc643bae99843bb66ff92447cb891ef3f2bbb05f82aefd2f7dc23475a7a",
+   "text": "Je suis venue chercher un soulagement à Kairali après des mois de lutte contre une hernie discale. Les soins ayurvédiques, en particulier les massages ciblés et les remèdes à base de plantes, ont eu un effet important. J’avais beaucoup moins mal et j’ai pu retrouver la souplesse que je craignais d’avoir perdue pour toujours. En quittant Kairali, je me sentais plus forte, plus légère et pleine d’espoir.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Feminine agreement used because the testimonial is attributed to Mrs. Ashu."
+   ]
+  },
+  {
+   "id": "t_bd00ea44f4f65373b1bf",
+   "sourceHash": "bd00ea44f4f65373b1bf17fb0f7674b9c171437ce1dbb8ba8545a7476a0ccdc3",
+   "text": "[[OPEN_1]]Mme Ashu[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rating '5.0' kept verbatim per number rule."
+   ]
+  },
+  {
+   "id": "t_373cf53a47f197470c0a",
+   "sourceHash": "373cf53a47f197470c0ac03a451976c2a4aa65c46c85240797bab7303c1d9c70",
+   "text": "Puis-je participer si j’ai une hernie discale ou des symptômes nerveux ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3d45459919fab527547",
+   "sourceHash": "e3d45459919fab527547187bbe83cf5d793268ad1a6b72d1d2b7f6eb8ff5d141",
+   "text": "Communiquez votre diagnostic, vos comptes rendus d’imagerie s’ils sont disponibles et tout avis de spécialiste. Demandez si le programme proposé convient à votre état ; ne retardez pas l’évaluation de symptômes neurologiques nouveaux ou qui s’aggravent.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5369d183ad1b227f1fc4",
+   "sourceHash": "5369d183ad1b227f1fc47bbdaf7909c96224426ef6c07bc4c12954534b67b921",
+   "text": "Soin de restauration des disques vertébraux et des nerfs – Snayu Bala Chikitsa (le soin de Kairali pour la hernie discale)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates two headings without a separator; ' – ' added."
+   ]
+  },
+  {
+   "id": "t_cbc8d6b61c30d838235f",
+   "sourceHash": "cbc8d6b61c30d838235f89ce00e78d3c1b3ce1352cf3455f45b3e026dc87c82c",
+   "text": "Soin ayurvédique de la hernie discale et des nerfs – Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' omitted (resort-type term) and to fit the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_c15bb08a04984d23ea3a",
+   "sourceHash": "c15bb08a04984d23ea3a824d712189851871c28ccf26d00ad18a1c6521a0f97a",
+   "text": "Thérapeute façonnant un anneau de pâte aux plantes sur le bas du dos d’un patient pour un Kati Vasti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e7d5922b71bd4555ef1",
+   "sourceHash": "6e7d5922b71bd4555ef195cdfe170b4d042e031aa7a6fd25fdd89588cc91c190",
+   "text": "Thérapeute tenant un récipient en laiton rempli d’huile tiède au-dessus du puits de pâte d’un Kati Vasti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1579040223fe321c2b46",
+   "sourceHash": "1579040223fe321c2b461b9d9beb447f5d4da082d2653e455a994424a1a1510d",
+   "text": "Thérapie ayurvédique pour la hernie discale",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82fcca779275d2c99194",
+   "sourceHash": "82fcca779275d2c99194bd841129c40147c315c5b70447da3819faafe89b699a",
+   "text": "Bienfaits du soin ayurvédique de la hernie discale",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
