@@ -192,3 +192,11 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
     box-sizing: border-box;
   }
 }
+
+/* Consultation lotus is a divider below the banner, with balanced breathing room. */
+[data-variant="consultation"] > img[data-source-decoration="lotus"] {margin:32px auto 0!important}
+[data-variant="consultation"] > img[data-source-decoration="lotus"] + section {padding-top:32px!important}
+@media(max-width:767px){
+  [data-variant="consultation"] > img[data-source-decoration="lotus"] {margin-top:24px!important}
+  [data-variant="consultation"] > img[data-source-decoration="lotus"] + section {padding-top:24px!important}
+}
