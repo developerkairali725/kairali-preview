@@ -36,7 +36,10 @@ function validate(res, input) {
     if (u.status === "blocked") { if (!u.issue) errs.push(`${id} blocked without issue`); continue; }
     const t = u.text;
     if (typeof t !== "string" || !t.trim()) { errs.push(`${id} empty`); continue; }
-    if (/\bTODO\b|```|^\[(?!\[)|\bLorem ipsum\b/.test(t)) errs.push(`${id} placeholder-like text`);
+    const PH = /\bTODO\b|```|^\[(?!\[)|\bLorem ipsum\b/;
+    const chips = (x) => x.replace(/\[TO CONFIRM[^\]]*\]/g, "");
+    if (PH.test(chips(t)) && !PH.test(w.src)) errs.push(`${id} placeholder-like text`);
+    if ((t.match(/\[TO CONFIRM/g) || []).length !== (w.src.match(/\[TO CONFIRM/g) || []).length) errs.push(`${id} [TO CONFIRM] chip count changed`);
     if (tokens(t).join() !== tokens(w.src).join()) errs.push(`${id} tokens ${tokens(w.src).join("")} != ${tokens(t).join("")}`);
     for (const m of t.matchAll(/\[\[OPEN_(\d+)\]\]/g)) if (t.indexOf(`[[CLOSE_${m[1]}]]`) >= 0 && t.indexOf(`[[CLOSE_${m[1]}]]`) < m.index) errs.push(`${id} CLOSE_${m[1]} before OPEN`);
     const ds = digits(w.src), dt = digits(t);

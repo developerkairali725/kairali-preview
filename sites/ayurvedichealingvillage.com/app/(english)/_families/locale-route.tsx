@@ -48,10 +48,10 @@ export async function localeMetadata(locale: LocaleCode, params: Promise<{ slug?
   return routeMetadata(route, locale);
 }
 
-export async function LocalePage({ locale, params }: { locale: LocaleCode; params: Promise<{ slug?: string[] }> }) {
+export async function LocalePage({ locale, params, searchParams }: { locale: LocaleCode; params: Promise<{ slug?: string[] }>; searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const { slug } = await params;
   const route = resolve(locale, slug);
   if (!route) notFound();
-  if (isNativeRoute(route.path)) return <NativeLocalePage route={route} locale={locale} />;
+  if (isNativeRoute(route.path)) return <NativeLocalePage route={route} locale={locale} searchParams={route.path === "/search/" ? searchParams : undefined} />;
   return <DesignView route={route} locale={locale} />;
 }

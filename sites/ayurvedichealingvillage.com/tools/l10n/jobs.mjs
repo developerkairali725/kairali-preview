@@ -56,5 +56,5 @@ while (jobs.length < count && progressed) {
   }
 }
 fs.mkdirSync(WORK, { recursive: true });
-fs.writeFileSync(path.join(WORK, "inflight.json"), JSON.stringify([...inflight, ...jobs.map((j) => j.locale + "/" + j.batchId)]));
+if (!process.argv.includes("--prepare-only")) fs.writeFileSync(path.join(WORK, "inflight.json"), JSON.stringify([...inflight, ...jobs.map((j) => j.locale + "/" + j.batchId)]));
 process.stdout.write(JSON.stringify(jobs.map(({ locale, batchId }) => [locale, batchId])));

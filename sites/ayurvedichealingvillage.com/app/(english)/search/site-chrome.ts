@@ -1,7 +1,9 @@
 import { newsletterFooters } from "../_families/newsletter-markup.mjs";
 import { computedFooterYear } from "../_families/computed-footer-year";
 import { youtubeNewTabs } from "../_families/youtube-links";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
+import { gunzipSync } from "node:zlib";
+import { LOCALE_CODES, localizedPath, type LocaleCode } from "../_families/l10n";
 import { join } from "node:path";
 
 /**
@@ -31,7 +33,7 @@ const SNAPSHOT = "english-candidate/prerender/about-us.html";
 const BREAK = 700;
 
 type Chrome = { header: string; footer: string; css: string; script: string };
-let cached: Chrome | null = null;
+const cache = new Map<string, Chrome>();
 
 const VOID = new Set(["br", "img", "hr", "meta", "link", "input", "source", "path", "circle", "rect", "line", "polyline", "polygon", "use", "wbr"]);
 function elementEnd(t: string, at: number): number {
@@ -69,17 +71,41 @@ function nextElement(t: string, afterHtml: string): string | null {
 const show = (html: string, cls: string, display: string) =>
   html.replace(/^(<[a-z]+)([^>]*?)style="display: none;\s*/, `$1 class="${cls}"$2style="display: ${display}; `).replace(/^(<[a-z]+)(?![^>]*class=")/, `$1 class="${cls}"`);
 
-export function siteChrome(): Chrome {
-  if (cached) return cached;
+/**
+ * Locale lane (25 Sep 2026): the chrome comes from that locale's own about-us
+ * snapshot (l10n/prerender/<locale>/about-us.html.gz), so labels are the
+ * localized ones; selectors are structural because aria-labels are translated;
+ * the snapshot's language switcher is re-pointed at THIS page's equivalents.
+ */
+export function siteChrome(locale: LocaleCode = "en", enPath?: string): Chrome {
+  const base = chromeFor(locale);
+  if (!enPath) return base;
+  const relink = (html: string) => html.replace(/<a href="[^"]*"([^>]*data-ahv-lang-option="([^"]+)")/g, (m, rest, code) => {
+    const href = LOCALE_CODES.includes(code as LocaleCode) ? localizedPath(enPath, code as LocaleCode) : null;
+    return href ? `<a href="${href}"${rest}` : m;
+  });
+  return { ...base, header: relink(base.header), footer: relink(base.footer) };
+}
+function chromeFor(locale: LocaleCode): Chrome {
+  const hit = cache.get(locale);
+  if (hit) return hit;
+  let cached: Chrome | null = null;
   let t = "";
-  try { t = newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8")))); } catch { t = ""; }
+  try {
+    if (locale === "en") t = newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))));
+    else {
+      const gz = join(process.cwd(), "l10n", "prerender", locale, "about-us.html.gz");
+      t = existsSync(gz) ? computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8"))) : "";
+    }
+  } catch { t = ""; }
   const deskHeader = block(t, "header", 0), narrowHeader = block(t, "header", 1);
   const panel = narrowHeader ? nextElement(t, narrowHeader) : null;
   const deskFooter = block(t, "footer", 0), narrowFooter = block(t, "footer", 1);
-  const ok = deskHeader && narrowHeader && panel && deskFooter && narrowFooter && /aria-label="Primary"/.test(deskHeader) && /aria-label="Menu"/.test(narrowHeader) && /aria-label="Close menu"/.test(panel);
+  const ok = deskHeader && narrowHeader && panel && deskFooter && narrowFooter && /<nav\b/.test(deskHeader) && /aria-expanded=/.test(narrowHeader) && /<button\b/.test(panel);
   if (!ok) {
     console.error(`[search/site-chrome] snapshot ${SNAPSHOT} lacks a chrome block — plain strip used (header:${!!deskHeader}/${!!narrowHeader} panel:${!!panel} footer:${!!deskFooter}/${!!narrowFooter})`);
     cached = { header: `<header class="ahv-sc-plain"><a href="/"><img src="/ahv/assets/img/kairali-colorful-logo.webp" alt="Kairali — The Ayurvedic Healing Village" width="290" height="68" style="height:40px;width:auto;display:block"></a></header>`, footer: "", css: ".ahv-sc-plain{display:flex;align-items:center;min-height:72px;padding:0 3%;border-bottom:1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))}", script: "" };
+    cache.set(locale, cached);
     return cached;
   }
   const header =
@@ -90,7 +116,11 @@ export function siteChrome(): Chrome {
   // Ship the shared header rule with SSR chrome, including the mobile menu.
   // Keep article/breadcrumb link underlines and keyboard focus styling intact.
   const css = `header.ahv-sc-desk a,header.ahv-sc-narrow-h a,[data-ahv-sc-panel] a{text-decoration:none}@media (min-width:${BREAK}px){.ahv-sc-narrow{display:none!important}}@media (max-width:${BREAK - 0.02}px){.ahv-sc-desk{display:none!important}}`;
-  const script = `(function(){var p=document.querySelector('[data-ahv-sc-panel]');if(!p)return;var b=document.querySelector('.ahv-sc-narrow-h [aria-label="Menu"]');var c=p.querySelector('[aria-label="Close menu"]');function set(o){p.style.display=o?'flex':'none';if(b)b.setAttribute('aria-expanded',o?'true':'false');}if(b)b.addEventListener('click',function(){set(p.style.display==='none');});if(c)c.addEventListener('click',function(){set(false);});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();`;
+  // Structural selectors (labels are translated in the locale lane): the burger
+  // is the narrow header's aria-expanded button, close is the panel's first button.
+  // The snapshot's language switcher is static markup, so it is wired here too.
+  const script = `(function(){var p=document.querySelector('[data-ahv-sc-panel]');var b=document.querySelector('.ahv-sc-narrow-h button[aria-expanded]:not(.ahv-lang-btn)');var c=p?p.querySelector('button:not(.ahv-lang-btn)'):null;function set(o){if(!p)return;p.style.display=o?'flex':'none';if(b)b.setAttribute('aria-expanded',o?'true':'false');}if(b)b.addEventListener('click',function(){set(p.style.display==='none');});if(c)c.addEventListener('click',function(){set(false);});document.querySelectorAll('.ahv-lang').forEach(function(w){var bt=w.querySelector('.ahv-lang-btn'),l=w.querySelector('.ahv-lang-list');if(!bt||!l)return;function sh(o,f){l.hidden=!o;bt.setAttribute('aria-expanded',o?'true':'false');if(o){var a=l.querySelector('a[aria-current]')||l.querySelector('a');if(a)a.focus();}else if(f)bt.focus();}bt.addEventListener('click',function(e){e.stopPropagation();sh(l.hidden);});w.addEventListener('keydown',function(e){if(e.key==='Escape'&&!l.hidden){e.preventDefault();sh(false,true);}});document.addEventListener('click',function(e){if(!w.contains(e.target))sh(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();`;
   cached = { header, footer, css, script };
+  cache.set(locale, cached);
   return cached;
 }

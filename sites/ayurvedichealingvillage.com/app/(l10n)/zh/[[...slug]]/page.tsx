@@ -8,6 +8,6 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }) {
   return localeMetadata("zh-Hans", params);
 }
-export default function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
-  return <LocalePage locale="zh-Hans" params={params} />;
+export default function Page({ params, searchParams }: { params: Promise<{ slug?: string[] }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  return <LocalePage locale="zh-Hans" params={params} searchParams={searchParams} />;
 }

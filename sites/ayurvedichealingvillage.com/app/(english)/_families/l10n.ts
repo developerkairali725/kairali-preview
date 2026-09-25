@@ -96,3 +96,8 @@ export function translate(loc: LocaleCode, english: string): string {
   const id = "t_" + crypto.createHash("sha256").update(norm, "utf8").digest("hex").slice(0, 20);
   return catalogs.get(loc)![id] ?? english;
 }
+
+/** The reviewed route table (English path → locale paths). */
+export function routeTable(): Record<string, RouteRow> {
+  return TABLE;
+}

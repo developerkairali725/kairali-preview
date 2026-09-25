@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0607",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_aa038fd1013e6ec08069",
+   "sourceHash": "aa038fd1013e6ec080691e259f17906457f348fadd3a0d23efadecde53b65d06",
+   "text": "या Priya के साथ अपनी WhatsApp बातचीत में।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81dd646fdca44c9f30f1",
+   "sourceHash": "81dd646fdca44c9f30f1c023b03be034d0c338e0e40f58b768b30cc7b51a63e4",
+   "text": "क्या मैं सार्वजनिक समीक्षा पोस्ट किए बिना प्रबंधन से संपर्क कर सकता/सकती हूँ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9afac8057eec876d358e",
+   "sourceHash": "9afac8057eec876d358ed875b03fce259d81ad659a4957e12be3ff6e4d84254e",
+   "text": "हाँ। प्रबंधन को ईमेल करें या सीधे Priya को संदेश भेजें। आप स्वतंत्र रूप से सार्वजनिक समीक्षा भी दे सकते हैं; दोनों विकल्प एक-दूसरे पर निर्भर नहीं हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93ea8b0694923954f525",
+   "sourceHash": "93ea8b0694923954f52503a6ba651d88303133b2742fb9c57e8194b12307f496",
+   "text": "क्या बुकिंग संबंधी पूछताछ के लिए यह सही जगह है?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3fa99211a7bce0d7ae3",
+   "sourceHash": "d3fa99211a7bce0d7ae3cded6e87acdc908a0ef5db7c7540166827f042a44f84",
+   "text": "उपलब्धता, कार्यक्रम संबंधी पूछताछ या अपने प्रवास की योजना बनाने में सहायता के लिए, कृपया",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: followed by the link text 'contact our patient care team' and then '. Use this page…'."
+   ]
+  },
+  {
+   "id": "t_be6fba060d1b54d9e88c",
+   "sourceHash": "be6fba060d1b54d9e88ced0659b068cd37b49183d78cf433ce15c96f4cd49925",
+   "text": "हमारी रोगी देखभाल टीम से संपर्क करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Link-text fragment that continues the preceding 'please…' sentence."
+   ]
+  },
+  {
+   "id": "t_be6b316ba3cf047c3043",
+   "sourceHash": "be6b316ba3cf047c30431aa67a3b55b5d9616229cb8a915b59b1986a0af0ff3d",
+   "text": "। Kairali के साथ अपने अनुभव के बारे में फ़ीडबैक साझा करने के लिए इस पेज का उपयोग करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2c5e9da918bf6b64edc",
+   "sourceHash": "d2c5e9da918bf6b64edc90decf0917cbcb78cbc5590b75f79ac4400a92ac8757",
+   "text": "अपने प्रवास के दौरान सहायता चाहिए?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6ff5c8a3cf26f250ff8a",
+   "sourceHash": "6ff5c8a3cf26f250ff8a85464b53deb231cd231a7218cf67b7632fa0cfdab432",
+   "text": "आपके प्रवास के दौरान जिस भी बात पर ध्यान देने की आवश्यकता हो, कृपया रिसेप्शन पर टीम से बात करें। आप इस नंबर पर कॉल भी कर सकते हैं:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: ends before a phone number/link; phrased with a trailing colon so the number can follow in Hindi word order."
+   ]
+  },
+  {
+   "id": "t_dfe36467102a316b3e0a",
+   "sourceHash": "dfe36467102a316b3e0a39cf43179f315f04ed649429d4e91d3c1a70db7bd62a",
+   "text": "अपना फ़ीडबैक लिखें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0059798b7f7023e4d9e5",
+   "sourceHash": "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c",
+   "text": "(वैकल्पिक)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ac5192e52a7f07bcead8",
+   "sourceHash": "ac5192e52a7f07bcead850a16cabf8ce31fd38f25703543bdc255b0584db6d2a",
+   "text": "प्रवास की तिथियाँ या बुकिंग संदर्भ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7e31835e805c2c27945",
+   "sourceHash": "a7e31835e805c2c2794534565f1d1f38bc690cb0f83d60d715e22f569564e8dc",
+   "text": "उदाहरण के लिए, सितंबर 2026",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_27f80a2ee942ecf6f1e5",
+   "sourceHash": "27f80a2ee942ecf6f1e59de1da6eb483244159d66df8cfd6ccc360655e8c5aba",
+   "text": "आप क्या साझा करना चाहेंगे?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cdb1c0a5f34f5f4f8a93",
+   "sourceHash": "cdb1c0a5f34f5f4f8a932d633d1ad05cd19bd613df88d8fde14f752300cb37be",
+   "text": "आपका फ़ीडबैक",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89db19f651b1828501f3",
+   "sourceHash": "89db19f651b1828501f3d1631171b1d6b13a77a402ab26b8dabb6e9992dd3b59",
+   "text": "(आवश्यक)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ba638905e65225f0c476",
+   "sourceHash": "ba638905e65225f0c4764ce6cb667950f0ead3c0e0c5b9a6270f7fc43ec9a764",
+   "text": "आप हमें क्या बताना चाहेंगे? अपने अनुभव के बारे में बताएँ और यह भी कि आप चाहते हैं कि हम आपकी कैसे सहायता करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_260e977ae523282c8f0b",
+   "sourceHash": "260e977ae523282c8f0b2e047b0fb9567d9c8069b70c137babbe536b83ae2252",
+   "text": "/1,500 अक्षर · केवल आपका फ़ीडबैक आवश्यक है। जिन विवरणों पर आप चाहते हैं कि हम आगे कार्रवाई करें, उन्हें जोड़ें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: preceded by a live character count."
+   ]
+  },
+  {
+   "id": "t_a5e09a9e4194e66dc19c",
+   "sourceHash": "a5e09a9e4194e66dc19ca1b6f58b3422b0bd3187297aacd5315b4a0fa0797a60",
+   "text": "प्रबंधन को ईमेल खोलें ↗",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eba5d9d34237682c077b",
+   "sourceHash": "eba5d9d34237682c077bff7a0ac5c999c86672d21f81be317c5e7f175fa3bf5d",
+   "text": "Priya के लिए WhatsApp खोलें ↗",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_457efe538b254dfb9578",
+   "sourceHash": "457efe538b254dfb95785ca0ef7a9c5f7ae3e1bfbe715e469de3d9dfcb7ad87e",
+   "text": "संदेश कॉपी करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92f683d795e29769c385",
+   "sourceHash": "92f683d795e29769c385a88a1627c0a8f8b1be582ce4e55c03e70d0660f86ce8",
+   "text": "भेजने का समय आप तय करते हैं। यह पेज आपका ड्राफ़्ट तैयार करता है; उसे आपका ईमेल ऐप या WhatsApp भेजता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_403853aec866e87f47ca",
+   "sourceHash": "403853aec866e87f47cad230982ddb615893023ef96701211e5535da40ee2710",
+   "text": "कॉपी करने के लिए आपका संदेश",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9556207201ced6c5eb04",
+   "sourceHash": "9556207201ced6c5eb0423fc349825b347747fc8dea19041416e316d31944efa",
+   "text": "कृपया अपना संदेश सीधे लिखने के लिए ऊपर दिए गए ईमेल या WhatsApp लिंक का उपयोग करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c325c435770b3542ae7b",
+   "sourceHash": "c325c435770b3542ae7b39d55863f78498c69d4719d0370ebee7b9a160ebecb2",
+   "text": "मैं अपना अनुभव साझा करना चाहता/चाहती हूँ और प्रबंधन टीम से उत्तर पाना चाहता/चाहती हूँ। मेरे प्रवास की तिथियाँ / बुकिंग संदर्भ: मैं आपको क्या बताना चाहता/चाहती हूँ: आप कैसे सहायता कर सकते हैं:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Message template with label prompts; kept label order and trailing colons so the code can place content after each label."
+   ]
+  }
+ ]
+}

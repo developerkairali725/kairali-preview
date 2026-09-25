@@ -81,15 +81,15 @@ const babel = (() => {
   throw new Error("@babel/parser not found");
 })();
 export const NATIVE_TSX = [
-  "app/(english)/sightseeing/page.tsx",
-  "app/(english)/video-gallery/page.tsx",
-  "app/(english)/read-feedback/page.tsx",
+  "app/(english)/sightseeing/view.tsx",
+  "app/(english)/video-gallery/view.tsx",
+  "app/(english)/read-feedback/view.tsx",
   "app/(english)/read-feedback/ReviewsClient.tsx",
   "app/(english)/read-feedback/ReviewsShell.tsx",
-  "app/(english)/givefeedback/page.tsx",
+  "app/(english)/givefeedback/view.tsx",
   "app/(english)/givefeedback/FeedbackComposer.tsx",
   "app/(english)/givefeedback/feedback-links.ts",
-  "app/(english)/search/page.tsx",
+  "app/(english)/search/view.tsx",
 ];
 const JSX_TEXT_ATTRS = /^(alt|aria-label|title|placeholder|label|aria-description)$/;
 const DISPLAY_KEYS = /^(label|title|heading|text|body|description|desc|cta|question|answer|lede|intro|note|caption|name|hint|summary|kicker|eyebrow|button|action|message|empty|subtitle|help)$/;
@@ -99,6 +99,11 @@ export function tsxUnits(code) {
   const out = [];
   const walk = (node, parent, key) => {
     if (!node || typeof node.type !== "string") return;
+    if (node.type === "CallExpression" && node.callee.type === "Identifier" && node.callee.name === "T" && node.arguments[0]?.type === "StringLiteral") {
+      const s = norm(node.arguments[0].value);
+      if (meaningful(s)) out.push({ source: s, kind: "tsx-T", start: node.arguments[0].start, end: node.arguments[0].end });
+      return;
+    }
     if (node.type === "JSXText") {
       const s = norm(node.value);
       if (meaningful(s)) out.push({ source: s, kind: "jsx-text", start: node.start, end: node.end });

@@ -1526,44 +1526,44 @@
    "status": "covered (key whitelist)"
   },
   {
-   "file": "app/(english)/sightseeing/page.tsx",
-   "sha256": "a1fb6d925534cb4e38a0e894b9cee9404fed8a73e15e23958fd6082764c85503",
-   "units": 40,
+   "file": "app/(english)/sightseeing/view.tsx",
+   "sha256": "2e59be9e24aa04dd5d6bfb4eed84d2da5767d16d9ae3fd2cb428630d3f69d20e",
+   "units": 41,
    "status": "covered (native page)"
   },
   {
-   "file": "app/(english)/video-gallery/page.tsx",
-   "sha256": "1b2f26a3d28bd9aed71fe0040e2bb1a504c67548967fbb655a79dacb78dc7c2e",
+   "file": "app/(english)/video-gallery/view.tsx",
+   "sha256": "42a92e5af8d60d9178f27e067b732bed987d62d5b7468ef48b2ba33fbdf9003f",
    "units": 32,
    "status": "covered (native page)"
   },
   {
-   "file": "app/(english)/read-feedback/page.tsx",
-   "sha256": "c22abaf1a7f26eb343b5c208b6f5b7523f923dfdcb01d868a44b8f343ba13902",
+   "file": "app/(english)/read-feedback/view.tsx",
+   "sha256": "e6c7108684a0b60373ca58d4b2ac4a6f2de87a77e2ebf47633896968b366b9d0",
    "units": 44,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/read-feedback/ReviewsClient.tsx",
-   "sha256": "c368200b344bec720089b2a4f41d36af1611ac51b9ff81092abc5505d0e5c547",
+   "sha256": "273961d8e258fe3abfa84c9e823dac4859d91068e868fd745219ffa30d1d5fec",
    "units": 40,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/read-feedback/ReviewsShell.tsx",
-   "sha256": "0a1f8c70b40cf6b66054fbbc3f234a8ce49e8b2071e67daaf7466c5012b4bef9",
+   "sha256": "aecfc6ea8dd0b98a3863c85a3625b65a5aa78a414181db2e63321423d3d06baa",
    "units": 0,
    "status": "covered (native page)"
   },
   {
-   "file": "app/(english)/givefeedback/page.tsx",
-   "sha256": "904ed19af2180d972b0d0348b87ad9cf9a5cdaff9034789f31ee9f00eb6b3113",
+   "file": "app/(english)/givefeedback/view.tsx",
+   "sha256": "d0b0c04847836701f6aece7a3b31c7931d7e8fcbfad7f3ec354eef88d8c5d7d6",
    "units": 62,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/givefeedback/FeedbackComposer.tsx",
-   "sha256": "fc884c33822b4a86e7dcbfc35fbe6e3f5e5b4f300180b796c616786128287b27",
+   "sha256": "0d13da02249897bf232b53b26aa93b642090a7ddeeb2882cf2f761ebe61ee227",
    "units": 17,
    "status": "covered (native page)"
   },
@@ -1574,8 +1574,8 @@
    "status": "covered (native page)"
   },
   {
-   "file": "app/(english)/search/page.tsx",
-   "sha256": "9fe5c6bbf7486ff5e223f1023f9d0c6631c91763d83007b981945af51a6b6f7b",
+   "file": "app/(english)/search/view.tsx",
+   "sha256": "bd21c44e2d3fde5ba25a57b1a4f3a3e826dfb392d168ea24ddb5ad50a48af55d",
    "units": 2,
    "status": "covered (native page)"
   }

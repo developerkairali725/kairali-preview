@@ -1,31 +1,7 @@
-import '@kairali/ui/brand-tokens.css';
-import type {Metadata} from 'next';
-import {siteChrome} from '../search/site-chrome';
-import {CONSENT_RUNTIME} from '../_families/consent-runtime';
-import {findRoute} from '../_families/registry';
-import {routeSchema} from '../_families/schema';
-import analyticsConfig from '../../../analytics.config.json';
-import {GuestStories,GoogleReviews,TripadvisorReviews} from './ReviewsClient';
-import {VIDEOS,GOOGLE_URL,TRIPADVISOR_URL} from './review-data';
-import './reviews.css';
-import {ReviewsShell} from './ReviewsShell';
-export const metadata:Metadata={title:'Guest Reviews & Stories | Kairali – The Ayurvedic Healing Village',description:'Hear from guests from India and around the world. Watch their stories, read translated testimonials and explore Google and Tripadvisor reviews.',alternates:{canonical:'https://ayurvedichealingvillage.com/read-feedback/'}};
-export default function Page(){
- const chrome=siteChrome();const route=findRoute(['read-feedback']);
- const measurement=process.env[analyticsConfig.activation.env]===analyticsConfig.activation.enabledWhen?{ga4:analyticsConfig.measurement.ga4.id,clarity:analyticsConfig.measurement.clarity.id,metaPixel:analyticsConfig.measurement.metaPixel.id}:undefined;
- const consentScript=`(function(){var cfg=${JSON.stringify({breakpoint:700,measurement})};var host=document.getElementById("ahv-design-root");${CONSENT_RUNTIME}\nensureConsentNotice();if(consentChoice()==="accepted")startMeasurement();window.addEventListener("resize",function(){var notice=document.getElementById("ahv-consent");if(notice)notice.remove();ensureConsentNotice();});})();`;
- const featured=VIDEOS[0];
- return <ReviewsShell consentScript={consentScript} headerScript={chrome.script||''}>
- <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/>
- {route&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(routeSchema(route)).replace(/</g,'\\u003c')}}/>}
- <a href="#main-content" className="rv-skip">Skip to guest reviews</a><div data-sc-name="AHV Chrome Header" dangerouslySetInnerHTML={{__html:chrome.header}}/>
- <main id="main-content" className="rv-main"><section className="rv-intro"><nav aria-label="Breadcrumb" className="rv-breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Guest reviews</span></nav><p className="rv-eyebrow">Guest voices · Palakkad, Kerala</p><h1>A place to pause.<br/><em>Stories to remember.</em></h1><p className="rv-lead">The people who have stayed here tell the story best. Meet our guests, hear their experiences and explore independent reviews before you plan your own stay.</p><div className="rv-intro-links"><a href="#guest-stories">Read guest stories ↓</a><a href="#independent-reviews">Google & Tripadvisor ↓</a></div></section>
- <div className="rv-body"><section className="rv-featured" aria-label="Featured guest experiences"><a className="rv-film" href={featured.href} target="_blank" rel="noopener noreferrer"><div className="rv-film-image"><img src={featured.image} alt="Michaela and Jan sharing their experience at Kairali" width="960" height="540"/><span className="rv-film-tag">Featured guest film</span><span className="rv-play" aria-hidden="true">▶</span></div><h2>{featured.title}</h2><p className="rv-film-caption"><span>{featured.name}</span><span>Watch their story ↗</span></p></a><aside className="rv-feature-quote"><span className="rv-quote-mark" aria-hidden="true">“</span><blockquote>All staff are so warm and polite.</blockquote><p>Namrata Goyal<br/><span>Google review · September 2024</span></p><a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer">Explore guest reviews ↗</a></aside></section>
- <nav className="rv-jump" aria-label="On this page"><a href="#guest-stories">Guest stories</a><a href="#guest-films">Watch the films</a><a href="#independent-reviews">Google & Tripadvisor</a><a href="#share-experience">Share your experience</a></nav>
- <GuestStories/>
- <section id="guest-films" className="rv-section"><div className="rv-section-head"><div><p className="rv-eyebrow">In their own words</p><h2>Hear it from our guests</h2></div><p>A glimpse of life at the village through the people who have stayed with us. Each film opens on YouTube in a new tab.</p></div><div className="rv-films">{VIDEOS.slice(1).map(v=><a className="rv-film" key={v.href} href={v.href} target="_blank" rel="noopener noreferrer"><div className="rv-film-image"><img src={v.image} alt={`${v.name} in their original Kairali guest film`} width="640" height="360" loading="lazy"/><span className="rv-play" aria-hidden="true">▶</span></div><h3>{v.name}</h3><p>{v.title}</p><p className="rv-small">{v.caption}</p><span className="rv-text-link">Watch guest film ↗</span></a>)}</div><a className="rv-text-link" href="/video-gallery/">Explore our video gallery →</a></section>
- <section id="independent-reviews" className="rv-section"><div className="rv-section-head"><div><p className="rv-eyebrow">Make up your own mind</p><h2>Read independent reviews</h2></div><p>Explore the full range of guest feedback, traveller photographs and recent experiences directly on Google Maps and Tripadvisor.</p></div><div className="rv-platform-grid"><GoogleReviews/><TripadvisorReviews/></div></section>
- <section id="share-experience" className="rv-share"><div><p className="rv-eyebrow">Your experience matters</p><h2>Have you stayed with us?</h2><p>Tell us what you enjoyed and what we could do better. We welcome every honest experience.</p></div><div className="rv-share-links"><a href="/givefeedback/" className="rv-button">Share feedback with Kairali</a><a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer">Review us on Google Maps ↗</a><a href={TRIPADVISOR_URL} target="_blank" rel="noopener noreferrer">Review us on Tripadvisor ↗</a></div></section>
- <section className="rv-care"><p className="rv-eyebrow">Planning your own stay?</p><h2>Let’s talk about what you need</h2><p>Our patient care team can help with your questions, accommodation and the next step towards an Ayurvedic doctor’s consultation.</p><div><a href="/online-consultation/" className="rv-button">Free doctor consultation</a><a href="https://wa.me/919289838797" className="rv-button rv-button-outline" target="_blank" rel="noopener noreferrer">WhatsApp patient care ↗</a></div></section>
- </div></main><div dangerouslySetInnerHTML={{__html:chrome.footer}}/></ReviewsShell>;
+import { PageView } from "./view";
+export { metadata } from "./view";
+
+/** English route; the localized view is shared with the locale lane (app/(english)/_families/native-pages.tsx). */
+export default function Page() {
+  return <PageView />;
 }

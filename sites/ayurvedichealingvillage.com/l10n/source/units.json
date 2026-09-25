@@ -1218,10 +1218,10 @@
     "attr:aria-label",
     "html-text",
     "js:display",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/search/page.tsx",
+    "app/(english)/search/view.tsx",
     "public/ahv/assets/utility7-family-data.js",
     "public/ahv/assets/utility7-family-render.js",
     "public/ahv/components/AHV Chrome Header.dc.html",
@@ -1741,15 +1741,15 @@
    "roles": [
     "js:display",
     "jsonld:name",
-    "jsx-text",
     "runtime:js:display",
+    "tsx-T",
     "ui"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx",
-    "app/(english)/read-feedback/page.tsx",
-    "app/(english)/sightseeing/page.tsx",
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/givefeedback/view.tsx",
+    "app/(english)/read-feedback/view.tsx",
+    "app/(english)/sightseeing/view.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "l10n/source/ui-strings.json",
     "public/ahv/assets/about-us-data.js"
    ],
@@ -1784,13 +1784,13 @@
    "sourceHash": "2bd873d6c734e63ea80e163a6a643f75bf87a3d24e3164987d176a2e3e5c567e",
    "roles": [
     "attr:aria-label",
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx",
-    "app/(english)/read-feedback/page.tsx",
-    "app/(english)/sightseeing/page.tsx",
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/givefeedback/view.tsx",
+    "app/(english)/read-feedback/view.tsx",
+    "app/(english)/sightseeing/view.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "public/ahv/views/ahv-page-about-us-desktop.json",
     "public/ahv/views/ahv-page-about-us-mobile.json"
    ],
@@ -2271,12 +2271,12 @@
    "roles": [
     "attr:aria-label",
     "html-text",
-    "jsx-attr",
-    "runtime:js:display"
+    "runtime:js:display",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx",
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/read-feedback/view.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "public/ahv/views/ahv-page-accreditations-desktop.json",
     "public/ahv/views/ahv-page-accreditations-mobile.json",
     "public/ahv/views/ahv-page-attractions-desktop.json",
@@ -8857,14 +8857,14 @@
     "json:label",
     "json:title",
     "jsonld:name",
-    "jsx-text",
     "meta",
     "rail:js:display",
     "seo.ogTitle",
-    "seo.title"
+    "seo.title",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "english-candidate/route-manifest.json",
     "english-candidate/site-tree.json",
     "public/ahv/assets/classic-villa-data.js",
@@ -27738,7 +27738,7 @@
    "roles": [
     "html-text",
     "js:display",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx",
@@ -48530,7 +48530,7 @@
    "roles": [
     "attr:alt",
     "html-text",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx",
@@ -55665,12 +55665,11 @@
     "html-text",
     "json:label",
     "json:title",
-    "jsx-text",
     "rail:js:display",
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "english-candidate/site-tree.json",
     "public/ahv/search-index.json",
     "public/ahv/views/ahv-page-sitemap-desktop.json",
@@ -56160,11 +56159,11 @@
    "roles": [
     "html-text",
     "json:title",
-    "jsx-text",
-    "rail:js:display"
+    "rail:js:display",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "english-candidate/site-tree.json",
     "public/ahv/views/ahv-page-sitemap-desktop.json",
     "public/ahv/views/ahv-page-sitemap-mobile.json",
@@ -56181,11 +56180,11 @@
    "roles": [
     "html-text",
     "json:title",
-    "jsx-text",
-    "rail:js:display"
+    "rail:js:display",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "english-candidate/site-tree.json",
     "public/ahv/views/ahv-page-sitemap-desktop.json",
     "public/ahv/views/ahv-page-sitemap-mobile.json",
@@ -59240,12 +59239,12 @@
     "js:display",
     "json:label",
     "json:title",
-    "jsx-text",
     "rail:js:display",
-    "seo.ogTitle"
+    "seo.ogTitle",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "english-candidate/route-manifest.json",
     "english-candidate/site-tree.json",
     "public/ahv/assets/collection-family-data.js",
@@ -59932,11 +59931,11 @@
    "roles": [
     "attr:data-title",
     "json:title",
-    "jsx-text",
-    "rail:js:display"
+    "rail:js:display",
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "english-candidate/site-tree.json",
     "public/ahv/views/ahv-page-sitemap-desktop.json",
     "public/ahv/views/ahv-page-sitemap-mobile.json",
@@ -83655,10 +83654,10 @@
    "sourceHash": "c682ac1a8b55d5bd318b26a42d38e7508185926373e646b39aaf29c5b7e164c6",
    "roles": [
     "html-text",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "public/ahv/views/home-hi-fi-v4.json",
     "public/ahv/views/home-mobile.json"
    ],
@@ -92141,10 +92140,10 @@
    "sourceHash": "5f4c0fbe412abf3801e3472c672a3c14d75ec9f5ad08660e9417b58e05c4e6fb",
    "roles": [
     "js:display",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "public/ahv/assets/article-family-data.js",
     "public/ahv/assets/collection-family-data.js",
     "public/ahv/assets/reader25a-family-data.js",
@@ -197468,7 +197467,7 @@
    "sourceHash": "2923740fe800e25051a3e72f4b740f831509971c4ff88247af6516c1594effcb",
    "roles": [
     "js:display",
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx",
@@ -198632,7 +198631,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx",
+    "app/(english)/video-gallery/view.tsx",
     "english-candidate/route-manifest.json",
     "public/ahv/assets/travel-family-data.js"
    ],
@@ -209270,7 +209269,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "english-candidate/route-manifest.json"
    ],
    "fileCount": 2,
@@ -209287,7 +209286,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx",
+    "app/(english)/sightseeing/view.tsx",
     "english-candidate/route-manifest.json"
    ],
    "fileCount": 2,
@@ -209302,7 +209301,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209316,7 +209315,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209330,7 +209329,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209344,7 +209343,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209358,7 +209357,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209372,7 +209371,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209383,10 +209382,10 @@
    "source": "Skip to sightseeing guide",
    "sourceHash": "0afe1a00f23d90b9dd104b0716e926a9dd63b21bd39cda5a5a6b3bd18fc1e9c5",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209397,10 +209396,10 @@
    "source": "Around Palakkad & beyond",
    "sourceHash": "6083305291cb48b5bc149b422aaad15d258b8aa1d40c6aa44b4271ad64d4479e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209411,10 +209410,10 @@
    "source": "Discover the temples, riverside landscapes and forested hills around us. Choose from 22 places to visit, with approximate road distances from The Ayurvedic Healing Village to help you plan.",
    "sourceHash": "4b504c9e85ffa4c45ce2b84a015cd4c0cef7bcc36f0d3b6af732349209330701",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209425,10 +209424,10 @@
    "source": "Planning an outing during your stay? Speak to reception about transport and fitting it around your appointments.",
    "sourceHash": "6a71f6245786b01b208e9d653e2de01128cb5f5c2757e2709fcbea5f2e854513",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209439,10 +209438,10 @@
    "source": "/ Explore",
    "sourceHash": "29b6725edbd31dd9a4b9f1ba3e2ef234e0cc9d85eca7bcdd64930f3de48b58ef",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209453,10 +209452,10 @@
    "source": "Approx.",
    "sourceHash": "f56061681216936168c376f8d39a54d4ba93c3b98ddc19cd5f91b0e0e28a28d0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209467,10 +209466,10 @@
    "source": "km",
    "sourceHash": "1f34503f65b4a355a94ee54da8e34541007cc66ec548c61b8dafbea21a1a0787",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209481,10 +209480,10 @@
    "source": "by road from Kairali",
    "sourceHash": "34c7fccac0b09ba8591ae7dc2e714905ee7a162eb222db052f8d0c2003a082c6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209495,10 +209494,10 @@
    "source": "Distance to:",
    "sourceHash": "d00003f1ce9f0c1d87082459d16b6631a502c0ef864fbac97d4ee73177ae56c4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209509,13 +209508,13 @@
    "source": "Open directions ↗",
    "sourceHash": "d43fd6a9ef44719db0aee66fd663095ed5da11877cfeb142b3b655eab1b26a8f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
-   "occurrences": 1
+   "occurrences": 2
   },
   {
    "id": "t_9d950b4bb9b4bba27b3b",
@@ -209523,10 +209522,10 @@
    "source": "Latest visitor information ↗",
    "sourceHash": "9d950b4bb9b4bba27b3b17a8aa39dd8ae950ee33cde897e6e859d7c805c1ddef",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209537,10 +209536,10 @@
    "source": "A little planning makes the day easier",
    "sourceHash": "20c6f1f72b5615c0973c84975c756e51cdc523926bb820099562e02b73eccd5e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209551,10 +209550,10 @@
    "source": "Distances are approximate, one-way road estimates from Kairali in Olassery, checked on 24 September 2026. They are rounded and may vary with your route, traffic restrictions and entrance used. Walking, park transport and travel within larger destinations are additional.",
    "sourceHash": "43b0e05b6172263157dc7e5d5a6a65454f957082a2c4d8493c80d2f0d53d7f4b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209565,10 +209564,10 @@
    "source": "Confirm opening times, tickets and permissions before travelling. Temple entry and dress requirements vary. Forest visits may require advance booking, and weather can affect access to waterfalls and mountain roads.",
    "sourceHash": "3cee3cb8aaf12a46c7c3b941b1ee06e91afb2e145ddaaa3ae0308d57d06bf435",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209579,10 +209578,10 @@
    "source": "Ask our team about an outing →",
    "sourceHash": "ca90de90b5dcdc6c660c97a388bb4d6de6771b2d9ce6c7fb876598abef43552e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209593,10 +209592,10 @@
    "source": "Wildlife drives →",
    "sourceHash": "74826838917aaee3b7227252bf689c07ab0ef449eee0c2d88dfdb5a6080440cd",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209607,10 +209606,10 @@
    "source": "Houseboat tours →",
    "sourceHash": "f1c9500f7235f7a2fadfc95b657482da92bb93c600f3c89ff09fefcfa4275a9b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209621,10 +209620,10 @@
    "source": "More things to do in Kerala →",
    "sourceHash": "c97f41f5506d5235f5f6bfa3b6184e21c6fa7f947f879609b7cbb1fa05127d83",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209635,10 +209634,10 @@
    "source": "Road estimates use",
    "sourceHash": "36c07f5bdb0817b7f35cf57590f0e995fee3cd0c6ae66ec2527f34222612e737",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209649,10 +209648,10 @@
    "source": "© OpenStreetMap contributors",
    "sourceHash": "d2ad7dc1514438f07ceb2e3dd0dbc4373967a9c0e9136081ad495d6e7ffed220",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209663,10 +209662,10 @@
    "source": "and",
    "sourceHash": "6201111b83a0cb5b0922cb37cc442b9a40e24e3b1ce100a4bb204f4c63fd2ac0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209677,10 +209676,10 @@
    "source": "OSRM routing",
    "sourceHash": "ccafb723948902aaea285dca7e93365a3420d9baa61b9038503844efd1422f29",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209691,10 +209690,10 @@
    "source": ". Use the directions links for your chosen route.",
    "sourceHash": "71dfe975bae89a8a17836b65e3973295afefaa5fbcc198b9b0c5039ccf4abd88",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/sightseeing/page.tsx"
+    "app/(english)/sightseeing/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209708,7 +209707,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209719,10 +209718,10 @@
    "source": "Paddy fields and palms around Kairali in Palakkad",
    "sourceHash": "869bfb3f81540deb6ea6bb744c5cb9e59849ce3dffcc4e0ab22b56af4f62bdb8",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209733,10 +209732,10 @@
    "source": "Start here · The main film",
    "sourceHash": "a2433ef3827ad309d4c14d7524178bc39263adc25606d3a4b6aa694b15f81c9b",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209747,10 +209746,10 @@
    "source": "Featured · Yoga & meditation",
    "sourceHash": "f4980f8e6da1d40c9ede13f3ca63a78e261063fc4d0e1c95cc27442a687de77e",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209761,10 +209760,10 @@
    "source": "Watch",
    "sourceHash": "a71e757324467ccfe2ae90f483fd759eff5378e6afcfcce4c620de929b3f2dd8",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209775,10 +209774,10 @@
    "source": "YouTube ↗",
    "sourceHash": "cd4b8e49c86bec934b8b9b99127a532616eeb5752e7e3e9c77c5f889cee25cb6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209789,10 +209788,10 @@
    "source": "Kairali video gallery",
    "sourceHash": "8dbfced97a7b4b3d07b4ec21f0a52899e32ce35918b98adecaeb293bc050b526",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209803,10 +209802,10 @@
    "source": "Skip to videos",
    "sourceHash": "39f67aed008fdfc89a88273acd27ec080f58d3bbb325ab4a976df198660f4819",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209817,10 +209816,10 @@
    "source": "Life at Kairali · Palakkad, Kerala",
    "sourceHash": "d61ff118391e5489c3bcac30b15b956ff614d29e4045c6d165cba07fd19717e1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209831,10 +209830,10 @@
    "source": "A closer look at the village",
    "sourceHash": "0fa14219a7e5df9abaaf8edcf9896e45aa55b04c33f7d646aec7f9d9266810af",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209845,10 +209844,10 @@
    "source": "Meet Kairali through its films — the story behind our Ayurveda, moments of yoga, and the places you’ll spend your day.",
    "sourceHash": "54afffb4a309464fa0fa340b9e3616a8dfc761f7229e8c2f460c0cc25461b2b3",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209859,10 +209858,10 @@
    "source": "All galleries",
    "sourceHash": "a073bb446489ebb7b514eaf9910248fd83b46dbdff1bffb9d9fe9f68f1f97ff0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209873,10 +209872,10 @@
    "source": "Featured films",
    "sourceHash": "cbf9628f38437c79ebcff9dcafc3ccd2bad52dff0d0f7f240e667bedbbd9be93",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209887,10 +209886,10 @@
    "source": "Choose a film to play it here. YouTube loads only when you press Play. You can also open any YouTube film in a new tab.",
    "sourceHash": "cd29f0af2693ffd32f6ee406eef7c63472ee201082823f6d59806a95d072a7ac",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209901,10 +209900,10 @@
    "source": "Explore the collection",
    "sourceHash": "41bd09a912e5feb17f11639240b7fc71206e4a733da084554e13a3d9450f1a5d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209915,10 +209914,10 @@
    "source": "Little windows into village life",
    "sourceHash": "a6799c72ee4af59b827ab45e4c1d8c997afe4f303019ba809e9c46a0fc90982d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209929,10 +209928,10 @@
    "source": "Short films of the grounds, guest spaces, yoga and Ayurvedic therapies.",
    "sourceHash": "0997bc76eb0c3ff6be2f67f43f303c7550919150e3d5108e5ddbd8c1d1b9dd3d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209943,10 +209942,10 @@
    "source": "Video topics",
    "sourceHash": "d9b9dea10f6fffb20e6cfdc8557d7fdc6adbf741c9eacde89c572c36a8779139",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209957,10 +209956,10 @@
    "source": "Keep exploring",
    "sourceHash": "5dac0b47f5529b70e77633f3c54c99c155af11ff9185f5fd88a80f2765c3eccc",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209971,10 +209970,10 @@
    "source": "Picture your time at Kairali",
    "sourceHash": "289059b2179bfa35c24fe5652c3d92eaffb388f594a9789e1b477824c37170aa",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209985,10 +209984,10 @@
    "source": "Explore the villas →",
    "sourceHash": "91d79b3c8c54b68172b2a8f8f247ceb68e1d5d6215bb44a0187e5825f3fa1661",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -209999,10 +209998,10 @@
    "source": "Yoga & meditation programmes →",
    "sourceHash": "39d5d5804804ff41002a820263d7d4117e3a7f948352eeb9cbb88668d246e78e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210013,10 +210012,10 @@
    "source": "Hear from our guests →",
    "sourceHash": "cec402439f4595d74bd7994436cbbf78cd92172641ce3d66a9448461e509451e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/video-gallery/page.tsx"
+    "app/(english)/video-gallery/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210030,7 +210029,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210044,7 +210043,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210055,10 +210054,10 @@
    "source": "Skip to guest reviews",
    "sourceHash": "c7644d34927a932382d4f63b16856708dd97f89739bb22a0b1ddff5ec02b8bfa",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210069,11 +210068,11 @@
    "source": "Guest reviews",
    "sourceHash": "04c6cec43258ee3cc9e83f71af3a182701e6c60f53eb3506b08984bff850f7f4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx",
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx",
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 2,
    "occurrences": 2
@@ -210084,10 +210083,10 @@
    "source": "Guest voices · Palakkad, Kerala",
    "sourceHash": "b2e60a98b27ac2b3ef21e7a65aee0bc357d0bc4b51b096d4a8c5981f45b2b5a4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210098,10 +210097,10 @@
    "source": "A place to pause.",
    "sourceHash": "69c7b403f0a0fa19ad67b31124ef960885642f91d3e6614be8480ddde5a2793d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210112,10 +210111,10 @@
    "source": "Stories to remember.",
    "sourceHash": "4e0cfb4ab68ba4139085b3830bf0d1b035112bc79a141ed834d31082c8ec8fd7",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210126,10 +210125,10 @@
    "source": "The people who have stayed here tell the story best. Meet our guests, hear their experiences and explore independent reviews before you plan your own stay.",
    "sourceHash": "fcc775cb0c7a6918339807127b804dbe7bce2f42875d117eb744b1a1ce7d1943",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210140,10 +210139,10 @@
    "source": "Read guest stories ↓",
    "sourceHash": "1020ee1e373e28c8c6c33f05a5148245693118e73d9afc813716a6cc95876240",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210154,10 +210153,10 @@
    "source": "Google & Tripadvisor ↓",
    "sourceHash": "668a5f2e68a98fa6a3262e0ded4d5073b80fa21faa3920ce9f451b03de51eeb0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210168,10 +210167,10 @@
    "source": "Featured guest experiences",
    "sourceHash": "afcfeed5340d0bd0723b2edb538bccd96f6bf4346b308006fa6e0a4e73c8a46a",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210182,10 +210181,10 @@
    "source": "Michaela and Jan sharing their experience at Kairali",
    "sourceHash": "b5687fb9061d031e85f4e927a7e409432c0a5912f1063eda60637741114240c6",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210196,10 +210195,10 @@
    "source": "Featured guest film",
    "sourceHash": "cddf3d4e4d4114c7418da59e6b589c3e9e6b683022b862f87a733f802a3c270c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210210,10 +210209,10 @@
    "source": "Watch their story ↗",
    "sourceHash": "7815f04b7a8333774f06a55ce91e8c2c5f09a172deb333f17cd834c7f5c7c0d1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210224,10 +210223,10 @@
    "source": "All staff are so warm and polite.",
    "sourceHash": "61a7bb21d7a25ec1b0643a002792c8eb2f1c8f05ad2505cb546ea210b43f494b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210238,10 +210237,10 @@
    "source": "Namrata Goyal",
    "sourceHash": "4d8481fc999b2514d513bbcd402ea4416fedc060fe5ef7343f3efca8817c12e8",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210252,10 +210251,10 @@
    "source": "Google review · September 2024",
    "sourceHash": "9ad11d05979256a9bd0141b5e8f694211320f8a31c63f3601fb99894af025551",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210266,10 +210265,10 @@
    "source": "Explore guest reviews ↗",
    "sourceHash": "1087567f8274ecfb9d2a70dfda583d05ae6c61048a41273b24b6e8e5dcc23bc6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210280,10 +210279,10 @@
    "source": "Guest stories",
    "sourceHash": "351628df2a74cc3c02502c07aba3ddc1a2af63009110d99e5340d2a915ae6fbb",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210294,10 +210293,10 @@
    "source": "Watch the films",
    "sourceHash": "50671c60eff0dad1e859d016adc5f1d302d8c89e3c4447f8bb1a4ac36789351b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210308,10 +210307,10 @@
    "source": "Google & Tripadvisor",
    "sourceHash": "9ea00a3824089e4bc6a2aa784e74773e72197b1e90d6d3d8162d8cd61642399f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210322,10 +210321,10 @@
    "source": "Share your experience",
    "sourceHash": "7afc4ab53a6d62fc223c1084ae9a2e02f4577b93dad92141a4b1b894690428b4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210336,10 +210335,10 @@
    "source": "In their own words",
    "sourceHash": "569b459eca0da12c164f30ef07ccd1c8c03c7d2eb9c50285e0006812bec9e827",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210350,10 +210349,10 @@
    "source": "Hear it from our guests",
    "sourceHash": "273b6241535ae0795d1d7b745c34a5c9eaea5422ef5991b90029193b78552ac4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210364,10 +210363,10 @@
    "source": "A glimpse of life at the village through the people who have stayed with us. Each film opens on YouTube in a new tab.",
    "sourceHash": "bccf6e469fdbc597e35d76cffaa8fb7978cdffe4a815c9adaab01267b13f0f4a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210378,10 +210377,10 @@
    "source": "Watch guest film ↗",
    "sourceHash": "ac5efcf18791bf34a0f8e4c82b5cbd7b38f95bfa3ad24fd816130dff63fe35ee",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210392,10 +210391,10 @@
    "source": "Explore our video gallery →",
    "sourceHash": "098ef1d7f50d9f6f8a2403d60641f7d772dd9337bacdb094421f5c5a64b9b22f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210406,10 +210405,10 @@
    "source": "Make up your own mind",
    "sourceHash": "164731205459f976aca984220018c7f795180e598c2ffcd77f40fbd6440268e5",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210420,10 +210419,10 @@
    "source": "Read independent reviews",
    "sourceHash": "ebbfb4943275bf86506b202b9c1d3916497c0664a12ddba5ad7bb71392e4c2ec",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210434,10 +210433,10 @@
    "source": "Explore the full range of guest feedback, traveller photographs and recent experiences directly on Google Maps and Tripadvisor.",
    "sourceHash": "4e0e9015547258ab56c43a6e83ece604f668dd441a661b2b3f18590def582ec5",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210448,10 +210447,10 @@
    "source": "Your experience matters",
    "sourceHash": "c1f1a53c493fa0c2470f8ddad8dd6c8e251926baa4ac2e4e5117c084417c11ad",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210462,10 +210461,10 @@
    "source": "Have you stayed with us?",
    "sourceHash": "c125a984b5bb6904a90c7a903aa1857ebee0cc70df1922dc5e0259f94a48eadf",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210476,10 +210475,10 @@
    "source": "Tell us what you enjoyed and what we could do better. We welcome every honest experience.",
    "sourceHash": "25df085a6508d0ba577a414176cec4e2a2ad99bc7f94cfc4b4758bfa9d8279d1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210490,10 +210489,10 @@
    "source": "Share feedback with Kairali",
    "sourceHash": "f3ce3fc0d023d3e40a892ad29889d0ae62032656634106bbfc08496c851cbfa6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210504,10 +210503,10 @@
    "source": "Review us on Google Maps ↗",
    "sourceHash": "fd90a84103aa1e549a65b0f4293cdeba0c4eb3f1b1882b9343dd73b36fed0d89",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210518,10 +210517,10 @@
    "source": "Review us on Tripadvisor ↗",
    "sourceHash": "e15b06ca0eab188cdcccf8243469d2f83f848583f6ae5c68e9503346a76aab79",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210532,10 +210531,10 @@
    "source": "Planning your own stay?",
    "sourceHash": "77eb5e9c5aa1f0f1b54615c18d82f4fef43adf5854a6b77d60ce1df8e60f1325",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210546,10 +210545,10 @@
    "source": "Let’s talk about what you need",
    "sourceHash": "e4232a83390f05c1d79be8a442fed41dc563969cf417181f3e0933092f530156",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210560,10 +210559,10 @@
    "source": "Our patient care team can help with your questions, accommodation and the next step towards an Ayurvedic doctor’s consultation.",
    "sourceHash": "58410930e246832f2ccc81b5119f701a61c7420e3b3df5227a739e17bb6fefc5",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210574,10 +210573,10 @@
    "source": "Free doctor consultation",
    "sourceHash": "b560b1c1bc37b147b61f16cdb652078e9bddd07cfab71307bcbd77f81b051aac",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210588,10 +210587,10 @@
    "source": "WhatsApp patient care ↗",
    "sourceHash": "4b9e45a7849e3a481eb59e363b9fe349385fbba7c61fca4ee98ead4e5bfc466f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/read-feedback/page.tsx"
+    "app/(english)/read-feedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -210602,7 +210601,7 @@
    "source": "From India. From around the world.",
    "sourceHash": "06d6614ba9f841e1295bea157d269767edd51fdfa7e5053640561e6706af98b0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210616,7 +210615,7 @@
    "source": "Find a story that speaks to you",
    "sourceHash": "02ae17f5ec4fb4b4d6bd49aa749e1752273e0788c3524fe7ab11d461510106c3",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210630,7 +210629,7 @@
    "source": "Selected excerpts from guest reviews and Kairali’s published archive. Open the source to read the full account.",
    "sourceHash": "dfea991cb98da9cc33d22dbfab76e4b0f1d9d1d3bb45a908941a5808d53a6266",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210644,7 +210643,7 @@
    "source": "Guest location",
    "sourceHash": "b9bcadbc596da558a04d70bc9f8c74e6f231a4545c503fef99f17a60c2cd80dd",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210658,7 +210657,7 @@
    "source": "All guests",
    "sourceHash": "196cbccb71827c14f48edb99fbf0c96c0126f48169e13dce5ccbaebe5a91fd92",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210672,7 +210671,7 @@
    "source": "Guests from India",
    "sourceHash": "fd2cd1d5f768723140852000c1cb257b454318d6af1fb49991d70d7a179495ce",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210686,7 +210685,7 @@
    "source": "International guests",
    "sourceHash": "2a3b0632cd3591c9259902025012b2e839a0e0407810e5d0b5a84333340b7f96",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210700,7 +210699,7 @@
    "source": "Read excerpts in",
    "sourceHash": "0ad7d0a61227eb0a249666f105827ed1f35a3c57dc3aa1f59f3abe4e4683e8d4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210714,7 +210713,7 @@
    "source": "stories ·",
    "sourceHash": "e9a5a16504f86acb8edf4c5ff481d8b67999ebeabb483cf00c14eed0b5a31a40",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210728,7 +210727,7 @@
    "source": "Original English excerpts",
    "sourceHash": "f216d206c094d3dc232375413a9b587789c596b4a9ee762aa8ad43ed96739c07",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210742,7 +210741,7 @@
    "source": "Translated excerpts · original English remains available on each card",
    "sourceHash": "27522f2891dfb74acba1ae14482c02d2dc25b46f0d829918767574545fdde284",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210756,7 +210755,7 @@
    "source": ". Guest location is shown only where the source identifies it.",
    "sourceHash": "1168bc59127b4dc874d089c3e3d844f12475a08e7642d3fe74edc692dd8aa094",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210770,7 +210769,7 @@
    "source": "Original English",
    "sourceHash": "e965726ad8e0e0d427419c1e10d4c9ecb67c09e36d0fa95fee79f6543f82350b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210784,7 +210783,7 @@
    "source": "Read reviews on Google",
    "sourceHash": "1deb3534c1fb4dde50889d45e1f09cf80d60f1ef7e6d9d29355e95b888d8bcfb",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210798,7 +210797,7 @@
    "source": "Read the original testimonial",
    "sourceHash": "5775f4cab6e0a3d1eea48f37c1e2cb1fbabdd430bcd3ed8d3a0ec0000db41334",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210812,7 +210811,7 @@
    "source": "These are selected guest accounts, not a complete review feed. Archived testimonials are labelled. Personal experiences and treatment outcomes vary.",
    "sourceHash": "117dff94e82b77056d8e6c86e3a57d61acdc0317d5d29673c4121a6de4024347",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210826,7 +210825,7 @@
    "source": "Independent guest feedback",
    "sourceHash": "c76fb796d6fc7bb9c9f7ccacc3affb68f0799cd66b723542d239cd9949b7ab52",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210840,7 +210839,7 @@
    "source": "Read what guests say about their stay, care, food and surroundings.",
    "sourceHash": "ad6ba4659fc39b88a2950b892ac14ab756b39512e23c1aa1d0d4b5bf4db89c8e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210854,7 +210853,7 @@
    "source": "Review language",
    "sourceHash": "6d262abc4b0a7a3b501188281360bda9763ff464edee1d5043af97ccb7f3a80b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210868,7 +210867,7 @@
    "source": "Loading reviews…",
    "sourceHash": "510c765f211f334349ea628fdaf21b83b13865b58b3f73457eae254959afb844",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210882,7 +210881,7 @@
    "source": "Try loading again",
    "sourceHash": "5350a63171a037eca926bbaf454c3290da2c93496295b738cf30c29e8f2af492",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210896,7 +210895,7 @@
    "source": "Show Google reviews",
    "sourceHash": "40f69fa2cb372d60e093b8011fdee8daae96873624e65b420e4f380a9e470ed8",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210910,7 +210909,7 @@
    "source": "Loading reviews from Google Maps…",
    "sourceHash": "5edce5c6b1409484d11fd47e8e7a1d6afbc02dd6f57660fb6d183eb1174c3741",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210924,7 +210923,7 @@
    "source": "The review panel is unavailable right now. You can still read all reviews directly on Google Maps.",
    "sourceHash": "e2121a7419ac828ab40e6066d959a3f54c305172da3117bd9b7db1f9d25b315f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210938,7 +210937,7 @@
    "source": "reviews on Google Maps",
    "sourceHash": "b29cf705a0386aeeca5d27a3d64a4c4e94484e6efd8e3eb5525ddf5856038f5a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210952,7 +210951,7 @@
    "source": "Up to five reviews, ordered by relevance by Google. No star-rating filter is applied.",
    "sourceHash": "ea37d6d9f4aa220b5e2aa3292a213ee83fb12cb8183aa0938a95b64c793a7af0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210966,7 +210965,7 @@
    "source": "No reviews are available in this panel. Open Google Maps to see the full listing.",
    "sourceHash": "14c5b4eec60e4457ee7b595123e8412e8b75a5fed111ff1d961e90d89aabc3a2",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210980,7 +210979,7 @@
    "source": "This guest left a rating without a written review.",
    "sourceHash": "6f9d01196b1f8d4e5fe8baad1a87f96693946194b3aec5157947f1bcbeb054ba",
    "roles": [
-    "tsx-literal"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -210994,7 +210993,7 @@
    "source": "Translated by Google · view original",
    "sourceHash": "229a524d2b922f39129b2c4d0a49924ec807720fe5ebe8fd23e77d36004ea628",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211008,7 +211007,7 @@
    "source": "Read on Google Maps ↗",
    "sourceHash": "bf205dead12f53765dcfb874b326e5d7c68e118721a88eaef0928aa2dbf04ecf",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211022,7 +211021,7 @@
    "source": "Reviews provided by Google Maps. Google checks for and removes fake content when identified; reviews are not verified by Google.",
    "sourceHash": "8adb4d5967e26ca6e3cde53fdf70f9a5a1765c3c592810e3e90790b0a52714d6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211036,7 +211035,7 @@
    "source": "Read all Google reviews ↗",
    "sourceHash": "a14d8afeac52cc8e7ca19dad4d2c8be48a299f01ea2a0b85969b70c655d84814",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211050,7 +211049,7 @@
    "source": "Traveller experiences",
    "sourceHash": "cd8401f0d92cc92c526bab1054fe06d950249adf960ef59df20b4c408d45d4cf",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211064,7 +211063,7 @@
    "source": "Explore traveller reviews, ratings and guest photographs on the property’s Tripadvisor listing.",
    "sourceHash": "0ff9b33b4f8f7de492277e5d7fb2dd97186da1277318f4dfcd8fcd46889d752e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211078,7 +211077,7 @@
    "source": "Show Tripadvisor reviews",
    "sourceHash": "be5d55bd2a29b60a679ff2f1ef3827526beb298757937e02cddd933c094fa068",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211092,7 +211091,7 @@
    "source": "Loads Tripadvisor’s own review widget when you choose to open it.",
    "sourceHash": "9d942debee18625ee55e419556de83ee0463af32b446f0180c122fd9d6eb07c8",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211106,7 +211105,7 @@
    "source": "Kairali’s official Tripadvisor reviews widget",
    "sourceHash": "48032948a3d8b1cb30d4241534cb1bb078cf9ef766bccdf4522df0e8a6ad0cce",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211120,7 +211119,7 @@
    "source": "Read all Tripadvisor reviews ↗",
    "sourceHash": "de63edc928be48a420edc37a4543569c01f2fda119f2b09799ede0f601ef7b4e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/read-feedback/ReviewsClient.tsx"
@@ -211137,7 +211136,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211151,7 +211150,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211162,10 +211161,10 @@
    "source": "Skip to feedback options",
    "sourceHash": "9a9472f2ca42ac75c891e3088d43c2ec8c64c9f550a1fefc3f2394ba141d1c62",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211176,10 +211175,10 @@
    "source": "Share feedback",
    "sourceHash": "2af5686738876d5071175bcf285bfda4f829eb051a26348771b7f51ac2e12a5f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211190,10 +211189,10 @@
    "source": "We’re listening",
    "sourceHash": "47ec5f64ce3e6fbe0d84d4c71dd7ebd103155d6dff562721b4082e554f803ac7",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211204,10 +211203,10 @@
    "source": "Share your experience.",
    "sourceHash": "6001758aa5ef9c446d24298e6ebc96187cb233a04d18357dcab648dd5bbf176b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211218,10 +211217,10 @@
    "source": "Help us care better.",
    "sourceHash": "bb8163fab5f9bf768eb75ff702ea1073c8dc92211b48c869968037c246bc1aa9",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211232,10 +211231,10 @@
    "source": "Tell us what made your stay special, what could have been better, or what you would like us to put right. Thank a member of the team, share a suggestion or raise a concern—we welcome your honest account.",
    "sourceHash": "56b530e545091e82325240eb867dffe02886e81537214ff822e9a7b368a4f3e1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211246,10 +211245,10 @@
    "source": "Email or WhatsApp our team ↓",
    "sourceHash": "d1afdda0fcf21ab323443c2ac3873e8ac8244f9415f529d0174884bacfb973e3",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211260,10 +211259,10 @@
    "source": "Write a public review ↓",
    "sourceHash": "8a4886fddd6be9f872a5b658248866d3d6eb56fe6fb428ce2a6464bfcacef07a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211274,10 +211273,10 @@
    "source": "Prepare your message ↓",
    "sourceHash": "f424efcd5a5af58f6305a7a1a2a312ddcf255b6990c4302b7287441da9091e6c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211288,10 +211287,10 @@
    "source": "A private conversation",
    "sourceHash": "38fcc44adb59326fa7497a1bdb86f91830bf4e25593569c4f3a692b05dcbcc01",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211302,10 +211301,10 @@
    "source": "Tell our team directly",
    "sourceHash": "7944b6e97c884f32802b00654a79260a8fa7c9f55dfe4577c55d478f9debd7a0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211316,10 +211315,10 @@
    "source": "For a concern about your stay, a personal thank-you or a suggestion, choose email or WhatsApp. If you would like a response from management, say so in your message.",
    "sourceHash": "ecb8194fc0a13dc5c62bd88291b1e7e46606950ac4e62919e5d46b1b3cd6458e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211330,10 +211329,10 @@
    "source": "Email · Private feedback",
    "sourceHash": "54bc5c7aed742e0672e789ce2e79ad69795664fd5605a2f2d96758965bc8649c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211344,10 +211343,10 @@
    "source": "Write to management",
    "sourceHash": "5acd0a6935994e2bf5c5d35ac6ffcd2e2187e2fc9f8236c480f9ab838df0b602",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211358,10 +211357,10 @@
    "source": "Give us the details in your own words. Include your stay dates or booking reference, what happened and how you would like us to help. Your email is addressed to info@kairali.com with a management-attention subject.",
    "sourceHash": "4703f74950e6cd3897edafbbb5de2a45f9b11fa61ed7a25fa107027e7da9171e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211372,10 +211371,10 @@
    "source": "Email management ↗",
    "sourceHash": "a85fab5ac667a73e461523bae9f745a493235f49cad3a352f5540049c247843e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211386,10 +211385,10 @@
    "source": "Opens a prefilled draft in your email app.",
    "sourceHash": "d2fe743271dd11f1ee610c7789943f44a2974efca43700057f435e59e12ca76a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211400,10 +211399,10 @@
    "source": "WhatsApp · Private feedback",
    "sourceHash": "df4b8530bf4d38f91157eda9f3ae46edc077cb18d12c51d9986617ec55f9adf2",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211414,10 +211413,10 @@
    "source": "Message Priya",
    "sourceHash": "f4da2d88fcf553592ffc3b99a46d991cf3d5c26ada5d58e507e17984e3f5dbee",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211428,10 +211427,10 @@
    "source": "Prefer a conversation? Message Priya, our patient care contact, on WhatsApp. Feedback shared with Priya is automatically escalated to management, including any concern you would like the team to address.",
    "sourceHash": "545a7b500ac3282e03cefe9c35695a01c784e0fb3973d13ca526e00cf3a71514",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211442,10 +211441,10 @@
    "source": "WhatsApp Priya ↗",
    "sourceHash": "afb5e4c47d7a7c5d7d69c46df48b2e819efc24c2d52c4333a457ef135c11a44a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211456,10 +211455,10 @@
    "source": "Opens WhatsApp with an editable message.",
    "sourceHash": "f782f9db93e17f65eea486d9e83684aff7e8e1c2876c34a4b7d093062a8fbbe9",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211470,10 +211469,10 @@
    "source": "Help future guests",
    "sourceHash": "ca7af6ae83775cde8155b0e387731e055f13ca14bae61b6df40aafd345aae20f",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211484,10 +211483,10 @@
    "source": "Share an honest public review",
    "sourceHash": "b47dce1dc71dcc03510f4853d9942035c38c6044d5f4de337fc612fa013c5548",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211498,10 +211497,10 @@
    "source": "Your account can help someone deciding whether Kairali is right for them. Share what you experienced—from the care and daily routine to your villa, food and the team. Positive, mixed and critical reviews are all welcome.",
    "sourceHash": "f1eda78f12f95a1809dc4ade141032a1361c725955c88e19edf2622b31144e92",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211512,10 +211511,10 @@
    "source": "Review on Google Maps",
    "sourceHash": "c5a45126035902ec2326f3a1177937ca7eda031a88638c4db1bc22a41ab512fc",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211526,10 +211525,10 @@
    "source": "Open our listing, then choose “Write a review”.",
    "sourceHash": "522d63f968d5f04682615c41cbdee4d5eec2980d4253a8e4e9107a17ccbffe72",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211540,10 +211539,10 @@
    "source": "Review on Tripadvisor",
    "sourceHash": "83eab874f1aebcf33af51038a0b3a80b97f826bf5fd28a66fd719a605325e92c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211554,10 +211553,10 @@
    "source": "Open our traveller listing to write your review.",
    "sourceHash": "a1c852da4a0c94964872c8cf8992d24b6c25296dd2d4d91de7d491950d02b041",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211568,10 +211567,10 @@
    "source": "Both links open in a new tab. Reviews are public, and the platform may ask you to sign in. You can post a review without contacting us first.",
    "sourceHash": "f72ebd419c81837156ece7b8802c614a3ee3cca0114b91af164eddb7074519d6",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211582,10 +211581,10 @@
    "source": "Read other guests’ experiences →",
    "sourceHash": "8b3f73b2d063aeb2ebf7e91a45f536939c6e8efbfbf37383a8c85e96ed93e3ff",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211596,10 +211595,10 @@
    "source": "A few details make a difference",
    "sourceHash": "bdd48cf4999ac85638cb7684c716cdf20ab7c97f03a12b15b749291c6efb28cd",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211610,10 +211609,10 @@
    "source": "What would you like us to know?",
    "sourceHash": "6a76d2ef579684d5167fe398a56d6e402eda87698c9a5ee36abeb5700bab68f9",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211624,10 +211623,10 @@
    "source": "You do not need to write a long account. Start with the part of your experience that matters most to you.",
    "sourceHash": "2730a140e245a398654602f654a5daa296db08c48c3233f3b9a8583e10577b12",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211638,10 +211637,10 @@
    "source": "What happened?",
    "sourceHash": "c4dc542b511fd74f401665a02dd5a20cf41cebd16daa6a7f78ddfbcce88239fe",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211652,10 +211651,10 @@
    "source": "Describe the experience, suggestion or concern in your own words.",
    "sourceHash": "ec6350e77e3fda9876b2acb108558893a8ecfff29833e11dd22601a156eed0d1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211666,10 +211665,10 @@
    "source": "When was your stay?",
    "sourceHash": "6e757eaf9231f097ed46fb42cc38221f4df9cafb2d8f0df98be788e052b29dc1",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211680,10 +211679,10 @@
    "source": "Add dates or a booking reference if you want us to look into a particular visit.",
    "sourceHash": "0feb4441f95f3ab91bf0b4a47e0438fe2a9d1e0ec89ac135e52fc587407ff1f7",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211694,10 +211693,10 @@
    "source": "Who made a difference?",
    "sourceHash": "4160ad149befc2cdaa31ce293b6d1b158e591ab24f893d59adf587c85c676732",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211708,10 +211707,10 @@
    "source": "If you would like to thank someone, include their name or the team they work with.",
    "sourceHash": "7c65743f984c19df0a8ff66e401c156da9997d8e2f9a4e9dcef487b9d02dd15c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211722,10 +211721,10 @@
    "source": "How can we help?",
    "sourceHash": "7b56e0d0b308abe4d3df797881fcda8b3dbafc8273566fe9ca5bb3d3c0e74305",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211736,10 +211735,10 @@
    "source": "Tell us what you would like addressed and whether you would like a reply.",
    "sourceHash": "4e4e9734d1a5414215c29a6d8327472cbe244957b4287db79bc0e48b3acda6eb",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211750,10 +211749,10 @@
    "source": "Prefer to write here first?",
    "sourceHash": "4748dc235faff0223fcd6790cff9dbeebc9ba9ad7bf066ec851b870e01dfb1e3",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211764,10 +211763,10 @@
    "source": "Prepare your message",
    "sourceHash": "cd2db6223852ce7c91fa2736f27ce16dc0ff28aac2c4eef0ae1c5f0457b2ebad",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211778,10 +211777,10 @@
    "source": "Use the short form below to organise your thoughts, then choose email or WhatsApp. Your name and stay details are optional; adding them can help us identify the visit you are writing about.",
    "sourceHash": "c44ec79c57a1d7bed9e7fb18b8c4fbddf8c710d9295b7b94a188996eae841e92",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211792,10 +211791,10 @@
    "source": "Before you send",
    "sourceHash": "c1a8a29d32b6cc42ad6b694994749378ee83a33055bade29af17e7539a447ce0",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211806,10 +211805,10 @@
    "source": "Does this form send my feedback automatically?",
    "sourceHash": "2ad8754601f61f414d69a14f5fd0f27acf935f07bdde7ea11d7c99e9d4657e2b",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211820,10 +211819,10 @@
    "source": "No. Choose email or WhatsApp to open a draft, check your message, then send it from that app. If an app does not open, use “Copy message” and paste it into an email to",
    "sourceHash": "daa1fa048aa68dcde2af764307f8e101418bf4eeec3e98ab3cff3bf2b62779fa",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211834,10 +211833,10 @@
    "source": "or your WhatsApp conversation with Priya.",
    "sourceHash": "aa038fd1013e6ec080691e259f17906457f348fadd3a0d23efadecde53b65d06",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211848,10 +211847,10 @@
    "source": "Can I contact management without posting a public review?",
    "sourceHash": "81dd646fdca44c9f30f1c023b03be034d0c338e0e40f58b768b30cc7b51a63e4",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211862,10 +211861,10 @@
    "source": "Yes. Email management or message Priya directly. You can also leave a public review independently; neither option depends on the other.",
    "sourceHash": "9afac8057eec876d358ed875b03fce259d81ad659a4957e12be3ff6e4d84254e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211876,10 +211875,10 @@
    "source": "Is this the right place for a booking enquiry?",
    "sourceHash": "93ea8b0694923954f52503a6ba651d88303133b2742fb9c57e8194b12307f496",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211890,10 +211889,10 @@
    "source": "For availability, programme enquiries or help planning a stay, please",
    "sourceHash": "d3fa99211a7bce0d7ae3cded6e87acdc908a0ef5db7c7540166827f042a44f84",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211904,10 +211903,10 @@
    "source": "contact our patient care team",
    "sourceHash": "be6fba060d1b54d9e88ced0659b068cd37b49183d78cf433ce15c96f4cd49925",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211918,10 +211917,10 @@
    "source": ". Use this page to share feedback about an experience with Kairali.",
    "sourceHash": "be6b316ba3cf047c30431aa67a3b55b5d9616229cb8a915b59b1986a0af0ff3d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211932,10 +211931,10 @@
    "source": "Need help during your stay?",
    "sourceHash": "d2c5e9da918bf6b64edc90decf0917cbcb78cbc5590b75f79ac4400a92ac8757",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211946,10 +211945,10 @@
    "source": "Please speak to the team at reception about anything that needs attention during your stay. You can also call",
    "sourceHash": "6ff5c8a3cf26f250ff8a85464b53deb231cd231a7218cf67b7632fa0cfdab432",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
-    "app/(english)/givefeedback/page.tsx"
+    "app/(english)/givefeedback/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1
@@ -211960,7 +211959,7 @@
    "source": "Write your feedback",
    "sourceHash": "dfe36467102a316b3e0a39cf43179f315f04ed649429d4e91d3c1a70db7bd62a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -211974,7 +211973,7 @@
    "source": "(optional)",
    "sourceHash": "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -211988,7 +211987,7 @@
    "source": "Stay dates or booking reference",
    "sourceHash": "ac5192e52a7f07bcead850a16cabf8ce31fd38f25703543bdc255b0584db6d2a",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212002,7 +212001,7 @@
    "source": "For example, September 2026",
    "sourceHash": "a7e31835e805c2c2794534565f1d1f38bc690cb0f83d60d715e22f569564e8dc",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212016,7 +212015,7 @@
    "source": "What would you like to share?",
    "sourceHash": "27f80a2ee942ecf6f1e59de1da6eb483244159d66df8cfd6ccc360655e8c5aba",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212030,7 +212029,7 @@
    "source": "Your feedback",
    "sourceHash": "cdb1c0a5f34f5f4f8a932d633d1ad05cd19bd613df88d8fde14f752300cb37be",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212044,7 +212043,7 @@
    "source": "(required)",
    "sourceHash": "89db19f651b1828501f3d1631171b1d6b13a77a402ab26b8dabb6e9992dd3b59",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212058,7 +212057,7 @@
    "source": "What would you like us to know? Tell us about your experience and how you would like us to help.",
    "sourceHash": "ba638905e65225f0c4764ce6cb667950f0ead3c0e0c5b9a6270f7fc43ec9a764",
    "roles": [
-    "jsx-attr"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212072,7 +212071,7 @@
    "source": "/1,500 characters · Only your feedback is required. Add any details you would like us to follow up on.",
    "sourceHash": "260e977ae523282c8f0b2e047b0fb9567d9c8069b70c137babbe536b83ae2252",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212086,7 +212085,7 @@
    "source": "Open email to management ↗",
    "sourceHash": "a5e09a9e4194e66dc19ca1b6f58b3422b0bd3187297aacd5315b4a0fa0797a60",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212100,7 +212099,7 @@
    "source": "Open WhatsApp to Priya ↗",
    "sourceHash": "eba5d9d34237682c077bff7a0ac5c999c86672d21f81be317c5e7f175fa3bf5d",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212114,7 +212113,7 @@
    "source": "Copy message",
    "sourceHash": "457efe538b254dfb95785ca0ef7a9c5f7ae3e1bfbe715e469de3d9dfcb7ad87e",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212128,7 +212127,7 @@
    "source": "You choose when to send. This page prepares your draft; your email app or WhatsApp sends it.",
    "sourceHash": "92f683d795e29769c385a88a1627c0a8f8b1be582ce4e55c03e70d0660f86ce8",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212142,7 +212141,7 @@
    "source": "Your message to copy",
    "sourceHash": "403853aec866e87f47cad230982ddb615893023ef96701211e5535da40ee2710",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212156,7 +212155,7 @@
    "source": "Please use the email or WhatsApp links above to write your message directly.",
    "sourceHash": "9556207201ced6c5eb0423fc349825b347747fc8dea19041416e316d31944efa",
    "roles": [
-    "jsx-text"
+    "tsx-T"
    ],
    "files": [
     "app/(english)/givefeedback/FeedbackComposer.tsx"
@@ -212187,7 +212186,7 @@
     "tsx-literal"
    ],
    "files": [
-    "app/(english)/search/page.tsx"
+    "app/(english)/search/view.tsx"
    ],
    "fileCount": 1,
    "occurrences": 1

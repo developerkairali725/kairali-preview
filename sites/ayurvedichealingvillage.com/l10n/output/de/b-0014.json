@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0014",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_8263f67a1d47197c320b",
+   "sourceHash": "8263f67a1d47197c320b6233abbcf81c515754eaa33a1ac1574a28f757214583",
+   "text": "Alle Programme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ed1372e6877dcda57c73",
+   "sourceHash": "ed1372e6877dcda57c73cbbb328c9539c4110f46861bd3044f57a32594709202",
+   "text": "Wellness-Programme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Wellness' kept as a loanword (not on the banned list); the owner may prefer 'Gesundheitsprogramme' for a stricter clinical register."
+   ]
+  },
+  {
+   "id": "t_207733ab9f154675a56f",
+   "sourceHash": "207733ab9f154675a56f69bff4d81afe69127fd7c695abf6fe188bb0d13b5cc7",
+   "text": "Behandlungsprogramme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5b31bcdc67fe036a1fd5",
+   "sourceHash": "5b31bcdc67fe036a1fd5dce7a026ca16e2a919c32ccf1f388a5c84a8128c241e",
+   "text": "Ausbildungsprogramme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_347e158da87bb6bf9f74",
+   "sourceHash": "347e158da87bb6bf9f744e5d35dff7e2be22b5b9fd7bfa79013693b9c4bfb2ee",
+   "text": "Yoga- & Meditationsprogramme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b396878953b0d7a92182",
+   "sourceHash": "b396878953b0d7a9218271f4bdfd26431b5aa1767e79d688df99f55ba4d8750f",
+   "text": "-tägig",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenated fragment after a number (e.g. '14-tägig'). If it comes before a noun, German needs an inflected ending ('14-tägiges Programm'). Please check the concatenation context."
+   ]
+  },
+  {
+   "id": "t_684a0900adb9ec7aed8f",
+   "sourceHash": "684a0900adb9ec7aed8fed7decb5369a1b00be1b84adb35aba02bf7dff5dfbc2",
+   "text": "Mindestaufenthalt:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_176473d7313395b6e209",
+   "sourceHash": "176473d7313395b6e209bc6b1d57aa160b628706860aa0554d7af60a1d40ab87",
+   "text": "Nacht",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de5c9050dc18c72f8e47",
+   "sourceHash": "de5c9050dc18c72f8e4766c91b9a603119637fa4fc5df7bf75246ee849727adb",
+   "text": "Nächte",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18009391f6fd9454511a",
+   "sourceHash": "18009391f6fd9454511ac8df277c52341e74f4a12c8ecb8d173c8be72248a7f2",
+   "text": "Individuelles Programm – die Kosten richten sich nach dem Behandlungsplan des Arztes",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0489440bb8620159bb46",
+   "sourceHash": "0489440bb8620159bb46fdb16120f7ac473db30fed91405d947e050dbdd39b8d",
+   "text": "Aufenthalt ab",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85e5ec1612408f6534bf",
+   "sourceHash": "85e5ec1612408f6534bfe579e13774cf66600d7ad5150d6d896cc02a4dbf8881",
+   "text": "pro Nacht",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5c5db120cb11bee138ff",
+   "sourceHash": "5c5db120cb11bee138ff3143edcbedaead684de7a0ba140e12287d436c5dc487",
+   "text": "Jan",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caf71b3f582dbfc33256",
+   "sourceHash": "caf71b3f582dbfc33256782f4539ef3787b93b278d08e0c3c6a26243370e0a33",
+   "text": "Feb",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b4b7d3818dbf673ecb38",
+   "sourceHash": "b4b7d3818dbf673ecb386258e0a9e8dd9ab013cb3be2a041c26e65e293baec14",
+   "text": "Mär",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_617531b4fec3488c34f6",
+   "sourceHash": "617531b4fec3488c34f60417bf571d1c30e7e2cd8fec9fb06206815345f1df74",
+   "text": "Apr",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b27fd46ed1b694901445",
+   "sourceHash": "b27fd46ed1b6949014457c2cd46af800f9515c849ba80ae9eddff5392b1b090f",
+   "text": "Jun",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c43f56b9807e6ed74ff0",
+   "sourceHash": "c43f56b9807e6ed74ff04d6279a7d032203d9d5acb85e4a25a5f239e3deff0d4",
+   "text": "Jul",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_41e1d82aa990ee7b9d49",
+   "sourceHash": "41e1d82aa990ee7b9d49c0c4a32101b687e5aea2ee2b6f75ea9ee3877a299bfb",
+   "text": "Aug",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_451e2b719061fdaed685",
+   "sourceHash": "451e2b719061fdaed685a5342c8859d5fe5badbfb952cf120c6f1671891be25a",
+   "text": "Sep",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6877e8494c3adc69c645",
+   "sourceHash": "6877e8494c3adc69c645ce6e0c4ca9df2b224e79401f94d9d7d381519895aa48",
+   "text": "Okt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e630d2964a0461060d4",
+   "sourceHash": "3e630d2964a0461060d44a608353c061614fbf93ff26f7ea5289091ebc6455d1",
+   "text": "Nov",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2a0cfbcf1910783adcc",
+   "sourceHash": "f2a0cfbcf1910783adcc6a7c149b5d7b9e8e9d2f88afa56a035f55cc9f8a8cf1",
+   "text": "Dez",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_559aead08264d5795d39",
+   "sourceHash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+   "text": "A",
+   "status": "translated",
+   "unchangedReason": "Single-letter enum or category code that works in any language; kept unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_295cc73b2f526284e0e2",
+   "sourceHash": "295cc73b2f526284e0e26166e43ef43b7e648827c9bbb4167246529944ea03b0",
+   "text": "Guten Tag, ich möchte gerne klären, ob das",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment followed by concatenated text. The neuter article 'das' assumes the next word is a programme name or 'Programm'. If a noun of a different gender follows, change the article."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0606",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_b47dce1dc71dcc03510f",
+   "sourceHash": "b47dce1dc71dcc03510f4853d9942035c38c6044d5f4de337fc612fa013c5548",
+   "text": "एक ईमानदार सार्वजनिक समीक्षा साझा करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1eda78f12f95a1809dc",
+   "sourceHash": "f1eda78f12f95a1809dc4ade141032a1361c725955c88e19edf2622b31144e92",
+   "text": "आपका अनुभव किसी ऐसे व्यक्ति की मदद कर सकता है जो यह तय कर रहा है कि Kairali उनके लिए उपयुक्त है या नहीं। अपना अनुभव साझा करें—देखभाल और दैनिक दिनचर्या से लेकर अपने विला, भोजन और टीम तक। सकारात्मक, मिली-जुली और आलोचनात्मक, सभी समीक्षाओं का स्वागत है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c5a45126035902ec2326",
+   "sourceHash": "c5a45126035902ec2326f3a1177937ca7eda031a88638c4db1bc22a41ab512fc",
+   "text": "Google Maps पर समीक्षा करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_522d63f968d5f0468261",
+   "sourceHash": "522d63f968d5f04682615c41cbdee4d5eec2980d4253a8e4e9107a17ccbffe72",
+   "text": "हमारी लिस्टिंग खोलें, फिर “Write a review” चुनें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Kept the platform button label “Write a review” in English, because that is how it appears on Google Maps for many users; localise it if the Hindi Google interface is the target."
+   ]
+  },
+  {
+   "id": "t_83eab874f1aebcf33af5",
+   "sourceHash": "83eab874f1aebcf33af51038a0b3a80b97f826bf5fd28a66fd719a605325e92c",
+   "text": "Tripadvisor पर समीक्षा करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a1c852da4a0c94964872",
+   "sourceHash": "a1c852da4a0c94964872c8cf8992d24b6c25296dd2d4d91de7d491950d02b041",
+   "text": "अपनी समीक्षा लिखने के लिए Tripadvisor पर हमारी लिस्टिंग खोलें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rendered 'traveller listing' as 'our listing on Tripadvisor' to keep the travel framing neutral for the clinical register."
+   ]
+  },
+  {
+   "id": "t_f72ebd419c81837156ec",
+   "sourceHash": "f72ebd419c81837156ece7b8802c614a3ee3cca0114b91af164eddb7074519d6",
+   "text": "दोनों लिंक एक नए टैब में खुलते हैं। समीक्षाएँ सार्वजनिक होती हैं, और प्लेटफ़ॉर्म आपसे साइन इन करने के लिए कह सकता है। आप हमसे पहले संपर्क किए बिना भी समीक्षा पोस्ट कर सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b3f73b2d063aeb2ebf7",
+   "sourceHash": "8b3f73b2d063aeb2ebf7e91a45f536939c6e8efbfbf37383a8c85e96ed93e3ff",
+   "text": "अन्य रोगियों और आगंतुकों के अनुभव पढ़ें →",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'guests' replaced with 'patients and visitors' (रोगियों और आगंतुकों) per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_bdd48cf4999ac85638cb",
+   "sourceHash": "bdd48cf4999ac85638cb7684c716cdf20ab7c97f03a12b15b749291c6efb28cd",
+   "text": "कुछ विवरण बड़ा अंतर ला सकते हैं",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a76d2ef579684d5167f",
+   "sourceHash": "6a76d2ef579684d5167fe398a56d6e402eda87698c9a5ee36abeb5700bab68f9",
+   "text": "आप हमें क्या बताना चाहेंगे?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2730a140e245a3986546",
+   "sourceHash": "2730a140e245a398654602f654a5daa296db08c48c3233f3b9a8583e10577b12",
+   "text": "आपको लंबा विवरण लिखने की आवश्यकता नहीं है। अपने अनुभव के उस हिस्से से शुरू करें जो आपके लिए सबसे अधिक मायने रखता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c4dc542b511fd74f4016",
+   "sourceHash": "c4dc542b511fd74f401665a02dd5a20cf41cebd16daa6a7f78ddfbcce88239fe",
+   "text": "क्या हुआ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec6350e77e3fda9876b2",
+   "sourceHash": "ec6350e77e3fda9876b2acb108558893a8ecfff29833e11dd22601a156eed0d1",
+   "text": "अनुभव, सुझाव या चिंता को अपने शब्दों में बताएँ।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e757eaf9231f097ed46",
+   "sourceHash": "6e757eaf9231f097ed46fb42cc38221f4df9cafb2d8f0df98be788e052b29dc1",
+   "text": "आपका प्रवास कब था?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0feb4441f95f3ab91bf0",
+   "sourceHash": "0feb4441f95f3ab91bf0b4a47e0438fe2a9d1e0ec89ac135e52fc587407ff1f7",
+   "text": "यदि आप चाहते हैं कि हम किसी विशेष विज़िट की जाँच करें, तो तारीखें या बुकिंग संदर्भ जोड़ें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4160ad149befc2cdaa31",
+   "sourceHash": "4160ad149befc2cdaa31ce293b6d1b158e591ab24f893d59adf587c85c676732",
+   "text": "किसने आपके अनुभव को बेहतर बनाया?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7c65743f984c19df0a8f",
+   "sourceHash": "7c65743f984c19df0a8ff66e401c156da9997d8e2f9a4e9dcef487b9d02dd15c",
+   "text": "यदि आप किसी को धन्यवाद देना चाहते हैं, तो उनका नाम या उनकी टीम का नाम शामिल करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b56e0d0b308abe4d3df",
+   "sourceHash": "7b56e0d0b308abe4d3df797881fcda8b3dbafc8273566fe9ca5bb3d3c0e74305",
+   "text": "हम आपकी कैसे सहायता कर सकते हैं?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e4e9734d1a5414215c2",
+   "sourceHash": "4e4e9734d1a5414215c29a6d8327472cbe244957b4287db79bc0e48b3acda6eb",
+   "text": "हमें बताएँ कि आप किस बात पर ध्यान दिलाना चाहते हैं और क्या आप उत्तर चाहते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4748dc235faff0223fcd",
+   "sourceHash": "4748dc235faff0223fcd6790cff9dbeebc9ba9ad7bf066ec851b870e01dfb1e3",
+   "text": "पहले यहाँ लिखना चाहेंगे?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cd2db6223852ce7c91fa",
+   "sourceHash": "cd2db6223852ce7c91fa2736f27ce16dc0ff28aac2c4eef0ae1c5f0457b2ebad",
+   "text": "अपना संदेश तैयार करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c44ec79c57a1d7bed9e7",
+   "sourceHash": "c44ec79c57a1d7bed9e7fb18b8c4fbddf8c710d9295b7b94a188996eae841e92",
+   "text": "अपने विचार व्यवस्थित करने के लिए नीचे दिए गए छोटे फ़ॉर्म का उपयोग करें, फिर ईमेल या WhatsApp चुनें। आपका नाम और प्रवास का विवरण वैकल्पिक है; इन्हें जोड़ने से हमें उस विज़िट की पहचान करने में मदद मिल सकती है जिसके बारे में आप लिख रहे हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c1a8a29d32b6cc42ad6b",
+   "sourceHash": "c1a8a29d32b6cc42ad6b694994749378ee83a33055bade29af17e7539a447ce0",
+   "text": "भेजने से पहले",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ad8754601f61f414d69",
+   "sourceHash": "2ad8754601f61f414d69a14f5fd0f27acf935f07bdde7ea11d7c99e9d4657e2b",
+   "text": "क्या यह फ़ॉर्म मेरी प्रतिक्रिया अपने-आप भेज देता है?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_daa1fa048aa68dcde2af",
+   "sourceHash": "daa1fa048aa68dcde2af764307f8e101418bf4eeec3e98ab3cff3bf2b62779fa",
+   "text": "नहीं। ड्राफ़्ट खोलने के लिए ईमेल या WhatsApp चुनें, अपना संदेश जाँचें, फिर उसी ऐप से भेजें। यदि कोई ऐप नहीं खुलता, तो “संदेश कॉपी करें” का उपयोग करें और उसे ईमेल में पेस्ट करके इस पते पर भेजें:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This fragment ends with 'to', and the email address follows. The Hindi ends with 'इस पते पर भेजें:' so the address that comes next still reads correctly. The quoted button label “Copy message” is translated as “संदेश कॉपी करें”, so it must match the translated button text."
+   ]
+  }
+ ]
+}
