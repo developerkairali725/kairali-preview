@@ -1,0 +1,1464 @@
+{
+ "sourceSetHash": "eef18c44c17f8918205ca407adb10b382dc55d07351ba427f9abd7d084f523a2",
+ "files": [
+  {
+   "file": "public/ahv/components/AHV Chrome Footer.dc.html",
+   "sha256": "55bfa3720f718d8a236503efe05999278ab4fa922fce3ae3dbd139b547e6331a",
+   "units": 82,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/components/AHV Chrome Header.dc.html",
+   "sha256": "7bef2ebf36bc360761eb7a10ccfdc615badd982acb852f81dd0e46cd511e9511",
+   "units": 39,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-about-us-desktop.json",
+   "sha256": "3bedc2faa2ae4c42ce2a6401e485f231326bb258fe1085d71ec62d5107d1dfa0",
+   "units": 59,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-about-us-mobile.json",
+   "sha256": "291c8a06937f5b19224a69901c3ba3c9b7f53170a0e40e4c52cd4b160c42f051",
+   "units": 60,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-accreditations-desktop.json",
+   "sha256": "f86f550d4e43c6fea6d39ed50caf0859dbfa57608890d11e1a7e4f02f785b2c6",
+   "units": 39,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-accreditations-mobile.json",
+   "sha256": "a2452d82cbf4f9985c242f7f0fcb476a91a46498d8a0b439fbbca1b7f6ba59ed",
+   "units": 41,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-all-programs-desktop.json",
+   "sha256": "5683f812050a0378aa1808f1e2a884be30ffd9d4e5aef8d8cce2f410e05680d4",
+   "units": 366,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-all-programs-mobile.json",
+   "sha256": "fe922c4fa386505882fabe0d04ddc1418327d545793f58ea6dd3e42a33816592",
+   "units": 364,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ananda-lahari-retreat-desktop.json",
+   "sha256": "f4f4ebf09ce595c1c87d9e8f58222bf96e5e8f31afbc3709fcf1b05816fb72c7",
+   "units": 29,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ananda-lahari-retreat-mobile.json",
+   "sha256": "194304e6afa2ece8a015e515cb8c6178e84fc9fb92dc9e63fae0c4cf966432cc",
+   "units": 29,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-article-reader-desktop.json",
+   "sha256": "6bbd2c0a9a4ee24b71a752d4a5e0f356a351f5d957bf385ea68d3fdbd900e16d",
+   "units": 45,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-article-reader-mobile.json",
+   "sha256": "fef59b032ef864b8bb842cc377b042491d576ece7dbd9bf676f801db10078317",
+   "units": 45,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ashtanga-retreat-desktop.json",
+   "sha256": "2ba433a639a946101780e0a6370feeabf7b16f631a12d6bc3e6a2738f4df6e79",
+   "units": 23,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ashtanga-retreat-mobile.json",
+   "sha256": "99c2aeef10be1c03c2c373d19f32156af6af202d225e3b4849d03d9f4fdf0b03",
+   "units": 23,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-attractions-desktop.json",
+   "sha256": "944a9996184aa6b7a4e0a948a4082fbcc22d9455c7dff21e0552524b9270817c",
+   "units": 8,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-attractions-mobile.json",
+   "sha256": "cf9b24df5392b8a835b2ad6c048d0066c0ba833822f1280b9bbe14ab18c6b016",
+   "units": 8,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-awards-and-accolades-desktop.json",
+   "sha256": "daf13ed5fda36996f9839a7d57583c74d93bdfd6879182f8d451e628a3d4f8dc",
+   "units": 34,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-awards-and-accolades-mobile.json",
+   "sha256": "ae2fe6eb351714986db62fc7be341d3ff95d344e701913629c310089e138eab5",
+   "units": 34,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-gallery-desktop.json",
+   "sha256": "7fed3456da6f08d04341a02626c24d7e13ba50fb8e43d895ff3a42883faf1518",
+   "units": 39,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-gallery-mobile.json",
+   "sha256": "39b731de93e0c9ed77317edb2b2eb777d5483754f0fb03aeb72d632d787f03c3",
+   "units": 39,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-training-programme-desktop.json",
+   "sha256": "8c7132d80b20fb90e3f9a836dfcff8586af12864e8902210ba6f7708fe0e8c40",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-training-programme-mobile.json",
+   "sha256": "35e747b53c8c9c80466a4b9af5a83577765a0ea087df889afd12e690eb9ebc5e",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-training-programs-desktop.json",
+   "sha256": "170c0efc91c6446f456f710004d4298181ad66a8b3f191a145cfb57ef2097c6f",
+   "units": 60,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurveda-training-programs-mobile.json",
+   "sha256": "896f8ea4b5d384e6e90e19e0f8812f9634eb5ba9a126cf27dd2af818a7823337",
+   "units": 62,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
+   "sha256": "3cf4cd9e49ad7767ffde13e39e36b3147dc203dfb1509c5dd73446764bdbdb86",
+   "units": 250,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
+   "sha256": "a4e48b456fff37cece84ee345f8c0d7889b3399dd8f3b58fa6946f0451211ac3",
+   "units": 254,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurvedic-treatments-desktop.json",
+   "sha256": "2e01fcf3e2e7801556c0bee7d458cf71db1c188c9d127889581ed4bff2e3a04c",
+   "units": 367,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayurvedic-treatments-mobile.json",
+   "sha256": "803c7642f427636feab8eb1126ddc645d6405b7626918754a5b55cc5fcb07ddc",
+   "units": 365,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayuryoga-desktop.json",
+   "sha256": "13736f9cf9adb127db48f6b8c6edfaaec3623bce66f9535a1a1d021cab70822c",
+   "units": 29,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-ayuryoga-mobile.json",
+   "sha256": "7e2a782c4346e5167c4f3e3194578d2f1f876222e1d76328915f4d9102f03eda",
+   "units": 29,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-back-to-roots-desktop.json",
+   "sha256": "ec13b805ca28baf5eec4ad9c80559c3ec254334693ce1e9bef019c3a344a6404",
+   "units": 21,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-back-to-roots-mobile.json",
+   "sha256": "d669e4770c1ad1b860925beaff6c36f099081705bbc9bc31868dd6ed696db4ff",
+   "units": 21,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-breath-respiratory-desktop.json",
+   "sha256": "3803bfb513d4c5257444f1b5792376f8e9fc59ec04595a16800d088ca786c8bf",
+   "units": 488,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-breath-respiratory-mobile.json",
+   "sha256": "6cc27286120824fc9627cd577b78ef0941790f527ce7e9b45e3bea240a8cdca0",
+   "units": 495,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+   "sha256": "28eaad65ed61fb9582355904b04b01adb28b8af69662fc0cd7c5d499bf10b38f",
+   "units": 105,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+   "sha256": "5c5794ae6afc1c12b6423db2ea254bcd8380cd7ba153ed3bc8a27a62b2ad45a4",
+   "units": 86,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-chronic-back-pain-desktop.json",
+   "sha256": "5faba79fb596144feb2a836e11301f98288c90dcac32b9c9614874d9624f1ee6",
+   "units": 468,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-chronic-back-pain-mobile.json",
+   "sha256": "4dd3987ef4344e91ead2dbdab8a175e2686431dace39cc7b6f5b60b08f69318a",
+   "units": 475,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-classic-villa-desktop.json",
+   "sha256": "a510a91218796bac78aabc2ae11c9f3350bf9b01ba7bfe190342237a3f052cdf",
+   "units": 44,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-classic-villa-mobile.json",
+   "sha256": "88a9b60dfea1388cdf153e4f25265c2ed624f085ef445e6c2331704275ed0bd2",
+   "units": 42,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-confirmation-desktop.json",
+   "sha256": "bbc429ed6c0aded5e99d536744d9c23d4cc1a4a2be7316b33a6f30594e5388d6",
+   "units": 10,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-confirmation-mobile.json",
+   "sha256": "7ef1ff192d628e2e0671cdd305c37b2a88b12722b6516cdf712f0cb5eb89265c",
+   "units": 10,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-consultant-therapist-desktop.json",
+   "sha256": "4f9d88050a9da9dc33844eff3bc02d69a81ebb2008bd2910b6d9b7a4074a4ddd",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-consultant-therapist-mobile.json",
+   "sha256": "9d4e412f039258ae7c0b2f031886ee73ec65762a4f3d15f57f29fc604d68921c",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-five-day-intensive-desktop.json",
+   "sha256": "01e02fd0df75ff17ab4c4d914039d564c9ff676dcc69d9f373ccbdf8a0411739",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-five-day-intensive-mobile.json",
+   "sha256": "a400146dc39cd88c1c7af80f09f7a56aa144e68df39fc3096b573e918be2fad4",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-level-one-advanced-desktop.json",
+   "sha256": "f6e2c92ac5b9b928908f16d7eb316ac3654da2e688a0b97639ed1e5e91f5fcb8",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-level-one-advanced-mobile.json",
+   "sha256": "f1403994d1bd763f73e37df9d1cdcce3a03596fcf0f42abdbe472e7d59be1fe7",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-one-day-workshop-desktop.json",
+   "sha256": "6f61afc8b9a4e484f787ce4ff2ff9807eeeb35b163cb6e814b5606fef62f1df5",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-one-day-workshop-mobile.json",
+   "sha256": "c495fd2bad4e32a01c7ecabf61e87e923f6030dda430b965c3457fef5efd1d23",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-three-day-certificate-desktop.json",
+   "sha256": "163f7cc4215098274605e1f561a1d826481e5b7c4b8fc8bacec150a02674435c",
+   "units": 88,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-course-three-day-certificate-mobile.json",
+   "sha256": "24074300fb1577210a4f2d80c3bd2795e959eed132e5d81d223186d1b5ba61bb",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+   "sha256": "74c2df99ff3d35e453c0af9490223ab724e02b950b7c16b2b507d4c7d874945f",
+   "units": 503,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+   "sha256": "af871523d110b7cc06859945d0bd94d2614e2aefd952ac174dc080cec4ac0e7a",
+   "units": 511,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
+   "sha256": "b09841669e33c0c640b78c98a916c23e0ea2c92d2acc2c11db35051c7bdf9ebc",
+   "units": 52,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-defence-and-paramilitary-forces-mobile.json",
+   "sha256": "a88d0ac0e62a2e8e6c5fa3149b3b4e98eb050f104cb6a032aa302eecadf7b605",
+   "units": 51,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-deluxe-villa-desktop.json",
+   "sha256": "3550fb353b6d564d07d1acb1da379a2f0433d54620de21e8cc2b5fa3ec2cad29",
+   "units": 44,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-deluxe-villa-mobile.json",
+   "sha256": "3aca0752f953e2057178ccf4708b35e7c1aba387d9b15727e9c560b08ce757a4",
+   "units": 42,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+   "sha256": "26bde2b1dbbe40c9ef12f03186ad8e63d80bd03c113437c335c3eafa0185989e",
+   "units": 487,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+   "sha256": "65be50123b58fa2dcb82855449aa1418f6ae10754bcd3ba41f1dd1e05991db58",
+   "units": 495,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
+   "sha256": "77171c3df3dc5e25e8deb5feb66df5735e83806d9eeb58b125556db71f01faea",
+   "units": 478,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
+   "sha256": "07814f7ffbd84ee223b3f54367d13bebafab1f3a25d14eccca952a804d3955bc",
+   "units": 485,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-enquiry-desktop.json",
+   "sha256": "6a321101b02b0bc14eb097301e7eafd67028a5b099ecb7251bba9f48a2ffc165",
+   "units": 108,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-enquiry-mobile.json",
+   "sha256": "d385d08edf2c06120444a9b6463d17edce2f95bb76be4a0dd4a8e6c30bba59f2",
+   "units": 108,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-facial-paralysis-desktop.json",
+   "sha256": "77de20ae0d767e24393b700e2b582df91513de8211facad0a7ac1a532f740070",
+   "units": 466,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-facial-paralysis-mobile.json",
+   "sha256": "af49572737825ed72d23ff20f616ac0669c870d228d71a2e489aba517c80948f",
+   "units": 473,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+   "sha256": "244204fda766680ec79dba97bff91e3e48d61236e8103f019308c8e166065810",
+   "units": 359,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json",
+   "sha256": "fb75a3933d7fca8102317a2549725c3cd31fee0bc7da17a5d8e8a3442a2720a6",
+   "units": 356,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-gallery-desktop.json",
+   "sha256": "e265fe68b3084381118815d285092a191be1c7a6893a749af9d4898ea34e6fe3",
+   "units": 30,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-gallery-mobile.json",
+   "sha256": "86c6e10851ce7526327186115dbd43bddd326932429776e18ecf13732e64dbda",
+   "units": 30,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+   "sha256": "cc53ad90ef5a5f7a1b13aaf156399c282c2a09132881dd2407633f5ee1e32a2e",
+   "units": 515,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+   "sha256": "8a781f7e201725bef6979d1554396c28b10f813152ee8837890a5a712b4dcaf3",
+   "units": 523,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+   "sha256": "03b948aa4df160ce91650f2751411f646f0b40318829fff6d2ca19cc2f5e6d60",
+   "units": 201,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-how-to-reach-mobile.json",
+   "sha256": "8d225d9dd988f9df99131612017eea514d8c428b9fcc8bcae47e2c15aa85d95d",
+   "units": 174,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-hypertension-desktop.json",
+   "sha256": "7e4ebde7dc92a18d9a07d9b742e9b272d08ba122c8d94865db570e7c78344446",
+   "units": 463,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-hypertension-mobile.json",
+   "sha256": "ec7a1706fdf32277130bc60d000d842de261585ff7efe15936a54d3ae92a1670",
+   "units": 470,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-immunity-executive-health-desktop.json",
+   "sha256": "c4d164b17affcf9d71cb8d6061b8685a2552011b5023d45e165581e539079b0a",
+   "units": 474,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-immunity-executive-health-mobile.json",
+   "sha256": "d008e001d911ac4ed777eae34813cf6356363600f0ce9ff13502eec213278a57",
+   "units": 481,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+   "sha256": "6b571606168d6fac721786af279c3be8ed0b97f8056d30407b43a40fefc0f12d",
+   "units": 494,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+   "sha256": "889a9d82178e6efc39f09b18bc5e2f7c0c3c76dd714559dd80691578eddf288f",
+   "units": 502,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-knowledge-centre-desktop.json",
+   "sha256": "bd68469fb805ccf2f14441c17d2b5c2f93d19691aae21a61c3d4cec6f5a6c372",
+   "units": 18,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-knowledge-centre-mobile.json",
+   "sha256": "da58e6a03bce1b33f5edae0708950bc0c1faf9a443124899ac8d217da81ca8e2",
+   "units": 19,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-lakshya-yoga-desktop.json",
+   "sha256": "3d05b3f3d3ac47529693b5b22ddca08b52b44f0a6364c1097742a2ab05b78548",
+   "units": 35,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-lakshya-yoga-mobile.json",
+   "sha256": "f79127cc0dc98f67636be43a41d376ede44fd82129c06c237343b5395024120a",
+   "units": 35,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-maharaja-suite-desktop.json",
+   "sha256": "da24d0ef046ebf538bb2598e37370fc74c449b519732e04231525163d7bef60b",
+   "units": 47,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-maharaja-suite-mobile.json",
+   "sha256": "fb4633b306756b420b7b278ce263b14cdbc5e3f8c63145111369056a119c91b0",
+   "units": 45,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-mindfulness-retreat-desktop.json",
+   "sha256": "3065298688a264bd6e4ad96bc9bea1618755661371bf12a3a688935897b9d572",
+   "units": 22,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-mindfulness-retreat-mobile.json",
+   "sha256": "7fe8619b118d6e5f1d0605ce9813f9bb03b4bd76e790102d5673c6c3626be602",
+   "units": 22,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-neck-upper-back-desktop.json",
+   "sha256": "8638f5f46594b2935d6096a7faf7decfd4797a7f2ed3bb1b12d8c9a53e4c9984",
+   "units": 444,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-neck-upper-back-mobile.json",
+   "sha256": "57dad0076da6d4c752c01a0e2a918b0dbc6f51a4f63a668529ef52dddc50ab04",
+   "units": 451,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-nervous-disability-desktop.json",
+   "sha256": "4f5202eecbd47fc36595e0f97a1bcca02d98a1b2151127f551556551d5546f23",
+   "units": 463,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-nervous-disability-mobile.json",
+   "sha256": "4622cf3010e57c36918ee664fa4369fe817be312cf967857780b2695114f78cf",
+   "units": 470,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-no-preservatives-desktop.json",
+   "sha256": "a925a4328789c09be8b5072562e73a87dc8c9033aaf21ceb22c044917109ba9d",
+   "units": 50,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-no-preservatives-mobile.json",
+   "sha256": "6889251a23482d33bb7ec6cd4d482e0ff7a4fd0109b085c14504362fb0f48403",
+   "units": 48,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-our-partners-desktop.json",
+   "sha256": "0d4b17861285bbbeeb4a6b8cf20139717c3b43bffd0e96837677dc9563aba3f2",
+   "units": 25,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-our-partners-mobile.json",
+   "sha256": "af81ec23a83cd4b04012211d86aa70abd39f0120913f84f6519c613db29a82be",
+   "units": 25,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-our-villas-desktop.json",
+   "sha256": "2cd581b46481d14269d8eb07e75937cb1bdcd222766cc822fb30a5204cfbc40c",
+   "units": 35,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-our-villas-mobile.json",
+   "sha256": "b393195886e853b530556fee0e6d545723047a90b38164d53a2d2c1a33470ab3",
+   "units": 35,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-panchakarma-therapy-desktop.json",
+   "sha256": "e892a851084bd0f8f760da851f1b9494586e5edd99659d4999b05d07bbe56466",
+   "units": 514,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-panchakarma-therapy-mobile.json",
+   "sha256": "47acbcec560b03042f982559d3f3bd8ef1c668b01213b85187688cca0b6825c9",
+   "units": 522,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json",
+   "sha256": "b74c0691894fa23d577e1ea948774b32892f38b56faeb7ce80f74f03eed88696",
+   "units": 259,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json",
+   "sha256": "8fdce7fb1bd07779c7e3eaeb80ddf1dbaa90d9e4eb902b23515f532460d37c98",
+   "units": 260,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-paralysis-recovery-desktop.json",
+   "sha256": "c9be90b7960e810ba4d3a467fdb930fe8f479f93e0adf0c82d630b3a5e470027",
+   "units": 459,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-paralysis-recovery-mobile.json",
+   "sha256": "02d1be2b36828598f45ce48b7ec4d590bffa6fd9950a9091feb535ec1bd67ca2",
+   "units": 466,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-past-retreats-desktop.json",
+   "sha256": "4ccf78c5fa0ecf7b5e1c0c0142ef47f3ee7b3202d5f4b7447a95f174dcb682be",
+   "units": 28,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-past-retreats-mobile.json",
+   "sha256": "39ecf1dd3dfa32016ce991d46c09d7e1753315d1f3ac002f5bccc617ad3d4e02",
+   "units": 27,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json",
+   "sha256": "63769f9a702deae820eef062d82f993c10e5e0a457e5decacaaa6e5484ca9c24",
+   "units": 488,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json",
+   "sha256": "91b979ecf63e4c70b29118685ccf658a6ec89d54a21c4d711a70cd66e4c44ed5",
+   "units": 495,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-policy-reader-desktop.json",
+   "sha256": "b5ac6faac4aede61381290a576a019fc77a43a3734668d291e9c3340beed6f5a",
+   "units": 9,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-policy-reader-mobile.json",
+   "sha256": "e9452c36f13f0e54d2ccfbcf1f00b8ba87b4ad3e6459b3026c36cbb653dcbb69",
+   "units": 10,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-post-pregnancy-health-programme-desktop.json",
+   "sha256": "c8144157d6da48e3322bb08491c85a32f3cd0b17c302dd6bde22c8c282074bc1",
+   "units": 492,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-post-pregnancy-health-programme-mobile.json",
+   "sha256": "c2cf1100435862b4e619141f3714d7fd6367d87605abccfc129f0ffc478e1347",
+   "units": 500,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-preventive-regenerative-desktop.json",
+   "sha256": "75b7b88fbd258b0fe5e16ae0d9bb9b21a15b93462b83424af0a9d74559559e7a",
+   "units": 463,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-preventive-regenerative-mobile.json",
+   "sha256": "0c91cd003ba5bf58c01a0e391a01924eb7a0644687d473b175e0b7750db1718b",
+   "units": 470,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-psoriasis-desktop.json",
+   "sha256": "2ddc060e93c7b7b039a6cca3bb65ae9d89a7e31bf7ccf00dc4979cb52f118303",
+   "units": 456,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-psoriasis-mobile.json",
+   "sha256": "27f03c8f2749c422b26e9f1983d594f35b52ae314b4597648494f30cf7bfc277",
+   "units": 463,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-royal-villa-desktop.json",
+   "sha256": "41a2e49cbbf8a3f876e9375105f1d25327ed692c1ee0add47cfc3bc9ef49728a",
+   "units": 44,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-royal-villa-mobile.json",
+   "sha256": "007d4630cdef31e80c29f8c814ea0bb0c0585a37f6684236cacfbf14835594ee",
+   "units": 42,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sinus-migraine-desktop.json",
+   "sha256": "d2d31380d3a9f48c631d453e2c92f099dd20c26848ce54df12cf7bf489dc1d7b",
+   "units": 464,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sinus-migraine-mobile.json",
+   "sha256": "aeb8c793a9173a83c389d47c4932da53066c54ed8d102a8ad34dbe27647934a0",
+   "units": 471,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sitemap-desktop.json",
+   "sha256": "64d194c2e8efdb5f95802b296d26819bfa37c38b25eea347d2dacfcd55e67497",
+   "units": 501,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sitemap-mobile.json",
+   "sha256": "8e50d671b9164fd5db41021c1b48c5546b59d91191c0f98061333b2a8eb64ae8",
+   "units": 501,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-skin-vitality-desktop.json",
+   "sha256": "363c5a9a1ccdf838ed49f8ebcaa7bedc931a27f97325b855ac4d23aa326d1189",
+   "units": 469,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-skin-vitality-mobile.json",
+   "sha256": "4cfced6758634e65d997726e6765b8ac2803da9f95dac0330fcd59011d83b6e9",
+   "units": 476,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sleep-restoration-desktop.json",
+   "sha256": "a8fe7997f1edd85ed5f062a4d1a955308a7266280d1504ffc22cd9b54e2406cd",
+   "units": 482,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-sleep-restoration-mobile.json",
+   "sha256": "a318dfb01e3680a8473706d3615b96189ff7227340a5e294c31cd2275bd51e92",
+   "units": 489,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-spinal-disc-nerve-restoration-desktop.json",
+   "sha256": "b0689b1900a12d3effe31cc5160e5c0a28cb8c7c47e618ecd4ebe9edfce38678",
+   "units": 494,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-spinal-disc-nerve-restoration-mobile.json",
+   "sha256": "d11266282a70fa02e0e3eebc4f9a3f7817e6727b0c124f1a4145737145a38c82",
+   "units": 502,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-spondylitis-desktop.json",
+   "sha256": "2a4a25f002bc2fc36183eab3e1b3b9f7b0f9f65ad00a27095046e4ff4eda8e30",
+   "units": 453,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-spondylitis-mobile.json",
+   "sha256": "8c5f0d8606aef2e65e42c27be53dcc520548c6f87fea9116a214569228c0908c",
+   "units": 460,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-stress-strain-desktop.json",
+   "sha256": "20769d72095a15eeefdbd6b4a636e0a4230799d66d751fe98b6e6a96794bea75",
+   "units": 472,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-stress-strain-mobile.json",
+   "sha256": "521d9f43b8a4d4dbcb0af68d2db45db83903efa346f0308cb7631cae79b02e2c",
+   "units": 479,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
+   "sha256": "9ceb77d46072790f2b87a4e0952f2a58f5292f6a5ad4c661209cd535ca615e6c",
+   "units": 465,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
+   "sha256": "00c70e4143adb89e52e4498dfe5bd1e109a83a5628e563d17378e0e834097ad3",
+   "units": 472,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-training-programs-desktop.json",
+   "sha256": "ceb7066f4cc6037abac86433cd3b861efd4b305dc1f5098b0b0721bf86fd020c",
+   "units": 366,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-training-programs-mobile.json",
+   "sha256": "1c441c55f82132b20c5b3c12031654ae4ccdb369a6c00cd8eb11f08c949e8e31",
+   "units": 364,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-treatment-programs-desktop.json",
+   "sha256": "74d9d703bbdf560859ea5a7b40205dfd12c3d0e9daba86ae7e73d63c9bfb9096",
+   "units": 366,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-treatment-programs-mobile.json",
+   "sha256": "d2287939b118f2b6097bf5c7623ef19f45929d27d7b4623a824fa8ec1ad05821",
+   "units": 364,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-vision-eye-rejuvenation-desktop.json",
+   "sha256": "163d03c4bad5cf69e498a1180d2c256d85f7b547a4e3af6934ab7ff92b4dc6c7",
+   "units": 486,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-vision-eye-rejuvenation-mobile.json",
+   "sha256": "7b919ae03a3e4cb5f9dbf8c9ea146ddbb40c6c68a010b0204d19224b5e043622",
+   "units": 494,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-weight-loss-programme-desktop.json",
+   "sha256": "92aa311931ffa0c4dcea9a0f8a6d32b6f5b1090e56a40cfe0d73854e97cd9341",
+   "units": 523,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-weight-loss-programme-mobile.json",
+   "sha256": "55b832d1e7bcd2e6db89f4572e0c06c022afb8a2bd0d46c3a32ca8236b9edc10",
+   "units": 531,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-wellness-programs-desktop.json",
+   "sha256": "b1ac6c1b307ed802de86ee917cddfab73b6380990b9b0badfcf8d473c9b6f967",
+   "units": 366,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-wellness-programs-mobile.json",
+   "sha256": "b55221a0c29d111df7fd8be948d0ee7c402d5e61cd26718b04d7de3bf3fb3dc5",
+   "units": 364,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-womens-hormonal-balance-desktop.json",
+   "sha256": "3d5c69c8b81ee08862fb65e0656f8c52ba240a2bacbcd8dc294625ef7d6389f4",
+   "units": 457,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-womens-hormonal-balance-mobile.json",
+   "sha256": "bdaa679ec23eb92f389fe18bcf64af975a3ac38905a139e755acb6c6c07262ff",
+   "units": 464,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yala-2018-retreat-desktop.json",
+   "sha256": "33602405f0830b7aa0b89912e441d33606ec3121e15365cc73b1d5166c347ab4",
+   "units": 34,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yala-2018-retreat-mobile.json",
+   "sha256": "8abe434f7de2b2f2f8f90e98e6af212c7e5871e98bf0a2238acb50fc2c4a36ba",
+   "units": 34,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-desktop.json",
+   "sha256": "39d524453c763855b8b9625d3d82e5225f6f8373c123bd0b11f85db31d75a45f",
+   "units": 347,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-mobile.json",
+   "sha256": "5ce62a3c20e4b2ddea591f2411dc32eab247f7ad431feca935b2b985cc88fc04",
+   "units": 354,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-programs-desktop.json",
+   "sha256": "b9020e905c706fc76ec6844cf83b86192e936d37d2ef5cc6081cf5ff9524db5e",
+   "units": 373,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-programs-mobile.json",
+   "sha256": "d1250eeb7fac1ba1759cf03dbacbd8fc044afe01597b7b61319f4ab1693cd427",
+   "units": 371,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-training-desktop.json",
+   "sha256": "77cec65e5a690105f039a7e7bb565dbbf19cf1cd19a2dc32842a51353814ba2f",
+   "units": 426,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-training-mobile.json",
+   "sha256": "728ace8c56a9d4f38076ea4d1b5b7a3a7dbedbfdb7d14a6a115ef819add58f51",
+   "units": 433,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-retreats-desktop.json",
+   "sha256": "861d1369bcb8b440387f851bb9dda0474319018b940c43cdd8b9aeed308effa6",
+   "units": 80,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-retreats-mobile.json",
+   "sha256": "f3b2bd13e4c48dcfd3cac2170c384b1b0c222231a441a8f183d93778cea54eac",
+   "units": 85,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json",
+   "sha256": "a64c9dbb7cfe1868ac3e136a7182617a76e753191432a2a4a93ce2a727944401",
+   "units": 469,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json",
+   "sha256": "afaba3f52ecf1e4071f49a6f497d41d3364d52bc72ffaef93f5037305c1b97f5",
+   "units": 476,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-attractions-by-distance-desktop.json",
+   "sha256": "573ddbfc5f41af3c5c17925060588183fdd3d4a318fd6256d710370aa3b501b5",
+   "units": 152,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-attractions-by-distance-mobile.json",
+   "sha256": "e3f807315f79af28cd30a3b94638a577c4931ea05c7df8f78d103897e089cb51",
+   "units": 154,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-course-and-fees-desktop.json",
+   "sha256": "656cf25f27dffc0f44d04a92a74837f1ab83e4afe07fbf050796b44c9cfb6cb7",
+   "units": 149,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-course-and-fees-mobile.json",
+   "sha256": "b8bafc3ec14187e7c4988fb93274507c674f2cb7d9c8d0dad36529ef423e32eb",
+   "units": 151,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-legal-policy-desktop.json",
+   "sha256": "fc39aa976f5cc1109835b2622f2017ed00a2d83841495c1aac6e7c16ff041c65",
+   "units": 100,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-legal-policy-mobile.json",
+   "sha256": "79f516bd0eb49059e74f60e0b47dceb15708f3f651b7b3c2d60ffefca7325f31",
+   "units": 103,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-desktop.json",
+   "sha256": "3e8420ea800034da16cd1eaffe85b91134db579124d2d41a067cd858368ed1ac",
+   "units": 178,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-mobile.json",
+   "sha256": "f3877379742002f6e3532c79765995cdb5ac868b9d3123dd082356da20f50a5c",
+   "units": 164,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-past-retreat-record-desktop.json",
+   "sha256": "4aeb61c4ca7dc628061ef2bc4762cf30a1e37edc30b1793fce0d2b9c7867616e",
+   "units": 134,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-past-retreat-record-mobile.json",
+   "sha256": "d3d9913185a225ea99f8d52a01847241c3050e5c155912b82e7e6a18b87d0186",
+   "units": 133,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-photo-collections-desktop.json",
+   "sha256": "c7c3d76932164f9eabe984ac4c3b3507303bfa820e25800f7e864160e43240c6",
+   "units": 40,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-photo-collections-mobile.json",
+   "sha256": "ed01662dfe4e701eacd2f9505ab3b5e010b97207767488360a186d3f0ef16223",
+   "units": 40,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-product-family-desktop.json",
+   "sha256": "b7846193c0c637fa54b2a5a789a66f3a7b8bf4eb25f615d537c2c979910f05f9",
+   "units": 56,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-template-product-family-mobile.json",
+   "sha256": "7f4f4172e0cee1c3d47bff0007222269498525fb48c86cdf4c6a17feeec63b4d",
+   "units": 58,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/home-hi-fi-v4.json",
+   "sha256": "3e4239b0e11ad98da17ff94ac6d78f9e7827cd6cd86dc57cfb9ed0467582f790",
+   "units": 686,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/home-mobile.json",
+   "sha256": "c5d978528a08d621d0014419486054facdf1d2d49bfcc58e6e6a3bc14727bdee",
+   "units": 619,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/about-us-data.js",
+   "sha256": "17e16d29561abb153a0dca3a26588a7ab0812d3d6d6ca29fb63fadebc1c0e2e9",
+   "units": 72,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/accreditations-data.js",
+   "sha256": "2cf11c04a9e602ad55395a8e46df8468af83172e42addd6888e5b53ec135dabf",
+   "units": 130,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/accreditations-render.js",
+   "sha256": "a502d4d9c3cfc472078a061c71aaa8c92ab7d2edb7ec7b401295c2aa93850e05",
+   "units": 6,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/ananda-retreat-data.js",
+   "sha256": "38f422d1435591a44a665da49585311b53dbfc0c9e69471049cc07ed0641eaa8",
+   "units": 57,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/article-family-data.js",
+   "sha256": "65b4eabb81811b603e57f66a4ee75074c46f62f53231d1510cfbe7a4eb7ba05a",
+   "units": 3949,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/article-family-render.js",
+   "sha256": "a83669d8b7366f9c6e50640e97603458dba350e0a029b91297a8e4d2233dbaa1",
+   "units": 48,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/ashtanga-retreat-data.js",
+   "sha256": "709273893677919d9e78d00e953af9f3c38cce22f0b0bcec7e7bb44a1b810dff",
+   "units": 59,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/attractions-family-data.js",
+   "sha256": "ab7cd1f4a7b92af0182c1dc1a9a04ff0a2d236fe66780f1e9908a69317a320c0",
+   "units": 371,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/attractions-family-render.js",
+   "sha256": "8f17e336db0940837d9734b210e786a461f893f7f335e1481d62b5d0f320e715",
+   "units": 8,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/awards-and-accolades-data.js",
+   "sha256": "60ed372371ac0417829806e28d71a1675a60ef4850ab15a4d5cd41d080838536",
+   "units": 81,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/ayurveda-gallery-data.js",
+   "sha256": "a669fd3d65a3c0bbea67b71cce99e58034f9867cc29ff1b65c01c444e1841177",
+   "units": 20,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/ayurveda-training-data.js",
+   "sha256": "5459e359b5ec63a9ed9f4846f1da4125ac858707c2c9c5f685281c2f4c01e380",
+   "units": 64,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/ayuryoga-data.js",
+   "sha256": "8cc917261bc7da921c79256c4edc6fbadd08bf6e494ea26e2cb8b6d5405f0b38",
+   "units": 73,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/back-to-roots-data.js",
+   "sha256": "8d6fb4ad658f08d40a56ab6f1df56c658badba78525c7e10a631f5f275338c03",
+   "units": 41,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/classic-villa-data.js",
+   "sha256": "68763c19d8982b238954135fd13e2edce8b6856558685c7e727c1e06b5487ce1",
+   "units": 178,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/collection-family-data.js",
+   "sha256": "ec1d52efa85a25490b3e93b2622c5548ca39a0ad7d4ed8c9c40232f794bbb479",
+   "units": 1143,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/collection-family-render.js",
+   "sha256": "7a6be850fda50ce641ab163f1ef0a97c837fafdfb3058473f53c5ada7ad1706b",
+   "units": 60,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/commercial-family-data.js",
+   "sha256": "7e12b2206ea65420826cd7693f89cc433447ca4cd7b34d9a05b8ba337a1dc4f7",
+   "units": 1150,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/commercial-family-render.js",
+   "sha256": "28f67243be8619b85e925e81903a636dc8238c3932dbdb85803fc5d5dff69fb8",
+   "units": 6,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/confirmation-family-data.js",
+   "sha256": "96f2b8969ec8740769a4f531f2f3a8176ff28f71cba1d63eea1b059c307954cf",
+   "units": 323,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/confirmation-family-render.js",
+   "sha256": "7d66084f2465b5598fe8f861116ed530528853415b7e72782b1ddd8400521bda",
+   "units": 2,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/course-aalct-hv-data.js",
+   "sha256": "eb501fb63d71903411d7c2bd8b562d83bf43b6b4848b0a0e81fb7619edadf9f0",
+   "units": 53,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/course-aatp1-hv-data.js",
+   "sha256": "33f847dc995cdb675bbbcc465a351d5c56fc9b2b4a2da95610e7644b8a6fb45b",
+   "units": 57,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/course-oap-hv-data.js",
+   "sha256": "dcc439ab84a9677ff38f3413305a3077f38669b19db767ea2b9cd254937d0722",
+   "units": 52,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/course-tap-hv-data.js",
+   "sha256": "71fb63e0ce27e30acaf87c03e6b6ce8f9a9d30599673ae569eaa372fee63f59e",
+   "units": 51,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/course-wap-hv-data.js",
+   "sha256": "acd1bfac58f1df0fc68fedb7e6aacbd9416167ea098b4ee3e0ac04238d36ba24",
+   "units": 53,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/deluxe-villa-data.js",
+   "sha256": "f5a7dccf3d3ada8d6601fd0c8480496c0bd46a6f909c5f986d5e9829faf38f46",
+   "units": 167,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/enquiry-family-data.js",
+   "sha256": "667ddf45044d16d451ff4a433660632feb026d17f001b83371b64a28dbf9854a",
+   "units": 2867,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/enquiry-family-render.js",
+   "sha256": "b7f8408ddfe9ad450148d457ed24b31ce8a6d3dc7cf2025e0ce60173db02c797",
+   "units": 42,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "sha256": "569350b01d4f456ca837ab3f3b96d40ae70492f1fc490c51eca82a56c68ca116",
+   "units": 444,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/exception-five-family-render.js",
+   "sha256": "18813502c297c3ece40bf6524315b5520045ceb207266bfb66f79df5cde6300a",
+   "units": 0,
+   "status": "technical-only"
+  },
+  {
+   "file": "public/ahv/assets/gallery-family-data.js",
+   "sha256": "d47b2f4dbfeb87634da91a2d5d0338ccc1ee5922a403976aca8f84df59c07504",
+   "units": 578,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/gallery-family-render.js",
+   "sha256": "31ea84581b5a3db452547d9742e3d3f969b1bc37c801df1952e465d40d488df5",
+   "units": 20,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/gallery-hub-2026-candidate.js",
+   "sha256": "37929d9ee7f47bfadc5edfb2d2cb91cde23fa0e464264ecb3b6e67edf4ab1788",
+   "units": 44,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/hist9-family-data.js",
+   "sha256": "1db12829b0697cc16a652c387dbe544d1bfc690eb78a7e43a434cff36f0c6800",
+   "units": 2941,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/hist9-family-render.js",
+   "sha256": "5f9009e355bc3a9ac30792502ee79ab5017cdbb576c43ad9376decf4d0ce6423",
+   "units": 3,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/knowledge-centre-data.js",
+   "sha256": "457d44ed8ba28f68d06e3ad0afc73d8caff46a44bb41d0fb3f59249279e05f43",
+   "units": 17,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/lakshya-recovered-family-data.js",
+   "sha256": "d26a99b42397ac7ab3c8e54977672aed40eb57f6484688daa5320a030fdbaff2",
+   "units": 93,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/lakshya-recovered-family-render.js",
+   "sha256": "2510919d951b4776a6f2f5a2734107fab123337fab47c23fe51eefdcf6be3df1",
+   "units": 4,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/lakshya-yoga-data.js",
+   "sha256": "8beeb58a14b61057f4871fdcc4f755d3f85335a6dc5cb71d2b453a5a05209c7f",
+   "units": 72,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/maharaja-suite-data.js",
+   "sha256": "1851de6d005c14a9104c3b97f05120b3b4be83f72d91e88e5f04be33b546908d",
+   "units": 110,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/mindfulness-retreat-data.js",
+   "sha256": "8545ccef613546ee3456dfc6eada1299a253775f4c367ed70261d54d19f473d0",
+   "units": 71,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/our-partners-data.js",
+   "sha256": "a16ed2018e895742a7d9c96dae42f2a89bcd44b89336bfc46f645898d965d9aa",
+   "units": 41,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/our-villas-data.js",
+   "sha256": "a7f446f69f82083f4c1e884bbd34205a9daa857b45ee92ec53bc6ec5353ce93a",
+   "units": 72,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/past-retreats-data.js",
+   "sha256": "df79117608764a87c80073406d6817e237b05c5228ef2f4066dbf53a6564cf78",
+   "units": 69,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/photo-collections-data.js",
+   "sha256": "66878dd6f73f8ee5e610d4f97082f4be48b7c2fec8457c7ad7bfa06f2f6b1e51",
+   "units": 1371,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/policy-family-data.js",
+   "sha256": "1cb76443686331c62c090a43586a4cac5be4802a9da78b0f9be02cbaa3ed290e",
+   "units": 1255,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/policy-family-render.js",
+   "sha256": "663ec6422a7c722ea8337335a24157172eb7710f476299fa60401e484cb49e27",
+   "units": 16,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader25a-family-data.js",
+   "sha256": "baf023e8d15d7d49b8bd4265b60bcc5fec14cc929b728c49b8d5576e3f769f51",
+   "units": 3453,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader25a-family-render.js",
+   "sha256": "9d0c803d372e4c97f96f0954a203d24fc3e128cd8061bb777700253a298cd7ff",
+   "units": 1,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "sha256": "592ed1bdc7af10b47bbf6361cc4baf240f9459f2b9e741a0893696d6f45d0497",
+   "units": 3041,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader25b-family-render.js",
+   "sha256": "938e90770e679c2d6d5f1beadd86466bd0c9db497a3683618c78374fd7a1d5aa",
+   "units": 1,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader6c-family-data.js",
+   "sha256": "fedbda7221586937b1a0484368b64c50e109fb5031e290eb5de54f5a3c686353",
+   "units": 621,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/reader6c-family-render.js",
+   "sha256": "807c95931d8cb4d7fae17d3f026e84d2b54b7cd123d1a8ed27601d68a22a78c4",
+   "units": 1,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/rooms-2026-candidate.js",
+   "sha256": "5e3560c827618073d2306d41599e7eef8a7b05459219e61f057508af7350cbfa",
+   "units": 39,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/royal-villa-data.js",
+   "sha256": "7a18e94c123d518409986d3a45d6f10587091b49afb830830eb1fceac9f025b3",
+   "units": 176,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "sha256": "bd614430be682a36f99bee1a1d21700a8fbfd37ed3b348ece1197003967d182e",
+   "units": 899,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/seven-informational-render.js",
+   "sha256": "422b2f192c931190c2b65b8d3343220425eb729f73f0e3f0b61821aafd9384b2",
+   "units": 1,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/story-family-data.js",
+   "sha256": "80693e35403096372188b135f158cd1aeb59311d8965b27e9d5046ddeffb1306",
+   "units": 90,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/story-family-render.js",
+   "sha256": "4878046e4752b2a2b2d5d7cc091693001560b655a52cbc851db5eb19a7010bee",
+   "units": 46,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/training7-family-data.js",
+   "sha256": "496c3300bf5186106f0d4743443696955b75f751849c971d61e6825d5abfb9b9",
+   "units": 2665,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/training7-family-render.js",
+   "sha256": "b2fc94bbc1dc21c896c169cc81dfc60d514fe0d52d1e2f5d7e61e5248c132e36",
+   "units": 1,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/travel-family-data.js",
+   "sha256": "c3d2515563b662c5dabfd58c4cffb558d94d53198d01ec1255fecf22a80d1897",
+   "units": 682,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/travel-family-render.js",
+   "sha256": "014fe82d2530fd3c6a06d64c8494523219e099de900f6533eae6b766b24f86f7",
+   "units": 45,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/utility7-family-data.js",
+   "sha256": "0baaf93964cbb5ad580bcd6ee55c846b813acf28f7032cd03874ac20d6608ca3",
+   "units": 1396,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/utility7-family-render.js",
+   "sha256": "e4b58e22b71e15e71580db09cfb6185e5f68c107c92dbec1bbcb592502a6f95e",
+   "units": 10,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/yala-2018-data.js",
+   "sha256": "ebc4cb4f618d04c709dcbfbd387dc7d956fa6d667e750a03fe7173a66aec0210",
+   "units": 154,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/assets/yoga-retreats-data.js",
+   "sha256": "52744e6d114bf3373652912a1e047b86e1666e841164c25ef8f11d9941a716d4",
+   "units": 35,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/image-slot.js",
+   "sha256": "8db445d4b54405dbfe936fb53ea04003061e7e0014ff5b2ef26db34268b50442",
+   "units": 39,
+   "status": "covered"
+  }
+ ],
+ "errors": []
+}
