@@ -352,6 +352,8 @@ jobs:
       # sat outside the glob (see tests/ktahv-critical-flows.spec.ts). A test
       # that does not run is not a gate; it is a comment.
       - name: All tests (packages/* AND sites/*) — discovered, not globbed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           files=$(find packages sites scripts -path '*/test/*.test.js' -not -path '*/node_modules/*' | sort | tr '\n' ' ')
           if [ -z "$files" ]; then echo "::error::no test files discovered — the discovery is broken"; exit 1; fi

@@ -2,8 +2,17 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**"
+      ],
+      "passThroughEnv": [
+        "GH_TOKEN"
+      ]
     },
     "dev": {
       "cache": false,
@@ -11,7 +20,9 @@
     },
     "lint": {},
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "compliance": {
       "cache": false
