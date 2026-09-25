@@ -1,0 +1,29 @@
+{
+  "reference": "20260925-R1",
+  "sourceBuild": "rate-build-20260925-1611",
+  "sourceFiles": [
+    {
+      "file": "training.json",
+      "sha256": "07e2dac88ac9eae501535f4f5648dd4cd76c112b275c2c165ea1c383d7c848fc"
+    },
+    {
+      "file": "opd.json",
+      "sha256": "eeb837c438f8fa04905cc3d727a00bf6f0fd896d1fd27b1d92bb42b77971c3c8"
+    },
+    {
+      "file": "accommodation.json",
+      "sha256": "16a97d13f6e9e35d96450962e4ae7138306f14804d11fd25132d845e0a88b1fc"
+    },
+    {
+      "file": "yoga.json",
+      "sha256": "c5d135af7c8ebd22875c12ec9936bb723bf2f51ab2b936da5d7d21a44b06bf5e"
+    },
+    {
+      "file": "ayurveda.json",
+      "sha256": "c83a8dab8d5af38baf3e10a8e1425d952cab6c7979fc5670398bb142dc72104a"
+    }
+  ],
+  "currencyRule": "Use published amounts; no exchange-rate conversion. English and Hindi INR; DE/FR/ES/IT/PT/NL EUR; RU/AR/ZH/JA/KO USD. Current existing multi-currency programme controls retained; translated-site release remains separate.",
+  "unpriced": "Personalized yoga has no separate published tariff entry; request a quote.",
+  "opd": "Effective 2025-10-01; no expiry invented. Final published PDF is the displayed OPD rate source."
+}

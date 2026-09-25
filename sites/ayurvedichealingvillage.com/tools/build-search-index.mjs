@@ -18,8 +18,8 @@
  *   · Result labels are NEVER the legacy <title>: H1 from the prerender, else the vocabulary's label override,
  *     else the slug — and an H1/description carrying a KTAHV-locked word is replaced/dropped and counted.
  *   · Prices: a programme whose validTo is in the past is emitted WITHOUT a price (the overlay prints
- *     "Request a quote") and the build FAILS unless --allow-expired is passed. Today's tariff sheet is valid
- *     to 2026-09-30; the V4 2026-27 sheet is not in the repo (flagged in the build report).
+ *     "Request a quote") and the build FAILS unless --allow-expired is passed. Approved 20260925-R1 tariff source files live in
+ *     english-candidate/final-rates; each family retains its own effective dates.
  *   · Size cap: ≤ 35 KB gzip (brainstorm §3.4). Over the cap = build failure.
  *   · Every route referenced by the vocabulary must exist in route-manifest.json (HARD GATE 6 — no invented slugs).
  *

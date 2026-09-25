@@ -1,0 +1,224 @@
+{
+  "document": "training",
+  "site_base": "https://ayurvedichealingvillage.com",
+  "title_ref": "Kairali Ayurvedic Courses (w.e.f. October 1, 2026) Ref.No. KAHR/AY-TRG/2026-2027/04/GBL",
+  "rate_basis": "per night, per villa, single or double occupancy; all-inclusive (accommodation, meals, training and taxes); the course chosen sets the number of nights",
+  "villas": [
+    {
+      "id": "deluxe",
+      "source_name": "DELUXE VILLA",
+      "print_name": "Deluxe Villa",
+      "url": "https://ayurvedichealingvillage.com/deluxe-villa/"
+    },
+    {
+      "id": "classic",
+      "source_name": "CLASSIC VILLA",
+      "print_name": "Classic Villa",
+      "url": "https://ayurvedichealingvillage.com/classic-villa/"
+    },
+    {
+      "id": "royal",
+      "source_name": "ROYAL VILLA",
+      "print_name": "Royal Villa",
+      "url": "https://ayurvedichealingvillage.com/royal-villa/"
+    },
+    {
+      "id": "suite",
+      "source_name": "SUITE",
+      "print_name": "Maharaja Suite",
+      "url": "https://ayurvedichealingvillage.com/maharaja-suite/",
+      "note": "Source prints 'Suite'; printed as Maharaja Suite by owner ruling 22 Sep 2026"
+    }
+  ],
+  "courses": [
+    {
+      "code": "OAP-HV",
+      "name": "1 Day Workshop",
+      "desc": "Introductory session with hands-on Abhyangam massage",
+      "days": 1,
+      "url": "https://ayurvedichealingvillage.com/one-day-ayurveda-workshop-program-kerala/",
+      "sanskrit": "Ayurveda Bodha"
+    },
+    {
+      "code": "TAP-HV",
+      "name": "3 Day Certificate Program",
+      "desc": "Theory and practice of core therapies",
+      "days": 3,
+      "url": "https://ayurvedichealingvillage.com/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "sanskrit": "Ayurveda Sadhana"
+    },
+    {
+      "code": "WAP-HV",
+      "name": "5 Day Intensive Program",
+      "desc": "In-depth training in five major therapies",
+      "days": 5,
+      "url": "https://ayurvedichealingvillage.com/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "sanskrit": "Praveena"
+    },
+    {
+      "code": "AATP1-HV",
+      "name": "10 Days Advanced Program",
+      "desc": "Advanced curriculum for wellness professionals",
+      "days": 10,
+      "url": "https://ayurvedichealingvillage.com/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "sanskrit": "Ayurveda Visheshagya Prathama"
+    },
+    {
+      "code": "AALCT-HV",
+      "name": "20 Days Advanced Consultant Program",
+      "desc": "Comprehensive training, including lifestyle consulting and advanced therapies",
+      "days": 20,
+      "url": "https://ayurvedichealingvillage.com/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "sanskrit": "Ayurveda Paramarshaka Dwitiya"
+    }
+  ],
+  "currencies": [
+    "INR",
+    "USD",
+    "EUR"
+  ],
+  "symbols": {
+    "INR": "₹",
+    "USD": "$",
+    "EUR": "€"
+  },
+  "tables": {
+    "deluxe": {
+      "INR": [
+        18410,
+        30530
+      ],
+      "USD": [
+        263,
+        436
+      ],
+      "EUR": [
+        230,
+        382
+      ]
+    },
+    "classic": {
+      "INR": [
+        20855,
+        32735
+      ],
+      "USD": [
+        298,
+        468
+      ],
+      "EUR": [
+        261,
+        409
+      ]
+    },
+    "royal": {
+      "INR": [
+        25160,
+        36620
+      ],
+      "USD": [
+        359,
+        523
+      ],
+      "EUR": [
+        315,
+        458
+      ]
+    },
+    "suite": {
+      "INR": [
+        45110,
+        55520
+      ],
+      "USD": [
+        644,
+        793
+      ],
+      "EUR": [
+        564,
+        694
+      ]
+    }
+  },
+  "transfers": [
+    {
+      "id": "palakkad",
+      "km": 25,
+      "INR": [
+        3900,
+        13649
+      ],
+      "USD": [
+        56,
+        195
+      ],
+      "EUR": [
+        49,
+        171
+      ]
+    },
+    {
+      "id": "coimbatore",
+      "km": 75,
+      "INR": [
+        6775,
+        23711
+      ],
+      "USD": [
+        97,
+        339
+      ],
+      "EUR": [
+        85,
+        296
+      ]
+    },
+    {
+      "id": "cochin-calicut",
+      "km": 125,
+      "INR": [
+        7950,
+        27824
+      ],
+      "USD": [
+        114,
+        397
+      ],
+      "EUR": [
+        99,
+        348
+      ]
+    }
+  ],
+  "worked_example": {
+    "course": "WAP-HV",
+    "villa": "deluxe",
+    "occupancy": "single",
+    "nights": 5,
+    "rates": {
+      "INR": 18410,
+      "USD": 263,
+      "EUR": 230
+    },
+    "totals": {
+      "INR": 92050,
+      "USD": 1315,
+      "EUR": 1150
+    }
+  },
+  "validity": {
+    "from": "2026-10-01",
+    "to": "2027-09-30"
+  },
+  "validity_basis": "Printed in the source: 'Kairali Ayurvedic Courses (w.e.f-October 1, 2026)' and 'effective from October 1 2026, through September 30, 2027'.",
+  "sources": [
+    "S033 KTAHV Ayurveda Traning Courses V2.pdf (package, 4 pp, created 13 Mar 2026; ref KAHR/AY-TRG/2026-2027/04/GBL)",
+    "Same file in Anupam's V4 Drive folder (id 1WiaI7wEPmBydbLybOPxWPjeH-TPq5xvM, modified 9 Jul 2026)",
+    "Web-factory docs/ktahv-inputs/rates/rates-training-2026-27.md (owner-designated rates source of truth for training, 20 Jul 2026)",
+    "Rate master sheet 'Yoga & Meditation Package & Ayu' rows 59-60 (Deluxe/Classic course-rate rows agree: 18,410/30,530; 20,855/32,735)",
+    "kairali.guru (checked 24 Sep 2026): course list and durations only, no prices"
+  ],
+  "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values from the published V2 course tariff KAHR/AY-TRG/2026-2027/04/GBL (INR/USD/EUR as published; language editions print their mapped currency column)",
+  "review_status_previous": "REVIEW DRAFT — values from the published V2 course tariff (multi-currency as published); commercial sign-off pending",
+  "course_identity_basis": "Sanskrit course names from Healing Secrets Edition 2.0 (blocks 228-232), matched 25 Sep 2026 by course code expansion (OAP=One-day, TAP=Three-day, WAP=Week, AATP1=Advanced Ayurveda Training Program Level 1, AALCT=Advanced Ayurveda Lifestyle Consultant Therapist Level 2), duration and level."
+}

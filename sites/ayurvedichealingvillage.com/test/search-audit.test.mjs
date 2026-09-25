@@ -79,10 +79,12 @@ test('expired and future tariffs are not shown or sorted as current prices', () 
   assert.ok(course);
   assert.equal(before.priceAvailable(course), false);
   assert.equal(after.priceAvailable(course), true);
-  const p = index.programmes.find(p => p.validTo === '2026-09-30' && p.from);
-  assert.equal(after.priceAvailable(p), false);
-  assert.match(after.answerLine(p, 'INR', index.ui), /Request a quote/);
-  assert.equal(after.query('cheapest 7 nights').programmes.length, 0);
+  const p = index.programmes.find(p => p.validTo === '2027-09-30' && p.from);
+  assert.ok(p);
+  const expired = make('2027-10-01T12:00:00Z');
+  assert.equal(expired.priceAvailable(p), false);
+  assert.match(expired.answerLine(p, 'INR', index.ui), /Request a quote/);
+  assert.equal(expired.query('cheapest 7 nights').programmes.length, 0);
 });
 
 test('everyday wording and compressed or misspelled names retain the intended programme', () => {

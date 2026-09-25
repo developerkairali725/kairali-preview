@@ -1,0 +1,332 @@
+{
+  "document": "yoga",
+  "title_ref": "Yoga & Meditation Charges With Admission",
+  "rate_basis": "per night, per villa, single or double occupancy, all government taxes included",
+  "villas": [
+    {
+      "id": "deluxe",
+      "source_name": "DELUXE VILLA",
+      "print_name": "Deluxe Villa",
+      "url": "https://ayurvedichealingvillage.com/deluxe-villa/"
+    },
+    {
+      "id": "classic",
+      "source_name": "CLASSIC VILLA",
+      "print_name": "Classic Villa",
+      "url": "https://ayurvedichealingvillage.com/classic-villa/"
+    },
+    {
+      "id": "royal",
+      "source_name": "ROYAL VILLA",
+      "print_name": "Royal Villa",
+      "url": "https://ayurvedichealingvillage.com/royal-villa/"
+    },
+    {
+      "id": "suite",
+      "source_name": "SUITE",
+      "print_name": "Maharaja Suite",
+      "note": "Source tariff prints 'Suite'. Printed as 'Maharaja Suite' by owner ruling, 22 Sep 2026.",
+      "url": "https://ayurvedichealingvillage.com/maharaja-suite/"
+    }
+  ],
+  "groups": [
+    {
+      "id": "I",
+      "programmes": [
+        {
+          "id": "dhyana-yoga",
+          "name": "Kairali's Yoga & Meditation Package",
+          "sanskrit": "Dhyāna-Yoga Shibiram",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/yoga-and-meditation-package/"
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "programmes": [
+        {
+          "id": "agni-dipanam",
+          "name": "Digestive Wellness & Gut Health Yoga Therapy",
+          "sanskrit": "Agni Dīpanam Yoga Chikitsa",
+          "min_nights": 14,
+          "url": "https://ayurvedichealingvillage.com/digestive-wellness-gut-health-yoga-therapy/"
+        },
+        {
+          "id": "prana-samya",
+          "name": "Yoga based Stress & Energy Reset Program",
+          "sanskrit": "Prāna Sāmya Yoga Chikitsa",
+          "min_nights": 7,
+          "url": "https://ayurvedichealingvillage.com/yoga-based-stress-energy-reset-program/"
+        }
+      ]
+    }
+  ],
+  "editions": {
+    "EUR": {
+      "symbol": "€",
+      "iso": "EUR",
+      "tables": {
+        "I": {
+          "deluxe": [
+            269,
+            499
+          ],
+          "classic": [
+            299,
+            526
+          ],
+          "royal": [
+            353,
+            575
+          ],
+          "suite": [
+            602,
+            811
+          ]
+        },
+        "II": {
+          "deluxe": [
+            285,
+            531
+          ],
+          "classic": [
+            315,
+            558
+          ],
+          "royal": [
+            369,
+            607
+          ],
+          "suite": [
+            619,
+            843
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 38,
+        "extra_meals": 69,
+        "child_extra_bed": 38,
+        "child_extra_meals": 34
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 49,
+          "sedan": 171
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 85,
+          "sedan": 296
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 99,
+          "sedan": 348
+        }
+      ],
+      "worked_example": {
+        "group": "I",
+        "programme": "dhyana-yoga",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 7,
+        "rate": 526,
+        "total": 3682
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S021 prints w.e.f. 1 October 2026, effective through 30 September 2027 (ref KAHR/AY-PKG/2026-2027/04/EURO).",
+      "sources": [
+        "S021 Yoga KTAHV EURO Price List Sanskit V4 26-27 (KAHR/AY-PKG/2026-2027/04/EURO)",
+        "Rate master workbook, sheet 'Yoga & Meditation Package & Ayu', Euro columns rows 29-42"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master",
+      "review_status_previous": "REVIEW DRAFT — values reconciled to master; commercial sign-off pending"
+    },
+    "INR": {
+      "symbol": "₹",
+      "iso": "INR",
+      "tables": {
+        "I": {
+          "deluxe": [
+            21490,
+            39890
+          ],
+          "classic": [
+            23935,
+            42095
+          ],
+          "royal": [
+            28240,
+            45980
+          ],
+          "suite": [
+            48190,
+            64880
+          ]
+        },
+        "II": {
+          "deluxe": [
+            22780,
+            42470
+          ],
+          "classic": [
+            25225,
+            44675
+          ],
+          "royal": [
+            29530,
+            48560
+          ],
+          "suite": [
+            49480,
+            67460
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 3000,
+        "extra_meals": 5500,
+        "child_extra_bed": 3000,
+        "child_extra_meals": 2750
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 3900,
+          "sedan": 13649
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 6775,
+          "sedan": 23711
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 7950,
+          "sedan": 27824
+        }
+      ],
+      "worked_example": {
+        "group": "I",
+        "programme": "dhyana-yoga",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 7,
+        "rate": 42095,
+        "total": 294665
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S019 prints w.e.f. 1 October 2026, effective through 30 September 2027 (ref KAHR/AY-PKG/2026-2027/04/INR).",
+      "sources": [
+        "S019 Yoga KTAHV INR Price List Sanskit V4 26-27 (KAHR/AY-PKG/2026-2027/04/INR)",
+        "Rate master workbook, sheet 'Yoga & Meditation Package & Ayu', INR columns rows 29-42"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master",
+      "review_status_previous": "REVIEW DRAFT — values reconciled to master; commercial sign-off pending"
+    },
+    "USD": {
+      "symbol": "$",
+      "iso": "USD",
+      "tables": {
+        "I": {
+          "deluxe": [
+            307,
+            570
+          ],
+          "classic": [
+            342,
+            601
+          ],
+          "royal": [
+            403,
+            657
+          ],
+          "suite": [
+            688,
+            927
+          ]
+        },
+        "II": {
+          "deluxe": [
+            325,
+            607
+          ],
+          "classic": [
+            360,
+            638
+          ],
+          "royal": [
+            422,
+            694
+          ],
+          "suite": [
+            707,
+            964
+          ]
+        }
+      },
+      "addons": {
+        "extra_bed": 43,
+        "extra_meals": 79,
+        "child_extra_bed": 43,
+        "child_extra_meals": 39
+      },
+      "transfers": [
+        {
+          "id": "palakkad",
+          "km": 25,
+          "mpv": 56,
+          "sedan": 195
+        },
+        {
+          "id": "coimbatore",
+          "km": 75,
+          "mpv": 97,
+          "sedan": 339
+        },
+        {
+          "id": "cochin-calicut",
+          "km": 125,
+          "mpv": 114,
+          "sedan": 397
+        }
+      ],
+      "worked_example": {
+        "group": "I",
+        "programme": "dhyana-yoga",
+        "villa": "classic",
+        "occupancy": "double",
+        "nights": 7,
+        "rate": 601,
+        "total": 4207
+      },
+      "validity": {
+        "from": "2026-10-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "S020 prints w.e.f. 1 October 2026, effective through 30 September 2027 (ref KAHR/AY-PKG/2026-2027/04/USD). Suite double '927' is printed without a currency sign in the source text layer; value taken as $ 927 (matches master).",
+      "sources": [
+        "S020 Yoga KTAHV USD Price List Sanskit V4 26-27 (KAHR/AY-PKG/2026-2027/04/USD)",
+        "Rate master workbook, sheet 'Yoga & Meditation Package & Ayu', USD columns rows 29-42"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; values reconciled to master",
+      "review_status_previous": "REVIEW DRAFT — values reconciled to master; commercial sign-off pending"
+    }
+  },
+  "site_base": "https://ayurvedichealingvillage.com"
+}

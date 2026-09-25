@@ -1,0 +1,667 @@
+{
+  "common": {
+    "language_name": "English",
+    "place_line": "Palakkad · Kerala · India",
+    "tagline": "health through ayurveda · since 1908",
+    "org": "Kairali — The Ayurvedic Healing Village",
+    "edition_label": "Edition",
+    "rates_effective_label": "Rates effective",
+    "validity_range": "{from} to {to}",
+    "validity_from": "from {from}",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "date_pattern": "{d} {month} {yyyy}",
+    "currency_names": {
+      "EUR": "Euro",
+      "INR": "Indian Rupees",
+      "USD": "US Dollars"
+    },
+    "money_pattern": "{symbol} {amount}",
+    "review_draft_line": "Review draft · {date} · not for distribution",
+    "contents_label": "Contents",
+    "contents_title": "What is in this booklet, and how to use it",
+    "section_label": "Section {n}",
+    "section_continued": "Section {n}, continued",
+    "engraving_caption": "Ayurvedic treatment in a historic engraving",
+    "engraving_alt": "Historic engraving of Ayurvedic practice",
+    "accreditation_label": "Accreditation and recognition",
+    "accreditation_text": "NABH-accredited hospital. TripAdvisor Travellers' Choice Award 2026. National Geographic Traveller (UK) Spa &amp; Wellness Collection 2026. PATWA International Travel Award 2026 (ITB Berlin): Best Retreat Wellness (India). Haute Grandeur Global Excellence Awards 2026: Best Wellness Retreat India and Best Ayurveda Retreat India.",
+    "orientation": {
+      "title": "Kerala, Palakkad and the healing village",
+      "p1": "Kerala is a state on the south-west coast of India. <strong>Palakkad</strong> is an inland district, set in a gap in the Western Ghats, and is farming country: paddy, coconut and forest rather than beach.",
+      "p2": "Kairali — The Ayurvedic Healing Village stands at Kodumbu, outside Palakkad town. Patients stay in individual brick villas among lawns, palms and a water channel. Treatment blocks, consulting rooms, pharmacy and kitchen are on the same site.",
+      "p3": "The village is run by the Kairali Ayurvedic Group — in Ayurveda since 1908, five generations of physicians — and is accredited by NABH, India's National Accreditation Board for Hospitals and Healthcare Providers.",
+      "getting_here_label": "Getting here",
+      "getting_here": "Palakkad railway station 25 km · Coimbatore airport 75 km · Cochin or Calicut airport 125 km. Transfer prices are on page {page}.",
+      "ayurveda_label": "Ayurveda, in plain language",
+      "a1": "Ayurveda is a traditional system of medicine originating in India. It reads illness as a loss of balance, and treats it in two movements: first clearing what has accumulated, then rebuilding strength.",
+      "a2": "A physician examines the patient, establishes their constitution, and prescribes a protocol for that individual. Therapies use warm medicated oils, herbal preparations and steam, and the prescription is reviewed daily.",
+      "a3": "This is why a stay has a <strong>minimum duration</strong>. The clearing stage cannot safely be shortened, and the rebuilding stage consolidates the treatment: three nights for a preventive assessment, seven for most restorative programmes, fourteen for Panchakarma and chronic conditions, twenty-one where recovery is the aim.",
+      "grounds_caption": "The grounds at Kodumbu, Palakkad",
+      "grounds_alt": "Water channel running between patient cottages and lawns at the healing village",
+      "callout": "Ayurveda at Kairali is practised as medicine, under physicians, with daily review. It is not a spa treatment and it is not presented as a cure. Programmes are named for the conditions they address, and outcomes are discussed in consultation."
+    },
+    "stay": {
+      "cards": [
+        {
+          "label": "Before arrival",
+          "title": "Teleconsultation",
+          "text": "A physician reviews the case and sets preparatory steps. Recent medical reports and a current medication list are requested at this stage."
+        },
+        {
+          "label": "Day one",
+          "title": "Admission",
+          "text": "Examination on site, constitution established, and the protocol written for the stay. Check-in is from 12:00 noon."
+        },
+        {
+          "label": "Each day",
+          "title": "Treatment",
+          "text": "{daily}"
+        },
+        {
+          "label": "On leaving",
+          "title": "Discharge",
+          "text": "A written plan for diet and daily routine to continue at home, and a follow-up consultation. Check-out is by 10:00."
+        }
+      ],
+      "included_label": "Included in every rate",
+      "not_included_label": "Not included",
+      "sanskrit_label": "Sanskrit terms used in this booklet",
+      "materials_caption": "Herbal poultices and medicated oils",
+      "materials_alt": "Herbal poultices and brass vessels of medicated oil prepared for treatment",
+      "brief_label": "In brief"
+    },
+    "accommodation": {
+      "title": "Accommodation categories",
+      "intro": "Kairali — The Ayurvedic Healing Village is an NABH-accredited hospital. A patient is admitted to a treatment programme and accommodated in a villa for its duration; the tariff is a single per-night inpatient rate that covers the villa, the prescribed diet, the prescribed therapies and daily physician consultation, with GST included. The villa category changes the accommodation; it does not change the medical programme. Four categories are published.",
+      "room_caption": "A patient room with direct garden access",
+      "room_alt": "Patient room with twin beds, brick walls and a door to the garden",
+      "villa_categories_label": "Villa categories",
+      "occupancy": "Single or double occupancy",
+      "closing": "The tariff on {pages} gives each group's per-night rate for all four categories, so a patient chooses the programme first and the villa second. Every villa is on the hospital grounds, within walking distance of the treatment blocks and consulting rooms.",
+      "page_word": "page {p}",
+      "pages_word": "pages {a} to {b}"
+    },
+    "tariff": {
+      "title_groups": "Tariff · groups {list}",
+      "title_group": "Tariff · group {list}",
+      "and": "and",
+      "basis_line1": "{currency}, per night, per villa",
+      "basis_line2": "Single or double occupancy · taxes included",
+      "effective_line": "Effective {range}",
+      "programme_col": "Programme",
+      "min_nights_col": "Minimum nights",
+      "villa_col": "Villa type",
+      "single_col": "Single, per night",
+      "double_col": "Double, per night",
+      "footer": "Section {n} · Tariff · groups {list} · {currency}, per night",
+      "footer_single": "Section {n} · Tariff · {currency}, per night"
+    },
+    "transfers": {
+      "title": "Transfers, reductions and a worked example",
+      "transfers_label": "Transfers · air-conditioned · one way",
+      "from_col": "From",
+      "mpv_col": "MPV",
+      "sedan_col": "Sedan",
+      "rows": {
+        "palakkad": "Palakkad railway station · {km} km",
+        "coimbatore": "Coimbatore airport · {km} km",
+        "cochin-calicut": "Cochin or Calicut airport · {km} km"
+      },
+      "note": "Transfer prices include 5% GST. Arranged on request; not part of the programme rate.",
+      "addons_label": "Add-on charges",
+      "extra_bed": "Extra bed",
+      "extra_meals": "Extra meals (breakfast, lunch and dinner)",
+      "extra_treatment": "Extra treatment",
+      "as_prescribed": "As prescribed",
+      "children_label": "Children aged 5 to 12",
+      "children_note": "Children aged 5 to 12: extra bed {bed}, extra meals {meals}. Under five complimentary; over twelve charged in full.",
+      "children_row_note": "Under five: complimentary · over twelve: full charge",
+      "reductions_label": "Direct-booking reductions",
+      "reductions": [
+        "5% for bookings made 90 days or more in advance",
+        "5% for admissions from April to September",
+        "7% for a returning patient; 10% after more than five previous stays",
+        "5% for stays longer than 28 nights"
+      ],
+      "reductions_note": "Applicable to direct bookings only. Only one reduction applies per booking; reductions cannot be combined. Complimentary vouchers and free stays are not accepted from 1 October to 31 March.",
+      "cost_label": "What a stay costs",
+      "cost_text": "Find the programme's tariff group, read the rate for the villa category and occupancy, and multiply by the number of nights.",
+      "example_label": "Worked example",
+      "example_group": "{programme} · group {group}",
+      "example_villa": "{villa} · {occupancy} occupancy",
+      "occupancy_single": "single",
+      "occupancy_double": "double",
+      "example_nights": "{nights} nights, {basis}",
+      "example_nights_basis_min": "the clinical minimum",
+      "example_nights_basis_min_stay": "the minimum stay",
+      "example_calc": "{rate} × {nights} nights",
+      "example_note_double": "The villa for two patients, with {includes}. Medicines, tests and optional services are invoiced separately."
+    },
+    "terms": {
+      "title": "Terms and conditions",
+      "rates_taxes_label": "Rates and taxes",
+      "rates_taxes": [
+        "Rates are quoted per night and are effective {range}",
+        "All government taxes are included in the published rates; rates may change periodically",
+        "Optional services may carry additional charges: laundry, transport, private sessions, medicines and extra meals"
+      ],
+      "booking_label": "Booking and payment",
+      "booking": [
+        "A 40% deposit secures the booking; the balance is due no later than 30 days before admission",
+        "Requests for a specific villa must be made at least six months in advance and are subject to availability; confirmation requires full payment",
+        "Payment by bank transfer, local bank cheque, cash (Indian Rupees, Euro or US Dollars) or major credit card. Personal cheques are not accepted"
+      ],
+      "admission_label": "Admission and discharge",
+      "admission": [
+        "Check-in from 12:00 noon; check-out by 10:00",
+        "Early check-in and late check-out are available on request, subject to availability, and may carry a charge"
+      ],
+      "cancellation_label": "Cancellation",
+      "cancellation": [
+        "More than 30 days before admission: full refund",
+        "15 to 30 days before admission: 50% of the amount paid is refunded, less applicable transaction fees and taxes",
+        "Fewer than 15 days before admission, or a change of dates during the stay: no refund"
+      ],
+      "children_label": "Children",
+      "children": [
+        "Under 5 years: complimentary",
+        "5 to 12 years: 50% of the meal charge; extra bed at the standard rate",
+        "Over 12 years: full charge",
+        "Parents or guardians must supervise children at all times. Parts of the facility are treatment areas and are not suitable for children"
+      ],
+      "during_label": "During treatment",
+      "during": [
+        "Strictly no smoking, no alcohol and no substance use anywhere on the property",
+        "A calm environment is maintained; patients are asked to keep noise low and respect others' privacy",
+        "Hospital guidelines apply throughout the stay",
+        "Bookings must be made by a person aged 18 or over; minors are admitted when accompanied by a parent or legal guardian"
+      ],
+      "quality_label": "Quality and safety",
+      "quality": [
+        "NABH protocols are followed for patient care, safety and treatment standards"
+      ]
+    },
+    "contact": {
+      "address_label": "Address",
+      "address": "Olassery P.O., Kodumbu<br>Palakkad District 678551<br>Kerala, India",
+      "reservations_label": "Reservations",
+      "appointments_label": "Appointments",
+      "phone_main": "+91 9555 156 156",
+      "phone_lines": "+91 4923 222553 · 222623",
+      "email": "info@kairali.com",
+      "web": "www.ktahv.com",
+      "footer": "{title} · {language} · {currency} · {years}"
+    },
+    "links": {
+      "base": "https://ayurvedichealingvillage.com",
+      "villas": "https://ayurvedichealingvillage.com/our-villas/",
+      "villas_gallery": "https://ayurvedichealingvillage.com/villas-gallery/",
+      "yoga_gallery": "https://ayurvedichealingvillage.com/yoga-gallery/",
+      "photo_gallery": "https://ayurvedichealingvillage.com/photo-gallery/",
+      "how_to_reach": "https://ayurvedichealingvillage.com/how-to-reach/",
+      "contact": "https://ayurvedichealingvillage.com/contact-us/",
+      "consultation": "https://ayurvedichealingvillage.com/online-consultation/",
+      "faqs": "https://ayurvedichealingvillage.com/faqs-downloads/",
+      "programmes": "https://ayurvedichealingvillage.com/all-programs/",
+      "ayurveda_programmes": "https://ayurvedichealingvillage.com/ayurvedic-treatments/",
+      "yoga_programmes": "https://ayurvedichealingvillage.com/yoga-meditation-programs/",
+      "packages": "https://ayurvedichealingvillage.com/packages/",
+      "opd": "https://ayurvedichealingvillage.com/walk-in-ayurveda-treatment/",
+      "training": "https://ayurvedichealingvillage.com/ayurveda-training-programme/",
+      "training_fees": "https://ayurvedichealingvillage.com/training-course-fees/",
+      "awards": "https://ayurvedichealingvillage.com/awards-and-accreditations/",
+      "cancellation": "https://ayurvedichealingvillage.com/cancellation-and-refund-policy/",
+      "payment": "https://ayurvedichealingvillage.com/payment-policy-compliance/",
+      "whatsapp": "https://wa.me/919289838797",
+      "tel_main": "tel:+919555156156",
+      "tel_line1": "tel:+914923222553",
+      "tel_line2": "tel:+914923222623",
+      "maps": "https://maps.google.com/?q=Kairali+The+Ayurvedic+Healing+Village+Kodumbu+Palakkad",
+      "guru": "https://www.kairali.guru/"
+    },
+    "link_labels": {
+      "online_label": "Online",
+      "how_to_reach": "How to reach us",
+      "villas_gallery": "Villa photographs",
+      "programmes": "Programmes",
+      "faqs": "FAQs &amp; downloads",
+      "whatsapp": "WhatsApp",
+      "consultation": "Free online consultation",
+      "awards": "All awards online ›",
+      "route_maps": "Route maps and directions ›",
+      "villa_photos": "Villa photographs online ›",
+      "yoga_gallery": "Yoga gallery online ›",
+      "linked_note": "Programme and villa names in this booklet are links to ayurvedichealingvillage.com.",
+      "opd_online": "Walk-in treatment online ›",
+      "training_online": "Course pages online ›",
+      "guru": "kairali.guru",
+      "villa_common": "In every villa: attached bathroom with hairdryer, toiletries, bathrobe and towels · wardrobe · air conditioning · LED television · drinking water.",
+      "villa_facts": {
+        "deluxe": "King or twin beds",
+        "classic": "King or twin beds",
+        "royal": "King or twin beds",
+        "suite": "Two suites, two layouts — Suite 1001: king bedroom with a separate living room · Suite 1002: king bedroom and twin bedroom · two bathrooms and two wardrobes in each"
+      },
+      "opd_online_short": "Day treatment online",
+      "consultation_short": "Online consultation"
+    },
+    "translation_review_line": "Translation under review",
+    "issued_label": "Issued"
+  },
+  "ayurveda": {
+    "title": "Ayurvedic Treatment Programmes &amp; Tariff",
+    "short_title": "Ayurvedic Treatment Programmes & Tariff",
+    "standfirst": "A reference for travel partners and prospective patients: the place, the physician-led programme, the accommodation and the published rates.",
+    "cover_alt": "Octagonal brick cottage beside a water channel on the grounds of the healing village",
+    "contents": [
+      "Kerala, Palakkad and the healing village",
+      "What a physician-led stay involves",
+      "Accommodation categories",
+      "Tariff · groups I and II",
+      "Tariff · groups III and IV",
+      "Tariff · groups V and VI, and add-on charges",
+      "Transfers, reductions and a worked example",
+      "Terms, conditions and contact"
+    ],
+    "how_organised_label": "How the tariff is organised",
+    "how_organised": "Every programme is charged <strong>per night, per villa, by occupancy</strong> — not as a fixed package price. The twenty-seven programmes fall into six <strong>tariff groups</strong>; all programmes within a group share one rate table. Find the programme, read its group's table and multiply by the number of nights. The minimum duration is set clinically and stated with each programme.",
+    "stay_title": "What a physician-led stay involves",
+    "daily": "Two prescribed therapies, a prescribed diet, group yoga in the morning, guided meditation in the evening, and a consultation to adjust the protocol.",
+    "included": [
+      "The villa in the category booked, and all government taxes",
+      "Three vegetarian or vegan meals a day, to the dietary prescription",
+      "Two Ayurvedic therapies a day, including herbal steam; one a day in the Preventive Health &amp; Regenerative programme",
+      "Daily consultation and monitoring by the attending physician",
+      "Group yoga each morning and guided meditation each evening",
+      "Weekly workshop, cooking demonstration and farm, village or nature walk",
+      "Pool, library, gym and outdoor facilities; mineral water, herbal infused water and teas or juices after each session"
+    ],
+    "not_included": [
+      "Internal herbal medicines, laboratory tests and specialist therapies, prescribed as treatment progresses",
+      "Additional food beyond the prescribed meals",
+      "Private yoga or meditation sessions",
+      "Laundry, telephone, internet and transport",
+      "Early check-in and late check-out, where granted"
+    ],
+    "glossary": [
+      {
+        "term": "Pañchakarma",
+        "text": "\"Five actions\" — the five-part cleansing regimen, the most intensive treatment offered here."
+      },
+      {
+        "term": "Chikitsa",
+        "text": "Treatment. It ends most programme names in the tariff."
+      },
+      {
+        "term": "Shodhanam",
+        "text": "Purification — the clearing stage of a programme."
+      }
+    ],
+    "brief": "Three facts settle most patient questions: the rate is per night and includes treatment and full board; the minimum duration is clinical; and medicines and tests are prescribed during the stay and billed separately.",
+    "accommodation_pages": {
+      "a": 6,
+      "b": 8
+    },
+    "group_titles": {
+      "I": "Preventive assessment",
+      "II": "Respiratory, sinus and eye",
+      "III": "Cardiovascular, neurological, restorative and supportive",
+      "IV": "Spine, joints, skin, weight and postpartum",
+      "V": "Panchakarma, metabolic, neurological recovery and hormonal",
+      "VI": "Customisable programme"
+    },
+    "notes": {
+      "one_therapy_note": "The only programme with one therapy a day rather than two.",
+      "group_vi_note": "Priced at the group V rate. Used when a case does not fit a named programme; the protocol is written at consultation."
+    },
+    "example_includes": "treatment, prescribed diet and GST included",
+    "programme_names": {},
+    "contents_addons_suffix": ", and add-on charges",
+    "contents_terms": "Terms, conditions and contact",
+    "villa_names": {}
+  },
+  "yoga": {
+    "title": "Yoga &amp; Meditation Programmes &amp; Tariff",
+    "short_title": "Yoga & Meditation Programmes & Tariff",
+    "standfirst": "A reference for travel partners and prospective patients: the place, the physician-supervised yoga and meditation programmes, the accommodation and the published rates.",
+    "cover_alt": "A patient in seated meditation in the yoga hall",
+    "contents": [
+      "Kerala, Palakkad and the healing village",
+      "What a yoga and meditation stay involves",
+      "Accommodation categories",
+      "Tariff · groups I and II, and add-on charges",
+      "Transfers, reductions and a worked example",
+      "Terms, conditions and contact"
+    ],
+    "how_organised_label": "How the tariff is organised",
+    "how_organised": "Every programme is charged <strong>per night, per villa, by occupancy</strong> — not as a fixed package price. The three programmes fall into two <strong>tariff groups</strong>; programmes within a group share one rate table. Find the programme, read its group's table and multiply by the number of nights. The minimum duration is set clinically and stated with each programme.",
+    "stay_title": "What a yoga and meditation stay involves",
+    "daily": "One Ayurvedic therapy, a prescribed diet, private yoga at sunrise, private guided meditation in the evening, and a daily physician consultation.",
+    "included": [
+      "The villa in the category booked, and all government taxes",
+      "Three vegetarian or vegan meals a day, to the dietary prescription",
+      "One Ayurvedic therapy a day, including herbal steam where indicated",
+      "Daily consultation and monitoring by the attending physician",
+      "A private sunrise yoga session and a private guided meditation session each day",
+      "Weekly workshop, cooking demonstration and farm or village walk",
+      "Pool, library, gym and outdoor facilities; mineral water, herbal infused water and teas or juices after each session"
+    ],
+    "not_included": [
+      "Internal herbal medicines, laboratory tests and specialist therapies, prescribed as treatment progresses",
+      "Additional food beyond the prescribed meals",
+      "Laundry, telephone, internet and transport",
+      "Early check-in and late check-out, where granted"
+    ],
+    "glossary": [
+      {
+        "term": "Dhyāna",
+        "text": "Meditation — sustained, guided attention."
+      },
+      {
+        "term": "Prāna",
+        "text": "Breath, and the energy it carries; the object of breathing practice."
+      },
+      {
+        "term": "Chikitsa",
+        "text": "Treatment. It ends most programme names in the tariff."
+      }
+    ],
+    "brief": "The rate is per night and includes one daily therapy, private yoga and meditation, and full board; the minimum stay is seven or fourteen nights, depending on the programme; medicines and tests are prescribed during the stay and billed separately.",
+    "accommodation_pages": {
+      "a": 6,
+      "b": 6
+    },
+    "group_titles": {
+      "I": "Yoga and meditation",
+      "II": "Yoga therapy programmes"
+    },
+    "notes": {},
+    "example_includes": "daily therapy, private yoga and meditation, prescribed diet and GST included",
+    "programme_names": {},
+    "contents_addons_suffix": ", and add-on charges",
+    "contents_terms": "Terms, conditions and contact",
+    "villa_names": {},
+    "images": {
+      "cover": "ahv-yoga-meditation-seated.jpg",
+      "cover_pos": "center 42%",
+      "orientation": "ahv-yoga-hall-tree-pose.jpg",
+      "stay": "ahv-yoga-crescent-lunge.jpg",
+      "stay_pos": "center 32%"
+    },
+    "orientation_caption": "The yoga hall at Kodumbu, Palakkad",
+    "orientation_alt": "The yoga hall with a patient in tree pose guided by the instructor",
+    "stay_caption": "Asana practice in the yoga hall",
+    "stay_alt": "A patient in crescent lunge on the mat, side view"
+  },
+  "training": {
+    "title": "Ayurveda Training Courses &amp; Tariff",
+    "short_title": "Ayurveda Training Courses & Tariff",
+    "cover_title_size": "28pt",
+    "standfirst": "Residential Ayurveda courses at the hospital, from a one-day workshop to the twenty-day consultant programme: the courses, what they include, the villa-based tariff and the terms.",
+    "cover_alt": "Octagonal brick cottage beside a water channel on the grounds of the healing village",
+    "contents_terms": "Terms, conditions and contact",
+    "how_organised_label": "How the tariff is organised",
+    "how_organised": "A course is priced <strong>per night, per villa, by occupancy</strong>, and the course chosen sets the number of nights: 1, 3, 5, 10 or 20. The rate is all-inclusive — accommodation, meals, training and taxes — and is published in Indian Rupees, US Dollars and Euro in one table. Classes run Monday to Friday.",
+    "stay_title": "What a training course includes",
+    "daily": "Theory classes by Ayurvedic physicians and hands-on practical training led by senior Ayurvedic trainers, Monday to Friday, with the prescribed vegetarian diet.",
+    "cards": [
+      {
+        "label": "Before arrival",
+        "title": "Enrolment",
+        "text": "Choose the course and villa category; a 40% advance secures the booking and the balance is due no later than 30 days before admission. Course details and admissions: kairali.guru or info@kairali.com."
+      },
+      {
+        "label": "Day one",
+        "title": "Admission",
+        "text": "Arrival at the village and introduction to the institute, the trainers and the schedule. Check-in is from 12:00 noon."
+      },
+      {
+        "label": "Each day",
+        "title": "Classes",
+        "text": "{daily}"
+      },
+      {
+        "label": "On completion",
+        "title": "Certification",
+        "text": "Certificate issued by the Kairali Institute of Panchakarma Therapies (a course certificate, not a professional licence). Check-out is by 10:00."
+      }
+    ],
+    "included": [
+      "Daily theory classes conducted by expert Ayurvedic physicians",
+      "Hands-on practical training led by senior Ayurvedic trainers and physicians",
+      "Comprehensive training in authentic Ayurvedic therapies and techniques",
+      "Course certificate issued by the Kairali Institute of Panchakarma Therapies (not a professional licence)",
+      "Villa accommodation in the category booked",
+      "Three vegetarian Ayurvedic meals daily, prepared with organic ingredients",
+      "Daily in-room mineral water and unlimited herbal infused water",
+      "Pool, library, gym and outdoor facilities; organic farm tours and cultural activities",
+      "All government taxes"
+    ],
+    "not_included": [
+      "Treatments for the student's own health, prescribed and billed separately",
+      "Additional food beyond the daily meals",
+      "Laundry, telephone, internet and transport",
+      "Early check-in and late check-out, where granted"
+    ],
+    "glossary": [
+      {
+        "term": "Abhyangam",
+        "text": "The synchronised whole-body oil massage; the first therapy taught in the one-day workshop."
+      },
+      {
+        "term": "Pañchakarma",
+        "text": "The five-part cleansing regimen; its principles are covered in the advanced programmes."
+      },
+      {
+        "term": "Kairali Institute of Panchakarma Therapies",
+        "text": "The training institute at the village that issues the certificates."
+      }
+    ],
+    "brief": "One all-inclusive rate per night covers the course, the villa and the meals; the course chosen sets the number of nights; group discount: 20% for five or more students.",
+    "group_titles": {
+      "COURSES": "Courses"
+    },
+    "notes": {},
+    "courses_col": "Course",
+    "code_col": "Code",
+    "days_col": "Days",
+    "tariff_title": "Course tariff",
+    "tariff_footer": "Section {n} · Course tariff · per night, all currencies",
+    "basis_line1": "Per night, per villa, all-inclusive",
+    "basis_line2": "Single or double occupancy · INR, USD and EUR as published",
+    "villa_col": "Villa type",
+    "single_short": "Single",
+    "double_short": "Double",
+    "programme_notes_label": "Programme notes",
+    "programme_notes": [
+      "Classes are held Monday to Friday only",
+      "Payment and cancellation as for residential programmes: 40% advance, balance due no later than 30 days before admission",
+      "Group discount: 20% for five or more students",
+      "Photography and videography are not permitted during practical sessions"
+    ],
+    "transfers_title": "Transfers and a worked example",
+    "example_course": "{course} · {days} days",
+    "example_calc": "{rate} × {nights} nights",
+    "example_note": "The villa for one student, with classes, meals and taxes included. Personal treatments and optional services are invoiced separately.",
+    "example_includes": "classes, meals and taxes included",
+    "programme_names": {},
+    "villa_names": {},
+    "course_names": {
+      "OAP-HV": "1-Day Workshop",
+      "TAP-HV": "3-Day Certificate Programme",
+      "WAP-HV": "5-Day Intensive Programme",
+      "AATP1-HV": "10-Day Advanced Programme",
+      "AALCT-HV": "20-Day Advanced Consultant Programme"
+    },
+    "course_desc": {
+      "OAP-HV": "Introductory session with hands-on Abhyangam massage",
+      "TAP-HV": "Theory and practice of core therapies",
+      "WAP-HV": "In-depth training in five major therapies",
+      "AATP1-HV": "Advanced curriculum for wellness professionals",
+      "AALCT-HV": "Comprehensive training, including lifestyle consulting and advanced therapies"
+    },
+    "how_organised_single": "A course is priced <strong>per night, per villa, by occupancy</strong>, and the course chosen sets the number of nights: 1, 3, 5, 10 or 20. The rate is all-inclusive — accommodation, meals, training and taxes. The course tariff is published in Indian Rupees, US Dollars and Euro; this edition gives the published {currency} rates. Classes run Monday to Friday.",
+    "basis_line2_single": "Single or double occupancy · {currency}, as published",
+    "tariff_footer_single": "Section {n} · Course tariff · {currency}, per night"
+  },
+  "accommodation": {
+    "title": "Daily Admission Tariff",
+    "short_title": "Daily Admission Tariff",
+    "cover_title": "Daily Admission Tariff",
+    "cover_title_size": "30pt",
+    "standfirst": "The per-night inpatient rate for a stay at the hospital without a named treatment programme: villa, all meals, one Ayurvedic herbal oil massage per person, one physician consultation per day and one yoga and meditation session.",
+    "cover_alt": "Octagonal brick cottage beside a water channel on the grounds of the healing village",
+    "contents_terms": "Terms, conditions and contact",
+    "how_organised_label": "How the tariff is organised",
+    "how_organised": "There is one rate per villa category, charged <strong>per night, per villa, by occupancy</strong>. It is an inpatient admission rate on an all-inclusive basis (APAI): accommodation, all meals and the daily treatment components are one figure. Room-only, bed-and-breakfast or meals-only rates are not offered.",
+    "stay_title": "What daily admission includes",
+    "daily": "One Ayurvedic herbal oil massage per person, one physician consultation, the prescribed vegetarian diet and one yoga and meditation session.",
+    "included": [
+      "The villa in the category booked",
+      "Breakfast, lunch and dinner, vegetarian, to the dietary prescription",
+      "One Ayurvedic herbal oil massage per person, each day",
+      "One physician consultation per day",
+      "One yoga and meditation session",
+      "GST on the accommodation component, as set out in the rate schedule"
+    ],
+    "not_included": [
+      "Internal herbal medicines, laboratory tests and additional therapies, prescribed and billed separately",
+      "Additional food beyond the prescribed meals",
+      "Laundry, telephone, internet and transport",
+      "Early check-in and late check-out, where granted"
+    ],
+    "glossary": [
+      {
+        "term": "APAI",
+        "text": "American Plan All Inclusive — hotel shorthand for accommodation with all meals and the listed services; used here for an inpatient day rate."
+      },
+      {
+        "term": "Abhyangam",
+        "text": "The herbal oil massage included each day; a synchronised whole-body massage with warm medicated oil."
+      },
+      {
+        "term": "Consultation",
+        "text": "The physician's examination and advice that opens every stay and sets the prescription."
+      }
+    ],
+    "brief": "One figure per night covers villa, meals, one Ayurvedic herbal oil massage per person, one physician consultation per day and one yoga and meditation session; the villa category changes the accommodation, not the care; medicines and tests are prescribed during the stay and billed separately.",
+    "group_titles": {
+      "APAI": "Daily admission rate, all-inclusive basis"
+    },
+    "notes": {},
+    "apai_note": "Per night, per villa. Single occupancy is one patient; double occupancy is two patients sharing the villa, each receiving the inclusions listed for the rate.",
+    "extra_label": "Extra person in the same villa, per night",
+    "extra_bed": "Extra bed",
+    "extra_meals": "Meals (breakfast, lunch and dinner)",
+    "extra_treatment": "Daily treatment component",
+    "extra_total": "Extra person, all-inclusive",
+    "extra_treatment_na": "Published in Indian Rupees only — ask the reservations team",
+    "components_label": "How the daily rate is made up",
+    "components_text": "The rate schedule records three components: the accommodation charge (with GST at 5%), the meals, and the treatment component (therapy, consultation, yoga and meditation, nursing). They are published as one all-inclusive figure and are not sold separately.",
+    "tariff_title": "Daily admission tariff",
+    "tariff_footer": "Section {n} · Daily admission tariff · {currency}, per night",
+    "example_includes": "all meals, one herbal oil massage per person, one physician consultation per day and one yoga and meditation session included",
+    "programme_names": {},
+    "villa_names": {},
+    "getting_here": "Palakkad railway station 25 km · Coimbatore airport 75 km · Cochin or Calicut airport 125 km. Transfers are arranged on request; prices are in the programme booklets.",
+    "accommodation_intro": "Kairali — The Ayurvedic Healing Village is an NABH-accredited hospital. On daily admission a patient is accommodated in a villa without a named treatment programme; the tariff is a single per-night rate that covers the villa, all meals, one Ayurvedic herbal oil massage per person, one physician consultation per day and one yoga and meditation session, with GST included. The villa category changes the accommodation, not the care. Four categories are published."
+  },
+  "opd": {
+    "title": "Outpatient &amp; Day Treatment Rates",
+    "short_title": "Outpatient & Day Treatment Rates",
+    "standfirst": "Single Ayurvedic treatments, consultations and classes for patients attending by the day, without admission. Every treatment is given under the supervision of an Ayurvedic physician (BAMS, India).",
+    "cover_alt": "Herbal poultices and brass vessels of medicated oil prepared for treatment",
+    "how_title": "How day treatment works",
+    "how_p1": "Kairali — The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital at Kodumbu, Palakkad. Patients who live nearby, or who are staying elsewhere, may attend for single treatments by the day rather than being admitted to a residential programme.",
+    "how_p2": "Every course of day treatment begins with an <strong>outpatient consultation</strong>. An Ayurvedic physician (BAMS, India) examines the patient and writes a treatment plan; the treatments on the following pages are then given by trained therapists as that plan prescribes. Treatments are not booked directly from the list without a consultation.",
+    "how_p3": "The durations shown are the published treatment times.",
+    "terms_label": "Terms you will meet",
+    "glossary": [
+      {
+        "term": "Dhara",
+        "text": "A continuous pour of warm medicated liquid — oil, buttermilk or milk — over the body or forehead."
+      },
+      {
+        "term": "Kizhi",
+        "text": "A warm cloth bolus of herbs, rice, lemon or sand, pressed over the body."
+      },
+      {
+        "term": "Vasthi",
+        "text": "Warm medicated oil held in a dough dam over a joint or the spine; also medicated enema."
+      },
+      {
+        "term": "Netra",
+        "text": "The eye — Netra Dhara and Netra Tarpanam are eye treatments."
+      }
+    ],
+    "consult_caption": "Pulse examination (nadi pariksha) at the outpatient consultation",
+    "consult_alt": "A physician examines a patient's pulse at the outpatient consultation",
+    "gst_label": "GST and the treatment plan",
+    "gst_text": "Under Government of India GST regulations, Ayurvedic treatment services administered by an NABH-accredited hospital as part of a plan prescribed by an Ayurvedic physician registered in India are exempt from GST. The rates in this list are therefore GST-exempt when taken as part of such a plan. Treatments taken without a consultation or prescribed plan may attract GST at the prevailing rate, currently 18%.",
+    "before_label": "Before you come",
+    "before_text": "Bring recent medical reports and a list of current medication for the consultation.",
+    "rates_title": "Outpatient day treatment rates",
+    "basis_line1": "{currency}, per treatment",
+    "basis_line2a": "Per treatment · under a physician's plan",
+    "basis_line2b": "GST-exempt under a prescribed plan",
+    "effective_line": "Effective {range}",
+    "no_col": "No.",
+    "treatment_col": "Treatment",
+    "malayalam_col": "Malayalam",
+    "duration_col": "Duration",
+    "rate_col": "Rate",
+    "minutes": "{n} min",
+    "course": "{days} days · {min} min per day",
+    "rates_footer": "Section {n} · Outpatient day treatment rates · {a} to {b}",
+    "multi_day_note": "Items 36 and 37 are multi-day courses priced for the whole course. Items 40 and 41 are charged per visit.",
+    "classes_title": "Classes — yoga, meditation, cooking and Ayurveda",
+    "classes_basis1": "{currency}, per session",
+    "classes_basis2": "Outpatient class rates",
+    "classes_footer": "Section {n} · Classes",
+    "gst_classes_label": "GST on classes",
+    "gst_classes_text": "These are standalone outpatient class rates. Taken as part of an inpatient treatment plan prescribed by an Ayurvedic physician registered in India under NABH-accredited care, they are GST-exempt. Otherwise GST at 18% may apply to selected offerings such as cultural and lifestyle demonstrations.",
+    "malayalam_label": "Malayalam names",
+    "malayalam_text": "Each class is listed with its Malayalam name as it appears on the hospital's own schedule, so that patients and local staff refer to the same session.",
+    "attend_title": "Attending for day treatment",
+    "consult_first_label": "Consultation first",
+    "consult_first": [
+      "An outpatient consultation (item 40) precedes any treatment on this list",
+      "The physician's plan sets the treatments, their order and their number of sittings",
+      "Internal medicines prescribed at consultation are dispensed from the hospital pharmacy and charged separately"
+    ],
+    "rates_taxes_label": "Rates and taxes",
+    "rates_taxes": [
+      "Rates are in Indian Rupees and effective {range}; they may change under government policy",
+      "Treatments under a prescribed plan are GST-exempt; treatments without a plan may attract GST at 18%"
+    ],
+    "on_day_label": "On the day",
+    "on_day": [
+      "No smoking, alcohol or substance use anywhere on the property",
+      "Hospital guidelines apply to all patients and visitors"
+    ],
+    "getting_here_label": "Getting here",
+    "getting_here": "Olassery P.O., Kodumbu, Palakkad District. Palakkad railway station 25 km; Coimbatore airport 75 km; Cochin or Calicut airport 125 km. Transfers can be arranged on request.",
+    "maps_link": "Open in Google Maps ›",
+    "grounds_alt": "The healing village grounds at Kodumbu",
+    "attend_footer": "Section {n} · Attending for day treatment",
+    "how_footer": "Section {n} · How day treatment works",
+    "treatment_names": {},
+    "class_names": {},
+    "rates_taxes_0": "Rates are in {currency} and effective {range}; they may change under government policy",
+    "classes_not_priced": "Class rates (items 43 to 50: yoga, meditation, cooking and Ayurveda classes) are published in Indian Rupees only and are therefore not listed in this {currency} edition. Please refer to the INR edition or ask the reservations team.",
+    "fx_note": "Rates in this edition are published for settlement in {currency}; they are not a conversion of the Indian Rupee list."
+  }
+}

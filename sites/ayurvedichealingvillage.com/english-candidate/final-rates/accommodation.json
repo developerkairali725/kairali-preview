@@ -1,0 +1,187 @@
+{
+  "document": "accommodation",
+  "title_ref": "Daily admission tariff — APAI basis (rate master 'Day Rate' sheet)",
+  "rate_basis": "per night, per villa, single or double occupancy, APAI basis: accommodation, all meals (vegetarian), one Ayurvedic herbal oil massage per person, one physician consultation, one yoga & meditation session",
+  "villas": [
+    {
+      "id": "deluxe",
+      "source_name": "DELUXE VILLA",
+      "print_name": "Deluxe Villa",
+      "url": "https://ayurvedichealingvillage.com/deluxe-villa/"
+    },
+    {
+      "id": "classic",
+      "source_name": "CLASSIC VILLA",
+      "print_name": "Classic Villa",
+      "url": "https://ayurvedichealingvillage.com/classic-villa/"
+    },
+    {
+      "id": "royal",
+      "source_name": "ROYAL VILLA",
+      "print_name": "Royal Villa",
+      "url": "https://ayurvedichealingvillage.com/royal-villa/"
+    },
+    {
+      "id": "suite",
+      "source_name": "MAHARAJA SUITE",
+      "print_name": "Maharaja Suite",
+      "url": "https://ayurvedichealingvillage.com/maharaja-suite/"
+    }
+  ],
+  "components_inr": {
+    "room_incl_gst": {
+      "deluxe": [
+        4800,
+        6510
+      ],
+      "classic": [
+        7245,
+        8715
+      ],
+      "royal": [
+        11550,
+        12600
+      ],
+      "suite": [
+        31500,
+        31500
+      ]
+    },
+    "meals": [
+      5500,
+      11000
+    ],
+    "treatment": [
+      16400,
+      32800
+    ],
+    "room_gst_note": "Room component includes GST at 5% as recorded in the sheet (rows 5-16); meals and treatment components carry no separate tax line in the sheet."
+  },
+  "inclusions_source": "The above Prices are inclusive of Accommodation, All Meals (Breakfast, Lunch & Dinner–Veg. Only), One Ayurvedic Herbal Oil Massage Per Person, One Doctor’s Consultation, One Yoga & Meditation Session. (Day Rate sheet B67)",
+  "editions": {
+    "INR": {
+      "symbol": "₹",
+      "iso": "INR",
+      "tables": {
+        "APAI": {
+          "deluxe": [
+            26700,
+            50310
+          ],
+          "classic": [
+            29145,
+            52515
+          ],
+          "royal": [
+            33450,
+            56400
+          ],
+          "suite": [
+            53400,
+            75300
+          ]
+        }
+      },
+      "extra_person": {
+        "extra_bed": 3000,
+        "extra_meals": 5500,
+        "extra_treatment": 16400,
+        "total": 24900
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "Workbook sheet 'Ayurvedic Packages' header: (W.E.F. April, 2025); 'Day Rate' sheet undated. End date 30 September 2027 by owner instruction 22 Sep 2026 ('make all 30 Sep 2027') and Anupam's e-mail of 22 Sep 2026 ('day tariffs remain unchanged'). No published PDF exists for this tariff — Anupam MID-12590 pending.",
+      "sources": [
+        "Rate master 'Day Rate' sheet rows 49-67 (APAI basis / OTA rate), totals C54/D54, C58/D58, C62/D62, C66/D66",
+        "Extra person: rows 69-74"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; INR values from the rate master Day Rate sheet (APAI basis). Source-document gap only: Anupam's standalone daily-tariff PDF (MID-12590) has not been received for comparison.",
+      "review_status_previous": "REVIEW DRAFT — workbook-sourced (Day Rate sheet, marked work-in-progress by its author); built by owner decision 22 Sep 2026 pending Anupam's PDF (MID-12590)"
+    },
+    "EUR": {
+      "symbol": "€",
+      "iso": "EUR",
+      "tables": {
+        "APAI": {
+          "deluxe": [
+            334,
+            629
+          ],
+          "classic": [
+            364,
+            656
+          ],
+          "royal": [
+            418,
+            705
+          ],
+          "suite": [
+            668,
+            941
+          ]
+        }
+      },
+      "extra_person": {
+        "extra_bed": 38,
+        "extra_meals": 69,
+        "extra_treatment": null,
+        "total": null
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "as INR",
+      "sources": [
+        "Rate master 'Day Rate' sheet 'Euro Rate' columns E/F rows 54, 58, 62, 66",
+        "Extra bed / meals: F71-F72 (37.5 → 38; 68.75 → 69, as the tariff PDFs round them); extra-person treatment has no EUR value in the workbook"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; EUR values from the rate master Day Rate sheet (APAI basis). Source-document gap only: Anupam's standalone daily-tariff PDF (MID-12590) has not been received for comparison.",
+      "review_status_previous": "REVIEW DRAFT — workbook-sourced EUR column (Day Rate sheet); built by owner decision 22 Sep 2026 pending Anupam's PDF"
+    },
+    "USD": {
+      "symbol": "$",
+      "iso": "USD",
+      "tables": {
+        "APAI": {
+          "deluxe": [
+            381,
+            719
+          ],
+          "classic": [
+            416,
+            750
+          ],
+          "royal": [
+            478,
+            806
+          ],
+          "suite": [
+            763,
+            1076
+          ]
+        }
+      },
+      "extra_person": {
+        "extra_bed": 43,
+        "extra_meals": 79,
+        "extra_treatment": null,
+        "total": null
+      },
+      "validity": {
+        "from": "2025-04-01",
+        "to": "2027-09-30"
+      },
+      "validity_basis": "as INR",
+      "sources": [
+        "Rate master 'Day Rate' sheet 'USD Rate' columns H/I rows 54, 58, 62, 66",
+        "Extra bed / meals: E71-E72 (42.86 → 43; 78.57 → 79); extra-person treatment has no USD value in the workbook"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; USD values from the rate master Day Rate sheet (APAI basis). Source-document gap only: Anupam's standalone daily-tariff PDF (MID-12590) has not been received for comparison.",
+      "review_status_previous": "REVIEW DRAFT — workbook-sourced USD column (Day Rate sheet); built by owner decision 22 Sep 2026 pending Anupam's PDF"
+    }
+  },
+  "site_base": "https://ayurvedichealingvillage.com"
+}
