@@ -23,7 +23,11 @@ const browser = await chromium.launch();
 const results = [];
 for (const p of PATHS) for (const w of VIEWPORTS) {
   const mobile = w < 700;
-  const ctx = await browser.newContext({ viewport: { width: w, height: mobile ? 860 : 900 }, isMobile: mobile, hasTouch: mobile, deviceScaleFactor: mobile ? 2 : 1 });
+  // Protected Vercel previews: the CLI's short-lived OIDC token as the Trusted
+  // Sources header (vercel env run). Never logged or written anywhere.
+  const tok = process.env.VERCEL_OIDC_TOKEN;
+  const extraHTTPHeaders = tok && /vercel\.app/.test(BASE) ? { "x-vercel-trusted-oidc-idp-token": tok } : undefined;
+  const ctx = await browser.newContext({ viewport: { width: w, height: mobile ? 860 : 900 }, isMobile: mobile, hasTouch: mobile, deviceScaleFactor: mobile ? 2 : 1, ...(extraHTTPHeaders ? { extraHTTPHeaders } : {}) });
   const page = await ctx.newPage();
   const errors = [];
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });

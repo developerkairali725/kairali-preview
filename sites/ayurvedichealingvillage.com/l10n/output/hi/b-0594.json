@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0594",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_6a5d28d69b8b05a62cae",
+   "sourceHash": "6a5d28d69b8b05a62caeaf6e6908402d26edf8fd2935e55ba687cbcf205ddc2f",
+   "text": "मधुमेह",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fe81f9390ffe3dc8daa4",
+   "sourceHash": "fe81f9390ffe3dc8daa4888a7dc430ce4a41f164281d15449a24840a70b5f2c2",
+   "text": "शुल्क",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3ad92be491a08c8f78a",
+   "sourceHash": "e3ad92be491a08c8f78a46b936737b95e64d6820e04ee4fea4d2fe55f28de36e",
+   "text": "आप क्या ढूँढ रहे हैं?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e25545bb0268d075a4a",
+   "sourceHash": "8e25545bb0268d075a4a0c8d871e8fd4cf0c8d4fd67e690371d0003b037bf31a",
+   "text": "कोई स्वास्थ्य समस्या",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cf8380adf36820c2229a",
+   "sourceHash": "cf8380adf36820c2229a21812a636b79e066e1fa78a694f402a67d508b1aa0e3",
+   "text": "शुल्क और अवधि",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6be7947e259ddaf71516",
+   "sourceHash": "6be7947e259ddaf71516cb65d19bed39d3a6f189405c3351197a323bde9a5bcb",
+   "text": "आप कहाँ ठहरेंगे",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dddc0ee0ee80b4359f06",
+   "sourceHash": "dddc0ee0ee80b4359f06a59140597e72c9d0855c4473426ff57dffa831032a9c",
+   "text": "आयुर्वेद के बारे में जानें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_febe0107b514b23054e7",
+   "sourceHash": "febe0107b514b23054e7a3c4c271ff4dc003b8a0d61d2f7d27940b3533bda094",
+   "text": "डॉक्टर से बात करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4d92811b8b469183027",
+   "sourceHash": "a4d92811b8b469183027c7b74f17f85fb923a4d84adc12b7945871afb356da5b",
+   "text": "अक्सर खोजे जाने वाले:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9a72221a27476f3e9077",
+   "sourceHash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+   "text": "प्रश्न",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9046da16aea909ba75a3",
+   "sourceHash": "9046da16aea909ba75a36cec13b56cb2144dc2ede45cde361e99a8d79802eabf",
+   "text": "पेज",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5dc0c2bcbf791208fc3a",
+   "sourceHash": "5dc0c2bcbf791208fc3ae36f491fe1b14e99793ee556cafd8a21b0ccec2519ea",
+   "text": "सभी {n} देखें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c20b29e176426df6b53d",
+   "sourceHash": "c20b29e176426df6b53de4dd6cfa2d4a4a7f73632ded63da48e5db64bf074928",
+   "text": "“{corrected}” के परिणाम दिखाए जा रहे हैं — आपने “{typed}” टाइप किया था",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8789e7cff1849d77cd4c",
+   "sourceHash": "8789e7cff1849d77cd4caa34bb09fb848c54376fb2deae6aaf89ae34839b0cbb",
+   "text": "इसके बजाय “{typed}” खोजें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_79f023b6989d75621fb8",
+   "sourceHash": "79f023b6989d75621fb8b04ab324b7de21095e15c6091edb171303a8e7237d93",
+   "text": "क्या आपका मतलब था:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0ab0362c836613a7e4a",
+   "sourceHash": "f0ab0362c836613a7e4a524ae331ed3b24e3db324aaf7cb84902450839ad2061",
+   "text": "“{q}” के लिए {n} परिणाम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38aa76ecb23dd91c4efa",
+   "sourceHash": "38aa76ecb23dd91c4efa25cf214e5a5dcf2d0b471a0e3c7edfa4cc546070864d",
+   "text": "“{q}” के लिए 1 परिणाम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_036ff4ea4d745f7f9d75",
+   "sourceHash": "036ff4ea4d745f7f9d7551e278958762f483f444488082ff788aee95a03617f4",
+   "text": "“{q}” से मेल खाता कोई पेज नहीं मिला। कोई स्वास्थ्य समस्या (कमर दर्द, सोरायसिस), कोई स्थान (एयरपोर्ट) या कोई प्रश्न (वीज़ा) खोजकर देखें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43f0fe68a2a2b6ee6733",
+   "sourceHash": "43f0fe68a2a2b6ee6733d457b351ebd13765820180218b70942a3dbdaa66c21b",
+   "text": "निश्चित नहीं हैं? परामर्श के दौरान हमारे डॉक्टर तय करते हैं कि आपके लिए क्या उपयुक्त है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_282e6b067a34075c5180",
+   "sourceHash": "282e6b067a34075c5180065d8d7a634766773b39e9850dc8fcc30dbf6cc2bacc",
+   "text": "WhatsApp पर Priya से पूछें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be665ece181a16f091ea",
+   "sourceHash": "be665ece181a16f091ea565f6740ba51d6c51e778ad872536e6a29bbdf84292b",
+   "text": "यदि यह समस्या अभी-अभी शुरू हुई है, तो कृपया सर्च बॉक्स के बजाय किसी व्यक्ति से बात करें: +91 9555 156 156 पर कॉल करें, या यदि स्थिति गंभीर हो तो अपनी स्थानीय आपातकालीन सेवा से संपर्क करें। Kairali एक NABH-मान्यता प्राप्त आयुर्वेदिक अस्पताल है, कोई आपातकालीन सेवा नहीं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_24303a6330beb154ff82",
+   "sourceHash": "24303a6330beb154ff82c6dcccb2b14ae55ef9358b93db9cb844356b3aa8e536",
+   "text": "यह ऐसी स्थिति नहीं है जिसका हम उपचार करते हैं। हम HIV या AIDS, सक्रिय संक्रामक रोगों, या स्वयं कैंसर का उपचार नहीं करते। आप कहीं और जो उपचार ले रहे हैं, उसके साथ सहायक देखभाल एक अलग विषय है — परामर्श के दौरान एक आयुर्वेदिक डॉक्टर आपके मामले का आकलन कर सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2eee14e895a326519ec6",
+   "sourceHash": "2eee14e895a326519ec6a2a7f7d755f0f167f6e4faad8a8fd456532a861cdd2f",
+   "text": "हम आपको किसी कार्यक्रम की ओर भेजने के बजाय इस बारे में आपसे बात करना पसंद करेंगे। अपने शब्दों में हमें बताएँ, और एक आयुर्वेदिक डॉक्टर तय करेंगे कि यह किस श्रेणी में आता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_131aa13078c1a3aba9b9",
+   "sourceHash": "131aa13078c1a3aba9b9276b45fa6a20c6c38d985ae71f6357504106bbdd7ef8",
+   "text": "एक से अधिक कार्यक्रम लागू हो सकते हैं। यदि आप एक साथ कई समस्याओं से जूझ रहे हैं, तो आमतौर पर व्यक्तिगत कार्यक्रम (Personalised Programme) शुरुआत के लिए सही विकल्प होता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Personalised Programme' treated as a programme name; translated with the approved term 'कार्यक्रम' and the English name kept in parentheses as its identifier."
+   ]
+  },
+  {
+   "id": "t_c664ccfdc07d1154f60d",
+   "sourceHash": "c664ccfdc07d1154f60dd4c61a9f0ca890385a463cd9dacf85d01697535c7419",
+   "text": "क्या आप {label} ढूँढ रहे हैं?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
