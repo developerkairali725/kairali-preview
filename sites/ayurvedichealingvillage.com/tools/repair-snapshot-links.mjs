@@ -124,7 +124,10 @@ const IMAGE_ALIASES = JSON.parse(fs.readFileSync(path.join(SITE, "english-candid
 const PUBLIC_EMAIL = "info@kairali.com";
 const CF_EMAIL = /href="\/cdn-cgi\/l\/email-protection[^"]*"/g;
 
-const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".html"));
+// --files a.html,b.html restricts the pass to the snapshots a partial prerender
+// just wrote, so a one-route re-render never rewrites unrelated snapshots.
+const ONLY_FILES = arg("files", null) ? new Set(arg("files", "").split(",").filter(Boolean)) : null;
+const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".html") && (!ONLY_FILES || ONLY_FILES.has(f)));
 let changedFiles = 0;
 let changedLinks = 0;
 let emailLinks = 0;

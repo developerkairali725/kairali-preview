@@ -57,7 +57,7 @@ for (const p of PATHS) for (const w of VIEWPORTS) {
       rec.escapeClosed = await page.evaluate(() => [...document.querySelectorAll(".ahv-lang-list")].every((x) => x.hidden) && document.activeElement?.classList.contains("ahv-lang-btn"));
     }
     if (mobile) {
-      const burger = page.locator('header button[aria-expanded]').filter({ visible: true }).last();
+      const burger = page.locator('header button[aria-expanded]:not(.ahv-lang-btn), [aria-label] button[aria-expanded]:not(.ahv-lang-btn)').filter({ visible: true }).last();
       if (await burger.count()) {
         await burger.tap().catch(() => burger.click());
         await page.waitForTimeout(500);

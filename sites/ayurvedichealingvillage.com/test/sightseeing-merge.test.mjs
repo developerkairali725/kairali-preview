@@ -19,5 +19,5 @@ test('old guides are single-hop 301s and disappear from navigation, sitemap and 
  for(const d of data)assert.ok(result.kw.includes(d.name),d.name);
 });
 test('native output, directions and meaningful structure are retained',()=>{
- const page=read('app/(english)/sightseeing/page.tsx');assert.match(page,/10\.7280291,76\.7117249/);assert.match(page,/travelmode=driving/);assert.match(page,/target="_blank" rel="noopener noreferrer"/);assert.match(page,/application\/ld\+json/);assert.match(read('app/(english)/[...slug]/page.tsx'),/nativePages = new Set\([^;]*"\/sightseeing\/"/);
+ const page=read('app/(english)/sightseeing/page.tsx')+read('app/(english)/sightseeing/view.tsx'); /* implementation moved to view.tsx (25 Sep 2026 localization); same assertions */assert.match(page,/10\.7280291,76\.7117249/);assert.match(page,/travelmode=driving/);assert.match(page,/target="_blank" rel="noopener noreferrer"/);assert.match(page,/application\/ld\+json/);assert.match(read('app/(english)/[...slug]/page.tsx'),/nativePages = new Set\([^;]*"\/sightseeing\/"/);
 });

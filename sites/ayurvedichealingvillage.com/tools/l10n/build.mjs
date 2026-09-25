@@ -120,6 +120,9 @@ function technical(s, loc, { logic = false } = {}) {
 function technicalRuntime(s, loc) {
   const lp = LOCALES[loc];
   const lpath = (p) => localPath(p, loc) || p;
+  // Search/finder currency: a visitor's stored choice still wins; otherwise the
+  // locale's approved tariff table is the default (selection, never conversion).
+  if (lp.currency !== "INR") s = s.replace(/localStorage\.getItem\("ahv-cur"\) \|\| "INR"/g, `localStorage.getItem("ahv-cur") || "${lp.currency}"`).replace(/cur = "INR", timer/g, `cur = "${lp.currency}", timer`).replace(/cur = cur \|\| "INR";/g, `cur = cur || "${lp.currency}";`);
   return localizeUrls(s, loc)
     .replace(/(["'])\/ahv\/search-index\.json\1/g, `$1/ahv/l10n/${lp.prefix}/search-index.json$1`)
     .replace(/(["'])\/search\/\?q=/g, `$1${lpath("/search/")}?q=`)

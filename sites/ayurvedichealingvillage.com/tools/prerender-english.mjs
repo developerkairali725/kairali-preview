@@ -227,7 +227,21 @@ const run = async () => {
       const got = await page.evaluate(EXTRACT);
       if (!got || !got.html) throw new Error("empty extraction");
       const file = snapshotName(route.path);
-      fs.writeFileSync(path.join(outDir, file), got.html);
+      // The snapshot strips every script (see EXTRACT). A view that carries a
+      // FAQPage JSON-LD block gets THAT block re-appended, taken from the same
+      // payload the page rendered (English or the locale copy), so the visible
+      // FAQ and its schema come from one template.
+      let html = got.html;
+      const viewId = route.mobileView || route.desktopView;
+      const viewPath = LOCALE
+        ? path.join(SITE, "public", "ahv", "l10n", JSON.parse(fs.readFileSync(path.join(SITE, "l10n/locales.json"), "utf8"))[LOCALE].prefix, "views", viewId + ".json")
+        : path.join(SITE, "public", "ahv", "views", viewId + ".json");
+      if (viewId && fs.existsSync(viewPath) && !/"@type":\s*"FAQPage"/.test(html)) {
+        const tpl = JSON.parse(fs.readFileSync(viewPath, "utf8")).template || "";
+        const faq = [...tpl.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]).find((j) => /"@type":\s*"FAQPage"/.test(j));
+        if (faq) html += `<script type="application/ld+json">${faq}</script>`;
+      }
+      fs.writeFileSync(path.join(outDir, file), html);
       rec = {
         path: route.path,
         ok: true,
@@ -277,7 +291,8 @@ const run = async () => {
   // runtime but the server response would otherwise ship broken. Chained here
   // so a re-render can never silently drop the repair.
   const { execFileSync } = await import("node:child_process");
-  execFileSync(process.execPath, [path.join(HERE, "repair-snapshot-links.mjs"), "--dir", outDir], {
+  const written = index.filter((r) => r.ok && r.file).map((r) => r.file);
+  execFileSync(process.execPath, [path.join(HERE, "repair-snapshot-links.mjs"), "--dir", outDir, ...((ONLY || LIMIT) && !LOCALE ? ["--files", written.join(",")] : [])], {
     stdio: "inherit",
   });
 

@@ -131,6 +131,11 @@ export function SiteDocument({
             "#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}" +
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{visibility:hidden!important}}"}
         </style>
+        {/* Arabic script is cursive: the design's uppercase letter-spacing (tracked
+            labels, eyebrows) breaks letter joining, so it is reset for Arabic
+            only. Applies to the locale lane's lang="ar" documents; no other
+            locale or the English lane is affected. */}
+        {lang === "ar" ? <style>{"html[lang=ar] body *{letter-spacing:0!important}html[dir=rtl] #ahv-contact-controls{direction:ltr}html[dir=rtl] #ahv-contact-controls .ahv-contact-label{unicode-bidi:plaintext}"}</style> : null}
         {l10nScript ? <script dangerouslySetInnerHTML={{ __html: l10nScript }} /> : null}
         {children}
         {/* Mandatory fleet chat bubble (D-20260718-05), added on the owner's

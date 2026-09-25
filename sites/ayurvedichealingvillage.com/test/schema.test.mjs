@@ -95,7 +95,9 @@ test("every route with a share image has one on disk at the declared 1200x630", 
 test("SearchAction targets the implemented search results endpoint", () => {
   assert.match(schemaSrc, /"@type": "SearchAction"/);
   assert.ok(schemaSrc.includes('abs("/search/") + "?q={search_term_string}"'));
-  const endpoint = readFileSync(join(SITE, "app/(english)/search/page.tsx"), "utf8");
+  // 25 Sep 2026 localization: the route's implementation moved to view.tsx
+  // (shared with the locale lane); the page file is a thin wrapper. Same assertions.
+  const endpoint = readFileSync(join(SITE, "app/(english)/search/page.tsx"), "utf8") + readFileSync(join(SITE, "app/(english)/search/view.tsx"), "utf8");
   assert.match(endpoint, /searchParams/);
   assert.match(endpoint, /eng\.query\(typed/);
   assert.ok(!schemaSrc.includes('urlTemplate: abs("/") + "?s='), "do not advertise the legacy WordPress search");
