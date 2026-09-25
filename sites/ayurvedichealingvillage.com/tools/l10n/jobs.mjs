@@ -27,6 +27,7 @@ const RULES = [
   "Tokens like [[OPEN_1]] [[CLOSE_1]] [[TAG_2]] [[VAR_1]] are markup/variables: each must appear exactly once, unchanged; an OPEN must precede its CLOSE; you may move a whole OPEN…CLOSE span for grammar. A unit that is only a fragment (e.g. ends mid-sentence or is one word joined to a variable) must be translated as a fragment that still fits its sentence (see 'where').",
   "Role limits: a unit whose roles include seo.title must be ≤60 characters; seo.description ≤155. Write concise natural alternatives rather than truncating.",
   "If a unit is a proper name/code/already language-neutral, return it unchanged and give unchangedReason. If a unit is genuinely untranslatable without an unresolved medical/legal fact, set status 'blocked', text null, and explain in issue — do not guess.",
+  "Fact chips such as [TO CONFIRM] or [TO CONFIRM: …] are internal editorial markers: copy each one verbatim, in English, exactly as in the source (the text after the colon too). Translate only the words outside the chip.",
   "Postal addresses (house numbers, PO, district, PIN) stay exactly as in the source, in Latin script, for courier use.",
   "Use the provided 'terms' (approved translations from the owner-approved PDF family) whenever the English term occurs.",
 ];

@@ -1,0 +1,229 @@
+{
+ "batchId": "b-0029",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_d07c9a8a047db3c2b9c4",
+   "sourceHash": "d07c9a8a047db3c2b9c4c3e7add07caad36d9aec6962051f68713c14e746bde6",
+   "text": "World Luxury Spa Awards 2025",
+   "status": "translated",
+   "unchangedReason": "Award title and year kept verbatim (proper name).",
+   "issues": [
+    "Contains 'Luxury Spa' inside an award title; kept verbatim per the award-title exception."
+   ]
+  },
+  {
+   "id": "t_5199b9cc365fe2ff1386",
+   "sourceHash": "5199b9cc365fe2ff13863902ac0bd2ffe4e18e40bb86f9200a6c762063fec52f",
+   "text": "Награда Pacific Area Travel Writers Association: Best Retreat – Wellness (India), Kairali The Ayurvedic Healing Village, ITB Berlin 2026",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award category ('Best Retreat – Wellness (India)') and the brand name inside the award citation kept verbatim per the award-title/brand exception; the 'terms' entry for 'The Ayurvedic Healing Village' was not applied here because it is part of the brand name in an award citation."
+   ]
+  },
+  {
+   "id": "t_c5eb2b6d38a420807cae",
+   "sourceHash": "c5eb2b6d38a420807caeb14b5eedb9be5c74b6da9562ab93962fe7c9e05994fc",
+   "text": "Логотип Asia Pacific Spa & Wellness Coalition с синей звездообразной эмблемой",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Organisation name containing 'Spa' kept verbatim (proper name)."
+   ]
+  },
+  {
+   "id": "t_23c69d81d0fdf06e914a",
+   "sourceHash": "23c69d81d0fdf06e914a96a75f5245b2dc47ee0c01e26f083ee609cb5be2d785",
+   "text": "Отзывы от Chaggan Bhujba",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_47b3d47600d4e068fe65",
+   "sourceHash": "47b3d47600d4e068fe65077948bcad57074e29650a00b357578ec2b1148ac0f4",
+   "text": "India’s Leading Destinations",
+   "status": "translated",
+   "unchangedReason": "Appears to be an award/badge title (awards strip); award titles stay verbatim.",
+   "issues": [
+    "Kept in English as an award title; if it is descriptive alt text rather than an award name, translate as 'Ведущие направления Индии'."
+   ]
+  },
+  {
+   "id": "t_db9641d2e0a53ce54e70",
+   "sourceHash": "db9641d2e0a53ce54e70f6dc6aaaba65e5fb48496035e931addc24bede77ba6c",
+   "text": "Luxury Spa Destination",
+   "status": "translated",
+   "unchangedReason": "Appears to be an award/badge title (awards strip); award titles stay verbatim.",
+   "issues": [
+    "Contains banned words 'Luxury Spa'; kept verbatim only as an award title. If it is descriptive alt text rather than an award name, it must be replaced with clinical-register wording."
+   ]
+  },
+  {
+   "id": "t_dd00d3d3e9f73d277737",
+   "sourceHash": "dd00d3d3e9f73d277737cfacfb788bc46a717458297644788de995b658ceb915",
+   "text": "Следующие шаги",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b21a1efc545239086a04",
+   "sourceHash": "b21a1efc545239086a04b19c5582023554a9d0e40e3b536a855cf01e4d82111c",
+   "text": "Аюрведическая программа",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'программа' (programme) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_f52445b42528d29da75a",
+   "sourceHash": "f52445b42528d29da75a006f9f527f2dc81ba1586c18df1513f29a005710548a",
+   "text": "Здесь простота встречается с изысканностью. Когда речь идёт о комфорте и хорошем вкусе, Classic Villa предлагает всё необходимое и идеально подходит пациентам, которые ищут лучшее аюрведическое лечение в спокойной, уединённой обстановке. Окружённая пышной зеленью и обрамлённая оживлённо журчащим ручьём, эта вилла подарит вам покой, которого вам так не хватало, во время аюрведической программы в Керале, Индия.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned register substituted: 'guests' rendered as 'пациенты' (patients); 'retreat' rendered as 'уединённая обстановка' / 'программа' (programme)."
+   ]
+  },
+  {
+   "id": "t_7919a4a212ffdadfc3d3",
+   "sourceHash": "7919a4a212ffdadfc3d351c06211d17abe9642277a1dc59adc8b78cafd258d97",
+   "text": "Kairali Deluxe Villa",
+   "status": "translated",
+   "unchangedReason": "Accommodation category proper name kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_e9fecacaa4d811fa1b51",
+   "sourceHash": "e9fecacaa4d811fa1b519e57afef4219c2563f00a649839df6a01c48a42ec9e9",
+   "text": "Пленяющая своей простотой, Deluxe Villa — изысканное и элегантное пространство, подобного которому вы, возможно, ещё не видели. Окружённая свежим воздухом и безмятежной природой, эта вилла — идеальное место, чтобы расслабиться, и прекрасно подходит для восстанавливающей аюрведической программы в Керале, Индия.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'программа' (programme) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_428e9c80b203994f9b8b",
+   "sourceHash": "428e9c80b203994f9b8b17d2b2295e7899045dd2277b3cf9de52f1ab02bc1adc",
+   "text": "Kairali Royal Villa",
+   "status": "translated",
+   "unchangedReason": "Accommodation category proper name kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_34ecc267af4060bfbc29",
+   "sourceHash": "34ecc267af4060bfbc29559811c21a36c3a68c3bbd02497aede40cb3af984de4",
+   "text": "Эта хорошо обставленная и продуманно оснащённая вилла, несомненно, вам понравится — особенно если вы приезжаете в Кералу на аутентичное аюрведическое лечение и цените комфорт премиум-класса. Оказывая поистине королевский приём, эти виллы высокого класса позволят вам почувствовать себя особой королевской крови.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned register substituted: 'guests' rephrased to address the patient directly ('вы'); 'luxury retreat setting' rendered as 'комфорт премиум-класса' (premium comfort)."
+   ]
+  },
+  {
+   "id": "t_1012e33ae0962a1a1edd",
+   "sourceHash": "1012e33ae0962a1a1eddbd42ec55aa0dae6832d3dc50c54d1320ff92ba94b0ac",
+   "text": "Kairali Maharaja Suite",
+   "status": "translated",
+   "unchangedReason": "Accommodation category proper name kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_cc3f72f54dd26c06da7f",
+   "sourceHash": "cc3f72f54dd26c06da7fe4408e9c5adaeea73af9fbfccd4876ea4ed271a37267",
+   "text": "Эти апартаменты — воплощение комфорта премиум-класса. Maharaja Suite — настоящий праздник для глаз: по великолепию они превосходят императорские покои, но при этом доступнее по цене, поэтому их предпочитают взыскательные посетители, ищущие лучшие центры аюрведического лечения в Керале. Просторные интерьеры, безупречная обстановка, успокаивающие оттенки и красивый патио. Возможно, вам не хватит слов, чтобы описать их. Приготовьтесь к тому, что они вас по-настоящему удивят!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned register substituted: 'the definition of luxury' rendered as 'воплощение комфорта премиум-класса' (premium comfort); 'extravagance' rendered as 'великолепие'; 'wellness travellers' rendered as 'посетители' (visitors)."
+   ]
+  },
+  {
+   "id": "t_8ce33c6c86e991f7b499",
+   "sourceHash": "8ce33c6c86e991f7b4993479d63cd73039fc874227fd64a5e1f2b4fdcd31d7a9",
+   "text": "pick",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in JS string concatenation; not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_3f14db6ed20043e880a2",
+   "sourceHash": "3f14db6ed20043e880a29460790f5f5cec2a7d38c41795e59fdac71789322af2",
+   "text": "bg",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in JS string concatenation; not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_c380779f6175766fdbe9",
+   "sourceHash": "c380779f6175766fdbe90940851fff3995d343c63bbb82f816843c1d5100865e",
+   "text": "fg",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in JS string concatenation; not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_5e657ff6158d3e2a6d23",
+   "sourceHash": "5e657ff6158d3e2a6d23e2a523917a2305acee9423365e268695c4b7b8919f4c",
+   "text": "bd",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in JS string concatenation; not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_1688829328884ab2b4b5",
+   "sourceHash": "1688829328884ab2b4b5016505ba45a5bc6de8317a6e9c4de7d5e48d036d124e",
+   "text": "translateY(0)",
+   "status": "translated",
+   "unchangedReason": "CSS transform value; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_8e1801ef8f44ad58a849",
+   "sourceHash": "8e1801ef8f44ad58a849f9992805ad803d40de4c10a25f3f7b75a7a3b17f9fc1",
+   "text": "translateY(-110%)",
+   "status": "translated",
+   "unchangedReason": "CSS transform value; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_97b46c42eed5dd6e7587",
+   "sourceHash": "97b46c42eed5dd6e75877016645dd2113b4e787a7c59e93e981aeb50c89eae28",
+   "text": "Сколько будет",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: prefix of the arithmetic anti-spam question (followed by the sum and '?')."
+   ]
+  },
+  {
+   "id": "t_38e6bdbccef72d6c4eb2",
+   "sourceHash": "38e6bdbccef72d6c4eb2377084631dde0e07e56446d9a72258a7f43c8aea098b",
+   "text": "Пожалуйста, введите действительный номер телефона.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1708717bc7835413b9fc",
+   "sourceHash": "1708717bc7835413b9fc4d73bf7dd5e584212185da82cb01754b1c0369e1b476",
+   "text": "Пожалуйста, введите действительный адрес электронной почты.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa7a35a940ff923a866e",
+   "sourceHash": "aa7a35a940ff923a866e4e32ec5fbbb967deeb9a7eac75ba6a4d50564bfeb748",
+   "text": "Пожалуйста, решите арифметический пример.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

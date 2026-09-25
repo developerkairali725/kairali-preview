@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0032",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_504aed77fda1b765427d",
+   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]提升生活质量，减少对药物的依赖",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_426ac289eefa90f4dff8",
+   "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
+   "text": "医生指导",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1dd24e0d36e7c0ec618b",
+   "sourceHash": "1dd24e0d36e7c0ec618b4243497e0d9a3f89c8142c1bc12bfa96cc167d4f666f",
+   "text": "医生指导的个性化方案",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d198427f88705fd66a5f",
+   "sourceHash": "d198427f88705fd66a5f7055513219cbd8a1f266c157243a5fa276c99bceaaea",
+   "text": "方案开始前",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e7d5a9fede7ab41b62f6",
+   "sourceHash": "e7d5a9fede7ab41b62f628da960626e4327a68adeec1fb12fd16779d4e72678a",
+   "text": "与阿育吠陀医生进行远程问诊，了解您的需求并制定准备步骤。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ca905282166974214062",
+   "sourceHash": "ca9052821669742140625770b1cbf3e29b6b2e32d9792e61952a05809913a07b",
+   "text": "治疗期间",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d13e82941eedb9ffe701",
+   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
+   "text": "阿育吠陀医生会定期与您沟通，监测进展并调整方案。我们将为您实施个性化疗法，包括按摩和草药治疗。同时提供关于平衡生活、饮食和压力管理的指导，并由医生持续给予支持，让整个治疗过程安全、有效。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' replaced with '治疗过程' (treatment process) per the clinical register."
+   ]
+  },
+  {
+   "id": "t_9fac5bf476b112f23420",
+   "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
+   "text": "治疗结束后",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09ae86a975d4271e3ba2",
+   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
+   "text": "阿育吠陀医生会通过复诊评估治疗效果并提供指导。您将把治疗后的做法（如饮食和生活方式建议）融入日常，以保持治疗益处。我们会持续提供支持，帮助您维护长期健康，并解答您的任何疑虑或需求。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'Ongoing support ensures long-term health' is a guarantee; rendered as '帮助您维护长期健康' (helps maintain) to avoid strengthening into a guarantee."
+   ]
+  },
+  {
+   "id": "t_8c085c24fd5465b7feb9",
+   "sourceHash": "8c085c24fd5465b7feb98b276a29a59a79f9a1ffd2cc53d77efd508a9cf0c852",
+   "text": "免费医生问诊",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de727048222ee1dcbc3c",
+   "sourceHash": "de727048222ee1dcbc3c9295dfc2ac95994ce67406c10c6ad368632bc8e264d5",
+   "text": "您的主治医生可能视情况调整。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a9b24c22f9cb2b1d309",
+   "sourceHash": "2a9b24c22f9cb2b1d3096a12977cf4a479c1e36490129df35d3aadfba9f36371",
+   "text": "[[OPEN_1]]预约问诊[[CLOSE_1]][[OPEN_2]]预约医生时段，规划您的治疗方案。[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3559be3da9c4217301f6",
+   "sourceHash": "3559be3da9c4217301f6752f26570748fb1b851ea0686ffdd3fcc7933f0bffe4",
+   "text": "[[OPEN_1]]联系患者服务团队[[CLOSE_1]][[OPEN_2]]在做决定前先提出您的问题。[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1dae5175b219ea636413",
+   "sourceHash": "1dae5175b219ea636413e7843535becdb6b6a17a8db7cdeccf98121d0e23d34f",
+   "text": "[[OPEN_1]]医生评估[[CLOSE_1]][[OPEN_2]]根据个人评估结果制定您的疗法。[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_46ab4e8610f3ad9d56ad",
+   "sourceHash": "46ab4e8610f3ad9d56ad02b8faa3560dca0c589217941ee642afb0ef956815d9",
+   "text": "我们提供的服务",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2c27e4abc8ab2048c125",
+   "sourceHash": "2c27e4abc8ab2048c12567a09f4c0b61e545c9474f60e9779b1ba389c27e3e6b",
+   "text": "每人每天 2 项疗法",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b3da11f3b5ed2ec8c28",
+   "sourceHash": "2b3da11f3b5ed2ec8c28116d716417d68379e4dfa76f58d41f35210bcc031373",
+   "text": "个性化饮食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0c2655ac206f724747e1",
+   "sourceHash": "0c2655ac206f724747e188d21f3237d798640e52d84733b88de1b92498eccea0",
+   "text": "每日团体瑜伽课程",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_67b4e31f5d2777f6098b",
+   "sourceHash": "67b4e31f5d2777f6098bf6f4a1fa20f26fd8efb912e1ebe2368300a1521212c0",
+   "text": "每日问诊",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21b8cb057a7c72d5586f",
+   "sourceHash": "21b8cb057a7c72d5586f16353d9412da69e768d1092b959b0884eb6ee2b989d2",
+   "text": "每日冥想课程",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_210a26c68790583d8395",
+   "sourceHash": "210a26c68790583d8395166c2a3953abecfc0e445a254a588ed004bd35425afd",
+   "text": "包含内容",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b4c8e224b5f327687db2",
+   "sourceHash": "b4c8e224b5f327687db27a350a8efab3fa940b75732932c810a446dbea203cb5",
+   "text": "医疗与健康",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eab69456178fdab6f7f6",
+   "sourceHash": "eab69456178fdab6f7f683314743c4c18917f61d8d130eb4893f15a7fcbfc4ad",
+   "text": "进展监测，草药茶不限量供应",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b4c88b7fb5c11558c4cd",
+   "sourceHash": "b4c88b7fb5c11558c4cdb2286f30420b1166881e4abc717c7e31f0d4b96a4cbc",
+   "text": "出院后的持续健康计划",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ae3f6a3c72d075169888",
+   "sourceHash": "ae3f6a3c72d07516988833add948f3f13732af89f6f3a2dc95636a295b386c00",
+   "text": "住宿与营养",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

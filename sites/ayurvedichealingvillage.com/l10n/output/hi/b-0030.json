@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0030",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_f4754cdfdd78a8d7a31f",
+   "sourceHash": "f4754cdfdd78a8d7a31f25d74287ba38daeb13fb2ce909acf44345324a4fde53",
+   "text": "[[OPEN_1]]होम[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]सभी कार्यक्रम[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]आयुर्वेदिक उपचार[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8fa7976421b03301d361",
+   "sourceHash": "8fa7976421b03301d3615763583917fdb3967c2203f478c9ed2f86645117de69",
+   "text": "पूर्ण शुल्क-सूची: [[OPEN_1]][[VAR_1]][[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee8e6732c51ec5d3bb0a",
+   "sourceHash": "ee8e6732c51ec5d3bb0a8b3b27ecc63582fd97b486a49210be89f11b8ee4635c",
+   "text": "कार्यक्रम शुल्क न्यूनतम प्रवास पर आधारित “से आरंभ” कुल राशि है — प्रकाशित शुल्क-सूची और प्रत्येक कार्यक्रम के लिए दर्शाई गई प्रभावी तिथियों के अनुसार, सबसे कम एकल-विला दर × कार्यक्रम की न्यूनतम रातें। विला-श्रेणी और अवधि की पूरी तालिका प्रत्येक कार्यक्रम के पृष्ठ पर उपलब्ध है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9122376e1cf240acf5ff",
+   "sourceHash": "9122376e1cf240acf5ffe45eba2c0f8a38043b3d292d3e86821628215bcb08bb",
+   "text": "[[OPEN_1]]होम[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]समाचार और पिछले आयोजन[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]पिछले कार्यक्रम[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]Ayuryoga[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Past Retreats' rendered as 'पिछले कार्यक्रम' (past programmes) per KTAHV language lock. 'Ayuryoga' kept as programme name."
+   ]
+  },
+  {
+   "id": "t_04ec5a996c0b89f8553a",
+   "sourceHash": "04ec5a996c0b89f8553a3f9fdc08cde8a082c0d4596989c492796026d170c2f9",
+   "text": "Ayuryoga",
+   "status": "translated",
+   "unchangedReason": "Programme proper name, kept unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_923b48a8cfecb93dba8e",
+   "sourceHash": "923b48a8cfecb93dba8e3694816fe02baffb152d30b1df7858942ce267ccd650",
+   "text": "‘ईश्वर का अपना देश’ केरल में Kairali का आयुर्वेदिक हीलिंग विलेज",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_563d1a67428d8761633d",
+   "sourceHash": "563d1a67428d8761633d7d5a9b848d0cb2b8b452e8434bd08f193d1696ad509d",
+   "text": "सामान्य दैनिक समय-सारिणी (मार्गदर्शन के लिए)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_658cf1f479f3bd387be8",
+   "sourceHash": "658cf1f479f3bd387be824b1baac122e284faae82c6462592bcc23c1dc77a7b5",
+   "text": "अधिक जानकारी:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4ce65d8b4996fb619a1",
+   "sourceHash": "d4ce65d8b4996fb619a13b548cd249da67bda6114e9ed70e7ad4f13ca35125f5",
+   "text": "कार्यक्रम में शामिल:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'कार्यक्रम' (programme) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_d2f9647cf9a878a60114",
+   "sourceHash": "d2f9647cf9a878a601147dea379747f38d5ab54613d0af5973e52df0c0590cb9",
+   "text": "Kairali – आयुर्वेदिक हीलिंग विलेज के पिछले Ayuryoga कार्यक्रम का ऐतिहासिक विवरण पढ़ें, मूल दैनिक समय-सारिणी और शामिल सुविधाओं सहित।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'कार्यक्रम' (programme) per KTAHV language lock; kept within 155 characters."
+   ]
+  },
+  {
+   "id": "t_52d2386bac99f164344b",
+   "sourceHash": "52d2386bac99f164344bc9c907d3e9982ae486f0f3af47aa1de0349e279f9450",
+   "text": "Ayuryoga | पिछला कार्यक्रम | Kairali हीलिंग विलेज",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Past Retreat' rendered as 'पिछला कार्यक्रम' (past programme) per KTAHV language lock; within 60 characters."
+   ]
+  },
+  {
+   "id": "t_8a8ed7817a84d700b270",
+   "sourceHash": "8a8ed7817a84d700b270b725223a20d4bce8083bf1a078a3181cf9680ae57cdd",
+   "text": "कॉटेज के पास खुले में योग करता एक व्यक्ति।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee319256f067eba5b48b",
+   "sourceHash": "ee319256f067eba5b48bf55d32beb4422a6d45e8d2e7687571be18c39e047227",
+   "text": "[[OPEN_1]]होम[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]समाचार और पिछले आयोजन[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]पिछले कार्यक्रम[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]जड़ों की ओर वापसी[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Past Retreats' rendered as 'पिछले कार्यक्रम' (past programmes) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_5c215c9aea5e98e5e289",
+   "sourceHash": "5c215c9aea5e98e5e28946ed49ea655c12eca8a9383a84a0422141a69dc428b5",
+   "text": "जड़ों की ओर वापसी",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7843fad4ec5610932b48",
+   "sourceHash": "7843fad4ec5610932b487065d55ae463910e61f09497a5d526e87c996f0722e2",
+   "text": "यह एक पिछला कार्यक्रम है। नीचे दिया गया मूल विवरण ऐतिहासिक अभिलेख के रूप में रखा गया है और यह वर्तमान प्रस्ताव नहीं है। इस कार्यक्रम के लिए वर्तमान में कोई तिथि या बुकिंग उपलब्ध नहीं है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'कार्यक्रम' (programme) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_cb30526f77c408212c82",
+   "sourceHash": "cb30526f77c408212c825409f27eedf6d82c958c1086eb4016ed265f328ba7cb",
+   "text": "Kairali की आयुर्वेदिक भोजन-परंपरा और समग्र स्वास्थ्य-दृष्टि जानें। भारत के पहले शेफ़ कार्यक्रम में परंपरा और आधुनिक पाक-नवाचार का मेल हुआ।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Chef Retreat' rendered as 'शेफ़ कार्यक्रम' (chef programme) per KTAHV language lock; condensed to fit 155 characters. Source claim 'India's first' kept as in source."
+   ]
+  },
+  {
+   "id": "t_787461254c7e06c2679b",
+   "sourceHash": "787461254c7e06c2679b13f070fd6df91eece773a632d357e42fcf490cfff944",
+   "text": "Kairali की आयुर्वेदिक पाक विरासत | शेफ़ कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Chef Retreat' rendered as 'शेफ़ कार्यक्रम' per KTAHV language lock; 'Wellness Cuisine' dropped to fit the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_5bd6558f0688e3eecf0e",
+   "sourceHash": "5bd6558f0688e3eecf0ed01bb05d58961e90853b3df9a0961257fd954f32a097",
+   "text": "नारियल के पेड़ों के बीच हरे-भरे खेत और पगडंडियाँ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_03a9c3b560fc3f4e4826",
+   "sourceHash": "03a9c3b560fc3f4e4826e90408aabcb2eeb5b32b0c64caf230bca858b3a73c27",
+   "text": "[[OPEN_1]]होम[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]सभी कार्यक्रम[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]आयुर्वेदिक उपचार[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]श्वास संवर्धन एवं श्वसन स्वास्थ्य चिकित्सा[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2d2cb079c46b8b3c19d8",
+   "sourceHash": "2d2cb079c46b8b3c19d81ca5ea78fedf7d60594843a1fc57770481663e64cf05",
+   "text": "Kairali में हर्बल चिकित्सा, डिटॉक्स और डॉक्टर-निर्देशित देखभाल के साथ ब्रोंकियल समस्याओं का समग्र उपचार, ताकि श्वसन बेहतर हो और प्रतिरक्षा बढ़े।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source efficacy claims ('improve breathing', 'boost immunity') translated as-is, not strengthened; medical claim — flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_8c64f8328247b8f3f163",
+   "sourceHash": "8c64f8328247b8f3f16332cf39eabf72d2ed3cb35c9389aa09a571cc92589696",
+   "text": "[[OPEN_1]]परिचय[[CLOSE_1]] [[OPEN_2]]इतिहास[[CLOSE_2]] [[OPEN_3]]प्रक्रिया[[CLOSE_3]] [[OPEN_4]]लाभ[[CLOSE_4]] [[OPEN_5]]प्रशंसापत्र[[CLOSE_5]] [[OPEN_6]]पैकेज मूल्य[[CLOSE_6]] [[OPEN_7]]सामान्य प्रश्न[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_edabb9c4bcc47f6f2b91",
+   "sourceHash": "edabb9c4bcc47f6f2b914ae0011aa5bbacf0771c064f67a0827e77de21e40d01",
+   "text": "डॉक्टर-निर्देशित देखभाल",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb711d39767cd1b2e11b",
+   "sourceHash": "bb711d39767cd1b2e11bce4a17188af309eee4464de96221c3ec305653fad7f8",
+   "text": "कार्यक्रम विवरण",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a13a1afd4aab1181fa4",
+   "sourceHash": "0a13a1afd4aab1181fa484bd653a3a97e3746b233b3dc761be703a4356b574d7",
+   "text": "[[OPEN_1]]कार्यक्रम[[CLOSE_1]] के बारे में",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f3c6d15a874413b8d46d",
+   "sourceHash": "f3c6d15a874413b8d46d3a5088c1ec87e4551422bd58d2ff2f48cead615edea8",
+   "text": null,
+   "status": "blocked",
+   "unchangedReason": null,
+   "issues": [
+    "Source makes cure-type claims ('permanent solution for bronchial issues', 'eliminate bronchial diseases', 'address the root causes', 'Say goodbye to bronchial issues'). A faithful translation would carry a banned 'cure' claim on a KTAHV clinical page; softening it would change the medical claim without authority. Needs a clinically approved English rewrite (Dr. Deepu John sign-off) before translation."
+   ]
+  }
+ ]
+}
