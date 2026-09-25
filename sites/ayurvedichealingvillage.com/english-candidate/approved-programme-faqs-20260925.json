@@ -1,0 +1,1294 @@
+{
+  "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+  "approval": "Owner approved 25 September 2026; later operational decisions supersede shared drafts. Unapproved distinct draft answers excluded.",
+  "routes": [
+    {
+      "route": "/panchakarma-therapy/",
+      "sources": [
+        "PANCHAKARMA-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Will I receive all five Panchakarma procedures?",
+          "a": "Panchakarma procedures are not a checklist that every guest receives. Ask which procedures are proposed for you, why they are recommended and what alternatives are available before agreeing to a treatment plan."
+        },
+        {
+          "q": "How do I know whether this programme is suitable for me?",
+          "a": "Share your diagnosis, current symptoms and goals before admission. Discuss any heart or kidney disease, pregnancy, recent surgery or previous reactions to cleansing procedures so the physician can assess suitability."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/weight-loss-programme/",
+      "sources": [
+        "WEIGHT-MANAGEMENT-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "How much weight can I expect to lose?",
+          "a": "Your weight-management goals depend on your starting health, medical history and individual needs. Discuss achievable goals with your physician and how progress will be assessed, including changes beyond body weight. Individual results vary."
+        },
+        {
+          "q": "How do I know whether this programme is suitable for me?",
+          "a": "Share your medical history, current symptoms and goals before admission. Include any history of diabetes, eating disorders and prescribed weight-management treatment so the physician can assess suitability."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "sources": [
+        "REJUVENATION-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "How does this differ from the Panchakarma programme?",
+          "a": "Your physician can explain the proposed therapies and daily routine for each programme in relation to your health goals, helping you understand which approach is appropriate for you. The procedures you receive depend on your individual assessment."
+        },
+        {
+          "q": "How do I know whether this programme is suitable for me?",
+          "a": "Share your medical history, current symptoms and goals before admission. Discuss any ongoing medical conditions, fatigue and previous treatment experience so the physician can assess suitability."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/personalized-customized-healing-program/",
+      "sources": [
+        "PERSONALIZED-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can one programme address several health concerns?",
+          "a": "Yes. This programme is designed specifically for people with comorbidities—two or more coexisting medical conditions—or multiple health concerns. Your physician will assess these together and develop an individual treatment plan, identifying where additional specialist care may be appropriate."
+        },
+        {
+          "q": "How do I know whether this programme is suitable for me?",
+          "a": "Share your medical history, current symptoms and goals before admission. Include all diagnosed conditions, ongoing specialist treatment and a complete list of medicines and supplements so the physician can assess suitability."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/digestive-wellness-gut-health-yoga-therapy/",
+      "sources": [
+        "DIGESTIVE-WELLNESS-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Is this programme suitable for IBS or other digestive problems?",
+          "a": "Share your diagnosis, symptoms and current treatment with the physician so suitability can be assessed. New, persistent or worsening digestive symptoms should be medically assessed before choosing the programme."
+        },
+        {
+          "q": "What information should I share before admission?",
+          "a": "Share your medical history, current symptoms and goals, including any diagnosis of IBS or inflammatory bowel disease, recent abdominal surgery and unexplained digestive symptoms. This will help the physician assess whether the programme is appropriate for you."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/yoga-based-stress-energy-reset-program/",
+      "sources": [
+        "STRESS-ENERGY-FAQ-APPROVED.md",
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "How is stress-related tiredness assessed before starting the programme?",
+          "a": "Discuss your sleep, energy levels, daily pressures and any existing diagnoses with the physician. This helps clarify your concerns and whether further assessment would be useful before starting the programme."
+        },
+        {
+          "q": "What information should I share before admission?",
+          "a": "Share your medical history, current symptoms and goals, including persistent fatigue, any ongoing mental-health treatment and your comfort with physical activity. This will help the physician assess suitability."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/immunity-enhancement-executive-health-assessment-therapy/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md",
+        "EXECUTIVE-HEALTH-TEST-CHARGES.md"
+      ],
+      "faqs": [
+        {
+          "q": "Are tests included in the package?",
+          "a": "Tests are charged separately and are not included in the package price."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/sleep-restoration-therapy/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md",
+        "CPAP-OXYGEN-ARRANGEMENTS.md"
+      ],
+      "faqs": [
+        {
+          "q": "Should I bring my CPAP or oxygen equipment?",
+          "a": "It is preferable to bring your own CPAP or oxygen equipment. If you need the hospital to arrange it, please inform the team at least one week before admission. Arrangements require the doctor’s approval and are charged separately."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/womens-hormonal-balance-endocrine-therapy/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/preventive-and-regenerative-treatment/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-diabetes/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/yoga-meditation-training/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/yoga-retreats/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md",
+        "ADDICTION-WITHDRAWAL-ACCEPTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Do you accept patients undergoing alcohol or drug withdrawal?",
+          "a": "Yes. Patients undergoing withdrawal are also accepted, and withdrawal is managed on-site. Please discuss your individual admission needs with the hospital team."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-sinusitis-and-migraine/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-bronchial-diseases/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md",
+        "CPAP-OXYGEN-ARRANGEMENTS.md"
+      ],
+      "faqs": [
+        {
+          "q": "Should I bring my CPAP or oxygen equipment?",
+          "a": "It is preferable to bring your own CPAP or oxygen equipment. If you need the hospital to arrange it, please inform the team at least one week before admission. Arrangements require the doctor’s approval and are charged separately."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/beauty-care-and-eye-care/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-to-remove-stress-and-strain/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-hypertension/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-nervous-disability/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/revitalizing-and-strengthening/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-slip-disc/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-arthritis-and-spondylitis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-chronic-back-pain/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/post-pregnancy-health-programme/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md",
+        "POSTPARTUM-BABY-AND-NANNY.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I bring my baby, and is childcare available during treatment?",
+          "a": "Yes, you may bring your baby. A childcare attendant can be arranged at an additional cost if required. Please discuss your needs before admission so arrangements and charges can be confirmed."
+        },
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-skin-diseases/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-facial-paralysis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-paralysis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-cervical-spondylosis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-spondylitis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    },
+    {
+      "route": "/treatment-for-psoriasis/",
+      "sources": [
+        "SHARED-FAQ-APPROVED.md",
+        "POST-DISCHARGE-FOLLOW-UP.md",
+        "PRE-ADMISSION-REVIEW.md",
+        "PATIENT-ASSISTANCE.md"
+      ],
+      "faqs": [
+        {
+          "q": "Can I continue my prescribed medicines?",
+          "a": "Do not stop or change prescribed medicines on your own. Share a complete list of medicines and supplements with your treating clinicians and discuss any proposed Ayurvedic medicines with them."
+        },
+        {
+          "q": "What should I discuss with the physician before treatment?",
+          "a": "Your consultation is an opportunity to understand the proposed treatment, its expected benefits, possible side effects and available alternatives. Share any concerns with your physician and keep the care team informed about how you feel during treatment."
+        },
+        {
+          "q": "What results can I realistically expect, and how long should I stay?",
+          "a": "Treatment goals and the recommended duration of admission depend on your condition and the physician’s assessment. Your physician will discuss expected progress and review your response during treatment. Individual outcomes vary."
+        },
+        {
+          "q": "Can a companion stay with me?",
+          "a": "Companion stays are considered case by case. Share your accommodation and assistance needs before admission so the team can confirm availability, arrangements and applicable charges."
+        },
+        {
+          "q": "What follow-up is included after discharge?",
+          "a": "Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave."
+        },
+        {
+          "q": "Do I need to submit medical reports before admission?",
+          "a": "Pre-admission medical reports and physician clearance are required only for severe conditions, on a case-by-case basis. The team will confirm whether they are needed for your admission."
+        },
+        {
+          "q": "What support is available if I need help getting around or with daily activities?",
+          "a": "Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges."
+        }
+      ]
+    }
+  ]
+}
