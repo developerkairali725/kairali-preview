@@ -21,13 +21,15 @@ for (let offset=0;offset<rows.length;offset+=25) test(`approved FAQ visible copy
   }
  }
 });
-test('general FAQ no longer advertises fixed follow-up dates or available new-patient consultations',()=>{
+test('general FAQ preserves included follow-up and available free consultation choices',()=>{
  for (const side of ['desktop','mobile']) {
   const html=JSON.parse(fs.readFileSync(`public/ahv/views/ahv-page-faqs-and-downloads-${side}.json`)).template;
   const answer=id=>html.match(new RegExp('<details[^>]*id="'+id+'"[^>]*>[\\s\\S]*?</details>'))[0];
   assert.match(answer('q-41'),/four remote follow-up consultations/);
   assert.doesNotMatch(answer('q-41'),/1, 3 and 6 months/);
-  assert.match(answer('q-45'),/coming soon/);
+  assert.match(answer('q-45'),/video call, phone or email/);
+  assert.match(answer('q-45'),/a coordinator will contact you/);
+  assert.doesNotMatch(answer('q-45'),/coming soon/);
   assert.match(answer('q-35'),/additional cost/);
  }
 });
