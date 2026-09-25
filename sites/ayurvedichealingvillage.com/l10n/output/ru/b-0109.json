@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0109",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_ad943b94248466b6b57b",
+   "sourceHash": "ad943b94248466b6b57b9fbe35fc01e0a1e36ba13ca8e079f6801655c480188b",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Интенсивное выведение токсинов на самом глубоком уровне",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aced3300be36c79e0da6",
+   "sourceHash": "aced3300be36c79e0da6eef48dd508026d740b34df3364be4b21faf9e7d853b9",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Укрепление иммунитета и повышение сопротивляемости болезням",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_888a1ef121cd06a35e96",
+   "sourceHash": "888a1ef121cd06a35e960eda6ce58783c3306703015fbec5b677732718ed44ff",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Сбалансированный обмен веществ и пищеварение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_46c869157a9eb35fd0c3",
+   "sourceHash": "46c869157a9eb35fd0c3e210c5740d53c2ff719ad3ce9d0f4bab796eac7b7453",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Восстановление энергии и жизненных сил для хорошего самочувствия каждый день",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09f5c4fd7ed62076cb1c",
+   "sourceHash": "09f5c4fd7ed62076cb1cdafab79e529b6455752c691bcfcb2b07499a30d16f94",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Большая ясность ума и эмоциональное спокойствие",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_709aae2908bea5e780f0",
+   "sourceHash": "709aae2908bea5e780f090076d33c7d9f322dafe4cac047b0580bb2a882f7812",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Знания Аюрведы и устойчивые навыки заботы о себе",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32769688a9a76bdb2f55",
+   "sourceHash": "32769688a9a76bdb2f5550f7384b9c8d991ca4ee3173751a3de0398921823c46",
+   "text": "Детоксикационная программа Панчакарма",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c02393eb362cb32e34a7",
+   "sourceHash": "c02393eb362cb32e34a7daf44b903436e7b05389acfaf707bb9294bd25f7e327",
+   "text": "Мои маркеры воспаления снизились на 65% за 21 день, и я прекратила три курса приёма лекарств.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "CLINICAL FLAG: patient testimonial with outcome figures and medication discontinuation; requires Dr. Deepu John sign-off. Feminine verb form chosen because the attribution is 'Sarah M.'."
+   ]
+  },
+  {
+   "id": "t_85cbc17bc4085276b83b",
+   "sourceHash": "85cbc17bc4085276b83bb07d42ec7da31b0f5061d833d43b791a783a46278642",
+   "text": "[[OPEN_1]]Sarah M., Германия[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_526919f2e0a2a84ba64e",
+   "sourceHash": "526919f2e0a2a84ba64ea62f92b28d400fde5d2da208f284b922388e21757f37",
+   "text": "Целостный подход к здоровью: история нашей пациентки из Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'пациентка' (language lock); 'Holistic Healing at Its Best' condensed to avoid a superlative efficacy claim. Gender of the patient is not stated in source; feminine form assumed from adjacent Sarah M. testimonial — verify."
+   ]
+  },
+  {
+   "id": "t_8efca11112141d776c28",
+   "sourceHash": "8efca11112141d776c28f10cc54302ae8c04e06770a32a3d641fa4b26955d092",
+   "text": "Здесь выявили проблемы, которые упустила западная медицина. Через три недели у меня нет никаких симптомов.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "CLINICAL FLAG: patient testimonial implying symptom resolution; requires Dr. Deepu John sign-off."
+   ]
+  },
+  {
+   "id": "t_8682ce5e836e25d733cc",
+   "sourceHash": "8682ce5e836e25d733cce11ec78def9e18c8cfe444a01565039f7920f772c0fb",
+   "text": "[[OPEN_1]]д-р Rajesh P., Мумбаи[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e6bddac80a468b584b7",
+   "sourceHash": "4e6bddac80a468b584b7032df3b1a84d4b6ca7defb3aeffaea63bfac569155a7",
+   "text": "Путь к здоровью: как пребывание в Kairali изменило жизнь г-на Bikash Das",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 'Путь' (language lock)."
+   ]
+  },
+  {
+   "id": "t_f071e11b2779a142df05",
+   "sourceHash": "f071e11b2779a142df05b6797021aa9a398da5c0aca91d4652c9d57ef8e9da6d",
+   "text": "«Панчакарма в Kairali стала для меня незабываемым опытом. Очищающие процедуры были мягкими, но эффективными: улучшилось пищеварение, стал крепче сон, появилась новая энергия. Спокойная обстановка и профессиональный уход сделали весь процесс невероятно умиротворяющим. Теперь я понимаю, почему Аюрведа славится таким глубоким целительным действием.»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'процесс' (language lock)."
+   ]
+  },
+  {
+   "id": "t_7dd92d18cbf967ffc55b",
+   "sourceHash": "7dd92d18cbf967ffc55b21de8a746d3c77d1f8778e5aa8f82fb344a6d0230080",
+   "text": "[[OPEN_1]]г-н Bikash Das[[CLOSE_1]][[OPEN_2]]Видеоотзыв[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ea758f8e788c2f190df1",
+   "sourceHash": "ea758f8e788c2f190df10635f83ed2489e799b4aed9678f34339226e91015916",
+   "text": "Путь к здоровью: как пребывание в Kairali изменило жизнь г-на Bikash Das",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 'Путь' (language lock)."
+   ]
+  },
+  {
+   "id": "t_2448597dbba65447fa64",
+   "sourceHash": "2448597dbba65447fa64363319515ed6b1f937610ef6520ee9c54bc5851ff319",
+   "text": "Получу ли я все пять процедур Панчакармы?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9422edf720427526f15b",
+   "sourceHash": "9422edf720427526f15b36d5551424c4cf0f206f991e44897ad93c7604b3d287",
+   "text": "Процедуры Панчакармы — это не обязательный перечень, который получает каждый пациент. Прежде чем согласиться на план лечения, спросите, какие процедуры вам предлагаются, почему они рекомендованы и какие существуют альтернативы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'пациент' (language lock)."
+   ]
+  },
+  {
+   "id": "t_ba84e49bfb6ae4f0f44d",
+   "sourceHash": "ba84e49bfb6ae4f0f44d0ccd01806d2295d36b7bd1695198e7d239ed1d0d2bb7",
+   "text": "До госпитализации сообщите свой диагноз, текущие симптомы и цели. Расскажите о любых заболеваниях сердца или почек, беременности, недавних операциях или прошлых реакциях на очищающие процедуры, чтобы врач мог оценить, подходит ли вам лечение.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f044f9d291276f8d589f",
+   "sourceHash": "f044f9d291276f8d589f40a8d95225a9ccf0191a6d70a73bcd8cac7d17630596",
+   "text": "Аюрведическая детоксикационная терапия Панчакарма: научно обоснованное очищение для тела, ума и баланса дош, которому доверяют 80% пациентов | 30,000+ изменённых жизней",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest-trusted' rendered as 'пациентов' (language lock). Statistics '80%' and '30,000+' are unverified claims carried from source; verify before publishing."
+   ]
+  },
+  {
+   "id": "t_8ae6cb5a972d283ee213",
+   "sourceHash": "8ae6cb5a972d283ee213c102d39cdae9763702a8d5290c055107f7ff3e09b8dd",
+   "text": "Детокс-терапия Панчакарма | Аюрведическое очищение, Индия",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92185df0605e0debd522",
+   "sourceHash": "92185df0605e0debd5226dc9f41702265c727dc0c69722f9a23fda4bb4d8793a",
+   "text": "Терапевт проводит пациенту назальную процедуру Насьям во время лечения Панчакармой",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3db2ecb01ca5646ebae",
+   "sourceHash": "e3db2ecb01ca5646ebae3e2e5e4e3fdfa8f55763df77eb0030ab2779ba87f796",
+   "text": "Терапевт льёт ровную струю тёплого травяного масла на лоб пациента во время процедуры Широдхара (Shirodhara)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_39a586899d90a4203278",
+   "sourceHash": "39a586899d90a4203278ca9ecff5ad26c18c7bf710c98b81d81bf04330963278",
+   "text": "Женщина медитирует, сидя со скрещёнными ногами на коврике в светлом зале для йоги",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9f448fc1301b697588e",
+   "sourceHash": "e9f448fc1301b697588e303cbc510bf782cc6fe6bb172121b59c35e95c1aece9",
+   "text": "Пациент в керальской хлопковой накидке с повязкой из банановых листьев на голове, закреплённой тканью",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

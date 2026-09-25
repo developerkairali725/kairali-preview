@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0152",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_e49971717b516bcc687a",
+   "sourceHash": "e49971717b516bcc687a20e7794e9389baf5d0b481c50b3174c409dc59be41a4",
+   "text": "：我们尊重每个人的独特性，会根据您的具体需求、体质和皮肤状况定制治疗的每一个环节。这种个性化方式有助于充分发挥治疗效果，以求获得理想结果。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0920cfc599b3dc1c4e75",
+   "sourceHash": "0920cfc599b3dc1c4e75a501f0711a809a367ddcc9b381a97df99063863a7231",
+   "text": "优质阿育吠陀疗法",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_49c64df771c7ecf2476c",
+   "sourceHash": "49c64df771c7ecf2476cb23fd3db41500fdf663b91766e897c587876dd785369",
+   "text": "：Kairali 久负盛名，采用正宗、高品质的阿育吠陀疗法，包括 Panchakarma（五业疗法）排毒和专业皮肤治疗。这些治疗由经验丰富的治疗师在宁静的疗愈环境中进行。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'our renowned retreat' rendered as 'Kairali' to avoid resort/retreat framing under the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_0798f8bd3606bf44994a",
+   "sourceHash": "0798f8bd3606bf44994a17a68018434b8cab6d999233c8a5ce3b688cf5ba614d",
+   "text": "天然草本药物",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e4d36e658846601b2029",
+   "sourceHash": "e4d36e658846601b2029f471995e6214ab509add5833372cf426d0a2868e968c",
+   "text": "：我们的草本药物优先选用纯正的植物性成分，并采用传统方法炮制，以提升其治疗价值。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_49367ec37064b26db9a6",
+   "sourceHash": "49367ec37064b26db9a66930be4fb482bdabf2bf456229effea3cda63a10e737",
+   "text": "全面健康支持",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59fbcbfda086b4086c5c",
+   "sourceHash": "59fbcbfda086b4086c5c94bab5c46a8ae666499388f496dc0fdd3a09253dda41",
+   "text": "：除皮肤疾病治疗外，我们还会在饮食、生活方式调整和压力管理方面为您提供指导，以支持整体健康。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89311ae37381ee76f5ec",
+   "sourceHash": "89311ae37381ee76f5ec444bbd894b5be47067dddd7096a916fbd540bba32100",
+   "text": "安心舒适的住院体验",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Exceptional Retreat Experience' rendered as a comfortable inpatient-stay experience to avoid retreat/resort framing."
+   ]
+  },
+  {
+   "id": "t_5955ea41782e0d27ab5a",
+   "sourceHash": "5955ea41782e0d27ab5a8f9bcf7756cd0eeaab1572a41dd3b65d33eef3047073",
+   "text": "：我们提供宁静的环境，让您放松身心，专注于自己的康复过程。细心周到的工作人员、舒适完善的设施和令人焕然一新的环境，让您的整体体验更加安心。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Substitutions per register lock: 'retreats' → implicit (we provide), 'healing journey' → 康复过程 (healing process), 'luxurious amenities' → 舒适完善的设施 (comfortable amenities)."
+   ]
+  },
+  {
+   "id": "t_cb70dae95c82b199942f",
+   "sourceHash": "cb70dae95c82b199942f51b53c7b8d3433d23ce66c1628357b8e5bb0e7225aff",
+   "text": "痤疮和粉刺",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bb49d2cbe65e472809f",
+   "sourceHash": "9bb49d2cbe65e472809fa77055a405889d54b4be574226364e8550c15097e028",
+   "text": "湿疹和银屑病",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_708e7b4a0e1b9d93e590",
+   "sourceHash": "708e7b4a0e1b9d93e5906af550e938e5c066803f8f7e59ae9114debcf7954b3b",
+   "text": "皮炎和皮肤过敏反应",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c8accd529d646e43dcbf",
+   "sourceHash": "c8accd529d646e43dcbfb42507a60c1fa431ff5a117482ccd746259853295061",
+   "text": "玫瑰痤疮和泛红",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5786c0cdec01a5f45c16",
+   "sourceHash": "5786c0cdec01a5f45c16648ec27a386978d3b3026aa4055de8068aa765f33c87",
+   "text": "色素沉着和色斑",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a9d030df1819f0166bba",
+   "sourceHash": "a9d030df1819f0166bba85e2be571f341835e6ecc702fe5a008ef019efdfaada",
+   "text": "干燥暗沉肌肤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_683b4c83b07f58dec3c7",
+   "sourceHash": "683b4c83b07f58dec3c7127f52204f6a9d49cf146667cbadcaa3f1dc45be3ed3",
+   "text": "皮疹和瘙痒",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_61cfeb56091322c318f3",
+   "sourceHash": "61cfeb56091322c318f325a08b67d373d880903bdce5721c8b6dd56d24648632",
+   "text": "皮肤感染和真菌性皮肤病",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_649363635f5205bd52e1",
+   "sourceHash": "649363635f5205bd52e1b2eb1ed606ace3302c4ec17e923059174d94e1fd6d12",
+   "text": "晒伤和日光损伤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d575e6285e3cfda8dbdb",
+   "sourceHash": "d575e6285e3cfda8dbdb004f24cbab759a92a14d73da410071917a03f835f46f",
+   "text": "早衰和皱纹",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eac09b31e8d6760c9839",
+   "sourceHash": "eac09b31e8d6760c9839907d5490941c3fb913eadf0c59ecbbd81afacfb33d93",
+   "text": "[[OPEN_1]]首页[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]全部治疗方案[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]睡眠恢复疗法[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af93397789d4bd4c05cc",
+   "sourceHash": "af93397789d4bd4c05ccd81d734e65f29a3308c0b3c497c10dbb5aabb0ce056f",
+   "text": "阿育吠陀睡眠疗法，帮助缓解失眠、焦虑与压力。在喀拉拉邦 Kairali 通过天然疗法恢复安稳睡眠。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_405a0bb6e2d7105233e7",
+   "sourceHash": "405a0bb6e2d7105233e7d0d6a898091117c868e12e65e8080cb81fade0e7717b",
+   "text": "Kairali – The Ayurvedic Healing Village（阿育吠陀疗愈村）的睡眠恢复疗法是一项专门的健康方案，旨在以自然方式应对失眠、焦虑和睡眠不规律等问题。该疗法以经典阿育吠陀知识为基础，结合了多种舒缓疗法，如 Shirodhara（希罗达拉）、Abhyangam（阿比扬伽，油疗按摩）、治疗性蒸汽浴、草本药物以及引导式冥想。根据个人 Prakriti（体质）量身定制的饮食和生活方式调整，有助于重建身体的自然睡眠周期。本方案坐落于喀拉拉邦宁静的环境之中，有助于深度放松、思维清晰和情绪稳定。通过阿育吠陀方法，找回宁静而恢复身心的睡眠——在 Kairali 久负盛名的疗愈村中醒来，迎接全面的身心健康。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bf2595c3c57117dfa075",
+   "sourceHash": "bf2595c3c57117dfa075fce081c488e71cb3f89f26a23b69b529f92923940ec3",
+   "text": "在 Kairali – The Ayurvedic Healing Village（阿育吠陀疗愈村），我们重视传统阿育吠陀原则，致力于协调身、心、灵，以恢复自然的睡眠模式。我们首先进行深入的问诊，找出睡眠问题的根本原因——无论是 dosha（体质能量）失衡、压力还是生活方式失调所致。疗法包括 Shirodhara（希罗达拉）、Abhyangam（阿比扬伽）和草本饮剂等舒缓治疗，帮助放松神经系统，并配合悦性（sattvic）饮食、日常瑜伽、冥想和呼吸练习。我们平静的环境和量身定制的支持，为您提供一条舒缓而全面的途径，帮助您重获深沉、恢复身心的睡眠。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_598abf0103afc74efcc3",
+   "sourceHash": "598abf0103afc74efcc3201a276f9ce7506d669e532d21596a7dddff55e96d3a",
+   "text": "[[OPEN_1]]睡眠恢复疗法[[CLOSE_1]]的流程",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7b28df754cbb8d73058",
+   "sourceHash": "a7b28df754cbb8d73058970e1a34a082f821c6e8d9a94a4a74f3ed5314be36c2",
+   "text": "Kairali – The Ayurvedic Healing Village（阿育吠陀疗愈村）的睡眠恢复疗法包括以下步骤：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

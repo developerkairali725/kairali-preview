@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0155",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_337405e8258c57681bf7",
+   "sourceHash": "337405e8258c57681bf7f5fce09cedd9094d6aff1bc1e07559cec24b3035e22a",
+   "text": "Menschen, die einen erfahrenen Ayurveda-Arzt mit nachweislicher Erfahrung in der Behandlung von Bandscheibenvorfällen suchen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e8196b1633506f593d4",
+   "sourceHash": "5e8196b1633506f593d4c7139883318c6105eba1118d1d5bae996aaeb154c108",
+   "text": "Ablauf der [[OPEN_1]]Behandlung für Bandscheiben und Nerven[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de2166f839f968e25c82",
+   "sourceHash": "de2166f839f968e25c821d237b846e0915d85a1113965bf06ca0635cc21d7351",
+   "text": "In unserem Haus folgen wir bei der Behandlung von Bandscheibenvorfällen einem umfassenden Ablauf, der ayurvedische Therapien mit individueller Betreuung verbindet:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Resort-type term 'wellness retreat' rendered as 'Haus' per clinical register."
+   ]
+  },
+  {
+   "id": "t_95e2aa389674ddd982f8",
+   "sourceHash": "95e2aa389674ddd982f8e4ed1a9410723c8c0eca949a44f4834d257f7f8c754a",
+   "text": "[[OPEN_1]]Warum[[CLOSE_1]] eine Behandlung bei Bandscheibenvorfall",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7872f386f1867382e361",
+   "sourceHash": "7872f386f1867382e36160a9e9a4b7de91039c689211ee1d27c6570ddad5b20d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Profitieren Sie von über [[VAR_1]] Jahren Fachwissen und der erfolgreichen Behandlung von mehr als 30,000 Patienten mit Bandscheibenvorfall durch unseren erfahrenen Ayurveda-Arzt.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Number '30,000+' kept verbatim per keep-numbers rule (German convention would be 30.000). The 30,000+ patient figure is a factual claim — verify source."
+   ]
+  },
+  {
+   "id": "t_b2efdac1506a9d3898ca",
+   "sourceHash": "b2efdac1506a9d3898cade0ff6c8e59730fc4bc04a140cebb95f1f8ee0a287f6",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Erleben Sie einen ganzheitlichen Ansatz, der an der Ursache des Bandscheibenvorfalls ansetzt und das Gleichgewicht des Körpers durch ayurvedische Therapien, pflanzliche Arzneimittel und Anpassungen des Lebensstils wiederherstellt.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82d0b4b332f2120cca99",
+   "sourceHash": "82d0b4b332f2120cca993e4de76a95729426bc8a38b07a0b65eb812b5985078e",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Erhalten Sie individuelle Betreuung mit einem auf Sie abgestimmten Behandlungsplan, der auf eine wirksame und gezielte Heilung entsprechend Ihren persönlichen Bedürfnissen ausgerichtet ist.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'ensuring effective and precise healing' is a guarantee; softened to 'ausgerichtet auf' to avoid a guaranteed-outcome claim — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_5a2f0c8a1a8005b1a735",
+   "sourceHash": "5a2f0c8a1a8005b1a735911b68e49991052eaa41f0ff0e791688993364f365c1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Erleben Sie eine fürsorgliche Umgebung mit modernen Einrichtungen, qualifizierten Ayurveda-Therapeuten und natürlichen Heilmethoden. Unser Ansatz zielt auf langfristige Linderung, Vorbeugung und ganzheitliches Wohlbefinden ab und begleitet Sie auf Ihrem Weg der Genesung vom Bandscheibenvorfall.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'journey' rendered as 'Weg'; source guarantee 'ensures long-term relief' rendered as 'zielt auf … ab' — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_80cdccd1efc758c12d7c",
+   "sourceHash": "80cdccd1efc758c12d7c4089776100bd8396d30326f760dcd7a0a88b8a259b53",
+   "text": "[[OPEN_1]]Vorteile[[CLOSE_1]] der Behandlung für Bandscheiben und Nerven",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d07d2edce6626513b31f",
+   "sourceHash": "d07d2edce6626513b31f5edd61719df3770f843869ac412e5913ffe0b6d7cb1a",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Erfahren Sie durch ayurvedische Therapien und pflanzliche Arzneimittel eine natürliche und wirksame Schmerzlinderung, die den Bedarf an Schmerzmitteln verringert.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c65ba2ecca94d615881e",
+   "sourceHash": "c65ba2ecca94d615881e03871db6b2ab3c6403dbdf272e41cdc9097562d979b1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Verbessern Sie Ihre Flexibilität, gewinnen Sie Beweglichkeit zurück und stärken Sie Ihre Wirbelsäule – zur Unterstützung der betroffenen Bandscheiben und zur Vorbeugung weiterer Beschwerden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d00aa923d55495a337e",
+   "sourceHash": "7d00aa923d55495a337e78122229cbeb9de226190c5376703f61f47a76709bd3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Erhalten Sie eine persönliche, ganzheitliche Betreuung mit individuellen Behandlungsplänen, die auf Ihr Beschwerdebild abgestimmt sind und Heilung sowie allgemeines Wohlbefinden fördern.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e142a37ddcf63c33c06",
+   "sourceHash": "9e142a37ddcf63c33c06606578ae1ab44c46b2db23da185e4b85f706c6abca9d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Gleichen Sie Ungleichgewichte aus, beugen Sie einem erneuten Bandscheibenvorfall vor und stärken Sie Ihr Wohlbefinden – mit Beratung zum Lebensstil in einer heilsamen Umgebung, ganz auf Ihren persönlichen Weg ausgerichtet.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'journey' rendered as 'Weg'."
+   ]
+  },
+  {
+   "id": "t_6145541a269ef64e173c",
+   "sourceHash": "6145541a269ef64e173cda0ef867d9ea4ca663ab80f773d2ce8eb517a4317d7b",
+   "text": "Behandlung für Bandscheiben und Nerven",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e9e49e4e590477d3724",
+   "sourceHash": "6e9e49e4e590477d3724935f1e213f463e885ef3102e31e2a9e9d772c1b8ff1a",
+   "text": "Natürlich heilen: Erfahrungen von Patienten mit der Behandlung bei Bandscheibenvorfall im KTAHV",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'Guest' rendered as 'Patienten'."
+   ]
+  },
+  {
+   "id": "t_1c492cc643bae99843bb",
+   "sourceHash": "1c492cc643bae99843bb66ff92447cb891ef3f2bbb05f82aefd2f7dc23475a7a",
+   "text": "Nachdem ich monatelang mit einem Bandscheibenvorfall zu kämpfen hatte, suchte ich bei Kairali Linderung. Die ayurvedischen Behandlungen, insbesondere die gezielten Massagen und pflanzlichen Heilmittel, zeigten eine deutliche Wirkung. Ich hatte viel weniger Schmerzen und konnte die Beweglichkeit zurückgewinnen, von der ich befürchtet hatte, sie für immer verloren zu haben. Als ich Kairali verließ, fühlte ich mich stärker, leichter und zuversichtlicher.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd00ea44f4f65373b1bf",
+   "sourceHash": "bd00ea44f4f65373b1bf17fb0f7674b9c171437ce1dbb8ba8545a7476a0ccdc3",
+   "text": "[[OPEN_1]]Frau Ashu[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_373cf53a47f197470c0a",
+   "sourceHash": "373cf53a47f197470c0ac03a451976c2a4aa65c46c85240797bab7303c1d9c70",
+   "text": "Kann ich bei einem Bandscheibenvorfall oder Nervenbeschwerden teilnehmen?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3d45459919fab527547",
+   "sourceHash": "e3d45459919fab527547187bbe83cf5d793268ad1a6b72d1d2b7f6eb8ff5d141",
+   "text": "Teilen Sie uns Ihre Diagnose, vorhandene Bildgebungsbefunde und etwaige fachärztliche Empfehlungen mit. Fragen Sie, ob das vorgeschlagene Programm zu Ihrem Beschwerdebild passt; lassen Sie neue oder sich verschlimmernde neurologische Symptome unverzüglich abklären.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5369d183ad1b227f1fc4",
+   "sourceHash": "5369d183ad1b227f1fc47bbdaf7909c96224426ef6c07bc4c12954534b67b921",
+   "text": "Behandlung für Bandscheiben und Nerven – Snayu Bala Chikitsa (Kairalis Behandlung bei Bandscheibenvorfall)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source joins two titles without a separator ('TreatmentSnayu'); a dash separator was added."
+   ]
+  },
+  {
+   "id": "t_cbc8d6b61c30d838235f",
+   "sourceHash": "cbc8d6b61c30d838235f89ce00e78d3c1b3ce1352cf3455f45b3e026dc87c82c",
+   "text": "Ayurvedische Bandscheiben- und Nervenbehandlung bei Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Resort-type term 'Retreat' omitted per clinical register and 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_c15bb08a04984d23ea3a",
+   "sourceHash": "c15bb08a04984d23ea3a824d712189851871c28ccf26d00ad18a1c6521a0f97a",
+   "text": "Therapeutin formt einen Ring aus Kräuterteig auf dem unteren Rücken eines Patienten für Kati Vasti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e7d5922b71bd4555ef1",
+   "sourceHash": "6e7d5922b71bd4555ef195cdfe170b4d042e031aa7a6fd25fdd89588cc91c190",
+   "text": "Therapeutin hält ein Messinggefäß mit warmem Öl über eine Kati-Vasti-Teigmulde",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1579040223fe321c2b46",
+   "sourceHash": "1579040223fe321c2b461b9d9beb447f5d4da082d2653e455a994424a1a1510d",
+   "text": "Ayurvedische Therapie bei Bandscheibenvorfall",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82fcca779275d2c99194",
+   "sourceHash": "82fcca779275d2c99194bd841129c40147c315c5b70447da3819faafe89b699a",
+   "text": "Vorteile der ayurvedischen Behandlung bei Bandscheibenvorfall",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

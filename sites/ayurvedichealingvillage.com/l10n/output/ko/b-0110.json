@@ -1,0 +1,216 @@
+{
+ "batchId": "b-0110",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_a4c1715b8def21141de2",
+   "sourceHash": "a4c1715b8def21141de2771480b32631a00478deb9fd3ca0a1d9b07beef88b7e",
+   "text": "동영상 재생 — 최상의 전인적 치유: Kairali에서 환자가 들려주는 이야기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 환자 (patient) per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_1cd506b1bff1a21a7e81",
+   "sourceHash": "1cd506b1bff1a21a7e8101fbca449d1c5f2ad7b6197452e0dbc0ba0fa6416513",
+   "text": "나무 베란다에서 염주를 들고 있는 흰 셔츠와 주황색 도티 차림의 수염 난 남성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caeb7c371547d86e68d1",
+   "sourceHash": "caeb7c371547d86e68d153026e68b45cb073b7b778627ec5ba0e1d6ee71fab1a",
+   "text": "동영상 재생 — 건강을 향한 여정: Kairali에서 Bikash Das 님이 경험한 변화",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Video title contains 'Journey'; rendered as 건강을 향한 과정 would alter a proper video title. Kept literal 여정 since this is the title of a named video — review whether to substitute 과정 (path/process) per language lock.",
+    "t_caeb7c371547d86e68d1 banned-term-from-source 여정"
+   ]
+  },
+  {
+   "id": "t_09425494d1f6b1b87876",
+   "sourceHash": "09425494d1f6b1b8787670fd389b8095a7fb4d7d6fbeae21c5ce3eadcac88fea",
+   "text": "노출 벽돌 벽에 걸린 두 개의 액자 초상화 아래 안락의자에 앉아 있는 남성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0277e7b770146bbef22",
+   "sourceHash": "f0277e7b770146bbef2252d15d4b5f69b8b7f472727b8984a76e0044eb37311a",
+   "text": "바마남(Vamanam):",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ea854d5156bbcb5192e2",
+   "sourceHash": "ea854d5156bbcb5192e2cf37542bf2eeb641253f70dcf37928405067a2a6d2f6",
+   "text": "아유르베다 요법과 내복약으로 조절된 구토를 유도하여 상부 위장관의 독소를 배출합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8beca5685bdf2f873d35",
+   "sourceHash": "8beca5685bdf2f873d3587b87b5137f9f879360e4575391a211df52cd726884a",
+   "text": "비레찬(Virechan):",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a9085b470127f4f64075",
+   "sourceHash": "a9085b470127f4f640757af70fc7f65972edc8c79047f9aba6ea3bb3a5c959a2",
+   "text": "허브 약제가 하제 작용을 도와 소화관을 정화하고 독소를 배출합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f5d07c3ac140454ddcc0",
+   "sourceHash": "f5d07c3ac140454ddcc011910c0d3cb3bf92036cdbaeeb0603cfead863094012",
+   "text": "바스티(Vasti):",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4b2f15b488fdb8eb6034",
+   "sourceHash": "4b2f15b488fdb8eb60348c48a9b528b6de60243fd68d8dca2082640cc60a47b8",
+   "text": "오일/기(ghee)/우유를 사용한 약용 관장으로 깊이 자리한 불순물을 제거하고 도샤의 균형을 되찾습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af319e12ae18225ce62b",
+   "sourceHash": "af319e12ae18225ce62b733a17ba61c9bd6b72691af2608e2fd287f064736ae6",
+   "text": "나시얌(Nasyam):",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db48a2092e4776fa00bc",
+   "sourceHash": "db48a2092e4776fa00bcb353167e2da329816691c54560a5fc134a66256e4f9f",
+   "text": "허브 비강 요법은 표적 정화를 통해 두통, 부비동 및 편두통 증상의 완화를 돕습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab29e574f08320620859",
+   "sourceHash": "ab29e574f08320620859cc588aa8bd5c6d098376ddc080c15fea190b72b9c9ac",
+   "text": "락타목샤나(Raktamokshana):",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_75c5980dba395e478406",
+   "sourceHash": "75c5980dba395e478406e14dfff79374ea84a169c1e2fcdd4140e074e869bb25",
+   "text": "이 요법들은 피부 문제와 부기를 일으키는 독소를 제거하여 몸을 정화합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_979b26b67e7906a36039",
+   "sourceHash": "979b26b67e7906a3603915121a14f7909bbaf34b3b1019f2bb4301c92f4ffb9b",
+   "text": "[[OPEN_1]]Kairali Ayurvedic Village - 아시아 최고의 아유르베다 리트리트[[CLOSE_1]] [[OPEN_2]]“신의 나라에 있는 지상 낙원” - Pramod Mahajan (공동 차관)[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award title and quotation translated literally; 'Joint Secretary' rendered as 공동 차관 — verify preferred rendering of this official title."
+   ]
+  },
+  {
+   "id": "t_b8c6c8186c4bbbe3804f",
+   "sourceHash": "b8c6c8186c4bbbe3804fcc4767b2bd91ccd868ba4a5418fb84472f3ba404783e",
+   "text": "케랄라 판차카르마 치료",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9efd32fe19764f383685",
+   "sourceHash": "9efd32fe19764f3836859394f407cccb1caa5312b087a5d12070b5a2e1c21849",
+   "text": "팔라카드에 위치한 NABH 인증 아유르베다 병원에서 의사가 이끄는 판차카르마 — 14~21박에 걸친 5단계 해독 과정으로, 매일 두 차례의 요법, 개인 맞춤 식단, 요가, 65에이커 부지 내 빌라 체류가 포함됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89d6b09d1bc1ffedbe99",
+   "sourceHash": "89d6b09d1bc1ffedbe998316f09c5c551cef7cb1e72283838716fc694eaf6d0f",
+   "text": "무료 예약",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment joined with next unit ('Doctor Consultation'); rendered to fit '무료 예약 / 의사 상담'."
+   ]
+  },
+  {
+   "id": "t_9d457ec7ee4024687505",
+   "sourceHash": "9d457ec7ee4024687505549bb385d88b13042e4faa8a9228d6023a89be23dc97",
+   "text": "의사 상담",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9917b5539069262be3bb",
+   "sourceHash": "9917b5539069262be3bb52e5b5e9895c0d10c38d5ce4d827ad19e785142e7efa",
+   "text": "(Rs 2000 상당)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8609e43356799c526636",
+   "sourceHash": "8609e43356799c526636356af5d4370daa88e3e82b2c42ba2317d19bb3bb26cf",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]무료 의사 상담",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0b0d3c0aa66dbad6163e",
+   "sourceHash": "0b0d3c0aa66dbad6163ec90560a5c3e8ba59f02c626e81f009850846e4936d92",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]판차카르마 치료 일정표 다운로드",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_76bfb7ac538b1aa26604",
+   "sourceHash": "76bfb7ac538b1aa266045605a522c9a3fe6d09f4e537d330d8f4a1aa3136f644",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]치료 후 평생 무료 상담",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_83621dd75344f82713f9",
+   "sourceHash": "83621dd75344f82713f935c6004c934d91a9704615ef34ef001384a82f31b35e",
+   "text": "일정표 다운로드 및 무료 의사 상담 예약",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e0366a0d50fa306c410",
+   "sourceHash": "6e0366a0d50fa306c410edd168b8da7714c5ff034fe829a7c1ac1a16e9cd327e",
+   "text": "*치료 상담이 아닌 생활습관 상담이 포함됩니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
