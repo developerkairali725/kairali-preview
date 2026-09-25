@@ -404,15 +404,11 @@
     return typeof root.gtag === "function" && !!root.document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]');
   }
   function track(surface, term, count) {
-    try {
-      var key = surface + "|" + fold(term);
-      if (tracked[key] || !String(term || "").trim()) return false;
-      if (!measurementActive()) return false;
-      tracked[key] = 1;
-      root.gtag("event", "site_search", { search_term: String(term).slice(0, 100), result_count: count | 0, surface: surface });
-      return true;
-    } catch (e) { return false; }
+    // Health queries can contain medical information or identifiers. Do not emit
+    // search analytics, even after cookie consent; search itself is unchanged.
+    return false;
   }
+
   var api = { track: track, measurementActive: measurementActive, version: "2026-09-24a", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
   root.AHVSearch = api;
   if (!root.document) return;

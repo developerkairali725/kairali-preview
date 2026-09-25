@@ -65,6 +65,20 @@ export const CONSENT_RUNTIME = `
       }));
     } catch (e) { /* private mode: this page view only, same as CONSENT_KEY */ }
   }
+  if (!window.__ahvCookieChoicesBound) {
+    window.__ahvCookieChoicesBound = true;
+    document.addEventListener("click", function (event) {
+      var target = event.target && event.target.closest && event.target.closest("[data-ahv-cookie-choices]");
+      if (!target) return;
+      event.preventDefault();
+      try {
+        localStorage.removeItem(CONSENT_KEY);
+        localStorage.removeItem(FLEET_CONSENT_KEY);
+      } catch (e) {}
+      applyConsentMode("declined");
+      window.location.reload();
+    });
+  }
   function consentChoice() {
     try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return "unavailable"; }
   }
@@ -159,6 +173,7 @@ export const CONSENT_RUNTIME = `
   var measurementStarted = false;
   function startMeasurement() {
     if (measurementStarted) return;
+    if (window.location.search || window.location.hash) return;
     var m = cfg.measurement;
     if (!m) return; // build-time switch is off: nothing to start
     measurementStarted = true;
