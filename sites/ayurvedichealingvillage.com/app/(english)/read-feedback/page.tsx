@@ -9,7 +9,7 @@ import {GuestStories,GoogleReviews,TripadvisorReviews} from './ReviewsClient';
 import {VIDEOS,GOOGLE_URL,TRIPADVISOR_URL} from './review-data';
 import './reviews.css';
 import {ReviewsShell} from './ReviewsShell';
-export const metadata:Metadata={title:'Guest Reviews & Stories | Kairali – The Ayurvedic Healing Village',description:'Hear from guests from India and around the world. Watch their stories, read translated testimonials and explore Google and Tripadvisor reviews.',alternates:{canonical:'https://www.ayurvedichealingvillage.com/read-feedback/'}};
+export const metadata:Metadata={title:'Guest Reviews & Stories | Kairali – The Ayurvedic Healing Village',description:'Hear from guests from India and around the world. Watch their stories, read translated testimonials and explore Google and Tripadvisor reviews.',alternates:{canonical:'https://ayurvedichealingvillage.com/read-feedback/'}};
 export default function Page(){
  const chrome=siteChrome();const route=findRoute(['read-feedback']);
  const measurement=process.env[analyticsConfig.activation.env]===analyticsConfig.activation.enabledWhen?{ga4:analyticsConfig.measurement.ga4.id,clarity:analyticsConfig.measurement.clarity.id,metaPixel:analyticsConfig.measurement.metaPixel.id}:undefined;

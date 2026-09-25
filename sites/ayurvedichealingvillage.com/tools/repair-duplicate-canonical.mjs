@@ -33,8 +33,10 @@ const DRY = process.argv.includes("--dry");
 const OVR = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-overrides.json"), "utf8")).routes;
 const MANIFEST = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8")).routes;
 
+const selected = process.argv.flatMap((arg, i) => arg === '--route' ? [process.argv[i + 1]] : []);
 let done = 0;
 for (const [route, o] of Object.entries(OVR)) {
+  if (selected.length && !selected.includes(route)) continue;
   const target = o.duplicateOf;
   if (!target) continue;
   const row = MANIFEST.find((r) => r.path === route);
@@ -73,9 +75,13 @@ for (const [route, o] of Object.entries(OVR)) {
     patched = window.slice(0, slugEnd) + "," + next + window.slice(slugEnd);
     console.log(`${DRY ? "[dry] " : ""}${route}: record had no canonical field — added ${target}`);
   } else {
-    if (m[0] === next) { console.log(`${route}: already canonical to ${target}`); continue; }
     patched = window.replace(m[0], next);
   }
+  // Collection-backed readers emit governance.effectiveCanonical, while other
+  // readers emit metadata.canonical. Both must follow the approved decision.
+  patched = patched.replace(/"effectiveCanonical":\s*(?:"[^"]*"|null)/,
+    `"effectiveCanonical":"${target}"`);
+  if (patched === window) { console.log(`${route}: already canonical to ${target}`); continue; }
   const out = raw.slice(0, at) + patched + raw.slice(end);
   if (!DRY) fs.writeFileSync(file, out);
   done++;

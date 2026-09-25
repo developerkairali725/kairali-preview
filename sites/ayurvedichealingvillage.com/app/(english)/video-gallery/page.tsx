@@ -12,7 +12,7 @@ import './gallery.css';
 export const metadata: Metadata = {
  title:'Video Gallery | Kairali – The Ayurvedic Healing Village',
  description:'Watch the Kairali story, yoga at the Healing Village and short films of Ayurvedic therapies, villas and village life. Browse real video previews and runtimes.',
- alternates:{canonical:'https://www.ayurvedichealingvillage.com/video-gallery/'},
+ alternates:{canonical:'https://ayurvedichealingvillage.com/video-gallery/'},
 };
 type Film = typeof films[number];
 const categories = ['Village life','Yoga & meditation','Ayurveda & therapies','Villas & spaces'];
