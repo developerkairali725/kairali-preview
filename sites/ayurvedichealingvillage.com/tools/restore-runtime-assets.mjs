@@ -4,6 +4,7 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { downloadReleaseAsset } from './download-release-asset.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const spec=JSON.parse(fs.readFileSync(path.join(site,process.argv.includes('--gallery') ? 'english-candidate/gallery-assets-release.json' : 'english-candidate/runtime-assets-release.json'),'utf8'));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
@@ -18,7 +19,7 @@ if(spec.files.every(f=>fs.existsSync(path.join(site,f.file)))){
 }
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'ahv-assets-'));
 try{
- execFileSync('gh',['release','download',spec.tag,'--repo',spec.repository,'--pattern',spec.asset,'--dir',temp],{stdio:'inherit'});
+ await downloadReleaseAsset(spec,temp);
  const archive=path.join(temp,spec.asset);
  if(hash(archive)!==spec.sha256)throw Error('Runtime asset archive hash mismatch');
  const names=execFileSync('tar',['-tzf',archive],{encoding:'utf8'}).trim().split('\n');
