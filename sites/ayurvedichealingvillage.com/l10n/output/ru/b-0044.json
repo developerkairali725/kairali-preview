@@ -1,0 +1,133 @@
+{
+ "batchId": "b-0044",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_5ef23045916d82a57a7a",
+   "sourceHash": "5ef23045916d82a57a7a9542d57808080587cbffe0422b295109c72d85389ce7",
+   "text": "Завершите день техниками расслабления, например мягкой растяжкой или тёплой травяной ванной.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3ad589fe81b099540780",
+   "sourceHash": "3ad589fe81b09954078002804c99d65aa383534d71415f4e2a9d4dafef753643",
+   "text": "Отход ко сну",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aec1d245213d18efac06",
+   "sourceHash": "aec1d245213d18efac06e232b9b44b70657c1963058a4d30722d048a96ea6554",
+   "text": "Подготовьтесь к спокойному ночному сну: создайте умиротворяющую обстановку и ложитесь спать.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_aec1d245213d18efac06 banned-term спа"
+   ]
+  },
+  {
+   "id": "t_4d27f52a5e837e5072a3",
+   "sourceHash": "4d27f52a5e837e5072a331ea19f181aa632810ac7e65035ab04ae322795b3f44",
+   "text": "[[OPEN_1]][[OPEN_2]]О программе[[CLOSE_2]][[OPEN_3]]↓[[CLOSE_3]][[CLOSE_1]] [[OPEN_4]][[OPEN_5]]История[[CLOSE_5]][[OPEN_6]]↓[[CLOSE_6]][[CLOSE_4]] [[OPEN_7]][[OPEN_8]]Процесс[[CLOSE_8]][[OPEN_9]]↓[[CLOSE_9]][[CLOSE_7]] [[OPEN_10]][[OPEN_11]]Польза[[CLOSE_11]][[OPEN_12]]↓[[CLOSE_12]][[CLOSE_10]] [[OPEN_13]][[OPEN_14]]Отзывы[[CLOSE_14]][[OPEN_15]]↓[[CLOSE_15]][[CLOSE_13]] [[OPEN_16]][[OPEN_17]]Стоимость программы[[CLOSE_17]][[OPEN_18]]↓[[CLOSE_18]][[CLOSE_16]] [[OPEN_19]][[OPEN_20]]Вопросы и ответы[[CLOSE_20]][[OPEN_21]]↓[[CLOSE_21]][[CLOSE_19]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'About' rendered as 'О программе' for a programme page nav; 'Package Price' as 'Стоимость программы'."
+   ]
+  },
+  {
+   "id": "t_e8d8aeb753eec9f885c8",
+   "sourceHash": "e8d8aeb753eec9f885c8e687de7fd7aac0426a1378037b7c5f0b54b1cb0710a8",
+   "text": "[[OPEN_1]][[OPEN_2]]Главная[[CLOSE_2]][[CLOSE_1]] [[OPEN_3]]/[[CLOSE_3]] [[OPEN_4]]Восстанавливающие и укрепляющие процедуры для онкологических пациентов[[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18087716f6798868318d",
+   "sourceHash": "18087716f6798868318df2f417cb1201101f37d0b9c94525230bd9c027137156",
+   "text": "Восстанавливающие и укрепляющие процедуры для онкологических пациентов",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical page (cancer supportive care): requires Dr. Deepu John's sign-off before production."
+   ]
+  },
+  {
+   "id": "t_84c003d87412201e59c5",
+   "sourceHash": "84c003d87412201e59c52c8dd9c1ae1bae22835e9beab0802b58672d6c5b3351",
+   "text": "[TO CONFIRM — physician wording]",
+   "status": "translated",
+   "unchangedReason": "Internal fact chip copied verbatim in English per rules.",
+   "issues": []
+  },
+  {
+   "id": "t_2bf6265356d18a753faf",
+   "sourceHash": "2bf6265356d18a753fafe5c239dc394b293f6e42effe349dc39d9db4ee067596",
+   "text": "Место для вводного абзаца. Формулировку о поддерживающей терапии, которая не является альтернативой онкологическому лечению, должен написать главный врач. Намеренно оставлено пустым.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial placeholder note; translated as-is. The physician-authored line is still pending in all locales."
+   ]
+  },
+  {
+   "id": "t_61a4e477a93285b47ffb",
+   "sourceHash": "61a4e477a93285b47ffbaa9a1407eaa7ef32fc4084946fadf1002ae27acb4fce",
+   "text": "Сначала поговорите с врачом",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c90c244e0af56c99e1fe",
+   "sourceHash": "c90c244e0af56c99e1fe67009f7c358555250288c083ec07a05568a83450f6b8",
+   "text": "Четыре способа связаться со службой поддержки пациентов до того, как что-либо бронировать.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_baa66cc9dede48c7270c",
+   "sourceHash": "baa66cc9dede48c7270ced513cc2c482f3375f97ec440380254be408d58b4bfe",
+   "text": "[[OPEN_1]] [[OPEN_2]]◆[[CLOSE_2]] [[OPEN_3]] [[OPEN_4]]Онлайн-консультация[[CLOSE_4]] [[OPEN_5]]ayurvedichealingvillage.com/online-consultation/[[CLOSE_5]] [[CLOSE_3]] [[CLOSE_1]] [[OPEN_6]] [[OPEN_7]]◆[[CLOSE_7]] [[OPEN_8]] [[OPEN_9]]Поддержка пациентов в WhatsApp[[CLOSE_9]] [[OPEN_10]]+91 92898 38797[[CLOSE_10]] [[CLOSE_8]] [[CLOSE_6]] [[OPEN_11]] [[OPEN_12]]◆[[CLOSE_12]] [[OPEN_13]] [[OPEN_14]]Эл. почта[[CLOSE_14]] [[OPEN_15]]info@kairali.com[[CLOSE_15]] [[CLOSE_13]] [[CLOSE_11]] [[OPEN_16]] [[OPEN_17]]◆[[CLOSE_17]] [[OPEN_18]] [[OPEN_19]]Запрос[[CLOSE_19]] [[OPEN_20]]ayurvedichealingvillage.com/enquiry-form/[[CLOSE_20]] [[CLOSE_18]] [[CLOSE_16]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6ed743d40ad7f2626b45",
+   "sourceHash": "6ed743d40ad7f2626b453022d7988b314b51d4abe8e2797c13e25ae1225719ef",
+   "text": null,
+   "status": "blocked",
+   "unchangedReason": null,
+   "issues": [
+    "Source describes chemo/radiation therapy as 'a form of killer in disguise' that 'kills the person from inside' and claims the programme can 'detoxify the immune system'. This is an unreviewed, potentially harmful anti-oncology medical claim on a cancer page whose own standfirst is still [TO CONFIRM — physician wording]. Translating it would propagate the claim into a new locale; needs Dr. Deepu John's rewrite/sign-off of the English source first."
+   ]
+  },
+  {
+   "id": "t_fab1a9e13b5d70f8179a",
+   "sourceHash": "fab1a9e13b5d70f8179ad90271bd22ef5ad4849b5e6882cfa21bf7650c1583d1",
+   "text": null,
+   "status": "blocked",
+   "unchangedReason": null,
+   "issues": [
+    "Source is grammatically ambiguous ('might be is free from being a cancer victim') in a way that implies a cure/remission outcome, and asserts the setting 'automatically helps in healing' and 'best place'; also uses 'health resort' (banned). Cannot render faithfully without either inventing a clinical meaning or strengthening a claim. Needs physician-approved English wording (Dr. Deepu John) before translation."
+   ]
+  },
+  {
+   "id": "t_cc63175684d3c474faab",
+   "sourceHash": "cc63175684d3c474faab4c23c4c0af529eaf6aa8fe692d038549626ec72fe5c0",
+   "text": "В нашей аюрведической лечебнице подлинные аюрведические массажи и процедуры помогают онкологическим пациентам восстановить силы, поддерживать хорошую физическую форму и настраиваться на позитивный, спокойный и мотивированный лад. В зависимости от состояния пациента назначаются такие процедуры, как Abhyangam (Абхьянгам), Широдхара (Shirodhara) и вамана. Эти процедуры способствуют очищению организма. Также проводятся занятия йогой, которые помогают успокоиться и контролировать свои чувства.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurvedic Health Resort' rendered as 'аюрведическая лечебница' (clinical) to avoid 'resort'. Clinical cancer-page content: requires Dr. Deepu John's sign-off before production."
+   ]
+  }
+ ]
+}

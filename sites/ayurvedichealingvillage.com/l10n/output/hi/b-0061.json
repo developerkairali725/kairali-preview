@@ -1,0 +1,123 @@
+{
+ "batchId": "b-0061",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_c02300c2fc0bb0242cfc",
+   "sourceHash": "c02300c2fc0bb0242cfcbf55a6f95a9e59ff0481bc83ec92daec16ed9d461a9a",
+   "text": "[[OPEN_1]]होम[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]सभी कार्यक्रम[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]पाचन स्वास्थ्य एवं आंत स्वास्थ्य योग चिकित्सा[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd20e04b217fd68bd36c",
+   "sourceHash": "bd20e04b217fd68bd36c22415a16e922d7c1f6bfe0c2d293b38b468bc1753e4a",
+   "text": "अग्नि दीपनम् योग Chikitsa (चिकित्सा)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name transliterated; approved term used for 'Chikitsa'."
+   ]
+  },
+  {
+   "id": "t_283065b6cc8b6b6e456f",
+   "sourceHash": "283065b6cc8b6b6e456f5646bc3da60c6ef06032a961031c68af54c102c579bd",
+   "text": "योग, आयुर्वेद और आहार से पाचन को प्राकृतिक रूप से सुधारें। केरल में Kairali के पाचन स्वास्थ्य कार्यक्रम में IBS, एसिडिटी, पेट फूलना आदि में सहायता।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Heal' softened to 'support' (सहायता) to avoid a cure claim; 'gut wellness retreat' rendered as 'digestive health programme' per clinical register. Within 155 characters."
+   ]
+  },
+  {
+   "id": "t_814e40325383372885fb",
+   "sourceHash": "814e40325383372885fbff21d29e3b5f16ac7c2b64e0b8256281224821988a5a",
+   "text": "आपका पाचन तंत्र संपूर्ण स्वास्थ्य की कुंजी है। Kairali – आयुर्वेदिक हीलिंग विलेज में पाचन स्वास्थ्य योग कार्यक्रम एक समर्पित कार्यक्रम है, जिसका उद्देश्य योग चिकित्सा, आयुर्वेदिक उपचार और सात्त्विक पोषण के समग्र मेल से आंत के स्वास्थ्य में सुधार करना, पाचन अग्नि (Agni) को संतुलित करना और समग्र स्वास्थ्य को बढ़ावा देना है। यह आयुर्वेदिक आंत स्वास्थ्य चिकित्सा पाचन अंगों को सक्रिय करने के लिए सावधानी से चुने गए आसन, प्राणायाम और पवनमुक्तासन क्रिया को शामिल करती है, साथ ही अग्नि (पाचन अग्नि) को उत्तेजित करने, पेट फूलने को कम करने और आंत में संतुलन लाने के लिए बुनियादी आहार संबंधी सुझाव भी देती है। हर सत्र का मार्गदर्शन जानकार प्रशिक्षक करते हैं, जो मुद्रा, श्वास और सचेत गति पर ध्यान देते हैं। एसिडिटी, कब्ज़, IBS या धीमे पाचन जैसी समस्याओं का सामना कर रहे व्यक्तियों के लिए उपयुक्त, आंत संबंधी समस्याओं के लिए यह समग्र आयुर्वेदिक कार्यक्रम प्राकृतिक रूप से स्वस्थ होने, बेहतर चयापचय और सामान्य स्वास्थ्य को प्रोत्साहित करता है। हर स्तर के लिए उपयुक्त, यह पाचन संतुलन की ओर एक सुकूनदायक किंतु प्रभावी मार्ग है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'programme' (कार्यक्रम) per clinical register. Source 'pranavmukthasna' appears to be a misspelling of Pavanamuktasana; rendered as पवनमुक्तासन — please verify."
+   ]
+  },
+  {
+   "id": "t_107ab7b31e6ce2cacc3c",
+   "sourceHash": "107ab7b31e6ce2cacc3c2b8d7ea8879c3da5e17bf5301a61c001a1c345e4282b",
+   "text": "हमारा दृष्टिकोण:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment precedes the heading 'Digestive Wellness & Gut Health Yoga Therapy'; Hindi word order puts the topic first, so rendered as a standalone lead-in ('Our approach:')."
+   ]
+  },
+  {
+   "id": "t_69907581b9bdea0eaa39",
+   "sourceHash": "69907581b9bdea0eaa39d3415cd0795e02352f2756f2adf7d4d7f692e0e6fc04",
+   "text": "पाचन स्वास्थ्य एवं [[OPEN_1]]आंत स्वास्थ्य योग चिकित्सा[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14da1fc571dc92c4222e",
+   "sourceHash": "14da1fc571dc92c4222e3e3c9970ab81dc18b52d2c0ec09a978c493133c3bff8",
+   "text": "Kairali का आंत शुद्धि हेतु योग और आयुर्वेद कार्यक्रम पारंपरिक आयुर्वेदिक ज्ञान को चिकित्सीय योग के साथ जोड़ता है, ताकि आंत के आदर्श स्वास्थ्य के लिए अग्नि (पाचन अग्नि) को उत्तेजित और संतुलित किया जा सके। जानकार स्वास्थ्य विशेषज्ञों के नेतृत्व में, इस कार्यक्रम में लक्षित आसन, प्राणायाम और क्रियाएँ शामिल हैं, जो पाचन को बेहतर बनाती हैं, विषाक्त पदार्थों को दूर करने में मदद करती हैं और अपच, पेट फूलना तथा कब्ज़ जैसी समस्याओं में राहत देती हैं। हर्बल काढ़े, सात्त्विक भोजन और जीवनशैली संबंधी सुझाव आंतरिक संतुलन को बढ़ावा देते हैं। शांत, प्राकृतिक परिवेश में स्थित यह अनुभव गहराई से पुनर्स्थापक है, जो गति, श्वास और सचेत जीवन के माध्यम से आंत का संतुलन फिर से स्थापित करता है। पाचन विकारों के लिए Kairali का प्राकृतिक उपचार प्रकृति में निहित, परंपरा से समर्थित और शरीर की स्वाभाविक उपचार प्रणाली के अनुरूप रहते हुए दीर्घकालिक पाचन स्वास्थ्य को सहारा देने का लक्ष्य रखता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guarantees enduring digestive health' softened to 'aims to support lasting digestive health' — a guarantee of outcome is not permitted; owner/clinical review suggested for the EN source as well."
+   ]
+  },
+  {
+   "id": "t_ffba6c7c9f3a3eb9d9f0",
+   "sourceHash": "ffba6c7c9f3a3eb9d9f06e55e52808b6509077876a739a28773a6e894c154783",
+   "text": "[[OPEN_1]]पाचन स्वास्थ्य एवं आंत स्वास्थ्य योग चिकित्सा[[CLOSE_1]] की प्रक्रिया",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad8389624916b4c65096",
+   "sourceHash": "ad8389624916b4c6509690324154adb5b9b36e42f95669e49f568086c4bd6a77",
+   "text": "Kairali – आयुर्वेदिक हीलिंग विलेज में पाचन स्वास्थ्य एवं आंत स्वास्थ्य योग चिकित्सा में निम्नलिखित चरण शामिल हैं:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d64a5e970096e744822d",
+   "sourceHash": "d64a5e970096e744822d146982c6d24081f2ea61ce253b6be5b4fa3a71e1ed00",
+   "text": "यह उपचार [[OPEN_1]]क्यों[[CLOSE_1]] चुनें?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b8fd47be3aaa449a16a8",
+   "sourceHash": "b8fd47be3aaa449a16a8d9b788e815056c6418e6534999b9408d4dc1a47254e3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]अनुभवी आयुर्वेदिक चिकित्सकों की टीम के [[VAR_1]]+ वर्षों के अनुभव का लाभ उठाएँ। हमारा समग्र दृष्टिकोण केवल लक्षणों के प्रबंधन से आगे बढ़कर संपूर्ण स्वास्थ्य को प्राथमिकता देता है।[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8a989e89145cf142afa0",
+   "sourceHash": "8a989e89145cf142afa0808860109804478a8808b3d737a2bf481dfbc5c8f74a",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]अपनी प्रकृति और दोष असंतुलन के अनुसार व्यक्तिगत उपचार प्राप्त करें। हम दुष्प्रभावों को कम करने के लिए प्राकृतिक चिकित्सा और जड़ी-बूटियों का उपयोग करते हुए आयुर्वेदिक सिद्धांतों का पालन करते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84fd02d1bb50f7bd470d",
+   "sourceHash": "84fd02d1bb50f7bd470dc3435aa53faedb43a702bb1962afcf65bda2aaf91c2d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]आयुर्वेदिक सिद्धांतों, अपनी स्थिति के कारणों और हमारी उपचार पद्धति की गहरी समझ प्राप्त करें। इससे आप स्वस्थ होने की प्रक्रिया में सक्रिय भागीदारी कर पाते हैं और स्वास्थ्य संबंधी सोच-समझकर निर्णय ले पाते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'healing journey' rendered as 'healing process' (स्वस्थ होने की प्रक्रिया) per banned-word rule."
+   ]
+  }
+ ]
+}

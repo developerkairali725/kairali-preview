@@ -1,0 +1,171 @@
+{
+ "batchId": "b-0057",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_e561c46b4cb403171503",
+   "sourceHash": "e561c46b4cb403171503a306048994233c7d6cb08927ffc287c9776299b40b78",
+   "text": "[TO CONFIRM: proof required for family members]",
+   "status": "translated",
+   "unchangedReason": "Unit consists solely of an internal fact chip, which must be copied verbatim in English.",
+   "issues": []
+  },
+  {
+   "id": "t_6bbd97a6b06d4d0e2bfb",
+   "sourceHash": "6bbd97a6b06d4d0e2bfb4842a82080a37c4c8f247b7700fbcf3c1b1e1880b19e",
+   "text": "Verificado no momento de [TO CONFIRM: enquiry, booking or admission].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f511b24f8b8668a294b8",
+   "sourceHash": "f511b24f8b8668a294b875bf59739ccf57f44eff9b2b94c4a388462e9d360458",
+   "text": "O desconto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_49360feaf40f09bcf29e",
+   "sourceHash": "49360feaf40f09bcf29e3c1d955910bef2b0638623d7104cfc88ba244af2b61b",
+   "text": "Até 20%",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_76d0d394d2abc8201710",
+   "sourceHash": "76d0d394d2abc82017101f7939f008d2732c1f7b3d1c53988165760311f623e2",
+   "text": "Apenas sobre o valor da reserva. Consulte os Termos e Condições abaixo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_63ef98b8a8a1df43f15c",
+   "sourceHash": "63ef98b8a8a1df43f15c769f8ff45b202b2e913ac5a2c6b36b031cf3a07efb5c",
+   "text": "Como usufruir e até quando",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0db547502e7599c69122",
+   "sourceHash": "0db547502e7599c69122bef9521b4234e9ea044013c9fc1d17fceb8721900400",
+   "text": "Como usufruir — [TO CONFIRM]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0a0eaa84e20a8d8585e",
+   "sourceHash": "a0a0eaa84e20a8d8585eeafd9106653af564257d0c7b1f72617197a44dfc9c0a",
+   "text": "Válido até — [TO CONFIRM]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_78d78b252eba395b2c77",
+   "sourceHash": "78d78b252eba395b2c773ddbe0e717ae46a5d64337ac5d2b6b6d84f3decbf177",
+   "text": "As reservas efetuadas ao abrigo do Programa de Desconto para Militares podem ser alteradas e canceladas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9361e6ade0afa9296905",
+   "sourceHash": "9361e6ade0afa9296905ace7ea4a48c2ee18f4bc9b0beb3fd4effe47e5ae79af",
+   "text": "Na Kairali, saudamos o espírito indomável dos nossos corajosos soldados, que enfrentam os terrenos e as condições mais adversos para garantir a segurança e a integridade da nossa grande nação. Seja perante um ataque inimigo na fronteira ou uma catástrofe natural que afete a população no interior do país, estão sempre presentes para ajudar e salvar a vida de outras pessoas, sacrificando anos da vossa vida. O nosso Exército, a nossa Marinha e a nossa Força Aérea são o orgulho da nação, e queremos agradecer-vos do fundo do coração.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'sacfrificing' read as 'sacrificing'."
+   ]
+  },
+  {
+   "id": "t_f25bc579ed860e7b177a",
+   "sourceHash": "f25bc579ed860e7b177adecabc412eb2989150b55b384b37e27713a9fbf76120",
+   "text": "O vosso corpo é sujeito diariamente a tantas exigências que também precisa de cuidados. Como pequeno gesto de gratidão, gostaríamos de vos convidar a revitalizar o corpo na Kairali’s Ayurvedic Healing Village, situada em Palakkad, no Kerala. Com os nossos autênticos programas terapêuticos ayurvédicos, a par do treino de yoga e meditação, o vosso corpo ficará livre de toxinas e de tensões, ajudando-vos a sentir-vos revigorados. A Kairali oferece até 20% de desconto em todos os pacotes de tratamento da Kairali – The Ayurvedic Healing Village ao pessoal das forças armadas e paramilitares e aos seus familiares.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source adverb 'enchantingly' is meaningless in context and was omitted. Source claim 'rid of all toxins and stresses' is an absolute claim; rendered without 'all' ('livre de toxinas e de tensões') — clinical reviewer may wish to soften the English too."
+   ]
+  },
+  {
+   "id": "t_61d6e712022c81f40aa7",
+   "sourceHash": "61d6e712022c81f40aa7391d9d735d04858b5889e2a54623b113c3b1c956c847",
+   "text": "Venha experimentar o poder combinado do Ayurveda, do yoga e da meditação e revitalize-se a partir de dentro.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f87f31d05c1af0c9b28",
+   "sourceHash": "7f87f31d05c1af0c9b28e9a264c9f026bb6fa53bb5a520676959b283d1c393b5",
+   "text": "Para mais informações sobre os pacotes disponíveis na Ayurvedic Healing Village, [[OPEN_1]]clique aqui[[CLOSE_1]] [[OPEN_2]][TO CONFIRM: link target][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d43be535aacf12e408ba",
+   "sourceHash": "d43be535aacf12e408baca2db8f8569a1a44935cc9fa6a3657f1143aa9848a6a",
+   "text": "*Termos e Condições:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d5a42847937574277b0",
+   "sourceHash": "6d5a42847937574277b0cec0a376d54d139c5b73b00a140072f44f7c087a57bd",
+   "text": "Esta oferta aplica-se apenas a reservas online/presenciais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_91830c519607dae3dc5f",
+   "sourceHash": "91830c519607dae3dc5fdf3af765d0be2ed861a4841d1c23a16c0ed34e7022c1",
+   "text": "A Kairali concede um desconto de até 20% apenas sobre o valor da reserva.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65f10e6d587bbdd3718c",
+   "sourceHash": "65f10e6d587bbdd3718c72bc2426c784920af1227917d519e53e939409766765",
+   "text": "Todas as taxas/impostos aplicáveis são da responsabilidade do cliente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b117ff3ff353e3f7294c",
+   "sourceHash": "b117ff3ff353e3f7294ca8e9361a3d8f9d6938a1aa75eae8684c91c23837c61c",
+   "text": "Esta oferta aplica-se a membros do Exército, da Marinha e da Força Aérea.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d3b4b86fb590156d759",
+   "sourceHash": "6d3b4b86fb590156d759213b7f6e4edfb464d6ef2055cad17728c44cbeea0976",
+   "text": "O KAIRALI AYURVEDIC GROUP é dirigido pelos administradores-delegados conjuntos Sra. Gita Ramesh e Sr. K.V. Ramesh, ambos descendentes de uma longa linhagem familiar de médicos ayurvédicos tradicionais. Herdeiro de um legado de saber proveniente de médicos de renome como o falecido Dr. Sankunny Vaidiar (avô do Sr. K. V. Ramesh) e o Dr. K. S. Vasudevan (pai do Sr. K. V. Ramesh), o Kairali Group foi fundado sobre uma base sólida de investigação ayurvédica. Desde a sua criação, a Kairali tem dado continuidade às conquistas dos seus antepassados, desenvolvendo a sua infraestrutura de produtos para disponibilizar uma gama diversificada de produtos ayurvédicos a um público multinacional.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebef0ae1fcba4bbbee12",
+   "sourceHash": "ebef0ae1fcba4bbbee124aa7e9e2496d649530856aec88da92684215bef6de65",
+   "text": "[[OPEN_1]]CENTROS DE TRATAMENTO[[CLOSE_1]] Empenhada em promover os efeitos benéficos de um estilo de vida ayurvédico, a Kairali abriu o seu primeiro Centro de Tratamento em Nova Deli, em 1989. O sucesso dos tratamentos e terapias ali prestados levou a um aumento da procura pelas instalações da Kairali. Os nossos Centros de Tratamento encontram-se hoje em toda a Índia, e continuamos a ser uma referência do setor em formação e capacitação de pessoal. Os nossos workshops e cursos de formação regulares contam com a participação de médicos, nutricionistas e terapeutas de todo o mundo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

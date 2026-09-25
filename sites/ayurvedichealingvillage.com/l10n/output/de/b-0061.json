@@ -1,0 +1,125 @@
+{
+ "batchId": "b-0061",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_c02300c2fc0bb0242cfc",
+   "sourceHash": "c02300c2fc0bb0242cfcbf55a6f95a9e59ff0481bc83ec92daec16ed9d461a9a",
+   "text": "[[OPEN_1]]Startseite[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Alle Programme[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Yogatherapie für Verdauung & Darmgesundheit[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd20e04b217fd68bd36c",
+   "sourceHash": "bd20e04b217fd68bd36c22415a16e922d7c1f6bfe0c2d293b38b468bc1753e4a",
+   "text": "Agni Dipanam Yoga Chikitsa",
+   "status": "translated",
+   "unchangedReason": "Sanskrit programme name kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_283065b6cc8b6b6e456f",
+   "sourceHash": "283065b6cc8b6b6e456f5646bc3da60c6ef06032a961031c68af54c102c579bd",
+   "text": "Natürlich besser verdauen mit Yoga, Ayurveda und Ernährung: Unterstützung bei Reizdarm, Übersäuerung, Blähungen & mehr – bei Kairali in Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Heal IBS…' softened to 'Unterstützung bei…' to avoid a cure-type claim; 'gut wellness retreat' rendered without 'retreat' (clinical register, length limit)."
+   ]
+  },
+  {
+   "id": "t_814e40325383372885fb",
+   "sourceHash": "814e40325383372885fbff21d29e3b5f16ac7c2b64e0b8256281224821988a5a",
+   "text": "Ihr Darm ist der Schlüssel zum Wohlbefinden. Das Yogaprogramm für eine gesunde Verdauung bei Kairali – The Ayurvedic Healing Village ist ein eigens darauf ausgerichtetes Programm, das die Darmgesundheit verbessern, das Verdauungsfeuer (Agni) harmonisieren und das allgemeine Wohlbefinden fördern soll – durch eine ganzheitliche Verbindung von Yogatherapie, ayurvedischen Behandlungen und sattvischer Ernährung. Diese ayurvedische Therapie für die Darmgesundheit verbindet sorgfältig ausgewählte Asanas, Pranayama und Pranavmukthasna Kriya zur Anregung der Verdauungsorgane mit grundlegenden Ernährungsempfehlungen, um Agni (das Verdauungsfeuer) anzuregen, Blähungen zu lindern und die Harmonie im Darm zu fördern. Jede Einheit wird von kompetenten Lehrenden angeleitet, die sich auf Haltung, Atmung und bewusste Bewegung konzentrieren. Das ganzheitliche ayurvedische Programm bei Darmbeschwerden eignet sich besonders für Menschen mit Problemen wie Übersäuerung, Verstopfung, Reizdarm oder träger Verdauung und fördert eine natürliche Genesung, einen besseren Stoffwechsel und das allgemeine Wohlbefinden. Es ist für jedes Niveau geeignet – ein sanfter und zugleich wirkungsvoller Weg zu einer ausgeglichenen Verdauung.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'dedicated retreat' rendered as 'eigens darauf ausgerichtetes Programm' (clinical register). 'Perfect for' rendered as 'eignet sich besonders für' (not strengthened)."
+   ]
+  },
+  {
+   "id": "t_107ab7b31e6ce2cacc3c",
+   "sourceHash": "107ab7b31e6ce2cacc3c2b8d7ea8879c3da5e17bf5301a61c001a1c345e4282b",
+   "text": "Unser Ansatz für die",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; continues with the next heading unit ('Yogatherapie für Verdauung & Darmgesundheit')."
+   ]
+  },
+  {
+   "id": "t_69907581b9bdea0eaa39",
+   "sourceHash": "69907581b9bdea0eaa39d3415cd0795e02352f2756f2adf7d4d7f692e0e6fc04",
+   "text": "Yogatherapie für Verdauung & [[OPEN_1]]Darmgesundheit[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Word order changed for German; the highlighted span now covers only 'Darmgesundheit'."
+   ]
+  },
+  {
+   "id": "t_14da1fc571dc92c4222e",
+   "sourceHash": "14da1fc571dc92c4222e3e3c9970ab81dc18b52d2c0ec09a978c493133c3bff8",
+   "text": "Kairalis Programm mit Yoga und Ayurveda zur Darmreinigung verbindet traditionelles ayurvedisches Wissen mit therapeutischem Yoga, um Agni (das Verdauungsfeuer) für eine optimale Darmgesundheit anzuregen und zu harmonisieren. Unter der Leitung kompetenter Fachkräfte umfasst das Programm gezielte Asanas, Pranayama und Kriyas, die die Verdauung verbessern, Giftstoffe ausleiten und Beschwerden wie Verdauungsstörungen, Blähungen und Verstopfung lindern. Kräuteraufgüsse, sattvische Gerichte und Tipps für den Alltag fördern das innere Gleichgewicht. In einer ruhigen, naturnahen Umgebung wirkt der Aufenthalt tief regenerierend und stellt die Harmonie im Darm durch Bewegung, Atmung und bewusstes Leben wieder her. Kairalis natürliche Behandlung von Verdauungsstörungen zielt auf eine dauerhafte Verdauungsgesundheit – verwurzelt in der Natur, getragen von der Tradition und im Einklang mit den natürlichen Selbstheilungskräften des Körpers.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source says the treatment 'guarantees enduring digestive health' — a guarantee/efficacy claim; rendered as 'zielt auf' (aims at) rather than 'garantiert'. Recommend the EN source be corrected too; flag for Dr. Deepu John's clinical review. 'wellness professionals' rendered as 'Fachkräfte'; 'experience' as 'Aufenthalt'."
+   ]
+  },
+  {
+   "id": "t_ffba6c7c9f3a3eb9d9f0",
+   "sourceHash": "ffba6c7c9f3a3eb9d9f06e55e52808b6509077876a739a28773a6e894c154783",
+   "text": "Ablauf der [[OPEN_1]]Yogatherapie für Verdauung & Darmgesundheit[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad8389624916b4c65096",
+   "sourceHash": "ad8389624916b4c6509690324154adb5b9b36e42f95669e49f568086c4bd6a77",
+   "text": "Die Yogatherapie für Verdauung & Darmgesundheit bei Kairali – The Ayurvedic Healing Village umfasst die folgenden Schritte:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d64a5e970096e744822d",
+   "sourceHash": "d64a5e970096e744822d146982c6d24081f2ea61ce253b6be5b4fa3a71e1ed00",
+   "text": "[[OPEN_1]]Warum[[CLOSE_1]] sollten Sie sich für diese Behandlung entscheiden?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b8fd47be3aaa449a16a8",
+   "sourceHash": "b8fd47be3aaa449a16a8d9b788e815056c6418e6534999b9408d4dc1a47254e3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Profitieren Sie von über [[VAR_1]] Jahren Erfahrung und einem erfahrenen Team ayurvedischer Ärzte. Unser ganzheitlicher Ansatz stellt das Wohlbefinden in den Mittelpunkt und geht über die reine Symptombehandlung hinaus.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'[[VAR_1]]+ years' rendered as 'über [[VAR_1]] Jahren' (the '+' is expressed by 'über')."
+   ]
+  },
+  {
+   "id": "t_8a989e89145cf142afa0",
+   "sourceHash": "8a989e89145cf142afa0808860109804478a8808b3d737a2bf481dfbc5c8f74a",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Erhalten Sie Behandlungen, die auf Ihre Konstitution und Ihr Dosha-Ungleichgewicht abgestimmt sind. Wir folgen ayurvedischen Prinzipien und setzen natürliche Therapien und Heilpflanzen ein, um Nebenwirkungen möglichst gering zu halten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84fd02d1bb50f7bd470d",
+   "sourceHash": "84fd02d1bb50f7bd470dc3435aa53faedb43a702bb1962afcf65bda2aaf91c2d",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Vertiefen Sie Ihr Verständnis der ayurvedischen Prinzipien, der Ursachen Ihrer Erkrankung und der Wirkweise unserer Behandlung. So können Sie aktiv an Ihrem Heilungsprozess mitwirken und fundierte Gesundheitsentscheidungen treffen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'healing journey' rendered as 'Heilungsprozess' (clinical lock)."
+   ]
+  }
+ ]
+}

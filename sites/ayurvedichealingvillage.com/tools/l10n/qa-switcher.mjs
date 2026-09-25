@@ -61,11 +61,14 @@ for (const p of PATHS) for (const w of VIEWPORTS) {
       rec.escapeClosed = await page.evaluate(() => [...document.querySelectorAll(".ahv-lang-list")].every((x) => x.hidden) && document.activeElement?.classList.contains("ahv-lang-btn"));
     }
     if (mobile) {
-      const burger = page.locator('header button[aria-expanded]:not(.ahv-lang-btn), [aria-label] button[aria-expanded]:not(.ahv-lang-btn)').filter({ visible: true }).last();
+      // The burger is the header's last visible button that is not the language, search or chat
+// control (it may carry no aria-expanded; its label is translated) — parent review 25 Sep.
+const burger = page.locator('header button:not(.ahv-lang-btn):not([aria-controls="ahv-search-dialog"]):not([data-ahv-home-search]):not(.ahv-contact-chat)').filter({ visible: true }).last();
       if (await burger.count()) {
         await burger.tap().catch(() => burger.click());
         await page.waitForTimeout(500);
         rec.drawerLanguages = await page.evaluate(() => { const n = [...document.querySelectorAll("[data-ahv-locale-inline]")].find((e) => e.offsetParent); return n ? n.querySelectorAll("a").length : 0; });
+        rec.menuAriaExpanded = await burger.getAttribute("aria-expanded");
         if (OUT) await page.screenshot({ path: path.join(OUT, `${p.replace(/\//g, "_")}-${w}-menu.png`) });
         await burger.tap().catch(() => {});
       }
