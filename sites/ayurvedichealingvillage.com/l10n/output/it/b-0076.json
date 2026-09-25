@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0076",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_87e3ae292de721a72094",
+   "sourceHash": "87e3ae292de721a72094ee2820e2bc3f900869e56f34700b63ed40e3b83a312f",
+   "text": "Aeroporti:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8fe756bce316a2f5e76b",
+   "sourceHash": "8fe756bce316a2f5e76b9f1fa80cf7baea6c327eeb38a1e4ff1c1a327804862c",
+   "text": "Aeroporto internazionale di Coimbatore (CJB): 75 km (circa 2 ore)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85e1c8a03575123f8c90",
+   "sourceHash": "85e1c8a03575123f8c900d3aca7fc542aced14e1a97956df2c58629efacb231a",
+   "text": "Aeroporto internazionale di Cochin (COK): 125 km (circa 3 ore)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_955a5a76627a249203ff",
+   "sourceHash": "955a5a76627a249203ff9caca7b6542c5d13503e44107a0670518b0c0746ab3a",
+   "text": "Aeroporto internazionale di Calicut (CCJ): 125 km (circa 3 ore)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dae6c5e2ec825474cb6",
+   "sourceHash": "3dae6c5e2ec825474cb62b4867178130cae7043ed6cc78266353a5db887f6333",
+   "text": "Stazioni ferroviarie:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_75a2211a9656e53cae90",
+   "sourceHash": "75a2211a9656e53cae90b95a746ad98be56887eac8e7afd52ea31b2b26c872e5",
+   "text": "Stazione ferroviaria di Palakkad Junction: 25 km (circa 45 minuti)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b50708eb8d1b4a7bc48",
+   "sourceHash": "7b50708eb8d1b4a7bc48041006d9fbba41ffeeea1b821a6e7a3ba502f99df6cb",
+   "text": "Stazione ferroviaria di Coimbatore: 51.2 km (circa 1 ora e mezza)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Kept '51.2' and the digit '1' verbatim per the numbers rule (previous rejection: number 1 missing)."
+   ]
+  },
+  {
+   "id": "t_4a050e2e591c2321213b",
+   "sourceHash": "4a050e2e591c2321213b0cef7600fc62dca863202f3835f81c7b8893def9b8b2",
+   "text": "Offrite servizi di trasporto?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_acbea42d115803902275",
+   "sourceHash": "acbea42d115803902275c9e6dbbbabfbf58afd08efc4e2a46a484c1ee69b044b",
+   "text": "Sì. Il servizio di prelievo e accompagnamento è disponibile dagli aeroporti e dalle stazioni ferroviarie vicini con veicolo climatizzato (MPV o Berlina (premium)), solo andata, valido dal 1 Oct 2026 al 30 Sep 2027, IVA GST del 5% inclusa:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dates kept verbatim as in source per the dates rule; 'GST' kept as the Indian tax name."
+   ]
+  },
+  {
+   "id": "t_6884d6979b93c39fb25e",
+   "sourceHash": "6884d6979b93c39fb25e4dbdd8506215b339da0837d76b23629cf6708599cf2b",
+   "text": "Stazione ferroviaria di Palakkad (25 km) — ₹3,900 / ₹13,649",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_949121476fd1ac4ccdbb",
+   "sourceHash": "949121476fd1ac4ccdbb2ae787490045cb99914a3700445aef43d4f055537668",
+   "text": "Aeroporto di Coimbatore (75 km) — ₹6,775 / ₹23,711",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fddd38fae49e1875bd5f",
+   "sourceHash": "fddd38fae49e1875bd5fcb667575e38b794661bc62f499ae672454efa89157f9",
+   "text": "Aeroporto di Cochin / Calicut (125 km) — ₹7,950 / ₹27,824",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8019baf63abe87ca2fb1",
+   "sourceHash": "8019baf63abe87ca2fb19411e2a669b9dc2c4cb51df4c88bb046eeb2f57ad805",
+   "text": "La preghiamo di prenotare con almeno 48 ore di anticipo tramite il team di assistenza ai pazienti.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09289b5dba4a7e19c345",
+   "sourceHash": "09289b5dba4a7e19c34560c07683eb9763a072c736a8277b98cfc67c9710ad03",
+   "text": "Qual è il modo migliore per raggiungere Kairali dalle principali città indiane?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd42bbd25ed3a660923f",
+   "sourceHash": "fd42bbd25ed3a660923fdfab7b3a2b65f9ce7811679c5c2a1b5ddd9babdd95f7",
+   "text": "Da Delhi, Mumbai, Bengaluru o Chennai: prenda un volo per Coimbatore e utilizzi il nostro servizio di trasferimento dall'aeroporto. Dal Kerala: prenda un treno per Palakkad Junction oppure raggiunga direttamente l'ospedale in auto — forniamo indicazioni dettagliate al momento della prenotazione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3b7d4d193c691f021437",
+   "sourceHash": "3b7d4d193c691f02143702aa6dfd045fcef869db0f87c1c9e75a8dd799666b12",
+   "text": "Quanto dista Kairali dalle attrazioni turistiche vicine?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c146756b6b9681a606ae",
+   "sourceHash": "c146756b6b9681a606aea132c89ab4ec4d517056e8eb75d4a41bf1b4f3def775",
+   "text": "Le distanze variano a seconda dell'attrazione; eccone alcune, come attualmente indicate nelle nostre pagine dedicate alle attrazioni:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_13f28ad0954c6c3a5871",
+   "sourceHash": "13f28ad0954c6c3a5871d4dcc02179e03778ce1001adafec1dafa4592affbb18",
+   "text": "Parco nazionale della Silent Valley — 80 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_158cff5230fb9e6245e0",
+   "sourceHash": "158cff5230fb9e6245e0e709874ab70ae6497e8b874e23483f5d3e58637065dd",
+   "text": "Santuario faunistico di Parambikulam — 100 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2293bae4286cc0b22040",
+   "sourceHash": "2293bae4286cc0b2204080214f67cb7eb13fb129da5f4ef9a954cac65d8379a6",
+   "text": "Forte di Tipu — 14 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b0bbea4fe73ff562e19",
+   "sourceHash": "9b0bbea4fe73ff562e1944168cd444a54150d9b0bec4dec39f2e681428489a13",
+   "text": "Consulti l'elenco completo, ordinato per distanza: [[OPEN_1]]meno di 10 km[[CLOSE_1]], [[OPEN_2]]fino a 15 km[[CLOSE_2]], [[OPEN_3]]25–50 km[[CLOSE_3]] e [[OPEN_4]]oltre 50 km[[CLOSE_4]]. Su richiesta possiamo organizzare escursioni giornaliere verso queste località.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7374f740ef246a849e7c",
+   "sourceHash": "7374f740ef246a849e7c91763b1be10693ae3720cec9c4f2f52bb31eafccf1e9",
+   "text": "Clima e informazioni stagionali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6f98b4ad55d075c84a5c",
+   "sourceHash": "6f98b4ad55d075c84a5c4b6f4855b79f767c35ddfd69f6f2f42eceec99b765e2",
+   "text": "2 domande",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcfb409063377574b5e8",
+   "sourceHash": "dcfb409063377574b5e8445ada82c4c390592feff5a1ad660932703dbebc7f66",
+   "text": "Com'è il clima a Kairali nel corso dell'anno?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc64f6ced4bb3178a005",
+   "sourceHash": "fc64f6ced4bb3178a005d17e05aab45bfcfd601db5bcf8ddb6236efa78fc47b9",
+   "text": "Il Kerala ha un clima caldo e tropicale con quattro stagioni:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

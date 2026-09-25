@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0076",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_87e3ae292de721a72094",
+   "sourceHash": "87e3ae292de721a72094ee2820e2bc3f900869e56f34700b63ed40e3b83a312f",
+   "text": "공항:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8fe756bce316a2f5e76b",
+   "sourceHash": "8fe756bce316a2f5e76b9f1fa80cf7baea6c327eeb38a1e4ff1c1a327804862c",
+   "text": "코임바토르 국제공항(CJB): 75 km (약 2시간)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85e1c8a03575123f8c90",
+   "sourceHash": "85e1c8a03575123f8c900d3aca7fc542aced14e1a97956df2c58629efacb231a",
+   "text": "코친 국제공항(COK): 125 km (약 3시간)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_955a5a76627a249203ff",
+   "sourceHash": "955a5a76627a249203ff9caca7b6542c5d13503e44107a0670518b0c0746ab3a",
+   "text": "캘리컷 국제공항(CCJ): 125 km (약 3시간)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dae6c5e2ec825474cb6",
+   "sourceHash": "3dae6c5e2ec825474cb62b4867178130cae7043ed6cc78266353a5db887f6333",
+   "text": "기차역:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_75a2211a9656e53cae90",
+   "sourceHash": "75a2211a9656e53cae90b95a746ad98be56887eac8e7afd52ea31b2b26c872e5",
+   "text": "팔라카드 정션 기차역: 25 km (약 45분)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b50708eb8d1b4a7bc48",
+   "sourceHash": "7b50708eb8d1b4a7bc48041006d9fbba41ffeeea1b821a6e7a3ba502f99df6cb",
+   "text": "코임바토르 기차역: 51.2 km (약 1시간 반)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'1 and a half hours' rendered as 1시간 반 to avoid adding a numeral."
+   ]
+  },
+  {
+   "id": "t_4a050e2e591c2321213b",
+   "sourceHash": "4a050e2e591c2321213b0cef7600fc62dca863202f3835f81c7b8893def9b8b2",
+   "text": "교통 서비스를 제공합니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_acbea42d115803902275",
+   "sourceHash": "acbea42d115803902275c9e6dbbbabfbf58afd08efc4e2a46a484c1ee69b044b",
+   "text": "예. 인근 공항 및 기차역에서 에어컨 차량(MPV 또는 세단(프리미엄))으로 픽업 및 드롭오프를 이용하실 수 있습니다. 편도 요금이며, 1 Oct 2026 – 30 Sep 2027 기간에 유효하고 5% GST가 포함되어 있습니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6884d6979b93c39fb25e",
+   "sourceHash": "6884d6979b93c39fb25e4dbdd8506215b339da0837d76b23629cf6708599cf2b",
+   "text": "팔라카드 기차역 (25 km) — ₹3,900 / ₹13,649",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_949121476fd1ac4ccdbb",
+   "sourceHash": "949121476fd1ac4ccdbb2ae787490045cb99914a3700445aef43d4f055537668",
+   "text": "코임바토르 공항 (75 km) — ₹6,775 / ₹23,711",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fddd38fae49e1875bd5f",
+   "sourceHash": "fddd38fae49e1875bd5fcb667575e38b794661bc62f499ae672454efa89157f9",
+   "text": "코친 / 캘리컷 공항 (125 km) — ₹7,950 / ₹27,824",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8019baf63abe87ca2fb1",
+   "sourceHash": "8019baf63abe87ca2fb19411e2a669b9dc2c4cb51df4c88bb046eeb2f57ad805",
+   "text": "최소 48시간 전에 환자 케어 팀을 통해 예약해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09289b5dba4a7e19c345",
+   "sourceHash": "09289b5dba4a7e19c34560c07683eb9763a072c736a8277b98cfc67c9710ad03",
+   "text": "인도 주요 도시에서 Kairali까지 가장 좋은 이동 방법은 무엇입니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd42bbd25ed3a660923f",
+   "sourceHash": "fd42bbd25ed3a660923fdfab7b3a2b65f9ce7811679c5c2a1b5ddd9babdd95f7",
+   "text": "출발지가 델리, 뭄바이, 벵갈루루 또는 첸나이인 경우: 코임바토르까지 항공편으로 이동하신 후 공항 송영 서비스를 이용하십시오. 출발지가 케랄라 내인 경우: 기차로 팔라카드 정션까지 오시거나 병원까지 직접 운전해 오실 수 있으며, 예약 시 자세한 길 안내를 제공해 드립니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3b7d4d193c691f021437",
+   "sourceHash": "3b7d4d193c691f02143702aa6dfd045fcef869db0f87c1c9e75a8dd799666b12",
+   "text": "Kairali에서 인근 관광 명소까지는 얼마나 떨어져 있습니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c146756b6b9681a606ae",
+   "sourceHash": "c146756b6b9681a606aea132c89ab4ec4d517056e8eb75d4a41bf1b4f3def775",
+   "text": "거리는 명소마다 다릅니다. 현재 명소 안내 페이지에 게재된 몇 곳은 다음과 같습니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_13f28ad0954c6c3a5871",
+   "sourceHash": "13f28ad0954c6c3a5871d4dcc02179e03778ce1001adafec1dafa4592affbb18",
+   "text": "사일런트 밸리 국립공원 — 80 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_158cff5230fb9e6245e0",
+   "sourceHash": "158cff5230fb9e6245e0e709874ab70ae6497e8b874e23483f5d3e58637065dd",
+   "text": "파람비쿨람 야생동물 보호구역 — 100 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2293bae4286cc0b22040",
+   "sourceHash": "2293bae4286cc0b2204080214f67cb7eb13fb129da5f4ef9a954cac65d8379a6",
+   "text": "티푸 요새 — 14 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b0bbea4fe73ff562e19",
+   "sourceHash": "9b0bbea4fe73ff562e1944168cd444a54150d9b0bec4dec39f2e681428489a13",
+   "text": "거리별로 정리된 전체 목록 보기: [[OPEN_1]]10 km 미만[[CLOSE_1]], [[OPEN_2]]15 km 이하[[CLOSE_2]], [[OPEN_3]]25–50 km[[CLOSE_3]], [[OPEN_4]]50 km 초과[[CLOSE_4]]. 요청 시 이러한 장소로의 당일 방문을 주선해 드릴 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7374f740ef246a849e7c",
+   "sourceHash": "7374f740ef246a849e7c91763b1be10693ae3720cec9c4f2f52bb31eafccf1e9",
+   "text": "날씨 및 계절 정보",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6f98b4ad55d075c84a5c",
+   "sourceHash": "6f98b4ad55d075c84a5c4b6f4855b79f767c35ddfd69f6f2f42eceec99b765e2",
+   "text": "질문 2개",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcfb409063377574b5e8",
+   "sourceHash": "dcfb409063377574b5e8445ada82c4c390592feff5a1ad660932703dbebc7f66",
+   "text": "Kairali의 연중 기후는 어떻습니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc64f6ced4bb3178a005",
+   "sourceHash": "fc64f6ced4bb3178a005d17e05aab45bfcfd601db5bcf8ddb6236efa78fc47b9",
+   "text": "케랄라는 따뜻한 열대 기후이며 네 계절이 있습니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

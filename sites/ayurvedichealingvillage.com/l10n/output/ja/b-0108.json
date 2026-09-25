@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0108",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_789fac762b76b15ef408",
+   "sourceHash": "789fac762b76b15ef408464ee1d1b1ae756826fa5179007fd0a919e0b15a9291",
+   "text": "装飾の花",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18e1cbc60e8742d8fdd5",
+   "sourceHash": "18e1cbc60e8742d8fdd5a270fc629c17c1111800dff1ed4baa9880240a8c66c0",
+   "text": "villa-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (js:concat identifier prefix), not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_0694aacb66d62e742a92",
+   "sourceHash": "0694aacb66d62e742a92e8d5f1e82bd9d2a8ca1be88744201fbe63d0f5007502",
+   "text": "facts",
+   "status": "translated",
+   "unchangedReason": "Code fragment (js:concat identifier), not user-visible text.",
+   "issues": []
+  },
+  {
+   "id": "t_1ff8e12edb39b7032ca3",
+   "sourceHash": "1ff8e12edb39b7032ca3487738d025c8450d6feb2c95ebb66ed02ded940a39a8",
+   "text": "\"][data-img=\"",
+   "status": "translated",
+   "unchangedReason": "CSS attribute-selector code fragment; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_b85360ffc33a77d4477f",
+   "sourceHash": "b85360ffc33a77d4477fb11a75fc8b81b3d8a1dd1cc0afa2dc9c96df4ee688fc",
+   "text": "[[OPEN_1]]ホーム[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]すべてのプログラム[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]アーユルヴェーダ治療[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]アーユルヴェーダ・パンチャカルマ解毒療法[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6827b60adc52e7f89555",
+   "sourceHash": "6827b60adc52e7f8955507328bcb6ba6128ea17068792a572e415d367f179a09",
+   "text": "全身の解毒、ドーシャのバランス、免疫力の向上を目指すアーユルヴェーダのパンチャカルマ療法。インドでのあなたに合わせたウェルネス滞在プログラムを今すぐご予約ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as ウェルネス滞在プログラム (stay programme) per the KTAHV clinical register."
+   ]
+  },
+  {
+   "id": "t_4498ca83c5f3e2dd23b4",
+   "sourceHash": "4498ca83c5f3e2dd23b40417b13190b120403a54c296aa5d598aafc2dfa62c73",
+   "text": "身体・心・ドーシャのバランスのための、患者様の80%が信頼する科学的な解毒療法 | 30,000人以上の人生を変えてきました",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest-trusted' rendered as 患者様…が信頼する per the KTAHV language lock. The 80% and 30,000+ figures are source claims carried verbatim; their evidential basis should be confirmed before publication."
+   ]
+  },
+  {
+   "id": "t_e6b1d78d81623bf5eb14",
+   "sourceHash": "e6b1d78d81623bf5eb148ddd0233637e17b406762d126db19d18cebb191d7df8",
+   "text": "[[OPEN_1]]パンチャカルマ療法[[CLOSE_1]]とは？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cef40dba849bc4ee0ac4",
+   "sourceHash": "cef40dba849bc4ee0ac43beef2a8dc05d6ac18310d7625c08f97ac04ab5dd462",
+   "text": "カイラリのパンチャカルマ療法は、5つの中核的な治療からなる包括的なアーユルヴェーダの浄化療法で、疾患の緩和と全身のバランス回復を支えることで知られています。経験豊富な医師が、あなたの病歴と目標に合わせて慎重に調整し、薬用オイル、ハーブ療法、個別のプロトコルを用いて、全身の深い解毒を行います。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims Panchakarma is 'recognized for permanently resolving disease' — a cure-equivalent efficacy claim barred by the KTAHV lock. Rendered as 疾患の緩和…を支える (supports relief of disease). Needs Dr. Deepu John's clinical sign-off and ideally an EN source correction."
+   ]
+  },
+  {
+   "id": "t_f35ac02de2ee81038e2a",
+   "sourceHash": "f35ac02de2ee81038e2a80ff6b962860216d5ef52903bd8019d39a7e409fd70c",
+   "text": "[[OPEN_1]]パンチャカルマ療法[[CLOSE_1]]の歴史",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_adb6ba78928f2ef42ece",
+   "sourceHash": "adb6ba78928f2ef42ecea03c1b498eeca0c25f3a51831d8d536bb3cec4d3f1a4",
+   "text": "5,000年にわたるアーユルヴェーダの知恵に基づくパンチャカルマは、自然な解毒と若返りの最高水準とされています。世界中の患者様から信頼されるカイラリは、この伝統を現代の優れた臨床医療とともに守り続けています。5段階のプロトコルは身体の深部に段階的に働きかけるため、最適な結果を得るには最低2週間の滞在が必要です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 患者様 per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_141def12cb51c81f71df",
+   "sourceHash": "141def12cb51c81f71df0a587806639f393aed4e8656c331081c400411151212",
+   "text": "消化の不調が続いている方",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_537d25f48262a9ecee03",
+   "sourceHash": "537d25f48262a9ecee030bd873b757a715623aa37ec6c23ff028750d7a2ddb6a",
+   "text": "慢性的な関節の問題を抱えている方",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8456966e88c6ce27ae9a",
+   "sourceHash": "8456966e88c6ce27ae9acc5082a8b36f5e4e534855da956cda3ee310c710b02e",
+   "text": "代謝の問題を抱えている方",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5b8d0e14ebf9aa1c97aa",
+   "sourceHash": "5b8d0e14ebf9aa1c97aaf805fe86f6a64e36621ff45e789a32f29de3e2a8d9fd",
+   "text": "全身の再生を目指して、自然なアーユルヴェーダの解毒療法を求めている方",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89adad553ef29adba4b7",
+   "sourceHash": "89adad553ef29adba4b7905484e01bd5f817e2e988e0b81dfc6b985bf8196ea4",
+   "text": "[[OPEN_1]]カイラリのパンチャカルマ解毒療法プログラム[[CLOSE_1]]の流れ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a82280a61b3ad8f1611",
+   "sourceHash": "0a82280a61b3ad8f1611aea76556c558c286440ccb0f72252a2d5adf2d400a3a",
+   "text": "カイラリのパンチャカルマ療法が選ばれる理由",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa91aa8a5ebc68a35f88",
+   "sourceHash": "aa91aa8a5ebc68a35f88514da85535d80af0e04aa1ced338bacc0052b64427fc",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]徹底した解毒により、心身のバランスを取り戻します",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ef70c8c8a738563a7c01",
+   "sourceHash": "ef70c8c8a738563a7c01197d0a43ea3fc414905d73a37417c56242b5ccb11ca2",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]慢性的な炎症、皮膚の不調、消化器系や生活習慣に関わる問題の緩和",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ed6f7ba3f3460e396cc5",
+   "sourceHash": "ed6f7ba3f3460e396cc5f129280e318bd06858728757835806738b598ec26978",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]不安やストレスの軽減、思考の明晰さと情緒の安定の向上",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_839f8e3fd33b8fe13568",
+   "sourceHash": "839f8e3fd33b8fe13568d601585f60e6afac721a13fcaef53324081dc47b3523",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]全身の浄化による免疫力の向上と健やかな長寿",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33fca6287dae2e95517d",
+   "sourceHash": "33fca6287dae2e95517da496f5896595110fdaac5121441da40cd1a598dbf3a2",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]患者様の87%が2週間以内に健康状態の大幅な改善を報告し、94%が長期的にその効果を維持しています",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 患者様 per the KTAHV language lock. The 87%/94% outcome statistics are efficacy claims carried verbatim; source data and Dr. Deepu John's sign-off should be confirmed before publication."
+   ]
+  },
+  {
+   "id": "t_3a1a61fbb2d93d91fa0d",
+   "sourceHash": "3a1a61fbb2d93d91fa0da2dd58db49c76172a227a6454e9c25c5d5ed9d679c50",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]海外からの患者様の満足度92%（2024年データ）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_866e5499705b3d2cfeaf",
+   "sourceHash": "866e5499705b3d2cfeaf08574949587134dcccd1484f2a7017bfe15283b13605",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]100,000件以上の療法で副作用ゼロ——専門家による安全な臨床ケア",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Zero adverse reactions in 100,000+ therapies' is an absolute safety claim carried verbatim; needs clinical verification and Dr. Deepu John's sign-off before publication."
+   ]
+  },
+  {
+   "id": "t_215186065065595850af",
+   "sourceHash": "215186065065595850af036915e2d56c1169b8e59bec1f9adb826ba479344be1",
+   "text": "[[OPEN_1]]パンチャカルマ療法[[CLOSE_1]]の効果",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

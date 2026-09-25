@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0093",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_7da49dfb86d386d99a8d",
+   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]रोग-प्रतिरोधक क्षमता को मज़बूत करता है और हाइपरटेंशन के मूल कारणों को संबोधित करता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_855e8dd3a0ccc6addd53",
+   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]व्यक्तिगत समग्र देखभाल प्रदान करता है, सिंथेटिक दवाओं पर निर्भरता कम करता है और दीर्घकालिक स्वास्थ्य को सहारा देता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb30213d25cd6a0ea5d8",
+   "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
+   "text": "आयुर्वेदिक उपचार के साथ आपका हृदय स्वास्थ्य",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c83d29855bd4784db80b",
+   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
+   "text": "स्वाभाविक रूप से नियंत्रण वापस पाना: KTAHV में हाइपरटेंशन के सफल अनुभव",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0162bd60eedd361122a",
+   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
+   "text": "मुझे अपने हाइपरटेंशन को नियंत्रित करना हमेशा कठिन लगता था, इसलिए मैं एक प्राकृतिक उपाय आज़माना चाहती थी। Kairali में मेरा अनुभव अद्भुत रहा; ध्यान सत्र, हर्बल औषधियाँ और थेरेपी ठीक वही थीं जिनकी मुझे ज़रूरत थी। आयुर्वेदिक उपचारों से मेरे शरीर और मन को सुकून मिला, और जब तक मैं लौटी, मेरा रक्तचाप उल्लेखनीय रूप से सामान्य हो गया था। मैं तरोताज़ा महसूस करते हुए और घर पर इस संतुलन को बनाए रखने की तकनीकों के साथ लौटी।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'cures' ('herbal cures') in patient testimonial rendered as 'हर्बल औषधियाँ' (herbal medicines) per clinical language lock. Testimonial reports an individual outcome (BP returned to normal) — kept as the patient's own statement; clinical review of testimonial claims advised. Feminine verb forms used, assuming reviewer 'Ms. Shalu'."
+   ]
+  },
+  {
+   "id": "t_589a7a51bc98663232d2",
+   "sourceHash": "589a7a51bc98663232d2b3115adbf481cbd9f3d0aea5ae230126556451834b96",
+   "text": "[[OPEN_1]]Ms. Shalu[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": "Person's name, star glyphs and rating number are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_f2aff9328dd2c7813c5c",
+   "sourceHash": "f2aff9328dd2c7813c5c2b4cd7e56816988964e8bc6177a966fb80b1415bd3d6",
+   "text": "यदि मेरा रक्तचाप ठीक से नियंत्रित नहीं है, तो क्या मैं कार्यक्रम में शामिल हो सकता/सकती हूँ?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6a64696a1db00273219",
+   "sourceHash": "d6a64696a1db00273219681f860303d51f362eb5e80f584c95330125a19abd1e",
+   "text": "यात्रा और आवासीय प्रवास की उपयुक्तता के बारे में अपने उपचार करने वाले चिकित्सक से चर्चा करें। हाल की रीडिंग और अपनी दवाओं की सूची साझा करें, ताकि प्रस्तावित कार्यक्रम पर आपकी मौजूदा देखभाल के संदर्भ में चर्चा की जा सके।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_d6a64696a1db00273219 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_953963e4a874f022051e",
+   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
+   "text": "हृदय स्वास्थ्य एवं रक्तचाप उपचार – रक्त समदम Chikitsa (चिकित्सा) (हाइपरटेंशन के लिए Kairali का उपचार)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates two titles without a separator ('TreatmentRakta'); an en dash separator was added in the translation. 'Rakta Samadama' transliterated as रक्त समदम."
+   ]
+  },
+  {
+   "id": "t_4065201e2c3c85c6d9df",
+   "sourceHash": "4065201e2c3c85c6d9dfdb863c48d582ffb83f10ad31cd5ffdc0b37ff2267206",
+   "text": "रक्तचाप और हृदय स्वास्थ्य के लिए आयुर्वेदिक उपचार",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6c60c6b20638aad798d6",
+   "sourceHash": "6c60c6b20638aad798d6e5a6ffaa07de0327d7eb0734342680d4930b9aef07e6",
+   "text": "तक्रधारा के दौरान लेटे हुए रोगी के माथे पर लटकते पीतल के पात्र से औषधीय छाछ की स्थिर धारा प्रवाहित करते दो Kairali थेरेपिस्ट",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'guest' replaced with 'रोगी' (patient) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_80745f2ffb7b0ea752bf",
+   "sourceHash": "80745f2ffb7b0ea752bf986bab828ef5c79ef391a5bb6ca543439af000198ff4",
+   "text": "हाइपरटेंशन - 140 से 300 तक अंकित प्रेशर गेज के सामने बना हृदय और नाड़ी का ग्राफ़",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e4a04a109a0d4d2161c5",
+   "sourceHash": "e4a04a109a0d4d2161c5a205e23ee4cda6f421688d47e47b4ab15801639e580c",
+   "text": "आयुर्वेद का इतिहास - जड़ी-बूटियों के पास ताड़पत्र पर लिखते ऋषि का चित्रण",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f76aa1f292eb692a04f7",
+   "sourceHash": "f76aa1f292eb692a04f702f869aa323fa5058bc7f97a1d7c92ae8af0ecc67053",
+   "text": "सिर के उपचार के लिए कपड़े से बंधा केले के पत्ते का सिर-आवरण पहने रोगी",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d32f088507532ce41c67",
+   "sourceHash": "d32f088507532ce41c67c92d3ed90a9702cf6ba6b84a7bdcc598785c45b61539",
+   "text": "Kairali में लेटे हुए रोगी के माथे पर पीतल के शिरोधारा पात्र से बहती गर्म तेल की पतली धारा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_41ebd82c3cba88db7c94",
+   "sourceHash": "41ebd82c3cba88db7c94fd5f729160d4cb03dd211b9e7058c68192c5b9ab3ad1",
+   "text": ": आपके समग्र स्वास्थ्य, चिकित्सा इतिहास और हाइपरटेंशन से संबंधित विशिष्ट चिंताओं का आकलन करने के लिए आयुर्वेदिक चिकित्सक के साथ प्रारंभिक परामर्श।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7aa98d8577bc8ca695a9",
+   "sourceHash": "7aa98d8577bc8ca695a952c24f11a08cd781ec8de974d43dfb759c9eb0bfbeed",
+   "text": "दोष मूल्यांकन",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_960b80c2ea629e8080ca",
+   "sourceHash": "960b80c2ea629e8080ca71aa3c0d7835f8c3ec8e2dbd72a9da65b6f9ceee827a",
+   "text": ": चिकित्सक आपकी विशिष्ट प्रकृति निर्धारित करेंगे और हाइपरटेंशन में योगदान देने वाले दोषों (ऊर्जात्मक शक्तियों) के किसी भी असंतुलन की पहचान करेंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1857c05f1e432c6540c7",
+   "sourceHash": "1857c05f1e432c6540c7613a6243e8437a063fa5faacece320487b9ec1b49ad9",
+   "text": "उपचार योजना",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e59725ff91ce69ac0f7",
+   "sourceHash": "9e59725ff91ce69ac0f7f527573fd8e03b6c44689cbe82b81c21946804f92d62",
+   "text": ": आयुर्वेदिक थेरेपी, हर्बल औषधियों, जीवनशैली में बदलाव और आहार संबंधी सुझावों को शामिल करते हुए एक व्यक्तिगत उपचार योजना बनाई जाती है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e5d57c136c283d9e28fd",
+   "sourceHash": "e5d57c136c283d9e28fd2588236a9ce635def2a4943ce41f8d0e285f4e6efc84",
+   "text": "थेरेपी",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_031dffd8fa5111b9f007",
+   "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
+   "text": ": विश्राम को बढ़ावा देने, रक्त संचार सुधारने और दोषों को संतुलित करने के लिए आपको Abhyangam (अभ्यंगम) (चिकित्सीय तेल मालिश), शिरोधारा (माथे पर गर्म तेल की स्थिर धारा) और नस्यम (नाक के माध्यम से हर्बल तेलों का प्रयोग) जैसी विशिष्ट आयुर्वेदिक थेरेपी दी जाएँगी।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02190df7c1a353ae41ed",
+   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
+   "text": ": हृदय स्वास्थ्य को सहारा देने, रक्तचाप को नियंत्रित करने में सहायता करने और सूजन कम करने के लिए व्यक्तिगत हर्बल फ़ॉर्मूलेशन निर्धारित किए जाएँगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec13e89c1725430f6a80",
+   "sourceHash": "ec13e89c1725430f6a8078f9132794ad1478e1f36f68d5c21128b56b1993fc95",
+   "text": "जीवनशैली में बदलाव",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0db4bf432653bdb997",
+   "sourceHash": "1e0db4bf432653bdb997c38a7f089febae17aa46a6301eea46703634fe425d2d",
+   "text": ": हाइपरटेंशन के अंतर्निहित कारणों को संबोधित करने के लिए चिकित्सक आपको अपनी दिनचर्या में तनाव प्रबंधन तकनीकों, नियमित व्यायाम और पर्याप्त नींद को शामिल करने के बारे में मार्गदर्शन देंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

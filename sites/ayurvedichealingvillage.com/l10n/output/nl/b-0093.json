@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0093",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_7da49dfb86d386d99a8d",
+   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Versterkt het immuunsysteem en pakt de onderliggende oorzaken van hypertensie aan.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_855e8dd3a0ccc6addd53",
+   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Biedt persoonlijke, holistische zorg, vermindert de afhankelijkheid van synthetische medicijnen en ondersteunt welzijn op de lange termijn.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Medication-reliance claim translated faithfully; may warrant Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_bb30213d25cd6a0ea5d8",
+   "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
+   "text": "Uw hart- en vaatgezondheid met een ayurvedische behandeling",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c83d29855bd4784db80b",
+   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
+   "text": "Op natuurlijke wijze weer grip krijgen: ervaringen met hypertensie bij KTAHV",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Success Stories' rendered as 'ervaringen' (patient experiences) to avoid implying guaranteed outcomes; KTAHV kept as proper abbreviation."
+   ]
+  },
+  {
+   "id": "t_f0162bd60eedd361122a",
+   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
+   "text": "Ik had altijd moeite gehad om mijn hoge bloeddruk onder controle te houden, dus ik wilde een natuurlijke oplossing proberen. Ik heb bij Kairali een geweldige ervaring gehad; de meditatiesessies, kruidenmiddelen en therapieën waren precies wat ik nodig had. De ayurvedische behandelingen brachten rust in mijn lichaam en geest, en tegen de tijd dat ik vertrok, was mijn bloeddruk merkbaar weer normaal. Ik ging naar huis met een verjongd gevoel en met technieken om dit evenwicht thuis vast te houden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Patient testimonial: 'herbal cures' rendered as 'kruidenmiddelen' per the KTAHV banned-word lock. Outcome claim ('blood pressure returned to normal') is the patient's own statement, translated faithfully; may warrant clinical review."
+   ]
+  },
+  {
+   "id": "t_589a7a51bc98663232d2",
+   "sourceHash": "589a7a51bc98663232d2b3115adbf481cbd9f3d0aea5ae230126556451834b96",
+   "text": "[[OPEN_1]]Ms. Shalu[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": "Reviewer name with honorific, star glyphs and rating number; kept verbatim.",
+   "issues": [
+    "Honorific 'Ms.' kept as part of the reviewer's displayed name; could be localised to 'Mevr. Shalu' if the owner prefers."
+   ]
+  },
+  {
+   "id": "t_f2aff9328dd2c7813c5c",
+   "sourceHash": "f2aff9328dd2c7813c5c2b4cd7e56816988964e8bc6177a966fb80b1415bd3d6",
+   "text": "Kan ik deelnemen als mijn bloeddruk niet goed onder controle is?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d6a64696a1db00273219",
+   "sourceHash": "d6a64696a1db00273219681f860303d51f362eb5e80f584c95330125a19abd1e",
+   "text": "Bespreek met uw behandelend arts of reizen en een verblijf met opname geschikt voor u zijn. Deel recente meetwaarden en uw medicatielijst, zodat het voorgestelde programma kan worden besproken in samenhang met uw bestaande zorg.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_953963e4a874f022051e",
+   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
+   "text": "Behandeling voor hart- en vaatgezondheid en bloeddrukRakta Samadama Chikitsa (Kairali’s behandeling voor hypertensie)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates two titles without a separator ('TreatmentRakta'); structure preserved as-is — likely a source defect worth fixing upstream."
+   ]
+  },
+  {
+   "id": "t_4065201e2c3c85c6d9df",
+   "sourceHash": "4065201e2c3c85c6d9dfdb863c48d582ffb83f10ad31cd5ffdc0b37ff2267206",
+   "text": "Ayurvedische behandeling voor bloeddruk en hartgezondheid",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6c60c6b20638aad798d6",
+   "sourceHash": "6c60c6b20638aad798d6e5a6ffaa07de0327d7eb0734342680d4930b9aef07e6",
+   "text": "Twee therapeuten van Kairali leiden tijdens Thakaradhara een gestage stroom medicinale karnemelk uit een hangend koperen vat op het voorhoofd van een liggende patiënt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guest' replaced with 'patiënt' per the KTAHV banned-word lock."
+   ]
+  },
+  {
+   "id": "t_80745f2ffb7b0ea752bf",
+   "sourceHash": "80745f2ffb7b0ea752bf986bab828ef5c79ef391a5bb6ca543439af000198ff4",
+   "text": "HYPERTENSIE – hart- en polslijn getekend tegen een drukmeter met een schaal van 140 tot 300",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e4a04a109a0d4d2161c5",
+   "sourceHash": "e4a04a109a0d4d2161c5a205e23ee4cda6f421688d47e47b4ab15801639e580c",
+   "text": "Geschiedenis van Ayurveda – geïllustreerde wijze die naast kruiden op een palmblad schrijft",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f76aa1f292eb692a04f7",
+   "sourceHash": "f76aa1f292eb692a04f702f869aa323fa5058bc7f97a1d7c92ae8af0ecc67053",
+   "text": "Patiënt met een hoofdomslag van bananenblad, vastgebonden met stof, voor een hoofdbehandeling",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d32f088507532ce41c67",
+   "sourceHash": "d32f088507532ce41c67c92d3ed90a9702cf6ba6b84a7bdcc598785c45b61539",
+   "text": "Dunne stroom warme olie die uit een koperen Shirodhara-vat op het voorhoofd van een liggende patiënt bij Kairali vloeit",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_41ebd82c3cba88db7c94",
+   "sourceHash": "41ebd82c3cba88db7c94fd5f729160d4cb03dd211b9e7058c68192c5b9ab3ad1",
+   "text": ": Een eerste consult bij de ayurvedische arts om uw algehele gezondheid, medische voorgeschiedenis en specifieke klachten in verband met hypertensie te beoordelen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7aa98d8577bc8ca695a9",
+   "sourceHash": "7aa98d8577bc8ca695a952c24f11a08cd781ec8de974d43dfb759c9eb0bfbeed",
+   "text": "Dosha-beoordeling",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_960b80c2ea629e8080ca",
+   "sourceHash": "960b80c2ea629e8080ca71aa3c0d7835f8c3ec8e2dbd72a9da65b6f9ceee827a",
+   "text": ": De arts bepaalt uw unieke constitutie en stelt vast welke verstoringen in de dosha's (energetische krachten) bijdragen aan hypertensie.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1857c05f1e432c6540c7",
+   "sourceHash": "1857c05f1e432c6540c7613a6243e8437a063fa5faacece320487b9ec1b49ad9",
+   "text": "Behandelplan",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e59725ff91ce69ac0f7",
+   "sourceHash": "9e59725ff91ce69ac0f7f527573fd8e03b6c44689cbe82b81c21946804f92d62",
+   "text": ": Er wordt een persoonlijk behandelplan opgesteld met ayurvedische therapieën, kruidengeneesmiddelen, leefstijlaanpassingen en voedingsadviezen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e5d57c136c283d9e28fd",
+   "sourceHash": "e5d57c136c283d9e28fd2588236a9ce635def2a4943ce41f8d0e285f4e6efc84",
+   "text": "Therapieën",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_031dffd8fa5111b9f007",
+   "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
+   "text": ": U ondergaat specifieke ayurvedische therapieën zoals Abhyangam (therapeutische oliemassage), Shirodhara (gestage stroom warme olie op het voorhoofd) en Nasyam (toediening van kruidenoliën via de neus) om ontspanning te bevorderen, de bloedsomloop te verbeteren en de dosha's in balans te brengen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02190df7c1a353ae41ed",
+   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
+   "text": ": Er worden kruidenpreparaten op maat voorgeschreven om de hart- en vaatgezondheid te ondersteunen, de bloeddruk te reguleren en ontstekingen te verminderen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec13e89c1725430f6a80",
+   "sourceHash": "ec13e89c1725430f6a8078f9132794ad1478e1f36f68d5c21128b56b1993fc95",
+   "text": "Leefstijlaanpassingen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0db4bf432653bdb997",
+   "sourceHash": "1e0db4bf432653bdb997c38a7f089febae17aa46a6301eea46703634fe425d2d",
+   "text": ": De arts geeft u advies over hoe u stressbeheersingstechnieken, regelmatige beweging en voldoende slaap in uw dagelijkse routine kunt opnemen om de onderliggende oorzaken van hypertensie aan te pakken.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

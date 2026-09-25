@@ -1,0 +1,221 @@
+{
+ "batchId": "b-0108",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_789fac762b76b15ef408",
+   "sourceHash": "789fac762b76b15ef408464ee1d1b1ae756826fa5179007fd0a919e0b15a9291",
+   "text": "Flores decorativas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18e1cbc60e8742d8fdd5",
+   "sourceHash": "18e1cbc60e8742d8fdd5a270fc629c17c1111800dff1ed4baa9880240a8c66c0",
+   "text": "villa-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (js:concat identifier prefix), not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_0694aacb66d62e742a92",
+   "sourceHash": "0694aacb66d62e742a92e8d5f1e82bd9d2a8ca1be88744201fbe63d0f5007502",
+   "text": "facts",
+   "status": "translated",
+   "unchangedReason": "Code fragment (js:concat identifier), not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_1ff8e12edb39b7032ca3",
+   "sourceHash": "1ff8e12edb39b7032ca3487738d025c8450d6feb2c95ebb66ed02ded940a39a8",
+   "text": "\"][data-img=\"",
+   "status": "translated",
+   "unchangedReason": "Code fragment (CSS attribute selector), language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_b85360ffc33a77d4477f",
+   "sourceHash": "b85360ffc33a77d4477fb11a75fc8b81b3d8a1dd1cc0afa2dc9c96df4ee688fc",
+   "text": "[[OPEN_1]]Inicio[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Todos los programas[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Tratamientos ayurvédicos[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]Terapia ayurvédica de desintoxicación Panchakarma[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6827b60adc52e7f89555",
+   "sourceHash": "6827b60adc52e7f8955507328bcb6ba6128ea17068792a572e415d367f179a09",
+   "text": "Terapia Panchakarma ayurvédica: desintoxicación integral, equilibrio de doshas y refuerzo inmunitario. Reserve su programa personalizado en India.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'wellness retreat' rendered as 'programa' per clinical register; condensed to fit 155 characters."
+   ]
+  },
+  {
+   "id": "t_4498ca83c5f3e2dd23b4",
+   "sourceHash": "4498ca83c5f3e2dd23b40417b13190b120403a54c296aa5d598aafc2dfa62c73",
+   "text": "Desintoxicación científica para el cuerpo, la mente y el equilibrio de los doshas, avalada por el 80% de los pacientes | 30,000+ vidas transformadas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guest-trusted' rendered with 'pacientes' per clinical register. Statistical claims (80%, 30,000+) carried over unchanged from source; unverified — needs Dr. Deepu John clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_e6b1d78d81623bf5eb14",
+   "sourceHash": "e6b1d78d81623bf5eb148ddd0233637e17b406762d126db19d18cebb191d7df8",
+   "text": "¿Qué es la [[OPEN_1]]terapia Panchakarma?[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cef40dba849bc4ee0ac4",
+   "sourceHash": "cef40dba849bc4ee0ac43beef2a8dc05d6ac18310d7625c08f97ac04ab5dd462",
+   "text": "La terapia Panchakarma de Kairali es un régimen ayurvédico integral de biodepuración que comprende cinco tratamientos principales, reconocido por resolver de forma permanente la enfermedad y restablecer el equilibrio sistémico. Adaptada cuidadosamente por médicos expertos a su historial de salud y a sus objetivos, emplea aceites medicinales, terapias herbales y protocolos personalizados, y proporciona una desintoxicación profunda de todo el cuerpo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "CLINICAL CLAIM FLAG: source claims Panchakarma is 'recognized for permanently resolving disease' — translated faithfully (not strengthened) but this is a cure-type efficacy claim that conflicts with the clinical lock; requires Dr. Deepu John sign-off or source revision."
+   ]
+  },
+  {
+   "id": "t_f35ac02de2ee81038e2a",
+   "sourceHash": "f35ac02de2ee81038e2a80ff6b962860216d5ef52903bd8019d39a7e409fd70c",
+   "text": "Historia de la [[OPEN_1]]terapia Panchakarma[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_adb6ba78928f2ef42ece",
+   "sourceHash": "adb6ba78928f2ef42ecea03c1b498eeca0c25f3a51831d8d536bb3cec4d3f1a4",
+   "text": "Basado en 5,000 años de sabiduría ayurvédica, el Panchakarma es el método de referencia para la desintoxicación natural y el rejuvenecimiento. Con la confianza de pacientes de todo el mundo, Kairali mantiene esta tradición con una excelencia clínica moderna. El protocolo de cinco pasos actúa de forma profunda y metódica, y requiere un compromiso mínimo de dos semanas para obtener resultados óptimos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guests' rendered as 'pacientes' per clinical register."
+   ]
+  },
+  {
+   "id": "t_141def12cb51c81f71df",
+   "sourceHash": "141def12cb51c81f71df0a587806639f393aed4e8656c331081c400411151212",
+   "text": "Personas con problemas digestivos persistentes",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_537d25f48262a9ecee03",
+   "sourceHash": "537d25f48262a9ecee030bd873b757a715623aa37ec6c23ff028750d7a2ddb6a",
+   "text": "Personas con problemas articulares crónicos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8456966e88c6ce27ae9a",
+   "sourceHash": "8456966e88c6ce27ae9acc5082a8b36f5e4e534855da956cda3ee310c710b02e",
+   "text": "Quienes presentan problemas metabólicos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5b8d0e14ebf9aa1c97aa",
+   "sourceHash": "5b8d0e14ebf9aa1c97aaf805fe86f6a64e36621ff45e789a32f29de3e2a8d9fd",
+   "text": "Cualquier persona que busque una terapia ayurvédica natural de desintoxicación para una renovación sistémica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89adad553ef29adba4b7",
+   "sourceHash": "89adad553ef29adba4b7905484e01bd5f817e2e988e0b81dfc6b985bf8196ea4",
+   "text": "Proceso del [[OPEN_1]]programa de terapia de desintoxicación Panchakarma de Kairali[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a82280a61b3ad8f1611",
+   "sourceHash": "0a82280a61b3ad8f1611aea76556c558c286440ccb0f72252a2d5adf2d400a3a",
+   "text": "¿Por qué elegir la terapia Panchakarma de Kairali?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa91aa8a5ebc68a35f88",
+   "sourceHash": "aa91aa8a5ebc68a35f88514da85535d80af0e04aa1ced338bacc0052b64427fc",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Desintoxicación completa que restablece el equilibrio físico y mental",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ef70c8c8a738563a7c01",
+   "sourceHash": "ef70c8c8a738563a7c01197d0a43ea3fc414905d73a37417c56242b5ccb11ca2",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Alivio de la inflamación crónica, los trastornos cutáneos y los problemas digestivos o relacionados con el estilo de vida",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ed6f7ba3f3460e396cc5",
+   "sourceHash": "ed6f7ba3f3460e396cc5f129280e318bd06858728757835806738b598ec26978",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Menos ansiedad y estrés, mayor claridad mental y equilibrio emocional",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_839f8e3fd33b8fe13568",
+   "sourceHash": "839f8e3fd33b8fe13568d601585f60e6afac721a13fcaef53324081dc47b3523",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Mayor inmunidad y una longevidad saludable gracias a la depuración sistémica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33fca6287dae2e95517d",
+   "sourceHash": "33fca6287dae2e95517da496f5896595110fdaac5121441da40cd1a598dbf3a2",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]El 87% de los pacientes refiere una mejora notable de su salud en dos semanas. El 94% mantiene los beneficios a largo plazo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guests' rendered as 'pacientes' per clinical register. Statistical efficacy claims (87%, 94%) carried over unchanged; unverified — needs Dr. Deepu John clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_3a1a61fbb2d93d91fa0d",
+   "sourceHash": "3a1a61fbb2d93d91fa0da2dd58db49c76172a227a6454e9c25c5d5ed9d679c50",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]92% de satisfacción entre los pacientes internacionales (datos de 2024)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Statistic (92%, 2024 data) carried over unchanged; unverified source figure."
+   ]
+  },
+  {
+   "id": "t_866e5499705b3d2cfeaf",
+   "sourceHash": "866e5499705b3d2cfeaf08574949587134dcccd1484f2a7017bfe15283b13605",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Cero reacciones adversas en más de 100,000 terapias: atención clínica experta y segura",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Safety claim ('zero adverse reactions in 100,000+ therapies') carried over unchanged; unverified — needs Dr. Deepu John clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_215186065065595850af",
+   "sourceHash": "215186065065595850af036915e2d56c1169b8e59bec1f9adb826ba479344be1",
+   "text": "Beneficios de la [[OPEN_1]]terapia Panchakarma[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
