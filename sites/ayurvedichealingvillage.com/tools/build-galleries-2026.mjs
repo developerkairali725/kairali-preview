@@ -394,8 +394,12 @@ const toConfirm = [];
 const NEAR_DUPLICATES = new Set([
   "fb9572c10df07909bc2b8b152c7b16e0921d093d43b909c5a5952da8ea7ad0fb", // grounds-people-woman-rests-white-12 ≈ grounds-people-woman-reclining-white-13
 ]);
+// Frames the owner identified as another Kairali property (EF-19, 26 Sep 2026): not the Healing Village.
+const NOT_THIS_PROPERTY = new Set([
+  "5c1a7d37788e698b1ffe09d743fdfd72f7a8006b33298b506188b7254d953b76", // ktahv-shoot-2025/IMG_8719-2.jpg — head office (vine-covered brick building, Ganesha shrine)
+]);
 function usable(c) {
-  if (NEAR_DUPLICATES.has(c.sha256)) return false;
+  if (NEAR_DUPLICATES.has(c.sha256) || NOT_THIS_PROPERTY.has(c.sha256)) return false;
   if (/TO CONFIRM/.test(c.caption + " " + c.alt)) return false;
   if (c.theme === "pool" && SWIMWEAR.test(c.caption)) return false;
   if (c.width < 1000) return false;

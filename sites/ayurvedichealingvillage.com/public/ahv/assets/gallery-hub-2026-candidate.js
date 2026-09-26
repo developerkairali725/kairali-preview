@@ -6,7 +6,7 @@
 window.AHV_GALLERY_2026 = {
   intro: "Photographs and films from Kairali \u2014 The Ayurvedic Healing Village: the grounds and villas, treatments, yoga, our herbal products and the Palakkad countryside. Choose a collection to open it.",
   featured: [
-    { name: "Photo Gallery", href: "/photo-gallery/", meta: "59 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/01-hero-grounds-garden-vine-covered-brick-01.webp", pos: "50% 55%", alt: "Vine-covered brick building in the village gardens" },
+    { name: "Photo Gallery", href: "/photo-gallery/", meta: "59 photographs", cover: "/ahv/assets/img/gallery-2026/villas/exteriors-villa-exterior-laterite-brick-patient-villas-01.webp", pos: "50% 55%", alt: "Wide view of two laterite-brick patient villas along the landscaped water channel with stone pathways" },
     { name: "Property Gallery", href: "/property-gallery/", meta: "36 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/02-hero-exterior-terraced-treatment-blocks-01.webp", pos: "50% 45%", alt: "Terraced treatment blocks above the lawns" },
     { name: "Villas Gallery", href: "/villas-gallery/", meta: "29 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/04-hero-villa-exterior-corner-laterite-brick-lattice-01.webp", pos: "35% 50%", alt: "Laterite brick villa with lattice window beside a garden path" }
   ],
