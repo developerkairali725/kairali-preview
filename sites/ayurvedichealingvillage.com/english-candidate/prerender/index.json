@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-25T15:43:27.964Z",
- "base": "http://localhost:4471",
+ "generated": "2026-09-26T08:56:08.042Z",
+ "base": "http://127.0.0.1:4471",
  "count": 242,
  "failures": 0,
  "routes": [
@@ -18,8 +18,8 @@
    "path": "/about-us/",
    "ok": true,
    "file": "about-us.html",
-   "bytes": 93023,
-   "textChars": 7515,
+   "bytes": 102129,
+   "textChars": 9989,
    "imgs": 21,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
