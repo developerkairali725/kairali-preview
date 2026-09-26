@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0315",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_e86f07bced017218d7fb",
+   "sourceHash": "e86f07bced017218d7fbdfa70841eb0e52c2c4a7fc81f3abbc9b2354d811fbcc",
+   "text": "포함: 예약하신 카테고리의 빌라 및 모든 정부 세금",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b820d0c28277c55d172",
+   "sourceHash": "7b820d0c28277c55d17286d48cf66744a88b0758014819e2a5aebf6c15f84b0f",
+   "text": "포함: 식이 처방에 따른 하루 세 끼의 채식 또는 비건 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a296108b52f3ecaccacd",
+   "sourceHash": "a296108b52f3ecaccacd475608f4893604c0458bf282a6d607b67b88aad881d2",
+   "text": "포함: 하루 한 가지 아유르베다 요법(필요한 경우 허브 증기 요법 포함)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e9a870a20bbf3312145",
+   "sourceHash": "8e9a870a20bbf33121450405bf5fb734213f72d3ae4243b97fcb37ba485d564d",
+   "text": "포함: 담당 의사의 매일 상담 및 모니터링",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6dfb4e1147320b1db8db",
+   "sourceHash": "6dfb4e1147320b1db8db0a9bd42f348175044244dc51bf73c0746cb70abbda2a",
+   "text": "포함: 매일 일출 개인 요가 세션과 개인 가이드 명상 세션",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_26ca395a6028f9da3872",
+   "sourceHash": "26ca395a6028f9da3872871303b54a8ca116d209e942170636839b345be14b66",
+   "text": "포함: 주간 워크숍, 요리 시연 및 농장 또는 마을 산책",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8782b597dfedf0254b5d",
+   "sourceHash": "8782b597dfedf0254b5d2d4ee88ea039ada4e6b1d23ed46ca3af3e117fb556bc",
+   "text": "포함: 수영장, 도서관, 체육관 및 야외 시설, 그리고 각 세션 후 제공되는 미네랄워터, 허브 인퓨즈드 워터와 차 또는 주스",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0bc4b7dcd6856e1442cb",
+   "sourceHash": "0bc4b7dcd6856e1442cba8a9ae963764c8b46a14d5163ccbe993069709d96783",
+   "text": "별도 청구: 치료 경과에 따라 처방되는 내복용 허브 약, 검사실 검사 및 전문 요법",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be522ad6722270504268",
+   "sourceHash": "be522ad67222705042688149ae9a10e2e576c449ab3b855a3540f04f4e8b3aaa",
+   "text": "별도 청구: 처방 식사 외의 추가 음식",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e25c95bbb942eae8d18",
+   "sourceHash": "9e25c95bbb942eae8d18af1f5dbec6aa80dd0d3ab28b0a75657a68ece8d0c5b8",
+   "text": "별도 청구: 세탁, 전화, 인터넷 및 교통",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18cc6719e923e7253875",
+   "sourceHash": "18cc6719e923e7253875e9a7d4cd1447ec692cefadfba334cdc966a0f874d3af",
+   "text": "별도 청구: 얼리 체크인 및 레이트 체크아웃(승인된 경우)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3e01260170ce8a25d35",
+   "sourceHash": "d3e01260170ce8a25d35f18e77d9df77b28f657ea69d5aa48ea329b0616584a8",
+   "text": "row-0 헤더에는 원본의 병합 범위가 반영되어 있습니다. \"Villa Type\"은 2개 행에 걸쳐 있고, 그 옆의 빈 원본 셀은 6개 행에 걸쳐 있으며, \"Minimum Duration is 7 Nights\"는 2개 열에 걸쳐 있습니다. 본문 행의 행 레이블 헤더는 해당 행에만 적용됩니다. 모든 관계는 원본에서 가져온 것이며, 추론한 것은 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Quoted source header labels kept in English as they reference the source table verbatim."
+   ]
+  },
+  {
+   "id": "t_a8cd5c7590726e666a96",
+   "sourceHash": "a8cd5c7590726e666a964de200c681a2b2a98cc0a755f3e59fe21b4d5481214f",
+   "text": "17개 셀(빈 병합 셀 포함) 전체, 원본 병합 범위, 인라인 강조, 링크 및 금액을 그대로 담은 여섯 행짜리 원본 표입니다. 새로 만든 셀이나 다시 쓴 금액은 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e97fb4a592ca5434f13",
+   "sourceHash": "5e97fb4a592ca5434f1332e6ec25b666063f0758ff9b6bbf422196d8f7f3f11b",
+   "text": "카테고리 탐색 닫기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_735b78e40cf502abc6f4",
+   "sourceHash": "735b78e40cf502abc6f4e8821d84ad3b938f02e0bf138cf377b2e87df112dcf7",
+   "text": "카테고리 탐색 열기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9178ac449d748ce1a55f",
+   "sourceHash": "9178ac449d748ce1a55f2ed5725a74e4364b95f9c9153c9f7eb55d83791649e6",
+   "text": "확인된 제출 영수증이 없습니다. 경로, 쿼리 또는 로컬 UI만으로 제출 성공을 추정하지 마십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b336308f1e0b1242bed",
+   "sourceHash": "1b336308f1e0b1242bed7aebc5f2dba9d226fdfec839abb26e7ae3e56e0b4d73",
+   "text": "웹사이트로 돌아가기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_71c6b3604f25dfa7794b",
+   "sourceHash": "71c6b3604f25dfa7794be4d739a413101a91f8928fb302b87a611cdfa02ca9f7",
+   "text": "이 페이지에서는 메시지나 예약이 제출되었는지 확인할 수 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0aac9145249f1675ee0",
+   "sourceHash": "a0aac9145249f1675ee0380260d152d217a7abe140e85aad3871ec30da1c319b",
+   "text": "홈으로 이동",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68808904c0631ffc302d",
+   "sourceHash": "68808904c0631ffc302d4d01c376d32ece9893c746618405b464b96b4f39f291",
+   "text": "감사 포스터: Kairali 정문 사진과 아래에 옮겨 적은 메시지",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9530ec4af40a31fb55aa",
+   "sourceHash": "9530ec4af40a31fb55aa8da6e0cbc27320453f7ccf86b5a8aef3f015b3bcdf6a",
+   "text": "landscape1024",
+   "status": "translated",
+   "unchangedReason": "Technical image-size identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_6750e23c415548c8ec41",
+   "sourceHash": "6750e23c415548c8ec4198a86058ea8e6caf07665ffc31d2bd2e32f2dc2052ca",
+   "text": "메시지가 접수되었습니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e8dddaa6db5edc2757a",
+   "sourceHash": "7e8dddaa6db5edc2757a3153308b8f8c18c4006799abcad9e7096421b5510507",
+   "text": "감사합니다 — 메시지가 전달되고 있습니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0813e6af50d762da6a86",
+   "sourceHash": "0813e6af50d762da6a86c0a300e95f63ca96388f39955d328f6677b9179a128e",
+   "text": "환자 케어팀 담당자가 업무 시간 내에 답변드립니다. 다음 절차는 아래와 같습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_df2f71819b5eefda42e1",
+   "sourceHash": "df2f71819b5eefda42e18610af86e7241993e2c91f25fb784671a19b5280500a",
+   "text": "전화 상담 · 매일 오전 8:00 – 오후 9:00 IST",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
