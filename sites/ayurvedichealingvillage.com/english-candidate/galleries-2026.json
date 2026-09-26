@@ -3378,7 +3378,7 @@
    "intro": "Programme life at the hospital: the welcome on admission, consultations, walks on the grounds, the kitchen garden and the dining hall.",
    "counts": {
     "before": 5,
-    "after": 31,
+    "after": 30,
     "chapters": 4,
     "videos": 1,
     "reusedFromSiblings": 0,
@@ -3962,24 +3962,6 @@
        "alreadyOnSite": false
       },
       {
-       "src": "/ahv/assets/img/gallery-2026/retreats/grounds-people-woman-rests-white-12.webp",
-       "src768": "/ahv/assets/img/gallery-2026/retreats/grounds-people-woman-rests-white-12-768.webp",
-       "width": 1066,
-       "height": 1600,
-       "width768": 511,
-       "height768": 768,
-       "alt": "A woman rests in a white rope hammock on the lawn with eyes closed; whitewashed palm trunks behind",
-       "caption": "A woman rests in a white rope hammock on the lawn with eyes closed; whitewashed palm trunks behind.",
-       "theme": "people",
-       "chapter": "grounds",
-       "sha256": "fb9572c10df07909bc2b8b152c7b16e0921d093d43b909c5a5952da8ea7ad0fb",
-       "libraryPath": "ahv-edited/kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-250.jpg",
-       "sourceWidth": 3648,
-       "sourceHeight": 5472,
-       "captionSource": "IMAGE_CATALOG.csv vision-pass description",
-       "alreadyOnSite": false
-      },
-      {
        "src": "/ahv/assets/img/gallery-2026/retreats/grounds-people-woman-reclining-white-13.webp",
        "src768": "/ahv/assets/img/gallery-2026/retreats/grounds-people-woman-reclining-white-13-768.webp",
        "width": 1066,
@@ -4000,7 +3982,8 @@
      ],
      "video": null
     }
-   ]
+   ],
+   "ef23": "26 Sep 2026: near-duplicate hammock frame (-12) removed; -13 kept (owner feedback EF-23)."
   },
   {
    "path": "/product-gallery/",

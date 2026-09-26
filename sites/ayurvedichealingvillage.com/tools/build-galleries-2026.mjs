@@ -388,7 +388,14 @@ const publicVideos = new Map(reg.video.youtube.publicVideos.map((v) => [v.id, v]
 const log = [];
 const toConfirm = [];
 
+// Near-duplicates of an image already selected (same scene, same moment; not a pixel duplicate, so the
+// sha256 refusal cannot see them). Owner feedback EF-23, 26 Sep 2026: the last two /retreats-gallery/ tiles
+// were two frames of the same hammock shot; the wider frame (-13) stays.
+const NEAR_DUPLICATES = new Set([
+  "fb9572c10df07909bc2b8b152c7b16e0921d093d43b909c5a5952da8ea7ad0fb", // grounds-people-woman-rests-white-12 ≈ grounds-people-woman-reclining-white-13
+]);
 function usable(c) {
+  if (NEAR_DUPLICATES.has(c.sha256)) return false;
   if (/TO CONFIRM/.test(c.caption + " " + c.alt)) return false;
   if (c.theme === "pool" && SWIMWEAR.test(c.caption)) return false;
   if (c.width < 1000) return false;
