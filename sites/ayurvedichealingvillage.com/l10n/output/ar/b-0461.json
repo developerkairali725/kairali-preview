@@ -1,0 +1,228 @@
+{
+ "batchId": "b-0461",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_edc01e2238fda90d659e",
+   "sourceHash": "edc01e2238fda90d659e32110236085d2fe0543013efcd8c57c8fb671df615d5",
+   "text": "لماذا تختارون VILLA RAAG",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6c9ad2dca7bdab973af8",
+   "sourceHash": "6c9ad2dca7bdab973af849744b548f1544c7cb3c85d5aadd4bad20be50e2d551",
+   "text": "أفضل فيلا فاخرة في غوا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: per the fleet rulebook the KTAHV lock does not apply to Villa Raag; 'luxury' kept. Flag if AHV lock must apply.",
+    "t_6c9ad2dca7bdab973af8 banned-term-from-source فاخرة"
+   ]
+  },
+  {
+   "id": "t_f5893f91f5798cebbfd7",
+   "sourceHash": "f5893f91f5798cebbfd7705e95f5dd0fe0db51d5718eda2c51416e569270a823",
+   "text": "ما يميّز Villa Raag بوصفها أفضل فيلا فاخرة في غوا:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_f5893f91f5798cebbfd7 banned-term-from-source فاخرة"
+   ]
+  },
+  {
+   "id": "t_17e53f319b2133665dbb",
+   "sourceHash": "17e53f319b2133665dbb9701edb956612a4e56c5c6a4ce30cffc63f853d3a181",
+   "text": "موقع لا مثيل له",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_123469745f54568ddccf",
+   "sourceHash": "123469745f54568ddccf1b7717edaad5fb78bddde2c4cdec0069887dca329255",
+   "text": ": تقع Villa Raag بالقرب من الشاطئ على سواحل أغوندا البِكر، بعيدًا عن الزحام وقريبًا من المعالم السياحية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_52b6dabf3bdfdbf01a96",
+   "sourceHash": "52b6dabf3bdfdbf01a9684d3d020ce2aad28d937ffb26382679901290f2df365",
+   "text": "موقع لا مثيل له: تقع Villa Raag بالقرب من الشاطئ على سواحل أغوندا البِكر، بعيدًا عن الزحام وقريبًا من المعالم السياحية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c62cf70b58ef7f415e0d",
+   "sourceHash": "c62cf70b58ef7f415e0d9109fa62261a91f61641487f186198b58343b71cd0fe",
+   "text": "خدمة شخصية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_994c4b9c189380862d82",
+   "sourceHash": "994c4b9c189380862d8217a2348c654b41a1d512398774bb295d9e63d738ad4d",
+   "text": ": فريق عمل مخصص ملتزم بتجاوز التوقعات وصنع تجارب لا تُنسى.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc209ca9f550fc825cb1",
+   "sourceHash": "cc209ca9f550fc825cb16a8bfbbd331c6a8911be894015b1089b267659200b97",
+   "text": "خدمة شخصية: فريق عمل مخصص ملتزم بتجاوز التوقعات وصنع تجارب لا تُنسى.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_815d7a736ad855cf7ca7",
+   "sourceHash": "815d7a736ad855cf7ca7ac2635810d47293b73ee3d4420a2776165db2c9f3847",
+   "text": "تصميم استثنائي",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a3fda91f07f26da4e0d3",
+   "sourceHash": "a3fda91f07f26da4e0d3c2772aaf3225f59ca574ebada609fc1119c1cfbcfddf",
+   "text": ": فخامة عصرية ممزوجة بسحر الساحل وطابع غوا الأصيل.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_a3fda91f07f26da4e0d3 banned-term-from-source فخامة"
+   ]
+  },
+  {
+   "id": "t_385f2d3eaf463b41427c",
+   "sourceHash": "385f2d3eaf463b41427cf6fe71dd6450e5bfac9e58143a11a441741e5fb49b6a",
+   "text": "تصميم استثنائي: فخامة عصرية ممزوجة بسحر الساحل وطابع غوا الأصيل.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_385f2d3eaf463b41427c banned-term-from-source فخامة"
+   ]
+  },
+  {
+   "id": "t_d929dd197b2109c2d7cb",
+   "sourceHash": "d929dd197b2109c2d7cbe46453f809463b0569a73303e3634a4bc032cea84d91",
+   "text": "الخصوصية والتميّز",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fce9206ecda7a660405",
+   "sourceHash": "7fce9206ecda7a66040567426755ff4c225d363db5d0d74ddaca7e8403fc2f2d",
+   "text": ": يضمن العدد المحدود من أماكن الإقامة إقامات هادئة وحميمة دون أي تنازل.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_362481f58346664b1e9f",
+   "sourceHash": "362481f58346664b1e9f8ebf947b122a83e6d05c560ef73eb3ebe00eb317333c",
+   "text": "الخصوصية والتميّز: يضمن العدد المحدود من أماكن الإقامة إقامات هادئة وحميمة دون أي تنازل.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_428d497a4e3287e5a6e8",
+   "sourceHash": "428d497a4e3287e5a6e807e432f5736ea035ad6bd48caaeb578fe8d161af65c0",
+   "text": "تجربة شمولية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff6dc1f7c65d727ccab7",
+   "sourceHash": "ff6dc1f7c65d727ccab7568a08a90bb29455c9c25fddd02073a04fbb38995466",
+   "text": ": نقدّم أكثر من مجرد مكان للإقامة، إذ نوفّر تحوّلًا من خلال الاسترخاء والتواصل والاكتشاف.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7466b3018eb250230fcf",
+   "sourceHash": "7466b3018eb250230fcfb925b7be9dd9d5af8af0e9d17698d91808d2b280263e",
+   "text": "تجربة شمولية: نقدّم أكثر من مجرد مكان للإقامة، إذ نوفّر تحوّلًا من خلال الاسترخاء والتواصل والاكتشاف.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_05cf744aa9a80f390bde",
+   "sourceHash": "05cf744aa9a80f390bde6697fecc2a464edc79bd49a3a0ad24f058ae867d338d",
+   "text": "فخامة مستدامة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_05cf744aa9a80f390bde banned-term-from-source فخامة"
+   ]
+  },
+  {
+   "id": "t_ae4124106dcdea816cc1",
+   "sourceHash": "ae4124106dcdea816cc1db9835cecc38354545211f75e72156581eb7fa1cd7f5",
+   "text": ": ملتزمون بالمسؤولية البيئية مع الحفاظ على أعلى معايير الراحة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fbb7d6c18341ff5e6b1",
+   "sourceHash": "7fbb7d6c18341ff5e6b1eb3de3f40ce365807d702113b4c84e8c31ebf1c571ae",
+   "text": "فخامة مستدامة: ملتزمون بالمسؤولية البيئية مع الحفاظ على أعلى معايير الراحة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_7fbb7d6c18341ff5e6b1 banned-term-from-source فخامة"
+   ]
+  },
+  {
+   "id": "t_6a25b2d955075b3fe899",
+   "sourceHash": "6a25b2d955075b3fe899cb9cdd847070ada76531683c1b935978842bf4b21c65",
+   "text": "ملاذكم في الجنّة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be5e90a29d6a6fcbd223",
+   "sourceHash": "be5e90a29d6a6fcbd223e218ccab4e89dc345887b3297be49007a634f5f1d86c",
+   "text": "عيشوا ذروة الإقامات الشاطئية في جنوب غوا في Villa Raag. وسواء كنتم تبحثون عن عزلة رومانسية، أو مغامرة عائلية، أو ملاذ هادئ، فإن ملاذكم الساحلي المثالي بانتظاركم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eafc8e0ae87725266dcc",
+   "sourceHash": "eafc8e0ae87725266dcc093bb50fae4dc4aab2846da7dae7c598a26e1f05752b",
+   "text": "احجزوا فيلتكم اليوم",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b4f7d3b52ee58189531d",
+   "sourceHash": "b4f7d3b52ee58189531d283e2438f9b228e516f809f483e13f818588c927c651",
+   "text": "تواصلوا مع فريق الحجوزات لدينا لبدء التخطيط لعطلتكم الاستثنائية في هذا الفندق الفاخر على شاطئ أغوندا. يضمن التوافر المحدود التميّز – احجزوا مبكرًا لتأمين التواريخ التي تفضّلونها.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' and 'escape' (rendered as عطلتكم, holiday) translated faithfully. Flag if AHV lock must apply.",
+    "t_b4f7d3b52ee58189531d banned-term-from-source الفاخر"
+   ]
+  }
+ ]
+}

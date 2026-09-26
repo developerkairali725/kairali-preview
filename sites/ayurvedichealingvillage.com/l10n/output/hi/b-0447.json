@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0447",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_f3ac943b6fd4002eb8e2",
+   "sourceHash": "f3ac943b6fd4002eb8e20bda81ae8dca9d2fb228f41aaaf4d505be64816f08d7",
+   "text": "इस रद्दीकरण श्रेणी में लागू लेन-देन शुल्क और कर काटे जाते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f8ee1f0716147254e98",
+   "sourceHash": "1f8ee1f0716147254e98d5440db4dd6fb1c8e86e250d9b7ebcc30cc911fc3768",
+   "text": "आगमन से 15 दिन से कम पहले या ठहराव के दौरान परिवर्तन",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_77ce078359b362e4ffa1",
+   "sourceHash": "77ce078359b362e4ffa1066e1c8ba45558aa98240cf6b724c442142512335ef0",
+   "text": "चेक-इन तिथि से 15 दिन से कम पहले किए गए रद्दीकरण रिफ़ंड के पात्र नहीं होंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_17cebd948e1b6057e850",
+   "sourceHash": "17cebd948e1b6057e850e9dca520de831a5b0f7393960880669a6dc6c60835e9",
+   "text": "चेक-इन तिथि से 15 दिन से कम पहले किए गए रद्दीकरण रिफ़ंड के पात्र",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: Hindi word order moves 'eligible for a refund' before the emphasised 'not' (नहीं); the following fragment is 'होंगे।'."
+   ]
+  },
+  {
+   "id": "t_254bb97b57f12e1608fe",
+   "sourceHash": "254bb97b57f12e1608fefc4517de768427b2fd6d2cffbbfcbc09f3c818198d5f",
+   "text": "नहीं",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a211e6b1d76924cc9ca3",
+   "sourceHash": "a211e6b1d76924cc9ca3b38da59049d92ada20b6c23b9fad5482b3418b3d2383",
+   "text": "होंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment completing '… रिफ़ंड के पात्र नहीं होंगे।' (Hindi word order)."
+   ]
+  },
+  {
+   "id": "t_144572440f079e9e0135",
+   "sourceHash": "144572440f079e9e01354e449a5393dfcdee05f67757d07c3e4adad1d33661c2",
+   "text": "ठहराव के दौरान बुकिंग तिथियों में किया गया कोई भी परिवर्तन भी रिफ़ंड का पात्र नहीं होगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_96e316d9df79038f465e",
+   "sourceHash": "96e316d9df79038f465ebb57b6003b8d71ffcac56a5f85cfdf826ef525f55e78",
+   "text": "ठहराव के दौरान बुकिंग तिथियों में किए गए कोई भी परिवर्तन भी रिफ़ंड के पात्र",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: composed with following 'नहीं' + 'होंगे।' (Hindi word order)."
+   ]
+  },
+  {
+   "id": "t_d8370dcabe7787036c7b",
+   "sourceHash": "d8370dcabe7787036c7b3236e4eda9c70e7956501d48194b0d5a54d06c6a9b3b",
+   "text": "चिकित्सीय आपातकाल या अन्य अप्रत्याशित परिस्थितियों में, दस्तावेज़ों और प्रबंधन की स्वीकृति के अधीन, अपवाद किए जा सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a9003e4f7ce5ee1ef23",
+   "sourceHash": "7a9003e4f7ce5ee1ef23e002f1f261c0bba9e8f5a8362d8d3cfa2461f3d81a5b",
+   "text": "नो-शो नीति",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_914ad98b5506ed4a2767",
+   "sourceHash": "914ad98b5506ed4a2767381e1cce1a670ea8a59d1b1d0470e44acb1f75c23762",
+   "text": "यदि कोई रोगी या आगंतुक पूर्व सूचना दिए बिना निर्धारित दिन पर चेक-इन नहीं करता है, तो बुकिंग को नो-शो माना जाएगा। ऐसे मामलों में कोई रिफ़ंड या पुनर्निर्धारण नहीं दिया जाएगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'रोगी या आगंतुक' (patient or visitor) per clinical register."
+   ]
+  },
+  {
+   "id": "t_595cb6af7e3d1a67a28d",
+   "sourceHash": "595cb6af7e3d1a67a28d1be936e1473205b732f02161471484339339d32c0799",
+   "text": "यदि कोई रोगी या आगंतुक पूर्व सूचना दिए बिना निर्धारित दिन पर चेक-इन नहीं करता है, तो बुकिंग को",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'रोगी या आगंतुक' per clinical register. Fragment: followed by 'no-show' (नो-शो) and then ' माना जाएगा। …'."
+   ]
+  },
+  {
+   "id": "t_9346b5b112a7fc0a0ab7",
+   "sourceHash": "9346b5b112a7fc0a0ab720fa4948dd4baed9dae1c5424809e0178adcf43cb839",
+   "text": " माना जाएगा। ऐसे मामलों में कोई रिफ़ंड या पुनर्निर्धारण नहीं दिया जाएगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: Hindi verb 'माना जाएगा' follows the emphasised 'no-show' term; leading space kept so it does not join the preceding word."
+   ]
+  },
+  {
+   "id": "t_d27329ec42596678bf64",
+   "sourceHash": "d27329ec42596678bf64abd4a01f8330ad73b293bbefc4c360aeff8d71ee784e",
+   "text": "समय से पहले प्रस्थान",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c623974059daa298a685",
+   "sourceHash": "c623974059daa298a6855bfe5ea610b6eb92c703368bddb9c50a3c4f734c63b9",
+   "text": "यदि रोगी या आगंतुक अपने नियोजित ठहराव से पहले प्रस्थान करना चुनते हैं, तो उनकी बुकिंग के अप्रयुक्त भाग के लिए रिफ़ंड नहीं दिया जाएगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'रोगी या आगंतुक' per clinical register."
+   ]
+  },
+  {
+   "id": "t_4d2fab8b70614dcb2759",
+   "sourceHash": "4d2fab8b70614dcb2759b749eeccf3daedd1b122ed0f2d7ec854e36c1295869f",
+   "text": "रिफ़ंड में लगने वाला समय",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ff974c72893314b8d13",
+   "sourceHash": "4ff974c72893314b8d133381dec15ba4894024498878b5b9c202a442d46dcfc9",
+   "text": "पात्र रद्दीकरणों के लिए, रिफ़ंड प्रक्रिया रद्दीकरण की पुष्टि की तिथि से 5-7 कार्य दिवसों के भीतर शुरू की जाएगी। रिफ़ंड ग्राहक के बैंक खाते में या बुकिंग के समय उपयोग किए गए मूल भुगतान माध्यम में जमा किया जाएगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e608ad0258206d2e0e2d",
+   "sourceHash": "e608ad0258206d2e0e2d920d9733a5d59eb3a63e3394c7916f919d4e601345c6",
+   "text": "पात्र रद्दीकरणों के लिए, रिफ़ंड प्रक्रिया रद्दीकरण की पुष्टि की तिथि से",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: 'from the date of cancellation confirmation' moved here for Hindi word order; composes with '5-7 कार्य दिवसों' + 'के भीतर शुरू की जाएगी। …'."
+   ]
+  },
+  {
+   "id": "t_86526366b291aa1f82a1",
+   "sourceHash": "86526366b291aa1f82a15a75c70a42be0f2929e2aaa54f4a6b7ae8b84ae2bdc0",
+   "text": "5-7 कार्य दिवसों",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f20a51326c835b7cf347",
+   "sourceHash": "f20a51326c835b7cf3476c072b54ad8f64386d68a2cc9f866ede5bd571c799ca",
+   "text": "के भीतर शुरू की जाएगी। रिफ़ंड ग्राहक के बैंक खाते में या बुकिंग के समय उपयोग किए गए मूल भुगतान माध्यम में जमा किया जाएगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: 'within … will be initiated' placed here for Hindi word order (the date phrase moved to the preceding fragment)."
+   ]
+  },
+  {
+   "id": "t_e6dfe4489be9f0848532",
+   "sourceHash": "e6dfe4489be9f08485328495379a170ab7d80be111c6cb022b834220a706e96e",
+   "text": "रिफ़ंड संसाधित हो जाने पर ग्राहकों को एक पुष्टि ईमेल प्राप्त होगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59460a75deba0f1a5080",
+   "sourceHash": "59460a75deba0f1a50809093da07880b0d5b2d6e6a1ea9a1596d89cababa4499",
+   "text": "देरी से बचने के लिए कृपया सही बैंक या भुगतान विवरण प्रदान करना सुनिश्चित करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcc266819c8215c080ad",
+   "sourceHash": "bcc266819c8215c080adf4db0d857ce544ff1c3bfc9670265f5f3a0da903273b",
+   "text": "अप्रत्याशित घटना (फ़ोर्स मेज्योर) खंड",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd9b132c5367fd3888c8",
+   "sourceHash": "fd9b132c5367fd3888c8a3cb980a077875b80f2345eedb929c0dda675495fa47",
+   "text": "हमारे नियंत्रण से बाहर की परिस्थितियों, जैसे प्राकृतिक आपदाओं, महामारियों, सरकार द्वारा लगाए गए यात्रा प्रतिबंधों या अन्य अप्रत्याशित (फ़ोर्स मेज्योर) घटनाओं की स्थिति में, Kairali – The Ayurvedic Healing Village निम्नलिखित का अधिकार सुरक्षित रखता है:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_fd9b132c5367fd3888c8 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_b5db43e48db71122fac8",
+   "sourceHash": "b5db43e48db71122fac8a09bdf2755630593f4caedc251275d2925537cbb558d",
+   "text": "बिना किसी अतिरिक्त शुल्क के बुकिंग को पारस्परिक रूप से सहमत तिथि पर पुनर्निर्धारित करना।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
