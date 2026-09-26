@@ -1,0 +1,127 @@
+{
+ "batchId": "b-0415",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_bfcb4f203ecc1e00ef83",
+   "sourceHash": "bfcb4f203ecc1e00ef83f1369621f7a02cc7da31b4ce234a8abc01ea61239ac9",
+   "text": "Il vecchio indirizzo .aspx attualmente reindirizza il nome host e poi restituisce un errore 404, per cui non esiste prova di continuità del reindirizzamento. Si tratta di un limite esplicito dell'identità della fonte e NON viene considerato un'autorizzazione a reindirizzare questo percorso.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_c563e219ed1fd7ee42c9",
+   "sourceHash": "c563e219ed1fd7ee42c9150b1f1ea372830a84f44037dfcbae0f4b1f370f776e",
+   "text": "Il gruppo Kairali Ayurvedic, emblema di uno stile di vita sano e del vivere bene, è stato fondato nel 1989 con l'obiettivo di diffondere i principi dell'Ayurveda in tutto il mondo. I suoi fondatori erano persone colte e affermate che credevano nel funzionamento dell'Ayurveda e ne riconoscevano sinceramente la capacità di guarire e purificare corpo e anima. Hanno trasmesso la loro vasta esperienza e conoscenza a quattro generazioni di medici, altrettanto impegnati a rendere di nuovo attuale l'Ayurveda. È grazie ai loro sforzi congiunti che il gruppo Kairali Ayurvedic ha raggiunto nuovi traguardi di successo e di beneficenza.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'fine living' rendered as 'vivere bene' to avoid luxury connotation per KTAHV register."
+   ]
+  },
+  {
+   "id": "t_af1d6b5b66d0f10a5a46",
+   "sourceHash": "af1d6b5b66d0f10a5a46b8e2964cd5dbbe4d1ae1e773849e87cefabbfddb08dc",
+   "text": "Uno dei suoi eventi distintivi è il Lakshya Yoga Retreat, una celebrazione di sette giorni dedicata all'Ayurveda, allo yoga e a uno stile di vita sano. Durante questo ritiro vengono presentate diverse discipline yogiche, che offrono ai partecipanti una serie di servizi e consulenze legati alla salute. Qui si ricorre a molte rinomate discipline dell'Ayurveda, come il Panchakarma, il che rende questo ritiro una meta da non perdere.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'benefactors' interpreted as 'beneficiaries/participants' (partecipanti); 'Panchkarma' spelled Panchakarma per clinical register."
+   ]
+  },
+  {
+   "id": "t_418d798d65f6a7fe58f3",
+   "sourceHash": "418d798d65f6a7fe58f3d26395b42bba6417234e10a2b98b741b539d2b487b0c",
+   "text": "Uno dei suoi eventi distintivi è il",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7db077ae90b55307b606",
+   "sourceHash": "7db077ae90b55307b606f7e4e2fe7d898b05a833e896bb214621700fb2374817",
+   "text": ", una celebrazione di sette giorni dedicata all'Ayurveda, allo yoga e a uno stile di vita sano. Durante questo ritiro vengono presentate diverse discipline yogiche, che offrono ai partecipanti una serie di servizi e consulenze legati alla salute. Qui si ricorre a molte rinomate discipline dell'Ayurveda, come il Panchakarma, il che rende questo ritiro una meta da non perdere.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the linked name 'Lakshya Yoga Retreat'; leading comma added for Italian apposition — remove if the renderer already inserts punctuation. 'benefactors' interpreted as 'participants'."
+   ]
+  },
+  {
+   "id": "t_bb02c0a7edfd889f3c41",
+   "sourceHash": "bb02c0a7edfd889f3c410fd150066d25617c27d0f952f739e8594e6a17b2f83e",
+   "text": "Questo villaggio di guarigione ayurvedico è l'emblema della serenità e di uno stile di vita positivo, dove le persone possono soggiornare senza disturbi o preoccupazioni esterne. Grazie alla sua tecnologia all'avanguardia unita all'antica generosità dell'Ayurveda, questo habitat naturale di tranquillità diventa il luogo ideale per staccare dalla vita frenetica.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered neutrally ('luogo ideale per staccare') to avoid holiday connotation."
+   ]
+  },
+  {
+   "id": "t_86e1de74820a9b252ba3",
+   "sourceHash": "86e1de74820a9b252ba33b2eed445b0cd02c445b5f4b8007205aff1762d7301a",
+   "text": "Questo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12a5beee4d1dc60cc34c",
+   "sourceHash": "12a5beee4d1dc60cc34cdaaaf5ba374bbbeea8ea2321f33034f0b82bd01a24b0",
+   "text": "villaggio di guarigione ayurvedico",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2bc30b2b6c3a974624f",
+   "sourceHash": "f2bc30b2b6c3a974624f4116d140b89c0163898a3130b2aa49d730084534947f",
+   "text": "è l'emblema della serenità e di uno stile di vita positivo, dove le persone possono soggiornare senza disturbi o preoccupazioni esterne. Grazie alla sua tecnologia all'avanguardia unita all'antica generosità dell'Ayurveda, questo habitat naturale di tranquillità diventa il luogo ideale per staccare dalla vita frenetica.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered neutrally to avoid holiday connotation."
+   ]
+  },
+  {
+   "id": "t_5d49740011763daddd6a",
+   "sourceHash": "5d49740011763daddd6a4fa2c38833ecb0af97bbd691127f70e81ac7c5aa6044",
+   "text": "Navigazione contestuale etichettata a partire dal record corrente, con le destinazioni originali esatte e i riferimenti alla fonte. Il titolo Knowledge Center è semplice testo della fonte e non viene trasformato in link.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_a84027ac4117c60b0cee",
+   "sourceHash": "a84027ac4117c60b0ceedeffa4839b17366b61b05009c161135104c93ebf62d6",
+   "text": "Il contesto di questo percorso è il titolo Knowledge Center della sua stessa fonte. L'etichetta generica \"Explore current programmes\" NON viene usata qui.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; quoted UI label kept in English as a reference identifier."
+   ]
+  },
+  {
+   "id": "t_25ee652fe24cc89e9090",
+   "sourceHash": "25ee652fe24cc89e9090b1ac7197ed2e08dc7cdc53f65b1227a289a14e71f800",
+   "text": "lk-cg-",
+   "status": "translated",
+   "unchangedReason": "Code/ID prefix used in concatenation, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_5dea34262e352874fc4d",
+   "sourceHash": "5dea34262e352874fc4d582963706a588a51f539c0d91badf39d68f0ab93b676",
+   "text": "Una settimana di riposo completo e rigenerazione. Ritrovi il contatto con il Suo io interiore attraverso lo yoga e la meditazione. Si prenda cura del Suo corpo con massaggi e terapie ayurvediche. E si nutra con gustosi piatti vegetariani!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

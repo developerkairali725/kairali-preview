@@ -1,0 +1,224 @@
+{
+ "batchId": "b-0449",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_1583dcd15621499f7732",
+   "sourceHash": "1583dcd15621499f7732ef6aba190891eb7ae9f6dc3ae8e9f0ccba9f4dc0aa89",
+   "text": "如有 Cookie 或隐私方面的问题，请发送电子邮件至 info@kairali.com。有关医疗报告、数据保留期限及您的权利，请参阅 /privacy-policy/。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_487e34eabb2a1ee1d7c9",
+   "sourceHash": "487e34eabb2a1ee1d7c96485db197d7b781580b9c0387d9347f8314c7584978f",
+   "text": "免责声明 | Kairali – 阿育吠陀疗愈村 | 印度喀拉拉邦阿育吠陀中心",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "SEO title condensed to ≤60 characters; the repeated keyword phrases ('Wellness Centre India', 'Ayurvedic Healing Village') were merged rather than translated one by one."
+   ]
+  },
+  {
+   "id": "t_93e115a1ea0ec7fd5364",
+   "sourceHash": "93e115a1ea0ec7fd5364af9fe4857a48261084730fb13db7948e444de65d849d",
+   "text": "Kairali Ayurvedic Group 为其位于印度喀拉拉邦的阿育吠陀中心——阿育吠陀疗愈村的用户提供完整的隐私政策；该中心是印度领先的健康中心之一。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source description refers to a 'privacy policy' although this route is the Disclaimer page; translated faithfully — owner may wish to correct the English source. 'customers' rendered as 用户 (users)."
+   ]
+  },
+  {
+   "id": "t_dfca6f7cba938ecde8d3",
+   "sourceHash": "dfca6f7cba938ecde8d3c2b571bd0c1846de16f6e25e156655790391091712fc",
+   "text": "医疗信息与网站信息",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2754137ae15d03c9048",
+   "sourceHash": "d2754137ae15d03c90481f907dd2f6fdf7d3abb729a29cd2d50c8ca5fc385d3e",
+   "text": "网站内容仅提供有关阿育吠陀及医院服务的一般信息，不能诊断您的病情，也不能替代个人问诊。合格的医生会评估您是否适合接受治疗，并与您讨论拟定的治疗方案、预期益处、风险及替代方案。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1222eff780f5a550d288",
+   "sourceHash": "1222eff780f5a550d288956e98d25798ed08e945ba5b8aaa332df43b05b1ad8f",
+   "text": "药物与疗效",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1bc33ecd996c047ccf43",
+   "sourceHash": "1bc33ecd996c047ccf4366a290f7b261b92e2245a842748bcafb2e5d35452399",
+   "text": "未经主治医生指导，请勿停用或更改处方药物。请告知相关诊断、正在使用的药物及过敏情况。个人效果因人而异；不保证任何特定的改善或治愈。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'cure' appears in a negated disclaimer ('no … cure is guaranteed'); rendered literally as 治愈 to preserve the disclaimer's meaning — it does not make a cure claim.",
+    "t_1bc33ecd996c047ccf43 banned-term-from-source 治愈"
+   ]
+  },
+  {
+   "id": "t_bafc731eb301eda0edce",
+   "sourceHash": "bafc731eb301eda0edce625a2261e02b972c4c6928bc6b3a3278648c004edad2",
+   "text": "获取建议",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81c6bd2a4086ec731965",
+   "sourceHash": "81c6bd2a4086ec731965d3412ce29084b06831719df2e447052352ddc8d04bb9",
+   "text": "您可以与 Priya 或销售团队沟通，提交资料供医生审阅，或申请免费的视频、电话或电子邮件咨询。提交后，协调员会为您安排咨询。Priya 的自动回复不构成医疗诊断。如有紧急医疗需求，请联系当地急救服务，不要等待网站回复。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08440e966836527e8f38",
+   "sourceHash": "08440e966836527e8f38135621ce658a5a9dd031396b6d1af5d72fe6dccd9f15",
+   "text": "您的权利",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f434db63fa79978de31a",
+   "sourceHash": "f434db63fa79978de31a1402a374d04862b2db9ad74129e03560bc83def326e3",
+   "text": "本声明不排除对过失、欺诈的责任，也不排除任何依法不得排除的责任或患者/消费者权利。网站信息可能会有变更，但变更不会自动改变已约定的入院条款或法定权利。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81445fa35acfd6455fcc",
+   "sourceHash": "81445fa35acfd6455fcc7fe9eee9d401119dab5d9310fe02da52433dda79f831",
+   "text": "外部链接与联系方式",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_60a61b60ac3f63d5036b",
+   "sourceHash": "60a61b60ac3f63d5036b65ab066e5f6d0c945f8a44f0caa6f7d01fb05eb9698c",
+   "text": "外部服务适用其自身条款。请向团队咨询与您相关的服务可用性及安排。联系方式：info@kairali.com 或 +91 9555 156 156。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32dde54fa89f417adf8c",
+   "sourceHash": "32dde54fa89f417adf8c368543e3af6afc786ae39035e880c8c118fb782e0d10",
+   "text": "法律声明 / Impressum",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "German legal term 'Impressum' kept verbatim as a recognised label."
+   ]
+  },
+  {
+   "id": "t_3e93314444a3853f9355",
+   "sourceHash": "3e93314444a3853f9355dc6890fa024a357fcf2f0373796427654239515b4315",
+   "text": "法律声明 | Kairali – 阿育吠陀疗愈村",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b26ec3e0f3e2d1e3bc67",
+   "sourceHash": "b26ec3e0f3e2d1e3bc6773f71cff664ef890ff9dbefecb7cb549698a7865147f",
+   "text": "查阅 Kairali 阿育吠陀疗愈村网站的使用条款，包括法律免责声明、健康信息及知识产权。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_058d2182bd01da2dea7d",
+   "sourceHash": "058d2182bd01da2dea7d302ebee141bafb99d18df9325ae9ddcc0b618e0df507",
+   "text": "法律声明",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fa9ae18afae39d341772",
+   "sourceHash": "fa9ae18afae39d341772807c6583d38b81831e812522b09a8bec270e3081c816",
+   "text": "来源横幅图片 — 由政策阅读器横幅位呈现",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal build/editorial note rather than patient-facing copy; translated, but owner may want it excluded from display."
+   ]
+  },
+  {
+   "id": "t_7c6be5ed8571bd35b5f2",
+   "sourceHash": "7c6be5ed8571bd35b5f23701f8340aa70d9ebfd1d777d08f03f994d1642c772f",
+   "text": "来源规则",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal build/editorial label rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_4344f9c24d1a2c438cfb",
+   "sourceHash": "4344f9c24d1a2c438cfbb1fd239d66cccda951a6c5d6a7784381b7f696dbaece",
+   "text": "来自本路由自身抓取内容的 Cloudflare 电子邮件保护令牌，已按原样解码；未编造任何联系方式。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal build/provenance note rather than patient-facing copy; translated, but owner may want it excluded from display."
+   ]
+  },
+  {
+   "id": "t_92c1b5a71a651609e4fd",
+   "sourceHash": "92c1b5a71a651609e4fdb07a593d7f7c75aa0279b88bd6ed6230bff75cdfdbce",
+   "text": "运营方与联系方式",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9463d97163fa0b678dbb",
+   "sourceHash": "9463d97163fa0b678dbb58cb3f8f1ee72fbd6fc93d3026954565ddde6c9107a1",
+   "text": "Kairali – 阿育吠陀疗愈村。运营方：Kairali Ayurvedic Health Resort Pvt. Ltd.。医院地址：III/73 Palayamkadu, P.O. Olassery, Kodumbu, Palakkad District – 678551, Kerala, India。电子邮件：info@kairali.com；电话：+91 9555 156 156。更新于2026年9月25日。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Registered company name 'Kairali Ayurvedic Health Resort Pvt. Ltd.' contains 'Resort' but is a legal proper name, kept verbatim. Postal address kept in Latin script."
+   ]
+  },
+  {
+   "id": "t_1fa88fce51de06f95b36",
+   "sourceHash": "1fa88fce51de06f95b36820e64545dbd95e5f1aa05a51585211255a4d738c552",
+   "text": "医院与网站",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f3c0e47c5f8ee0fa071",
+   "sourceHash": "7f3c0e47c5f8ee0fa071d4194e8d31b1f6396eb017b5ba953796594501813401",
+   "text": "本医院在印度提供由医生主导的阿育吠陀诊疗。已公布的认证信息请参阅 /accreditations/。网站信息不能替代个人医学评估。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_301289a136d45330fc4e",
+   "sourceHash": "301289a136d45330fc4efc048d250c1ff82fec8c4d076c5a347d67a7ad5473c1",
+   "text": "国际访客",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
