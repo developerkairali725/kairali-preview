@@ -35,7 +35,7 @@ function isDuplicate(error: unknown): boolean {
   return e?.code === 'ER_DUP_ENTRY' || e?.errno === 1062;
 }
 
-export type StoredSignup = { alreadySubscribed: boolean };
+export type StoredSignup = { alreadySubscribed: boolean; submitTime: Date };
 
 export async function saveNewsletterSignup(
   signup: NewsletterSignup,
@@ -44,32 +44,42 @@ export async function saveNewsletterSignup(
   const connection = await pool().getConnection();
   try {
     const unsubscribeToken = `ns_${randomBytes(16).toString('base64url')}`;
+    const submitTime = new Date();
     try {
       await connection.execute(
         `INSERT INTO \`newsletter\`
            (site, email, consent, consent_version, consent_at, source_path,
             utm_source, utm_medium, utm_campaign, utm_content, lead_source_url,
-            referrer, status, confirmed_at, unsubscribe_token, submit_ip, submission_token)
-         VALUES (?,?,?,?,NOW(),?,?,?,?,?,?,?, 'subscribed', NOW(), ?, ?, ?)`,
+            referrer, status, confirmed_at, unsubscribe_token, submit_ip, submission_token, submit_time)
+         VALUES (?,?,?,?,NOW(),?,?,?,?,?,?,?, 'subscribed', NOW(), ?, ?, ?, ?)`,
         [
           signup.site, signup.email, signup.consent ? 1 : 0, signup.consentVersion, signup.sourcePath,
           signup.utmSource, signup.utmMedium, signup.utmCampaign, signup.utmContent, signup.leadSourceUrl,
-          signup.referrer, unsubscribeToken, signup.submitIp, submissionToken,
+          signup.referrer, unsubscribeToken, signup.submitIp, submissionToken, submitTime,
         ],
       );
-      return { alreadySubscribed: false };
+      return { alreadySubscribed: false, submitTime };
     } catch (error) {
       if (!isDuplicate(error)) throw error;
       // Same fill retried, or this email already subscribed. Either way the
       // visitor should see success, not an error.
       const [rows] = await connection.query<RowDataPacket[]>(
-        'SELECT id FROM `newsletter` WHERE email = ? OR submission_token = ? LIMIT 1',
+        'SELECT id, submit_time FROM `newsletter` WHERE email = ? OR submission_token = ? LIMIT 1',
         [signup.email, submissionToken],
       );
       if (!rows[0]) throw error;
-      return { alreadySubscribed: true };
+      return { alreadySubscribed: true, submitTime: new Date(rows[0].submit_time as string) };
     }
   } finally {
     connection.release();
   }
+}
+
+/** Best effort: the row is already committed, so a failure to set this flag
+ * must not turn a saved signup into an error for the visitor. A row left at 0
+ * is a candidate for a later manual/replay send to the Sheet. */
+export async function markNewsletterSheetDelivered(email: string): Promise<void> {
+  try {
+    await pool().execute('UPDATE `newsletter` SET sheet_delivered = 1 WHERE email = ?', [email]);
+  } catch { /* the subscription is safe; the flag is only an operational convenience */ }
 }

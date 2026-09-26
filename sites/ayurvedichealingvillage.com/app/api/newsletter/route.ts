@@ -6,7 +6,8 @@
  * must never activate an unconfigured newsletter.
  */
 import { databaseConfigured } from '../../../lib/db.ts';
-import { saveNewsletterSignup } from '../../../lib/newsletter-store.ts';
+import { saveNewsletterSignup, markNewsletterSheetDelivered } from '../../../lib/newsletter-store.ts';
+import { deliverToSheet, newsletterSheetRow, newsletterSheetUrl } from '../../../lib/newsletter-sheet-bridge.ts';
 
 export const runtime = 'nodejs';
 
@@ -34,7 +35,12 @@ const text = (v: unknown, limit: number) => (typeof v === 'string' ? v.trim().sl
 export async function POST(request: Request): Promise<Response> {
   // Config check happens BEFORE the body is ever read — an unconfigured
   // deployment must never inspect, let alone store, what a visitor typed.
-  if (!databaseConfigured()) return unavailable(request);
+  // The database is written first and is the source of record; success also
+  // needs the Sheet's explicit acknowledgement (mirrors the fleet's own
+  // enquiry-Sheet contract), so both must be configured before this route
+  // accepts anything at all.
+  const sheet = newsletterSheetUrl();
+  if (!databaseConfigured() || !sheet) return unavailable(request);
 
   if (!(request.headers.get('content-type') || '').includes('application/json')) return unavailable(request);
 
@@ -52,15 +58,19 @@ export async function POST(request: Request): Promise<Response> {
   if (!submissionToken) return Response.json({ ok: false, code: 'INVALID_SUBMISSION' }, { status: 400, headers });
 
   const submitIp = (request.headers.get('x-forwarded-for') || '').split(',')[0].trim().slice(0, 45);
+  const sourcePath = text(body.sourcePath, 500);
+  const pageUrl = text(body.lead_source_url, 500) || sourcePath;
 
+  const UNCONFIRMED = { ok: false, code: 'STORE_FAILED', error: 'We could not confirm your signup. Please try again, or email info@kairali.com.' };
+  let submitTime: Date;
   try {
-    await saveNewsletterSignup(
+    const stored = await saveNewsletterSignup(
       {
         site: 'ayurvedichealingvillage.com',
         email,
         consent: true,
         consentVersion: text(body.consentVersion, 50),
-        sourcePath: text(body.sourcePath, 500),
+        sourcePath,
         utmSource: text(body.utm_source, 190),
         utmMedium: text(body.utm_medium, 190),
         utmCampaign: text(body.utm_campaign, 190),
@@ -71,13 +81,20 @@ export async function POST(request: Request): Promise<Response> {
       },
       submissionToken,
     );
+    submitTime = stored.submitTime;
   } catch {
     // No driver error, no submitted text, ever surfaces to the browser or a log.
-    return Response.json(
-      { ok: false, code: 'STORE_FAILED', error: 'We could not confirm your signup. Please try again, or email info@kairali.com.' },
-      { status: 502, headers },
-    );
+    return Response.json(UNCONFIRMED, { status: 502, headers });
   }
+
+  // The row is already safely committed at this point. A Sheet outage is
+  // reported to the visitor as unconfirmed (matching the fleet's own enquiry
+  // contract), but nothing typed is lost: the row stays at sheet_delivered = 0
+  // for a later manual/replay send, and a resubmit is recognised by email/
+  // submissionToken rather than becoming a second row.
+  const delivered = await deliverToSheet(sheet, newsletterSheetRow(email, submitTime.toISOString(), pageUrl));
+  if (!delivered) return Response.json(UNCONFIRMED, { status: 502, headers });
+  await markNewsletterSheetDelivered(email);
 
   return Response.json({ ok: true, status: 'subscribed' }, { status: 200, headers });
 }
