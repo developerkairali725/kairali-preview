@@ -442,7 +442,7 @@ const INTERNAL_PROSE = /\b(governed|verbatim|packet|pointer|oracle|adjudicat\w*|
 const HASHLIKE = /^(?:[0-9a-f]{16,}|[A-Za-z0-9_-]{11}|\d{4}-\d\d-\d\d(?:T[\d:.]+(?:Z|[+-]\d\d:\d\d)?)?|T[\d:.]+Z?|-?[\d.]+(px|rem|em|%|vh|vw|s|ms|fr)?|[A-Z][A-Z0-9_]{3,}|en[_-]US)$/;
 export function isInternalDatum(keyPath, value) {
   const key = keyPath.split(".").pop() || "";
-  if (INTERNAL_KEYS.has(key) || /Sha256$|Note$|Notes$|Rationale$|Provenance$|Evidence$|Policy$|Acceptance$|Instructions$|Private$|^ef\d{2}$/.test(key)) return true; // efNN = owner-feedback provenance notes (26 Sep 2026), never rendered
+  if (INTERNAL_KEYS.has(key) || /Sha256$|Note$|Notes$|Rationale$|Provenance$|Evidence$|Policy$|Acceptance$|Instructions$|Private$|^ef\d{2}$|^externalImages$/.test(key)) return true; // efNN = owner-feedback provenance notes (26 Sep 2026), never rendered
   const t = value.trim();
   if (HASHLIKE.test(t) && !/\s/.test(t) && !/^[A-Z][a-z]+$/.test(t)) return true;
   if (/^(wp-|has-|is-|eb-|wpcf7)/.test(t)) return true;
