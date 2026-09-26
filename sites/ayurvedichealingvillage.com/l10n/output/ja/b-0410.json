@@ -1,0 +1,221 @@
+{
+ "batchId": "b-0410",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_27c9920caf5deb2f5dda",
+   "sourceHash": "27c9920caf5deb2f5dda19759ab19632e9c9be3b9cc4abf3c41d10c87517b7ef",
+   "text": "栄養豊かなオーガニックの食事の食材は、70%がヒーリング・ヴィレッジ内のオーガニック農園で採れたもので、残りは地元で調達しています。食事は一人ひとりの体質に合わせて調理し、施設内の医師が作成した適切な食事プランに沿って提供します。アーユルヴェーダ料理教室のワークショップも開催しており、リトリート後もご自宅で健康的なレシピを作っていただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2352265e3c825b3a7f83",
+   "sourceHash": "2352265e3c825b3a7f83908c24154c7d12982900083e7927e6882338761236ae",
+   "text": "リトリートのテーマに沿って、医師とヨガ・インストラクターがさまざまなアーユルヴェーダ治療を提供しますが、これは必ずお体の詳しい評価を行ったうえでのみ実施します。アーユルヴェーダ料理教室に加え、ヨガ哲学、日常生活におけるヨガの意義、個別の相談とアドバイス、特定の不調への対処、村の散策などのワークショップも行います。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51ace53b27903edcd83d",
+   "sourceHash": "51ace53b27903edcd83df215c0379744e666ff1444311e42f6daf432930859c9",
+   "text": "このヨガ・リトリートは、ストレス管理、癒し、健康的なライフスタイルに焦点を当てています。9月に予定されているこのリトリートは、心と体のバランスを整えるお手伝いをすることを目的としています。デンマーク出身の経験豊富なヨギー、PravとSimonaが、6日間にわたりストレスに関するさまざまなお悩みをサポートし、続く8日間はプラーナーヤーマと瞑想による癒しを行います。心・体・魂のための活力回復がひとまとまりになったプログラムです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31e0e24a64ca4d811ca1",
+   "sourceHash": "31e0e24a64ca4d811ca1c576ccc45c0f8d37ffb744e4bef01a30deed59b32eac",
+   "text": "ストレス管理と健康的なライフスタイルのためのアーユルヴェーダとヨガ（2017年9月17日～22日）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source has an unmatched closing parenthesis; rendered with a matched pair."
+   ]
+  },
+  {
+   "id": "t_16924468da40f5de1e59",
+   "sourceHash": "16924468da40f5de1e59ccba5e7cafa6566f6bbd14c3bead8b51c5c180cfd4e4",
+   "text": "ストレス管理と健康的なライフスタイルのためのアーユルヴェーダとヨガ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2f6b8bc882b1d7288bb0",
+   "sourceHash": "2f6b8bc882b1d7288bb0f71cff0a49849f5eb30bd5e46a4373a8cb6ef141bf28",
+   "text": "2017年9月17日～22日）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; the unmatched closing parenthesis from the source is kept."
+   ]
+  },
+  {
+   "id": "t_a39bec7c3dc2c0bae76c",
+   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
+   "text": "sup",
+   "status": "translated",
+   "unchangedReason": "Appears to be an HTML tag name (superscript) leaked into the string; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_051603900bc7a27051b3",
+   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
+   "text": "nd",
+   "status": "translated",
+   "unchangedReason": "English ordinal suffix fragment (as in 22nd); Japanese dates carry no ordinal suffix, so left as-is to avoid breaking the assembled string.",
+   "issues": [
+    "If this fragment is rendered next to a Japanese date it should probably be emptied; needs a developer check."
+   ]
+  },
+  {
+   "id": "t_8fad80e805f85badb4de",
+   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
+   "text": "9月、2017年）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment of a split date; Japanese date order differs, so the assembled string may read awkwardly — developer check advised."
+   ]
+  },
+  {
+   "id": "t_ab103f014c27209d3d55",
+   "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
+   "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
+   "status": "translated",
+   "unchangedReason": "Internal DOM-position locator (js:enum), not visitor-facing text; translating it could break the lookup.",
+   "issues": []
+  },
+  {
+   "id": "t_ac9718a46bbebd222638",
+   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
+   "text": "このリトリートは、ストレスの少ない、より健康的なライフスタイルを取り入れたい方に最適です。精神的なストレスは神経系に直接影響し、さまざまな健康上の問題につながります。ケーララの穏やかなアーユルヴェーダ・ヴィレッジで、美しい木々と薬草に囲まれながらヨガとアーユルヴェーダという古来の科学を取り入れることは、心身の回復を支える助けとなるでしょう。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'would help you heal in no time' is an efficacy/speed claim; softened to 'can help support recovery of mind and body' per the no-strengthening rule."
+   ]
+  },
+  {
+   "id": "t_7f59fa15d55c4dd5e23a",
+   "sourceHash": "7f59fa15d55c4dd5e23ac4b1bd41991594379886ef459f7040e08480e4d63005",
+   "text": "ヨガ入門。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_420f4245c9221dcf21d0",
+   "sourceHash": "420f4245c9221dcf21d0ddfa6748c2aad0f5ab8034221bbb82cf15423af46390",
+   "text": "マインドフルネスとヨガのアーサナの実践。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9041d98e029f4f0a32d7",
+   "sourceHash": "9041d98e029f4f0a32d7d0f5da99c1f27fcedbf8e9a5020623b8276b291f27da",
+   "text": "ヨガと動き。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ef1d242b1aea31ec34bf",
+   "sourceHash": "ef1d242b1aea31ec34bf8e92450885c4ec774b80c71148e68d751fb172340d4a",
+   "text": "心・体・魂のホリスティックな癒し。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87cbd462ba7163ab8527",
+   "sourceHash": "87cbd462ba7163ab852775bbd95c243b74461328562e05855d7b82f1edd5eba6",
+   "text": "正しいテクニックの実践。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_498b48500e69dd58bfc1",
+   "sourceHash": "498b48500e69dd58bfc1f7bbce60ac4b67180a021641931c9851cae5bf9859c2",
+   "text": "姿勢クリニック。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a9bdf1000b526e51d501",
+   "sourceHash": "a9bdf1000b526e51d501540e6ff1932eae8db62db5f87bdf03f785c59b49050e",
+   "text": "けがへの対処と安全上の注意。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48c472cf8e97478ffb79",
+   "sourceHash": "48c472cf8e97478ffb79a320467106cf162fd882919187ce9d700de6aa813d9a",
+   "text": "「癒しのためのアーユルヴェーダとヨガ」：2017年9月23日～30日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source has a stray closing quotation mark; normalised."
+   ]
+  },
+  {
+   "id": "t_9e7088665cd328fcd260",
+   "sourceHash": "9e7088665cd328fcd2600154744c30d009cdff462cdf45b87e0d67a9fa7929be",
+   "text": "リトリートのこのパートでは、体の癒しを扱います。内容は前半のリトリートを補うものです。さまざまなプラーナーヤーマと瞑想について説明し、実践します。心と体のバランスがこのリトリートの最終的な目標です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38bc6a14ae310b07d9bc",
+   "sourceHash": "38bc6a14ae310b07d9bce110c177fa1b9b76260c23dde4483dc3e4a2cebc4db7",
+   "text": "施設について",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'The Resort' (banned word) rendered as 'About the facility'."
+   ]
+  },
+  {
+   "id": "t_98523321bac2b9709090",
+   "sourceHash": "98523321bac2b97090907d6d17caf2ac1461141614ad88ee33f5f8433b165eeb",
+   "text": "プラーナーヤーマとムドラーの入門。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1cd3e9993fc2c62c1ff0",
+   "sourceHash": "1cd3e9993fc2c62c1ff0f420371973a6721ae5d0a76aa6574d1e8f9e22358996",
+   "text": "自然な健康法の入門。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6bcd01b32127c95ff50e",
+   "sourceHash": "6bcd01b32127c95ff50e3e63966f869bab45b24a0ae42914bed01c9bb6feb6f8",
+   "text": "ヴェーダ体系の入門。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b4adcbc1eb1c08d18e1b",
+   "sourceHash": "b4adcbc1eb1c08d18e1b043355faaa144f484c65230304b74791df3c74cf428f",
+   "text": "ヨガと健康の科学。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -75,7 +75,8 @@ export function numberDiff(src, t, locale) {
   const missing = [];
   for (const d of want) { const i = got.indexOf(d); if (i >= 0) got.splice(i, 1); else missing.push(d); }
   // 12-hour → 24-hour
-  if (/\b\d{1,2}(?::\d\d|\.\d\d)?\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) {
+  // (?<!\d) not \b: captured sources glue words to times ("Yoga8am")
+  if (/(?<!\d)\d{1,2}(?::\d\d|\.\d\d)?\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) {
     for (let k = missing.length - 1; k >= 0; k--) {
       const n = +missing[k]; if (n < 1 || n > 12) continue;
       const alt = String(n === 12 ? 0 : n + 12);
@@ -91,8 +92,10 @@ export function numberDiff(src, t, locale) {
   // English number words written as digits (three day → 3日, level one → Niveau 1)
   NUMBER_WORDS.forEach((w, n) => { if (w) allow(n, count(new RegExp("\\b" + w + "\\b", "g"))); });
   allow(1, count(/\b(single|once)\b/g)); allow(2, count(/\b(twice|double)\b/g));
+  // "threefold" → 3 (…fold words, each bound to the word in the source)
+  NUMBER_WORDS.forEach((w, n) => { if (w && n > 1) allow(n, count(new RegExp("\\b" + w + "fold\\b", "g"))); });
   // 24-hour times written with minutes (10 PM → 22:00): the ":00" adds no fact
-  if (/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) allow(0, count(/\b\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/gi));
+  if (/(?<!\d)\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/i.test(src)) allow(0, count(/(?<!\d)\d{1,2}\s*(a\.?m\.?|p\.?m\.?)(?![a-z])/gi));
   // English quantity words written as numerals (reviewed; each requires the word in the source):
   //   ordinals (second-largest → 2番目), "N decades" (two decades → 20年), "a decade" (→ 10),
   //   "a/an/one <unit>" (a week → 1週間, a century → 1世紀 / 100年, one of → 一つ… as 1)
@@ -107,9 +110,9 @@ export function numberDiff(src, t, locale) {
     // millions in 万 units: 1.4M → 140万 (numerically identical)
     for (const m of src.matchAll(/(\d+(?:\.\d+)?)\s*(?:M\b|million\b)/gi)) { const v = Math.round(parseFloat(m[1]) * 100); allow(String(v).replace(/^0+(?=\d)/, "")); const k = missingIndex(m[1]); if (k >= 0) missing.splice(k, 1); }
     // month names/abbreviations → month numbers in CJK/Korean date formats
-    MONTHS.forEach((name, i) => allow(i + 1, count(new RegExp("\\b(" + name + "|" + name.slice(0, 3) + ")\\b", "g"))));
+    MONTHS.forEach((name, i) => allow(i + 1, count(new RegExp("\\b(" + name + "|" + name.slice(0, 3) + (i === 8 ? "t?" : "") + ")\\b", "g"))));
     // counters: per night / per day / daily → 1泊, 1日, 每晚 1 …
-    allow(1, count(/\b(per|a|each|every)\s+(night|day|person|session)\b|\bdaily\b|\bnightly\b/g));
+    allow(1, count(/\b(per|a|each|every)\s+(night|day|person|session)\b|\bdaily\b|\bnightly\b|\bpp\b/g)); // pp = per person
   }
   // repeating a number the source already states adds no new fact (24-hour → 24 h/24)
   const srcSet = new Set(want);

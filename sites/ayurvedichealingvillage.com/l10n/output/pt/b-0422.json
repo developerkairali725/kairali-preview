@@ -1,0 +1,222 @@
+{
+ "batchId": "b-0422",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_e77877ebca17bd29469a",
+   "sourceHash": "e77877ebca17bd29469a255dcdbef31e3971b82a0e13a481903517de49d27448",
+   "text": "Global Spa",
+   "status": "translated",
+   "unchangedReason": "Proper name of a partner organisation/publication; kept verbatim.",
+   "issues": [
+    "Contains 'Spa' but is a proper name; kept verbatim per rules.",
+    "t_e77877ebca17bd29469a banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_5885ef7f910c5dcab7b2",
+   "sourceHash": "5885ef7f910c5dcab7b24a8024d4382b03a43b8f3a62809f2efabbcb12704a91",
+   "text": "Logotipo da Spafinder Wellness 365",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand name 'Spafinder Wellness 365' kept verbatim (proper name)."
+   ]
+  },
+  {
+   "id": "t_cf480154ca5eea569a7d",
+   "sourceHash": "cf480154ca5eea569a7d4772cf5ea24b9d6783f78faee72e3d4f69be76146234",
+   "text": "Spafinder Wellness 365",
+   "status": "translated",
+   "unchangedReason": "Brand/proper name of partner; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_37ca87f49ad872b78c65",
+   "sourceHash": "37ca87f49ad872b78c65e1c69cb0cc8c6771738b693c4b2e2cd9d280ad63c14a",
+   "text": "Logotipo da PATA New York Chapter — Pacific Asia Travel Association",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ef320f64881bbf46594",
+   "sourceHash": "4ef320f64881bbf465944d079f8a7123911ef8c1a9431d1728053ef5df669101",
+   "text": "PATA New York Chapter — Pacific Asia Travel Association",
+   "status": "translated",
+   "unchangedReason": "Proper name of an organisation; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_96485abcb6721ebe4bf5",
+   "sourceHash": "96485abcb6721ebe4bf572c89357ab84ced0a346ef7ab2296a94b5509d9b01bd",
+   "text": "image/png",
+   "status": "translated",
+   "unchangedReason": "MIME type; technical, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_eae9ee92d18019a37830",
+   "sourceHash": "eae9ee92d18019a378300ac0acb774f5353ca19757cce1af3b05df16cb237262",
+   "text": " e retorno estável do investimento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment continuing a list; leading comma dropped because Portuguese uses 'e' without a serial comma — check joining context if the comma is required."
+   ]
+  },
+  {
+   "id": "t_7939cb5e3ca5f5a6338f",
+   "sourceHash": "7939cb5e3ca5f5a6338f94bd58f023a31c847df9633b98d4001f68df6f1e0e6c",
+   "text": "experiência de liderança e marca reconhecida",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5724dddee475417da3fa",
+   "sourceHash": "5724dddee475417da3fafdff95c3ecc2ee3f67cda41fb0dd3fda8d1793d394ed",
+   "text": "Desfrute de uma estadia tranquila, rodeada pela natureza, nas nossas villas sustentáveis do Kairali – The Ayurvedic Healing Village, em Palakkad, Kerala. Cada villa foi concebida segundo os princípios do Vastu e construída para favorecer a recuperação, o conforto e a serenidade. Envoltas por vegetação exuberante e construídas em arquitetura tradicional, criam um ambiente ideal para a revitalização ayurvédica. Escolha entre várias villas pensadas para responder às suas necessidades de privacidade, conforto e bem-estar.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'healing' rendered as 'recuperação' to avoid any cure connotation."
+   ]
+  },
+  {
+   "id": "t_9589cc27f3c9b55e5c79",
+   "sourceHash": "9589cc27f3c9b55e5c7975323846a11a71dedda60a8005815bcf9622aa5d433b",
+   "text": "Viva um bem-estar pleno na nossa Maharaja Suite, onde a grandiosidade se alia ao conforto premium. Desfrute de um tratamento digno da realeza e de rejuvenescimento ayurvédico, envolvido em elegância e serenidade. Um refúgio pensado para lhe proporcionar um bem-estar sem igual e um relaxamento intemporal.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxury' replaced with 'conforto premium' per clinical register lock; suite name 'Maharaja Suite' kept as proper name. Source marketing superlatives ('ultimate bliss', 'unparalleled') softened slightly; owner may wish to review this legacy hospitality copy for KTAHV register."
+   ]
+  },
+  {
+   "id": "t_6c4d2f1f3e8c418c5e3f",
+   "sourceHash": "6c4d2f1f3e8c418c5e3fef488f98ae93bea4c0897b03097458f61465440ec7dd",
+   "text": "Pátio e entrada da suite em tijolo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdda5ad693db4366591b",
+   "sourceHash": "bdda5ad693db4366591bdb4475bbfca5972bf4578d2267cad264648ec55daa1d",
+   "text": "Villas e canal do jardim ao entardecer",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87c4a99ace2457cf4f94",
+   "sourceHash": "87c4a99ace2457cf4f9476ec85cdd99437065f40167a7432d1204c2f5a049bbc",
+   "text": "Entrada da suite em pedra com cadeiras brancas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_57692adc22c466da11ed",
+   "sourceHash": "57692adc22c466da11ed0b7692d56db32801c8144416f51c1117458127c9b048",
+   "text": "Entrada da suite em tijolo com cadeiras na varanda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_080887dfead039216726",
+   "sourceHash": "080887dfead039216726b47fe60eeca90641d9f6642c8f04131b6c6a48327fe4",
+   "text": "Varanda da suite em tijolo com janela redonda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51d2c76c37839adffb53",
+   "sourceHash": "51d2c76c37839adffb53c7b5f75986544f77b5326c570f2c824654fb5d4b0049",
+   "text": "Canal do jardim sob as palmeiras",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7ec7262e3d8d8f0dcfc5",
+   "sourceHash": "7ec7262e3d8d8f0dcfc5a3a551eb718eabe1aff4f88a70523cc12e5c1f1f9261",
+   "text": "Programa a partir de",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_27580ab56073cfae9f1f",
+   "sourceHash": "27580ab56073cfae9f1fec055bedbce312c193981bf03663fce26e9a5f996bde",
+   "text": "Entre num ambiente de requinte régio e deixe-se envolver pela atmosfera da nossa Royal Villa. Com um espaço amplo e uma atenção impecável ao pormenor, esta villa oferece uma experiência verdadeiramente envolvente, onde o tratamento ayurvédico se une ao conforto premium.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious indulgence' rendered as 'conforto premium' and 'opulence' as 'requinte' per clinical register lock; 'Royal Villa' kept as proper name."
+   ]
+  },
+  {
+   "id": "t_05ba921930f559457d4d",
+   "sourceHash": "05ba921930f559457d4d4bb658acae4db846d79c4097647b8ae858f29d516098",
+   "text": "Villa arredondada em pedra junto ao canal de água",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f43736b7d8f5dc5556f4",
+   "sourceHash": "f43736b7d8f5dc5556f43cba9cebb97bf25bd8f5a6821e10f4672b4cb950f660",
+   "text": "Villa arredondada em tijolo e jardim",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74d277eedcd372ef5f76",
+   "sourceHash": "74d277eedcd372ef5f7608c6dab9548ec8da4e9582bd24f891d7bf126db9c314",
+   "text": "Villa com detalhes amarelos no jardim",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4e75a78cb2a93f44019",
+   "sourceHash": "f4e75a78cb2a93f440197133e29a8ed566ca24a9b0a21971ca9384f7f191f701",
+   "text": "Entrada de villa verde entre palmeiras",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_52e6d4f8f600cc7ad6f7",
+   "sourceHash": "52e6d4f8f600cc7ad6f7966c574e522e867970bcfd4ec58eb2a91605c52bbab3",
+   "text": "Villa com detalhes azuis sob as palmeiras",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d00402ca3a17d4ceddec",
+   "sourceHash": "d00402ca3a17d4ceddec3927f334e317fda8f46f74fc08a3605e804e6e5bc5ec",
+   "text": "Descubra a serenidade na nossa Deluxe Villa, cuidadosamente concebida para o seu bem-estar. Rodeado de vegetação exuberante, entregue-se ao efeito restaurador da natureza e desfrute de uma experiência revigorante para a mente, o corpo e o espírito.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Deluxe Villa' kept as proper room-category name. Superlative 'like never before' omitted to avoid strengthening the claim."
+   ]
+  },
+  {
+   "id": "t_88ef642bab01f75c5e5f",
+   "sourceHash": "88ef642bab01f75c5e5fb7bf438b782809298398357ae8ccbd15507695d65e23",
+   "text": "Villa em pedra junto a um relvado do jardim",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

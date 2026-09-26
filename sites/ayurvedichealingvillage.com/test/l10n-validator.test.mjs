@@ -98,3 +98,12 @@ test("space groups digits only before an exact 3-digit group (date ranges are se
   assert.deepEqual(run("Rates from 21 567", "Tarifs à partir de 21 567", "fr").errs, []);
   assert.ok(run("July 2-9 2015", "2 a 9 de julho de 2016", "pt").errs.some((e) => /numbers/.test(e)));
 });
+
+test("bounded normalizations: 'Sept' month and 'PP' counter in CJK, '…fold', glued 12h times", () => {
+  assert.deepEqual(run("(17th – 22nd Sept, 2017)", "（2017年9月17日～22日）", "ja").errs, []);
+  assert.ok(run("(17th – 22nd Sept, 2017)", "（2017年9月17日～22日）", "de").errs.some((e) => /numbers/.test(e)), "month→number stays CJK-only");
+  assert.deepEqual(run("$4650 AUD PP", "1名あたり$4650 AUD", "ja").errs, []);
+  assert.deepEqual(run("The reasons are threefold", "原因は3つあります", "ja").errs, []);
+  assert.ok(run("The reasons are several", "原因は3つあります", "ja").errs.some((e) => /numbers added/.test(e)), "no source word, no allowance");
+  assert.deepEqual(run("6:30am Yoga8am Breakfast", "6:30 Uhr Yoga 8:00 Uhr Frühstück", "de").errs, []);
+});
