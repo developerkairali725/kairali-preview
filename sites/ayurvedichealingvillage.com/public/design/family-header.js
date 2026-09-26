@@ -261,8 +261,28 @@
     bar.querySelector(".ahv-fh-clear").hidden = !n;
   }
 
+  // ---- the one header row stays on screen: make the outermost wrapper that ONLY surrounds the
+  // header sticky (native pages nest their snapshot header in header-sized wrappers, so a sticky
+  // header had no room to stick; design pages already have a sticky mount and resolve to it)
+  function stickyRow() {
+    var bs = document.querySelectorAll("[data-ahv-fh-btn]");
+    for (var i = 0; i < bs.length; i++) {
+      var h = bs[i].closest("header");
+      if (!h || !h.getBoundingClientRect().height) continue;
+      var el = h, hh = h.getBoundingClientRect().height;
+      while (el.parentElement && el.parentElement !== document.body && el.parentElement.id !== "ahv-design-root" && el.parentElement.getBoundingClientRect().height <= hh + 4) el = el.parentElement;
+      if (!el.hasAttribute("data-ahv-fh-sticky")) el.setAttribute("data-ahv-fh-sticky", "");
+      // an overflow:hidden ancestor (e.g. the offers template's full-bleed wrapper) makes sticky inert;
+      // overflow:clip clips the same way without creating a scroll container
+      for (var up = el.parentElement; up && up !== document.documentElement; up = up.parentElement) {
+        var cs = getComputedStyle(up);
+        if ((cs.overflowX === "hidden" || cs.overflowY === "hidden") && !up.hasAttribute("data-ahv-fh-clip")) up.setAttribute("data-ahv-fh-clip", "");
+      }
+    }
+  }
+
   var scheduled = false;
-  function pass() { scheduled = false; try { headers(); ctaBars(); finder(); } catch (e) { /* never break the page */ } }
+  function pass() { scheduled = false; try { headers(); stickyRow(); ctaBars(); finder(); } catch (e) { /* never break the page */ } }
   function schedule() { if (scheduled) return; scheduled = true; setTimeout(pass, 0); }
   if (window.MutationObserver) new MutationObserver(schedule).observe(document.body || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["aria-pressed"] });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
