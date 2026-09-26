@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0448",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_3285cec0b8bfac7386e9",
+   "sourceHash": "3285cec0b8bfac7386e9daf5a716aab414565359eceb600f075852281a6f92e8",
+   "text": "예약 일정 변경",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (bold lead); followed by the fragment describing the date."
+   ]
+  },
+  {
+   "id": "t_2c74c9763c42f1ebcd5a",
+   "sourceHash": "2c74c9763c42f1ebcd5a77233601b62ee13c9ce35a96768a024035d2b39997d5",
+   "text": ": 추가 요금 없이 상호 합의한 날짜로 변경합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the bold lead '예약 일정 변경' in Korean order."
+   ]
+  },
+  {
+   "id": "t_dcb1d3a1e24bb50c617b",
+   "sourceHash": "dcb1d3a1e24bb50c617b8964ae8db483925f76f4d5d93e89f0c8d4b310791c13",
+   "text": "결제 금액에 대한 크레딧 노트를 발행하며, 이는 발행일로부터 정해진 기간 내에 향후 이용 시 사용하실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2afa4659eb60f9241df3",
+   "sourceHash": "2afa4659eb60f9241df34e06d9933d08dcce7c2f805b8b365426dc1770fb334b",
+   "text": "크레딧 노트 발행",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (bold lead)."
+   ]
+  },
+  {
+   "id": "t_06cf91ec02a45efd66f4",
+   "sourceHash": "06cf91ec02a45efd66f4564455484d1c6ecc2a056d2aa38328f5654342a50536",
+   "text": ": 결제 금액에 대해 발행되며, 발행일로부터 정해진 기간 내에 향후 이용 시 사용하실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the bold lead '크레딧 노트 발행'."
+   ]
+  },
+  {
+   "id": "t_04c6f6808dc33ae1bb11",
+   "sourceHash": "04c6f6808dc33ae1bb11c413f0388f95b15ef7a9bf9656b65dcb25aee7e50efa",
+   "text": "예외적인 경우, 경영진 승인 및 이미 발생한 환불 불가 비용에 대한 해당 공제를 조건으로 환불을 처리합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff68bbe2e2386988281b",
+   "sourceHash": "ff68bbe2e2386988281bc43810bac0e9001f03f7e683e8c20d9bc648e9d222ee",
+   "text": "환불 처리",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (bold lead)."
+   ]
+  },
+  {
+   "id": "t_32a6345a93a26700043b",
+   "sourceHash": "32a6345a93a26700043b9a1188ce458bd281c5627ac8b9575d1891817a2ad82f",
+   "text": ": 예외적인 경우에 한하며, 경영진 승인 및 이미 발생한 환불 불가 비용에 대한 해당 공제를 조건으로 합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the bold lead '환불 처리'."
+   ]
+  },
+  {
+   "id": "t_d751b2f3bc69fb5fc393",
+   "sourceHash": "d751b2f3bc69fb5fc393a5adbf6e081be9141607292014d95054ee5887072d93",
+   "text": "이러한 상황에서는 환자 및 방문객께서 예약팀에 연락하시어 가능한 선택지를 상의하시기를 권장합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 환자 및 방문객 (patients and visitors) per language lock."
+   ]
+  },
+  {
+   "id": "t_12bc9e9fffb5babce7db",
+   "sourceHash": "12bc9e9fffb5babce7dbae59f7755e9e73670c6a5ecc2270d1228e782296855d",
+   "text": "본 정책 준수에 대한 이해와 협조에 감사드립니다. 추가 지원이나 문의 사항이 있으시면 지원팀에 연락해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_325f5ed96c5f2a0f5ab0",
+   "sourceHash": "325f5ed96c5f2a0f5ab0c2c813151acd25d90df3c4e74208ed3bad492eeeae87",
+   "text": "법정 권리 및 명확화",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_507353c4685ea45af145",
+   "sourceHash": "507353c4685ea45af145c73f34fe6af2cdcf7341f590b7ecb0719af391cc32a8",
+   "text": "본 약관은 환자 또는 소비자의 법정 권리에 우선하지 않습니다. 견적서, 요금표 PDF 및 웹사이트 약관의 내용이 서로 다른 경우, 결제 전에 담당 팀에 서면으로 조정을 요청해 주십시오. 환불 금액의 입금 시점은 은행 또는 결제 서비스 제공업체에 따라서도 달라집니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5723e1c796aac7d6626",
+   "sourceHash": "a5723e1c796aac7d6626a31dd72b792158391bd50bc9edd84ec369ff65c570b1",
+   "text": "쿠키 정책 | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cec63b1e2110d4cf0284",
+   "sourceHash": "cec63b1e2110d4cf028466bd5ad68725ff9a341a434c9242fe271c278b80f2ec",
+   "text": "Kairali - The Ayurvedic Healing Village가 사용자 경험 향상, 성능 측정, 콘텐츠 개인화를 위해 쿠키를 어떻게 사용하는지 알아보십시오. 쿠키 설정은 언제든지 관리하실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_595194d787f621b8624d",
+   "sourceHash": "595194d787f621b8624dc6419770888e6689b4b9d6a0f12b74ad8a8524871488",
+   "text": "쿠키 정책 — 2026년 9월 25일 업데이트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4784a9df2cfc884002e",
+   "sourceHash": "a4784a9df2cfc884002e924116da2305e15a96089f7d0a317e8fc1a18f3f1c7f",
+   "text": "쿠키 및 이와 유사한 브라우저 저장소는 보안을 지원하고, 선택 사항을 기억하며, 필요한 동의를 받아 활성화된 경우 웹사이트 이용 현황을 측정할 수 있습니다. 단순히 방문하거나 계속 탐색하는 것은 선택적 쿠키에 대한 동의로 간주되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5bf4a92fb60d2717ad12",
+   "sourceHash": "5bf4a92fb60d2717ad121c4d4630925427f6594ded43ec50a6dfa1c8c30065aa",
+   "text": "사용자의 선택",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a16c39354bf8fb5602f",
+   "sourceHash": "2a16c39354bf8fb5602f031708ae047823e8fa413362b1b1c1461497bee4a6fb",
+   "text": "쿠키 안내 창에서 수락(Accept) 또는 거부(Decline)를 선택하십시오. 선택적 측정을 거부하더라도 프로그램 정보를 읽거나 병원에 연락하는 데 제한이 있어서는 안 됩니다. 이 페이지의 쿠키 선택(Cookie choices) 기능을 사용하면 저장된 선택을 철회하고 선택적 동의가 거부된 상태로 페이지를 다시 불러올 수 있습니다. 브라우저에서 저장된 쿠키를 직접 관리하실 수도 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "UI control labels kept in English in parentheses in case the banner buttons remain untranslated; drop if the Korean UI labels are localized."
+   ]
+  },
+  {
+   "id": "t_f5ffee0ad1e0f7c39fcf",
+   "sourceHash": "f5ffee0ad1e0f7c39fcff0df7545e7679a14d6139f92f528386b0a507d5262ab",
+   "text": "필수 저장소",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_956c63d7a6313029d285",
+   "sourceHash": "956c63d7a6313029d2853f354b907547cade9df278aae4a73976e6acfb42ade3",
+   "text": "본 웹사이트는 ktahv-consent 및 kairali-consent-v1을 포함한 쿠키 설정을 브라우저 로컬 저장소에 저장합니다. 보안 또는 세션 기능은 필수 저장소를 사용할 수 있습니다. 브라우저 설정은 이러한 기능에 영향을 줄 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2441dd767e11a83d632d",
+   "sourceHash": "2441dd767e11a83d632d01c6b2ca8716229003367e7f83b892b2af5a13dbe0c4",
+   "text": "선택적 측정",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c5021c1f0e5d3c105dd2",
+   "sourceHash": "c5021c1f0e5d3c105dd2e38f8c569f533f594967c09a47a2d9005dab96c3c7c5",
+   "text": "운영 환경에서 측정 기능이 활성화되면, 본 사이트에는 Google Analytics, Microsoft Clarity 및 Meta 연동 기능이 포함됩니다. 선택적 스크립트는 동의 선택을 존중해야 합니다. 수락하셨다고 해서 의료 보고서, 문의 내용, 식별 정보 또는 입력하신 건강 관련 검색어를 광고 또는 분석 서비스로 전송하는 것이 허용되는 것은 아닙니다. 건강 정보 기반의 맞춤형 광고는 별도의 평가가 필요하며 광고 플랫폼 규정에 따라 제한됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9d8d05b9736daf8d0191",
+   "sourceHash": "9d8d05b9736daf8d0191f31d1877ca6ba941a7c388bde5cd7db91ad93f6709ad",
+   "text": "외부 서비스",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de147f941d02869c0d82",
+   "sourceHash": "de147f941d02869c0d82e3cb4721a3f768593c2821d1cb9a2246522dcaba8429",
+   "text": "WhatsApp, Priya 채팅, 결제 서비스, 지도 또는 동영상을 여시면 외부 업체의 서비스에 연결될 수 있습니다. 해당 서비스에는 그 업체의 개인정보 및 쿠키 규정이 적용됩니다. 모든 외부 업체의 저장 항목이 병원의 쿠키 배너로 제어되는 것은 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'third party' rendered as 외부 업체 (external provider) to avoid adding a digit (제3자)."
+   ]
+  },
+  {
+   "id": "t_2b5c3d26721ae9c350cf",
+   "sourceHash": "2b5c3d26721ae9c350cf3009318b626f0fc8a90b4a2ac0ca8099c05aa849282e",
+   "text": "연락처",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

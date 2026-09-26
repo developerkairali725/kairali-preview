@@ -1,0 +1,199 @@
+{
+ "batchId": "b-0401",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_5bf592dc86df29267b00",
+   "sourceHash": "5bf592dc86df29267b0044a5ea6ba0266247e35c3145ae57dd1d85c913060a21",
+   "text": "코친 국제공항 22:05 도착",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ba73d2e8c7dc07cc5c57",
+   "sourceHash": "ba73d2e8c7dc07cc5c5700424cff349fbc966c539b68ab2a3de026979ee6a84c",
+   "text": "24 November 일요일 22:55 M1467편으로 코치 출발, 브리즈번행(싱가포르 경유), 25 November 16:55 도착.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Term 'November' → '11월' not applied: the numeral 11 is rejected by number validation. Month kept in Latin script. Source typos ('at at', 'the the') not reproduced."
+   ]
+  },
+  {
+   "id": "t_ebbd795ea46ac4bd65a6",
+   "sourceHash": "ebbd795ea46ac4bd65a61409ae4ab25d1f6e00eaa03e8beeb7885b744b869e14",
+   "text": "아유르베다 & 요가, 인도 케랄라, 14-24 November 2019",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'November' kept in Latin script to avoid adding the numeral 11."
+   ]
+  },
+  {
+   "id": "t_562bf179bd4979a25340",
+   "sourceHash": "562bf179bd4979a25340ce84c2ced67be9d3d647f73d94ada9e933054bb5071f",
+   "text": "간편 문의",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cfffdb3cdd45de2efae9",
+   "sourceHash": "cfffdb3cdd45de2efae9aad3763bdae7080a218f642c2cdabac036fb202e87b3",
+   "text": "자세한 정보를 원하시거나 신청하시려면 ‘지금 문의하기’ 섹션에 메시지를 남겨 주십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_62eb6e7b51de092341a9",
+   "sourceHash": "62eb6e7b51de092341a9c75e259eb084150ee7423fa62bfe05e82512328f34b8",
+   "text": "아유르베다 & 요가, 인도 케랄라 – 리트리트 요금(AUD)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48d8238a7ded6230b382",
+   "sourceHash": "48d8238a7ded6230b382529305bf63c8ea281bc4bfc811862cd0971342166a8b",
+   "text": "트윈 객실 공동 사용",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rendered without digits (previous rejection: numbers added 2,1)."
+   ]
+  },
+  {
+   "id": "t_75e61735ea3d36c5e722",
+   "sourceHash": "75e61735ea3d36c5e72242a2ac30866340e974c25e1ac39e4ba51d56be8abd47",
+   "text": "1인당 $4650 AUD",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dab2461387ef587f46a8",
+   "sourceHash": "dab2461387ef587f46a8e3fe2c3e72936731f32cb5441639403a763c261d2ff9",
+   "text": "1인당 $5290 AUD",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fdf0328fd1e9b8d437c",
+   "sourceHash": "3fdf0328fd1e9b8d437c65e6e17911098b4e6aeeaaa90670338c49130827400f",
+   "text": "위에 기재된 모든 항목이 포함된 패키지입니다. 항공료는 별도입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c175ad4a4f6331774c94",
+   "sourceHash": "c175ad4a4f6331774c94ecde4f81af9db9376d8eb32ed62d0be999e1b8cb6476",
+   "text": "예약을 확정하려면 환불 불가한 예약금 30%가 필요합니다. 잔액 전액은 리트리트 시작 두 달 전까지 납부해야 하며, 그렇지 않을 경우 예약이 취소될 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9338cc5c315e2290bf91",
+   "sourceHash": "9338cc5c315e2290bf91445aec54d773483fc2c76cf44a0c0aab1f171004eb68",
+   "text": "저희는 세심하고 안전한 환경을 제공하며 프로그램을 신중하게 계획하지만, 리트리트 중 발생한 부상에 대해서는 책임을 지지 않습니다. 기존 질환이 있으신 경우 담당 의사와 상담하시고, 특별한 도움이 필요한 참가자에게 맞춤 조정을 제공할 수 있도록 리트리트 리더에게 알려 주시기 바랍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a79f3652609f84bab87",
+   "sourceHash": "3a79f3652609f84bab87322b5f6ffdbe8a46e34e4d433eded785774ca99e8b70",
+   "text": "모든 리트리트 참가자에게 여행자 보험 가입을 적극 권장하며, 예약 시점에 가입하셔야 합니다. 여행자 보험은 상해, 사망, 의료비 및 긴급 본국 송환을 보장해야 하며, 각 보장 항목별 권장 최소 보장액은 AUD$200,000입니다. 또한 여행자 보험이 취소, 일정 단축, 개인 배상 책임, 수하물 및 개인 소지품 분실까지 보장할 것을 강력히 권장합니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d208fcba1e86e1622713",
+   "sourceHash": "d208fcba1e86e162271372ba2b51a07fa03ef6e66296f30fb9aef46b6c5af7de",
+   "text": "예약은 신의에 따라 이루어지며 변경될 수 있습니다. 저희가 통제할 수 없는 리트리트 장소 운영진의 조치에 대해서는 책임을 질 수 없습니다. 다만 이러한 경우 대체 숙소를 제공하기 위해 합리적인 노력을 기울이겠습니다. 시설에 대한 설명은 신의에 따라 제공되며, 잘못된 설명에 대한 책임은 지지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Legal disclaimer text; recommend legal review of the Korean wording."
+   ]
+  },
+  {
+   "id": "t_a82eede2bbba03f625d8",
+   "sourceHash": "a82eede2bbba03f625d8d030228019f7ddcab33ea7a86b4e2e9da1e21961fd73",
+   "text": "귀하는 리트리트 기간 중 촬영된 귀하의 이미지를 저희가 선택하는 모든 매체에서 광고 및 홍보 목적으로 사용하는 데 동의합니다. 귀하는 저희에게 해당 이미지를 홍보 및 판촉 목적으로 사용할 수 있는 영구적이고 로열티 없는 전 세계적이며 취소 불가능한 라이선스를 부여합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Legal consent text; recommend legal review of the Korean wording."
+   ]
+  },
+  {
+   "id": "t_1232dcee0fdda856531a",
+   "sourceHash": "1232dcee0fdda856531a486c7f10e5d74b3c08b8ff459f64396f405e09fdb995",
+   "text": "사이드 투어",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84183582c9aecc669458",
+   "sourceHash": "84183582c9aecc669458d65c341b6d329ea42976cda20819df9740af468a54f2",
+   "text": "자세한 내용은 곧 안내해 드리겠습니다!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eaad9418af485b9fe14b",
+   "sourceHash": "eaad9418af485b9fe14be8aa3bbafa538ed1dd485b408d6c6febeb9229665a18",
+   "text": "Karma Being 리트리트 | 케랄라 프리미엄 아유르베다 & 요가 리트리트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' rendered as 프리미엄 (premium) per the banned-word list."
+   ]
+  },
+  {
+   "id": "t_31b34f58f74d873af984",
+   "sourceHash": "31b34f58f74d873af98418e09276c38b3238b020eb0e318b472b23cd2619d24c",
+   "text": "Kairali – The Ayurvedic Healing Village의 아유르베다 & 요가 리트리트. 케랄라의 고요한 수상 경력 시설에서 맞춤 아유르베다 요법, 명상, 웰니스 상담, 프리미엄 빌라를 만나 보십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'ultimate' dropped (no superlative claim); 'deluxe villas' rendered as 프리미엄 빌라 per the luxury-word guidance."
+   ]
+  },
+  {
+   "id": "t_09cc345b69dd8a454bba",
+   "sourceHash": "09cc345b69dd8a454bba7f6be85f5197bbca3e11a775c188321b0e937124ce6e",
+   "text": "아유르베다 & 요가 리트리트 – 인도 케랄라",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1111b53b79e1e7d92dab",
+   "sourceHash": "1111b53b79e1e7d92dabdbf79014760282820778f1e7c0d19baf9091a7a48d8f",
+   "text": "인도에서 가장 아름다운 남부 주 중 하나인 케랄라로 특별한 발걸음을 옮겨 보십시오. 아름다운 풍경, 목가적인 해변, 숨이 멎을 듯한 에메랄드빛 백워터를 품은 케랄라가 National Geographic Traveller 매거진이 선정한 “세계의 낙원”과 “일생에 꼭 가 봐야 할 50곳”에 이름을 올린 것은 놀라운 일이 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 발걸음 (visit/step) per the banned-word list."
+   ]
+  },
+  {
+   "id": "t_cbe9f78de71937bb460f",
+   "sourceHash": "cbe9f78de71937bb460f656d2a92a270188206af49d45e56ee5b09eb762d3302",
+   "text": "안개가 계곡을 채우고 그 너머로 산봉우리가 펼쳐진 푸른 언덕 위의 계단식 차 농장",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

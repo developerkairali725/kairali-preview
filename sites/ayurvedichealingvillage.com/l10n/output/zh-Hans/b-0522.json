@@ -1,0 +1,107 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_7eb97189c5df10b5a8a7",
+   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
+   "text": "Virechanam（泻下疗法）：通过给予治疗性泻剂或治疗性缓泻药，将毒性物质排出肠道。Virechanam 对黄疸和痔疮尤其是一种有效的治疗方法。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Unbalanced parenthesis in source closed in translation. 'cure' rendered as 治疗方法 (treatment) per no-cure rule; efficacy claim is from source — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_d0cd7d3df25aa6d85765",
+   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
+   "text": "：通过灌肠方式施用药物或天然煎剂（如药油、酥油或牛奶）的阿育吠陀疗法称为 Vasti。所用煎剂取决于需要治疗的疾病。该疗法益处良多，对痔疮、便秘和关节炎等疾病有显著作用。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the label 'Vasti'. 'needs to be cured' rendered as 需要治疗 (needs treatment) per no-cure rule; efficacy claim is from source — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_0be803d5e810d8ee5187",
+   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
+   "text": "Vasti：通过灌肠方式施用药物或天然煎剂（如药油、酥油或牛奶）的阿育吠陀疗法称为 Vasti。所用煎剂取决于需要治疗的疾病。该疗法益处良多，对痔疮、便秘和关节炎等疾病有显著作用。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'needs to be cured' rendered as 需要治疗 (needs treatment) per no-cure rule; efficacy claim is from source — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": "：对于鼻窦问题、偏头痛等影响头部的患者，这种阿育吠陀疗法是最佳选择。这是一种天然的净化方法，通过在鼻孔中定量滴入滴鼻药，使头部摆脱各种疼痛。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the label 'Nasyam'. Source claims ('the best', 'freed from any kind of pain') retained as written — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam：对于鼻窦问题、偏头痛等影响头部的患者，这种阿育吠陀疗法是最佳选择。这是一种天然的净化方法，通过在鼻孔中定量滴入滴鼻药，使头部摆脱各种疼痛。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') retained as written — flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_e747d12ed643ce1ef449",
+   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
+   "text": "：最后，这一过程用于净化血液。根据阿育吠陀理论，血液不纯是许多疾病的主要原因，因此该疗法通过净化血液，帮助改善银屑病、色素沉着、皮炎等多种健康问题。在 Panchakarma（潘查卡玛）期间及之后，营养都至关重要。净化过程结束后，患者饥饿时应食用 Kitchari（一种什锦蔬菜餐）。应坚持这一饮食三到四天，然后逐步加入姜、胡椒、盐、绿豆汤及其他豆汤等多种食物，并慢慢增加食量。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the label 'Raktamokshana'. 'getting rid of health issues' rendered as 帮助改善 (helps improve) to avoid a cure claim."
+   ]
+  },
+  {
+   "id": "t_df61c09156f0a21cf0c1",
+   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
+   "text": "Raktamokshana：最后，这一过程用于净化血液。根据阿育吠陀理论，血液不纯是许多疾病的主要原因，因此该疗法通过净化血液，帮助改善银屑病、色素沉着、皮炎等多种健康问题。在 Panchakarma（潘查卡玛）期间及之后，营养都至关重要。净化过程结束后，患者饥饿时应食用 Kitchari（一种什锦蔬菜餐）。应坚持这一饮食三到四天，然后逐步加入姜、胡椒、盐、绿豆汤及其他豆汤等多种食物，并慢慢增加食量。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'getting rid of health issues' rendered as 帮助改善 (helps improve) to avoid a cure claim."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "提供培训。本批次中没有任何页面被标记为“即将推出”状态。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than public copy; please confirm it should be displayed."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "当前的医疗、商业、奖项及可用性声明均保留其确切的内部发布审核关卡。来源采集不等于核实，某页面缺少单独的审核关卡也绝不意味着相关声明已获批准。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than public copy; please confirm it should be displayed."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "适合每个人的疗养项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 疗养项目 (programmes) per clinical register."
+   ]
+  }
+ ]
+}

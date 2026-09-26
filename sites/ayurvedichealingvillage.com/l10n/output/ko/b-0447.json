@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0447",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_f3ac943b6fd4002eb8e2",
+   "sourceHash": "f3ac943b6fd4002eb8e20bda81ae8dca9d2fb228f41aaaf4d505be64816f08d7",
+   "text": "이 취소 구간에서는 해당 거래 수수료 및 세금이 공제됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f8ee1f0716147254e98",
+   "sourceHash": "1f8ee1f0716147254e98d5440db4dd6fb1c8e86e250d9b7ebcc30cc911fc3768",
+   "text": "도착 15일 전 이내 취소 또는 체류 중 변경",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_77ce078359b362e4ffa1",
+   "sourceHash": "77ce078359b362e4ffa1066e1c8ba45558aa98240cf6b724c442142512335ef0",
+   "text": "체크인일 15일 전 이내에 이루어진 취소는 환불 대상에서 제외됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_17cebd948e1b6057e850",
+   "sourceHash": "17cebd948e1b6057e850e9dca520de831a5b0f7393960880669a6dc6c60835e9",
+   "text": "체크인일 15일 전 이내에 이루어진 취소는",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; Korean word order: sentence reads [this] + [환불 대상에서] + [제외됩니다.]"
+   ]
+  },
+  {
+   "id": "t_254bb97b57f12e1608fe",
+   "sourceHash": "254bb97b57f12e1608fefc4517de768427b2fd6d2cffbbfcbc09f3c818198d5f",
+   "text": "환불 대상에서",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment 'not'; negation is carried by the following fragment '제외됩니다.' due to Korean word order."
+   ]
+  },
+  {
+   "id": "t_a211e6b1d76924cc9ca3",
+   "sourceHash": "a211e6b1d76924cc9ca3b38da59049d92ada20b6c23b9fad5482b3418b3d2383",
+   "text": "제외됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the preceding sentence in Korean word order (excluded from refund eligibility)."
+   ]
+  },
+  {
+   "id": "t_144572440f079e9e0135",
+   "sourceHash": "144572440f079e9e01354e449a5393dfcdee05f67757d07c3e4adad1d33661c2",
+   "text": "체류 중 예약 날짜를 변경하는 경우에도 환불 대상에서 제외됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_96e316d9df79038f465e",
+   "sourceHash": "96e316d9df79038f465ebb57b6003b8d71ffcac56a5f85cfdf826ef525f55e78",
+   "text": "체류 중 예약 날짜를 변경하는 경우에도",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; followed by [환불 대상에서] + [제외됩니다.]"
+   ]
+  },
+  {
+   "id": "t_d8370dcabe7787036c7b",
+   "sourceHash": "d8370dcabe7787036c7b3236e4eda9c70e7956501d48194b0d5a54d06c6a9b3b",
+   "text": "의료적 응급 상황이나 기타 예기치 못한 상황의 경우, 증빙 서류 제출 및 경영진 승인을 조건으로 예외가 적용될 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a9003e4f7ce5ee1ef23",
+   "sourceHash": "7a9003e4f7ce5ee1ef23e002f1f261c0bba9e8f5a8362d8d3cfa2461f3d81a5b",
+   "text": "노쇼(No-Show) 정책",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_914ad98b5506ed4a2767",
+   "sourceHash": "914ad98b5506ed4a2767381e1cce1a670ea8a59d1b1d0470e44acb1f75c23762",
+   "text": "환자 또는 이용자가 사전 통보 없이 예정된 날짜에 체크인하지 않으시는 경우, 해당 예약은 노쇼로 간주됩니다. 이러한 경우 환불이나 일정 변경은 제공되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 환자 또는 이용자 (patient or visitor) per language lock."
+   ]
+  },
+  {
+   "id": "t_595cb6af7e3d1a67a28d",
+   "sourceHash": "595cb6af7e3d1a67a28d1be936e1473205b732f02161471484339339d32c0799",
+   "text": "환자 또는 이용자가 사전 통보 없이 예정된 날짜에 체크인하지 않으시는 경우, 해당 예약은",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 환자 또는 이용자 per language lock. Fragment; followed by [노쇼] + [로 간주됩니다. …]"
+   ]
+  },
+  {
+   "id": "t_9346b5b112a7fc0a0ab7",
+   "sourceHash": "9346b5b112a7fc0a0ab720fa4948dd4baed9dae1c5424809e0178adcf43cb839",
+   "text": "로 간주됩니다. 이러한 경우 환불이나 일정 변경은 제공되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; begins with particle attaching to the preceding term '노쇼'."
+   ]
+  },
+  {
+   "id": "t_d27329ec42596678bf64",
+   "sourceHash": "d27329ec42596678bf64abd4a01f8330ad73b293bbefc4c360aeff8d71ee784e",
+   "text": "조기 퇴소",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c623974059daa298a685",
+   "sourceHash": "c623974059daa298a6855bfe5ea610b6eb92c703368bddb9c50a3c4f734c63b9",
+   "text": "환자 또는 이용자가 예정된 체류 기간보다 일찍 떠나기로 선택하시는 경우, 예약 중 이용하지 않은 부분에 대해서는 환불이 제공되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 환자 또는 이용자 per language lock."
+   ]
+  },
+  {
+   "id": "t_4d2fab8b70614dcb2759",
+   "sourceHash": "4d2fab8b70614dcb2759b749eeccf3daedd1b122ed0f2d7ec854e36c1295869f",
+   "text": "환불 처리 기간",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ff974c72893314b8d13",
+   "sourceHash": "4ff974c72893314b8d133381dec15ba4894024498878b5b9c202a442d46dcfc9",
+   "text": "환불 대상이 되는 취소의 경우, 취소 확인일로부터 5-7 영업일 이내에 환불 절차가 시작됩니다. 환불 금액은 고객님의 은행 계좌 또는 예약 시 사용하신 원래 결제 수단으로 입금됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e608ad0258206d2e0e2d",
+   "sourceHash": "e608ad0258206d2e0e2d920d9733a5d59eb3a63e3394c7916f919d4e601345c6",
+   "text": "환불 대상이 되는 취소의 경우, 취소 확인일로부터",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; 'from the date of cancellation confirmation' moved here for Korean word order; followed by [5-7 영업일] + [이내에 …]"
+   ]
+  },
+  {
+   "id": "t_86526366b291aa1f82a1",
+   "sourceHash": "86526366b291aa1f82a15a75c70a42be0f2929e2aaa54f4a6b7ae8b84ae2bdc0",
+   "text": "5-7 영업일",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f20a51326c835b7cf347",
+   "sourceHash": "f20a51326c835b7cf3476c072b54ad8f64386d68a2cc9f866ede5bd571c799ca",
+   "text": "이내에 환불 절차가 시작됩니다. 환불 금액은 고객님의 은행 계좌 또는 예약 시 사용하신 원래 결제 수단으로 입금됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; 'from the date of cancellation confirmation' carried in the preceding fragment for Korean word order."
+   ]
+  },
+  {
+   "id": "t_e6dfe4489be9f0848532",
+   "sourceHash": "e6dfe4489be9f08485328495379a170ab7d80be111c6cb022b834220a706e96e",
+   "text": "환불이 처리되면 고객님께 확인 이메일이 발송됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59460a75deba0f1a5080",
+   "sourceHash": "59460a75deba0f1a50809093da07880b0d5b2d6e6a1ea9a1596d89cababa4499",
+   "text": "지연을 방지하기 위해 정확한 은행 또는 결제 정보를 제공해 주시기 바랍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcc266819c8215c080ad",
+   "sourceHash": "bcc266819c8215c080adf4db0d857ce544ff1c3bfc9670265f5f3a0da903273b",
+   "text": "불가항력 조항",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd9b132c5367fd3888c8",
+   "sourceHash": "fd9b132c5367fd3888c8a3cb980a077875b80f2345eedb929c0dda675495fa47",
+   "text": "자연재해, 팬데믹, 정부의 이동 제한 조치 또는 기타 불가항력적 사건 등 당사가 통제할 수 없는 상황이 발생하는 경우, Kairali – The Ayurvedic Healing Village는 다음과 같은 권리를 보유합니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5db43e48db71122fac8",
+   "sourceHash": "b5db43e48db71122fac8a09bdf2755630593f4caedc251275d2925537cbb558d",
+   "text": "추가 요금 없이 상호 합의한 날짜로 예약 일정을 변경합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

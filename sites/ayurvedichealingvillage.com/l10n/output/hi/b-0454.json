@@ -1,0 +1,218 @@
+{
+ "batchId": "b-0454",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_53e6bc91574533a88e94",
+   "sourceHash": "53e6bc91574533a88e94ae59fb8254658d1e7776965e7fc87a8785bdf47ac531",
+   "text": "बच्चों से संबंधित नीति: 5 वर्ष से कम आयु के बच्चे वयस्कों के साथ कमरा और मौजूदा बिस्तर साझा करने पर निःशुल्क ठहर सकते हैं और भोजन कर सकते हैं। बड़े बच्चों या अतिरिक्त बिस्तरों के लिए अतिरिक्त शुल्क लागू हो सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1865d52026561a3145f",
+   "sourceHash": "f1865d52026561a3145f0422917fd4e98e7a855045150c23da8d57e93c116191",
+   "text": "बच्चों से संबंधित नीति:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08661a51d5608f6c1796",
+   "sourceHash": "08661a51d5608f6c17960eca35210cc0cec80543798f74c8b1ceb506c3105302",
+   "text": "5 वर्ष से कम आयु के बच्चे वयस्कों के साथ कमरा और मौजूदा बिस्तर साझा करने पर निःशुल्क ठहर सकते हैं और भोजन कर सकते हैं। बड़े बच्चों या अतिरिक्त बिस्तरों के लिए अतिरिक्त शुल्क लागू हो सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebfb19dabf37902c2692",
+   "sourceHash": "ebfb19dabf37902c2692a2f90eb22a77c5323423763cbde7e9c8ca6331fd4979",
+   "text": "6. डॉक्टर परामर्श का समय",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7659c5df1736378ba48",
+   "sourceHash": "a7659c5df1736378ba484d79819ce5005830cb4f31017b6e12e9cf8a5b3a1c1b",
+   "text": "उसी दिन की बुकिंग वाले या बिना पूर्व बुकिंग के आने वाले रोगियों को उसी दिन डॉक्टर परामर्श के पात्र होने के लिए 3:30 PM से पहले चेक-इन करना होगा। यह समय-सीमा इसलिए आवश्यक है ताकि हमारे आयुर्वेदिक डॉक्टर विस्तृत और इत्मीनान से परामर्श दे सकें।3:30 PM के बाद आने वालों का परामर्श डॉक्टर की उपलब्धता के अनुसार अगले उपलब्ध दिन के लिए निर्धारित किया जाएगा। हम सभी रोगियों को प्रोत्साहित करते हैं कि वे अपनी यात्रा की योजना इसी के अनुसार बनाएँ, ताकि उनके उपचार कार्यक्रम की शुरुआत में देरी न हो।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'रोगी' (patients) per register lock; 'healing program' rendered as 'उपचार कार्यक्रम' (treatment programme). Missing space after 'experience.' mirrors source.",
+    "t_a7659c5df1736378ba48 banned-term-from-source यात्रा"
+   ]
+  },
+  {
+   "id": "t_20873db7e326c7fb84da",
+   "sourceHash": "20873db7e326c7fb84dada7dd093644aad778696e312cb92e3a64a31aeadb5ea",
+   "text": "7. भुगतान की शर्तें और तरीके",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06b68fd59cee3e1232fa",
+   "sourceHash": "06b68fd59cee3e1232fab34dc112881440ca4454280aaf98a7f6d9e1b2d06580",
+   "text": "भुगतान के तरीके: रोगी क्रेडिट/डेबिट कार्ड, बैंक ट्रांसफ़र या बुकिंग के समय बताए गए अन्य स्वीकार्य तरीकों से भुगतान कर सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'रोगी' (patients) per register lock."
+   ]
+  },
+  {
+   "id": "t_3cc11a3c40b1339bf5b3",
+   "sourceHash": "3cc11a3c40b1339bf5b3c210755e8014f7aaefb17a9c07386f63bb881efd79b5",
+   "text": "भुगतान के तरीके:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9a9582234afe3f49e05",
+   "sourceHash": "e9a9582234afe3f49e057887644c9fa0bb2f0220becfd2647faa0715462b7294",
+   "text": "रोगी क्रेडिट/डेबिट कार्ड, बैंक ट्रांसफ़र या बुकिंग के समय बताए गए अन्य स्वीकार्य तरीकों से भुगतान कर सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'रोगी' (patients) per register lock."
+   ]
+  },
+  {
+   "id": "t_f60c6ca23f88bccbe737",
+   "sourceHash": "f60c6ca23f88bccbe737680cf1a223ac2537bd37cb1047d73c5591397493fdce",
+   "text": "मुद्रा और शुल्क: सभी भुगतान निर्दिष्ट मुद्रा में प्रोसेस किए जाएँगे। कोई भी बैंक शुल्क, लेन-देन शुल्क या विनिमय दर का अंतर रोगी की ज़िम्मेदारी होगी।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'रोगी' (patient) per register lock; legal review may wish to confirm the defined-term wording."
+   ]
+  },
+  {
+   "id": "t_1df199c15d15143eaa84",
+   "sourceHash": "1df199c15d15143eaa8413535c4f5346414c130afe5837f22a851585db413104",
+   "text": "मुद्रा और शुल्क:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_124030366e0d03e04e95",
+   "sourceHash": "124030366e0d03e04e95042e205afbf276f4e8fa51e2fd94efc5a85c2c067092",
+   "text": "सभी भुगतान निर्दिष्ट मुद्रा में प्रोसेस किए जाएँगे। कोई भी बैंक शुल्क, लेन-देन शुल्क या विनिमय दर का अंतर रोगी की ज़िम्मेदारी होगी।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'रोगी' (patient) per register lock; legal review may wish to confirm the defined-term wording."
+   ]
+  },
+  {
+   "id": "t_ef082a6037a3b0a79b32",
+   "sourceHash": "ef082a6037a3b0a79b32fa64353b50f7b49d554c73acea34b54f4e7a9e6b4e16",
+   "text": "8. मूल्य, ऑफ़र और कर",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_afb0ea0a6350125b18bf",
+   "sourceHash": "afb0ea0a6350125b18bf6bd2daedfac8a14789301a9a7a20288179aa1f3111c4",
+   "text": "मूल्य: सभी दरें और शुल्क बुकिंग के समय बताए गए अनुसार होंगे। हम बिना पूर्व सूचना के मूल्यों, प्रमोशन और पैकेजों में बदलाव करने का अधिकार सुरक्षित रखते हैं, लेकिन ये बदलाव पुष्टि की गई बुकिंग को प्रभावित नहीं करेंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d15792fe95739fc178d2",
+   "sourceHash": "d15792fe95739fc178d2e0ff4869378cd8b40b6136b07d83e345448d2ae32299",
+   "text": "मूल्य:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa732602857428527663",
+   "sourceHash": "aa7326028574285276636d6f7393634f9d9bbc4ffc3d009b994c6d183550395a",
+   "text": "सभी दरें और शुल्क बुकिंग के समय बताए गए अनुसार होंगे। हम बिना पूर्व सूचना के मूल्यों, प्रमोशन और पैकेजों में बदलाव करने का अधिकार सुरक्षित रखते हैं, लेकिन ये बदलाव पुष्टि की गई बुकिंग को प्रभावित नहीं करेंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_953128a42c11a47cb97a",
+   "sourceHash": "953128a42c11a47cb97a9df45246a0b0b69fbd94592f121ad1d20bcb6b49f493",
+   "text": "कर और शुल्क: सभी लागू कर, सरकारी शुल्क और सेवा शुल्क कानून की आवश्यकता के अनुसार बिल में जोड़े जाएँगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5d61d85e4dfc98cbbf9",
+   "sourceHash": "b5d61d85e4dfc98cbbf9b7f451427200f3ab827ec2275f747618f88440d354c7",
+   "text": "कर और शुल्क:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06a7eeaffe8a83a25811",
+   "sourceHash": "06a7eeaffe8a83a25811640e67d7a3fe85077effd986ed1524690b397849a746",
+   "text": "सभी लागू कर, सरकारी शुल्क और सेवा शुल्क कानून की आवश्यकता के अनुसार बिल में जोड़े जाएँगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_050756c2c76bc6bdb9c4",
+   "sourceHash": "050756c2c76bc6bdb9c424b19a204ef5ae9d98b68525ddc41af399c1edf69160",
+   "text": "9. रद्दीकरण, संशोधन और रिफ़ंड नीति",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9eb66d8db6a3ae4a947d",
+   "sourceHash": "9eb66d8db6a3ae4a947dbe8bf85b0bca41cecb42cca753302d758db37a6a7379",
+   "text": "रद्दीकरण की समय-सीमाएँ: भर्ती से 30 दिन से अधिक पहले: पूर्ण रिफ़ंड। भर्ती से 15 से 30 दिन पहले: भुगतान की गई राशि का 50% रिफ़ंड किया जाता है, जिसमें से लागू लेन-देन शुल्क और कर घटा दिए जाते हैं। भर्ती से 15 दिन से कम पहले, या प्रवास के दौरान तिथियों में बदलाव होने पर: कोई रिफ़ंड नहीं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc0af2857884fbc11d1e",
+   "sourceHash": "cc0af2857884fbc11d1e3b7659de8757cd349a9259171dd229a5c0eee4d43ce9",
+   "text": "संशोधन: आरक्षण की तिथियों, उपचारों या कमरे की श्रेणियों में बदलाव उपलब्धता पर निर्भर हैं और इन पर अतिरिक्त शुल्क लग सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93a7da14f78ec4137e88",
+   "sourceHash": "93a7da14f78ec4137e88c74e34e3fe212086b22b177f895b389b3107ac3aa77e",
+   "text": "संशोधन:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcf3065d91ff1f43cfba",
+   "sourceHash": "bcf3065d91ff1f43cfbad030c1b83a2afbe554825aa52e25c5b4dd4592c153d0",
+   "text": "आरक्षण की तिथियों, उपचारों या कमरे की श्रेणियों में बदलाव उपलब्धता पर निर्भर हैं और इन पर अतिरिक्त शुल्क लग सकते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a8c2638aab5b5a5dc437",
+   "sourceHash": "a8c2638aab5b5a5dc4375421aaac53bb2e9bae16965cdabf7df0f20ba627a0a5",
+   "text": "रिफ़ंड प्रक्रिया: स्वीकृत रिफ़ंड उचित समय-सीमा के भीतर उसी भुगतान तरीके से प्रोसेस किए जाएँगे जिसका उपयोग मूल लेन-देन के लिए किया गया था।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

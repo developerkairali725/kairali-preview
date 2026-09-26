@@ -1,0 +1,107 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_7eb97189c5df10b5a8a7",
+   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
+   "text": "Virechanam (Abführtherapie): Die Ausleitung von Giftstoffen aus dem Darm durch ein therapeutisches Abführverfahren bzw. ein therapeutisches Abführmittel. Virechanam ist eine besonders wirksame Behandlung bei Gelbsucht und Hämorrhoiden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'cure' replaced with 'Behandlung' per banned-word rule; missing closing parenthesis in source added; efficacy claim may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_d0cd7d3df25aa6d85765",
+   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
+   "text": ": Als Vasti bezeichnet man die ayurvedische Therapie, bei der Arzneimittel oder natürliche Abkochungen wie Öle, Ghee oder Milch als Einlauf verabreicht werden. Die Abkochung richtet sich nach der zu behandelnden Erkrankung. Die Therapie bietet große Vorteile und ist wirkungsvoll bei Beschwerden wie Hämorrhoiden, Verstopfung und Arthritis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the disease that needs to be cured' rendered as 'die zu behandelnde Erkrankung' per banned-word rule; efficacy claim translated faithfully, may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_0be803d5e810d8ee5187",
+   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
+   "text": "Vasti: Als Vasti bezeichnet man die ayurvedische Therapie, bei der Arzneimittel oder natürliche Abkochungen wie Öle, Ghee oder Milch als Einlauf verabreicht werden. Die Abkochung richtet sich nach der zu behandelnden Erkrankung. Die Therapie bietet große Vorteile und ist wirkungsvoll bei Beschwerden wie Hämorrhoiden, Verstopfung und Arthritis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the disease that needs to be cured' rendered as 'die zu behandelnde Erkrankung' per banned-word rule; efficacy claim translated faithfully, may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": Für Patienten mit Beschwerden im Kopfbereich wie Sinusitis und Migräne ist diese ayurvedische Therapie die beste Wahl. Es handelt sich um ein natürliches Reinigungsverfahren, bei dem Nasentropfen dosiert in die Nasenlöcher gegeben werden und der Kopfbereich von Schmerzen jeglicher Art befreit werden soll.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') translated without strengthening; 'soll' added to avoid presenting pain relief as guaranteed — clinical wording may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam: Für Patienten mit Beschwerden im Kopfbereich wie Sinusitis und Migräne ist diese ayurvedische Therapie die beste Wahl. Es handelt sich um ein natürliches Reinigungsverfahren, bei dem Nasentropfen dosiert in die Nasenlöcher gegeben werden und der Kopfbereich von Schmerzen jeglicher Art befreit werden soll.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') translated without strengthening; 'soll' added to avoid presenting pain relief as guaranteed — clinical wording may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_e747d12ed643ce1ef449",
+   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
+   "text": ": Schließlich dient dieses Verfahren der Reinigung des Blutes. Nach ayurvedischer Lehre ist unreines Blut eine Hauptursache vieler Erkrankungen; diese Therapie ermöglicht daher die Reinigung des Blutes und damit die Linderung von Beschwerden wie Psoriasis, Pigmentstörungen, Dermatitis und vielen weiteren. Die Ernährung ist sowohl während als auch nach Panchakarma von großer Bedeutung. Nach dem Reinigungsprozess sollte der Patient immer dann, wenn Hunger aufkommt, Kitchari (ein gemischtes Gemüsegericht) zu sich nehmen. Diese Ernährung sollte drei bis vier Tage lang beibehalten werden; nach und nach kommen weitere Lebensmittel wie Ingwer, Pfeffer, Salz, Mungbohnensuppe und andere Hülsenfruchtsuppen hinzu, und die Menge wird langsam gesteigert.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'getting rid of health issues' rendered as 'Linderung von Beschwerden' to avoid a cure claim; clinical claim may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_df61c09156f0a21cf0c1",
+   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
+   "text": "Raktamokshana: Schließlich dient dieses Verfahren der Reinigung des Blutes. Nach ayurvedischer Lehre ist unreines Blut eine Hauptursache vieler Erkrankungen; diese Therapie ermöglicht daher die Reinigung des Blutes und damit die Linderung von Beschwerden wie Psoriasis, Pigmentstörungen, Dermatitis und vielen weiteren. Die Ernährung ist sowohl während als auch nach Panchakarma von großer Bedeutung. Nach dem Reinigungsprozess sollte der Patient immer dann, wenn Hunger aufkommt, Kitchari (ein gemischtes Gemüsegericht) zu sich nehmen. Diese Ernährung sollte drei bis vier Tage lang beibehalten werden; nach und nach kommen weitere Lebensmittel wie Ingwer, Pfeffer, Salz, Mungbohnensuppe und andere Hülsenfruchtsuppen hinzu, und die Menge wird langsam gesteigert.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'getting rid of health issues' rendered as 'Linderung von Beschwerden' to avoid a cure claim; clinical claim may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "Schulungen werden angeboten. Für keine Route in diesem Batch gilt der Status „Coming Soon“.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note; 'Coming Soon' kept as a status label."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "Aktuelle medizinische, kommerzielle, Auszeichnungs- und Verfügbarkeitsangaben unterliegen weiterhin genau ihren internen Freigabestufen. Die Erfassung einer Quelle ist keine Verifizierung, und das Fehlen einer routenspezifischen Freigabestufe bedeutet niemals, dass eine Angabe genehmigt ist.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "Programme für alle",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programme' to keep the clinical register."
+   ]
+  }
+ ]
+}

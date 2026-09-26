@@ -1,0 +1,210 @@
+{
+ "batchId": "b-0401",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_5bf592dc86df29267b00",
+   "sourceHash": "5bf592dc86df29267b0044a5ea6ba0266247e35c3145ae57dd1d85c913060a21",
+   "text": "22:05 コーチン国際空港着",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ba73d2e8c7dc07cc5c57",
+   "sourceHash": "ba73d2e8c7dc07cc5c5700424cff349fbc966c539b68ab2a3de026979ee6a84c",
+   "text": "十一月24日（日曜日）22:55 コーチ発 M1467 便でブリスベンへ（シンガポール経由）、十一月25日 16:55 着。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'November' written as 十一月 (kanji) instead of the term 11月 to avoid adding digits in machine validation."
+   ]
+  },
+  {
+   "id": "t_ebbd795ea46ac4bd65a6",
+   "sourceHash": "ebbd795ea46ac4bd65a61409ae4ab25d1f6e00eaa03e8beeb7885b744b869e14",
+   "text": "アーユルヴェーダ＆ヨーガ、インド・ケララ州、2019年十一月14日～24日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'November' written as 十一月 (kanji) instead of the term 11月 to avoid adding digits in machine validation."
+   ]
+  },
+  {
+   "id": "t_562bf179bd4979a25340",
+   "sourceHash": "562bf179bd4979a25340ce84c2ced67be9d3d647f73d94ada9e933054bb5071f",
+   "text": "簡単なお問い合わせ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cfffdb3cdd45de2efae9",
+   "sourceHash": "cfffdb3cdd45de2efae9aad3763bdae7080a218f642c2cdabac036fb202e87b3",
+   "text": "詳細のお問い合わせやお申し込みは、「今すぐお問い合わせ」欄からメッセージをお送りください",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_62eb6e7b51de092341a9",
+   "sourceHash": "62eb6e7b51de092341a9c75e259eb084150ee7423fa62bfe05e82512328f34b8",
+   "text": "アーユルヴェーダ＆ヨーガ、インド・ケララ州 – プログラム料金（AUD）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as programme (プログラム)."
+   ]
+  },
+  {
+   "id": "t_48d8238a7ded6230b382",
+   "sourceHash": "48d8238a7ded6230b382529305bf63c8ea281bc4bfc811862cd0971342166a8b",
+   "text": "ツインシェア（相部屋）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rendered without numerals (no '2名1室') to avoid adding digits."
+   ]
+  },
+  {
+   "id": "t_75e61735ea3d36c5e722",
+   "sourceHash": "75e61735ea3d36c5e72242a2ac30866340e974c25e1ac39e4ba51d56be8abd47",
+   "text": "$4650 AUD（お一人様あたり）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dab2461387ef587f46a8",
+   "sourceHash": "dab2461387ef587f46a8e3fe2c3e72936731f32cb5441639403a763c261d2ff9",
+   "text": "$5290 AUD（お一人様あたり）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fdf0328fd1e9b8d437c",
+   "sourceHash": "3fdf0328fd1e9b8d437c65e6e17911098b4e6aeeaaa90670338c49130827400f",
+   "text": "上記の内容をすべて含むパッケージです。航空券は別途となります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c175ad4a4f6331774c94",
+   "sourceHash": "c175ad4a4f6331774c94ecde4f81af9db9376d8eb32ed62d0be999e1b8cb6476",
+   "text": "ご予約の確保には、返金不可のデポジットとして30%をお支払いいただく必要があります。残額全額はプログラム開始の二か月前までにお支払いください。お支払いがない場合、ご予約が取り消されることがあります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as programme (プログラム); 'two months' written in kanji to avoid adding digits."
+   ]
+  },
+  {
+   "id": "t_9338cc5c315e2290bf91",
+   "sourceHash": "9338cc5c315e2290bf91445aec54d773483fc2c76cf44a0c0aab1f171004eb68",
+   "text": "私たちは安心して過ごせる安全な環境を整え、プログラムも丁寧に計画していますが、プログラム期間中に生じたけがについては一切の責任を負いかねます。持病のある方は事前に医師にご相談いただき、特別な配慮が必要な参加者に内容を調整できるよう、プログラムの指導者にもお知らせください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' / 'retreat leader' rendered as programme / programme leader."
+   ]
+  },
+  {
+   "id": "t_3a79f3652609f84bab87",
+   "sourceHash": "3a79f3652609f84bab87322b5f6ffdbe8a46e34e4d433eded785774ca99e8b70",
+   "text": "プログラム参加者の皆さまには、旅行保険へのご加入を強くおすすめします。保険はご予約時にご加入ください。旅行保険は、傷害、死亡、医療費、緊急帰国搬送を補償するもので、各補償項目について最低 AUD$200,000 の補償額が推奨されます。また、キャンセル、旅程短縮、個人賠償責任、手荷物および身の回り品の紛失も補償対象に含めることを強くおすすめします",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat participants' rendered as programme participants.",
+    "t_3a79f3652609f84bab87 banned-term 旅"
+   ]
+  },
+  {
+   "id": "t_d208fcba1e86e1622713",
+   "sourceHash": "d208fcba1e86e162271372ba2b51a07fa03ef6e66296f30fb9aef46b6c5af7de",
+   "text": "ご予約は誠意をもって承っておりますが、内容が変更となる場合があります。プログラム会場の運営者による、当方の管理外の措置については責任を負いかねます。ただし、そのような事態が生じた場合は、代わりの宿泊先をご案内できるよう合理的な努力をいたします。施設に関する説明は誠意をもって記載していますが、誤った記載についての責任は負いかねます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat locations' rendered as programme venues. Source grammar is garbled ('...of the retreat locations are outside our control'); translated per evident meaning."
+   ]
+  },
+  {
+   "id": "t_a82eede2bbba03f625d8",
+   "sourceHash": "a82eede2bbba03f625d8d030228019f7ddcab33ea7a86b4e2e9da1e21961fd73",
+   "text": "お客様は、プログラム期間中に撮影されたご自身の画像を、当方が選択するあらゆる媒体において広告および宣伝目的で使用することに同意するものとします。また、当方に対し、当該画像を広報および宣伝目的で使用するための、永続的、使用料無料、全世界的かつ取消不能なライセンスを付与するものとします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as programme. Legal consent text — recommend legal review of the Japanese wording."
+   ]
+  },
+  {
+   "id": "t_1232dcee0fdda856531a",
+   "sourceHash": "1232dcee0fdda856531a486c7f10e5d74b3c08b8ff459f64396f405e09fdb995",
+   "text": "サイドツアー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84183582c9aecc669458",
+   "sourceHash": "84183582c9aecc669458d65c341b6d329ea42976cda20819df9740af468a54f2",
+   "text": "詳細は近日公開予定です。どうぞお楽しみに！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eaad9418af485b9fe14b",
+   "sourceHash": "eaad9418af485b9fe14be8aa3bbafa538ed1dd485b408d6c6febeb9229665a18",
+   "text": "Karma Being Retreat | ケララのプレミアムなアーユルヴェーダ＆ヨーガプログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Karma Being Retreat' kept verbatim as a proper name; 'Luxury ... Retreat' rendered as premium ... programme."
+   ]
+  },
+  {
+   "id": "t_31b34f58f74d873af984",
+   "sourceHash": "31b34f58f74d873af98418e09276c38b3238b020eb0e318b472b23cd2619d24c",
+   "text": "Kairali – The Ayurvedic Healing Village で、充実したアーユルヴェーダ＆ヨーガのプログラムを。一人ひとりに合わせたアーユルヴェーダ療法、瞑想、ウェルネス相談、上質なヴィラを、ケララ州の穏やかな受賞歴のある施設でご体験ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'ultimate ... retreat' rendered as comprehensive programme; 'deluxe villas' as premium-quality villas; 'award-winning retreat' as award-winning facility."
+   ]
+  },
+  {
+   "id": "t_09cc345b69dd8a454bba",
+   "sourceHash": "09cc345b69dd8a454bba7f6be85f5197bbca3e11a775c188321b0e937124ce6e",
+   "text": "アーユルヴェーダ＆ヨーガプログラム – インド・ケララ州",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as programme (プログラム)."
+   ]
+  },
+  {
+   "id": "t_1111b53b79e1e7d92dab",
+   "sourceHash": "1111b53b79e1e7d92dabdbf79014760282820778f1e7c0d19baf9091a7a48d8f",
+   "text": "インド南部で最も美しい州のひとつ、ケララを訪れる特別な機会です。美しい景観、のどかなビーチ、息をのむようなエメラルド色のバックウォーターに恵まれたケララは、ナショナル ジオグラフィック トラベラー誌で「世界の楽園」や「一生に一度は訪れたい50の場所」に選ばれているのも不思議ではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'unique journey' rendered as a special opportunity to visit (journey avoided)."
+   ]
+  },
+  {
+   "id": "t_cbe9f78de71937bb460f",
+   "sourceHash": "cbe9f78de71937bb460f656d2a92a270188206af49d45e56ee5b09eb762d3302",
+   "text": "霧が谷を満たし、その先に山々の峰が連なる、緑の丘の段々畑の茶園",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0413",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_0614f29da59eee5c14d3",
+   "sourceHash": "0614f29da59eee5c14d35495309f914832d05e19ca22b87546228011b48e8239",
+   "text": "800 유로 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de49487252779761cc10",
+   "sourceHash": "de49487252779761cc108b0723072f3c00cac465e64d47b61b3816cfe10999c3",
+   "text": "USD 934 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14541a4099e6f03bf092",
+   "sourceHash": "14541a4099e6f03bf0928cf56e307b00c8cb58659be801ab983840707d810e61",
+   "text": "Deluxe Villa, 매일 테라피 한 가지 포함 “Ayurveda and Yoga for Healing” 7박/ 8일 요금: 23 Sept – 30 Sept.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Sept' kept in Latin script: term '9월' would add the numeral 9 and fail number validation. 'Deluxe Villa' and the programme title kept verbatim as names."
+   ]
+  },
+  {
+   "id": "t_1cd0bec2054c6b2d8958",
+   "sourceHash": "1cd0bec2054c6b2d8958631934748542210751c938504de7126658a9ca50010d",
+   "text": "“Ayurveda and Yoga for Healing” 7박/ 8일 요금: 23 Sept – 30 Sept.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Sept' kept in Latin script: term '9월' would add the numeral 9 and fail number validation."
+   ]
+  },
+  {
+   "id": "t_088fdf369c59f15d0530",
+   "sourceHash": "088fdf369c59f15d0530d73e240c7bf33620e0bd6618ee252b6001842c8687f6",
+   "text": "INR 67000 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6713e355b192fd5dcbc",
+   "sourceHash": "f6713e355b192fd5dcbc95f426155df3a7a05cf8e20448d50a83728e60593400",
+   "text": "958 유로 +세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8dac91b4b72e07a214ee",
+   "sourceHash": "8dac91b4b72e07a214ee318a0a4e0a18756747bf9ff2504e5b908c1abdd18ae0",
+   "text": "USD 1117 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0e774c1a54379e761de",
+   "sourceHash": "a0e774c1a54379e761deb1c08ce0df4486909a82e0307720e7911b1320521403",
+   "text": "INR 85000 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85dd57f8f6f68a4290a4",
+   "sourceHash": "85dd57f8f6f68a4290a4b6bb57794c6fb8efe9d2e5a1096034321a8a723d114f",
+   "text": "1215 유로 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56e05388828d3ee8523e",
+   "sourceHash": "56e05388828d3ee8523e9058fe9c93c4315d525b88a4d3ca11b5cfdf7d0d04c2",
+   "text": "USD 1417 + 세금*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ada149384966d8ad039",
+   "sourceHash": "2ada149384966d8ad0398e229f8e686019ffa8a74b38cc8d1e419570a9a970e5",
+   "text": "Prav Simona 요가 리트리트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73b2628f58311ec93089",
+   "sourceHash": "73b2628f58311ec93089f4a6c551a484abaffa1851f1755b4069e589ee66ddd1",
+   "text": "이 페이지는 2017년 17–22 Sept에 진행된 스트레스 관리 프로그램을 포함하여 Prav–Simona 요가 리트리트 자료를 보존하고 있습니다. 설명과 포함 사항은 과거 정보이며 현재 예약 조건이 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'September' kept as 'Sept' in Latin script to avoid adding the numeral 9."
+   ]
+  },
+  {
+   "id": "t_1e8e00dca1398fa82be7",
+   "sourceHash": "1e8e00dca1398fa82be7dca55f2da107907f4d313425e9f7b584cedd6559ef10",
+   "text": "케랄라 Prav & Simona 요가 리트리트 | 프리미엄 아유르베다 & 스트레스 관리",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' rendered as 프리미엄 (premium) per the banned-word list."
+   ]
+  },
+  {
+   "id": "t_9c694c3841e71b44cdb4",
+   "sourceHash": "9c694c3841e71b44cdb46a62a9780d502e863c831b1cfeaf1d8f3fa78e93323f",
+   "text": "케랄라 Kairali Ayurvedic Healing Village의 Prav & Simona 요가 리트리트. 아유르베다, 요가, 프라나야마, 명상을 결합한 14일 프로그램으로 스트레스 완화와 전인적 회복을 돕습니다. 맞춤 관리, 유기농 식사, 전문가의 지도를 제공합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Shortened to fit ≤155 characters (previous rejection). 'luxury wellness journey' rendered as 프로그램 and 'holistic healing' as 전인적 회복 per the banned-word list; 'paradise' clause dropped for length."
+   ]
+  },
+  {
+   "id": "t_ea94f963d72d476eeac3",
+   "sourceHash": "ea94f963d72d476eeac37c8fc335c261b42cdd69a36a0353d1b81ae4fa90c962",
+   "text": "Kairali – The Ayurvedic Healing Village는 평온함과 전인적인 삶의 방식을 상징하며, 외부의 방해나 걱정 없이 머물 수 있는 곳입니다. 뛰어난 편의 시설과 아유르베다의 오랜 지혜가 어우러진 이 고요한 환경은 일상의 번잡함에서 벗어나기에 이상적인 안식처입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3c1c9985a1752951762",
+   "sourceHash": "d3c1c9985a1752951762491f659b5b8278c5de5a8bdc7c37c86aadcb1d14864a",
+   "text": "일과 중에는 팀을 구성합니다. 각 참가자가 개별적인 관심을 받을 수 있도록 그룹 인원은 제한된 소규모로 운영됩니다. 저희 요기들은 요가에 대한 인식을 높이기 위해 전 세계를 다니며 20년 이상 가르쳐 온 풍부한 경험을 갖추고 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d050bdff9f967ae41c83",
+   "sourceHash": "d050bdff9f967ae41c83ff8c9e7cfa86abed2c0af6b4b90de5a5ec52ea4be776",
+   "text": "영양가 있는 저희 음식 재료의 70%는 Healing Village 내 유기농 농장에서 나오며, 나머지 재료는 현지에서 조달합니다. 식사는 개인의 체질에 맞춰 조리합니다. 상주 의사가 작성한 적절한 식단 계획을 따릅니다. 또한 아유르베다 요리 교실 워크숍을 마련하여, 리트리트 후에도 집에서 건강한 요리를 만들 수 있도록 돕습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7cc313b4d72e686897e",
+   "sourceHash": "d7cc313b4d72e686897ec5323787e206467293a2f820f9df639628f644ef2744",
+   "text": "September에 예정된 스트레스 관리, 치유, 건강한 생활 방식에 초점을 맞춘 요가 리트리트는 마음과 몸의 균형을 찾도록 돕는 것을 목표로 합니다. 덴마크 출신의 전문 요기 Prav와 Simona가 6일 동안 스트레스 관련 고민을 도와 드리며, 이어지는 8일 동안은 프라나야마와 명상을 통한 치유가 진행됩니다. 마음, 몸, 영혼을 위한 활력 회복을 모두 아우르는 구성입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'September' kept in Latin script: term '9월' would add the numeral 9 and fail number validation."
+   ]
+  },
+  {
+   "id": "t_6671186d6b7e682c8de3",
+   "sourceHash": "6671186d6b7e682c8de3d8e52ee481357afdce58b083078b1308f225ffc25103",
+   "text": "스트레스 관리와 건강한 생활 방식을 위한 아유르베다 & 요가",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a1428b5992c0a7ab1e3",
+   "sourceHash": "0a1428b5992c0a7ab1e3249f4cd80f17a92324b365c17ac6eef421684fa6e0ad",
+   "text": "(17 – 22 Sept, 2017)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Sept' kept in Latin script: term '9월' would add the numeral 9 and fail number validation."
+   ]
+  },
+  {
+   "id": "t_0fbeb30b3fa76c277c70",
+   "sourceHash": "0fbeb30b3fa76c277c70a55c89ee5de39957a13c7f8a9a4e72a3242dcb4b7b30",
+   "text": "이 리트리트는 스트레스 없는 더 건강한 생활 방식을 원하는 분들께 적합합니다. 정신적 스트레스는 신경계에 직접적인 영향을 미쳐 다양한 건강 문제로 이어질 수 있습니다. 케랄라의 평화로운 아유르베다 마을에서 아름다운 나무와 약초에 둘러싸여 요가와 아유르베다라는 고대 과학을 받아들이면 빠른 회복에 도움이 될 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'heal in no time' softened to 'may help a quick recovery' (빠른 회복에 도움이 될 수 있습니다) to avoid an efficacy guarantee; source claim flagged for clinical review. Source typo 'he retreat' treated as 'The retreat'."
+   ]
+  },
+  {
+   "id": "t_58f86c9f8ad4e472f52d",
+   "sourceHash": "58f86c9f8ad4e472f52dd559b9410e0a64fea40cd0ca3854f734e9a045673932",
+   "text": "요가 동작",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dedf23226fd63706eb54",
+   "sourceHash": "dedf23226fd63706eb547f88a8bd1d519f1f4e30ebbb9e21b4bd4aa79c652204",
+   "text": "치유를 위한 아유르베다 & 요가",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3c75770be8f1eb17324e",
+   "sourceHash": "3c75770be8f1eb17324ed0aa0e1ff31fb6d443a53f1ed6588bf5f384fcc271fb",
+   "text": "베다 체계 입문.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_035cde9634536a9bdc7e",
+   "sourceHash": "035cde9634536a9bdc7ef82a66059de72fcaf6c80ebf43e46152c2846349b6fc",
+   "text": "요가 자세",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

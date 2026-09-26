@@ -1,0 +1,150 @@
+{
+ "batchId": "b-0520",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_f6447aeef71da88eff31",
+   "sourceHash": "f6447aeef71da88eff318285e08bb5a00838b4b06270fb64d2feade04e2dc8eb",
+   "text": "Durch das Rauchverbot schafft Kairali eine Atmosphäre reinen Wohlbefindens, in der sich die Patienten ganz auf Heilung und Selbstfindung konzentrieren können. Das schadstofffreie Umfeld der Einrichtung ermöglicht es den Patienten in Verbindung mit ihrem ganzheitlichen Gesundheitsansatz, die Freude an einem Leben ohne Giftstoffe und ungesunde Einflüsse zu erfahren.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'guests' rendered as 'Patienten'; 'wellness' → 'Wohlbefinden', 'retreat' → 'Einrichtung'."
+   ]
+  },
+  {
+   "id": "t_24206af5825092ad101e",
+   "sourceHash": "24206af5825092ad101e91ab09a0b47d7529a14f6ce36d510bb6a50e73752e19",
+   "text": "Ein Schritt zu einem gesünderen Ich",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c4bd95d2ff9aa9f25764",
+   "sourceHash": "c4bd95d2ff9aa9f257647d6afd1ff8dc3f6fbb4331a1cd0edfbd1f003437db1a",
+   "text": "Kairali – The Ayurvedic Healing Village ist mehr als nur ein Ort; es ist ein Bekenntnis zum Wohlbefinden. Das Rauchverbot spiegelt das Engagement wider, ein sauberes, gesundes und regenerierendes Umfeld zu schaffen. Ob Sie entgiften, wieder ins Gleichgewicht finden oder sich einfach in der Natur erholen möchten – Kairali bietet einen Ort für ganzheitliche Veränderung. Entscheiden Sie sich bei Kairali für ein Leben in Wohlbefinden und Harmonie, wo jeder Atemzug ein Schritt zu einer gesünderen, rauchfreien Zukunft ist.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'destination'/'sanctuary' rendered as 'Ort', 'wellness' as 'Wohlbefinden' for the clinical register."
+   ]
+  },
+  {
+   "id": "t_d90bd77da15cb097fe87",
+   "sourceHash": "d90bd77da15cb097fe875a8362675db866ab6bc3a6ced9edf28ff23764c8d4bc",
+   "text": "Kairali: Bio-Plantage zur Unterstützung der Genesung",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "SEO title condensed to fit 60 characters ('and regaining health' merged into 'Genesung')."
+   ]
+  },
+  {
+   "id": "t_a71c947728e9de664ca8",
+   "sourceHash": "a71c947728e9de664ca895c43bc42be64b6f05f9b033a9cf01600c9f725513a0",
+   "text": "Kairali – The Ayurvedic Healing Village verfügt über eine große Bio-Plantage, aus der die Mahlzeiten für alle Besucher des Krankenhauses stammen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand punctuation normalised; 'hospital and retreat' rendered as 'Krankenhaus' only (clinical register, 155-character limit)."
+   ]
+  },
+  {
+   "id": "t_71c5750f6b2f4bff0274",
+   "sourceHash": "71c5750f6b2f4bff0274423045e0cf7c35c0bfed092f41ac04b8f32ef0fd971c",
+   "text": "Alkoholfrei",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Alchohol' corrected in translation."
+   ]
+  },
+  {
+   "id": "t_c3ce0a73edc06d27aab2",
+   "sourceHash": "c3ce0a73edc06d27aab21b4175a18161e11d915f10488fc3700e05ace07dc966",
+   "text": "Kairali verfügt über einen eigenen Bio-Garten, frei von Pestiziden, Chemikalien und Konservierungsstoffen, die der Nahrung ihren würzigen Charakter und ihre Reinheit rauben. Die Bio-Plantage von Kairali ist nicht nur nachhaltig, sondern verbessert auch die Bodenfruchtbarkeit und die biologische Vielfalt. Synthetische Pestizide, Antibiotika, Kunstdünger, gentechnisch veränderte Organismen und Wachstumshormone kommen dort nicht zum Einsatz.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Garbled source ('devoid of prohibiting synthetic pesticides…') interpreted as 'does not use'."
+   ]
+  },
+  {
+   "id": "t_b4691838dab180fce4b6",
+   "sourceHash": "b4691838dab180fce4b6b6d55f97cdc5838cee18484301c616b13193ff143644",
+   "text": "Illustration eines Gemüsegartens mit einem Rankgerüst für Flaschenkürbisse",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8efffc8f8e0d013d373e",
+   "sourceHash": "8efffc8f8e0d013d373e44dd2923cbc82a3a4f01073edb886e772f6d12e80167",
+   "text": "Chemikalien nützen niemandem, sondern können eine Vielzahl von Beschwerden verursachen. Nährstoffarme Nahrung kann die Anfälligkeit für Erkrankungen wie Diabetes, erhöhte Cholesterinwerte, Bluthochdruck, hormonelle Störungen und viele weitere erhöhen, die sogar lebensbedrohlich werden können.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Medical claim content: 'makes you prone to' rendered as 'kann die Anfälligkeit … erhöhen' (not strengthened; slightly hedged). Flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_23fc3bf6b529843d4d10",
+   "sourceHash": "23fc3bf6b529843d4d10b08de87614d00f717f731dfded211143139632f13415",
+   "text": "Ayurveda geht weit über Prognose und Diagnose hinaus: Es behandelt nicht nur Symptome und Erkrankungen, sondern führt den Menschen auch zu einer gesundheitsorientierten Lebensweise. Ayurvedische Ernährung spielt daher eine wichtige Rolle für ein ausgeglichenes Immunsystem. Aus diesem Grund verfügt Kairali – The Ayurvedic Healing Village über eine eigene Bio-Plantage, aus der die Mahlzeiten für alle Besucher des Krankenhauses stammen. Getreu dem Leitgedanken „Zurück zur Natur“ bietet das Healing Village allen Besuchern gesunde, hochwertige Speisen an, denn die Ernährung spielt eine wichtige Rolle für Ihre Gesundheit.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-claim softening per rules: 'cures the symptoms and illness' → 'behandelt' (banned word 'cure'); 'food plays vital role in freeing you from all sorts of diseases' → 'spielt eine wichtige Rolle für Ihre Gesundheit' (source claim is an unsupported efficacy claim). 'hospital and retreat' → 'Krankenhaus'; 'gourmet' → 'hochwertige'. Requires Dr. Deepu John's sign-off; source EN copy should be reviewed too."
+   ]
+  },
+  {
+   "id": "t_b1c2336b025507216fbe",
+   "sourceHash": "b1c2336b025507216fbeaa963c4ef65902c4c7a4c89fe9168e1890d3bd7197a6",
+   "text": "Bei uns genießen Sie gutes Essen und erfahren zugleich, welche Bedeutung ganzheitliche Gesundheit für Ihre Ernährung hat. Während Ihres Aufenthalts können Sie außerdem den Bio-Hof besuchen und mehr über die Bedeutung natürlicher, im Einklang mit der Natur angebauter Lebensmittel erfahren.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'at the retreat' omitted and 'mesmerizing stay' rendered as 'Aufenthalt' for the clinical register; source 'palette' read as 'palate'."
+   ]
+  },
+  {
+   "id": "t_b0014ee51f30a5d31f6a",
+   "sourceHash": "b0014ee51f30a5d31f6a536ea6173cf0edc02cacee6833ddadc4940c69a5a698",
+   "text": "Auszeichnungen für Kairali | Preisgekröntes Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned words 'Luxury' and 'Retreat' removed from the SEO title for the clinical register."
+   ]
+  },
+  {
+   "id": "t_d12ce40be4d9d26dd143",
+   "sourceHash": "d12ce40be4d9d26dd14392372f637d75388719dcedc59ef44ba36da7cd469c6d",
+   "text": "International ausgezeichnet: „Top Ten Wellness Destination in Asia“ (National Geographic Traveler) und World Luxury Spa Award für Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award titles kept verbatim. 'wellness retreat' and 'luxury hospitality' phrasing removed (banned words outside proper names); condensed to fit 155 characters.",
+    "t_d12ce40be4d9d26dd143 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_89c2e163d3860e7fc8a1",
+   "sourceHash": "89c2e163d3860e7fc8a182c8db1e5b31f30b3bb2ee26d75ce2ee712147465b21",
+   "text": "Unsere Auszeichnungen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6fae8433f205946ce2e",
+   "sourceHash": "f6fae8433f205946ce2ea3fd31f1ce8459e9546f01ff19a149039087d1b2a851",
+   "text": "Kairali – The Ayurvedic Healing Village fühlt sich geehrt, zahlreiche renommierte internationale Auszeichnungen und Anerkennungen erhalten zu haben.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
