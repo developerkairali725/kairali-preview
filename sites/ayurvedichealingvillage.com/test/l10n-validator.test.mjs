@@ -80,3 +80,11 @@ test("POSITIVE/NEGATIVE: English quantity words as numerals are source-bound", (
   assert.ok(run("After a week at Kairali", "Kairaliで2週間過ごした後", "ja").errs.some((e) => /added 2/.test(e)), "different quantity still rejected");
   assert.ok(run("1.4M therapies", "1400万件", "ja").errs.length, "wrong scale rejected");
 });
+test("POSITIVE/NEGATIVE: dotted 12h clock times", () => {
+  assert.deepEqual(run("7.30 pm: Panel discussion", "19:30: Tavola rotonda", "it").errs, []);
+  assert.deepEqual(run("8.00 pm: dinner", "20:00: cena", "it").errs, []);
+  assert.deepEqual(run("3.30 pm:", "午後3時30分：", "ja").errs, []);
+  assert.deepEqual(run("Coimbatore Railway Station: 51.2 km", "Bahnhof Coimbatore: 51,2 km").errs, [], "decimals unaffected");
+  assert.ok(run("7.30 pm: Panel", "19:45: Tavola", "it").errs.length, "changed minutes rejected");
+  assert.ok(run("₹21,567 per night", "₹21.576 pro Nacht").errs.length, "amounts still strict");
+});

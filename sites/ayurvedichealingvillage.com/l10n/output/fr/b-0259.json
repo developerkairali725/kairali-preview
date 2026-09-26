@@ -1,0 +1,201 @@
+{
+ "batchId": "b-0259",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_0046cd93aead3d817a87",
+   "sourceHash": "0046cd93aead3d817a87d4cf1762c2a01ee31300351e663d0d411185e36ecd4c",
+   "text": "Trois pochons de plantes en tissu à côté de bols de feuilles vertes hachées portant la marque Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88389c3f7ba0df590104",
+   "sourceHash": "88389c3f7ba0df59010418162036d2ed2dcf8b4d60088d63d08e28bb1d364a99",
+   "text": "Soin de la paralysie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56a6e67e033ac2ac43a1",
+   "sourceHash": "56a6e67e033ac2ac43a1c19891c2f19ee416058ca5f587c567f881319594ff87",
+   "text": "Un thérapeute étalant une pâte de plantes brune sur la jambe d'un patient, à côté d'un récipient en laiton",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3bc51d7a9be63361d15d",
+   "sourceHash": "3bc51d7a9be63361d15d7d831dfb94a7c1c9419ee11310abf63cd64d11cae79f",
+   "text": "Soin du psoriasis",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02e8f9b8b6670c3c9694",
+   "sourceHash": "02e8f9b8b6670c3c96946c8dfbac9e3e85e945310d91b07f5a25e30a9cac3d0e",
+   "text": "Gros plan de mains frottant une poudre de plantes brune et grossière le long du membre d'un patient",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51e9f7d709c76b85f788",
+   "sourceHash": "51e9f7d709c76b85f788bfe2ca4f4b931aca831aab6a309422728e30ef5082cf",
+   "text": "Render24 : ancres # de la source rendues comme libellés de cartes non interactifs ; conserver à l'identique libellés, images et ordre, et le href d'origine dans la provenance privée",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source appears to be an internal build/provenance note rather than patient-facing copy; translated literally — please confirm it should be displayed at all."
+   ]
+  },
+  {
+   "id": "t_e98aad83c8bc7a9a8866",
+   "sourceHash": "e98aad83c8bc7a9a8866ab3f63593356f4775618503da4042f1f22779fa17059",
+   "text": "Retraite ayurvédique | Soins de santé | Séjour de guérison",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Halth' read as 'Health'. 'Healing Resort' rendered as 'Séjour de guérison' (banned word 'resort' avoided). 'Techniques' segment dropped to stay within the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_438619465c3e085c9ff9",
+   "sourceHash": "438619465c3e085c9ff91f6fb08f18fc59ac550da72a06a85407686a2bd75c7e",
+   "text": "Kairali – The Ayurvedic Healing Village, à Palakkad (Kerala, Inde) : un séjour ayurvédique pour rééquilibrer le corps, l'esprit et l'âme.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Condensed to fit the 155-character seo.description limit. 'Ayurveda holiday' rendered as 'séjour ayurvédique' (banned word 'holiday' avoided). The source claim 'completely heal you / state of bliss' was omitted rather than strengthened; source efficacy wording may merit clinical review."
+   ]
+  },
+  {
+   "id": "t_186f4d8142af31ccef0e",
+   "sourceHash": "186f4d8142af31ccef0e60a2efa3ad525d5354fafcb3f0885b17e1b34334367b",
+   "text": "Des retraites ayurvédiques pour tous",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56231dda11ac6e1d5283",
+   "sourceHash": "56231dda11ac6e1d5283c40af4c0aa59da9fec36f2dde7c0d2568588914a8a50",
+   "text": "Accueil – Des retraites ayurvédiques pour tous",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_893dce0d9b5f636980d1",
+   "sourceHash": "893dce0d9b5f636980d10c95c1dcf5fc18cd7ef74862202a0bf776b78d42801f",
+   "text": "Deux thérapeutes pratiquant un massage synchronisé à l'huile chaude sur un patient allongé sur le ventre",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc78ce173c629fbede43",
+   "sourceHash": "cc78ce173c629fbede43a95787a3c80711ae5d8783db5472afa8a90a94a38558",
+   "text": "Pour mettre un temps d'arrêt à une vie trépidante, l'Ayurveda offre le savoir des sages et la richesse des siècles, qui trouvent une pertinence nouvelle à travers diverses approches : textes, archives et lieux uniques propices à la régénération. Parmi toutes ces voies,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_462bfc6da2cd315cbb27",
+   "sourceHash": "462bfc6da2cd315cbb27357cd49359edf551b1df2eb06e152be473b0d0a5307c",
+   "text": "les retraites ayurvédiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02d41b14ec5b9319e970",
+   "sourceHash": "02d41b14ec5b9319e9709ce44f79998b847aebd295b885d68b18ee2106af299d",
+   "text": ", tout à fait à part, permettent de préserver l'équilibre du corps, de l'esprit et de l'âme. L'objectif : vous aider à guérir pleinement et vous mener vers un état de plénitude.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source efficacy wording 'completely heal you' is kept in meaning (not strengthened) but may merit clinical review by Dr. Deepu John."
+   ]
+  },
+  {
+   "id": "t_27ca7cbd6e6875514a74",
+   "sourceHash": "27ca7cbd6e6875514a743c31969a7fe32cdaec30bab9af59de0371b7da2467e4",
+   "text": "Pour mettre un temps d'arrêt à une vie trépidante, l'Ayurveda offre le savoir des sages et la richesse des siècles, qui trouvent une pertinence nouvelle à travers diverses approches : textes, archives et lieux uniques propices à la régénération. Parmi toutes ces voies, les retraites ayurvédiques, tout à fait à part, permettent de préserver l'équilibre du corps, de l'esprit et de l'âme. L'objectif : vous aider à guérir pleinement et vous mener vers un état de plénitude.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source efficacy wording 'completely heal you' is kept in meaning (not strengthened) but may merit clinical review by Dr. Deepu John."
+   ]
+  },
+  {
+   "id": "t_85664666329773e0539c",
+   "sourceHash": "85664666329773e0539cc52025bd9ac0e99331d6249c556428e8b8d446e60548",
+   "text": "Kairali – The Ayurvedic Healing Village, à Palakkad (Kerala, Inde), est l'un des lieux qui donnent un sens nouveau à l'inspirant",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d46da2d8806ca79920f9",
+   "sourceHash": "d46da2d8806ca79920f94891a6e63e0efa6e0c679fcac39f34f68295ee822aa6",
+   "text": "séjour ayurvédique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurveda holiday' rendered as 'séjour ayurvédique' (banned word 'holiday' avoided)."
+   ]
+  },
+  {
+   "id": "t_bf4dc085d147c5491a21",
+   "sourceHash": "bf4dc085d147c5491a21bcfddcfeae494a256800047124f8bcba6c267c7901d4",
+   "text": "axé sur le bien-être. L'hôpital, qui se veut aussi un lieu de retraite, offre une expérience fascinante où vous découvrez une alliance unique d'Ayurveda, de yoga et de méditation. Les approches thérapeutiques de notre science ancestrale, au Healing Village, éveilleront votre conscience au cœur de la nature.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1aabf248e91031bf17e4",
+   "sourceHash": "1aabf248e91031bf17e44c45b5a44c5ff6719010ab22b58165f1984950704c92",
+   "text": "Kairali – The Ayurvedic Healing Village, à Palakkad (Kerala, Inde), est l'un des lieux qui donnent un sens nouveau à l'inspirant séjour ayurvédique axé sur le bien-être. L'hôpital, qui se veut aussi un lieu de retraite, offre une expérience fascinante où vous découvrez une alliance unique d'Ayurveda, de yoga et de méditation. Les approches thérapeutiques de notre science ancestrale, au Healing Village, éveilleront votre conscience au cœur de la nature.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurveda holiday' rendered as 'séjour ayurvédique' (banned word 'holiday' avoided)."
+   ]
+  },
+  {
+   "id": "t_5714387d817657606c0f",
+   "sourceHash": "5714387d817657606c0faa1d9c0c59202f17b8fea38ddae7da9c087e2de3b571",
+   "text": "Outre des soins et une prise en charge ayurvédiques, le village offre un hébergement remarquable. Ce lieu propose des méthodes thérapeutiques et un soin qui agit de l'intérieur, ce qui en fait un endroit idéal pour se ressourcer.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'perfect getaway' rendered as 'un endroit idéal pour se ressourcer' to avoid holiday framing."
+   ]
+  },
+  {
+   "id": "t_ce8e0adc7581e7c12e36",
+   "sourceHash": "ce8e0adc7581e7c12e366706cf4346a45f5eab80cb0b4175d6cf6f2be5c23d62",
+   "text": "Forces de défense et paramilitaires | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand suffix shortened to 'Kairali' to meet the 60-character seo.title limit (the full brand name alone plus the translated topic exceeds 60)."
+   ]
+  },
+  {
+   "id": "t_9a8e96973cdc9f4a0f6b",
+   "sourceHash": "9a8e96973cdc9f4a0f6be8c621f7d5b116f8f1c463bd45307d556c71bb71ada5",
+   "text": "Informations pour les militaires, paramilitaires et leurs familles sur Kairali – The Ayurvedic Healing Village, à Palakkad (Kerala).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

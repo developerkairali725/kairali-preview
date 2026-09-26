@@ -1,82 +1,82 @@
 {
  "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
- "updatedAt": "2026-09-26 07:32:30 IST",
+ "updatedAt": "2026-09-26 08:03:26 IST",
  "counts": {
-  "jobsAccepted": 3250,
-  "jobsRemaining": 4058,
+  "jobsAccepted": 3439,
+  "jobsRemaining": 3869,
   "unitsBlocked": 14,
-  "rejectedAwaitingRetry": 19,
+  "rejectedAwaitingRetry": 45,
   "perLocale": {
    "hi": {
-    "batchesAccepted": 259,
+    "batchesAccepted": 268,
     "batchesTotal": 609,
-    "unitsTranslated": 6087,
+    "unitsTranslated": 6287,
     "unitsBlocked": 5
    },
    "de": {
-    "batchesAccepted": 289,
+    "batchesAccepted": 305,
     "batchesTotal": 609,
-    "unitsTranslated": 6756,
+    "unitsTranslated": 7149,
     "unitsBlocked": 1
    },
    "fr": {
-    "batchesAccepted": 277,
+    "batchesAccepted": 293,
     "batchesTotal": 609,
-    "unitsTranslated": 6485,
+    "unitsTranslated": 6849,
     "unitsBlocked": 1
    },
    "es": {
-    "batchesAccepted": 274,
+    "batchesAccepted": 290,
     "batchesTotal": 609,
-    "unitsTranslated": 6411,
+    "unitsTranslated": 6775,
     "unitsBlocked": 0
    },
    "it": {
-    "batchesAccepted": 266,
-    "batchesTotal": 609,
-    "unitsTranslated": 6227,
-    "unitsBlocked": 1
-   },
-   "pt": {
     "batchesAccepted": 279,
     "batchesTotal": 609,
     "unitsTranslated": 6520,
     "unitsBlocked": 1
    },
-   "nl": {
-    "batchesAccepted": 245,
+   "pt": {
+    "batchesAccepted": 301,
     "batchesTotal": 609,
-    "unitsTranslated": 5762,
+    "unitsTranslated": 7049,
+    "unitsBlocked": 1
+   },
+   "nl": {
+    "batchesAccepted": 262,
+    "batchesTotal": 609,
+    "unitsTranslated": 6158,
     "unitsBlocked": 0
    },
    "ru": {
-    "batchesAccepted": 261,
+    "batchesAccepted": 278,
     "batchesTotal": 609,
-    "unitsTranslated": 6133,
+    "unitsTranslated": 6509,
     "unitsBlocked": 2
    },
    "ar": {
-    "batchesAccepted": 268,
+    "batchesAccepted": 282,
     "batchesTotal": 609,
-    "unitsTranslated": 6267,
+    "unitsTranslated": 6592,
     "unitsBlocked": 1
    },
    "zh-Hans": {
-    "batchesAccepted": 286,
+    "batchesAccepted": 302,
     "batchesTotal": 609,
-    "unitsTranslated": 6702,
+    "unitsTranslated": 7074,
     "unitsBlocked": 1
    },
    "ja": {
-    "batchesAccepted": 276,
+    "batchesAccepted": 294,
     "batchesTotal": 609,
-    "unitsTranslated": 6461,
+    "unitsTranslated": 6900,
     "unitsBlocked": 0
    },
    "ko": {
-    "batchesAccepted": 270,
+    "batchesAccepted": 285,
     "batchesTotal": 609,
-    "unitsTranslated": 6317,
+    "unitsTranslated": 6672,
     "unitsBlocked": 1
    }
   }
