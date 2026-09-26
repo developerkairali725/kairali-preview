@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0244",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_b19144dfa1ccf5af10c1",
+   "sourceHash": "b19144dfa1ccf5af10c15f7278b1e2d3375dc5eb4910de2869360b5f004e7b53",
+   "text": "La nature sauvage et intacte du Kerala reste en grande partie préservée, offrant un cadre idéal pour explorer ses écosystèmes variés. Une promenade à dos d’éléphant à travers des forêts denses, riches en faune, offre une perspective unique sur le monde naturel. Le parc national de Periyar, connu pour son lac artificiel centenaire et sa riche biodiversité, est un sanctuaire non seulement pour les éléphants, mais aussi pour une grande variété d’animaux sauvages. Les visiteurs peuvent y croiser des tigres, des léopards, des chiens sauvages, des muntjacs, des langurs des Nilgiri, des sangliers, des gaurs (bisons indiens) et bien d’autres.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e27000512a3aa477993",
+   "sourceHash": "5e27000512a3aa47799317dd703f2d72a827942296b46d1a72ae3299f37fbc4d",
+   "text": "Les safaris à dos d’éléphant sont une activité très prisée des visiteurs : un parcours paisible le long d’itinéraires pittoresques qui traversent souvent des plantations parfumées. Pendant la promenade, une brise légère porte les senteurs rafraîchissantes de la végétation environnante, offrant une expérience sensorielle qui ressource l’esprit.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'parcours' (path) per the banned-word lock; 'tourists' rendered as 'visiteurs'."
+   ]
+  },
+  {
+   "id": "t_454972a49bc352c284d5",
+   "sourceHash": "454972a49bc352c284d55c854ea9af56f17043b3184e8b84b31d1ca955c2d953",
+   "text": "Que vous soyez amoureux de la nature, passionné de faune sauvage ou simplement en quête d’une aventure unique, explorer ces paysages aux côtés des éléphants est une façon enrichissante de vous reconnecter à la nature et de vous créer des souvenirs durables.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_333178788eae3e0b14c9",
+   "sourceHash": "333178788eae3e0b14c9b07bbbb6232bfa4689c7f134eeaa9daae60aba96de53",
+   "text": "annuaire",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aea1939cc117b74c9823",
+   "sourceHash": "aea1939cc117b74c98231363e66dae2ac61eb278be59ea8d82031b6a94e5726b",
+   "text": "Liens ayurvédiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a74669e645d7c02f27e8",
+   "sourceHash": "a74669e645d7c02f27e8bea230646cd4194f0a89dc2a1ebaf9537c1815b7ea63",
+   "text": "Liens ayurvédiques | Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Keyword-stuffed source title condensed to fit 60 characters; repeated 'Resource/Link Page' variants dropped."
+   ]
+  },
+  {
+   "id": "t_951a414f2a0c7e121c63",
+   "sourceHash": "951a414f2a0c7e121c631d15cc15c06b1b30e1c56491c3fc2d115c5a27163093",
+   "text": "Liens utiles sur les traitements, programmes et séjours ayurvédiques. Kairali – The Ayurvedic Healing Village, un centre ayurvédique réputé du Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains banned terms (spa, retreats, holiday, resorts); rewritten with 'traitements, programmes et séjours' and 'centre ayurvédique' per the KTAHV language lock. Source brand typo 'The Ayurvedic Village' normalized to the full brand name. Owner may wish to rewrite the English source too."
+   ]
+  },
+  {
+   "id": "t_e4668f490f2ce0e8f709",
+   "sourceHash": "e4668f490f2ce0e8f7090e00fb63324ac99c0737049810213efd28c15d0e633b",
+   "text": "Restaurant ayurvédique et cuisine au Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Restaaurant' corrected in translation."
+   ]
+  },
+  {
+   "id": "t_3f31f96d478899ec5cf7",
+   "sourceHash": "3f31f96d478899ec5cf7e049cb3eed2c99657a682cdfa7c2724c3cae889fb371",
+   "text": "Soumettez votre URL (échange de liens) dès maintenant",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e47380ada9a8231ddd2c",
+   "sourceHash": "e47380ada9a8231ddd2cf22a3b6e5811687ffc5d0203abab1258e4a2ef8d83ce",
+   "text": "1. La première étape consiste à ajouter notre lien sur votre site web. Copiez le code HTML ci-dessous et collez-le sur une page de votre site. Le lien doit se trouver directement sur l’une des pages d’un site pertinent – et non sur un site sans rapport avec le thème ou la catégorie (par ex. uniquement sur un site lié aux services ayurvédiques, tels que séjours ayurvédiques, traitements ayurvédiques, produits ayurvédiques, yoga).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurvedic retreat' rendered as 'séjours ayurvédiques' (stay) to avoid resort/holiday register."
+   ]
+  },
+  {
+   "id": "t_62be7510cceb84df6b08",
+   "sourceHash": "62be7510cceb84df6b085e8bb813f213275a9ac635f104aebc88a4c79c73793c",
+   "text": "2. Veillez à ajouter un lien réciproque avant de soumettre votre site (indiquez-nous l’emplacement de notre lien sur votre site). Remarque : les demandes sans lien réciproque seront automatiquement refusées !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5566a4955526dae93037",
+   "sourceHash": "5566a4955526dae9303739874c494e5a63202e03fbe0b2b86ba16b8031b7fdce",
+   "text": "Titre :-",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58255274bc25474d85aa",
+   "sourceHash": "58255274bc25474d85aa8ba3fd1f25df999b4d2165ec44259898414aad056ade",
+   "text": "Kairali – The Ayurvedic Healing Village, l’un des principaux centres de santé ayurvédiques d’Asie et parmi les meilleurs centres de bien-être au monde.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Health Retreats' rendered as 'centres de santé' to avoid resort register. Comparative claim ('leading in Asia', 'among the best in the World') kept as in source, not strengthened; owner may want to verify it is substantiated."
+   ]
+  },
+  {
+   "id": "t_707ee86239c6ebcb22c1",
+   "sourceHash": "707ee86239c6ebcb22c1d3bb878eefa698da7cf6f947ce1e622722fc738cfaf2",
+   "text": "Titre :- Kairali – The Ayurvedic Healing Village, l’un des principaux centres de santé ayurvédiques d’Asie et parmi les meilleurs centres de bien-être au monde.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Health Retreats' rendered as 'centres de santé' to avoid resort register. Comparative claim kept as in source, not strengthened; owner may want to verify it is substantiated."
+   ]
+  },
+  {
+   "id": "t_f39ee4d9368ad20111c5",
+   "sourceHash": "f39ee4d9368ad20111c5a4a67e9c170c1099d4c78fb3a1fce7c1a9dd1f9eb480",
+   "text": "Description :-",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3f2bb508db8c92d3d3ae",
+   "sourceHash": "3f2bb508db8c92d3d3aeaf4961183968def48aa79493058dcf5ae1d40bb9547b",
+   "text": "Kairali – The Ayurvedic Healing Village propose des séjours de santé ayurvédiques haut de gamme et est reconnu comme l’un des principaux centres de bien-être et de soins ayurvédiques d’Asie. Il propose des séjours ayurvédiques associant traitement ayurvédique et programme de formation au yoga.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains banned terms: 'luxury' → 'haut de gamme' (premium), 'Spa center' → 'centre de soins', 'retreat/Holiday' → 'séjours'. Owner may wish to rewrite the English source too."
+   ]
+  },
+  {
+   "id": "t_3b04f708221365042f84",
+   "sourceHash": "3b04f708221365042f8452d8963281efecf7da04f93fc070add68ee467bf5b6f",
+   "text": "Description :- Kairali – The Ayurvedic Healing Village propose des séjours de santé ayurvédiques haut de gamme et est reconnu comme l’un des principaux centres de bien-être et de soins ayurvédiques d’Asie. Il propose des séjours ayurvédiques associant traitement ayurvédique et programme de formation au yoga.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains banned terms: 'luxury' → 'haut de gamme' (premium), 'Spa center' → 'centre de soins', 'retreat/Holiday' → 'séjours'. Owner may wish to rewrite the English source too."
+   ]
+  },
+  {
+   "id": "t_ddd7a0e45e5b659116e0",
+   "sourceHash": "ddd7a0e45e5b659116e00fb54bc341d50316c85e74eac6d857101ddc8fb96025",
+   "text": "Site web :-",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8d2d3e50fab821bc606a",
+   "sourceHash": "8d2d3e50fab821bc606a6e91f7906a91ab1988360768da5e1ceab30ccd6f3aea",
+   "text": "Site web :- https://ayurvedichealingvillage.com",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_884f87a8e19d401ad14f",
+   "sourceHash": "884f87a8e19d401ad14fcc5e016c54d1000643fa6e89b3a0273dbd6e72f3de64",
+   "text": "Envoi de mes liens par e-mail :-",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc899679a51adbc00752",
+   "sourceHash": "dc899679a51adbc00752f2acd719713465c75032be59bf415563d411061a3c6d",
+   "text": "Envoi de mes liens par e-mail :- [email protected]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'[email protected]' is an email-obfuscation placeholder from the legacy source, kept verbatim; the real address is not visible in the source."
+   ]
+  },
+  {
+   "id": "t_9024c197d84940e47ff6",
+   "sourceHash": "9024c197d84940e47ff6aa631b7711c4cbff4e7fb2fe1a574a3592b662983a0d",
+   "text": "Liens",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a90bf1a071a5898b181",
+   "sourceHash": "6a90bf1a071a5898b181b012a792c5b5342180f3beae48508bbb1641d5bc547c",
+   "text": "Franchise Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

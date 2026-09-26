@@ -1,0 +1,157 @@
+{
+ "batchId": "b-0212",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_4e143b90b56c7a1a6c6f",
+   "sourceHash": "4e143b90b56c7a1a6c6fe56ea8599261477cb93927e8b9c8e53639aa336a3fb4",
+   "text": "Kairaliのブランド — 全二十一の拠点",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Number written in kanji (二十一) because the source spells it out in words; previous attempt with digits was machine-rejected."
+   ]
+  },
+  {
+   "id": "t_f0780d017d4f7adb7ad9",
+   "sourceHash": "f0780d017d4f7adb7ad90352d0545c1fe3431139aca787c8660dd3d0a2f7a569",
+   "text": "アーユルヴェーダセンター",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f9030d481614e9d536e7",
+   "sourceHash": "f9030d481614e9d536e73be61884ddb9cb1f6aa9b5659a14a79eda9f1bde87bd",
+   "text": "[[OPEN_1]]Ayurveda Spa[[CLOSE_1]][[OPEN_2]]治療センター[[CLOSE_2]][[OPEN_3]]アーユルヴェーダ・フランチャイズ[[CLOSE_3]][[OPEN_4]]アーユルヴェーダセンター[[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurveda Spa' is a Kairali group brand/business-line name (not KTAHV); kept verbatim in Latin script rather than translated."
+   ]
+  },
+  {
+   "id": "t_8d6677867514cabd1726",
+   "sourceHash": "8d6677867514cabd172650e80f3704e62270c5ee6c02f59ff939385ea24d8694",
+   "text": "[[OPEN_1]]アーユルヴェーダ製品[[CLOSE_1]][[OPEN_2]]アーユルヴェーダのハーブインフュージョン[[CLOSE_2]][[OPEN_3]]アーユルヴェーダ独自処方オーガニック製品[[CLOSE_3]][[OPEN_4]]Kair – by Kairali[[CLOSE_4]][[OPEN_5]]アーユルヴェーダ独自処方薬[[CLOSE_5]][[OPEN_6]]アーユルヴェーダ古典処方薬[[CLOSE_6]][[OPEN_7]]Spa Equipment[[CLOSE_7]][[OPEN_8]]書籍[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa Equipment' is a Kairali group product-line name (not KTAHV); kept verbatim in Latin script to avoid a banned-word equivalent on the KTAHV site."
+   ]
+  },
+  {
+   "id": "t_fc84e7ba68de005c3a9b",
+   "sourceHash": "fc84e7ba68de005c3a9bf937f7cdd04a14a41a72a6ea4691888b47521e2a76da",
+   "text": "[[OPEN_1]]ヨガインストラクター[[CLOSE_1]][[OPEN_2]]アーユルヴェーダ・セラピスト[[CLOSE_2]][[OPEN_3]]アーユルヴェーダ医師[[CLOSE_3]][[OPEN_4]]研修プログラム[[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb6cd373360f7179eae0",
+   "sourceHash": "fb6cd373360f7179eae047a92301edadfe01b9cdf64f037344702bc3b3d0ef4f",
+   "text": "ホスピタリティ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4029817ce128a24c88f0",
+   "sourceHash": "4029817ce128a24c88f05e6bf869caaa09fb58d9e2bdc2227c8adeb02c11223c",
+   "text": "[[OPEN_1]]ホスピタリティ・コンサルタンシー[[CLOSE_1]][[OPEN_2]]The Ayurvedic Healing Village[[CLOSE_2]][[OPEN_3]]ヨガリトリート[[CLOSE_3]][[OPEN_4]]シェフ・リトリート[[CLOSE_4]][[OPEN_5]]ホスピタリティ[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a062068166fa5e0d80e",
+   "sourceHash": "6a062068166fa5e0d80e3760b40f173cc9474d717eb7b1a238016b9102b0f19b",
+   "text": "[[OPEN_1]]アーユルヴェーダ治療[[CLOSE_1]] [[OPEN_2]]ヴィラ[[CLOSE_2]] [[OPEN_3]]Yoga–Dhyāna Abhyāsa（ヨガ・ディヤーナ・アビヤーサ） — ヨガと瞑想のトレーニング[[CLOSE_3]] [[OPEN_4]]アーユルヴェーダ研修プログラム[[CLOSE_4]] [[OPEN_5]]アーユルヴェーダ料理[[CLOSE_5]] [[OPEN_6]]製品紹介[[CLOSE_6]] [[OPEN_7]]施設案内[[CLOSE_7]] [[OPEN_8]]特別プラン[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0eb6f8845ffc76ad3f00",
+   "sourceHash": "0eb6f8845ffc76ad3f006eca3bdcfe90b41d8908d5109a149deb06b3ccbdf77e",
+   "text": "[[OPEN_1]]外来（予約不要）[[CLOSE_1]] [[OPEN_2]]治療と研修[[CLOSE_2]] [[OPEN_3]]Vaiyaktika Yoga Sādhanā（ヴァイヤクティカ・ヨガ・サーダナ） — 個別ヨガ[[CLOSE_3]] [[OPEN_4]]ヨガと瞑想のパッケージ[[CLOSE_4]] [[OPEN_5]]CSR[[CLOSE_5]] [[OPEN_6]]パートナー[[CLOSE_6]] [[OPEN_7]]観光[[CLOSE_7]] [[OPEN_8]]祭り[[CLOSE_8]] [[OPEN_9]]フォトギャラリー[[CLOSE_9]] [[OPEN_10]]採用情報[[CLOSE_10]] [[OPEN_11]]今すぐ応募[[CLOSE_11]] [[OPEN_12]]アーユルヴェーダ関連リンク[[CLOSE_12]] [[OPEN_13]]アーカイブ[[CLOSE_13]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e0163b586dac3342992a",
+   "sourceHash": "e0163b586dac3342992a884e64b4b275d869b280679cc6c185cea8af1a1938ed",
+   "text": "[[OPEN_1]]Ayurvedic Healing Village · パラッカド · 1908 — [[VAR_1]][[CLOSE_1]] [[OPEN_2]]インドにある静かな滞在施設で、伝統的なアーユルヴェーダ治療、ホリスティックな癒し、ヨガ、瞑想、オーガニック料理、活力を取り戻す療法を通じて、心身全体の健やかさとくつろぎをお届けします。[[CLOSE_2]] [[OPEN_3]][[OPEN_4]]利用規約[[CLOSE_4]] [[OPEN_5]]·[[CLOSE_5]] [[OPEN_6]]プライバシーポリシー[[CLOSE_6]] [[OPEN_7]]·[[CLOSE_7]] [[OPEN_8]]免責事項[[CLOSE_8]] [[OPEN_9]]·[[CLOSE_9]] [[OPEN_10]]キャンセルと返金[[CLOSE_10]] [[OPEN_11]]·[[CLOSE_11]] [[OPEN_12]]Cookieポリシー[[CLOSE_12]] [[OPEN_13]]·[[CLOSE_13]] [[OPEN_14]]法的通知[[CLOSE_14]] [[OPEN_15]]·[[CLOSE_15]] [[OPEN_16]]サイトマップ[[CLOSE_16]] [[OPEN_17]]·[[CLOSE_17]] [[OPEN_18]]ブログ[[CLOSE_18]] [[OPEN_19]]·[[CLOSE_19]] [[OPEN_20]]プライバシー声明[[CLOSE_20]] [[OPEN_21]]·[[CLOSE_21]] [[OPEN_22]]サイトマップXML[[CLOSE_22]][[CLOSE_3]] [[OPEN_23]]English · Français · Deutsch | [[OPEN_24]]アクセス[[CLOSE_24]] · [[OPEN_25]]360°ビュー[[CLOSE_25]] · [[OPEN_26]]地図[[CLOSE_26]][[CLOSE_23]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e8d19de997dcbab2b8f",
+   "sourceHash": "6e8d19de997dcbab2b8fb5b11b7be4df626d3f3aaefa0ad3accf52486756f39b",
+   "text": "Healing Village内を検索",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e23fc75dd3131d793467",
+   "sourceHash": "e23fc75dd3131d793467718ac23945f77b91e9d2d87a830abc51ad2ad9f750bf",
+   "text": "[[OPEN_1]]人気[[CLOSE_1]] [[OPEN_2]]パンチャカルマ[[CLOSE_2]] [[OPEN_3]]ヴィラ[[CLOSE_3]] [[OPEN_4]]特別プラン[[CLOSE_4]] [[OPEN_5]]Yoga–Dhyāna Abhyāsa（ヨガ・ディヤーナ・アビヤーサ） — ヨガと瞑想のトレーニング[[CLOSE_5]] [[OPEN_6]]アクセス[[CLOSE_6]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_320304cf03a448295173",
+   "sourceHash": "320304cf03a4482951738d8e644e79dd522cd61e4ab64a6ad3bd34d4058634aa",
+   "text": "Escキーで閉じます",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3649d8010496a5f13c27",
+   "sourceHash": "3649d8010496a5f13c2739107c379205deaa617693bb4ed5e8c92b4a7391ff7f",
+   "text": "当サイトでは、利便性の向上とアクセス解析のためにCookieを使用しています。詳しくは[[OPEN_1]]プライバシーポリシー[[CLOSE_1]]をご覧ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2d285b352873457207a",
+   "sourceHash": "a2d285b352873457207a34a015267524bb4613c3e8c961c8998da4e08e0d5745",
+   "text": "拒否する",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e86b1723088cc27e858",
+   "sourceHash": "3e86b1723088cc27e8589fe3f3a24b4ceb5d70f2d857414e77ff2580a688724c",
+   "text": "すべて許可",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c682ac1a8b55d5bd318b",
+   "sourceHash": "c682ac1a8b55d5bd318b26a42d38e7508185926373e646b39aaf29c5b7e164c6",
+   "text": "お出かけ前に",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_940dd0f5334dad62cc59",
+   "sourceHash": "940dd0f5334dad62cc59cc64f8f8c2c49bcef61b36f5f30fc40d0172ce1d540a",
+   "text": "ケーララ州パラッカド · 1908年創業",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
