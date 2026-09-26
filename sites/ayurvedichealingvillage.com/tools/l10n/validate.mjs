@@ -51,7 +51,9 @@ const tokenList = (s) => s.match(/\[\[[A-Z]+_\d+\]\]/g) || [];
 /** Canonical numbers: each numeric token with its group/decimal separators removed; leading zeros dropped. */
 export function numbers(s) {
   // clock times (7.30 pm, 19:30, 3:30) are hours + minutes, not one grouped number
-  const clean = s.replace(/\[\[[A-Z]+_\d+\]\]/g, " ").replace(/\b(\d{1,2})[.:](\d{2})(?=\s*(?:a\.?m\.?|p\.?m\.?|h\b|Uhr\b|uur\b|ч\b|น\b|[^\d.,]|$))/gi, (m, h, mm) => (/^[0-5]\d$/.test(mm) && +h <= 24 ? `${h} ; ${mm}` : m));
+  // HTML character references are markup, not numbers (&#8217; = ’): decode first
+  const decoded = s.replace(/&#(\d+);/g, (m, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (m, n) => String.fromCodePoint(parseInt(n, 16)));
+  const clean = decoded.replace(/\[\[[A-Z]+_\d+\]\]/g, " ").replace(/\b(\d{1,2})[.:](\d{2})(?=\s*(?:a\.?m\.?|p\.?m\.?|h\b|Uhr\b|uur\b|ч\b|น\b|[^\d.,]|$))/gi, (m, h, mm) => (/^[0-5]\d$/.test(mm) && +h <= 24 ? `${h} ; ${mm}` : m));
   return (clean.match(/\d+(?:[.,   ' ]\d+)*/g) || []).map((n) => n.replace(/\D/g, "").replace(/^0+(?=\d)/, ""));
 }
 

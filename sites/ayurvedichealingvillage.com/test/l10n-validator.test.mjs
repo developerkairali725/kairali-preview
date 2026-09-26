@@ -88,3 +88,7 @@ test("POSITIVE/NEGATIVE: dotted 12h clock times", () => {
   assert.ok(run("7.30 pm: Panel", "19:45: Tavola", "it").errs.length, "changed minutes rejected");
   assert.ok(run("₹21,567 per night", "₹21.576 pro Nacht").errs.length, "amounts still strict");
 });
+test("HTML character references are not numbers", () => {
+  assert.deepEqual(run("We&#8217;ve received your details within 24 hours", "Wir haben Ihre Angaben innerhalb von 24 Stunden erhalten").errs, []);
+  assert.ok(run("We&#8217;ve received it within 24 hours", "Wir haben es innerhalb von 12 Stunden erhalten").errs.length, "real numbers still checked");
+});
