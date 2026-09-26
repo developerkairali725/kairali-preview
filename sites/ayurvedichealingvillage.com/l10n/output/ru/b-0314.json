@@ -1,0 +1,237 @@
+{
+ "batchId": "b-0314",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_b933b402e4fe853e9051",
+   "sourceHash": "b933b402e4fe853e9051eb4ac0f69fb00fab23fae89cd08c5df144f20d530758",
+   "text": "Встречайте новый год с заботой о здоровье и отдыхом. Забронируйте сейчас!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a0584e2379b9a3dce2",
+   "sourceHash": "44a0584e2379b9a3dce2c0ce61bfc2446218f1a2c385f03489b68d9605b4b808",
+   "text": "Чтобы узнать о различных скидках и подарочных вариантах, пожалуйста, свяжитесь с нашими отзывчивыми консультантами по поездкам.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aa8d117730465bf2a26",
+   "sourceHash": "8aa8d117730465bf2a2694b2464b6ad3ecd5f2eac2c62b72a858a57283ff466d",
+   "text": "[email protected]",
+   "status": "translated",
+   "unchangedReason": "Email-protection placeholder (obfuscated address); language-neutral, kept verbatim.",
+   "issues": [
+    "The real email address is hidden by an email-obfuscation artefact in the source; the locked contact is info@kairali.com — verify the rendered address."
+   ]
+  },
+  {
+   "id": "t_7964eb6ac3017a427cae",
+   "sourceHash": "7964eb6ac3017a427cae89a281f0a184e8cd51e50252b08af520a29e927dbab8",
+   "text": "Чтобы узнать о различных скидках и подарочных вариантах, пожалуйста, свяжитесь с нашими отзывчивыми консультантами по поездкам. Email: [email protected] Телефон: +91 9555 156 156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Email is an obfuscation placeholder in the source, kept verbatim; phone kept unchanged. Missing space after 'option.' in the source restored."
+   ]
+  },
+  {
+   "id": "t_672708552d8a8141bc6e",
+   "sourceHash": "672708552d8a8141bc6e2059b4f62bab5c624d68aa8668031be750596c35b05e",
+   "text": "Животноводство | Органическая продукция Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc090a8972c9eed72834",
+   "sourceHash": "fc090a8972c9eed7283430db0c1739e6b75a5171c764fbd491dfdc564c60deee",
+   "text": "Kairali поддерживает животноводство, разводя различных животных, что также полезно для производства органической продукции.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e53c122d35ddc23e1ade",
+   "sourceHash": "e53c122d35ddc23e1ade54e6aa7f623fd5b21ae71be622773992d44a24de4b2d",
+   "text": "Предложение «Baoli Advert Box»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Baoli Advert Box' treated as a proper name and kept in Latin script."
+   ]
+  },
+  {
+   "id": "t_dbd8df137f438d5dbdcf",
+   "sourceHash": "dbd8df137f438d5dbdcfecc10ea8c503f799b46683bd6a543c100d6e59961241",
+   "text": "Email: [email protected] Телефон: +91 9555 156 156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Email is an obfuscation placeholder in the source, kept verbatim; phone kept unchanged."
+   ]
+  },
+  {
+   "id": "t_b102da7352e6dde79ab5",
+   "sourceHash": "b102da7352e6dde79ab52add48af60cf6e28ec3671b5cd2c95338fde69025a01",
+   "text": "Скоро",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Comming' corrected in translation."
+   ]
+  },
+  {
+   "id": "t_8ba9a2cc772f263e0c5c",
+   "sourceHash": "8ba9a2cc772f263e0c5c17e0785f09e0b20b1522b1374c9ce6d5cfdc89487470",
+   "text": "Текущее предложение, подтверждённое владельцем.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_6856ff8931b22cfdcc44",
+   "sourceHash": "6856ff8931b22cfdcc44c2277e7887ff1a674516cf0f6a5f34124d6ff4685895",
+   "text": "Все коммерческие условия этого предложения не проверены и остаются закрытым деловым этапом согласования, а не публичным текстом.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_ffe8f5499cfa69073f05",
+   "sourceHash": "ffe8f5499cfa69073f05e5817ab17ed60f8f2d089b4e829bcecc8114dc739195",
+   "text": "Программа йоги и Аюрведы в Керале | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' omitted and 'Retreat' rendered as 'Программа' per the language lock; 43 characters."
+   ]
+  },
+  {
+   "id": "t_37d5ab036944f60367c7",
+   "sourceHash": "37d5ab036944f60367c787017d23deb690de690cebacac0a79b20ce96de48b9d",
+   "text": "Пакет «Йога и медитация»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "HTML entity '&amp;' rendered as the conjunction 'и'."
+   ]
+  },
+  {
+   "id": "t_df6e5e8334494f764dad",
+   "sourceHash": "df6e5e8334494f764dad63b8e8145ba4dd13206c796606dba0de1f2e19316417",
+   "text": "Пакет «Йога и медитация»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_60919c44aa71f2837558",
+   "sourceHash": "60919c44aa71f283755869ab0535866fa97d02129f812efa845e3cff6cb01864",
+   "text": "Kairali – Аюрведическая лечебная деревня предлагает комплексные пакеты йоги и медитации, сочетающие традиционные аюрведические процедуры с ежедневными практиками йоги и медитации. Эти пакеты, доступные в Палаккаде (Керала, Индия), включают занятия йогой под руководством опытных инструкторов, индивидуальные аюрведические консультации, органическое питание и проживание в экологичных виллах. Спокойная природная обстановка создаёт благоприятную атмосферу для восстановления, обретения сил и нового открытия себя через проверенные временем оздоровительные практики.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'perfect atmosphere for healing' softened to 'благоприятную атмосферу для восстановления' to avoid a strengthened claim."
+   ]
+  },
+  {
+   "id": "t_74fad45c5800500e2f0b",
+   "sourceHash": "74fad45c5800500e2f0b6f7ebcbbf6626d7f72855ed5165455aa55ee16e3ab65",
+   "text": "Тип виллы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a31ca8c337718da2684d",
+   "sourceHash": "a31ca8c337718da2684d8000a9d0584b325110deb2f626202ee301284b2b6e90",
+   "text": "Минимальная длительность — 7 ночей",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e389b6876fd24756488",
+   "sourceHash": "3e389b6876fd2475648862bbf778e00b5330f3d78b328e477843bc2318599fd8",
+   "text": "Опубликованные тарифы и все языковые версии: /documents/.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eed06b1351a53c32e4ae",
+   "sourceHash": "eed06b1351a53c32e4ae46362aa29445c03151e00ab6d17deea7c0cb9d50396c",
+   "text": "Что включено Условия и положения",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates two labels ('Inclusions' and 'Terms & Conditions'); translated in the same concatenated form."
+   ]
+  },
+  {
+   "id": "t_3997fc5edb5300eb5918",
+   "sourceHash": "3997fc5edb5300eb591890b6cdc85c98915398993a7cd619f864fdcb7347436d",
+   "text": "Отправить запрос Забронировать",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates two button labels; translated in the same concatenated form."
+   ]
+  },
+  {
+   "id": "t_5272ed925f0c8799648b",
+   "sourceHash": "5272ed925f0c8799648b535998bc9a2f92cd39ceec01688fb9d937e92d11acb3",
+   "text": "Популярные пакеты",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad89ae9985b35751a6de",
+   "sourceHash": "ad89ae9985b35751a6de0e634b8d5d96503d48d79e170500dde7090bb91c415d",
+   "text": "Йогатерапия",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85ed78090db0e6e5001e",
+   "sourceHash": "85ed78090db0e6e5001e280519067225f59faa40e0eabc3bd322712f2b0eed18",
+   "text": "Пакеты йоги и медитации",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Meditaion' corrected in translation."
+   ]
+  },
+  {
+   "id": "t_01ddee99c8704767a67e",
+   "sourceHash": "01ddee99c8704767a67e1e30ee7663458cfac98f24adf09f63ef86099f268c3f",
+   "text": "Программа йоги и Аюрведы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'Программа' (programme) per the clinical register."
+   ]
+  },
+  {
+   "id": "t_6e495365069e6c284e7e",
+   "sourceHash": "6e495365069e6c284e7e04835d5183665582ed0406fdbf13f8c9a36924845878",
+   "text": "Тарифы действуют с 1 октября 2026 по 30 сентября 2027. За ночь, за виллу, одноместное или двухместное размещение; налоги включены. Минимум семь ночей. Вилла Deluxe, одноместное размещение: ₹21,490 × 7 ночей = ₹150,430. Ref. KTAHV/YMT/EN-INR/20260925-R1.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa category name 'Deluxe' kept in Latin script as a room-type identifier; reference code and all figures kept verbatim."
+   ]
+  }
+ ]
+}

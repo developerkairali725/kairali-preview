@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0344",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_8e28c20300fd662d515b",
+   "sourceHash": "8e28c20300fd662d515b3f9216ecd2384347372a97e74e2fa45399ccec039e62",
+   "text": "이용 가능한 다른 공항",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ddfc140e5ea778ef5406",
+   "sourceHash": "ddfc140e5ea778ef5406602483fade81d7d3fdc44519cef2eed8c2af865b63fa",
+   "text": "코치 (COK)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3ebc841c0e3511e43678",
+   "sourceHash": "3ebc841c0e3511e436784eb24d32df69c3c3cd2d6c98eeb44f34473ebb4f52aa",
+   "text": "≈ 140 km",
+   "status": "translated",
+   "unchangedReason": "Numeric distance; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_1f486a562ca9986ff72f",
+   "sourceHash": "1f486a562ca9986ff72ffd16f9fdce7e2a85c963a5de322046b0c20512942fa1",
+   "text": "연락 가능 시간 (IST)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_64b039d2d93528fd77e4",
+   "sourceHash": "64b039d2d93528fd77e47fd9cb3460a36104343a656b7e81e8f8136607ed7a64",
+   "text": "전화 — 매일",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_feeee929c3aaf4927ca5",
+   "sourceHash": "feeee929c3aaf4927ca5d5bf127d1f8ea73bdef259fd43d1646963aebf35dc10",
+   "text": "8:00 AM – 9:00 PM",
+   "status": "translated",
+   "unchangedReason": "Time range; kept verbatim per rules.",
+   "issues": []
+  },
+  {
+   "id": "t_c8a5854bd2cd30ceae66",
+   "sourceHash": "c8a5854bd2cd30ceae66ec995491de87457f462709b7a0462e1d4ab4e001599b",
+   "text": "환자 케어 회신",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10bd53ac280c3ce3acfa",
+   "sourceHash": "10bd53ac280c3ce3acfa776c1de34bf3241ed4bcd68ed94b283237ed14dbb613",
+   "text": "업무 시간 내",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_719d82ad8650e28fb9c8",
+   "sourceHash": "719d82ad8650e28fb9c89aa41e3f04de61ba690b328c3a25870dc13233b98ab0",
+   "text": "본사 및 예약 사무소 · 델리",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82cff818b43714f1a518",
+   "sourceHash": "82cff818b43714f1a5185ae5fd1201a799706392bc6c285da6a97e9bdb1df0c1",
+   "text": "D-130, Block D, Ambedkar Colony,",
+   "status": "translated",
+   "unchangedReason": "Postal address line; kept in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_3a0f2885109abd5d4d6c",
+   "sourceHash": "3a0f2885109abd5d4d6cb021a6c3e718d0799f4df89c20c9a0690e475d6c0565",
+   "text": "Mehrauli, New Delhi – 110030, India",
+   "status": "translated",
+   "unchangedReason": "Postal address line; kept in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_aa6e89075a26c3e37c20",
+   "sourceHash": "aa6e89075a26c3e37c20930ed6386e4debd1220ab73a514dd74b7dd018a1c950",
+   "text": "지도 — Kairali, The Ayurvedic Healing Village, 팔라카드",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_feff858420c86d47da84",
+   "sourceHash": "feff858420c86d47da84ed0d3317cb759a3c7f1e9bb22e3667fc5e06c63016be",
+   "text": "저희에게 연락해 주시는 모든 분은 대대로 이 의학을 실천해 온 사람들이 맞이합니다. 작은 의문 하나라도 안고 오시기보다는 질문을 하나 더 해 주시기를 바랍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'guest' rendered neutrally as '연락해 주시는 모든 분' (everyone who writes to us)."
+   ]
+  },
+  {
+   "id": "t_dfb8a3d41335746f8b58",
+   "sourceHash": "dfb8a3d41335746f8b5879f9c3a372ecfa4d1e7b6495d7376f335084fa3c46f2",
+   "text": "자주 묻는 질문",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88b1713e8b0129f9ef3e",
+   "sourceHash": "88b1713e8b0129f9ef3e7a3da5162b68638528761dc60fe8509347cbdb0993a1",
+   "text": "Kairali는 병원입니까, 아니면 스파입니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source deliberately uses 'spa' to deny it (clarifying FAQ); kept as '스파' to preserve the disclaimer's meaning. Owner may review.",
+    "t_88b1713e8b0129f9ef3e banned-term-from-source 스파"
+   ]
+  },
+  {
+   "id": "t_f70c965c78724a4d7817",
+   "sourceHash": "f70c965c78724a4d7817c205d2cfc04d7380ea90ada0d80cc29ead54b53b71a8",
+   "text": "Kairali – The Ayurvedic Healing Village는 NABH 인증 아유르베다 병원입니다. 진료는 등록된 아유르베다 의사가 담당하며, 모든 치료 프로그램은 임상 상담을 거쳐 진행됩니다. 스파가 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source deliberately uses 'spa' in a negation ('It is not a spa'); kept as '스파' to preserve the disclaimer. Owner may review.",
+    "t_f70c965c78724a4d7817 banned-term-from-source 스파"
+   ]
+  },
+  {
+   "id": "t_5e59dd247ca24e24b0e0",
+   "sourceHash": "5e59dd247ca24e24b0e033f39ce24b70078e490c59233c7942f4d565c6e0e4aa",
+   "text": "현재 환자 또는 재방문 환자는 어느 번호로 연락해야 합니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d102a5e3db122902d95",
+   "sourceHash": "0d102a5e3db122902d9520d8877e5f72a67606226d7c18f75cfa4b43476eeaf5",
+   "text": "환자 케어 코디네이터에게 WhatsApp",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: reads with following units as '환자 케어 코디네이터에게 WhatsApp [number]번으로 메시지를 보내시거나, 대표 전화 [number]번으로 전화해 주십시오. …'"
+   ]
+  },
+  {
+   "id": "t_490d1d75705e06deae51",
+   "sourceHash": "490d1d75705e06deae5118fa34a55257e103b3e179d167bea292527e5a643524",
+   "text": "번으로 메시지를 보내시거나, 대표 전화 ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment between two phone numbers."
+   ]
+  },
+  {
+   "id": "t_e8172e652792021cbd39",
+   "sourceHash": "e8172e652792021cbd3954c7f1ed7293a41cb5b2b564ca29930844f7fecb905d",
+   "text": "번으로 전화해 주십시오. 적합한 의사에게 연결해 드릴 수 있도록 환자 참조 번호를 알려 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: attaches directly after the main-line phone number."
+   ]
+  },
+  {
+   "id": "t_f1705c41e748d5e12f5a",
+   "sourceHash": "f1705c41e748d5e12f5a5ca6db96c0ecc643715d58d54441443e45a8ce46561c",
+   "text": "방문 전에 의사와 상담할 수 있습니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69ce26ff3af053ff13d6",
+   "sourceHash": "69ce26ff3af053ff13d66dd2091420e4a7541b34d43169194520bd6330332958",
+   "text": "예. 등록된 아유르베다 의사와의 무료 ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: reads with following units as '예. 등록된 아유르베다 의사와의 무료 [온라인 상담]을 통해 도착 전에 적합 여부를 평가하고 프로그램을 권해 드릴 수 있습니다.' The 'registered Ayurvedic physician' phrase moved into this fragment for Korean word order."
+   ]
+  },
+  {
+   "id": "t_9b3fa66a04b196bcc8e0",
+   "sourceHash": "9b3fa66a04b196bcc8e06603b7eecca34f7f7defc626b09d10f9a4e8710e2670",
+   "text": "온라인 상담",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4d31882a487e09a55a00",
+   "sourceHash": "4d31882a487e09a55a00cc1753bb3af5d9bda9eb39c76f8d819f59e2d4f5b448",
+   "text": "을 통해 도착 전에 적합 여부를 평가하고 프로그램을 권해 드릴 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: attaches directly after the link text; 'registered Ayurvedic physician' phrase carried in the preceding fragment."
+   ]
+  },
+  {
+   "id": "t_b94e057bc21d9680901d",
+   "sourceHash": "b94e057bc21d9680901dc9e037da1154e9558e6c5ac24865d60c1ffe10101de9",
+   "text": "정확한 위치는 어디이며, 어떻게 가야 합니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

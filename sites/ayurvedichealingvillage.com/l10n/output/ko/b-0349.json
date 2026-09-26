@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0349",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_5e6c5696d58b6c5f0628",
+   "sourceHash": "5e6c5696d58b6c5f0628b3f01425faad62758f3988343d763870454c0b88b12f",
+   "text": "누구를 위한 상담입니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2c2c3669ec16bc7e4b4",
+   "sourceHash": "a2c2c3669ec16bc7e4b4466dd743604d8418f7c61389d04199c010440f642341",
+   "text": "가족 구성원",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33caacdc71748cd45df3",
+   "sourceHash": "33caacdc71748cd45df35c5e24dd33462ebe7383b31fa39111fde4fb939e52fa",
+   "text": "상담 희망 언어",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4fe65264ef7dbb38d10",
+   "sourceHash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+   "text": "언어",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ddb12af8457d635ec15",
+   "sourceHash": "9ddb12af8457d635ec15773f905ca8587772ef64d5ecbe24d9aa4eab27a2e79b",
+   "text": "हिन्दी",
+   "status": "translated",
+   "unchangedReason": "Language endonym (Hindi) shown in its own script in a language selector; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_520bd62e1fadb2b5ce83",
+   "sourceHash": "520bd62e1fadb2b5ce83c19bd60bbeb5d778da19cae2c4815a94c44a6c5e5c2c",
+   "text": "연락 가능한 시간",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d387344814c1c26196d1",
+   "sourceHash": "d387344814c1c26196d18f037e63ca40f2006ce6b4421d2a454b7e4a2727a2dc",
+   "text": "— 현지 시간 기준",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_13ae4c193d3399405b18",
+   "sourceHash": "13ae4c193d3399405b18f4a0b3b00b13317b3ec07125c89c4196ddfec7971463",
+   "text": "희망 시간",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_458c1fed574354042397",
+   "sourceHash": "458c1fed574354042397e664d6dabe58415c8ab629f052db5723fb42b490d280",
+   "text": "저녁",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e7de49a40c3d7546e1c",
+   "sourceHash": "5e7de49a40c3d7546e1c0e7a514ca92bd4c524553f6f3eadb8b9de6b35909dfe",
+   "text": "언제든지",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcea8abbdff03524333f",
+   "sourceHash": "dcea8abbdff03524333ff0a380a6abc9e1c6e03887054e3d0dc1a28ae6655244",
+   "text": "신청 내용 확인",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7c9a02c1b0b1e5e4fbc",
+   "sourceHash": "a7c9a02c1b0b1e5e4fbc5d23c460177f1d775f6fa803fcc891df289a10631a15",
+   "text": "보내기 전에 간단히 확인해 주십시오. 모든 내용은 수정하실 수 있습니다. 보내기를 누르면 입력하신 정보가 미리 채워진 상태로 WhatsApp이 열립니다. WhatsApp에서 전송을 누르시면 의료 상담 창구로 전달됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e6d7915b1b4e1fdafc7",
+   "sourceHash": "0e6d7915b1b4e1fdafc78f7b156e6b5bb5fcb1a41f53ae95b16b04a0974c0bcb",
+   "text": "본인은 Kairali – The Ayurvedic Healing Village가 이 신청과 관련하여 본인에게 연락하는 것과, 상담 일정을 잡기 위해 본인의 건강 고민을 포함한 위 정보가 의료진과 공유되는 것에 동의합니다. 본인은 이 신청이 WhatsApp을 통해 전송되며, 본인의 정보가 다음 문서에 따라 처리된다는 점을 이해합니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sentence fragment ending before the 'Privacy Statement' link; Korean verb-final order requires closing the sentence before the link ('…다음 문서에 따라 처리된다는 점을 이해합니다:' + link)."
+   ]
+  },
+  {
+   "id": "t_25f4fe8cd149e57de765",
+   "sourceHash": "25f4fe8cd149e57de765fa487f6e70395ed29ad8d1f2b9c116f9efa24262b420",
+   "text": "개인정보 처리방침",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c941324b28f0c8800e9e",
+   "sourceHash": "c941324b28f0c8800e9e3faa290b2efa0a18708404d0937f5792cfd128c21a6a",
+   "text": "신청을 처리할 수 있도록 동의란에 체크해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce6c5356c710cd382afc",
+   "sourceHash": "ce6c5356c710cd382afc14dd469362841aff5c804c08ad0260310531a9baee72",
+   "text": "WhatsApp으로 신청 보내기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3f5f02dea8a8ee2efea6",
+   "sourceHash": "3f5f02dea8a8ee2efea624b6b9657526200a9c46ad7d99f134736b8081d4640c",
+   "text": "입력하신 정보는 상담 일정을 잡고 상담을 진행하는 데에만 사용되며, 저희 의료진이 확인합니다. 이 신청을 보내면 WhatsApp이 열리므로 메시지는 WhatsApp 서비스를 통해 전달됩니다. 저희는 귀하의 정보를 절대 판매하지 않으며, 정보는 다음 방침에 따라 처리됩니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment ending before a privacy-policy link; Korean verb-final order requires closing the clause before the link ('…다음 방침에 따라 처리됩니다:' + link)."
+   ]
+  },
+  {
+   "id": "t_2977a9e09b679559a4c6",
+   "sourceHash": "2977a9e09b679559a4c62be8161d32cd058f8030770fb900a3d2741ccb47b322",
+   "text": ". 상담 예약 전에 간단한 건강 요약서 작성을 요청드릴 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4f2273f736249aba51ab",
+   "sourceHash": "4f2273f736249aba51abbf0736eff01a6f764dda4a751a11fa176f53276f4a20",
+   "text": "신청이 접수되었습니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f3fdb7e06e8d4202253f",
+   "sourceHash": "f3fdb7e06e8d4202253f3a159b16b0d26467c4928a417205b5d19b88896b7908",
+   "text": "감사합니다. 의료 상담 창구에서 신청을 확인했으며 곧 연락드리겠습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'Thank you, there.' appears to be a name-placeholder fallback; rendered as a plain '감사합니다.' since 'there' has no natural Korean equivalent in address."
+   ]
+  },
+  {
+   "id": "t_4184027de87c46fc966a",
+   "sourceHash": "4184027de87c46fc966ad3dd6de5e32adc5cc5741fba63265d9d93cfb656f1fa",
+   "text": "WhatsApp에서 계속하기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_05c0fd4068e7307a88b9",
+   "sourceHash": "05c0fd4068e7307a88b949d1e0a9f15eb27cbf2610495ceabfeddd1df87525e9",
+   "text": "WhatsApp에 메시지 초안이 준비되었습니다. 내용을 확인하신 후 WhatsApp에서 전송하시면 상담이 신청됩니다. 초안을 여는 것만으로는 신청이 접수되었음이 확인되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3952befbb03ad673f4c5",
+   "sourceHash": "3952befbb03ad673f4c5a39c5665a356b23727e00c19ed1e6f261957c0ab4dce",
+   "text": "간단한 건강 요약서가",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment followed by t_3b15ca4b046974c16c43; subject particle added so the two units read as one Korean sentence."
+   ]
+  },
+  {
+   "id": "t_3b15ca4b046974c16c43",
+   "sourceHash": "3b15ca4b046974c16c438320b4a98e846968c682b9932ef11b2a41e4ea7ebb7a",
+   "text": "WhatsApp 또는 이메일로 발송됩니다 — 편하실 때 작성해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a6fd09c8f00debf2827a",
+   "sourceHash": "a6fd09c8f00debf2827a1078fcb0f9a5572eab1300136e52657d7cdadd9399f6",
+   "text": "의사가 이를 검토합니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

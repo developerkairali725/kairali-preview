@@ -1,0 +1,214 @@
+{
+ "batchId": "b-0355",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_b0ed5b5c9c5a66bf0dc9",
+   "sourceHash": "b0ed5b5c9c5a66bf0dc963382823c516347de1762c9584ccc7be6f80a4016dc6",
+   "text": "Meilleur moment : {time}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a3eedd02935c3fd31ac8",
+   "sourceHash": "a3eedd02935c3fd31ac8ec9f642661236089212d917a407540e082736b28f041",
+   "text": "Consentement : donné sur /online-consultation/ ({date})",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dfa482044ef975023592",
+   "sourceHash": "dfa482044ef97502359223b5c8cff30e8dd3c1b85b9c862d14d4783aea081870",
+   "text": "Contactez-nous | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3c606f671af7394c193",
+   "sourceHash": "d3c606f671af7394c1935bd67fa1ea7a208d96c0c539ab510c8e8b640891fe19",
+   "text": "Contactez Kairali pour nos traitements ayurvédiques, programmes et réservations : téléphone, e-mail ou formulaire, pour un suivi personnalisé.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'programmes' and 'wellness guidance' as 'suivi personnalisé' per the clinical register; condensed to fit the 155-character limit."
+   ]
+  },
+  {
+   "id": "t_094b14c173a6ef834932",
+   "sourceHash": "094b14c173a6ef8349320a1f999f115d64ac849d28082d652ee36373d71d4c21",
+   "text": "Contact (ancienne page)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a6261b2f3863dc7645cd",
+   "sourceHash": "a6261b2f3863dc7645cdb755000f91de1dd516a5e6333c778c35ef271537f108",
+   "text": "Réutilisation du composant de la famille « demande » T07 PROPOSÉE et consignée ici uniquement ; la disposition de la route, l’identité du successeur et la consolidation restent inchangées.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_53c2834984d57d615fb1",
+   "sourceHash": "53c2834984d57d615fb14de6ead4121be24dc323e2226f29ad99dfb54d4bd27b",
+   "text": "Aucune redirection, aucune consolidation automatique, aucune correspondance de successeur affirmée.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5208b01c9381620dede7",
+   "sourceHash": "5208b01c9381620dede725890fe7d05b8e4a619e7bedbd63d648f0a94c27d189",
+   "text": "Nous sommes là pour vous accompagner sur votre chemin vers le bien-être. Si vous avez des questions concernant nos traitements, nos programmes de séjour ou vos réservations, notre équipe est prête à vous aider avec disponibilité et transparence. Contactez-nous par téléphone, par e-mail ou via notre formulaire en ligne. Engageons ensemble votre démarche vers une guérison globale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'démarche' and 'retreats' as 'programmes de séjour' per the clinical register."
+   ]
+  },
+  {
+   "id": "t_41ffd8b76afc92a65758",
+   "sourceHash": "41ffd8b76afc92a65758fd9a080ae80421c196f251263b87cbfb6e567dda0879",
+   "text": "coordonnées",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c2e2706884c17f07b257",
+   "sourceHash": "c2e2706884c17f07b25713c42378e88b9ad959976f5a8071451a801cad013029",
+   "text": "Écrivez-nous",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10fd874b68dad080ed70",
+   "sourceHash": "10fd874b68dad080ed706762c8e163dabb20514bddae38fb159c56f714a3b143",
+   "text": "écrire",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b433538bef22c012429",
+   "sourceHash": "2b433538bef22c012429001d009ec49e4801426fbbe17f5bd9e0932de537fe88",
+   "text": "Réserver une consultation gratuite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89fc0f6aa4921aac940a",
+   "sourceHash": "89fc0f6aa4921aac940a46b4653de04bb4aeae84578070b219ebfabd3aa360db",
+   "text": "consulter",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f79592df7440ee76d22",
+   "sourceHash": "0f79592df7440ee76d222fdfb5a9812a497d78a7fa7602a7da9dcba86aaadd47",
+   "text": "PO Box – Olassery, Kodumbu, Palakkad Dist. – 678551, Kerala, India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in the source for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_3305eb58093dce1796f3",
+   "sourceHash": "3305eb58093dce1796f362abac95c01b9891118812501e09fb0321f60552713c",
+   "text": "Téléphone :",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ba86a17b76a0c270b9e",
+   "sourceHash": "2ba86a17b76a0c270b9ef66a6802b54e50543e659bc83e326b283c37094c7aee",
+   "text": "(+91)-(4923)-222553, 222623, 224402, 224403, +91 9555 156 156, poste 2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e99d3a1ddf5dc76b09ea",
+   "sourceHash": "e99d3a1ddf5dc76b09ea28f925b1613b70cd18d4deb11d3e43dbd8a18162d55a",
+   "text": "Siège social et bureau des réservations",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2e5886c32cf3024681a4",
+   "sourceHash": "2e5886c32cf3024681a44eca8996515655676964c3300f090a878cd199484436",
+   "text": "Kairali Ayurvedic Health Resort Pvt. Ltd.D – 130, Block D,",
+   "status": "translated",
+   "unchangedReason": "Registered company name and postal address; kept verbatim.",
+   "issues": [
+    "Contains 'Resort' inside the legal company name; kept verbatim as a proper name.",
+    "t_2e5886c32cf3024681a4 banned-term-from-source Resort"
+   ]
+  },
+  {
+   "id": "t_653bc66be7965c3d4046",
+   "sourceHash": "653bc66be7965c3d40469693d706ef4b0afcd24e4f61cf8f45669d8f8365cd6d",
+   "text": "Ambedkar Colony, Mehrauli, New Delhi – 110030",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in the source for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_d15a9b99101407c835b8",
+   "sourceHash": "d15a9b99101407c835b85004e18795063315e1acabef6a381fd1cd949da45549",
+   "text": "La source utilise un [[TAG_1]] entre les deux lignes d’adresse ; rendu sur deux lignes afin que la limite de mot conserve un espace lisible.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e1be7c97522584250c5c",
+   "sourceHash": "e1be7c97522584250c5ced37faacd6c731f87ca51f0c93dc9730eb04d3769ceb",
+   "text": ", poste 2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f3fc29e1351ad06ec26f",
+   "sourceHash": "f3fc29e1351ad06ec26fff033e5b4fc8e6971c98f8dcb6aed1758187f6261dc8",
+   "text": "Carte non chargée lors de la relecture — l’intégration Google Maps de la source est consignée, mais non appelée.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_63676214686fcf644f88",
+   "sourceHash": "63676214686fcf644f884c0814dd0d7e0b95e72fe30260db8f3803fe0198b633",
+   "text": "Récupéré à partir du HTML capturé de la MÊME ROUTE (live-response.html / raw-fixture.json pour /contact-us-old/), qui contient [[OPEN_1]]info@kairali.com[[CLOSE_1]] sur les deux lignes d’e-mail. L’extraction de l’enregistrement affichait l’espace réservé d’obfuscation de WordPress ; aucune adresse n’a été déduite d’une autre route ni inventée.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_951ab65190399b2ee372",
+   "sourceHash": "951ab65190399b2ee372d243b19ce78e2251feb5baed01d78f92431e027b9313",
+   "text": "Saisissez votre nom",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9cd26bee4d76694cb03c",
+   "sourceHash": "9cd26bee4d76694cb03cfee8c2355a83339157f2e9234fd1352c12597da72474",
+   "text": "Votre nom",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
