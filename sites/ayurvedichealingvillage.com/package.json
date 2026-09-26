@@ -22,6 +22,7 @@
     "@kairali/seo": "workspace:*",
     "@kairali/social": "workspace:*",
     "@kairali/ui": "workspace:*",
+    "mysql2": "^3.24.4",
     "next": "^15.5.24",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
