@@ -1,0 +1,236 @@
+{
+ "batchId": "b-0314",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_b933b402e4fe853e9051",
+   "sourceHash": "b933b402e4fe853e9051eb4ac0f69fb00fab23fae89cd08c5df144f20d530758",
+   "text": "Faites place au bien-être et à la détente en cette nouvelle année. Réservez dès maintenant !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a0584e2379b9a3dce2",
+   "sourceHash": "44a0584e2379b9a3dce2c0ce61bfc2446218f1a2c385f03489b68d9605b4b808",
+   "text": "Veuillez contacter nos conseillers voyage, toujours disponibles, pour connaître nos différentes remises et options de cadeau.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_44a0584e2379b9a3dce2 banned-term voyage"
+   ]
+  },
+  {
+   "id": "t_8aa8d117730465bf2a26",
+   "sourceHash": "8aa8d117730465bf2a2694b2464b6ad3ecd5f2eac2c62b72a858a57283ff466d",
+   "text": "[email protected]",
+   "status": "translated",
+   "unchangedReason": "Email-obfuscation placeholder (Cloudflare artefact), language-neutral; kept verbatim.",
+   "issues": [
+    "Source shows '[email protected]' instead of a real address; the underlying email should be verified (locked public email is info@kairali.com)."
+   ]
+  },
+  {
+   "id": "t_7964eb6ac3017a427cae",
+   "sourceHash": "7964eb6ac3017a427cae89a281f0a184e8cd51e50252b08af520a29e927dbab8",
+   "text": "Veuillez contacter nos conseillers voyage, toujours disponibles, pour connaître nos différentes remises et options de cadeau. E-mail : [email protected] Téléphone : +91 9555 156 156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains the '[email protected]' obfuscation placeholder instead of a real address; kept verbatim — the email should be verified.",
+    "t_7964eb6ac3017a427cae banned-term voyage"
+   ]
+  },
+  {
+   "id": "t_672708552d8a8141bc6e",
+   "sourceHash": "672708552d8a8141bc6e2059b4f62bab5c624d68aa8668031be750596c35b05e",
+   "text": "Élevage | Les produits biologiques de Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc090a8972c9eed72834",
+   "sourceHash": "fc090a8972c9eed7283430db0c1739e6b75a5171c764fbd491dfdc564c60deee",
+   "text": "Kairali soutient l’élevage de différentes espèces animales, une pratique également bénéfique pour les produits biologiques.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e53c122d35ddc23e1ade",
+   "sourceHash": "e53c122d35ddc23e1ade54e6aa7f623fd5b21ae71be622773992d44a24de4b2d",
+   "text": "L’offre Baoli Advert Box",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Baoli Advert Box' treated as a proper name and kept verbatim."
+   ]
+  },
+  {
+   "id": "t_dbd8df137f438d5dbdcf",
+   "sourceHash": "dbd8df137f438d5dbdcfecc10ea8c503f799b46683bd6a543c100d6e59961241",
+   "text": "E-mail : [email protected] Téléphone : +91 9555 156 156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source contains the '[email protected]' obfuscation placeholder instead of a real address; kept verbatim — the email should be verified. Missing space between the email and 'Call' in source added."
+   ]
+  },
+  {
+   "id": "t_b102da7352e6dde79ab5",
+   "sourceHash": "b102da7352e6dde79ab52add48af60cf6e28ec3671b5cd2c95338fde69025a01",
+   "text": "Bientôt disponible",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source misspelling 'Comming' ignored."
+   ]
+  },
+  {
+   "id": "t_8ba9a2cc772f263e0c5c",
+   "sourceHash": "8ba9a2cc772f263e0c5c17e0785f09e0b20b1522b1374c9ce6d5cfdc89487470",
+   "text": "Offre actuelle confirmée par la direction.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note; 'owner-confirmed' rendered as 'confirmée par la direction'."
+   ]
+  },
+  {
+   "id": "t_6856ff8931b22cfdcc44",
+   "sourceHash": "6856ff8931b22cfdcc44c2277e7887ff1a674516cf0f6a5f34124d6ff4685895",
+   "text": "Toutes les conditions commerciales de cette offre sont non vérifiées et restent une validation commerciale interne plutôt qu’un texte public.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, not patient-facing copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_ffe8f5499cfa69073f05",
+   "sourceHash": "ffe8f5499cfa69073f05e5817ab17ed60f8f2d089b4e829bcecc8114dc739195",
+   "text": "Séjour yoga et Ayurveda au Kerala | Kairali Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'Luxury' dropped (no room for 'premium' within the 60-character seo.title limit); 'Retreat' rendered as 'Séjour'."
+   ]
+  },
+  {
+   "id": "t_37d5ab036944f60367c7",
+   "sourceHash": "37d5ab036944f60367c787017d23deb690de690cebacac0a79b20ce96de48b9d",
+   "text": "Formule yoga &amp; méditation",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "HTML entity &amp; preserved as in source."
+   ]
+  },
+  {
+   "id": "t_df6e5e8334494f764dad",
+   "sourceHash": "df6e5e8334494f764dad63b8e8145ba4dd13206c796606dba0de1f2e19316417",
+   "text": "Formule yoga & méditation",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_60919c44aa71f2837558",
+   "sourceHash": "60919c44aa71f283755869ab0535866fa97d02129f812efa845e3cff6cb01864",
+   "text": "Kairali – The Ayurvedic Healing Village propose des formules complètes de yoga et de méditation qui associent des thérapies ayurvédiques traditionnelles à une pratique quotidienne du yoga et de la méditation. Situées à Palakkad, au Kerala (Inde), ces formules comprennent des séances de yoga encadrées par des experts, des consultations ayurvédiques personnalisées, une alimentation biologique et un hébergement dans des villas écologiques. Le cadre naturel paisible offre une atmosphère idéale pour se ressourcer, se revitaliser et se redécouvrir grâce à des pratiques de bien-être éprouvées par le temps.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'healing' rendered as 'se ressourcer' to avoid an implied cure claim."
+   ]
+  },
+  {
+   "id": "t_74fad45c5800500e2f0b",
+   "sourceHash": "74fad45c5800500e2f0b6f7ebcbbf6626d7f72855ed5165455aa55ee16e3ab65",
+   "text": "Type de villa",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a31ca8c337718da2684d",
+   "sourceHash": "a31ca8c337718da2684d8000a9d0584b325110deb2f626202ee301284b2b6e90",
+   "text": "Durée minimale : 7 nuits",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e389b6876fd24756488",
+   "sourceHash": "3e389b6876fd2475648862bbf778e00b5330f3d78b328e477843bc2318599fd8",
+   "text": "Tarifs publiés et toutes les versions linguistiques : /documents/.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eed06b1351a53c32e4ae",
+   "sourceHash": "eed06b1351a53c32e4ae46362aa29445c03151e00ab6d17deea7c0cb9d50396c",
+   "text": "Prestations incluses Conditions générales",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3997fc5edb5300eb5918",
+   "sourceHash": "3997fc5edb5300eb591890b6cdc85c98915398993a7cd619f864fdcb7347436d",
+   "text": "Se renseigner Réserver",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5272ed925f0c8799648b",
+   "sourceHash": "5272ed925f0c8799648b535998bc9a2f92cd39ceec01688fb9d937e92d11acb3",
+   "text": "Formules les plus demandées",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad89ae9985b35751a6de",
+   "sourceHash": "ad89ae9985b35751a6de0e634b8d5d96503d48d79e170500dde7090bb91c415d",
+   "text": "Yogathérapie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85ed78090db0e6e5001e",
+   "sourceHash": "85ed78090db0e6e5001e280519067225f59faa40e0eabc3bd322712f2b0eed18",
+   "text": "Formules yoga & méditation",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source misspelling 'Meditaion' ignored."
+   ]
+  },
+  {
+   "id": "t_01ddee99c8704767a67e",
+   "sourceHash": "01ddee99c8704767a67e1e30ee7663458cfac98f24adf09f63ef86099f268c3f",
+   "text": "Séjour yoga & Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'Séjour'."
+   ]
+  },
+  {
+   "id": "t_6e495365069e6c284e7e",
+   "sourceHash": "6e495365069e6c284e7e04835d5183665582ed0406fdbf13f8c9a36924845878",
+   "text": "Tarifs en vigueur du 1er octobre 2026 au 30 septembre 2027. Par nuit, par villa, en occupation simple ou double ; taxes incluses. Minimum sept nuits. Deluxe Villa simple : ₹21,490 × 7 nuits = ₹150,430. Réf. KTAHV/YMT/EN-INR/20260925-R1.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa category name 'Deluxe Villa' and all amounts/reference kept verbatim."
+   ]
+  }
+ ]
+}

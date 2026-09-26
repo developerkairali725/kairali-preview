@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0354",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_dc937b59892604f5a86a",
+   "sourceHash": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+   "text": "无",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcd4ff29d8cf11cc86c4",
+   "sourceHash": "bcd4ff29d8cf11cc86c429d13ac9f999bcff3753560c555c43bdfd4668ed1022",
+   "text": "报告——可选",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4557ab133976c8f9b929",
+   "sourceHash": "4557ab133976c8f9b9293eba68aa9581d9e07dae6f7267a710637f772bd53b67",
+   "text": "仅在您手头有报告时提供。继续下一步并不需要报告。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ecff602d41c1c2990662",
+   "sourceHash": "ecff602d41c1c2990662e0ee1d6de96b15cc29a3d795c3690bec3a801e9800bd",
+   "text": "添加报告",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d6c6ccc2e1b4c8dc88",
+   "sourceHash": "55d6c6ccc2e1b4c8dc8878662e7879053ea1e170bdc39dbf7ddf72de4113643d",
+   "text": "或将文件拖到此处——PDF 或照片 · 也可稍后通过 WhatsApp 发送",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa3b2559eee097396e8",
+   "sourceHash": "caa3b2559eee097396e8a73d0c8869281b10a20a66f45def85a03868ebbd5079",
+   "text": "看起来很轻松——关闭预览",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3409ef498120804f26f5",
+   "sourceHash": "3409ef498120804f26f589724a498c96ffa9d22a17e1c61a3fd96a0ccbbe946f",
+   "text": "全名",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2f1b86bf5531b8e8545e",
+   "sourceHash": "2f1b86bf5531b8e8545eb85875f3d4283bbc83663b60efa9e2faef34e03ab174",
+   "text": "健康问题",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12423e0482f3e81cb1d2",
+   "sourceHash": "12423e0482f3e81cb1d23230664e95bb3d11b9f34f06fc199e588d4cdab6e4d4",
+   "text": "同意",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b3c0c1cabd96089f5899",
+   "sourceHash": "b3c0c1cabd96089f58994d905c19ac8dfa73d4eb6b44d1791fcab4299307c780",
+   "text": "电话国家代码",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa79af4db67695cce51",
+   "sourceHash": "caa79af4db67695cce51988cda2f98423bb7420fbaee8968cd4aca151f55d3a2",
+   "text": "时长",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ffb2784476ec6de4846",
+   "sourceHash": "5ffb2784476ec6de48463d66c39626d641128a6f4af199bf3d3112ab3e5ed8e0",
+   "text": "问诊对象",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bdcbc7adb997b8259f7",
+   "sourceHash": "9bdcbc7adb997b8259f763a77aa6987671547021ee23c80c55f2480c9db74bc1",
+   "text": "首选语言",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a024edf76938901e5f17",
+   "sourceHash": "a024edf76938901e5f17829a3ad9e35e8c7298d87a9b3aec0a331741b1e35100",
+   "text": "方便联系的时间",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2008ee16da02276aaf1b",
+   "sourceHash": "2008ee16da02276aaf1b1c1c171aab7cc76f48cea9417c322ee342e7cb32c7bd",
+   "text": "同意日期",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2f9123ee31f409818a5d",
+   "sourceHash": "2f9123ee31f409818a5ded185a0235ba7a22084ac50fff977e6f7024f61822bf",
+   "text": "在创建/打开草稿或加载页面时，不触发任何业务成功/转化事件。现有的源事件名称仅作为证据，并不代表允许配置追踪。未来的事件语义必须区分用户操作与经核实的接收确认。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This string appears to be an internal developer/tracking note rather than patient-facing copy; translated as requested, but it may not need to be displayed or localized."
+   ]
+  },
+  {
+   "id": "t_142fb0696ece4730e2b3",
+   "sourceHash": "142fb0696ece4730e2b3864a41dcef4c3f3ef7a88fed76698b23c0a6e64e8e65",
+   "text": "您好，Kairali 医疗服务台，我想申请与一位阿育吠陀医生进行在线问诊。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b9507f57685b27800e1",
+   "sourceHash": "8b9507f57685b27800e1967ad3e8255b09369a6994186f70f4aac4210cda672e",
+   "text": "姓名：{name}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_626e58f757ff49e2ad19",
+   "sourceHash": "626e58f757ff49e2ad197d75f552370b37bcffeec9be18bf9423209799f67dd5",
+   "text": "电话：{code} {phone}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c8bb119fabe0d59b6475",
+   "sourceHash": "c8bb119fabe0d59b6475dec695954a49f55f2fa399699053a9f4e8bcd3695d15",
+   "text": "电子邮件：{email}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4e3e87b4152993fc67c",
+   "sourceHash": "d4e3e87b4152993fc67c833959c08936611a98c63f9225ce1ca2d5c53a14987f",
+   "text": "国家：{country}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a74b809a2a41fa33f07b",
+   "sourceHash": "a74b809a2a41fa33f07b2951c48da6497d318d94e8f646d4fb6dcb0e09cada9f",
+   "text": "健康问题：{concern}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ef1b9c4d35375616dca3",
+   "sourceHash": "ef1b9c4d35375616dca34aba4d71ad055706e4a65ca3cb81e8616c6133abd314",
+   "text": "时长：{duration}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa570a5a132a8a7b11ea",
+   "sourceHash": "aa570a5a132a8a7b11ea02c007d8997cbfa2e20a6d61c5b2249659f9a145faec",
+   "text": "问诊对象：{who}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54f90d70290724e25c67",
+   "sourceHash": "54f90d70290724e25c67e030d31de0b7a0d0eaa66b69fef3dca51022370d39d3",
+   "text": "首选语言：{lang}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

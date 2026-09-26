@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0352",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_71d0230e3038428b0b99",
+   "sourceHash": "71d0230e3038428b0b99d60d3244101289da78f64eb53789b13af47f28ffc9f6",
+   "text": "不适用。本次问诊是预约的评估，而非急诊医疗——如果您有紧急或时间紧迫的医疗问题，请立即联系当地急救服务或您的主治医生。同时，请继续遵循主治医生建议的护理和用药；未经其指导，切勿自行停用处方药物。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f52861aa8fd0f52c13e",
+   "sourceHash": "1f52861aa8fd0f52c13e9ec9ca43ac5de1111caf7786ad22f1638e2b9457fb45",
+   "text": "本网站其他内容",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aefc61fc011f2d802973",
+   "sourceHash": "aefc61fc011f2d802973b7c21937932d5b5d248b3be0255ad1030cdcb38ece81",
+   "text": "治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_29d5fb2657decaa7a80f",
+   "sourceHash": "29d5fb2657decaa7a80fcdaef1346063f833326a17fdcd49f33da5ef0f8f2d9b",
+   "text": "阿育吠陀治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_47aaf31b83d6bfd705b8",
+   "sourceHash": "47aaf31b83d6bfd705b80bcd5b6269be4caa3cf54cfa546b0ae7bc4078b39b0f",
+   "text": "联系我们",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_acaf0cd3a40e30b04b20",
+   "sourceHash": "acaf0cd3a40e30b04b20e5359becb798893f6b9284815cc7653311c2dd9f6986",
+   "text": "第 2 阶段 · 在您提交申请后发送",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_05beaaf68eb4b0343e18",
+   "sourceHash": "05beaaf68eb4b0343e1873b1105aa045dfdc04eab055fa245e444366421ab5d5",
+   "text": "问诊前健康摘要",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ae9c03602457a282aedb",
+   "sourceHash": "ae9c03602457a282aedb577780c0cfc21050fa98531f0067170403af49fdaa54",
+   "text": "以下是我们会询问的信息类型，",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment joined with the next two units ('after' + 'you request, sent as…'); punctuation adjusted so the three pieces read naturally in Chinese."
+   ]
+  },
+  {
+   "id": "t_f39592393ef0859cb196",
+   "sourceHash": "f39592393ef0859cb196a52693d2cea00fb2df784b3c04ae54aa7cadb8e562f8",
+   "text": "在",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (emphasised word 'after'); completed by the following unit (…提交申请之后发送)."
+   ]
+  },
+  {
+   "id": "t_4aee20689b5fc2e507af",
+   "sourceHash": "4aee20689b5fc2e507afd6d400bbd76b39d2e6c607dcf80b137e29cbb1149036",
+   "text": "您提交申请之后，以私密表格的形式发送——您可在问诊前按自己的时间填写。表格大多只需点选，并按条件显示（您只会看到与您相关的问题），报告为可选项。您的医生会提前阅读。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a3f7c24e6c7b2c2df1e",
+   "sourceHash": "6a3f7c24e6c7b2c2df1e060ac064f47602f294d1ac91e2a3d017bf5a85db5de3",
+   "text": "关于您的身体",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4b8183ae5b005a84b44f",
+   "sourceHash": "4b8183ae5b005a84b44f5a0a802b351df21875238f321ba958a5e0f3f1bfe3d0",
+   "text": "填写大概数值即可。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfe2eca401797325bc26",
+   "sourceHash": "bfe2eca401797325bc268f93c7397554551de4274d5d73ed421ee36fe9cd3ae0",
+   "text": "身高",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_022836e0751f5f231f5c",
+   "sourceHash": "022836e0751f5f231f5ccffed91af908a9cff65a3321eafb5f86643bde8a5e3d",
+   "text": "厘米 / 英尺",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81d27ef6d5033c3e1d46",
+   "sourceHash": "81d27ef6d5033c3e1d46b7b2b50868604fd432ddb77716b5ed9383c30c08432f",
+   "text": "体重",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_131ed734290d30f32aed",
+   "sourceHash": "131ed734290d30f32aedb3548cc92b420b3760571fb0e655084b48b31043106c",
+   "text": "公斤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4d11037fe1b1e44bd22d",
+   "sourceHash": "4d11037fe1b1e44bd22d6ec7755aba37d56ed25f25d1bff88b140ce6d6135aad",
+   "text": "血压（可选）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9aecb0c7e5c9c58571a7",
+   "sourceHash": "9aecb0c7e5c9c58571a7956af06882d08707cdc87de42624f9fe222fc9faf6b5",
+   "text": "例如 120/80——如不确定请留空",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cadc2e67dd3f95e40aa9",
+   "sourceHash": "cadc2e67dd3f95e40aa9f709f516918acdd556976d8f53c89b47a86952163194",
+   "text": "您的病史",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f928b73e095423a22bb6",
+   "sourceHash": "f928b73e095423a22bb61cc1103cccb4fdaa36f9459746bcea3dd7a996c06e4a",
+   "text": "点选所有适用项——无需输入文字。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc5cc8d5ca1325a4a526",
+   "sourceHash": "cc5cc8d5ca1325a4a526118580a3a27b1f3821c734dcc9289b3a67e5d7ef027c",
+   "text": "高血压",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c3311c4ca6df58c509e7",
+   "sourceHash": "c3311c4ca6df58c509e76fba2049d3d2e8c7256cd84fa19d2c3ccda6b372fb6d",
+   "text": "糖尿病",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38d629489909e88721fd",
+   "sourceHash": "38d629489909e88721fd8382ad3c3f24ef5c56aa06a197c0c743ef57b8e4cc74",
+   "text": "甲状腺疾病",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c21b6d2a61441b9ae0aa",
+   "sourceHash": "c21b6d2a61441b9ae0aa5bf7b839f80441e4afbc47b962db7ee4d0e0ae894401",
+   "text": "过敏",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_463c368cd1c463dc38d2",
+   "sourceHash": "463c368cd1c463dc38d22c2884f75da1da40121221dffa5b195d5421208a8c5a",
+   "text": "既往手术",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

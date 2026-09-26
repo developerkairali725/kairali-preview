@@ -1,0 +1,233 @@
+{
+ "batchId": "b-0313",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_14752779d2b0cbac801f",
+   "sourceHash": "14752779d2b0cbac801fe9ba61bd35cbadbf881326b730cbf126523e6090d37a",
+   "text": "Vous en avez assez de vos problèmes de peau ? S’aggravent-ils à un rythme considérable ? Ont-ils donné des résultats même après avoir…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is a truncated, somewhat incoherent excerpt ('commendable rate'); rendered as its evident meaning ('à un rythme considérable') and kept truncated."
+   ]
+  },
+  {
+   "id": "t_1fe7f8f6757031b077c2",
+   "sourceHash": "1fe7f8f6757031b077c20604116fafce1bd42195cf2c5b8989a59411fc2d98e2",
+   "text": "navigation adaptative — ouvrir",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e3fc7ddffbbc5fe038b",
+   "sourceHash": "7e3fc7ddffbbc5fe038b9d3f3a593e6f02932bc57f587fa7842719728cc11818",
+   "text": "navigation adaptative — fermer",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4701a1d5295cdcc29894",
+   "sourceHash": "4701a1d5295cdcc2989467caed7a3b99527e00df806c14797daf68124fac7362",
+   "text": "Deux boutons source /packages/ sont des commandes d’ouverture/fermeture de la navigation adaptative wp-block-navigation. Ils ne prouvent PAS l’existence d’un formulaire de recherche/filtre dans la source. Conserver ou reporter la navigation contextuelle de la source dans le gabarit approuvé ; toute recherche/tout filtre ajouté doit constituer une amélioration de conception explicite, et non une fonctionnalité source inventée.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This appears to be an internal editorial/developer note, not patient-facing copy; translated as-is but it should probably not be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_01480295a116d910e57b",
+   "sourceHash": "01480295a116d910e57b6d92ba5acc16f7ba9fe181f24d51b0007cf0a4c2b138",
+   "text": "Ordre des groupes de la source conservé. Chaque carte comporte sa propre image, avec sa propre description source et son propre lien.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, not patient-facing copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_8d25824050363a9627b0",
+   "sourceHash": "8d25824050363a9627b069d24b3784adeefc55d63ca97b36fe735f46d43c9453",
+   "text": "Offres de séjours ayurvédiques – Kairali Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'séjours' (clinical register). 'Exclusive' dropped to fit the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_48b6ad56c183b4b556ac",
+   "sourceHash": "48b6ad56c183b4b556acb67687585df4965f9b251d425ce1575c1f39b5125cf5",
+   "text": "Jusqu’à 20 % de réduction sur les programmes de soins ayurvédiques à Kairali. Réservez votre séjour au Kerala pour des soins holistiques.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 'séjour'; 'healing and rejuvenation' condensed to 'soins holistiques' to fit the 155-character limit and avoid a healing/cure claim."
+   ]
+  },
+  {
+   "id": "t_7ee15e95e175bedc842d",
+   "sourceHash": "7ee15e95e175bedc842dd3d12bc59c35a1d6cbc6a651f1f692b262b160fa5b1d",
+   "text": "Offres exclusives à The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdd01c052e375625c071",
+   "sourceHash": "bdd01c052e375625c07120d37af2ff34c78627b5a3fe3f7a82187b8171910d67",
+   "text": "Kairali – The Ayurvedic Healing Village vous propose diverses offres spéciales qui allient une authentique approche ayurvédique de la santé à des tarifs particulièrement accessibles. Ces formules soigneusement conçues répondent à un large éventail de besoins en matière de bien-être et offrent aux visiteurs l’occasion de se reposer et de se ressourcer dans le cadre paisible et splendide du Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_687df620bc2e94fd7f33",
+   "sourceHash": "687df620bc2e94fd7f3353182cb8e45b5b72cd29d879dddbc243917f94bc767b",
+   "text": "Les séjours saisonniers comprennent des soins qui purifient et rétablissent l’harmonie du corps et de l’esprit avec les cycles de la nature. Les offres de fêtes apportent une touche festive en vous permettant de célébrer avec des soins ayurvédiques singuliers qui mettent du baume au cœur.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Seasonal retreats' rendered as 'séjours saisonniers'."
+   ]
+  },
+  {
+   "id": "t_e6e46828130001fa6824",
+   "sourceHash": "e6e46828130001fa68245d5abf24386eb5120f2b481415c7e63db2805b5f1df7",
+   "text": "Grâce à des offres spécifiques, le village de soins propose aux couples des séjours bien-être personnalisés qui favorisent la détente et la complicité. Les remises de groupe et d’entreprise permettent plus facilement aux familles, aux amis et aux équipes de partager une expérience réparatrice et harmonieuse.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'vacations' rendered as 'séjours'."
+   ]
+  },
+  {
+   "id": "t_60a3502a1af6bb278c3c",
+   "sourceHash": "60a3502a1af6bb278c3c7f0a21d15cc6abfce5bc10be45844375d662210a0743",
+   "text": "Des remises pour réservation anticipée sont proposées aux visiteurs qui réservent leur séjour à l’avance, leur garantissant ainsi un séjour à des tarifs avantageux. Pour les personnes souhaitant une expérience ayurvédique plus approfondie et plus complète, des formules de long séjour sont proposées.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' and banned word 'vacation' both rendered as 'séjour'."
+   ]
+  },
+  {
+   "id": "t_61f2a475f81a8b179ccd",
+   "sourceHash": "61f2a475f81a8b179ccd23754515f13e65268ed090d37a37553ba6952c1c3a1c",
+   "text": "Chaque formule de KTAHV est conçue pour offrir une expérience complète, associant un hébergement de grand confort, une attention personnalisée et des soins authentiques. Grâce à ces offres exclusives, saisissez l’occasion de vous redécouvrir et de renouer avec le savoir intemporel de l’Ayurveda.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'luxurious' rendered as 'de grand confort'."
+   ]
+  },
+  {
+   "id": "t_6e39aed7d20e0622bbf0",
+   "sourceHash": "6e39aed7d20e0622bbf062af3a240c95df513708b0b04c93d4a5ed5f21ba652a",
+   "text": "Offre spéciale Fête de la République ! Jusqu’à 20 % de réduction",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0b78e475a848ef2697",
+   "sourceHash": "1e0b78e475a848ef2697a5dd4a7fb0cc80b7ca9c29d035968d4e10fbd78fd331",
+   "text": "Offres bien-être exclusives chez Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65705f21a7f65f831205",
+   "sourceHash": "65705f21a7f65f8312050590cba483a1921dff62eed80c8727545503180167e3",
+   "text": "Découvrez l’excellence des soins holistiques à Kairali – The Ayurvedic Healing Village. Offrez-vous un séjour ressourçant pensé pour votre bien-être.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'rejuvenating escape' rendered as 'séjour ressourçant' (avoids holiday framing); 'ultimate well-being' softened to 'votre bien-être' to avoid a superlative claim."
+   ]
+  },
+  {
+   "id": "t_46013fac8ef8ff81ff21",
+   "sourceHash": "46013fac8ef8ff81ff213c5f3b90c31b11114c45449926bb08de65382308665b",
+   "text": "Jusqu’à 20 % de réduction sur tout programme de soins ayurvédiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b902909b83bed4e3c640",
+   "sourceHash": "b902909b83bed4e3c640476ccfc9332fa74e785c235cd21c7e0b852cdc674d50",
+   "text": "Valable pour les séjours et les soins en mars, avril et mai",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9f20c1ab7d48bf66d8a",
+   "sourceHash": "e9f20c1ab7d48bf66d8a695a93ef21edfc368dada949fcf3d23f15eeecc8ac6b",
+   "text": "Réservez avant le 15 février pour profiter de cette offre exclusive",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_992ad75ee16f953054bf",
+   "sourceHash": "992ad75ee16f953054bf4a20f8cb2ac79dac1e69544a4779de0cafc529719a0a",
+   "text": "Entrez dans un univers de sérénité et d’excellence ayurvédique. Réservez dès maintenant votre séjour d’exception !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'royal retreat' rendered as 'séjour d’exception'."
+   ]
+  },
+  {
+   "id": "t_a466c7bf12b9780d5be0",
+   "sourceHash": "a466c7bf12b9780d5be010d0f79935a3c504e1c1af3c1f5281a757956e88dd37",
+   "text": "Offre bien-être du Nouvel An ! Jusqu’à 20 % de réduction.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Stray ', ' punctuation in source normalised."
+   ]
+  },
+  {
+   "id": "t_43ed14e9af6f6307f22b",
+   "sourceHash": "43ed14e9af6f6307f22be5b40467e379c7352c2ebce223c4f7b21869bdc9905b",
+   "text": "Bon cadeau",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bef1d6d69b2927b5302",
+   "sourceHash": "9bef1d6d69b2927b5302446d77c933a060dfed7ca80538dc8d28f2d98301d819",
+   "text": "Entrez dans 2025 en pleine santé et plein de vitalité !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8731eac97ffbb0465a48",
+   "sourceHash": "8731eac97ffbb0465a482275c6182985dcb684dc5bd12477f91a45d8f3e93609",
+   "text": "Séjour et soins en mars, avril ou mai",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Heal' rendered as 'soins' to avoid an implied cure claim."
+   ]
+  },
+  {
+   "id": "t_d18ee9d3fdc7b4669e0b",
+   "sourceHash": "d18ee9d3fdc7b4669e0bc194b6c918414d18ad64cbdeb83b3edba6b87577ba79",
+   "text": "Offre valable uniquement jusqu’au 15 février !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

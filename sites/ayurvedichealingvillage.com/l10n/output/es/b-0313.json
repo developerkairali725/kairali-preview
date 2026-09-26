@@ -1,0 +1,229 @@
+{
+ "batchId": "b-0313",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_14752779d2b0cbac801f",
+   "sourceHash": "14752779d2b0cbac801fe9ba61bd35cbadbf881326b730cbf126523e6090d37a",
+   "text": "¿Está cansado de sus problemas de piel? ¿Van en aumento a un ritmo notable? ¿Han mostrado resultados incluso después de…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source wording is odd ('commendable rate', 'Has it shown results'); translated faithfully without adding claims. Truncated source."
+   ]
+  },
+  {
+   "id": "t_1fe7f8f6757031b077c2",
+   "sourceHash": "1fe7f8f6757031b077c20604116fafce1bd42195cf2c5b8989a59411fc2d98e2",
+   "text": "navegación adaptable — abrir",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e3fc7ddffbbc5fe038b",
+   "sourceHash": "7e3fc7ddffbbc5fe038b9d3f3a593e6f02932bc57f587fa7842719728cc11818",
+   "text": "navegación adaptable — cerrar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4701a1d5295cdcc29894",
+   "sourceHash": "4701a1d5295cdcc2989467caed7a3b99527e00df806c14797daf68124fac7362",
+   "text": "Los dos botones de origen de /packages/ son controles wp-block-navigation de apertura/cierre de la navegación adaptable. NO constituyen evidencia de un formulario de búsqueda/filtro en el origen. Conserve o adapte la navegación contextual de origen en la estructura aprobada; cualquier búsqueda/filtro añadido debe ser una mejora de diseño explícita, no una funcionalidad de origen inventada.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This appears to be an internal editorial/build note rather than patient-facing copy; translated as instructed but should likely not be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_01480295a116d910e57b",
+   "sourceHash": "01480295a116d910e57b6d92ba5acc16f7ba9fe181f24d51b0007cf0a4c2b138",
+   "text": "Se conserva el orden de grupos del origen. Cada tarjeta lleva su propia imagen con su propia descripción y enlace de origen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note rather than patient-facing copy; should likely not be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_8d25824050363a9627b0",
+   "sourceHash": "8d25824050363a9627b069d24b3784adeefc55d63ca97b36fe735f46d43c9453",
+   "text": "Ofertas ayurvédicas exclusivas – Kairali Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' dropped per the clinical register lock (resort/holiday framing)."
+   ]
+  },
+  {
+   "id": "t_48b6ad56c183b4b556ac",
+   "sourceHash": "48b6ad56c183b4b556acb67687585df4965f9b251d425ce1575c1f39b5125cf5",
+   "text": "Hasta un 20% de descuento en paquetes de tratamiento ayurvédico en Kairali. Reserve hoy su estancia en Kerala: sanación holística y rejuvenecimiento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 'estancia' per the clinical register lock; condensed for the 155-character limit."
+   ]
+  },
+  {
+   "id": "t_7ee15e95e175bedc842d",
+   "sourceHash": "7ee15e95e175bedc842dd3d12bc59c35a1d6cbc6a651f1f692b262b160fa5b1d",
+   "text": "Ofertas exclusivas en The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdd01c052e375625c071",
+   "sourceHash": "bdd01c052e375625c07120d37af2ff34c78627b5a3fe3f7a82187b8171910d67",
+   "text": "Kairali – The Ayurvedic Healing Village le ofrece diversas ofertas especiales que combinan la auténtica salud ayurvédica con una excelente asequibilidad. Estos paquetes, cuidadosamente elaborados, se adaptan a distintas necesidades de bienestar y ofrecen a los visitantes la oportunidad de descansar y revitalizarse en el tranquilo esplendor de Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_687df620bc2e94fd7f33",
+   "sourceHash": "687df620bc2e94fd7f3353182cb8e45b5b72cd29d879dddbc243917f94bc767b",
+   "text": "Los programas estacionales incluyen tratamientos que purifican y devuelven el cuerpo y la mente a la armonía con los ciclos de la naturaleza. Las ofertas festivas añaden un toque especial y le permiten celebrar con tratamientos ayurvédicos singulares que levantan el ánimo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Seasonal retreats' rendered as 'programas estacionales' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_e6e46828130001fa6824",
+   "sourceHash": "e6e46828130001fa68245d5abf24386eb5120f2b481415c7e63db2805b5f1df7",
+   "text": "Mediante ofertas especializadas, The Ayurvedic Healing Village ofrece a las parejas estancias de bienestar personalizadas que favorecen la relajación y el vínculo. Los descuentos para grupos y empresas facilitan que familias, amigos y equipos compartan una experiencia reparadora y armoniosa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness vacations' rendered as 'estancias de bienestar' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_60a3502a1af6bb278c3c",
+   "sourceHash": "60a3502a1af6bb278c3c7f0a21d15cc6abfce5bc10be45844375d662210a0743",
+   "text": "Los visitantes que reservan su estancia con antelación pueden acceder a descuentos por reserva anticipada y asegurar su plaza a precios ventajosos. Para quienes buscan una experiencia ayurvédica más profunda y completa, se ofrecen paquetes de estancia prolongada.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats'/'vacation' rendered as 'estancia'/'plaza' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_61f2a475f81a8b179ccd",
+   "sourceHash": "61f2a475f81a8b179ccd23754515f13e65268ed090d37a37553ba6952c1c3a1c",
+   "text": "Cada paquete de KTAHV está diseñado para ofrecer una experiencia integral que combina un alojamiento de primera categoría, una atención personalizada y tratamientos auténticos. Con estas ofertas exclusivas, aproveche la oportunidad de redescubrirse y abrazar la sabiduría atemporal del Ayurveda.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious lodging' rendered as 'alojamiento de primera categoría' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_6e39aed7d20e0622bbf0",
+   "sourceHash": "6e39aed7d20e0622bbf062af3a240c95df513708b0b04c93d4a5ed5f21ba652a",
+   "text": "¡Oferta especial del Día de la República! Hasta un 20% de descuento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0b78e475a848ef2697",
+   "sourceHash": "1e0b78e475a848ef2697a5dd4a7fb0cc80b7ca9c29d035968d4e10fbd78fd331",
+   "text": "Ofertas de bienestar exclusivas en Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65705f21a7f65f831205",
+   "sourceHash": "65705f21a7f65f8312050590cba483a1921dff62eed80c8727545503180167e3",
+   "text": "Descubra la sanación holística en su máxima expresión en Kairali – The Ayurvedic Healing Village. Disfrute de una estancia rejuvenecedora pensada para un bienestar pleno.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'escape' rendered as 'estancia'; 'ultimate' softened to 'pleno' to avoid overclaiming."
+   ]
+  },
+  {
+   "id": "t_46013fac8ef8ff81ff21",
+   "sourceHash": "46013fac8ef8ff81ff213c5f3b90c31b11114c45449926bb08de65382308665b",
+   "text": "Hasta un 20% de descuento en cualquier paquete de tratamiento ayurvédico",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b902909b83bed4e3c640",
+   "sourceHash": "b902909b83bed4e3c640476ccfc9332fa74e785c235cd21c7e0b852cdc674d50",
+   "text": "Válido para estancias y tratamientos en marzo, abril y mayo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9f20c1ab7d48bf66d8a",
+   "sourceHash": "e9f20c1ab7d48bf66d8a695a93ef21edfc368dada949fcf3d23f15eeecc8ac6b",
+   "text": "Reserve antes del 15 de febrero para beneficiarse de esta oferta exclusiva",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_992ad75ee16f953054bf",
+   "sourceHash": "992ad75ee16f953054bf4a20f8cb2ac79dac1e69544a4779de0cafc529719a0a",
+   "text": "Adéntrese en un mundo de serenidad y excelencia ayurvédica. ¡Reserve ya su estancia regia!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'royal retreat' rendered as 'estancia regia' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_a466c7bf12b9780d5be0",
+   "sourceHash": "a466c7bf12b9780d5be010d0f79935a3c504e1c1af3c1f5281a757956e88dd37",
+   "text": "¡Especial de bienestar de Año Nuevo! Hasta un 20% de descuento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43ed14e9af6f6307f22b",
+   "sourceHash": "43ed14e9af6f6307f22be5b40467e379c7352c2ebce223c4f7b21869bdc9905b",
+   "text": "Vale regalo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bef1d6d69b2927b5302",
+   "sourceHash": "9bef1d6d69b2927b5302446d77c933a060dfed7ca80538dc8d28f2d98301d819",
+   "text": "¡Comience 2025 con salud y rejuvenecimiento!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8731eac97ffbb0465a48",
+   "sourceHash": "8731eac97ffbb0465a482275c6182985dcb684dc5bd12477f91a45d8f3e93609",
+   "text": "Alójese y sánese en marzo, abril o mayo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d18ee9d3fdc7b4669e0b",
+   "sourceHash": "d18ee9d3fdc7b4669e0bc194b6c918414d18ad64cbdeb83b3edba6b87577ba79",
+   "text": "¡Oferta válida solo hasta el 15 de febrero!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

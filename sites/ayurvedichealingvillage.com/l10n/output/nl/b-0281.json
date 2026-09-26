@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0281",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_0d599fc35207973166d6",
+   "sourceHash": "0d599fc35207973166d601b1d4094ca559412f7844e49ae2ea7c91d9f3a87468",
+   "text": "Aanvankelijk ingeklapt; meerdere antwoorden kunnen tegelijk open blijven; native knoppen met aria-expanded/aria-controls, activering met Enter en Spatie, geen geforceerde focusverplaatsing. Vastgelegd als ontwerpbeslissing — de vastgelegde plug-inklassen bewijzen niet de historische runtimestatus.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/provenance note rather than patient-facing copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_1f2f2261f6f8bf70af30",
+   "sourceHash": "1f2f2261f6f8bf70af30d2c64abea248f82451da1a6aac0c174f7bbdc6943046",
+   "text": "Alleen de drie expliciet lege afsluitende alinea's.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/provenance note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_b32be30452ae46530342",
+   "sourceHash": "b32be30452ae46530342c8dee769f03a22b56555c7ed4faed896aca91c460fc9",
+   "text": "Geen — de brontekst bevat geen downloadbestand; er is er geen verzonnen op basis van de titel.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/provenance note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_db2365bb7a376f09d1dd",
+   "sourceHash": "db2365bb7a376f09d1dde2b3cd90d95872ae3f007265b564672f111b88e1a807",
+   "text": "italic",
+   "status": "translated",
+   "unchangedReason": "CSS/style keyword used by the renderer; translating would break rendering.",
+   "issues": []
+  },
+  {
+   "id": "t_5249f4fcc629efa0e6d6",
+   "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
+   "text": "-n",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_360f84035942243c6a36",
+   "sourceHash": "360f84035942243c6a36537ae2f8673485e6c04455a0a85a0db19690f2541480",
+   "text": "left",
+   "status": "translated",
+   "unchangedReason": "CSS/alignment keyword used by the renderer.",
+   "issues": []
+  },
+  {
+   "id": "t_28720365c5e7476a011e",
+   "sourceHash": "28720365c5e7476a011e4f43ac003ee5f16247a263b9d623aa85ed311d73bf39",
+   "text": "top",
+   "status": "translated",
+   "unchangedReason": "CSS/alignment keyword used by the renderer.",
+   "issues": []
+  },
+  {
+   "id": "t_1e1caaf8cf28cb024317",
+   "sourceHash": "1e1caaf8cf28cb0243175a8dd26a3fc0d8f2c5527c661586bb816e57b9919be2",
+   "text": "-r",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_0c3603e13e24a40b4bf2",
+   "sourceHash": "0c3603e13e24a40b4bf215e3795a9a40d60a8456fb7b63c2d11e81701a231e85",
+   "text": "-c",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_93bc5d02dc2a24b53653",
+   "sourceHash": "93bc5d02dc2a24b5365347573b6f5115f069ca1097f319a1041c2a6c770079e0",
+   "text": "collapse",
+   "status": "translated",
+   "unchangedReason": "CSS keyword (border-collapse value) used by the renderer.",
+   "issues": []
+  },
+  {
+   "id": "t_c697d2981bf416569a16",
+   "sourceHash": "c697d2981bf416569a16cfbcdec1542b5398f3cc77d2b905819aa99c46ecf6f6",
+   "text": "region",
+   "status": "translated",
+   "unchangedReason": "ARIA role value; must stay in English.",
+   "issues": []
+  },
+  {
+   "id": "t_f0956726750ca787d943",
+   "sourceHash": "f0956726750ca787d943bb3ca8ba098bdbff341512524ebb1c887ca1f62dffc1",
+   "text": "touch",
+   "status": "translated",
+   "unchangedReason": "CSS/pointer keyword used by the renderer.",
+   "issues": []
+  },
+  {
+   "id": "t_16d1c9050a0b32e83764",
+   "sourceHash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
+   "text": "Tabel",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16cd066b95f1799f059c",
+   "sourceHash": "16cd066b95f1799f059cfc45a00dd2bc67d4356dc883378164c70c7e5b652cf5",
+   "text": "kolommen,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b05a180063676442fbc",
+   "sourceHash": "6b05a180063676442fbcce9e10309db975749f54423dde996c393c8fb33bac23",
+   "text": "rijen (scrollbaar)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6ce953bdf5cd0f93cd6f",
+   "sourceHash": "6ce953bdf5cd0f93cd6f4bd612b25843a038a9492b509dbc68727b29511af463",
+   "text": "it-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id prefix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_4fc0bdb51ffc8cfdcaae",
+   "sourceHash": "4fc0bdb51ffc8cfdcaaee067eb264b8a5c646176cf870be17c2e647fbb2cb7f4",
+   "text": "-b",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_fa2e2a6ad747546569bd",
+   "sourceHash": "fa2e2a6ad747546569bd7b0e2e9281c550d020290d81ca00ee72bacef0a2260e",
+   "text": "?route=",
+   "status": "translated",
+   "unchangedReason": "URL query parameter; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_9be7ac80b195e000b3cf",
+   "sourceHash": "9be7ac80b195e000b3cf0fcb8853fdf1f224f916f8b460413c608f550ebd1e27",
+   "text": "faq-cat-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id prefix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_485f60d2203a09c605dc",
+   "sourceHash": "485f60d2203a09c605dcf2cfd9d8612f916509ee7e48ab0afebac3f49da1485f",
+   "text": "-btn",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_68f4e3ae3fbca42ecfb0",
+   "sourceHash": "68f4e3ae3fbca42ecfb0c59493cc1b8192ebb182fe17ebe3a8cc5f142fa4e5a2",
+   "text": "-panel",
+   "status": "translated",
+   "unchangedReason": "Code fragment (id suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_23f49fcc0de8265d3350",
+   "sourceHash": "23f49fcc0de8265d335010d6cb6f348fa9a4eb7add1163f1c9a67d28d1f8dbf1",
+   "text": "robots",
+   "status": "translated",
+   "unchangedReason": "Meta tag name attribute; must stay in English.",
+   "issues": []
+  },
+  {
+   "id": "t_9347bd35e495c32fd5df",
+   "sourceHash": "9347bd35e495c32fd5df366f2a70ec9f3b5434d621d4b5a16ae8684b72f554c2",
+   "text": "Yoga en Ayurveda vormen samen een ideale combinatie om lichaam en geest te reinigen, en helpen mensen te herkennen wat in het leven echt belangrijk is en wat niet. India is de bakermat van yoga en de bron van devotionele en meditatieve inspiratie. Yoga beoefenen op een plek waar talloze yogi's hun vormen hebben ontwikkeld, is als het aanboren van een diepe spirituele bron.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a91ebb8c0524e716db",
+   "sourceHash": "44a91ebb8c0524e716dbdda270683d012e9f0afb1022af18234fe46b1ffe57ef",
+   "text": "In deze twee weken richten we ons op het vinden van innerlijke rust en het herkennen van ons eigen ritme, door ons bewust te worden van onze pols en bioritmes, emoties, dromen en spijsvertering, en door ons tegelijk af te stemmen op de veranderende patronen van fysiologische ritmes, gedachten en gevoelens.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a02a5e8bbc377688327a",
+   "sourceHash": "a02a5e8bbc377688327ada62ca6314f9f3b2abb9272433d9c37b7b14efa747ff",
+   "text": "De bijzondere maaltijden en de dagelijkse Ayurvedische zorg zijn afgestemd op de behoeften van elk specifiek constitutietype. Dankzij kalmerende massages en oliebehandelingen kunnen de zintuigen tot rust komen van de dagelijkse routine. De dagelijkse yoga- en meditatiesessie in een serene omgeving nodigt u uit even pauze te nemen, naar binnen te keren en opnieuw contact te maken met uw ware zelf.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

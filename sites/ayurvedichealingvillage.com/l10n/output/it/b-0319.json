@@ -1,0 +1,233 @@
+{
+ "batchId": "b-0319",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_b41f3e7f7b24e85469e1",
+   "sourceHash": "b41f3e7f7b24e85469e18ec01c40d6fa460c5de0c19e85e282766474a213542c",
+   "text": "Abbiamo ricevuto i Suoi dati e un membro del nostro team li sta esaminando. Riceverà nostre notizie entro 24 ore. Se la Sua richiesta riguarda una patologia specifica, nella risposta sarà coinvolto un medico ayurvedico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a864577365310d90c6a",
+   "sourceHash": "4a864577365310d90c6a68fbbc9b5c467fc34c282feb246b9b760e00e6360bee",
+   "text": "Se è la soluzione adatta, organizziamo un consulto e pianifichiamo gli aspetti pratici del Suo soggiorno. Nessuna pressione, nessun obbligo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_590ccb86e5777f1ec1dd",
+   "sourceHash": "590ccb86e5777f1ec1ddeb00758f83538c3c061d40535f3f7a39798dc717fd98",
+   "text": "Grazie, abbiamo ricevuto la Sua richiesta | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "seo.title ≤60: condensed; brand shortened to 'Kairali' to fit the limit."
+   ]
+  },
+  {
+   "id": "t_63af0b7505fcd7a7dbc1",
+   "sourceHash": "63af0b7505fcd7a7dbc1fc01f0ae6a64aaf308aed3313e2cf44bbbe95c167750",
+   "text": "Può organizzare facilmente un soggiorno di benessere presso Kairali – The Ayurvedic Healing Village. La nostra pagina Prenota ora Le consente di prenotare un soggiorno nella nostra autentica struttura ayurvedica in Kerala. Può scegliere tra diverse terapie, programmi di ringiovanimento e programmi di yoga che favoriscono il benessere globale. Prenoti oggi stesso e inizi il Suo percorso di trattamento ayurvedico e di rilassamento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitutions: 'wellness retreat' → 'soggiorno di benessere'/'struttura ayurvedica'; 'yoga retreats' → 'programmi di yoga'; 'Secure your adventure' → 'Prenoti'; 'journey of Ayurvedic healing' → 'percorso di trattamento ayurvedico'. Source copy is legacy promotional text with hospitality framing; recommend owner review for KTAHV clinical lock."
+   ]
+  },
+  {
+   "id": "t_9483a538e6841f8fe4c5",
+   "sourceHash": "9483a538e6841f8fe4c529737c4166b546c1da18516b7487e464ffe7e051a053",
+   "text": "Prenoti il soggiorno | Kairali Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "seo.title ≤60: brand rendered without 'The' and dash to fit."
+   ]
+  },
+  {
+   "id": "t_bfbd28c3f80ed63c4110",
+   "sourceHash": "bfbd28c3f80ed63c4110ab5603bd65b7de222b6321d627a929e49f91e94c99cb",
+   "text": "Pianifichi il Suo soggiorno ayurvedico al Kairali Ayurvedic Healing Village. Prenoti terapie ayurvediche, yoga e programmi di ringiovanimento in Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' → 'soggiorno ayurvedico'; 'yoga retreats' → 'yoga' (register + length)."
+   ]
+  },
+  {
+   "id": "t_bba824389ffdfb3bdff7",
+   "sourceHash": "bba824389ffdfb3bdff70d2f11b72ceda1fd2f56dc83abe27d0e502d9dcc71a8",
+   "text": "booking/book-now",
+   "status": "translated",
+   "unchangedReason": "URL path slug, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_e09bd2655e94c441408d",
+   "sourceHash": "e09bd2655e94c441408d90acac2e4c3cab7d996fcc16a7ff09ea3ce7abf00faf",
+   "text": "Pubblicare, indicizzabile, candidata per XML; raggiungibile dall’azione di prenotazione condivisa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/build note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_bcd3f8b6129be8c02488",
+   "sourceHash": "bcd3f8b6129be8c024884f96a9dbef229272c4a12c33c23e91d58dd28ac48e8d",
+   "text": "testo per i visitatori",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial label."
+   ]
+  },
+  {
+   "id": "t_dd4a95b8f70d00dcbfc5",
+   "sourceHash": "dd4a95b8f70d00dcbfc50c867800d986c5de58a1ec39d7de8d8f9354ef424ddb",
+   "text": "Nessuna immagine del corpo sorgente è presente in nessuna delle tre route; l’asset identitario condiviso nella shell viene riutilizzato senza modifiche. Gli antenati del testo renderizzato sono elencati come wrapperNodes, non come esclusioni.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note, not patient-facing; technical identifiers kept."
+   ]
+  },
+  {
+   "id": "t_2e3c55da83d1d4cb308d",
+   "sourceHash": "2e3c55da83d1d4cb308d53996279ac90dcf417f1b7d29d76a3ed7fd63bf619b9",
+   "text": "wrapper di layout del testo sorgente renderizzato — non contiene testo proprio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note, not patient-facing."
+   ]
+  },
+  {
+   "id": "t_9367d58465ce3eebe865",
+   "sourceHash": "9367d58465ce3eebe86557d4c60f924ce8d136b0fbaf3ba762e61c55f90bad34",
+   "text": "Rimuovere due spaziatori vuoti da 225px; non inventare campi di prenotazione incorporati.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note, not patient-facing; source 'two225px' read as 'two 225px'."
+   ]
+  },
+  {
+   "id": "t_6d2d59aed44f1efab446",
+   "sourceHash": "6d2d59aed44f1efab446c09e60a3da7794ed1e652cd88d0a67914e72d1f9eae8",
+   "text": "Carrello",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f5371a9fa4a2bce3375",
+   "sourceHash": "7f5371a9fa4a2bce3375bf2c972bb70f4746c94f138f39514da1b9d851378f3d",
+   "text": "Il Suo carrello è attualmente vuoto!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4884c9ef4f94b1fd521e",
+   "sourceHash": "4884c9ef4f94b1fd521e45b5f1d2086c2a301ee90c28c8427a471d69b4e673b2",
+   "text": "Carrello - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2acaa88ebcef4ae9d8d",
+   "sourceHash": "f2acaa88ebcef4ae9d8d15fe5a0097dfe01cdea35948b1861dcc136f09dab5c5",
+   "text": "Pubblicare, esclusa dall’XML e dalla navigazione; endpoint funzionale mantenuto fuori dalla navigazione editoriale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note, not patient-facing."
+   ]
+  },
+  {
+   "id": "t_cae0813e3b7f415fae5f",
+   "sourceHash": "cae0813e3b7f415fae5f451d58be131ee4a56896774432fdf93fae74f06ed5af",
+   "text": "Potrebbe interessarLe… Carrello",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5533c6058d739ef0eb30",
+   "sourceHash": "5533c6058d739ef0eb3002d4942c1ddcb7b00d2f318df755a111dc4ed8eb40c3",
+   "text": "Potrebbe interessarLe…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b52f3a2e15148731314",
+   "sourceHash": "1b52f3a2e15148731314bf167145c54565ed2385a862b5eb7771eaf719e4f82e",
+   "text": "hr",
+   "status": "translated",
+   "unchangedReason": "HTML element name, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_e39bafec6641aed3be25",
+   "sourceHash": "e39bafec6641aed3be25d99424457cd2708f2961e19d0cef7ae0b082fe1950c6",
+   "text": "Novità in negozio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_075317471b4727a288f7",
+   "sourceHash": "075317471b4727a288f779aba5d86ee0493c7396f57f7d4370c15d1defa96066",
+   "text": "I contenitori di raccomandazioni non popolati e l’autoriferimento alla sorgente non sono prodotti; conservarli nella contabilità privata della sorgente. Nessuna disponibilità, articolo, totale o promozione inventati.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note, not patient-facing."
+   ]
+  },
+  {
+   "id": "t_d05c4fc52da967218d76",
+   "sourceHash": "d05c4fc52da967218d76e3a3175e6105509062accf7c560c06f205872f069204",
+   "text": "Prosegua con la prenotazione per pianificare il Suo soggiorno.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb6687b0de7bff8ac452",
+   "sourceHash": "bb6687b0de7bff8ac452fb90d2ab984848eb1d28e46265b7c4042eea3a1a826c",
+   "text": "Checkout - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": "'Checkout' is the standard term used on Italian e-commerce pages.",
+   "issues": []
+  },
+  {
+   "id": "t_f24b610237efeddced4d",
+   "sourceHash": "f24b610237efeddced4dd53c7a3553bbe1af54528f7d21acd3ee3b19b0de6571",
+   "text": "paragrafo sorgente acquisito esatto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial label."
+   ]
+  },
+  {
+   "id": "t_1b13181088fa84cca4d6",
+   "sourceHash": "1b13181088fa84cca4d67bd908c847f67280c32c88a05c7fbb8cf4b2667ecd0c",
+   "text": "messaggio esatto di carrello vuoto della sorgente",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial label."
+   ]
+  }
+ ]
+}
