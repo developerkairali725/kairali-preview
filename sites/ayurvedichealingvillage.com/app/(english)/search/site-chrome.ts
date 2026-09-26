@@ -115,7 +115,7 @@ function chromeFor(locale: LocaleCode): Chrome {
   // The extracted markup does not include the design runtime's anchor reset.
   // Ship the shared header rule with SSR chrome, including the mobile menu.
   // Keep article/breadcrumb link underlines and keyboard focus styling intact.
-  const css = `header.ahv-sc-desk a,header.ahv-sc-narrow-h a,[data-ahv-sc-panel] a{text-decoration:none}@media (min-width:${BREAK}px){.ahv-sc-narrow{display:none!important}}@media (max-width:${BREAK - 0.02}px){.ahv-sc-desk{display:none!important}}`;
+  const css = `header.ahv-sc-desk a,header.ahv-sc-narrow-h a,[data-ahv-sc-panel] a,footer.ahv-sc-desk a,footer.ahv-sc-narrow a{text-decoration:none}@media (min-width:${BREAK}px){.ahv-sc-narrow{display:none!important}}@media (max-width:${BREAK - 0.02}px){.ahv-sc-desk{display:none!important}}`;
   // Structural selectors (labels are translated in the locale lane): the burger
   // is the narrow header's aria-expanded button, close is the panel's first button.
   // The snapshot's language switcher is static markup, so it is wired here too.

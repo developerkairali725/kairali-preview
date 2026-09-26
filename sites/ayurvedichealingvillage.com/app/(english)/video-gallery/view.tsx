@@ -23,7 +23,7 @@ function FilmCard({film,featured=false,index=0,locale='en'}:{film:Film;featured?
  const href=film.localSrc||`https://www.youtube.com/watch?v=${film.id}`;
  return <article id={featured?(index===0?'featured-film':'yoga-film'):`film-${film.id}`} className={`vg-film${featured?' vg-featured':''}`}>
   <a className="vg-poster" href={href} target="_blank" rel="noopener noreferrer" data-ahv-film={film.id} data-film-title={film.title} aria-label={`Play ${film.title}, ${film.duration}`}>
-   <img src={film.image} alt={film.id==='1RWUh8QEIpE'?T("Paddy fields and palms around Kairali in Palakkad"):`${film.title} — video preview`} width="960" height="540" loading={featured?'eager':'lazy'}/>
+   <img className="vg-poster-img" src={film.image} alt={film.id==='1RWUh8QEIpE'?T("Paddy fields and palms around Kairali in Palakkad"):`${film.title} — video preview`} width="960" height="540" loading={featured?'eager':'lazy'}/>
    <span className="vg-play" aria-hidden="true">▶</span><span className="vg-duration" aria-label={`Duration ${film.duration}`}>{film.duration}</span>
   </a>
   <div className="vg-film-copy"><p className="vg-kicker">{featured?(index===0?T("Start here · The main film"):T("Featured · Yoga & meditation")):film.category}</p>
