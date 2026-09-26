@@ -8,6 +8,7 @@ import path from "node:path";
 const arg = (k) => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : null; };
 const dir = arg("dir");
 const nav = JSON.parse(fs.readFileSync("english-candidate/section-nav.json", "utf8"));
+const REDIRECTS = JSON.parse(fs.readFileSync("english-candidate/redirect-map.json", "utf8")).redirects;
 const NATIVE = new Set(["/sightseeing/", "/video-gallery/", "/read-feedback/", "/givefeedback/", "/search/"]);
 const rows = fs.readdirSync(dir).filter((f) => /^batch-\d+\.json$/.test(f)).sort()
   .flatMap((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
@@ -38,11 +39,13 @@ function check(r, fam) {
 
 const out = [];
 for (const [route, rs] of [...byRoute].sort((a, b) => a[0].localeCompare(b[0]))) {
-  const f = nav.family[route];
+  // a 301 in the protection map lands on its target, so the target's family is what the probe saw
+  const to = REDIRECTS[route] ? REDIRECTS[route].to : null;
+  const f = nav.family[to || route];
   const fam = f ? f.section : null;
-  const reason = fam ? null : (nav.routes && nav.routes[route] ? "listed in the tree outside a family" : "not a family page (campaign / utility / outside the site tree) — keeps the global header");
+  const reason = to ? `301 → ${to}` + (fam ? "" : " (not a family page — keeps the global header)") : fam ? null : (nav.routes && nav.routes[route] ? "listed in the tree outside a family" : "not a family page (campaign / utility / outside the site tree) — keeps the global header");
   const per = rs.map((r) => ({ vp: r.vp, covered: (r.default || {}).coveredPct, bars: (r.default || {}).bars, fail: check(r, fam) }));
-  out.push({ route, family: fam, label: fam ? nav.sections[fam].label : null, renderer: NATIVE.has(route) ? "native" : "design view", exception: reason, viewports: per, pass: per.every((p) => !p.fail.length) });
+  out.push({ route, family: fam, label: fam ? nav.sections[fam].label : null, renderer: to ? "redirect" : NATIVE.has(route) ? "native" : "design view", exception: reason, viewports: per, pass: per.every((p) => !p.fail.length) });
 }
 const fails = out.filter((r) => !r.pass);
 const fams = {};

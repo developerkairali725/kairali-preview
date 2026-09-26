@@ -20,7 +20,10 @@
   var D = window.AHV_SECTION_NAV;
   if (!D || !D.family || !D.sections) return;
   var root = document.getElementById("ahv-design-root");
-  var route = (root && root.getAttribute("data-ahv-route")) || location.pathname;
+  // design pages carry the English route on the design root; native pages (video gallery, reviews,
+  // sightseeing, search) on their own page root — locale paths never key the family map
+  var marked = (root && root.hasAttribute("data-ahv-route")) ? root : document.querySelector("[data-ahv-route]");
+  var route = (marked && marked.getAttribute("data-ahv-route")) || location.pathname;
   var fam = D.family[route];
   if (!fam) return;
   var section = D.sections[fam.section];
