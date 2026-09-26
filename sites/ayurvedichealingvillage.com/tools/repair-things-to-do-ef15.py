@@ -54,7 +54,7 @@ for card, parent in found:
         src, alt, w, h = IMG[route]
         if not w: w, h = dims(src)
         blk = {"kind": "image", "ptr": card["ptr"].replace("/card", "/img"), "src": src, "alt": alt, "width": w, "height": h,
-               "note": "EF-15 26 Sep 2026: image of the named activity (was missing or the shared aerial banner)"}
+               "ef15": "EF-15 26 Sep 2026: image of the named activity (was missing or the shared aerial banner)"}
         if imgs:
             if imgs[0].get("src") != src: imgs[0].update(blk); changed += 1
         else:
@@ -71,7 +71,7 @@ if k is not None:
     para["tree"] = [x for x in para["tree"][:k] if x.get("tag") != "br"]
     ce = {"kind": "card", "ptr": "/ef15/cultural-events/card", "blocks": [
         {"kind": "image", "ptr": "/ef15/cultural-events/img", "src": "/ahv/assets/img/article/cultural-1.webp", "alt": "Kathakali", "width": 800, "height": 600,
-         "linkHref": "/cultural-events/", "note": "the target page's own image"},
+         "linkHref": "/cultural-events/", "ef15": "the target page's own image"},
         {"kind": "heading", "tag": "h3", "ptr": "/ef15/cultural-events/h", "tree": [{"k": "e", "tag": "a", "attrs": {"href": "/cultural-events/"}, "c": [{"k": "t", "v": "Cultural events"}]}]},
         {"kind": "para", "ptr": "/ef15/cultural-events/p", "tree": [{"k": "t", "v": ce_text}]},
         {"kind": "line", "ptr": "/ef15/cultural-events/more", "tree": [{"k": "e", "tag": "a", "attrs": {"href": "/cultural-events/"}, "c": [{"k": "t", "v": "Read more"}]}], "sourceClass": "wp-block-button__link"}],
