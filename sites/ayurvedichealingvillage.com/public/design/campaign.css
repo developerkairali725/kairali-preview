@@ -332,3 +332,41 @@
 #ahv-design-root[data-ahv-family="campaign-retreat"]:not([data-ahv-route="/kairali-air-india-maharaja-club.html"]) form :is(h2,h3,label,p,span) {
   color: #2A2118 !important;
 }
+
+/* =======================================================================
+   EF-08 (owner feedback, 26 Sep 2026) — /offers/senior-citizen-offer/ only.
+   Obvious defects, not a redesign (a fuller redesign is optional/after launch):
+     · hero: the photo-backed section had no horizontal padding, so the
+       headline, stats and photo ran to its edges;
+     · the offer pill was a 22px capsule — the site's pills and buttons are 4px;
+     · the awards block was a 1,191px wall of 16 large logo tiles — logos now
+       sit in a compact strip;
+     · the physician portrait was 300x400 — now a smaller framed portrait;
+     · "Call Us Now" in the dark physician panel inherited the campaign
+       secondary-button brown (brown on brown, read as disabled) — it now
+       matches its gold WhatsApp sibling. */
+[data-ahv-route="/offers/senior-citizen-offer/"] main > div > section:first-of-type,
+[data-ahv-route="/offers/senior-citizen-offer/"] main section:has(> div > h1) {
+  padding-left:clamp(20px, 4vw, 56px) !important; padding-right:clamp(20px, 4vw, 56px) !important;
+  box-sizing:border-box !important;
+}
+[data-ahv-route="/offers/senior-citizen-offer/"] main p[style*="border-radius: 22px"] { border-radius:4px !important; }
+[data-ahv-route="/offers/senior-citizen-offer/"] main section:has(img[src*="AHV-V2-nabh"]) img[src*="AHV-V2-"] {
+  max-width:112px !important; max-height:68px !important; width:auto !important; height:auto !important; object-fit:contain !important;
+}
+[data-ahv-route="/offers/senior-citizen-offer/"] main section:has(img[src*="AHV-V2-nabh"]) li:has(> img[src*="AHV-V2-"]),
+[data-ahv-route="/offers/senior-citizen-offer/"] main section:has(img[src*="AHV-V2-nabh"]) li:has(img[src*="AHV-V2-"]):not(:has(h3)) {
+  padding:8px !important; min-height:0 !important;
+}
+[data-ahv-route="/offers/senior-citizen-offer/"] main img[src*="Dr_deepu1"] {
+  width:200px !important; max-width:60vw !important; height:auto !important; border-radius:4px !important;
+  box-shadow:0 0 0 6px rgba(238,180,30,.18) !important;
+}
+[data-ahv-route="/offers/senior-citizen-offer/"] main section:has(img[src*="Dr_deepu1"]) a[href^="tel:"] {
+  color:#EEB41E !important; border-color:#EEB41E !important;
+}
+@media (max-width: 760px) {
+  [data-ahv-route="/offers/senior-citizen-offer/"] main section:has(img[src*="Dr_deepu1"]) > div {
+    padding-left:20px !important; padding-right:20px !important; box-sizing:border-box !important;
+  }
+}
