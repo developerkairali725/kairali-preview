@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0454",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_53e6bc91574533a88e94",
+   "sourceHash": "53e6bc91574533a88e94ae59fb8254658d1e7776965e7fc87a8785bdf47ac531",
+   "text": "Правила для детей: дети младше 5 лет могут проживать и питаться бесплатно, если размещаются в одном номере со взрослыми и используют имеющиеся спальные места. За детей старшего возраста или дополнительные кровати может взиматься доплата.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1865d52026561a3145f",
+   "sourceHash": "f1865d52026561a3145f0422917fd4e98e7a855045150c23da8d57e93c116191",
+   "text": "Правила для детей:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08661a51d5608f6c1796",
+   "sourceHash": "08661a51d5608f6c17960eca35210cc0cec80543798f74c8b1ceb506c3105302",
+   "text": "Дети младше 5 лет могут проживать и питаться бесплатно, если размещаются в одном номере со взрослыми и используют имеющиеся спальные места. За детей старшего возраста или дополнительные кровати может взиматься доплата.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebfb19dabf37902c2692",
+   "sourceHash": "ebfb19dabf37902c2692a2f90eb22a77c5323423763cbde7e9c8ca6331fd4979",
+   "text": "6. Время консультации врача",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7659c5df1736378ba48",
+   "sourceHash": "a7659c5df1736378ba484d79819ce5005830cb4f31017b6e12e9cf8a5b3a1c1b",
+   "text": "Пациенты, забронировавшие пребывание в день заезда или прибывшие без предварительного бронирования, должны зарегистрироваться до 15:30, чтобы получить консультацию врача в тот же день. Это ограничение необходимо, чтобы наши аюрведические врачи могли провести подробную консультацию без спешки. Пациентам, прибывшим после 15:30, консультация будет назначена на ближайший доступный день в зависимости от графика врачей. Просим всех пациентов планировать поездку с учётом этого, чтобы избежать задержек с началом программы лечения.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'patients' (clinical lock); 'healing program' rendered as 'treatment programme'. 3:30 PM written as 15:30 (Russian 24-hour convention; same time). A missing space after 'experience.' in the source was corrected."
+   ]
+  },
+  {
+   "id": "t_20873db7e326c7fb84da",
+   "sourceHash": "20873db7e326c7fb84dada7dd093644aad778696e312cb92e3a64a31aeadb5ea",
+   "text": "7. Условия и способы оплаты",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06b68fd59cee3e1232fa",
+   "sourceHash": "06b68fd59cee3e1232fab34dc112881440ca4454280aaf98a7f6d9e1b2d06580",
+   "text": "Способы оплаты: пациенты могут оплатить кредитной или дебетовой картой, банковским переводом или другими допустимыми способами, указанными при бронировании.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'patients' (clinical lock)."
+   ]
+  },
+  {
+   "id": "t_3cc11a3c40b1339bf5b3",
+   "sourceHash": "3cc11a3c40b1339bf5b3c210755e8014f7aaefb17a9c07386f63bb881efd79b5",
+   "text": "Способы оплаты:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9a9582234afe3f49e05",
+   "sourceHash": "e9a9582234afe3f49e057887644c9fa0bb2f0220becfd2647faa0715462b7294",
+   "text": "Пациенты могут оплатить кредитной или дебетовой картой, банковским переводом или другими допустимыми способами, указанными при бронировании.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'patients' (clinical lock)."
+   ]
+  },
+  {
+   "id": "t_f60c6ca23f88bccbe737",
+   "sourceHash": "f60c6ca23f88bccbe737680cf1a223ac2537bd37cb1047d73c5591397493fdce",
+   "text": "Валюта и сборы: все платежи обрабатываются в указанной валюте. Любые банковские сборы, комиссии за транзакции или курсовые разницы оплачивает пациент.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guest' rendered as 'patient' (clinical lock)."
+   ]
+  },
+  {
+   "id": "t_1df199c15d15143eaa84",
+   "sourceHash": "1df199c15d15143eaa8413535c4f5346414c130afe5837f22a851585db413104",
+   "text": "Валюта и сборы:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_124030366e0d03e04e95",
+   "sourceHash": "124030366e0d03e04e95042e205afbf276f4e8fa51e2fd94efc5a85c2c067092",
+   "text": "Все платежи обрабатываются в указанной валюте. Любые банковские сборы, комиссии за транзакции или курсовые разницы оплачивает пациент.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guest' rendered as 'patient' (clinical lock)."
+   ]
+  },
+  {
+   "id": "t_ef082a6037a3b0a79b32",
+   "sourceHash": "ef082a6037a3b0a79b32fa64353b50f7b49d554c73acea34b54f4e7a9e6b4e16",
+   "text": "8. Цены, предложения и налоги",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_afb0ea0a6350125b18bf",
+   "sourceHash": "afb0ea0a6350125b18bf6bd2daedfac8a14789301a9a7a20288179aa1f3111c4",
+   "text": "Цены: все тарифы и сборы применяются в соответствии с указанными на момент бронирования. Мы оставляем за собой право изменять цены, акции и пакеты без предварительного уведомления, однако изменения не затрагивают подтверждённые бронирования.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d15792fe95739fc178d2",
+   "sourceHash": "d15792fe95739fc178d2e0ff4869378cd8b40b6136b07d83e345448d2ae32299",
+   "text": "Цены:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa732602857428527663",
+   "sourceHash": "aa7326028574285276636d6f7393634f9d9bbc4ffc3d009b994c6d183550395a",
+   "text": "Все тарифы и сборы применяются в соответствии с указанными на момент бронирования. Мы оставляем за собой право изменять цены, акции и пакеты без предварительного уведомления, однако изменения не затрагивают подтверждённые бронирования.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_953128a42c11a47cb97a",
+   "sourceHash": "953128a42c11a47cb97a9df45246a0b0b69fbd94592f121ad1d20bcb6b49f493",
+   "text": "Налоги и сборы: все применимые налоги, государственные сборы и плата за обслуживание добавляются к счёту в соответствии с требованиями закона.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5d61d85e4dfc98cbbf9",
+   "sourceHash": "b5d61d85e4dfc98cbbf9b7f451427200f3ab827ec2275f747618f88440d354c7",
+   "text": "Налоги и сборы:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06a7eeaffe8a83a25811",
+   "sourceHash": "06a7eeaffe8a83a25811640e67d7a3fe85077effd986ed1524690b397849a746",
+   "text": "Все применимые налоги, государственные сборы и плата за обслуживание добавляются к счёту в соответствии с требованиями закона.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_050756c2c76bc6bdb9c4",
+   "sourceHash": "050756c2c76bc6bdb9c424b19a204ef5ae9d98b68525ddc41af399c1edf69160",
+   "text": "9. Отмена, изменения и возврат средств",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9eb66d8db6a3ae4a947d",
+   "sourceHash": "9eb66d8db6a3ae4a947dbe8bf85b0bca41cecb42cca753302d758db37a6a7379",
+   "text": "Сроки отмены: более чем за 30 дней до госпитализации — полный возврат. За 15–30 дней до госпитализации — возвращается 50% уплаченной суммы за вычетом применимых комиссий за транзакции и налогов. Менее чем за 15 дней до госпитализации или при изменении дат во время пребывания — возврат не производится.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc0af2857884fbc11d1e",
+   "sourceHash": "cc0af2857884fbc11d1e3b7659de8757cd349a9259171dd229a5c0eee4d43ce9",
+   "text": "Изменения: изменение дат бронирования, процедур или категории номера возможно при наличии свободных мест и может повлечь дополнительную оплату.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93a7da14f78ec4137e88",
+   "sourceHash": "93a7da14f78ec4137e88c74e34e3fe212086b22b177f895b389b3107ac3aa77e",
+   "text": "Изменения:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcf3065d91ff1f43cfba",
+   "sourceHash": "bcf3065d91ff1f43cfbad030c1b83a2afbe554825aa52e25c5b4dd4592c153d0",
+   "text": "Изменение дат бронирования, процедур или категории номера возможно при наличии свободных мест и может повлечь дополнительную оплату.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a8c2638aab5b5a5dc437",
+   "sourceHash": "a8c2638aab5b5a5dc4375421aaac53bb2e9bae16965cdabf7df0f20ba627a0a5",
+   "text": "Порядок возврата: одобренные возвраты обрабатываются в разумные сроки тем же способом оплаты, который использовался для исходной транзакции.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0459",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_3f50e0d1a24333d9b2b2",
+   "sourceHash": "3f50e0d1a24333d9b2b2b7a29d868eb2775d77f0717a69adf836d81803e8ac42",
+   "text": ": مساحات معيشة مفتوحة بأثاث عصري وأسقف عالية ونوافذ ممتدة من الأرض إلى السقف تؤطّر بانسيابية خضرة حديقة الزن الهادئة والحميمة لدينا.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc8bd4807860854f414e",
+   "sourceHash": "dc8bd4807860854f414e92cb9e6d995067e0fd8dc04e308d0e015075cfc30474",
+   "text": "مساحات داخلية رحبة: مساحات معيشة مفتوحة بأثاث عصري وأسقف عالية ونوافذ ممتدة من الأرض إلى السقف تؤطّر بانسيابية خضرة حديقة الزن الهادئة والحميمة لدينا.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_740584209f31b573b380",
+   "sourceHash": "740584209f31b573b380a9fccac8fade7f2d29af04945f4188367a9e68e6f40c",
+   "text": "مساحات خارجية خاصة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e8333db690196545901c",
+   "sourceHash": "e8333db690196545901c50abf53396a8ee91f659f3cbbc8794bba0015cd2db26",
+   "text": ": شرفة واسعة مثالية لقهوة الصباح أو مشروبات الغروب أو عشاء حميم في الهواء الطلق.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'sunset cocktails' rendered as 'مشروبات الغروب' (sunset drinks)."
+   ]
+  },
+  {
+   "id": "t_1ae635aee2500a9c4d3b",
+   "sourceHash": "1ae635aee2500a9c4d3bcc36c66aff028139f1d0f3b99d49cddf73614dab241f",
+   "text": "مساحات خارجية خاصة: شرفة واسعة مثالية لقهوة الصباح أو مشروبات الغروب أو عشاء حميم في الهواء الطلق.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'sunset cocktails' rendered as 'مشروبات الغروب' (sunset drinks)."
+   ]
+  },
+  {
+   "id": "t_cedd20c7becc26f765ec",
+   "sourceHash": "cedd20c7becc26f765ec8dc6b42bafd4c0853624f5d806bc1d47abd68d5cb547",
+   "text": "مرافق متميزة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_896515788d504714bf00",
+   "sourceHash": "896515788d504714bf008460b87586750ec2fab5cb7644d8405b8614e0544f81",
+   "text": ": غرفة نوم مكيّفة، وبياضات فاخرة، وأنظمة ترفيه حديثة تضمن راحة تامة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: per the fleet rulebook the KTAHV lock does not apply to Villa Raag; 'luxury' kept. Flag if AHV lock must apply.",
+    "t_896515788d504714bf00 banned-term-from-source فاخرة"
+   ]
+  },
+  {
+   "id": "t_0f90aadf5d7fc495d96b",
+   "sourceHash": "0f90aadf5d7fc495d96b16551dfcd2bdb44109ee28b88f6f0cd7d7246c34649b",
+   "text": "مرافق متميزة: غرفة نوم مكيّفة، وبياضات فاخرة، وأنظمة ترفيه حديثة تضمن راحة تامة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_0f90aadf5d7fc495d96b banned-term-from-source فاخرة"
+   ]
+  },
+  {
+   "id": "t_be698a07bc9e41802fd6",
+   "sourceHash": "be698a07bc9e41802fd60555bd8eb2fdb2a5bbed83156faadb027f3dd5296ee9",
+   "text": "تصميم مدروس",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1baffbb37b6b440206b6",
+   "sourceHash": "1baffbb37b6b440206b624d068dab68eacc7f60c37b019626a5ef170649affff",
+   "text": ": يعكس كل تفصيل التزامنا بالتميّز، من الأعمال الفنية المختارة بعناية إلى الأثاث المحلي المصدر الذي يحتفي بالحِرفية الغوانية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_13c94eaae613f62dabd9",
+   "sourceHash": "13c94eaae613f62dabd91e91e8b27d5d441384397b7b4346c0e115207a6dfbd5",
+   "text": "تصميم مدروس: يعكس كل تفصيل التزامنا بالتميّز، من الأعمال الفنية المختارة بعناية إلى الأثاث المحلي المصدر الذي يحتفي بالحِرفية الغوانية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3213cf138db295482d7",
+   "sourceHash": "d3213cf138db295482d7fa068f7fd2a10b445b49964ddacbd75ad05dda2c8922",
+   "text": "تميّز يناسب العائلات",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_000fac50d47b7f2244a0",
+   "sourceHash": "000fac50d47b7f2244a0048eab92fd612805abc62b614e69761d13909381f8e3",
+   "text": "بوصفنا فيلا فاخرة مناسبة للعائلات في غوا، نرحّب بالضيوف من جميع الأعمار بأذرع مفتوحة. وتتسع غرفنا الرحبة للعائلات براحة، فيما يمكن لخدمة الكونسيرج المخصصة لدينا ترتيب أنشطة مناسبة للأطفال وقوائم طعام خاصة وكل ما يلزم لتكون عطلتكم العائلية سهلة وممتعة. ونساعد في صنع لحظات لا تُنسى لضيوف من كل الأجيال، لتكون كل إقامة مليئة بالبهجة والتواصل والذكريات العزيزة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury', 'guests' (الضيوف) and 'holiday' (عطلتكم) translated faithfully. Flag if AHV lock must apply.",
+    "t_000fac50d47b7f2244a0 banned-term-from-source فاخرة"
+   ]
+  },
+  {
+   "id": "t_c6103b725af5103f06eb",
+   "sourceHash": "c6103b725af5103f06eb53a82381b85d8611f331e54a5eaf8f13edbd9c716d92",
+   "text": "سحر شاطئ أغوندا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7067c1112993a8db175e",
+   "sourceHash": "7067c1112993a8db175e40463110f92c9e01cb038c4a81c4f13c980e5e0b9a48",
+   "text": "تضعكم إقامتكم على شاطئ جنوب غوا في Villa Raag في قلب واحدة من أجمل المناطق الساحلية وأكثرها بكارة في الهند. ويمتد شاطئ أغوندا لأكثر من كيلومترين من الرمال البيضاء النقية، تحيط به أشجار النخيل المتمايلة والأمواج الهادئة، ليقدّم بديلًا هادئًا لشواطئ شمال غوا الأكثر ازدحامًا.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8c79b2731f080315bfd6",
+   "sourceHash": "8c79b2731f080315bfd6ce2ae38bea62058d1a6d72a1a96e22f8a3c0b07f59f0",
+   "text": "يوفّر هذا الفندق الفاخر على شاطئ أغوندا وصولًا مميزًا إلى:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Villa Raag hospitality content: KTAHV lock not applied; 'luxury' kept.",
+    "t_8c79b2731f080315bfd6 banned-term-from-source الفاخر"
+   ]
+  },
+  {
+   "id": "t_c0343fd884d0273cff1a",
+   "sourceHash": "c0343fd884d0273cff1a97870077a4b45117283023767597da41840fde9818a5",
+   "text": "جمال طبيعي بِكر",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_872609d3586822c2cc97",
+   "sourceHash": "872609d3586822c2cc97cdab80e50cd5405a066dda0312b0823b0b950b948a77",
+   "text": ": استيقظوا على صوت الأمواج واخطوا مباشرة على الرمال الناعمة، مستمتعين بالجمال الطبيعي والإيقاع الهادئ للشاطئ.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbcb30f09cafb2326867",
+   "sourceHash": "cbcb30f09cafb2326867706037f92910ceb292113811fcd3227dc937a907c9ce",
+   "text": "جمال طبيعي بِكر: استيقظوا على صوت الأمواج واخطوا مباشرة على الرمال الناعمة، مستمتعين بالجمال الطبيعي والإيقاع الهادئ للشاطئ.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb9d6b6b5b666f6cbec8",
+   "sourceHash": "fb9d6b6b5b666f6cbec84cca8db04b24f4c240bdd919f63bac006304a1996817",
+   "text": "الثقافة المحلية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33fcd77c2af8fffafa05",
+   "sourceHash": "33fcd77c2af8fffafa0575087d3ac3c7effc05d3b5b427736b9bdde1bbb98b5f",
+   "text": ": عيشوا الحياة الأصيلة في قرى غوا، حيث تروي المعابد القديمة والعمارة الاستعمارية البرتغالية حكايات قرون مضت.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_07875cf6d9a4c8e0e4fc",
+   "sourceHash": "07875cf6d9a4c8e0e4fc605a61de863ff59cb16880041756be5ae8a982eb37e2",
+   "text": "الثقافة المحلية: عيشوا الحياة الأصيلة في قرى غوا، حيث تروي المعابد القديمة والعمارة الاستعمارية البرتغالية حكايات قرون مضت.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02760607541e3f1e746b",
+   "sourceHash": "02760607541e3f1e746bd34b5feae87d0d907363839afb0061b855b94e95662a",
+   "text": "المغامرة والاستكشاف",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b5d395546da2021cf51",
+   "sourceHash": "7b5d395546da2021cf51a27b7cb7c297a9bbfa34119ceb7d132cd37091fb111d",
+   "text": ": فرص لا حصر لها للاستكشاف والمغامرة تنتظركم على بُعد لحظات من فيلتكم، وتدعوكم لاكتشاف السحر الطبيعي والثقافي للمنطقة المحيطة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8d2bde1d8af30bebdcf9",
+   "sourceHash": "8d2bde1d8af30bebdcf969aabbe931343ef8aaaef422b13b5c9a3bb5af682c3c",
+   "text": "المغامرة والاستكشاف: فرص لا حصر لها للاستكشاف والمغامرة تنتظركم على بُعد لحظات من فيلتكم، وتدعوكم لاكتشاف السحر الطبيعي والثقافي للمنطقة المحيطة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
