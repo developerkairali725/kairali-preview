@@ -6,26 +6,18 @@
  *
  *   1. Open the Sheet → Extensions → Apps Script.
  *   2. Replace the contents of Code.gs with this file, and Save.
- *   3. Deploy → New deployment → type "Web app".
- *        Execute as:        Me
- *        Who has access:    Anyone
- *      "Anyone" is what lets the website POST to it. The URL is unguessable and
- *      the script only ever appends rows — it reads nothing back out.
- *   4. Copy the /exec URL and set it as AHV_NEWSLETTER_SHEET_WEBHOOK_URL on the
- *      Vercel project for ayurvedichealingvillage.com.
+ *   3. Deploy → Manage deployments → Edit (pencil icon) → Version: New version → Deploy.
+ *      (If there is no existing deployment yet: Deploy → New deployment → type "Web app",
+ *      Execute as: Me, Who has access: Anyone.)
+ *   4. Set the /exec URL as AHV_NEWSLETTER_SHEET_WEBHOOK_URL on Vercel.
  *
- * After changing this file you must Deploy → Manage deployments → Edit → New
- * version. Saving alone does not update the live /exec URL.
+ * ## Columns follow the Sheet, not this script — and are matched case-insensitively
  *
- * ## Columns follow the Sheet, not this script
- *
- * Row 1 is the header row and it is the contract. Each incoming field is placed
- * under the header whose name matches it. A field with no matching header is
- * simply not written, and a header with no matching field is left blank.
- *
- * Header row for this Sheet:
- *
- *   Email | Time | Page URL
+ * Row 1 is the header row and it is the contract. Matching ignores case, so an
+ * existing "email" header (lowercase) is recognised as the Email column and is
+ * never touched or duplicated. Any of Email / Time / "Page URL" that the header
+ * row does not already have is appended as a new column, after whatever is
+ * already there — an existing column and its data are never moved or renamed.
  *
  * ("Time" is the server's submit time, ISO 8601; "Page URL" is the page the
  * visitor signed up from.)
@@ -38,6 +30,36 @@
  */
 
 var SHEET_NAME = 'Sheet1';
+var WANTED = ['Email', 'Time', 'Page URL'];
+
+function norm(value) {
+  return String(value == null ? '' : value).trim().toLowerCase();
+}
+
+/** Reads row 1, adds whichever of WANTED it is missing (appended after
+ * whatever headers already exist), and returns the up-to-date header row. */
+function ensureHeaders(sheet) {
+  var lastCol = Math.max(1, sheet.getLastColumn());
+  var headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+  if (!headers.length || !headers.some(function (h) { return norm(h); })) {
+    sheet.getRange(1, 1, 1, WANTED.length).setValues([WANTED]);
+    return WANTED.slice();
+  }
+  var have = headers.map(norm);
+  var missing = WANTED.filter(function (w) { return have.indexOf(norm(w)) === -1; });
+  if (missing.length) {
+    sheet.getRange(1, headers.length + 1, 1, missing.length).setValues([missing]);
+    headers = headers.concat(missing);
+  }
+  return headers;
+}
+
+/** payload key for a given header, matched case-insensitively against the
+ * three fields this script ever sends. */
+function payloadKeyFor(header) {
+  var byNorm = { email: 'Email', time: 'Time', 'page url': 'Page URL' };
+  return byNorm[norm(header)] || String(header).trim();
+}
 
 function doPost(request) {
   try {
@@ -49,19 +71,16 @@ function doPost(request) {
     try {
       var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME)
         || SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-      var headers = sheet.getRange(1, 1, 1, Math.max(1, sheet.getLastColumn())).getValues()[0];
-      if (!headers.length || !headers[0]) {
-        headers = ['Email', 'Time', 'Page URL'];
-        sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-      }
+      var headers = ensureHeaders(sheet);
+      var emailCol = headers.findIndex(function (h) { return norm(h) === 'email'; }) + 1;
 
       var email = String(payload.Email || '');
-      if (email && alreadyPresent(sheet, headers, email)) {
+      if (email && emailCol > 0 && alreadyPresent(sheet, emailCol, email)) {
         return respond({ result: 'success', email: email, duplicate: true });
       }
 
       var row = headers.map(function (header) {
-        var key = String(header).trim();
+        var key = payloadKeyFor(header);
         return Object.prototype.hasOwnProperty.call(payload, key) ? payload[key] : '';
       });
       sheet.appendRow(row);
@@ -74,15 +93,13 @@ function doPost(request) {
   }
 }
 
-/** True when this email already has a row. */
-function alreadyPresent(sheet, headers, email) {
-  var column = headers.indexOf('Email') + 1;
-  if (column < 1) return false;
+/** True when this email already has a row, checked in the given column. */
+function alreadyPresent(sheet, column, email) {
   var rows = sheet.getLastRow() - 1;
   if (rows < 1) return false;
   var existing = sheet.getRange(2, column, rows, 1).getValues();
   for (var i = 0; i < existing.length; i++) {
-    if (String(existing[i][0]).toLowerCase() === email.toLowerCase()) return true;
+    if (norm(existing[i][0]) === norm(email)) return true;
   }
   return false;
 }
