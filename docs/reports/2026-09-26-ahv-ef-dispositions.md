@@ -279,3 +279,12 @@ How to read this file:
 - **Constraints:** per `staff-rana-20260926/STAFF-BANK-AND-TODO.md`, consent scopes and experience chronology have to be verified before any profile or portrait changes. No private CV detail has been copied anywhere.
 - **Where it touches:** the only live site claim this worker met is on the EF-08 senior-offer page ("12 years … Ayurvedic geriatrics").
 - **Next:** inventory every staff-profile route and start per-profile integration once the consent and chronology checks close. Dr. Deepu John signs off clinical titles.
+
+## Local verification after the full rebuild (2026-09-26 ~14:15 IST)
+
+- **Build:** `npm run build` with AHV_STAGING=1 exits 0 and generates 3145/3145 static pages. Checked with `next start` and Playwright Chromium.
+- **EF-22:** the /video-gallery/ first poster fills its frame at 390 (354×199 in 354×199) and at 1440 (529×327), `object-fit: cover`.
+- **EF-16:** 0 underlined footer links on /video-gallery/, /sightseeing/, /read-feedback/, /search/ and /givefeedback/.
+- **Consent regression (5133c7a8):** the notice renders with 0 page errors on all five native pages and on /lp/treatment-in-kerala/ and /lp/pain-management/.
+- **Still pending:** the native pages still carry the pre-13-language "EN DE FR" chrome from the old English snapshot. It is fixed by the prerender refresh in the release sequence.
+- **Also fixed (745e7e63):** the homepage mobile menu button now exposes `aria-expanded` (false → true on open). The two desktop homepage switchers are never both in the viewport, so they're not a visible duplicate.

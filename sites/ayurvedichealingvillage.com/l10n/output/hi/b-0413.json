@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0413",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_0614f29da59eee5c14d3",
+   "sourceHash": "0614f29da59eee5c14d35495309f914832d05e19ca22b87546228011b48e8239",
+   "text": "यूरो 800 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de49487252779761cc10",
+   "sourceHash": "de49487252779761cc108b0723072f3c00cac465e64d47b61b3816cfe10999c3",
+   "text": "USD 934 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14541a4099e6f03bf092",
+   "sourceHash": "14541a4099e6f03bf0928cf56e307b00c8cb58659be801ab983840707d810e61",
+   "text": "प्रतिदिन एक थेरेपी के साथ डीलक्स विला7 रातें/ 8 दिन के लिए मूल्य “स्वास्थ्य-लाभ के लिए आयुर्वेद और योग”: 23 सितंबर – 30 सितंबर।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source joins two cells without a space; kept the same concatenation."
+   ]
+  },
+  {
+   "id": "t_1cd0bec2054c6b2d8958",
+   "sourceHash": "1cd0bec2054c6b2d8958631934748542210751c938504de7126658a9ca50010d",
+   "text": "7 रातें/ 8 दिन के लिए मूल्य “स्वास्थ्य-लाभ के लिए आयुर्वेद और योग”: 23 सितंबर – 30 सितंबर।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_088fdf369c59f15d0530",
+   "sourceHash": "088fdf369c59f15d0530d73e240c7bf33620e0bd6618ee252b6001842c8687f6",
+   "text": "INR 67000 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6713e355b192fd5dcbc",
+   "sourceHash": "f6713e355b192fd5dcbc95f426155df3a7a05cf8e20448d50a83728e60593400",
+   "text": "यूरो 958 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8dac91b4b72e07a214ee",
+   "sourceHash": "8dac91b4b72e07a214ee318a0a4e0a18756747bf9ff2504e5b908c1abdd18ae0",
+   "text": "USD 1117 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0e774c1a54379e761de",
+   "sourceHash": "a0e774c1a54379e761deb1c08ce0df4486909a82e0307720e7911b1320521403",
+   "text": "INR 85000 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_85dd57f8f6f68a4290a4",
+   "sourceHash": "85dd57f8f6f68a4290a4b6bb57794c6fb8efe9d2e5a1096034321a8a723d114f",
+   "text": "यूरो 1215 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56e05388828d3ee8523e",
+   "sourceHash": "56e05388828d3ee8523e9058fe9c93c4315d525b88a4d3ca11b5cfdf7d0d04c2",
+   "text": "USD 1417 + कर*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ada149384966d8ad039",
+   "sourceHash": "2ada149384966d8ad0398e229f8e686019ffa8a74b38cc8d1e419570a9a970e5",
+   "text": "Prav Simona योग रिट्रीट",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73b2628f58311ec93089",
+   "sourceHash": "73b2628f58311ec93089f4a6c551a484abaffa1851f1755b4069e589ee66ddd1",
+   "text": "यह पृष्ठ Prav–Simona योग रिट्रीट से संबंधित सामग्री को सुरक्षित रखता है, जिसमें 17–22 सितंबर 2017 का तनाव-प्रबंधन कार्यक्रम भी शामिल है। ये विवरण और सम्मिलित सुविधाएँ ऐतिहासिक हैं और वर्तमान बुकिंग शर्तें नहीं हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e8e00dca1398fa82be7",
+   "sourceHash": "1e8e00dca1398fa82be7dca55f2da107907f4d313425e9f7b584cedd6559ef10",
+   "text": "Prav & Simona योग रिट्रीट, केरल | आयुर्वेद व तनाव प्रबंधन",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'Luxury' removed per KTAHV clinical language lock; shortened to fit the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_9c694c3841e71b44cdb4",
+   "sourceHash": "9c694c3841e71b44cdb46a62a9780d502e863c831b1cfeaf1d8f3fa78e93323f",
+   "text": "Kairali आयुर्वेदिक हीलिंग विलेज, केरल में Prav & Simona योग रिट्रीट: आयुर्वेद, योग, प्राणायाम व ध्यान का 14-दिवसीय कार्यक्रम, तनाव से राहत के लिए।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned words 'luxury' and 'journey' replaced with 'programme' (कार्यक्रम) per KTAHV clinical language lock; 'holistic healing' and 'paradise' phrasing condensed to fit the 155-character seo.description limit."
+   ]
+  },
+  {
+   "id": "t_ea94f963d72d476eeac3",
+   "sourceHash": "ea94f963d72d476eeac37c8fc335c261b42cdd69a36a0353d1b81ae4fa90c962",
+   "text": "Kairali – The Ayurvedic Healing Village शांति और समग्र जीवन-पद्धति का प्रतीक है, जहाँ लोग बाहरी व्यवधानों या चिंताओं से मुक्त होकर रह सकते हैं। आयुर्वेद के शाश्वत ज्ञान के साथ उत्कृष्ट सुविधाओं से युक्त यह शांत वातावरण दैनिक जीवन की भागदौड़ से दूर एक आदर्श आश्रय है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3c1c9985a1752951762",
+   "sourceHash": "d3c1c9985a1752951762491f659b5b8278c5de5a8bdc7c37c86aadcb1d14864a",
+   "text": "हमारी दैनिक दिनचर्या के दौरान समूह बनाए जाएँगे। समूह सीमित और विशिष्ट रखे जाएँगे ताकि प्रत्येक व्यक्ति पर व्यक्तिगत ध्यान दिया जा सके। हमारे योगियों के पास व्यापक अनुभव है; वे 20 वर्षों से अधिक समय से सिखा रहे हैं और योग के प्रति जागरूकता बढ़ाने के लिए विश्व भर में यात्रा करते रहे हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_d3c1c9985a1752951762 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_d050bdff9f967ae41c83",
+   "sourceHash": "d050bdff9f967ae41c83ff8c9e7cfa86abed2c0af6b4b90de5a5ec52ea4be776",
+   "text": "हमारे पौष्टिक भोजन की 70% सामग्री हीलिंग विलेज में स्थित जैविक खेत से आती है, जबकि शेष सामग्री स्थानीय स्तर पर प्राप्त की जाती है। हमारा भोजन व्यक्ति की शारीरिक प्रकृति के अनुसार पकाया जाता है। हम परिसर में मौजूद हमारे चिकित्सकों द्वारा तैयार की गई उचित आहार योजना का पालन करते हैं। हम आयुर्वेदिक पाक-कला कक्षाओं की एक कार्यशाला भी आयोजित करते हैं, जिससे आप रिट्रीट के बाद घर पर ये स्वास्थ्यवर्धक व्यंजन बना सकें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7cc313b4d72e686897e",
+   "sourceHash": "d7cc313b4d72e686897ec5323787e206467293a2f820f9df639628f644ef2744",
+   "text": "तनाव प्रबंधन, स्वास्थ्य-लाभ और स्वस्थ जीवनशैली पर केंद्रित, सितंबर में निर्धारित यह योग रिट्रीट आपके मन और शरीर में संतुलन लाने में सहायता करने का लक्ष्य रखता है। डेनमार्क से हमारे विशेषज्ञ योगी, Prav और Simona, 6 दिनों तक तनाव से जुड़ी आपकी सभी चिंताओं में आपकी सहायता करेंगे, जिसके बाद अगले 8 दिनों तक प्राणायाम और ध्यान के माध्यम से स्वास्थ्य-लाभ होगा। इसमें मन, शरीर और आत्मा के कायाकल्प का एक संपूर्ण समावेश है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6671186d6b7e682c8de3",
+   "sourceHash": "6671186d6b7e682c8de3d8e52ee481357afdce58b083078b1308f225ffc25103",
+   "text": "तनाव प्रबंधन और स्वस्थ जीवनशैली के लिए आयुर्वेद और योग",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a1428b5992c0a7ab1e3",
+   "sourceHash": "0a1428b5992c0a7ab1e3249f4cd80f17a92324b365c17ac6eef421684fa6e0ad",
+   "text": "(17 – 22 सितंबर, 2017)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0fbeb30b3fa76c277c70",
+   "sourceHash": "0fbeb30b3fa76c277c70a55c89ee5de39957a13c7f8a9a4e72a3242dcb4b7b30",
+   "text": "यह रिट्रीट उन लोगों के लिए उपयुक्त है जो तनाव-मुक्त और अधिक स्वस्थ जीवनशैली अपनाना चाहते हैं। मानसिक तनाव का हमारे तंत्रिका तंत्र पर सीधा प्रभाव पड़ता है, जिससे विभिन्न स्वास्थ्य समस्याएँ उत्पन्न होती हैं। केरल स्थित हमारे आनंदमय आयुर्वेद गाँव में सुंदर वृक्षों और औषधीय जड़ी-बूटियों के बीच योग और आयुर्वेद के प्राचीन विज्ञान को अपनाना आपको शीघ्र स्वास्थ्य-लाभ में सहायता कर सकता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source begins with a typo ('he retreat', missing 'T'); translated as the full sentence. 'Heal in no time' rendered as 'can help you recover quickly' to avoid strengthening the claim."
+   ]
+  },
+  {
+   "id": "t_58f86c9f8ad4e472f52d",
+   "sourceHash": "58f86c9f8ad4e472f52dd559b9410e0a64fea40cd0ca3854f734e9a045673932",
+   "text": "योग के चरण",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dedf23226fd63706eb54",
+   "sourceHash": "dedf23226fd63706eb547f88a8bd1d519f1f4e30ebbb9e21b4bd4aa79c652204",
+   "text": "स्वास्थ्य-लाभ के लिए आयुर्वेद और योग",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3c75770be8f1eb17324e",
+   "sourceHash": "3c75770be8f1eb17324ed0aa0e1ff31fb6d443a53f1ed6588bf5f384fcc271fb",
+   "text": "वैदिक पद्धति का परिचय।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_035cde9634536a9bdc7e",
+   "sourceHash": "035cde9634536a9bdc7ef82a66059de72fcaf6c80ebf43e46152c2846349b6fc",
+   "text": "योग मुद्रा",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
