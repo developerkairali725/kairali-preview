@@ -221,7 +221,8 @@ const LABELS = { A:'All programmes', W:'Wellness Programs', T:'Treatment Program
 const gINR = n => { const s = String(n), last3 = s.slice(-3), rest = s.slice(0, -3); return '₹' + (rest ? rest.replace(/\\B(?=(\\d{2})+(?!\\d))/g, ',') + ',' : '') + last3; };
 const gr = n => String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',');
 const money = (n, cur) => cur === 'INR' ? gINR(n) : (cur === 'USD' ? '$' : '€') + gr(n);
-const expired = p => p.ps === 'expired' || (p.vt && new Date() > new Date(p.vt + 'T23:59:59Z')) || (p.vf && new Date() < new Date(p.vf + 'T00:00:00Z'));
+const expired = p => p.ps === 'expired' || (p.vt && new Date() > new Date(p.vt + 'T23:59:59Z'));
+const upcoming = p => !!(p.vf && new Date() < new Date(p.vf + 'T00:00:00Z'));
 const metaFor = (p, cur) => {
   const parts = [];
   if (p.basis === 'night' && p.n != null) parts.push(p.n + (p.n === 1 ? '-day' : '-day') + (p.c.indexOf('R') >= 0 && p.r !== '/ayurveda-training-programme/' ? ' course' : ''));
@@ -230,6 +231,7 @@ const metaFor = (p, cur) => {
   if (!p.from) return parts.length ? parts.join(' · ') : 'Tailored programme — fee follows the doctor’s plan';
   if (expired(p)) parts.push(${js(UI.requestQuote)});
   else parts.push(p.basis === 'night' ? 'stay from ' + money(p.from[cur], cur) + ' per night' : 'From ' + money(p.from[cur], cur));
+  if (!expired(p) && upcoming(p)) parts.push('rates valid from ' + fmtDate(p.vf));
   return parts.join(' · ');
 };
 const fold = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[’'\`´]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
