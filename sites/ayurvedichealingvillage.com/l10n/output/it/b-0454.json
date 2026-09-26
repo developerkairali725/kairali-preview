@@ -1,0 +1,218 @@
+{
+ "batchId": "b-0454",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_53e6bc91574533a88e94",
+   "sourceHash": "53e6bc91574533a88e94ae59fb8254658d1e7776965e7fc87a8785bdf47ac531",
+   "text": "Politica per i bambini: i bambini di età inferiore a 5 anni possono soggiornare e consumare i pasti gratuitamente se condividono la camera e i letti esistenti con gli adulti. Per i bambini più grandi o per letti aggiuntivi possono essere applicati costi supplementari.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1865d52026561a3145f",
+   "sourceHash": "f1865d52026561a3145f0422917fd4e98e7a855045150c23da8d57e93c116191",
+   "text": "Politica per i bambini:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08661a51d5608f6c1796",
+   "sourceHash": "08661a51d5608f6c17960eca35210cc0cec80543798f74c8b1ceb506c3105302",
+   "text": "I bambini di età inferiore a 5 anni possono soggiornare e consumare i pasti gratuitamente se condividono la camera e i letti esistenti con gli adulti. Per i bambini più grandi o per letti aggiuntivi possono essere applicati costi supplementari.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebfb19dabf37902c2692",
+   "sourceHash": "ebfb19dabf37902c2692a2f90eb22a77c5323423763cbde7e9c8ca6331fd4979",
+   "text": "6. Orari della consultazione medica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7659c5df1736378ba48",
+   "sourceHash": "a7659c5df1736378ba484d79819ce5005830cb4f31017b6e12e9cf8a5b3a1c1b",
+   "text": "I pazienti con prenotazione in giornata o che arrivano senza prenotazione devono effettuare il check-in entro le 15:30 per poter ricevere una consultazione medica lo stesso giorno. Questo orario limite è indispensabile per consentire ai nostri medici ayurvedici di offrire una consultazione approfondita e senza fretta. Per chi arriva dopo le 15:30, la consultazione sarà programmata per il primo giorno disponibile, in base alla disponibilità dei medici. Invitiamo tutti i pazienti a organizzare il viaggio di conseguenza, per evitare ritardi nell'avvio del programma terapeutico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pazienti' and 'healing program' as 'programma terapeutico' per the clinical language lock; 3:30 PM rendered as 15:30 (Italian 24-hour convention, same time).",
+    "t_a7659c5df1736378ba48 banned-term-from-source viaggio"
+   ]
+  },
+  {
+   "id": "t_20873db7e326c7fb84da",
+   "sourceHash": "20873db7e326c7fb84dada7dd093644aad778696e312cb92e3a64a31aeadb5ea",
+   "text": "7. Condizioni e metodi di pagamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06b68fd59cee3e1232fa",
+   "sourceHash": "06b68fd59cee3e1232fab34dc112881440ca4454280aaf98a7f6d9e1b2d06580",
+   "text": "Metodi di pagamento: i pazienti possono pagare con carta di credito/debito, bonifico bancario o altri metodi accettati, come indicato al momento della prenotazione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pazienti' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_3cc11a3c40b1339bf5b3",
+   "sourceHash": "3cc11a3c40b1339bf5b3c210755e8014f7aaefb17a9c07386f63bb881efd79b5",
+   "text": "Metodi di pagamento:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9a9582234afe3f49e05",
+   "sourceHash": "e9a9582234afe3f49e057887644c9fa0bb2f0220becfd2647faa0715462b7294",
+   "text": "I pazienti possono pagare con carta di credito/debito, bonifico bancario o altri metodi accettati, come indicato al momento della prenotazione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pazienti' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_f60c6ca23f88bccbe737",
+   "sourceHash": "f60c6ca23f88bccbe737680cf1a223ac2537bd37cb1047d73c5591397493fdce",
+   "text": "Valuta e commissioni: tutti i pagamenti saranno elaborati nella valuta indicata. Eventuali spese bancarie, commissioni di transazione o differenze di cambio sono a carico del Paziente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'Paziente' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_1df199c15d15143eaa84",
+   "sourceHash": "1df199c15d15143eaa8413535c4f5346414c130afe5837f22a851585db413104",
+   "text": "Valuta e commissioni:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_124030366e0d03e04e95",
+   "sourceHash": "124030366e0d03e04e95042e205afbf276f4e8fa51e2fd94efc5a85c2c067092",
+   "text": "Tutti i pagamenti saranno elaborati nella valuta indicata. Eventuali spese bancarie, commissioni di transazione o differenze di cambio sono a carico del Paziente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'Paziente' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_ef082a6037a3b0a79b32",
+   "sourceHash": "ef082a6037a3b0a79b32fa64353b50f7b49d554c73acea34b54f4e7a9e6b4e16",
+   "text": "8. Prezzi, offerte e imposte",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_afb0ea0a6350125b18bf",
+   "sourceHash": "afb0ea0a6350125b18bf6bd2daedfac8a14789301a9a7a20288179aa1f3111c4",
+   "text": "Prezzi: tutte le tariffe e i costi saranno quelli indicati al momento della prenotazione. Ci riserviamo il diritto di modificare prezzi, promozioni e pacchetti senza preavviso, ma le modifiche non influiranno sulle prenotazioni confermate.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d15792fe95739fc178d2",
+   "sourceHash": "d15792fe95739fc178d2e0ff4869378cd8b40b6136b07d83e345448d2ae32299",
+   "text": "Prezzi:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa732602857428527663",
+   "sourceHash": "aa7326028574285276636d6f7393634f9d9bbc4ffc3d009b994c6d183550395a",
+   "text": "Tutte le tariffe e i costi saranno quelli indicati al momento della prenotazione. Ci riserviamo il diritto di modificare prezzi, promozioni e pacchetti senza preavviso, ma le modifiche non influiranno sulle prenotazioni confermate.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_953128a42c11a47cb97a",
+   "sourceHash": "953128a42c11a47cb97a9df45246a0b0b69fbd94592f121ad1d20bcb6b49f493",
+   "text": "Imposte e tributi: tutte le imposte applicabili, i tributi governativi e i costi di servizio saranno aggiunti al conto come previsto dalla legge.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5d61d85e4dfc98cbbf9",
+   "sourceHash": "b5d61d85e4dfc98cbbf9b7f451427200f3ab827ec2275f747618f88440d354c7",
+   "text": "Imposte e tributi:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06a7eeaffe8a83a25811",
+   "sourceHash": "06a7eeaffe8a83a25811640e67d7a3fe85077effd986ed1524690b397849a746",
+   "text": "Tutte le imposte applicabili, i tributi governativi e i costi di servizio saranno aggiunti al conto come previsto dalla legge.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_050756c2c76bc6bdb9c4",
+   "sourceHash": "050756c2c76bc6bdb9c424b19a204ef5ae9d98b68525ddc41af399c1edf69160",
+   "text": "9. Politica di cancellazione, modifiche e rimborsi",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9eb66d8db6a3ae4a947d",
+   "sourceHash": "9eb66d8db6a3ae4a947dbe8bf85b0bca41cecb42cca753302d758db37a6a7379",
+   "text": "Termini di cancellazione: oltre 30 giorni prima del ricovero: rimborso integrale. Da 15 a 30 giorni prima del ricovero: viene rimborsato il 50% dell'importo pagato, al netto delle commissioni di transazione e delle imposte applicabili. Meno di 15 giorni prima del ricovero, oppure in caso di modifica delle date durante il soggiorno: nessun rimborso.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc0af2857884fbc11d1e",
+   "sourceHash": "cc0af2857884fbc11d1e3b7659de8757cd349a9259171dd229a5c0eee4d43ce9",
+   "text": "Modifiche: le modifiche alle date della prenotazione, ai trattamenti o alle categorie di camera sono soggette a disponibilità e possono comportare costi aggiuntivi.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93a7da14f78ec4137e88",
+   "sourceHash": "93a7da14f78ec4137e88c74e34e3fe212086b22b177f895b389b3107ac3aa77e",
+   "text": "Modifiche:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcf3065d91ff1f43cfba",
+   "sourceHash": "bcf3065d91ff1f43cfbad030c1b83a2afbe554825aa52e25c5b4dd4592c153d0",
+   "text": "Le modifiche alle date della prenotazione, ai trattamenti o alle categorie di camera sono soggette a disponibilità e possono comportare costi aggiuntivi.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a8c2638aab5b5a5dc437",
+   "sourceHash": "a8c2638aab5b5a5dc4375421aaac53bb2e9bae16965cdabf7df0f20ba627a0a5",
+   "text": "Procedura di rimborso: i rimborsi approvati saranno elaborati entro un termine ragionevole, utilizzando lo stesso metodo di pagamento della transazione originale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

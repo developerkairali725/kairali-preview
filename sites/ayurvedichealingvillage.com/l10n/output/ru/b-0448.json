@@ -1,0 +1,219 @@
+{
+ "batchId": "b-0448",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_3285cec0b8bfac7386e9",
+   "sourceHash": "3285cec0b8bfac7386e9daf5a716aab414565359eceb600f075852281a6f92e8",
+   "text": "Перенести бронирование",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; continues with 'на взаимно согласованную дату без дополнительной оплаты.'"
+   ]
+  },
+  {
+   "id": "t_2c74c9763c42f1ebcd5a",
+   "sourceHash": "2c74c9763c42f1ebcd5a77233601b62ee13c9ce35a96768a024035d2b39997d5",
+   "text": "на взаимно согласованную дату без дополнительной оплаты.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcb1d3a1e24bb50c617b",
+   "sourceHash": "dcb1d3a1e24bb50c617b8964ae8db483925f76f4d5d93e89f0c8d4b310791c13",
+   "text": "Предоставить кредит-ноту на уплаченную сумму, которую можно использовать в будущем в течение установленного срока с даты выдачи.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2afa4659eb60f9241df3",
+   "sourceHash": "2afa4659eb60f9241df34e06d9933d08dcce7c2f805b8b365426dc1770fb334b",
+   "text": "Предоставить кредит-ноту",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; continues with 'на уплаченную сумму…'."
+   ]
+  },
+  {
+   "id": "t_06cf91ec02a45efd66f4",
+   "sourceHash": "06cf91ec02a45efd66f4564455484d1c6ecc2a056d2aa38328f5654342a50536",
+   "text": "на уплаченную сумму, которую можно использовать в будущем в течение установленного срока с даты выдачи.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04c6f6808dc33ae1bb11",
+   "sourceHash": "04c6f6808dc33ae1bb11c413f0388f95b15ef7a9bf9656b65dcb25aee7e50efa",
+   "text": "Произвести возврат средств в исключительных случаях — с одобрения администрации и за вычетом соответствующих понесённых невозвратных расходов.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff68bbe2e2386988281b",
+   "sourceHash": "ff68bbe2e2386988281bc43810bac0e9001f03f7e683e8c20d9bc648e9d222ee",
+   "text": "Произвести возврат средств",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; continues with 'в исключительных случаях…'."
+   ]
+  },
+  {
+   "id": "t_32a6345a93a26700043b",
+   "sourceHash": "32a6345a93a26700043b9a1188ce458bd281c5627ac8b9575d1891817a2ad82f",
+   "text": "в исключительных случаях — с одобрения администрации и за вычетом соответствующих понесённых невозвратных расходов.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d751b2f3bc69fb5fc393",
+   "sourceHash": "d751b2f3bc69fb5fc393a5adbf6e081be9141607292014d95054ee5887072d93",
+   "text": "В таких ситуациях рекомендуем пациентам связаться с нашим отделом бронирования, чтобы обсудить доступные варианты.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'пациентам' per KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_12bc9e9fffb5babce7db",
+   "sourceHash": "12bc9e9fffb5babce7dbae59f7755e9e73670c6a5ecc2270d1228e782296855d",
+   "text": "Благодарим вас за понимание и соблюдение этих правил. Если вам нужна дополнительная помощь или у вас есть вопросы, пожалуйста, свяжитесь с нашей службой поддержки.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_325f5ed96c5f2a0f5ab0",
+   "sourceHash": "325f5ed96c5f2a0f5ab0c2c813151acd25d90df3c4e74208ed3bad492eeeae87",
+   "text": "Обязательные права и пояснения",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_507353c4685ea45af145",
+   "sourceHash": "507353c4685ea45af145c73f34fe6af2cdcf7341f590b7ecb0719af391cc32a8",
+   "text": "Настоящие условия не отменяют обязательных прав пациентов или потребителей. Если условия в коммерческом предложении, PDF-тарифе и на сайте расходятся, до оплаты попросите команду письменно их согласовать. Сроки зачисления возврата также зависят от банка или платёжного провайдера.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5723e1c796aac7d6626",
+   "sourceHash": "a5723e1c796aac7d6626a31dd72b792158391bd50bc9edd84ec369ff65c570b1",
+   "text": "Политика использования cookie | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "seo.title shortened to fit 60 characters (full brand name dropped after 'Kairali')."
+   ]
+  },
+  {
+   "id": "t_cec63b1e2110d4cf0284",
+   "sourceHash": "cec63b1e2110d4cf028466bd5ad68725ff9a341a434c9242fe271c278b80f2ec",
+   "text": "Как Kairali – The Ayurvedic Healing Village использует cookie для удобства, аналитики и персонализации. Настройки cookie можно изменить в любое время.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_595194d787f621b8624d",
+   "sourceHash": "595194d787f621b8624dc6419770888e6689b4b9d6a0f12b74ad8a8524871488",
+   "text": "Политика использования cookie — обновлено 25 сентября 2026",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4784a9df2cfc884002e",
+   "sourceHash": "a4784a9df2cfc884002e924116da2305e15a96089f7d0a317e8fc1a18f3f1c7f",
+   "text": "Файлы cookie и аналогичные средства хранения в браузере могут обеспечивать безопасность, запоминать ваш выбор, а при наличии необходимого разрешения — измерять использование сайта. Простое посещение сайта или дальнейший просмотр не означает согласия на необязательные cookie.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5bf4a92fb60d2717ad12",
+   "sourceHash": "5bf4a92fb60d2717ad121c4d4630925427f6594ded43ec50a6dfa1c8c30065aa",
+   "text": "Ваш выбор",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a16c39354bf8fb5602f",
+   "sourceHash": "2a16c39354bf8fb5602f031708ae047823e8fa413362b1b1c1461497bee4a6fb",
+   "text": "Используйте кнопки «Принять» или «Отклонить» в уведомлении о cookie. Отказ от необязательной аналитики не должен мешать чтению информации о программах или обращению в больницу. С помощью элемента «Настройки cookie» на этой странице вы можете отозвать сохранённый выбор и перезагрузить страницу с отказом от необязательного согласия. Вы также можете управлять сохранёнными cookie в своём браузере.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Button labels (Accept / Decline / Cookie choices) translated; must match the localized cookie-banner UI strings."
+   ]
+  },
+  {
+   "id": "t_f5ffee0ad1e0f7c39fcf",
+   "sourceHash": "f5ffee0ad1e0f7c39fcff0df7545e7679a14d6139f92f528386b0a507d5262ab",
+   "text": "Необходимое хранение данных",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_956c63d7a6313029d285",
+   "sourceHash": "956c63d7a6313029d2853f354b907547cade9df278aae4a73976e6acfb42ade3",
+   "text": "Сайт сохраняет настройки cookie в локальном хранилище браузера, включая ktahv-consent и kairali-consent-v1. Функции безопасности или сеанса могут использовать необходимое хранилище. Настройки браузера могут влиять на работу этих функций.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2441dd767e11a83d632d",
+   "sourceHash": "2441dd767e11a83d632d01c6b2ca8716229003367e7f83b892b2af5a13dbe0c4",
+   "text": "Необязательная аналитика",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c5021c1f0e5d3c105dd2",
+   "sourceHash": "c5021c1f0e5d3c105dd2e38f8c569f533f594967c09a47a2d9005dab96c3c7c5",
+   "text": "Когда в рабочей версии включена аналитика, сайт содержит интеграции с Google Analytics, Microsoft Clarity и Meta. Необязательные скрипты должны учитывать ваш выбор в отношении согласия. Согласие не означает разрешения передавать медицинские заключения, текст обращений, идентификаторы или введённые поисковые запросы о здоровье в рекламные или аналитические сервисы. Персонализированная реклама на основе данных о здоровье требует отдельной оценки и ограничена правилами рекламных платформ.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9d8d05b9736daf8d0191",
+   "sourceHash": "9d8d05b9736daf8d0191f31d1877ca6ba941a7c388bde5cd7db91ad93f6709ad",
+   "text": "Внешние сервисы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de147f941d02869c0d82",
+   "sourceHash": "de147f941d02869c0d82e3cb4721a3f768593c2821d1cb9a2246522dcaba8429",
+   "text": "При открытии WhatsApp, чата с Priya, платёжного сервиса, карты или видео вы можете быть подключены к третьей стороне. К её сервису применяются её собственные правила конфиденциальности и использования cookie. Не все элементы хранения третьих сторон контролируются баннером cookie больницы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b5c3d26721ae9c350cf",
+   "sourceHash": "2b5c3d26721ae9c350cf3009318b626f0fc8a90b4a2ac0ca8099c05aa849282e",
+   "text": "Контакты",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
