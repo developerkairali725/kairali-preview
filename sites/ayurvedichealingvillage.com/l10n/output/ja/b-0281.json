@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0281",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_0d599fc35207973166d6",
+   "sourceHash": "0d599fc35207973166d601b1d4094ca559412f7844e49ae2ea7c91d9f3a87468",
+   "text": "初期状態では折りたたまれており、複数の回答を同時に開いたままにできます。aria-expanded/aria-controls を備えたネイティブボタンを使用し、Enter キーと Space キーで操作でき、フォーカスを強制的に移動させることはありません。これは設計上の判断として記録したものであり、取得したプラグインのクラスは過去の実行時の状態を証明するものではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated literally."
+   ]
+  },
+  {
+   "id": "t_1f2f2261f6f8bf70af30",
+   "sourceHash": "1f2f2261f6f8bf70af30d2c64abea248f82451da1a6aac0c174f7bbdc6943046",
+   "text": "明示的に空である末尾の3つの段落のみです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated literally."
+   ]
+  },
+  {
+   "id": "t_b32be30452ae46530342",
+   "sourceHash": "b32be30452ae46530342c8dee769f03a22b56555c7ed4faed896aca91c460fc9",
+   "text": "なし — 元の本文にはダウンロード用の資料がなく、タイトルから作成したものもありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated literally."
+   ]
+  },
+  {
+   "id": "t_db2365bb7a376f09d1dd",
+   "sourceHash": "db2365bb7a376f09d1dde2b3cd90d95872ae3f007265b564672f111b88e1a807",
+   "text": "italic",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/style keyword used by the renderer, not visible copy.",
+   "issues": [
+    "Verify this is a code value; if it is a visible label it should read 斜体."
+   ]
+  },
+  {
+   "id": "t_5249f4fcc629efa0e6d6",
+   "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
+   "text": "-n",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_360f84035942243c6a36",
+   "sourceHash": "360f84035942243c6a36537ae2f8673485e6c04455a0a85a0db19690f2541480",
+   "text": "left",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/layout keyword used by the renderer, not visible copy.",
+   "issues": [
+    "Verify this is a code value; if it is a visible label it should read 左."
+   ]
+  },
+  {
+   "id": "t_28720365c5e7476a011e",
+   "sourceHash": "28720365c5e7476a011e4f43ac003ee5f16247a263b9d623aa85ed311d73bf39",
+   "text": "top",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS/layout keyword used by the renderer, not visible copy.",
+   "issues": [
+    "Verify this is a code value; if it is a visible label it should read 上."
+   ]
+  },
+  {
+   "id": "t_1e1caaf8cf28cb024317",
+   "sourceHash": "1e1caaf8cf28cb0243175a8dd26a3fc0d8f2c5527c661586bb816e57b9919be2",
+   "text": "-r",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_0c3603e13e24a40b4bf2",
+   "sourceHash": "0c3603e13e24a40b4bf215e3795a9a40d60a8456fb7b63c2d11e81701a231e85",
+   "text": "-c",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_93bc5d02dc2a24b53653",
+   "sourceHash": "93bc5d02dc2a24b5365347573b6f5115f069ca1097f319a1041c2a6c770079e0",
+   "text": "collapse",
+   "status": "translated",
+   "unchangedReason": "Appears to be a CSS keyword (e.g. border-collapse/visibility value), not visible copy.",
+   "issues": [
+    "Verify this is a code value; if it is a visible label it should read 折りたたむ."
+   ]
+  },
+  {
+   "id": "t_c697d2981bf416569a16",
+   "sourceHash": "c697d2981bf416569a16cfbcdec1542b5398f3cc77d2b905819aa99c46ecf6f6",
+   "text": "region",
+   "status": "translated",
+   "unchangedReason": "Appears to be an ARIA role value, not visible copy.",
+   "issues": []
+  },
+  {
+   "id": "t_f0956726750ca787d943",
+   "sourceHash": "f0956726750ca787d943bb3ca8ba098bdbff341512524ebb1c887ca1f62dffc1",
+   "text": "touch",
+   "status": "translated",
+   "unchangedReason": "Appears to be a code value (e.g. pointer/touch-action), not visible copy.",
+   "issues": []
+  },
+  {
+   "id": "t_16d1c9050a0b32e83764",
+   "sourceHash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
+   "text": "表",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16cd066b95f1799f059c",
+   "sourceHash": "16cd066b95f1799f059cfc45a00dd2bc67d4356dc883378164c70c7e5b652cf5",
+   "text": "列、",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment joined after a column count; rendered as a counter suffix."
+   ]
+  },
+  {
+   "id": "t_6b05a180063676442fbc",
+   "sourceHash": "6b05a180063676442fbcce9e10309db975749f54423dde996c393c8fb33bac23",
+   "text": "行（スクロール可能）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment joined after a row count; rendered as a counter suffix."
+   ]
+  },
+  {
+   "id": "t_6ce953bdf5cd0f93cd6f",
+   "sourceHash": "6ce953bdf5cd0f93cd6f4bd612b25843a038a9492b509dbc68727b29511af463",
+   "text": "it-",
+   "status": "translated",
+   "unchangedReason": "Code identifier prefix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4fc0bdb51ffc8cfdcaae",
+   "sourceHash": "4fc0bdb51ffc8cfdcaaee067eb264b8a5c646176cf870be17c2e647fbb2cb7f4",
+   "text": "-b",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_fa2e2a6ad747546569bd",
+   "sourceHash": "fa2e2a6ad747546569bd7b0e2e9281c550d020290d81ca00ee72bacef0a2260e",
+   "text": "?route=",
+   "status": "translated",
+   "unchangedReason": "URL query-string fragment; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9be7ac80b195e000b3cf",
+   "sourceHash": "9be7ac80b195e000b3cf0fcb8853fdf1f224f916f8b460413c608f550ebd1e27",
+   "text": "faq-cat-",
+   "status": "translated",
+   "unchangedReason": "Code identifier prefix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_485f60d2203a09c605dc",
+   "sourceHash": "485f60d2203a09c605dcf2cfd9d8612f916509ee7e48ab0afebac3f49da1485f",
+   "text": "-btn",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_68f4e3ae3fbca42ecfb0",
+   "sourceHash": "68f4e3ae3fbca42ecfb0c59493cc1b8192ebb182fe17ebe3a8cc5f142fa4e5a2",
+   "text": "-panel",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_23f49fcc0de8265d3350",
+   "sourceHash": "23f49fcc0de8265d335010d6cb6f348fa9a4eb7add1163f1c9a67d28d1f8dbf1",
+   "text": "robots",
+   "status": "translated",
+   "unchangedReason": "HTML meta name value; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9347bd35e495c32fd5df",
+   "sourceHash": "9347bd35e495c32fd5df366f2a70ec9f3b5434d621d4b5a16ae8684b72f554c2",
+   "text": "ヨガとアーユルヴェーダは、心身の両方を浄化するための理想的な組み合わせであり、人生において本当に大切なものとそうでないものを見極める助けとなります。インドはヨガ発祥の地であり、献身と瞑想への意欲が湧き出る源泉です。数え切れないほどのヨギたちがその形を築いてきた場所でヨガを行うことは、深い精神的な源に触れることに似ています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a91ebb8c0524e716db",
+   "sourceHash": "44a91ebb8c0524e716dbdda270683d012e9f0afb1022af18234fe46b1ffe57ef",
+   "text": "この2週間では、脈拍やバイオリズム、感情、夢、消化に意識を向けることで、内なる静けさを見つけ、自分自身の固有のリズムに気づくことに集中します。同時に、生理的なリズムや思考、感情の移り変わるパターンに耳を傾けることも自分に許していきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a02a5e8bbc377688327a",
+   "sourceHash": "a02a5e8bbc377688327ada62ca6314f9f3b2abb9272433d9c37b7b14efa747ff",
+   "text": "独自の食事と毎日のアーユルヴェーダ・ケアは、それぞれの体質タイプに応じた必要性に合わせて提供されます。心を落ち着かせるマッサージやオイルを用いた施術を通じて、日常の習慣から感覚を解きほぐすことができます。穏やかな環境で行う毎日のヨガと瞑想のセッションは、ひと息ついて内面に意識を向け、本来の自分とつながり直すことを促します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

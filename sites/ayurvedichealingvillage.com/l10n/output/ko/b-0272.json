@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0272",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_d3e7daed3b41d81bb9c2",
+   "sourceHash": "d3e7daed3b41d81bb9c282325b3307c27f1dc41c5ceb46f80582fd584ca82f7f",
+   "text": "만성 통증 및 경직",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_712c4dbe3438e459b771",
+   "sourceHash": "712c4dbe3438e459b7714c531a9bdb225283c16b7bb420bbeba4ba9e49dc121b",
+   "text": "만성적인 목, 허리 또는 관절 통증을 안고 지내며 일시적인 완화에 의존해 오다가, 근본 원인을 다루는 체계적인 판차카르마 및 라사야나 지원을 받을 준비가 된 분들을 위한 프로그램입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_86fc86826d184aecb85b",
+   "sourceHash": "86fc86826d184aecb85b66cefcb02df29e3a040d3d65e0bd4e71da4bf07d9eb0",
+   "text": "스트레스, 피로 및 번아웃",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_369ea392416b071dea0c",
+   "sourceHash": "369ea392416b071dea0c35ec6fd84df33230a5ccd171a79ec6b0b26c2b907bc6",
+   "text": "수년간 쌓인 스트레스, 피로, 수면 부족 또는 신경계 과부하를 안고 있어, 온전히 자신을 되찾고 더 깊은 차원에서 회복하려면 긴 주말 이상의 시간이 필요한 직장인들.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_442a620ae54a08cd4c51",
+   "sourceHash": "442a620ae54a08cd4c5161d8edc8adbf60df55ad6986e8b93c4fcf1010ca614c",
+   "text": "대사 및 생활 습관 관련 문제",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_995ea738d76ed65523be",
+   "sourceHash": "995ea738d76ed65523be3c3a692d301cbd42931f2bd69d1acd173c9920f168a8",
+   "text": "체중 변동, 대사 불균형, 혈당 문제, 느린 소화 또는 반복되는 위산 과다와 복부 팽만을 겪으며, 겉으로 드러난 증상만 계속 관리하기보다 근본 원인을 다루고 싶은 분들.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16da2a203c96f299d588",
+   "sourceHash": "16da2a203c96f299d588cdffe485a807207897817f7d9c2fd772b055fc23118e",
+   "text": "질병 후 회복",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e33b80c3c6582e3070bd",
+   "sourceHash": "e33b80c3c6582e3070bdf466eb3322285c98da007d2651c9f5e2e6c70ddeb2a5",
+   "text": "최근의 질병, 감염 후 쇠약 또는 장기간의 약물 복용에서 회복 중이며, 차분하고 철저히 모니터링되는 아유르베다 환경에서 임상적으로 감독되는 해독과 체계적인 면역력 재건이 필요한 환자분들.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 환자 (patients) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_11adb39a19b632d436b7",
+   "sourceHash": "11adb39a19b632d436b7811f2db42f01f09fd0a5b42ac9183e1ba47d4888b9f6",
+   "text": "아유르베다가 처음이지만 관심 있는 분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12b169476bfbc7c00145",
+   "sourceHash": "12b169476bfbc7c001450ca70213ba4d28491c3984378270d94de0b30c0d5f13",
+   "text": "아유르베다에 관심은 있지만 시작할 적절한 때를 기다려 온 분이라면, 카르키다카가 바로 그 시기입니다. 이때는 몸이 자연스럽게 치료를 더 잘 받아들이므로, 처음 방문하는 환자분도 의미 있는 변화를 경험할 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'First-time guest' rendered as 처음 방문하는 환자 (first-time patient) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_fe5097493b5e3c958c12",
+   "sourceHash": "fe5097493b5e3c958c12f25dcf8fbd769a4108ec4fc1fd3165d9556ff78c1292",
+   "text": "수면 부족 및 기분 불균형",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f497badca27e13db961c",
+   "sourceHash": "f497badca27e13db961c1d88006b5db452dbd95f88e00be3a773a829a5dd3f3c",
+   "text": "수면 장애, 활력 저하, 기분 변동을 겪고 있거나, 몸과 마음의 리듬이 전반적으로 어긋나 있어 완전히 재정비하고 균형을 되찾기 위해 안내와 감독이 있는 휴식이 필요하다고 느끼는 분들.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5771f3ab5edfa9510eab",
+   "sourceHash": "5771f3ab5edfa9510eabe3d91a84e051efd813a59b74093028918ace75dba043",
+   "text": "4가지 핵심 축으로 구성된 의료 수준의 요법",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_302ca58e094bd68600a7",
+   "sourceHash": "302ca58e094bd68600a7c38c158c51a131eebc66d4681473d2e62deb49aa68ef",
+   "text": "Kairali의 카르키다카는 일반적인 \"몬순 해독\"이 아니라, NABH 인증을 받은 병원 수준의 아유르베다 치유 시설에서 의료진의 감독하에 이루어지는 완전한 요법입니다. 이곳은 인도의 대표적인 웰니스 기관 중 하나로 인정받고 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 치유 시설 (healing facility) and 'wellness destinations' as 웰니스 기관 (wellness institutions) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_3c8db3be6ca0758d9a83",
+   "sourceHash": "3c8db3be6ca0758d9a833375fe267048124941c8b607fd5a92bb34d226d6d888",
+   "text": "판차카르마 — 심층 해독",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93c3a6af91fcf765280a",
+   "sourceHash": "93c3a6af91fcf765280acbf34dcde6965e1122ff11dd84822269eefb7be6b401",
+   "text": "비레차나, 바스티, 나스얌을 포함한 고전 정화 시술을 통해 깊은 조직에서 아마(독소)를 배출하는 체계적인 해독 과정입니다. 이에 앞서 스네하파나, Abhyangam (아비양감), 스웨다나로 몸을 준비합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70b57154cba5212f4fba",
+   "sourceHash": "70b57154cba5212f4fba3d3222e3f660ca284d5ba0699d44283d0beb0cf0b629",
+   "text": "라사야나 — 조직 활력 회복",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54655c2265097d8dcd82",
+   "sourceHash": "54655c2265097d8dcd82ba713a590ab3dd41e813a0b9ed3a0821e75ac53825f5",
+   "text": "피질칠, 나바라 Kizhi (키지), 시로다라(Shirodhara), 우드와르타남 같은 해독 후 치료는 체력을 다시 키우고, 신경계를 진정시키며, 통증을 완화하고, 건강한 노화를 돕습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7489a925fa6d073ff1b",
+   "sourceHash": "d7489a925fa6d073ff1b0a3386e4627cba693f65a39b48683682ff4f73b1ee32",
+   "text": "아우샤다 세바 — 내복약 및 식단",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2d9e8f0cd553152ee69",
+   "sourceHash": "d2d9e8f0cd553152ee6931369f4c602777d525d0ef2961aa88ddcfaf6b321f92",
+   "text": "매일 드시는 카르키다카 칸지, 개인 맞춤 허브 탕약(카샤야 또는 크와타), 약용 기(스네하파나), 그리고 차완프라시와 아슈와간다 같은 목적별 보충제는 아그니를 회복하고, 면역력을 돕고, 오래된 불균형을 바로잡는 데 도움을 줍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_79240119dc4a9e4d13b6",
+   "sourceHash": "79240119dc4a9e4d13b61c2eb5598a62a801a26000b0f43f637a0f3b222771b3",
+   "text": "사트바바자야 — 마음과 정신의 재정비",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_797de79023e0593652cb",
+   "sourceHash": "797de79023e0593652cb06102d2a1dfb008814320ce43fd485a7d453485a8d53",
+   "text": "매일의 요가, 프라나야마, 명상은 프라나의 균형을 잡고, 스트레스를 줄이고, 수면을 개선하며, 신체 치료가 정서적·정신적 안녕 위에 자리 잡도록 합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e04a6f08bbe345ec55f5",
+   "sourceHash": "e04a6f08bbe345ec55f50cc21b6a71f8b7988014b30b42bd4510da3adf46c0ec",
+   "text": "나에게 맞는 카르키다카 치유 기간을 선택하십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b82226e6579bfa8d567",
+   "sourceHash": "1b82226e6579bfa8d567b7b69ba045e1bcf1a2040b52df5a79150aabb49afec0",
+   "text": "일주일이든 3주든, 몬순은 당신과 함께 작용합니다. 모든 프로그램은 정해진 공식이 아니라 당신의 몸을 중심으로 구성됩니다. 임상 카르키다카 프로그램은 일반적으로 1박당 약 ₹22,780부터 시작하며, 14박 체류는 숙소와 치료 강도에 따라 달라집니다. 이를 통해 건강 목표와 예산에 맞는 체류를 스스로 선택하실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source sentence 'with 14-night stays depending on accommodation and treatment intensity' is ambiguous; translated as closely as possible — owner may wish to clarify the pricing wording."
+   ]
+  },
+  {
+   "id": "t_64dea6f4f19b007d5c1f",
+   "sourceHash": "64dea6f4f19b007d5c1f7b21095bc3919b33ab1f0dac0356b9164a12493cc28c",
+   "text": "몬순 스타터",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

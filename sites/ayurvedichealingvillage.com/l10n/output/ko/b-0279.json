@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0279",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_770edf7149761c075d0e",
+   "sourceHash": "770edf7149761c075d0eb2aab443102b3fca7d862b053db3961f60163fc7a5bd",
+   "text": "요가 수업 · 아침 식사 · 의사 상담 · 신체 상태에 따른 치료(예: 피질칠) · 점심 식사 · 신체 상태에 따른 치료(예: Dhara (다라)) · 현지 셰프의 요리 세미나(1시간) · 명상(명상 수업) · 저녁 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2db598cc44792991fb59",
+   "sourceHash": "2db598cc44792991fb59d0b066336b3e65d85a2c4e5c0a446c60a4a2cd08df7b",
+   "text": "3월 31일(목)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source weekday abbreviation 'Turs.' is a typo for Thursday; rendered as 목."
+   ]
+  },
+  {
+   "id": "t_0fb8161474869963340d",
+   "sourceHash": "0fb8161474869963340d1fb607d3d15d3a0eb135997152c6d6f98019e0df7e22",
+   "text": "요가 수업 · 아침 식사 · 의사 상담 · 치료(예: 카티바스티) · 점심 식사 · 치료(예: Netra (네트라) Dhara (다라)) · 선택 사항: 힌두 사원 방문 · 명상(명상 수업) · 저녁 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_556952832c7e30d91b6b",
+   "sourceHash": "556952832c7e30d91b6b982bacefa14001a3f525704503a3f1b40f0ef708be2b",
+   "text": "4월 1일(금)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source has a stray extra closing parenthesis; normalized."
+   ]
+  },
+  {
+   "id": "t_7639465566350f2be963",
+   "sourceHash": "7639465566350f2be9633cfe83e76230bea7a06d609747dd1b72143178f5722c",
+   "text": "요가 수업 · 아침 식사 · Abhyangam (아비양감) 1일 세미나 · 점심 식사 · Abhyangam (아비양감) 1일 세미나 · 명상(명상 수업) · Gita 씨와 함께하는 저녁 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ed1855891ea2f7c17c0c",
+   "sourceHash": "ed1855891ea2f7c17c0ccb3588e3701002761278c47554cf500eb7822cbf2eef",
+   "text": "4월 2일(토)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is missing its closing parenthesis; normalized."
+   ]
+  },
+  {
+   "id": "t_87d50e6df3affcb3803f",
+   "sourceHash": "87d50e6df3affcb3803fe3d706215f99918b4d307a4b549869b3dbfedefa32cc",
+   "text": "코임바토르 출발",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b1ed51aac5d744ae17e",
+   "sourceHash": "9b1ed51aac5d744ae17e68058c279e8990bdeec95f6023595478396e6023884c",
+   "text": "MI-0455",
+   "status": "translated",
+   "unchangedReason": "Flight number; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_6088068584bcdcf8d9e3",
+   "sourceHash": "6088068584bcdcf8d9e3ab5f119feda6b6b3d7d278a94f5f89a7f89f1a4b5350",
+   "text": "7:00 8:00 오전 정오 오후 늦은 오후 18:00 23:10",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e24c51fb4b3dcd06daac",
+   "sourceHash": "e24c51fb4b3dcd06daac159543e45ce2b97b59b2e32fb32a06840f17cc163705",
+   "text": "요가 수업 · 아침 식사 · 신체 상태에 따른 치료(예: 나바라키지) · 점심 식사 · 신체 상태에 따른 치료(예: Abhyangam (아비양감)) · 저녁 식사 · 체크아웃 · 버스로 코임바토르 공항 이동 · 싱가포르항공으로 싱가포르행(야간 비행)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e7d92ce77b6c6c7fe807",
+   "sourceHash": "e7d92ce77b6c6c7fe80718eca0c8614b2a873ea0127731751880d5546945d808",
+   "text": "4월 3일(일)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14dfda4f1df651cb85f7",
+   "sourceHash": "14dfda4f1df651cb85f7fc8eec85d6314fc799a609f562865ced47bb30a22a7e",
+   "text": "싱가포르 도착 · 싱가포르 출발 · 나리타 공항 도착",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_991887e03d57b6e58e6a",
+   "sourceHash": "991887e03d57b6e58e6a6660ca3fdaece175086452c3ae0fbf6f80eb5a3ae74a",
+   "text": "SQ-012",
+   "status": "translated",
+   "unchangedReason": "Flight number; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_3897e3cacb8a3402c6fa",
+   "sourceHash": "3897e3cacb8a3402c6fad2e7f3f685ad020f54ffa7a8dbaa3152ad8764ab6fce",
+   "text": "싱가포르 경유 · 싱가포르항공으로 일본 귀국 · 나리타 공항 도착 후 출입국 심사 및 세관 통과 후 해산",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5a6db75e1fa2e2eebd4f",
+   "sourceHash": "5a6db75e1fa2e2eebd4f2d502fe097eb576538c20191fd680bc5b9fd80ea4c6d",
+   "text": "아침: 기내식 점심: 기내식 저녁: 없음",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_118bd4d08bb25560c5b1",
+   "sourceHash": "118bd4d08bb25560c5b1ecb7b216bea677c5aa9c0c2ec6fce971369b808d70b5",
+   "text": "케랄라 9일 프리미엄 아유르베다 워크숍 | Kairali Healing Retreat",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' rendered as 프리미엄 (premium) per register lock; 'Kairali Healing Retreat' kept as a proper name."
+   ]
+  },
+  {
+   "id": "t_d6a7bdc781e82398251c",
+   "sourceHash": "d6a7bdc781e82398251c8677302f299b147e8ed4379e318567fe6bdf2ffcac0f",
+   "text": "Kairali – The Ayurvedic Healing Village의 특별한 9일 아유르베다 워크숍. 프리미엄 웰니스 환경에서 개인 맞춤 아유르베다 치료, 요가, 명상, 전인적 치유를 경험하십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury wellness' rendered as 프리미엄 웰니스 환경 (premium) per register lock."
+   ]
+  },
+  {
+   "id": "t_e4da683af9eaae0476df",
+   "sourceHash": "e4da683af9eaae0476df01b645abf895e3566518d4dbbd451ac5234191694378",
+   "text": "아유르베다 워크숍",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b632623b600c6fa56334",
+   "sourceHash": "b632623b600c6fa56334b216af912b4f4aa51dc879bc44a4e36c8d1c0c863ee8",
+   "text": "최소 소요 시간은 05박입니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7aef52a6673a42bd7f31",
+   "sourceHash": "7aef52a6673a42bd7f31a3079a59a808876ecf224e4c04df72ffbb3be3a5b12b",
+   "text": "최소 소요 시간은 10박입니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43412f2214ec0b6e332b",
+   "sourceHash": "43412f2214ec0b6e332b3c4f7b507f6f403e79d7eb9bd1088db7a7d26a21e6fd",
+   "text": "최소 소요 시간은 14박입니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0301b38b8f1bd4be1b44",
+   "sourceHash": "0301b38b8f1bd4be1b44be67d5d66ea21c05ab89c835d80905a8e5f865cea4a6",
+   "text": "집중 아유르베다 교육",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_27a41162bdc8650d3623",
+   "sourceHash": "27a41162bdc8650d362317fa6da690b2d372b5192893cbca4a4129faba3f5030",
+   "text": "아유르베다 입문, 역사, 분과, 구분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dd37a420d3f7a425411",
+   "sourceHash": "3dd37a420d3f7a4254113b046a62ce933b70d6216a5dba8e6c3dd615c100456f",
+   "text": "Abhyangam (아비양감) – 머리, 목, 몸",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7982f6ec0984c154221b",
+   "sourceHash": "7982f6ec0984c154221b1440a3f27b2b311a0d88155ae0aee970f4799fde6aee",
+   "text": "판차마하부타, 트리도샤, 삽타다투, 아그니, 아마",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

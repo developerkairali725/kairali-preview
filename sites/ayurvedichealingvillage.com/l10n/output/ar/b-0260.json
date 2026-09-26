@@ -1,0 +1,141 @@
+{
+ "batchId": "b-0260",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_a78a6acef183d0c4ad71",
+   "sourceHash": "a78a6acef183d0c4ad711d536bdb3b0566811e1e41d784b97b856c6e870cc07c",
+   "text": "طُبِّق تصحيح موثّق ومحايد لبيانات الموضوع الوصفية على العنوان والوصف وعلى حقلَي عنوان ووصف OG الحاليين فقط (لا يتضمن Twitter حقلًا للعنوان أو الوصف). لم يتغيّر الرابط الأساسي (Canonical) ولا قابلية الفهرسة ولا وضع خريطة XML. لا يوجد مخطط Offer/Product/Article.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source appears to be an internal SEO/provenance note, not patient-facing copy; translated literally — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_715dc8493c36579a5b11",
+   "sourceHash": "715dc8493c36579a5b116995100f635e3572fdf8703e708ef1a08d943b36774e",
+   "text": "خاص",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal metadata value ('private'); translated literally — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_62c6fec127a89399c509",
+   "sourceHash": "62c6fec127a89399c509cc99a3928757861fa3cf0cb355be0e490b32048c16ed",
+   "text": "صلاحية تصحيح SEO المدعومة بالأدلة وفق AUTONOMOUS-DESIGN-MANDATE.md",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal provenance note; filename kept verbatim — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_8a667e12859238173405",
+   "sourceHash": "8a667e128592381734059580af7411398df4de13db2c308b85f45fe5b06d8d48",
+   "text": "لا يعني الرابط القديم الموافقة على الخصم التاريخي؛ لا تخلط بين الوضع الحالي الذي أكّده المالك والموافقة على شروط الـ 30%.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, not patient-facing copy; translated literally (source typo 'of30%' read as 'of 30%') — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_7f0b0210ccbc993e1687",
+   "sourceHash": "7f0b0210ccbc993e1687c597b29f7a2ccf693b4cab6346ba1c4fb82063fcff09",
+   "text": "قوات الدفاع والقوات شبه العسكرية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ed819306b1c045db77a",
+   "sourceHash": "9ed819306b1c045db77aefcfb26c644247a038a67f9e81e55c222823b1e4e649",
+   "text": "سطر مسار تنقّل (breadcrumb) قديم من المصدر في سياق خاطئ. للتوثيق التاريخي فقط — لا يُعرض كمسار تنقّل للزوار.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal provenance note; translated literally — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_42b2cc0e2a82f462dd77",
+   "sourceHash": "42b2cc0e2a82f462dd77c9b1c03dc4434484158a571c58ecf9d4682a7c098e9b",
+   "text": "لمزيد من التفاصيل حول الباقات المقدّمة في قرية الشفاء الأيورفيدية، يُرجى النقر هنا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e6db42a7e9669d696af",
+   "sourceHash": "4e6db42a7e9669d696af0990e9445826ff059abbd023b0dac08a18994cc37aad",
+   "text": "فاصل في المصدر بين نص العرض والشروط؛ تم الحفاظ على حدود الكتلة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal provenance note; translated literally — confirm whether it is displayed."
+   ]
+  },
+  {
+   "id": "t_a6e6a8a9dc38804511d6",
+   "sourceHash": "a6e6a8a9dc38804511d667886119174d7fd8ff8528d402363b89147aeb8676e8",
+   "text": "الشروط والأحكام:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c7fe0e9a6c574b54787",
+   "sourceHash": "9c7fe0e9a6c574b5478776fc34f318d6cedb2b97e151cb2ef2e97efc49afcc90",
+   "text": "كتاب بعنوان أسرار الشفاء في Kairali، عليه نقش لأطباء قدامى يعالجون مريضًا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9a26084031d22ade59a8",
+   "sourceHash": "9a26084031d22ade59a814b78ef13992359d1919829d283b7c35c1f26be1aaaf",
+   "text": "يرأس مجموعة KAIRALI الأيورفيدية العضوان المنتدبان المشتركان السيدة Gita Ramesh والسيد K.V. Ramesh، وكلاهما ينحدر من سلالة عائلية عريقة من أطباء الأيورفيدا التقليديين. وبفضل إرث من الخبرة يعود إلى أطباء مشهورين مثل الراحل الدكتور Sankunny Vaidiar (جدّ السيد K. V. Ramesh) والدكتور K. S. Vasudevan (والد السيد K. V. Ramesh)، تأسست مجموعة Kairali على أساس متين من البحث في الأيورفيدا. ومنذ تأسيسها، بنت Kairali على إنجازات أسلافها، فطوّرت بنيتها الإنتاجية لتوفير مجموعة متنوعة من المنتجات الأيورفيدية لجمهور متعدد الجنسيات.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4c04cd88f0144fdaf28",
+   "sourceHash": "d4c04cd88f0144fdaf2804873e1862e4d4331b76f94b4c5ad7dec651df6892e4",
+   "text": "مراكز العلاج",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e63f91d4003c039b1f1d",
+   "sourceHash": "e63f91d4003c039b1f1d671e372b42aec2a7f16c92d63a920a701950cd3fdeef",
+   "text": "مراكز العلاج حرصًا على تعزيز الآثار العلاجية لنمط الحياة الأيورفيدي، أسّست Kairali أول مركز علاج لها في نيودلهي عام 1989. وقد أدّى نجاح العلاجات المقدّمة هناك إلى تزايد الطلب على مرافق Kairali. وتنتشر مراكز العلاج التابعة لنا الآن في أنحاء الهند، ولا نزال من الخيارات المفضّلة في هذا القطاع للتعليم وتدريب الكوادر. وتستقطب ورش العمل والدورات التدريبية المنتظمة لدينا مشاركة أطباء واختصاصيي تغذية ومعالِجين من جميع أنحاء العالم.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee140fc2dc2d9e04b7d2",
+   "sourceHash": "ee140fc2dc2d9e04b7d2ae8c61583f3d910a11b57cbd83020f224e4ede5a4e90",
+   "text": "الضيافة والرعاية الصحية بعد ترسيخ بنية تحتية ممتازة، أسّست Kairali مركزها المميّز في كيرالا عام 1997. وتقدّم قرية الشفاء الأيورفيدية، وهي مركز استشفاء حائز على جوائز يقع في بيئة غابات استوائية مُلهمة في بالاكاد، أرقى مستويات الراحة الشمولية الحديثة. ويحيط بالمركز خمسون فدانًا من المزارع العشبية العضوية، ويمثّل مجتمعًا علاجيًا مستدامًا للمرضى والزوار الساعين إلى برامج بانشاكارما وإزالة السموم واليوغا. ومنذ تأسيس قسم الضيافة، نما الحضور الدولي لـ Kairali نموًا ملحوظًا، مما أدّى إلى افتتاح منشأتين أخريين في الهند، وانتشار امتيازات مراكز العافية في ثلاث قارات.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Language-lock substitutions: 'luxury' → 'أرقى مستويات الراحة' (premium comfort); 'guests' → 'المرضى والزوار'; 'resorts' → 'منشأتين' (facilities); 'spa franchises' → 'امتيازات مراكز العافية' (wellness-centre franchises); 'Kerala Retreat' rendered as 'مركزها المميّز في كيرالا'. Source is legacy group-corporate copy with heavy hospitality framing — recommend editorial review before KTAHV use."
+   ]
+  },
+  {
+   "id": "t_effd1c9304ea81a1602f",
+   "sourceHash": "effd1c9304ea81a1602fb9005b5bf8c921e9dd1f4b05df0ee284e64c1af4a88c",
+   "text": "المنتجات الأيورفيدية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

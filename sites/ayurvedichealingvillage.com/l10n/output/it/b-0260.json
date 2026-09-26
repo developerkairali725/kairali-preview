@@ -1,0 +1,145 @@
+{
+ "batchId": "b-0260",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_a78a6acef183d0c4ad71",
+   "sourceHash": "a78a6acef183d0c4ad711d536bdb3b0566811e1e41d784b97b856c6e870cc07c",
+   "text": "Correzione documentata e neutrale dei metadati tematici applicata a titolo/descrizione e solo ai campi OG title/description esistenti (Twitter non ha campi title/description). Canonical, indicizzabilità e disposizione XML invariati. Nessuno schema Offer/Product/Article.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note; translated for completeness, technical field names kept."
+   ]
+  },
+  {
+   "id": "t_715dc8493c36579a5b11",
+   "sourceHash": "715dc8493c36579a5b116995100f635e3572fdf8703e708ef1a08d943b36774e",
+   "text": "privato",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Single-word metadata label; if this is a machine value rather than display text, keep 'private'."
+   ]
+  },
+  {
+   "id": "t_62c6fec127a89399c509",
+   "sourceHash": "62c6fec127a89399c509cc99a3928757861fa3cf0cb355be0e490b32048c16ed",
+   "text": "Autorità di correzione SEO basata su evidenze ai sensi di AUTONOMOUS-DESIGN-MANDATE.md",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal note; file name kept verbatim."
+   ]
+  },
+  {
+   "id": "t_8a667e12859238173405",
+   "sourceHash": "8a667e128592381734059580af7411398df4de13db2c308b85f45fe5b06d8d48",
+   "text": "Il vecchio URL non approva lo sconto storico; non confondere lo stato attuale confermato dal titolare con l'approvazione delle condizioni del 30%.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note; source typo 'of30%' normalised."
+   ]
+  },
+  {
+   "id": "t_7f0b0210ccbc993e1687",
+   "sourceHash": "7f0b0210ccbc993e1687c597b29f7a2ccf693b4cab6346ba1c4fb82063fcff09",
+   "text": "Forze armate e paramilitari",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ed819306b1c045db77a",
+   "sourceHash": "9ed819306b1c045db77aefcfb26c644247a038a67f9e81e55c222823b1e4e649",
+   "text": "Riga di breadcrumb della fonte legacy, fuori contesto. Solo provenienza storica: NON visualizzata come breadcrumb per i visitatori.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  },
+  {
+   "id": "t_42b2cc0e2a82f462dd77",
+   "sourceHash": "42b2cc0e2a82f462dd77c9b1c03dc4434484158a571c58ecf9d4682a7c098e9b",
+   "text": "Per maggiori dettagli sui pacchetti offerti presso The Ayurvedic Healing Village, clicchi qui",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e6db42a7e9669d696af",
+   "sourceHash": "4e6db42a7e9669d696af0990e9445826ff059abbd023b0dac08a18994cc37aad",
+   "text": "Separatore della fonte tra il corpo dell'offerta e le condizioni; confine del blocco preservato.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  },
+  {
+   "id": "t_a6e6a8a9dc38804511d6",
+   "sourceHash": "a6e6a8a9dc38804511d667886119174d7fd8ff8528d402363b89147aeb8676e8",
+   "text": "Termini e condizioni:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c7fe0e9a6c574b54787",
+   "sourceHash": "9c7fe0e9a6c574b5478776fc34f318d6cedb2b97e151cb2ef2e97efc49afcc90",
+   "text": "Libro intitolato I segreti di guarigione di Kairali, con un'incisione di antichi medici che curano un paziente",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Book title rendered with the approved term 'I segreti di guarigione di Kairali'."
+   ]
+  },
+  {
+   "id": "t_9a26084031d22ade59a8",
+   "sourceHash": "9a26084031d22ade59a814b78ef13992359d1919829d283b7c35c1f26be1aaaf",
+   "text": "KAIRALI AYURVEDIC GROUP è guidato dagli amministratori delegati congiunti, la Sig.ra Gita Ramesh e il Sig. K.V. Ramesh, entrambi discendenti da una lunga stirpe familiare di medici ayurvedici tradizionali. Forte di un'eredità di competenze trasmessa da medici rinomati come il compianto Dr. Sankunny Vaidiar (nonno del Sig. K. V. Ramesh) e il Dr. K. S. Vasudevan (padre del Sig. K. V. Ramesh), il Gruppo Kairali è stato fondato su una solida base di ricerca ayurvedica. Sin dalla sua nascita, Kairali ha proseguito sulle conquiste dei suoi antenati, sviluppando la propria infrastruttura produttiva per rendere disponibile una gamma diversificata di prodotti ayurvedici a un pubblico multinazionale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Dr.' kept as in the source with the personal names; no country-specific title introduced."
+   ]
+  },
+  {
+   "id": "t_d4c04cd88f0144fdaf28",
+   "sourceHash": "d4c04cd88f0144fdaf2804873e1862e4d4331b76f94b4c5ad7dec651df6892e4",
+   "text": "centri di trattamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e63f91d4003c039b1f1d",
+   "sourceHash": "e63f91d4003c039b1f1d671e372b42aec2a7f16c92d63a920a701950cd3fdeef",
+   "text": "CENTRI DI TRATTAMENTO Con l'obiettivo di promuovere gli effetti benefici di uno stile di vita ayurvedico, Kairali ha aperto il suo primo centro di trattamento a Nuova Delhi nel 1989. Il successo dei trattamenti e delle terapie offerti ha portato a una crescente domanda di strutture Kairali. Oggi i nostri centri di trattamento sono presenti in tutta l'India e restiamo un punto di riferimento del settore per la formazione e l'addestramento del personale. I nostri workshop e corsi di formazione periodici attirano medici, dietisti e terapisti da tutto il mondo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee140fc2dc2d9e04b7d2",
+   "sourceHash": "ee140fc2dc2d9e04b7d2ae8c61583f3d910a11b57cbd83020f224e4ede5a4e90",
+   "text": "OSPITALITÀ E ASSISTENZA SANITARIA Grazie a un'eccellente infrastruttura ormai consolidata, Kairali ha fondato nel 1997 il suo caratteristico Kerala Retreat. Centro di ritiro pluripremiato immerso nella suggestiva foresta tropicale di Palakkad, The Ayurvedic Healing Village offre il massimo del comfort olistico moderno di livello premium. Il centro è circondato da cinquanta acri di terreni agricoli biologici coltivati a erbe e rappresenta una comunità di guarigione sostenibile per i visitatori che desiderano programmi di Panchakarma, disintossicazione e yoga. Dalla creazione della divisione Ospitalità, il profilo internazionale di Kairali è cresciuto notevolmente, portando all'apertura di altre due strutture in India e alla diffusione di centri in franchising in tre continenti.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical language lock substitutions: 'luxury' → 'comfort ... di livello premium'; 'guests' → 'visitatori'; 'resorts' → 'strutture'; 'spa franchises' → 'centri in franchising'; 'yoga retreats' → 'programmi di ... yoga'. 'Kerala Retreat' kept as a proper name."
+   ]
+  },
+  {
+   "id": "t_effd1c9304ea81a1602f",
+   "sourceHash": "effd1c9304ea81a1602fb9005b5bf8c921e9dd1f4b05df0ee284e64c1af4a88c",
+   "text": "prodotti ayurvedici",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

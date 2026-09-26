@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0276",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_bbb6b0ca501e2f4730c6",
+   "sourceHash": "bbb6b0ca501e2f4730c66b693893587bfa8b6cb8b3bcb45f969249e2ff37a488",
+   "text": "Lakshya Yoga Retreat",
+   "status": "translated",
+   "unchangedReason": "Programme proper name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_524b237ba313e373fc71",
+   "sourceHash": "524b237ba313e373fc71d9b98485c54bb8f14335d77716648b2e049e2ef26f94",
+   "text": "개인 맞춤 아유르베다 치료",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_15b61974b2707a7b3d42",
+   "sourceHash": "15b61974b2707a7b3d4201385e0f01f4ff5eb1f17c5639d98788ee5add2025cd",
+   "text": "위치",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_090ed4316f1d99fd01da",
+   "sourceHash": "090ed4316f1d99fd01dabfa175ba107c9cf9bb0f7c0a3feaa0b47d5bd3443fd3",
+   "text": "브랜드",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7729b69b60d6ef855111",
+   "sourceHash": "7729b69b60d6ef85511130e886bc4b1f565290b9db4a922c8b04f2fdaafbde2e",
+   "text": "Kairali - The Ayurvedic Healing Village P.O. - Olassery, Kodumbu, Palakkad Dist. - 678551, Kerala (INDIA) 전화: +91-9555156156 이메일: [email protected]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Postal address kept in Latin script as in source. Email appears as an obfuscated '[email protected]' placeholder in the source; copied verbatim."
+   ]
+  },
+  {
+   "id": "t_f30df40d39e9b9be4cc1",
+   "sourceHash": "f30df40d39e9b9be4cc165594a0f844dc9c48ab764e576af2649092c278353e4",
+   "text": "ARTICLE-SOURCE-SEMANTIC-ORACLE.json — 정확히 일치함",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ed85ea78560ffde84779",
+   "sourceHash": "ed85ea78560ffde84779078d04877af2c891efadccbe1d03c18cd2055e82aa35",
+   "text": "SHA-256 동일성 확인 후 article-eleven 가져오기에서 our-story.png를 재사용함",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b88f296a445de31da0f",
+   "sourceHash": "7b88f296a445de31da0f6dc7a5ac8a484f80e8121bead1583d242c54c567b9c8",
+   "text": "접근성을 갖춘 표 처리 방식 하나를 공유 리더에 추가하고, 가장 넓고 풍부한 커리큘럼 표(8개 열, 9개 헤더 셀, 7개 병합, 49개 셀)와 짧은 수강료 표(3개 열, 18개 셀)에서 시연했습니다. 나머지 7개 경로는 코드 적용 가능 데이터세트로 연결되어 있으며, 추가 네이티브 쌍은 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee8cdfd5d65d064e4a2e",
+   "sourceHash": "ee8cdfd5d65d064e4a2ef64ffbe3d234faf994a87ad118e29662b39141cb4003",
+   "text": "기존 Kairali Digital 마운트 아카이브에서 일치하는 파일 이름을 찾을 수 없음",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8bf9ec773dff8a556cf1",
+   "sourceHash": "8bf9ec773dff8a556cf15038ea7c7364aa58806b1c283fafa26338d04b42baff",
+   "text": "7개 경로는 코드 적용 가능 데이터세트(표 + 메타데이터 + 거버넌스)로만 존재하며, 전체 본문은 해당 code-handoff 소스 배치 행에 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e562dc13e9a8e229d746",
+   "sourceHash": "e562dc13e9a8e229d746339a9d5615420b975c4d67ba0b7dcbff1c515cad5603",
+   "text": "고정된 커리큘럼/수강료 내용은 원본 근거일 뿐이며, 현재 운영 여부나 승인된 요금이 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e39bf48c586a9c70a2e",
+   "sourceHash": "3e39bf48c586a9c70a2eaab9c85d4f9f329317887f5de9b888a6c064d2266c16",
+   "text": "7개 경로는 재사용 가능한 코드 데이터 입력용 데이터세트로 남아 있습니다 — 표 구조와 정확한 원본 파일/트리 근거일 뿐, 전체 페이지 내용이 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f21fae94a5600614b4e",
+   "sourceHash": "1f21fae94a5600614b4ec9a6b61907902430094e659ee417874fd1d8172e67f3",
+   "text": "이론 수업",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c724c73cb2f91a877a90",
+   "sourceHash": "c724c73cb2f91a877a909b4cf78cf558358c3207dc6ff38f6bce30bffc744519",
+   "text": "실습 수업",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b48301655f2e8dec45d",
+   "sourceHash": "7b48301655f2e8dec45d4da56fd42bc9b3db2b3ce9faaadaf44ccc60f4b1dfee",
+   "text": "아유르베다 입문 · 아유르베다의 기원과 역사 · 아유르베다의 분과 · 아유르베다의 구분 · 아유르베다의 아차리야(스승)들 · 아유르베다 고전 문헌 · 아유르베다의 중요성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e7a8101251acf8c79fb1",
+   "sourceHash": "e7a8101251acf8c79fb1ae3d4a23ded320b06b6134fb2da3e9aefa1054bae681",
+   "text": "Abhyangam (아비양감)-1 (앉은 자세에서 머리와 목) · 바로 누운 자세에서 몸",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff1a81db3fb9e6e00dae",
+   "sourceHash": "ff1a81db3fb9e6e00dae96a7771411f4adbe3f008ed143b1fa62cfcfc1276061",
+   "text": "아유르베다의 기본 원리 · 판차마하부타 · 트리도샤 · 삽타다투 · 트리말라 · 아그니 · 아마 · Abhyangam (아비양감) 이론-1",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbe289c6dd03835b71e7",
+   "sourceHash": "cbe289c6dd03835b71e7ac3542154620082b477266de0a61d942332a5b12e6b8",
+   "text": "Abhyangam (아비양감)-2 (엎드린 자세에서 몸)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e187f1c296393e93a8a",
+   "sourceHash": "5e187f1c296393e93a8afb6d12701574a3f9e90cebd1dd774c2b468b43a72c62",
+   "text": "스와스타 락샤나 · 아유르베다에 따른 건강과 질병 · 트리구나 · 오자스 · Abhyangam (아비양감) 이론-2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a48d6ba5f5131e29252",
+   "sourceHash": "4a48d6ba5f5131e292520955e19c8795b43b0fedadab4105a69f177d1c83a3f2",
+   "text": "Abhyangam (아비양감) 전체 과정",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_507a361622049da1b93a",
+   "sourceHash": "507a361622049da1b93a7a430a0606ef74ef0bad538c8068c4079385b51f2ea6",
+   "text": "치료 방식 · 랑가나와 브림하나 · 사마나와 쇼다나 · 시로다라(Shirodhara) 이론 파트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1743d2c557b32ad40faa",
+   "sourceHash": "1743d2c557b32ad40faae3963e3a91984af6c1d4fc8d197504ace281aacbd9fc",
+   "text": "도샤 상세 · 도샤의 성질 · 도샤의 자리와 상호 관계 · Abhyangam (아비양감) 및 시로다라(Shirodhara) 이론과 지침 전체 · 나스야 치료 이론 전체",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7480b7a19b4b0bf00afb",
+   "sourceHash": "7480b7a19b4b0bf00afb21a503aab0c7bb54059af05e187f8db2a93b4298ef43",
+   "text": "나스야",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_970cc3301e280c6f0faa",
+   "sourceHash": "970cc3301e280c6f0faaee108813a9dcc7189f2a5a27f972980949c4167ea565",
+   "text": "상세 이론 · 다투, 말라, 아그니와 아마 · 도샤와의 관계 · 질병의 설명과 분류 · 포디키지(Podikizhi) 요법 이론 파트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ca5798aa870dc156fac4",
+   "sourceHash": "ca5798aa870dc156fac4e28311ca882b4eafce987c5ad440c1928b71cce391b8",
+   "text": "포디키지(Podikizhi) (Kizhi (키지) 준비, Kizhi (키지) 묶기) · 바로 누운 자세에서 Kizhi (키지) 적용",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
