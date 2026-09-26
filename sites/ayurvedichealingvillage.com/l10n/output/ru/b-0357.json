@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0357",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_0844df8fee9eeadaa344",
+   "sourceHash": "0844df8fee9eeadaa344bc7e1a7ae769602eba35e773c2093c8fb9c3e5ead14e",
+   "text": "вес",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Lowercase single word may be a form field name attribute rather than display text; verify before rendering."
+   ]
+  },
+  {
+   "id": "t_aadc560de422b24ff095",
+   "sourceHash": "aadc560de422b24ff095974130188e45166cc5e7d1f0dc3db9737c90408df38b",
+   "text": "Укажите вес в килограммах (кг)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_39e0f5efdc39ec109928",
+   "sourceHash": "39e0f5efdc39ec10992833ad019f0ddf2b42b49b098313df991b8229a37aed21",
+   "text": "рост",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Lowercase single word may be a form field name attribute rather than display text; verify before rendering."
+   ]
+  },
+  {
+   "id": "t_71865ee851faa2eac6b6",
+   "sourceHash": "71865ee851faa2eac6b622abaa3c7be026efc9fa3198c6e91e1f3df803046dc9",
+   "text": "Укажите рост в сантиметрах (см)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_28af4d7711a60323a070",
+   "sourceHash": "28af4d7711a60323a070f91577b0b09728d58aa34c57551032dda98a35c1a855",
+   "text": "вегетарианец",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Lowercase single word may be a form field name attribute rather than display text; verify before rendering."
+   ]
+  },
+  {
+   "id": "t_68d53737e1f7f1d962b7",
+   "sourceHash": "68d53737e1f7f1d962b7acd3bcf4c7df4bbe0d542e0715a6659eebc98719446b",
+   "text": "Придерживаетесь ли вы вегетарианского питания?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3c9d8a9ae0e9cd83bc0c",
+   "sourceHash": "3c9d8a9ae0e9cd83bc0c03623344da3112784e1d747751bb187f0d6d20ef6bf7",
+   "text": "Зависимость от",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b9ade969795c6936186",
+   "sourceHash": "2b9ade969795c6936186211069b4893e04f7f70954393e4ab54b07e4e4c5a32c",
+   "text": "Наркотические вещества",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eda8f72476c539920d2c",
+   "sourceHash": "eda8f72476c539920d2c0e3515ba4b07716fdc24ec9226b585c87777472356ef",
+   "text": "Курение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c2cf33dda7869b4f14dc",
+   "sourceHash": "c2cf33dda7869b4f14dc73fedb5ecb03a4a49ce15035fa5ede48dee8534b2d1b",
+   "text": "Кофе/чай",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10a5bdf52ea7e4472d00",
+   "sourceHash": "10a5bdf52ea7e4472d00c7e589511abde6869028860d78087fc188e54ab7db64",
+   "text": "Другие вещества/лекарства",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c3edd6a3ca89884778f4",
+   "sourceHash": "c3edd6a3ca89884778f4a9f1b36ab9dbec50efe8bcb30162f298730280b92cfd",
+   "text": "Опишите текущие проблемы со здоровьем",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5a6f363ce6a00adb093c",
+   "sourceHash": "5a6f363ce6a00adb093c36b8b50bd3bf7739af752da281a3b29f0d122d85775d",
+   "text": "Текущие проблемы со здоровьем",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_724a90f72b4166acf86d",
+   "sourceHash": "724a90f72b4166acf86d4d765bdb646132d7489f62c9bf50809f0368e88546ec",
+   "text": "Перенесённые заболевания",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_28d216e4b60ec855c4a8",
+   "sourceHash": "28d216e4b60ec855c4a8e282d5e6ef70eeb1fdf6efc35be8fe73e8b629763c34",
+   "text": "Гипертония (высокое АД)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b96a5f17f39e1250d3a6",
+   "sourceHash": "b96a5f17f39e1250d3a66530f734a916b49e82d45e54714424656197c57ec4bf",
+   "text": "Аллергия",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_022eaabcc673d978c270",
+   "sourceHash": "022eaabcc673d978c27083f5c76c555fee652325d1959ed1f5fe0f8cd4ff1c71",
+   "text": "Операции",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f97e9da0e3b879f0a9df",
+   "sourceHash": "f97e9da0e3b879f0a9df979ae260a5f7e1371edb127c1862d4f861981166cdc1",
+   "text": "Другое",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e02af18ea1f3473eb777",
+   "sourceHash": "e02af18ea1f3473eb777892af978ea5bae9f1e56fe2cf175d84fe8e1bd43e7ab",
+   "text": "Результаты ранее проведённых обследований (прикрепите PDF или DOC). Если их нет, укажите NA",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'NA' kept in Latin as the literal value the form expects."
+   ]
+  },
+  {
+   "id": "t_a501592d317b8064ee76",
+   "sourceHash": "a501592d317b8064ee76b8e475e3b13cf6b447fc513c32129ecec2552723b244",
+   "text": "Результаты ранее проведённых обследований",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_845e91831319e89c4d65",
+   "sourceHash": "845e91831319e89c4d656bdb80c278ac09a7230d61e5dfd2e1b1fbb436ac8917",
+   "text": "заключение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Lowercase single word may be a form field name attribute rather than display text; verify before rendering."
+   ]
+  },
+  {
+   "id": "t_8b9daaec92894da7f25b",
+   "sourceHash": "8b9daaec92894da7f25b55f8b73d69f86815ce770d46f481fb08250ab7f8f9d7",
+   "text": "Прикрепить заключение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06cf74d543b69d2b55c8",
+   "sourceHash": "06cf74d543b69d2b55c89ec746cbce37283c594dec3587461f627bb8b07025c4",
+   "text": "Дополнительная информация",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2e2da3c86dd32d382e1c",
+   "sourceHash": "2e2da3c86dd32d382e1c50c8f6118ce86db2a8ee73fe9d3cae073a883b11fec7",
+   "text": "Другая информация, которая, по вашему мнению, может быть полезна",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44e8666d44b0ff8c4471",
+   "sourceHash": "44e8666d44b0ff8c447141c7420141792ffbd49612063d0e3751541d1ce473cf",
+   "text": "Беременность/грудное вскармливание",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

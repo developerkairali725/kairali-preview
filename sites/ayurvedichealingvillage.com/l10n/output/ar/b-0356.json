@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0356",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_013f54400c82da080377",
+   "sourceHash": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
+   "text": "العمر",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_045ec3af2fc4a3ad879b",
+   "sourceHash": "045ec3af2fc4a3ad879b427c74db1e45493f92afe3ecc28446f87a91c3aa8ef7",
+   "text": "أدخل عمرك",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_39b7370f30a361390476",
+   "sourceHash": "39b7370f30a361390476a93a9e57c0654e35aefeda4c0c866aa1fd0dc05cdf19",
+   "text": "العمر",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12886f9d00055adf24c4",
+   "sourceHash": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8",
+   "text": "number",
+   "status": "translated",
+   "unchangedReason": "Appears to be an HTML input type value (technical token), not display copy.",
+   "issues": [
+    "If this is visible label text, translate as 'رقم'."
+   ]
+  },
+  {
+   "id": "t_3ffc275e3d217a16ca89",
+   "sourceHash": "3ffc275e3d217a16ca89e405b1b0481752f3513d0b0513e48467dcdeecc8eba7",
+   "text": "أدخل عنوان بريدك الإلكتروني",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2db8d3fe2886509edb0",
+   "sourceHash": "d2db8d3fe2886509edb04aa5a825a663a03fb0344f48dbf5236ec0a9e13f7b7c",
+   "text": "أدخل رقم هاتفك",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b2690845d7428fe6b13",
+   "sourceHash": "8b2690845d7428fe6b1338cc3b4d68faed09578432ff07efddf91cfb4c335f18",
+   "text": "رقم الهاتف",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5f3404d8b73041f98bb2",
+   "sourceHash": "5f3404d8b73041f98bb2d9e28acef69636066d8b5742821b920a5a6bf0588503",
+   "text": "اختر الدولة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a9491f4c1bf7b0cffbad",
+   "sourceHash": "a9491f4c1bf7b0cffbadcba2db8f028e4b3f2867cb59e1f3a0bc1968f3c51242",
+   "text": "الموضوع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7126a8d08107c4e587e0",
+   "sourceHash": "7126a8d08107c4e587e02fcfe50b85ba20caf87074b45f2ae84dfdaed476ef69",
+   "text": "استفسار KTAHV عبر الإنترنت",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68971283841aecdf1da4",
+   "sourceHash": "68971283841aecdf1da48428849b3b33164ec5c41d0f3c4d6cea624db5aff8f2",
+   "text": "الموضوع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81b327b38a6fb5ca5896",
+   "sourceHash": "81b327b38a6fb5ca5896fb5d65485e14e92c7494ce10f6866ee197e96c9d0ba3",
+   "text": "رسالتك (اختيارية)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_72231043bc1807e6f740",
+   "sourceHash": "72231043bc1807e6f740b235eb7511ecb33255a6a375435631196de8a9750d4b",
+   "text": "post",
+   "status": "translated",
+   "unchangedReason": "HTTP form method value (technical token).",
+   "issues": []
+  },
+  {
+   "id": "t_68b0cd10b99337fb5ae7",
+   "sourceHash": "68b0cd10b99337fb5ae7bf88dd0c34e39ce26281ae8351a70ed0a0394e1a56b4",
+   "text": "multipart/form-data",
+   "status": "translated",
+   "unchangedReason": "Form encoding MIME type (technical token).",
+   "issues": []
+  },
+  {
+   "id": "t_713d8f057f8920ce52da",
+   "sourceHash": "713d8f057f8920ce52da5039561042ba97aae18595e5ea31e44b688933d80f22",
+   "text": "fieldset-cf7mls cf7mls_current_fs",
+   "status": "translated",
+   "unchangedReason": "CSS class names (technical token).",
+   "issues": []
+  },
+  {
+   "id": "t_ff512aff60ef9402d11a",
+   "sourceHash": "ff512aff60ef9402d11a49272e7ff01109575bb4e328922267a03975fc981102",
+   "text": "اسم العائلة*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e72a8fda7468ca8669b",
+   "sourceHash": "9e72a8fda7468ca8669b2952eb5e518e2a199f8b5399165a13cc2a4ba67543bc",
+   "text": "رقم التواصل",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_073c1634c496cdb649d1",
+   "sourceHash": "073c1634c496cdb649d1afe0a312bbb4b7e1741b271542e4a436c3b8824b1761",
+   "text": "الحالة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2d2ff71974ae4def1396",
+   "sourceHash": "2d2ff71974ae4def1396d94546f1f34e8978fcdcc22409c39547378ac93fab74",
+   "text": "الحالة الاجتماعية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_64e113497d2971a4c352",
+   "sourceHash": "64e113497d2971a4c3528f09e756880f5fc036c5e308e754a81528bf473bbffb",
+   "text": "متزوج/متزوجة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6f562de990fd7c43826",
+   "sourceHash": "f6f562de990fd7c43826ca9e9cc7d8990b465308d21bdd12169569979819f16d",
+   "text": "اختر جنسيتك",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8fb1b6a148c218138d7c",
+   "sourceHash": "8fb1b6a148c218138d7ce8a6c9babf02e3b63fdff61ab066107299ea212d338e",
+   "text": "الجنسية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_226a193ae269296d44f3",
+   "sourceHash": "226a193ae269296d44f3efd3d66fead575a9ed15e14320b088c7c3d3cb2b9d8d",
+   "text": "ضغط الدم",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cb64336e73d7803218bf",
+   "sourceHash": "cb64336e73d7803218bfd831a593162a9908323bcf6efa2f463d75c47b43a756",
+   "text": "مثال: 192/74",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a9345970e644b1a676a7",
+   "sourceHash": "a9345970e644b1a676a7de9ea0d166bad32ca8d9ba982fc6d012eff8f065ef63",
+   "text": "ضغط الدم",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

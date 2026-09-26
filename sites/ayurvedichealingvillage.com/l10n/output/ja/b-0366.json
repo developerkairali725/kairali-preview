@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0366",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_562464be923d523b55e1",
+   "sourceHash": "562464be923d523b55e1291d4f3f55dd5ea099bd336339f6cfb1006580ece6f4",
+   "text": "氏名 * お名前をご入力ください。 電話番号（国番号を含む） メールアドレス（任意） 電話番号またはメールアドレスのいずれか、ご連絡先を少なくとも一つお知らせください。 電話番号またはメールアドレスを入力してください。 ご関心のあるプログラム（任意） メッセージ（任意） この欄は空欄のままにしてください お問い合わせについてケアチームからの連絡を希望し、プライバシーポリシーに同意します。 24時間以内にご回答します · お客様の情報は厳重に管理されます",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_66081b887b9f467391a4",
+   "sourceHash": "66081b887b9f467391a44893f73ce31c4c73a9c6cfa3064ba6cab5a8c059c043",
+   "text": "患者様の声",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e493e1038512b4d2a7a",
+   "sourceHash": "1e493e1038512b4d2a7a700184be602194ccced2c666aaaabbd0f0de74747031",
+   "text": "私たちがケアを担当した方々から寄せられた最近のご感想です。ご本人の許可を得て掲載しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0695b563acde461fc2f8",
+   "sourceHash": "0695b563acde461fc2f8d9aebccf35c7596ac458b8d8e067c602fb7b4e5f1578",
+   "text": "と",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Standalone fragment 'with'; rendered as the Japanese particle と. Context-dependent — verify word order in the rendered sentence."
+   ]
+  },
+  {
+   "id": "t_fab6594623d42ee74615",
+   "sourceHash": "fab6594623d42ee74615e274a3d75c969d42d2a4846b41ca98b107e577eef7a5",
+   "text": "鉢植えのヤシの横で、青いプリント柄のクルタとビーズのネックレスを身に着けて微笑む女性",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cfa25d9d169105335d1e",
+   "sourceHash": "cfa25d9d169105335d1e48d6f7bc7335113576fd7c9c3db83d1c766cc26418fa",
+   "text": "一世紀以上にわたり、私たちの一族は訪れるすべての方を、何よりもまず患者様としてケアしてきました。すべてのプログラムは医師による診察から始まり、すべてのお問い合わせにはスタッフが直接対応します。心より歓迎いたします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 訪れる方 (visitor) per clinical register."
+   ]
+  },
+  {
+   "id": "t_ba1a36d4e714e5e41874",
+   "sourceHash": "ba1a36d4e714e5e41874dd3878d80c0b9253fdbdde27e23beff6a7c64bd5cff8",
+   "text": "共同創業者 · 著述家・アーユルヴェーダ料理家",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3155013ccab2fbf85ad0",
+   "sourceHash": "3155013ccab2fbf85ad0d5fa2bc11bcd7ca3a584a12c39c8e370facc5efdb5b9",
+   "text": "Gita Ramesh共同創業者 · 著述家・アーユルヴェーダ料理家",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_165fde2e9df14bfede16",
+   "sourceHash": "165fde2e9df14bfede16031083f2b95ea9f3203632ea711700d75fbdc478ca8c",
+   "text": "不安で少し緊張しながら到着しました。医師は時間をかけてすべてを丁寧に説明してくださり、毎日欠かさず誰かが様子を見に来てくれました。本当に大切にしていただいたと感じながら退院しました。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_77d5aa1463b064a6ed09",
+   "sourceHash": "77d5aa1463b064a6ed0989b1ee1bd5ebc7bf140bc44350ef0309a83eb0202652",
+   "text": "R. M.",
+   "status": "translated",
+   "unchangedReason": "Personal initials; proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_17304b0b68e4bdcdc4ce",
+   "sourceHash": "17304b0b68e4bdcdc4cefda27e3b6e853e09f4972e82f5f8c628e73dae7826e7",
+   "text": "· インド、ベンガルール · パンチャカルマ・プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48bb6b20ba47046e1841",
+   "sourceHash": "48bb6b20ba47046e18418a9162cddc940e96654eca4397b799b0e849027b9586",
+   "text": "R. M. · インド、ベンガルール · パンチャカルマ・プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e24294f1d34c754155cc",
+   "sourceHash": "e24294f1d34c754155cc73836c08eb82c596051c14fc24209e7d660b7797da25",
+   "text": "ロンドンから予約したので、調整は大変だろうと思っていました。PriyaさんはWhatsAppであらゆる質問に答えてくれ、たいていは一時間もしないうちに返信がありました。ケアの水準は母国のどの医療機関にも引けを取りませんでした。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'within the hour' written in kanji (一時間) to avoid adding digits."
+   ]
+  },
+  {
+   "id": "t_43806aed2edc2e765c63",
+   "sourceHash": "43806aed2edc2e765c6378e2641c1b6b29480abf12b0477c568a1e14e5e4f745",
+   "text": "S. N.",
+   "status": "translated",
+   "unchangedReason": "Personal initials; proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_91903a2ebe88fa7973b3",
+   "sourceHash": "91903a2ebe88fa7973b3f79f019ebdc68fb8752c9c5806f97d4b178a436c90e3",
+   "text": "· イギリス、ロンドン · 若返りプログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c8c7580ea4965699a5b0",
+   "sourceHash": "c8c7580ea4965699a5b0f0b833eb5b8c266d0f3d59c4d7312f81d7ca3ee2ab1f",
+   "text": "S. N. · イギリス、ロンドン · 若返りプログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abffe9608cce02c950dc",
+   "sourceHash": "abffe9608cce02c950dc10c29d038cc40b4bcb5f5e8b2f9edec659dbeee36614",
+   "text": "最初のメールから、プロフェッショナルできちんとした対応でした。毎日の医師による診察と明確なプログラムのスケジュールのおかげで、終始安心して過ごせました。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbd019ce5c6fb1f9750b",
+   "sourceHash": "cbd019ce5c6fb1f9750b5b44725b1fde3bcfd0eaf948b19d7f6075b258121e44",
+   "text": "T. K.",
+   "status": "translated",
+   "unchangedReason": "Personal initials; proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_17b5265667147e0e13cd",
+   "sourceHash": "17b5265667147e0e13cd5729dd7541672c8e557929b9b0c7538f0bd7c28e512b",
+   "text": "· ドイツ、ミュンヘン · パンチャカルマ・プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5f5fe7ffed16c5a1f81",
+   "sourceHash": "b5f5fe7ffed16c5a1f813fdc29b5fca5a3987f3f589b10c895586d82dd2dc545",
+   "text": "T. K. · ドイツ、ミュンヘン · パンチャカルマ・プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc8ac3acc53250d9f299",
+   "sourceHash": "dc8ac3acc53250d9f299976828ad7b31050b4bc3ebffdcc2dc733591972af5e9",
+   "text": "医師主導 · 65エーカーの施設",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f816fc43adc721b5525f",
+   "sourceHash": "f816fc43adc721b5525f9db9b1e7880d1e85cc13fcc9ea62b32e0552bc66b18f",
+   "text": "ケーララ州パラッカド、コドゥンブ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2ff57ed0dda975d10dc",
+   "sourceHash": "f2ff57ed0dda975d10dc4169edc560c5ac89404e8df0fc0bc613501ac8b08fcc",
+   "text": "1908年創業 · 118年の歴史 NABH認定病院 WHO-GMP認定薬局 医師主導 · 65エーカーの施設 ケーララ州パラッカド、コドゥンブ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_028cc3a2ec657f521a6e",
+   "sourceHash": "028cc3a2ec657f521a6e37f269ad44068dd154c753f495486a8caef1895b09f3",
+   "text": "必須項目の扱いは、CF7やariaの情報のみではなく、取得したHTMLのrequired属性に基づきます。フィールド定義のみ — フォームはnoValidateを維持し、送信は無効化・ブロックされたままです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68d13008faa73b8a5509",
+   "sourceHash": "68d13008faa73b8a5509b9ac1c07a590c54700932aa0c3802ab5fa5cd93826b6",
+   "text": "電話番号（国番号を含む）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
