@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0272",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_d3e7daed3b41d81bb9c2",
+   "sourceHash": "d3e7daed3b41d81bb9c282325b3307c27f1dc41c5ceb46f80582fd584ca82f7f",
+   "text": "Хроническая боль и скованность",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_712c4dbe3438e459b771",
+   "sourceHash": "712c4dbe3438e459b7714c531a9bdb225283c16b7bb420bbeba4ba9e49dc121b",
+   "text": "Для тех, кто живёт с хронической болью в шее, спине или суставах, до сих пор полагался на временное облегчение и готов к структурированной поддержке Панчакармы и Расаяны, направленной на первопричины.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_86fc86826d184aecb85b",
+   "sourceHash": "86fc86826d184aecb85b66cefcb02df29e3a040d3d65e0bd4e71da4bf07d9eb0",
+   "text": "Стресс, усталость и выгорание",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_369ea392416b071dea0c",
+   "sourceHash": "369ea392416b071dea0c35ec6fd84df33230a5ccd171a79ec6b0b26c2b907bc6",
+   "text": "Профессионалы, годами несущие груз стресса, усталости, плохого сна или перегрузки нервной системы, которым нужно больше, чем длинные выходные, чтобы по-настоящему прийти в себя и восстановиться на более глубоком уровне.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_442a620ae54a08cd4c51",
+   "sourceHash": "442a620ae54a08cd4c5161d8edc8adbf60df55ad6986e8b93c4fcf1010ca614c",
+   "text": "Метаболические проблемы и проблемы, связанные с образом жизни",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_995ea738d76ed65523be",
+   "sourceHash": "995ea738d76ed65523be3c3a692d301cbd42931f2bd69d1acd173c9920f168a8",
+   "text": "Люди, столкнувшиеся с колебаниями веса, нарушениями обмена веществ, проблемами с уровнем сахара в крови, вялым пищеварением или повторяющейся изжогой и вздутием, которые хотят воздействовать на первопричины, а не продолжать справляться с поверхностными симптомами.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16da2a203c96f299d588",
+   "sourceHash": "16da2a203c96f299d588cdffe485a807207897817f7d9c2fd772b055fc23118e",
+   "text": "Восстановление после болезни",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e33b80c3c6582e3070bd",
+   "sourceHash": "e33b80c3c6582e3070bdf466eb3322285c98da007d2651c9f5e2e6c70ddeb2a5",
+   "text": "Пациенты, восстанавливающиеся после недавней болезни, слабости после инфекции или длительного приёма лекарств, которым нужны детоксикация под клиническим наблюдением и структурированное восстановление иммунитета в спокойной аюрведической среде под постоянным контролем.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'Пациенты' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_11adb39a19b632d436b7",
+   "sourceHash": "11adb39a19b632d436b7811f2db42f01f09fd0a5b42ac9183e1ba47d4888b9f6",
+   "text": "Впервые знакомитесь с аюрведой",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12b169476bfbc7c00145",
+   "sourceHash": "12b169476bfbc7c001450ca70213ba4d28491c3984378270d94de0b30c0d5f13",
+   "text": "Для всех, кому интересна аюрведа, но кто ждёт подходящего момента, чтобы начать, — Каркидака и есть этот период: организм естественным образом более восприимчив, и даже пациент, впервые проходящий лечение, может заметить ощутимые изменения.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'first-time guest' rendered as 'пациент, впервые проходящий лечение' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_fe5097493b5e3c958c12",
+   "sourceHash": "fe5097493b5e3c958c12f25dcf8fbd769a4108ec4fc1fd3165d9556ff78c1292",
+   "text": "Плохой сон и нестабильное настроение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f497badca27e13db961c",
+   "sourceHash": "f497badca27e13db961c1d88006b5db452dbd95f88e00be3a773a829a5dd3f3c",
+   "text": "Для тех, кто страдает от нарушенного сна, упадка сил, перепадов настроения или общего ощущения, что тело и разум сбились с ритма и им нужна пауза под руководством и наблюдением специалистов, чтобы полностью перезагрузиться и восстановить равновесие.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5771f3ab5edfa9510eab",
+   "sourceHash": "5771f3ab5edfa9510eabe3d91a84e051efd813a59b74093028918ace75dba043",
+   "text": "Режим медицинского уровня на 4 опорах",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_302ca58e094bd68600a7",
+   "sourceHash": "302ca58e094bd68600a7c38c158c51a131eebc66d4681473d2e62deb49aa68ef",
+   "text": "В Kairali Каркидака — это не шаблонный «муссонный детокс», а полноценный режим под медицинским наблюдением в аюрведическом центре больничного уровня с аккредитацией NABH, признанном одним из ведущих оздоровительных направлений Индии.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'центр' to keep the clinical register. Recognition claim preserved from source; flag for fact verification."
+   ]
+  },
+  {
+   "id": "t_3c8db3be6ca0758d9a83",
+   "sourceHash": "3c8db3be6ca0758d9a833375fe267048124941c8b607fd5a92bb34d226d6d888",
+   "text": "Панчакарма — глубокая детоксикация",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93c3a6af91fcf765280a",
+   "sourceHash": "93c3a6af91fcf765280acbf34dcde6965e1122ff11dd84822269eefb7be6b401",
+   "text": "Структурированная детоксикация для выведения Амы (токсинов) из глубоких тканей с помощью классических очистительных процедур, включая Виречану, Басти и Насьям, — которым для подготовки организма предшествуют Снехапана, Abhyangam (Абхьянгам) и Сведана.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70b57154cba5212f4fba",
+   "sourceHash": "70b57154cba5212f4fba3d3222e3f660ca284d5ba0699d44283d0beb0cf0b629",
+   "text": "Расаяна — омоложение тканей",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54655c2265097d8dcd82",
+   "sourceHash": "54655c2265097d8dcd82ba713a590ab3dd41e813a0b9ed3a0821e75ac53825f5",
+   "text": "Процедуры после детоксикации, такие как Пижичил, Njavara Kizhi (Нджавара Кижи), Широдхара (Shirodhara) и Удвартханам, помогают восстановить силы, успокоить нервную систему, облегчить боль и поддержать здоровое старение.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7489a925fa6d073ff1b",
+   "sourceHash": "d7489a925fa6d073ff1b0a3386e4627cba693f65a39b48683682ff4f73b1ee32",
+   "text": "Аушадха Сева — внутренние средства и питание",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2d9e8f0cd553152ee69",
+   "sourceHash": "d2d9e8f0cd553152ee6931369f4c602777d525d0ef2961aa88ddcfaf6b321f92",
+   "text": "Ежедневный Каркидака канджи, индивидуально подобранные травяные отвары (Кашая или Кватха), лечебное гхи (Снехапана) и целевые добавки, такие как Чьяванпраш и Ашваганда, восстанавливают Агни, поддерживают иммунитет и корректируют давние дисбалансы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_79240119dc4a9e4d13b6",
+   "sourceHash": "79240119dc4a9e4d13b61c2eb5598a62a801a26000b0f43f637a0f3b222771b3",
+   "text": "Саттваваджая — перезагрузка ума и духа",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_797de79023e0593652cb",
+   "sourceHash": "797de79023e0593652cb06102d2a1dfb008814320ce43fd485a7d453485a8d53",
+   "text": "Ежедневные занятия йогой, пранаямой и медитацией уравновешивают Прану, снижают стресс, улучшают сон и закрепляют эффект физических процедур эмоциональным и психическим благополучием.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e04a6f08bbe345ec55f5",
+   "sourceHash": "e04a6f08bbe345ec55f50cc21b6a71f8b7988014b30b42bd4510da3adf46c0ec",
+   "text": "Выберите свой период лечения Каркидака",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b82226e6579bfa8d567",
+   "sourceHash": "1b82226e6579bfa8d567b7b69ba045e1bcf1a2040b52df5a79150aabb49afec0",
+   "text": "Есть ли у вас неделя или три, муссон работает вместе с вами. Каждая программа строится вокруг вашего организма, а не по жёсткой формуле. Стоимость клинических программ Каркидака обычно начинается примерно от ₹22,780 за ночь, при пребывании 14 ночей, в зависимости от размещения и интенсивности лечения. Это помогает вам самостоятельно выбрать вариант пребывания, соответствующий вашим целям в отношении здоровья и бюджету.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source sentence 'with 14-night stays depending on accommodation…' is ambiguous (unclear whether the price applies to 14-night stays only); translated literally — flag price wording for owner confirmation."
+   ]
+  },
+  {
+   "id": "t_64dea6f4f19b007d5c1f",
+   "sourceHash": "64dea6f4f19b007d5c1f7b21095bc3919b33ab1f0dac0356b9164a12493cc28c",
+   "text": "Муссонный старт",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0313",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_14752779d2b0cbac801f",
+   "sourceHash": "14752779d2b0cbac801fe9ba61bd35cbadbf881326b730cbf126523e6090d37a",
+   "text": "您是否已被皮肤问题困扰得身心俱疲？问题是否在不断加重？即使经过…之后，是否仍未见效…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "English source is garbled ('increasing at a commendable rate', 'Has it shown results'); rendered by evident intent (worsening; not showing results). Recommend fixing the English source."
+   ]
+  },
+  {
+   "id": "t_1fe7f8f6757031b077c2",
+   "sourceHash": "1fe7f8f6757031b077c20604116fafce1bd42195cf2c5b8989a59411fc2d98e2",
+   "text": "响应式导航——打开",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e3fc7ddffbbc5fe038b",
+   "sourceHash": "7e3fc7ddffbbc5fe038b9d3f3a593e6f02932bc57f587fa7842719728cc11818",
+   "text": "响应式导航——关闭",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4701a1d5295cdcc29894",
+   "sourceHash": "4701a1d5295cdcc2989467caed7a3b99527e00df806c14797daf68124fac7362",
+   "text": "/packages/ 来源页面中的两个按钮是 wp-block-navigation 响应式导航的打开/关闭控件，并不能证明来源页面存在搜索/筛选表单。请在已批准的页面框架中保留或映射来源的上下文导航；任何新增的搜索/筛选功能都必须是明确的设计改进，而非虚构的来源功能。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01480295a116d910e57b",
+   "sourceHash": "01480295a116d910e57b6d92ba5acc16f7ba9fe181f24d51b0007cf0a4c2b138",
+   "text": "保留来源的分组顺序。每张卡片均附有其自身的图片、来源描述和链接。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8d25824050363a9627b0",
+   "sourceHash": "8d25824050363a9627b069d24b3784adeefc55d63ca97b36fe735f46d43c9453",
+   "text": "阿育吠陀疗养计划专属优惠 – Kairali 疗愈村",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 疗养计划 (programme) to avoid resort/retreat framing."
+   ]
+  },
+  {
+   "id": "t_48b6ad56c183b4b556ac",
+   "sourceHash": "48b6ad56c183b4b556acb67687585df4965f9b251d425ce1575c1f39b5125cf5",
+   "text": "Kairali阿育吠陀治疗套餐最高可享20%优惠。立即预约您在喀拉拉邦的健康疗养计划，体验整体疗愈与身心焕活。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 健康疗养计划 (programme) to avoid resort/retreat framing."
+   ]
+  },
+  {
+   "id": "t_7ee15e95e175bedc842d",
+   "sourceHash": "7ee15e95e175bedc842dd3d12bc59c35a1d6cbc6a651f1f692b262b160fa5b1d",
+   "text": "阿育吠陀疗愈村专属优惠",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdd01c052e375625c071",
+   "sourceHash": "bdd01c052e375625c07120d37af2ff34c78627b5a3fe3f7a82187b8171910d67",
+   "text": "Kairali – 阿育吠陀疗愈村为您提供多种特别优惠，将正统的阿育吠陀健康理念与出色的实惠价格相结合。这些精心设计的套餐可满足不同的健康需求，让来访者有机会在喀拉拉邦宁静秀美的环境中休息与恢复活力。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_687df620bc2e94fd7f33",
+   "sourceHash": "687df620bc2e94fd7f3353182cb8e45b5b72cd29d879dddbc243917f94bc767b",
+   "text": "季节性疗养计划包含可净化身心、使其重新与自然节律相协调的治疗项目。节日优惠则增添了节庆气息，让您通过独特的阿育吠陀治疗项目欢度佳节、振奋精神。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Seasonal retreats' rendered as 季节性疗养计划 (programmes) to avoid resort/retreat framing."
+   ]
+  },
+  {
+   "id": "t_e6e46828130001fa6824",
+   "sourceHash": "e6e46828130001fa68245d5abf24386eb5120f2b481415c7e63db2805b5f1df7",
+   "text": "通过专项优惠，疗愈村为伴侣提供定制化的健康住院计划，促进放松与情感联结。团体及企业折扣则让家人、朋友和团队更便于共同享受一段恢复身心、和谐融洽的体验。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness vacations' rendered as 健康住院计划 (wellness stay programmes) per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_60a3502a1af6bb278c3c",
+   "sourceHash": "60a3502a1af6bb278c3c7f0a21d15cc6abfce5bc10be45844375d662210a0743",
+   "text": "提前预约疗养计划的来访者可享受早鸟折扣，以优惠价格确保其住院安排。对于希望获得更深入、更全面阿育吠陀体验的人士，我们还提供长期住院套餐。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 疗养计划 and 'vacation' as 住院安排 (stay) per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_61f2a475f81a8b179ccd",
+   "sourceHash": "61f2a475f81a8b179ccd23754515f13e65268ed090d37a37553ba6952c1c3a1c",
+   "text": "KTAHV的每一个套餐都结合了舒适优质的住宿、个性化的关照与正统的治疗项目，旨在提供全面的体验。借助这些专属优惠，把握机会重新发现自我，领略阿育吠陀历久弥新的智慧。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious lodging' rendered as 舒适优质的住宿 (premium, comfortable accommodation) per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_6e39aed7d20e0622bbf0",
+   "sourceHash": "6e39aed7d20e0622bbf062af3a240c95df513708b0b04c93d4a5ed5f21ba652a",
+   "text": "共和国日特别优惠！最高可享20%优惠",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0b78e475a848ef2697",
+   "sourceHash": "1e0b78e475a848ef2697a5dd4a7fb0cc80b7ca9c29d035968d4e10fbd78fd331",
+   "text": "Kairali专属健康优惠",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65705f21a7f65f831205",
+   "sourceHash": "65705f21a7f65f8312050590cba483a1921dff62eed80c8727545503180167e3",
+   "text": "在Kairali – 阿育吠陀疗愈村体验卓越的整体疗愈。享受一段旨在全面促进身心健康的焕活时光。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'rejuvenating escape' rendered as 焕活时光 (rejuvenating time) to avoid holiday/getaway framing; 'ultimate well-being' softened to 全面促进身心健康."
+   ]
+  },
+  {
+   "id": "t_46013fac8ef8ff81ff21",
+   "sourceHash": "46013fac8ef8ff81ff213c5f3b90c31b11114c45449926bb08de65382308665b",
+   "text": "任意阿育吠陀治疗套餐最高可享20%优惠",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b902909b83bed4e3c640",
+   "sourceHash": "b902909b83bed4e3c640476ccfc9332fa74e785c235cd21c7e0b852cdc674d50",
+   "text": "适用于3月、4月及5月的住院与治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9f20c1ab7d48bf66d8a",
+   "sourceHash": "e9f20c1ab7d48bf66d8a695a93ef21edfc368dada949fcf3d23f15eeecc8ac6b",
+   "text": "请于2月15日前预约，即可享受此专属优惠",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_992ad75ee16f953054bf",
+   "sourceHash": "992ad75ee16f953054bf4a20f8cb2ac79dac1e69544a4779de0cafc529719a0a",
+   "text": "步入宁静与卓越阿育吠陀的世界。立即预约您的尊享住院计划！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'royal retreat' rendered as 尊享住院计划 (premium stay programme) to avoid resort/luxury framing."
+   ]
+  },
+  {
+   "id": "t_a466c7bf12b9780d5be0",
+   "sourceHash": "a466c7bf12b9780d5be010d0f79935a3c504e1c1af3c1f5281a757956e88dd37",
+   "text": "新年健康特惠！最高可享20%优惠。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43ed14e9af6f6307f22b",
+   "sourceHash": "43ed14e9af6f6307f22be5b40467e379c7352c2ebce223c4f7b21869bdc9905b",
+   "text": "礼品券",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bef1d6d69b2927b5302",
+   "sourceHash": "9bef1d6d69b2927b5302446d77c933a060dfed7ca80538dc8d28f2d98301d819",
+   "text": "以健康与焕活迈入2025年！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8731eac97ffbb0465a48",
+   "sourceHash": "8731eac97ffbb0465a482275c6182985dcb684dc5bd12477f91a45d8f3e93609",
+   "text": "3月、4月或5月入住疗愈",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d18ee9d3fdc7b4669e0b",
+   "sourceHash": "d18ee9d3fdc7b4669e0bc194b6c918414d18ad64cbdeb83b3edba6b87577ba79",
+   "text": "优惠仅限2月15日前有效！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

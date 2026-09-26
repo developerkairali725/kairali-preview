@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0287",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_283b28d88423ad38c960",
+   "sourceHash": "283b28d88423ad38c96020c392447b5475c4c63f1cce945a5587266eb947629a",
+   "text": "칼파티(Kalpathy)는 도시 중심부에 자리한, 케랄라에서 가장 오래된 ‘브라만 아그라하람(Brahmin Agraharam)’ 가운데 하나입니다. 11월 중순에 열리는 ‘라톨사밤(Ratholsavam)’ 축제는 팔라카드에서 잘 알려져 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aaa9402664f1a41f40eb",
+   "sourceHash": "aaa9402664f1a41f40ebbc52c9993eb66aeb366602958fdfaa283b71e64db123",
+   "text": "h",
+   "status": "translated",
+   "unchangedReason": "Code fragment used in string concatenation (element/class identifier); not display text.",
+   "issues": []
+  },
+  {
+   "id": "t_567479c447e472328522",
+   "sourceHash": "567479c447e472328522a1d759aabb9b579e4522a6da547c983d29e94c1604c2",
+   "text": "-p",
+   "status": "translated",
+   "unchangedReason": "Code fragment used in string concatenation (element/class identifier suffix); not display text.",
+   "issues": []
+  },
+  {
+   "id": "t_c432b372e0e30267e65e",
+   "sourceHash": "c432b372e0e30267e65e26a12a42c7957ab52e25dfe3c6d4b929213d88965e45",
+   "text": "intro",
+   "status": "translated",
+   "unchangedReason": "Appears to be a code key/class identifier used in concatenation; translating it may break rendering.",
+   "issues": [
+    "Role includes js:display; if this is ever shown to users it would need a translation (소개). Left unchanged as identifier."
+   ]
+  },
+  {
+   "id": "t_5bb55a4bb4fd0e197d9e",
+   "sourceHash": "5bb55a4bb4fd0e197d9e90119f580514d5ea9aa6fe79253f1bd4aa67bf083900",
+   "text": "이미지 보기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_790fb1b462dfd43b7837",
+   "sourceHash": "790fb1b462dfd43b7837d0525ebbd6aadb1212d2162194fdf32fad54cdae3204",
+   "text": "이미지 닫기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0a859a7ecd771831e7d",
+   "sourceHash": "f0a859a7ecd771831e7d780c3591f03bea704f73bb52a4d6f6cd4947938acb8a",
+   "text": "이전 이미지",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4903f732746e9e1e9f0",
+   "sourceHash": "a4903f732746e9e1e9f03e15148616409cb3bc0e969286016b2f4effae80252e",
+   "text": "다음 이미지",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d77a2fa040de2c0959b8",
+   "sourceHash": "d77a2fa040de2c0959b8a63895a08762271f527b87a9be3efcf6ae44a293f03e",
+   "text": "PATWA 수상 이야기 읽기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a37bcb709874738a8d01",
+   "sourceHash": "a37bcb709874738a8d01d6c9e3f4879f65d90077a5b73a8f922aa85aca906a7b",
+   "text": "Kairali – The Ayurvedic Healing Village는 Tripadvisor Travelers’ Choice Award 2026을 수상했습니다. 이는 정통 아유르베다와 뛰어난 환대에 대한 저희의 노력을 인정받은 것입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d613325e71d1a3fc44b",
+   "sourceHash": "1d613325e71d1a3fc44bc14fc8c7c504baf29dc8b8a4f08a5bdb914585b220da",
+   "text": "Tripadvisor 2026 인증 엠블럼.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc070de3ccd2092ae2d4",
+   "sourceHash": "dc070de3ccd2092ae2d447dcca05bd9e5f54ca0e9797d688aac004081ece240e",
+   "text": "Kairali 입구 앞에 서 있는 일행.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc34c3c1ccc66af74a79",
+   "sourceHash": "cc34c3c1ccc66af74a79b6292ab18032786efc44a63fd81f12b5f8daeac2779f",
+   "text": "Haute Grandeur 2026 호텔 부문 수상 엠블럼.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b82a3ccc3e9e850f3737",
+   "sourceHash": "b82a3ccc3e9e850f3737e083761798d40390162903e7da98c30b62216545a986",
+   "text": "Kairali – The Ayurvedic Healing Village는 Asia Pacific Spa & Wellness Coalition으로부터 인정받았으며, 이는 오늘날 전 세계적으로 정통 아유르베다의 우수성을 추구하는 저희의 노력을 반영합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name."
+   ]
+  },
+  {
+   "id": "t_ba9ffc51262219b68ffc",
+   "sourceHash": "ba9ffc51262219b68ffc5629bcd66e2f8b21e8add6099716d21044977e4db570",
+   "text": "Asia Pacific Spa and Wellness Coalition 수상 명패.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name."
+   ]
+  },
+  {
+   "id": "t_e30d9bc77837af3416dd",
+   "sourceHash": "e30d9bc77837af3416dda6fbfaea6c32d8c4e5174c99beedb49e5282ee285128",
+   "text": "Kairali – The Ayurvedic Healing Village는 권위 있는 National Geographic Traveller Spa & Wellness Collection 2026에 선정되었습니다. 이 컬렉션은 전 세계의 정통 아유르베다 치유와 전인적 환대를 조명합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the collection's proper name."
+   ]
+  },
+  {
+   "id": "t_31a965d8821ebf0fb163",
+   "sourceHash": "31a965d8821ebf0fb16329ec12cc0eb0407578d8c173714d43335d70ecdfe904",
+   "text": "National Geographic Traveller Spa and Wellness Collection 2026 그래픽.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the collection's proper name."
+   ]
+  },
+  {
+   "id": "t_d6b1fbbf60b2cef7f884",
+   "sourceHash": "d6b1fbbf60b2cef7f884a3f07ef6f7dc2f1b46c83e1ffb34db0de993c44f50e7",
+   "text": "Kairali – The Ayurvedic Healing Village는 Haute Grandeur Global Spa Awards 2026의 인증을 받았습니다. 이는 전 세계 방문객을 위한 정통 아유르베다 웰니스의 우수성을 인정받은 것입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the award's proper name; 'guests' rendered as 방문객 (visitors)."
+   ]
+  },
+  {
+   "id": "t_d62120320a979b73c203",
+   "sourceHash": "d62120320a979b73c20336cb1e81d5faa1c3666a028b414ab03ed1f52eb39d8b",
+   "text": "Haute Grandeur 2026 인증 Spa Awards 엠블럼.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa Awards' kept verbatim as part of the Haute Grandeur award name."
+   ]
+  },
+  {
+   "id": "t_eacedf5a815697fa4587",
+   "sourceHash": "eacedf5a815697fa458798410204d59e088fa9985633001bb07046061ecc50f1",
+   "text": "ITB 베를린 기간 중 열린 PATWA International Travel Awards 2026에 참석한 Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f64f280cb5310273fae6",
+   "sourceHash": "f64f280cb5310273fae689d0c13e20b8964d0396b1833e4f86d3fad41b35b4ec",
+   "text": "Abhilash K. Ramesh는 ITB 베를린 기간 중 열린 PATWA International Travel Awards 2026에서 Excellence in Wellness Hospitality (India) 상을 수상했습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1c90b1232824e85bf1d",
+   "sourceHash": "b1c90b1232824e85bf1d787a20b422f2f7b0d3c5194a07e6ebdf40a3a387e2ec",
+   "text": "PATWA 시상식 및 트로피 그래픽.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_434be6dff2f236d77875",
+   "sourceHash": "434be6dff2f236d7787512c13899ea77db2e8feccf7c8b490efdbe5b0d4c839c",
+   "text": "Kairali Ayurveda Group 창립자 K. V. Ramesh 씨가 International Ayurveda & Wellness Conclave 2026에서 표창을 받았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70395b9196090fdbeb82",
+   "sourceHash": "70395b9196090fdbeb82a03c4ebe713fd1f1bb4cb6c6234e39fc12c4ac411425",
+   "text": "International Ayurveda and Wellness Conclave 2026 시상 장면.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22d01e55f131e25c9e4a",
+   "sourceHash": "22d01e55f131e25c9e4a90b9abe28b88ab7b7ecc358202cc7e42352acfb7ad59",
+   "text": "Kairali Ayurvedic Healing Village는 2020년 Best Luxury Ayurveda Spa 부문 수상자로 선정되었습니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' and 'Spa' kept verbatim inside the award title."
+   ]
+  }
+ ]
+}

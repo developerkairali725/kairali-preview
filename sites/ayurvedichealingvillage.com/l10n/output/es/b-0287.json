@@ -1,0 +1,230 @@
+{
+ "batchId": "b-0287",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_283b28d88423ad38c960",
+   "sourceHash": "283b28d88423ad38c96020c392447b5475c4c63f1cce945a5587266eb947629a",
+   "text": "Kalpathy, situado en el corazón de la ciudad, es uno de los «agraharams brahmánicos» más antiguos de Kerala. La festividad del «Ratholsavam», que se celebra a mediados de noviembre, es muy conocida en Palakkad.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aaa9402664f1a41f40eb",
+   "sourceHash": "aaa9402664f1a41f40ebbc52c9993eb66aeb366602958fdfaa283b71e64db123",
+   "text": "h",
+   "status": "translated",
+   "unchangedReason": "Code fragment used in string concatenation (element/class identifier), not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_567479c447e472328522",
+   "sourceHash": "567479c447e472328522a1d759aabb9b579e4522a6da547c983d29e94c1604c2",
+   "text": "-p",
+   "status": "translated",
+   "unchangedReason": "Code fragment used in string concatenation (element/class suffix), not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_c432b372e0e30267e65e",
+   "sourceHash": "c432b372e0e30267e65e26a12a42c7957ab52e25dfe3c6d4b929213d88965e45",
+   "text": "intro",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in string concatenation (key/class name); translating it could break rendering.",
+   "issues": [
+    "Role also lists js:display; if this string is ever shown to readers, the Spanish would be 'introducción'."
+   ]
+  },
+  {
+   "id": "t_5bb55a4bb4fd0e197d9e",
+   "sourceHash": "5bb55a4bb4fd0e197d9e90119f580514d5ea9aa6fe79253f1bd4aa67bf083900",
+   "text": "Ver imagen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_790fb1b462dfd43b7837",
+   "sourceHash": "790fb1b462dfd43b7837d0525ebbd6aadb1212d2162194fdf32fad54cdae3204",
+   "text": "Cerrar imagen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0a859a7ecd771831e7d",
+   "sourceHash": "f0a859a7ecd771831e7d780c3591f03bea704f73bb52a4d6f6cd4947938acb8a",
+   "text": "Imagen anterior",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4903f732746e9e1e9f0",
+   "sourceHash": "a4903f732746e9e1e9f03e15148616409cb3bc0e969286016b2f4effae80252e",
+   "text": "Imagen siguiente",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d77a2fa040de2c0959b8",
+   "sourceHash": "d77a2fa040de2c0959b8a63895a08762271f527b87a9be3efcf6ae44a293f03e",
+   "text": "Lea la historia del premio PATWA",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a37bcb709874738a8d01",
+   "sourceHash": "a37bcb709874738a8d01d6c9e3f4879f65d90077a5b73a8f922aa85aca906a7b",
+   "text": "Kairali – The Ayurvedic Healing Village ha recibido el Tripadvisor Travelers’ Choice Award 2026, un reconocimiento a nuestro compromiso con el Ayurveda auténtico y una hospitalidad excepcional.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d613325e71d1a3fc44b",
+   "sourceHash": "1d613325e71d1a3fc44bc14fc8c7c504baf29dc8b8a4f08a5bdb914585b220da",
+   "text": "Emblema del reconocimiento de Tripadvisor 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc070de3ccd2092ae2d4",
+   "sourceHash": "dc070de3ccd2092ae2d447dcca05bd9e5f54ca0e9797d688aac004081ece240e",
+   "text": "Un grupo de personas de pie frente a la entrada de Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc34c3c1ccc66af74a79",
+   "sourceHash": "cc34c3c1ccc66af74a79b6292ab18032786efc44a63fd81f12b5f8daeac2779f",
+   "text": "Emblema de ganador hotelero de Haute Grandeur 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b82a3ccc3e9e850f3737",
+   "sourceHash": "b82a3ccc3e9e850f3737e083761798d40390162903e7da98c30b62216545a986",
+   "text": "Kairali – The Ayurvedic Healing Village cuenta con el orgulloso reconocimiento de la Asia Pacific Spa & Wellness Coalition, reflejo de nuestro compromiso actual con la excelencia ayurvédica auténtica en todo el mundo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name (Asia Pacific Spa & Wellness Coalition).",
+    "t_b82a3ccc3e9e850f3737 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_ba9ffc51262219b68ffc",
+   "sourceHash": "ba9ffc51262219b68ffc5629bcd66e2f8b21e8add6099716d21044977e4db570",
+   "text": "Placa del premio de la Asia Pacific Spa and Wellness Coalition.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name.",
+    "t_ba9ffc51262219b68ffc banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_e30d9bc77837af3416dd",
+   "sourceHash": "e30d9bc77837af3416dda6fbfaea6c32d8c4e5174c99beedb49e5282ee285128",
+   "text": "Kairali – The Ayurvedic Healing Village figura con orgullo en la prestigiosa National Geographic Traveller Spa & Wellness Collection 2026, que celebra la sanación ayurvédica auténtica y la hospitalidad holística en todo el mundo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the collection's proper title.",
+    "t_e30d9bc77837af3416dd banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_31a965d8821ebf0fb163",
+   "sourceHash": "31a965d8821ebf0fb16329ec12cc0eb0407578d8c173714d43335d70ecdfe904",
+   "text": "Gráfico de la National Geographic Traveller Spa and Wellness Collection 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the collection's proper title.",
+    "t_31a965d8821ebf0fb163 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_d6b1fbbf60b2cef7f884",
+   "sourceHash": "d6b1fbbf60b2cef7f884a3f07ef6f7dc2f1b46c83e1ffb34db0de993c44f50e7",
+   "text": "Kairali – The Ayurvedic Healing Village cuenta con la certificación de los Haute Grandeur Global Spa Awards 2026, que distingue nuestra excelencia auténtica en bienestar ayurvédico en todo el mundo para nuestros visitantes.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'visitantes'; 'Spa' kept verbatim inside the award's proper name (Haute Grandeur Global Spa Awards).",
+    "t_d6b1fbbf60b2cef7f884 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_d62120320a979b73c203",
+   "sourceHash": "d62120320a979b73c20336cb1e81d5faa1c3666a028b414ab03ed1f52eb39d8b",
+   "text": "Emblema de los premios Haute Grandeur 2026 con certificación spa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'spa' retained as part of the award emblem's title (Haute Grandeur certified spa awards); review whether the emblem wording should instead read 'Emblema de los Haute Grandeur Global Spa Awards 2026'.",
+    "t_d62120320a979b73c203 banned-term-from-source spa"
+   ]
+  },
+  {
+   "id": "t_eacedf5a815697fa4587",
+   "sourceHash": "eacedf5a815697fa458798410204d59e088fa9985633001bb07046061ecc50f1",
+   "text": "Kairali en los PATWA International Travel Awards 2026, celebrados durante la ITB Berlin.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f64f280cb5310273fae6",
+   "sourceHash": "f64f280cb5310273fae689d0c13e20b8964d0396b1833e4f86d3fad41b35b4ec",
+   "text": "Abhilash K. Ramesh fue distinguido con el premio Excellence in Wellness Hospitality (India) en los PATWA International Travel Awards 2026, celebrados durante la ITB Berlin.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1c90b1232824e85bf1d",
+   "sourceHash": "b1c90b1232824e85bf1d787a20b422f2f7b0d3c5194a07e6ebdf40a3a387e2ec",
+   "text": "Gráfico de la entrega del premio PATWA y del trofeo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_434be6dff2f236d77875",
+   "sourceHash": "434be6dff2f236d7787512c13899ea77db2e8feccf7c8b490efdbe5b0d4c839c",
+   "text": "El Sr. K. V. Ramesh, fundador de Kairali Ayurveda Group, homenajeado en el International Ayurveda & Wellness Conclave 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70395b9196090fdbeb82",
+   "sourceHash": "70395b9196090fdbeb82a03c4ebe713fd1f1bb4cb6c6234e39fc12c4ac411425",
+   "text": "Presentación del International Ayurveda and Wellness Conclave 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22d01e55f131e25c9e4a",
+   "sourceHash": "22d01e55f131e25c9e4a90b9abe28b88ab7b7ecc358202cc7e42352acfb7ad59",
+   "text": "Kairali Ayurvedic Healing Village fue declarado ganador del premio Best Luxury Ayurveda Spa de 2020",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' and 'Spa' kept verbatim inside the award title (Best Luxury Ayurveda Spa).",
+    "t_22d01e55f131e25c9e4a banned-term-from-source Spa"
+   ]
+  }
+ ]
+}

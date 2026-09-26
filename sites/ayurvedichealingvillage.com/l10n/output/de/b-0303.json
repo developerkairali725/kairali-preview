@@ -1,0 +1,93 @@
+{
+ "batchId": "b-0303",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_3241558e5e398e9fefdf",
+   "sourceHash": "3241558e5e398e9fefdfb996f83f0df4599040a7ac79b7d5c65abe5f551b7dcc",
+   "text": "Wildtier-Rundfahrt: Eine Wildtier-Rundfahrt bietet einen beeindruckenden Weg durch Keralas grüne Wälder und Wildschutzgebiete. Besuchen Sie Orte wie Parambikulam, Wayanad und Periyar, in denen Tiger, Leoparden, Elefanten und zahlreiche Vogelarten leben. Erleben Sie die faszinierende Schönheit von Keralas Tier- und Pflanzenwelt und verbinden Sie Abenteuer mit der Ruhe der Natur.Elefantensafari: Bei einer Elefantensafari lassen sich Keralas üppige Wälder und Landschaften auf einzigartige Weise erleben. Auf dem Rücken majestätischer Elefanten entlang schöner Pfade kommen Sie Natur und Tierwelt ganz nah. Dieses beeindruckende Erlebnis, das Abenteuer, Kultur und Keralas natürliche Schönheit vereint, ist in Thekkady und Wayanad sehr beliebt.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'Weg' (path) per register rule; missing space after 'Natur.' mirrors the source."
+   ]
+  },
+  {
+   "id": "t_6f6efd977234a7f8b8c8",
+   "sourceHash": "6f6efd977234a7f8b8c8093b33509157146e167b014f6f5c7d52df23083de087",
+   "text": ": Eine Hausbootfahrt in Kerala bietet eine ruhige Auszeit auf den atemberaubenden Backwaters von Alleppey und Kumarakom. Gleiten Sie über friedliche Kanäle, umgeben von malerischen Dörfern, Kokospalmen und üppigem Grün. Genießen Sie die köstliche Küche, das gemächliche Leben am Meer und die traditionelle Gastfreundschaft Keralas – ein unvergessliches Erlebnis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'Erlebnis' (experience) per register rule."
+   ]
+  },
+  {
+   "id": "t_9b16a93e3f68651f6d43",
+   "sourceHash": "9b16a93e3f68651f6d4329093a84481e47317c526787a6d036fb66f0c6c9d2cd",
+   "text": "Hausboottour: Eine Hausbootfahrt in Kerala bietet eine ruhige Auszeit auf den atemberaubenden Backwaters von Alleppey und Kumarakom. Gleiten Sie über friedliche Kanäle, umgeben von malerischen Dörfern, Kokospalmen und üppigem Grün. Genießen Sie die köstliche Küche, das gemächliche Leben am Meer und die traditionelle Gastfreundschaft Keralas – ein unvergessliches Erlebnis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'Erlebnis' (experience) per register rule."
+   ]
+  },
+  {
+   "id": "t_9caaaa4aff403d4d0732",
+   "sourceHash": "9caaaa4aff403d4d0732bcb34fdebf43ac5c9589429e1fd084f07f642d28d447",
+   "text": ": Eine Jeep-Safari in die Berge Keralas ist eine aufregende Fahrt durch üppige Plantagen, nebelverhangene Hügel und steiles Gelände. Entdecken Sie reizvolle Orte wie Munnar und Wayanad, wo gewundene Wege zu atemberaubenden Ausblicken, verborgenen Wasserfällen und Begegnungen mit Wildtieren führen. Eine spannende Art, die Tierwelt, die Schönheit und die Berge Keralas zu erleben.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'Fahrt' (drive) per register rule."
+   ]
+  },
+  {
+   "id": "t_3da9528b32f5ba69982b",
+   "sourceHash": "3da9528b32f5ba69982b19b7f6770f49af23f1a61b8e3cfdf4ee80b26bb2f864",
+   "text": "Jeep-Safari in die Berge: Eine Jeep-Safari in die Berge Keralas ist eine aufregende Fahrt durch üppige Plantagen, nebelverhangene Hügel und steiles Gelände. Entdecken Sie reizvolle Orte wie Munnar und Wayanad, wo gewundene Wege zu atemberaubenden Ausblicken, verborgenen Wasserfällen und Begegnungen mit Wildtieren führen. Eine spannende Art, die Tierwelt, die Schönheit und die Berge Keralas zu erleben.Kulturelle Veranstaltungen: Keralas Kulturfeste zeigen die vielfältigen Bräuche und die reiche Geschichte des Bundesstaates. Diese Feierlichkeiten ehren Keralas Kunst, Musik und Spiritualität – von den großen Festen Onam und Thrissur Pooram bis zu den faszinierenden Aufführungen von Kathakali, Theyyam und Mohiniyattam. Entdecken Sie das kulturelle Wesen des Bundesstaates, indem Sie seine farbenfrohen Feste und Bräuche erleben.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as 'Fahrt' (drive) per register rule; missing space after 'erleben.' mirrors the source."
+   ]
+  },
+  {
+   "id": "t_d79125cdf1f8b47a9dd3",
+   "sourceHash": "d79125cdf1f8b47a9dd355cdba400d71237955113d515a02ee4633afdc2d2d21",
+   "text": "Erlebnisse bei Kairali – Natur, Yoga und Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Experiential Wellness' rendered as 'Erlebnisse' to keep clinical register and ≤60 chars."
+   ]
+  },
+  {
+   "id": "t_7df951e2a16d6c3adc20",
+   "sourceHash": "7df951e2a16d6c3adc20a36a7b1c7081818d71b6e9ebb663cdb8ba6bfbfa4066",
+   "text": "Naturspaziergänge, Yoga, Meditation, Bio-Landbau und ayurvedisches Kochen bei Kairali – The Ayurvedic Healing Village für ganzheitliches Wohlbefinden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'and peace' omitted to stay within 155 chars."
+   ]
+  },
+  {
+   "id": "t_af9addf0a935766def07",
+   "sourceHash": "af9addf0a935766def071eb999937541872011f7f6fe5dbb717bb7dcf9d1cabf",
+   "text": "Aktivitäten im Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_454a21f5e9cd07983938",
+   "sourceHash": "454a21f5e9cd07983938c9901507fd6b4a8e937bea4de3d4bac2f6eee8b0c136",
+   "text": "Aktivitäten auf dem Gelände",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

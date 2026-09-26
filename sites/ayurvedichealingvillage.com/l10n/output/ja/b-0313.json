@@ -1,0 +1,231 @@
+{
+ "batchId": "b-0313",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_14752779d2b0cbac801f",
+   "sourceHash": "14752779d2b0cbac801fe9ba61bd35cbadbf881326b730cbf126523e6090d37a",
+   "text": "肌のトラブルにお悩みではありませんか？症状はどんどん進んでいませんか？…を続けても、効果は見られましたか…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is truncated mid-sentence and its wording is ambiguous ('commendable rate', 'shown results even after going…'); translated as a fragment preserving the ellipsis."
+   ]
+  },
+  {
+   "id": "t_1fe7f8f6757031b077c2",
+   "sourceHash": "1fe7f8f6757031b077c20604116fafce1bd42195cf2c5b8989a59411fc2d98e2",
+   "text": "レスポンシブナビゲーション — 開く",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e3fc7ddffbbc5fe038b",
+   "sourceHash": "7e3fc7ddffbbc5fe038b9d3f3a593e6f02932bc57f587fa7842719728cc11818",
+   "text": "レスポンシブナビゲーション — 閉じる",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4701a1d5295cdcc29894",
+   "sourceHash": "4701a1d5295cdcc2989467caed7a3b99527e00df806c14797daf68124fac7362",
+   "text": "/packages/ ソースにある2つのボタンは、wp-block-navigation のレスポンシブ表示用の開閉コントロールです。ソースに検索・絞り込みフォームが存在する根拠ではありません。ソースの文脈ナビゲーションは、承認済みのシェル内で維持またはマッピングしてください。検索・絞り込み機能を追加する場合は、ソースにない機能を作り出すのではなく、明示的なデザイン改善として扱う必要があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/developer note rather than patient-facing copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_01480295a116d910e57b",
+   "sourceHash": "01480295a116d910e57b6d92ba5acc16f7ba9fe181f24d51b0007cf0a4c2b138",
+   "text": "ソースのグループ順序を維持しています。各カードには、ソースの説明文とリンクを伴う固有の画像が付いています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_8d25824050363a9627b0",
+   "sourceHash": "8d25824050363a9627b069d24b3784adeefc55d63ca97b36fe735f46d43c9453",
+   "text": "限定オファー｜アーユルヴェーダ滞在プログラム – Kairali Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 滞在プログラム (stay programme) per clinical register."
+   ]
+  },
+  {
+   "id": "t_48b6ad56c183b4b556ac",
+   "sourceHash": "48b6ad56c183b4b556acb67687585df4965f9b251d425ce1575c1f39b5125cf5",
+   "text": "Kairaliのアーユルヴェーダ治療パッケージが最大20%OFF。ケララでの滞在プログラムを今すぐご予約いただき、ホリスティックな癒やしと活力の回復をお迎えください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Wellness retreat' rendered as 滞在プログラム (stay programme) per clinical register."
+   ]
+  },
+  {
+   "id": "t_7ee15e95e175bedc842d",
+   "sourceHash": "7ee15e95e175bedc842dd3d12bc59c35a1d6cbc6a651f1f692b262b160fa5b1d",
+   "text": "The Ayurvedic Healing Villageの限定オファー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdd01c052e375625c071",
+   "sourceHash": "bdd01c052e375625c07120d37af2ff34c78627b5a3fe3f7a82187b8171910d67",
+   "text": "Kairali – The Ayurvedic Healing Villageでは、本格的なアーユルヴェーダによる健康づくりと優れた価格を両立した、さまざまな特別プランをご用意しています。これらの入念に設計されたパッケージは、多様なウェルネスのニーズに対応し、ケララの穏やかで美しい環境の中で、来訪者の皆さまが休息し、活力を取り戻す機会を提供します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_687df620bc2e94fd7f33",
+   "sourceHash": "687df620bc2e94fd7f3353182cb8e45b5b72cd29d879dddbc243917f94bc767b",
+   "text": "季節ごとの滞在プログラムには、心身を浄化し、自然のサイクルと再び調和させる治療が含まれます。祝祭シーズンのオファーでは、気持ちを明るくする特色あるアーユルヴェーダ治療とともに、季節の行事をお祝いいただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Seasonal retreats' rendered as 季節ごとの滞在プログラム per clinical register."
+   ]
+  },
+  {
+   "id": "t_e6e46828130001fa6824",
+   "sourceHash": "e6e46828130001fa68245d5abf24386eb5120f2b481415c7e63db2805b5f1df7",
+   "text": "特別オファーを通じて、ヒーリングビレッジではカップル向けに、リラックスと絆づくりを促すオーダーメイドのウェルネス滞在をご提供しています。また、グループ割引や法人割引により、ご家族やご友人、チームの皆さまで、心身を回復させる調和のとれた体験を共有しやすくなります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Wellness vacations' rendered as ウェルネス滞在 (wellness stay) per clinical register."
+   ]
+  },
+  {
+   "id": "t_60a3502a1af6bb278c3c",
+   "sourceHash": "60a3502a1af6bb278c3c7f0a21d15cc6abfce5bc10be45844375d662210a0743",
+   "text": "早めにご予約いただいた来訪者の皆さまには早期予約割引をご利用いただけ、お得な料金でご滞在を確保できます。より深く総合的なアーユルヴェーダを体験されたい方には、長期滞在パッケージもご用意しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' and 'vacation' rendered as 予約/滞在 (booking/stay) per clinical register."
+   ]
+  },
+  {
+   "id": "t_61f2a475f81a8b179ccd",
+   "sourceHash": "61f2a475f81a8b179ccd23754515f13e65268ed090d37a37553ba6952c1c3a1c",
+   "text": "KTAHVのすべてのパッケージは、上質で快適な宿泊、一人ひとりに合わせたケア、本格的な治療を組み合わせ、総合的な体験を提供するよう設計されています。これらの限定プランで、ご自身を見つめ直し、時代を超えたアーユルヴェーダの叡智に触れる機会をお見逃しなく。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxurious lodging' rendered as 上質で快適な宿泊 (premium, comfortable accommodation) per clinical register."
+   ]
+  },
+  {
+   "id": "t_6e39aed7d20e0622bbf0",
+   "sourceHash": "6e39aed7d20e0622bbf062af3a240c95df513708b0b04c93d4a5ed5f21ba652a",
+   "text": "共和国記念日特別オファー！最大20%OFF",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e0b78e475a848ef2697",
+   "sourceHash": "1e0b78e475a848ef2697a5dd4a7fb0cc80b7ca9c29d035968d4e10fbd78fd331",
+   "text": "Kairaliの限定ウェルネスオファー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65705f21a7f65f831205",
+   "sourceHash": "65705f21a7f65f8312050590cba483a1921dff62eed80c8727545503180167e3",
+   "text": "Kairali – The Ayurvedic Healing Villageで、ホリスティックな癒やしの最高峰をご体験ください。心身の健やかさのために設計された、活力を取り戻すひとときをお過ごしいただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Indulge in a rejuvenating escape' softened to 活力を取り戻すひととき to avoid holiday/resort framing."
+   ]
+  },
+  {
+   "id": "t_46013fac8ef8ff81ff21",
+   "sourceHash": "46013fac8ef8ff81ff213c5f3b90c31b11114c45449926bb08de65382308665b",
+   "text": "すべてのアーユルヴェーダ治療パッケージが最大20%OFF",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b902909b83bed4e3c640",
+   "sourceHash": "b902909b83bed4e3c640476ccfc9332fa74e785c235cd21c7e0b852cdc674d50",
+   "text": "3月、4月、5月のご滞在と治療が対象",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9f20c1ab7d48bf66d8a",
+   "sourceHash": "e9f20c1ab7d48bf66d8a695a93ef21edfc368dada949fcf3d23f15eeecc8ac6b",
+   "text": "この限定オファーのご利用には、2月15日までにご予約ください",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_992ad75ee16f953054bf",
+   "sourceHash": "992ad75ee16f953054bf4a20f8cb2ac79dac1e69544a4779de0cafc529719a0a",
+   "text": "静けさとアーユルヴェーダの卓越性に満ちた世界へ。格別の滞在プログラムを今すぐご予約ください！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Royal retreat' rendered as 格別の滞在プログラム per clinical register."
+   ]
+  },
+  {
+   "id": "t_a466c7bf12b9780d5be0",
+   "sourceHash": "a466c7bf12b9780d5be010d0f79935a3c504e1c1af3c1f5281a757956e88dd37",
+   "text": "新年ウェルネス特別オファー！最大20%OFF。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Stray comma in source (', Up to') normalized."
+   ]
+  },
+  {
+   "id": "t_43ed14e9af6f6307f22b",
+   "sourceHash": "43ed14e9af6f6307f22be5b40467e379c7352c2ebce223c4f7b21869bdc9905b",
+   "text": "ギフト券",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bef1d6d69b2927b5302",
+   "sourceHash": "9bef1d6d69b2927b5302446d77c933a060dfed7ca80538dc8d28f2d98301d819",
+   "text": "健康と活力とともに2025年をお迎えください！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8731eac97ffbb0465a48",
+   "sourceHash": "8731eac97ffbb0465a482275c6182985dcb684dc5bd12477f91a45d8f3e93609",
+   "text": "3月、4月、5月のご滞在と治療で心身を整えましょう",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d18ee9d3fdc7b4669e0b",
+   "sourceHash": "d18ee9d3fdc7b4669e0bc194b6c918414d18ad64cbdeb83b3edba6b87577ba79",
+   "text": "オファーは2月15日までの限定です！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

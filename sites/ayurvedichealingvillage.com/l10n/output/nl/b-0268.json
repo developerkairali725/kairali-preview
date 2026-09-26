@@ -1,0 +1,221 @@
+{
+ "batchId": "b-0268",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_fc0e285a88152ff6e9b1",
+   "sourceHash": "fc0e285a88152ff6e9b15e8b5fa652c0fa01ece629661d9382772ba154d4d049",
+   "text": "Bankoverschrijvingen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59fdbbcb4fa723b58b90",
+   "sourceHash": "59fdbbcb4fa723b58b9003be6d71d5c3a3036d471bb3c18d5ec68547180a3fde",
+   "text": "Contant (Indiase roepies)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abe45d95d08a62b6d80e",
+   "sourceHash": "abe45d95d08a62b6d80e328082ff44e51759f6154f4f8158c338d1fc4a1311d4",
+   "text": "UPI-betalingen (voor inwoners van India)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_83fadbe39a707a9f952a",
+   "sourceHash": "83fadbe39a707a9f952aa9a939bc7aa4e24ae28c454eccb286f0e5b2b8495958",
+   "text": "Om uw boeking te bevestigen is een aanbetaling van 50% vereist.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9599d19532011604d619",
+   "sourceHash": "9599d19532011604d619bbd583b8d4b40a1d43c34d82fc646afd1e7b1133b6fa",
+   "text": "Voor internationale patiënten",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_7ef526a220135a89dda9",
+   "sourceHash": "7ef526a220135a89dda9c09d06608089ffb07fc60df8149a302ac0df48f07ae4",
+   "text": "Met welke bijzondere aandachtspunten houdt u rekening voor oudere patiënten?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_9f427809d23d8f09c652",
+   "sourceHash": "9f427809d23d8f09c6522bc4b4f9395cce605daa02ca6e6c3e0b6faf6b001ec9",
+   "text": "Wij bieden:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da51d7c28a7a590ad56b",
+   "sourceHash": "da51d7c28a7a590ad56b541567c15ce5861f9a90ee7309b27a4391f828f9a060",
+   "text": "Een toegankelijke omgeving en toegankelijke verblijfsmogelijkheden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73bcafb8c04eed778f9e",
+   "sourceHash": "73bcafb8c04eed778f9e0a0b0bcaa5180a30ebf993d5ecf75f53d129678fc379",
+   "text": "Hulp bij mobiliteit waar nodig",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b8dfc62530482896b46",
+   "sourceHash": "6b8dfc62530482896b4652ef392995fdb0cb58f55a28781bb4dacb07a3aeeecb",
+   "text": "Aangepaste behandelingen die geschikt zijn voor ouderen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b93965568d5cc1a18ac1",
+   "sourceHash": "b93965568d5cc1a18ac1036add39c5a860e73cf1392a4b93bd796470414b288b",
+   "text": "Bijzondere aandacht voor de voeding",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aa76405b196b2d1d3f8",
+   "sourceHash": "8aa76405b196b2d1d3f862926f0be15feec96e23763af6ec2005137c492cef93",
+   "text": "Medische controle gedurende uw hele verblijf",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cefd115e228160db8d1e",
+   "sourceHash": "cefd115e228160db8d1edfe5472caacf0acb7db829b3141d66fe7057dc2e4a24",
+   "text": "Medische spoedhulp oproepbaar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce8920e3b93a2c47d581",
+   "sourceHash": "ce8920e3b93a2c47d58196390249b917ac697da3c1632a0d117780242ceedfa5",
+   "text": "Onze locatie is ontworpen met oog voor toegankelijkheid, met hellingbanen en steunvoorzieningen waar nodig.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered neutrally as 'locatie' to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_b367c54a9c6e5136a541",
+   "sourceHash": "b367c54a9c6e5136a541957c7fd4286967b60d6980e870f72df68a4f2b831257",
+   "text": "Met welke visumvereisten moeten internationale patiënten rekening houden?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_575c297542d8655fd1ad",
+   "sourceHash": "575c297542d8655fd1ad00d002049b4805da664b7258290adf06a550f3207b8b",
+   "text": "De meeste bezoekers van India hebben een toeristenvisum of e-visum nodig. Wij raden aan dit minstens 4-6 weken vóór uw geplande bezoek aan te vragen. Voor ayurvedische behandelingen kan een medisch visum (Medical Visa) of een visum voor medische begeleiders (Medical Attendant Visa) geschikter zijn, vooral bij een verblijf van langer dan 60 dagen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4f76f424aa4b7186ae9",
+   "sourceHash": "f4f76f424aa4b7186ae9776359d431d931a70bb591dd6f00009dcd9c83ba86e2",
+   "text": "Raadpleeg de officiële visumwebsite van de Indiase overheid of uw plaatselijke Indiase consulaat voor de meest actuele vereisten. Op verzoek kunnen wij een uitnodigingsbrief verstrekken ter ondersteuning van uw visumaanvraag.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3650cc554c45b02b780b",
+   "sourceHash": "3650cc554c45b02b780b7e71f37667adca77b6d38ed1f68044e3b7489f476fb9",
+   "text": "Is er zo nodig een medische evacuatiedienst beschikbaar?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58f23bfab8e5f22caa8e",
+   "sourceHash": "58f23bfab8e5f22caa8e1a3b661766939ae6bfa9d38ad2f4e66eee76d027d6dc",
+   "text": "Ja, wij hebben afspraken met ziekenhuizen en hulpdiensten in de buurt. Internationale patiënten raden wij aan een reisverzekering af te sluiten die medische evacuatie dekt. In geval van nood stemt ons team af met uw verzekeraar.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_c012e72391fd0ddf6da5",
+   "sourceHash": "c012e72391fd0ddf6da52859745df78b07d6d6932f517fd6c34422698bc45f72",
+   "text": "Kunt u een langer verblijf voor internationale patiënten mogelijk maken?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_6f13abc6c31f43a5e0f7",
+   "sourceHash": "6f13abc6c31f43a5e0f7ca03d8deb992993f10cec07c1c444fe53173576bcabd",
+   "text": "Ja, wij bieden speciale pakketten voor een langer verblijf van 30 dagen of meer, inclusief extra culturele excursies en persoonlijk afgestemde programma's. Veel internationale patiënten ervaren een langer verblijf als bijzonder waardevol bij chronische aandoeningen en voor een ingrijpende verbetering van hun welzijn.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patiënten' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_081b3abf7649b9404f2b",
+   "sourceHash": "081b3abf7649b9404f2bc30bcb10d894c336cf2bef69796f2969dbf61e3587fb",
+   "text": "Na afronding van uw programma geven onze artsen u:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_859bff4827464416b52a",
+   "sourceHash": "859bff4827464416b52a9571f9d3de6eaa748be909929638a2a5d5f97fca7be6",
+   "text": "Een persoonlijk nazorgplan voor voeding en leefstijl",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b984297c610b63f6035",
+   "sourceHash": "9b984297c610b63f6035c1f45603eaaf869d9e423222721b131552bc679dbaee",
+   "text": "Aanbevelingen voor huismiddeltjes",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92db133380a70d8545cf",
+   "sourceHash": "92db133380a70d8545cfd75c8ce1e55cc60dc61ed47dee2bdabce030b2a36f79",
+   "text": "Specifieke yoga- en meditatieoefeningen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
