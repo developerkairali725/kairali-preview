@@ -1,0 +1,129 @@
+{
+ "batchId": "b-0415",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_bfcb4f203ecc1e00ef83",
+   "sourceHash": "bfcb4f203ecc1e00ef83f1369621f7a02cc7da31b4ce234a8abc01ea61239ac9",
+   "text": "L’ancienne adresse .aspx redirige actuellement le nom d’hôte puis renvoie une erreur 404 : il n’existe donc aucune preuve de continuité de redirection. Il s’agit d’une limite explicite d’identité de la source, qui N’EST PAS considérée comme une autorisation de rediriger cette route.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_c563e219ed1fd7ee42c9",
+   "sourceHash": "c563e219ed1fd7ee42c9150b1f1ea372830a84f44037dfcbae0f4b1f370f776e",
+   "text": "Le groupe Kairali Ayurvedic, incarnation d’un mode de vie sain et raffiné, a été fondé en 1989 dans le but de diffuser les principes de l’Ayurveda à travers le monde. Ses fondateurs étaient des personnes érudites et accomplies, convaincues du bien-fondé de l’Ayurveda et pleinement conscientes de sa capacité à soigner et à purifier le corps comme l’âme. Ils ont transmis leur vaste expérience et leurs connaissances à quatre générations de médecins, tout aussi engagés à redonner toute sa pertinence à l’Ayurveda. C’est grâce à leurs efforts conjugués que le groupe Kairali Ayurvedic a atteint de nouveaux sommets de réussite et de bienveillance.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af1d6b5b66d0f10a5a46",
+   "sourceHash": "af1d6b5b66d0f10a5a46b8e2964cd5dbbe4d1ae1e773849e87cefabbfddb08dc",
+   "text": "L’un de ses événements phares est la Lakshya Yoga Retreat, une célébration de sept jours consacrée à l’Ayurveda, au yoga et à un mode de vie sain. Plusieurs disciplines yogiques y sont présentées, et les participants bénéficient d’un ensemble de services et de consultations liés à la santé. De nombreuses disciplines réputées de l’Ayurveda, comme le Panchkarma, y sont pratiquées, ce qui fait de cette retraite un rendez-vous à ne pas manquer.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'must visit destination' rendered as 'un rendez-vous à ne pas manquer' (avoids tourism framing); 'benefactors' interpreted as participants."
+   ]
+  },
+  {
+   "id": "t_418d798d65f6a7fe58f3",
+   "sourceHash": "418d798d65f6a7fe58f3d26395b42bba6417234e10a2b98b741b539d2b487b0c",
+   "text": "L’un de ses événements phares est la",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding the linked name 'Lakshya Yoga Retreat'."
+   ]
+  },
+  {
+   "id": "t_7db077ae90b55307b606",
+   "sourceHash": "7db077ae90b55307b606f7e4e2fe7d898b05a833e896bb214621700fb2374817",
+   "text": ", une célébration de sept jours consacrée à l’Ayurveda, au yoga et à un mode de vie sain. Plusieurs disciplines yogiques y sont présentées, et les participants bénéficient d’un ensemble de services et de consultations liés à la santé. De nombreuses disciplines réputées de l’Ayurveda, comme le Panchkarma, y sont pratiquées, ce qui fait de cette retraite un rendez-vous à ne pas manquer.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the linked name; begins with a comma for French syntax — check spacing after the link."
+   ]
+  },
+  {
+   "id": "t_bb02c0a7edfd889f3c41",
+   "sourceHash": "bb02c0a7edfd889f3c410fd150066d25617c27d0f952f739e8594e6a17b2f83e",
+   "text": "Ce village de soins ayurvédique incarne la sérénité et un mode de vie positif, un lieu où chacun peut séjourner à l’abri des tracas et des soucis extérieurs. Alliant des équipements modernes à la générosité ancestrale de l’Ayurveda, cet environnement naturel et paisible devient un refuge idéal loin de l’agitation du quotidien.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'gateway' (likely 'getaway') rendered as 'refuge'."
+   ]
+  },
+  {
+   "id": "t_86e1de74820a9b252ba3",
+   "sourceHash": "86e1de74820a9b252ba33b2eed445b0cd02c445b5f4b8007205aff1762d7301a",
+   "text": "Ce",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding 'Ayurvedic healing village'."
+   ]
+  },
+  {
+   "id": "t_12a5beee4d1dc60cc34c",
+   "sourceHash": "12a5beee4d1dc60cc34cdaaaf5ba374bbbeea8ea2321f33034f0b82bd01a24b0",
+   "text": "village de soins ayurvédique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2bc30b2b6c3a974624f",
+   "sourceHash": "f2bc30b2b6c3a974624f4116d140b89c0163898a3130b2aa49d730084534947f",
+   "text": "incarne la sérénité et un mode de vie positif, un lieu où chacun peut séjourner à l’abri des tracas et des soucis extérieurs. Alliant des équipements modernes à la générosité ancestrale de l’Ayurveda, cet environnement naturel et paisible devient un refuge idéal loin de l’agitation du quotidien.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following 'Ayurvedic healing village'. 'gateway' (likely 'getaway') rendered as 'refuge'."
+   ]
+  },
+  {
+   "id": "t_5d49740011763daddd6a",
+   "sourceHash": "5d49740011763daddd6a4fa2c38833ecb0af97bbd691127f70e81ac7c5aa6044",
+   "text": "Navigation contextuelle libellée depuis la fiche actuelle, avec ses destinations d’origine exactes et ses références de source. Le titre Knowledge Center est un texte source simple et n’est pas transformé en lien.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_a84027ac4117c60b0cee",
+   "sourceHash": "a84027ac4117c60b0ceedeffa4839b17366b61b05009c161135104c93ebf62d6",
+   "text": "Le contexte de cette route est son propre titre source Knowledge Center. Le libellé générique « Explore current programmes » n’est PAS utilisé ici.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text; quoted UI label kept in English as an identifier."
+   ]
+  },
+  {
+   "id": "t_25ee652fe24cc89e9090",
+   "sourceHash": "25ee652fe24cc89e9090b1ac7197ed2e08dc7cdc53f65b1227a289a14e71f800",
+   "text": "lk-cg-",
+   "status": "translated",
+   "unchangedReason": "Code/CSS identifier prefix used in concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_5dea34262e352874fc4d",
+   "sourceHash": "5dea34262e352874fc4d582963706a588a51f539c0d91badf39d68f0ab93b676",
+   "text": "Une semaine de repos complet et de revitalisation. Renouez avec vous-même grâce au yoga et à la méditation. Prenez soin de votre corps avec des massages et des thérapies ayurvédiques. Régalez-vous de savoureux plats végétariens !",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

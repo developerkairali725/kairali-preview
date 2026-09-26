@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0382",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_f584f8e259052c957c24",
+   "sourceHash": "f584f8e259052c957c240cec829f681f409fd0888942f017c3314b75a6244ea3",
+   "text": "Виллы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'Villa’s' is a heading with a stray apostrophe; rendered as the plural 'Villas'."
+   ]
+  },
+  {
+   "id": "t_cd0aa5b58a4c98e39321",
+   "sourceHash": "cd0aa5b58a4c98e3932139e968e650f6f46ff23114aa66952e32d3ef0c59536c",
+   "text": "Сохранить текст/источник во внутреннем учёте или только как текст источника; не придумывать адрес перехода",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build/governance note rather than patient-facing copy; translated as instructed — consider whether it should be displayed at all."
+   ]
+  },
+  {
+   "id": "t_fe3bf0ba49d102eaa7e3",
+   "sourceHash": "fe3bf0ba49d102eaa7e3f44184116e5fe8c541a56d1d9f8a3206ef0d472f58d6",
+   "text": "Отображается собственной существующей разметкой пары, если маршрут не запрошен. Без изменений, включая позднее исправление обёртки изображения (увеличенное изображение в просмотрщике загружается только в открытом состоянии, поэтому src без подстановки значений никогда не запрашивается).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build/governance note rather than patient-facing copy; translated as instructed — consider whether it should be displayed at all."
+   ]
+  },
+  {
+   "id": "t_aca80ff13375de69dd5d",
+   "sourceHash": "aca80ff13375de69dd5d30cfa87668e1ee0b4608bf7b22055a4b0ee03f5285c5",
+   "text": "Фотогалерея",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a9aabaa238a13b1318b",
+   "sourceHash": "4a9aabaa238a13b1318b2e7a042edfc364e2c5db37eb210a75e7647faa8ac1b8",
+   "text": "Путь к умиротворению: обретите покой среди деревенского очарования и великолепия природы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69f9dd51e18d6da9b8dd",
+   "sourceHash": "69f9dd51e18d6da9b8ddea74ea5528c4bd3c2c12528b70489754f411d2ed2b83",
+   "text": "Расслабьтесь во время аюрведической процедуры, которая помогает освежить восприятие.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Indulge in … therapy session' rendered as relaxing during an Ayurvedic procedure, avoiding pampering/spa connotations."
+   ]
+  },
+  {
+   "id": "t_52ef6e5fc2a6dc20c865",
+   "sourceHash": "52ef6e5fc2a6dc20c865be30387af4784d92080394d4110fde37a201801f52b1",
+   "text": "Путь к благополучию: прогуляйтесь по территории Kairali в спокойных объятиях природы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fab0560001f80acadc6a",
+   "sourceHash": "fab0560001f80acadc6a6d05d7e476aa18d6ebe91c84bb755b807fbc032883db",
+   "text": "Естественное оздоровление, восстановление сил и очищение организма с помощью подлинной Аюрведы в Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Natural healing' rendered as 'естественное оздоровление' (natural wellbeing support) to avoid a cure implication."
+   ]
+  },
+  {
+   "id": "t_78afa5613ca03578c980",
+   "sourceHash": "78afa5613ca03578c980e8747d35f98de2ebd10f7451e04afc1dda7b4b07e5ec",
+   "text": "Обретите внутренний покой на занятиях йогой под руководством инструктора в Kairali и почувствуйте всестороннее благополучие.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fcd13b8f0f2fe47ebf2",
+   "sourceHash": "3fcd13b8f0f2fe47ebf2e21f7382a0f7a14201fe17932bc814b233872d097206",
+   "text": "Расслабление, оздоровление, восстановление: процедуры Kairali привносят вечную мудрость Аюрведы в ваш путь к благополучию.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Heal' rendered as 'оздоровление' to avoid a cure implication; 'quest' rendered as 'путь' (path)."
+   ]
+  },
+  {
+   "id": "t_1890a6c3990e4dfa8644",
+   "sourceHash": "1890a6c3990e4dfa8644c406ef20d79a9486a5e3fcb328832b00d0a1b2d02404",
+   "text": "Культурное многообразие: приезжайте в Kairali, чтобы познакомиться с древними традициями Кералы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_98f34e16f287ac227022",
+   "sourceHash": "98f34e16f287ac2270229684ec6db7c31b39efe8d9a648ae0ba753d330358989",
+   "text": "Вкус благополучия: попробуйте традиционные аюрведические блюда в Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b362e27dd7148e931cf",
+   "sourceHash": "6b362e27dd7148e931cf33bd72de24f4dabaca368b2625a43b38e0804314f28d",
+   "text": "Расслабьтесь с процедурой Широдхара (Shirodhara) в Kairali — для глубокого равновесия и расслабления.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Approved term used: Shirodhara → Широдхара (Shirodhara)."
+   ]
+  },
+  {
+   "id": "t_a1471a472c4e5ec5ee43",
+   "sourceHash": "a1471a472c4e5ec5ee432655ee3593c9e3395446df1977388b23bca5e574b995",
+   "text": "Обретите внутреннее равновесие в спокойной обстановке Kairali — в природном уголке Nature’s Sanctuary.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Nature’s Sanctuary' treated as a named area and kept verbatim; if it is descriptive rather than a proper name, render as 'в окружении нетронутой природы'."
+   ]
+  },
+  {
+   "id": "t_95f9063a2fa238165489",
+   "sourceHash": "95f9063a2fa238165489be52592b06188b04b76072346cff1c7f278cc59712d2",
+   "text": "Йога среди безмятежной красоты зелёных просторов Kairali может помочь вам обрести внутреннюю гармонию.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'find your Zen' rendered idiomatically as 'обрести внутреннюю гармонию'; 'can help' qualifier kept."
+   ]
+  },
+  {
+   "id": "t_f209b22814b0bafe9f46",
+   "sourceHash": "f209b22814b0bafe9f46560a2df1831b936948ef40cea38c65393e52e813fa5a",
+   "text": "Женщина в красной блузе и золотистой накидке у деревянных перил среди кокосовых пальм",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d975c6345d0451d8c675",
+   "sourceHash": "d975c6345d0451d8c675600c2d17fbab1320cd4a660d0ecc995be9e449da9543",
+   "text": "Открыть изображение 1 из фотогалереи",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2fcc65ff8b8773dd081b",
+   "sourceHash": "2fcc65ff8b8773dd081bf3bd4417f91517bcb3bf451a7aef493adf437bf1f03a",
+   "text": "Коридор с деревянной отделкой и узорчатой плиткой на полу, ведущий к резным креслам у окна в сад",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cff267164f59e8c6fce2",
+   "sourceHash": "cff267164f59e8c6fce24835ee754120b18bf1f685db32c5a68a4bf775ab3765",
+   "text": "Открыть изображение 2 из фотогалереи",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16a6a37bd4e060daaabc",
+   "sourceHash": "16a6a37bd4e060daaabc459b94a1b7b193f161095590771b63f61e44ad911fed",
+   "text": "Открыть изображение 3 из фотогалереи",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d929c0ec4da9cfa79c8c",
+   "sourceHash": "d929c0ec4da9cfa79c8c90465a174e271aa19b205ffeb00758f4822bfb85fc97",
+   "text": "Женщина в зелёном в высоком выпаде с поднятыми руками на коврике для йоги",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1272bb1c4f56ef0c29ac",
+   "sourceHash": "1272bb1c4f56ef0c29ac8e61910cb50f37c1d2375cf2a22a3dde4e0821a6b597",
+   "text": "Открыть изображение 4 из фотогалереи",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d50274aada90cdbc1d7",
+   "sourceHash": "7d50274aada90cdbc1d7594047aa1c97512041eaeeb832ec45c361b378d31c7c",
+   "text": "Керальская вилла из красного кирпича с черепичной крышей, крыльцом с колоннами, фонтаном и кокосовыми пальмами позади",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ac5bb1d321d6fccfd8c8",
+   "sourceHash": "ac5bb1d321d6fccfd8c86d64445a45eeda185825b403609b6d41d0aec800b38c",
+   "text": "Открыть изображение 5 из фотогалереи",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7db4a72b1fee7ba5dfb1",
+   "sourceHash": "7db4a72b1fee7ba5dfb193a369c1138ec603d48cec01d35f89b11ee7250f3774",
+   "text": "Открытая зона отдыха с плетёными креслами, узорчатой плиткой и высокими окнами с видом на лесные деревья",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'lounge' rendered as 'зона отдыха' (sitting area), avoiding 'гостиная', which shares the root of 'гость' (guest)."
+   ]
+  }
+ ]
+}

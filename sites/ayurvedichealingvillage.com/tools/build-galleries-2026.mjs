@@ -256,7 +256,7 @@ const ROUTES = [
       { id: "air", title: "The countryside from the air", linkTo: "/destination-palakkad/", linkLabel: "About Palakkad",
         intro: "Drone frames over the countryside near the hospital: the misty river through the tree canopy, paddy fields bordered by coconut palms, village houses and a rural road.",
         match: (c) => /\b(aerial|top-down)\b/i.test(c.caption) },
-      { id: "fields", title: "Rice transplanting on the organic farm", linkTo: "/attractions-under-10kms/", linkLabel: "Attractions under 10 km",
+      { id: "fields", title: "Rice transplanting on the organic farm", linkTo: "/sightseeing/", linkLabel: "Sightseeing near Kairali",
         intro: "Farm workers transplant rice seedlings in the flooded paddy fields at sunrise, framed by coconut and palmyra palms, on the organic farm around the campus.",
         match: (c) => c.theme === "surroundings" },
     ],

@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0414",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_8549e99f42b21dbea33b",
+   "sourceHash": "8549e99f42b21dbea33b3768a275b56880025b5e3ddcb092ea9869b76e1d38e1",
+   "text": "Deux actions du registre ont une double fonction et sont regroupées selon leur effet plutôt que selon leur nom. REPLACE_WRONG_EQUIPMENT_BREADCRUMB (1) remplace un fil d’Ariane d’en-tête : les entrées de remplacement de fil d’Ariane totalisent donc 25, et non les 24 portées par REPLACE_GOVERNED_BREADCRUMB seul. RELATED_LINKS_GROUPS_OR_EMPTY_HEADING_OMITTED (15) est un nœud de groupe de liens connexes dont le titre vide n’est pas affiché : les entrées de groupes connexes totalisent donc 162, et non 147. Les exclusions intentionnelles OMIT_* totalisent ainsi 89, et 2 entrées portent d’autres actions (une promotion de titre et le remplacement d’un titre d’équipement erroné). 433 + 25 + 162 + 89 + 2 = 711.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical/editorial note surfaced as display text; action codes kept verbatim."
+   ]
+  },
+  {
+   "id": "t_b43db53ea136dd89902f",
+   "sourceHash": "b43db53ea136dd89902f079159627554b2c7f211c5957632b79c6df0a6c1fae0",
+   "text": "whole-item STRONG with three BRs",
+   "status": "translated",
+   "unchangedReason": "Internal enum/descriptor value, not display text.",
+   "issues": []
+  },
+  {
+   "id": "t_a3dd2fc874f4d87194eb",
+   "sourceHash": "a3dd2fc874f4d87194eb147512ba9798c590da4519b695f9c6bc50f7bfeca617",
+   "text": "leading STRONG run",
+   "status": "translated",
+   "unchangedReason": "Internal enum/descriptor value, not display text.",
+   "issues": []
+  },
+  {
+   "id": "t_fd74038cfce284c02a0b",
+   "sourceHash": "fd74038cfce284c02a0bb17ac4e98ccb67a2b0ccb3fbdd8048502dc1e755bf55",
+   "text": "Deux segments STRONG de la source avaient été perdus lors du remplissage et sont restaurés à partir des preuves de segments en ligne du registre : un STRONG couvrant l’élément entier sur quatre lignes avec trois BR d’origine, et un segment STRONG initial dont l’espace final exact est conservé. Les sauts BR significatifs sont conservés et aucun BR final vide n’a été ajouté.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_8bcecaeecc5d51139859",
+   "sourceHash": "8bcecaeecc5d511398591d2486546634910685de1e8e4637c8d6cad0e471b8f4",
+   "text": "Pixels, textes alternatifs d’origine, proportions natives, nombre exact, mentions de droits et métadonnées inchangés — seule la position a changé.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_6016a6c1f51564d2ec26",
+   "sourceHash": "6016a6c1f51564d2ec26abb95b7184627bb70a9b51a69668d2e68775d8baec08",
+   "text": "Aucun texte source, aucune URL ni aucun conseil relatif aux visas n’est modifié, raccourci ou réécrit, aucun lien n’est activé, et rien n’est tronqué ni masqué — overflow-wrap ne fait que choisir des points de coupure supplémentaires.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_22b7c38dbe29493721f4",
+   "sourceHash": "22b7c38dbe29493721f49d731768445e6aa33f8b17b3670f5fca27e9276ea631",
+   "text": "Les blocs de titre avaient été construits avec une arborescence en texte brut ; les segments STRONG couvrant tout le titre, exigés par le brief d’origine, avaient donc été supprimés alors même que le texte du titre correspondait.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_10411aa2c78a8804c39f",
+   "sourceHash": "10411aa2c78a8804c39fdb8d52baadd0a742b4ebb978d950955d98dd4a7bff96",
+   "text": "Les quatre défauts de paragraphe substantiels avaient perdu leur STRONG lors de la restauration des 19 nœuds et des 3 ancres du corps de texte : ces reconstructions produisaient des arborescences en texte brut.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_6a563765172f48d330ff",
+   "sourceHash": "6a563765172f48d330ff2a7a6ce7103e9fac8630210173afbaa0412781132e2c",
+   "text": "Les STRONG identiques imbriqués redondants sont aplatis. AUCUN BR n’est omis : le seul saut auparavant traité comme un BR final vide s’est avéré significatif d’après la source brute et est restauré. Les exposants ordinaux sont conservés. Aucune mise en gras de nœud entier, aucun titre dupliqué, aucun nouveau texte et aucun retour à la ligne manuel.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_b1eaa40d3c8aa9c62019",
+   "sourceHash": "b1eaa40d3c8aa9c620194e222c2469fba683efe5171c2384ec20ec92a325c662",
+   "text": "Un repas végétarien servi avec du riz, des légumes et des currys.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5babcaa385cf1bd25983",
+   "sourceHash": "5babcaa385cf1bd2598362db73c94cab2f2d3c9a24d5f7c521df78146dd892dc",
+   "text": "Découvrir l’Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b357c75140b21ee9267e",
+   "sourceHash": "b357c75140b21ee9267e99e96e7cbd90839806cc97075e680a2624dc5db52682",
+   "text": "Programmes ayurvédiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd8d79a3239b4cbd6370",
+   "sourceHash": "fd8d79a3239b4cbd6370c4df8f9862d7b448ef4a52cdddfceb89004ccfad92f9",
+   "text": "Un patient assis entre deux thérapeutes pendant un traitement ayurvédique.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e07ad489897aa4c2c37",
+   "sourceHash": "5e07ad489897aa4c2c37ab89513ecde1c93f91559d246068302480590c1381de",
+   "text": "Une femme pratiquant le yoga sur un tapis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3eca470a849508d92ca9",
+   "sourceHash": "3eca470a849508d92ca9378053018e5a89e8ac13ce81af69681b26167a329375",
+   "text": "Produits ayurvédiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dcaab2662a8680db59c",
+   "sourceHash": "3dcaab2662a8680db59c2e5e2ec337a14c7289a9afce536381d32aa3c6651759",
+   "text": "Une sélection de produits Kairali présentés en extérieur.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c9dd5736f94d731419f",
+   "sourceHash": "9c9dd5736f94d731419f4d076413bb2388ff2af55bde6dbdea6d495bb914035f",
+   "text": "family-04/LAKSHYA-RECOVERED-NATIVE-PROMPT.txt",
+   "status": "translated",
+   "unchangedReason": "File path; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_489d1ee17cce0b5577de",
+   "sourceHash": "489d1ee17cce0b5577de454ef261e016a11a0ec73cd962be279c79f557b1a8bc",
+   "text": "Les sept détails historiques acceptés précédemment, la base de référence historical-nine et sa réparation combinée, la correction wrap/href/inline, la correction des sauts significatifs et l’ensemble des 136 jeux de données antérieurs restent intacts.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text."
+   ]
+  },
+  {
+   "id": "t_4c6604104512a9934d0f",
+   "sourceHash": "4c6604104512a9934d0fbcdaf828537ae7f1c927c816276f4dfea76f8caf1371",
+   "text": "L’authenticité de l’archive est établie uniquement par son SHA exact. Aucune vérification médicale, organisationnelle ou marketing actuelle n’est revendiquée. L’horodatage de capture de 2016 N’EST PAS une date d’événement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297b1c745d394c1174cd",
+   "sourceHash": "297b1c745d394c1174cdfcd311e52003a497ffa94fa89116f01d81210c24eab2",
+   "text": "Retraite passée — conservée à titre de référence historique. L’année de l’événement n’a pas été vérifiée.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c62df69c6a159cf1039",
+   "sourceHash": "1c62df69c6a159cf1039d79cfb3a8823086b899d07909411aa85398c456d8dcf",
+   "text": "Cette section présente la retraite de sept jours associant traitements ayurvédiques et exercices de yoga à l’Ayurvedic Healing Village.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8cdf0f53fcef7f91f28c",
+   "sourceHash": "8cdf0f53fcef7f91f28c39b9e81b43ddf86e98819c77e446512ca61a8d52e237",
+   "text": "Seules trois corrections récupérées et documentées sont appliquées — title, description et openGraph.description. Toutes les autres valeurs de métadonnées d’origine et le mappage social propre à la source sont conservés dans l’attente de l’intégration finale normale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note surfaced as display text; metadata field names kept verbatim."
+   ]
+  },
+  {
+   "id": "t_aaf2320646108059a87a",
+   "sourceHash": "aaf2320646108059a87ab5017a86aee454f5378ed95003dbb2e12f4ca5266e0e",
+   "text": "title",
+   "status": "translated",
+   "unchangedReason": "Metadata field name (code identifier), language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_ab98b881193293f7a40b",
+   "sourceHash": "ab98b881193293f7a40bd0bf09c9f2b402980d6b901cb50dbd51c573ac6b66d5",
+   "text": "La valeur d’origine erronée « Animal Husbandry » est conservée ici en privé avec les preuves de sa correction.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

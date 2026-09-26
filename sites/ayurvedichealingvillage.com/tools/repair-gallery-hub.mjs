@@ -70,7 +70,7 @@ for (const p of extra) {
     cover = firstImage(v);
   }
   const title = r.metadata.title.split("|")[0].replace(/\s+at Kairali.*$/i, "").trim();
-  cards.push({ route: p, title, cover, alt: title, note: p === "/video-gallery/" ? "Patient stories and the village on film" : p === "/virtual-tour/" ? "360° walk-through" : "" });
+  cards.push({ route: p, title, cover, alt: title, note: p === "/video-gallery/" ? "Village life, yoga, therapies and villas on film" : p === "/virtual-tour/" ? "Full tour in production" : "" });
 }
 for (const c of cards) if (!c.cover) console.warn("no cover for " + c.route);
 
