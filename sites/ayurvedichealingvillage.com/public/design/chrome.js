@@ -177,7 +177,28 @@
       syncChatState();
       externalLinks();
       liftContacts();
+      templateLaunchers();
     } catch (e) { /* never break the page */ }
+  }
+  // The templates' own floating Priya / WhatsApp launchers are replaced by #ahv-contact-controls.
+  // chrome.css hides them by their English aria-label; locale pages translate that label, so they
+  // are also recognised by destination: a short chat.kairali.com link or an icon-only wa.me link that
+  // is itself (or sits in) a fixed-position launcher. In-flow content links are never touched.
+  function templateLaunchers() {
+    var root = document.getElementById('ahv-design-root');
+    if (!root) return;
+    root.querySelectorAll('a[href]').forEach(function (a) {
+      if (a.closest('#ahv-contact-controls') || a.hasAttribute('data-ahv-template-launcher')) return;
+      var h = a.getAttribute('href') || '';
+      var launcher = false;
+      var chat = /^https:\/\/chat\.kairali\.com/.test(h) && (a.textContent || '').replace(/\s+/g, '').length <= 20;
+      var wa = /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h) && !(a.textContent || '').replace(/\s+/g, '');
+      if (chat || wa) {
+        var el = a, hops = 0;
+        while (el && hops < 3) { if (getComputedStyle(el).position === 'fixed') { launcher = true; break; } el = el.parentElement; hops++; }
+      }
+      if (launcher) a.setAttribute('data-ahv-template-launcher', '');
+    });
   }
   // EF-25 (owner, 26 Sep 2026): while the cookie notice is on screen the WhatsApp / chat controls
   // sit above it instead of covering its buttons (seen at 390px over "Accept All"). Presentation

@@ -113,6 +113,7 @@
 #ahv-design-root a[aria-label="Chat with Priya"],
 #ahv-design-root a[aria-label="WhatsApp us"],
 #chatbase-bubble-button, #chatbase-message-bubbles { display:none !important; }
+#ahv-design-root a[data-ahv-template-launcher] { display:none !important; }
 #ahv-contact-controls { position:fixed;right:22px;bottom:24px;z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:12px; }
 #ahv-contact-controls a, #ahv-contact-controls button { box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:54px;height:58px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 0 0 2px #F7F4EA,0 8px 24px rgba(60,45,20,.25); }
 #ahv-contact-controls .ahv-contact-wa { width:58px;border-radius:50%;background:#25D366; }

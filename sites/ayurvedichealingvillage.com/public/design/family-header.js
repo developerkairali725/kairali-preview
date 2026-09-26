@@ -194,7 +194,9 @@
       var el = tels[i].parentElement, hops = 0;
       while (el && el !== document.body && hops < 4) {
         var st = el.getAttribute("style") || "";
-        if (/position:\s*fixed/.test(st) && /bottom:\s*0/.test(st) && el.querySelector('a[href*="online-consultation"]') && el.querySelector('a[href*="enquiry-form"]')) { el.setAttribute("data-ahv-cta-bar", ""); break; }
+        // structural (locale pages localize the enquiry / consultation paths): a fixed bottom bar with
+        // the tel: link and at least two other actions
+        if (/position:\s*fixed/.test(st) && /bottom:\s*0/.test(st) && el.querySelectorAll("a[href]").length >= 3 && !el.closest("header")) { el.setAttribute("data-ahv-cta-bar", ""); break; }
         el = el.parentElement; hops++;
       }
     }

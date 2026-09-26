@@ -191,3 +191,8 @@ input[type="date"]::-webkit-date-and-time-value { text-align:left; min-height:1.
   input[type="date"][data-ahv-empty]:not(:focus)::-webkit-date-and-time-value { color:transparent; }
   input[type="date"][data-ahv-empty]:not(:focus) { -webkit-text-fill-color:transparent; }
 }
+
+/* Translated pages: long compounds (e.g. German "Führungspersönlichkeiten") must wrap, not push the
+   page sideways at 320px / enlarged text. html[lang] is the page language, so hyphens:auto uses
+   the right dictionary; overflow-wrap is the fallback where no dictionary exists. */
+html:not([lang^="en"]) #ahv-design-root :is(h1, h2, h3, h4, h5, p, li, dt, dd, figcaption, span, a) { overflow-wrap:break-word; hyphens:auto; }
