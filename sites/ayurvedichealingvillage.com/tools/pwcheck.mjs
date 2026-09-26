@@ -9,5 +9,5 @@ const p = await ctx.newPage(); const errs = []; p.on("console", (m) => m.type() 
 await p.goto(url, { waitUntil: "load" }); await p.waitForTimeout(3000);
 const out = await p.evaluate((sel) => [...document.querySelectorAll(sel || "body")].map((e) => e.innerText.replace(/\s+/g, " ").trim()).filter(Boolean).slice(0, 40), sel);
 if (shot) await p.screenshot({ path: shot, fullPage: false });
-console.log(JSON.stringify(out, null, 1).slice(0, 4000)); console.log("console errors:", errs.length, errs.slice(0, 5));
+console.log(process.env.FULL ? JSON.stringify(out, null, 1) : JSON.stringify(out, null, 1).slice(0, 4000)); console.log("console errors:", errs.length, errs.slice(0, 5));
 await b.close();
