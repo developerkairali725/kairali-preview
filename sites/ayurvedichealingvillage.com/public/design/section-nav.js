@@ -27,6 +27,13 @@
   var section = DATA.sections[info.section];
   if (!section) return;
   var DESKTOP = window.matchMedia("(min-width:1024px)");
+  // Owner, 26 Sep 2026 (EF-04 header takeover): on family pages the family navigation lives in the
+  // ONE compact header (family-header.js) — the rail is no longer drawn. Legacy-sidebar removal and
+  // the tree breadcrumb below still run.
+  var HEADER_OWNS_FAMILY = !!(DATA.family && DATA.family[route]);
+  // locale pages: data carries English paths; hrefs go to this locale's own pages
+  var LP = window.AHV_LOCAL_PATHS || null;
+  function lp(p) { return (LP && LP[p]) || p; }
   var scheduled = false;
 
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
@@ -46,7 +53,7 @@
       var n = nodes[i], here = onPath(n), cur = n.path === route, kids = n.children && n.children.length;
       var id = "ahv-rail-branch-" + (++branchId);
       h += '<li><div class="ahv-rail-row">';
-      if (n.link) h += '<a href="' + esc(n.path) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
+      if (n.link) h += '<a href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
       else h += '<span class="ahv-rail-plain">' + esc(n.label) + "</span>";
       if (kids) h += '<button type="button" class="ahv-rail-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '" aria-label="' + (here ? "Collapse " : "Expand ") + esc(n.label) + '" data-branch-label="' + esc(n.label) + '"><span aria-hidden="true">' + (here ? "−" : "+") + '</span></button>';
       h += "</div>";
@@ -65,7 +72,7 @@
       "<details" + (DESKTOP.matches ? " open" : "") + ">" +
         '<summary><span class="ahv-rail-kicker">In this section</span><span class="ahv-rail-name">' + esc(section.label) + '</span><span class="ahv-rail-chev" aria-hidden="true"></span></summary>' +
         '<div class="ahv-rail-body">' +
-          '<a class="ahv-rail-hub" href="' + esc(section.hub) + '"' + (hubCur ? ' aria-current="page"' : "") + ">" + esc(section.label) + " — overview</a>" +
+          '<a class="ahv-rail-hub" href="' + esc(lp(section.hub)) + '"' + (hubCur ? ' aria-current="page"' : "") + ">" + esc(section.label) + " — overview</a>" +
           list(section.items) +
         "</div>" +
       "</details>";
@@ -211,7 +218,7 @@
     var parts = [{ href: "/", label: "Home" }].concat(chain.map(function (p) { return { href: p, label: TITLE[p] || p }; }));
     var frag = document.createDocumentFragment();
     parts.forEach(function (c) {
-      var a = link.cloneNode(false); a.setAttribute("href", c.href); a.textContent = c.label; frag.appendChild(a);
+      var a = link.cloneNode(false); a.setAttribute("href", lp(c.href)); a.textContent = c.label; frag.appendChild(a);
       if (sep) frag.appendChild(sep.cloneNode(true)); else frag.appendChild(document.createTextNode(" / "));
     });
     var cur = last.cloneNode(false); cur.textContent = TITLE[route] || last.textContent; frag.appendChild(cur);
@@ -250,6 +257,11 @@
     try {
       rewriteCrumbs(main);
       removeLegacy(main);
+      if (HEADER_OWNS_FAMILY) {
+        var stale = main.querySelector("nav[data-ahv-section-nav]");
+        if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+        return;
+      }
       var existing = main.querySelector("nav[data-ahv-section-nav]");
       if (existing && existing.getAttribute("data-ahv-section-nav") !== "2") {
         var upgraded = build();

@@ -172,7 +172,10 @@ function buildLocale(loc) {
   {
     const file = "public/design/section-nav.data.js", text = fs.readFileSync(rel(file), "utf8");
     const us = jsUnits(text).units.filter((u) => /(^|\.)label$/.test(u.key || ""));
-    fs.writeFileSync(path.join(designOut, "section-nav.data.js"), localizeUrls(applyUnits(text, us, lookup), loc));
+    // the tree keeps English keys (routes are looked up by data-ahv-route = English path); the family
+    // header and breadcrumb take this locale's hrefs from AHV_LOCAL_PATHS (English path → locale path)
+    const localPaths = Object.fromEntries(Object.entries(ROUTES.routes).map(([en, r]) => [en, r[loc]]).filter(([, p]) => p));
+    fs.writeFileSync(path.join(designOut, "section-nav.data.js"), localizeUrls(applyUnits(text, us, lookup), loc) + "window.AHV_LOCAL_PATHS = " + JSON.stringify(localPaths) + ";\n");
     written++;
   }
   const data = {};

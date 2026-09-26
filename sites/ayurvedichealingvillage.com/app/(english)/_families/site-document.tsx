@@ -104,6 +104,12 @@ export function SiteDocument({
         <link rel="stylesheet" href="/design/section-nav.css" />
         <script defer src={`${designBase}section-nav.data.js`} />
         <script defer src={`${designBase}section-nav.js`} />
+        {/* ONE compact family header (owner, 26 Sep 2026 — EF-04 header takeover + EF-25): on
+            every site-tree family page the family navigation replaces the primary navigation in
+            the same header row; labels via window.__AHV_T, hrefs via AHV_LOCAL_PATHS, so one file
+            serves every locale. */}
+        <link rel="stylesheet" href="/design/family-header.css" />
+        <script defer src="/design/family-header.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />

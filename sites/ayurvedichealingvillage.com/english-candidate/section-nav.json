@@ -1248,6 +1248,54 @@
      "children": []
     }
    ]
+  },
+  "site": {
+   "label": "Policies & site information",
+   "hub": null,
+   "items": [
+    {
+     "path": "/cookie-policy/",
+     "label": "Cookie policy",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/disclaimer/",
+     "label": "Disclaimer",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/legal-notice/",
+     "label": "Legal notice",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/privacy-policy/",
+     "label": "Privacy policy (website)",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/privacy-statement/",
+     "label": "Privacy statement (personal & health data)",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/sitemap/",
+     "label": "Site map",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/terms-and-conditions/",
+     "label": "Terms & conditions",
+     "link": true,
+     "children": []
+    }
+   ]
   }
  },
  "routes": {
@@ -2597,6 +2645,1419 @@
    }
   }
  },
+ "family": {
+  "/about-us/": {
+   "section": "about",
+   "crumbs": [
+    "/about-us/"
+   ]
+  },
+  "/accreditations/": {
+   "section": "about",
+   "crumbs": [
+    "/awards-and-accreditations/",
+    "/accreditations/"
+   ]
+  },
+  "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/",
+    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/"
+   ]
+  },
+  "/alcohol-free/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/alcohol-free/"
+   ]
+  },
+  "/all-programs/": {
+   "section": "programmes",
+   "crumbs": [
+    "/all-programs/"
+   ]
+  },
+  "/ananda-lahari-yoga-and-ayurveda-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/ananda-lahari-yoga-and-ayurveda-retreat/"
+   ]
+  },
+  "/animal-husbandry/": {
+   "section": "facilities",
+   "crumbs": [
+    "/animal-husbandry/"
+   ]
+  },
+  "/apply-now/": {
+   "section": "careers",
+   "crumbs": [
+    "/apply-now/"
+   ]
+  },
+  "/archive-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/"
+   ]
+  },
+  "/archive/": {
+   "section": "news",
+   "crumbs": [
+    "/archive/"
+   ]
+  },
+  "/arogya-kendra/": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/arogya-kendra/"
+   ]
+  },
+  "/arogya-shala/": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/arogya-shala/"
+   ]
+  },
+  "/ashtanga-yoga-and-ayurveda-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/ashtanga-yoga-and-ayurveda-retreat/"
+   ]
+  },
+  "/awards-and-accolades/": {
+   "section": "about",
+   "crumbs": [
+    "/awards-and-accreditations/",
+    "/awards-and-accolades/"
+   ]
+  },
+  "/awards-and-accreditations/": {
+   "section": "about",
+   "crumbs": [
+    "/awards-and-accreditations/"
+   ]
+  },
+  "/ayurveda-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/ayurveda-gallery/"
+   ]
+  },
+  "/ayurveda-retreats-for-everyone/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/",
+    "/ayurveda-retreats-for-everyone/"
+   ]
+  },
+  "/ayurveda-training-programme/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/"
+   ]
+  },
+  "/ayurveda-training/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training/"
+   ]
+  },
+  "/ayurveda-treatment/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/ayurveda/",
+    "/ayurveda-treatment/"
+   ]
+  },
+  "/ayurveda-workshop/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/ayurveda-workshop/"
+   ]
+  },
+  "/ayurveda/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/ayurveda/"
+   ]
+  },
+  "/ayurvedic-classical-medicines/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/ayurvedic-classical-medicines/"
+   ]
+  },
+  "/ayurvedic-cuisine/": {
+   "section": "facilities",
+   "crumbs": [
+    "/ayurvedic-cuisine/"
+   ]
+  },
+  "/ayurvedic-franchise/": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/ayurvedic-franchise/"
+   ]
+  },
+  "/ayurvedic-herbal-tea/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/ayurvedic-herbal-tea/"
+   ]
+  },
+  "/ayurvedic-new-year-yala-2018/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/ayurvedic-new-year-yala-2018/"
+   ]
+  },
+  "/ayurvedic-products/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/ayurvedic-products/"
+   ]
+  },
+  "/ayurvedic-proprietary-medicines/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/ayurvedic-proprietary-medicines/"
+   ]
+  },
+  "/ayurvedic-proprietary-organics/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/ayurvedic-proprietary-organics/"
+   ]
+  },
+  "/ayurvedic-resturant-and-cooking-at-healing-village/": {
+   "section": "facilities",
+   "crumbs": [
+    "/ayurvedic-cuisine/",
+    "/ayurvedic-resturant-and-cooking-at-healing-village/"
+   ]
+  },
+  "/ayurvedic-treatment-packages.html": {
+   "section": "villas",
+   "crumbs": [
+    "/ayurvedic-treatment-packages.html"
+   ]
+  },
+  "/ayurvedic-treatments/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/"
+   ]
+  },
+  "/ayuryoga/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/ayuryoga/"
+   ]
+  },
+  "/back-to-roots/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/back-to-roots/"
+   ]
+  },
+  "/back-water-tour/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/back-water-tour/"
+   ]
+  },
+  "/beauty-care-and-eye-care/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/beauty-care-and-eye-care/"
+   ]
+  },
+  "/book-now/": {
+   "section": "visit",
+   "crumbs": [
+    "/book-now/"
+   ]
+  },
+  "/books/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/books/"
+   ]
+  },
+  "/brief-on-kairali/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/",
+    "/brief-on-kairali/"
+   ]
+  },
+  "/butterfly-booklet/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/butterfly-booklet/"
+   ]
+  },
+  "/cancellation-and-refund-policy/": {
+   "section": "visit",
+   "crumbs": [
+    "/cancellation-and-refund-policy/"
+   ]
+  },
+  "/careers/": {
+   "section": "careers",
+   "crumbs": [
+    "/careers/"
+   ]
+  },
+  "/chef-retreat-food-to-wellness/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/chef-retreat-food-to-wellness/"
+   ]
+  },
+  "/classic-villa/": {
+   "section": "villas",
+   "crumbs": [
+    "/classic-villa/"
+   ]
+  },
+  "/consultancy/": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/consultancy/"
+   ]
+  },
+  "/contact-us/": {
+   "section": "visit",
+   "crumbs": [
+    "/contact-us/"
+   ]
+  },
+  "/cookie-policy/": {
+   "section": "site",
+   "crumbs": [
+    "/cookie-policy/"
+   ]
+  },
+  "/cooking-classes/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/cooking-classes/"
+   ]
+  },
+  "/cultural-events/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/cultural-events/"
+   ]
+  },
+  "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/"
+   ]
+  },
+  "/deluxe-villa/": {
+   "section": "villas",
+   "crumbs": [
+    "/deluxe-villa/"
+   ]
+  },
+  "/destination-palakkad/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/destination-palakkad/"
+   ]
+  },
+  "/digestive-wellness-gut-health-yoga-therapy/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/digestive-wellness-gut-health-yoga-therapy/"
+   ]
+  },
+  "/disclaimer/": {
+   "section": "site",
+   "crumbs": [
+    "/disclaimer/"
+   ]
+  },
+  "/elephant-safari/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/elephant-safari/"
+   ]
+  },
+  "/enquiry-form/": {
+   "section": "visit",
+   "crumbs": [
+    "/enquiry-form/"
+   ]
+  },
+  "/experience/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/"
+   ]
+  },
+  "/faqs-downloads/": {
+   "section": "visit",
+   "crumbs": [
+    "/faqs-downloads/"
+   ]
+  },
+  "/festivals/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/festivals/"
+   ]
+  },
+  "/food-sadhana/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/food-sadhana/"
+   ]
+  },
+  "/gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/gallery/"
+   ]
+  },
+  "/gift-vouchers/": {
+   "section": "offers",
+   "crumbs": [
+    "/gift-vouchers/"
+   ]
+  },
+  "/givefeedback/": {
+   "section": "reviews",
+   "crumbs": [
+    "/givefeedback/"
+   ]
+  },
+  "/holistic-treatment-for-rejuvenation-and-detoxification/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/holistic-treatment-for-rejuvenation-and-detoxification/"
+   ]
+  },
+  "/house-boat-tour/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/house-boat-tour/"
+   ]
+  },
+  "/how-to-reach/": {
+   "section": "visit",
+   "crumbs": [
+    "/how-to-reach/"
+   ]
+  },
+  "/immunity-enhancement-executive-health-assessment-therapy/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/immunity-enhancement-executive-health-assessment-therapy/"
+   ]
+  },
+  "/in-house-products/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/in-house-products/"
+   ]
+  },
+  "/intensive-ayurveda-training-program-learn-practice-ayurveda/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/",
+    "/intensive-ayurveda-training-program-learn-practice-ayurveda/"
+   ]
+  },
+  "/internships-at-kairali/": {
+   "section": "careers",
+   "crumbs": [
+    "/internships-at-kairali/"
+   ]
+  },
+  "/jobs/business-development-manager/": {
+   "section": "careers",
+   "crumbs": [
+    "/jobs/business-development-manager/"
+   ]
+  },
+  "/kair-by-kairali/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/kair-by-kairali/"
+   ]
+  },
+  "/kairali-air-india-maharaja-club.html": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/kairali-air-india-maharaja-club.html"
+   ]
+  },
+  "/kairali-ayurvedic-centre/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/",
+    "/kairali-ayurvedic-centre/"
+   ]
+  },
+  "/kairali-ayurvedic-equipment/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/",
+    "/kairali-ayurvedic-equipment/"
+   ]
+  },
+  "/kairali-ayurvedic-group/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/"
+   ]
+  },
+  "/kairali-ayurvedic-products-pvt-ltd/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/"
+   ]
+  },
+  "/kairali-ayurvedic-treatment-center/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/",
+    "/kairali-ayurvedic-treatment-center/"
+   ]
+  },
+  "/kairali-ayurvedic-way-of-weight-management/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/kairali-ayurvedic-way-of-weight-management/"
+   ]
+  },
+  "/kairali-hospitality/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/",
+    "/kairali-hospitality/"
+   ]
+  },
+  "/kairali-institute-of-ayurveda-and-panchakarma-therapy/": {
+   "section": "training",
+   "crumbs": [
+    "/kairali-institute-of-ayurveda-and-panchakarma-therapy/"
+   ]
+  },
+  "/kairali-the-ayurvedic-healing-village/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-the-ayurvedic-healing-village/"
+   ]
+  },
+  "/karkidaka-chikitsha-or-monsoon-wellness.html": {
+   "section": "programmes",
+   "crumbs": [
+    "/karkidaka-chikitsha-or-monsoon-wellness.html"
+   ]
+  },
+  "/karma-being-retreat-2019/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/karma-being-retreat-2019/"
+   ]
+  },
+  "/karma-being-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/karma-being-retreat/"
+   ]
+  },
+  "/katha-wellness-retreat-2019/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/katha-wellness-retreat-2019/"
+   ]
+  },
+  "/knowledge-centre/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/knowledge-centre/"
+   ]
+  },
+  "/lakshya-yoga-retreat-2017/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/lakshya-yoga-retreat-2017/"
+   ]
+  },
+  "/lakshya-yoga-retreat-2018/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/lakshya-yoga-retreat-2018/"
+   ]
+  },
+  "/lakshya-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/lakshya-yoga-retreat/"
+   ]
+  },
+  "/lakshya-yoga/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/lakshya-yoga/"
+   ]
+  },
+  "/learn-about-ayurveda/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/",
+    "/learn-about-ayurveda/"
+   ]
+  },
+  "/learn-more-about-yoga/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/",
+    "/learn-more-about-yoga/"
+   ]
+  },
+  "/legal-notice/": {
+   "section": "site",
+   "crumbs": [
+    "/legal-notice/"
+   ]
+  },
+  "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/",
+    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/"
+   ]
+  },
+  "/live-to-100-with-panchkarma/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/",
+    "/live-to-100-with-panchkarma/"
+   ]
+  },
+  "/maharaja-suite/": {
+   "section": "villas",
+   "crumbs": [
+    "/maharaja-suite/"
+   ]
+  },
+  "/meditation/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/meditation/"
+   ]
+  },
+  "/mindfulness-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/mindfulness-retreat/"
+   ]
+  },
+  "/mountain-jeep-safari/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/mountain-jeep-safari/"
+   ]
+  },
+  "/nature-walk/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/nature-walk/"
+   ]
+  },
+  "/new-to-ayurveda/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/"
+   ]
+  },
+  "/new-to-yoga-teacher-training/": {
+   "section": "training",
+   "crumbs": [
+    "/new-to-yoga-teacher-training/"
+   ]
+  },
+  "/new-to-yoga/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/"
+   ]
+  },
+  "/no-caffeine/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/no-caffeine/"
+   ]
+  },
+  "/no-preservatives/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/no-preservatives/"
+   ]
+  },
+  "/no-refridgeration/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/no-refridgeration/"
+   ]
+  },
+  "/no-smoking/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/no-smoking/"
+   ]
+  },
+  "/offers/": {
+   "section": "offers",
+   "crumbs": [
+    "/offers/"
+   ]
+  },
+  "/offers/defence-paramilitary-personnel-get-upto-30-off/": {
+   "section": "offers",
+   "crumbs": [
+    "/offers/defence-paramilitary-personnel-get-upto-30-off/"
+   ]
+  },
+  "/offers/olympics-and-paralympics-offer/": {
+   "section": "offers",
+   "crumbs": [
+    "/offers/olympics-and-paralympics-offer/"
+   ]
+  },
+  "/offers/senior-citizen-offer/": {
+   "section": "offers",
+   "crumbs": [
+    "/offers/senior-citizen-offer/"
+   ]
+  },
+  "/one-day-ayurveda-workshop-program-kerala/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/",
+    "/one-day-ayurveda-workshop-program-kerala/"
+   ]
+  },
+  "/online-consultation/": {
+   "section": "visit",
+   "crumbs": [
+    "/online-consultation/"
+   ]
+  },
+  "/organic-farm/": {
+   "section": "facilities",
+   "crumbs": [
+    "/organic-farm/"
+   ]
+  },
+  "/our-accolades/": {
+   "section": "about",
+   "crumbs": [
+    "/awards-and-accreditations/",
+    "/our-accolades/"
+   ]
+  },
+  "/our-partners/": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/"
+   ]
+  },
+  "/our-villas/": {
+   "section": "villas",
+   "crumbs": [
+    "/our-villas/"
+   ]
+  },
+  "/packages/": {
+   "section": "programmes",
+   "crumbs": [
+    "/packages/"
+   ]
+  },
+  "/panchakarma-therapy/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/panchakarma-therapy/"
+   ]
+  },
+  "/payment-policy-compliance/": {
+   "section": "visit",
+   "crumbs": [
+    "/payment-policy-compliance/"
+   ]
+  },
+  "/personalized-customized-healing-program/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/personalized-customized-healing-program/"
+   ]
+  },
+  "/photo-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/"
+   ]
+  },
+  "/post-pregnancy-health-programme/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/post-pregnancy-health-programme/"
+   ]
+  },
+  "/prav-simona-monsoon-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/prav-simona-monsoon-yoga-retreat/"
+   ]
+  },
+  "/prav-simona-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/archive-yoga-retreat/",
+    "/prav-simona-yoga-retreat/"
+   ]
+  },
+  "/preventive-and-regenerative-treatment/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/preventive-and-regenerative-treatment/"
+   ]
+  },
+  "/privacy-policy/": {
+   "section": "site",
+   "crumbs": [
+    "/privacy-policy/"
+   ]
+  },
+  "/privacy-statement/": {
+   "section": "site",
+   "crumbs": [
+    "/privacy-statement/"
+   ]
+  },
+  "/product-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/product-gallery/"
+   ]
+  },
+  "/product-range/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-products-pvt-ltd/",
+    "/product-range/"
+   ]
+  },
+  "/property-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/",
+    "/property-gallery/"
+   ]
+  },
+  "/read-feedback/": {
+   "section": "reviews",
+   "crumbs": [
+    "/read-feedback/"
+   ]
+  },
+  "/retreats-for-everyone/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/",
+    "/retreats-for-everyone/"
+   ]
+  },
+  "/retreats-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/retreats-gallery/"
+   ]
+  },
+  "/revitalizing-and-strengthening/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/revitalizing-and-strengthening/"
+   ]
+  },
+  "/royal-villa/": {
+   "section": "villas",
+   "crumbs": [
+    "/royal-villa/"
+   ]
+  },
+  "/sight-seeing-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/",
+    "/sight-seeing-gallery/"
+   ]
+  },
+  "/sightseeing/": {
+   "section": "things",
+   "crumbs": [
+    "/sightseeing/"
+   ]
+  },
+  "/sitemap/": {
+   "section": "site",
+   "crumbs": [
+    "/sitemap/"
+   ]
+  },
+  "/sleep-restoration-therapy/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/sleep-restoration-therapy/"
+   ]
+  },
+  "/social-cultural-environmental-commitment/": {
+   "section": "about",
+   "crumbs": [
+    "/social-responsibilities/",
+    "/social-cultural-environmental-commitment/"
+   ]
+  },
+  "/social-responsibilities/": {
+   "section": "about",
+   "crumbs": [
+    "/social-responsibilities/"
+   ]
+  },
+  "/terms-and-conditions/": {
+   "section": "site",
+   "crumbs": [
+    "/terms-and-conditions/"
+   ]
+  },
+  "/things-to-do-in-kerala/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/"
+   ]
+  },
+  "/things-to-do-in-property/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/"
+   ]
+  },
+  "/things-to-do/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do/"
+   ]
+  },
+  "/three-day-short-term-ayurveda-certificate-program-tap-hv/": {
+   "section": "training",
+   "crumbs": [
+    "/ayurveda-training-programme/",
+    "/three-day-short-term-ayurveda-certificate-program-tap-hv/"
+   ]
+  },
+  "/training-course-fees/": {
+   "section": "training",
+   "crumbs": [
+    "/training-course-fees/"
+   ]
+  },
+  "/training-programs/": {
+   "section": "training",
+   "crumbs": [
+    "/training-programs/"
+   ]
+  },
+  "/training/": {
+   "section": "training",
+   "crumbs": [
+    "/training/"
+   ]
+  },
+  "/treatment-for-arthritis-and-spondylitis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-arthritis-and-spondylitis/"
+   ]
+  },
+  "/treatment-for-bronchial-diseases/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-bronchial-diseases/"
+   ]
+  },
+  "/treatment-for-cervical-spondylosis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-cervical-spondylosis/"
+   ]
+  },
+  "/treatment-for-chronic-back-pain/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-chronic-back-pain/"
+   ]
+  },
+  "/treatment-for-diabetes/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-diabetes/"
+   ]
+  },
+  "/treatment-for-facial-paralysis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-facial-paralysis/"
+   ]
+  },
+  "/treatment-for-hypertension/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-hypertension/"
+   ]
+  },
+  "/treatment-for-nervous-disability/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-nervous-disability/"
+   ]
+  },
+  "/treatment-for-paralysis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-paralysis/"
+   ]
+  },
+  "/treatment-for-psoriasis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-psoriasis/"
+   ]
+  },
+  "/treatment-for-sinusitis-and-migraine/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-sinusitis-and-migraine/"
+   ]
+  },
+  "/treatment-for-skin-diseases/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-skin-diseases/"
+   ]
+  },
+  "/treatment-for-slip-disc/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-slip-disc/"
+   ]
+  },
+  "/treatment-for-spondylitis/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-for-spondylitis/"
+   ]
+  },
+  "/treatment-programs/": {
+   "section": "programmes",
+   "crumbs": [
+    "/treatment-programs/"
+   ]
+  },
+  "/treatment-to-remove-stress-and-strain/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/treatment-to-remove-stress-and-strain/"
+   ]
+  },
+  "/treatments-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/",
+    "/treatments-gallery/"
+   ]
+  },
+  "/vegetarian/": {
+   "section": "facilities",
+   "crumbs": [
+    "/experience/",
+    "/vegetarian/"
+   ]
+  },
+  "/video-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/video-gallery/"
+   ]
+  },
+  "/villa-raag/": {
+   "section": "about",
+   "crumbs": [
+    "/kairali-ayurvedic-group/",
+    "/villa-raag/"
+   ]
+  },
+  "/village-facilities/": {
+   "section": "facilities",
+   "crumbs": [
+    "/village-facilities/"
+   ]
+  },
+  "/villas-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/",
+    "/villas-gallery/"
+   ]
+  },
+  "/virtual-tour/": {
+   "section": "gallery",
+   "crumbs": [
+    "/virtual-tour/"
+   ]
+  },
+  "/vision-and-mission/": {
+   "section": "about",
+   "crumbs": [
+    "/vision-and-mission/"
+   ]
+  },
+  "/visit-kerala/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/visit-kerala/"
+   ]
+  },
+  "/walk-in-ayurveda-treatment/": {
+   "section": "visit",
+   "crumbs": [
+    "/walk-in-ayurveda-treatment/"
+   ]
+  },
+  "/weight-loss-programme/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/weight-loss-programme/"
+   ]
+  },
+  "/wellness-programs/": {
+   "section": "programmes",
+   "crumbs": [
+    "/wellness-programs/"
+   ]
+  },
+  "/what-is-ayurvedic-food/": {
+   "section": "facilities",
+   "crumbs": [
+    "/ayurvedic-cuisine/",
+    "/what-is-ayurvedic-food/"
+   ]
+  },
+  "/what-is-panchkarma/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/",
+    "/what-is-panchkarma/"
+   ]
+  },
+  "/what-is-yoga/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/",
+    "/what-is-yoga/"
+   ]
+  },
+  "/why-get-training-in-ayurveda/": {
+   "section": "training",
+   "crumbs": [
+    "/why-get-training-in-ayurveda/"
+   ]
+  },
+  "/why-get-training-in-yoga/": {
+   "section": "training",
+   "crumbs": [
+    "/why-get-training-in-yoga/"
+   ]
+  },
+  "/why-pick-a-yoga-or-yoga-retreat/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/",
+    "/why-pick-a-yoga-or-yoga-retreat/"
+   ]
+  },
+  "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-ayurveda/",
+    "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/"
+   ]
+  },
+  "/wildlife-drive/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-kerala/",
+    "/wildlife-drive/"
+   ]
+  },
+  "/womens-hormonal-balance-endocrine-therapy/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/womens-hormonal-balance-endocrine-therapy/"
+   ]
+  },
+  "/yoga-and-meditation-package/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/",
+    "/yoga-and-meditation-package/"
+   ]
+  },
+  "/yoga-based-stress-energy-reset-program/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurvedic-treatments/",
+    "/yoga-based-stress-energy-reset-program/"
+   ]
+  },
+  "/yoga-classes-practical/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/yoga-classes-practical/"
+   ]
+  },
+  "/yoga-classes-theory/": {
+   "section": "things",
+   "crumbs": [
+    "/things-to-do-in-property/",
+    "/yoga-classes-theory/"
+   ]
+  },
+  "/yoga-gallery/": {
+   "section": "gallery",
+   "crumbs": [
+    "/photo-gallery/",
+    "/yoga-gallery/"
+   ]
+  },
+  "/yoga-meditation-program/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/",
+    "/yoga-meditation-program/"
+   ]
+  },
+  "/yoga-meditation-programs/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/"
+   ]
+  },
+  "/yoga-meditation-training/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/",
+    "/yoga-meditation-training/"
+   ]
+  },
+  "/yoga-retreats-for-everyone/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/new-to-yoga/",
+    "/yoga-retreats-for-everyone/"
+   ]
+  },
+  "/yoga-retreats/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/",
+    "/yoga-retreats/"
+   ]
+  },
+  "/yoga-therapy-individual/": {
+   "section": "programmes",
+   "crumbs": [
+    "/yoga-meditation-programs/",
+    "/yoga-therapy-individual/"
+   ]
+  },
+  "/attractions-15kms-and-below/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-15kms-and-below/"
+   ]
+  },
+  "/attractions-25kms-to-50kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-25kms-to-50kms/"
+   ]
+  },
+  "/attractions-above-50kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-above-50kms/"
+   ]
+  },
+  "/attractions-under-10kms/": {
+   "section": "things",
+   "crumbs": [
+    "/attractions-under-10kms/"
+   ]
+  },
+  "/ayurveda-offers/": {
+   "section": "offers",
+   "crumbs": [
+    "/ayurveda-offers/"
+   ]
+  },
+  "/ayurveda-package/": {
+   "section": "programmes",
+   "crumbs": [
+    "/ayurveda-package/"
+   ]
+  },
+  "/ayurvedic-links/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/ayurvedic-links/"
+   ]
+  },
+  "/defence-and-paramilitary-forces/": {
+   "section": "offers",
+   "crumbs": [
+    "/defence-and-paramilitary-forces/"
+   ]
+  },
+  "/learn-more-about-ayurveda/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/learn-more-about-ayurveda/"
+   ]
+  },
+  "/map/": {
+   "section": "visit",
+   "crumbs": [
+    "/map/"
+   ]
+  },
+  "/special-offers/": {
+   "section": "offers",
+   "crumbs": [
+    "/special-offers/"
+   ]
+  },
+  "/the-baoli-advert-box-deal/": {
+   "section": "offers",
+   "crumbs": [
+    "/the-baoli-advert-box-deal/"
+   ]
+  },
+  "/the-baoli-special-deal/": {
+   "section": "offers",
+   "crumbs": [
+    "/the-baoli-special-deal/"
+   ]
+  },
+  "/yoga-and-ayurveda/": {
+   "section": "news",
+   "crumbs": [
+    "/yoga-and-ayurveda/"
+   ]
+  }
+ },
  "skipped": [
   "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
   "/all-programs/",
@@ -2616,9 +4077,11 @@
   "/cancellation-and-refund-policy/",
   "/classic-villa/",
   "/contact-us/",
+  "/cookie-policy/",
   "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
   "/deluxe-villa/",
   "/digestive-wellness-gut-health-yoga-therapy/",
+  "/disclaimer/",
   "/enquiry-form/",
   "/faqs-downloads/",
   "/holistic-treatment-for-rejuvenation-and-detoxification/",
@@ -2629,6 +4092,7 @@
   "/kairali-air-india-maharaja-club.html",
   "/karma-being-retreat-2019/",
   "/lakshya-yoga/",
+  "/legal-notice/",
   "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
   "/maharaja-suite/",
   "/mindfulness-retreat/",
@@ -2645,13 +4109,17 @@
   "/photo-gallery/",
   "/post-pregnancy-health-programme/",
   "/preventive-and-regenerative-treatment/",
+  "/privacy-policy/",
+  "/privacy-statement/",
   "/product-gallery/",
   "/property-gallery/",
   "/retreats-gallery/",
   "/revitalizing-and-strengthening/",
   "/royal-villa/",
   "/sight-seeing-gallery/",
+  "/sitemap/",
   "/sleep-restoration-therapy/",
+  "/terms-and-conditions/",
   "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
   "/training-course-fees/",
   "/training-programs/",

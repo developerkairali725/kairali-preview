@@ -1,0 +1,78 @@
+/* AHV — ONE compact family header (family-header.js; owner decision 26 Sep 2026, EF-04 + EF-25).
+   Everything here is scoped to html[data-ahv-fh] (a family page) or to the header's own controls.
+   Logical properties throughout so Arabic (dir=rtl) mirrors without extra rules. */
+
+/* the family control replaces — never stacks with — the primary navigation */
+html[data-ahv-fh] header nav[data-ahv-fh-primary] { display:none !important; }
+html[data-ahv-fh] header button[data-ahv-fh-hamburger] { display:none !important; }
+/* the old left rail / in-content "In this section" block is now in the header panel */
+html[data-ahv-fh] nav[data-ahv-section-nav] { display:none !important; }
+/* no bottom Call / Enquire / Free-consult bar on family pages */
+html[data-ahv-fh] [data-ahv-cta-bar] { display:none !important; }
+
+.ahv-fh-btn { font-family:Mulish, system-ui, sans-serif; cursor:pointer; color:#2A2118; }
+.ahv-fh-btn:focus-visible, .ahv-fh-panel a:focus-visible, .ahv-fh-panel button:focus-visible,
+.ahv-fh-filterbar button:focus-visible { outline:3px solid #C1882C; outline-offset:2px; }
+
+.ahv-fh-btn-desk {
+  display:inline-flex; align-items:center; gap:10px; min-height:44px; max-width:min(440px, 38vw);
+  padding:6px 14px; margin-inline:24px auto; box-sizing:border-box;
+  border:1px solid #C9BFA8; border-radius:4px; background:#fff;
+}
+.ahv-fh-btn-desk:hover { border-color:#5A4420; }
+.ahv-fh-btn-desk .ahv-fh-kicker { flex:none; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:#8F6212; }
+.ahv-fh-btn-desk .ahv-fh-name { min-width:0; font-family:Marcellus, serif; font-size:17px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ahv-fh-chev { flex:none; width:7px; height:7px; margin-inline-start:2px; border-inline-end:2px solid #5A4420; border-bottom:2px solid #5A4420; transform:rotate(45deg) translateY(-2px); }
+.ahv-fh-btn[aria-expanded="true"] .ahv-fh-chev { transform:rotate(225deg) translateY(-1px); }
+@media (max-width:1180px) { .ahv-fh-btn-desk .ahv-fh-kicker { display:none; } }
+
+.ahv-fh-btn-phone {
+  width:44px; height:44px; flex:none; display:inline-flex; flex-direction:column; gap:5px;
+  align-items:center; justify-content:center; background:none; border:0; padding:0;
+}
+.ahv-fh-btn-phone span { display:block; width:22px; height:2px; border-radius:1px; background:#2A2118; }
+.ahv-fh-btn-phone span:last-child { width:14px; background:#C1882C; align-self:center; }
+
+/* the panel: family tree + main menu, below the one header row */
+.ahv-fh-panel {
+  position:fixed; inset-inline:0; z-index:95; overflow:auto; overscroll-behavior:contain;
+  background:#F7F4EA; border-top:1px solid #E9E2D3; box-shadow:0 18px 40px rgba(42,33,24,.18);
+}
+.ahv-fh-panel[hidden] { display:none; }
+.ahv-fh-panel-in { width:min(1220px, 94%); margin:0 auto; padding:16px 0 28px; box-sizing:border-box; }
+.ahv-fh-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:8px; }
+.ahv-fh-kicker { display:block; font-size:11.5px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:#8F6212; }
+.ahv-fh-title { display:block; margin-top:4px; font-family:Marcellus, serif; font-size:24px; line-height:1.2; color:#2A2118; }
+.ahv-fh-close { flex:none; width:44px; height:44px; border:1px solid #C9BFA8; border-radius:4px; background:#fff; color:#2A2118; font-size:16px; cursor:pointer; }
+.ahv-fh-cols { display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); gap:32px; }
+@media (max-width:760px) { .ahv-fh-cols { grid-template-columns:minmax(0, 1fr); gap:18px; } .ahv-fh-title { font-size:21px; } }
+.ahv-fh-list { list-style:none; margin:0; padding:0; }
+.ahv-fh-list li { margin:0; padding:0; }
+.ahv-fh-row { display:flex; align-items:center; gap:8px; border-bottom:1px solid #E9E2D3; }
+.ahv-fh-row a, .ahv-fh-plain, .ahv-fh-hub, .ahv-fh-here, .ahv-fh-main .ahv-fh-list a {
+  flex:1; display:flex; align-items:center; min-height:44px; padding-block:6px; box-sizing:border-box;
+  color:#2A2118; text-decoration:none; font-size:16px; line-height:1.35;
+}
+.ahv-fh-plain { color:#75695A; font-weight:700; font-size:14px; letter-spacing:.4px; }
+.ahv-fh-hub { font-weight:700; color:#006038; border-bottom:1px solid #E9E2D3; }
+.ahv-fh-main .ahv-fh-list a { border-bottom:1px solid #E9E2D3; }
+.ahv-fh-main .ahv-fh-kicker { margin-bottom:4px; }
+.ahv-fh-panel a:hover { color:#006038; }
+.ahv-fh-panel a[aria-current="page"] { color:#006038; font-weight:700; border-inline-start:3px solid #C1882C; padding-inline-start:10px; }
+.ahv-fh-toggle { flex:none; width:44px; height:44px; border:0; background:none; color:#5A4420; font-size:20px; cursor:pointer; }
+.ahv-fh-kids { padding-inline-start:16px; }
+.ahv-fh-kids[hidden] { display:none; }
+html[data-ahv-fh-open] { scroll-padding-top:0; }
+
+/* programme finder: filters are user-expanded, not a sticky multi-row bar */
+html[data-ahv-fh] nav[data-ahv-fh-finder] { position:static !important; top:auto !important; }
+html[data-ahv-fh] nav[data-ahv-fh-finder]:not([data-ahv-fh-open]) [role="group"] { display:none !important; }
+.ahv-fh-filterbar { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; width:min(1220px, 94%); margin:10px auto 4px; box-sizing:border-box; }
+.ahv-fh-filters { min-height:44px; padding:0 18px; border:1px solid #5A4420; border-radius:4px; background:#fff; color:#2A2118; font-family:Mulish, system-ui, sans-serif; font-weight:700; font-size:15px; cursor:pointer; }
+.ahv-fh-filters[aria-expanded="true"] { background:#5A4420; color:#F7F4EA; }
+.ahv-fh-clear { min-height:44px; padding:0; border:0; border-bottom:2px solid #C1882C; background:none; color:#006038; font-family:Mulish, system-ui, sans-serif; font-size:15px; cursor:pointer; }
+.ahv-fh-clear[hidden] { display:none; }
+
+/* in-page anchors land below the ONE sticky header row (no second pinned bar on family pages) */
+html[data-ahv-fh] #ahv-design-root [id] { scroll-margin-top:84px; }
+html[data-ahv-fh] #ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }

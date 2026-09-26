@@ -176,8 +176,20 @@
       priyaWidget();
       syncChatState();
       externalLinks();
+      liftContacts();
     } catch (e) { /* never break the page */ }
   }
+  // EF-25 (owner, 26 Sep 2026): while the cookie notice is on screen the WhatsApp / chat controls
+  // sit above it instead of covering its buttons (seen at 390px over "Accept All"). Presentation
+  // only — the notice, its choices, storage and signals are untouched.
+  function liftContacts() {
+    var c = document.getElementById('ahv-contact-controls');
+    if (!c) return;
+    var n = document.getElementById('ahv-consent'), off = 0;
+    if (n) { var r = n.getBoundingClientRect(); if (r.height > 0 && r.top < window.innerHeight) off = Math.max(0, Math.round(window.innerHeight - r.top + 12)); }
+    if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom');
+  }
+  window.addEventListener('resize', liftContacts);
   function schedule() {
     if (scheduled) return;
     scheduled = true;
@@ -201,6 +213,9 @@
   }
   function update() {
     queued = false;
+    // Superseded on family pages (owner, 26 Sep 2026 — HEADER-TAKEOVER-OWNER-DECISION.md): the ONE
+    // compact family header (family-header.js) stays; the in-page bar is never pinned over it.
+    if (document.documentElement.hasAttribute('data-ahv-fh')) { if (active || nav) reset(); root.removeAttribute('data-ahv-secondary-page'); return; }
     var next = root.querySelector('nav[aria-label="On this page"]');
     if (next !== nav || (marker && !marker.isConnected)) {
       reset(); nav = next;
