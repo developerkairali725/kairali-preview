@@ -200,6 +200,29 @@
         el = el.parentElement; hops++;
       }
     }
+    // EF-25 coverage run: the other pinned bars the templates carry — the training pages' fixed
+    // "Courses / Enquire" strip, the packages page's scroll-in "phone + Enquire now" top bar, the
+    // FAQ filter and the directions page's WhatsApp/transfer-call strip. Fixed ones are hidden (the
+    // family panel and the page body carry the same destinations); sticky ones stay, unpinned,
+    // where they sit in the page. The header row, the cookie notice and the contact controls are
+    // never touched.
+    var pinned = document.querySelectorAll('#ahv-design-root [style*="position: fixed"], #ahv-design-root [style*="position:fixed"], #ahv-design-root [style*="position: sticky"], #ahv-design-root [style*="position:sticky"]');
+    for (var k = 0; k < pinned.length; k++) {
+      var p = pinned[k], s = p.getAttribute("style") || "";
+      if (p.hasAttribute("data-ahv-cta-bar") || p.hasAttribute("data-ahv-fh-unstick") || p.hasAttribute("data-ahv-fh-sticky")) continue;
+      if (p.closest("header, [data-ahv-fh-sticky], .ahv-fh-panel, #ahv-consent, #ahv-contact-controls") || p.querySelector("header, [data-ahv-fh-btn]")) continue;
+      if (!p.querySelector("a[href], button")) continue;
+      var r = p.getBoundingClientRect();
+      if (/position:\s*sticky/.test(s)) {
+        // a pinned ROW (or anything pinned under the header's height) — a narrow sticky side column
+        // with its own offset below the header is left alone
+        var t = /top:\s*(-?\d+)/.exec(s);
+        if (r.width >= innerWidth * 0.6 || (t && +t[1] < 80)) p.setAttribute("data-ahv-fh-unstick", "");
+        continue;
+      }
+      if (r.width < innerWidth * 0.9 || r.height > 140) continue;
+      if (/bottom:\s*0/.test(s) || /top:\s*0/.test(s)) p.setAttribute("data-ahv-cta-bar", "");
+    }
   }
 
   // ---- programme finder: filters behind a user-controlled toggle, not a sticky multi-row bar

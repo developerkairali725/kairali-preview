@@ -86,3 +86,4 @@ html[data-ahv-fh] [data-ahv-fh-sticky] { position:sticky !important; top:0 !impo
 html[data-ahv-fh] [data-ahv-fh-clip] { overflow:clip !important; }
 /* in-content section bars (e.g. the programme pages' "On this page") never pin under the one header */
 html[data-ahv-fh] main nav[style*="sticky"], html[data-ahv-fh] #ahv-design-root nav[style*="position: sticky"] { position:static !important; }
+html[data-ahv-fh] [data-ahv-fh-unstick] { position:static !important; }

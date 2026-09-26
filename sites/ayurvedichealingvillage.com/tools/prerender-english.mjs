@@ -152,6 +152,15 @@ const EXTRACT = () => {
   const notice = clone.querySelector("#ahv-consent");
   if (notice) notice.remove();
 
+  // The family header (family-header.js, 26 Sep 2026) inserts its own controls into the
+  // design's header at runtime. A snapshot carrying them would ship inert copies (the finder's
+  // filter bar binds its listener only on creation), so the snapshot keeps the design's own
+  // header and the script re-applies itself to whatever is on screen.
+  clone.querySelectorAll("[data-ahv-fh-btn], .ahv-fh-filterbar, #ahv-fh-panel").forEach((n) => n.remove());
+  for (const n of clone.querySelectorAll("*")) {
+    for (const a of [...n.attributes]) if (a.name.startsWith("data-ahv-fh")) n.removeAttribute(a.name);
+  }
+
   // STRIP EVERY SCRIPT. Scripts inserted through innerHTML never execute, so
   // they are dead weight to a crawler -- but they are NOT harmless. The design
   // root contains the runtime's own <script type="text/x-dc" data-dc-script>,
