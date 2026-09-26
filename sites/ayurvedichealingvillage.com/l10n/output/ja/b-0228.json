@@ -1,0 +1,175 @@
+{
+ "batchId": "b-0228",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_05c147858b6b7c43d95d",
+   "sourceHash": "05c147858b6b7c43d95db684373e17df3f1edb94b016d16864770208988dc691",
+   "text": "'Marcellus',serif",
+   "status": "translated",
+   "unchangedReason": "CSS font-family value; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_3e6d4b43d473c69d919c",
+   "sourceHash": "3e6d4b43d473c69d919c7550b0468718a2e66daf934e0428b401e230c5d34d85",
+   "text": "decimal",
+   "status": "translated",
+   "unchangedReason": "CSS list-style value; language-neutral code identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_6bf99799d0ef91be6c25",
+   "sourceHash": "6bf99799d0ef91be6c25a22943f74caaf655814b216ee8cb52ef61223d4f2d06",
+   "text": "disc",
+   "status": "translated",
+   "unchangedReason": "CSS list-style value; language-neutral code identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_7959e211131a4fb5c431",
+   "sourceHash": "7959e211131a4fb5c4318d0d3053e4d7f9bbdca7b8000f6d66596e413741aa8d",
+   "text": "-li",
+   "status": "translated",
+   "unchangedReason": "Code suffix concatenated into an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_cf25df0bf41c0a03d568",
+   "sourceHash": "cf25df0bf41c0a03d5684ca8fcdbb21860f56658a0618b509f99574ddd5f8be9",
+   "text": "Ananda Lahari Retreat　Ananda – 幸福　Lahari – 波",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Programme proper name 'Ananda Lahari Retreat' kept verbatim (proper-name exception); only the glosses were translated."
+   ]
+  },
+  {
+   "id": "t_a3e6e47b1a8d4e8b540d",
+   "sourceHash": "a3e6e47b1a8d4e8b540d3570905c4c40838ee419b9df65f859ee0602a04a8274",
+   "text": "私たちは日々の生活の中で、家族、仕事、人間関係、その他の責任に関わるさまざまな状況に向き合い、対処しています。このプログラムは、人生とその中で起こる出来事に、喜びとゆとりをもって向き合えるよう準備することを目指しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'This retreat' rendered as 'このプログラム' (programme) to avoid resort/retreat framing."
+   ]
+  },
+  {
+   "id": "t_fa7e7eee1e00978e07bc",
+   "sourceHash": "fa7e7eee1e00978e07bcc29442840b21658c658ed86f6cdefb8155df55b5ed76",
+   "text": "アーユルヴェーダとヨーガの教えや知見を活用することで、心と体の調和とバランス、そして周囲の人々や環境との調和を目指すことができます。これらの由緒ある伝統は、現代の暮らしをより良くするための方法を示し、存在を見つめ、人生を最大限に生きるための枠組みを与えてくれます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'you will achieve harmony' softened to '目指すことができます' (can aim for) to avoid a guaranteed outcome claim."
+   ]
+  },
+  {
+   "id": "t_b1489a8e7fde23434e2f",
+   "sourceHash": "b1489a8e7fde23434e2f1b94b5a903e6b07e956ac25387736d56fcc96ceaa5d4",
+   "text": "Ananda Lahari Retreat は、インドで本物の心躍るスピリチュアルな探求に踏み出す機会を提供し、愛と光と喜びに満ちた世界を育みます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0fed445750044706f06",
+   "sourceHash": "a0fed445750044706f069c57dcc7ccd4f9904cdbf121074c4efe04ab6daafd1a",
+   "text": "Ananda Lahari Retreat とは？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51de45bad7e9969f4198",
+   "sourceHash": "51de45bad7e9969f4198b6ef05fbbe2a9f740b49947e1c4d3d1b4688901486fa",
+   "text": "Ananda Lahari Retreat は、癒やし、自己探求、そして心と体の変容を通じて健康へと向かう道のりを提供します。より深い練習を求め、深い健康とウェルネス、そして本来の自分とのつながりを見いだしたい、あらゆるレベルのヨーガ実践者や指導者に適しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as '道のり' (path)."
+   ]
+  },
+  {
+   "id": "t_5da85a74d4f104bf2cc7",
+   "sourceHash": "5da85a74d4f104bf2cc7f69af388e418bfc9d3a14a3a65520c18eb2c0311c491",
+   "text": "私たちの本格的な集中プログラムは、ケーララ州の美しい Kairali – The Ayurvedic Healing Village で7日間にわたって行われます。1週間を通じて、ヨーガ的な暮らしを全面的に体験していただきます。日の出の瞑想とアーサナの練習、ヴェーダーンタや哲学についての対話、ヨーガ・ニドラの実践、サンスクリット語やタントラの儀式の探求に加え、アーユルヴェーダの食事に従い、毎日のマッサージや施術を受けながら、ヨーガ的なライフスタイルを生活にしっかりと取り入れていきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc416ae363d23b2649de",
+   "sourceHash": "cc416ae363d23b2649deb0f894b64d0343a200dd2d946903962464cd1ee9c465",
+   "text": "この個人的な道のりを通じて、古くからの知恵と伝統を深く学び、それを日々の生活に取り入れていくことができます。心と体と精神の将来の健康にとって、最も大きな影響をもたらし得る体験の一つとなるでしょう。健康と幸福を高めるとともに、自己への気づきや宇宙への理解を深め、生涯にわたるつながりや友情を築き、数多くの忘れがたい思い出をつくることができます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as '道のり' (path); source hedge 'probably' kept as 'もたらし得る…でしょう'."
+   ]
+  },
+  {
+   "id": "t_86c6ad491d219a4eae64",
+   "sourceHash": "86c6ad491d219a4eae64a755c9185edb5a5d32f6582290461599d7cf21f78543",
+   "text": "このプログラムでどこへ行くのですか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 'このプログラム' (programme) to avoid the banned 'journey' framing."
+   ]
+  },
+  {
+   "id": "t_c822702e84e7fe652aa4",
+   "sourceHash": "c822702e84e7fe652aa4ce061db3095df494c254a58952a035939033a3d0f058",
+   "text": "コテージ、庭のベンチ、花のアレンジメントのコラージュ。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_904841997ec76d4e6c31",
+   "sourceHash": "904841997ec76d4e6c311974eb177d0685aff7b534b5c7f5eda3358c95ff8f2b",
+   "text": "Kairali – The Ayurvedic Healing Village は、National Geographic Traveller により世界のウェルネス・デスティネーション トップ50に選ばれました。当施設はパラッカドにあり、ケーララ州とタミル・ナードゥ州を結ぶ世界最大の山間の峠からわずか数キロメートルの場所に位置しています。受賞歴のあるこの療養施設は、600本のココヤシが茂る緑豊かな景観の中にあります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'award-winning spa and retreat facility' rendered as '受賞歴のあるこの療養施設' (treatment facility) to avoid spa/resort framing; 'village' rendered as '当施設'."
+   ]
+  },
+  {
+   "id": "t_277b2da26c37a2308b9e",
+   "sourceHash": "277b2da26c37a2308b9e04cbeaf3b4a0ce40994994fa3463072475373c016bca",
+   "text": "この特別な場所で過ごす時間を通じて、現代的でホリスティックな快適さの中でくつろぎながら、古代インドの本物の癒やしの実践を体験していただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxury' rendered as '快適さ' (comfort) and 'paradise' as '特別な場所' to avoid luxury/resort framing."
+   ]
+  },
+  {
+   "id": "t_aff0d211e31c1e26a288",
+   "sourceHash": "aff0d211e31c1e26a28872a1d7af0d8538b376da186827022fd783c20168500f",
+   "text": "どのような体験ができますか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfacbc0babc7359db461",
+   "sourceHash": "bfacbc0babc7359db461d6cef51b0f997c684dde8174a161435e254f7d0d6022",
+   "text": "マッサージを行うセラピスト。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b77ed1640aa68b56345e",
+   "sourceHash": "b77ed1640aa68b56345ebb559790177d200d03cb2a611ff5860b75aaf70249b1",
+   "text": "「Ayur（アーユル）」は生命を、「Veda（ヴェーダ）」は知識を意味します。つまりアーユルヴェーダとは「生きることの科学の知識」を意味します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

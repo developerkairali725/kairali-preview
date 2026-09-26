@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0214",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_9a2f2b4b1057cc012562",
+   "sourceHash": "9a2f2b4b1057cc0125628ddca2f826648bbe24073ace8ecbb2e212fad13bc011",
+   "text": "ロイヤル・ヴィラの写真",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f12384f24e307601ba5f",
+   "sourceHash": "f12384f24e307601ba5f6cdf98fc011fd5e8b1611c09c22aef0d8bd9eca01e5d",
+   "text": "クラシック・ヴィラの写真",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0861c78bc12a03b61ee5",
+   "sourceHash": "0861c78bc12a03b61ee5a3e589b9383aa64b5b72537d0b52e5b8fc91504f3edf",
+   "text": "デラックス・ヴィラの写真",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a32e22a63a5dc152d3e",
+   "sourceHash": "6a32e22a63a5dc152d3eeba98ab30054cfe8fdc9ee5efa028a12153f295fa329",
+   "text": "Mrs. Gita Ramesh",
+   "status": "translated",
+   "unchangedReason": "Person's name kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_4844c13be1a87196409b",
+   "sourceHash": "4844c13be1a87196409b71b3669273e1f6a8a41443ab64d61ee5fd6cfca94eb0",
+   "text": "Dr. Deepu John（主任医師・診療部長）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6626c5a17708e98426c",
+   "sourceHash": "f6626c5a17708e98426c78a4966ab75477aa7c7ee3942abcf2b56e41a59e7f06",
+   "text": "Dr. Rahul R（アーユルヴェーダ医師）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_494b5f4d738d186311ab",
+   "sourceHash": "494b5f4d738d186311abaa4ba2449e25f5f674b2157f039b639644d8200b2b89",
+   "text": "Dr. Akhila Oommen（アーユルヴェーダ医師）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_faa3cf4fe2b132ee4937",
+   "sourceHash": "faa3cf4fe2b132ee49377a02dd436f442194f6c126700d985246dc0a51df73d8",
+   "text": "R Sivadas（ヨガ講師）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c9e2a09b86912ffa9062",
+   "sourceHash": "c9e2a09b86912ffa9062cfec41b30bea7e2f0d8e863892eade3f3c6ff499df85",
+   "text": "Sreeyuktha C（ヨガ講師）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_36c64031d0532d13ada9",
+   "sourceHash": "36c64031d0532d13ada99bdfd5289e94f17ad722ba7680926ea46876c76eeb67",
+   "text": "Anju S（看護助手）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2eb3f0d97b4a8f8e0cf3",
+   "sourceHash": "2eb3f0d97b4a8f8e0cf377ff7ea157f4aabe2ad93847de36984721d3c1a2695d",
+   "text": "Krishnapriya K（看護助手）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d84eebada93efee12b02",
+   "sourceHash": "d84eebada93efee12b029e5b61e4df3270f0356886ceaa44a78eb52166a8f312",
+   "text": "写真",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b59c5940b634a84c8b3",
+   "sourceHash": "7b59c5940b634a84c8b3f72eb409b215caef686228d2c8b660d7ff85d52ca86e",
+   "text": "Tripadvisor Travelers’ Choice 2026 バッジ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d658559f4ac15b5d1f76",
+   "sourceHash": "d658559f4ac15b5d1f76625282d5be5da6ce88ba0adf9cdce940bbb97acdddda",
+   "text": "Haute Grandeur Global Excellence Awards 2026",
+   "status": "translated",
+   "unchangedReason": "Award title kept verbatim as a proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_1f8d1ed4ae2ecacb9768",
+   "sourceHash": "1f8d1ed4ae2ecacb9768f6f110d5ed0594a421a90bfbd14f23b640978f2c3d8e",
+   "text": "National Geographic Traveller Spa & Wellness Collection 2026",
+   "status": "translated",
+   "unchangedReason": "Award title kept verbatim as a proper name.",
+   "issues": [
+    "Contains 'Spa' inside a proper award title; kept verbatim per rules."
+   ]
+  },
+  {
+   "id": "t_6a321d33ccd49d6e970e",
+   "sourceHash": "6a321d33ccd49d6e970e8383945ea9ec322eebc5d343139691df1b596ceaf164",
+   "text": "Mrs. Gita Ramesh 著『Healing Secrets』の表紙",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_98ca2c9d03fdbc7a2208",
+   "sourceHash": "98ca2c9d03fdbc7a22083c44caaca1b17e7d07356ecea4e96f6465123b72a58f",
+   "text": "再生と変化の歩み — 患者さまのビデオ体験談",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 歩み (path/process) per language lock."
+   ]
+  },
+  {
+   "id": "t_fc82da77ab8e66380e6d",
+   "sourceHash": "fc82da77ab8e66380e6d5f7c0b87a781218c49c4dc517259ed956751506f54d8",
+   "text": "新型コロナ後の回復プログラム — 患者さまのビデオ体験談",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as プログラム (programme) to avoid resort/holiday connotation."
+   ]
+  },
+  {
+   "id": "t_a69afd472fb9e07d6b0e",
+   "sourceHash": "a69afd472fb9e07d6b0e2f7bc993e0fda107741d5c30e270d0d0ce2fd412dffb",
+   "text": "安らぎとつながり — 患者さまのビデオ体験談",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a0fd01c1cb55df6d717",
+   "sourceHash": "2a0fd01c1cb55df6d7179be4eaf96131579188f368919ed584e78bda1ee25979",
+   "text": "体重減少へ向けた変化の歩み — 患者さまのビデオ体験談",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 歩み (path/process) per language lock."
+   ]
+  },
+  {
+   "id": "t_25d662926655679f215d",
+   "sourceHash": "25d662926655679f215d3b147d06ab4d937474d80e263362a5240c6f36fc4800",
+   "text": "敷地",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0323020f3bf62cfd47ee",
+   "sourceHash": "0323020f3bf62cfd47ee5f261acd2065ebb3a39f7767c3449a8371f7edf02b7f",
+   "text": "小道",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb9ef894175c327470f7",
+   "sourceHash": "fb9ef894175c327470f768d95ca7bee65e19853a0eaace3805f8a7b8a12270da",
+   "text": "製品",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14a238301af3bd63951b",
+   "sourceHash": "14a238301af3bd63951bde810e4d4553877c95ee11a9e9ac2967c73594eaff09",
+   "text": "敷地内の農場の水田",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_24594ee6580bdd230bc9",
+   "sourceHash": "24594ee6580bdd230bc96a111eec863a3f62467aa3efe08b923d3647c3b27544",
+   "text": "Balance Boat の目的地",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Balance Boat' treated as a proper name and kept verbatim; meaning of 'Destination' context unclear, translated literally."
+   ]
+  }
+ ]
+}

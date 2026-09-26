@@ -1,0 +1,163 @@
+{
+ "batchId": "b-0212",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_4e143b90b56c7a1a6c6f",
+   "sourceHash": "4e143b90b56c7a1a6c6fe56ea8599261477cb93927e8b9c8e53639aa336a3fb4",
+   "text": "Nos marques — les vingt et une adresses",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0780d017d4f7adb7ad9",
+   "sourceHash": "f0780d017d4f7adb7ad90352d0545c1fe3431139aca787c8660dd3d0a2f7a569",
+   "text": "Centre ayurvédique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f9030d481614e9d536e7",
+   "sourceHash": "f9030d481614e9d536e73be61884ddb9cb1f6aa9b5659a14a79eda9f1bde87bd",
+   "text": "[[OPEN_1]]Ayurveda Spa[[CLOSE_1]][[OPEN_2]]Centres de soins[[CLOSE_2]][[OPEN_3]]Franchise Ayurveda[[CLOSE_3]][[OPEN_4]]Centre ayurvédique[[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ayurveda Spa' kept verbatim as the name of a separate Kairali group destination (link label), not translated as 'spa' in the KTAHV register — owner to confirm whether this group link should appear on KTAHV pages.",
+    "t_f9030d481614e9d536e7 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_8d6677867514cabd1726",
+   "sourceHash": "8d6677867514cabd172650e80f3704e62270c5ee6c02f59ff939385ea24d8694",
+   "text": "[[OPEN_1]]Produits ayurvédiques[[CLOSE_1]][[OPEN_2]]Infusions ayurvédiques aux plantes[[CLOSE_2]][[OPEN_3]]Produits biologiques ayurvédiques exclusifs[[CLOSE_3]][[OPEN_4]]Kair – by Kairali[[CLOSE_4]][[OPEN_5]]Médicaments ayurvédiques exclusifs[[CLOSE_5]][[OPEN_6]]Médicaments ayurvédiques classiques[[CLOSE_6]][[OPEN_7]]Spa Equipment[[CLOSE_7]][[OPEN_8]]Livres[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa Equipment' kept verbatim as the name of a KAPPL group product category (link label) rather than introducing 'spa' into French KTAHV copy — owner to confirm. 'Proprietary' rendered as 'exclusifs' (proprietary formulations).",
+    "t_8d6677867514cabd1726 banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_fc84e7ba68de005c3a9b",
+   "sourceHash": "fc84e7ba68de005c3a9bf937f7cdd04a14a41a72a6ea4691888b47521e2a76da",
+   "text": "[[OPEN_1]]Professeurs de yoga[[CLOSE_1]][[OPEN_2]]Thérapeutes en Ayurveda[[CLOSE_2]][[OPEN_3]]Médecins ayurvédiques[[CLOSE_3]][[OPEN_4]]Programmes de formation[[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb6cd373360f7179eae0",
+   "sourceHash": "fb6cd373360f7179eae047a92301edadfe01b9cdf64f037344702bc3b3d0ef4f",
+   "text": "Hôtellerie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4029817ce128a24c88f0",
+   "sourceHash": "4029817ce128a24c88f05e6bf869caaa09fb58d9e2bdc2227c8adeb02c11223c",
+   "text": "[[OPEN_1]]Conseil en hôtellerie[[CLOSE_1]][[OPEN_2]]The Ayurvedic Healing Village[[CLOSE_2]][[OPEN_3]]Retraites de yoga[[CLOSE_3]][[OPEN_4]]Chef Retreat[[CLOSE_4]][[OPEN_5]]Hôtellerie[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Chef Retreat' kept verbatim as a group destination proper name."
+   ]
+  },
+  {
+   "id": "t_6a062068166fa5e0d80e",
+   "sourceHash": "6a062068166fa5e0d80e3760b40f173cc9474d717eb7b1a238016b9102b0f19b",
+   "text": "[[OPEN_1]]Soins ayurvédiques[[CLOSE_1]] [[OPEN_2]]Villas[[CLOSE_2]] [[OPEN_3]]Yoga–Dhyāna Abhyāsa — Formation en yoga et méditation[[CLOSE_3]] [[OPEN_4]]Programme de formation en Ayurveda[[CLOSE_4]] [[OPEN_5]]Cuisine ayurvédique[[CLOSE_5]] [[OPEN_6]]Nos produits[[CLOSE_6]] [[OPEN_7]]Équipements du village[[CLOSE_7]] [[OPEN_8]]Offres[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0eb6f8845ffc76ad3f00",
+   "sourceHash": "0eb6f8845ffc76ad3f006eca3bdcfe90b41d8908d5109a149deb06b3ccbdf77e",
+   "text": "[[OPEN_1]]Consultations externes (sans rendez-vous)[[CLOSE_1]] [[OPEN_2]]Soins et formation[[CLOSE_2]] [[OPEN_3]]Vaiyaktika Yoga Sādhanā — Yoga personnalisé[[CLOSE_3]] [[OPEN_4]]Forfaits yoga et méditation[[CLOSE_4]] [[OPEN_5]]RSE[[CLOSE_5]] [[OPEN_6]]Nos partenaires[[CLOSE_6]] [[OPEN_7]]Visites[[CLOSE_7]] [[OPEN_8]]Festivals[[CLOSE_8]] [[OPEN_9]]Galerie photos[[CLOSE_9]] [[OPEN_10]]Carrières[[CLOSE_10]] [[OPEN_11]]Postuler[[CLOSE_11]] [[OPEN_12]]Liens ayurvédiques[[CLOSE_12]] [[OPEN_13]]Archives[[CLOSE_13]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'OPD (Walk-in)' rendered as 'Consultations externes (sans rendez-vous)'; 'CSR' as the French acronym 'RSE'."
+   ]
+  },
+  {
+   "id": "t_e0163b586dac3342992a",
+   "sourceHash": "e0163b586dac3342992a884e64b4b275d869b280679cc6c185cea8af1a1938ed",
+   "text": "[[OPEN_1]]Ayurvedic Healing Village · Palakkad · 1908 — [[VAR_1]][[CLOSE_1]] [[OPEN_2]]Un lieu de ressourcement paisible en Inde, proposant des traitements ayurvédiques traditionnels, une approche globale du soin, du yoga, de la méditation, une cuisine biologique et des thérapies régénérantes pour le bien-être général et la détente.[[CLOSE_2]] [[OPEN_3]][[OPEN_4]]Conditions générales[[CLOSE_4]] [[OPEN_5]]·[[CLOSE_5]] [[OPEN_6]]Politique de confidentialité[[CLOSE_6]] [[OPEN_7]]·[[CLOSE_7]] [[OPEN_8]]Avertissement[[CLOSE_8]] [[OPEN_9]]·[[CLOSE_9]] [[OPEN_10]]Annulation et remboursement[[CLOSE_10]] [[OPEN_11]]·[[CLOSE_11]] [[OPEN_12]]Politique relative aux cookies[[CLOSE_12]] [[OPEN_13]]·[[CLOSE_13]] [[OPEN_14]]Mentions légales[[CLOSE_14]] [[OPEN_15]]·[[CLOSE_15]] [[OPEN_16]]Plan du site[[CLOSE_16]] [[OPEN_17]]·[[CLOSE_17]] [[OPEN_18]]Blog[[CLOSE_18]] [[OPEN_19]]·[[CLOSE_19]] [[OPEN_20]]Déclaration de confidentialité[[CLOSE_20]] [[OPEN_21]]·[[CLOSE_21]] [[OPEN_22]]Plan du site XML[[CLOSE_22]][[CLOSE_3]] [[OPEN_23]]English · Français · Deutsch | [[OPEN_24]]Comment venir[[CLOSE_24]] · [[OPEN_25]]Vue à 360°[[CLOSE_25]] · [[OPEN_26]]Plan[[CLOSE_26]][[CLOSE_23]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'lieu de ressourcement' per the clinical language lock; language names kept in their native forms."
+   ]
+  },
+  {
+   "id": "t_6e8d19de997dcbab2b8f",
+   "sourceHash": "6e8d19de997dcbab2b8fb5b11b7be4df626d3f3aaefa0ad3accf52486756f39b",
+   "text": "Rechercher sur le site du Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e23fc75dd3131d793467",
+   "sourceHash": "e23fc75dd3131d793467718ac23945f77b91e9d2d87a830abc51ad2ad9f750bf",
+   "text": "[[OPEN_1]]POPULAIRE[[CLOSE_1]] [[OPEN_2]]Panchakarma[[CLOSE_2]] [[OPEN_3]]Villas[[CLOSE_3]] [[OPEN_4]]Offres[[CLOSE_4]] [[OPEN_5]]Yoga–Dhyāna Abhyāsa — Formation en yoga et méditation[[CLOSE_5]] [[OPEN_6]]Comment venir[[CLOSE_6]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_320304cf03a448295173",
+   "sourceHash": "320304cf03a4482951738d8e644e79dd522cd61e4ab64a6ad3bd34d4058634aa",
+   "text": "Appuyez sur Échap pour fermer",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3649d8010496a5f13c27",
+   "sourceHash": "3649d8010496a5f13c2739107c379205deaa617693bb4ed5e8c92b4a7391ff7f",
+   "text": "Nous utilisons des cookies pour améliorer votre expérience et analyser la fréquentation du site. Consultez notre [[OPEN_1]]Politique de confidentialité[[CLOSE_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2d285b352873457207a",
+   "sourceHash": "a2d285b352873457207a34a015267524bb4613c3e8c961c8998da4e08e0d5745",
+   "text": "Refuser",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e86b1723088cc27e858",
+   "sourceHash": "3e86b1723088cc27e8589fe3f3a24b4ceb5d70f2d857414e77ff2580a688724c",
+   "text": "Tout accepter",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c682ac1a8b55d5bd318b",
+   "sourceHash": "c682ac1a8b55d5bd318b26a42d38e7508185926373e646b39aaf29c5b7e164c6",
+   "text": "Avant de partir",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_940dd0f5334dad62cc59",
+   "sourceHash": "940dd0f5334dad62cc59cc64f8f8c2c49bcef61b36f5f30fc40d0172ce1d540a",
+   "text": "Palakkad, Kerala · depuis 1908",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

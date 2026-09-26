@@ -1,0 +1,175 @@
+{
+ "batchId": "b-0228",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_05c147858b6b7c43d95d",
+   "sourceHash": "05c147858b6b7c43d95db684373e17df3f1edb94b016d16864770208988dc691",
+   "text": "'Marcellus',serif",
+   "status": "translated",
+   "unchangedReason": "CSS font-family value; not translatable.",
+   "issues": []
+  },
+  {
+   "id": "t_3e6d4b43d473c69d919c",
+   "sourceHash": "3e6d4b43d473c69d919c7550b0468718a2e66daf934e0428b401e230c5d34d85",
+   "text": "decimal",
+   "status": "translated",
+   "unchangedReason": "CSS list-style keyword; not translatable.",
+   "issues": []
+  },
+  {
+   "id": "t_6bf99799d0ef91be6c25",
+   "sourceHash": "6bf99799d0ef91be6c25a22943f74caaf655814b216ee8cb52ef61223d4f2d06",
+   "text": "disc",
+   "status": "translated",
+   "unchangedReason": "CSS list-style keyword; not translatable.",
+   "issues": []
+  },
+  {
+   "id": "t_7959e211131a4fb5c431",
+   "sourceHash": "7959e211131a4fb5c4318d0d3053e4d7f9bbdca7b8000f6d66596e413741aa8d",
+   "text": "-li",
+   "status": "translated",
+   "unchangedReason": "Code fragment (identifier suffix) used in concatenation; not translatable.",
+   "issues": []
+  },
+  {
+   "id": "t_cf25df0bf41c0a03d568",
+   "sourceHash": "cf25df0bf41c0a03d5684ca8fcdbb21860f56658a0618b509f99574ddd5f8be9",
+   "text": "Ananda Lahari Retreat Ananda – Felicidad Lahari – Ola",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Ananda Lahari Retreat' kept verbatim as the programme's proper name; Sanskrit glosses translated. Programme name contains 'Retreat' — owner may wish to rename for the KTAHV clinical register."
+   ]
+  },
+  {
+   "id": "t_a3e6e47b1a8d4e8b540d",
+   "sourceHash": "a3e6e47b1a8d4e8b540d3570905c4c40838ee419b9df65f859ee0602a04a8274",
+   "text": "En nuestra vida cotidiana nos enfrentamos a numerosas situaciones y las gestionamos, ya tengan que ver con la familia, el trabajo, las relaciones u otras obligaciones. Este programa tiene como objetivo prepararle para afrontar la vida y sus circunstancias con alegría y serenidad.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'This retreat' -> 'Este programa'."
+   ]
+  },
+  {
+   "id": "t_fa7e7eee1e00978e07bc",
+   "sourceHash": "fa7e7eee1e00978e07bcc29442840b21658c658ed86f6cdefb8155df55b5ed76",
+   "text": "A través del Ayurveda y de las enseñanzas y la sabiduría del yoga, alcanzará armonía y equilibrio entre su cuerpo y su mente, así como con quienes le rodean y con su entorno. Estas tradiciones milenarias ofrecen formas de mejorar nuestro estilo de vida actual y le proporcionan una estructura para reflexionar sobre la existencia y vivir la vida en todo su potencial.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source states an outcome as certain ('you will achieve harmony'); translated faithfully without strengthening — consider softening in source for the clinical register."
+   ]
+  },
+  {
+   "id": "t_b1489a8e7fde23434e2f",
+   "sourceHash": "b1489a8e7fde23434e2f1b94b5a903e6b07e956ac25387736d56fcc96ceaa5d4",
+   "text": "El programa Ananda Lahari Retreat ofrece la oportunidad de emprender una auténtica y apasionante aventura espiritual en la India, que propicia un ámbito lleno de amor, luz y alegría.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0fed445750044706f06",
+   "sourceHash": "a0fed445750044706f069c57dcc7ccd4f9904cdbf121074c4efe04ab6daafd1a",
+   "text": "¿Qué es el Ananda Lahari Retreat?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51de45bad7e9969f4198",
+   "sourceHash": "51de45bad7e9969f4198b6ef05fbbe2a9f740b49947e1c4d3d1b4688901486fa",
+   "text": "El Ananda Lahari Retreat ofrece un camino hacia el bienestar a través de la sanación, el autoconocimiento y la transformación de la mente y el cuerpo. Es ideal para practicantes e instructores de yoga de cualquier nivel que deseen profundizar en su práctica y descubrir una salud y un bienestar profundos, así como una conexión con su verdadero yo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'journey' -> 'camino'."
+   ]
+  },
+  {
+   "id": "t_5da85a74d4f104bf2cc7",
+   "sourceHash": "5da85a74d4f104bf2cc7f69af388e418bfc9d3a14a3a65520c18eb2c0311c491",
+   "text": "Nuestro auténtico programa de inmersión completa dura 7 días en el magnífico Kairali – The Ayurvedic Healing Village, en Kerala. Durante una semana se sumergirá por completo en la vida yóguica: meditaciones al amanecer y práctica de asanas, charlas sobre Vedanta y filosofía, práctica de yoga nidra, exploración del sánscrito y de rituales tántricos, además de una dieta ayurvédica y masajes y tratamientos diarios, de modo que incorporará plenamente el estilo de vida yóguico a su vida.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc416ae363d23b2649de",
+   "sourceHash": "cc416ae363d23b2649deb0f894b64d0343a200dd2d946903962464cd1ee9c465",
+   "text": "Este proceso personal le permitirá adentrarse en la sabiduría y las tradiciones históricas y, después, integrarlas en su vida cotidiana. Probablemente sea una de las vivencias con mayor impacto en la salud y el bienestar futuros de su mente, su cuerpo y su espíritu. Mejorará su salud y su bienestar, al tiempo que enriquecerá su autoconocimiento y su comprensión del universo, creará vínculos y amistades para toda la vida y acumulará numerosos recuerdos duraderos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'personal journey' -> 'proceso personal'. Source asserts health improvement as certain ('You will enhance your health'); translated faithfully, flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_86c6ad491d219a4eae64",
+   "sourceHash": "86c6ad491d219a4eae64a755c9185edb5a5d32f6582290461599d7cf21f78543",
+   "text": "¿Adónde me llevará este camino?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'Journey' -> 'camino'."
+   ]
+  },
+  {
+   "id": "t_c822702e84e7fe652aa4",
+   "sourceHash": "c822702e84e7fe652aa4ce061db3095df494c254a58952a035939033a3d0f058",
+   "text": "Un collage de casitas, un banco de jardín y un arreglo floral.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_904841997ec76d4e6c31",
+   "sourceHash": "904841997ec76d4e6c311974eb177d0685aff7b534b5c7f5eda3358c95ff8f2b",
+   "text": "Kairali – The Ayurvedic Healing Village fue seleccionado entre los 50 mejores destinos de bienestar del mundo por National Geographic Traveller. La aldea se encuentra en Palakkad, a pocos kilómetros del mayor paso de montaña del mundo entre Kerala y Tamil Nadu. Este centro galardonado se asienta en un exuberante paisaje de 600 cocoteros.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'award-winning spa and retreat facility' -> 'centro galardonado'. Source claim 'world's biggest mountain pass' kept as written; verify before publishing."
+   ]
+  },
+  {
+   "id": "t_277b2da26c37a2308b9e",
+   "sourceHash": "277b2da26c37a2308b9e04cbeaf3b4a0ce40994994fa3463072475373c016bca",
+   "text": "El tiempo que pase en este paraíso único le permitirá conocer las auténticas prácticas de sanación de la antigua India mientras se relaja rodeado del confort holístico moderno.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'modern holistic luxury' -> 'confort holístico moderno'."
+   ]
+  },
+  {
+   "id": "t_aff0d211e31c1e26a288",
+   "sourceHash": "aff0d211e31c1e26a28872a1d7af0d8538b376da186827022fd783c20168500f",
+   "text": "¿Qué viviré?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfacbc0babc7359db461",
+   "sourceHash": "bfacbc0babc7359db461d6cef51b0f997c684dde8174a161435e254f7d0d6022",
+   "text": "Terapeutas realizando un masaje.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b77ed1640aa68b56345e",
+   "sourceHash": "b77ed1640aa68b56345ebb559790177d200d03cb2a611ff5860b75aaf70249b1",
+   "text": "El término «Ayur» significa vida y «Veda» significa conocimiento; así, Ayurveda significa «conocimiento de la ciencia de la vida».",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

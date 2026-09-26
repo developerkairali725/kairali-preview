@@ -1,0 +1,224 @@
+{
+ "batchId": "b-0209",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_aa41f7dada2296c44c8a",
+   "sourceHash": "aa41f7dada2296c44c8a1106d2fa41ffd5b90887a5f254d0dbd87f69fcc19b20",
+   "text": "Spa & Wellness Collection 2026",
+   "status": "translated",
+   "unchangedReason": "Publication collection title (proper name)",
+   "issues": [
+    "Contains 'Spa' inside a proper title; kept verbatim per rule.",
+    "t_aa41f7dada2296c44c8a banned-term-from-source Spa"
+   ]
+  },
+  {
+   "id": "t_931d319e5e60a732f428",
+   "sourceHash": "931d319e5e60a732f428a8a8d858d0f788db5ac5d4609eb5958ebf216b9e62c3",
+   "text": "WION News",
+   "status": "translated",
+   "unchangedReason": "Media outlet name (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_3d377ae910dce03ac324",
+   "sourceHash": "3d377ae910dce03ac324d1f4391c0d4d175825e630baf9c5b93d414d7106cfd8",
+   "text": "Servizio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db985f0c75647e564ede",
+   "sourceHash": "db985f0c75647e564edefb675457be405b17da9ad2164f145fc738197b16a1ad",
+   "text": "Petit Futé",
+   "status": "translated",
+   "unchangedReason": "Publication name (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_f380ac0d187a5f494b96",
+   "sourceHash": "f380ac0d187a5f494b9653791481e6caa0ad984b3daa914156156aa801b9d3cd",
+   "text": "Consigliato 2025",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c81d41acc5a86a70e0c",
+   "sourceHash": "9c81d41acc5a86a70e0c356839d26eda1bfe715c791d49f993663fa24dd0f481",
+   "text": "Outlook Traveller",
+   "status": "translated",
+   "unchangedReason": "Publication name (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_6994b992752b714fa667",
+   "sourceHash": "6994b992752b714fa6670fee8101ef3107dd099c7c5ba68f5b4681615c5f9521",
+   "text": "Calmcations 2026",
+   "status": "translated",
+   "unchangedReason": "Editorial feature title (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_c308379d72ad71833e02",
+   "sourceHash": "c308379d72ad71833e02449544a8d3fc136885df274a90f366b39a5d88d95c3a",
+   "text": "The Times of India",
+   "status": "translated",
+   "unchangedReason": "Publication name (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_1c8c30e56963d4915250",
+   "sourceHash": "1c8c30e56963d4915250391b83dd62f7213f673547db0de894f72cc2f0687646",
+   "text": "Hotelier India",
+   "status": "translated",
+   "unchangedReason": "Publication name (proper name)",
+   "issues": []
+  },
+  {
+   "id": "t_2a7ff3d4eb0121c90c61",
+   "sourceHash": "2a7ff3d4eb0121c90c611596691630b131492c59ccbf227bbeb299541abc23ff",
+   "text": "Tutta la rassegna stampa →",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fe02d17405e2c3e0776",
+   "sourceHash": "7fe02d17405e2c3e0776e7eae66c621716b5842db2bd32bdb44a31e4ec99ba68",
+   "text": "Video testimonianza",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_40a3720cdb8094fcc185",
+   "sourceHash": "40a3720cdb8094fcc1852b67409c3ea013cf1017710ac21dff9d9490a6684700",
+   "text": "Le storie dei pazienti, con le loro parole",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guest stories' rendered as 'storie dei pazienti' (no 'ospiti')."
+   ]
+  },
+  {
+   "id": "t_7269a69fa15ece0a05b2",
+   "sourceHash": "7269a69fa15ece0a05b234e6afbb8c8afa019d0b03a0c310dda45979376c999f",
+   "text": "Storia in evidenza",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c56f52d00485e7974503",
+   "sourceHash": "c56f52d00485e79745039bc611280518b5416ae7e5f11ca18c7876d3ec973a77",
+   "text": "Un percorso di rinnovamento e trasformazione",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 'percorso'."
+   ]
+  },
+  {
+   "id": "t_7d8470561aaa261338c0",
+   "sourceHash": "7d8470561aaa261338c02c213938e6ef32ef7ea48265570d84882223615a2c59",
+   "text": "“Il nostro programma di 7 giorni ci ha trasformati: ne siamo usciti rigenerati e pronti ad abbracciare uno stile di vita più sano.”",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Testimonial: 'retreat' rendered as 'programma'."
+   ]
+  },
+  {
+   "id": "t_00fb2458015630bd6f76",
+   "sourceHash": "00fb2458015630bd6f7641989e23898af1bfe4e3b9d2d05c438f0f9ab542510c",
+   "text": "– Michaela & Jan",
+   "status": "translated",
+   "unchangedReason": "People's names",
+   "issues": []
+  },
+  {
+   "id": "t_bd346c6d3c9abe1ef677",
+   "sourceHash": "bd346c6d3c9abe1ef6771ed10d65780a7c85cfd23e87b4a98c28b133d6c4fe51",
+   "text": "Un soggiorno rigenerante dopo il COVID",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'soggiorno'."
+   ]
+  },
+  {
+   "id": "t_9e4a0855018219c922a2",
+   "sourceHash": "9e4a0855018219c922a29d027f399723c8921c3abf97a61cc8c5565d06db8d95",
+   "text": "“Dopo il COVID-19, il trattamento Panchakarma rigenerante nella vostra struttura ha superato le mie aspettative, con personale e strutture eccellenti e un’esperienza davvero rilassante.”",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Testimonial: 'at your retreat' rendered as 'nella vostra struttura'."
+   ]
+  },
+  {
+   "id": "t_6c10ac3d8e4b427341bf",
+   "sourceHash": "6c10ac3d8e4b427341bf7a9465cf7c0e243ee982e490f7e518889d9376371e8c",
+   "text": "Ms. Supriya",
+   "status": "translated",
+   "unchangedReason": "Person's name",
+   "issues": []
+  },
+  {
+   "id": "t_03f8abd6e91db5d36532",
+   "sourceHash": "03f8abd6e91db5d36532dbac7add512e8b99b1ef097a650e95f8fbdb9a2f143f",
+   "text": "Serenità e connessione",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f240bc54ea1ab3d9299e",
+   "sourceHash": "f240bc54ea1ab3d9299ecbb930e7ae8d828f2cf94d9494d29aa9b00be4ef7652",
+   "text": "“Un’oasi di tranquillità con personale competente, esperienze rigeneranti e un legame profondo: per me è diventato un luogo di ritiro a cui sono molto affezionata.”",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bbc8b9428aa786b56282",
+   "sourceHash": "bbc8b9428aa786b5628245cce87b445114c0bba11116e2657b59076ece7cac92",
+   "text": "– Corine",
+   "status": "translated",
+   "unchangedReason": "Person's name",
+   "issues": []
+  },
+  {
+   "id": "t_5837a310df2a46dc2840",
+   "sourceHash": "5837a310df2a46dc284020900e20f88ecf2acbac79c7a89ce840e0440a839c8c",
+   "text": "Un percorso trasformativo di perdita di peso",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Journey' rendered as 'percorso'."
+   ]
+  },
+  {
+   "id": "t_06b7ab7ffea62359a98d",
+   "sourceHash": "06b7ab7ffea62359a98dc0181374f649908e67a5e967409d069b055fb67bdc3c",
+   "text": "“Da 189 kg ho perso 80 kg in 6 mesi presso il centro, grato al team per la competenza, il supporto e la gentilezza.”",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Testimonial: 'wellness retreat' rendered as 'centro'. Individual patient-reported result; not a general efficacy claim."
+   ]
+  },
+  {
+   "id": "t_0775a9dccccc34ad6a5f",
+   "sourceHash": "0775a9dccccc34ad6a5f9f32863fb18145ed7f6e0392739a7ea398c7c0e33a2a",
+   "text": "– Rupak Mann",
+   "status": "translated",
+   "unchangedReason": "Person's name",
+   "issues": []
+  }
+ ]
+}
