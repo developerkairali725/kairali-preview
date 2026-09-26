@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0417",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_8d9ca97c5921ef0daf21",
+   "sourceHash": "8d9ca97c5921ef0daf21fad407aa7ee1d64a623d47f8d9827e93eda34857ebdc",
+   "text": "Die Maharaja Suite ist die hochwertigste Unterkunft in diesem ayurvedischen Heilzentrum und verbindet erstklassigen Komfort mit kaiserlicher Pracht. Wie der Name schon sagt, bedeutet „Maharaja“ „Kaiser“, und diese prachtvolle Suite bietet ein wahrhaft königliches Erlebnis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxury' -> 'erstklassigen Komfort'; 'Ayurvedic retreat' -> 'ayurvedischen Heilzentrum' per clinical language lock. Hospitality-register source copy on a KTAHV page — flag for owner review."
+   ]
+  },
+  {
+   "id": "t_e7748e1d48dfd232a09d",
+   "sourceHash": "e7748e1d48dfd232a09d79b799a5991d2fe1c5fa4c2ae2b85b029e5763e1cfdc",
+   "text": "Die Suite verfügt über zwei separate Zimmer, eines davon mit einem eindrucksvollen Kingsize-Bett. Alles, von der hochwertigen Bettwäsche bis zu den privaten Außenbereichen, wurde mit großer Sorgfalt und Sinn für Großzügigkeit geplant. Der private Rasen, den Besucher nutzen können, öffnet sich zu einem ruhigen Gewässer und ist damit der ideale Ort, um zu entspannen und zu meditieren.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious' -> 'hochwertigen'; 'guests' -> 'Besucher' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_b2ac04d73ef0f7ae7932",
+   "sourceHash": "b2ac04d73ef0f7ae793217c586b58ab8fd378f692c1cc56016d8f76db393710a",
+   "text": "Die Innenausstattung zeigt erlesenes Mobiliar und dekorative Elemente, die an die Pracht der historischen Paläste Indiens erinnern. Die Suite ist mit modernen Annehmlichkeiten für höchsten Komfort ausgestattet:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ccaab0275444704f2633",
+   "sourceHash": "ccaab0275444704f26338331ad64d626dc27af3f046d71aad0041e6e440af832",
+   "text": "Ein umfassendes Unterhaltungssystem",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6e5f456f3ea77f3a47aa",
+   "sourceHash": "6e5f456f3ea77f3a47aa7bf2d81dc90a65debd72f535b7e798fd87d2b2216fcc",
+   "text": "Kühlschrank",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd20118a119c4708653a",
+   "sourceHash": "fd20118a119c4708653afb46a77f3e85055759c1efa479601c9fedf9b39c7428",
+   "text": "Haartrockner",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e2b8d2a4dfa4fade330",
+   "sourceHash": "3e2b8d2a4dfa4fade3308327e768d1f59551e54c22ef593ffdfc628d5399820d",
+   "text": "Kaffeemaschine",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e097d48cb1559efaf0a",
+   "sourceHash": "7e097d48cb1559efaf0a5011cd84e9b9a556c01f352489f0d2f95c9d256db6fc",
+   "text": "Kostenlose ayurvedische Pflegeprodukte, darunter Seifen, Shampoos und Kosmetika",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfbc3030818747e5f898",
+   "sourceHash": "bfbc3030818747e5f898354a9d3ba6a4c5b62ee507680903cd6386f306362c8b",
+   "text": "Die Maharaja Suite liegt ideal innerhalb der Anlage und bietet einfachen Zugang zu allen Einrichtungen, ohne die Privatsphäre zu beeinträchtigen. Wie die Kaiser, die einst über weite Teile Indiens herrschten, hebt sich die Maharaja Suite deutlich von den Deluxe und Royal Villas des Hauses ab, die für sich genommen ebenfalls beeindruckende Unterkünfte bieten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' -> 'Anlage' and 'resort’s' -> 'des Hauses' per clinical language lock; villa category names 'Deluxe' and 'Royal Villas' kept as proper names."
+   ]
+  },
+  {
+   "id": "t_2e26d4838bdc3587f260",
+   "sourceHash": "2e26d4838bdc3587f2609bc6e0d3db06c9625378020fb8b880cd9e24e2920fc6",
+   "text": "Durch die ideale Verbindung von traditioneller königlicher Pracht und zeitgemäßem Komfort schafft die Suite eine Atmosphäre, in der sich Besucher wirklich wie Kaiser fühlen können und zugleich die unberührte Natur und moderne Annehmlichkeiten genießen. Für alle, die einen außergewöhnlichen ayurvedischen Aufenthalt für ihr Wohlbefinden in Verbindung mit unvergleichlicher Eleganz suchen, ist sie der ideale Rückzugsort.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness experience' -> 'ayurvedischen Aufenthalt für ihr Wohlbefinden'; 'getaway' -> 'Rückzugsort' to avoid holiday framing. Hospitality-register source copy — flag for owner review."
+   ]
+  },
+  {
+   "id": "t_ffcb5b84013efeee9b3a",
+   "sourceHash": "ffcb5b84013efeee9b3a23defa9057b66b69c9596c9ddd24c257aa85541f2ebb",
+   "text": "Haartrockner",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f9a09b78e5df125341f",
+   "sourceHash": "0f9a09b78e5df125341f4d0fbb42835d8dd3df0c055ab9bdd0306bbe48b98de3",
+   "text": "Schlafzimmer der Suite mit Backsteinwänden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10adaa3d1798def76f03",
+   "sourceHash": "10adaa3d1798def76f03dcf6882e1139c655fb942cef6406d9b3f9345e9651c4",
+   "text": "Schlafzimmer der Suite mit Schreibtisch und goldfarbenem Boden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d057f258fdcead110f31",
+   "sourceHash": "d057f258fdcead110f31d788a1bc4555f5d202328803d966e068e78527a66537",
+   "text": "Flur der Suite mit dekorativer Lampe",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbdee890a1b2226f8f05",
+   "sourceHash": "cbdee890a1b2226f8f050992dfb6a266e195facc24098771df905c3b45671b02",
+   "text": "Schlafzimmer der Suite mit Ankleidespiegel",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eaabdfb88518bcdadee9",
+   "sourceHash": "eaabdfb88518bcdadee9ca295f73492060293fa77151fa1185c2ce76a7b227bc",
+   "text": "Zwei Einzelbetten in einer Suite mit Backsteinwänden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cf2df415cde50f60b0ab",
+   "sourceHash": "cf2df415cde50f60b0ab08c027af704fa6360253c1e5b4219e561efac5a4a9f9",
+   "text": "Schlafzimmer der Suite mit Blick auf den Garten",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_941063b717436ed00d57",
+   "sourceHash": "941063b717436ed00d57b06b915c7b46053f8a20a7d035858ca840139054ee82",
+   "text": "Schlafzimmer der Suite mit Backsteinwänden und Fernseher",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d5fe4269549bf115d2c",
+   "sourceHash": "7d5fe4269549bf115d2c1dcd28402db1322581687ef64b8e53bff7ae2d9f3240",
+   "text": "Schlafzimmer und Sitzbereich der Suite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_91ef0358e4b7bf28d804",
+   "sourceHash": "91ef0358e4b7bf28d804a8a9b7628cf6783967d93193df445c4c68b5382326d5",
+   "text": "Dekorative Konsole und Spiegel mit Buntglas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74c8312bfdce5597a1ca",
+   "sourceHash": "74c8312bfdce5597a1ca93a818be10e5f055ff36d50c54b9ad591c03d6fcd223",
+   "text": "Spiegel und Lampe im Flur einer Suite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a555ad23aa5db5b8cf4b",
+   "sourceHash": "a555ad23aa5db5b8cf4becc92cccf98a6bcda07878b3ee08aff3b434a5ef1724",
+   "text": "Ess- und Sitzbereich der Suite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_42f2e4abe4f65e6af7ce",
+   "sourceHash": "42f2e4abe4f65e6af7ce18f53da8d25e14f075d20b62be2286d03f78e6a7d329",
+   "text": "Wohnraum der Suite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f82912c7d6ff752f168d",
+   "sourceHash": "f82912c7d6ff752f168dd1d6e37d33a0e4b035ac001bae0e9539d3ba53b1bd0a",
+   "text": "Schlafzimmer und Ankleidebereich der Suite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8dc15cb6b9c34dd6a784",
+   "sourceHash": "8dc15cb6b9c34dd6a7846cf44248545a3c21018ef444a99a66d1f4c400e904e9",
+   "text": "Schlafzimmer der Suite mit Zugang zum Sitzbereich",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

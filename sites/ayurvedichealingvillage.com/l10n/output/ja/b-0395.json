@@ -1,0 +1,157 @@
+{
+ "batchId": "b-0395",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_a3e346e396cc58fdcf47",
+   "sourceHash": "a3e346e396cc58fdcf4765565e196b892623cdccfdbf6fc332f3a5994d598b17",
+   "text": "family-04/HISTORICAL-NINE-DISPATCH-SUPPLEMENT.txt",
+   "status": "translated",
+   "unchangedReason": "File path; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_c9cc993e923f9c026ab8",
+   "sourceHash": "c9cc993e923f9c026ab820653761d562ad07a52b4ac21828a963eb8490458e39",
+   "text": "元の画像クレジットおよび透かしの内容は、取得時のまま保存されています。過去のリトリート画像（講師の肖像、パートナーのロゴ、第三者の写真を含む）の権利処理は、PRIVATE RELEASE GATEとして記録されています。ソースの取得は権利処理を意味するものではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal provenance note; 'PRIVATE RELEASE GATE' kept in English as an internal gate label."
+   ]
+  },
+  {
+   "id": "t_b09ab1a0ea68400eb2a4",
+   "sourceHash": "b09ab1a0ea68400eb2a4e9c54d42329da2fa2501516216e425665fda7bd82911",
+   "text": "承認済みの7件の過去の詳細ページと、その保存済みビューファイル14件は、承認済みのPast Retreatsハブとともに、バイト単位で同一のまま保存されています。これらは再作成されておらず、依存する共有ファイルも一切変更されていません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal provenance note rather than patient-facing copy; 'Past Retreats' kept as the hub name."
+   ]
+  },
+  {
+   "id": "t_b7704640d5ab671f4de5",
+   "sourceHash": "b7704640d5ab671f4de5ad380b5f6175faf1a6dc1b7bb4cd075416569548553d",
+   "text": "このページは、2017年7月3日～6日に行われたChef’s Retreatの行程を記録したものです。記載のプログラム、サービス、含まれる内容は過去のものであり、現在の予約条件ではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f04241d701553647f234",
+   "sourceHash": "f04241d701553647f23460843691eaa0bad493a49f94d0b2be0c705e975afd11",
+   "text": "Chef’s Retreat 行程表日程：2017年7月3日～6日Chef Abhijeet Saha、Chef Vikas Seth、Chef Arun Kumar TR、Chef Gill（メンター）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is a run-together string (missing line breaks); structure preserved. 'Chef’s Retreat' kept as the programme name."
+   ]
+  },
+  {
+   "id": "t_70dcd842151f19ba61f6",
+   "sourceHash": "70dcd842151f19ba61f60b41a0b02110cf83bbbb5acd709591a4382e22e1e619",
+   "text": "日程：2017年7月3日～6日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_618315f603fb3d5aa52e",
+   "sourceHash": "618315f603fb3d5aa52e298882b669f0d89891bd75bba4cbd6521e8ab0ef4c45",
+   "text": "3品のベジタリアン料理のコラージュ：ひよこ豆のサラダ、すりおろしニンジンのサラダ、薄切りのキュウリとビーツ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f8dc34cdc40c3e7597c8",
+   "sourceHash": "f8dc34cdc40c3e7597c8ce253ca12049cd1507d976a1345fafa304bfb3ad6aa2",
+   "text": "保持されていたソースのインライン強調を、元の範囲どおりに復元しました。ノードの残りの部分はプレーンのままで、段落全体や見出し全体を太字に置き換えることはせず、新たな文言も追加していません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_3aaba89b037843bb5d60",
+   "sourceHash": "3aaba89b037843bb5d6010970d615a30df6f7a48bbe6a946804d423f108b74f2",
+   "text": "全食事（朝食・昼食・夕食 – ベジタリアンのみ）滞在中に、来訪シェフが独自の料理で調理する特別な食事1回。滞在中のマスタークラス3回。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is a run-together list (missing separators); structure preserved."
+   ]
+  },
+  {
+   "id": "t_ae6c79d10f1fd4106507",
+   "sourceHash": "ae6c79d10f1fd410650790e63186ec108fa106325b52fbd88de21a43540e6f2c",
+   "text": "ヒーロー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenated fragment (likely an image-role label); verify rendered context."
+   ]
+  },
+  {
+   "id": "t_1e9a5b1c8bb1d8fa3087",
+   "sourceHash": "1e9a5b1c8bb1d8fa3087685bf108f99101a7773efb26cc329cc3b9ca391227b8",
+   "text": "ソースどおりのリンク先です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4bb41caaa6d2dbe2a23",
+   "sourceHash": "a4bb41caaa6d2dbe2a23522e87ae886515ab9807422e4f6af9b2ad39bbbc6d58",
+   "text": "Food Sadhana",
+   "status": "translated",
+   "unchangedReason": "Programme proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_7f559c0d197247c05baa",
+   "sourceHash": "7f559c0d197247c05baa1973b2974f0eaef0eb647086f4bf522bf763feaa7f4d",
+   "text": "このページでは、Food Sadhanaリトリートの資料と2017年のハイライトを保存しています。記載のプログラム、含まれる内容、書籍出版に関する記述は過去のものであり、現在の予約条件ではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48a20cb3d22a7e72d15b",
+   "sourceHash": "48a20cb3d22a7e72d15b26bc3953a04a808ada9d77b07f4f0f69865ff2734def",
+   "text": "Food Sadhanaリトリート記録 | Kairali Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b9e3bf905fb23e7b491",
+   "sourceHash": "6b9e3bf905fb23e7b4913cb2b2ff63fb548d3c7e4dfa7c09934cc020895118cb",
+   "text": "アーカイブされたFood Sadhanaプログラムをご紹介します。2017年のハイライト、日々の実践、アーユルヴェーダの食事、講師の経歴を掲載しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5fe39fc6fdb7109f0c86",
+   "sourceHash": "5fe39fc6fdb7109f0c866130d86617c555650edbe112595c41a640b462189959",
+   "text": "自己を理解する道のりでは、身近で明らかなことから始め、より繊細な側面へと進んでいくことが大切です。私たちの存在全体において最も本質的な要素は食べ物です。食べ物は肉体だけでなく、エネルギー体や心にも影響を与えます。しかし、食べ物が心身の健康と精神的な健康に欠かせない役割を果たしているにもかかわらず、現代生活の忙しさの中で、しばしば軽視されたり見過ごされたりしています。Food Sadhanaは、食べ物の神聖な本質――何を摂るか、どのように調理するか、どのように食べるか、どのように消化されるか、そしてどのように体外へ排出されるか――を大切にする一連の精神的な実践とライフスタイルです。その目的は、一人ひとりを自己の生きた神殿へと変えていくことにあります。それは清らかで純粋な神殿であり、そこでは献身と瞑想が絶えることなく、自然に育まれていきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'journey' rendered as '道のり' (path/process) per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_88ee8507ab08c93b543e",
+   "sourceHash": "88ee8507ab08c93b543e31562bc35aa475630c87acaaf285990c8559e7e9a62f",
+   "text": "アーユルヴェーダの原則と組み合わせることで、Food Sadhanaは非常に個人的でありながら、思慮深く知識に裏打ちされた体験となります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

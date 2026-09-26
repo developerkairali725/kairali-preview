@@ -92,3 +92,9 @@ test("HTML character references are not numbers", () => {
   assert.deepEqual(run("We&#8217;ve received your details within 24 hours", "Wir haben Ihre Angaben innerhalb von 24 Stunden erhalten").errs, []);
   assert.ok(run("We&#8217;ve received it within 24 hours", "Wir haben es innerhalb von 12 Stunden erhalten").errs.length, "real numbers still checked");
 });
+
+test("space groups digits only before an exact 3-digit group (date ranges are separate numbers)", () => {
+  assert.deepEqual(run("Yoga & Ayurveda Retreat- July 2-9 2015", "Retiro de Yoga e Ayurveda – 2 a 9 de julho de 2015", "pt").errs, []);
+  assert.deepEqual(run("Rates from 21 567", "Tarifs à partir de 21 567", "fr").errs, []);
+  assert.ok(run("July 2-9 2015", "2 a 9 de julho de 2016", "pt").errs.some((e) => /numbers/.test(e)));
+});

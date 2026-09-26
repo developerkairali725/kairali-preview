@@ -54,7 +54,8 @@ export function numbers(s) {
   // HTML character references are markup, not numbers (&#8217; = ’): decode first
   const decoded = s.replace(/&#(\d+);/g, (m, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (m, n) => String.fromCodePoint(parseInt(n, 16)));
   const clean = decoded.replace(/\[\[[A-Z]+_\d+\]\]/g, " ").replace(/\b(\d{1,2})[.:](\d{2})(?=\s*(?:a\.?m\.?|p\.?m\.?|h\b|Uhr\b|uur\b|ч\b|น\b|[^\d.,]|$))/gi, (m, h, mm) => (/^[0-5]\d$/.test(mm) && +h <= 24 ? `${h} ; ${mm}` : m));
-  return (clean.match(/\d+(?:[.,   ' ]\d+)*/g) || []).map((n) => n.replace(/\D/g, "").replace(/^0+(?=\d)/, ""));
+  // a space-type separator groups digits only before an exact 3-digit group (21 567; not "July 2-9 2015")
+  return (clean.match(/\d+(?:[.,']\d+|[    ]\d{3}(?!\d))*/g) || []).map((n) => n.replace(/\D/g, "").replace(/^0+(?=\d)/, ""));
 }
 
 /** Stack check of OPEN/CLOSE tokens: every CLOSE closes the innermost open span. */

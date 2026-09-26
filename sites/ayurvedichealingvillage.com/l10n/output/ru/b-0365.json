@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0365",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_409651c5ebb997f9b56c",
+   "sourceHash": "409651c5ebb997f9b56c1d555f81297bf34c8adc733d152049e54ff5954c5af8",
+   "text": "Если вы предпочитаете поговорить с человеком или подробно обсудить своё состояние.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abcc9dff3f34bdcc9d03",
+   "sourceHash": "abcc9dff3f34bdcc9d031dfbca6763d977ffa4a5304b47da1931a2883c6e6558",
+   "text": "Нажмите, чтобы позвонить. Короткое меню соединит вас с отделом запросов, службой для текущих пациентов или регистратурой.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f05bc60ed57a946e07eb",
+   "sourceHash": "f05bc60ed57a946e07ebc05b36975d1ac97a93cb4a6c56b53d9a52e5a938da9d",
+   "text": "Устная консультация нашей команды. Пн–Сб, 09:00–18:00 IST.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_255102fbee677920a9f0",
+   "sourceHash": "255102fbee677920a9f00d8549148bfab92a378f801193538e8abcc9c72ebcca",
+   "text": "КакНажмите, чтобы позвонить. Короткое меню соединит вас с отделом запросов, службой для текущих пациентов или регистратурой. Чего ожидатьУстная консультация нашей команды. Пн–Сб, 09:00–18:00 IST.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates the labels 'How'/'Expect' directly with the following text; the same glued structure is mirrored ('Как'/'Чего ожидать')."
+   ]
+  },
+  {
+   "id": "t_25262a11580721a618c3",
+   "sourceHash": "25262a11580721a618c39f04e5296cf49af2ee8bc4b4aa4b7d4c63e147bd087b",
+   "text": "Позвонить: +91 95551 56156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcaa3a77c5f80d36fcd7",
+   "sourceHash": "bcaa3a77c5f80d36fcd7b6770a88fa06bc65edbef5fdde1fa76b2af093c4d478",
+   "text": "Не покидая страницы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d875204ebf36901da1ba",
+   "sourceHash": "d875204ebf36901da1ba91d8b988e92728dec6ab83fffde4e3471e9d668233cb",
+   "text": "Открыть онлайн-чат",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_116191e667f70730d682",
+   "sourceHash": "116191e667f70730d682bb987b96198cee346a3bb58a9e67f3ec7aa2beaa7cf8",
+   "text": "Короткий обмен сообщениями прямо здесь, без перехода в другое приложение.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69db52867a97510d7741",
+   "sourceHash": "69db52867a97510d7741f212221c31b0fcc3516fd2c677702724f428e4832268",
+   "text": "Открывает на этой странице небольшую панель с доступными каналами связи и полем для короткого сообщения.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c2d623cf957c8a496167",
+   "sourceHash": "c2d623cf957c8a49616708c79bbf4d9347c3c5c474443e7ace76e19b0dba9e1f",
+   "text": "Варианты связи сразу; ответ — в рабочее время.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9728446fc9ba2914dbec",
+   "sourceHash": "9728446fc9ba2914dbeca05b847259fc016909637a4da1f539bac3e6a497434f",
+   "text": "КакОткрывает на этой странице небольшую панель с доступными каналами связи и полем для короткого сообщения. Чего ожидатьВарианты связи сразу; ответ — в рабочее время.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates the labels 'How'/'Expect' directly with the following text; the same glued structure is mirrored ('Как'/'Чего ожидать')."
+   ]
+  },
+  {
+   "id": "t_aa9723c5edcee0aa8113",
+   "sourceHash": "aa9723c5edcee0aa81132944f12af1784878dc6c9f693a1b3813c6335051a7b7",
+   "text": "Открыть панель чата",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69778b3f1e9bbd5868bb",
+   "sourceHash": "69778b3f1e9bbd5868bbe751888918bd99c3dd03d575d5c27becbe8cdee96844",
+   "text": "Подробно · Письменный ответ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_97fccb5cb5016effe223",
+   "sourceHash": "97fccb5cb5016effe2234e8e00115100544a3edc9697585a79d32f46ef643c87",
+   "text": "Отправить запрос",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_127aa0ca0bc3820bf873",
+   "sourceHash": "127aa0ca0bc3820bf873b88dccd97194727864aaf3ac79a0c5159ba406b2166b",
+   "text": "Для подробного запроса, запроса для семьи или группы, а также если вы хотите получить письменное предложение по программе.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_261f6d50a55c1dc9416c",
+   "sourceHash": "261f6d50a55c1dc9416c4849f4813ff697a6d9be4689dcc90840d37e0325103b",
+   "text": "Два коротких поля и необязательный комментарий. Запрос рассматривает команда по уходу за пациентами и, при необходимости, врач.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0eb34ed660c13d12b92a",
+   "sourceHash": "0eb34ed660c13d12b92aa3a95f80ecf7da0d308312e2932ebf344764c8d95b9a",
+   "text": "Обстоятельный ответ по электронной почте или телефону в течение 24 часов.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8546e90441f876b23027",
+   "sourceHash": "8546e90441f876b23027c18a9bcc56ca31329aeed5839eb1f2c5d96e6871ef03",
+   "text": "КакДва коротких поля и необязательный комментарий. Запрос рассматривает команда по уходу за пациентами и, при необходимости, врач. Чего ожидатьОбстоятельный ответ по электронной почте или телефону в течение 24 часов.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates the labels 'How'/'Expect' directly with the following text; the same glued structure is mirrored ('Как'/'Чего ожидать')."
+   ]
+  },
+  {
+   "id": "t_1b1183956017c81b5e90",
+   "sourceHash": "1b1183956017c81b5e9022bce0bdaf9d96783efeec4066cf6aff55e9782eb378",
+   "text": "Перейти к форме",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c929f1f75d19e37a766f",
+   "sourceHash": "c929f1f75d19e37a766fff108fef67c6bfb6e80b57fb2682f36dfff0a2202242",
+   "text": "Два поля. Это всё, что нужно, чтобы начать.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a0141aa45a0c4cc490",
+   "sourceHash": "44a0141aa45a0c4cc4902d175e0dd33a27e6c7b61f2727e5d5db4bb944d04941",
+   "text": "Сообщите, как с вами связаться, и, если хотите, коротко расскажите, что привело вас к нам. Длинную анкету заполнять не нужно — дальше вами займётся наша команда по уходу за пациентами.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44eed4077105f2494e27",
+   "sourceHash": "44eed4077105f2494e27a28fd3b3db8430e5870133d9bb06717a4dca452c0dc9",
+   "text": "Запрос рассматривает живой сотрудник нашей команды по уходу за пациентами",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eceeed2db1f312c00a71",
+   "sourceHash": "eceeed2db1f312c00a7194aca3f544f7be9d28e0106f756763e47c84815bfd0d",
+   "text": "Если этого требует ваш запрос, к нему подключается врач",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_94b85d411657e9b72b0f",
+   "sourceHash": "94b85d411657e9b72b0facec8ac50c8178f48bf21234767fbb772d506a0cd02d",
+   "text": "Ответ в течение 24 часов по электронной почте или телефону",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3f6e90cdf3e2ee87ee9b",
+   "sourceHash": "3f6e90cdf3e2ee87ee9b080c0526abddbd3ac9c88f32838d9598574a790a3360",
+   "text": "Ваши данные остаются конфиденциальными и никогда не передаются третьим лицам",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

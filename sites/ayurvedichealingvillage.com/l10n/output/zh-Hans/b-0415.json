@@ -1,0 +1,123 @@
+{
+ "batchId": "b-0415",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_bfcb4f203ecc1e00ef83",
+   "sourceHash": "bfcb4f203ecc1e00ef83f1369621f7a02cc7da31b4ce234a8abc01ea61239ac9",
+   "text": "旧版 .aspx 地址目前会先重定向主机名，随后返回 404，因此不存在重定向连续性的证明。这是一项明确的来源身份局限，并不视为可对该路由进行重定向的许可。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c563e219ed1fd7ee42c9",
+   "sourceHash": "c563e219ed1fd7ee42c9150b1f1ea372830a84f44037dfcbae0f4b1f370f776e",
+   "text": "Kairali 阿育吠陀集团是健康生活与品质生活的典范，创立于1989年，旨在向全世界传播阿育吠陀的理念。其创始人学识渊博、成就卓著，他们深信阿育吠陀的原理，真正认识到它对身心的疗愈与净化作用。他们将丰富的经验与知识传承给了四代医生，这些医生同样致力于让阿育吠陀重新焕发时代意义。正是凭借他们的共同努力，Kairali 阿育吠陀集团在事业与公益方面都达到了新的高度。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af1d6b5b66d0f10a5a46",
+   "sourceHash": "af1d6b5b66d0f10a5a46b8e2964cd5dbbe4d1ae1e773849e87cefabbfddb08dc",
+   "text": "其标志性活动之一是 Lakshya 瑜伽静修营，这是一场为期七天、围绕阿育吠陀、瑜伽与健康生活方式的盛会。静修期间将展示多种瑜伽流派，并为参与者提供一系列与健康相关的服务和咨询。这里还会运用多种著名的阿育吠陀疗法，如潘查卡玛（Panchakarma），使这一静修营成为值得一访的去处。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'benefactors' (likely meant 'beneficiaries') rendered as 参与者 (participants). Source spelling 'Panchkarma' rendered with standard Panchakarma."
+   ]
+  },
+  {
+   "id": "t_418d798d65f6a7fe58f3",
+   "sourceHash": "418d798d65f6a7fe58f3d26395b42bba6417234e10a2b98b741b539d2b487b0c",
+   "text": "其标志性活动之一是",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding the event name link."
+   ]
+  },
+  {
+   "id": "t_7db077ae90b55307b606",
+   "sourceHash": "7db077ae90b55307b606f7e4e2fe7d898b05a833e896bb214621700fb2374817",
+   "text": "，这是一场为期七天、围绕阿育吠陀、瑜伽与健康生活方式的盛会。静修期间将展示多种瑜伽流派，并为参与者提供一系列与健康相关的服务和咨询。这里还会运用多种著名的阿育吠陀疗法，如潘查卡玛（Panchakarma），使这一静修营成为值得一访的去处。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the event name link. 'benefactors' rendered as 参与者 (participants)."
+   ]
+  },
+  {
+   "id": "t_bb02c0a7edfd889f3c41",
+   "sourceHash": "bb02c0a7edfd889f3c410fd150066d25617c27d0f952f739e8594e6a17b2f83e",
+   "text": "这座阿育吠陀疗愈村是宁静与积极生活方式的典范，人们可以在这里安心居住，远离外界的困扰与烦忧。先进的技术与阿育吠陀古老而慷慨的智慧相结合，使这片宁静的自然之地成为远离忙碌生活的理想去处。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered neutrally as 理想去处 (ideal place) without holiday framing."
+   ]
+  },
+  {
+   "id": "t_86e1de74820a9b252ba3",
+   "sourceHash": "86e1de74820a9b252ba33b2eed445b0cd02c445b5f4b8007205aff1762d7301a",
+   "text": "这座",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding a linked name."
+   ]
+  },
+  {
+   "id": "t_12a5beee4d1dc60cc34c",
+   "sourceHash": "12a5beee4d1dc60cc34cdaaaf5ba374bbbeea8ea2321f33034f0b82bd01a24b0",
+   "text": "阿育吠陀疗愈村",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2bc30b2b6c3a974624f",
+   "sourceHash": "f2bc30b2b6c3a974624f4116d140b89c0163898a3130b2aa49d730084534947f",
+   "text": "是宁静与积极生活方式的典范，人们可以在这里安心居住，远离外界的困扰与烦忧。先进的技术与阿育吠陀古老而慷慨的智慧相结合，使这片宁静的自然之地成为远离忙碌生活的理想去处。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered neutrally as 理想去处 without holiday framing."
+   ]
+  },
+  {
+   "id": "t_5d49740011763daddd6a",
+   "sourceHash": "5d49740011763daddd6a4fa2c38833ecb0af97bbd691127f70e81ac7c5aa6044",
+   "text": "来自当前记录、带标签的上下文导航，保留其确切的原始目标地址和来源指针。“知识中心”标题为纯来源文本，不会提升为链接。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a84027ac4117c60b0cee",
+   "sourceHash": "a84027ac4117c60b0ceedeffa4839b17366b61b05009c161135104c93ebf62d6",
+   "text": "此路由的上下文是其自身来源中的“知识中心”标题。此处不使用通用的“探索当前项目”标签。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_25ee652fe24cc89e9090",
+   "sourceHash": "25ee652fe24cc89e9090b1ac7197ed2e08dc7cdc53f65b1227a289a14e71f800",
+   "text": "lk-cg-",
+   "status": "translated",
+   "unchangedReason": "Code/CSS identifier prefix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_5dea34262e352874fc4d",
+   "sourceHash": "5dea34262e352874fc4d582963706a588a51f539c0d91badf39d68f0ab93b676",
+   "text": "一周的充分休息与身心焕新。通过瑜伽和冥想重新连接内在自我。以阿育吠陀按摩和疗法滋养身体。再用美味的素食满足您的胃口！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
