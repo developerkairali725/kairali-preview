@@ -173,3 +173,21 @@
   margin-left:auto !important;
   margin-right:auto !important;
 }
+
+/* Date fields (EF-05): keep a visible, tappable box on iPhone (an empty WebKit date value collapses),
+   and show NOTHING in an untouched field — desktop WebKit otherwise prints today's date there, which
+   reads as a chosen date. The persistent From/To labels and the Optional hint carry the meaning;
+   a focused field shows its editable parts as normal. */
+input[type="date"] { min-height:44px; }
+input[type="date"]::-webkit-date-and-time-value { text-align:left; min-height:1.5em; }
+/* Safari/WebKit only (Chromium shows a useful mm/dd/yyyy hint and never a fake date) */
+@supports (font: -apple-system-body) {
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit-fields-wrapper,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit-text,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit-month-field,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit-day-field,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-datetime-edit-year-field,
+  input[type="date"][data-ahv-empty]:not(:focus)::-webkit-date-and-time-value { color:transparent; }
+  input[type="date"][data-ahv-empty]:not(:focus) { -webkit-text-fill-color:transparent; }
+}

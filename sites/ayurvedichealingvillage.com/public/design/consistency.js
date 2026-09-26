@@ -248,3 +248,19 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
 })();
+
+// Date fields (EF-05, owner 26 Sep 2026) — on EVERY design page, not only consistency-locked
+// families: an untouched date input shows nothing on iPhone and today's date on desktop WebKit, both
+// of which read as a chosen value. data-ahv-empty marks the empty state so consistency.css can mute it.
+// The value itself is never set here.
+(function () {
+  "use strict";
+  function markDates() {
+    var ds = document.querySelectorAll('input[type="date"]');
+    for (var i = 0; i < ds.length; i++) { if (ds[i].value) ds[i].removeAttribute("data-ahv-empty"); else if (!ds[i].hasAttribute("data-ahv-empty")) ds[i].setAttribute("data-ahv-empty", ""); }
+  }
+  document.addEventListener("input", function (e) { if (e.target && e.target.type === "date") markDates(); }, true);
+  document.addEventListener("change", function (e) { if (e.target && e.target.type === "date") markDates(); }, true);
+  if (window.MutationObserver) new MutationObserver(markDates).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", markDates); else markDates();
+})();
