@@ -23,13 +23,18 @@ test('search navigation, guide navigation and dedicated newsletter keep their co
  for(const form of ['<form role="search" action="/ayurvedic-treatments/" method="get">','<form action="/search" method="get">','<form id="u7-search">','<form data-ahv-guide-form="1" action="/faqs-downloads/#downloads" method="get">','<form data-ahv-newsletter="1" action="/api/newsletter" method="post">'])assert.equal(formPostSafety(form),form);
 });
 test('all captured footer Subscribe links become real email forms, in bounded batches',()=>{
- const dir=new URL('../english-candidate/prerender/',import.meta.url);const files=fs.readdirSync(dir).filter(f=>f.endsWith('.html'));let converted=0;
+ // Coverage is counted on the SERVED footer (after the serve-time pass), not on how many raw captures
+ // needed converting: since 28 Sep 2026 snapshots are taken after newsletter.js has already swapped the
+ // captured link for the form in the browser, so most arrive converted. Same bar (>200 snapshots), measured
+ // on the outcome a visitor gets: a real POST email form in the footer.
+ const dir=new URL('../english-candidate/prerender/',import.meta.url);const files=fs.readdirSync(dir).filter(f=>f.endsWith('.html'));let covered=0;
  for(let start=0;start<files.length;start+=25)for(const file of files.slice(start,start+25)){
  const old=fs.readFileSync(new URL(file,dir),'utf8');const updated=newsletterFooters(old);assert.equal(newsletterFooters(updated),updated);
- for(const footer of updated.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi)||[]){assert.doesNotMatch(footer,/<a\b[^>]*>Subscribe<\/a>/i,file);assert.doesNotMatch(footer,/<button\b[^>]*type="button"[^>]*>Subscribe<\/button>/i,file)}
- if(old!==updated)converted++;
+ const footers=updated.match(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi)||[];
+ for(const footer of footers){assert.doesNotMatch(footer,/<a\b[^>]*>Subscribe<\/a>/i,file);assert.doesNotMatch(footer,/<button\b[^>]*type="button"[^>]*>Subscribe<\/button>/i,file)}
+ if(footers.some(f=>/<form\b[^>]*data-ahv-newsletter="1"[^>]*action="\/api\/newsletter"[^>]*method="post"[\s\S]*?<input\b[^>]*type="email"[^>]*name="email"[\s\S]*?<button\b[^>]*type="submit"[^>]*>Subscribe<\/button>/i.test(f)))covered++;
  }
- assert.ok(converted>200,'Expected shared footer coverage across registered page snapshots');
+ assert.ok(covered>200,'Expected shared footer coverage across registered page snapshots');
 });
 
 test('all design form templates and snapshots use safe transport without changing field definitions',()=>{

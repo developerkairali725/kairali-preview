@@ -23,7 +23,19 @@
   if (!root || !DATA) return;
   var route = root.getAttribute("data-ahv-route") || location.pathname;
   var info = DATA.routes[route];
-  if (!info) return;
+  if (!info) {
+    // routes outside the rail (off-tree aliases such as /panchakarma/, locked family pages): the
+    // captured WordPress sidebar is retired sitewide, so it is removed here too — nothing is built
+    var strip = function () {
+      var m = root.querySelector("main");
+      if (!m) return;
+      var els = m.querySelectorAll("nav[data-source-component]");
+      for (var i = 0; i < els.length; i++) if (/context|menu|navigation/i.test(els[i].getAttribute("data-source-component") || "") && els[i].parentNode) els[i].parentNode.removeChild(els[i]);
+    };
+    if (window.MutationObserver) new MutationObserver(strip).observe(root, { childList: true, subtree: true });
+    strip();
+    return;
+  }
   var section = DATA.sections[info.section];
   if (!section) return;
   var DESKTOP = window.matchMedia("(min-width:1024px)");
