@@ -1,0 +1,207 @@
+{
+ "batchId": "b-0536",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_19d7891fe0973efc8f02",
+   "sourceHash": "19d7891fe0973efc8f02ca5759f53084b14e75adf09e4e96375035e711190c4e",
+   "text": "Kashayavasthi",
+   "status": "translated",
+   "unchangedReason": "Sanskrit therapy name",
+   "issues": []
+  },
+  {
+   "id": "t_a874154c638126c2768e",
+   "sourceHash": "a874154c638126c2768e0edba1ab7442b19b05b8a16bf36d43f20a683d530121",
+   "text": "Pour plus d'informations, veuillez contacter notre conseiller voyage, qui se fera un plaisir de vous aider :",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_a874154c638126c2768e banned-term voyage"
+   ]
+  },
+  {
+   "id": "t_043cbcf13624c5f3997f",
+   "sourceHash": "043cbcf13624c5f3997f591a6f8c1efae61a40215d8e3c5885a1900bcbaf7098",
+   "text": "Mot du fondateur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d89a2b755fcbb69a9d63",
+   "sourceHash": "d89a2b755fcbb69a9d631168e26c6d8f5983817ec6679a6a8af9fbd054ec1e6d",
+   "text": "Mot du fondateur – La vision de Kairali Ayurvedic Healing",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3efd8ac9f0820eb97b8b",
+   "sourceHash": "3efd8ac9f0820eb97b8bcda1882ec3ea0f77b4a7f8f2271e96754d7c95670dd3",
+   "text": "Découvrez la vision de Kairali Ayurvedic Healing Village : nos fondateurs perpétuent l'héritage de l'Ayurveda et ses soins authentiques dans le monde.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'authentic wellness experiences' rendered as 'soins authentiques' (clinical register, 155-character limit)."
+   ]
+  },
+  {
+   "id": "t_f1eb212a99cb7a6e5cce",
+   "sourceHash": "f1eb212a99cb7a6e5ccebe97ea52078ccfb3543c757b83807c027e36306d7b00",
+   "text": "Mot du fondateur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f08de529fbcead8ca5cf",
+   "sourceHash": "f08de529fbcead8ca5cfd57bfe4e92ade7f8382b4d3054208723d6431b13e7cf",
+   "text": "Ensemble, construisons un monde plus sain et plus heureux.Bien cordialement,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Missing space after the full stop kept as in source (likely a line-break join)."
+   ]
+  },
+  {
+   "id": "t_8f7461b11fc2ddc6b66b",
+   "sourceHash": "8f7461b11fc2ddc6b66b50f8ba2ace9b1cfeeed3fae6683342d864991cf5bb0b",
+   "text": "Directeur général, Kairali Ayurvedic Group",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_61dc676f0d6d3a286b20",
+   "sourceHash": "61dc676f0d6d3a286b20a32f853fc4cbb376b2c82e6b33e5c978137611a7d5b0",
+   "text": "M. K.V. Ramesh, directeur général et cofondateur de Kairali Ayurvedic Group, est le gardien de quatre générations de savoir ayurvédique. Son parcours a commencé à l'adolescence, lorsqu'il aidait son père, le Dr K.S.V. Vasudevan, à préparer des médicaments ayurvédiques et qu'il a pu constater par lui-même le potentiel transformateur de l'Ayurveda. Parti d'un modeste local dans le sud de Delhi, il a fait de Kairali une référence mondiale du bien-être holistique.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned word 'journey' in source rendered as 'parcours'."
+   ]
+  },
+  {
+   "id": "t_6b68156c058f054514e6",
+   "sourceHash": "6b68156c058f054514e625a1404a033f7ef9d2c12fb3ac1c307b33087a7b20e6",
+   "text": "Mme Gita Ramesh, directrice générale adjointe de Kairali Ayurvedic Group et épouse de M. K.V. Ramesh, est la force motrice de l'organisation depuis sa création. Guide et source d'inspiration pour Kairali, elle l'a aidée à devenir l'une des principales entreprises ayurvédiques au monde. Sa connaissance approfondie de l'Ayurveda garantit que les centres de séjour et de soins de Kairali offrent des connaissances, des techniques et des soins de la plus haute qualité. Son engagement sans faille envers la qualité fait d'elle une véritable pionnière dans le domaine du bien-être.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats & treatment centre' rendered as 'centres de séjour et de soins'."
+   ]
+  },
+  {
+   "id": "t_a704d7afeeb091966218",
+   "sourceHash": "a704d7afeeb0919662186bc83e948d0f592139507491377b22a0bc699a5f8295",
+   "text": "Directeur de Kairali Ayurvedic Group",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4bf9d4322b0fd4c89051",
+   "sourceHash": "4bf9d4322b0fd4c89051d65940c846c4107fcc4ff08a82698e5839d3a945294c",
+   "text": "M. K.R. Abhilash, directeur de Kairali Ayurvedic Group, perpétue et enrichit le riche héritage transmis par ses prédécesseurs. Animé par la volonté de faire découvrir le meilleur de l'Ayurveda, il s'est rapidement distingué en stimulant la croissance des activités pharmaceutiques de Kairali et de son village de soins, tout en renforçant ses activités principales. Son approche novatrice et son engagement lui ont valu de nombreuses distinctions dès le début de sa carrière. Sous sa direction, Kairali- The Ayurvedic Healing Village s'est développé au fil des années. Son expertise consiste à mettre en place des séjours de santé de classe mondiale et à proposer des services conçus pour le confort et le bien-être.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'health retreats' rendered as 'séjours de santé'; 'crafted for indulgence' rendered as 'conçus pour le confort' (avoids luxury register)."
+   ]
+  },
+  {
+   "id": "t_a340759ae6593b6f4926",
+   "sourceHash": "a340759ae6593b6f492649addb0133951ebb08302e2de4092652fccc6a449f0b",
+   "text": "M. K.R.Abishek",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4df711249c0c5f4d62ab",
+   "sourceHash": "4df711249c0c5f4d62abc73b26fc6db6b67c06f0d0002ff02137754cd749456e",
+   "text": "M. K.R.Abishek est le benjamin de cette famille de praticiens ayurvédiques, et s'est lui aussi engagé à consacrer sa vie au service de l'Ayurveda. Il est membre du conseil d'administration. Il a rejoint l'entreprise familiale plein d'idées et d'enthousiasme, avec l'ambition de porter l'entreprise encore plus loin dans le monde de l'hôtellerie internationale. Le visage de Kairali Ayurvedic Group :",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is truncated mid-sentence ('The face of the Kairali Ayurvedic Group’s'); final fragment translated as an open fragment — continuation unknown, EN source should be checked."
+   ]
+  },
+  {
+   "id": "t_1641dd36e5294f77efde",
+   "sourceHash": "1641dd36e5294f77efde4f171974063c9e0b9f5478589e8d78d15746bd37dac0",
+   "text": "Couloir ouvert sur une cour, avec un mur orné d'un lotus sculpté en relief, des pots en terre cuite et un pavement en briques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d30e6b4c3eee3f41e93f",
+   "sourceHash": "d30e6b4c3eee3f41e93f6332c70b59e8ae9438e72f51b9520d3bb108336f980d",
+   "text": "Voir la galerie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e5b4d1e6688d06cc977",
+   "sourceHash": "1e5b4d1e6688d06cc9773e0018f8577380b86382dcab5ec8528d6e46adfa5797",
+   "text": "Vous souhaitez en savoir plus sur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93c537c6864d5bf0855a",
+   "sourceHash": "93c537c6864d5bf0855ae4e0e69f1ad0a4425091c56dd5eba9f69c9709cb78c9",
+   "text": "Vue à 360°",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3cb60d8971f9eee32416",
+   "sourceHash": "3cb60d8971f9eee32416d02f0a216fd28fb1054089768e0bc3f325b793b9f829",
+   "text": "Cours de yoga (pratique)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc360b6be461502f9943",
+   "sourceHash": "bc360b6be461502f9943155b64d27de9d2064e59e4114d581c42a7fd5f388ecf",
+   "text": "Yoga pratique à Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1bb6ad96464b6a21852e",
+   "sourceHash": "1bb6ad96464b6a21852ed61f9f1dd9bde0b01f815065033fda6e424035906a4f",
+   "text": "Gagnez en force, souplesse et pleine conscience grâce aux cours de yoga pratique de Kairali : asanas, respiration et bien-être dans un cadre serein.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'serene retreat' rendered as 'cadre serein'."
+   ]
+  },
+  {
+   "id": "t_5165ae89ee2824f3df65",
+   "sourceHash": "5165ae89ee2824f3df65f0a622aca9cb4944443cde70045885f64b41fa0c6526",
+   "text": "Cours de yoga pratique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ea389534576cc258c5b1",
+   "sourceHash": "ea389534576cc258c5b146501b01c30903b01b4006c6626e38d50bb38588a9bf",
+   "text": "Cours de yoga pratique à Kairali- The Ayurvedic Healing Village : incarner le bien-être par le mouvement et la respiration",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

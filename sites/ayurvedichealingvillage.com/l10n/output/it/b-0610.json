@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0610",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_ed0ee7f51cae78f3e954",
+   "sourceHash": "ed0ee7f51cae78f3e95408c38c1d10ca40a644f6ea8c1c35eca6794fd354e2ee",
+   "text": "tariffe valide dal",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00d9344ceb6a435761fd",
+   "sourceHash": "00d9344ceb6a435761fda9860a892fea19ce9ecffeb1d87a9ced580130bcf2ff",
+   "text": "In video, e un tour in arrivo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8460cc44e73a2beddc9d",
+   "sourceHash": "8460cc44e73a2beddc9d59602b417ec825745475cc54f6607697664763d29ef7",
+   "text": "Livelli di sconto come indicato in ciascuna offerta. Nessuna data di scadenza fissa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3541f743334f2bc1d258",
+   "sourceHash": "3541f743334f2bc1d2586290a994af5a6ab38a9e0f6fa851dd282b3062fcf555",
+   "text": "Nessuna data di scadenza fissa",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84d5a52d3b83c53004e1",
+   "sourceHash": "84d5a52d3b83c53004e1fd0dc24557c82b4f789456d2b8408a40b96019999688",
+   "text": "Nessuna durata minima di soggiorno",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5381066c58eba135fc",
+   "sourceHash": "4e5381066c58eba135fcf2977a2508f7d72105cd42076fd321b2b364ba867606",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Richieda questa offerta quando contatta il nostro team di assistenza ai pazienti.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4544343343989bd25761",
+   "sourceHash": "4544343343989bd25761979e1d5e85475f58d920da61248271011899e203bf70",
+   "text": "Tariffe e servizi inclusi sono soggetti a modifiche. Questa offerta non è cumulabile con altre offerte. Nessuna data di scadenza fissa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a84dbe0ef7b2c4d0df3",
+   "sourceHash": "7a84dbe0ef7b2c4d0df325a6f165ff38a35c184e76f52f2b8145b7353bc2b995",
+   "text": "Telefono: [[OPEN_1]]+91 9555 156 156[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11929d76dbfd2699da2a",
+   "sourceHash": "11929d76dbfd2699da2a9a21c8138e4c5adf25497ed547c2c4e8a1f8d87dbe95",
+   "text": "10% per 3–13 notti · 15% per 14–20 notti · 20% per 21 notti o più. Valido per tutti i pacchetti. Nessuna data di scadenza fissa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a1cee73a505cb8c5289b",
+   "sourceHash": "a1cee73a505cb8c5289bd89109b9586b19d28ab763e505b1c808b8e853e7dd1e",
+   "text": "10% per 3–14 notti · 15% per 14–21 notti · 20% oltre 21 notti. Esercito, Marina e Aeronautica. Nessuna data di scadenza fissa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4b06ef6d3c81436f60a",
+   "sourceHash": "f4b06ef6d3c81436f60a318c81c42f8f7e2d774d45a22f3b9b5f3b6980d28146",
+   "text": "Al",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rendered as 'Al' (date-range 'to', paired with 'Dal')."
+   ]
+  },
+  {
+   "id": "t_930bf5e7c871c668c034",
+   "sourceHash": "930bf5e7c871c668c034874a7fb987a73104237db57edc1e2bcaab32f679a6e3",
+   "text": "Facoltativo. Lasci vuoto se le date non sono ancora definite.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_35f00e26d4d1289f7d2e",
+   "sourceHash": "35f00e26d4d1289f7d2e18d11070f142df3b068b28f8dbe0aec3bf104d2e8427",
+   "text": "[[VAR_1]][[OPEN_1]] / notte[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11150a76f47719f852ac",
+   "sourceHash": "11150a76f47719f852acdc2dd26418e70c1382558d1a1b8ecf7f0264043fd2f3",
+   "text": "Occupazione singola, per villa per notte: Deluxe Villa [[VAR_1]] · Classic Villa [[VAR_2]] · Royal Villa [[VAR_3]] · Maharaja Suite [[VAR_4]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b7fbde536ad5fef7062",
+   "sourceHash": "8b7fbde536ad5fef70628f83c3b1bb2bbd72210aa26d1a8e96426cd8d9fcb974",
+   "text": "da ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a06ab10d8d5ca673a47",
+   "sourceHash": "3a06ab10d8d5ca673a473bdfaa5bbb025dbc5b618fb48068f4a1d4e673e9ae46",
+   "text": "€ EUR",
+   "status": "translated",
+   "unchangedReason": "Currency symbol and ISO code are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d88f343350776672ed0",
+   "sourceHash": "4d88f343350776672ed05ba6a7dbdd61d5c151fb8758ef47142dcf4f9adfcf6e",
+   "text": "[[OPEN_1]]Maharaja Suites[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_0b842b338c651688df07",
+   "sourceHash": "0b842b338c651688df07e77f94f7a8925424164c713c47a39c297dd435980ed9",
+   "text": "[[OPEN_1]]Royal Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_8c6d38d6fa1ddb636f3c",
+   "sourceHash": "8c6d38d6fa1ddb636f3c714cd7708831aa44900bd8889909f4ec53e32085b29d",
+   "text": "[[OPEN_1]]Classic Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_34dcfd7b06e164529337",
+   "sourceHash": "34dcfd7b06e164529337dd6e1491c9e23eacf8fa41973b9516ff979c5d08c8a9",
+   "text": "[[OPEN_1]]Deluxe Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_3a5ae35d01590114a18e",
+   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
+   "text": "[[OPEN_1]]Trattamento ayurvedico[[CLOSE_1]] [[OPEN_2]]Ville[[CLOSE_2]] [[OPEN_3]]Formazione in yoga e meditazione[[CLOSE_3]] [[OPEN_4]]Programma di formazione in Ayurveda[[CLOSE_4]] [[OPEN_5]]Cucina ayurvedica[[CLOSE_5]] [[OPEN_6]]I nostri prodotti[[CLOSE_6]] [[OPEN_7]]Strutture del villaggio[[CLOSE_7]] [[OPEN_8]]Offerte[[CLOSE_8]] [[OPEN_9]]Chi siamo[[CLOSE_9]] [[OPEN_10]]Centro di conoscenza[[CLOSE_10]] [[OPEN_11]]Galleria multimediale[[CLOSE_11]] [[OPEN_12]]Riconoscimenti[[CLOSE_12]] [[OPEN_13]]Recensioni[[CLOSE_13]] [[OPEN_14]]Come raggiungerci[[CLOSE_14]] [[OPEN_15]]FAQ e download[[CLOSE_15]] [[OPEN_16]]Contatti[[CLOSE_16]] [[OPEN_17]]Ambulatorio (senza appuntamento)[[CLOSE_17]] [[OPEN_18]]Trattamento e formazione[[CLOSE_18]] [[OPEN_19]]Ritiri di yoga e Ayurveda[[CLOSE_19]] [[OPEN_20]]Pacchetti di yoga e meditazione[[CLOSE_20]] [[OPEN_21]]CSR[[CLOSE_21]] [[OPEN_22]]I nostri partner[[CLOSE_22]] [[OPEN_23]]Escursioni[[CLOSE_23]] [[OPEN_24]]Festività[[CLOSE_24]] [[OPEN_25]]Galleria fotografica[[CLOSE_25]] [[OPEN_26]]Lavora con noi[[CLOSE_26]] [[OPEN_27]]Candidati ora[[CLOSE_27]] [[OPEN_28]]Link ayurvedici[[CLOSE_28]] [[OPEN_29]]Archivio[[CLOSE_29]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aeefcfa5e981ddea1acf",
+   "sourceHash": "aeefcfa5e981ddea1acff2eec574b3f7dd0336bd1b16df373ac649e9ebb67ea8",
+   "text": "Registrazione permanente come struttura clinica — 2025–2030",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_371e4203197189a6da16",
+   "sourceHash": "371e4203197189a6da164c7b0ad6cad0d06fc8964891bcd59edda18f13c7600b",
+   "text": "Kairali – The Ayurvedic Healing Village offre autentico benessere e assistenza olistica, dove la tranquillità incontra la tradizione. La nostra struttura è priva di alcol, fumo e caffeina, e offre un ambiente pulito e rigenerante per una completa armonia tra mente e corpo. Si immerga nei rimedi ayurvedici tradizionali, nello yoga, nella meditazione e in uno stile di vita biologico, per un'esperienza autentica di trasformazione e guarigione in Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Our retreat' rendered as 'La nostra struttura' for natural Italian; 'holistic care' as 'assistenza olistica' to avoid 'cura' (cure-equivalent ambiguity)."
+   ]
+  },
+  {
+   "id": "t_aaa300737e84bb2384ee",
+   "sourceHash": "aaa300737e84bb2384eeef2a171807565c2671cd57eed54575bd54020d481563",
+   "text": "Una donna in completo di lino verde che solleva le mani giunte sopra la testa in una posizione yoga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31265b74f519c209f5b9",
+   "sourceHash": "31265b74f519c209f5b978ee27914d89dd153a5a60e5b3a3df2c7945a2d81814",
+   "text": "Due terapisti premono tamponi di erbe caldi su un paziente disteso su un lettino da trattamento in legno",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

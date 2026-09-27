@@ -1,0 +1,107 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_7eb97189c5df10b5a8a7",
+   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
+   "text": "ヴィレーチャナム（瀉下療法）：治療的な瀉下や治療用の下剤を用いて腸から有害物質を排出するヴィレーチャナムは、黄疸や痔の場合に特に有効な治療法です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Cure' rendered as 治療法 (treatment) per the language lock; source parenthesis left unclosed, closed here for readability. Flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_d0cd7d3df25aa6d85765",
+   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
+   "text": "：オイル、ギー、ミルクなどの薬剤や天然の煎じ液を浣腸によって用いるアーユルヴェーダの療法を、ヴァスティと呼びます。煎じ液は、治療が必要な疾患に応じて選ばれます。大きな利点があり、痔、便秘、関節炎などの疾患に高い効果を発揮します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment. 'Disease that needs to be cured' rendered as 治療が必要な疾患 (disease requiring treatment) per the language lock."
+   ]
+  },
+  {
+   "id": "t_0be803d5e810d8ee5187",
+   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
+   "text": "ヴァスティ：オイル、ギー、ミルクなどの薬剤や天然の煎じ液を浣腸によって用いるアーユルヴェーダの療法を、ヴァスティと呼びます。煎じ液は、治療が必要な疾患に応じて選ばれます。大きな利点があり、痔、便秘、関節炎などの疾患に高い効果を発揮します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Disease that needs to be cured' rendered as 治療が必要な疾患 (disease requiring treatment) per the language lock."
+   ]
+  },
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": "：副鼻腔炎や片頭痛など、頭部に関わる不調に悩む患者さまには、このアーユルヴェーダ療法が最適です。点鼻薬を鼻孔に適切に用いることで、頭部をあらゆる痛みから解放する自然な浄化法です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment. Source claims ('the best', 'freed from any kind of pain') kept as-is, not strengthened; flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "ナスヤム：副鼻腔炎や片頭痛など、頭部に関わる不調に悩む患者さまには、このアーユルヴェーダ療法が最適です。点鼻薬を鼻孔に適切に用いることで、頭部をあらゆる痛みから解放する自然な浄化法です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') kept as-is, not strengthened; flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_e747d12ed643ce1ef449",
+   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
+   "text": "：最後に、このプロセスは血液を浄化するために行われます。アーユルヴェーダでは、不純な血液が多くの病気の主な原因とされているため、この療法によって血液を浄化し、乾癬、色素沈着、皮膚炎などさまざまな健康上の問題の解消を図ります。パンチャカルマの期間中も終了後も、栄養は欠かせません。浄化のプロセスの後は、空腹を感じたらキチャリ（野菜の混ぜ料理）を摂るようにしてください。この食事を3〜4日間続け、生姜、コショウ、塩、緑豆のスープ、その他の豆類のスープなど、さまざまな食品を少しずつ加えながら、量を徐々に増やしていきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment. Flag for clinical review (bloodletting efficacy claims)."
+   ]
+  },
+  {
+   "id": "t_df61c09156f0a21cf0c1",
+   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
+   "text": "ラクタモークシャナ：最後に、このプロセスは血液を浄化するために行われます。アーユルヴェーダでは、不純な血液が多くの病気の主な原因とされているため、この療法によって血液を浄化し、乾癬、色素沈着、皮膚炎などさまざまな健康上の問題の解消を図ります。パンチャカルマの期間中も終了後も、栄養は欠かせません。浄化のプロセスの後は、空腹を感じたらキチャリ（野菜の混ぜ料理）を摂るようにしてください。この食事を3〜4日間続け、生姜、コショウ、塩、緑豆のスープ、その他の豆類のスープなど、さまざまな食品を少しずつ加えながら、量を徐々に増やしていきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Flag for clinical review (bloodletting efficacy claims)."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "研修を提供しています。このバッチのどのルートにも「近日公開」ステータスは適用されていません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy; translated as displayed."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "現在の医療、商業、受賞、提供状況に関する記載には、それぞれ非公開の公開承認ゲートがそのまま適用されます。ソースの取得は検証を意味せず、ルートごとのゲートがないことは、その記載が承認されたことを意味するものではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy; translated as displayed."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "すべての方のための滞在プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 滞在プログラム (stay programmes) for clinical register."
+   ]
+  }
+ ]
+}

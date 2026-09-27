@@ -1,0 +1,107 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_7eb97189c5df10b5a8a7",
+   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
+   "text": "Virechanam (purgación): Consiste en eliminar la materia tóxica de los intestinos mediante una purga terapéutica o un laxante terapéutico; el Virechanam es un tratamiento especialmente eficaz en casos de ictericia y hemorroides.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'cure' rendered as 'tratamiento' per clinical register; missing closing parenthesis in source supplied."
+   ]
+  },
+  {
+   "id": "t_d0cd7d3df25aa6d85765",
+   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
+   "text": ": La terapia ayurvédica que administra medicamentos o decocciones naturales, como aceites, ghee o leche, mediante enema se conoce como Vasti. La decocción depende de la enfermedad que se deba tratar. Ofrece grandes beneficios y resulta eficaz frente a afecciones como las hemorroides, el estreñimiento y la artritis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'needs to be cured' rendered as 'se deba tratar' (no cure claim); 'powerful against' rendered as 'resulta eficaz frente a' without strengthening."
+   ]
+  },
+  {
+   "id": "t_0be803d5e810d8ee5187",
+   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
+   "text": "Vasti: La terapia ayurvédica que administra medicamentos o decocciones naturales, como aceites, ghee o leche, mediante enema se conoce como Vasti. La decocción depende de la enfermedad que se deba tratar. Ofrece grandes beneficios y resulta eficaz frente a afecciones como las hemorroides, el estreñimiento y la artritis.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'needs to be cured' rendered as 'se deba tratar' (no cure claim)."
+   ]
+  },
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": Para los pacientes con problemas que afectan a la zona de la cabeza, como la sinusitis y la migraña, esta terapia ayurvédica es la más indicada. Es una técnica natural de limpieza en la que se administran gotas nasales de forma regulada en las fosas nasales y que busca liberar la zona cerebral de todo tipo de dolor.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source absolute claim ('freed from any kind of pain') rendered as the aim of the therapy ('busca liberar') — flag for Dr. Deepu John's clinical review; 'the best' kept as 'la más indicada'."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam: Para los pacientes con problemas que afectan a la zona de la cabeza, como la sinusitis y la migraña, esta terapia ayurvédica es la más indicada. Es una técnica natural de limpieza en la que se administran gotas nasales de forma regulada en las fosas nasales y que busca liberar la zona cerebral de todo tipo de dolor.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source absolute claim ('freed from any kind of pain') rendered as the aim of the therapy ('busca liberar') — flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_e747d12ed643ce1ef449",
+   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
+   "text": ": Por último, este proceso se realiza para limpiar la sangre. Según el Ayurveda, la sangre impura es una causa importante de muchas enfermedades, por lo que esta terapia permite purificar la sangre y ayudar así con problemas de salud como la psoriasis, la pigmentación, la dermatitis y muchos otros. La nutrición es esencial tanto durante como después del Panchakarma. Tras el proceso de purificación, el paciente debe tomar Kitchari (un plato de verduras variadas) siempre que tenga hambre. Debe seguir esta dieta durante tres o cuatro días, incorporando poco a poco otros alimentos como jengibre, pimienta, sal, sopa de judía mungo y otras sopas de legumbres, y aumentando gradualmente la cantidad.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'getting rid of health issues' softened to 'ayudar con' to avoid a cure claim; flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_df61c09156f0a21cf0c1",
+   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
+   "text": "Raktamokshana: Por último, este proceso se realiza para limpiar la sangre. Según el Ayurveda, la sangre impura es una causa importante de muchas enfermedades, por lo que esta terapia permite purificar la sangre y ayudar así con problemas de salud como la psoriasis, la pigmentación, la dermatitis y muchos otros. La nutrición es esencial tanto durante como después del Panchakarma. Tras el proceso de purificación, el paciente debe tomar Kitchari (un plato de verduras variadas) siempre que tenga hambre. Debe seguir esta dieta durante tres o cuatro días, incorporando poco a poco otros alimentos como jengibre, pimienta, sal, sopa de judía mungo y otras sopas de legumbres, y aumentando gradualmente la cantidad.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'getting rid of health issues' softened to 'ayudar con' to avoid a cure claim; flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "Se ofrece formación. No se aplica el estado «Próximamente» a ninguna ruta de este lote.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/status note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "Las afirmaciones actuales de carácter médico, comercial, de premios y de disponibilidad mantienen exactamente sus controles privados de publicación. La captura de la fuente no constituye verificación, y la ausencia de un control por ruta nunca significa que una afirmación esté aprobada.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/status note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "Programas para todos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programas' per clinical register."
+   ]
+  }
+ ]
+}
