@@ -1,34 +1,34 @@
 {
  "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
- "updatedAt": "2026-09-28 05:20:09 IST",
+ "updatedAt": "2026-09-28 05:24:11 IST",
  "counts": {
-  "jobsAccepted": 6643,
-  "jobsRemaining": 689,
+  "jobsAccepted": 6670,
+  "jobsRemaining": 662,
   "unitsBlocked": 27,
-  "rejectedAwaitingRetry": 18,
+  "rejectedAwaitingRetry": 19,
   "perLocale": {
    "hi": {
-    "batchesAccepted": 518,
+    "batchesAccepted": 521,
     "batchesTotal": 611,
-    "unitsTranslated": 12017,
+    "unitsTranslated": 12067,
     "unitsBlocked": 7
    },
    "de": {
-    "batchesAccepted": 590,
+    "batchesAccepted": 592,
     "batchesTotal": 611,
-    "unitsTranslated": 13580,
+    "unitsTranslated": 13630,
     "unitsBlocked": 1
    },
    "fr": {
-    "batchesAccepted": 566,
+    "batchesAccepted": 572,
     "batchesTotal": 611,
-    "unitsTranslated": 12981,
+    "unitsTranslated": 13127,
     "unitsBlocked": 1
    },
    "es": {
-    "batchesAccepted": 558,
+    "batchesAccepted": 560,
     "batchesTotal": 611,
-    "unitsTranslated": 12798,
+    "unitsTranslated": 12848,
     "unitsBlocked": 3
    },
    "it": {
@@ -38,15 +38,15 @@
     "unitsBlocked": 3
    },
    "pt": {
-    "batchesAccepted": 575,
+    "batchesAccepted": 581,
     "batchesTotal": 611,
-    "unitsTranslated": 13202,
+    "unitsTranslated": 13352,
     "unitsBlocked": 1
    },
    "nl": {
-    "batchesAccepted": 503,
+    "batchesAccepted": 506,
     "batchesTotal": 611,
-    "unitsTranslated": 11733,
+    "unitsTranslated": 11794,
     "unitsBlocked": 1
    },
    "ru": {
@@ -74,9 +74,9 @@
     "unitsBlocked": 0
    },
    "ko": {
-    "batchesAccepted": 549,
+    "batchesAccepted": 554,
     "batchesTotal": 611,
-    "unitsTranslated": 12634,
+    "unitsTranslated": 12714,
     "unitsBlocked": 1
    }
   }
