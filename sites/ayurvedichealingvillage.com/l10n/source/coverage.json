@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -15,38 +15,38 @@
   },
   {
    "file": "public/ahv/views/ahv-page-about-us-desktop.json",
-   "sha256": "3bedc2faa2ae4c42ce2a6401e485f231326bb258fe1085d71ec62d5107d1dfa0",
-   "units": 59,
-   "status": "covered"
-  },
-  {
-   "file": "public/ahv/views/ahv-page-about-us-mobile.json",
-   "sha256": "291c8a06937f5b19224a69901c3ba3c9b7f53170a0e40e4c52cd4b160c42f051",
+   "sha256": "d27c722a43669a042105791bed6c78f86fa47440f5c641fe71d0065ee56d431b",
    "units": 60,
    "status": "covered"
   },
   {
+   "file": "public/ahv/views/ahv-page-about-us-mobile.json",
+   "sha256": "1df8dc3f385760f1fc0e85eb92bd1a4aba69434cdff611d9b13ddc94ed7cda49",
+   "units": 61,
+   "status": "covered"
+  },
+  {
    "file": "public/ahv/views/ahv-page-accreditations-desktop.json",
-   "sha256": "f86f550d4e43c6fea6d39ed50caf0859dbfa57608890d11e1a7e4f02f785b2c6",
-   "units": 39,
+   "sha256": "fdde57a8132f905ed0c21cb0c9013f5f2bfa34670d9187fd82a52d99df93dca1",
+   "units": 40,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-accreditations-mobile.json",
-   "sha256": "a2452d82cbf4f9985c242f7f0fcb476a91a46498d8a0b439fbbca1b7f6ba59ed",
-   "units": 41,
+   "sha256": "d5fc7b755da31bb53f98ab575d6c2c0657b368536a898b85fd31299915c53b48",
+   "units": 42,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-desktop.json",
-   "sha256": "5683f812050a0378aa1808f1e2a884be30ffd9d4e5aef8d8cce2f410e05680d4",
-   "units": 366,
+   "sha256": "5cd80367bb2a1d42438e3300ee8d5e22e2c018a9395257d4ecff93cadf211e86",
+   "units": 367,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-mobile.json",
-   "sha256": "fe922c4fa386505882fabe0d04ddc1418327d545793f58ea6dd3e42a33816592",
-   "units": 364,
+   "sha256": "d232bd1b8b833b25bdbfb289af6a2c0f38390b1c9e36c2df4aac5c9f31dabd8a",
+   "units": 365,
    "status": "covered"
   },
   {
@@ -159,14 +159,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatments-desktop.json",
-   "sha256": "2e01fcf3e2e7801556c0bee7d458cf71db1c188c9d127889581ed4bff2e3a04c",
-   "units": 367,
+   "sha256": "0e8cec9fe6521fab365f64c6a28ba2fd72fd0db3cbe0a62d2418e046cad9e3f8",
+   "units": 368,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatments-mobile.json",
-   "sha256": "803c7642f427636feab8eb1126ddc645d6405b7626918754a5b55cc5fcb07ddc",
-   "units": 365,
+   "sha256": "817c163f91ed3f98dd85f8ced8266309db787502d197a6f5c93d0436caeb435e",
+   "units": 366,
    "status": "covered"
   },
   {
@@ -411,13 +411,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-gallery-desktop.json",
-   "sha256": "e265fe68b3084381118815d285092a191be1c7a6893a749af9d4898ea34e6fe3",
+   "sha256": "0d7948601d278c131431b70a776d966ac3956c1710eed9c270b01952fccee232",
    "units": 30,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-gallery-mobile.json",
-   "sha256": "86c6e10851ce7526327186115dbd43bddd326932429776e18ecf13732e64dbda",
+   "sha256": "a8b34af640894f6f7adf9baf5c20abe1aa6bad2783cb7e3dab84ac9cc7552d85",
    "units": 30,
    "status": "covered"
   },
@@ -807,26 +807,26 @@
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-desktop.json",
-   "sha256": "ceb7066f4cc6037abac86433cd3b861efd4b305dc1f5098b0b0721bf86fd020c",
-   "units": 366,
+   "sha256": "77bf424fd737aae75e2acd64a2c9eb802f1284306db1b2f01af822d6d2c46040",
+   "units": 367,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-mobile.json",
-   "sha256": "1c441c55f82132b20c5b3c12031654ae4ccdb369a6c00cd8eb11f08c949e8e31",
-   "units": 364,
+   "sha256": "32ed6e4cea857af5060f307d36553816f6d9fdd3ece6a0079cf375cde2d23449",
+   "units": 365,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-treatment-programs-desktop.json",
-   "sha256": "74d9d703bbdf560859ea5a7b40205dfd12c3d0e9daba86ae7e73d63c9bfb9096",
-   "units": 366,
+   "sha256": "df1f72ee4dc4c7a041d0b1a09d463c13f84348e974ddd8cd3784483cca546a8e",
+   "units": 367,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-treatment-programs-mobile.json",
-   "sha256": "d2287939b118f2b6097bf5c7623ef19f45929d27d7b4623a824fa8ec1ad05821",
-   "units": 364,
+   "sha256": "cea6f6f70602de8be81a26aa725fd80b8e7df6b745625bff1f72b31cb573e080",
+   "units": 365,
    "status": "covered"
   },
   {
@@ -855,14 +855,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-desktop.json",
-   "sha256": "b1ac6c1b307ed802de86ee917cddfab73b6380990b9b0badfcf8d473c9b6f967",
-   "units": 366,
+   "sha256": "0f2a904624f356c4794d88fae58df9661d1c754bf95bf65837dc278c2c175f72",
+   "units": 367,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-mobile.json",
-   "sha256": "b55221a0c29d111df7fd8be948d0ee7c402d5e61cd26718b04d7de3bf3fb3dc5",
-   "units": 364,
+   "sha256": "89123ff509e035346b8fd8047da7960e63f35bbb3cdeac77df359606e4cefb79",
+   "units": 365,
    "status": "covered"
   },
   {
@@ -903,14 +903,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-desktop.json",
-   "sha256": "b9020e905c706fc76ec6844cf83b86192e936d37d2ef5cc6081cf5ff9524db5e",
-   "units": 373,
+   "sha256": "bdf908e7ed667f5953546aab71190c8d397773609260a63c780d678455fd44c9",
+   "units": 374,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-mobile.json",
-   "sha256": "d1250eeb7fac1ba1759cf03dbacbd8fc044afe01597b7b61319f4ab1693cd427",
-   "units": 371,
+   "sha256": "ca4daf0d217d7ffe2a85da4d5c17b7192c314ac51ea4213712405bc06738ccdb",
+   "units": 372,
    "status": "covered"
   },
   {
@@ -987,14 +987,14 @@
   },
   {
    "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-desktop.json",
-   "sha256": "3e8420ea800034da16cd1eaffe85b91134db579124d2d41a067cd858368ed1ac",
-   "units": 178,
+   "sha256": "1188afda62fe5da4033e028ecce107ab09fbbfe9c2e034b9f41303df02c3992d",
+   "units": 161,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-mobile.json",
-   "sha256": "f3877379742002f6e3532c79765995cdb5ac868b9d3123dd082356da20f50a5c",
-   "units": 164,
+   "sha256": "37e8acc3865c97c58537df5d5b218b7b1d316427216eecb6a29fd0482964e267",
+   "units": 151,
    "status": "covered"
   },
   {
@@ -1035,25 +1035,25 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "3b6c1ec3d988200f93bca1fcf45d8081ff7ba3a11b4bd6b220187b18c4299520",
-   "units": 686,
+   "sha256": "3d291eea9905ea6c1b96c588ae460544d3a4f82a4973629b6abd4416fc722d17",
+   "units": 692,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "934124f14273a78c2633058e43e06d38f7444d25d8ffeaaf85f49065f2afdb0b",
-   "units": 619,
+   "sha256": "2efc2c706ddc258c9a6c3aa22f6112d995f417b3672cb67519d03c23b9ad5724",
+   "units": 631,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/about-us-data.js",
-   "sha256": "17e16d29561abb153a0dca3a26588a7ab0812d3d6d6ca29fb63fadebc1c0e2e9",
+   "sha256": "142d59103e82420dbd007fde0faba5cccffba29bfb51b94a14e198caefbb3c50",
    "units": 72,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/accreditations-data.js",
-   "sha256": "2cf11c04a9e602ad55395a8e46df8468af83172e42addd6888e5b53ec135dabf",
+   "sha256": "4ac5675cdcbb61b488b11798580b039231123d70631925d0b6bd0f8c8e5049a6",
    "units": 130,
    "status": "covered"
   },
@@ -1071,8 +1071,8 @@
   },
   {
    "file": "public/ahv/assets/article-family-data.js",
-   "sha256": "65b4eabb81811b603e57f66a4ee75074c46f62f53231d1510cfbe7a4eb7ba05a",
-   "units": 3949,
+   "sha256": "a536dd489a786a24b882d72b9af491980610a6169a873be14c9e7764f88638c7",
+   "units": 3989,
    "status": "covered"
   },
   {
@@ -1137,8 +1137,8 @@
   },
   {
    "file": "public/ahv/assets/collection-family-data.js",
-   "sha256": "ec1d52efa85a25490b3e93b2622c5548ca39a0ad7d4ed8c9c40232f794bbb479",
-   "units": 1143,
+   "sha256": "a8d6ddbfbd83f3fa94d0925707a4c3132269878c0bfae88d0f5ed29655c840be",
+   "units": 1146,
    "status": "covered"
   },
   {
@@ -1209,8 +1209,8 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "667ddf45044d16d451ff4a433660632feb026d17f001b83371b64a28dbf9854a",
-   "units": 2867,
+   "sha256": "5915138b327c3f1ab0852235c016aced0c65a4cb7aa78ce3265b6f7b5a9c2b92",
+   "units": 2869,
    "status": "covered"
   },
   {
@@ -1245,8 +1245,8 @@
   },
   {
    "file": "public/ahv/assets/gallery-hub-2026-candidate.js",
-   "sha256": "37929d9ee7f47bfadc5edfb2d2cb91cde23fa0e464264ecb3b6e67edf4ab1788",
-   "units": 44,
+   "sha256": "faba49dce065ee6f2c02020121a6fb819ad8f660a32a9bf901cd8ee47ab49ca0",
+   "units": 45,
    "status": "covered"
   },
   {
@@ -1317,8 +1317,8 @@
   },
   {
    "file": "public/ahv/assets/photo-collections-data.js",
-   "sha256": "66878dd6f73f8ee5e610d4f97082f4be48b7c2fec8457c7ad7bfa06f2f6b1e51",
-   "units": 1371,
+   "sha256": "50675b5bfa9ca7f8c98fad307e30cfc762b0d96106c4874b135ef524d3e2c55c",
+   "units": 1369,
    "status": "covered"
   },
   {
@@ -1335,8 +1335,8 @@
   },
   {
    "file": "public/ahv/assets/reader25a-family-data.js",
-   "sha256": "baf023e8d15d7d49b8bd4265b60bcc5fec14cc929b728c49b8d5576e3f769f51",
-   "units": 3453,
+   "sha256": "6d76e4d14d3a283b55f2a76a3a1f5ba0f14e40ac18feb3e7a605ab79018fbbd3",
+   "units": 3456,
    "status": "covered"
   },
   {
@@ -1347,8 +1347,8 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "592ed1bdc7af10b47bbf6361cc4baf240f9459f2b9e741a0893696d6f45d0497",
-   "units": 3041,
+   "sha256": "9c21f8f38bb4eb62b7f2301c3cfd2def54896dc115bcac0715bc4072fe719d63",
+   "units": 3045,
    "status": "covered"
   },
   {
@@ -1359,8 +1359,8 @@
   },
   {
    "file": "public/ahv/assets/reader6c-family-data.js",
-   "sha256": "fedbda7221586937b1a0484368b64c50e109fb5031e290eb5de54f5a3c686353",
-   "units": 621,
+   "sha256": "6616041211152d8331547e7a3b93f2b7da27634a0fa4acf14f252ddb8c76ceed",
+   "units": 622,
    "status": "covered"
   },
   {
@@ -1383,8 +1383,8 @@
   },
   {
    "file": "public/ahv/assets/seven-informational-data.js",
-   "sha256": "bd614430be682a36f99bee1a1d21700a8fbfd37ed3b348ece1197003967d182e",
-   "units": 899,
+   "sha256": "95e0ae5878031887c865f4b8d3e6e9c94954a23ec3e68c2cd38827eefa9b2fe0",
+   "units": 901,
    "status": "covered"
   },
   {
@@ -1419,7 +1419,7 @@
   },
   {
    "file": "public/ahv/assets/travel-family-data.js",
-   "sha256": "c3d2515563b662c5dabfd58c4cffb558d94d53198d01ec1255fecf22a80d1897",
+   "sha256": "dd7292d0295cc4b127b7e9737b22bf9c7071be08d454fe6caf7b330cc6131ef8",
    "units": 682,
    "status": "covered"
   },
@@ -1461,13 +1461,13 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "b0db863c2e02b10a250e764c55f8af216ead8f5666b1b335b7547d64a2ed8cb6",
+   "sha256": "426953fe1871b0fdb3fda3528dc366876753b7b9046b7621cfdf32fc224d6004",
    "units": 12,
    "status": "covered (curated allowlist)"
   },
   {
    "file": "public/design/consistency.js",
-   "sha256": "de46aee15406fa302a1842176d94bbf8ddf4297e25e1b20e3f46300deaf35c8b",
+   "sha256": "5345e5c92684d2a8503c0f60221f2cf3ccca61125aa85032b052d198365ebf0d",
    "units": 6,
    "status": "covered (curated allowlist)"
   },
@@ -1491,19 +1491,19 @@
   },
   {
    "file": "public/design/section-nav.js",
-   "sha256": "ecb5d97e17bc119a168f20b46b36730e62f1bf3ecf5c4ce2c67b18ded7cf3cbf",
+   "sha256": "5887798fb0335dcfabe1b732e9b064804a50c0a60f14c849c231e15abb9ac82b",
    "units": 9,
    "status": "covered (curated allowlist)"
   },
   {
    "file": "public/design/section-nav.data.js",
-   "sha256": "92a00f2e546ba39eb5957f7507683115d1e65eaae0be162b0ef2658621f938a2",
-   "units": 202,
+   "sha256": "971a6685527af68fe05388b74712b58db4282689535082ac321fb6719c49949f",
+   "units": 210,
    "status": "covered"
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "eeb64b31d9b4a3fe2b12eb7fd038af681fd03d52478b00f1013830b219b63a1b",
+   "sha256": "e70f40c98df8b09a72818d1b8140c1cb85cfc53ad50431df427807fe9898ef77",
    "units": 701,
    "status": "covered (key whitelist)"
   },
@@ -1533,7 +1533,7 @@
   },
   {
    "file": "app/(english)/video-gallery/view.tsx",
-   "sha256": "42a92e5af8d60d9178f27e067b732bed987d62d5b7468ef48b2ba33fbdf9003f",
+   "sha256": "4dc9cb90135840e2ff373285b158c96162794d99e9be3bd9e934e943e04de9e0",
    "units": 32,
    "status": "covered (native page)"
   },
