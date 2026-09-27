@@ -225,3 +225,6 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
  nav[data-ahv-section-nav] .ahv-rail-name{font-size:18px}
 }
 #ahv-design-root a[href^="https://bookings.ayurvedichealingvillage.com"]{min-height:44px}
+
+/* EF-25: the cookie notice steps under an open header menu (chrome.js noticeUnderMenu); restored on close */
+[data-ahv-notice-under-menu] { z-index:59 !important; }

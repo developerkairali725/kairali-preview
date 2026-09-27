@@ -196,3 +196,9 @@ input[type="date"]::-webkit-date-and-time-value { text-align:left; min-height:1.
    page sideways at 320px / enlarged text. html[lang] is the page language, so hyphens:auto uses
    the right dictionary; overflow-wrap is the fallback where no dictionary exists. */
 html:not([lang^="en"]) #ahv-design-root :is(h1, h2, h3, h4, h5, p, li, dt, dd, figcaption, span, a) { overflow-wrap:break-word; hyphens:auto; }
+
+/* Long translated chip / button labels (e.g. FR "Douleur, colonne vertébrale et articulations", 404px at 390px)
+   carried inline white-space:nowrap + flex:0 0 auto and widened the phone layout viewport (421px), pushing the
+   menu and cookie notice off-screen. A button is never wider than its container; it wraps only when it must. */
+#ahv-design-root button { max-width:100%; }
+#ahv-design-root button[style*="nowrap"] { white-space:normal !important; overflow-wrap:break-word; }

@@ -12,7 +12,10 @@ const VPS = (arg("viewports", "360x640,390x844,430x932,1440x900")).split(",").ma
 if (SHOTS) fs.mkdirSync(SHOTS, { recursive: true });
 const b = await pw[ENGINE].launch(); const out = [];
 for (const vp of VPS) {
-  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800 && ENGINE !== "firefox", hasTouch: vp.w < 800 });
+  // protected Vercel staging: run under `vc env run --` so the short-lived development OIDC token rides as the
+  // Trusted-Sources header (never printed, never written); localhost runs send nothing extra
+  const oidc = /^https:/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } : undefined;
+  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800 && ENGINE !== "firefox", hasTouch: vp.w < 800, ...(oidc ? { extraHTTPHeaders: oidc } : {}) });
   await ctx.addInitScript(() => { try { localStorage.setItem("ktahv-consent", "declined"); } catch (e) {} });
   for (const r of routes) {
     const p = await ctx.newPage(); const errs = []; p.on("pageerror", (e) => errs.push(String(e).slice(0, 140)));

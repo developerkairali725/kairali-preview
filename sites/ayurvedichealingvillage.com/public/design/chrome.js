@@ -177,6 +177,7 @@
       syncChatState();
       externalLinks();
       liftContacts();
+      noticeUnderMenu();
       templateLaunchers();
     } catch (e) { /* never break the page */ }
   }
@@ -211,12 +212,30 @@
     if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom');
   }
   window.addEventListener('resize', liftContacts);
+  // EF-25 (owner, 26 Sep 2026: the cookie notice must not obscure navigation): the homepage's own phone
+  // menu and the cookie notice share z-index 60 and the notice, later in the document, covered the open
+  // menu's lower half on a fresh visit. While a header menu is expanded the notice steps one layer
+  // below it; closing the menu restores it. Structural (any locale). Nothing is hidden or answered —
+  // the notice, its choices, storage and signals are untouched.
+  function noticeUnderMenu() {
+    var open = false, bs = document.querySelectorAll('header button[aria-expanded="true"]');
+    for (var i = 0; i < bs.length; i++) if (!bs[i].classList.contains('ahv-lang-btn') && bs[i].getAttribute('aria-haspopup') !== 'dialog') open = true;
+    var fixed = document.querySelectorAll('#ahv-design-root [style*="position: fixed"], #ahv-design-root [style*="position:fixed"], #ahv-consent');
+    for (var k = 0; k < fixed.length; k++) {
+      var n = fixed[k];
+      // the privacy link carries the locale's own slug (e.g. /de/datenschutzerklarung/), read from the locale path map
+      var lp = window.AHV_LOCAL_PATHS && window.AHV_LOCAL_PATHS['/privacy-policy/'];
+      var priv = n.querySelector('a[href*="privacy-policy"]') || (lp && n.querySelector('a[href="' + lp + '"], a[href$="' + lp + '"]'));
+      if (n.closest('header') || !priv || n.querySelectorAll('button').length < 2) continue;
+      if (open) n.setAttribute('data-ahv-notice-under-menu', ''); else n.removeAttribute('data-ahv-notice-under-menu');
+    }
+  }
   function schedule() {
     if (scheduled) return;
     scheduled = true;
     setTimeout(pass, 0);
   }
-  if (window.MutationObserver) new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  if (window.MutationObserver) new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'aria-expanded'] });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
 })();
