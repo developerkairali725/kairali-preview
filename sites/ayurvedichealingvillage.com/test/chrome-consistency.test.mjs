@@ -48,6 +48,25 @@ test("native-page chrome snapshot = shared chrome header", () => {
   assert.deepEqual(headerNav(snap), headerNav(component));
 });
 
+test("homepage footers = shared chrome footer labels for every shared destination", () => {
+  // the shared footer may label one destination twice (desktop vs phone) — any of its labels is in sync
+  const shared = new Map();
+  for (const [p, l] of links(fs.readFileSync("public/ahv/components/AHV Chrome Footer.dc.html", "utf8"))) {
+    if (!l) continue;
+    if (!shared.has(p)) shared.set(p, new Set());
+    shared.get(p).add(l);
+  }
+  assert.ok(shared.has("/yoga-meditation-training/"), "shared footer links the yoga training page");
+  for (const v of ["home-hi-fi-v4", "home-mobile"]) {
+    const t = view(v);
+    const a = t.lastIndexOf("<footer");
+    assert.ok(a > -1, `${v} has a footer`);
+    for (const [p, l] of links(t.slice(a, t.indexOf("</footer>", a)))) {
+      if (l && shared.has(p)) assert.ok(shared.get(p).has(l), `${v} footer ${p}: "${l}" vs shared ${[...shared.get(p)].join(" / ")}`);
+    }
+  }
+});
+
 test("no header or menu anywhere re-expands the Yoga label with Sanskrit", () => {
   for (const [name, html] of [["component", component], ["home-hi-fi-v4", view("home-hi-fi-v4")], ["home-mobile", view("home-mobile")]]) {
     for (const l of [...(headerNav(html) || []), ...(drawerNav(html) || [])]) assert.ok(!/Dhyāna|Abhyāsa/.test(l[1]), `${name}: ${l[1]}`);

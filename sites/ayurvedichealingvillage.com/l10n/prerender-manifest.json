@@ -1,12 +1,102 @@
 {
- "generated": "2026-09-25T15:48:53.992Z",
+ "generated": "2026-09-26T12:23:47.515Z",
  "locales": {
+  "ar": {
+   "count": 1,
+   "catalogSha256": "7d6d5cab69f008b511145d75d720385754434a05036b22d467872a42f839fc33",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "95173687d61bc43db8d488a9ab3540b6fefa725f15e116bc7e2212a844caf0ec"
+   }
+  },
   "de": {
    "count": 3,
+   "catalogSha256": "8226ee72b075709ce623319d1497f6ea66639637dd9d064af0d63af390697e8f",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
    "files": {
-    "about-us.html.gz": "63706958576f759022a14a09bcda5cd59a134a962b01765420fb740cf4bda4e2",
-    "index.html.gz": "4ba5f4b831038d2dffd27875d61999196c54ef1a386a4ea67f982bc07432a8db",
-    "treatment-for-hypertension.html.gz": "eb31f5fcfc752806aa8c1aedcd46a5bbae677c8f3ad3fb523a1116e7ac1a45ef"
+    "about-us.html.gz": "1bc26c6cf82a34b3ee11244aeed4c75601a51398089fcd92c7fd726f12b46da5",
+    "index.html.gz": "dfc1855af648d3722357c3ee5694ff4f566d3af41b0745ac32d7f00e77accd77",
+    "treatment-for-hypertension.html.gz": "beb5ff31dcef3ef0023ca2fd415bd921558f1225177a1b55559deddd7de40d43"
+   }
+  },
+  "es": {
+   "count": 1,
+   "catalogSha256": "e5b74c820bc0f1244c63b3e110ad33a46d47eba9cee5edb1fcc12a67bb34247b",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "a42c64426ca7d3d3cbc6e90f3d3fa74a57caf25a3a3db810ed34b69165041f6a"
+   }
+  },
+  "fr": {
+   "count": 1,
+   "catalogSha256": "fdf4655658e5630ae5341d9c8e9bb32213cec5a7d0b0d594783d45b2ee11d903",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "caf4de98060414dea5ff5ab51c3953c98a0848983a61439afdfaf44dc5db9fad"
+   }
+  },
+  "hi": {
+   "count": 1,
+   "catalogSha256": "34f05052c58c8b26085d6f3422fe0187962a0b9254c954e6a9ebc51a00cdffbd",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "4d1e0d658192eee62340cd587b0c68eb49599539336854ffddc12c456907344b"
+   }
+  },
+  "it": {
+   "count": 1,
+   "catalogSha256": "ef29daf3374d3df0ca91b7c7146f388e92fca6facbc383721230cddffdc951f3",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "31b8d3faa2819fbf729a8e6f49388a2c10e5e192cc614320646150b06ac8956e"
+   }
+  },
+  "ja": {
+   "count": 1,
+   "catalogSha256": "fa424c50fc0095b4818654a3187d3b7d7b509915182eef0a29c985cec26970a1",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "0a9472de35a77b86958099f90e5d72d7376d58b7011c3f5649d56b9d4ff9d958"
+   }
+  },
+  "ko": {
+   "count": 1,
+   "catalogSha256": "f4e5b1463de492240ddcc5125860c2a836304fef128d968c65324436d4163016",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "c82045d6c33ab05c2004ce9efcdcf87535184dd51e86781d86beaa725f02c59d"
+   }
+  },
+  "nl": {
+   "count": 1,
+   "catalogSha256": "e9936b8e18227e303d6e5ad248b5c3f283a5202528587a31ca7f2de56f56a504",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "f172570b8e75265f8a047b07dbe61960eb01de31bd180b9f5b92330c944083cb"
+   }
+  },
+  "pt": {
+   "count": 1,
+   "catalogSha256": "8dbc4084a311050c47cfc8e57edb2b566fefbec32578194601a4654ec06df15b",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "9106d0cf5e6947f243bcfd54b0c739ac10b37d6f40c43d568d0c44badff1e429"
+   }
+  },
+  "ru": {
+   "count": 1,
+   "catalogSha256": "bc123b50d87f7d417fcab2bbcdd6284ec23eb6c69f2ff91c96cb7298cca003ac",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "5928ca2e04d4b066aad8c73d28b5606727603e6e6e97a45938b8d707bf793b34"
+   }
+  },
+  "zh-Hans": {
+   "count": 1,
+   "catalogSha256": "41f346d9acd72c07cd640a35063c59b982f15e6e8ecbdd7e4a9e92ae23238486",
+   "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+   "files": {
+    "about-us.html.gz": "586209047b636f74a166b8ac2f24a121f176da62e0404cbf27c29605b64f21be"
    }
   }
  }
