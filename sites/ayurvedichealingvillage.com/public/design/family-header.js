@@ -249,17 +249,29 @@
           count();
           if (open) { var first = nav.querySelector('[role="group"] button'); if (first) first.focus(); }
         } else if (b.classList.contains("ahv-fh-clear")) {
-          // drive the finder's own controls: "Any" on duration / budget, un-press the condition chip
-          var groups = nav.querySelectorAll('[role="group"]');
-          for (var g = 0; g < groups.length; g++) {
-            var kind = groupKind(groups[g]), btns = groups[g].querySelectorAll("button");
-            if (kind === "labelled" && btns[0] && btns[0].getAttribute("aria-pressed") !== "true") btns[0].click();
-            if (kind === "chips") for (var c = 0; c < btns.length; c++) if (btns[c].getAttribute("aria-pressed") === "true") btns[c].click();
-          }
-          setTimeout(count, 60);
+          // drive the finder's own controls back to the page's default: first re-press every default
+          // ("Any", "All"), then release anything still pressed that was not pressed by default
+          // one control per step, re-queried each time: a click re-renders the finder, so a list taken
+          // before the first click would point at detached buttons
+          var steps = 0;
+          (function step() {
+            var live = document.querySelector("nav[data-ahv-fh-finder]"), next = null;
+            var groups = live ? live.querySelectorAll('[role="group"]') : [];
+            for (var g = 0; g < groups.length && !next; g++) {
+              if (groupKind(groups[g]) === "currency") continue;
+              var btns = groups[g].querySelectorAll("button"), c;
+              for (c = 0; c < btns.length && !next; c++) if (btns[c].getAttribute("data-ahv-fh-default") === "1" && btns[c].getAttribute("aria-pressed") !== "true") next = btns[c];
+              for (c = 0; c < btns.length && !next; c++) if (btns[c].getAttribute("data-ahv-fh-default") === "0" && btns[c].getAttribute("aria-pressed") === "true") next = btns[c];
+            }
+            if (next && steps++ < 20) { next.click(); setTimeout(step, 40); } else count();
+          })();
         }
       });
     }
+    // remember each control's default pressed state once, so "active" means "changed by the visitor"
+    // (the category row's "All" is pressed by default and is not a filter) — structural, any locale
+    var all = nav.querySelectorAll('[role="group"] button');
+    for (var d = 0; d < all.length; d++) if (!all[d].hasAttribute("data-ahv-fh-default")) all[d].setAttribute("data-ahv-fh-default", all[d].getAttribute("aria-pressed") === "true" ? "1" : "0");
     count();
   }
   // group kinds, structural (labels are translated): currency = the three ₹ $ € buttons;
@@ -270,7 +282,7 @@
     for (var i = 0; i < g.children.length; i++) if (g.children[i].tagName === "SPAN") return "labelled";
     return "chips";
   }
-  // active filters = a pressed condition chip + any non-"Any" duration / budget (currency is a preference)
+  // active filters = groups whose selection differs from the page default (currency is a preference)
   function count() {
     var nav = document.querySelector("nav[data-ahv-fh-finder]");
     var bar = document.querySelector(".ahv-fh-filterbar");
@@ -279,7 +291,8 @@
     for (var g = 0; g < groups.length; g++) {
       var kind = groupKind(groups[g]), btns = groups[g].querySelectorAll("button");
       if (kind === "currency") continue;
-      for (var b = 0; b < btns.length; b++) if (btns[b].getAttribute("aria-pressed") === "true" && !(kind === "labelled" && b === 0)) n++;
+      // one per group that differs from its default (a group is one question: condition, budget, …)
+      for (var b = 0; b < btns.length; b++) if ((btns[b].getAttribute("aria-pressed") === "true") !== (btns[b].getAttribute("data-ahv-fh-default") === "1") && btns[b].getAttribute("aria-pressed") === "true") { n++; break; }
     }
     var open = nav.hasAttribute("data-ahv-fh-open");
     var fb = bar.querySelector(".ahv-fh-filters");
