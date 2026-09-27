@@ -288,3 +288,19 @@ How to read this file:
 - **Consent regression (5133c7a8):** the notice renders with 0 page errors on all five native pages and on /lp/treatment-in-kerala/ and /lp/pain-management/.
 - **Still pending:** the native pages still carry the pre-13-language "EN DE FR" chrome from the old English snapshot. It is fixed by the prerender refresh in the release sequence.
 - **Also fixed (745e7e63):** the homepage mobile menu button now exposes `aria-expanded` (false → true on open). The two desktop homepage switchers are never both in the viewport, so they're not a visible duplicate.
+
+## 2026-09-28 05:20:00 IST — after the 04:30 reset: header takeover + EF-25 on protected staging
+
+- **Staging:** https://ahv-final-staging.vercel.app now serves `dpl_F9LWa6pJpFQbiRZmmr63c5y9WtDK` (preview, built from 78d9c57a). Rollback target: `dpl_DZDP8tUC2e7VsgpA1b4tEGBMSmNe`. Evidence: `hosted-readback-20260928/README.md`.
+- **EF-04a (hosted):** the short "Yoga & Training" label is visible on the same alias, in the desktop header (scrolled) and in the phone menu. The homepage footers are aligned to the shared footer (ab376e0d). The guard test covers headers, menus, footers and the native snapshot. **Status: awaiting parent/owner acceptance.**
+- **EF-04 / EF-25 (hosted + local):** one compact family header on family pages. The coverage matrix of 254 routes × 2 viewports has 0 failures (`family-audits/ef25-coverage/MATRIX.md`). Stacked pinned bars fixed: training strip, packages top bar, FAQ filter, directions strip (ae3be320). Native locale pages keyed fixed (91c6e4a1). Finder badge and Clear fixed (c96b1e3a). Retired WordPress sidebar on /panchakarma/ removed (78d9c57a).
+- **Round two** (committed 8cbf1c3a, not yet on the alias):
+  - The cookie notice drops below the homepage's open phone menu.
+  - The French homepage overflow from a long chip label is fixed.
+  - Homepage language lock: "Take a Virtual Journey" → "Watch the Kairali Story", plus two accordion sentences.
+- **TF-01 verification:** see STATUS.json `englishFeedback.teamFeedbackVerification`. Summary:
+  - Counts 38 vs 47 are correct (overlapping categories).
+  - The budget filter is correct; its badge and Clear bugs are fixed.
+  - Remaining [TO CONFIRM] chips are genuine owner-fact gaps.
+  - "Book my treatment" → enquiry form (21 pages) is listed for decision.
+  - The sitewide legacy register (~1,400 locked words in migrated copy) is ESCALATED.
