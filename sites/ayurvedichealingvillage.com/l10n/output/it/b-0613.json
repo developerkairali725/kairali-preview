@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Richiedi informazioni sul mio trattamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Richiedi informazioni sul trattamento per il mal di schiena cronico",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Occupazione singola, per villa a notte: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Richiedi informazioni sul trattamento per l'artrite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Siamo qui per sostenerLa nel Suo percorso verso il benessere. Se ha domande sui nostri trattamenti, sui programmi residenziali o sulle prenotazioni, il nostro team è pronto ad aiutarLa con disponibilità e trasparenza. Ci contatti per telefono, e-mail o tramite il modulo sul sito. Iniziamo insieme il Suo percorso verso una guarigione completa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'programmi residenziali' to keep the clinical register (avoids resort/holiday framing)."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "Presso Kairali – The Ayurvedic Healing Village, la nostra consultazione ayurvedica ambulatoriale (OPD) offre un percorso di trattamento fluido e personalizzato, basato sui principi tradizionali dell'Ayurveda. I visitatori vengono accolti con cordialità alla reception, dove si compila un modulo OPD e la loro anamnesi viene registrata in formato digitale per una consultazione ayurvedica orientata alla guarigione naturale. Segue una consultazione approfondita con un medico ayurvedico, che comprende la diagnosi ayurvedica tradizionale, l'esame del polso e un trattamento ayurvedico personalizzato, online o di persona. Viene quindi elaborato un piano di benessere personalizzato in base al Suo dosha e al Suo stato di salute. Successivamente si passa alle terapie, che includono la disintossicazione Panchakarma e trattamenti mirati per disturbi come artrite, diabete, stress e affezioni della pelle. I trattamenti vengono eseguiti da terapisti qualificati che utilizzano oli terapeutici e prodotti ayurvedici Kairali di qualità da esportazione. Dopo il trattamento, riceverà rimedi erboristici con istruzioni d'uso dettagliate e verrà concordato un piano di follow-up per garantire la continuità dell'assistenza ayurvedica. Per maggiore comodità, sono disponibili anche consultazioni online con un medico ayurvedico in India.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'natural healing consultation' rendered with 'guarigione naturale' (avoids 'cura', which a banned-word scan may read as 'cure'). 'stress relief' rendered as targeted treatments for stress, without adding claims."
+   ]
+  }
+ ]
+}

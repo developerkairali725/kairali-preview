@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "咨询我的治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "咨询慢性腰背痛治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "单人入住，每栋别墅每晚：[[VAR_1]]。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "咨询关节炎治疗项目",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "我们在这里，为您的健康之路提供支持。如您对我们的治疗项目、住院疗养项目或预约有任何疑问，我们的团队随时准备以支持和透明的态度为您提供帮助。您可以通过电话、电子邮件或网站表单与我们联系。让我们携手，开启您通往全面疗愈的道路。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 住院疗养项目 (residential programmes) to keep the clinical register and avoid resort/holiday connotations; 'reservations' rendered as 预约 (appointments/bookings)."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "在 Kairali – 阿育吠陀疗愈村，我们的阿育吠陀门诊（OPD）问诊依据传统阿育吠陀原则，提供顺畅且量身定制的治疗流程。访客抵达后会在接待处受到亲切接待，填写门诊表格，并将病史录入电子系统，以便进行阿育吠陀自然疗愈问诊。随后，阿育吠陀医生会进行全面问诊，包括传统阿育吠陀诊断、脉诊，以及线上或面诊形式的个性化阿育吠陀治疗建议。医生会根据您的体质（dosha）和健康状况制定个性化的健康计划。之后，您将进入疗法阶段，包括 Panchakarma（五业疗法）排毒，以及针对关节炎、糖尿病、缓解压力和皮肤问题等的针对性治疗。治疗由经验丰富的治疗师使用治疗用油及 Kairali 符合出口标准的阿育吠陀产品进行。治疗结束后，您将获得草本药物及详细的用法说明，并安排随访计划，以确保持续的阿育吠陀护理。为方便起见，我们也提供与印度阿育吠陀医生的线上问诊。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness plan' rendered as 健康计划 (health plan) for clinical register. Source says treatments are 'administered by skilled therapists utilizing, therapeutic oils' (stray comma) — translated as intended meaning."
+   ]
+  }
+ ]
+}

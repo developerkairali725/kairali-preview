@@ -337,6 +337,32 @@
    ],
    "requireText": "1회",
    "reason": "owner-approved PDF family text (pdf-20260925-R1): 'a … session' → 세션 1회 (one session) Korean counter; no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "locale": "ja",
+   "allowAdded": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "requireText": "1名利用、ヴィラ1棟1泊あたり",
+   "reason": "'Single occupancy, per villa per night' → 1名利用、ヴィラ1棟1泊あたり: Japanese counters for one person / one villa / one night; same basis, no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "locale": "ko",
+   "allowAdded": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "requireText": "1인 이용, 빌라 1동 1박 기준",
+   "reason": "'Single occupancy, per villa per night' → 1인 이용, 빌라 1동 1박 기준: Korean counters for one person / one villa / one night; same basis, no new fact (coordinator review 2026-09-28)"
   }
  ]
 }

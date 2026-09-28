@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "استفسر عن العلاج المناسب لي",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "استفسر عن العلاج لآلام الظهر المزمنة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "الإشغال الفردي، لكل فيلا في الليلة الواحدة: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "استفسر عن العلاج لالتهاب المفاصل",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "نحن هنا لدعمك في مسارك نحو العافية. إذا كانت لديك استفسارات حول علاجاتنا أو برامجنا أو الحجوزات، فإن فريقنا مستعد لمساعدتك بالدعم والشفافية. تواصل معنا عبر الهاتف أو البريد الإلكتروني أو نموذج الاستفسار على موقعنا. لنبدأ معًا مسارك نحو رعاية صحية شاملة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'برامج' (programmes) to avoid resort/holiday register; 'comprehensive healing' rendered as 'رعاية صحية شاملة' (comprehensive health care) to avoid implying a cure."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "في كايرالي – قرية الشفاء الأيورفيدية، تقدّم استشارة العيادات الخارجية الأيورفيدية (OPD) مسارًا علاجيًا سلسًا ومصمّمًا لكل مريض، قائمًا على المبادئ الأيورفيدية التقليدية. يُستقبل الزوار بترحيب ودود، حيث يُملأ نموذج العيادة الخارجية (OPD) ويُسجَّل تاريخهم الطبي رقميًا تمهيدًا لاستشارة أيورفيدية قائمة على العلاج الطبيعي. بعد ذلك، تُجرى استشارة شاملة مع طبيب أيورفيدي، تشمل التشخيص الأيورفيدي التقليدي وفحص النبض، مع علاج أيورفيدي مخصّص عبر الإنترنت أو حضوريًا. ويُعدّ لك برنامج عافية شخصي وفقًا لنوع الدوشا لديك وحالتك الصحية. ثم تنتقل إلى العلاجات، التي تشمل التخلّص من السموم ضمن البانشاكارما (Panchakarma) وعلاجات موجّهة لحالات مثل التهاب المفاصل والسكري وتخفيف التوتر والأمراض الجلدية. ويقدّم هذه العلاجات معالجون مهرة باستخدام الزيوت العلاجية ومنتجات كايرالي الأيورفيدية المعدّة للتصدير. وبعد العلاج، تُصرف لك العلاجات العشبية مع تعليمات مفصّلة لطريقة استخدامها، وتُرتَّب خطة متابعة لضمان استمرار الرعاية الأيورفيدية. ولمزيد من السهولة، نقدّم أيضًا استشارات عبر الإنترنت مع طبيب أيورفيدي في الهند.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness plan' rendered as 'برنامج عافية' (programme). Source has a stray comma ('utilizing, therapeutic oils') — dropped in translation. Source uses 'Visitors' (kept as زوار) rather than 'patients'."
+   ]
+  }
+ ]
+}

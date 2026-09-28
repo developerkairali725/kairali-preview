@@ -1,0 +1,65 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Узнать о моём лечении",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Glossary term 'Treatment' → 'Процедура' not used: here 'treatment' means the overall course of treatment, so 'лечение' is the natural clinical rendering; 'процедура' would narrow the meaning to a single session."
+   ]
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Узнать о лечении хронической боли в спине",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Glossary term 'Treatment' → 'Процедура' not used: the course of treatment for a condition is rendered as 'лечение'; 'процедура' would misstate the meaning."
+   ]
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Размещение 1 чел., за виллу за ночь: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Узнать о лечении артрита",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Glossary term 'Treatment' → 'Процедура' not used: the course of treatment for a condition is rendered as 'лечение'; 'процедура' would misstate the meaning."
+   ]
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Мы готовы поддержать вас на пути к хорошему самочувствию. Если у вас есть вопросы о наших процедурах, программах или бронировании, наша команда готова помочь вам — внимательно и открыто. Свяжитесь с нами по телефону, электронной почте или через форму на сайте. Давайте вместе начнём путь к комплексному оздоровлению.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'программах' (programmes) per the clinical-register rule, to avoid resort/holiday framing."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "В Kairali – The Ayurvedic Healing Village амбулаторная (OPD) аюрведическая консультация — это последовательный, индивидуально подобранный процесс лечения, основанный на традиционных принципах Аюрведы. Посетителей доброжелательно встречают на регистрации: там заполняется форма OPD, а история болезни вносится в электронную систему для консультации по естественному аюрведическому лечению. Затем проводится подробная консультация с врачом-аюрведой, включающая традиционную аюрведическую диагностику, исследование пульса и индивидуальное аюрведическое лечение — онлайн или очно. Индивидуальный план оздоровления составляется с учётом вашей доши и состояния здоровья. После этого вы переходите к терапии, которая включает детоксикацию Панчакарма и целенаправленные процедуры при таких проблемах, как артрит, диабет, стресс и кожные заболевания. Процедуры проводят опытные терапевты с использованием лечебных масел и аюрведических продуктов Kairali, соответствующих экспортным стандартам. После лечения вы получаете растительные средства с подробными инструкциями по применению, а также план последующего наблюдения для продолжения аюрведической помощи. Для удобства также доступны онлайн-консультации с аюрведическим врачом в Индии.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'stress relief' rendered as 'стресс' within the list of issues addressed (no efficacy claim added). Brand name kept in Latin script verbatim."
+   ]
+  }
+ ]
+}
