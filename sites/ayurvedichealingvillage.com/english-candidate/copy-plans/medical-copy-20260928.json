@@ -1,0 +1,573 @@
+{
+ "generated": "2026-09-28 IST",
+ "entries": [
+  {
+   "id": "CB1-cancer",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "We often hear cancer patients saying that they have undergone numerous chemo radiation therapies. It is a form of killer in disguise. It weakens the body and kills the person from inside. So, Kairali-The Ayurvedic Healing Village, Palakkad, Kerala, has come with an initiative to detoxify the immune system and give the bodily constitution a boost to energise and lead a life with happiness and peace.",
+   "new": "Our approach focuses on the person’s overall wellbeing. Any Ayurvedic supportive care should be discussed with the treating oncologist and must not replace or delay prescribed cancer treatment.",
+   "min": 4,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 1 item 1"
+  },
+  {
+   "id": "CB1-bronchial",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Seeking a permanent solution for bronchial issues? Look no further! Kairali – The Ayurvedic Healing Village offers a 7 to 21-day treatment package to eliminate bronchial diseases. Our expert Ayurvedic doctors employ a combination of internal and external methods, including Abhyangam, Nasyam, and herbal enemas, to provide effective treatment. These therapies address the root causes of bronchial diseases and lead to significant improvements in patients’ health. Our skilled Ayurvedic Health Doctors carefully select herbal oils for relaxing massages and revitalizing the body’s physiology. Say goodbye to bronchial issues at Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
+   "new": "Our Ayurvedic programme takes a holistic approach to wellbeing, with care tailored after an individual consultation. It complements ongoing medical care without promising a permanent cure. Kairali – The Ayurvedic Healing Village offers this programme over 7 to 21 days. Our Ayurvedic doctors combine internal and external methods, including Abhyangam, Nasyam and herbal enemas, and carefully select the herbal oils used in each massage.",
+   "min": 2,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 1 item 2 (approved text first; programme facts preserved per owner: 'preserve unrelated factual programme details')"
+  },
+  {
+   "id": "CB1-bronchial-excerpt",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Seeking a permanent solution for bronchial issues? Look no further! Kairali – The Ayurvedic Healing Village…..",
+   "new": "Our Ayurvedic programme takes a holistic approach to wellbeing, with care tailored after an individual consultation.",
+   "min": 2,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 1 item 2 (first sentence as card excerpt)"
+  },
+  {
+   "id": "CB2-best",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurvedic therapies are considered to be the best medicines.",
+   "new": "Our holistic approach places comfort, emotional wellbeing and individual care needs at the centre of the experience.",
+   "min": 4,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 2"
+  },
+  {
+   "id": "CB2-longevity",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "It increases the positivity and longevity of life.",
+   "new": "We focus on supporting quality of life through compassionate care that considers physical comfort and emotional wellbeing.",
+   "min": 4,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 2"
+  },
+  {
+   "id": "CB2-best-alt",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurvedic therapies are considered to be the best medicines",
+   "new": "Our holistic approach places comfort, emotional wellbeing and individual care needs at the centre of the experience",
+   "min": 2,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 2"
+  },
+  {
+   "id": "CB2-longevity-alt",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "It increases the positivity and longevity of life",
+   "new": "We focus on supporting quality of life through compassionate care that considers physical comfort and emotional wellbeing",
+   "min": 2,
+   "authority": "OWNER-DECISIONS-LATEST.md batch 2"
+  },
+  {
+   "id": "CB3-why",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Being the oldest form of medicine, ayurveda is well known for its ability to cure any malady without causing side effects. Being derived from herbs and plants, its completely safe.",
+   "new": "Choose Ayurveda for a personalised approach that brings together daily habits, diet and traditional therapies. Physician-guided care considers your individual needs and health goals, while a dedicated retreat gives you time and support to put that approach into practice.",
+   "min": 3,
+   "authority": "OWNER-DECISIONS-LATEST.md LATEST OWNER OVERRIDE batch 3"
+  },
+  {
+   "id": "CAN-toconfirm-logic",
+   "row": "HOSPITAL-COPY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json"
+   ],
+   "old": "showToConfirm: this.props.showToConfirm ?? true",
+   "new": "showToConfirm: this.props.showToConfirm ?? false",
+   "count": 1,
+   "authority": "OWNER-DECISIONS-LATEST.md 'Owner wording standard' (no TO CONFIRM/internal notes); same fix as 697167dd defence page"
+  },
+  {
+   "id": "CAN-toconfirm-default",
+   "row": "HOSPITAL-COPY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json"
+   ],
+   "old": "\"showToConfirm\":{\"editor\":\"boolean\",\"default\":true",
+   "new": "\"showToConfirm\":{\"editor\":\"boolean\",\"default\":false",
+   "count": 1,
+   "authority": "as above"
+  },
+  {
+   "id": "CAN-toconfirm-overlay",
+   "row": "HOSPITAL-COPY",
+   "files": [
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": "&quot;showToConfirm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true",
+   "new": "&quot;showToConfirm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false",
+   "count": 1,
+   "authority": "as above (overlay source)"
+  },
+  {
+   "id": "CAN-tariff Minimum Duration is 7 Nights",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "public/ahv/assets/exception-five-family-data.js",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": "Minimum Duration is 7 Nights",
+   "new": "Minimum Duration is 14 Nights",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "public/ahv/assets/exception-five-family-data.js": 2,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 26,700",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">26,700<",
+   "new": ">21,567<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 26,700 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"26,700\"",
+   "new": "\"21,567\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 50,310",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">50,310<",
+   "new": ">40,043<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 50,310 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"50,310\"",
+   "new": "\"40,043\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 29,145",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">29,145<",
+   "new": ">24,012<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 29,145 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"29,145\"",
+   "new": "\"24,012\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 52,515",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">52,515<",
+   "new": ">42,248<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 52,515 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"52,515\"",
+   "new": "\"42,248\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 33,450",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">33,450<",
+   "new": ">28,317<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 33,450 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"33,450\"",
+   "new": "\"28,317\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 56,400",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">56,400<",
+   "new": ">46,133<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 56,400 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"56,400\"",
+   "new": "\"46,133\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 53,400",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">53,400<",
+   "new": ">48,267<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 53,400 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"53,400\"",
+   "new": "\"48,267\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-tariff 75,300",
+   "row": "RATE-PARITY",
+   "files": [
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html",
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html"
+   ],
+   "old": ">75,300<",
+   "new": ">65,033<",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json": 1,
+    "public/ahv/views/ahv-page-cancer-supportive-care-mobile.json": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Desktop.dc.html": 1,
+    "english-candidate/package-overlay/AHV Page Cancer Supportive Care Mobile.dc.html": 1
+   },
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)"
+  },
+  {
+   "id": "CAN-tariff 75,300 (dataset)",
+   "row": "RATE-PARITY",
+   "old": "\"75,300\"",
+   "new": "\"65,033\"",
+   "authority": "english-candidate/final-rates/route-map.json /revitalizing-and-strengthening/ group III nights 14 INR tables (lane C-01)",
+   "file": "public/ahv/assets/exception-five-family-data.js",
+   "count": 2
+  },
+  {
+   "id": "CAN-head-alias",
+   "row": "SEARCH-SEO",
+   "op": "manifestMeta",
+   "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+   "set": {
+    "title": "Supportive Care Therapy for Cancer Patients | Kairali",
+    "description": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali – The Ayurvedic Healing Village, Palakkad, offered alongside, never instead of, oncology treatment.",
+    "ogTitle": "Supportive Care Therapy for Cancer Patients",
+    "ogDescription": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali – The Ayurvedic Healing Village, Palakkad, offered alongside, never instead of, oncology treatment."
+   },
+   "authority": "lane C-04 / D-16 (title belonged to a yoga page); owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "CAN-head-canonical",
+   "row": "CLINICAL-COPY",
+   "op": "manifestMeta",
+   "path": "/revitalizing-and-strengthening/",
+   "set": {
+    "title": "Ayurvedic Supportive Care for Cancer Patients | Kairali",
+    "description": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali – The Ayurvedic Healing Village, Palakkad, offered alongside, never instead of, oncology treatment.",
+    "ogTitle": "Supportive Care Therapy for Cancer Patients – Karkaroga Sahayam Chikitsa",
+    "ogDescription": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali – The Ayurvedic Healing Village, Palakkad, offered alongside, never instead of, oncology treatment."
+   },
+   "authority": "'cancer recovery'/'reduce side effects' outcome claims; owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "MED-cancer-categories",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Three categories of cancer patients visit our health resort. One who has been recently diagnosed with cancer. Second, who is already suffering and undergoing treatment and third, whose chemo therapies have stopped and might be is free from being a cancer victim as well. Maintaining a good lifestyle and proper diet helps in every kind of ailment and Kairali is the best place to get yourself relaxed and gain mental peace. The serene environment spreads a positive aura which automatically helps in healing.",
+   "new": "We welcome people at different stages: those recently diagnosed, those currently receiving cancer treatment, and those who have completed chemotherapy or other treatment. A healthy lifestyle and a balanced diet support overall wellbeing, and the calm surroundings of the hospital offer a quiet place to rest during your stay.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); removes 'health resort', 'best place', 'automatically helps in healing' beside batch-1 text (lane B)"
+  },
+  {
+   "id": "MED-cancer-therapies",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Our Ayurvedic Health Resort with the help of authentic ayurvedic massages and therapies helps the cancer patients to revitalise their bodies and stay fit and make their mind positive, relaxed and motivated. Therapies like Abhyangam, Shirodhara and Vaman based on the condition of the patient. These treatments allow the detoxification of the body. Yoga sessions are also arranged that helps in calming and control one’s senses.",
+   "new": "At Kairali – The Ayurvedic Healing Village, authentic Ayurvedic massages and therapies are offered to support comfort, relaxation and a positive frame of mind. Therapies such as Abhyangam, Shirodhara and Vaman are chosen according to the patient’s condition after consultation, and yoga sessions are arranged to help with calm and relaxation.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NCCIH detox evidence"
+  },
+  {
+   "id": "MED-doshas",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurveda helps in detoxification of the imbalanced doshas in the body.",
+   "new": "Ayurvedic therapies aim to restore the balance of the doshas in the body.",
+   "min": 2,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "MED-doshas-alt",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurveda helps in detoxification of the imbalanced doshas in the body",
+   "new": "Ayurvedic therapies aim to restore the balance of the doshas in the body",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "MED-panchakarma-permanent",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Kairali’s Panchakarma Therapy is a comprehensive Ayurvedic bio-cleansing regimen comprising five core treatments – recognized for permanently resolving disease and restoring systemic balance. Carefully tailored by expert doctors for your health history and goals, it uses medicinal oils, herbal therapies, and customized protocols, providing deep, full-body detox.",
+   "new": "Kairali’s Panchakarma Therapy is a comprehensive Ayurvedic cleansing programme comprising five core treatments, traditionally used to restore balance in the body. Carefully tailored by expert doctors to your health history and goals, it uses medicinal oils, herbal therapies and customised protocols.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); 'permanently resolving disease' unsupported"
+  },
+  {
+   "id": "MED-why-noside",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurveda, as we already know is one of the oldest medicinal disciplines to exist in the contemporary world. Over the years that it has existed among us, it has been constantly upgraded through research and novel discoveries such that it now stands at its prime position. However, more than the constant evolution of Ayurveda, the thing that makes it so effective and accurate at plucking out maladies is the fact that it doesn’t depend upon synthetic products to fight ailments but rather, all of its potency is the result of natural herbs and medicinal shrubs. Due to the thorough natural ingredients of its medicines, Ayurveda has no side effect which makes it very safe for human bodies.",
+   "new": "Ayurveda is one of the oldest systems of medicine still practised today, and it continues to be studied and developed. Its medicines are prepared mainly from herbs and other natural ingredients. Natural does not automatically mean free of side effects, so every medicine and therapy at Kairali is prescribed and monitored by our physicians, who take your existing medicines and health conditions into account.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NCCIH Ayurvedic medicine: products can contain toxic metals/interact (https://www.nccih.nih.gov/health/ayurvedic-medicine-in-depth)"
+  },
+  {
+   "id": "MED-why-eradicate",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "However, having negligible side effects is not the only reason why anyone should pick Ayurveda. One of the principal reasons favouring the use Ayurveda is its total potency against afflictions. Where many modern medicines have failed, Ayurveda has proved that it can completely eradicate them, or in the case of complex incurable diseases, control their growth rate. Ayurveda has shown this incredible resistance against diseases such as Diabetes where it has put a regulatory check on the amount of sugar in the blood, thus effectively counteracting it.",
+   "new": "People also choose Ayurveda for its personalised approach to long-term conditions. For conditions such as diabetes, Ayurvedic care focuses on diet, daily routine, physical activity and therapies alongside the treatment prescribed by your regular doctor; it is not a replacement for prescribed medicines, and any change to them should be made only on your doctor’s advice.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NCCIH"
+  },
+  {
+   "id": "MED-20years",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "All our doctors & therapists have more than 20+ years of experience providing unrivaled Ayurvedic treatment. They treat modern ailments with age-old, failsafe remedies.",
+   "new": "Our doctors and therapists bring traditional Ayurvedic therapies to today’s health concerns, with every treatment plan guided by a physician’s consultation.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); '20+ years'/'failsafe' unsupported and conflicts with STAFF-01 facts"
+  },
+  {
+   "id": "STAFF-12plus",
+   "row": "STAFF-01",
+   "auto": true,
+   "old": "12+ years of experience",
+   "new": "Practising since 2010",
+   "min": 1,
+   "authority": "staff-rana-20260926/STAFF-BANK-AND-TODO.md Deepu John 'career roles from Feb 2010; do not equate elapsed span to continuous experience'; same wording as 4552f9ec"
+  },
+  {
+   "id": "MED-bronchial-root",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "With over 115 years of expertise, we’ve aided 30,000+ patients with Ayurvedic principles to treat bronchial conditions. Ayurveda, rooted in holistic healing, recognizes bronchial ailments as respiratory system imbalances from impaired digestion, toxin buildup, and weakened immunity. Our approach identifies the root cause and combines Ayurvedic therapies and herbal medications. Treatment involves personalized dietary advice, breathing exercises, herbal steam inhalation, and specialized massages for respiratory passage opening and detoxification. Ayurvedic remedies, comprising natural herbs, enhance lung function, reduce inflammation, and boost immunity. Our holistic method addresses underlying imbalances, strengthening the respiratory system, and enhancing overall well-being. Beyond symptom relief, Ayurveda promotes a healthy lifestyle and body-mind harmony to prevent future occurrences. Rely on our extensive experience and successful outcomes. We provide personalized care, considering your unique constitution and needs, ensuring lasting relief and optimal respiratory health.",
+   "new": "Ayurveda understands bronchial complaints as imbalances of the respiratory system, linked in its tradition to digestion, the build-up of toxins and immunity. At Kairali, your programme begins with a physician’s assessment and combines Ayurvedic therapies and herbal medicines with personalised dietary advice, breathing exercises, herbal steam inhalation and massages that support easier breathing. Care also covers daily routine and lifestyle, and it is planned around your individual constitution and the treatment you already receive from your own doctor; it does not replace inhalers or other prescribed medicines.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); removes unverified '30,000+ patients', outcome guarantees ('lasting relief', 'enhance lung function')"
+  },
+  {
+   "id": "MED-bronchial-immune",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "The doctor will prescribe specific herbal formulations and natural remedies to address the root cause of the bronchial condition, reduce inflammation, strengthen the immune system, and improve lung function.",
+   "new": "The doctor will prescribe herbal formulations chosen for your symptoms; they are used alongside, not instead of, the inhalers or other medicines prescribed by your own doctor.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "MED-arogya-miracles",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Except for the “remedies” that our grandmothers frequently used and which performed miracles, most people",
+   "new": "Except for the household “remedies” that our grandmothers often relied on, most people",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); Q-AHV-STAFF01-FOLLOWUPS held claim"
+  },
+  {
+   "id": "MED-senior-trained",
+   "row": "EF-08",
+   "auto": true,
+   "old": "All therapies are guided by Experienced Ayurvedic Doctors trained in geriatric care, ensuring safe and effective treatment for seniors.",
+   "new": "All therapies are guided by experienced Ayurvedic doctors, who plan each programme around the health, mobility and comfort of older patients.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); no source for geriatric training; safety/efficacy guarantee"
+  },
+  {
+   "id": "MED-senior-outcome",
+   "row": "EF-08",
+   "auto": true,
+   "old": "Seniors often experience improved joint flexibility, reduced body pain, better posture, and more steady energy through regular therapies and structured daily routines.",
+   "new": "Regular therapies and a structured daily routine are planned to support joint mobility, comfort and energy; how each person responds varies.",
+   "min": 2,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); outcome claim"
+  },
+  {
+   "id": "FAQ-panchakarma-guest",
+   "row": "FAQ",
+   "auto": true,
+   "old": "Panchakarma procedures are not a checklist that every guest receives.",
+   "new": "Panchakarma procedures are not a checklist that every patient receives.",
+   "min": 1,
+   "authority": "KTAHV language lock (CLAUDE.md); 12 translations already say patient (lane B PUB-FIX-01)"
+  },
+  {
+   "id": "GFAQ-q15",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Some patients may experience mild detoxification symptoms during the first few days, such as headaches, fatigue or changes in digestion. These are normal signs the body is eliminating toxins. Our physicians monitor your progress closely and make any adjustments needed for your comfort.",
+   "new": "Some patients notice mild, temporary effects during the first few days, such as headaches, tiredness or changes in digestion. Tell your physician or nurse about any new or worsening symptom; they monitor your progress closely and adjust your plan where needed.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NCCIH detoxes and cleanses"
+  },
+  {
+   "id": "GFAQ-q12-question",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "What specific health conditions can be effectively managed with Ayurveda?",
+   "new": "Which health conditions do your programmes support?",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7)"
+  },
+  {
+   "id": "GFAQ-q12-intro",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "Ayurveda offers comprehensive care for numerous conditions, including:",
+   "new": "Whether a programme suits you depends on your individual assessment, and Ayurvedic care is offered alongside, not instead of, the treatment you already receive. Our physicians see patients with concerns including:",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NCCIH"
+  },
+  {
+   "id": "GFAQ-q22a",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "We strongly discourage alcohol during your treatment period, as it interferes with the effectiveness of Ayurvedic medicines and the detoxification process. The campus is alcohol-free and caffeine-free to support your treatment.",
+   "new": "We ask you not to drink alcohol during your treatment period; the campus is alcohol-free and caffeine-free. Alcohol can interact with many medicines, so tell your physician if you usually drink alcohol so your care can be planned safely.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); NHS alcohol"
+  },
+  {
+   "id": "GFAQ-q22b",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "We strongly discourage alcohol consumption during your treatment period as it interferes with the effectiveness of Ayurvedic medicines and detoxification processes. Our retreat is alcohol and Caffeine-free to support your healing journey.",
+   "new": "We ask you not to drink alcohol during your treatment period; the campus is alcohol-free and caffeine-free. Alcohol can interact with many medicines, so tell your physician if you usually drink alcohol so your care can be planned safely.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7); also removes locked word 'journey'"
+  },
+  {
+   "id": "GFAQ-q08a",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "old": "herbal treatments and lifestyle practices, addressing the root causes of imbalance rather than only symptoms.",
+   "new": "herbal treatments and lifestyle practices, and aims to address the underlying causes of imbalance rather than only symptoms.",
+   "min": 1,
+   "authority": "owner 28 Sep medical authority (OWNER-DECISIONS-LATEST.md 'Latest owner authority — medical-content execution'); conservative correction of unsupported/outcome claim; flag for Dr. Deepu John before production (HARD GATE 7) (minor)"
+  }
+ ]
+}
