@@ -66,7 +66,8 @@ for (const e of entries) {
     total += have; per.push(`${f}: ${have}`); todo.push(f);
   }
   if (e.auto && total < (e.min ?? 1)) {
-    const done = autoList().some((f) => occurrences(read(f), e.new) > 0);
+    // A removal (new "") leaves nothing to find once applied: zero remaining occurrences IS the applied state.
+    const done = e.new === "" || autoList().some((f) => occurrences(read(f), e.new) > 0);
     if (total === 0 && done) { log.push(`ok   ${e.id}: already applied`); continue; }
     bad++; log.push(`FAIL ${e.id}: auto found ${total} < min ${e.min ?? 1} — "${e.old.slice(0, 70)}…"`); continue;
   }

@@ -89,7 +89,7 @@ window.AHV_MINDFULNESS = {
    "name": "SHRUTI PODDAR",
    "role": "Musician, Healer & leading practitioner of traditional knowledge systems",
    "paragraphs": [
-    "SHRUTI PODDAR is an internationally renowned musician, educationist, healer, wellness expert, and leading practitioner of traditional knowledge systems. The pioneer of the vibrational and sound healing ecosystem called Nada Vibronics, Shruti works with indigenous knowledge and sonic systems for healing and curing various health conditions. Her audio CDs, healing methods and music are now used for curing various health conditions internationally. Shruti uses the power of music, seed sounds, visualization, breath and the five elemental states (pancha-kosha) in aiding changes at the levels of organ, tissue and cell, and to make us peaceful, vibrant and energetically rejuvenated in everyday life."
+    "SHRUTI PODDAR is an internationally renowned musician, educationist, healer, wellness expert, and leading practitioner of traditional knowledge systems. The pioneer of the vibrational and sound healing ecosystem called Nada Vibronics, Shruti works with indigenous knowledge and sonic systems for wellbeing. Her audio CDs, healing methods and music are now used internationally. Shruti uses the power of music, seed sounds, visualization, breath and the five elemental states (pancha-kosha) in aiding changes at the levels of organ, tissue and cell, and to make us peaceful, vibrant and energetically rejuvenated in everyday life."
    ],
    "image": "/ahv/assets/img/AHV-Mindfulness-Shruti-Poddar.webp",
    "width": 140,
