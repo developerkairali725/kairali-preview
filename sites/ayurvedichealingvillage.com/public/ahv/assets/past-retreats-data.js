@@ -31,7 +31,8 @@ window.AHV_PAST_RETREATS = {
     { title: "Katha Wellness Retreat 2019 (25 – 31 July 2019)", href: "/katha-wellness-retreat-2019/" },
     { title: "Lakshya Yoga Retreat 2018", href: "/lakshya-yoga-retreat-2018/" },
     { title: "Lakshya Yoga Retreat", href: "/lakshya-yoga-retreat/" },
-    { title: "Prav-Simona Monsoon Yoga Retreat", href: "/prav-simona-monsoon-yoga-retreat/" }
+    { title: "Prav-Simona Monsoon Yoga Retreat", href: "/prav-simona-monsoon-yoga-retreat/" },
+    { title: "Prav Simona Yoga Retreat", href: "/prav-simona-yoga-retreat/" }
   ],
   currentLinks: [
     { label: "All Programmes", href: "/all-programs/" },

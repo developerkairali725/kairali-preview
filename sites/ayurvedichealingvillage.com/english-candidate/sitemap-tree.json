@@ -1,17 +1,17 @@
 {
-  "generated": "2026-09-19T12:52:09.572Z",
+  "generated": "2026-09-28T11:47:10.931Z",
   "source": "english-candidate/route-manifest.json + route-overrides.json + approved chrome components",
   "note": "path/title/template/sitemap/canonical/nav are FACTS from the approved package and the owner's overrides. `section` is DERIVED by tools/build-sitemap-tree.mjs and carries no approval.",
   "totals": {
-    "routes": 252,
-    "inSitemap": 234,
-    "excludedFromSitemap": 18,
-    "canonicalElsewhere": 5,
-    "distinctDesktopViews": 74,
+    "routes": 254,
+    "inSitemap": 220,
+    "excludedFromSitemap": 34,
+    "canonicalElsewhere": 6,
+    "distinctDesktopViews": 88,
     "inHeaderNav": 9,
-    "inFooterNav": 39,
-    "templatesNotDesignAudited": 14,
-    "redirectedAtFlip": 13
+    "inFooterNav": 37,
+    "templatesNotDesignAudited": 28,
+    "redirectedAtFlip": 25
   },
   "navLinksWithNoRoute": [],
   "sections": [
@@ -109,14 +109,19 @@
       "id": "utility",
       "title": "Utility, archive & test pages",
       "why": "Housekeeping routes: search, archive, sitemap, and pages left over from the legacy site."
+    },
+    {
+      "id": "unclassified",
+      "title": "Unclassified",
+      "why": "No rule matched — shown so nothing is silently dropped."
     }
   ],
   "routes": [
     {
       "n": 1,
       "path": "/",
-      "title": "Authentic Ayurveda and Wellness Retreat in Kerala | Kairali - The Ayurvedic Healing Village",
-      "description": "The true reflection of nature can be experienced in God's own country- Kerala. And Kerala has gifted Kairali-The Ayurvedic Healing Village with its beautifully designed property to provide a calm stay at the villas.",
+      "title": "Kairali Ayurvedic Healing Village | Ayurveda in Kerala",
+      "description": "Explore Ayurvedic programmes, villas and physician consultations at Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
       "desktopView": "home-hi-fi-v4",
       "mobileView": "home-mobile",
       "dataset": null,
@@ -386,7 +391,7 @@
       "desktopView": "ahv-page-attractions-desktop",
       "mobileView": "ahv-page-attractions-mobile",
       "dataset": "assets/attractions-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -394,8 +399,8 @@
       "inFooterNav": false,
       "section": "attractions",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/sightseeing/",
+      "redirectReason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates."
     },
     {
       "n": 16,
@@ -405,7 +410,7 @@
       "desktopView": "ahv-page-attractions-desktop",
       "mobileView": "ahv-page-attractions-mobile",
       "dataset": "assets/attractions-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -413,27 +418,27 @@
       "inFooterNav": false,
       "section": "attractions",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/sightseeing/",
+      "redirectReason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates."
     },
     {
       "n": 17,
       "path": "/attractions-above-50kms/",
       "title": "Best Tourist Attractions Near Palakkad | Scenic Getaways in Kerala",
       "description": "Explore top attractions near Palakkad, from hill stations to wildlife sanctuaries, for adventure, trekking, and cultural experiences beyond 50 km.",
-      "desktopView": "ahv-page-attractions-desktop",
-      "mobileView": "ahv-page-attractions-mobile",
+      "desktopView": "ahv-template-attractions-by-distance-desktop",
+      "mobileView": "ahv-template-attractions-by-distance-mobile",
       "dataset": "assets/attractions-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "attractions",
-      "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "section": "area",
+      "designAudited": false,
+      "redirectsTo": "/sightseeing/",
+      "redirectReason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates."
     },
     {
       "n": 18,
@@ -443,7 +448,7 @@
       "desktopView": "ahv-page-attractions-desktop",
       "mobileView": "ahv-page-attractions-mobile",
       "dataset": "assets/attractions-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -451,8 +456,8 @@
       "inFooterNav": false,
       "section": "attractions",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/sightseeing/",
+      "redirectReason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates."
     },
     {
       "n": 19,
@@ -519,7 +524,7 @@
       "desktopView": "ahv-page-ayurveda-gallery-desktop",
       "mobileView": "ahv-page-ayurveda-gallery-mobile",
       "dataset": null,
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -527,8 +532,8 @@
       "inFooterNav": false,
       "section": "gallery",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/treatments-gallery/",
+      "redirectReason": "Owner-approved consolidation (EF-21): the Ayurveda Gallery held eight uncaptioned legacy banner images and generic copy; the Treatment Gallery covers the same intent with verified on-site photographs. Per-image audit (worker, 28 Sep 2026): none of the eight carries AHV provenance — five are stock-style still lifes/spa props, one an illustration, one a stock paste scene; two plausible therapy photos (AHV-Gallery-06, -08) have no provenance record and are listed for the owner image review instead of being moved into the verified set."
     },
     {
       "n": 23,
@@ -641,8 +646,8 @@
       "inFooterNav": false,
       "section": "programme",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/ayurveda-training-programme/",
+      "redirectReason": "Owner kept /ayurveda-training-programme/ (the canonical already pointed there). The destination links every course this page listed; no text is lost. NOTE for the owner: this source had more July clicks (48) than the destination (19); the 301 carries them."
     },
     {
       "n": 29,
@@ -1279,7 +1284,7 @@
       "desktopView": "ahv-page-confirmation-desktop",
       "mobileView": "ahv-page-confirmation-mobile",
       "dataset": "assets/confirmation-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -1371,8 +1376,8 @@
       "path": "/defence-and-paramilitary-forces/",
       "title": "Defence and Paramilitary Forces | Kairali – The Ayurvedic Healing Village",
       "description": "Information for defence and paramilitary personnel and their families about Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-page-defence-and-paramilitary-forces-desktop",
+      "mobileView": "ahv-page-defence-and-paramilitary-forces-mobile",
       "dataset": "assets/article-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -1381,7 +1386,7 @@
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "about",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
@@ -1515,8 +1520,8 @@
       "inFooterNav": false,
       "section": "enquiry",
       "designAudited": true,
-      "redirectsTo": "/enquiry-form/",
-      "redirectReason": "Superseded duplicate of the enquiry form."
+      "redirectsTo": "/contact-us/",
+      "redirectReason": "Superseded duplicate of the enquiry form. Single hop straight to /contact-us/ since /enquiry-form/ itself merged there (owner, 28 Sep 2026, AHV-DUP-004)."
     },
     {
       "n": 75,
@@ -1526,7 +1531,7 @@
       "desktopView": "ahv-page-enquiry-desktop",
       "mobileView": "ahv-page-enquiry-mobile",
       "dataset": "assets/enquiry-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -1534,8 +1539,8 @@
       "inFooterNav": true,
       "section": "enquiry",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/contact-us/",
+      "redirectReason": "Owner kept /contact-us/. Both pages render the same contact form (same fields, programme select, consent and transport); the only difference is the intro line. Query strings are carried by the redirect, so ?programme= preselection still works."
     },
     {
       "n": 76,
@@ -1579,9 +1584,9 @@
       "n": 78,
       "path": "/faqs-downloads/",
       "title": "Ayurvedic FAQs & Hormonal Balance at Kairali Retreat",
-      "description": "Get answers about Ayurveda, women’s hormonal balance, stay info & treatments at Kairali Healing Village. A complete guide to your wellness journey.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "description": "Answers to patients' questions about Ayurvedic treatment at Kairali – The Ayurvedic Healing Village, Palakkad: consultation and admission, programmes and stay length, villas, diet, payment, travel, visas and aftercare. Price lists and the e-book to download.",
+      "desktopView": "ahv-page-faqs-and-downloads-desktop",
+      "mobileView": "ahv-page-faqs-and-downloads-mobile",
       "dataset": "assets/article-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -1590,7 +1595,7 @@
       "inHeaderNav": false,
       "inFooterNav": true,
       "section": "utility",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
@@ -1640,25 +1645,25 @@
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/seven-informational-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
-      "canonicalElsewhere": null,
+      "canonicalElsewhere": "https://ayurvedichealingvillage.com/about-us/",
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "about",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/about-us/",
+      "redirectReason": "Owner approved consolidation on 24 September 2026: preserve K.V. Ramesh’s full signed founder letter on About Us, redirect the duplicate page, update internal links and remove its sitemap entry."
     },
     {
       "n": 82,
       "path": "/gallery/",
       "title": "Gallery",
       "description": "This section deals with the public outreach section of Kairali that is dedicated to raising the awareness levels about this village through the means of media.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/seven-informational-data.js",
+      "desktopView": "ahv-page-gallery-desktop",
+      "mobileView": "ahv-page-gallery-mobile",
+      "dataset": null,
       "sitemap": true,
       "duplicateOf": null,
       "duplicateNote": null,
@@ -1666,7 +1671,7 @@
       "inHeaderNav": false,
       "inFooterNav": true,
       "section": "gallery",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
@@ -1721,7 +1726,7 @@
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": true,
+      "inFooterNav": false,
       "section": "about",
       "designAudited": true,
       "redirectsTo": null,
@@ -1789,8 +1794,8 @@
       "path": "/how-to-reach/",
       "title": "How to Reach Kairali – The Ayurvedic Healing Village, Palakkad | Airports, Transfers & Directions",
       "description": "Plan your journey to Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital near Palakkad, Kerala. Compare Coimbatore (CJB) and Kochi (COK) airports, arrange a private transfer, find railway details and open live directions.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-page-how-to-reach-desktop",
+      "mobileView": "ahv-page-how-to-reach-mobile",
       "dataset": "assets/travel-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -1799,7 +1804,7 @@
       "inHeaderNav": false,
       "inFooterNav": true,
       "section": "contact",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
@@ -1882,7 +1887,7 @@
     {
       "n": 94,
       "path": "/jobs/business-development-manager/",
-      "title": "Apply Now | Ayurveda Retreat Job | Careers | Massage Therapists",
+      "title": "Business Development Manager — Vacancy Closed | Careers | Kairali",
       "description": "Talented teachers, massage therapists and Ayurvedic doctors are always desired and required for our treatment centers in Delhi, Kerala and destinations globally.",
       "desktopView": "ahv-page-enquiry-desktop",
       "mobileView": "ahv-page-enquiry-mobile",
@@ -2147,11 +2152,30 @@
     },
     {
       "n": 108,
+      "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "title": "Monsoon Ayurvedic Treatment Kerala | Karkidaka Chikitsa Reset | Kairali",
+      "description": "Monsoon Ayurvedic treatment in Kerala at Kairali. Karkidaka Chikitsa with Panchakarma, Rasayana, Karkidaka Kanji for complete body reset. 7/14/21 day programs.",
+      "desktopView": "ahv-page-article-reader-desktop",
+      "mobileView": "ahv-page-article-reader-mobile",
+      "dataset": "assets/article-family-data.js",
+      "sitemap": true,
+      "duplicateOf": null,
+      "duplicateNote": null,
+      "canonicalElsewhere": null,
+      "inHeaderNav": false,
+      "inFooterNav": false,
+      "section": "unclassified",
+      "designAudited": true,
+      "redirectsTo": null,
+      "redirectReason": null
+    },
+    {
+      "n": 109,
       "path": "/karma-being-retreat-2019/",
       "title": "Karma Being Retreat | Ayurvedic Remedies | Yoga Therapy",
       "description": "This section deals with the Karma Being Retreat, a ten-day schedule of yoga and Ayurvedic remedies at The Ayurvedic Healing Village.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-template-past-retreat-record-desktop",
+      "mobileView": "ahv-template-past-retreat-record-mobile",
       "dataset": "assets/hist9-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -2160,12 +2184,12 @@
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "programme",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 109,
+      "n": 110,
       "path": "/karma-being-retreat/",
       "title": "Karma Being Retreat | Luxury Ayurveda & Yoga Retreat in Kerala",
       "description": "Experience the ultimate Ayurveda & Yoga retreat at Kairali – The Ayurvedic Healing Village. Enjoy personalized Ayurvedic therapies, meditation, wellness consultations, and deluxe villas in a serene, award-winning retreat in Kerala.",
@@ -2184,7 +2208,7 @@
       "redirectReason": null
     },
     {
-      "n": 110,
+      "n": 111,
       "path": "/katha-wellness-retreat-2019/",
       "title": "Katha Wellness Retreat 2019 | Luxury Yoga & Ayurveda Retreat in Kerala",
       "description": "Rejuvenate at Katha Wellness Retreat 2019, hosted at Kairali – The Ayurvedic Healing Village. Experience luxury with Ayurvedic massages, Hatha Yoga, Vedic storytelling, and organic vegetarian cuisine in the serene landscapes of Kerala.",
@@ -2203,7 +2227,7 @@
       "redirectReason": null
     },
     {
-      "n": 111,
+      "n": 112,
       "path": "/knowledge-centre/",
       "title": "Ayurvedic Knowledge Centre – Wisdom, Insights & Holistic Health",
       "description": "Explore Ayurveda’s wisdom with expert insights, seasonal practices & natural remedies. Unlock holistic health & wellness through our Knowledge Centre.",
@@ -2222,7 +2246,7 @@
       "redirectReason": null
     },
     {
-      "n": 112,
+      "n": 113,
       "path": "/lakshya-yoga-retreat-2017/",
       "title": "Lakshya Yoga Retreat 2017 | Ayurveda & Wellness in Kerala",
       "description": "Experience the Lakshya Yoga Retreat at Kairali – The Ayurvedic Healing Village. A transformative journey of Ayurveda, yoga, meditation & rejuvenation in Kerala’s serene landscapes.",
@@ -2241,7 +2265,7 @@
       "redirectReason": null
     },
     {
-      "n": 113,
+      "n": 114,
       "path": "/lakshya-yoga-retreat-2018/",
       "title": "Lakshya Yoga Retreat 2018 | Ayurveda & Yoga Retreat in Kerala",
       "description": "Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village. Enjoy Ayurvedic therapies, yoga, meditation & sattvic meals in Kerala’s serene nature.",
@@ -2260,7 +2284,7 @@
       "redirectReason": null
     },
     {
-      "n": 114,
+      "n": 115,
       "path": "/lakshya-yoga-retreat/",
       "title": "Lakshya Yoga Retreat",
       "description": "This section deals with the seven-day retreat of Ayurvedic treatments and Yogic exercises at the Ayurvedic Healing Village.",
@@ -2279,7 +2303,7 @@
       "redirectReason": null
     },
     {
-      "n": 115,
+      "n": 116,
       "path": "/lakshya-yoga/",
       "title": "Lakshya Yoga | Past Retreat | Kairali Healing Village",
       "description": "Read the historical Lakshya Yoga retreat description at Kairali – The Ayurvedic Healing Village, including its daily schedule, workshops and teacher profile.",
@@ -2298,7 +2322,7 @@
       "redirectReason": null
     },
     {
-      "n": 116,
+      "n": 117,
       "path": "/learn-about-ayurveda/",
       "title": "Kairali – The Ayurvedic Healing Village | Ayurveda Pitta | Ayurveda Vata | Ayurvedic Massage in Kerala",
       "description": "Kairali Ayurvedic Group provides an introduction to the Ayurvedic dosha system, including Vata, Pitta, Kapha and offers retreat programs, Ayurvedic massage and training in Kerala.",
@@ -2317,7 +2341,7 @@
       "redirectReason": null
     },
     {
-      "n": 117,
+      "n": 118,
       "path": "/learn-more-about-ayurveda/",
       "title": "Ayurveda programmes at kairali: A learning curve",
       "description": "Kairali offers training programmes to people who are interested in learning more about the science of ayurveda. All basic principles that a person needs to know are covered under this programme.",
@@ -2336,7 +2360,7 @@
       "redirectReason": null
     },
     {
-      "n": 118,
+      "n": 119,
       "path": "/learn-more-about-yoga/",
       "title": "Learn Yoga | Training | Institute | Class",
       "description": "Kairali- The Ayurvedic Healing Village, in Palakkad, Kerala adheres to the ancient principles and treaties, and explores the multifaceted modalities of Ayurveda and Yoga",
@@ -2355,7 +2379,7 @@
       "redirectReason": null
     },
     {
-      "n": 119,
+      "n": 120,
       "path": "/legal-notice/",
       "title": "Legal Notice | Kairali - The Ayurvedic Healing Village",
       "description": "Review the terms of use for Kairali Ayurvedic Healing Village’s website, including legal disclaimers, health information, and intellectual property rights.",
@@ -2374,7 +2398,7 @@
       "redirectReason": null
     },
     {
-      "n": 120,
+      "n": 121,
       "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
       "title": "Level One Advanced Ayurveda Training Program for Wellness Professionals",
       "description": "Advance your wellness career with Kairali’s Level One Ayurveda Training in Kerala. Learn holistic practices, Ayurvedic principles, and more.",
@@ -2393,7 +2417,7 @@
       "redirectReason": null
     },
     {
-      "n": 121,
+      "n": 122,
       "path": "/live-to-100-with-panchkarma/",
       "title": "Kairali - The Ayurvedic Healing Village | Ayurvedic Health Retreat | Panchkarma- Ayurvedic Treatment| Yoga, Ayurveda and Meditation | Wellness Centre, Palakkad, Kerala",
       "description": "Panchkarma is an ayurvedic treatment that involves elaborated methods of purification to release stress, which prepares the body tissues to accept the maximum benefits of food, nutrition and exercise. It is beneficial in getting rid of almost every disease.",
@@ -2412,7 +2436,7 @@
       "redirectReason": null
     },
     {
-      "n": 122,
+      "n": 123,
       "path": "/maharaja-suite/",
       "title": "Maharaja Suite at Kairali – Ultimate Luxury Ayurveda Retreat",
       "description": "Stay in the Maharaja Suite at Kairali Ayurvedic Healing Village for a royal wellness experience with Ayurveda, yoga, and holistic healing in Kerala.",
@@ -2443,14 +2467,14 @@
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": true,
+      "inFooterNav": false,
       "section": "contact",
       "designAudited": true,
       "redirectsTo": "/how-to-reach/",
       "redirectReason": "Owner-approved consolidation of Map into How to Reach, retaining origin-specific directions including Ottapalam railway station and Bengaluru."
     },
     {
-      "n": 124,
+      "n": 125,
       "path": "/meditation/",
       "title": "Meditation Retreat at Kairali: Balance Mind, Body, and Spirit",
       "description": "Discover guided meditation programs at Kairali - The Ayurvedic Healing Village in Kerala. Achieve inner peace, stress relief, and holistic well-being amidst serene nature.",
@@ -2469,7 +2493,7 @@
       "redirectReason": null
     },
     {
-      "n": 125,
+      "n": 126,
       "path": "/mindfulness-retreat/",
       "title": "Luxury Mindfulness Retreat in India | Transformative Yoga & Holistic Healing",
       "description": "Join renowned experts at India’s premier Mindfulness Retreat in Kerala. Experience Iyengar yoga, Holotropic Breathwork, Tibetan healing, Pranic healing, and vibrational sound therapy in an exclusive five-day luxury retreat designed for deep inner transformation.",
@@ -2488,7 +2512,7 @@
       "redirectReason": null
     },
     {
-      "n": 126,
+      "n": 127,
       "path": "/mountain-jeep-safari/",
       "title": "Thrilling Mountain Jeep Safaris in Kerala – Adventure Awaits",
       "description": "Discover Kerala's wild beauty with mountain jeep safaris. Explore rugged trails, lush forests, and panoramic views in an eco-friendly adventure through the Western Ghats.",
@@ -2507,7 +2531,7 @@
       "redirectReason": null
     },
     {
-      "n": 127,
+      "n": 128,
       "path": "/my-account/",
       "title": "My account - Ayurvedic Healing Village",
       "description": "",
@@ -2526,7 +2550,7 @@
       "redirectReason": "WooCommerce account page. No commerce, no accounts, nothing equivalent to send it to."
     },
     {
-      "n": 128,
+      "n": 129,
       "path": "/nature-walk/",
       "title": "Nature Walk | Garden Walk | Nature Beauty | Natural Garden",
       "description": "This section deals with the leisurely method of nature walk as a means to reinvigorate the state of mind as well as one of the activities that are offered at the Ayurvedic village.",
@@ -2545,7 +2569,7 @@
       "redirectReason": null
     },
     {
-      "n": 129,
+      "n": 130,
       "path": "/new-privacy-policy/",
       "title": "Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy",
       "description": "Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.",
@@ -2564,7 +2588,7 @@
       "redirectReason": null
     },
     {
-      "n": 130,
+      "n": 131,
       "path": "/new-to-ayurveda/",
       "title": "New to Ayurveda? Experience Holistic Healing at Kairali",
       "description": "Discover Ayurveda at Kairali – The Ayurvedic Healing Village. Personalized therapies, Ayurvedic diet, and expert guidance for a balanced, rejuvenating retreat.",
@@ -2583,10 +2607,10 @@
       "redirectReason": null
     },
     {
-      "n": 131,
+      "n": 132,
       "path": "/new-to-yoga-teacher-training/",
-      "title": "Therapeutic Yoga | Yoga Training Center | Yoga Therapy Training | Yoga Retreat Training",
-      "description": "Kairali- The Ayurvedic Healing Village guide to the meaning and origin of yoga therapy, and the importance of ayurveda to therapeutic yoga. Yoga Teacher Training courses are available at our India retreat center Palakkad, Kerala.",
+      "title": "Certified Yoga Teacher Training — Coming Soon | Kairali",
+      "description": "Certified Yoga Teacher Training is Coming Soon. Enrolment is not currently open. Guest yoga and meditation practice are available separately.",
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/reader25b-family-data.js",
@@ -2602,7 +2626,7 @@
       "redirectReason": null
     },
     {
-      "n": 132,
+      "n": 133,
       "path": "/new-to-yoga/",
       "title": "New to Yoga? Start Your Journey at Kairali’s Yoga Retreat",
       "description": "Experience beginner-friendly yoga at Kairali’s Ayurveda retreat in Kerala. Personalized guidance, meditation, and Ayurvedic wellness for holistic healing.",
@@ -2621,7 +2645,7 @@
       "redirectReason": null
     },
     {
-      "n": 133,
+      "n": 134,
       "path": "/no-caffeine/",
       "title": "Kairali: A Caffeine-Free Retreat for Holistic Wellness in Kerala",
       "description": "Experience holistic healing at Kairali – The Ayurvedic Healing Village, a caffeine-free retreat offering Ayurvedic treatments, herbal teas, and natural detoxification.",
@@ -2640,12 +2664,12 @@
       "redirectReason": null
     },
     {
-      "n": 134,
+      "n": 135,
       "path": "/no-preservatives/",
       "title": "Fresh and Natural Ayurvedic Food at Kairali for Holistic Wellness",
       "description": "Kairali promotes fresh, unprocessed Ayurvedic food for balance, vitality, and holistic well-being. Avoid preservatives and embrace pure nourishment for health.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-page-no-preservatives-desktop",
+      "mobileView": "ahv-page-no-preservatives-mobile",
       "dataset": "assets/reader25b-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -2654,12 +2678,12 @@
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "food",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 135,
+      "n": 136,
       "path": "/no-refridgeration/",
       "title": "Kairali- The Ayurvedic Healing Village No Refrigeration",
       "description": "Kairali focuses on the usage of freshly picked fruits and vegetables from its blissful and miraculous organic garden.",
@@ -2678,7 +2702,7 @@
       "redirectReason": null
     },
     {
-      "n": 136,
+      "n": 137,
       "path": "/no-smoking/",
       "title": "Kairali - A Smoke-Free Ayurvedic Retreat for Holistic Wellness",
       "description": "Experience a smoke-free sanctuary at Kairali Ayurvedic Healing Village. Rejuvenate with Ayurveda, yoga, and nature in a toxin-free, holistic wellness retreat.",
@@ -2697,12 +2721,12 @@
       "redirectReason": null
     },
     {
-      "n": 137,
+      "n": 138,
       "path": "/offers/",
       "title": "Special Care Initiatives – Kairali The Ayurvedic Healing Village",
       "description": "Kairali extends specialised Ayurvedic care to senior citizens, Olympic and Paralympic athletes, and defence personnel. Healing as a responsibility, not a promotion.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-template-offers-deals-and-gift-vouchers-desktop",
+      "mobileView": "ahv-template-offers-deals-and-gift-vouchers-mobile",
       "dataset": "assets/commercial-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -2711,12 +2735,12 @@
       "inHeaderNav": true,
       "inFooterNav": true,
       "section": "campaign",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 138,
+      "n": 139,
       "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
       "title": "Ayurvedic Wellness for Defence & Paramilitary Forces – Kairali",
       "description": "Exclusive Ayurvedic wellness programs for India's Defence & Paramilitary Forces at Kairali. Rejuvenate, heal, and enhance stamina with tailored Ayurveda treatments.",
@@ -2735,7 +2759,7 @@
       "redirectReason": null
     },
     {
-      "n": 139,
+      "n": 140,
       "path": "/offers/new/",
       "title": "Senior Citizen Wellness Offer – Up to 20% Off at Kairali",
       "description": "Enjoy up to 20% off Ayurvedic wellness packages at Kairali. Rejuvenate with tailored therapies, yoga, and holistic healing in a serene retreat.",
@@ -2754,7 +2778,7 @@
       "redirectReason": "93% identical to the senior-citizen offer, which earns 236 clicks while this earns 0. Its canonical already pointed here (route-overrides.json); the 301 makes the consolidation real instead of advisory."
     },
     {
-      "n": 140,
+      "n": 141,
       "path": "/offers/olympics-and-paralympics-offer/",
       "title": "Exclusive Ayurveda Retreat Offer for Olympic & Paralympic Athletes",
       "description": "Olympic & Paralympic athletes get up to 20% off Ayurvedic retreats at Kairali. Rejuvenate with therapies, yoga & personalized wellness in a serene setting.",
@@ -2773,7 +2797,7 @@
       "redirectReason": null
     },
     {
-      "n": 141,
+      "n": 142,
       "path": "/offers/senior-citizen-offer/",
       "title": "Senior Citizen Wellness Offer – Up to 20% Off at Kairali",
       "description": "Enjoy up to 20% off Ayurvedic wellness packages at Kairali. Rejuvenate with tailored therapies, yoga, and holistic healing in a serene retreat.",
@@ -2792,7 +2816,7 @@
       "redirectReason": null
     },
     {
-      "n": 142,
+      "n": 143,
       "path": "/one-day-ayurveda-workshop-program-kerala/",
       "title": "One-Day Ayurveda Workshop at Kairali – Learn & Rejuvenate",
       "description": "Join Kairali’s one-day Ayurveda workshop in Kerala. Discover Ayurvedic principles, therapies, diet & yoga for holistic wellness in a serene retreat setting.",
@@ -2811,7 +2835,7 @@
       "redirectReason": null
     },
     {
-      "n": 143,
+      "n": 144,
       "path": "/online-consultation-old/",
       "title": "Free online consultation | Ayurvedic Doctor | Consultation",
       "description": "A free Ayurvedic consultation based on your health conditions. Our doctor’s will provide their expert opinion after you have filled in the form.",
@@ -2830,7 +2854,7 @@
       "redirectReason": "Superseded duplicate. The current page earns 379 clicks, the most of any page in scope."
     },
     {
-      "n": 144,
+      "n": 145,
       "path": "/online-consultation/",
       "title": "Online consultation with an Ayurvedic physician | Kairali – The Ayurvedic Healing Village",
       "description": "Request a complimentary online consultation with a registered Ayurvedic physician at Kairali – The Ayurvedic Healing Village. A considered assessment of your constitution and whether our treatment programmes are appropriate for you. NABH-accredited. Established 1908.",
@@ -2849,33 +2873,14 @@
       "redirectReason": null
     },
     {
-      "n": 145,
+      "n": 146,
       "path": "/onlinebookingthankyou/",
       "title": "Online Booking Thankyou - Ayurvedic Healing Village",
       "description": "",
       "desktopView": "ahv-page-confirmation-desktop",
       "mobileView": "ahv-page-confirmation-mobile",
       "dataset": "assets/confirmation-family-data.js",
-      "sitemap": true,
-      "duplicateOf": null,
-      "duplicateNote": null,
-      "canonicalElsewhere": null,
-      "inHeaderNav": false,
-      "inFooterNav": false,
-      "section": "confirmation",
-      "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
-    },
-    {
-      "n": 146,
-      "path": "/onlineconsultation-thanks/",
-      "title": "Online Consultation Thanks - Ayurvedic Healing Village",
-      "description": "",
-      "desktopView": "ahv-page-confirmation-desktop",
-      "mobileView": "ahv-page-confirmation-mobile",
-      "dataset": "assets/confirmation-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -2888,6 +2893,25 @@
     },
     {
       "n": 147,
+      "path": "/onlineconsultation-thanks/",
+      "title": "Online Consultation Thanks - Ayurvedic Healing Village",
+      "description": "",
+      "desktopView": "ahv-page-confirmation-desktop",
+      "mobileView": "ahv-page-confirmation-mobile",
+      "dataset": "assets/confirmation-family-data.js",
+      "sitemap": false,
+      "duplicateOf": null,
+      "duplicateNote": null,
+      "canonicalElsewhere": null,
+      "inHeaderNav": false,
+      "inFooterNav": false,
+      "section": "confirmation",
+      "designAudited": true,
+      "redirectsTo": null,
+      "redirectReason": null
+    },
+    {
+      "n": 148,
       "path": "/organic-farm/",
       "title": "Kairali: Organic Plantation to augment recovery and regaining health",
       "description": "Kairali- The Ayurvedic Healing Village boasts of a huge Organic plantation at its property, which is the source of food for all the visitors at the hospital and retreat.",
@@ -2906,7 +2930,7 @@
       "redirectReason": null
     },
     {
-      "n": 148,
+      "n": 149,
       "path": "/our-accolades/",
       "title": "Award-Winning Luxury Ayurvedic Retreat | Kairali Accolades",
       "description": "Kairali – The Ayurvedic Healing Village is an internationally acclaimed wellness retreat, honored as a 'Top Ten Wellness Destination in Asia' by National Geographic Traveler and recipient of the World Luxury Spa Award. Experience the pinnacle of Ayurvedic healing and luxury hospitality.",
@@ -2925,7 +2949,7 @@
       "redirectReason": null
     },
     {
-      "n": 149,
+      "n": 150,
       "path": "/our-partners/",
       "title": "Ayurvedic Partnerships & Franchise | Kairali Healing Village",
       "description": "Kairali partners with wellness centers, franchises, and educators to promote authentic Ayurveda, holistic healing, and Ayurvedic training worldwide.",
@@ -2944,7 +2968,7 @@
       "redirectReason": null
     },
     {
-      "n": 150,
+      "n": 151,
       "path": "/our-story/",
       "title": "Our Story - Ayurvedic Healing Village",
       "description": "",
@@ -2959,11 +2983,11 @@
       "inFooterNav": false,
       "section": "about",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/about-us/",
+      "redirectReason": "Owner merged Our Story into About Us (canonical already pointed there; DUP-046 asks for a separate awards family, not a reversal). The only blocks the destination lacks are the shared maps, trust strip and enquiry prompt carried by many pages."
     },
     {
-      "n": 151,
+      "n": 152,
       "path": "/our-villas/",
       "title": "Luxury Ayurvedic Villas in Kerala | Healing & Serenity Awaits",
       "description": "Experience tranquil living in Vastu-designed Ayurvedic villas at Kairali’s Healing Village, Kerala. A perfect blend of nature, wellness, and holistic rejuvenation.",
@@ -2982,7 +3006,7 @@
       "redirectReason": null
     },
     {
-      "n": 152,
+      "n": 153,
       "path": "/packages/",
       "title": "Ayurvedic Wellness Programs | Kairali - The Ayurvedic Healing Village",
       "description": "Experience personalized Ayurveda, Panchakarma & yoga programs at Kairali for detox, stress relief, weight loss & immunity in a serene Kerala retreat.",
@@ -3001,7 +3025,7 @@
       "redirectReason": null
     },
     {
-      "n": 153,
+      "n": 154,
       "path": "/pain-management.html",
       "title": "Effective Pain Management with Ayurvedic Treatments in Kerala",
       "description": "Experience holistic Ayurvedic pain management at Kairali's Healing Village in Kerala. Find natural remedies and therapies for lasting relief and wellness.",
@@ -3020,7 +3044,7 @@
       "redirectReason": null
     },
     {
-      "n": 154,
+      "n": 155,
       "path": "/panchakarma-therapy/",
       "title": "Panchakarma Detox Therapy | Ayurvedic Body Cleansing India",
       "description": "Experience Ayurvedic Panchakarma Therapy for full-body detox, dosha balance & immunity boost. Book your personalized wellness retreat in India today.",
@@ -3039,7 +3063,7 @@
       "redirectReason": null
     },
     {
-      "n": 155,
+      "n": 156,
       "path": "/panchakarma/",
       "title": "Panchakarma Therapy | Luxury Ayurvedic Detox & Rejuvenation",
       "description": "Experience the transformative power of Panchakarma at Kairali’s luxury Ayurvedic retreat. This ancient detox therapy balances the doshas, purifies the body, and enhances overall well-being with herbal treatments, oil massages, and holistic healing in Kerala.",
@@ -3058,7 +3082,7 @@
       "redirectReason": null
     },
     {
-      "n": 156,
+      "n": 157,
       "path": "/panchkarma-treatment.html",
       "title": "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
       "description": "Discover trusted Panchakarma treatment in Kerala at Kairali. Authentic detox therapy, NABH-certified care, luxury wellness stay, yoga and personalized Ayurveda healing.",
@@ -3077,7 +3101,7 @@
       "redirectReason": null
     },
     {
-      "n": 157,
+      "n": 158,
       "path": "/payment-policy-compliance/",
       "title": "Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy",
       "description": "Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.",
@@ -3089,14 +3113,14 @@
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": false,
+      "inFooterNav": true,
       "section": "policy",
       "designAudited": true,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 158,
+      "n": 159,
       "path": "/personalized-customized-healing-program/",
       "title": "Customizable Ayurvedic Healing – Swasthya Anukūla Chikitsa | Kairali",
       "description": "Discover Kairali's customizable Ayurvedic healing program. Tailored therapies and lifestyle plans for chronic issues, post-COVID recovery, and total rejuvenation.",
@@ -3115,12 +3139,12 @@
       "redirectReason": null
     },
     {
-      "n": 159,
+      "n": 160,
       "path": "/photo-gallery/",
       "title": "Photo Gallery | Kairali - The Ayurvedic Healing Village",
       "description": "Experience Ayurveda, yoga, and cultural heritage through Kairali’s photo gallery, capturing wellness, nature, and holistic healing in serene surroundings.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3128,13 +3152,13 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": true,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "unclassified",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 160,
+      "n": 161,
       "path": "/post-pregnancy-health-programme/",
       "title": "Ayurvedic Post-Pregnancy Health Program for New Mothers",
       "description": "Restore strength and vitality with Ayurvedic post-pregnancy care. Our program supports recovery, lactation, and overall well-being for new mothers.",
@@ -3153,7 +3177,7 @@
       "redirectReason": null
     },
     {
-      "n": 161,
+      "n": 162,
       "path": "/postulez-maintenant/",
       "title": "Postulez Maintenant | Kairali - Le Village de Guérison Ayurvédique",
       "description": "Soumettez votre candidature pour une carrière passionnante dans les secteurs de l'hôtellerie, pharmaceutique, centres ayurvédiques et spas, ainsi que le yoga en entreprise chez Kairali.",
@@ -3172,7 +3196,7 @@
       "redirectReason": null
     },
     {
-      "n": 162,
+      "n": 163,
       "path": "/ppc-thanks/",
       "title": "PPC Thanks - Ayurvedic Healing Village",
       "description": "",
@@ -3191,7 +3215,7 @@
       "redirectReason": null
     },
     {
-      "n": 163,
+      "n": 164,
       "path": "/prav-simona-monsoon-yoga-retreat/",
       "title": "Prav & Simona Luxury Yoga Retreat in Kerala | Ayurveda & Stress Healing",
       "description": "Join Prav & Simona’s exclusive yoga retreat at Kairali Ayurvedic Healing Village, Kerala. Experience 6–8 days of luxury wellness with expert-led yoga, Ayurveda, pranayama, and personalized healing in a serene tropical paradise. Limited spots available—reserve now.",
@@ -3210,7 +3234,7 @@
       "redirectReason": null
     },
     {
-      "n": 164,
+      "n": 165,
       "path": "/prav-simona-yoga-retreat/",
       "title": "Prav & Simona Yoga Retreat in Kerala | Luxury Ayurveda & Stress Management",
       "description": "Experience the Prav & Simona Yoga Retreat at Kairali Ayurvedic Healing Village, Kerala. A 14-day luxury wellness journey combining Ayurveda, yoga, pranayama, and meditation for stress relief and holistic healing. Personalized attention, organic meals, and expert guidance in a serene Ayurvedic paradise.",
@@ -3229,7 +3253,7 @@
       "redirectReason": null
     },
     {
-      "n": 165,
+      "n": 166,
       "path": "/preventive-and-regenerative-treatment/",
       "title": "Preventive & Regenerative Ayurvedic Detox at Kairali",
       "description": "Boost immunity, reduce stress & rejuvenate naturally with Ayurveda-based preventive & regenerative therapies at Kairali’s Healing Village.",
@@ -3248,7 +3272,7 @@
       "redirectReason": null
     },
     {
-      "n": 166,
+      "n": 167,
       "path": "/preventive-rejuvenation-detoxification.html",
       "title": "Preventive Rejuvenation & Detoxification in Kerala – Ayurveda Cure",
       "description": "Experience preventive rejuvenation and detoxification with authentic Ayurvedic therapies in Kerala. Revitalize your body, mind, and soul at Kairali Healing Village.",
@@ -3267,50 +3291,50 @@
       "redirectReason": null
     },
     {
-      "n": 167,
+      "n": 168,
       "path": "/privacy-policy/",
       "title": "Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy",
       "description": "Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.",
       "desktopView": "ahv-page-policy-reader-desktop",
       "mobileView": "ahv-page-policy-reader-mobile",
       "dataset": "assets/policy-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": true,
+      "inFooterNav": false,
       "section": "policy",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/new-privacy-policy/",
+      "redirectReason": "Owner named /new-privacy-policy/ the final privacy document ('merge it with this … 301 these two'). Measured 28 Sep: every line of this page's text is on the destination (identical notice, revision 25 Sep 2026)."
     },
     {
-      "n": 168,
+      "n": 169,
       "path": "/privacy-statement/",
       "title": "Privacy Statement | Kairali - The Ayurvedic Healing Village",
       "description": "Discover how Kairali - The Ayurvedic Healing Village protects your personal information and ensures data privacy. Read our Privacy Statement to learn about our data handling practices and your rights.",
       "desktopView": "ahv-page-policy-reader-desktop",
       "mobileView": "ahv-page-policy-reader-mobile",
       "dataset": "assets/policy-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": true,
+      "inFooterNav": false,
       "section": "policy",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/new-privacy-policy/",
+      "redirectReason": "Owner named /new-privacy-policy/ the final privacy document. Measured 28 Sep: the text is identical to the destination apart from the page title."
     },
     {
-      "n": 169,
+      "n": 170,
       "path": "/product-gallery/",
       "title": "Photo Gallery",
       "description": "This section deals with the photo gallery on the Kairali village and the role it plays in public outreach.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3318,18 +3342,18 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "products",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 170,
+      "n": 171,
       "path": "/product-range/",
       "title": "Kairali Ayurvedic Products – Herbal Teas, Medicines & Wellness",
       "description": "Explore Kairali’s Ayurvedic products, including herbal teas, proprietary medicines, organic wellness solutions, and authentic Ayurvedic equipment for holistic health.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-template-product-family-desktop",
+      "mobileView": "ahv-template-product-family-mobile",
       "dataset": "assets/collection-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3338,17 +3362,17 @@
       "inHeaderNav": false,
       "inFooterNav": true,
       "section": "products",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 171,
+      "n": 172,
       "path": "/property-gallery/",
       "title": "Property Gallery | Kairali - The Ayurvedic Healing Village",
       "description": "Explore the serene landscapes, eco-friendly cottages & Ayurvedic centers at Kairali. Experience holistic healing in Kerala’s tranquil wellness retreat.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3356,13 +3380,13 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "unclassified",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 172,
+      "n": 173,
       "path": "/read-feedback/",
       "title": "Guest Reviews & Testimonials | Kairali - Ayurvedic Healing",
       "description": "Read guest testimonials on Ayurveda, yoga, and holistic healing at Kairali. Discover transformative wellness experiences at our serene Kerala retreat.",
@@ -3374,14 +3398,14 @@
       "duplicateNote": null,
       "canonicalElsewhere": null,
       "inHeaderNav": false,
-      "inFooterNav": false,
+      "inFooterNav": true,
       "section": "about",
       "designAudited": true,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 173,
+      "n": 174,
       "path": "/retreats-for-everyone/",
       "title": "Yoga retreats for everyone",
       "description": "This section deals with the benefits and implications of living in a yoga retreat.",
@@ -3400,12 +3424,12 @@
       "redirectReason": null
     },
     {
-      "n": 174,
+      "n": 175,
       "path": "/retreats-gallery/",
       "title": "Retreats Gallery | Ayurvedic Wellness & Yoga at Kairali",
       "description": "Explore Kairali’s Retreats Gallery—Ayurvedic healing, yoga, and wellness in a serene natural setting. Let our images inspire your journey to well-being.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3413,18 +3437,18 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "programme",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 175,
+      "n": 176,
       "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
       "title": "Yoga retreats for everyone",
       "description": "This section deals with the benefits and implications of living in a yoga retreat.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-page-cancer-supportive-care-desktop",
+      "mobileView": "ahv-page-cancer-supportive-care-mobile",
       "dataset": "assets/exception-five-family-data.js",
       "sitemap": false,
       "duplicateOf": "https://ayurvedichealingvillage.com/revitalizing-and-strengthening/",
@@ -3433,12 +3457,12 @@
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "treatment",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 176,
+      "n": 177,
       "path": "/revitalizing-and-strengthening/",
       "title": "Ayurvedic Cancer Recovery & Strengthening Program | Kairali",
       "description": "Boost immunity, reduce side effects & regain strength with Kairali’s Ayurvedic cancer recovery program in Kerala. Personalized & holistic care.",
@@ -3457,7 +3481,7 @@
       "redirectReason": null
     },
     {
-      "n": 177,
+      "n": 178,
       "path": "/royal-villa/",
       "title": "Royal Villa Stay at Kairali – Luxury Ayurveda Retreat in Kerala",
       "description": "Experience the Royal Villa at Kairali Ayurvedic Healing Village, a perfect blend of luxury, Ayurveda, and holistic wellness in the serene landscapes of Kerala.",
@@ -3476,7 +3500,7 @@
       "redirectReason": null
     },
     {
-      "n": 178,
+      "n": 179,
       "path": "/search-results/",
       "title": "Effortless Search for Treatments & Wellness Services | Kairali Ayurvedic Healing Village",
       "description": "Easily find Ayurvedic treatments, luxury wellness services, eco-friendly lodging, gallery images, and exclusive packages at Kairali Ayurvedic Healing Village. Explore with ease and make informed choices for your healing journey.",
@@ -3495,12 +3519,12 @@
       "redirectReason": null
     },
     {
-      "n": 179,
+      "n": 180,
       "path": "/sight-seeing-gallery/",
       "title": "Activities & Experiences | Kairali – The Ayurvedic Healing Village",
       "description": "Enjoy yoga, meditation, organic farming, cultural workshops, and nature walks at Kairali for a holistic wellness experience in Kerala’s serene landscapes.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3508,16 +3532,16 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": true,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "area",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 180,
+      "n": 181,
       "path": "/sightseeing/",
-      "title": "Sightseeing Near Kairali – Explore Kerala’s Natural Beauty",
-      "description": "Discover Kerala’s rich heritage, serene hills, and cultural sites near Kairali. Visit temples, rock gardens, and scenic landscapes while enjoying Ayurvedic wellness.",
+      "title": "Sightseeing near Kairali | Places to Visit from Palakkad",
+      "description": "Explore 22 places to visit from Kairali in Palakkad, with approximate road distances, directions and practical notes for temples, gardens, dams and forest visits.",
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/reader6c-family-data.js",
@@ -3533,12 +3557,12 @@
       "redirectReason": null
     },
     {
-      "n": 181,
+      "n": 182,
       "path": "/sitemap/",
       "title": "Site Map | Kairali - The Ayurvedic Healing Village",
       "description": "Every page on the Kairali - The Ayurvedic Healing Village website, grouped by section.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-page-sitemap-desktop",
+      "mobileView": "ahv-page-sitemap-mobile",
       "dataset": "assets/utility7-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3547,12 +3571,12 @@
       "inHeaderNav": false,
       "inFooterNav": true,
       "section": "utility",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 182,
+      "n": 183,
       "path": "/sleep-restoration-therapy/",
       "title": "Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village",
       "description": "Ayurvedic sleep therapy to relieve insomnia, anxiety & stress. Restore restful sleep with natural treatments at Kairali in Kerala.",
@@ -3571,7 +3595,7 @@
       "redirectReason": null
     },
     {
-      "n": 183,
+      "n": 184,
       "path": "/social-cultural-environmental-commitment/",
       "title": "Holistic Commitments of Kairali – Ayurveda, Sustainability & Ethics",
       "description": "Kairali promotes Ayurveda, sustainability, cultural heritage, ethical tourism, and community well-being through holistic commitments for a balanced lifestyle.",
@@ -3590,7 +3614,7 @@
       "redirectReason": null
     },
     {
-      "n": 184,
+      "n": 185,
       "path": "/social-responsibilities/",
       "title": "Social responsibilities | Preservation of Nature | Ayurvedic village | Treatment",
       "description": "Kairali Ayurvedic Group’s Corporate Social Responsibility programs, supporting sustainability at their Ayurvedic hospital and the best of local community support in Kerala, India.",
@@ -3609,7 +3633,7 @@
       "redirectReason": null
     },
     {
-      "n": 185,
+      "n": 186,
       "path": "/special-offers/",
       "title": "Exclusive Ayurvedic Retreat Offers – Kairali Healing Village",
       "description": "Enjoy up to 20% OFF on Ayurvedic treatment packages at Kairali. Book your wellness retreat in Kerala today and embrace holistic healing and rejuvenation.",
@@ -3628,12 +3652,12 @@
       "redirectReason": null
     },
     {
-      "n": 186,
+      "n": 187,
       "path": "/terms-and-conditions/",
       "title": "Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy",
       "description": "Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.",
-      "desktopView": "ahv-page-policy-reader-desktop",
-      "mobileView": "ahv-page-policy-reader-mobile",
+      "desktopView": "ahv-template-legal-policy-desktop",
+      "mobileView": "ahv-template-legal-policy-mobile",
       "dataset": "assets/policy-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3641,13 +3665,13 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": true,
-      "section": "policy",
-      "designAudited": true,
+      "section": "unclassified",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 187,
+      "n": 188,
       "path": "/test-page-2/",
       "title": "Write a Review | Give Testimonials | Opinions | Feedback",
       "description": "Feedbacks are very important to improve and upgrade a system. So the experience of visitors allows Kairali to analyze their hospitality services so that they can come up with new ideas and services to meet the customer’s needs.",
@@ -3666,7 +3690,7 @@
       "redirectReason": "h1 'Test Page' but the head title is 'Write a Review | Give Testimonials | Opinions | Feedback' - it is a scratch copy of the feedback page, so the signal belongs there."
     },
     {
-      "n": 188,
+      "n": 189,
       "path": "/test-page/",
       "title": "test-page - Ayurvedic Healing Village",
       "description": "",
@@ -3685,7 +3709,7 @@
       "redirectReason": "h1 'Test Page'. A WordPress scratch page with no subject and nothing to consolidate."
     },
     {
-      "n": 189,
+      "n": 190,
       "path": "/testing/",
       "title": "Testing - Ayurvedic Healing Village",
       "description": "",
@@ -3704,33 +3728,14 @@
       "redirectReason": "h1 'Testing'. A WordPress scratch page with no subject."
     },
     {
-      "n": 190,
+      "n": 191,
       "path": "/thanks-old/",
       "title": "Thank You OLD - Ayurvedic Healing Village",
       "description": "",
       "desktopView": "ahv-page-confirmation-desktop",
       "mobileView": "ahv-page-confirmation-mobile",
       "dataset": "assets/confirmation-family-data.js",
-      "sitemap": true,
-      "duplicateOf": null,
-      "duplicateNote": null,
-      "canonicalElsewhere": null,
-      "inHeaderNav": false,
-      "inFooterNav": false,
-      "section": "confirmation",
-      "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
-    },
-    {
-      "n": 191,
-      "path": "/thanks/",
-      "title": "Thank you — your enquiry is with our care team | Kairali Ayurvedic Healing Village",
-      "description": "",
-      "desktopView": "ahv-page-confirmation-desktop",
-      "mobileView": "ahv-page-confirmation-mobile",
-      "dataset": "assets/confirmation-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -3743,6 +3748,25 @@
     },
     {
       "n": 192,
+      "path": "/thanks/",
+      "title": "Thank you — your enquiry is with our care team | Kairali Ayurvedic Healing Village",
+      "description": "",
+      "desktopView": "ahv-page-confirmation-desktop",
+      "mobileView": "ahv-page-confirmation-mobile",
+      "dataset": "assets/confirmation-family-data.js",
+      "sitemap": false,
+      "duplicateOf": null,
+      "duplicateNote": null,
+      "canonicalElsewhere": null,
+      "inHeaderNav": false,
+      "inFooterNav": false,
+      "section": "confirmation",
+      "designAudited": true,
+      "redirectsTo": null,
+      "redirectReason": null
+    },
+    {
+      "n": 193,
       "path": "/the-baoli-advert-box-deal/",
       "title": "Animal Husbandry | Kairali’s Organic Produce",
       "description": "Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.",
@@ -3761,7 +3785,7 @@
       "redirectReason": null
     },
     {
-      "n": 193,
+      "n": 194,
       "path": "/the-baoli-special-deal/",
       "title": "Animal Husbandry | Kairali’s Organic Produce",
       "description": "Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.",
@@ -3780,7 +3804,7 @@
       "redirectReason": null
     },
     {
-      "n": 194,
+      "n": 195,
       "path": "/things-to-do-in-kerala/",
       "title": "Explore Kerala: Backwaters, Hills and Culture in God's Own Country",
       "description": "Discover Kerala's serene backwaters, vibrant culture, lush wildlife, and thrilling adventures. Experience houseboats, safaris, festivals, and natural beauty in paradise.",
@@ -3799,14 +3823,14 @@
       "redirectReason": null
     },
     {
-      "n": 195,
+      "n": 196,
       "path": "/things-to-do-in-property/",
       "title": "Experiential Wellness at Kairali - Nature, Yoga and Ayurveda",
       "description": "Experience nature walks, yoga, meditation, organic farming, and Ayurvedic cooking at Kairali - The Ayurvedic Healing Village for holistic well-being and peace.",
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/collection-family-data.js",
-      "sitemap": true,
+      "sitemap": false,
       "duplicateOf": null,
       "duplicateNote": null,
       "canonicalElsewhere": null,
@@ -3814,11 +3838,11 @@
       "inFooterNav": false,
       "section": "area",
       "designAudited": true,
-      "redirectsTo": null,
-      "redirectReason": null
+      "redirectsTo": "/things-to-do/",
+      "redirectReason": "Owner kept /things-to-do/. Its in-village section already carries this page's introduction and all eight activity descriptions; the in-village activity pages move under /things-to-do/ in the site tree."
     },
     {
-      "n": 196,
+      "n": 197,
       "path": "/things-to-do/",
       "title": "Best Things to Do at Kairali & in Kerala – Nature, Ayurveda & More",
       "description": "Explore yoga, Ayurveda, nature walks & cultural experiences at Kairali. Enjoy Kerala's wildlife, houseboats & safaris for an enriching retreat.",
@@ -3837,7 +3861,7 @@
       "redirectReason": null
     },
     {
-      "n": 197,
+      "n": 198,
       "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
       "title": "3-Day Ayurveda Certificate Program – Learn & Experience Ayurveda",
       "description": "Join Kairali’s 3-day Ayurveda certificate program in Kerala. Gain hands-on training in Ayurvedic therapies, nutrition & holistic healing at a serene retreat.",
@@ -3856,12 +3880,12 @@
       "redirectReason": null
     },
     {
-      "n": 198,
+      "n": 199,
       "path": "/training-course-fees/",
       "title": "Ayurveda & Wellness Training at Kairali – Expert-Led Courses",
       "description": "Learn Ayurveda, yoga, Panchakarma & massage therapy at Kairali. Expert-led training with hands-on learning & certification in a serene retreat setting.",
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
+      "desktopView": "ahv-template-course-and-fees-desktop",
+      "mobileView": "ahv-template-course-and-fees-mobile",
       "dataset": "assets/article-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -3870,12 +3894,12 @@
       "inHeaderNav": false,
       "inFooterNav": false,
       "section": "training",
-      "designAudited": true,
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 199,
+      "n": 200,
       "path": "/training-programs/",
       "title": "Ayurveda Training Programmes in Kerala | Kairali",
       "description": "Explore Ayurveda training at Kairali. Read about the courses, workshop durations and teaching approach, then contact us to discuss your plans.",
@@ -3894,7 +3918,7 @@
       "redirectReason": null
     },
     {
-      "n": 200,
+      "n": 201,
       "path": "/training/",
       "title": "Learn Ayurveda at Kairali – Authentic Training & Wellness",
       "description": "Join Kairali’s Ayurveda training programs in Kerala. Learn Ayurvedic lifestyle, nutrition, yoga & wellness in a serene retreat led by expert practitioners.",
@@ -3913,7 +3937,7 @@
       "redirectReason": null
     },
     {
-      "n": 201,
+      "n": 202,
       "path": "/treatment-for-arthritis-and-spondylitis/",
       "title": "Joint Pain & Arthritis Ayurvedic Treatment at Kairali",
       "description": "Ayurvedic arthritis treatment with herbal therapies, yoga & diet. Reduce joint pain, inflammation & improve mobility 14/21/28-day programs.",
@@ -3932,7 +3956,7 @@
       "redirectReason": null
     },
     {
-      "n": 202,
+      "n": 203,
       "path": "/treatment-for-bronchial-diseases/",
       "title": "Ayurvedic Therapy for Respiratory Health & Lung Wellness",
       "description": "Experience holistic bronchial treatment at Kairali with herbal therapies, detox, and doctor-guided care to improve breathing and boost immunity.",
@@ -3951,7 +3975,7 @@
       "redirectReason": null
     },
     {
-      "n": 203,
+      "n": 204,
       "path": "/treatment-for-cervical-spondylosis/",
       "title": "Ayurvedic Neck & Upper Back Pain Treatment at Kairali",
       "description": "Relieve cervical pain & stiffness with Ayurvedic neck & back therapy at Kairali. Includes Greeva Vasti, Abhyangam & holistic wellness care.",
@@ -3970,7 +3994,7 @@
       "redirectReason": null
     },
     {
-      "n": 204,
+      "n": 205,
       "path": "/treatment-for-chronic-back-pain/",
       "title": "Chronic Back Pain Ayurvedic Treatment | Kairali Healing Village",
       "description": "Relieve chronic back pain naturally with Ayurvedic therapies, yoga & lifestyle care at Kairali – The Ayurvedic Healing Village. Book your healing today.",
@@ -3989,7 +4013,7 @@
       "redirectReason": null
     },
     {
-      "n": 205,
+      "n": 206,
       "path": "/treatment-for-diabetes/",
       "title": "Ayurvedic Diabetes & Metabolic Therapy at Kairali Retreat",
       "description": "Ayurvedic diabetes program with detox, herbal meds, yoga & diet to balance metabolism, control sugar & improve overall health.",
@@ -4008,7 +4032,7 @@
       "redirectReason": null
     },
     {
-      "n": 206,
+      "n": 207,
       "path": "/treatment-for-facial-paralysis/",
       "title": "Facial Paralysis & Nerve Therapy at Kairali Ayurveda",
       "description": "Heal facial paralysis naturally with Ayurvedic nerve therapy, personalized care & yoga at Kairali Healing Village. Long-term recovery starts here.",
@@ -4027,7 +4051,7 @@
       "redirectReason": null
     },
     {
-      "n": 207,
+      "n": 208,
       "path": "/treatment-for-hypertension/",
       "title": "Ayurvedic Blood Pressure & Heart Health Treatment",
       "description": "Natural Ayurvedic therapy for hypertension & heart health. Personalized care with herbal remedies, yoga & diet. Book a doctor-guided treatment.",
@@ -4046,7 +4070,7 @@
       "redirectReason": null
     },
     {
-      "n": 208,
+      "n": 209,
       "path": "/treatment-for-nervous-disability/",
       "title": "Ayurvedic Neurological Therapy for Nervous System Health",
       "description": "Experience Ayurvedic therapies for nervous system balance, stress relief, and cognitive wellness with doctor-guided care at Kairali Healing Village.",
@@ -4065,7 +4089,7 @@
       "redirectReason": null
     },
     {
-      "n": 209,
+      "n": 210,
       "path": "/treatment-for-paralysis/",
       "title": "Ayurvedic Paralysis Recovery & Rehab Therapy at Kairali",
       "description": "Natural Ayurvedic therapy for paralysis recovery with Panchakarma, yoga & herbal care. Improve mobility & nerve function with holistic healing.",
@@ -4084,7 +4108,7 @@
       "redirectReason": null
     },
     {
-      "n": 210,
+      "n": 211,
       "path": "/treatment-for-psoriasis/",
       "title": "Ayurvedic Psoriasis & Chronic Skin Treatment at Kairali",
       "description": "Experience Ayurvedic therapy for Psoriasis & chronic skin issues with personalized care, Panchakarma, diet & yoga at Kairali Healing Village.",
@@ -4103,7 +4127,7 @@
       "redirectReason": null
     },
     {
-      "n": 211,
+      "n": 212,
       "path": "/treatment-for-sinusitis-and-migraine/",
       "title": "Sinus & Migraine Ayurvedic Relief at Kairali Healing Village",
       "description": "Natural Ayurvedic sinusitis & migraine relief with herbal therapies, Nasyam & Shirodhara at Kairali. Book doctor-led holistic healing today.",
@@ -4122,7 +4146,7 @@
       "redirectReason": null
     },
     {
-      "n": 212,
+      "n": 213,
       "path": "/treatment-for-skin-diseases/",
       "title": "Ayurvedic Skin Rejuvenation & Vitality Therapy",
       "description": "Revive your skin naturally with Ayurvedic therapy for glow, detox, and vitality, Panchakarma-based holistic skin wellness at Kairali.",
@@ -4141,7 +4165,7 @@
       "redirectReason": null
     },
     {
-      "n": 213,
+      "n": 214,
       "path": "/treatment-for-slip-disc/",
       "title": "Ayurvedic Slip Disc & Nerve Treatment at Kairali Retreat",
       "description": "Heal slip disc naturally with Ayurvedic therapies, yoga & diet at Kairali. Restore spine health with doctor-guided treatment in a serene retreat.",
@@ -4160,7 +4184,7 @@
       "redirectReason": null
     },
     {
-      "n": 214,
+      "n": 215,
       "path": "/treatment-for-spondylitis/",
       "title": "Ayurvedic Spine & Spondylitis Care | Kairali Healing Village",
       "description": "Get lasting relief from Spondylitis with Ayurvedic spine therapy. Book personalized treatment at Kairali’s serene healing village in Kerala.",
@@ -4179,7 +4203,26 @@
       "redirectReason": null
     },
     {
-      "n": 215,
+      "n": 216,
+      "path": "/treatment-in-kerala-russian.html",
+      "title": "Лучший Аюрведический Ретрит в Керале | Роскошные курорты Кералы.",
+      "description": "Лучший Аюрведический Ретрит в Керале, 100% Безопасные ретриты йоги в Индии, лечение Панчакарма в Керале и Центр Панчакармы Аюрведы в Индии.",
+      "desktopView": "ahv-page-article-reader-desktop",
+      "mobileView": "ahv-page-article-reader-mobile",
+      "dataset": "assets/article-family-data.js",
+      "sitemap": false,
+      "duplicateOf": null,
+      "duplicateNote": null,
+      "canonicalElsewhere": null,
+      "inHeaderNav": false,
+      "inFooterNav": false,
+      "section": "treatment",
+      "designAudited": true,
+      "redirectsTo": null,
+      "redirectReason": null
+    },
+    {
+      "n": 217,
       "path": "/treatment-in-kerala.html",
       "title": "Authentic Ayurvedic Treatments in Kerala for Holistic Wellness",
       "description": "Experience traditional Ayurvedic treatments in Kerala. Rejuvenate your mind and body with holistic therapies at Kairali Ayurvedic Healing Village.",
@@ -4198,7 +4241,7 @@
       "redirectReason": null
     },
     {
-      "n": 216,
+      "n": 218,
       "path": "/treatment-programs/",
       "title": "Ayurvedic Treatment Programmes in Kerala | Kairali",
       "description": "Explore Kairali’s Ayurvedic treatment programmes in Kerala. Browse programme details and arrange a free initial online consultation with an Ayurvedic physician.",
@@ -4217,7 +4260,7 @@
       "redirectReason": null
     },
     {
-      "n": 217,
+      "n": 219,
       "path": "/treatment-to-remove-stress-and-strain/",
       "title": "Ayurvedic Stress Relief & Mental Wellness Program",
       "description": "Personalized Ayurvedic therapies for stress, anxiety & strain. Restore balance with yoga, diet, and holistic healing at Kairali Healing Village.",
@@ -4236,12 +4279,12 @@
       "redirectReason": null
     },
     {
-      "n": 218,
+      "n": 220,
       "path": "/treatments-gallery/",
       "title": "Treatments Gallery at Kairali – Authentic Ayurveda Therapies",
       "description": "Explore Ayurvedic treatments, Panchakarma therapies & massages at Kairali. View our gallery & experience holistic healing in a serene wellness retreat.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -4249,13 +4292,13 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "treatment",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 219,
+      "n": 221,
       "path": "/vegetarian/",
       "title": "100% Vegetarian Ayurveda Diet at Kairali – A Holistic Approach",
       "description": "Experience a sattvic, plant-based diet at Kairali, supporting detox, digestion & vitality. Enjoy pure vegetarian meals for a holistic Ayurveda wellness retreat.",
@@ -4274,7 +4317,7 @@
       "redirectReason": null
     },
     {
-      "n": 220,
+      "n": 222,
       "path": "/video-gallery/",
       "title": "Video Gallery | Kairali – The Ayurvedic Healing Village",
       "description": "Explore Kairali’s video gallery showcasing Ayurvedic therapies, yoga, guest experiences & the serene beauty of our wellness retreat in Kerala.",
@@ -4293,7 +4336,7 @@
       "redirectReason": null
     },
     {
-      "n": 221,
+      "n": 223,
       "path": "/villa-raag/",
       "title": "Villa Raag | Best Luxury Beach Villa in Agonda, South Goa - Kairali",
       "description": "Villa Raag – Where luxury meets the Arabian Sea. Discover South Goa's finest beachfront sanctuary offering family-friendly luxury villa accommodations, private terraces, premium amenities and personalized concierge services at Agonda Beach",
@@ -4312,7 +4355,7 @@
       "redirectReason": null
     },
     {
-      "n": 222,
+      "n": 224,
       "path": "/village-facilities/",
       "title": "Kairali Ayurvedic Healing Village: Wellness Retreat in Kerala",
       "description": "Experience holistic healing at Kairali Ayurvedic Healing Village, Kerala. Enjoy traditional treatments, yoga, organic dining, and serene accommodation.",
@@ -4331,12 +4374,12 @@
       "redirectReason": null
     },
     {
-      "n": 223,
+      "n": 225,
       "path": "/villas-gallery/",
       "title": "Villas Gallery | Kairali – The Ayurvedic Healing Village",
       "description": "Explore Kairali’s eco-friendly villas designed for holistic healing, Ayurveda, and relaxation, blending comfort with nature in Kerala’s serene landscapes.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -4344,16 +4387,16 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "stay",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 224,
+      "n": 226,
       "path": "/virtual-tour/",
       "title": "Virtual Tour | Kairali – The Ayurvedic Healing Village",
-      "description": "Take a virtual tour of Kairali’s serene wellness retreat, explore Ayurvedic centers, yoga spaces, and eco-friendly villas designed for holistic healing.",
+      "description": "Kairali’s full virtual tour is in production and will be published here. Until then, look around the village in a 360° photo on Google Maps.",
       "desktopView": "ahv-page-article-reader-desktop",
       "mobileView": "ahv-page-article-reader-mobile",
       "dataset": "assets/travel-family-data.js",
@@ -4369,7 +4412,7 @@
       "redirectReason": null
     },
     {
-      "n": 225,
+      "n": 227,
       "path": "/vision-and-mission/",
       "title": "Building of an era: The Vision and Mission of Kairali",
       "description": "Treating mankind and to provide relief has been the main aim of the Kairali Group. The rich Ayurvedic legacy that they have built, has paved way for the mankind to get in touch with nature and live harmoniously along with it.",
@@ -4388,7 +4431,7 @@
       "redirectReason": null
     },
     {
-      "n": 226,
+      "n": 228,
       "path": "/visit-kerala/",
       "title": "Kerala Getaway with Kairali | Ayurveda, Nature & Wellness",
       "description": "Experience Kerala’s beauty with Ayurvedic healing, yoga, and cultural delights at Kairali - The Ayurvedic Healing Village for a rejuvenating escape.",
@@ -4407,7 +4450,7 @@
       "redirectReason": null
     },
     {
-      "n": 227,
+      "n": 229,
       "path": "/walk-in-ayurveda-treatment/",
       "title": "Walk-in Ayurveda Treatment – Authentic OPD & Panchakarma Therapies",
       "description": "Visit our Ayurvedic OPD for walk-in treatments, Panchakarma therapies, and rejuvenating massages. Experience holistic healing from qualified Ayurvedic doctors.",
@@ -4426,7 +4469,7 @@
       "redirectReason": null
     },
     {
-      "n": 228,
+      "n": 230,
       "path": "/weight-loss-programme/",
       "title": "Ayurvedic Weight Reduction & Metabolism Care | Kairali",
       "description": "Explore Kairali’s Ayurvedic weight management programme in Kerala and arrange a free initial online consultation with an Ayurvedic physician.",
@@ -4445,7 +4488,7 @@
       "redirectReason": null
     },
     {
-      "n": 229,
+      "n": 231,
       "path": "/weight-loss.html",
       "title": "Effective Ayurvedic Weight Loss Treatments in Kerala, India",
       "description": "Achieve natural weight loss with Ayurvedic treatments in Kerala. Explore detox therapies, diet plans, and holistic methods at Kairali Ayurvedic Healing Village.",
@@ -4464,7 +4507,7 @@
       "redirectReason": null
     },
     {
-      "n": 230,
+      "n": 232,
       "path": "/wellness-programs/",
       "title": "Ayurvedic Wellness Programmes in Kerala | Kairali",
       "description": "Explore Kairali’s preventive and regenerative Ayurveda programme. Read the programme details and discuss your next step with an Ayurvedic physician.",
@@ -4483,7 +4526,7 @@
       "redirectReason": null
     },
     {
-      "n": 231,
+      "n": 233,
       "path": "/wellness-resort-kerala.html",
       "title": "Best Wellness Resort in Kerala for Ayurveda & Holistic Healing",
       "description": "Experience the best wellness resort in Kerala with Ayurvedic therapies, yoga, and holistic healing at Kairali Ayurvedic Healing Village in Palakkad.",
@@ -4502,7 +4545,7 @@
       "redirectReason": null
     },
     {
-      "n": 232,
+      "n": 234,
       "path": "/what-is-ayurvedic-food/",
       "title": "Ayurvedic Food at Kairali – Nourishment for Healing and Balance",
       "description": "Experience Ayurvedic food at Kairali, crafted to balance doshas, detoxify, and promote wellness. Enjoy fresh, satvic meals that nourish mind, body, and spirit.",
@@ -4521,7 +4564,7 @@
       "redirectReason": null
     },
     {
-      "n": 233,
+      "n": 235,
       "path": "/what-is-panchkarma/",
       "title": "What is Panchkarma?",
       "description": "This section deals with the category of Ayurveda called Panchkarma and emphasises on its implications and uses.",
@@ -4540,7 +4583,7 @@
       "redirectReason": null
     },
     {
-      "n": 234,
+      "n": 236,
       "path": "/what-is-yoga/",
       "title": "What is Yoga? A Holistic Path to Wellness & Inner Balance",
       "description": "Discover yoga’s essence at Kairali’s Yoga Retreat Kerala. Experience asanas, meditation & Ayurveda in a serene setting for complete mind-body harmony.",
@@ -4559,7 +4602,7 @@
       "redirectReason": null
     },
     {
-      "n": 235,
+      "n": 237,
       "path": "/why-get-training-in-ayurveda/",
       "title": "Ayurvedic Training at Kairali | Learn Authentic Ayurveda",
       "description": "Gain hands-on expertise in Ayurveda with structured training at Kairali. Master therapies, holistic healing, and career-building skills in a serene learning environment.",
@@ -4578,7 +4621,7 @@
       "redirectReason": null
     },
     {
-      "n": 236,
+      "n": 238,
       "path": "/why-get-training-in-yoga/",
       "title": "Why Get Yoga Training at Kairali - The Ayurvedic Healing Village",
       "description": "Explore the depths of yoga at Kairali in Kerala. Learn ancient philosophies, holistic practices, and the significance of yoga for health, wellness, and longevity.",
@@ -4597,7 +4640,7 @@
       "redirectReason": null
     },
     {
-      "n": 237,
+      "n": 239,
       "path": "/why-pick-a-yoga-or-yoga-retreat/",
       "title": "Yoga Retreat at Kairali | Rejuvenate Mind & Body Naturally",
       "description": "Experience a transformative yoga retreat at Kairali. Enjoy expert-led sessions, Ayurvedic therapies, and serene surroundings for holistic wellness.",
@@ -4616,7 +4659,7 @@
       "redirectReason": null
     },
     {
-      "n": 238,
+      "n": 240,
       "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
       "title": "Ayurvedic treatments: Why we need them?",
       "description": "Being the oldest form of medicine, ayurveda is well known for its ability to cure any malady without causing side effects. Being derived from herbs and plants, its completely safe.",
@@ -4635,7 +4678,7 @@
       "redirectReason": null
     },
     {
-      "n": 239,
+      "n": 241,
       "path": "/wildlife-drive/",
       "title": "Wildlife Drive at Kairali - Discover Kerala’s Pristine Wilderness",
       "description": "Explore Kerala’s wildlife with Kairali’s Wildlife Drive. Discover rainforests, tiger reserves, and peacock sanctuaries while enjoying Ayurvedic wellness and eco-friendly tours.",
@@ -4654,7 +4697,7 @@
       "redirectReason": null
     },
     {
-      "n": 240,
+      "n": 242,
       "path": "/womens-hormonal-balance-endocrine-therapy/",
       "title": "Hormonal Balance & Endocrine Therapy for Women | Kairali",
       "description": "Ayurvedic therapy for PCOS, menopause, thyroid & hormonal issues. Rejuvenate your endocrine health naturally at Kairali's healing retreat.",
@@ -4673,7 +4716,7 @@
       "redirectReason": null
     },
     {
-      "n": 241,
+      "n": 243,
       "path": "/yoga-and-ayurveda/",
       "title": "Yoga Retreat",
       "description": "This section deals with the opportunities and training programs that are present at Kairali Ayurvedic village under the internship section.",
@@ -4692,7 +4735,7 @@
       "redirectReason": null
     },
     {
-      "n": 242,
+      "n": 244,
       "path": "/yoga-and-meditation-package/",
       "title": "Luxury Yoga & Ayurveda Retreat in Kerala | Kairali Healing Village",
       "description": "Kairali has the highest honor of being conferred with the “Ayurvedic Hospital” title by the Government of Kerala. The Ayurvedic Healing Centre provides certified services and can be availed by becoming a member here.",
@@ -4711,7 +4754,7 @@
       "redirectReason": null
     },
     {
-      "n": 243,
+      "n": 245,
       "path": "/yoga-based-stress-energy-reset-program/",
       "title": "Stress & Energy Reset with Yoga | Kairali Ayurveda",
       "description": "Kairali’s Yoga-Based Program in Kerala combines personalised therapies, yoga and Ayurvedic care in serene natural settings.",
@@ -4730,7 +4773,7 @@
       "redirectReason": null
     },
     {
-      "n": 244,
+      "n": 246,
       "path": "/yoga-classes-practical/",
       "title": "Practical Yoga Classes at Kairali - The Ayurvedic Healing Village",
       "description": "Enhance strength, flexibility, and mindfulness with practical yoga classes at Kairali. Experience asanas, breathwork, and holistic well-being in a serene retreat.",
@@ -4749,7 +4792,7 @@
       "redirectReason": null
     },
     {
-      "n": 245,
+      "n": 247,
       "path": "/yoga-classes-theory/",
       "title": "Yoga Classes & Theory | Kairali - The Ayurvedic Healing Village",
       "description": "Experience holistic wellness with expert-led yoga classes and theory at Kairali. Enhance flexibility, mental clarity, and spiritual growth in a serene setting.",
@@ -4768,12 +4811,12 @@
       "redirectReason": null
     },
     {
-      "n": 246,
+      "n": 248,
       "path": "/yoga-gallery/",
       "title": "Yoga Gallery | Kairali – The Ayurvedic Healing Village",
       "description": "Explore Kairali’s Yoga Gallery and experience serene spaces where yoga, meditation, and Ayurveda come together for balance, harmony, and holistic well-being.",
-      "desktopView": "ahv-page-ayurveda-gallery-desktop",
-      "mobileView": "ahv-page-ayurveda-gallery-mobile",
+      "desktopView": "ahv-template-photo-collections-desktop",
+      "mobileView": "ahv-template-photo-collections-mobile",
       "dataset": "assets/gallery-family-data.js",
       "sitemap": true,
       "duplicateOf": null,
@@ -4781,13 +4824,13 @@
       "canonicalElsewhere": null,
       "inHeaderNav": false,
       "inFooterNav": false,
-      "section": "gallery",
-      "designAudited": true,
+      "section": "training",
+      "designAudited": false,
       "redirectsTo": null,
       "redirectReason": null
     },
     {
-      "n": 247,
+      "n": 249,
       "path": "/yoga-meditation-program/",
       "title": "Kairali – The Ayurvedic Healing Village | Yoga and Meditation Retreat | Ayurveda and Yoga India | Yoga and Meditation Kerala",
       "description": "Guided yoga and meditation sessions are presented alongside Ayurveda at Kairali’s residential retreat in Kerala.",
@@ -4806,7 +4849,7 @@
       "redirectReason": null
     },
     {
-      "n": 248,
+      "n": 250,
       "path": "/yoga-meditation-programs/",
       "title": "Yoga and Meditation Program for Holistic Wellness in Kerala",
       "description": "Experience deep relaxation with our yoga & meditation program. Restore balance, enhance well-being, and rejuvenate mind & body at our Kerala retreat.",
@@ -4825,9 +4868,9 @@
       "redirectReason": null
     },
     {
-      "n": 249,
+      "n": 251,
       "path": "/yoga-meditation-training/",
-      "title": "Kairali – The Ayurvedic Healing Village | Yoga and Meditation Retreat | Ayurveda and Yoga India | Yoga and Meditation Kerala",
+      "title": "Yoga–Dhyāna Abhyāsa — Yoga & Meditation Training | Kairali",
       "description": "Residential yoga and meditation training is presented alongside Ayurveda at Kairali’s retreat in Kerala, with sessions adjusted to participant experience.",
       "desktopView": "ahv-page-yoga-meditation-training-desktop",
       "mobileView": "ahv-page-yoga-meditation-training-mobile",
@@ -4844,7 +4887,7 @@
       "redirectReason": null
     },
     {
-      "n": 250,
+      "n": 252,
       "path": "/yoga-retreats-for-everyone/",
       "title": "Yoga and Wellness Retreat at Kairali Healing Village",
       "description": "Rejuvenate with yoga, Ayurveda therapies, and mindful healing at Kairali’s wellness retreat, designed to restore balance and vitality.",
@@ -4863,9 +4906,9 @@
       "redirectReason": null
     },
     {
-      "n": 251,
+      "n": 253,
       "path": "/yoga-retreats/",
-      "title": "Personalized Yoga Program in Kerala | Kairali",
+      "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
       "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
       "desktopView": "ahv-page-yoga-retreats-desktop",
       "mobileView": "ahv-page-yoga-retreats-mobile",
@@ -4882,7 +4925,7 @@
       "redirectReason": null
     },
     {
-      "n": 252,
+      "n": 254,
       "path": "/yoga-therapy-individual/",
       "title": "Personalized Yoga Therapy for Holistic Healing in Kerala",
       "description": "Experience tailored yoga therapy at Kairali’s Yoga Retreat Kerala. Restore balance with asanas, pranayama, Ayurveda & meditation in a serene setting.",

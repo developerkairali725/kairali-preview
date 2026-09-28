@@ -42,7 +42,7 @@ const { crumbs } = routeCrumbs(SITE, manifest);
 const register = new Map(loadDataset(path.join(SITE, "public/ahv/assets/all-programs-data.js")).programmes.map((p) => [p.route, p]));
 
 /** Not destinations: test, old, confirmation and utility routes (served, never listed). */
-export const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|new-privacy-policy|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|ru|treatment-in-kerala-russian\.html)\/?$/;
+export const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|ru|treatment-in-kerala-russian\.html)\/?$/;
 /** Content-based decisions (every page read, architect + adversarial review, 23 Sep 2026):
  *  english-candidate/site-tree-overrides.json { moves, relabels, drops, sectionTitles }. */
 const OVR_FILE = path.join(SITE, "english-candidate/site-tree-overrides.json");

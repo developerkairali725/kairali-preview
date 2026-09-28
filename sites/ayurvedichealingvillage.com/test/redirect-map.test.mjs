@@ -38,9 +38,10 @@ const isLegacy = (s) => map.redirects[s].legacy === true;
 const manifestSources = sources.filter((s) => !isLegacy(s));
 const legacySources = sources.filter(isLegacy);
 
-test("both rulings are carried in full — twenty manifest routes and two legacy destinations", () => {
-  // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21) + /prav-simona-yoga-retreat/ (EF-24), owner rulings 28 Sep 2026
-  assert.equal(manifestSources.length, 20, `expected 20 manifest redirects, found ${manifestSources.length}`);
+test("both rulings are carried in full — twenty-five manifest routes and two legacy destinations", () => {
+  // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21) + the six content-duplication merges, owner
+  // rulings 28 Sep 2026. /prav-simona-yoga-retreat/ is NOT here: the owner kept both retreats (AHV-DUP-012).
+  assert.equal(manifestSources.length, 25, `expected 25 manifest redirects, found ${manifestSources.length}`);
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 
@@ -93,6 +94,20 @@ test("source and target are both site-absolute, and directory routes keep their 
   }
 });
 
+const OWNER_MERGES = {
+  "/privacy-policy/": "/new-privacy-policy/", "/privacy-statement/": "/new-privacy-policy/", "/enquiry-form/": "/contact-us/",
+  "/ayurveda-training-programs/": "/ayurveda-training-programme/", "/our-story/": "/about-us/", "/things-to-do-in-property/": "/things-to-do/",
+};
+
+test("the owner's keep-both ruling holds — the two Prav/Simona retreats stay separate pages (AHV-DUP-012)", () => {
+  assert.ok(!sources.includes("/prav-simona-yoga-retreat/"), "two separate back-to-back retreats: neither redirects");
+  assert.ok(!sources.includes("/prav-simona-monsoon-yoga-retreat/"), "two separate back-to-back retreats: neither redirects");
+});
+
+test("the enquiry-form merge leaves no chain — the old duplicate goes straight to /contact-us/", () => {
+  assert.equal(map.redirects["/enquiry-form-old/"].to, "/contact-us/");
+});
+
 test("original zero-click rulings and explicit owner consolidations are distinguished", () => {
   for (const [s, rule] of Object.entries(map.redirects)) {
     if (s.startsWith("/attractions-")) {
@@ -115,11 +130,12 @@ test("original zero-click rulings and explicit owner consolidations are distingu
       assert.equal(typeof rule.gsc.clicks, "number", "the measured clicks stay on record");
       continue;
     }
-    if (s === "/prav-simona-yoga-retreat/") {
-      // EF-24: a proven duplicate of the same retreat, moved only under its recorded owner ruling
-      assert.equal(rule.to, "/prav-simona-monsoon-yoga-retreat/");
-      assert.equal(rule.ownerApproval, "2026-09-28 EF-24 owner selected option 1 (OWNER-DECISIONS-LATEST.md)");
-      assert.equal(rule.gsc.clicks, null);
+    if (OWNER_MERGES[s]) {
+      // 28 Sep 2026 content-duplication decisions: some of these earn clicks, so each moves only under its recorded
+      // owner ruling, to the exact destination the owner named
+      assert.equal(rule.to, OWNER_MERGES[s]);
+      assert.match(rule.ownerApproval, /^2026-09-28 owner content-duplication decisions \(IMPLEMENTATION-QUEUE\.json/);
+      assert.equal(typeof rule.gsc.clicks, "number", "the measured clicks stay on record");
       continue;
     }
     if (s === "/founders-message/") {

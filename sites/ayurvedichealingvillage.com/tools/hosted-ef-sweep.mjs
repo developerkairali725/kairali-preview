@@ -47,10 +47,24 @@ const CHECKS = [
   ["OD-OFF", "/offers/defence-paramilitary-personnel-get-upto-30-off/", { has: ["between 3 to 13 Nights", "before tax"], not: ["3 to 14 Nights", "clubbed", "changeable and cancellable"] }],
   ["EF-21", "/ayurveda-gallery/", { finalPath: "/treatments-gallery/" }],
   ["EF-21", "/de/ayurveda-gallery/", { finalPath: "/de/behandlungsgalerie/" }],
-  ["EF-24", "/prav-simona-yoga-retreat/", { finalPath: "/prav-simona-monsoon-yoga-retreat/" }],
-  ["EF-24", "/prav-simona-monsoon-yoga-retreat/", { altHas: ["yoga steps", "yoga pose"] }],
-  ["TF-18", "/enquiry-form/?programme=treatment", { selectIndex: 1 }],
-  ["TF-18", "/enquiry-form/?programme=bogus", { selectIndex: 0 }],
+  // AHV-DUP-012 (owner, 28 Sep 2026): two separate back-to-back retreats — both pages stay, each with its own content
+  ["DUP-012", "/prav-simona-yoga-retreat/", { finalPath: "/prav-simona-yoga-retreat/", altHas: ["yoga steps", "yoga pose"] }],
+  ["DUP-012", "/prav-simona-monsoon-yoga-retreat/", { finalPath: "/prav-simona-monsoon-yoga-retreat/", has: ["23rd – 30th Sept"], not: ["yoga steps", "yoga pose"] }],
+  // owner content-duplication merges, 28 Sep 2026 (IMPLEMENTATION-QUEUE.json): single hop to the named destination
+  ["MERGE", "/privacy-policy/", { finalPath: "/new-privacy-policy/" }],
+  ["MERGE", "/privacy-statement/", { finalPath: "/new-privacy-policy/" }],
+  ["MERGE", "/ayurveda-training-programs/", { finalPath: "/ayurveda-training-programme/" }],
+  ["MERGE", "/our-story/", { finalPath: "/about-us/" }],
+  ["MERGE", "/things-to-do-in-property/", { finalPath: "/things-to-do/", has: ["Nature Walk", "Herbal Garden", "Yoga Classes (Practical)"] }],
+  ["MERGE", "/enquiry-form-old/", { finalPath: "/contact-us/" }],
+  ["MERGE", "/de/anfrageformular/", { finalPath: "/de/kontakt/" }],
+  ["MERGE", "/de/datenschutzrichtlinie/", { finalPath: "/de/new-privacy-policy/" }],
+  // TF-18 through the merge: the query survives the 301 and the contact form preselects on /contact-us/
+  ["TF-18", "/enquiry-form/?programme=treatment", { finalPath: "/contact-us/", selectIndex: 1 }],
+  ["TF-18", "/enquiry-form/?programme=bogus", { finalPath: "/contact-us/", selectIndex: 0 }],
+  // FOOTER-13: every footer lists the 13 released languages, current one named not linked
+  ["FOOTER-13", "/", { footerLangs: 13 }], ["FOOTER-13", "/sightseeing/", { footerLangs: 13 }], ["FOOTER-13", "/walk-in-ayurveda-treatment/", { footerLangs: 13 }],
+  ["FOOTER-13", "/de/", { footerLangs: 13 }], ["FOOTER-13", "/ar/", { footerLangs: 13 }], ["FOOTER-13", "/ja/all-programs/", { footerLangs: 13 }],
   ["NOTE", "/search-results/", { not: ["design review"] }],
   // round 7: owner regression + desktop composition
   ["PKG", "/packages/", { not: ["Open the category navigation"] }],
@@ -84,6 +98,7 @@ for (const [id, route, want] of CHECKS) {
     for (const [t, max] of want.maxCount || []) { const n = low.split(t.toLowerCase()).length - 1; if (n > max) row.present.push(`${t} ×${n} (max ${max})`); }
     if (want.finalPath) { row.finalPath = new URL(pg.url()).pathname; if (row.finalPath !== want.finalPath) row.present.push(`landed on ${row.finalPath}, expected ${want.finalPath}`); }
     if (want.selectIndex != null) { row.selectIndex = await pg.evaluate(() => { const s = document.querySelector('form[data-form="contact"] select[name="programme"]'); return s ? s.selectedIndex : null; }); if (row.selectIndex !== want.selectIndex) row.present.push(`programme select index ${row.selectIndex}, expected ${want.selectIndex}`); }
+    if (want.footerLangs) { row.footerLangs = await pg.evaluate(() => { const n = [...document.querySelectorAll(".ahv-footer-langs")].find((x) => x.getClientRects().length); return n ? { items: n.querySelectorAll("a,[aria-current]").length, current: n.querySelectorAll("[aria-current]").length } : null; }); if (!row.footerLangs || row.footerLangs.items !== want.footerLangs || row.footerLangs.current !== 1) row.present.push(`footer languages ${JSON.stringify(row.footerLangs)}, expected ${want.footerLangs} with one current`); }
     if (want.uniqueImages) { const seen = new Map(); for (const s of d.srcs) seen.set(s, (seen.get(s) || 0) + 1); row.duplicateImages = [...seen].filter(([, n]) => n > 1).map(([s, n]) => `${n}× ${s.split("/").pop()}`); }
     row.pass = row.status === 200 && !row.brokenImages.length && !row.badLinks.length && !row.missing.length && !row.present.length && !row.altMissing.length && !(row.duplicateImages || []).length;
   } catch (e) { row.error = String(e).slice(0, 200); row.pass = false; }

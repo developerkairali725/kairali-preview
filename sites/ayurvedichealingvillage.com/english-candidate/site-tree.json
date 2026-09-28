@@ -600,11 +600,6 @@
      "children": []
     },
     {
-     "path": "/enquiry-form/",
-     "title": "Enquire now",
-     "children": []
-    },
-    {
      "path": "/payment-policy-compliance/",
      "title": "Payment methods & currency exchange",
      "children": []
@@ -708,40 +703,34 @@
    "hub": "/things-to-do/",
    "children": [
     {
-     "path": "/things-to-do-in-property/",
-     "title": "Things to do in the village",
-     "children": [
-      {
-       "path": "/nature-walk/",
-       "title": "Nature walks",
-       "children": []
-      },
-      {
-       "path": "/butterfly-booklet/",
-       "title": "Butterflies at the village",
-       "children": []
-      },
-      {
-       "path": "/cooking-classes/",
-       "title": "Ayurvedic cooking classes",
-       "children": []
-      },
-      {
-       "path": "/meditation/",
-       "title": "Meditation at the village",
-       "children": []
-      },
-      {
-       "path": "/yoga-classes-theory/",
-       "title": "Yoga classes: theory",
-       "children": []
-      },
-      {
-       "path": "/yoga-classes-practical/",
-       "title": "Yoga classes: practical",
-       "children": []
-      }
-     ]
+     "path": "/nature-walk/",
+     "title": "Nature walks",
+     "children": []
+    },
+    {
+     "path": "/butterfly-booklet/",
+     "title": "Butterflies at the village",
+     "children": []
+    },
+    {
+     "path": "/cooking-classes/",
+     "title": "Ayurvedic cooking classes",
+     "children": []
+    },
+    {
+     "path": "/meditation/",
+     "title": "Meditation at the village",
+     "children": []
+    },
+    {
+     "path": "/yoga-classes-theory/",
+     "title": "Yoga classes: theory",
+     "children": []
+    },
+    {
+     "path": "/yoga-classes-practical/",
+     "title": "Yoga classes: practical",
+     "children": []
     },
     {
      "path": "/things-to-do-in-kerala/",
@@ -1010,7 +999,12 @@
       },
       {
        "path": "/prav-simona-monsoon-yoga-retreat/",
-       "title": "Prav & Simona 2017: full record",
+       "title": "Prav-Simona Monsoon Yoga Retreat",
+       "children": []
+      },
+      {
+       "path": "/prav-simona-yoga-retreat/",
+       "title": "Prav Simona Yoga Retreat",
        "children": []
       },
       {
@@ -1147,13 +1141,8 @@
      "children": []
     },
     {
-     "path": "/privacy-policy/",
-     "title": "Privacy policy (website)",
-     "children": []
-    },
-    {
-     "path": "/privacy-statement/",
-     "title": "Privacy statement (personal & health data)",
+     "path": "/new-privacy-policy/",
+     "title": "Privacy policy",
      "children": []
     },
     {
@@ -1391,9 +1380,7 @@
   },
   "/butterfly-booklet/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
   },
   "/cancellation-and-refund-policy/": {
    "section": "visit",
@@ -1429,9 +1416,7 @@
   },
   "/cooking-classes/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
   },
   "/cultural-events/": {
    "section": "things",
@@ -1470,10 +1455,6 @@
    "ancestors": [
     "/things-to-do-in-kerala/"
    ]
-  },
-  "/enquiry-form/": {
-   "section": "visit",
-   "ancestors": []
   },
   "/experience/": {
    "section": "facilities",
@@ -1703,9 +1684,7 @@
   },
   "/meditation/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
   },
   "/mindfulness-retreat/": {
    "section": "news",
@@ -1721,9 +1700,11 @@
   },
   "/nature-walk/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
+  },
+  "/new-privacy-policy/": {
+   "section": "site",
+   "ancestors": []
   },
   "/new-to-ayurveda/": {
    "section": "knowledge",
@@ -1849,6 +1830,12 @@
     "/archive-yoga-retreat/"
    ]
   },
+  "/prav-simona-yoga-retreat/": {
+   "section": "news",
+   "ancestors": [
+    "/archive-yoga-retreat/"
+   ]
+  },
   "/preventive-and-regenerative-treatment/": {
    "section": "programmes",
    "ancestors": [
@@ -1857,14 +1844,6 @@
   },
   "/preventive-rejuvenation-detoxification.html": {
    "section": "campaigns",
-   "ancestors": []
-  },
-  "/privacy-policy/": {
-   "section": "site",
-   "ancestors": []
-  },
-  "/privacy-statement/": {
-   "section": "site",
    "ancestors": []
   },
   "/product-gallery/": {
@@ -1942,10 +1921,6 @@
    "ancestors": []
   },
   "/things-to-do-in-kerala/": {
-   "section": "things",
-   "ancestors": []
-  },
-  "/things-to-do-in-property/": {
    "section": "things",
    "ancestors": []
   },
@@ -2201,15 +2176,11 @@
   },
   "/yoga-classes-practical/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
   },
   "/yoga-classes-theory/": {
    "section": "things",
-   "ancestors": [
-    "/things-to-do-in-property/"
-   ]
+   "ancestors": []
   },
   "/yoga-gallery/": {
    "section": "gallery",
@@ -2281,12 +2252,20 @@
    "section": "programmes",
    "ancestors": []
   },
+  "/ayurveda-training-programs/": {
+   "section": "training",
+   "ancestors": []
+  },
   "/ayurvedic-links/": {
    "section": "knowledge",
    "ancestors": []
   },
   "/defence-and-paramilitary-forces/": {
    "section": "offers",
+   "ancestors": []
+  },
+  "/enquiry-form/": {
+   "section": "visit",
    "ancestors": []
   },
   "/learn-more-about-ayurveda/": {
@@ -2297,8 +2276,8 @@
    "section": "visit",
    "ancestors": []
   },
-  "/prav-simona-yoga-retreat/": {
-   "section": "news",
+  "/our-story/": {
+   "section": "about",
    "ancestors": []
   },
   "/special-offers/": {
@@ -2311,6 +2290,10 @@
   },
   "/the-baoli-special-deal/": {
    "section": "offers",
+   "ancestors": []
+  },
+  "/things-to-do-in-property/": {
+   "section": "things",
    "ancestors": []
   },
   "/yoga-and-ayurveda/": {

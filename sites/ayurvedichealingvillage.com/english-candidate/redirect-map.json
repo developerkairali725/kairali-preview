@@ -61,8 +61,8 @@
       }
     },
     "/enquiry-form-old/": {
-      "to": "/enquiry-form/",
-      "reason": "Superseded duplicate of the enquiry form.",
+      "to": "/contact-us/",
+      "reason": "Superseded duplicate of the enquiry form. Single hop straight to /contact-us/ since /enquiry-form/ itself merged there (owner, 28 Sep 2026, AHV-DUP-004).",
       "gsc": {
         "clicks": 0,
         "impressions": 0
@@ -185,14 +185,65 @@
       },
       "ownerApproval": "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
     },
-    "/prav-simona-yoga-retreat/": {
-      "to": "/prav-simona-monsoon-yoga-retreat/",
-      "reason": "Owner-approved retreat archive consolidation (EF-24). Equivalence measured 28 Sep 2026: the target records both programmes of the same Prav & Simona retreat (17–22 and 23–30 Sept 2017) and every section of this page; its only unique content, two photographs, was moved into the target first (tools/repair-prav-simona-merge-ef24.mjs). Of 23 retreat/archive pages no other pair is a duplicate; distinct retreats stay separate.",
+    "/privacy-policy/": {
+      "to": "/new-privacy-policy/",
+      "reason": "Owner named /new-privacy-policy/ the final privacy document ('merge it with this … 301 these two'). Measured 28 Sep: every line of this page's text is on the destination (identical notice, revision 25 Sep 2026).",
       "gsc": {
-        "clicks": null,
-        "impressions": null
+        "clicks": 2,
+        "impressions": 427,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
       },
-      "ownerApproval": "2026-09-28 EF-24 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-001/002"
+    },
+    "/privacy-statement/": {
+      "to": "/new-privacy-policy/",
+      "reason": "Owner named /new-privacy-policy/ the final privacy document. Measured 28 Sep: the text is identical to the destination apart from the page title.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 473,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-002/003"
+    },
+    "/enquiry-form/": {
+      "to": "/contact-us/",
+      "reason": "Owner kept /contact-us/. Both pages render the same contact form (same fields, programme select, consent and transport); the only difference is the intro line. Query strings are carried by the redirect, so ?programme= preselection still works.",
+      "gsc": {
+        "clicks": 7,
+        "impressions": 2726,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-004"
+    },
+    "/ayurveda-training-programs/": {
+      "to": "/ayurveda-training-programme/",
+      "reason": "Owner kept /ayurveda-training-programme/ (the canonical already pointed there). The destination links every course this page listed; no text is lost. NOTE for the owner: this source had more July clicks (48) than the destination (19); the 301 carries them.",
+      "gsc": {
+        "clicks": 48,
+        "impressions": 2983,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-006"
+    },
+    "/our-story/": {
+      "to": "/about-us/",
+      "reason": "Owner merged Our Story into About Us (canonical already pointed there; DUP-046 asks for a separate awards family, not a reversal). The only blocks the destination lacks are the shared maps, trust strip and enquiry prompt carried by many pages.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 106,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-008"
+    },
+    "/things-to-do-in-property/": {
+      "to": "/things-to-do/",
+      "reason": "Owner kept /things-to-do/. Its in-village section already carries this page's introduction and all eight activity descriptions; the in-village activity pages move under /things-to-do/ in the site tree.",
+      "gsc": {
+        "clicks": 1,
+        "impressions": 349,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-011"
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."

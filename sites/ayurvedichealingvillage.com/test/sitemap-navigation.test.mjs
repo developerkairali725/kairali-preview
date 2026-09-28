@@ -12,7 +12,8 @@ const manifest = read('english-candidate/route-manifest.json');
 const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
 const overrides = fs.existsSync(url('english-candidate/site-tree-overrides.json')) ? read('english-candidate/site-tree-overrides.json') : { drops: [] };
 const dropped = new Set((overrides.drops || []).map((d) => d.path));
-const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|new-privacy-policy|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|ru|treatment-in-kerala-russian\.html)\/?$/;
+// /new-privacy-policy/ left this list on 28 Sep 2026: the owner made it the governing privacy document (AHV-DUP-001/002/003).
+const JUNK = /^\/(gift-test|test-page|test-page-2|testing|my-account|search-results|contact-us-old|enquiry-form-old|how-to-reach-old|online-consultation-old|thanks-old|cart|checkout|onlinebookingthankyou|onlineconsultation-thanks|contact-us\/thank-you|thanks|ppc-thanks|postulez-maintenant|ru|treatment-in-kerala-russian\.html)\/?$/;
 const BANNED = /\b(spa|resort|holiday|luxury|cure|journey|guests?)\b/i;
 const nodes = [];
 const walk = (list) => list.forEach((n) => { nodes.push(n); walk(n.children); });

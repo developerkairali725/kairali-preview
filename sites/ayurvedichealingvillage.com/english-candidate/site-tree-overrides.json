@@ -76,36 +76,36 @@
   {
    "path": "/yoga-classes-practical/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Accepted. Daily classes during a stay, not a training course; the in-village hub lists 'Yoga Classes (Practical)' and its legacy sub-nav files it there.",
+   "parent": "/things-to-do/",
+   "why": "Accepted. Daily classes during a stay, not a training course; the in-village hub lists 'Yoga Classes (Practical)' and its legacy sub-nav files it there. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Yoga classes: practical"
   },
   {
    "path": "/yoga-classes-theory/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Accepted, paired with the practical classes.",
+   "parent": "/things-to-do/",
+   "why": "Accepted, paired with the practical classes. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Yoga classes: theory"
   },
   {
    "path": "/nature-walk/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Not proposed, needed for coherence: the page describes walking the grounds as 'one of the activities offered at the village' (its meta), and both /things-to-do/ and the in-village hub link it as an activity. It joins yoga and meditation as the patient's daily activities.",
+   "parent": "/things-to-do/",
+   "why": "Not proposed, needed for coherence: the page describes walking the grounds as 'one of the activities offered at the village' (its meta), and both /things-to-do/ and the in-village hub link it as an activity. It joins yoga and meditation as the patient's daily activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Nature walks"
   },
   {
    "path": "/meditation/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Not proposed, needed for coherence: the page describes 'our meditation programs' at the village, and the in-village hub lists Meditation beside the yoga classes. It is an activity page, not a knowledge article.",
+   "parent": "/things-to-do/",
+   "why": "Not proposed, needed for coherence: the page describes 'our meditation programs' at the village, and the in-village hub lists Meditation beside the yoga classes. It is an activity page, not a knowledge article. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Meditation at the village"
   },
   {
    "path": "/butterfly-booklet/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Adjusted: the reader wanted it 'next to Nature walk'; Nature walk now sits under Things to do in the village, so the butterfly guide to the grounds (48 species, downloadable booklet) follows it there.",
+   "parent": "/things-to-do/",
+   "why": "Adjusted: the reader wanted it 'next to Nature walk'; Nature walk now sits under Things to do in the village, so the butterfly guide to the grounds (48 species, downloadable booklet) follows it there. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Butterflies at the village"
   },
   {
@@ -209,8 +209,8 @@
   {
    "path": "/cooking-classes/",
    "section": "things",
-   "parent": "/things-to-do-in-property/",
-   "why": "Changed after review (reviewer 1, verified): both activity hubs (/things-to-do/ and /things-to-do-in-property/) list Cooking Classes beside the yoga classes, nature walk and meditation the plan already moved there, and the page describes a class students take ('one of the best ways to ease the mind in this village'). /ayurvedic-cuisine/ does not link it. Same rule as the other in-village activities.",
+   "parent": "/things-to-do/",
+   "why": "Changed after review (reviewer 1, verified): both activity hubs (/things-to-do/ and /things-to-do-in-property/) list Cooking Classes beside the yoga classes, nature walk and meditation the plan already moved there, and the page describes a class students take ('one of the best ways to ease the mind in this village'). /ayurvedic-cuisine/ does not link it. Same rule as the other in-village activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
    "label": "Ayurvedic cooking classes"
   },
   {
@@ -664,8 +664,8 @@
   },
   {
    "path": "/prav-simona-monsoon-yoga-retreat/",
-   "label": "Prav & Simona 2017: full record",
-   "why": "Relabelled because its shorter twin is now listed beside it. This is the full record of both September 2017 weeks (17–22 and 23–30 Sept), with schedule, inclusions and teacher profiles."
+   "label": "Prav-Simona Monsoon Yoga Retreat",
+   "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
   },
   {
    "path": "/lakshya-yoga-retreat/",
@@ -859,13 +859,18 @@
   },
   {
    "path": "/prav-simona-yoga-retreat/",
-   "label": "Prav & Simona 2017: summary",
-   "why": "Drop REVERSED after review (reviewer 2): the owner allows a drop only for pages with no real visitor content, and this is a real 790-word record of the same September 2017 retreats (marked 'Past Retreat'). It is an 83% text subset of the full record, so the label says it is the summary. Past retreats links it. Merge candidate for the owner."
+   "label": "Prav Simona Yoga Retreat",
+   "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
   },
   {
    "path": "/jobs/business-development-manager/",
    "label": "Business Development Manager (vacancy closed)",
    "why": "Owner decision 28 Sep 2026: the vacancy is not open; the page stays accessible with an honest closed status (no redirect assumed)."
+  },
+  {
+   "path": "/new-privacy-policy/",
+   "label": "Privacy policy",
+   "why": "The governing privacy document since 28 Sep 2026 (AHV-DUP-001/002/003); its page title repeats the site name, so the rail and sitemap use the plain name the footer uses."
   }
  ],
  "drops": [
@@ -934,8 +939,28 @@
    "why": "Owner-approved 301 consolidation into /treatments-gallery/ on 28 September 2026 (EF-21)."
   },
   {
-   "path": "/prav-simona-yoga-retreat/",
-   "why": "Owner-approved 301 consolidation into /prav-simona-monsoon-yoga-retreat/ on 28 September 2026 (EF-24)."
+   "path": "/privacy-policy/",
+   "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-001/002)."
+  },
+  {
+   "path": "/privacy-statement/",
+   "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-002/003)."
+  },
+  {
+   "path": "/enquiry-form/",
+   "why": "Owner-approved 301 consolidation into /contact-us/ on 28 September 2026 (AHV-DUP-004)."
+  },
+  {
+   "path": "/ayurveda-training-programs/",
+   "why": "Owner-approved 301 consolidation into /ayurveda-training-programme/ on 28 September 2026 (AHV-DUP-006)."
+  },
+  {
+   "path": "/our-story/",
+   "why": "Owner-approved 301 consolidation into /about-us/ on 28 September 2026 (AHV-DUP-008)."
+  },
+  {
+   "path": "/things-to-do-in-property/",
+   "why": "Owner-approved 301 consolidation into /things-to-do/ on 28 September 2026 (AHV-DUP-011)."
   }
  ],
  "sectionTitles": [
@@ -999,7 +1024,7 @@
   {
    "keep": "/prav-simona-monsoon-yoga-retreat/",
    "other": "/prav-simona-yoga-retreat/",
-   "note": "83% of the shorter page appears word for word in the fuller one, which adds the second-week dates, schedule, inclusions and teacher profiles. Both now listed under Past retreats as 'full record' and 'summary' (the drop was reversed: the short page has real content). Merge candidate."
+   "note": "83% of the shorter page appears word for word in the fuller one, which adds the second-week dates, schedule, inclusions and teacher profiles. Both now listed under Past retreats as 'full record' and 'summary' (the drop was reversed: the short page has real content). Merge candidate. SUPERSEDED 28 Sep 2026: owner ruled keep both (AHV-DUP-012, two separate back-to-back retreats); listed under their own archive titles."
   },
   {
    "keep": "/lakshya-yoga-retreat-2017/",
@@ -1267,17 +1292,14 @@
    "/no-refridgeration/"
   ],
   "/things-to-do/": [
-   "/things-to-do-in-property/",
-   "/things-to-do-in-kerala/",
-   "/sightseeing/"
-  ],
-  "/things-to-do-in-property/": [
    "/nature-walk/",
    "/butterfly-booklet/",
    "/cooking-classes/",
    "/meditation/",
    "/yoga-classes-theory/",
-   "/yoga-classes-practical/"
+   "/yoga-classes-practical/",
+   "/things-to-do-in-kerala/",
+   "/sightseeing/"
   ],
   "/things-to-do-in-kerala/": [
    "/visit-kerala/",
@@ -1350,7 +1372,6 @@
    "/online-consultation/",
    "/faqs-downloads/",
    "/book-now/",
-   "/enquiry-form/",
    "/payment-policy-compliance/",
    "/cancellation-and-refund-policy/",
    "/walk-in-ayurveda-treatment/"
