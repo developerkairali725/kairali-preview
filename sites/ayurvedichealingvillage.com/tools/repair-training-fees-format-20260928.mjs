@@ -36,5 +36,6 @@ for (const v of ["desktop", "mobile"]) {
   view.template = t; view.logic = L; pending.push([file, view, raw]);
 }
 if (bad) { console.error(`${bad} failure(s) — nothing written`); process.exit(1); }
-if (!CHECK) for (const [file, view, raw] of pending) fs.writeFileSync(file, JSON.stringify(view, null, 1) + (raw.endsWith("\n") ? "\n" : ""));
+const ser = (view, raw) => (raw.startsWith("{\n") ? JSON.stringify(view, null, 1) : JSON.stringify(view)) + (raw.endsWith("\n") ? "\n" : ""); // keep the file's own serialisation
+if (!CHECK) for (const [file, view, raw] of pending) fs.writeFileSync(file, ser(view, raw));
 console.log((CHECK ? "[check] " : "") + log.join("\n"));
