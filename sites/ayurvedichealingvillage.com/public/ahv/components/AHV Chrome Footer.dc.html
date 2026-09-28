@@ -121,11 +121,11 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1220,&quot;height&quot;:620}}">
 const B = 'https://ayurvedichealingvillage.com/';
-const EXPLORE = [['Ayurveda Treatment','ayurvedic-treatments'],['Villas','our-villas'],['Yoga & Meditation Training','yoga-meditation-training'],['Ayurveda Training Program','ayurveda-training-programme'],['Ayurvedic Cuisine','ayurvedic-cuisine'],['Offers','offers']];
-const DISCOVER = [['About Us','about-us'],['Knowledge Centre','knowledge-centre'],['Media Gallery','gallery'],['Awards','awards-and-accreditations'],['How To Reach','how-to-reach'],['Contact Us','contact-us']];
-const MORE = [['OPD (Walk-in)','walk-in-ayurveda-treatment'],['Treatment & Training','training-programs'],['Our Partners','our-partners'],['CSR','social-responsibilities'],['Careers','careers'],['FAQs & Downloads','faqs-downloads']];
-const LEGAL = [['Privacy Policy','privacy-policy'],['Terms and Conditions','terms-and-conditions'],['Cancellation & Refund','cancellation-and-refund-policy'],['Cookie Policy','cookie-policy'],['Disclaimer','disclaimer'],['Site Map','sitemap']];
-const map = (a) => a.map(x => ({ label: x[0], href: B + x[1] + '/' }));
+const EXPLORE = [['Ayurveda Treatment','https://ayurvedichealingvillage.com/ayurvedic-treatments/'],['Villas','https://ayurvedichealingvillage.com/our-villas/'],['Yoga & Meditation Training','https://ayurvedichealingvillage.com/yoga-meditation-training/'],['Ayurveda Training Program','https://ayurvedichealingvillage.com/ayurveda-training-programme/'],['Ayurvedic Cuisine','https://ayurvedichealingvillage.com/ayurvedic-cuisine/'],['Offers','https://ayurvedichealingvillage.com/offers/']];
+const DISCOVER = [['About Us','https://ayurvedichealingvillage.com/about-us/'],['Knowledge Centre','https://ayurvedichealingvillage.com/knowledge-centre/'],['Media Gallery','https://ayurvedichealingvillage.com/gallery/'],['Awards','https://ayurvedichealingvillage.com/awards-and-accreditations/'],['How To Reach','https://ayurvedichealingvillage.com/how-to-reach/'],['Contact Us','https://ayurvedichealingvillage.com/contact-us/']];
+const MORE = [['OPD (Walk-in)','https://ayurvedichealingvillage.com/walk-in-ayurveda-treatment/'],['Treatment & Training','https://ayurvedichealingvillage.com/training-programs/'],['Our Partners','https://ayurvedichealingvillage.com/our-partners/'],['CSR','https://ayurvedichealingvillage.com/social-responsibilities/'],['Careers','https://ayurvedichealingvillage.com/careers/'],['FAQs & Downloads','https://ayurvedichealingvillage.com/faqs-downloads/']];
+const LEGAL = [['Privacy Policy','https://ayurvedichealingvillage.com/privacy-policy/'],['Terms and Conditions','https://ayurvedichealingvillage.com/terms-and-conditions/'],['Cancellation & Refund','https://ayurvedichealingvillage.com/cancellation-and-refund-policy/'],['Cookie Policy','https://ayurvedichealingvillage.com/cookie-policy/'],['Disclaimer','https://ayurvedichealingvillage.com/disclaimer/'],['Site Map','https://ayurvedichealingvillage.com/sitemap/']];
+const map = (a) => a.map(x => ({ label: x[0], href: x[1] }));
 
 class Component extends DCLogic {
   renderVals() {

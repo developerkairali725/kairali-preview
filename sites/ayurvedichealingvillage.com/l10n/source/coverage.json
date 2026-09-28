@@ -1,10 +1,10 @@
 {
- "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
-   "sha256": "55bfa3720f718d8a236503efe05999278ab4fa922fce3ae3dbd139b547e6331a",
-   "units": 82,
+   "sha256": "4ec7d56d51f85f1e9fff2181f51849aec65926dd54345ce1429e21c74516d556",
+   "units": 77,
    "status": "covered"
   },
   {
@@ -195,13 +195,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-breath-respiratory-desktop.json",
-   "sha256": "3803bfb513d4c5257444f1b5792376f8e9fc59ec04595a16800d088ca786c8bf",
+   "sha256": "9553fccaf0b37cc1d2b68ce2420d9b0f5bee16cd5c52b0bd5cb129038976bc36",
    "units": 488,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-breath-respiratory-mobile.json",
-   "sha256": "6cc27286120824fc9627cd577b78ef0941790f527ce7e9b45e3bea240a8cdca0",
+   "sha256": "db3486c83502fada03335788c3c895731480902c5c49f578fe5b7791d84b02b1",
    "units": 495,
    "status": "covered"
   },
@@ -219,26 +219,26 @@
   },
   {
    "file": "public/ahv/views/ahv-page-chronic-back-pain-desktop.json",
-   "sha256": "5faba79fb596144feb2a836e11301f98288c90dcac32b9c9614874d9624f1ee6",
+   "sha256": "fd5963d89091d9ba570e04e6109537e9295ff7e449ba46db78d5ac81e32ccabc",
    "units": 468,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-chronic-back-pain-mobile.json",
-   "sha256": "4dd3987ef4344e91ead2dbdab8a175e2686431dace39cc7b6f5b60b08f69318a",
+   "sha256": "9c74c8eac8a2db13bacdae32d47378b36bc134a4f3d58173f32bff916c4c6893",
    "units": 475,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-classic-villa-desktop.json",
-   "sha256": "a510a91218796bac78aabc2ae11c9f3350bf9b01ba7bfe190342237a3f052cdf",
-   "units": 44,
+   "sha256": "386ea77b4259c2b746aa880be56937fe4b8bd50c9f8e9a49c5cb0ab7ea27aefb",
+   "units": 47,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-classic-villa-mobile.json",
-   "sha256": "88a9b60dfea1388cdf153e4f25265c2ed624f085ef445e6c2331704275ed0bd2",
-   "units": 42,
+   "sha256": "8784f16bbb87a86bff41ac09c9e315f5160a5f1f5d272074d21c9f3057861116",
+   "units": 45,
    "status": "covered"
   },
   {
@@ -339,37 +339,37 @@
   },
   {
    "file": "public/ahv/views/ahv-page-deluxe-villa-desktop.json",
-   "sha256": "3550fb353b6d564d07d1acb1da379a2f0433d54620de21e8cc2b5fa3ec2cad29",
-   "units": 44,
+   "sha256": "df242293734ea7d3f7c78e3dc2f874b088aac0a5c0a650b29b2bbdd4a8659581",
+   "units": 47,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-deluxe-villa-mobile.json",
-   "sha256": "3aca0752f953e2057178ccf4708b35e7c1aba387d9b15727e9c560b08ce757a4",
-   "units": 42,
+   "sha256": "63175a704881fc9a7df90f2a0fbf9a17524df5974db7b681ad5de6a3994f7685",
+   "units": 45,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-   "sha256": "26bde2b1dbbe40c9ef12f03186ad8e63d80bd03c113437c335c3eafa0185989e",
+   "sha256": "0df3d141651e7689a9009090ae79fd8e3a31a161e7769dde0502e1248fd62c9f",
    "units": 487,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-   "sha256": "65be50123b58fa2dcb82855449aa1418f6ae10754bcd3ba41f1dd1e05991db58",
+   "sha256": "bf830688e993795866c103eaa4df97560d130a0082881731b52a2cbdbd628712",
    "units": 495,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "77171c3df3dc5e25e8deb5feb66df5735e83806d9eeb58b125556db71f01faea",
+   "sha256": "2830dfffa998f7d34a6750d5d9a8a228c7cfa626b42bc0a0a561ed6e2fef9cd6",
    "units": 478,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "07814f7ffbd84ee223b3f54367d13bebafab1f3a25d14eccca952a804d3955bc",
+   "sha256": "36a4f13d4f3523a03749ac661d75bebe0c45d3b9e3ab86245445184dc9815b8b",
    "units": 485,
    "status": "covered"
   },
@@ -387,13 +387,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-facial-paralysis-desktop.json",
-   "sha256": "77de20ae0d767e24393b700e2b582df91513de8211facad0a7ac1a532f740070",
+   "sha256": "701dd1b11fba544759973be32ebb56856b780b020304b0fcfb4a8d7cbded4734",
    "units": 466,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-facial-paralysis-mobile.json",
-   "sha256": "af49572737825ed72d23ff20f616ac0669c870d228d71a2e489aba517c80948f",
+   "sha256": "7ed1b3104ced4e68dde7e4fdd9863446807fef1c50ed45854b6f012abc5d9ab6",
    "units": 473,
    "status": "covered"
   },
@@ -423,13 +423,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-   "sha256": "cc53ad90ef5a5f7a1b13aaf156399c282c2a09132881dd2407633f5ee1e32a2e",
+   "sha256": "0b51ecd94ba14598cba414eb7a1c9172874ccd97aa72763104cea2ec0cbf6804",
    "units": 515,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-   "sha256": "8a781f7e201725bef6979d1554396c28b10f813152ee8837890a5a712b4dcaf3",
+   "sha256": "e9869e747f54eec42ad1361372fc3275cfa735b594183ec62e3dac5fc59d37cd",
    "units": 523,
    "status": "covered"
   },
@@ -459,25 +459,25 @@
   },
   {
    "file": "public/ahv/views/ahv-page-immunity-executive-health-desktop.json",
-   "sha256": "c4d164b17affcf9d71cb8d6061b8685a2552011b5023d45e165581e539079b0a",
+   "sha256": "39a79a11c716586a9c6c6051a92603db458b0655c888e1d738d4fc194a9b51d0",
    "units": 474,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-immunity-executive-health-mobile.json",
-   "sha256": "d008e001d911ac4ed777eae34813cf6356363600f0ce9ff13502eec213278a57",
+   "sha256": "2512a159ea945d5f48797377d79eacd128f1b6510921fc8ab821d5ebba8e9110",
    "units": 481,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-   "sha256": "6b571606168d6fac721786af279c3be8ed0b97f8056d30407b43a40fefc0f12d",
+   "sha256": "2fbcf8df50b98d6cc96acc574ec171c50309e1471b400e42d7657deb8c5c5539",
    "units": 494,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-   "sha256": "889a9d82178e6efc39f09b18bc5e2f7c0c3c76dd714559dd80691578eddf288f",
+   "sha256": "8aab38aa5d441f7d7d68cf7951cf33e6ac239ce370d4ff7b30e18d6c9f3df134",
    "units": 502,
    "status": "covered"
   },
@@ -507,14 +507,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-maharaja-suite-desktop.json",
-   "sha256": "da24d0ef046ebf538bb2598e37370fc74c449b519732e04231525163d7bef60b",
-   "units": 47,
+   "sha256": "fe52f1bc025553e54aefb77b8cb142272b4d0fcb5091109a576408c22598faef",
+   "units": 50,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-maharaja-suite-mobile.json",
-   "sha256": "fb4633b306756b420b7b278ce263b14cdbc5e3f8c63145111369056a119c91b0",
-   "units": 45,
+   "sha256": "c3468824a4d680f3ef497a1d50497deece86890b416e5c4492b73b437b8ecf7f",
+   "units": 48,
    "status": "covered"
   },
   {
@@ -531,13 +531,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-neck-upper-back-desktop.json",
-   "sha256": "8638f5f46594b2935d6096a7faf7decfd4797a7f2ed3bb1b12d8c9a53e4c9984",
+   "sha256": "385564d874ffea1f18c63c1cd910b0309228e923c42e2538ef9c5db7d165a8b9",
    "units": 444,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-neck-upper-back-mobile.json",
-   "sha256": "57dad0076da6d4c752c01a0e2a918b0dbc6f51a4f63a668529ef52dddc50ab04",
+   "sha256": "ef6de1bdd1d949f7655dae445db1d2dda19edf5096c1636a69a7a3e41b78e300",
    "units": 451,
    "status": "covered"
   },
@@ -591,13 +591,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-panchakarma-therapy-desktop.json",
-   "sha256": "e892a851084bd0f8f760da851f1b9494586e5edd99659d4999b05d07bbe56466",
+   "sha256": "5db61f7f62250efcdb75fa945f827a753ed370cce7238a6621d16acdbc448a93",
    "units": 514,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-panchakarma-therapy-mobile.json",
-   "sha256": "47acbcec560b03042f982559d3f3bd8ef1c668b01213b85187688cca0b6825c9",
+   "sha256": "e3f2c5b21c51e7cbe6a5b6bd7ff4c07e5ac6544a396d81cc37bef5c04fa98623",
    "units": 522,
    "status": "covered"
   },
@@ -615,13 +615,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-paralysis-recovery-desktop.json",
-   "sha256": "c9be90b7960e810ba4d3a467fdb930fe8f479f93e0adf0c82d630b3a5e470027",
+   "sha256": "d21070d57917120ee8d1dda217697cc2b4b3795b9193ca868249dfc926b43647",
    "units": 459,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-paralysis-recovery-mobile.json",
-   "sha256": "02d1be2b36828598f45ce48b7ec4d590bffa6fd9950a9091feb535ec1bd67ca2",
+   "sha256": "4df4afda40921ae86138a0b0b5a8f6eeac865c81d34a1279396d112027f39a91",
    "units": 466,
    "status": "covered"
   },
@@ -639,13 +639,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json",
-   "sha256": "63769f9a702deae820eef062d82f993c10e5e0a457e5decacaaa6e5484ca9c24",
+   "sha256": "c09d783820ee7c34d8fc2c0e85fa8404ed2765b8311a6fb6918cc4e42b9e203f",
    "units": 488,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json",
-   "sha256": "91b979ecf63e4c70b29118685ccf658a6ec89d54a21c4d711a70cd66e4c44ed5",
+   "sha256": "f4441b3552d49e8c5bc20b77dbe241c2bab8566b24e7cbb43683be67d6da171e",
    "units": 495,
    "status": "covered"
   },
@@ -687,37 +687,37 @@
   },
   {
    "file": "public/ahv/views/ahv-page-psoriasis-desktop.json",
-   "sha256": "2ddc060e93c7b7b039a6cca3bb65ae9d89a7e31bf7ccf00dc4979cb52f118303",
+   "sha256": "942ef07324df54685a7da0d901a5cbf487ec243e2be3a965e2f41f21331de6e3",
    "units": 456,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-psoriasis-mobile.json",
-   "sha256": "27f03c8f2749c422b26e9f1983d594f35b52ae314b4597648494f30cf7bfc277",
+   "sha256": "ac6b0611fb298c8587e07f4ca832387a1a12e186e415c3e7d65fbe1caaa7dd9b",
    "units": 463,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-royal-villa-desktop.json",
-   "sha256": "41a2e49cbbf8a3f876e9375105f1d25327ed692c1ee0add47cfc3bc9ef49728a",
-   "units": 44,
+   "sha256": "4a5d4922f57f3105b64e9746da68f98859dd5f3ecc83e5684a93cb1886695a0b",
+   "units": 47,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-royal-villa-mobile.json",
-   "sha256": "007d4630cdef31e80c29f8c814ea0bb0c0585a37f6684236cacfbf14835594ee",
-   "units": 42,
+   "sha256": "65266f9315ada667574e6b5bf808b7d8ea6f664e026f01dad4d44f32948d442e",
+   "units": 45,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sinus-migraine-desktop.json",
-   "sha256": "d2d31380d3a9f48c631d453e2c92f099dd20c26848ce54df12cf7bf489dc1d7b",
+   "sha256": "d60da79b1b6d6e40b8ad4355ba267738445fc6e79e2f857a26a9e37094335f10",
    "units": 463,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sinus-migraine-mobile.json",
-   "sha256": "aeb8c793a9173a83c389d47c4932da53066c54ed8d102a8ad34dbe27647934a0",
+   "sha256": "1c6cd6a30b74c3f93b6065219705146f5b27fe586402c58c9cfe5596be535b32",
    "units": 470,
    "status": "covered"
   },
@@ -735,73 +735,73 @@
   },
   {
    "file": "public/ahv/views/ahv-page-skin-vitality-desktop.json",
-   "sha256": "363c5a9a1ccdf838ed49f8ebcaa7bedc931a27f97325b855ac4d23aa326d1189",
+   "sha256": "17c49c27ee3228a7428f823877b46038458951f2363fa4331bc5bbfc0b66b1be",
    "units": 469,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-skin-vitality-mobile.json",
-   "sha256": "4cfced6758634e65d997726e6765b8ac2803da9f95dac0330fcd59011d83b6e9",
+   "sha256": "72a06b10ff46a5dde01f86d1dfdb08045ae4e3243655dba76c994385d88b4d90",
    "units": 476,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sleep-restoration-desktop.json",
-   "sha256": "a8fe7997f1edd85ed5f062a4d1a955308a7266280d1504ffc22cd9b54e2406cd",
+   "sha256": "7878d5badd0fe9bff1a56cac88250727a02d53d7fbedc7cbc6992e99d8b84919",
    "units": 482,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sleep-restoration-mobile.json",
-   "sha256": "a318dfb01e3680a8473706d3615b96189ff7227340a5e294c31cd2275bd51e92",
+   "sha256": "b25b8eb6dbb2eb0c01be2cf99cad8c71ba0393bdd14cec7afa7ab0a36f87dfd6",
    "units": 489,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-spinal-disc-nerve-restoration-desktop.json",
-   "sha256": "b0689b1900a12d3effe31cc5160e5c0a28cb8c7c47e618ecd4ebe9edfce38678",
+   "sha256": "e4d480a6d4a2a0f7575ec54577da2160d10359c5346e08fab2fd56df736a7330",
    "units": 494,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-spinal-disc-nerve-restoration-mobile.json",
-   "sha256": "d11266282a70fa02e0e3eebc4f9a3f7817e6727b0c124f1a4145737145a38c82",
+   "sha256": "5fa360afff6766864f3fafb0ed3057aead80edefd319efc8913dc00283f3de53",
    "units": 502,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-spondylitis-desktop.json",
-   "sha256": "2a4a25f002bc2fc36183eab3e1b3b9f7b0f9f65ad00a27095046e4ff4eda8e30",
+   "sha256": "084debda1519a8512574b250b9eaa0f1d3caea76054abd383abc4f4ef9de969b",
    "units": 453,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-spondylitis-mobile.json",
-   "sha256": "8c5f0d8606aef2e65e42c27be53dcc520548c6f87fea9116a214569228c0908c",
+   "sha256": "8d0c483e493792cdf34a2e73ace3a760a2c6044c03787e8376af39d27357b620",
    "units": 460,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-stress-strain-desktop.json",
-   "sha256": "20769d72095a15eeefdbd6b4a636e0a4230799d66d751fe98b6e6a96794bea75",
+   "sha256": "62c68497ea1819a48cfd3219d965323f170f1c3c3c7995d1be89b04fe561b330",
    "units": 472,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-stress-strain-mobile.json",
-   "sha256": "521d9f43b8a4d4dbcb0af68d2db45db83903efa346f0308cb7631cae79b02e2c",
+   "sha256": "fc1d3550520d29ab71750ce1af13ebbfcdb2072b4b11b4bad00b3b36cdde3d5e",
    "units": 479,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
-   "sha256": "9ceb77d46072790f2b87a4e0952f2a58f5292f6a5ad4c661209cd535ca615e6c",
+   "sha256": "dda70b36e670ec0b239d26810f1c39d740c8d1a82238bde766140a22c5df85c9",
    "units": 465,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
-   "sha256": "00c70e4143adb89e52e4498dfe5bd1e109a83a5628e563d17378e0e834097ad3",
+   "sha256": "5653c2ec437a195cd2125e131c78d0938f99c4c26bc1767ac0bcff3df1135983",
    "units": 472,
    "status": "covered"
   },
@@ -843,13 +843,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-desktop.json",
-   "sha256": "92aa311931ffa0c4dcea9a0f8a6d32b6f5b1090e56a40cfe0d73854e97cd9341",
+   "sha256": "7faf2c9a721f84b4ebd704d993115d9c208e06f7c2a91d2eac4f3e286f72b355",
    "units": 523,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-mobile.json",
-   "sha256": "55b832d1e7bcd2e6db89f4572e0c06c022afb8a2bd0d46c3a32ca8236b9edc10",
+   "sha256": "f4559cefc5fd37047b73159dc1ae68b86de7ecc786806c4f2c1d296c8f15731e",
    "units": 531,
    "status": "covered"
   },
@@ -867,13 +867,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-womens-hormonal-balance-desktop.json",
-   "sha256": "3d5c69c8b81ee08862fb65e0656f8c52ba240a2bacbcd8dc294625ef7d6389f4",
+   "sha256": "0c4f6779524431f9bef58cfd7640666ba3c86b4d27bbb9ed65c226476a741c13",
    "units": 457,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-womens-hormonal-balance-mobile.json",
-   "sha256": "bdaa679ec23eb92f389fe18bcf64af975a3ac38905a139e755acb6c6c07262ff",
+   "sha256": "a47ef477c202fe558b53583a646aa8ddef39078e222a51ba6470c6e12f819e77",
    "units": 464,
    "status": "covered"
   },
@@ -939,13 +939,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json",
-   "sha256": "a64c9dbb7cfe1868ac3e136a7182617a76e753191432a2a4a93ce2a727944401",
+   "sha256": "1e2f4ab44dd25898b4be52b8bc575d47929915c737cabc47c1b076823f6bd669",
    "units": 469,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json",
-   "sha256": "afaba3f52ecf1e4071f49a6f497d41d3364d52bc72ffaef93f5037305c1b97f5",
+   "sha256": "168d4f6547fa10305878e1c6d72594f42376b4e488225187d7a2b7215f60ca19",
    "units": 476,
    "status": "covered"
   },
@@ -1209,7 +1209,7 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "5915138b327c3f1ab0852235c016aced0c65a4cb7aa78ce3265b6f7b5a9c2b92",
+   "sha256": "bff6b7a7a11c0da325bdcf1313466b5eb997f4a83f597ad93004c74d50cced15",
    "units": 2869,
    "status": "covered"
   },
@@ -1461,7 +1461,7 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "c5ecc402335d1e9b0b49da12ed86ef2317ab0df5403275bb277a6081350b9925",
+   "sha256": "d49404604cfb556a42b8b543629575d89c7b0d8dea06fe09b681ce95822ecbdf",
    "units": 12,
    "status": "covered (curated allowlist)"
   },
@@ -1485,7 +1485,7 @@
   },
   {
    "file": "public/design/search.js",
-   "sha256": "0ac162cdaff68c939587c8d58513b02d84ebd26bf567149dc4eec07e04a7836d",
+   "sha256": "873cbc8a62dd04c63ab6e49fc3eb3b90bd2e76a32a29aa90697b661c54f0097b",
    "units": 16,
    "status": "covered (curated allowlist)"
   },
@@ -1503,7 +1503,7 @@
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "e70f40c98df8b09a72818d1b8140c1cb85cfc53ad50431df427807fe9898ef77",
+   "sha256": "94ad6ca2a13612c0fbf1833aeb0c99248237ebbca264481a5d8e9be0734874b2",
    "units": 701,
    "status": "covered (key whitelist)"
   },

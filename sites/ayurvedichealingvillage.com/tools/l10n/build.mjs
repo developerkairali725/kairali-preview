@@ -72,7 +72,10 @@ function localizeUrls(s, loc) {
   const lp = LOCALES[loc];
   // absolute production URLs
   s = s.replace(/https?:\/\/(?:www\.)?ayurvedichealingvillage\.com(\/[^"'\s<>\\?#)]*)?/g, (m, p) => {
-    const t = localPath(normPath(p || "/"), loc);
+    // a BARE origin (no path) is a concatenation base in view logic (`A + o.href`), never a link: rewriting it to the
+    // locale home produced /de//de/… and /de//about-us/ (28 Sep 2026 link audit). The home link carries its slash.
+    if (!p) return m;
+    const t = localPath(normPath(p), loc);
     return t ? "https://ayurvedichealingvillage.com" + t : m;
   });
   // root-relative hrefs and href-like data fields
@@ -108,9 +111,19 @@ function localizeCurrency(logic, loc) {
 
 const scriptPath = (s, prefix) => (/^\/ahv\/(?!l10n\/)/.test(s) ? `/ahv/l10n/${prefix}/` + s.slice("/ahv/".length) : s);
 
+// Finder views keep ENGLISH route keys in their data (they are also match keys for search/chips) and build card
+// links as HOST_URL + key. A string rewrite cannot localize that concatenation (it produced /de/panchakarma-therapy/,
+// a 404, where German serves /de/panchakarma-therapie/), so the locale logic gets its route map and a lookup.
+function localizeRouteConcat(logic, loc) {
+  if (!/\bHOST_URL \+ /.test(logic)) return logic;
+  const map = Object.fromEntries(Object.entries(ROUTES.routes).map(([en, r]) => [en, r[loc]]).filter(([, v]) => v));
+  const helper = `const __AHV_LP = ${JSON.stringify(map)};\nconst __ahvLoc = (r) => 'https://ayurvedichealingvillage.com' + (__AHV_LP[r] || r);\n`;
+  return helper + logic.replace(/\bHOST_URL \+ ([A-Za-z_$][\w$.]*)/g, (m, expr) => `__ahvLoc(${expr})`);
+}
+
 function technical(s, loc, { logic = false } = {}) {
   let out = localizeLang(localizeUrls(s, loc), loc);
-  if (logic) out = localizeCurrency(out, loc);
+  if (logic) out = localizeRouteConcat(localizeCurrency(out, loc), loc);
   const prefix = LOCALES[loc].prefix;
   out = out.replace(/(["'])\/ahv\/assets\/([a-z0-9-]+-(?:data|render)\.js)\1/g, (m, q, f) => `${q}/ahv/l10n/${prefix}/assets/${f}${q}`);
   return out;
@@ -175,6 +188,12 @@ function buildLocale(loc) {
     // the tree keeps English keys (routes are looked up by data-ahv-route = English path); the family
     // header and breadcrumb take this locale's hrefs from AHV_LOCAL_PATHS (English path → locale path)
     const localPaths = Object.fromEntries(Object.entries(ROUTES.routes).map(([en, r]) => [en, r[loc]]).filter(([, p]) => p));
+    // English pages the protection map retires (301) are not locale routes; a link to one from a locale page goes
+    // straight to the locale's version of its target (single hop, no detour through English)
+    for (const [src, rule] of Object.entries(readJson("english-candidate/redirect-map.json").redirects)) {
+      const to = ROUTES.routes[rule.to] && ROUTES.routes[rule.to][loc];
+      if (to && !localPaths[src]) localPaths[src] = to;
+    }
     fs.writeFileSync(path.join(designOut, "section-nav.data.js"), localizeUrls(applyUnits(text, us, lookup), loc) + "window.AHV_LOCAL_PATHS = " + JSON.stringify(localPaths) + ";\n");
     written++;
   }

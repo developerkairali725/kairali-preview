@@ -231,6 +231,16 @@ export const BOOT_SCRIPT = `
     // which is what a crawler and a no-JS first paint actually read.
     var aliases = ${JSON.stringify(LINK_ALIASES)};
     var path = aliases[url.pathname.replace(/[/]$/, "")] || url.pathname;
+    // Locale pages (28 Sep 2026 link audit): view logic builds many links by concatenation (A + o.href, crumbs,
+    // cards), which the build's string rewrite cannot reach, so a German page linked to /about-us/ instead of
+    // /de/uber-uns/. A link to an English page that has an equivalent in this locale goes to that equivalent — the
+    // map is the locale's own route table (section-nav.data.js AHV_LOCAL_PATHS). Language-switcher links
+    // (hreflang) point at other languages on purpose and are left alone; English pages have no map.
+    var localPaths = window.AHV_LOCAL_PATHS;
+    if (localPaths && !anchor.hasAttribute("hreflang") && (document.documentElement.lang || "en").slice(0, 2) !== "en") {
+      var key = path.charAt(path.length - 1) === "/" || path.lastIndexOf(".") > path.lastIndexOf("/") ? path : path + "/";
+      if (localPaths[key] && localPaths[key] !== key) path = localPaths[key];
+    }
     var next = path + url.search + url.hash;
     if ((sourceHost || path !== url.pathname) && raw !== next) anchor.setAttribute("href", next);
   }
