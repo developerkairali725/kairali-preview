@@ -531,3 +531,28 @@
 @media (max-width:1179px) {
   #ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] { margin-top:12px !important; }
 }
+
+/* ---- event and story streams inside the composed sections (owner FESTIVAL-LAYOUT regression, 28 Sep 2026) ---------
+   The large-desktop composition above made every non-prose child span BOTH columns, so a single photograph — which
+   carries its own bounded width (e.g. max-width:800px) — sat left-aligned under the label column with the right of
+   the page empty, detached from the text it illustrates (/festivals/: five events, each "name | month + text" followed
+   by a stray 800px photo). And a card list holding ONE card kept its three-track grid, squeezing that card (photo +
+   the event's whole text) into a 382px third of the row (/festivals/ Konganpada and Thrissur Pooram). Measured on 37
+   of 120 article-reader routes at 1440. A lone photograph and a lone card now belong to the text column: same
+   content, same order, aligned with the prose they illustrate. Multi-image rows, galleries, tables, card grids with
+   two or more cards and the maps block still span. < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > :is(img, div:has(> img:only-child), div:has(> div:only-child > img:only-child), figure:has(> img):not(:has(img ~ img, table))):not([data-ahv-maps]) {
+    grid-column:2 !important; width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important;
+  }
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > :is(div:has(> img:only-child), div:has(> div:only-child > img:only-child)) img {
+    width:100% !important; max-width:100% !important; height:auto !important; margin:0 !important;
+  }
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > ul[data-collection="cards"]:has(> li:only-child) {
+    grid-column:2 !important; grid-template-columns:minmax(0,1fr) !important;
+  }
+}
+/* a list holding one card is one full-width item at every width, never a third of an empty three-track row */
+[data-ahv-family="article-reader"] main ul[data-collection="cards"]:has(> li:only-child) { grid-template-columns:minmax(0,1fr) !important; padding-left:0 !important; padding-right:0 !important; }
+[data-ahv-family="article-reader"] main ul[data-collection="cards"] > li:only-child { padding-left:0 !important; padding-right:0 !important; }
+[data-ahv-family="article-reader"] main ul[data-collection="cards"] > li:only-child img { width:100% !important; max-width:100% !important; height:auto !important; }
