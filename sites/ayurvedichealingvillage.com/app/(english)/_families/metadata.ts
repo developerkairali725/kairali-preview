@@ -86,7 +86,11 @@ export function routeMetadata(route: CandidateRoute, locale: LocaleCode = "en"):
   const hasCluster = Object.keys(langs).length > 2;
   if (locale !== "en") meta.alternates = { canonical: m.canonical, ...(hasCluster ? { languages: langs } : {}) };
   else {
-    if (m.canonical && CANONICAL_SERVER_ROUTES.has(route.path)) meta.alternates = { canonical: m.canonical };
+    // Alias routes (canonical points at ANOTHER page, e.g. /panchakarma/ → /panchakarma-therapy/, owner 25 Sep) also
+    // emit it server-side: a crawler reading the raw HTML must see the consolidation, not only the runtime pass
+    // (staging SEO pass 28 Sep 2026). boot.ts's governedWins() keeps one canonical after hydration.
+    const isAlias = !!m.canonical && new URL(m.canonical).pathname !== route.path;
+    if (m.canonical && (CANONICAL_SERVER_ROUTES.has(route.path) || isAlias)) meta.alternates = { canonical: m.canonical };
     if (hasCluster) meta.alternates = { ...(meta.alternates ?? {}), languages: langs };
   }
 

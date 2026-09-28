@@ -1,5 +1,8 @@
 import { PageView } from "./view";
-export { metadata } from "./view";
+import { metadata as viewMetadata } from "./view";
+import { nativeEnglishMetadata } from "../_families/native-metadata";
+
+export const metadata = nativeEnglishMetadata("/givefeedback/", viewMetadata);
 
 /** English route; the localized view is shared with the locale lane (app/(english)/_families/native-pages.tsx). */
 export default function Page() {

@@ -3,6 +3,8 @@ import '@kairali/ui/brand-tokens.css';
 import type {Metadata} from 'next';
 import {siteChrome} from '../search/site-chrome';
 import {CONSENT_RUNTIME} from '../_families/consent-runtime';
+import {findRoute} from '../_families/registry';
+import {routeSchema} from '../_families/schema';
 import analyticsConfig from '../../../analytics.config.json';
 import {ReviewsShell} from '../read-feedback/ReviewsShell';
 import destinations from './destinations.json';
@@ -16,9 +18,10 @@ export function PageView({ locale = "en" }: { locale?: LocaleCode }){
  const chrome=siteChrome(locale, '/sightseeing/');
  const measurement=process.env[analyticsConfig.activation.env]===analyticsConfig.activation.enabledWhen?{ga4:analyticsConfig.measurement.ga4.id,clarity:analyticsConfig.measurement.clarity.id,metaPixel:analyticsConfig.measurement.metaPixel.id}:undefined;
  const consentScript=`(function(){var cfg=${JSON.stringify({breakpoint:700,measurement,locale:{privacyHref:L("/privacy-policy/")}})};var host=document.getElementById("ahv-design-root");${CONSENT_RUNTIME}\nensureConsentNotice();if(consentChoice()==="accepted")startMeasurement();window.addEventListener("resize",function(){var notice=document.getElementById("ahv-consent");if(notice)notice.remove();ensureConsentNotice();});})();`;
+ const sightseeingRoute=findRoute(['sightseeing']); // shared WebPage/Organization/BreadcrumbList graph, as every other route
  const schema={'@context':'https://schema.org','@type':'CollectionPage',name:T("Sightseeing near Kairali"),url:`https://ayurvedichealingvillage.com${L('/sightseeing/')}`,inLanguage:locale==='en'?'en-US':locale,mainEntity:{'@type':'ItemList',numberOfItems:destinations.length,itemListElement:destinations.map((d,i)=>({'@type':'ListItem',position:i+1,item:{'@type':'TouristAttraction',name:T(d.name),description:T(d.description),url:`https://ayurvedichealingvillage.com${L('/sightseeing/')}#${d.id}`}}))}};
  return <ReviewsShell consentScript={consentScript} headerScript={chrome.script||''} route="/sightseeing/" locale={locale} designBase={locale==='en'?'/design/':`/ahv/l10n/${LOCALE_INFO[locale].prefix}/design/`}>
- <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>
+ <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{sightseeingRoute&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(routeSchema(sightseeingRoute, locale)).replace(/</g,'\\u003c')}}/>}
  <a href="#main-content" className="rv-skip">{T("Skip to sightseeing guide")}</a><div data-sc-name="AHV Chrome Header" dangerouslySetInnerHTML={{__html:chrome.header}}/>
  <main id="main-content" className="sg-main"><section className="rv-intro sg-intro"><nav className="rv-breadcrumb" aria-label={T("Breadcrumb")}><a href={L("/")}>{T("Home")}</a><span aria-hidden="true">/</span><a href={L("/things-to-do/")}>{T("Things to do")}</a><span aria-hidden="true">/</span><span>{T("Sightseeing")}</span></nav><p className="rv-eyebrow">{T("Around Palakkad & beyond")}</p><h1>{T("Sightseeing near Kairali")}</h1><p className="rv-lead">{T("Discover the temples, riverside landscapes and forested hills around us. Choose from 22 places to visit, with approximate road distances from The Ayurvedic Healing Village to help you plan.")}</p><p className="sg-intro-note">{T("Planning an outing during your stay? Speak to reception about transport and fitting it around your appointments.")}</p></section>
  <div className="sg-guide"><nav className="sg-categories" aria-label={T("On this page")}>{groups.map(g=><a key={g.id} href={`#${g.id}`}>{T(g.name)}</a>)}<a href="#plan-your-visit">{T("Before you go")}</a></nav>

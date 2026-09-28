@@ -40,7 +40,7 @@ export function PageView({ locale = "en" }: { locale?: LocaleCode }){
  const videoList={'@context':'https://schema.org','@type':'ItemList',name:T("Kairali video gallery"),itemListElement:films.filter(f=>f.uploadDate).map((f,i)=>({'@type':'ListItem',position:i+1,item:{'@type':'VideoObject',name:f.title,description:f.description,thumbnailUrl:`https://www.ayurvedichealingvillage.com${f.image}`,uploadDate:f.uploadDate,duration:`PT${f.seconds}S`,embedUrl:`https://www.youtube-nocookie.com/embed/${f.id}`}}))};
  return <ReviewsShell route="/video-gallery/" locale={locale} designBase={locale==='en'?'/design/':`/ahv/l10n/${LOCALE_INFO[locale].prefix}/design/`} consentScript={consentScript} headerScript={chrome.script||''}>
   <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/>
-  {route&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(routeSchema(route)).replace(/</g,'\\u003c')}}/>}
+  {route&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(routeSchema(route, locale)).replace(/</g,'\\u003c')}}/>}
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(videoList).replace(/</g,'\\u003c')}}/>
   <a href="#main-content" className="vg-skip">{T("Skip to videos")}</a><div data-sc-name="AHV Chrome Header" dangerouslySetInnerHTML={{__html:chrome.header}}/>
   <main id="main-content" className="vg-main">
