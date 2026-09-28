@@ -387,7 +387,10 @@
     if (indexPromise) return indexPromise;
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
     var lang = (root.document && root.document.documentElement.lang || "en").slice(0, 2).toLowerCase();
-    var url = lang === "en" ? INDEX_URL : INDEX_URL.replace(/\.json$/, "." + lang + ".json");
+    // locale copies (tools/l10n/build.mjs) already point INDEX_URL at /ahv/l10n/<prefix>/search-index.json;
+    // no "<name>.<lang>.json" file is ever built, so guessing one only produced a 404 on every locale page
+    // (and the unread 404 kept a connection open, so prerender never reached network idle)
+    var url = lang === "en" || /\/ahv\/l10n\//.test(INDEX_URL) ? INDEX_URL : INDEX_URL.replace(/\.json$/, "." + lang + ".json");
     indexPromise = fetch(url, { credentials: "same-origin" }).then(function (r) { if (!r.ok && url !== INDEX_URL) return fetch(INDEX_URL).then(function (r2) { return r2.json(); }); if (!r.ok) throw new Error("index " + r.status); return r.json(); });
     indexPromise.catch(function () { indexPromise = null; });
     return indexPromise;

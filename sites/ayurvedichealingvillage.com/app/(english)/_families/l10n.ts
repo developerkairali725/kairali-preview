@@ -36,7 +36,9 @@ export function localizedPath(enPath: string, loc: LocaleCode): string | null {
 export function enPathFor(loc: LocaleCode, segments: string[] | undefined): string | null {
   const prefix = LOCALE_INFO[loc].prefix;
   const p = "/" + [prefix, ...(segments ?? [])].filter(Boolean).join("/") + "/";
-  const hit = REVERSE.get(p.replace(/\/+/g, "/"));
+  // legacy file-style routes (e.g. /hi/panchkarma-treatment.html) are keyed WITHOUT a trailing slash; a slash
+  // was always appended here, so all four .html routes 404'd in every locale while hreflang pointed at them
+  const hit = REVERSE.get(p.replace(/\/+/g, "/")) ?? REVERSE.get(p.replace(/\/+/g, "/").replace(/\/$/, ""));
   return hit && hit.loc === loc ? hit.en : null;
 }
 /** Every locale path (segments after the prefix) this locale serves — for generateStaticParams. */
