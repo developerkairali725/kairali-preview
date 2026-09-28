@@ -8,5 +8,10 @@
   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
   "text": "[[OPEN_1]]Tratamento ayurvédico[[CLOSE_1]] [[OPEN_2]]Villas[[CLOSE_2]] [[OPEN_3]]Formação em Yoga e Meditação[[CLOSE_3]] [[OPEN_4]]Programa de Formação em Ayurveda[[CLOSE_4]] [[OPEN_5]]Cozinha ayurvédica[[CLOSE_5]] [[OPEN_6]]Os nossos produtos[[CLOSE_6]] [[OPEN_7]]Instalações da aldeia[[CLOSE_7]] [[OPEN_8]]Ofertas[[CLOSE_8]] [[OPEN_9]]Sobre nós[[CLOSE_9]] [[OPEN_10]]Centro de Conhecimento[[CLOSE_10]] [[OPEN_11]]Galeria multimédia[[CLOSE_11]] [[OPEN_12]]Prémios[[CLOSE_12]] [[OPEN_13]]Avaliações[[CLOSE_13]] [[OPEN_14]]Como chegar[[CLOSE_14]] [[OPEN_15]]Perguntas frequentes e downloads[[CLOSE_15]] [[OPEN_16]]Contacto[[CLOSE_16]] [[OPEN_17]]Ambulatório (sem marcação)[[CLOSE_17]] [[OPEN_18]]Tratamento e formação[[CLOSE_18]] [[OPEN_19]]Retiros de Yoga e Ayurveda[[CLOSE_19]] [[OPEN_20]]Pacotes de Yoga e Meditação[[CLOSE_20]] [[OPEN_21]]Responsabilidade social (CSR)[[CLOSE_21]] [[OPEN_22]]Os nossos parceiros[[CLOSE_22]] [[OPEN_23]]Passeios turísticos[[CLOSE_23]] [[OPEN_24]]Festivais[[CLOSE_24]] [[OPEN_25]]Galeria de fotos[[CLOSE_25]] [[OPEN_26]]Carreiras[[CLOSE_26]] [[OPEN_27]]Candidatar-se[[CLOSE_27]] [[OPEN_28]]Links ayurvédicos[[CLOSE_28]] [[OPEN_29]]Arquivo[[CLOSE_29]]",
   "reason": "EF-04a label consistency (coordinator QA 2026-09-28): homepage nav \"Contacte-nos\" -> \"Contacto\", the label the shared header/menu shows on every other page"
+ },
+ "t_6b269ff9debd7ad0cad7": {
+  "sourceHash": "6b269ff9debd7ad0cad77272a20355dc4b23953130054b6de70717aff6f1f319",
+  "text": "Dr. Adhina U.B., médica de serviço (RMO)",
+  "reason": "STAFF-01 / Q-AHV-STAFF01-FOLLOWUPS (29 Sep 2026): 'Resident Medical Officer' must not read as a doctor in training; the duty-physician rendering the RMO rule prescribes for this locale (same wording as the coordinator's t_259d73398001a2e5379a RMO override), 'RMO' kept in parentheses."
  }
 }

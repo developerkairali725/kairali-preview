@@ -1,89 +1,85 @@
 {
- "at": "2026-09-28T17:22:08.349Z",
- "verdict": "FAIL",
+ "at": "2026-09-28T20:47:36.002Z",
+ "verdict": "PASS",
  "perLocale": {
   "hi": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "de": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "fr": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "es": {
-   "translated": 14111,
+   "translated": 13954,
    "missing": 0,
-   "blocked": 2,
+   "blocked": 0,
    "stale": 0
   },
   "it": {
-   "translated": 14111,
+   "translated": 13954,
    "missing": 0,
-   "blocked": 2,
+   "blocked": 0,
    "stale": 0
   },
   "pt": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "nl": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ru": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ar": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "zh-Hans": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ja": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ko": {
-   "translated": 14113,
+   "translated": 13954,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   }
  },
  "revalidate": {
-  "checked": 7512,
-  "passed": 7512,
+  "checked": 7956,
+  "passed": 7956,
   "withdrawn": 0,
   "reasons": {}
  },
- "failures": [
-  "es: missing 0, blocked 2, stale 0",
-  "it: missing 0, blocked 2, stale 0",
-  "11 source unit(s) clinically held in all locales pending owner/Dr. Deepu John ruling: t_f3c6d15a874413b8d46d, t_6ed743d40ad7f2626b45, t_fab1a9e13b5d70f8179a, t_ff4c6c57dddc9771ce48, t_6e7c16accd81097ebb4b, t_0cc8d48b7bf1e39a9ec6, t_8857bb8ea43199739c77, t_4573a839ffe27bbd6a93, t_6bde0b830d8bd56dea61, t_648cd2de98ef91a30642, t_cef40dba849bc4ee0ac4"
- ]
+ "failures": []
 }

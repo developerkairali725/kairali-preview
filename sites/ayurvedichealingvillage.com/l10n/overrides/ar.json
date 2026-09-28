@@ -12,5 +12,15 @@
  "t_259d73398001a2e5379a": {
   "sourceHash": "259d73398001a2e5379ac3d4aaeec371acc0d93d76fe397ffb92a57e2a9e2750",
   "text": "يتوفر في الموقع طبيب مناوب (RMO) ورعاية على مدار 24 ساعة، وفق بروتوكولات NABH المعتمدة في المستشفى."
+ },
+ "t_6b269ff9debd7ad0cad7": {
+  "sourceHash": "6b269ff9debd7ad0cad77272a20355dc4b23953130054b6de70717aff6f1f319",
+  "text": "Dr. Adhina U.B.، الطبيبة المناوبة (RMO)",
+  "reason": "STAFF-01 / Q-AHV-STAFF01-FOLLOWUPS (29 Sep 2026): 'Resident Medical Officer' must not read as a doctor in training; the duty-physician rendering the RMO rule prescribes for this locale (same wording as the coordinator's t_259d73398001a2e5379a RMO override), 'RMO' kept in parentheses."
+ },
+ "t_82107fd018330253f701": {
+  "sourceHash": "82107fd018330253f70107c8d6f3515d55c9c5a552b533a76fd25a4de622480f",
+  "text": "تتم إدارة الانسحاب تحت إشراف طبي في Kairali. وإذا تطلّبت حالة المريض علاجًا طارئًا أو تقييمًا من أخصائي أو فحوصات أو رعاية مركّزة تتجاوز المستوى المتاح في المنشأة، يقوم الطبيب المعالج/الطبيب المناوب (RMO) بتقييم الوضع وترتيب الإحالة أو النقل إلى المستشفى وفقًا لما هو مناسب سريريًا. وقد تُحال حالات الطوارئ والرعاية المركّزة إلى Thankam Hospital في بالاكاد، بينما قد تُجرى الفحوصات أو الاختبارات في Pulse Doctors and Labs في بالاكاد حسب الحاجة. ويتولّى فريق الاستقبال ترتيب النقل والمرافقة المناسبة، مع مرافقة سريرية عند الضرورة. ويُبلَّغ المرضى ومرافقوهم بأنه قد تُطبَّق رسوم إضافية للإسعاف والمرافقة والمستشفى والعلاج.",
+  "reason": "RMO rule (29 Sep 2026): 'الطبيب المقيم' reads as a resident (trainee); the duty-physician rendering used by the coordinator's other ar RMO override. Only that phrase changed."
  }
 }

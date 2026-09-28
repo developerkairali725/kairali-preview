@@ -7,5 +7,10 @@
  "t_259d73398001a2e5379a": {
   "sourceHash": "259d73398001a2e5379ac3d4aaeec371acc0d93d76fe397ffb92a57e2a9e2750",
   "text": "Un médecin hospitalier de garde (RMO) et une prise en charge 24 h/24 sont assurés sur place, conformément aux protocoles NABH de l'hôpital."
+ },
+ "t_6b269ff9debd7ad0cad7": {
+  "sourceHash": "6b269ff9debd7ad0cad77272a20355dc4b23953130054b6de70717aff6f1f319",
+  "text": "Dr. Adhina U.B., médecin de garde (RMO)",
+  "reason": "STAFF-01 / Q-AHV-STAFF01-FOLLOWUPS (29 Sep 2026): 'Resident Medical Officer' must not read as a doctor in training; the duty-physician rendering the RMO rule prescribes for this locale (same wording as the coordinator's t_259d73398001a2e5379a RMO override), 'RMO' kept in parentheses."
  }
 }
