@@ -1,0 +1,31 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "EF-07 / C-21",
+ "note": "Unsupported urgency 'Limited slots available — book early to secure your spot' retired from the senior offer (/offers/ desktop+mobile views and importer overlays, senior campaign terms). No slot limit is recorded in any approved source.",
+ "entries": [
+  {
+   "id": "C21-urgency-li-desktop",
+   "auto": true,
+   "old": "<li style=\"display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;font-size:17px;line-height:1.6\"><span style=\"color:#C1882C\" aria-hidden=\"true\">◆</span><span>Limited slots available — book early to secure your spot</span></li>",
+   "new": "",
+   "min": 2,
+   "authority": "Owner reconciliation 28 Sep 22:32 IST item 6 ('Retire expired/unsupported urgency without inventing new offers'); PARENT-OWNER-ITEMS-RECONCILIATION.md. Eligibility terms (first-time patients) and the offer itself unchanged."
+  },
+  {
+   "id": "C21-urgency-li-mobile",
+   "auto": true,
+   "old": "<li style=\"display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.6\"><span style=\"color:#C1882C\" aria-hidden=\"true\">◆</span><span>Limited slots available — book early to secure your spot</span></li>",
+   "new": "",
+   "min": 2,
+   "authority": "Owner reconciliation 28 Sep 22:32 IST item 6 ('Retire expired/unsupported urgency without inventing new offers'); PARENT-OWNER-ITEMS-RECONCILIATION.md. Eligibility terms (first-time patients) and the offer itself unchanged."
+  },
+  {
+   "id": "C21-urgency-terms",
+   "auto": true,
+   "old": "\"Limited slots available — book early to secure your spot\",",
+   "new": "",
+   "min": 2,
+   "authority": "Owner reconciliation 28 Sep 22:32 IST item 6 ('Retire expired/unsupported urgency without inventing new offers'); PARENT-OWNER-ITEMS-RECONCILIATION.md. Eligibility terms (first-time patients) and the offer itself unchanged."
+  }
+ ]
+}
