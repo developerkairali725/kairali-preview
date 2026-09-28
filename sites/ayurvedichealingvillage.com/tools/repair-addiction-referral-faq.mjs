@@ -23,8 +23,8 @@ if (!row.faqs.some((f) => f.q === Q)) {
   const i = row.faqs.findIndex((f) => f.q === AFTER_Q);
   if (i < 0) throw new Error("anchor question missing in ledger");
   row.faqs.splice(i + 1, 0, { q: Q, a: A });
-  if (!row.sources.includes("CLINICAL-REFERRAL-FAQ-20260925 (Gmail 1a0d8161285e0b95, Dr Deepu John)"))
-    row.sources.push("CLINICAL-REFERRAL-FAQ-20260925 (Gmail 1a0d8161285e0b95, Dr Deepu John)");
+  if (!row.sources.includes("CLINICAL-REFERRAL-FAQ-20260925 (Gmail 1a0d8161285e0b95, Dr. Deepu John)"))
+    row.sources.push("CLINICAL-REFERRAL-FAQ-20260925 (Gmail 1a0d8161285e0b95, Dr. Deepu John)");
   fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + "\n");
   changed++;
 }
