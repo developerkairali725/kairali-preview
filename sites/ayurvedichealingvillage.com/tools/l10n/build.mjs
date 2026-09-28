@@ -17,6 +17,8 @@
  *   · PDF links → the same edition in the locale's language/currency;
  *   · default tariff currency → the locale's approved currency table (a
  *     selection between existing approved tables — never a conversion);
+ *   · static INR tariff tables on the training/yoga routes (C-37) → the same
+ *     cells of the locale's approved EUR/USD table (./currency-tables.mjs);
  *   · dataset/component paths → the locale copies.
  * --strict fails when any unit lacks an accepted translation (release gate).
  * Without it, missing units keep English and are COUNTED in the report — a
@@ -28,6 +30,7 @@ import { applyUnits, unitId, sha256, jsUnits } from "./lib.mjs";
 import * as X from "./extras.mjs";
 import { rel, readJson, sourceFiles, parseFile, includedRoutes } from "./sources.mjs";
 import { LOCALES, CODES } from "./locales.mjs";
+import { currencyViews, applyCurrencyTables, applyCurrencyToDataset, COMMERCIAL_DATASET } from "./currency-tables.mjs";
 
 const argv = process.argv;
 const arg = (n, d) => { const i = argv.indexOf("--" + n); return i > -1 ? argv[i + 1] : d; };
@@ -39,6 +42,7 @@ const ALIASES = readJson("english-candidate/link-aliases.json");
 const DOCS = readJson("english-candidate/document-assets-release.json").files.map((f) => f.file).filter((f) => f.endsWith(".pdf"));
 const SRC = readJson("l10n/source/units.json");
 const SOURCE_BY_ID = new Map(SRC.units.map((u) => [u.id, u]));
+const CURRENCY_VIEWS = currencyViews(); // C-37 view id -> route
 
 export function catalog(loc) {
   const cat = new Map();
@@ -154,6 +158,7 @@ function buildLocale(loc) {
   const outRoot = rel(`public/ahv/l10n/${lp.prefix}`);
   fs.rmSync(outRoot, { recursive: true, force: true });
   const files = sourceFiles();
+  const currencyLog = [];
   let written = 0;
   for (const file of [...files.views, ...files.scripts, ...files.components]) {
     const text = fs.readFileSync(rel(file), "utf8");
@@ -162,11 +167,33 @@ function buildLocale(loc) {
     if (parsed.kind === "view") {
       const v = { ...parsed.json };
       for (const part of parsed.parts) v[part.field] = technical(applyUnits(part.text, part.units, lookup), loc, { logic: part.field === "logic" });
+      // C-37: a static INR tariff on a training route → the approved EUR/USD cells (exact views only; count-checked)
+      const cRoute = lp.currency !== "INR" ? CURRENCY_VIEWS.get(path.basename(file, ".json")) : null;
+      if (cRoute) {
+        let want = 0, got = 0;
+        for (const f of ["template", "logic"]) {
+          if (typeof v[f] !== "string") continue;
+          want += (String(parsed.json[f] || "").match(/₹[0-9]/g) || []).length;
+          const r = applyCurrencyTables(v[f], cRoute, lp.currency); v[f] = r.text; got += r.replacements;
+        }
+        if (!want || got !== want) throw new Error(`C-37 ${loc} ${file}: ${got} of ${want} INR amounts selected into ${lp.currency}`);
+        currencyLog.push(`${path.basename(file, ".json")} ${lp.currency} ×${got}`);
+      }
       v.scripts = (v.scripts || []).map((s) => scriptPath(s, lp.prefix));
       v.locale = loc;
       outText = JSON.stringify(v, null, 2) + "\n";
     } else {
       outText = technical(applyUnits(parsed.parts[0].text, parsed.parts[0].units, lookup), loc, { logic: true });
+      // C-37: /yoga-and-meditation-package/ is ONE route object inside the shared commercial dataset
+      if (file === COMMERCIAL_DATASET && lp.currency !== "INR") {
+        const route = "/yoga-and-meditation-package/";
+        const src = JSON.parse(text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1)).routes.find((x) => x.path === route);
+        const want = (JSON.stringify(src).match(/₹[0-9]/g) || []).length;
+        const r = applyCurrencyToDataset(outText, route, lp.currency);
+        if (!want || r.replacements !== want) throw new Error(`C-37 ${loc} ${file}: ${r.replacements} of ${want} INR amounts selected into ${lp.currency}`);
+        outText = r.text;
+        currencyLog.push(`commercial-family-data ${route} ${lp.currency} ×${r.replacements}`);
+      }
     }
     const dest = path.join(outRoot, file.replace(/^public\/ahv\//, ""));
     fs.mkdirSync(path.dirname(dest), { recursive: true });
@@ -217,7 +244,7 @@ function buildLocale(loc) {
     const tr = (v) => (v ? cat.get(unitId(v.replace(/\s+/g, " ").trim())) ?? null : null);
     meta[r.path] = { path: localPath(r.path, loc), title: tr(m.title), description: tr(m.description), ogTitle: tr(m.ogTitle), ogDescription: tr(m.ogDescription) };
   }
-  const report = { locale: loc, files: written, catalogue: cat.size, missingUnits: missing.size, missingSample: [...missing.values()].slice(0, 20), sourceSetHash: SRC.sourceSetHash };
+  const report = { locale: loc, files: written, catalogue: cat.size, missingUnits: missing.size, missingSample: [...missing.values()].slice(0, 20), sourceSetHash: SRC.sourceSetHash, currencyTables: currencyLog.length };
   fs.mkdirSync(rel("l10n/generated"), { recursive: true });
   fs.writeFileSync(rel(`l10n/generated/${loc}.json`), JSON.stringify({ ...report, meta, ui, native: nativeStrings, data }, null, 1) + "\n");
   fs.writeFileSync(rel(`l10n/generated/${loc}.catalog.json`), JSON.stringify(Object.fromEntries(cat)));
@@ -225,6 +252,6 @@ function buildLocale(loc) {
 }
 
 const reports = only.map(buildLocale);
-for (const r of reports) console.log(`${r.locale}: files=${r.files} catalogue=${r.catalogue} missingUnits=${r.missingUnits}`);
+for (const r of reports) console.log(`${r.locale}: files=${r.files} catalogue=${r.catalogue} missingUnits=${r.missingUnits} currencyTables=${r.currencyTables}`);
 if (STRICT && reports.some((r) => r.missingUnits)) { console.error("STRICT: untranslated units remain"); process.exit(1); }
 void sha256;
