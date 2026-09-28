@@ -266,8 +266,10 @@
     return tel && links >= 3 ? "replace" : "unpin";
   }
   function ctaBar() {
-    // the /lp/ lane (chromeless ad landing pages, one CTA each, their own pinned WhatsApp CTA) keeps its own
-    if (document.body.classList.contains("lp-page")) return;
+    // OWNER-REG-02 (all pages, owner 28 Sep 2026) includes the /lp/ lane: the shared bar shows there too; the LP's own
+    // pinned WhatsApp strip (.lp-sticky) steps aside while the bar is on (chrome.css), so one bar is pinned at a time,
+    // and "Enquire" goes to the landing page's own consultation form (campaign context kept, below).
+    var isLp = document.body.classList.contains("lp-page");
     var pinned = root.querySelectorAll('[style*="position"][style*="bottom"]');
     for (var i = 0; i < pinned.length; i++) {
       var p = pinned[i];
@@ -294,6 +296,11 @@
       if (lp && lp[h] && lp[h] !== h) a.setAttribute("href", (h = lp[h]));
       // the enquiry page itself: "Enquire" goes to its form, as boot.ts does for the page's own self-links
       if (h.charAt(0) === "/" && h === here && form && form.id) a.setAttribute("href", "#" + form.id);
+      // a landing page: "Enquire" goes to its own in-page consultation form (the LP's "Request a consultation" link)
+      if (isLp && a.classList.contains("ahv-cta-enquire")) {
+        var lpForm = document.querySelector('a.lp-enquire-link[href^="#"]');
+        if (lpForm && document.getElementById(lpForm.getAttribute("href").slice(1))) a.setAttribute("href", lpForm.getAttribute("href"));
+      }
     });
     // the homepage's own cookie notice sits above the bar the same way #ahv-consent does (chrome.css)
     // (its privacy link carries the locale's own slug on locale pages, read from the same path map)

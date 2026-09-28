@@ -154,6 +154,11 @@
      in-flow block after the page, not body padding: the bar plus the WhatsApp / chat controls above it (54px +
      24px gap), so at the end of the page no footer link sits under either; in the footers' own colour */
   html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px);background:#2A2014; }
+  /* OWNER-REG-02 on landing pages: their own pinned WhatsApp strip steps aside while the shared bar is on (one
+     pinned bar); the WhatsApp action stays in the page and in the floating control */
+  html[data-ahv-cta-bar-on] .lp-sticky { display:none !important; }
+  /* while a form field has focus (on-screen keyboard), the pinned bar does not sit over the field being typed in */
+  html[data-ahv-cta-bar-on] body:has(input:focus, textarea:focus, select:focus) #ahv-cta-bar { display:none; }
   html[data-ahv-cta-bar-on][data-ahv-consent-open] body::after { height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px)); }
   html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
   html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }

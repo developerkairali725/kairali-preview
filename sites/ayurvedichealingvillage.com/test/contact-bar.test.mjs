@@ -9,6 +9,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { unitId } from "../tools/l10n/lib.mjs";
 import { runtimeScriptUnits } from "../tools/l10n/extras.mjs";
+const CHROME_CSS_TEXT = () => fs.readFileSync(new URL("../public/design/chrome.css", import.meta.url), "utf8");
 
 const CHROME_JS = fs.readFileSync("public/design/chrome.js", "utf8");
 const CHROME_CSS = fs.readFileSync("public/design/chrome.css", "utf8");
@@ -136,8 +137,13 @@ test("layout contract: phone widths only, safe area, page clearance, focus ring,
   // one bar per page, built once, outside the design root (a re-render of the design never duplicates it)
   assert.match(CHROME_JS, /var html = document\.documentElement, bar = document\.getElementById\("ahv-cta-bar"\);\s*if \(!bar\) \{/);
   assert.match(CHROME_JS, /document\.body\.appendChild\(bar\);/);
-  // the /lp/ lane (loads chrome.js through ReviewsShell) keeps its own single pinned CTA — no second bar there
-  assert.match(CHROME_JS, /function ctaBar\(\) \{[\s\S]{0,300}?if \(document\.body\.classList\.contains\("lp-page"\)\) return;/);
+  // OWNER-REG-02 covers ALL pages incl. the /lp/ lane (owner 28 Sep 2026; the earlier LP exclusion was not an owner
+  // exception): the bar shows there, the LP's own pinned WhatsApp strip steps aside (one pinned bar), and "Enquire"
+  // goes to the landing page's own consultation form
+  assert.doesNotMatch(CHROME_JS, /if \(document\.body\.classList\.contains\("lp-page"\)\) return;/);
+  assert.match(CHROME_JS, /var isLp = document\.body\.classList\.contains\("lp-page"\)/);
+  assert.match(CHROME_JS, /isLp && a\.classList\.contains\("ahv-cta-enquire"\)/);
+  assert.match(CHROME_CSS_TEXT(), /html\[data-ahv-cta-bar-on\] \.lp-sticky \{ display:none !important; \}/);
   // locale route mapping through the locale path table, like every other shared control
   assert.match(CHROME_JS, /var lp = window\.AHV_LOCAL_PATHS/);
 });
