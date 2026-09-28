@@ -1,0 +1,187 @@
+{
+ "batchId": "b-0581",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_fcedcb5edd38a8494737",
+   "sourceHash": "fcedcb5edd38a84947373b16377dcaad3a64cf78131c7920500574036066f482",
+   "text": "Substituir imagem",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_464c4ffd019e1e9691dc",
+   "sourceHash": "464c4ffd019e1e9691dcf0537c797353ef2b1c1d4833d3d463e5b74ae4547344",
+   "text": "Editar",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d16fff34536b442b315",
+   "sourceHash": "1d16fff34536b442b315b117a6dd8c4072eb3cc7675745755f8a800a6c5caea7",
+   "text": "Reenquadrar imagem",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fa405a8301ace34d11c",
+   "sourceHash": "3fa405a8301ace34d11cf44a816080b8f0e49a48fbd048b8aef1543a8c58bdb6",
+   "text": "cover",
+   "status": "translated",
+   "unchangedReason": "CSS object-fit value / technical key in the image-slot component; translating could break code.",
+   "issues": []
+  },
+  {
+   "id": "t_d5b47460464541aed2e8",
+   "sourceHash": "d5b47460464541aed2e8bf2b14e5d54e0853e12307dc82a0ff31760f4197ec2a",
+   "text": "Arraste uma imagem PNG, JPEG, WebP ou AVIF.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c00d5e3ab1fc2d99ea1e",
+   "sourceHash": "c00d5e3ab1fc2d99ea1e7e685144f9af196bacf8543d972baf0b3e65f1e0f47b",
+   "text": "Não foi possível ler essa imagem.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_01024deec75e9c0eb827",
+   "sourceHash": "01024deec75e9c0eb827d664f2a6880101e363819017fa6d96b0b345ea25ef3e",
+   "text": "rounded",
+   "status": "translated",
+   "unchangedReason": "Technical shape key in the image-slot component; translating could break code.",
+   "issues": [
+    "Verify whether this is user-visible; left unchanged as a probable code key."
+   ]
+  },
+  {
+   "id": "t_816ed88ba06423ca2fc0",
+   "sourceHash": "816ed88ba06423ca2fc034dda0d42982a89c10393c1819ecf6034070527f19c6",
+   "text": "Arraste uma imagem",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99f9d2b80653f5854bac",
+   "sourceHash": "99f9d2b80653f5854baca1f11c3c5d13d366afd4bfc269d48b9c134bfb45be5d",
+   "text": "Unsplash",
+   "status": "translated",
+   "unchangedReason": "Proper name of a third-party service.",
+   "issues": []
+  },
+  {
+   "id": "t_4715d2339798793d8de3",
+   "sourceHash": "4715d2339798793d8de35d82288da12574b23ba9c904814a735b43a25a026e49",
+   "text": "Kairali Ayurvedic Healing Village | Ayurveda em Kerala",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69bf182c0e0e9cabc3b8",
+   "sourceHash": "69bf182c0e0e9cabc3b88fece88e2b3ab1168a529ad49a2b2436c8a91ca72647",
+   "text": "Programa de Tratamento Ayurvédico | Kairali, Kerala",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand shortened to 'Kairali' to respect the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_9c701472da04bfa9cc3c",
+   "sourceHash": "9c701472da04bfa9cc3c6a92cbad22d7ea1d8a5e6875c73b495db1a7041143e9",
+   "text": "Guia da Kairali - The Ayurvedic Healing Village sobre o significado e a origem da terapia pelo ioga e a importância do Ayurveda para o ioga terapêutico. Estão disponíveis cursos de Formação de Professores de Ioga no nosso centro na Índia, em Palakkad, Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat center' rendered as 'centro' to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_d153582e33d249f457e5",
+   "sourceHash": "d153582e33d249f457e507aa2e0282471f4e48cbffeb842c63071a46dac253a3",
+   "text": "Passeios perto da Kairali | Locais a visitar desde Palakkad",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8a5907f547e0e84ec7c0",
+   "sourceHash": "8a5907f547e0e84ec7c09ac8dd5d8865c3ce56cece0abfeb8aadb40cc7b3d55d",
+   "text": "Explore 22 locais perto da Kairali, em Palakkad: distâncias por estrada aproximadas, indicações e dicas para templos, jardins, barragens e florestas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87f092638d1b0a49e6da",
+   "sourceHash": "87f092638d1b0a49e6da8c6fcc5b78fec50e8adc855b6c0c5c8ba2c75280d1e7",
+   "text": "Mapa do site | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_641b9f6a3ca7a330f12c",
+   "sourceHash": "641b9f6a3ca7a330f12c4022a4ce8f0b20adf703a8f6ddb80150a94882c797ad",
+   "text": "Todas as páginas do site da Kairali - The Ayurvedic Healing Village, agrupadas por secção.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2e1c06e994de720c21dd",
+   "sourceHash": "2e1c06e994de720c21dd3851e0147d7255464b2051926d5c65336792a8c1b44f",
+   "text": "test-page",
+   "status": "translated",
+   "unchangedReason": "Internal test-page slug/placeholder; language-neutral identifier.",
+   "issues": [
+    "Internal test page appears in the route manifest; confirm it is not published."
+   ]
+  },
+  {
+   "id": "t_63329d885f498a1905fb",
+   "sourceHash": "63329d885f498a1905fb753cf2c9d9b6220d3032b9120a28c3a46ebb4178479a",
+   "text": "Ambulatório (OPD)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Acronym OPD (outpatient department) kept in parentheses as the site identifier."
+   ]
+  },
+  {
+   "id": "t_78ccb5e9d0d7d3cd8955",
+   "sourceHash": "78ccb5e9d0d7d3cd8955ea0490b693dd60652bd589047b1f2edadc04d583268f",
+   "text": "Ioga e Meditação para o Bem-Estar Holístico em Kerala",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Program' dropped to respect the 60-character seo.title limit."
+   ]
+  },
+  {
+   "id": "t_27134003c6d6a16e7b09",
+   "sourceHash": "27134003c6d6a16e7b099c7ff9ed30a3ed456fe48977d906af39c6a6a18fb03b",
+   "text": "Yoga–Dhyāna Abhyāsa — Formação em Ioga e Meditação | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b87cd2bbc85a3e582d5",
+   "sourceHash": "8b87cd2bbc85a3e582d5dded9d7364b11f8ad1ac3c6be1203b32af735f779d76",
+   "text": "Vaiyaktika Yoga Sādhanā — Ioga Personalizado | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0562",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_ecd16a2d3c15e36c5ee8",
+   "sourceHash": "ecd16a2d3c15e36c5ee839e2ff4c3a3bfd074ea571f482b12740ba6258532df0",
+   "text": "기차역 경유",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce9426eb3cd2dc70005b",
+   "sourceHash": "ce9426eb3cd2dc70005b4745f58e213ff692d18743188b7703adf13c8c2b6649",
+   "text": "기차편:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0036be54647ee35b3145",
+   "sourceHash": "0036be54647ee35b3145a46bed7fc7080a9b44d1da782c2ec48769dbaca8c464",
+   "text": "팔라카드 기차역:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04779696250fe5477ebb",
+   "sourceHash": "04779696250fe5477ebbb54691bca23c1e3c796f4f0bc9ab478285f9cc6c1359",
+   "text": "가장 가까운 기차역은 팔라카드 정션역으로, Kairali에서 약 17.2킬로미터 떨어져 있으며 차량으로 보통 30분 정도 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the retreat' rendered as 'Kairali' to avoid resort-type framing."
+   ]
+  },
+  {
+   "id": "t_b49398ec5b3fb1673d1c",
+   "sourceHash": "b49398ec5b3fb1673d1c5965cdf5ead325d061b4590db2abfcc847a22ec7dba7",
+   "text": "팔라카드 기차역: 가장 가까운 기차역은 팔라카드 정션역으로, Kairali에서 약 17.2킬로미터 떨어져 있으며 차량으로 보통 30분 정도 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the retreat' rendered as 'Kairali' to avoid resort-type framing."
+   ]
+  },
+  {
+   "id": "t_7aa079e0af829376922e",
+   "sourceHash": "7aa079e0af829376922e6d23cd095783a2bfd888264ec13cf597bf1a72348d93",
+   "text": "오타팔람 기차역:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_daf9eac8a0d4c9d2276c",
+   "sourceHash": "daf9eac8a0d4c9d2276c79ccb9f5afae729a3e3e28a486f42d22e523c6599cab",
+   "text": "인근의 또 다른 기차역인 오타팔람역은 약 45킬로미터 떨어져 있으며 차량으로 평균 약 1시간 8분이 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9f71a9bf13fff746735d",
+   "sourceHash": "9f71a9bf13fff746735dbe8696e5c8e13aa6765efba6083011530e8eaf28133a",
+   "text": "오타팔람 기차역: 인근의 또 다른 기차역인 오타팔람역은 약 45킬로미터 떨어져 있으며 차량으로 평균 약 1시간 8분이 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_583de5fa3afb53aa860b",
+   "sourceHash": "583de5fa3afb53aa860b22d8671473372dacadd96cb6294a89eae1f90b176e5e",
+   "text": "경로 1: 팔라카드 기차역 경유",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b42f9ae66818c0ddbb20",
+   "sourceHash": "b42f9ae66818c0ddbb209cfb5a9e7c11f19c51d7318d7d9a4b7add6cc0579f99",
+   "text": "거리: 17.2 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_33aa4265b55dec8358a7",
+   "sourceHash": "33aa4265b55dec8358a70b9f562c163a908a3e40ee5813a54a2ef9d3f41a8f31",
+   "text": "평균 소요 시간: 30분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fcdadb5ea6968a65ca07",
+   "sourceHash": "fcdadb5ea6968a65ca0736b25e3326dc931fbc9263907ea9f3f9f8efd1ac61d6",
+   "text": "경로 1: 오타팔람 기차역 경유",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source spells 'Otapalam' and numbers this 'Route 1' (likely should be Route 2); kept numbering as in source, station name normalised to 오타팔람."
+   ]
+  },
+  {
+   "id": "t_8af8d980b07e3a05f34f",
+   "sourceHash": "8af8d980b07e3a05f34f3e37a20342d75d664f5ca231539e3e7eddb55d63646c",
+   "text": "거리: 45 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e30f73d3bbf996d5869",
+   "sourceHash": "7e30f73d3bbf996d58693ee1f675a0b428d5283ed5a6f7210f356dfb90532538",
+   "text": "평균 소요 시간: 1시간 8분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8837c5900c18808e59cf",
+   "sourceHash": "8837c5900c18808e59cfc13d121e4f70fce68bd6c22e10e5d0b65169af873d6d",
+   "text": "도로 이용:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ad0f7394870de283364",
+   "sourceHash": "2ad0f7394870de283364bd14d8d7ff1ac7259b18e286f37a36a491f44963d9c3",
+   "text": "출발지 방갈로르:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5a0e9b7afa8c6c6ac269",
+   "sourceHash": "5a0e9b7afa8c6c6ac269b0782456e8fe76ec2e42804dc118745aafeebd780211",
+   "text": "Kairali는 방갈로르에서 약 412킬로미터 떨어져 있으며, 예상 운전 시간은 약 8시간 26분입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'The retreat' rendered as 'Kairali' to avoid resort-type framing."
+   ]
+  },
+  {
+   "id": "t_2e4fc64bb7a15e2dd889",
+   "sourceHash": "2e4fc64bb7a15e2dd889731d2db87d9cf75a846fca5d899b2ba53d5461ae6ae3",
+   "text": "출발지 방갈로르: Kairali는 방갈로르에서 약 412킬로미터 떨어져 있으며, 예상 운전 시간은 약 8시간 26분입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'The retreat' rendered as 'Kairali' to avoid resort-type framing."
+   ]
+  },
+  {
+   "id": "t_db09ba1f498feb5e54a8",
+   "sourceHash": "db09ba1f498feb5e54a8338d08bc2dcf4c9e1c465c3e6c3151af061907daa071",
+   "text": "출발지 첸나이:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8660fea60f14567a5f4d",
+   "sourceHash": "8660fea60f14567a5f4de0ae05c14bde49f2cee1eaaf818f0dc8e4a1b8c8dbf6",
+   "text": "첸나이에서의 거리는 약 357킬로미터이며, 도로로 보통 약 10시간 20분이 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_52d4ac7c21e74e8fd9c2",
+   "sourceHash": "52d4ac7c21e74e8fd9c2f8944923abafeed0ec7ca3e1277a09c3dcce4e2a18b1",
+   "text": "출발지 첸나이: 첸나이에서의 거리는 약 357킬로미터이며, 도로로 보통 약 10시간 20분이 소요됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c3a34734df57b13cde76",
+   "sourceHash": "c3a34734df57b13cde76041d572a42307a2f4d06d85253892ec21cd87441eb8a",
+   "text": "경로 1: 방갈로르 경유",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eb89c49ec38ab2f36ec2",
+   "sourceHash": "eb89c49ec38ab2f36ec2c82071ea03b9ec26e17ef637f987156cea582712f76b",
+   "text": "거리: 412 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93626447ef60a079f59d",
+   "sourceHash": "93626447ef60a079f59df56f062845dbb396ca25e071cebda27ad5a5562e04bb",
+   "text": "평균 소요 시간: 8시간 26분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3241613ee928a46ff5d6",
+   "sourceHash": "3241613ee928a46ff5d69fee60b4c1c28d34990b92d23cf5759bc4b758c2f120",
+   "text": "경로 1: 첸나이 경유",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

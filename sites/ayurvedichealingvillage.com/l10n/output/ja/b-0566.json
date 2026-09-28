@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0566",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_d4146f392051b5f2dd1b",
+   "sourceHash": "d4146f392051b5f2dd1bfd8eace6726b88360b8ce8fb2a628e5ae1f82ba03c6f",
+   "text": "。その正確なテキストはページのH1として一度だけ表示され、ソースのタグはそのまま保持されます。タイトルを新たに作成したり、ソースの文言の代わりに管理対象のパンくずラベルを用いたりはしていません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment continuing a preceding sentence; leading full stop rendered as the Japanese 。."
+   ]
+  },
+  {
+   "id": "t_a6e356dfae48c8f9e159",
+   "sourceHash": "a6e356dfae48c8f9e159de307cf4f18b47c0047dbbfcc581a711be248d701f02",
+   "text": "h2,h3",
+   "status": "translated",
+   "unchangedReason": "HTML element selector list; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_f3ebc25787a13c2fc66b",
+   "sourceHash": "f3ebc25787a13c2fc66bcdf9b91ff6495b59b62fa7f7affe132349bec11e47ba",
+   "text": "地域地図:ケーララ州、パーラッカードと周辺の空港",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b163f51ff1b0eabbbc5",
+   "sourceHash": "6b163f51ff1b0eabbbc55eeb19558a31042626af160dd4b1fd3c2d4cdff97b4c",
+   "text": "地図:Kairali - The Ayurvedic Healing Village(オラッセリー、コドゥンブ)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a697c583e8b3634176f",
+   "sourceHash": "2a697c583e8b3634176f1444251cc5fb7399ce5db2463cad6bea35ce3c45acfd",
+   "text": "パーラッカードの所在地|西ガーツ山脈|主な観光名所|アーユルヴェーダとヨガの拠点",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e9fd388da79b96229ee",
+   "sourceHash": "5e9fd388da79b96229eea0a7375776ce5a91dce090f5b5743659df8705fee4a4",
+   "text": "ケーララ州パーラッカード県にあるアーユルヴェーダ・ヴィレッジの正確な所在地と、効率よくお越しいただくためのアクセス方法をご案内します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84578b25101acedf20a1",
+   "sourceHash": "84578b25101acedf20a1179cf628896df93e0f1302cfc76931fbe295d40f9073",
+   "text": "飛行機で",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ca5daa0da5ece473e073",
+   "sourceHash": "ca5daa0da5ece473e073fb9155bbfa67f1080498fbd0710e216101e000565976",
+   "text": "鉄道で",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0ed845792f4c85b36730",
+   "sourceHash": "0ed845792f4c85b36730c317c9122e2d9d3d03091eb32e9ce7c86e6e862cee32",
+   "text": "車で",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e8c56d1794d3e6948fad",
+   "sourceHash": "e8c56d1794d3e6948fad8d72a385420d22a4a01ff5467bc26da19ef90dee2c01",
+   "text": "ケーララ州の沿岸部をオレンジ色で強調したインドの輪郭地図",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_64b280ca17824611584b",
+   "sourceHash": "64b280ca17824611584b7f06e05eb63afdb414a9cb8d46cdfadf8654b73df3cf",
+   "text": "ケーララ州の1つの県をオレンジ色で塗りつぶしたシルエット地図",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_208e38a851bead831f8a",
+   "sourceHash": "208e38a851bead831f8a5bb36759f8fdd27fafe1e8d468ba43d36de06f79d85b",
+   "text": "ケーララ州パーラッカードの地図",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b3521990d2b716725ec4",
+   "sourceHash": "b3521990d2b716725ec499471f7767c772f7e7151997db6a14ae304c6aa27a09",
+   "text": "ルート2:コーチン空港経由",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_50eceafe6b922a61dc9d",
+   "sourceHash": "50eceafe6b922a61dc9dfce562997932952055da04d516a0e5f0b0bb69fd4641",
+   "text": "ルート2:オッタパラム駅経由",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_600d39443b7cb82dcb93",
+   "sourceHash": "600d39443b7cb82dcb933b7795c1e88d328f633007c422dc339e2c65bc0b40a9",
+   "text": "バンガロールから車で",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9829bd5579e232c89483",
+   "sourceHash": "9829bd5579e232c89483289fbe4e113933c561996f5f5abf60dc6aecdbe8e5f8",
+   "text": "h2,h4,h5",
+   "status": "translated",
+   "unchangedReason": "HTML element selector list; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_80fba28cffaa4bac8653",
+   "sourceHash": "80fba28cffaa4bac8653813f3323e07e4fe04b11979fa7109b3dc2d776a48d53",
+   "text": "動画ギャラリー | Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0c453d4bcc6a6e9eb463",
+   "sourceHash": "0c453d4bcc6a6e9eb4636bc898a3f186130c0dc934be852aa503ba96bb99b264",
+   "text": "Kairaliの動画ギャラリーでは、アーユルヴェーダ療法、ヨガ、来院者の体験、そしてケーララにある当院の穏やかで美しい環境をご覧いただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest experiences' rendered as 来院者の体験 (visitor experiences); 'wellness retreat' rendered as 当院 (our hospital) per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_f589244577cea0aca5b9",
+   "sourceHash": "f589244577cea0aca5b9bd7298503f9824255eb5ad9a4a5cc733db71a4464856",
+   "text": "動画ギャラリーで、Kairali – The Ayurvedic Healing Villageと、ここで得られる変化をもたらす体験について詳しくご覧ください。本格的なアーユルヴェーダ療法、心身をリフレッシュするヨガのセッション、来院者の体験、そしてHealing Villageの静かな美しさを映像でご紹介します。アーユルヴェーダと自然、そして安らぎが一体となり、心身全体の健やかさを目指すホリスティックな療法の本質に触れてください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest experiences' rendered as 来院者の体験 (visitor experiences) per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_2a95aedb9cde33b0a84b",
+   "sourceHash": "2a95aedb9cde33b0a84ba14ebf713cae4776d04c08ec1cbbd5680d016cae60ba",
+   "text": "自社ソースのMP4を自己ホストし、ネイティブのアクセシブルなコントロールを備えています。レビュー段階では自動再生を行いません。これは運用者による明示的かつ元に戻せる操作上の判断であり、過去の動作について述べるものではありません。初期状態は静止しており、prefers-reduced-motion の設定下でも安全です。再生はローカルのみで行われ、外部へのリクエストは発生しません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0b7239e95b683cf59ab1",
+   "sourceHash": "0b7239e95b683cf59ab10aa8316146b48f71c193d52c96c53f7741a42c5a19d9",
+   "text": "ソースにポスター画像がないため、新たに作成していません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38d625c986ede32ac092",
+   "sourceHash": "38d625c986ede32ac092401c2b0109d56778257e2721b9cad0ce6f092704467e",
+   "text": "Kairali Ayurvedic Group - その本物のアーユルヴェーダを垣間見る",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_106a872a92eb23b7e8cc",
+   "sourceHash": "106a872a92eb23b7e8ccdf42f4a23c1cca6963402c5734b9e6f1bc10c1db154c",
+   "text": "Kairali - The Ayurvedic Healing Villageの自然風景",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80d8d301b751d1735c52",
+   "sourceHash": "80d8d301b751d1735c5251194debbdc7935d79fffa925d4c8e77bf23d62fd27d",
+   "text": "ケーララのプレミアムなアーユルヴェーダ滞在施設",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Video title contains 'Luxury' and 'Resort' (banned under the KTAHV lock); rendered as プレミアムなアーユルヴェーダ滞在施設 (premium Ayurvedic stay facility). If this is a fixed external video title that must stay verbatim, owner should confirm."
+   ]
+  },
+  {
+   "id": "t_2a2bab432bb408b2ac3d",
+   "sourceHash": "2a2bab432bb408b2ac3dba66bb5a802d2497a9603c7ce89f2b066aeef7461e51",
+   "text": "Kairali 滞在用ヴィラの室内",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Health Resort' (banned 'resort' under the KTAHV lock) rendered as 滞在用 (for stays); owner should confirm if this is a fixed external video title."
+   ]
+  }
+ ]
+}

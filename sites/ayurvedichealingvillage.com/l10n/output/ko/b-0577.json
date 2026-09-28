@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0577",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_2d51ef7bd0f589f46f8a",
+   "sourceHash": "2d51ef7bd0f589f46f8ac2ae0a240771ca6304bae961278ccdc3cef1f6062c35",
+   "text": "첫 번째 부분은 호흡(프라나야마)과 명상에 전념합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73dbf69b7c7a2c8327ec",
+   "sourceHash": "73dbf69b7c7a2c8327ecbb7667c9717434cacc7cfe72c71ad81846a9972ecdbf",
+   "text": "두 번째는 호흡이 동작을 이끄는 역동적인 빈야사 요가 부분입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a5436f79fb2bbec7396",
+   "sourceHash": "7a5436f79fb2bbec73960a12c05d3b9bfe02f137338b57716cc1d04ad8258e6d",
+   "text": "세 번째는 결합 조직에 작용하여 몸에 깊은 수분을 공급하고 해독하며 활력을 되찾도록 하는 인 요가 부분입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typos ('wok', 'hydratate') interpreted as 'work', 'hydrate'."
+   ]
+  },
+  {
+   "id": "t_3574175cbba9c755b5be",
+   "sourceHash": "3574175cbba9c755b5bea3efe9097247ad25ea8ffd480c915216072adc0bbf68",
+   "text": "마지막 부분은 깊은 이완(샤바사나)으로 이루어집니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff603898405d24a4611f",
+   "sourceHash": "ff603898405d24a4611fc9775815051d4fd23cae0af2cce446d99924fc0216dd",
+   "text": "Kairali Ayurvedic Group의 대표 시설인 ‘The Ayurvedic Healing Village’는 자연 속 낙원으로, 체류하는 동안 스트레스와 피로에서 회복하고 질환에 대한 치료를 받을 수 있는 곳입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'all while being on holiday' rendered as '체류하는 동안' (during the stay) to avoid 'holiday'."
+   ]
+  },
+  {
+   "id": "t_c32feba8ad7eef80d3ba",
+   "sourceHash": "c32feba8ad7eef80d3baf8e1e2a58e2ae814d3c707695ce321421eb5af2af24b",
+   "text": "이 아유르베다 안식처는 케랄라와 타밀나두 사이에 있는 세계 최대의 산악 고개에서 불과 몇 킬로미터 떨어진 팔라카드에 자리하고 있습니다. 팔라카드는 풍부한 자연 식생, 산, 숲, 비옥한 계곡, 강과 계곡물 등 자연의 혜택을 듬뿍 받아 파노라마 같은 풍경을 이룹니다. 이 특별한 낙원에서 보내는 시간 동안 현대적이고 전인적인 편안함 속에서 휴식을 취하며 고대 인도의 정통 치유 요법을 경험하실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'modern holistic luxury' rendered as '현대적이고 전인적인 편안함' (comfort) to avoid 'luxury'. 'world’s biggest mountain pass' claim copied as in source; unverified."
+   ]
+  },
+  {
+   "id": "t_61ee3b9ef3c2d5ebec51",
+   "sourceHash": "61ee3b9ef3c2d5ebec5195a1935093ffa7066f16355906f3d7b0e58e18e3c76b",
+   "text": "Kairali Healing Village 의사의 아유르베다 검진을 포함한 7일 치료 프로그램",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'CURE' (in the sense of a treatment course) rendered as '치료 프로그램' to avoid 'cure'. Source misspelling 'Kairalai' rendered as 'Kairali'."
+   ]
+  },
+  {
+   "id": "t_8d43370033d9a31ca92e",
+   "sourceHash": "8d43370033d9a31ca92ea65210bf9c5d6b55ffd266d2cc05283a3900a1fd3168",
+   "text": "Francesca Lo Cascio가 지도하는 매일의 요가 및 명상 수련",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69069395dbea38bd138e",
+   "sourceHash": "69069395dbea38bd138e844fcebdbea7a09cffe766b695274dbae0ba7ccbface",
+   "text": "의사 Nathalie Gheeta의 매일 아유르베다 수업",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Name spelled 'Gheeta' here vs 'Geetha' elsewhere; kept as in source."
+   ]
+  },
+  {
+   "id": "t_01df1d52d375c715315f",
+   "sourceHash": "01df1d52d375c715315ff13dc65a65caffabb8c4feff1015f6bc2ca2a7d16ba7",
+   "text": "맛있는 아유르베다 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6ff2b57c1875144655ce",
+   "sourceHash": "6ff2b57c1875144655ce98fd49b1da90eca1c32c00ef544ce4ea0ab2d680469b",
+   "text": "Kairali Village의 2인 코티지 숙박",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source misspelling 'Kairalai' rendered as 'Kairali'."
+   ]
+  },
+  {
+   "id": "t_bc71b389b511e1b15999",
+   "sourceHash": "bc71b389b511e1b159994c724db3525df10add658e784a16251053d206e468f8",
+   "text": "발리우드 워크숍",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e58b539af21e556775d4",
+   "sourceHash": "e58b539af21e556775d426af44cff43a65bd76aa4a7dcf5453e47651085d90c3",
+   "text": "건강 요리 워크숍",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c21795640499df1335c2",
+   "sourceHash": "c21795640499df1335c2624113ad0d9384502ac025c41c830c75109a223d2dbe",
+   "text": "새해 의식의 밤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5266d44154f5cfb7a45b",
+   "sourceHash": "5266d44154f5cfb7a45bfbb290bc56d3ee1ebbfc08e844166f7e0807e71e853c",
+   "text": "영화의 밤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9854b3308ceeea5d073",
+   "sourceHash": "b9854b3308ceeea5d0733bd0da87cec470e8a69b8f0f3fc41129938574396890",
+   "text": "백워터 하우스보트 여행 1일 / 1박",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c06c87569f406ada5ceb",
+   "sourceHash": "c06c87569f406ada5ceba5cb7771979e5b85ce9247f427294e3bde27b7abda71",
+   "text": "내부 이동(전용 미니밴)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4dcc7a2828508e7de479",
+   "sourceHash": "4dcc7a2828508e7de479640bdc4d3a1ba3203f37d7eb7d9026fcedfb4bc53f06",
+   "text": "YALAjourney 전 과정은 주로 영어로 진행되지만, 저희 직원들은 프랑스어, 스페인어, 이탈리아어도 구사합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'YALAjourney' kept verbatim as a proper programme name."
+   ]
+  },
+  {
+   "id": "t_902326fc2f37c7427503",
+   "sourceHash": "902326fc2f37c7427503a373e81a659518ff952bf39f7fbb926a1a5d8aa9a419",
+   "text": "28 목요일",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4420e264221f5461175e",
+   "sourceHash": "4420e264221f5461175e7abf3f8e2dcde2a953a9c868d742194c510dcbb61a31",
+   "text": "1.00 pm: 전용 미니밴으로 코친 공항 픽업",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2d671ab5edcd40ad880",
+   "sourceHash": "a2d671ab5edcd40ad8807e4c5297e10135003220e04a3aea75eb19d54ad40b50",
+   "text": "5.00 pm: “Kairali Ayurvedic village” 도착. 환영 아유르베다 의식 및 아유르베다 의사와의 개인 상담",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9f2836623c9a7651e6cc",
+   "sourceHash": "9f2836623c9a7651e6cc7f18898bf3eabe6c2b47fa0fbbd9308b60d6b3a268fa",
+   "text": "4.30 pm: 환영 간식 및 프로그램 소개",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'progrtam' read as 'programme'. Time 4.30 pm follows 5.00 pm arrival in source; order kept as in source."
+   ]
+  },
+  {
+   "id": "t_7d79ca2c94123ce02b1f",
+   "sourceHash": "7d79ca2c94123ce02b1f6b64794932d2171cc914ce07debe2227e4762a373384",
+   "text": "8.00 pm: 아유르베다 저녁 식사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e2497397e1c50d333a6",
+   "sourceHash": "9e2497397e1c50d333a6379f73b20beb7c1f016fea5711fb1a3f2e55ea239135",
+   "text": "29 금요일",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d1ba1bb9455e5e3f7016",
+   "sourceHash": "d1ba1bb9455e5e3f70160b769cc9b35288474053bef33b337856cf212a39fc05",
+   "text": "6.30 am: 아침 건강 의식",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

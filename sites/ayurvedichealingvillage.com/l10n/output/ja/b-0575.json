@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0575",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_72fcbb5be6c6949df857",
+   "sourceHash": "72fcbb5be6c6949df8570f555b15d2b31a2e6f23aabcf920997737a7613de7be",
+   "text": "夕暮れの競技場トラックに立つ、5つの輪が連なった彫刻",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54a0aed6532ee04f2d03",
+   "sourceHash": "54a0aed6532ee04f2d0302aff0ab0fdc95729bffc2a1ee0b3c2e49c7af7c504a",
+   "text": "（オリンピック・パラリンピック選手）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_662c6794c0142e895d26",
+   "sourceHash": "662c6794c0142e895d264a8d45a3eba6b82d344edb298635f7e1501ab717ff4b",
+   "text": "迷彩服とブーツを身に着け整列する兵士たちの膝から下",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1f3d8c26eecd48f2db4",
+   "sourceHash": "f1f3d8c26eecd48f2db48128d4aec032681908697a0db7337906d3a4309781e3",
+   "text": "（全パッケージ対象）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_62dd37d1460bad753102",
+   "sourceHash": "62dd37d1460bad7531024601661020964cd5274e0d1790f15c4ffae1fe60827f",
+   "text": "ドイツ・ドレスデンの白い抽象幾何学アート作品",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d612b5425365ce9727",
+   "sourceHash": "55d612b5425365ce97273ffbaf5f720d54f14a68bc0117f2108f26888388cbbb",
+   "text": "配信経路ではSVGがサニタイズされ、style要素が削除されてC2PAメタデータマニフェストが挿入されます。まずバイト単位で完全一致する元ファイル（7790バイト、SHA256が記録済みの元ファイルと完全一致）を復元しましたが、それでも黒く表示されました。実際に配信されたのはサニタイズ後の15321バイト版だったためです。バイト単位で同一の保存済みSVGは配信過程でそのまま維持されないため、ファイルを復元するだけでは色を修正できませんでした。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9293c60558f3e91d3bc6",
+   "sourceHash": "9293c60558f3e91d3bc65eb2c97b07530ad174be1699e6f2ad0e2aa492c581e9",
+   "text": "viewBox 0 0 2993.4 1950.82とwidth/heightは同一で、28本のパスすべてとそのd値は変更なし、class属性も保持し、適用したのは元の3色のみです。再描画・再配色・スタイル変更は一切行っていません。fill属性が、サニタイザーによって削除されるのと同じルールを保持しているだけです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a87a51c358b3dc3514d8",
+   "sourceHash": "a87a51c358b3dc3514d882949cbae1ce4bafd299fe9398167debb910c24c6afc",
+   "text": "ハッシュや寸法ではなく、描画結果による比較です。配信されたSVGをcanvasに描画し、そのピクセルをサンプリングしました。主要な不透明色3色は234,175,30 / 137,152,53 / 188,131,44で、まさに#EAAF1E、#899835、#BC832Cに一致し、黒はもう含まれていません。修正前は、不透明色は0,0,0のみでした。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_72e261354cac1a3c66bd",
+   "sourceHash": "72e261354cac1a3c66bdb54a205bb655f743e37349d55c940c22e50804f9a963",
+   "text": "Étudesで想像力と専門性の融合をご体験ください。Étudesは、私たちを取り巻く世界を豊かにする建築変革の触媒です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_090aee4cb58becb346a5",
+   "sourceHash": "090aee4cb58becb346a5ef95d5b9890a5befe564e89fd78cfc9a30dc3822e58a",
+   "text": "サービス内容",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa218039a689075343d",
+   "sourceHash": "caa218039a689075343d1a680bb157888cc5e4094b5e53fc80792503d7362245",
+   "text": "チーム紹介",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_784af458e65868a3b04b",
+   "sourceHash": "784af458e65868a3b04b7e1b14f7084481240cbc41c7ccb46d391f0aecc56975",
+   "text": "経験豊富な建築家から著名なエンジニアまで、多彩な専門家がチームを支えています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_4e3bf250a5b7026ba7e8",
+   "sourceHash": "4e3bf250a5b7026ba7e82de8704dcb414e9506a5f2a4d1ffbdf46a0405e221da",
+   "text": "Francesca Piovani",
+   "status": "translated",
+   "unchangedReason": "Person's name, kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_2aa5f616e0d39d7e69ef",
+   "sourceHash": "2aa5f616e0d39d7e69ef9f0d462693ca692673cb192f9431f234b07d7c1790d4",
+   "text": "創業者・CEO・建築家",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_6313d9b7fc1acd8faa37",
+   "sourceHash": "6313d9b7fc1acd8faa37e937df1aecfec48127f11e297c3286f70713f56fbe60",
+   "text": "Rhye Moore",
+   "status": "translated",
+   "unchangedReason": "Person's name, kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_e26e2ef076b3f632885d",
+   "sourceHash": "e26e2ef076b3f632885d55412ca604114da8ba917d69d6a3e9faa3b61513c9a1",
+   "text": "エンジニアリングマネージャー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e6619db4e7fb1ff9e60f",
+   "sourceHash": "e6619db4e7fb1ff9e60f608a8c356cc7e88f95af6538d52fa6d2958aecd5262c",
+   "text": "Helga Steiner",
+   "status": "translated",
+   "unchangedReason": "Person's name, kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_861eea32ae9990e1fda0",
+   "sourceHash": "861eea32ae9990e1fda0eed4a52552c330f0d17043b515a0cce1792aa0ba4e49",
+   "text": "建築家",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ce46daf62835f3db3c7",
+   "sourceHash": "5ce46daf62835f3db3c794b136c9be1266e8e64219fe7bd814a1e191601d8ec4",
+   "text": "Ivan Lawrence",
+   "status": "translated",
+   "unchangedReason": "Person's name, kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_0a6f51e8898aea307380",
+   "sourceHash": "0a6f51e8898aea3073805197fb1ca622a908f7fac07e587e0c7c77aab295d86b",
+   "text": "プロジェクトマネージャー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_efd9e463e0e7addeee8a",
+   "sourceHash": "efd9e463e0e7addeee8a2ce6f09050cb4cf2d0793cb5940d5fbe1310f752684f",
+   "text": "私たちは一流企業との実績があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_f09230f091afc1f9c6a2",
+   "sourceHash": "f09230f091afc1f9c6a2ed8b5f0559139bc6967825586ef228168fd4537f8174",
+   "text": "小規模なプロジェクトではどのように進めていますか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_f4fbd1e5e58ace58f96a",
+   "sourceHash": "f4fbd1e5e58ace58f96ad0ae1ec569a3a2c4890ce4b50c7356597c52b3e4a414",
+   "text": "Étudesは、コンサルティング、マネジメント、設計、リサーチまで総合的なソリューションを提供しています。私たちのビジョンは、建築イノベーションの最前線に立ち、空間づくりへの情熱で結ばれた建築家や愛好家のグローバルなコミュニティを育むことです。あらゆる建築の取り組みは、未来を形づくる機会です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_d569bcad8793a59c442d",
+   "sourceHash": "d569bcad8793a59c442d4dae9a082e7516c2cd447209745ea6f8e480252a054f",
+   "text": "Étudesを支えているのは誰ですか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  },
+  {
+   "id": "t_be54d2d01d11a092958d",
+   "sourceHash": "be54d2d01d11a092958d9b7f745eea10fa64d7a09ead2a2baed5480783f3e1b0",
+   "text": "他の建築家と知り合いたいのですが、どうすればよいですか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Theme placeholder/demo content."
+   ]
+  }
+ ]
+}

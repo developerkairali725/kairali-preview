@@ -1,0 +1,225 @@
+{
+ "batchId": "b-0568",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_59cab5f95e3c68b51928",
+   "sourceHash": "59cab5f95e3c68b51928ca2cd43dc490f986a4f2d118844e115f78ea0bb80f6d",
+   "text": "— carte",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_46a6df3a8b3b1f89862b",
+   "sourceHash": "46a6df3a8b3b1f89862b38746472ac5b1fa865d11b55402f3ffaf3e72ed602df",
+   "text": "Carte désactivée dans cet aperçu",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f650048f130f6266a5ef",
+   "sourceHash": "f650048f130f6266a5efef317ffa1fc47922305708bc397c03ca70c93b2a9eeb",
+   "text": "family-04/UTILITY-SEVEN-DISPATCH-SUPPLEMENT.txt",
+   "status": "translated",
+   "unchangedReason": "File path, language-neutral",
+   "issues": []
+  },
+  {
+   "id": "t_a69a5320f257088a34ac",
+   "sourceHash": "a69a5320f257088a34ac57151173c30f3bc201ef99d3b3c94d8e3e74bfa6fa1a",
+   "text": "Les sept pages sont servies. /sitemap/ est indexable et candidate au sitemap XML ; les six autres sont en noindex. Aucune modification d’indexation, aucune redirection, aucune suppression ni aucune déduction de page de remplacement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note rather than patient-facing copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_e9217167578c9925629b",
+   "sourceHash": "e9217167578c9925629bae944c324480109de43cc6472ce5826b80eccd64dc25",
+   "text": "Mon compte - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b53181a4d853c390c1e2",
+   "sourceHash": "b53181a4d853c390c1e2f834272e076f8b0e5c4778d81af88475e3c2f1713ae5",
+   "text": "Mon compte",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0c846e85bd9bd3925320",
+   "sourceHash": "0c846e85bd9bd3925320fc92c24a6cae9e2a860616209cb93311eed72f5ca56a",
+   "text": "[woocommerce_my_account]",
+   "status": "translated",
+   "unchangedReason": "WordPress shortcode, must not be translated",
+   "issues": []
+  },
+  {
+   "id": "t_4a7e4968fd4a18d2a71b",
+   "sourceHash": "4a7e4968fd4a18d2a71b5c95c9491e12ca61c24f87dd2fb44c1de5ed684b05cb",
+   "text": "Reprend le comportement neutre existant des pages utilitaires / en accès direct. Le comportement réel du compte à l’exécution relève d’une étape de contrôle d’implémentation (Code).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_ea04ed7fadf5b5a4e468",
+   "sourceHash": "ea04ed7fadf5b5a4e4680fe71cea323fbb59decf43e95b64fdde64b4ec036e93",
+   "text": "Rechercher un soin | Kairali Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "SEO title condensed to ≤60 characters; 'Effortless' and 'Wellness Services' omitted for length."
+   ]
+  },
+  {
+   "id": "t_d49d0bb101326dd0adc0",
+   "sourceHash": "d49d0bb101326dd0adc0724979433f592f41a2612c3255acbba3be0ee859f2d2",
+   "text": "Trouvez facilement soins ayurvédiques, services de bien-être, hébergement écologique, photos et forfaits à Kairali pour faire des choix éclairés.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxury' and 'healing journey' removed (clinical lock); 'exclusive' dropped; condensed to ≤155 characters."
+   ]
+  },
+  {
+   "id": "t_39414102545e7861aec2",
+   "sourceHash": "39414102545e7861aec25ed038fcb11aafb75b34686705063f2a8ff268cbd368",
+   "text": "Résultats de recherche",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9961a6e94239ae78666",
+   "sourceHash": "b9961a6e94239ae7866616664c6f4d1bf3f07405f29806bcb67ce2f13c137cab",
+   "text": "Cette page offre une navigation simplifiée, permettant aux visiteurs de trouver facilement les informations utiles en recherchant des soins, des services de bien-être, des options d’hébergement, des photos de la galerie et des forfaits spécifiques.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'visiteurs' (clinical lock); 'exclusive packages' rendered as 'forfaits spécifiques'."
+   ]
+  },
+  {
+   "id": "t_b2e6ac26c7f730b1d3fc",
+   "sourceHash": "b2e6ac26c7f730b1d3fc8534768a5925fab7f985661a7a04d464a0c620432b74",
+   "text": "Cette page offre une navigation simplifiée, permettant aux visiteurs de trouver facilement les informations utiles en recherchant des soins, des services de bien-être, des options d’hébergement, des photos de la galerie et des forfaits spécifiques. Les résultats sont présentés de manière structurée, avec des visuels distincts et de brèves explications, afin que les visiteurs puissent explorer rapidement les sujets qui les intéressent et faire des choix éclairés concernant leur parcours de soins.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'visiteurs' (clinical lock); 'exclusive packages' rendered as 'forfaits spécifiques'."
+   ]
+  },
+  {
+   "id": "t_50d43de11f01e81fcaa7",
+   "sourceHash": "50d43de11f01e81fcaa7778509c6408cf817eb86d6b77bf8bd3e160aaa6b819f",
+   "text": "Les résultats sont présentés de manière structurée, avec des visuels distincts et de brèves explications, afin que les visiteurs puissent explorer rapidement les sujets qui les intéressent et faire des choix éclairés concernant leur parcours de soins.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2998b3232d29e8dc5a78",
+   "sourceHash": "2998b3232d29e8dc5a78d97a32ce83f556f3ed31b057077503df05641dd79158",
+   "text": "get",
+   "status": "translated",
+   "unchangedReason": "Likely an HTML form method value (method=\"get\"); translating it would break the form",
+   "issues": []
+  },
+  {
+   "id": "t_f33af71d20060adac1b8",
+   "sourceHash": "f33af71d20060adac1b8d51d48da9e4d13c33d2bb8add66d3998944300cf42d2",
+   "text": "Le champ de recherche obligatoire, doté d’un libellé, et le bouton Rechercher s’affichent à partir de leurs propres définitions capturées. L’envoi est verrouillé : aucun appel réseau, aucune requête d’index, aucun renvoi de la requête et aucun résultat fabriqué.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_021dce38478fbd6a3267",
+   "sourceHash": "021dce38478fbd6a3267b82157b44e325d7eda19b5810f382e8c8a8b95f77594",
+   "text": "La recherche n’est pas disponible dans cette revue de conception.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8acf54962a9477004555",
+   "sourceHash": "8acf54962a94770045557325307ad4637f913284bd54548b8eb9112fb2e4088a",
+   "text": "Offres spéciales, coupons de réduction et chèques-cadeaux Ayurveda de Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f57d7729f6bb28ced7a2",
+   "sourceHash": "f57d7729f6bb28ced7a259a9f43ea31806fffb5c08de6c6689910811a8a66ea7",
+   "text": "offres de soins, offres spéciales du jour, offres spéciales, festival ayurvédique, offres ayurvéda, offres Kairali, offre de soins ayurvédiques, offre de séjour ayurvédique, meilleures offres ayurvéda, coupon ayurvéda, codes promo ayurvédiques, réductions ayurvéda, réduction et offre, coupon de réduction ayurvéda, code promo, cashback, bon plan, carte cadeau,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'ayurvedic retreat offer' rendered as 'offre de séjour ayurvédique' (clinical register)."
+   ]
+  },
+  {
+   "id": "t_4db550cd984016b916bb",
+   "sourceHash": "4db550cd984016b916bbb7da01f5150efa7c0045fbf3b317eade9f39cbd4b3ba",
+   "text": "Plan du site",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f6f0e3cdafd37cae6d86",
+   "sourceHash": "f6f0e3cdafd37cae6d86ac39a48254329b12310cc48426943621ca6035de9cc5",
+   "text": "Soin pour soulager le stress et les tensions",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_523199f8ba8206e82eb1",
+   "sourceHash": "523199f8ba8206e82eb1691542522a55460e4a171f8061e0999468b70e050920",
+   "text": "Kair-By Kairali",
+   "status": "translated",
+   "unchangedReason": "Brand/product line name",
+   "issues": []
+  },
+  {
+   "id": "t_3834b9b4a27bb7616a44",
+   "sourceHash": "3834b9b4a27bb7616a448fd3bb88a16cae72128f6ead30f018bdba34cb29fa37",
+   "text": "Produits ayurvédiques exclusifs",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2bfb1a1fab62b9e55d8a",
+   "sourceHash": "2bfb1a1fab62b9e55d8a759f3aafac9ed580cf1bb0187554a8228c9441b9fdfb",
+   "text": "Produits ayurvédiques classiques",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Classial' read as 'Classical'."
+   ]
+  },
+  {
+   "id": "t_d2c4659296785baf4a2f",
+   "sourceHash": "d2c4659296785baf4a2f6f5162f2b30fe884abdfa92e65aadb7f40d18c968f0d",
+   "text": "Message du fondateur et présentation des directeurs",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
