@@ -29,7 +29,7 @@ export function SiteDocument({
   l10nScript?: string;
 }) {
   return (
-    <html lang={lang} dir={dir}>
+    <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
         {/* Consent Mode v2 defaults, DENIED, before any loader — the pilot
             security-audit ordering contract, added on the owner's ruling of
@@ -164,11 +164,22 @@ export function SiteDocument({
                (scripting:enabled): with JavaScript off nothing would ever
                reveal them, so a no-JS reader keeps every background, and a
                browser that does not know the query simply loads as before. */}
+        {/* Marks a scripted document before the styles apply (the desktop hold above keys on it), and arms the
+            runtime-failure fallback: if the root is still "held" after 10 s, the snapshot is revealed. */}
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var d=document.documentElement;d.setAttribute('data-ahv-js','');setTimeout(function(){var r=document.getElementById('ahv-design-root');if(r&&r.getAttribute('data-ahv-snapshot-state')==='held')r.setAttribute('data-ahv-fallback','');},10000);})();" }} />
         <style>
           {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}}" +
             "#ahv-design-root[data-ahv-live-pending]{position:relative}#ahv-design-root[data-ahv-live-pending]>#dc-root{position:absolute!important;top:0!important;left:0!important;right:0!important;visibility:hidden!important;pointer-events:none!important}" +
-            "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{display:none!important}}" +
+            // Desktop hold only when this document runs script (html[data-ahv-js], set by the inline script below)
+            // and the runtime has not failed (data-ahv-fallback). Without JavaScript, or when the runtime never
+            // releases the hold, the phone-width snapshot is shown as a centred readable column instead of a blank
+            // page (parent review 29 Sep 2026: desktop no-JS showed nothing; the snapshot is in the HTML).
+            "@media (min-width:700px){html[data-ahv-js] #ahv-design-root[data-ahv-snapshot-state='held']:not([data-ahv-fallback])>*{display:none!important}" +
+            "#ahv-design-root[data-ahv-snapshot-state='held']>[data-ahv-snapshot]{max-width:480px;margin:0 auto;box-shadow:0 0 0 100vmax #F7F4EA}}" +
+            // A snapshot captured with the cookie notice carries a copy whose buttons need script; without script no
+            // tracking can run, so that inert copy is not shown to no-JS readers (scripted pages are unaffected).
+            "html:not([data-ahv-js]) #ahv-consent{display:none!important}" +
             "@media (scripting:enabled){#ahv-design-root[data-ahv-bg-defer] [style*='url(']:not([data-ahv-bg]){background-image:none!important}}"}
         </style>
         {/* Arabic script is cursive: the design's uppercase letter-spacing (tracked
