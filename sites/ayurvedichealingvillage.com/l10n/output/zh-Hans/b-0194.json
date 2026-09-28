@@ -76,32 +76,12 @@
    "issues": []
   },
   {
-   "id": "t_71b1a16ac8dfabadf03c",
-   "sourceHash": "71b1a16ac8dfabadf03ceccc963c72a4e864ffa25f80ab5b6009d23ce477ba41",
-   "text": "并非套餐式服务。每位患者都会由合格医生进行评估，并根据其身体状况、病史与需求制定专属的护理方案。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'guest' rendered as 患者 (patient) per KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_32ff5b1d3ff102ee2a42",
    "sourceHash": "32ff5b1d3ff102ee2a428fc05517ff3c2746be1800ca1ce08d57e25ebdaad6fe",
    "text": "个体化方案",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6b01b8c66683d84a642b",
-   "sourceHash": "6b01b8c66683d84a642bdcabede6651c052b3db06aa5df2330a0dd5f4041e412",
-   "text": "没有两位患者会接受完全相同的治疗。阿育吠陀重视个体差异——我们的护理在每一步都体现这一点。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'guests' rendered as 患者 (patients) per KTAHV language lock."
-   ]
   },
   {
    "id": "t_6d515e675053bc9704f5",
@@ -135,16 +115,6 @@
    "unchangedReason": null,
    "issues": [
     "Source 'Fourteen' rendered as Western digit 14 per digits rule."
-   ]
-  },
-  {
-   "id": "t_8ab391c5e0282ecb631b",
-   "sourceHash": "8ab391c5e0282ecb631b9bbf28b69c9e0a80483aa2d3cbf16db6aa8c4914d59b",
-   "text": "疗愈流程",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'The Journey' rendered as 疗愈流程 (the healing process) per KTAHV language lock (banned word 'journey')."
    ]
   },
   {

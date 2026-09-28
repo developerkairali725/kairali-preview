@@ -4,16 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_7f2609d36e6fc70829d2",
-   "sourceHash": "7f2609d36e6fc70829d2175f66d93ca1a7b75fef0a690dbb295d596e2b8300a8",
-   "text": "山岳ジープサファリは、初めての方から経験豊富なスリル愛好家まで、あらゆるレベルの方にお楽しみいただけます。各行程は経験豊富なドライバーが案内し、安全と楽しさに配慮しています。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journeys' rendered as 行程 (route/leg) rather than a 'journey/trip' equivalent, per the register lock."
-   ]
-  },
-  {
    "id": "t_6e4c4abc9a30398bd51a",
    "sourceHash": "6e4c4abc9a30398bd51a917180a7914ab764a23219115f6f0f65b76e971b747a",
    "text": "休憩スポット",
@@ -28,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_66f97ea9214c65e3c1d6",
-   "sourceHash": "66f97ea9214c65e3c1d6eb3015e0cdb9790c178619cf3c0397860eef418115f1",
-   "text": "サファリの途中で予定された休憩では、くつろぎながら景色を満喫し、見事な写真を撮影できます。新鮮な山の空気を味わいながら、次の行程に向けて英気を養いましょう。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 行程 (leg/route) per the register lock."
-   ]
   },
   {
    "id": "t_a91dd9e1ec5f165ffde0",

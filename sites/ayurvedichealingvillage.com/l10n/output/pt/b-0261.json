@@ -4,16 +4,6 @@
  "locale": "pt",
  "units": [
   {
-   "id": "t_fdb1dac49037eead4992",
-   "sourceHash": "fdb1dac49037eead49922d23c89ed106d295bcd3d2f394710ee90b0dd68ed23e",
-   "text": "MEDICINA AYURVÉDICA Os Remédios Herbais Ayurvédicos da Kairali têm um legado notável na herança da família. Fundada em 1948 pelo Dr. K. S. Vasudevan, pai do Sr. K.V. Ramesh, a Spalabs criou várias fórmulas e suplementos de saúde de grande sucesso. Baseadas em ingredientes ayurvédicos autênticos e nos processos tradicionais das nossas escrituras antigas, estas receitas originais foram continuamente aperfeiçoadas ao longo dos últimos sessenta anos, dando origem à nossa gama moderna de Remédios Herbais Ayurvédicos. A vasta gama de produtos ayurvédicos da Kairali inclui cem medicamentos herbais autênticos, produtos de cuidado da pele e do corpo e equipamento para centros de bem-estar, disponíveis para os nossos parceiros e franqueados para distribuição nos seus estabelecimentos.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical lock substitutions: 'spa equipment' -> 'equipamento para centros de bem-estar'; 'spa franchisees' -> 'franqueados'. 'Spalabs' kept verbatim as a proper name."
-   ]
-  },
-  {
    "id": "t_dfefaebf50126a09c2a2",
    "sourceHash": "dfefaebf50126a09c2a286ed6e97ed32a1e2e32f90aca5bbf1a03534ffc29139",
    "text": "30% de desconto",
@@ -61,17 +51,6 @@
    "unchangedReason": null,
    "issues": [
     "Clinical lock: 'Retreat' dropped from the title (resort-register term)."
-   ]
-  },
-  {
-   "id": "t_e62d96f387b5db3d031c",
-   "sourceHash": "e62d96f387b5db3d031c712d237e2a12e0111f9738c0f503a572a3b4db6dbf60",
-   "text": "Respostas sobre tratamento ayurvédico na Kairali, Palakkad: consulta, admissão, programas, estadia, dieta, pagamento, viagem, vistos; preços e e-book.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Condensed to fit the 155-character seo.description limit; 'villas' and 'aftercare' omitted and the full brand name shortened to 'Kairali'.",
-    "t_e62d96f387b5db3d031c banned-term viagem"
    ]
   },
   {

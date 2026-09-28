@@ -4,16 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "Professionnels du secteur du bien-être, gérants et propriétaires de centres de bien-être et de salons, professionnels de l’informatique et diplomates.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Spa & wellness industry' and 'spa & salon' rendered without the banned word 'spa' ('secteur du bien-être', 'centres de bien-être et de salons')."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "Programme de formation intensive en Ayurveda5 Jours",
@@ -30,16 +20,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "Professionnels du bien-être, formateurs, thérapeutes, médecins, praticiens holistiques, diététiciens.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Spa & wellness professionals' rendered as 'Professionnels du bien-être' (banned word 'spa' removed)."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -74,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "Professionnels du bien-être, thérapeutes et conseillers en bien-être.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Spa & wellness fraternity' rendered as 'Professionnels du bien-être' (banned word 'spa' removed)."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -171,16 +141,6 @@
    "unchangedReason": null,
    "issues": [
     "Source appears to be an internal implementation note rather than patient-facing copy; translated as instructed — owner to confirm whether it should render. Path '/sections/3/c/1' and heading name 'Knowledge Center' kept verbatim."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "Kairali – The Ayurvedic Healing Village propose des cours de formation spécialisés en Ayurveda et en bien-être à toute personne souhaitant approfondir sa compréhension de l’Ayurveda, du yoga et de la thérapie holistique. Nos programmes s’adressent aux professionnels du bien-être, aux praticiens ayurvédiques, aux professeurs de yoga et aux passionnés de santé, avec des possibilités d’apprentissage à la fois pratiques et théoriques. La formation certifiante de professeur de yoga sera bientôt disponible ; les inscriptions ne sont pas encore ouvertes. Des séances de yoga et de méditation pour les visiteurs sont proposées séparément. Contactez l’équipe pour confirmer la disponibilité des autres cours de formation.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Guest yoga and meditation practice' rendered as 'séances de yoga et de méditation pour les visiteurs'."
    ]
   }
  ]

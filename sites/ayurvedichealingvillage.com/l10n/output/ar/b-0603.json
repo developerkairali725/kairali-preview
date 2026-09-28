@@ -4,16 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_4e0e9015547258ab56c4",
-   "sourceHash": "4e0e9015547258ab56c43a6e83ece604f668dd441a661b2b3f18590def582ec5",
-   "text": "اطّلعوا على جميع آراء زوارنا وصور المسافرين وأحدث التجارب مباشرةً على Google Maps وTripadvisor.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest' rendered as 'visitors' (زوار) per language lock."
-   ]
-  },
-  {
    "id": "t_c1f1a53c493fa0c2470f",
    "sourceHash": "c1f1a53c493fa0c2470f8ddad8dd6c8e251926baa4ac2e4e5117c084417c11ad",
    "text": "تجربتكم تهمّنا",
@@ -118,56 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_dfea991cb98da9cc33d2",
-   "sourceHash": "dfea991cb98da9cc33d22dbfab76e4b0f1d9d1d3bb45a908941a5808d53a6266",
-   "text": "مقتطفات مختارة من تقييمات الزوار ومن أرشيف Kairali المنشور. افتحوا المصدر لقراءة الرواية كاملة.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest reviews' rendered as 'visitor reviews' (تقييمات الزوار) per language lock."
-   ]
-  },
-  {
-   "id": "t_b9bcadbc596da558a04d",
-   "sourceHash": "b9bcadbc596da558a04d70bc9f8c74e6f231a4545c503fef99f17a60c2cd80dd",
-   "text": "موقع الزائر",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 'visitor' (الزائر) per language lock."
-   ]
-  },
-  {
-   "id": "t_196cbccb71827c14f48e",
-   "sourceHash": "196cbccb71827c14f48edb99fbf0c96c0126f48169e13dce5ccbaebe5a91fd92",
-   "text": "جميع الزوار",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'visitors' (الزوار) per language lock."
-   ]
-  },
-  {
-   "id": "t_fd2cd1d5f76872314085",
-   "sourceHash": "fd2cd1d5f768723140852000c1cb257b454318d6af1fb49991d70d7a179495ce",
-   "text": "زوار من الهند",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 'visitors' (زوار) per language lock."
-   ]
-  },
-  {
-   "id": "t_2a3b0632cd3591c92599",
-   "sourceHash": "2a3b0632cd3591c9259902025012b2e839a0e0407810e5d0b5a84333340b7f96",
-   "text": "زوار دوليون",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'visitors' (زوار) per language lock."
-   ]
-  },
-  {
    "id": "t_0ad7d0a61227eb0a2496",
    "sourceHash": "0ad7d0a61227eb0a249666f105827ed1f35a3c57dc3aa1f59f3abe4e4683e8d4",
    "text": "اقرأ المقتطفات بلغة",
@@ -202,16 +142,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_1168bc59127b4dc874d0",
-   "sourceHash": "1168bc59127b4dc874d089c3e3d844f12475a08e7642d3fe74edc692dd8aa094",
-   "text": ". لا يُعرض موقع الزائر إلا حيث يحدده المصدر.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment continuing a sentence; 'Guest' rendered as 'visitor' (الزائر) per language lock."
-   ]
   },
   {
    "id": "t_e965726ad8e0e0d42741",

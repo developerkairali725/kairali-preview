@@ -68,17 +68,6 @@
    "issues": []
   },
   {
-   "id": "t_97866a589c732743b1e6",
-   "sourceHash": "97866a589c732743b1e6d3b1c229b3beda59efcd0804dc130fadf8bafec64adf",
-   "text": "«ادخل إلى عالم من الفخامة الملكية ودع أجواء Royal Villa الآسرة تأسر حواسك. بمساحتها الرحبة وعنايتها الدقيقة بالتفاصيل، تتيح هذه الفيلا إقامة غامرة حقًا، يلتقي فيها العلاج الأيورفيدي براحة رفيعة المستوى.»",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical-register lock: 'regal opulence' rendered as 'royal grandeur'; 'luxurious indulgence' rendered as 'premium comfort' (راحة رفيعة المستوى); 'experience' rendered as 'stay'. Royal Villa kept verbatim as a proper name. Source marketing copy is hospitality-register; owner may wish to review for KTAHV clinical lock.",
-    "t_97866a589c732743b1e6 banned-term-from-source الفخامة"
-   ]
-  },
-  {
    "id": "t_e71a8c7be93d8bbfcc35",
    "sourceHash": "e71a8c7be93d8bbfcc35e0785d1f446c9bb978879c7663e559fa040c02f7880d",
    "text": "تقدّم Royal Villa مزيجًا استثنائيًا من الأناقة والأصالة ضمن نطاق أسعار معقول على نحو مفاجئ، وهي بذلك جديرة باسمها الملكي. وقد صمّم هذه المساكن بمهارة مصممو ديكور داخلي مشهورون عالميًا، مستلهمين قصور الهند في العصور الوسطى، لخلق أجواء من الهدوء والأناقة الراقية.",
@@ -86,17 +75,6 @@
    "unchangedReason": null,
    "issues": [
     "Royal Villa kept verbatim as a proper name."
-   ]
-  },
-  {
-   "id": "t_85e550e0f491c4012517",
-   "sourceHash": "85e550e0f491c401251769ab934045e3cf4afd15f584f7c143dbc8851d9f31cf",
-   "text": "يمكن للمقيمين هنا أن يعيشوا نمط حياة كان في السابق حكرًا على النبلاء داخل هذه الجدران، مع أثاث فاخر التصميم ومرافق من الدرجة الأولى. ويخلق تصميم الفيلا ملاذًا خاصًا تلتقي فيه العافية التقليدية بالراحة المعاصرة، إذ يمزج بمهارة بين الراحة الرفيعة ومبادئ نمط الحياة الأيورفيدي",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical-register lock: 'Guests' rendered as 'those staying here' (المقيمين هنا); 'opulent furnishings' as 'finely designed furnishings'; 'contemporary indulgence' as 'contemporary comfort'; 'opulent comfort' as 'premium comfort'.",
-    "t_85e550e0f491c4012517 banned-term-from-source فاخر"
    ]
   },
   {
@@ -140,26 +118,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_e98ef9fff1615a72a17b",
-   "sourceHash": "e98ef9fff1615a72a17be10e922ca7d626a4cbce1d74b8a1c264d449ebeec330",
-   "text": "ما يميّز هذه الفلل هو قدرتها على توفير إقامة ملكية حقًا بتكلفة منخفضة للغاية. فروعة العيش الأرستقراطي متاحة للزوار دون أسعار باهظة، ما يجعل هذا المستوى الرفيع من الإقامة في متناول كل من يبحث عن الراحة الرفيعة والقيمة الجيدة معًا.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical-register lock: 'luxury' rendered as 'premium comfort' (الراحة الرفيعة); 'experience' rendered as 'stay'. Cost claims ('incredibly low cost') are carried over from source, not strengthened."
-   ]
-  },
-  {
-   "id": "t_aacfe29e8ccdc0e8763e",
-   "sourceHash": "aacfe29e8ccdc0e8763e65e773f77ad9ef4e24313637aafb2f7e00fecfc8469c",
-   "text": "تُعد Royal Villa مثالًا على التصميم المدروس، إذ تتكامل كل عناصرها لتوفير مساحة تلبي حاجة الجميع إلى العيش الراقي، مع الحفاظ على البيئة الهادئة اللازمة لإجراءات العلاج الأيورفيدي. وهي تمنح المقيمين فيها إقامة استثنائية حقًا تجسّد الضيافة الملكية، من خلال جمعها المتقن بين العظمة التاريخية والراحة العصرية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical-register lock: 'guests' rendered as 'those staying there' (المقيمين فيها); 'experience' rendered as 'stay'. 'Royal hospitality' retained as source wording."
-   ]
   },
   {
    "id": "t_a29730004b53e9393f31",

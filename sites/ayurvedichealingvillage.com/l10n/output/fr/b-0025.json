@@ -12,16 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_3dac7aed77a6feba0622",
-   "sourceHash": "3dac7aed77a6feba06220a8e44df86a779b745e52962c5bd794c0ecf2b2cdf2d",
-   "text": "Des patients partagent leur témoignage sur Kairali – The Ayurvedic Healing Village, en évoquant les résultats positifs obtenus et leur envie de revenir.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 'patients' per the clinical language lock."
-   ]
-  },
-  {
    "id": "t_d43f5df8bc63920ed783",
    "sourceHash": "d43f5df8bc63920ed783831f4e562e27b04cf6fa29f291b94e3d99784e3c9985",
    "text": "Kairali – The Ayurvedic Healing Village est un havre discret où se ressourcer, loin du stress et de l’agitation du quotidien.",
@@ -37,16 +27,6 @@
    "unchangedReason": null,
    "issues": [
     "Source makes an efficacy claim ('incredibly efficient remedies'); rendered faithfully without strengthening ('d’une grande efficacité') — flag for clinical review."
-   ]
-  },
-  {
-   "id": "t_2b0ecebce6ffbf8bf95e",
-   "sourceHash": "2b0ecebce6ffbf8bf95e1ed0087def44467c9be76fa6fcbf704b7733532dc524",
-   "text": "Les soins et massages ayurvédiques ont aidé de nombreuses personnes à mieux faire face à leur rythme quotidien.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa treatments' rendered as 'soins' per the clinical language lock (banned word 'spa' removed)."
    ]
   },
   {

@@ -4,16 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "العاملون في قطاع العافية والعناية، ومديرو ومالكو مراكز العناية والصالونات، والعاملون في تقنية المعلومات، والدبلوماسيون.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' rendered as 'care/wellness' (العناية/العافية) per clinical lock."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "برنامج تدريب مكثف في الأيورفيدا5 أيام",
@@ -30,16 +20,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "العاملون في قطاع العافية والعناية، والمدربون، والمعالجون، والأطباء، وممارسو العلاج الشمولي، واختصاصيو التغذية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' rendered as 'care' (العناية) per clinical lock."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -74,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "أهل قطاع العافية والعناية، والمعالجون، ومستشارو العافية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' rendered as 'care' (العناية) per clinical lock."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -168,16 +138,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "تقدم كيرالي – قرية الشفاء الأيورفيدية دورات تدريبية متخصصة في الأيورفيدا والعافية لكل من يسعى إلى فهم معمّق للأيورفيدا واليوغا والعلاج الشمولي. وتلبي برامجنا احتياجات العاملين في قطاع العافية وممارسي الأيورفيدا ومدربي اليوغا والمهتمين بالصحة، وتوفر فرصًا للتعلم العملي والنظري معًا. برنامج تدريب معلمي اليوغا المعتمد قريبًا؛ والتسجيل فيه غير متاح حاليًا. وتتوفر جلسات ممارسة اليوغا والتأمل للزوار بشكل منفصل. تواصل مع الفريق للتأكد من توفر الدورات التدريبية الأخرى.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest yoga and meditation practice' rendered with 'visitors' (للزوار) instead of a guests equivalent per clinical lock."
-   ]
   }
  ]
 }

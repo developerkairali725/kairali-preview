@@ -4,16 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_4e0e9015547258ab56c4",
-   "sourceHash": "4e0e9015547258ab56c43a6e83ece604f668dd441a661b2b3f18590def582ec5",
-   "text": "Découvrez l’ensemble des avis de nos patients et visiteurs, leurs photos et leurs expériences récentes directement sur Google Maps et Tripadvisor.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest feedback, traveller photographs' rendered as avis de nos patients et visiteurs / leurs photos (banned word 'guests' substituted)."
-   ]
-  },
-  {
    "id": "t_c1f1a53c493fa0c2470f",
    "sourceHash": "c1f1a53c493fa0c2470f8ddad8dd6c8e251926baa4ac2e4e5117c084417c11ad",
    "text": "Votre expérience compte",
@@ -118,56 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_dfea991cb98da9cc33d2",
-   "sourceHash": "dfea991cb98da9cc33d22dbfab76e4b0f1d9d1d3bb45a908941a5808d53a6266",
-   "text": "Une sélection d’extraits d’avis de patients et des archives publiées par Kairali. Ouvrez la source pour lire le témoignage complet.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest reviews' rendered as avis de patients (banned word 'guests' substituted)."
-   ]
-  },
-  {
-   "id": "t_b9bcadbc596da558a04d",
-   "sourceHash": "b9bcadbc596da558a04d70bc9f8c74e6f231a4545c503fef99f17a60c2cd80dd",
-   "text": "Provenance du patient",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' substituted with patient (banned word)."
-   ]
-  },
-  {
-   "id": "t_196cbccb71827c14f48e",
-   "sourceHash": "196cbccb71827c14f48edb99fbf0c96c0126f48169e13dce5ccbaebe5a91fd92",
-   "text": "Tous les patients",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' substituted with patients (banned word)."
-   ]
-  },
-  {
-   "id": "t_fd2cd1d5f76872314085",
-   "sourceHash": "fd2cd1d5f768723140852000c1cb257b454318d6af1fb49991d70d7a179495ce",
-   "text": "Patients venus d’Inde",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' substituted with patients (banned word)."
-   ]
-  },
-  {
-   "id": "t_2a3b0632cd3591c92599",
-   "sourceHash": "2a3b0632cd3591c9259902025012b2e839a0e0407810e5d0b5a84333340b7f96",
-   "text": "Patients internationaux",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' substituted with patients (banned word)."
-   ]
-  },
-  {
    "id": "t_0ad7d0a61227eb0a2496",
    "sourceHash": "0ad7d0a61227eb0a249666f105827ed1f35a3c57dc3aa1f59f3abe4e4683e8d4",
    "text": "Lire les extraits en",
@@ -202,16 +142,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_1168bc59127b4dc874d0",
-   "sourceHash": "1168bc59127b4dc874d089c3e3d844f12475a08e7642d3fe74edc692dd8aa094",
-   "text": ". La provenance du patient n’est indiquée que lorsque la source la mentionne.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' substituted with patient (banned word)."
-   ]
   },
   {
    "id": "t_e965726ad8e0e0d42741",

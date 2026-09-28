@@ -4,16 +4,6 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "웰니스 업계 종사자, 웰니스 센터 및 살롱 관리자와 운영자, IT 전문가 및 외교관.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' rendered as 웰니스 (wellness) per banned-word rule."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "집중 아유르베다 교육 프로그램5일",
@@ -30,16 +20,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "웰니스 전문가, 트레이너, 치료사, 의사, 통합 치유 전문가, 영양사.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness professionals' rendered as 웰니스 전문가 per banned-word rule."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -74,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "웰니스 업계 종사자, 치료사 및 웰니스 상담사.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness fraternity' rendered as 웰니스 업계 종사자 per banned-word rule."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -171,16 +141,6 @@
    "unchangedReason": null,
    "issues": [
     "Appears to be an internal build/provenance note rather than patient-facing copy; translated as-is — confirm whether it should render."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "Kairali – The Ayurvedic Healing Village는 아유르베다, 요가, 통합 요법을 깊이 이해하고자 하는 모든 분을 위해 전문 아유르베다 및 웰니스 교육 과정을 제공합니다. 저희 프로그램은 웰니스 전문가, 아유르베다 시술자, 요가 강사, 건강에 관심 있는 분들을 대상으로 실습과 이론 학습 기회를 모두 제공합니다. 공인 요가 지도자 교육은 곧 개설될 예정이며, 현재는 등록을 받지 않습니다. 방문객을 위한 요가 및 명상 수련은 별도로 이용하실 수 있습니다. 다른 교육 과정의 개설 여부는 팀에 문의하여 확인하십시오.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 방문객 (visitor) per banned-word rule."
    ]
   }
  ]

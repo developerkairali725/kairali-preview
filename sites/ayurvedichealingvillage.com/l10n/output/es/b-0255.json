@@ -4,16 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "Profesionales del sector del bienestar, gerentes y propietarios de centros de bienestar y salones de belleza, profesionales de TI y diplomáticos.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' rendered as 'bienestar' / 'centros de bienestar' per the language lock."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "Programa intensivo de formación en Ayurveda5 días",
@@ -30,16 +20,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "Profesionales del bienestar, formadores, terapeutas, médicos, terapeutas holísticos y dietistas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness professionals' rendered as 'Profesionales del bienestar' per the language lock."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -74,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "Profesionales del sector del bienestar, terapeutas y asesores de bienestar.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness fraternity' rendered as 'Profesionales del sector del bienestar' per the language lock."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -169,16 +139,6 @@
    "unchangedReason": null,
    "issues": [
     "Appears to be an internal implementation note rather than patient-facing copy; translated anyway."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "Kairali – The Ayurvedic Healing Village ofrece cursos especializados de formación en Ayurveda y bienestar para quienes deseen comprender en profundidad el Ayurveda, el yoga y la terapia holística. Nuestros programas están dirigidos a profesionales del bienestar, profesionales ayurvédicos, instructores de yoga y personas interesadas en la salud, y ofrecen oportunidades de aprendizaje tanto práctico como teórico. La formación certificada de profesores de yoga estará disponible próximamente; la inscripción no está abierta por el momento. La práctica de yoga y meditación para visitantes está disponible por separado. Póngase en contacto con el equipo para confirmar la disponibilidad de los demás cursos de formación.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 'visitantes' per the language lock."
    ]
   }
  ]

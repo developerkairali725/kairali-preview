@@ -4,16 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_7e4b6dbfbcc45405c7a9",
-   "sourceHash": "7e4b6dbfbcc45405c7a9d31706dd8fcfbe7bf03632179ec9611859c3a723a7cd",
-   "text": "Reconocido entre los destinos de bienestar favoritos de los viajeros por su Ayurveda auténtico y su excepcional hospitalidad en Kerala. El premio se otorga según las opiniones de los visitantes recogidas durante los doce meses anteriores.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest reviews' rendered as 'opiniones de los visitantes' per register lock."
-   ]
-  },
-  {
    "id": "t_e95feaabac6049a640ef",
    "sourceHash": "e95feaabac6049a640ef6696d95c9b5d0e7d51fca82b79f6af750da414d4fd05",
    "text": "Ver más",
@@ -84,17 +74,6 @@
    ]
   },
   {
-   "id": "t_15e728509b3023b3f367",
-   "sourceHash": "15e728509b3023b3f36700d6fa16394317d9d3078774c3fdbba4ead50560d130",
-   "text": "Kairali – The Ayurvedic Healing Village se enorgullece de ser reconocido como miembro activo de la Asia Pacific Spa & Wellness Coalition-2026, el organismo regional que establece estándares de bienestar en Asia-Pacífico.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Organisation name kept verbatim; 'spa and wellness standards' outside the name rendered as 'estándares de bienestar' to avoid 'spa'.",
-    "t_15e728509b3023b3f367 banned-term-from-source Spa"
-   ]
-  },
-  {
    "id": "t_9a2f8486046cd0ba0f8d",
    "sourceHash": "9a2f8486046cd0ba0f8db2dae6e910100729908ccde5374143df8936ce6fabcc",
    "text": "Reconocimiento de membresía de la Asia Pacific Spa and Wellness Coalition 2026",
@@ -114,17 +93,6 @@
    "issues": [
     "Award title kept verbatim.",
     "t_3affcc70557d7c332a9f banned-term-from-source Spa"
-   ]
-  },
-  {
-   "id": "t_939d530f7d024575700f",
-   "sourceHash": "939d530f7d024575700f3a25c33544e5bfee64f8e3201a1416a534ffb4103f09",
-   "text": "Kairali – The Ayurvedic Healing Village se enorgullece de contar con la certificación de los Haute Grandeur Global Spa Awards 2026, lo que reafirma su lugar entre los mejores centros de bienestar del mundo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Award title kept verbatim; 'spa and wellness destinations' outside the title rendered as 'centros de bienestar' to avoid 'spa'.",
-    "t_939d530f7d024575700f banned-term-from-source Spa"
    ]
   },
   {

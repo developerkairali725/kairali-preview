@@ -76,32 +76,12 @@
    "issues": []
   },
   {
-   "id": "t_71b1a16ac8dfabadf03c",
-   "sourceHash": "71b1a16ac8dfabadf03ceccc963c72a4e864ffa25f80ab5b6009d23ce477ba41",
-   "text": "패키지 방식이 아닙니다. 모든 환자는 자격을 갖춘 의사의 평가를 받으며, 의사는 각 환자의 신체, 병력 및 필요에 맞춘 케어 계획을 수립합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest' rendered as 환자 (patient) per KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_32ff5b1d3ff102ee2a42",
    "sourceHash": "32ff5b1d3ff102ee2a428fc05517ff3c2746be1800ca1ce08d57e25ebdaad6fe",
    "text": "개인 맞춤 프로토콜",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6b01b8c66683d84a642b",
-   "sourceHash": "6b01b8c66683d84a642bdcabede6651c052b3db06aa5df2330a0dd5f4041e412",
-   "text": "두 환자가 같은 치료를 받는 일은 없습니다. 아유르베다는 개인의 고유성을 인정하며, 저희의 케어는 모든 단계에서 이를 반영합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 환자 (patients) per KTAHV language lock."
-   ]
   },
   {
    "id": "t_6d515e675053bc9704f5",
@@ -135,16 +115,6 @@
    "unchangedReason": null,
    "issues": [
     "'Fourteen' kept as the numeral 14 in Western digits."
-   ]
-  },
-  {
-   "id": "t_8ab391c5e0282ecb631b",
-   "sourceHash": "8ab391c5e0282ecb631b9bbf28b69c9e0a80483aa2d3cbf16db6aa8c4914d59b",
-   "text": "치료 과정",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Journey' rendered as 치료 과정 (treatment process) per KTAHV language lock."
    ]
   },
   {

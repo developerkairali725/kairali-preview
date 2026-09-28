@@ -4,16 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "ウェルネス業界の専門職、ウェルネス施設・サロンの管理者やオーナー、IT専門職、外交官。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness industry' and 'spa & salon managers' rendered with ウェルネス業界 / ウェルネス施設 per KTAHV language lock; 'spa' dropped."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "集中アーユルヴェーダ研修プログラム5日間",
@@ -28,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "ウェルネス分野の専門職、トレーナー、セラピスト、医師、ホリスティック療法の施術者、栄養士。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness professionals' rendered as ウェルネス分野の専門職 per KTAHV language lock; 'spa' dropped."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -70,16 +50,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "ウェルネス業界の関係者、セラピスト、ウェルネスカウンセラー。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness fraternity' rendered as ウェルネス業界の関係者 per KTAHV language lock; 'spa' dropped."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -165,16 +135,6 @@
    "unchangedReason": null,
    "issues": [
     "Appears to be an internal implementation note rather than patient-facing copy; translated literally — check whether it should be displayed."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "Kairali – The Ayurvedic Healing Villageでは、アーユルヴェーダ、ヨガ、ホリスティック療法を深く理解したい方のために、専門的なアーユルヴェーダ・ウェルネス研修コースを提供しています。プログラムはウェルネス専門職、アーユルヴェーダ施術者、ヨガインストラクター、健康に関心のある方を対象とし、実践と理論の両面から学ぶ機会を提供します。認定ヨガ指導者養成講座は近日開講予定で、現在は受付を行っていません。滞在者向けのヨガと瞑想の実践は別途ご利用いただけます。その他の研修コースの開講状況については、スタッフまでお問い合わせください。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest yoga and meditation practice' rendered as 滞在者向け (for those staying) per KTAHV language lock."
    ]
   }
  ]

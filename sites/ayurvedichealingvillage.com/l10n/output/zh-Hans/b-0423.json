@@ -44,16 +44,6 @@
    "issues": []
   },
   {
-   "id": "t_5abaa92e4a0e613ccbc1",
-   "sourceHash": "5abaa92e4a0e613ccbc1c34135f090f91275511d33d3c5828dbe8443e8a6d0fe",
-   "text": "在我们的经典别墅中体验传统的典雅与现代的舒适。感受喀拉拉邦历久弥新的建筑风格，接受阿育吠陀疗愈，享用高品质的舒适设施。在这片宁静之所放松身心，探寻内在的平衡。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'luxurious amenities' rendered as 高品质的舒适设施 (premium comfort) per register rule (no 'luxury')."
-   ]
-  },
-  {
    "id": "t_b78f5fea99b31a0554b7",
    "sourceHash": "b78f5fea99b31a0554b7a2a1f09a9931bc7c261f0713560f4da43ebda769f023",
    "text": "棕榈树间的绿色饰边别墅",
@@ -84,16 +74,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_0224df37e41bc9e95d47",
-   "sourceHash": "0224df37e41bc9e95d478aca573e1b173b316d6e6f36ed8ea02b13ca67b1b2ec",
-   "text": "我们的每一栋高品质别墅都依据古代典籍所载的“Vaastu Shastra”（瓦斯图建筑学，可视为印度版的风水）古老法则而建。这让来访者能在喀拉拉邦最地道的吠陀社区环境中，入住理想的阿育吠陀或瑜伽静修别墅。Vaastu Shastra 是一套古老的印度建筑与设计体系，强调建筑的布局与朝向，以营造与自然的和谐与平衡。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'luxury villas' rendered as 高品质别墅 (premium); 'guests' rendered as 来访者 (visitors); 'ultimate' softened to 理想的 — all per register rule."
-   ]
   },
   {
    "id": "t_ed4664f56be556f0fae5",
@@ -150,16 +130,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_b569208877e36d845502",
-   "sourceHash": "b569208877e36d8455021eb385e50ec2b17a9fdcce88e8bbb9035ce803605d9d",
-   "text": "历史海报“Ayurvedic Indian Journey”，画面为一艘船屋及2017–2018年的日期。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Indian Journey' treated as the artwork's title and kept verbatim (proper-name exemption); if it is not a title, render 'journey' as 历程."
-   ]
   },
   {
    "id": "t_95b708cd25e5f23ee53e",

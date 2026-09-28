@@ -4,26 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_8d9ca97c5921ef0daf21",
-   "sourceHash": "8d9ca97c5921ef0daf21fad407aa7ee1d64a623d47f8d9827e93eda34857ebdc",
-   "text": "Die Maharaja Suite ist die hochwertigste Unterkunft in diesem ayurvedischen Heilzentrum und verbindet erstklassigen Komfort mit kaiserlicher Pracht. Wie der Name schon sagt, bedeutet „Maharaja“ „Kaiser“, und diese prachtvolle Suite bietet ein wahrhaft königliches Erlebnis.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'luxury' -> 'erstklassigen Komfort'; 'Ayurvedic retreat' -> 'ayurvedischen Heilzentrum' per clinical language lock. Hospitality-register source copy on a KTAHV page — flag for owner review."
-   ]
-  },
-  {
-   "id": "t_e7748e1d48dfd232a09d",
-   "sourceHash": "e7748e1d48dfd232a09d79b799a5991d2fe1c5fa4c2ae2b85b029e5763e1cfdc",
-   "text": "Die Suite verfügt über zwei separate Zimmer, eines davon mit einem eindrucksvollen Kingsize-Bett. Alles, von der hochwertigen Bettwäsche bis zu den privaten Außenbereichen, wurde mit großer Sorgfalt und Sinn für Großzügigkeit geplant. Der private Rasen, den Besucher nutzen können, öffnet sich zu einem ruhigen Gewässer und ist damit der ideale Ort, um zu entspannen und zu meditieren.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'luxurious' -> 'hochwertigen'; 'guests' -> 'Besucher' per clinical language lock."
-   ]
-  },
-  {
    "id": "t_b2ac04d73ef0f7ae7932",
    "sourceHash": "b2ac04d73ef0f7ae793217c586b58ab8fd378f692c1cc56016d8f76db393710a",
    "text": "Die Innenausstattung zeigt erlesenes Mobiliar und dekorative Elemente, die an die Pracht der historischen Paläste Indiens erinnern. Die Suite ist mit modernen Annehmlichkeiten für höchsten Komfort ausgestattet:",
@@ -70,16 +50,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_bfbc3030818747e5f898",
-   "sourceHash": "bfbc3030818747e5f898354a9d3ba6a4c5b62ee507680903cd6386f306362c8b",
-   "text": "Die Maharaja Suite liegt ideal innerhalb der Anlage und bietet einfachen Zugang zu allen Einrichtungen, ohne die Privatsphäre zu beeinträchtigen. Wie die Kaiser, die einst über weite Teile Indiens herrschten, hebt sich die Maharaja Suite deutlich von den Deluxe und Royal Villas des Hauses ab, die für sich genommen ebenfalls beeindruckende Unterkünfte bieten.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' -> 'Anlage' and 'resort’s' -> 'des Hauses' per clinical language lock; villa category names 'Deluxe' and 'Royal Villas' kept as proper names."
-   ]
   },
   {
    "id": "t_2e26d4838bdc3587f260",

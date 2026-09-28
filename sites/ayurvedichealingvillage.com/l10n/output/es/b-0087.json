@@ -20,17 +20,6 @@
    "issues": []
   },
   {
-   "id": "t_3805f5d94fa0f56ad035",
-   "sourceHash": "3805f5d94fa0f56ad03593b5db27be866778f56a8c10f24b9252d2701a883dab",
-   "text": "Elija su punto de llegada para abrir las indicaciones de ruta en coche de Google Maps en una pestaña nueva. Si llega a la estación de tren de Ottapalam o viaja desde Bengaluru, nuestro equipo de atención al paciente puede ayudarle a planificar el último tramo. Consulte la ruta en tiempo real para conocer las distancias y los tiempos de viaje actuales.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'final journey' rendered as 'último tramo' (final leg) to avoid the banned 'journey' equivalent.",
-    "t_3805f5d94fa0f56ad035 banned-term-from-source viaje"
-   ]
-  },
-  {
    "id": "t_889abe7a1070aa94eb3f",
    "sourceHash": "889abe7a1070aa94eb3f6e9b23b965ed79f16122b94c5edb91010224762781cb",
    "text": "[[OPEN_1]]Aeropuerto de Coimbatore (CJB): abrir indicaciones ↗[[CLOSE_1]][[OPEN_2]]Aeropuerto de Kochi / Cochin (COK): abrir indicaciones ↗[[CLOSE_2]][[OPEN_3]]Estación de tren de Palakkad: abrir indicaciones ↗[[CLOSE_3]][[OPEN_4]]Estación de tren de Ottapalam: abrir indicaciones ↗[[CLOSE_4]][[OPEN_5]]Bengaluru / Bangalore: abrir indicaciones ↗[[CLOSE_5]][[OPEN_6]]Su ubicación actual: abrir indicaciones ↗[[CLOSE_6]]",

@@ -4,16 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_fdb1dac49037eead4992",
-   "sourceHash": "fdb1dac49037eead49922d23c89ed106d295bcd3d2f394710ee90b0dd68ed23e",
-   "text": "الطب الأيورفيدي تتمتّع العلاجات العشبية الأيورفيدية من Kairali بإرث عريق في تاريخ العائلة. فمنذ تأسيسها عام 1948 على يد الدكتور K. S. Vasudevan، والد السيد K.V. Ramesh، كانت Spalabs وراء ابتكار عدد من التركيبات والمكمّلات الصحية الأكثر مبيعًا. وتستند هذه الوصفات الأصلية إلى مكوّنات أيورفيدية أصيلة وإلى الأساليب التقليدية الواردة في نصوصنا القديمة، وقد خضعت لتحسين مستمر على مدى الستين عامًا الماضية، لتنتج مجموعتنا الحديثة من العلاجات العشبية الأيورفيدية. وتضم مجموعة Kairali الواسعة من المنتجات الأيورفيدية مئة دواء عشبي أصيل، ومنتجات للعناية بالبشرة والجسم، ومعدات لمراكز العافية، متاحة لشركائنا وأصحاب امتيازات مراكز العافية لتوزيعها في منافذهم.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'spa equipment' → 'معدات لمراكز العافية' and 'spa franchisees' → 'أصحاب امتيازات مراكز العافية' per language lock; proper name 'Spalabs' kept verbatim."
-   ]
-  },
-  {
    "id": "t_dfefaebf50126a09c2a2",
    "sourceHash": "dfefaebf50126a09c2a286ed6e97ed32a1e2e32f90aca5bbf1a03534ffc29139",
    "text": "خصم 30%",
@@ -61,16 +51,6 @@
    "unchangedReason": null,
    "issues": [
     "'Kairali Retreat' shortened to 'Kairali' to fit the 60-character title limit."
-   ]
-  },
-  {
-   "id": "t_e62d96f387b5db3d031c",
-   "sourceHash": "e62d96f387b5db3d031c712d237e2a12e0111f9738c0f503a572a3b4db6dbf60",
-   "text": "أسئلة المرضى حول العلاج في Kairali – قرية الشفاء الأيورفيدية، بالاكاد: الاستشارة والقبول، البرامج، الإقامة، الحمية، الدفع، السفر والتأشيرات.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Condensed to fit the 155-character limit: villas, aftercare, price lists and e-book download omitted."
    ]
   },
   {

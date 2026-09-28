@@ -4,16 +4,6 @@
  "locale": "ru",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "Специалисты оздоровительной отрасли, руководители и владельцы оздоровительных центров и салонов, IT-специалисты и дипломаты.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' avoided: 'spa & wellness industry' → 'оздоровительная отрасль', 'spa & salon managers' → 'оздоровительные центры и салоны'."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "Интенсивная программа обучения аюрведе5 дней",
@@ -30,16 +20,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "Специалисты в сфере оздоровления, тренеры, терапевты, врачи, специалисты холистических практик, диетологи.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness professionals' rendered as 'специалисты в сфере оздоровления' (spa term avoided)."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -74,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "Специалисты сферы оздоровления, терапевты и консультанты по оздоровлению.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness fraternity' rendered as 'специалисты сферы оздоровления' (spa term avoided)."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -171,16 +141,6 @@
    "unchangedReason": null,
    "issues": [
     "Appears to be an internal implementation note rather than patient-facing copy; translated as displayed."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "Kairali – Аюрведическая лечебная деревня предлагает специализированные курсы обучения аюрведе и оздоровлению для всех, кто стремится глубоко понять аюрведу, йогу и холистическую терапию. Наши программы рассчитаны на специалистов по оздоровлению, аюрведических практиков, инструкторов йоги и всех, кто заботится о здоровье, и сочетают практическое и теоретическое обучение. Сертифицированная подготовка преподавателей йоги скоро появится; запись на неё пока не открыта. Занятия йогой и медитацией для посетителей доступны отдельно. Чтобы уточнить наличие других учебных курсов, свяжитесь с нашей командой.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest yoga and meditation' rendered with 'для посетителей' (visitors) instead of guests."
    ]
   }
  ]

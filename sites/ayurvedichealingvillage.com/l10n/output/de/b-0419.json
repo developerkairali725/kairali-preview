@@ -4,16 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_cff08ec54046be17e254",
-   "sourceHash": "cff08ec54046be17e254492f3a26def2ea1939a0ed7d7c8b385c4b05847b19e1",
-   "text": "Die bekannte Sängerin und Schauspielerin Raageshwari praktiziert heute Gesichtsyoga und Iyengar Yoga. Sie begann einen langen Weg der Zuversicht und Heilung, als bei ihr eine Fazialisparese (Bell’s Palsy) diagnostiziert wurde, eine Nervenerkrankung, die zur Lähmung der Gesichtsmuskulatur führt. Da Medikamente ihr nicht helfen konnten, stellte sie die Kraft ihrer Gesichtsmuskulatur durch Gesichtsyoga und Iyengar Yoga wieder her – ohne rekonstruktive Operation.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' -> 'Weg' per clinical language lock. Personal testimonial containing a medical outcome claim (Bell's Palsy recovery via yoga) translated faithfully without strengthening — flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
    "id": "t_7953f1be91a789403751",
    "sourceHash": "7953f1be91a7894037512c386ba6162621a2677aa81f388a6cad6e6f99225098",
    "text": "„Für mich war die persönliche Entwicklung während meiner Krankheit enorm. Heute weiß ich genau, was ich will, und das wurde möglich, weil ich während meiner Erkrankung Zeit hatte, mich selbst neu zu entdecken. Yoga, Meditation und ganzheitliche Heilung begannen, mein Leben zu bestimmen. Wenn man wirklich, wirklich an etwas glaubt, wird es wahr“, sagt Raageshwari.",
@@ -82,16 +72,6 @@
    "status": "translated",
    "unchangedReason": "Person's name.",
    "issues": []
-  },
-  {
-   "id": "t_6e06e2bb4c35fd191ed4",
-   "sourceHash": "6e06e2bb4c35fd191ed41e1fb38c2fe2c45255973f53443fa77428c9d5a759ec",
-   "text": "Der prominente Coach Santhosh Babu lädt Sie ein, ihn auf einem 5-tägigen Weg der Achtsamkeit zu begleiten – mit Fachleuten, die erstmals in Indien ihr Wissen über Tibetisches Yoga, Schwingungsheilung, integrative transpersonale Arbeit, Werkzeuge der Pranaheilung und Holotropes Atmen teilen. Das Retreat ist als allumfassende, tief bereichernde Erfahrung angelegt, die Sie mit sich selbst und mit anderen in Kontakt bringt, die ihren eigenen Weg der Achtsamkeit gehen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Mindfulness Journey' and 'journey of Mindfulness' -> 'Weg der Achtsamkeit' per clinical language lock; 'all-inclusive' rendered as 'allumfassende' to avoid package-holiday connotation."
-   ]
   },
   {
    "id": "t_34b92a0000112befba4f",

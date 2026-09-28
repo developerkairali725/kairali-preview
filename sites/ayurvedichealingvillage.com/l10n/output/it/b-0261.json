@@ -4,16 +4,6 @@
  "locale": "it",
  "units": [
   {
-   "id": "t_fdb1dac49037eead4992",
-   "sourceHash": "fdb1dac49037eead49922d23c89ed106d295bcd3d2f394710ee90b0dd68ed23e",
-   "text": "MEDICINA AYURVEDICA I rimedi erboristici ayurvedici di Kairali vantano un’importante eredità nella tradizione di famiglia. Fondata nel 1948 dal Dr. K. S. Vasudevan, padre del Sig. K.V. Ramesh, Spalabs ha dato vita a diverse formulazioni e integratori di grande successo. Basate su autentici ingredienti ayurvedici e sui processi tradizionali delle nostre antiche scritture, queste ricette originali sono state costantemente perfezionate nel corso degli ultimi sessant’anni, dando origine alla nostra moderna gamma di rimedi erboristici ayurvedici. L’ampia gamma di prodotti ayurvedici di Kairali comprende un centinaio di autentici medicinali erboristici, prodotti per la cura della pelle e del corpo e attrezzature per trattamenti, disponibili per i nostri partner e affiliati in franchising per la distribuzione nei loro punti vendita.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'spa equipment' rendered as 'attrezzature per trattamenti' and 'spa franchisees' as 'affiliati in franchising' (banned: spa). 'Spalabs' kept as a company name."
-   ]
-  },
-  {
    "id": "t_dfefaebf50126a09c2a2",
    "sourceHash": "dfefaebf50126a09c2a286ed6e97ed32a1e2e32f90aca5bbf1a03534ffc29139",
    "text": "30% di sconto",
@@ -61,17 +51,6 @@
    "unchangedReason": null,
    "issues": [
     "'Kairali Retreat' rendered as 'Kairali' (retreat/resort register avoided)."
-   ]
-  },
-  {
-   "id": "t_e62d96f387b5db3d031c",
-   "sourceHash": "e62d96f387b5db3d031c712d237e2a12e0111f9738c0f503a572a3b4db6dbf60",
-   "text": "Risposte alle domande dei pazienti su Kairali, Palakkad: consulto, ricovero, programmi, durata, ville, dieta, pagamenti, viaggio, visti e follow-up.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Condensed to fit the 155-character seo.description limit; the mention of downloadable price lists and e-book was dropped.",
-    "t_e62d96f387b5db3d031c banned-term viaggio"
    ]
   },
   {

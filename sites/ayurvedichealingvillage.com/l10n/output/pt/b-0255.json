@@ -4,16 +4,6 @@
  "locale": "pt",
  "units": [
   {
-   "id": "t_fff1475301a4620d71f0",
-   "sourceHash": "fff1475301a4620d71f06d193d7e701ad2ee8e686356cc9ed2c040ecfab5444c",
-   "text": "Profissionais do setor do bem-estar, gestores e proprietários de centros de bem-estar e salões, profissionais de TI e diplomatas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness industry' / 'spa & salon' rendered as 'setor do bem-estar' / 'centros de bem-estar e salões' (banned term 'spa' avoided)."
-   ]
-  },
-  {
    "id": "t_048da081c60368cb7284",
    "sourceHash": "048da081c60368cb728424e2b119b1bb86cbbe2b92f479ae2da89c3b116b8dd1",
    "text": "Programa intensivo de formação em Ayurveda5 Dias",
@@ -28,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cf02ba384be195797d75",
-   "sourceHash": "cf02ba384be195797d75083f6f3ee7df9ef42d47000cdf28701d9e3c2b77de57",
-   "text": "Profissionais de bem-estar, formadores, terapeutas, médicos, terapeutas holísticos, nutricionistas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness professionals' rendered as 'Profissionais de bem-estar' (banned term 'spa' avoided)."
-   ]
   },
   {
    "id": "t_3b1cfa63d7d9c2bcf3b8",
@@ -70,16 +50,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ee331bcd0838fd0a854a",
-   "sourceHash": "ee331bcd0838fd0a854a361fafd705de4a385c8544bd572bd7e8b91faea93889",
-   "text": "Profissionais do bem-estar, terapeutas e consultores de bem-estar.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa & wellness fraternity' rendered as 'Profissionais do bem-estar' (banned term 'spa' avoided)."
-   ]
   },
   {
    "id": "t_9f088dbebd6c3c70a5dd",
@@ -167,16 +137,6 @@
    "unchangedReason": null,
    "issues": [
     "Appears to be an internal implementation note rather than patient-facing copy; path kept verbatim. Flag for review whether it should render."
-   ]
-  },
-  {
-   "id": "t_37fea32034ad2330d1a0",
-   "sourceHash": "37fea32034ad2330d1a08f78cfda0861f851252ed75d142ef6e660f379b46b4b",
-   "text": "O Kairali – The Ayurvedic Healing Village oferece cursos especializados de formação em Ayurveda e bem-estar para quem procura um conhecimento aprofundado do Ayurveda, do yoga e das terapias holísticas. Os nossos programas destinam-se a profissionais de bem-estar, praticantes ayurvédicos, instrutores de yoga e entusiastas da saúde, com oportunidades de aprendizagem prática e teórica. A Formação Certificada de Professores de Yoga estará disponível em breve; as inscrições ainda não estão abertas. A prática de yoga e meditação para visitantes está disponível separadamente. Contacte a equipa para confirmar a disponibilidade dos outros cursos de formação.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest yoga and meditation practice' rendered as 'prática de yoga e meditação para visitantes' (banned term 'guests' avoided)."
    ]
   }
  ]

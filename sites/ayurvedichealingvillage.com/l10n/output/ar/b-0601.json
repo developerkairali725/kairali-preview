@@ -116,16 +116,6 @@
    "issues": []
   },
   {
-   "id": "t_0997bc76eb0c3ff6be2f",
-   "sourceHash": "0997bc76eb0c3ff6be2f67f43f303c7550919150e3d5108e5ddbd8c1d1b9dd3d",
-   "text": "أفلام قصيرة عن أرجاء المكان ومرافق إقامة المرضى واليوغا والعلاجات الأيورفيدية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest spaces' rendered as 'مرافق إقامة المرضى' (patient accommodation spaces) per the banned-word rule."
-   ]
-  },
-  {
    "id": "t_d9b9dea10f6fffb20e6c",
    "sourceHash": "d9b9dea10f6fffb20e6cfdc8557d7fdc6adbf741c9eacde89c572c36a8779139",
    "text": "موضوعات الفيديو",
@@ -167,56 +157,6 @@
    "unchangedReason": null,
    "issues": [
     "Arrow mirrored to ← for RTL reading direction."
-   ]
-  },
-  {
-   "id": "t_cec402439f4595d74bd7",
-   "sourceHash": "cec402439f4595d74bd7994436cbbf78cd92172641ce3d66a9448461e509451e",
-   "text": "استمع إلى تجارب مرضانا ←",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'مرضانا' (our patients) per the banned-word rule; arrow mirrored to ← for RTL."
-   ]
-  },
-  {
-   "id": "t_f8a5f93ae44df1757906",
-   "sourceHash": "f8a5f93ae44df17579066a3732441200bd7461fcaf6e0f511d18310803f89d17",
-   "text": "آراء المرضى وقصصهم | كيرالي – قرية الشفاء الأيورفيدية",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 'المرضى' (patients) per the banned-word rule. Brand rendered with the approved term 'قرية الشفاء الأيورفيدية' for 'The Ayurvedic Healing Village'; revert to Latin brand form if the full brand must stay verbatim."
-   ]
-  },
-  {
-   "id": "t_4fd494eb095b38f46e84",
-   "sourceHash": "4fd494eb095b38f46e84baed0fc8c02ff6d25a9c128225f6e466fdddc3865d94",
-   "text": "استمع إلى مرضى من الهند ومن مختلف أنحاء العالم. شاهد قصصهم، واقرأ شهاداتهم المترجمة، وتصفّح التقييمات على Google وTripadvisor.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'مرضى' (patients) per the banned-word rule."
-   ]
-  },
-  {
-   "id": "t_c7644d34927a932382d4",
-   "sourceHash": "c7644d34927a932382d4f63b16856708dd97f89739bb22a0b1ddff5ec02b8bfa",
-   "text": "انتقل إلى آراء المرضى",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest' rendered as 'المرضى' (patients) per the banned-word rule."
-   ]
-  },
-  {
-   "id": "t_04c6cec43258ee3cc9e8",
-   "sourceHash": "04c6cec43258ee3cc9e83f71af3a182701e6c60f53eb3506b08984bff850f7f4",
-   "text": "آراء المرضى",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 'المرضى' (patients) per the banned-word rule."
    ]
   }
  ]

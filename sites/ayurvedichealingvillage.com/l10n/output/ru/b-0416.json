@@ -104,16 +104,6 @@
    "issues": []
   },
   {
-   "id": "t_0c43cec721cfe000b4af",
-   "sourceHash": "0c43cec721cfe000b4af6f7006e7aabf0fbdb4e19b4327141f33014d0c57dbd7",
-   "text": "Комфортабельная вилла, спроектированная по принципам Васту (древнеиндийский фэн-шуй)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned 'Luxury' replaced with 'comfortable'."
-   ]
-  },
-  {
    "id": "t_31b2b5f825942a149c87",
    "sourceHash": "31b2b5f825942a149c87f6881c128c9a65c539de6b27ebd80f190c730105e947",
    "text": "Вегетарианское аюрведическое питание (3 раза в день)",
@@ -206,16 +196,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_2526dc5a2d8f4a41b2a5",
-   "sourceHash": "2526dc5a2d8f4a41b2a52d205dfa9f7b351568ad214f75176ed5cb407b9855c1",
-   "text": "«Откройте для себя исключительный путь к благополучию и комфорту в нашем Maharaja Suite. Благодаря своему величию и непревзойдённой элегантности этот номер создан, чтобы перенести вас в мир полного блаженства. Окунитесь в королевскую атмосферу и ощутите воплощение аюрведического восстановления.»",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned 'journey' rendered as 'path' and 'luxury' as 'comfort'; 'Maharaja Suite' kept as a proper room name. Note: 'люкс' here means suite (room category), not 'luxury'."
-   ]
   }
  ]
 }

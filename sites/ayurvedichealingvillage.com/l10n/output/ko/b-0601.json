@@ -116,16 +116,6 @@
    "issues": []
   },
   {
-   "id": "t_0997bc76eb0c3ff6be2f",
-   "sourceHash": "0997bc76eb0c3ff6be2f67f43f303c7550919150e3d5108e5ddbd8c1d1b9dd3d",
-   "text": "부지 전경, 방문객 공간, 요가 및 아유르베다 치료를 담은 짧은 영상입니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest spaces' rendered as '방문객 공간' (visitor spaces) per the banned-word rule."
-   ]
-  },
-  {
    "id": "t_d9b9dea10f6fffb20e6c",
    "sourceHash": "d9b9dea10f6fffb20e6cfdc8557d7fdc6adbf741c9eacde89c572c36a8779139",
    "text": "영상 주제",
@@ -164,56 +154,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_cec402439f4595d74bd7",
-   "sourceHash": "cec402439f4595d74bd7994436cbbf78cd92172641ce3d66a9448461e509451e",
-   "text": "환자분들의 이야기 듣기 →",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as '환자분들' (patients) per the banned-word rule."
-   ]
-  },
-  {
-   "id": "t_f8a5f93ae44df1757906",
-   "sourceHash": "f8a5f93ae44df17579066a3732441200bd7461fcaf6e0f511d18310803f89d17",
-   "text": "환자 후기 및 이야기 | Kairali – The Ayurvedic Healing Village",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as '환자' (patient) per the banned-word rule; brand name kept verbatim per terms."
-   ]
-  },
-  {
-   "id": "t_4fd494eb095b38f46e84",
-   "sourceHash": "4fd494eb095b38f46e84baed0fc8c02ff6d25a9c128225f6e466fdddc3865d94",
-   "text": "인도와 전 세계에서 오신 환자분들의 이야기를 들어 보십시오. 영상 속 이야기를 시청하고, 번역된 후기를 읽고, Google 및 Tripadvisor 리뷰를 살펴보실 수 있습니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as '환자분들' (patients) per the banned-word rule."
-   ]
-  },
-  {
-   "id": "t_c7644d34927a932382d4",
-   "sourceHash": "c7644d34927a932382d4f63b16856708dd97f89739bb22a0b1ddff5ec02b8bfa",
-   "text": "환자 후기로 건너뛰기",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest reviews' rendered as '환자 후기' (patient reviews) per the banned-word rule."
-   ]
-  },
-  {
-   "id": "t_04c6cec43258ee3cc9e8",
-   "sourceHash": "04c6cec43258ee3cc9e83f71af3a182701e6c60f53eb3506b08984bff850f7f4",
-   "text": "환자 후기",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest reviews' rendered as '환자 후기' (patient reviews) per the banned-word rule."
-   ]
   }
  ]
 }

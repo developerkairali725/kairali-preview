@@ -78,32 +78,12 @@
    "issues": []
   },
   {
-   "id": "t_71b1a16ac8dfabadf03c",
-   "sourceHash": "71b1a16ac8dfabadf03ceccc963c72a4e864ffa25f80ab5b6009d23ce477ba41",
-   "text": "Keine Pauschalpakete. Jede Patientin und jeder Patient wird von einem qualifizierten Arzt untersucht, der einen Behandlungsplan erstellt, der auf Körper, Vorgeschichte und Bedürfnisse individuell abgestimmt ist.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest' rendered as 'Patientin/Patient' per the clinical register."
-   ]
-  },
-  {
    "id": "t_32ff5b1d3ff102ee2a42",
    "sourceHash": "32ff5b1d3ff102ee2a428fc05517ff3c2746be1800ca1ce08d57e25ebdaad6fe",
    "text": "Individuelle Behandlungsprotokolle",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6b01b8c66683d84a642b",
-   "sourceHash": "6b01b8c66683d84a642bdcabede6651c052b3db06aa5df2330a0dd5f4041e412",
-   "text": "Keine zwei Patienten erhalten dieselbe Behandlung. Ayurveda erkennt die Individualität jedes Menschen an – unsere Betreuung spiegelt das in jedem Schritt wider.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'Patienten' per the clinical register."
-   ]
   },
   {
    "id": "t_6d515e675053bc9704f5",
@@ -136,16 +116,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_8ab391c5e0282ecb631b",
-   "sourceHash": "8ab391c5e0282ecb631b9bbf28b69c9e0a80483aa2d3cbf16db6aa8c4914d59b",
-   "text": "Der Ablauf",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Journey' rendered as 'Ablauf' (process) per the banned-word rule."
-   ]
   },
   {
    "id": "t_1472cd097c5aeff7d847",

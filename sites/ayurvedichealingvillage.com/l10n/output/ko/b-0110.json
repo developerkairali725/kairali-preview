@@ -4,33 +4,12 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_a4c1715b8def21141de2",
-   "sourceHash": "a4c1715b8def21141de2771480b32631a00478deb9fd3ca0a1d9b07beef88b7e",
-   "text": "동영상 재생 — 최상의 전인적 치유: Kairali에서 환자가 들려주는 이야기",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest' rendered as 환자 (patient) per KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_1cd506b1bff1a21a7e81",
    "sourceHash": "1cd506b1bff1a21a7e8101fbca449d1c5f2ad7b6197452e0dbc0ba0fa6416513",
    "text": "나무 베란다에서 염주를 들고 있는 흰 셔츠와 주황색 도티 차림의 수염 난 남성",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_caeb7c371547d86e68d1",
-   "sourceHash": "caeb7c371547d86e68d153026e68b45cb073b7b778627ec5ba0e1d6ee71fab1a",
-   "text": "동영상 재생 — 건강을 향한 여정: Kairali에서 Bikash Das 님이 경험한 변화",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Video title contains 'Journey'; rendered as 건강을 향한 과정 would alter a proper video title. Kept literal 여정 since this is the title of a named video — review whether to substitute 과정 (path/process) per language lock.",
-    "t_caeb7c371547d86e68d1 banned-term-from-source 여정"
-   ]
   },
   {
    "id": "t_09425494d1f6b1b87876",

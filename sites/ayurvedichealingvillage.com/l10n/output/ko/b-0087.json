@@ -20,16 +20,6 @@
    "issues": []
   },
   {
-   "id": "t_3805f5d94fa0f56ad035",
-   "sourceHash": "3805f5d94fa0f56ad03593b5db27be866778f56a8c10f24b9252d2701a883dab",
-   "text": "도착 지점을 선택하시면 새 탭에서 Google 지도 운전 경로가 열립니다. 오타팔람 기차역에 도착하시거나 벵갈루루에서 오시는 경우, 환자 케어 팀이 마지막 이동 구간 계획을 도와드릴 수 있습니다. 현재 거리와 소요 시간은 실시간 경로에서 확인해 주십시오.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'final journey' rendered as 마지막 이동 구간 (final leg of travel) per KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_889abe7a1070aa94eb3f",
    "sourceHash": "889abe7a1070aa94eb3f6e9b23b965ed79f16122b94c5edb91010224762781cb",
    "text": "[[OPEN_1]]코임바토르 공항(CJB) — 경로 열기 ↗[[CLOSE_1]][[OPEN_2]]코치/코친 공항(COK) — 경로 열기 ↗[[CLOSE_2]][[OPEN_3]]팔라카드 기차역 — 경로 열기 ↗[[CLOSE_3]][[OPEN_4]]오타팔람 기차역 — 경로 열기 ↗[[CLOSE_4]][[OPEN_5]]벵갈루루/방갈로르 — 경로 열기 ↗[[CLOSE_5]][[OPEN_6]]현재 위치 — 경로 열기 ↗[[CLOSE_6]]",

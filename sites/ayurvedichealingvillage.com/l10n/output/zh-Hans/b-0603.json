@@ -4,16 +4,6 @@
  "locale": "zh-Hans",
  "units": [
   {
-   "id": "t_4e0e9015547258ab56c4",
-   "sourceHash": "4e0e9015547258ab56c43a6e83ece604f668dd441a661b2b3f18590def582ec5",
-   "text": "前往 Google Maps 和 Tripadvisor，查看更多患者与来访者的反馈、来访者拍摄的照片以及近期经历。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest feedback' rendered as 患者与来访者的反馈 and 'traveller photographs' as 来访者拍摄的照片, per the KTAHV language lock (no 'guests')."
-   ]
-  },
-  {
    "id": "t_c1f1a53c493fa0c2470f",
    "sourceHash": "c1f1a53c493fa0c2470f8ddad8dd6c8e251926baa4ac2e4e5117c084417c11ad",
    "text": "您的经历对我们很重要",
@@ -120,56 +110,6 @@
    "issues": []
   },
   {
-   "id": "t_dfea991cb98da9cc33d2",
-   "sourceHash": "dfea991cb98da9cc33d22dbfab76e4b0f1d9d1d3bb45a908941a5808d53a6266",
-   "text": "以下为患者与来访者评价及 Kairali 已发布档案的精选摘录。打开来源即可阅读完整内容。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest reviews' rendered as 患者与来访者评价, per the KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_b9bcadbc596da558a04d",
-   "sourceHash": "b9bcadbc596da558a04d70bc9f8c74e6f231a4545c503fef99f17a60c2cd80dd",
-   "text": "来访者所在地",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 来访者 (visitor), per the KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_196cbccb71827c14f48e",
-   "sourceHash": "196cbccb71827c14f48edb99fbf0c96c0126f48169e13dce5ccbaebe5a91fd92",
-   "text": "全部来访者",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 来访者 (visitors), per the KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_fd2cd1d5f76872314085",
-   "sourceHash": "fd2cd1d5f768723140852000c1cb257b454318d6af1fb49991d70d7a179495ce",
-   "text": "来自印度的来访者",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 来访者 (visitors), per the KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_2a3b0632cd3591c92599",
-   "sourceHash": "2a3b0632cd3591c9259902025012b2e839a0e0407810e5d0b5a84333340b7f96",
-   "text": "国际来访者",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 来访者 (visitors), per the KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_0ad7d0a61227eb0a2496",
    "sourceHash": "0ad7d0a61227eb0a249666f105827ed1f35a3c57dc3aa1f59f3abe4e4683e8d4",
    "text": "摘录阅读语言：",
@@ -204,16 +144,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_1168bc59127b4dc874d0",
-   "sourceHash": "1168bc59127b4dc874d089c3e3d844f12475a08e7642d3fe74edc692dd8aa094",
-   "text": "。仅在来源注明时显示来访者所在地。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment that continues the previous sentence; 'Guest' rendered as 来访者, per the KTAHV language lock."
-   ]
   },
   {
    "id": "t_e965726ad8e0e0d42741",
