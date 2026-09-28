@@ -187,7 +187,28 @@
       noticeUnderMenu();
       switcherContrast();
       templateLaunchers();
+      enquiryPreselect();
     } catch (e) { /* never break the page */ }
+  }
+  // TF-18 (owner, 28 Sep 2026): a treatment page's enquiry button opens /enquiry-form/?programme=treatment and the
+  // form's existing, editable "What's it about?" select starts on its existing "Planning a treatment programme"
+  // option. Only a known key maps (unknown or missing → the form is left exactly as it is); the option is taken by
+  // its POSITION in the existing list because locales translate the labels; a visitor's own choice is never
+  // overridden. The value goes through the select's normal change event, so the form's state, validation, consent,
+  // field names and submission transport are the form's own — nothing here submits or stores anything.
+  // The server snapshot's form is replaced when the live view mounts, so each select element is handled once.
+  var PRESELECT = { treatment: 1 };
+  function enquiryPreselect() {
+    var key = new URLSearchParams(location.search).get('programme');
+    if (!key || !Object.prototype.hasOwnProperty.call(PRESELECT, key)) return;
+    var sel = document.querySelector('form[data-form="contact"] select[name="programme"]');
+    if (!sel || sel.hasAttribute('data-ahv-preselected')) return; // not rendered yet, or already handled
+    sel.setAttribute('data-ahv-preselected', '');
+    var opt = sel.options[PRESELECT[key]];
+    if (!opt || sel.selectedIndex > 0) return;
+    if ((document.documentElement.lang || 'en').slice(0, 2) === 'en' && !/treatment programme/i.test(opt.text)) return; // list changed: do nothing
+    Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(sel, opt.value);
+    sel.dispatchEvent(new Event('change', { bubbles: true }));
   }
   // The templates' own floating Priya / WhatsApp launchers are replaced by #ahv-contact-controls.
   // chrome.css hides them by their English aria-label; locale pages translate that label, so they
