@@ -1948,3 +1948,27 @@ Every Ayurveda, Yoga and Training price list PDF already carries the airport/rai
 from Palakkad station, Coimbatore airport, Cochin/Calicut airport); the OPD list correctly has none. If the "new PDF
 versions awaiting team feedback" are somewhere other than AHV-PDF-DESIGN-FAMILY-2026-09-22, send the location. The
 same PDFs print "Luxury Sedan" and "Spa & Wellness Collection" — KTAHV-locked words (Q-AHV-FAQ-FACT-CONFLICTS item 3).
+
+## Q-AHV-L10N-LINT-SCOPE — 2026-09-28 17:39:41 IST
+PR309 brand-lint: 75 findings (parent brand-lint-actionable.txt). 9 were real and are fixed (f0a931ee: the physician
+written "Dr. Deepu John" in 7 AR/FR units + 1 tool provenance string). The other 66 are approved content the lint
+cannot place, and the agent may NOT change the gate itself (a precision patch was refused as a CI bypass, correctly —
+this is the owner's call). They are:
+1. 52 × wrong-contact-email: career@kairali.com in 4 translated units × 13 files. l10n/source/units.json traces all
+   four to APPROVED English surfaces the lint already permits (3 × policy-family-data.js privacy/recruitment rights,
+   1 × the article careers "Request deletion at career@kairali.com; …" sentence; parent HR-LINT-SOURCE-MAPPING.json).
+   The lint scopes the exception by FILE PATH, and a batch file (l10n/output/<loc>/b-NNNN.json) mixes many pages.
+2. 13 × group-attached-1908: "© 1908 — [[VAR_1]] Kairali …" — [[VAR_1]] is the extractor's placeholder for the
+   computed year (the English `{…}` form the rule already accepts); nothing typed ships.
+3. 1 × hardcoded-centres-count: l10n/glossary.json (frozen PDF termbase, hash-pinned in FROZEN.json) keys the
+   resolved "five countries" sentence; the site renders {{COUNTRIES_PHRASE}}.
+Options: (A) owner-approved lint precision — a translated unit inherits its English source's verdict, evaluated by
+the SAME rule at its origin file; `[[VAR_n]]` counts as a computed interpolation; frozen termbase judged at its source.
+(B) replace career@ with info@ in the privacy rights text (contradicts D-20260915-06 and the 25 Sep CV-channel ruling).
+(C) record a scoped owner exception. Recommendation: A — nothing becomes permitted that its English source would not pass.
+Also open on PR309 (pre-existing, documented in docs/reports/2026-09-24-ahv-final-staging/GO-LIVE-CHECKLIST.md item 13):
+factory-spec on "/" — footer lacks the canonical group social set with data-social (x/youtube/linkedin/facebook) vs the
+approved KTAHV property footer; the newsletter/search forms carry no consent checkbox + privacy link; 0 data-cta hooks
+(completion belongs to conversion wiring, PR #315/#317, without activating staging analytics). Each touches a
+consent/analytics or marketing-fact decision (HARD GATES 6/11), so no agent change was made. LP Lighthouse budgets are
+Vikash's LPs (not in this scope). Authenticated owner review on the final PR309 head remains required.
