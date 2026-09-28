@@ -65,6 +65,10 @@ const CHECKS = [
   // FOOTER-13: every footer lists the 13 released languages, current one named not linked
   ["FOOTER-13", "/", { footerLangs: 13 }], ["FOOTER-13", "/sightseeing/", { footerLangs: 13 }], ["FOOTER-13", "/walk-in-ayurveda-treatment/", { footerLangs: 13 }],
   ["FOOTER-13", "/de/", { footerLangs: 13 }], ["FOOTER-13", "/ar/", { footerLangs: 13 }], ["FOOTER-13", "/ja/all-programs/", { footerLangs: 13 }],
+  // round 11 — owner regressions (28 Sep): regression coverage only; closure evidence is the dedicated hosted checks
+  ["AROGYA", "/arogya-kendra/", { has: ["The Arogya Kendra idea", "Other ways to work with Kairali", "Contact us about an Arogya Kendra"], not: ["Where we are", "Not sure which programme fits?"] }],
+  ["MAPS", "/social-responsibilities/", { not: ["Where we are"] }],
+  ["STAFF-01", "/", { has: ["Dr. Adhina U.B.", "Resident Medical Officer", "Dr. Aashitha P.S."] }],
   ["NOTE", "/search-results/", { not: ["design review"] }],
   // round 7: owner regression + desktop composition
   ["PKG", "/packages/", { not: ["Open the category navigation"] }],
