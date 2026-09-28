@@ -24,7 +24,6 @@
   if (!root) return;
   var WA_HREF = "https://wa.me/919289838797";
   var WA_TEXT = "WhatsApp +91 92898 38797";
-  var COPY = ["©", 1908, "—", new Date().getFullYear(), "Kairali — The Ayurvedic Healing Village."].join(" ");
   var scheduled = false;
 
   function visible(el) {
@@ -69,7 +68,15 @@
     if (!bar) return;
     var span = document.createElement("span");
     span.setAttribute("data-ahv-copyright", "1");
-    span.textContent = COPY;
+    // the year is computed here, so it carries the same marker the footer component's live binding gets
+    // (tools/repair-computed-year.mjs): a prerender snapshot then records it as computed, not typed (D-ROLLING-NUMBER)
+    span.appendChild(document.createTextNode("© 1908 — "));
+    var yr = document.createElement("span");
+    yr.className = "sc-interp";
+    yr.setAttribute("data-dc-computed", "yearNow");
+    yr.textContent = String(new Date().getFullYear());
+    span.appendChild(yr);
+    span.appendChild(document.createTextNode(" Kairali — The Ayurvedic Healing Village."));
     // the bar's own type: if it is a flex column of spans the new span joins it;
     // otherwise it becomes its own line at the bar's font
     span.style.display = "block";

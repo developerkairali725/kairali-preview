@@ -305,6 +305,15 @@ const run = async () => {
     stdio: "inherit",
   });
 
+  // The footer year is a live binding; a fresh snapshot serialises it as a bare span, which banned-string-lint
+  // (D-ROLLING-NUMBER) cannot tell from a typed year. tools/repair-computed-year.mjs marks it — its header says
+  // "re-run after any prerender", and the 28 Sep full refresh skipped it (60 CI findings), so it is chained here,
+  // batch by batch (the tool never touches more than 25 snapshots per run).
+  if (!LOCALE) {
+    const n = fs.readdirSync(outDir).filter((f) => f.endsWith(".html")).length;
+    for (let batch = 0; batch * 25 < n; batch++) execFileSync(process.execPath, [path.join(HERE, "repair-computed-year.mjs"), `--batch=${batch}`], { stdio: "ignore" });
+  }
+
   if (LOCALE) {
     // store compressed; the uncompressed working copies are removed
     const { gzipSync } = await import("node:zlib");
