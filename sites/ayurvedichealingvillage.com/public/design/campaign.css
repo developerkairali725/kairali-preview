@@ -328,9 +328,15 @@
 .campaign-more[open]>summary {margin-bottom:24px;}
 .campaign-more[open]>summary::after {content:'Close details';}
 
-/* Hero copy is light, but enquiry-card text sits on cream. */
-#ahv-design-root[data-ahv-family="campaign-retreat"]:not([data-ahv-route="/kairali-air-india-maharaja-club.html"]) form :is(h2,h3,label,p,span) {
+/* Hero copy is light, but enquiry-card text sits on cream. Only cream cards: the dark consultation panels
+   (inline background #43331E — /ayurveda-retreat-kerala.html, /treatment-in-kerala.html) and the footer newsletter
+   carry their own light text, which this rule turned dark-on-dark (1.3:1 and 1.01:1 measured; Vikash's "missing
+   text", CAMPAIGNS 28 Sep 2026). Button labels keep their own contrast (the rule turned "Send Enquiry" 2.05:1). */
+#ahv-design-root[data-ahv-family="campaign-retreat"]:not([data-ahv-route="/kairali-air-india-maharaja-club.html"]) form:not(.ahv-newsletter):not([style*="67, 51, 30"]):not([style*="43331E" i]) :is(h2,h3,label,p,span):not(button *, [role="button"] *) {
   color: #2A2118 !important;
+}
+#ahv-design-root[data-ahv-family="campaign-retreat"]:not([data-ahv-route="/kairali-air-india-maharaja-club.html"]) form:not(.ahv-newsletter) :is(button, [role="button"]) :is(span, p) {
+  color: inherit !important; /* label takes its button's own text colour (dark on gold, light on brown) */
 }
 
 /* =======================================================================
