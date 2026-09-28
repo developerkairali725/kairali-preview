@@ -471,3 +471,13 @@
     grid-column:1 / -1 !important;
   }
 }
+
+/* ---- owner image batch 2 (28 Sep 2026): crop focus for the new opening images in the desktop hero band ------------
+   The owner asked that these "fit well in terms of sizing and cropping". The band is a ~2.65:1 cover crop of a 3:2
+   photograph; centred, AHV-IMG-029 lost the subject's head, so each image states where its subject is. */
+@media (min-width:1024px) {
+  #ahv-design-root img[src*="owner-approved-20260928/ahv-img-029"] { object-position:50% 10% !important; }
+  #ahv-design-root img[src*="owner-approved-20260928/ahv-img-030"] { object-position:50% 50% !important; }
+  #ahv-design-root img[src*="owner-approved-20260928/ahv-img-031"] { object-position:50% 45% !important; }
+  #ahv-design-root img[src*="owner-approved-20260928/ahv-img-034"] { object-position:50% 65% !important; }
+}
