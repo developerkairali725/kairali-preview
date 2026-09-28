@@ -273,6 +273,29 @@
    "allowMissing": [
     "1"
    ]
+  },
+  {
+   "id": "t_63f6ba006aaefc89ef69",
+   "sourceHash": "63f6ba006aaefc89ef69c32c321b0bf391d786ff6045cfa01fbc51aa5a52ce63",
+   "locale": "fr",
+   "requireText": "9 h à 17 h",
+   "reason": "'routine of 9 to 5' → routine de 9 h à 17 h: French 24-hour clock for the same office hours; no new fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "5"
+   ],
+   "allowAdded": [
+    "17"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "nl",
+   "requireText": "Eendaags",
+   "reason": "'1-day' → Eendaags: Dutch compound 'one-day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
   }
  ]
 }
