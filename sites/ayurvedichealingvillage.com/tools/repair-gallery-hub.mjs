@@ -44,7 +44,9 @@ for (const g of (Array.isArray(g2026.routes) ? g2026.routes : Object.entries(g20
   cards.push({ route, title: g.h1 || g.title, cover, alt: g.h1 || g.title, note: count ? `${count} photographs` : "" });
 }
 // 2. the other gallery routes the site serves
-const extra = ["/ayurveda-gallery/", "/video-gallery/", "/virtual-tour/"];
+// a gallery the protection map 301s (e.g. /ayurveda-gallery/ → /treatments-gallery/, EF-21) gets no card of its own
+const REDIRECTED = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/redirect-map.json"), "utf8")).redirects));
+const extra = ["/ayurveda-gallery/", "/video-gallery/", "/virtual-tour/"].filter((p) => !REDIRECTED.has(p));
 const datasets = {};
 for (const p of extra) {
   const r = manifest.routes.find((x) => x.path === p);

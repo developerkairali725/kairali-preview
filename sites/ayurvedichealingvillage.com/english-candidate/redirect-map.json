@@ -174,6 +174,16 @@
         "clicks": null,
         "impressions": null
       }
+    },
+    "/ayurveda-gallery/": {
+      "to": "/treatments-gallery/",
+      "reason": "Owner-approved consolidation (EF-21): the Ayurveda Gallery held eight uncaptioned legacy banner images and generic copy; the Treatment Gallery covers the same intent with verified on-site photographs. Per-image audit (worker, 28 Sep 2026): none of the eight carries AHV provenance — five are stock-style still lifes/spa props, one an illustration, one a stock paste scene; two plausible therapy photos (AHV-Gallery-06, -08) have no provenance record and are listed for the owner image review instead of being moved into the verified set.",
+      "gsc": {
+        "clicks": 2,
+        "impressions": 72,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."

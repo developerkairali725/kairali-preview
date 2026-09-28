@@ -261,21 +261,6 @@
    "ja": "/ja/awards-and-accreditations/",
    "ko": "/ko/awards-and-accreditations/"
   },
-  "/ayurveda-gallery/": {
-   "en": "/ayurveda-gallery/",
-   "hi": "/hi/ayurveda-gallery/",
-   "de": "/de/ayurveda-gallery/",
-   "fr": "/fr/ayurveda-gallery/",
-   "es": "/es/ayurveda-gallery/",
-   "it": "/it/ayurveda-gallery/",
-   "pt": "/pt/ayurveda-gallery/",
-   "nl": "/nl/ayurveda-gallery/",
-   "ru": "/ru/ayurveda-gallery/",
-   "ar": "/ar/ayurveda-gallery/",
-   "zh-Hans": "/zh/ayurveda-gallery/",
-   "ja": "/ja/ayurveda-gallery/",
-   "ko": "/ko/ayurveda-gallery/"
-  },
   "/ayurveda-offers/": {
    "en": "/ayurveda-offers/",
    "hi": "/hi/ayurveda-offers/",
@@ -4486,6 +4471,66 @@
   "/ko/map/": {
    "to": "/ko/how-to-reach/",
    "basis": "mirrors the English protection-map 301 /map/ → /how-to-reach/",
+   "clicks": null
+  },
+  "/hi/ayurveda-gallery/": {
+   "to": "/hi/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/de/ayurveda-gallery/": {
+   "to": "/de/behandlungsgalerie/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/fr/ayurveda-gallery/": {
+   "to": "/fr/galerie-de-traitements/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/es/ayurveda-gallery/": {
+   "to": "/es/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/it/ayurveda-gallery/": {
+   "to": "/it/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/pt/ayurveda-gallery/": {
+   "to": "/pt/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/nl/ayurveda-gallery/": {
+   "to": "/nl/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/ru/ayurveda-gallery/": {
+   "to": "/ru/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/ar/ayurveda-gallery/": {
+   "to": "/ar/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/zh/ayurveda-gallery/": {
+   "to": "/zh/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/ja/ayurveda-gallery/": {
+   "to": "/ja/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
+   "clicks": null
+  },
+  "/ko/ayurveda-gallery/": {
+   "to": "/ko/treatments-gallery/",
+   "basis": "mirrors the English protection-map 301 /ayurveda-gallery/ → /treatments-gallery/",
    "clicks": null
   }
  }

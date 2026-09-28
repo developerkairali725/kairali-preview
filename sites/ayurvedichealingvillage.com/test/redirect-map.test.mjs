@@ -38,8 +38,9 @@ const isLegacy = (s) => map.redirects[s].legacy === true;
 const manifestSources = sources.filter((s) => !isLegacy(s));
 const legacySources = sources.filter(isLegacy);
 
-test("both rulings are carried in full — eighteen manifest routes and two legacy destinations", () => {
-  assert.equal(manifestSources.length, 18, `expected 18 manifest redirects, found ${manifestSources.length}`);
+test("both rulings are carried in full — nineteen manifest routes and two legacy destinations", () => {
+  // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21, owner ruling 28 Sep 2026)
+  assert.equal(manifestSources.length, 19, `expected 19 manifest redirects, found ${manifestSources.length}`);
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 
@@ -105,6 +106,13 @@ test("original zero-click rulings and explicit owner consolidations are distingu
       assert.equal(rule.to, "/how-to-reach/");
       assert.equal(rule.ownerApproval, "2026-09-24 explicit consolidation request");
       assert.equal(rule.gsc.clicks, null);
+      continue;
+    }
+    if (s === "/ayurveda-gallery/") {
+      // EF-21: the page earns clicks, so it moves only under its own recorded owner ruling — asserted, not assumed
+      assert.equal(rule.to, "/treatments-gallery/");
+      assert.equal(rule.ownerApproval, "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)");
+      assert.equal(typeof rule.gsc.clicks, "number", "the measured clicks stay on record");
       continue;
     }
     if (s === "/founders-message/") {
