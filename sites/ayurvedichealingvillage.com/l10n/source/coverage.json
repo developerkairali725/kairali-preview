@@ -1,9 +1,9 @@
 {
- "sourceSetHash": "41900e13ae42277b6b56fd3118e0429643d2229fc2ebf5441fa21ecd36e9d036",
+ "sourceSetHash": "723c39f662503be1d963a453cccb9048cdaf91320c369c1952e113bb1e09dbde",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
-   "sha256": "4ec7d56d51f85f1e9fff2181f51849aec65926dd54345ce1429e21c74516d556",
+   "sha256": "a8e90100de988d7631e041697633cae49b74733c16f678c11d45c050b5dfc8de",
    "units": 77,
    "status": "covered"
   },
@@ -723,14 +723,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-sitemap-desktop.json",
-   "sha256": "d88077702f4bf467a0b598493673d147a9be75d94ca6a850b1db7ba4c0b175c8",
-   "units": 497,
+   "sha256": "e00db92449def9f208182676822f961899ad90344d32cfe8e965e5eb883ffc3a",
+   "units": 492,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sitemap-mobile.json",
-   "sha256": "ae5e720a89f4916660b63ab0195ffb93a03bc9c96b2190fdbba833f10e1792e6",
-   "units": 497,
+   "sha256": "1f5d84233dcb7770b76a46e62b8e5c0cabc28f633a07614586803cf2a718c6c8",
+   "units": 492,
    "status": "covered"
   },
   {
@@ -1035,13 +1035,13 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "39bdc514fcb9e8751fc4b18ce67ba0d4feae27a1c662b65b24c375ab200b9846",
+   "sha256": "714d8a0a5d8a7dfe1938a44b5c30bd7e5610b286727389ecca8f41107079655b",
    "units": 692,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "28bfcc8f025acf9fcfb3866e0661b4ac6304b7e867eac3e12a591a9b44a60e22",
+   "sha256": "bccd5a41e325d0c90088316dfb689fbfab47e4985fccc6e636e3d702be246068",
    "units": 631,
    "status": "covered"
   },
@@ -1071,13 +1071,13 @@
   },
   {
    "file": "public/ahv/assets/article-family-data.js",
-   "sha256": "74ce41606d91c43e9adc7ef0213c038812e532e633eed16f9930cc965a6f740d",
+   "sha256": "afed086694d0c86d355a58acf4f13225025612002b4d06870187ee42d16ab2a4",
    "units": 3987,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/article-family-render.js",
-   "sha256": "a83669d8b7366f9c6e50640e97603458dba350e0a029b91297a8e4d2233dbaa1",
+   "sha256": "a63501aa83e0bfc48cfaca3bead5877662612cd3508a8f3b9c06800a187b9e48",
    "units": 48,
    "status": "covered"
   },
@@ -1137,7 +1137,7 @@
   },
   {
    "file": "public/ahv/assets/collection-family-data.js",
-   "sha256": "42bf5384ba33df6821d2eb7cfc80e23f8acda0bf556539185bb4dcaa5b744e61",
+   "sha256": "d4cfaba114d6daf6466c51c0ed542dc9227f5280a2cc22c30a98386c35c0850c",
    "units": 1152,
    "status": "covered"
   },
@@ -1209,7 +1209,7 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "709883b631f4e4bf6d2934e9a322b2701e6aa564e84653133e273e404a3cccfe",
+   "sha256": "856366fa96bfd5decae45c0b15947468c13361e767ed284c44b1c6bf7b5aeaee",
    "units": 2859,
    "status": "covered"
   },
@@ -1251,8 +1251,8 @@
   },
   {
    "file": "public/ahv/assets/hist9-family-data.js",
-   "sha256": "042fb2ea9c7abb2b0807f82a2a0ec402a379ff3ebf4b1bdffe31d45109fc1e07",
-   "units": 2940,
+   "sha256": "d716f9aee7e1f618cc8e9c20858f695f1fda62bd34481b6f22eede00da683cec",
+   "units": 2938,
    "status": "covered"
   },
   {
@@ -1311,13 +1311,13 @@
   },
   {
    "file": "public/ahv/assets/past-retreats-data.js",
-   "sha256": "7eb1603c21becba8b080c8fa149533d240ed9016169b27ccb283713f68b74f3b",
-   "units": 68,
+   "sha256": "df79117608764a87c80073406d6817e237b05c5228ef2f4066dbf53a6564cf78",
+   "units": 69,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/photo-collections-data.js",
-   "sha256": "681665b361d33adf1631cce41fcb0c9ad7d858090ab7eff5269e5948c2e0d047",
+   "sha256": "7c5ae653c1a3714a0f9eef9318b2dcb4764f0f3604f70fc0c650a6152298e24e",
    "units": 1369,
    "status": "covered"
   },
@@ -1347,7 +1347,7 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "9c21f8f38bb4eb62b7f2301c3cfd2def54896dc115bcac0715bc4072fe719d63",
+   "sha256": "e9880c02ba6cd1945de7d31d88d187e92717c3d52035e2882e223af5bccab3b1",
    "units": 3045,
    "status": "covered"
   },
@@ -1431,7 +1431,7 @@
   },
   {
    "file": "public/ahv/assets/utility7-family-data.js",
-   "sha256": "217bf011cae3ab0369f9e48efa10b66bf03246b637999447d36bfd9ad431087e",
+   "sha256": "fa0240094ef825d26b7d1f65f7ff9422b578bae32a99d5e835369fb96079a3f8",
    "units": 1396,
    "status": "covered"
   },
@@ -1461,7 +1461,7 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "06eded3e9a4ae5939f1cdfc5573ad0af1425a1181ca3a1270798104c4e0aa60c",
+   "sha256": "8288132a05cead0fb0cee30a76febd022337bc5561b1ebbf502763536c7d313f",
    "units": 11,
    "status": "covered (curated allowlist)"
   },
@@ -1497,20 +1497,20 @@
   },
   {
    "file": "public/design/section-nav.data.js",
-   "sha256": "3c79cf63fb16cc7445b2653387c4399b9bf9a7d810af747b086fb0a9d8fd3194",
-   "units": 208,
+   "sha256": "e076be227a4c720c2c12cdf2832008c116d1ecf6cf6c9193416fa723b57aea29",
+   "units": 206,
    "status": "covered"
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "716fac4a990d96edf93400fa9253bce148aeb59cf1c730553e44c512b3872a42",
-   "units": 697,
+   "sha256": "d40eee13c571286b8a0968cbe3c2b0aa5cfd1bcec0932f8aeae37b1ac3adf29c",
+   "units": 691,
    "status": "covered (key whitelist)"
   },
   {
    "file": "english-candidate/site-tree.json",
-   "sha256": "9b332ea4b25d89ccc8a841f29bfb4fb3b453795110cdf0d0514e650a4955a7e9",
-   "units": 220,
+   "sha256": "537bcb9317245f842990df323adc5b7e9ac019ea6a33e5daa876fa348dc197d3",
+   "units": 218,
    "status": "covered (key whitelist)"
   },
   {
