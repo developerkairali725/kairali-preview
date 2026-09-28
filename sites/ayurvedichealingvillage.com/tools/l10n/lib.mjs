@@ -442,7 +442,11 @@ export const INTERNAL_KEYS = new Set(("reason sourceClass recordedOriginalSha256
 const INTERNAL_PROSE = /\b(governed|verbatim|packet|pointer|oracle|adjudicat\w*|sha-?256|dataset|renderer|prerender|payload|readback|H1|h[1-6]|canonical|sourceAlt|source (node|record|subtree|tree|tag|hero|anchor|order|position|title|head|alt|image|page|file|route|grid|label|heading|trail)|owner[- ]rul\w*|retained privately|poured from)\b/;
 const HASHLIKE = /^(?:[0-9a-f]{16,}|[A-Za-z0-9_-]{11}|\d{4}-\d\d-\d\d(?:T[\d:.]+(?:Z|[+-]\d\d:\d\d)?)?|T[\d:.]+Z?|-?[\d.]+(px|rem|em|%|vh|vw|s|ms|fr)?|[A-Z][A-Z0-9_]{3,}|en[_-]US)$/;
 export function isInternalDatum(keyPath, value) {
-  const key = keyPath.split(".").pop() || "";
+  const segs = keyPath.split(".");
+  const key = segs.pop() || "";
+  // A provenance container hides its whole subtree (29 Sep 2026: ef12.structural20260929.removed[].why "S1 stand-in
+  // photo" reached the translators because only the LAST key was tested).
+  if (segs.some((s) => /^ef\d{2}$/.test(s))) return true;
   if (INTERNAL_KEYS.has(key) || /Sha256$|Note$|Notes$|Rationale$|Provenance$|Evidence$|Policy$|Acceptance$|Instructions$|Private$|^ef\d{2}$|^externalImages$/.test(key)) return true; // efNN = owner-feedback provenance notes (26 Sep 2026), never rendered
   const t = value.trim();
   if (HASHLIKE.test(t) && !/\s/.test(t) && !/^[A-Z][a-z]+$/.test(t)) return true;

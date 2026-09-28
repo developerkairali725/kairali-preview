@@ -20,3 +20,7 @@ test("visible text in the same syntactic positions is still extracted", () => {
   assert.deepEqual(units("const m = ['Jan', 'Feb']; const s = open ? 'Open now' : 'Closed';"), ["Jan", "Feb", "Open now", "Closed"]);
   assert.deepEqual(units("x = { tree: [{ k: 't', v: 'not' }] }"), ["not"]);
 });
+
+test("strings anywhere under an efNN provenance key are not units", () => {
+  assert.deepEqual(units("x = { routes: [{ ef12: { structural: { removed: [{ ptr: '/a', why: 'S1 stand-in photo' }], reason: 'text-only cards' } }, label: 'Visible label' }] }"), ["Visible label"]);
+});
