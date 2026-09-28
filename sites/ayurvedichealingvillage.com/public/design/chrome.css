@@ -153,7 +153,8 @@
   /* body is viewport-high (support.js: html,body{height:100%}) and the page overflows it, so the clearance is an
      in-flow block after the page, not body padding: the bar plus the WhatsApp / chat controls above it (54px +
      24px gap), so at the end of the page no footer link sits under either; in the footers' own colour */
-  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px));background:#2A2014; }
+  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px);background:#2A2014; }
+  html[data-ahv-cta-bar-on][data-ahv-consent-open] body::after { height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px)); }
   html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
   html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }
 }
