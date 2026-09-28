@@ -1014,11 +1014,6 @@
        "children": []
       },
       {
-       "path": "/prav-simona-yoga-retreat/",
-       "title": "Prav & Simona 2017: summary",
-       "children": []
-      },
-      {
        "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
        "title": "Ananda Lahari Yoga & Ayurveda Retreat",
        "children": []
@@ -1854,12 +1849,6 @@
     "/archive-yoga-retreat/"
    ]
   },
-  "/prav-simona-yoga-retreat/": {
-   "section": "news",
-   "ancestors": [
-    "/archive-yoga-retreat/"
-   ]
-  },
   "/preventive-and-regenerative-treatment/": {
    "section": "programmes",
    "ancestors": [
@@ -2306,6 +2295,10 @@
   },
   "/map/": {
    "section": "visit",
+   "ancestors": []
+  },
+  "/prav-simona-yoga-retreat/": {
+   "section": "news",
    "ancestors": []
   },
   "/special-offers/": {

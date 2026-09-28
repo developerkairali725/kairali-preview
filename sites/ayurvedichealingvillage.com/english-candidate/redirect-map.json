@@ -184,6 +184,15 @@
         "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
       },
       "ownerApproval": "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
+    },
+    "/prav-simona-yoga-retreat/": {
+      "to": "/prav-simona-monsoon-yoga-retreat/",
+      "reason": "Owner-approved retreat archive consolidation (EF-24). Equivalence measured 28 Sep 2026: the target records both programmes of the same Prav & Simona retreat (17–22 and 23–30 Sept 2017) and every section of this page; its only unique content, two photographs, was moved into the target first (tools/repair-prav-simona-merge-ef24.mjs). Of 23 retreat/archive pages no other pair is a duplicate; distinct retreats stay separate.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-28 EF-24 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."

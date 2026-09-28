@@ -1180,12 +1180,6 @@
        "children": []
       },
       {
-       "path": "/prav-simona-yoga-retreat/",
-       "label": "Prav & Simona 2017: summary",
-       "link": true,
-       "children": []
-      },
-      {
        "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
        "label": "Ananda Lahari Yoga & Ayurveda Retreat",
        "link": true,
@@ -2160,14 +2154,6 @@
    ],
    "remove": null
   },
-  "/prav-simona-yoga-retreat/": {
-   "section": "news",
-   "crumbs": [
-    "/archive-yoga-retreat/",
-    "/prav-simona-yoga-retreat/"
-   ],
-   "remove": null
-  },
   "/product-range/": {
    "section": "about",
    "crumbs": [
@@ -2589,6 +2575,13 @@
     ],
     "blockPrefixes": []
    }
+  },
+  "/prav-simona-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/prav-simona-yoga-retreat/"
+   ],
+   "remove": null
   },
   "/special-offers/": {
    "section": "offers",
@@ -3469,13 +3462,6 @@
     "/prav-simona-monsoon-yoga-retreat/"
    ]
   },
-  "/prav-simona-yoga-retreat/": {
-   "section": "news",
-   "crumbs": [
-    "/archive-yoga-retreat/",
-    "/prav-simona-yoga-retreat/"
-   ]
-  },
   "/preventive-and-regenerative-treatment/": {
    "section": "programmes",
    "crumbs": [
@@ -4025,6 +4011,12 @@
    "section": "visit",
    "crumbs": [
     "/map/"
+   ]
+  },
+  "/prav-simona-yoga-retreat/": {
+   "section": "news",
+   "crumbs": [
+    "/prav-simona-yoga-retreat/"
    ]
   },
   "/special-offers/": {

@@ -38,9 +38,9 @@ const isLegacy = (s) => map.redirects[s].legacy === true;
 const manifestSources = sources.filter((s) => !isLegacy(s));
 const legacySources = sources.filter(isLegacy);
 
-test("both rulings are carried in full — nineteen manifest routes and two legacy destinations", () => {
-  // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21, owner ruling 28 Sep 2026)
-  assert.equal(manifestSources.length, 19, `expected 19 manifest redirects, found ${manifestSources.length}`);
+test("both rulings are carried in full — twenty manifest routes and two legacy destinations", () => {
+  // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21) + /prav-simona-yoga-retreat/ (EF-24), owner rulings 28 Sep 2026
+  assert.equal(manifestSources.length, 20, `expected 20 manifest redirects, found ${manifestSources.length}`);
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 
@@ -113,6 +113,13 @@ test("original zero-click rulings and explicit owner consolidations are distingu
       assert.equal(rule.to, "/treatments-gallery/");
       assert.equal(rule.ownerApproval, "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)");
       assert.equal(typeof rule.gsc.clicks, "number", "the measured clicks stay on record");
+      continue;
+    }
+    if (s === "/prav-simona-yoga-retreat/") {
+      // EF-24: a proven duplicate of the same retreat, moved only under its recorded owner ruling
+      assert.equal(rule.to, "/prav-simona-monsoon-yoga-retreat/");
+      assert.equal(rule.ownerApproval, "2026-09-28 EF-24 owner selected option 1 (OWNER-DECISIONS-LATEST.md)");
+      assert.equal(rule.gsc.clicks, null);
       continue;
     }
     if (s === "/founders-message/") {
