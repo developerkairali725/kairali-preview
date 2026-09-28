@@ -1,110 +1,99 @@
 {
- "at": "2026-09-25T15:59:46.231Z",
+ "at": "2026-09-28T03:11:20.036Z",
  "verdict": "FAIL",
  "perLocale": {
   "hi": {
-   "translated": 1030,
-   "missing": 13099,
-   "blocked": 0,
+   "translated": 14110,
+   "missing": 0,
+   "blocked": 7,
    "stale": 0
   },
   "de": {
-   "translated": 1030,
-   "missing": 13099,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   },
   "fr": {
-   "translated": 980,
-   "missing": 13149,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   },
   "es": {
-   "translated": 1010,
-   "missing": 13119,
-   "blocked": 0,
+   "translated": 14114,
+   "missing": 0,
+   "blocked": 3,
    "stale": 0
   },
   "it": {
-   "translated": 960,
-   "missing": 13169,
-   "blocked": 0,
+   "translated": 14114,
+   "missing": 0,
+   "blocked": 3,
    "stale": 0
   },
   "pt": {
-   "translated": 935,
-   "missing": 13194,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   },
   "nl": {
-   "translated": 935,
-   "missing": 13194,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   },
   "ru": {
-   "translated": 928,
-   "missing": 13201,
-   "blocked": 0,
+   "translated": 14112,
+   "missing": 0,
+   "blocked": 5,
    "stale": 0
   },
   "ar": {
-   "translated": 960,
-   "missing": 13169,
-   "blocked": 0,
+   "translated": 14114,
+   "missing": 0,
+   "blocked": 3,
    "stale": 0
   },
   "zh-Hans": {
-   "translated": 985,
-   "missing": 13144,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   },
   "ja": {
-   "translated": 955,
-   "missing": 13174,
+   "translated": 14117,
+   "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ko": {
-   "translated": 903,
-   "missing": 13226,
-   "blocked": 0,
+   "translated": 14116,
+   "missing": 0,
+   "blocked": 1,
    "stale": 0
   }
  },
  "revalidate": {
-  "checked": 471,
-  "passed": 471,
+  "checked": 7344,
+  "passed": 7344,
   "withdrawn": 0,
   "reasons": {}
  },
  "failures": [
-  "hi: missing 13099, blocked 0, stale 0",
-  "de: missing 13099, blocked 0, stale 0",
-  "fr: missing 13149, blocked 0, stale 0",
-  "es: missing 13119, blocked 0, stale 0",
-  "it: missing 13169, blocked 0, stale 0",
-  "pt: missing 13194, blocked 0, stale 0",
-  "nl: missing 13194, blocked 0, stale 0",
-  "ru: missing 13201, blocked 0, stale 0",
-  "ar: missing 13169, blocked 0, stale 0",
-  "zh-Hans: missing 13144, blocked 0, stale 0",
-  "ja: missing 13174, blocked 0, stale 0",
-  "ko: missing 13226, blocked 0, stale 0",
-  "hi (hi): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "de (de): 236 SSR snapshot(s) missing, 0 not matching manifest",
-  "fr (fr): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "es (es): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "it (it): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "pt (pt): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "nl (nl): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "ru (ru): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "ar (ar): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "zh-Hans (zh): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "ja (ja): 239 SSR snapshot(s) missing, 0 not matching manifest",
-  "ko (ko): 239 SSR snapshot(s) missing, 0 not matching manifest"
+  "hi: missing 0, blocked 7, stale 0",
+  "de: missing 0, blocked 1, stale 0",
+  "fr: missing 0, blocked 1, stale 0",
+  "es: missing 0, blocked 3, stale 0",
+  "it: missing 0, blocked 3, stale 0",
+  "pt: missing 0, blocked 1, stale 0",
+  "nl: missing 0, blocked 1, stale 0",
+  "ru: missing 0, blocked 5, stale 0",
+  "ar: missing 0, blocked 3, stale 0",
+  "zh-Hans: missing 0, blocked 1, stale 0",
+  "ko: missing 0, blocked 1, stale 0",
+  "build --strict: untranslated units remain (missingUnits=7 missingUnits=1 missingUnits=1 missingUnits=3 missingUnits=3 missingUnits=1 missingUnits=1 missingUnits=5 missingUnits=3 missingUnits=1 missingUnits=0 missingUnits=1)",
+  "11 source unit(s) clinically held in all locales pending owner/Dr. Deepu John ruling: t_f3c6d15a874413b8d46d, t_6ed743d40ad7f2626b45, t_fab1a9e13b5d70f8179a, t_ff4c6c57dddc9771ce48, t_6e7c16accd81097ebb4b, t_0cc8d48b7bf1e39a9ec6, t_8857bb8ea43199739c77, t_4573a839ffe27bbd6a93, t_6bde0b830d8bd56dea61, t_648cd2de98ef91a30642, t_cef40dba849bc4ee0ac4"
  ]
 }

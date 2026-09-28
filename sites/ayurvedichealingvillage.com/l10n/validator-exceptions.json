@@ -296,6 +296,47 @@
    "allowMissing": [
     "1"
    ]
+  },
+  {
+   "id": "t_919f0819ddf505f67514",
+   "sourceHash": "919f0819ddf505f67514c32173f3de642c1781fc663c6083beca647fe1cd1555",
+   "locale": "fr",
+   "allowMissing": [
+    "0",
+    "0"
+   ],
+   "requireText": "12 h ; départ au plus tard à 10 h",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): '12:00 / 10:00' → '12 h / 10 h', French time style; same times (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_ccac20fad2690e5f9d98",
+   "sourceHash": "ccac20fad2690e5f9d98437ddedf4c069d95ecef875d86a11496fe7514f598ff",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "週1回",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'Weekly' → 週1回 (once a week); no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_2881bd9199222e7ebb1e",
+   "sourceHash": "2881bd9199222e7ebb1e7473ec0fbcc61a7a3a14d603a99ab9bf604b6ad6113f",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "週1回",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'Weekly' → 週1回 (once a week); no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_4550f480791696d7bf3b",
+   "sourceHash": "4550f480791696d7bf3ba4b2fb38358c72f34bb987e2ca472727d496e51df90c",
+   "locale": "ko",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "1회",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'a … session' → 세션 1회 (one session) Korean counter; no new fact (coordinator review 2026-09-28)"
   }
  ]
 }

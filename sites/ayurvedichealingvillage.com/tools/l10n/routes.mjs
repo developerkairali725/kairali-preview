@@ -60,6 +60,25 @@ for (const e of legacy) {
     redirects[s] = { to, basis: e.enPath ? `equivalent (${e.confidence})` : "NO EQUIVALENT — nearest, flagged for owner", clicks: e.clicks ?? null };
   }
 }
+// English protection-map 301s (english-candidate/redirect-map.json: retired test/cart/old-duplicate pages) apply
+// in every locale too. Before 28 Sep 2026 these were allocated as locale PAGES, so /hi/cart/, /de/map/ or
+// /ar/test-page/ served a live localized copy of a page English retires. Each locale copy is now one 301 hop to
+// the SAME target's localized path, and the route is not allocated as a locale page.
+const EN_REDIRECTS = readJson("english-candidate/redirect-map.json").redirects;
+for (const [src, rule] of Object.entries(EN_REDIRECTS)) {
+  if (!routes[src]) continue;
+  for (const loc of CODES) {
+    const from = routes[src][loc];
+    const to = (routes[rule.to] && routes[rule.to][loc]) || `/${LOCALES[loc].prefix}/`;
+    if (from && from.toLowerCase() !== to.toLowerCase()) redirects[from] = { to, basis: `mirrors the English protection-map 301 ${src} → ${rule.to}`, clicks: null };
+  }
+  delete routes[src];
+}
+// single hop, always: a legacy redirect whose target is now itself redirected goes straight to the final page
+for (const r of Object.values(redirects)) {
+  const seen = new Set();
+  while (redirects[r.to] && !seen.has(r.to)) { seen.add(r.to); r.to = redirects[r.to].to; }
+}
 fs.writeFileSync(rel("l10n/routes.json"), JSON.stringify({ generatedFrom: ["english-candidate/route-manifest.json", "l10n/scope.json", "l10n/legacy-map.json"], locales: ["en", ...CODES], legacyServed: served.length, routes, redirects }, null, 1) + "\n");
 console.log({ routes: en.length, locales: CODES.length + 1, legacyServed: served.length, legacyRedirects: Object.keys(redirects).length });
 // the locale registry for the Next.js app (typed JSON import), generated from locales.mjs
