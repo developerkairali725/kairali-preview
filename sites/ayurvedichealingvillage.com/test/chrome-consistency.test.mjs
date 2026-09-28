@@ -72,3 +72,28 @@ test("no header or menu anywhere re-expands the Yoga label with Sanskrit", () =>
     for (const l of [...(headerNav(html) || []), ...(drawerNav(html) || [])]) assert.ok(!/Dhyāna|Abhyāsa/.test(l[1]), `${name}: ${l[1]}`);
   }
 });
+
+// Locales (28 Sep 2026): the same guard over each locale's generated payloads (tools/l10n/build.mjs output,
+// git-ignored — the test runs wherever they have been built). The homepage phone menu and the shared chrome are
+// separate translation units, so a translator could render the same English label twice, differently
+// (DE had "Yoga & Ausbildung" in the menu and "Yoga & Training" in the header).
+const LOCALES = JSON.parse(fs.readFileSync("l10n/locales.json", "utf8"));
+for (const [loc, info] of Object.entries(LOCALES)) {
+  if (loc === "en" || !fs.existsSync(`public/ahv/l10n/${info.prefix}/components/AHV Chrome Header.dc.html`)) continue;
+  test(`${loc}: homepage header and phone menu = the locale's shared chrome (labels + destinations)`, () => {
+    const base = `public/ahv/l10n/${info.prefix}`;
+    const comp = fs.readFileSync(`${base}/components/AHV Chrome Header.dc.html`, "utf8");
+    const lview = (v) => JSON.parse(fs.readFileSync(`${base}/views/${v}.json`, "utf8")).template;
+    const sharedHeader = headerNav(comp);
+    assert.ok(sharedHeader && sharedHeader.length === 5, `${loc}: shared header has five primary links`);
+    assert.deepEqual(headerNav(lview("home-hi-fi-v4")), sharedHeader, `${loc} desktop header`);
+    // the phone menu = the <nav> that lists this locale's Home first (drawerNav() looks for English "/")
+    const home = `/${info.prefix}/`;
+    const menu = (html) => { for (const m of html.matchAll(/<nav[^>]*>([\s\S]*?)<\/nav>/g)) { const l = links(m[1]); if (l.length >= 6 && l[0][0] === home) return l; } return null; };
+    const noSearch = (l) => l.filter(([p]) => !/\/search\/$/.test(p) && p !== (JSON.parse(fs.readFileSync("l10n/routes.json", "utf8")).routes["/search/"] || {})[loc]);
+    const shared = menu(comp), homepage = menu(lview("home-mobile"));
+    assert.ok(shared && shared.length >= 6, `${loc}: shared phone menu found`);
+    assert.ok(homepage && homepage.length >= 6, `${loc}: homepage phone menu found`);
+    assert.deepEqual(noSearch(homepage), noSearch(shared), `${loc} phone menu`);
+  });
+}
