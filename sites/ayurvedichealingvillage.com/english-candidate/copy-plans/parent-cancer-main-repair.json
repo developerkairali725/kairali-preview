@@ -1,0 +1,69 @@
+{
+  "entries": [
+    {
+      "id": "PARENT-CANCER-desktop-main-approved-paragraph",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
+      "old": "Kairali – The Ayurvedic Healing Village has a long history of offering comprehensive care, which includes holistic care for cancer patients in Ayurveda. Kairali’s programs, which have their roots in the age-old science of Ayurveda, concentrate on enhancing immunity, reviving vitality, and enhancing quality of life both during and after cancer treatments. Cancer patients’ physical and mental problems are addressed by these treatments, which use individualized therapies including Panchakarma, herbal formulations, and dietary advice. Kairali has developed a caring environment that promotes healing and resilience by fusing traditional knowledge with contemporary demands over the years.",
+      "new": "Our approach focuses on the person’s overall wellbeing. Any Ayurvedic supportive care should be discussed with the treating oncologist and must not replace or delay prescribed cancer treatment.",
+      "count": 2,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    },
+    {
+      "id": "PARENT-CANCER-desktop-helmet-title",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
+      "old": "Ayurvedic Cancer Recovery & Strengthening Program | Kairali",
+      "new": "Ayurvedic Supportive Care for Cancer Patients | Kairali",
+      "count": 1,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    },
+    {
+      "id": "PARENT-CANCER-desktop-standfirst",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
+      "old": "Boost immunity, reduce side effects & regain strength with Kairali’s Ayurvedic cancer recovery program in Kerala. Personalized & holistic care.",
+      "new": "Our approach focuses on the person’s overall wellbeing. Any Ayurvedic supportive care should be discussed with the treating oncologist and must not replace or delay prescribed cancer treatment.",
+      "count": 1,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    },
+    {
+      "id": "PARENT-CANCER-mobile-main-approved-paragraph",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
+      "old": "Kairali – The Ayurvedic Healing Village has a long history of offering comprehensive care, which includes holistic care for cancer patients in Ayurveda. Kairali’s programs, which have their roots in the age-old science of Ayurveda, concentrate on enhancing immunity, reviving vitality, and enhancing quality of life both during and after cancer treatments. Cancer patients’ physical and mental problems are addressed by these treatments, which use individualized therapies including Panchakarma, herbal formulations, and dietary advice. Kairali has developed a caring environment that promotes healing and resilience by fusing traditional knowledge with contemporary demands over the years.",
+      "new": "Our approach focuses on the person’s overall wellbeing. Any Ayurvedic supportive care should be discussed with the treating oncologist and must not replace or delay prescribed cancer treatment.",
+      "count": 2,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    },
+    {
+      "id": "PARENT-CANCER-mobile-helmet-title",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
+      "old": "Ayurvedic Cancer Recovery & Strengthening Program | Kairali",
+      "new": "Ayurvedic Supportive Care for Cancer Patients | Kairali",
+      "count": 1,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    },
+    {
+      "id": "PARENT-CANCER-mobile-standfirst",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
+      "old": "Boost immunity, reduce side effects & regain strength with Kairali’s Ayurvedic cancer recovery program in Kerala. Personalized & holistic care.",
+      "new": "Our approach focuses on the person’s overall wellbeing. Any Ayurvedic supportive care should be discussed with the treating oncologist and must not replace or delay prescribed cancer treatment.",
+      "count": 1,
+      "authority": "Existing owner-approved cancer supportive-care paragraph in committed cancer-supportive-care template; existing approved route metadata; latest owner autonomous clinical-copy instruction"
+    }
+  ],
+  "source_evidence": [
+    {
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
+      "sha256": "84292d6982c0bf62a13214213e8a90272e549e9fb8104501868cc1a759b69e89"
+    },
+    {
+      "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
+      "sha256": "c737328d79d8d0d57ddba01585bfa2878848bb835c7cee811c419a0bdc5a1728"
+    }
+  ],
+  "scope": "Exact main-view paragraph/title/standfirst repair. Additional process/benefit unsupported claims still require review; not whole-page completion."
+}
