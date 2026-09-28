@@ -15,7 +15,12 @@ const redirected = new Set(Object.keys(RJ.redirects));
 const enToLoc = Object.fromEntries(Object.entries(RJ.routes).map(([en, r]) => [en, r[LOC]]));
 const prefix = "/" + JSON.parse(fs.readFileSync("l10n/locales.json", "utf8"))[LOC].prefix + "/";
 const norm = (p) => (/\.[a-z0-9]{2,5}$/i.test(p) ? p : p.replace(/\/?$/, "/"));
-const pages = [...served];
+// --sample N: every page type the fixes touched (home, finders, footer-bearing native pages, villas, retired-route
+// links) plus an even spread of the rest — for locales whose slugs are the English ones (/xx + English path)
+const SAMPLE = +arg("sample", "0");
+const KEY = ["/", "/all-programs/", "/ayurvedic-treatments/", "/about-us/", "/our-villas/", "/deluxe-villa/", "/video-gallery/", "/read-feedback/", "/givefeedback/", "/sightseeing/", "/search/", "/back-water-tour/", "/faqs-downloads/", "/panchakarma-therapy/", "/contact-us/", "/legal-notice/"].map((en) => RJ.routes[en] && RJ.routes[en][LOC]).filter(Boolean);
+const all = [...served];
+const pages = SAMPLE ? [...new Set([...KEY, ...all.filter((_, i) => i % Math.max(1, Math.floor(all.length / SAMPLE)) === 0)])] : all;
 let b = await pw.chromium.launch();
 // shared machine: a renderer crash or a transient spawn EAGAIN relaunches the browser with backoff
 const fresh = async () => {
