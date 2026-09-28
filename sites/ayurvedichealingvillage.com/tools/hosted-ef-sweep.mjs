@@ -36,6 +36,22 @@ const CHECKS = [
   ["TF-19", "/deluxe-villa/", { has: ["Single occupancy, per villa per night: ₹26,700", "admission rates, not room-only prices"] }],
   ["TF-19", "/maharaja-suite/", { has: ["Single occupancy, per villa per night: ₹53,400"] }],
   ["L10N", "/de/", {}], ["L10N", "/de/unsere-villen/", {}], ["L10N", "/fr/", {}], ["L10N", "/ar/", {}], ["L10N", "/ja/all-programs/", {}],
+  // owner-decision round, 28 Sep 2026 (OWNER-DECISIONS-LATEST.md)
+  ["OD-BDM", "/jobs/business-development-manager/", { has: ["Vacancy closed", "not accepting applications"], not: ["Contact Person", "8826921119", "Apply for this position"] }],
+  ["OD-BDM", "/careers/", { has: ["No vacancies are open at the moment."], not: ["More Details"] }],
+  ["OD-FAC", "/village-facilities/", { has: ["Astrology & Palmistry", "at least one day in advance", "Badminton Court", "Children’s plunge pool", "Curio Shop"], not: ["Conference Hall", "Charm Science Experts", "Antique Shop"] }],
+  ["OD-TRN", "/training-course-fees/", { has: ["Arranged on enquiry", "one-to-one or for groups"], not: ["TO CONFIRM", "poured from the record", "Transcribed from"] }],
+  ["OD-DEF", "/defence-and-paramilitary-forces/", { has: ["Central Armed Police Forces", "3–13 nights", "best saving", "before tax"], not: ["TO CONFIRM", "changeable and cancellable", "Army, Navy, Air force Citizens", "map captions"] }],
+  ["OD-OFF", "/offers/", { has: ["between 3 to 13 Nights", "Stays of 1–2 nights"], not: ["3 to 14 Nights", "14 to 21 Nights", "clubbed"] }],
+  ["OD-OFF", "/offers/senior-citizen-offer/", { has: ["3–13 nights", "best saving"] }],
+  ["OD-OFF", "/offers/defence-paramilitary-personnel-get-upto-30-off/", { has: ["between 3 to 13 Nights", "before tax"], not: ["3 to 14 Nights", "clubbed", "changeable and cancellable"] }],
+  ["EF-21", "/ayurveda-gallery/", { finalPath: "/treatments-gallery/" }],
+  ["EF-21", "/de/ayurveda-gallery/", { finalPath: "/de/behandlungsgalerie/" }],
+  ["EF-24", "/prav-simona-yoga-retreat/", { finalPath: "/prav-simona-monsoon-yoga-retreat/" }],
+  ["EF-24", "/prav-simona-monsoon-yoga-retreat/", { altHas: ["yoga steps", "yoga pose"] }],
+  ["TF-18", "/enquiry-form/?programme=treatment", { selectIndex: 1 }],
+  ["TF-18", "/enquiry-form/?programme=bogus", { selectIndex: 0 }],
+  ["NOTE", "/search-results/", { not: ["design review"] }],
 ];
 const b = await pw.chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, ...oidc });
@@ -63,6 +79,8 @@ for (const [id, route, want] of CHECKS) {
     row.present = (want.not || []).filter((t) => low.includes(t.toLowerCase()) || d.alts.some((a) => a.includes(t)));
     row.altMissing = (want.altHas || []).filter((t) => !d.alts.includes(t));
     for (const [t, max] of want.maxCount || []) { const n = low.split(t.toLowerCase()).length - 1; if (n > max) row.present.push(`${t} ×${n} (max ${max})`); }
+    if (want.finalPath) { row.finalPath = new URL(pg.url()).pathname; if (row.finalPath !== want.finalPath) row.present.push(`landed on ${row.finalPath}, expected ${want.finalPath}`); }
+    if (want.selectIndex != null) { row.selectIndex = await pg.evaluate(() => { const s = document.querySelector('form[data-form="contact"] select[name="programme"]'); return s ? s.selectedIndex : null; }); if (row.selectIndex !== want.selectIndex) row.present.push(`programme select index ${row.selectIndex}, expected ${want.selectIndex}`); }
     if (want.uniqueImages) { const seen = new Map(); for (const s of d.srcs) seen.set(s, (seen.get(s) || 0) + 1); row.duplicateImages = [...seen].filter(([, n]) => n > 1).map(([s, n]) => `${n}× ${s.split("/").pop()}`); }
     row.pass = row.status === 200 && !row.brokenImages.length && !row.badLinks.length && !row.missing.length && !row.present.length && !row.altMissing.length && !(row.duplicateImages || []).length;
   } catch (e) { row.error = String(e).slice(0, 200); row.pass = false; }

@@ -30,6 +30,8 @@ const R = [
   ["This offer is applicable for Army, Navy, Air force Citizens.", "One offer applies per booking: if more than one offer fits your stay, we apply the one that gives you the best saving, and discounts are not added together. The benefit has no cash alternative and cannot be transferred to unrelated travellers."],
   // the review flag and the caption fragment left from a map this route does not carry
   ["showDraftMarkers: this.props.showDraftMarkers ?? true", "showDraftMarkers: this.props.showDraftMarkers ?? false"],
+  // the runtime passes the declared prop default, so the declared default must be off too
+  ['"showDraftMarkers":{"editor":"boolean","default":true', '"showDraftMarkers":{"editor":"boolean","default":false'],
 ];
 const CLICK = /please <a href="#"([^>]*)>Click Here<\/a> <span[^>]*>\[TO CONFIRM: link target\]<\/span>/g;
 const CAPTIONS = /\s*<p[^>]*>Kerala, in India Palakkad, in Kerala The hospital, in Palakkad A plan of the grounds, numbering reception, the Ayurvedic hospital, the yoga centre, the herbal garden and the villas\.<\/p>/g;
@@ -37,7 +39,7 @@ const log = [], pending = []; let bad = 0;
 for (const v of ["desktop", "mobile"]) {
   const file = `public/ahv/views/ahv-page-defence-and-paramilitary-forces-${v}.json`;
   const raw = fs.readFileSync(file, "utf8"); const view = JSON.parse(raw); let n = 0;
-  for (const key of ["template", "logic"]) {
+  for (const key of ["template", "logic", "props"]) {
     let s = view[key];
     for (const [from, to] of R) { const c = s.split(from).length - 1; if (c) { s = s.split(from).join(to); n += c; } }
     const k = (s.match(CLICK) || []).length; if (k) { s = s.replace(CLICK, (_, attrs) => `please <a href="https://ayurvedichealingvillage.com/all-programs/"${attrs}>see all programmes</a>`); n += k; }
