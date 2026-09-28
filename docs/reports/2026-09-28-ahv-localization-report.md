@@ -13,7 +13,12 @@ Task WOPS-AHV-FINAL-DRAFT-20260924-001. Worker: Claude CLI (claude-opus-5-5). Up
 - **Hosted evidence:** `hosted-ef-sweep-r6-prealias/` (deployment URL) and `hosted-ef-sweep-r6-alias/` (alias) — **42/42 PASS** on each. Each row checks status, broken images, every internal link fetched in-page, and fix-proof text: EF items, TF-08/19, the owner-decision rows (BDM, facilities, training, defence, all offers), EF-21 and EF-24 final landing paths (EN + DE), TF-18 select index (treatment 1, bogus 0), and the search notice.
 - **Redirects on the alias:** /ayurveda-gallery/ → 301 /treatments-gallery/; /de/ayurveda-gallery/ → 301 /de/behandlungsgalerie/; /prav-simona-yoga-retreat/ → 301 /prav-simona-monsoon-yoga-retreat/ (single hop).
 
-## Round 8 update (2026-09-28 15:47:44 IST) — CURRENT staging for parent QA
+## Round 9 (2026-09-28 16:18:33 IST) — CURRENT staging for parent QA
+- **Alias** https://ahv-final-staging.vercel.app → **dpl_BCSkEEp3gnhnkpTDQFFq3X2XqyXs** (preview), built from **`e5b72188`** (pushed to PR #309). Pre-alias hosted sweep **44/44 PASS** (`hosted-ef-sweep-r9-prealias/`); /experience/ hosted at 1440/1920/2560/390 in `hosted-layout-r9/`.
+- **Adds over r8:** /experience/ — the row was laid out for article + sidebar and the sidebar is retired. Its nine image cards now form a 3-column grid on large desktops (68% → 17% left-only; only /experience/ changed among 108 routes; 0 overflow).
+- **Still ≥40% left-only at 1440:** /ayurveda-treatment/ and /special-offers/ (already on the new grid; the remainder is image/list sizing), /givefeedback/ (native form page — form lane), /karkidaka…html.
+
+## Round 8 update (2026-09-28 15:47:44 IST)
 - **Alias** https://ahv-final-staging.vercel.app → **dpl_62HRMitbzQDHPEPomhVaM4gszhpR** (preview), built from **`241d14d8`**, pushed to PR #309 (`3702baa7..241d14d8`). Pre-alias hosted sweep **44/44 PASS** (`hosted-ef-sweep-r8-prealias/`). Hosted layout screenshots at 1440/1920/2560/390: `hosted-layout-r8/` (and `hosted-layout-r7/`).
 - **/packages/ owner regression:**
   - The lotus motif is no longer stretched into two fragments; three sibling pages had the same bug and are fixed too.
