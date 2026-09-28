@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "efe8f16b89667c2a009c18ec5e03275d9e99aa7b26dddc27b030d4514a70737b",
+ "sourceSetHash": "07901cf48988ca54ce70458f0194fc13cc78827424672fb59e9496177d245e8e",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -15,13 +15,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-about-us-desktop.json",
-   "sha256": "fe0c0df3dbc89b8beca3d9907c16c63edbc9b7dcae6834a01061a3a0e8f61d5a",
+   "sha256": "bd7a9ac7160f322b3eabed73cfd4207042dbae268294c4f2c8b148510c2c0484",
    "units": 49,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-about-us-mobile.json",
-   "sha256": "041340b842a1c4753e141a7369d415870c20bc38fcec2fda0f3503d678b5f4e9",
+   "sha256": "e0c98ec67b93770f3499d24eb755f83a0fd45f03fa2741f52efa460110e2f403",
    "units": 50,
    "status": "covered"
   },
@@ -195,13 +195,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-breath-respiratory-desktop.json",
-   "sha256": "1db31735f326b64f019755e3deeae968681f28302d774611562f5190728996d3",
+   "sha256": "1d7d521db090cb55f0c01084e717bed84810421153cad7a06264c81abaa41e38",
    "units": 488,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-breath-respiratory-mobile.json",
-   "sha256": "d041e028b5547b0a21c3678fb8438221be75473d4bcaa5b7f2a942ebcadafe88",
+   "sha256": "80abff7bc25dec925670b2e223e88ce43cc5f440e0b02fb467da67ebbce0fbc3",
    "units": 487,
    "status": "covered"
   },
@@ -351,13 +351,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-   "sha256": "3f45512f5da64199c8edf5b00444eea78cfc8a0c1e4aedb89c21fa6052670e2d",
+   "sha256": "1d667a12e3096a293c3250614ceeefd605090287b5d0778f650aeb1f221a63e7",
    "units": 487,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-   "sha256": "b344d44cfb5ca6fc58c940d8b6edd0c23ce540cd02063b201c07cb593789f201",
+   "sha256": "6818b1d206d0df82bccc339e482dc1f0a2c88bb373478e710209782cf868109f",
    "units": 487,
    "status": "covered"
   },
@@ -603,13 +603,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json",
-   "sha256": "8835a8b244469168b2907438e42766a1c1c23962a96690f8c73b34774eb35f22",
+   "sha256": "e5a708a99b4b811b514684d44459008103e4850da41e0d9cd81dc1ee126b88c7",
    "units": 255,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json",
-   "sha256": "b300ab1e3750b72f6fce3219ad9d25a3eb3b7240dad4a8a31ce9fb951c5a99cd",
+   "sha256": "2b67d5063c6c96084a952255d4a31f0a0867b024c0dbc9fe1fcba181829c7486",
    "units": 256,
    "status": "covered"
   },
@@ -663,13 +663,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-post-pregnancy-health-programme-desktop.json",
-   "sha256": "a61b20c091a85cdfc1c61bcf1cc0a5cacd0a4575c73f3b84683479c70779e6c4",
+   "sha256": "8e0482356711ec4920454507de542a44d07bf1251c36a9cbe571753f40ef3590",
    "units": 492,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-post-pregnancy-health-programme-mobile.json",
-   "sha256": "3c42f1da5a4dbedaae9f5898b0a924130864e2e8ebb79c6d06b2d1699b22e49f",
+   "sha256": "859d8987a7d112bb9c43ebcf45805a2b7eb18e0350b518ca25256541ccc971b8",
    "units": 492,
    "status": "covered"
   },
@@ -831,13 +831,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-vision-eye-rejuvenation-desktop.json",
-   "sha256": "1902d74e4e83cc4d2c5bee876d56e338c83a1394e7c3c9a317869d2ce5c7d84b",
+   "sha256": "430ca31306b6d42be896bdc90783eb3da622890f81e4cfa01890a14fd1c0a435",
    "units": 486,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-vision-eye-rejuvenation-mobile.json",
-   "sha256": "b8cbed92d5435ce44fc89c24b644600bf5724fdc64a74100a68baa5530dbbc20",
+   "sha256": "e12ff382899c7bcec396f17e8a9aff8e2a02f84d1c3c080dafbbfb85321dd8eb",
    "units": 486,
    "status": "covered"
   },
@@ -1047,7 +1047,7 @@
   },
   {
    "file": "public/ahv/assets/about-us-data.js",
-   "sha256": "99d60a7d300c93d35d997377660fc923f6a7becb5e72d98445aa376a10fea827",
+   "sha256": "0fa8d58fa1e330b430b30c9300b51eaea412c9a966cf8a048a375315f7d819cd",
    "units": 72,
    "status": "covered"
   },
@@ -1071,7 +1071,7 @@
   },
   {
    "file": "public/ahv/assets/article-family-data.js",
-   "sha256": "f5f401503e6ce35c9095cfdb72b6cb3d43e899672b37e090318e4bd3558f8078",
+   "sha256": "79f4aa3f207ecd75db9f5d4b9496b50e5e5c1fa69a731ddc78b38089789dfeaa",
    "units": 3046,
    "status": "covered"
   },
@@ -1251,7 +1251,7 @@
   },
   {
    "file": "public/ahv/assets/hist9-family-data.js",
-   "sha256": "dbac6754dd25986b5b644db1aa65c3a988a661fe7bd0230b059e310e1b9901f9",
+   "sha256": "f9488b0f6895181e5a8b8972637eb982212616fad5da2011410f7d7133d7d5e1",
    "units": 2358,
    "status": "covered"
   },
@@ -1293,7 +1293,7 @@
   },
   {
    "file": "public/ahv/assets/mindfulness-retreat-data.js",
-   "sha256": "233db638817a3fe3ca0cace26ab0ffe9ee76da8f0b2fe4ecd27696a7c7de0677",
+   "sha256": "7b3709bae0b217ff540360a8155ce603cd90b9f0d6212e36109c7b3a22cb04e7",
    "units": 70,
    "status": "covered"
   },
@@ -1335,7 +1335,7 @@
   },
   {
    "file": "public/ahv/assets/reader25a-family-data.js",
-   "sha256": "b2a118b23de024aa7d1e59716541f7f04f44719ca699fd395ca0b7f6740886c8",
+   "sha256": "a0408db37a8f92b56c90b1c0c243c056542b7032381b400ac3852b28b5bb2555",
    "units": 2493,
    "status": "covered"
   },
@@ -1347,7 +1347,7 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "ab71ef374cad546d48f2d97d79b1711a45f4fd9cd3de8eaf9fc876ade36740ee",
+   "sha256": "39b09bbca10795e1df5710d965e4bb2c6d49ab68034bb65121c98314020393bc",
    "units": 2241,
    "status": "covered"
   },
@@ -1395,7 +1395,7 @@
   },
   {
    "file": "public/ahv/assets/story-family-data.js",
-   "sha256": "7b9a80e0ebf0e645fa5e1c50aeb300a72472470b88101cc10db11947184bad79",
+   "sha256": "585f1c10a734f60f2ba7321c3359dd2ff382032787ff409be550a04552c859f2",
    "units": 64,
    "status": "covered"
   },
@@ -1443,7 +1443,7 @@
   },
   {
    "file": "public/ahv/assets/yala-2018-data.js",
-   "sha256": "4929c56f3ec11b99c3d7ed94518eeb09e8a226c6274bc4f7b482de404ee09069",
+   "sha256": "a25682dc202883c63590d97fe5dd0d9e1830e09779a33f37d7937a1953945b12",
    "units": 154,
    "status": "covered"
   },
@@ -1461,8 +1461,8 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "8288132a05cead0fb0cee30a76febd022337bc5561b1ebbf502763536c7d313f",
-   "units": 11,
+   "sha256": "1ebb31d01aebdbf6609bd9f051b62685452563a19861fed7aa6096c15e63b722",
+   "units": 13,
    "status": "covered (curated allowlist)"
   },
   {
