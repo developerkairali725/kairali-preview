@@ -146,15 +146,22 @@
   #ahv-cta-bar .ahv-cta-enquire:hover { background:#483616;color:#F7F4EA;text-decoration:none; }
   #ahv-cta-bar .ahv-cta-consult { flex:1.3;background:#EEB41E;color:#2A2014; }
   #ahv-cta-bar .ahv-cta-consult:hover { filter:brightness(.94);color:#2A2014;text-decoration:none; }
-  #ahv-cta-bar a:focus-visible { outline:3px solid #F7F4EA;outline-offset:-6px; }
-  #ahv-cta-bar .ahv-cta-consult:focus-visible { outline-color:#2A2014; }
+  /* brand focus ring (packages/ui/brand-tokens.css --leaf-500 #8E9D35, "focus rings"); on the gold segment the
+     site's own darker leaf #6B7726 (its focus colour on light grounds) keeps the ring distinguishable (design-qa R14) */
+  #ahv-cta-bar a:focus-visible { outline:3px solid #8E9D35;outline-offset:-6px; }
+  #ahv-cta-bar .ahv-cta-consult:focus-visible { outline-color:#6B7726; }
   /* body is viewport-high (support.js: html,body{height:100%}) and the page overflows it, so the clearance is an
      in-flow block after the page, not body padding: the bar plus the WhatsApp / chat controls above it (54px +
      24px gap), so at the end of the page no footer link sits under either; in the footers' own colour */
-  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px);background:#2A2014; }
+  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px));background:#2A2014; }
   html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
   html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }
 }
+/* While the cookie notice is pending (a fixed layer at the page bottom), the page ends with a block of the notice's
+   height so the footer's last row can scroll clear of it (design-qa R14: "How to reach", copyright and the language
+   row sat under the notice at the end of the page on desktop). Presentation only: the notice, its choices, storage
+   and signals are untouched; chrome.js liftContacts() measures it and clears the height once it closes. */
+html[data-ahv-consent-open]:not([data-ahv-cta-bar-on]) body::after { content:"";display:block;height:var(--ahv-consent-h, 0px);background:#2A2014; }
 @media print { #ahv-cta-bar { display:none !important; } }
 
 /* Keep native date segments and their calendar controls visible in the home finder. */

@@ -449,6 +449,10 @@
     var n = document.getElementById('ahv-consent'), off = 0;
     if (n) { var r = n.getBoundingClientRect(); if (r.height > 0 && r.top < window.innerHeight) off = Math.max(0, Math.round(window.innerHeight - r.top + 12)); }
     if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom');
+    // page-end clearance for the pending notice (chrome.css html[data-ahv-consent-open]); presentation only
+    var root = document.documentElement;
+    if (off) { root.setAttribute('data-ahv-consent-open', ''); root.style.setProperty('--ahv-consent-h', Math.round(n.getBoundingClientRect().height + 16) + 'px'); }
+    else if (root.hasAttribute('data-ahv-consent-open')) { root.removeAttribute('data-ahv-consent-open'); root.style.removeProperty('--ahv-consent-h'); }
   }
   window.addEventListener('resize', liftContacts);
   // EF-25 (owner, 26 Sep 2026: the cookie notice must not obscure navigation): the homepage's own phone
