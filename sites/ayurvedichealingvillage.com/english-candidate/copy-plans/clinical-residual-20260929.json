@@ -1,0 +1,111 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "CLINICAL-COPY / HOSPITAL-COPY",
+ "note": "29 Sep 2026 residual clinical claims on KTAHV clinical routes (slip disc, stress, facial paralysis), legacy brand 'Kairali Wellness Retreats' in three image alts, a deterministic disease statement on the Panchakarma campaign, and disease-named claims for proprietary medicines (hypertension/obesity are Drugs and Magic Remedies Act schedule conditions). Neutral, physician-guided wording; no new facts, outcomes or guarantees.",
+ "entries": [
+  {
+   "id": "SLIPDISC-herbs",
+   "auto": true,
+   "old": "Herbal Ayurvedic medications strengthen the spine, enhance flexibility, and promote tissue regeneration.",
+   "new": "Herbal Ayurvedic medicines, where your physician prescribes them, aim to support spinal strength and flexibility.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "SLIPDISC-heal",
+   "auto": true,
+   "old": "These remedies work together to heal the slip disc, relieve pain, and prevent recurrence.",
+   "new": "Together, these therapies aim to relieve pain and support recovery; your physician will also advise you on reducing the risk of recurrence.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "SLIPDISC-opt",
+   "auto": true,
+   "old": "Opt for Ayurveda for personalized care, natural healing, and a holistic approach addressing the root cause of slip disc. Trust Kairali’s extensive experience for effective and safe treatment.",
+   "new": "Ayurveda offers personalized, holistic care that looks at the underlying causes of slip disc. After an assessment, your physician will advise whether this programme is suitable for you.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "STRESS-rejuvenate",
+   "auto": true,
+   "old": "Ayurvedic therapies rejuvenate the mind and body, reduce muscular pain, and promote overall well-being. We prioritize trust, understanding, and personalized care to lead you to a stress-free life.",
+   "new": "Ayurvedic therapies aim to relax the mind and body, ease muscular pain and support overall well-being. We prioritize trust, understanding and personalized care to help you manage stress.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "STRESS-safety",
+   "auto": true,
+   "old": "Ayurveda aims to reduce stress by nurturing the body and calming the mind, with safety ensured through natural sources for medications.",
+   "new": "Ayurveda aims to reduce stress by nurturing the body and calming the mind; any medicines are prescribed and reviewed by our physicians.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "STRESS-transform",
+   "auto": true,
+   "old": "Our clients have experienced profound transformations in physical and emotional well-being. We provide personalized care and support, committed to guiding you on the path to a balanced, stress-free life.",
+   "new": "We provide personalized care and support, committed to helping you find better balance and manage stress.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "FACIAL-herbs",
+   "auto": true,
+   "old": "Medicinal herbs such as Ashwagandha, Brahmi, and Bala, along with Rasayanas, strengthen the nervous system.",
+   "new": "Medicinal herbs such as Ashwagandha, Brahmi and Bala, along with Rasayanas, may be prescribed to support the nervous system.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "FACIAL-effective",
+   "auto": true,
+   "old": "Ayurveda’s ancient wisdom, combined with our expertise, offers a reliable and effective path to recovery from facial paralysis. Trust Kairali Wellness Retreats to guide you towards lasting positive outcomes and an improved quality of life.",
+   "new": "Ayurveda’s traditional knowledge, combined with our physicians’ experience, aims to support recovery from facial paralysis. Your physician will guide your programme and review your progress.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "ALT-arthritis",
+   "auto": true,
+   "old": "Ayurvedic treatment of arthritis osteo rheumatoid at Kairali Wellness Retreats",
+   "new": "Ayurvedic treatment for osteoarthritis and rheumatoid arthritis at Kairali – The Ayurvedic Healing Village",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "ALT-nervous",
+   "auto": true,
+   "old": "At Kairali Wellness Retreats, our process for treating nervous disability through Ayurveda",
+   "new": "Our Ayurvedic treatment process for nervous disability at Kairali – The Ayurvedic Healing Village",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "ALT-skin",
+   "auto": true,
+   "old": "Specialized Skin Treatments for Cleansing, Nourishing, and Revitalizing the Skin at Kairali Wellness Retreats",
+   "new": "Ayurvedic skin treatments for cleansing and nourishing the skin at Kairali – The Ayurvedic Healing Village",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "PANCHKARMA-habits",
+   "auto": true,
+   "old": "These wrong habits give you high cholesterol, heart disease, diabetes, and arthritis.",
+   "new": "Such habits are linked to high cholesterol, heart disease, diabetes and joint problems.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "PRODUCTS-medicines",
+   "auto": true,
+   "old": "In addition to personal care products, Kairali’s in-house proprietary medicines provide natural solutions for many modern health challenges. Developed through rigorous research and crafted with care, these capsules and syrups are tailored to address conditions such as high cholesterol, liver problems, hypertension, and obesity. Rooted in Ayurvedic compositions, these medicines aim to restore balance and vitality while addressing the root causes of illness rather than just alleviating symptoms.",
+   "new": "In addition to personal care products, Kairali manufactures its own Ayurvedic medicines, including capsules and syrups, based on classical Ayurvedic compositions. Medicines are prescribed by a physician as part of an individual treatment plan.",
+   "min": 1,
+   "authority": "Owner medical-content authority ('medical approvals i gave do it yourself', OWNER-OVERNIGHT-DIRECTIVE.md) + KTAHV clinical register; flagged by the 29 Sep es/it translation lane. Dr. Deepu John review before production (HARD GATE 7)."
+  }
+ ]
+}
