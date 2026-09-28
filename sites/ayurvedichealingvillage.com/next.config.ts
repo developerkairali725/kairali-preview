@@ -27,6 +27,11 @@ import { join } from "node:path";
 //   /pain-management.html                     → /lp/pain-management
 //   /de/behandlung-in-kerala/                 → /lp/behandlung-in-kerala        (DE)
 //   /treatment-in-kerala.html                 → /lp/treatment-in-kerala
+//
+// SUPERSEDED (29 Sep 2026, SEO lane D-14): these legacy .html pages are now served 200 as indexable organic pages
+// and several rank (e.g. /panchkarma-treatment.html ~499 clicks per redirect-map.json). Arming this map would 301
+// ranking pages into noindex /lp/ pages. Do NOT arm it: route ads to /lp/ by changing the ad's final URL (Vikash,
+// per URL), never by redirecting the ranking page (BUILD DECISION MATRIX rule 2).
 // STAGING LOCK (WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001). The English
 // candidate lane is a review build. X-Robots-Tag is the authoritative
 // no-index control here because the approved design writes its own <head> at
