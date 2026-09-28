@@ -2010,3 +2010,13 @@ owner (or named owner) decision; nothing below was changed without it. Evidence:
 9. **Clinical sign-off:** the 28 Sep medical corrections (english-candidate/copy-plans/medical-copy-20260928.json +
    addendum) were made under your "do it yourself" authority; Dr. Deepu John's review remains required before production
    (HARD GATE 7). Not a clinician signature.
+
+## Q-AHV-L10N-GATE-RETIRED — 2026-09-28 22:53:36 IST
+tools/l10n/release-gate.mjs now fails only on: (1) 9 retired clinical unit ids (t_f3c6…, t_6ed7…, t_fab1…, t_ff4c…,
+t_6e7c…, t_0cc8…, t_8857…, t_648c…, t_cef4…) that are no longer in l10n/source/units.json — their English text was
+replaced by the owner-approved batches / 28 Sep medical corrections — but are still marked "blocked" inside historic
+l10n/output/<loc>/b-NNNN.json files, which the "held" check reads without testing source membership; (2) es/it
+ordinal-suffix fragments t_4573a839… / t_6bde0b83… ("rd"/"th" after a day number) whose correct translation is empty
+(override applied; the gate requires non-empty text). Pages render correctly. Options: (A) gate counts only units
+present in the current source and honours overrides; (B) prune retired rows from historic outputs and restructure the
+English date so the suffix is not a separate unit; (C) accept as documented exception. No gate edit made (rule g).
