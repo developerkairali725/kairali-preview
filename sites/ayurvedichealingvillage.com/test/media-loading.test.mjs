@@ -212,5 +212,8 @@ test("snapshot -> live swap is shift-free: live root mounts first, hidden out of
   const hits = doc.split("#dc-root{");
   assert.ok(hits.length > 1, "the released rule exists");
   for (let k = 0; k < hits.length - 1; k++) assert.match(hits[k], /#ahv-design-root\[data-ahv-live-pending\]>$/, "only the live-pending root may style #dc-root");
-  assert.match(doc, /@media \(min-width:700px\)\{#ahv-design-root\[data-ahv-snapshot-state='held'\]>\*\{display:none!important\}\}/, "P4: the desktop hold is display:none");
+  assert.match(doc, /@media \(min-width:700px\)\{html\[data-ahv-js\] #ahv-design-root\[data-ahv-snapshot-state='held'\]:not\(\[data-ahv-fallback\]\)>\*\{display:none!important\}/, "P4: the scripted desktop hold is display:none");
+  // no-JS / runtime-failure fallback (parent review 29 Sep 2026): without html[data-ahv-js] or with data-ahv-fallback the held snapshot is shown, never a blank page
+  assert.match(doc, /setAttribute\('data-ahv-js',''\)/, "an early inline script marks scripted documents");
+  assert.match(doc, /data-ahv-fallback/, "the runtime-failure fallback is armed");
 });
