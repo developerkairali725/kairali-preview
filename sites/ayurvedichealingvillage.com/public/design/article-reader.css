@@ -426,3 +426,18 @@
     grid-template-columns:repeat(2, minmax(0,1fr)) !important;
   }
 }
+
+/* ---- card-list articles whose sidebar was retired (same owner report): on /experience/ the row is laid out for an
+   article PLUS a sidebar, the sidebar is gone, and nine image cards stack in a 755px column beside ~465px of nothing
+   for 6,300px (68% left-only at 1440). With no sibling, the article takes the row and its cards form a 3-column grid;
+   a leading text block spans it. Cards, order and content unchanged; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:has(> div + div + div > div img) {
+    flex:1 1 100% !important; max-width:none !important; width:100% !important;
+    display:grid !important; grid-template-columns:repeat(3, minmax(0,1fr)) !important; gap:32px !important; align-items:stretch !important;
+  }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:has(> div + div + div > div img) > div:not(:has(img)) {
+    grid-column:1 / -1 !important;
+  }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:has(> div + div + div > div img) > div { margin:0 !important; }
+}
