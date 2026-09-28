@@ -13,6 +13,25 @@ Task WOPS-AHV-FINAL-DRAFT-20260924-001. Worker: Claude CLI (claude-opus-5-5). Up
 - **Hosted evidence:** `hosted-ef-sweep-r6-prealias/` (deployment URL) and `hosted-ef-sweep-r6-alias/` (alias) — **42/42 PASS** on each. Each row checks status, broken images, every internal link fetched in-page, and fix-proof text: EF items, TF-08/19, the owner-decision rows (BDM, facilities, training, defence, all offers), EF-21 and EF-24 final landing paths (EN + DE), TF-18 select index (treatment 1, bogus 0), and the search notice.
 - **Redirects on the alias:** /ayurveda-gallery/ → 301 /treatments-gallery/; /de/ayurveda-gallery/ → 301 /de/behandlungsgalerie/; /prav-simona-yoga-retreat/ → 301 /prav-simona-monsoon-yoga-retreat/ (single hop).
 
+## Round 8 update (2026-09-28 15:47:44 IST) — CURRENT staging for parent QA
+- **Alias** https://ahv-final-staging.vercel.app → **dpl_62HRMitbzQDHPEPomhVaM4gszhpR** (preview), built from **`241d14d8`**, pushed to PR #309 (`3702baa7..241d14d8`). Pre-alias hosted sweep **44/44 PASS** (`hosted-ef-sweep-r8-prealias/`). Hosted layout screenshots at 1440/1920/2560/390: `hosted-layout-r8/` (and `hosted-layout-r7/`).
+- **/packages/ owner regression:**
+  - The lotus motif is no longer stretched into two fragments; three sibling pages had the same bug and are fixed too.
+  - The duplicate WordPress category toggle is removed; it held 5 links that duplicate the family header, and one returned 404.
+  - Commits 9f1d8020, 06700183. /packages/ keeps its original layout (241d14d8).
+- **Large-desktop composition for secondary families (owner: "on large desktop screens… make sure it is done"),** measured with `tools/desktop-space-audit.mjs`:
+  - **article-reader** (108 routes): routes with ≥40% of their height as left-only bands went from 65 to 5, none worse, 0 overflow at 1440/1920/2560 (3702baa7, 241d14d8).
+  - **OPD:** 54% → 10% (f27e7420).
+  - **Retreats:** Ananda Lahari 64 → 4, Ashtanga 61 → 14, Back to Roots 67 → 0 (47c687b2).
+  - **Defence:** the aside is now sticky (fa45aa9b).
+  - **Offers:** two-card grid (82e42b6e).
+  - Mobile is unchanged (every rule applies at ≥1180px only).
+  - Still ≥40% and not yet reworked: /ayurveda-treatment/, /experience/, /givefeedback/, /karkidaka…html, /special-offers/ (different structures). Photo collections (29%) are left as designed.
+- **Offers hub:** "Minimum stay: No minimum stay" contradicted the owner's rule and now reads "3 nights"; translated in b-0617 (82e42b6e, e0424dac).
+- **Flags (not changed; owner/facts):**
+  - The defence page's legacy "Kerala retreat in 1997" conflicts with the locked 1999.
+  - OPD: "over 35 centres worldwide" and reception number +91-75938 61015 are unverified.
+
 ## This round (owner decisions, OWNER-DECISIONS-LATEST.md)
 Details per decision: `owner-decisions-implementation-20260928/LEDGER.md`. Per-EF audit: `EF-AUDIT-20260928.md`.
 - **Done:**
