@@ -52,6 +52,9 @@ const CHECKS = [
   ["TF-18", "/enquiry-form/?programme=treatment", { selectIndex: 1 }],
   ["TF-18", "/enquiry-form/?programme=bogus", { selectIndex: 0 }],
   ["NOTE", "/search-results/", { not: ["design review"] }],
+  // round 7: owner regression + desktop composition
+  ["PKG", "/packages/", { not: ["Open the category navigation"] }],
+  ["OD-OFF", "/offers/", { has: ["3 nights"], not: ["No minimum stay"] }],
 ];
 const b = await pw.chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, ...oidc });
