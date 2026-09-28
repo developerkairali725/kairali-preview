@@ -8,7 +8,7 @@ window.AHV_PARTNERS = {
       "sourcePosition": 5,
       "heading": "Franchise Partnerships:",
       "paragraphs": [
-        "With its all-inclusive Ayurvedic Franchise Scheme, Kairali helps business owners open Ayurvedic treatment facilities, wellness spas, luxury hotel spas, and health resorts. Franchisees benefit from this program’s leadership experience and well-known brand. Associates gain access to Kairali’s GMP-certified Ayurvedic products, staff training, technical support, and marketing assistance."
+        "With its all-inclusive Ayurvedic Franchise Scheme, Kairali helps business owners open Ayurvedic treatment facilities, wellness centres, hotel wellness centres, and health retreats. Franchisees benefit from this program’s leadership experience and well-known brand. Associates gain access to Kairali’s GMP-certified Ayurvedic products, staff training, technical support, and marketing assistance."
       ]
     },
     {

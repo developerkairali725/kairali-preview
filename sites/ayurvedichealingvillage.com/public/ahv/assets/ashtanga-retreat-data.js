@@ -81,7 +81,7 @@ window.AHV_ASHTANGA = {
    "heading": "Morning classes",
    "paragraphs": [
     {
-     "text": "The morning Ashtanga Yoga sessions will be led gently. We will concentrate on the breath – we will flow with the breath. Movement and breath resemble a dance, a creative journey, leading us to the essence of our existence where we discover tranquility, liberation, and quietude within ourselves and among all the creations around us."
+     "text": "The morning Ashtanga Yoga sessions will be led gently. We will concentrate on the breath – we will flow with the breath. Movement and breath resemble a dance, a creative process, leading us to the essence of our existence where we discover tranquility, liberation, and quietude within ourselves and among all the creations around us."
     }
    ]
   },

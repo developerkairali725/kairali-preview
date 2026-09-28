@@ -17,7 +17,7 @@ window.AHV_AYURVEDA_TRAINING = {
       "name": "Three Day Short Term Ayurveda Certificate Program",
       "days": 3,
       "hours": 9,
-      "audience": "Spa & wellness industry professionals, spa & salon managers & owners, IT professionals and diplomats.",
+      "audience": "Wellness industry professionals, wellness centre & salon managers & owners, IT professionals and diplomats.",
       "level": "Beginner"
     },
     {
@@ -26,7 +26,7 @@ window.AHV_AYURVEDA_TRAINING = {
       "name": "Intensive Ayurveda Training Program",
       "days": 5,
       "hours": 15,
-      "audience": "Spa & wellness professionals, trainers, therapists, doctors, holistic healers, dieticians.",
+      "audience": "Wellness professionals, trainers, therapists, doctors, holistic healers, dieticians.",
       "level": "Intermediate"
     },
     {
@@ -35,7 +35,7 @@ window.AHV_AYURVEDA_TRAINING = {
       "name": "Level One Advance Ayurveda Training Program for Wellness Professionals, Kerala",
       "days": 10,
       "hours": 40,
-      "audience": "Spa & wellness fraternity, therapists and wellness counsellors.",
+      "audience": "Wellness professionals, therapists and wellness counsellors.",
       "level": "Advanced"
     },
     {

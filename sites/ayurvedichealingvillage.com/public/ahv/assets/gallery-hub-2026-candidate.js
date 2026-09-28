@@ -12,8 +12,8 @@ window.AHV_GALLERY_2026 = {
   ],
   more: [
     { name: "Treatment Gallery", href: "/treatments-gallery/", meta: "39 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/03-hero-detail-cloth-herbal-poultice-01.webp", pos: "50% 50%", alt: "Herbal cloth poultices and brass oil bowls" },
-    { name: "Retreats Gallery", href: "/retreats-gallery/", meta: "29 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/05-hero-people-woman-cream-kaftan-01.webp", pos: "50% 30%", alt: "Guest in a cream kaftan on the village grounds" },
-    { name: "Yoga Gallery", href: "/yoga-gallery/", meta: "9 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/08-yoga-side-female-patient-02.webp", pos: "50% 45%", alt: "Guest in a yoga lunge on a mat in the yoga hall" },
+    { name: "Retreats Gallery", href: "/retreats-gallery/", meta: "29 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/05-hero-people-woman-cream-kaftan-01.webp", pos: "50% 30%", alt: "Visitor in a cream kaftan on the village grounds" },
+    { name: "Yoga Gallery", href: "/yoga-gallery/", meta: "9 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/08-yoga-side-female-patient-02.webp", pos: "50% 45%", alt: "Patient in a yoga lunge on a mat in the yoga hall" },
     { name: "Product Gallery", href: "/product-gallery/", meta: "17 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/06-hero-product-kairtis-oil-canister-01.webp", pos: "60% 55%", alt: "Kairali oil canister beside a foot treatment" },
     { name: "Sight Seeing Gallery", href: "/sight-seeing-gallery/", meta: "9 photographs", cover: "/ahv/assets/img/gallery-2026-09-24/07-around-surroundings-high-misty-river-01.webp", pos: "50% 50%", alt: "Misty river and palm country seen from above" }
   ],

@@ -52,7 +52,7 @@ window.AHV_LAKSHYA = {
   included: { heading: "Included in the package:", items: [
     "Consultations with the Ayurvedic Doctors",
     "Ayurvedic Massage",
-    "Luxury villa designed according to Vastu (ancient Indian Feng Shui)",
+    "Comfortable villa designed according to Vastu (ancient Indian Feng Shui)",
     "Vegetarian Ayurvedic food (3 meals per day)",
     "Harmonious natural surroundings of ancient healing trees and herbs",
     "Full use of retreat facilities, including a swimming pool, gym, library, and meditation hall." ] },

@@ -20,7 +20,7 @@ window.AHV_YALA = {
     id: "description",
     heading: "Historical retreat description",
     paragraphs: [
-      { text: "YALAcollective invites you to a unique journey in Kerala, the land of Ayurveda to an immersive 10 days experience to dive you into the intelligence of the body and the senses. The beginning of a NEW YEAR is a perfect time to detox and clean our body to welcome all positive new change we will introduce in our daily life." },
+      { text: "YALAcollective invites you to a unique retreat in Kerala, the land of Ayurveda to an immersive 10 days experience to dive you into the intelligence of the body and the senses. The beginning of a NEW YEAR is a perfect time to detox and clean our body to welcome all positive new change we will introduce in our daily life." },
       { text: "The program we propose you in collaboration with the healing Ayurvedic village Kairali is a pre-emptive healing program created to stimulate the capacity of self-regulation of our body, according to the wisdom of Ayurveda, Yoga and Meditation, in front of all the stresses that we undergo in our daily life." },
       { text: "Every morning we will start introducing with a detox ritual followed from a meditation and Pranayama (breath techniques) class. After this internal body cleansing we will practice with Francesca Lo Cascio a two hours yoga class. Beyond this daily routine we will enjoy Francesca’s teaching during 3 evening Yin yoga classes, created to deeply relax and stretch your body." },
       { text: "Nathalie Geetha Babouraj, French/Indian doctor and founder of the ISI (Institut de santé integrative) in Paris, will guide us through the knowledge of Ayurveda. Following her guidance we will learn and practice together the principles of this ancient medicine. Nathalie will also guide the group in the art of Indian dance, a joyful moment to learn how to express our self through the movement of the body." },
@@ -31,15 +31,15 @@ window.AHV_YALA = {
     ]
   },
   yoga: { id: "yoga", heading: "Yoga & Meditation Practice", paragraphs: [
-    "Francesca Lo Cascio, YALAcollective’s teacher, will guide you during the Meditation and Yoga classes. The classes are mainly held in English with the possibility of classes available in other languages according to our guests needs (French, Spanish or Italian).",
+    "Francesca Lo Cascio, YALAcollective’s teacher, will guide you during the Meditation and Yoga classes. The classes are mainly held in English with the possibility of classes available in other languages according to our participants’ needs (French, Spanish or Italian).",
     "Our yoga program is dedicated to all levels of this discipline. Entirely based on how guiding your breathing its practice will be divided in four parts:",
     "The first part is dedicated to breathing (Pranayama) and to meditation.",
     "The second dynamic part of Vinyasa Yoga where the breathing guides your mouvements.",
     "A third part of Yin Yoga where we will wok on our connective tissue to deep hydratate, detoxify and rejuvenate our body.",
     "A last part consists instead in deep relaxation (Shavasana)." ] },
   village: { id: "source-section-4", heading: "The Healing Village", paragraphs: [
-    "Kairali Ayurvedic Group’s signature property ‘The Ayurvedic Healing Village’ is a nature’s paradise where one can recuperate from stress and strain, undergo treatment for one’s ailments, all while being on holiday.",
-    "This ayurvedic haven is situated in Palakkad, just a few kilometers from the world’s biggest mountain pass between Kerala and Tamil Nadu. Nature has bestowed Palakkad immensely with rich natural vegetation, mountains, forests, fertile valleys, rivers and mountain streams which makes it a panoramic repertoire. Time spent at this unique paradise will allow you to experience the authentic healing practices of ancient India, while relaxing in the lap of modern holistic luxury." ] },
+    "Kairali Ayurvedic Group’s signature property ‘The Ayurvedic Healing Village’ is a nature’s paradise where one can recuperate from stress and strain, undergo treatment for one’s ailments, all during a restful stay.",
+    "This ayurvedic haven is situated in Palakkad, just a few kilometers from the world’s biggest mountain pass between Kerala and Tamil Nadu. Nature has bestowed Palakkad immensely with rich natural vegetation, mountains, forests, fertile valleys, rivers and mountain streams which makes it a panoramic repertoire. Time spent at this unique paradise will allow you to experience the authentic healing practices of ancient India, while relaxing in the lap of modern holistic comfort." ] },
   highlights: { id: "source-section-7", heading: "Highlights", items: [
     "7-DAY AYURVEDIC PROGRAMME with an Ayurvedic check-up by a doctor of Kairali – The Ayurvedic Healing Village",
     "Daily practice of yoga and meditation by Francesca Lo Cascio",

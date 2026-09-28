@@ -48,11 +48,11 @@ export function PageView({ locale = "en" }: { locale?: LocaleCode }){
    <div className="vg-layout"><nav aria-labelledby="ctx-h"><h2 id="ctx-h">{T("Gallery")}</h2><a href={L("/gallery/")}>{T("All galleries")}</a><a href={L("/photo-gallery/")}>{T("Photo gallery")}</a><a href={L("/video-gallery/")} aria-current="page">{T("Video gallery")}</a><a href={L("/virtual-tour/")}>{T("Virtual tour")}</a></nav>
     <div className="vg-body"><section className="vg-features" aria-label={T("Featured films")}>{films.slice(0,2).map((f,i)=><FilmCard key={f.id} film={f} featured index={i} locale={locale}/>)}</section>
      <p className="vg-play-note">{T("Choose a film to play it here. YouTube loads only when you press Play. You can also open any YouTube film in a new tab.")}</p>
-     <section className="vg-library" aria-labelledby="library-title"><div className="vg-library-head"><p className="vg-kicker">{T("Explore the collection")}</p><h2 id="library-title">{T("Little windows into village life")}</h2><p>{T("Short films of the grounds, guest spaces, yoga and Ayurvedic therapies.")}</p></div>
+     <section className="vg-library" aria-labelledby="library-title"><div className="vg-library-head"><p className="vg-kicker">{T("Explore the collection")}</p><h2 id="library-title">{T("Little windows into village life")}</h2><p>{T("Short films of the grounds, villas, yoga and Ayurvedic therapies.")}</p></div>
       <nav className="vg-categories" aria-label={T("Video topics")}>{categories.map(c=><a key={c} href={`#${categoryId(c)}`}>{c} <span>{films.slice(2).filter(f=>f.category===c).length}</span></a>)}</nav>
       {categories.map(c=><section key={c} id={categoryId(c)} className="vg-category" aria-labelledby={`${categoryId(c)}-title`}><h2 id={`${categoryId(c)}-title`}>{c}</h2><div className="vg-grid">{films.slice(2).filter(f=>f.category===c).map(f=><FilmCard key={f.id} film={f} locale={locale}/>)}</div></section>)}
      </section>
-     <section className="vg-next"><p className="vg-kicker">{T("Keep exploring")}</p><h2>{T("Picture your time at Kairali")}</h2><div><a href={L("/our-villas/")}>{T("Explore the villas →")}</a><a href={L("/yoga-meditation-programs/")}>{T("Yoga & meditation programmes →")}</a><a href={L("/read-feedback/")}>{T("Hear from our guests →")}</a></div></section>
+     <section className="vg-next"><p className="vg-kicker">{T("Keep exploring")}</p><h2>{T("Picture your time at Kairali")}</h2><div><a href={L("/our-villas/")}>{T("Explore the villas →")}</a><a href={L("/yoga-meditation-programs/")}>{T("Yoga & meditation programmes →")}</a><a href={L("/read-feedback/")}>{T("Hear from our patients →")}</a></div></section>
     </div>
    </div>
   </main><div dangerouslySetInnerHTML={{__html:chrome.footer}}/>

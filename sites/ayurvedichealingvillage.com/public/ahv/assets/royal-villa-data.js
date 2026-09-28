@@ -8,7 +8,7 @@ window.AHV_ROYAL = {
   "Upto 3 Adults",
   "Garden View"
  ],
- "quote": "“Step into a world of regal opulence and let the enchanting ambiance of our Royal Villa captivate your senses. With its spacious layout and impeccable attention to detail, this villa offers a truly immersive experience, where Ayurvedic healing meets luxurious indulgence.“",
+ "quote": "“Step into a world of regal opulence and let the enchanting ambiance of our Royal Villa captivate your senses. With its spacious layout and impeccable attention to detail, this villa offers a truly immersive experience, where Ayurvedic healing meets refined comfort.“",
  "aboutHeading": "About the Villa",
  "aboutBlocks": [
   {
@@ -17,7 +17,7 @@ window.AHV_ROYAL = {
   },
   {
    "type": "p",
-   "text": "Guests can live the kind of life that was previously only available to nobles within these walls, complete with opulent furnishings and first-rate amenities. The design of the villa creates a special haven where traditional wellness meets contemporary indulgence by skillfully fusing opulent comfort with the principles of Ayurvedic life"
+   "text": "Patients can live the kind of life that was previously only available to nobles within these walls, complete with opulent furnishings and first-rate amenities. The design of the villa creates a special haven where traditional wellness meets contemporary indulgence by skillfully fusing opulent comfort with the principles of Ayurvedic life"
   },
   {
    "type": "p",
@@ -34,11 +34,11 @@ window.AHV_ROYAL = {
   },
   {
    "type": "p",
-   "text": "The capacity of these villas to provide a truly royal experience at an incredibly low cost is what makes them unique. The splendor of aristocratic living is available to visitors without the imperial price tag, making this high-end lifestyle experience affordable for anyone looking for both luxury and good value."
+   "text": "The capacity of these villas to provide a truly royal experience at an incredibly low cost is what makes them unique. The splendor of aristocratic living is available to visitors without the imperial price tag, making this high-end lifestyle experience affordable for anyone looking for both comfort and good value."
   },
   {
    "type": "p",
-   "text": "The Royal Villa is an example of well-considered design, with each element working together to create a space that fulfills everyone’s need for upscale living while preserving the tranquil environment necessary for Ayurvedic treatment procedures. It offers guests a genuinely remarkable experience that epitomizes royal hospitality by perfectly combining historical grandeur with modern comfort."
+   "text": "The Royal Villa is an example of well-considered design, with each element working together to create a space that fulfills everyone’s need for upscale living while preserving the tranquil environment necessary for Ayurvedic treatment procedures. It offers patients a genuinely remarkable experience that epitomizes royal hospitality by perfectly combining historical grandeur with modern comfort."
   }
  ],
  "amenitiesHeading": "Villa Features",

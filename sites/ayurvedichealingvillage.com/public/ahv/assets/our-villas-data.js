@@ -16,7 +16,7 @@ window.AHV_OUR_VILLAS = {
    "key": "Maharaja",
    "title": "Maharaja Suite",
    "href": "/maharaja-suite/",
-   "description": "Experience ultimate bliss at our Maharaja Suite, where grandeur meets luxury. Indulge in royal treatment and Ayurvedic rejuvenation, immersing yourself in elegance and serenity. A sanctuary designed to transport you to unparalleled wellness and timeless relaxation.",
+   "description": "Experience ultimate bliss at our Maharaja Suite, where grandeur meets comfort. Indulge in royal treatment and Ayurvedic rejuvenation, immersing yourself in elegance and serenity. A sanctuary designed to transport you to unparalleled wellness and timeless relaxation.",
    "facts": [
     "144 – 432 Sqft",
     "Twin/King Size Bed",
@@ -83,7 +83,7 @@ window.AHV_OUR_VILLAS = {
    "key": "Royal",
    "title": "Royal Villa",
    "href": "/royal-villa/",
-   "description": "Step into a world of regal opulence and let the enchanting ambiance of our Royal Villa captivate your senses. With its spacious layout and impeccable attention to detail, this villa offers a truly immersive experience, where Ayurvedic healing meets luxurious indulgence.",
+   "description": "Step into a world of regal opulence and let the enchanting ambiance of our Royal Villa captivate your senses. With its spacious layout and impeccable attention to detail, this villa offers a truly immersive experience, where Ayurvedic healing meets refined comfort.",
    "facts": [
     "144- 244 Sqft",
     "Twin/King Size Bed",
@@ -210,7 +210,7 @@ window.AHV_OUR_VILLAS = {
    "key": "Classic",
    "title": "Classic Villa",
    "href": "/classic-villa/",
-   "description": "Experience traditional elegance and modern comfort at our Classic Villa. Embrace Kerala’s timeless architecture, indulge in Ayurvedic healing and enjoy luxurious amenities. Unwind in this serene haven, where inner balance awaits your discovery.",
+   "description": "Experience traditional elegance and modern comfort at our Classic Villa. Embrace Kerala’s timeless architecture, indulge in Ayurvedic healing and enjoy comfortable amenities. Unwind in this serene haven, where inner balance awaits your discovery.",
    "facts": [
     "144- 244 Sqft",
     "Twin/King Size Bed",
@@ -261,7 +261,7 @@ window.AHV_OUR_VILLAS = {
  "vastu": {
   "heading": "Why Choose Vastu- Inspired Villas?",
   "quote": "“I’ve lived in many places, but only in one have I found a home.”",
-  "paragraph": "Each of our luxury villas is based on the ancient edicts of ‘Vaastu Shastra’, the Indian version of feng shui, as outlined in ancient scripture. This provides our guests with the ultimate Ayurveda or Yoga villa retreat in the setting of Kerala’s most authentic Vedic community. Vaastu Shastra is an ancient Indian system of architecture and design that emphasizes the placement and orientation of buildings to create harmony and balance with nature.",
+  "paragraph": "Each of our villas is based on the ancient edicts of ‘Vaastu Shastra’, the Indian version of feng shui, as outlined in ancient scripture. This provides our patients with the ultimate Ayurveda or Yoga villa retreat in the setting of Kerala’s most authentic Vedic community. Vaastu Shastra is an ancient Indian system of architecture and design that emphasizes the placement and orientation of buildings to create harmony and balance with nature.",
   "items": [
    "Promote Wellbeing",
    "Enhances Productivity",

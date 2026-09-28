@@ -20,11 +20,11 @@ window.AHV_AYURYOGA = {
     paragraphs: [
       "Kerala presents a distinctive language, culture, and cuisine that set it apart from the rest of India, and serves as the origin of Ayurveda, the ancient Indian discipline of holistic healing, making it an ideal destination for natural recovery.",
       "Nowhere in the world can you immerse yourself in nature and revitalize with natural remedies quite like the fragrant landscapes of Kerala.",
-      "Time spent in Kerala offers the chance to engage in genuine healing traditions of ancient India, all while enjoying modern holistic luxury.",
+      "Time spent in Kerala offers the chance to engage in genuine healing traditions of ancient India, all while enjoying modern holistic comfort.",
       "Kairali Ayurvedic Group’s premier Ayurvedic location, Kairali – The Ayurvedic Healing Village, is a unique holistic environment that fosters healing both from within and outwardly. Through traditional and genuine Ayurvedic therapies, treatments, and medications from ancient India, combined with Yoga and Mindfulness practices, the Healing Village provides comprehensive Wellness for everyone.",
       "Kairali – The Ayurvedic Healing Village covers 60 acres and features 30 villas and suites along with open areas, farms, organic gardens, 3 yoga studios, and provides genuine organic cuisine.",
       "The Healing Village has been inviting wellness enthusiasts globally for various programs, including Yoga Retreats, Ayurveda Retreats, and Ayurveda Training Retreats.",
-      "The AyurYoga Retreats typically last for 07 days, 14 days, 21 days, and 28 days, and we host groups of guests in double and triple occupancy.",
+      "The AyurYoga Retreats typically last for 07 days, 14 days, 21 days, and 28 days, and we host groups of participants in double and triple occupancy.",
       "The AyurYoga 2020 initiative with our collaborators aims to blend yoga, Ayurveda, meditation, pujas, kirtans, and exploring sacred spaces."
     ]
   },

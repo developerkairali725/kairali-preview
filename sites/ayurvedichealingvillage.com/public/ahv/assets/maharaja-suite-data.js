@@ -8,16 +8,16 @@ window.AHV_MAHARAJA = {
   "Upto 4 Adults",
   "Garden View"
  ],
- "quote": "“Embark on an extraordinary journey of wellness and luxury at our Maharaja Suite. With its grandeur and unparalleled elegance, this Suite is designed to transport you to a realm of ultimate bliss. Immerse yourself in the royal treatment and experience the epitome of Ayurvedic rejuvenation.”",
+ "quote": "“Enjoy an extraordinary stay of wellness and comfort at our Maharaja Suite. With its grandeur and unparalleled elegance, this Suite is designed to transport you to a realm of ultimate bliss. Immerse yourself in the royal treatment and experience the epitome of Ayurvedic rejuvenation.”",
  "aboutHeading": "About the Suite",
  "aboutBlocks": [
   {
    "type": "p",
-   "text": "The Maharaja Suite is the ultimate lodging option at this Ayurvedic retreat, combining luxury and imperial grandeur. As the name suggests, “Maharaja” means “Emperor,” and this magnificent suite provides a regal experience."
+   "text": "The Maharaja Suite is the ultimate lodging option at this Ayurvedic retreat, combining comfort and imperial grandeur. As the name suggests, “Maharaja” means “Emperor,” and this magnificent suite provides a regal experience."
   },
   {
    "type": "p",
-   "text": "There are two separate rooms in the suite, one of which has an impressive king-size bed. Everything, from the luxurious bed linens to the private outdoor areas, has been painstakingly planned with grandeur in mind. The private lawn that guests can enjoy opens to a tranquil waterbody, making it the ideal place to unwind and practice meditation."
+   "text": "There are two separate rooms in the suite, one of which has an impressive king-size bed. Everything, from the comfortable bed linens to the private outdoor areas, has been painstakingly planned with grandeur in mind. The private lawn that occupants can enjoy opens to a tranquil waterbody, making it the ideal place to unwind and practice meditation."
   },
   {
    "type": "p",
@@ -35,7 +35,7 @@ window.AHV_MAHARAJA = {
   },
   {
    "type": "p",
-   "text": "The Maharaja Suite is ideally situated within the retreat, providing easy access to all amenities while preserving privacy. Like the emperors who once ruled over wide swaths of India, the Maharaja Suite is a class apart from the resort’s Deluxe and Royal Villas, which also offer stunning accommodations in their own right."
+   "text": "The Maharaja Suite is ideally situated within the retreat, providing easy access to all amenities while preserving privacy. Like the emperors who once ruled over wide swaths of India, the Maharaja Suite is a class apart from the Healing Village’s Deluxe and Royal Villas, which also offer stunning accommodations in their own right."
   },
   {
    "type": "p",
