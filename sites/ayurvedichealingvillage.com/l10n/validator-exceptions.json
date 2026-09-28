@@ -37,6 +37,242 @@
    ],
    "requireText": "第五代",
    "reason": "'5th-generation' → 第五代: Chinese ordinal generation written with 五; the fact (fifth) is present as text"
+  },
+  {
+   "id": "t_0face5875dcf1c6f9606",
+   "sourceHash": "0face5875dcf1c6f9606544aa512786ed5f8e0c2a2c6602cb86cbe50f9672c89",
+   "locale": "ar",
+   "requireText": "القرن الرابع عشر",
+   "reason": "'14th-century' → القرن الرابع عشر: Arabic ordinal century in words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "14"
+   ]
+  },
+  {
+   "id": "t_d3313c6d80ede104a21c",
+   "sourceHash": "d3313c6d80ede104a21cd8b05236a20ac2b8a663774a9807cc2dcd77643e689a",
+   "locale": "ar",
+   "requireText": "لليلتين",
+   "reason": "'2 nights' → لليلتين: Arabic dual form (two nights); same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2"
+   ]
+  },
+  {
+   "id": "t_735c05e54429eb9eb946",
+   "sourceHash": "735c05e54429eb9eb9464c5ab46de8efc1d5d40ffec4b4c584210aca299460c9",
+   "locale": "ar",
+   "requireText": "الأربعينيات والخمسينيات",
+   "reason": "'40s and 50s' → الأربعينيات والخمسينيات: Arabic decade words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "40",
+    "50"
+   ]
+  },
+  {
+   "id": "t_a6c1bf2dc38bb88dcab6",
+   "sourceHash": "a6c1bf2dc38bb88dcab678255e29b0d7a5f692d1f3c225f8a0142801c53bd2a9",
+   "locale": "ar",
+   "requireText": "ساعتان نظريتان + ساعتان عمليتان",
+   "reason": "'2 hours' → ساعتان: Arabic dual; 20 kept as digits (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "2"
+   ]
+  },
+  {
+   "id": "t_b380baeb89660ee30157",
+   "sourceHash": "b380baeb89660ee30157b3725720792130cd3dd01828b806f6e247a4395d35ab",
+   "locale": "ar",
+   "requireText": "جانبان",
+   "reason": "'2 aspects' → جانبان: Arabic dual; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2"
+   ]
+  },
+  {
+   "id": "t_24f962a28a6159314cdc",
+   "sourceHash": "24f962a28a6159314cdcfaa46fd266ad53e3ab377bd373cebd34d6e1ad1ecb05",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_1943b7ef2be5d43b660b",
+   "sourceHash": "1943b7ef2be5d43b660bc69ec8a2269b7fd83379c1f4053de80cace4ff481005",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_a517928897903fc42b8f",
+   "sourceHash": "a517928897903fc42b8f5cde56eb9df95d72a31d82ec5b742fcd372ad932f793",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "ar",
+   "requireText": "ليوم واحد",
+   "reason": "'1-day' → ليوم واحد: Arabic 'one day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_c34735c55fad4c4e89bc",
+   "sourceHash": "c34735c55fad4c4e89bc64e0bf37a889354caf91bcdaf867bf20521ccba4dcb4",
+   "locale": "ar",
+   "requireText": "ساعتان من الدراسة النظرية + ساعتان",
+   "reason": "'2 hours' → ساعتان: Arabic dual; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "2"
+   ]
+  },
+  {
+   "id": "t_e07d8b694cced6e01bf5",
+   "sourceHash": "e07d8b694cced6e01bf50323f81030f1cdbbf634afe7a5dac9bc70e095907c3e",
+   "locale": "ar",
+   "requireText": "ساعتان من الدروس النظرية",
+   "reason": "'2 hours'/'1 hour' → ساعتان/ساعة واحدة: Arabic dual and 'one hour'; 45 kept as digits (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "1"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "ar",
+   "requireText": "القرن الحادي والعشرين",
+   "reason": "'21st century' → القرن الحادي والعشرين: Arabic ordinal century in words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_31714f481343f2a869a5",
+   "sourceHash": "31714f481343f2a869a5c9ae3434d7845ee2157d1f1890fb26ef5cbb301cbbc2",
+   "locale": "de",
+   "requireText": "1,25 MW",
+   "reason": "'1.25MW' → 1,25 MW: German decimal comma; same value (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1",
+    "25"
+   ],
+   "allowAdded": [
+    "125"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "es",
+   "requireText": "siglo XXI",
+   "reason": "'21st century' → siglo XXI: Spanish Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "fr",
+   "requireText": "XXIe siècle",
+   "reason": "'21st century' → XXIe siècle: French Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "it",
+   "requireText": "XXI secolo",
+   "reason": "'21st century' → XXI secolo: Italian Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_7b50708eb8d1b4a7bc48",
+   "sourceHash": "7b50708eb8d1b4a7bc48041006d9fbba41ffeeea1b821a6e7a3ba502f99df6cb",
+   "locale": "nl",
+   "requireText": "anderhalf uur",
+   "reason": "'1 and a half hours' → anderhalf uur: Dutch idiom; same duration, 51.2 km kept (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_b4b5ba88daf1d3f4502a",
+   "sourceHash": "b4b5ba88daf1d3f4502a0806d18200111aed2ea8815f62d472bf17d033f83665",
+   "locale": "ja",
+   "requireText": "10万人",
+   "reason": "'100K' → 10万人 (100,000 in Japanese man units); same value, 35 kept (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "100"
+   ],
+   "allowAdded": [
+    "10"
+   ]
+  },
+  {
+   "id": "t_ff90479fa30f2110affb",
+   "sourceHash": "ff90479fa30f2110affbe69e128152434d744d236d15e0f948863f95e4436479",
+   "locale": "ja",
+   "requireText": "30万件",
+   "reason": "'300K' → 30万件 (300,000 in Japanese man units); same value (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "300"
+   ],
+   "allowAdded": [
+    "30"
+   ]
+  },
+  {
+   "id": "t_be4ff49e6606a164d195",
+   "sourceHash": "be4ff49e6606a164d19550782956a6a3035c16c88eddad66a58daa3f4f77bb9a",
+   "locale": "ko",
+   "requireText": "1시간 30분에서 2시간",
+   "reason": "source 'one and a half … two and a half hours' in words → 1시간 30분 / 2시간 30분: Korean hour+minute notation; same durations (coordinator review 2026-09-28)",
+   "allowAdded": [
+    "30",
+    "30"
+   ]
+  },
+  {
+   "id": "t_0ef43b895faae98d876a",
+   "sourceHash": "0ef43b895faae98d876ac0618a875f551e786d006a5c6aa9a30e76a1df3d4d6c",
+   "locale": "ko",
+   "requireText": "1시간 30분에서 2시간",
+   "reason": "source 'one and a half … two and a half hours' in words → 1시간 30분 / 2시간 30분: Korean hour+minute notation; same durations (coordinator review 2026-09-28)",
+   "allowAdded": [
+    "30",
+    "30"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "ru",
+   "requireText": "Однодневный",
+   "reason": "'1-day' → Однодневный: Russian compound 'one-day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
   }
  ]
 }
