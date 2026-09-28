@@ -180,9 +180,12 @@
    parent — on /map/ four thumbnail buttons each held a "first" image and 90px
    maps were stretched to 1440×460 (measured 23 Sep). The hero is the image
    inside the first two blocks of <main>. */
+/* ...and never a decorative SVG motif: the lotus mark that sits beside the hero on /packages/, /our-story/,
+   /learn-about-ayurveda/ and /learn-more-about-ayurveda/ is its own "first" image, and the rule stretched its
+   95x57 artwork to 95x460 — two clipped fragments under the banner (owner report, 28 Sep 2026). */
 @media (min-width:1024px) {
-  [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type,
-  [data-ahv-family="article-reader"] main > section:first-of-type + div > img {
+  [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type:not([src$=".svg"]),
+  [data-ahv-family="article-reader"] main > section:first-of-type + div > img:not([src$=".svg"]) {
     width:100% !important;
     max-width:100% !important;
     margin-left:0 !important;
@@ -223,8 +226,8 @@
  * and leave every one of these images still stretched to 1024px and cropped,
  * with the part that hangs off the page simply clipped. */
 @media (min-width:1024px) {
-  [data-ahv-family="article-reader"] main [style*="grid-template-columns"] img:first-of-type,
-  [data-ahv-family="article-reader"] main [style*="display: flex"] img:first-of-type {
+  [data-ahv-family="article-reader"] main [style*="grid-template-columns"] img:first-of-type:not([src$=".svg"]),
+  [data-ahv-family="article-reader"] main [style*="display: flex"] img:first-of-type:not([src$=".svg"]) {
     width:100% !important;
     max-width:100% !important;
     margin-left:0 !important;
