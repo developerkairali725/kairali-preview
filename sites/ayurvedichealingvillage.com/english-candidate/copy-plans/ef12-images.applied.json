@@ -1,0 +1,941 @@
+{
+ "generated": "2026-09-28 21:51:07 IST",
+ "head": "bc908449cc69e7874247cfb520bc0e42480677af",
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "EF-12",
+ "source": "lanes/B-content/ef12-images.json + REPORT.md Task 4; anchors read from the current worktree files at HEAD (worktree clean apart from unrelated l10n/overrides changes)",
+ "apply": "cd sites/ayurvedichealingvillage.com && node tools/apply-copy-plan.mjs <this file> --check   (then without --check)",
+ "verification": "All 42 entries passed `node tools/apply-copy-plan.mjs <plan> --check` (every count matched; 6 files would change: seven-informational-data.js, reader25b-family-data.js, reader25a-family-data.js, article-family-data.js, image-alt-map.json, image-alt-seen.json). An in-memory apply re-parsed all 6 files as valid JSON. /learn-more-about-yoga/ (identical src+alt+ptr to the live-to-100 image) stays unchanged. The ALT plan (alternateEntries swapped in for the portrait yoga card) also passed --check.",
+ "anchoring": "Every entry's old string contains the image src (or, for the article figure, the sourceUrl carrying the unique filename) AND the old alt, exactly as serialised in the file. /ayurveda-treatment/ entries also include the block ptr, because shifted alts and the 13 identical placeholder objects make src+alt ambiguous. Swaps replace the whole image object (src, alt, width, height, sourceUrl and recordedOriginalSha256 from gallery-family-data.js, plus an 'ef12' provenance key that the l10n extractor ignores via its ^ef\\d{2}$ rule).",
+ "designFlags": [
+  "Januvasti and Netratharpanam replacements are portrait (840x1200) in a list of 600x400 landscape cards. They are set to width 600 / height 857, so they match the column width but each card is about twice as tall. Landscape alternatives named by the audit but NOT used: /ahv/assets/img/Approach-of-Arthiritis.webp (580x386: dough rings on the legs, therapist standing) and /ahv/assets/img/eye2.webp (523x348: eye dough rings, no oil visible).",
+  "/new-to-yoga/ c0f307 replacement c3231a3e is portrait in a landscape card grid, and it is the same photo as the left panel of the 20f33c6f replacement two cards earlier. Recommend alternateEntries[0] (40ce7b7d, landscape, visually verified by this lane)."
+ ],
+ "entries": [
+  {
+   "id": "EF12-AT-abhyangam-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Abhyangam",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/1/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/10b2777142ab6644.webp\",\"alt\":\"Two therapists giving a synchronised warm-oil massage to a patient on a wooden treatment table\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/1/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/10b2777142ab6644.webp\",\"alt\":\"A therapist massaging warm oil into the back of a patient lying face down\"",
+   "count": 1,
+   "oldAlt": "Two therapists giving a synchronised warm-oil massage to a patient on a wooden treatment table",
+   "newAlt": "A therapist massaging warm oil into the back of a patient lying face down",
+   "src": "/ahv/assets/img/seven/10b2777142ab6644.webp"
+  },
+  {
+   "id": "EF12-AT-takradhara-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Takradhara",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/5/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/013ddb25af34f14d.webp\",\"alt\":\"Warm oil streaming from a suspended brass vessel onto a patient's forehead during Shirodhara\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/5/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/013ddb25af34f14d.webp\",\"alt\":\"Warm liquid streaming from a suspended brass vessel onto a reclining patient's forehead\"",
+   "count": 1,
+   "oldAlt": "Warm oil streaming from a suspended brass vessel onto a patient's forehead during Shirodhara",
+   "newAlt": "Warm liquid streaming from a suspended brass vessel onto a reclining patient's forehead",
+   "src": "/ahv/assets/img/seven/013ddb25af34f14d.webp"
+  },
+  {
+   "id": "EF12-AT-dhanyamala-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Dhanyamala Dhara",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/7/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/f1cc0ca6673ca907.webp\",\"alt\":\"dhanyamaladhara-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/7/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/f1cc0ca6673ca907.webp\",\"alt\":\"A therapist massaging a patient lying face down, with lit candles in the background\"",
+   "count": 1,
+   "oldAlt": "dhanyamaladhara-therpy",
+   "newAlt": "A therapist massaging a patient lying face down, with lit candles in the background",
+   "src": "/ahv/assets/img/seven/f1cc0ca6673ca907.webp"
+  },
+  {
+   "id": "EF12-AT-pizhichil-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Pizhichil",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/9/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/7fefca30326c0433.webp\",\"alt\":\"pizhichil-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/9/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/7fefca30326c0433.webp\",\"alt\":\"Therapists pouring warm oil from a brass vessel over a patient's legs\"",
+   "count": 1,
+   "oldAlt": "pizhichil-therpy",
+   "newAlt": "Therapists pouring warm oil from a brass vessel over a patient's legs",
+   "src": "/ahv/assets/img/seven/7fefca30326c0433.webp"
+  },
+  {
+   "id": "EF12-AT-elakizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Elakizhi (Patraswedam)",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/13/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/72fc1cff9a50bb72.webp\",\"alt\":\"elakizhi-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/13/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/72fc1cff9a50bb72.webp\",\"alt\":\"Herbal poultice bundles with a bowl of turmeric, an amber bottle and incense sticks\"",
+   "count": 1,
+   "oldAlt": "elakizhi-therpy",
+   "newAlt": "Herbal poultice bundles with a bowl of turmeric, an amber bottle and incense sticks",
+   "src": "/ahv/assets/img/seven/72fc1cff9a50bb72.webp"
+  },
+  {
+   "id": "EF12-AT-manjalkizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Manjalkizhi",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/15/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca9bf1cc3bdade22.webp\",\"alt\":\"manjalkizhi-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/15/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca9bf1cc3bdade22.webp\",\"alt\":\"A therapist pressing a herbal poultice onto the back of a patient lying face down\"",
+   "count": 1,
+   "oldAlt": "manjalkizhi-therpy",
+   "newAlt": "A therapist pressing a herbal poultice onto the back of a patient lying face down",
+   "src": "/ahv/assets/img/seven/ca9bf1cc3bdade22.webp"
+  },
+  {
+   "id": "EF12-AT-narangakizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Narangakizhi",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/17/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/0c8f2dd4fb8a529c.webp\",\"alt\":\"narangakizhi-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/17/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/0c8f2dd4fb8a529c.webp\",\"alt\":\"Two therapists pressing herbal poultices onto a patient's back\"",
+   "count": 1,
+   "oldAlt": "narangakizhi-therpy",
+   "newAlt": "Two therapists pressing herbal poultices onto a patient's back",
+   "src": "/ahv/assets/img/seven/0c8f2dd4fb8a529c.webp"
+  },
+  {
+   "id": "EF12-AT-podikizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Podikizhi",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/19/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/3b40dc2e85fab403.webp\",\"alt\":\"podikizhi-therpy\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/19/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/3b40dc2e85fab403.webp\",\"alt\":\"Sepia photograph of a therapist pressing a herbal poultice onto a smiling patient's shoulder\"",
+   "count": 1,
+   "oldAlt": "podikizhi-therpy",
+   "newAlt": "Sepia photograph of a therapist pressing a herbal poultice onto a smiling patient's shoulder",
+   "src": "/ahv/assets/img/seven/3b40dc2e85fab403.webp"
+  },
+  {
+   "id": "EF12-AT-muttakizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Muttakizhi",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/21/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/810809ece2c30f7d.webp\",\"alt\":\"Herbal poultice bundles, a purple orchid and lit tea lights on a bamboo mat\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/21/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/810809ece2c30f7d.webp\",\"alt\":\"Herbal poultice bundles beside Kairali-branded bowls of fresh medicinal leaves\"",
+   "count": 1,
+   "oldAlt": "Herbal poultice bundles, a purple orchid and lit tea lights on a bamboo mat",
+   "newAlt": "Herbal poultice bundles beside Kairali-branded bowls of fresh medicinal leaves",
+   "src": "/ahv/assets/img/seven/810809ece2c30f7d.webp"
+  },
+  {
+   "id": "EF12-AT-kadikizhi-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Kadikizhi",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/25/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/9519da0f537f4dd9.webp\",\"alt\":\"A therapist lifting warm yellow herbal paste from a brass vessel above a reclining patient\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/25/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/9519da0f537f4dd9.webp\",\"alt\":\"Two therapists pressing herbal poultices onto a seated patient's shoulders\"",
+   "count": 1,
+   "oldAlt": "A therapist lifting warm yellow herbal paste from a brass vessel above a reclining patient",
+   "newAlt": "Two therapists pressing herbal poultices onto a seated patient's shoulders",
+   "src": "/ahv/assets/img/seven/9519da0f537f4dd9.webp"
+  },
+  {
+   "id": "EF12-AT-udwarthanam-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Udwarthanam",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/29/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/e6acdfe621120b2d.webp\",\"alt\":\"Sepia photograph of hands massaging oil into a reclining patient's chest and shoulders\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/29/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/e6acdfe621120b2d.webp\",\"alt\":\"Hands rubbing herbal powder along a patient's limb during Udwarthanam\"",
+   "count": 1,
+   "oldAlt": "Sepia photograph of hands massaging oil into a reclining patient's chest and shoulders",
+   "newAlt": "Hands rubbing herbal powder along a patient's limb during Udwarthanam",
+   "src": "/ahv/assets/img/seven/e6acdfe621120b2d.webp"
+  },
+  {
+   "id": "EF12-AT-sirovasti-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Sirovasti",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/33/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ee25594b1ebc995e.webp\",\"alt\":\"A row of Kairali-branded bowls holding freshly cut medicinal leaves\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/33/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ee25594b1ebc995e.webp\",\"alt\":\"A patient wearing the tall leather cap used for Sirovasti\"",
+   "count": 1,
+   "oldAlt": "A row of Kairali-branded bowls holding freshly cut medicinal leaves",
+   "newAlt": "A patient wearing the tall leather cap used for Sirovasti",
+   "src": "/ahv/assets/img/seven/ee25594b1ebc995e.webp"
+  },
+  {
+   "id": "EF12-AT-nasyam-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Nasyam",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/43/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/54fdd85ae72b8a72.webp\",\"alt\":\"Warm medicated oil in a brass vessel held above a reclining patient's face\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/43/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/54fdd85ae72b8a72.webp\",\"alt\":\"A brass Nasya vessel of medicated oil held at a patient's nostril\"",
+   "count": 1,
+   "oldAlt": "Warm medicated oil in a brass vessel held above a reclining patient's face",
+   "newAlt": "A brass Nasya vessel of medicated oil held at a patient's nostril",
+   "src": "/ahv/assets/img/seven/54fdd85ae72b8a72.webp"
+  },
+  {
+   "id": "EF12-AT-talapotichil-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Talapotichil",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/45/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/b7858d0ae714c11d.webp\",\"alt\":\"A therapist brushing a white herbal face pack onto a reclining patient\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/45/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/b7858d0ae714c11d.webp\",\"alt\":\"A patient's head wrapped in a leaf-covered herbal pack for Thalapothichil\"",
+   "count": 1,
+   "oldAlt": "A therapist brushing a white herbal face pack onto a reclining patient",
+   "newAlt": "A patient's head wrapped in a leaf-covered herbal pack for Thalapothichil",
+   "src": "/ahv/assets/img/seven/b7858d0ae714c11d.webp"
+  },
+  {
+   "id": "EF12-AT-netradhara-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Netradhara",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/49/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/d821284999fde1a9.webp\",\"alt\":\"A therapist folding a dried leaf into a funnel beside a dough dam on a patient\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/49/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/d821284999fde1a9.webp\",\"alt\":\"Medicated oil poured into dough rings built around a patient's eyes\"",
+   "count": 1,
+   "oldAlt": "A therapist folding a dried leaf into a funnel beside a dough dam on a patient",
+   "newAlt": "Medicated oil poured into dough rings built around a patient's eyes",
+   "src": "/ahv/assets/img/seven/d821284999fde1a9.webp"
+  },
+  {
+   "id": "EF12-AT-greevavasti-interim-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Greevavasti",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/39/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca7904c1957e64b7.webp\",\"alt\":\"A therapist pouring warm medicated oil into a dough ring on a patient's lower back during Kati Vasti\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/39/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca7904c1957e64b7.webp\",\"alt\":\"A row of Kairali-branded bowls holding freshly cut medicinal leaves\"",
+   "count": 1,
+   "oldAlt": "A therapist pouring warm medicated oil into a dough ring on a patient's lower back during Kati Vasti",
+   "newAlt": "A row of Kairali-branded bowls holding freshly cut medicinal leaves",
+   "src": "/ahv/assets/img/seven/ca7904c1957e64b7.webp",
+   "note": "INTERIM truth fix: this placeholder image carries the NEXT card's alt (a procedure it does not show). Alt set to what the image actually shows until the structural text-only change removes the image. Not in the audit's fixedAlt list — coordinator may drop this entry if the structural change lands in the same pass."
+  },
+  {
+   "id": "EF12-AT-thalam-interim-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Thalam",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"ptr\":\"/sections/3/c/3/c/6/c/67/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca7904c1957e64b7.webp\",\"alt\":\"A therapist spreading green herbal paste across a patient's back from a brass bowl\"",
+   "new": "\"ptr\":\"/sections/3/c/3/c/6/c/67/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca7904c1957e64b7.webp\",\"alt\":\"A row of Kairali-branded bowls holding freshly cut medicinal leaves\"",
+   "count": 1,
+   "oldAlt": "A therapist spreading green herbal paste across a patient's back from a brass bowl",
+   "newAlt": "A row of Kairali-branded bowls holding freshly cut medicinal leaves",
+   "src": "/ahv/assets/img/seven/ca7904c1957e64b7.webp",
+   "note": "INTERIM truth fix: this placeholder image carries the NEXT card's alt (a procedure it does not show). Alt set to what the image actually shows until the structural text-only change removes the image. Not in the audit's fixedAlt list — coordinator may drop this entry if the structural change lands in the same pass."
+  },
+  {
+   "id": "EF12-AT-januvasti-swap",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Januvasti",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "{\"kind\":\"image\",\"ptr\":\"/sections/3/c/3/c/6/c/37/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/ca7904c1957e64b7.webp\",\"alt\":\"A row of Kairali-branded bowls holding freshly cut medicinal leaves\",\"width\":600,\"height\":400,\"sourceUrl\":\"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/not-available.jpg\",\"external\":false}",
+   "new": "{\"kind\":\"image\",\"ptr\":\"/sections/3/c/3/c/6/c/37/c/1/c/0\",\"src\":\"/ahv/assets/img/gallery/9f0d2083e6f739340edeeafa66efe91914cee771d7ab53740321b94bb081a2c0.webp\",\"alt\":\"A therapist pouring warm herbal oil from a brass vessel into a dough ring on a patient's knee\",\"width\":600,\"height\":857,\"sourceUrl\":\"/ahv/assets/img/gallery/9f0d2083e6f739340edeeafa66efe91914cee771d7ab53740321b94bb081a2c0.webp\",\"external\":false,\"ef12\":\"28 Sep 2026 EF-12: placeholder replaced with the legacy KTAHV photograph 9f0d2083e6f73934 (lane-B audit, visually verified; not from ho-* or gallery-2026/treatments). Display box 600 wide at the file's 840x1200 aspect.\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/seven/ca7904c1957e64b7.webp",
+   "oldAlt": "A row of Kairali-branded bowls holding freshly cut medicinal leaves",
+   "newSrc": "/ahv/assets/img/gallery/9f0d2083e6f739340edeeafa66efe91914cee771d7ab53740321b94bb081a2c0.webp",
+   "newAlt": "A therapist pouring warm herbal oil from a brass vessel into a dough ring on a patient's knee"
+  },
+  {
+   "id": "EF12-AT-netratharpanam-swap",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "Netratharpanam",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "{\"kind\":\"image\",\"ptr\":\"/sections/3/c/3/c/6/c/51/c/1/c/0\",\"src\":\"/ahv/assets/img/seven/c79a13de870f2451.webp\",\"alt\":\"A therapist folding a dried leaf into a funnel beside a dough dam on a patient\",\"width\":600,\"height\":400,\"sourceUrl\":\"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/netratharpanam-therapy.jpg\",\"external\":false}",
+   "new": "{\"kind\":\"image\",\"ptr\":\"/sections/3/c/3/c/6/c/51/c/1/c/0\",\"src\":\"/ahv/assets/img/gallery/0ff3a00c24c98483a396a4819dde0b51e206de1131bed48aba77bdddf653484c.webp\",\"alt\":\"Medicated oil dripped into dough rings built around a patient's eyes during Netra Tarpana\",\"width\":600,\"height\":857,\"sourceUrl\":\"/ahv/assets/img/gallery/0ff3a00c24c98483a396a4819dde0b51e206de1131bed48aba77bdddf653484c.webp\",\"external\":false,\"ef12\":\"28 Sep 2026 EF-12: placeholder replaced with the legacy KTAHV photograph 0ff3a00c24c98483 (lane-B audit, visually verified; not from ho-* or gallery-2026/treatments). Display box 600 wide at the file's 840x1200 aspect.\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/seven/c79a13de870f2451.webp",
+   "oldAlt": "A therapist folding a dried leaf into a funnel beside a dough dam on a patient",
+   "newSrc": "/ahv/assets/img/gallery/0ff3a00c24c98483a396a4819dde0b51e206de1131bed48aba77bdddf653484c.webp",
+   "newAlt": "Medicated oil dripped into dough rings built around a patient's eyes during Netra Tarpana"
+  },
+  {
+   "id": "EF12-AT-travel-consultant",
+   "row": "EF-12",
+   "route": "/ayurveda-treatment/",
+   "label": "closing h2 (ptr /sections/3/c/3/c/10)",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "old": "\"v\":\"Please contact our helpful Travel Consultant for More Details:\"",
+   "new": "\"v\":\"Please contact our helpful patient care team for More Details:\"",
+   "count": 1,
+   "note": "Hospitality register on a KTAHV page (not a banned word). Minimal swap 'Travel Consultant' -> 'patient care team'. EN-only until l10n re-extract + translate (l10n/source/units.json carries the old unit)."
+  },
+  {
+   "id": "EF12-new-to-ayurveda-10b27771-alt",
+   "row": "EF-12",
+   "route": "/new-to-ayurveda/",
+   "label": "card thumbnail (\"kairalis most affordable ayurveda training courses\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp\", \"alt\": \"kairalis most affordable ayurveda training courses\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp\", \"alt\": \"A therapist massaging warm oil into a patient's back\"",
+   "count": 1,
+   "oldAlt": "kairalis most affordable ayurveda training courses",
+   "newAlt": "A therapist massaging warm oil into a patient's back",
+   "src": "/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp"
+  },
+  {
+   "id": "EF12-new-to-ayurveda-8410976d-alt",
+   "row": "EF-12",
+   "route": "/new-to-ayurveda/",
+   "label": "card thumbnail (\"ayurveda treatment or Ayurvedic Retreat\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/8410976d314b92c7996855eea03d48d64b3acb5b3cff8a89691c02961e02f68e.webp\", \"alt\": \"ayurveda treatment or Ayurvedic Retreat\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/8410976d314b92c7996855eea03d48d64b3acb5b3cff8a89691c02961e02f68e.webp\", \"alt\": \"Two therapists pouring warm oil from a suspended brass vessel onto a patient's forehead\"",
+   "count": 1,
+   "oldAlt": "ayurveda treatment or Ayurvedic Retreat",
+   "newAlt": "Two therapists pouring warm oil from a suspended brass vessel onto a patient's forehead",
+   "src": "/ahv/assets/img/reader25b/8410976d314b92c7996855eea03d48d64b3acb5b3cff8a89691c02961e02f68e.webp"
+  },
+  {
+   "id": "EF12-new-to-ayurveda-013ddb25-alt",
+   "row": "EF-12",
+   "route": "/new-to-ayurveda/",
+   "label": "card thumbnail (\"Why get training in Ayurveda\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/013ddb25af34f14da0befe86430ddc991de3695bcf375a6321ef862e47925377.webp\", \"alt\": \"Why get training in Ayurveda\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/013ddb25af34f14da0befe86430ddc991de3695bcf375a6321ef862e47925377.webp\", \"alt\": \"Warm oil streaming from a suspended brass vessel onto a patient's forehead\"",
+   "count": 1,
+   "oldAlt": "Why get training in Ayurveda",
+   "newAlt": "Warm oil streaming from a suspended brass vessel onto a patient's forehead",
+   "src": "/ahv/assets/img/reader25b/013ddb25af34f14da0befe86430ddc991de3695bcf375a6321ef862e47925377.webp"
+  },
+  {
+   "id": "EF12-new-to-ayurveda-c0f2326d-alt",
+   "row": "EF-12",
+   "route": "/new-to-ayurveda/",
+   "label": "card thumbnail (\"What is Panchkarma\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/c0f2326deb88a57a255c260f264267ac7eba5adb95840a533a22cd52d8a8954f.webp\", \"alt\": \"What is Panchkarma\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/c0f2326deb88a57a255c260f264267ac7eba5adb95840a533a22cd52d8a8954f.webp\", \"alt\": \"Two therapists gently stretching a reclining patient's arm during an oil massage\"",
+   "count": 1,
+   "oldAlt": "What is Panchkarma",
+   "newAlt": "Two therapists gently stretching a reclining patient's arm during an oil massage",
+   "src": "/ahv/assets/img/reader25b/c0f2326deb88a57a255c260f264267ac7eba5adb95840a533a22cd52d8a8954f.webp"
+  },
+  {
+   "id": "EF12-new-to-ayurveda-885e4af7-alt",
+   "row": "EF-12",
+   "route": "/new-to-ayurveda/",
+   "label": "card thumbnail (\"Ayurveda Retreats for everyone\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/commercial/885e4af7a259bfef7aa949b1d75508ea31e05be06c535bbc6ad8e9c097aa8a1d.webp\", \"alt\": \"Ayurveda Retreats for everyone\"",
+   "new": "\"src\": \"/ahv/assets/img/commercial/885e4af7a259bfef7aa949b1d75508ea31e05be06c535bbc6ad8e9c097aa8a1d.webp\", \"alt\": \"A group practising standing yoga on a lawn under trees\"",
+   "count": 1,
+   "oldAlt": "Ayurveda Retreats for everyone",
+   "newAlt": "A group practising standing yoga on a lawn under trees",
+   "src": "/ahv/assets/img/commercial/885e4af7a259bfef7aa949b1d75508ea31e05be06c535bbc6ad8e9c097aa8a1d.webp"
+  },
+  {
+   "id": "EF12-ayurveda-10b27771-alt",
+   "row": "EF-12",
+   "route": "/ayurveda/",
+   "label": "card thumbnail (\"New To Ayurveda\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp\", \"alt\": \"New To Ayurveda\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp\", \"alt\": \"A therapist massaging warm oil into a patient's back\"",
+   "count": 1,
+   "oldAlt": "New To Ayurveda",
+   "newAlt": "A therapist massaging warm oil into a patient's back",
+   "src": "/ahv/assets/img/reader25b/10b2777142ab6644edaf6508e3f81b7e0631168a62eb956269baaf1824f4845f.webp"
+  },
+  {
+   "id": "EF12-ayurveda-8d925891-alt",
+   "row": "EF-12",
+   "route": "/ayurveda/",
+   "label": "card thumbnail (\"Ayurveda Treatment\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/8d925891b3fd6d4147c7391d1fd970adf9f0d9dd16f302e83cf2e54f0d6a1832.webp\", \"alt\": \"Ayurveda Treatment\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/8d925891b3fd6d4147c7391d1fd970adf9f0d9dd16f302e83cf2e54f0d6a1832.webp\", \"alt\": \"Two therapists in kasavu saris guiding a seated woman's outstretched arms\"",
+   "count": 1,
+   "oldAlt": "Ayurveda Treatment",
+   "newAlt": "Two therapists in kasavu saris guiding a seated woman's outstretched arms",
+   "src": "/ahv/assets/img/reader25b/8d925891b3fd6d4147c7391d1fd970adf9f0d9dd16f302e83cf2e54f0d6a1832.webp"
+  },
+  {
+   "id": "EF12-new-to-yoga-16bb878c-alt",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "card thumbnail (\"Yoga and Meditation Benefits\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/16bb878c2dc51533fc2888601ec88e2f3cc4cb643cb4999f7678bc74c0b44f0e.webp\", \"alt\": \"Yoga and Meditation Benefits\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/16bb878c2dc51533fc2888601ec88e2f3cc4cb643cb4999f7678bc74c0b44f0e.webp\", \"alt\": \"A group seated cross-legged on a lawn with arms raised overhead in a yoga pose\"",
+   "count": 1,
+   "oldAlt": "Yoga and Meditation Benefits",
+   "newAlt": "A group seated cross-legged on a lawn with arms raised overhead in a yoga pose",
+   "src": "/ahv/assets/img/reader25b/16bb878c2dc51533fc2888601ec88e2f3cc4cb643cb4999f7678bc74c0b44f0e.webp"
+  },
+  {
+   "id": "EF12-new-to-yoga-d02e5d04-alt",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "card thumbnail (\"Why get training in yoga\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/d02e5d04f4d436cda03ad29697fc54110404c16ce51b13270c0d414ded97535f.webp\", \"alt\": \"Why get training in yoga\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/d02e5d04f4d436cda03ad29697fc54110404c16ce51b13270c0d414ded97535f.webp\", \"alt\": \"A woman holding a standing balance pose on a mat in a garden\"",
+   "count": 1,
+   "oldAlt": "Why get training in yoga",
+   "newAlt": "A woman holding a standing balance pose on a mat in a garden",
+   "src": "/ahv/assets/img/reader25b/d02e5d04f4d436cda03ad29697fc54110404c16ce51b13270c0d414ded97535f.webp"
+  },
+  {
+   "id": "EF12-new-to-yoga-5956d7dd-alt",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "card thumbnail (\"Yoga teacher training\\n\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/5956d7dda0a58c7e1fd329baf3b8400a8108584475222023ef20b093cc5a7e5d.webp\", \"alt\": \"Yoga teacher training\\n\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/5956d7dda0a58c7e1fd329baf3b8400a8108584475222023ef20b093cc5a7e5d.webp\", \"alt\": \"A yoga instructor adjusting a student's raised arms outdoors among trees\"",
+   "count": 1,
+   "oldAlt": "Yoga teacher training\n",
+   "newAlt": "A yoga instructor adjusting a student's raised arms outdoors among trees",
+   "src": "/ahv/assets/img/reader25b/5956d7dda0a58c7e1fd329baf3b8400a8108584475222023ef20b093cc5a7e5d.webp",
+   "note": "Also removes the stray trailing newline (the file holds the JSON escape \\n)."
+  },
+  {
+   "id": "EF12-new-to-yoga-5b84f827-alt",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "card thumbnail (\"Yoga retreats for everyone\")",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "\"src\": \"/ahv/assets/img/reader25b/5b84f827328869b66a46d20d93084c7011edfca04de5339a5c0c115b227c660a.webp\", \"alt\": \"Yoga retreats for everyone\"",
+   "new": "\"src\": \"/ahv/assets/img/reader25b/5b84f827328869b66a46d20d93084c7011edfca04de5339a5c0c115b227c660a.webp\", \"alt\": \"Two people practising yoga on mats in an open-sided timber pavilion\"",
+   "count": 1,
+   "oldAlt": "Yoga retreats for everyone",
+   "newAlt": "Two people practising yoga on mats in an open-sided timber pavilion",
+   "src": "/ahv/assets/img/reader25b/5b84f827328869b66a46d20d93084c7011edfca04de5339a5c0c115b227c660a.webp"
+  },
+  {
+   "id": "EF12-live-to-100-nasya-swap",
+   "row": "EF-12",
+   "route": "/live-to-100-with-panchkarma/",
+   "label": "image",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/2/c/3/c/1/c/0\", \"src\": \"/ahv/assets/img/reader25b/1ad40c47750997f315d1b1782fdcd5530cce520cdefe7f5eff1ec8c3c3f5cb46.webp\", \"alt\": \"A woman holding a standing yoga pose on a mat in the garden\", \"width\": 500, \"height\": 380, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/learnmore-about-yoga-1.jpg\", \"external\": false, \"recordedOriginalSha256\": \"1ad40c47750997f315d1b1782fdcd5530cce520cdefe7f5eff1ec8c3c3f5cb46\", \"linkHref\": null, \"linkPtr\": null}",
+   "new": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/2/c/3/c/1/c/0\", \"src\": \"/ahv/assets/img/gallery/f8c2e8e0a8bb4358e5364fdf220b199809024ada4499cf6118d3dbcfd4f7ddcd.webp\", \"alt\": \"A therapist instilling medicated oil into a patient's nostril during Nasya, one of the Panchakarma procedures\", \"width\": 1200, \"height\": 536, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/tt-9.jpg\", \"external\": false, \"recordedOriginalSha256\": \"f8c2e8e0a8bb4358e5364fdf220b199809024ada4499cf6118d3dbcfd4f7ddcd\", \"linkHref\": null, \"linkPtr\": null, \"ef12\": \"28 Sep 2026 EF-12: replaced with legacy KTAHV photograph (lane-B audit, visually verified; not from ho-* or gallery-2026/treatments)\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/reader25b/1ad40c47750997f315d1b1782fdcd5530cce520cdefe7f5eff1ec8c3c3f5cb46.webp",
+   "oldAlt": "A woman holding a standing yoga pose on a mat in the garden",
+   "newSrc": "/ahv/assets/img/gallery/f8c2e8e0a8bb4358e5364fdf220b199809024ada4499cf6118d3dbcfd4f7ddcd.webp",
+   "newAlt": "A therapist instilling medicated oil into a patient's nostril during Nasya, one of the Panchakarma procedures",
+   "note": "Anchored on the whole object because /learn-more-about-yoga/ carries the identical src+alt+ptr; only sourceUrl (learnmore-about-yoga-1.jpg) distinguishes the Panchakarma article. /learn-more-about-yoga/ is untouched."
+  },
+  {
+   "id": "EF12-new-to-yoga-what-is-yoga-swap",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "image",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/1/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/reader25b/ea873dbae8d6f9cb45111e2545ecd8571b7af8120fa64721150cd8f30665dec0.webp\", \"alt\": \"What is Yoga?\", \"width\": 580, \"height\": 386, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/De-addiction-About-us.jpg\", \"external\": false, \"recordedOriginalSha256\": \"ea873dbae8d6f9cb45111e2545ecd8571b7af8120fa64721150cd8f30665dec0\", \"linkHref\": \"/what-is-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/1/c/1/c/0\"}",
+   "new": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/1/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/gallery/20f33c6fe4bfea2ae709d1902dea3815ba3aec89321c3ef1097c7972d6cc9b55.webp\", \"alt\": \"A yoga teacher correcting a woman's neck and shoulders in cobra pose on a mat\", \"width\": 1000, \"height\": 500, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/yy-3.jpg\", \"external\": false, \"recordedOriginalSha256\": \"20f33c6fe4bfea2ae709d1902dea3815ba3aec89321c3ef1097c7972d6cc9b55\", \"linkHref\": \"/what-is-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/1/c/1/c/0\", \"ef12\": \"28 Sep 2026 EF-12: replaced with legacy KTAHV photograph (lane-B audit, visually verified; not from ho-* or gallery-2026/treatments)\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/reader25b/ea873dbae8d6f9cb45111e2545ecd8571b7af8120fa64721150cd8f30665dec0.webp",
+   "oldAlt": "What is Yoga?",
+   "newSrc": "/ahv/assets/img/gallery/20f33c6fe4bfea2ae709d1902dea3815ba3aec89321c3ef1097c7972d6cc9b55.webp",
+   "newAlt": "A yoga teacher correcting a woman's neck and shoulders in cobra pose on a mat",
+   "note": "Two-panel image (same session as c3231a3e). Card slot was 580x386 (3:2); this file is 2:1, so the card image renders slightly shorter."
+  },
+  {
+   "id": "EF12-new-to-yoga-yoga-meditation-swap-ALT",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "image",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/reader25b/c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349.webp\", \"alt\": \"YOGA AND MEDITATION\", \"width\": 1000, \"height\": 562, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/internationalyogafestival.jpg\", \"external\": false, \"recordedOriginalSha256\": \"c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349\", \"linkHref\": \"/learn-more-about-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0\"}",
+   "new": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/gallery/40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1.webp\", \"alt\": \"A woman in a low lunge with one arm raised, on a mat in a sunlit yoga hall\", \"width\": 1000, \"height\": 500, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/yy-2.jpg\", \"external\": false, \"recordedOriginalSha256\": \"40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1\", \"linkHref\": \"/learn-more-about-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0\", \"ef12\": \"28 Sep 2026 EF-12: replaced with legacy KTAHV photograph (visually verified; landscape to match the card grid)\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/reader25b/c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349.webp",
+   "oldAlt": "YOGA AND MEDITATION",
+   "newSrc": "/ahv/assets/img/gallery/40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1.webp",
+   "newAlt": "A woman in a low lunge with one arm raised, on a mat in a sunlit yoga hall",
+   "note": "Alternate to EF12-new-to-yoga-yoga-meditation-swap: legacy KTAHV yoga-hall photo yy-2.jpg (1000x500 landscape), visually verified by this lane; avoids the portrait card and the duplicate of the 20f33c6f panel. Its gallery alt says 'arms raised' but only one arm is raised — alt here written from the image."
+  },
+  {
+   "id": "EF12-weight-management-96a47ea6-alt",
+   "row": "EF-12",
+   "route": "/kairali-ayurvedic-way-of-weight-management/",
+   "label": "article image",
+   "file": "public/ahv/assets/reader25a-family-data.js",
+   "old": "\"src\":\"/ahv/assets/img/reader25a/96a47ea66dc75373bc5dc6d3095387e624117effa64dbe0caccf18aa81d2ab6f.webp\",\"alt\":\"Ayurveda Training\"",
+   "new": "\"src\":\"/ahv/assets/img/reader25a/96a47ea66dc75373bc5dc6d3095387e624117effa64dbe0caccf18aa81d2ab6f.webp\",\"alt\":\"Herbal powder applied across a reclining patient's body during a powder massage\"",
+   "count": 1,
+   "oldAlt": "Ayurveda Training",
+   "newAlt": "Herbal powder applied across a reclining patient's body during a powder massage",
+   "src": "/ahv/assets/img/reader25a/96a47ea66dc75373bc5dc6d3095387e624117effa64dbe0caccf18aa81d2ab6f.webp"
+  },
+  {
+   "id": "EF12-ayurveda-retreats-for-everyone-aboutus-alt",
+   "row": "EF-12",
+   "route": "/ayurveda-retreats-for-everyone/",
+   "label": "article figure",
+   "file": "public/ahv/assets/article-family-data.js",
+   "old": "\"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/Ayurvedic-Training-aboutus-min-1.png\", \"alt\": \"Two therapists giving a synchronised warm-oil massage to a patient lying face down\"",
+   "new": "\"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/Ayurvedic-Training-aboutus-min-1.png\", \"alt\": \"A therapist massaging warm oil into a patient's back while a second therapist looks on\"",
+   "count": 1,
+   "oldAlt": "Two therapists giving a synchronised warm-oil massage to a patient lying face down",
+   "newAlt": "A therapist massaging warm oil into a patient's back while a second therapist looks on",
+   "src": "/ahv/assets/img/article/Ayurvedic-Training-aboutus-min-1.webp"
+  },
+  {
+   "id": "EF12-altmap-10b2777142ab6644",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-map.json",
+   "old": "\"/ahv/assets/img/seven/10b2777142ab6644.jpg\": \"Two therapists giving a synchronised warm-oil massage to a patient on a wooden treatment table\"",
+   "new": "\"/ahv/assets/img/seven/10b2777142ab6644.jpg\": \"A therapist massaging warm oil into the back of a patient lying face down\"",
+   "count": 1,
+   "note": "Feeds tools/repair-image-alt.mjs (fills empty alts after a re-import) — keeps the inaccurate alt from coming back."
+  },
+  {
+   "id": "EF12-altmap-Ayurvedic-Traini",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-map.json",
+   "old": "\"/ahv/assets/img/article/Ayurvedic-Training-aboutus-min-1.png\": \"Two therapists giving a synchronised warm-oil massage to a patient lying face down\"",
+   "new": "\"/ahv/assets/img/article/Ayurvedic-Training-aboutus-min-1.png\": \"A therapist massaging warm oil into a patient's back while a second therapist looks on\"",
+   "count": 1,
+   "note": "Feeds tools/repair-image-alt.mjs (fills empty alts after a re-import) — keeps the inaccurate alt from coming back."
+  },
+  {
+   "id": "EF12-altmap-54fdd85ae72b8a72",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-map.json",
+   "old": "\"/ahv/assets/img/seven/54fdd85ae72b8a72.jpg\": \"Warm medicated oil in a brass vessel held above a reclining patient's face\"",
+   "new": "\"/ahv/assets/img/seven/54fdd85ae72b8a72.jpg\": \"A brass Nasya vessel of medicated oil held at a patient's nostril\"",
+   "count": 1,
+   "note": "Feeds tools/repair-image-alt.mjs (fills empty alts after a re-import) — keeps the inaccurate alt from coming back."
+  },
+  {
+   "id": "EF12-altseen-10b2777142ab6644",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-seen.json",
+   "old": "\"/ahv/assets/img/seven/10b2777142ab6644.jpg\": \"Two therapists giving a synchronised warm-oil massage to a patient on a wooden treatment table\"",
+   "new": "\"/ahv/assets/img/seven/10b2777142ab6644.jpg\": \"A therapist massaging warm oil into the back of a patient lying face down\"",
+   "count": 1,
+   "note": "Record only (no tool reads image-alt-seen.json); corrected so the 'seen' record matches the audit."
+  },
+  {
+   "id": "EF12-altseen-Ayurvedic-Traini",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-seen.json",
+   "old": "\"/ahv/assets/img/article/Ayurvedic-Training-aboutus-min-1.png\": \"Two therapists giving a synchronised warm-oil massage to a patient lying face down\"",
+   "new": "\"/ahv/assets/img/article/Ayurvedic-Training-aboutus-min-1.png\": \"A therapist massaging warm oil into a patient's back while a second therapist looks on\"",
+   "count": 1,
+   "note": "Record only (no tool reads image-alt-seen.json); corrected so the 'seen' record matches the audit."
+  },
+  {
+   "id": "EF12-altseen-54fdd85ae72b8a72",
+   "row": "EF-12",
+   "file": "english-candidate/image-alt-seen.json",
+   "old": "\"/ahv/assets/img/seven/54fdd85ae72b8a72.jpg\": \"Warm medicated oil in a brass vessel held above a reclining patient's face\"",
+   "new": "\"/ahv/assets/img/seven/54fdd85ae72b8a72.jpg\": \"A brass Nasya vessel of medicated oil held at a patient's nostril\"",
+   "count": 1,
+   "note": "Record only (no tool reads image-alt-seen.json); corrected so the 'seen' record matches the audit."
+  }
+ ],
+ "alternateEntries": [
+  {
+   "id": "EF12-new-to-yoga-yoga-meditation-swap-ALT",
+   "row": "EF-12",
+   "route": "/new-to-yoga/",
+   "label": "image",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/reader25b/c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349.webp\", \"alt\": \"YOGA AND MEDITATION\", \"width\": 1000, \"height\": 562, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/internationalyogafestival.jpg\", \"external\": false, \"recordedOriginalSha256\": \"c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349\", \"linkHref\": \"/learn-more-about-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0\"}",
+   "new": "{\"kind\": \"image\", \"ptr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0/c/0\", \"src\": \"/ahv/assets/img/gallery/40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1.webp\", \"alt\": \"A woman in a low lunge with one arm raised, on a mat in a sunlit yoga hall\", \"width\": 1000, \"height\": 500, \"sourceUrl\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/yy-2.jpg\", \"external\": false, \"recordedOriginalSha256\": \"40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1\", \"linkHref\": \"/learn-more-about-yoga/\", \"linkPtr\": \"/sections/3/c/3/c/46/c/5/c/1/c/0\", \"ef12\": \"28 Sep 2026 EF-12: replaced with legacy KTAHV photograph (visually verified; landscape to match the card grid)\"}",
+   "count": 1,
+   "oldSrc": "/ahv/assets/img/reader25b/c0f307fcb1522a86f5374634c9880c9049086ae9434410d80c713dd09b5d3349.webp",
+   "oldAlt": "YOGA AND MEDITATION",
+   "newSrc": "/ahv/assets/img/gallery/40ce7b7d34764936acb749203ca25a6d41152228c81ada533b0400e590d02ae1.webp",
+   "newAlt": "A woman in a low lunge with one arm raised, on a mat in a sunlit yoga hall",
+   "note": "Alternate to EF12-new-to-yoga-yoga-meditation-swap: legacy KTAHV yoga-hall photo yy-2.jpg (1000x500 landscape), visually verified by this lane; avoids the portrait card and the duplicate of the 20f33c6f panel. Its gallery alt says 'arms raised' but only one arm is raised — alt here written from the image."
+  }
+ ],
+ "structural": [
+  {
+   "id": "EF12-S1-placeholder-cards-text-only",
+   "route": "/ayurveda-treatment/",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "jsonPath": "AHV_SEVEN_INFO.routes[path='/ayurveda-treatment/'].components[component='section-3'].blocks",
+   "problem": "The placeholder photo /ahv/assets/img/seven/ca7904c1957e64b7.webp (Kairali bowls of leaves; legacy sourceUrl 'not-available.jpg') stands in for a therapy photo on 12 cards after the Januvasti swap (13 before). It shows none of these therapies.",
+   "locations": [
+    {
+     "label": "Urovasti",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/35/c/1/c/0",
+     "imageBlockIndex": 37,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/35/c/3",
+     "labelParaIndex": 38
+    },
+    {
+     "label": "Kavalagraham",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/53/c/1/c/0",
+     "imageBlockIndex": 55,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/53/c/3",
+     "labelParaIndex": 56
+    },
+    {
+     "label": "Gandoosham",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/61/c/1/c/0",
+     "imageBlockIndex": 63,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/61/c/3",
+     "labelParaIndex": 64
+    },
+    {
+     "label": "Karnapoornam",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/63/c/1/c/0",
+     "imageBlockIndex": 65,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/63/c/3",
+     "labelParaIndex": 66
+    },
+    {
+     "label": "Dhoompanam",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/65/c/1/c/0",
+     "imageBlockIndex": 67,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/65/c/3",
+     "labelParaIndex": 68
+    },
+    {
+     "label": "Thalam",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/67/c/1/c/0",
+     "imageBlockIndex": 69,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/67/c/3",
+     "labelParaIndex": 70
+    },
+    {
+     "label": "Matravasti",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/71/c/1/c/0",
+     "imageBlockIndex": 73,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/71/c/3",
+     "labelParaIndex": 74
+    },
+    {
+     "label": "Kashayavasthi",
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/73/c/1/c/0",
+     "imageBlockIndex": 75,
+     "labelParaPtr": "/sections/3/c/3/c/6/c/73/c/3",
+     "labelParaIndex": 76
+    }
+   ],
+   "pendingLocation": {
+    "label": "Greevavasti",
+    "imageBlockPtr": "/sections/3/c/3/c/6/c/39/c/1/c/0",
+    "imageBlockIndex": 41,
+    "labelParaPtr": "/sections/3/c/3/c/6/c/39/c/3",
+    "note": "Candidate photo gallery/c096572876b9e037… needs treatment-team confirmation. If confirmed, swap it in; if not, make this card text-only too."
+   },
+   "recommendation": "Do not use stand-in photos. Remove each listed image block object (kind:'image', src ca7904c1957e64b7.webp) from the blocks array and keep its label paragraph. Use a JSON-aware idempotent tool in the style of tools/repair-knowledge-images-ef12.py: parse the dataset, drop the blocks by ptr, re-serialise with the detected separators (compact here), and decrement routes[..].counts.images (38) by the number removed. Removing the images leaves bare centred label paragraphs, so the owner should choose how they look: (a) a text-only card (same box as the photo cards, label only, no filler copy), or (b) group the photo-less therapies into one plain list after the photo cards. Both desktop and mobile render from this dataset, so there is no separate view edit. Alt edits EF12-AT-greevavasti-interim-alt and EF12-AT-thalam-interim-alt become moot once these images are removed.",
+   "followUps": [
+    "Re-render the EN prerender for /ayurveda-treatment/",
+    "l10n re-extract (the alt units of removed images disappear)",
+    "Visual pass on desktop and mobile"
+   ]
+  },
+  {
+   "id": "EF12-S2-kavalagraham-duplicates",
+   "route": "/ayurveda-treatment/",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "problem": "The Kavalagraham card (image + label) appears 4 times in a row.",
+   "keep": {
+    "imageBlockPtr": "/sections/3/c/3/c/6/c/53/c/1/c/0",
+    "labelParaPtr": "/sections/3/c/3/c/6/c/53/c/3",
+    "blockIndexes": [
+     55,
+     56
+    ]
+   },
+   "remove": [
+    {
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/55/c/1/c/0",
+     "labelParaPtr": "/sections/3/c/3/c/6/c/55/c/3",
+     "blockIndexes": [
+      57,
+      58
+     ]
+    },
+    {
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/57/c/1/c/0",
+     "labelParaPtr": "/sections/3/c/3/c/6/c/57/c/3",
+     "blockIndexes": [
+      59,
+      60
+     ]
+    },
+    {
+     "imageBlockPtr": "/sections/3/c/3/c/6/c/59/c/1/c/0",
+     "labelParaPtr": "/sections/3/c/3/c/6/c/59/c/3",
+     "blockIndexes": [
+      61,
+      62
+     ]
+    }
+   ],
+   "recommendation": "Delete the 3 duplicate cards: 6 blocks in total, an image and a label paragraph each, at the ptrs listed. Use the same JSON-aware tool and in the same pass as S1, keyed by ptr and not by index, because indexes shift after each removal. Decrement counts.images by 3 and counts.textAtomsRendered (60) by 3 if a validator reconciles them. Check that the frozen source really had this duplication (the import is verbatim) and note the deviation in an 'ef12' provenance key, which the l10n extractor ignores."
+  },
+  {
+   "id": "EF12-S3-netra-label-check",
+   "route": "/ayurveda-treatment/",
+   "file": "public/ahv/assets/seven-informational-data.js",
+   "problem": "The legacy site named seven/d821284999fde1a9 'netradhara-theraoy.jpg' and seven/c79a13de870f2451 'netratharpanam-therapy.jpg'. The audit reads d821284 (oil in dough rings around the eyes) as Netra Tarpanam. After EF12-AT-netratharpanam-swap, the Netradhara and Netratharpanam cards both show dough-ring eye procedures.",
+   "recommendation": "Clinical depiction question for the treatment team, with sign-off from Dr. Deepu John (HARD GATE 7). If d821284 is Tarpanam, the Netradhara card has no genuine photo: make it text-only (S1 pattern) and add it to the creative request (the conditional row is already drafted)."
+  }
+ ],
+ "creativeRequestDraft": {
+  "status": "DRAFT ONLY. Nothing sent. The owner decides whether and when to send it to the creative team (no recipient address is filled in, per HARD GATE 6).",
+  "protocol": "CLAUDE.md OS v2 §7 missing-asset protocol / docs/sops/creative-asset-requests/README.md: 7-part spec plus exact px and aspect ratio per slot. The build continues with FLAGGED text-only cards (S1) until the photos arrive.",
+  "clinicalGate": "Each procedure depiction must be checked by the KTAHV treatment team and signed off by Dr. Deepu John before shooting and before publication (HARD GATE 7). The action lines below are visual briefs, not clinical descriptions, and are for the team to correct.",
+  "emailDraft": {
+   "subject": "Photo request: 8 therapy photographs for the Ayurveda Treatment page (KTAHV Palakkad)",
+   "body": "Hello team,\n\nThe Ayurveda Treatment page on ayurvedichealingvillage.com lists therapies that have no genuine photograph. They currently show a stand-in picture of Kairali bowls, which we are removing. We need one photograph per therapy below, shot at the Palakkad hospital (not the HO centre). Each photo is a 3:2 landscape card: please deliver 1800x1200 px (minimum 1200x800). The per-shot spec (subject, action, environment, camera, lens, lighting, style) is attached. The treatment team and Dr. Deepu John will confirm each procedure set-up before the shoot. For Matravasti and Kashayavasthi, please photograph the preparation only, with no patient in frame.\n\nTherapies: Urovasti, Kavalagraham, Gandoosham, Karnapoornam, Dhoompanam, Thalam, Matravasti, Kashayavasthi. Conditional: Greevavasti (only if the treatment team rejects the existing candidate photo) and Netradhara (only if the team confirms the current photo shows Netra Tarpanam).\n\nThank you."
+  },
+  "slots": [
+   {
+    "therapy": "Urovasti",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/35/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "Warm medicated oil held in a dough ring built on the chest of a patient lying on their back",
+     "Action": "A therapist pours warm oil from a brass vessel into the dough ring on the chest; the patient is draped from the waist down",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Kavalagraham",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/53/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "A patient seated upright holding medicated oil or decoction in the mouth, with a small brass cup of the preparation",
+     "Action": "The patient, seated on a treatment stool, holds the liquid in the mouth with cheeks gently full; the therapist beside them holds the brass cup",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Gandoosham",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/61/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "A patient seated upright with a small brass cup of medicated liquid, preparing to hold it in the mouth",
+     "Action": "The patient takes the liquid from the cup the therapist offers (a different moment from Kavalagraham so the two cards differ)",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Karnapoornam",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/63/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "A patient lying on one side as warm medicated oil is poured gently into the ear",
+     "Action": "The therapist pours a thin stream from a small brass spouted vessel into the ear; the head rests on a folded towel",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Dhoompanam",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/65/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "A patient seated upright inhaling medicated herbal smoke through a traditional pipe",
+     "Action": "The therapist holds the lit herbal wick and pipe; faint smoke is visible; the patient inhales calmly",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Thalam",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/67/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "Medicated paste or powder placed on the crown of a seated patient's head",
+     "Action": "The therapist presses a small mound of herbal preparation onto the crown; the patient sits upright, eyes closed",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Matravasti",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/71/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "Preparation of the Matravasti procedure: the measured dose of warm medicated oil and the Vasti equipment on a brass tray",
+     "Action": "The therapist measures warm oil into a brass vessel beside the Vasti equipment. NO patient in frame (dignity)",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Kashayavasthi",
+    "page": "/ayurveda-treatment/",
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/73/c/3",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "Preparation of the Kashaya Vasti procedure: herbal decoction being mixed in a brass vessel",
+     "Action": "The therapist mixes decoction, honey and oil in a brass vessel beside the Vasti equipment on a tray. NO patient in frame (dignity)",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    }
+   },
+   {
+    "therapy": "Greevavasti (CONDITIONAL)",
+    "condition": "Only if the treatment team does not confirm gallery/c096572876b9e037… as Greeva Vasti",
+    "page": "/ayurveda-treatment/",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "Warm medicated oil held in a dough ring built on the back of the neck of a patient lying face down",
+     "Action": "A therapist pours warm oil from a brass vessel into the neck dough ring; the upper back is draped",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    },
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/39/c/3"
+   },
+   {
+    "therapy": "Netradhara (CONDITIONAL)",
+    "condition": "Only if S3 confirms that seven/d821284999fde1a9 shows Netra Tarpanam and not Netradhara",
+    "page": "/ayurveda-treatment/",
+    "slot": "Card image on /ayurveda-treatment/ (reader card, rendered as <img width=600 height=400>, CSS max-width 600px, height auto)",
+    "renderedCssPx": "600x400",
+    "aspectRatio": "3:2",
+    "deliverPx": "1800x1200 master (minimum 1200x800); the site ships a 1200x800 WebP for 2x density",
+    "source": "english-candidate/prerender/ayurveda-treatment.html img[data-source-pointer] width/height; image-render-sizes.json naturalWidth 600 for the current placeholder",
+    "spec7": {
+     "Subject": "A thin stream of medicated liquid poured over the closed eyes of a patient lying on their back",
+     "Action": "The therapist pours from a small brass vessel held a short height above the eyes, with the face otherwise draped",
+     "Environment": "KTAHV Palakkad treatment room: exposed brick wall, dark wooden droni (treatment table), brass vessels. Must be shot at the Palakkad hospital, NOT the HO centre (owner, 28 Sep: part of the 2025 HO shoot is Delhi). Therapist in the Kairali apron, to match the legacy series already on the page.",
+     "Camera": "Full-frame mirrorless, eye-level or slightly high three-quarter angle, 3:2 landscape frame, procedure centred with breathing room for a 3:2 crop",
+     "Lens": "50mm f/1.8 (35mm if the room is tight); f/2.8–f/4 so the procedure detail stays sharp",
+     "Lighting": "Warm soft window light from one side plus a low bounce fill; no on-camera flash; match the warm tone of the existing Abhyangam/Kativasti photos",
+     "Style": "Documentary clinical-care photography: calm, dignified, no text, no props that are not part of the procedure, patient modesty preserved (draped), no identifiable patient face unless a signed consent form is on file"
+    },
+    "cardLabelPtr": "/sections/3/c/3/c/6/c/49/c/3"
+   }
+  ]
+ },
+ "skipped": [
+  {
+   "what": "Greevavasti image swap (gallery/c096572876b9e037… upper-back dough ring)",
+   "why": "Audit: the treatment team must confirm it shows Greeva Vasti. Held per the coordinator's instruction. Only the interim alt truth-fix entry is included."
+  },
+  {
+   "what": "Nasyam optional replacement (gallery/f8c2e8e0…)",
+   "why": "Not in the coordinator's swap list and the audit marks it optional. The alt is fixed instead (EF12-AT-nasyam-alt)."
+  },
+  {
+   "what": "/new-to-ayurveda/ optional swap of commercial/885e4af7… for gallery/c0965728…",
+   "why": "The audit says keeping the yoga image with a corrected alt is acceptable, and it is not in the swap list. The alt is fixed (EF12-new-to-ayurveda-885e4af7-alt)."
+  },
+  {
+   "what": "Moving d821284 from the Netradhara card to Netratharpanam",
+   "why": "Clinical label question; see structural S3. The Netradhara alt is corrected to describe what the photo shows."
+  },
+  {
+   "what": "english-candidate/knowledge-explainer-8-routes.json (contains 'Yoga teacher training\\n', 'What is Yoga?', etc.)",
+   "why": "A verbatim fetch archive of the live legacy HTML (tools/fetch-explainer-routes.mjs). It is a raw source record, not a render feed. Do not edit it."
+  },
+  {
+   "what": "english-candidate/image-alt-map.json entries that are already accurate (810809, 9519da0, e6acdfe, ee25594, b7858d0, d821284, c79a13de, ca7904, 885e4af, 1ad40c47, 013ddb25)",
+   "why": "The map text matches each photo. The shift was only in the dataset. The map fills EMPTY alts only (tools/repair-image-alt.mjs), so it cannot undo these fixes."
+  },
+  {
+   "what": "asset-manifest.json / runtime-assets-release.json / image-render-sizes.json",
+   "why": "Generated or measured artifacts. All 5 replacement images (and the 40ce7b7d alternate) are already listed in all three and tracked in git. After applying, re-run tools/measure-image-render-sizes.mjs if the release gate compares rendered sizes per route."
+  },
+  {
+   "what": "english-candidate/prerender/*, l10n/*, public/ahv/l10n/*",
+   "why": "Never edited here. Regenerate the EN prerender for /ayurveda-treatment/, /new-to-ayurveda/, /ayurveda/, /new-to-yoga/, /live-to-100-with-panchkarma/, /kairali-ayurvedic-way-of-weight-management/ and /ayurveda-retreats-for-everyone/. Every new alt and the Travel Consultant change are EN-only until l10n extract, translate and build run (locale rule: flag EN-only pending translation)."
+  },
+  {
+   "what": "Other 'Travel Consultant(s)' occurrences: article-family-data.js /ayurvedic-links/ (2: tree + text, 'Please contact our helpful Travel Consultant for More Details') and commercial-family-data.js /special-offers/ (2, 'Travel Consultants for various discounts and gifting option.')",
+   "why": "Outside this task's scope (only /ayurveda-treatment/ was requested). Same hospitality-register issue; coordinator decision."
+  },
+  {
+   "what": "OUT-OF-SCOPE LANGUAGE-LOCK FINDING on /ayurveda-treatment/ (seven-informational-data.js, para ptr /sections/3/c/3/c/4, rendered in english-candidate/prerender/ayurveda-treatment.html): 'There are a number of treatments that our guests can experience. Not only the ailments get cured but also they enjoy a lavish stay at our health resort i.e., Kairali-The Healing Village…'",
+   "why": "Contains KTAHV banned words (guests, cured, resort) plus luxury framing. Not in this EF-12 image task and not found in medical-copy-20260928.json. It needs wording under the owner's clinical authority / Dr. Deepu John sign-off. Flagged P1 for the coordinator."
+  },
+  {
+   "what": "Location check on /what-is-panchkarma/ image gallery-2026/treatments/sweda-steam-patient-stepping-traditional-02-768.webp",
+   "why": "The 26 Sep EF-12 tool (tools/repair-knowledge-images-ef12.py) claims it came from the Palakkad library. The audit avoided gallery-2026/treatments/* because the owner said part of that shoot is Delhi. Verify its provenance; not changed here."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "entries": [
+  {
+   "id": "MED-ayurveda-treatment-lavish",
+   "row": "CLINICAL-COPY",
+   "auto": true,
+   "min": 1,
+   "old": "There are a number of treatments that our guests can experience. Not only the ailments get cured but also they enjoy a lavish stay at our health resort i.e., Kairali-The Healing Village, Palakkad, Kerala. The rooms are allotted in accordance with the zodiacs and the element of ‘Vaastu Shastra’. Experiencing the authentic meals and healing procedures one can never think of letting this chance away.",
+   "new": "Patients can choose from a wide range of Ayurvedic treatments at Kairali – The Ayurvedic Healing Village, Palakkad, Kerala, each prescribed after a physician’s consultation. Villas are allotted in keeping with the zodiac and the principles of ‘Vaastu Shastra’, and authentic Ayurvedic meals are served as part of every programme.",
+   "authority": "owner 28 Sep medical authority + KTAHV clinical register; flag for Dr. Deepu John before production; 'guests / get cured / lavish / health resort' (EF-12 worker flag)"
+  },
+  {
+   "id": "COPY-travel-consultants",
+   "row": "HOSPITAL-COPY",
+   "auto": true,
+   "min": 1,
+   "old": "our helpful Travel Consultants",
+   "new": "our patient care team",
+   "authority": "KTAHV clinical register / owner wording standard 28 Sep"
+  },
+  {
+   "id": "COPY-travel-consultant",
+   "row": "HOSPITAL-COPY",
+   "auto": true,
+   "min": 1,
+   "old": "our helpful Travel Consultant",
+   "new": "our patient care team",
+   "authority": "as above"
+  },
+  {
+   "id": "CB1-cancer-excerpt-packages",
+   "row": "CLINICAL-COPY",
+   "file": "public/ahv/assets/commercial-family-data.js",
+   "count": 2,
+   "old": "We often hear cancer patients saying that they have undergone numerous chemo radiation therapies. It is a form of…..",
+   "new": "Our approach focuses on the person’s overall wellbeing.",
+   "authority": "OWNER-DECISIONS-LATEST.md batch 1 item 1 (first sentence as card excerpt, as the bronchial excerpt)"
+  },
+  {
+   "id": "CB1-cancer-excerpt-home",
+   "row": "CLINICAL-COPY",
+   "file": "public/ahv/views/home-hi-fi-v4.json",
+   "count": 1,
+   "old": "We often hear cancer patients saying that they have…",
+   "new": "Our approach focuses on the person’s overall wellbeing…",
+   "authority": "as above (homepage programme card blurb)"
+  }
+ ]
+}

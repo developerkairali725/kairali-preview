@@ -566,7 +566,7 @@
       "n": 15,
       "topic": "Insurance & Payment",
       "summary": "What is your cancellation and refund policy?",
-      "answerHtml": "<p>Our current cancellation policy: a full refund if you cancel 30 or more days before admission, a 50% refund for cancellations 15–30 days before admission, and no refund for cancellations less than 15 days before admission or for a date change during your stay.</p><p>See our <a href=\"/cancellation-and-refund-policy/\">Cancellation & Refund Policy</a> page.</p>",
+      "answerHtml": "<p>More than 30 days before admission: full refund. 15 to 30 days before admission: 50% of the amount paid is refunded, less applicable transaction fees and taxes. Fewer than 15 days before admission, or a change of dates during the stay: no refund.</p><p>See our <a href=\"/cancellation-and-refund-policy/\">Cancellation & Refund Policy</a> page.</p>",
       "status": "drafted",
       "sources": [
         "faq-sources-docs.md — RATES_RECKONER 'Cancellation Policy': '30+ Days Before Admission: Full refund; 15-30 Days: 50% refund; Less than 15 Days or Date Change During Stay: No refund'"
@@ -625,7 +625,7 @@
       "n": 20,
       "topic": "Accommodation & Facilities",
       "summary": "Can two people share a villa and follow different programmes?",
-      "answerHtml": "<p>Yes, villas are priced for single or double occupancy, so two people can share a villa. Rates are quoted per person per programme, and each patient's programme is set by the physician at consultation — tell the patient care team when booking that you would like different programmes.</p>",
+      "answerHtml": "<p>Yes, villas are priced for single or double occupancy, so two people can share a villa. Rates are quoted per night, per villa, and each patient's programme is set by the physician at consultation — tell the patient care team when booking that you would like different programmes.</p>",
       "status": "drafted",
       "sources": [
         "faq-sources-docs.md — RATES_RECKONER villa rate tables (Single/Double columns)"

@@ -17,7 +17,7 @@ const planFiles = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 if (!planFiles.length) { console.error("usage: apply-copy-plan.mjs <plan.json> [...] [--check]"); process.exit(2); }
 
 const AUTO_ROOTS = ["public/ahv/views", "public/ahv/assets", "english-candidate"];
-const AUTO_SKIP = /(^|\/)(prerender|prerender-tmp|node_modules)(\/|$)/;
+const AUTO_SKIP = /(^|\/)(prerender|prerender-tmp|node_modules|copy-plans)(\/|$)/;
 const walk = (dir) => fs.readdirSync(path.join(SITE, dir), { withFileTypes: true }).flatMap((d) => {
   const rel = path.join(dir, d.name);
   if (AUTO_SKIP.test(rel)) return [];
@@ -52,28 +52,31 @@ for (const e of entries) {
     continue;
   }
   const files = e.auto ? autoList().filter((f) => read(f).includes(e.old) || forms(e.old).some((x) => read(f).includes(x))) : (e.files ?? [e.file]);
-  let total = 0, already = 0; const per = [];
+  let total = 0, already = 0; const per = [], todo = [];
   for (const f of files) {
     if (!fs.existsSync(path.join(SITE, f))) { bad++; log.push(`FAIL ${e.id}: missing file ${f}`); continue; }
     const src = read(f); const have = occurrences(src, e.old); const want = e.countPerFile ? e.countPerFile[f] : e.count;
+    // already applied: a deletion whose text is gone, or a replacement whose new text is present `want` times
+    // (checked BEFORE the count test, so a replacement that contains its own old text is never applied twice)
+    const applied = e.new === "" ? have === 0 : occurrences(src, e.new) >= want && (have === 0 || e.new.includes(e.old));
+    if (!e.auto && applied) { already++; per.push(`${f}: already`); continue; }
     if (!e.auto && have !== want) {
-      if (have === 0 && occurrences(src, e.new) >= 1) { already++; per.push(`${f}: already`); continue; }
       bad++; log.push(`FAIL ${e.id}: ${f} want ${want}, have ${have} — "${e.old.slice(0, 70)}…"`); continue;
     }
-    total += have; per.push(`${f}: ${have}`);
+    total += have; per.push(`${f}: ${have}`); todo.push(f);
   }
   if (e.auto && total < (e.min ?? 1)) {
     const done = autoList().some((f) => occurrences(read(f), e.new) > 0);
     if (total === 0 && done) { log.push(`ok   ${e.id}: already applied`); continue; }
     bad++; log.push(`FAIL ${e.id}: auto found ${total} < min ${e.min ?? 1} — "${e.old.slice(0, 70)}…"`); continue;
   }
-  for (const f of files) {
+  for (const f of todo) {
     let src = read(f); const fo = forms(e.old), fn = forms(e.new);
     if (!fo.some((x) => src.includes(x))) continue;
     fo.forEach((x, i) => { src = src.split(x).join(fn[i] ?? fn[0]); });
     cache.set(f, src); dirty.add(f);
   }
-  log.push(`edit ${e.id}: ${per.join("; ")}${already ? ` (+${already} already)` : ""}`);
+  log.push(`${todo.length ? "edit" : "ok  "} ${e.id}: ${per.join("; ")}${already ? ` (+${already} already)` : ""}`);
 }
 
 console.log(log.join("\n"));
