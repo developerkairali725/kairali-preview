@@ -219,3 +219,43 @@
     grid-column:1 / -1 !important;
   }
 }
+
+/* ---- OPD: structured service / visit sections on large desktops (owner brief, 28 Sep 2026; parent R8 review) ----
+   The heading/prose split alone left long blank label-column runs. Same content, same order, deliberate structure:
+   a section whose body is a list of three or more short entries (the conditions consulted for, why patients choose
+   the OPD) becomes a full-width band — its heading across the top, the entries as a bounded grid of cards; every
+   other sub-section keeps its heading in the label column beside its prose. Nothing
+   added, removed or reworded; forms untouched; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3:has(+ ul > li:nth-child(3)) {
+    grid-column:1 / -1 !important; max-width:none !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) {
+    grid-column:1 / -1 !important; display:grid !important; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)) !important;
+    gap:14px 20px !important; list-style:none !important; padding:0 !important; max-width:none !important; margin-top:20px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li {
+    background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-top:3px solid #C1882C !important;
+    border-radius:4px !important; padding:14px 18px !important; margin:0 !important; list-style:none !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li::before,
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li::marker { content:none !important; display:none !important; }
+}
+/* OPD visit block (same brief): the timings read as an at-a-glance panel, and the long "How it works" walkthrough
+   runs as a full-width band in two reading columns instead of one tall column beside an empty label column.
+   Addressed by the dataset's stable source pointers, so every locale of the page gets the same structure. */
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main p[data-source-pointer="/sections/3/c/1/c/11"] {
+    background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-left:3px solid #C1882C !important;
+    border-radius:4px !important; padding:18px 24px !important; max-width:52ch !important;
+  }
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main h3[data-source-pointer="/sections/3/c/1/c/13"] { grid-column:1 / -1 !important; max-width:none !important; }
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main p[data-source-pointer="/sections/3/c/1/c/15"] {
+    grid-column:1 / -1 !important; max-width:none !important; column-count:2 !important; column-gap:clamp(48px,5vw,88px) !important; margin-top:16px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) { margin-left:0 !important; padding-left:0 !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li { margin-left:0 !important; }
+}
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-family="enquiry"][data-ahv-route] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) { padding-inline-start:0 !important; padding-left:0 !important; }
+}

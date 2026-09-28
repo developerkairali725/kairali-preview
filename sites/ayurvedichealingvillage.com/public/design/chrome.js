@@ -222,8 +222,10 @@
       items.push({ code: code, name: name, href: a.getAttribute('href'), lang: a.getAttribute('lang') || code, cur: a.getAttribute('aria-current') === 'true' || a.getAttribute('aria-current') === 'page' });
     });
     if (items.length < 2) return;
+    var sig = items.map(function (it) { return it.code + '=' + (it.cur ? '*' : it.href); }).join('|');
     function makeNav() {
       var nav = document.createElement('nav'); nav.setAttribute('aria-label', list.getAttribute('aria-label') || 'Language'); nav.className = 'ahv-footer-langs';
+      nav.setAttribute('data-sig', sig);
       items.forEach(function (it, k) {
         if (k) { var sep = document.createElement('span'); sep.setAttribute('aria-hidden', 'true'); sep.textContent = ' · '; nav.appendChild(sep); }
         var el;
@@ -247,6 +249,12 @@
       var bar = f.lastElementChild || f; var add = makeNav(); add.setAttribute('data-ahv-footer-langs-added', '');
       bar.appendChild(add);
     }
+    // A list captured in a snapshot for another page (the native pages reuse one stored chrome) or before the
+    // switcher settled carries that page's links: any list whose signature differs is rebuilt in place.
+    document.querySelectorAll('nav.ahv-footer-langs').forEach(function (n) {
+      if (n.getAttribute('data-sig') === sig) return;
+      var fresh = makeNav(); n.textContent = ''; while (fresh.firstChild) n.appendChild(fresh.firstChild); n.setAttribute('data-sig', sig);
+    });
   }
   // The server snapshot's form is replaced when the live view mounts, so each select element is handled once.
   var PRESELECT = { treatment: 1 };

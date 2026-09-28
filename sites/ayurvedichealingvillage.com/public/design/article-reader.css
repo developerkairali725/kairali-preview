@@ -481,3 +481,24 @@
   #ahv-design-root img[src*="owner-approved-20260928/ahv-img-031"] { object-position:50% 45% !important; }
   #ahv-design-root img[src*="owner-approved-20260928/ahv-img-034"] { object-position:50% 65% !important; }
 }
+
+/* ---- /social-responsibilities/: thematic composition on large desktops (owner brief, 28 Sep 2026; parent R8) --------
+   Heading-left / prose-right alone left the label column empty beside six long themed lists. Same content and order:
+   the two opening paragraphs sit side by side as the page's introduction; each theme keeps its heading and lede on
+   one row, and a theme with three or more initiatives shows them as a full-width grid of bounded cards (a one- or
+   two-item theme stays at reading width). No claim added or reworded; < 1180px unchanged. */
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-route="/social-responsibilities/"] main > section[data-source-component="article"]:has(> h3) {
+    grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) !important;
+  }
+  #ahv-design-root[data-ahv-route="/social-responsibilities/"] main > section[data-source-component="article"]:has(> h3) > p:first-child { grid-column:1 !important; grid-row:1 !important; }
+  #ahv-design-root[data-ahv-route="/social-responsibilities/"] main > section[data-source-component="article"]:has(> h3) > p:first-child + p { grid-column:2 !important; grid-row:1 !important; }
+  #ahv-design-root[data-ahv-route="/social-responsibilities/"] main > section[data-source-component="article"]:has(> h3) > ul[data-list-depth="0"]:has(> li:nth-child(3)) {
+    grid-column:1 / -1 !important; display:grid !important; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)) !important;
+    gap:18px 24px !important; list-style:none !important; padding:0 !important; max-width:none !important; margin-top:12px !important;
+  }
+  #ahv-design-root[data-ahv-route="/social-responsibilities/"] main > section[data-source-component="article"]:has(> h3) > ul[data-list-depth="0"]:has(> li:nth-child(3)) > li {
+    background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-top:3px solid #C1882C !important;
+    border-radius:4px !important; padding:18px 22px !important; font-size:16.5px !important; line-height:1.7 !important;
+  }
+}
