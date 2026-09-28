@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-28T05:40:29.169Z",
+ "generated": "2026-09-28T07:34:10.553Z",
  "base": "http://localhost:4471",
- "count": 236,
+ "count": 234,
  "failures": 0,
  "routes": [
   {
@@ -98,8 +98,8 @@
    "path": "/archive-yoga-retreat/",
    "ok": true,
    "file": "archive-yoga-retreat.html",
-   "bytes": 94854,
-   "textChars": 3844,
+   "bytes": 94061,
+   "textChars": 3804,
    "imgs": 13,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -175,16 +175,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/ayurveda-gallery/",
-   "ok": true,
-   "file": "ayurveda-gallery.html",
-   "bytes": 69699,
-   "textChars": 1429,
-   "imgs": 13,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/ayurveda-offers/",
    "ok": true,
    "file": "ayurveda-offers.html",
@@ -198,7 +188,7 @@
    "path": "/ayurveda-package/",
    "ok": true,
    "file": "ayurveda-package.html",
-   "bytes": 115261,
+   "bytes": 115321,
    "textChars": 3109,
    "imgs": 36,
    "flattened": 0,
@@ -325,22 +315,22 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/ayurvedic-links/",
-   "ok": true,
-   "file": "ayurvedic-links.html",
-   "bytes": 82128,
-   "textChars": 3152,
-   "imgs": 9,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/ayurvedic-new-year-yala-2018/",
    "ok": true,
    "file": "ayurvedic-new-year-yala-2018.html",
    "bytes": 103149,
    "textChars": 12156,
    "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-links/",
+   "ok": true,
+   "file": "ayurvedic-links.html",
+   "bytes": 82128,
+   "textChars": 3152,
+   "imgs": 9,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -498,9 +488,9 @@
    "path": "/careers/",
    "ok": true,
    "file": "careers.html",
-   "bytes": 68516,
-   "textChars": 2690,
-   "imgs": 10,
+   "bytes": 67221,
+   "textChars": 2668,
+   "imgs": 9,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -538,8 +528,8 @@
    "path": "/contact-us/",
    "ok": true,
    "file": "contact-us.html",
-   "bytes": 109782,
-   "textChars": 5534,
+   "bytes": 109781,
+   "textChars": 5533,
    "imgs": 9,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -598,8 +588,8 @@
    "path": "/defence-and-paramilitary-forces/",
    "ok": true,
    "file": "defence-and-paramilitary-forces.html",
-   "bytes": 75644,
-   "textChars": 6722,
+   "bytes": 76276,
+   "textChars": 7529,
    "imgs": 4,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -625,22 +615,22 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/digestive-wellness-gut-health-yoga-therapy/",
-   "ok": true,
-   "file": "digestive-wellness-gut-health-yoga-therapy.html",
-   "bytes": 223645,
-   "textChars": 17708,
-   "imgs": 52,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/disclaimer/",
    "ok": true,
    "file": "disclaimer.html",
    "bytes": 64423,
    "textChars": 2380,
    "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/digestive-wellness-gut-health-yoga-therapy/",
+   "ok": true,
+   "file": "digestive-wellness-gut-health-yoga-therapy.html",
+   "bytes": 223665,
+   "textChars": 17708,
+   "imgs": 52,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -668,8 +658,8 @@
    "path": "/enquiry-form/",
    "ok": true,
    "file": "enquiry-form.html",
-   "bytes": 110144,
-   "textChars": 5571,
+   "bytes": 110143,
+   "textChars": 5570,
    "imgs": 8,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -685,22 +675,22 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/family-ayurvedic-retreat-kerala.html",
-   "ok": true,
-   "file": "family-ayurvedic-retreat-kerala.html.html",
-   "bytes": 213650,
-   "textChars": 8638,
-   "imgs": 77,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/faqs-downloads/",
    "ok": true,
    "file": "faqs-downloads.html",
    "bytes": 189863,
    "textChars": 7989,
    "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/family-ayurvedic-retreat-kerala.html",
+   "ok": true,
+   "file": "family-ayurvedic-retreat-kerala.html.html",
+   "bytes": 213650,
+   "textChars": 8638,
+   "imgs": 77,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -728,9 +718,9 @@
    "path": "/gallery/",
    "ok": true,
    "file": "gallery.html",
-   "bytes": 86449,
-   "textChars": 2342,
-   "imgs": 19,
+   "bytes": 84971,
+   "textChars": 2318,
+   "imgs": 18,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -758,7 +748,7 @@
    "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
    "ok": true,
    "file": "holistic-treatment-for-rejuvenation-and-detoxification.html",
-   "bytes": 223346,
+   "bytes": 223366,
    "textChars": 16402,
    "imgs": 56,
    "flattened": 0,
@@ -788,7 +778,7 @@
    "path": "/immunity-enhancement-executive-health-assessment-therapy/",
    "ok": true,
    "file": "immunity-enhancement-executive-health-assessment-therapy.html",
-   "bytes": 223082,
+   "bytes": 223102,
    "textChars": 16973,
    "imgs": 54,
    "flattened": 0,
@@ -815,22 +805,22 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/jobs/business-development-manager/",
-   "ok": true,
-   "file": "jobs_business-development-manager.html",
-   "bytes": 71652,
-   "textChars": 3071,
-   "imgs": 4,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/internships-at-kairali/",
    "ok": true,
    "file": "internships-at-kairali.html",
    "bytes": 72486,
    "textChars": 3503,
    "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/jobs/business-development-manager/",
+   "ok": true,
+   "file": "jobs_business-development-manager.html",
+   "bytes": 66506,
+   "textChars": 2921,
+   "imgs": 4,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -998,8 +988,8 @@
    "path": "/katha-wellness-retreat-2019/",
    "ok": true,
    "file": "katha-wellness-retreat-2019.html",
-   "bytes": 91828,
-   "textChars": 5064,
+   "bytes": 91692,
+   "textChars": 5048,
    "imgs": 13,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1035,21 +1025,21 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/lakshya-yoga/",
-   "ok": true,
-   "file": "lakshya-yoga.html",
-   "bytes": 82809,
-   "textChars": 5339,
-   "imgs": 9,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/lakshya-yoga-retreat/",
    "ok": true,
    "file": "lakshya-yoga-retreat.html",
    "bytes": 75618,
    "textChars": 3138,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/lakshya-yoga/",
+   "ok": true,
+   "file": "lakshya-yoga.html",
+   "bytes": 82809,
+   "textChars": 5339,
    "imgs": 9,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1065,21 +1055,21 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/learn-more-about-yoga/",
-   "ok": true,
-   "file": "learn-more-about-yoga.html",
-   "bytes": 68313,
-   "textChars": 3084,
-   "imgs": 10,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/learn-more-about-ayurveda/",
    "ok": true,
    "file": "learn-more-about-ayurveda.html",
    "bytes": 65879,
    "textChars": 1715,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/learn-more-about-yoga/",
+   "ok": true,
+   "file": "learn-more-about-yoga.html",
+   "bytes": 68313,
+   "textChars": 3084,
    "imgs": 10,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1245,16 +1235,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
-   "ok": true,
-   "file": "offers_defence-paramilitary-personnel-get-upto-30-off.html",
-   "bytes": 55756,
-   "textChars": 2497,
-   "imgs": 4,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/offers/",
    "ok": true,
    "file": "offers.html",
@@ -1265,11 +1245,21 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
+   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+   "ok": true,
+   "file": "offers_defence-paramilitary-personnel-get-upto-30-off.html",
+   "bytes": 56761,
+   "textChars": 3127,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
    "path": "/offers/olympics-and-paralympics-offer/",
    "ok": true,
    "file": "offers_olympics-and-paralympics-offer.html",
-   "bytes": 55396,
-   "textChars": 2820,
+   "bytes": 56224,
+   "textChars": 3300,
    "imgs": 4,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1278,8 +1268,8 @@
    "path": "/offers/senior-citizen-offer/",
    "ok": true,
    "file": "offers_senior-citizen-offer.html",
-   "bytes": 122778,
-   "textChars": 10891,
+   "bytes": 124208,
+   "textChars": 11377,
    "imgs": 36,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1398,7 +1388,7 @@
    "path": "/panchakarma-therapy/",
    "ok": true,
    "file": "panchakarma-therapy.html",
-   "bytes": 221126,
+   "bytes": 221146,
    "textChars": 15593,
    "imgs": 56,
    "flattened": 0,
@@ -1438,7 +1428,7 @@
    "path": "/personalized-customized-healing-program/",
    "ok": true,
    "file": "personalized-customized-healing-program.html",
-   "bytes": 223875,
+   "bytes": 223895,
    "textChars": 16226,
    "imgs": 54,
    "flattened": 0,
@@ -1448,8 +1438,8 @@
    "path": "/photo-gallery/",
    "ok": true,
    "file": "photo-gallery.html",
-   "bytes": 192303,
-   "textChars": 3921,
+   "bytes": 192725,
+   "textChars": 4208,
    "imgs": 68,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1488,19 +1478,9 @@
    "path": "/prav-simona-monsoon-yoga-retreat/",
    "ok": true,
    "file": "prav-simona-monsoon-yoga-retreat.html",
-   "bytes": 90375,
+   "bytes": 91260,
    "textChars": 8918,
-   "imgs": 11,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/prav-simona-yoga-retreat/",
-   "ok": true,
-   "file": "prav-simona-yoga-retreat.html",
-   "bytes": 79358,
-   "textChars": 5546,
-   "imgs": 11,
+   "imgs": 13,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -1568,8 +1548,8 @@
    "path": "/property-gallery/",
    "ok": true,
    "file": "property-gallery.html",
-   "bytes": 140645,
-   "textChars": 2226,
+   "bytes": 141060,
+   "textChars": 2307,
    "imgs": 42,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1618,7 +1598,7 @@
    "path": "/revitalizing-and-strengthening/",
    "ok": true,
    "file": "revitalizing-and-strengthening.html",
-   "bytes": 219264,
+   "bytes": 219284,
    "textChars": 16744,
    "imgs": 54,
    "flattened": 0,
@@ -1638,8 +1618,8 @@
    "path": "/search-results/",
    "ok": true,
    "file": "search-results.html",
-   "bytes": 65858,
-   "textChars": 1483,
+   "bytes": 65877,
+   "textChars": 1502,
    "imgs": 9,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1668,7 +1648,7 @@
    "path": "/sitemap/",
    "ok": true,
    "file": "sitemap.html",
-   "bytes": 130803,
+   "bytes": 130396,
    "textChars": 2349,
    "imgs": 4,
    "flattened": 0,
@@ -1678,7 +1658,7 @@
    "path": "/sleep-restoration-therapy/",
    "ok": true,
    "file": "sleep-restoration-therapy.html",
-   "bytes": 223549,
+   "bytes": 223569,
    "textChars": 16806,
    "imgs": 54,
    "flattened": 0,
@@ -1818,8 +1798,8 @@
    "path": "/training-course-fees/",
    "ok": true,
    "file": "training-course-fees.html",
-   "bytes": 136713,
-   "textChars": 6952,
+   "bytes": 119264,
+   "textChars": 5313,
    "imgs": 6,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1835,10 +1815,20 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
+   "path": "/treatment-for-bronchial-diseases/",
+   "ok": true,
+   "file": "treatment-for-bronchial-diseases.html",
+   "bytes": 227635,
+   "textChars": 19086,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
    "path": "/treatment-for-arthritis-and-spondylitis/",
    "ok": true,
    "file": "treatment-for-arthritis-and-spondylitis.html",
-   "bytes": 220153,
+   "bytes": 220173,
    "textChars": 17063,
    "imgs": 55,
    "flattened": 0,
@@ -1848,28 +1838,8 @@
    "path": "/treatment-for-cervical-spondylosis/",
    "ok": true,
    "file": "treatment-for-cervical-spondylosis.html",
-   "bytes": 218276,
+   "bytes": 218296,
    "textChars": 16875,
-   "imgs": 54,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/treatment-for-bronchial-diseases/",
-   "ok": true,
-   "file": "treatment-for-bronchial-diseases.html",
-   "bytes": 227615,
-   "textChars": 19086,
-   "imgs": 54,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/treatment-for-chronic-back-pain/",
-   "ok": true,
-   "file": "treatment-for-chronic-back-pain.html",
-   "bytes": 222074,
-   "textChars": 17267,
    "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1878,8 +1848,18 @@
    "path": "/treatment-for-diabetes/",
    "ok": true,
    "file": "treatment-for-diabetes.html",
-   "bytes": 216556,
+   "bytes": 216576,
    "textChars": 16823,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-chronic-back-pain/",
+   "ok": true,
+   "file": "treatment-for-chronic-back-pain.html",
+   "bytes": 222094,
+   "textChars": 17267,
    "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1888,7 +1868,7 @@
    "path": "/treatment-for-facial-paralysis/",
    "ok": true,
    "file": "treatment-for-facial-paralysis.html",
-   "bytes": 221390,
+   "bytes": 221410,
    "textChars": 17290,
    "imgs": 54,
    "flattened": 0,
@@ -1918,18 +1898,8 @@
    "path": "/treatment-for-paralysis/",
    "ok": true,
    "file": "treatment-for-paralysis.html",
-   "bytes": 219129,
+   "bytes": 219149,
    "textChars": 16467,
-   "imgs": 54,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
-   "path": "/treatment-for-psoriasis/",
-   "ok": true,
-   "file": "treatment-for-psoriasis.html",
-   "bytes": 216706,
-   "textChars": 15934,
    "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
@@ -1938,9 +1908,19 @@
    "path": "/treatment-for-sinusitis-and-migraine/",
    "ok": true,
    "file": "treatment-for-sinusitis-and-migraine.html",
-   "bytes": 219077,
+   "bytes": 219097,
    "textChars": 17102,
    "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-psoriasis/",
+   "ok": true,
+   "file": "treatment-for-psoriasis.html",
+   "bytes": 216726,
+   "textChars": 15934,
+   "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -1948,7 +1928,7 @@
    "path": "/treatment-for-skin-diseases/",
    "ok": true,
    "file": "treatment-for-skin-diseases.html",
-   "bytes": 222892,
+   "bytes": 222912,
    "textChars": 17816,
    "imgs": 54,
    "flattened": 0,
@@ -1958,7 +1938,7 @@
    "path": "/treatment-for-slip-disc/",
    "ok": true,
    "file": "treatment-for-slip-disc.html",
-   "bytes": 219455,
+   "bytes": 219475,
    "textChars": 17739,
    "imgs": 54,
    "flattened": 0,
@@ -1968,7 +1948,7 @@
    "path": "/treatment-for-spondylitis/",
    "ok": true,
    "file": "treatment-for-spondylitis.html",
-   "bytes": 215568,
+   "bytes": 215588,
    "textChars": 16092,
    "imgs": 53,
    "flattened": 0,
@@ -2008,9 +1988,19 @@
    "path": "/treatment-to-remove-stress-and-strain/",
    "ok": true,
    "file": "treatment-to-remove-stress-and-strain.html",
-   "bytes": 223917,
+   "bytes": 223937,
    "textChars": 17262,
    "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/vegetarian/",
+   "ok": true,
+   "file": "vegetarian.html",
+   "bytes": 65471,
+   "textChars": 1648,
+   "imgs": 10,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -2035,16 +2025,6 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/vegetarian/",
-   "ok": true,
-   "file": "vegetarian.html",
-   "bytes": 65471,
-   "textChars": 1648,
-   "imgs": 10,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/villa-raag/",
    "ok": true,
    "file": "villa-raag.html",
@@ -2058,9 +2038,9 @@
    "path": "/village-facilities/",
    "ok": true,
    "file": "village-facilities.html",
-   "bytes": 84691,
-   "textChars": 5459,
-   "imgs": 19,
+   "bytes": 84898,
+   "textChars": 5686,
+   "imgs": 18,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
@@ -2118,7 +2098,7 @@
    "path": "/weight-loss-programme/",
    "ok": true,
    "file": "weight-loss-programme.html",
-   "bytes": 227605,
+   "bytes": 227625,
    "textChars": 15772,
    "imgs": 58,
    "flattened": 0,
@@ -2238,7 +2218,7 @@
    "path": "/womens-hormonal-balance-endocrine-therapy/",
    "ok": true,
    "file": "womens-hormonal-balance-endocrine-therapy.html",
-   "bytes": 219218,
+   "bytes": 219238,
    "textChars": 15726,
    "imgs": 53,
    "flattened": 0,
@@ -2268,7 +2248,7 @@
    "path": "/yoga-based-stress-energy-reset-program/",
    "ok": true,
    "file": "yoga-based-stress-energy-reset-program.html",
-   "bytes": 221383,
+   "bytes": 221403,
    "textChars": 14635,
    "imgs": 54,
    "flattened": 0,
@@ -2325,22 +2305,22 @@
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },
   {
-   "path": "/yoga-meditation-training/",
-   "ok": true,
-   "file": "yoga-meditation-training.html",
-   "bytes": 208459,
-   "textChars": 12076,
-   "imgs": 53,
-   "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
-  },
-  {
    "path": "/yoga-retreats-for-everyone/",
    "ok": true,
    "file": "yoga-retreats-for-everyone.html",
    "bytes": 76083,
    "textChars": 5445,
    "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-meditation-training/",
+   "ok": true,
+   "file": "yoga-meditation-training.html",
+   "bytes": 208459,
+   "textChars": 12076,
+   "imgs": 53,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },

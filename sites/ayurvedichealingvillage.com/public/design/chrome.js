@@ -70,13 +70,15 @@
     span.setAttribute("data-ahv-copyright", "1");
     // the year is computed here, so it carries the same marker the footer component's live binding gets
     // (tools/repair-computed-year.mjs): a prerender snapshot then records it as computed, not typed (D-ROLLING-NUMBER)
-    span.appendChild(document.createTextNode("© 1908 — "));
+    // one template, its end year a computed placeholder — the ruled "© 1989–{new Date().getFullYear()}" shape
+    var parts = "© 1908 — {yearNow} Kairali — The Ayurvedic Healing Village.".split("{yearNow}");
+    span.appendChild(document.createTextNode(parts[0]));
     var yr = document.createElement("span");
     yr.className = "sc-interp";
     yr.setAttribute("data-dc-computed", "yearNow");
     yr.textContent = String(new Date().getFullYear());
     span.appendChild(yr);
-    span.appendChild(document.createTextNode(" Kairali — The Ayurvedic Healing Village."));
+    span.appendChild(document.createTextNode(parts[1]));
     // the bar's own type: if it is a flex column of spans the new span joins it;
     // otherwise it becomes its own line at the bar's font
     span.style.display = "block";
