@@ -192,6 +192,10 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
         data-ahv-family={family || undefined}
         data-ahv-consistency={consistency}
         data-ahv-snapshot-state={snapshot ? "held" : undefined}
+        // Pairs the deferred-background rule in site-document.tsx with the boot script below that reveals
+        // them: only a root this boot runs in may hold its inline backgrounds back (native views that
+        // reuse the id carry no boot, so they are never matched).
+        data-ahv-bg-defer=""
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: snapshot }}
       />

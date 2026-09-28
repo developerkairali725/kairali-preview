@@ -1,4 +1,12 @@
 import { formPostSafety } from "./form-post-safety.mjs";
+import {
+  EAGER_SLOTS,
+  lazyImgFirst,
+  deferHeroFilm,
+  installLazyImgOrder,
+  installSlotLoading,
+  createBackgroundDeferral,
+} from "./media-loading.mjs";
 import { CONSENT_RUNTIME } from "./consent-runtime";
 /**
  * AHV English candidate — page bootstrap.
@@ -144,6 +152,14 @@ export const BOOT_SCRIPT = `
   if (!cfgEl || !host) return;
   var cfg = JSON.parse(cfgEl.textContent || "{}");
 
+  // Media loading (lane P-perf, media-loading.mjs). The LCP slots, the inline-background deferral that
+  // the site-document stylesheet pairs with, and — before any design script can create an image — the
+  // two hooks that decide loading ahead of the first src write.
+  var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
+  var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
+  (${installLazyImgOrder.toString()})(window);
+  (${installSlotLoading.toString()})(window, EAGER_SLOTS);
+
   // The server response carries the prerendered snapshot (phone width, for
   // the mobile crawler). It stays on screen until the runtime has rendered
   // the live view: wiping it first left a desktop visitor a phone layout and
@@ -161,6 +177,8 @@ export const BOOT_SCRIPT = `
       snapshotNodes.push(kids[i]);
     }
   })();
+  // The snapshot's own inline backgrounds: the first screen now, the rest as it nears the viewport.
+  deferBackgrounds(host);
   function liveRoot() {
     var kids = host.children;
     for (var i = 0; i < kids.length; i++) {
@@ -170,19 +188,52 @@ export const BOOT_SCRIPT = `
     }
     return null;
   }
+  // Snapshot -> live swap without a layout shift (lane P-perf, 29 Sep 2026; measured mobile CLS 1.0 on
+  // /, /ayurvedic-treatments/ and 0.44 on /festivals/). Two causes, both fixed here and in the
+  // site-document stylesheet:
+  //  1. The live root was laid out BELOW the phone snapshot (x-dc was appended after it), so hiding the
+  //     snapshot moved the whole live page ~24,000px up into the viewport: a full-screen shift. The live
+  //     root now mounts FIRST in the design root and, on a phone, sits out of flow at top 0 and
+  //     invisible while the snapshot stays on screen; the swap removes the snapshot and shows the live
+  //     page in the same frame, at the same position. A disappearance plus an appearance is not a shift.
+  //  2. The sitewide scripts (section-nav.js, consistency.js, ...) query the FIRST match in the design
+  //     root, which was the snapshot's copy, so they restyled the live page only after the snapshot
+  //     left — the captured sidebar was removed in front of the visitor. With the live root first they
+  //     work on it while it is still hidden, and the swap waits until its DOM has been quiet for a
+  //     moment (at most 0.8 s after it is ready), so their passes land before it is shown.
+  // The ready test counts rendered text directly: innerText is empty for an invisible element.
+  var lastLiveChange = 0, liveReadyAt = 0;
+  function liveTextLength(el) {
+    var n = 0, walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), t;
+    while (n <= 200 && (t = walker.nextNode())) {
+      var tag = t.parentNode && t.parentNode.nodeName;
+      if (tag !== "STYLE" && tag !== "SCRIPT" && tag !== "TEMPLATE") n += (t.nodeValue || "").trim().length;
+    }
+    return n;
+  }
   function retireSnapshot(tries) {
     var live = liveRoot();
-    if (live && (live.innerText || "").trim().length > 200) {
+    if (live && liveTextLength(live) > 200) {
+      var now = Date.now();
+      if (!liveReadyAt) liveReadyAt = now;
+      if (tries > 0 && now - lastLiveChange < 120 && now - liveReadyAt < 800) {
+        setTimeout(function () { retireSnapshot(tries - 1); }, 100);
+        return;
+      }
       for (var i = 0; i < snapshotNodes.length; i++) {
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
       }
       snapshotNodes = [];
       host.setAttribute("data-ahv-snapshot-state", "retired");
+      host.removeAttribute("data-ahv-live-pending");
       return;
     }
     if (tries > 0) { setTimeout(function () { retireSnapshot(tries - 1); }, 100); return; }
     // The runtime never rendered: give the visitor the snapshot back rather
-    // than an empty page.
+    // than an empty page — with the partial live root back behind it, where it
+    // sat before the live root was mounted first.
+    if (live) host.appendChild(live);
+    host.removeAttribute("data-ahv-live-pending");
     host.setAttribute("data-ahv-snapshot-state", "held");
   }
   function releaseSnapshot() {
@@ -459,12 +510,16 @@ export const BOOT_SCRIPT = `
    * snapshot's own lazy attributes cannot help here, because the runtime replaces
    * that markup when it mounts.
    *
-   * The first few are left eager -- they are the LCP candidates -- and every slot
-   * after them is marked lazy, so the gallery loads as the patient scrolls to it
-   * rather than competing with the hero. Applied from our side, on the shadow
-   * root, so no approved byte is edited and a re-import cannot undo it.
+   * The LCP slot (EAGER_SLOTS: hero-still / m-hero) is left eager at high
+   * priority and every other slot is marked lazy, so the gallery loads as the
+   * patient scrolls to it rather than competing with the hero. Applied from our
+   * side, on the shadow root, so no approved byte is edited and a re-import
+   * cannot undo it. The decision itself is made before the slot's first src
+   * write (installSlotLoading, media-loading.mjs); this pass is the net for a
+   * slot that pass missed, and it can no longer turn a lazy slot eager (the old
+   * "first three slots seen" rule did, whatever their position — removing
+   * loading from a lazy image fetches it at once).
    */
-  var slotsSeen = 0;
   function deferSlotImage(slot) {
     if (!slot || slot.__ahvLazySet) return;
     var shadow = slot.shadowRoot;
@@ -472,8 +527,7 @@ export const BOOT_SCRIPT = `
     var img = shadow.querySelector(".frame img");
     if (!img) return;
     slot.__ahvLazySet = true;
-    slotsSeen++;
-    if (slotsSeen <= 3) {
+    if (EAGER_SLOTS[slot.id]) {
       img.setAttribute("fetchpriority", "high");
       img.removeAttribute("loading");
       return;
@@ -846,11 +900,18 @@ export const BOOT_SCRIPT = `
   }
   new MutationObserver(function (changes) {
     changes.forEach(function (change) {
-      if (change.type === "attributes") localizeLink(change.target);
+      if (change.type === "childList") lastLiveChange = Date.now();
+      // style: an element that gains an inline background later (a rewritten style attribute) is
+      // deferred like a new one; only the element itself is checked, never its subtree.
+      if (change.type === "attributes") {
+        if (change.attributeName === "style") deferBackgrounds(change.target, true);
+        else localizeLink(change.target);
+      }
       else change.addedNodes.forEach(function (node) {
         localizeLinks(node);
         restoreSlotScrolling(node);
         deferSlotImages(node);
+        deferBackgrounds(node);
         aliasImages(node);
         enhanceDirections(host);
         startIstClock(node);
@@ -861,7 +922,7 @@ export const BOOT_SCRIPT = `
         retargetSelfLinks(node);
       });
     });
-  }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+  }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href", "style"] });
   // Also normalize synchronously before native activation, including middle
   // clicks and copied link addresses, without overriding browser behavior.
   ["click", "auxclick", "contextmenu", "focusin"].forEach(function (event) {
@@ -1011,6 +1072,7 @@ export const BOOT_SCRIPT = `
   function sweepSlots(tries) {
     restoreSlotScrolling(host);
     deferSlotImages(host);
+    deferBackgrounds(host);
     aliasImages(host);
     enhanceDirections(host);
     startIstClock(host);
@@ -1061,8 +1123,14 @@ export const BOOT_SCRIPT = `
       // as a URL.
       // The snapshot stays where it is (see releaseSnapshot): the runtime takes
       // the first <x-dc> in the document and replaces it with its own root.
-      host.appendChild(document.createElement("x-dc"));
-      pendingTemplate = (${formPostSafety.toString()})(view.template);
+      // FIRST child, ahead of the snapshot (see retireSnapshot): the live page is laid out at the top
+      // from the start, and first-match queries in the sitewide scripts find the live copy.
+      // data-ahv-live-pending keeps it out of flow and invisible until the swap (site-document.tsx);
+      // only while there is a snapshot to swap with — a page without one shows its live view as it renders.
+      if (snapshotNodes.length) host.setAttribute("data-ahv-live-pending", "");
+      host.insertBefore(document.createElement("x-dc"), host.firstChild);
+      // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})(view.template));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");
@@ -1075,7 +1143,8 @@ export const BOOT_SCRIPT = `
       logic.type = "text/x-dc";
       logic.setAttribute("data-dc-script", "");
       logic.setAttribute("data-props", JSON.stringify(props));
-      logic.text = view.logic || "";
+      // deferHeroFilm: the homepage film starts after load + idle on wide screens (media-loading.mjs, P3).
+      logic.text = (${deferHeroFilm.toString()})(view.logic || "");
       host.appendChild(logic);
 
       // Step 5 — the accepted preview layer self-attaches from its own tag,

@@ -131,11 +131,45 @@ export function SiteDocument({
                than painting a phone layout; once boot pushes the template the
                root is "released" and the snapshot leaves the flow so the live
                view is the only thing on screen. Phones keep the snapshot
-               visible throughout - that is the mobile-first paint. */}
+               visible throughout - that is the mobile-first paint.
+               The live root (#dc-root, mounted FIRST in the root by boot, which
+               marks the root data-ahv-live-pending from that moment until the
+               swap) waits out of flow at top 0, invisible, while a phone keeps
+               the snapshot on screen; boot swaps the two in one frame
+               ("retired") once the live DOM has settled, so the live page never
+               moves into the viewport (lane P-perf, 29 Sep 2026: that move
+               scored CLS 1.0 on phones) and the sitewide scripts restyle it
+               before anyone sees it (desktop CLS 0.15-0.29 from those passes on
+               /festivals/ and the retreat page). Desktop shows paper until the
+               swap, as it already did while held. If the runtime never renders
+               ("held" after release) boot moves its partial root back behind
+               the snapshot, where it always was. Nothing here may target
+               #dc-root without data-ahv-live-pending: without JavaScript the
+               server snapshot itself still carries that id.
+               The desktop hold is display:none, not visibility:hidden (lane
+               P-perf, 29 Sep 2026): the visitor saw nothing either way, but an
+               invisible-yet-laid-out phone snapshot still downloaded its eager
+               and near-fold images and its inline backgrounds, competing with
+               the live view (runtime mounted 1.3-1.5 s later on staging). The
+               snapshot stays in the served HTML for crawlers and no-JS readers.
+            4. Inline background images are not fetched until boot marks their
+               element data-ahv-bg (first screen at once, the rest near the
+               viewport — media-loading.mjs, createBackgroundDeferral). Inline
+               here so it applies to the server snapshot from the first style
+               pass. Scoped to the design-view root (data-ahv-bg-defer), the
+               only root the boot script runs in — native views that reuse the
+               id are never matched. Only background-image is suppressed: colour, size and
+               position stay, so a tile shows its own fill until the image
+               arrives, as on a slow connection today. Behind
+               (scripting:enabled): with JavaScript off nothing would ever
+               reveal them, so a no-JS reader keeps every background, and a
+               browser that does not know the query simply loads as before. */}
         <style>
           {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
-            "#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}" +
-            "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{visibility:hidden!important}}"}
+            "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}}" +
+            "#ahv-design-root[data-ahv-live-pending]{position:relative}#ahv-design-root[data-ahv-live-pending]>#dc-root{position:absolute!important;top:0!important;left:0!important;right:0!important;visibility:hidden!important;pointer-events:none!important}" +
+            "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='held']>*{display:none!important}}" +
+            "@media (scripting:enabled){#ahv-design-root[data-ahv-bg-defer] [style*='url(']:not([data-ahv-bg]){background-image:none!important}}"}
         </style>
         {/* Arabic script is cursive: the design's uppercase letter-spacing (tracked
             labels, eyebrows) breaks letter joining, so it is reset for Arabic
