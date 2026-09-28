@@ -378,3 +378,32 @@
     grid-column:1 / -1 !important;
   }
 }
+
+/* ---- retreat design family, large-desktop composition (same owner report, 28 Sep 2026) ---------------------------
+   Measured at 1440px: Ananda Lahari 64%, Ashtanga 61%, Back to Roots 67%, Mindfulness 28%, Lakshya 24%, AyurYoga 24% of
+   the page height was content stopping at the left of the container — each article section is a single-column grid:
+   heading, then a 714px text block (or a banner image, then the text). Composed as label | text, and where a section
+   carries its own image the image sits under the heading in the label column beside the text (balanced image/text),
+   instead of above a left-only paragraph block. Source order, content and images unchanged; < 1180px unchanged. */
+@media (min-width:1180px) {
+  :is([data-ahv-family="ananda-lahari-retreat"], [data-ahv-family="ashtanga-retreat"], [data-ahv-family="mindfulness-retreat"], [data-ahv-family="lakshya-yoga"], [data-ahv-family="ayuryoga"], [data-ahv-family="back-to-roots"]) main > article > section[id]:is(:has(> h2 + div), :has(> h2 + img + div), :has(> h2 + p)) {
+    display:grid !important;
+    grid-template-columns:minmax(260px,1fr) minmax(0,714px) !important;
+    grid-template-rows:auto 1fr !important;
+    column-gap:clamp(48px,5vw,88px) !important;
+    max-width:none !important; width:100% !important;
+    align-items:start !important;
+  }
+  :is([data-ahv-family="ananda-lahari-retreat"], [data-ahv-family="ashtanga-retreat"], [data-ahv-family="mindfulness-retreat"], [data-ahv-family="lakshya-yoga"], [data-ahv-family="ayuryoga"], [data-ahv-family="back-to-roots"]) main > article > section[id]:is(:has(> h2 + div), :has(> h2 + img + div), :has(> h2 + p)) > * {
+    grid-column:2 !important; min-width:0 !important;
+  }
+  :is([data-ahv-family="ananda-lahari-retreat"], [data-ahv-family="ashtanga-retreat"], [data-ahv-family="mindfulness-retreat"], [data-ahv-family="lakshya-yoga"], [data-ahv-family="ayuryoga"], [data-ahv-family="back-to-roots"]) main > article > section[id]:is(:has(> h2 + div), :has(> h2 + img + div), :has(> h2 + p)) > h2 {
+    grid-column:1 !important; grid-row:1 !important; max-width:18ch !important;
+  }
+  :is([data-ahv-family="ananda-lahari-retreat"], [data-ahv-family="ashtanga-retreat"], [data-ahv-family="mindfulness-retreat"], [data-ahv-family="lakshya-yoga"], [data-ahv-family="ayuryoga"], [data-ahv-family="back-to-roots"]) main > article > section[id]:has(> h2 + img + div) > img {
+    grid-column:1 !important; grid-row:2 !important; width:100% !important; max-width:100% !important; margin-top:24px !important;
+  }
+  :is([data-ahv-family="ananda-lahari-retreat"], [data-ahv-family="ashtanga-retreat"], [data-ahv-family="mindfulness-retreat"], [data-ahv-family="lakshya-yoga"], [data-ahv-family="ayuryoga"], [data-ahv-family="back-to-roots"]) main > article > section[id]:has(> h2 + img + div) > div {
+    grid-row:1 / span 2 !important;
+  }
+}
