@@ -1,83 +1,83 @@
 {
- "at": "2026-09-28T05:42:09.117Z",
+ "at": "2026-09-28T08:07:29.342Z",
  "verdict": "FAIL",
  "perLocale": {
   "hi": {
-   "translated": 14108,
+   "translated": 14093,
    "missing": 0,
    "blocked": 7,
    "stale": 0
   },
   "de": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   },
   "fr": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   },
   "es": {
-   "translated": 14112,
+   "translated": 14097,
    "missing": 0,
    "blocked": 3,
    "stale": 0
   },
   "it": {
-   "translated": 14112,
+   "translated": 14097,
    "missing": 0,
    "blocked": 3,
    "stale": 0
   },
   "pt": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   },
   "nl": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   },
   "ru": {
-   "translated": 14110,
+   "translated": 14095,
    "missing": 0,
    "blocked": 5,
    "stale": 0
   },
   "ar": {
-   "translated": 14112,
+   "translated": 14097,
    "missing": 0,
    "blocked": 3,
    "stale": 0
   },
   "zh-Hans": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   },
   "ja": {
-   "translated": 14115,
+   "translated": 14100,
    "missing": 0,
    "blocked": 0,
    "stale": 0
   },
   "ko": {
-   "translated": 14114,
+   "translated": 14099,
    "missing": 0,
    "blocked": 1,
    "stale": 0
   }
  },
  "revalidate": {
-  "checked": 7356,
-  "passed": 7356,
+  "checked": 7392,
+  "passed": 7392,
   "withdrawn": 0,
   "reasons": {}
  },
@@ -93,7 +93,7 @@
   "ar: missing 0, blocked 3, stale 0",
   "zh-Hans: missing 0, blocked 1, stale 0",
   "ko: missing 0, blocked 1, stale 0",
-  "build --strict: untranslated units remain (missingUnits=7 missingUnits=1 missingUnits=1 missingUnits=3 missingUnits=3 missingUnits=1 missingUnits=1 missingUnits=5 missingUnits=3 missingUnits=1 missingUnits=0 missingUnits=1)",
+  "build --strict: untranslated units remain (missingUnits=11 missingUnits=5 missingUnits=5 missingUnits=7 missingUnits=7 missingUnits=5 missingUnits=5 missingUnits=9 missingUnits=7 missingUnits=5 missingUnits=4 missingUnits=5)",
   "11 source unit(s) clinically held in all locales pending owner/Dr. Deepu John ruling: t_f3c6d15a874413b8d46d, t_6ed743d40ad7f2626b45, t_fab1a9e13b5d70f8179a, t_ff4c6c57dddc9771ce48, t_6e7c16accd81097ebb4b, t_0cc8d48b7bf1e39a9ec6, t_8857bb8ea43199739c77, t_4573a839ffe27bbd6a93, t_6bde0b830d8bd56dea61, t_648cd2de98ef91a30642, t_cef40dba849bc4ee0ac4"
  ]
 }
