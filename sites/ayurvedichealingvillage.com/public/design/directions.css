@@ -193,3 +193,29 @@
 
 /* /map/: the maps block is a direct child of a full-width main — give it the page column */
 [data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] { width:min(1220px,94%) !important; margin:32px auto 0 !important; }
+
+/* ---- enquiry family, content variant (OPD /walk-in-ayurveda-treatment/): large-desktop composition -----------------
+   Owner, 28 Sep 2026 (feedback-master-audit DESKTOP-SECONDARY-FAMILIES.md): the OPD page left the right side of large
+   screens empty. Measured (tools/desktop-space-audit.mjs, 1440px): 54% of the page height was content stopping at the
+   left 62% — a 693px prose column left-aligned in 1220px. Same editorial composition as the article-reader family:
+   section headings in a label column aligned with the H1 edge, prose at its reading measure beside them, the rates
+   table and any figure or image block spanning the full width. Only content blocks WITHOUT a form (the contact,
+   enquiry, apply and consultation variants are untouched); nothing added, removed or reordered; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) {
+    display:grid !important;
+    grid-template-columns:minmax(220px,1fr) minmax(0,693px) !important;
+    column-gap:clamp(48px,5vw,88px) !important;
+    align-items:start !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > * { grid-column:2 !important; min-width:0 !important; }
+  /* the page's section title spans the composition; the sub-sections' headings become the label column */
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h2 { grid-column:1 / -1 !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 {
+    grid-column:1 !important; max-width:20ch !important; margin-top:36px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + * { margin-top:40px !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > :is(table, figure, img, div:has(table), div:has(img), [style*="grid-template-columns"]) {
+    grid-column:1 / -1 !important;
+  }
+}
