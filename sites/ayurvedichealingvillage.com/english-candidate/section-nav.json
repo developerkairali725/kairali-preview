@@ -318,6 +318,12 @@
      "label": "Programme packages at a glance",
      "link": true,
      "children": []
+    },
+    {
+     "path": "/ayurvedic-treatment-packages.html",
+     "label": "Ayurvedic Treatment Packages",
+     "link": true,
+     "children": []
     }
    ]
   },
@@ -346,12 +352,6 @@
     {
      "path": "/classic-villa/",
      "label": "Classic Villa",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/ayurvedic-treatment-packages.html",
-     "label": "Villa rates, treatment included",
      "link": true,
      "children": []
     }
@@ -2731,7 +2731,7 @@
    ]
   },
   "/ayurvedic-treatment-packages.html": {
-   "section": "villas",
+   "section": "programmes",
    "crumbs": [
     "/ayurvedic-treatment-packages.html"
    ]

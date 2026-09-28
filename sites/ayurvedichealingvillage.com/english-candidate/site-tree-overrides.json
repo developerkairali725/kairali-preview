@@ -444,10 +444,10 @@
   },
   {
    "path": "/ayurvedic-treatment-packages.html",
-   "section": "villas",
-   "parent": "/our-villas/",
-   "why": "Changed after review (reviewer 1, verified): the Villas section has no prices anywhere (/our-villas/ and the four villa pages carry no rate). This page's distinct content is the per-night tariff for each villa 'Inclusive Treatment' (Classic, Deluxe, Royal, Maharaja Suite) plus the INR/USD/EUR rate-list downloads; its 29-programme list is plain names that link nowhere, so under Treatments it only duplicated four other lists. Its downloads are the 2025–26 price lists and its per-night rates differ from two other pages (see the fact-conflict note); confirm them before this ships.",
-   "label": "Villa rates, treatment included"
+   "section": "programmes",
+   "parent": "/all-programs/",
+   "why": "Moved 29 Sep 2026 (OWNER-REG-01, owner 28 Sep 23:31 IST): this is an Ayurvedic treatment-package landing page, not a villa page — the owner asked for the Villas placement, breadcrumb and navigation association to go and the package name to be right. Filed under Treatments & programmes beside the package lists, with the page's own name (its title: Ayurvedic Treatment Packages). Its villa accommodation section stays on the page. Earlier placement (reviewer 1): Villas, \"Villa rates, treatment included\".",
+   "label": "Ayurvedic Treatment Packages"
   },
   {
    "path": "/payment-policy-compliance/",
@@ -1179,7 +1179,7 @@
   {
    "keep": "/ayurvedic-treatment-packages.html",
    "other": "/Kairali_Brand_and_Competition_Neo-original.html",
-   "note": "Same template ('Come & Experience The New Look'). The .html packages page is the owner-built site page, now listed in Villas as 'Villa rates, treatment included'; the Neo page is the ad."
+   "note": "Same template ('Come & Experience The New Look'). The .html packages page is the owner-built site page, listed under Treatments & programmes as 'Ayurvedic Treatment Packages' (29 Sep 2026, OWNER-REG-01); the Neo page is the ad."
   }
  ],
  "notes": [
@@ -1244,7 +1244,8 @@
    "/karkidaka-chikitsha-or-monsoon-wellness.html",
    "/treatment-programs/",
    "/wellness-programs/",
-   "/packages/"
+   "/packages/",
+   "/ayurvedic-treatment-packages.html"
   ],
   "/yoga-meditation-programs/": [
    "/yoga-retreats/",
@@ -1257,8 +1258,7 @@
    "/maharaja-suite/",
    "/royal-villa/",
    "/deluxe-villa/",
-   "/classic-villa/",
-   "/ayurvedic-treatment-packages.html"
+   "/classic-villa/"
   ],
   "/training-programs/": [
    "/ayurveda-training-programme/",

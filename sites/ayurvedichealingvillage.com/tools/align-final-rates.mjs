@@ -62,7 +62,12 @@ for (const [route,r] of selected){
       const rows=rates.training.villas.map(v=>'<tr><th scope="row">'+v.print_name+'</th><td>'+fmt(r.tables.INR[v.id][0],'INR')+'</td><td>'+fmt(r.tables.INR[v.id][1],'INR')+'</td></tr>').join('');
       const block='<section data-rate-reference="'+ref(r)+'" style="width:min(1100px,92%);margin:32px auto;padding:24px 0;line-height:1.7"><h2>Residential training tariff</h2><p>Rates effective '+range(r)+'. Per night, per villa; accommodation, meals, training and taxes included.</p><div style="overflow-x:auto"><table style="width:100%;text-align:left;border-collapse:collapse"><thead><tr><th>Villa</th><th>Single occupancy</th><th>Double occupancy</th></tr></thead><tbody>'+rows+'</tbody></table></div><p>'+(r.hub?'Courses run for 1, 3, 5, 10 or 20 nights. Multiply the per-night rate by the chosen course duration.':r.nights+'-night course: Deluxe Villa single-occupancy total '+fmt(r.tables.INR.deluxe[0]*r.nights,'INR')+' ('+fmt(r.tables.INR.deluxe[0],'INR')+' × '+r.nights+' nights).')+'</p><p>Classes run Monday to Friday. Personal treatments and optional services are charged separately. Group discount: 20% for five or more students.</p><details><summary>Booking and cancellation terms</summary>'+terms(r)+'</details></section>';
       if(!d.template.includes('data-rate-reference=')){
-        const pos=d.template.indexOf('<footer');d.template=pos>=0?d.template.slice(0,pos)+block+d.template.slice(pos):d.template+block;
+        // Inside the page's main content, before the footer (OWNER-REG-03, 29 Sep 2026: the views import the footer as
+        // <dc-import name="AHV Chrome Footer">, so the old '<footer' anchor never matched and the block landed after it).
+        const anchors=[d.template.lastIndexOf('</main>'),d.template.indexOf('<dc-import name="AHV Chrome Footer"'),d.template.indexOf('<footer')];
+        const pos=anchors.find(i=>i>=0);
+        if(pos===undefined)throw new Error(route+': no pre-footer anchor for the training tariff block');
+        d.template=d.template.slice(0,pos)+block+d.template.slice(pos);
       }
     }
     J(file,d);

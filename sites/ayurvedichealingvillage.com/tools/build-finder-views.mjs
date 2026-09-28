@@ -151,7 +151,7 @@ function patchShared(view) {
   T = once(T, /<h2([^>]*)>Not sure which programme fits\?<\/h2>/, (m, a) => list + `<h2${a}>Not sure which programme fits?</h2>`, "not-sure heading");
   T = once(T, /<p([^>]*)>Our physicians match every guest[^<]*<\/p>/, (m, a) => `<p${a}>${esc(B.notSure)}</p>`, "not-sure copy");
   T = once(T, "Free Doctor Consultation</a>",
-    `Free Doctor Consultation</a> <a href="${B.whatsapp}" target="_blank" rel="noopener noreferrer" style="border:1.5px solid #006038;color:#006038;border-radius:4px;padding:0 30px;min-height:52px;display:inline-flex;align-items:center;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase" style-hover="background:#006038;color:#F7F4EA;text-decoration:none">${esc(B.whatsappLabel)}</a>`,
+    `Free Doctor Consultation</a> <a href="${B.whatsapp}" target="_blank" rel="noopener noreferrer" style="background:#006038;border:1.5px solid #006038;color:#F7F4EA;border-radius:4px;padding:0 30px;min-height:52px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase" style-hover="filter:brightness(.9);color:#F7F4EA;text-decoration:none">${esc(B.whatsappLabel)}</a>`,
     "whatsapp cta");
   T = once(T, 'aria-label="Guidance"', `aria-label="Guidance" ${MARK}`, "block marker");
   view.template = T;
