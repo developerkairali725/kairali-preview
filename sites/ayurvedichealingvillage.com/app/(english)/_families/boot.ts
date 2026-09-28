@@ -221,7 +221,18 @@ export const BOOT_SCRIPT = `
     var sourceHost = url.hostname === "ayurvedichealingvillage.com" ||
       url.hostname === "www.ayurvedichealingvillage.com";
     if (!sourceHost && url.origin !== window.location.origin) return;
-    // Source media links are downloads, not website page navigation.
+    // Source media links are downloads, not website page navigation — EXCEPT the site's own packaged documents
+    // (/documents/…, the approved rate PDFs and brochures shipped in this deployment). A family renderer builds
+    // those as production-absolute URLs (A + href), and production has no copy yet, so the visible OPD rates link
+    // pointed at a 404 after hydration (owner regression, 28 Sep 2026). They stay on this deployment with their
+    // exact path — language and currency live in the path, so the approved document is unchanged. Other media
+    // (legacy uploads, videos, images) keep their source URL.
+    var packagedDocument = sourceHost && /^[/]documents[/]/.test(url.pathname);
+    if (packagedDocument) {
+      var local = url.pathname + url.search + url.hash;
+      if (raw !== local) anchor.setAttribute("href", local);
+      return;
+    }
     if (/[.](pdf|jpg|jpeg|png|webp|gif|svg|mp4|zip)$/i.test(url.pathname)) return;
     // Source links use older spellings; resolve to the approved pages. The map
     // is english-candidate/link-aliases.json so that ONE list serves both this
