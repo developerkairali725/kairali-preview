@@ -4,16 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_9bbde7e24be7bcabdef0",
-   "sourceHash": "9bbde7e24be7bcabdef0dc246a4955420dbcf0a0e1a0f599a77afe448a6163bf",
-   "text": "بخبرة تزيد على [[VAR_1]] عامًا في علاج أكثر من 30,000 مريض في Kairali – The Ayurvedic Healing Village، يدرك فريقنا تحديات التهاب المفاصل والتهاب الفقار. وتقدّم الأيورفيدا حلولًا مخصّصة تعالج اختلالات الدوشات في الجسم. ويشمل علاجنا الأيورفيدي لالتهاب المفاصل تدليكًا متخصّصًا، ومعالجات عشبية، وتمارين لطيفة للمساعدة في تقليل الالتهاب وتخفيف الألم وتحسين الحركة. كما تدعم الأدوية الأيورفيدية المستخلصة من مصادر طبيعية عملية التعافي. ونولي التثقيف أولوية، لتمكين المرضى من فهم مسار تعافيهم والمشاركة فيه. ويركّز نهجنا الشمولي، الذي يجمع بين الحكمة القديمة والممارسات الحديثة، على العافية الشاملة جسديًا وذهنيًا وعاطفيًا. ثق بخبرتنا للحصول على تخفيف دائم للأعراض وحيوية أفضل.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'clients' rendered as 'patients' (المرضى) and 'healing journey' as 'recovery path' (مسار تعافيهم) per banned-word rule. 'Lasting relief' is a source claim kept as-is (not strengthened); may merit clinical review."
-   ]
-  },
-  {
    "id": "t_1b7e1001dceffea1954b",
    "sourceHash": "1b7e1001dceffea1954b18220e2794309c6f6bec7e29833f623ab8013a4b4082",
    "text": "المرضى الباحثون عن نهج شمولي للتعامل مع التهاب المفاصل والتهاب الفقار",
@@ -80,72 +70,9 @@
    "issues": []
   },
   {
-   "id": "t_1e8b862b55efe2215703",
-   "sourceHash": "1e8b862b55efe221570357a21d51f666640a10c5a3469193b3a5a236ed380f6f",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]احصل على علاجات مخصّصة تناسب بنيتك واختلال الدوشا لديك. نتّبع مبادئ الأيورفيدا باستخدام معالجات وأعشاب طبيعية للحدّ من الآثار الجانبية.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_a4a83c67e6c9dec6ffbe",
-   "sourceHash": "a4a83c67e6c9dec6ffbeaddd68b7718b42fd73ce35be5bcdabccc211dfe3c400",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]عمّق فهمك لمبادئ الأيورفيدا وأسباب حالتك وآليات علاجنا، بما يمكّنك من المشاركة الفاعلة في مسار تعافيك واتخاذ قرارات صحية مستنيرة.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'healing journey' rendered as 'recovery path' (مسار تعافيك) per banned-word rule.",
-    "t_a4a83c67e6c9dec6ffbe banned-term-from-source سبا"
-   ]
-  },
-  {
-   "id": "t_f8b1f2ba4e5657a0d1ee",
-   "sourceHash": "f8b1f2ba4e5657a0d1ee92a753969ff3a6ec54aeb5b378e26c95da40223a4f96",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]ابتعد عن ضغوط الحياة اليومية في بيئتنا الهادئة، واحصل على دعم كامل من فريقنا عبر المتابعة ومراقبة التقدّم وتعديل خطة العلاج حسب الحاجة.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'serene retreat' rendered as 'our serene setting' (بيئتنا الهادئة) to keep the clinical register."
-   ]
-  },
-  {
    "id": "t_54eca8406fa193c3332d",
    "sourceHash": "54eca8406fa193c3332df7d38996f7635e1a46fdbefeb6765ba3e7fd9bdecb01",
    "text": "[[OPEN_1]]فوائد[[CLOSE_1]] علاج تأهيل المفاصل والتهاب المفاصل",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d06d294d785175a2bb79",
-   "sourceHash": "d06d294d785175a2bb79ad8ac9cba82f87d7287a37ef3245ed1e63258c7eb72e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]تقليل الألم والالتهاب والتيبّس مع تحسين حركة المفاصل ومرونتها والقدرة البدنية العامة، بما يوفّر تخفيفًا للأعراض ويحسّن العافية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_2caefac8c7566fc7ded1",
-   "sourceHash": "2caefac8c7566fc7ded1d3279f3fc91004eae713ffded0f172cd93cc01012896",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]يحسّن نهجنا الشمولي العافية الجسدية، ويقلّل الاعتماد على الأدوية، ويعزّز الصحة العامة والحيوية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c18490873b2400f8429a",
-   "sourceHash": "c18490873b2400f8429a81dc204cc3134a492cb26f2e07a708b97d8b72689e17",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]تركيز على العافية الذهنية والعاطفية، وتخفيف التوتر وتعزيز الصحة النفسية. وتُمكّنك توصيات نمط الحياة المخصّصة من المشاركة الفاعلة في مسار التعافي وفهم الاحتياجات الفريدة لجسمك.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'healing journey' rendered as 'recovery path' (مسار التعافي) per banned-word rule."
-   ]
-  },
-  {
-   "id": "t_7ab2fafb6f1d121e2351",
-   "sourceHash": "7ab2fafb6f1d121e2351b2a64668e63e5cc9903ed937953c4af697aa024c6e3b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]تحسّن جودة الحياة والعافية بوجه عام",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -157,16 +84,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_80bd011d6a10d8a2b9d5",
-   "sourceHash": "80bd011d6a10d8a2b9d5b8739b4f47251abe2b7688d4ba0c728798f4ec6e81c5",
-   "text": "تجارب تحوّل ملهمة",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Journeys' rendered as 'experiences' (تجارب) per banned-word rule."
-   ]
   }
  ]
 }

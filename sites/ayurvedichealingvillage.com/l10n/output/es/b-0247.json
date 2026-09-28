@@ -28,22 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_2f0d4d666ef221317482",
-   "sourceHash": "2f0d4d666ef221317482ea3febf81fd442db95fc358e6c476f576ac2e507327e",
-   "text": "Las solicitudes y los CV son accesibles para el personal de RR. HH. y de selección correspondiente. RR. HH. es responsable del proceso de contratación, con el apoyo técnico de Sunaj. Las solicitudes no seleccionadas o retiradas se conservan durante seis meses tras el cierre, o menos cuando ya no sean necesarias, salvo excepciones documentadas. La conservación para futuros puestos requiere un consentimiento opcional independiente, desmarcado por defecto, por un máximo de 12 meses. Rechazarlo no afecta a la solicitud actual. Solicite la eliminación en career@kairali.com; el plazo objetivo es de 30 días y se explicará cualquier excepción documentada. Presentar una solicitud no le suscribe a ningún boletín.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_9844cdc6c5489db0bbee",
-   "sourceHash": "9844cdc6c5489db0bbee8d7539bd2e7dbcb4e59922e7259812b966b180e5e23a",
-   "text": "programa",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_5c77dc735872f5a12e8f",
    "sourceHash": "5c77dc735872f5a12e8f66543f6bea2b2b662900729d7fcf44511c45f8f9c691",
    "text": "Retiro de chefs: de la alimentación al bienestar",
@@ -84,44 +68,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c0e2f651448189c4b1cd",
-   "sourceHash": "c0e2f651448189c4b1cd19f8c815075a75b2f43b7119a2afda5fd201a098ec12",
-   "text": "Fecha: 3",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_4573a839ffe27bbd6a93",
-   "sourceHash": "4573a839ffe27bbd6a9305d6ea6617b7332a5cb8659fbfdc256fe917eda0a79e",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "English ordinal suffix 'rd' (superscript after '3' in a date). Spanish dates take no ordinal suffix ('3 – 6 de julio de 2017'), so the correct translation is an empty string, which validation rejects. Needs a structural fix: suppress this fragment in the ES locale or merge the date into one unit (the full sentence t_ef8f9f1de876d93e43c5 is already translated correctly)."
-   ]
-  },
-  {
-   "id": "t_6bde0b830d8bd56dea61",
-   "sourceHash": "6bde0b830d8bd56dea61c5c1cb648c7ffca6ffce2923ad1db9f29079cac947e0",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "English ordinal suffix 'th' (superscript after '6' in a date). Spanish dates take no ordinal suffix, so the correct translation is an empty string, which validation rejects. Needs a structural fix: suppress this fragment in the ES locale or merge the date into one unit."
-   ]
-  },
-  {
-   "id": "t_092f3f2a9d7b5f95bead",
-   "sourceHash": "092f3f2a9d7b5f95bead6725b78fa7fa7a0d20096800f8e7aa5a857c7a08ed3f",
-   "text": "de julio de 2017",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Rendered as 'de julio de 2017' so the fragment reads '6 de julio de 2017' after the day number."
-   ]
   },
   {
    "id": "t_e6b66919f90174ba59f1",

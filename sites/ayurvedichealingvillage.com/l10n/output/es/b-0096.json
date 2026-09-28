@@ -4,16 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_9bbde7e24be7bcabdef0",
-   "sourceHash": "9bbde7e24be7bcabdef0dc246a4955420dbcf0a0e1a0f599a77afe448a6163bf",
-   "text": "Con más de [[VAR_1]] años de experiencia y 30,000+ pacientes tratados en Kairali – The Ayurvedic Healing Village, nuestro equipo conoce bien los retos de la artritis y la espondilitis. El Ayurveda ofrece soluciones personalizadas que abordan los desequilibrios de los doshas del cuerpo. Nuestro tratamiento ayurvédico para la artritis incluye masajes especializados, terapias herbales y ejercicios suaves para reducir la inflamación, aliviar el dolor y mejorar la movilidad. Los medicamentos ayurvédicos de origen natural apoyan la recuperación. Damos prioridad a la educación, para que los pacientes comprendan su proceso de sanación y participen activamente en él. Nuestro enfoque holístico, que une la sabiduría ancestral con prácticas modernas, se centra en el bienestar general: físico, mental y emocional. Confíe en nuestra experiencia para lograr un alivio duradero y una mayor vitalidad.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term substitution: 'healing journey' rendered as 'proceso de sanación'; 'clients' rendered as 'pacientes' (clinical register)."
-   ]
-  },
-  {
    "id": "t_1b7e1001dceffea1954b",
    "sourceHash": "1b7e1001dceffea1954b18220e2794309c6f6bec7e29833f623ab8013a4b4082",
    "text": "Pacientes que buscan un enfoque holístico para el manejo de la artritis y la espondilitis",
@@ -78,71 +68,9 @@
    "issues": []
   },
   {
-   "id": "t_1e8b862b55efe2215703",
-   "sourceHash": "1e8b862b55efe221570357a21d51f666640a10c5a3469193b3a5a236ed380f6f",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Reciba tratamientos personalizados según su constitución y su desequilibrio de doshas. Seguimos los principios ayurvédicos con terapias naturales y hierbas para minimizar los efectos secundarios.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_a4a83c67e6c9dec6ffbe",
-   "sourceHash": "a4a83c67e6c9dec6ffbeaddd68b7718b42fd73ce35be5bcdabccc211dfe3c400",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Profundice en los principios ayurvédicos, en las causas de su afección y en cómo actúa nuestro tratamiento. Esto le permite participar activamente en su proceso de sanación y tomar decisiones informadas sobre su salud.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term substitution: 'healing journey' rendered as 'proceso de sanación'."
-   ]
-  },
-  {
-   "id": "t_f8b1f2ba4e5657a0d1ee",
-   "sourceHash": "f8b1f2ba4e5657a0d1ee92a753969ff3a6ec54aeb5b378e26c95da40223a4f96",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Aléjese del estrés diario en nuestro entorno sereno. Cuente con el pleno apoyo de nuestro equipo, con seguimiento, control de la evolución y ajustes del plan de tratamiento según sea necesario.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'serene retreat' rendered as 'entorno sereno' to keep the clinical register."
-   ]
-  },
-  {
    "id": "t_54eca8406fa193c3332d",
    "sourceHash": "54eca8406fa193c3332df7d38996f7635e1a46fdbefeb6765ba3e7fd9bdecb01",
    "text": "[[OPEN_1]]Beneficios[[CLOSE_1]] del Tratamiento de rehabilitación articular y artritis",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d06d294d785175a2bb79",
-   "sourceHash": "d06d294d785175a2bb79ad8ac9cba82f87d7287a37ef3245ed1e63258c7eb72e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Menos dolor, inflamación y rigidez, a la vez que mejora la movilidad y la flexibilidad articulares y la resistencia física general, lo que aporta alivio y mejora el bienestar.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_2caefac8c7566fc7ded1",
-   "sourceHash": "2caefac8c7566fc7ded1d3279f3fc91004eae713ffded0f172cd93cc01012896",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Nuestro enfoque holístico mejora el bienestar físico, reduce la dependencia de los medicamentos y potencia la salud y la vitalidad generales.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c18490873b2400f8429a",
-   "sourceHash": "c18490873b2400f8429a81dc204cc3134a492cb26f2e07a708b97d8b72689e17",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Atención especial al bienestar mental y emocional, que reduce el estrés y mejora la salud mental. Las recomendaciones de estilo de vida personalizadas favorecen una participación activa en el proceso de sanación y la comprensión de las necesidades particulares del cuerpo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term substitution: 'healing journey' rendered as 'proceso de sanación'."
-   ]
-  },
-  {
-   "id": "t_7ab2fafb6f1d121e2351",
-   "sourceHash": "7ab2fafb6f1d121e2351b2a64668e63e5cc9903ed937953c4af697aa024c6e3b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Mejor calidad de vida y bienestar general",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -154,16 +82,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_80bd011d6a10d8a2b9d5",
-   "sourceHash": "80bd011d6a10d8a2b9d5b8739b4f47251abe2b7688d4ba0c728798f4ec6e81c5",
-   "text": "Procesos de transformación",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term substitution: 'Journeys' rendered as 'Procesos'."
-   ]
   }
  ]
 }

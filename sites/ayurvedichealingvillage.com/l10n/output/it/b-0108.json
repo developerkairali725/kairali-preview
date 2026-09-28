@@ -44,26 +44,6 @@
    "issues": []
   },
   {
-   "id": "t_6827b60adc52e7f89555",
-   "sourceHash": "6827b60adc52e7f8955507328bcb6ba6128ea17068792a572e415d367f179a09",
-   "text": "Terapia ayurvedica Panchakarma per disintossicare il corpo, riequilibrare i dosha e sostenere le difese immunitarie. Prenoti il Suo programma in India.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'wellness retreat' rendered as 'programma' per the KTAHV language lock; 'immunity boost' softened to 'sostenere le difese immunitarie'; 'personalized' and 'today' dropped to fit the 155-character limit."
-   ]
-  },
-  {
-   "id": "t_4498ca83c5f3e2dd23b4",
-   "sourceHash": "4498ca83c5f3e2dd23b40417b13190b120403a54c296aa5d598aafc2dfa62c73",
-   "text": "Disintossicazione scientifica per l’equilibrio di corpo, mente e dosha, apprezzata dall’80% dei pazienti | 30,000+ vite trasformate",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest-trusted' rendered with 'pazienti' per the KTAHV language lock. Number 30,000+ kept verbatim per rules, but in Italian a comma is the decimal separator (Italian style would be 30.000+); please confirm numeric formatting. Statistical claims (80%, 30,000+) are unverified efficacy claims — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
    "id": "t_e6b1d78d81623bf5eb14",
    "sourceHash": "e6b1d78d81623bf5eb148ddd0233637e17b406762d126db19d18cebb191d7df8",
    "text": "Che cos’è la [[OPEN_1]]terapia Panchakarma?[[CLOSE_1]]",
@@ -78,16 +58,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_adb6ba78928f2ef42ece",
-   "sourceHash": "adb6ba78928f2ef42ecea03c1b498eeca0c25f3a51831d8d536bb3cec4d3f1a4",
-   "text": "Forte di 5,000 anni di saggezza ayurvedica, il Panchakarma è il punto di riferimento per la disintossicazione e la rigenerazione naturali. Scelta da pazienti di tutto il mondo, Kairali porta avanti questa tradizione con l’eccellenza clinica moderna. Il protocollo in cinque fasi agisce in profondità e con metodo, e richiede un impegno minimo di due settimane per risultati ottimali.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'pazienti' per the KTAHV language lock. Number 5,000 kept verbatim per rules (Italian style would be 5.000); please confirm numeric formatting."
-   ]
   },
   {
    "id": "t_141def12cb51c81f71df",
@@ -136,68 +106,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_aa91aa8a5ebc68a35f88",
-   "sourceHash": "aa91aa8a5ebc68a35f88514da85535d80af0e04aa1ced338bacc0052b64427fc",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Disintossicazione completa, che ripristina l’equilibrio fisico e mentale",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ef70c8c8a738563a7c01",
-   "sourceHash": "ef70c8c8a738563a7c01197d0a43ea3fc414905d73a37417c56242b5ccb11ca2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Sollievo da infiammazioni croniche, disturbi della pelle e problemi digestivi o legati allo stile di vita",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ed6f7ba3f3460e396cc5",
-   "sourceHash": "ed6f7ba3f3460e396cc5f129280e318bd06858728757835806738b598ec26978",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Riduzione di ansia e stress, maggiore lucidità mentale ed equilibrio emotivo",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_839f8e3fd33b8fe13568",
-   "sourceHash": "839f8e3fd33b8fe13568d601585f60e6afac721a13fcaef53324081dc47b3523",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Difese immunitarie rafforzate e una longevità in salute grazie alla purificazione dell’organismo",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_33fca6287dae2e95517d",
-   "sourceHash": "33fca6287dae2e95517da496f5896595110fdaac5121441da40cd1a598dbf3a2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]L’87% dei pazienti riferisce un netto miglioramento della salute entro due settimane. Il 94% mantiene i benefici nel lungo periodo",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'pazienti' per the KTAHV language lock. Outcome statistics (87%, 94%) are efficacy claims with no cited source — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_3a1a61fbb2d93d91fa0d",
-   "sourceHash": "3a1a61fbb2d93d91fa0da2dd58db49c76172a227a6454e9c25c5d5ed9d679c50",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]92% di soddisfazione tra i pazienti internazionali (dati 2024)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'clients' rendered as 'pazienti' for clinical register."
-   ]
-  },
-  {
-   "id": "t_866e5499705b3d2cfeaf",
-   "sourceHash": "866e5499705b3d2cfeaf08574949587134dcccd1484f2a7017bfe15283b13605",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Nessuna reazione avversa in oltre 100,000 terapie: assistenza clinica sicura ed esperta",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'100,000+' rendered as 'oltre 100,000' with the number kept verbatim per rules (Italian style would be 100.000); please confirm numeric formatting. Safety claim requires Dr. Deepu John's clinical sign-off."
-   ]
   },
   {
    "id": "t_215186065065595850af",

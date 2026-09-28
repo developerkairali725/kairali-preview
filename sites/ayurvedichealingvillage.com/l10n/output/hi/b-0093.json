@@ -4,46 +4,12 @@
  "locale": "hi",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]रोग-प्रतिरोधक क्षमता को मज़बूत करता है और हाइपरटेंशन के मूल कारणों को संबोधित करता है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]व्यक्तिगत समग्र देखभाल प्रदान करता है, सिंथेटिक दवाओं पर निर्भरता कम करता है और दीर्घकालिक स्वास्थ्य को सहारा देता है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "आयुर्वेदिक उपचार के साथ आपका हृदय स्वास्थ्य",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "स्वाभाविक रूप से नियंत्रण वापस पाना: KTAHV में हाइपरटेंशन के सफल अनुभव",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "मुझे अपने हाइपरटेंशन को नियंत्रित करना हमेशा कठिन लगता था, इसलिए मैं एक प्राकृतिक उपाय आज़माना चाहती थी। Kairali में मेरा अनुभव अद्भुत रहा; ध्यान सत्र, हर्बल औषधियाँ और थेरेपी ठीक वही थीं जिनकी मुझे ज़रूरत थी। आयुर्वेदिक उपचारों से मेरे शरीर और मन को सुकून मिला, और जब तक मैं लौटी, मेरा रक्तचाप उल्लेखनीय रूप से सामान्य हो गया था। मैं तरोताज़ा महसूस करते हुए और घर पर इस संतुलन को बनाए रखने की तकनीकों के साथ लौटी।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'cures' ('herbal cures') in patient testimonial rendered as 'हर्बल औषधियाँ' (herbal medicines) per clinical language lock. Testimonial reports an individual outcome (BP returned to normal) — kept as the patient's own statement; clinical review of testimonial claims advised. Feminine verb forms used, assuming reviewer 'Ms. Shalu'."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -69,16 +35,6 @@
    "unchangedReason": null,
    "issues": [
     "t_d6a64696a1db00273219 banned-term यात्रा"
-   ]
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "हृदय स्वास्थ्य एवं रक्तचाप उपचार – रक्त समदम Chikitsa (चिकित्सा) (हाइपरटेंशन के लिए Kairali का उपचार)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles without a separator ('TreatmentRakta'); an en dash separator was added in the translation. 'Rakta Samadama' transliterated as रक्त समदम."
    ]
   },
   {
@@ -183,14 +139,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": ": विश्राम को बढ़ावा देने, रक्त संचार सुधारने और दोषों को संतुलित करने के लिए आपको Abhyangam (अभ्यंगम) (चिकित्सीय तेल मालिश), शिरोधारा (माथे पर गर्म तेल की स्थिर धारा) और नस्यम (नाक के माध्यम से हर्बल तेलों का प्रयोग) जैसी विशिष्ट आयुर्वेदिक थेरेपी दी जाएँगी।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": हृदय स्वास्थ्य को सहारा देने, रक्तचाप को नियंत्रित करने में सहायता करने और सूजन कम करने के लिए व्यक्तिगत हर्बल फ़ॉर्मूलेशन निर्धारित किए जाएँगे।",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

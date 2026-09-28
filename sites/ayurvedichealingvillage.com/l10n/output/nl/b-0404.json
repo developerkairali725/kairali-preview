@@ -4,16 +4,6 @@
  "locale": "nl",
  "units": [
   {
-   "id": "t_6db0f20b5b5958419cc1",
-   "sourceHash": "6db0f20b5b5958419cc15bbb18f38c5e2154e6eae0dd27351a4ab8ecaa674636",
-   "text": ": Dit is een van onze bijzondere behandelingen om het hele lichaam te revitaliseren. De voorgeschreven geneeskrachtige olie wordt op de hoofdhuid en het hele lichaam aangebracht. Tijdens deze therapie ligt de patiënt op de Droni (een houten behandelbank die speciaal voor dit doel is gemaakt). Vervolgens wordt een stuk linnen, gedrenkt in warme therapeutische olie, op het lichaam van de patiënt gedrukt terwijl het lichaam met een langzame, lichte aanraking zacht wordt gemasseerd. Deze behandeling beschermt u tegen ziekten en versterkt uw immuunsysteem, wat uw vitaliteit en welzijn ten goede komt. Ze ondersteunt ook het herstel bij reumatische aandoeningen, hoge bloeddruk, gewrichtspijn en diabetes.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment following the therapy name (Pizhichil); leading colon kept. Source claim 'safeguards you against diseases' translated faithfully without strengthening; flag for clinical review of the English source."
-   ]
-  },
-  {
    "id": "t_a441e0502556e206d117",
    "sourceHash": "a441e0502556e206d117d44b4e8ca6bfb533cfe17a2f23706c5fbfd0da0dc525",
    "text": "Wat is inbegrepen",
@@ -136,26 +126,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c3433a6b20c9b1b5ef2f",
-   "sourceHash": "c3433a6b20c9b1b5ef2fb86102a9b6a9716b3e83783971f9e953055960af351e",
-   "text": "Katha Wellness Retreat 2019 | Yoga & Ayurveda in Kerala",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'Luxury' removed (KTAHV language lock); seo.title kept within 60 characters. Proper event name kept verbatim."
-   ]
-  },
-  {
-   "id": "t_ae5b491daf23229e64ed",
-   "sourceHash": "ae5b491daf23229e64ed618932e99a6da7fb1441f9a28c28f46cbe32e96ec2ee",
-   "text": "Katha Wellness Retreat 2019 bij Kairali – The Ayurvedic Healing Village: ayurvedische massages, hatha-yoga, Vedische verhalen en bio-vegetarisch eten.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'luxury' removed (KTAHV language lock); condensed to fit the 155-character seo.description limit (Kerala setting implied by the brand name, 'serene landscapes' omitted)."
-   ]
   },
   {
    "id": "t_2ee492e113dba8f238f9",

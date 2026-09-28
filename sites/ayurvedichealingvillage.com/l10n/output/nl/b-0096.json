@@ -4,16 +4,6 @@
  "locale": "nl",
  "units": [
   {
-   "id": "t_9bbde7e24be7bcabdef0",
-   "sourceHash": "9bbde7e24be7bcabdef0dc246a4955420dbcf0a0e1a0f599a77afe448a6163bf",
-   "text": "Met meer dan [[VAR_1]] jaar ervaring en 30,000+ behandelde patiënten bij Kairali – The Ayurvedic Healing Village begrijpt ons team de uitdagingen van artritis en spondylitis. Ayurveda biedt persoonlijke oplossingen die gericht zijn op onevenwichtigheden in de dosha’s van het lichaam. Onze ayurvedische behandeling voor artritis omvat gespecialiseerde massages, kruidentherapieën en zachte oefeningen om ontsteking te verminderen, pijn te verlichten en de mobiliteit te verbeteren. Ayurvedische geneesmiddelen van natuurlijke oorsprong ondersteunen het herstel. Wij hechten veel waarde aan voorlichting, zodat patiënten hun herstelproces begrijpen en er actief aan kunnen deelnemen. Onze holistische aanpak, die eeuwenoude wijsheid combineert met moderne werkwijzen, richt zich op het algehele welzijn: lichamelijk, mentaal en emotioneel. Vertrouw op onze deskundigheid voor blijvende verlichting en meer vitaliteit.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'herstelproces'; 'clients' rendered as 'patiënten' per clinical register. Number '30,000+' kept verbatim per keep-numbers rule; Dutch convention would be '30.000+' — reviewer to confirm."
-   ]
-  },
-  {
    "id": "t_1b7e1001dceffea1954b",
    "sourceHash": "1b7e1001dceffea1954b18220e2794309c6f6bec7e29833f623ab8013a4b4082",
    "text": "Patiënten die een holistische aanpak zoeken voor de behandeling van artritis en spondylitis",
@@ -78,71 +68,9 @@
    "issues": []
   },
   {
-   "id": "t_1e8b862b55efe2215703",
-   "sourceHash": "1e8b862b55efe221570357a21d51f666640a10c5a3469193b3a5a236ed380f6f",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Ontvang behandelingen die zijn afgestemd op uw constitutie en dosha-onevenwichtigheid. Wij volgen de principes van Ayurveda en werken met natuurlijke therapieën en kruiden om bijwerkingen tot een minimum te beperken.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_a4a83c67e6c9dec6ffbe",
-   "sourceHash": "a4a83c67e6c9dec6ffbeaddd68b7718b42fd73ce35be5bcdabccc211dfe3c400",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Verdiep uw inzicht in de principes van Ayurveda, de oorzaken van uw aandoening en de werking van onze behandeling. Zo kunt u actief deelnemen aan uw herstelproces en weloverwogen beslissingen over uw gezondheid nemen.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'herstelproces'."
-   ]
-  },
-  {
-   "id": "t_f8b1f2ba4e5657a0d1ee",
-   "sourceHash": "f8b1f2ba4e5657a0d1ee92a753969ff3a6ec54aeb5b378e26c95da40223a4f96",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Laat de dagelijkse stress achter u in onze rustige omgeving. Ons team biedt volledige ondersteuning met nacontroles, opvolging van uw voortgang en aanpassingen van het behandelplan waar nodig.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'serene retreat' rendered as 'rustige omgeving' to avoid resort/holiday connotation."
-   ]
-  },
-  {
    "id": "t_54eca8406fa193c3332d",
    "sourceHash": "54eca8406fa193c3332df7d38996f7635e1a46fdbefeb6765ba3e7fd9bdecb01",
    "text": "[[OPEN_1]]Voordelen[[CLOSE_1]] van gewrichtsrevalidatie & artritisbehandeling",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d06d294d785175a2bb79",
-   "sourceHash": "d06d294d785175a2bb79ad8ac9cba82f87d7287a37ef3245ed1e63258c7eb72e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Minder pijn, ontsteking en stijfheid, met een betere beweeglijkheid en soepelheid van de gewrichten en meer lichamelijke veerkracht, voor verlichting en een beter welzijn.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_2caefac8c7566fc7ded1",
-   "sourceHash": "2caefac8c7566fc7ded1d3279f3fc91004eae713ffded0f172cd93cc01012896",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Onze holistische aanpak verbetert het lichamelijk welzijn, vermindert de afhankelijkheid van medicatie en bevordert de algehele gezondheid en vitaliteit.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c18490873b2400f8429a",
-   "sourceHash": "c18490873b2400f8429a81dc204cc3134a492cb26f2e07a708b97d8b72689e17",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Aandacht voor mentaal en emotioneel welzijn, met minder stress en een betere mentale gezondheid. Persoonlijke leefstijladviezen helpen u actief deel te nemen aan het herstelproces en de unieke behoeften van uw lichaam te begrijpen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'herstelproces'."
-   ]
-  },
-  {
-   "id": "t_7ab2fafb6f1d121e2351",
-   "sourceHash": "7ab2fafb6f1d121e2351b2a64668e63e5cc9903ed937953c4af697aa024c6e3b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Een betere algehele kwaliteit van leven en meer welzijn",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -154,16 +82,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_80bd011d6a10d8a2b9d5",
-   "sourceHash": "80bd011d6a10d8a2b9d5b8739b4f47251abe2b7688d4ba0c728798f4ec6e81c5",
-   "text": "Ervaringen van patiënten",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'Journeys' avoided; 'Transformative Journeys' (testimonials heading) rendered as 'Ervaringen van patiënten'."
-   ]
   }
  ]
 }

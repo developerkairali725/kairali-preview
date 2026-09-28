@@ -28,16 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_3fa405a8301ace34d11c",
-   "sourceHash": "3fa405a8301ace34d11cf44a816080b8f0e49a48fbd048b8aef1543a8c58bdb6",
-   "text": "заполнение",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Short image-fit display label ('cover'); if this string is actually a CSS object-fit value rather than visible text, it must stay 'cover'."
-   ]
-  },
-  {
    "id": "t_d5b47460464541aed2e8",
    "sourceHash": "d5b47460464541aed2e8bf2b14e5d54e0853e12307dc82a0ff31760f4197ec2a",
    "text": "Перетащите изображение в формате PNG, JPEG, WebP или AVIF.",
@@ -52,16 +42,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_01024deec75e9c0eb827",
-   "sourceHash": "01024deec75e9c0eb827d664f2a6880101e363819017fa6d96b0b345ea25ef3e",
-   "text": "скруглённые",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Short shape display label ('rounded'); if this string is actually a CSS/class value rather than visible text, it must stay 'rounded'."
-   ]
   },
   {
    "id": "t_816ed88ba06423ca2fc0",
@@ -86,26 +66,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_69bf182c0e0e9cabc3b8",
-   "sourceHash": "69bf182c0e0e9cabc3b88fece88e2b3ab1168a529ad49a2b2436c8a91ca72647",
-   "text": "Аюрведическая программа процедур | Kairali, Керала",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Shortened brand to 'Kairali' to stay within 60 characters."
-   ]
-  },
-  {
-   "id": "t_9c701472da04bfa9cc3c",
-   "sourceHash": "9c701472da04bfa9cc3c6a92cbad22d7ea1d8a5e6875c73b495db1a7041143e9",
-   "text": "Руководство Kairali- The Ayurvedic Healing Village о значении и происхождении йогатерапии, а также о роли Аюрведы в терапевтической йоге. Курсы подготовки преподавателей йоги проводятся в нашем центре в Палаккаде, Керала, Индия.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat center' rendered neutrally as 'центр'."
-   ]
   },
   {
    "id": "t_d153582e33d249f457e5",

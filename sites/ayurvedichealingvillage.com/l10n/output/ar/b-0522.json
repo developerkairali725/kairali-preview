@@ -4,36 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_7eb97189c5df10b5a8a7",
-   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
-   "text": "فيريتشانام (العلاج بالإسهال): التخلص من المواد السامة من الأمعاء بإعطاء مسهّل علاجي، ويُعد الفيريتشانام علاجًا فعّالًا بشكل خاص في حالات اليرقان والبواسير.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cure' rendered as 'علاجًا' (treatment) per the register lock. Source parenthesis is unbalanced; closed after 'Purgation' for readability. Efficacy claim retained from source — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_d0cd7d3df25aa6d85765",
-   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
-   "text": ": يُطلق اسم فاستي على العلاج الأيورفيدي الذي تُعطى فيه الأدوية أو المغليات الطبيعية، مثل الزيوت أو السمن أو الحليب، عن طريق الحقنة الشرجية. ويعتمد نوع المغلي على المرض المراد علاجه. ولهذا العلاج فوائد كبيرة، وهو فعّال في مواجهة أمراض مثل البواسير والإمساك والتهاب المفاصل.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cured' rendered as 'علاجه' (treated) per the register lock. Efficacy claim retained from source — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_0be803d5e810d8ee5187",
-   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
-   "text": "فاستي: يُطلق اسم فاستي على العلاج الأيورفيدي الذي تُعطى فيه الأدوية أو المغليات الطبيعية، مثل الزيوت أو السمن أو الحليب، عن طريق الحقنة الشرجية. ويعتمد نوع المغلي على المرض المراد علاجه. ولهذا العلاج فوائد كبيرة، وهو فعّال في مواجهة أمراض مثل البواسير والإمساك والتهاب المفاصل.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cured' rendered as 'علاجه' (treated) per the register lock. Efficacy claim retained from source — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
    "id": "t_82b4fbc564459cb32bba",
    "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
    "text": ": يُعد هذا العلاج الأيورفيدي الأفضل للمرضى الذين يعانون مشكلات تصيب منطقة الرأس مثل التهاب الجيوب الأنفية والصداع النصفي. وهو أسلوب تنقية طبيعي يُخلّص منطقة الرأس من أي نوع من الألم، وتُنظَّم فيه القطرات الأنفية داخل فتحتي الأنف.",
@@ -51,26 +21,6 @@
    "unchangedReason": null,
    "issues": [
     "Source makes strong claims ('the best', 'freed from any kind of pain'); translated faithfully without strengthening — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_e747d12ed643ce1ef449",
-   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
-   "text": ": وأخيرًا، تُجرى هذه العملية لتنقية الدم. فوفقًا للأيورفيدا، يُعد الدم غير النقي سببًا رئيسيًا لكثير من الأمراض، لذا يتيح هذا العلاج تنقية الدم، ومن ثمّ التخلص من مشكلات صحية مثل الصدفية والتصبّغ والتهاب الجلد وغيرها الكثير. والتغذية ضرورية أثناء البانشاكارما وبعدها. فبعد عملية التنقية، ينبغي للمريض تناول الكيتشاري (طبق من الخضروات المشكّلة) كلما شعر بالجوع. وعليه الالتزام بهذا النظام الغذائي لمدة ثلاثة إلى أربعة أيام، مع إضافة أطعمة أخرى متنوعة تدريجيًا مثل الزنجبيل والفلفل والملح وحساء الماش وأنواع أخرى من حساء البقول، وزيادة الكمية ببطء.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source claims the therapy gets rid of psoriasis/pigmentation/dermatitis; translated faithfully without strengthening — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_df61c09156f0a21cf0c1",
-   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
-   "text": "راكتاموكشانا: وأخيرًا، تُجرى هذه العملية لتنقية الدم. فوفقًا للأيورفيدا، يُعد الدم غير النقي سببًا رئيسيًا لكثير من الأمراض، لذا يتيح هذا العلاج تنقية الدم، ومن ثمّ التخلص من مشكلات صحية مثل الصدفية والتصبّغ والتهاب الجلد وغيرها الكثير. والتغذية ضرورية أثناء البانشاكارما وبعدها. فبعد عملية التنقية، ينبغي للمريض تناول الكيتشاري (طبق من الخضروات المشكّلة) كلما شعر بالجوع. وعليه الالتزام بهذا النظام الغذائي لمدة ثلاثة إلى أربعة أيام، مع إضافة أطعمة أخرى متنوعة تدريجيًا مثل الزنجبيل والفلفل والملح وحساء الماش وأنواع أخرى من حساء البقول، وزيادة الكمية ببطء.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source claims the therapy gets rid of psoriasis/pigmentation/dermatitis; translated faithfully without strengthening — flag for Dr. Deepu John's clinical sign-off."
    ]
   },
   {

@@ -4,16 +4,6 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "아유르베다 치료 | 센터 | 힐링 빌리지 | 건강 치료 시설",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Health Resorts' rendered as '건강 치료 시설' (health treatment facilities) per the banned-word rule (resort)."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "Kairali는 아유르베다 센터를 통해 오랜 아유르베다 전통을 지켜 왔습니다. 아유르베다 약 처방부터 건강한 생활에 관한 조언까지, Kairali가 모든 것을 제공합니다.",
@@ -68,26 +58,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "인도 프리미엄 아유르베다 체중 감량 프로그램 | 자연 체중 관리",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury ... Retreat' rendered as '프리미엄 ... 프로그램' (premium programme) per the banned-word rule (luxury)."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "남인도 Kairali의 프리미엄 아유르베다 체중 감량 프로그램. 아유르베다 요법, 허브 오일 마사지, 자연 해독법으로 지속 가능한 체지방 감소를 도울 수 있으며, 극단적인 식단이나 운동은 필요하지 않습니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered as '프로그램' (programme); 'achieve' softened to 'can help' to avoid a guaranteed-outcome reading."
-   ]
   },
   {
    "id": "t_bfa53d21f32a5f0d75b2",

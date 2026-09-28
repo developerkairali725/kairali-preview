@@ -4,14 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_3904c12b98a40e5896d7",
-   "sourceHash": "3904c12b98a40e5896d7e1312b721d06cf34c86847116c754707b4690a1aac7e",
-   "text": " : des séances de suivi régulières avec le médecin ayurvédique permettent d’évaluer les progrès, d’ajuster le plan de soins et de répondre à vos préoccupations si nécessaire. Ces séances permettent aussi de contrôler l’efficacité des thérapies, des médicaments et des changements de mode de vie, afin d’obtenir les meilleurs résultats possibles dans la prise en charge du mal de dos chronique.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_944d6a11e32075ffc33b",
    "sourceHash": "944d6a11e32075ffc33becef54cd6b6591ad7027974226eb136b67affdb124b1",
    "text": "Douleurs et gêne chroniques au dos",
@@ -194,16 +186,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_883cceab3c7ee7f2403c",
-   "sourceHash": "883cceab3c7ee7f2403c19792d14a9c68fd619d0b918df998bf643ccc1687922",
-   "text": "Classic Villa chez Kairali – Séjour ayurvédique au Kerala",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains banned 'Luxury' and 'Retreat'; rendered as 'Séjour ayurvédique' (stay) per clinical register, also to fit the 60-character seo.title limit."
-   ]
   }
  ]
 }

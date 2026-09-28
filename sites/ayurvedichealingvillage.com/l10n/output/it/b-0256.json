@@ -46,38 +46,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "HTML heading tag identifier; language-neutral.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "Archivio",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "Archivio Ayurvedic Healing Village | Benessere e ritiri",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "Esplori l'archivio di ritiri di benessere, programmi di yoga ed esperienze di guarigione a Kairali: il nostro percorso nell'Ayurveda autentica e olistica.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'percorso' (path) per the clinical language lock."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -183,16 +157,6 @@
    "unchangedReason": null,
    "issues": [
     "HTML entity &amp; preserved as in source."
-   ]
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "Kairali-The Ayurvedic Healing Village, miglior centro ayurvedico dell'India: premi come il Green Leaf award e l'ingresso tra i dieci migliori in Asia.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'spa'/'spas' replaced with 'centro'/neutral wording per the clinical language lock; the source's ranking claims are kept, not strengthened."
    ]
   },
   {

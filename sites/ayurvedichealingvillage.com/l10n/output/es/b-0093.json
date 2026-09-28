@@ -4,46 +4,12 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Fortalece el sistema inmunitario y aborda las causas de fondo de la hipertensión.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Ofrece una atención holística personalizada, que reduce la dependencia de los medicamentos sintéticos y favorece el bienestar a largo plazo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "Su salud cardiovascular con el Tratamiento ayurvédico",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "Recuperar el control de forma natural: testimonios de éxito frente a la hipertensión en KTAHV",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "Siempre me había costado controlar mi hipertensión, así que quise probar una solución natural. Mi experiencia en Kairali fue extraordinaria: las sesiones de meditación, los remedios herbales y las terapias eran justo lo que necesitaba. Los tratamientos ayurvédicos calmaron mi cuerpo y mi mente y, cuando me marché, mi presión arterial había vuelto notablemente a la normalidad. Salí con una sensación de renovación y con técnicas para mantener este equilibrio en casa.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term substitution: 'herbal cures' rendered as 'remedios herbales' (no equivalent of 'cure'). Patient testimonial; outcome wording kept as stated by the patient, not strengthened."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -68,16 +34,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "Salud cardiovascular y Tratamiento de la presión arterialRakta Samadama Chikitsa (Tratamiento de Kairali para la hipertensión)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source joins two headings without a space ('TreatmentRakta'); the join is mirrored in the translation. Likely a source concatenation defect worth checking."
-   ]
   },
   {
    "id": "t_4065201e2c3c85c6d9df",
@@ -181,14 +137,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": ": recibirá terapias ayurvédicas específicas como Abhyangam (masaje terapéutico con aceite), Shirodhara (flujo constante de aceite tibio sobre la frente) y Nasyam (administración nasal de aceites de hierbas) para favorecer la relajación, mejorar la circulación y equilibrar los doshas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": se le prescribirán formulaciones herbales personalizadas para apoyar la salud cardiovascular, regular la presión arterial y reducir la inflamación.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

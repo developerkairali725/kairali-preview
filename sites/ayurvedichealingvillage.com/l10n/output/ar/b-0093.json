@@ -4,48 +4,12 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]يعزّز جهاز المناعة ويعالج الأسباب الجذرية لارتفاع ضغط الدم.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "t_7da49dfb86d386d99a8d banned-term سبا"
-   ]
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]يقدّم رعاية شمولية مخصّصة، ويقلّل الاعتماد على الأدوية المصنّعة، ويدعم العافية على المدى الطويل.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "صحة القلب والأوعية الدموية مع العلاج الأيورفيدي",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "استعادة السيطرة بطريقة طبيعية: قصص نجاح في علاج ارتفاع ضغط الدم في KTAHV",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "لطالما وجدتُ صعوبة في السيطرة على ارتفاع ضغط الدم لديّ، لذا أردت تجربة حلّ طبيعي. كانت تجربتي في Kairali رائعة؛ فجلسات التأمل والعلاجات العشبية والمعالجات كانت تمامًا ما أحتاج إليه. هدّأت العلاجات الأيورفيدية جسدي وعقلي، وعند مغادرتي كان ضغط دمي قد عاد إلى المعدل الطبيعي بشكل ملحوظ. خرجتُ وأنا أشعر بتجدّد النشاط، ومعي أساليب تساعدني على الحفاظ على هذا التوازن في المنزل.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Patient testimonial: 'herbal cures' rendered as 'herbal remedies' (العلاجات العشبية) per banned-word rule ('cure'). Testimonial claim about blood pressure returning to normal kept as the patient's personal account, not strengthened."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -70,16 +34,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "علاج صحة القلب والأوعية الدموية وضغط الدم – Rakta Samadama Chikitsa (راكتا ساماداما تشيكيتسا) (علاج Kairali لارتفاع ضغط الدم)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles without a separator ('TreatmentRakta'); a dash separator was added in the translation. Source may need an editorial fix."
-   ]
   },
   {
    "id": "t_4065201e2c3c85c6d9df",
@@ -183,14 +137,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": ": ستخضع لمعالجات أيورفيدية محددة مثل Abhyangam (أبهيانغام) (تدليك علاجي بالزيت)، وشيرودارا (Shirodhara) (تدفق ثابت من الزيت الدافئ على الجبين)، وناسيام (Nasyam) (إعطاء الزيوت العشبية عن طريق الأنف) لتعزيز الاسترخاء وتحسين الدورة الدموية وموازنة الدوشات.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": ستُوصَف تركيبات عشبية مخصّصة لدعم صحة القلب والأوعية الدموية، والمساعدة في تنظيم ضغط الدم، وتقليل الالتهاب.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

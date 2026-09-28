@@ -4,14 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_3904c12b98a40e5896d7",
-   "sourceHash": "3904c12b98a40e5896d7e1312b721d06cf34c86847116c754707b4690a1aac7e",
-   "text": ": تتيح جلسات المتابعة المنتظمة مع الطبيب الأيورفيدي تقييم التقدّم، وتعديل الخطة العلاجية ومعالجة أي مخاوف عند الحاجة. كما تراقب هذه الجلسات فعالية العلاجات والأدوية وتغييرات نمط الحياة لضمان أفضل النتائج الممكنة في التعامل مع آلام الظهر المزمنة.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_944d6a11e32075ffc33b",
    "sourceHash": "944d6a11e32075ffc33becef54cd6b6591ad7027974226eb136b67affdb124b1",
    "text": "آلام الظهر المزمنة والانزعاج",
@@ -194,16 +186,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_883cceab3c7ee7f2403c",
-   "sourceHash": "883cceab3c7ee7f2403c19792d14a9c68fd619d0b918df998bf643ccc1687922",
-   "text": "الإقامة في الفيلا الكلاسيكية | Kairali للأيورفيدا، كيرالا",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury Ayurveda Retreat' removed per the banned-word list (luxury) and clinical register; rendered as 'Kairali Ayurveda, Kerala'."
-   ]
   }
  ]
 }

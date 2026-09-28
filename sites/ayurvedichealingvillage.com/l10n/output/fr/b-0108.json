@@ -44,26 +44,6 @@
    "issues": []
   },
   {
-   "id": "t_6827b60adc52e7f89555",
-   "sourceHash": "6827b60adc52e7f8955507328bcb6ba6128ea17068792a572e415d367f179a09",
-   "text": "Découvrez la thérapie ayurvédique Panchakarma : détox complète, équilibre des doshas et immunité renforcée. Réservez votre séjour personnalisé en Inde.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'wellness retreat' rendered as 'séjour' per KTAHV language lock; 'today' dropped for the 155-character limit."
-   ]
-  },
-  {
-   "id": "t_4498ca83c5f3e2dd23b4",
-   "sourceHash": "4498ca83c5f3e2dd23b40417b13190b120403a54c296aa5d598aafc2dfa62c73",
-   "text": "Une détox scientifique approuvée par 80 % des patients, pour l’équilibre du corps, de l’esprit et des doshas | 30,000+ vies transformées",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'guest-trusted' rendered as 'approuvée par … des patients' per KTAHV language lock. Number '30,000+' kept in source form (French would normally write '30 000+'). Statistical claims (80%, 30,000+) are unverified in source; flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
    "id": "t_e6b1d78d81623bf5eb14",
    "sourceHash": "e6b1d78d81623bf5eb148ddd0233637e17b406762d126db19d18cebb191d7df8",
    "text": "Qu’est-ce que la [[OPEN_1]]thérapie Panchakarma ?[[CLOSE_1]]",
@@ -78,16 +58,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_adb6ba78928f2ef42ece",
-   "sourceHash": "adb6ba78928f2ef42ecea03c1b498eeca0c25f3a51831d8d536bb3cec4d3f1a4",
-   "text": "Fort de 5,000 ans de sagesse ayurvédique, le Panchakarma est la référence en matière de détoxification et de régénération naturelles. Reconnu par des patients du monde entier, Kairali perpétue cette tradition avec l’excellence clinique moderne. Ce protocole en cinq étapes agit en profondeur et de manière méthodique, et nécessite un engagement d’au moins deux semaines pour des résultats optimaux.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'guests' rendered as 'patients' per KTAHV language lock. Number '5,000' kept in source form (French would normally write '5 000')."
-   ]
   },
   {
    "id": "t_141def12cb51c81f71df",
@@ -136,68 +106,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_aa91aa8a5ebc68a35f88",
-   "sourceHash": "aa91aa8a5ebc68a35f88514da85535d80af0e04aa1ced338bacc0052b64427fc",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Une détoxification complète, qui rétablit l’équilibre physique et mental",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ef70c8c8a738563a7c01",
-   "sourceHash": "ef70c8c8a738563a7c01197d0a43ea3fc414905d73a37417c56242b5ccb11ca2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Un soulagement des inflammations chroniques, des affections cutanées et des troubles digestifs ou liés au mode de vie",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ed6f7ba3f3460e396cc5",
-   "sourceHash": "ed6f7ba3f3460e396cc5f129280e318bd06858728757835806738b598ec26978",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Moins d’anxiété et de stress, une meilleure clarté mentale et un équilibre émotionnel",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_839f8e3fd33b8fe13568",
-   "sourceHash": "839f8e3fd33b8fe13568d601585f60e6afac721a13fcaef53324081dc47b3523",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Une immunité renforcée et une longévité en bonne santé grâce à une purification de l’ensemble de l’organisme",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_33fca6287dae2e95517d",
-   "sourceHash": "33fca6287dae2e95517da496f5896595110fdaac5121441da40cd1a598dbf3a2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]87 % des patients font état d’une nette amélioration de leur santé en deux semaines. 94 % en conservent les bienfaits à long terme",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'guests' rendered as 'patients' per KTAHV language lock. 'dramatic' softened to 'nette' only in tone, not claim scope. Outcome statistics (87%, 94%) are unsourced in the English; flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_3a1a61fbb2d93d91fa0d",
-   "sourceHash": "3a1a61fbb2d93d91fa0da2dd58db49c76172a227a6454e9c25c5d5ed9d679c50",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]92 % de satisfaction chez les patients internationaux (données 2024)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Statistic unsourced in the English; flag for verification."
-   ]
-  },
-  {
-   "id": "t_866e5499705b3d2cfeaf",
-   "sourceHash": "866e5499705b3d2cfeaf08574949587134dcccd1484f2a7017bfe15283b13605",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Aucune réaction indésirable sur plus de 100,000 thérapies : une prise en charge clinique experte et sûre",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Number '100,000+' kept as '100,000' with 'plus de' (French would normally write '100 000'). Safety claim ('zero adverse reactions') is unsourced; flag for Dr. Deepu John's clinical sign-off."
-   ]
   },
   {
    "id": "t_215186065065595850af",

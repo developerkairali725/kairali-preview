@@ -174,16 +174,6 @@
    "issues": []
   },
   {
-   "id": "t_45447b7afbd5e544f7d0",
-   "sourceHash": "45447b7afbd5e544f7d0f1df0fccd26014d9850130abd3f020b89ff96b82079f",
-   "text": "metadata",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical attribute value (e.g. video preload=\"metadata\"); translating would break behaviour.",
-   "issues": [
-    "If this string is actually shown to readers, translate as 元数据."
-   ]
-  },
-  {
    "id": "t_44f6ac8bac1917ebf565",
    "sourceHash": "44f6ac8bac1917ebf565c50775f41f1007856b83c1bf84ac0d52897bda41ae88",
    "text": "——源视频，按需在本地播放",

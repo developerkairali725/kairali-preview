@@ -4,24 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_989b451cb7aeee740da1",
-   "sourceHash": "989b451cb7aeee740da128aabd659e2746c885b06ea0cdef6b55ceec76620ba1",
-   "text": "Prendre en charge le diabète naturellement : témoignages de patients de Kairali Ayurvedic Healing Village",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_aefdb98458283401fe4a",
-   "sourceHash": "aefdb98458283401fe4a1ace5fef4dff583b3c5a9572198feb53d6d887efa23c",
-   "text": "Gérer mon diabète me semblait être un combat sans fin, jusqu’à ce que je me rende à Kairali Ayurvedic Healing Village. Parmi les soins ayurvédiques qui m’ont aidé(e) à réguler naturellement ma glycémie figuraient une planification personnalisée des repas et des remèdes à base de plantes. Avec des séances de yoga encadrées et des massages apaisants, je me suis senti(e) plus énergique et plus équilibré(e) qu’auparavant. Ma santé s’est nettement améliorée après avoir appris, auprès d’un personnel compétent, des changements de mode de vie durables.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Patient testimonial translated faithfully in first person; gender of the speaker rendered neutrally with (e)."
-   ]
-  },
-  {
    "id": "t_4b977640f6b44607d395",
    "sourceHash": "4b977640f6b44607d3955737145d67a56a67dac60c8916b828e4cac3874d7139",
    "text": "[[OPEN_1]]Mme Rashi[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
@@ -47,26 +29,6 @@
    "unchangedReason": null,
    "issues": [
     "'Current treatment' refers to the patient's existing medication, rendered 'traitement actuel' rather than the approved term 'Soin' for accuracy."
-   ]
-  },
-  {
-   "id": "t_2809c269c0c7b22aef2d",
-   "sourceHash": "2809c269c0c7b22aef2df80f637a1b7f7ccd3f65ec653949164d44fcd1e50e91",
-   "text": "Soin du diabète et de l’équilibre métabolique – Madhumeha Chikitsa (le soin du diabète de Kairali)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates 'Therapy' and 'Madhumeha' without a separator; a dash was inserted in the translation."
-   ]
-  },
-  {
-   "id": "t_2dd90ab5ff8e11226f4c",
-   "sourceHash": "2dd90ab5ff8e11226f4c79ef31c6d258457c6a9629570d48ebe73a096d6f9437",
-   "text": "Diabète et métabolisme : soin ayurvédique chez Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "seo.title ≤60 chars; 'Retreat' dropped for length and to keep the clinical register."
    ]
   },
   {
@@ -118,30 +80,12 @@
    "issues": []
   },
   {
-   "id": "t_45b7c33d98b333aedcf6",
-   "sourceHash": "45b7c33d98b333aedcf6381c4346505d6ecf8d845b234813a53b73b221b6b600",
-   "text": "Le Panchakarma, une série de thérapies de détoxification, fait partie intégrante du soin. Il comprend des procédures telles que Virechana (purge thérapeutique) et Basti (lavement médicamenteux) pour éliminer les toxines, améliorer la digestion et rétablir l’équilibre.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_0df5910b8731512cad6b",
    "sourceHash": "0df5910b8731512cad6b920f952810c4f5db232821248d74c3a972fef283471d",
    "text": "Préparations à base de plantes",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_637889a4fd8c50525719",
-   "sourceHash": "637889a4fd8c50525719fba4d84eb6f2850bf6482c99e8c4bf6eb1689ea0b24f",
-   "text": "Des préparations à base de plantes personnalisées sont prescrites pour réguler la glycémie, améliorer la fonction pancréatique et soutenir la santé globale. Ces formulations naturelles sont préparées à partir de plantes ayurvédiques connues pour leurs propriétés antidiabétiques.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Efficacy wording mirrors the source exactly (no strengthening); clinical claim may warrant Dr. Deepu John's review."
-   ]
   },
   {
    "id": "t_8fae531999b7b87daf5c",
@@ -163,14 +107,6 @@
    "id": "t_ae0e9230b8eb5a137854",
    "sourceHash": "ae0e9230b8eb5a137854507631006e91f4976371a6d7384cf0d0dbe944d5b843",
    "text": "Adaptations de l’alimentation et du mode de vie",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_4a80552a7ae0c141f86c",
-   "sourceHash": "4a80552a7ae0c141f86c893de3f3dfaf6c978d8fa94f4ac2d1e209bdf3fb166e",
-   "text": "Nos nutritionnistes expérimentés vous donnent des recommandations alimentaires personnalisées pour prendre en charge efficacement le diabète. Vous serez orienté(e) vers une alimentation équilibrée, intégrant des aliments et des épices spécifiques connus pour réguler la glycémie. Des adaptations du mode de vie, comme l’activité physique et des techniques de gestion du stress, sont également conseillées.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

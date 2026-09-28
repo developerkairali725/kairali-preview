@@ -4,36 +4,6 @@
  "locale": "nl",
  "units": [
   {
-   "id": "t_7eb97189c5df10b5a8a7",
-   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
-   "text": "Virechanam (laxeertherapie): Het afvoeren van giftige stoffen uit de darmen door middel van een therapeutische laxering of een therapeutisch laxeermiddel. Virechanam is een bijzonder effectieve behandeling bij geelzucht en aambeien.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cure' rendered as 'behandeling' per clinical language lock (no cure claim); source's unclosed parenthesis closed; efficacy claim flagged for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
-   "id": "t_d0cd7d3df25aa6d85765",
-   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
-   "text": ": Een ayurvedische therapie waarbij geneesmiddelen of natuurlijke afkooksels, zoals oliën, ghee of melk, via een klysma worden toegediend, heet Vasti. Het afkooksel hangt af van de aandoening die behandeld moet worden. Deze therapie heeft grote voordelen en kan veel betekenen bij aandoeningen zoals aambeien, obstipatie en artritis.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'needs to be cured' rendered as 'behandeld moet worden' and 'powerful against' as 'kan veel betekenen bij' per clinical language lock (no cure claim); flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
-   "id": "t_0be803d5e810d8ee5187",
-   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
-   "text": "Vasti: Een ayurvedische therapie waarbij geneesmiddelen of natuurlijke afkooksels, zoals oliën, ghee of melk, via een klysma worden toegediend, heet Vasti. Het afkooksel hangt af van de aandoening die behandeld moet worden. Deze therapie heeft grote voordelen en kan veel betekenen bij aandoeningen zoals aambeien, obstipatie en artritis.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'needs to be cured' rendered as 'behandeld moet worden' and 'powerful against' as 'kan veel betekenen bij' per clinical language lock (no cure claim); flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
    "id": "t_82b4fbc564459cb32bba",
    "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
    "text": ": Voor patiënten met klachten in het hoofdgebied, zoals sinusproblemen en migraine, is deze ayurvedische therapie de beste keuze. Het is een natuurlijke reinigingstechniek waarbij neusdruppels gedoseerd in de neusgaten worden toegediend en die pijn in het hoofdgebied kan verlichten.",
@@ -51,26 +21,6 @@
    "unchangedReason": null,
    "issues": [
     "'freed from any kind of pain' softened to 'pijn ... kan verlichten' to avoid an absolute cure claim; 'the best' kept faithfully — flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
-   "id": "t_e747d12ed643ce1ef449",
-   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
-   "text": ": Tot slot wordt dit proces uitgevoerd om het bloed te reinigen. Volgens de Ayurveda is onzuiver bloed een belangrijke oorzaak van veel ziekten; deze therapie zuivert daarom het bloed en kan zo helpen bij gezondheidsklachten zoals psoriasis, pigmentatie, dermatitis en vele andere. Voeding is essentieel, zowel tijdens als na Panchakarma. Na het zuiveringsproces hoort de patiënt Kitchari (een gerecht met gemengde groenten) te eten zodra er honger opkomt. Dit dieet moet drie tot vier dagen worden aangehouden, waarbij geleidelijk andere voedingsmiddelen worden toegevoegd, zoals gember, peper, zout, soep van mungbonen en andere peulvruchtensoepen, en de hoeveelheid langzaam wordt verhoogd.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of health issues' softened to 'kan zo helpen bij' (no cure claim); flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
-   "id": "t_df61c09156f0a21cf0c1",
-   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
-   "text": "Raktamokshana: Tot slot wordt dit proces uitgevoerd om het bloed te reinigen. Volgens de Ayurveda is onzuiver bloed een belangrijke oorzaak van veel ziekten; deze therapie zuivert daarom het bloed en kan zo helpen bij gezondheidsklachten zoals psoriasis, pigmentatie, dermatitis en vele andere. Voeding is essentieel, zowel tijdens als na Panchakarma. Na het zuiveringsproces hoort de patiënt Kitchari (een gerecht met gemengde groenten) te eten zodra er honger opkomt. Dit dieet moet drie tot vier dagen worden aangehouden, waarbij geleidelijk andere voedingsmiddelen worden toegevoegd, zoals gember, peper, zout, soep van mungbonen en andere peulvruchtensoepen, en de hoeveelheid langzaam wordt verhoogd.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of health issues' softened to 'kan zo helpen bij' (no cure claim); flag for Dr. Deepu John's clinical review."
    ]
   },
   {

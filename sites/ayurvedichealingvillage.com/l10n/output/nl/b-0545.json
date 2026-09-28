@@ -68,16 +68,6 @@
    "issues": []
   },
   {
-   "id": "t_d6563f8eaa3891d010dc",
-   "sourceHash": "d6563f8eaa3891d010dcea862d5da875395f32ea96ce9e5470ffa0e9415acec6",
-   "text": "“Ik vond daar echte vreugde en herinnerde me weer waarvoor ik leef.” Leef en adem het goede met Kairali Ayurvedic Village &#8211; een persoonlijke formule voor welzijn. Kairali-The Ayurvedic Healing Village, Palakkad, Kerala, het vlaggenschip van de Kairali Ayurvedic Group, is een unieke holistische plek die uw herstel van binnen en van buiten ondersteunt met traditionele en authentieke Ayurvedische therapieën, behandelingen en [&hellip;]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ayurvedic destination' rendered as 'het vlaggenschip'; 'heals you internally and externally' rendered as 'uw herstel van binnen en van buiten ondersteunt' to avoid an efficacy claim. Source '&amp;' replaced by 'en' in Dutch; '&#8211;' and '[&hellip;]' entities kept."
-   ]
-  },
-  {
    "id": "t_0d6bc40763e215adafcf",
    "sourceHash": "0d6bc40763e215adafcf96652f1d8c8dfc81586967089910fc1b9800c6948170",
    "text": "Eigen bronmetadata en sociale media-assets uit de bron; de metadata van ‘Over ons’ wordt niet hergebruikt.",
@@ -179,24 +169,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6013de0381f648b7f215",
-   "sourceHash": "6013de0381f648b7f21518885c02b40b7583adfb33c6d9b64d3aed52c3934798",
-   "text": "lotus",
-   "status": "translated",
-   "unchangedReason": "Appears to be an icon/ornament key in the render layer; 'lotus' is also the correct Dutch word.",
-   "issues": []
-  },
-  {
-   "id": "t_9f91161f43433e49a6de",
-   "sourceHash": "9f91161f43433e49a6de6db680d79f60159f2e4ac9172621a12846428158440b",
-   "text": "leaf",
-   "status": "translated",
-   "unchangedReason": "Appears to be an icon/ornament key in the render layer (siblings are code suffixes); kept unchanged to avoid breaking the lookup.",
-   "issues": [
-    "If this is visible text, the Dutch would be 'blad'."
-   ]
   },
   {
    "id": "t_098a17bb1e7ee46cbcd0",

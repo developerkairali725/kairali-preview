@@ -4,14 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_013f54400c82da080377",
-   "sourceHash": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
-   "text": "age",
-   "status": "translated",
-   "unchangedReason": "Lowercase form-field identifier (field name), not visible copy; kept unchanged so the form keeps working.",
-   "issues": []
-  },
-  {
    "id": "t_045ec3af2fc4a3ad879b",
    "sourceHash": "045ec3af2fc4a3ad879b427c74db1e45493f92afe3ecc28446f87a91c3aa8ef7",
    "text": "年齢を入力してください",
@@ -25,14 +17,6 @@
    "text": "年齢",
    "status": "translated",
    "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_12886f9d00055adf24c4",
-   "sourceHash": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8",
-   "text": "number",
-   "status": "translated",
-   "unchangedReason": "HTML input type / field identifier; language-neutral technical value.",
    "issues": []
   },
   {
@@ -68,14 +52,6 @@
    "issues": []
   },
   {
-   "id": "t_a9491f4c1bf7b0cffbad",
-   "sourceHash": "a9491f4c1bf7b0cffbadcba2db8f028e4b3f2867cb59e1f3a0bc1968f3c51242",
-   "text": "subject",
-   "status": "translated",
-   "unchangedReason": "Lowercase form-field identifier (field name), not visible copy.",
-   "issues": []
-  },
-  {
    "id": "t_7126a8d08107c4e587e0",
    "sourceHash": "7126a8d08107c4e587e02fcfe50b85ba20caf87074b45f2ae84dfdaed476ef69",
    "text": "KTAHV オンラインお問い合わせ",
@@ -97,14 +73,6 @@
    "text": "メッセージ（任意）",
    "status": "translated",
    "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_72231043bc1807e6f740",
-   "sourceHash": "72231043bc1807e6f740b235eb7511ecb33255a6a375435631196de8a9750d4b",
-   "text": "post",
-   "status": "translated",
-   "unchangedReason": "HTML form method value; technical and language-neutral.",
    "issues": []
   },
   {
@@ -140,14 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_073c1634c496cdb649d1",
-   "sourceHash": "073c1634c496cdb649d1afe0a312bbb4b7e1741b271542e4a436c3b8824b1761",
-   "text": "status",
-   "status": "translated",
-   "unchangedReason": "Lowercase form-field identifier (field name), not visible copy.",
-   "issues": []
-  },
-  {
    "id": "t_2d2ff71974ae4def1396",
    "sourceHash": "2d2ff71974ae4def1396d94546f1f34e8978fcdcc22409c39547378ac93fab74",
    "text": "婚姻状況",
@@ -177,14 +137,6 @@
    "text": "国籍",
    "status": "translated",
    "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_226a193ae269296d44f3",
-   "sourceHash": "226a193ae269296d44f3efd3d66fead575a9ed15e14320b088c7c3d3cb2b9d8d",
-   "text": "bp",
-   "status": "translated",
-   "unchangedReason": "Lowercase form-field identifier (field name), not visible copy.",
    "issues": []
   },
   {

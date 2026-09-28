@@ -156,22 +156,6 @@
    "issues": []
   },
   {
-   "id": "t_7043a7b91662866dc5fa",
-   "sourceHash": "7043a7b91662866dc5fa1b3b9997241381612bc9d70153e109095ed8c6cd0bc1",
-   "text": "主动式护理，帮助预防生活方式疾病。以自然方式净化、再生与强健身体。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f1eacbcd76fc645c417a",
-   "sourceHash": "f1eacbcd76fc645c417ac7869875b1d9e8d2c4038b64870945f9650b943c7999",
-   "text": "经典 Panchakarma（五业疗法），深度净化。排出毒素，重新调整身体状态。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bbb0277cc146ab924897",
    "sourceHash": "bbb0277cc146ab92489733d95cb504da0fd0cdfbbfd52583988b15649024c50f",
    "text": "NABH 认证医院 · [[VAR_1]]+ 年传承 · 个性化治疗方案 · World Luxury Award 获奖者",
@@ -179,16 +163,6 @@
    "unchangedReason": null,
    "issues": [
     "'World Luxury Award' is an award title and kept verbatim in English per the proper-name exception."
-   ]
-  },
-  {
-   "id": "t_5e61d6cb0d9185f0ce07",
-   "sourceHash": "5e61d6cb0d9185f0ce07c55fa7a3056721a6fe5acb453e60081d1daa61de658e",
-   "text": "呼吸增强与呼吸系统健康疗法 – Roga Chikitsa（Kairali 支气管疾病治疗项目）",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source has a missing separator ('TherapyRoga'), which looks like a concatenation defect in the English og:title; a dash was added between the two parts. 'Roga Chikitsa' kept in Latin as the Sanskrit identifier. The English source should be fixed too."
    ]
   },
   {

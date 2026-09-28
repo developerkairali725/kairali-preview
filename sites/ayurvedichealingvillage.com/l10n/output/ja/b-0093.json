@@ -4,46 +4,12 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]免疫力を高め、高血圧の根本原因に働きかけます。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]一人ひとりに合わせた全人的なケアを提供し、合成薬への依存を減らし、長期的な健やかさを支えます。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "アーユルヴェーダ治療で心血管の健康を",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "自然にコントロールを取り戻す：KTAHVでの高血圧の体験談",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "以前から高血圧のコントロールに苦労していたので、自然な方法を試してみたいと思っていました。Kairaliでは素晴らしい体験ができました。瞑想のセッション、ハーブ療法、各種療法はまさに私が必要としていたものでした。アーユルヴェーダの治療で心も体も癒やされ、退院する頃には血圧が目に見えて正常に戻っていました。活力を取り戻し、このバランスを自宅でも保つための方法を身につけて帰ることができました。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'cures' in the source ('herbal cures') rendered as ハーブ療法 (herbal remedies), per the language lock. Patient testimonial: the outcome statement (blood pressure returned to normal) is the patient's own report and was translated without strengthening."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -68,16 +34,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "心血管の健康と血圧の治療Rakta Samadama Chikitsa（チキツァ）（Kairaliの高血圧治療）",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles without a space; the concatenation is preserved as in the source."
-   ]
   },
   {
    "id": "t_4065201e2c3c85c6d9df",
@@ -181,14 +137,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": "：リラックスを促し、血行を改善し、ドーシャのバランスを整えるために、Abhyangam（アビヤンガ）（治療的なオイルマッサージ）、シローダーラ（Shirodhara）（額に温かいオイルを一定に垂らす施術）、ナスヤム（Nasyam）（ハーブオイルを鼻から用いる施術）などの特定のアーユルヴェーダ療法を受けていただきます。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": "：心血管の健康を支え、血圧を調整し、炎症を抑えるために、個別に調合したハーブ製剤が処方されます。",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

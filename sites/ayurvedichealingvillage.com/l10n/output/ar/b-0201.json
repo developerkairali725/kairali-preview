@@ -150,16 +150,6 @@
    "issues": []
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical attribute value (e.g. fetchpriority/quality 'high') in template script; kept unchanged to avoid breaking behaviour.",
-   "issues": [
-    "Verify whether 'high' is user-visible; if so, Arabic would be 'عالية'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]مجموعة المنتجات[[CLOSE_3]]",
@@ -174,16 +164,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "تعكس مجموعة منتجاتنا في Kairali Ayurvedic Group أكثر من قرن من المعرفة والخبرة الأيورفيدية. تُستخدم مكوّنات طبيعية منتقاة بعناية في إعداد كل تركيبة لضمان النقاء والفعالية والتوافق مع المعرفة الأيورفيدية العريقة. وقد صُمّمت منتجاتنا، التي تتنوّع بين الزيوت المجدِّدة والمساحيق العلاجية، للتعامل مع مشكلات صحية معيّنة وتعزيز العافية العامة.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains a 'guarantee purity, effectiveness' claim; translated faithfully without strengthening — flag for clinical/compliance review."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

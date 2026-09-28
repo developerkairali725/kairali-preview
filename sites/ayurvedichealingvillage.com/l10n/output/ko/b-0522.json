@@ -4,36 +4,6 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_7eb97189c5df10b5a8a7",
-   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
-   "text": "비레차남(Virechanam, 하제 요법): 치료용 하제 또는 치료용 완하제를 투여하여 장에서 독성 물질을 배출하는 비레차남은 황달과 치질의 경우에 특히 효과적인 치료입니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source parenthesis never closed; closed here for readability. 'cure' rendered as 치료 (treatment); claim should be reviewed clinically (Dr. Deepu John sign-off)."
-   ]
-  },
-  {
-   "id": "t_d0cd7d3df25aa6d85765",
-   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
-   "text": ": 약물이나 오일, 기(ghee), 우유 등의 천연 달임액을 관장으로 투여하는 아유르베다 요법을 바스티라고 합니다. 달임액은 치료가 필요한 질환에 따라 달라집니다. 이 요법은 큰 이점이 있으며 치질, 변비, 관절염과 같은 질환에 강력한 효과를 발휘합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'the disease that needs to be cured' rendered as 'the disease that needs treatment' (cure avoided). Efficacy claim kept as in source; flag for clinical review."
-   ]
-  },
-  {
-   "id": "t_0be803d5e810d8ee5187",
-   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
-   "text": "바스티(Vasti): 약물이나 오일, 기(ghee), 우유 등의 천연 달임액을 관장으로 투여하는 아유르베다 요법을 바스티라고 합니다. 달임액은 치료가 필요한 질환에 따라 달라집니다. 이 요법은 큰 이점이 있으며 치질, 변비, 관절염과 같은 질환에 강력한 효과를 발휘합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'the disease that needs to be cured' rendered as 'the disease that needs treatment' (cure avoided). Efficacy claim kept as in source; flag for clinical review."
-   ]
-  },
-  {
    "id": "t_82b4fbc564459cb32bba",
    "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
    "text": ": 부비동 문제나 편두통처럼 머리 부위에 영향을 미치는 증상을 겪는 환자에게 가장 좋은 아유르베다 요법입니다. 콧구멍에 점비약을 일정하게 투여하여 머리 부위의 각종 통증을 덜어 주는 자연 정화 요법입니다.",
@@ -51,26 +21,6 @@
    "unchangedReason": null,
    "issues": [
     "'gets freed from any kind of pain' rendered as 'relieves various pains' to avoid an absolute claim."
-   ]
-  },
-  {
-   "id": "t_e747d12ed643ce1ef449",
-   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
-   "text": ": 마지막으로, 이 과정은 혈액을 정화하기 위해 시행됩니다. 아유르베다에 따르면 불순한 혈액은 여러 질병의 주요 원인이므로, 이 요법은 혈액을 정화하여 건선, 색소 침착, 피부염 등 다양한 건강 문제의 개선을 돕습니다. 판차카르마 기간과 그 이후에는 영양 관리가 필수적입니다. 정화 과정이 끝난 후 환자는 배고플 때마다 키차리(Kitchari, 채소를 섞은 요리)를 섭취해야 합니다. 이 식단을 3~4일간 유지하면서 생강, 후추, 소금, 녹두 수프, 기타 콩 수프 등 다양한 음식을 점차 추가하고 양을 서서히 늘려야 합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of health issues' rendered as 'helps improve' to avoid a cure claim."
-   ]
-  },
-  {
-   "id": "t_df61c09156f0a21cf0c1",
-   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
-   "text": "락타목샤나(Raktamokshana): 마지막으로, 이 과정은 혈액을 정화하기 위해 시행됩니다. 아유르베다에 따르면 불순한 혈액은 여러 질병의 주요 원인이므로, 이 요법은 혈액을 정화하여 건선, 색소 침착, 피부염 등 다양한 건강 문제의 개선을 돕습니다. 판차카르마 기간과 그 이후에는 영양 관리가 필수적입니다. 정화 과정이 끝난 후 환자는 배고플 때마다 키차리(Kitchari, 채소를 섞은 요리)를 섭취해야 합니다. 이 식단을 3~4일간 유지하면서 생강, 후추, 소금, 녹두 수프, 기타 콩 수프 등 다양한 음식을 점차 추가하고 양을 서서히 늘려야 합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of health issues' rendered as 'helps improve' to avoid a cure claim."
    ]
   },
   {

@@ -4,16 +4,6 @@
  "locale": "hi",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "आयुर्वेदिक उपचार | केंद्र | हीलिंग विलेज | आरोग्य केंद्र",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Health Resorts' (banned 'resort') replaced with 'आरोग्य केंद्र' (health centres) per the KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "Kairali अपने आयुर्वेदिक केंद्रों के ज़रिए आयुर्वेद की सदियों पुरानी परंपराओं को जीवित रखे हुए है: आयुर्वेदिक औषधियाँ देने से स्वस्थ जीवनशैली की सलाह तक।",
@@ -72,26 +62,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "भारत में प्रीमियम आयुर्वेदिक वज़न प्रबंधन कार्यक्रम",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury … Retreat' replaced with 'प्रीमियम … कार्यक्रम' (premium programme) per the KTAHV language lock; condensed to fit the 60-character seo.title limit ('Natural Weight Management' folded into 'वज़न प्रबंधन')."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "दक्षिण भारत में Kairali का आयुर्वेदिक वज़न प्रबंधन कार्यक्रम। थेरेपी, हर्बल तेल मालिश व प्राकृतिक डिटॉक्स से स्थायी वसा कमी—बिना कठोर डाइट या व्यायाम।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'weight loss retreat' rendered as 'वज़न प्रबंधन कार्यक्रम' (programme); 'premium' dropped to fit the 155-character limit. Source outcome claim ('achieve sustainable fat loss … no exercise required') kept, not strengthened; flag for Dr. Deepu John's clinical review."
-   ]
   },
   {
    "id": "t_bfa53d21f32a5f0d75b2",

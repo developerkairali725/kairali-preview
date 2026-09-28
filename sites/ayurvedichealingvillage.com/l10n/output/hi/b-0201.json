@@ -150,16 +150,6 @@
    ]
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical attribute value (e.g. fetchpriority/quality 'high'); translating it could break behaviour.",
-   "issues": [
-    "If this string is actually shown to visitors, the Hindi would be 'उच्च'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]होम[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]उत्पाद श्रृंखला[[CLOSE_3]]",
@@ -174,16 +164,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Kairali Ayurvedic Group की हमारी उत्पाद श्रृंखला एक सदी से अधिक के आयुर्वेदिक ज्ञान और अनुभव को दर्शाती है। प्रत्येक योग प्राकृतिक, सावधानीपूर्वक चुनी गई सामग्रियों से तैयार किया जाता है, ताकि शुद्धता, प्रभावशीलता और प्राचीन आयुर्वेदिक ज्ञान के साथ अनुरूपता सुनिश्चित की जा सके। पुनर्स्थापक तेलों से लेकर चिकित्सीय चूर्णों तक, हमारे उत्पाद कुछ विशेष स्वास्थ्य समस्याओं को संबोधित करने और समग्र स्वास्थ्य को प्रोत्साहित करने के लिए बनाए जाते हैं।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source says 'guarantee purity, effectiveness'; rendered as 'सुनिश्चित' (ensure), matching the source claim without strengthening it. The efficacy wording itself is in the English source and may merit clinical review."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

@@ -4,16 +4,6 @@
  "locale": "pt",
  "units": [
   {
-   "id": "t_3904c12b98a40e5896d7",
-   "sourceHash": "3904c12b98a40e5896d7e1312b721d06cf34c86847116c754707b4690a1aac7e",
-   "text": ": Sessões de acompanhamento regulares com o médico ayurvédico avaliam a evolução, permitindo ajustar o plano de tratamento e responder a eventuais dúvidas, conforme necessário. Estas sessões acompanham também a eficácia das terapias, dos medicamentos e das mudanças no estilo de vida, com o objetivo de obter os melhores resultados possíveis na gestão da dor lombar crónica.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensure optimal results' softened to 'com o objetivo de obter os melhores resultados possíveis' to avoid a guarantee."
-   ]
-  },
-  {
    "id": "t_944d6a11e32075ffc33b",
    "sourceHash": "944d6a11e32075ffc33becef54cd6b6591ad7027974226eb136b67affdb124b1",
    "text": "Dor e desconforto lombar crónicos",
@@ -199,16 +189,6 @@
    "unchangedReason": null,
    "issues": [
     "seo.description ≤155 (146 chars)."
-   ]
-  },
-  {
-   "id": "t_883cceab3c7ee7f2403c",
-   "sourceHash": "883cceab3c7ee7f2403c19792d14a9c68fd619d0b918df998bf643ccc1687922",
-   "text": "Estadia na Classic Villa do Kairali – Ayurveda em Kerala",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'Luxury' (and 'Retreat') removed per clinical register; seo.title ≤60."
    ]
   }
  ]

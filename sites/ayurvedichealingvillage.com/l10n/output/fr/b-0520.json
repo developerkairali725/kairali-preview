@@ -86,16 +86,6 @@
    "issues": []
   },
   {
-   "id": "t_23fc3bf6b529843d4d10",
-   "sourceHash": "23fc3bf6b529843d4d10b08de87614d00f717f731dfded211143139632f13415",
-   "text": "L’Ayurveda va bien au-delà du pronostic et du diagnostic : il ne se contente pas de soulager les symptômes et la maladie, il oriente aussi la personne vers un mode de vie axé sur la santé. L’alimentation ayurvédique joue ainsi un rôle majeur dans l’équilibre du système immunitaire. Dans cet esprit, Kairali – The Ayurvedic Healing Village possède une plantation biologique sur son domaine, source de l’alimentation de tous les visiteurs de l’hôpital et de l’établissement. Promouvant et diffusant le concept de « retour à la nature », le village de guérison propose à tous ses visiteurs une cuisine saine et raffinée, car l’alimentation joue un rôle essentiel pour vous aider à vous libérer de toutes sortes de maladies.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cures the symptoms and illness' rendered as 'soulager' (relief) per clinical lock — no cure claim. 'retreat' rendered as 'établissement'. Source claim that food frees you 'from all sorts of diseases' kept but hedged with 'vous aider à'; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
    "id": "t_b1c2336b025507216fbe",
    "sourceHash": "b1c2336b025507216fbeaa963c4ef65902c4c7a4c89fe9168e1890d3bd7197a6",
    "text": "Nous vous invitons à célébrer la nourriture tout en vous faisant découvrir, par le goût, l’importance d’une santé holistique au sein de l’établissement. En plus de votre séjour enchanteur, vous pourrez visiter la ferme biologique et découvrir l’importance d’une alimentation naturelle, cultivée en harmonie avec la nature.",
@@ -103,27 +93,6 @@
    "unchangedReason": null,
    "issues": [
     "'retreat' rendered as 'établissement' per clinical register; source 'palette' read as 'palate'."
-   ]
-  },
-  {
-   "id": "t_b0014ee51f30a5d31f6a",
-   "sourceHash": "b0014ee51f30a5d31f6a536ea6173cf0edc02cacee6833ddadc4940c69a5a698",
-   "text": "Centre ayurvédique primé | Distinctions de Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury' and 'Retreat' removed/replaced ('Centre') per clinical lock."
-   ]
-  },
-  {
-   "id": "t_d12ce40be4d9d26dd143",
-   "sourceHash": "d12ce40be4d9d26dd14392372f637d75388719dcedc59ef44ba36da7cd469c6d",
-   "text": "Kairali – The Ayurvedic Healing Village : « Top Ten Wellness Destination in Asia » (National Geographic Traveler) et World Luxury Spa Award.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Award titles kept verbatim (proper names). 'wellness retreat' and final sentence 'pinnacle of Ayurvedic healing and luxury hospitality' dropped per clinical lock and seo.description ≤155.",
-    "t_d12ce40be4d9d26dd143 banned-term-from-source Spa"
    ]
   },
   {

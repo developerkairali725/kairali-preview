@@ -48,40 +48,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "HTML element name, not visible prose; kept unchanged.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "アーカイブ",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "Ayurvedic Healing Villageアーカイブ | ウェルネス滞在の記録",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Wellness & Retreat Memories' rendered as ウェルネス滞在の記録 (records of wellness stays) per KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "Kairaliで過去に行われたウェルネス滞在、ヨガ・プログラム、癒しの体験のアーカイブをご覧ください。本物のアーユルヴェーダとホリスティックな暮らしへの私たちの歩みをご紹介します。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'wellness retreats' rendered as ウェルネス滞在 and 'journey' as 歩み (path/progress) per KTAHV language lock."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -189,16 +161,6 @@
    "unchangedReason": null,
    "issues": [
     "Source contains HTML entity &amp; (ampersand); rendered with Japanese ・ instead."
-   ]
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "Kairali-The Ayurvedic Healing Villageは、グリーンリーフ賞をはじめとする数々の賞を受賞し、アジアのトップ10施設の一つに選ばれるなど、インド屈指のアーユルヴェーダ施設としての評価を得ています。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'best Ayurvedic spa in India' and 'ten best spas in Asia' rendered with 施設 (facility) per KTAHV language lock; if these are exact award titles they may need to stay verbatim — confirm award wording with owner. Also 'proves its status as the best' softened to 評価を得ています (has earned recognition as a leading)."
    ]
   },
   {

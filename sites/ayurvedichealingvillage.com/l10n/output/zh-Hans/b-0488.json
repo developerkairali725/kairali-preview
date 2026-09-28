@@ -4,16 +4,6 @@
  "locale": "zh-Hans",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "阿育吠陀治疗项目 | 中心 | 疗愈村 | 健康疗养机构",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned-word substitution: 'Health Resorts' rendered as 健康疗养机构 (health stay facilities) instead of a resort equivalent."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "Kairali 通过旗下的阿育吠陀中心，延续了阿育吠陀的古老传统。从开具阿育吠陀药物处方到提供健康生活建议，Kairali 全方位为您服务。",
@@ -73,26 +63,6 @@
    "unchangedReason": null,
    "issues": [
     "'Kairali Ayurveda Franchise' kept verbatim as a logo/brand name."
-   ]
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "印度高品质阿育吠陀减重项目 | 自然体重管理",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned-word substitution: 'Luxury' rendered as 高品质 (premium quality); 'Retreat' rendered as 项目 (programme)."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "在南印度 Kairali 体验高品质阿育吠陀减重项目。借助阿育吠陀疗法、草本药油按摩和自然排毒方法，实现可持续减脂——无需极端节食或运动。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered as 项目 (programme). Source weight-loss claims ('sustainable fat loss', 'no extreme diets or exercise required') translated faithfully without strengthening; flag for clinical review (Dr. Deepu John)."
    ]
   },
   {

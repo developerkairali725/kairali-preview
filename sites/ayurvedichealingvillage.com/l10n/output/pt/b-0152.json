@@ -4,14 +4,6 @@
  "locale": "pt",
  "units": [
   {
-   "id": "t_e49971717b516bcc687a",
-   "sourceHash": "e49971717b516bcc687a20e7794e9389baf5d0b481c50b3174c409dc59be41a4",
-   "text": ": Reconhecendo que cada pessoa é única, adaptamos todos os aspetos da terapia às suas necessidades específicas, à sua constituição e ao estado da sua pele. Esta abordagem personalizada procura maximizar a eficácia do tratamento para obter os melhores resultados.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_0920cfc599b3dc1c4e75",
    "sourceHash": "0920cfc599b3dc1c4e75a501f0711a809a367ddcc9b381a97df99063863a7231",
    "text": "Terapias ayurvédicas de qualidade superior",
@@ -69,16 +61,6 @@
    "unchangedReason": null,
    "issues": [
     "Source 'Retreat Experience' rendered as 'estadia' to keep the clinical register."
-   ]
-  },
-  {
-   "id": "t_5955ea41782e0d27ab5a",
-   "sourceHash": "5955ea41782e0d27ab5a8f9bcf7756cd0eeaab1572a41dd3b65d33eef3047073",
-   "text": ": O nosso centro oferece um ambiente tranquilo, que favorece o relaxamento e a concentração no seu processo de recuperação. Conte com uma equipa atenta, comodidades de conforto superior e um ambiente revitalizante, que enriquecem a sua estadia.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned-register substitutions: 'retreats' → 'centro', 'healing journey' → 'processo de recuperação', 'luxurious amenities' → 'comodidades de conforto superior', 'experience' → 'estadia'. Source English itself contains KTAHV banned words (journey, luxurious) and should be reviewed."
    ]
   },
   {

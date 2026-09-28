@@ -4,52 +4,12 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Stärkt das Immunsystem und setzt bei den Ursachen des Bluthochdrucks an.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical benefit claim kept as in source, not strengthened; needs Dr. Deepu John's sign-off."
-   ]
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Bietet eine individuelle, ganzheitliche Versorgung, die die Abhängigkeit von synthetischen Medikamenten verringern und das langfristige Wohlbefinden unterstützen kann.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Claim about reducing reliance on synthetic medication rendered with 'kann' (can); medically sensitive — needs Dr. Deepu John's sign-off."
-   ]
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "Ihre Herz-Kreislauf-Gesundheit mit ayurvedischer Behandlung",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "Auf natürliche Weise wieder die Kontrolle gewinnen: Erfahrungsberichte zu Bluthochdruck bei KTAHV",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Success Stories' rendered as 'Erfahrungsberichte' (experience reports) to avoid implying guaranteed outcomes."
-   ]
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "Es fiel mir immer schwer, meinen Bluthochdruck unter Kontrolle zu bringen, deshalb wollte ich einen natürlichen Weg ausprobieren. Bei Kairali habe ich eine großartige Erfahrung gemacht; die Meditationseinheiten, die pflanzlichen Mittel und die Therapien waren genau das, was ich brauchte. Die ayurvedischen Behandlungen haben Körper und Geist beruhigt, und als ich abreiste, hatte sich mein Blutdruck deutlich normalisiert. Ich fühlte mich erneuert und habe Techniken mitgenommen, um dieses Gleichgewicht zu Hause zu bewahren.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'cures' ('herbal cures') in the patient testimonial rendered as 'pflanzliche Mittel' (herbal remedies) per KTAHV language lock. Testimonial contains an individual outcome claim (blood pressure normalised) — needs Dr. Deepu John's sign-off."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -77,16 +37,6 @@
    "unchangedReason": null,
    "issues": [
     "t_d6a64696a1db00273219 banned-term Reise"
-   ]
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "Behandlung für Herz-Kreislauf-Gesundheit & Blutdruck – Rakta Samadama Chikitsa (Kairalis Behandlung bei Bluthochdruck)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles without a separator ('TreatmentRakta'); an en dash separator was added in German. English source likely has a missing separator."
    ]
   },
   {
@@ -194,16 +144,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": Individuell abgestimmte pflanzliche Rezepturen werden verordnet, um die Herz-Kreislauf-Gesundheit zu unterstützen, den Blutdruck zu regulieren und Entzündungen zu verringern.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical efficacy claims kept as in source without strengthening; needs Dr. Deepu John's sign-off."
-   ]
   },
   {
    "id": "t_ec13e89c1725430f6a80",

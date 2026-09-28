@@ -4,16 +4,6 @@
  "locale": "ru",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "Аюрведическое лечение | Центры | Лечебная деревня",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Health Resorts' omitted (banned term 'resort'); title kept within 60 characters."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "Kairali сохраняет вековые традиции Аюрведы в аюрведических центрах: от назначения лекарств до советов по здоровому образу жизни.",
@@ -72,26 +62,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "Аюрведическая программа снижения веса в Индии",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury … Retreat' replaced with 'programme' (banned term luxury); 'Natural Weight Management' dropped to fit 60 characters."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "Премиальная аюрведическая программа снижения веса в Kairali (Южная Индия): процедуры, травяные масла и детокс — без жёстких диет и нагрузок.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered as 'programme'; condensed to fit 155 characters, 'sustainable fat loss' claim folded into programme description."
-   ]
   },
   {
    "id": "t_bfa53d21f32a5f0d75b2",

@@ -84,26 +84,6 @@
    "issues": []
   },
   {
-   "id": "t_881d5fb60090f59aabba",
-   "sourceHash": "881d5fb60090f59aabba4f287d7596317ca7091d00c2180b6cbc8ab018b9febd",
-   "text": "column",
-   "status": "translated",
-   "unchangedReason": "Appears to be a CSS/layout value (flex-direction) used by the renderer, not visible copy; translating it could break layout.",
-   "issues": [
-    "Extracted as display text but likely a code value; confirm it is not user-visible."
-   ]
-  },
-  {
-   "id": "t_f179a509d32bd92c923f",
-   "sourceHash": "f179a509d32bd92c923f236324daef85551c03a761bf0188be286a585281b4ac",
-   "text": "center",
-   "status": "translated",
-   "unchangedReason": "Appears to be a CSS/layout value (alignment) used by the renderer, not visible copy; translating it could break layout.",
-   "issues": [
-    "Extracted as display text but likely a code value; confirm it is not user-visible."
-   ]
-  },
-  {
    "id": "t_a48fcb713243b3d460ca",
    "sourceHash": "a48fcb713243b3d460ca7f05e4e4e5ef1cd4d8ce4981ce20cdd3e98a39d4fd38",
    "text": "lugares",

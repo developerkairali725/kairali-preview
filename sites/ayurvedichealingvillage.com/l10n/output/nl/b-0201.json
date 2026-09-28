@@ -150,16 +150,6 @@
    "issues": []
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Likely a technical attribute value (e.g. fetchpriority/quality 'high'); kept unchanged to avoid breaking code.",
-   "issues": [
-    "Verify whether 'high' is user-visible; if so, Dutch would be 'hoog'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]Home[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]Productassortiment[[CLOSE_3]]",
@@ -174,16 +164,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Onze productlijn bij Kairali Ayurvedic Group weerspiegelt meer dan een eeuw aan Ayurvedische kennis en ervaring. Voor elke samenstelling worden natuurlijke, zorgvuldig geselecteerde ingrediënten gebruikt om zuiverheid, werkzaamheid en overeenstemming met de eeuwenoude Ayurvedische kennis te garanderen. Onze producten, van herstellende oliën tot therapeutische poeders, zijn ontwikkeld om bepaalde gezondheidsklachten aan te pakken en het algehele welzijn te bevorderen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source itself claims to 'guarantee ... effectiveness'; translated faithfully without strengthening, but flag for clinical/compliance review."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

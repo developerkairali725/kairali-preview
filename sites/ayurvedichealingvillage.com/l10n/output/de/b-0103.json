@@ -4,14 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_850f7a36ef4d3427b1cb",
-   "sourceHash": "850f7a36ef4d3427b1cb5153263b6336ec33e449a05646a5ffc5c2e68cbeffc1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Gestärkte Widerstandskraft des Nervensystems, wiederhergestelltes Gleichgewicht und mehr Vitalität.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_cf54ec66491f54382d18",
    "sourceHash": "cf54ec66491f54382d1860866fa43dd6362587221d572e74e88d66b5a4cbcfda",
    "text": "[[OPEN_1]]◆[[CLOSE_1]]Unser natürlicher, nicht-invasiver Ansatz vermittelt Patienten Wissen für eine langfristige Selbstfürsorge und fördert das allgemeine Wohlbefinden.",
@@ -26,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_a44acbe20f937d1e8ab0",
-   "sourceHash": "a44acbe20f937d1e8ab0ee5ffaabd28f5d721b09b310489ee9e8d55b5b1f9c4c",
-   "text": "Ayurvedische Ansätze bei neurologischen Beeinträchtigungen: Erfahrungen unserer Patienten",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest Transformations' rendered as 'experiences of our patients' per clinical language lock (banned 'guests'; 'transformations' softened to avoid an outcome claim)."
-   ]
   },
   {
    "id": "t_7923665eaf8687955e9d",
@@ -70,16 +52,6 @@
    "issues": []
   },
   {
-   "id": "t_24ce9bca4ac3493b57a6",
-   "sourceHash": "24ce9bca4ac3493b57a6e888d30e370f9d7190cc4ead7fcdb0f73f203229df56",
-   "text": "Therapie für neurologisches Wohlbefinden und Funktion – Majja Poshanam Chikitsa (Kairalis Behandlung bei neurologischen Beeinträchtigungen)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source joins two titles without a separator; a dash was inserted and the stray space before ')' removed."
-   ]
-  },
-  {
    "id": "t_2218908879fd68945f0b",
    "sourceHash": "2218908879fd68945f0bca09fd4e9268f3ae4c26744d9f4cb094a87a3c171098",
    "text": "Ayurvedische Therapie für ein gesundes Nervensystem",
@@ -112,16 +84,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_5ce593479adfd23b47d4",
-   "sourceHash": "5ce593479adfd23b47d42662f6c06e88498a26489623dfcfadf62b2f94c7785e",
-   "text": "Unser Ablauf zur ayurvedischen Behandlung neurologischer Beeinträchtigungen bei Kairali Wellness Retreats",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source names 'Kairali Wellness Retreats' (kept verbatim as a proper name); this looks like a legacy brand inconsistent with the KTAHV clinical register — owner may want it replaced with 'Kairali – The Ayurvedic Healing Village'."
-   ]
   },
   {
    "id": "t_194432efb272c727f503",

@@ -28,42 +28,12 @@
    "issues": []
   },
   {
-   "id": "t_db2365bb7a376f09d1dd",
-   "sourceHash": "db2365bb7a376f09d1dde2b3cd90d95872ae3f007265b564672f111b88e1a807",
-   "text": "italic",
-   "status": "translated",
-   "unchangedReason": "Render-code value (CSS font-style keyword); translating would break rendering.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
-  },
-  {
    "id": "t_5249f4fcc629efa0e6d6",
    "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
    "text": "-n",
    "status": "translated",
    "unchangedReason": "Code/identifier suffix fragment — language-neutral.",
    "issues": []
-  },
-  {
-   "id": "t_360f84035942243c6a36",
-   "sourceHash": "360f84035942243c6a36537ae2f8673485e6c04455a0a85a0db19690f2541480",
-   "text": "left",
-   "status": "translated",
-   "unchangedReason": "Render-code value (CSS position/alignment keyword); translating would break rendering.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
-  },
-  {
-   "id": "t_28720365c5e7476a011e",
-   "sourceHash": "28720365c5e7476a011e4f43ac003ee5f16247a263b9d623aa85ed311d73bf39",
-   "text": "top",
-   "status": "translated",
-   "unchangedReason": "Render-code value (CSS position keyword); translating would break rendering.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
   },
   {
    "id": "t_1e1caaf8cf28cb024317",
@@ -80,36 +50,6 @@
    "status": "translated",
    "unchangedReason": "Code/identifier suffix fragment — language-neutral.",
    "issues": []
-  },
-  {
-   "id": "t_93bc5d02dc2a24b53653",
-   "sourceHash": "93bc5d02dc2a24b5365347573b6f5115f069ca1097f319a1041c2a6c770079e0",
-   "text": "collapse",
-   "status": "translated",
-   "unchangedReason": "Render-code value (CSS border-collapse/class keyword); translating would break rendering.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
-  },
-  {
-   "id": "t_c697d2981bf416569a16",
-   "sourceHash": "c697d2981bf416569a16cfbcdec1542b5398f3cc77d2b905819aa99c46ecf6f6",
-   "text": "region",
-   "status": "translated",
-   "unchangedReason": "ARIA role value; must stay in English to function.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
-  },
-  {
-   "id": "t_f0956726750ca787d943",
-   "sourceHash": "f0956726750ca787d943bb3ca8ba098bdbff341512524ebb1c887ca1f62dffc1",
-   "text": "touch",
-   "status": "translated",
-   "unchangedReason": "Render-code value (pointer/touch-action keyword); translating would break behaviour.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
   },
   {
    "id": "t_16d1c9050a0b32e83764",
@@ -186,16 +126,6 @@
    "status": "translated",
    "unchangedReason": "Code/identifier suffix — language-neutral.",
    "issues": []
-  },
-  {
-   "id": "t_23f49fcc0de8265d3350",
-   "sourceHash": "23f49fcc0de8265d335010d6cb6f348fa9a4eb7add1163f1c9a67d28d1f8dbf1",
-   "text": "robots",
-   "status": "translated",
-   "unchangedReason": "HTML meta name value; must stay in English to function.",
-   "issues": [
-    "Appears to be a code value rather than visible copy; kept unchanged."
-   ]
   },
   {
    "id": "t_9347bd35e495c32fd5df",

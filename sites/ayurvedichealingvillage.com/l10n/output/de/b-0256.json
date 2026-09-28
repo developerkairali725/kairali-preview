@@ -46,40 +46,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "HTML element name; not user-facing prose.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "Archiv",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "Archiv des Ayurvedic Healing Village | Rückblicke",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Wellness & Retreat Memories' condensed to 'Rückblicke' (clinical register, 60-character limit)."
-   ]
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "Entdecken Sie unser Archiv vergangener Wellness- und Yoga-Programme bei Kairali – unser Weg in authentischem Ayurveda und ganzheitlichem Leben.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'Weg' (banned term); 'retreats'/'healing experiences' folded into 'Programme' for the 155-character limit."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -185,16 +157,6 @@
    "unchangedReason": null,
    "issues": [
     "HTML entity &amp; kept as in source."
-   ]
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "Kairali-The Ayurvedic Healing Village: beste Ayurveda-Einrichtung Indiens, u. a. Green Leaf Award und unter den zehn besten Asiens.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'spa'/'spas' rendered as 'Einrichtung'/omitted to avoid the banned term; if 'ten best spas in Asia' is an official award title it should be kept verbatim — please confirm the exact award name. Superlative 'best in India' kept as in source."
    ]
   },
   {

@@ -56,48 +56,12 @@
    ]
   },
   {
-   "id": "t_a39bec7c3dc2c0bae76c",
-   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
-   "text": "sup",
-   "status": "translated",
-   "unchangedReason": "Markup/tag name fragment (HTML <sup>), language-neutral.",
-   "issues": []
-  },
-  {
-   "id": "t_051603900bc7a27051b3",
-   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
-   "text": "nd",
-   "status": "translated",
-   "unchangedReason": "English ordinal-suffix fragment (22nd) split out as superscript; Dutch dates use no ordinal suffix — kept unchanged pending structural fix.",
-   "issues": [
-    "Dutch does not use an ordinal suffix on dates; the owner may want this superscript fragment removed in the NL render."
-   ]
-  },
-  {
-   "id": "t_8fad80e805f85badb4de",
-   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
-   "text": "sept. 2017)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_ab103f014c27209d3d55",
    "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
    "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
    "status": "translated",
    "unchangedReason": "Internal js:enum locator describing markup position, not display copy.",
    "issues": []
-  },
-  {
-   "id": "t_ac9718a46bbebd222638",
-   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
-   "text": "De retreat is ideaal voor wie een stressvrije en gezondere levensstijl wil aannemen. Mentale stress heeft een directe invloed op ons zenuwstelsel en kan tot uiteenlopende gezondheidsproblemen leiden. Het toepassen van de eeuwenoude wetenschap van yoga en ayurveda, te midden van prachtige bomen en geneeskrachtige kruiden in ons serene ayurvedische dorp in Kerala, kan u helpen snel te herstellen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'would help you heal in no time' is an efficacy claim; rendered as 'kan u helpen snel te herstellen' (can help) — not strengthened; owner/clinical review advisable."
-   ]
   },
   {
    "id": "t_7f59fa15d55c4dd5e23a",

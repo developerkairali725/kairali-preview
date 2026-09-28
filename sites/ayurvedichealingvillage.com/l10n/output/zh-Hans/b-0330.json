@@ -4,14 +4,6 @@
  "locale": "zh-Hans",
  "units": [
   {
-   "id": "t_82a3537ff0dbce7eec35",
-   "sourceHash": "82a3537ff0dbce7eec35d69edc3a189ee6f17d82f353a553f9aa96cb0be3ce89",
-   "text": "name",
-   "status": "translated",
-   "unchangedReason": "Lowercase form field identifier (code), like 'fname'/'lname'; kept verbatim.",
-   "issues": []
-  },
-  {
    "id": "t_f55563b386a39dc3093f",
    "sourceHash": "f55563b386a39dc3093ff86421fb665db03b571c36f17577d648da5d2a7cc245",
    "text": "姓氏",
@@ -20,14 +12,6 @@
    "issues": [
     "Role includes js:enum; if used as a machine key rather than display label, keep English 'Last Name'."
    ]
-  },
-  {
-   "id": "t_ec136ea7349a087b1a2c",
-   "sourceHash": "ec136ea7349a087b1a2c45f68cff8bd30a142a4f07dce11879fa46936d401117",
-   "text": "lname",
-   "status": "translated",
-   "unchangedReason": "Form field identifier (code); kept verbatim.",
-   "issues": []
   },
   {
    "id": "t_fcecf2e5e7502c94ba1b",
@@ -60,14 +44,6 @@
    ]
   },
   {
-   "id": "t_de9feaea8b66f7ba7484",
-   "sourceHash": "de9feaea8b66f7ba74845ee5fc156cdd22e8e4533de13ca76d71ac495da358ff",
-   "text": "gender",
-   "status": "translated",
-   "unchangedReason": "Lowercase form field identifier (code); kept verbatim.",
-   "issues": []
-  },
-  {
    "id": "t_fdc739f52650c2c8fb5a",
    "sourceHash": "fdc739f52650c2c8fb5ab996614aeadbeb8f1907d35b43457309b2e74163be37",
    "text": "出生日期",
@@ -76,30 +52,6 @@
    "issues": [
     "Role includes js:enum; if used as a machine key, keep English."
    ]
-  },
-  {
-   "id": "t_384f303b14bcda1ca2a4",
-   "sourceHash": "384f303b14bcda1ca2a40fdf3b6b49e22a1d3714c71bf0acf5ba03ab6211d0f0",
-   "text": "dob",
-   "status": "translated",
-   "unchangedReason": "Form field identifier (code); kept verbatim.",
-   "issues": []
-  },
-  {
-   "id": "t_d80c9bf910f144738ef9",
-   "sourceHash": "d80c9bf910f144738ef983724bc04bd6bd3f17c5c83ed57bedee1b1b9278e811",
-   "text": "address",
-   "status": "translated",
-   "unchangedReason": "Lowercase form field identifier (code); kept verbatim.",
-   "issues": []
-  },
-  {
-   "id": "t_aff64e4fd520bd185cb0",
-   "sourceHash": "aff64e4fd520bd185cb01adab98d2d20060f621c62d5cad5204712cfa2294ef7",
-   "text": "country",
-   "status": "translated",
-   "unchangedReason": "Lowercase form field identifier (code); kept verbatim.",
-   "issues": []
   },
   {
    "id": "t_2a78025de6aae5e7ff88",

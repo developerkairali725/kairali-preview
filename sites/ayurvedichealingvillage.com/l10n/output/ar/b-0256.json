@@ -46,40 +46,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "Technical HTML token, not visible copy.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "الأرشيف",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "أرشيف قرية الشفاء الأيورفيدية | ذكريات البرامج والإقامات",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Wellness & Retreat Memories' rendered as 'memories of programmes and stays' per clinical lock."
-   ]
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "تصفح أرشيفنا لبرامج الإقامة العلاجية وبرامج اليوغا والتجارب العلاجية السابقة في كيرالي، واكتشف مسيرتنا في الأيورفيدا الأصيلة والحياة الشمولية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'wellness retreats' rendered as 'therapeutic stay programmes' and 'journey' as 'path/course' (مسيرتنا) per clinical lock."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -183,16 +155,6 @@
    "unchangedReason": null,
    "issues": [
     "Source contains the HTML entity '&amp;'; rendered as the Arabic conjunction."
-   ]
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "تثبت كيرالي – قرية الشفاء الأيورفيدية مكانتها كأفضل مركز أيورفيدي في الهند بحصولها على جوائز منها جائزة Green Leaf، وبمكانتها بين أفضل عشرة مراكز في آسيا.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'spa'/'spas' rendered as 'centre'/'centres' (مركز/مراكز) per clinical lock; award name 'Green Leaf' kept verbatim. Superlative claim retained as in source, not strengthened — owner may wish to verify."
    ]
   },
   {

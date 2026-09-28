@@ -148,16 +148,6 @@
    "issues": []
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Likely a technical attribute value (e.g. fetchpriority/quality 'high') consumed by code; left unchanged.",
-   "issues": [
-    "Verify 'high' is not user-visible; if it is displayed, the French is 'haute'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]Accueil[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]Gamme de produits[[CLOSE_3]]",
@@ -172,16 +162,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Notre gamme de produits Kairali Ayurvedic Group reflète plus d’un siècle de savoir et d’expérience ayurvédiques. Chaque composition est élaborée à partir d’ingrédients naturels soigneusement sélectionnés afin de garantir pureté, efficacité et conformité au savoir ayurvédique ancestral. Nos produits, des huiles régénérantes aux poudres thérapeutiques, sont conçus pour répondre à certains problèmes de santé et favoriser le bien-être général.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source itself says products 'guarantee purity, effectiveness'; translated faithfully without strengthening — flag for clinical/compliance review of the efficacy wording."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

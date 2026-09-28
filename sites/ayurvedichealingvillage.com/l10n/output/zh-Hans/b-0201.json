@@ -158,16 +158,6 @@
    ]
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical attribute value (e.g. fetchpriority/quality 'high'), not user-facing copy.",
-   "issues": [
-    "Verify this string is not visible to users; if it is displayed, translate as '高'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]首页[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]产品系列[[CLOSE_3]]",
@@ -182,16 +172,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Kairali Ayurvedic Group 的产品线凝聚了一个多世纪的阿育吠陀知识与经验。每一种配方均采用精心甄选的天然原料制成，力求确保纯净、有效，并与悠久的阿育吠陀知识相契合。我们的产品涵盖从调养油到治疗用粉剂等多种品类，旨在针对特定健康问题，并促进整体健康。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source says 'guarantee purity, effectiveness'; rendered as '力求确保' to avoid an absolute efficacy guarantee — owner/clinical review may wish to confirm."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

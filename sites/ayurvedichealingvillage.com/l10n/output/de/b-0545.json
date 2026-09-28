@@ -72,16 +72,6 @@
    ]
   },
   {
-   "id": "t_d6563f8eaa3891d010dc",
-   "sourceHash": "d6563f8eaa3891d010dcea862d5da875395f32ea96ce9e5470ffa0e9415acec6",
-   "text": "„Dort habe ich wahre Freude gefunden und mich daran erinnert, wofür ich lebe.“ Gutes leben und atmen mit dem Kairali Ayurvedic Village &#8211; eine persönliche Formel für Ihr Wohlbefinden. Kairali – The Ayurvedic Healing Village, Palakkad, Kerala, die führende ayurvedische Einrichtung der Kairali Ayurvedic Group, ist ein einzigartiger ganzheitlicher Ort, der Sie innerlich wie äußerlich heilt – mit traditionellen und authentischen ayurvedischen Therapien, Behandlungen und [&hellip;]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "HTML entities (&#8211;, &hellip;) kept as in source; '&amp;' resolved into German 'und'. 'flagship ayurvedic destination' rendered as 'führende ayurvedische Einrichtung' (avoids travel/holiday sense); 'Wellness Formula' as 'Formel für Ihr Wohlbefinden'. Source claim 'heals you internally and externally' kept as written, not strengthened — flag for clinical review."
-   ]
-  },
-  {
    "id": "t_0d6bc40763e215adafcf",
    "sourceHash": "0d6bc40763e215adafcf96652f1d8c8dfc81586967089910fc1b9800c6948170",
    "text": "Eigene Quell-Metadaten und quelleigene Social-Media-Assets; die Metadaten von „Über uns“ werden nicht wiederverwendet.",
@@ -183,26 +173,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6013de0381f648b7f215",
-   "sourceHash": "6013de0381f648b7f21518885c02b40b7583adfb33c6d9b64d3aed52c3934798",
-   "text": "lotus",
-   "status": "translated",
-   "unchangedReason": "Appears to be a render identifier (ornament/icon key) in story-family-render, alongside code fragments; left unchanged to avoid breaking lookup. If shown to readers, the German would be 'Lotus'.",
-   "issues": [
-    "Verify whether this string is visible text or an internal key."
-   ]
-  },
-  {
-   "id": "t_9f91161f43433e49a6de",
-   "sourceHash": "9f91161f43433e49a6de6db680d79f60159f2e4ac9172621a12846428158440b",
-   "text": "leaf",
-   "status": "translated",
-   "unchangedReason": "Appears to be a render identifier (ornament/icon key) in story-family-render, alongside code fragments; left unchanged to avoid breaking lookup. If shown to readers, the German would be 'Blatt'.",
-   "issues": [
-    "Verify whether this string is visible text or an internal key."
-   ]
   },
   {
    "id": "t_098a17bb1e7ee46cbcd0",

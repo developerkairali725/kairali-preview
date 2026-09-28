@@ -4,36 +4,6 @@
  "locale": "it",
  "units": [
   {
-   "id": "t_7eb97189c5df10b5a8a7",
-   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
-   "text": "Virechanam (purgazione): eliminazione delle sostanze tossiche dall’intestino mediante una purgazione terapeutica o un lassativo terapeutico; il Virechanam è un trattamento particolarmente efficace in caso di ittero ed emorroidi.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'cure' rendered as 'trattamento'. Closing parenthesis added (missing in source). Source efficacy claim kept as is; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
-   "id": "t_d0cd7d3df25aa6d85765",
-   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
-   "text": ": la terapia ayurvedica che somministra, tramite clistere, medicinali o decotti naturali come oli, ghee o latte è chiamata Vasti. Il decotto dipende dal disturbo da trattare. Offre notevoli benefici ed è efficace contro disturbi come emorroidi, stitichezza e artrite.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'disease that needs to be cured' rendered as 'disturbo da trattare'. Source efficacy claim kept, not strengthened; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
-   "id": "t_0be803d5e810d8ee5187",
-   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
-   "text": "Vasti: la terapia ayurvedica che somministra, tramite clistere, medicinali o decotti naturali come oli, ghee o latte è chiamata Vasti. Il decotto dipende dal disturbo da trattare. Offre notevoli benefici ed è efficace contro disturbi come emorroidi, stitichezza e artrite.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'disease that needs to be cured' rendered as 'disturbo da trattare'. Source efficacy claim kept, not strengthened; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
    "id": "t_82b4fbc564459cb32bba",
    "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
    "text": ": per i pazienti che soffrono di disturbi che interessano la testa, come sinusite ed emicrania, questa terapia ayurvedica è la più indicata. È una tecnica naturale di purificazione in cui gocce nasali vengono instillate nelle narici in modo controllato, liberando la zona della testa da ogni tipo di dolore.",
@@ -51,26 +21,6 @@
    "unchangedReason": null,
    "issues": [
     "Source superlative/absolute claims ('the best', 'freed from any kind of pain') translated faithfully, not strengthened; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
-   "id": "t_e747d12ed643ce1ef449",
-   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
-   "text": ": infine, questo processo viene eseguito per purificare il sangue. Secondo l’Ayurveda, il sangue impuro è una delle cause principali di molte malattie; questa terapia consente quindi di purificare il sangue, aiutando a liberarsi da problemi di salute come psoriasi, pigmentazione, dermatite e molti altri. L’alimentazione è essenziale sia durante sia dopo il Panchakarma. Dopo il processo di purificazione, il paziente dovrebbe consumare Kitchari (un piatto di verdure miste) ogni volta che ha fame. Dovrebbe seguire questa dieta per tre o quattro giorni, aggiungendo gradualmente vari altri alimenti come zenzero, pepe, sale, zuppa di fagioli mung e altre zuppe di legumi, e aumentando lentamente le quantità.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source efficacy claim ('getting rid of health issues like psoriasis…') softened only to 'aiutando a liberarsi da'; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
-   "id": "t_df61c09156f0a21cf0c1",
-   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
-   "text": "Raktamokshana: infine, questo processo viene eseguito per purificare il sangue. Secondo l’Ayurveda, il sangue impuro è una delle cause principali di molte malattie; questa terapia consente quindi di purificare il sangue, aiutando a liberarsi da problemi di salute come psoriasi, pigmentazione, dermatite e molti altri. L’alimentazione è essenziale sia durante sia dopo il Panchakarma. Dopo il processo di purificazione, il paziente dovrebbe consumare Kitchari (un piatto di verdure miste) ogni volta che ha fame. Dovrebbe seguire questa dieta per tre o quattro giorni, aggiungendo gradualmente vari altri alimenti come zenzero, pepe, sale, zuppa di fagioli mung e altre zuppe di legumi, e aumentando lentamente le quantità.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source efficacy claim ('getting rid of health issues like psoriasis…') softened only to 'aiutando a liberarsi da'; flag for Dr. Deepu John clinical review."
    ]
   },
   {

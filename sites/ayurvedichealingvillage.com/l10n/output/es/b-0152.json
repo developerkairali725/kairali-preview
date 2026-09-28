@@ -4,16 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_e49971717b516bcc687a",
-   "sourceHash": "e49971717b516bcc687a20e7794e9389baf5d0b481c50b3174c409dc59be41a4",
-   "text": ": Reconociendo su singularidad, adaptamos cada aspecto de la terapia a sus necesidades específicas, su constitución y el estado de su piel. Este enfoque personalizado busca potenciar la eficacia del tratamiento para lograr los mejores resultados posibles.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'maximizes ... optimal outcomes' rendered as 'busca potenciar ... mejores resultados posibles' to avoid strengthening the claim."
-   ]
-  },
-  {
    "id": "t_0920cfc599b3dc1c4e75",
    "sourceHash": "0920cfc599b3dc1c4e75a501f0711a809a367ddcc9b381a97df99063863a7231",
    "text": "Terapias ayurvédicas de primer nivel",
@@ -71,16 +61,6 @@
    "unchangedReason": null,
    "issues": [
     "'Retreat Experience' rendered as 'estancia' to keep the clinical register."
-   ]
-  },
-  {
-   "id": "t_5955ea41782e0d27ab5a",
-   "sourceHash": "5955ea41782e0d27ab5a8f9bcf7756cd0eeaab1572a41dd3b65d33eef3047073",
-   "text": ": Nuestro centro ofrece un ambiente tranquilo que favorece la relajación y le permite concentrarse en su proceso de sanación. Cuente con un personal atento, comodidades de primer nivel y un entorno revitalizante que enriquecen su estancia.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned-word substitutions: 'retreats' -> 'centro', 'healing journey' -> 'proceso de sanación', 'luxurious amenities' -> 'comodidades de primer nivel', 'experience' -> 'estancia'."
    ]
   },
   {

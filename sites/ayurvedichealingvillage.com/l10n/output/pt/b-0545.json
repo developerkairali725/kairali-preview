@@ -66,16 +66,6 @@
    "issues": []
   },
   {
-   "id": "t_d6563f8eaa3891d010dc",
-   "sourceHash": "d6563f8eaa3891d010dcea862d5da875395f32ea96ce9e5470ffa0e9415acec6",
-   "text": "“Encontrei ali a verdadeira alegria e lembrei-me da minha razão de viver.” Viva e respire bem-estar com o Kairali Ayurvedic Village &#8211; uma fórmula de bem-estar personalizada. O destino ayurvédico de referência do Kairali Ayurvedic Group, o Kairali – The Ayurvedic Healing Village, Palakkad, Kerala, é um espaço holístico único no seu género, que cuida de si por dentro e por fora com terapias e tratamentos ayurvédicos tradicionais e autênticos e [&hellip;]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'heals you' rendered as 'cuida de si' to avoid a cure claim; HTML entities kept; source is a truncated excerpt ending in [&hellip;]."
-   ]
-  },
-  {
    "id": "t_0d6bc40763e215adafcf",
    "sourceHash": "0d6bc40763e215adafcf96652f1d8c8dfc81586967089910fc1b9800c6948170",
    "text": "Metadados de origem próprios e recursos sociais da própria fonte; os metadados de Sobre nós não são reutilizados.",
@@ -177,26 +167,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6013de0381f648b7f215",
-   "sourceHash": "6013de0381f648b7f21518885c02b40b7583adfb33c6d9b64d3aed52c3934798",
-   "text": "lotus",
-   "status": "translated",
-   "unchangedReason": "Appears to be an internal render/icon identifier in story-family-render, not visitor-facing text; translating it could break the lookup.",
-   "issues": [
-    "If this is shown to visitors, the Portuguese would be 'lótus'."
-   ]
-  },
-  {
-   "id": "t_9f91161f43433e49a6de",
-   "sourceHash": "9f91161f43433e49a6de6db680d79f60159f2e4ac9172621a12846428158440b",
-   "text": "leaf",
-   "status": "translated",
-   "unchangedReason": "Appears to be an internal render/icon identifier in story-family-render, not visitor-facing text; translating it could break the lookup.",
-   "issues": [
-    "If this is shown to visitors, the Portuguese would be 'folha'."
-   ]
   },
   {
    "id": "t_098a17bb1e7ee46cbcd0",

@@ -156,22 +156,6 @@
    "issues": []
   },
   {
-   "id": "t_7043a7b91662866dc5fa",
-   "sourceHash": "7043a7b91662866dc5fa1b3b9997241381612bc9d70153e109095ed8c6cd0bc1",
-   "text": "Cuidados proativos para prevenir doenças relacionadas com o estilo de vida. Limpar, regenerar e fortalecer de forma natural.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f1eacbcd76fc645c417a",
-   "sourceHash": "f1eacbcd76fc645c417ac7869875b1d9e8d2c4038b64870945f9650b943c7999",
-   "text": "Panchakarma clássico para uma limpeza profunda. Eliminar toxinas e reequilibrar o corpo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bbb0277cc146ab924897",
    "sourceHash": "bbb0277cc146ab92489733d95cb504da0fd0cdfbbfd52583988b15649024c50f",
    "text": "Hospital com certificação NABH · Mais de [[VAR_1]] anos de tradição · Programas individualizados · Vencedor do World Luxury Award",
@@ -179,16 +163,6 @@
    "unchangedReason": null,
    "issues": [
     "'World Luxury Award' kept verbatim as a proper award title (banned-word exception for award names)."
-   ]
-  },
-  {
-   "id": "t_5e61d6cb0d9185f0ce07",
-   "sourceHash": "5e61d6cb0d9185f0ce07c55fa7a3056721a6fe5acb453e60081d1daa61de658e",
-   "text": "Terapia para a Melhoria da Respiração e a Saúde Respiratória – Roga Chikitsa (tratamento da Kairali para doenças brônquicas)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "English source appears to be missing a separator between 'Therapy' and 'Roga Chikitsa' (concatenation artefact); a dash was inserted in the translation. Consider fixing the source."
    ]
   },
   {

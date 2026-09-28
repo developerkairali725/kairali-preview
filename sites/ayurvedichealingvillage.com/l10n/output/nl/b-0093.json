@@ -4,50 +4,12 @@
  "locale": "nl",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Versterkt het immuunsysteem en pakt de onderliggende oorzaken van hypertensie aan.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Biedt persoonlijke, holistische zorg, vermindert de afhankelijkheid van synthetische medicijnen en ondersteunt welzijn op de lange termijn.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Medication-reliance claim translated faithfully; may warrant Dr. Deepu John's clinical review."
-   ]
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "Uw hart- en vaatgezondheid met een ayurvedische behandeling",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "Op natuurlijke wijze weer grip krijgen: ervaringen met hypertensie bij KTAHV",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Success Stories' rendered as 'ervaringen' (patient experiences) to avoid implying guaranteed outcomes; KTAHV kept as proper abbreviation."
-   ]
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "Ik had altijd moeite gehad om mijn hoge bloeddruk onder controle te houden, dus ik wilde een natuurlijke oplossing proberen. Ik heb bij Kairali een geweldige ervaring gehad; de meditatiesessies, kruidenmiddelen en therapieën waren precies wat ik nodig had. De ayurvedische behandelingen brachten rust in mijn lichaam en geest, en tegen de tijd dat ik vertrok, was mijn bloeddruk merkbaar weer normaal. Ik ging naar huis met een verjongd gevoel en met technieken om dit evenwicht thuis vast te houden.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Patient testimonial: 'herbal cures' rendered as 'kruidenmiddelen' per the KTAHV banned-word lock. Outcome claim ('blood pressure returned to normal') is the patient's own statement, translated faithfully; may warrant clinical review."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -74,16 +36,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "Behandeling voor hart- en vaatgezondheid en bloeddrukRakta Samadama Chikitsa (Kairali’s behandeling voor hypertensie)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles without a separator ('TreatmentRakta'); structure preserved as-is — likely a source defect worth fixing upstream."
-   ]
   },
   {
    "id": "t_4065201e2c3c85c6d9df",
@@ -187,14 +139,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": ": U ondergaat specifieke ayurvedische therapieën zoals Abhyangam (therapeutische oliemassage), Shirodhara (gestage stroom warme olie op het voorhoofd) en Nasyam (toediening van kruidenoliën via de neus) om ontspanning te bevorderen, de bloedsomloop te verbeteren en de dosha's in balans te brengen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": Er worden kruidenpreparaten op maat voorgeschreven om de hart- en vaatgezondheid te ondersteunen, de bloeddruk te reguleren en ontstekingen te verminderen.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

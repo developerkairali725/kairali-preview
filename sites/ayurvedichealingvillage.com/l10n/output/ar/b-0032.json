@@ -4,14 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_504aed77fda1b765427d",
-   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]تحسّن جودة الحياة وتقليل الاعتماد على الأدوية",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_426ac289eefa90f4dff8",
    "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
    "text": "إرشاد الطبيب",
@@ -52,32 +44,12 @@
    "issues": []
   },
   {
-   "id": "t_d13e82941eedb9ffe701",
-   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
-   "text": "ستحظى بمتابعات منتظمة مع الطبيب الأيورفيدي لرصد تقدّمك وإجراء التعديلات اللازمة. وستُقدَّم لك علاجات مخصصة، تشمل التدليك والعلاجات العشبية. كما يُقدَّم لك الإرشاد حول الحياة المتوازنة والنظام الغذائي وإدارة التوتر، مع دعم مستمر من الطبيب لمسار علاجي آمن وفعّال.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'treatment path' (مسار علاجي)."
-   ]
-  },
-  {
    "id": "t_9fac5bf476b112f23420",
    "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
    "text": "بعد العلاج",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_09ae86a975d4271e3ba2",
-   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
-   "text": "تُقيّم استشارات المتابعة مع الطبيب الأيورفيدي مدى فعالية العلاج وتقدّم لك الإرشاد. وستدمج في حياتك ممارسات ما بعد العلاج، مثل توصيات النظام الغذائي ونمط الحياة، للحفاظ على الفوائد. ويهدف الدعم المستمر إلى الحفاظ على صحتك على المدى الطويل ومعالجة أي مخاوف أو احتياجات.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensures long-term health' rendered as 'aims to maintain long-term health' to avoid a guarantee claim."
-   ]
   },
   {
    "id": "t_8c085c24fd5465b7feb9",

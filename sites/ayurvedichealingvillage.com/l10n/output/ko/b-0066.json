@@ -12,22 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_ee67f93d65ceec713d42",
-   "sourceHash": "ee67f93d65ceec713d4284bd691dbf74a330bf415b8d3a62b1225d15754fc7d1",
-   "text": "textarea",
-   "status": "translated",
-   "unchangedReason": "HTML control type identifier, not user-visible text.",
-   "issues": []
-  },
-  {
-   "id": "t_3b9c358f36f0a31b6ad3",
-   "sourceHash": "3b9c358f36f0a31b6ad3e14f309c7cf198ac9246e8316f9ce543d5b19ac02b80",
-   "text": "file",
-   "status": "translated",
-   "unchangedReason": "HTML input type identifier, not user-visible text.",
-   "issues": []
-  },
-  {
    "id": "t_62420113f0eae0cae574",
    "sourceHash": "62420113f0eae0cae574f53f24a69786b491e7ba32b6835c384e416f64364b27",
    "text": "올바른 이메일 주소를 입력해 주십시오. 예: name@example.com",
@@ -186,26 +170,6 @@
    "status": "translated",
    "unchangedReason": "CSS property fragment, not user-visible text.",
    "issues": []
-  },
-  {
-   "id": "t_c97ace4c8fef2cee8fa0",
-   "sourceHash": "c97ace4c8fef2cee8fa0f3c9f52aab18dbd4f42438afe362ffb8f75ce4c04b84",
-   "text": "review",
-   "status": "translated",
-   "unchangedReason": "Internal state/mode identifier used in code, not user-visible text.",
-   "issues": [
-    "If this string is ever shown to users it should read '검토'."
-   ]
-  },
-  {
-   "id": "t_a4c3ed04a95a3da14a9d",
-   "sourceHash": "a4c3ed04a95a3da14a9d235c83d868bed7c0f45cf7f3faa751ee8f50598d2211",
-   "text": "done",
-   "status": "translated",
-   "unchangedReason": "Internal state identifier used in code, not user-visible text.",
-   "issues": [
-    "If this string is ever shown to users it should read '완료'."
-   ]
   }
  ]
 }

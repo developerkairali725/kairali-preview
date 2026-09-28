@@ -4,14 +4,6 @@
  "locale": "nl",
  "units": [
   {
-   "id": "t_504aed77fda1b765427d",
-   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Betere kwaliteit van leven en minder afhankelijkheid van medicatie",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_426ac289eefa90f4dff8",
    "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
    "text": "Begeleiding door een arts",
@@ -52,32 +44,12 @@
    "issues": []
   },
   {
-   "id": "t_d13e82941eedb9ffe701",
-   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
-   "text": "U hebt regelmatig contact met de ayurvedische arts om uw voortgang te volgen en de behandeling zo nodig bij te stellen. U krijgt persoonlijk afgestemde therapieën, waaronder massages en kruidenbehandelingen. U ontvangt begeleiding op het gebied van een evenwichtige leefstijl, voeding en stressbeheersing, met doorlopende ondersteuning van de arts voor een veilig en doeltreffend behandeltraject.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'behandeltraject' (treatment process) per the KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_9fac5bf476b112f23420",
    "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
    "text": "Na de behandeling",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_09ae86a975d4271e3ba2",
-   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
-   "text": "Tijdens vervolgconsulten beoordeelt de ayurvedische arts de effectiviteit van de behandeling en geeft u advies. U past nazorggewoonten toe, zoals aanbevelingen voor voeding en leefstijl, voor blijvende voordelen. Doorlopende ondersteuning helpt u uw gezondheid op lange termijn te behouden en gaat in op eventuele vragen of behoeften.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensures long-term health' softened slightly to 'helpt ... te behouden' to avoid a guarantee; review if a literal rendering is preferred."
-   ]
   },
   {
    "id": "t_8c085c24fd5465b7feb9",

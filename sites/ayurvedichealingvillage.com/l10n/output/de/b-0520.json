@@ -90,16 +90,6 @@
    ]
   },
   {
-   "id": "t_23fc3bf6b529843d4d10",
-   "sourceHash": "23fc3bf6b529843d4d10b08de87614d00f717f731dfded211143139632f13415",
-   "text": "Ayurveda geht weit über Prognose und Diagnose hinaus: Es behandelt nicht nur Symptome und Erkrankungen, sondern führt den Menschen auch zu einer gesundheitsorientierten Lebensweise. Ayurvedische Ernährung spielt daher eine wichtige Rolle für ein ausgeglichenes Immunsystem. Aus diesem Grund verfügt Kairali – The Ayurvedic Healing Village über eine eigene Bio-Plantage, aus der die Mahlzeiten für alle Besucher des Krankenhauses stammen. Getreu dem Leitgedanken „Zurück zur Natur“ bietet das Healing Village allen Besuchern gesunde, hochwertige Speisen an, denn die Ernährung spielt eine wichtige Rolle für Ihre Gesundheit.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical-claim softening per rules: 'cures the symptoms and illness' → 'behandelt' (banned word 'cure'); 'food plays vital role in freeing you from all sorts of diseases' → 'spielt eine wichtige Rolle für Ihre Gesundheit' (source claim is an unsupported efficacy claim). 'hospital and retreat' → 'Krankenhaus'; 'gourmet' → 'hochwertige'. Requires Dr. Deepu John's sign-off; source EN copy should be reviewed too."
-   ]
-  },
-  {
    "id": "t_b1c2336b025507216fbe",
    "sourceHash": "b1c2336b025507216fbeaa963c4ef65902c4c7a4c89fe9168e1890d3bd7197a6",
    "text": "Bei uns genießen Sie gutes Essen und erfahren zugleich, welche Bedeutung ganzheitliche Gesundheit für Ihre Ernährung hat. Während Ihres Aufenthalts können Sie außerdem den Bio-Hof besuchen und mehr über die Bedeutung natürlicher, im Einklang mit der Natur angebauter Lebensmittel erfahren.",
@@ -107,27 +97,6 @@
    "unchangedReason": null,
    "issues": [
     "'at the retreat' omitted and 'mesmerizing stay' rendered as 'Aufenthalt' for the clinical register; source 'palette' read as 'palate'."
-   ]
-  },
-  {
-   "id": "t_b0014ee51f30a5d31f6a",
-   "sourceHash": "b0014ee51f30a5d31f6a536ea6173cf0edc02cacee6833ddadc4940c69a5a698",
-   "text": "Auszeichnungen für Kairali | Preisgekröntes Ayurveda",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned words 'Luxury' and 'Retreat' removed from the SEO title for the clinical register."
-   ]
-  },
-  {
-   "id": "t_d12ce40be4d9d26dd143",
-   "sourceHash": "d12ce40be4d9d26dd14392372f637d75388719dcedc59ef44ba36da7cd469c6d",
-   "text": "International ausgezeichnet: „Top Ten Wellness Destination in Asia“ (National Geographic Traveler) und World Luxury Spa Award für Kairali.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Award titles kept verbatim. 'wellness retreat' and 'luxury hospitality' phrasing removed (banned words outside proper names); condensed to fit 155 characters.",
-    "t_d12ce40be4d9d26dd143 banned-term-from-source Spa"
    ]
   },
   {

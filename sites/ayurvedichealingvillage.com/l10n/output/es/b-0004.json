@@ -36,14 +36,6 @@
    "issues": []
   },
   {
-   "id": "t_fcbcf165908dd18a9e49",
-   "sourceHash": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
-   "text": "false",
-   "status": "translated",
-   "unchangedReason": "Boolean code value, not user-facing text; language-neutral.",
-   "issues": []
-  },
-  {
    "id": "t_26c7cd22f326e9c49695",
    "sourceHash": "26c7cd22f326e9c49695a177434ae3d9c5d7e681b901f5647d30a7a81eafedd3",
    "text": "22px 18px",
@@ -83,16 +75,6 @@
    "unchangedReason": null,
    "issues": [
     "Source says 'Since 1908' here while another unit says 'Since 1999'; kept both exactly as in the source. Please confirm the intended year for each."
-   ]
-  },
-  {
-   "id": "t_8ecfe1ae17f1a168f778",
-   "sourceHash": "8ecfe1ae17f1a168f778b0d95fd5b032f1c95aa317b425da1a37fe9cd2d87aff",
-   "text": "[[OPEN_1]]El mejor retiro ayurvédico de Asia desde 1999[[CLOSE_1]][[OPEN_2]]Kairali – The Ayurvedic Healing Village, en Palakkad (Kerala), es un espacio holístico único en su género que le ayuda a sanar por dentro y por fuera mediante terapias ayurvédicas tradicionales y auténticas.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Asia's Best Ayurvedic Retreat' may be an award title. It was translated, not kept verbatim. If it is an official award name, keep the English form. 'Heals you' was softened to 'le ayuda a sanar' so the claim is not strengthened."
    ]
   },
   {

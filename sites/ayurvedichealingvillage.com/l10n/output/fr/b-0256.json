@@ -48,40 +48,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "Technical HTML element token (not user-facing prose); kept unchanged.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "Archives",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "Archives Ayurvedic Healing Village | Souvenirs de bien-être",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Wellness & Retreat Memories' condensed to 'Souvenirs de bien-être' (retreat dropped) to fit the 60-character title limit."
-   ]
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "Parcourez nos archives : programmes de bien-être, séjours de yoga et soins passés chez Kairali. Notre parcours : Ayurveda authentique et vie holistique.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'retreats' rendered as 'séjours', 'journey' as 'parcours'."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -189,16 +161,6 @@
    "unchangedReason": null,
    "issues": [
     "HTML entity &amp; preserved as in source."
-   ]
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "Kairali-The Ayurvedic Healing Village, meilleur centre ayurvédique d’Inde : prix Green Leaf et classé parmi les 10 meilleurs centres d’Asie.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'best Ayurvedic spa' and 'ten best spas in Asia' rendered with 'centre' instead of 'spa' (these are descriptive claims, not verbatim award titles). Superlative 'best in India' is in the source and not strengthened, but should be checked against the exact award wording by the owner."
    ]
   },
   {

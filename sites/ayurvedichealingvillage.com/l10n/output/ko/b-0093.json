@@ -4,46 +4,12 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_7da49dfb86d386d99a8d",
-   "sourceHash": "7da49dfb86d386d99a8dd534ef2033459e2e19e6f97988cefbfb37d58031e0d1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]면역 체계를 강화하고 고혈압의 근본 원인을 다룹니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_855e8dd3a0ccc6addd53",
-   "sourceHash": "855e8dd3a0ccc6addd53d4488557dcc2d7b4e4516f0ddbbb8dc6d2272cf797eb",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]개인 맞춤형 총체적 케어를 제공하여 합성 약물에 대한 의존을 줄이고 장기적인 건강을 지원합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bb30213d25cd6a0ea5d8",
    "sourceHash": "bb30213d25cd6a0ea5d807854aadb3182c4f6d72aaa1e16d70e54d7b967662ef",
    "text": "아유르베다 치료로 돌보는 심혈관 건강",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_c83d29855bd4784db80b",
-   "sourceHash": "c83d29855bd4784db80b73fff4c2945d335df036827845c9c1ce7eb346bc8f7c",
-   "text": "자연스럽게 되찾은 조절력: KTAHV의 고혈압 환자 경험담",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f0162bd60eedd361122a",
-   "sourceHash": "f0162bd60eedd361122a107742708aebaec4ba3721ea1ccc88dc4be7c11e3bca",
-   "text": "저는 늘 고혈압을 조절하기가 어려웠기에 자연적인 방법을 시도해 보고 싶었습니다. Kairali에서의 경험은 정말 훌륭했습니다. 명상 세션, 허브 요법, 그리고 여러 요법이 제게 꼭 필요한 것이었습니다. 아유르베다 치료로 몸과 마음이 편안해졌고, 퇴원할 무렵에는 혈압이 눈에 띄게 정상으로 돌아와 있었습니다. 활력을 되찾았고, 집에서도 이 균형을 유지할 수 있는 방법을 배워 돌아왔습니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Testimonial 'herbal cures' rendered as '허브 요법' (herbal remedies) per language lock; 'by the time I left' rendered with 퇴원 (discharge) register."
-   ]
   },
   {
    "id": "t_589a7a51bc98663232d2",
@@ -68,16 +34,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_953963e4a874f022051e",
-   "sourceHash": "953963e4a874f022051e9d4174e47f3383937f6005b19093087638fdadf9fdfc",
-   "text": "심혈관 건강 및 혈압 치료락타 사마다마 치키트사(Rakta Samadama Chikitsa) (Kairali의 고혈압 치료)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two titles with no separator ('TreatmentRakta'); preserved as-is — likely a source join defect to review."
-   ]
   },
   {
    "id": "t_4065201e2c3c85c6d9df",
@@ -181,14 +137,6 @@
    "id": "t_031dffd8fa5111b9f007",
    "sourceHash": "031dffd8fa5111b9f007e8d9172800130c46f582f0d4fa9dba653d6f577c61fc",
    "text": ": 이완을 돕고 혈액순환을 개선하며 도샤의 균형을 맞추기 위해 Abhyangam (아비양감)(치료용 오일 마사지), 시로다라(Shirodhara)(이마 위에 따뜻한 오일을 일정하게 흘려 붓는 요법), 나시얌(Nasyam)(허브 오일을 코로 투여하는 요법)과 같은 특정 아유르베다 요법을 받게 됩니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_02190df7c1a353ae41ed",
-   "sourceHash": "02190df7c1a353ae41edbe2476cda844c62747bc9a7055cf05f72b442409e213",
-   "text": ": 심혈관 건강을 지원하고 혈압 조절을 도우며 염증을 줄이기 위해 맞춤 허브 제제가 처방됩니다.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

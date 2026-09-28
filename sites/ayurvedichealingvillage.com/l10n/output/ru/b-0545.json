@@ -66,16 +66,6 @@
    "issues": []
   },
   {
-   "id": "t_d6563f8eaa3891d010dc",
-   "sourceHash": "d6563f8eaa3891d010dcea862d5da875395f32ea96ce9e5470ffa0e9415acec6",
-   "text": "«Я обрела там настоящую радость и вспомнила, ради чего живу». Живите и дышите добром вместе с Kairali Ayurvedic Village &#8211; персональная формула оздоровления. Флагманский аюрведический центр Kairali Ayurvedic Group, Kairali – Аюрведическая лечебная деревня, Палаккад, Керала, — единственное в своём роде пространство целостного оздоровления, которое помогает восстановлению изнутри и снаружи с помощью традиционных и подлинных аюрведических процедур, методов лечения и [&hellip;]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'heals you' softened to 'помогает восстановлению' (no efficacy claim); 'destination' rendered as 'центр'; 'Kairali Ayurvedic Village' kept as brand name; HTML entities kept; source uses '&amp;' in the tagline, rendered as Russian 'и'. Quote gender assumed feminine ('обрела') — neutral source, please verify speaker."
-   ]
-  },
-  {
    "id": "t_0d6bc40763e215adafcf",
    "sourceHash": "0d6bc40763e215adafcf96652f1d8c8dfc81586967089910fc1b9800c6948170",
    "text": "Собственные исходные метаданные и собственные социальные материалы источника; метаданные страницы «О нас» повторно не используются.",
@@ -176,26 +166,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6013de0381f648b7f215",
-   "sourceHash": "6013de0381f648b7f21518885c02b40b7583adfb33c6d9b64d3aed52c3934798",
-   "text": "lotus",
-   "status": "translated",
-   "unchangedReason": "Appears to be an ornament/icon identifier in render code (story-family-render); translating could break the lookup.",
-   "issues": [
-    "If this is visible text (e.g. an alt/aria label), the Russian is 'лотос'."
-   ]
-  },
-  {
-   "id": "t_9f91161f43433e49a6de",
-   "sourceHash": "9f91161f43433e49a6de6db680d79f60159f2e4ac9172621a12846428158440b",
-   "text": "leaf",
-   "status": "translated",
-   "unchangedReason": "Appears to be an ornament/icon identifier in render code (story-family-render); translating could break the lookup.",
-   "issues": [
-    "If this is visible text (e.g. an alt/aria label), the Russian is 'лист'."
-   ]
   },
   {
    "id": "t_098a17bb1e7ee46cbcd0",

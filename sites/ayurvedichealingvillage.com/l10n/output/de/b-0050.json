@@ -4,14 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_3904c12b98a40e5896d7",
-   "sourceHash": "3904c12b98a40e5896d7e1312b721d06cf34c86847116c754707b4690a1aac7e",
-   "text": ": In regelmäßigen Nachsorgeterminen beurteilt der Ayurveda-Arzt Ihre Fortschritte, passt den Behandlungsplan bei Bedarf an und geht auf Ihre Anliegen ein. Dabei wird auch die Wirksamkeit von Therapien, Medikamenten und Veränderungen der Lebensweise überprüft, um bei der Behandlung chronischer Rückenschmerzen möglichst gute Ergebnisse zu erzielen.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_944d6a11e32075ffc33b",
    "sourceHash": "944d6a11e32075ffc33becef54cd6b6591ad7027974226eb136b67affdb124b1",
    "text": "Chronische Rückenschmerzen und Beschwerden",
@@ -194,16 +186,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_883cceab3c7ee7f2403c",
-   "sourceHash": "883cceab3c7ee7f2403c19792d14a9c68fd619d0b918df998bf643ccc1687922",
-   "text": "Classic Villa bei Kairali – Ayurveda-Aufenthalt in Kerala",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains 'Luxury' and 'Retreat'; per KTAHV language lock rendered neutrally as 'Ayurveda-Aufenthalt' (stay) without a luxury equivalent. Source English title itself contains the banned word 'Luxury' — flag for upstream fix."
-   ]
   }
  ]
 }

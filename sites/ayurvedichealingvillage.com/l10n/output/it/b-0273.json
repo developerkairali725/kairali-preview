@@ -4,14 +4,6 @@
  "locale": "it",
  "units": [
   {
-   "id": "t_d43d7b87a54295c9c874",
-   "sourceHash": "d43d7b87a54295c9c8743489ba0e4a7b1ec4d48414f3aec1d08d9848822e39bd",
-   "text": "Un ingresso breve ma intenso nel percorso di guarigione Karkidaka. Sette giorni che eliminano la stanchezza e La riportano a sé stesso.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_e3d8ae316e86c3e3b4fe",
    "sourceHash": "e3d8ae316e86c3e3b4fe3735b4dc3b78a4db4f1bbf1becaf1856cd0c04c05155",
    "text": "Due sedute terapeutiche dedicate, prescritte dal medico, ogni singolo giorno",
@@ -25,14 +17,6 @@
    "id": "t_777e910f4fd044264b8f",
    "sourceHash": "777e910f4fd044264b8f886f9ec2cc631fbf31bd5357a2e1fd932d599b51c864",
    "text": "Ogni olio, sequenza e tecnica scelti specificamente per il Suo organismo: nulla di standardizzato",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_09bfd279d07343bd25d7",
-   "sourceHash": "09bfd279d07343bd25d789fae7be3674d156d5a81fa0b8cadba2f4b520fd85bb",
-   "text": "Terapia profonda con olio medicato su tutto il corpo e vapore terapeutico, per sciogliere ciò che lo stress e anni di pressione hanno bloccato nei tessuti",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -54,16 +38,6 @@
    "issues": []
   },
   {
-   "id": "t_1b60f90d4db0484a562e",
-   "sourceHash": "1b60f90d4db0484a562ed3481072869ea986b8fab1a7320cd14bbc954e70dfd6",
-   "text": "Piano di benessere scritto per il periodo successivo al programma e indicazioni personalizzate: il percorso di guarigione prosegue a lungo dopo la dimissione",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'checkout' rendered as 'dimissione' to keep the clinical register."
-   ]
-  },
-  {
    "id": "t_de2937ed0e52521934a0",
    "sourceHash": "de2937ed0e52521934a02dfbd9a64d6f6270a31d796987c9bbccbe3c2e0d6aed",
    "text": "The Monsoon Reset",
@@ -72,14 +46,6 @@
    "issues": [
     "Kept in English as a programme name, consistent with 'The Monsoon Starter'; owner may prefer localized programme names."
    ]
-  },
-  {
-   "id": "t_5dd88e29004cbf221102",
-   "sourceHash": "5dd88e29004cbf221102b8938dfc1f8e7095be2b871dc6a72a3b6caa81c68960",
-   "text": "Due settimane sono il punto in cui inizia il vero cambiamento. Un programma strutturato, guidato dai medici, che agisce sui canali più profondi dell'organismo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
   },
   {
    "id": "t_62ba61e2349433e23751",
@@ -129,16 +95,6 @@
    "unchangedReason": "Programme name kept as a proper name.",
    "issues": [
     "Kept in English as a programme name, consistent with 'The Monsoon Starter'; owner may prefer localized programme names."
-   ]
-  },
-  {
-   "id": "t_658ff7cdf3972d31904a",
-   "sourceHash": "658ff7cdf3972d31904a71720bb6a508779c7c606c24723f8af6a08f85aaac3f",
-   "text": "Per chi è davvero pronto. Tre settimane dell'assistenza ayurvedica più completa disponibile: un profondo ripristino cellulare che porterà con sé per anni.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Durable-benefit claim ('you'll carry for years') translated as-is without strengthening; may warrant clinical review (Dr. Deepu John)."
    ]
   },
   {

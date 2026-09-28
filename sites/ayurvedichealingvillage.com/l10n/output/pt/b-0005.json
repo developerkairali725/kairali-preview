@@ -131,42 +131,12 @@
    "issues": []
   },
   {
-   "id": "t_618dc58379dda348eba0",
-   "sourceHash": "618dc58379dda348eba010597accf72a98ab4cd357b42acdda4091901b2ff144",
-   "text": "instant",
-   "status": "translated",
-   "unchangedReason": "Technical keyword (scroll-behavior value), language-neutral.",
-   "issues": [
-    "Looks like a CSS/JS keyword (scroll behavior), not visible copy. It needs confirmation in the extractor allowlist."
-   ]
-  },
-  {
    "id": "t_74cdbe70e394d0047b45",
    "sourceHash": "74cdbe70e394d0047b4512ca5bdfba49e6e7a617cd847e764f737474efe5242d",
    "text": "Tamanho real",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_929260ad9b9ea9fe0f35",
-   "sourceHash": "929260ad9b9ea9fe0f3553dd964f4ff3deb5792efd031a2b90f573fe91f012bb",
-   "text": "auto",
-   "status": "translated",
-   "unchangedReason": "Technical CSS keyword, language-neutral.",
-   "issues": [
-    "Looks like a CSS keyword, not visible copy."
-   ]
-  },
-  {
-   "id": "t_dd9245cc1ddc69c88a8a",
-   "sourceHash": "dd9245cc1ddc69c88a8a530dea2b643123ffcdb0509e7d0566db22654b57cb12",
-   "text": "contain",
-   "status": "translated",
-   "unchangedReason": "Technical CSS keyword, language-neutral.",
-   "issues": [
-    "Looks like a CSS keyword (object-fit), not visible copy."
-   ]
   },
   {
    "id": "t_d6bd8c0aeee80fedb2db",

@@ -4,16 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_9bbde7e24be7bcabdef0",
-   "sourceHash": "9bbde7e24be7bcabdef0dc246a4955420dbcf0a0e1a0f599a77afe448a6163bf",
-   "text": "Mit über [[VAR_1]] Jahren Erfahrung und mehr als 30,000 behandelten Patienten bei Kairali – The Ayurvedic Healing Village kennt unser Team die Herausforderungen von Arthritis und Spondylitis. Ayurveda bietet individuelle Lösungen, die Ungleichgewichte der Doshas im Körper berücksichtigen. Unsere ayurvedische Behandlung bei Arthritis umfasst spezielle Massagen, Kräutertherapien und sanfte Übungen, um Entzündungen zu verringern, Schmerzen zu lindern und die Beweglichkeit zu verbessern. Ayurvedische Arzneimittel aus natürlichen Quellen unterstützen die Heilung. Aufklärung ist uns wichtig: Wir befähigen unsere Patienten, ihren Heilungsprozess zu verstehen und aktiv mitzugestalten. Unser ganzheitlicher Ansatz verbindet überliefertes Wissen mit modernen Methoden und richtet sich auf das allgemeine körperliche, geistige und emotionale Wohlbefinden. Vertrauen Sie auf unsere Erfahrung für anhaltende Linderung und mehr Vitalität.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'healing journey' rendered as 'Heilungsprozess' and 'clients' as 'Patienten' per KTAHV language lock. Number 30,000 kept exactly as in source."
-   ]
-  },
-  {
    "id": "t_1b7e1001dceffea1954b",
    "sourceHash": "1b7e1001dceffea1954b18220e2794309c6f6bec7e29833f623ab8013a4b4082",
    "text": "Patienten, die einen ganzheitlichen Ansatz im Umgang mit Arthritis und Spondylitis suchen",
@@ -78,71 +68,9 @@
    "issues": []
   },
   {
-   "id": "t_1e8b862b55efe2215703",
-   "sourceHash": "1e8b862b55efe221570357a21d51f666640a10c5a3469193b3a5a236ed380f6f",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Erhalten Sie Behandlungen, die individuell auf Ihre Konstitution und Ihr Dosha-Ungleichgewicht abgestimmt sind. Wir folgen den Grundsätzen des Ayurveda und setzen natürliche Therapien und Kräuter ein, um Nebenwirkungen möglichst gering zu halten.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_a4a83c67e6c9dec6ffbe",
-   "sourceHash": "a4a83c67e6c9dec6ffbeaddd68b7718b42fd73ce35be5bcdabccc211dfe3c400",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Vertiefen Sie Ihr Verständnis der ayurvedischen Grundsätze, der Ursachen Ihrer Erkrankung und der Wirkweise unserer Behandlung. So können Sie Ihren Heilungsprozess aktiv mitgestalten und fundierte Gesundheitsentscheidungen treffen.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'healing journey' rendered as 'Heilungsprozess' per KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_f8b1f2ba4e5657a0d1ee",
-   "sourceHash": "f8b1f2ba4e5657a0d1ee92a753969ff3a6ec54aeb5b378e26c95da40223a4f96",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Lassen Sie den Alltagsstress in unserer ruhigen Umgebung hinter sich. Unser Team unterstützt Sie umfassend mit Nachsorge, Verlaufskontrolle und bei Bedarf mit Anpassungen des Behandlungsplans.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered as 'ruhige Umgebung' to keep clinical register."
-   ]
-  },
-  {
    "id": "t_54eca8406fa193c3332d",
    "sourceHash": "54eca8406fa193c3332df7d38996f7635e1a46fdbefeb6765ba3e7fd9bdecb01",
    "text": "[[OPEN_1]]Vorteile[[CLOSE_1]] der Gelenkrehabilitation & Arthritis-Behandlung",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d06d294d785175a2bb79",
-   "sourceHash": "d06d294d785175a2bb79ad8ac9cba82f87d7287a37ef3245ed1e63258c7eb72e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Weniger Schmerzen, Entzündungen und Steifheit bei verbesserter Gelenkbeweglichkeit, Flexibilität und allgemeiner körperlicher Belastbarkeit – für Linderung und mehr Wohlbefinden.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_2caefac8c7566fc7ded1",
-   "sourceHash": "2caefac8c7566fc7ded1d3279f3fc91004eae713ffded0f172cd93cc01012896",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Unser ganzheitlicher Ansatz verbessert das körperliche Wohlbefinden, verringert die Abhängigkeit von Medikamenten und fördert die allgemeine Gesundheit und Vitalität.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c18490873b2400f8429a",
-   "sourceHash": "c18490873b2400f8429a81dc204cc3134a492cb26f2e07a708b97d8b72689e17",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Besonderes Augenmerk auf geistiges und emotionales Wohlbefinden, um Stress abzubauen und die psychische Gesundheit zu stärken. Individuelle Empfehlungen zur Lebensweise ermöglichen eine aktive Mitwirkung am Heilungsprozess und ein besseres Verständnis der besonderen Bedürfnisse des eigenen Körpers.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'healing journey' rendered as 'Heilungsprozess' per KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_7ab2fafb6f1d121e2351",
-   "sourceHash": "7ab2fafb6f1d121e2351b2a64668e63e5cc9903ed937953c4af697aa024c6e3b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Verbesserte Lebensqualität und mehr Wohlbefinden insgesamt",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -154,16 +82,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_80bd011d6a10d8a2b9d5",
-   "sourceHash": "80bd011d6a10d8a2b9d5b8739b4f47251abe2b7688d4ba0c728798f4ec6e81c5",
-   "text": "Wege der Veränderung",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Journeys' rendered as 'Wege' per KTAHV language lock."
-   ]
   }
  ]
 }

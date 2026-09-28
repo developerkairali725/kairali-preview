@@ -156,22 +156,6 @@
    "issues": []
   },
   {
-   "id": "t_7043a7b91662866dc5fa",
-   "sourceHash": "7043a7b91662866dc5fa1b3b9997241381612bc9d70153e109095ed8c6cd0bc1",
-   "text": "Профилактическая помощь для предупреждения заболеваний, связанных с образом жизни. Естественное очищение, восстановление и укрепление организма.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_f1eacbcd76fc645c417a",
-   "sourceHash": "f1eacbcd76fc645c417ac7869875b1d9e8d2c4038b64870945f9650b943c7999",
-   "text": "Классическая Панчакарма для глубокого очищения. Выведение токсинов и перезагрузка организма.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_bbb0277cc146ab924897",
    "sourceHash": "bbb0277cc146ab92489733d95cb504da0fd0cdfbbfd52583988b15649024c50f",
    "text": "Больница с аккредитацией NABH · [[VAR_1]]+ лет традиций · Индивидуальные программы · Лауреат World Luxury Award",
@@ -179,16 +163,6 @@
    "unchangedReason": null,
    "issues": [
     "'World Luxury Award' kept verbatim as an award title (exempt from the language lock)."
-   ]
-  },
-  {
-   "id": "t_5e61d6cb0d9185f0ce07",
-   "sourceHash": "5e61d6cb0d9185f0ce07c55fa7a3056721a6fe5acb453e60081d1daa61de658e",
-   "text": "Улучшение дыхания и здоровье органов дыхания — Roga Chikitsa (Рога Чикитса): лечение бронхиальных заболеваний в Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates 'Therapy' and 'Roga Chikitsa' without a space ('TherapyRoga'); interpreted as two joined title parts — source string may need fixing."
    ]
   },
   {

@@ -4,36 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_7eb97189c5df10b5a8a7",
-   "sourceHash": "7eb97189c5df10b5a8a7c1f80653fc9fc1d837aeb586111760f025912b95d3e9",
-   "text": "Virechanam (purgation) : l'élimination des matières toxiques de l'intestin par l'administration d'une purgation thérapeutique ou d'un laxatif thérapeutique. Le Virechanam est un traitement particulièrement efficace en cas de jaunisse et d'hémorroïdes.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'cure' rendered as 'traitement' (banned word). Source has an unclosed parenthesis; closed with a colon in French. The efficacy claim is kept as in the source, not strengthened; it may need clinical review."
-   ]
-  },
-  {
-   "id": "t_d0cd7d3df25aa6d85765",
-   "sourceHash": "d0cd7d3df25aa6d85765d88537636e52f5ca1d9927634f7097d7e0c1dac3eeea",
-   "text": " : on appelle Vasti la thérapie ayurvédique qui administre, par lavement, des médicaments ou des décoctions naturelles telles que des huiles, du ghee ou du lait. La décoction dépend de la maladie à traiter. Elle présente de nombreux avantages et agit efficacement contre des affections comme les hémorroïdes, la constipation et l'arthrite.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'needs to be cured' rendered as 'à traiter' (banned word 'cure'). Efficacy wording kept as in source; may need clinical review."
-   ]
-  },
-  {
-   "id": "t_0be803d5e810d8ee5187",
-   "sourceHash": "0be803d5e810d8ee5187187d50fcf79e1c521cc582bf7e60556734a174622ec1",
-   "text": "Vasti : on appelle Vasti la thérapie ayurvédique qui administre, par lavement, des médicaments ou des décoctions naturelles telles que des huiles, du ghee ou du lait. La décoction dépend de la maladie à traiter. Elle présente de nombreux avantages et agit efficacement contre des affections comme les hémorroïdes, la constipation et l'arthrite.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'needs to be cured' rendered as 'à traiter' (banned word 'cure'). Efficacy wording kept as in source; may need clinical review."
-   ]
-  },
-  {
    "id": "t_82b4fbc564459cb32bba",
    "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
    "text": " : pour les patients souffrant de troubles touchant la tête, comme la sinusite ou la migraine, cette thérapie ayurvédique est la plus indiquée. Il s'agit d'une technique de nettoyage naturelle qui libère la région cérébrale de toute douleur, des gouttes nasales étant administrées de façon régulée dans les narines.",
@@ -48,26 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_e747d12ed643ce1ef449",
-   "sourceHash": "e747d12ed643ce1ef4491c4bb49aa04373ab861911b311142c29420218386346",
-   "text": " : enfin, ce processus vise à purifier le sang. Selon l'Ayurveda, un sang impur est une cause majeure de nombreuses maladies ; cette thérapie permet donc de purifier le sang et d'agir ainsi sur des problèmes de santé comme le psoriasis, les troubles de la pigmentation, la dermatite et bien d'autres. L'alimentation est essentielle pendant et après le Panchakarma. Après le processus de purification, le patient doit consommer du Kitchari (un plat de légumes mélangés) dès que la faim se fait sentir. Il doit s'en tenir à ce régime pendant trois à quatre jours, en ajoutant progressivement divers autres aliments comme le gingembre, le poivre, le sel, la soupe de haricots mungo et d'autres soupes de légumineuses, et en augmentant peu à peu les quantités.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of' rendered as 'agir sur' to avoid a cure-type claim; may need clinical review."
-   ]
-  },
-  {
-   "id": "t_df61c09156f0a21cf0c1",
-   "sourceHash": "df61c09156f0a21cf0c1d94d7d6fbae0537b4a409c6197f61d02c057f86796f0",
-   "text": "Raktamokshana : enfin, ce processus vise à purifier le sang. Selon l'Ayurveda, un sang impur est une cause majeure de nombreuses maladies ; cette thérapie permet donc de purifier le sang et d'agir ainsi sur des problèmes de santé comme le psoriasis, les troubles de la pigmentation, la dermatite et bien d'autres. L'alimentation est essentielle pendant et après le Panchakarma. Après le processus de purification, le patient doit consommer du Kitchari (un plat de légumes mélangés) dès que la faim se fait sentir. Il doit s'en tenir à ce régime pendant trois à quatre jours, en ajoutant progressivement divers autres aliments comme le gingembre, le poivre, le sel, la soupe de haricots mungo et d'autres soupes de légumineuses, et en augmentant peu à peu les quantités.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'getting rid of' rendered as 'agir sur' to avoid a cure-type claim; may need clinical review."
-   ]
   },
   {
    "id": "t_a9673dced53a8ea87162",

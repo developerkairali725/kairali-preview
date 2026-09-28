@@ -148,16 +148,6 @@
    "issues": []
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Appears to be a code value (e.g. fetchpriority/quality setting), not visible copy; kept unchanged.",
-   "issues": [
-    "If this string is actually shown to users, translate as 'alta'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]Inicio[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]Gama de productos[[CLOSE_3]]",
@@ -172,16 +162,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Nuestra línea de productos en Kairali Ayurvedic Group refleja más de un siglo de conocimiento y experiencia ayurvédicos. Cada composición se elabora con ingredientes naturales y cuidadosamente seleccionados para garantizar su pureza, su eficacia y su coherencia con el milenario saber ayurvédico. Nuestros productos, que van desde aceites reconstituyentes hasta polvos terapéuticos, están elaborados para tratar determinados problemas de salud y favorecer el bienestar general.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source already says 'guarantee purity, effectiveness'; rendered faithfully without strengthening — flag for clinical/compliance review of the efficacy wording."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

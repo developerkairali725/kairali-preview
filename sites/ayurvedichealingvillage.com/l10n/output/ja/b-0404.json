@@ -4,16 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_6db0f20b5b5958419cc1",
-   "sourceHash": "6db0f20b5b5958419cc15bbb18f38c5e2154e6eae0dd27351a4ab8ecaa674636",
-   "text": "：全身を活性化するための、当施設独自の治療のひとつです。推奨される薬用オイルを頭皮と全身に使用します。この療法の間、患者さんは Droni（ドローニ：この用途のために特別に作られた木製の台）の上に横になります。次に、温かい治療用オイルに浸したリネンの布を患者さんの身体に押し当てながら、ゆっくりと軽いタッチでやさしくマッサージします。この治療は病気から身体を守り、免疫システムを高め、活力と健康を増進します。また、リウマチ性疾患、高血圧、関節痛、糖尿病からの回復をサポートします。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment following the therapy name (Pizhichil); leading colon kept. Source contains strong disease-protection/immunity claims — translated faithfully without strengthening; flag for Dr. Deepu John clinical review."
-   ]
-  },
-  {
    "id": "t_a441e0502556e206d117",
    "sourceHash": "a441e0502556e206d117d44b4e8ca6bfb533cfe17a2f23706c5fbfd0da0dc525",
    "text": "含まれるもの",
@@ -137,26 +127,6 @@
    "unchangedReason": null,
    "issues": [
     "'retreat' rendered as プログラム (programme) per clinical register lock."
-   ]
-  },
-  {
-   "id": "t_c3433a6b20c9b1b5ef2f",
-   "sourceHash": "c3433a6b20c9b1b5ef2fb86102a9b6a9716b3e83783971f9e953055960af351e",
-   "text": "Katha Wellness Retreat 2019｜ケーララのヨガとアーユルヴェーダ",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury ... Retreat' in the descriptive part omitted per clinical register lock (no luxury/retreat equivalents); event proper name kept verbatim. Length 44 characters (≤60)."
-   ]
-  },
-  {
-   "id": "t_ae5b491daf23229e64ed",
-   "sourceHash": "ae5b491daf23229e64ed618932e99a6da7fb1441f9a28c28f46cbe32e96ec2ee",
-   "text": "Kairali – The Ayurvedic Healing Village で開催された Katha Wellness Retreat 2019。ケーララの穏やかな自然の中で、アーユルヴェーダのマッサージ、ハタヨガ、ヴェーダの物語、有機ベジタリアン料理を通じて心身をリフレッシュ。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Experience luxury' omitted per clinical register lock; event proper name kept verbatim. Length approx. 141 characters (≤155)."
    ]
   },
   {

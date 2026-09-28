@@ -86,16 +86,6 @@
    "issues": []
   },
   {
-   "id": "t_23fc3bf6b529843d4d10",
-   "sourceHash": "23fc3bf6b529843d4d10b08de87614d00f717f731dfded211143139632f13415",
-   "text": "L’Ayurveda va ben oltre l’aspetto prognostico e diagnostico: non si limita ad affrontare sintomi e malattie, ma guida la persona verso uno stile di vita orientato alla salute. L’alimentazione ayurvedica svolge quindi un ruolo importante nel sostenere un sistema immunitario equilibrato. Con questo obiettivo, Kairali – The Ayurvedic Healing Village vanta una piantagione biologica, fonte del cibo per tutti i visitatori dell’ospedale e del centro. Promuovendo e diffondendo il concetto di ‘ritorno alla natura’, il villaggio offre a tutti i visitatori cibi sani e raffinati, poiché l’alimentazione svolge un ruolo fondamentale nel proteggere da ogni tipo di malattia.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'cures the symptoms and illness' rendered as 'affrontare sintomi e malattie' (no cure claim); 'freeing you from all sorts of diseases' softened to 'proteggere da ogni tipo di malattia' — source is a strong health claim, flag for Dr. Deepu John clinical review. 'Retreat' rendered as 'centro'."
-   ]
-  },
-  {
    "id": "t_b1c2336b025507216fbe",
    "sourceHash": "b1c2336b025507216fbeaa963c4ef65902c4c7a4c89fe9168e1890d3bd7197a6",
    "text": "Le permettiamo di celebrare il cibo aiutandoLa a comprendere, a ogni assaggio, l’importanza della salute olistica. Durante il Suo incantevole soggiorno potrà anche visitare l’orto biologico e scoprire il valore di un cibo naturale, coltivato nel rispetto della natura.",
@@ -103,27 +93,6 @@
    "unchangedReason": null,
    "issues": [
     "'At the retreat' omitted/implicit (register lock); source 'palette' read as 'palate'."
-   ]
-  },
-  {
-   "id": "t_b0014ee51f30a5d31f6a",
-   "sourceHash": "b0014ee51f30a5d31f6a536ea6173cf0edc02cacee6833ddadc4940c69a5a698",
-   "text": "Centro ayurvedico premiato | I riconoscimenti di Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'Luxury' dropped and 'Retreat' rendered as 'Centro'."
-   ]
-  },
-  {
-   "id": "t_d12ce40be4d9d26dd143",
-   "sourceHash": "d12ce40be4d9d26dd14392372f637d75388719dcedc59ef44ba36da7cd469c6d",
-   "text": "Kairali, centro ayurvedico di fama internazionale: 'Top Ten Wellness Destination in Asia' (National Geographic Traveler) e World Luxury Spa Award.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Award titles kept verbatim. 'Wellness retreat' rendered as 'centro ayurvedico'; final sentence 'pinnacle of Ayurvedic healing and luxury hospitality' omitted (banned 'luxury' + 155-char limit).",
-    "t_d12ce40be4d9d26dd143 banned-term-from-source Spa"
    ]
   },
   {

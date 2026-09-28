@@ -56,50 +56,12 @@
    ]
   },
   {
-   "id": "t_a39bec7c3dc2c0bae76c",
-   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
-   "text": "sup",
-   "status": "translated",
-   "unchangedReason": "Markup/tag fragment (HTML sup element), not translatable text.",
-   "issues": []
-  },
-  {
-   "id": "t_051603900bc7a27051b3",
-   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
-   "text": "nd",
-   "status": "translated",
-   "unchangedReason": "English ordinal-suffix fragment in superscript markup; Spanish dates use no ordinal suffix, kept unchanged to avoid breaking the structure.",
-   "issues": [
-    "Spanish uses no ordinal suffix; consider suppressing this superscript fragment in the ES render."
-   ]
-  },
-  {
-   "id": "t_8fad80e805f85badb4de",
-   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
-   "text": "de sept. de 2017)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment; unmatched closing parenthesis kept as in source."
-   ]
-  },
-  {
    "id": "t_ab103f014c27209d3d55",
    "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
    "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
    "status": "translated",
    "unchangedReason": "Internal locator/enum note describing markup position, not visitor-facing text.",
    "issues": []
-  },
-  {
-   "id": "t_ac9718a46bbebd222638",
-   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
-   "text": "El retiro es ideal para quienes desean adoptar un estilo de vida más saludable y libre de estrés. El estrés mental afecta directamente a nuestro sistema nervioso y provoca diversos problemas de salud. Adoptar la antigua ciencia del yoga y del Ayurveda entre hermosos árboles y plantas medicinales, en nuestra apacible aldea ayurvédica de Kerala, le ayudaría a sanar en poco tiempo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source claim 'heal in no time' translated faithfully without strengthening; historical 2017 copy, may merit clinical review."
-   ]
   },
   {
    "id": "t_7f59fa15d55c4dd5e23a",

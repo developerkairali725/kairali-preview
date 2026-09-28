@@ -4,25 +4,9 @@
  "locale": "zh-Hans",
  "units": [
   {
-   "id": "t_d14750f49bd4d264e4d5",
-   "sourceHash": "d14750f49bd4d264e4d50aac31b0005f800ec4713939ad6452cf0c6cb5e611a5",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]减轻肌肉疼痛与紧张，提升体力和整体健康。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_6867273c7e083cfba345",
    "sourceHash": "6867273c7e083cfba345bb912e5ef92c5e6cb9afb047c5a6c9fea72d46d8a72b",
    "text": "[[OPEN_1]]◆[[CLOSE_1]]通过实现身心因素之间的平衡，改善整体健康状况。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_b260fa5b65617c48d696",
-   "sourceHash": "b260fa5b65617c48d69680123f510a32092ca06aece431911b7a35d5d72859e4",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]体力增强、情绪平稳、身心放松，从而提升生活质量。",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -51,16 +35,6 @@
    "unchangedReason": null,
    "issues": [
     "'Retreat' rendered as '住院方案' (in-patient programme) to keep the clinical register and avoid resort connotations."
-   ]
-  },
-  {
-   "id": "t_3a27afd3e2b703e05886",
-   "sourceHash": "3a27afd3e2b703e0588668fd6953de77b4a6c77583cf95c505d8d0d1dbb60517",
-   "text": "从紧张到宁静：患者走向少压力生活的历程",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned words 'Guest' → '患者' (patient) and 'Journeys' → '历程' (process/path); 'Stress-Free' softened to '少压力'. The term 'From' → '出发地' was not applied as it denotes a travel origin, not this sense."
    ]
   },
   {
@@ -128,16 +102,6 @@
    "issues": []
   },
   {
-   "id": "t_380f447c9271735677cd",
-   "sourceHash": "380f447c9271735677cd789990c8f62afdfbb252bb2fcced63c4efddd797eec3",
-   "text": "综合减压与心理健康方案 Manas Shanthi Chikitsa（奇基察）（Kairali 缓解压力与紧张的治疗项目）",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Remove' softened to '缓解' (relieve)."
-   ]
-  },
-  {
    "id": "t_2a7389697bb64a43b46a",
    "sourceHash": "2a7389697bb64a43b46a89c8b744e8b90c3923bfbabe4302b6c9a3381fcfba7b",
    "text": "阿育吠陀减压与心理健康方案",
@@ -170,16 +134,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_21f8bd91ba79028a08b5",
-   "sourceHash": "21f8bd91ba79028a08b59823c64a504a8f2061a90cb980e98ee971c786e554c4",
-   "text": "阿育吠陀压力管理疗法，助您减轻压力",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Stress Free Life' softened to '减轻压力' to avoid overstating outcomes."
-   ]
   },
   {
    "id": "t_3ec10ce909ac00fe463d",

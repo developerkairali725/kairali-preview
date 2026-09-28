@@ -4,14 +4,6 @@
  "locale": "ru",
  "units": [
   {
-   "id": "t_1c3de04b7df74d2bfc74",
-   "sourceHash": "1c3de04b7df74d2bfc743684347a4b49ba2902d9f16fd4febd468e532fc6eb41",
-   "text": "vishakam",
-   "status": "translated",
-   "unchangedReason": "Lowercase identifier/slug key for the room name; kept verbatim.",
-   "issues": []
-  },
-  {
    "id": "t_f32044718bc5cb3bc344",
    "sourceHash": "f32044718bc5cb3bc344dd698b7c7995116d00615e178b77a1cc7a89487cd7a3",
    "text": "Символ Вишакам",
@@ -98,16 +90,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_8cae4a872e2e3c9f6591",
-   "sourceHash": "8cae4a872e2e3c9f6591914d55fb8aaad7e1589416deb879801eea376ed04a22",
-   "text": "Фирменные аюрведические лекарства Kairali точно разработаны с опорой на мудрость Аюрведы для применения при различных состояниях здоровья. Эти проверенные временем составы сочетают натуральные травы с природными веществами, чтобы способствовать эффективному целостному исцелению.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source efficacy wording ('effective healing') translated as-is, not strengthened — may merit clinical review."
-   ]
   },
   {
    "id": "t_093495867aef6f5c3ccd",

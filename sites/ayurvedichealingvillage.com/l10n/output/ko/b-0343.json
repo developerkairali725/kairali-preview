@@ -28,16 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_f168ccdd91548c5a8c87",
-   "sourceHash": "f168ccdd91548c5a8c871bd4b9b757c5e889a1672e774bddef4a2714759a7a8f",
-   "text": "company",
-   "status": "translated",
-   "unchangedReason": "Appears to be a form field name/key (lowercase, paired with the visible label 'Company'); kept verbatim to avoid breaking the form.",
-   "issues": [
-    "If this is visible text rather than a field key, Korean would be '회사'."
-   ]
-  },
-  {
    "id": "t_de4743c879734dc38cb3",
    "sourceHash": "de4743c879734dc38cb3e270ecefcae077c3c2e626f9298115d5a03c8613f89b",
    "text": "회사",

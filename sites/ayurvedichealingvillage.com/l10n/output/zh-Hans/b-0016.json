@@ -70,26 +70,6 @@
    ]
   },
   {
-   "id": "t_d42ef1497900bc6e542c",
-   "sourceHash": "d42ef1497900bc6e542c641a896c88694d15069b8a11247f66ba7342b6c21cd9",
-   "text": "visible",
-   "status": "translated",
-   "unchangedReason": "Appears to be a JS/CSS state keyword; translating could break rendering.",
-   "issues": [
-    "Please confirm whether 'visible' is user-facing; if so, Chinese would be 可见."
-   ]
-  },
-  {
-   "id": "t_e564b4081d7a9ea4b00d",
-   "sourceHash": "e564b4081d7a9ea4b00dada53bdae70c99b87b6fce869f0c3dd4d2bfa1e53e1c",
-   "text": "hidden",
-   "status": "translated",
-   "unchangedReason": "Appears to be a JS/CSS state keyword; translating could break rendering.",
-   "issues": [
-    "Please confirm whether 'hidden' is user-facing; if so, Chinese would be 隐藏."
-   ]
-  },
-  {
    "id": "t_c702bbe4904da4f269a0",
    "sourceHash": "c702bbe4904da4f269a0a7991dc36f9ded63edc45be7a411591a02a309914f7c",
    "text": "[[OPEN_1]]P[[CLOSE_1]] [[OPEN_2]][[CLOSE_2]]",

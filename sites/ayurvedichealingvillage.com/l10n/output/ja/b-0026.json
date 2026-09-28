@@ -64,32 +64,12 @@
    "issues": []
   },
   {
-   "id": "t_2fb99a2cb784ab608440",
-   "sourceHash": "2fb99a2cb784ab6084404c5272733b32422c739e99853f911d79460eb1c16fb8",
-   "text": "カタカリは、信仰の行為と、善と悪の普遍的な対立を描く古典舞踊劇です。長年の修練を要するこの舞踊は、振付、表情、手の動きによってインドの民間伝承を表現し、インド・ケーララ州のヒーリングビレッジに滞在する患者様にもしばしば披露されています。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 患者様 (patients) per clinical register."
-   ]
-  },
-  {
    "id": "t_4af6a36348f8b88ca4e7",
    "sourceHash": "4af6a36348f8b88ca4e7f790b6435de0ac1e0f7d29294dda33bf100c598972b3",
    "text": "モヒニヤッタム",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_2f1a29dd8b1ce5049fd8",
-   "sourceHash": "2f1a29dd8b1ce5049fd8bd8c3172760c120e4a1e26b509a7579555d42207f967",
-   "text": "ケーララの古典舞踊モヒニヤッタムは、ヒンドゥー神話にその起源を持ちます。波打つような動きは、魅惑の女神モヒニの舞を表しています。モヒニは、不老不死の霊薬を取り戻すため、揺らめく足さばき、情熱的なまなざし、優雅なしぐさで悪魔たちを魅了しました。目を楽しませるこの舞踊では、女性たちが純白またはアイボリーの、金糸の細工が施されたシンプルで上品な衣装をまとって踊ります。当施設でケーララ州のアーユルヴェーダ治療パッケージを受ける患者様に、文化的な見どころとしてしばしば披露されています。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 患者様 and 'retreat' as 当施設 per clinical register."
-   ]
   },
   {
    "id": "t_466afdbf2512781ff026",
@@ -152,16 +132,6 @@
    ]
   },
   {
-   "id": "t_34da021ac038e8376abb",
-   "sourceHash": "34da021ac038e8376abb94c9cd998997967fe48323495267585c7989e4773ba1",
-   "text": "その他の患者様の声 →",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 患者様 (patients) per clinical register."
-   ]
-  },
-  {
    "id": "t_29d94922512b93e8d81f",
    "sourceHash": "29d94922512b93e8d81ffb4c721e52afd32e80d952ebe753ea2b739159219dab",
    "text": "記事",
@@ -210,16 +180,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_f09b1dcc2668ce68696c",
-   "sourceHash": "f09b1dcc2668ce68696cd13db0cd77dd314e934cd77f67e1d93f47931164ef8a",
-   "text": "NABH認定病院 · [[VAR_1]]年以上の伝統 · 30,000件以上の改善実績 · World Luxury Award 受賞",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Award name 'World Luxury Award' kept verbatim as a proper name per rules."
-   ]
   }
  ]
 }

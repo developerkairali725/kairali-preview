@@ -28,16 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_f168ccdd91548c5a8c87",
-   "sourceHash": "f168ccdd91548c5a8c871bd4b9b757c5e889a1672e774bddef4a2714759a7a8f",
-   "text": "company",
-   "status": "translated",
-   "unchangedReason": "Lowercase duplicate of the 'Company' label; appears to be a form field identifier",
-   "issues": [
-    "Verify whether this string is ever displayed; if so, translate as 'azienda'."
-   ]
-  },
-  {
    "id": "t_de4743c879734dc38cb3",
    "sourceHash": "de4743c879734dc38cb3e270ecefcae077c3c2e626f9298115d5a03c8613f89b",
    "text": "Azienda",

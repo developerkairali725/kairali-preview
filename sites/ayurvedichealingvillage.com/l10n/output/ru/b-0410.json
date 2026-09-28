@@ -56,50 +56,12 @@
    ]
   },
   {
-   "id": "t_a39bec7c3dc2c0bae76c",
-   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
-   "text": "sup",
-   "status": "translated",
-   "unchangedReason": "HTML tag name (superscript markup), language-neutral.",
-   "issues": []
-  },
-  {
-   "id": "t_051603900bc7a27051b3",
-   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
-   "text": "-го",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment: English ordinal suffix 'nd' in superscript after '22'; rendered as the Russian ordinal ending '-го' so it reads '22-го сентября'. Consider suppressing the superscript in RU."
-   ]
-  },
-  {
-   "id": "t_8fad80e805f85badb4de",
-   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
-   "text": "сентября 2017)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment following the ordinal day; unmatched parenthesis kept as in the source."
-   ]
-  },
-  {
    "id": "t_ab103f014c27209d3d55",
    "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
    "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
    "status": "translated",
    "unchangedReason": "Internal DOM-position locator (js:enum), not display copy; kept unchanged so it continues to match.",
    "issues": []
-  },
-  {
-   "id": "t_ac9718a46bbebd222638",
-   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
-   "text": "Этот ретрит идеально подойдёт тем, кто хочет перейти к более здоровому образу жизни без стресса. Психическое напряжение напрямую влияет на нервную систему и приводит к различным проблемам со здоровьем. Практика древней науки йоги и аюрведы среди прекрасных деревьев и лекарственных трав в нашей благодатной аюрведической деревне в Керале может помочь вам восстановиться.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'would help you heal in no time' softened to 'may help you recover' — no speed-of-healing claim."
-   ]
   },
   {
    "id": "t_7f59fa15d55c4dd5e23a",

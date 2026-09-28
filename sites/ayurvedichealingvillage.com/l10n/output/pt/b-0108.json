@@ -44,26 +44,6 @@
    "issues": []
   },
   {
-   "id": "t_6827b60adc52e7f89555",
-   "sourceHash": "6827b60adc52e7f8955507328bcb6ba6128ea17068792a572e415d367f179a09",
-   "text": "Terapia Panchakarma ayurvédica para desintoxicação do corpo, equilíbrio dos doshas e imunidade. Marque hoje o seu programa personalizado na Índia.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'wellness retreat' rendered as 'programa personalizado' (clinical lock: resort/spa-type framing avoided). Condensed to fit the 155-character seo.description limit."
-   ]
-  },
-  {
-   "id": "t_4498ca83c5f3e2dd23b4",
-   "sourceHash": "4498ca83c5f3e2dd23b40417b13190b120403a54c296aa5d598aafc2dfa62c73",
-   "text": "Desintoxicação científica, com a confiança de 80% dos pacientes, para o equilíbrio do corpo, da mente e dos doshas | Mais de 30.000 vidas transformadas",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guest-trusted' rendered as 'confiança ... dos pacientes' (banned term 'guests'). Statistical claims (80%, 30,000+) are unverified in source — flag for clinical/fact review (Dr. Deepu John) before publishing."
-   ]
-  },
-  {
    "id": "t_e6b1d78d81623bf5eb14",
    "sourceHash": "e6b1d78d81623bf5eb148ddd0233637e17b406762d126db19d18cebb191d7df8",
    "text": "O que é a [[OPEN_1]]Terapia Panchakarma?[[CLOSE_1]]",
@@ -78,16 +58,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_adb6ba78928f2ef42ece",
-   "sourceHash": "adb6ba78928f2ef42ecea03c1b498eeca0c25f3a51831d8d536bb3cec4d3f1a4",
-   "text": "Com base em 5.000 anos de sabedoria ayurvédica, o Panchakarma é a referência de excelência na desintoxicação e no rejuvenescimento naturais. Com a confiança de pacientes de todo o mundo, a Kairali mantém esta tradição com excelência clínica moderna. O protocolo de cinco etapas atua de forma profunda e metódica, exigindo um compromisso mínimo de duas semanas para resultados ideais.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'pacientes' (clinical lock)."
-   ]
   },
   {
    "id": "t_141def12cb51c81f71df",
@@ -136,68 +106,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_aa91aa8a5ebc68a35f88",
-   "sourceHash": "aa91aa8a5ebc68a35f88514da85535d80af0e04aa1ced338bacc0052b64427fc",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Desintoxicação completa, restaurando o equilíbrio físico e mental",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ef70c8c8a738563a7c01",
-   "sourceHash": "ef70c8c8a738563a7c01197d0a43ea3fc414905d73a37417c56242b5ccb11ca2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Alívio da inflamação crónica, de doenças de pele e de problemas digestivos ou relacionados com o estilo de vida",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ed6f7ba3f3460e396cc5",
-   "sourceHash": "ed6f7ba3f3460e396cc5f129280e318bd06858728757835806738b598ec26978",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Redução da ansiedade e do stress, maior clareza mental e equilíbrio emocional",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_839f8e3fd33b8fe13568",
-   "sourceHash": "839f8e3fd33b8fe13568d601585f60e6afac721a13fcaef53324081dc47b3523",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Reforço da imunidade e longevidade saudável através da purificação sistémica",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_33fca6287dae2e95517d",
-   "sourceHash": "33fca6287dae2e95517da496f5896595110fdaac5121441da40cd1a598dbf3a2",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]87% dos pacientes relatam uma melhoria acentuada da saúde em duas semanas. 94% mantêm os benefícios a longo prazo",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'guests' rendered as 'pacientes' (clinical lock). Outcome statistics (87%, 94%) are unverified efficacy claims — flag for Dr. Deepu John's clinical sign-off."
-   ]
-  },
-  {
-   "id": "t_3a1a61fbb2d93d91fa0d",
-   "sourceHash": "3a1a61fbb2d93d91fa0da2dd58db49c76172a227a6454e9c25c5d5ed9d679c50",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]92% de satisfação entre os pacientes internacionais (dados de 2024)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Statistic (92%, 2024 data) unverified — flag for fact review."
-   ]
-  },
-  {
-   "id": "t_866e5499705b3d2cfeaf",
-   "sourceHash": "866e5499705b3d2cfeaf08574949587134dcccd1484f2a7017bfe15283b13605",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Zero reações adversas em mais de 100.000 terapias — cuidados clínicos seguros e especializados",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Safety claim ('zero adverse reactions in 100,000+ therapies') is unverified — flag for Dr. Deepu John's clinical sign-off."
-   ]
   },
   {
    "id": "t_215186065065595850af",

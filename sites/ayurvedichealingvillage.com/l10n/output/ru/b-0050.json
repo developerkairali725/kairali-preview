@@ -4,16 +4,6 @@
  "locale": "ru",
  "units": [
   {
-   "id": "t_3904c12b98a40e5896d7",
-   "sourceHash": "3904c12b98a40e5896d7e1312b721d06cf34c86847116c754707b4690a1aac7e",
-   "text": ": регулярные повторные консультации с аюрведическим врачом позволяют оценивать динамику, при необходимости корректировать план лечения и отвечать на ваши вопросы. На этих встречах также отслеживается эффективность процедур, лекарственных средств и изменений образа жизни, чтобы добиться наилучших результатов в контроле хронической боли в спине.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensure optimal results' rendered as 'чтобы добиться наилучших результатов' (to achieve the best results) to avoid implying a guarantee."
-   ]
-  },
-  {
    "id": "t_944d6a11e32075ffc33b",
    "sourceHash": "944d6a11e32075ffc33becef54cd6b6591ad7027974226eb136b67affdb124b1",
    "text": "Хроническая боль и дискомфорт в спине",
@@ -198,16 +188,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_883cceab3c7ee7f2403c",
-   "sourceHash": "883cceab3c7ee7f2403c19792d14a9c68fd619d0b918df998bf643ccc1687922",
-   "text": "Классическая вилла в Kairali — Аюрведа в Керале",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury Ayurveda Retreat' replaced with neutral 'Аюрведа в Керале' (Ayurveda in Kerala) per language lock (luxury banned); also fits the 60-character seo.title limit."
-   ]
   }
  ]
 }

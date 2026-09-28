@@ -4,16 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "العلاج الأيورفيدي | المراكز | قرية الشفاء | مراكز صحية",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Health Resorts' rendered as 'health centres' (مراكز صحية) per the clinical register (resort banned)."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "حافظت Kairali على تقاليد الأيورفيدا العريقة من خلال مراكزها الأيورفيدية، بدءًا من وصف الأدوية الأيورفيدية وصولًا إلى تقديم النصائح حول نمط الحياة الصحي.",
@@ -70,26 +60,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "برنامج أيورفيدي لإنقاص الوزن في الهند | إدارة طبيعية للوزن",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Luxury ... Retreat' rendered as 'programme' (برنامج) per the clinical register (luxury banned) and to fit the 60-character seo.title limit."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "برنامج أيورفيدي متميز لإنقاص الوزن لدى Kairali بجنوب الهند، لفقدان مستدام للدهون عبر علاجات أيورفيدية وتدليك بالزيوت العشبية، دون حميات أو تمارين قاسية.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Retreat' rendered as 'programme'; 'natural detox methods' omitted to fit the 155-character seo.description limit. 'Achieve sustainable fat loss' kept as purpose ('for'), not as a guarantee."
-   ]
   },
   {
    "id": "t_bfa53d21f32a5f0d75b2",

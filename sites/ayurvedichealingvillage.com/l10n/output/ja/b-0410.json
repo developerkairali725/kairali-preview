@@ -56,50 +56,12 @@
    ]
   },
   {
-   "id": "t_a39bec7c3dc2c0bae76c",
-   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
-   "text": "sup",
-   "status": "translated",
-   "unchangedReason": "Appears to be an HTML tag name (superscript) leaked into the string; language-neutral.",
-   "issues": []
-  },
-  {
-   "id": "t_051603900bc7a27051b3",
-   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
-   "text": "nd",
-   "status": "translated",
-   "unchangedReason": "English ordinal suffix fragment (as in 22nd); Japanese dates carry no ordinal suffix, so left as-is to avoid breaking the assembled string.",
-   "issues": [
-    "If this fragment is rendered next to a Japanese date it should probably be emptied; needs a developer check."
-   ]
-  },
-  {
-   "id": "t_8fad80e805f85badb4de",
-   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
-   "text": "9月、2017年）",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment of a split date; Japanese date order differs, so the assembled string may read awkwardly — developer check advised."
-   ]
-  },
-  {
    "id": "t_ab103f014c27209d3d55",
    "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
    "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
    "status": "translated",
    "unchangedReason": "Internal DOM-position locator (js:enum), not visitor-facing text; translating it could break the lookup.",
    "issues": []
-  },
-  {
-   "id": "t_ac9718a46bbebd222638",
-   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
-   "text": "このリトリートは、ストレスの少ない、より健康的なライフスタイルを取り入れたい方に最適です。精神的なストレスは神経系に直接影響し、さまざまな健康上の問題につながります。ケーララの穏やかなアーユルヴェーダ・ヴィレッジで、美しい木々と薬草に囲まれながらヨガとアーユルヴェーダという古来の科学を取り入れることは、心身の回復を支える助けとなるでしょう。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'would help you heal in no time' is an efficacy/speed claim; softened to 'can help support recovery of mind and body' per the no-strengthening rule."
-   ]
   },
   {
    "id": "t_7f59fa15d55c4dd5e23a",

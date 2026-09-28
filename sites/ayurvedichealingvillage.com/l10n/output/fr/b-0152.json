@@ -4,16 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_e49971717b516bcc687a",
-   "sourceHash": "e49971717b516bcc687a20e7794e9389baf5d0b481c50b3174c409dc59be41a4",
-   "text": " : parce que chaque personne est unique, nous adaptons chaque aspect de la thérapie à vos besoins, à votre constitution et à l’état de votre peau. Cette approche personnalisée vise à maximiser l’efficacité du traitement pour des résultats optimaux.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Rendered 'maximizes' as 'vise à maximiser' to avoid an absolute efficacy claim."
-   ]
-  },
-  {
    "id": "t_0920cfc599b3dc1c4e75",
    "sourceHash": "0920cfc599b3dc1c4e75a501f0711a809a367ddcc9b381a97df99063863a7231",
    "text": "Thérapies ayurvédiques de premier ordre",
@@ -71,16 +61,6 @@
    "unchangedReason": null,
    "issues": [
     "'Retreat Experience' rendered as 'séjour' (stay) to keep the clinical register."
-   ]
-  },
-  {
-   "id": "t_5955ea41782e0d27ab5a",
-   "sourceHash": "5955ea41782e0d27ab5a8f9bcf7756cd0eeaab1572a41dd3b65d33eef3047073",
-   "text": " : nos séjours offrent un cadre paisible, propice à la détente et à la concentration sur votre parcours de soin. Vous bénéficiez d’une équipe attentive, d’équipements de grand confort et d’un environnement ressourçant, pour une expérience globale plus agréable.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned-register substitutions: 'retreats' → 'séjours', 'healing journey' → 'parcours de soin', 'luxurious amenities' → 'équipements de grand confort'."
    ]
   },
   {

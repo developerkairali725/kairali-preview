@@ -4,16 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_504aed77fda1b765427d",
-   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]生活の質の向上と薬への依存の軽減",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source claim ('reduced medication dependence') translated faithfully; medication-related benefit claim may warrant Dr. Deepu John's review of the English source."
-   ]
-  },
-  {
    "id": "t_426ac289eefa90f4dff8",
    "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
    "text": "医師による指導",
@@ -54,32 +44,12 @@
    "issues": []
   },
   {
-   "id": "t_d13e82941eedb9ffe701",
-   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
-   "text": "アーユルヴェーダの医師が定期的に経過を確認し、必要に応じて治療内容を調整します。マッサージやハーブを用いた治療など、一人ひとりに合わせた療法を行います。バランスのとれた生活、食事、ストレス管理についての指導も行い、安全で効果的な治療の過程を医師が継続的にサポートします。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 治療の過程 (treatment process) to avoid the banned word."
-   ]
-  },
-  {
    "id": "t_9fac5bf476b112f23420",
    "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
    "text": "治療終了後",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_09ae86a975d4271e3ba2",
-   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
-   "text": "アーユルヴェーダの医師によるフォローアップの診察で、治療の効果を評価し、アドバイスを行います。持続的な効果のために、食事や生活習慣に関する推奨事項など、治療後の実践を日常に取り入れていただきます。継続的なサポートにより長期的な健康を支え、ご不安やご要望にも対応します。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ongoing support ensures long-term health' rendered as 長期的な健康を支え (supports long-term health) rather than a guarantee, per the no-strengthening/support≠cure rule."
-   ]
   },
   {
    "id": "t_8c085c24fd5465b7feb9",

@@ -28,16 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_3fa405a8301ace34d11c",
-   "sourceHash": "3fa405a8301ace34d11cf44a816080b8f0e49a48fbd048b8aef1543a8c58bdb6",
-   "text": "cover",
-   "status": "translated",
-   "unchangedReason": "CSS object-fit value / code identifier; must not be translated.",
-   "issues": [
-    "If this is a user-visible label, translate as 填充."
-   ]
-  },
-  {
    "id": "t_d5b47460464541aed2e8",
    "sourceHash": "d5b47460464541aed2e8bf2b14e5d54e0853e12307dc82a0ff31760f4197ec2a",
    "text": "请拖放 PNG、JPEG、WebP 或 AVIF 格式的图片。",
@@ -52,16 +42,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_01024deec75e9c0eb827",
-   "sourceHash": "01024deec75e9c0eb827d664f2a6880101e363819017fa6d96b0b345ea25ef3e",
-   "text": "rounded",
-   "status": "translated",
-   "unchangedReason": "Image-slot shape value / code identifier; kept unchanged to avoid breaking functionality.",
-   "issues": [
-    "If this is a user-visible label, translate as 圆角."
-   ]
   },
   {
    "id": "t_816ed88ba06423ca2fc0",
@@ -86,24 +66,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_69bf182c0e0e9cabc3b8",
-   "sourceHash": "69bf182c0e0e9cabc3b88fece88e2b3ab1168a529ad49a2b2436c8a91ca72647",
-   "text": "阿育吠陀治疗项目 | Kairali 阿育吠陀疗愈村，喀拉拉邦",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_9c701472da04bfa9cc3c",
-   "sourceHash": "9c701472da04bfa9cc3c6a92cbad22d7ea1d8a5e6875c73b495db1a7041143e9",
-   "text": "Kairali – 阿育吠陀疗愈村为您介绍瑜伽疗法的含义与起源，以及阿育吠陀对治疗性瑜伽的重要意义。我们位于印度喀拉拉邦帕拉卡德的研修中心开设瑜伽教师培训课程。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat center' rendered as 研修中心 (training/study centre) to keep the clinical register."
-   ]
   },
   {
    "id": "t_d153582e33d249f457e5",

@@ -84,16 +84,6 @@
    "issues": []
   },
   {
-   "id": "t_747a8f398395dde8e524",
-   "sourceHash": "747a8f398395dde8e524d9f983784bd8441c5cfe4307b5a079be5412ee65c314",
-   "text": "website",
-   "status": "translated",
-   "unchangedReason": "Appears to be the honeypot field's technical name/identifier; kept unchanged so form handling is not broken.",
-   "issues": [
-    "If this is visible label text rather than a field name, the Arabic would be 'الموقع الإلكتروني'."
-   ]
-  },
-  {
    "id": "t_d076cfad7715f92e8277",
    "sourceHash": "d076cfad7715f92e82773c1e757d147b5bfbdc28e70c77a9ec6a41a0c9aa2532",
    "text": "اترك هذا الحقل فارغًا",
@@ -110,14 +100,6 @@
    "issues": [
     "Internal developer note rather than patient-facing copy; translated anyway."
    ]
-  },
-  {
-   "id": "t_b4dc66dde806261bdda8",
-   "sourceHash": "b4dc66dde806261bdda8607d8707aa727d308cd80272381a5583f63899918467",
-   "text": "off",
-   "status": "translated",
-   "unchangedReason": "Technical attribute value (e.g. autocomplete=\"off\"); must stay unchanged.",
-   "issues": []
   },
   {
    "id": "t_9da6aaf8655dc7965d0c",

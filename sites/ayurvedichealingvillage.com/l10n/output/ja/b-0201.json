@@ -158,16 +158,6 @@
    ]
   },
   {
-   "id": "t_6ef7c9b15ecdd6908372",
-   "sourceHash": "6ef7c9b15ecdd69083724b84cfdc2100351963488b51b4ea2fcbddf493fbec94",
-   "text": "high",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical attribute value (e.g. fetchpriority/quality='high') in a photo-collections script; translating could break behaviour.",
-   "issues": [
-    "Role says js:display; please confirm whether this string is user-visible. If visible, Japanese would be '高'."
-   ]
-  },
-  {
    "id": "t_7b599573401f0f881844",
    "sourceHash": "7b599573401f0f8818446edbfe4b39da89e858bdea350294019439dd39db005d",
    "text": "[[OPEN_1]]ホーム[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]製品ラインナップ[[CLOSE_3]]",
@@ -182,16 +172,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_d2f91486d3d6899bfbc1",
-   "sourceHash": "d2f91486d3d6899bfbc165e71ab4dbbdc1c74f31179c467c88dc2db1df11e0f3",
-   "text": "Kairali Ayurvedic Groupの製品ラインナップには、1世紀以上にわたるアーユルヴェーダの知識と経験が反映されています。各処方には、厳選された天然素材を使用し、純度と有効性、そして古くから伝わるアーユルヴェーダの知識との適合性を保証しています。回復を促すオイルから治療用パウダーまで、当社の製品は特定の健康上の問題に対応し、全体的な健康を促進するよう作られています。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source itself uses 'guarantee purity, effectiveness'; translated faithfully without strengthening, but flag for clinical/compliance review of the efficacy guarantee."
-   ]
   },
   {
    "id": "t_8e864e83d49edc613a4d",

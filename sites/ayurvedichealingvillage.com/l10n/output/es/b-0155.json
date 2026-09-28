@@ -4,14 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_337405e8258c57681bf7",
-   "sourceHash": "337405e8258c57681bf7f5fce09cedd9094d6aff1bc1e07559cec24b3035e22a",
-   "text": "Quienes buscan un médico ayurvédico con experiencia y una trayectoria demostrada en el tratamiento de la hernia discal.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_5e8196b1633506f593d4",
    "sourceHash": "5e8196b1633506f593d4c7139883318c6105eba1118d1d5bae996aaeb154c108",
    "text": "Proceso del [[OPEN_1]]Tratamiento de restauración de discos vertebrales y nervios[[CLOSE_1]]",
@@ -38,63 +30,9 @@
    "issues": []
   },
   {
-   "id": "t_7872f386f1867382e361",
-   "sourceHash": "7872f386f1867382e36160a9e9a4b7de91039c689211ee1d27c6570ddad5b20d",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Benefíciese de más de [[VAR_1]] años de conocimiento especializado y de la trayectoria de nuestro experimentado médico ayurvédico, que ha tratado a más de 30,000 pacientes con hernia discal.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Number '30,000+' kept as '30,000' with 'más de'; 'successful track record' kept as 'trayectoria' without adding outcome claims. Figure should be verified against the source of truth."
-   ]
-  },
-  {
-   "id": "t_b2efdac1506a9d3898ca",
-   "sourceHash": "b2efdac1506a9d3898cade0ff6c8e59730fc4bc04a140cebb95f1f8ee0a287f6",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Descubra un enfoque holístico que se centra en la causa de fondo de la hernia discal y restablece el equilibrio del cuerpo mediante terapias ayurvédicas, medicamentos herbales y ajustes en el estilo de vida.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_82d0b4b332f2120cca99",
-   "sourceHash": "82d0b4b332f2120cca993e4de76a95729426bc8a38b07a0b65eb812b5985078e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Reciba una atención individualizada con un plan de tratamiento adaptado, orientado a una recuperación eficaz y precisa según sus necesidades particulares.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensuring effective ... healing' softened to 'orientado a una recuperación eficaz' to avoid a guarantee."
-   ]
-  },
-  {
-   "id": "t_5a2f0c8a1a8005b1a735",
-   "sourceHash": "5a2f0c8a1a8005b1a735911b68e49991052eaa41f0ff0e791688993364f365c1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Disfrute de un entorno acogedor con instalaciones avanzadas, terapeutas ayurvédicos cualificados y métodos de sanación naturales. Nuestro enfoque busca un alivio duradero, la prevención y un bienestar integral, transformando su proceso de recuperación de la hernia discal.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'proceso'; 'ensures long-term relief' softened to 'busca un alivio duradero' to avoid a guarantee."
-   ]
-  },
-  {
    "id": "t_80cdccd1efc758c12d7c",
    "sourceHash": "80cdccd1efc758c12d7c4089776100bd8396d30326f760dcd7a0a88b8a259b53",
    "text": "[[OPEN_1]]Beneficios[[CLOSE_1]] del tratamiento de restauración de discos vertebrales y nervios",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d07d2edce6626513b31f",
-   "sourceHash": "d07d2edce6626513b31f5edd61719df3770f843869ac412e5913ffe0b6d7cb1a",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Obtenga un alivio natural y eficaz del dolor, con menor necesidad de analgésicos, mediante terapias ayurvédicas y medicamentos herbales.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c65ba2ecca94d615881e",
-   "sourceHash": "c65ba2ecca94d615881e03871db6b2ab3c6403dbdf272e41cdc9097562d979b1",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Mejore la flexibilidad, recupere la movilidad y fortalezca la columna, apoyando los discos afectados y previniendo nuevos problemas.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -108,32 +46,12 @@
    "issues": []
   },
   {
-   "id": "t_9e142a37ddcf63c33c06",
-   "sourceHash": "9e142a37ddcf63c33c06606578ae1ab44c46b2db23da185e4b85f706c6abca9d",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Corrija los desequilibrios, prevenga las recaídas de la hernia discal y mejore su bienestar con orientación sobre el estilo de vida en un entorno de sanación centrado en su proceso.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'proceso'."
-   ]
-  },
-  {
    "id": "t_6145541a269ef64e173c",
    "sourceHash": "6145541a269ef64e173cda0ef867d9ea4ca663ab80f773d2ce8eb517a4317d7b",
    "text": "Tratamiento de restauración de discos vertebrales y nervios",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6e9e49e4e590477d3724",
-   "sourceHash": "6e9e49e4e590477d3724935f1e213f463e885ef3102e31e2a9e9d772c1b8ff1a",
-   "text": "Sanación natural: experiencias de pacientes con el tratamiento de la hernia discal en KTAHV",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest' rendered as 'pacientes'."
-   ]
   },
   {
    "id": "t_1c492cc643bae99843bb",
@@ -166,26 +84,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_5369d183ad1b227f1fc4",
-   "sourceHash": "5369d183ad1b227f1fc47bbdaf7909c96224426ef6c07bc4c12954534b67b921",
-   "text": "Tratamiento de restauración de discos vertebrales y nerviosSnayu Bala Chikitsa (Tratamiento de Kairali para la hernia discal)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates two strings without a space; preserved as in source."
-   ]
-  },
-  {
-   "id": "t_cbc8d6b61c30d838235f",
-   "sourceHash": "cbc8d6b61c30d838235f89ce00e78d3c1b3ce1352cf3455f45b3e026dc87c82c",
-   "text": "Tratamiento ayurvédico de hernia discal y nervios | Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Kairali Retreat' rendered as 'Kairali' to avoid resort framing and fit the 60-character seo.title limit (59)."
-   ]
   },
   {
    "id": "t_c15bb08a04984d23ea3a",

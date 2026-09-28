@@ -4,16 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_37048844af99a4a751bd",
-   "sourceHash": "37048844af99a4a751bd167c9e0744f1bb324afc5725e4f20bd65ee0386cec55",
-   "text": "Tratamiento ayurvédico | Centros | Healing Village",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned word 'Health Resorts' omitted (clinical lock); also keeps title within 60 chars."
-   ]
-  },
-  {
    "id": "t_a5182c2ef569a49ea935",
    "sourceHash": "a5182c2ef569a49ea935659b283ba79e0dc5c7c755e7053fdeaa7119b27f0337",
    "text": "Kairali mantiene viva la tradición ayurvédica en sus centros: desde la prescripción de medicamentos ayurvédicos hasta consejos para una vida sana.",
@@ -72,26 +62,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9b61128e9510cfaf8459",
-   "sourceHash": "9b61128e9510cfaf84598291a0e9d7fbd181717a01f8c47f857fd1fdfadbb9c7",
-   "text": "Programa ayurvédico de pérdida de peso en la India",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned 'Luxury' omitted and 'Retreat' rendered as 'Programa' (clinical lock); 'Natural Weight Management' dropped to meet 60-char title limit."
-   ]
-  },
-  {
-   "id": "t_fce9890e90c18330c61d",
-   "sourceHash": "fce9890e90c18330c61d6986779745d63d574db10f3c141611235134926c767a",
-   "text": "Pérdida de peso ayurvédica premium en Kairali (India): terapias, masajes con aceites de hierbas y desintoxicación natural, sin dietas extremas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered without resort framing; condensed for the 155-char limit — the 'sustainable fat loss' outcome claim and 'or exercise required' were omitted rather than strengthened. Flag for clinical review."
-   ]
   },
   {
    "id": "t_bfa53d21f32a5f0d75b2",

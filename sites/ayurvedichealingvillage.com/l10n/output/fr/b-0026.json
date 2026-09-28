@@ -64,32 +64,12 @@
    "issues": []
   },
   {
-   "id": "t_2fb99a2cb784ab608440",
-   "sourceHash": "2fb99a2cb784ab6084404c5272733b32422c739e99853f911d79460eb1c16fb8",
-   "text": "Le Kathakali est un ancien drame dansé classique qui met en scène un acte de dévotion et le conflit universel entre le bien et le mal. Fruit d’années d’apprentissage, cette forme de danse utilise la chorégraphie, les expressions du visage et les gestes des mains pour exprimer le folklore indien ; elle est souvent présentée aux patients et visiteurs séjournant au Healing Village, au Kerala, en Inde.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 'patients et visiteurs' per the clinical language lock."
-   ]
-  },
-  {
    "id": "t_4af6a36348f8b88ca4e7",
    "sourceHash": "4af6a36348f8b88ca4e7f790b6435de0ac1e0f7d29294dda33bf100c598972b3",
    "text": "MOHINIYATTAM",
    "status": "translated",
    "unchangedReason": "Name of a classical art form; kept unchanged.",
    "issues": []
-  },
-  {
-   "id": "t_2f1a29dd8b1ce5049fd8",
-   "sourceHash": "2f1a29dd8b1ce5049fd8bd8c3172760c120e4a1e26b509a7579555d42207f967",
-   "text": "Danse classique du Kerala, le Mohiniyattam puise ses racines dans la mythologie hindoue. Ses mouvements ondulants évoquent la danse de l’enchanteresse Mohini, qui séduisit les démons par ses pas oscillants, son regard passionné et ses gestes gracieux afin de récupérer l’élixir. Un régal pour les yeux : les danseuses portent des tenues simples et élégantes, blanc pur ou ivoire, ornées de filigrane doré ; cette danse est souvent proposée comme temps fort culturel aux patients et visiteurs qui suivent un programme de soins ayurvédiques dans ce centre du Kerala.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 'patients et visiteurs'; 'retreat' as 'centre' per the clinical language lock."
-   ]
   },
   {
    "id": "t_466afdbf2512781ff026",
@@ -152,16 +132,6 @@
    ]
   },
   {
-   "id": "t_34da021ac038e8376abb",
-   "sourceHash": "34da021ac038e8376abb94c9cd998997967fe48323495267585c7989e4773ba1",
-   "text": "Plus de témoignages de patients →",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest words' rendered as 'témoignages de patients' per the clinical language lock."
-   ]
-  },
-  {
    "id": "t_29d94922512b93e8d81f",
    "sourceHash": "29d94922512b93e8d81ffb4c721e52afd32e80d952ebe753ea2b739159219dab",
    "text": "Article",
@@ -209,16 +179,6 @@
    "unchangedReason": null,
    "issues": [
     "'Help heal' rendered as 'aident à apaiser' to avoid implying a cure in a press quote paraphrase."
-   ]
-  },
-  {
-   "id": "t_f09b1dcc2668ce68696c",
-   "sourceHash": "f09b1dcc2668ce68696cd13db0cd77dd314e934cd77f67e1d93f47931164ef8a",
-   "text": "Hôpital certifié NABH · [[VAR_1]]+ ans d’héritage · 30,000+ transformations réussies · Lauréat du World Luxury Award",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'World Luxury Award' kept verbatim as an award name. The '30,000+ Successful Transformations' claim is carried as-is — flag for clinical review."
    ]
   }
  ]

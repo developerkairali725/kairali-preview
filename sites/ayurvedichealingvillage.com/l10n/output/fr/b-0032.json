@@ -4,14 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_504aed77fda1b765427d",
-   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Meilleure qualité de vie et moindre dépendance aux médicaments",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_426ac289eefa90f4dff8",
    "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
    "text": "Accompagnement médical",
@@ -52,32 +44,12 @@
    "issues": []
   },
   {
-   "id": "t_d13e82941eedb9ffe701",
-   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
-   "text": "Vous ferez régulièrement le point avec le médecin ayurvédique afin de suivre vos progrès et d’ajuster le traitement. Des thérapies personnalisées, notamment des massages et des soins à base de plantes, vous seront administrées. Des conseils sur l’équilibre de vie, l’alimentation et la gestion du stress vous sont prodigués, avec un accompagnement médical continu pour un parcours sûr et efficace.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'parcours' (path/process)."
-   ]
-  },
-  {
    "id": "t_9fac5bf476b112f23420",
    "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
    "text": "Après le soin",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_09ae86a975d4271e3ba2",
-   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
-   "text": "Des consultations de suivi avec le médecin ayurvédique permettent d’évaluer l’efficacité du traitement et de vous conseiller. Vous intégrerez des pratiques post-traitement, comme des recommandations alimentaires et d’hygiène de vie, pour des bienfaits durables. Un accompagnement continu favorise votre santé à long terme et répond à vos questions ou besoins.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'ensures long-term health' rendered as 'favorise votre santé à long terme' to avoid a guarantee; source wording may need clinical review."
-   ]
   },
   {
    "id": "t_8c085c24fd5465b7feb9",

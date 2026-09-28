@@ -4,16 +4,6 @@
  "locale": "it",
  "units": [
   {
-   "id": "t_9bbde7e24be7bcabdef0",
-   "sourceHash": "9bbde7e24be7bcabdef0dc246a4955420dbcf0a0e1a0f599a77afe448a6163bf",
-   "text": "Con oltre [[VAR_1]] anni di esperienza e più di 30,000 pazienti trattati presso Kairali – The Ayurvedic Healing Village, il nostro team conosce bene le difficoltà legate all'artrite e alla spondilite. L'Ayurveda offre soluzioni personalizzate, agendo sugli squilibri dei dosha dell'organismo. Il nostro trattamento ayurvedico per l'artrite comprende massaggi specifici, terapie erboristiche ed esercizi delicati per ridurre l'infiammazione, alleviare il dolore e migliorare la mobilità. I medicinali ayurvedici di origine naturale sostengono il processo di guarigione. Diamo priorità all'informazione, aiutando i pazienti a comprendere il proprio percorso di guarigione e a parteciparvi attivamente. Il nostro approccio olistico, che unisce saggezza antica e pratiche moderne, si concentra sul benessere complessivo: fisico, mentale ed emotivo. Si affidi alla nostra esperienza per un sollievo duraturo e una maggiore vitalità.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'percorso' (path); 'clients' rendered as 'pazienti' per clinical register. Number '30,000+' kept exactly as in source digits ('30,000'); Italian convention would be '30.000' — left unchanged per the keep-numbers rule."
-   ]
-  },
-  {
    "id": "t_1b7e1001dceffea1954b",
    "sourceHash": "1b7e1001dceffea1954b18220e2794309c6f6bec7e29833f623ab8013a4b4082",
    "text": "Pazienti che cercano un approccio olistico alla gestione dell'artrite e della spondilite",
@@ -78,71 +68,9 @@
    "issues": []
   },
   {
-   "id": "t_1e8b862b55efe2215703",
-   "sourceHash": "1e8b862b55efe221570357a21d51f666640a10c5a3469193b3a5a236ed380f6f",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Riceva trattamenti personalizzati in base alla Sua costituzione e allo squilibrio dei dosha. Seguiamo i principi ayurvedici, utilizzando terapie naturali ed erbe per ridurre al minimo gli effetti collaterali.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_a4a83c67e6c9dec6ffbe",
-   "sourceHash": "a4a83c67e6c9dec6ffbeaddd68b7718b42fd73ce35be5bcdabccc211dfe3c400",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Approfondisca la conoscenza dei principi ayurvedici, delle cause della Sua condizione e dei meccanismi dei nostri trattamenti. Ciò Le consente di partecipare attivamente al Suo percorso di guarigione e di prendere decisioni consapevoli sulla Sua salute.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'percorso' (path)."
-   ]
-  },
-  {
-   "id": "t_f8b1f2ba4e5657a0d1ee",
-   "sourceHash": "f8b1f2ba4e5657a0d1ee92a753969ff3a6ec54aeb5b378e26c95da40223a4f96",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Si allontani dallo stress quotidiano nella tranquillità della nostra struttura. Riceva il pieno supporto del nostro team, con controlli di follow-up, monitoraggio dei progressi e adeguamenti del piano di trattamento secondo necessità.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' (resort-sense) rendered as 'struttura' (facility) per the KTAHV language lock."
-   ]
-  },
-  {
    "id": "t_54eca8406fa193c3332d",
    "sourceHash": "54eca8406fa193c3332df7d38996f7635e1a46fdbefeb6765ba3e7fd9bdecb01",
    "text": "[[OPEN_1]]Benefici[[CLOSE_1]] del Trattamento per la riabilitazione articolare e l'artrite",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d06d294d785175a2bb79",
-   "sourceHash": "d06d294d785175a2bb79ad8ac9cba82f87d7287a37ef3245ed1e63258c7eb72e",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Riduzione di dolore, infiammazione e rigidità, con un miglioramento della mobilità articolare, della flessibilità e della resistenza fisica generale, per dare sollievo e migliorare il benessere.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_2caefac8c7566fc7ded1",
-   "sourceHash": "2caefac8c7566fc7ded1d3279f3fc91004eae713ffded0f172cd93cc01012896",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Il nostro approccio olistico migliora il benessere fisico, riduce la dipendenza dai farmaci e migliora la salute e la vitalità generali.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_c18490873b2400f8429a",
-   "sourceHash": "c18490873b2400f8429a81dc204cc3134a492cb26f2e07a708b97d8b72689e17",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Attenzione al benessere mentale ed emotivo, per ridurre lo stress e migliorare la salute mentale. Indicazioni personalizzate sullo stile di vita favoriscono una partecipazione attiva al percorso di guarigione e la comprensione delle esigenze specifiche del proprio corpo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'journey' rendered as 'percorso' (path)."
-   ]
-  },
-  {
-   "id": "t_7ab2fafb6f1d121e2351",
-   "sourceHash": "7ab2fafb6f1d121e2351b2a64668e63e5cc9903ed937953c4af697aa024c6e3b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Miglioramento della qualità della vita e del benessere generale",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -154,16 +82,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_80bd011d6a10d8a2b9d5",
-   "sourceHash": "80bd011d6a10d8a2b9d5b8739b4f47251abe2b7688d4ba0c728798f4ec6e81c5",
-   "text": "Percorsi di trasformazione",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'Journeys' rendered as 'Percorsi' (paths)."
-   ]
   }
  ]
 }

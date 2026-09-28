@@ -48,40 +48,12 @@
    ]
   },
   {
-   "id": "t_fa37de9da4b13b3a1888",
-   "sourceHash": "fa37de9da4b13b3a18882ece23d6bee24a329b77d488b984d6f5587ce3f0f6cf",
-   "text": "h6",
-   "status": "translated",
-   "unchangedReason": "Technical HTML element token, not user-facing text.",
-   "issues": []
-  },
-  {
    "id": "t_66f4804ee23ddc092d1b",
    "sourceHash": "66f4804ee23ddc092d1bae43cb88186aa541187fff7c1cc8a4aa17e59a9f4123",
    "text": "Архив",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9f4c4fdd467a46802ef3",
-   "sourceHash": "9f4c4fdd467a46802ef33598206a3c32afbd768fd684450180d2059aeb0d21bc",
-   "text": "Архив Аюрведической лечебной деревни | Памятные события",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Wellness & Retreat Memories' rendered as 'Памятные события' (retreat term avoided, fits 60-character limit)."
-   ]
-  },
-  {
-   "id": "t_e1f69c2cec1a577e8772",
-   "sourceHash": "e1f69c2cec1a577e87722f12ef14472bd72500b8efacebe88b902e53b79dc929",
-   "text": "Архив прошедших оздоровительных программ, занятий йогой и событий в Kairali. Узнайте о нашем пути в подлинной аюрведе и целостном образе жизни.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Wellness retreats' rendered as 'оздоровительные программы'; 'journey' rendered as 'путь'."
-   ]
   },
   {
    "id": "t_fb1698cda9c6fa2bff46",
@@ -186,16 +158,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9483e53d0b13fe94ed06",
-   "sourceHash": "9483e53d0b13fe94ed06bde2c56bd6871bbecc559d3caae93055c739e3118a59",
-   "text": "Kairali подтверждает статус лучшего аюрведического центра Индии наградами, включая Green Leaf award, и местом в десятке лучших центров Азии.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Spa' avoided: 'best Ayurvedic spa' and 'ten best spas in Asia' rendered with 'центр' (centre); award name 'Green Leaf award' kept verbatim. Owner may wish to verify how the original award rankings should be named."
-   ]
   },
   {
    "id": "t_e48f43a4cecea0b70d65",

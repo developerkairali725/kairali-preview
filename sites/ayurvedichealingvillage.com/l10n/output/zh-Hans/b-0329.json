@@ -12,14 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_e10c195ebaf87f2d9e62",
-   "sourceHash": "e10c195ebaf87f2d9e62a59915567c62f630117e07241aaf872df4d16226ddde",
-   "text": "pooyam",
-   "status": "translated",
-   "unchangedReason": "Lowercase identifier/key for a villa name; kept verbatim.",
-   "issues": []
-  },
-  {
    "id": "t_f7d1b0079545acabe413",
    "sourceHash": "f7d1b0079545acabe413c0dcf1b8147b3708fdfe61ac4ebdbe47109408fe199c",
    "text": "Pooyam 星宿符号",
@@ -57,14 +49,6 @@
    "text": "Chittira",
    "status": "translated",
    "unchangedReason": "Proper name of a villa (nakshatra name); kept verbatim.",
-   "issues": []
-  },
-  {
-   "id": "t_432c3dbfa3ab79705a9d",
-   "sourceHash": "432c3dbfa3ab79705a9dd5a3ebc842c13c0f45f146dbe121a141012a7f207b59",
-   "text": "chittira",
-   "status": "translated",
-   "unchangedReason": "Lowercase identifier/key for a villa name; kept verbatim.",
    "issues": []
   },
   {
@@ -122,26 +106,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ebea2c0724641cc41839",
-   "sourceHash": "ebea2c0724641cc418397651faee2466c80dea27b95c16e22262a11eb9ab501d",
-   "text": "加入 Kairali Ayurvedic Group，在健康领域发展您的事业。立即申请，探索高端阿育吠陀、整体疗愈及健康疗养项目领域的职业机会。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'luxury' rendered as 高端 (premium) and 'wellness retreats' as 健康疗养项目 (wellness stay programmes) per KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_a83a31320d921b888a48",
-   "sourceHash": "a83a31320d921b888a48fa5edd0b4b5a29984de6e96bf7b8ac7d29ba06caf616",
-   "text": "简历",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment: sits between 'Use our' and 'form…' (i.e. 'Use our resume form'); translated to fit 请使用我们的 + 简历 + 表单…"
-   ]
   },
   {
    "id": "t_5fdbd3a92f5e73e45dc3",
@@ -208,14 +172,6 @@
    "issues": [
     "Role includes js:enum; if this value is used as a machine key rather than display label, keep English 'First Name'."
    ]
-  },
-  {
-   "id": "t_22b074c0fdb3b9e315df",
-   "sourceHash": "22b074c0fdb3b9e315df7e94ca7c52cbcfe41be6f01d1d03189389489187b857",
-   "text": "fname",
-   "status": "translated",
-   "unchangedReason": "Form field identifier (code); kept verbatim.",
-   "issues": []
   }
  ]
 }

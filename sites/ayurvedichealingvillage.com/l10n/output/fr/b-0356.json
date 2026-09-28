@@ -4,14 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_013f54400c82da080377",
-   "sourceHash": "013f54400c82da08037759ada907a8b864e97de81c088a182062c4b5622fd2ab",
-   "text": "âge",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_045ec3af2fc4a3ad879b",
    "sourceHash": "045ec3af2fc4a3ad879b427c74db1e45493f92afe3ecc28446f87a91c3aa8ef7",
    "text": "Saisissez votre âge",
@@ -26,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_12886f9d00055adf24c4",
-   "sourceHash": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8",
-   "text": "numéro",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "If this string is an HTML input type rather than visible text, it should remain 'number'."
-   ]
   },
   {
    "id": "t_3ffc275e3d217a16ca89",
@@ -70,14 +52,6 @@
    "issues": []
   },
   {
-   "id": "t_a9491f4c1bf7b0cffbad",
-   "sourceHash": "a9491f4c1bf7b0cffbadcba2db8f028e4b3f2867cb59e1f3a0bc1968f3c51242",
-   "text": "objet",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_7126a8d08107c4e587e0",
    "sourceHash": "7126a8d08107c4e587e02fcfe50b85ba20caf87074b45f2ae84dfdaed476ef69",
    "text": "Demande en ligne KTAHV",
@@ -99,14 +73,6 @@
    "text": "Votre message (facultatif)",
    "status": "translated",
    "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_72231043bc1807e6f740",
-   "sourceHash": "72231043bc1807e6f740b235eb7511ecb33255a6a375435631196de8a9750d4b",
-   "text": "post",
-   "status": "translated",
-   "unchangedReason": "HTTP form method value; technical, language-neutral.",
    "issues": []
   },
   {
@@ -142,14 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_073c1634c496cdb649d1",
-   "sourceHash": "073c1634c496cdb649d1afe0a312bbb4b7e1741b271542e4a436c3b8824b1761",
-   "text": "situation",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_2d2ff71974ae4def1396",
    "sourceHash": "2d2ff71974ae4def1396d94546f1f34e8978fcdcc22409c39547378ac93fab74",
    "text": "Situation familiale",
@@ -180,16 +138,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_226a193ae269296d44f3",
-   "sourceHash": "226a193ae269296d44f3efd3d66fead575a9ed15e14320b088c7c3d3cb2b9d8d",
-   "text": "ta",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'bp' (blood pressure) rendered as 'ta' (tension artérielle); if this is a field key rather than visible text it should remain 'bp'."
-   ]
   },
   {
    "id": "t_cb64336e73d7803218bf",

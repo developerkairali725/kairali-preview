@@ -4,14 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_504aed77fda1b765427d",
-   "sourceHash": "504aed77fda1b765427d4e032e8e8de643c1aeeb31d05689c7256d12a6bcbe8b",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]Mehr Lebensqualität und geringere Abhängigkeit von Medikamenten",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_426ac289eefa90f4dff8",
    "sourceHash": "426ac289eefa90f4dff8076b91692cdc344dc0dff1850c3258a98c3602bb88b0",
    "text": "Ärztliche Begleitung",
@@ -52,32 +44,12 @@
    "issues": []
   },
   {
-   "id": "t_d13e82941eedb9ffe701",
-   "sourceHash": "d13e82941eedb9ffe7019241faa4cf134d7f5e7f2a3360fe2879fe1821807849",
-   "text": "Sie haben regelmäßige Termine mit dem Ayurveda-Arzt, der Ihre Fortschritte überwacht und die Behandlung bei Bedarf anpasst. Individuelle Therapien, darunter Massagen und Kräuteranwendungen, werden durchgeführt. Sie erhalten Empfehlungen zu einer ausgewogenen Lebensweise, zur Ernährung und zum Umgang mit Stress – mit fortlaufender ärztlicher Unterstützung für einen sicheren und wirksamen Behandlungsverlauf.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'journey' rendered as 'Behandlungsverlauf' (treatment process) per the banned-word rule."
-   ]
-  },
-  {
    "id": "t_9fac5bf476b112f23420",
    "sourceHash": "9fac5bf476b112f234200e76cdd5a2ef97eb54dc0a4c8c22e666328802860a5a",
    "text": "Nach der Behandlung",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_09ae86a975d4271e3ba2",
-   "sourceHash": "09ae86a975d4271e3ba2ccf80b1d311b7386f1cdd628c316d2fcf2f44667c1e4",
-   "text": "In Nachsorge-Konsultationen beurteilt der Ayurveda-Arzt die Wirksamkeit der Behandlung und berät Sie weiter. Sie integrieren Empfehlungen für die Zeit nach der Behandlung, etwa zu Ernährung und Lebensstil, in Ihren Alltag, um die Wirkung dauerhaft zu erhalten. Die fortlaufende Betreuung unterstützt Ihre langfristige Gesundheit und geht auf Ihre Anliegen und Bedürfnisse ein.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'Ongoing support ensures long-term health' softened to 'unterstützt' to avoid a guarantee/efficacy claim."
-   ]
   },
   {
    "id": "t_8c085c24fd5465b7feb9",

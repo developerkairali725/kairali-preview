@@ -54,26 +54,6 @@
    ]
   },
   {
-   "id": "t_e98aad83c8bc7a9a8866",
-   "sourceHash": "e98aad83c8bc7a9a8866ab3f63593356f4775618503da4042f1f22779fa17059",
-   "text": "आयुर्वेद कार्यक्रम | उपचार | तकनीकें | हीलिंग विलेज",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Retreat' rendered as 'आयुर्वेद कार्यक्रम' and 'Healing Resort' as 'हीलिंग विलेज' to avoid the banned terms 'retreat'/'resort'; source typo 'Halth Treatment' rendered as 'उपचार'. Condensed for the 60-character seo.title limit."
-   ]
-  },
-  {
-   "id": "t_438619465c3e085c9ff9",
-   "sourceHash": "438619465c3e085c9ff91f6fb08f18fc59ac550da72a06a85407686a2bd75c7e",
-   "text": "आयुर्वेद कार्यक्रम शरीर, मन व आत्मा में संतुलन लाते हैं। पालक्काड, केरल का Kairali – The Ayurvedic Healing Village आयुर्वेदिक स्टे को नया अर्थ देता है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurveda Retreats' rendered as 'आयुर्वेद कार्यक्रम' and 'Ayurveda holiday with wellness' as 'आयुर्वेदिक स्टे' to avoid the banned terms 'retreat'/'holiday'. The source claim 'The aim is to completely heal you… state of bliss' was omitted for the 155-character limit; it is also a cure-type claim that needs Dr. Deepu John's review."
-   ]
-  },
-  {
    "id": "t_186f4d8142af31ccef0e",
    "sourceHash": "186f4d8142af31ccef0e60a2efa3ad525d5354fafcb3f0885b17e1b34334367b",
    "text": "सभी के लिए आयुर्वेद कार्यक्रम",
@@ -111,26 +91,6 @@
    "unchangedReason": null,
    "issues": [
     "'Ayurveda Retreats' rendered as 'आयुर्वेद कार्यक्रम' to avoid resort-type 'retreat' framing. Fragment within a sentence."
-   ]
-  },
-  {
-   "id": "t_02d41b14ec5b9319e970",
-   "sourceHash": "02d41b14ec5b9319e9709ce44f79998b847aebd295b885d68b18ee2106af299d",
-   "text": " शरीर, मन और आत्मा का संतुलन बनाए रखने में सबसे अलग हैं। इनका उद्देश्य संपूर्ण स्वास्थ्य की दिशा में आपका सहयोग करना और आपको आनंद की अवस्था की ओर ले जाना है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment continuing the previous element (leading comma dropped as it does not fit Hindi word order). Source 'The aim is to completely heal you' is a cure-type claim; rendered as 'to support you towards complete health' per the support≠cure rule — flag for Dr. Deepu John's clinical review."
-   ]
-  },
-  {
-   "id": "t_27ca7cbd6e6875514a74",
-   "sourceHash": "27ca7cbd6e6875514a743c31969a7fe32cdaec30bab9af59de0371b7da2467e4",
-   "text": "भाग-दौड़ भरे जीवन में ठहराव लाने के लिए आयुर्वेद के पास ऋषियों का ज्ञान और सदियों की समृद्ध विरासत है, और यह साहित्य, अभिलेखों तथा कायाकल्प के अनूठे स्थानों सहित विभिन्न माध्यमों से नई प्रासंगिकता पा रहा है। इन सबमें, आयुर्वेद कार्यक्रम शरीर, मन और आत्मा का संतुलन बनाए रखने में सबसे अलग हैं। इनका उद्देश्य संपूर्ण स्वास्थ्य की दिशा में आपका सहयोग करना और आपको आनंद की अवस्था की ओर ले जाना है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurveda Retreats' rendered as 'आयुर्वेद कार्यक्रम' to avoid the banned term 'retreat'. Source 'The aim is to completely heal you' is a cure-type claim; rendered as 'to support you towards complete health' per the support≠cure rule — flag for Dr. Deepu John's clinical review."
    ]
   },
   {

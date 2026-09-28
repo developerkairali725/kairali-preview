@@ -14,16 +14,6 @@
    ]
   },
   {
-   "id": "t_e10c195ebaf87f2d9e62",
-   "sourceHash": "e10c195ebaf87f2d9e62a59915567c62f630117e07241aaf872df4d16226ddde",
-   "text": "푸얌",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Proper name (lowercase variant) transliterated into Hangul."
-   ]
-  },
-  {
    "id": "t_f7d1b0079545acabe413",
    "sourceHash": "f7d1b0079545acabe413c0dcf1b8147b3708fdfe61ac4ebdbe47109408fe199c",
    "text": "푸얌 별자리 상징",
@@ -63,16 +53,6 @@
    "unchangedReason": null,
    "issues": [
     "Proper name (nakshatra/room name) transliterated into Hangul."
-   ]
-  },
-  {
-   "id": "t_432c3dbfa3ab79705a9d",
-   "sourceHash": "432c3dbfa3ab79705a9dd5a3ebc842c13c0f45f146dbe121a141012a7f207b59",
-   "text": "치티라",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Proper name (lowercase variant) transliterated into Hangul."
    ]
   },
   {
@@ -130,26 +110,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_ebea2c0724641cc41839",
-   "sourceHash": "ebea2c0724641cc418397651faee2466c80dea27b95c16e22262a11eb9ab501d",
-   "text": "Kairali Ayurvedic Group과 함께 웰니스 분야의 경력을 쌓으십시오. 프리미엄 아유르베다, 전인적 치유, 웰니스 프로그램 분야의 기회를 확인하고 지금 지원하십시오.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Language lock: 'luxury' rendered as '프리미엄' (premium); 'wellness retreats' rendered as '웰니스 프로그램' (wellness programmes) to avoid resort-type framing."
-   ]
-  },
-  {
-   "id": "t_a83a31320d921b888a48",
-   "sourceHash": "a83a31320d921b888a48fa5edd0b4b5a29984de6e96bf7b8ac7d29ba06caf616",
-   "text": "이력서",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment: sits between 'Use our' and 'form to explore…'; Korean sentence reads '…저희 [이력서] 양식을 통해…'."
-   ]
   },
   {
    "id": "t_5fdbd3a92f5e73e45dc3",
@@ -211,14 +171,6 @@
    "text": "이름",
    "status": "translated",
    "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_22b074c0fdb3b9e315df",
-   "sourceHash": "22b074c0fdb3b9e315df7e94ca7c52cbcfe41be6f01d1d03189389489187b857",
-   "text": "fname",
-   "status": "translated",
-   "unchangedReason": "Form field identifier/code; language-neutral.",
    "issues": []
   }
  ]

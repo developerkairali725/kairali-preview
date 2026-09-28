@@ -4,26 +4,6 @@
  "locale": "pt",
  "units": [
   {
-   "id": "t_37a8eec1ce19687d132f",
-   "sourceHash": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f",
-   "text": "default",
-   "status": "translated",
-   "unchangedReason": "CSS cursor keyword (code value), not display text",
-   "issues": [
-    "Role is js:display but value appears to be a CSS cursor value; left unchanged."
-   ]
-  },
-  {
-   "id": "t_1cdf95bd12e993d5aaf2",
-   "sourceHash": "1cdf95bd12e993d5aaf216f5f4ac1148b4b003ed0a253b781b25866eeaa27af3",
-   "text": "pointer",
-   "status": "translated",
-   "unchangedReason": "CSS cursor keyword (code value), not display text",
-   "issues": [
-    "Role is js:display but value appears to be a CSS cursor value; left unchanged."
-   ]
-  },
-  {
    "id": "t_a5458802386cd51988c3",
    "sourceHash": "a5458802386cd51988c341025a94eaeb73e83afbe2b1f2799a23b0199053c790",
    "text": "[data-map-zoom]",
@@ -38,16 +18,6 @@
    "status": "translated",
    "unchangedReason": "CSS selector (code)",
    "issues": []
-  },
-  {
-   "id": "t_3e64cc41cf8e07b43936",
-   "sourceHash": "3e64cc41cf8e07b43936d7bc4eaf8bdb8e2abcec1f44c7b915ac0a0c27ebc41a",
-   "text": "step",
-   "status": "translated",
-   "unchangedReason": "Data-attribute key (code identifier), not display text",
-   "issues": [
-    "Role is js:display but value appears to be a dataset key ('step'); left unchanged."
-   ]
   },
   {
    "id": "t_063aa684aacb52731763",

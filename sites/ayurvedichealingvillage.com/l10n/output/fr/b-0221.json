@@ -126,16 +126,6 @@
    "issues": []
   },
   {
-   "id": "t_2a424875a8475a99175f",
-   "sourceHash": "2a424875a8475a99175f543fa6fc65964e53e87efc161f7b1f9e370efe6ddd16",
-   "text": "straight",
-   "status": "translated",
-   "unchangedReason": "Appears to be a code/style keyword (sits beside a CSS value in the same script), not display copy; kept unchanged.",
-   "issues": [
-    "If this string is actually visible to users, it should be translated (e.g. 'droit')."
-   ]
-  },
-  {
    "id": "t_ffae778c6a58446c3198",
    "sourceHash": "ffae778c6a58446c3198a3aecb4f2cf92dd433740a3642ee11a13a1e57f4337d",
    "text": "Avant de partir",

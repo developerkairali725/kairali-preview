@@ -176,16 +176,6 @@
    "issues": []
   },
   {
-   "id": "t_45447b7afbd5e544f7d0",
-   "sourceHash": "45447b7afbd5e544f7d0f1df0fccd26014d9850130abd3f020b89ff96b82079f",
-   "text": "metadata",
-   "status": "translated",
-   "unchangedReason": "Appears to be a technical value (e.g. video preload=\"metadata\") in the render code; translating could break behaviour.",
-   "issues": [
-    "If this is visible label text rather than an attribute value, translate as メタデータ."
-   ]
-  },
-  {
    "id": "t_44f6ac8bac1917ebf565",
    "sourceHash": "44f6ac8bac1917ebf565c50775f41f1007856b83c1bf84ac0d52897bda41ae88",
    "text": "— ソース動画(操作時にローカルで再生)",

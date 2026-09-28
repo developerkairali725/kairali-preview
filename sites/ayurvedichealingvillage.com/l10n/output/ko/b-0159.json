@@ -4,25 +4,9 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_d14750f49bd4d264e4d5",
-   "sourceHash": "d14750f49bd4d264e4d50aac31b0005f800ec4713939ad6452cf0c6cb5e611a5",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]근육의 통증과 긴장을 줄여 신체 에너지와 전반적인 건강을 높입니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_6867273c7e083cfba345",
    "sourceHash": "6867273c7e083cfba345bb912e5ef92c5e6cb9afb047c5a6c9fea72d46d8a72b",
    "text": "[[OPEN_1]]◆[[CLOSE_1]]정신적 요인과 신체적 요인 사이의 균형을 이루어 전반적인 건강을 증진합니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_b260fa5b65617c48d696",
-   "sourceHash": "b260fa5b65617c48d69680123f510a32092ca06aece431911b7a35d5d72859e4",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]]신체 에너지, 정서적 안정, 이완이 향상되어 삶의 질이 높아집니다.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
@@ -51,16 +35,6 @@
    "unchangedReason": null,
    "issues": [
     "'Retreat' rendered as 입원 프로그램 (inpatient programme) to keep clinical register and avoid holiday/resort connotation."
-   ]
-  },
-  {
-   "id": "t_3a27afd3e2b703e05886",
-   "sourceHash": "3a27afd3e2b703e0588668fd6953de77b4a6c77583cf95c505d8d0d1dbb60517",
-   "text": "긴장에서 평온으로: 스트레스 없는 삶을 향한 환자분들의 회복 과정",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guest Journeys' rendered as 환자분들의 회복 과정 (patients' recovery process) per banned-word lock (guests, journey). Approved term 'From' = 출발지 not applied: here 'From' is not the travel-origin sense."
    ]
   },
   {
@@ -128,14 +102,6 @@
    "issues": []
   },
   {
-   "id": "t_380f447c9271735677cd",
-   "sourceHash": "380f447c9271735677cd789990c8f62afdfbb252bb2fcced63c4efddd797eec3",
-   "text": "종합 스트레스 완화 및 정신 건강 프로그램 Manas Shanthi Chikitsa (치키트사) (Kairali의 스트레스와 긴장 해소 치료)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_2a7389697bb64a43b46a",
    "sourceHash": "2a7389697bb64a43b46a89c8b744e8b90c3923bfbabe4302b6c9a3381fcfba7b",
    "text": "스트레스 완화 및 정신 건강을 위한 아유르베다 프로그램",
@@ -165,14 +131,6 @@
    "id": "t_accdef7a71915a7c06ed",
    "sourceHash": "accdef7a71915a7c06edb112e8edf3aaa698fd4d5917f2aa7d4d358ece04121e",
    "text": "아치형 창문을 배경으로, 머리카락에 약초 페이스트 팩을 바른 채 눈을 감고 Kairali 치료실에 앉아 있는 환자",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_21f8bd91ba79028a08b5",
-   "sourceHash": "21f8bd91ba79028a08b59823c64a504a8f2061a90cb980e98ee971c786e554c4",
-   "text": "스트레스 관리와 스트레스 없는 삶을 위한 아유르베다 요법",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

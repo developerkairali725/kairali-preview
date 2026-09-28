@@ -56,50 +56,12 @@
    ]
   },
   {
-   "id": "t_a39bec7c3dc2c0bae76c",
-   "sourceHash": "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f",
-   "text": "sup",
-   "status": "translated",
-   "unchangedReason": "HTML element name (superscript), not display copy.",
-   "issues": []
-  },
-  {
-   "id": "t_051603900bc7a27051b3",
-   "sourceHash": "051603900bc7a27051b385299b0ef6c3dd2da3c6216845df7f501d9e4337cbcd",
-   "text": "일",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "English ordinal suffix fragment ('22nd'); rendered as the Korean day marker '일'. Korean dates do not use a superscript ordinal — the superscript markup may be better dropped for this locale."
-   ]
-  },
-  {
-   "id": "t_8fad80e805f85badb4de",
-   "sourceHash": "8fad80e805f85badb4de7e2edd2a1ad3e3667fe714879d2821fe4d1383ea6666",
-   "text": "9월, 2017)",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Fragment following the ordinal; Korean natural order would be '2017년 9월 22일' — the split markup forces English order."
-   ]
-  },
-  {
    "id": "t_ab103f014c27209d3d55",
    "sourceHash": "ab103f014c27209d3d5502dd9de6b4a761c99d3a15ef8223ffc954a737303e61",
    "text": "between \"…Healthy Lifestyle \" and \"17th – 22nd Sept, 2017)\", inside the strong",
    "status": "translated",
    "unchangedReason": "Internal positional/enum descriptor referencing the English source strings; not reader-facing.",
    "issues": []
-  },
-  {
-   "id": "t_ac9718a46bbebd222638",
-   "sourceHash": "ac9718a46bbebd222638003f9e1d5bb5c287292a0322737ebc9f75fbd38c7187",
-   "text": "이 리트리트는 스트레스 없는 더 건강한 생활 방식을 원하는 분들께 적합합니다. 정신적 스트레스는 신경계에 직접적인 영향을 미쳐 다양한 건강 문제로 이어집니다. 케랄라의 평화로운 아유르베다 빌리지에서 아름다운 나무와 약용 허브에 둘러싸여 요가와 아유르베다라는 고대 과학을 실천하면 빠르게 회복하는 데 도움이 될 것입니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source 'heal in no time' is a strong efficacy claim on a historical page; rendered as 'help you recover quickly' without adding strength — owner/clinical review may wish to soften the English source."
-   ]
   },
   {
    "id": "t_7f59fa15d55c4dd5e23a",

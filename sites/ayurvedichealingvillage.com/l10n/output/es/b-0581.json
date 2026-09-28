@@ -28,16 +28,6 @@
    "issues": []
   },
   {
-   "id": "t_3fa405a8301ace34d11c",
-   "sourceHash": "3fa405a8301ace34d11cf44a816080b8f0e49a48fbd048b8aef1543a8c58bdb6",
-   "text": "cubrir",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Translated as a display label (image fit mode); if this string is used as a CSS object-fit value it must stay 'cover'."
-   ]
-  },
-  {
    "id": "t_d5b47460464541aed2e8",
    "sourceHash": "d5b47460464541aed2e8bf2b14e5d54e0853e12307dc82a0ff31760f4197ec2a",
    "text": "Arrastre aquí una imagen PNG, JPEG, WebP o AVIF.",
@@ -52,16 +42,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_01024deec75e9c0eb827",
-   "sourceHash": "01024deec75e9c0eb827d664f2a6880101e363819017fa6d96b0b345ea25ef3e",
-   "text": "redondeado",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Translated as a display label (corner style); if this string is used as a CSS class/value it must stay 'rounded'."
-   ]
   },
   {
    "id": "t_816ed88ba06423ca2fc0",
@@ -86,26 +66,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_69bf182c0e0e9cabc3b8",
-   "sourceHash": "69bf182c0e0e9cabc3b88fece88e2b3ab1168a529ad49a2b2436c8a91ca72647",
-   "text": "Programa de tratamiento ayurvédico | Kairali, Kerala",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Shortened brand to 'Kairali' to meet the 60-character seo.title limit."
-   ]
-  },
-  {
-   "id": "t_9c701472da04bfa9cc3c",
-   "sourceHash": "9c701472da04bfa9cc3c6a92cbad22d7ea1d8a5e6875c73b495db1a7041143e9",
-   "text": "Guía de Kairali – The Ayurvedic Healing Village sobre el significado y el origen de la yogaterapia y la importancia del ayurveda en el yoga terapéutico. Ofrecemos cursos de formación de profesores de yoga en nuestro centro de Palakkad, Kerala (India).",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat center' rendered as 'centro' to keep the clinical register."
-   ]
   },
   {
    "id": "t_d153582e33d249f457e5",
