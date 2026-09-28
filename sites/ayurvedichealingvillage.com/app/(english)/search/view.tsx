@@ -87,7 +87,7 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
     ? { ga4: analyticsConfig.measurement.ga4.id, clarity: analyticsConfig.measurement.clarity.id, metaPixel: analyticsConfig.measurement.metaPixel.id }
     : undefined;
   const consentScript = `(function () {
-    var cfg = ${JSON.stringify({ breakpoint: 700, measurement })};
+    var cfg = ${JSON.stringify({ breakpoint: 700, measurement, locale: { privacyHref: L("/privacy-policy/") } })};
     var host = document.getElementById("ahv-design-root");
     ${CONSENT_RUNTIME}
     ensureConsentNotice();
