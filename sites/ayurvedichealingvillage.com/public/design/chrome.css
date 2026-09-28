@@ -231,3 +231,10 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
 
 /* the language switcher follows its neighbours on a light-text (transparent hero) header — chrome.js switcherContrast */
 .ahv-lang[data-ahv-lang-light] > .ahv-lang-btn { color:#fff; border-color:rgba(255,255,255,.6); }
+
+/* FOOTER-13 (28 Sep 2026): the footer language list built by chrome.js from the switcher — all 13 released languages,
+   native names, current one unlinked. Own line in the footer bar; wraps; 44px tap targets; footer colours inherited. */
+.ahv-footer-langs { display:flex; flex-wrap:wrap; align-items:center; gap:0 2px; margin:0 0 4px; line-height:1.4; text-transform:none; letter-spacing:normal; }
+.ahv-footer-langs a, .ahv-footer-langs [aria-current] { display:inline-flex; align-items:center; min-height:44px; padding:0 4px; color:inherit; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(247,244,234,.35); }
+.ahv-footer-langs [aria-current] { text-decoration:none; font-weight:700; }
+[data-ahv-footer-langs] { display:block; }

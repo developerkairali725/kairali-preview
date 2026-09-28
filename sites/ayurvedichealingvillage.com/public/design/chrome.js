@@ -190,6 +190,7 @@
       switcherContrast();
       templateLaunchers();
       enquiryPreselect();
+      footerLanguages();
     } catch (e) { /* never break the page */ }
   }
   // TF-18 (owner, 28 Sep 2026): a treatment page's enquiry button opens /enquiry-form/?programme=treatment and the
@@ -198,6 +199,55 @@
   // its POSITION in the existing list because locales translate the labels; a visitor's own choice is never
   // overridden. The value goes through the select's normal change event, so the form's state, validation, consent,
   // field names and submission transport are the form's own — nothing here submits or stores anything.
+  // FOOTER-13 (owner, 28 Sep 2026): the footers printed "English · Français · Deutsch" (home) or "English" (shared
+  // chrome) — three languages, no links. Every footer variant marks that label [data-ahv-footer-langs]; it is rebuilt
+  // here from the page's own language switcher, the single source that already carries all 13 released languages,
+  // their native names, the current one, and this page's equivalent deep link in each. Current language: named, not
+  // linked (aria-current). Idempotent per element (the snapshot footer is replaced when the live view mounts).
+  function footerLanguages() {
+    var list = document.querySelector('.ahv-lang-list'); if (!list) return;
+    // Footers captured before the marker existed (the native pages' stored chrome snapshot) still print the bare
+    // label: that exact leaf is adopted as the slot, so the list lands where the label was.
+    footers().forEach(function (f) {
+      f.querySelectorAll('span:not([data-ahv-footer-langs])').forEach(function (s) {
+        if (s.closest('.ahv-footer-langs, .ahv-lang-list, [data-ahv-footer-langs]')) return;
+        if (!s.children.length && /^English( · Français · Deutsch)?$/.test((s.textContent || '').trim())) s.setAttribute('data-ahv-footer-langs', '');
+      });
+    });
+    var slots = document.querySelectorAll('[data-ahv-footer-langs]:not([data-ahv-footer-langs-done])');
+    var seen = {}, items = [];
+    list.querySelectorAll('a[data-ahv-lang-option]').forEach(function (a) {
+      var code = a.getAttribute('data-ahv-lang-option'); if (seen[code]) return; seen[code] = 1;
+      var name = a.querySelector('span:last-child'); name = (name ? name.textContent : a.textContent || '').trim();
+      items.push({ code: code, name: name, href: a.getAttribute('href'), lang: a.getAttribute('lang') || code, cur: a.getAttribute('aria-current') === 'true' || a.getAttribute('aria-current') === 'page' });
+    });
+    if (items.length < 2) return;
+    function makeNav() {
+      var nav = document.createElement('nav'); nav.setAttribute('aria-label', list.getAttribute('aria-label') || 'Language'); nav.className = 'ahv-footer-langs';
+      items.forEach(function (it, k) {
+        if (k) { var sep = document.createElement('span'); sep.setAttribute('aria-hidden', 'true'); sep.textContent = ' · '; nav.appendChild(sep); }
+        var el;
+        if (it.cur || !it.href || it.href.charAt(0) === '#') { el = document.createElement('span'); el.setAttribute('aria-current', 'true'); }
+        else { el = document.createElement('a'); el.setAttribute('href', it.href); el.setAttribute('hreflang', it.lang); }
+        el.setAttribute('lang', it.lang); el.textContent = it.name; nav.appendChild(el);
+      });
+      return nav;
+    }
+    for (var i = 0; i < slots.length; i++) {
+      var slot = slots[i]; slot.setAttribute('data-ahv-footer-langs-done', '');
+      slot.textContent = ''; slot.appendChild(makeNav());
+    }
+    // Some footer designs hide the bar that holds the label on phones: a visible footer with no visible language
+    // list gets one on its bottom bar, so every viewport shows the 13 languages.
+    var fs = footers();
+    for (var j = 0; j < fs.length; j++) {
+      var f = fs[j];
+      var shown = [].some.call(f.querySelectorAll('.ahv-footer-langs'), function (n) { return n.getClientRects().length > 0; });
+      if (shown || f.querySelector('[data-ahv-footer-langs-added]')) continue;
+      var bar = f.lastElementChild || f; var add = makeNav(); add.setAttribute('data-ahv-footer-langs-added', '');
+      bar.appendChild(add);
+    }
+  }
   // The server snapshot's form is replaced when the live view mounts, so each select element is handled once.
   var PRESELECT = { treatment: 1 };
   function enquiryPreselect() {
