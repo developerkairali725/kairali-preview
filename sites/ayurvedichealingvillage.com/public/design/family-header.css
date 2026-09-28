@@ -7,8 +7,9 @@ html[data-ahv-fh] header nav[data-ahv-fh-primary] { display:none !important; }
 html[data-ahv-fh] header button[data-ahv-fh-hamburger] { display:none !important; }
 /* the old left rail / in-content "In this section" block is now in the header panel */
 html[data-ahv-fh] nav[data-ahv-section-nav] { display:none !important; }
-/* no bottom Call / Enquire / Free-consult bar on family pages */
-html[data-ahv-fh] [data-ahv-cta-bar] { display:none !important; }
+/* the templates' own pinned bars (tagged [data-ahv-cta-bar] by family-header.js and chrome.js) are hidden
+   sitewide by chrome.css; the ONE shared Call / Enquire / Free-consult bar (#ahv-cta-bar, OWNER-REG-02,
+   28 Sep 2026 — supersedes the 26 Sep "no bottom bar on family pages") is never tagged and shows here too */
 
 .ahv-fh-btn { font-family:Mulish, system-ui, sans-serif; cursor:pointer; color:#2A2118; }
 .ahv-fh-btn:focus-visible, .ahv-fh-panel a:focus-visible, .ahv-fh-panel button:focus-visible,

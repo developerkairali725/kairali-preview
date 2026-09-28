@@ -10,8 +10,9 @@
  *   · the old left rail / in-content "In this section" block is not drawn (no duplicate menus);
  *   · the programme finder's filter rows collapse behind a "Filters (n)" control (user-expanded,
  *     not sticky) with Clear / Done;
- *   · no bottom Call / Enquire / Free-consult bar on family pages (owner: essential actions stay in
- *     the header).
+ *   · the templates' own pinned bars stay hidden; the ONE shared bottom Call / Enquire / Free-consult
+ *     bar (chrome.js, OWNER-REG-02, 28 Sep 2026 — supersedes the 26 Sep "no bottom bar on family pages")
+ *     shows here as on every page.
  * Works on design pages (shared chrome component), native Next.js pages (snapshot chrome) and every
  * locale (labels via window.__AHV_T, hrefs via window.AHV_LOCAL_PATHS). Idempotent on re-mounts.
  * Consent, forms and tracking are untouched. */
@@ -190,10 +191,12 @@
     }
   }
 
-  // ---- the bottom Call / Enquire / Free-consult bar is not shown on family pages
+  // ---- the templates' own pinned bars are not shown on family pages; the shared bar (#ahv-cta-bar,
+  // chrome.js — OWNER-REG-02) stands in for the bottom Call / Enquire / Free-consult bar and is never tagged
   function ctaBars() {
     var tels = document.querySelectorAll('a[href^="tel:"]');
     for (var i = 0; i < tels.length; i++) {
+      if (tels[i].closest("#ahv-cta-bar")) continue;
       var el = tels[i].parentElement, hops = 0;
       while (el && el !== document.body && hops < 4) {
         var st = el.getAttribute("style") || "";

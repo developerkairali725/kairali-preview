@@ -128,6 +128,35 @@
   #ahv-contact-controls .ahv-contact-label { display:none; }
 }
 
+/* OWNER-REG-02 (owner, 28 Sep 2026): ONE bottom Call / Enquire / Free-consult bar on every page (chrome.js
+   ctaBar), the homepage bar's own look. The templates' copies are marked by chrome.js (and family-header.js)
+   and never drawn, so exactly one bar shows; an in-content sticky strip stays in place, unpinned. Phone
+   widths only (< 700px), as on the homepage. The bar clears the home indicator (safe-area inset), the page
+   ends above it (body clearance = the bar's measured height, --ahv-cta-bar-h), and the WhatsApp / chat
+   controls and the cookie notice sit above it at their approved gaps (24px / 22px — unchanged at the
+   bar's 52px). Positions only: the notice, its choices and every signal are untouched. */
+[data-ahv-cta-bar] { display:none !important; }
+[data-ahv-cta-unpin] { position:static !important; }
+#ahv-cta-bar { display:none; }
+@media (max-width:699px) {
+  #ahv-cta-bar { position:fixed;left:0;right:0;bottom:0;z-index:55;max-width:430px;margin:0 auto;box-sizing:border-box;display:flex;align-items:stretch;padding-bottom:env(safe-area-inset-bottom,0px);background:#2A2014;box-shadow:0 -8px 24px rgba(0,0,0,.25); }
+  #ahv-cta-bar a { flex:1;min-width:0;min-height:52px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:4px 6px;text-align:center;overflow-wrap:anywhere;font:700 12.5px/1.25 Mulish,system-ui,sans-serif;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:#F7F4EA; }
+  #ahv-cta-bar .ahv-cta-call:hover { background:rgba(247,244,234,.08);color:#F7F4EA;text-decoration:none; }
+  #ahv-cta-bar .ahv-cta-enquire { flex:1.1;background:#5A4420; }
+  #ahv-cta-bar .ahv-cta-enquire:hover { background:#483616;color:#F7F4EA;text-decoration:none; }
+  #ahv-cta-bar .ahv-cta-consult { flex:1.3;background:#EEB41E;color:#2A2014; }
+  #ahv-cta-bar .ahv-cta-consult:hover { filter:brightness(.94);color:#2A2014;text-decoration:none; }
+  #ahv-cta-bar a:focus-visible { outline:3px solid #F7F4EA;outline-offset:-6px; }
+  #ahv-cta-bar .ahv-cta-consult:focus-visible { outline-color:#2A2014; }
+  /* body is viewport-high (support.js: html,body{height:100%}) and the page overflows it, so the clearance is an
+     in-flow block after the page, not body padding: the bar plus the WhatsApp / chat controls above it (54px +
+     24px gap), so at the end of the page no footer link sits under either; in the footers' own colour */
+  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px);background:#2A2014; }
+  html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
+  html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }
+}
+@media print { #ahv-cta-bar { display:none !important; } }
+
 /* Keep native date segments and their calendar controls visible in the home finder. */
 [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){display:grid!important;grid-template-columns:minmax(160px,1fr) 12px minmax(160px,1fr);gap:12px!important}
 [data-ahv-home-finder] input[type="date"]{width:100%;min-width:160px!important;padding-inline:4px!important}

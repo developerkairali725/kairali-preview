@@ -159,6 +159,72 @@
     controls.querySelector("button").addEventListener("click", openChat);
     document.body.appendChild(controls);
   }
+  // OWNER-REG-02 (owner, 28 Sep 2026: "apply the homepage bottom call/enquire/free-consult contact bar
+  // consistently across pages"). ONE shared bar, built here for every design and native page in every locale,
+  // replaces the templates' own copies (the homepage's sticky bar, the phone templates' scroll-in bar, the
+  // panchakarma "Quick actions" bar, the training/yoga strips) so exactly one bar is ever on screen. Labels, order,
+  // colours and destinations are the homepage bar's own (public/ahv/views/home-mobile.json): Call → the hospital
+  // phone exactly as the homepage links it; Enquire → the homepage's enquiry link as boot.ts resolves it through
+  // english-candidate/link-aliases.json (/enquiry-form → /contact-us/); Free Consult → /online-consultation/.
+  // The markup is ONE HTML string so the locale build (tools/l10n, runtime scripts) translates it with the SAME
+  // units the templates' bar already carries — no new strings. Locale pages take the locale route through
+  // AHV_LOCAL_PATHS, like every other shared control. Shown on phone widths only (< 700px: the homepage serves its
+  // bar in the phone view alone); layout, safe-area, clearance and offsets in chrome.css. The /lp/ lane (which
+  // loads this script through ReviewsShell) is excluded: chromeless ad pages, one CTA each, their own pinned
+  // WhatsApp CTA. Presentation only: consent, analytics and forms untouched.
+  var CTA_BAR = "<nav id=\"ahv-cta-bar\" aria-label=\"Quick actions\"><a class=\"ahv-cta-call\" href=\"tel:+91 9555 156 156\">Call</a> <a class=\"ahv-cta-enquire\" href=\"/contact-us/\">Enquire</a> <a class=\"ahv-cta-consult\" href=\"/online-consultation/\">Free Consult</a></nav>";
+  // A template's own bottom bar, from its inline style and its links (structural, any locale):
+  // "replace" = hidden, the shared bar stands in; "unpin" = stays where it sits in the page, not pinned.
+  function ctaBarKind(style, links, tel) {
+    var fixed = /position:\s*fixed/.test(style), sticky = /position:\s*sticky/.test(style);
+    // a full-height layer (pinned top AND bottom: a drawer, an overlay) is never a bar
+    if (!(fixed || sticky) || !/(^|;)\s*bottom:\s*0(px)?\s*(;|$)/.test(style) || /(^|;)\s*(top|inset):\s*0/.test(style) || links < 1) return "";
+    if (fixed) return links >= 2 ? "replace" : "";
+    return tel && links >= 3 ? "replace" : "unpin";
+  }
+  function ctaBar() {
+    // the /lp/ lane (chromeless ad landing pages, one CTA each, their own pinned WhatsApp CTA) keeps its own
+    if (document.body.classList.contains("lp-page")) return;
+    var pinned = root.querySelectorAll('[style*="position"][style*="bottom"]');
+    for (var i = 0; i < pinned.length; i++) {
+      var p = pinned[i];
+      if (p.hasAttribute("data-ahv-cta-bar") || p.hasAttribute("data-ahv-cta-unpin")) continue;
+      if (p.closest("header, #ahv-consent, #ahv-contact-controls") || p.querySelector("header")) continue;
+      var ph = p.getBoundingClientRect().height;
+      if (!ph || ph > 160) continue; // not laid out yet (re-checked next pass), or not a bar
+      var kind = ctaBarKind(p.getAttribute("style") || "", p.querySelectorAll("a[href]").length, !!p.querySelector('a[href^="tel:"]'));
+      if (kind === "replace") p.setAttribute("data-ahv-cta-bar", "");
+      else if (kind === "unpin") p.setAttribute("data-ahv-cta-unpin", "");
+    }
+    var html = document.documentElement, bar = document.getElementById("ahv-cta-bar");
+    if (!bar) {
+      var box = document.createElement("div");
+      box.innerHTML = CTA_BAR;
+      bar = box.firstChild;
+      document.body.appendChild(bar);
+      html.setAttribute("data-ahv-cta-bar-on", "");
+    }
+    var lp = window.AHV_LOCAL_PATHS, form = root.querySelector("form[id]");
+    var here = location.pathname.replace(/\/?$/, "/");
+    bar.querySelectorAll("a").forEach(function (a) {
+      var h = a.getAttribute("href") || "";
+      if (lp && lp[h] && lp[h] !== h) a.setAttribute("href", (h = lp[h]));
+      // the enquiry page itself: "Enquire" goes to its form, as boot.ts does for the page's own self-links
+      if (h.charAt(0) === "/" && h === here && form && form.id) a.setAttribute("href", "#" + form.id);
+    });
+    // the homepage's own cookie notice sits above the bar the same way #ahv-consent does (chrome.css)
+    // (its privacy link carries the locale's own slug on locale pages, read from the same path map)
+    var privLocal = lp && (lp["/new-privacy-policy/"] || lp["/privacy-policy/"]);
+    var fixed = root.querySelectorAll('[style*="position: fixed"], [style*="position:fixed"]');
+    for (var k = 0; k < fixed.length; k++) {
+      var n = fixed[k];
+      if (n.hasAttribute("data-ahv-cta-notice") || n.closest("header") || n.querySelectorAll("button").length < 2) continue;
+      if (n.querySelector('a[href*="privacy"]') || (privLocal && n.querySelector('a[href$="' + privLocal + '"]'))) n.setAttribute("data-ahv-cta-notice", "");
+    }
+    var hgt = Math.round(bar.getBoundingClientRect().height);
+    if (hgt) html.style.setProperty("--ahv-cta-bar-h", hgt + "px"); else html.style.removeProperty("--ahv-cta-bar-h");
+  }
+  window.addEventListener("resize", function () { schedule(); });
   // Shared policy, including carousel href changes and links outside the design root.
   var externalOriginals = new WeakMap();
   function externalLink(a) {
@@ -183,6 +249,7 @@
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();
+      ctaBar();
       syncChatState();
       externalLinks();
       liftContacts();
