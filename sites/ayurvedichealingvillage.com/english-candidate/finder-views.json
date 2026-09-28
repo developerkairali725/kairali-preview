@@ -74,11 +74,26 @@
       }
     ]
   },
+  "tariff": {
+    "_why": "C-07 RATE-PARITY (28 Sep 2026): the 'Full tariff sheet' link names the approved 20260925-R1 document of the finder's own programme family (english-candidate/downloads.json, owner-approved final family); USD/EUR point at the /documents/ catalogue section with every language and currency edition. Labels and hrefs are READ from downloads.json at build time, never typed here. feeBasis replaces the benchmark's superseded 'valid to 30 September 2026' clause with the approved wording already served since 12c539a8/01094caa.",
+    "revision": "20260925-R1",
+    "benchmark": "ayurveda",
+    "families": {
+      "ayurveda": { "pdfFamily": "ayurveda-programmes-tariff", "catalogueAnchor": "ayurveda" },
+      "training": { "pdfFamily": "ayurveda-training-courses-tariff", "catalogueAnchor": "training" },
+      "yoga": { "pdfFamily": "yoga-meditation-programmes-tariff", "catalogueAnchor": "yoga" }
+    },
+    "feeBasis": {
+      "from": "per the current KTAHV tariff valid to 30 September 2026.",
+      "to": "per the published tariff and the effective dates shown for each programme."
+    }
+  },
   "derived": [
     {
       "route": "/wellness-programs/",
       "id": "ahv-page-wellness-programs",
       "cat": "W",
+      "tariff": "ayurveda",
       "h1": "Ayurvedic Wellness Programmes",
       "crumb": "Wellness Programmes",
       "hero": "/ahv/assets/img/preventive.webp",
@@ -88,6 +103,7 @@
       "route": "/treatment-programs/",
       "id": "ahv-page-treatment-programs",
       "cat": "T",
+      "tariff": "ayurveda",
       "h1": "Ayurvedic Treatment Programmes",
       "crumb": "Treatment Programmes",
       "intro": "Explore Kairali’s Ayurvedic treatment programmes in Kerala. Read the programme details and speak with an Ayurvedic physician about the options you are considering."
@@ -96,6 +112,7 @@
       "route": "/training-programs/",
       "id": "ahv-page-training-programs",
       "cat": "R",
+      "tariff": "training",
       "h1": "Ayurveda Training Programmes",
       "crumb": "Training Programmes",
       "hero": "/ahv/assets/img/AHV-Ayurveda-Training-Practice.jpg",
@@ -105,6 +122,7 @@
       "route": "/yoga-meditation-programs/",
       "id": "ahv-page-yoga-meditation-programs",
       "cat": "Y",
+      "tariff": "yoga",
       "h1": "Yoga & Meditation Programmes",
       "crumb": "Yoga & Meditation",
       "hero": "/ahv/assets/img/yoga-training-hero-y-based.webp",
@@ -114,6 +132,7 @@
       "route": "/all-programs/",
       "id": "ahv-page-all-programs",
       "cat": "A",
+      "tariff": "ayurveda",
       "h1": "Find your programme at Kairali",
       "crumb": "All Programmes",
       "intro": "Explore programmes for treatment, wellbeing, yoga and Ayurveda training. Browse at your own pace, compare the details, and speak with an Ayurvedic physician before choosing your next step."
