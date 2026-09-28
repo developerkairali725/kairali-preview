@@ -228,3 +228,6 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
 
 /* EF-25: the cookie notice steps under an open header menu (chrome.js noticeUnderMenu); restored on close */
 [data-ahv-notice-under-menu] { z-index:59 !important; }
+
+/* the language switcher follows its neighbours on a light-text (transparent hero) header — chrome.js switcherContrast */
+.ahv-lang[data-ahv-lang-light] > .ahv-lang-btn { color:#fff; border-color:rgba(255,255,255,.6); }

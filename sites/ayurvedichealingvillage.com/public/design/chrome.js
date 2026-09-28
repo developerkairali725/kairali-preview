@@ -178,6 +178,7 @@
       externalLinks();
       liftContacts();
       noticeUnderMenu();
+      switcherContrast();
       templateLaunchers();
     } catch (e) { /* never break the page */ }
   }
@@ -217,6 +218,23 @@
   // menu's lower half on a fresh visit. While a header menu is expanded the notice steps one layer
   // below it; closing the menu restores it. Structural (any locale). Nothing is hidden or answered —
   // the notice, its choices, storage and signals are untouched.
+  // The language switcher (boot.ts) is dark text by default. On the homepage hero's transparent header its
+  // neighbours (Search, phone) are white over the video, so the switcher read dark-on-dark (28 Sep 2026). It
+  // follows its neighbours: light when most sibling controls use light text. Structural, any locale.
+  function switcherContrast() {
+    var boxes = document.querySelectorAll('.ahv-lang');
+    for (var i = 0; i < boxes.length; i++) {
+      var box = boxes[i], par = box.parentElement; if (!par) continue;
+      var light = 0, dark = 0;
+      for (var k = 0; k < par.children.length; k++) {
+        var c = par.children[k]; if (c === box || !c.getBoundingClientRect().width) continue;
+        var m = /rgba?\((\d+),\s*(\d+),\s*(\d+)/.exec(getComputedStyle(c).color); if (!m) continue;
+        var lum = (0.2126 * m[1] + 0.7152 * m[2] + 0.0722 * m[3]) / 255;
+        if (lum > 0.7) light++; else dark++;
+      }
+      if (light > dark) box.setAttribute('data-ahv-lang-light', ''); else box.removeAttribute('data-ahv-lang-light');
+    }
+  }
   function noticeUnderMenu() {
     var open = false, bs = document.querySelectorAll('header button[aria-expanded="true"]');
     for (var i = 0; i < bs.length; i++) if (!bs[i].classList.contains('ahv-lang-btn') && bs[i].getAttribute('aria-haspopup') !== 'dialog') open = true;
