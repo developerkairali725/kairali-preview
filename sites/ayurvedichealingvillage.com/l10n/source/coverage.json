@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "723c39f662503be1d963a453cccb9048cdaf91320c369c1952e113bb1e09dbde",
+ "sourceSetHash": "ffe5867ca91fa833c14749f133a6eae893e9b556597a955cb5df539705f76795",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -1035,14 +1035,14 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "714d8a0a5d8a7dfe1938a44b5c30bd7e5610b286727389ecca8f41107079655b",
-   "units": 692,
+   "sha256": "74856fce95f7dcfd8e9808400d97d0b244519d4176473710967c0846cdf32cec",
+   "units": 698,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "bccd5a41e325d0c90088316dfb689fbfab47e4985fccc6e636e3d702be246068",
-   "units": 631,
+   "sha256": "5b4de37b7b395d9e116f26d330567ca91b5ee12dd66f3e559a4c23f5e004c9a9",
+   "units": 637,
    "status": "covered"
   },
   {
@@ -1347,8 +1347,8 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "e9880c02ba6cd1945de7d31d88d187e92717c3d52035e2882e223af5bccab3b1",
-   "units": 3045,
+   "sha256": "34b4deead93dc01492195022066c4d93285d510010000721c3c150a33605ede8",
+   "units": 3072,
    "status": "covered"
   },
   {
@@ -1503,7 +1503,7 @@
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "d40eee13c571286b8a0968cbe3c2b0aa5cfd1bcec0932f8aeae37b1ac3adf29c",
+   "sha256": "a212f5f65a6f21f5f6ffdf3c3aff3551df5e316f2ffc7a2db522accbc68fffdd",
    "units": 691,
    "status": "covered (key whitelist)"
   },
