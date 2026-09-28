@@ -407,3 +407,12 @@
     grid-row:1 / span 2 !important;
   }
 }
+
+/* ---- defence offer page, large desktop (same owner report): the "Speak to a doctor" aside sat beside the first 357px
+   of a 2,512px body and the rest of the right column was empty (measured 71% left-only at 1440). The aside now stays
+   in view beside the text as it scrolls. Nothing added; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="defence-and-paramilitary-forces"] main section > div[style*="grid-template-columns"] > aside {
+    position:sticky !important; top:96px !important; align-self:start !important;
+  }
+}
