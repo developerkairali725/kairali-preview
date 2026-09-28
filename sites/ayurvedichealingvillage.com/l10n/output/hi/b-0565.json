@@ -1,0 +1,175 @@
+{
+ "batchId": "b-0565",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_bd8d37f976c6fc95a234",
+   "sourceHash": "bd8d37f976c6fc95a234be66eacc7a67c1a786af35116b905c24b97c299777a5",
+   "text": "III/73 Palayamkadu, P.O. Olassery,Kodumbu, Palakkad District – 678551,Kerala, India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in source, in Latin script, for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_871f0e7a40b6fe7ba09f",
+   "sourceHash": "871f0e7a40b6fe7ba09f299d2339ccb4f16a0e2adb30177cfa4d453e47b4124c",
+   "text": "+91 9555 156 156 WhatsApp +91 92898 38797 [email protected]",
+   "status": "translated",
+   "unchangedReason": "Phone numbers, brand name and an email placeholder only; language-neutral.",
+   "issues": [
+    "Source contains '[email protected]' (an email-obfuscation artifact) instead of the actual address; kept verbatim — the locked public email is info@kairali.com, owner should confirm the rendered output."
+   ]
+  },
+  {
+   "id": "t_aba7860053b03ed98375",
+   "sourceHash": "aba7860053b03ed9837575179ae853c3c0c1e1032336d5d2776c416082b90a53",
+   "text": "Mehrauli, New Delhi – 110030,",
+   "status": "translated",
+   "unchangedReason": "Postal address fragment kept exactly as in source, in Latin script, for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_561b9aeb39076ea946a5",
+   "sourceHash": "561b9aeb39076ea946a5c2e1cd87a42dc4acf3299ee7a1a43323a8f83e5066e9",
+   "text": "D-130, Block D, Ambedkar Colony,Mehrauli, New Delhi – 110030,India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in source, in Latin script, for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_be4ff49e6606a164d195",
+   "sourceHash": "be4ff49e6606a164d19550782956a6a3035c16c88eddad66a58daa3f4f77bb9a",
+   "text": "मुझे कोयंबटूर के लिए उड़ान लेनी चाहिए या कोच्चि के लिए?कोयंबटूर (CJB) निकटतम हवाई अड्डा है, जहाँ से सड़क मार्ग से लगभग डेढ़ से दो घंटे लगते हैं, और अधिकांश आगंतुकों के लिए यहाँ पहुँचना सबसे आसान है। कोच्चि / कोचीन (COK) चुनें — सड़क मार्ग से लगभग ढाई से तीन घंटे — जब वहाँ आपके देश से बेहतर अंतरराष्ट्रीय कनेक्शन मिलता हो।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Question and answer are concatenated without a space in source; same join preserved."
+   ]
+  },
+  {
+   "id": "t_0ef43b895faae98d876a",
+   "sourceHash": "0ef43b895faae98d876ac0618a875f551e786d006a5c6aa9a30e76a1df3d4d6c",
+   "text": "निकटतम हवाई अड्डा कितनी दूर है?कोयंबटूर अंतरराष्ट्रीय हवाई अड्डा (CJB) लगभग 62 कि.मी. दूर सबसे नज़दीक है — कार से लगभग डेढ़ से दो घंटे। कोच्चि / कोचीन अंतरराष्ट्रीय हवाई अड्डा (COK) लगभग 115 कि.मी. दूर है, सड़क मार्ग से लगभग ढाई से तीन घंटे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Question and answer are concatenated without a space in source; same join preserved."
+   ]
+  },
+  {
+   "id": "t_1e39bc43ea248c679ebe",
+   "sourceHash": "1e39bc43ea248c679ebe1bacd20bb06f1a8a0ef0e2332677fee4d0c77326bc66",
+   "text": "क्या आप हवाई अड्डे या रेलवे स्टेशन से पिक-अप की व्यवस्था करते हैं?हाँ। अस्पताल आने वाले रोगियों के लिए निजी कार की व्यवस्था कर सकता है। WhatsApp पर हमारी रोगी सहायता टीम को संदेश भेजें या मुख्य नंबर पर कॉल करें, और अपने पहुँचने की तारीख, समय तथा फ़्लाइट या ट्रेन नंबर बताएँ। टीम का एक सदस्य ड्राइवर और वाहन का विवरण पक्का करेगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_294e5ec15bc0cbdb97a8",
+   "sourceHash": "294e5ec15bc0cbdb97a815f9c46d10cb554806b63dfab6a757769d04862e3f7e",
+   "text": "मैं ड्राइवर को कैसे पहचानूँगा/पहचानूँगी?Kairali का एक प्रतिनिधि आगमन क्षेत्र में नाम-पट्टिका के साथ आपकी प्रतीक्षा करता है। उतरने से पहले आपको ड्राइवर का नाम और वाहन का विवरण भेज दिया जाता है, ताकि आपको ठीक-ठीक पता हो कि आपको कौन लेने आ रहा है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e622077eb42ce87a597",
+   "sourceHash": "0e622077eb42ce87a597aa30fb3b2716de7c03405f832978f1eda20cd64961b7",
+   "text": "क्या देर शाम पहुँचने पर पिक-अप उपलब्ध है?हाँ। देर से पहुँचने पर, जब स्थानीय सड़कें सुनसान रहती हैं, पहले से व्यवस्थित ट्रांसफर की सलाह दी जाती है। अपनी फ़्लाइट का विवरण पहले से साझा करें, और आपका ड्राइवर किसी भी समय आपकी प्रतीक्षा करेगा।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b157078cf115cbeb2400",
+   "sourceHash": "b157078cf115cbeb24006507b8af52cb7755b28e24b40f9e1757f10c458853b5",
+   "text": "क्या मैं ट्रेन से आ सकता/सकती हूँ?हाँ। पालक्काड जंक्शन (PGT) अनुशंसित स्टेशन है, जो लगभग 18 कि.मी. दूर है — कार से लगभग 35 मिनट। स्टेशन पर टैक्सियाँ उपलब्ध हैं, या हमें अपना ट्रेन नंबर और पहुँचने का समय भेजें, हम आपको लेने आ जाएँगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3b6d54a20b2720656d5c",
+   "sourceHash": "3b6d54a20b2720656d5c12ef1b5ae63f7a1b25f4f241beecb8432cd8f0a68512",
+   "text": "क्या अकेले यात्रा करने वाले के लिए यह यात्रा सुरक्षित है?केरल भारत के सबसे शांत क्षेत्रों में से एक है, और यहाँ अंग्रेज़ी व्यापक रूप से बोली जाती है। पहले से व्यवस्थित ट्रांसफर में नामित ड्राइवर आपसे मिलता है, इसलिए पहुँचने पर टैक्सी ढूँढने की ज़रूरत नहीं होती। हमारे कई रोगी अकेले ही हमारे पास आते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_3b6d54a20b2720656d5c banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_1df073a2a8b186868934",
+   "sourceHash": "1df073a2a8b186868934f1c69a38d3f62bf677f4473afb3b9d90d452bcf59b90",
+   "text": "क्या आप व्हीलचेयर या देखभालकर्ता की व्यवस्था कर सकते हैं?हाँ। व्हीलचेयर-सुलभ वाहन और साथ चलने वाले देखभालकर्ता की व्यवस्था की जा सकती है। कृपया बुकिंग के समय अपनी आवश्यकताएँ बताएँ, ताकि सही वाहन तैयार रहे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_624f049df25b4ea23384",
+   "sourceHash": "624f049df25b4ea23384f9c2926c963654092fef06b608f7dadaad46e4ba06ce",
+   "text": "क्या मुझे भारतीय वीज़ा चाहिए?अधिकांश अंतरराष्ट्रीय आगंतुकों को वैध पासपोर्ट और भारतीय वीज़ा या पात्र ई-वीज़ा की आवश्यकता होती है। आवश्यकताएँ राष्ट्रीयता के अनुसार अलग होती हैं और बदल सकती हैं — कृपया यात्रा से पहले भारत सरकार का आधिकारिक वीज़ा पोर्टल देखें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_624f049df25b4ea23384 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_e5cb8ec69638c09e8780",
+   "sourceHash": "e5cb8ec69638c09e878025faa97a315b4b6329efc8a1b7c4de24eef11656d233",
+   "text": "क्या यह अस्पताल है या कोई मसाज/वेलनेस केंद्र?Kairali – आयुर्वेदिक हीलिंग विलेज एक NABH-मान्यता प्राप्त आयुर्वेदिक अस्पताल है। देखभाल का नेतृत्व पंजीकृत आयुर्वेदिक चिकित्सक करते हैं, और हर उपचार कार्यक्रम एक नैदानिक परामर्श से शुरू होता है। यह कोई मसाज/वेलनेस केंद्र नहीं है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned-register substitution: 'spa' (used in the source only to deny it) rendered as 'मसाज/वेलनेस केंद्र' per KTAHV language lock; meaning (hospital, not a spa) preserved. Owner may prefer a different contrast term."
+   ]
+  },
+  {
+   "id": "t_155a2e2606264b5658fd",
+   "sourceHash": "155a2e2606264b5658fd27d4a53b73040e5d57d8b79c72ad6aa796119f354320",
+   "text": "अपने आगमन की योजना बनाने के लिए तैयार हैं?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d80a37ccf54bca5844ba",
+   "sourceHash": "d80a37ccf54bca5844baedb7470c2cd47f58d96c8614e156833eb0db1933a20b",
+   "text": "ट्रांसफर की व्यवस्था के लिए WhatsApp पर Priya को संदेश भेजें, या अपनी यात्रा के बारे में हमारी टीम से बात करें। कोई चिकित्सक या उपयुक्त टीम सदस्य आपसे संपर्क करेंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_d80a37ccf54bca5844ba banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_605daa9ff3bb3f5978d2",
+   "sourceHash": "605daa9ff3bb3f5978d208bffe33418f04a0e582cdd701d4b4b1008cda89e9d3",
+   "text": "WhatsApp पर Priya को संदेश भेजें हमसे संपर्क करें ऑनलाइन परामर्श",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81ea09bedb4e2f6891fe",
+   "sourceHash": "81ea09bedb4e2f6891fe9da421461ac631dd3746d96f2b3c3f2bc619ce05d856",
+   "text": "WhatsApp कॉल करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_168208823a3e9833c412",
+   "sourceHash": "168208823a3e9833c41231b1722a3b62cae028d83419b8521d22ebb2cf9cfee6",
+   "text": "इस रूट में पेज शीर्षक के लिए कोई हेडिंग एलिमेंट नहीं है — स्रोत इसे इस रूप में चिह्नित करता है",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment of an internal engineering note (sentence continues after this unit); translated as a fragment. Owner may want it excluded from display."
+   ]
+  }
+ ]
+}
