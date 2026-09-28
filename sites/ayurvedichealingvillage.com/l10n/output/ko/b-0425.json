@@ -4,24 +4,6 @@
  "locale": "ko",
  "units": [
   {
-   "id": "t_04fb277ef6de07370e24",
-   "sourceHash": "04fb277ef6de07370e24515a88f0fb5d610a98ecbee30abac8ffd2a32223f51c",
-   "text": "따뜻한 빛의 황동 벽등이 달린 아치형 벽돌 복도가 열린 나무 문을 지나 계단식 석조 분수로 이어집니다",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ff60f99049c2494b96a3",
-   "sourceHash": "ff60f99049c2494b96a329d076944723a9fc080563d5b05896ecae5a5897ad7f",
-   "text": "따뜻한 빛의 황동 벽등이 달린 아치형 벽돌 복도가 열린 나무 문을 지나 계단식 석조 분수로 이어집니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source is truncated ('tiered stone water.'); rendered with the evident meaning of the sibling unit."
-   ]
-  },
-  {
    "id": "t_24cfab5e7caec77be56e",
    "sourceHash": "24cfab5e7caec77be56ec3152b1fa513f61edff99f076eb393d74fcae83cb5c0",
    "text": "돌 위로 굽이쳐 흐르는 수로와 코코넛 야자수가 있는 조경 부지",
@@ -36,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_a5a179c928d69aa82176",
-   "sourceHash": "a5a179c928d69aa821760e9989565e6464cc824ce2fe9b0409e1632abf24a0aa",
-   "text": "Panchakarma 1과 Panchakarma 표시가 붙은 아치형 나무 문 사이에 심지에 불을 밝힌 계단식 석조 기름 등잔대가 놓인 치료 복도",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source appears truncated after the second door label ('Panchakarma'); door labels kept in Latin as they are signage text."
-   ]
   },
   {
    "id": "t_fb7f77929a92ce911671",
@@ -115,40 +87,6 @@
    "id": "t_d3fdcbc0629870b1cfb7",
    "sourceHash": "d3fdcbc0629870b1cfb7d97ac3f5afbee89b8fac4b01b80d32e1b31beef10ac5",
    "text": "리셉션 라운지에서 케랄라 전통 사리를 입은 직원이 키 큰 황동 닐라빌라쿠 등잔에 불을 밝히는 모습.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_393390e0678c27986fc5",
-   "sourceHash": "393390e0678c27986fc53efb4d8da75b481d4918532d8a47fa11a63de7000e52",
-   "text": "판차카르마 아트리움에 있는 계단식 석조 분수의 정면 모습",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e05d90392866845f9117",
-   "sourceHash": "e05d90392866845f9117feabfd862f18c52ea1d36db44e5b458d8152e34b6ae4",
-   "text": "판차카르마 아트리움에 있는 계단식 석조 분수의 정면 모습.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_5d65c54e5af85b41c98d",
-   "sourceHash": "5d65c54e5af85b41c98d355a80c015595ae7a69039fbdcb2f4c79c70847a1eab",
-   "text": "흰 회칠 벽을 배경으로 밝은 원판 위에 금색 글자로 Kairali Ayurvedic Centre라고 적힌 둥근 백라이트 브랜드 엠블럼 클로즈업",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source appears truncated after 'whitewashed'; rendered as 'whitewashed wall'."
-   ]
-  },
-  {
-   "id": "t_18a5445fa3420bbb7991",
-   "sourceHash": "18a5445fa3420bbb7991e13f56786879de0363b24651936fd95f368ed88be8d0",
-   "text": "금색 글자로 Kairali Ayurvedic Centre라고 적힌 둥근 백라이트 브랜드 엠블럼 클로즈업.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

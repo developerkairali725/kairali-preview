@@ -4,24 +4,6 @@
  "locale": "ar",
  "units": [
   {
-   "id": "t_05a8f61443b30f32801c",
-   "sourceHash": "05a8f61443b30f32801cd322cfd380e3103c4967890f9cddba205b36c26c41b9",
-   "text": "10% لإقامة من 3 إلى 13 ليلة · 15% لإقامة من 14 إلى 20 ليلة · 20% لإقامة 21 ليلة أو أكثر. لجميع الباقات. صالح [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d13ca61874661ab89a4a",
-   "sourceHash": "d13ca61874661ab89a4a93d5b2ed3e99da8d66dae4c0b9233661239f95ca6013",
-   "text": "10% لإقامة من 3 إلى 14 ليلة · 15% لإقامة من 14 إلى 21 ليلة · 20% لإقامة تزيد على 21 ليلة. لمنتسبي الجيش والبحرية والقوات الجوية. صالح [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source ranges overlap (14 nights appears in two tiers); preserved as-is."
-   ]
-  },
-  {
    "id": "t_1aa4cb0bcca76e92e306",
    "sourceHash": "1aa4cb0bcca76e92e30677e809bb3d4b5c066715ef4d558184e319496bcc5125",
    "text": "صورة",
@@ -30,33 +12,9 @@
    "issues": []
   },
   {
-   "id": "t_84cb3900f9eccea97f79",
-   "sourceHash": "84cb3900f9eccea97f79345b6f08c729b71da1cc62f41ace9e37fbcf299921e2",
-   "text": "لا تتضمن صفحة السجل أي وصف. القيمة والمشمولات ومدة الصلاحية: [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_0f8cdd29b1a096fbb480",
-   "sourceHash": "0f8cdd29b1a096fbb48095c09b680d7220efb549fc1e068cfd9d980a5129916c",
-   "text": "لا تذكر صفحة القسيمة في السجل أي فئات أو مدة صلاحية أو قائمة بما يمكن استبدالها به.[[TAG_1]]مدة الصلاحية: [TO CONFIRM][[TAG_2]]قابلة للاستبدال مقابل: [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_4da6676719732c7c00e1",
    "sourceHash": "4da6676719732c7c00e14fd71ffe6e15882aefe2e944b55b1f2163f6c9bc5c8f",
    "text": "118 عامًا[[OPEN_1]]من التميّز في الأيورفيدا[[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_13fe2a6dda041dc86032",
-   "sourceHash": "13fe2a6dda041dc860324d67eb4d795ff951247bed206b85699f1cc46cf3bf7c",
-   "text": "رقم الهاتف: [TO CONFIRM]",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

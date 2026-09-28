@@ -4,14 +4,6 @@
  "locale": "es",
  "units": [
   {
-   "id": "t_332d12ba845ac8e53f9c",
-   "sourceHash": "332d12ba845ac8e53f9ccf11a2958076766ffb0d45b030c64e121af6d4c5369a",
-   "text": "Espacios para ofertas a continuación. El equipo de atención al paciente facilita cada importe, cada inclusión y cada periodo de validez.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_ef9de1fa400d277b96db",
    "sourceHash": "ef9de1fa400d277b96dbecd703789d617a920a61a07244b2d97bf6509ad94f4b",
    "text": "Oferta destacada",
@@ -142,38 +134,12 @@
    "issues": []
   },
   {
-   "id": "t_cb95293b5803683cb2a9",
-   "sourceHash": "cb95293b5803683cb2a9947831a23d7b62775a371cd9638eacc9749813f6a413",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Confirme un programa de bienestar para personas mayores este mes.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_6b3d83a9d2c7afa77653",
-   "sourceHash": "6b3d83a9d2c7afa776533fb64318df218fea2ac8b2f3f0916860e1cbbfd01c1a",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]][TO CONFIRM]: la página de la oferta del registro no indica ningún procedimiento de solicitud ni código de reserva.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_97d4be8960698f97bff3",
    "sourceHash": "97d4be8960698f97bff3834494ca9adb3ae0fac886a6773300ff107336350a90",
    "text": "Condiciones",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_8e2feaea1890742ac7a8",
-   "sourceHash": "8e2feaea1890742ac7a8186b4f05694cfebbacc5428d93069e242a663ca59335",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Válida solo para pacientes que nos visitan por primera vez[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Guests' rendered as 'pacientes' per the clinical language lock."
-   ]
   },
   {
    "id": "t_980a56b527a4551d8784",

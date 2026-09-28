@@ -12,14 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_44a0584e2379b9a3dce2",
-   "sourceHash": "44a0584e2379b9a3dce2c0ce61bfc2446218f1a2c385f03489b68d9605b4b808",
-   "text": "يُرجى التواصل مع مستشاري السفر لدينا للاطلاع على الخصومات المتاحة وخيارات الإهداء.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_8aa8d117730465bf2a26",
    "sourceHash": "8aa8d117730465bf2a2694b2464b6ad3ecd5f2eac2c62b72a858a57283ff466d",
    "text": "[email protected]",
@@ -27,16 +19,6 @@
    "unchangedReason": "Email placeholder / obfuscation artefact kept verbatim.",
    "issues": [
     "Source contains the Cloudflare email-protection placeholder '[email protected]' instead of a real address; kept verbatim — the actual email should be confirmed by the owner (locked public email is info@kairali.com)."
-   ]
-  },
-  {
-   "id": "t_7964eb6ac3017a427cae",
-   "sourceHash": "7964eb6ac3017a427cae89a281f0a184e8cd51e50252b08af520a29e927dbab8",
-   "text": "يُرجى التواصل مع مستشاري السفر لدينا للاطلاع على الخصومات المتاحة وخيارات الإهداء. البريد الإلكتروني: [email protected] الهاتف: +91 9555 156 156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains the Cloudflare email-protection placeholder '[email protected]' instead of a real address; kept verbatim for owner confirmation. Phone kept unchanged."
    ]
   },
   {

@@ -4,16 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_e1ed94eae412109aeafa",
-   "sourceHash": "e1ed94eae412109aeafa1974942b50ad87648a13a8c9b5c13d89a7d89c937e1e",
-   "text": "[[OPEN_1]]HÔTELLERIE ET SANTÉ[[CLOSE_1]] Forte d'une excellente infrastructure, Kairali a fondé en 1997 son établissement emblématique au Kerala. Primé, situé dans le cadre inspirant de la forêt tropicale de Palakkad, The Ayurvedic Healing Village offre le meilleur du confort holistique moderne. L'établissement est entouré de vingt hectares de terres agricoles biologiques consacrées aux plantes médicinales et constitue une communauté de soins durable pour les visiteurs qui souhaitent suivre un programme de Panchakarma, de détox ou de yoga. Depuis la création de sa division hôtelière, la notoriété internationale de Kairali s'est considérablement accrue, avec deux autres établissements en Inde et le développement de centres franchisés de bien-être sur trois continents.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "KTAHV language lock substitutions: 'Kerala Retreat' / 'retreat centre' → 'établissement'; 'holistic luxury' → 'confort holistique'; 'guests' → 'visiteurs'; 'Panchakarma, detox and yoga retreats' → 'programme de Panchakarma, de détox ou de yoga'; 'resorts' → 'établissements'; 'spa franchises' → 'centres franchisés de bien-être'. 'fifty acres' rendered as 'vingt hectares' (≈20.2 ha) — CHECK: if the number must stay literal, use 'cinquante acres'. This group-corporate paragraph uses resort/spa framing that conflicts with the KTAHV clinical lock; owner review of the English source recommended."
-   ]
-  },
-  {
    "id": "t_128d3ac1293546b781c5",
    "sourceHash": "128d3ac1293546b781c5d112530eb6f2d6d14f773373a252093d5e80e2f51538",
    "text": "[[OPEN_1]]MÉDECINE AYURVÉDIQUE[[CLOSE_1]] Les remèdes ayurvédiques à base de plantes de Kairali s'inscrivent dans un héritage familial remarquable. Fondée en 1948 par le Dr K. S. Vasudevan, père de M. K.V. Ramesh, Spalabs est à l'origine de plusieurs formules et compléments de santé à succès. Fondées sur des ingrédients ayurvédiques authentiques et les procédés traditionnels de nos textes anciens, ces recettes originales ont été constamment améliorées au cours des soixante dernières années, pour aboutir à notre gamme moderne de remèdes ayurvédiques à base de plantes. La vaste gamme de produits ayurvédiques de Kairali comprend une centaine de médicaments authentiques à base de plantes, des soins pour la peau, des produits pour le corps et des équipements de bien-être, proposés à nos partenaires et franchisés pour distribution dans leurs points de vente.",
@@ -21,16 +11,6 @@
    "unchangedReason": null,
    "issues": [
     "'Spalabs' kept verbatim as a proper name. 'spa equipment' → 'équipements de bien-être' and 'spa franchisees' → 'franchisés' per the KTAHV language lock."
-   ]
-  },
-  {
-   "id": "t_effdab96a312e97ee7fc",
-   "sourceHash": "effdab96a312e97ee7fc3be2b894b3a9c8bbefb5c4e20cf5e16fb09e8d13f711",
-   "text": "Le Kerala, en Inde Palakkad, au Kerala L'hôpital, à Palakkad Un plan du domaine, avec la numérotation de l'accueil, de l'hôpital ayurvédique, du centre de yoga, du jardin de plantes médicinales et des villas.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source is several map captions run together without separators; structure preserved."
    ]
   },
   {

@@ -92,36 +92,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6ed743d40ad7f2626b45",
-   "sourceHash": "6ed743d40ad7f2626b453022d7988b314b51d4abe8e2797c13e25ae1225719ef",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "Source describes chemo/radiation therapy as 'a form of killer in disguise' that 'kills the person from inside' and claims Ayurveda can 'detoxify the immune system' — an unverified medical claim discouraging oncology treatment, contradicting the page's own 'not-an-alternative-to-oncology' standfirst. Requires Dr. Deepu John's clinical sign-off/rewrite before translation."
-   ]
-  },
-  {
-   "id": "t_fab1a9e13b5d70f8179a",
-   "sourceHash": "fab1a9e13b5d70f8179ad90271bd22ef5ad4849b5e6882cfa21bf7650c1583d1",
-   "text": "저희 헬스 센터에는 세 부류의 암 환자분들이 방문합니다. 첫째, 최근 암 진단을 받은 분입니다. 둘째, 이미 투병 중이며 치료를 받고 있는 분입니다. 셋째, 항암 치료를 마쳤으며 암에서 벗어났을 수도 있는 분입니다. 건강한 생활 습관과 올바른 식단을 유지하는 것은 모든 종류의 질환에 도움이 되며, Kairali는 몸의 긴장을 풀고 마음의 평화를 얻기에 가장 좋은 곳입니다. 고요한 환경이 긍정적인 분위기를 전해 주어 자연스럽게 치유에 도움이 됩니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'health resort' rendered as '헬스 센터' (health centre) per clinical language lock. Source contains unsubstantiated claims ('best place', environment 'automatically helps in healing') — translated faithfully without strengthening; flag for clinical review (Dr. Deepu John)."
-   ]
-  },
-  {
-   "id": "t_cc63175684d3c474faab",
-   "sourceHash": "cc63175684d3c474faab4c23c4c0af529eaf6aa8fe692d038549626ec72fe5c0",
-   "text": "저희 아유르베다 헬스 센터는 정통 아유르베다 마사지와 요법을 통해 암 환자분들이 몸의 활력을 되찾고 건강을 유지하며, 마음을 긍정적이고 편안하며 의욕 있게 가꾸도록 돕습니다. 환자의 상태에 따라 Abhyangam (아비양감), 시로다라(Shirodhara), 바마나(Vaman) 등의 요법이 시행됩니다. 이러한 치료는 몸의 해독을 돕습니다. 감각을 진정시키고 다스리는 데 도움이 되는 요가 세션도 마련되어 있습니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Health Resort' rendered as '아유르베다 헬스 센터' per clinical language lock. Oncology-adjacent efficacy wording; flag for clinical review (Dr. Deepu John)."
-   ]
   }
  ]
 }

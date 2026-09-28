@@ -4,26 +4,6 @@
  "locale": "hi",
  "units": [
   {
-   "id": "t_e561c46b4cb403171503",
-   "sourceHash": "e561c46b4cb403171503a306048994233c7d6cb08927ffc287c9776299b40b78",
-   "text": "[TO CONFIRM: परिवार के सदस्यों के लिए आवश्यक प्रमाण]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Editorial placeholder: I kept the 'TO CONFIRM' marker in English so it can still be found by search. The fact behind it is still open in the source."
-   ]
-  },
-  {
-   "id": "t_6bbd97a6b06d4d0e2bfb",
-   "sourceHash": "6bbd97a6b06d4d0e2bfb4842a82080a37c4c8f247b7700fbcf3c1b1e1880b19e",
-   "text": "[TO CONFIRM: पूछताछ, बुकिंग या भर्ती] के समय जाँच की जाती है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Editorial placeholder: I kept the 'TO CONFIRM' marker in English so it can still be found by search. The checking stage is still unconfirmed in the source."
-   ]
-  },
-  {
    "id": "t_f511b24f8b8668a294b8",
    "sourceHash": "f511b24f8b8668a294b875bf59739ccf57f44eff9b2b94c4a388462e9d360458",
    "text": "छूट",
@@ -38,42 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_76d0d394d2abc8201710",
-   "sourceHash": "76d0d394d2abc82017101f7939f008d2732c1f7b3d1c53988165760311f623e2",
-   "text": "केवल बुकिंग राशि पर। कृपया नीचे दिए गए नियम और शर्तें देखें।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_63ef98b8a8a1df43f15c",
-   "sourceHash": "63ef98b8a8a1df43f15c769f8ff45b202b2e913ac5a2c6b36b031cf3a07efb5c",
-   "text": "दावा कैसे करें, और कब तक",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_0db547502e7599c69122",
-   "sourceHash": "0db547502e7599c69122bef9521b4234e9ea044013c9fc1d17fceb8721900400",
-   "text": "दावा कैसे करें — [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Editorial placeholder: I kept the 'TO CONFIRM' marker unchanged."
-   ]
-  },
-  {
-   "id": "t_a0a0eaa84e20a8d8585e",
-   "sourceHash": "a0a0eaa84e20a8d8585eeafd9106653af564257d0c7b1f72617197a44dfc9c0a",
-   "text": "वैध तिथि — [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Editorial placeholder: I kept the 'TO CONFIRM' marker unchanged."
-   ]
   },
   {
    "id": "t_78d78b252eba395b2c77",
@@ -110,16 +54,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_7f87f31d05c1af0c9b28",
-   "sourceHash": "7f87f31d05c1af0c9b28e9a264c9f026bb6fa53bb5a520676959b283d1c393b5",
-   "text": "आयुर्वेदिक हीलिंग विलेज में उपलब्ध पैकेजों के बारे में अधिक जानकारी के लिए, कृपया [[OPEN_1]]यहाँ क्लिक करें[[CLOSE_1]] [[OPEN_2]][TO CONFIRM: link target][[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Editorial placeholder: I kept '[TO CONFIRM: link target]' unchanged. The link target is still unconfirmed in the source."
-   ]
   },
   {
    "id": "t_d43be535aacf12e408ba",

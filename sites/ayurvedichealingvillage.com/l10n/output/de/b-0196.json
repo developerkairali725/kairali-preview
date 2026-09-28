@@ -4,24 +4,6 @@
  "locale": "de",
  "units": [
   {
-   "id": "t_05a8f61443b30f32801c",
-   "sourceHash": "05a8f61443b30f32801cd322cfd380e3103c4967890f9cddba205b36c26c41b9",
-   "text": "10 % bei 3–13 Nächten · 15 % bei 14–20 Nächten · 20 % ab 21 Nächten. Für alle Pakete. Gültig [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d13ca61874661ab89a4a",
-   "sourceHash": "d13ca61874661ab89a4a93d5b2ed3e99da8d66dae4c0b9233661239f95ca6013",
-   "text": "10 % bei 3–14 Nächten · 15 % bei 14–21 Nächten · 20 % über 21 Nächte. Heer, Marine und Luftwaffe. Gültig [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source night ranges overlap (3–14 / 14–21); preserved verbatim, flag for owner review."
-   ]
-  },
-  {
    "id": "t_1aa4cb0bcca76e92e306",
    "sourceHash": "1aa4cb0bcca76e92e30677e809bb3d4b5c066715ef4d558184e319496bcc5125",
    "text": "Bild",
@@ -30,33 +12,9 @@
    "issues": []
   },
   {
-   "id": "t_84cb3900f9eccea97f79",
-   "sourceHash": "84cb3900f9eccea97f79345b6f08c729b71da1cc62f41ace9e37fbcf299921e2",
-   "text": "Die Seite des Datensatzes enthält keine Beschreibung. Betrag, enthaltene Leistungen und Gültigkeit: [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_0f8cdd29b1a096fbb480",
-   "sourceHash": "0f8cdd29b1a096fbb48095c09b680d7220efb549fc1e068cfd9d980a5129916c",
-   "text": "Auf der Gutscheinseite des Datensatzes sind weder Nennwerte noch Gültigkeitszeitraum noch einlösbare Leistungen angegeben.[[TAG_1]]Gültigkeitszeitraum: [TO CONFIRM][[TAG_2]]Einlösbar für: [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_4da6676719732c7c00e1",
    "sourceHash": "4da6676719732c7c00e14fd71ffe6e15882aefe2e944b55b1f2163f6c9bc5c8f",
    "text": "118 Jahre[[OPEN_1]]ayurvedische Exzellenz[[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_13fe2a6dda041dc86032",
-   "sourceHash": "13fe2a6dda041dc860324d67eb4d795ff951247bed206b85699f1cc46cf3bf7c",
-   "text": "Telefonnummer: [TO CONFIRM]",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

@@ -4,14 +4,6 @@
  "locale": "fr",
  "units": [
   {
-   "id": "t_332d12ba845ac8e53f9c",
-   "sourceHash": "332d12ba845ac8e53f9ccf11a2958076766ffb0d45b030c64e121af6d4c5369a",
-   "text": "Emplacements d'offres ci-dessous. Chaque montant, chaque prestation incluse et chaque période de validité sont fournis par l'équipe de prise en charge des patients.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_ef9de1fa400d277b96db",
    "sourceHash": "ef9de1fa400d277b96dbecd703789d617a920a61a07244b2d97bf6509ad94f4b",
    "text": "Offre à la une",
@@ -142,38 +134,12 @@
    "issues": []
   },
   {
-   "id": "t_cb95293b5803683cb2a9",
-   "sourceHash": "cb95293b5803683cb2a9947831a23d7b62775a371cd9638eacc9749813f6a413",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Confirmez un programme de bien-être pour seniors ce mois-ci.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_6b3d83a9d2c7afa77653",
-   "sourceHash": "6b3d83a9d2c7afa776533fb64318df218fea2ac8b2f3f0916860e1cbbfd01c1a",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]][TO CONFIRM] — la page de l'offre enregistrée n'indique ni procédure de demande ni code de réservation.[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_97d4be8960698f97bff3",
    "sourceHash": "97d4be8960698f97bff3834494ca9adb3ae0fac886a6773300ff107336350a90",
    "text": "Conditions",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_8e2feaea1890742ac7a8",
-   "sourceHash": "8e2feaea1890742ac7a8186b4f05694cfebbacc5428d93069e242a663ca59335",
-   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Valable uniquement pour les patients accueillis pour la première fois[[CLOSE_2]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Banned term 'guests' rendered as 'patients'."
-   ]
   },
   {
    "id": "t_980a56b527a4551d8784",

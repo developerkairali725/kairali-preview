@@ -94,36 +94,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6ed743d40ad7f2626b45",
-   "sourceHash": "6ed743d40ad7f2626b453022d7988b314b51d4abe8e2797c13e25ae1225719ef",
-   "text": "我们常听到癌症患者说，他们已经接受过多次化疗和放疗。这是一种隐形的杀手，它会削弱身体，从内部摧垮一个人。因此，位于喀拉拉邦帕拉卡德的Kairali – 阿育吠陀疗愈村推出了一项计划，旨在为免疫系统排毒、增强体质，帮助患者恢复活力，过上快乐安宁的生活。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "CLINICAL FLAG: source calls chemo/radiotherapy a 'killer in disguise' that 'kills the person from inside' — an anti-oncology claim that conflicts with the page's own 'not-an-alternative-to-oncology' placeholder. Translated faithfully without strengthening; requires Dr. Deepu John's review/rewrite before release in any locale."
-   ]
-  },
-  {
-   "id": "t_fab1a9e13b5d70f8179a",
-   "sourceHash": "fab1a9e13b5d70f8179ad90271bd22ef5ad4849b5e6882cfa21bf7650c1583d1",
-   "text": "前来我院的癌症患者分为三类：第一类是近期确诊癌症的患者；第二类是正在患病并接受治疗的患者；第三类是已停止化疗、或许也已摆脱癌症困扰的患者。保持良好的生活方式和合理的饮食对各种疾病都有帮助，而Kairali是让您放松身心、获得内心安宁的理想之所。宁静的环境散发着积极的氛围，自然有助于康复。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'health resort' rendered as 我院 (our hospital) per clinical lock. CLINICAL FLAG: 'best place' superlative and healing claim retained as source (softened to 理想之所); requires Dr. Deepu John's sign-off."
-   ]
-  },
-  {
-   "id": "t_cc63175684d3c474faab",
-   "sourceHash": "cc63175684d3c474faab4c23c4c0af529eaf6aa8fe692d038549626ec72fe5c0",
-   "text": "我院借助正宗的阿育吠陀按摩和疗法，帮助癌症患者焕发身体活力、保持健康，使心态积极、放松并充满动力。根据患者的具体情况，可安排Abhyangam（阿比扬伽）、Shirodhara（希罗达拉）和Vaman（催吐疗法）等疗法。这些治疗有助于身体排毒。我们还安排瑜伽课程，帮助平静身心、调控感官。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Health Resort' rendered as 我院 (our hospital) per clinical lock. CLINICAL FLAG: oncology-context therapy claims (incl. Vaman for cancer patients) require Dr. Deepu John's sign-off."
-   ]
   }
  ]
 }

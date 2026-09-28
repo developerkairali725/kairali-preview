@@ -168,52 +168,12 @@
    "issues": []
   },
   {
-   "id": "t_864518401f7e5bc965d0",
-   "sourceHash": "864518401f7e5bc965d0adb5da39f6dc5c74fb8faaecedcb7e70c71f01cdde57",
-   "text": "현역 복무자 — [TO CONFIRM: which forces are covered]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder; the [TO CONFIRM: …] marker is kept verbatim in English so it stays greppable. The covered forces must be confirmed before publication."
-   ]
-  },
-  {
-   "id": "t_6a8779291571202b5058",
-   "sourceHash": "6a8779291571202b50580f6f56bd5ad88d6466e0a54de370859c81a2e19bbe40",
-   "text": "퇴역 복무자 및 제대 군인 — [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder; [TO CONFIRM] marker kept verbatim. Eligibility must be confirmed before publication."
-   ]
-  },
-  {
-   "id": "t_50b055b4b13721f0295e",
-   "sourceHash": "50b055b4b13721f0295edf63c53799392e021c504bd025052e04fbf1cc75c952",
-   "text": "가족 — [TO CONFIRM: which relationships are included]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder; the [TO CONFIRM: …] marker is kept verbatim in English. The included family relationships must be confirmed before publication."
-   ]
-  },
-  {
    "id": "t_a03f3ea9880d268749d1",
    "sourceHash": "a03f3ea9880d268749d1ad79a1d352d675c70e11dd3485c6c8c61f485ee9ee38",
    "text": "제출해야 할 증빙 서류",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9fe40e1445596e705309",
-   "sourceHash": "9fe40e1445596e705309421ca31945fb5aa50f8bb6fbf2e60432fe7fdd04b27a",
-   "text": "[TO CONFIRM: accepted proof of service]",
-   "status": "translated",
-   "unchangedReason": "The unit is only an unresolved owner placeholder, so it stays verbatim for editors to find by searching.",
-   "issues": [
-    "The accepted proof of service is an unresolved fact. It must be confirmed and translated before publication."
-   ]
   }
  ]
 }

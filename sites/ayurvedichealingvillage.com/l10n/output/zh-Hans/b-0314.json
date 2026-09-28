@@ -12,14 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_44a0584e2379b9a3dce2",
-   "sourceHash": "44a0584e2379b9a3dce2c0ce61bfc2446218f1a2c385f03489b68d9605b4b808",
-   "text": "如需了解各类优惠及礼赠选项，请联系我们热心的旅行顾问。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_8aa8d117730465bf2a26",
    "sourceHash": "8aa8d117730465bf2a2694b2464b6ad3ecd5f2eac2c62b72a858a57283ff466d",
    "text": "[email protected]",
@@ -27,16 +19,6 @@
    "unchangedReason": "Email-obfuscation placeholder; language-neutral, kept verbatim.",
    "issues": [
     "Source appears to be a Cloudflare email-protection artifact rather than a real address; locked contact email is info@kairali.com — flag for review."
-   ]
-  },
-  {
-   "id": "t_7964eb6ac3017a427cae",
-   "sourceHash": "7964eb6ac3017a427cae89a281f0a184e8cd51e50252b08af520a29e927dbab8",
-   "text": "如需了解各类优惠及礼赠选项，请联系我们热心的旅行顾问。电子邮件：[email protected] 电话：+91 9555 156 156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Email is a Cloudflare email-protection artifact, kept verbatim; flag for review."
    ]
   },
   {

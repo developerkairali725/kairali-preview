@@ -82,16 +82,6 @@
    "issues": []
   },
   {
-   "id": "t_0cc8d48b7bf1e39a9ec6",
-   "sourceHash": "0cc8d48b7bf1e39a9ec6c28b160f86263bf7586fc21202539cf2d5d35cb547c5",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "Source makes absolute clinical claims ('cure any malady without causing side effects', 'completely safe') and uses the banned word 'cure'. A faithful translation would publish an unsupported efficacy/safety claim; softening it would change the meaning. Needs a rewritten EN source approved by Dr. Deepu John before translation."
-   ]
-  },
-  {
    "id": "t_edd8f35eef9fe75468df",
    "sourceHash": "edd8f35eef9fe75468dfc1bcf1027fab8d7353f3e86550929a25a647dc83d4b6",
    "text": "¿Por qué elegir un tratamiento o un retiro de Ayurveda?",
@@ -106,16 +96,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_8857bb8ea43199739c77",
-   "sourceHash": "8857bb8ea43199739c7795f25d8552037fd104cd8b8cc16b994e9f21ea0c8526",
-   "text": "Como ya sabemos, el Ayurveda es una de las disciplinas médicas más antiguas que existen en el mundo contemporáneo. A lo largo de los años, se ha ido actualizando constantemente gracias a la investigación y a nuevos descubrimientos, hasta alcanzar su posición actual de plenitud. Sin embargo, más allá de su constante evolución, lo que hace que el Ayurveda sea tan eficaz y preciso para eliminar las dolencias es que no depende de productos sintéticos para combatir las enfermedades, sino que toda su potencia procede de hierbas naturales y plantas medicinales. Gracias a los ingredientes completamente naturales de sus medicamentos, el Ayurveda no tiene efectos secundarios, lo que lo hace muy seguro para el cuerpo humano.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Translated faithfully without strengthening, but the source contains unsupported absolute clinical claims ('no side effect', 'very safe', 'effective and accurate at plucking out maladies'). Flag for Dr. Deepu John's clinical sign-off before publication."
-   ]
   }
  ]
 }

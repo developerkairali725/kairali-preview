@@ -98,36 +98,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6ed743d40ad7f2626b45",
-   "sourceHash": "6ed743d40ad7f2626b453022d7988b314b51d4abe8e2797c13e25ae1225719ef",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "Source describes chemo/radiation therapy as 'a form of killer in disguise' that 'kills the person from inside' and claims the programme can 'detoxify the immune system'. This is an unreviewed, potentially harmful anti-oncology medical claim on a cancer page whose own standfirst is still [TO CONFIRM — physician wording]. Translating it would propagate the claim into a new locale; needs Dr. Deepu John's rewrite/sign-off of the English source first."
-   ]
-  },
-  {
-   "id": "t_fab1a9e13b5d70f8179a",
-   "sourceHash": "fab1a9e13b5d70f8179ad90271bd22ef5ad4849b5e6882cfa21bf7650c1583d1",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "Source is grammatically ambiguous ('might be is free from being a cancer victim') in a way that implies a cure/remission outcome, and asserts the setting 'automatically helps in healing' and 'best place'; also uses 'health resort' (banned). Cannot render faithfully without either inventing a clinical meaning or strengthening a claim. Needs physician-approved English wording (Dr. Deepu John) before translation."
-   ]
-  },
-  {
-   "id": "t_cc63175684d3c474faab",
-   "sourceHash": "cc63175684d3c474faab4c23c4c0af529eaf6aa8fe692d038549626ec72fe5c0",
-   "text": "В нашей аюрведической лечебнице подлинные аюрведические массажи и процедуры помогают онкологическим пациентам восстановить силы, поддерживать хорошую физическую форму и настраиваться на позитивный, спокойный и мотивированный лад. В зависимости от состояния пациента назначаются такие процедуры, как Abhyangam (Абхьянгам), Широдхара (Shirodhara) и вамана. Эти процедуры способствуют очищению организма. Также проводятся занятия йогой, которые помогают успокоиться и контролировать свои чувства.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Health Resort' rendered as 'аюрведическая лечебница' (clinical) to avoid 'resort'. Clinical cancer-page content: requires Dr. Deepu John's sign-off before production."
-   ]
   }
  ]
 }

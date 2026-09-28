@@ -4,16 +4,6 @@
  "locale": "ja",
  "units": [
   {
-   "id": "t_e1ed94eae412109aeafa",
-   "sourceHash": "e1ed94eae412109aeafa1974942b50ad87648a13a8c9b5c13d89a7d89c937e1e",
-   "text": "[[OPEN_1]]ホスピタリティとヘルスケア[[CLOSE_1]] 確かな基盤を整えたKairaliは、1997年にケララ州を代表する滞在施設を設立しました。パラッカドの心を動かす熱帯の森に位置し、数々の賞を受けたThe Ayurvedic Healing Villageは、現代的でホリスティックな上質の快適さを体現しています。施設は五十エーカーのオーガニック薬草農園に囲まれ、パンチャカルマ、デトックス、ヨガのプログラムを求める来訪者のための、持続可能な癒しのコミュニティとなっています。ホスピタリティ部門の設立以来、Kairaliの国際的な知名度は大きく高まり、インド国内にさらに二つの滞在施設を展開し、三大陸にわたってウェルネス施設のフランチャイズを拡大してきました。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical language lock: 'retreat'/'retreat centre' -> 滞在施設/施設, 'luxury' -> 上質の快適さ, 'guests' -> 来訪者, 'resorts' -> 滞在施設, 'spa franchises' -> ウェルネス施設のフランチャイズ. Spelled-out numbers (fifty, two, three) kept as kanji to avoid added digits. Note: this legacy corporate copy is hospitality-framed and may need owner review for the KTAHV clinical register."
-   ]
-  },
-  {
    "id": "t_128d3ac1293546b781c5",
    "sourceHash": "128d3ac1293546b781c5d112530eb6f2d6d14f773373a252093d5e80e2f51538",
    "text": "[[OPEN_1]]アーユルヴェーダ医薬品[[CLOSE_1]] Kairaliのアーユルヴェーダ・ハーブ製剤は、一族の伝統の中で受け継がれてきた確かな歴史を持っています。K.V. Ramesh氏の父であるDr. K. S. Vasudevanが1948年に設立したSpalabsは、数多くのベストセラー処方や健康補助食品を生み出してきました。本物のアーユルヴェーダ原料と古典文献に基づく伝統的な製法をもとにしたこれらの独自処方は、過去六十年にわたり改良を重ね、現在のアーユルヴェーダ・ハーブ製剤のラインアップへと結実しています。Kairaliの幅広いアーユルヴェーダ製品には、百種類の本格的な生薬、スキンケア製品、ボディ製品、ウェルネス施設向け機器が含まれ、提携先およびフランチャイズ加盟店が各店舗で取り扱えるようになっています。",
@@ -22,14 +12,6 @@
    "issues": [
     "Previous rejection: 'sixty years' written as 六十年 (no digit 60 added); 'a hundred' as 百種類. Company name 'Spalabs' kept verbatim as a proper name; 'spa equipment' -> ウェルネス施設向け機器 and 'spa franchisees' -> フランチャイズ加盟店 per the clinical language lock."
    ]
-  },
-  {
-   "id": "t_effdab96a312e97ee7fc",
-   "sourceHash": "effdab96a312e97ee7fc3be2b894b3a9c8bbefb5c4e20cf5e16fb09e8d13f711",
-   "text": "インドのケララ州 ケララ州のパラッカド パラッカドにある病院 受付、アーユルヴェーダ病院、ヨガセンター、薬草園、ヴィラに番号を付けた敷地の案内図。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
   },
   {
    "id": "t_059366cbe1fa6ab56d0e",

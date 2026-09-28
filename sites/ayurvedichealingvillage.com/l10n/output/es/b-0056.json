@@ -168,52 +168,12 @@
    "issues": []
   },
   {
-   "id": "t_864518401f7e5bc965d0",
-   "sourceHash": "864518401f7e5bc965d0adb5da39f6dc5c74fb8faaecedcb7e70c71f01cdde57",
-   "text": "Personal en servicio activo — [TO CONFIRM: which forces are covered]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder; the '[TO CONFIRM: …]' marker is kept verbatim in English so it stays greppable and is not published as fact. Needs owner confirmation of covered forces before publishing."
-   ]
-  },
-  {
-   "id": "t_6a8779291571202b5058",
-   "sourceHash": "6a8779291571202b50580f6f56bd5ad88d6466e0a54de370859c81a2e19bbe40",
-   "text": "Personal retirado y exmilitares — [TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder '[TO CONFIRM]', kept verbatim; eligibility must be confirmed by the owner before publishing."
-   ]
-  },
-  {
-   "id": "t_50b055b4b13721f0295e",
-   "sourceHash": "50b055b4b13721f0295edf63c53799392e021c504bd025052e04fbf1cc75c952",
-   "text": "Familiares — [TO CONFIRM: which relationships are included]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source contains an unresolved owner placeholder, kept verbatim in English so it stays greppable; the relationships covered must be confirmed before publishing."
-   ]
-  },
-  {
    "id": "t_a03f3ea9880d268749d1",
    "sourceHash": "a03f3ea9880d268749d1ad79a1d352d675c70e11dd3485c6c8c61f485ee9ee38",
    "text": "Documentación que debe presentar",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_9fe40e1445596e705309",
-   "sourceHash": "9fe40e1445596e705309421ca31945fb5aa50f8bb6fbf2e60432fe7fdd04b27a",
-   "text": "[TO CONFIRM: accepted proof of service]",
-   "status": "translated",
-   "unchangedReason": "The unit is only an unresolved owner placeholder. It is kept verbatim so it stays greppable and is not published as fact.",
-   "issues": [
-    "The accepted proof of service is not confirmed. The owner must supply it before publishing, then it needs translating."
-   ]
   }
  ]
 }

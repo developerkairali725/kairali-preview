@@ -437,7 +437,8 @@ export const INTERNAL_KEYS = new Set(("reason sourceClass recordedOriginalSha256
   "rightsNote finding datePublished dateModified gridTemplateColumns copyChanges register slider gate sourceBindingSha256 " +
   "ruling outlineOffset fontFamily generated k fw preparedAltPrivate action basis oraclePlacement component by before " +
   "sourceTag control key id el width disposition cause retraction bodyPolicy inlineRepair interactionPolicy provenanceNote " +
-  "renderRule sourceStatus privateNote internalNote auditNote wrapperClass sourceHref sourceUrl sourcePointer pointer").split(/\s+/));
+  "renderRule sourceStatus privateNote internalNote auditNote wrapperClass sourceHref sourceUrl sourcePointer pointer " +
+  "payloadSchema").split(/\s+/)); // payloadSchema = submitted field keys (28 Sep 2026 locale audit), never rendered
 const INTERNAL_PROSE = /\b(governed|verbatim|packet|pointer|oracle|adjudicat\w*|sha-?256|dataset|renderer|prerender|payload|readback|H1|h[1-6]|canonical|sourceAlt|source (node|record|subtree|tree|tag|hero|anchor|order|position|title|head|alt|image|page|file|route|grid|label|heading|trail)|owner[- ]rul\w*|retained privately|poured from)\b/;
 const HASHLIKE = /^(?:[0-9a-f]{16,}|[A-Za-z0-9_-]{11}|\d{4}-\d\d-\d\d(?:T[\d:.]+(?:Z|[+-]\d\d:\d\d)?)?|T[\d:.]+Z?|-?[\d.]+(px|rem|em|%|vh|vw|s|ms|fr)?|[A-Z][A-Z0-9_]{3,}|en[_-]US)$/;
 export function isInternalDatum(keyPath, value) {
@@ -463,6 +464,7 @@ export function isNonEnglishSource(t) {
   return false;
 }
 
+const IDENT = (n) => n && n.type === "Literal" && typeof n.value === "string" && /^[a-z][a-z0-9-]*$/.test(n.value);
 function literalContext(node, ancestors) {
   const parent = ancestors[ancestors.length - 2];
   const gp = ancestors[ancestors.length - 3];
@@ -497,14 +499,22 @@ function literalContext(node, ancestors) {
   }
   if (parent.type === "Property" && parent.value === node) {
     const k = parent.key.type === "Identifier" ? parent.key.name : String(parent.key.value);
-    if (/^(id|key|type|kind|slug|href|url|src|img|image|icon|cls|class|className|color|bg|fg|bd|variant|route|path|file|view|dataset|anchor|target|rel|lang|dir|code|currency|cur|sku|ref|pdf|download|video|poster|mp4|yt|youtube|embed|lat|lng|map|tel|phone|email|whatsapp|wa|mail|hash|sel|selector|event|name_id|at|family|layout|align|pos|position|side|w|h|ratio|fit|mode|state|status|tag_id|cat|category_key|group|filter|value)$/i.test(k)) return "enum";
+    // a lone lowercase identifier as an object value is code (style values, state flags, price status `ps:'valid'`,
+    // `consent:'pending'`) unless the key itself names visible text (28 Sep 2026 locale defect audit)
+    if (IDENT(node) && !/^(v|t|text|label|title|heading|subheading|caption|desc|description|alt|placeholder|cta|button|hint|note|msg|message|tagline|badge|chip|unit|suffix|prefix|word|term|tabLabel|h[1-6]|lead|intro|body|summary|q|a|answer|question|name_display|display)$/i.test(k)) return "enum";
+    if (/^(id|key|type|kind|slug|href|url|src|img|image|icon|cls|class|className|color|bg|fg|bd|variant|route|path|file|view|dataset|anchor|target|rel|lang|dir|code|currency|cur|sku|ref|pdf|download|video|poster|mp4|yt|youtube|embed|lat|lng|map|tel|phone|email|whatsapp|wa|mail|hash|sel|selector|event|name_id|at|family|layout|align|pos|position|side|w|h|ratio|fit|mode|state|status|tag_id|cat|category_key|group|filter|value|name|autocomplete|autoComplete|field|control|for|htmlFor|inputmode|inputMode|pattern|method|action|enctype|attr|attribute|prop|property|role|tag|element|as)$/i.test(k)) return "enum";
     return "display";
   }
-  if (parent.type === "ConditionalExpression") return gp && gp.type === "BinaryExpression" && gp.operator === "+" ? "concat" : "display";
-  if (parent.type === "ArrayExpression") return "display";
+  // code tokens that merely LOOK like words (28 Sep 2026 locale defect: `c.tag === 'th' ? 'th' : 'td'` rendered
+  // createElement('.') in de; image-slot observedAttributes and form payloadSchema arrays were translated)
+  if (parent.type === "ConditionalExpression") {
+    if (IDENT(parent.consequent) && IDENT(parent.alternate)) return "key";
+    return gp && gp.type === "BinaryExpression" && gp.operator === "+" ? "concat" : "display";
+  }
+  if (parent.type === "ArrayExpression") return parent.elements.length && parent.elements.every(IDENT) ? "key" : "display";
   if (parent.type === "ReturnStatement" || parent.type === "ArrowFunctionExpression") return "display";
   if (parent.type === "TemplateLiteral") return "concat";
-  if (parent.type === "LogicalExpression") return "display";
+  if (parent.type === "LogicalExpression") return IDENT(node) ? "key" : "display";
   return "free";
 }
 

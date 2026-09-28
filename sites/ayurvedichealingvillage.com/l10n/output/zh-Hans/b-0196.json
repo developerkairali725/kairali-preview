@@ -4,24 +4,6 @@
  "locale": "zh-Hans",
  "units": [
   {
-   "id": "t_05a8f61443b30f32801c",
-   "sourceHash": "05a8f61443b30f32801cd322cfd380e3103c4967890f9cddba205b36c26c41b9",
-   "text": "3–13 晚享 10% 优惠 · 14–20 晚享 15% 优惠 · 21 晚及以上享 20% 优惠。适用于所有套餐。有效期 [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_d13ca61874661ab89a4a",
-   "sourceHash": "d13ca61874661ab89a4a93d5b2ed3e99da8d66dae4c0b9233661239f95ca6013",
-   "text": "3–14 晚享 10% 优惠 · 14–21 晚享 15% 优惠 · 超过 21 晚享 20% 优惠。适用于陆军、海军和空军。有效期 [[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source night ranges overlap (3–14 / 14–21) — preserved exactly as in the source; owner may wish to verify."
-   ]
-  },
-  {
    "id": "t_1aa4cb0bcca76e92e306",
    "sourceHash": "1aa4cb0bcca76e92e30677e809bb3d4b5c066715ef4d558184e319496bcc5125",
    "text": "图片",
@@ -30,33 +12,9 @@
    "issues": []
   },
   {
-   "id": "t_84cb3900f9eccea97f79",
-   "sourceHash": "84cb3900f9eccea97f79345b6f08c729b71da1cc62f41ace9e37fbcf299921e2",
-   "text": "该记录页面没有任何说明。金额、包含项目与有效期：[[OPEN_1]][TO CONFIRM][[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_0f8cdd29b1a096fbb480",
-   "sourceHash": "0f8cdd29b1a096fbb48095c09b680d7220efb549fc1e068cfd9d980a5129916c",
-   "text": "该记录的礼券页面未注明面额、有效期或可兑换项目清单。[[TAG_1]]有效期：[TO CONFIRM][[TAG_2]]可兑换项目：[TO CONFIRM]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_4da6676719732c7c00e1",
    "sourceHash": "4da6676719732c7c00e14fd71ffe6e15882aefe2e944b55b1f2163f6c9bc5c8f",
    "text": "118 年[[OPEN_1]]卓越的阿育吠陀传承[[CLOSE_1]]",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_13fe2a6dda041dc86032",
-   "sourceHash": "13fe2a6dda041dc860324d67eb4d795ff951247bed206b85699f1cc46cf3bf7c",
-   "text": "电话号码：[TO CONFIRM]",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

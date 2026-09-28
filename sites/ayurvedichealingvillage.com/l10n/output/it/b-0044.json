@@ -92,36 +92,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6ed743d40ad7f2626b45",
-   "sourceHash": "6ed743d40ad7f2626b453022d7988b314b51d4abe8e2797c13e25ae1225719ef",
-   "text": null,
-   "status": "blocked",
-   "unchangedReason": null,
-   "issues": [
-    "Source describes chemotherapy/radiation as 'a form of killer in disguise' that 'kills the person from inside' — an unverified anti-oncology medical claim that contradicts the page's own pending 'supportive care, not an alternative to oncology' physician line. Translating it would propagate an unsafe clinical claim; needs rewrite and Dr. Deepu John's sign-off before localisation."
-   ]
-  },
-  {
-   "id": "t_fab1a9e13b5d70f8179a",
-   "sourceHash": "fab1a9e13b5d70f8179ad90271bd22ef5ad4849b5e6882cfa21bf7650c1583d1",
-   "text": "Il nostro ospedale ayurvedico accoglie tre categorie di pazienti oncologici: chi ha ricevuto di recente una diagnosi di cancro; chi convive già con la malattia ed è in trattamento; e chi ha concluso la chemioterapia e potrebbe anche essere libero dalla malattia. Mantenere uno stile di vita sano e un’alimentazione adeguata aiuta in ogni tipo di disturbo, e Kairali è il luogo ideale per rilassarsi e ritrovare la pace mentale. L’ambiente sereno diffonde un’atmosfera positiva che contribuisce naturalmente alla guarigione.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'health resort' replaced with 'ospedale ayurvedico' per the KTAHV language lock; 'cancer victim' softened to 'libero dalla malattia'. Source contains clinical/superlative claims ('best place', 'helps in healing' for cancer patients) — flag for Dr. Deepu John's review before publication."
-   ]
-  },
-  {
-   "id": "t_cc63175684d3c474faab",
-   "sourceHash": "cc63175684d3c474faab4c23c4c0af529eaf6aa8fe692d038549626ec72fe5c0",
-   "text": "Nel nostro ospedale ayurvedico, autentici massaggi e terapie ayurvediche aiutano i pazienti oncologici a rivitalizzare il corpo, a mantenersi in forma e a sviluppare un atteggiamento mentale positivo, rilassato e motivato. Terapie come Abhyangam, Shirodhara e Vaman vengono scelte in base alle condizioni del paziente. Questi trattamenti favoriscono la detossificazione dell’organismo. Vengono inoltre organizzate sessioni di yoga che aiutano a calmare e controllare i sensi.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Ayurvedic Health Resort' replaced with 'ospedale ayurvedico' per the KTAHV language lock. Oncology-related therapy claims (incl. Vaman for cancer patients) should be reviewed by Dr. Deepu John before publication."
-   ]
   }
  ]
 }

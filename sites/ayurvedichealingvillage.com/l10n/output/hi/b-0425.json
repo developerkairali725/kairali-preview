@@ -4,24 +4,6 @@
  "locale": "hi",
  "units": [
   {
-   "id": "t_04fb277ef6de07370e24",
-   "sourceHash": "04fb277ef6de07370e24515a88f0fb5d610a98ecbee30abac8ffd2a32223f51c",
-   "text": "पीतल के गर्म रोशनी वाले दीवार-दीपों से सजा ईंट की दीवारों वाला मेहराबदार गलियारा, जो खुले लकड़ी के दरवाज़ों से होकर पत्थर के स्तरीय जल-फव्वारे तक ले जाता है",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ff60f99049c2494b96a3",
-   "sourceHash": "ff60f99049c2494b96a329d076944723a9fc080563d5b05896ecae5a5897ad7f",
-   "text": "पीतल के गर्म रोशनी वाले दीवार-दीपों से सजा ईंट की दीवारों वाला मेहराबदार गलियारा, जो खुले लकड़ी के दरवाज़ों से होकर पत्थर के स्तरीय जल-फव्वारे तक ले जाता है।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source is truncated ('a tiered stone water.'); rendered with the evident meaning ('tiered stone water fountain'), matching the sibling unit."
-   ]
-  },
-  {
    "id": "t_24cfab5e7caec77be56e",
    "sourceHash": "24cfab5e7caec77be56ec3152b1fa513f61edff99f076eb393d74fcae83cb5c0",
    "text": "पत्थरों के ऊपर से बहती घुमावदार जलधारा वाला सुसज्जित परिसर; नारियल के पेड़",
@@ -36,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_a5a179c928d69aa82176",
-   "sourceHash": "a5a179c928d69aa821760e9989565e6464cc824ce2fe9b0409e1632abf24a0aa",
-   "text": "थेरेपी गलियारा, जिसमें Panchakarma 1 और Panchakarma अंकित मेहराबदार लकड़ी के दरवाज़ों के बीच बत्तियों से जलता पत्थर का स्तरीय दीप-स्तंभ है",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Door signage 'Panchakarma 1' / 'Panchakarma' kept in Latin script as literal text on the doors; source appears truncated after the second 'Panchakarma' (number likely missing) — kept as in source."
-   ]
   },
   {
    "id": "t_fb7f77929a92ce911671",
@@ -118,42 +90,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_393390e0678c27986fc5",
-   "sourceHash": "393390e0678c27986fc53efb4d8da75b481d4918532d8a47fa11a63de7000e52",
-   "text": "पंचकर्म प्रांगण में पत्थर के स्तरीय फव्वारे का सामने से दृश्य",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e05d90392866845f9117",
-   "sourceHash": "e05d90392866845f9117feabfd862f18c52ea1d36db44e5b458d8152e34b6ae4",
-   "text": "पंचकर्म प्रांगण में पत्थर के स्तरीय फव्वारे का सामने से दृश्य।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_5d65c54e5af85b41c98d",
-   "sourceHash": "5d65c54e5af85b41c98d355a80c015595ae7a69039fbdcb2f4c79c70847a1eab",
-   "text": "सफ़ेदी की हुई… की पृष्ठभूमि में हल्के रंग की गोल पट्टिका पर सुनहरे अक्षरों में Kairali Ayurvedic Centre लिखे, पीछे से रोशन गोल ब्रांड-प्रतीक का नज़दीकी दृश्य",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source is truncated ('against a whitewashed'); rendered as a matching fragment with an ellipsis. 'Kairali Ayurvedic Centre' kept in Latin script as literal emblem text."
-   ]
-  },
-  {
-   "id": "t_18a5445fa3420bbb7991",
-   "sourceHash": "18a5445fa3420bbb7991e13f56786879de0363b24651936fd95f368ed88be8d0",
-   "text": "सुनहरे अक्षरों में Kairali Ayurvedic Centre लिखे, पीछे से रोशन गोल ब्रांड-प्रतीक का नज़दीकी दृश्य।",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Kairali Ayurvedic Centre' kept in Latin script as literal emblem text."
-   ]
   },
   {
    "id": "t_1f00c4b6b17a74311fec",

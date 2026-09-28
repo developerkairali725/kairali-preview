@@ -12,16 +12,6 @@
    "issues": []
   },
   {
-   "id": "t_44a0584e2379b9a3dce2",
-   "sourceHash": "44a0584e2379b9a3dce2c0ce61bfc2446218f1a2c385f03489b68d9605b4b808",
-   "text": "Contatti i nostri disponibili consulenti di viaggio per i vari sconti e le opzioni regalo.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "t_44a0584e2379b9a3dce2 banned-term viaggio"
-   ]
-  },
-  {
    "id": "t_8aa8d117730465bf2a26",
    "sourceHash": "8aa8d117730465bf2a2694b2464b6ad3ecd5f2eac2c62b72a858a57283ff466d",
    "text": "[email protected]",
@@ -29,17 +19,6 @@
    "unchangedReason": "Email-obfuscation placeholder; kept verbatim.",
    "issues": [
     "Source is a Cloudflare email-protection artefact, not a real address; the locked public email is info@kairali.com — recommend fixing the source."
-   ]
-  },
-  {
-   "id": "t_7964eb6ac3017a427cae",
-   "sourceHash": "7964eb6ac3017a427cae89a281f0a184e8cd51e50252b08af520a29e927dbab8",
-   "text": "Contatti i nostri disponibili consulenti di viaggio per i vari sconti e le opzioni regalo. Email: [email protected] Telefono: +91 9555 156 156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Contains a Cloudflare email-protection artefact '[email protected]' kept verbatim; recommend fixing the source (locked public email: info@kairali.com).",
-    "t_7964eb6ac3017a427cae banned-term viaggio"
    ]
   },
   {

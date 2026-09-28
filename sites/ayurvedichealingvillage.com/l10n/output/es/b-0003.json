@@ -28,32 +28,12 @@
    "issues": []
   },
   {
-   "id": "t_c9479b65293d6205cccf",
-   "sourceHash": "c9479b65293d6205cccfaf3cf186adcc6b181651b90f866b98a462ac9a62d67f",
-   "text": "disclaimer",
-   "status": "translated",
-   "unchangedReason": "Lowercase footer token that appears to be a link/slug key in the footer script, not visible copy; left unchanged so the routing does not break.",
-   "issues": [
-    "Please check: if this string is shown to users in the footer, it should be 'aviso legal'."
-   ]
-  },
-  {
    "id": "t_304230dd7b9f3933b298",
    "sourceHash": "304230dd7b9f3933b298ca10edfea6b9b30904af3c650e1b8428d20fd7d50829",
    "text": "Mapa del sitio",
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_6b0d1c558c93b0e25f36",
-   "sourceHash": "6b0d1c558c93b0e25f36d2f8bf8211a847f599ea2287c626d85fd9975e6c79f9",
-   "text": "sitemap",
-   "status": "translated",
-   "unchangedReason": "Lowercase footer token that appears to be a link/slug key in the footer script, not visible copy; left unchanged so the routing does not break.",
-   "issues": [
-    "Please check: if this string is shown to users in the footer, it should be 'mapa del sitio'."
-   ]
   },
   {
    "id": "t_140bedbf9c3f6d56a984",

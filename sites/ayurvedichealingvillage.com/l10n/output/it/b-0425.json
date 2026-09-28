@@ -4,24 +4,6 @@
  "locale": "it",
  "units": [
   {
-   "id": "t_04fb277ef6de07370e24",
-   "sourceHash": "04fb277ef6de07370e24515a88f0fb5d610a98ecbee30abac8ffd2a32223f51c",
-   "text": "Un corridoio ad arco con pareti in mattoni e calde applique in ottone conduce, attraverso porte in legno aperte, a una fontana in pietra a più livelli",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_ff60f99049c2494b96a3",
-   "sourceHash": "ff60f99049c2494b96a329d076944723a9fc080563d5b05896ecae5a5897ad7f",
-   "text": "Un corridoio ad arco con pareti in mattoni e calde applique in ottone conduce, attraverso porte in legno aperte, a una fontana in pietra a più livelli.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source is truncated ('tiered stone water.'); rendered as a complete caption matching the sibling unit."
-   ]
-  },
-  {
    "id": "t_24cfab5e7caec77be56e",
    "sourceHash": "24cfab5e7caec77be56ec3152b1fa513f61edff99f076eb393d74fcae83cb5c0",
    "text": "Spazi esterni curati con un canale d'acqua sinuoso che scorre sulle pietre; palme da cocco",
@@ -36,16 +18,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_a5a179c928d69aa82176",
-   "sourceHash": "a5a179c928d69aa821760e9989565e6464cc824ce2fe9b0409e1632abf24a0aa",
-   "text": "Il corridoio delle terapie con una lampada a olio in pietra a più livelli, con gli stoppini accesi, tra porte ad arco in legno contrassegnate Panchakarma 1 e Panchakarma",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source appears to end without the second room number ('Panchakarma'); kept as in source."
-   ]
   },
   {
    "id": "t_fb7f77929a92ce911671",
@@ -115,40 +87,6 @@
    "id": "t_d3fdcbc0629870b1cfb7",
    "sourceHash": "d3fdcbc0629870b1cfb7d97ac3f5afbee89b8fac4b01b80d32e1b31beef10ac5",
    "text": "Una collaboratrice in sari tradizionale del Kerala accende un'alta lampada nilavilakku in ottone nella sala d'attesa della reception.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_393390e0678c27986fc5",
-   "sourceHash": "393390e0678c27986fc53efb4d8da75b481d4918532d8a47fa11a63de7000e52",
-   "text": "Vista frontale della fontana in pietra a più livelli nell'atrio del Panchakarma",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e05d90392866845f9117",
-   "sourceHash": "e05d90392866845f9117feabfd862f18c52ea1d36db44e5b458d8152e34b6ae4",
-   "text": "Vista frontale della fontana in pietra a più livelli nell'atrio del Panchakarma.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_5d65c54e5af85b41c98d",
-   "sourceHash": "5d65c54e5af85b41c98d355a80c015595ae7a69039fbdcb2f4c79c70847a1eab",
-   "text": "Primo piano dell'emblema rotondo retroilluminato del marchio con la scritta Kairali Ayurvedic Centre in oro su un disco chiaro, contro una parete imbiancata a calce",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source ends mid-phrase ('against a whitewashed'); 'wall' supplied as the evident noun."
-   ]
-  },
-  {
-   "id": "t_18a5445fa3420bbb7991",
-   "sourceHash": "18a5445fa3420bbb7991e13f56786879de0363b24651936fd95f368ed88be8d0",
-   "text": "Primo piano dell'emblema rotondo retroilluminato del marchio con la scritta Kairali Ayurvedic Centre in oro.",
    "status": "translated",
    "unchangedReason": null,
    "issues": []

@@ -14,30 +14,6 @@
    ]
   },
   {
-   "id": "t_1fe7f8f6757031b077c2",
-   "sourceHash": "1fe7f8f6757031b077c20604116fafce1bd42195cf2c5b8989a59411fc2d98e2",
-   "text": "响应式导航——打开",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_7e3fc7ddffbbc5fe038b",
-   "sourceHash": "7e3fc7ddffbbc5fe038b9d3f3a593e6f02932bc57f587fa7842719728cc11818",
-   "text": "响应式导航——关闭",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_4701a1d5295cdcc29894",
-   "sourceHash": "4701a1d5295cdcc2989467caed7a3b99527e00df806c14797daf68124fac7362",
-   "text": "/packages/ 来源页面中的两个按钮是 wp-block-navigation 响应式导航的打开/关闭控件，并不能证明来源页面存在搜索/筛选表单。请在已批准的页面框架中保留或映射来源的上下文导航；任何新增的搜索/筛选功能都必须是明确的设计改进，而非虚构的来源功能。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
    "id": "t_01480295a116d910e57b",
    "sourceHash": "01480295a116d910e57b6d92ba5acc16f7ba9fe181f24d51b0007cf0a4c2b138",
    "text": "保留来源的分组顺序。每张卡片均附有其自身的图片、来源描述和链接。",
