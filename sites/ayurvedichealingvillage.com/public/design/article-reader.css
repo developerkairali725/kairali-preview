@@ -502,3 +502,32 @@
     border-radius:4px !important; padding:18px 22px !important; font-size:16.5px !important; line-height:1.7 !important;
   }
 }
+
+/* ---- the location maps block stays where it was designed to be (owner regression, 28 Sep 2026) -------------------
+   tools/repair-how-to-reach-maps.mjs injects the four Kairali maps into the shared article template, hidden by default
+   (directions.css: [data-ahv-maps] {display:none}) and revealed only on /how-to-reach/ and /map/. The large-desktop
+   editorial grid above sets display:grid on headed sections with a higher specificity, which revealed the block —
+   three maps plus a full-width grounds plan, 1,143px — above the footer of 105 article routes (owner: "the two large
+   images are still there right above the footer" on /arogya-kendra/). Restores the designed default everywhere else. */
+#ahv-design-root:not([data-ahv-route="/how-to-reach/"]):not([data-ahv-route="/map/"]) main > section[data-ahv-maps] { display:none !important; }
+/* /arogya-kendra/ is a partner page for Ayurvedic practitioners: the closing patient prompt ("Not sure which programme
+   fits?") is not its audience. Its onward navigation is the page's own "Other ways to work with Kairali" list. */
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main > section[data-ahv-article-cta] { display:none !important; }
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] {
+  list-style:none !important; padding:0 !important; margin:62px 0 0 !important; max-width:none !important;
+  display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:10px !important;
+}
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] > li { margin:0 !important; padding:0 !important; list-style:none !important; }
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] > li::before,
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] > li::marker { content:none !important; display:none !important; }
+#ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] > li > a {
+  display:flex !important; align-items:center !important; min-height:52px !important; box-sizing:border-box !important; width:100% !important; height:100% !important;
+  padding:12px 18px !important; background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-left:3px solid #C1882C !important;
+  border-radius:4px !important; text-decoration:none !important; color:#006038 !important; font-weight:600 !important; line-height:1.4 !important;
+}
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+}
+@media (max-width:1179px) {
+  #ahv-design-root[data-ahv-route="/arogya-kendra/"] main ul[data-source-pointer="/review-20260928/partners"] { margin-top:12px !important; }
+}
