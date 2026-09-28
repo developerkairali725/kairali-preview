@@ -2020,3 +2020,41 @@ ordinal-suffix fragments t_4573a839… / t_6bde0b83… ("rd"/"th" after a day nu
 (override applied; the gate requires non-empty text). Pages render correctly. Options: (A) gate counts only units
 present in the current source and honours overrides; (B) prune retired rows from historic outputs and restructure the
 English date so the suffix is not a separate unit; (C) accept as documented exception. No gate edit made (rule g).
+
+## Q-AHV-R14-RECONCILIATION — 2026-09-29 04:31:10 IST
+Fresh coordinator (WOPS-AHV-FINAL-DRAFT-20260924-001), rounds R14/R15 on protected staging (dpl_8vBKieUsGJEqVyTF6TCdG53vRvDA,
+dpl_7takNT2Xw7UC1pXMST2LYqDmac7f); evidence under the deliverable's hosted-r14/, lanes/ACCEPT/, logs/. Append-only update.
+**Closed by source work (no owner action needed):**
+- Q-AHV-FRESH-20260928-OWNER-ITEMS #1 careers internal note → removed (9233e80f); #2 locked words in heads → d883d1f4, and the
+  body-copy sweep ab5a703a; #3 hospitality paragraph → rewritten d883d1f4; #7 campaigns → manifest recovered, claims 7ae05ed7 +
+  clinical sweep 9fbe1e31; #9 clinical edits → done under the owner's authority (Dr. Deepu John review still required, below).
+- Q-AHV-L10N-GATE-RETIRED → retired rows pruned by tools/l10n/prune-retired.mjs (manifests committed); release gate PASS
+  (12 locales x 13,954 units, 0 missing/blocked/stale). No gate edit.
+- Q-AHV-STAFF01-FOLLOWUPS #2 (RMO titles reading as trainee) → coordinator overrides fr/ar/nl/ru/zh-Hans/pt (79996dde).
+**Still external — exact decision or datum needed:**
+1. FORMS: PR #317 (38e699ac) is CONFLICTING since 28 Sep 11:14 UTC — Deepu rebase + MySQL/Sheet/Drive secrets + owner review of
+   consent/transport (HARD GATE 11). Staging fails closed truthfully (503, nothing stored). Also blocks ENQUIRY-CONTEXT course
+   preselection (the contact form has no 'training' reason option; adding one changes the payload schema PR317 consumes).
+2. tests/ktahv-critical-flows.spec.ts (WP-era contract; run locally 12 pass / 8 fail, logs/ktahv-critical-flows-local-r15.txt):
+   stale slugs (/contact/, /fr/contact/, /de/online-konsultation/ — the rebuild's are /contact-us/, /fr/contactez-nous/,
+   /de/kostenlose-online-beratung/); expects a node with @type exactly "MedicalClinic" (the entity is now a Hospital node with
+   NAP); expects data-cta attributes (measurement design is an owner ruling, HARD GATE 11); expects a consent checkbox on the
+   consultation form (E-DATA-02, consent lane). The spec may not be edited by the agent — owner/engineer to update the contract.
+3. Legal wording: 20 held entries (defined term "Guest" in T&C / cancellation / legal policy) in
+   english-candidate/copy-plans/ktahv-lock-sweep-20260929-HELD.json — approve, amend or reject. Also 4 films.json titles that feed
+   data-film-title analytics labels (held under HARD GATE 11).
+4. Testimonials left verbatim by the clinical sweep (plans/clinical-sweep-20260929-REPORT.md §4): weight-loss quotes (4 kg / 7 days,
+   70 kg), /pain-management.html reviews naming "Dr. Gupta" / "Dr. Sharma" (provenance unverified), the Samantha case study,
+   image-burned weight claims; plus the "at this premier resort in Kerala" phrase inside a /treatment-in-kerala.html quote.
+   Confirm provenance or rule removal.
+5. Offer facts: C-24 family group/couple discount keep/remove; senior offer "Valid for first-time patients only" eligibility
+   (the unsupported "Limited slots" urgency was retired, 077eb213); "complementary" vs "complimentary" therapy on the packages
+   day plan (a price fact).
+6. Facts without a source: villa sizes (Santhosh/Anoop); OPD reception number, "35 centres", "internationally certified"
+   (EF-13); Dr. Adhina/Dr. Aashitha in the online-consultation list; the "92% satisfaction … (2024 data)" statistic.
+7. EF-19 batches 03/04: 50 image proposals genuinely unapproved (Yes/No); existing imagery kept.
+8. Chatbase preview-origin CORS allowlist (dashboard); IndexNow key + engine accounts (Vikash/Trusha); PR309 lint-precision
+   ruling (Q-AHV-L10N-LINT-SCOPE) + authenticated review/merge (HARD GATE 9).
+9. Dr. Deepu John: review of every 29 Sep clinical plan (english-candidate/copy-plans/clinical-*, round3/round7, cancer-main,
+   campaign-claims, ktahv-lock-sweep programme-page register) before production (HARD GATE 7). No signature has been claimed.
+10. Physical iPhone check of OWNER-REG-05/07 (Chromium + WebKit iPhone-13 emulation pass; no device available to the agent).
