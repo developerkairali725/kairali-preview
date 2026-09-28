@@ -353,9 +353,11 @@
    section heading in a label column, the prose at the SAME 66ch measure beside it — centred in the container, and the
    things that are not prose (images, figures, tables, card grids, maps) span both columns. Nothing is added, removed or
    reordered; source order is reading order. Mobile and tablet (< 1180px) are unchanged. Sections on pages that draw
-   the section rail are left alone (the rail already uses the side). */
+   the section rail are left alone (the rail already uses the side), and so are pages with NO headed prose section
+   (/packages/: a lone intro has nothing for the label column). A prose section joins the grid when it, or a section
+   before or after it, carries an h2/h3 — sibling combinators, because :has() may not nest inside :has(). */
 @media (min-width:1180px) {
-  [data-ahv-family="article-reader"] main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) {
     display:grid !important;
     /* label column takes the remainder, so headings align with the H1/breadcrumb edge and the prose ends on the
        container's right edge — the composition fills the column it was given, at the same reading measure */
@@ -363,18 +365,18 @@
     column-gap:clamp(48px,5vw,88px) !important;
     align-items:start !important;
   }
-  [data-ahv-family="article-reader"] main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)) > * {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > * {
     grid-column:2 !important; min-width:0 !important;
   }
   /* the section headings become the label column; each starts the row its section's first block sits on */
-  [data-ahv-family="article-reader"] main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)) > :is(h2,h3) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > :is(h2,h3) {
     grid-column:1 !important; max-width:20ch !important;
     margin:44px 0 0 !important; padding-top:18px !important;
     font-size:clamp(22px,1.7vw,28px) !important; line-height:1.25 !important;
   }
-  [data-ahv-family="article-reader"] main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)) > :is(h2,h3) + * { margin-top:62px !important; }
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > :is(h2,h3) + * { margin-top:62px !important; }
   /* not prose: full composition width */
-  [data-ahv-family="article-reader"] main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*="grid-template-columns"], [data-ahv-maps]) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):is(:has(> :is(h2,h3)), :has(~ section > :is(h2,h3)), section:has(> :is(h2,h3)) ~ *) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*="grid-template-columns"], [data-ahv-maps]) {
     grid-column:1 / -1 !important;
   }
 }
