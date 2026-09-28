@@ -75,6 +75,31 @@ function faqEntities(): Array<Record<string, unknown>> {
   return out;
 }
 
+/**
+ * Enquiry-family routes (/contact-us/, /online-consultation/, …) render their "Common questions" from
+ * public/ahv/assets/enquiry-family-data.js (route.faq.items: {q, a.text | a.tree}). The structured data reads the
+ * SAME dataset — the localized copy on locale pages — so answers never drift from the visible text (SEO/AEO audit
+ * 29 Sep 2026: /contact-us/ rendered six clean Q&A pairs with no FAQPage). Emitted only on self-canonical routes.
+ */
+type FaqTree = { k: string; v?: string; c?: FaqTree[] };
+function datasetFaq(routePath: string): Array<{ q: string; a: string; i: number }> {
+  const file = CTX.loc === "en"
+    ? join(process.cwd(), "public", "ahv", "assets", "enquiry-family-data.js")
+    : join(process.cwd(), "public", "ahv", "l10n", LOCALE_INFO[CTX.loc].prefix, "assets", "enquiry-family-data.js");
+  let data: { routes?: Array<{ path: string; faq?: { items?: Array<{ q?: string; a?: { text?: string; tree?: FaqTree[] } }> } }> } | undefined;
+  try {
+    const w: Record<string, unknown> = {};
+    new Function("window", readFileSync(file, "utf8"))(w);
+    data = w.AHV_ENQUIRY as typeof data;
+  } catch { return []; }
+  const flat = (n: FaqTree[] = []): string => n.map((x) => (x.k === "t" ? x.v ?? "" : flat(x.c))).join("");
+  const r = data?.routes?.find((x) => x.path === routePath);
+  return (r?.faq?.items ?? [])
+    .map((it, i) => ({ q: (it.q ?? "").replace(/\s+/g, " ").trim(), a: (it.a?.text ?? flat(it.a?.tree)).replace(/\s+/g, " ").trim(), i }))
+    .filter((x) => x.q && x.a);
+}
+const DATASET_FAQ_ROUTES = new Set(["/contact-us/", "/online-consultation/"]);
+
 const ORIGIN = "https://ayurvedichealingvillage.com";
 /**
  * Locale context for one routeSchema() call (25 Sep 2026). Human-readable values
@@ -305,6 +330,9 @@ export function routeSchema(route: CandidateRoute, locale: LocaleCode = "en"): R
   if (route.path === FAQ_ROUTE) {
     const faqs = faqEntities();
     if (faqs.length) { webPage["@type"] = ["WebPage", "FAQPage"]; webPage.mainEntity = faqs; }
+  } else if (DATASET_FAQ_ROUTES.has(route.path) && url === abs(route.path)) {
+    const faqs = datasetFaq(route.path).map((f) => ({ "@type": "Question", "@id": `${url}#faq-${f.i + 1}`, name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }));
+    if (faqs.length) { webPage["@type"] = ["WebPage", "FAQPage"]; webPage.mainEntity = faqs; }
   }
   if (image) {
     webPage.primaryImageOfPage = { "@id": image["@id"] };
@@ -333,10 +361,23 @@ export function routeSchema(route: CandidateRoute, locale: LocaleCode = "en"): R
   // Gallery routes: ImageGallery (with ImageObject nodes + chapter ItemLists) and VideoObject per facade.
   for (const node of galleryNodes(route, url)) graph.push(node);
   graph.push({
-    "@type": "Organization",
+    // NABH-accredited Ayurvedic hospital (locked fact). Address, telephone and email are exactly those the
+    // /contact-us/ page prints; no founding date (the site's "Since 1908" is the group's heritage line, not this
+    // entity's founding) and no sameAs guesses (SEO/AEO audit 29 Sep 2026: the node carried no NAP at all).
+    "@type": ["Organization", "Hospital"],
     "@id": ORG_ID,
     name: ORG_NAME,
     url: `${ORIGIN}/`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "III/73 Palayamkadu, P.O. Olassery, Kodumbu",
+      addressLocality: "Palakkad",
+      addressRegion: "Kerala",
+      postalCode: "678551",
+      addressCountry: "IN",
+    },
+    telephone: "+91 9555 156 156",
+    email: "info@kairali.com",
     logo: {
       "@type": "ImageObject",
       inLanguage: CTX.lang,

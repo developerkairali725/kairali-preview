@@ -1,0 +1,47 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "SEARCH-SEO",
+ "note": "Five EN meta descriptions over 160 characters tightened to ≤155 (locale versions were already tight); /about-us/ superlative hospitality description replaced with the clinical register.",
+ "entries": [
+  {
+   "id": "DESC-about",
+   "auto": true,
+   "old": "Kairali-The Ayurvedic Healing Village is one of the best home stays in Palakkad, Kerala, and among the best wellness centers in the world. This eco-friendly environment will give you one of the most memorable experiences of your lifetime.",
+   "new": "About Kairali – The Ayurvedic Healing Village: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with physician-led treatment programmes.",
+   "min": 1,
+   "authority": "SEO/AEO audit 29 Sep 2026 (hosted-r14/seo-audit/REPORT.md P2: EN meta descriptions over 160 characters; about-us also off-register). Clinical register, no new facts."
+  },
+  {
+   "id": "DESC-contact",
+   "auto": true,
+   "old": "Contact Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Speak with our patient care team by WhatsApp, phone or email, or send a short message. Established 1908.",
+   "new": "Contact Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, by WhatsApp, phone or email.",
+   "min": 1,
+   "authority": "SEO/AEO audit 29 Sep 2026 (hosted-r14/seo-audit/REPORT.md P2: EN meta descriptions over 160 characters; about-us also off-register). Clinical register, no new facts."
+  },
+  {
+   "id": "DESC-faqs",
+   "auto": true,
+   "old": "Answers to patients' questions about Ayurvedic treatment at Kairali – The Ayurvedic Healing Village, Palakkad: consultation and admission, programmes and stay length, villas, diet, payment, travel, visas and aftercare. Price lists and the e-book to download.",
+   "new": "Answers to patients' questions at Kairali – The Ayurvedic Healing Village: admission, programmes, villas, diet, payment, travel, visas and downloads.",
+   "min": 1,
+   "authority": "SEO/AEO audit 29 Sep 2026 (hosted-r14/seo-audit/REPORT.md P2: EN meta descriptions over 160 characters; about-us also off-register). Clinical register, no new facts."
+  },
+  {
+   "id": "DESC-villas",
+   "auto": true,
+   "old": "Experience tranquil living in Vastu-designed Ayurvedic villas at Kairali’s Healing Village, Kerala. A perfect blend of nature, wellness, and holistic rejuvenation.",
+   "new": "Vastu-designed villas at Kairali – The Ayurvedic Healing Village, Kerala, where patients stay during their Ayurvedic treatment programmes.",
+   "min": 1,
+   "authority": "SEO/AEO audit 29 Sep 2026 (hosted-r14/seo-audit/REPORT.md P2: EN meta descriptions over 160 characters; about-us also off-register). Clinical register, no new facts."
+  },
+  {
+   "id": "DESC-cancer",
+   "auto": true,
+   "old": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali – The Ayurvedic Healing Village, Palakkad, offered alongside, never instead of, oncology treatment.",
+   "new": "Physician-guided Ayurvedic supportive care for people living with cancer at Kairali, Palakkad, offered alongside, never instead of, oncology treatment.",
+   "min": 1,
+   "authority": "SEO/AEO audit 29 Sep 2026 (hosted-r14/seo-audit/REPORT.md P2: EN meta descriptions over 160 characters; about-us also off-register). Clinical register, no new facts."
+  }
+ ]
+}
