@@ -33,7 +33,7 @@
         label: c.label || 'Search', ptr: c.ptr })) : [],
       searchButtonLabel: sf ? ((sf.controls.find(c => c.control === 'button' || c.type === 'submit') || {}).actionLabel || 'Search') : '',
       // Concise neutral unavailable state. Implementation gates stay private in the dataset.
-      searchNotice: (R.searchForm && R.searchForm.publicState) || 'Search is unavailable in this design review.',
+      searchNotice: (R.searchForm && R.searchForm.publicState) || 'To search the site, use the search icon at the top of the page.',
       searchGuard: (e) => { e.preventDefault(); },
       // Captured fixture controls render inert from their exact source definitions at their source pointers.
       hasFixtureControls: !!(R.fixtureControls && R.fixtureControls.items && R.fixtureControls.items.length),
@@ -48,7 +48,7 @@
         label: c.label || (R.fixtureControls ? R.fixtureControls.accessibleLabel : 'Search') })),
       fixtureButtons: (R.fixtureControls ? R.fixtureControls.items : []).filter(c => c.control === 'button').map((c, k) => ({
         key: 'fb' + k, id: c.id || ('fb-' + k), label: c.label || 'Search', ptr: c.ptr })),
-      fixtureNotice: 'This control is not connected in this design review.',
+      fixtureNotice: 'To search the site, use the search icon at the top of the page.',
       fixtureGuard: (e) => { e.preventDefault(); }
     };
   }
