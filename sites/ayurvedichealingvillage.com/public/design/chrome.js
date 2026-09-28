@@ -94,13 +94,94 @@
   // A second click during loading cancels the pending open instead of queuing two.
   var chatPending = false, chatTimer = null, chatObserver = null;
   var observedChatButton = null, observedChatWindow = null;
+  /* ── BEGIN OWNER-REG-05 chat scroll-lock lifecycle ─────────────────────────────────────────────────────────
+   * iOS: footer "Chat with Priya" → minimize left the page frozen. The chat lifecycle owns only what changed
+   * during it: when a trigger opens the chat, the inline scroll-lock properties of <body>/<html> and the scroll
+   * position are recorded (never re-recorded while open); on the open→closed transition, once, each recorded
+   * property that now differs is put back exactly (value + priority), the scroll position is re-applied
+   * (instantly) only if a property had to be restored or the page was pinned while the chat was open, and focus
+   * left inside the hidden chat returns to the trigger without scrolling. Nothing is blanket-reset: while another
+   * modal (film-player's <dialog>, the about-us viewer) is open its lock is left alone and the restore waits.
+   * Hooks outside this block: syncChatState (reconciled expanded state + transition), openChat (baseline). */
+  var CHAT_LOCK_PROPS = ["overflow", "overflow-x", "overflow-y", "position", "top", "left", "right", "bottom", "width", "height", "touch-action", "overscroll-behavior"];
+  var chatLock = null, chatWasOpen = false, chatPanelSeen = false, chatRestoreTimer = null, chatRestoreTries = 0;
+  function chatStyleSnapshot(el) {
+    var s = {};
+    if (!el || !el.style || !el.style.getPropertyValue) return null;
+    for (var i = 0; i < CHAT_LOCK_PROPS.length; i++) s[CHAT_LOCK_PROPS[i]] = [el.style.getPropertyValue(CHAT_LOCK_PROPS[i]), el.style.getPropertyPriority(CHAT_LOCK_PROPS[i])];
+    return s;
+  }
+  function chatSnapshot(trigger) {
+    chatLock = { trigger: trigger || null, x: window.scrollX || window.pageXOffset || 0, y: window.scrollY || window.pageYOffset || 0,
+      body: chatStyleSnapshot(document.body), html: chatStyleSnapshot(document.documentElement) };
+  }
+  function chatRestoreStyles(el, saved) {
+    var restored = false;
+    if (!el || !saved) return false;
+    for (var p in saved) {
+      if (el.style.getPropertyValue(p) === saved[p][0] && el.style.getPropertyPriority(p) === saved[p][1]) continue;
+      if (saved[p][0]) el.style.setProperty(p, saved[p][0], saved[p][1]); else el.style.removeProperty(p);
+      restored = true;
+    }
+    return restored;
+  }
+  // the provider pins the page while open on phones (html.__cb_widget_active: html/body position:fixed) and on close
+  // scrolls back with the page's smooth scroll-behavior, so the page visibly jumps to the top and glides back
+  function viewportPinned() {
+    try { return window.getComputedStyle(document.documentElement).position === "fixed" || window.getComputedStyle(document.body).position === "fixed"; } catch (e) { return false; }
+  }
+  function otherModalOpen() {
+    if (!document.querySelectorAll) return false;
+    var m = document.querySelectorAll('dialog[open], [aria-modal="true"]');
+    for (var i = 0; i < m.length; i++) {
+      if (m[i].closest && m[i].closest("#chatbase-bubble-window")) continue;
+      if (m[i].tagName === "DIALOG" || visible(m[i])) return true;
+    }
+    return false;
+  }
+  function chatRelease() {
+    if (chatRestoreTimer) { clearTimeout(chatRestoreTimer); chatRestoreTimer = null; }
+    var lock = chatLock;
+    if (!lock) return;
+    if (otherModalOpen()) {
+      // another modal owns the page lock right now; retry after it closes (bounded: ~60s, then leave it be)
+      if (++chatRestoreTries <= 240) chatRestoreTimer = setTimeout(function () { chatRestoreTimer = null; if (!chatWasOpen) chatRelease(); }, 250);
+      return;
+    }
+    chatLock = null; chatRestoreTries = 0;
+    var restored = chatRestoreStyles(document.body, lock.body);
+    restored = chatRestoreStyles(document.documentElement, lock.html) || restored;
+    // back to the position the chat opened at, instantly — only when this lifecycle pinned or locked the page (a visitor
+    // who scrolled a desktop page while the chat sat open is never moved)
+    if ((restored || lock.pinned) && window.scrollTo && ((window.scrollY || 0) !== lock.y || (window.scrollX || 0) !== lock.x)) window.scrollTo({ left: lock.x, top: lock.y, behavior: "instant" });
+    var active = document.activeElement, panel = document.getElementById("chatbase-bubble-window");
+    var stranded = !active || active === document.body || (panel && panel.contains && panel.contains(active));
+    if (stranded && lock.trigger && lock.trigger.isConnected && lock.trigger.focus) { try { lock.trigger.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  // Leaving the page (including into the back/forward cache) cancels timers, so a pending open never fires on return;
+  // a restore that was waiting on another modal is retried when the page is shown again.
+  if (window.addEventListener) {
+    window.addEventListener("pagehide", function () {
+      if (chatPending) { clearTimeout(chatTimer); chatTimer = null; chatPending = false; chatLock = null; }
+      if (chatRestoreTimer) { clearTimeout(chatRestoreTimer); chatRestoreTimer = null; }
+    });
+    window.addEventListener("pageshow", function () { if (chatLock && !chatWasOpen && !chatPending) { chatRestoreTries = 0; chatRelease(); } schedule(); });
+  }
+  /* ── END OWNER-REG-05 chat scroll-lock lifecycle ─────────────────────────────────────────────────────────── */
   function chatAttribute(el, name, value) {
     if (el && el.getAttribute(name) !== value) el.setAttribute(name, value);
   }
   function syncChatState() {
     var nativeButton = document.getElementById("chatbase-bubble-button");
     var panel = document.getElementById("chatbase-bubble-window");
-    var expanded = nativeButton ? nativeButton.getAttribute("aria-expanded") === "true" : !!(panel && visible(panel));
+    // The provider's aria-expanded, reconciled with the panel itself: an absent attribute is not "closed" while the
+    // panel is visibly open, and a panel that was shown and is now hidden is closed even if aria-expanded is stale.
+    var shown = !!(panel && visible(panel));
+    if (shown) chatPanelSeen = true;
+    var aria = nativeButton ? nativeButton.getAttribute("aria-expanded") : null;
+    var expanded = aria === "true" ? !(chatPanelSeen && panel && !shown) : aria === "false" ? false : shown;
+    if (chatWasOpen && !expanded) { chatWasOpen = false; chatPanelSeen = false; chatRelease(); }
+    else if (expanded) { chatWasOpen = true; if (chatLock && !chatLock.pinned && viewportPinned()) chatLock.pinned = true; }
     var button = document.querySelector("#ahv-contact-controls .ahv-contact-chat");
     var label = expanded ? "Minimize chat" : chatPending ? "Opening chat…" : "Chat with Priya";
     chatAttribute(document.body, "data-ahv-chat-open", expanded ? "true" : "false");
@@ -115,15 +196,17 @@
       if (chatObserver) chatObserver.disconnect();
       chatObserver = new MutationObserver(syncChatState);
       if (nativeButton) chatObserver.observe(nativeButton, { attributes: true, attributeFilter: ["aria-expanded"] });
-      if (panel) chatObserver.observe(panel, { attributes: true, attributeFilter: ["style", "hidden"] });
+      if (panel) chatObserver.observe(panel, { attributes: true, attributeFilter: ["style", "hidden", "class"] });
       observedChatButton = nativeButton; observedChatWindow = panel;
     }
   }
   function openChat(ev) {
     ev.preventDefault();
     if (chatPending) {
-      clearTimeout(chatTimer); chatTimer = null; chatPending = false; syncChatState(); return;
+      clearTimeout(chatTimer); chatTimer = null; chatPending = false; chatLock = null; syncChatState(); return;
     }
+    // opening (not minimizing): record the baseline before the provider can touch anything
+    if (!chatWasOpen) { if (chatRestoreTimer) { clearTimeout(chatRestoreTimer); chatRestoreTimer = null; } chatRestoreTries = 0; chatSnapshot(ev.currentTarget); }
     var nativeButton = document.getElementById("chatbase-bubble-button");
     if (nativeButton) { nativeButton.click(); syncChatState(); return; }
     chatPending = true; syncChatState();

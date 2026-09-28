@@ -317,8 +317,12 @@
       while (el.parentElement && el.parentElement !== document.body && el.parentElement.id !== "ahv-design-root" && el.parentElement.getBoundingClientRect().height <= hh + 4) el = el.parentElement;
       if (!el.hasAttribute("data-ahv-fh-sticky")) el.setAttribute("data-ahv-fh-sticky", "");
       // an overflow:hidden ancestor (e.g. the offers template's full-bleed wrapper) makes sticky inert;
-      // overflow:clip clips the same way without creating a scroll container
-      for (var up = el.parentElement; up && up !== document.documentElement; up = up.parentElement) {
+      // overflow:clip clips the same way without creating a scroll container.
+      // <body> is never marked (OWNER-REG-05/07): its overflow propagates to the viewport, so it never makes sticky
+      // inert, and a body that reads "hidden" is a modal's TEMPORARY scroll lock (the Chatbase panel's
+      // html.__cb_widget_active rule, the about-us certificate viewer) — marking it turned that lock into a
+      // permanent overflow:clip !important on the viewport, and the page stopped scrolling after the modal closed.
+      for (var up = el.parentElement; up && up !== document.body && up !== document.documentElement; up = up.parentElement) {
         var cs = getComputedStyle(up);
         if ((cs.overflowX === "hidden" || cs.overflowY === "hidden") && !up.hasAttribute("data-ahv-fh-clip")) up.setAttribute("data-ahv-fh-clip", "");
       }
