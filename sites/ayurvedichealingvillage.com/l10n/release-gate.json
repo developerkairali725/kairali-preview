@@ -1,6 +1,6 @@
 {
- "at": "2026-09-28T23:31:03.941Z",
- "verdict": "PASS",
+ "at": "2026-09-28T23:36:56.136Z",
+ "verdict": "FAIL",
  "perLocale": {
   "hi": {
    "translated": 13958,
@@ -76,10 +76,23 @@
   }
  },
  "revalidate": {
-  "checked": 8340,
-  "passed": 8340,
+  "checked": 8352,
+  "passed": 8352,
   "withdrawn": 0,
   "reasons": {}
  },
- "failures": []
+ "failures": [
+  "hi: SSR snapshots were not rendered from the current catalogue/source (manifest d8cea58bcdc2 vs 8df8934432c4)",
+  "de: SSR snapshots were not rendered from the current catalogue/source (manifest 8880fd77d379 vs cb9b1a700ba5)",
+  "fr: SSR snapshots were not rendered from the current catalogue/source (manifest e34005f8e0b2 vs 1d4731196f09)",
+  "es: SSR snapshots were not rendered from the current catalogue/source (manifest 1e246a12502b vs 15bf301b71eb)",
+  "it: SSR snapshots were not rendered from the current catalogue/source (manifest facbff9bc4a4 vs 1162b0db3aff)",
+  "pt: SSR snapshots were not rendered from the current catalogue/source (manifest abcfa52dc9c5 vs 3e2d1db5cfb5)",
+  "nl: SSR snapshots were not rendered from the current catalogue/source (manifest 48622138fb5b vs 3e173310ce3d)",
+  "ru: SSR snapshots were not rendered from the current catalogue/source (manifest adf5dca00270 vs cfabdb5aa367)",
+  "ar: SSR snapshots were not rendered from the current catalogue/source (manifest 71db74f38fe9 vs 9566b5e5f8ca)",
+  "zh-Hans: SSR snapshots were not rendered from the current catalogue/source (manifest c8aca23e3a7f vs 83bc23335988)",
+  "ja: SSR snapshots were not rendered from the current catalogue/source (manifest f022fbc6f89a vs 6b7efae90c77)",
+  "ko: SSR snapshots were not rendered from the current catalogue/source (manifest 77c8ba872ee1 vs 340da865b31c)"
+ ]
 }
