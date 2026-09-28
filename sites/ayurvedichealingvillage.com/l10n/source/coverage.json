@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -1035,13 +1035,13 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "3d291eea9905ea6c1b96c588ae460544d3a4f82a4973629b6abd4416fc722d17",
+   "sha256": "39bdc514fcb9e8751fc4b18ce67ba0d4feae27a1c662b65b24c375ab200b9846",
    "units": 692,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "2efc2c706ddc258c9a6c3aa22f6112d995f417b3672cb67519d03c23b9ad5724",
+   "sha256": "28bfcc8f025acf9fcfb3866e0661b4ac6304b7e867eac3e12a591a9b44a60e22",
    "units": 631,
    "status": "covered"
   },
@@ -1461,7 +1461,7 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "426953fe1871b0fdb3fda3528dc366876753b7b9046b7621cfdf32fc224d6004",
+   "sha256": "c5ecc402335d1e9b0b49da12ed86ef2317ab0df5403275bb277a6081350b9925",
    "units": 12,
    "status": "covered (curated allowlist)"
   },
@@ -1491,7 +1491,7 @@
   },
   {
    "file": "public/design/section-nav.js",
-   "sha256": "5887798fb0335dcfabe1b732e9b064804a50c0a60f14c849c231e15abb9ac82b",
+   "sha256": "b4a1f3622c8b3cec9880c42fd0ed162ad4bd5e1f575638dd475f3626a59aef5c",
    "units": 9,
    "status": "covered (curated allowlist)"
   },
