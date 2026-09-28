@@ -1,0 +1,237 @@
+{
+ "batchId": "b-0573",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_a6c6c7cb49a347ab1908",
+   "sourceHash": "a6c6c7cb49a347ab19088aa236df5d3cbb7279a1a4a31410806917cba7c27e5f",
+   "text": "返回顶部",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d45a94da38e5926c6238",
+   "sourceHash": "d45a94da38e5926c62380b403b4105cbe4a1b58fb5e28138ce98d72acb58284a",
+   "text": "WhatsApp 图标：绿色对话气泡中的白色电话听筒",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b3cb612d652d733a251e",
+   "sourceHash": "b3cb612d652d733a251e8fcbe989b9c30be25f4c5d61c6f0ae29ea87cb3461ca",
+   "text": "请在此输入您的问题……",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2aebe5c9108e90f8c5c7",
+   "sourceHash": "2aebe5c9108e90f8c5c726d29d7faafe1f782c3125ce8c82d733613d31cf2918",
+   "text": "不会根据示例内容推断任何真实的产品、库存、价格、评价、业务承诺或成品服务。业务及声明类内容仍受审核管控。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal fixture/placeholder note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_96fa8dc659044a8f76b8",
+   "sourceHash": "96fa8dc659044a8f76b85b242fbcdbdc0df1e5dffae86f7b8024ba8dee404e8b",
+   "text": "已捕获的 2 个控件以其原始公开定义（input/text、button/button）呈现为不可操作状态，不会提交。已存储的值不予包含。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal fixture/placeholder note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_b4d765daff4b532ff39b",
+   "sourceHash": "b4d765daff4b532ff39bd682c3cda1c7b9f1727b9e4ebb216e4bb82f42543899",
+   "text": "两个已捕获的控件均按其源指针处的准确源定义呈现，沿用现有字段样式，不可操作、不会提交，也不会生成虚构结果。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal fixture/placeholder note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_8cb62b265c65b7da1378",
+   "sourceHash": "8cb62b265c65b7da1378f15919af2975d9caa1a667289cbfd4206e11b328368f",
+   "text": "test-page - 阿育吠陀疗愈村",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Test page title; 'test-page' slug kept as-is."
+   ]
+  },
+  {
+   "id": "t_fe03c9095b30ce5399ff",
+   "sourceHash": "fe03c9095b30ce5399ff453a8220a85b24564790304898159d7f2dd8931a64d8",
+   "text": "加拿大多伦多的建筑外观",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_4cad233bb10f49119cd1",
+   "sourceHash": "4cad233bb10f49119cd1447e8b26d1f998d22266ccc7b4125b80b4e357d9035b",
+   "text": "正在为建筑拍照的游客",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_1c5f010f2c630a6dddeb",
+   "sourceHash": "1c5f010f2c630a6dddeb1ecb55c880533e6c983a99d4e5189240ec28e74c5b0d",
+   "text": "德国纽伦堡一栋建筑的窗户",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_feee151b559aa6e5d63d",
+   "sourceHash": "feee151b559aa6e5d63de9df9e8884b8dee6d16945fdfbd3295ede1cd3ae00fa",
+   "text": "此路由上没有已捕获的公开控件。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e88e8844093d7a0084db",
+   "sourceHash": "e88e8844093d7a0084db3858769ed2a313e2f4c7b54bb1aa18721375c28acb84",
+   "text": "Études 是一家开拓型事务所，将创意与功能完美融合，重新定义卓越建筑。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_b4b580a9ad8c344fbfad",
+   "sourceHash": "b4b580a9ad8c344fbfad26db08c76c22171cdf481ed3f7871b65bc2f5cc82dea",
+   "text": "关于我们",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_512792c0932a36b116b9",
+   "sourceHash": "512792c0932a36b116b9469d1e4b25332e8bc4176d952d26722c48d057da86fb",
+   "text": "热衷于营造空间",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_a16bbb81e2ea66a93591",
+   "sourceHash": "a16bbb81e2ea66a9359191f5d564219c05e34ea553cc72de7d5ba2013138fff8",
+   "text": "我们全面的专业服务面向多元客户，从私人业主到商业开发商。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_e77b57c6028dc9fb5481",
+   "sourceHash": "e77b57c6028dc9fb548190b980ffdaa0507c1d0491d5fdf3a02b3565b8c83664",
+   "text": "翻新与修复",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_53e19410d720c90c2eb9",
+   "sourceHash": "53e19410d720c90c2eb9e605fd5260de358f19c872084479539bb0fe0012a204",
+   "text": "Études Architectural Solutions，让想象力与专业能力相融合。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_00d2b6ae9d0a35188549",
+   "sourceHash": "00d2b6ae9d0a35188549568c86597029b2af8ab907cb1b36c5d0f5a98985e576",
+   "text": "持续支持",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c568f18b882bd111493",
+   "sourceHash": "1c568f18b882bd111493091b02736ffc0b442845834912699fee09be900ec9b2",
+   "text": "应用访问",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e8c09481c179d53eeee",
+   "sourceHash": "9e8c09481c179d53eeee1cbc43afc0a13cf02c2e0eb47342338efb75e54f6ecc",
+   "text": "咨询",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58a34ff5ee9e7f084176",
+   "sourceHash": "58a34ff5ee9e7f084176d046f3d4a097c840081442ce8ad5fc9c2982fd59c3b5",
+   "text": "项目管理",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2c268202059e2e3b86f5",
+   "sourceHash": "2c268202059e2e3b86f51631f133634c1b34f69c3e9181089842c97c173a6aab",
+   "text": "建筑解决方案",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_b26832719ae72deb4a39",
+   "sourceHash": "b26832719ae72deb4a39d8c57a943d0704f6cce14befb08fe108dd0df8d322ca",
+   "text": "丰富的资源",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ba612892b025b694b0ce",
+   "sourceHash": "ba612892b025b694b0ce4c59b1e058304ec1e729939f647f6953d1e53738d986",
+   "text": "Études 建筑师应用",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_d10be7a112723c347e10",
+   "sourceHash": "d10be7a112723c347e105db63ec2b0f0aa440e860d0bcb0970fc2a2888183322",
+   "text": "与建筑师同行协作。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  }
+ ]
+}

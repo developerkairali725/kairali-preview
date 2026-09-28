@@ -1,0 +1,215 @@
+{
+ "batchId": "b-0554",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_270ee554f505db1b0617",
+   "sourceHash": "270ee554f505db1b06173185151cdf80b0dcbbf41dda6156ff855d5db893593a",
+   "text": "Para o aeroporto de Coimbatore de autocarro",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_358ad8d34ffac4c890eb",
+   "sourceHash": "358ad8d34ffac4c890eb80d488f590f6602222feae0b82a3d6f5a571c737cb7a",
+   "text": "Para Singapura com a Singapore Airlines (voo noturno)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e27fdae8b9cc0e4bf1e",
+   "sourceHash": "8e27fdae8b9cc0e4bf1e2862319aeafe141cbecc6859f146f6659759d810183b",
+   "text": "Chegada a Singapura",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_639ccf70cd2f43ef1c24",
+   "sourceHash": "639ccf70cd2f43ef1c24d5cfa73f17e566dd336d5fa1498c22705d5144ba3899",
+   "text": "Partida de Singapura",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_feaf3467982d0cd51614",
+   "sourceHash": "feaf3467982d0cd5161404c11ea7c3d2fd2f927f30f198b191cb385cbec25f8a",
+   "text": "Chegada ao aeroporto de Narita",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d5cf55985ab1507f7112",
+   "sourceHash": "d5cf55985ab1507f7112aca18e5f5684b37dc6f97ec5defc2b44684578a80867",
+   "text": "Regresso ao Japão com a Singapore Airlines",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a853c46dd88ebc96654",
+   "sourceHash": "4a853c46dd88ebc96654309305ce1e9fb2994df2bdb502e3c5b33d4a756c78e2",
+   "text": "Chegada ao aeroporto de Narita; dispersão do grupo após a imigração e a alfândega",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ada666cef13f20a6a519",
+   "sourceHash": "ada666cef13f20a6a519034401874416247830451553c1dad3fcf9d939e62eeb",
+   "text": "Pequeno-almoço: a bordo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9695a8996d3a2e8734c",
+   "sourceHash": "b9695a8996d3a2e8734cbcea4980699ce156463fc3f9a0a92e746ecbb8327698",
+   "text": "Jantar: Não",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_71982d8b845f45832ef8",
+   "sourceHash": "71982d8b845f45832ef8f0bddd0ce09395610a688586ba84820f54d80f57dc0b",
+   "text": "O itinerário acima está sujeito a alterações devido às condições de transporte locais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e00baa8d34104081d5b",
+   "sourceHash": "4e00baa8d34104081d5bc3d87f5bb6af8d369bccc4e6b406c2b146c9c596b8e9",
+   "text": "Hora aproximada do dia:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_98e69348dca0eb464a19",
+   "sourceHash": "98e69348dca0eb464a19176d580b7bef91e9c9a866b4a573696285294082c97f",
+   "text": "1. Madrugada: 04:01-06:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b6a880d24d651da60edc",
+   "sourceHash": "b6a880d24d651da60edc5f24ddcf18cedc096c5d1b131b99a098e7df8742760e",
+   "text": "2. Manhã cedo: 06:01-08:00 Manhã: 08:01-11:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'Morning:…AM:…' is garbled; rendered as 'early morning' then 'morning' ranges, keeping all times unchanged."
+   ]
+  },
+  {
+   "id": "t_4fb71f1408d8da822b9a",
+   "sourceHash": "4fb71f1408d8da822b9a5812d8682af0a8ee377d06685127128adb90c36d41fd",
+   "text": "3. Meio-dia: 11:01-13:00 Tarde: 13:01-16:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source label 'PM' rendered as 'Tarde' (afternoon); times unchanged."
+   ]
+  },
+  {
+   "id": "t_f831fd06b016c85bf6d7",
+   "sourceHash": "f831fd06b016c85bf6d7eb87f8afbca90058970742326ba9b51f1a5748b1a6e9",
+   "text": "4. Final da tarde: 16:01-19:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_500e21ee215adefbd5e5",
+   "sourceHash": "500e21ee215adefbd5e54963c82d32318d7bf4085717d5174a236b45ddcbe9e9",
+   "text": "5. Noite: 19:01-23:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eddfe347c9ed5abdde1c",
+   "sourceHash": "eddfe347c9ed5abdde1c5241de25a652ce9be3f7180104ecb1feac8643f714b0",
+   "text": "6. Noite avançada: 23:01-04:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_affcde6eb05e0ba79ecd",
+   "sourceHash": "affcde6eb05e0ba79ecd254c2590cc11469b46ba62ab46b18665b92e99c4a1a9",
+   "text": "Todas as refeições no Kairali Retreat são vegetarianas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_761697487ad58e106267",
+   "sourceHash": "761697487ad58e1062679eeb224def51640177a646e24f4ed88387a00220f9a9",
+   "text": "Em princípio, é proibido consumir bebidas alcoólicas e fumar no interior dos edifícios do Kairali Retreat.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_607a29e7a474904b5169",
+   "sourceHash": "607a29e7a474904b5169377757b03096fdfe543ddfa5e1b4c24de54685b2d44b",
+   "text": "Os visitantes podem utilizar livremente o ginásio e a piscina.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'visitantes' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_4e025558c97d91ac1ccc",
+   "sourceHash": "4e025558c97d91ac1ccc6b67d65c87c0e6257ae08ff7bbefd3de7f992bc068e3",
+   "text": "Quanto aos tratamentos ayurvédicos, os tratamentos adequados ao estado do corpo de cada pessoa serão definidos em consulta com o médico. Tenha em atenção que as refeições, os tratamentos, etc. podem sofrer alterações com base na consulta diária.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a086ccb2531502fe373",
+   "sourceHash": "7a086ccb2531502fe37370f8c69bdc9f6deea8fce559a370847ddbbc90f21299",
+   "text": "Kairali significa «originário de Kerala». Kerala, situado no sul da Índia, é considerado a terra sagrada do Ayurveda. O Kairali Retreat foi fundado em Kerala em 1997 pelo Sr. e pela Sra. Ramesh. A família Ramesh produz remédios ayurvédicos há muitas gerações. Desde então, o Kairali Retreat oferece um estilo de vida ayurvédico genuinamente autêntico, permitindo a pessoas de todo o mundo usufruir das notáveis vantagens do verdadeiro Ayurveda.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee31f7a18e70d47f8bd6",
+   "sourceHash": "ee31f7a18e70d47f8bd6d16f19f15c3cebfca4e9167f801662167f91f8043c4f",
+   "text": "«Mais vale prevenir do que remediar» – este é o lema do Sr. e da Sra. Ramesh. Desejando que as pessoas levem uma vida mais plena e saudável, a Kairali oferece terapias ayurvédicas e um modo de vida ideal em todas as áreas, integrando ioga, nutrição e muito mais. Convidamo-lo a aproveitar esta oportunidade para descobrir o verdadeiro estilo de vida ayurvédico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Motto 'Prevention is better than cure' rendered with the idiomatic Portuguese proverb 'Mais vale prevenir do que remediar', avoiding the word 'cura'."
+   ]
+  },
+  {
+   "id": "t_88a516d2f74766e1e12f",
+   "sourceHash": "88a516d2f74766e1e12f2c29409c58e69be9abcad2a74faac44154095fdab871",
+   "text": "Visita opcional",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a341b995ffd0ee304f01",
+   "sourceHash": "a341b995ffd0ee304f0157a70e8e98cdb0dee9173063c1520b5c000fcefaeab0",
+   "text": "Assistir à dança tradicional indiana «Kathakali»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

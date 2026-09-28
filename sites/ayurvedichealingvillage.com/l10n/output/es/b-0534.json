@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0534",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_fd572ad92489158ae2b0",
+   "sourceHash": "fd572ad92489158ae2b04a0cd7747c5e78b4187ffb3a13ad70c3078a924f0035",
+   "text": "Habitación Makam 208, foto 1",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ccccc521b28fd819391a",
+   "sourceHash": "ccccc521b28fd819391aad963c1be55e429fd094d6cd0a2d4ceba3f0df0daef9",
+   "text": "Habitación Makam 208, foto 2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f3401fe27294206f5dad",
+   "sourceHash": "f3401fe27294206f5dad3ffa165a4acb52a0e96b02db273a2232d71bc5603be8",
+   "text": "Habitación Makam 208, foto 3",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9fc249a17a60fc5f66a4",
+   "sourceHash": "9fc249a17a60fc5f66a4800fd0fb9468cb0b3ea2cc714d07413e62968355a06b",
+   "text": "Kairali Ayurvedic Group, con la bendición de sus antepasados, impulsa el Ayurveda con tratamientos en su centro y en su hospital de Palakkad, Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned term 'health resort' rendered as 'hospital' (clinical lock); sentence condensed to fit the 155-character seo.description limit."
+   ]
+  },
+  {
+   "id": "t_d764d42592fc968709b4",
+   "sourceHash": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218",
+   "text": "Organización",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9a4e1dd6c3c5e7ae4d41",
+   "sourceHash": "9a4e1dd6c3c5e7ae4d41b1b17389a257ef905737feac2395a09e0992ccaf7e18",
+   "text": "Metadatos de la fuente propia conservados en su forma original. Los valores nulos de la fuente no se completaron con texto SEO inventado.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_745d99fcf702575fd6a3",
+   "sourceHash": "745d99fcf702575fd6a3f967f2992febbe5eaaf6db87dc19319e2de4527459ed",
+   "text": "Terapeuta presionando saquitos de hierbas calientes sobre el cuello y el hombro de un paciente",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0262f873056503eb40ad",
+   "sourceHash": "0262f873056503eb40adfa9bb1bb0736504936c3bec3faf488c32c0dff258f0b",
+   "text": "El Tratamiento ayurvédico de Kairali es una valiosa fuente de positividad y dinamismo para la salud y la vida. Puede ayudarle a convertirse en una mejor persona, con un cuerpo, una mente y un espíritu sanos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'It enables to elevate' softened to 'Puede ayudarle' to avoid strengthening the claim."
+   ]
+  },
+  {
+   "id": "t_a026aec0066a38ae1adc",
+   "sourceHash": "a026aec0066a38ae1adc59af3039d123a955fece9e1c0608b4685760b8d7e084",
+   "text": "Nuestros pacientes pueden recibir diversos tratamientos. Además del apoyo para sus dolencias, disfrutan de una estancia confortable en nuestro hospital, Kairali-The Healing Village, en Palakkad, Kerala. Las habitaciones se asignan según los signos zodiacales y los principios del «Vaastu Shastra». Con comidas auténticas y procedimientos terapéuticos tradicionales, es una oportunidad difícil de dejar pasar.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-lock substitutions: 'guests' → 'pacientes'; 'ailments get cured' → 'apoyo para sus dolencias' (no cure claim); 'lavish stay' → 'estancia confortable'; 'health resort' → 'hospital'. Source copy is legacy promotional text with a cure claim — flag for clinical review (Dr. Deepu John)."
+   ]
+  },
+  {
+   "id": "t_5105d5e014eedda6de56",
+   "sourceHash": "5105d5e014eedda6de563c8573d4cde554b29202750576140a1e566285add59e",
+   "text": "Dos terapeutas realizando un masaje sincronizado con aceite tibio a un paciente sobre una camilla de tratamiento de madera",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad3438c0aa673d3d1d70",
+   "sourceHash": "ad3438c0aa673d3d1d705859c155d48481a7d43d1b0ffc73061d5ecb704867e1",
+   "text": "Aceite tibio que cae desde un recipiente de latón suspendido sobre la frente de un paciente durante el Shirodhara",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec639a0a5d2de8badfcd",
+   "sourceHash": "ec639a0a5d2de8badfcdc9d7ea1ef0d15cfcb2b4d1f96fe9afce78fc196c42a4",
+   "text": "Sirodhara",
+   "status": "translated",
+   "unchangedReason": "Sanskrit therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_cf06d309d8037e8266f8",
+   "sourceHash": "cf06d309d8037e8266f8cf12c44469293dc63ceafc08f61c56df11b4abb77352",
+   "text": "Takradhara",
+   "status": "translated",
+   "unchangedReason": "Sanskrit therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_e5d0f47d5e30b2c39489",
+   "sourceHash": "e5d0f47d5e30b2c394898e2803faf6c582d89792895b3585e1c0c887cc040ac2",
+   "text": "Dhanyamala Dhara",
+   "status": "translated",
+   "unchangedReason": "Sanskrit therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_d826fd54821a22e8823f",
+   "sourceHash": "d826fd54821a22e8823fb66fafaf986ae5209b469e3e38f53ec08a3372996425",
+   "text": "Dos terapeutas presionando saquitos de hierbas calientes sobre un paciente acostado boca abajo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_86342a0de9741477333d",
+   "sourceHash": "86342a0de9741477333d94f6a2d1bd69938cc36f5508606ca16375ccd8348e1f",
+   "text": "Elakizhi (Patraswedam)",
+   "status": "translated",
+   "unchangedReason": "Sanskrit/Malayalam therapy names kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_600b3779bbbc8db3df6c",
+   "sourceHash": "600b3779bbbc8db3df6cd44cba5e9e77a8ec37af9fe1200fa3761a059b4de041",
+   "text": "Manjalkizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_b162dc958a522e006c8e",
+   "sourceHash": "b162dc958a522e006c8ef56d8d38c0ac4cc5cd2655368d53df9faf003616ab67",
+   "text": "Narangakizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_cb3e0dd89568d0528b52",
+   "sourceHash": "cb3e0dd89568d0528b5283751eda9df3a04624fb9416bdcde8d6ecea1d297e90",
+   "text": "Podikizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_a4a712d648c57f7736d3",
+   "sourceHash": "a4a712d648c57f7736d3ecf492bff9027440c2ffa075a9cd5c6a284bd1a57352",
+   "text": "Saquitos de hierbas, una orquídea morada y velitas encendidas sobre una esterilla de bambú",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9d3a9f481a74c9b0d78a",
+   "sourceHash": "9d3a9f481a74c9b0d78a5866b0e68bb58f65f647ee2a7ef071f92f40ce62cd74",
+   "text": "Muttakizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_c339ecb95088244b7680",
+   "sourceHash": "c339ecb95088244b7680c63269f58f0bc34bdaeca78aff796b967e9bf2f85392",
+   "text": "Manalkizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_f5452e26d65759f3ae3e",
+   "sourceHash": "f5452e26d65759f3ae3e9d1076633a0a99f3f52d1c8b56dd9f5f9c045e12ef3e",
+   "text": "Terapeuta tomando pasta de hierbas amarilla y tibia de un recipiente de latón sobre un paciente recostado",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_24e0d98d3fbe55e29fb3",
+   "sourceHash": "24e0d98d3fbe55e29fb38fccf00835e57c443ce49abb4547e726600eae621028",
+   "text": "Kadikizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  },
+  {
+   "id": "t_6d59cf3fa6187d5efc96",
+   "sourceHash": "6d59cf3fa6187d5efc96b6835c61f6622cf7063e269ee7f82d908bd8325ee2f4",
+   "text": "Navarakizhi",
+   "status": "translated",
+   "unchangedReason": "Malayalam therapy name kept as in source.",
+   "issues": []
+  }
+ ]
+}

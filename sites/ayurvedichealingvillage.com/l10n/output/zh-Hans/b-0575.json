@@ -1,0 +1,243 @@
+{
+ "batchId": "b-0575",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_72fcbb5be6c6949df857",
+   "sourceHash": "72fcbb5be6c6949df8570f555b15d2b31a2e6f23aabcf920997737a7613de7be",
+   "text": "日落时分，矗立在体育场跑道上的五环雕塑",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54a0aed6532ee04f2d03",
+   "sourceHash": "54a0aed6532ee04f2d0302aff0ab0fdc95729bffc2a1ee0b3c2e49c7af7c504a",
+   "text": "（奥运会及残奥会运动员）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_662c6794c0142e895d26",
+   "sourceHash": "662c6794c0142e895d264a8d45a3eba6b82d344edb298635f7e1501ab717ff4b",
+   "text": "身着迷彩制服和军靴列队站立的士兵，膝盖以下视角",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1f3d8c26eecd48f2db4",
+   "sourceHash": "f1f3d8c26eecd48f2db48128d4aec032681908697a0db7337906d3a4309781e3",
+   "text": "（适用于所有套餐）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_62dd37d1460bad753102",
+   "sourceHash": "62dd37d1460bad7531024601661020964cd5274e0d1790f15c4ffae1fe60827f",
+   "text": "来自德国德累斯顿的白色抽象几何艺术作品",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d612b5425365ce9727",
+   "sourceHash": "55d612b5425365ce97273ffbaf5f720d54f14a68bc0117f2108f26888388cbbb",
+   "text": "交付链路会对 SVG 进行清理：删除 style 元素并注入 C2PA 元数据清单。我首先恢复了逐字节一致的原始文件——7790 字节，SHA256 与记录的原始值完全一致——但它仍然渲染为黑色，因为实际返回的是经清理后的 15321 字节版本。逐字节存储的 SVG 无法在交付过程中保持原样，因此仅恢复文件无法修复颜色问题。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_9293c60558f3e91d3bc6",
+   "sourceHash": "9293c60558f3e91d3bc65eb2c97b07530ad174be1699e6f2ad0e2aa492c581e9",
+   "text": "viewBox 同为 0 0 2993.4 1950.82，宽度/高度相同，全部 28 条路径及其 d 值均未改动，class 属性保留，仅应用原有的三种颜色。未重绘、未改色、未改样式——fill 属性只是承载了被清理器删除的同一条规则。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_a87a51c358b3dc3514d8",
+   "sourceHash": "a87a51c358b3dc3514d882949cbae1ce4bafd299fe9398167debb910c24c6afc",
+   "text": "对比的是渲染结果，而非哈希值或尺寸：将实际返回的 SVG 绘制到画布上并采样其像素。三种主要不透明颜色为 234,175,30 / 137,152,53 / 188,131,44——正是 #EAAF1E、#899835 和 #BC832C——黑色已不再出现。修复前唯一的不透明颜色是 0,0,0。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note; confirm whether it should be public-facing."
+   ]
+  },
+  {
+   "id": "t_72e261354cac1a3c66bd",
+   "sourceHash": "72e261354cac1a3c66bdb54a205bb655f743e37349d55c940c22e50804f9a963",
+   "text": "与 Études 一同体验想象力与专业能力的融合——推动建筑变革、丰富周遭世界的催化剂。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_090aee4cb58becb346a5",
+   "sourceHash": "090aee4cb58becb346a5ef95d5b9890a5befe564e89fd78cfc9a30dc3822e58a",
+   "text": "我们的服务",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa218039a689075343d",
+   "sourceHash": "caa218039a689075343d1a680bb157888cc5e4094b5e53fc80792503d7362245",
+   "text": "认识我们的团队",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_784af458e65868a3b04b",
+   "sourceHash": "784af458e65868a3b04b7e1b14f7084481240cbc41c7ccb46d391f0aecc56975",
+   "text": "我们的专业人员阵容齐全，团队成员多元，既有资深建筑师，也有知名工程师。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_4e3bf250a5b7026ba7e8",
+   "sourceHash": "4e3bf250a5b7026ba7e82de8704dcb414e9506a5f2a4d1ffbdf46a0405e221da",
+   "text": "Francesca Piovani",
+   "status": "translated",
+   "unchangedReason": "Person's name kept unchanged.",
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_2aa5f616e0d39d7e69ef",
+   "sourceHash": "2aa5f616e0d39d7e69ef9f0d462693ca692673cb192f9431f234b07d7c1790d4",
+   "text": "创始人、首席执行官兼建筑师",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_6313d9b7fc1acd8faa37",
+   "sourceHash": "6313d9b7fc1acd8faa37e937df1aecfec48127f11e297c3286f70713f56fbe60",
+   "text": "Rhye Moore",
+   "status": "translated",
+   "unchangedReason": "Person's name kept unchanged.",
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_e26e2ef076b3f632885d",
+   "sourceHash": "e26e2ef076b3f632885d55412ca604114da8ba917d69d6a3e9faa3b61513c9a1",
+   "text": "工程经理",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_e6619db4e7fb1ff9e60f",
+   "sourceHash": "e6619db4e7fb1ff9e60f608a8c356cc7e88f95af6538d52fa6d2958aecd5262c",
+   "text": "Helga Steiner",
+   "status": "translated",
+   "unchangedReason": "Person's name kept unchanged.",
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_861eea32ae9990e1fda0",
+   "sourceHash": "861eea32ae9990e1fda0eed4a52552c330f0d17043b515a0cce1792aa0ba4e49",
+   "text": "建筑师",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_5ce46daf62835f3db3c7",
+   "sourceHash": "5ce46daf62835f3db3c794b136c9be1266e8e64219fe7bd814a1e191601d8ec4",
+   "text": "Ivan Lawrence",
+   "status": "translated",
+   "unchangedReason": "Person's name kept unchanged.",
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_0a6f51e8898aea307380",
+   "sourceHash": "0a6f51e8898aea3073805197fb1ca622a908f7fac07e587e0c7c77aab295d86b",
+   "text": "项目经理",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content."
+   ]
+  },
+  {
+   "id": "t_efd9e463e0e7addeee8a",
+   "sourceHash": "efd9e463e0e7addeee8a2ce6f09050cb4cf2d0793cb5940d5fbe1310f752684f",
+   "text": "我们曾与多家顶尖企业合作。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_f09230f091afc1f9c6a2",
+   "sourceHash": "f09230f091afc1f9c6a2ed8b5f0559139bc6967825586ef228168fd4537f8174",
+   "text": "你们在小型项目中的工作流程是怎样的？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_f4fbd1e5e58ace58f96a",
+   "sourceHash": "f4fbd1e5e58ace58f96ad0ae1ec569a3a2c4890ce4b50c7356597c52b3e4a414",
+   "text": "Études 提供全面的咨询、管理、设计与研究解决方案。我们的愿景是站在建筑创新的前沿，凝聚一个因热爱营造空间而团结在一起的全球建筑师与爱好者社群。每一项建筑实践，都是塑造未来的机会。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_d569bcad8793a59c442d",
+   "sourceHash": "d569bcad8793a59c442d4dae9a082e7516c2cd447209745ea6f8e480252a054f",
+   "text": "Études 的幕后团队是谁？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  },
+  {
+   "id": "t_be54d2d01d11a092958d",
+   "sourceHash": "be54d2d01d11a092958d9b7f745eea10fa64d7a09ead2a2baed5480783f3e1b0",
+   "text": "我想结识建筑师同行，该怎么做？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder content unrelated to Kairali."
+   ]
+  }
+ ]
+}

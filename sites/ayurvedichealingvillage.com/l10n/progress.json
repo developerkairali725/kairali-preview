@@ -1,82 +1,82 @@
 {
- "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
- "updatedAt": "2026-09-28 05:24:11 IST",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "updatedAt": "2026-09-28 05:48:21 IST",
  "counts": {
-  "jobsAccepted": 6670,
-  "jobsRemaining": 662,
+  "jobsAccepted": 6787,
+  "jobsRemaining": 557,
   "unitsBlocked": 27,
-  "rejectedAwaitingRetry": 19,
+  "rejectedAwaitingRetry": 28,
   "perLocale": {
    "hi": {
-    "batchesAccepted": 521,
-    "batchesTotal": 611,
-    "unitsTranslated": 12067,
+    "batchesAccepted": 526,
+    "batchesTotal": 612,
+    "unitsTranslated": 12163,
     "unitsBlocked": 7
    },
    "de": {
-    "batchesAccepted": 592,
-    "batchesTotal": 611,
-    "unitsTranslated": 13630,
+    "batchesAccepted": 603,
+    "batchesTotal": 612,
+    "unitsTranslated": 13891,
     "unitsBlocked": 1
    },
    "fr": {
-    "batchesAccepted": 572,
-    "batchesTotal": 611,
-    "unitsTranslated": 13127,
-    "unitsBlocked": 1
-   },
-   "es": {
-    "batchesAccepted": 560,
-    "batchesTotal": 611,
-    "unitsTranslated": 12848,
-    "unitsBlocked": 3
-   },
-   "it": {
-    "batchesAccepted": 545,
-    "batchesTotal": 611,
-    "unitsTranslated": 12564,
-    "unitsBlocked": 3
-   },
-   "pt": {
     "batchesAccepted": 581,
-    "batchesTotal": 611,
+    "batchesTotal": 612,
     "unitsTranslated": 13352,
     "unitsBlocked": 1
    },
+   "es": {
+    "batchesAccepted": 569,
+    "batchesTotal": 612,
+    "unitsTranslated": 13062,
+    "unitsBlocked": 3
+   },
+   "it": {
+    "batchesAccepted": 556,
+    "batchesTotal": 612,
+    "unitsTranslated": 12736,
+    "unitsBlocked": 3
+   },
+   "pt": {
+    "batchesAccepted": 592,
+    "batchesTotal": 612,
+    "unitsTranslated": 13627,
+    "unitsBlocked": 1
+   },
    "nl": {
-    "batchesAccepted": 506,
-    "batchesTotal": 611,
-    "unitsTranslated": 11794,
+    "batchesAccepted": 513,
+    "batchesTotal": 612,
+    "unitsTranslated": 11930,
     "unitsBlocked": 1
    },
    "ru": {
-    "batchesAccepted": 541,
-    "batchesTotal": 611,
-    "unitsTranslated": 12479,
+    "batchesAccepted": 549,
+    "batchesTotal": 612,
+    "unitsTranslated": 12630,
     "unitsBlocked": 5
    },
    "ar": {
-    "batchesAccepted": 537,
-    "batchesTotal": 611,
-    "unitsTranslated": 12393,
+    "batchesAccepted": 548,
+    "batchesTotal": 612,
+    "unitsTranslated": 12616,
     "unitsBlocked": 3
    },
    "zh-Hans": {
-    "batchesAccepted": 595,
-    "batchesTotal": 611,
-    "unitsTranslated": 13696,
+    "batchesAccepted": 607,
+    "batchesTotal": 612,
+    "unitsTranslated": 13988,
     "unitsBlocked": 1
    },
    "ja": {
-    "batchesAccepted": 566,
-    "batchesTotal": 611,
-    "unitsTranslated": 13005,
+    "batchesAccepted": 577,
+    "batchesTotal": 612,
+    "unitsTranslated": 13280,
     "unitsBlocked": 0
    },
    "ko": {
-    "batchesAccepted": 554,
-    "batchesTotal": 611,
-    "unitsTranslated": 12714,
+    "batchesAccepted": 566,
+    "batchesTotal": 612,
+    "unitsTranslated": 12980,
     "unitsBlocked": 1
    }
   }
