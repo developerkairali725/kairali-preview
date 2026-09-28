@@ -71,6 +71,10 @@ const REDIRECT_MAP = JSON.parse(
 ) as RedirectMap;
 
 const nextConfig: NextConfig = {
+  // Keep dependency tracing inside this monorepo. On Windows, Next can
+  // otherwise select an unrelated parent lockfile and attempt to traverse the
+  // user's home directory during a worktree build.
+  outputFileTracingRoot: join(process.cwd(), '../..'),
   // The approved content, its canonicals, the sitemap and the legacy WordPress
   // URLs that hold the rankings ALL use a trailing slash. Next's default is the
   // opposite, so before this line 238 of 252 routes answered 308 and redirected,
