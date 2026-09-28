@@ -1,0 +1,119 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "CLINICAL-COPY / HOSPITAL-COPY",
+ "note": "Round-3 residuals the round-2 translators flagged and the clinical sweep missed: a disease-freedom food claim, 'patented' (unverified) medicines for 'a range of illnesses', an unverified '20+ years … unrivaled' staff claim, two testimonial outcome clauses (removed, never reworded), a guest-bio cell-level claim, an eye 'unlock vision' outcome, the 'Kairalai' typo, an unclosed parenthesis, and a sentence missing its first letter on /prav-simona-yoga-retreat/ (anchored on the preceding quote so the correct 'The retreat' elsewhere is untouched). Plus: a superlative ('undoubtedly the leading … incredible potency'), Sootika Charya mis-described as a massage (it is the postnatal regimen; now three listed items), an unhedged focus claim, and an uncertified 'certified model' claim.",
+ "entries": [
+  {
+   "id": "R3-food-diseases",
+   "auto": true,
+   "old": "as food plays vital role in freeing you from all sorts of diseases.",
+   "new": "as a balanced diet is part of every care plan.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-patented",
+   "auto": true,
+   "old": "provides a line of patented medications intended to treat a range of illnesses and enhance overall health.",
+   "new": "manufactures a line of proprietary Ayurvedic medicines.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-staff-20yrs",
+   "auto": true,
+   "old": "All our doctors &amp; therapists have more than 20+ years of experience providing unrivaled Ayurvedic treatment.",
+   "new": "Our doctors and therapists are experienced in Ayurvedic treatment.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-kairalai",
+   "auto": true,
+   "old": "by a doctor of Kairalai Healing Village",
+   "new": "by a doctor of Kairali – The Ayurvedic Healing Village",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-virechanam-paren",
+   "auto": true,
+   "old": "Virechanam (Purgation: The elimination of toxic matter from the intestines by administrating therapeutic purgation or a therapeutic laxative, Virechanam is a classical therapy",
+   "new": "Virechanam (purgation): the elimination of toxic matter from the intestines by therapeutic purgation or a therapeutic laxative. Virechanam is a classical therapy",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-testimonial-bronchial",
+   "auto": true,
+   "old": ", and these were really effective.",
+   "new": ".",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-testimonial-diabetes",
+   "auto": true,
+   "old": " My health has significantly improved after I learned sustainable lifestyle modifications from the informed personnel.",
+   "new": " I learned sustainable lifestyle modifications from the informed personnel.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-bio-organ-cell",
+   "auto": true,
+   "old": " in aiding changes at the levels of organ, tissue and cell, and to make us peaceful",
+   "new": " to help us feel peaceful",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-eye-unlock",
+   "auto": true,
+   "old": "Together, we unlock vibrant and healthy vision",
+   "new": "Together, we work towards clear, healthy vision",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-missing-T",
+   "auto": true,
+   "old": "\"he retreat is perfect for those",
+   "new": "\"The retreat is perfect for those",
+   "min": 4,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-leading-potency",
+   "auto": true,
+   "old": "it is the undoubtedly the leading practice when it comes to alternate forms of medicine. The incredible potency of Ayurveda can be attributed to its multifaceted nature",
+   "new": "it is one of the most widely practised traditional systems of medicine. The breadth of Ayurveda comes from its multifaceted nature",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-sootika",
+   "auto": true,
+   "old": "includes Sootika Charya, a therapeutic post-pregnancy massage, and a balanced diet.",
+   "new": "includes Sootika Charya (the traditional postnatal regimen), a therapeutic post-pregnancy massage and a balanced diet.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-eye-focus",
+   "auto": true,
+   "old": "Ayurvedic treatments also balance doshas for overall well-being, increasing focus and concentration, and to support long-term eye health.",
+   "new": "Ayurvedic treatments also aim to balance the doshas for overall well-being, focus and concentration, and to support long-term eye health.",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  },
+  {
+   "id": "R3-certified-model",
+   "auto": true,
+   "old": "A certified model of a wellness retreat, the healing village is implanted at the foot",
+   "new": "The healing village sits at the foot",
+   "min": 1,
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7). Flagged by the 29 Sep round-2 translation lanes."
+  }
+ ]
+}

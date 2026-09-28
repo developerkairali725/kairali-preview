@@ -41,7 +41,7 @@ window.AHV_YALA = {
     "Kairali Ayurvedic Group’s signature property ‘The Ayurvedic Healing Village’ is a nature’s paradise where one can recuperate from stress and strain, undergo treatment for one’s ailments, all while being on holiday.",
     "This ayurvedic haven is situated in Palakkad, just a few kilometers from the world’s biggest mountain pass between Kerala and Tamil Nadu. Nature has bestowed Palakkad immensely with rich natural vegetation, mountains, forests, fertile valleys, rivers and mountain streams which makes it a panoramic repertoire. Time spent at this unique paradise will allow you to experience the authentic healing practices of ancient India, while relaxing in the lap of modern holistic luxury." ] },
   highlights: { id: "source-section-7", heading: "Highlights", items: [
-    "7-DAY AYURVEDIC PROGRAMME with an Ayurvedic check-up by a doctor of Kairalai Healing Village",
+    "7-DAY AYURVEDIC PROGRAMME with an Ayurvedic check-up by a doctor of Kairali – The Ayurvedic Healing Village",
     "Daily practice of yoga and meditation by Francesca Lo Cascio",
     "Daily class of Ayurveda by doctor Nathalie Gheeta",
     "Ayurvedic delicious meals",
