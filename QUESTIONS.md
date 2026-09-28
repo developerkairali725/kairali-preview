@@ -1981,3 +1981,32 @@ added. (2) The fr ("Médecin résidente") and pt ("Médica residente") titles fo
 trainee; a native reviewer should confirm. (3) Their consent documents were not re-verified in this session (the
 owner supplied the portraits directly). Separately, /arogya-kendra/ keeps the legacy wording "remedies … performed
 miracles" unchanged, as a held claim for the owner / Dr. Deepu John.
+
+## Q-AHV-FRESH-20260928-OWNER-ITEMS — 2026-09-28 22:32:24 IST
+Fresh coordinator session (WOPS-AHV-FINAL-DRAFT-20260924-001, handoff fresh-claude-handoff-20260928). Each item needs an
+owner (or named owner) decision; nothing below was changed without it. Evidence: deliverable lanes/*/REPORT.md.
+1. **Careers "Sunaj" sentence (lane C-27):** /careers/ + three privacy pages say "HR owns the recruitment process, with Sunaj
+   providing technical support." It reads as an internal note, but tests/approved-content.smoke.mjs asserts it as approved
+   content. Remove (and update the smoke expectation by your ruling) or keep?
+2. **Locked words in indexable heads (lane D-09):** 39 of 217 sitemap routes carry luxury/journey/resort/spa/guest/holiday/
+   cure in title/description (e.g. /our-villas/ "Luxury Ayurvedic Villas", /read-feedback/ "Guest Reviews & Stories").
+   Rewrite under the KTAHV lock (with Dr. Deepu John for clinical ones) or keep approved heads?
+3. **Legacy "HOSPITALITY & HEALTHCARE" paragraph** (group-history copy; luxury/guests/resorts/spa franchises) on a KTAHV
+   page: rewrite, remove, or keep? Translators softened it in all 12 locales; English still carries the words.
+4. **Paid-click measurement (lane E-MEAS-01, HARD GATE 11):** consent-runtime.ts:182 stops GA4/Clarity/Meta on ANY URL
+   with a query/hash, so gclid/utm visits are never measured after activation. Allow-list marketing parameters / strip
+   the query from page_location / keep as is?
+5. **Main enquiry forms consent (E-DATA-02):** /contact-us/, /enquiry-form/, /online-consultation/ have no consent
+   checkbox, privacy link or health-data notice (campaign/LP forms do). Wording approval for Deepu's forms work.
+6. **Lane C owner/fact items (23, lanes/C-rates/REPORT.md):** expired 2025 offers on /special-offers/; which approved table
+   /Kairali_Brand_and_Competition_Neo-original.html shows; /treatment-in-kerala-russian.html USD; training deposit vs full
+   advance; senior page "this month"/"first-time" wording; family retreat 10%/15% non-duration offer; "Recreation &
+   Business Centre" and "Beauty Therapy" tiles; acreage (14 / 50 / 65 acres); OPD reception number and "35 centres".
+7. **Campaigns:** Vikash's actual 28-row sheet export (Drive id 1-rEkU… not readable here); per-URL legacy→/lp switch;
+   Karkidaka page pause vs evergreen; weight-loss/karkidaka testimonial outcome claims (Dr. Deepu John).
+8. **EF-19 batches 03/04 (50 proposals)** await your Yes/No: english-feedback-20260926/image-approval-review/batch-03.html,
+   batch-04.html. Also: ktahv-abhyanga-oil-therapy-2025 (4 pages) is byte-identical to a Delhi-shoot frame, and
+   model_img (31 programme pages) visually matches a Delhi-shoot frame.
+9. **Clinical sign-off:** the 28 Sep medical corrections (english-candidate/copy-plans/medical-copy-20260928.json +
+   addendum) were made under your "do it yourself" authority; Dr. Deepu John's review remains required before production
+   (HARD GATE 7). Not a clinician signature.
