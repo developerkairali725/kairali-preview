@@ -1972,3 +1972,12 @@ approved KTAHV property footer; the newsletter/search forms carry no consent che
 (completion belongs to conversion wiring, PR #315/#317, without activating staging analytics). Each touches a
 consent/analytics or marketing-fact decision (HARD GATES 6/11), so no agent change was made. LP Lighthouse budgets are
 Vikash's LPs (not in this scope). Authenticated owner review on the final PR309 head remains required.
+
+## Q-AHV-STAFF01-FOLLOWUPS — 2026-09-28 19:57:54 IST
+Dr. Adhina U.B. (Resident Medical Officer · BAMS) and Dr. Aashitha P.S. (Ayurvedic Physician · BAMS) are on the
+homepage "Our Experts" cards on staging (dpl_896RdocBsWfyoFsePEyy6MeNWZze). Three decisions remain: (1) should either
+appear in the /online-consultation/ physicians list? No source says they take online consultations, so they were not
+added. (2) The fr ("Médecin résidente") and pt ("Médica residente") titles for Resident Medical Officer can read as a
+trainee; a native reviewer should confirm. (3) Their consent documents were not re-verified in this session (the
+owner supplied the portraits directly). Separately, /arogya-kendra/ keeps the legacy wording "remedies … performed
+miracles" unchanged, as a held claim for the owner / Dr. Deepu John.
