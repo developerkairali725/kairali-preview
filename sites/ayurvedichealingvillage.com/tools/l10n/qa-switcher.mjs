@@ -9,6 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
+import { attachStagingToken } from "../lib/staging-auth.mjs";
 const require_ = createRequire(import.meta.url);
 const store = path.resolve("../../node_modules/.pnpm");
 const pw = fs.readdirSync(store).find((d) => d.startsWith("playwright@"));
@@ -26,8 +27,8 @@ for (const p of PATHS) for (const w of VIEWPORTS) {
   // Protected Vercel previews: the CLI's short-lived OIDC token as the Trusted
   // Sources header (vercel env run). Never logged or written anywhere.
   const tok = process.env.VERCEL_OIDC_TOKEN;
-  const extraHTTPHeaders = tok && /vercel\.app/.test(BASE) ? { "x-vercel-trusted-oidc-idp-token": tok } : undefined;
-  const ctx = await browser.newContext({ viewport: { width: w, height: mobile ? 860 : 900 }, isMobile: mobile, hasTouch: mobile, deviceScaleFactor: mobile ? 2 : 1, ...(extraHTTPHeaders ? { extraHTTPHeaders } : {}) });
+  const useToken = tok && /vercel\.app/.test(BASE);
+  const ctx = await browser.newContext({ viewport: { width: w, height: mobile ? 860 : 900 }, isMobile: mobile, hasTouch: mobile, deviceScaleFactor: mobile ? 2 : 1 }); if (useToken) await attachStagingToken(ctx, BASE);
   const page = await ctx.newPage();
   const errors = [];
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });

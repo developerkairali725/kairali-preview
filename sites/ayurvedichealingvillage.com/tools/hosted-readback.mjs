@@ -10,6 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 
 const require = createRequire(import.meta.url);
 const store = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../node_modules/.pnpm");
@@ -25,7 +26,7 @@ const oidc = /^https:/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { "x-vercel
 const b = await pw.chromium.launch();
 const rows = [];
 for (const vp of VPS) {
-  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800, hasTouch: vp.w < 800, ...(oidc ? { extraHTTPHeaders: oidc } : {}) });
+  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800, hasTouch: vp.w < 800 }); if (oidc) await attachStagingToken(ctx, BASE);
   for (const route of PAGES) {
     const p = await ctx.newPage();
     const errs = [];

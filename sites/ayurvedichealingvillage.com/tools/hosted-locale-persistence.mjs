@@ -3,13 +3,14 @@
 // at every step and scanning each visited page for internal links that leave the locale (English leaks).
 // Protected staging: vc env run -- node tools/hosted-locale-persistence.mjs --base https://ahv-final-staging.vercel.app --out <dir>
 import fs from "node:fs"; import path from "node:path"; import { createRequire } from "node:module"; import { fileURLToPath } from "node:url";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 const require = createRequire(import.meta.url);
 const store = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../node_modules/.pnpm");
 const pw = require(path.join(store, fs.readdirSync(store).find((d) => d.startsWith("playwright@")), "node_modules/playwright"));
 const arg = (k, d) => { const i = process.argv.indexOf("--" + k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg("base", "http://localhost:4471"), OUT = arg("out", "/tmp/locale-persistence");
 fs.mkdirSync(OUT, { recursive: true });
-const oidc = /^https/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { extraHTTPHeaders: { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } } : {};
+const oidc = {};
 const L = JSON.parse(fs.readFileSync("l10n/locales.json", "utf8"));
 const R = JSON.parse(fs.readFileSync("l10n/routes.json", "utf8")).routes;
 const b = await pw.chromium.launch();
@@ -28,7 +29,7 @@ const leaks = async (pg, prefix) => pg.evaluate((prefix) => {
 }, prefix);
 for (const [loc, w] of [["de", 1440], ["de", 390], ["ar", 1440], ["ar", 390], ["ja", 390]]) {
   const prefix = L[loc].prefix;
-  const ctx = await b.newContext({ viewport: { width: w, height: 900 }, isMobile: w < 800, hasTouch: w < 800, ...oidc });
+  const ctx = await b.newContext({ viewport: { width: w, height: 900 }, isMobile: w < 800, hasTouch: w < 800, ...oidc }); await attachStagingToken(ctx, BASE);
   await ctx.addInitScript(() => { try { localStorage.setItem("ktahv-consent", "declined"); } catch (e) {} });
   const pg = await ctx.newPage();
   const steps = [];

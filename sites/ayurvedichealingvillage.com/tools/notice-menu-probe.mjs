@@ -1,12 +1,13 @@
 // Read-only: cookie notice vs the homepage phone menu (open / closed) per locale, local :4471.
 import { createRequire } from "node:module";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 const require = createRequire(import.meta.url);
 const fs=require("fs"),p=require("path"); const s=p.resolve("../../node_modules/.pnpm"); const h=fs.readdirSync(s).find(d=>d.startsWith("playwright@")); const pw=require(p.join(s,h,"node_modules/playwright"));
 const BASE = process.env.PROBE_BASE || "http://localhost:4471";
-const oidc = /^https:/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { extraHTTPHeaders: { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } } : {};
+const oidc = {};
 const b = await pw.chromium.launch();
 for (const route of ["/", "/de/", "/fr/", "/ar/"]) {
-const pg = await b.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, ...oidc });
+const pg = await b.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, ...oidc }); await attachStagingToken(pg, BASE);
 await pg.goto(BASE + route, { waitUntil: "load", timeout: 90000 }); await pg.waitForTimeout(3500);
 const hit = () => pg.evaluate(() => [620, 700, 760, 820].map((y) => { const e = document.elementFromPoint(195, y); const n = e && e.closest('[data-ahv-notice-under-menu], #ahv-consent'); const cook = [...document.querySelectorAll("body *")].some(x => x.contains(e) && x !== document.body && x !== document.documentElement && getComputedStyle(x).position === "fixed" && (x.querySelector('a[href*="privacy-policy"]') || (window.AHV_LOCAL_PATHS && x.querySelector('a[href$="' + window.AHV_LOCAL_PATHS['/privacy-policy/'] + '"]'))) && x.querySelectorAll("button").length >= 2); return cook ? "NOTICE" : "menu/page"; }));
 const before = await hit();

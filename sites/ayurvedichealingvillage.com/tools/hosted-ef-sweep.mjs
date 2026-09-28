@@ -4,13 +4,14 @@
 // the defect is absent. Read-only.
 //   vc env run -- node tools/hosted-ef-sweep.mjs --base https://ahv-final-staging.vercel.app --out <dir>
 import fs from "node:fs"; import path from "node:path"; import { createRequire } from "node:module"; import { fileURLToPath } from "node:url";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 const require = createRequire(import.meta.url);
 const store = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../node_modules/.pnpm");
 const pw = require(path.join(store, fs.readdirSync(store).find((d) => d.startsWith("playwright@")), "node_modules/playwright"));
 const arg = (k, d) => { const i = process.argv.indexOf("--" + k); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg("base", "http://localhost:4471"), OUT = arg("out", "/tmp/ef-sweep");
 fs.mkdirSync(OUT, { recursive: true });
-const oidc = /^https/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { extraHTTPHeaders: { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } } : {};
+const oidc = {};
 const CHECKS = [
   ["EF-01", "/", { has: ["₹", "$", "€"] }],
   ["EF-02", "/ayurveda-package/", {}],
@@ -76,6 +77,7 @@ const CHECKS = [
 ];
 const b = await pw.chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, ...oidc });
+await attachStagingToken(ctx, BASE);
 await ctx.addInitScript(() => { try { localStorage.setItem("ktahv-consent", "declined"); } catch (e) {} });
 const rows = [];
 for (const [id, route, want] of CHECKS) {

@@ -2,6 +2,7 @@
  * occupied viewport (default + panel open), duplicates, CTA bar, finder state, page errors.
  *   node tools/fh-probe.mjs --base http://localhost:4471 --routes /a/,/b/ [--engine webkit] [--shots dir] */
 import fs from "node:fs"; import path from "node:path"; import { createRequire } from "node:module";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 const arg = (n, d) => { const i = process.argv.indexOf("--" + n); return i > -1 ? process.argv[i + 1] : d; };
 const require_ = createRequire(import.meta.url);
 let dir = process.cwd(), store; for (let i = 0; i < 6 && !store; i++) { const s = path.join(dir, "node_modules", ".pnpm"); if (fs.existsSync(s)) store = s; dir = path.dirname(dir); }
@@ -15,7 +16,7 @@ for (const vp of VPS) {
   // protected Vercel staging: run under `vc env run --` so the short-lived development OIDC token rides as the
   // Trusted-Sources header (never printed, never written); localhost runs send nothing extra
   const oidc = /^https:/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } : undefined;
-  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800 && ENGINE !== "firefox", hasTouch: vp.w < 800, ...(oidc ? { extraHTTPHeaders: oidc } : {}) });
+  const ctx = await b.newContext({ viewport: { width: vp.w, height: vp.h }, isMobile: vp.w < 800 && ENGINE !== "firefox", hasTouch: vp.w < 800 }); if (oidc) await attachStagingToken(ctx, BASE);
   await ctx.addInitScript(() => { try { localStorage.setItem("ktahv-consent", "declined"); } catch (e) {} });
   for (const r of routes) {
     const p = await ctx.newPage(); const errs = []; p.on("pageerror", (e) => errs.push(String(e).slice(0, 140)));

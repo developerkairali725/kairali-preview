@@ -8,6 +8,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { attachStagingToken } from "./lib/staging-auth.mjs";
 const require = createRequire(import.meta.url);
 const HERE = path.dirname(fileURLToPath(import.meta.url)), SITE = path.resolve(HERE, "..");
 const arg = (n, d) => { const i = process.argv.indexOf("--" + n); return i > -1 ? process.argv[i + 1] : d; };
@@ -22,10 +23,10 @@ const CASES = [
   ["/walk-in-ayurveda-treatment/", 1440, "Outpatient"], ["/walk-in-ayurveda-treatment/", 390, "Outpatient"],
   ["/de/walk-in-ayurveda-treatment/", 1440, "Outpatient"], ["/ar/walk-in-ayurveda-treatment/", 390, "Outpatient"],
 ];
-const oidc = /^https/.test(BASE) && process.env.VERCEL_OIDC_TOKEN ? { extraHTTPHeaders: { "x-vercel-trusted-oidc-idp-token": process.env.VERCEL_OIDC_TOKEN } } : {};
+const oidc = {};
 const b = await pw.chromium.launch(); const rows = [];
 for (const [route, w] of CASES) {
-  const cx = await b.newContext({ viewport: { width: w, height: w < 700 ? 844 : 900 }, acceptDownloads: true, ...oidc });
+  const cx = await b.newContext({ viewport: { width: w, height: w < 700 ? 844 : 900 }, acceptDownloads: true, ...oidc }); await attachStagingToken(cx, BASE);
   await cx.addInitScript(() => { try { localStorage.setItem("ktahv-consent", "declined"); } catch (e) {} });
   const p = await cx.newPage(); const row = { route, width: w, passes: [] };
   await p.goto(BASE + route, { waitUntil: "load" });
