@@ -144,7 +144,7 @@
         o.hasLink = !!it.linkHref;
         o.href = it.linkHref ? (it.linkHref.charAt(0) === '/' ? A + it.linkHref : it.linkHref) : null;
         o.ariaLabel = it.accessibleName || null;
-        o.maxWidth = (it.width || 0) + 'px';
+        o.maxWidth = it.width ? it.width + 'px' : '100%'; // unknown width: bounded by the column, never 0px
       }
       if (it.kind === 'link') {
         o.href = /^https?:/i.test(it.sourceHref || '') ? it.sourceHref : (A + it.sourceHref);

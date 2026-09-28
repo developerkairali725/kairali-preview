@@ -184,7 +184,7 @@
    /learn-about-ayurveda/ and /learn-more-about-ayurveda/ is its own "first" image, and the rule stretched its
    95x57 artwork to 95x460 — two clipped fragments under the banner (owner report, 28 Sep 2026). */
 @media (min-width:1024px) {
-  [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type:not([src$=".svg"]),
+  [data-ahv-family="article-reader"] main > :nth-child(-n+2) img:first-of-type:not([src$=".svg"]):not([style*="grid-template-columns"] img, [style*="display: flex"] img, [data-ahv-maps] img),
   [data-ahv-family="article-reader"] main > section:first-of-type + div > img:not([src$=".svg"]) {
     width:100% !important;
     max-width:100% !important;
@@ -225,14 +225,15 @@
  * NOT DONE: `overflow-x:hidden` on a wrapper. It would flip the sweep's boolean
  * and leave every one of these images still stretched to 1024px and cropped,
  * with the part that hangs off the page simply clipped. */
+/* 28 Sep 2026 (owner regressions CSR-MAP-ASPECT / PRODUCTS-IMAGE-NAV, parent-measured on r8): this block used to UNDO
+   the hero rule for column images with width/max-width:100% !important + height:auto !important — which also erased
+   the payload's OWN inline sizing: the product photo's max-width:450px (rendered 755x537) and the location maps'
+   designed height:190px + object-fit:contain (rendered up to 623x919). The hero rule now simply never matches a column
+   image (same scope this block used, which caught 0 heroes), so nothing needs undoing and every column image keeps
+   the size its own inline style asks for. Only the rounded corner survives here. */
 @media (min-width:1024px) {
   [data-ahv-family="article-reader"] main [style*="grid-template-columns"] img:first-of-type:not([src$=".svg"]),
   [data-ahv-family="article-reader"] main [style*="display: flex"] img:first-of-type:not([src$=".svg"]) {
-    width:100% !important;
-    max-width:100% !important;
-    margin-left:0 !important;
-    height:auto !important;
-    object-fit:fill !important;
     border-radius:4px !important;
   }
 }
@@ -284,7 +285,7 @@
 }
 
 /* ---- images in the body ----------------------------------------------- */
-[data-ahv-family="article-reader"] main img:not(:first-of-type) {
+[data-ahv-family="article-reader"] main img:not(:first-of-type):not([data-ahv-maps] img) {
   border-radius:4px !important;
   height:auto !important;
   margin:8px 0 10px !important;
@@ -440,4 +441,33 @@
     grid-column:1 / -1 !important;
   }
   [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:has(> div + div + div > div img) > div { margin:0 !important; }
+}
+
+/* ---- "Where we are" maps (owner CSR-MAP-ASPECT, 28 Sep 2026) --------------------------------------------------------
+   The repair-inserted maps section is a direct child of <main> with no container width, so on wide screens it spanned
+   the viewport: the illustrated grounds map (1200x675) rendered 1920x1080 at 1920. Bound it to the site container like
+   every other section; the three location maps keep their designed 190px contain boxes (hero-rule exclusion above). */
+#ahv-design-root main > section[data-ahv-maps] {
+  width:min(1220px,94%) !important; margin-left:auto !important; margin-right:auto !important; box-sizing:border-box !important;
+}
+
+/* ---- articles freed from the retired family sidebar (PRODUCTS-IMAGE-NAV, 28 Sep 2026) --------------------------------
+   19 routes lost their captured WordPress family nav (tools/repair-retire-legacy-family-nav-20260928.mjs; every link is
+   in the family header). Their row was laid out for article + sidebar, so the article would sit at 755px with the old
+   rail's space empty. At >= 1180px the article takes the row and composes like the other article sections: headings in
+   the label column, text at its measure beside them, tables/grids spanning; figures stay in the text column at their own
+   inline size (bounded, never upscaled). Card-list articles (/experience/) keep their card grid (rule above). */
+@media (min-width:1180px) {
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)) {
+    flex:1 1 100% !important; max-width:none !important; width:100% !important;
+    display:grid !important; grid-template-columns:minmax(220px,1fr) minmax(0,66ch) !important;
+    column-gap:clamp(48px,5vw,88px) !important; align-items:start !important;
+  }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)) > * { grid-column:2 !important; min-width:0 !important; }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)) > :is(div:has(> :is(h2,h3)), h2, h3) {
+    grid-column:1 !important;
+  }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)) > :is(div:has(> :is(table, [style*="grid-template-columns"])), table, [style*="grid-template-columns"]) {
+    grid-column:1 / -1 !important;
+  }
 }
