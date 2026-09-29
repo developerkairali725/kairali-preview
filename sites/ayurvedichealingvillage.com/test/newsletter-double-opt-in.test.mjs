@@ -1010,13 +1010,15 @@ test('Apps Script sender: signed correlated replies; refuses before sending; dur
   assert.equal(ok.post().result, 'duplicate');
   assert.equal(ok.sentMail.length, 1);
   assert.equal(ok.post({}, 'wrong'.repeat(8)).message, 'unauthorized');
-  assert.equal(ok.post({ idempotencyKey: 'k2', text: 'Reference: k2', ts: Math.floor(Date.now() / 1000) - 301 }).code, 'STALE');
-  assert.equal(ok.post({ idempotencyKey: 'k3', text: 'Reference: k3', from: 'news@example.invalid' }).code, 'SENDER_REFUSED');
-  assert.equal(ok.post({ idempotencyKey: 'k4', text: 'Reference: k4', subject: 'x\r\nBcc: a@b.c' }).code, 'BAD_REQUEST');
-  assert.equal(ok.post({ idempotencyKey: 'k5', text: 'no reference line' }).code, 'BAD_REQUEST', 'every email must be reconcilable');
-  const replay = { idempotencyKey: 'k6', text: 'Reference: k6', nonce: 'replayed-nonce-000000' };
+  assert.equal(ok.post({ idempotencyKey: 'ahv-newsletter-2-00000000000000a2', text: 'Reference: ahv-newsletter-2-00000000000000a2', ts: Math.floor(Date.now() / 1000) - 301 }).code, 'STALE');
+  assert.equal(ok.post({ idempotencyKey: 'ahv-newsletter-3-00000000000000a3', text: 'Reference: ahv-newsletter-3-00000000000000a3', from: 'news@example.invalid' }).code, 'SENDER_REFUSED');
+  assert.equal(ok.post({ idempotencyKey: 'ahv-newsletter-4-00000000000000a4', text: 'Reference: ahv-newsletter-4-00000000000000a4', subject: 'x\r\nBcc: a@b.c' }).code, 'BAD_REQUEST');
+  assert.equal(ok.post({ idempotencyKey: 'ahv-newsletter-5-00000000000000a5', text: 'no reference line' }).code, 'BAD_REQUEST', 'every email must be reconcilable');
+  const replay = { idempotencyKey: 'ahv-newsletter-6-00000000000000a6', text: 'Reference: ahv-newsletter-6-00000000000000a6', nonce: 'replayed-nonce-000000' };
   assert.equal(ok.post(replay).result, 'accepted');
-  assert.equal(ok.post(replay).code, 'REPLAYED');
+  // parent outcome fix (29 Sep): the durable job is checked before nonce rejection, so an accepted job replayed with the
+  // same nonce reports `duplicate` (already sent) instead of a rejection that could read as "never sent"; no second send
+  assert.equal(ok.post(replay).result, 'duplicate');
   assert.equal(ok.sentMail.length, 2);
   const noAlias = loadMailScript({ aliases: ['other@example.invalid'] });
   const refused = noAlias.post();

@@ -102,8 +102,8 @@ function readJournal(props, key) {
   try { return JSON.parse(raw); } catch (error) { return { s: 'sending', t: 0 }; }
 }
 
-function writeJournal(props, key, state) {
-  props.setProperty(JOURNAL_PREFIX + key, JSON.stringify({ s: state, t: nowSeconds() }));
+function writeJournal(props, key, state, digest) {
+  props.setProperty(JOURNAL_PREFIX + key, JSON.stringify({ s: state, t: nowSeconds(), d: digest }));
 }
 
 function foundInSentMail(key) {
@@ -132,7 +132,7 @@ function doPost(request) {
 
     var p = JSON.parse(payloadText);
     if (!p || typeof p.nonce !== 'string' || !/^[A-Za-z0-9_-]{16,64}$/.test(p.nonce)
-      || typeof p.idempotencyKey !== 'string' || !/^[A-Za-z0-9-]{1,80}$/.test(p.idempotencyKey)) return fail('bad request');
+      || typeof p.idempotencyKey !== 'string' || !/^ahv-newsletter-[1-9][0-9]*-[0-9a-f]{16}$/.test(p.idempotencyKey)) return fail('bad request');
     // From here every answer is signed and correlated. `rejected` always means: NOT sent.
     if (p.v !== 1 || p.action !== 'newsletter.confirmation') return signedReply(secret, p, 'rejected', 'BAD_REQUEST');
     if (typeof p.ts !== 'number' || Math.abs(nowSeconds() - p.ts) > MAX_SKEW_SECONDS) return signedReply(secret, p, 'rejected', 'STALE');
@@ -145,24 +145,32 @@ function doPost(request) {
     var lock = LockService.getScriptLock();
     lock.waitLock(20000);
     try {
-      var cache = CacheService.getScriptCache();
-      if (cache.get('nonce:' + p.nonce)) return signedReply(secret, p, 'rejected', 'REPLAYED');
-      cache.put('nonce:' + p.nonce, '1', NONCE_CACHE_SECONDS);
-
       var props = PropertiesService.getScriptProperties();
       var entry = readJournal(props, p.idempotencyKey);
+      // Immutable job identity excludes the per-attempt nonce and timestamp.
+      var digest = toHex(Utilities.computeHmacSha256Signature(
+        JSON.stringify([p.v, p.action, p.from, p.to, p.subject, p.text, p.html, p.idempotencyKey]), secret));
+      // Legacy/corrupt records cannot prove payload identity: never acknowledge or resend them.
+      if (entry && (!entry.d || !constantTimeEquals(entry.d, digest))) {
+        return signedReply(secret, p, 'unknown', 'JOB_PAYLOAD_UNVERIFIED');
+      }
+      var cache = CacheService.getScriptCache();
+      var replayed = Boolean(cache.get('nonce:' + p.nonce));
+      if (!replayed) cache.put('nonce:' + p.nonce, '1', NONCE_CACHE_SECONDS);
       if (entry && entry.s === 'accepted') return signedReply(secret, p, 'duplicate');
       if (entry && entry.s === 'sending') {
         if (foundInSentMail(p.idempotencyKey)) {
-          try { writeJournal(props, p.idempotencyKey, 'accepted'); } catch (error) { /* next repeat reconciles again */ }
+          try { writeJournal(props, p.idempotencyKey, 'accepted', digest); } catch (error) { /* next repeat reconciles again */ }
           return signedReply(secret, p, 'duplicate');
         }
         // Not (yet) visible in Sent: it may still be indexing. Do not send again inside the window.
         if (nowSeconds() - (entry.t || 0) < RECONCILE_SECONDS) return signedReply(secret, p, 'unknown', 'RECONCILING');
       }
-      if (!senderAvailable()) return signedReply(secret, p, 'rejected', 'SENDER_UNAVAILABLE');
+      // A nonce replay must never be interpreted as proof this job was not sent.
+      if (replayed) return signedReply(secret, p, 'unknown', 'REPLAYED');
+      if (!senderAvailable()) return signedReply(secret, p, entry ? 'unknown' : 'rejected', 'SENDER_UNAVAILABLE');
 
-      writeJournal(props, p.idempotencyKey, 'sending');
+      writeJournal(props, p.idempotencyKey, 'sending', digest);
       var options = { from: SENDER, name: SENDER_NAME, replyTo: SENDER };
       if (p.html) options.htmlBody = p.html;
       try {
@@ -171,7 +179,7 @@ function doPost(request) {
         // Gmail may or may not have sent it; the journal stays `sending` for reconciliation.
         return signedReply(secret, p, 'unknown', 'SEND_ERROR');
       }
-      try { writeJournal(props, p.idempotencyKey, 'accepted'); } catch (error) { /* stays `sending`; a repeat reconciles against Sent */ }
+      try { writeJournal(props, p.idempotencyKey, 'accepted', digest); } catch (error) { /* stays `sending`; a repeat reconciles against Sent */ }
       if (Math.random() < 0.05) {
         try { pruneJournal(props); } catch (error) { /* housekeeping only */ }
       }
