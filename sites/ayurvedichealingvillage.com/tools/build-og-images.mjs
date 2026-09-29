@@ -24,6 +24,8 @@
  * Usage: node tools/build-og-images.mjs [--only /about-us/]
  */
 import fs from "node:fs";
+import { createRequire } from "node:module";
+import { logoSource, renderLogo } from "./lib/og-logo-fit.mjs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -50,12 +52,24 @@ const map = fs.existsSync(MAP) ? JSON.parse(fs.readFileSync(MAP, "utf8")) : {};
 let made = 0, reused = 0, failed = 0, over = 0;
 for (const r of routes) {
   if (only && r.path !== only) continue;
-  const src = plan[r.path] && fs.existsSync(plan[r.path]) ? plan[r.path] : FALLBACK;
+  const logo = logoSource(r.path);
+  const src = logo ? path.join(SITE, logo) : plan[r.path] && fs.existsSync(plan[r.path]) ? plan[r.path] : FALLBACK;
   const name = slug(r.path) + ".jpg";
   const dest = path.join(OUT, name);
   map[r.path] = "/images/og/" + name;
   if (fs.existsSync(dest)) { reused++; continue; }
   try {
+    if (logo) {
+      // Existing Next dependency; do not add/install an image package. Fail visibly if unavailable.
+      const require = createRequire(import.meta.url);
+      const sharp = require(require.resolve("sharp", { paths: [require.resolve("next")] }));
+      for (const q of [82, 72, 62, 52]) {
+        await renderLogo(sharp, src, dest, q);
+        if (fs.statSync(dest).size <= MAX_KB * 1024) break;
+      }
+      if (fs.statSync(dest).size > MAX_KB * 1024) over++;
+      made++; continue;
+    }
     fs.copyFileSync(src, dest);
     // sips reads WebP but cannot WRITE it, so a .webp source (most of the page
     // bank since the 21 Sep WebP conversion) must become a JPEG before the
