@@ -4,7 +4,7 @@
 // docs/changes/lp-behandlung-in-kerala.md.
 
 import type { LpContent } from "../../../components/lp/types";
-import imgPatientVillaMaharaja from "../../../../public/campaign-v110/images/patient-villa-maharaja.webp";
+import imgPatientVillaMaharaja from "../../../../public/campaign-v110/images/patient-villa-maharaja.avif";
 
 const content: LpContent = {
   path: "/lp/behandlung-in-kerala/",

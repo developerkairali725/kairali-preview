@@ -15,9 +15,9 @@ for (const name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-G
 // Preserve those dimensions and the original JPEG while using a smaller format.
 {
   const source = 'public/campaign-v110/images/patient-villa-maharaja.jpg';
-  const dest = 'public/campaign-v110/images/patient-villa-maharaja.webp';
+  const dest = 'public/campaign-v110/images/patient-villa-maharaja.avif';
   const original = fs.readFileSync(source);
-  const output = await sharp(original).webp({ quality: 82 }).toBuffer();
+  const output = await sharp(original).avif({ quality: 60 }).toBuffer();
   const before = await sharp(original).metadata(), after = await sharp(output).metadata();
   if (before.width !== after.width || before.height !== after.height) throw Error('Hero dimensions changed');
   if (!fs.existsSync(dest) || !fs.readFileSync(dest).equals(output)) fs.writeFileSync(dest, output);
