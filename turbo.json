@@ -10,6 +10,7 @@
         "!.next/cache/**",
         "dist/**"
       ],
+      "env": ["AHV_STAGING"],
       "passThroughEnv": [
         "GH_TOKEN"
       ]

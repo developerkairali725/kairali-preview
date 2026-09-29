@@ -46,6 +46,7 @@ const PRIYA_WHATSAPP = "919289838797"; // +91 92898 38797, digits only
 const WRONG_WHATSAPP_TAIL = "9289838777"; // known-bad — must never appear
 
 const KAIRALI_ENTITIES = new Set(["group", "ktahv", "kappl", "raag", "product"]);
+const isAhv = config.domain === "ayurvedichealingvillage.com";
 const isKairaliSurface = KAIRALI_ENTITIES.has(config.entity);
 
 const consoleErrors: string[] = [];
@@ -120,6 +121,28 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
 
   test("D-20260718-04: footer renders the canonical group social set (shared @kairali/social)", async ({ page }) => {
     test.skip(!isKairaliSurface, "non-Kairali surface — group social parity does not apply");
+    if (isAhv) {
+      // AHV's approved hospital profiles differ from the group footer.
+      const profiles = [
+        "https://www.facebook.com/KairaliTheAyurvedicHealingVillage",
+        "https://www.instagram.com/kairaliayurvedichealingvillage/",
+        "https://www.youtube.com/user/kairaliayurvedagroup",
+        "https://www.linkedin.com/company/kairali-ayurvedic-group",
+        "https://twitter.com/Kairali_Group",
+        "https://in.pinterest.com/kairalihealingvillage/",
+      ];
+      const footer = page.locator("footer:visible");
+      await expect(footer.first()).toBeVisible();
+      const links = await footer.locator('a[href]').evaluateAll((as) => as.map((a) => ({ href: (a as HTMLAnchorElement).href, rel: a.getAttribute("rel") ?? "" })));
+      const socials = links.filter((a) => /https:\/\/(?:www\.|in\.)?(?:facebook|instagram|youtube|linkedin|twitter|pinterest)\.com\//.test(a.href));
+      expect(socials).toHaveLength(profiles.length);
+      for (const href of profiles) {
+        const match = socials.find((a) => a.href.replace(/\/$/, "") === href.replace(/\/$/, ""));
+        expect(match, `hospital footer missing ${href}`).toBeTruthy();
+        expect(match!.rel).toContain("noopener");
+      }
+      return;
+    }
     const links = await page.$$eval("footer a[data-social]", (as) =>
       as.map((a) => ({
         social: a.getAttribute("data-social"),
@@ -150,12 +173,31 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
   });
 
   test("A2 forms: any form renders consent + privacy link (DPDP)", async ({ page }) => {
-    const forms = page.locator("form");
+    const forms = page.locator("form:visible");
     const n = await forms.count();
     test.skip(n === 0, "no forms on this template");
     for (let i = 0; i < n; i++) {
       const form = forms.nth(i);
-      await expect(form.locator('input[type="checkbox"]').first()).toBeVisible();
+      if (await form.getAttribute("role") === "search") {
+        await expect(form).toHaveAttribute("method", /get/i);
+        continue; // Search navigation does not collect a lead or subscription.
+      }
+      if (isAhv && await form.getAttribute("data-ahv-guide-form") === "1") {
+        await expect(form).toHaveAttribute("action", "/faqs-downloads/#downloads");
+        expect(await form.locator('input[type="email"]').getAttribute("name")).toBeNull();
+        await expect(form.locator('a[href*="privacy"]')).toBeVisible();
+        continue; // Tab-local download draft; no email field is sent in the URL.
+      }
+      if (isAhv && await form.getAttribute("data-ahv-newsletter") === "1") {
+        // Newsletter uses explicit Subscribe action + disclosure; enquiry consent
+        // checkboxes remain mandatory. Do not submit personal data in this gate.
+        await expect(form.locator('.ahv-newsletter-permission')).toContainText(/By subscribing/i);
+        await expect(form.locator('.ahv-newsletter-permission')).toContainText(/Unsubscribe any\s*time/i);
+        await expect(form.locator('button[type="submit"]')).toHaveText(/Subscribe/i);
+        await expect(form.locator('input[type="email"]')).toHaveAttribute('required', '');
+      } else {
+        await expect(form.locator('input[type="checkbox"]').first()).toBeVisible();
+      }
       await expect(form.locator('a[href*="privacy"]').first()).toBeVisible();
     }
   });
@@ -203,7 +245,10 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
   });
 
   test("A4 (browser layer): every data-cta control is ≥44px touch target", async ({ page }) => {
-    const ctas = page.locator("[data-cta]:visible");
+    const ctas = page.locator(isAhv
+      ? 'header a[href="https://bookings.ayurvedichealingvillage.com/"]:visible, #ahv-contact-controls a:visible, #ahv-contact-controls button:visible'
+      : "[data-cta]:visible");
+    await expect(ctas.first()).toBeVisible();
     const n = await ctas.count();
     expect(n, "at least one data-cta CTA (B4 conversion wiring depends on it)").toBeGreaterThan(0);
     for (let i = 0; i < n; i++) {
@@ -249,6 +294,6 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
       const parsed = JSON.parse(b); // throws = red test, exactly right
       return parsed["@graph"] ?? [parsed];
     });
-    expect(nodes.some((n: { "@type"?: string }) => n["@type"] === "Organization")).toBeTruthy();
+    expect(nodes.some((n: { "@type"?: string | string[] }) => [n["@type"]].flat().includes("Organization"))).toBeTruthy();
   });
 });

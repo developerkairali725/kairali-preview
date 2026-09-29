@@ -503,6 +503,7 @@ jobs:
         if: needs.changes.outputs.site_affecting == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          AHV_STAGING: "0"
         run: pnpm build
 
       - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
@@ -510,6 +511,7 @@ jobs:
         run: node scripts/lighthouse-gate.mjs
         env:
           SITE: ${{ matrix.site }}
+          AHV_STAGING: "0"
 
   # VERDICT EMITTERS → CI (D-EMITTER-WIRING, Abilash's ratification 18 Jul 2026:
   # "wire the #126 emitters into CI as its own PR"). PR #126 built the emitters

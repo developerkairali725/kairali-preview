@@ -163,6 +163,10 @@ function runLighthouse(url, outDir, tag) {
   const crawlable = report.audits?.["is-crawlable"]?.score;
   return {
     performance: score("performance"), accessibility: score("accessibility"), seo: score("seo"),
+    diagnostics: Object.values(report.audits ?? {}).filter((audit) =>
+      typeof audit.score === "number" && audit.score < 0.9 && audit.scoreDisplayMode !== "notApplicable"
+    ).map((audit) => ({ id: audit.id, title: audit.title, value: audit.displayValue,
+      details: JSON.stringify(audit.details?.items ?? []).slice(0, 5000) })),
     finalPath, crawlableScore: typeof crawlable === "number" ? crawlable : null,
   };
 }
@@ -224,6 +228,7 @@ async function main(argv) {
       }
       const v = judge(scores, { seoNA });
       console.log(`  ${v.length === 0 ? "PASS" : "FAIL"}  ${path} → perf ${scores.performance} · a11y ${scores.accessibility} · seo ${seoNA ? `${scores.seo} (n/a — noindexed LP)` : scores.seo}${note}`);
+      if (v.length) console.log(`  DIAGNOSTICS ${path}: ${JSON.stringify(scores.diagnostics)}`);
       for (const violation of v) failures.push(`${path}: ${violation}`);
     }
 
