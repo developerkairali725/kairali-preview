@@ -41,6 +41,7 @@ const siro = comp.blocks.find((x) => x.ptr === SIRO_IMG);
 if (!siro) throw new Error("Sirodhara image block not found");
 if (siro.src === SIRO_OLD) { Object.assign(siro, SIRO_NEW); log.push("F6 Sirodhara: unwatermarked copy"); }
 else if (siro.src === SIRO_NEW.src) log.push("F6 already applied");
+else if (siro.src.startsWith("/ahv/assets/img/ktahv-video-2023/sirodhara-")) log.push("F6 superseded by stage 3 (repair-ef12-video-frames-20260929.mjs)");
 else throw new Error("Sirodhara image is neither the watermarked nor the unwatermarked copy: " + siro.src);
 
 // F1–F4

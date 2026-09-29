@@ -5,7 +5,7 @@ window.AHV_KNOWLEDGE_CENTRE = {
   cardCTA: "View",
   cards: [
     { id: "ayurvedic-cuisine", title: "Ayurvedic Cuisine", href: "/ayurvedic-cuisine/", sourceHref: "/ayurvedic-cuisine/", image: "assets/img/AHV-Knowledge-Cuisine.jpg", width: 1400, height: 1000, alt: "A vegetarian meal served with rice, vegetables and curries." },
-    { id: "explore-ayurveda", title: "Explore Ayurveda", href: "/ayurveda/", sourceHref: "/ayurveda/", image: "assets/img/AHV-Knowledge-Ayurveda.jpg", width: 1280, height: 572, alt: "Herbal boluses, towels and treatment accessories." },
+    { id: "explore-ayurveda", title: "Explore Ayurveda", href: "/ayurveda/", sourceHref: "/ayurveda/", image: "assets/img/ktahv-video-2023/knowledge-02a1d00663e4c51e.webp", width: 1200, height: 536, alt: "A therapist pours oil into a suspended brass dhara vessel" },
     { id: "ayurveda-programs", title: "Ayurveda Programs", href: "/all-programs/", sourceHref: "/programs/all-programs/", image: "assets/img/AHV-Knowledge-Programmes.jpg", width: 1400, height: 1000, alt: "A patient seated between two therapists during an Ayurvedic treatment." },
     { id: "yoga", title: "Yoga", href: "/yoga-retreats/", sourceHref: "/programs/yoga-retreats/", image: "assets/img/AHV-Knowledge-Yoga.jpg", width: 720, height: 500, alt: "A woman practising yoga on a mat." },
     { id: "ayurveda-products", title: "Ayurveda Products", href: "/ayurvedic-products/", sourceHref: "/ayurvedic-products/", image: "assets/img/AHV-Knowledge-Products.jpg", width: 1400, height: 1000, alt: "A selection of Kairali products displayed outdoors." }

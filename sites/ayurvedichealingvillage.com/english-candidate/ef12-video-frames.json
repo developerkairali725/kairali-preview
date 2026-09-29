@@ -1,0 +1,75 @@
+{
+ "generated": "2026-09-29",
+ "tool": "tools/repair-ef12-video-frames-20260929.mjs",
+ "extractor": "tools/media/grab-video-frame.swift (sharpest of 5 frames within \u00b10.6 s by edge variance)",
+ "source": {
+  "path": "Kairali-Image-Library/video/ktahv/ktahv-2023-07-ktahv-therapy-treatment-3-2023.mp4",
+  "sha256": "c2ecac8ee211fd0eeeff6f77f3459f1237688f62481bb9c2e9d802888f34c35a",
+  "resolution": "3840x2160",
+  "provenance": "KTAHV-branded 2023 therapy shoot, filed KTAHV-safe in the image library source registry; frames located by the parent video review (parent-video-review/REVIEW.md, 29 Sep 2026)"
+ },
+ "frames": [
+  {
+   "finding": "F5",
+   "file": "public/ahv/assets/img/ktahv-video-2023/udgharshanam-85f39fe3fb0bbf71.webp",
+   "sha256": "85f39fe3fb0bbf718ede28407bd055fa9e13726944299557d7b2ef3c446c3075",
+   "timeSeconds": 18.3,
+   "cropBox_xywh_at_3840x2160": [
+    300,
+    0,
+    3240,
+    2160
+   ],
+   "output": [
+    900,
+    600
+   ],
+   "encode": "cwebp -q 82 -m 6",
+   "usedOn": [
+    "/ayurveda-treatment/ Udgharshanam card"
+   ]
+  },
+  {
+   "finding": "F6",
+   "file": "public/ahv/assets/img/ktahv-video-2023/sirodhara-defe5c5f089c4be7.webp",
+   "sha256": "defe5c5f089c4be7b6bf716562d4bc21c4e24fea6b94b0d9e3896a636b75447a",
+   "timeSeconds": 49.4,
+   "cropBox_xywh_at_3840x2160": [
+    0,
+    60,
+    3840,
+    2009
+   ],
+   "output": [
+    1200,
+    628
+   ],
+   "encode": "cwebp -q 82 -m 6",
+   "usedOn": [
+    "/ayurveda-treatment/ Sirodhara card",
+    "/new-to-ayurveda/ Shirodhara card"
+   ]
+  },
+  {
+   "finding": "F10",
+   "file": "public/ahv/assets/img/ktahv-video-2023/knowledge-02a1d00663e4c51e.webp",
+   "sha256": "02a1d00663e4c51ea8b195af0eb25e91a568f382a0fd196328ea4ab157c2d67a",
+   "timeSeconds": 54.6,
+   "cropBox_xywh_at_3840x2160": [
+    0,
+    155,
+    3840,
+    1715
+   ],
+   "output": [
+    1200,
+    536
+   ],
+   "encode": "cwebp -q 82 -m 6",
+   "usedOn": [
+    "/knowledge-centre/ Explore Ayurveda card"
+   ]
+  }
+ ],
+ "notClaimed": "No ingredient identity, licence document or clinician sign-off is claimed. F5's depiction goes to Dr. Deepu John before production (HARD GATE 7)."
+}
