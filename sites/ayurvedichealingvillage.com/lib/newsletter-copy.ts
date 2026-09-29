@@ -1,3 +1,4 @@
+import { brandColors } from '@kairali/ui/brand-colors';
 import fs from 'node:fs';
 import path from 'node:path';
 import LOCALES from '../l10n/locales.json' with { type: 'json' };
@@ -113,7 +114,7 @@ export function renderPage(spec: PageSpec): string {
     '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">',
     `<title>${t('pageTitle')}</title>`,
     // Colours are the brand manual's tokens (packages/ui/brand-tokens.css: --ivory, --ink, --forest-500/-700).
-    '<style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;color:#1C1B19;background:#F7F4EA;margin:0}main{max-width:36rem;margin:12vh auto;padding:0 1.25rem}h1{font-size:1.6rem;line-height:1.25;margin:0 0 1rem}button{font:inherit;padding:.7rem 1.4rem;border:0;border-radius:.4rem;background:#006038;color:#fff;cursor:pointer}button:hover{background:#004226}button:focus-visible,a:focus-visible{outline:3px solid #004226;outline-offset:2px}a{color:#006038}</style>',
+    `<style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;color:${brandColors.ink};background:${brandColors.ivory};margin:0}main{max-width:36rem;margin:12vh auto;padding:0 1.25rem}h1{font-size:1.6rem;line-height:1.25;margin:0 0 1rem}button{font:inherit;padding:.7rem 1.4rem;border:0;border-radius:.4rem;background:${brandColors.forest500};color:${brandColors.white};cursor:pointer}button:hover{background:${brandColors.forest700}}button:focus-visible,a:focus-visible{outline:3px solid ${brandColors.forest700};outline-offset:2px}a{color:${brandColors.forest500}}</style>`,
     '</head><body><main>',
     `<h1>${t(spec.heading)}</h1>`,
     ...spec.body.map((key) => `<p>${t(key)}</p>`),
@@ -154,7 +155,7 @@ export function confirmationMail(locale: string, confirmUrl: string, reference: 
     `<p>${e('mailAction')}<br><a href="${escapeHtml(confirmUrl)}">${escapeHtml(confirmUrl)}</a></p>`,
     `<p>${e('mailExpiry')} ${e('mailIgnore')}</p>`,
     `<p>${e('mailSignoff')}<br>info@kairali.com</p>`,
-    `<p style="color:#666;font-size:12px">${e('mailReference')} ${escapeHtml(reference)}</p>`,
+    `<p style="color:${brandColors.emailMuted};font-size:12px">${e('mailReference')} ${escapeHtml(reference)}</p>`,
     '</body></html>',
   ].join('\n');
   return { subject: t('mailSubject'), text, html };

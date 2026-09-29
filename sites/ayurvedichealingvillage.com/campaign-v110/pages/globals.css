@@ -1,47 +1,7 @@
-/* ─────────────────────────────────────────────────────────────────────────────
-   AHV landing pages — global tokens and base styles.
-
-   Layout baseline: the saved staging pages (staging-pages/). Their base rules
-   are carried over here and in components/lp/*.module.css, with only the
-   agreed corrections applied.
-
-   The nine colours below are the ONLY colours allowed. Components reference
-   them as var(--…) and never as raw hex. Allowed variations: transparency of
-   these colours (color-mix with transparent) and plain white for form fields
-   and card surfaces.
-
-   Staging colour → palette mapping (nearest value that keeps AA contrast):
-     --ivory #F7F4EA ............. --cream
-     --ink #1C1B19 ............... --ink
-     --forest-500 #006038 ........ --green-mid   (links, accent text, focus)
-     --forest-700 #004226 ........ --green       (headings, proof band)
-     --forest-800 #003720 ........ --green-deep  (sticky bar, social strip)
-     --marigold-400 #EEB41E ...... --gold        (primary button)
-     --bronze-600 #875F1F ........ --green-mid   (overline labels; the RGB-nearest,
-                                                  --muted, fails AA on sand at 4.4:1)
-     --leaf-500 #8E9D35 .......... --green-mid   (focus ring)
-     alt band (leaf 7% on ivory) . --sand
-     ink/ivory mixes (78%, 72%) .. --muted       (secondary text)
-     --color-error #BE202E ....... --ink + gold rule (no red in the palette)
-
-   Contrast (WCAG 2.1): ink on cream 14.5 · ink on sand 12.5 · muted on cream 5.2
-   muted on white 5.6 · green-mid on cream 8.0 · green-mid on sand 6.7
-   cream on green 11.8 · cream on green-deep 15.0 · ink on gold 6.0
-   gold on cream 2.4 → gold never carries text on light grounds.
-   ───────────────────────────────────────────────────────────────────────────── */
+/* AHV campaign layout; accepted supplier palette is owned by @kairali/ui. */
+@import "@kairali/ui/ahv-campaign-tokens.css";
 
 :root {
-  --green: #163828;
-  --green-deep: #0e2419;
-  --green-mid: #26543c;
-  --gold: #c8973f;
-  --gold-soft: #e0bd7d;
-  --cream: #f7f5ef;
-  --sand: #ebe4d6;
-  --ink: #1d241f;
-  --muted: #5d6b61;
-  --white: #fff;
-
   --line-ink: color-mix(in srgb, var(--ink) 14%, transparent);
   --line-cream: color-mix(in srgb, var(--cream) 24%, transparent);
   --cream-soft: color-mix(in srgb, var(--cream) 84%, transparent);
