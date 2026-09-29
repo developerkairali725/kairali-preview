@@ -27,6 +27,12 @@ const STATES = arg("states", "before-choice,after-choice").split(",");
 const SHOTS = flag("shots");
 const run = { ...runContext(BASE), tool: "tools/footer-reachability.mjs", at: nowIso(), ist: istStamp(), routes: ROUTES, viewports: VIEWPORTS, states: STATES };
 console.log(`footer reachability @ ${BASE} (${run.note})`);
+function keyboardFails(x) {
+  return !x.reachable || x.clickable !== true || !x.keyboard.reached || !x.keyboard.inViewport || !x.keyboard.focusVisible || !x.keyboard.indicator || x.keyboard.obscuredWhenFocused.some(o=>o.fraction>=0.99);
+}
+function assertNoticeDismissed(notices) {
+  if (notices.length) throw new Error("after-choice notice remains visible: " + notices.join(", "));
+}
 const results = [];
 
 // fixed/sticky layers that can sit over footer links, named for the report. Installed into the page once per load
@@ -48,7 +54,14 @@ const INSTALL_LAYERS = () => {
     if (!vis(e) || (footer && (footer.contains(e) || e.contains(footer)))) continue;
     const r = e.getBoundingClientRect(); if (r.width < 2 || r.height < 2 || r.right <= 0 || r.left >= innerWidth || r.bottom <= 0 || r.top >= innerHeight) continue;
     if (out.some((o) => o.el.contains(e))) continue;
-    out.push({ el: e, name: name(e), r: { l: r.left, t: r.top, r: r.right, b: r.bottom }, pe: getComputedStyle(e).pointerEvents });
+    // This wrapper is transparent flex layout; only its rendered controls obstruct content.
+    // Other fixed/sticky layers retain their full rectangles (including cookie panels and contact bars).
+    const children = e.matches("#ahv-contact-controls") ? [...e.querySelectorAll("a[href],button")].filter(vis) : [];
+    const obstacles = children.length ? children : [e];
+    for (const target of obstacles) {
+      const box = target.getBoundingClientRect();
+      out.push({ el: target, name: name(e), r: { l: box.left, t: box.top, r: box.right, b: box.bottom }, pe: getComputedStyle(target).pointerEvents });
+    }
   }
   return out;
 }; };
@@ -77,6 +90,8 @@ for (const w of VIEWPORTS) for (const route of ROUTES) for (const state of STATE
       });
       rec.choice = clicked ? `clicked "${clicked}" in the notice` : "no notice shown (nothing to choose)";
       await pg.waitForTimeout(800);
+      rec.noticeAfterChoice = await pg.evaluate(() => window.__verifyLayers().filter(l=>l.name.startsWith("cookie notice")).map(l=>l.name));
+      assertNoticeDismissed(rec.noticeAfterChoice);
     } else rec.choice = "none (notice left as shown)";
     await pg.evaluate(INSTALL_LAYERS);
     // tag footer links
@@ -132,7 +147,9 @@ for (const w of VIEWPORTS) for (const route of ROUTES) for (const state of STATE
     const kb = {}; let focusShots = 0;
     await pg.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight)); await pg.waitForTimeout(500);
     await pg.locator('[data-verify-fl="0"]').focus(); await pg.keyboard.press("Shift+Tab"); await pg.waitForTimeout(100);
-    for (let n = 0; n < links.length + 10; n++) {
+    // Include non-anchor form controls in the finite traversal budget; missing links still fail below.
+    rec.keyboardBudget = await pg.evaluate(() => [...document.querySelectorAll('a[href],button,input,select,textarea,[tabindex],summary')].filter(e=>e.tabIndex>=0 && e.getClientRects().length && !e.disabled && !e.closest('[inert]')).length + 10);
+    for (let n = 0; n < rec.keyboardBudget; n++) {
       await pg.keyboard.press("Tab"); await pg.evaluate(async () => { let last = -1, same = 0; const t0 = Date.now(); while (same < 3 && Date.now() - t0 < 2000) { await new Promise((r) => setTimeout(r, 60)); if (scrollY === last) same++; else { same = 0; last = scrollY; } } }); // wait for any smooth scroll to settle
       const f = await pg.evaluate(() => {
         const a = document.activeElement; if (!a) return null; const i = a.getAttribute && a.getAttribute("data-verify-fl");
@@ -141,7 +158,7 @@ for (const w of VIEWPORTS) for (const route of ROUTES) for (const state of STATE
         const layers = window.__verifyLayers();
         const area = Math.max(1, r.width * r.height);
         const over = layers.map((o) => { const iw = Math.min(o.r.r, r.right) - Math.max(o.r.l, r.left), ih = Math.min(o.r.b, r.bottom) - Math.max(o.r.t, r.top); return iw > 0 && ih > 0 ? { by: o.name, fraction: Math.round((iw * ih / area) * 100) / 100 } : null; }).filter(Boolean);
-        return { i, focusVisible: a.matches(":focus-visible"), indicator: (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) || (cs.boxShadow && cs.boxShadow !== "none") || cs.textDecorationLine.includes("underline"), outline: `${cs.outlineStyle} ${cs.outlineWidth}`, inViewport: r.top >= 0 && r.bottom <= innerHeight, obscuredBy: over };
+        return { i, focusVisible: a.matches(":focus-visible"), indicator: (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) || (cs.boxShadow && cs.boxShadow !== "none") || cs.textDecorationLine.includes("underline"), outline: `${cs.outlineStyle} ${cs.outlineWidth}`, inViewport: r.width > 0 && r.height > 0 && r.top >= 0 && r.bottom <= innerHeight && r.left >= 0 && r.right <= innerWidth, obscuredBy: over };
       });
       if (!f) continue;
       if (f.i == null) { if (Object.keys(kb).length && !f.insideFooter) break; continue; }
@@ -150,20 +167,20 @@ for (const w of VIEWPORTS) for (const route of ROUTES) for (const state of STATE
     rec.results = rec.links.map((l) => ({ i: l.i, url: l.url, kind: l.kind, text: l.text,
       reachable: !!reach[l.i], atScrollY: reach[l.i] ? reach[l.i].y : null, blockedBy: reach[l.i] ? [] : (blockedBy[l.i] || ["never fully inside the viewport"]),
       clickable: click[l.i] === true ? true : (click[l.i] || (reach[l.i] ? "not tried" : false)),
-      keyboard: kb[l.i] ? { reached: true, focusVisible: kb[l.i].focusVisible, indicator: kb[l.i].indicator, outline: kb[l.i].outline, obscuredWhenFocused: kb[l.i].obscuredBy, screenshot: kb[l.i].screenshot || null } : { reached: false, tabIndex: l.tabIndex } }));
+      keyboard: kb[l.i] ? { reached: true, inViewport: kb[l.i].inViewport, focusVisible: kb[l.i].focusVisible, indicator: kb[l.i].indicator, outline: kb[l.i].outline, obscuredWhenFocused: kb[l.i].obscuredBy, screenshot: kb[l.i].screenshot || null } : { reached: false, tabIndex: l.tabIndex } }));
     const r = rec.results;
     rec.summary = { links: r.length, reachable: r.filter((x) => x.reachable).length, clickable: r.filter((x) => x.clickable === true).length, keyboardReached: r.filter((x) => x.keyboard.reached).length, focusVisible: r.filter((x) => x.keyboard.focusVisible && x.keyboard.indicator).length,  layersSeen: [...new Set(positions.flatMap((p) => p.layers))] };
     // focus obscured: ENTIRELY hidden (≥ 99 % under one layer) fails WCAG 2.4.11 (AA) → FAIL; partly hidden (2.4.12, AAA) → WARN
     const fully = (x) => x.keyboard.reached && x.keyboard.obscuredWhenFocused.some((o) => o.fraction >= 0.99);
     const partly = (x) => x.keyboard.reached && x.keyboard.obscuredWhenFocused.length && !fully(x);
-    const bad = r.filter((x) => !x.reachable || x.clickable !== true || !x.keyboard.reached || !x.keyboard.focusVisible || !x.keyboard.indicator || fully(x));
+    const bad = r.filter(keyboardFails);
     rec.summary.focusFullyObscured = r.filter(fully).length; rec.summary.focusPartlyObscured = r.filter(partly).length;
     rec.status2 = bad.length ? "FAIL" : r.some(partly) ? "WARN" : "PASS";
     rec.warnings = r.filter(partly).map((x) => ({ i: x.i, url: x.url, text: x.text, obscuredWhenFocused: x.keyboard.obscuredWhenFocused }));
     rec.failures = bad.map((x) => ({ i: x.i, url: x.url, text: x.text, reachable: x.reachable, blockedBy: x.blockedBy, clickable: x.clickable, keyboard: x.keyboard }));
   } catch (e) { rec.status2 = "FAIL"; rec.error = rec.error || String(e.message).slice(0, 200); }
   results.push(rec);
-  line(rec.status2, tag, rec.summary ? { ...rec.summary, choice: rec.choice, notice: rec.noticeBefore, firstFailures: (rec.failures || []).slice(0, 3).map((f) => `${f.text || f.url}: ${!f.reachable ? "blocked by " + f.blockedBy.join("/") : f.clickable !== true ? "click " + f.clickable : !f.keyboard.reached ? "not reached by Tab" : f.keyboard.obscuredWhenFocused.length ? "focused entirely under " + f.keyboard.obscuredWhenFocused.map((o) => o.by).join("/") : "no visible focus"}`) } : { error: rec.error });
+  line(rec.status2, tag, rec.summary ? { ...rec.summary, choice: rec.choice, notice: rec.noticeBefore, firstFailures: (rec.failures || []).slice(0, 3).map((f) => `${f.text || f.url}: ${!f.reachable ? "blocked by " + f.blockedBy.join("/") : f.clickable !== true ? "click " + f.clickable : !f.keyboard.reached ? "not reached by Tab" : !f.keyboard.inViewport ? "focused outside viewport" : f.keyboard.obscuredWhenFocused.length ? "focused entirely under " + f.keyboard.obscuredWhenFocused.map((o) => o.by).join("/") : "no visible focus"}`) } : { error: rec.error });
   await ctx.close();
 }
 await browser.close();

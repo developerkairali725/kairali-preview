@@ -1,5 +1,5 @@
 // Festival / culture layout check: the /festivals/ hub, /cultural-events/ and the festival detail units, at
-// 390 / 768 / 1440 / 1920 in English and in Arabic (RTL), with full-page screenshots.
+// 390 / 768 / 1440 / 1920 / 2560 in English and in Arabic (RTL), with full-page screenshots.
 //   * identity first: HTTP 200, final URL, data-ahv-route, <html lang>/dir (rtl for /ar/);
 //   * gallery/content images actually loaded: every rendered <img> in the page body (header/footer excluded) is
 //     scrolled into view and must reach naturalWidth > 0; images the layout does not render at that width
@@ -10,8 +10,8 @@
 //   * no horizontal overflow: scrollWidth ≤ innerWidth + 1, offenders listed.
 // Festival DETAIL routes: taken from --detail-routes, else discovered from l10n/routes.json and the site tree
 // (children of /festivals/). If fewer than three exist, the report says so and the per-festival sections of the
-// hub (each H3 block) are checked as the detail units instead — nothing is invented.
-//   node tools/festival-layout-check.mjs --base http://127.0.0.1:4471 --out /tmp/festivals [--locales en,ar] [--widths 390,768,1440,1920] [--detail-routes a,b,c]
+// hub (each H2 title followed by H3 month) are checked as the detail units instead — nothing is invented.
+//   node tools/festival-layout-check.mjs --base http://127.0.0.1:4471 --out /tmp/festivals [--locales en,ar] [--widths 390,768,1440,1920,2560] [--detail-routes a,b,c]
 //   hosted: vercel env run -- bash -c "cd sites/ayurvedichealingvillage.com && node tools/festival-layout-check.mjs --base https://ahv-final-staging.vercel.app --out <dir>"
 import path from "node:path";
 import fs from "node:fs";
@@ -21,8 +21,8 @@ import { arg, baseArg, outDir, readJson, writeJson, nowIso, istStamp, runContext
 const BASE = baseArg();
 const OUT = outDir("/tmp/ahv-festival-layout");
 const LOCALES = arg("locales", "en,ar").split(",");
-const WIDTHS = arg("widths", "390,768,1440,1920").split(",").map(Number);
-const HEIGHT = { 390: 844, 768: 1024, 1440: 900, 1920: 1080 };
+const WIDTHS = arg("widths", "390,768,1440,1920,2560").split(",").map(Number);
+const HEIGHT = { 390: 844, 768: 1024, 1440: 900, 1920: 1080, 2560: 1440 };
 const R = readJson("l10n/routes.json").routes;
 const L = readJson("l10n/locales.json");
 const HUBS = ["/festivals/", "/cultural-events/"];
@@ -62,6 +62,26 @@ async function captureTiles(pg, stem) {
   await pg.evaluate(() => window.scrollTo(0, 0));
   return files;
 }
+function festivalIdentity(rec, id, loc, key, p) {
+  const probs = []; let u; try { u = new URL(rec.finalUrl); } catch {}
+  if (rec.status !== 200) probs.push("non-200 status");
+  if (!u || u.origin !== new URL(BASE).origin || u.pathname !== p) probs.push("wrong origin/path");
+  if (id.route !== key) probs.push("wrong route");
+  const allowed = [L[loc]?.lang,L[loc]?.htmlLang].filter(Boolean).map(x=>x.toLowerCase());
+  if (!allowed.includes(String(id.lang || "").toLowerCase())) probs.push("wrong lang");
+  if (id.dir !== (L[loc]?.dir || "ltr")) probs.push("wrong direction");
+  return probs;
+}
+function festivalCoverage(rec) {
+  const probs=[];
+  if (!rec.images?.rendered) probs.push("no rendered content images");
+  if (!rec.layout?.length || !rec.layout.some(s=>s.items?.length)) probs.push("empty scoped layout/media");
+  if (rec.key === "/festivals/" && (rec.festivalUnits?.length !== 5 || rec.festivalUnits.some(u=>!u.title || !u.month || !u.text))) probs.push("expected five H2 festival units with H3 month and body text");
+  if (!rec.screenshots?.length) probs.push("screenshot evidence absent");
+  if (rec.screenshots?.some(s=>s.startsWith("FAILED "))) probs.push("screenshot capture failed");
+  if (rec.screenshots?.some(s=>s.startsWith("(page is "))) probs.push("screenshot evidence truncated");
+  return probs;
+}
 const results = [];
 
 const { chromium } = await playwright();
@@ -81,18 +101,12 @@ for (const loc of LOCALES) for (const w of WIDTHS) {
       rec.status = resp ? resp.status() : 0; rec.finalUrl = pg.url();
       const id = await pg.evaluate(() => ({ lang: document.documentElement.lang, dir: document.documentElement.dir || getComputedStyle(document.documentElement).direction, route: document.getElementById("ahv-design-root")?.getAttribute("data-ahv-route"), title: document.title, h1: (document.querySelector("h1") || {}).innerText || null }));
       rec.identity = id;
-      const wantDir = L[loc].dir || "ltr";
-      const idProblems = [];
-      if (rec.status !== 200) idProblems.push(`status ${rec.status}`);
-      if (new URL(rec.finalUrl).pathname !== p) idProblems.push(`final path ${new URL(rec.finalUrl).pathname} ≠ ${p}`);
-      if (id.route !== key) idProblems.push(`data-ahv-route ${id.route} ≠ ${key}`);
-      if (!String(id.lang).toLowerCase().startsWith(String(L[loc].lang).toLowerCase().split("-")[0])) idProblems.push(`lang ${id.lang}`);
-      if (id.dir !== wantDir) idProblems.push(`dir ${id.dir} ≠ ${wantDir}`);
+      const idProblems = festivalIdentity(rec, id, loc, key, p);
       rec.identityProblems = idProblems;
       if (idProblems.length) throw new Error("identity: " + idProblems.join("; "));
       if (NEG_CSS) { await pg.addStyleTag({ content: NEG_CSS }); await pg.waitForTimeout(300); rec.negativeControlCss = NEG_CSS; }
       // images: scroll each rendered body image into view and wait for it
-      const n = await pg.evaluate(() => { const root = document.getElementById("ahv-design-root") || document.body; const imgs = [...root.querySelectorAll("img")].filter((i) => !i.closest("header, footer, nav, #ahv-consent, #ahv-contact-controls")); imgs.forEach((i, k) => i.setAttribute("data-verify-img", String(k))); return imgs.length; });
+      const n = await pg.evaluate(() => { const root = document.querySelector("#ahv-design-root main"); const imgs = [...(root?.querySelectorAll("img") || [])].filter((i) => !i.closest("header, footer, nav, #ahv-consent, #ahv-contact-controls")); imgs.forEach((i, k) => i.setAttribute("data-verify-img", String(k))); return imgs.length; });
       const images = [];
       for (let k = 0; k < n; k++) {
         const loc8 = pg.locator(`[data-verify-img="${k}"]`);
@@ -124,15 +138,25 @@ for (const loc of LOCALES) for (const w of WIDTHS) {
           const paras = freeParas.length ? freeParas : allParas;
           const col = { l: Math.min(...paras.map((p) => p.getBoundingClientRect().left)), r: Math.max(...paras.map((p) => p.getBoundingClientRect().right)) };
           const imgs = [...s.querySelectorAll("img")].filter(vis).filter((i) => !cards.some((c) => c.contains(i)) && i.getBoundingClientRect().width > 60);
-          const h3s = [...s.querySelectorAll("h3")].filter(vis);
+          const h3s = [...s.querySelectorAll("h2")].filter(vis);
           const unitOf = (el) => { let u = null; for (const h of h3s) if (h.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) u = h.innerText.trim().slice(0, 50); return u; };
           const items = [...cards.map((c) => ({ kind: "card", el: c })), ...imgs.map((i) => ({ kind: "image", el: i }))].map((x) => { const r = x.el.getBoundingClientRect(); return { kind: x.kind, unit: unitOf(x.el), l: Math.round(r.left), r: Math.round(r.right), t: Math.round(r.top + scrollY), b: Math.round(r.bottom + scrollY), src: (x.el.querySelector ? (x.el.querySelector("img") || x.el) : x.el).getAttribute("src") }; }).sort((a, b) => a.t - b.t);
           for (const it of items) { it.lone = !items.some((o) => o !== it && o.t < it.b && o.b > it.t && (o.r <= it.l || o.l >= it.r)); it.inColumn = it.l >= col.l - 2 && it.r <= col.r + 2; }
           const heading = (s.querySelector("h1,h2,h3") || {}).innerText || "";
-          out.push({ heading: heading.trim().slice(0, 60), column: { l: Math.round(col.l), r: Math.round(col.r) }, items, festivals: [...s.querySelectorAll("h3")].filter(vis).map((h) => h.innerText.trim().slice(0, 50)) });
+          out.push({ heading: heading.trim().slice(0, 60), column: { l: Math.round(col.l), r: Math.round(col.r) }, items, festivals: [...s.querySelectorAll("h2")].filter(vis).map((h) => h.innerText.trim().slice(0, 50)) });
         }
         return out;
       }, w);
+      // Structural language-independent unit signature from the source article: H2 title, H3 month, body.
+      rec.festivalUnits = key === "/festivals/" ? await pg.evaluate(() => {
+        const main=document.querySelector("#ahv-design-root main"); if(!main)return [];
+        const visible=e=>e.getClientRects().length>0 && getComputedStyle(e).visibility!=="hidden";
+        return [...main.querySelectorAll("h2")].filter(visible).filter(h=>!h.closest("nav,header,footer") && h.nextElementSibling?.tagName==="H3").map((h,index)=>{
+          const month=h.nextElementSibling;let text="";
+          for(let n=month.nextElementSibling;n && n.tagName!=="H2";n=n.nextElementSibling) if(visible(n)) text+=(n.innerText||"").trim();
+          return {index,title:h.innerText.trim(),month:visible(month)&&month.innerText.trim(),text:text.length>40};
+        });
+      }) : null;
       const enforce = w >= 1180;
       const misplaced = rec.layout.flatMap((s) => s.items.filter((i) => i.lone && !i.inColumn).map((i) => ({ section: s.heading, ...i, column: s.column })));
       rec.lonesOutOfColumn = enforce ? misplaced : [];
@@ -145,7 +169,7 @@ for (const loc of LOCALES) for (const w of WIDTHS) {
       // screenshots: viewport tiles top→bottom (a fullPage capture hangs on this runtime at ≥ 768 px — the
       // viewport resize it performs re-triggers the design's breakpoint swap), so the evidence is N real viewports
       rec.screenshots = await captureTiles(pg, path.join(OUT, `${key.replace(/\W+/g, "_")}-${loc}-${w}`));
-      const problems = [];
+      const problems = festivalCoverage(rec);
       if (rec.images.failed.length) problems.push(`${rec.images.failed.length} rendered image(s) never loaded`);
       if (rec.lonesOutOfColumn.length) problems.push(`${rec.lonesOutOfColumn.length} lone image/card outside the text column`);
       if (rec.overflow.overflow) problems.push(`horizontal overflow ${rec.overflow.scrollWidth} > ${rec.overflow.innerWidth}`);
