@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "176063301134397b847ded608555d81e009a988104076f14e91b5d75e644a104",
+ "sourceSetHash": "631abfb1e9b37d6384ed7a552db123de52c1fdcddd449f761b2766ea551ac19e",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -1239,8 +1239,8 @@
   },
   {
    "file": "public/ahv/assets/exception-five-family-data.js",
-   "sha256": "a8dd9af217cf684f5ceeea27226c720045fb771fd1080334497af538a2898fc6",
-   "units": 336,
+   "sha256": "912925cc165545fb506b11cd421e06ab1dfddd3dbffb19021ea39fdbb3edce5c",
+   "units": 335,
    "status": "covered"
   },
   {
@@ -1281,7 +1281,7 @@
   },
   {
    "file": "public/ahv/assets/knowledge-centre-data.js",
-   "sha256": "457d44ed8ba28f68d06e3ad0afc73d8caff46a44bb41d0fb3f59249279e05f43",
+   "sha256": "bc4a54ba094ecf748d83768bfc1adcf72367ce330e5df4bcdaba02be8ff8d0ec",
    "units": 17,
    "status": "covered"
   },
@@ -1329,7 +1329,7 @@
   },
   {
    "file": "public/ahv/assets/partner-air-india-data.js",
-   "sha256": "9e8ef3dad4ab0918892ca2d0ae7178d4b7ce5cbc41f64da593dcbdef3ade2fcd",
+   "sha256": "6d61f07da802029cf30da3fc0d6f97d0a80a95486302fb22e715bcbde4040d9f",
    "units": 179,
    "status": "covered"
   },
@@ -1371,20 +1371,20 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "f1b694d4c9e5e559b90595911c635785fe31293a4b823881d7b9799f40b4b35b",
+   "sha256": "3c59c13d1bac2ac54eee6385a0b8e66f83e102d87e22587d1993199db9ddaa56",
    "units": 2241,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/reader25b-family-render.js",
-   "sha256": "938e90770e679c2d6d5f1beadd86466bd0c9db497a3683618c78374fd7a1d5aa",
-   "units": 1,
+   "sha256": "b8eb0acbfdabdd46747eb5814df0a06a83ff68512a9ccf69e71171f243abeb04",
+   "units": 3,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/reader6c-family-data.js",
-   "sha256": "ead152b5d0d74bf58558c575b6d67bada7cc4944d1ce49691e7cca93c9f781ee",
-   "units": 474,
+   "sha256": "b5289f84b420ddb304b746d971d3bb0a5deba8a40662cc5c4270d234a131534a",
+   "units": 476,
    "status": "covered"
   },
   {
@@ -1407,7 +1407,7 @@
   },
   {
    "file": "public/ahv/assets/seven-informational-data.js",
-   "sha256": "38fa4e4fedbf130737a1535be9e5d04798a67e47070e96b41fa063a0114349fb",
+   "sha256": "6d9efc18bdc2af3e6ee02a9cbcae025d9cdad6bc9f7b932c352b9dcaac43fe26",
    "units": 675,
    "status": "covered"
   },
@@ -1504,6 +1504,12 @@
   {
    "file": "public/design/newsletter.js",
    "sha256": "53694087a223dcac7e444c33eec44dd904a4f79e48a10fc2a6b25833c5b12b02",
+   "units": 7,
+   "status": "covered (curated allowlist)"
+  },
+  {
+   "file": "public/design/opd-form-submit.js",
+   "sha256": "f244e35a892de9a420bf279a5d3f9f360c9137fd93fca9a86383d427b7e57551",
    "units": 7,
    "status": "covered (curated allowlist)"
   },
