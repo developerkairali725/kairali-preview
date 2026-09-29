@@ -909,12 +909,15 @@ export const BOOT_SCRIPT = `
     retargetSelfLinks(host);
     // Keep going while EITHER repair still has nothing to show for itself —
     // stopping at the honeypot alone would cut the email repair short on the
-    // enquiry page, which carries both.
-    if ((hpHidden === 0 || emailsFixed === 0 || localesUpgraded === 0) && tries > 0) {
+    // enquiry page, which carries both. Once the interactive snapshot replaces
+    // its placeholder, the mutation observer handles later additions. Pages
+    // without a honeypot/email repair must not rescan the whole page 150 times.
+    if ((hpHidden === 0 || emailsFixed === 0 || localesUpgraded === 0) && tries > 0 && host.getAttribute("data-ahv-snapshot-state") !== "retired") {
       setTimeout(function () { sweepHoneypots(tries - 1); }, 80);
     }
   }
   new MutationObserver(function (changes) {
+    var addedContent = false;
     changes.forEach(function (change) {
       if (change.type === "childList") lastLiveChange = Date.now();
       // style: an element that gains an inline background later (a rewritten style attribute) is
@@ -924,20 +927,23 @@ export const BOOT_SCRIPT = `
         else localizeLink(change.target);
       }
       else change.addedNodes.forEach(function (node) {
+        addedContent = true;
         localizeLinks(node);
         restoreSlotScrolling(node);
         deferSlotImages(node);
         deferBackgrounds(node);
         aliasImages(node);
-        enhanceDirections(host);
         startIstClock(node);
         hideHoneypots(node);
         repairEmailLinks(node);
         upgradeLanguageControls(node);
-        applyConsent();
         retargetSelfLinks(node);
       });
     });
+    // These scan the entire host/document, unlike the node-local repairs above.
+    // One mutation delivery already contains the completed DOM batch: scanning
+    // it again for every added node caused quadratic work during hydration.
+    if (addedContent) { enhanceDirections(host); applyConsent(); }
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href", "style"] });
   // Also normalize synchronously before native activation, including middle
   // clicks and copied link addresses, without overriding browser behavior.
