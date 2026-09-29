@@ -57,6 +57,12 @@ test.beforeEach(async ({ page }) => {
     if (msg.type() === "error") consoleErrors.push(msg.text());
   });
   await page.goto("/");
+  if (isAhv) {
+    // The server snapshot is replaced by the interactive view. Assert ready
+    // before inspecting forms/focus; otherwise the test can silently see zero
+    // visible forms or lose its focused node during the snapshot replacement.
+    await expect(page.locator('[data-ahv-route="/"]')).toHaveAttribute('data-ahv-snapshot-state', 'retired', { timeout: 30_000 });
+  }
 });
 
 test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {

@@ -1,3 +1,4 @@
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
@@ -124,7 +125,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
 export function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const snapshot = prerenderedBody(route.path, locale);
+  const snapshot = descriptiveAwardLinks(phoneCriticalMedia(prerenderedBody(route.path, locale)));
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
@@ -169,6 +170,7 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonForScript(routeSchema(route, locale)) }}
       />
+      {firstCriticalImage(snapshot) ? <link rel="preload" as="image" fetchPriority="high" href={firstCriticalImage(snapshot)!} media={narrowMedia} /> : null}
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
       {route.mobileView ? (

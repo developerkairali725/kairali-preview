@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { ReactNode } from "react";
 import { ChatbaseLoader } from "@kairali/chat";
 import { ConsentScripts } from "@kairali/consent";
@@ -13,6 +15,13 @@ import analyticsConfig from "../../../analytics.config.json";
  * built by tools/l10n/build.mjs) and an optional inline script that installs
  * the locale's UI dictionary before those scripts run.
  */
+// Same CSS, same cascade order; embedding eliminates ten render-blocking
+// requests on slow mobile connections. Sources remain the public design files.
+const styleCache = new Map<string, string>();
+function DesignStyle({ name }: { name: string }) {
+  if (!styleCache.has(name)) styleCache.set(name, readFileSync(join(process.cwd(), "public", "design", name), "utf8"));
+  return <style data-ahv-design-style={name} dangerouslySetInnerHTML={{ __html: styleCache.get(name)! }} />;
+}
 const verification = analyticsConfig.verification;
 
 export function SiteDocument({
@@ -60,9 +69,9 @@ export function SiteDocument({
             Scoped by data-ahv-route, so loading it site-wide is inert elsewhere.
             Lives in public/design/, outside public/ahv/, so a design re-import
             cannot erase it. */}
-        <link rel="stylesheet" href="/design/directions.css" />
-        <link rel="stylesheet" href="/design/article-reader.css" />
-        <link rel="stylesheet" href="/design/campaign.css" />
+        <DesignStyle name="directions.css" />
+        <DesignStyle name="article-reader.css" />
+        <DesignStyle name="campaign.css" />
         {/* Sitewide consistency layer (owner's 22 Sep 2026 final-build
             directive, D-20260922-13): the homepage and package pages are the
             gold standard; every OTHER family is brought to their type floor,
@@ -75,7 +84,7 @@ export function SiteDocument({
             cannot do: a computed-size floor on inline-sized micro labels and
             data-labels for phone-stacked tables. It runs its own observer on
             the design root and never touches boot.ts. */}
-        <link rel="stylesheet" href="/design/consistency.css" />
+        <DesignStyle name="consistency.css" />
         <script defer src={`${designBase}consistency.js`} />
         {/* Shared chrome, every page INCLUDING the homepage (owner rulings
             D-20260922-17/-18/-19, 22 Sep 2026): the desktop header on one row
@@ -83,10 +92,10 @@ export function SiteDocument({
             line on every footer and WhatsApp +91 92898 38797 under the hospital
             phone (chrome.js). Not scoped by data-ahv-consistency on purpose —
             the header and footer are one component on every family. */}
-        <link rel="stylesheet" href="/design/chrome.css" />
+        <DesignStyle name="chrome.css" />
         <script defer src={`${designBase}chrome.js`} />
-        <link rel="stylesheet" href="/design/newsletter.css" />
-        <link rel="stylesheet" href="/design/film-player.css" />
+        <DesignStyle name="newsletter.css" />
+        <DesignStyle name="film-player.css" />
         <script src={`${designBase}film-player.js`} defer />
         <script defer src={`${designBase}newsletter.js`} />
         {/* Form delivery for the two form kinds with no view-logic submit handler: the walk-in (OPD)
@@ -99,21 +108,21 @@ export function SiteDocument({
             search control on every page, the programme finder and the FAQ filter.
             search.js takes over the header's inert dialog at runtime, like chrome.js
             does for the footer; the package component is never edited. */}
-        <link rel="stylesheet" href="/design/search.css" />
+        <DesignStyle name="search.css" />
         <script defer src={`${designBase}search.js`} />
         {/* ONE section navigation for every content family (owner, 23 Sep 2026):
             the captured WordPress sidebars are removed and a governed rail built
             from the owner-authorised breadcrumbs takes their place — data from
             tools/build-section-nav.mjs, layout in section-nav.css, DOM in
             section-nav.js. Loaded after search.js; runs only on listed routes. */}
-        <link rel="stylesheet" href="/design/section-nav.css" />
+        <DesignStyle name="section-nav.css" />
         <script defer src={`${designBase}section-nav.data.js`} />
         <script defer src={`${designBase}section-nav.js`} />
         {/* ONE compact family header (owner, 26 Sep 2026 — EF-04 header takeover + EF-25): on
             every site-tree family page the family navigation replaces the primary navigation in
             the same header row; labels via window.__AHV_T, hrefs via AHV_LOCAL_PATHS, so one file
             serves every locale. */}
-        <link rel="stylesheet" href="/design/family-header.css" />
+        <DesignStyle name="family-header.css" />
         <script defer src="/design/family-header.js" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />

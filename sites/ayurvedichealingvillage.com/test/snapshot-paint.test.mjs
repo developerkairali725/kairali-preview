@@ -3,14 +3,14 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { whenSnapshotPainted, deferFarSnapshotContent } from "../app/(english)/_families/snapshot-paint.mjs";
+import { whenSnapshotPainted, deferFarSnapshotContent, snapshotFocusTarget } from "../app/(english)/_families/snapshot-paint.mjs";
 
 const BOOT = fs.readFileSync("app/(english)/_families/boot.ts", "utf8");
 const VIEW = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");
 const DOC = fs.readFileSync("app/(english)/_families/site-document.tsx", "utf8");
 
 test("snapshot-paint exports survive the toString() injection (self-contained, no backslash)", () => {
-  for (const fn of [whenSnapshotPainted, deferFarSnapshotContent]) {
+  for (const fn of [whenSnapshotPainted, deferFarSnapshotContent, snapshotFocusTarget]) {
     assert.ok(!fn.toString().includes("\\"), `${fn.name} contains a backslash (BOOT_SCRIPT would eat it)`);
     assert.equal(typeof new Function(`return (${fn.toString()});`)(), "function", fn.name);
     assert.match(BOOT, new RegExp("\\(\\$\\{" + fn.name + "\\.toString\\(\\)\\}\\)"), `${fn.name} is injected as an expression`);
@@ -104,4 +104,15 @@ test("design-view serves the snapshot's first-paint styles phone-only; faces ski
   // the no-JS fallback rules of 609d5377 are untouched
   assert.match(DOC, /html\[data-ahv-js\] #ahv-design-root\[data-ahv-snapshot-state='held'\]:not\(\[data-ahv-fallback\]\)>\*\{display:none!important\}/);
   assert.match(DOC, /html:not\(\[data-ahv-js\]\) #ahv-consent\{display:none!important\}/);
+});
+
+test("snapshot replacement preserves only the same keyboard action", () => {
+  const control = (href, label) => ({ tagName: "A", textContent: label, getAttribute: (key) => key === "href" ? href : null });
+  const active = control("/", "Kairali");
+  const same = control("/", "Kairali");
+  const other = control("/contact-us/", "Kairali");
+  const snapshots = [{ contains: (node) => node === active }];
+  assert.equal(snapshotFocusTarget({ activeElement: active }, snapshots, { querySelectorAll: () => [other, same] }), same);
+  assert.equal(snapshotFocusTarget({ activeElement: active }, snapshots, { querySelectorAll: () => [other] }), null);
+  assert.equal(snapshotFocusTarget({ activeElement: other }, snapshots, { querySelectorAll: () => [same] }), null);
 });

@@ -1,3 +1,4 @@
+import { phoneCriticalMedia, descriptiveAwardLinks } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -7,7 +8,7 @@ import {
   installSlotLoading,
   createBackgroundDeferral,
 } from "./media-loading.mjs";
-import { deferFarSnapshotContent, whenSnapshotPainted } from "./snapshot-paint.mjs";
+import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget } from "./snapshot-paint.mjs";
 import { CONSENT_RUNTIME } from "./consent-runtime";
 /**
  * AHV English candidate — page bootstrap.
@@ -223,6 +224,7 @@ export const BOOT_SCRIPT = `
         setTimeout(function () { retireSnapshot(tries - 1); }, 100);
         return;
       }
+      var focusTarget = (${snapshotFocusTarget.toString()})(document, snapshotNodes, live);
       for (var i = 0; i < snapshotNodes.length; i++) {
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
       }
@@ -239,6 +241,7 @@ export const BOOT_SCRIPT = `
       });
       host.setAttribute("data-ahv-snapshot-state", "retired");
       host.removeAttribute("data-ahv-live-pending");
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
       return;
     }
     if (tries > 0) { setTimeout(function () { retireSnapshot(tries - 1); }, 100); return; }
@@ -1155,7 +1158,7 @@ export const BOOT_SCRIPT = `
       if (snapshotNodes.length) host.setAttribute("data-ahv-live-pending", "");
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})(view.template));
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})(view.template) : view.template)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");

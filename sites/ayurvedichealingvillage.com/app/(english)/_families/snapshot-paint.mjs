@@ -88,3 +88,24 @@ export function deferFarSnapshotContent(win, nodes, breakpoint, screens) {
   }
   return marks.length;
 }
+
+/** Keep keyboard navigation on the same control when the phone snapshot is replaced.
+ * Never move focus from a control outside the retiring snapshot or guess a different action.
+ */
+export function snapshotFocusTarget(doc, snapshots, live) {
+  var active = doc.activeElement;
+  if (!active || !snapshots.some(function (node) { return node.contains(active); })) return null;
+  var id = active.getAttribute("id");
+  var href = active.getAttribute("href");
+  var label = active.getAttribute("aria-label") || (active.textContent || "").trim();
+  var candidates = live.querySelectorAll("a,button,input,select,textarea,[tabindex]");
+  for (var i = 0; i < candidates.length; i++) {
+    var node = candidates[i];
+    if (node.tagName !== active.tagName) continue;
+    if (id && node.getAttribute("id") === id) return node;
+    if (node.getAttribute("href") !== href) continue;
+    var name = node.getAttribute("aria-label") || (node.textContent || "").trim();
+    if (label && name === label) return node;
+  }
+  return null;
+}

@@ -7,10 +7,11 @@ import fs from "node:fs";
 import {
   EAGER_SLOTS, lazyImgFirst, deferHeroFilm, installLazyImgOrder, installSlotLoading, createBackgroundDeferral,
 } from "../app/(english)/_families/media-loading.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks } from "../app/(english)/_families/critical-media.mjs";
 import { formPostSafety } from "../app/(english)/_families/form-post-safety.mjs";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime.ts";
 // lane PERF2: two more helpers injected into BOOT_SCRIPT (snapshot-paint.mjs); the parse test needs them in scope
-import { deferFarSnapshotContent, whenSnapshotPainted } from "../app/(english)/_families/snapshot-paint.mjs";
+import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget } from "../app/(english)/_families/snapshot-paint.mjs";
 
 const attrs = (tag) => (tag.match(/\s[a-zA-Z-:]+(?:=(?:"[^"]*"|'[^']*'|[^\s>]+))?/g) || []).map((a) => a.trim()).sort();
 
@@ -193,8 +194,8 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
-    deferFarSnapshotContent, whenSnapshotPainted };
+    phoneCriticalMedia, descriptiveAwardLinks, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");
 });

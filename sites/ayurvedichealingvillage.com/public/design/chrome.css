@@ -332,3 +332,17 @@ body footer .ahv-footer-langs, body footer .ahv-footer-langs a, body footer .ahv
  white-space:normal !important; overflow:visible !important; overflow-wrap:anywhere;
 }
 .rv-page .fb-help, .rv-page .sg-source { font-size:14px; line-height:1.6; }
+
+/* PR309 measured contrast defects; shared by all locale documents. */
+#ahv-design-root section:has([data-ahv-guide-form]) { color:#695B49; }
+#ahv-design-root section:has([data-ahv-guide-form]) [style*="color: rgb(117, 105, 90)"],
+#ahv-design-root section:has([data-ahv-guide-form]) [style*="color:#75695A" i],
+#ahv-design-root #ahv-guide-note { color:#695B49 !important; }
+#ahv-design-root section:has([data-ahv-guide-form]) > div:first-of-type { color:#80570F !important; }
+#ahv-design-root a[href*="tripadvisor."] [style*="color: rgb(0, 170, 108)"],
+#ahv-design-root a[href*="tripadvisor."] [style*="color:#00AA6C" i] { color:#00794D !important; }
+#ahv-design-root [style*="font-size: 26px"][style*="rgb(193, 136, 44)"],
+#ahv-design-root [style*="font-size:26px"][style*="#C1882C" i] { color:#8F6212 !important; }
+.ahv-link-context { position:absolute !important; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+
+.ahv-home-rates p a { text-decoration:underline; text-underline-offset:3px; }
