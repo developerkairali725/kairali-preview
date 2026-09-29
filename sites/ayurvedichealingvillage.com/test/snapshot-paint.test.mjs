@@ -99,7 +99,7 @@ test("boot wiring: runtime chain waits for the phone snapshot's paint; repairs +
 
 test("design-view serves the snapshot's first-paint styles phone-only; faces skipped on poster-led views", () => {
   assert.match(VIEW, /<style key=\{i\} media=\{narrowMedia\} data-ahv-snapshot-style=""/);
-  assert.match(VIEW, /rel="preload" as="font" type="font\/ttf" crossOrigin="anonymous" href=\{href\} media=\{narrowMedia\}/);
+  assert.match(VIEW, /rel="preload" as="font" type=\{href\.endsWith\("\.woff2"\) \? "font\/woff2" : "font\/ttf"\} crossOrigin="anonymous" href=\{href\} media=\{narrowMedia\}/);
   assert.match(VIEW, /const snapshotFaces = firstPaint && !firstScreenPoster\(snapshot\) \? firstPaint : null;/);
   // the no-JS fallback rules of 609d5377 are untouched
   assert.match(DOC, /html\[data-ahv-js\] #ahv-design-root\[data-ahv-snapshot-state='held'\]:not\(\[data-ahv-fallback\]\)>\*\{display:none!important\}/);

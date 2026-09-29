@@ -202,7 +202,7 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
           second, later LCP candidate. Phone-width only: the desktop never paints the snapshot. */}
       {snapshotFaces
         ? snapshotFaces.preloadFonts.map((href) => (
-            <link key={href} rel="preload" as="font" type="font/ttf" crossOrigin="anonymous" href={href} media={narrowMedia} />
+            <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={narrowMedia} />
           ))
         : null}
       {snapshotFaces
