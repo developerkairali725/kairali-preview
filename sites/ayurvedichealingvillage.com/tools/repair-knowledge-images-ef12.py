@@ -8,7 +8,7 @@ IMG = {
     "/what-is-panchkarma/": ("reader25a-family-data.js", "article", "/ahv/assets/img/gallery-2026/treatments/sweda-steam-patient-stepping-traditional-02-768.webp", 511, 768,
         "Patient stepping into a traditional wooden steam chamber with doors open and steam rising"),
     "/what-is-yoga/": ("reader25a-family-data.js", "article", "/ahv/assets/img/gallery-2026/photo/yoga-side-female-patient-02-768.webp", 768, 511,
-        "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled"),
+        "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled hall"),
     "/why-pick-a-yoga-or-yoga-retreat/": ("reader25a-family-data.js", "article", "/ahv/assets/img/gallery-2026/yoga/hall-yoga-female-patient-senior-02-768.webp", 768, 511,
         "Female patient and senior yoga instructor facing each other in namaste greeting inside a bright yoga hall with large windows"),
     "/retreats-for-everyone/": ("reader6c-family-data.js", "article", "/ahv/assets/img/gallery-2026/retreats/grounds-people-rear-woman-walking-11-768.webp", 768, 511,

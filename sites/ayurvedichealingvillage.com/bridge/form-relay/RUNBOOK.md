@@ -225,9 +225,23 @@ double opt-in".
 
 The relay variables from step 7 are required too.
 
-The outbox worker also needs a scheduled trigger. This is a deployment-config
-change for the coordinator or owner, and it is NOT in this change. For
-example, add a Vercel cron entry for the AHV project:
+The outbox worker needs an invocation mechanism. Vercel Cron runs only on
+Production deployments; adding a `crons` entry will not schedule a Preview
+worker. See https://vercel.com/docs/cron-jobs.
+
+For Preview acceptance, after backend activation, invoke the existing worker
+manually with the Preview `CRON_SECRET`, using the exact protected Preview
+origin and its normal authorized access mechanism. Keep deployment protection
+and worker bearer authentication enabled. Record the deployment identity,
+invocation time, HTTP status and count-only response. Wait the actual
+`retryDelaySeconds` before retrying a pending job. This proves a bounded
+worker invocation and recovery, not recurring scheduler operation. Do not
+promote a deployment to obtain a scheduler.
+
+For eventual authorized Production release, configure and verify a scheduled
+trigger separately. Confirm the project plan supports the selected frequency
+and verify the route returns directly without a redirect. This configuration
+is NOT made here. An example Vercel cron entry for the AHV project is:
 
 ```json
 { "crons": [{ "path": "/api/newsletter/outbox", "schedule": "*/10 * * * *" }] }

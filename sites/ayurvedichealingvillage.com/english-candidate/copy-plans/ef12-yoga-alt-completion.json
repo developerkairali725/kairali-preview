@@ -1,0 +1,20 @@
+{
+  "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+  "scope": "Complete one truncated What-is-yoga image alt using existing gallery caption; current route metadata untouched. Reapply after source import; generator constant also corrected.",
+  "entries": [
+    {
+      "id": "EF12-YOGA-ALT-1",
+      "file": "public/ahv/assets/reader25a-family-data.js",
+      "old": "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled",
+      "new": "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled hall",
+      "count": 1
+    },
+    {
+      "id": "EF12-YOGA-ALT-2",
+      "file": "tools/repair-knowledge-images-ef12.py",
+      "old": "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled",
+      "new": "Side view of female patient in crescent lunge with arms extended overhead on a teal mat in a bright glass-walled hall",
+      "count": 1
+    }
+  ]
+}

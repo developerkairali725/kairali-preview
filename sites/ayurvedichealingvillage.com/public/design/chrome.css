@@ -201,11 +201,11 @@ a:focus, button:focus, summary:focus, input:focus, select:focus, textarea:focus 
 }
 
 /* Centre the tariff/consultation reading block across every programme finder. */
-section[aria-label="Treatment and wellness programmes"] > p:has(a[href*="/ahv/assets/doc/"]),
-section[aria-label="Treatment and wellness programmes"] > p:has(a[href*="/ahv/assets/doc/"]) ~ p{
+section[aria-label="Treatment and wellness programmes"] > p:has(:is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])),
+section[aria-label="Treatment and wellness programmes"] > p:has(:is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])) ~ p{
   width:100%;max-width:88ch!important;margin-inline:auto!important;line-height:1.7!important;box-sizing:border-box;text-align:left;
 }
-section[aria-label="Treatment and wellness programmes"]:has(> p a[href*="/ahv/assets/doc/"]){padding-bottom:clamp(32px,4vw,56px)!important}
+section[aria-label="Treatment and wellness programmes"]:has(> p :is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])){padding-bottom:clamp(32px,4vw,56px)!important}
 
 /* Keep partner artwork restrained despite shared responsive-image rules. */
 #partner-logos img{width:100%!important;max-width:180px!important;height:100px!important;object-fit:contain}
@@ -297,3 +297,11 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
 .ahv-footer-langs a, .ahv-footer-langs [aria-current] { display:inline-flex; align-items:center; min-height:44px; padding:0 4px; color:inherit; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(247,244,234,.35); }
 .ahv-footer-langs [aria-current] { text-decoration:none; font-weight:700; }
 [data-ahv-footer-langs] { display:block; }
+
+/* Wrapped breadcrumbs use one consistent row height, including the current page.
+   Keep the existing 44px link targets without adding an extra gap between rows. */
+@media (max-width:699px) {
+  #ahv-design-root nav[aria-label="Breadcrumb"] { column-gap:8px!important;row-gap:0!important;line-height:1.4;align-items:center!important; }
+  #ahv-design-root nav[aria-label="Breadcrumb"] > a,
+  #ahv-design-root nav[aria-label="Breadcrumb"] > span { display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere; }
+}

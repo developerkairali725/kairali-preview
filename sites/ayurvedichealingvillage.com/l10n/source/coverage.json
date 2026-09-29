@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "c8592c0a71019f3cf450773b7be5ddb7daa2890a46e9ab5df6d24666745e96c0",
+ "sourceSetHash": "c9d024d175dfd5919ed3433f67a6ad639c3c0a5c4baf139de358a88a74cba3a3",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -15,14 +15,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-about-us-desktop.json",
-   "sha256": "0ec05d06518561b87f55afd3f78a94ece5c6a693aa4a4ed99999e5f05f981a29",
-   "units": 49,
+   "sha256": "d5d142bea685f26eb13a9a329c3ec9f303bc0e4fb19db07b41931eeafe97f033",
+   "units": 52,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-about-us-mobile.json",
-   "sha256": "83a551751367642a36763aa57cef13a45b0baade747a721ff55fff5f5fad560b",
-   "units": 50,
+   "sha256": "410f482e6488c59f61f1030d445650e7ad7377b44c357795aed417e6bdaa9f1d",
+   "units": 53,
    "status": "covered"
   },
   {
@@ -123,13 +123,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-ayurveda-training-programme-desktop.json",
-   "sha256": "75ba44164c2529edd8b1ae883a0e50bd3eddfe648f397f2c48c36052249ebe74",
+   "sha256": "5a2de3771c06f2dfc329f8f15479f427225586bb3d6ab69b1df646c43aae5a22",
    "units": 88,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-ayurveda-training-programme-mobile.json",
-   "sha256": "b45beebf5f98012c7408bbb3bf7e3034511137e16425520cc1d480289d3b5e11",
+   "sha256": "509f5fb757c1729036464ca25cceb6d5a3fd348fdc7ac363bc2f978746ceded8",
    "units": 86,
    "status": "covered"
   },
@@ -165,8 +165,8 @@
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatments-mobile.json",
-   "sha256": "f41f03fcdf100c93d0bf4eaf3376e305e5fd83c4e3bb9a2dda8de6d3fda17ce4",
-   "units": 308,
+   "sha256": "03952cd7695586b486a1c85c22d2a02d79a7bfee0800462211f7aaad7a4e57c3",
+   "units": 309,
    "status": "covered"
   },
   {
@@ -423,13 +423,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-gallery-desktop.json",
-   "sha256": "6b42a89d1ffa1d6848159503533d6e50664bdd81f78ed9f8b2df369876c6be47",
+   "sha256": "52666174598bdfe06a32af73d57c087fb3b68e3588932b30272bba2ad4d1b912",
    "units": 30,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-gallery-mobile.json",
-   "sha256": "f9683caa64f90a7d2019da7f1a5f8e4153db426b4846d273beaddd2fe01eeeb8",
+   "sha256": "2f3978ec50bb386d53e1555d46ca41046e4009052625fd434d072e0430121a89",
    "units": 30,
    "status": "covered"
   },
@@ -1023,14 +1023,14 @@
   },
   {
    "file": "public/ahv/views/ahv-template-photo-collections-desktop.json",
-   "sha256": "c7c3d76932164f9eabe984ac4c3b3507303bfa820e25800f7e864160e43240c6",
-   "units": 33,
+   "sha256": "0b005879a4b58ad78e27e09e44a6b5673fa1ecb7f9b0811bdd46b2d36a0c36e0",
+   "units": 39,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-photo-collections-mobile.json",
-   "sha256": "ed01662dfe4e701eacd2f9505ab3b5e010b97207767488360a186d3f0ef16223",
-   "units": 33,
+   "sha256": "7bbfbe0d86e31bc39e58afa7ff0f06b5baf565818f14b4e50662f5e85729e3c0",
+   "units": 39,
    "status": "covered"
   },
   {
@@ -1047,14 +1047,14 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "4217aa17c852a08d28d401d0ed7e956cecae0df842957f2fd141394238f90b6b",
-   "units": 681,
+   "sha256": "47179c7736364e3a1a5932867bcafe2e84f5c16c70605d0723ddd371dc2f3285",
+   "units": 684,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "c3fd147c0e38620a0c73d3746e46a614a65c1f0f1bcab318b8ef6d3e0460b7bc",
-   "units": 615,
+   "sha256": "786a92b58bde0d6c0ec82eb9d87d74839946b8776cb3bda2c77955380312f11b",
+   "units": 618,
    "status": "covered"
   },
   {
@@ -1227,8 +1227,8 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "d8d093892b46c77cec8cce9e38223cae9d6bd2aa51a176986b29b85515dbc7a3",
-   "units": 2380,
+   "sha256": "2896e622fca4a246e55365cdbd59fa3899e24c55b3a4e63d512505100738a6e1",
+   "units": 2377,
    "status": "covered"
   },
   {
@@ -1347,7 +1347,7 @@
   },
   {
    "file": "public/ahv/assets/policy-family-data.js",
-   "sha256": "13f4ff1cfff668ceee641234a26e2f70ff16426780ee9a9db201ded0b9a245a4",
+   "sha256": "642455de682cc7e997edb3b5b29ac67a8330953f3c82f04402e1cd2f40eefea1",
    "units": 653,
    "status": "covered"
   },
@@ -1359,7 +1359,7 @@
   },
   {
    "file": "public/ahv/assets/reader25a-family-data.js",
-   "sha256": "043afab5d2aace4adb381ad9eae8147958a3f20987f52178ce8dc39598f61a0e",
+   "sha256": "0ac2f4c31c7523b47bbee96b2749627d2e310762bb4d99494d2eb2fd775ef51f",
    "units": 2493,
    "status": "covered"
   },

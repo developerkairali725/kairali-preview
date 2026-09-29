@@ -195,9 +195,14 @@ AHV_NEWSLETTER_OUTBOX_KEY=<random, >= 32 characters, different from the link sec
 CRON_SECRET=<random, >= 32 characters; outbox worker bearer token>
 ```
 
-The outbox worker also needs a cron trigger for `/api/newsletter/outbox`. This
-is a deployment-config change, proposed in RUNBOOK.md step 7b and NOT made
-here.
+The outbox worker needs an invocation mechanism for `/api/newsletter/outbox`.
+Vercel Cron runs only on Production deployments, so Preview acceptance uses
+an authorized manual invocation after backend activation, with the Preview
+`CRON_SECRET` and normal deployment-protection access. Record the exact
+Preview deployment, time, HTTP status and count-only response. Manual recovery
+does not prove recurring scheduling. RUNBOOK.md step 7b separates these
+Preview checks from eventual authorized Production scheduler configuration;
+no scheduler or production deployment is created here.
 
 The relay variables above are required too. Before setting these variables,
 apply the database tables: `bridge/form-relay/newsletter-tables.sql` and the

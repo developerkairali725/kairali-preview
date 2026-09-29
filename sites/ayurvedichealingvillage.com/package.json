@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npm run assets:restore && node tools/check-selected-gallery-assets.mjs && node tools/build-search-index.mjs --allow-expired && node tools/sync-finder-search-data.mjs && node tools/l10n/routes.mjs && node tools/l10n/build.mjs && next build",
     "start": "next start",
-    "assets:restore": "node tools/restore-runtime-assets.mjs && node tools/restore-runtime-assets.mjs --gallery && node tools/restore-runtime-assets.mjs --documents",
+    "assets:restore": "node tools/restore-runtime-assets.mjs && node tools/restore-runtime-assets.mjs --gallery && node tools/restore-runtime-assets.mjs --documents && node tools/build-treatment-derivative.mjs",
     "test": "node --test test/*.test.mjs",
     "search:check": "node tools/build-search-index.mjs --check --allow-expired && node tools/sync-finder-search-data.mjs --check && node tests/search-acceptance.mjs",
     "l10n:build": "node tools/l10n/routes.mjs && node tools/l10n/build.mjs"

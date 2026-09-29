@@ -43,7 +43,7 @@ const homeMoney = (n, c) => { const s = String(n); if (c === 'INR') { const l3 =
 `;
 const RENDER = `
     // EF-01: currency selection (approved editions only)
-    const cur = HOME_RATES[this.state.cur] ? this.state.cur : 'INR', HR = HOME_RATES[cur];
+    const cur = ['INR', 'USD', 'EUR'].includes(this.state.cur) ? this.state.cur : 'INR', HR = HOME_RATES[cur];
     const others = (k) => 'from · ' + ['INR', 'USD', 'EUR'].filter((c) => c !== cur).map((c) => homeMoney(HOME_RATES[c].card[k], c) + '*').join(' · ');
     v.rate = { p0: homeMoney(HR.p[0], cur), p1: homeMoney(HR.p[1], cur), p2: homeMoney(HR.p[2], cur),
       d0: homeMoney(HR.day[0], cur), d1: homeMoney(HR.day[1], cur), d2: homeMoney(HR.day[2], cur), d3: homeMoney(HR.day[3], cur),
@@ -63,7 +63,7 @@ for (const view of ["home-hi-fi-v4", "home-mobile"]) {
   let l = v.logic;
   l = once(l, "class Component extends DCLogic {", LOGIC_CONST + "\nclass Component extends DCLogic {", view);
   l = once(l, "state = { tab: 'detox',", "state = { cur: 'INR', tab: 'detox',", view);
-  l = once(l, "componentDidMount() {\n", "componentDidMount() {\n    try { const c = localStorage.getItem('ahv-cur'); if (c && HOME_RATES[c] && c !== this.state.cur) this.setState({ cur: c }); } catch (e) {}\n", view);
+  l = once(l, "componentDidMount() {\n", "componentDidMount() {\n    try { const c = localStorage.getItem('ahv-cur'); if (['INR', 'USD', 'EUR'].includes(c) && c !== this.state.cur) this.setState({ cur: c }); } catch (e) {}\n", view);
   const last = l.lastIndexOf("\n    return v;\n  }\n}");
   if (last < 0) throw new Error(view + ": renderVals return");
   l = l.slice(0, last) + RENDER + l.slice(last);
@@ -108,4 +108,16 @@ for (const view of ["home-hi-fi-v4", "home-mobile"]) {
   }
   if (n) { v.template = t; const ind = raw.match(/^\{\n( +)/)?.[1].length; fs.writeFileSync(f, ind ? JSON.stringify(v, null, ind) + (raw.endsWith("\n") ? "\n" : "") : JSON.stringify(v)); }
   console.log("home-mobile stage 2:", n ? `${n} card 'from' lines now computed` : "already");
+}
+
+// Stage 3: previously patched views must also reject inherited/unknown currency keys.
+for (const view of ["home-hi-fi-v4", "home-mobile"]) {
+  const f = `public/ahv/views/${view}.json`, raw = fs.readFileSync(f, "utf8"), v = JSON.parse(raw);
+  const before = v.logic;
+  v.logic = v.logic.replace("HOME_RATES[this.state.cur] ? this.state.cur : 'INR'", "['INR', 'USD', 'EUR'].includes(this.state.cur) ? this.state.cur : 'INR'")
+    .replace("c && HOME_RATES[c] && c !== this.state.cur", "['INR', 'USD', 'EUR'].includes(c) && c !== this.state.cur");
+  if (v.logic !== before) {
+    const ind = raw.match(/^\{\n( +)/)?.[1].length;
+    fs.writeFileSync(f, ind ? JSON.stringify(v, null, ind) + (raw.endsWith("\n") ? "\n" : "") : JSON.stringify(v));
+  }
 }
