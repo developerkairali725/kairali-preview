@@ -131,7 +131,10 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
   // finder and course templates are each their own family.
   const family = (route.desktopView ?? route.mobileView ?? "")
     .replace(/^ahv-page-/, "")
-    .replace(/-(desktop|mobile)$/, "");
+    .replace(/-(desktop|mobile)$/, "")
+    // a generated per-route copy of a family ("<family>--<variant>", e.g. the Air India partner page's copy of the
+    // campaign-retreat views, tools/build-partner-air-india.mjs) keeps its family's styling scope
+    .replace(/--[a-z0-9-]+$/, "");
   // The sitewide consistency layer (public/design/consistency.css + .js,
   // 22 Sep 2026) keys on data-ahv-consistency="1". It is emitted for every
   // family EXCEPT the locked ones — the homepage and the package pages
