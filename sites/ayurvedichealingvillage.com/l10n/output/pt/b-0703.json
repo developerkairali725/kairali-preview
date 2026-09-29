@@ -1,0 +1,207 @@
+{
+ "batchId": "b-0703",
+ "sourceSetHash": "176063301134397b847ded608555d81e009a988104076f14e91b5d75e644a104",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_b6a21ca5ddd469acd93a",
+   "sourceHash": "b6a21ca5ddd469acd93a1ecf3ace70d2ed9f8ea7372fdbd9b57b842d70cbfa54",
+   "text": "Telefone:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_044aa3ee8d14eeb4ab6b",
+   "sourceHash": "044aa3ee8d14eeb4ab6b591f091e2741dc761a1e4be156fbe2b7f102b394de9e",
+   "text": "A origem apresenta o marcador de posição do Cloudflare \"[email protected]\". Foi descodificado para info@kairali.com de acordo com a recuperação na mesma rota no binding; a cadeia de origem é mantida como emailSourceText.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06493e74bee8e8ef505d",
+   "sourceHash": "06493e74bee8e8ef505db0892d694d54658b25ac45995235aa64c68cb83d6bf7",
+   "text": "© Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": "Copyright line with the brand name only; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_ce6056c8d98e6ff647e2",
+   "sourceHash": "ce6056c8d98e6ff647e2681f99aea8dbf2efcb8b90eb71efb0570e3eb6a40947",
+   "text": "Em parceria com o Air India Maharaja Club",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec19fa16f3ae579173c4",
+   "sourceHash": "ec19fa16f3ae579173c4eecba39530d6b52bcf4eff78b86b3819c79288e97664",
+   "text": "Termos e condições",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_beae68d336b4d6dcd02e",
+   "sourceHash": "beae68d336b4d6dcd02e12bf5893a4713fd1ffc8877c2e2877445a98fd99bee5",
+   "text": "Form1",
+   "status": "translated",
+   "unchangedReason": "Source form identifier ('Form1'), kept as the technical name.",
+   "issues": []
+  },
+  {
+   "id": "t_87df9dc4b2ea04e1a04a",
+   "sourceHash": "87df9dc4b2ea04e1a04aa39a59a6910d29e7d057134f41a3984823c4fbab045b",
+   "text": "Endereço de e-mail*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b1c8d0bbb2980f979e4",
+   "sourceHash": "8b1c8d0bbb2980f979e4614e912be46818f2e8d9637644816b1da71eb658abc2",
+   "text": "Número de telefone*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0829b2bc41f1eee81623",
+   "sourceHash": "0829b2bc41f1eee816231e457985f56f1fb2ecbf9e60b7b1ce07cc78685a9097",
+   "text": "+91 XXXXX XXXXX",
+   "status": "translated",
+   "unchangedReason": "Phone-number input placeholder pattern; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_306f1bb20677a622fc38",
+   "sourceHash": "306f1bb20677a622fc38185239e89a940f6c1727e440a2b359d7d0e1bf600644",
+   "text": "Número de telefone",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_03ebef1c8867bf345288",
+   "sourceHash": "03ebef1c8867bf34528838635ef103296f050a4259e3dd9fb10b13a113c1baa3",
+   "text": "Número de membro do Air India Maharaja Club*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1a23ede97b79dc3ccef0",
+   "sourceHash": "1a23ede97b79dc3ccef05bd5e53cecb9e3297a74f4c5d69bc6da1b51205a6eb6",
+   "text": "Número de membro do Air India Maharaja Club — NÃO é um nome pessoal, apesar do nome de origem \"fname\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_160897a6bf73d647b4d2",
+   "sourceHash": "160897a6bf73d647b4d22eea2075af21b17126237931e4d5299331f071f457a2",
+   "text": "Datas preferidas*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1f6489ff004ed2d3f3f",
+   "sourceHash": "b1f6489ff004ed2d3f3f0e9956cd6b0735ff07f5c52d4be439bf8adab61ebdd9",
+   "text": "Data preferida — NÃO é um país, apesar do nome de origem \"country\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32c0c6c1db58b0d98a1b",
+   "sourceHash": "32c0c6c1db58b0d98a1b641ae906e1c2cf6d42f11e89bd17d4d1dfbdc73d2a52",
+   "text": "Programa de interesse*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5cf28ceaa596b2e7372",
+   "sourceHash": "a5cf28ceaa596b2e7372ff546e14bb63683e75faa6e8bab57c0609d6218a069e",
+   "text": "Seleção do programa — NÃO é uma mensagem de texto livre, apesar do nome de origem \"message\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be2c80e058e07a1bdbf4",
+   "sourceHash": "be2c80e058e07a1bdbf4e45806b6260ffac9520eacf39faeb4843161504e6124",
+   "text": "Selecione um programa",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_443b75ee1aeea3b0025a",
+   "sourceHash": "443b75ee1aeea3b0025a9525f2ffbfc2e71d1505fc8b54ee7baae0d496f79d24",
+   "text": "Programa de yoga e meditação",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bf203a38420dd671a2d5",
+   "sourceHash": "bf203a38420dd671a2d5bdea0bdbba81db508f30dcf7eb74cd98d26342af55a8",
+   "text": "Programa de reequilíbrio de stress e energia baseado em yoga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6212c82d086387c97264",
+   "sourceHash": "6212c82d086387c97264a53df4474d906a7fc5282f1234980e158dce595b8452",
+   "text": "Cursos de Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcf519665ab35a896d5e",
+   "sourceHash": "dcf519665ab35a896d5ee084d4196a8d2bb75405cd0f02e1e0e1c373048d463d",
+   "text": "Resposta de verificação*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d6d3a0d635db466c6f3",
+   "sourceHash": "7d6d3a0d635db466c6f32e5fe33453fd60c64957babb9345a6258c15bdbdcbc9",
+   "text": "Campo de resposta do captcha (nome de origem \"result\"); na revisão não é gerado nenhum desafio captcha.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_614faa2cecd757f05c9e",
+   "sourceHash": "614faa2cecd757f05c9ea182aa461307adc902b277a68796305bcbf7b21fa7b2",
+   "text": "As ligações hash do cabeçalho de origem conduzem às secções reais de adesão nesta página, com ativação por teclado, movimento do foco e deslocamento com compensação do cabeçalho fixo. As rotas fora da página (adesão à Air India, páginas de políticas, início) apresentam o URL de origem e estão bloqueadas na revisão; as ligações mail e tel estão bloqueadas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_793bfcb06c69d47d1f54",
+   "sourceHash": "793bfcb06c69d47d1f545da31c3a1cdcfb5530c3a63812a3c8f6edcb99780eb1",
+   "text": "Âncora interna de origem PRESERVADA, usada pelos seis títulos dos cartões de programa (section id=\"hero\", a faixa do formulário de reserva). Não foi encontrado nenhum destino de origem pendente nesta rota.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b6ac6d619e38f72bbf8d",
+   "sourceHash": "b6ac6d619e38f72bbf8dc6e004162b1066fb134a019fe4d6e7fceda530c14cff",
+   "text": "Adesão à Air India FORA DO SITE — URL de origem apresentado, navegação bloqueada na revisão.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}
