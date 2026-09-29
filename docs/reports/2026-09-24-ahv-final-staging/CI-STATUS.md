@@ -1,27 +1,21 @@
-# AHV release checks — current findings
+# AHV consolidation checks — 25 September 2026
 
-Task WOPS-AHV-FINAL-DRAFT-20260924-001. Source snapshot: PR309 head `12743836786790efc8d6d1b05bfc5cb8d27caa6d`, GitHub runs `36002687913` and `36002687979`, 24 September 2026. Recheck current head after the final push; this is not a claim that earlier results apply to changed code.
+Task WOPS-AHV-FINAL-DRAFT-20260924-001. This supersedes the 24 September check snapshot. Status is scoped: successful local/staging checks do not mean all protected merge checks or production gates have passed.
 
-| Check | Finding | Action / ownership |
-|---|---|---|
-| Brand lint | New native feedback/review/sightseeing CSS used unapproved colour literals | Replaced with existing shared brand tokens; local lint passes |
-| Banned strings | Snapshot footer years lacked their computed markers; one runtime computed expression was misread; exact quoted review had a physician-name case variant; two human-consultation phrases hit the chatbot rule; private source typo leaked into served provenance | Repaired computed footer markers in batches ≤25, refreshed SSR year at build, kept original review in private evidence and used an explicitly abbreviated authentic excerpt, clarified consultation wording, removed erroneous source-only email field; local lint passes without gate changes |
-| Compliance | Ten wording errors in four new internal site documents | Editorial wording corrected; local compliance passes with pre-existing warnings (not a clean warning-free audit) |
-| Front gate | Missing authenticated AbhilashKairali approval on current head; 23 guarded files inherited in cumulative PR | Owner review after final push; no admin bypass or impersonation |
-| Factory: metadata | Homepage title 91 characters exceeded 60; description also exceeded budget | Homepage title/description shortened in source view and manifest; verify hydrated result and fresh CI |
-| Factory: forms | Generic test requires checkbox/privacy in every form, including GET search; guide delivery form also awaits real integration | Reconcile search-vs-lead test contract with engineering owner; Deepu completes actual data-collection forms; do not add marketing consent to search |
-| Factory: social | Test expects exact group social set and data-social attributes; approved property footer uses property profiles | Verify current approved social source and reconcile contract; do not silently replace property profiles to satisfy inherited group test |
-| Factory: CTAs | No visible data-cta target; conversion wiring depends on it | Complete real CTA instrumentation with accessible targets during Deepu's forms/measurement work; staging tracking stays off |
-| AHV Lighthouse | Attempts /lp/panchkarma-treatment, which intentionally returns 404 under staging lock | Production-equivalent isolated QA needed for preserved LPs, plus actual English templates; do not lower budgets or disable staging safety |
-| Other site Lighthouse | kairaliyoga.com failed in the cumulative monorepo run | Separate site owner/scope; cannot claim fixed by AHV changes |
-| Other site Vercel | kairaliherbals-com deployment failed | Separate project owner/configuration; cannot claim AHV release resolves it |
+| Check | Current evidence / disposition |
+|---|---|
+| Approved content and FAQ | 31 programme FAQ sets complete; 62 desktop/mobile checks pass, including visible-answer and structured-data parity. Removed duplicate legacy FAQ graph on personalised yoga. Approved names, amenities, consultation and privacy/CV copy preserved. |
+| Footer | Online-consultation footer email and Subscribe controls have identical top coordinates and 48px heights at 390px and 1440px. |
+| AHV unit/build/search | 116 unit tests, AHV production build, and 258 search cases pass. Policies and approved-content suites each pass 20 responsive checks. |
+| Hosted staging | The same ahv-final-staging.vercel.app address serves the verified candidate: 31 FAQ SSR checks, 3 exact data files and 6 approved-content pages pass. Noindex remains enabled. |
+| Shared dependency integration | Included reviewed fleet commit 37f189b without editing PR314's branch; regenerated the shared lockfile. All16 app builds pass. Fresh full dependency audit reports zero advisories. React19.2.4 is retained. |
+| Asset restoration | Clean restoration verified2053 runtime +465 gallery files against archive/member hashes. Private GitHub staging artifact is a prerelease so read-only CI can read it; GH_TOKEN passes through Turbo; bounded retries handle transport-only failures. Missing releases, access and integrity errors still fail. |
+| Brand/copy/evidence | Brand and banned-string checks pass. Three original design-package manifests are retained byte-for-byte under source-package-manifest.json, with valid current integrity wrappers; append-only evidence check passes. Shared path tests correctly decode workspace paths containing spaces. |
+| Factory browser integration | Latest AHV run:20 pass,2 intentional locale skips,6 failures across desktop/mobile. Remaining contracts: canonical group versus approved property social links; consent expectations on GET search versus lead forms; missing CTA instrumentation. Do not alter approved profiles or add misleading consent solely to satisfy a generic test. Real forms and measurement remain integration work. |
+| Lighthouse | Legacy AHV URL list targets intentionally disabled staging LPs. Production-equivalent isolated QA and actual English template coverage remain necessary; do not disable staging safety or lower budgets. |
+| Production deployment holds |13 tracked app-root configurations disable automatic Git deployments on main. KairaliHerbals, whose app root is absent, has automatic Git deployments disabled in the Vercel project API with saved rollback state. Current production deployments must remain unchanged through merge. |
+| Authenticated owner review | PR309 is authored by AbhilashKairali, the same identity required to review its final head. GitHub forbids self-review. A real different authorized collaborator must create a replacement PR, then the owner reviews; no agent impersonation, fabricated review or admin bypass. |
 
-Main remains protected and unchanged. One stable staging URL exists independently of merge readiness. Older PR284/285 are historical migration work with unique commits, not alternate final English staging releases; do not merge them over the final candidate without a separate reviewed reconciliation.
+CI at the final head must complete and its actual failures remain blocking. These notes do not mark pending CI as passed. Operational report retention/deletion, real lead delivery, rates/Healing Secrets, offer details, translations and clinical approval retain their named owners. No production promotion or DNS change is authorized by this staging consolidation.
 
-## Follow-up found after the handoff push
-
-The refreshed `brand-lint` job at head `37ae9a85` passes its colour/copy stages but then exposes **87 evidence-manifest findings** in three inherited 22 September AHV design-intake bundles. Their legacy array manifests lack the required version/timestamps/run/producer/files schema. This is an evidence-registration issue, not 87 broken pages. The files are historical append-only evidence; do not silently rewrite their provenance or invent the original producer. A reviewed, provenance-preserving manifest migration remains a release dependency.
-
-Authenticated Dependabot and the package registry identified critical advisories affecting AHV's Next.js 15.5.23. AHV alone is updated to **15.5.24**, resolving to **sharp 0.35.4** in its dependency graph. No other site's dependency importer is changed. The patched local production build and 86 unit tests pass. A fresh production-dependency audit reports no AHV paths; it still reports 16 advisories in other sites' production dependency graphs. This is scoped remediation, not a fleet-wide clean security claim.
-
-Sources: the repository's authenticated Dependabot alerts 64/65 and the [official Next.js 15 upgrade guide](https://nextjs.org/docs/app/guides/upgrading/version-15). The final release must rerun checks at its exact head; default-branch alerts may remain until the protected merge is completed.
+Dependency evidence: the current registry audit plus GitHub advisories GHSA-5jgf-p345-68v8 (fast-uri), GHSA-rgj7-g3m4-5g8c (sharp), GHSA-2883-xcg3-v3hh (js-yaml), GHSA-4mjr-xmp4-gh2g (qs), and the Hono4.13.5 advisory set. Exact logs, original state and restoration evidence are retained in the task's merge-readiness-20260925 package in the website-operations workspace.
