@@ -44,6 +44,6 @@ The repository contains 27 form-bearing landing URLs covered by the shared `land
 - Consent and consent time
 - Track ID and campaign name where the legacy form supplies them
 - `utm_source`, `utm_medium`, `utm_campaign`, `utm_keyword`, `utm_term`, `utm_content`
-- `lead_source_url`, referrer, submit time, submit IP, status and a unique submission token
+- `lead_source_url`, referrer, submit time, submit IP, status and a one-time submission token
 
 Captcha answers, submit buttons and obsolete WordPress/WebForms technical fields are not stored.

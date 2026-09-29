@@ -150,14 +150,14 @@ AHV_FORM_RELAY_URL="$R" AHV_FORM_RELAY_SECRET='<from config.php>' AHV_FORM_RELAY
 
 The check exits 0 only when the relay answers, its signature verifies and it
 reports `ready: true`. The report lists missing tables, columns and
-`UNIQUE(submission_token)` / nonce keys (`submissionTokenUnique`,
-`nonceUnique`: full-length single-column keys only). If anything is missing:
+duplicate-rejecting keys on `submission_token` and `nonce`
+(`submissionTokenUnique`, `nonceUnique`: full-length single-column keys only). If anything is missing:
 
 - `landing-page` table missing: apply `db/003-landing-page.sql`.
 - OPD without an email address: apply `db/004-opd-optional-email.sql`.
   `health` does not check nullability, so apply it even when `health` is
   green.
-- Any other missing column or unique index: **stop and ask**. Changing the live
+- Any other missing column or duplicate-rejecting key: **stop and ask**. Changing the live
   table contract is a data decision, not a deployment step.
 
 ## 7. Vercel Preview environment (never Production first)

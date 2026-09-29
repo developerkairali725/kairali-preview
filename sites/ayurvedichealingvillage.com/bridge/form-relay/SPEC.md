@@ -148,7 +148,8 @@ The relay returns `{ ok, ready, protocol, tables }`. For each lead table,
 `ahv_relay_nonce` lists `exists`, `missingColumns` and `nonceUnique`. The
 response contains no submitted data. `ready` is true only when every table
 exists, has every column the relay writes, and has a full-length,
-single-column UNIQUE (or PRIMARY) key on `submission_token` (lead tables) or
+single-column key that rejects duplicates (a primary key or a
+duplicate-rejecting index) on `submission_token` (lead tables) or
 `nonce` (nonce table). A composite key that merely contains the column, or a
 prefix-length key, does not count.
 
