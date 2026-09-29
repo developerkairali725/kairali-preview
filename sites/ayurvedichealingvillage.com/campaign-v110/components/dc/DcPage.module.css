@@ -1,0 +1,50 @@
+/* Staging's page base (the <style data-dc-tpl="2"> block on every Batch A
+   page), mapped to the palette: paper → cream, ink, links → green-mid.
+   Body copy raised from staging's 17px to 19px. */
+.root {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text);
+  line-height: 1.7;
+}
+.root :global(h1),
+.root :global(h2),
+.root :global(h3),
+.root :global(h4) {
+  font-weight: 500;
+  margin: 0;
+}
+.root :global(a) {
+  color: var(--green-mid);
+}
+.root :global(img) {
+  height: auto;
+}
+
+.heroCta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 24px 0 8px;
+}
+.heroCta p {
+  margin: 0;
+  font-size: var(--text-small);
+}
+.heroCta p a {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.formSlot {
+  max-width: 640px;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .heroCta {
+    align-items: stretch;
+  }
+}

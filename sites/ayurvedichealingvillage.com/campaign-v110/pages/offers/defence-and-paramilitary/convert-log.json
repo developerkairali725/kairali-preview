@@ -1,0 +1,30 @@
+{
+ "removed_ctas": [
+  "HERO → slot: ENQUIRE NOW"
+ ],
+ "removed_forms": [],
+ "removed_chrome": [],
+ "links": [
+  "id campaign-enquiry removed (anchor is now #consult)",
+  "https://ahv-final-staging.vercel.app/ → https://ayurvedichealingvillage.com/",
+  "https://ahv-final-staging.vercel.app/offers/ → https://ayurvedichealingvillage.com/offers/"
+ ],
+ "images": [],
+ "tel": [],
+ "notes": [
+  "enquiry form slot at: Plan your visit Share your details and our patient care team will help with your",
+  "og:image dimensions ['1200', '630'] not carried over"
+ ],
+ "edits": [
+  "No discount percentage in the h1: \"…get upto 20% OFF\" → \"Defence & Paramilitary Personnel — Special Rates\"",
+  "No discount wording: \"Military Citizen Discount Scheme\" → \"special-rates scheme\"",
+  "CTA placement 2: \"Plan my programme\" moved up under the h1 and its opening paragraph so the treatment name and the CTA share the first screen (staging had its button after the full offer text and terms)",
+  "Meta text: percentage removed from og:title; broken dash character in the title repaired [title: 'Ayurvedic Wellness for Defence & Paramilitary Forces – Kairali' → 'Ayurvedic Wellness for Defence & Paramilitary Forces – Kairali']",
+  "Meta text: percentage removed from og:title; broken dash character in the title repaired [ogTitle: 'Defence &amp; Paramilitary Personnel get upto 20% OFF' → 'Defence & Paramilitary Personnel — Special Rates']"
+ ],
+ "standing": [
+  "discount percentage and fixed stay length removed: \"10% Discount for ayurvedic treatment package between 3 to 14 Nights\"",
+  "discount percentage and fixed stay length removed: \"15% Discount for ayurvedic treatment package between 14 to 21 Nights\"",
+  "discount percentage and fixed stay length removed: \"20% Discount for ayurvedic treatment package above 21 Nights.\""
+ ]
+}

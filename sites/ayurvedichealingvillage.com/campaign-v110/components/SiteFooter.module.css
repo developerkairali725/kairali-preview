@@ -1,0 +1,84 @@
+.legal {
+  border-top: 1px solid var(--line-ink);
+  padding: 36px 0 28px;
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.name {
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.accreditation {
+  margin: 0 0 12px;
+}
+
+.address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 12px;
+  min-height: 44px;
+}
+.contact span {
+  min-width: 6em;
+}
+.contact a {
+  overflow-wrap: anywhere;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+}
+.row a,
+.contact a {
+  color: var(--green-mid);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Social strip: staging forest-800 → green-deep. */
+.social {
+  background: var(--green-deep);
+  padding: 20px 24px calc(28px + var(--mobile-bar-h));
+  text-align: center;
+}
+.social nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 24px;
+}
+.social a {
+  color: var(--cream);
+  font-size: var(--text-small);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}

@@ -16,7 +16,7 @@ export function CampaignEnquiryForm({formType='consultation',heading='Request a 
   const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);
   try{
    const url=new URL(window.location.href);
-   const campaign=Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].map(k=>[k,url.searchParams.get(k)||'']));
+   const campaign=Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid'].map(k=>[k,url.searchParams.get(k)||'']));
    if(!submissionToken.current)submissionToken.current=crypto.randomUUID();
    const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:document.documentElement.lang||'en',lead_source_url:window.location.href,referrer:document.referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:formType,fname:String(data.get('fullName')).trim(),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
    const result=await response.json().catch(()=>({}));

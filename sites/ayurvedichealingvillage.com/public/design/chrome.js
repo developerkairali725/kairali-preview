@@ -20,7 +20,8 @@
  * rules. Locked facts only: no other number, no other e-mail. */
 (function () {
   "use strict";
-  var root = document.getElementById("ahv-design-root");
+  var campaignRoot = document.querySelector("body[data-ahv-campaign]");
+  var root = campaignRoot || document.getElementById("ahv-design-root");
   if (!root) return;
   var WA_HREF = "https://wa.me/919289838797";
   var WA_TEXT = "WhatsApp +91 92898 38797";
@@ -330,6 +331,7 @@
   function pass() {
     scheduled = false;
     try {
+      if (campaignRoot) { footers().forEach(function(f) { whatsapp(f); copyright(f); chatLinks(f); }); priyaWidget(); syncChatState(); externalLinks(); return; }
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();

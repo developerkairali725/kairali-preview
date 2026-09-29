@@ -1,0 +1,46 @@
+/* Staging .lp-sticky: forest-800 bar, hidden below the fold until shown. */
+.bar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: var(--green-deep);
+    border-top: 1px solid var(--line-cream);
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+  }
+  .shown {
+    transform: translateY(0);
+  }
+}
+
+.call {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  border: 1px solid var(--line-cream);
+  border-radius: var(--radius);
+  color: var(--cream);
+}
+
+.cta {
+  flex: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

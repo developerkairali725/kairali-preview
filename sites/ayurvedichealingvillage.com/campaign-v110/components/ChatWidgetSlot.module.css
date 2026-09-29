@@ -1,0 +1,9 @@
+/* Anchor for the chat launcher: bottom-right, always above the mobile bar. */
+.slot {
+  position: fixed;
+  right: 16px;
+  bottom: calc(var(--mobile-bar-h) + 16px);
+  z-index: 55; /* below the cookie bar (70), above page content */
+  width: 0;
+  height: 0;
+}

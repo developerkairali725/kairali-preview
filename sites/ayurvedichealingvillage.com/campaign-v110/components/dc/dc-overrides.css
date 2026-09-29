@@ -1,0 +1,312 @@
+/* Corrections layered over dc-staging.css (loaded after it).
+   1. The shared components rendered inside #ahv-design-root (hero CTA, enquiry
+      form) keep their own look: staging's id-level link and form rules would
+      otherwise recolour and resize them.
+   2. Accessibility floors the staging sheets undercut: body copy 19px, labels
+      16px, AA contrast on sand. */
+
+/* 1 · shared components inside the staging root */
+#ahv-design-root .btn {
+  min-height: 56px !important;
+  padding: 13px 26px !important;
+  border-radius: var(--radius) !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--text) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+#ahv-design-root .btn-primary,
+#ahv-design-root .btn-primary:hover {
+  color: var(--ink) !important;
+}
+#ahv-design-root .btn-secondary {
+  color: var(--green-mid) !important;
+  border: 2px solid var(--green-mid) !important;
+  background: transparent !important;
+}
+#ahv-design-root .btn-secondary:hover {
+  color: var(--cream) !important;
+  background: var(--green-mid) !important;
+}
+#ahv-design-root form input:not([type="checkbox"]),
+#ahv-design-root form select,
+#ahv-design-root form textarea {
+  min-height: var(--tap) !important;
+  font-size: var(--text) !important;
+  background: var(--white) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--muted) !important;
+}
+
+/* 2 · floors and contrast */
+#ahv-design-root .campaign-hero p,
+#ahv-design-root .campaign-copy-block p {
+  font-size: max(19px, 1em);
+}
+#ahv-design-root .campaign-eyebrow {
+  font-size: 16px !important;
+}
+#ahv-design-root th {
+  color: var(--ink) !important; /* muted on sand is 4.4:1 */
+}
+
+/* 3 · hero phone number on staging's dark hero panels (campaign-retreat
+   family): staging's hero link rule draws it green on the dark overlay. */
+#ahv-design-root [data-dc-hero-cta] p,
+#ahv-design-root [data-dc-hero-cta] p a {
+  font-size: var(--text) !important;
+}
+[data-ahv-family="campaign-retreat"] section:first-of-type [data-dc-hero-cta] p a {
+  color: var(--cream) !important;
+  border-color: color-mix(in srgb, var(--cream) 55%, transparent) !important;
+  background: transparent !important;
+}
+/* keep the hero copy off the edge of the dark panel */
+[data-ahv-family="campaign-retreat"] section:first-of-type {
+  padding-left: clamp(20px, 4vw, 48px) !important;
+  padding-right: clamp(20px, 4vw, 48px) !important;
+}
+
+/* 4 · the shared enquiry form added to pages whose staging design has none */
+#ahv-design-root section[data-dc-form-appended] {
+  width: var(--container-w);
+  margin: 0 auto;
+  padding: 56px 0 72px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* 5 · the shared enquiry form keeps its own colours. Staging's dark form
+   panels colour their labels and headings cream (Air India, Panchakarma);
+   on the form's cream card that text would vanish. */
+#ahv-design-root form,
+#ahv-design-root form :is(p, label, legend, span, div, li, small, strong):not(.btn, .btn *) {
+  color: var(--ink) !important;
+}
+#ahv-design-root form :is(h2, h3, h4) {
+  color: var(--green) !important;
+}
+#ahv-design-root form label span {
+  color: var(--muted) !important;
+}
+#ahv-design-root form a:not(.btn) {
+  color: var(--green-mid) !important;
+}
+
+/* 6 · text on staging's dark panels. Staging's headings inherit the panel's
+   cream; the site-wide h2/h3 colour (green) would put them dark-on-dark.
+   Links and muted labels there are cream (these panels often sit over a
+   photo, where gold-soft drops under 4.5:1). Light cards inside a dark panel and
+   the shared form keep their own colours. */
+#ahv-design-root :is([style*="background:var(--ink)"], [style*="background:var(--green)"], [style*="background:var(--green-deep)"])
+  :is(h1, h2, h3, h4):not([style*="color:"]):not(:is([style*="background:var(--white)"], [style*="background:var(--cream)"], [style*="background:var(--sand)"], form) *) {
+  color: var(--cream) !important;
+}
+#ahv-design-root :is([style*="background:var(--ink)"], [style*="background:var(--green)"], [style*="background:var(--green-deep)"])
+  :is(a:not(.btn, [style*="background"]), [style*="color:var(--muted)"]):not(:is([style*="background:var(--white)"], [style*="background:var(--cream)"], [style*="background:var(--sand)"], form) *) {
+  color: var(--cream) !important;
+}
+/* muted text on sand is 4.4:1 — ink there */
+#ahv-design-root [style*="background:var(--sand)"] :is([style*="color:var(--muted)"], [class*="eyebrow"]) {
+  color: var(--ink) !important;
+}
+/* gold text on white cards is 2.6:1 (e.g. the ★★★★★ rating line) — green-mid
+   there; decorative gold marks hidden from screen readers stay gold */
+#ahv-design-root [style*="background:var(--white)"] [style*="color:var(--gold)"]:not([aria-hidden="true"]) {
+  color: var(--green-mid) !important;
+}
+
+/* 7 · body text floor (19px) where staging's sheets set smaller copy with
+   !important: the article-reader family (17.5px) and the Air India programme
+   cards (16px). Same selectors, one level more specific. */
+#ahv-design-root[data-ahv-family="article-reader"] p,
+#ahv-design-root[data-ahv-family="article-reader"] li {
+  font-size: max(19px, 1em) !important;
+}
+#ahv-design-root .air-membership #v3-programs p {
+  font-size: 19px !important;
+}
+
+/* 8 · image sizes. Photos that staging puts in a fixed frame (width:100% with
+   an aspect-ratio, object-fit or full height) fill that frame on every
+   screen, so the same card shows the same picture size on a 360px Android,
+   a 390px iPhone or a 430px Pro Max. (Holding them at their own pixel width
+   left gaps that changed from phone to phone.) Every other image — badges,
+   logos, figures without a frame — keeps its own pixel width as the ceiling
+   (--dc-img-w, recorded by the converter): this outranks staging rules that
+   force width:100% !important, which had stretched the monsoon page's 219px
+   award badges to 1,220px. */
+#ahv-design-root img[style*="--dc-img-w"] {
+  max-width: min(100%, var(--dc-img-w)) !important;
+}
+#ahv-design-root img:is([style^="width:100%"], [style*=";width:100%"]):is([style*="aspect-ratio"], [style*="object-fit"], [style*="height:100%"]) {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 9 · a hero headline column beside the enquiry form starts at the top
+   rather than centring against the (much taller) form */
+#ahv-design-root :has(> [class*="formSlot"], > * [class*="formSlot"]) > :has(h1):not(:has([class*="formSlot"])) {
+  align-self: start !important;
+}
+
+/* 10 · the design rules allow no shadows */
+#ahv-design-root *,
+#ahv-design-root *::before,
+#ahv-design-root *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* 11 · heading links (e.g. the villa names over their photos) are 44px tap targets */
+#ahv-design-root :is(h2, h3, h4) > a:not(.btn) {
+  display: inline-block;
+  min-height: 44px;
+  padding-block: 6px;
+}
+
+/* 12 · caption bars over photos (transparent → dark gradients): dark enough
+   where the caption sits for cream text at 4.5:1 whatever the photo */
+#ahv-design-root [style*="position:absolute"][style*="bottom:0px"][style*="background:linear-gradient(transparent"] {
+  background: linear-gradient(transparent, color-mix(in srgb, var(--ink) 84%, transparent) 38%, color-mix(in srgb, var(--ink) 90%, transparent)) !important;
+}
+/* muted labels on the dark photo heroes (campaign-retreat family) */
+[data-ahv-family="campaign-retreat"] section:first-of-type [style*="color:var(--muted)"]:not(form *) {
+  color: var(--cream) !important;
+}
+
+/* 13 · tablet and small-laptop widths (700–1199px): staging's four-to-six-
+   column card grids (repeat(n, 1fr)) cannot fit their content in the
+   container and push past its edge; three flexible columns there */
+@media (min-width: 700px) and (max-width: 1199px) {
+  #ahv-design-root :is([style*="grid-template-columns:repeat(4, 1fr)"], [style*="grid-template-columns:repeat(5, 1fr)"], [style*="grid-template-columns:repeat(6, 1fr)"]) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 14 · image + text rows at any width: the text keeps at least 200px beside
+   its image or moves below it (treatment-in-kerala's award cards put a 210px
+   badge beside its text in 285px columns, pushing the text off the page) */
+#ahv-design-root [style*="display:flex"]:not([style*="flex-direction:column"], [style*="overflow-x:auto"]):has(> img, > picture, > figure) {
+  flex-wrap: wrap !important;
+}
+#ahv-design-root [style*="display:flex"]:not([style*="flex-direction:column"], [style*="overflow-x:auto"]):has(> img, > picture, > figure) > :not(img, picture, figure, svg) {
+  flex: 1 1 200px !important;
+  min-width: 0 !important;
+}
+
+/* 15 · one content container (tokens in app/globals.css: 1120px, 22px
+   gutters on phones, 32px from 768px). Staging centred each band's content
+   in its own wrapper — min(1220px, 94%) inline, or class rules per family —
+   which gave different left edges from section to section and let some
+   blocks touch the screen edge. Every Batch A page now uses the same box:
+   - the design root is full width; bands keep full-bleed backgrounds;
+   - staging's centred wrappers take the container width (nested ones fill
+     their parent, so nothing is inset twice);
+   - root-level blocks without such a wrapper get the container padding;
+   - the campaign family's own 1180px root becomes the container. */
+#ahv-design-root {
+  width: 100%;
+  max-width: none;
+}
+#ahv-design-root :is([style*="width:min(1220px"], nav[data-ahv-section-nav], nav[data-ahv-page-bar]) {
+  width: var(--container-w) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+#ahv-design-root :is([style*="width:min(1220px"], nav[data-ahv-section-nav]) :is([style*="width:min(1220px"], nav[data-ahv-section-nav]) {
+  width: 100% !important;
+}
+#ahv-design-root:not([data-ahv-family="campaign-nine"]) > :not([style*="width:min(1220px"], nav[data-ahv-section-nav], [class*="air-membership"], [data-dc-form-appended]):not(:has([style*="width:min(1220px"])),
+#ahv-design-root .air-membership > :not([style*="width:min(1220px"]):not(:has([style*="width:min(1220px"])) {
+  padding-left: var(--container-pad) !important;
+  padding-right: var(--container-pad) !important;
+}
+#ahv-design-root[data-ahv-family="campaign-nine"] {
+  max-width: none !important;
+  padding-left: var(--container-pad) !important;
+  padding-right: var(--container-pad) !important;
+}
+#ahv-design-root[data-ahv-family="campaign-nine"] > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#ahv-design-root .campaign-enquiry {
+  max-width: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+#ahv-design-root .campaign-family-nav {
+  padding-inline: 0;
+}
+#ahv-design-root .air-membership .air-section-nav {
+  padding-left: var(--container-pad) !important;
+  padding-right: var(--container-pad) !important;
+}
+#ahv-design-root .air-membership .air-section-nav ul {
+  max-width: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/* full-width offer strips: background edge to edge, text on the container edge */
+#ahv-design-root[data-ahv-family] p.campaign-offer-line {
+  width: 100%;
+  max-width: none !important;
+  box-sizing: border-box;
+  padding-left: var(--container-pad) !important;
+  padding-right: var(--container-pad) !important;
+  text-align: left;
+}
+
+/* tables sit in the container under their heading and scroll inside their
+   own box when too wide — never full-bleed, never wider than the text */
+#ahv-design-root table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 16 · campaign photo mats (staging's sand .campaign-photo tiles). Staging
+   shows each picture at its own size inside the mat, so a 158px photo sat
+   small in a wide mat while a 1,200px one filled it, and the result changed
+   with the screen width. Photos now fill the mat at one 3:2 shape on every
+   screen; marks (icons, logos, award badges, rating widgets — tagged by the
+   converter) keep their own size, centred and uncropped. */
+#ahv-design-root .campaign-photo:has(> img[data-dc-kind="photo"]) {
+  display: block;
+}
+#ahv-design-root .campaign-photo > img[data-dc-kind="photo"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+/* rows of mats share one height */
+#ahv-design-root .campaign-photo-grid {
+  align-items: stretch !important;
+}
+#ahv-design-root .campaign-photo:has(> img[data-dc-kind="mark"]) {
+  align-items: center;
+}
+
+/* 17 · missing source: the family-retreat hero photo (AHV-V2-hero_img.jpg)
+   exists neither in the saved staging files nor on the live site. The hero
+   keeps its dark panel with readable text and no longer requests the file
+   (which returned 404). Recorded as MISSING SOURCE in OPEN-ITEMS. */
+[data-ahv-route="/family-ayurvedic-retreat-kerala.html"] section:first-of-type {
+  background-image: none !important;
+  background-color: var(--ink) !important;
+}

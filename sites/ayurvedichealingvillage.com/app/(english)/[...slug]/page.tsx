@@ -1,3 +1,5 @@
+import retainedOriginalRoutes from "../../../campaign-v110/retained-original-routes.json";
+import campaignRoutes from "../../../campaign-v110/routes.json";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DesignView } from "../_families/design-view";
@@ -22,7 +24,7 @@ export function generateStaticParams(): Array<{ slug: string[] }> {
   // Native pages must not also be emitted by this catch-all: duplicate static
   // output can overwrite them during production builds despite route priority.
   const nativePages = new Set(["/read-feedback/", "/givefeedback/", "/sightseeing/", "/video-gallery/"]);
-  return subRoutes().filter((r) => !nativePages.has(r.path)).map((r) => ({ slug: r.segments }));
+  return subRoutes().filter((r) => !nativePages.has(r.path) && (!campaignRoutes.includes(r.path) || retainedOriginalRoutes.includes(r.path))).map((r) => ({ slug: r.segments }));
 }
 
 export async function generateMetadata({

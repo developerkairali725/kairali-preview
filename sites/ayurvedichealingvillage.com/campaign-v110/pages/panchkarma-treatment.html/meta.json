@@ -1,0 +1,127 @@
+{
+  "route": "/panchkarma-treatment.html",
+  "slug": "panchkarma-treatment",
+  "source": "Panchakarma Treatment in Kerala _ Kairali Ayurvedic Healing Village.html",
+  "sourceMobile": null,
+  "head": {
+    "title": "Panchakarma Treatment in Kerala | Kairali Healing Village",
+    "description": "Panchakarma treatment in Kerala at Kairali: authentic detox therapy, NABH-accredited care, yoga, comfortable villa stays and personalised Ayurveda.",
+    "keywords": "panchakarma treatment, panchakarma therapy kerala, ayurvedic detox, holistic wellness, panchakarma kerala, ayurveda treatment, panchakarma benefits",
+    "canonical": "https://ayurvedichealingvillage.com/panchkarma-treatment.html",
+    "ogTitle": "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
+    "ogDescription": "Trusted Panchakarma treatment in Kerala with authentic detox therapy, NABH-certified care, yoga, luxury wellness stay and personalized Ayurvedic healing at Kairali.",
+    "ogUrl": "https://ayurvedichealingvillage.com/panchkarma-treatment.html",
+    "ogImage": "https://ayurvedichealingvillage.com/campaign-v110/images/og/panchkarma-treatment.html.jpg",
+    "ogImageDims": [
+      "1200",
+      "630"
+    ],
+    "locale": "en_US",
+    "siteName": "Kairali Ayurvedic Healing Village"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html",
+        "url": "https://ayurvedichealingvillage.com/panchkarma-treatment.html",
+        "name": "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
+        "isPartOf": {
+          "@id": "https://ayurvedichealingvillage.com/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html#breadcrumb"
+        },
+        "inLanguage": "en-US",
+        "description": "Discover trusted Panchakarma treatment in Kerala at Kairali. Authentic detox therapy, NABH-certified care, luxury wellness stay, yoga and personalized Ayurveda healing.",
+        "primaryImageOfPage": {
+          "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html#primaryimage"
+        },
+        "image": {
+          "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html#primaryimage"
+        },
+        "thumbnailUrl": "https://ayurvedichealingvillage.com/campaign-v110/images/og/panchkarma-treatment.html.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "inLanguage": "en-US",
+        "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html#primaryimage",
+        "url": "https://ayurvedichealingvillage.com/campaign-v110/images/og/panchkarma-treatment.html.jpg",
+        "contentUrl": "https://ayurvedichealingvillage.com/campaign-v110/images/og/panchkarma-treatment.html.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ayurvedichealingvillage.com/panchkarma-treatment.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ayurvedichealingvillage.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Panchakarma treatment in Kerala"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ayurvedichealingvillage.com/#website",
+        "url": "https://ayurvedichealingvillage.com/",
+        "name": "Kairali — The Ayurvedic Healing Village",
+        "publisher": {
+          "@id": "https://ayurvedichealingvillage.com/#organization"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://ayurvedichealingvillage.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ayurvedichealingvillage.com/#organization",
+        "name": "Kairali — The Ayurvedic Healing Village",
+        "url": "https://ayurvedichealingvillage.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://ayurvedichealingvillage.com/#/schema/logo/image/",
+          "url": "https://ayurvedichealingvillage.com/campaign-v110/ahv/assets/img/kairali-colorful-logo.png",
+          "contentUrl": "https://ayurvedichealingvillage.com/campaign-v110/ahv/assets/img/kairali-colorful-logo.png",
+          "width": 290,
+          "height": 68,
+          "caption": "Kairali — The Ayurvedic Healing Village"
+        },
+        "image": {
+          "@id": "https://ayurvedichealingvillage.com/#/schema/logo/image/"
+        }
+      }
+    ]
+  },
+  "rootAttrs": {
+    "data-ahv-route": "/panchkarma-treatment.html",
+    "data-ahv-family": "panchkarma-treatment",
+    "data-ahv-consistency": "1",
+    "data-ahv-view": "ahv-page-panchkarma-treatment-desktop",
+    "data-ahv-variant": "desktop",
+    "data-ahv-view-file": "AHV Page Panchkarma Treatment Desktop.dc.html",
+    "data-ahv-template": "source"
+  },
+  "form": {
+    "heading": "Doctor Consultation",
+    "intro": "Book Free"
+  },
+  "rootAttrsMobile": null,
+  "formMobile": null,
+  "whatsappText": "Hello, I would like to enquire about Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village (/panchkarma-treatment.html)."
+}

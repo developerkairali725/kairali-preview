@@ -1,0 +1,229 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   AHV landing pages — global tokens and base styles.
+
+   Layout baseline: the saved staging pages (staging-pages/). Their base rules
+   are carried over here and in components/lp/*.module.css, with only the
+   agreed corrections applied.
+
+   The nine colours below are the ONLY colours allowed. Components reference
+   them as var(--…) and never as raw hex. Allowed variations: transparency of
+   these colours (color-mix with transparent) and plain white for form fields
+   and card surfaces.
+
+   Staging colour → palette mapping (nearest value that keeps AA contrast):
+     --ivory #F7F4EA ............. --cream
+     --ink #1C1B19 ............... --ink
+     --forest-500 #006038 ........ --green-mid   (links, accent text, focus)
+     --forest-700 #004226 ........ --green       (headings, proof band)
+     --forest-800 #003720 ........ --green-deep  (sticky bar, social strip)
+     --marigold-400 #EEB41E ...... --gold        (primary button)
+     --bronze-600 #875F1F ........ --green-mid   (overline labels; the RGB-nearest,
+                                                  --muted, fails AA on sand at 4.4:1)
+     --leaf-500 #8E9D35 .......... --green-mid   (focus ring)
+     alt band (leaf 7% on ivory) . --sand
+     ink/ivory mixes (78%, 72%) .. --muted       (secondary text)
+     --color-error #BE202E ....... --ink + gold rule (no red in the palette)
+
+   Contrast (WCAG 2.1): ink on cream 14.5 · ink on sand 12.5 · muted on cream 5.2
+   muted on white 5.6 · green-mid on cream 8.0 · green-mid on sand 6.7
+   cream on green 11.8 · cream on green-deep 15.0 · ink on gold 6.0
+   gold on cream 2.4 → gold never carries text on light grounds.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --green: #163828;
+  --green-deep: #0e2419;
+  --green-mid: #26543c;
+  --gold: #c8973f;
+  --gold-soft: #e0bd7d;
+  --cream: #f7f5ef;
+  --sand: #ebe4d6;
+  --ink: #1d241f;
+  --muted: #5d6b61;
+  --white: #fff;
+
+  --line-ink: color-mix(in srgb, var(--ink) 14%, transparent);
+  --line-cream: color-mix(in srgb, var(--cream) 24%, transparent);
+  --cream-soft: color-mix(in srgb, var(--cream) 84%, transparent);
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-jost), "Jost", system-ui, sans-serif;
+
+  --text: 19px; /* body copy */
+  --text-small: 16px; /* captions and labels: never below this */
+  --tap: 54px;
+  --radius: 4px; /* staging's final radius for buttons and photos */
+  --radius-card: 16px;
+  --header-h: 72px;
+  --mobile-bar-h: 0px; /* raised by MobileBar while it is showing */
+  --cookie-bar-h: 0px; /* raised by CookieConsent while it is showing */
+
+  /* The one content container: every section's content sits in it, so
+     headings, text, tables, images and forms share one left edge. */
+  --container: 1120px;
+  --gutter: 22px;
+  --container-w: min(var(--container), 100% - 2 * var(--gutter));
+  /* padding that puts a full-bleed band's content on the container edge */
+  --container-pad: max(var(--gutter), (100% - var(--container)) / 2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 32px;
+  }
+}
+
+body {
+  margin: 0;
+  /* nothing hides behind the cookie bar or the sticky mobile bar */
+  padding-bottom: calc(var(--mobile-bar-h) + var(--cookie-bar-h));
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.16;
+  margin: 0;
+}
+h2,
+h3 {
+  color: var(--green);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--green-mid);
+  text-underline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--green-mid);
+  outline-offset: 3px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--gold-soft);
+}
+
+.container {
+  width: var(--container-w);
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -200px;
+  z-index: 200;
+  background: var(--white);
+  color: var(--ink);
+  padding: 14px 20px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Overline label, as on staging (staging's uppercase styling kept). */
+.overline {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin: 0 0 10px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 13px 26px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text);
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Primary: staging's marigold button → gold with ink text (6.0:1). */
+.btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-primary:hover {
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--green-mid);
+  border-color: var(--green-mid);
+}
+.btn-secondary:hover {
+  background: var(--green-mid);
+  color: var(--cream);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

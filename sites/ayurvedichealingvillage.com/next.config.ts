@@ -119,7 +119,7 @@ const nextConfig: NextConfig = {
     // also a single hop, just by the other rule. They are ad-landing URLs that
     // were never in the manifest: unlisted in the sitemap and linked from no
     // page on the live site, which is why nothing surfaced them until now.
-    return [...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+    return [{source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,

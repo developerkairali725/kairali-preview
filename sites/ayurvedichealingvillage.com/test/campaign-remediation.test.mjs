@@ -24,7 +24,7 @@ for(const route of context.window.AHV_CAMPAIGN_NINE.routes.filter(r=>!r.path.sta
  });
 }
 test('LP staging exposure retains denied analytics and short form validation',()=>{
- const layout=read('app/(lp)/layout.tsx'),form=read('app/(lp)/_components/campaign-enquiry-form.tsx');
+ const layout=read('campaign-v110/CampaignDocument.tsx'),form=read('app/(lp)/_components/campaign-enquiry-form.tsx');
  assert.ok(!layout.includes('notFound()'));
  assert.match(layout,/AHV_ANALYTICS === "1" && process.env.AHV_STAGING === "0"/);
  assert.match(form,/form.reportValidity\(\)/);
@@ -40,8 +40,8 @@ test('confirmed broken ad sitelinks map directly to existing, language-appropria
  const rules=JSON.parse(read('english-candidate/ad-sitelink-redirects.json'));
  assert.deepEqual(rules.map(r=>[r.source,r.destination]),[['/contact-us.aspx','/contact-us/'],['/villas.aspx','/our-villas/'],['/de/behandlung-in-kerala.html','/lp/behandlung-in-kerala/']]);
  const manifest=JSON.parse(read('english-candidate/route-manifest.json'));
- for(const r of rules)assert.ok(manifest.routes.some(x=>x.path===r.destination)||fs.existsSync(new URL('../app/(lp)'+r.destination+'page.tsx',import.meta.url)));
- assert.match(read('app/(lp)/lp/behandlung-in-kerala/page.tsx'),/<main lang="de">/);
+ for(const r of rules)assert.ok(manifest.routes.some(x=>x.path===r.destination)||fs.existsSync(new URL('../app/(lp)'+r.destination+'page.tsx',import.meta.url))||fs.existsSync(new URL('../app/(campaign-de)'+r.destination+'page.tsx',import.meta.url)));
+ assert.match(read('app/(campaign-de)/layout.tsx'),/lang="de"/);
 });
 
  test("campaign enquiry targets exist in both breakpoint templates", () => {
