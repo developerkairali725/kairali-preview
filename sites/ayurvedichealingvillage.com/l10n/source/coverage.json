@@ -1,9 +1,9 @@
 {
- "sourceSetHash": "998f6dce96e1891442e8b3b3c1ae52b797d0332cd6232b244e802641515c99d5",
+ "sourceSetHash": "c8592c0a71019f3cf450773b7be5ddb7daa2890a46e9ab5df6d24666745e96c0",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
-   "sha256": "a8e90100de988d7631e041697633cae49b74733c16f678c11d45c050b5dfc8de",
+   "sha256": "4b712575d04097009a63e92f830c4e1ebe2c25d0b199394ba047fcc6fedfd9ff",
    "units": 73,
    "status": "covered"
   },
@@ -207,14 +207,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-desktop.json",
-   "sha256": "bc10f585a132c55265db7c7486b619188e37116a78acd605393406f851bbfb33",
-   "units": 113,
+   "sha256": "832333d967b2d36b99e531194adafb0b431f8e43fd8f2d7b00790ef73cd50bf7",
+   "units": 114,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-mobile.json",
-   "sha256": "32de31da7c869426b8a0d8b5e07b4e0c5a2fd34a6c752ae263d1cd010a4e49a9",
-   "units": 119,
+   "sha256": "33ec9391383aba655ec002c9c8c43364c465129e29f6410912db15902f325f37",
+   "units": 120,
    "status": "covered"
   },
   {
@@ -447,13 +447,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-how-to-reach-desktop.json",
-   "sha256": "2dc5ea909fcd5b52801ff6d98db2ef6c8615f196a0638df5185f76de95fe34b8",
+   "sha256": "c6d30fa774a47cc5a45e67de4c48cf1fe141fc49de45d8fea5f380828c805c71",
    "units": 193,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-how-to-reach-mobile.json",
-   "sha256": "b4562ae8f32aff3bf848edbf720ea0350a153dd99bce553af76a6034004a4fc9",
+   "sha256": "22e8991952af947665f215ebdeac1c20af9b93efd4878e20786df4b29465666c",
    "units": 166,
    "status": "covered"
   },
@@ -903,13 +903,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-program-desktop.json",
-   "sha256": "d2a7649a31df01c3a048d2adc431377c7e56a4166e73d9be4a1d323949a532bd",
+   "sha256": "116b138fbd1022d0d3cd5518aa8968edf10e1134269e9cc8eea433384c047150",
    "units": 347,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-program-mobile.json",
-   "sha256": "bf41fe8a4a59ce76a343e5f93b2e863c7b9b566a6c5b1e0c789a1dfe1d552526",
+   "sha256": "95ddcff6443d9936bdd506cb517a47aea9561eefc8241f77f00d3a3a2d28498c",
    "units": 346,
    "status": "covered"
   },
@@ -1083,7 +1083,7 @@
   },
   {
    "file": "public/ahv/assets/article-family-data.js",
-   "sha256": "a2f90e0f5b3db3eb21c0816cc78024864b4597b215f87ea860a060cc1efb79fb",
+   "sha256": "6235c8e8cee0e9e1d7ed47d85b6e2b32f09a86e1238ad4fa73a12cb54567e498",
    "units": 3046,
    "status": "covered"
   },
@@ -1227,7 +1227,7 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "c289aba890555fb49620dd3ad8aad92c8968f2f38740ea2b5d395cf4c970c70f",
+   "sha256": "d8d093892b46c77cec8cce9e38223cae9d6bd2aa51a176986b29b85515dbc7a3",
    "units": 2380,
    "status": "covered"
   },
@@ -1329,8 +1329,8 @@
   },
   {
    "file": "public/ahv/assets/partner-air-india-data.js",
-   "sha256": "08badb4e62f774f29768f9b88070731c00174cc02657e5132a614dd9bed5a6b6",
-   "units": 179,
+   "sha256": "1c416b4a93f71a1dae96d931742fea6e7b87d1956d3d9137d6af29778af4b84d",
+   "units": 180,
    "status": "covered"
   },
   {
@@ -1371,7 +1371,7 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "ae9e96f8ed3e9eaa7f39a55db9336b3b7101678df9be0c5e692819968e9db7d6",
+   "sha256": "12e1f0b74af65ced0101244b74f6763ce0f63f587c0be3c3f7757774dede0d54",
    "units": 2241,
    "status": "covered"
   },
@@ -1383,7 +1383,7 @@
   },
   {
    "file": "public/ahv/assets/reader6c-family-data.js",
-   "sha256": "b5289f84b420ddb304b746d971d3bb0a5deba8a40662cc5c4270d234a131534a",
+   "sha256": "851849fd75ed574c379d7f3ac738e196064f7e07287c3615d5066b42a06bcb1a",
    "units": 476,
    "status": "covered"
   },
@@ -1443,7 +1443,7 @@
   },
   {
    "file": "public/ahv/assets/travel-family-data.js",
-   "sha256": "cbf35b7fda4eaec1d8266caea07ae4398eb9f8f57d5a57f02a463833e59c8a6d",
+   "sha256": "2d0221076cbeb15b93755edc9362d84c9c6caa18570b03bf55120b53478e775e",
    "units": 514,
    "status": "covered"
   },
@@ -1485,7 +1485,7 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "d90ca9f3ff64c66bc3acba1a36f38d746cf24dda43f9d8c78571184e29c9dfad",
+   "sha256": "86d83f11603aae34c724a19d7a497b6e6289283abf8158db51e1bc7811b7dcfa",
    "units": 13,
    "status": "covered (curated allowlist)"
   },
@@ -1503,7 +1503,7 @@
   },
   {
    "file": "public/design/newsletter.js",
-   "sha256": "374e1671511e25dc4e22c221e8339ea783964369b11728bfc6b6b7bc1bc48812",
+   "sha256": "aaee34988e950dd4cb62dc7ecd103371d0382b09ff62d83e0a03105d6995fa37",
    "units": 9,
    "status": "covered (curated allowlist)"
   },
@@ -1533,8 +1533,8 @@
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "5564901ad68d41f137f5b357022900d4afb4ff3b279d2e9eac60c989770af3ae",
-   "units": 699,
+   "sha256": "a9d00d9e698ec729208db6945538b0fa4ed8209a2468d89b021e03a25e55886f",
+   "units": 700,
    "status": "covered (key whitelist)"
   },
   {
