@@ -1,0 +1,52 @@
+{
+ "note": "Residual outcome/superlative claims found by the parent clinical route audit pattern: an unverifiable 'India's Most Authentic Ayurvedic Treatment' superlative and '30,000+ Lives Transformed' outcome framing in the /personalized-customized-healing-program/ og:title (view helmets + served manifest), its 'with 30,000+ lives transformed' bullet, and the /panchkarma-treatment.html stat label. The 30,000+ figure itself is kept as the site's existing patient count ('30,000+ patients treated at Kairali' elsewhere); only the outcome framing changes. Dr. Deepu John review before production.",
+ "entries": [
+  {
+   "id": "pch-og-views",
+   "files": [
+    "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json",
+    "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json"
+   ],
+   "old": "Kairali’s Personalized &amp; Customized Healing Program Swasthya Anukula Chikitsa  India's Most Authentic Ayurvedic Treatment | 30,000+ Lives Transformed",
+   "new": "Kairali’s Personalized &amp; Customized Healing Program – Swasthya Anukula Chikitsa",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json": 1,
+    "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json": 1
+   }
+  },
+  {
+   "id": "pch-bullet",
+   "files": [
+    "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json",
+    "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json"
+   ],
+   "old": "Award-winning clinical establishment with 30,000+ lives transformed",
+   "new": "Award-winning clinical establishment; 30,000+ patients treated",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-personalized-customized-healing-desktop.json": 1,
+    "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json": 1
+   }
+  },
+  {
+   "id": "pk-stat",
+   "files": [
+    "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json",
+    "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json"
+   ],
+   "old": "#75695A\\\">Lives Transformed</p>",
+   "new": "#75695A\\\">Patients Treated</p>",
+   "countPerFile": {
+    "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json": 1,
+    "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json": 1
+   }
+  },
+  {
+   "id": "pch-og-manifest",
+   "op": "manifestMeta",
+   "path": "/personalized-customized-healing-program/",
+   "set": {
+    "ogTitle": "Kairali’s Personalized & Customized Healing Program – Swasthya Anukula Chikitsa"
+   }
+  }
+ ]
+}
