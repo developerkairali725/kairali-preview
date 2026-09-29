@@ -603,3 +603,38 @@ document.addEventListener('submit', function (event) {
   try { sessionStorage.setItem('ahv-guide-email-draft', email.value.trim()); } catch (_) { /* downloads remain accessible if storage is unavailable */ }
   window.location.assign('/faqs-downloads/#downloads');
 });
+
+// Footer keyboard focus: locale headers can exceed the static 96px focus margin.
+// Measure only visible fixed/sticky header surfaces; preserve anchor offsets and bottom-layer rules.
+(function () {
+  function footerHeaderDelta(target, headers) {
+    var bottom = 0;
+    headers.forEach(function (r) {
+      if (r.right > target.left && r.left < target.right && r.bottom > target.top && r.top < target.bottom)
+        bottom = Math.max(bottom, r.bottom);
+    });
+    return bottom ? Math.min(0, target.top - bottom - 8) : 0;
+  }
+  document.addEventListener('focusin', function (event) {
+    var target = event.target;
+    if (!target || !target.closest || !target.closest('#ahv-design-root footer') || !target.matches('a,button,input,select,textarea,summary,[tabindex]')) return;
+    // Let the browser's native focus scroll settle before measuring the remaining collision.
+    requestAnimationFrame(function () { requestAnimationFrame(function () {
+      if (document.activeElement !== target || !target.isConnected) return;
+      var headers = [];
+      document.querySelectorAll('#ahv-design-root header, [data-ahv-fh-sticky]').forEach(function (header) {
+        if (header.contains(target)) return;
+        var cs = getComputedStyle(header), r = header.getBoundingClientRect();
+        if (cs.display === 'none' || cs.visibility === 'hidden' || Number(cs.opacity) === 0 || r.width <= 0 || r.height <= 0 || r.bottom <= 0 || r.top >= innerHeight) return;
+        var pinned = false;
+        for (var n = header; n && n !== document.body; n = n.parentElement) {
+          var pos = getComputedStyle(n).position;
+          if (pos === 'fixed' || pos === 'sticky') { pinned = true; break; }
+        }
+        if (pinned) headers.push(r);
+      });
+      var delta = footerHeaderDelta(target.getBoundingClientRect(), headers);
+      if (delta) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
+    }); });
+  });
+})();
