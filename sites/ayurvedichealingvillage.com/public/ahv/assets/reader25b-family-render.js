@@ -36,7 +36,12 @@
         isNav: /context|menu|navigation/i.test(c.component),
         isSection: !/context|menu|navigation/i.test(c.component),
         navLabel: R.h1 + ' \u2014 related pages',
-        el: P.sourceBlocks(groupCards(c.blocks), 'y' + ci, guard)
+        el: P.sourceBlocks(groupCards(c.blocks), 'y' + ci, guard).map(el => {
+          // Festival article sections follow the page H1; retain the renderer's exact visual styles.
+          if (R.path !== '/festivals/' || c.component !== 'article' || !el) return el;
+          const tag = el.type === 'h3' ? 'h2' : el.type === 'h4' ? 'h3' : null;
+          return tag ? React.createElement(tag, { ...el.props, key: el.key }, el.props.children) : el;
+        })
       }))
     };
   }
