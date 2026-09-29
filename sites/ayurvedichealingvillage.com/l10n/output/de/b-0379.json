@@ -108,26 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_a1f4ff9346b920b40a68",
-   "sourceHash": "a1f4ff9346b920b40a68583a883d3aebf6cd34d61a122a8eac3f04bfac364c5c",
-   "text": "Ayurveda schenken – Geschenkgutscheine von Kairali",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical lock: 'Retreat' (resort/holiday connotation) and 'Wellness' framing replaced by 'Ayurveda schenken'; title condensed to ≤60 characters."
-   ]
-  },
-  {
-   "id": "t_3173f7f1886c9393b6c4",
-   "sourceHash": "3173f7f1886c9393b6c4d9cdb32a9f074e5b1b538469f486461e44af0bf5068d",
-   "text": "Schenken Sie Ayurveda: Gutscheine von Kairali für besondere Anlässe – für authentische ayurvedische Behandlungen und Erholung in unserem Haus.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical lock: 'wellness vouchers' rendered as 'Gutscheine'; 'healing & relaxation at our retreat' rendered as 'ayurvedische Behandlungen und Erholung in unserem Haus' (retreat avoided). Kept ≤155 characters."
-   ]
-  },
-  {
    "id": "t_e4d0150d5a532be27ddc",
    "sourceHash": "e4d0150d5a532be27ddcb1df8e0c2cd0d4c017858ae7f101944c74a4ae25ae6a",
    "text": "Geschenkgutscheine",
@@ -142,24 +122,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_356b4e43c3fb3f6e4a1b",
-   "sourceHash": "356b4e43c3fb3f6e4a1b8f8e2147ef46f2ad4eb4e525a3979d749f12eb200411",
-   "text": "Anruf/WhatsApp: +91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e526b4004c641664fe10",
-   "sourceHash": "e526b4004c641664fe106ba6e76df4a6ca670ba8c6ef87d73cf2e59b04de8922",
-   "text": "Verschenken Sie Gesundheit und Wohlbefinden mit den Geschenkgutscheinen von Kairali. Ob zum Geburtstag, zum Jahrestag oder als Firmengeschenk – mit diesen Gutscheinen ermöglichen Sie Freunden und Familie authentische ayurvedische Behandlungen und einen erholsamen Aufenthalt in unserem Healing Village.Für persönliche Unterstützung, exklusive Rabatte und individuell gestaltete Gutscheinoptionen wenden Sie sich gerne an unsere Gesundheits- und Ayurveda-Berater.E-Mail: [email protected]Anruf/WhatsApp: +91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Clinical lock: 'gift of wellness' rendered as 'Gesundheit und Wohlbefinden'. Source run-on joins (no spaces between sentences/labels) preserved as in source. '[email protected]' is an email-obfuscation placeholder kept verbatim — the real address should be verified (locked contact: info@kairali.com)."
-   ]
   },
   {
    "id": "t_754e25e283b8e733e465",

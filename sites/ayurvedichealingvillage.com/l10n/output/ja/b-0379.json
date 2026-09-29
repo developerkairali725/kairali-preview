@@ -108,26 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_a1f4ff9346b920b40a68",
-   "sourceHash": "a1f4ff9346b920b40a68583a883d3aebf6cd34d61a122a8eac3f04bfac364c5c",
-   "text": "Kairaliのギフト券 – アーユルヴェーダの健康を贈りませんか",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Retreat' (resort-type framing) omitted; 'Gift Wellness' rendered as gifting Ayurvedic health."
-   ]
-  },
-  {
-   "id": "t_3173f7f1886c9393b6c4",
-   "sourceHash": "3173f7f1886c9393b6c4d9cdb32a9f074e5b1b538469f486461e44af0bf5068d",
-   "text": "Kairaliのギフト券で、アーユルヴェーダを贈りませんか。特別な機会にふさわしく、当ヒーリングビレッジで本格的なアーユルヴェーダのトリートメントと心身の安らぎをお受けいただけます。",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' replaced with 'Healing Village' (ヒーリングビレッジ); 'healing & relaxation' rendered as authentic Ayurvedic treatment and rest, without cure claim."
-   ]
-  },
-  {
    "id": "t_e4d0150d5a532be27ddc",
    "sourceHash": "e4d0150d5a532be27ddcb1df8e0c2cd0d4c017858ae7f101944c74a4ae25ae6a",
    "text": "ギフト券",
@@ -142,24 +122,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_356b4e43c3fb3f6e4a1b",
-   "sourceHash": "356b4e43c3fb3f6e4a1b8f8e2147ef46f2ad4eb4e525a3979d749f12eb200411",
-   "text": "お電話/WhatsApp：+91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e526b4004c641664fe10",
-   "sourceHash": "e526b4004c641664fe106ba6e76df4a6ca670ba8c6ef87d73cf2e59b04de8922",
-   "text": "Kairaliのギフト券で、健やかさを大切な方と分かち合いませんか。お誕生日や記念日、法人向けのギフトに最適で、ご友人やご家族に、当ヒーリングビレッジでの本格的なアーユルヴェーダのトリートメントと心身がリフレッシュできる滞在をお受けいただけます。個別のご相談、特別割引、ギフト券のカスタマイズについては、当院の専任ヘルス＆アーユルヴェーダ・コンサルタントまでお気軽にお問い合わせください。メール：[email protected]お電話/WhatsApp：+91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source concatenates sentences and contact lines without spaces/line breaks; structure preserved. '[email protected]' is an email-obfuscation artifact kept verbatim — the actual address should be verified (locked public email is info@kairali.com). Phone +91-95551 56156 kept as source; not in locked-facts list, flag for verification."
-   ]
   },
   {
    "id": "t_754e25e283b8e733e465",

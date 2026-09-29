@@ -108,26 +108,6 @@
    "issues": []
   },
   {
-   "id": "t_a1f4ff9346b920b40a68",
-   "sourceHash": "a1f4ff9346b920b40a68583a883d3aebf6cd34d61a122a8eac3f04bfac364c5c",
-   "text": "Kairali 웰빙 선물 – 아유르베다 힐링 빌리지 기프트 바우처",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'Retreat' rendered as '힐링 빌리지' (Healing Village) to keep the clinical register and avoid resort-like framing."
-   ]
-  },
-  {
-   "id": "t_3173f7f1886c9393b6c4",
-   "sourceHash": "3173f7f1886c9393b6c4d9cdb32a9f074e5b1b538469f486461e44af0bf5068d",
-   "text": "Kairali 웰빙 바우처로 아유르베다를 선물하십시오. 특별한 날에 잘 어울리며, 저희 힐링 빌리지에서 정통 아유르베다 치료와 휴식을 경험하실 수 있습니다.",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "'retreat' rendered as '힐링 빌리지' (Healing Village); 'healing' rendered as '아유르베다 치료' (treatment) to keep the clinical register without implying a cure."
-   ]
-  },
-  {
    "id": "t_e4d0150d5a532be27ddc",
    "sourceHash": "e4d0150d5a532be27ddcb1df8e0c2cd0d4c017858ae7f101944c74a4ae25ae6a",
    "text": "기프트 바우처",
@@ -142,24 +122,6 @@
    "status": "translated",
    "unchangedReason": null,
    "issues": []
-  },
-  {
-   "id": "t_356b4e43c3fb3f6e4a1b",
-   "sourceHash": "356b4e43c3fb3f6e4a1b8f8e2147ef46f2ad4eb4e525a3979d749f12eb200411",
-   "text": "전화/WhatsApp: +91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": []
-  },
-  {
-   "id": "t_e526b4004c641664fe10",
-   "sourceHash": "e526b4004c641664fe106ba6e76df4a6ca670ba8c6ef87d73cf2e59b04de8922",
-   "text": "Kairali 기프트 바우처로 웰빙을 선물하십시오. 생일, 기념일 또는 기업 선물로 적합하며, 친구와 가족이 저희 힐링 빌리지에서 정통 아유르베다 치료를 받고 편안하게 머무를 수 있는 기회를 제공합니다. 맞춤형 안내, 특별 할인 및 맞춤형 바우처 옵션에 대해서는 전담 건강 및 아유르베다 상담사에게 언제든지 문의해 주십시오. 이메일: [email protected] 전화/WhatsApp: +91-95551 56156",
-   "status": "translated",
-   "unchangedReason": null,
-   "issues": [
-    "Source runs sentences and the contact lines together without spaces; spacing added between them. '[email protected]' is an email-obfuscation artifact in the source and was copied verbatim; the real address should be confirmed (locked public email is info@kairali.com). The phone +91-95551 56156 was copied as given; it is not one of the locked facts, so please verify it."
-   ]
   },
   {
    "id": "t_754e25e283b8e733e465",
