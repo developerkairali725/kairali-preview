@@ -14,14 +14,23 @@
 // Neither fix weakens the gate: a bare force push still blocks even when a
 // leased one sits beside it in the same command, and every real operation
 // (curl/wget/ssh/wp-cli) against the production surface still blocks.
-import { test } from "node:test";
+import { test, after } from "node:test";
+import { mkdtempSync, copyFileSync, writeFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const REPO = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
-const GUARD = join(REPO, "scripts/hooks/guard.sh");
+// Unit-test the real guard with a controlled pre-push boundary. The real
+// pre-push hook runs the build; running it inside this syntax test recursively
+// rebuilds the whole fleet and couples a flag test to unrelated content errors.
+const fixture = mkdtempSync(join(tmpdir(), "guard-unit-"));
+const GUARD = join(fixture, "guard.sh");
+copyFileSync(join(REPO, "scripts/hooks/guard.sh"), GUARD);
+writeFileSync(join(fixture, "pre-push.sh"), 'exit "${GUARD_UNIT_PREPUSH_STATUS:-0}"\n');
+after(() => rmSync(fixture, { recursive: true, force: true }));
 
 /** Fragments, because writing these literals here would trip the guard itself. */
 const F = "--" + "force";
@@ -31,9 +40,10 @@ const WPA = "wp" + "-admin";
 const WPC = "wp" + "-config";
 const XML = "/xml" + "rpc.php";
 
-function run(command) {
+function run(command, prepushStatus = 0) {
   const r = spawnSync("bash", [GUARD], {
     input: JSON.stringify({ tool_input: { command } }), encoding: "utf8",
+    env: { ...process.env, GUARD_UNIT_PREPUSH_STATUS: String(prepushStatus) },
   });
   return r.status;
 }
@@ -70,4 +80,9 @@ test("a local edit of the config file still blocks (gate 3)", () => {
 test("controls: an unrelated rule still fires, an ordinary command passes", () => {
   assert.equal(run("rm -rf /"), BLOCKED);
   assert.equal(run("ls -la"), ALLOWED);
+});
+
+
+test("a permitted push still blocks when its pre-push checks fail", () => {
+  assert.equal(run(`${GP}${FWL} origin codex/x`, 1), BLOCKED);
 });
