@@ -5,11 +5,11 @@ Task: WOPS-AHV-FINAL-DRAFT-20260924-001. Vikash: MID-16763 / SF-23-DID-16763.
 
 ## Source and return workflow
 
-Use kairali-digital/kairali-web-factory, branch codex/ahv-english-staging-20260915 (PR309). Fetch this baseline and create your own review branch. Do not replace this integrated project with the standalone ahv-lp project. Node >=22 and pnpm 11.13.1; from repository root run `pnpm install --frozen-lockfile`, then `AHV_STAGING=1 pnpm --filter ayurvedichealingvillage.com dev -- --port 4472`. No production credentials are required for layout work. Use the existing forms; actual backend receipt remains Deepu's verification.
+Use kairali-digital/kairali-web-factory, branch codex/ahv-english-staging-20260915 (PR309). Fetch this baseline and create your own review branch. Do not replace this integrated project with the standalone ahv-lp project. Node >=22 and pnpm 11.13.1; from repository root run `pnpm install --frozen-lockfile`, then `AHV_STAGING=1 pnpm --filter ayurvedichealingvillage.com dev -- --port 4472`. No production credentials are required for layout work. Use the existing forms; actual backend receipt remains Deepu's verification. <!-- Developer handoff, not a medical byline. banned-string-allow: deepu-name-conflation; developer-only handoff -->
 
 Primary site source: sites/ayurvedichealingvillage.com. Supplier pages: campaign-v110/pages; shared supplier components: campaign-v110/components. Native layouts and styles: app/(english)/_families and public/design. Do not edit generated .next output. Preserve approved content, rates, offer rules, metadata, forms, consent, Priya/WhatsApp and the shared footer.
 
-Return a scoped PR to this integration branch, or a git diff/ZIP containing only changed source/assets, with baseline commit, route list, desktop/mobile before-and-after screenshots, test results and remaining issues. No node_modules, .next, .vercel, .env or credentials. Never push main, deploy production, change DNS/Ads or merge Deepu's unreviewed work. Cody integrates the reviewed changes.
+Return a scoped PR to this integration branch, or a git diff/ZIP containing only changed source/assets, with baseline commit, route list, desktop/mobile before-and-after screenshots, test results and remaining issues. No node_modules, .next, .vercel, .env or credentials. Never push main, deploy production, change DNS/Ads or merge Deepu's unreviewed work. Cody integrates the reviewed changes. <!-- Developer handoff, not a medical byline. banned-string-allow: deepu-name-conflation; developer-only handoff -->
 
 ## Review order and acceptance
 

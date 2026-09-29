@@ -40,7 +40,7 @@ const SPEC_PATHS = {
   de: { consult: "/de/online-konsultation/", reach: "/de/anreise/", contact: "/de/kontakt/" },
   fr: { consult: "/fr/consultation-en-ligne/", reach: "/fr/comment-nous-rejoindre/", contact: "/fr/contact/" },
 };
-const EMAIL = "info@kairali.com", PRIYA = "919289838797", WRONG = "919289838777";
+const EMAIL = "info@kairali.com", PRIYA = "919289838797", WRONG = "919289838777"; // Negative regression assertion: the known-bad value must be absent. banned-string-allow: wrong-whatsapp-38777
 const TEST_DATA = { name: "QA verify - do not process", phone: "0000000000", email: "qa-verify@example.invalid", country: "Testland", concern: "QA verification only - do not process" };
 
 const checks = [];
@@ -171,7 +171,7 @@ for (const w of VIEWPORTS) {
     // locked facts
     const html = await pg.content();
     const digits = normDigits(html);
-    const f = { wrongPresent: digits.includes(WRONG), priyaPresent: digits.includes(PRIYA), emailPresent: html.includes(EMAIL), waLinks: (html.match(/wa\.me\/919289838797/g) || []).length, waWrongLinks: (html.match(/wa\.me\/919289838777/g) || []).length };
+    const f = { wrongPresent: digits.includes(WRONG), priyaPresent: digits.includes(PRIYA), emailPresent: html.includes(EMAIL), waLinks: (html.match(/wa\.me\/919289838797/g) || []).length, waWrongLinks: (html.match(/wa\.me\/919289838777/g) || []).length }; // Negative regression assertion: the known-bad value must be absent. banned-string-allow: wrong-whatsapp-38777
     const factsFail = f.wrongPresent || (name === "contact" && (!f.priyaPresent || !f.emailPresent));
     add("facts", tag, factsFail ? "FAIL" : "PASS", { ...f, required: name === "contact" ? "contact page: 919289838797 AND info@kairali.com present, …38777 absent" : "…38777 absent (presence of the others recorded)" });
 

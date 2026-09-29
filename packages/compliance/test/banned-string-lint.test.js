@@ -237,3 +237,31 @@ test("AHV CV privacy notices permit career email while general contact copy stil
   assert.equal(violation("Contact career@kairali.com", article), true);
   assert.equal(violation("career@kairali.com", "sites/example.com/privacy-policy.html"), true);
 });
+
+// AHV localization batches retain the source unit's approved HR context.
+const ahvUnits = JSON.parse(readFileSync(resolve(FIXTURES, '../../../sites/ayurvedichealingvillage.com/l10n/source/units.json'), 'utf8')).units;
+const hrSource = ahvUnits.find(u => u.source.includes('Recruitment requests go to career@kairali.com.'));
+const hrTranslation = { id: hrSource.id, sourceHash: hrSource.sourceHash, text: 'Les demandes de recrutement : career@kairali.com.' };
+const translatedFile = 'sites/ayurvedichealingvillage.com/l10n/output/fr/b-test.json';
+const scanTranslation = units => errors(scanText(JSON.stringify({ units }, null, 2), { file: translatedFile, kind: 'plain' }));
+
+test('localized HR address is allowed only with a matching approved source unit', () => {
+  assert.equal(scanTranslation([hrTranslation]).length, 0);
+  assert(ids(scanTranslation([{ ...hrTranslation, sourceHash: 'stale' }])).includes('wrong-contact-email'));
+  assert(ids(scanTranslation([{ ...hrTranslation, id: 'unknown' }])).includes('wrong-contact-email'));
+});
+
+test('valid HR unit does not exempt other content or extra addresses in its batch', () => {
+  assert(ids(scanTranslation([hrTranslation, { id: 'other', text: 'Contact career@kairali.com.' }])).includes('wrong-contact-email'));
+  assert(ids(scanTranslation([{ ...hrTranslation, text: hrTranslation.text + ' career@kairali.com' }])).includes('wrong-contact-email'));
+  assert(ids(scanTranslation([{ ...hrTranslation, text: hrTranslation.text + ' sales@kairali.com' }])).includes('wrong-contact-email'));
+  assert(ids(errors(scanText(JSON.stringify({units:[hrTranslation]}), {file:'sites/ayurvedichealingvillage.com/contact.json',kind:'plain'}))).includes('wrong-contact-email'));
+});
+
+test('localization year placeholders pass while typed years remain failures', () => {
+  const scan = (text, file = translatedFile) => ids(errors(scanText(text, {file,kind:'plain'})));
+  assert(!scan('© 1908 — [[VAR_1]] Kairali').includes('group-attached-1908'));
+  assert(scan('© 1908 — 2026 Kairali').includes('group-attached-1908'));
+  assert(scan('© 1908 — [[VAR_1]] Kairali; © 2026').includes('group-attached-1908'));
+  assert(scan('© 1908 — [[VAR_1]] Kairali', 'sites/ayurvedichealingvillage.com/unbound.html').includes('group-attached-1908'));
+});

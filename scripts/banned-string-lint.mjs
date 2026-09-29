@@ -84,6 +84,37 @@ export const IGNORED_DIRS = new Set([
  *  no comment syntax and therefore no escape hatch: fix the copy. */
 const ALLOW_RE = /banned-string-allow:\s*([a-z0-9,\s-]+)/i;
 
+// Localization inherits the source unit's approved surface, not the batch filename.
+// Bind each permitted string to its source hash and original context; never exempt
+// an entire translation file or the other strings on the same line.
+let ahvSourceUnits;
+function localizedCareerRanges(text, file) {
+  if (!/^sites\/ayurvedichealingvillage\.com\/l10n\/(?:source\/units\.json|output\/[^/]+\/[^/]+\.json)$/.test(file ?? "")) return [];
+  if (!text.includes("career@kairali.com")) return [];
+  try {
+    ahvSourceUnits ??= new Map(JSON.parse(readFileSync(join(REPO_ROOT, "sites/ayurvedichealingvillage.com/l10n/source/units.json"), "utf8")).units.map(u => [u.id, u]));
+    const units = JSON.parse(text).units;
+    if (!Array.isArray(units)) return [];
+    const ranges = [];
+    for (const unit of units) {
+      const source = ahvSourceUnits.get(unit.id);
+      const value = unit.text ?? unit.source;
+      if (!source || unit.sourceHash !== source.sourceHash || typeof value !== "string" || !value.includes("career@kairali.com")) continue;
+      const sourceCount = source.source.split("career@kairali.com").length - 1;
+      if (!sourceCount || value.split("career@kairali.com").length - 1 > sourceCount) continue;
+      if (!source.files?.length || !source.files.every(p =>
+        p === "public/ahv/assets/policy-family-data.js" ||
+        (p === "public/ahv/assets/article-family-data.js" && source.source.includes("Request deletion at career@kairali.com; the target is 30 days, with any documented exception explained.")) ||
+        /(?:job|career|recruit|apply|vacanc)/i.test(p))) continue;
+      // JSON encoding may use Unicode escapes, so decode values before comparing.
+      for (const m of text.matchAll(/"(?:source|text)"\s*:\s*("(?:\\.|[^"\\])*")/g)) {
+        if (JSON.parse(m[1]) === value) ranges.push([m.index, m.index + m[0].length]);
+      }
+    }
+    return ranges;
+  } catch { return []; } // malformed or unbound localization never gains an exemption
+}
+
 // ---------------------------------------------------------------------------
 // Comment stripping — the load-bearing discrimination.
 // ---------------------------------------------------------------------------
@@ -420,7 +451,8 @@ export const RULES = [
         const articleCvDeletion = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/public\/ahv\/assets\/article-family-data\.js$/.test(surface)
           && ctx.text.slice(Math.max(0, m.index - 20), m.index).endsWith("Request deletion at ")
           && ctx.text.slice(m.index + m[0].length).startsWith("; the target is 30 days, with any documented exception explained.");
-        if (addr === "career@kairali.com" && (careersScoped || articleCvDeletion)) return "";
+        const localizedCareer = ctx.localizedCareerRanges?.some(([start, end]) => m.index >= start && m.index < end);
+        if (addr === "career@kairali.com" && (careersScoped || articleCvDeletion || localizedCareer)) return "";
         if (addr === "career@kairali.com") {
           return `"${m[0]}" — permitted on careers/apply routes only (D-20260915-06); this file is not one. The public contact email everywhere else is ${CONTACT_EMAIL}.`;
         }
@@ -514,7 +546,9 @@ export const RULES = [
         //     puts a whole page on one line). Only `data-dc-computed` is trusted:
         //     bare `class="sc-interp"` also carries nav labels, so trusting it
         //     would blind the rule to a typed year inside any interpolation span.
-        const line_ = line.replace(/<span\b[^>]*\bdata-dc-computed\b[^>]*>\s*(?:19|20)\d{2}\s*<\/span>/gi, "{…}");
+        const localizedLine = /^sites\/ayurvedichealingvillage\.com\/l10n\/(?:source|output)\//.test(ctx.file ?? "")
+          ? line.replace(/\[\[VAR_\d+\]\]/g, "{…}") : line;
+        const line_ = localizedLine.replace(/<span\b[^>]*\bdata-dc-computed\b[^>]*>\s*(?:19|20)\d{2}\s*<\/span>/gi, "{…}");
         if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line_) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line_)) {
           hits.push({ line: i + 1, message: `Typed copyright year. Rolling values are computed, never typed (D-ROLLING-NUMBER): © {new Date().getFullYear()} …` });
         }
@@ -662,7 +696,7 @@ export function scanText(text, { file = "<text>", kind, rules = RULES }) {
     return lo + 1;
   };
 
-  const ctx = { text: scanned, lines, lineAt, file };
+  const ctx = { text: scanned, lines, lineAt, file, localizedCareerRanges: localizedCareerRanges(scanned, file) };
   const applies = kind === "code" ? "code" : "content";
 
   /** @type {Finding[]} */
