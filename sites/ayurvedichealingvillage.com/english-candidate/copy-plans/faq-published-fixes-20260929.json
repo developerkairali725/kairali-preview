@@ -1,0 +1,40 @@
+{
+ "note": "Published FAQ corrections from the B-content medical review (lanes/B-content/medical-drafts.json, sources NHS / Mayo Clinic / American Migraine Foundation / NCCIH, 28 Sep owner medical-copy authority): PUB-FIX-03 makes the sinus/migraine answer answer its question; PUB-FIX-02 adds the NHS alcohol-withdrawal safety line; PUB-FIX-04 adds the NHS sleeping-tablet / sleep-apnoea line. The /faqs-downloads/ dataset's faq tree (rendered by article-family-render.js) still carried the pre-review q-15 ('guests', 'normal signs that the body is eliminating toxins') and q-08 texts the served view already corrected; it is aligned to the view. Dr. Deepu John reviews before production (HARD GATE 7).",
+ "entries": [
+  {
+   "id": "pub-fix-03",
+   "auto": true,
+   "min": 2,
+   "old": "Share your diagnosis, headache history and existing treatment. Ask whether the programme fits that diagnosis; new or changing headache symptoms need medical assessment rather than self-diagnosis.",
+   "new": "Headaches felt around the sinuses are often migraine rather than sinusitis. Nausea, sensitivity to light and attacks lasting hours rather than days point towards migraine. Share your diagnosis, headache history and existing treatment so the physician can discuss whether the programme fits; new or changing headaches need medical assessment rather than self-diagnosis."
+  },
+  {
+   "id": "pub-fix-02",
+   "auto": true,
+   "min": 2,
+   "old": "Yes. Patients undergoing withdrawal are also accepted, and withdrawal is managed on-site. Please discuss your individual admission needs with the hospital team.",
+   "new": "Yes. Patients undergoing withdrawal are also accepted, and withdrawal is managed on-site. Please discuss your individual admission needs with the hospital team. If you are dependent on alcohol, do not stop drinking suddenly before admission without medical advice, and seek emergency care for severe withdrawal symptoms such as confusion, hallucinations or seizures."
+  },
+  {
+   "id": "pub-fix-04",
+   "auto": true,
+   "min": 2,
+   "old": "Tell the physician about any sleep diagnosis, prescribed medicines and equipment such as CPAP. Discuss how the proposed programme fits alongside your existing sleep care.",
+   "new": "Tell the physician about any sleep diagnosis, prescribed medicines and equipment such as CPAP. Discuss how the proposed programme fits alongside your existing sleep care. Do not start or stop sleeping tablets without medical advice; sleeping tablets can make sleep apnoea worse."
+  },
+  {
+   "id": "faq-dataset-q15",
+   "file": "public/ahv/assets/article-family-data.js",
+   "count": 2,
+   "old": "Some guests may experience mild detoxification symptoms during the first few days, such as headaches, fatigue, or changes in digestion. These are normal signs that the body is eliminating toxins. Our medical team monitors your progress closely and makes necessary adjustments to ensure your comfort throughout the process.",
+   "new": "Some patients notice mild, temporary effects during the first few days, such as headaches, tiredness or changes in digestion. Tell your physician or nurse about any new or worsening symptom; they monitor your progress closely and adjust your plan where needed."
+  },
+  {
+   "id": "faq-dataset-q08",
+   "file": "public/ahv/assets/article-family-data.js",
+   "count": 2,
+   "old": "Ayurveda is a 5,000-year-old holistic healing system that originated in India. It focuses on achieving a balance between body, mind, and spirit through personalized therapies, nutrition, herbal treatments, and lifestyle practices. By addressing the root causes of imbalance rather than just symptoms, Ayurveda offers sustainable solutions for overall well-being and prevention of disease.",
+   "new": "Ayurveda is a classical Indian system of medicine whose texts date back over two thousand years. It focuses on balance between body, mind and spirit through personalised therapies, nutrition, herbal treatments and lifestyle practices, and aims to address the underlying causes of imbalance rather than only symptoms."
+  }
+ ]
+}
