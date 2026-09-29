@@ -8,9 +8,13 @@
    preventDefaults every non-search form; this only adds the real behaviour
    on top, exactly like every other wired variant does for itself. */
 (function () {
-  if (window.__ahvOpdBound) return;
+  // Released OPD equivalents from l10n/routes.json; other legacy forms stay inert.
+  function opdLanguage(pathname) {
+    var match = /^\/(?:(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)\/)?walk-in-ayurveda-treatment\/?$/.exec(pathname);
+    return match ? (match[1] === 'zh' ? 'zh-Hans' : match[1] || 'en') : null;
+  }
+  if (!opdLanguage(window.location.pathname) || window.__ahvOpdBound) return;
   window.__ahvOpdBound = true;
-  if (window.location.pathname !== '/walk-in-ayurveda-treatment/') return;
 
   var submissionToken = null;
 
@@ -22,6 +26,8 @@
   }, true);
 
   document.addEventListener('submit', async function (event) {
+    var locale = opdLanguage(window.location.pathname);
+    if (!locale) return;
     var form = event.target;
     if (!form || !form.matches || !form.matches('form')) return;
     if (!form.elements.namedItem('fname') || !form.elements.namedItem('symptoms')) return;
@@ -62,7 +68,7 @@
         body: JSON.stringify({
           form: 'opd',
           submissionToken: submissionToken,
-          site_language: document.documentElement.lang || 'en',
+          site_language: locale,
           lead_source_url: window.location.href,
           referrer: document.referrer,
           utm_source: fd.get('utm_source') || query.get('utm_source') || '',

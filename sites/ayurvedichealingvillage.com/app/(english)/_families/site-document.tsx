@@ -92,7 +92,7 @@ export function SiteDocument({
         {/* Form delivery for the two form kinds with no view-logic submit handler: the walk-in (OPD)
             intake and the legacy campaign/landing routes. Both are inert elsewhere, post to /api/lead/
             and show receipt only after the server confirms storage (a truthful "not connected" otherwise). */}
-        <script defer src="/design/opd-form-submit.js" />
+        <script defer src={`${designBase}opd-form-submit.js`} />
         <script defer src="/design/landing-page-form-submit.js" />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's

@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 import { jsUnits, htmlUnits, norm, meaningful, isInternalDatum } from "./lib.mjs";
 import { rel } from "./sources-lite.mjs";
 
-export const RUNTIME_SCRIPTS = ["chrome.js", "consistency.js", "film-player.js", "newsletter.js", "search.js", "section-nav.js"];
+export const RUNTIME_SCRIPTS = ["chrome.js", "consistency.js", "film-player.js", "newsletter.js", "opd-form-submit.js", "search.js", "section-nav.js"];
 const ALLOW = JSON.parse(fs.readFileSync(rel("l10n/source/runtime-allowlist.json"), "utf8"));
 
 const markupish = (s) => /^[\s"'>=]|[<>]|="|\\"|&\w+=/.test(s) || !meaningful(s);
