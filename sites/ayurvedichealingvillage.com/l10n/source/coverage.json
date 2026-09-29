@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "7f7127218c9c5bd00723df88dc258273501b3b527a7d6dce653ea0684a47128c",
+ "sourceSetHash": "176063301134397b847ded608555d81e009a988104076f14e91b5d75e644a104",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -206,6 +206,18 @@
    "status": "covered"
   },
   {
+   "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-desktop.json",
+   "sha256": "bc10f585a132c55265db7c7486b619188e37116a78acd605393406f851bbfb33",
+   "units": 113,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-mobile.json",
+   "sha256": "32de31da7c869426b8a0d8b5e07b4e0c5a2fd34a6c752ae263d1cd010a4e49a9",
+   "units": 119,
+   "status": "covered"
+  },
+  {
    "file": "public/ahv/views/ahv-page-cancer-supportive-care-desktop.json",
    "sha256": "2a844c042eb64065c620ffd108b11bad5c5d15fb0b6a70793da36915eae3249c",
    "units": 105,
@@ -375,14 +387,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-enquiry-desktop.json",
-   "sha256": "3cb7ac4b7897f49a6a306118db9f4e6ec7e503186b37ae1e19fef226ddcf285a",
-   "units": 98,
+   "sha256": "774166b7f2ba455dbd542934bb67172a4a441efe9fbbc56810f08a9b901d49d2",
+   "units": 112,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-enquiry-mobile.json",
-   "sha256": "506e60a102123cf75bfa3854d426f9e13c2e8adfadc1cfd01424ed91868be110",
-   "units": 98,
+   "sha256": "3e431bb1dc9f92bb7a11ad60bb996b2b16ed45ba11f1ea64c962508ece62a338",
+   "units": 112,
    "status": "covered"
   },
   {
@@ -987,13 +999,13 @@
   },
   {
    "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-desktop.json",
-   "sha256": "008248bef13d1c8e2a00ee3051fe56c9ee2d853e84e2a5cbf47155801a6eacb1",
+   "sha256": "39d78c3f8b8666c5c83ab8b5ae4c3839d9ef98dc7075e211394b79f18518083f",
    "units": 161,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-offers-deals-and-gift-vouchers-mobile.json",
-   "sha256": "361361bc6cbf30e3f7611be6f8e87cb36d783f1616a6d400ee75b7cb20a48883",
+   "sha256": "45c687e7cd100a8e1baab310470a93edce3c1cd86163fb9a47c839992f896adf",
    "units": 148,
    "status": "covered"
   },
@@ -1130,6 +1142,12 @@
    "status": "covered"
   },
   {
+   "file": "public/ahv/assets/campaign-family-render.js",
+   "sha256": "dd22a47ed8d297af68a8e519a9db8464ee6c9ee11d9883936c41f4c192bfe094",
+   "units": 19,
+   "status": "covered"
+  },
+  {
    "file": "public/ahv/assets/classic-villa-data.js",
    "sha256": "cf5a0cd0ad3d943d882f839d648b345f823739e163bafe9498df16a514a01da7",
    "units": 167,
@@ -1149,7 +1167,7 @@
   },
   {
    "file": "public/ahv/assets/commercial-family-data.js",
-   "sha256": "80bd40fb56fe056bd7d4e469ac915de9fe85f12940169c6442cc7e07211187d1",
+   "sha256": "d71e58691a0f4305f5e177d876e1fe4ff495243794a451a5d1bfaa8458a28988",
    "units": 780,
    "status": "covered"
   },
@@ -1209,7 +1227,7 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "13deb8f07e30ebdef3cd0e35c69e5283cd8b73df6bf21547216ed1ff41f3ab6b",
+   "sha256": "c289aba890555fb49620dd3ad8aad92c8968f2f38740ea2b5d395cf4c970c70f",
    "units": 2380,
    "status": "covered"
   },
@@ -1310,6 +1328,12 @@
    "status": "covered"
   },
   {
+   "file": "public/ahv/assets/partner-air-india-data.js",
+   "sha256": "9e8ef3dad4ab0918892ca2d0ae7178d4b7ce5cbc41f64da593dcbdef3ade2fcd",
+   "units": 179,
+   "status": "covered"
+  },
+  {
    "file": "public/ahv/assets/past-retreats-data.js",
    "sha256": "739045de6c9dda7d3c8b22216af9828eed074d17b9e0bbd0f0d84db63666cab1",
    "units": 69,
@@ -1383,8 +1407,8 @@
   },
   {
    "file": "public/ahv/assets/seven-informational-data.js",
-   "sha256": "cc298483c5f86c479e4d9c8601ea451848dd06e42a3f867ee665729c29ae4927",
-   "units": 683,
+   "sha256": "38fa4e4fedbf130737a1535be9e5d04798a67e47070e96b41fa063a0114349fb",
+   "units": 675,
    "status": "covered"
   },
   {
@@ -1461,7 +1485,7 @@
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "7f2331cd695b2e4b02af005f3203b75d511476a4c53698750e4d1878f75acfaa",
+   "sha256": "f5c5796f0b1c548fad7da3c350d564b375b43b575babed5becddc4cc5f07be2b",
    "units": 13,
    "status": "covered (curated allowlist)"
   },
