@@ -91,3 +91,21 @@ for (const view of ["home-hi-fi-v4", "home-mobile"]) {
   fs.writeFileSync(f, ind ? JSON.stringify(v, null, ind) + (raw.endsWith("\n") ? "\n" : "") : JSON.stringify(v));
   console.log(view, "patched");
 }
+
+// Stage 2 (29 Sep 2026, VERIFY hosted-rates-exact): the phone cards still printed a static
+// "from · $… · €…" line under the computed price, so with USD or EUR selected it repeated the primary currency
+// (and the DE/FR/AR snapshots showed it). It now renders the same computed {{ rate.<card>Alt }} line as desktop:
+// the two currencies other than the selected one. Idempotent; each static line is matched by its approved values.
+{
+  const f = "public/ahv/views/home-mobile.json", raw = fs.readFileSync(f, "utf8"), v = JSON.parse(raw);
+  let t = v.template, n = 0;
+  for (const k of ["deluxe", "classic", "royal", "suite"]) {
+    const usd = rates.USD.card[k].toLocaleString("en-US"), eur = rates.EUR.card[k].toLocaleString("en-US");
+    const line = `>from · $${usd}* · €${eur}*</div>`;
+    if (t.includes(`>{{ rate.${k}Alt }}</div>`)) continue;
+    if (t.split(line).length !== 2) throw new Error(`home-mobile: static 'from' line for ${k} not found exactly once`);
+    t = t.replace(line, `>{{ rate.${k}Alt }}</div>`); n++;
+  }
+  if (n) { v.template = t; const ind = raw.match(/^\{\n( +)/)?.[1].length; fs.writeFileSync(f, ind ? JSON.stringify(v, null, ind) + (raw.endsWith("\n") ? "\n" : "") : JSON.stringify(v)); }
+  console.log("home-mobile stage 2:", n ? `${n} card 'from' lines now computed` : "already");
+}
