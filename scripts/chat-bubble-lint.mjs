@@ -33,6 +33,8 @@
  * exemption: a Map entry with the ruling as its paper trail, printed every
  * run — never a silent skip.
  *
+ * AHV campaigns retain the main-site chat/footer by the owner’s 29 Sep 2026
+ * instruction (WOPS-AHV-FINAL-DRAFT-20260924-001). Other historical
  * /lp/ landing pages are OUT of scope by law — single-CTA rule, no chat
  * widget competes with the one conversion goal (gates/registry.yaml:
  * chat-bubble-present → landing: n_a; same ruling as chatbase-entity-bot).
@@ -50,6 +52,7 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
+import { stripCodeComments } from "./banned-string-lint.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PKG = "@kairali/chat";
@@ -70,6 +73,7 @@ export const CHAT_EXEMPT = new Map([
  * @param {string} site — label for messages
  */
 export function checkLayoutSource(src, site) {
+  src = stripCodeComments(src);
   const v = [];
   if (!src.includes(`from "${PKG}"`)) {
     v.push(`${site}: layout does not import from "${PKG}" — the chat bubble is mandatory fleet-wide (D-20260718-05) and always the ONE shared component, never a local copy`);
@@ -85,6 +89,25 @@ export function checkLayoutSource(src, site) {
     v.push(`${site}: <ChatbaseLoader/> appears BEFORE <ConsentScripts/> — denied-before-loaders order regressed (pilot security-audit contract)`);
   }
   return v;
+}
+
+/** Follow only unconditional document delegation, never an unused import.
+ * The actual document must still import/render chat after consent. */
+export function documentLayoutSource(file, read = p => readFileSync(p, "utf8"), seen = new Set()) {
+  if (seen.has(file) || seen.size >= 8) throw new Error(`cyclic document layout: ${file}`);
+  seen.add(file);
+  const src = stripCodeComments(read(file));
+  const wrapper = src.match(/return\s+\(?\s*<([A-Z]\w*)\b[^>]*>\s*\{children\}\s*<\/\1>\s*\)?\s*;?\s*}/);
+  if (!wrapper) return src;
+  const name = wrapper[1];
+  const imported = src.match(new RegExp(`import\\s+(?:${name}|\\{\\s*${name}\\s*\\})\\s+from\\s+["']([^"']+)["']`));
+  if (!imported?.[1].startsWith(".")) return src;
+  const base = resolve(dirname(file), imported[1]);
+  for (const target of [base, `${base}.tsx`, `${base}.ts`, join(base, "index.tsx")]) {
+    try { read(target); } catch { continue; }
+    return documentLayoutSource(target, read, seen);
+  }
+  throw new Error(`unresolved document layout: ${imported[1]} from ${file}`);
 }
 
 /**
@@ -191,7 +214,7 @@ export function main(argv = []) {
     // every route the other root serves.
     for (const r of roots) {
       const label = roots.length === 1 ? key : `${key} [${relative(join(sitesDir, name), r)}]`;
-      violations.push(...checkLayoutSource(readFileSync(r, "utf8"), label));
+      violations.push(...checkLayoutSource(documentLayoutSource(r), label));
     }
 
     const pkgPath = join(sitesDir, name, "package.json");

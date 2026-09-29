@@ -13,7 +13,7 @@ import { join } from "node:path";
 
 import {
   PKG, PROBE_BAD_ORDER, PROBE_GOOD, PROBE_MISSING, REPO_ROOT,
-  checkLayoutSource, fleetSites, main, rootLayouts, runControlProbes,
+  documentLayoutSource, checkLayoutSource, fleetSites, main, rootLayouts, runControlProbes,
 } from "../chat-bubble-lint.mjs";
 import { EXEMPT } from "../factory-matrix-lint.mjs";
 
@@ -108,5 +108,23 @@ test("the AHV English root really does render the bubble, consent-first", () => 
   const english = rootLayouts(join(REPO_ROOT, "sites", "ayurvedichealingvillage.com"))
     .find((f) => f.includes("(english)"));
   assert.ok(english, "no (english) root layout found");
-  assert.deepEqual(checkLayoutSource(readFileSync(english, "utf8"), "ahv-english"), []);
+  assert.deepEqual(checkLayoutSource(documentLayoutSource(english), "ahv-english"), []);
+});
+
+
+test("document delegation follows the rendered wrapper and still rejects broken documents", () => {
+  const file = "/fixture/layout.tsx", target = "/fixture/Document.tsx";
+  const wrapper = 'import Document from "./Document"; export default function L({children}) { return <Document>{children}</Document>; }';
+  const read = document => p => { if (p === file) return wrapper; if (p === target) return document; throw new Error("missing"); };
+  assert.deepEqual(checkLayoutSource(documentLayoutSource(file, read(PROBE_GOOD)), "test"), []);
+  assert(checkLayoutSource(documentLayoutSource(file, read(PROBE_MISSING)), "test").length > 0);
+  assert(checkLayoutSource(documentLayoutSource(file, read(PROBE_BAD_ORDER)), "test").some(x => x.includes("denied-before-loaders")));
+  const unused = 'import Document from "./Document"; export default function L({children}) { return <html>{children}</html>; }';
+  assert(checkLayoutSource(documentLayoutSource(file, p => p === file ? unused : PROBE_GOOD), "test").length > 0);
+});
+
+test("all AHV delegated roots contain the real consent and chat implementation", () => {
+  for (const file of rootLayouts(join(REPO_ROOT, "sites/ayurvedichealingvillage.com"))) {
+    assert.deepEqual(checkLayoutSource(documentLayoutSource(file), file), []);
+  }
 });
