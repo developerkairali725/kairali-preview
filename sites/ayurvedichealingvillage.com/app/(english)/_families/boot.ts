@@ -1079,13 +1079,13 @@ export const BOOT_SCRIPT = `
   // of the table and collapse the rows.
   //
   // The prop default in the payload is the primary binding; this is the
-  // belt-and-braces re-assert. It RE-APPLIES on a short schedule rather than
-  // firing once, because __dcSetProps becomes callable in the same tick the
-  // runtime picks its root name, and a single early call could land on the
-  // pre-boot name. Re-asserting is idempotent: setProps replaces the override
-  // with the same value and bumps the registry only when React re-renders.
+  // readiness retry: the runtime can expose a temporary root name before boot.
+  // Bind once per observed root. setProps unconditionally bumps the registry,
+  // so repeating identical props forced forty full-page React renders.
+  // Continue watching for the final name without re-rendering an unchanged root.
   var pendingTemplate = null;
   var templatePushed = false;
+  var boundRouteName = null;
 
   // A slot upgrades when image-slot.js runs, which is AFTER its element is in
   // the DOM, so the MutationObserver above can see the node before it has a
@@ -1116,7 +1116,10 @@ export const BOOT_SCRIPT = `
         }
       }
       try {
-        window.__dcSetProps(name, { route: cfg.path });
+        if (name !== boundRouteName) {
+          window.__dcSetProps(name, { route: cfg.path });
+          boundRouteName = name;
+        }
       } catch (e) { /* a view without a route prop simply ignores it */ }
       scheduleHead();
     }
