@@ -71,6 +71,8 @@ const REDIRECT_MAP = JSON.parse(
 ) as RedirectMap;
 
 const nextConfig: NextConfig = {
+  // Keep dependency tracing inside this monorepo on Windows and macOS.
+  outputFileTracingRoot: join(process.cwd(), "../.."),
   // Static media is served from Vercel's static output, not read by page functions.
   // Keep JSON/JS datasets and SSR snapshots in the trace for dynamic rendering.
   outputFileTracingExcludes: {
