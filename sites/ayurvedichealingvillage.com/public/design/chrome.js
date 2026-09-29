@@ -304,13 +304,7 @@
     });
     // the homepage's own cookie notice sits above the bar the same way #ahv-consent does (chrome.css)
     // (its privacy link carries the locale's own slug on locale pages, read from the same path map)
-    var privLocal = lp && (lp["/new-privacy-policy/"] || lp["/privacy-policy/"]);
-    var fixed = root.querySelectorAll('[style*="position: fixed"], [style*="position:fixed"]');
-    for (var k = 0; k < fixed.length; k++) {
-      var n = fixed[k];
-      if (n.hasAttribute("data-ahv-cta-notice") || n.closest("header") || n.querySelectorAll("button").length < 2) continue;
-      if (n.querySelector('a[href*="privacy"]') || (privLocal && n.querySelector('a[href$="' + privLocal + '"]'))) n.setAttribute("data-ahv-cta-notice", "");
-    }
+    markDesignNotices();
     var hgt = Math.round(bar.getBoundingClientRect().height);
     if (hgt) html.style.setProperty("--ahv-cta-bar-h", hgt + "px"); else html.style.removeProperty("--ahv-cta-bar-h");
   }
@@ -450,16 +444,52 @@
   // EF-25 (owner, 26 Sep 2026): while the cookie notice is on screen the WhatsApp / chat controls
   // sit above it instead of covering its buttons (seen at 390px over "Accept All"). Presentation
   // only — the notice, its choices, storage and signals are untouched.
+  // The homepage view renders its own cookie notice (a fixed box with two buttons and a privacy link) instead of
+  // #ahv-consent; mark it so the bar offset (chrome.css) and the page-end clearance below treat it the same way.
+  // Its privacy link carries the locale's own slug on locale pages, read from the same path map.
+  function markDesignNotices() {
+    var root = document.getElementById('ahv-design-root');
+    if (!root) return;
+    var lp = window.AHV_LOCAL_PATHS || null;
+    var privLocal = lp && (lp["/new-privacy-policy/"] || lp["/privacy-policy/"]);
+    var fixed = root.querySelectorAll('[style*="position: fixed"], [style*="position:fixed"]');
+    for (var k = 0; k < fixed.length; k++) {
+      var n = fixed[k];
+      if (n.hasAttribute("data-ahv-cta-notice") || n.closest("header") || n.querySelectorAll("button").length < 2) continue;
+      if (n.querySelector('a[href*="privacy"]') || (privLocal && n.querySelector('a[href$="' + privLocal + '"]'))) n.setAttribute("data-ahv-cta-notice", "");
+    }
+  }
+  function pendingNotice() {
+    var list = [document.getElementById('ahv-consent')].concat([].slice.call(document.querySelectorAll('[data-ahv-cta-notice]')));
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i];
+      if (!n) continue;
+      var r = n.getBoundingClientRect();
+      if (r.height > 0 && r.top < window.innerHeight) return n;
+    }
+    return null;
+  }
   function liftContacts() {
+    markDesignNotices();
+    var n = pendingNotice(), off = 0;
+    // distance from the notice's top edge to the viewport bottom: includes a floating notice's own bottom offset
+    if (n) off = Math.max(0, Math.round(window.innerHeight - n.getBoundingClientRect().top + 12));
     var c = document.getElementById('ahv-contact-controls');
-    if (!c) return;
-    var n = document.getElementById('ahv-consent'), off = 0;
-    if (n) { var r = n.getBoundingClientRect(); if (r.height > 0 && r.top < window.innerHeight) off = Math.max(0, Math.round(window.innerHeight - r.top + 12)); }
-    if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom');
-    // page-end clearance for the pending notice (chrome.css html[data-ahv-consent-open]); presentation only
+    if (c) { if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom'); }
+    // page-end clearance for the pending notice (chrome.css html[data-ahv-consent-open]) and matching
+    // scroll-padding so keyboard focus is never scrolled under it; presentation only
     var root = document.documentElement;
-    if (off) { root.setAttribute('data-ahv-consent-open', ''); root.style.setProperty('--ahv-consent-h', Math.round(n.getBoundingClientRect().height + 16) + 'px'); }
-    else if (root.hasAttribute('data-ahv-consent-open')) { root.removeAttribute('data-ahv-consent-open'); root.style.removeProperty('--ahv-consent-h'); }
+    // focus clearance adds the WhatsApp / chat controls, which sit just above the notice while it is pending
+    var clear = off && c ? off + Math.round(c.getBoundingClientRect().height) + 12 : off + 8;
+    if (off) { root.setAttribute('data-ahv-consent-open', ''); root.style.setProperty('--ahv-consent-h', off + 'px'); root.style.setProperty('--ahv-focus-clear', clear + 'px'); }
+    else if (root.hasAttribute('data-ahv-consent-open')) { root.removeAttribute('data-ahv-consent-open'); root.style.removeProperty('--ahv-consent-h'); root.style.removeProperty('--ahv-focus-clear'); }
+    // desktop page-end clearance (chrome.css --ahv-page-clear): whichever reaches higher, the pending notice (with the
+    // controls lifted above it) or the floating WhatsApp / chat controls alone, so the footer's last row can scroll
+    // clear of both. In RTL that row starts on the right, under the controls (VERIFY footer-reachability, /ar/ 1440px)
+    var cr = c ? c.getBoundingClientRect() : null;
+    var ctrl = cr && cr.height ? Math.max(0, Math.round(window.innerHeight - cr.top + 12)) : 0;
+    var page = Math.max(off ? clear : 0, ctrl);
+    if (page) root.style.setProperty('--ahv-page-clear', page + 'px'); else root.style.removeProperty('--ahv-page-clear');
   }
   window.addEventListener('resize', liftContacts);
   // EF-25 (owner, 26 Sep 2026: the cookie notice must not obscure navigation): the homepage's own phone
@@ -491,7 +521,7 @@
     for (var k = 0; k < fixed.length; k++) {
       var n = fixed[k];
       // the privacy link carries the locale's own slug (e.g. /de/datenschutzerklarung/), read from the locale path map
-      var lp = window.AHV_LOCAL_PATHS && window.AHV_LOCAL_PATHS['/privacy-policy/'];
+      var lp = window.AHV_LOCAL_PATHS && (window.AHV_LOCAL_PATHS['/new-privacy-policy/'] || window.AHV_LOCAL_PATHS['/privacy-policy/']);
       var priv = n.querySelector('a[href*="privacy-policy"]') || (lp && n.querySelector('a[href="' + lp + '"], a[href$="' + lp + '"]'));
       if (n.closest('header') || !priv || n.querySelectorAll('button').length < 2) continue;
       if (open) n.setAttribute('data-ahv-notice-under-menu', ''); else n.removeAttribute('data-ahv-notice-under-menu');

@@ -162,12 +162,29 @@
   html[data-ahv-cta-bar-on][data-ahv-consent-open] body::after { height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px)); }
   html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
   html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }
+  /* keyboard focus is never scrolled under the pinned bar (WCAG 2.4.11; VERIFY footer-reachability found 4-8 footer
+     links fully under it when reached by Tab at 390px) */
+  html[data-ahv-cta-bar-on] { scroll-padding-bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 86px); }
 }
 /* While the cookie notice is pending (a fixed layer at the page bottom), the page ends with a block of the notice's
    height so the footer's last row can scroll clear of it (design-qa R14: "How to reach", copyright and the language
    row sat under the notice at the end of the page on desktop). Presentation only: the notice, its choices, storage
    and signals are untouched; chrome.js liftContacts() measures it and clears the height once it closes. */
 html[data-ahv-consent-open]:not([data-ahv-cta-bar-on]) body::after { content:"";display:block;height:var(--ahv-consent-h, 0px);background:#2A2014; }
+/* data-ahv-cta-bar-on is also set on desktop, where the bar itself is hidden by the phone media query above, so the
+   desktop clearance must not depend on it (VERIFY footer-reachability, 29 Sep: "360 VIEW" / "MAP" stayed under the
+   pending notice at 1440px because the rule above never matched) */
+@media (min-width:700px) {
+  html[data-ahv-consent-open] body::after, html body::after { content:"";display:block;height:var(--ahv-page-clear, var(--ahv-consent-h, 0px));background:#2A2014; }
+  html { scroll-padding-bottom:var(--ahv-page-clear, 0px); }
+  html[data-ahv-consent-open] { scroll-padding-bottom:var(--ahv-page-clear, var(--ahv-focus-clear, calc(var(--ahv-consent-h, 0px) + 8px))); }
+}
+/* --ahv-consent-h is the distance from the notice's top edge to the viewport bottom (it includes a floating notice's
+   own bottom offset and, on phones, the bar under it), so focus scrolled into view also clears the notice */
+html[data-ahv-consent-open] { scroll-padding-bottom:var(--ahv-focus-clear, calc(var(--ahv-consent-h, 0px) + 8px)); }
+/* a control reached by Tab is never scrolled under the fixed/sticky header (VERIFY footer-reachability, 29 Sep: three
+   footer links fully under the header at 1440px). On the focused element only, so anchor jumps keep their own offsets */
+a:focus, button:focus, summary:focus, input:focus, select:focus, textarea:focus { scroll-margin-top:96px; }
 @media print { #ahv-cta-bar { display:none !important; } }
 
 /* Keep native date segments and their calendar controls visible in the home finder. */
