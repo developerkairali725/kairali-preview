@@ -9,7 +9,7 @@ export function phoneCriticalMedia(html) {
  * No new content or translation: the title already belongs to this exact link.
  */
 export function descriptiveAwardLinks(html) {
-  html = html.split('aria-label="{{ g.alt }}"').join('aria-label="{{ g.caption }} — {{ g.alt }}"');
+  html = html.split('aria-label="{{ g.alt }}"').join('aria-label="{{ g.caption }}" aria-description="{{ g.alt }}"');
   return html.replace(/<a\b([^>]*)>([^<>]+)<[/]a>/gi, function (full, attrs, text) {
     var label = attrs.match(/aria-label="([^"]+)"/i);
     if (!label || label[1].indexOf(text.trim() + ' — ') !== 0) return full;

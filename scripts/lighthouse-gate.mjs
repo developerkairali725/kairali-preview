@@ -212,13 +212,16 @@ async function main(argv) {
       if (scores.performance < BUDGETS.performance) {
         // perf is the one noisy category — median of PERF_RUNS_ON_MISS decides,
         // never best-of. 5 samples so one outlier cannot decide the gate (Q-A5-FLAKE).
+        const samples = [scores];
         const perfs = [scores.performance];
         for (let i = 2; i <= PERF_RUNS_ON_MISS; i++) {
           const again = runLighthouse(url, outDir, `${path.replace(/\W+/g, "_")}-${i}`);
           perfs.push(again.performance);
+          samples.push(again);
           scores.accessibility = Math.min(scores.accessibility, again.accessibility);
           scores.seo = Math.min(scores.seo, again.seo);
         }
+        scores.diagnostics = [...samples].sort((a, b) => a.performance - b.performance)[Math.floor(samples.length / 2)].diagnostics;
         scores.performance = median(perfs);
         note = ` (perf median of ${perfs.join("/")})`;
       }
