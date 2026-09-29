@@ -1,0 +1,84 @@
+{
+ "note": "D17 metadata batch 1 (parent package parent-d17-metadata-fix, patch 740ff23d; content-geo-writer workflow, KTAHV lint 0/0): neutral source-derived titles/descriptions for /kairali-air-india-maharaja-club.html, /learn-about-ayurveda/ and /live-to-100-with-panchkarma/ (no points/eligibility promise, no longevity headline). Semantic rebase: leaves diffed between the pinned SEO-D22 base and the parent candidate, applied as exact strings to the current sources (the Air India entries target the source campaign-family-data.js; the partner dataset is regenerated). The Air India metadata.description was EMPTY at source, which an exact-string plan cannot target; it was set once by a guarded JSON edit on that record (value: 'Explore Ayurvedic programmes, physician consultations, meals, yoga and meditation at Kairali in Palakkad, Kerala.') — re-apply the same way after any re-import.",
+ "entries": [
+  {
+   "id": "d17-0",
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "Kairali x Air India Maharaja Club - Premium Kerala Ayurveda Retreat",
+   "new": "Kairali & Air India Maharaja Club | Ayurveda in Kerala",
+   "count": 1
+  },
+  {
+   "id": "d17-2",
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "Source description is EMPTY and no marketing or medical description is invented; the head emits no description meta until a separate documented SEO decision exists. Governed self-canonical applied; source carries no canonical or robots directive. Recorded indexable and XML-sitemap flags preserved.",
+   "new": "D17 source-derived metadata decision: neutral description summarises the existing legacy/features sections without points, discount, eligibility or availability promises. Governed self-canonical applied; source carries no canonical or robots directive. Recorded indexable and XML-sitemap flags preserved.",
+   "count": 1
+  },
+  {
+   "id": "d17-3",
+   "file": "public/ahv/assets/reader6c-family-data.js",
+   "old": "Kairali – The Ayurvedic Healing Village | Ayurveda Pitta | Ayurveda Vata | Ayurvedic Massage in Kerala",
+   "new": "Learn About Ayurveda: Vata, Pitta & Kapha | Kairali",
+   "count": 1
+  },
+  {
+   "id": "d17-4",
+   "file": "public/ahv/assets/reader6c-family-data.js",
+   "old": "Kairali Ayurvedic Group provides an introduction to the Ayurvedic dosha system, including Vata, Pitta, Kapha and offers retreat programs, Ayurvedic massage and training in Kerala.",
+   "new": "An introduction to Ayurveda and the dosha system, including Vata, Pitta and Kapha, from Kairali – The Ayurvedic Healing Village.",
+   "count": 2
+  },
+  {
+   "id": "d17-5",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "Kairali - The Ayurvedic Healing Village | Ayurvedic Health Retreat | Panchkarma- Ayurvedic Treatment| Yoga, Ayurveda and Meditation | Wellness Centre, Palakkad, Kerala",
+   "new": "Panchakarma: Preparation & Procedures | Kairali",
+   "count": 1
+  },
+  {
+   "id": "d17-6",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "Panchkarma is an ayurvedic treatment that involves elaborated methods of purification to release stress, which prepares the body tissues to accept the maximum benefits of food, nutrition and exercise. Your physician will advise whether it is suitable for you.",
+   "new": "Learn about Panchakarma preparation and procedures. Your physician will advise whether this Ayurvedic approach is suitable for you.",
+   "count": 2
+  },
+  {
+   "id": "d17-7",
+   "file": "public/ahv/assets/reader25b-family-data.js",
+   "old": "Live to 100 with Panchkarma",
+   "new": "Panchakarma: Preparation & Procedures | Kairali",
+   "count": 0
+  },
+  {
+   "id": "d17-manifest-/kairali-air-india-maharaja-club.html",
+   "op": "manifestMeta",
+   "path": "/kairali-air-india-maharaja-club.html",
+   "set": {
+    "title": "Kairali & Air India Maharaja Club | Ayurveda in Kerala",
+    "description": "Explore Ayurvedic programmes, physician consultations, meals, yoga and meditation at Kairali in Palakkad, Kerala."
+   }
+  },
+  {
+   "id": "d17-manifest-/learn-about-ayurveda/",
+   "op": "manifestMeta",
+   "path": "/learn-about-ayurveda/",
+   "set": {
+    "title": "Learn About Ayurveda: Vata, Pitta & Kapha | Kairali",
+    "description": "An introduction to Ayurveda and the dosha system, including Vata, Pitta and Kapha, from Kairali – The Ayurvedic Healing Village.",
+    "ogDescription": "An introduction to Ayurveda and the dosha system, including Vata, Pitta and Kapha, from Kairali – The Ayurvedic Healing Village."
+   }
+  },
+  {
+   "id": "d17-manifest-/live-to-100-with-panchkarma/",
+   "op": "manifestMeta",
+   "path": "/live-to-100-with-panchkarma/",
+   "set": {
+    "title": "Panchakarma: Preparation & Procedures | Kairali",
+    "description": "Learn about Panchakarma preparation and procedures. Your physician will advise whether this Ayurvedic approach is suitable for you.",
+    "ogTitle": "Panchakarma: Preparation & Procedures | Kairali",
+    "ogDescription": "Learn about Panchakarma preparation and procedures. Your physician will advise whether this Ayurvedic approach is suitable for you."
+   }
+  }
+ ]
+}
