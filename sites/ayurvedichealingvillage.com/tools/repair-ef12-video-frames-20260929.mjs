@@ -12,18 +12,21 @@
 //       because of the centre emblem, is replaced by a frame at 49.4 s: a KTAHV therapist pours from a suspended brass
 //       vessel onto a patient's forehead in the brick-walled treatment room.
 //   F10 /knowledge-centre/ card "Explore Ayurveda": a hot-stone still life, a spa prop that reads as the locked register
-//       visually. The new frame (54.6 s) shows a therapist pouring oil into a suspended brass dhara vessel. The same
+//       visually. The new frame (54.6 s) shows a therapist pouring liquid into a suspended brass vessel. The same
 //       change goes into the importer overlay so a re-import keeps it.
-// Clinical depiction (F5 Udgharshanam) is shown to Dr. Deepu John before production (HARD GATE 7). No ingredient,
-// licence or sign-off is claimed.
+// F5 exact Udgharshanam procedure identity is not established by the visible powder application alone.
+// Keep that source-matching uncertainty explicit; latest owner authority permits autonomous review,
+// not a new prelaunch clinician-approval gate. CLAUDE.md gate 7 is a separate staging-to-production
+// rule for medical/clinical changes; this preparation does not certify or execute production clearance.
+// No ingredient, temperature, licence or sign-off is claimed.
 //   node tools/repair-ef12-video-frames-20260929.mjs [--check]
 import fs from "node:fs";
 
 const CHECK = process.argv.includes("--check");
 const IMG = "/ahv/assets/img/ktahv-video-2023/";
-const UDG = { src: IMG + "udgharshanam-85f39fe3fb0bbf71.webp", width: 900, height: 600, alt: "Two therapists working a granular herbal powder over a patient's back" };
-const SIRO = { src: IMG + "sirodhara-defe5c5f089c4be7.webp", width: 1200, height: 628, alt: "A therapist pours warm oil from a suspended brass vessel onto a patient's forehead during Shirodhara" };
-const KNOW = { file: IMG + "knowledge-02a1d00663e4c51e.webp", width: 1200, height: 536, alt: "A therapist pours oil into a suspended brass dhara vessel" };
+const UDG = { src: IMG + "udgharshanam-85f39fe3fb0bbf71.webp", width: 900, height: 600, alt: "Two therapists working granular powder over a patient's back" };
+const SIRO = { src: IMG + "sirodhara-defe5c5f089c4be7.webp", width: 1200, height: 628, alt: "A therapist pours liquid from a suspended brass vessel toward a patient's forehead" };
+const KNOW = { file: IMG + "knowledge-02a1d00663e4c51e.webp", width: 1200, height: 536, alt: "A therapist pours liquid into a suspended brass vessel" };
 const log = [];
 const writes = [];
 
@@ -40,7 +43,7 @@ function swapBlock(route, ptr, oldSrc, next, label) {
   const blocks = (route.components || []).flatMap(function walk(c) { return (c.blocks || []).flatMap((x) => [x, ...walk(x)]); });
   const blk = blocks.find((x) => x.ptr === ptr);
   if (!blk) throw new Error(`${label}: block ${ptr} not found on ${route.path}`);
-  if (blk.src === next.src) { log.push(`${label}: already applied`); return; }
+  if (blk.src === next.src) { Object.assign(blk, { width: next.width, height: next.height, alt: next.alt }); log.push(`${label}: image retained; factual alt synchronized`); return; }
   if (blk.src !== oldSrc) throw new Error(`${label}: unexpected image ${blk.src}`);
   Object.assign(blk, { src: next.src, width: next.width, height: next.height, alt: next.alt });
   delete blk.sourceUrl;
