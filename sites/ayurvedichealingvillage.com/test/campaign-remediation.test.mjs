@@ -28,9 +28,13 @@ test('LP staging exposure retains denied analytics and short form validation',()
  assert.ok(!layout.includes('notFound()'));
  assert.match(layout,/AHV_ANALYTICS === "1" && process.env.AHV_STAGING === "0"/);
  assert.match(form,/form.reportValidity\(\)/);
- assert.match(form,/action="\/api\/enquiry" method="post"/);
- assert.match(form,/if\(!response.ok\|\|result.ok===false\)/);
- assert.match(form,/landingPage:window.location.href/);
+ assert.match(form,/action="\/api\/forms-unavailable" method="post"/);
+ assert.match(form,/fetch\('\/api\/lead\/'/);
+ assert.match(form,/response\.status===503&&\/_NOT_CONFIGURED\$\//);
+ assert.match(form,/if\(!response.ok\|\|result.ok!==true\)/);
+ assert.match(form,/form:'landing-page'/);
+ assert.match(form,/landing_page_path:window.location.pathname/);
+ assert.match(form,/lead_source_url:window.location.href/);
 });
 test('confirmed broken ad sitelinks map directly to existing, language-appropriate routes',()=>{
  const rules=JSON.parse(read('english-candidate/ad-sitelink-redirects.json'));

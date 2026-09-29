@@ -5,9 +5,10 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { htmlUnits, jsUnits } from "./lib.mjs";
 
-export const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "../..");
+export const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 export const rel = (...p) => path.join(SITE, ...p);
 export const readJson = (p) => JSON.parse(fs.readFileSync(rel(p), "utf8"));
 

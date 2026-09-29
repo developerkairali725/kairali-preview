@@ -89,6 +89,11 @@ export function SiteDocument({
         <link rel="stylesheet" href="/design/film-player.css" />
         <script src={`${designBase}film-player.js`} defer />
         <script defer src={`${designBase}newsletter.js`} />
+        {/* Form delivery for the two form kinds with no view-logic submit handler: the walk-in (OPD)
+            intake and the legacy campaign/landing routes. Both are inert elsewhere, post to /api/lead/
+            and show receipt only after the server confirms storage (a truthful "not connected" otherwise). */}
+        <script defer src="/design/opd-form-submit.js" />
+        <script defer src="/design/landing-page-form-submit.js" />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
             search control on every page, the programme finder and the FAQ filter.
@@ -176,7 +181,7 @@ export function SiteDocument({
             // releases the hold, the phone-width snapshot is shown as a centred readable column instead of a blank
             // page (parent review 29 Sep 2026: desktop no-JS showed nothing; the snapshot is in the HTML).
             "@media (min-width:700px){html[data-ahv-js] #ahv-design-root[data-ahv-snapshot-state='held']:not([data-ahv-fallback])>*{display:none!important}" +
-            "#ahv-design-root[data-ahv-snapshot-state='held']>[data-ahv-snapshot]{max-width:480px;margin:0 auto;box-shadow:0 0 0 100vmax #F7F4EA}}" +
+            "#ahv-design-root[data-ahv-snapshot-state='held']>[data-ahv-snapshot]{max-width:480px;margin:0 auto;box-shadow:0 0 0 100vmax #F7F4EA}}" + /* same approved design payload palette as the body rule above. brand-allow: rogue-hex */
             // A snapshot captured with the cookie notice carries a copy whose buttons need script; without script no
             // tracking can run, so that inert copy is not shown to no-JS readers (scripted pages are unaffected).
             "html:not([data-ahv-js]) #ahv-consent{display:none!important}" +
