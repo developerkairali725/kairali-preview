@@ -2058,3 +2058,36 @@ dpl_7takNT2Xw7UC1pXMST2LYqDmac7f); evidence under the deliverable's hosted-r14/,
 9. Dr. Deepu John: review of every 29 Sep clinical plan (english-candidate/copy-plans/clinical-*, round3/round7, cancer-main,
    campaign-claims, ktahv-lock-sweep programme-page register) before production (HARD GATE 7). No signature has been claimed.
 10. Physical iPhone check of OWNER-REG-05/07 (Chromium + WebKit iPhone-13 emulation pass; no device available to the agent).
+
+## Q-AHV-R16-CONTINUATION03 — 2026-09-29 08:09:53 IST
+Coordinator continuation 03 (WOPS-AHV-FINAL-DRAFT-20260924-001). Append-only update to Q-AHV-R14-RECONCILIATION.
+**Superseded / closed by source work since 04:31 IST (no owner action):**
+- #1 FORMS conflict: PR #317 delivery integrated safely (e9c40e4d) through the HMAC-signed HTTPS relay (no direct or plain-HTTP DB
+  path; every route fails closed until configured); relay readiness now demands full single-column keys (e9f1cc06); localized OPD
+  delivery on 13 routes (2991d139); newsletter double opt-in built (d4b08a06). What remains is ACTIVATION, not a decision (below).
+- Medical: the owner's 28 Sep prelaunch medical-copy authorization covers the edits made (FAQ PUB-FIX-02/03/04 5bfad6d2, Air India
+  claims bbc435bf, residual claims d30a0b7a). Dr. Deepu John's review stays the separate staging→production gate (HARD GATE 7);
+  it is not a prelaunch wait and no signature is claimed.
+**New — exact decision or action needed:**
+1. GST-sensitive wording: the EN contact/how-to-reach FAQ "Is Kairali a hospital or a spa? … It is not a spa." The 29 Sep lock
+   sweep treated it as an exempt negated disclaimer; the new language-lock checker (tools/lib/language-lock.mjs, 75e89caa) blocks it
+   and its test encodes that. Keep as authored (and allowlist it in the checker), or reword without the word (e.g. "Is Kairali a
+   hospital?")? DE was aligned to the sibling unit without "Spa" (be2203e4); all other locales already avoid it.
+2. Newsletter activation (RUNBOOK 3b/7b/8): apply newsletter-tables.sql + grants on the DB host, deploy scripts/apps-script/
+   newsletter-mail.gs from the info@kairali.com account, set the seven env vars, and add a Vercel cron for /api/newsletter/outbox
+   (proposed */10 * * * *, not a ruled value). Same for the lead relay's five env vars. No email has been sent; no delivery is proven.
+3. Air India Maharaja Club partner facts (rendered, from the legacy page): "500+ success stories", "15 Maharaja Points per ₹100",
+   member benefits (exclusive rates, priority booking, consultations with lead physicians). Confirm with the partner or rule removal.
+   "118+ years" (Group, since 1908) is kept as the site-wide heritage figure.
+4. Campaign pages without a consent/privacy line near the form (ayurveda-retreat-kerala, family-ayurvedic-retreat-kerala, the Air India
+   page): adding one is consent-UI wording (HARD GATE 11) — approve a line such as "See our Privacy Policy" or leave as is.
+5. "resort" inside unquoted visitor reviews on /kairali-cleansing-centre.html and /treatment-in-kerala.html: mark as quotations,
+   trim, or remove the reviews (editing a review's words is not the agent's call).
+6. WP-era paths /de/online-konsultation/, /de/anreise/, /fr/contact/ return 404 without a redirect. If they were live legacy URLs
+   (Search Console / inbound links), approve 301s to /de/kostenlose-online-beratung/, the DE how-to-reach route and
+   /fr/contactez-nous/.
+7. SEO-D22 owner items (lanes/SEO-D22/DISPOSITIONS.json): the two Baoli deal pages have no body copy — keep, noindex or merge; D-19
+   campaign-exclusion scope; D-03 critical-flow contract items (MedicalClinic exact type, data-cta, consent checkbox) and the factory
+   spec A8 check that compares a string against the Organization @type array since 153ac9d7; D-02 authenticated review (HARD GATE 9).
+8. EF-12: photographs still missing for 9 therapies plus Dhanyamala Dhara / Elakizhi / Muttakizhi / Manalkizhi (text-only now);
+   the creative-request draft is prepared, not sent. F7 Netradhara label: evidence supports the current photo; Dr. Deepu John closes it.
