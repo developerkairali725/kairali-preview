@@ -34,7 +34,7 @@ export function CampaignEnquiryForm({formType='consultation',heading='Request a 
   <div className="field"><label htmlFor="campaign-phone">Phone / WhatsApp <span>(optional, include country code)</span></label><input id="campaign-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" maxLength={30} pattern="[+0-9() .-]{7,30}" placeholder="+91 …"/></div>
   <div className="field"><label htmlFor="campaign-message">How can we help? <span>(optional)</span></label><textarea id="campaign-message" name="message" rows={3} maxLength={3000}/></div>
   <div hidden aria-hidden="true"><label>Leave empty<input name="company" tabIndex={-1} autoComplete="off"/></label></div>
-  <label className="consent"><input name="consent" type="checkbox" required/><span>I agree to be contacted about my enquiry. <a href="/privacy-policy/">Privacy policy</a></span></label>
+  <label className="consent"><input name="consent" type="checkbox" required/><span>I agree to be contacted about my enquiry. <a href="/new-privacy-policy/">Privacy policy</a></span></label>
   <button className="btn btn-primary" disabled={sending} type="submit">{sending?'Sending…':submitLabel}</button>
   {error&&<p className="enquiry-error" role="alert">{error}</p>}
  </form>;

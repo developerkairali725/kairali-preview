@@ -208,7 +208,7 @@ export function LpLegal({ lang = "en" }: { lang?: "en" | "de" }) {
       <div className="container row">
         <span>© Kairali — The Ayurvedic Healing Village, Palakkad, Kerala</span>
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-        <a href="/privacy-policy/">{de ? "Datenschutz (EN)" : "Privacy"}</a>
+        <a href="/new-privacy-policy/">{de ? "Datenschutz (EN)" : "Privacy"}</a>
         <a href="/terms-and-conditions/">{de ? "Nutzungsbedingungen (EN)" : "Terms"}</a>
         <a href="/cookie-policy/">{de ? "Cookie-Richtlinie (EN)" : "Cookie policy"}</a>
       </div>

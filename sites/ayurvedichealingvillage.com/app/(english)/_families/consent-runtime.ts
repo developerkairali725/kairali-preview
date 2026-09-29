@@ -109,7 +109,7 @@ export const CONSENT_RUNTIME = `
     copy.style.cssText = "flex:1;min-width:0;font-size:14.5px;color:#514a3f;line-height:1.55"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
     copy.appendChild(document.createTextNode(CT("We use cookies to improve your experience and analyse site traffic. See our") + " "));
     var policy = document.createElement("a");
-    policy.setAttribute("href", (cfg.locale && cfg.locale.privacyHref) || "/privacy-policy/");
+    policy.setAttribute("href", (cfg.locale && cfg.locale.privacyHref) || "/new-privacy-policy/");
     policy.style.cssText = "font-weight:700";
     policy.textContent = CT("Privacy Policy");
     copy.appendChild(policy);

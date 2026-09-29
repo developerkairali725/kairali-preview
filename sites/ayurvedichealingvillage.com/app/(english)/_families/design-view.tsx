@@ -115,7 +115,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
       path: localizedPath(route.path, locale) ?? route.path,
       options: LOCALE_CODES.map((c) => ({ code: c, name: LOCALE_INFO[c].name, lang: LOCALE_INFO[c].htmlLang, href: localizedPath(route.path, c) })).filter((o) => o.href) as Array<{ code: string; name: string; lang: string; href: string }>,
       ui: { language: t(locale, "Language"), choose: t(locale, "Choose language"), current: t(locale, "Current language") },
-      privacyHref: localizedPath("/privacy-policy/", locale) ?? "/privacy-policy/",
+      privacyHref: localizedPath("/new-privacy-policy/", locale) ?? "/new-privacy-policy/",
     },
   };
 }
