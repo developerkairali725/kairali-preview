@@ -71,6 +71,11 @@ const REDIRECT_MAP = JSON.parse(
 ) as RedirectMap;
 
 const nextConfig: NextConfig = {
+  // Static media is served from Vercel's static output, not read by page functions.
+  // Keep JSON/JS datasets and SSR snapshots in the trace for dynamic rendering.
+  outputFileTracingExcludes: {
+    "/*": ["./public/**/*.{webp,png,jpg,jpeg,gif,svg,ico,avif,mp4,webm,pdf,woff,woff2,ttf,otf}"],
+  },
   // The approved content, its canonicals, the sitemap and the legacy WordPress
   // URLs that hold the rankings ALL use a trailing slash. Next's default is the
   // opposite, so before this line 238 of 252 routes answered 308 and redirected,
