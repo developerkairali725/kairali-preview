@@ -2,7 +2,7 @@
 
 These are consequential facts where genuine company sources conflict or are silent. The build continues without waiting: each item states **what the local build currently does**. Reply with the question number and letter (e.g. "3B").
 
-1. **Home statistics band.** The live home shows a raster graphic: 109 years, 20 distributors, 300 products, 25 centres, 700 staff, 40 awards. "109 years" dates it to about 2017, and "25 centres" conflicts with the verified centre roster (14 centres in 5 countries, kairalicenters.com, ruled 17 Jul 2026).
+1. **Home statistics band.** The live home shows a raster graphic: 109 years, 20 distributors, 300 products, 25 centres, 700 staff, 40 awards. "109 years" dates it to about 2017, and "25 centres" conflicts with the verified centre roster (14 centres in 5 countries, kairalicenters.com, ruled 17 Jul 2026). <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts -->
    A) Keep it hidden until current figures are supplied *(current build)*
    B) Publish it as text, labelled "figures as published in 2017"
    C) I will supply current figures
@@ -12,10 +12,10 @@ These are consequential facts where genuine company sources conflict or are sile
    B) Remove the caption
    C) Replace it with approved wording
 
-3. **Health-claim wording.** These are preserved verbatim, but the 2026 brand manual says "never promise cures":
+3. **Health-claim wording.** These are preserved verbatim, but the 2026 brand manual says "never promise cures": <!-- Internal medical-review question quoting an unresolved source claim, not approval to publish. compliance-allow: cure-claims -->
    - "…seeing guests solve chronic health problems…" (home, Healing Village)
    - "Ayurvedic Medicines are absolutely free from side-effects" (Ayurvedic Medicine page)
-   - "Cure your ailments through Ayurveda with No side effects" (legacy promo copy; not rendered)
+   - "Cure your ailments through Ayurveda with No side effects" (legacy promo copy; not rendered) <!-- Internal medical-review question quoting an unresolved source claim, not approval to publish. compliance-allow: cure-claims -->
    A) Keep verbatim until a medical/legal review *(current build)*
    B) Remove the claim sentences now
    C) I will supply revised wording
@@ -66,7 +66,7 @@ These are consequential facts where genuine company sources conflict or are sile
    B) Some are closed (please list)
    C) Replace them with a general "send your CV" message
 
-10. **Centre directory.** The kairali.com Locations page lists its own published centre records. The verified roster on kairalicenters.com has 14 centres, and the published phone numbers and emails differ in places.
+10. **Centre directory.** The kairali.com Locations page lists its own published centre records. The verified roster on kairalicenters.com has 14 centres, and the published phone numbers and emails differ in places. <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts -->
     A) Keep the kairali.com Locations copy as published and link to kairalicenters.com for the current list *(current build)*
     B) Replace it with the verified kairalicenters.com roster
 

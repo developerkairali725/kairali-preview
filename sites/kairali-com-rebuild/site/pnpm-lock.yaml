@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@kairali/ui':
+        specifier: file:../../../packages/ui
+        version: file:../../../packages/ui
       next:
         specifier: 16.3.7
         version: 16.3.7(@types/node@24.19.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -200,6 +203,10 @@ packages:
     engines: {node: '>=20.9.0'}
     cpu: [x64]
     os: [win32]
+
+  '@kairali/ui@file:../../../packages/ui':
+    resolution: {directory: ../../../packages/ui, type: directory}
+    hasBin: true
 
   '@next/env@16.3.7':
     resolution: {integrity: sha512-/HuhBN1CorqNTmewTIh81yXOQri6B8Ye/c9D7+830XqwVaf8qMnJNrgNxDn6dLtihq8YzBbI6NSAuMKvpr+DvQ==}
@@ -503,6 +510,8 @@ snapshots:
 
   '@img/sharp-win32-x64@0.35.5':
     optional: true
+
+  '@kairali/ui@file:../../../packages/ui': {}
 
   '@next/env@16.3.7': {}
 

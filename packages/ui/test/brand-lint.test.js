@@ -161,3 +161,21 @@ test("leaf-500 text on a dark ground is suppressible, and the suppression is rep
   assert.ok(info, "suppression must still be reported as info — never silent");
   assert.equal(info.severity, "info");
 });
+
+test("Premium v3 requires its central palette and still rejects local colors", async () => {
+  const { mkdtempSync, writeFileSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const dir = mkdtempSync(join(tmpdir(), "brand-profile-"));
+  try {
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "kairali", brandTokenProfile: "premium-v3" }));
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v3-tokens.css";');
+    assert.equal(errs(lintBrandDir(dir)).length, 0);
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v3-tokens.css";\n.x{color:#ff0000}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "rogue-hex"));
+    writeFileSync(join(dir, "site.css"), '.x{color:var(--ivory)}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "tokens-import"));
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "kairali", brandTokenProfile: "unapproved" }));
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "config"));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
