@@ -2,7 +2,7 @@
 
 These are consequential facts where genuine company sources conflict or are silent. The build continues without waiting: each item states **what the local build currently does**. Reply with the question number and letter (e.g. "3B").
 
-1. **Home statistics band.** The live home shows a raster graphic: 109 years, 20 distributors, 300 products, 25 centres, 700 staff, 40 awards. "109 years" dates it to about 2017, and "25 centres" conflicts with the verified centre roster (14 centres in 5 countries, kairalicenters.com, ruled 17 Jul 2026). <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts -->
+1. **Home statistics band.** The live home shows a raster graphic: 109 years, 20 distributors, 300 products, 25 centres, 700 staff, 40 awards. "109 years" dates it to about 2017, and "25 centres" conflicts with the verified centre roster (14 centres in 5 countries, kairalicenters.com, ruled 17 Jul 2026). <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts --> <!-- banned-string-allow: hardcoded-centres-count: historical review --> <!-- Historical comparison for owner review, not published copy. -->
    A) Keep it hidden until current figures are supplied *(current build)*
    B) Publish it as text, labelled "figures as published in 2017"
    C) I will supply current figures
@@ -66,7 +66,7 @@ These are consequential facts where genuine company sources conflict or are sile
    B) Some are closed (please list)
    C) Replace them with a general "send your CV" message
 
-10. **Centre directory.** The kairali.com Locations page lists its own published centre records. The verified roster on kairalicenters.com has 14 centres, and the published phone numbers and emails differ in places. <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts -->
+10. **Centre directory.** The kairali.com Locations page lists its own published centre records. The verified roster on kairalicenters.com has 14 centres, and the published phone numbers and emails differ in places. <!-- Internal comparison with disputed historical copy, not a published count. compliance-allow: locked-counts --> <!-- banned-string-allow: hardcoded-centres-count: historical review --> <!-- Historical comparison for owner review, not published copy. -->
     A) Keep the kairali.com Locations copy as published and link to kairalicenters.com for the current list *(current build)*
     B) Replace it with the verified kairalicenters.com roster
 

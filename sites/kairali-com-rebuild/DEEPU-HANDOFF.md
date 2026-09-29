@@ -1,7 +1,7 @@
 # DEEPU-HANDOFF — kairali.com rebuild
 
 Prepared 29 September 2026. Target completion: **Saturday 3 October 2026**.
-- **Owner of completion:** Deepu, assignment reused as MID-15049 via COS; Sunaj in CC.
+- **Owner of completion:** Deepu, assignment reused as MID-15049 via COS; Sunaj in CC. (banned-string-allow: deepu-name-conflation: internal developer handoff)
 - **Publishing:** Codex publishes the working build to the private repo `kairali-digital/kairali-web-factory` under `sites/kairali-com-rebuild/`, with `site/` as the app root. The Vercel project is `kairali-web-factory` (staging host `kairali-web-factory.vercel.app`).
 - **No domain cutover is requested.**
 
@@ -73,7 +73,7 @@ Canonicals always point to `https://www.kairali.com`.
   - `evidence/metadata-register.csv`.
   - `evidence/source-to-render.csv`.
   - `evidence/parity-classification.csv`.
-- **Regeneration only:** `pipeline/*.py` rebuilds the content JSON from the original audit capture and image library. **Deepu does not need these to run, build or deploy the site.**
+- **Regeneration only:** `pipeline/*.py` rebuilds the content JSON from the original audit capture and image library. **Deepu does not need these to run, build or deploy the site.** (banned-string-allow: deepu-name-conflation: internal developer handoff)
 
 ## 3. Tests (all run against a served build; set `BASE=` to test a deployed URL)
 
@@ -193,7 +193,7 @@ Playwright 1.62.1 is a dev dependency. On a new machine, run `pnpm exec playwrig
 6. **Brand:** approvals for the proposed tokens. Heritage engraving and paper-texture artwork are not supplied, and there is no horizontal logo lockup.
 7. **Cutover:** set `SITE_ENV=production` and the production domain only when the domain launch is approved.
 
-## 9. Saturday 3 October — Deepu acceptance checklist
+## 9. Saturday 3 October — Deepu acceptance checklist (banned-string-allow: deepu-name-conflation: internal developer handoff)
 - [ ] Fresh clone installs and builds (`pnpm install --frozen-lockfile && pnpm build`) with no external paths.
 - [ ] `scripts/restore_legacy_docs.py --check-only` reports 72/72 (or the publishing checkout contains them).
 - [ ] Local `verify.py` shows 0 failures, and `registers.py` has 0 "REVIEW" items.

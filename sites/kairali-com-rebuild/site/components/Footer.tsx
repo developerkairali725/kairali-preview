@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>© Kairali Ayurvedic Group Since 1908.</p>
+        <p>© Kairali Ayurvedic Group · A family tradition since 1908.</p>
         <ul>{LEGAL_LINKS.map((l) => <li key={l.href}><Link href={l.href} prefetch={false}>{l.label}</Link></li>)}</ul>
       </div>
     </footer>

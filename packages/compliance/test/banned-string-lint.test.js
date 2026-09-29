@@ -265,3 +265,13 @@ test('localization year placeholders pass while typed years remain failures', ()
   assert(scan('© 1908 — [[VAR_1]] Kairali; © 2026').includes('group-attached-1908'));
   assert(scan('© 1908 — [[VAR_1]] Kairali', 'sites/ayurvedichealingvillage.com/unbound.html').includes('group-attached-1908'));
 });
+
+// D-20260915-06: HR address is permitted on careers routes only.
+test("rebuild aggregate HR exception does not hide other routes or other rules", () => {
+  const file = "sites/kairali-com-rebuild/site/content/pages.json";
+  const run = (data) => errors(scanText(JSON.stringify(data), {file, kind: "plain"}));
+  assert.equal(run({"/current-openings.aspx": {text: "Apply: career@kairali.com"}}).length, 0);
+  assert.ok(run({"/contact-us.aspx": {text: "career@kairali.com"}}).some(f => f.rule === "wrong-contact-email"));
+  assert.ok(run({"/current-openings.aspx": {text: "reservations@kairali.com"}}).some(f => f.rule === "wrong-contact-email"));
+  assert.ok(run({"/current-openings.aspx": {text: "career@kairali.com. Nine countries"}}).some(f => f.rule === "hardcoded-centres-count"));
+});

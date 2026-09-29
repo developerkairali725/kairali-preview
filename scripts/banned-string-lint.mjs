@@ -441,7 +441,7 @@ export const RULES = [
       // Exact policy surfaces only: contact pages and unrelated fleet sites still fail.
       const surface = (ctx.path ?? ctx.file ?? "").replace(/\\/g, "/");
       const ahvCvPolicy = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/(?:public\/ahv\/assets\/policy-family-data\.js|english-candidate\/policy-review-20260925\.json|english-candidate\/prerender\/(?:privacy-policy|privacy-statement|new-privacy-policy)\.html)$/.test(surface);
-      const careersScoped = CAREERS_SURFACE.test(surface) || ahvCvPolicy;
+      const careersScoped = CAREERS_SURFACE.test(surface) || ahvCvPolicy || surface === "sites/kairali-com-rebuild/site/content/pages.json#/current-openings.aspx";
 
       return reScan(ctx, ADDRESS, (m) => {
         const addr = m[0].toLowerCase();
@@ -680,6 +680,13 @@ export const RULES = [
  * @returns {Finding[]}
  */
 export function scanText(text, { file = "<text>", kind, rules = RULES }) {
+  // Scan each route of the imported public aggregate separately; the HR
+  // address exception cannot apply to other pages in the same JSON file.
+  if (file === "sites/kairali-com-rebuild/site/content/pages.json") {
+    return Object.entries(JSON.parse(text)).flatMap(([route, page]) =>
+      scanText(JSON.stringify(page), { file: `${file}#${route}`, kind, rules })
+    );
+  }
   const scanned = stripComments(text, kind);
   const rawLines = text.split(/\r?\n/);
   const lines = scanned.split(/\r?\n/);
