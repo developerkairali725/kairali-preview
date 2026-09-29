@@ -19,7 +19,9 @@ return [
         'socket' => '',
         'name' => 'ktahv_ayurvedic_healing_village',
         // A dedicated user with SELECT, INSERT on the seven lead tables and
-        // SELECT, INSERT, DELETE on ahv_relay_nonce — nothing else (RUNBOOK.md).
+        // SELECT, INSERT, DELETE on ahv_relay_nonce — plus, only when the
+        // newsletter is activated, the three newsletter-table grants in
+        // RUNBOOK.md step 3b. Nothing else.
         'user' => '',
         'password' => '',
     ],

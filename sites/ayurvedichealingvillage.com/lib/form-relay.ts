@@ -103,7 +103,9 @@ export type RelayCallOptions = {
  * verifies AND whose body says ok:true; everything else throws RelayError
  * carrying a short code (never relay/driver text).
  */
-export async function relayCall(op: 'lead.store' | 'health', data: Record<string, unknown> | undefined, options: RelayCallOptions = {}): Promise<Record<string, unknown>> {
+export type RelayOp = 'lead.store' | 'health' | 'newsletter.subscribe' | 'newsletter.mail_result' | 'newsletter.claim' | 'newsletter.confirm' | 'newsletter.unsubscribe';
+
+export async function relayCall(op: RelayOp, data: Record<string, unknown> | undefined, options: RelayCallOptions = {}): Promise<Record<string, unknown>> {
   const { url, secret, keyId } = settings(options.env);
   const body = JSON.stringify(data === undefined ? { v: 1, op } : { v: 1, op, data });
   const timestamp = String(Math.floor((options.now ? options.now() : Date.now()) / 1000));

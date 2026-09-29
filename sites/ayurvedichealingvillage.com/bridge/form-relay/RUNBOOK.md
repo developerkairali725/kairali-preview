@@ -80,6 +80,36 @@ GRANT SELECT, INSERT, DELETE ON `ktahv_ayurvedic_healing_village`.`ahv_relay_non
 If MySQL resolves the loopback connection as `127.0.0.1` rather than
 `localhost`, create the same user and grants for `'ahv_relay'@'127.0.0.1'`.
 
+### 3b. Newsletter tables (double opt-in) — only when activating the newsletter
+
+Run `newsletter-tables.sql` as the MySQL admin. It creates only the three
+dedicated newsletter tables (`ahv_newsletter_subscriber`,
+`ahv_newsletter_confirmation`, `ahv_newsletter_limit`) and never touches a
+lead table. It is idempotent. Then grant the relay user exactly this:
+
+```sql
+GRANT SELECT, INSERT, UPDATE ON `ktahv_ayurvedic_healing_village`.`ahv_newsletter_subscriber`           TO 'ahv_relay'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `ktahv_ayurvedic_healing_village`.`ahv_newsletter_confirmation` TO 'ahv_relay'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `ktahv_ayurvedic_healing_village`.`ahv_newsletter_limit`        TO 'ahv_relay'@'localhost';
+```
+
+The rules behind these grants:
+
+- `UPDATE` is granted on the newsletter tables only. The lead tables stay
+  SELECT/INSERT.
+- On the limit table, `UPDATE` is also what the atomic counter upsert
+  (`INSERT … ON DUPLICATE KEY UPDATE`) needs.
+- `DELETE` is used only for housekeeping: never-used confirmation rows that
+  expired more than 30 days ago, and limit rows older than 2 days.
+- The confirmation table stores tokens only as a SHA-256 hash plus an
+  AES-256-GCM seal whose key lives only on Vercel. A database reader cannot
+  recover a working confirmation link.
+- On cPanel, if grants cannot be made per table, record the fallback in the
+  activation evidence, as in step 3.
+
+Upload the updated `relay-core.php` and `lead-schema.json` (step 2) before the
+website is configured for the newsletter.
+
 On cPanel, if the MySQL Databases screen cannot grant per table, grant only
 SELECT, INSERT and DELETE on the database. Do not grant UPDATE, ALTER, DROP or
 ALL. Record the fallback in the activation evidence. The relay code deletes
@@ -157,6 +187,9 @@ duplicate-rejecting keys on `submission_token` and `nonce`
 - OPD without an email address: apply `db/004-opd-optional-email.sql`.
   `health` does not check nullability, so apply it even when `health` is
   green.
+- The report also prints `newsletter.ready`. It does not affect the exit code.
+  Configure the newsletter variables (step 7b) only when it is `true`. If it
+  is `false`, apply `newsletter-tables.sql` (step 3b).
 - Any other missing column or duplicate-rejecting key: **stop and ask**. Changing the live
   table contract is a data decision, not a deployment step.
 
@@ -174,6 +207,38 @@ Set these variables for the **Preview** environment of the AHV project only:
 
 Leave every `AHV_DB_*` variable unset. Redeploy the preview.
 
+### 7b. Newsletter (double opt-in) — separate activation
+
+The newsletter stays on its truthful 503 until ALL of these are set as well.
+Its mail sender is set up in FORM-INTEGRATION-SETUP.md, section "Newsletter
+double opt-in".
+
+| Variable | Value |
+|---|---|
+| `AHV_NEWSLETTER_MAIL_PROVIDER` | `apps-script`, the only adapter in the codebase. Any other value keeps the 503. |
+| `AHV_NEWSLETTER_MAIL_WEBHOOK_URL` | The newsletter-mail Apps Script `/exec` URL. This is not the lead-Sheet one. |
+| `AHV_NEWSLETTER_MAIL_WEBHOOK_SECRET` | The same value as that script's `AHV_NEWSLETTER_MAIL_SECRET`, at least 32 characters |
+| `AHV_NEWSLETTER_PUBLIC_ORIGIN` | The https origin of the deployment the emailed links must open, e.g. the preview's origin. It must have no path, and it is never inferred from the request. |
+| `AHV_NEWSLETTER_LINK_SECRET` | A random value of at least 32 characters (`openssl rand -base64 48`). It authenticates unsubscribe links, and rotating it invalidates every issued link. |
+| `AHV_NEWSLETTER_OUTBOX_KEY` | A random value of at least 32 characters, different from the link secret. It seals confirmation tokens stored in the outbox. Rotating it only stops the worker re-sending jobs sealed under the old key; their links keep working. |
+| `CRON_SECRET` | A random value of at least 32 characters. It authenticates the outbox worker `GET /api/newsletter/outbox`, and Vercel Cron sends it as `Authorization: Bearer …`. |
+
+The relay variables from step 7 are required too.
+
+The outbox worker also needs a scheduled trigger. This is a deployment-config
+change for the coordinator or owner, and it is NOT in this change. For
+example, add a Vercel cron entry for the AHV project:
+
+```json
+{ "crons": [{ "path": "/api/newsletter/outbox", "schedule": "*/10 * * * *" }] }
+```
+
+The schedule is a proposal, not a ruled value. Without the trigger, signup
+still never claims an email it did not send. It answers
+`pending_confirmation` only on a signed provider acceptance. Jobs whose inline
+send crashed or ended uncertain simply wait until someone runs the worker
+(`curl -H "Authorization: Bearer $CRON_SECRET" <origin>/api/newsletter/outbox`).
+
 ## 8. Activation evidence (receipt verification)
 
 On the preview, submit one clearly labelled synthetic record per form type.
@@ -189,6 +254,28 @@ For each submission, record this evidence:
 
 Remove the labelled rows only after the evidence is saved.
 
+For the newsletter, record this evidence end to end with a clearly labelled
+synthetic mailbox that you control:
+
+1. The browser shows "Check your email". Screenshot it.
+2. `ahv_newsletter_subscriber` has the row with `status = pending` and no
+   consent evidence yet.
+3. The confirmation email arrives from `info@kairali.com`. Screenshot its
+   headers, without the link token.
+4. Opening the link shows the Confirm page, and the row is still pending.
+5. Pressing Confirm sets the row to `status = confirmed`, with `confirmed_at`
+   and the consent version, text, locale and source path.
+6. Using the Unsubscribe link from the result page sets
+   `status = unsubscribed` and `suppressed = 1`.
+7. Signing up again with the same address leaves the row suppressed until the
+   new link is confirmed.
+8. Outbox: temporarily point the mail webhook at an unreachable URL, sign up,
+   and expect "could not confirm that the confirmation email was sent". Then
+   restore the URL, wait `retryDelaySeconds`, trigger the worker, and confirm
+   the SAME link arrives once. Record the worker's count-only JSON.
+
+Remove the labelled rows only after the evidence is saved.
+
 The agent cannot produce this evidence without the credentials above. It must
 never claim delivery without it.
 
@@ -197,6 +284,9 @@ never claim delivery without it.
 - **Instant (website):** remove `AHV_FORM_RELAY_URL` or `AHV_FORM_RELAY_SECRET`
   from the Vercel environment and redeploy. Every form route returns to the
   truthful 503 before reading a body.
+- **Newsletter only:** remove `AHV_NEWSLETTER_MAIL_PROVIDER` and redeploy.
+  The signup, confirm, unsubscribe and outbox routes return to the truthful
+  503. Stored subscribers and suppressions are untouched.
 - **Relay:** delete `<web root>/ahv-form-relay/index.php`. Stored rows are
   untouched.
 - **Key compromise:** replace the key in `config.php` and on Vercel. This
@@ -208,6 +298,18 @@ never claim delivery without it.
   sqlstate=<code>`. It contains no SQL and no submitted values.
 - The `ahv_relay_nonce` table purges itself. It keeps about one day of nonces.
 - Rate limits:
+  - Newsletter, from `lead-schema.json` `newsletter.limits`:
+    - 10 signups per IP per hour.
+    - 5 per address per day.
+    - At most 3 confirmation emails per address per day.
+    - No resend within 120 s of an accepted one.
+    - All newsletter limits are fixed-window counters, locked per key, so
+      they are atomic under concurrency.
+  - Newsletter outbox, from `newsletter.outbox`:
+    - The inline lease is 120 s.
+    - An uncertain send is retried after 600 s.
+    - A job is tried at most 5 times.
+    - The worker claims up to 10 jobs per run.
   - 5 submissions per IP per table per 10 minutes. This is the same as before
     the relay.
   - 120 authenticated requests per minute in total. This is

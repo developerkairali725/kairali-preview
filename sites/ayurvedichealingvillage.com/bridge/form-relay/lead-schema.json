@@ -22,6 +22,28 @@
     "lead_source_url": 500,
     "referrer": 500
   },
+  "newsletter": {
+    "about": "Double opt-in newsletter audience (relay ops newsletter.*). Its own three tables (newsletter-tables.sql), never the patient lead tables below. consentVersions maps each consent version the site may send to the exact English permission text shown beside the form; the relay records version, text, display locale and source path only when the address is confirmed.",
+    "consentVersions": {
+      "newsletter-2026-09-24": "By subscribing, you agree to receive Kairali news and programme updates. Unsubscribe any time."
+    },
+    "locales": ["en", "hi", "de", "fr", "es", "it", "pt", "nl", "ru", "ar", "zh-Hans", "ja", "ko"],
+    "confirmationTtlHours": 48,
+    "limits": {
+      "perIpPerHour": 10,
+      "perEmailPerDay": 5,
+      "sendsPerEmailPerDay": 3,
+      "resendCooldownSeconds": 120
+    },
+    "outbox": {
+      "inlineLeaseSeconds": 120,
+      "retryDelaySeconds": 600,
+      "maxSendAttempts": 5,
+      "claimBatch": 10
+    },
+    "maxEmailLength": 254,
+    "maxSourcePathLength": 300
+  },
   "tables": {
     "contact": [
       "full_name", "countrycode", "phone", "programme", "email", "subject",

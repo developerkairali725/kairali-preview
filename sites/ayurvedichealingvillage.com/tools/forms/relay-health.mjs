@@ -18,7 +18,9 @@ if (problem) {
 }
 try {
   const report = await relayCall('health', undefined);
-  console.log(JSON.stringify({ ready: report.ready, protocol: report.protocol, tables: report.tables }, null, 2));
+  // `newsletter` (double opt-in tables) is reported beside the lead tables and does not change the exit code;
+  // activate the newsletter only when newsletter.ready is also true (RUNBOOK.md step 6).
+  console.log(JSON.stringify({ ready: report.ready, protocol: report.protocol, tables: report.tables, newsletter: report.newsletter ?? null }, null, 2));
   process.exit(report.ready === true ? 0 : 1);
 } catch (error) {
   console.error(`relay health failed: ${error && error.code ? error.code : 'unknown'}`);

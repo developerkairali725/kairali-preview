@@ -131,6 +131,115 @@ $p = lead(uuid(), [], '', 'opd'); $p['data']['values'] = ['full_name' => 'x', 'a
 $r = call($p);
 check($r['status'] === 500 && $r['signed'] && $r['body'] === ['ok' => false, 'code' => 'STORE_FAILED'], 'driver error surfaces only as STORE_FAILED');
 
+// 12. newsletter double opt-in against the REAL DDL (newsletter-tables.sql) — ops, row locks, unique keys
+$nl = function (string $op, array $data) { return call(['v' => 1, 'op' => $op, 'data' => $data]); };
+$sealed = function (string $seed) { return 'v1.' . rtrim(strtr(base64_encode(hash('sha256', $seed, true) . hash('sha256', $seed . 'x', true)), '+/', '-_'), '='); };
+$th = hash('sha256', 'synthetic-token-1');
+$sub = ['email' => ' Synthetic.NL@Example.invalid ', 'consent_version' => 'newsletter-2026-09-24', 'consent_locale' => 'de', 'source_path' => '/de/', 'submit_ip' => '203.0.113.70', 'token_hash' => $th, 'token_sealed' => $sealed('1')];
+$r = $nl('newsletter.subscribe', $sub);
+check($r['status'] === 200 && $r['signed'] && $r['body']['send'] === true && is_int($r['body']['confirmation_id']), 'newsletter: pending record + recoverable mail job stored, send requested');
+$cid = $r['body']['confirmation_id'];
+$row = $pdo->query("SELECT status, email, confirmed_at, consent_text FROM ahv_newsletter_subscriber WHERE email_hash = " . $pdo->quote(hash('sha256', 'synthetic.nl@example.invalid')))->fetch(PDO::FETCH_ASSOC);
+check($row && $row['status'] === 'pending' && $row['email'] === 'synthetic.nl@example.invalid' && $row['confirmed_at'] === null && $row['consent_text'] === null, 'newsletter: pending, normalized, no consent evidence before confirmation');
+$job = $pdo->query('SELECT mail_status, token_sealed, attempts, lease_until FROM ahv_newsletter_confirmation WHERE id = ' . (int) $cid)->fetch(PDO::FETCH_ASSOC);
+check($job['mail_status'] === 'queued' && $job['token_sealed'] === $sub['token_sealed'] && (int) $job['attempts'] === 1 && $job['lease_until'] !== null, 'newsletter: job queued with the sealed token under the inline lease');
+$r = $nl('newsletter.subscribe', array_merge($sub, ['token_hash' => hash('sha256', 'synthetic-token-q'), 'token_sealed' => $sealed('q')]));
+check($r['body']['send'] === true, 'newsletter: a still-queued job never makes a repeat "quiet" (no pending answer without an accepted email)');
+$r = $nl('newsletter.mail_result', ['confirmation_id' => $cid, 'token_hash' => $th, 'result' => 'sent']);
+$job = $pdo->query('SELECT mail_status, token_sealed FROM ahv_newsletter_confirmation WHERE id = ' . (int) $cid)->fetch(PDO::FETCH_ASSOC);
+check($r['status'] === 200 && $r['body']['updated'] === true && $job['mail_status'] === 'sent' && $job['token_sealed'] === null, 'newsletter: accepted send recorded, seal cleared');
+$r = $nl('newsletter.subscribe', array_merge($sub, ['token_hash' => hash('sha256', 'synthetic-token-2'), 'token_sealed' => $sealed('2')]));
+check($r['status'] === 200 && $r['body']['send'] === false && $r['body']['confirmation_id'] === null, 'newsletter: repeat inside the cooldown of an accepted email sends nothing (neutral)');
+$r = $nl('newsletter.confirm', ['token_hash' => $th]);
+check($r['status'] === 200 && $r['body']['outcome'] === 'confirmed' && preg_match('/^[0-9a-f]{32}$/', $r['body']['public_id']) === 1, 'newsletter: token consumed once, confirmed');
+$publicId = $r['body']['public_id'];
+$row = $pdo->query("SELECT status, suppressed, confirmed_at, consent_version, consent_text, consent_locale, consent_source_path FROM ahv_newsletter_subscriber WHERE public_id = " . $pdo->quote($publicId))->fetch(PDO::FETCH_ASSOC);
+check($row['status'] === 'confirmed' && (int) $row['suppressed'] === 0 && $row['confirmed_at'] !== null && $row['consent_version'] === 'newsletter-2026-09-24' && $row['consent_locale'] === 'de' && $row['consent_source_path'] === '/de/' && $row['consent_text'] === $schema['newsletter']['consentVersions']['newsletter-2026-09-24'], 'newsletter: consent evidence recorded on confirmation');
+$open = (int) $pdo->query('SELECT COUNT(*) FROM ahv_newsletter_confirmation WHERE used_at IS NULL AND revoked_at IS NULL AND token_sealed IS NOT NULL')->fetchColumn();
+check($open === 0, 'newsletter: confirmation revokes the other outstanding jobs and clears every seal');
+$r = $nl('newsletter.confirm', ['token_hash' => $th]);
+check($r['body']['outcome'] === 'invalid', 'newsletter: replayed token is neutral invalid');
+$r = $nl('newsletter.unsubscribe', ['public_id' => $publicId]);
+$r2 = $nl('newsletter.unsubscribe', ['public_id' => $publicId]);
+$row = $pdo->query("SELECT status, suppressed FROM ahv_newsletter_subscriber WHERE public_id = " . $pdo->quote($publicId))->fetch(PDO::FETCH_ASSOC);
+check($r['body']['outcome'] === 'unsubscribed' && $r2['body']['outcome'] === 'unsubscribed' && $row['status'] === 'unsubscribed' && (int) $row['suppressed'] === 1, 'newsletter: unsubscribe immediate and idempotent');
+$leadRows = 0;
+foreach (array_keys($schema['tables']) as $table) $leadRows += (int) $pdo->query('SELECT COUNT(*) FROM ' . ahv_relay_ident($table) . " WHERE email LIKE '%synthetic.nl%'")->fetchColumn();
+check($leadRows === 0, 'newsletter: nothing written to any patient lead table');
+$r = call(['v' => 1, 'op' => 'health']);
+check($r['body']['newsletter']['ready'] === true, 'newsletter: health reports the newsletter tables ready');
+
+// 13. newsletter under REAL InnoDB concurrency: parallel processes, one connection each, one shared start instant
+function nl_parallel(array $jobs): array {
+    global $socket;
+    $start = sprintf('%.6f', microtime(true) + 1.0);
+    $procs = [];
+    foreach ($jobs as $i => $job) {
+        $cmd = [PHP_BINARY, __DIR__ . '/mysql-newsletter-worker.php', $socket, $start, base64_encode(json_encode($job))];
+        $procs[$i] = proc_open($cmd, [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes[$i]);
+    }
+    $out = [];
+    foreach ($procs as $i => $proc) {
+        $text = stream_get_contents($pipes[$i][1]);
+        fclose($pipes[$i][1]); fclose($pipes[$i][2]);
+        proc_close($proc);
+        $out[$i] = json_decode((string) $text, true);
+    }
+    return $out;
+}
+function nl_sub(string $email, string $ip, string $seed): array {
+    global $sealed;
+    return ['op' => 'newsletter.subscribe', 'data' => ['email' => $email, 'consent_version' => 'newsletter-2026-09-24', 'consent_locale' => 'en', 'source_path' => '/', 'submit_ip' => $ip, 'token_hash' => hash('sha256', $seed), 'token_sealed' => $sealed($seed)]];
+}
+$statuses = function (array $results) { return array_count_values(array_map(function ($r) { return (string) ($r['status'] ?? 'none'); }, $results)); };
+
+// a) per-IP ceiling (10/hour) holds when 16 different addresses arrive from one IP at the same instant
+$res = nl_parallel(array_map(function ($i) { return nl_sub("ip-race-$i@example.invalid", '198.51.100.200', "ip-race-$i"); }, range(1, 16)));
+$c = $statuses($res);
+check(($c['200'] ?? 0) === 10 && ($c['429'] ?? 0) === 6, 'newsletter concurrency: per-IP limit is atomic (16 parallel → 10 accepted, 6 refused): ' . json_encode($c));
+
+// b) per-address ceilings (5 attempts/day, 3 emails/day) hold when 8 requests for one address race from 8 IPs
+$res = nl_parallel(array_map(function ($i) { return nl_sub('addr-race@example.invalid', "198.51.101.$i", "addr-race-$i"); }, range(1, 8)));
+$c = $statuses($res);
+$sendsTrue = count(array_filter($res, function ($r) { return ($r['body']['send'] ?? null) === true; }));
+$rows = (int) $pdo->query("SELECT COUNT(*) FROM ahv_newsletter_subscriber WHERE email_hash = " . $pdo->quote(hash('sha256', 'addr-race@example.invalid')))->fetchColumn();
+check(($c['429'] ?? 0) === 5 && $sendsTrue === 3 && $rows === 1, 'newsletter concurrency: per-address limits atomic, one subscriber row (8 parallel → 5 attempts pass, exactly 3 emails, the rest refused): ' . json_encode($c) . " sends=$sendsTrue rows=$rows");
+
+// c) six parallel confirmations of one token: exactly one winner
+$r = nl_parallel([nl_sub('confirm-race@example.invalid', '198.51.102.1', 'confirm-race')])[0];
+$res = nl_parallel(array_fill(0, 6, ['op' => 'newsletter.confirm', 'data' => ['token_hash' => hash('sha256', 'confirm-race')]]));
+$wins = count(array_filter($res, function ($x) { return ($x['body']['outcome'] ?? '') === 'confirmed'; }));
+$errors = count(array_filter($res, function ($x) { return ($x['status'] ?? 0) !== 200; }));
+check($r['body']['send'] === true && $wins === 1 && $errors === 0, "newsletter concurrency: single-use consume under 6 parallel confirms (wins=$wins, errors=$errors)");
+
+// d) confirm (subscriber → token) racing unsubscribe (subscriber → tokens): no deadlock failure, suppression always wins
+$ok = 0; $rounds = 8;
+for ($i = 1; $i <= $rounds; $i++) {
+    $email = "lock-order-$i@example.invalid";
+    nl_parallel([nl_sub($email, "198.51.103.$i", "lo-a-$i")]);
+    $first = nl_parallel([['op' => 'newsletter.confirm', 'data' => ['token_hash' => hash('sha256', "lo-a-$i")]]])[0];
+    $pid = $first['body']['public_id'];
+    nl_parallel([['op' => 'newsletter.unsubscribe', 'data' => ['public_id' => $pid]]]);
+    nl_parallel([nl_sub($email, "198.51.104.$i", "lo-b-$i")]); // fresh opt-in: pending again, still suppressed
+    $race = nl_parallel([
+        ['op' => 'newsletter.confirm', 'data' => ['token_hash' => hash('sha256', "lo-b-$i")]],
+        ['op' => 'newsletter.unsubscribe', 'data' => ['public_id' => $pid]],
+        ['op' => 'newsletter.unsubscribe', 'data' => ['public_id' => $pid]],
+    ]);
+    $final = $pdo->query('SELECT status, suppressed FROM ahv_newsletter_subscriber WHERE public_id = ' . $pdo->quote($pid))->fetch(PDO::FETCH_ASSOC);
+    $allOk = count(array_filter($race, function ($x) { return ($x['status'] ?? 0) === 200; })) === 3;
+    if ($allOk && $final['status'] === 'unsubscribed' && (int) $final['suppressed'] === 1) $ok++;
+}
+check($ok === $rounds, "newsletter concurrency: confirm vs unsubscribe — every round completes and ends suppressed ($ok/$rounds)");
+
+// e) outbox: parallel workers never claim the same job twice
+$pdo->exec("UPDATE ahv_newsletter_confirmation SET lease_until = '2000-01-01 00:00:00' WHERE mail_status = 'queued' AND used_at IS NULL AND revoked_at IS NULL");
+$eligible = (int) $pdo->query("SELECT COUNT(*) FROM ahv_newsletter_confirmation c JOIN ahv_newsletter_subscriber s ON s.id = c.subscriber_id WHERE c.mail_status IN ('queued','unknown') AND c.used_at IS NULL AND c.revoked_at IS NULL AND c.token_sealed IS NOT NULL AND c.attempts < 5 AND NOT (s.status = 'confirmed' AND s.suppressed = 0)")->fetchColumn();
+$res = nl_parallel(array_fill(0, 4, ['op' => 'newsletter.claim', 'data' => ['limit' => 10]]));
+$claimed = [];
+foreach ($res as $x) foreach (($x['body']['jobs'] ?? []) as $j) $claimed[] = $j['confirmation_id'];
+check(count($claimed) === count(array_unique($claimed)) && count($claimed) === min($eligible, 40) && $eligible > 0, 'newsletter concurrency: 4 parallel outbox claims lease each job exactly once (' . count($claimed) . "/$eligible)");
+
 // 11. global per-minute ceiling (config 40)
 $last = 0;
 for ($i = 0; $i < 45; $i++) $last = call(['v' => 1, 'op' => 'health'])['status'];

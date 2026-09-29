@@ -36,6 +36,10 @@
         status.textContent = 'Newsletter signup is not connected yet. Nothing has been saved or sent. Please try again later.';
       } else if (response.status === 429) {
         status.textContent = 'Please wait a little before trying again. Your email is still here.';
+      } else if (response.status === 502 && data.code === 'CONFIRMATION_MAIL_UNCERTAIN') {
+        status.textContent = 'We could not confirm that the confirmation email was sent. If it does not arrive within a few minutes, please try again.';
+      } else if (response.status === 502) {
+        status.textContent = 'We could not complete your signup. You are not subscribed yet. Please try again. Your email is still here.';
       } else {
         status.textContent = 'We could not confirm your signup. Please check your email address and try again.';
       }

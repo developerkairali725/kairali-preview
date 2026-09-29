@@ -14,9 +14,10 @@ in both destinations.
 - Sheet: `1z3sN5rbYl18ECQXzNRTUdO4IuJQ2rXxX7RMDiqJDa54`
 - Application file folder: `1GQS5u-y33Io8i7ofgvHczrJGB1j0-AlO`
 
-Newsletter submissions remain on their separate existing route, which stays
-fail-closed (503, body never read) until a newsletter consent model is ruled —
-see "Approval holds" below.
+Newsletter signups use their own route and their own audience. The approved
+consent model is **double opt-in**; see "Newsletter double opt-in" below. The
+route stays fail-closed (503, body never read) until its storage and
+confirmation-mail settings are configured.
 
 ## Apps Script
 
@@ -90,6 +91,128 @@ the page's current language. The browser starts that same-origin PDF download
 only after both database and Sheet acknowledgement succeed. Newsletter capture
 does not trigger the guide.
 
+## Newsletter double opt-in
+
+The newsletter is the approved double opt-in design from the forms
+recommendations. It is implemented in `lib/newsletter*.ts`,
+`app/api/newsletter/**` and the relay ops `newsletter.*` (see
+`bridge/form-relay/SPEC.md`, section "Newsletter").
+
+It is kept apart from the lead forms in these ways:
+
+- It is a separate email-only audience with its own three database tables.
+- It never touches the lead tables, the lead Sheet or `Main`.
+- It never triggers the Healing Secrets guide.
+- It adds no tracking event and changes no consent UI.
+
+The lifecycle:
+
+1. The footer form posts `{email, consentVersion, sourcePath}` to
+   `/api/newsletter`. The server checks the request size and type, validates
+   the address, accepts only a known consent version, and accepts only a
+   same-site relative source path. The source path is never used as a
+   redirect.
+2. The relay stores a **pending** subscriber (one per address) and a
+   durable, **recoverable** confirmation-mail job (the outbox). The job holds
+   the SHA-256 of a random single-use token, plus the token sealed with
+   AES-256-GCM under a key that exists only on Vercel. The token expires
+   after 48 hours.
+3. The confirmation email goes out from `info@kairali.com`. The browser sees
+   "Check your email" only after the provider signs an acceptance of THIS
+   job.
+   - A signed refusal answers `502 CONFIRMATION_MAIL_FAILED` ("not subscribed
+     yet") and revokes that token.
+   - An uncertain outcome (timeout, network error, unverifiable reply) answers
+     `502 CONFIRMATION_MAIL_UNCERTAIN` ("could not confirm that the email was
+     sent"). The token stays valid, because the email may have arrived.
+   - The outbox worker (`GET /api/newsletter/outbox`, triggered by cron with
+     `CRON_SECRET`) re-sends uncertain jobs, and jobs whose request crashed
+     after saving, with the SAME link.
+   - A repeat signup is neutral only when the address is confirmed or an
+     accepted email is recent. It never is when a job is merely queued.
+   - Delivery is at-least-once. Duplicates are suppressed by idempotency keys
+     and the sender's journal, but exactly-once is not claimed.
+4. The emailed link opens a Confirm page. Opening it changes nothing, so mail
+   scanners are harmless. Pressing **Confirm subscription** consumes the token
+   atomically. Only then are these recorded: the consent version, the exact
+   English permission text shown beside the form, the display locale, the
+   source path, and `confirmed_at`. Expired, used and tampered links get one
+   neutral "no longer valid" page.
+5. The confirmation page links an authenticated, opaque unsubscribe URL. It
+   also works as an RFC 8058 one-click POST. Unsubscribing suppresses the
+   address immediately and idempotently. Suppression survives retries,
+   resends and re-imports. Only a fresh signup plus a fresh confirmation
+   lifts it.
+6. Abuse limits are enforced server-side in the database. They are atomic
+   counters with one locked row per IP or address, proven under parallel
+   load on MySQL:
+   - 10 signups per IP per hour.
+   - 5 per address per day.
+   - 3 confirmation emails per address per day.
+   - No resend within 120 s.
+
+No email, token or secret is written to a log, a URL (except the opaque
+token), analytics or browser storage.
+
+### Confirmation-mail sender (Apps Script)
+
+1. Create a **new** Apps Script project. Do not use the lead-Sheet project.
+   It must be owned by the account that is `info@kairali.com`, or by an
+   account that has `info@kairali.com` as a verified Gmail "Send mail as"
+   address. The script refuses to send from any other address and never
+   substitutes one.
+2. Paste `scripts/apps-script/newsletter-mail.gs`.
+3. In **Script Properties**, set `AHV_NEWSLETTER_MAIL_SECRET` to a random
+   value of at least 32 characters.
+4. Run `diagnoseNewsletterSender()`. It must report `senderAvailable: true`
+   and `secretConfigured: true`. It sends nothing.
+5. Deploy it as a Web app. Execute as: the owner. Who has access: Anyone.
+   Copy the `/exec` URL.
+
+The sender keeps a durable journal in Script Properties, one entry per job.
+It writes `sending` before `GmailApp.sendEmail` and `accepted` after it
+returns, so it never marks a job accepted before sending. A repeated job
+behaves like this:
+
+- If the journal says `accepted`, the repeat is acknowledged without a second
+  email.
+- If the journal says `sending`, the script searches the account's Sent mail
+  for the job reference that every email carries. If found, the job is
+  acknowledged. If not found, the answer is "unknown" for 10 minutes, and
+  after that the email is sent again (at-least-once).
+- Every reply is HMAC-signed and bound to the request nonce and job key.
+- A refusal is signed only when nothing was sent.
+
+### Newsletter runtime variables (Preview first)
+
+```text
+AHV_NEWSLETTER_MAIL_PROVIDER=apps-script
+AHV_NEWSLETTER_MAIL_WEBHOOK_URL=<the newsletter-mail Apps Script /exec URL>
+AHV_NEWSLETTER_MAIL_WEBHOOK_SECRET=<same value as AHV_NEWSLETTER_MAIL_SECRET>
+AHV_NEWSLETTER_PUBLIC_ORIGIN=<https origin the emailed links must open, no path>
+AHV_NEWSLETTER_LINK_SECRET=<random, >= 32 characters>
+AHV_NEWSLETTER_OUTBOX_KEY=<random, >= 32 characters, different from the link secret>
+CRON_SECRET=<random, >= 32 characters; outbox worker bearer token>
+```
+
+The outbox worker also needs a cron trigger for `/api/newsletter/outbox`. This
+is a deployment-config change, proposed in RUNBOOK.md step 7b and NOT made
+here.
+
+The relay variables above are required too. Before setting these variables,
+apply the database tables: `bridge/form-relay/newsletter-tables.sql` and the
+grants in RUNBOOK.md step 3b. With any value missing or unsafe, every
+newsletter route answers 503 before reading a body.
+
+Newsletter activation evidence (RUNBOOK.md step 8) needs a synthetic mailbox
+you control. No agent has sent a real confirmation email, and no delivery has
+been verified.
+
+Confirm/unsubscribe pages and the email are English source strings
+(`lib/newsletter-copy.ts`, listed in `l10n/source/ui-strings.json`). They are
+served in a locale once the localization pipeline has accepted translations
+for them.
+
 ## Approval holds
 
 - Exit intent remains inactive. Its offer and clinical copy require separate
@@ -101,10 +224,12 @@ does not trigger the guide.
   coordinator note); it is not re-asked. The receipts are factual
   ("Thank you — your details have been received.") and, in the translated
   design views, ship as new units for the next localization round.
-- Newsletter: the approved design (forms recommendations) specifies double
-  opt-in with a `pending_confirmation` result, confirmation and unsubscribe
-  routes. The earlier single-opt-in MySQL/Sheet newsletter change is **held**
-  as a consent-logic change (HARD GATE 11) until the owner rules on it; the
-  newsletter route stays fail-closed meanwhile.
+- Newsletter: the approved double opt-in is implemented (section "Newsletter
+  double opt-in" above). It fails closed until configured, and no delivery has
+  been verified. The earlier single-opt-in MySQL/Sheet newsletter change was
+  never adopted and stays out: it would be a consent-logic change (HARD
+  GATE 11). A newsletter Sheet mirror is not built. If one is ever added, it
+  must be purpose-specific, and a pending row must never imply marketing
+  consent.
 - CRM/inbox forwarding remains unconfigured until its endpoint and credentials
   are supplied through an approved secure channel.
