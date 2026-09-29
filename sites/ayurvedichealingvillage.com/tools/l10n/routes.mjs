@@ -60,6 +60,23 @@ for (const e of legacy) {
     redirects[s] = { to, basis: e.enPath ? `equivalent (${e.confidence})` : "NO EQUIVALENT — nearest, flagged for owner", clicks: e.clicks ?? null };
   }
 }
+// Query-string variants are skipped above (a redirect source is a path), which also dropped the PATH of a recorded
+// variant when no other entry names it: /fr/programs/page/2/?query-17-page=2 was crawled live, yet /fr/programs/page/2/
+// had no rule and would 404 (SEO-D22 D-13, 29 Sep 2026). The path part now gets the same single hop as its entry —
+// only when nothing else already answers there, so no existing rule changes.
+for (const e of legacy) {
+  const target = e.enPath && enSet.has(e.enPath) ? e.enPath : e.nearest && enSet.has(e.nearest) ? e.nearest : "/";
+  const loc = e.lang === "ru" ? "ru" : e.lang;
+  if (!LOCALES[loc]) continue;
+  const to = routes[target][loc];
+  for (const v of [e.canonical, ...(e.variants || [])]) {
+    if (!v.includes("?")) continue;
+    const s = new URL(v, "https://ayurvedichealingvillage.com").pathname.replace(/\/?$/, "/");
+    if (redirects[s] || PAID.has(s.toLowerCase()) || LP_LEGACY.has(s.toLowerCase()) || /\.xml\/?$/.test(s)) continue;
+    if (s === to || servedSet.has(s) || all.has(s)) continue;
+    redirects[s] = { to, basis: `path of a recorded query variant (${e.enPath ? `equivalent (${e.confidence})` : "NO EQUIVALENT — nearest, flagged for owner"})`, clicks: null };
+  }
+}
 // English protection-map 301s (english-candidate/redirect-map.json: retired test/cart/old-duplicate pages) apply
 // in every locale too. Before 28 Sep 2026 these were allocated as locale PAGES, so /hi/cart/, /de/map/ or
 // /ar/test-page/ served a live localized copy of a page English retires. Each locale copy is now one 301 hop to

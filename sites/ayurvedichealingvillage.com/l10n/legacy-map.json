@@ -2887,7 +2887,7 @@
    "confidence": "high",
    "primary": false,
    "clicks": 0,
-   "evidence": "time-bound campaign offer (Olympia- & Paralympics-Angebot, bis zu 20% Rabatt); no EN campaign page",
+   "evidence": "time-bound campaign offer (Olympia- & Paralympics-Angebot, bis zu 20% Rabatt). Corrected 2026-09-29 (SEO-D22 D-13): an EN page exists (/offers/olympics-and-paralympics-offer/), but it is an EN-only campaign route (l10n/scope.json excluded), so there is no German equivalent; nearest German page /de/offers/ kept",
    "variants": [
     "/de/olympia-und-paralympics-angebot/"
    ],

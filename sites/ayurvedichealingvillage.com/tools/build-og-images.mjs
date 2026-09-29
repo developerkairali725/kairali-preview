@@ -57,6 +57,10 @@ for (const r of routes) {
   if (fs.existsSync(dest)) { reused++; continue; }
   try {
     fs.copyFileSync(src, dest);
+    // sips reads WebP but cannot WRITE it, so a .webp source (most of the page
+    // bank since the 21 Sep WebP conversion) must become a JPEG before the
+    // in-place resample/crop below, or every sips write fails (SEO-D22, 29 Sep).
+    execFileSync("sips", ["-s", "format", "jpeg", dest, "--out", dest], { stdio: "ignore" });
     const d = dims(dest);
     // Cover-fit: scale on the axis that would otherwise leave the frame short,
     // then centre-crop. Scaling on the wrong axis makes sips pad with white bars.
@@ -72,7 +76,12 @@ for (const r of routes) {
     }
     if (fs.statSync(dest).size > MAX_KB * 1024) over++;
     made++;
-  } catch { failed++; delete map[r.path]; }
+  } catch {
+    failed++; delete map[r.path];
+    // A half-made card (e.g. the raw copied source under a .jpg name) must not
+    // survive: the next run would count it as "reused" and map it.
+    try { fs.unlinkSync(dest); } catch { /* nothing was written */ }
+  }
 }
 fs.writeFileSync(MAP, JSON.stringify(map, null, 1));
 const sizes = Object.values(map).map((p) => { try { return fs.statSync(path.join(SITE, "public", p.replace(/^\//, ""))).size; } catch { return 0; } }).filter(Boolean);

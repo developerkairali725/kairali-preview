@@ -1,0 +1,204 @@
+{
+ "plan": "seo-d22-20260929",
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001 lane SEO-D22",
+ "why": "D-11 class: design-supplied JSON-LD graphs re-declare the SAME @id entities as the governed server graph (app/(english)/_families/schema.ts) under a different name or type. #website and #organization are one entity each, so every node carrying those ids must agree with the server's ORG_NAME ('Kairali — The Ayurvedic Healing Village', the name the approved chrome prints as the logo alt) and its entity type (Organization + Hospital, locked NABH hospital fact). The one node typed Resort (/ayurvedic-treatment-packages.html) also breaks the KTAHV language lock inside structured data. Names and types only; no other property is changed and no fact is added.",
+ "entries": [
+  {
+   "id": "D11-website-name",
+   "auto": true,
+   "old": "\"@id\":\"https://ayurvedichealingvillage.com/#website\",\"url\":\"https://ayurvedichealingvillage.com/\",\"name\":\"Ayurvedic Healing Village\"",
+   "new": "\"@id\":\"https://ayurvedichealingvillage.com/#website\",\"url\":\"https://ayurvedichealingvillage.com/\",\"name\":\"Kairali — The Ayurvedic Healing Village\"",
+   "min": 100
+  },
+  {
+   "id": "D11-website-name-variant",
+   "auto": true,
+   "old": "\"@id\":\"https://ayurvedichealingvillage.com/#website\",\"name\":\"Kairali Ayurvedic Healing Village\"",
+   "new": "\"@id\":\"https://ayurvedichealingvillage.com/#website\",\"name\":\"Kairali — The Ayurvedic Healing Village\"",
+   "min": 2
+  },
+  {
+   "id": "D11-website-name-spaced",
+   "auto": true,
+   "old": "\"@id\": \"https://ayurvedichealingvillage.com/#website\", \"url\": \"https://ayurvedichealingvillage.com/\", \"name\": \"Ayurvedic Healing Village\"",
+   "new": "\"@id\": \"https://ayurvedichealingvillage.com/#website\", \"url\": \"https://ayurvedichealingvillage.com/\", \"name\": \"Kairali — The Ayurvedic Healing Village\"",
+   "min": 2
+  },
+  {
+   "id": "D11-organization-name",
+   "auto": true,
+   "old": "\"@id\":\"https://ayurvedichealingvillage.com/#organization\",\"name\":\"Ayurvedic Healing Village\"",
+   "new": "\"@id\":\"https://ayurvedichealingvillage.com/#organization\",\"name\":\"Kairali — The Ayurvedic Healing Village\"",
+   "min": 70
+  },
+  {
+   "id": "D11-organization-type-lock",
+   "auto": true,
+   "old": "\"@type\":[\"HealthAndWellnessBusiness\",\"Resort\"],\"@id\":\"https://ayurvedichealingvillage.com/#organization\",\"name\":\"Kairali Ayurvedic Healing Village\"",
+   "new": "\"@type\":[\"Organization\",\"Hospital\"],\"@id\":\"https://ayurvedichealingvillage.com/#organization\",\"name\":\"Kairali — The Ayurvedic Healing Village\"",
+   "min": 2
+  },
+  {
+   "id": "D15-17-disclaimer-head",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"metadata\":{\"title\":\"Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Disclaimer\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/disclaimer/\"",
+   "new": "\"metadata\":{\"title\":\"Disclaimer | Kairali - The Ayurvedic Healing Village\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive disclaimer for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/disclaimer/\""
+  },
+  {
+   "id": "D15-disclaimer-og-description",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"title\":\"Disclaimer\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/disclaimer/\"",
+   "new": "\"title\":\"Disclaimer\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive disclaimer for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/disclaimer/\""
+  },
+  {
+   "id": "D15-17-disclaimer-manifest",
+   "op": "manifestMeta",
+   "path": "/disclaimer/",
+   "set": {
+    "title": "Disclaimer | Kairali - The Ayurvedic Healing Village",
+    "description": "Kairali Ayurvedic Group provides a comprehensive disclaimer for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India."
+   }
+  },
+  {
+   "id": "D15-17-payment-policy-compliance-head",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"metadata\":{\"title\":\"Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/payment-policy-compliance/\"",
+   "new": "\"metadata\":{\"title\":\"Payment Policy & Compliance | Kairali - The Ayurvedic Healing Village\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive payment policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/payment-policy-compliance/\""
+  },
+  {
+   "id": "D15-payment-policy-compliance-og-description",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"title\":\"Payment Policy &amp; Compliance\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/payment-policy-compliance/\"",
+   "new": "\"title\":\"Payment Policy &amp; Compliance\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive payment policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/payment-policy-compliance/\""
+  },
+  {
+   "id": "D15-17-payment-policy-compliance-manifest",
+   "op": "manifestMeta",
+   "path": "/payment-policy-compliance/",
+   "set": {
+    "title": "Payment Policy & Compliance | Kairali - The Ayurvedic Healing Village",
+    "description": "Kairali Ayurvedic Group provides a comprehensive payment policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India."
+   }
+  },
+  {
+   "id": "D15-17-terms-and-conditions-head",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"metadata\":{\"title\":\"Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/terms-and-conditions/\"",
+   "new": "\"metadata\":{\"title\":\"Terms and Conditions | Kairali - The Ayurvedic Healing Village\",\"description\":\"Kairali Ayurvedic Group provides comprehensive terms and conditions for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/terms-and-conditions/\""
+  },
+  {
+   "id": "D15-terms-and-conditions-og-description",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"title\":\"Terms and Conditions\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/terms-and-conditions/\"",
+   "new": "\"title\":\"Terms and Conditions\",\"description\":\"Kairali Ayurvedic Group provides comprehensive terms and conditions for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"url\":\"https://ayurvedichealingvillage.com/terms-and-conditions/\""
+  },
+  {
+   "id": "D15-17-terms-and-conditions-manifest",
+   "op": "manifestMeta",
+   "path": "/terms-and-conditions/",
+   "set": {
+    "title": "Terms and Conditions | Kairali - The Ayurvedic Healing Village",
+    "description": "Kairali Ayurvedic Group provides comprehensive terms and conditions for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India."
+   }
+  },
+  {
+   "id": "D15-17-new-privacy-policy-head",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"metadata\":{\"title\":\"Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Privacy Policy\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/new-privacy-policy/\"",
+   "new": "\"metadata\":{\"title\":\"Privacy Policy | Kairali - The Ayurvedic Healing Village\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive privacy policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala; a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/new-privacy-policy/\""
+  },
+  {
+   "id": "D15-17-new-privacy-policy-manifest",
+   "op": "manifestMeta",
+   "path": "/new-privacy-policy/",
+   "set": {
+    "title": "Privacy Policy | Kairali - The Ayurvedic Healing Village"
+   }
+  },
+  {
+   "id": "D15-17-cancellation-and-refund-policy-head",
+   "file": "public/ahv/assets/policy-family-data.js",
+   "count": 1,
+   "old": "\"metadata\":{\"title\":\"Kairali-The Ayurvedic Healing Village | Ayurvedic Centre Kerala | Wellness Centre India | Ayurvedic Healing Village Cancellation and Refund Policy\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive Cancellation and Refund Policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala. a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/cancellation-and-refund-policy/\"",
+   "new": "\"metadata\":{\"title\":\"Cancellation & Refund Policy | Kairali - The Ayurvedic Healing Village\",\"description\":\"Kairali Ayurvedic Group provides a comprehensive Cancellation and Refund Policy for customers of their Ayurvedic Healing Village, an Ayurvedic center in Kerala. a leading wellness center of India.\",\"canonical\":\"https://ayurvedichealingvillage.com/cancellation-and-refund-policy/\""
+  },
+  {
+   "id": "D15-17-cancellation-and-refund-policy-manifest",
+   "op": "manifestMeta",
+   "path": "/cancellation-and-refund-policy/",
+   "set": {
+    "title": "Cancellation & Refund Policy | Kairali - The Ayurvedic Healing Village"
+   }
+  },
+  {
+   "id": "D15-the-baoli-special-deal-title",
+   "file": "public/ahv/assets/commercial-family-data.js",
+   "count": 1,
+   "old": "\"title\":\"Animal Husbandry | Kairali’s Organic Produce\",\"description\":\"Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.\",\"canonical\":\"https://ayurvedichealingvillage.com/the-baoli-special-deal/\"",
+   "new": "\"title\":\"The Baoli Special Deal | Kairali Healing Village\",\"description\":\"Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.\",\"canonical\":\"https://ayurvedichealingvillage.com/the-baoli-special-deal/\""
+  },
+  {
+   "id": "D15-the-baoli-special-deal-manifest",
+   "op": "manifestMeta",
+   "path": "/the-baoli-special-deal/",
+   "set": {
+    "title": "The Baoli Special Deal | Kairali Healing Village"
+   }
+  },
+  {
+   "id": "D15-the-baoli-advert-box-deal-title",
+   "file": "public/ahv/assets/commercial-family-data.js",
+   "count": 1,
+   "old": "\"title\":\"Animal Husbandry | Kairali’s Organic Produce\",\"description\":\"Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.\",\"canonical\":\"https://ayurvedichealingvillage.com/the-baoli-advert-box-deal/\"",
+   "new": "\"title\":\"The Baoli Advert Box Deal | Kairali Healing Village\",\"description\":\"Kairali supports animal husbandry in order to rear different types of animals which is also beneficial for organic produce.\",\"canonical\":\"https://ayurvedichealingvillage.com/the-baoli-advert-box-deal/\""
+  },
+  {
+   "id": "D15-the-baoli-advert-box-deal-manifest",
+   "op": "manifestMeta",
+   "path": "/the-baoli-advert-box-deal/",
+   "set": {
+    "title": "The Baoli Advert Box Deal | Kairali Healing Village"
+   }
+  },
+  {
+   "id": "D15-intensive-course-description",
+   "files": [
+    "public/ahv/views/ahv-page-course-five-day-intensive-desktop.json",
+    "public/ahv/views/ahv-page-course-five-day-intensive-mobile.json"
+   ],
+   "count": 2,
+   "old": "Kairali has the highest honor of being conferred with the “Ayurvedic Hospital” title by the Government of Kerala. The Ayurvedic Healing Centre provides certified services and can be availed by becoming a member here.",
+   "new": "Five-day intensive Ayurveda training at Kairali: Abhyangam, Shirodhara, Podikizhi, Udwarthanam and Kativasti in theory and supervised practice, with a certificate."
+  },
+  {
+   "id": "D15-intensive-course-manifest",
+   "op": "manifestMeta",
+   "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+   "set": {
+    "description": "Five-day intensive Ayurveda training at Kairali: Abhyangam, Shirodhara, Podikizhi, Udwarthanam and Kativasti in theory and supervised practice, with a certificate."
+   }
+  },
+  {
+   "id": "D09-ru-title-lock",
+   "auto": true,
+   "old": "Лучший Аюрведический Ретрит в Керале | Роскошные курорты Кералы.",
+   "new": "Аюрведический Ретрит в Керале | Kairali",
+   "min": 3
+  },
+  {
+   "id": "D09-ru-description-lock",
+   "auto": true,
+   "old": "Лучший Аюрведический Ретрит в Керале, 100% Безопасные ретриты йоги в Индии, лечение Панчакарма в Керале и Центр Панчакармы Аюрведы в Индии.",
+   "new": "Аюрведический ретрит в Керале, ретриты йоги в Индии, лечение Панчакарма в Керале и Центр Панчакармы Аюрведы в Индии.",
+   "min": 2
+  }
+ ],
+ "why_heads": "D-15/D-17 (policy set, Baoli pair, Five-Day Intensive): duplicate or misattributed heads get distinct ones built only from on-page source - the page H1 or the owner-named document (/new-privacy-policy/ is the final privacy document, redirect-map AHV-DUP-001/002), the sibling policy-title convention ('Privacy Statement | Kairali - The Ayurvedic Healing Village'), the approved description frame with the correct policy noun, and the approved course intro (english-candidate/course-pages.json). D-09 residual: the Russian-language page's head carried the locked words in Russian (Roskoshnye kurorty = luxury resorts) plus Luchshiy (best) and 100% Bezopasnye (100% safe) - removed by deletion; no new claim added. EN-only / RU-only pending translation of the changed head units."
+}

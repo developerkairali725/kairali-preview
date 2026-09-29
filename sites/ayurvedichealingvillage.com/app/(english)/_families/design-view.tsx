@@ -162,10 +162,12 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
           Server-rendered, so a crawler that runs no JavaScript still reads it.
           Every value comes from the route's own manifest metadata and the
           generated share image; see _families/schema.ts for what is
-          deliberately NOT copied from live. */}
+          deliberately NOT copied from live. '<' is escaped as in the native
+          views (D-20): a catalogue string containing "</script>" can then
+          never close the block early. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(routeSchema(route, locale)) }}
+        dangerouslySetInnerHTML={{ __html: jsonForScript(routeSchema(route, locale)) }}
       />
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
