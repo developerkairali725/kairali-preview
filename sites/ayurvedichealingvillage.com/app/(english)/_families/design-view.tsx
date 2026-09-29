@@ -1,4 +1,5 @@
 import { formPostSafety } from "./form-post-safety.mjs";
+import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
@@ -145,6 +146,13 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
   const consistency = lockedFamilies.has(family.replace(/^ahv-template-/, "")) ? undefined : "1";
   const narrowMedia = `(max-width: ${BREAKPOINT - 1}px)`;
   const wideMedia = `(min-width: ${BREAKPOINT}px)`;
+  // The mobile view's own helmet styles, served with the snapshot so its first paint is the approved
+  // design's (lane PERF2, snapshot-styles.mjs). Phone-width only: the desktop never paints the snapshot.
+  const firstPaint = snapshot ? snapshotStylesFor(cfg) : null;
+  // Where the snapshot opens on a <video poster> (the home views, every locale) that poster is the LCP
+  // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
+  // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before.
+  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) ? firstPaint : null;
 
   return (
     <>
@@ -182,6 +190,27 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
       <link rel="preload" as="script" href={SUPPORT_SRC} />
       <link rel="preload" as="script" href={PREVIEW_SRC} />
       <link rel="preload" as="style" href="/ahv/preview/english-responsive-override.css" />
+
+      {/* The snapshot's first-paint styles (snapshot-styles.mjs): the view's local font stylesheet and its
+          helmet <style> blocks, copied from the served payload at build time. The runtime still writes
+          its own copies into <head>; boot removes these when the snapshot is retired.
+          The body-text face (the paragraphs' face: the LCP element on the text-LCP routes) is preloaded (React
+          hoists a preload <link> into <head>) so the first paint can already be in it: a first paint in the
+          fallback face broke lines differently and the live copy of the LCP paragraph came out larger — a
+          second, later LCP candidate. Phone-width only: the desktop never paints the snapshot. */}
+      {snapshotFaces
+        ? snapshotFaces.preloadFonts.map((href) => (
+            <link key={href} rel="preload" as="font" type="font/ttf" crossOrigin="anonymous" href={href} media={narrowMedia} />
+          ))
+        : null}
+      {snapshotFaces
+        ? snapshotFaces.fonts.map((href) => <link key={href} rel="stylesheet" href={href} data-ahv-snapshot-style="" />)
+        : null}
+      {firstPaint
+        ? firstPaint.styles.map((css, i) => (
+            <style key={i} media={narrowMedia} data-ahv-snapshot-style="" dangerouslySetInnerHTML={{ __html: css }} />
+          ))
+        : null}
 
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not
           decoration: it tells React this subtree is not its own, so React

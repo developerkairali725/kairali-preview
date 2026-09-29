@@ -7,6 +7,7 @@ import {
   installSlotLoading,
   createBackgroundDeferral,
 } from "./media-loading.mjs";
+import { deferFarSnapshotContent, whenSnapshotPainted } from "./snapshot-paint.mjs";
 import { CONSENT_RUNTIME } from "./consent-runtime";
 /**
  * AHV English candidate — page bootstrap.
@@ -179,6 +180,8 @@ export const BOOT_SCRIPT = `
   })();
   // The snapshot's own inline backgrounds: the first screen now, the rest as it nears the viewport.
   deferBackgrounds(host);
+  // Far-below-the-fold snapshot content skips rendering (and its lazy images) until the reader nears it (snapshot-paint.mjs).
+  (${deferFarSnapshotContent.toString()})(window, snapshotNodes, cfg.breakpoint, 1.5);
   function liveRoot() {
     var kids = host.children;
     for (var i = 0; i < kids.length; i++) {
@@ -224,6 +227,16 @@ export const BOOT_SCRIPT = `
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
       }
       snapshotNodes = [];
+      // The snapshot's served copies of the view's helmet styles (snapshot-styles.mjs) leave with it, each
+      // only once the runtime has written the identical block (or font link) into <head> — so nothing on
+      // screen changes; a copy whose twin has not arrived yet simply stays.
+      var headCss = {}, headLinks = {};
+      document.head.querySelectorAll("style").forEach(function (el) { headCss[(el.textContent || "").trim()] = 1; });
+      document.head.querySelectorAll("link[rel=stylesheet]").forEach(function (el) { headLinks[el.getAttribute("href")] = 1; });
+      document.querySelectorAll("[data-ahv-snapshot-style]").forEach(function (el) {
+        var twin = el.tagName === "LINK" ? headLinks[el.getAttribute("href")] : headCss[(el.textContent || "").trim()];
+        if (twin && el.parentNode) el.parentNode.removeChild(el);
+      });
       host.setAttribute("data-ahv-snapshot-state", "retired");
       host.removeAttribute("data-ahv-live-pending");
       return;
@@ -1109,6 +1122,18 @@ export const BOOT_SCRIPT = `
       return r.json();
     })
     .then(function (view) {
+      // On a phone with a snapshot the runtime chain starts after the snapshot's first paint
+      // (snapshot-paint.mjs): the snapshot is what the reader sees meanwhile, so this only moves script
+      // downloads out of the first paint's way. Desktop and snapshot-less pages continue at once.
+      // The page repairs and the cookie notice (sweepHoneypots -> applyConsent) keep their timing: they
+      // start the moment the payload arrives, exactly as before, so the notice and the contact controls
+      // it lifts are in place for the first paint (deferring them moved #ahv-contact-controls on screen).
+      sweepHoneypots(150);
+      return new Promise(function (resolve) {
+        (${whenSnapshotPainted.toString()})(window, narrow && snapshotNodes.length > 0, resolve, 3000);
+      }).then(function () { return view; });
+    })
+    .then(function (view) {
       // The template is mounted EMPTY and pushed as raw text below. It is never
       // written into the DOM as markup, because the HTML parser would silently
       // rewrite it: the approved views put <sc-for> inside <tbody>, and an
@@ -1164,7 +1189,6 @@ export const BOOT_SCRIPT = `
 
       bindRoute(40);
       sweepSlots(40);
-      sweepHoneypots(150);
     })
     .catch(fail);
 })();
