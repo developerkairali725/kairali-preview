@@ -1,0 +1,10 @@
+site/node_modules/
+site/.next/
+_work/fetch/*.html
+.DS_Store
+.worktrees/
+.claude/
+_work/
+logs/
+site/next-env.d.ts
+site/tsconfig.tsbuildinfo

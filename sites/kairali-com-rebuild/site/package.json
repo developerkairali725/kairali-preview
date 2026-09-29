@@ -1,0 +1,28 @@
+{
+  "name": "kairali-com-local",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.13.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "content": "python3 ../pipeline/build_content.py",
+    "dev": "next dev -H 127.0.0.1 -p 8774",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 8774",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.3.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "playwright": "1.62.1",
+    "typescript": "^5.8.0"
+  }
+}

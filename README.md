@@ -1,3 +1,5 @@
+> **Current Kairali.com rebuild:** [Developer handoff](sites/kairali-com-rebuild/DEEPU-HANDOFF.md). Work in `sites/kairali-com-rebuild/site`. This supersedes the older Kairali.com candidate for this rebuild; other projects remain separate.
+
 # kairali-web-factory
 
 Monorepo for the Kairali web rebuild (30-day sprint, 13 Jul → 12 Aug 2026).
