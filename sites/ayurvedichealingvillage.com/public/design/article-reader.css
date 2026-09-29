@@ -590,3 +590,45 @@
 
 /* Tour action must outrank prose-link colour, including visited links. */
 #ahv-design-root[data-ahv-family="article-reader"] main [data-source-component="virtual-tour-card"] > p > a { color:#FFFDF7 !important; }
+
+/* Introductions precede their section labels: do not reserve an empty left column
+   merely because a later sibling has a subheading. Applies to every locale. */
+@media(min-width:1180px) {
+ [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :not(h2,h3):not(h2 ~ *,h3 ~ *) {
+  grid-column:1 / -1 !important;
+  max-width:900px !important;
+ }
+}
+/* Small supplied article photographs should not be enlarged into blurry banners. */
+[data-ahv-family="article-reader"] main > section:has(> p) img[width="300"] { max-width:300px !important; }
+
+/* Standalone related links are deliberate, readable actions. Inline prose links,
+   linked card titles and already-designed download buttons retain their treatment. */
+#ahv-design-root[data-ahv-family="article-reader"] main p[data-ahv-article-action] {
+ display:flex !important; flex-wrap:wrap; align-items:center; gap:12px;
+ margin:12px 0 24px !important; min-width:0; float:none !important;
+}
+#ahv-design-root[data-ahv-family="article-reader"] main p[data-ahv-article-action="related"] a {
+ display:inline-flex !important; align-items:center; justify-content:center;
+ position:static !important; float:none !important; transform:none !important;
+ box-sizing:border-box; max-width:100%; min-height:48px; padding:12px 20px !important;
+ border:1px solid #006038; border-radius:4px; background:#FFFDF7 !important;
+ color:#006038 !important; font:600 16px/1.5 Mulish,system-ui,sans-serif !important;
+ text-decoration:underline !important; text-underline-offset:4px; text-align:start;
+ overflow-wrap:anywhere; letter-spacing:normal !important;
+}
+#ahv-design-root[data-ahv-family="article-reader"] main p[data-ahv-article-action] a:focus-visible {
+ outline:3px solid #5A4420; outline-offset:4px;
+}
+#ahv-design-root[data-ahv-family="article-reader"] main [data-ahv-article-note-action] {
+ grid-column:1 / -1 !important; box-sizing:border-box; max-width:900px;
+ margin:18px 0 24px; padding:20px 24px; background:#F4F0E4; border-inline-start:4px solid #5A4420;
+}
+#ahv-design-root[data-ahv-family="article-reader"] main [data-ahv-article-note-action] > p[role="note"] {
+ background:transparent !important; border:0 !important; padding:0 !important; margin:0 0 16px !important;
+}
+#ahv-design-root[data-ahv-family="article-reader"] main [data-ahv-article-note-action] > p[data-ahv-article-action] { margin:0 !important; }
+@media(max-width:699px) {
+ #ahv-design-root[data-ahv-family="article-reader"] main [data-ahv-article-note-action] { padding:18px; }
+ #ahv-design-root[data-ahv-family="article-reader"] main p[data-ahv-article-action="related"] a { width:100%; }
+}

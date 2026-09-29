@@ -127,6 +127,11 @@
         for (var k = 0; k < prefixes.length; k++) if (startsWith(ptr, prefixes[k])) { if (els[i].parentNode) els[i].parentNode.removeChild(els[i]); break; }
       }
     }
+    // Product-family legacy rail must be removed before the header-owned early return.
+    if (root.getAttribute("data-ahv-family") === "ahv-template-product-family") {
+      els = main.querySelectorAll('aside[aria-labelledby="rail-h"]');
+      for (i = 0; i < els.length; i++) els[i].remove();
+    }
     // (c) the attractions family's "Also in …" aside
     els = main.querySelectorAll('aside[aria-labelledby="ctx-h"]');
     for (i = 0; i < els.length; i++) els[i].parentNode.removeChild(els[i]);

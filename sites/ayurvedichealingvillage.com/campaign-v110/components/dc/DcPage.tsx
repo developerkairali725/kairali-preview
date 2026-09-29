@@ -92,6 +92,11 @@ function render(
   const options: HTMLReactParserOptions = {
     replace(node: DOMNode) {
       if (!(node instanceof Element)) return;
+      // Keep on-site navigation on the environment being reviewed.
+      if (node.name === "a" && /^https:\/\/(?:www\.)?ayurvedichealingvillage\.com(?:\/|$)/i.test(node.attribs.href || "")) {
+        const href = new URL(node.attribs.href);
+        node.attribs.href = href.pathname + href.search + href.hash;
+      }
       const slot = node.attribs["data-slot"];
       if (slot === "hero-cta") return <HeroCta />;
       if (slot === "enquiry-form")

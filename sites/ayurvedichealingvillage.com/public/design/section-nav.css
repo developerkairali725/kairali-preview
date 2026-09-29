@@ -187,3 +187,11 @@ nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; 
 #ahv-design-root main[data-ahv-rail] [data-source-card] > h3,
 #ahv-design-root main[data-ahv-rail] [data-source-card] > p {margin:0 !important;}
 #ahv-design-root main[data-ahv-rail] [data-source-card] > h3 {min-height:0 !important; line-height:1.35 !important;}
+
+/* Product-family section navigation lives in the header; do not reserve its old right column. */
+#ahv-design-root[data-ahv-family="ahv-template-product-family"] main {
+  grid-template-columns:minmax(0,1fr) !important;
+}
+#ahv-design-root[data-ahv-family="ahv-template-product-family"] main > aside[aria-labelledby="rail-h"] {
+  display:none !important;
+}

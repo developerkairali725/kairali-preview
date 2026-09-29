@@ -308,3 +308,27 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
 
 /* Shared dark-footer language links stay readable across page-family resets. */
 body footer .ahv-footer-langs, body footer .ahv-footer-langs a, body footer .ahv-footer-langs [aria-current] { color:#F7F4EA !important; }
+
+/* QA: keep accreditation copy readable beside its mark on narrow screens. */
+@media(max-width:599px) {
+ #ahv-design-root div:has(> img[src*="First-Panchakarma-Clinic-In-India-2017"]):has(> div > p) {
+  flex-direction:column !important; align-items:flex-start !important; gap:16px !important; padding:22px !important;
+ }
+}
+/* Native explanatory copy remains readable on compact screens. */
+.rv-page .rv-filter-note, .rv-page .rv-small, .rv-page .rv-film-caption { font-size:14px; }
+/* These imported sections contain a single content item, not a two-column pair. */
+#ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"],
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="384"] {
+ grid-template-columns:minmax(0,1fr) !important;
+}
+#ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"] > div { max-width:900px; }
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="384"] { max-width:960px; margin-inline:auto; }
+/* Award descriptions need readable columns, including their full certificate labels. */
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="253"] {
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)) !important;
+}
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="253"] article p {
+ white-space:normal !important; overflow:visible !important; overflow-wrap:anywhere;
+}
+.rv-page .fb-help, .rv-page .sg-source { font-size:14px; line-height:1.6; }

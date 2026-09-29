@@ -328,6 +328,29 @@
   function externalLinks() { document.querySelectorAll('a[href]').forEach(externalLink); }
   document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) externalLink(a); }, true);
   document.addEventListener('auxclick', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) externalLink(a); }, true);
+  // Standalone article actions belong to their content, not a bare floating line.
+  function articleActions() {
+    if (root.getAttribute("data-ahv-family") !== "article-reader") return;
+    root.querySelectorAll("main p:not([data-ahv-article-action])").forEach(function (p) {
+      if (p.closest('nav,header,footer,table,[data-ahv-article-cta],[data-collection="cards"],[data-source-component="virtual-tour-card"]')) return;
+      var links = p.querySelectorAll("a[href]");
+      if (links.length !== 1) return;
+      var a = links[0];
+      if (!a.textContent.trim() || a.querySelector("img,svg") || p.textContent.trim() !== a.textContent.trim()) return;
+      // Preserve existing designed buttons and downloads, only repair their placement.
+      var cs = getComputedStyle(a);
+      var designed = cs.backgroundColor !== "rgba(0, 0, 0, 0)" && cs.backgroundColor !== "transparent";
+      p.setAttribute("data-ahv-article-action", designed ? "existing" : "related");
+      var previous = p.previousElementSibling;
+      if (previous && previous.getAttribute("role") === "note") {
+        var group = document.createElement("div");
+        group.setAttribute("data-ahv-article-note-action", "");
+        previous.parentNode.insertBefore(group, previous);
+        group.appendChild(previous);
+        group.appendChild(p);
+      }
+    });
+  }
   function pass() {
     scheduled = false;
     try {
@@ -338,6 +361,22 @@
       ctaBar();
       syncChatState();
       externalLinks();
+      // Legacy breadcrumbs must navigate; preserve the locale home/offer destination.
+      var localeMatch = location.pathname.match(/^\/(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)(?:\/|$)/);
+      var homeHref = localeMatch ? "/" + localeMatch[1] + "/" : "/";
+      if (root.getAttribute("data-ahv-route") === "/defence-and-paramilitary-forces/") {
+        root.querySelectorAll('nav[aria-label] a[href="#"]').forEach(function (a) {
+          var tpl = a.getAttribute("data-dc-tpl");
+          if (tpl === "11") a.setAttribute("href", homeHref);
+          if (tpl === "13" || tpl === "10") a.setAttribute("href", (window.AHV_LOCAL_PATHS || {})["/offers/"] || "/offers/");
+        });
+      }
+      if (root.getAttribute("data-ahv-family") === "how-to-reach") root.querySelectorAll('nav[aria-label] a[href="#"]').forEach(function(a) {
+        if (a.closest("header,footer")) return;
+        if (a.parentElement.querySelectorAll("a")[0] === a) a.setAttribute("href", homeHref);
+      });
+
+      articleActions();
       liftContacts();
       noticeUnderMenu();
       switcherContrast();
