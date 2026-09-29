@@ -104,3 +104,13 @@ test('PHP relay refuses unusable operator config and fails closed without touchi
   assert.equal(out.body.code, 'RELAY_NOT_CONFIGURED');
   assert.equal(out.pdoRequested, false);
 });
+
+test('relay health reports ready only with full single-column unique keys on submission_token and nonce', {
+  skip: (spawnSync('php', ['-r', 'exit(extension_loaded("pdo_sqlite") ? 0 : 1);']).status !== 0) && 'php/pdo_sqlite not installed',
+}, () => {
+  const run = spawnSync('php', [fileURLToPath(new URL('../bridge/form-relay/test/health-readiness.php', import.meta.url))], { encoding: 'utf8' });
+  const out = JSON.parse(run.stdout);
+  assert.equal(out.tests, 10);
+  assert.deepEqual(out.cases.filter((c) => !c.pass).map((c) => c.case), []);
+  assert.equal(run.status, 0);
+});

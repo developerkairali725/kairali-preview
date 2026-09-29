@@ -271,12 +271,12 @@ function ahv_relay_store_lead(PDO $pdo, array $valid, array $schema): array
     return ['status' => 200, 'body' => ['ok' => true, 'alreadyStored' => false, 'row' => $row]];
 }
 
-/** Column-name-only schema readiness report. Reads no submitted data. */
+/** Schema and full-column uniqueness readiness report. Reads no submitted data. */
 function ahv_relay_health(PDO $pdo, array $schema): array
 {
     $report = [];
     $columnsQuery = $pdo->prepare('SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ?');
-    $uniqueQuery = $pdo->prepare("SELECT COUNT(*) FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ? AND COLUMN_NAME = 'submission_token' AND NON_UNIQUE = 0");
+    $uniqueQuery = $pdo->prepare("SELECT INDEX_NAME, COLUMN_NAME, SUB_PART FROM information_schema.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ? AND NON_UNIQUE = 0 ORDER BY INDEX_NAME, SEQ_IN_INDEX");
     $tables = $schema['tables'];
     $tables['ahv_relay_nonce'] = ['nonce', 'key_id', 'seen_at'];
     foreach ($tables as $table => $fields) {
@@ -289,15 +289,31 @@ function ahv_relay_health(PDO $pdo, array $schema): array
             if (in_array('consent', $fields, true)) $need[] = 'consent_at';
         }
         $entry = ['exists' => count($have) > 0, 'missingColumns' => array_values(array_diff(array_unique($need), $have))];
-        if ($table !== 'ahv_relay_nonce') {
-            $uniqueQuery->execute([$table]);
-            $entry['submissionTokenUnique'] = (int) $uniqueQuery->fetchColumn() > 0;
+        // A composite index containing the token does not make the token unique.
+        // Inspect the complete index, and reject prefix-only uniqueness as well.
+        $uniqueQuery->execute([$table]);
+        $indexes = [];
+        foreach ($uniqueQuery->fetchAll(PDO::FETCH_ASSOC) as $index) {
+            $indexes[(string) $index['INDEX_NAME']][] = $index;
+        }
+        $uniqueColumn = $table === 'ahv_relay_nonce' ? 'nonce' : 'submission_token';
+        $uniqueFlag = $table === 'ahv_relay_nonce' ? 'nonceUnique' : 'submissionTokenUnique';
+        $entry[$uniqueFlag] = false;
+        foreach ($indexes as $indexColumns) {
+            if (count($indexColumns) === 1
+                && $indexColumns[0]['COLUMN_NAME'] === $uniqueColumn
+                && $indexColumns[0]['SUB_PART'] === null) {
+                $entry[$uniqueFlag] = true;
+                break;
+            }
         }
         $report[$table] = $entry;
     }
     $ready = true;
     foreach ($report as $table => $entry) {
-        if (!$entry['exists'] || $entry['missingColumns'] || (isset($entry['submissionTokenUnique']) && !$entry['submissionTokenUnique'])) $ready = false;
+        if (!$entry['exists'] || $entry['missingColumns']
+            || (isset($entry['submissionTokenUnique']) && !$entry['submissionTokenUnique'])
+            || (isset($entry['nonceUnique']) && !$entry['nonceUnique'])) $ready = false;
     }
     return ['ok' => true, 'ready' => $ready, 'protocol' => AHV_RELAY_PROTOCOL, 'tables' => $report];
 }

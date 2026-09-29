@@ -139,15 +139,18 @@ The website mirrors this stored row to the Sheet unchanged.
 ### `health`
 
 The relay returns `{ ok, ready, protocol, tables }`. For each lead table,
-`tables` lists these column-name-only facts:
+`tables` lists these schema-only facts:
 
 - `exists`
 - `missingColumns`
 - `submissionTokenUnique`
 
-The same facts are listed for `ahv_relay_nonce`. The response contains no
-submitted data. `ready` is true only when every table exists, has every column
-the relay writes, and has a UNIQUE index on `submission_token`.
+`ahv_relay_nonce` lists `exists`, `missingColumns` and `nonceUnique`. The
+response contains no submitted data. `ready` is true only when every table
+exists, has every column the relay writes, and has a full-length,
+single-column UNIQUE (or PRIMARY) key on `submission_token` (lead tables) or
+`nonce` (nonce table). A composite key that merely contains the column, or a
+prefix-length key, does not count.
 
 ## Errors
 

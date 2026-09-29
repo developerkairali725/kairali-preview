@@ -150,7 +150,8 @@ AHV_FORM_RELAY_URL="$R" AHV_FORM_RELAY_SECRET='<from config.php>' AHV_FORM_RELAY
 
 The check exits 0 only when the relay answers, its signature verifies and it
 reports `ready: true`. The report lists missing tables, columns and
-`UNIQUE(submission_token)` indexes by name. If anything is missing:
+`UNIQUE(submission_token)` / nonce keys (`submissionTokenUnique`,
+`nonceUnique`: full-length single-column keys only). If anything is missing:
 
 - `landing-page` table missing: apply `db/003-landing-page.sql`.
 - OPD without an email address: apply `db/004-opd-optional-email.sql`.
