@@ -1,0 +1,137 @@
+{
+ "batchId": "b-0354",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_dc937b59892604f5a86a",
+   "sourceHash": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+   "text": "Нет",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcd4ff29d8cf11cc86c4",
+   "sourceHash": "bcd4ff29d8cf11cc86c429d13ac9f999bcff3753560c555c43bdfd4668ed1022",
+   "text": "Медицинские заключения — по желанию",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4557ab133976c8f9b929",
+   "sourceHash": "4557ab133976c8f9b9293eba68aa9581d9e07dae6f7267a710637f772bd53b67",
+   "text": "Только если они у вас под рукой. Для продолжения они не требуются.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ecff602d41c1c2990662",
+   "sourceHash": "ecff602d41c1c2990662e0ee1d6de96b15cc29a3d795c3690bec3a801e9800bd",
+   "text": "Добавить заключение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d6c6ccc2e1b4c8dc88",
+   "sourceHash": "55d6c6ccc2e1b4c8dc8878662e7879053ea1e170bdc39dbf7ddf72de4113643d",
+   "text": "или перетащите файл сюда — PDF или фото · либо отправьте позже в WhatsApp",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa3b2559eee097396e8",
+   "sourceHash": "caa3b2559eee097396e8a73d0c8869281b10a20a66f45def85a03868ebbd5079",
+   "text": "Выглядит просто — закрыть предпросмотр",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2f9123ee31f409818a5d",
+   "sourceHash": "2f9123ee31f409818a5ded185a0235ba7a22084ac50fff977e6f7024f61822bf",
+   "text": "Никаких событий успеха/конверсии при создании или открытии черновика либо при загрузке страницы. Существующее в исходном коде название события — это свидетельство, а не разрешение на настройку отслеживания. Семантика будущих событий должна различать действие пользователя и подтверждённое получение.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source appears to be an internal developer note rather than patient-facing copy; translated as instructed, but it may not need to be displayed."
+   ]
+  },
+  {
+   "id": "t_142fb0696ece4730e2b3",
+   "sourceHash": "142fb0696ece4730e2b3864a41dcef4c3f3ef7a88fed76698b23c0a6e64e8e65",
+   "text": "Здравствуйте, медицинская служба Kairali! Я хотел(а) бы записаться на онлайн-консультацию к аюрведическому врачу.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b9507f57685b27800e1",
+   "sourceHash": "8b9507f57685b27800e1967ad3e8255b09369a6994186f70f4aac4210cda672e",
+   "text": "Имя: {name}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_626e58f757ff49e2ad19",
+   "sourceHash": "626e58f757ff49e2ad197d75f552370b37bcffeec9be18bf9423209799f67dd5",
+   "text": "Телефон: {code} {phone}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c8bb119fabe0d59b6475",
+   "sourceHash": "c8bb119fabe0d59b6475dec695954a49f55f2fa399699053a9f4e8bcd3695d15",
+   "text": "Эл. почта: {email}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4e3e87b4152993fc67c",
+   "sourceHash": "d4e3e87b4152993fc67c833959c08936611a98c63f9225ce1ca2d5c53a14987f",
+   "text": "Страна: {country}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a74b809a2a41fa33f07b",
+   "sourceHash": "a74b809a2a41fa33f07b2951c48da6497d318d94e8f646d4fb6dcb0e09cada9f",
+   "text": "Жалоба: {concern}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ef1b9c4d35375616dca3",
+   "sourceHash": "ef1b9c4d35375616dca34aba4d71ad055706e4a65ca3cb81e8616c6133abd314",
+   "text": "Длительность: {duration}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa570a5a132a8a7b11ea",
+   "sourceHash": "aa570a5a132a8a7b11ea02c007d8997cbfa2e20a6d61c5b2249659f9a145faec",
+   "text": "Консультация для: {who}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54f90d70290724e25c67",
+   "sourceHash": "54f90d70290724e25c67e030d31de0b7a0d0eaa66b69fef3dca51022370d39d3",
+   "text": "Предпочитаемый язык: {lang}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

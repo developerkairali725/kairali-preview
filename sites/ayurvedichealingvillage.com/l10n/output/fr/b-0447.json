@@ -1,0 +1,227 @@
+{
+ "batchId": "b-0447",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_f3ac943b6fd4002eb8e2",
+   "sourceHash": "f3ac943b6fd4002eb8e20bda81ae8dca9d2fb228f41aaaf4d505be64816f08d7",
+   "text": "Dans cette tranche d'annulation, les frais de transaction et taxes applicables sont déduits.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f8ee1f0716147254e98",
+   "sourceHash": "1f8ee1f0716147254e98d5440db4dd6fb1c8e86e250d9b7ebcc30cc911fc3768",
+   "text": "Moins de 15 jours avant l'arrivée ou modifications pendant le séjour",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_77ce078359b362e4ffa1",
+   "sourceHash": "77ce078359b362e4ffa1066e1c8ba45558aa98240cf6b724c442142512335ef0",
+   "text": "Les annulations effectuées moins de 15 jours avant la date d'arrivée ne donneront pas droit à un remboursement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_17cebd948e1b6057e850",
+   "sourceHash": "17cebd948e1b6057e850e9dca520de831a5b0f7393960880669a6dc6c60835e9",
+   "text": "Les annulations effectuées moins de 15 jours avant la date d'arrivée ne donneront",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: French negation 'ne … pas' split so the emphasised 'not' unit becomes 'pas'; sentence reads '… ne donneront | pas | droit à un remboursement.'"
+   ]
+  },
+  {
+   "id": "t_254bb97b57f12e1608fe",
+   "sourceHash": "254bb97b57f12e1608fefc4517de768427b2fd6d2cffbbfcbc09f3c818198d5f",
+   "text": "pas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (emphasised negation); pairs with preceding '… ne donneront' and following 'droit à un remboursement.'"
+   ]
+  },
+  {
+   "id": "t_a211e6b1d76924cc9ca3",
+   "sourceHash": "a211e6b1d76924cc9ca3b38da59049d92ada20b6c23b9fad5482b3418b3d2383",
+   "text": "droit à un remboursement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes '… ne donneront pas droit à un remboursement.'"
+   ]
+  },
+  {
+   "id": "t_144572440f079e9e0135",
+   "sourceHash": "144572440f079e9e01354e449a5393dfcdee05f67757d07c3e4adad1d33661c2",
+   "text": "De même, les modifications des dates de réservation effectuées pendant le séjour ne donneront pas droit à un remboursement.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_96e316d9df79038f465e",
+   "sourceHash": "96e316d9df79038f465ebb57b6003b8d71ffcac56a5f85cfdf826ef525f55e78",
+   "text": "De même, les modifications des dates de réservation effectuées pendant le séjour ne donneront",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: 'also' rendered as 'De même'; continues with 'pas' + 'droit à un remboursement.'"
+   ]
+  },
+  {
+   "id": "t_d8370dcabe7787036c7b",
+   "sourceHash": "d8370dcabe7787036c7b3236e4eda9c70e7956501d48194b0d5a54d06c6a9b3b",
+   "text": "Des exceptions peuvent être accordées en cas d'urgence médicale ou d'autres circonstances imprévues, sous réserve de justificatifs et de l'accord de la direction.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a9003e4f7ce5ee1ef23",
+   "sourceHash": "7a9003e4f7ce5ee1ef23e002f1f261c0bba9e8f5a8362d8d3cfa2461f3d81a5b",
+   "text": "Politique en cas de non-présentation",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_914ad98b5506ed4a2767",
+   "sourceHash": "914ad98b5506ed4a2767381e1cce1a670ea8a59d1b1d0470e44acb1f75c23762",
+   "text": "Si un patient ne se présente pas le jour prévu sans avoir prévenu au préalable, la réservation sera considérée comme une non-présentation. Aucun remboursement ni report ne sera accordé dans ce cas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'patient' per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_595cb6af7e3d1a67a28d",
+   "sourceHash": "595cb6af7e3d1a67a28d1be936e1473205b732f02161471484339339d32c0799",
+   "text": "Si un patient ne se présente pas le jour prévu sans avoir prévenu au préalable, la réservation sera considérée comme une",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guest' rendered as 'patient' per the KTAHV language lock. Fragment: expects the following term 'non-présentation' (feminine, hence 'une')."
+   ]
+  },
+  {
+   "id": "t_9346b5b112a7fc0a0ab7",
+   "sourceHash": "9346b5b112a7fc0a0ab720fa4948dd4baed9dae1c5424809e0178adcf43cb839",
+   "text": ". Aucun remboursement ni report ne sera accordé dans ce cas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d27329ec42596678bf64",
+   "sourceHash": "d27329ec42596678bf64abd4a01f8330ad73b293bbefc4c360aeff8d71ee784e",
+   "text": "Départ anticipé",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c623974059daa298a685",
+   "sourceHash": "c623974059daa298a6855bfe5ea610b6eb92c703368bddb9c50a3c4f734c63b9",
+   "text": "Si des patients choisissent de partir avant la fin prévue de leur séjour, aucun remboursement ne sera effectué pour la partie non utilisée de leur réservation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as 'patients' per the KTAHV language lock."
+   ]
+  },
+  {
+   "id": "t_4d2fab8b70614dcb2759",
+   "sourceHash": "4d2fab8b70614dcb2759b749eeccf3daedd1b122ed0f2d7ec854e36c1295869f",
+   "text": "Délai de remboursement",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ff974c72893314b8d13",
+   "sourceHash": "4ff974c72893314b8d133381dec15ba4894024498878b5b9c202a442d46dcfc9",
+   "text": "Pour les annulations éligibles, la procédure de remboursement sera engagée dans un délai de 5 à 7 jours ouvrables à compter de la date de confirmation de l'annulation. Le remboursement sera crédité sur le compte bancaire du client ou sur le moyen de paiement initialement utilisé lors de la réservation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_4ff974c72893314b8d13 banned-term client"
+   ]
+  },
+  {
+   "id": "t_e608ad0258206d2e0e2d",
+   "sourceHash": "e608ad0258206d2e0e2d920d9733a5d59eb3a63e3394c7916f919d4e601345c6",
+   "text": "Pour les annulations éligibles, la procédure de remboursement sera engagée dans un délai de",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_86526366b291aa1f82a1",
+   "sourceHash": "86526366b291aa1f82a15a75c70a42be0f2929e2aaa54f4a6b7ae8b84ae2bdc0",
+   "text": "5 à 7 jours ouvrables",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f20a51326c835b7cf347",
+   "sourceHash": "f20a51326c835b7cf3476c072b54ad8f64386d68a2cc9f866ede5bd571c799ca",
+   "text": "à compter de la date de confirmation de l'annulation. Le remboursement sera crédité sur le compte bancaire du client ou sur le moyen de paiement initialement utilisé lors de la réservation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_f20a51326c835b7cf347 banned-term client"
+   ]
+  },
+  {
+   "id": "t_e6dfe4489be9f0848532",
+   "sourceHash": "e6dfe4489be9f08485328495379a170ab7d80be111c6cb022b834220a706e96e",
+   "text": "Les clients recevront un e-mail de confirmation une fois le remboursement effectué.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_e6dfe4489be9f0848532 banned-term clients"
+   ]
+  },
+  {
+   "id": "t_59460a75deba0f1a5080",
+   "sourceHash": "59460a75deba0f1a50809093da07880b0d5b2d6e6a1ea9a1596d89cababa4499",
+   "text": "Veuillez fournir des coordonnées bancaires ou de paiement exactes afin d'éviter tout retard.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcc266819c8215c080ad",
+   "sourceHash": "bcc266819c8215c080adf4db0d857ce544ff1c3bfc9670265f5f3a0da903273b",
+   "text": "Clause de force majeure",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd9b132c5367fd3888c8",
+   "sourceHash": "fd9b132c5367fd3888c8a3cb980a077875b80f2345eedb929c0dda675495fa47",
+   "text": "En cas de circonstances indépendantes de notre volonté, telles que catastrophes naturelles, pandémies, restrictions de déplacement imposées par les autorités ou autres événements de force majeure, Kairali – The Ayurvedic Healing Village se réserve le droit de :",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5db43e48db71122fac8",
+   "sourceHash": "b5db43e48db71122fac8a09bdf2755630593f4caedc251275d2925537cbb558d",
+   "text": "Reporter la réservation à une date convenue d'un commun accord, sans frais supplémentaires.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

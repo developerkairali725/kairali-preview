@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0359",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_9726fec8fd1ecd5dcadf",
+   "sourceHash": "9726fec8fd1ecd5dcadf6a1411faae35d0733e9a185d5ed6e543be58e0e310c4",
+   "text": "Integration über verstecktes Feld",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy; confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_0e18ceb074c5a003f0f5",
+   "sourceHash": "0e18ceb074c5a003f0f5dc371c005e778bd08f08b07831103e95c0f292e6f43a",
+   "text": "hasConsentCheckbox: true (abgeleitete Zusammenfassung in LEGACY-TWO-ENQUIRY-SOURCE-BINDINGS.json)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy; code identifiers kept verbatim."
+   ]
+  },
+  {
+   "id": "t_8620909fc879d6c6d018",
+   "sourceHash": "8620909fc879d6c6d01884e78c08787dc50be19e2ece121ddddc372c57c8b98b",
+   "text": "Die spätere Umsetzung muss die Einwilligungsanforderungen unter genau festgelegter Verantwortung des Eigentümers bzw. der Rechtsabteilung abstimmen; currentapprovedforms nicht verändern.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy; 'currentapprovedforms' kept verbatim as an identifier."
+   ]
+  },
+  {
+   "id": "t_643937496e7f3d18a19e",
+   "sourceHash": "643937496e7f3d18a19ed9acb3f1aeb297451577f7a2084ce2382654c8569c94",
+   "text": "Jetzt anfragen | Informationen | Kontakt | Anfrageformular",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_285e0e3011f652287ecc",
+   "sourceHash": "285e0e3011f652287ecc8fc16af99a6b4e83aab97b8912018e619997efdefa3f",
+   "text": "Für weitere Informationen zu unseren Ayurveda-Behandlungen und Villen füllen Sie das Formular unten aus – wir rufen Sie innerhalb von 24 Stunden an.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db8133123e5c1ab769b8",
+   "sourceHash": "db8133123e5c1ab769b802cce345e310e70e9b3c389a425de014eea0e490299d",
+   "text": "Anfrageformular (alt)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f45af607e6a8e448a50a",
+   "sourceHash": "f45af607e6a8e448a50a67bc8276a5371c565ae8d3bc8ff456353979ba497bb7",
+   "text": "Wiederverwendung der T07-Komponente der Anfrage-Familie VORGESCHLAGEN und nur hier dokumentiert; Routenzuordnung und Nachfolgeidentität unverändert.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_e956f9828a35ee1b4629",
+   "sourceHash": "e956f9828a35ee1b46298f718db75b939b70cbdd5430e51abd3fd4c1ec6b489d",
+   "text": "Für weitere Informationen zu unseren traditionsreichen, authentischen Ayurveda-Behandlungen, unseren komfortablen Premium-Villen und unseren vielfach empfohlenen ayurvedischen Behandlungsprogrammen füllen Sie einfach das Formular unten aus – wir rufen Sie innerhalb von 24 Stunden an. Sie können auch direkt anrufen und mit einer unserer Mitarbeiterinnen oder einem unserer Mitarbeiter sprechen. Die Telefonnummern finden Sie auf der Kontaktseite. Für eine kostenlose Online-Konsultation bei einem unserer Ayurveda-Ärzte füllen Sie bitte unser Formular für die kostenlose Online-Konsultation aus.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Banned 'luxurious' rendered as 'komfortable Premium-' (register lock)."
+   ]
+  },
+  {
+   "id": "t_a3bb15d2d172350497a6",
+   "sourceHash": "a3bb15d2d172350497a623808f65a063fe79da19e98ee695d017833207590a00",
+   "text": "Kostenlose Online-Konsultation | Ayurveda-Arzt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Repeated trailing '| Consultation' dropped to fit the 60-character title limit."
+   ]
+  },
+  {
+   "id": "t_88aa94862ba255033c10",
+   "sourceHash": "88aa94862ba255033c105db7dc57ecec5adf16012d84599b14c1f70f40d364d9",
+   "text": "Kostenlose Ayurveda-Konsultation zu Ihrem Gesundheitszustand: Nach dem Ausfüllen des Formulars geben unsere Ärzte ihre fachliche Einschätzung ab.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2d4561fbc023779b5ab",
+   "sourceHash": "e2d4561fbc023779b5abb87d96a1764913e2fbcb0cd66b1d7954d5d552895e1c",
+   "text": "Online-Konsultation (alt)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4264f3f3dacc133f04e8",
+   "sourceHash": "4264f3f3dacc133f04e888ed58de13b760c416c08bf87915283758aea461802f",
+   "text": "Nutzen Sie diese wertvolle Gelegenheit, mehr über Ihren ayurvedischen Konstitutionstyp zu erfahren und darüber, wie ayurvedische Behandlungen Ihnen helfen können, Linderung bei bestimmten Beschwerden zu finden, unter denen Sie möglicherweise leiden. Nach dem Ausfüllen des Formulars erhalten Sie eine kostenlose Ayurveda-Konsultation, die auf Ihrem Gesundheitszustand und der Fachkenntnis unserer Ärzte beruht. Unsere Ärztinnen und Ärzte verfügen über umfassendes Fachwissen; allein der dienstälteste unter ihnen hat 45 Jahre Erfahrung. Verpassen Sie nicht diese Gelegenheit zu einer kostenlosen Ayurveda-Konsultation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'extremely helpful' softened to 'helfen können' to avoid strengthening an efficacy claim; clinical review suggested."
+   ]
+  },
+  {
+   "id": "t_c6615997399def220c89",
+   "sourceHash": "c6615997399def220c89ed2cd7c0838aa1918ad933d0aea4366df2f838e69e18",
+   "text": "erfasstes Quellattribut",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_d52271ac110a1338d575",
+   "sourceHash": "d52271ac110a1338d5752252138293a9b0c93f3beca165e57441a42589d30f93",
+   "text": "Kein Quell-Steuerelement trägt das HTML-Attribut required; die Pflichtfeld-Eigenschaft ergibt sich aus der CF7-Klasse validates-as-required und dem erfassten aria-required und wird je Feld dokumentiert.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy; code identifiers kept verbatim."
+   ]
+  },
+  {
+   "id": "t_251fb3e5a4a2d2fd8f9a",
+   "sourceHash": "251fb3e5a4a2d2fd8f9adf5a6fe9aa72e41a6a03ecd8f589eef7fa6230917605",
+   "text": "Staatsangehörigkeit (193 erfasste Quelloptionen)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fec64e5f0ac011c5750",
+   "sourceHash": "7fec64e5f0ac011c575020811f8bd9060aecd5546fd850b786bb7a2a0fc2a84f",
+   "text": "Land (248 erfasste Quelloptionen)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_387e972d5c6772340707",
+   "sourceHash": "387e972d5c677234070734ff8cbe50b3a7692c7a991cba4bee99ec6d185a8020",
+   "text": "nur Platzhalter",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f396d1d0cb6bd546d126",
+   "sourceHash": "f396d1d0cb6bd546d126f923d7a96e9e36a36c6d6f6dec6e4b2932c4dff0a1e3",
+   "text": "Exakter Quellwortlaut als feldbezogener Name ausgewählt; nichts erfunden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_04388eae802f71e8d1b6",
+   "sourceHash": "04388eae802f71e8d1b6df1aadd5f53a656af4adaa4022a51ba858f565312d8a",
+   "text": "Leere Schaltfläche im letzten Schritt aus der Besucheroberfläche entfernt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note, not patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_bc0b62680cf8e126e44a",
+   "sourceHash": "bc0b62680cf8e126e44a21bb5cb90a19563f23f717a95704e45dbe422144bedf",
+   "text": "Jetzt bewerben | Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French, not English; translated into German and the brand name given in its canonical form."
+   ]
+  },
+  {
+   "id": "t_a165136f00c36f5896ea",
+   "sourceHash": "a165136f00c36f5896ea3e1cda8763ab31b7f6a2401223df4078841fcbba95dc",
+   "text": "Jetzt bewerben",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French, not English; translated into German."
+   ]
+  },
+  {
+   "id": "t_50b0017246c5e51c979b",
+   "sourceHash": "50b0017246c5e51c979b7e64f98f0c4d51ba5e9110cac5edca0333f210ff299b",
+   "text": "Jetzt bewerben",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French, not English; translated into German."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+/* Staging /lp/ pages have no header bar: the logo sits at the top of the
+   hero on ivory. The header keeps that look (cream, logo, hairline). */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line-ink);
+}
+
+.inner {
+  width: var(--container-w);
+  margin-inline: auto;
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+}
+.brand img {
+  width: 150px;
+  height: auto; /* intrinsic 290 × 68: shown smaller, never upscaled */
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Quiet phone text. On phones the hero's phone line and the sticky bar's
+   call icon carry the number, so it appears from 640px up. */
+.phone {
+  display: none;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--text-small);
+}
+.phone:hover {
+  text-decoration: underline;
+}
+
+.enquire {
+  min-height: var(--tap);
+  padding: 10px 22px;
+}
+
+@media (min-width: 640px) {
+  .phone {
+    display: inline-flex;
+  }
+  .brand img {
+    width: 180px;
+  }
+}
+
+/* The landing-page header is its own component; match the short touch
+   landscape height used by the shared site chrome. */
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 700px) and (pointer: coarse) {
+  .inner { min-height: 55px; }
+  .actions { gap: 10px; }
+}

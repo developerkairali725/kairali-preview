@@ -1,0 +1,263 @@
+{
+ "rule": "remove output rows whose unit id is absent from the current l10n/source/units.json (retired English source)",
+ "archive": "retired-rows-20260928T233612.json (kept outside the repo)",
+ "files": 36,
+ "rows": 36,
+ "byStatus": {
+  "translated": 36
+ },
+ "removed": [
+  {
+   "file": "l10n/output/ar/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "e542685303330b6ebe8a51dce618e274ba26b6cbe3154046f16c8ca8d9896b2e"
+  },
+  {
+   "file": "l10n/output/ar/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "43013ed47dcbcd3b8f8022b54a5505557e317cf7ed534c9e245ca685fc5433cc"
+  },
+  {
+   "file": "l10n/output/ar/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "c91caf7b0035134e9f40b077034f310690c90b00e205a11f8edcf635ea286775"
+  },
+  {
+   "file": "l10n/output/de/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "3d2dc39e0bf3e1a76338fe589819444fcd0805234fb7c81f731ea1bdb4c8aef1"
+  },
+  {
+   "file": "l10n/output/de/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "4d5af4879492a872bc3583eb14f9b188b269ea1285795568033339a221e0e272"
+  },
+  {
+   "file": "l10n/output/de/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "cdc4bcb7a1c7c16254826df343154e4f4cea108a22ac47d60b64855c5ff51971"
+  },
+  {
+   "file": "l10n/output/es/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "c52d90d4b1904595c1c2aa91745108579c57dd8f2ed2f209dd22046cac25bd03"
+  },
+  {
+   "file": "l10n/output/es/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "b2fb738fa80afd48cf44ceec97ef4d503790e8a1284e2e4686a561c6f4f42b25"
+  },
+  {
+   "file": "l10n/output/es/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "0754730fdcb6b3ddce697366bbac8e1d064f12f22bc1fa008ef4553b732dab3c"
+  },
+  {
+   "file": "l10n/output/fr/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "da68df5cc240befbf445098f4cfe5a695635bac8bdc63352b34f5246724e6f4b"
+  },
+  {
+   "file": "l10n/output/fr/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "502c159817d372c7b6c76495413c9cd6dab1c298d9aa17abbdde139bdd90a2d6"
+  },
+  {
+   "file": "l10n/output/fr/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "3df27b3851d2bbd6ed107ed2e4812c6a1194982a503e759cb150004cf4f9566d"
+  },
+  {
+   "file": "l10n/output/hi/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "1478aa4fb229abad11fbcdfee8c6b822d4672fc8ac64ef082854ef3f23e5e617"
+  },
+  {
+   "file": "l10n/output/hi/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "693a45a1ae37272487593965f88508c1a6029649e83a2b5ae968c145b2218a9a"
+  },
+  {
+   "file": "l10n/output/hi/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "8766a08d68af90cf23808ede1c02af8f2f0aae2c4bec9a7d3abddca7a88fcccc"
+  },
+  {
+   "file": "l10n/output/it/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "48a89c890ff0e83125bef3bbade9a8a7352d4bf028abbbf647bd167b0f462308"
+  },
+  {
+   "file": "l10n/output/it/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "58d56304209b9c48a4e984dfc2789bbcff0699ea79d7192292d466d255610ff3"
+  },
+  {
+   "file": "l10n/output/it/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "e5ddcd146a0ee1e6831b145fc99275a8db1f4941db73b3a302f9780a02fcbd41"
+  },
+  {
+   "file": "l10n/output/ja/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "82cdb08046e272f04b5f4db6f94438de1a53d681e363c59ee19404a2fe17917d"
+  },
+  {
+   "file": "l10n/output/ja/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "8e16a58d3939dcbd0ab066ee4cec56b4fc4a18305d7e3dfa85cdc2e5a27b535c"
+  },
+  {
+   "file": "l10n/output/ja/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "f97dda13eea52850693135ebc4d2db11382f27808a95c8517c29e15e83ea97b9"
+  },
+  {
+   "file": "l10n/output/ko/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "7f3f4ebda510a4a3f6698436c9d53d1e53e394fc296aa0ce72b62423b1610079"
+  },
+  {
+   "file": "l10n/output/ko/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "452bb5ba606ec1acb7f7b1d8e9e695f0ce6f3b68662c1eec9fe041141c3a3779"
+  },
+  {
+   "file": "l10n/output/ko/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "bc49aee85497eeecc0c06b520961ab21b05ed1732faa2f7d57746ee35ff531bd"
+  },
+  {
+   "file": "l10n/output/nl/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "cb7da75888149120644b30b3befd9d2610e82986df4d4169c9532064e1823ef8"
+  },
+  {
+   "file": "l10n/output/nl/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "95fedaeb90da896430dd2e893fb23307b4cc480152c5acee70794812685db066"
+  },
+  {
+   "file": "l10n/output/nl/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "5c9bd9fa2a1ab6a99c79fa2ddd751b1add90b5afe6fb99de5cab1d27cd7daf25"
+  },
+  {
+   "file": "l10n/output/pt/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "68d7eeb5ecf6499d70910386793473d0b7058a200ff6007c92a12dd1043d2d38"
+  },
+  {
+   "file": "l10n/output/pt/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "ab1aed5c1fd87542ba3830d5453b4073138567b5c9c821bb6481b0dfd9b810ef"
+  },
+  {
+   "file": "l10n/output/pt/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "5b30063215166013df10ddc7f6f40a3453efd3ed4c8b3bdccd506ecc468ca7c4"
+  },
+  {
+   "file": "l10n/output/ru/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "87ca11c800abe5c2c32b33309cc6e8fe8863f493173bd050b2402110f56dfc8e"
+  },
+  {
+   "file": "l10n/output/ru/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "d42cc6c6b2ebc1ceb5b8c43c53117973a2b47fd39996487c98bda7eee0871b6a"
+  },
+  {
+   "file": "l10n/output/ru/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "3a16241b51ff3a1903e7ee0724db0b92d790b774492cd1eee8da357b10475303"
+  },
+  {
+   "file": "l10n/output/zh-Hans/b-0586.json",
+   "id": "t_ec7137784cc6b4f5d048",
+   "status": "translated",
+   "sourceHash": "ec7137784cc6b4f5d0487e3a33aaac698826868e6ccdd1a630306102a6f8dac0",
+   "textSha256": "279a1c979b7bf33a703cc1d613748df17ccbeb7881865ac395b6fa05a6254788"
+  },
+  {
+   "file": "l10n/output/zh-Hans/b-0589.json",
+   "id": "t_ea8ca4f5e5ab4585a270",
+   "status": "translated",
+   "sourceHash": "ea8ca4f5e5ab4585a27016c14617c096173333fa28fd888c66e9d55e080e9013",
+   "textSha256": "2901f016f8d91877095c98cadcaa3774acb782715425def29d29060f710834e2"
+  },
+  {
+   "file": "l10n/output/zh-Hans/b-0591.json",
+   "id": "t_5cab64662f3f96b891a4",
+   "status": "translated",
+   "sourceHash": "5cab64662f3f96b891a48b59354ea8b95d65faa0890d117bb98611b2a31dcc11",
+   "textSha256": "7cb38b1acd522f0756b31b3fffee42cc19562874f1a6e89200dce9ac23a3f881"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "route": "/offers/senior-citizen-offer/",
+  "slug": "offers-senior-citizen",
+  "source": "Senior Citizen Wellness Offer – Up to 20% Off at Kairali.html",
+  "sourceMobile": null,
+  "head": {
+    "title": "Senior Citizen Wellness Offer – Up to 20% Off at Kairali",
+    "description": "Enjoy up to 20% off Ayurvedic wellness packages at Kairali. Rejuvenate with tailored therapies, yoga, and holistic healing in a serene retreat.",
+    "keywords": null,
+    "canonical": null,
+    "ogTitle": "Senior Citizen Wellness Offer – Special Rates at Kairali",
+    "ogDescription": "Enjoy special rates on Ayurvedic wellness packages at Kairali. Rejuvenate with tailored therapies, yoga, and holistic healing in a serene retreat.",
+    "ogUrl": null,
+    "ogImage": "https://ayurvedichealingvillage.com/campaign-v110/images/og/offers-senior-citizen-offer.jpg",
+    "ogImageDims": [
+      "1200",
+      "630"
+    ],
+    "locale": "en_US",
+    "siteName": "Kairali – The Ayurvedic Healing Village"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ayurvedichealingvillage.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Offers",
+        "item": "https://ayurvedichealingvillage.com/offers/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Senior Citizen Offer",
+        "item": "https://ayurvedichealingvillage.com/offers/senior-citizen-offer/"
+      }
+    ]
+  },
+  "rootAttrs": {
+    "data-ahv-route": "/offers/senior-citizen-offer/",
+    "data-ahv-family": "campaign-retreat",
+    "data-ahv-consistency": "1",
+    "data-ahv-view": "ahv-page-campaign-retreat-desktop",
+    "data-ahv-variant": "desktop",
+    "data-ahv-view-file": "AHV Page Campaign Retreat Desktop.dc.html",
+    "data-ahv-template": "source"
+  },
+  "form": {
+    "heading": null,
+    "intro": null
+  },
+  "rootAttrsMobile": null,
+  "formMobile": null,
+  "whatsappText": "Hello, I would like to enquire about Senior Citizen Wellness Offer – Up to 20% Off at Kairali (/offers/senior-citizen-offer/)."
+}

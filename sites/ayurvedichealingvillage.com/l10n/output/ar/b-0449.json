@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0449",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_1583dcd15621499f7732",
+   "sourceHash": "1583dcd15621499f7732ef6aba190891eb7ae9f6dc3ae8e9f0ccba9f4dc0aa89",
+   "text": "للاستفسارات المتعلقة بملفات تعريف الارتباط أو الخصوصية، راسلنا على info@kairali.com. راجع /privacy-policy/ للاطلاع على المعلومات المتعلقة بالتقارير الطبية ومدة الاحتفاظ بها وحقوقك.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93e115a1ea0ec7fd5364",
+   "sourceHash": "93e115a1ea0ec7fd5364af9fe4857a48261084730fb13db7948e444de65d849d",
+   "text": "تقدّم Kairali Ayurvedic Group سياسة خصوصية شاملة لمرضى قرية الشفاء الأيورفيدية، المركز الأيورفيدي الرائد في كيرالا، الهند.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'customers' rendered as 'patients' (clinical register). Note: source describes a 'privacy policy' although the paired title is 'Disclaimer' — translated faithfully; source may need correcting."
+   ]
+  },
+  {
+   "id": "t_dfca6f7cba938ecde8d3",
+   "sourceHash": "dfca6f7cba938ecde8d3c2b571bd0c1846de16f6e25e156655790391091712fc",
+   "text": "المعلومات الطبية ومعلومات الموقع الإلكتروني",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d2754137ae15d03c9048",
+   "sourceHash": "d2754137ae15d03c90481f907dd2f6fdf7d3abb729a29cd2d50c8ca5fc385d3e",
+   "text": "يقدّم محتوى الموقع الإلكتروني معلومات عامة عن الأيورفيدا وعن خدمات المستشفى، ولا يشخّص حالتك ولا يغني عن الاستشارة الفردية. ويقيّم أطباء مؤهلون مدى ملاءمة العلاج لك، ويناقشون معك العلاج المقترح وفوائده المتوقعة ومخاطره والبدائل المتاحة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1222eff780f5a550d288",
+   "sourceHash": "1222eff780f5a550d288956e98d25798ed08e945ba5b8aaa332df43b05b1ad8f",
+   "text": "الأدوية والنتائج",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1bc33ecd996c047ccf43",
+   "sourceHash": "1bc33ecd996c047ccf4366a290f7b261b92e2245a842748bcafb2e5d35452399",
+   "text": "لا توقف الأدوية الموصوفة لك ولا تغيّرها دون توجيه من الأطباء المعالجين لك. أطلعنا على التشخيصات والأدوية وأنواع الحساسية ذات الصلة. تختلف النتائج من شخص لآخر، ولا يُضمن أي تحسّن محدد أو تعافٍ تام.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'cure' rendered as 'complete recovery' (تعافٍ تام) per the KTAHV language lock; the negated disclaimer meaning is preserved."
+   ]
+  },
+  {
+   "id": "t_bafc731eb301eda0edce",
+   "sourceHash": "bafc731eb301eda0edce625a2261e02b972c4c6928bc6b3a3278648c004edad2",
+   "text": "الحصول على المشورة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81c6bd2a4086ec731965",
+   "sourceHash": "81c6bd2a4086ec731965d3412ce29084b06831719df2e447052352ddc8d04bb9",
+   "text": "يمكنك التحدث مع Priya أو فريق المبيعات، أو مشاركة التفاصيل ليراجعها الطبيب، أو طلب استشارة مجانية عبر الفيديو أو الهاتف أو البريد الإلكتروني. ويتولى أحد المنسقين ترتيب الاستشارة بعد إرسال الطلب. ولا تُعدّ الردود الآلية من Priya تشخيصًا طبيًا. في حالات الطوارئ الطبية، تواصل مع خدمات الطوارئ المحلية بدلًا من انتظار الرد عبر الموقع الإلكتروني.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08440e966836527e8f38",
+   "sourceHash": "08440e966836527e8f38135621ce658a5a9dd031396b6d1af5d72fe6dccd9f15",
+   "text": "حقوقك",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f434db63fa79978de31a",
+   "sourceHash": "f434db63fa79978de31a1402a374d04862b2db9ad74129e03560bc83def326e3",
+   "text": "لا يستثني هذا الإشعار المسؤولية عن الإهمال أو الاحتيال، ولا أي مسؤولية أو حق للمريض أو المستهلك لا يجوز استثناؤه قانونًا. وقد تتغير المعلومات الواردة في الموقع الإلكتروني، لكن هذه التغييرات لا تعدّل تلقائيًا شروط الدخول المتفق عليها أو الحقوق القانونية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81445fa35acfd6455fcc",
+   "sourceHash": "81445fa35acfd6455fcc7fe9eee9d401119dab5d9310fe02da52433dda79f831",
+   "text": "الروابط الخارجية والتواصل",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_60a61b60ac3f63d5036b",
+   "sourceHash": "60a61b60ac3f63d5036b65ab066e5f6d0c945f8a44f0caa6f7d01fb05eb9698c",
+   "text": "للخدمات الخارجية شروطها الخاصة. استفسر من الفريق عن مدى التوافر والترتيبات المتعلقة بك. تواصل معنا عبر info@kairali.com أو +91 9555 156 156.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32dde54fa89f417adf8c",
+   "sourceHash": "32dde54fa89f417adf8c368543e3af6afc786ae39035e880c8c118fb782e0d10",
+   "text": "إشعار قانوني / Impressum",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Impressum' kept verbatim as the German legal term."
+   ]
+  },
+  {
+   "id": "t_3e93314444a3853f9355",
+   "sourceHash": "3e93314444a3853f9355dc6890fa024a357fcf2f0373796427654239515b4315",
+   "text": "إشعار قانوني | Kairali – قرية الشفاء الأيورفيدية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b26ec3e0f3e2d1e3bc67",
+   "sourceHash": "b26ec3e0f3e2d1e3bc6773f71cff664ef890ff9dbefecb7cb549698a7865147f",
+   "text": "اطّلع على شروط استخدام موقع Kairali – قرية الشفاء الأيورفيدية، بما فيها إخلاءات المسؤولية القانونية والمعلومات الصحية وحقوق الملكية الفكرية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_058d2182bd01da2dea7d",
+   "sourceHash": "058d2182bd01da2dea7d302ebee141bafb99d18df9325ae9ddcc0b618e0df507",
+   "text": "إشعار قانوني",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fa9ae18afae39d341772",
+   "sourceHash": "fa9ae18afae39d341772807c6583d38b81831e812522b09a8bec270e3081c816",
+   "text": "صورة اللافتة المصدرية — تُعرض في خانة لافتة قارئ السياسات",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal/editorial note rather than patient-facing copy; translated as instructed."
+   ]
+  },
+  {
+   "id": "t_7c6be5ed8571bd35b5f2",
+   "sourceHash": "7c6be5ed8571bd35b5f23701f8340aa70d9ebfd1d777d08f03f994d1642c772f",
+   "text": "القاعدة المصدرية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal/editorial label; translated as instructed."
+   ]
+  },
+  {
+   "id": "t_4344f9c24d1a2c438cfb",
+   "sourceHash": "4344f9c24d1a2c438cfbb1fd239d66cccda951a6c5d6a7784381b7f696dbaece",
+   "text": "رمز حماية البريد الإلكتروني من Cloudflare مأخوذ من الالتقاط الخاص بهذا المسار ومفكوك تشفيره بدقة؛ ولم تُختلق أي بيانات اتصال.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal provenance note rather than patient-facing copy; translated as instructed."
+   ]
+  },
+  {
+   "id": "t_92c1b5a71a651609e4fd",
+   "sourceHash": "92c1b5a71a651609e4fdb07a593d7f7c75aa0279b88bd6ed6230bff75cdfdbce",
+   "text": "الجهة المشغّلة وبيانات التواصل",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9463d97163fa0b678dbb",
+   "sourceHash": "9463d97163fa0b678dbb58cb3f8f1ee72fbd6fc93d3026954565ddde6c9107a1",
+   "text": "Kairali – قرية الشفاء الأيورفيدية. الجهة المشغّلة: Kairali Ayurvedic Health Resort Pvt. Ltd. المستشفى: III/73 Palayamkadu, P.O. Olassery, Kodumbu, Palakkad District – 678551, Kerala, India. البريد الإلكتروني: info@kairali.com؛ الهاتف: +91 9555 156 156. آخر تحديث: 25 سبتمبر 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Registered company name 'Kairali Ayurvedic Health Resort Pvt. Ltd.' kept verbatim (legal proper name, contains 'Resort'); postal address kept in Latin script."
+   ]
+  },
+  {
+   "id": "t_1fa88fce51de06f95b36",
+   "sourceHash": "1fa88fce51de06f95b36820e64545dbd95e5f1aa05a51585211255a4d738c552",
+   "text": "المستشفى والموقع الإلكتروني",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f3c0e47c5f8ee0fa071",
+   "sourceHash": "7f3c0e47c5f8ee0fa071d4194e8d31b1f6396eb017b5ba953796594501813401",
+   "text": "يقدّم المستشفى رعاية أيورفيدية يقودها الأطباء في الهند. راجع /accreditations/ للاطلاع على معلومات الاعتماد المنشورة. ولا تغني المعلومات الواردة في الموقع الإلكتروني عن التقييم الطبي الفردي.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_301289a136d45330fc4e",
+   "sourceHash": "301289a136d45330fc4efc048d250c1ff82fec8c4d076c5a347d67a7ad5473c1",
+   "text": "الزوار الدوليون",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

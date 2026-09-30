@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "私の治療について問い合わせる",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "慢性腰痛の治療について問い合わせる",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "1名利用、ヴィラ1棟1泊あたり：[[VAR_1]]。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "関節炎の治療について問い合わせる",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "私たちは、皆さまの健やかな毎日への道のりをサポートいたします。治療、滞在型プログラム、ご予約についてご質問がございましたら、当院のチームが丁寧かつ透明性をもってお手伝いいたします。お電話、メール、またはウェブフォームからお問い合わせください。包括的な癒しへの道を、ご一緒に始めましょう。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 滞在型プログラム (stay programmes) to keep the clinical register and avoid resort/holiday connotations."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "Kairali – The Ayurvedic Healing Villageのアーユルヴェーダ外来（OPD）診察では、伝統的なアーユルヴェーダの原則に基づき、一人ひとりに合わせた円滑な治療プロセスをご提供しています。来院された方は受付で温かくお迎えし、OPD用紙にご記入いただいたうえで、アーユルヴェーダによる自然療法の診察に向けて既往歴をデジタルで記録します。次に、アーユルヴェーダ医師による総合的な診察を行い、伝統的なアーユルヴェーダ診断や脈診を含め、オンラインまたは対面で個別のアーユルヴェーダ治療をご提案します。あなたのドーシャと健康状態に応じて、個別のウェルネスプランを作成します。その後、パンチャカルマによるデトックスや、関節炎、糖尿病、ストレスの緩和、皮膚疾患などの症状に対する的を絞った治療を含む療法へと進みます。治療は、治療用オイルとKairaliの輸出対応アーユルヴェーダ製品を用いて、熟練したセラピストが行います。治療後には、詳しい使用方法とともにハーブ製剤をお渡しし、継続的なアーユルヴェーダケアのためのフォローアッププランを手配します。また、ご利便性のため、インドのアーユルヴェーダ医師によるオンライン診察もご利用いただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Visitors' rendered as 来院された方 (those visiting the hospital). Source has a stray comma in 'utilizing, therapeutic oils' — translated as intended meaning."
+   ]
+  }
+ ]
+}

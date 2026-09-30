@@ -352,6 +352,8 @@ jobs:
       # sat outside the glob (see tests/ktahv-critical-flows.spec.ts). A test
       # that does not run is not a gate; it is a comment.
       - name: All tests (packages/* AND sites/*) — discovered, not globbed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           files=$(find packages sites scripts -path '*/test/*.test.js' -not -path '*/node_modules/*' | sort | tr '\n' ' ')
           if [ -z "$files" ]; then echo "::error::no test files discovered — the discovery is broken"; exit 1; fi
@@ -448,6 +450,8 @@ jobs:
 
       - name: Build (turbo)
         if: needs.changes.outputs.site_affecting == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: pnpm build
 
       - name: Install Playwright chromium
@@ -497,6 +501,9 @@ jobs:
 
       - name: Build (turbo)
         if: needs.changes.outputs.site_affecting == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AHV_STAGING: "0"
         run: pnpm build
 
       - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
@@ -504,6 +511,7 @@ jobs:
         run: node scripts/lighthouse-gate.mjs
         env:
           SITE: ${{ matrix.site }}
+          AHV_STAGING: "0"
 
   # VERDICT EMITTERS → CI (D-EMITTER-WIRING, Abilash's ratification 18 Jul 2026:
   # "wire the #126 emitters into CI as its own PR"). PR #126 built the emitters

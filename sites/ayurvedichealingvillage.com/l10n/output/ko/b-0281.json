@@ -1,0 +1,161 @@
+{
+ "batchId": "b-0281",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_0d599fc35207973166d6",
+   "sourceHash": "0d599fc35207973166d601b1d4094ca559412f7844e49ae2ea7c91d9f3a87468",
+   "text": "처음에는 접힌 상태이며, 여러 답변을 동시에 펼쳐 둘 수 있고, aria-expanded/aria-controls를 갖춘 기본 버튼을 사용하며, Enter 및 Space 키로 작동하고, 포커스를 강제로 이동하지 않습니다. 이는 디자인 결정으로 기록되었으며, 수집된 플러그인 클래스만으로는 과거의 실행 상태를 입증하지 못합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated as requested."
+   ]
+  },
+  {
+   "id": "t_1f2f2261f6f8bf70af30",
+   "sourceHash": "1f2f2261f6f8bf70af30d2c64abea248f82451da1a6aac0c174f7bbdc6943046",
+   "text": "명시적으로 비어 있는 마지막 단락 3개만 해당합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated as requested."
+   ]
+  },
+  {
+   "id": "t_b32be30452ae46530342",
+   "sourceHash": "b32be30452ae46530342c8dee769f03a22b56555c7ed4faed896aca91c460fc9",
+   "text": "없음 — 원본 본문에 다운로드 자료가 없으며, 제목을 근거로 임의로 만들지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note rather than patient-facing copy; translated as requested."
+   ]
+  },
+  {
+   "id": "t_5249f4fcc629efa0e6d6",
+   "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
+   "text": "-n",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_1e1caaf8cf28cb024317",
+   "sourceHash": "1e1caaf8cf28cb0243175a8dd26a3fc0d8f2c5527c661586bb816e57b9919be2",
+   "text": "-r",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_0c3603e13e24a40b4bf2",
+   "sourceHash": "0c3603e13e24a40b4bf215e3795a9a40d60a8456fb7b63c2d11e81701a231e85",
+   "text": "-c",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_16d1c9050a0b32e83764",
+   "sourceHash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
+   "text": "표",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16cd066b95f1799f059c",
+   "sourceHash": "16cd066b95f1799f059cfc45a00dd2bc67d4356dc883378164c70c7e5b652cf5",
+   "text": "열,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment concatenated after a number (e.g. '3 열, 5 행(스크롤 가능)')."
+   ]
+  },
+  {
+   "id": "t_6b05a180063676442fbc",
+   "sourceHash": "6b05a180063676442fbcce9e10309db975749f54423dde996c393c8fb33bac23",
+   "text": "행(스크롤 가능)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment concatenated after a number."
+   ]
+  },
+  {
+   "id": "t_6ce953bdf5cd0f93cd6f",
+   "sourceHash": "6ce953bdf5cd0f93cd6f4bd612b25843a038a9492b509dbc68727b29511af463",
+   "text": "it-",
+   "status": "translated",
+   "unchangedReason": "Code identifier prefix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4fc0bdb51ffc8cfdcaae",
+   "sourceHash": "4fc0bdb51ffc8cfdcaaee067eb264b8a5c646176cf870be17c2e647fbb2cb7f4",
+   "text": "-b",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_fa2e2a6ad747546569bd",
+   "sourceHash": "fa2e2a6ad747546569bd7b0e2e9281c550d020290d81ca00ee72bacef0a2260e",
+   "text": "?route=",
+   "status": "translated",
+   "unchangedReason": "URL query parameter, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9be7ac80b195e000b3cf",
+   "sourceHash": "9be7ac80b195e000b3cf0fcb8853fdf1f224f916f8b460413c608f550ebd1e27",
+   "text": "faq-cat-",
+   "status": "translated",
+   "unchangedReason": "Code identifier prefix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_485f60d2203a09c605dc",
+   "sourceHash": "485f60d2203a09c605dcf2cfd9d8612f916509ee7e48ab0afebac3f49da1485f",
+   "text": "-btn",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_68f4e3ae3fbca42ecfb0",
+   "sourceHash": "68f4e3ae3fbca42ecfb0c59493cc1b8192ebb182fe17ebe3a8cc5f142fa4e5a2",
+   "text": "-panel",
+   "status": "translated",
+   "unchangedReason": "Code identifier suffix, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9347bd35e495c32fd5df",
+   "sourceHash": "9347bd35e495c32fd5df366f2a70ec9f3b5434d621d4b5a16ae8684b72f554c2",
+   "text": "요가와 아유르베다는 몸과 마음을 함께 정화하는 이상적인 조합으로, 삶에서 진정으로 중요한 것과 그렇지 않은 것을 깨닫도록 돕습니다. 인도는 요가의 발상지이자 헌신과 명상의 동기가 샘솟는 원천입니다. 수많은 요기들이 수련법을 다듬어 온 곳에서 요가를 한다는 것은 깊은 영적 원천에 다가가는 것과도 같습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a91ebb8c0524e716db",
+   "sourceHash": "44a91ebb8c0524e716dbdda270683d012e9f0afb1022af18234fe46b1ffe57ef",
+   "text": "이 2주 동안 우리는 맥박과 생체 리듬, 감정, 꿈, 소화를 알아차림으로써 내면의 평온을 찾고 각자의 고유한 리듬을 인식하는 데 집중하며, 아울러 생리적 리듬과 생각, 감정의 변화하는 흐름에 스스로를 맞춰 보도록 합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a02a5e8bbc377688327a",
+   "sourceHash": "a02a5e8bbc377688327ada62ca6314f9f3b2abb9272433d9c37b7b14efa747ff",
+   "text": "고유한 식단과 매일의 아유르베다 케어는 각 체질 유형의 필요에 맞춰 제공됩니다. 마음을 진정시키는 마사지와 오일 요법을 통해 감각이 일상에서 벗어나 이완될 수 있습니다. 고요한 환경에서 진행되는 매일의 요가 및 명상 세션은 잠시 쉬어 가며 내면에 집중하고 진정한 자신과 다시 연결되도록 이끌어 줍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

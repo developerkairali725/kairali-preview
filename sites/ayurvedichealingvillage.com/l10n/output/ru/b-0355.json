@@ -1,0 +1,177 @@
+{
+ "batchId": "b-0355",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_b0ed5b5c9c5a66bf0dc9",
+   "sourceHash": "b0ed5b5c9c5a66bf0dc963382823c516347de1762c9584ccc7be6f80a4016dc6",
+   "text": "Удобное время: {time}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a3eedd02935c3fd31ac8",
+   "sourceHash": "a3eedd02935c3fd31ac8ec9f642661236089212d917a407540e082736b28f041",
+   "text": "Согласие: дано на /online-consultation/ ({date})",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dfa482044ef975023592",
+   "sourceHash": "dfa482044ef97502359223b5c8cff30e8dd3c1b85b9c862d14d4783aea081870",
+   "text": "Контакты | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3c606f671af7394c193",
+   "sourceHash": "d3c606f671af7394c1935bd67fa1ea7a208d96c0c539ab510c8e8b640891fe19",
+   "text": "Свяжитесь с Kairali по вопросам аюрведического лечения, программ и бронирования — по телефону, эл. почте или через веб-форму.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'программ'; 'personalized wellness guidance' shortened to fit the 155-character limit."
+   ]
+  },
+  {
+   "id": "t_094b14c173a6ef834932",
+   "sourceHash": "094b14c173a6ef8349320a1f999f115d64ac849d28082d652ee36373d71d4c21",
+   "text": "Контакты (старая версия)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a6261b2f3863dc7645cd",
+   "sourceHash": "a6261b2f3863dc7645cdb755000f91de1dd516a5e6333c778c35ef271537f108",
+   "text": "Повторное использование компонента семейства обращений T07 ПРЕДЛОЖЕНО и зафиксировано только здесь; распоряжение маршрутом, идентичность преемника и консолидация остаются без изменений.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_53c2834984d57d615fb1",
+   "sourceHash": "53c2834984d57d615fb14de6ead4121be24dc323e2226f29ad99dfb54d4bd27b",
+   "text": "Перенаправление, автоматическая консолидация и сопоставление с преемником не заявлены.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c2e2706884c17f07b257",
+   "sourceHash": "c2e2706884c17f07b25713c42378e88b9ad959976f5a8071451a801cad013029",
+   "text": "Напишите нам",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b433538bef22c012429",
+   "sourceHash": "2b433538bef22c012429001d009ec49e4801426fbbe17f5bd9e0932de537fe88",
+   "text": "Записаться на бесплатную консультацию",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f79592df7440ee76d22",
+   "sourceHash": "0f79592df7440ee76d222fdfb5a9812a497d78a7fa7602a7da9dcba86aaadd47",
+   "text": "PO Box – Olassery, Kodumbu, Palakkad Dist. – 678551, Kerala, India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in source in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_3305eb58093dce1796f3",
+   "sourceHash": "3305eb58093dce1796f362abac95c01b9891118812501e09fb0321f60552713c",
+   "text": "Телефон:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ba86a17b76a0c270b9e",
+   "sourceHash": "2ba86a17b76a0c270b9ef66a6802b54e50543e659bc83e326b283c37094c7aee",
+   "text": "(+91)-(4923)-222553, 222623, 224402, 224403, +91 9555 156 156, доб. 2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e99d3a1ddf5dc76b09ea",
+   "sourceHash": "e99d3a1ddf5dc76b09ea28f925b1613b70cd18d4deb11d3e43dbd8a18162d55a",
+   "text": "Корпоративный офис и отдел бронирования",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2e5886c32cf3024681a4",
+   "sourceHash": "2e5886c32cf3024681a44eca8996515655676964c3300f090a878cd199484436",
+   "text": "Kairali Ayurvedic Health Resort Pvt. Ltd.D – 130, Block D,",
+   "status": "translated",
+   "unchangedReason": "Registered company name (contains 'Resort' as part of the legal name) and postal address kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_653bc66be7965c3d4046",
+   "sourceHash": "653bc66be7965c3d40469693d706ef4b0afcd24e4f61cf8f45669d8f8365cd6d",
+   "text": "Ambedkar Colony, Mehrauli, New Delhi – 110030",
+   "status": "translated",
+   "unchangedReason": "Postal address kept exactly as in source in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_d15a9b99101407c835b8",
+   "sourceHash": "d15a9b99101407c835b85004e18795063315e1acabef6a381fd1cd949da45549",
+   "text": "В источнике между двумя строками адреса стоит [[TAG_1]]; отображается в две строки, чтобы на границе слов сохранялся читаемый пробел.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e1be7c97522584250c5c",
+   "sourceHash": "e1be7c97522584250c5ced37faacd6c731f87ca51f0c93dc9730eb04d3769ceb",
+   "text": ", доб. 2",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f3fc29e1351ad06ec26f",
+   "sourceHash": "f3fc29e1351ad06ec26fff033e5b4fc8e6971c98f8dcb6aed1758187f6261dc8",
+   "text": "Карта не загружена при проверке — встраиваемая карта Google Maps из источника зафиксирована, но не запрошена.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_63676214686fcf644f88",
+   "sourceHash": "63676214686fcf644f884c0814dd0d7e0b95e72fe30260db8f3803fe0198b633",
+   "text": "Восстановлено из HTML, сохранённого для ТОГО ЖЕ МАРШРУТА (live-response.html / raw-fixture.json для /contact-us-old/), который содержит [[OPEN_1]]info@kairali.com[[CLOSE_1]] в обеих строках электронной почты. При извлечении записи был выведен заполнитель обфускации WordPress; адрес не был выведен из другого маршрута и не был придуман.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_951ab65190399b2ee372",
+   "sourceHash": "951ab65190399b2ee372d243b19ce78e2251feb5baed01d78f92431e027b9313",
+   "text": "Введите ваше имя",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9cd26bee4d76694cb03c",
+   "sourceHash": "9cd26bee4d76694cb03cfee8c2355a83339157f2e9234fd1352c12597da72474",
+   "text": "Ваше имя",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+/**
+ * AHV — the left "In this section" rail, rendered from THE site tree
+ * (english-candidate/site-tree.json, tools/build-site-tree.mjs). The sitemap
+ * renders the same tree, so a page sits in the same place in both (owner,
+ * 23 Sep 2026: "the left-hand side navigation consistent on all pages").
+ *
+ * Output: english-candidate/section-nav.json (audit copy) +
+ * public/design/section-nav.data.js (read by public/design/section-nav.js).
+ *   sections[id] = { label, hub, items: [{ path, label, link, group?, children }] }
+ *   routes[path] = { section, crumbs: [ancestor paths…, path], remove }
+ * `remove` names the captured WordPress sidebar to take out (context-menu
+ * components render their menu under `<ptr>/c/1`).
+ *
+ * WHICH PAGES CARRY THE RAIL: every content page of a section that has a hub
+ * page, except the families that keep their own designed chrome (forms,
+ * campaigns, policies, galleries, package pages, villas, finder hubs, course
+ * pages, past-event designs). Those pages are still IN the tree (the sitemap
+ * lists them and other pages' rails link to them) — they just draw no rail.
+ *
+ *   node tools/build-section-nav.mjs     (run after tools/build-site-tree.mjs)
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { loadDataset } from "./lib/route-crumbs.mjs";
+
+const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const tree = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/site-tree.json"), "utf8"));
+const manifest = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"));
+const lock = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/consistency-locked-families.json"), "utf8"));
+const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
+
+/** Families that keep their own designed chrome. */
+const EXCLUDE_FAMILIES = new Set([
+  "enquiry", "confirmation", "policy-reader", "ahv-template-legal-policy",
+  "campaign-nine", "campaign-retreat", "ahv-template-offers-deals-and-gift-vouchers",
+  "sitemap", "faqs-and-downloads", "how-to-reach", "ahv-template-photo-collections",
+  "ahv-template-past-retreat-record", "ahv-template-course-and-fees",
+  "defence-and-paramilitary-forces", "cancer-supportive-care", "supportive-care-cancer",
+  "ayurveda-gallery", "past-retreats", "ananda-lahari-retreat", "ashtanga-retreat", "yala-2018-retreat",
+  "ayuryoga", "back-to-roots", "lakshya-yoga", "mindfulness-retreat", "our-villas",
+  "classic-villa", "deluxe-villa", "royal-villa", "maharaja-suite", "yoga-retreats", "panchkarma-treatment",
+]);
+const familyOf = (r) => (r.desktopView ?? r.mobileView ?? "").replace(/^ahv-page-/, "").replace(/-(desktop|mobile)$/, "");
+
+// the captured sidebar each route carries (removed by section-nav.js)
+const removeByPath = new Map();
+for (const file of fs.readdirSync(path.join(SITE, "public/ahv/assets")).filter((f) => /-data\.js$/.test(f))) {
+  let D; try { D = loadDataset(path.join(SITE, "public/ahv/assets", file)); } catch { continue; }
+  for (const R of (D && (D.routes || D.records)) || []) {
+    if (!R || !R.path || removeByPath.has(R.path)) continue;
+    const navPrefixes = [], blockPrefixes = [];
+    for (const c of R.components || []) {
+      if (!/context|menu|navigation/i.test(c.component || "")) continue;
+      if (/^context-?nav$/i.test(c.component) || /^travel-navigation$/i.test(c.component)) navPrefixes.push(c.ptr);
+      else blockPrefixes.push(c.ptr + "/c/1");
+    }
+    if (R.nav && Array.isArray(R.nav.groups)) navPrefixes.push("ctx-h");
+    if (navPrefixes.length || blockPrefixes.length) removeByPath.set(R.path, { navPrefixes, blockPrefixes });
+  }
+}
+
+const toItem = (n) => ({ path: n.path, label: n.title, link: !!n.path, ...(n.group ? { group: true } : {}), children: n.children.map(toItem) });
+// Owner, 26 Sep 2026 (EF-04 header takeover + EF-25): every family — hub or not — gets the ONE
+// compact family header (public/design/family-header.js). Hub-less "Policies & site information"
+// is a family too. Campaign pages are the deliberate exception (conversion layouts, no hub).
+const FAMILY_EXCEPTIONS = new Set(["campaigns"]);
+const sections = {};
+for (const s of tree.sections) if (!FAMILY_EXCEPTIONS.has(s.id) && s.children.length) sections[s.id] = { label: s.title, hub: s.hub || null, items: s.children.map(toItem) };
+
+const routes = {}, skipped = [];
+// family: EVERY tree/unlisted route of a family section → { section, crumbs } (drives the header;
+// `routes` below stays the legacy-sidebar-removal + breadcrumb set)
+const family = {};
+for (const [p, info] of [...Object.entries(tree.index), ...Object.entries(tree.unlisted || {})]) {
+  if (!sections[info.section] || !byPath.get(p)) continue;
+  family[p] = { section: info.section, crumbs: [...info.ancestors, p] };
+}
+for (const [p, info] of [...Object.entries(tree.index), ...Object.entries(tree.unlisted || {})]) {
+  const sec = sections[info.section];
+  const r = byPath.get(p);
+  if (!sec || !r) continue;
+  const fam = familyOf(r);
+  // OPD is a visit-information destination despite using the enquiry family.
+  const ownerIncluded = p === "/walk-in-ayurveda-treatment/";
+  if (!ownerIncluded && (EXCLUDE_FAMILIES.has(fam) || lock.families[fam])) { skipped.push(p); continue; }
+  routes[p] = { section: info.section, crumbs: [...info.ancestors, p], remove: removeByPath.get(p) || null };
+}
+
+fs.writeFileSync(path.join(SITE, "english-candidate/section-nav.json"), JSON.stringify({ generatedBy: "tools/build-section-nav.mjs from english-candidate/site-tree.json", sections, routes, family, skipped }, null, 1) + "\n");
+fs.writeFileSync(path.join(SITE, "public/design/section-nav.data.js"),
+  "/* generated by tools/build-section-nav.mjs from english-candidate/site-tree.json — do not edit */\nwindow.AHV_SECTION_NAV = " + JSON.stringify({ sections, routes, family }) + ";\n");
+console.log(`family header: ${Object.keys(family).length} family pages in ${Object.keys(sections).length} families · section rail: ${Object.keys(routes).length} pages draw the rail across ${Object.keys(sections).length} sections · ${skipped.length} designed/locked pages draw none (still in the tree)`);

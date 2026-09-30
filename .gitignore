@@ -46,3 +46,9 @@ state/
 state/writer-lease.local.json
 .vercel
 .env*
+
+# AHV final documents: exact binary recovery via document-assets-release.json
+sites/ayurvedichealingvillage.com/public/documents/pdf/
+sites/ayurvedichealingvillage.com/public/documents/fonts/
+sites/ayurvedichealingvillage.com/public/documents/covers/
+sites/ayurvedichealingvillage.com/public/documents/*.svg

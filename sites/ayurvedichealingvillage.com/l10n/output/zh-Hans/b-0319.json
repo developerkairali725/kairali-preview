@@ -1,0 +1,185 @@
+{
+ "batchId": "b-0319",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_b41f3e7f7b24e85469e1",
+   "sourceHash": "b41f3e7f7b24e85469e18ec01c40d6fa460c5de0c19e85e282766474a213542c",
+   "text": "我们已收到您的信息，团队成员正在审阅。我们将在24小时内与您联系。如果您的咨询涉及特定病症，阿育吠陀医生将参与回复。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a864577365310d90c6a",
+   "sourceHash": "4a864577365310d90c6a68fbbc9b5c467fc34c282feb246b9b760e00e6360bee",
+   "text": "如果合适，我们将为您安排问诊，并规划住院期间的各项实际安排。没有压力，也无任何义务。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_590ccb86e5777f1ec1dd",
+   "sourceHash": "590ccb86e5777f1ec1ddeb00758f83538c3c061d40535f3f7a39798dc717fd98",
+   "text": "谢谢——您的咨询已转交护理团队 | Kairali Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9483a538e6841f8fe4c5",
+   "sourceHash": "9483a538e6841f8fe4c529737c4166b546c1da18516b7487e464ffe7e051a053",
+   "text": "预订住院 | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfbd28c3f80ed63c4110",
+   "sourceHash": "bfbd28c3f80ed63c4110ab5603bd65b7de222b6321d627a929e49f91e94c99cb",
+   "text": "规划您在 Kairali Ayurvedic Healing Village 的调养住院。立即预订喀拉拉邦的阿育吠陀疗法、瑜伽项目及焕活项目。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 调养住院 and 'yoga retreats' as 瑜伽项目 per clinical register."
+   ]
+  },
+  {
+   "id": "t_bba824389ffdfb3bdff7",
+   "sourceHash": "bba824389ffdfb3bdff70d2f11b72ceda1fd2f56dc83abe27d0e502d9dcc71a8",
+   "text": "booking/book-now",
+   "status": "translated",
+   "unchangedReason": "URL path slug; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_e09bd2655e94c441408d",
+   "sourceHash": "e09bd2655e94c441408d90acac2e4c3cab7d996fcc16a7ff09ea3ce7abf00faf",
+   "text": "提供服务，可被索引，为 XML 站点地图候选；可通过共享的预订操作访问。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dd4a95b8f70d00dcbfc5",
+   "sourceHash": "dd4a95b8f70d00dcbfc50c867800d986c5de58a1ec39d7de8d8f9354ef424ddb",
+   "text": "三个路由均无源正文图片；外壳中的共享标识素材原样复用。已渲染文案的祖先节点列为 wrapperNodes，而非排除项。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2e3c55da83d1d4cb308d",
+   "sourceHash": "2e3c55da83d1d4cb308d53996279ac90dcf417f1b7d29d76a3ed7fd63bf619b9",
+   "text": "已渲染源文案的布局包裹层——自身不含任何文案",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9367d58465ce3eebe865",
+   "sourceHash": "9367d58465ce3eebe86557d4c60f924ce8d136b0fbaf3ba762e61c55f90bad34",
+   "text": "移除两个225px的空白间隔元素；不得虚构嵌入式预订字段。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d2d59aed44f1efab446",
+   "sourceHash": "6d2d59aed44f1efab446c09e60a3da7794ed1e652cd88d0a67914e72d1f9eae8",
+   "text": "购物车",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f5371a9fa4a2bce3375",
+   "sourceHash": "7f5371a9fa4a2bce3375bf2c972bb70f4746c94f138f39514da1b9d851378f3d",
+   "text": "您的购物车目前为空！",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4884c9ef4f94b1fd521e",
+   "sourceHash": "4884c9ef4f94b1fd521e45b5f1d2086c2a301ee90c28c8427a471d69b4e673b2",
+   "text": "购物车 - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2acaa88ebcef4ae9d8d",
+   "sourceHash": "f2acaa88ebcef4ae9d8d15fe5a0097dfe01cdea35948b1861dcc136f09dab5c5",
+   "text": "提供服务，但不纳入 XML 站点地图及导航；作为功能性端点保留在编辑导航之外。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cae0813e3b7f415fae5f",
+   "sourceHash": "cae0813e3b7f415fae5f451d58be131ee4a56896774432fdf93fae74f06ed5af",
+   "text": "您可能感兴趣…… 购物车",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5533c6058d739ef0eb30",
+   "sourceHash": "5533c6058d739ef0eb3002d4942c1ddcb7b00d2f318df755a111dc4ed8eb40c3",
+   "text": "您可能感兴趣……",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e39bafec6641aed3be25",
+   "sourceHash": "e39bafec6641aed3be25d99424457cd2708f2961e19d0cef7ae0b082fe1950c6",
+   "text": "店内新品",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_075317471b4727a288f7",
+   "sourceHash": "075317471b4727a288f779aba5d86ee0493c7396f57f7d4370c15d1defa96066",
+   "text": "未填充的推荐包裹层及源自引用并非产品；请在内部源记录中保留。不得虚构库存、商品、总额或促销。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d05c4fc52da967218d76",
+   "sourceHash": "d05c4fc52da967218d76e3a3175e6105509062accf7c560c06f205872f069204",
+   "text": "继续预订，规划您的住院安排。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb6687b0de7bff8ac452",
+   "sourceHash": "bb6687b0de7bff8ac452fb90d2ab984848eb1d28e46265b7c4042eea3a1a826c",
+   "text": "结账 - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f24b610237efeddced4d",
+   "sourceHash": "f24b610237efeddced4dd53c7a3553bbe1af54528f7d21acd3ee3b19b0de6571",
+   "text": "完整采集的源段落",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b13181088fa84cca4d6",
+   "sourceHash": "1b13181088fa84cca4d67bd908c847f67280c32c88a05c7fbb8cf4b2667ecd0c",
+   "text": "源页面原有的空购物车提示",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

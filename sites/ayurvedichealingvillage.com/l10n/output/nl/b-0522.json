@@ -1,0 +1,53 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": Voor patiënten met klachten in het hoofdgebied, zoals sinusproblemen en migraine, is deze ayurvedische therapie de beste keuze. Het is een natuurlijke reinigingstechniek waarbij neusdruppels gedoseerd in de neusgaten worden toegediend en die pijn in het hoofdgebied kan verlichten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'freed from any kind of pain' softened to 'pijn ... kan verlichten' to avoid an absolute cure claim; 'the best' kept faithfully — flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam: Voor patiënten met klachten in het hoofdgebied, zoals sinusproblemen en migraine, is deze ayurvedische therapie de beste keuze. Het is een natuurlijke reinigingstechniek waarbij neusdruppels gedoseerd in de neusgaten worden toegediend en die pijn in het hoofdgebied kan verlichten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'freed from any kind of pain' softened to 'pijn ... kan verlichten' to avoid an absolute cure claim; 'the best' kept faithfully — flag for Dr. Deepu John's clinical review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "Er wordt training aangeboden. Op geen enkele route in deze batch is de status 'Binnenkort beschikbaar' toegepast.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "Huidige medische, commerciële, prijs- en beschikbaarheidsclaims behouden hun exacte interne vrijgavecontroles. Het vastleggen van een bron is geen verificatie, en het ontbreken van een controle per route betekent nooit dat een claim is goedgekeurd.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "Programma's voor iedereen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programma's' per clinical language lock."
+   ]
+  }
+ ]
+}

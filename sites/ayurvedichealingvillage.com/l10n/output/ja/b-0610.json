@@ -1,0 +1,175 @@
+{
+ "batchId": "b-0610",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_ed0ee7f51cae78f3e954",
+   "sourceHash": "ed0ee7f51cae78f3e95408c38c1d10ca40a644f6ea8c1c35eca6794fd354e2ee",
+   "text": "料金適用開始日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00d9344ceb6a435761fd",
+   "sourceHash": "00d9344ceb6a435761fda9860a892fea19ce9ecffeb1d87a9ced580130bcf2ff",
+   "text": "映像で、そしてツアーも準備中です",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5381066c58eba135fc",
+   "sourceHash": "4e5381066c58eba135fcf2977a2508f7d72105cd42076fd321b2b364ba867606",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]お問い合わせの際に、患者ケアチームへこのオファーの適用をお申し付けください。[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a84dbe0ef7b2c4d0df3",
+   "sourceHash": "7a84dbe0ef7b2c4d0df325a6f165ff38a35c184e76f52f2b8145b7353bc2b995",
+   "text": "電話：[[OPEN_1]]+91 9555 156 156[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11929d76dbfd2699da2a",
+   "sourceHash": "11929d76dbfd2699da2a9a21c8138e4c5adf25497ed547c2c4e8a1f8d87dbe95",
+   "text": "3–13泊で10% · 14–20泊で15% · 21泊以上で20%。すべてのパッケージが対象です。終了日の定めはありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4b06ef6d3c81436f60a",
+   "sourceHash": "f4b06ef6d3c81436f60a318c81c42f8f7e2d774d45a22f3b9b5f3b6980d28146",
+   "text": "終了日",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Date-range label ('To'); rendered as end date."
+   ]
+  },
+  {
+   "id": "t_930bf5e7c871c668c034",
+   "sourceHash": "930bf5e7c871c668c034874a7fb987a73104237db57edc1e2bcaab32f679a6e3",
+   "text": "任意です。日程が未定の場合は空欄のままで構いません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_35f00e26d4d1289f7d2e",
+   "sourceHash": "35f00e26d4d1289f7d2e18d11070f142df3b068b28f8dbe0aec3bf104d2e8427",
+   "text": "[[VAR_1]][[OPEN_1]] / 泊[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11150a76f47719f852ac",
+   "sourceHash": "11150a76f47719f852acdc2dd26418e70c1382558d1a1b8ecf7f0264043fd2f3",
+   "text": "お一人でご利用の場合の、ヴィラ1室あたり1泊の料金：Deluxe Villa [[VAR_1]] · Classic Villa [[VAR_2]] · Royal Villa [[VAR_3]] · Maharaja Suite [[VAR_4]]。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Term 'Single' (1名) not used verbatim to avoid adding digits; 'per villa per night' kept without added numerals where possible."
+   ]
+  },
+  {
+   "id": "t_8b7fbde536ad5fef7062",
+   "sourceHash": "8b7fbde536ad5fef70628f83c3b1bb2bbd72210aa26d1a8e96426cd8d9fcb974",
+   "text": "から ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a06ab10d8d5ca673a47",
+   "sourceHash": "3a06ab10d8d5ca673a473bdfaa5bbb025dbc5b618fb48068f4a1d4e673e9ae46",
+   "text": "€ EUR",
+   "status": "translated",
+   "unchangedReason": "Currency symbol and ISO code are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d88f343350776672ed0",
+   "sourceHash": "4d88f343350776672ed05ba6a7dbdd61d5c151fb8758ef47142dcf4f9adfcf6e",
+   "text": "[[OPEN_1]]Maharaja Suites[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room-category proper name and variables only.",
+   "issues": []
+  },
+  {
+   "id": "t_0b842b338c651688df07",
+   "sourceHash": "0b842b338c651688df07e77f94f7a8925424164c713c47a39c297dd435980ed9",
+   "text": "[[OPEN_1]]Royal Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room-category proper name and variables only.",
+   "issues": []
+  },
+  {
+   "id": "t_8c6d38d6fa1ddb636f3c",
+   "sourceHash": "8c6d38d6fa1ddb636f3c714cd7708831aa44900bd8889909f4ec53e32085b29d",
+   "text": "[[OPEN_1]]Classic Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room-category proper name and variables only.",
+   "issues": []
+  },
+  {
+   "id": "t_34dcfd7b06e164529337",
+   "sourceHash": "34dcfd7b06e164529337dd6e1491c9e23eacf8fa41973b9516ff979c5d08c8a9",
+   "text": "[[OPEN_1]]Deluxe Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room-category proper name and variables only.",
+   "issues": []
+  },
+  {
+   "id": "t_3a5ae35d01590114a18e",
+   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
+   "text": "[[OPEN_1]]アーユルヴェーダ治療[[CLOSE_1]] [[OPEN_2]]ヴィラ[[CLOSE_2]] [[OPEN_3]]ヨガ＆瞑想トレーニング[[CLOSE_3]] [[OPEN_4]]アーユルヴェーダ研修プログラム[[CLOSE_4]] [[OPEN_5]]アーユルヴェーダ食[[CLOSE_5]] [[OPEN_6]]製品紹介[[CLOSE_6]] [[OPEN_7]]院内施設[[CLOSE_7]] [[OPEN_8]]オファー[[CLOSE_8]] [[OPEN_9]]当院について[[CLOSE_9]] [[OPEN_10]]ナレッジセンター[[CLOSE_10]] [[OPEN_11]]メディアギャラリー[[CLOSE_11]] [[OPEN_12]]受賞歴[[CLOSE_12]] [[OPEN_13]]口コミ[[CLOSE_13]] [[OPEN_14]]アクセス[[CLOSE_14]] [[OPEN_15]]よくあるご質問・資料ダウンロード[[CLOSE_15]] [[OPEN_16]]お問い合わせ[[CLOSE_16]] [[OPEN_17]]外来（予約なし）[[CLOSE_17]] [[OPEN_18]]治療＆研修[[CLOSE_18]] [[OPEN_19]]ヨガ＆アーユルヴェーダ滞在プログラム[[CLOSE_19]] [[OPEN_20]]ヨガ＆瞑想パッケージ[[CLOSE_20]] [[OPEN_21]]CSR[[CLOSE_21]] [[OPEN_22]]提携先[[CLOSE_22]] [[OPEN_23]]周辺観光[[CLOSE_23]] [[OPEN_24]]祭り・行事[[CLOSE_24]] [[OPEN_25]]フォトギャラリー[[CLOSE_25]] [[OPEN_26]]採用情報[[CLOSE_26]] [[OPEN_27]]今すぐ応募[[CLOSE_27]] [[OPEN_28]]アーユルヴェーダ関連リンク[[CLOSE_28]] [[OPEN_29]]アーカイブ[[CLOSE_29]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 滞在プログラム (stay programme) to keep clinical register."
+   ]
+  },
+  {
+   "id": "t_aeefcfa5e981ddea1acf",
+   "sourceHash": "aeefcfa5e981ddea1acff2eec574b3f7dd0336bd1b16df373ac649e9ebb67ea8",
+   "text": "医療機関恒久登録 — 2025–2030",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_371e4203197189a6da16",
+   "sourceHash": "371e4203197189a6da164c7b0ad6cad0d06fc8964891bcd59edda18f13c7600b",
+   "text": "Kairali – The Ayurvedic Healing Village は、静けさと伝統が調和する場所で、本来のウェルビーイングとホリスティックなケアを提供しています。当施設は禁酒・禁煙・カフェインフリーで、心身の調和に向けた清潔で活力を取り戻せる環境を整えています。伝統的なアーユルヴェーダの療法、ヨガ、瞑想、オーガニックな暮らしに身を委ね、ケーララで本物の変化と癒やしを体験してください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Our retreat' rendered as 当施設 (our facility) to keep clinical register."
+   ]
+  },
+  {
+   "id": "t_aaa300737e84bb2384ee",
+   "sourceHash": "aaa300737e84bb2384eeef2a171807565c2671cd57eed54575bd54020d481563",
+   "text": "緑のリネンの服を着た女性が、合わせた両手を頭上に掲げてヨガのポーズをとっている様子",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31265b74f519c209f5b9",
+   "sourceHash": "31265b74f519c209f5b978ee27914d89dd153a5a60e5b3a3df2c7945a2d81814",
+   "text": "木製の治療台に横たわる患者に、2人のセラピストが温かいハーブの湿布を押し当てている様子",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

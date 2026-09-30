@@ -1,0 +1,63 @@
+/* AHV English preview responsive override — ISOLATED PORTABLE PREVIEW LAYER
+   WOPS-AHV-CLAUDE-CONTINUATION-002 · English only.
+
+   Purpose: the two demonstrated narrow-viewport defects only.
+     1. Home Mobile header overflows at 320 (action group right edge 349.05px).
+        SCOPED: every header rule requires [data-ahv-preview-target="home-mobile"] on the previewed
+        document's root element, which the harness sets ONLY when the Home Mobile view is loaded. The
+        earlier version used bare 'header > ...' selectors, which reached all five previewed views at 320
+        even though the authorised header correction is Home Mobile alone.
+     2. Shared footer newsletter row wraps badly at Desktop 320. Deliberately NOT marker-scoped: the
+        footer is shared chrome and the correction is justified wherever it is imported.
+
+   This file is NOT part of any approved design. No protected source byte is changed by it:
+   the preview harness injects it into the page it is previewing. It applies only at
+   max-width 360px, so 390 and 1024 are untouched. Nothing is clipped or hidden —
+   the logo, the EN pill, the booking action and the menu all stay visible and >=44px.
+*/
+
+@media (max-width: 360px) {
+
+  /* 1 — Home Mobile header ONLY (marker-scoped): keep every control usable inside 320.
+     Header is `display:flex; justify-content:space-between; padding:0 16px`. The logo is 154px
+     and the action group 219px, which needs 389px + gaps. Narrow the logo and tighten the
+     action gaps; every target keeps its 44px minimum. */
+  [data-ahv-preview-target="home-mobile"] header > a > img {
+    height: 24px !important;   /* 154px -> ~102px at the source aspect ratio */
+  }
+  [data-ahv-preview-target="home-mobile"] header > div {
+    gap: 6px !important;
+  }
+  [data-ahv-preview-target="home-mobile"] header > div > span {        /* EN pill */
+    padding: 0 7px !important;
+    letter-spacing: .4px !important;
+  }
+  [data-ahv-preview-target="home-mobile"] header > div > a {           /* Book Now */
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 12px !important;
+    letter-spacing: .4px !important;
+    white-space: nowrap;
+  }
+  [data-ahv-preview-target="home-mobile"] header > div > button {      /* menu */
+    flex: 0 0 auto;
+  }
+
+  /* 2 — Shared chrome footer newsletter at Desktop 320: the caption row is set to
+     white-space:nowrap and the field row is a single flex line with 20px left padding, so both
+     run past 320. Let the caption wrap and the field row stack. Nothing is hidden and no
+     control loses its target size. */
+  footer [style*="white-space: nowrap"] {
+    white-space: normal !important;
+  }
+  footer [style*="padding: 5px 5px 5px 20px"] {
+    flex-wrap: wrap !important;
+    padding: 8px !important;
+    gap: 8px !important;
+  }
+  footer [style*="padding: 5px 5px 5px 20px"] > * {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}

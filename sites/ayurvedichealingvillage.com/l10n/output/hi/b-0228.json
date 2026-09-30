@@ -1,0 +1,111 @@
+{
+ "batchId": "b-0228",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_05c147858b6b7c43d95d",
+   "sourceHash": "05c147858b6b7c43d95db684373e17df3f1edb94b016d16864770208988dc691",
+   "text": "'Marcellus',serif",
+   "status": "translated",
+   "unchangedReason": "CSS font-family value; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_7959e211131a4fb5c431",
+   "sourceHash": "7959e211131a4fb5c4318d0d3053e4d7f9bbdca7b8000f6d66596e413741aa8d",
+   "text": "-li",
+   "status": "translated",
+   "unchangedReason": "Code suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_cf25df0bf41c0a03d568",
+   "sourceHash": "cf25df0bf41c0a03d5684ca8fcdbb21860f56658a0618b509f99574ddd5f8be9",
+   "text": "Ananda Lahari Retreat आनंद – प्रसन्नता, लहरी – लहर",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Programme proper name 'Ananda Lahari Retreat' kept verbatim; only the glosses translated."
+   ]
+  },
+  {
+   "id": "t_a3e6e47b1a8d4e8b540d",
+   "sourceHash": "a3e6e47b1a8d4e8b540d3570905c4c40838ee419b9df65f859ee0602a04a8274",
+   "text": "अपने दैनिक जीवन में हम अनेक परिस्थितियों का सामना करते हैं और उन्हें संभालते हैं, चाहे वे परिवार, काम, संबंधों या अन्य दायित्वों से जुड़ी हों। इस कार्यक्रम का उद्देश्य आपको जीवन और उसकी परिस्थितियों को आनंद और सहजता से संभालने के लिए तैयार करना है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Register substitution: 'This retreat' → 'इस कार्यक्रम'."
+   ]
+  },
+  {
+   "id": "t_fa7e7eee1e00978e07bc",
+   "sourceHash": "fa7e7eee1e00978e07bcc29442840b21658c658ed86f6cdefb8155df55b5ed76",
+   "text": "आयुर्वेद और योग की शिक्षाओं व अंतर्दृष्टियों का उपयोग करके, आप अपने शरीर और मन के बीच, तथा अपने आस-पास के लोगों और परिवेश के साथ, सामंजस्य और संतुलन प्राप्त करने की दिशा में आगे बढ़ सकते हैं। ये समय-सिद्ध परंपराएँ हमारी आधुनिक जीवन-शैली को बेहतर बनाने के उपाय प्रस्तुत करती हैं और आपको अस्तित्व को परखने तथा जीवन को उसकी पूर्ण क्षमता तक अनुभव करने के लिए एक ढाँचा देती हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Claim softened: 'you will achieve harmony' rendered as 'सामंजस्य... प्राप्त करने की दिशा में आगे बढ़ सकते हैं' (can move towards) to avoid an outcome guarantee."
+   ]
+  },
+  {
+   "id": "t_b1489a8e7fde23434e2f",
+   "sourceHash": "b1489a8e7fde23434e2f1b94b5a903e6b07e956ac25387736d56fcc96ceaa5d4",
+   "text": "Ananda Lahari Retreat भारत में एक वास्तविक और रोमांचक आध्यात्मिक अनुभव आरंभ करने का अवसर प्रदान करता है, जो प्रेम, प्रकाश और आनंद से भरपूर वातावरण को पोषित करता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Register substitution: 'spiritual adventure' → 'आध्यात्मिक अनुभव'."
+   ]
+  },
+  {
+   "id": "t_a0fed445750044706f06",
+   "sourceHash": "a0fed445750044706f069c57dcc7ccd4f9904cdbf121074c4efe04ab6daafd1a",
+   "text": "Ananda Lahari Retreat क्या है?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5da85a74d4f104bf2cc7",
+   "sourceHash": "5da85a74d4f104bf2cc7f69af388e418bfc9d3a14a3a65520c18eb2c0311c491",
+   "text": "हमारा प्रामाणिक, पूर्ण-निमज्जन कार्यक्रम केरल स्थित मनोरम Kairali – आयुर्वेदिक हीलिंग विलेज में 7 दिनों का होता है। पूरे एक सप्ताह में आप योगिक जीवन के संपूर्ण अनुभव में डूब जाएँगे: सूर्योदय ध्यान और आसन अभ्यास, वेदांत और दर्शन पर चर्चाओं में भागीदारी, योग निद्रा का अभ्यास, संस्कृत और तंत्र अनुष्ठानों का अन्वेषण, साथ ही आयुर्वेदिक आहार का पालन और दैनिक मालिश व उपचार — इन सबके माध्यम से आप योगिक जीवन-शैली को अपने जीवन में भली-भाँति अपना सकेंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c822702e84e7fe652aa4",
+   "sourceHash": "c822702e84e7fe652aa4ce061db3095df494c254a58952a035939033a3d0f058",
+   "text": "कॉटेज, बगीचे की एक बेंच और फूलों की सजावट का एक कोलाज।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aff0d211e31c1e26a288",
+   "sourceHash": "aff0d211e31c1e26a28872a1d7af0d8538b376da186827022fd783c20168500f",
+   "text": "मुझे क्या अनुभव होगा?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfacbc0babc7359db461",
+   "sourceHash": "bfacbc0babc7359db461d6cef51b0f997c684dde8174a161435e254f7d0d6022",
+   "text": "मालिश करते हुए थेरेपिस्ट।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b77ed1640aa68b56345e",
+   "sourceHash": "b77ed1640aa68b56345ebb559790177d200d03cb2a611ff5860b75aaf70249b1",
+   "text": "'आयु' शब्द का अर्थ है जीवन, और 'वेद' का अर्थ है ज्ञान; इस प्रकार आयुर्वेद का अर्थ है 'जीवन के विज्ञान का ज्ञान'।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

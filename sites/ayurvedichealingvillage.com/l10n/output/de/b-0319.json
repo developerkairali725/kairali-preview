@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0319",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_b41f3e7f7b24e85469e1",
+   "sourceHash": "b41f3e7f7b24e85469e18ec01c40d6fa460c5de0c19e85e282766474a213542c",
+   "text": "Wir haben Ihre Angaben erhalten, und ein Mitglied unseres Teams prüft sie gerade. Sie hören innerhalb von 24 Stunden von uns. Betrifft Ihre Anfrage eine bestimmte Erkrankung, wird ein Ayurveda-Arzt in die Antwort einbezogen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a864577365310d90c6a",
+   "sourceHash": "4a864577365310d90c6a68fbbc9b5c467fc34c282feb246b9b760e00e6360bee",
+   "text": "Wenn es passt, vereinbaren wir eine Konsultation und planen die praktischen Einzelheiten Ihres Aufenthalts. Ohne Druck, ohne Verpflichtung.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_590ccb86e5777f1ec1dd",
+   "sourceHash": "590ccb86e5777f1ec1ddeb00758f83538c3c061d40535f3f7a39798dc717fd98",
+   "text": "Danke – Ihre Anfrage ist bei unserem Team | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "seo.title limit 60: brand suffix shortened to 'Kairali'; 'care team' rendered as 'Team'."
+   ]
+  },
+  {
+   "id": "t_9483a538e6841f8fe4c5",
+   "sourceHash": "9483a538e6841f8fe4c529737c4166b546c1da18516b7487e464ffe7e051a053",
+   "text": "Aufenthalt buchen | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfbd28c3f80ed63c4110",
+   "sourceHash": "bfbd28c3f80ed63c4110ab5603bd65b7de222b6321d627a929e49f91e94c99cb",
+   "text": "Planen Sie Ihren Aufenthalt im Kairali Ayurvedic Healing Village. Jetzt buchen: ayurvedische Therapien, Yoga- und Regenerationsprogramme in Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Language lock: 'wellness retreat'/'yoga retreats' rendered as 'Aufenthalt'/'Yoga-Programme'."
+   ]
+  },
+  {
+   "id": "t_bba824389ffdfb3bdff7",
+   "sourceHash": "bba824389ffdfb3bdff70d2f11b72ceda1fd2f56dc83abe27d0e502d9dcc71a8",
+   "text": "booking/book-now",
+   "status": "translated",
+   "unchangedReason": "URL path slug, language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_e09bd2655e94c441408d",
+   "sourceHash": "e09bd2655e94c441408d90acac2e4c3cab7d996fcc16a7ff09ea3ce7abf00faf",
+   "text": "Ausliefern, indexierbar, XML-Kandidat; erreichbar über die gemeinsame Buchungsaktion.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/build note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_dd4a95b8f70d00dcbfc5",
+   "sourceHash": "dd4a95b8f70d00dcbfc50c867800d986c5de58a1ec39d7de8d8f9354ef424ddb",
+   "text": "Auf keiner der drei Routen sind Bilder im Quelltext vorhanden; das gemeinsame Identitäts-Asset in der Shell wird unverändert wiederverwendet. Übergeordnete Elemente des gerenderten Textes sind als wrapperNodes aufgeführt, nicht als Ausschlüsse.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note; technical identifier 'wrapperNodes' kept."
+   ]
+  },
+  {
+   "id": "t_2e3c55da83d1d4cb308d",
+   "sourceHash": "2e3c55da83d1d4cb308d53996279ac90dcf417f1b7d29d76a3ed7fd63bf619b9",
+   "text": "Layout-Wrapper des gerenderten Quelltextes – enthält keinen eigenen Text",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note."
+   ]
+  },
+  {
+   "id": "t_9367d58465ce3eebe865",
+   "sourceHash": "9367d58465ce3eebe86557d4c60f924ce8d136b0fbaf3ba762e61c55f90bad34",
+   "text": "Zwei leere 225px-Abstandshalter entfernen; keine eingebetteten Buchungsfelder erfinden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note; source 'two225px' read as 'two 225px'."
+   ]
+  },
+  {
+   "id": "t_6d2d59aed44f1efab446",
+   "sourceHash": "6d2d59aed44f1efab446c09e60a3da7794ed1e652cd88d0a67914e72d1f9eae8",
+   "text": "Warenkorb",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f5371a9fa4a2bce3375",
+   "sourceHash": "7f5371a9fa4a2bce3375bf2c972bb70f4746c94f138f39514da1b9d851378f3d",
+   "text": "Ihr Warenkorb ist derzeit leer!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4884c9ef4f94b1fd521e",
+   "sourceHash": "4884c9ef4f94b1fd521e45b5f1d2086c2a301ee90c28c8427a471d69b4e673b2",
+   "text": "Warenkorb - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2acaa88ebcef4ae9d8d",
+   "sourceHash": "f2acaa88ebcef4ae9d8d15fe5a0097dfe01cdea35948b1861dcc136f09dab5c5",
+   "text": "Ausliefern, von XML und Navigation ausgeschlossen; funktionaler Endpunkt außerhalb der redaktionellen Navigation.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note."
+   ]
+  },
+  {
+   "id": "t_cae0813e3b7f415fae5f",
+   "sourceHash": "cae0813e3b7f415fae5f451d58be131ee4a56896774432fdf93fae74f06ed5af",
+   "text": "Das könnte Sie auch interessieren … Warenkorb",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5533c6058d739ef0eb30",
+   "sourceHash": "5533c6058d739ef0eb3002d4942c1ddcb7b00d2f318df755a111dc4ed8eb40c3",
+   "text": "Das könnte Sie auch interessieren …",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e39bafec6641aed3be25",
+   "sourceHash": "e39bafec6641aed3be25d99424457cd2708f2961e19d0cef7ae0b082fe1950c6",
+   "text": "Neu im Shop",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_075317471b4727a288f7",
+   "sourceHash": "075317471b4727a288f779aba5d86ee0493c7396f57f7d4370c15d1defa96066",
+   "text": "Leere Empfehlungs-Wrapper und Selbstverweise der Quelle sind keine Produkte; in der internen Quellenerfassung beibehalten. Keine erfundenen Bestände, Artikel, Summen oder Aktionen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note."
+   ]
+  },
+  {
+   "id": "t_d05c4fc52da967218d76",
+   "sourceHash": "d05c4fc52da967218d76e3a3175e6105509062accf7c560c06f205872f069204",
+   "text": "Fahren Sie mit der Buchung fort, um Ihren Aufenthalt zu planen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb6687b0de7bff8ac452",
+   "sourceHash": "bb6687b0de7bff8ac452fb90d2ab984848eb1d28e46265b7c4042eea3a1a826c",
+   "text": "Kasse - Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f24b610237efeddced4d",
+   "sourceHash": "f24b610237efeddced4dd53c7a3553bbe1af54528f7d21acd3ee3b19b0de6571",
+   "text": "exakt erfasster Quellabsatz",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note."
+   ]
+  },
+  {
+   "id": "t_1b13181088fa84cca4d6",
+   "sourceHash": "1b13181088fa84cca4d67bd908c847f67280c32c88a05c7fbb8cf4b2667ecd0c",
+   "text": "exakte Leerer-Warenkorb-Meldung der Quelle",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note."
+   ]
+  }
+ ]
+}

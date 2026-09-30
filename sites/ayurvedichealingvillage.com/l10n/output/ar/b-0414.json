@@ -1,0 +1,195 @@
+{
+ "batchId": "b-0414",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_8549e99f42b21dbea33b",
+   "sourceHash": "8549e99f42b21dbea33b3768a275b56880025b5e3ddcb092ea9869b76e1d38e1",
+   "text": "يؤدي إجراءان من إجراءات السجل غرضًا مزدوجًا، ويُجمَّعان وفق أثرهما لا وفق اسميهما. فالإجراء REPLACE_WRONG_EQUIPMENT_BREADCRUMB (1) هو استبدال لمسار التنقل في الواجهة الرئيسية، ولذا يبلغ مجموع الإدخالات التي تستبدل مسار التنقل 25 بدلًا من الـ 24 التي يحملها REPLACE_GOVERNED_BREADCRUMB وحده. أما RELATED_LINKS_GROUPS_OR_EMPTY_HEADING_OMITTED (15) فهو عقدة مجموعة روابط ذات صلة لا يُعرض عنوانها الفارغ، ولذا يبلغ مجموع إدخالات مجموعات الروابط ذات الصلة 162 بدلًا من 147. وبالتالي يبلغ مجموع الاستبعادات المقصودة OMIT_* ما عدده 89، ويحمل 2 من الإدخالات إجراءات أخرى (ترقية عنوان واستبدال عنوان خاطئ متعلق بالمعدات). 433 + 25 + 162 + 89 + 2 = 711.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build-accounting note; action identifiers kept in Latin as code constants"
+   ]
+  },
+  {
+   "id": "t_b43db53ea136dd89902f",
+   "sourceHash": "b43db53ea136dd89902f079159627554b2c7f211c5957632b79c6df0a6c1fae0",
+   "text": "whole-item STRONG with three BRs",
+   "status": "translated",
+   "unchangedReason": "Internal enum/locator describing markup structure; not rendered to patients",
+   "issues": []
+  },
+  {
+   "id": "t_a3dd2fc874f4d87194eb",
+   "sourceHash": "a3dd2fc874f4d87194eb147512ba9798c590da4519b695f9c6bc50f7bfeca617",
+   "text": "leading STRONG run",
+   "status": "translated",
+   "unchangedReason": "Internal enum/locator describing markup structure; not rendered to patients",
+   "issues": []
+  },
+  {
+   "id": "t_fd74038cfce284c02a0b",
+   "sourceHash": "fd74038cfce284c02a0bb17ac4e98ccb67a2b0ccb3fbdd8048502dc1e755bf55",
+   "text": "فُقد مقطعان من مقاطع STRONG في المصدر أثناء تعبئة البيانات، وتمت استعادتهما من أدلة المقاطع المضمّنة في السجل: مقطع STRONG يشمل العنصر كاملًا ويمتد على أربعة أسطر مع ثلاثة فواصل BR من المصدر، ومقطع STRONG استهلالي مع الحفاظ على المسافة اللاحقة بدقة. أُبقيت فواصل BR ذات المعنى، ولم يُضف أي فاصل BR فارغ في النهاية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build note; markup names STRONG/BR kept in Latin"
+   ]
+  },
+  {
+   "id": "t_8bcecaeecc5d51139859",
+   "sourceHash": "8bcecaeecc5d511398591d2486546634910685de1e8e4637c8d6cad0e471b8f4",
+   "text": "لم تتغير البكسلات ولا النصوص البديلة في المصدر ولا الأبعاد الأصلية ولا العدد الدقيق ولا ملاحظات الحقوق ولا البيانات الوصفية — تغيّر الموضع فقط.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6016a6c1f51564d2ec26",
+   "sourceHash": "6016a6c1f51564d2ec26abb95b7184627bb70a9b51a69668d2e68775d8baec08",
+   "text": "لم يُعدَّل أي نص أو رابط URL أو إرشاد بشأن التأشيرة في المصدر ولم يُختصر أو يُعَد صياغته، ولم يُفعَّل أي رابط، ولم يُقتطع أو يُخفَ أي شيء — إذ تقتصر خاصية overflow-wrap على اختيار مواضع إضافية لكسر الأسطر.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22b7c38dbe29493721f4",
+   "sourceHash": "22b7c38dbe29493721f49d731768445e6aa33f8b17b3670f5fca27e9276ea631",
+   "text": "بُنيت كتل العناوين بشجرة نص عادي، ولذلك أُسقطت مقاطع STRONG الشاملة للعنوان كاملًا التي تطلّبها الموجز الأصلي، رغم تطابق نص العنوان.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10411aa2c78a8804c39f",
+   "sourceHash": "10411aa2c78a8804c39fdb8d52baadd0a742b4ebb978d950955d98dd4a7bff96",
+   "text": "فقدت عيوب الفقرات الجوهرية الأربعة تنسيق STRONG الخاص بها عند استعادة العقد الـ 19 وروابط المتن الـ 3: إذ كتبت عمليات إعادة البناء تلك أشجار نص عادي.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a563765172f48d330ff",
+   "sourceHash": "6a563765172f48d330ff2a7a6ce7103e9fac8630210173afbaa0412781132e2c",
+   "text": "جرى تسطيح مقاطع STRONG المتداخلة المتطابقة الزائدة. لم يُحذف أي فاصل BR: فالفاصل الوحيد الذي عومل سابقًا على أنه BR فارغ في النهاية ثبت أنه ذو معنى من المصدر الخام وتمت استعادته. حُفظت الأحرف العلوية للأعداد الترتيبية. لا استبدال للتنسيق الغامق على مستوى العقدة كاملة، ولا عنوان مكرر، ولا نص جديد، ولا أسطر جديدة مُدخلة يدويًا.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1eaa40d3c8aa9c62019",
+   "sourceHash": "b1eaa40d3c8aa9c620194e222c2469fba683efe5171c2384ec20ec92a325c662",
+   "text": "وجبة نباتية تُقدَّم مع الأرز والخضروات وأطباق الكاري.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5babcaa385cf1bd25983",
+   "sourceHash": "5babcaa385cf1bd2598362db73c94cab2f2d3c9a24d5f7c521df78146dd892dc",
+   "text": "اكتشف الأيورفيدا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b357c75140b21ee9267e",
+   "sourceHash": "b357c75140b21ee9267e99e96e7cbd90839806cc97075e680a2624dc5db52682",
+   "text": "برامج الأيورفيدا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd8d79a3239b4cbd6370",
+   "sourceHash": "fd8d79a3239b4cbd6370c4df8f9862d7b448ef4a52cdddfceb89004ccfad92f9",
+   "text": "مريض يجلس بين معالجَين أثناء علاج أيورفيدي.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e07ad489897aa4c2c37",
+   "sourceHash": "5e07ad489897aa4c2c37ab89513ecde1c93f91559d246068302480590c1381de",
+   "text": "امرأة تمارس اليوغا على حصيرة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3eca470a849508d92ca9",
+   "sourceHash": "3eca470a849508d92ca9378053018e5a89e8ac13ce81af69681b26167a329375",
+   "text": "منتجات الأيورفيدا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dcaab2662a8680db59c",
+   "sourceHash": "3dcaab2662a8680db59c2e5e2ec337a14c7289a9afce536381d32aa3c6651759",
+   "text": "تشكيلة من منتجات Kairali معروضة في الهواء الطلق.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c9dd5736f94d731419f",
+   "sourceHash": "9c9dd5736f94d731419f4d076413bb2388ff2af55bde6dbdea6d495bb914035f",
+   "text": "family-04/LAKSHYA-RECOVERED-NATIVE-PROMPT.txt",
+   "status": "translated",
+   "unchangedReason": "File path; language-neutral identifier",
+   "issues": []
+  },
+  {
+   "id": "t_489d1ee17cce0b5577de",
+   "sourceHash": "489d1ee17cce0b5577de454ef261e016a11a0ec73cd962be279c79f557b1a8bc",
+   "text": "لم تُمسّ التفاصيل التاريخية السبعة المقبولة سابقًا، ولا خط الأساس للمجموعة التاريخية التسع وإصلاحه المجمّع، ولا تصحيح الالتفاف/href/المحتوى المضمّن، ولا تصحيح الفواصل ذات المعنى، ولا جميع مجموعات البيانات السابقة البالغ عددها 136.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4c6604104512a9934d0f",
+   "sourceHash": "4c6604104512a9934d0fbcdaf828537ae7f1c927c816276f4dfea76f8caf1371",
+   "text": "تُسجَّل أصالة الأرشيف بقيمة SHA الدقيقة فقط. ولا يُدَّعى أي تحقق طبي أو تنظيمي أو تسويقي حالي. والطابع الزمني للالتقاط في عام 2016 ليس تاريخ الفعالية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297b1c745d394c1174cd",
+   "sourceHash": "297b1c745d394c1174cdfcd311e52003a497ffa94fa89116f01d81210c24eab2",
+   "text": "برنامج سابق — محفوظ للرجوع التاريخي. لم يتم التحقق من سنة انعقاده.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c62df69c6a159cf1039",
+   "sourceHash": "1c62df69c6a159cf1039d79cfb3a8823086b899d07909411aa85398c456d8dcf",
+   "text": "يتناول هذا القسم برنامج الأيام السبعة للعلاجات الأيورفيدية وتمارين اليوغا في قرية الشفاء الأيورفيدية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8cdf0f53fcef7f91f28c",
+   "sourceHash": "8cdf0f53fcef7f91f28c39b9e81b43ddf86e98819c77e446512ca61a8d52e237",
+   "text": "لا تُطبَّق سوى ثلاثة تصحيحات موثقة مستعادة — title وdescription وopenGraph.description. وتُحفظ جميع قيم البيانات الوصفية الأصلية الأخرى وربط الشبكات الاجتماعية من المصدر نفسه إلى حين الدمج النهائي المعتاد.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab98b881193293f7a40b",
+   "sourceHash": "ab98b881193293f7a40bd0bf09c9f2b402980d6b901cb50dbd51c573ac6b66d5",
+   "text": "تُحفظ هنا القيمة الأصلية الخاطئة «Animal Husbandry» بشكل خاص مع أدلة تصحيحها.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

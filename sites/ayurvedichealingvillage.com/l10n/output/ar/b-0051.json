@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0051",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_4abff93095df1d25e019",
+   "sourceHash": "4abff93095df1d25e0194249bb8ad8209656890b11ff0ef259ae2c70638c3663",
+   "text": "معلومات الفيلا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1ee6c1325d5185248833",
+   "sourceHash": "1ee6c1325d518524883317fa5d8598aee77eafdb3b5d2d20b4e5d3371465cef3",
+   "text": "الفيلا الكلاسيكية تحيط بها أشجار النخيل ونباتات الحديقة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e3416f5f2510f459322",
+   "sourceHash": "0e3416f5f2510f459322e2c2f94d3e8cdd309ed611ecec637764b1356b0dd162",
+   "text": "الاستفسار",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3d080c3483b5d77c06fd",
+   "sourceHash": "3d080c3483b5d77c06fd4d9db610408478e6ee706dff826653e127f6e7b7bf24",
+   "text": "gallery-",
+   "status": "translated",
+   "unchangedReason": "Appears to be a technical identifier prefix (e.g. element id) concatenated in JS, not visible prose; left unchanged to avoid breaking references.",
+   "issues": [
+    "Please confirm whether 'gallery-' is user-visible; if so it should be translated as 'معرض-'."
+   ]
+  },
+  {
+   "id": "t_286b9fafbb9f77754807",
+   "sourceHash": "286b9fafbb9f777548079258e83056878c1a5b183c7fecf997bbe75cb366ec4a",
+   "text": "عرض الصورة:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e60cb121af6592b5877f",
+   "sourceHash": "e60cb121af6592b5877f5984d74788a740571b548a69a424af24848e4c598f71",
+   "text": "معرض صور الفيلا الكلاسيكية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_84a6dae49cf0481203aa",
+   "sourceHash": "84a6dae49cf0481203aa97872cc3301b73c406b8ac099ee36d2f849365cec06b",
+   "text": "صور",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f1c5b2fad778434024f",
+   "sourceHash": "1f1c5b2fad778434024f1537986346927917f4755a6e7d3fd91f22653b7c3132",
+   "text": "غرفة",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_69d28e1724c224703173",
+   "sourceHash": "69d28e1724c22470317342b587210789de0d0b973d1fc8af087fab1ee8694aec",
+   "text": "عرض[[OPEN_1]]→[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Arrow glyph kept as in source; in RTL layout a left-pointing arrow (←) may read more naturally — left to the layout/CSS decision."
+   ]
+  },
+  {
+   "id": "t_29f7abb6fd11b48a1f25",
+   "sourceHash": "29f7abb6fd11b48a1f258130d127667bb8f476a09371b55c51bfe276a6afd022",
+   "text": "ملصق الشكر",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7adb2f45e20bd507b45e",
+   "sourceHash": "7adb2f45e20bd507b45e18cce832099e60a9195d3927aa0abef727b782966ded",
+   "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]البرامج التدريبية[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]التدريب المتقدّم لمستشاري ومعالجي نمط الحياة الأيورفيدي[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc90f1db44ec31e83a00",
+   "sourceHash": "cc90f1db44ec31e83a003ea6d2e33b8b91e14c6ae90e6eb6e885c421dfa99db5",
+   "text": "دورة تدريبية في الأيورفيدا · AALCT-HV · 20 يومًا",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80c8d49a3850e7da4315",
+   "sourceHash": "80c8d49a3850e7da4315532979a54b2ddc0eff2c3fb834771849b3ddbe341e0d",
+   "text": "شهادة Kairali للممارسين: عشرون يومًا من الإقامة الداخلية تغطي مبادئ الأيورفيدا والبانشاكارما وثمانية علاجات كلاسيكية، وعلم التغذية الأيورفيدي، وتحليل البراكريتي، وفحص المريض، والاستشارة في مجال العافية — وتُختتم باختبارات نظرية وعملية. يحصل الخريجون على شهادة ممارس، وقد يُنظر في ترشيح المتميّزين منهم لوظائف مستشار العافية الأيورفيدية في مراكز Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_20d5cd4892bdcbbd9c99",
+   "sourceHash": "20d5cd4892bdcbbd9c993e47b15fb27089118547cfa241815b1b58b8fd63bfa4",
+   "text": "مراحل تدريب المستشارين والمعالجين",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4496eec76ba27099144",
+   "sourceHash": "d4496eec76ba27099144c413de53ffe006d65fa73e44789a07799680f2fa7ce7",
+   "text": "دورة مدتها 20 ليلة: الإجمالي للإقامة الفردية في الفيلا الفاخرة ₹368,200 (₹18,410 × 20 ليلة).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Deluxe Villa' rendered as 'الفيلا الفاخرة'; if the villa category name should stay in English (Deluxe Villa), please confirm.",
+    "t_d4496eec76ba27099144 banned-term فاخر"
+   ]
+  },
+  {
+   "id": "t_69e7c2ff375f7dc42235",
+   "sourceHash": "69e7c2ff375f7dc422353b1d9226cf3d29e6f2af0b02acf606f4c5423b468298",
+   "text": "احصل على شهادة مستشار ومعالج في الأيورفيدا عبر برنامج Kairali التدريبي بإشراف خبراء في كيرالا. اكتسب خبرة عملية ومعرفة معمّقة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3cb34fd8eb64a7dc4d9c",
+   "sourceHash": "3cb34fd8eb64a7dc4d9cb1baa9b00fe017582ce5796804f8ee92b91580857f0f",
+   "text": "تدريب مستشار ومعالج الأيورفيدا | Kairali Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a60e93005ab256e4b30",
+   "sourceHash": "2a60e93005ab256e4b303adb83657e0143ca85e11d95b03749331ef2fa297fb8",
+   "text": "التدريب المتقدّم لمستشاري ومعالجي نمط الحياة الأيورفيدي — تدريب في Kairali – قرية الشفاء الأيورفيدية",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3630a2a9a9e821612a37",
+   "sourceHash": "3630a2a9a9e821612a37c4ab82ea0f63d8621ca175b1b8551c290e0ec8b7c534",
+   "text": "[[OPEN_1]]الرئيسية[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]البرامج التدريبية[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]برنامج التدريب المكثّف في الأيورفيدا لمدة خمسة أيام[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b2641308f802fed5cc3",
+   "sourceHash": "9b2641308f802fed5cc3a5a2e438ff47193adf807461d3e6f1677687305f6ebd",
+   "text": "دورة تدريبية في الأيورفيدا · WAP-HV · 5 أيام",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_750d534e23e1b5a5e304",
+   "sourceHash": "750d534e23e1b5a5e30405224002896f0141568893b8d07759edd480c6d4865c",
+   "text": "خمسة أيام مخصّصة للعلاجات الرئيسية الخمسة — Abhyangam (أبهيانغام)، وشيرودارا (Shirodhara)، وبوديكيزهي، وأودفارتانام، وكاتي فاستي — يُدرَس كلٌّ منها نظريًا، ويُمارَس تحت الإشراف، ويُتلقّى كجلسة علاجية، إلى جانب الأسس الفلسفية للأيورفيدا. وتُمنح شهادة إتمام في نهاية الدورة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_611ead12323c622d903a",
+   "sourceHash": "611ead12323c622d903ab35554d30886d8dd4fb3c2b1c8daf71cc769b8f868e5",
+   "text": "مراحل البرنامج المكثّف لمدة خمسة أيام",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d424e598df12a570cbe4",
+   "sourceHash": "d424e598df12a570cbe4d409103ca9923a6f5f8a7aab6c36235a2990b0a21c58",
+   "text": "دورة مدتها 5 ليالٍ: الإجمالي للإقامة الفردية في الفيلا الفاخرة ₹92,050 (₹18,410 × 5 ليالٍ).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Deluxe Villa' rendered as 'الفيلا الفاخرة'; if the villa category name should stay in English (Deluxe Villa), please confirm.",
+    "t_d424e598df12a570cbe4 banned-term فاخر"
+   ]
+  },
+  {
+   "id": "t_466a15fd4d37ffa133d1",
+   "sourceHash": "466a15fd4d37ffa133d1ef807d2519bf74a419969cb0690d9881f4544fdcba98",
+   "text": "نالت Kairali شرف منحها لقب «مستشفى أيورفيدي» من حكومة كيرالا. ويقدّم مركز الشفاء الأيورفيدي خدمات معتمدة متاحة عبر العضوية.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the highest honor' condensed to 'the honour' to fit the 155-character seo.description limit."
+   ]
+  }
+ ]
+}

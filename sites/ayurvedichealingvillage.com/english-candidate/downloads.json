@@ -1,0 +1,75 @@
+{
+  "_why": "Owner-approved final family, issue 20260925-R1; exact web PDFs in 13 languages. Print originals retained in the final source bundle.",
+  "documents": [
+    {
+      "file": "KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/ayurveda-programmes-tariff/en/KTAHV-Ayurveda-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Ayurvedic Treatment Programmes & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/yoga-meditation-programmes-tariff/en/KTAHV-Yoga-Meditation-Programmes-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Yoga & Meditation Programmes & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/daily-admission-tariff/en/KTAHV-Daily-Admission-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Daily Admission Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/outpatient-day-treatment-rates/en/KTAHV-Outpatient-Day-Treatment-Rates-EN-INR_20260925-R1.pdf",
+      "title": "Outpatient & Day Treatment Rates — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+      "href": "/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf",
+      "title": "Ayurveda Training Courses & Tariff — INR",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+      "href": "/documents/pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf",
+      "title": "Healing Secrets of Kairali",
+      "titleSource": "Final 20260925-R1 document manifest",
+      "sourceHref": "/documents/",
+      "issued": "2026-09-25"
+    },
+    {
+      "file": "fauna-booklet.pdf",
+      "title": "Butterfly Booklet — the fauna of the village",
+      "titleSource": "record page /butterfly-booklet/ (H1 'Butterfly Booklet'), whose 'DOWNLOAD PDF' link is this file",
+      "sourceHref": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/fauna-booklet.pdf"
+    },
+    {
+      "file": "documents-catalogue",
+      "href": "/documents/",
+      "title": "All languages and currencies",
+      "kind": "catalogue"
+    }
+  ],
+  "notLinked": [
+    {
+      "file": "ayurvedaworkshop-in-kairali.pdf",
+      "why": "the record's /ayurveda-workshop/ links https://ayurvedichealingvillage.com/download/ayurvedaworkshop-in-kairali.pdf, which returns 404 (checked 2026-09-22); nothing to host"
+    },
+    {
+      "file": "Rates of Ayurveda Course- 2024-25.pdf",
+      "why": "a Google Drive link on the record's training page for a 2024-25 rate sheet, superseded by the 2026-27 rates already on /training-course-fees/; not hosted so two rate years never sit side by side"
+    }
+  ]
+}

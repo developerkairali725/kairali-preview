@@ -38,6 +38,7 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn, execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
+import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -163,6 +164,10 @@ function runLighthouse(url, outDir, tag) {
   const crawlable = report.audits?.["is-crawlable"]?.score;
   return {
     performance: score("performance"), accessibility: score("accessibility"), seo: score("seo"),
+    diagnostics: Object.values(report.audits ?? {}).filter((audit) =>
+      typeof audit.score === "number" && audit.score < 0.9 && audit.scoreDisplayMode !== "notApplicable"
+    ).map((audit) => ({ id: audit.id, title: audit.title, value: audit.displayValue,
+      details: JSON.stringify(audit.details?.items ?? []).slice(0, 5000) })),
     finalPath, crawlableScore: typeof crawlable === "number" ? crawlable : null,
   };
 }
@@ -181,6 +186,7 @@ async function main(argv) {
     console.error(`lighthouse-gate: ${site} has no site.config.json — not a fleet site`);
     return 1;
   }
+  const appDir = resolveSiteAppRoot(site);
   const { urls, defaulted } = urlsFor(site);
 
   console.log(`\nlighthouse-gate — Ship Gate A5 · ${site} · budgets perf ≥${BUDGETS.performance} / a11y ≥${BUDGETS.accessibility} / SEO =${BUDGETS.seo} (mobile)`);
@@ -188,8 +194,8 @@ async function main(argv) {
     console.log(`  NOTICE: no ${site}/lighthouse-urls.json — gating "/" ONLY. A5 wants home + one content template + one LP; add the file to close the gap (QUESTIONS.md item, 17 Jul). Partial coverage is stated, never silent.`);
   }
 
-  const server = spawn("pnpm", ["--dir", site, "exec", "next", "start", "-p", String(port)], {
-    cwd: REPO_ROOT,
+  const server = spawn("pnpm", ["exec", "next", "start", "-p", String(port)], {
+    cwd: appDir,
     stdio: ["ignore", "pipe", "pipe"],
   });
   let serverLog = "";
@@ -208,13 +214,16 @@ async function main(argv) {
       if (scores.performance < BUDGETS.performance) {
         // perf is the one noisy category — median of PERF_RUNS_ON_MISS decides,
         // never best-of. 5 samples so one outlier cannot decide the gate (Q-A5-FLAKE).
+        const samples = [scores];
         const perfs = [scores.performance];
         for (let i = 2; i <= PERF_RUNS_ON_MISS; i++) {
           const again = runLighthouse(url, outDir, `${path.replace(/\W+/g, "_")}-${i}`);
           perfs.push(again.performance);
+          samples.push(again);
           scores.accessibility = Math.min(scores.accessibility, again.accessibility);
           scores.seo = Math.min(scores.seo, again.seo);
         }
+        scores.diagnostics = [...samples].sort((a, b) => a.performance - b.performance)[Math.floor(samples.length / 2)].diagnostics;
         scores.performance = median(perfs);
         note = ` (perf median of ${perfs.join("/")})`;
       }
@@ -224,6 +233,7 @@ async function main(argv) {
       }
       const v = judge(scores, { seoNA });
       console.log(`  ${v.length === 0 ? "PASS" : "FAIL"}  ${path} → perf ${scores.performance} · a11y ${scores.accessibility} · seo ${seoNA ? `${scores.seo} (n/a — noindexed LP)` : scores.seo}${note}`);
+      if (v.length) console.log(`  DIAGNOSTICS ${path}: ${JSON.stringify(scores.diagnostics)}`);
       for (const violation of v) failures.push(`${path}: ${violation}`);
     }
 
@@ -242,7 +252,11 @@ async function main(argv) {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// NOTE: comparing import.meta.url to process.argv[1] as raw STRINGS silently
+// broke on any checkout path containing a space — import.meta.url percent-encodes
+// it, argv[1] does not — so main() never ran and the script exited 0 having
+// checked NOTHING. Normalising argv[1] through URL() fixes it with no new import.
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
   main(process.argv.slice(2)).then(
     (code) => process.exit(code),
     (e) => {

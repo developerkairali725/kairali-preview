@@ -1,4 +1,5 @@
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { lintBrandText, lintBrandDir } from "../src/brand-lint.js";
 
@@ -59,12 +60,12 @@ test("outline:none without replacement = error; with box-shadow/--focus-ring = p
 });
 
 test("arogyakendra.com passes the brand lint today (fixture = the real site)", () => {
-  const findings = lintBrandDir(new URL("../../../sites/arogyakendra.com", import.meta.url).pathname);
+  const findings = lintBrandDir(fileURLToPath(new URL("../../../sites/arogyakendra.com", import.meta.url)));
   assert.deepEqual(errs(findings), [], JSON.stringify(errs(findings), null, 2));
 });
 
 test("brand 'none' sites are exempt with an info trail; missing config is an error", () => {
-  const none = lintBrandDir(new URL("../../../sites/kairali.ai", import.meta.url).pathname);
+  const none = lintBrandDir(fileURLToPath(new URL("../../../sites/kairali.ai", import.meta.url)));
   assert.equal(errs(none).length, 0);
   assert.equal(none[0].severity, "info");
   const missing = lintBrandDir("/nonexistent-dir-for-test");
@@ -159,4 +160,22 @@ test("leaf-500 text on a dark ground is suppressible, and the suppression is rep
   const info = f.find((x) => x.rule === "leaf-text");
   assert.ok(info, "suppression must still be reported as info — never silent");
   assert.equal(info.severity, "info");
+});
+
+test("Premium v3 requires its central palette and still rejects local colors", async () => {
+  const { mkdtempSync, writeFileSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const dir = mkdtempSync(join(tmpdir(), "brand-profile-"));
+  try {
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "kairali", brandTokenProfile: "premium-v3" }));
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v3-tokens.css";');
+    assert.equal(errs(lintBrandDir(dir)).length, 0);
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v3-tokens.css";\n.x{color:#ff0000}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "rogue-hex"));
+    writeFileSync(join(dir, "site.css"), '.x{color:var(--ivory)}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "tokens-import"));
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "kairali", brandTokenProfile: "unapproved" }));
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "config"));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
 });

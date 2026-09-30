@@ -153,8 +153,14 @@ export function buildRobots(config, { disallow = [] } = {}) {
  * entry per locale with reciprocal alternates. /lp/* is excluded (noindex
  * lane never appears in the sitemap).
  *
+ * Image extension (added 22 Sep 2026, AHV galleries; additive): a page may
+ * carry `images` — absolute or site-relative image URLs — which Next.js emits
+ * as <image:image><image:loc> nodes (only `loc` counts for Google; caption /
+ * title / geo_location / license are deprecated and never emitted). Google's
+ * cap is 1,000 images per <url>; more is a build error, not a truncation.
+ *
  * @param {object} config
- * @param {Array<{path:string,lastModified?:Date|string,changeFrequency?:string,priority?:number}>} pages
+ * @param {Array<{path:string,lastModified?:Date|string,changeFrequency?:string,priority?:number,images?:string[]}>} pages
  */
 export function buildSitemap(config, pages) {
   const base = siteUrl(config);
@@ -163,12 +169,20 @@ export function buildSitemap(config, pages) {
   const entries = [];
   for (const page of pages) {
     if (page.path === "/lp" || page.path.startsWith("/lp/")) continue;
+    let images;
+    if (page.images && page.images.length) {
+      if (page.images.length > 1000) {
+        throw new Error(`seo: ${config.domain}${page.path} lists ${page.images.length} images (image sitemap max 1,000 per URL)`);
+      }
+      images = page.images.map((u) => (u.startsWith("/") ? base + u : u));
+    }
     for (const locale of locales) {
       entries.push({
         url: base + localePath(page.path, locale),
         ...(page.lastModified ? { lastModified: page.lastModified } : {}),
         ...(page.changeFrequency ? { changeFrequency: page.changeFrequency } : {}),
         ...(page.priority !== undefined ? { priority: page.priority } : {}),
+        ...(images ? { images } : {}),
         ...(locales.length > 1
           ? { alternates: { languages: hreflangLanguages(config, page.path, { baseUrl: base }) } }
           : {}),

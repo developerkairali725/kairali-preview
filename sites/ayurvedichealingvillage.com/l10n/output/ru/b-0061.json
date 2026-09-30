@@ -1,0 +1,97 @@
+{
+ "batchId": "b-0061",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_c02300c2fc0bb0242cfc",
+   "sourceHash": "c02300c2fc0bb0242cfcbf55a6f95a9e59ff0481bc83ec92daec16ed9d461a9a",
+   "text": "[[OPEN_1]]Главная[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Все программы[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Йогатерапия для здоровья пищеварения и кишечника[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd20e04b217fd68bd36c",
+   "sourceHash": "bd20e04b217fd68bd36c22415a16e922d7c1f6bfe0c2d293b38b468bc1753e4a",
+   "text": "Agni Dipanam Yoga Chikitsa (Агни Дипанам Йога Чикитса)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Sanskrit programme name kept in Latin form with Cyrillic transliteration, per term 'Chikitsa'."
+   ]
+  },
+  {
+   "id": "t_814e40325383372885fb",
+   "sourceHash": "814e40325383372885fbff21d29e3b5f16ac7c2b64e0b8256281224821988a5a",
+   "text": "Ваш кишечник — ключ к благополучию. Программа йоги для здоровья пищеварения в Kairali – The Ayurvedic Healing Village — это специализированная программа, направленная на улучшение здоровья кишечника, гармонизацию пищеварительного огня (Агни) и укрепление общего здоровья благодаря целостному сочетанию йогатерапии, аюрведических процедур и саттвического питания. Эта аюрведическая терапия для здоровья кишечника включает тщательно подобранные асаны, пранаяму и крийю Паванмуктасана для стимуляции органов пищеварения, а также базовые рекомендации по питанию, призванные стимулировать Агни (пищеварительный огонь), уменьшать вздутие и способствовать гармонии кишечника. Каждое занятие проводят знающие инструкторы, уделяющие особое внимание осанке, дыханию и осознанному движению. Целостная аюрведическая программа при проблемах с кишечником подходит людям с такими жалобами, как изжога, запоры, СРК или замедленное пищеварение; она способствует естественному восстановлению, улучшению обмена веществ и общему благополучию. Программа подходит для любого уровня подготовки и представляет собой мягкий, но действенный путь к пищеварительному балансу.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'dedicated retreat' rendered as 'специализированная программа' (retreat register avoided). Source 'pranavmukthasna kriya' appears to be a misspelling of Pawanmuktasana; transliterated as 'Паванмуктасана' — please confirm."
+   ]
+  },
+  {
+   "id": "t_107ab7b31e6ce2cacc3c",
+   "sourceHash": "107ab7b31e6ce2cacc3c2b8d7ea8879c3da5e17bf5301a61c001a1c345e4282b",
+   "text": "Наш подход к",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; followed by heading 'Digestive Wellness & Gut Health Yoga Therapy' — the following unit is translated in dative-compatible form."
+   ]
+  },
+  {
+   "id": "t_69907581b9bdea0eaa39",
+   "sourceHash": "69907581b9bdea0eaa39d3415cd0795e02352f2756f2adf7d4d7f692e0e6fc04",
+   "text": "йогатерапии для здоровья пищеварения и [[OPEN_1]]кишечника[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to follow 'Наш подход к'; emphasis span moved to the word 'кишечника' for grammar."
+   ]
+  },
+  {
+   "id": "t_14da1fc571dc92c4222e",
+   "sourceHash": "14da1fc571dc92c4222e3e3c9970ab81dc18b52d2c0ec09a978c493133c3bff8",
+   "text": "Программа Kairali «Йога и Аюрведа для очищения кишечника» сочетает традиционные аюрведические знания с терапевтической йогой, чтобы стимулировать и гармонизировать Агни (пищеварительный огонь) для здоровья кишечника. Программа, которую ведут знающие специалисты, включает целенаправленные асаны, пранаяму и крийи, которые улучшают пищеварение, способствуют выведению токсинов и облегчают такие проблемы, как несварение, вздутие и запоры. Травяные настои, саттвические блюда и советы по образу жизни способствуют внутреннему равновесию. Программа проходит в спокойной природной обстановке и глубоко восстанавливает, возвращая гармонию пищеварению через движение, дыхание и осознанный образ жизни. Естественное лечение расстройств пищеварения в Kairali направлено на устойчивое здоровье пищеварения — оно опирается на природу, поддерживается традицией и согласуется с естественной способностью организма к восстановлению.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'guarantees enduring digestive health' softened to 'направлено на устойчивое здоровье' — a guarantee of outcome is a strengthened efficacy claim; flag for clinical review of the English source too."
+   ]
+  },
+  {
+   "id": "t_ffba6c7c9f3a3eb9d9f0",
+   "sourceHash": "ffba6c7c9f3a3eb9d9f06e55e52808b6509077876a739a28773a6e894c154783",
+   "text": "Этапы [[OPEN_1]]йогатерапии для здоровья пищеварения и кишечника[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad8389624916b4c65096",
+   "sourceHash": "ad8389624916b4c6509690324154adb5b9b36e42f95669e49f568086c4bd6a77",
+   "text": "Йогатерапия для здоровья пищеварения и кишечника в Kairali – The Ayurvedic Healing Village включает следующие этапы:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d64a5e970096e744822d",
+   "sourceHash": "d64a5e970096e744822d146982c6d24081f2ea61ce253b6be5b4fa3a71e1ed00",
+   "text": "[[OPEN_1]]Почему[[CLOSE_1]] стоит выбрать это лечение?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b8fd47be3aaa449a16a8",
+   "sourceHash": "b8fd47be3aaa449a16a8d9b788e815056c6418e6534999b9408d4dc1a47254e3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Воспользуйтесь более чем [[VAR_1]]-летним опытом команды опытных аюрведических врачей. Наш целостный подход ставит во главу угла благополучие и выходит за рамки контроля симптомов.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

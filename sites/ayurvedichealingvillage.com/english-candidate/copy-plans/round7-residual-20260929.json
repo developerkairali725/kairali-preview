@@ -1,0 +1,23 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "CLINICAL-COPY / SEARCH-SEO",
+ "note": "Round-7 residuals: an effort-free weight-loss claim on the weight-management reader, and the 263-character /panchakarma/ meta description (efficacy wording, over 155).",
+ "entries": [
+  {
+   "id": "R7-weight-claim",
+   "auto": true,
+   "old": "Our unique Ayurvedic diet and natural weight management strategies will assist in removing excess fat, allowing weight reduction without the necessity of exercise or dietary limitations. Herbal oil therapy, Ayurvedic practices, and nutrition assist our clients in achieving profound relaxation and wellness while shedding extra pounds and toning the body in only a few weeks.",
+   "new": "After an assessment, your physician plans an Ayurvedic diet, herbal oil therapies and daily routines to support healthy weight management alongside the activity your physician advises. Results vary from person to person.",
+   "min": 1,
+   "authority": "Owner medical-content authority; weight-loss outcome/effort-free claim (obesity is a Drugs and Magic Remedies Act schedule condition) flagged by the round-6 ja/ko translator; Dr. Deepu John review before production (HARD GATE 7)."
+  },
+  {
+   "id": "R7-panchakarma-desc",
+   "auto": true,
+   "old": "Experience the transformative power of Panchakarma at Kairali – The Ayurvedic Healing Village. This ancient detox therapy balances the doshas, purifies the body, and enhances overall well-being with herbal treatments, oil massages, and holistic healing in Kerala.",
+   "new": "Physician-guided Panchakarma at Kairali – The Ayurvedic Healing Village, Kerala: classical Ayurvedic detoxification with herbal and oil therapies.",
+   "min": 1,
+   "authority": "Owner medical-content authority; weight-loss outcome/effort-free claim (obesity is a Drugs and Magic Remedies Act schedule condition) flagged by the round-6 ja/ko translator; Dr. Deepu John review before production (HARD GATE 7)."
+  }
+ ]
+}

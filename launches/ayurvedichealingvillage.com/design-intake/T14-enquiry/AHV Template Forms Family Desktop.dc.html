@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #EFEADD; }
+  a { color: #006038; }
+  a:hover { color: #004226; }
+  *:focus-visible { outline: 3px solid #5A4420; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<div style="width: 1440px; box-sizing: border-box; background: #F7F4EA; color: #2A2118; font-family: Mulish, sans-serif; font-size: 18px; line-height: 1.7;">
+
+  <div style="height: 72px; background: #D9D5CC; display: flex; align-items: center; justify-content: center; color: #5C564C; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Site header — approved, not redesigned</div>
+
+  <main>
+    <section style="box-sizing: border-box; padding: 40px 0 44px;">
+      <div style="width: min(1220px, 94%); margin: 0 auto;">
+        <nav aria-label="Breadcrumb" style="font-size: 14.5px; color: #75695A; margin-bottom: 26px;">
+          <a href="#" style="color: #006038;">Home</a> <span style="color: #C9BFA8; padding: 0 6px;">/</span> <a href="#" style="color: #006038;">Contact Us</a> <span style="color: #C9BFA8; padding: 0 6px;">/</span> <span>Enquiry Form</span>
+        </nav>
+        <p style="margin: 0 0 14px; font-size: 12.5px; letter-spacing: 2.6px; text-transform: uppercase; color: #8F6212;">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+        <h1 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 58px; line-height: 1.12; letter-spacing: -0.2px; max-width: 18ch;">{{ pageTitle }}</h1>
+        <div style="display: flex; gap: 18px; margin-top: 26px; max-width: 640px;">
+          <div style="width: 3px; background: #C1882C; flex: 0 0 3px;"></div>
+          <div>
+            <p style="margin: 0; font-size: 19px; line-height: 1.65; color: #514A3F; max-width: 62ch;">Tell us what you would like help with. An Ayurvedic doctor reads every enquiry before the patient care team replies.</p>
+            <p style="margin: 10px 0 0; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft — approve or replace</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="box-sizing: border-box; padding: 0 0 72px;">
+      <div style="width: min(1220px, 94%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 372px; gap: 56px; align-items: start;">
+
+        <div style="box-sizing: border-box; background: #FFFFFF; border: 1px solid #E9E2D3; border-radius: 4px; padding: 44px 48px 48px;">
+          <h2 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 30px; line-height: 1.25;">{{ formHeading }}</h2>
+          <p style="margin: 12px 0 0; font-size: 16.5px; color: #514A3F; max-width: 60ch;">{{ formIntro }}</p>
+          <p style="margin: 8px 0 0; font-size: 15px; color: #75695A;">{{ requiredNote }}</p>
+
+          <sc-if value="{{ sent }}">
+            <div role="status" style="margin-top: 32px; box-sizing: border-box; border: 1.5px solid #006038; border-radius: 4px; padding: 28px 30px; background: #F4F8F5;">
+              <h3 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 24px;">{{ sentHeading }}</h3>
+              <p style="margin: 12px 0 0; font-size: 16.5px; color: #514A3F; max-width: 56ch;">{{ sentBody }}</p>
+              <p style="margin: 14px 0 0; font-size: 15px; color: #75695A;">Prototype only — nothing was sent.</p>
+              <button type="button" onClick="{{ onReset }}" style="margin-top: 20px; min-height: 52px; padding: 0 26px; border: 1.5px solid #5A4420; background: transparent; color: #5A4420; border-radius: 4px; font-family: Mulish, sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer;">{{ resetLabel }}</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+            <form novalidate="novalidate" onSubmit="{{ onSubmit }}" style="margin-top: 34px; max-width: 640px; display: flex; flex-direction: column; gap: 26px;">
+
+              <sc-if value="{{ hasSummary }}">
+                <div role="alert" tabIndex="-1" ref="{{ summaryRef }}" style="box-sizing: border-box; border: 1.5px solid #A1341B; border-left-width: 5px; border-radius: 4px; background: #FCF3F0; padding: 18px 22px;">
+                  <p style="margin: 0; font-size: 16.5px; font-weight: 700; color: #7E2A15;">{{ summaryTitle }}</p>
+                  <p style="margin: 6px 0 0; font-size: 16px; color: #514A3F;">{{ summaryBody }}</p>
+                </div>
+              </sc-if>
+
+              <sc-for list="{{ fields }}" as="f" hint-placeholder-count="5">
+                <div>
+                  <label for="{{ f.id }}" style="display: block; font-size: 16.5px; font-weight: 700; color: #2A2118; margin-bottom: 7px; line-height: 1.4;">{{ f.label }}<span style="color: #A1341B; font-weight: 400;">{{ f.mark }}</span></label>
+                  <sc-if value="{{ f.hasHint }}">
+                    <p id="{{ f.hintId }}" style="margin: 0 0 9px; font-size: 15px; line-height: 1.5; color: #75695A; max-width: 58ch;">{{ f.hint }}</p>
+                  </sc-if>
+
+                  <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}">
+                    <input id="{{ f.id }}" name="{{ f.name }}" type="{{ f.inputType }}" autoComplete="{{ f.autocomplete }}" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px 16px; font-family: Mulish, sans-serif; font-size: 17.5px; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px;" />
+                  </sc-if>
+
+                  <sc-if value="{{ f.isPhone }}">
+                    <div style="display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 12px;">
+                      <input id="{{ f.id }}" name="{{ f.name }}" type="tel" inputMode="tel" autoComplete="tel-country-code" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-label="{{ f.codeLabel }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px 16px; font-family: Mulish, sans-serif; font-size: 17.5px; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px;" />
+                      <input id="{{ f.id2 }}" name="{{ f.name2 }}" type="tel" inputMode="tel" autoComplete="tel-national" value="{{ f.value2 }}" onChange="{{ f.onChange2 }}" aria-label="{{ f.numberLabel }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px 16px; font-family: Mulish, sans-serif; font-size: 17.5px; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px;" />
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ f.isSelect }}">
+                    <select id="{{ f.id }}" name="{{ f.name }}" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px 14px; font-family: Mulish, sans-serif; font-size: 17.5px; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px;">
+                      <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="3">
+                        <option value="{{ o.value }}">{{ o.label }}</option>
+                      </sc-for>
+                    </select>
+                  </sc-if>
+
+                  <sc-if value="{{ f.isTextarea }}">
+                    <textarea id="{{ f.id }}" name="{{ f.name }}" rows="6" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 148px; padding: 14px 16px; font-family: Mulish, sans-serif; font-size: 17.5px; line-height: 1.6; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px; resize: vertical;"></textarea>
+                  </sc-if>
+
+                  <sc-if value="{{ f.isFile }}">
+                    <input id="{{ f.id }}" name="{{ f.name }}" type="file" accept=".pdf,.doc,.docx" onChange="{{ f.onChange }}" aria-describedby="{{ f.described }}" aria-invalid="{{ f.invalid }}" style="box-sizing: border-box; width: 100%; min-height: 52px; padding: 12px 16px; font-family: Mulish, sans-serif; font-size: 16px; color: #2A2118; background: #FFFFFF; border: 1.5px solid {{ f.border }}; border-radius: 4px;" />
+                  </sc-if>
+
+                  <sc-if value="{{ f.hasError }}">
+                    <p id="{{ f.errId }}" style="display: flex; gap: 8px; margin: 9px 0 0; font-size: 16px; line-height: 1.5; color: #7E2A15; max-width: 58ch;"><span aria-hidden="true" style="font-weight: 700;">!</span><span>{{ f.error }}</span></p>
+                  </sc-if>
+                </div>
+              </sc-for>
+
+              <div style="box-sizing: border-box; border-top: 1px solid #E9E2D3; padding-top: 26px;">
+                <h3 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 21px;">{{ nextHeading }}</h3>
+                <p style="margin: 10px 0 0; font-size: 16.5px; color: #514A3F; max-width: 58ch;">{{ nextBody }}</p>
+                <p style="margin: 8px 0 0; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft — approve or replace</p>
+              </div>
+
+              <div>
+                <div style="display: flex; gap: 14px; align-items: flex-start; box-sizing: border-box; background: #FBF8F0; border: 1.5px solid {{ consentBorder }}; border-radius: 4px; padding: 18px 20px;">
+                  <input id="ahv-consent" name="consent" type="checkbox" checked="{{ consent }}" onChange="{{ onConsent }}" aria-describedby="{{ consentDescribed }}" aria-invalid="{{ consentInvalid }}" style="width: 26px; height: 26px; margin: 4px 0 0; flex: 0 0 26px; accent-color: #006038;" />
+                  <label for="ahv-consent" style="font-size: 16.5px; line-height: 1.6; color: #2A2118; max-width: 56ch;">{{ consentLabel }} <a href="https://ayurvedichealingvillage.com/privacy-statement/" style="color: #006038;">{{ privacyLabel }}</a>.<span style="color: #A1341B;"> *</span></label>
+                </div>
+                <sc-if value="{{ consentError }}">
+                  <p id="ahv-consent-err" style="display: flex; gap: 8px; margin: 9px 0 0; font-size: 16px; color: #7E2A15;"><span aria-hidden="true" style="font-weight: 700;">!</span><span>{{ consentErrorText }}</span></p>
+                </sc-if>
+              </div>
+
+              <div>
+                <button type="submit" style="box-sizing: border-box; width: 100%; max-width: 420px; min-height: 60px; padding: 0 30px; background: #EEB41E; color: #2A2118; border: none; border-radius: 4px; font-family: Mulish, sans-serif; font-size: 17.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer;" style-hover="background: #E0A409;">{{ submitLabel }}</button>
+                <p style="margin: 12px 0 0; font-size: 15px; color: #75695A;">Prototype — no endpoint is wired in this file.</p>
+              </div>
+            </form>
+          </sc-if>
+        </div>
+
+        <aside style="position: sticky; top: 24px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="box-sizing: border-box; border: 1px solid #E9E2D3; border-radius: 4px; background: #FFFFFF; padding: 28px 26px;">
+            <h2 style="margin: 0 0 18px; font-family: Marcellus, serif; font-weight: 400; font-size: 23px;">Before you send</h2>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+              <li style="display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px;">
+                <span aria-hidden="true" style="color: #C1882C; font-size: 15px; line-height: 1.6;">◆</span>
+                <span><strong style="font-weight: 700;">NABH-accredited hospital.</strong> <span style="color: #514A3F; font-size: 16.5px;">Kairali is accredited by the National Accreditation Board for Hospitals &amp; Healthcare Providers.</span></span>
+              </li>
+              <li style="display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px;">
+                <span aria-hidden="true" style="color: #C1882C; font-size: 15px; line-height: 1.6;">◆</span>
+                <span><strong style="font-weight: 700;">A physician reads it.</strong> <span style="color: #514A3F; font-size: 16.5px;">Anything clinical is reviewed by an Ayurvedic doctor, not only by the patient care team.</span></span>
+              </li>
+              <li style="display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px;">
+                <span aria-hidden="true" style="color: #C1882C; font-size: 15px; line-height: 1.6;">◆</span>
+                <span><strong style="font-weight: 700;">Reply within [TO CONFIRM] hours.</strong> <span style="color: #514A3F; font-size: 16.5px;">Patient care hours [TO CONFIRM], Indian Standard Time.</span></span>
+              </li>
+              <li style="display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px;">
+                <span aria-hidden="true" style="color: #C1882C; font-size: 15px; line-height: 1.6;">◆</span>
+                <span><strong style="font-weight: 700;">Your details stay with us.</strong> <span style="color: #514A3F; font-size: 16.5px;">Used only to answer this enquiry. See the <a href="https://ayurvedichealingvillage.com/privacy-statement/" style="color: #006038;">privacy statement</a>.</span></span>
+              </li>
+            </ul>
+            <p style="margin: 18px 0 0; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft — approve or replace</p>
+          </div>
+
+          <div style="box-sizing: border-box; border: 1px solid #E9E2D3; border-radius: 4px; background: #F3EFE2; padding: 26px;">
+            <h2 style="margin: 0 0 8px; font-family: Marcellus, serif; font-weight: 400; font-size: 23px;">Rather not use a form?</h2>
+            <p style="margin: 0 0 18px; font-size: 16.5px; color: #514A3F;">Reach the patient care team directly.</p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a href="https://wa.me/919289838797" style="display: flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 20px; border: 1.5px solid #006038; border-radius: 4px; color: #006038; text-decoration: none; font-size: 16.5px; font-weight: 700;">WhatsApp +91 92898 38797</a>
+              <a href="mailto:info@kairali.com" style="display: flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 0 20px; border: 1.5px solid #5A4420; border-radius: 4px; color: #5A4420; text-decoration: none; font-size: 16.5px; font-weight: 700;">info@kairali.com</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <sc-if value="{{ showProse }}" hint-placeholder-val="{{ true }}">
+      <section style="box-sizing: border-box; background: #FFFFFF; border-top: 1px solid #E9E2D3; border-bottom: 1px solid #E9E2D3; padding: 72px 0;">
+        <div style="width: min(1220px, 94%); margin: 0 auto;">
+          <p style="margin: 0 0 30px; font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #8F6212;">Draft — approve or replace · this whole region is the page's own copy</p>
+
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 64px; align-items: start;">
+            <div>
+              <h2 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 34px; line-height: 1.25;">What we do with your enquiry</h2>
+              <p style="margin: 18px 0 0; font-size: 18px; color: #2A2118; max-width: 66ch;">Every enquiry arrives at the front office in Palakkad and is logged the same day. The patient care team separates administrative questions — admission dates, travel, accommodation, documents — from clinical ones. Clinical questions go to an Ayurvedic doctor before anyone replies to you.</p>
+              <p style="margin: 18px 0 0; font-size: 18px; color: #2A2118; max-width: 66ch;">You do not need a diagnosis to write to us. A description in your own words is enough. If you already have reports, blood work or a discharge summary, say so in the message and the patient care team will tell you where to send them.</p>
+
+              <h3 style="margin: 40px 0 0; font-family: Marcellus, serif; font-weight: 400; font-size: 25px;">What to include</h3>
+              <ul style="margin: 16px 0 0; padding-left: 22px; max-width: 66ch; display: flex; flex-direction: column; gap: 10px;">
+                <li style="font-size: 18px;">The concern in your own words, and how long it has been present.</li>
+                <li style="font-size: 18px;">Any current medication, and any condition under treatment elsewhere.</li>
+                <li style="font-size: 18px;">The dates you could travel, even approximately.</li>
+                <li style="font-size: 18px;">Who the programme is for, if it is not for you.</li>
+              </ul>
+
+              <h3 style="margin: 40px 0 0; font-family: Marcellus, serif; font-weight: 400; font-size: 25px;">Admission, in order</h3>
+              <ol style="margin: 16px 0 0; padding-left: 22px; max-width: 66ch; display: flex; flex-direction: column; gap: 10px;">
+                <li style="font-size: 18px;"><strong style="font-weight: 700;">Enquiry.</strong> You send this form. The patient care team acknowledges it.</li>
+                <li style="font-size: 18px;"><strong style="font-weight: 700;">Consultation.</strong> An Ayurvedic doctor speaks with you, by video or telephone.</li>
+                <li style="font-size: 18px;"><strong style="font-weight: 700;">Programme proposal.</strong> A written plan with duration, treatments and cost.</li>
+                <li style="font-size: 18px;"><strong style="font-weight: 700;">Admission.</strong> Dates confirmed, prescription drawn up on arrival after examination.</li>
+              </ol>
+
+              <h3 style="margin: 40px 0 0; font-family: Marcellus, serif; font-weight: 400; font-size: 25px;">Common questions</h3>
+              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 22px; max-width: 66ch;">
+                <div>
+                  <p style="margin: 0; font-size: 18px; font-weight: 700;">Is the first consultation charged?</p>
+                  <p style="margin: 6px 0 0; font-size: 18px; color: #514A3F;">The initial consultation with an Ayurvedic doctor is free.</p>
+                </div>
+                <div>
+                  <p style="margin: 0; font-size: 18px; font-weight: 700;">How long is a Panchakarma programme?</p>
+                  <p style="margin: 6px 0 0; font-size: 18px; color: #514A3F;">It depends on the condition and on what the examining physician prescribes. Programmes commonly run [TO CONFIRM] days.</p>
+                </div>
+                <div>
+                  <p style="margin: 0; font-size: 18px; font-weight: 700;">Can a companion stay with the patient?</p>
+                  <p style="margin: 6px 0 0; font-size: 18px; color: #514A3F;">Yes. Tell the patient care team in your enquiry so the room is allocated correctly. Companion charges: [TO CONFIRM].</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 28px;">
+              <figure style="margin: 0;">
+                <img src="assets/img/AHV-Contact-Verandah-Band.jpg" alt="" style="display: block; width: 100%; height: auto; border-radius: 4px;" />
+                <figcaption style="margin-top: 10px; font-size: 15px; color: #75695A;">The verandah at the Palakkad hospital.</figcaption>
+              </figure>
+              <figure style="margin: 0;">
+                <img src="assets/img/AHV-Consultation-Therapy-Hands.jpg" alt="" style="display: block; width: 100%; height: auto; border-radius: 4px;" />
+                <figcaption style="margin-top: 10px; font-size: 15px; color: #75695A;">A therapist at work during a prescribed treatment.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <section style="box-sizing: border-box; margin-top: 56px; background: #FFFFFF; background-image: linear-gradient(135deg, rgba(193, 136, 44, 0.05) 0 1px, transparent 1px 9px); border-top: 1px solid #E9E2D3; border-bottom: 1px solid #E9E2D3; padding: 56px 0;">
+      <div style="box-sizing: border-box; max-width: 760px; margin: 0 auto; padding: 0 20px; text-align: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; text-align: left; max-width: 620px; margin: 0 auto 34px;">
+          <p style="margin: 0; font-size: 16.5px;"><span aria-hidden="true" style="color: #C1882C; padding-right: 10px;">◆</span>NABH Certified Hospital</p>
+          <p style="margin: 0; font-size: 16.5px;"><span aria-hidden="true" style="color: #C1882C; padding-right: 10px;">◆</span>118+ Years Heritage</p>
+          <p style="margin: 0; font-size: 16.5px;"><span aria-hidden="true" style="color: #C1882C; padding-right: 10px;">◆</span>Individualised Programmes</p>
+          <p style="margin: 0; font-size: 16.5px;"><span aria-hidden="true" style="color: #C1882C; padding-right: 10px;">◆</span>World Luxury Award Winner</p>
+        </div>
+        <h2 style="margin: 0; font-family: Marcellus, serif; font-weight: 400; font-size: 26px;">Not sure which programme fits?</h2>
+        <p style="margin: 14px auto 0; font-size: 16.5px; color: #514A3F; max-width: 56ch;">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+        <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+          <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; background: #EEB41E; color: #2A2118; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Free Doctor Consultation</a>
+          <a href="https://wa.me/919289838797" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; border: 1.5px solid #006038; color: #006038; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">WhatsApp Patient Care</a>
+          <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; border: 1.5px solid #5A4420; color: #5A4420; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div style="height: 620px; background: #D9D5CC; display: flex; align-items: center; justify-content: center; color: #5C564C; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Site footer — approved, not redesigned</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2600},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Enquiry form — fullest (871 words)&quot;,&quot;Online consultation (19 words)&quot;,&quot;Apply now (zero words — form only)&quot;],&quot;default&quot;:&quot;Enquiry form — fullest (871 words)&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content extremes&quot;},&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;English&quot;,&quot;French (/postulez-maintenant/)&quot;],&quot;default&quot;:&quot;English&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content extremes&quot;}}">
+const T = {
+  en: {
+    required: "Required fields are marked *",
+    consent: "I agree that Kairali may use these details to answer my enquiry. I have read the",
+    privacy: "privacy statement",
+    consentErr: "Please tick the box so we may reply to you. Without it we cannot use your details.",
+    summaryTitle: "Your enquiry was not sent.",
+    summaryBody: "Check the fields marked below and try again.",
+    next: "What happens next",
+    reset: "Send another enquiry",
+    sentHeading: "Enquiry received",
+    sentBody: "The patient care team has your details and will reply to the email address and number you gave.",
+    code: "Country code",
+    number: "Phone number"
+  },
+  fr: {
+    required: "Les champs obligatoires sont signalés par *",
+    consent: "J'accepte que Kairali utilise ces coordonnées pour répondre à ma demande. J'ai lu la",
+    privacy: "déclaration de confidentialité",
+    consentErr: "Veuillez cocher la case afin que nous puissions vous répondre. Sans cela, nous ne pouvons pas utiliser vos coordonnées.",
+    summaryTitle: "Votre demande n'a pas été envoyée.",
+    summaryBody: "Vérifiez les champs signalés ci-dessous, puis réessayez.",
+    next: "Ce qui se passe ensuite",
+    reset: "Envoyer une autre demande",
+    sentHeading: "Demande reçue",
+    sentBody: "L'équipe chargée des patients a vos coordonnées et vous répondra à l'adresse électronique et au numéro indiqués.",
+    code: "Indicatif du pays",
+    number: "Numéro de téléphone"
+  }
+};
+
+const PROGRAMMES = [
+  ["", "Select a programme", "Sélectionnez un programme"],
+  ["panchakarma", "Panchakarma Therapy", "Thérapie Panchakarma"],
+  ["rejuvenation", "Holistic Rejuvenation & Detoxification", "Rajeunissement holistique et détoxification"],
+  ["weight", "Weight Loss Programme", "Programme de perte de poids"],
+  ["stress", "Stress & Strain", "Stress et tension"],
+  ["joint", "Joint Rehabilitation & Arthritis", "Rééducation articulaire et arthrite"],
+  ["spine", "Spinal Disc & Nerve Restoration", "Restauration discale et nerveuse"],
+  ["other", "Something else / not sure yet", "Autre chose / je ne sais pas encore"]
+];
+
+const SETS = {
+  enquiry: ["name", "phone", "email", "country", "programme", "month", "message"],
+  consultation: ["name", "phone", "email", "concern"],
+  apply: ["name", "phone", "email", "position", "experience", "cv", "cover"]
+};
+
+const F = {
+  name: { type: "text", inputType: "text", autocomplete: "name", required: true,
+    en: ["Full name", "", "Please enter your full name so we know who we are writing to."],
+    fr: ["Nom et prénom complets", "", "Veuillez indiquer votre nom complet afin que nous sachions à qui nous écrivons."] },
+  phone: { type: "phone", required: true,
+    en: ["Phone number", "WhatsApp if you have it — most replies go out that way.", "Please enter a country code and a phone number we can reach you on."],
+    fr: ["Numéro de téléphone", "De préférence WhatsApp — la plupart des réponses passent par là.", "Veuillez indiquer un indicatif de pays et un numéro où nous pouvons vous joindre."] },
+  email: { type: "text", inputType: "email", autocomplete: "email", required: true,
+    en: ["Email address", "", "Please enter an email address in the form name@example.com."],
+    fr: ["Adresse électronique", "", "Veuillez saisir une adresse au format nom@exemple.com."] },
+  country: { type: "text", inputType: "text", autocomplete: "country-name", required: false,
+    en: ["Country of residence", "This helps us plan the time of your call.", ""],
+    fr: ["Pays de résidence", "Cela nous aide à fixer l'heure de votre appel.", ""] },
+  programme: { type: "select", required: false, options: PROGRAMMES,
+    en: ["Programme of interest", "Leave it unselected if you are not sure — a doctor will advise.", ""],
+    fr: ["Programme qui vous intéresse", "Laissez vide si vous ne savez pas — un médecin vous conseillera.", ""] },
+  month: { type: "text", inputType: "text", required: false,
+    en: ["Month you could travel", "An approximate month is enough.", ""],
+    fr: ["Mois envisagé pour le déplacement", "Un mois approximatif suffit.", ""] },
+  message: { type: "textarea", required: true,
+    en: ["What would you like help with?", "Your own words are enough. Include how long the concern has been present and any current medication.", "Please tell us briefly what you would like help with, so a doctor can read it before we reply."],
+    fr: ["Sur quoi souhaitez-vous être accompagné ?", "Vos propres mots suffisent. Précisez depuis combien de temps le trouble est présent et vos traitements en cours.", "Veuillez décrire brièvement votre demande afin qu'un médecin puisse la lire avant notre réponse."] },
+  concern: { type: "textarea", required: true,
+    en: ["What would you like the doctor to know?", "A few lines are enough.", "Please tell the doctor briefly what the consultation is about."],
+    fr: ["Que souhaitez-vous indiquer au médecin ?", "Quelques lignes suffisent.", "Veuillez indiquer brièvement l'objet de la consultation."] },
+  position: { type: "select", required: true,
+    options: [["", "Select a position", "Sélectionnez un poste"], ["physician", "Ayurvedic Physician", "Médecin ayurvédique"], ["therapist", "Panchakarma Therapist", "Thérapeute Panchakarma"], ["nursing", "Nursing", "Personnel infirmier"], ["bdm", "Business Development Manager", "Responsable du développement commercial"], ["other", "Other", "Autre"]],
+    en: ["Position applied for", "", "Please choose the position you are applying for."],
+    fr: ["Poste auquel vous postulez", "", "Veuillez choisir le poste auquel vous postulez."] },
+  experience: { type: "text", inputType: "text", required: false,
+    en: ["Years of experience", "", ""],
+    fr: ["Années d'expérience", "", ""] },
+  cv: { type: "file", required: true,
+    en: ["Your CV", "PDF or Word document. Maximum file size [TO CONFIRM].", "Please attach your CV as a PDF or Word document."],
+    fr: ["Votre curriculum vitæ", "Document PDF ou Word. Taille maximale du fichier [TO CONFIRM].", "Veuillez joindre votre CV au format PDF ou Word."] },
+  cover: { type: "textarea", required: false,
+    en: ["Anything you would like to add", "", ""],
+    fr: ["Souhaitez-vous ajouter quelque chose ?", "", ""] }
+};
+
+const VARIANT = {
+  "Enquiry form — fullest (871 words)": "enquiry",
+  "Online consultation (19 words)": "consultation",
+  "Apply now (zero words — form only)": "apply"
+};
+
+const HEAD = {
+  enquiry: { en: ["Enquiry Form", "Send your enquiry", "One form. It reaches the patient care team in Palakkad.", "Send enquiry"], fr: ["Formulaire de demande", "Envoyez votre demande", "Un seul formulaire. Il parvient à l'équipe chargée des patients à Palakkad.", "Envoyer la demande"] },
+  consultation: { en: ["Online Consultation", "Request a consultation", "An Ayurvedic doctor will speak with you by video or telephone. The first consultation is free.", "Request consultation"], fr: ["Consultation en ligne", "Demander une consultation", "Un médecin ayurvédique s'entretiendra avec vous par vidéo ou par téléphone. La première consultation est gratuite.", "Demander une consultation"] },
+  apply: { en: ["Apply Now", "Apply to work at Kairali", "Applications are read by the human resources team in Palakkad.", "Submit application"], fr: ["Postulez maintenant", "Postuler chez Kairali", "Les candidatures sont lues par l'équipe des ressources humaines à Palakkad.", "Envoyer ma candidature"] }
+};
+
+const NEXT = {
+  enquiry: { en: "A member of the patient care team reads your enquiry and an Ayurvedic doctor reviews anything clinical. You will hear back by email or WhatsApp within [TO CONFIRM] hours.", fr: "Un membre de l'équipe chargée des patients lit votre demande et un médecin ayurvédique examine tout élément clinique. Vous recevrez une réponse par courriel ou WhatsApp sous [TO CONFIRM] heures." },
+  consultation: { en: "The patient care team will offer you a time with an Ayurvedic doctor, by email or WhatsApp, within [TO CONFIRM] hours.", fr: "L'équipe chargée des patients vous proposera un créneau avec un médecin ayurvédique, par courriel ou WhatsApp, sous [TO CONFIRM] heures." },
+  apply: { en: "The human resources team reads every application. If your experience matches an open role you will be contacted within [TO CONFIRM].", fr: "L'équipe des ressources humaines lit chaque candidature. Si votre expérience correspond à un poste ouvert, vous serez contacté sous [TO CONFIRM]." }
+};
+
+class Component extends DCLogic {
+  state = { values: {}, errors: {}, consent: false, consentError: false, submitted: false, sent: false };
+  summaryRef = React.createRef();
+
+  key() { return VARIANT[this.props.variant] || "enquiry"; }
+  lang() { return this.props.language === "French (/postulez-maintenant/)" ? "fr" : "en"; }
+
+  set(name, v) {
+    this.setState(s => {
+      const values = Object.assign({}, s.values, { [name]: v });
+      const errors = Object.assign({}, s.errors);
+      delete errors[name];
+      return { values, errors };
+    });
+  }
+
+  validate() {
+    const lang = this.lang(), errors = {};
+    SETS[this.key()].forEach(n => {
+      const f = F[n], v = (this.state.values[n] || "").trim();
+      if (f.required && !v) errors[n] = f[lang][2];
+      if (n === "email" && v && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) errors[n] = f[lang][2];
+      if (n === "phone" && v && (this.state.values.phone_code || "").trim().length < 2) errors[n] = f[lang][2];
+    });
+    return errors;
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const errors = this.validate(), consentError = !this.state.consent;
+    if (Object.keys(errors).length || consentError) {
+      this.setState({ errors, consentError, submitted: true }, () => {
+        if (this.summaryRef.current) this.summaryRef.current.focus();
+      });
+      return;
+    }
+    this.setState({ errors: {}, consentError: false, sent: true });
+  };
+
+  renderVals() {
+    const key = this.key(), lang = this.lang(), t = T[lang], h = HEAD[key][lang];
+    const fields = SETS[key].map(n => {
+      const f = F[n], c = f[lang], err = this.state.errors[n], hint = c[1];
+      const described = [hint ? n + "-hint" : "", err ? n + "-err" : ""].filter(Boolean).join(" ");
+      const base = {
+        id: n, name: n, label: c[0], mark: f.required ? " *" : "",
+        hint: hint, hasHint: !!hint, hintId: n + "-hint",
+        error: err || "", hasError: !!err, errId: n + "-err",
+        described: described || undefined, invalid: err ? "true" : undefined,
+        border: err ? "#A1341B" : "#6F6152",
+        value: this.state.values[n] || "",
+        onChange: (e) => this.set(n, e.target.value),
+        isText: f.type === "text", isPhone: f.type === "phone", isSelect: f.type === "select",
+        isTextarea: f.type === "textarea", isFile: f.type === "file",
+        inputType: f.inputType || "text", autocomplete: f.autocomplete || "off"
+      };
+      if (f.type === "phone") {
+        base.id = "phone_code"; base.name = "phone_code"; base.value = this.state.values.phone_code || "";
+        base.onChange = (e) => this.set("phone_code", e.target.value);
+        base.id2 = "phone"; base.name2 = "phone"; base.value2 = this.state.values.phone || "";
+        base.onChange2 = (e) => this.set("phone", e.target.value);
+        base.codeLabel = t.code; base.numberLabel = t.number;
+        base.described = [hint ? n + "-hint" : "", err ? n + "-err" : ""].filter(Boolean).join(" ") || undefined;
+      }
+      if (f.options) base.options = f.options.map(o => ({ value: o[0], label: lang === "fr" ? o[2] : o[1] }));
+      return base;
+    });
+
+    return {
+      pageTitle: h[0], formHeading: h[1], formIntro: h[2], submitLabel: h[3],
+      requiredNote: t.required, fields, onSubmit: this.onSubmit,
+      showProse: key === "enquiry",
+      consent: this.state.consent,
+      onConsent: (e) => this.setState({ consent: e.target.checked, consentError: false }),
+      consentLabel: t.consent, privacyLabel: t.privacy,
+      consentError: this.state.consentError, consentErrorText: t.consentErr,
+      consentBorder: this.state.consentError ? "#A1341B" : "#E0D7C4",
+      consentDescribed: this.state.consentError ? "ahv-consent-err" : undefined,
+      consentInvalid: this.state.consentError ? "true" : undefined,
+      hasSummary: this.state.submitted && (Object.keys(this.state.errors).length > 0 || this.state.consentError),
+      summaryTitle: t.summaryTitle, summaryBody: t.summaryBody, summaryRef: this.summaryRef,
+      nextHeading: t.next, nextBody: NEXT[key][lang],
+      sent: this.state.sent, notSent: !this.state.sent,
+      sentHeading: t.sentHeading, sentBody: t.sentBody, resetLabel: t.reset,
+      onReset: () => this.setState({ sent: false, submitted: false, values: {}, errors: {}, consent: false })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

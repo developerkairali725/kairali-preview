@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0081",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_bacfc07c7fc683dcafe7",
+   "sourceHash": "bacfc07c7fc683dcafe7f889d8c563c16c882d53569fbdf360133d1ad8fca2ac",
+   "text": "[data-filter]",
+   "status": "translated",
+   "unchangedReason": "CSS/JS selector; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_c4b13c354f00ee820100",
+   "sourceHash": "c4b13c354f00ee820100c64ec8f3d6851f0431557dbc82e7a0ae2b5119c094ca",
+   "text": "[data-clear]",
+   "status": "translated",
+   "unchangedReason": "CSS/JS selector; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_a66406beb6888868aeec",
+   "sourceHash": "a66406beb6888868aeecb16360214426fabcf224e645b60782944b9c25908d47",
+   "text": "[data-group]",
+   "status": "translated",
+   "unchangedReason": "CSS/JS selector; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_a1ae9144f332a87b5707",
+   "sourceHash": "a1ae9144f332a87b57074b497c4d4afd9f26848db6c7167587cebaf1d46f2b3a",
+   "text": "[data-rail]",
+   "status": "translated",
+   "unchangedReason": "CSS/JS selector; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_7c869bb1843992cf501d",
+   "sourceHash": "7c869bb1843992cf501dc16a9853b0691d9dafbf7faed9ca3ccb140490784e01",
+   "text": "[data-empty]",
+   "status": "translated",
+   "unchangedReason": "CSS/JS selector; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_9fb5f38259628979c8a6",
+   "sourceHash": "9fb5f38259628979c8a6c059d47f8e1e1e1b73000782f639e7074e33abf73d13",
+   "text": "</mark>",
+   "status": "translated",
+   "unchangedReason": "HTML markup string; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_68ebd01f7badc7b84b73",
+   "sourceHash": "68ebd01f7badc7b84b7350a2a3d9adf8ddf8a159b643276b99066582f80fa70e",
+   "text": "(^|[^a-z0-9])",
+   "status": "translated",
+   "unchangedReason": "Regular-expression fragment; code, not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_1f5087db919ced5c123c",
+   "sourceHash": "1f5087db919ced5c123c7f507d3fcce818cb0cf6e77c2f95a8a35e951e03fdb9",
+   "text": "pregunta",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_17d5efa695de036a7acb",
+   "sourceHash": "17d5efa695de036a7acb616c0b2c4db21b71f34962c3a1ecfa3ed77ef97d7822",
+   "text": "preguntas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1e067fbc3a0db254e728",
+   "sourceHash": "1e067fbc3a0db254e728d668949853ef630d5822c08bae8db1e9da75a28f05d9",
+   "text": "Mostrando todas las",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment concatenated as 'Showing all N questions in M topics' → 'Mostrando todas las N preguntas en M temas'."
+   ]
+  },
+  {
+   "id": "t_efbe57ef4f16fd8efcc2",
+   "sourceHash": "efbe57ef4f16fd8efcc2b2d1eaa44bbb2026bd9699224d2f40b579804d803fa9",
+   "text": "preguntas en",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f013aa4b8daf3e2242ea",
+   "sourceHash": "f013aa4b8daf3e2242eafa6c635e1ea323288a8fb3c4d7c21176efce76224f37",
+   "text": "temas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_57daac6e06e95ef05411",
+   "sourceHash": "57daac6e06e95ef05411ac65965d03e201ddbe0fdbeef2bed88e8313c79d4c6c",
+   "text": "Ninguna pregunta coincide con «",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4cbfd062268353d0b89d",
+   "sourceHash": "4cbfd062268353d0b89dfe1aa1c325caecd7113ebaa1c81c02cf96d2b685389b",
+   "text": "»: consúltenos directamente:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a54084383e3cf7c24630",
+   "sourceHash": "a54084383e3cf7c246307c0f656da443a587afe30dd18a1878c2fcad9db93da4",
+   "text": "resultados",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4945a70fa7f9c13fe193",
+   "sourceHash": "4945a70fa7f9c13fe1931a3372ac5798140d42eba74d0dd805a4a216ed3a8142",
+   "text": "resultado",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7ea52506e2118bce70ec",
+   "sourceHash": "7ea52506e2118bce70ecc837ddeb82d1ad32becd1a06c2caeaf1197af0dc9eb4",
+   "text": "[[OPEN_1]][[OPEN_2]]¿Por qué elegir Kairali?[[CLOSE_2]][[OPEN_3]]7[[CLOSE_3]][[CLOSE_1]] [[OPEN_4]][[OPEN_5]]Consulta e ingreso[[CLOSE_5]][[OPEN_6]]3[[CLOSE_6]][[CLOSE_4]] [[OPEN_7]][[OPEN_8]]Comprender el Ayurveda[[CLOSE_8]][[OPEN_9]]4[[CLOSE_9]][[CLOSE_7]] [[OPEN_10]][[OPEN_11]]Tratamientos y programas[[CLOSE_11]][[OPEN_12]]5[[CLOSE_12]][[CLOSE_10]] [[OPEN_13]][[OPEN_14]]Alojamiento e instalaciones[[CLOSE_14]][[OPEN_15]]7[[CLOSE_15]][[CLOSE_13]] [[OPEN_16]][[OPEN_17]]Información sobre la dieta[[CLOSE_17]][[OPEN_18]]3[[CLOSE_18]][[CLOSE_16]] [[OPEN_19]][[OPEN_20]]Viaje y logística[[CLOSE_20]][[OPEN_21]]4[[CLOSE_21]][[CLOSE_19]] [[OPEN_22]][[OPEN_23]]Clima e información estacional[[CLOSE_23]][[OPEN_24]]2[[CLOSE_24]][[CLOSE_22]] [[OPEN_25]][[OPEN_26]]Preparación y equipaje[[CLOSE_26]][[OPEN_27]]4[[CLOSE_27]][[CLOSE_25]] [[OPEN_28]][[OPEN_29]]Seguro y pago[[CLOSE_29]][[OPEN_30]]6[[CLOSE_30]][[CLOSE_28]] [[OPEN_31]][[OPEN_32]]Para pacientes internacionales[[CLOSE_32]][[OPEN_33]]6[[CLOSE_33]][[CLOSE_31]] [[OPEN_34]][[OPEN_35]]Después de su tratamiento[[CLOSE_35]][[OPEN_36]]4[[CLOSE_36]][[CLOSE_34]] [[OPEN_37]][[OPEN_38]]Recursos adicionales[[CLOSE_38]][[OPEN_39]]3[[CLOSE_39]][[CLOSE_37]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_7ea52506e2118bce70ec banned-term Viaje"
+   ]
+  },
+  {
+   "id": "t_54b8844a30263d125264",
+   "sourceHash": "54b8844a30263d125264ba6f9a6fccd08253d6f3ca6e779ca88ee9f47a6fb4d0",
+   "text": "↑ Volver a los temas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8684100846c61f04cabd",
+   "sourceHash": "8684100846c61f04cabdcbcf08f14deaa89a6222fcc45830ff279a512c385cd8",
+   "text": "dieta, aeropuerto, visado…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_957e12da03124b72d7e1",
+   "sourceHash": "957e12da03124b72d7e1b1d2028f693dbfb957b686ebb499e0d675374bb2e8bd",
+   "text": "[[OPEN_1]]Inicio[[CLOSE_1]] [[OPEN_2]]/[[CLOSE_2]] [[OPEN_3]]Galería[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbb0b3be2e3e986c8b6e",
+   "sourceHash": "cbb0b3be2e3e986c8b6e43b37bcaa67b9c0442a4a9156f67f7cc08fe5a0a7945",
+   "text": "Colecciones destacadas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9501b74deb64e0293f80",
+   "sourceHash": "9501b74deb64e0293f80c51e5880767ea212b99808f7b937949dad9443c5f568",
+   "text": "[[OPEN_1]] [[OPEN_2]][[VAR_1]][[CLOSE_2]] [[OPEN_3]][[VAR_2]][[CLOSE_3]] [[CLOSE_1]] [[OPEN_4]]Ver colección[[OPEN_5]]→[[CLOSE_5]][[CLOSE_4]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3ba05a778e55a8987119",
+   "sourceHash": "3ba05a778e55a8987119642455a11e16784b9dde499784ca9d214ddbf7ee9b43",
+   "text": "Más colecciones",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e860622de976641f97b9",
+   "sourceHash": "e860622de976641f97b9d1b74d83df6657fc6c1af3ee36b93ff38378e4d35495",
+   "text": "Ver colección[[OPEN_1]]→[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

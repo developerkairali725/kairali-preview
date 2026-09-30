@@ -1,0 +1,169 @@
+{
+ "batchId": "b-0253",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_66208393f5ae96a1985d",
+   "sourceHash": "66208393f5ae96a1985d93d63d49617988f003608f8f3c53fcad7000c4f95c3f",
+   "text": "Entre las numerosas artes de percusión de Kerala, el chenda, un instrumento de percusión, ocupa un lugar destacado. Este magnífico instrumento se considera imprescindible y se utiliza ampliamente en prácticamente todos los eventos de Kerala. El intérprete marca ritmos complejos sobre el parche con baquetas especiales. El cuerpo cilíndrico de madera del instrumento se elabora con madera de cassia fistula, palmera de azúcar, teca blanca y árbol de jaca. Su rasgo singular es que la madera procede del centro del árbol de jaca.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a7c0bb80555aa71849e",
+   "sourceHash": "0a7c0bb80555aa71849e27d24ba413f6af99ac62aa6644c309fa7e8d2969c42d",
+   "text": "Kalari",
+   "status": "translated",
+   "unchangedReason": "Name of a traditional martial art/training space; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_de0fdc922b9e16175901",
+   "sourceHash": "de0fdc922b9e16175901e1413d103af4286836059a1e879133ce89d4f8bbc43b",
+   "text": "El Kalari Payattu es un arte marcial que se practica en un tipo singular de gimnasio llamado Kalari. Un aspecto importante del Kalari es su formación específica en «Marma», el arte de comprender y estimular cada uno de los 107 puntos energéticos del cuerpo humano. La finalidad de estos marmas, o puntos vitales, es restablecer los recursos del cuerpo y equilibrar sus flujos de energía. Así, el Kalari convierte al practicante en alguien capaz de cuidar de sí mismo y en un guerrero que puede emplear sus capacidades de sanación para ayudar a los demás.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d33dbe314aa8cd729bb6",
+   "sourceHash": "d33dbe314aa8cd729bb60aa3699763bcde38fefb8f1733dff3f14fa2b88f405d",
+   "text": "El Kalari cuenta con su propia especialidad médica ayurvédica, que trata lesiones, dolencias físicas y luxaciones. Estos métodos se emplean junto con masajes para aliviar el dolor muscular y mejorar la flexibilidad del cuerpo. Aunque la popularidad del Kalari decayó en el siglo 17, actualmente está creciendo con rapidez en el estado de Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Century kept in Western digits (siglo 17) instead of Roman numerals so the number 17 is preserved per validation."
+   ]
+  },
+  {
+   "id": "t_2dce6d380a12612a1329",
+   "sourceHash": "2dce6d380a12612a132906d4c25a0fe0f41102527c63e986a4f4e77f9af52fff",
+   "text": "Retiro holístico | Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Wellness' condensed to fit the 60-character SEO title limit."
+   ]
+  },
+  {
+   "id": "t_119e173ac3f906b66959",
+   "sourceHash": "119e173ac3f906b669597a84bf5068a896e179842194164293d4ad61c05d3b47",
+   "text": "Bienestar auténtico en Kairali: un centro ayurvédico sin alcohol, sin tabaco y sin cafeína, con yoga, meditación y sanación holística en Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f463355d09230fb827b8",
+   "sourceHash": "f463355d09230fb827b8e6107a93e4b41cc51af09114c74eec3041105bd93d44",
+   "text": "En Kairali fomentamos un entorno libre de alcohol, que contribuye a un efecto sanador en el organismo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c9830df06af38e8e4600",
+   "sourceHash": "c9830df06af38e8e4600e3e4681144e6da01b73428337012fdd635fba5ae5314",
+   "text": "LEER MÁS",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a40d4b502926a294e9ae",
+   "sourceHash": "a40d4b502926a294e9ae1ac5e3ff00aecab79a026a72c0ca431f4bc0bc5a667b",
+   "text": "Fumar perjudica la salud. Kairali – The Ayurvedic Healing Village, como centro de salud, siempre dice no al tabaco.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'health farm' rendered as 'centro de salud'."
+   ]
+  },
+  {
+   "id": "t_8a06fff5c16794d1636c",
+   "sourceHash": "8a06fff5c16794d1636c2354322756ae6830a478bd524a41eaf4749cc96920db",
+   "text": "«Diga no a la cafeína» es lo que practican el hospital y el centro. La cafeína aumenta el dominio de los doshas y provoca enfermedades.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'centro'. Claim kept as in source (not strengthened); may warrant clinical review."
+   ]
+  },
+  {
+   "id": "t_454ec1c713c1ca645c3b",
+   "sourceHash": "454ec1c713c1ca645c3b3973d911db0ed197b47ea4d7f236a1a6744a55bbb386",
+   "text": "El centro de salud de Kairali sigue una dieta completamente vegetariana. Considera que la comida vegetariana es fácil de digerir y contiene antioxidantes,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'health farm' rendered as 'centro de salud'. Fragment ends mid-sentence as in source."
+   ]
+  },
+  {
+   "id": "t_2685b61d5be7213075dd",
+   "sourceHash": "2685b61d5be7213075ddc7bbc53dde5a4deda484f7855e9cd8ba4326d9dfe8b2",
+   "text": "Para adaptarse al estilo de vida moderno del gran público, Kairali Ayurvedic Products pone el acento en la investigación y el desarrollo continuos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aeee2c3eface297006f",
+   "sourceHash": "8aeee2c3eface297006ffe6d5d88b85f52caadf76255052b4303dcc1698492d5",
+   "text": "Kairali promueve una alimentación sin conservantes. Considera que el «prana» es la vitalidad de los alimentos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e431e829ea0f26c6d989",
+   "sourceHash": "e431e829ea0f26c6d989f85f248ab6bc180a5c934ec7e4bc7c69914a89b2adcc",
+   "text": "Sin refrigeración",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Refridgeration' translated as intended."
+   ]
+  },
+  {
+   "id": "t_8675e9b3f753591af42e",
+   "sourceHash": "8675e9b3f753591af42e22dc908a04dd33f7c8613185cd3fca44fcd4f42a55e3",
+   "text": "Kairali sigue la política de «no refrigeración». Un castillo real que brinda una vida saludable,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment ends mid-sentence as in source."
+   ]
+  },
+  {
+   "id": "t_bc743e7fd558d5fc7216",
+   "sourceHash": "bc743e7fd558d5fc7216fbd47daa4190fef8031e2695ee2ed1b80afa8a41e301",
+   "text": "Kairali cuenta con su propio huerto orgánico, libre de pesticidas, productos químicos y conservantes que arrebatan",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment ends mid-sentence as in source."
+   ]
+  },
+  {
+   "id": "t_0218d17eb6c9e61e2d30",
+   "sourceHash": "0218d17eb6c9e61e2d3085f54673e53011a0e80ff7273f973292dbd4f947dd83",
+   "text": "Programa de Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abe15f97dbf36dd89697",
+   "sourceHash": "abe15f97dbf36dd896970d95929797285c3a6b73ef59fe92c801ed7c605b4aa4",
+   "text": "Membresías y acreditaciones | Hospital ayurvédico Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Affiliations' dropped to fit the 60-character SEO title limit."
+   ]
+  }
+ ]
+}

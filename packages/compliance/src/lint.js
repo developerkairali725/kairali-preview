@@ -11,6 +11,17 @@
  * Suppression: a line containing `compliance-allow: <word>` (in a comment)
  * suppresses that word on that line only. Every suppression is reported as info
  * so nothing disappears silently.
+ *
+ * Vendored (imported) payload: a site may declare
+ *   "compliance": { "vendored": ["public/ahv"] }
+ * in site.config.json for trees that are IMPORTED APPROVED SOURCE rather than
+ * hand-written — bytes a build tool copies in wholesale and overwrites on every
+ * run, so an edit there cannot survive and is not the author's to make. Those
+ * files are still scanned and every finding is still reported, at `warning`
+ * instead of `error`, exactly as CODE_EXTENSIONS already are. Nothing is hidden
+ * and no rule is removed: the gate simply stops blocking a push on bytes the
+ * repository does not author. Hand-written files in the same site keep full
+ * error severity. Owner ruling D-20260915-07.
  */
 
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
@@ -44,10 +55,12 @@ function lineSuppresses(line, word) {
 }
 
 /** Scan one file's text. entity decides whether the clinical lock applies. */
-export function lintText(text, { file = "<text>", entity = "group", asCode = false } = {}) {
+export function lintText(text, { file = "<text>", entity = "group", asCode = false, vendored = false } = {}) {
   /** @type {Finding[]} */
   const findings = [];
-  const sev = asCode ? "warning" : "error";
+  // Vendored imported source is reported, never merge-blocking — see the scope
+  // model in this file's header.
+  const sev = asCode || vendored ? "warning" : "error";
   const lines = text.split(/\r?\n/);
 
   // Per-page entity override via MDX frontmatter
@@ -135,9 +148,17 @@ export function lintText(text, { file = "<text>", entity = "group", asCode = fal
       push(i, "error", "locked-facts", `Known-bad WhatsApp number (…38777) — correct is ${LOCKED_FACTS.ktahvWhatsApp}`);
     }
     const emails = line.match(/[\w.+-]+@kairali\.com/gi) || [];
+    const permitted = new Set(
+      [LOCKED_FACTS.contactEmail, ...(LOCKED_FACTS.permittedDepartmentEmails || [])].map((x) => x.toLowerCase())
+    );
     for (const e of emails) {
-      if (e.toLowerCase() !== LOCKED_FACTS.contactEmail) {
-        push(i, "error", "locked-facts", `Public contact email must be ${LOCKED_FACTS.contactEmail}, found "${e}"`);
+      if (!permitted.has(e.toLowerCase())) {
+        // Reported but not merge-blocking in vendored imported source, which
+        // this repository cannot edit (the importer overwrites it). Still a
+        // hard error in every hand-written file, code included. The known-bad
+        // WhatsApp number above is deliberately NOT downgraded: a wrong phone
+        // number blocks a push wherever it appears.
+        push(i, vendored ? "warning" : "error", "locked-facts", `Public contact email must be ${LOCKED_FACTS.contactEmail}, found "${e}"`);
       }
     }
   });
@@ -163,6 +184,19 @@ function walk(dir, out = []) {
     else out.push(p);
   }
   return out;
+}
+
+/** Vendored trees declared by the site, as paths relative to the site dir. */
+function siteVendored(siteDir) {
+  const cfg = join(siteDir, "site.config.json");
+  if (!existsSync(cfg)) return [];
+  try {
+    const parsed = JSON.parse(readFileSync(cfg, "utf8"));
+    const list = parsed?.compliance?.vendored;
+    return Array.isArray(list) ? list.filter((v) => typeof v === "string" && v.length) : [];
+  } catch {
+    return [];
+  }
 }
 
 function siteEntity(siteDir) {
@@ -197,12 +231,17 @@ export function lintDir(dir, { entity } = {}) {
     });
     eff = "ktahv"; // fail safe: strictest lock until configured
   }
+  const vendoredRoots = siteVendored(dir).map((rel) => join(dir, rel));
+  const isVendored = (file) =>
+    vendoredRoots.some((root) => file === root || file.startsWith(root + "/"));
   for (const file of walk(dir)) {
     const ext = extname(file).toLowerCase();
     const asCode = CODE_EXTENSIONS.has(ext);
     if (!CONTENT_EXTENSIONS.has(ext) && !asCode) continue;
     if (basename(file) === "site.config.json") continue;
-    findings.push(...lintText(readFileSync(file, "utf8"), { file, entity: eff, asCode }));
+    findings.push(
+      ...lintText(readFileSync(file, "utf8"), { file, entity: eff, asCode, vendored: isVendored(file) })
+    );
   }
   return findings;
 }

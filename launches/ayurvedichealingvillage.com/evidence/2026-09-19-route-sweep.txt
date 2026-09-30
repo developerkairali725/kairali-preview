@@ -1,0 +1,38 @@
+AHV 252-route sweep — CLEAN RUN (warm server)
+Run 2026-09-19 IST · commit b0b2fecd · 252 routes x 320px and 1024px
+Tool: tools/verify-english-candidate.mjs
+
+NOTE: an earlier run reported 369/504 with 65 states 404ing. That run is DISCARDED -
+the server was restarted underneath it; the 33 affected routes were a contiguous
+alphabetical block, returned 200 immediately after, and show 0 404s on this warm run.
+
+      view AHV Page Article Reader Desktop.dc.html != baseline AHV Page Confirmation Desktop.dc.html
+      horizontal overflow
+  FAIL 320 /checkout/
+      title != baseline ("Ayurvedic Wellness Programs | Kairali - The Ayurvedic Healing Village" vs "Checkout - Ayurvedic Healing Village")
+      h1 != baseline (["Packages"] vs ["Checkout"])
+      canonical != baseline (["https://ayurvedichealingvillage.com/packages/"] vs ["https://ayurvedichealingvillage.com/checkout/"])
+      view AHV Page Article Reader Mobile.dc.html != baseline AHV Page Confirmation Mobile.dc.html
+  FAIL 1024 /checkout/
+      title != baseline ("Ayurvedic Wellness Programs | Kairali - The Ayurvedic Healing Village" vs "Checkout - Ayurvedic Healing Village")
+      h1 != baseline (["Packages"] vs ["Checkout"])
+      canonical != baseline (["https://ayurvedichealingvillage.com/packages/"] vs ["https://ayurvedichealingvillage.com/checkout/"])
+      view AHV Page Article Reader Desktop.dc.html != baseline AHV Page Confirmation Desktop.dc.html
+      horizontal overflow
+  ... and 58 more
+  BODYDIFF 1024 / @453
+      got : "▶\nPLAY THE FILM\nSCROLL\nI AM LOOKING FOR\nWellness · Treatment · Yoga & Meditation\n▾\nPREFERR"
+      want: "❚❚\nPAUSE THE FILM\nSCROLL\nI AM LOOKING FOR\nWellness · Treatment · Yoga & Meditation\n▾\nPREFE"
+  BODYDIFF 320 /Ayurveda_Treatment_Neo_S.India_Cities.html @46
+      got : "info@kairali.com\nEnquire Now\nKairali- The Ayurvedic\nHealing Village\n\nAyurveda has long bee"
+      want: "[email protected]\nEnquire Now\nKairali- The Ayurvedic\nHealing Village\n\nAyurveda has long be"
+  BODYDIFF 1024 /Ayurveda_Treatment_Neo_S.India_Cities.html @46
+      got : "info@kairali.com\nEnquire Now\nKairali- The Ayurvedic\nHealing Village\n\nAyurveda has long bee"
+      want: "[email protected]\nEnquire Now\nKairali- The Ayurvedic\nHealing Village\n\nAyurveda has long be"
+  BODYDIFF 320 /Kairali_Brand_and_Competition_Neo-original.html @46
+      got : "info@kairali.com\nEnquire Now\nCome & Experience The New Look\n\nVillas\n\nNature Walks\n\nInterio"
+      want: "[email protected]\nEnquire Now\nCome & Experience The New Look\n\nVillas\n\nNature Walks\n\nInteri"
+  BODYDIFF 1024 /Kairali_Brand_and_Competition_Neo-original.html @46
+      got : "info@kairali.com\nEnquire Now\nCome & Experience The New Look\n\nVillas\n\nNature Walks\n\nInterio"
+      want: "[email protected]\nEnquire Now\nCome & Experience The New Look\n\nVillas\n\nNature Walks\n\nInteri"
+report: ../../../../../../../private/tmp/claude-501/-Volumes-Extreme-SSD---Blue-2nd-Kairali-Digital--codex-worktrees-ahv-english-staging-20260915/b2057b88-53af-4ff0-a5c0-c82fbf177d72/scratchpad/sweep2.json

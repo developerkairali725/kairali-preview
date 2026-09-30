@@ -1,0 +1,214 @@
+{
+ "batchId": "b-0351",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_13ba017992d4b6d33744",
+   "sourceHash": "13ba017992d4b6d33744d614f8028dfbe463901ee7cc957de17bb4235183e26e",
+   "text": "经认证的院内阿育吠陀药房",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9cd97fd914cba759978d",
+   "sourceHash": "9cd97fd914cba759978d2e984b83f56477d87530c387fc5514e9ee04b413a631",
+   "text": "对我的家族而言，阿育吠陀从来不是追求速效——它是一种生活方式，以其本真的形式传承实践。我们建立这家医院，是为了让每一位患者都被视为独特的个体：在给出任何建议之前，先细致了解其体质，并由具备资质的医生像对待自己的家人一样为其治疗。这份延续了一个多世纪的责任，正是您在这里将会感受到的。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_38a22bfd7b3adfec7329",
+   "sourceHash": "38a22bfd7b3adfec7329f19c0b842eb2bc0bf0f094bb38e637cfc4556795814a",
+   "text": "联合创始人兼联席董事总经理 · 著有",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_61720ec0dcb5df29d81b",
+   "sourceHash": "61720ec0dcb5df29d81bd6843583de4cf6aede6720493f33aecaca747f9b6fc1",
+   "text": "The Ayurvedic Cookbook",
+   "status": "translated",
+   "unchangedReason": "Published book title (proper name) kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_24fefcfd4e0a62e2f548",
+   "sourceHash": "24fefcfd4e0a62e2f548a664e59bacebadff114a86a9cba76f9b63e34b987174",
+   "text": "患者的心声",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_def727a1b22c3943e27c",
+   "sourceHash": "def727a1b22c3943e27c94d81c0b10af78673b0db231903dc089f078b64a78a8",
+   "text": "阅读患者用自己的话讲述的评价",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d77e6fc04da6390b03a5",
+   "sourceHash": "d77e6fc04da6390b03a52dd1223f914364f85fa3b891e833741d98c9b5b19d50",
+   "text": "我们不会在本页发布经过挑选的评语。我们的患者来自 120 多个国家，他们在 Google 上公开评价我们——请在那里阅读他们未经编辑的真实体验。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_41a4f8cd40891e3f8796",
+   "sourceHash": "41a4f8cd40891e3f879628277df8501d7ce1a20fa7d0410a6408d6e807fac3af",
+   "text": "在 Google 上阅读患者评价",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c6cd4fc6ce4450ab64c",
+   "sourceHash": "9c6cd4fc6ce4450ab64cad35faf3ae7355998847ea18cbd3150337a035404268",
+   "text": "常见问题，坦诚解答",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_78c89e0952067db97369",
+   "sourceHash": "78c89e0952067db9736921007aab47c829ea7d7ca6c56d8b8336720c7c33351a",
+   "text": "在线问诊真的是免费的吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_76339dc4821d82dd012f",
+   "sourceHash": "76339dc4821d82dd012f90af28893860d30551c767ec2ca2bc1970e981c218f4",
+   "text": "是的。与我们阿育吠陀医生的首次问诊不收取任何费用。这是对您的体质和健康问题的评估，并就我们的治疗方案是否适合您给出审慎的意见——绝不作任何治愈承诺。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'never a promise of cure' is a negation of a cure claim; rendered as 绝不作任何治愈承诺 (explicitly denies cure). Reviewer may prefer 绝不作任何疗效承诺 to avoid the banned-word equivalent entirely.",
+    "t_76339dc4821d82dd012f banned-term-from-source 治愈"
+   ]
+  },
+  {
+   "id": "t_1766a31a133b256d9d73",
+   "sourceHash": "1766a31a133b256d9d73c3db6cc505e5c3e0c47b9ea67a5afcb07e3104fd21cf",
+   "text": "我实际上会与谁交谈？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_575379a9bc5df0ab4925",
+   "sourceHash": "575379a9bc5df0ab4925bc2df13cae10fc0f9727520ba72df197074c1889428a",
+   "text": "我们医疗团队中一位注册的阿育吠陀医生（BAMS），团队由我们的首席医师 Dr. Deepu John 带领——他曾参与起草 NABH 潘查卡玛（Panchakarma）诊所标准，拥有十余年的临床经验。Kairali – The Ayurvedic Healing Village 是一家获得 NABH 认证的阿育吠陀医院。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56c4573da1697ce091a5",
+   "sourceHash": "56c4573da1697ce091a589d3ef1e0b89405b3288991dae3d7e19e90c17529467",
+   "text": "为什么在我提交申请后还要填写健康摘要？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db663899ca02f58c2a94",
+   "sourceHash": "db663899ca02f58c2a94f1b45b25acdea1dca2484652f5807e2375b6f14e9f41",
+   "text": "这样您的医生能在通话前阅读您的病史，问诊时间就能用在您身上，而不是花在填表上。健康摘要是我们发给您的一份简短私密表格，您可按自己的节奏填写——大多只需点选，报告为可选项。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_204384f5fb8bcee3ae69",
+   "sourceHash": "204384f5fb8bcee3ae69c9a177d2e6bad9a32d3373fdcd5fba53df63a7ab8d7a",
+   "text": "我的健康信息会被保密吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d5058e21d913806b6888",
+   "sourceHash": "d5058e21d913806b6888c4ec54b442d60195337c1d972054be153be6d04e69f2",
+   "text": "是的。您分享的信息仅用于安排和进行您的问诊，并由我们的医疗团队阅读。我们绝不出售您的信息，并依照我们的",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2c7844dcd8f9d3fd0ffb",
+   "sourceHash": "2c7844dcd8f9d3fd0ffb4e5b3c7e37d3c28dd8585ab918e9f3bf701ebb5281dd",
+   "text": "处理这些信息。请注意，如果您通过 WhatsApp 或电子邮件联系我们，您的消息会经由这些服务传输。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: follows a link (likely privacy policy) that ends the preceding unit; Chinese word order places 处理这些信息 after the link."
+   ]
+  },
+  {
+   "id": "t_d549fa85d67e5ca988c5",
+   "sourceHash": "d549fa85d67e5ca988c56020180c0f66da8781428350788936a17da5187a770f",
+   "text": "我需要前往喀拉拉邦吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b2027e3da7dee0cad4f",
+   "sourceHash": "8b2027e3da7dee0cad4f6baa31806bd9d9923aaa2ec17ed4f073ee815df60765",
+   "text": "不需要。问诊在线进行——通过 WhatsApp 视频或语音通话——时间由双方约定。如果住院治疗方案适合您，医生会向您说明可选方案。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4867a6497984f94907c3",
+   "sourceHash": "4867a6497984f94907c34ff7752465b632f90bab9e66db2bfd4eb02afb1f6c24",
+   "text": "我会被迫预订治疗方案吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_506cbb40906105a44af0",
+   "sourceHash": "506cbb40906105a44af0e08cc92182a965dfde763f4d1731dc4120e3c480db7a",
+   "text": "不会。医生的职责是为您提供坦诚、审慎的意见——有时这一意见是我们的方案并不适合您的情况，届时我们会直接告诉您。问诊之后不会有任何销售跟进；接下来如何决定完全由您做主。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e85a847ef1ee0b3707a3",
+   "sourceHash": "e85a847ef1ee0b3707a3f3bfb871e7274cfabfb2b00ef63ef260a2b0639edc3c",
+   "text": "我可以为父母或配偶安排问诊吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b8f5ebbf2853e57c86a0",
+   "sourceHash": "b8f5ebbf2853e57c86a07b723fcce386134fe5f11a57ae8faacd801ced550a90",
+   "text": "可以，许多患者的家人都是这样做的。请在申请表中选择“家庭成员”，欢迎您一同参加通话、代为填写健康摘要，并在问诊中讨论您对其护理的疑问。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "The quoted option label “家庭成员” must match the translated form option for 'A family member'."
+   ]
+  },
+  {
+   "id": "t_d24feb074f5a308a7042",
+   "sourceHash": "d24feb074f5a308a7042ea53d1770dde3267db3e2297dc784d9f7b77b2b35fde",
+   "text": "这适用于紧急医疗问题吗？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

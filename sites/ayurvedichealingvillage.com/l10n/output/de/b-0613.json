@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Anfrage zu meiner Behandlung",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Anfrage zur Behandlung chronischer Rückenschmerzen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Einzelbelegung, pro Villa und Nacht: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Anfrage zur Behandlung von Arthritis",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Wir sind für Sie da und unterstützen Sie auf Ihrem Weg zu mehr Wohlbefinden. Wenn Sie Fragen zu unseren Behandlungen, Programmen oder Reservierungen haben, hilft Ihnen unser Team gern – unterstützend und transparent. Kontaktieren Sie uns telefonisch, per E-Mail oder über unser Webformular. Lassen Sie uns gemeinsam Ihren Weg zu einer umfassenden Heilung beginnen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'Programmen' (programme) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "Bei Kairali – The Ayurvedic Healing Village bietet unsere ambulante ayurvedische Konsultation (OPD) einen reibungslosen, individuell abgestimmten Behandlungsablauf auf Grundlage traditioneller ayurvedischer Prinzipien. Besucher werden freundlich am Empfang begrüßt, wo ein OPD-Formular ausgefüllt und ihre Krankengeschichte für eine naturheilkundliche ayurvedische Konsultation digital erfasst wird. Anschließend folgt eine umfassende Konsultation bei einem ayurvedischen Arzt, einschließlich traditioneller ayurvedischer Diagnostik, Pulsuntersuchung und individueller ayurvedischer Behandlung online oder vor Ort. Entsprechend Ihrem Dosha und Ihrem Gesundheitszustand wird ein persönlicher Gesundheitsplan erstellt. Danach gehen Sie zu den Therapien über, darunter Panchakarma-Entgiftung sowie gezielte Behandlungen bei Beschwerden wie Arthritis, Diabetes, Stress und Hauterkrankungen. Die Behandlungen werden von erfahrenen Therapeuten mit therapeutischen Ölen und den exportfähigen ayurvedischen Produkten von Kairali durchgeführt. Nach der Behandlung erhalten Sie pflanzliche Präparate mit ausführlichen Anwendungshinweisen, und ein Nachsorgeplan wird vereinbart, um eine fortlaufende ayurvedische Betreuung sicherzustellen. Für mehr Komfort werden auch Online-Konsultationen bei einem ayurvedischen Arzt in Indien angeboten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness plan' rendered as 'Gesundheitsplan' (health plan) to keep the clinical register; 'stress relief' rendered as treatments for 'Stress'. Source has a stray comma in 'utilizing, therapeutic oils' — not carried over."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "batchId": "b-0414",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_8549e99f42b21dbea33b",
+   "sourceHash": "8549e99f42b21dbea33b3768a275b56880025b5e3ddcb092ea9869b76e1d38e1",
+   "text": "두 가지 원장(ledger) 작업은 이중 목적을 가지므로 이름이 아니라 효과에 따라 분류합니다. REPLACE_WRONG_EQUIPMENT_BREADCRUMB (1)은 히어로 경로(trail) 교체이므로, 경로 교체 항목은 REPLACE_GOVERNED_BREADCRUMB 단독의 24개가 아니라 총 25개입니다. RELATED_LINKS_GROUPS_OR_EMPTY_HEADING_OMITTED (15)는 빈 제목이 렌더링되지 않는 관련 링크 그룹 노드이므로, 관련 그룹 항목은 147개가 아니라 총 162개입니다. 따라서 의도적인 OMIT_* 제외 항목은 총 89개이며, 2개 항목은 다른 작업(제목 승격 1건과 잘못된 장비 제목 교체 1건)을 가집니다. 433 + 25 + 162 + 89 + 2 = 711.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/QA note; action codes kept verbatim."
+   ]
+  },
+  {
+   "id": "t_b43db53ea136dd89902f",
+   "sourceHash": "b43db53ea136dd89902f079159627554b2c7f211c5957632b79c6df0a6c1fae0",
+   "text": "항목 전체 STRONG, BR 3개 포함",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "js:enum unit translated as a display label; if this value is used as a code key it should stay in English."
+   ]
+  },
+  {
+   "id": "t_a3dd2fc874f4d87194eb",
+   "sourceHash": "a3dd2fc874f4d87194eb147512ba9798c590da4519b695f9c6bc50f7bfeca617",
+   "text": "선행 STRONG 구간",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "js:enum unit translated as a display label; if this value is used as a code key it should stay in English."
+   ]
+  },
+  {
+   "id": "t_fd74038cfce284c02a0b",
+   "sourceHash": "fd74038cfce284c02a0bb17ac4e98ccb67a2b0ccb3fbdd8048502dc1e755bf55",
+   "text": "원본의 STRONG 구간 두 개가 데이터 채우기 과정에서 누락되어 원장의 인라인 구간 증거를 바탕으로 복원했습니다. 하나는 원본 BR 3개를 포함해 4줄에 걸친 항목 전체 strong이고, 다른 하나는 정확한 후행 공백이 보존된 선행 strong 구간입니다. 의미 있는 BR 줄바꿈은 유지했으며, 빈 후행 BR은 새로 만들지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8bcecaeecc5d51139859",
+   "sourceHash": "8bcecaeecc5d511398591d2486546634910685de1e8e4637c8d6cad0e471b8f4",
+   "text": "픽셀, 원본 대체 텍스트(alt), 원래 비율, 정확한 개수, 권리 관련 메모 및 메타데이터는 변경하지 않았으며 위치만 변경했습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6016a6c1f51564d2ec26",
+   "sourceHash": "6016a6c1f51564d2ec26abb95b7184627bb70a9b51a69668d2e68775d8baec08",
+   "text": "원본 텍스트, URL 또는 비자 안내는 변경·축약·재작성하지 않았고, 어떤 링크도 활성화하지 않았으며, 잘리거나 숨겨진 내용도 없습니다. overflow-wrap은 추가 줄바꿈 위치만 선택합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22b7c38dbe29493721f4",
+   "sourceHash": "22b7c38dbe29493721f49d731768445e6aa33f8b17b3670f5fca27e9276ea631",
+   "text": "제목 블록이 일반 텍스트 트리로 구성되어, 제목 텍스트는 일치했지만 원래 브리프에서 요구한 제목 전체 STRONG 구간이 누락되었습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10411aa2c78a8804c39f",
+   "sourceHash": "10411aa2c78a8804c39fdb8d52baadd0a742b4ebb978d950955d98dd4a7bff96",
+   "text": "19개 노드와 본문 앵커 3개를 복원할 때 실질적인 문단 결함 4건에서 STRONG이 누락되었습니다. 해당 재구성이 일반 텍스트 트리로 작성되었기 때문입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a563765172f48d330ff",
+   "sourceHash": "6a563765172f48d330ff2a7a6ce7103e9fac8630210173afbaa0412781132e2c",
+   "text": "중복으로 중첩된 동일한 STRONG은 평탄화했습니다. BR은 하나도 생략하지 않았습니다. 이전에 빈 후행 BR로 처리했던 줄바꿈 하나는 원본 소스에서 의미가 있는 것으로 확인되어 복원했습니다. 서수 위첨자는 보존했습니다. 노드 전체 굵게 대체, 제목 중복, 새 문구, 수동 줄바꿈은 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1eaa40d3c8aa9c62019",
+   "sourceHash": "b1eaa40d3c8aa9c620194e222c2469fba683efe5171c2384ec20ec92a325c662",
+   "text": "밥, 채소, 커리가 함께 제공되는 채식 식사.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5babcaa385cf1bd25983",
+   "sourceHash": "5babcaa385cf1bd2598362db73c94cab2f2d3c9a24d5f7c521df78146dd892dc",
+   "text": "아유르베다 살펴보기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b357c75140b21ee9267e",
+   "sourceHash": "b357c75140b21ee9267e99e96e7cbd90839806cc97075e680a2624dc5db52682",
+   "text": "아유르베다 프로그램",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd8d79a3239b4cbd6370",
+   "sourceHash": "fd8d79a3239b4cbd6370c4df8f9862d7b448ef4a52cdddfceb89004ccfad92f9",
+   "text": "아유르베다 치료 중 두 명의 치료사 사이에 앉아 있는 환자.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e07ad489897aa4c2c37",
+   "sourceHash": "5e07ad489897aa4c2c37ab89513ecde1c93f91559d246068302480590c1381de",
+   "text": "매트 위에서 요가를 하는 여성.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3eca470a849508d92ca9",
+   "sourceHash": "3eca470a849508d92ca9378053018e5a89e8ac13ce81af69681b26167a329375",
+   "text": "아유르베다 제품",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dcaab2662a8680db59c",
+   "sourceHash": "3dcaab2662a8680db59c2e5e2ec337a14c7289a9afce536381d32aa3c6651759",
+   "text": "야외에 진열된 Kairali 제품들.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c9dd5736f94d731419f",
+   "sourceHash": "9c9dd5736f94d731419f4d076413bb2388ff2af55bde6dbdea6d495bb914035f",
+   "text": "family-04/LAKSHYA-RECOVERED-NATIVE-PROMPT.txt",
+   "status": "translated",
+   "unchangedReason": "File path; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_489d1ee17cce0b5577de",
+   "sourceHash": "489d1ee17cce0b5577de454ef261e016a11a0ec73cd962be279c79f557b1a8bc",
+   "text": "이전에 승인된 역사적 세부 사항 7건, historical-nine 기준선과 그 통합 수정, wrap/href/inline 수정, 의미 있는 줄바꿈 수정, 그리고 이전 데이터세트 136개는 모두 변경하지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4c6604104512a9934d0f",
+   "sourceHash": "4c6604104512a9934d0fbcdaf828537ae7f1c927c816276f4dfea76f8caf1371",
+   "text": "아카이브의 진본성은 정확한 SHA로만 기록됩니다. 현재의 의료, 조직 또는 마케팅 관련 검증은 주장하지 않습니다. 2016년 캡처 타임스탬프는 행사 날짜가 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297b1c745d394c1174cd",
+   "sourceHash": "297b1c745d394c1174cdfcd311e52003a497ffa94fa89116f01d81210c24eab2",
+   "text": "지난 리트리트 — 역사적 참고용으로 보존합니다. 행사 연도는 확인되지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c62df69c6a159cf1039",
+   "sourceHash": "1c62df69c6a159cf1039d79cfb3a8823086b899d07909411aa85398c456d8dcf",
+   "text": "이 섹션에서는 Ayurvedic Healing Village에서 진행되는 아유르베다 치료와 요가 운동으로 구성된 7일 리트리트를 소개합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8cdf0f53fcef7f91f28c",
+   "sourceHash": "8cdf0f53fcef7f91f28c39b9e81b43ddf86e98819c77e446512ca61a8d52e237",
+   "text": "문서화된 복구 수정 3건(title, description, openGraph.description)만 적용했습니다. 그 밖의 모든 원래 메타데이터 값과 자체 소스 소셜 매핑은 정상적인 최종 통합 전까지 보존됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab98b881193293f7a40b",
+   "sourceHash": "ab98b881193293f7a40bd0bf09c9f2b402980d6b901cb50dbd51c573ac6b66d5",
+   "text": "잘못된 원래 Animal Husbandry 값은 수정 근거와 함께 이곳에 비공개로 보관됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

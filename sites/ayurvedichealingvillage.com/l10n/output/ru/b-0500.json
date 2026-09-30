@@ -1,0 +1,231 @@
+{
+ "batchId": "b-0500",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_02e2982527007bb5f35c",
+   "sourceHash": "02e2982527007bb5f35c7e2fbfe344e5323a65c70e285a6412cfe78929bfb175",
+   "text": "Зона, свободная от курения, — для чистого воздуха и атмосферы без токсинов",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ca026df0017fc3e3a977",
+   "sourceHash": "ca026df0017fc3e3a977d1a176d94dd9b9095e77e48992174c3d2c478779fbfb",
+   "text": "Среда без кофеина — для естественной энергии и ясности ума",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'среда' (clinical register lock)."
+   ]
+  },
+  {
+   "id": "t_6f32de08f0a2f6f8bb29",
+   "sourceHash": "6f32de08f0a2f6f8bb29c6ba08c9609b39b24edf8bc30b089358517c766209ba",
+   "text": "Органическое вегетарианское питание — для поддержки здоровья и пищеварения",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Organic vegetarian retreat' rendered as 'органическое вегетарианское питание' (clinical register lock); 'optimal' omitted to avoid overstating."
+   ]
+  },
+  {
+   "id": "t_261631c12d1f3bba2277",
+   "sourceHash": "261631c12d1f3bba227724e5aea3b6cec68376ca0f14e4e28ba812be89a8190a",
+   "text": "Аюрведа в её самой чистой форме",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65d705a6493cc8b19099",
+   "sourceHash": "65d705a6493cc8b1909951308ac473dbba0e93c4c50be033c07672430ae18460",
+   "text": "Kairali приглашает вас приобщиться к аюрведическому образу жизни, который приносит пользу телу, разуму и душе. Освободитесь от токсинов, перезагрузите организм и откройте для себя истинную силу целостного исцеления в спокойной среде, свободной от алкоголя.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2083f7c01b313e333cb",
+   "sourceHash": "f2083f7c01b313e333cbfed41ebb5ef50cd18781cdcdc12fb44e3475ed05ed2b",
+   "text": "Аюрведа и исцеление в Kairali — лучший центр Кералы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'центр' (clinical register lock); 'Holistic' dropped to fit the 60-character limit."
+   ]
+  },
+  {
+   "id": "t_3deeeb467c00d953d1bc",
+   "sourceHash": "3deeeb467c00d953d1bc8f1d901ef0820641ea74f0a69063032ce585055b8105",
+   "text": "Подлинные аюрведические процедуры, Панчакарма, йога и медитация в Kairali – The Ayurvedic Healing Village, Керала. Запишитесь на программу уже сегодня.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Book your retreat' rendered as 'запишитесь на программу' (clinical register lock); 'Rejuvenate' condensed to fit 155-character limit."
+   ]
+  },
+  {
+   "id": "t_929c1d4299b91d8efc04",
+   "sourceHash": "929c1d4299b91d8efc045eb0ee79fdf5f77ab4e522baefb000f7099addc7caf3",
+   "text": "Аюрведа: наука целостного исцеления в Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_17923856cfb3ed766448",
+   "sourceHash": "17923856cfb3ed7664483b495d452617baf4608592fe057f458ea9808cb6c56e",
+   "text": "Откройте для себя истинную суть Аюрведы — сочетание проверенных временем процедур, природной мудрости и спокойного места для восстановления в окружении природы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Serene retreat' rendered as 'спокойное место для восстановления' (clinical register lock)."
+   ]
+  },
+  {
+   "id": "t_0939286ea82ed6371f0b",
+   "sourceHash": "0939286ea82ed6371f0beb1a0823e78b9b4ee62667b25b472124a03dca553524",
+   "text": "Если вы ищете лучший аюрведический центр в Керале, Kairali — идеальное место, чтобы восстановить равновесие, обновить тело, успокоить ум и поднять дух.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'центр' (clinical register lock)."
+   ]
+  },
+  {
+   "id": "t_92f897f294766dd2b61a",
+   "sourceHash": "92f897f294766dd2b61ab4cc574b241b2a8d290c85814dee2c0991016c4fcfa8",
+   "text": "Откройте для себя истинную суть Аюрведы — сочетание проверенных временем процедур, природной мудрости и спокойного места для восстановления в окружении природы. Если вы ищете лучший аюрведический центр в Керале, Kairali — идеальное место, чтобы восстановить равновесие, обновить тело, успокоить ум и поднять дух.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'место для восстановления' / 'центр' (clinical register lock); missing space after the first sentence in source added."
+   ]
+  },
+  {
+   "id": "t_999d334ffaa5bd61bac6",
+   "sourceHash": "999d334ffaa5bd61bac6ab2ea8fe4047ad5c6a99c3d9b671808aae20f4c7bcde",
+   "text": "Подлинная Аюрведа в Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b515a0af11605ce962f8",
+   "sourceHash": "b515a0af11605ce962f8d37a5af10137c65198da3ba82aa499d95e06cc08f43d",
+   "text": "Kairali – The Ayurvedic Healing Village —",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; brand name kept verbatim per proper-name rule."
+   ]
+  },
+  {
+   "id": "t_488b14ab88e26cb3d860",
+   "sourceHash": "488b14ab88e26cb3d86046e47db58782e551808de48d2e7d02b36d42b3720014",
+   "text": "лечебно-оздоровительный центр в Керале,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Health Retreat' rendered as 'лечебно-оздоровительный центр' (clinical register lock); fragment."
+   ]
+  },
+  {
+   "id": "t_92e72365cd8ac576b229",
+   "sourceHash": "92e72365cd8ac576b229f0cfed4d285a8c605682222983c782b89ff16ddd0247",
+   "text": "который предлагает сочетание традиционных аюрведических процедур, йоги и медитации. Центр способствует исцелению и благополучию благодаря:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'центр' (clinical register lock)."
+   ]
+  },
+  {
+   "id": "t_98d4ac3bc0c8c5c07429",
+   "sourceHash": "98d4ac3bc0c8c5c0742925b278707720f8046d593e879afde6fab853489558bf",
+   "text": "Kairali – The Ayurvedic Healing Village — лечебно-оздоровительный центр в Керале, который предлагает сочетание традиционных аюрведических процедур, йоги и медитации. Центр способствует исцелению и благополучию благодаря:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Health Retreat' / 'retreat' rendered as 'лечебно-оздоровительный центр' / 'центр' (clinical register lock)."
+   ]
+  },
+  {
+   "id": "t_a4057e374f868e24497b",
+   "sourceHash": "a4057e374f868e24497b7e77390b6c6216972cf1a58e357bfdfef1c3eed34321",
+   "text": "Индивидуальным аюрведическим консультациям",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to continue the preceding 'благодаря:' list lead-in."
+   ]
+  },
+  {
+   "id": "t_4cc9135196cef75c0ced",
+   "sourceHash": "4cc9135196cef75c0ced5411ee1dca147b99216a7cbbc884885020bb495f4b6b",
+   "text": "– наши опытные аюрведические врачи оценивают конституцию вашего организма (пракрити) и предлагают индивидуально подобранные средства.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3311bad4066b726283fe",
+   "sourceHash": "3311bad4066b726283fe01b85f01b6ddd9c2535143dad63f029506800fc2b1a9",
+   "text": "Индивидуальным аюрведическим консультациям – наши опытные аюрведические врачи оценивают конституцию вашего организма (пракрити) и предлагают индивидуально подобранные средства.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to continue the preceding 'благодаря:' list lead-in."
+   ]
+  },
+  {
+   "id": "t_4439e67e79a87bcd5d7e",
+   "sourceHash": "4439e67e79a87bcd5d7ed8f66bd98ea830be929fed51f943ee41b0b0b5b20bc7",
+   "text": "– наши процедуры, от детоксикации Панчакармы до специализированного лечения при стрессе, проблемах с кожей, болях в суставах и заболеваниях, связанных с образом жизни, направлены на укрепление общего здоровья.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_051ca070bc457191c1a3",
+   "sourceHash": "051ca070bc457191c1a31092271208c33fa568368eb92564476403b99cf80404",
+   "text": "Подлинным аюрведическим процедурам – наши процедуры, от детоксикации Панчакармы до специализированного лечения при стрессе, проблемах с кожей, болях в суставах и заболеваниях, связанных с образом жизни, направлены на укрепление общего здоровья.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to continue the preceding 'благодаря:' list lead-in."
+   ]
+  },
+  {
+   "id": "t_d5cb4596c39519bda118",
+   "sourceHash": "d5cb4596c39519bda118b761933ea2d7efe3b7e0bef44369dc99b8d52598a09f",
+   "text": "– мы сочетаем аюрведические процедуры с йогой, медитацией и рекомендациями по питанию, чтобы обеспечить комплексный процесс восстановления.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e6c3ae6a870421042e4",
+   "sourceHash": "4e6c3ae6a870421042e448653bcd4f72c44da8bd0676a0a682a350140b2d98d4",
+   "text": "Целостному подходу к здоровью – мы сочетаем аюрведические процедуры с йогой, медитацией и рекомендациями по питанию, чтобы обеспечить комплексный процесс восстановления.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to continue the preceding 'благодаря:' list lead-in."
+   ]
+  },
+  {
+   "id": "t_d78a6cb7962f5f73c0d1",
+   "sourceHash": "d78a6cb7962f5f73c0d1cfe47421d4b4debc5f17c341682cbb9a42a6e6e1e978",
+   "text": "Спокойной природной среде",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Dative case to continue the preceding 'благодаря:' list lead-in."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0315",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_e86f07bced017218d7fb",
+   "sourceHash": "e86f07bced017218d7fbdfa70841eb0e52c2c4a7fc81f3abbc9b2354d811fbcc",
+   "text": "Inbegrepen: De villa in de geboekte categorie, en alle overheidsbelastingen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b820d0c28277c55d172",
+   "sourceHash": "7b820d0c28277c55d17286d48cf66744a88b0758014819e2a5aebf6c15f84b0f",
+   "text": "Inbegrepen: Drie vegetarische of veganistische maaltijden per dag, volgens het dieetvoorschrift",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a296108b52f3ecaccacd",
+   "sourceHash": "a296108b52f3ecaccacd475608f4893604c0458bf282a6d607b67b88aad881d2",
+   "text": "Inbegrepen: Eén ayurvedische therapie per dag, inclusief kruidenstoombad waar geïndiceerd",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e9a870a20bbf3312145",
+   "sourceHash": "8e9a870a20bbf33121450405bf5fb734213f72d3ae4243b97fcb37ba485d564d",
+   "text": "Inbegrepen: Dagelijks consult en dagelijkse controle door de behandelend arts",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6dfb4e1147320b1db8db",
+   "sourceHash": "6dfb4e1147320b1db8db0a9bd42f348175044244dc51bf73c0746cb70abbda2a",
+   "text": "Inbegrepen: Elke dag een privé-yogasessie bij zonsopgang en een privésessie begeleide meditatie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_26ca395a6028f9da3872",
+   "sourceHash": "26ca395a6028f9da3872871303b54a8ca116d209e942170636839b345be14b66",
+   "text": "Inbegrepen: Wekelijkse workshop, kookdemonstratie en wandeling over de boerderij of door het dorp",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8782b597dfedf0254b5d",
+   "sourceHash": "8782b597dfedf0254b5d2d4ee88ea039ada4e6b1d23ed46ca3af3e117fb556bc",
+   "text": "Inbegrepen: Zwembad, bibliotheek, fitnessruimte en buitenvoorzieningen; mineraalwater, water met kruiden en thee of sap na elke sessie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0bc4b7dcd6856e1442cb",
+   "sourceHash": "0bc4b7dcd6856e1442cba8a9ae963764c8b46a14d5163ccbe993069709d96783",
+   "text": "Apart in rekening gebracht: Inwendige kruidengeneesmiddelen, laboratoriumonderzoek en specialistische therapieën, voorgeschreven naarmate de behandeling vordert",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be522ad6722270504268",
+   "sourceHash": "be522ad67222705042688149ae9a10e2e576c449ab3b855a3540f04f4e8b3aaa",
+   "text": "Apart in rekening gebracht: Extra voeding naast de voorgeschreven maaltijden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e25c95bbb942eae8d18",
+   "sourceHash": "9e25c95bbb942eae8d18af1f5dbec6aa80dd0d3ab28b0a75657a68ece8d0c5b8",
+   "text": "Apart in rekening gebracht: Wasservice, telefoon, internet en vervoer",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18cc6719e923e7253875",
+   "sourceHash": "18cc6719e923e7253875e9a7d4cd1447ec692cefadfba334cdc966a0f874d3af",
+   "text": "Apart in rekening gebracht: Vroege check-in en late check-out, indien toegestaan",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3e01260170ce8a25d35",
+   "sourceHash": "d3e01260170ce8a25d35f18e77d9df77b28f657ea69d5aa48ea329b0616584a8",
+   "text": "De kopteksten in rij 0 nemen de bronoverspanningen over: \"Villa Type\" beslaat 2 rijen, de lege broncel ernaast beslaat 6 rijen en \"Minimum Duration is 7 Nights\" beslaat 2 kolommen. Rijlabelkoppen in de hoofdtekstrijen gelden voor hun eigen rij. Alle relaties komen uit de bron; geen enkele is afgeleid.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Quoted source header labels (\"Villa Type\", \"Minimum Duration is 7 Nights\") kept verbatim in English because they reference the literal source cells."
+   ]
+  },
+  {
+   "id": "t_a8cd5c7590726e666a96",
+   "sourceHash": "a8cd5c7590726e666a964de200c681a2b2a98cc0a755f3e59fe21b4d5481214f",
+   "text": "De exacte brontabel van zes rijen met alle 17 cellen (inclusief de lege overspannende cel), de bronoverspanningen, inline nadruk, links en bedragen. Geen cel verzonnen en geen bedrag herschreven.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e97fb4a592ca5434f13",
+   "sourceHash": "5e97fb4a592ca5434f1332e6ec25b666063f0758ff9b6bbf422196d8f7f3f11b",
+   "text": "Categorienavigatie sluiten",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_735b78e40cf502abc6f4",
+   "sourceHash": "735b78e40cf502abc6f4e8821d84ad3b938f02e0bf138cf377b2e87df112dcf7",
+   "text": "Categorienavigatie openen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9178ac449d748ce1a55f",
+   "sourceHash": "9178ac449d748ce1a55f2ed5725a74e4364b95f9c9153c9f7eb55d83791649e6",
+   "text": "Er is geen geverifieerd verzendbewijs beschikbaar; leid geen succes af uit alleen de route, de query of de lokale interface.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1b336308f1e0b1242bed",
+   "sourceHash": "1b336308f1e0b1242bed7aebc5f2dba9d226fdfec839abb26e7ae3e56e0b4d73",
+   "text": "Terug naar de website",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_71c6b3604f25dfa7794b",
+   "sourceHash": "71c6b3604f25dfa7794be4d739a413101a91f8928fb302b87a611cdfa02ca9f7",
+   "text": "Deze pagina kan niet bevestigen of een bericht of boeking is verzonden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0aac9145249f1675ee0",
+   "sourceHash": "a0aac9145249f1675ee0380260d152d217a7abe140e85aad3871ec30da1c319b",
+   "text": "Naar de startpagina",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68808904c0631ffc302d",
+   "sourceHash": "68808904c0631ffc302d4d01c376d32ece9893c746618405b464b96b4f39f291",
+   "text": "Bedankposter: foto van de poort van Kairali, met de boodschap hieronder uitgeschreven",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6750e23c415548c8ec41",
+   "sourceHash": "6750e23c415548c8ec4198a86058ea8e6caf07665ffc31d2bd2e32f2dc2052ca",
+   "text": "Bericht ontvangen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e8dddaa6db5edc2757a",
+   "sourceHash": "7e8dddaa6db5edc2757a3153308b8f8c18c4006799abcad9e7096421b5510507",
+   "text": "Dank u — uw bericht is onderweg",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0813e6af50d762da6a86",
+   "sourceHash": "0813e6af50d762da6a86c0a300e95f63ca96388f39955d328f6677b9179a128e",
+   "text": "Een medewerker van ons patiëntenzorgteam antwoordt binnen werktijden. Dit is wat er nu gebeurt.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_df2f71819b5eefda42e1",
+   "sourceHash": "df2f71819b5eefda42e18610af86e7241993e2c91f25fb784671a19b5280500a",
+   "text": "Telefonisch bereikbaar · 8:00 AM – 9:00 PM IST, elke dag",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Times kept verbatim as in source (8:00 AM – 9:00 PM IST) per rule to keep every time unchanged."
+   ]
+  }
+ ]
+}

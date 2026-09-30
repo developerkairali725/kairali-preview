@@ -1,0 +1,95 @@
+{
+ "batchId": "b-0061",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_c02300c2fc0bb0242cfc",
+   "sourceHash": "c02300c2fc0bb0242cfcbf55a6f95a9e59ff0481bc83ec92daec16ed9d461a9a",
+   "text": "[[OPEN_1]]Inicio[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]Todos los programas[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]Yogaterapia para el bienestar digestivo y la salud intestinal[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bd20e04b217fd68bd36c",
+   "sourceHash": "bd20e04b217fd68bd36c22415a16e922d7c1f6bfe0c2d293b38b468bc1753e4a",
+   "text": "Agni Dipanam Yoga Chikitsa",
+   "status": "translated",
+   "unchangedReason": "Sanskrit programme name; kept unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_814e40325383372885fb",
+   "sourceHash": "814e40325383372885fbff21d29e3b5f16ac7c2b64e0b8256281224821988a5a",
+   "text": "Su intestino es la clave del bienestar. El programa de yoga para el bienestar digestivo de Kairali – The Ayurvedic Healing Village es un programa específico orientado a mejorar la salud intestinal, armonizar el fuego digestivo (Agni) y favorecer el bienestar general mediante una combinación holística de yogaterapia, tratamientos ayurvédicos y nutrición sáttvica. Esta terapia ayurvédica para la salud intestinal integra asanas cuidadosamente seleccionadas, pranayama y pranavmukthasna kriya para estimular los órganos digestivos, junto con recomendaciones alimentarias básicas para estimular el Agni (fuego digestivo), aliviar la hinchazón y favorecer la armonía intestinal. Cada sesión está dirigida por instructores expertos que se centran en la postura, la respiración y el movimiento consciente. Ideal para personas con problemas como acidez, estreñimiento, SII o digestión lenta, este programa ayurvédico holístico para los trastornos intestinales favorece la recuperación natural, un mejor metabolismo y el bienestar general. Adecuado para todos los niveles, es un camino suave pero eficaz hacia el equilibrio digestivo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'dedicated retreat' rendered as 'programa específico' per the clinical register."
+   ]
+  },
+  {
+   "id": "t_107ab7b31e6ce2cacc3c",
+   "sourceHash": "107ab7b31e6ce2cacc3c2b8d7ea8879c3da5e17bf5301a61c001a1c345e4282b",
+   "text": "Nuestro enfoque de la",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment that precedes 'Digestive Wellness & Gut Health Yoga Therapy' heading; feminine article chosen to agree with 'yogaterapia'."
+   ]
+  },
+  {
+   "id": "t_69907581b9bdea0eaa39",
+   "sourceHash": "69907581b9bdea0eaa39d3415cd0795e02352f2756f2adf7d4d7f692e0e6fc04",
+   "text": "Yogaterapia para el bienestar digestivo y [[OPEN_1]]la salud intestinal[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Word order changed for Spanish grammar; the highlighted span now covers 'la salud intestinal' instead of 'Gut Health Yoga Therapy'."
+   ]
+  },
+  {
+   "id": "t_14da1fc571dc92c4222e",
+   "sourceHash": "14da1fc571dc92c4222e3e3c9970ab81dc18b52d2c0ec09a978c493133c3bff8",
+   "text": "El programa de yoga y Ayurveda para la limpieza intestinal de Kairali combina el conocimiento ayurvédico tradicional con el yoga terapéutico para estimular y armonizar el Agni (fuego digestivo) y lograr una salud intestinal óptima. Dirigido por profesionales del bienestar expertos, el programa incluye asanas, pranayama y kriyas específicos que mejoran la digestión, eliminan toxinas y alivian problemas como la indigestión, la hinchazón y el estreñimiento. Las infusiones de hierbas, los platos sáttvicos y los consejos de estilo de vida favorecen el equilibrio interior. En un entorno natural y tranquilo, la experiencia resulta profundamente reparadora y restablece la armonía intestinal a través del movimiento, la respiración y una vida consciente. El tratamiento natural de Kairali para los trastornos digestivos garantiza una salud digestiva duradera, basada en la naturaleza, respaldada por la tradición y en armonía con el sistema de sanación innato del organismo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims the treatment 'guarantees enduring digestive health' — translated faithfully ('garantiza'), but this is a guarantee/efficacy claim on a KTAHV clinical page; recommend softening the English source and flag for Dr. Deepu John's clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_ffba6c7c9f3a3eb9d9f0",
+   "sourceHash": "ffba6c7c9f3a3eb9d9f06e55e52808b6509077876a739a28773a6e894c154783",
+   "text": "Proceso de la [[OPEN_1]]yogaterapia para el bienestar digestivo y la salud intestinal[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ad8389624916b4c65096",
+   "sourceHash": "ad8389624916b4c6509690324154adb5b9b36e42f95669e49f568086c4bd6a77",
+   "text": "La yogaterapia para el bienestar digestivo y la salud intestinal en Kairali – The Ayurvedic Healing Village incluye los siguientes pasos:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d64a5e970096e744822d",
+   "sourceHash": "d64a5e970096e744822d146982c6d24081f2ea61ce253b6be5b4fa3a71e1ed00",
+   "text": "¿[[OPEN_1]]Por qué[[CLOSE_1]] elegir este tratamiento?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b8fd47be3aaa449a16a8",
+   "sourceHash": "b8fd47be3aaa449a16a8d9b788e815056c6418e6534999b9408d4dc1a47254e3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Benefíciese de más de [[VAR_1]] años de experiencia con un equipo experimentado de médicos ayurvédicos. Nuestro enfoque holístico prioriza el bienestar y va más allá del control de los síntomas.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

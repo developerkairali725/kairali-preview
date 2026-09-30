@@ -141,3 +141,40 @@ test("personal entity gets banned-filler too (Abilash ruling 13 Jul 2026)", () =
   assert.ok(errs(cure).some((x) => x.rule === "cure-claims"));
   assert.ok(errs(cure).some((x) => x.rule === "locked-facts"));
 });
+
+// Vendored imported payload (owner ruling D-20260915-07, 2026-09-15).
+// A site may declare trees that a build tool copies in wholesale and overwrites
+// on every run. They are still scanned and still reported — at warning, so a
+// push is not blocked on bytes this repository does not author.
+
+test("vendored source reports every finding, at warning instead of error", () => {
+  const copy = "Enjoy a luxury spa holiday at our resort.";
+  const authored = lintText(copy, { entity: "ktahv" });
+  const vendored = lintText(copy, { entity: "ktahv", vendored: true });
+  assert.ok(errs(authored).length >= 4, "authored copy must still be merge-blocking");
+  assert.equal(errs(vendored).length, 0, "vendored copy must not block a push");
+  // Nothing is hidden: the same findings are present, only the severity moves.
+  assert.equal(vendored.length, authored.length);
+  assert.deepEqual(rules(vendored), rules(authored));
+});
+
+test("vendored does NOT soften a known-bad phone number", () => {
+  // A wrong number is dangerous wherever it appears, and unlike a word choice
+  // it is never a matter of register. Deliberately excluded from the downgrade.
+  const f = lintText("Call +91 92898 38777 today.", { entity: "ktahv", vendored: true });
+  assert.ok(errs(f).some((x) => x.rule === "locked-facts"), "known-bad number must still be an error");
+});
+
+test("hand-written files are unaffected by a site declaring vendored trees", () => {
+  const f = lintText("Write to wrong@kairali.com", { entity: "ktahv" });
+  assert.ok(errs(f).some((x) => x.rule === "locked-facts"));
+});
+
+test("permitted departmental mailbox passes; other local parts still fail", () => {
+  // Owner ruling D-20260915-06: career@ is correct on careers/apply routes.
+  const ok = lintText("Applications to career@kairali.com", { entity: "ktahv" });
+  assert.equal(errs(ok).filter((x) => x.rule === "locked-facts").length, 0);
+  // The doubled-letter legacy typo must still be caught.
+  const typo = lintText("Write to infoo@kairali.com", { entity: "ktahv" });
+  assert.ok(errs(typo).some((x) => x.rule === "locked-facts"));
+});

@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0594",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_6a5d28d69b8b05a62cae",
+   "sourceHash": "6a5d28d69b8b05a62caeaf6e6908402d26edf8fd2935e55ba687cbcf205ddc2f",
+   "text": "диабет",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fe81f9390ffe3dc8daa4",
+   "sourceHash": "fe81f9390ffe3dc8daa4888a7dc430ce4a41f164281d15449a24840a70b5f2c2",
+   "text": "цены",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3ad92be491a08c8f78a",
+   "sourceHash": "e3ad92be491a08c8f78a46b936737b95e64d6820e04ee4fea4d2fe55f28de36e",
+   "text": "Что вы ищете?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e25545bb0268d075a4a",
+   "sourceHash": "8e25545bb0268d075a4a0c8d871e8fd4cf0c8d4fd67e690371d0003b037bf31a",
+   "text": "Заболевание",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cf8380adf36820c2229a",
+   "sourceHash": "cf8380adf36820c2229a21812a636b79e066e1fa78a694f402a67d508b1aa0e3",
+   "text": "Цены и продолжительность",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6be7947e259ddaf71516",
+   "sourceHash": "6be7947e259ddaf71516cb65d19bed39d3a6f189405c3351197a323bde9a5bcb",
+   "text": "Где вы будете проживать",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dddc0ee0ee80b4359f06",
+   "sourceHash": "dddc0ee0ee80b4359f06a59140597e72c9d0855c4473426ff57dffa831032a9c",
+   "text": "Узнать об Аюрведе",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_febe0107b514b23054e7",
+   "sourceHash": "febe0107b514b23054e7a3c4c271ff4dc003b8a0d61d2f7d27940b3533bda094",
+   "text": "Поговорить с врачом",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4d92811b8b469183027",
+   "sourceHash": "a4d92811b8b469183027c7b74f17f85fb923a4d84adc12b7945871afb356da5b",
+   "text": "Часто ищут:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9a72221a27476f3e9077",
+   "sourceHash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+   "text": "Вопросы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9046da16aea909ba75a3",
+   "sourceHash": "9046da16aea909ba75a36cec13b56cb2144dc2ede45cde361e99a8d79802eabf",
+   "text": "Страницы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5dc0c2bcbf791208fc3a",
+   "sourceHash": "5dc0c2bcbf791208fc3ae36f491fe1b14e99793ee556cafd8a21b0ccec2519ea",
+   "text": "Показать все ({n})",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c20b29e176426df6b53d",
+   "sourceHash": "c20b29e176426df6b53de4dd6cfa2d4a4a7f73632ded63da48e5db64bf074928",
+   "text": "Показаны результаты по запросу «{corrected}» — вы ввели «{typed}»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8789e7cff1849d77cd4c",
+   "sourceHash": "8789e7cff1849d77cd4caa34bb09fb848c54376fb2deae6aaf89ae34839b0cbb",
+   "text": "искать «{typed}»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_79f023b6989d75621fb8",
+   "sourceHash": "79f023b6989d75621fb8b04ab324b7de21095e15c6091edb171303a8e7237d93",
+   "text": "Возможно, вы имели в виду:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0ab0362c836613a7e4a",
+   "sourceHash": "f0ab0362c836613a7e4a524ae331ed3b24e3db324aaf7cb84902450839ad2061",
+   "text": "Результаты по запросу «{q}»: {n}",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Reworded to avoid Russian plural agreement with the {n} variable."
+   ]
+  },
+  {
+   "id": "t_38aa76ecb23dd91c4efa",
+   "sourceHash": "38aa76ecb23dd91c4efa25cf214e5a5dcf2d0b471a0e3c7edfa4cc546070864d",
+   "text": "1 результат по запросу «{q}»",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_036ff4ea4d745f7f9d75",
+   "sourceHash": "036ff4ea4d745f7f9d7551e278958762f483f444488082ff788aee95a03617f4",
+   "text": "Нет страниц, соответствующих запросу «{q}». Попробуйте указать заболевание (боль в спине, псориаз), место (аэропорт) или вопрос (виза).",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43f0fe68a2a2b6ee6733",
+   "sourceHash": "43f0fe68a2a2b6ee6733d457b351ebd13765820180218b70942a3dbdaa66c21b",
+   "text": "Не уверены? Наши врачи определят, что подходит именно вам, на консультации.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_282e6b067a34075c5180",
+   "sourceHash": "282e6b067a34075c5180065d8d7a634766773b39e9850dc8fcc30dbf6cc2bacc",
+   "text": "Спросите Priya в WhatsApp",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be665ece181a16f091ea",
+   "sourceHash": "be665ece181a16f091ea565f6740ba51d6c51e778ad872536e6a29bbdf84292b",
+   "text": "Если это началось совсем недавно, пожалуйста, поговорите с человеком, а не с окном поиска: позвоните по номеру +91 9555 156 156 или, если состояние тяжёлое, в местную службу экстренной помощи. Kairali — аюрведическая больница с аккредитацией NABH, а не служба экстренной помощи.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_24303a6330beb154ff82",
+   "sourceHash": "24303a6330beb154ff82c6dcccb2b14ae55ef9358b93db9cb844356b3aa8e536",
+   "text": "Мы не лечим это. Мы не лечим ВИЧ или СПИД, активные инфекционные заболевания, а также сам рак. Поддерживающий уход параллельно с лечением, которое вы получаете в другом месте, — это другой вопрос: аюрведический врач сможет оценить ваш случай на консультации.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2eee14e895a326519ec6",
+   "sourceHash": "2eee14e895a326519ec6a2a7f7d755f0f167f6e4faad8a8fd456532a861cdd2f",
+   "text": "Мы предпочли бы обсудить это с вами, а не направлять вас к программе. Расскажите нам своими словами, и аюрведический врач определит, что вам подходит.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_131aa13078c1a3aba9b9",
+   "sourceHash": "131aa13078c1a3aba9b9276b45fa6a20c6c38d985ae71f6357504106bbdd7ef8",
+   "text": "Вам может подходить более одной программы. Если вас беспокоит сразу несколько проблем, обычно лучше всего начать с Персонализированной программы.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c664ccfdc07d1154f60d",
+   "sourceHash": "c664ccfdc07d1154f60dd4c61a9f0ca890385a463cd9dacf85d01697535c7419",
+   "text": "Ищете {label}?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

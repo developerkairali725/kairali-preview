@@ -1,0 +1,44 @@
+{
+ "entries": [
+  {
+   "id": "TYPO-unique-features",
+   "row": "CAMPAIGNS",
+   "files": [
+    "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json",
+    "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json"
+   ],
+   "old": ">Unique Feautures<",
+   "new": ">Unique Features<",
+   "count": 1,
+   "authority": "lane E-CAMP-04 typo (no meaning change)"
+  },
+  {
+   "id": "TYPO-why-choose",
+   "row": "CAMPAIGNS",
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "\"h3\":\"Why Chose Us?\"",
+   "new": "\"h3\":\"Why Choose Us?\"",
+   "count": 1,
+   "authority": "lane E-CAMP-04 typo (no meaning change)"
+  },
+  {
+   "id": "TYPO-trusted-by",
+   "row": "CAMPAIGNS",
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "\"h3Mobile\":\"Trusted ByPeople Worldwide\"",
+   "new": "\"h3Mobile\":\"Trusted By People Worldwide\"",
+   "count": 1,
+   "authority": "lane E-CAMP-04 typo (no meaning change)"
+  },
+  {
+   "id": "TYPO-deluxe-villa",
+   "row": "CAMPAIGNS",
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "\"name\":\"Delux villa\"",
+   "new": "\"name\":\"Deluxe Villa\"",
+   "count": 1,
+   "authority": "lane E-CAMP-04 typo (no meaning change)"
+  }
+ ],
+ "note": "29 Sep: TYPO-features-tab dropped — the Feautures panel heading no longer exists (removed with the campaign-claims plan); the remaining occurrence is a provenance note."
+}

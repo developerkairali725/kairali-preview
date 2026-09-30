@@ -1,0 +1,406 @@
+/* Shared styles for the /lp/ landing pages.
+   Source of truth: the staging stylesheet (…_files/7cc7dba04a759eb6.css),
+   final overrides included. Only the agreed corrections are applied:
+   palette mapping (see app/globals.css), Cormorant Garamond / Jost,
+   19px body copy, 16px minimum for captions, 54px+ tap targets,
+   no upscaled images. */
+
+/* ── Hero (.lp-hero) ─────────────────────────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  width: var(--container-w);
+  margin-inline: auto;
+  column-gap: 40px;
+  align-items: start; /* two-column blocks share one top line */
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.heroCopy {
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 18px;
+}
+.heroCopy p {
+  margin: 0;
+}
+
+.heroOverline {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 4.4vw, 60px);
+  font-weight: 500;
+  max-width: 24ch;
+  color: var(--ink);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--green-mid);
+}
+
+.heroSub {
+  font-size: var(--text);
+  max-width: 52ch;
+  color: var(--muted);
+}
+
+.ctaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+.ctaPhone {
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+.ctaPhone a {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.docChip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.docChip img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line-ink);
+}
+.docChip b {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+.docChip span {
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+
+.creds {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+  border-top: 1px solid var(--line-ink);
+  max-width: 680px;
+}
+.cred {
+  flex: 1 1 40%;
+  padding-top: 12px;
+}
+.cred b {
+  display: block;
+  font-weight: 500;
+  font-size: var(--text);
+}
+.cred span {
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+.nabhChip {
+  display: inline-block;
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  padding: 0 8px;
+}
+
+.heroVisual {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* the photo's right edge on the container edge */
+  padding: 36px 0;
+}
+
+/* Frame keeps staging's 4:5 crop; max width is set inline so the image is
+   never drawn larger than its own pixels. */
+.photo {
+  position: relative;
+  width: 100%;
+  max-width: var(--photo-max-desktop, 520px);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--green-deep);
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.photo figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 56px 20px 16px;
+  /* one hue only: transparent → green-deep */
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--green-deep) 88%, transparent) 70%);
+  color: var(--cream);
+}
+.photo figcaption b {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+.photo figcaption span {
+  font-size: var(--text-small);
+}
+
+/* ── Sections (.lp-section / .alt / .proof-band) ─────────────────────────── */
+.section {
+  padding: 56px 0;
+}
+.alt {
+  background: var(--sand);
+}
+.proof {
+  background: var(--green);
+  color: var(--cream);
+}
+.proof h2,
+.proof :global(.overline) {
+  color: var(--cream);
+}
+
+.section h2 {
+  font-size: clamp(32px, 3.6vw, 46px);
+  margin-bottom: 14px;
+  max-width: 34ch;
+}
+
+.lead {
+  max-width: 62ch;
+  font-size: var(--text);
+}
+
+/* ── Step cards (.step-grid / .step-card) ────────────────────────────────── */
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+}
+.stepCard {
+  background: var(--cream);
+  border: 1px solid var(--line-ink);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.stepCard h3 {
+  font-size: 1.75rem;
+  margin: 6px 0 8px;
+}
+.stepCard p {
+  margin: 0;
+}
+/* offers index: the card title is a link to the offer (44px tap target) */
+.section .offerTitle {
+  font-size: 1.75rem;
+  margin: 0 0 8px;
+}
+.offerTitle a {
+  display: inline-block;
+  min-height: 44px;
+  padding-block: 4px;
+  color: var(--green);
+}
+.k {
+  font-weight: 500;
+  font-size: var(--text-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+}
+
+/* ── Photo band (.photo-band) ────────────────────────────────────────────── */
+.photoBand {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+.photoBand img {
+  width: 100%;
+  /* fills its cell at the band's height (inline), cover-cropped */
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+/* ── Proof list (.proof-list / .proof-item) ──────────────────────────────── */
+.proofList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proofItem {
+  border-top: 1px solid var(--line-cream);
+  padding-top: 14px;
+}
+.proofItem b {
+  display: block;
+  font-weight: 500;
+}
+.proofItem span {
+  font-size: var(--text-small);
+  color: var(--cream-soft);
+}
+
+/* ── Physician row (.physician-row) ──────────────────────────────────────── */
+.physicianRow {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 26px 0 18px;
+  flex-wrap: wrap;
+}
+.physicianRow img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line-ink);
+}
+.physicianRow b {
+  display: block;
+  font-weight: 500;
+}
+.physicianRow span {
+  font-size: var(--text-small);
+  color: var(--green);
+}
+.physicianNote {
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* ── FAQ (.faq) ──────────────────────────────────────────────────────────── */
+.faq {
+  margin-top: 26px;
+  max-width: 760px;
+}
+.faq details {
+  border-top: 1px solid var(--line-ink);
+}
+.faq details:last-child {
+  border-bottom: 1px solid var(--line-ink);
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--tap);
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: var(--text);
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+/* Staging's disclosure triangle, kept visible with the 54px row. */
+.faq summary::before {
+  content: "▸";
+  flex: none;
+  color: var(--green-mid);
+  transition: transform 0.15s ease;
+}
+.faq details[open] summary::before {
+  transform: rotate(90deg);
+}
+.faq p {
+  margin: 0 0 16px;
+  max-width: 68ch;
+}
+
+/* ── Video (.video-embed / .video-note) ──────────────────────────────────── */
+.video {
+  margin-top: 26px;
+  aspect-ratio: 16 / 9;
+  max-width: 760px;
+}
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+.videoNote {
+  margin-top: 12px;
+  font-size: var(--text-small);
+  color: var(--muted);
+  max-width: 68ch;
+}
+
+/* ── Enquiry block (.form-wrap / .form-aside) ────────────────────────────── */
+.formWrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 44px;
+  margin-top: 30px;
+  align-items: start;
+}
+.formAside p {
+  max-width: 48ch;
+}
+
+/* ── Phones (staging breakpoint 900px) ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .heroCopy {
+    padding: 22px 0;
+    gap: 16px;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .ctaCol {
+    align-items: stretch;
+  }
+  .heroVisual {
+    padding: 0 0 28px;
+    justify-content: flex-start;
+  }
+  .photo {
+    aspect-ratio: 16 / 10;
+    max-width: none; /* full column width on every phone */
+    width: 100%;
+  }
+  .section {
+    padding: 40px 0;
+  }
+  .stepGrid,
+  .formWrap {
+    grid-template-columns: 1fr;
+  }
+  .photoBand {
+    grid-template-columns: 1fr;
+  }
+}

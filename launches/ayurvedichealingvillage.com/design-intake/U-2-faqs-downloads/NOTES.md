@@ -1,0 +1,67 @@
+# U-2 `/faqs-downloads/` — Claude Design output, its own comments, verbatim
+
+**Generated 2026-09-22 IST** · sheet item 11, one-off 2 of 5 · standing brief (message 1,
+confirmed) → sheet block (message 2, verbatim). Not interrupted. Desktop AND mobile in one pass.
+**Files (4):** `AHV Page FAQs and Downloads Desktop.dc.html`, `…Mobile.dc.html`, a FAQ data file,
+`notes/faqs-downloads-page.md`. It extracted the full FAQ content from the project record into a
+clean data file before designing, and read the How-To-Reach page for consistency.
+
+## Its closing comment — verbatim
+
+> What it is — 44 questions in 12 groups, answers verbatim from the record. Finding one question
+> fast is handled three ways: a sticky filter bar (type "visa", matching questions auto-open,
+> groups with no hit disappear, live count announces the result), a sticky topic rail on desktop /
+> a 12-tile jump grid on mobile, and native collapsed accordions so the whole page is one screen of
+> group headings.
+>
+> Downloads — the source record has no attached files and says explicitly not to invent them from
+> the page title. The shelf is built as three wired slots carrying [TO CONFIRM] title, type, size
+> and date. That is the one thing blocking sign-off.
+>
+> Content-extremes note — the layout holds from about 3 groups upward; below that the desktop
+> topic rail is taller than its column and looks stranded (collapse it to an inline chip row under
+> ~4 groups), and a single group with more than roughly 25 questions makes the rail's sticky column
+> shorter than the scroll it governs, which is cosmetic rather than broken.
+
+## What that means for apply
+- The sheet's test ("one specific question by eye in under ten seconds, on a phone") is answered
+  three ways — filter, jump grid, collapsed accordions.
+- **Downloads shelf:** the tool refused to invent files — correct. The real PDFs exist in the site
+  repo at `public/ahv/assets/doc/` (three price lists, `healing-secrets.pdf`, one more) and are
+  wired into the three slots at apply with their true title / type / size / date.
+- Answers are verbatim from the record — no clinical copy was written. Any `[TO CONFIRM]` in the
+  answers is inherited from the record, not introduced.
+- Strain limits (≥3 groups, ≤25 per group) are both comfortably met by the live page (12 groups).
+
+## Its own self-check — completed, no fixes needed
+
+Check ran to completion, uninterrupted, nothing to fix. **U-2 is complete: desktop + mobile + check.**
+
+## Register flag in SOURCE copy — seen in the rendered design (2026-09-22)
+
+The page's verbatim intro (from the record, not written by the design) reads:
+> "Namaste and welcome to Healing Village's comprehensive FAQ page. We've organized these
+> questions to help you navigate your wellness **journey** with ease. If you don't find what you're
+> looking for, please contact our **guest** relations team."
+
+"journey" and "guest" are both on the KTAHV ban list. The design ports source copy verbatim, so
+this ships unless the intro is rewritten at apply → QUESTIONS.md `Q-AHV-FAQ-INTRO-BANNED-WORDS`.
+The 44 answers are also verbatim from the record — run `banned-string-lint` over the data file at
+apply before wiring.
+
+## Export status
+Project-archive export failed twice ("ZIP download failed — please try again" toast) — the archive
+is now >1.2 GB. Files not yet downloaded; retrying, with per-file Standalone export as fallback.
+
+## Export — FAILED four times (2026-09-22, ~01:00–01:20 IST); files remain in the project
+
+"ZIP download failed — please try again" on three Project-archive attempts and one Standalone
+attempt. The archive is >1.2 GB (the project bundles the whole photo library) and has grown with
+every session; earlier exports (T17, T12, T3, T2, T18, U-1) succeeded at 1.2 GB, so this is a
+size/timeout threshold, not a design fault. The two U-2 files, its data file and its notes are
+intact in the Claude Design project (`AHV Page FAQs and Downloads Desktop/Mobile.dc.html`,
+`notes/faqs-downloads-page.md`). **Not lost; not yet on disk.** Its comments are verbatim above.
+
+Retry plan: one archive export after all remaining sessions (12–18) finish, or the owner exports
+from the app; if it still fails, prune the photo library from the project (the images are already
+in the site repo) and export again.

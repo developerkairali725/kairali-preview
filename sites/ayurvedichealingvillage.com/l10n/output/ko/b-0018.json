@@ -1,0 +1,193 @@
+{
+ "batchId": "b-0018",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_7793027b3e228e1e936e",
+   "sourceHash": "7793027b3e228e1e936e5cc8ec09e22fe46155a9ccb4a71e74fe45376cb22814",
+   "text": "Kairali - The Ayurvedic Healing Village의 위치가 표시된 팔라카드 지역 지도",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c4e1bef9c9b2eeac422f",
+   "sourceHash": "c4e1bef9c9b2eeac422faf20cb8cec9e0bb250442de89cd2eccfb6ff76bb701e",
+   "text": "안내 데스크, 아유르베다 병원, 요가 센터, 명상 홀, 빌라, 약초 정원 및 기타 시설에 번호를 매겨 표시한 부지 조감 일러스트 지도",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_624b1dbf9f7cfe6e38e6",
+   "sourceHash": "624b1dbf9f7cfe6e38e6b20c5163d538ba6567147a25165f25bfaa312f7ae4b2",
+   "text": "translateX(-50%)",
+   "status": "translated",
+   "unchangedReason": "CSS transform value; code, not language.",
+   "issues": []
+  },
+  {
+   "id": "t_381ea32913f886edd694",
+   "sourceHash": "381ea32913f886edd694cbe75c97b7e129e99b4062cb8329c7a8921de6f4a596",
+   "text": "[[OPEN_1]]홈[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]소식 및 지난 행사[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]지난 리트리트[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]아쉬탕가 요가 & 아유르베다 리트리트[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c3bd9030bc7beac55bf1",
+   "sourceHash": "c3bd9030bc7beac55bf1ebb1b5d2620bb309ac4ce1c92c9f0e149c4d7b47bb94",
+   "text": "아쉬탕가 요가 & 아유르베다 리트리트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_393bf7a08f37e73e4f1c",
+   "sourceHash": "393bf7a08f37e73e4f1ca77be39064cdcd39fafa589791bdc0016d67d9dca913",
+   "text": "이 리트리트는 이미 종료되었습니다. 아래의 기존 설명, 프로그램 및 포함 사항은 기록 보존용으로 남겨 둔 것이며 현재 제공되는 상품이 아닙니다. 이 리트리트의 현재 일정이나 예약은 없습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee10fbcef1c5665d403f",
+   "sourceHash": "ee10fbcef1c5665d403f3b4515d9a880df1a14ac8b98234bc1ad7f9817884728",
+   "text": "아쉬탕가 요가 & 아유르베다 리트리트 | 인도의 프리미엄 웰니스 리트리트",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Luxury' rendered as '프리미엄' (premium) per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_f509c53a09b8228638e8",
+   "sourceHash": "f509c53a09b8228638e8ac4bc2074d8299149f186ed68d6567c0807a3305bb10",
+   "text": "약초 파우더를 사용한 아유르베다 치료",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04cb4654c9b149e59e49",
+   "sourceHash": "04cb4654c9b149e59e49ca3814bbed06b6cc04ab90f5c03edf06bc2b530d2f00",
+   "text": "잔디밭에서 전굴 자세를 하는 요가",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32a4184d123450821f87",
+   "sourceHash": "32a4184d123450821f87f599f8d5617165c03f0ba434cdf6a11e43bcbb9302ef",
+   "text": "즐길 거리의 다른 항목",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e1fb1dc209d215ae5d92",
+   "sourceHash": "e1fb1dc209d215ae5d920a378cb115fc920b8c384d6e75e5577a420b0ad3b590",
+   "text": "[[OPEN_1]]홈[[CLOSE_1]][[OPEN_2]]/[[CLOSE_2]][[OPEN_3]]저희 소개[[CLOSE_3]][[OPEN_4]]/[[CLOSE_4]][[OPEN_5]]수상 및 인증[[CLOSE_5]][[OPEN_6]]/[[CLOSE_6]][[OPEN_7]]수상 및 표창[[CLOSE_7]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_98474c69f1de2b7e4b62",
+   "sourceHash": "98474c69f1de2b7e4b6260c7aeb5863ae8abd2b0ab485a739f527b5857f41eef",
+   "text": "수상 연혁",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9224c00814edabfb7e2d",
+   "sourceHash": "9224c00814edabfb7e2dd4a3461d05da5749c5d5a5fd74b836ee390ab6c7f1c7",
+   "text": "수상 및 표창",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0919aa4c8f8c8427ad41",
+   "sourceHash": "0919aa4c8f8c8427ad41cc5db179c35365d6b2692a9d0dad00bff560ec2693fa",
+   "text": "The Ayurvedic Healing Village를 포함한 Kairali 그룹 전반의 수상 및 인정 내역입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_26a5b3234ab3c841715f",
+   "sourceHash": "26a5b3234ab3c841715fdfde91a904adff438a7eb12ac0f031c6274c66b25b62",
+   "text": "[[OPEN_1]]수상 및 인정[[CLOSE_1]] [[OPEN_2]]Kairali 그룹[[CLOSE_2]] [[OPEN_3]]Kairali 소개[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e2a7276a6945a829ca0",
+   "sourceHash": "7e2a7276a6945a829ca036dd85773edc35176222e810007bdd7c3355b7f46f25",
+   "text": "수상 및 인정",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d8cc5920eddbc721bfea",
+   "sourceHash": "d8cc5920eddbc721bfeafa1e386d219684b426fae2cc7fd83a2cf5719b492df8",
+   "text": "여러 해에 걸친 수상 내역, 언론 소개 및 인증서 모음입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88f0ccfa6fa0a69cfce5",
+   "sourceHash": "88f0ccfa6fa0a69cfce54c882c01ef70e8b51236907c2ed69b07b62f47632c34",
+   "text": "이미지 보기[[OPEN_1]]→[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_952fef1f13654d9d3ff0",
+   "sourceHash": "952fef1f13654d9d3ff07c7318964685e7de5ef0fce57c2db2cd87320fc2d42e",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]PATWA 수상 이야기 읽기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_347ade753fd891353f9d",
+   "sourceHash": "347ade753fd891353f9d47fe8383f9178a11143d8b0e88ddf0afab4d31d334f2",
+   "text": "Kairali 그룹",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb74b9f4d09d7ed2bc36",
+   "sourceHash": "fb74b9f4d09d7ed2bc36377c93728baffdf3c61ec83028083959d927b5ff8bbb",
+   "text": "Kairali 소개",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_421cd9e6f72ba69aeb53",
+   "sourceHash": "421cd9e6f72ba69aeb537133f93ecf9cf6d2c68b656e1c4c17dcb51bf65a3cee",
+   "text": "이미지 닫기[[OPEN_1]]✕[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e3943fe8d3e5149af116",
+   "sourceHash": "e3943fe8d3e5149af11644992833d8c603dbe760982d3ab10009eab2bdb256a0",
+   "text": "[[OPEN_1]]←[[CLOSE_1]]이전 이미지",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

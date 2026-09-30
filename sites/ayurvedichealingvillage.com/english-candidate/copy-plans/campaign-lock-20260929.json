@@ -1,0 +1,31 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "CAMPAIGNS / HOSPITAL-COPY",
+ "note": "Residual KTAHV-lock words and a stay 'guarantee' in campaign body copy found by tools/hosted-campaign-check.mjs on dpl_8vBKieUsGJEqVyTF6TCdG53vRvDA.",
+ "entries": [
+  {
+   "id": "CAMP-villa-guarantee",
+   "auto": true,
+   "old": "Classic Villa's well-thought-out amenities guarantee a memorable stay.",
+   "new": "Classic Villa's well-thought-out amenities are designed for a comfortable stay.",
+   "min": 1,
+   "authority": "KTAHV language lock (CLAUDE.md: banned 'guests'/'journey' in KTAHV body copy) + no guarantees; hosted campaign check round 14. Award titles, testimonial quotes and third-party captions left verbatim."
+  },
+  {
+   "id": "CAMP-wellness-journey",
+   "auto": true,
+   "old": "to enhance your wellness journey.",
+   "new": "to support your wellbeing.",
+   "min": 1,
+   "authority": "KTAHV language lock (CLAUDE.md: banned 'guests'/'journey' in KTAHV body copy) + no guarantees; hosted campaign check round 14. Award titles, testimonial quotes and third-party captions left verbatim."
+  },
+  {
+   "id": "CAMP-treating-guests",
+   "auto": true,
+   "old": "and treating guests from all over the world",
+   "new": "and treating patients from all over the world",
+   "min": 1,
+   "authority": "KTAHV language lock (CLAUDE.md: banned 'guests'/'journey' in KTAHV body copy) + no guarantees; hosted campaign check round 14. Award titles, testimonial quotes and third-party captions left verbatim."
+  }
+ ]
+}

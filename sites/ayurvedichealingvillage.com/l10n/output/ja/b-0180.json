@@ -1,0 +1,179 @@
+{
+ "batchId": "b-0180",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_0ad15b75bcd0f5d9e904",
+   "sourceHash": "0ad15b75bcd0f5d9e904fbdf3ea1beb75397fa83690d9ad4db842c03bea3c87a",
+   "text": "ムッカリから先は徒歩",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80238a8abbcd0f75a126",
+   "sourceHash": "80238a8abbcd0f75a12641c66b7894df8f33d173edf676af4db9160b8cf95f82",
+   "text": "グルヴァユール",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Place name transliterated into katakana."
+   ]
+  },
+  {
+   "id": "t_f5fe20c999278a863cde",
+   "sourceHash": "f5fe20c999278a863cdeb59e1a05ef7cb6666efbc6d6951d9b321bff276956f3",
+   "text": "100 km",
+   "status": "translated",
+   "unchangedReason": "Distance value is language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_1781ca3bb30facc2e691",
+   "sourceHash": "1781ca3bb30facc2e6913c0be6d5c50ff730c08a6edd9207eaffc0b70df2b0b2",
+   "text": "グルヴァユールはケーララ州で最も重要な巡礼地の一つとされ、「南のドワーラカ」として知られています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c44864e96a5622ac47f3",
+   "sourceHash": "c44864e96a5622ac47f3392cffabae27981f0dff7c98f35cdbb9998945a662f1",
+   "text": "トゥラーバーラムの奉納",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b0fde0f40317461d8198",
+   "sourceHash": "b0fde0f40317461d8198b3b654724bb496f0c959317157b3ce60e022e3f861f7",
+   "text": "年に一度の祭礼",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2476b864b9c19e177cc4",
+   "sourceHash": "2476b864b9c19e177cc4d5daf524ab4f118e01a565aca75bacbf961a9c96c4ca",
+   "text": "パランビクラム野生生物保護区",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Proper name transliterated into katakana."
+   ]
+  },
+  {
+   "id": "t_297bc9caedf9474a4cb3",
+   "sourceHash": "297bc9caedf9474a4cb389aa7fd2330182a31d5defd26ceaa90c204749a5dfbf",
+   "text": "パランビクラム野生生物保護区は、チットゥール郡にある391平方キロメートルの保護区域で、アナイマライ丘陵とネリヤンパシー丘陵にまたがっています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5992efb65bfbfba5d8dc",
+   "sourceHash": "5992efb65bfbfba5d8dc0f5fd68dcf4f5f06787558d4915e05206d5a69f7d106",
+   "text": "野生動物",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c88ae27eb2676ec64619",
+   "sourceHash": "c88ae27eb2676ec646194eedcdde13118a8ca7464394378eb90b1fb717d7e544",
+   "text": "チークとローズウッドの森",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a48fcb713243b3d460ca",
+   "sourceHash": "a48fcb713243b3d460ca7f05e4e4e5ef1cd4d8ce4981ce20cdd3e98a39d4fd38",
+   "text": "か所",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment following a number (e.g. '12 places' → '12か所')."
+   ]
+  },
+  {
+   "id": "t_f74a71128cfb2aadb7ee",
+   "sourceHash": "f74a71128cfb2aadb7eebdca9faa39efe3c91afb471471a1d35d31731d79d313",
+   "text": "か所（公開ページでの掲載順）。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment following a number."
+   ]
+  },
+  {
+   "id": "t_246dcd81a3323d39dbfe",
+   "sourceHash": "246dcd81a3323d39dbfe3ff9ca4a7ca32dde6c5bd942cee666a58d5575d92ba6",
+   "text": "公開ページには距離が記載されていないため、[TO CONFIRM] と表示しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment; fact chip kept verbatim."
+   ]
+  },
+  {
+   "id": "t_3f4d891f7b02bc84e4d9",
+   "sourceHash": "3f4d891f7b02bc84e4d9d6cc65e7ee471f95cb21cbcecdca8444a52fe51b6bc9",
+   "text": "[[OPEN_1]]ホーム[[CLOSE_1]] [[OPEN_2]]/[[CLOSE_2]] [[OPEN_3]]周辺の過ごし方[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92b81c6096dc758e13ca",
+   "sourceHash": "92b81c6096dc758e13caf07c0b106e4e9c56c5f6e93103b5d0006d67896f53bc",
+   "text": "その他の距離",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5cce882d57a24cf0236d",
+   "sourceHash": "5cce882d57a24cf0236dc7d184913091597de543a54fd04e32e6028a78c5ba4e",
+   "text": "その他の距離区分",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a14512a20945b6be4530",
+   "sourceHash": "a14512a20945b6be4530d74b6751e7b7efcc338efde4d06d90e3b0db7c19282f",
+   "text": "[[OPEN_1]]ホーム[[CLOSE_1]] [[OPEN_2]]•[[CLOSE_2]] [[OPEN_3]]研修コース[[CLOSE_3]] [[OPEN_4]]•[[CLOSE_4]] [[OPEN_5]]研修コースの料金[[CLOSE_5]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3e09545cafa2f04431b8",
+   "sourceHash": "3e09545cafa2f04431b8d10737a968343800f4a04426aefd24fa3b2029d07732",
+   "text": "研修コースの料金",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f528c30710528de30edc",
+   "sourceHash": "f528c30710528de30edc3c0dbfffbb9c8644fa97b662380cf0451b180e2c2573",
+   "text": "Kairali Institute of Ayurveda and Panchakarma Therapyで学ぶためのコース構成、期間、日程、料金をご案内します。宿泊料金は別途記載しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Institute name kept verbatim as a proper name."
+   ]
+  },
+  {
+   "id": "t_4e0ee38cc17dec284bd1",
+   "sourceHash": "4e0ee38cc17dec284bd177a780503a1e08016731a7c2bd7657805ef9c10e149b",
+   "text": "コースの料金、期間、日程",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

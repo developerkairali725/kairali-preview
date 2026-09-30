@@ -1,0 +1,125 @@
+{
+  "included": 240,
+  "excluded": [
+    {
+      "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/ayurveda-retreat-kerala.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/family-ayurvedic-retreat-kerala.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/kairali-cleansing-centre.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/offers/new/",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/offers/olympics-and-paralympics-offer/",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/offers/senior-citizen-offer/",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/pain-management.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/preventive-rejuvenation-detoxification.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/treatment-in-kerala.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-retreat-desktop",
+        "ahv-page-campaign-retreat-mobile"
+      ]
+    },
+    {
+      "path": "/weight-loss.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    },
+    {
+      "path": "/wellness-resort-kerala.html",
+      "reason": "Existing campaign/landing view; owner excludes landing-page translation",
+      "views": [
+        "ahv-page-campaign-nine-desktop",
+        "ahv-page-campaign-nine-mobile"
+      ]
+    }
+  ],
+  "deferredExisting": [
+    "/ru/",
+    "/treatment-in-kerala-russian.html"
+  ],
+  "note": "Campaign-view routes excluded, including offer routes mounted on campaign views. New Vikash routes must also stay excluded. Utility/noindex routes inventoried without authority to index or publish translations.",
+  "notes": [
+    "2026-09-29: /kairali-air-india-maharaja-club.html moved into scope — a partnership page (owner: 'a tie-up, not a campaign', tools/build-site-tree.mjs), so the landing-page translation exclusion does not apply; it renders from its own generated view pair + dataset (tools/build-partner-air-india.mjs) so only its content is extracted."
+  ]
+}

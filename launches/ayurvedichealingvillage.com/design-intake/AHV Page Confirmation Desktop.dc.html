@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script src="assets/confirmation-family-data.js"></script>
+<script src="assets/confirmation-family-render.js"></script>
+<style>
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:18px;line-height:1.7}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px;box-shadow:0 0 0 6px rgba(247,244,234,.85)}
+a:active,button:active{filter:brightness(.88)}
+h1,h2,h3,h4{font-weight:400;margin:0}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+<link rel="icon" href="assets/img/logo_color-da22eb.svg" sizes="192x192">
+</helmet>
+<div data-screen-label="Confirmation — Desktop">
+<a href="#main-content" style="position:fixed;left:-9999px;top:12px;z-index:120;background:#5A4420;color:#F7F4EA;padding:14px 24px;border-radius:4px;font-weight:700;font-size:15px" style-focus="left:16px">Skip to main content</a>
+<dc-import name="AHV Chrome Header" hint-size="100%,72px"></dc-import>
+<main id="main-content" style="display:flow-root">
+<sc-if value="{{ showBreadcrumb }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Breadcrumb" style="width:min(1220px,94%);margin:0 auto;padding:24px 0 0;font-size:15px;color:#75695A;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;line-height:1.4">
+  <sc-for list="{{ crumbs }}" as="c" hint-placeholder-count="2"><a href="{{ c.url }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;overflow-wrap:anywhere">{{ c.label }}</a><span aria-hidden="true">/</span></sc-for>
+  <span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere">{{ crumbLast }}</span>
+</nav>
+</sc-if>
+
+
+<sc-if value="{{ isDirect }}" hint-placeholder-val="{{ true }}">
+<section data-state="direct-visit" style="width:min(1220px,94%);margin:0 auto;padding:72px 0 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 64px;align-items:center">
+  <div>
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+    <h1 style="font-family:'Marcellus',serif;font-size:clamp(34px,3.6vw,50px);line-height:1.12;margin:12px 0 20px;max-width:22ch;text-wrap:balance">{{ dv.heading }}</h1>
+    <p style="margin:0 0 28px;font-size:19px;line-height:1.65;max-width:52ch;text-wrap:pretty">{{ dv.body }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+      <sc-for list="{{ dvLinks }}" as="l" hint-placeholder-count="4"><a href="{{ l.href }}" onClick="{{ guard }}" rel="{{ l.rel }}" style="{{ l.style }}" style-hover="text-decoration:none;filter:brightness(.95)">{{ l.label }}</a></sc-for>
+    </div>
+  </div>
+  <sc-if value="{{ hasOwnImages }}" hint-placeholder-val="{{ false }}">
+    <div data-own-source-images="true" style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;min-width:0">{{ ownImagesEl }}</div>
+  </sc-if>
+  <sc-if value="{{ hasDefaultArtwork }}" hint-placeholder-val="{{ true }}">
+    <img src="assets/img/AHV-Confirm-Landscape-1440.png" alt="" width="1440" height="524" style="width:100%;height:auto;display:block;border-radius:4px">
+  </sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{ isNext }}" hint-placeholder-val="{{ false }}">
+<div data-state="receipt" data-variant="next-steps">
+<section style="width:min(1220px,94%);margin:0 auto;padding:40px 0 0">
+  <sc-if value="{{ hero1024 }}" hint-placeholder-val="{{ false }}"><img src="assets/img/AHV-Confirm-Landscape-1024.png" alt="" width="1024" height="373" style="width:100%;max-width:1024px;height:auto;display:block;border-radius:4px;margin:0 auto"></sc-if>
+  <sc-if value="{{ hero1440 }}" hint-placeholder-val="{{ false }}"><img src="assets/img/AHV-Confirm-Landscape-1440.png" alt="" width="1440" height="524" style="width:100%;max-width:1440px;height:auto;display:block;border-radius:4px"></sc-if>
+</section>
+<section style="width:min(1220px,94%);margin:0 auto;padding:48px 0 0;text-align:center">
+  <sc-if value="{{ lotus }}" hint-placeholder-val="{{ false }}"><img src="assets/img/AHV-Confirm-Lotus.svg" alt="" width="95" height="57" style="width:95px;height:57px;display:block;margin:0 auto 18px"></sc-if>
+  <sc-if value="{{ hasEyebrow }}" hint-placeholder-val="{{ false }}"><div data-eyebrow="true" style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase;margin-bottom:12px">{{ eyebrow }}</div></sc-if>
+  <h1 style="font-family:'Marcellus',serif;font-size:clamp(36px,4vw,56px);line-height:1.1;margin:0 auto;max-width:22ch;text-wrap:balance">{{ h1Lead }}<sc-if value="{{ hasEm }}" hint-placeholder-val="{{ false }}"><em style="font-style:italic;color:#8F6212">{{ h1Em }}</em></sc-if></h1>
+  <div data-lede="true" style="max-width:62ch;margin:22px auto 0;font-size:19px;line-height:1.65;text-wrap:pretty">
+    <sc-for list="{{ lede }}" as="p" hint-placeholder-count="1"><p style="margin:0 0 8px">{{ p }}</p></sc-for>
+  </div>
+  <sc-if value="{{ hasNote }}" hint-placeholder-val="{{ false }}"><div data-note="true" style="display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:16px;font-weight:600;color:#5A4420"><span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#C1882C;display:inline-block"></span>{{ note }}</div></sc-if>
+</section>
+<section aria-labelledby="receipt-h" data-receipt-strip="true" style="width:min(1220px,94%);margin:40px auto 0;background:#fff;border:1px solid #E0D7C4;border-top:3px solid #6B7726;border-radius:4px;padding:28px 32px;box-sizing:border-box;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px 22px;align-items:start">
+  <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;border:2px solid #6B7726;color:#4F5A1C;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1">✓</span>
+  <div style="min-width:0">
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#4F5A1C;text-transform:uppercase">{{ rs.label }}</div>
+    <h2 id="receipt-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:8px 0 14px">{{ rs.heading }}</h2>
+    <dl style="margin:0 0 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;font-size:16.5px;line-height:1.6">
+      <sc-for list="{{ rs.rows }}" as="r" hint-placeholder-count="3"><dt style="color:#514a3f">{{ r.k }}</dt><dd style="margin:0;font-weight:600;overflow-wrap:anywhere;color:{{ r.colour }}">{{ r.v }}</dd></sc-for>
+    </dl>
+    <sc-if value="{{ hasPledge }}" hint-placeholder-val="{{ true }}"><p style="margin:0 0 14px;font-size:17.5px;line-height:1.7;max-width:70ch;text-wrap:pretty">{{ pledge }}</p></sc-if>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#75695A;max-width:70ch">{{ rs.note }}</p>
+    <p data-draft="receipt" style="margin:12px 0 0;font-weight:700;font-size:12.5px;letter-spacing:2px;color:#8F6212;text-transform:uppercase">DRAFT — approve or replace · receipt values come from the handler</p>
+  </div>
+</section>
+<sc-if value="{{ hasDirectRow }}" hint-placeholder-val="{{ true }}"><section aria-label="Contact us directly" data-direct-contact="true" style="width:min(1220px,94%);margin:20px auto 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+  <a href="{{ direct.whatsapp.href }}" onClick="{{ guard }}" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ direct.whatsapp.label }}</a>
+  <a href="{{ direct.email.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.email.label }}</a>
+  <a href="{{ direct.phone.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.phone.label }}</a>
+  <span style="font-size:16px;color:#514a3f">{{ directLine }}</span>
+</section></sc-if>
+<section aria-label="Next steps" style="width:min(1220px,94%);margin:56px auto 0;padding:48px 0 0;border-top:1px solid #E9E2D3">
+  <sc-if value="{{ hasStepsHeading }}" hint-placeholder-val="{{ false }}"><h2 style="font-family:'Marcellus',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.2;margin:0 0 28px;text-wrap:balance">{{ stepsHeading }}</h2></sc-if>
+  <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 40px">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+      <li data-step="true" style="border-top:2px solid #C1882C;padding-top:18px">
+        <div data-step-n="true" style="font-weight:700;font-size:13px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ s.n }}</div>
+        <h3 style="font-family:'Marcellus',serif;font-size:24px;line-height:1.25;margin:10px 0 10px">{{ s.h }}</h3>
+        <p style="margin:0;font-size:17.5px;line-height:1.7;text-wrap:pretty">{{ s.p }}</p>
+        <sc-if value="{{ s.when }}" hint-placeholder-val="{{ false }}"><div data-step-when="true" style="margin-top:12px;font-size:15.5px;font-weight:700;color:#5A4420">{{ s.when }}</div></sc-if>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+<section aria-labelledby="sooner-h" style="width:min(1220px,94%);margin:56px auto 0;background:#fff;border:1px solid #E0D7C4;border-radius:4px;padding:36px 40px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;align-items:center">
+  <div>
+    <sc-if value="{{ hasSoonerEyebrow }}" hint-placeholder-val="{{ false }}"><div data-sooner-eyebrow="true" style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase;margin-bottom:8px">{{ sooner.eyebrow }}</div></sc-if>
+    <h2 id="sooner-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:0 0 12px;text-wrap:balance">{{ sooner.h2 }}</h2>
+    <sc-for list="{{ sooner.paragraphs }}" as="p" hint-placeholder-count="1"><p style="margin:0 0 10px;font-size:17.5px;line-height:1.7;text-wrap:pretty">{{ p }}</p></sc-for>
+  </div>
+  <div data-actions="true" style="display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-end">
+    <sc-for list="{{ actions }}" as="a" hint-placeholder-count="2">
+      <a href="{{ a.href }}" onClick="{{ guard }}" rel="{{ a.rel }}" style="{{ a.style }}" style-hover="text-decoration:none;filter:brightness(.95)">{{ a.label }}</a>
+    </sc-for>
+  </div>
+</section>
+<section aria-labelledby="asset-h" data-asset="true" style="width:min(1220px,94%);margin:56px auto 0;background:#fff;border:1px solid #E0D7C4;border-radius:4px;padding:36px 40px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 48px;align-items:center">
+  <div>
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ asset.eyebrow }}</div>
+    <h2 id="asset-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:10px 0 12px">{{ asset.title }}</h2>
+    <p style="margin:0;font-size:17.5px;line-height:1.7;max-width:60ch;text-wrap:pretty">{{ asset.body }}</p>
+    <p id="asset-pending-note" data-draft="asset" style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#6B4A0C;font-weight:600;max-width:60ch">{{ asset.pendingNote }}</p>
+  </div>
+  <div style="display:flex;justify-content:flex-end">
+    <sc-if value="{{ asset.hasFile }}" hint-placeholder-val="{{ false }}"><a href="{{ asset.buttonHref }}" onClick="{{ guard }}" download="" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17.5px;box-shadow:0 2px 0 #3E2E14" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ asset.buttonLabel }}</a></sc-if>
+    <sc-if value="{{ asset.pending }}" hint-placeholder-val="{{ true }}"><span data-asset-pending="true" aria-describedby="asset-pending-note" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 26px;background:#F4EFE3;color:#564C3E;border:2px dashed #A8967B;border-radius:4px;font-weight:700;font-size:17px;text-align:center">{{ asset.pendingLabel }}</span></sc-if>
+  </div>
+</section>
+<nav aria-labelledby="wait-h" style="width:min(1220px,94%);margin:64px auto 0;padding:48px 0 0;border-top:1px solid #E9E2D3">
+  <h2 id="wait-h" style="font-family:'Marcellus',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.2;margin:0 0 8px">{{ wait.h2 }}</h2>
+  <p style="margin:0 0 28px;font-size:17.5px;color:#514a3f">{{ wait.lead }}</p>
+  <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px 32px">
+    <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+      <li><a data-card="true" href="{{ c.url }}" onClick="{{ guard }}" style="display:flex;flex-direction:column;gap:8px;min-height:44px;height:100%;padding:22px 24px;background:#fff;border:1px solid #E0D7C4;border-radius:4px;color:#2A2118;box-sizing:border-box" style-hover="border-color:#C1882C;text-decoration:none;color:#2A2118">
+        <sc-if value="{{ c.kicker }}" hint-placeholder-val="{{ false }}"><span data-card-kicker="true" style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ c.kicker }}</span></sc-if>
+        <h3 style="font-family:'Marcellus',serif;font-size:22px;line-height:1.25;margin:0">{{ c.h3 }}</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:#514a3f;text-wrap:pretty">{{ c.p }}</p>
+        <sc-if value="{{ c.go }}" hint-placeholder-val="{{ false }}"><span data-card-go="true" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:#006038"><span aria-hidden="true" style="color:#C1882C">◆</span>{{ c.go }}</span></sc-if>
+      </a></li>
+    </sc-for>
+  </ul>
+</nav>
+<sc-if value="{{ hasTrust }}" hint-placeholder-val="{{ false }}">
+<section aria-label="Accreditations" data-trust="true" style="width:min(1220px,94%);margin:56px auto 0;padding:24px 0 0;border-top:1px solid #E9E2D3;display:flex;flex-wrap:wrap;gap:12px 36px;align-items:center;justify-content:center;text-align:center;font-size:15.5px;color:#514a3f">
+  <span data-trust-seal="true" style="font-family:'Marcellus',serif;font-size:17px;color:#2A2118">{{ trust.seal }}</span>
+  <sc-for list="{{ trust.items }}" as="t" hint-placeholder-count="3"><span data-trust-item="true" style="display:inline-flex;align-items:center;gap:8px"><span aria-hidden="true" style="color:#C1882C">◆</span><span><sc-if value="{{ t.b }}" hint-placeholder-val="{{ false }}"><b style="font-weight:700;color:#2A2118">{{ t.b }}</b></sc-if>{{ t.rest }}</span></span></sc-for>
+</section>
+</sc-if>
+<div style="height:80px"></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isLegacy }}" hint-placeholder-val="{{ false }}">
+<section data-state="receipt" data-variant="legacy-queue" style="position:relative;overflow:hidden;background:#423c32;color:#F7F4EA;padding:72px 0 88px;isolation:isolate">
+  <img src="assets/img/AHV-Confirm-Booking-Bg.jpg" alt="" width="1440" height="683" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;z-index:-1">
+  <div style="width:min(720px,92%);margin:0 auto;background:rgba(247,244,234,.96);color:#2A2118;border-radius:4px;padding:40px 44px 44px;text-align:center;box-shadow:0 20px 50px rgba(20,14,6,.35)">
+    <img src="assets/img/AHV-Confirm-Booking-Logo.png" alt="" width="83" height="56" style="width:83px;height:56px;display:block;margin:0 auto 18px">
+    <div style="height:1px;background:#C1882C;width:72px;margin:0 auto 18px"></div>
+    <p data-brand="true" style="margin:0 0 8px;font-weight:700;font-size:14px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">{{ brandLine }}</p>
+    <h1 style="font-family:'Marcellus',serif;font-size:clamp(36px,4vw,52px);line-height:1.1;margin:0 0 22px;text-transform:uppercase;letter-spacing:1px">{{ h1 }}</h1>
+    <sc-for list="{{ paragraphs }}" as="p" hint-placeholder-count="3"><p style="margin:0 0 16px;font-size:17.5px;line-height:1.7;text-wrap:pretty">{{ p }}</p></sc-for>
+    <a href="{{ action.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;margin-top:8px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:15px;letter-spacing:1.5px" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ action.label }}</a>
+  </div>
+</section>
+<section aria-labelledby="receipt-h" data-receipt-strip="true" style="width:min(1220px,94%);margin:40px auto 0;background:#fff;border:1px solid #E0D7C4;border-top:3px solid #6B7726;border-radius:4px;padding:28px 32px;box-sizing:border-box;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px 22px;align-items:start">
+  <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;border:2px solid #6B7726;color:#4F5A1C;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1">✓</span>
+  <div style="min-width:0">
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#4F5A1C;text-transform:uppercase">{{ rs.label }}</div>
+    <h2 id="receipt-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:8px 0 14px">{{ rs.heading }}</h2>
+    <dl style="margin:0 0 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;font-size:16.5px;line-height:1.6">
+      <sc-for list="{{ rs.rows }}" as="r" hint-placeholder-count="3"><dt style="color:#514a3f">{{ r.k }}</dt><dd style="margin:0;font-weight:600;overflow-wrap:anywhere;color:{{ r.colour }}">{{ r.v }}</dd></sc-for>
+    </dl>
+    <sc-if value="{{ hasPledge }}" hint-placeholder-val="{{ true }}"><p style="margin:0 0 14px;font-size:17.5px;line-height:1.7;max-width:70ch;text-wrap:pretty">{{ pledge }}</p></sc-if>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#75695A;max-width:70ch">{{ rs.note }}</p>
+    <p data-draft="receipt" style="margin:12px 0 0;font-weight:700;font-size:12.5px;letter-spacing:2px;color:#8F6212;text-transform:uppercase">DRAFT — approve or replace · receipt values come from the handler</p>
+  </div>
+</section>
+<sc-if value="{{ hasDirectRow }}" hint-placeholder-val="{{ true }}"><section aria-label="Contact us directly" data-direct-contact="true" style="width:min(1220px,94%);margin:20px auto 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+  <a href="{{ direct.whatsapp.href }}" onClick="{{ guard }}" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ direct.whatsapp.label }}</a>
+  <a href="{{ direct.email.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.email.label }}</a>
+  <a href="{{ direct.phone.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.phone.label }}</a>
+  <span style="font-size:16px;color:#514a3f">{{ directLine }}</span>
+</section></sc-if>
+<section aria-labelledby="asset-h" data-asset="true" style="width:min(1220px,94%);margin:56px auto 0;background:#fff;border:1px solid #E0D7C4;border-radius:4px;padding:36px 40px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 48px;align-items:center">
+  <div>
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ asset.eyebrow }}</div>
+    <h2 id="asset-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:10px 0 12px">{{ asset.title }}</h2>
+    <p style="margin:0;font-size:17.5px;line-height:1.7;max-width:60ch;text-wrap:pretty">{{ asset.body }}</p>
+    <p id="asset-pending-note" data-draft="asset" style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#6B4A0C;font-weight:600;max-width:60ch">{{ asset.pendingNote }}</p>
+  </div>
+  <div style="display:flex;justify-content:flex-end">
+    <sc-if value="{{ asset.hasFile }}" hint-placeholder-val="{{ false }}"><a href="{{ asset.buttonHref }}" onClick="{{ guard }}" download="" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17.5px;box-shadow:0 2px 0 #3E2E14" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ asset.buttonLabel }}</a></sc-if>
+    <sc-if value="{{ asset.pending }}" hint-placeholder-val="{{ true }}"><span data-asset-pending="true" aria-describedby="asset-pending-note" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 26px;background:#F4EFE3;color:#564C3E;border:2px dashed #A8967B;border-radius:4px;font-weight:700;font-size:17px;text-align:center">{{ asset.pendingLabel }}</span></sc-if>
+  </div>
+</section>
+<nav aria-labelledby="wait-h" style="width:min(1220px,94%);margin:64px auto 0;padding:48px 0 0;border-top:1px solid #E9E2D3">
+  <h2 id="wait-h" style="font-family:'Marcellus',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.2;margin:0 0 8px">{{ wait.h2 }}</h2>
+  <p style="margin:0 0 28px;font-size:17.5px;color:#514a3f">{{ wait.lead }}</p>
+  <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px 32px">
+    <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+      <li><a data-card="true" href="{{ c.url }}" onClick="{{ guard }}" style="display:flex;flex-direction:column;gap:8px;min-height:44px;height:100%;padding:22px 24px;background:#fff;border:1px solid #E0D7C4;border-radius:4px;color:#2A2118;box-sizing:border-box" style-hover="border-color:#C1882C;text-decoration:none;color:#2A2118">
+        <sc-if value="{{ c.kicker }}" hint-placeholder-val="{{ false }}"><span data-card-kicker="true" style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ c.kicker }}</span></sc-if>
+        <h3 style="font-family:'Marcellus',serif;font-size:22px;line-height:1.25;margin:0">{{ c.h3 }}</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:#514a3f;text-wrap:pretty">{{ c.p }}</p>
+        <sc-if value="{{ c.go }}" hint-placeholder-val="{{ false }}"><span data-card-go="true" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:#006038"><span aria-hidden="true" style="color:#C1882C">◆</span>{{ c.go }}</span></sc-if>
+      </a></li>
+    </sc-for>
+  </ul>
+</nav>
+<div style="height:80px"></div>
+</sc-if>
+
+<sc-if value="{{ isImage }}" hint-placeholder-val="{{ false }}">
+<div data-state="receipt" data-variant="image-receipt">
+<section style="width:min(1220px,94%);margin:0 auto;padding:40px 0 0">
+  <img src="assets/img/AHV-Confirm-Landscape-1440.png" alt="" width="1440" height="524" style="width:100%;max-width:1440px;height:auto;display:block;border-radius:4px">
+</section>
+<section style="width:min(1220px,94%);margin:0 auto;padding:48px 0 0;text-align:center">
+  <img src="assets/img/AHV-Confirm-Lotus.svg" alt="" width="95" height="57" style="width:95px;height:57px;display:block;margin:0 auto 18px">
+  <h1 style="font-family:'Marcellus',serif;font-size:clamp(36px,4vw,56px);line-height:1.1;margin:0 auto;max-width:22ch;text-wrap:balance">{{ h1 }}</h1>
+</section>
+<sc-if value="{{ hasBody }}" hint-placeholder-val="{{ false }}">
+<section style="width:min(1220px,94%);margin:0 auto;padding:20px 0 0;text-align:center">
+  <p data-source-pointer="{{ bodyPtr }}" style="max-width:62ch;margin:0 auto;font-size:19px;line-height:1.65;text-wrap:pretty">{{ bodyText }}</p>
+</section>
+</sc-if>
+<section aria-labelledby="receipt-h" data-receipt-strip="true" style="width:min(1220px,94%);margin:40px auto 0;background:#fff;border:1px solid #E0D7C4;border-top:3px solid #6B7726;border-radius:4px;padding:28px 32px;box-sizing:border-box;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px 22px;align-items:start">
+  <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;border:2px solid #6B7726;color:#4F5A1C;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1">✓</span>
+  <div style="min-width:0">
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#4F5A1C;text-transform:uppercase">{{ rs.label }}</div>
+    <h2 id="receipt-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:8px 0 14px">{{ rs.heading }}</h2>
+    <dl style="margin:0 0 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;font-size:16.5px;line-height:1.6">
+      <sc-for list="{{ rs.rows }}" as="r" hint-placeholder-count="3"><dt style="color:#514a3f">{{ r.k }}</dt><dd style="margin:0;font-weight:600;overflow-wrap:anywhere;color:{{ r.colour }}">{{ r.v }}</dd></sc-for>
+    </dl>
+    <sc-if value="{{ hasPledge }}" hint-placeholder-val="{{ true }}"><p style="margin:0 0 14px;font-size:17.5px;line-height:1.7;max-width:70ch;text-wrap:pretty">{{ pledge }}</p></sc-if>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#75695A;max-width:70ch">{{ rs.note }}</p>
+    <p data-draft="receipt" style="margin:12px 0 0;font-weight:700;font-size:12.5px;letter-spacing:2px;color:#8F6212;text-transform:uppercase">DRAFT — approve or replace · receipt values come from the handler</p>
+  </div>
+</section>
+<sc-if value="{{ hasDirectRow }}" hint-placeholder-val="{{ true }}"><section aria-label="Contact us directly" data-direct-contact="true" style="width:min(1220px,94%);margin:20px auto 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+  <a href="{{ direct.whatsapp.href }}" onClick="{{ guard }}" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ direct.whatsapp.label }}</a>
+  <a href="{{ direct.email.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.email.label }}</a>
+  <a href="{{ direct.phone.href }}" onClick="{{ guard }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px" style-hover="background:#F7F4EA;color:#5A4420;text-decoration:none">{{ direct.phone.label }}</a>
+  <span style="font-size:16px;color:#514a3f">{{ directLine }}</span>
+</section></sc-if>
+<section aria-labelledby="asset-h" data-asset="true" style="width:min(1220px,94%);margin:56px auto 0;background:#fff;border:1px solid #E0D7C4;border-radius:4px;padding:36px 40px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 48px;align-items:center">
+  <div>
+    <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ asset.eyebrow }}</div>
+    <h2 id="asset-h" style="font-family:'Marcellus',serif;font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:10px 0 12px">{{ asset.title }}</h2>
+    <p style="margin:0;font-size:17.5px;line-height:1.7;max-width:60ch;text-wrap:pretty">{{ asset.body }}</p>
+    <p id="asset-pending-note" data-draft="asset" style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#6B4A0C;font-weight:600;max-width:60ch">{{ asset.pendingNote }}</p>
+  </div>
+  <div style="display:flex;justify-content:flex-end">
+    <sc-if value="{{ asset.hasFile }}" hint-placeholder-val="{{ false }}"><a href="{{ asset.buttonHref }}" onClick="{{ guard }}" download="" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17.5px;box-shadow:0 2px 0 #3E2E14" style-hover="background:#3E2E14;color:#F7F4EA;text-decoration:none">{{ asset.buttonLabel }}</a></sc-if>
+    <sc-if value="{{ asset.pending }}" hint-placeholder-val="{{ true }}"><span data-asset-pending="true" aria-describedby="asset-pending-note" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 26px;background:#F4EFE3;color:#564C3E;border:2px dashed #A8967B;border-radius:4px;font-weight:700;font-size:17px;text-align:center">{{ asset.pendingLabel }}</span></sc-if>
+  </div>
+</section>
+<nav aria-labelledby="wait-h" style="width:min(1220px,94%);margin:64px auto 0;padding:48px 0 0;border-top:1px solid #E9E2D3">
+  <h2 id="wait-h" style="font-family:'Marcellus',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.2;margin:0 0 8px">{{ wait.h2 }}</h2>
+  <p style="margin:0 0 28px;font-size:17.5px;color:#514a3f">{{ wait.lead }}</p>
+  <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px 32px">
+    <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+      <li><a data-card="true" href="{{ c.url }}" onClick="{{ guard }}" style="display:flex;flex-direction:column;gap:8px;min-height:44px;height:100%;padding:22px 24px;background:#fff;border:1px solid #E0D7C4;border-radius:4px;color:#2A2118;box-sizing:border-box" style-hover="border-color:#C1882C;text-decoration:none;color:#2A2118">
+        <sc-if value="{{ c.kicker }}" hint-placeholder-val="{{ false }}"><span data-card-kicker="true" style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">{{ c.kicker }}</span></sc-if>
+        <h3 style="font-family:'Marcellus',serif;font-size:22px;line-height:1.25;margin:0">{{ c.h3 }}</h3>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:#514a3f;text-wrap:pretty">{{ c.p }}</p>
+        <sc-if value="{{ c.go }}" hint-placeholder-val="{{ false }}"><span data-card-go="true" style="margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px;color:#006038"><span aria-hidden="true" style="color:#C1882C">◆</span>{{ c.go }}</span></sc-if>
+      </a></li>
+    </sc-for>
+  </ul>
+</nav>
+<div style="height:80px"></div>
+</div>
+</sc-if>
+
+</main>
+<dc-import name="AHV Chrome Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;/thanks/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;/contact-us/thank-you/&quot;,&quot;/onlinebookingthankyou/&quot;,&quot;/onlineconsultation-thanks/&quot;,&quot;/ppc-thanks/&quot;,&quot;/thanks/&quot;,&quot;/book-now/&quot;,&quot;/cart/&quot;,&quot;/checkout/&quot;,&quot;/emailsubscriber/&quot;],&quot;section&quot;:&quot;Prototype route binding (not part of the public design)&quot;},&quot;prototypeReceipt&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review only — synthetic receipt mockup. Public default is the neutral direct-visit state; a URL never proves submission.&quot;}}">
+class Component extends DCLogic {
+  route() { return window.AHV_CONFIRM_RENDER ? window.AHV_CONFIRM_RENDER.resolveRoute(this.props.route) : null; }
+  componentDidMount() { const R = this.route(); if (R) { window.AHV_CONFIRM_RENDER.applyHead(R); this._head = R.path; } }
+  componentDidUpdate() { const R = this.route(); if (R && R.path !== this._head) { window.AHV_CONFIRM_RENDER.applyHead(R); this._head = R.path; } }
+  renderVals() {
+    const P = window.AHV_CONFIRM_RENDER, D = window.AHV_CONFIRM || {}; const R = this.route();
+    const guard = (e) => { e.preventDefault(); };
+    const receipt = P ? P.resolveReceipt(this.props.prototypeReceipt) : false;
+    // Utility routes (/book-now/, /cart/, /checkout/) carry their own exact direct-visit copy and have no
+    // receipt state at all: they are anonymous fallback states, never a confirmation of a transaction.
+    const dvSrc = (R && R.directVisit) || D.directVisit || { heading: '', body: '', link: { href: '', label: '' } };
+    // Owner rejected the packet's neutral shrug (19 Sep 2026): the drafted replacement renders, the governed
+    // wording stays in data. Still no claim that anything was submitted.
+    const dv = D.directVisitDraft || dvSrc;
+    const dvStyle = (k) => k === 'primary'
+      ? 'display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:17px'
+      : k === 'ghost'
+      ? 'display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:17px'
+      : 'display:inline-flex;align-items:center;min-height:44px;color:#006038;font-weight:700;font-size:16.5px;text-decoration:underline';
+    const dvLinks = ((dv.links) || [{ href: dvSrc.link.href, label: dvSrc.link.label, kind: 'primary' }]).map(l => ({ href: l.href, label: l.label, rel: l.external ? 'noopener' : undefined, style: dvStyle(l.kind) }));
+    const utility = !!(R && R.utility);
+    // A route that carries its own source images binds them here; every other route keeps the existing
+    // default artwork untouched. Built as React nodes so no raw interpolated src is ever requested.
+    const own = (R && R.images && R.images.length) ? R.images : null;
+    // Route-specific breadcrumb from the record; routes without a recorded chain render no nav.
+    const bcChain = (R && R.crumbs) || [];
+    const bcVals = { showBreadcrumb: bcChain.length > 0,
+      crumbs: bcChain.slice(0, -1).map(c => ({ url: 'https://ayurvedichealingvillage.com' + c.path, label: c.label })),
+      crumbLast: bcChain.length ? bcChain[bcChain.length - 1].label : '' };
+    const base = Object.assign({}, bcVals, { guard, dv, dvLinks, isDirect: utility || !receipt || !R, isNext: false, isLegacy: false, isImage: false,
+      hasOwnImages: !!own, hasDefaultArtwork: !own,
+      ownImagesEl: own ? own.map((im, k) => React.createElement('img', { key: 'oi' + k, src: im.file,
+        alt: im.alt || '', width: im.width, height: im.height, loading: 'lazy',
+        'data-source-pointer': im.ptr,
+        // natural proportions, capped at the recorded natural width so the 83x56 logo is never upscaled
+        style: { display: 'block', width: '100%', maxWidth: im.width + 'px', height: 'auto', borderRadius: '4px' } })) : null });
+    if (!R || !receipt || utility) return base;
+    // Own-source images belong to the route, not to a state: carry them into every branch below.
+    const imgFields = { hasOwnImages: base.hasOwnImages, hasDefaultArtwork: base.hasDefaultArtwork,
+      ownImagesEl: base.ownImagesEl };
+    const A = P.A;
+    const btn = (k) => k === 'primary'
+      ? 'display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:#5A4420;color:#F7F4EA;border-radius:4px;font-weight:700;font-size:16px'
+      : 'display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;background:#fff;color:#5A4420;border:2px solid #5A4420;border-radius:4px;font-weight:700;font-size:16px';
+    const v = R.variant;
+    // Owner override: one response time across the whole family. Source text is untouched in data.
+    const nz = (t) => (D.pledgeNormalise || []).reduce((a, r) => a.split(r.from).join(r.to), String(t == null ? '' : t));
+    const years = new Date().getFullYear() - (D.foundedYear || 1908);
+    const W = R.wait || D.standardWait;
+    const sharedVals = {
+      rs: (() => { const ov = (D.receiptByRoute || {})[R.path] || {};
+        const base = Object.assign({}, D.receiptStrip, { heading: (D.receiptHeadings && D.receiptHeadings[v]) || D.receiptStrip.heading }, ov);
+        return Object.assign(base, { rows: (base.rows || []).map(r => Object.assign({}, r, { colour: r.pending ? '#75695A' : '#2A2118' })) }); })(),
+      // Never a second timeframe: where the route's own source states one, the drafted pledge is dropped.
+      pledge: (D.pledgeSuppress || []).indexOf(R.path) > -1 ? '' : D.responsePledge.text,
+      hasPledge: (D.pledgeSuppress || []).indexOf(R.path) === -1,
+      direct: D.soonerDirect,
+      directLine: (((D.receiptByRoute || {})[R.path] || {}).directLine) || D.directLine,
+      // Routes whose SOURCE carries its own "talk to us now" block keep only that one; the email link is
+      // folded into it below. Everywhere else the authored row is the only way to reach anyone.
+      hasDirectRow: v !== 'next-steps',
+      asset: Object.assign({}, D.asset, { buttonHref: D.asset.href || '#', hasFile: !!D.asset.href, pending: !D.asset.href, pendingLabel: D.asset.buttonLabel + ' — not yet available' }),
+      wait: W, cards: W.cards.map(c => Object.assign({}, c, { url: A + c.href, kicker: c.kicker || false, go: c.go || false }))
+    };
+    const out = Object.assign(base, sharedVals, { isNext: v === 'next-steps', isLegacy: v === 'legacy-queue' || v === 'legacy-confirmation', isImage: v === 'image-receipt', h1: R.h1 });
+    if (v === 'next-steps') {
+      const em = R.h1Em; const lead = em ? R.h1.slice(0, R.h1.lastIndexOf(em)) : R.h1;
+      Object.assign(out, {
+        hero1024: R.hero === 'landscape1024', hero1440: R.hero === 'landscape1440', lotus: !!R.lotus,
+        hasEyebrow: !!R.eyebrow, eyebrow: R.eyebrow, h1Lead: lead, hasEm: !!em, h1Em: em,
+        lede: R.lede.map(nz), hasNote: !!R.note, note: R.note, hasStepsHeading: !!R.stepsHeading, stepsHeading: R.stepsHeading,
+        steps: R.steps.map(s => Object.assign({}, s, { p: nz(s.p), when: s.when ? nz(s.when) : false })),
+        sooner: Object.assign({}, R.sooner, { paragraphs: R.sooner.paragraphs.map(nz) }), hasSoonerEyebrow: !!R.sooner.eyebrow,
+        // Source actions, plus the e-mail route the source block lacks (added once, never duplicated).
+        actions: R.sooner.actions.map(a => ({ href: a.href, label: a.label, rel: a.external ? 'noopener' : undefined, style: btn(a.kind) }))
+          .concat(R.sooner.actions.some(a => /^mailto:/.test(a.href)) ? [] : [{ href: D.soonerDirect.email.href, label: D.soonerDirect.email.label, rel: undefined, style: btn('ghost') }]),
+        wait: R.wait, cards: R.wait.cards.map(c => Object.assign({}, c, { url: A + c.href, kicker: c.kicker || false, go: c.go || false })),
+        rs: Object.assign({}, D.receiptStrip, { rows: (D.receiptStrip.rows || []).map(r => Object.assign({}, r, { colour: r.pending ? '#75695A' : '#2A2118' })) }),
+        pledge: D.responsePledge.text,
+        direct: D.soonerDirect,
+      directLine: (((D.receiptByRoute || {})[R.path] || {}).directLine) || D.directLine,
+      // Routes whose SOURCE carries its own "talk to us now" block keep only that one; the email link is
+      // folded into it below. Everywhere else the authored row is the only way to reach anyone.
+      hasDirectRow: v !== 'next-steps',
+        asset: Object.assign({}, D.asset, { buttonHref: D.asset.href || '#', hasFile: !!D.asset.href, pending: !D.asset.href, pendingLabel: D.asset.buttonLabel + ' — not yet available' }),
+        hasTrust: !!R.trust, trust: R.trust ? { seal: String(R.trust.seal).replace(/\b\d{2,3}\s+Years\b/, years + ' Years'), items: R.trust.items.map(t => ({ b: t.b || false, rest: t.rest })) } : { seal: '', items: [] }
+      });
+    } else if (v === 'legacy-queue') {
+      Object.assign(out, { brandLine: R.brandLine, paragraphs: R.paragraphs.map(nz), action: R.action });
+    } else if (v === 'legacy-confirmation') {
+      // /thanks-old/ carries a generic source block list rather than named fields. Flatten it into the same
+      // shell the booking confirmation uses: identical source images, one H1 promoted from the source h3.
+      const blocks = ((R.components || [])[0] || {}).blocks || [];
+      const txt = (k) => blocks.filter(b => b.kind === k).map(b => b.text);
+      const heads = blocks.filter(b => b.kind === 'heading');
+      const link = blocks.find(b => b.kind === 'line');
+      const h3 = heads.find(b => b.tag === 'h3');
+      Object.assign(out, {
+        brandLine: (heads.find(b => b.tag === 'h2') || {}).text || '',
+        h1: (h3 || {}).text || 'Thank You',
+        paragraphs: [].concat((heads.find(b => b.tag === 'h5') || {}).text || [], txt('para')).map(nz),
+        action: { href: 'https://ayurvedichealingvillage.com/', label: (link && link.text) || 'GO HOME' }
+      });
+    } else {
+      // Image receipt: the receipt image, optional source body paragraph and optional transcript are data-driven.
+      // A route without them (the accepted /onlineconsultation-thanks/ dataset) renders exactly as before.
+      const pi = R.posterImage || D.images.poster;
+      Object.assign(out, {
+        transcript: R.transcript ? { heading: R.transcript.heading, lines: R.transcript.lines.map(nz) } : { heading: '', lines: [] }, hasTranscript: !!R.transcript,
+        poster: { src: pi.src, width: pi.width, height: pi.height, maxWidth: pi.width + 'px', ptr: pi.ptr || '' },
+        posterAlt: pi.alt || '',
+        // Built as a React node (same pattern as the Article Reader heroEl): a raw interpolated src attribute in the
+        // template is prefetched by the browser before interpolation and 404s on the literal placeholder URL.
+        posterEl: React.createElement('img', { src: pi.src, alt: pi.alt || '', width: pi.width, height: pi.height,
+          'data-source-pointer': pi.ptr || undefined,
+          style: { width: '100%', maxWidth: pi.width + 'px', height: 'auto', display: 'block', borderRadius: '4px' } }),
+        hasBody: !!(R.body && R.body.text), bodyText: nz((R.body && R.body.text) || ''), bodyPtr: (R.body && R.body.ptr) || ''
+      });
+    }
+    return out;
+  }
+}
+</script>
+</body>
+</html>

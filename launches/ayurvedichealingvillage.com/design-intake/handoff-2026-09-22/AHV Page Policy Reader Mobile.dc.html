@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script src="assets/policy-family-data.js"></script>
+<script src="assets/policy-family-render.js"></script>
+<style>
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:18px;line-height:1.7}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px;box-shadow:0 0 0 6px rgba(247,244,234,.85)}
+a:active,button:active,summary:active{filter:brightness(.88)}
+h1,h2,h3,h4{font-weight:400;margin:0}
+summary::-webkit-details-marker{display:none}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+<link rel="icon" href="assets/img/logo_color-da22eb.svg" sizes="192x192">
+</helmet>
+<div data-screen-label="Policy Reader — Mobile" style="max-width:430px;margin:0 auto;background:#F7F4EA;box-shadow:0 0 40px rgba(70,50,20,.15);position:relative;box-sizing:border-box">
+<a href="#main-content" style="position:fixed;left:-9999px;top:12px;z-index:120;background:#5A4420;color:#F7F4EA;padding:14px 24px;border-radius:4px;font-weight:700;font-size:15px" style-focus="left:16px">Skip to main content</a>
+<dc-import name="AHV Chrome Header" narrow="true" style="position:sticky;top:0;z-index:80" hint-size="100%,64px"></dc-import>
+<main id="main-content">
+<section style="width:min(1220px,94%);margin:0 auto;padding:20px 0 22px">
+  <nav aria-label="Breadcrumb" style="font-size:15px;color:#75695A;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center;line-height:1.4"><a href="https://ayurvedichealingvillage.com/" onClick="{{ guard }}" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px">Home</a><span aria-hidden="true">/</span><span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px">{{ crumbLabel }}</span></nav>
+  <div style="padding-top:4px">
+    <div style="font-weight:700;font-size:12px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;line-height:1.5">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+    <h1 id="page-h1" style="font-family:'Marcellus',serif;font-size:clamp(30px,9vw,38px);line-height:1.12;margin:10px 0 0;text-wrap:balance">{{ h1 }}</h1>
+  </div>
+</section>
+<div style="width:min(1220px,94%);margin:0 auto">
+  <sc-if value="{{ bannerPrivacy }}" hint-placeholder-val="{{ false }}"><img src="assets/img/AHV-Policy-Privacy-Banner.png" alt="" width="1440" height="459" style="width:100%;max-width:1440px;height:auto;display:block;border-radius:4px"></sc-if>
+  <sc-if value="{{ bannerTerms }}" hint-placeholder-val="{{ false }}"><img src="assets/img/AHV-Policy-Terms-Banner.webp" alt="" width="832" height="400" style="width:100%;max-width:832px;height:auto;display:block;border-radius:4px"></sc-if>
+</div>
+<div style="width:min(1220px,94%);margin:0 auto;padding:28px 0 56px">
+  <sc-if value="{{ hasContents }}" hint-placeholder-val="{{ false }}">
+  <details style="border:1px solid #E0D7C4;border-radius:4px;background:#fff;margin:0 0 32px">
+    <summary style="list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:8px 16px;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">On this page<span aria-hidden="true" style="color:#C1882C;font-size:16px">◆</span></summary>
+    <nav aria-label="On this page" style="padding:0 16px 8px">
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid #E0D7C4">
+        <sc-for list="{{ toc }}" as="t" hint-placeholder-count="5">
+          <li style="border-bottom:1px solid #E0D7C4"><a href="#{{ t.id }}" style="display:flex;align-items:center;gap:12px;min-height:46px;padding:6px 0;font-size:15.5px;font-weight:600;line-height:1.4;color:#2A2118"><span aria-hidden="true" style="color:#C1882C;flex:none">◆</span><span>{{ t.label }}</span></a></li>
+        </sc-for>
+      </ol>
+    </nav>
+  </details>
+  </sc-if>
+  <article id="policy-body" aria-labelledby="page-h1" style="min-width:0">{{ body }}</article>
+</div>
+</main>
+<dc-import name="AHV Chrome Footer" narrow="true" hint-size="100%,900px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;/cancellation-and-refund-policy/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;/cancellation-and-refund-policy/&quot;,&quot;/cookie-policy/&quot;,&quot;/disclaimer/&quot;,&quot;/new-privacy-policy/&quot;,&quot;/payment-policy-compliance/&quot;,&quot;/privacy-policy/&quot;,&quot;/privacy-statement/&quot;,&quot;/terms-and-conditions/&quot;],&quot;section&quot;:&quot;Prototype route binding (not part of the public design)&quot;},&quot;contentsRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading aids&quot;}}">
+class Component extends DCLogic {
+  route() { return window.AHV_POLICY_RENDER ? window.AHV_POLICY_RENDER.resolveRoute(this.props.route) : null; }
+  componentDidMount() { const R = this.route(); if (R) { window.AHV_POLICY_RENDER.applyHead(R); this._head = R.path; } }
+  componentDidUpdate() { const R = this.route(); if (R && R.path !== this._head) { window.AHV_POLICY_RENDER.applyHead(R); this._head = R.path; } }
+  renderVals() {
+    const P = window.AHV_POLICY_RENDER; const R = this.route();
+    const guard = (e) => { e.preventDefault(); };
+    if (!R) return { guard, h1: '', crumbLabel: '', body: null, toc: [], hasContents: false, bannerPrivacy: false, bannerTerms: false };
+    const toc = P.contents(R);
+    return {
+      guard, h1: R.h1, crumbLabel: R.breadcrumb[R.breadcrumb.length - 1].label,
+      bannerPrivacy: R.image.src.includes('Privacy'), bannerTerms: R.image.src.includes('Terms'),
+      body: P.renderBody(R, { guard, mobile: true }),
+      toc, hasContents: (this.props.contentsRail ?? true) && toc.length >= 5
+    };
+  }
+}
+</script>
+</body>
+</html>

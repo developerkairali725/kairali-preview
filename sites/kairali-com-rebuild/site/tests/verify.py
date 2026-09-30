@@ -110,7 +110,7 @@ def visible_text(html):
     main = m.group(1) if m else html
     main = re.sub(r"<[^>]+>", " ", main)
     return norm(main)
-blocks = json.load(open(os.path.join(REF, "audit-page-copy-blocks.json")))
+blocks = json.load(open(os.path.join(REPO, "..", "..", "audits", "kairali-com-rebuild", "audit-page-copy-blocks.json")))
 by_url = {}
 for b in blocks:
     if b["classification"] != "page-copy": continue

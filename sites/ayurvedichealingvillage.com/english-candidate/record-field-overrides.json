@@ -1,0 +1,16 @@
+{
+  "_why": "Small sourced corrections to dataset record fields, applied by tools/repair-record-fields.mjs after every import. Every value cites its source; nothing is invented (HARD GATE 6).",
+  "routes": {
+    "/walk-in-ayurveda-treatment/": {
+      "h1": "Walk-in Ayurveda Treatment",
+      "_source": "The page's own breadcrumb name and <title> ('Walk-in Ayurveda Treatment – Authentic OPD & Panchakarma Therapies'); the record's h1 was the bare word 'OPD' (owner, 23 Sep: the page 'is stuck'/'old style'). Directive D-20260922-23."
+    },
+    "/faqs-downloads/": {
+      "description": {
+        "value": "Answers to patients' questions at Kairali – The Ayurvedic Healing Village: admission, programmes, villas, diet, payment, travel, visas and downloads.",
+        "all": true
+      },
+      "_source": "The record's own description ('…A complete guide to your wellness journey') carries the banned j-word (KTAHV clinical lock; SEO audit 2026-09-23 docs/reports/2026-09-23-ahv-faq-search-seo-audit.md); rewritten from the page's own 13 topic headings and the downloads shelf. Applied to metadata.description AND og.description (all:true). The <title> is kept as the live site's (an SEO title; changing it is the owner's call — QUESTIONS.md Q-AHV-FAQ-TITLE)."
+    }
+  }
+}

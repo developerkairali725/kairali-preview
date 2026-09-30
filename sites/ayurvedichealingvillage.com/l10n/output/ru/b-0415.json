@@ -1,0 +1,127 @@
+{
+ "batchId": "b-0415",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_bfcb4f203ecc1e00ef83",
+   "sourceHash": "bfcb4f203ecc1e00ef83f1369621f7a02cc7da31b4ce234a8abc01ea61239ac9",
+   "text": "Устаревший адрес .aspx в настоящее время перенаправляет на имя хоста, а затем возвращает ошибку 404, поэтому подтверждения непрерывности перенаправления нет. Это явное ограничение идентификации источника, и оно НЕ рассматривается как основание для перенаправления этого маршрута.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c563e219ed1fd7ee42c9",
+   "sourceHash": "c563e219ed1fd7ee42c9150b1f1ea372830a84f44037dfcbae0f4b1f370f776e",
+   "text": "Аюрведическая группа Kairali, олицетворение здорового образа жизни и гармоничного бытия, была основана в 1989 году с целью распространения идей аюрведы по всему миру. Её основателями были образованные и состоявшиеся люди, которые верили в действие аюрведы и по-настоящему признавали её способность оздоравливать и очищать тело и душу. Свой обширный опыт и знания они передали четырём поколениям врачей, столь же преданных делу возвращения аюрведе её актуальности. Именно благодаря их совместным усилиям аюрведическая группа Kairali достигла новых вершин успеха и благотворительности.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Capabilities to heal' rendered as 'ability to restore health' to avoid a cure-type claim."
+   ]
+  },
+  {
+   "id": "t_af1d6b5b66d0f10a5a46",
+   "sourceHash": "af1d6b5b66d0f10a5a46b8e2964cd5dbbe4d1ae1e773849e87cefabbfddb08dc",
+   "text": "Одно из её фирменных мероприятий — Lakshya Yoga Retreat, семидневный праздник аюрведы, йоги и здорового образа жизни. В рамках этого ретрита представлены различные направления йоги, а участникам предлагается ряд услуг и консультаций, связанных со здоровьем. Здесь применяются многие известные методы аюрведы, например панчакарма, что делает этот ретрит местом, которое стоит посетить.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'benefactors' interpreted as 'participants' (likely intended 'beneficiaries')."
+   ]
+  },
+  {
+   "id": "t_418d798d65f6a7fe58f3",
+   "sourceHash": "418d798d65f6a7fe58f3d26395b42bba6417234e10a2b98b741b539d2b487b0c",
+   "text": "Одно из её фирменных мероприятий —",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding the linked name 'Lakshya Yoga Retreat'."
+   ]
+  },
+  {
+   "id": "t_7db077ae90b55307b606",
+   "sourceHash": "7db077ae90b55307b606f7e4e2fe7d898b05a833e896bb214621700fb2374817",
+   "text": ", семидневный праздник аюрведы, йоги и здорового образа жизни. В рамках этого ретрита представлены различные направления йоги, а участникам предлагается ряд услуг и консультаций, связанных со здоровьем. Здесь применяются многие известные методы аюрведы, например панчакарма, что делает этот ретрит местом, которое стоит посетить.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the linked name; begins with a comma to fit Russian apposition."
+   ]
+  },
+  {
+   "id": "t_bb02c0a7edfd889f3c41",
+   "sourceHash": "bb02c0a7edfd889f3c410fd150066d25617c27d0f952f739e8594e6a17b2f83e",
+   "text": "Эта аюрведическая лечебная деревня — воплощение безмятежности и позитивного образа жизни, где можно пребывать вдали от внешних тревог и забот. Сочетая современные технологии с древней щедростью аюрведы, этот природный уголок спокойствия становится идеальным местом, чтобы отдохнуть от напряжённой жизни.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'."
+   ]
+  },
+  {
+   "id": "t_86e1de74820a9b252ba3",
+   "sourceHash": "86e1de74820a9b252ba33b2eed445b0cd02c445b5f4b8007205aff1762d7301a",
+   "text": "Эта",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; feminine form agrees with 'деревня' in the following unit."
+   ]
+  },
+  {
+   "id": "t_12a5beee4d1dc60cc34c",
+   "sourceHash": "12a5beee4d1dc60cc34cdaaaf5ba374bbbeea8ea2321f33034f0b82bd01a24b0",
+   "text": "аюрведическая лечебная деревня",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2bc30b2b6c3a974624f",
+   "sourceHash": "f2bc30b2b6c3a974624f4116d140b89c0163898a3130b2aa49d730084534947f",
+   "text": "— воплощение безмятежности и позитивного образа жизни, где можно пребывать вдали от внешних тревог и забот. Сочетая современные технологии с древней щедростью аюрведы, этот природный уголок спокойствия становится идеальным местом, чтобы отдохнуть от напряжённой жизни.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; source 'gateway' read as 'getaway'."
+   ]
+  },
+  {
+   "id": "t_5d49740011763daddd6a",
+   "sourceHash": "5d49740011763daddd6a4fa2c38833ecb0af97bbd691127f70e81ac7c5aa6044",
+   "text": "Контекстная навигация с подписями из текущей записи с точными исходными адресами и ссылками на источник. Заголовок Knowledge Center — это простой исходный текст, и он не преобразован в ссылку.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a84027ac4117c60b0cee",
+   "sourceHash": "a84027ac4117c60b0ceedeffa4839b17366b61b05009c161135104c93ebf62d6",
+   "text": "Контекстом этого маршрута служит его собственный исходный заголовок Knowledge Center. Общая подпись «Explore current programmes» здесь НЕ используется.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Quoted label names kept in English as they refer to specific source strings."
+   ]
+  },
+  {
+   "id": "t_25ee652fe24cc89e9090",
+   "sourceHash": "25ee652fe24cc89e9090b1ac7197ed2e08dc7cdc53f65b1227a289a14e71f800",
+   "text": "lk-cg-",
+   "status": "translated",
+   "unchangedReason": "Code identifier prefix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_5dea34262e352874fc4d",
+   "sourceHash": "5dea34262e352874fc4d582963706a588a51f539c0d91badf39d68f0ab93b676",
+   "text": "Неделя полноценного отдыха и восстановления сил. Восстановите связь со своим внутренним «я» с помощью йоги и медитации. Позаботьтесь о своём теле с помощью аюрведических массажей и процедур. Порадуйте себя вкусными вегетарианскими блюдами!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

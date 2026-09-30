@@ -1,0 +1,193 @@
+{
+ "batchId": "b-0187",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_36a17185f8ff24fb1440",
+   "sourceHash": "36a17185f8ff24fb14409fcb533251684c45f186c75c29c9efc0860e04b6b70f",
+   "text": "[[OPEN_1]]税金および公課：[[CLOSE_1]]適用されるすべての税金、政府の課徴金、およびサービス料は、法律の定めに従い請求額に加算されます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21802cc13e021c20fe22",
+   "sourceHash": "21802cc13e021c20fe228307eb708152ab0b9d9dfe77c62cedb15cae6e8fc269",
+   "text": "キャンセル、変更および返金に関する方針",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ca9c02c323c25e1dce1",
+   "sourceHash": "2ca9c02c323c25e1dce12eb13c41a89d1be2d5cedb32b767c0f83cb8301af4bc",
+   "text": "キャンセルの期限：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d0a41c826d3f0feedb7",
+   "sourceHash": "6d0a41c826d3f0feedb726447f60021e55b1cd1366dc57f584b331d0bf25a23e",
+   "text": "[[OPEN_1]]変更：[[CLOSE_1]]予約日、治療内容、または客室タイプの変更は空き状況によるものとし、追加料金が発生する場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a517e829dc6c7210985",
+   "sourceHash": "0a517e829dc6c7210985509942663ef847c810a6ab7177884314e859b6f75e01",
+   "text": "[[OPEN_1]]返金手続き：[[CLOSE_1]]承認された返金は、元のお取引で使用されたものと同じ支払方法により、合理的な期間内に処理されます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5fcc1ff036c2b8b59c1d",
+   "sourceHash": "5fcc1ff036c2b8b59c1d7f39bff42e880f16bb7580afe087979a93f143af60e0",
+   "text": "チェックイン、チェックアウトおよび滞在に関する方針",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d9e8398054cc05f95ee",
+   "sourceHash": "0d9e8398054cc05f95ee5f5653393bd3caef4d99885785f1e6fa2173f21f73ef",
+   "text": "[[OPEN_1]]チェックイン時間：[[CLOSE_1]]12:00 PM（正午）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Time kept as 12:00 PM with 正午 (noon) added to avoid the Japanese 午後12時 ambiguity."
+   ]
+  },
+  {
+   "id": "t_40178f88c5db1e63960d",
+   "sourceHash": "40178f88c5db1e63960df6d805dd8c6f83eedb8802cac955d7942c3a6b85ff6d",
+   "text": "[[OPEN_1]]チェックアウト時間：[[CLOSE_1]]午前10:00",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4d02bcc8c741b6095bd4",
+   "sourceHash": "4d02bcc8c741b6095bd468cfedfb2179d9251fec9e1a87ebf1b853272bc5c346",
+   "text": "[[OPEN_1]]アーリー／レイトのご希望：[[CLOSE_1]]アーリーチェックインおよびレイトチェックアウトは空き状況によるものとし、追加料金が発生する場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9072dfa1069fb031a1d",
+   "sourceHash": "b9072dfa1069fb031a1dafd34814dd98c8d10a7d46931b60d795a4ef4a44e07e",
+   "text": "[[OPEN_1]]滞在期間：[[CLOSE_1]]特定の時期、特典、またはイベントの期間中は、最短または最長の滞在期間が定められる場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dea75ce4932e114d1df1",
+   "sourceHash": "dea75ce4932e114d1df139fd9d3bfae9bd76e7d6c1ee062074a94c1723ef6668",
+   "text": "ご利用者の行動および利用制限",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guest' rendered as ご利用者 (user/visitor) per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_98e3d5e06e8729b88f15",
+   "sourceHash": "98e3d5e06e8729b88f15f080b6f06836bb56c9cb797a66f80eb6e7a6272ed2cf",
+   "text": "[[OPEN_1]]アーユルヴェーダの指針：[[CLOSE_1]]ご利用者は、当施設の専門家が示すアーユルヴェーダの指針に従い、静かな環境を保つようお願いいたします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as ご利用者 per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_b1dd0085434f9b35f79d",
+   "sourceHash": "b1dd0085434f9b35f79d8df9cb9995d3ebbeb63e985e7bf978cfb3b0f0688b1f",
+   "text": "[[OPEN_1]]禁止されている物品および行為：[[CLOSE_1]]喫煙、飲酒、および肉や魚などの非菜食の食品は固く禁じられています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbf6c7b5eaa6ef02fc48",
+   "sourceHash": "cbf6c7b5eaa6ef02fc487ccba127bb4cf7de8f125bc3ff806c7391a281a987a8",
+   "text": "[[OPEN_1]]迷惑行為：[[CLOSE_1]]容認できない行為や施設の規則への違反があった場合、返金なしで直ちに滞在を終了していただくことがあります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80ff39c82d5721d9f653",
+   "sourceHash": "80ff39c82d5721d9f6537a1a15fdc4b9e71ff2ca078dfaba06828dccd988513c",
+   "text": "追加サービスおよび料金",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f9dd6992566dfe8de64",
+   "sourceHash": "1f9dd6992566dfe8de64bc8b7e41a6966e4f26548c8b640af65046d4ffd174f8",
+   "text": "[[OPEN_1]]施設のご利用：[[CLOSE_1]]ご利用者は、営業時間内にレクリエーション用の敷地、ヨガスタジオ、プールをご利用いただけます。掲示された規則を必ずお守りください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as ご利用者 per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_255151f285332a0b4c7b",
+   "sourceHash": "255151f285332a0b4c7b034bd283842070cad07e623862306a4e774edd250f5e",
+   "text": "[[OPEN_1]]施設への損害：[[CLOSE_1]]ご利用者は、施設の設備や備品に与えた損害について責任を負います。修理または交換の費用は、ご利用者のお会計に請求されます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests'/'Guest’s' rendered as ご利用者 per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_8363865d3df465429313",
+   "sourceHash": "8363865d3df465429313fe036c101a1420dd8d1b461f40cf8cbcf87acc1cd903",
+   "text": "[[OPEN_1]]追加サービス：[[CLOSE_1]]ランドリー、ガイド付きツアー、特別食などの追加サービスには、別途料金がかかる場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7454f2f3120af0b88e68",
+   "sourceHash": "7454f2f3120af0b88e68a5eb5da0a762a6ce28a9d2f489ef4ef427f7c7427c03",
+   "text": "プライバシーおよびデータ保護",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4923b9209ef7afc3277a",
+   "sourceHash": "4923b9209ef7afc3277a6f5550b1cb2a0e2587c07ffa2e2c1db55cb810a5be95",
+   "text": "当施設のプライバシーポリシーでは、お問い合わせ、診療報告書、支払記録、採用に関するデータについて、アクセス、保存期間、選択肢、海外からのご来訪者への対応を含めてご説明しています。お問い合わせや治療のご依頼によって、自動的にマーケティング配信に登録されることはありません。/privacy-policy/ をご覧いただくか、info@kairali.com までお問い合わせください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00ea1f1374a90d7bff7c",
+   "sourceHash": "00ea1f1374a90d7bff7cf8b0145852641c8fef2a5f30497d2ea65a6bc43a57cd",
+   "text": "第三者のサービスおよびリンク",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74eb4a98275b38ac5a0d",
+   "sourceHash": "74eb4a98275b38ac5a0d14c9ad857a4f3ec0688988c93d71e1808acc0451b069",
+   "text": "当施設のウェブサイトやその他の資料では、第三者のサービス、リンク、または情報源に言及する場合があります。当施設はこれらの外部の事業者を管理または推奨するものではなく、第三者が提供するコンテンツ、プライバシーの取り扱い、またはサービスについて責任を負いません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

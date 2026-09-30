@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script src="assets/packages-index-data.js"></script>
+<style>
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:18px;line-height:1.7}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+h1,h2,h3{font-weight:400;margin:0}
+*{box-sizing:border-box}
+:focus-visible{outline:3px solid #5A4420;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+<title>Ayurvedic Wellness Programs | Kairali - The Ayurvedic Healing Village</title>
+<meta name="description" content="Experience personalized Ayurveda, Panchakarma &amp; yoga programs at Kairali for detox, stress relief, weight loss &amp; immunity in a serene Kerala retreat.">
+<link rel="canonical" href="https://ayurvedichealingvillage.com/packages/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+</helmet>
+<div data-screen-label="Index / directory template — Mobile 390" style="width:390px;max-width:100%;margin:0 auto;background:#F7F4EA;overflow-x:hidden">
+
+  <a href="#main-content" style="position:fixed;left:-9999px;top:12px;z-index:50;background:#5A4420;color:#F7F4EA;padding:14px 20px;border-radius:4px;font-weight:700;font-size:15px" style-focus="left:12px">Skip to main content</a>
+
+  <div role="presentation" aria-hidden="true" style="height:72px;background:#D8D5CE;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6E6A63;font-weight:700;padding:0 16px">Approved site header</div>
+
+  <main id="main-content">
+
+    <section style="padding:14px 16px 0">
+      <nav aria-label="Breadcrumb" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14.5px;color:#75695A">
+        <a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px">Home</a>
+        <span aria-hidden="true" style="color:#C9BFA8">/</span>
+        <span aria-current="page" style="color:#2A2118;display:inline-flex;align-items:center;min-height:44px">{{ h1 }}</span>
+      </nav>
+      <p style="margin:2px 0 10px;font-weight:700;font-size:12.5px;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;line-height:1.5">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+      <h1 style="font-family:'Marcellus',serif;font-size:38px;line-height:1.14;text-wrap:balance">{{ h1 }}</h1>
+      <p style="display:{{ introDisplay }};font-size:18px;line-height:1.7;color:#514A3F;margin:16px 0 0;border-left:3px solid #C1882C;padding-left:16px;text-wrap:pretty">{{ intro }}</p>
+    </section>
+
+    <div style="width:100%;margin:22px 0 0;height:210px;background:#E0D7C4;overflow:hidden">{{ bannerEl }}</div>
+
+    <section aria-labelledby="dir-h" style="padding:30px 16px 0">
+
+      <p style="margin:0 0 6px;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#5A4420">{{ tally }}</p>
+      <h2 id="dir-h" style="font-family:'Marcellus',serif;font-size:28px;line-height:1.2">{{ sectionHeading }}</h2>
+
+      <nav aria-label="Filter packages by programme type" style="padding:22px 0 26px">
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid #E9E2D3">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+            <li style="margin:0;border-bottom:1px solid #E9E2D3"><a href="{{ f.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:8px 2px;color:#2A2118;font-size:17px;font-weight:600;text-decoration:none" style-hover="color:#5A4420;text-decoration:none"><span>{{ f.label }}</span><span aria-hidden="true" style="color:#C1882C;font-size:18px">→</span></a></li>
+          </sc-for>
+        </ul>
+      </nav>
+
+      <ul style="display:{{ listDisplay }};list-style:none;margin:0;padding:0;flex-direction:column;gap:0">
+        <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="8">
+          <li style="margin:0;padding:22px 0;border-top:1px solid #E9E2D3;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="flex:0 0 92px;width:92px;height:92px;background:#E0D7C4;border-radius:4px;overflow:hidden">{{ t.imgEl }}</div>
+              <div style="min-width:0;display:flex;flex-direction:column;gap:8px">
+                <h3 style="font-family:'Marcellus',serif;font-size:20px;line-height:1.3"><a href="{{ t.h }}" style="display:flex;align-items:center;min-height:44px;color:#2A2118;text-decoration:none" style-hover="color:#5A4420;text-decoration:underline">{{ t.t }}</a></h3>
+                <p style="display:{{ t.xDisplay }};margin:0;font-size:17px;line-height:1.65;color:#514A3F;text-wrap:pretty">{{ t.x }}</p>
+              </div>
+            </div>
+            <div style="display:{{ t.actDisplay }};gap:10px">
+              <a href="{{ t.book }}" style="flex:1 1 0;min-width:0;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 8px;border:1.5px solid #5A4420;border-radius:4px;color:#5A4420;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;white-space:nowrap" style-hover="background:#FAF6EC;text-decoration:none">Book Now</a>
+              <a href="{{ t.h }}" style="flex:1 1 0;min-width:0;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 8px;border:1.5px solid #006038;border-radius:4px;color:#006038;font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;white-space:nowrap" style-hover="background:#F2F6F1;text-decoration:none">Read More</a>
+            </div>
+          </li>
+        </sc-for>
+      </ul>
+
+      <ul style="display:{{ gridDisplay }};list-style:none;margin:0;padding:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px">
+        <sc-for list="{{ gridTiles }}" as="g" hint-placeholder-count="4">
+          <li style="margin:0;min-width:0">
+            <a href="{{ g.h }}" style="display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#2A2118" style-hover="text-decoration:none;color:#5A4420">
+              <span style="display:block;width:100%;aspect-ratio:1/1;background:#E0D7C4;border-radius:4px;overflow:hidden">{{ g.imgEl }}</span>
+              <span style="display:flex;align-items:center;min-height:44px;font-family:'Marcellus',serif;font-size:18px;line-height:1.3">{{ g.t }}</span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section aria-labelledby="closing-h" style="margin-top:44px;background:#FFFFFF;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;padding:40px 16px;background-image:repeating-linear-gradient(135deg,rgba(193,136,44,.05) 0 1px,transparent 1px 9px)">
+      <div style="max-width:760px;margin:0 auto;text-align:center">
+        <ul style="list-style:none;margin:0 auto 30px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;text-align:left">
+          <li style="display:flex;gap:10px;align-items:baseline;font-size:16px;line-height:1.5;color:#2A2118"><span aria-hidden="true" style="color:#C1882C">◆</span>NABH Certified Hospital</li>
+          <li style="display:flex;gap:10px;align-items:baseline;font-size:16px;line-height:1.5;color:#2A2118"><span aria-hidden="true" style="color:#C1882C">◆</span>118+ Years Heritage</li>
+          <li style="display:flex;gap:10px;align-items:baseline;font-size:16px;line-height:1.5;color:#2A2118"><span aria-hidden="true" style="color:#C1882C">◆</span>Individualised Programmes</li>
+          <li style="display:flex;gap:10px;align-items:baseline;font-size:16px;line-height:1.5;color:#2A2118"><span aria-hidden="true" style="color:#C1882C">◆</span>World Luxury Award Winner</li>
+        </ul>
+        <h2 id="closing-h" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.25;margin:0 0 12px">Not sure which programme fits?</h2>
+        <p style="font-size:16.5px;line-height:1.7;color:#514A3F;max-width:56ch;margin:0 auto 24px;text-wrap:pretty">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+          <a href="https://ayurvedichealingvillage.com/online-consultation/" style="flex:1 1 100%;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;background:#EEB41E;color:#2A2118;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none" style-hover="filter:brightness(.95);text-decoration:none">Free Doctor Consultation</a>
+          <a href="https://wa.me/919289838797" style="flex:1 1 100%;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;border:1.5px solid #006038;color:#006038;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none" style-hover="background:#F2F6F1;text-decoration:none">WhatsApp Patient Care</a>
+          <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="flex:1 1 100%;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border-radius:4px;border:1.5px solid #5A4420;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none" style-hover="background:#FAF6EC;text-decoration:none">Enquire Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div role="presentation" aria-hidden="true" style="height:620px;background:#D8D5CE;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6E6A63;font-weight:700;padding:0 16px">Approved site footer</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390},&quot;contentMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Live page — 27 tiles&quot;,&quot;options&quot;:[&quot;Live page — 27 tiles&quot;,&quot;Sparse extreme — 4 tiles, no prose&quot;,&quot;Dense extreme — 38 tiles&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;},&quot;showExcerpts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tile anatomy&quot;},&quot;showActions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Tile anatomy&quot;}}">
+class Component extends DCLogic {
+  data() { return (typeof window !== 'undefined' && window.AHV_PACKAGES) || null; }
+
+  tileSet(d, mode) {
+    if (mode === 'Sparse extreme — 4 tiles, no prose') return d.tiles.slice(0, 4);
+    if (mode === 'Dense extreme — 38 tiles') {
+      const out = d.tiles.slice();
+      let i = 0;
+      while (out.length < 38) { out.push(d.tiles[i % d.tiles.length]); i++; }
+      return out;
+    }
+    return d.tiles;
+  }
+
+  renderVals() {
+    const d = this.data();
+    if (!d) return {};
+    const mode = this.props.contentMode || 'Live page — 27 tiles';
+    const sparse = mode === 'Sparse extreme — 4 tiles, no prose';
+    const showX = (this.props.showExcerpts ?? true) && !sparse;
+    const showAct = (this.props.showActions ?? true) && !sparse;
+    const list = this.tileSet(d, mode);
+
+    const img = (src, alt, style) => React.createElement('img', {
+      src: src, alt: alt, loading: 'lazy', decoding: 'async',
+      style: style || { width: '100%', height: '100%', objectFit: 'cover', display: 'block' }
+    });
+
+    const rows = list.map((t, i) => ({
+      key: i, t: t.t, x: t.x, h: t.h, book: d.bookHref,
+      imgEl: img(t.img, ''),
+      xDisplay: showX ? 'block' : 'none',
+      actDisplay: showAct ? 'flex' : 'none'
+    }));
+
+    return {
+      h1: sparse ? 'Gallery' : d.h1,
+      intro: d.intro,
+      introDisplay: sparse ? 'none' : 'block',
+      filters: d.filters.map((f, i) => ({ label: f.label, href: f.href, key: i })),
+      bannerEl: img(d.bannerImg, d.bannerAlt, { width: '100%', height: '210px', objectFit: 'cover', display: 'block' }),
+      tally: list.length + ' ' + (sparse ? 'collections' : 'packages'),
+      sectionHeading: sparse ? 'Browse all collections' : (d.sectionHeading || 'Browse all'),
+      draftDisplay: d.sectionHeadingApproved ? 'none' : 'inline-block',
+      listDisplay: sparse ? 'none' : 'flex',
+      gridDisplay: sparse ? 'grid' : 'none',
+      tiles: sparse ? [] : rows,
+      gridTiles: sparse ? rows : []
+    };
+  }
+}
+</script>
+</body>
+</html>

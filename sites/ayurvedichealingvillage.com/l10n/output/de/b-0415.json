@@ -1,0 +1,133 @@
+{
+ "batchId": "b-0415",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_bfcb4f203ecc1e00ef83",
+   "sourceHash": "bfcb4f203ecc1e00ef83f1369621f7a02cc7da31b4ce234a8abc01ea61239ac9",
+   "text": "Die alte .aspx-Adresse leitet derzeit den Hostnamen um und liefert dann einen 404-Fehler, daher gibt es keinen Nachweis für eine durchgehende Weiterleitung. Dies ist eine ausdrückliche Einschränkung der Quellenidentität und wird NICHT als Berechtigung behandelt, diese Route umzuleiten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note appears in display data."
+   ]
+  },
+  {
+   "id": "t_c563e219ed1fd7ee42c9",
+   "sourceHash": "c563e219ed1fd7ee42c9150b1f1ea372830a84f44037dfcbae0f4b1f370f776e",
+   "text": "Die Kairali Ayurvedic group, Inbegriff eines gesunden Lebensstils und guter Lebensart, wurde im Jahr 1989 mit dem Ziel gegründet, die Lehren des Ayurveda in der ganzen Welt zu verbreiten. Ihre Gründer waren gelehrte, versierte Persönlichkeiten, die an die Wirkweise des Ayurveda glaubten und seine Fähigkeit, Körper und Seele zu heilen und zu reinigen, wahrhaft anerkannten. Sie gaben ihre umfassende Erfahrung und ihr Wissen über vier Generationen von Ärztinnen und Ärzten weiter, die sich ebenso dafür einsetzen, Ayurveda wieder zeitgemäß zu machen. Durch ihre gemeinsamen Bemühungen hat die Kairali Ayurvedic group neue Höhepunkte des Erfolgs und des Wohlwollens erreicht.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'fine living' rendered as 'guter Lebensart' to avoid luxury framing."
+   ]
+  },
+  {
+   "id": "t_af1d6b5b66d0f10a5a46",
+   "sourceHash": "af1d6b5b66d0f10a5a46b8e2964cd5dbbe4d1ae1e773849e87cefabbfddb08dc",
+   "text": "Eine ihrer herausragenden Veranstaltungen ist das Lakshya Yoga Retreat, eine siebentägige Feier von Ayurveda, Yoga und gesunder Lebensweise. In diesem Programm werden zahlreiche yogische Disziplinen vorgestellt, und die Teilnehmenden erhalten eine Vielzahl gesundheitsbezogener Leistungen und Beratungen. Viele bekannte Disziplinen des Ayurveda, etwa Panchakarma, kommen hier zum Einsatz, was dieses Programm besonders lohnenswert macht.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Lakshya Yoga Retreat' kept as event name; generic 'retreat' rendered as 'Programm'; 'must visit destination' softened to avoid travel/holiday framing; 'benefactors' interpreted as participants."
+   ]
+  },
+  {
+   "id": "t_418d798d65f6a7fe58f3",
+   "sourceHash": "418d798d65f6a7fe58f3d26395b42bba6417234e10a2b98b741b539d2b487b0c",
+   "text": "Eine ihrer herausragenden Veranstaltungen ist das",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding the event-name link ('Lakshya Yoga Retreat')."
+   ]
+  },
+  {
+   "id": "t_7db077ae90b55307b606",
+   "sourceHash": "7db077ae90b55307b606f7e4e2fe7d898b05a833e896bb214621700fb2374817",
+   "text": ", eine siebentägige Feier von Ayurveda, Yoga und gesunder Lebensweise. In diesem Programm werden zahlreiche yogische Disziplinen vorgestellt, und die Teilnehmenden erhalten eine Vielzahl gesundheitsbezogener Leistungen und Beratungen. Viele bekannte Disziplinen des Ayurveda, etwa Panchakarma, kommen hier zum Einsatz, was dieses Programm besonders lohnenswert macht.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following the event-name link; leading comma added for German syntax. 'retreat' rendered as 'Programm'."
+   ]
+  },
+  {
+   "id": "t_bb02c0a7edfd889f3c41",
+   "sourceHash": "bb02c0a7edfd889f3c410fd150066d25617c27d0f952f739e8594e6a17b2f83e",
+   "text": "Dieses ayurvedische Heildorf ist der Inbegriff von Gelassenheit und positiver Lebensweise, ein Ort, an dem Menschen frei von äußeren Belastungen und Sorgen verweilen können. Mit seiner modernen Technik, verbunden mit der uralten Großzügigkeit des Ayurveda, wird dieser natürliche Ort der Ruhe zum idealen Rückzugsort vom hektischen Alltag.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered as 'Rückzugsort'."
+   ]
+  },
+  {
+   "id": "t_86e1de74820a9b252ba3",
+   "sourceHash": "86e1de74820a9b252ba33b2eed445b0cd02c445b5f4b8007205aff1762d7301a",
+   "text": "Dieses",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment preceding 'Ayurvedic healing village'."
+   ]
+  },
+  {
+   "id": "t_12a5beee4d1dc60cc34c",
+   "sourceHash": "12a5beee4d1dc60cc34cdaaaf5ba374bbbeea8ea2321f33034f0b82bd01a24b0",
+   "text": "ayurvedische Heildorf",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; inflected to follow 'Dieses'."
+   ]
+  },
+  {
+   "id": "t_f2bc30b2b6c3a974624f",
+   "sourceHash": "f2bc30b2b6c3a974624f4116d140b89c0163898a3130b2aa49d730084534947f",
+   "text": "ist der Inbegriff von Gelassenheit und positiver Lebensweise, ein Ort, an dem Menschen frei von äußeren Belastungen und Sorgen verweilen können. Mit seiner modernen Technik, verbunden mit der uralten Großzügigkeit des Ayurveda, wird dieser natürliche Ort der Ruhe zum idealen Rückzugsort vom hektischen Alltag.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'gateway' read as 'getaway'; rendered as 'Rückzugsort'."
+   ]
+  },
+  {
+   "id": "t_5d49740011763daddd6a",
+   "sourceHash": "5d49740011763daddd6a4fa2c38833ecb0af97bbd691127f70e81ac7c5aa6044",
+   "text": "Beschriftete kontextbezogene Navigation aus dem aktuellen Datensatz mit ihren exakten ursprünglichen Zielen und Quellverweisen. Die Überschrift „Knowledge Center“ ist reiner Quelltext und wird nicht zu einem Link aufgewertet.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note appears in display data."
+   ]
+  },
+  {
+   "id": "t_a84027ac4117c60b0cee",
+   "sourceHash": "a84027ac4117c60b0ceedeffa4839b17366b61b05009c161135104c93ebf62d6",
+   "text": "Der Kontext dieser Route ist ihre eigene Knowledge-Center-Überschrift aus der Quelle. Die allgemeine Beschriftung „Explore current programmes“ wird hier NICHT verwendet.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; quoted label kept in English as an identifier."
+   ]
+  },
+  {
+   "id": "t_25ee652fe24cc89e9090",
+   "sourceHash": "25ee652fe24cc89e9090b1ac7197ed2e08dc7cdc53f65b1227a289a14e71f800",
+   "text": "lk-cg-",
+   "status": "translated",
+   "unchangedReason": "CSS/ID prefix used for string concatenation, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_5dea34262e352874fc4d",
+   "sourceHash": "5dea34262e352874fc4d582963706a588a51f539c0d91badf39d68f0ab93b676",
+   "text": "Eine Woche vollkommener Ruhe und Regeneration. Finden Sie durch Yoga und Meditation wieder zu sich selbst. Stärken Sie Ihren Körper mit ayurvedischen Massagen und Therapien. Genießen Sie schmackhafte vegetarische Gerichte!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

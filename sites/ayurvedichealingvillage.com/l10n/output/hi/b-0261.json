@@ -1,0 +1,193 @@
+{
+ "batchId": "b-0261",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_dfefaebf50126a09c2a2",
+   "sourceHash": "dfefaebf50126a09c2a286ed6e97ed32a1e2e32f90aca5bbf1a03534ffc29139",
+   "text": "30% छूट",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b20381221ceea75b563",
+   "sourceHash": "8b20381221ceea75b56394ceb7eb98d62bd7b1263d5823778d4afb301fab53a1",
+   "text": "30% तक की छूट",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fb128e872e5d19261b9",
+   "sourceHash": "7fb128e872e5d19261b9d511440a403421269b1bb6e1b39db84d0d5798d110c3",
+   "text": "यहाँ क्लिक करें",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ca3f25a139cf25d522a",
+   "sourceHash": "9ca3f25a139cf25d522afae40abda5ec44f5f8ae8a5c41f9d1e73292050baffa",
+   "text": "400x320",
+   "status": "translated",
+   "unchangedReason": "Image dimensions; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_b803e10197a0ac3a3085",
+   "sourceHash": "b803e10197a0ac3a3085e1bb63658262328d99956573375de6f99b164ba33312",
+   "text": "496x422",
+   "status": "translated",
+   "unchangedReason": "Image dimensions; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_0faa961a48a6c47b3cee",
+   "sourceHash": "0faa961a48a6c47b3ceedafdb1ae0a2c1be79942c31c41e9ddc9a21b91cb7b61",
+   "text": "Kairali में आयुर्वेदिक FAQ और हार्मोनल संतुलन",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'Retreat' omitted (Kairali alone) to avoid the banned sense; kept within 60 characters."
+   ]
+  },
+  {
+   "id": "t_1007907bf52a4db19495",
+   "sourceHash": "1007907bf52a4db19495ede229e8ad4b4f8a4224886fc03f50a4b2b5531d2139",
+   "text": "FAQ और डाउनलोड",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source HTML entity &amp; rendered as plain 'और'."
+   ]
+  },
+  {
+   "id": "t_126276872e851edf914f",
+   "sourceHash": "126276872e851edf914f8a4adfbd1f099b536af3122284b8d7e6d1d08ecaddd8",
+   "text": "13 मिनट",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b4c19377966201b8644",
+   "sourceHash": "7b4c19377966201b864442a4f28c5284da230834ee19ed6d6d0d217adcb4566e",
+   "text": "अपनी यात्रा की योजना बनाएँ और FAQ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_7b4c19377966201b8644 banned-term यात्रा"
+   ]
+  },
+  {
+   "id": "t_b65335ebfde4f232c670",
+   "sourceHash": "b65335ebfde4f232c6702e243da2c48a2ac2bf88eb593d1d2e9cbda313b45955",
+   "text": "स्वतंत्र समीक्षा में दोनों फ़ाइलों को डिकोड किया गया: मूल और आयातित फ़ाइल RGBA में पिक्सेल-दर-पिक्सेल समान हैं। PNG बाइट्स में अंतर केवल एन्कोडिंग का है, इसलिए दोबारा आयात की आवश्यकता नहीं है। दोनों हैश दर्ज रहते हैं और बाइट-समानता का दावा अब भी नहीं किया जाता।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_223dd48c7ac1d5804acf",
+   "sourceHash": "223dd48c7ac1d5804acf8e6980a7e45dd45062d7a2a996fa8e0e64880552d622",
+   "text": "Kairali आयुर्वेदिक उपचार केंद्र: अक्सर पूछे जाने वाले प्रश्न",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'Retreat' → उपचार केंद्र."
+   ]
+  },
+  {
+   "id": "t_90a3dfa279d15be697c6",
+   "sourceHash": "90a3dfa279d15be697c68e367b5842b89ae101cb9df97570cc3f7c5ba571067c",
+   "text": "नमस्ते, और हीलिंग विलेज के विस्तृत FAQ पृष्ठ पर आपका स्वागत है। हमने इन प्रश्नों को इस तरह व्यवस्थित किया है कि आप अपनी स्वास्थ्य-प्रक्रिया को आसानी से समझ सकें। यदि आपको वह जानकारी नहीं मिलती जिसकी आपको तलाश है, तो कृपया हमारी रोगी-संपर्क टीम से संपर्क करें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitutions: 'wellness journey' → स्वास्थ्य-प्रक्रिया; 'guest relations team' → रोगी-संपर्क टीम."
+   ]
+  },
+  {
+   "id": "t_f8cf0ea78344cec886fe",
+   "sourceHash": "f8cf0ea78344cec886fe863f075fd6ae03d09cb67f99257dbc367a582dd28a36",
+   "text": "हमें आशा है कि यह विस्तृत FAQ आपके प्रश्नों के उत्तर देने में एक सहायक मार्गदर्शिका सिद्ध होगा और आपके अनुभव को बेहतर बनाएगा —",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment: source continues with the brand name, then '. If you have…'. Hindi word order would place the location before 'अनुभव'; rendered with a dash so the following name reads as 'at <name>'. Reviewer may prefer merging the fragments."
+   ]
+  },
+  {
+   "id": "t_15c8fde1311db7323d6b",
+   "sourceHash": "15c8fde1311db7323d6b57bc04befe7bd55dadf4edfd7ec94c10751026df0f12",
+   "text": " में। यदि आपके कोई और प्रश्न हैं या आपको व्यक्तिगत सहायता चाहिए, तो कृपया हमारी मैत्रीपूर्ण टीम से बेझिझक संपर्क करें — समग्र स्वास्थ्य की दिशा में आपकी प्रक्रिया में सहायता के लिए हम यहाँ हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment continuing after the brand name. Clinical-register substitution: 'journey' → प्रक्रिया."
+   ]
+  },
+  {
+   "id": "t_a2101264009091f6e005",
+   "sourceHash": "a2101264009091f6e00509f3684a4ac399808b2efa3f7bfbd79fcf0d2ec03375",
+   "text": "हमें आशा है कि यह विस्तृत FAQ आपके प्रश्नों के उत्तर देने में एक सहायक मार्गदर्शिका सिद्ध होगा और Kairali – The Ayurvedic Healing Village में आपके अनुभव को बेहतर बनाएगा। यदि आपके कोई और प्रश्न हैं या आपको व्यक्तिगत सहायता चाहिए, तो कृपया हमारी मैत्रीपूर्ण टीम से बेझिझक संपर्क करें — समग्र स्वास्थ्य की दिशा में आपकी प्रक्रिया में सहायता के लिए हम यहाँ हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'journey' → प्रक्रिया."
+   ]
+  },
+  {
+   "id": "t_8bca339c8ba10e9d142e",
+   "sourceHash": "8bca339c8ba10e9d142eff66d936cbb7350e679312b8a02f3e8d4656f6c00e2e",
+   "text": "Kairali को अन्य आयुर्वेदिक केंद्रों से क्या अलग बनाता है?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'retreat' → केंद्र."
+   ]
+  },
+  {
+   "id": "t_15e565b569123db5a935",
+   "sourceHash": "15e565b569123db5a93524c3fa368f8ebb4d1f84218a9d0bfbd183f97e6ccbc1",
+   "text": "Somatheeram जैसे केंद्रों के विपरीत, जो मुख्य रूप से वेलनेस केंद्रों के रूप में संचालित होते हैं, Kairali NABH-प्रमाणित है, जिससे चिकित्सकीय स्तर का आयुर्वेदिक उपचार और क्लिनिकल प्रोटोकॉल सुनिश्चित होते हैं। हमारा आवासीय उपचार-परिवेश Laurie Baker द्वारा डिज़ाइन किया गया है, जो केरल की विरासत को प्राकृतिक चिकित्सकीय वातावरण के साथ जोड़ता है, और हम हर उपचार योजना में आयुर्वेदिक विशेषज्ञता की चार पीढ़ियों का अनुभव लाते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'retreats'/'wellness retreats' → केंद्र/वेलनेस केंद्र. Source names a competitor (Somatheeram) — comparative claim; owner/legal may wish to review."
+   ]
+  },
+  {
+   "id": "t_ee3ff7c3ea7e291b6967",
+   "sourceHash": "ee3ff7c3ea7e291b6967f1f5d315aa6a6d30c5b7cbc2ef4c49e805d6b6054a03",
+   "text": "आधुनिक वेलनेस-फ़्यूज़न केंद्रों की तुलना में Kairali कैसा है?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'retreats' → केंद्र."
+   ]
+  },
+  {
+   "id": "t_c4800abcc7c2514d1dbb",
+   "sourceHash": "c4800abcc7c2514d1dbb700ff8ecbc789aac659aa824a12b9a6b8b7866883b12",
+   "text": "Atmantan जैसे केंद्र विभिन्न उपचार-पद्धतियों को मिलाकर काम करते हैं, जबकि Kairali चिकित्सकीय निगरानी में शुद्ध शास्त्रीय आयुर्वेद का पालन करता है। प्रमाणित थेरेपिस्टों और चौबीसों घंटे डॉक्टर की सहायता के साथ, उपचार आयुर्वेदिक विज्ञान पर आधारित रहते हैं और छोटे, संरचित थेरेपी-चक्रों में मापने योग्य राहत प्रदान करते हैं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'Resorts' → केंद्र. Source names a competitor (Atmantan) and claims 'measurable relief' — translated without strengthening; owner/Dr. Deepu John may wish to review."
+   ]
+  },
+  {
+   "id": "t_b240005ed74a0a8642f4",
+   "sourceHash": "b240005ed74a0a8642f450f1607503ae0d5879e0a3a165a3febc63412e615379",
+   "text": "प्रीमियम वेलनेस केंद्रों की तुलना में Kairali के क्या लाभ हैं?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-register substitution: 'luxury wellness retreat' → प्रीमियम वेलनेस केंद्र."
+   ]
+  }
+ ]
+}

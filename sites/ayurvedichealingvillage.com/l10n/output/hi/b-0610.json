@@ -1,0 +1,173 @@
+{
+ "batchId": "b-0610",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_ed0ee7f51cae78f3e954",
+   "sourceHash": "ed0ee7f51cae78f3e95408c38c1d10ca40a644f6ea8c1c35eca6794fd354e2ee",
+   "text": "दरें लागू होने की तिथि",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment; phrased as 'rates effective from (date)' so the following date reads naturally in Hindi."
+   ]
+  },
+  {
+   "id": "t_00d9344ceb6a435761fd",
+   "sourceHash": "00d9344ceb6a435761fda9860a892fea19ce9ecffeb1d87a9ced580130bcf2ff",
+   "text": "फ़िल्म में, और एक टूर जल्द ही आ रहा है",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5381066c58eba135fc",
+   "sourceHash": "4e5381066c58eba135fcf2977a2508f7d72105cd42076fd321b2b364ba867606",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]हमारी पेशेंट केयर टीम से पूछताछ करते समय इस ऑफ़र के बारे में पूछें।[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a84dbe0ef7b2c4d0df3",
+   "sourceHash": "7a84dbe0ef7b2c4d0df325a6f165ff38a35c184e76f52f2b8145b7353bc2b995",
+   "text": "टेलीफ़ोन: [[OPEN_1]]+91 9555 156 156[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11929d76dbfd2699da2a",
+   "sourceHash": "11929d76dbfd2699da2a9a21c8138e4c5adf25497ed547c2c4e8a1f8d87dbe95",
+   "text": "3–13 रातों के लिए 10% · 14–20 रातों के लिए 15% · 21 रातों या उससे अधिक के लिए 20%। सभी पैकेजों के लिए। कोई निश्चित समाप्ति तिथि नहीं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4b06ef6d3c81436f60a",
+   "sourceHash": "f4b06ef6d3c81436f60a318c81c42f8f7e2d774d45a22f3b9b5f3b6980d28146",
+   "text": "तक",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_930bf5e7c871c668c034",
+   "sourceHash": "930bf5e7c871c668c034874a7fb987a73104237db57edc1e2bcaab32f679a6e3",
+   "text": "वैकल्पिक। यदि आपकी तिथियाँ अभी तय नहीं हैं, तो इसे खाली छोड़ दें।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_35f00e26d4d1289f7d2e",
+   "sourceHash": "35f00e26d4d1289f7d2e18d11070f142df3b068b28f8dbe0aec3bf104d2e8427",
+   "text": "[[VAR_1]][[OPEN_1]] / रात[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11150a76f47719f852ac",
+   "sourceHash": "11150a76f47719f852acdc2dd26418e70c1382558d1a1b8ecf7f0264043fd2f3",
+   "text": "एकल ऑक्यूपेंसी, प्रति विला प्रति रात: डीलक्स विला [[VAR_1]] · क्लासिक विला [[VAR_2]] · रॉयल विला [[VAR_3]] · महाराजा सुइट [[VAR_4]]।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b7fbde536ad5fef7062",
+   "sourceHash": "8b7fbde536ad5fef70628f83c3b1bb2bbd72210aa26d1a8e96426cd8d9fcb974",
+   "text": "शुरुआती दर ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenation fragment; rendered as 'starting rate ·' because Hindi places 'से' after the amount."
+   ]
+  },
+  {
+   "id": "t_3a06ab10d8d5ca673a47",
+   "sourceHash": "3a06ab10d8d5ca673a473bdfaa5bbb025dbc5b618fb48068f4a1d4e673e9ae46",
+   "text": "€ EUR",
+   "status": "translated",
+   "unchangedReason": "Currency symbol and ISO code are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d88f343350776672ed0",
+   "sourceHash": "4d88f343350776672ed05ba6a7dbdd61d5c151fb8758ef47142dcf4f9adfcf6e",
+   "text": "[[OPEN_1]]महाराजा सुइट[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0b842b338c651688df07",
+   "sourceHash": "0b842b338c651688df07e77f94f7a8925424164c713c47a39c297dd435980ed9",
+   "text": "[[OPEN_1]]रॉयल विला[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8c6d38d6fa1ddb636f3c",
+   "sourceHash": "8c6d38d6fa1ddb636f3c714cd7708831aa44900bd8889909f4ec53e32085b29d",
+   "text": "[[OPEN_1]]क्लासिक विला[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_34dcfd7b06e164529337",
+   "sourceHash": "34dcfd7b06e164529337dd6e1491c9e23eacf8fa41973b9516ff979c5d08c8a9",
+   "text": "[[OPEN_1]]डीलक्स विला[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a5ae35d01590114a18e",
+   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
+   "text": "[[OPEN_1]]आयुर्वेद उपचार[[CLOSE_1]] [[OPEN_2]]विला[[CLOSE_2]] [[OPEN_3]]योग और ध्यान प्रशिक्षण[[CLOSE_3]] [[OPEN_4]]आयुर्वेद प्रशिक्षण कार्यक्रम[[CLOSE_4]] [[OPEN_5]]आयुर्वेदिक भोजन[[CLOSE_5]] [[OPEN_6]]हमारे उत्पाद[[CLOSE_6]] [[OPEN_7]]विलेज की सुविधाएँ[[CLOSE_7]] [[OPEN_8]]ऑफ़र[[CLOSE_8]] [[OPEN_9]]हमारे बारे में[[CLOSE_9]] [[OPEN_10]]ज्ञान केंद्र[[CLOSE_10]] [[OPEN_11]]मीडिया गैलरी[[CLOSE_11]] [[OPEN_12]]पुरस्कार[[CLOSE_12]] [[OPEN_13]]समीक्षाएँ[[CLOSE_13]] [[OPEN_14]]कैसे पहुँचें[[CLOSE_14]] [[OPEN_15]]सामान्य प्रश्न और डाउनलोड[[CLOSE_15]] [[OPEN_16]]संपर्क करें[[CLOSE_16]] [[OPEN_17]]ओपीडी (वॉक-इन)[[CLOSE_17]] [[OPEN_18]]उपचार और प्रशिक्षण[[CLOSE_18]] [[OPEN_19]]योग और आयुर्वेद रिट्रीट[[CLOSE_19]] [[OPEN_20]]योग और ध्यान पैकेज[[CLOSE_20]] [[OPEN_21]]सीएसआर[[CLOSE_21]] [[OPEN_22]]हमारे साझेदार[[CLOSE_22]] [[OPEN_23]]दर्शनीय स्थल[[CLOSE_23]] [[OPEN_24]]उत्सव[[CLOSE_24]] [[OPEN_25]]फ़ोटो गैलरी[[CLOSE_25]] [[OPEN_26]]करियर[[CLOSE_26]] [[OPEN_27]]अभी आवेदन करें[[CLOSE_27]] [[OPEN_28]]आयुर्वेदिक लिंक[[CLOSE_28]] [[OPEN_29]]संग्रह[[CLOSE_29]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aeefcfa5e981ddea1acf",
+   "sourceHash": "aeefcfa5e981ddea1acff2eec574b3f7dd0336bd1b16df373ac649e9ebb67ea8",
+   "text": "क्लिनिकल प्रतिष्ठान का स्थायी पंजीकरण — 2025–2030",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_371e4203197189a6da16",
+   "sourceHash": "371e4203197189a6da164c7b0ad6cad0d06fc8964891bcd59edda18f13c7600b",
+   "text": "कैराली – आयुर्वेदिक हीलिंग विलेज प्रामाणिक स्वास्थ्य और समग्र देखभाल प्रदान करता है, जहाँ शांति और परंपरा का मेल होता है। हमारा परिसर शराब-मुक्त, धूम्रपान-मुक्त और कैफ़ीन-मुक्त है, जो मन और शरीर के संपूर्ण सामंजस्य के लिए एक स्वच्छ और ताज़गी भरा वातावरण प्रदान करता है। केरल में प्रामाणिक, परिवर्तनकारी और स्वास्थ्यवर्धक अनुभव के लिए पारंपरिक आयुर्वेदिक उपचारों, योग, ध्यान और जैविक जीवनशैली को अपनाएँ।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Our retreat' rendered as 'our campus' (परिसर) to keep the clinical register; 'remedies' rendered as उपचारों (treatments)."
+   ]
+  },
+  {
+   "id": "t_aaa300737e84bb2384ee",
+   "sourceHash": "aaa300737e84bb2384eeef2a171807565c2671cd57eed54575bd54020d481563",
+   "text": "हरे लिनन वस्त्र में एक महिला, योग मुद्रा में जुड़े हुए हाथ सिर के ऊपर उठाए हुए",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31265b74f519c209f5b9",
+   "sourceHash": "31265b74f519c209f5b978ee27914d89dd153a5a60e5b3a3df2c7945a2d81814",
+   "text": "दो थेरेपिस्ट लकड़ी की उपचार मेज़ पर लेटे एक मरीज़ पर गर्म हर्बल पोटली दबाते हुए",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

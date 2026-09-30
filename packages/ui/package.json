@@ -14,7 +14,10 @@
     "./fonts/fleet-pulse": "./fonts/src/fleet-pulse.ts",
     "./fonts/kairali": "./fonts/src/kairali.ts",
     "./fonts/kairali.css": "./fonts/src/kairali.css",
-    "./brand-lint": "./src/brand-lint.js"
+    "./brand-lint": "./src/brand-lint.js",
+    "./ahv-campaign-tokens.css": "./ahv-campaign-tokens.css",
+    "./brand-colors": "./src/brand-colors.ts",
+    "./kairali-premium-v3-tokens.css": "./kairali-premium-v3-tokens.css"
   },
   "bin": {
     "kairali-brand-lint": "./bin/brand-lint.js"

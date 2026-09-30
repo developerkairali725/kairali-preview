@@ -1,0 +1,106 @@
+# T10 confirmation family — reusable Desktop + Mobile reader, 5 exact route datasets, 3 variants — CANDIDATE
+Built 8 Sep 2026 under WOPS-AHV-CLAUDE-CONTINUATION-002 from mounted `family-10/CONFIRMATION-FAMILY-NATIVE-PROMPT.txt` and its named files `CONFIRMATION-FIVE-FAMILY-BUILD.json`, `CONFIRMATION-FIVE-BINDING-CHECKS.json`, `CONFIRMATION-RECEIPT-CONTRACT-READBACK.json` (evidence copies in `data/family-10/`). Packet status PREPARED_NOT_DISPATCHED_SHARED_COPY_FLAGS_OPEN; per-route SOURCE_BINDING_PREPARED_NOT_NATIVE_ACCEPTED → this build is a CANDIDATE. No accepted-count change by me (readback: 65 mapped bindings / 62 explicit scoped-or-preserved acceptance rows / 3 prior-major reconciliations — preserved).
+
+## Files (exact)
+- `AHV Page Confirmation Desktop.dc.html` · `AHV Page Confirmation Mobile.dc.html` — ONE reader, three variants switched by route data: `next-steps` (/contact-us/thank-you/, /ppc-thanks/, /thanks/), `legacy-queue` (/onlinebookingthankyou/), `image-receipt` (/onlineconsultation-thanks/). Not five page pairs.
+- `assets/confirmation-family-data.js` (window.AHV_CONFIRM: 5 route datasets, directVisit fallback, receiptContract, headEmissionContract, 6 image records) · `assets/confirmation-family-render.js` (route/state resolution, head binding; no network, no events).
+- 6 unique originals / 9 placements, self-hosted, native ratio, alt as packet: `assets/img/AHV-Confirm-Landscape-1440.png` (our-story.png 1440×524, ee7d129f…; used by /onlineconsultation-thanks/, /ppc-thanks/ and the direct-visit state) · `AHV-Confirm-Landscape-1024.png` (our-story-1024x373.png 1024×373, sha 7bcb8689dc79a1384331dd581bbcd42ab07f915291d3c13677067f32f1cad1d4; /contact-us/thank-you/, /thanks/) · `AHV-Confirm-Booking-Bg.jpg` (bg.jpg 1440×683, 0e251864…; legacy cover, object-fit cover as in source cover block) · `AHV-Confirm-Booking-Logo.png` (th-logo-1.png 83×56, 7f205d84…) · `AHV-Confirm-Lotus.svg` (lotus.svg 95×57, 2a5ea2f3…; /onlineconsultation-thanks/, /ppc-thanks/) · `AHV-Confirm-Consultation-Poster.jpg` (thankyou-1.jpg 1000×523, f75b1c51…; alt describes it as the poster whose text is transcribed below — the only non-empty alt, because the image carries the page's message).
+- `notes/confirmation-family-qa-harness.html` (+ `notes/qa/confirm-qa-all-70-states.jpg`, `notes/qa/confirm-desktop-*.jpg`).
+
+## States (binding contract)
+- **Direct visit = default** for every route and both views: packet neutral fallback verbatim — H1 "Return to the website", body "This page cannot confirm whether a message or booking was submitted.", link "Go home" → https://ayurvedichealingvillage.com/ (default-prevented in prototype), landscape image. No thank-you, success, receipt, booking or appointment wording anywhere in main.
+- **Receipt = private synthetic review mockup**: shown via TWO private review controls only — the Tweaks prop `prototypeReceipt` and the explicit QA override `?receipt=prototype` (both implemented in `assets/confirmation-family-render.js` resolveReceipt). Neither is a real handler receipt; the `route` query alone never switches state, and no hash, referrer, cookie or localStorage is read as a submission receipt. Next.js must NOT carry either control as public success authority — server-verified handler success is the only future trigger. No names, IDs, appointments, payments or outcomes are invented; receipt copy is the exact source wording for source review.
+- Route binding: `?route=` (harness) → `route` Tweaks enum → default /thanks/. No public route picker, no breadcrumb, no BreadcrumbList.
+- Future handler contract (data `receiptContract`): server-verified handler success receipt required before any personalised/success state; direct load, refresh, prefetch, crawler and history navigation emit zero business outcomes; consent-denied behaviour to QA; enquiry / consultation / booking / payment states must be distinguished. Legacy booking thank-you ≠ paid booking or confirmed appointment. No analytics/Ads/Clarity/Meta events, no network form request — verified by the harness (fetch/sendBeacon hooks, no gtag/fbq/clarity/dataLayer globals, no `<form>`).
+
+## Content per route (source-exact; corrections as recorded)
+- /contact-us/thank-you/ — eyebrow "Message received", H1, sub, phone-lines note, H2 "What happens next" + 3 numbered steps (1/2/3 with "when" lines), H2 "Don’t want to wait? Talk to us now" + Priya paragraph + WhatsApp (wa.me, rel noopener) / tel links, H2 "While you wait" + 4 link cards (kicker/H3/p) → /ayurvedic-treatments/, /online-consultation/, /how-to-reach/, /our-villas/. Source WP cover block + decorative SVGs dropped (wrapper styling); empty source `<p>` dropped.
+- /onlinebookingthankyou/ — brand line (p, no word change), H1 "Thank You" (existing title promoted; uppercase kept as source style), 3 paragraphs verbatim incl. queue/1-2 Business Days wording, "GO HOME" → governed root (source /index.php/ayurvedic-healing-village/ recorded). Cover bg + small logo original.
+- /onlineconsultation-thanks/ — lotus, H1 "Online Consultation Thanks", original poster image + recorded readable transcript as an H2 "Text of the poster" + 6 list lines (packet visualTranscription verbatim; limits recorded). Transcript heading label is derived UI text (logged).
+- /ppc-thanks/ — H1 with source `<em>care team</em>`, lede (2 lines, source `<br>` → 2 paragraphs, words unchanged), Step 01–03, "Need an answer sooner?" eyebrow + H2 "Priya is here in the meantime" + 2 paragraphs + WhatsApp/tel, "While you wait" + 3 cards with go-labels → /panchakarma-therapy/, /accreditations/, /gallery/, trust row "Est. 1908 · 118 Years / NABH Accredited Hospital / WHO-GMP Pharmacy / Physician-led care" (source text, `<b>` kept). Duplicate admin title "PPC Thanks" omitted; robots index→noindex per governed correction (source robots retained in data). Straight apostrophes as in this record.
+- /thanks/ — same structure as /ppc-thanks/ with the record's curly apostrophes and 1024 banner.
+
+## Head per route (prototype JS binding, source exact)
+title · description only if source non-empty (all five empty → none) · canonical ONLY on /ppc-thanks/ (source has one; other four absent, not manufactured) · robots "noindex, follow" ×5 · og:locale/type/title/url/site_name, og:description when non-empty (entity-decoded), og:image (+ width/height/type when present; /ppc-thanks/ source has empty dims → only og:image) · twitter:card · hreflang none · lang en-US · WebPage+WebSite JSON-LD only. **Not emitted (retained in data, server-side contract):** og:modified_time, twitter "Est. reading time". All five excluded from XML sitemap and public navigation (implementation contract).
+
+## QA — notes/confirmation-family-qa-harness.html `runAll()` 8 Sep — 70/70 PASS
+5 routes × {direct, receipt} × Desktop 1024/1280/1440/1920 + Mobile 320/390/430; run per route (14 units/operation). Load: wait for state marker + footer + head binding + fonts.ready; scroll-to-end ×3 & back; images eager + decode(); end reached with height-stable ×3 re-scroll. Checks: title/desc/canonical presence-or-absence/noindex single/og set/og:image dims rule/twitter/0 hreflang/lang; no breadcrumb nav, no BreadcrumbList, no picker controls; DIRECT: state marker, H1 = fallback heading, body text, Go home link exact, no success/receipt vocabulary, 1 image; RECEIPT: state+variant marker, one H1 exact (em preserved), every substantive text string present, heading order (h2/h3) exact, link hrefs exact and ordered, mailto/wa.me rel, lede/steps/trust counts, legacy Go-home target + no index.php link + 4 paragraphs + uppercase H1, transcript 6 lines exact + poster alt + no links in image variant; images in expected order with native dims, ≤ native render (cover excepted), ratio ≤2%, inside viewport; no ₹/$/€/reference number/booking id/appointment confirmed/payment received; zero non-runtime fetch/beacon, no tracking globals, no form; all controls ≥44×44; p/li ≥16.4px, labels ≥12.5px; first control focusable + click default-prevented; scrollWidth = clientWidth top and end (mobile shell too); footer bottom = document end (±1). Fixes during QA: "sooner" card needed box-sizing:border-box (overflow at 1024/1280/320/390); legacy brand line 13→14px; harness: runtime `.dc.html/.js/.json` loads excluded from the network guard, footer-end measured against document end (the 800px test iframe's own scrollbar produced a constant −15 viewport delta at 320 in one variant; document check confirmed footer.bottom = scrollHeight).
+
+## Provenance correction 8 Sep (family-10/CONFIRMATION-PROVENANCE-CORRECTION.txt)
+Independent exported QA: 70/70 states pass; all five full metadata datasets incl. modifiedTime/Twitter misc match source; six image identities match (five raster pixel-exact, SVG tree exact with C2PA metadata added); nine placements match. Two data/note-only corrections applied: (1) `assets/confirmation-family-data.js` images.landscape1024.sha256 truncated `7bcb8689` → full governed `7bcb8689dc79a1384331dd581bbcd42ab07f915291d3c13677067f32f1cad1d4` (verified against CONFIRMATION-FIVE-FAMILY-BUILD.json; image file unchanged); (2) this note now documents BOTH private review controls (`prototypeReceipt` Tweaks prop and `?receipt=prototype` QA override) — earlier wording implied Tweaks-only. Candidate views untouched; QA mechanism retained. Hashes in backups/corrections-2026-09-08/HASHES-*.json.
+
+## Open items (honest)
+- Codex independent acceptance pending; no count increment.
+- Shared-copy flags NOT newly verified (packet): response times (working hours / minutes / same day / 24 hours / 1-2 Business Days), named contact Priya, capacity "Thirty villas / 65-acre", history/accreditation "Est. 1908 · 118 Years / NABH / WHO-GMP", queue-status wording. Rendered as source copy for review only; resolve from owner/evidence before release; no structured-data claims made.
+- Owner decision "initial physician consultation free" is authoritative; source "complimentary consultation" wording retained as-is; no other pricing text.
+- Working submission, handler receipt, analytics/consent configuration, server-side head output, XML exclusion, legal/medical/current-claim approval: not done, not claimed. No publish.
+- Private future overhaul information: none on any page.
+
+
+## Post-submission design pass — 19 Sep 2026 (Desktop + Mobile, receipt state only)
+Brief: what a person sees immediately after they submit. Calm and quiet — no celebration animation, no confetti. Researched against current (2026) thank-you-page practice, which converges on "3C": Confirm the action, Clarify what happens next with a real timeframe, Continue with one clear next step — plus deliver the asset immediately where there is one, keep the page noindex, and avoid piling on asks.
+
+Added to the `next-steps` receipt variant (/contact-us/thank-you/, /ppc-thanks/, /thanks/), both views:
+1. **Receipt strip** (`[data-receipt-strip]`) directly under the hero — green-topped white card, 44px outline tick, "Your message has been sent.", a 3-row definition list (Sent at · A copy went to · Read by) and the owner's response pledge (Mon–Sun 9 am–6 pm IST, usually within 12 hours). The two runtime values are marked as supplied by the handler and rendered in muted ink — no invented timestamps, reference numbers or addresses. Carries a visible DRAFT flag.
+2. **Direct contact row** (`[data-direct-contact]`) — 56px WhatsApp +91 92898 38797 and info@kairali.com, both tappable, side by side on desktop and stacked full-width on mobile.
+3. **The Healing Secrets** (`[data-asset]`) — lead-magnet delivery block before "While you wait". The PDF has NOT been supplied: the button renders `aria-disabled="true"` with `href="#"` and a visible note saying the file is needed. Supply the PDF (or name a different guide) and it becomes a real download.
+New data lives at the end of `assets/confirmation-family-data.js`: `receiptStrip`, `responsePledge`, `asset`, `soonerDirect`. All DRAFT, none of it source copy.
+
+Unchanged and deliberate: the direct-visit state is still the default and still claims nothing — a URL never proves submission. Everything above renders only in the verified/prototype receipt state.
+
+Open items from this pass:
+- /thanks-old/ is named in the brief as the design-against page (83 words, 2 images) but has NO dataset, kit or record in my inputs — the phase-04 kit carries only the five built routes. Needs a drop or a live capture before it can be bound.
+- The brief says eight of the ten family routes are empty today. In our data the five English routes all carry source copy; the empties are presumably /thanks-old/, the de/fr thank-you routes and /cart/ + /checkout/ (owner is deciding those separately — ignored here). Confirm the list.
+- SLA: this pass uses the owner's 12-hour pledge, while the source copy on /thanks/ and /ppc-thanks/ still reads "within 24 hours" in the lede. Both are now on the same page. Resolve before release.
+- The Healing Secrets PDF, and whether the download should sit behind nothing (immediate) or a second opt-in. Current design: immediate, no second form — that matches the practice research and the calm register.
+
+
+## Direct-visit copy replaced — 19 Sep 2026 (owner instruction)
+The owner rejected the packet's neutral fallback ("Return to the website" / "This page cannot confirm whether a message or booking was submitted." / "Go home") as unhelpful. Replaced on both views, marked DRAFT in the page:
+- H1 "This page only appears after you send us something"
+- Body: "You have landed here without a message attached — a bookmark, a refresh or a back button will do it. This page cannot tell whether anything was sent. If you have already written to us, there is no need to send it again; if you are not sure it went through, the routes below reach the same team."
+- Four exits replacing the single Go home link: Send an enquiry (primary) · WhatsApp +91 92898 38797 · info@kairali.com · Go to the homepage.
+
+Contract position unchanged: the direct-visit state still makes NO claim that anything was sent or received — the body says so explicitly — and remains the default for every route. The governed packet wording is retained verbatim in `window.AHV_CONFIRM.directVisit`; the rendered copy is `window.AHV_CONFIRM.directVisitDraft`, which the views prefer.
+
+QA impact: `notes/confirmation-family-qa-harness.html` asserted the three old strings and a single link. Updated to read `directVisitDraft` when present (falling back to `directVisit`) and to check all four links; the no-success-claim assertion is unchanged and still passes. A full 70-state re-run has NOT been done since this change — run it before acceptance.
+
+
+## All three receipt variants brought to the same standard — 19 Sep 2026
+Previously only the `next-steps` variant carried the post-submission pattern; the legacy booking and image-receipt routes ended in a dead end (no next steps, no way to reach anyone, no onward links). All three now render the same four beats after their own source content:
+1. receipt strip (`[data-receipt-strip]`) with the response pledge,
+2. direct contact row — WhatsApp +91 92898 38797 and info@kairali.com, 56px,
+3. The Healing Secrets block (placeholder until the PDF lands),
+4. "While you wait" cards.
+Routes whose source carries its own card set (/thanks/, /ppc-thanks/, /contact-us/thank-you/) keep it; the other two fall back to the new DRAFT `window.AHV_CONFIRM.standardWait` (Panchakarma · Accreditations · Our Villas). Source copy on every route is untouched — the new blocks sit after it.
+
+Verified in both views: legacy-queue and image-receipt each render 1 strip, 2 direct-contact links, 1 asset block, 3 cards, single H1, no overflow, images complete.
+
+Still open: the Healing Secrets PDF; /thanks-old/ binding; the 12h vs 24h pledge conflict; a full 70-state harness re-run (state expectations for the two upgraded variants now include the shared blocks).
+
+
+## Corrections to the variant upgrade — 19 Sep 2026
+- Structural: on /onlineconsultation-thanks/ the three shared sections had been inserted inside the transcript card (and, in an intermediate fix, inside the `hasBody` conditional). They are now siblings after the poster section closes, full column width on both views. Verified: `[data-transcript]` no longer contains the strip; strip renders 854px at 1024 with no overflow; heading order H1 → "Text of the poster" → receipt → Healing Secrets → While you wait.
+- Two timeframes on one page: `window.AHV_CONFIRM.pledgeSuppress` now lists every route whose SOURCE states its own response time (/onlinebookingthankyou/ "1-2 Business Days"; /thanks/, /ppc-thanks/, /contact-us/thank-you/ "within 24 hours"). On those routes the drafted 12-hour pledge is not rendered, so no page shows two promises. The pledge still renders where the source is silent. When the owner settles on one number, drop the suppression list and use it everywhere.
+- Receipt heading is now per variant (`window.AHV_CONFIRM.receiptHeadings`): "Your message has been sent." / "Your booking request has been sent." / "Your consultation request has been sent."
+
+
+## Two more routes bound — 19 Sep 2026 (correcting an earlier statement)
+I previously reported that /thanks-old/ had no dataset. That was wrong: `window.AHV_CONFIRM.routes` carries TEN routes — the five original datasets plus /book-now/, /cart/, /checkout/ (utility, direct-visit only), /thanks-old/ and /emailsubscriber/, appended by later packets.
+- **/thanks-old/** carried variant `legacy-confirmation`, which matched no template branch, so the receipt state rendered an empty `main` — the exact "press send and land on nothing" failure the brief is about. Now bound to the legacy shell (same two source images, byte-identical originals): source h2 → brand line, source h3 "Thank You" → the single H1, source h5 + two paragraphs → body, "GO HOME" → governed root, followed by the shared receipt strip, contact row, Healing Secrets and While-you-wait blocks. Receipt heading for this variant: "Your enquiry has been sent."; its source states 1-2 Business Days, so the drafted pledge is suppressed.
+- **/emailsubscriber/** shares the image-receipt variant, so it was inheriting "Your consultation request has been sent." and a 12-hour reply pledge on a newsletter signup. Added `window.AHV_CONFIRM.receiptByRoute`, a route-level override that beats the variant: label "Subscribed", heading "You are on the list.", rows Subscribed at / Confirmation sent to / What you will get, and an unsubscribe note. No reply pledge.
+Verified: /thanks-old/ main height 2176px with one H1 and all four shared blocks; /emailsubscriber/ shows no consultation or 12-hour wording anywhere.
+
+
+## Owner decisions applied — 19 Sep 2026 (comments resolved)
+1. **Pledge is now authoritative everywhere.** The owner's 12-hour promise overrides every other response time. `window.AHV_CONFIRM.pledgeNormalise` rewrites the rendered strings at render time ("within 24 hours" ×3 routes, "within 1-2 Business Days" ×2) — the datasets keep the source wording verbatim for the record. `pledgeSuppress` is now just `['/emailsubscriber/']`. Verified on /thanks/: no "24 hours" anywhere in main, strip pledge present. This is a governed copy change made on owner instruction, not a source correction.
+2. **Newsletter** (/emailsubscriber/) gets a thank-you only — "You are on the list.", no reply pledge, no timeframe.
+3. **Trust row**: years are computed from `foundedYear: 1908` against the current year (118 in 2026, and it will keep itself right), and the row is centre-aligned on desktop; mobile was already centred.
+4. **Poster removed** (/onlineconsultation-thanks/). The 1000×523 image was a graphic that said "Thank You", and the transcript box beside it repeated what the page already says in real text — the two-column split also squeezed the box. Both are gone. The only unique content the poster carried was the phone number, which now sits in the direct-contact row as a third 56px button, "Call +91 95551 56156". The image record and transcript stay in the data.
+5. **Direct-visit copy approved** by the owner — the DRAFT flag has been removed from both views. The wording itself is unchanged.
+
+
+## Duplicate contact block removed — 19 Sep 2026
+Adding the third contact button exposed a duplication on the three next-steps routes: the authored row repeated the route's own source "Talk to us now" / "Priya is here in the meantime" block, giving two WhatsApp buttons to the same number and two tel: links ~700px apart. The authored row (`[data-direct-contact]`) is now gated by `hasDirectRow` — it renders only on routes whose source has no contact block (legacy-queue, legacy-confirmation, image-receipt, emailsubscriber). On next-steps routes the one thing the source block lacked, the e-mail route, is appended to its own action list instead (once, never duplicated).
+Verified inside `main`: /thanks/ exposes exactly one wa.me, one tel: and one mailto:, all inside the source block; /onlinebookingthankyou/ still shows the authored row with its three links.
+Phone-format note: authored labels use the owner's grouping (+91 92898 38797 / +91 95551 56156). Source copy keeps its own formats on the routes that carry them — one number, three renderings across the family. Worth normalising when the owner next reviews copy.

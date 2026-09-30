@@ -1,0 +1,12 @@
+/* Shared by desktop/mobile footers, including native English pages.
+   Space the input itself: password-manager helper nodes must not add flex gaps. */
+footer .ahv-newsletter {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin:14px 0;max-width:560px;min-width:0}
+footer .ahv-newsletter-label {display:flex;flex-direction:column;gap:0;font-size:16px!important;line-height:1.5;color:#F7F4EA!important;text-transform:none!important;letter-spacing:0!important;min-width:0}
+footer .ahv-newsletter input {margin-top:7px;box-sizing:border-box;width:100%;min-width:0;min-height:48px;padding:10px 12px;border:1px solid #A59B89;border-radius:4px;background:#fff;color:#2A2118;font:400 16px/1.5 Mulish,sans-serif}
+footer .ahv-newsletter button {box-sizing:border-box;align-self:end;min-height:48px;padding:10px 18px;border:0;border-radius:4px;background:#EEB41E;color:#2A2118;font:700 16px/1.5 Mulish,sans-serif;cursor:pointer}
+footer .ahv-newsletter button:disabled {opacity:.7;cursor:wait}
+footer .ahv-newsletter :is(input,button):focus-visible {outline:3px solid #EEB41E;outline-offset:3px}
+footer .ahv-newsletter-permission,footer .ahv-newsletter-status {grid-column:1/-1;margin:0!important;font-size:14px!important;line-height:1.6!important;letter-spacing:0!important;text-transform:none!important;color:#F7F4EA!important}
+footer .ahv-newsletter-permission a {color:#EEB41E!important;text-decoration:underline;text-underline-offset:3px}
+footer .ahv-newsletter-status:empty {display:none}
+@media(max-width:420px){footer .ahv-newsletter {gap:10px 8px}footer .ahv-newsletter button {padding-inline:12px}}

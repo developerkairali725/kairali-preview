@@ -1,0 +1,195 @@
+{
+ "batchId": "b-0563",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_83a2dd26aede1ffdf7c1",
+   "sourceHash": "83a2dd26aede1ffdf7c10d7d85e9b5181b197e4f2dc0a573f0ed0400136d30b5",
+   "text": "Distanza: 357 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_556bcc0e1ffc439eb421",
+   "sourceHash": "556bcc0e1ffc439eb4212fd6299d9a065fe608686ff29db31caa8eadc75cb82e",
+   "text": "Durata media: 10 h 20 min",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6fb414ef44cc0dc45538",
+   "sourceHash": "6fb414ef44cc0dc45538bbcdaa1ee31a5095ba738f9bf1535c0211da64c6f156",
+   "text": "h3,h4,h5",
+   "status": "translated",
+   "unchangedReason": "CSS selector list; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_374361ca8c8f423282b1",
+   "sourceHash": "374361ca8c8f423282b1b4474aef79b072e52d95af958303153c36aad8d9941c",
+   "text": "h2,h3,h4",
+   "status": "translated",
+   "unchangedReason": "CSS selector list; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_2923740fe800e25051a3",
+   "sourceHash": "2923740fe800e25051a3e72f4b740f831509971c4ff88247af6516c1594effcb",
+   "text": "Google Maps",
+   "status": "translated",
+   "unchangedReason": "Product/brand name.",
+   "issues": []
+  },
+  {
+   "id": "t_6342909ada2cff7061ac",
+   "sourceHash": "6342909ada2cff7061ac4f4e711d1e9be086b3b297015f0e979a769dcdb56294",
+   "text": "Registrato separatamente dalle otto destinazioni di mappa inattive di /map/ (6) e /how-to-reach/ (2), che derivano dai binding esatti degli embed.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/engineering note rather than patient-facing copy; please confirm it should be displayed."
+   ]
+  },
+  {
+   "id": "t_494c0a3095973e4dcdb9",
+   "sourceHash": "494c0a3095973e4dcdb91d291506eb3a0b400c1fe755237589e0d6ad3ea7e8cb",
+   "text": "Le destinazioni embed vuote/null nella fonte devono essere riconciliate con l'HTML acquisito internamente prima di qualsiasi affermazione sulla riproduzione del candidato o sul caricamento della mappa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/engineering note rather than patient-facing copy; please confirm it should be displayed."
+   ]
+  },
+  {
+   "id": "t_1722a79f6969c93c5439",
+   "sourceHash": "1722a79f6969c93c54391740d07d568ea6a9a8126ec576eb620f829adf41efb3",
+   "text": "Chiami il numero principale",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9bce45ff88dc423ffba",
+   "sourceHash": "e9bce45ff88dc423ffba64773d6ad5eac64f9a7ca576c83c583eab4b4629e8ce",
+   "text": "Organizzi un transfer su WhatsApp Chiami il numero principale",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_36d52ed52b28663df642",
+   "sourceHash": "36d52ed52b28663df6422b9311bcd1658cdfa17c012a53f9df69c3094f378f86",
+   "text": "Kerala (costa sud-occidentale)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e1214ce0144b91ff322c",
+   "sourceHash": "e1214ce0144b91ff322cfd807e325b7e4adb90c0d9d4c0dc5af5f50ffe722560",
+   "text": "Distretto di Palakkad",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cd88f9b01580df91a0dc",
+   "sourceHash": "cd88f9b01580df91a0dc45640d44b8a2806f71c7b44f0f23375151bb6043c5e5",
+   "text": "— ai piedi dei Ghati occidentali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fd04e6808ba19844de2",
+   "sourceHash": "7fd04e6808ba19844de2a88606027f3d50b616aabf3a999aa425f28ead03e182",
+   "text": "India›Kerala (costa sud-occidentale)›Distretto di Palakkad›📍Olassery, Kodumbu — ai piedi dei Ghati occidentali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f71926fa2852376456f8",
+   "sourceHash": "f71926fa2852376456f8624d18931c2fa03bb8362a001ac25f2961b285031067",
+   "text": "Apra le indicazioni in Google Maps",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3f20f1db9833c684d4e2",
+   "sourceHash": "3f20f1db9833c684d4e214838711290c419c57c8475b3f914d1540d8a13bcccd",
+   "text": "Organizzi un transfer su WhatsApp Apra le indicazioni in Google Maps",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2ffed19494cdf36afce",
+   "sourceHash": "a2ffed19494cdf36afce059936da015fdc607a1e8df0f6a02de25ac5f909fa75",
+   "text": "Coimbatore (CJB) — il più vicino~62 km · ~1½–2 h",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5c0951ef4ac8d2e3b24",
+   "sourceHash": "b5c0951ef4ac8d2e3b24b0c5f6b11f3bcc5d1bf815a02e830a3ba6912dab3f76",
+   "text": "Kochi / Cochin (COK) — alternativa~115 km · ~2½–3 h",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e02f8825c46cf35e9d29",
+   "sourceHash": "e02f8825c46cf35e9d29003a17963a3e2deeb5beae7972078f55f2def15630bd",
+   "text": "All'arrivo:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9479b3cb90c14c5b9bbf",
+   "sourceHash": "9479b3cb90c14c5b9bbfeee2364054671c429abeb827fb8328fd1644f82c336c",
+   "text": "ci comunichi in anticipo il numero del volo e l'orario di atterraggio: un'auto con un cartello con il Suo nome potrà attenderLa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f06834933e9542a803a9",
+   "sourceHash": "f06834933e9542a803a9776b3973316a41bd5285814770a68c25fa08120c093e",
+   "text": "All'arrivo: ci comunichi in anticipo il numero del volo e l'orario di atterraggio: un'auto con un cartello con il Suo nome potrà attenderLa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_23dd42f9844ee1540a57",
+   "sourceHash": "23dd42f9844ee1540a579d9435533a57543978f27a0dbfb74db66a879b1fad29",
+   "text": "Palakkad Junction (PGT) — consigliata~18 km · ~35 min",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c848a88c349a4cc24f36",
+   "sourceHash": "c848a88c349a4cc24f3629c3e40c0418e7135c17ce2ad8c28f7f38e3c155755a",
+   "text": "in stazione sono disponibili taxi, oppure ci invii il numero del treno e l'orario di arrivo: verremo a prenderLa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e9d7e04c99e0a712c64",
+   "sourceHash": "9e9d7e04c99e0a712c64a30a13e078992af228fe6fe51239373d5be35d4d615b",
+   "text": "All'arrivo: in stazione sono disponibili taxi, oppure ci invii il numero del treno e l'orario di arrivo: verremo a prenderLa.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

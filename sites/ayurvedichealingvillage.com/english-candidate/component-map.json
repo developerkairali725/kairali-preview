@@ -1,0 +1,26 @@
+{
+ "taskId": "WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001",
+ "source": "final-english-portable-candidate",
+ "generated": "2026-09-22T09:00:44.282Z",
+ "note": "window.__resources entries the page installs before support.js loads, so the runtime resolves each <dc-import> sibling from /ahv/components/ instead of the document root.",
+ "resources": {
+  "./AHV%20Chrome%20Header.dc.html": "/ahv/components/AHV%20Chrome%20Header.dc.html",
+  "./AHV%20Chrome%20Footer.dc.html": "/ahv/components/AHV%20Chrome%20Footer.dc.html"
+ },
+ "components": {
+  "AHV Chrome Header": {
+   "url": "/ahv/components/AHV%20Chrome%20Header.dc.html",
+   "resourceKey": "./AHV%20Chrome%20Header.dc.html",
+   "sourceSha256": "09e61758e9334dc9849ed2bdc4c10c2399f1d66fbdbd93367d813457a0e46334",
+   "servedSha256": "8a733c07eebb055e08eb5fea9c3c5c18842e3df936c7737bd92873b80c56a64a",
+   "sourceBytes": 19126
+  },
+  "AHV Chrome Footer": {
+   "url": "/ahv/components/AHV%20Chrome%20Footer.dc.html",
+   "resourceKey": "./AHV%20Chrome%20Footer.dc.html",
+   "sourceSha256": "f2e95f8b732acd195c4cd1dda1197eb39a06fbf339ecb3737fe27f688472a284",
+   "servedSha256": "6a00ae361f77b7cee0867c22a125001aebc9ce594ebca4d1f5746be824007e32",
+   "sourceBytes": 26171
+  }
+ }
+}

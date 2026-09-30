@@ -1,0 +1,205 @@
+{
+ "batchId": "b-0315",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_e86f07bced017218d7fb",
+   "sourceHash": "e86f07bced017218d7fbdfa70841eb0e52c2c4a7fc81f3abbc9b2354d811fbcc",
+   "text": "Incluso: la villa nella categoria prenotata e tutte le imposte governative",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b820d0c28277c55d172",
+   "sourceHash": "7b820d0c28277c55d17286d48cf66744a88b0758014819e2a5aebf6c15f84b0f",
+   "text": "Incluso: tre pasti vegetariani o vegani al giorno, secondo la prescrizione dietetica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a296108b52f3ecaccacd",
+   "sourceHash": "a296108b52f3ecaccacd475608f4893604c0458bf282a6d607b67b88aad881d2",
+   "text": "Incluso: una terapia ayurvedica al giorno, compreso il bagno di vapore alle erbe ove indicato",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e9a870a20bbf3312145",
+   "sourceHash": "8e9a870a20bbf33121450405bf5fb734213f72d3ae4243b97fcb37ba485d564d",
+   "text": "Incluso: consulto e monitoraggio quotidiani da parte del medico curante",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6dfb4e1147320b1db8db",
+   "sourceHash": "6dfb4e1147320b1db8db0a9bd42f348175044244dc51bf73c0746cb70abbda2a",
+   "text": "Incluso: ogni giorno una sessione privata di yoga all’alba e una sessione privata di meditazione guidata",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_26ca395a6028f9da3872",
+   "sourceHash": "26ca395a6028f9da3872871303b54a8ca116d209e942170636839b345be14b66",
+   "text": "Incluso: laboratorio settimanale, dimostrazione di cucina e passeggiata nella fattoria o nel villaggio",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8782b597dfedf0254b5d",
+   "sourceHash": "8782b597dfedf0254b5d2d4ee88ea039ada4e6b1d23ed46ca3af3e117fb556bc",
+   "text": "Incluso: piscina, biblioteca, palestra e strutture all’aperto; acqua minerale, acqua aromatizzata alle erbe e tè o succhi dopo ogni sessione",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0bc4b7dcd6856e1442cb",
+   "sourceHash": "0bc4b7dcd6856e1442cba8a9ae963764c8b46a14d5163ccbe993069709d96783",
+   "text": "Addebitato a parte: medicinali erboristici per uso interno, esami di laboratorio e terapie specialistiche, prescritti con il procedere del trattamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be522ad6722270504268",
+   "sourceHash": "be522ad67222705042688149ae9a10e2e576c449ab3b855a3540f04f4e8b3aaa",
+   "text": "Addebitato a parte: cibo aggiuntivo oltre ai pasti prescritti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9e25c95bbb942eae8d18",
+   "sourceHash": "9e25c95bbb942eae8d18af1f5dbec6aa80dd0d3ab28b0a75657a68ece8d0c5b8",
+   "text": "Addebitato a parte: lavanderia, telefono, internet e trasporti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_18cc6719e923e7253875",
+   "sourceHash": "18cc6719e923e7253875e9a7d4cd1447ec692cefadfba334cdc966a0f874d3af",
+   "text": "Addebitato a parte: check-in anticipato e check-out posticipato, ove concessi",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3e01260170ce8a25d35",
+   "sourceHash": "d3e01260170ce8a25d35f18e77d9df77b28f657ea69d5aa48ea329b0616584a8",
+   "text": "Le intestazioni della riga 0 riportano gli span della sorgente: \"Tipo di villa\" occupa 2 righe, la cella vuota della sorgente accanto occupa 6 righe e \"Durata minima: 7 notti\" occupa 2 colonne. Le intestazioni di riga nelle righe del corpo si riferiscono alla rispettiva riga. Tutte le relazioni provengono dalla sorgente; nessuna è dedotta.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Reads as an internal table-accessibility/build note; quoted header labels rendered with the Italian translations used elsewhere (b-0314). Confirm it should be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_a8cd5c7590726e666a96",
+   "sourceHash": "a8cd5c7590726e666a964de200c681a2b2a98cc0a755f3e59fe21b4d5481214f",
+   "text": "La tabella della sorgente esatta di sei righe con tutte le 17 celle (compresa la cella vuota estesa), i relativi span, l’enfasi in linea, i link e gli importi. Nessuna cella inventata e nessun importo riscritto.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Reads as an internal build note; confirm it should be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_5e97fb4a592ca5434f13",
+   "sourceHash": "5e97fb4a592ca5434f1332e6ec25b666063f0758ff9b6bbf422196d8f7f3f11b",
+   "text": "Chiudi la navigazione per categoria",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_735b78e40cf502abc6f4",
+   "sourceHash": "735b78e40cf502abc6f4e8821d84ad3b938f02e0bf138cf377b2e87df112dcf7",
+   "text": "Apri la navigazione per categoria",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9178ac449d748ce1a55f",
+   "sourceHash": "9178ac449d748ce1a55f2ed5725a74e4364b95f9c9153c9f7eb55d83791649e6",
+   "text": "Non è disponibile alcuna ricevuta di invio verificata; non dedurre l’esito positivo solo da percorso, parametri di query o interfaccia locale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Reads as an internal developer note; confirm it should be displayed publicly."
+   ]
+  },
+  {
+   "id": "t_1b336308f1e0b1242bed",
+   "sourceHash": "1b336308f1e0b1242bed7aebc5f2dba9d226fdfec839abb26e7ae3e56e0b4d73",
+   "text": "Torni al sito web",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_71c6b3604f25dfa7794b",
+   "sourceHash": "71c6b3604f25dfa7794be4d739a413101a91f8928fb302b87a611cdfa02ca9f7",
+   "text": "Questa pagina non può confermare se un messaggio o una prenotazione sia stato inviato.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a0aac9145249f1675ee0",
+   "sourceHash": "a0aac9145249f1675ee0380260d152d217a7abe140e85aad3871ec30da1c319b",
+   "text": "Vai alla home",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68808904c0631ffc302d",
+   "sourceHash": "68808904c0631ffc302d4d01c376d32ece9893c746618405b464b96b4f39f291",
+   "text": "Poster di ringraziamento: fotografia del cancello di Kairali con il messaggio trascritto qui sotto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6750e23c415548c8ec41",
+   "sourceHash": "6750e23c415548c8ec4198a86058ea8e6caf07665ffc31d2bd2e32f2dc2052ca",
+   "text": "Messaggio ricevuto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7e8dddaa6db5edc2757a",
+   "sourceHash": "7e8dddaa6db5edc2757a3153308b8f8c18c4006799abcad9e7096421b5510507",
+   "text": "Grazie — il Suo messaggio è in arrivo",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0813e6af50d762da6a86",
+   "sourceHash": "0813e6af50d762da6a86c0a300e95f63ca96388f39955d328f6677b9179a128e",
+   "text": "Un membro del nostro team di assistenza ai pazienti Le risponderà in orario lavorativo. Ecco cosa succede ora.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_df2f71819b5eefda42e1",
+   "sourceHash": "df2f71819b5eefda42e18610af86e7241993e2c91f25fb784671a19b5280500a",
+   "text": "Linee telefoniche · 8:00 AM – 9:00 PM IST, tutti i giorni",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

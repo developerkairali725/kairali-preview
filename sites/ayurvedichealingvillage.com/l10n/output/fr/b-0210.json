@@ -1,0 +1,199 @@
+{
+ "batchId": "b-0210",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_ce118d4a5f2cfd2b93d4",
+   "sourceHash": "ce118d4a5f2cfd2b93d47a8377ce4d7b91c4e7c7c37021509faa8a24b921d4cd",
+   "text": "Ce que disent nos patients",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_641e498345cdc77e0d7a",
+   "sourceHash": "641e498345cdc77e0d7a8f75fc3b9c10c8cb9defb58a66f54c71b16fc89b2036",
+   "text": "« Kairali est vraiment béni des dieux. L’un des meilleurs endroits pour le Panchakarma et les autres traitements ayurvédiques. Le plus authentique. Tout le personnel est si chaleureux et courtois. La nourriture est formidable, difficile à trouver dans le monde moderne. »",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8c3def052b24fbcb438e",
+   "sourceHash": "8c3def052b24fbcb438ed488d06e4e761da75ac13269d5d5586d0347a55d1b1c",
+   "text": "Namrata Goyal · Extrait d’un avis Google",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d5f59f154411c91a7074",
+   "sourceHash": "d5f59f154411c91a70746c72e34888daeeb828852d2929e6b445b8755cdb4836",
+   "text": "« Excellent, apaisant, bel environnement, personnel excellent… À l’année prochaine. »",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a78a301bf16cd934555",
+   "sourceHash": "4a78a301bf16cd934555750e0de0f26a849081b6a8b3780f6677bed97a2b5ed0",
+   "text": "Shikha Sen · Gurgaon · Publié par Kanchan Vohra sur Google",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ed9dc2c33f0caacf1c4",
+   "sourceHash": "5ed9dc2c33f0caacf1c46a8acda04bdc93028573357ea151de9b744012574626",
+   "text": "« Un excellent équilibre entre l’essentiel et le confort. D’excellents médecins, qui m’ont fait découvrir l’approche ayurvédique globale de mon bien-être personnel. Après une simple visite de 3 jours (bilan initial) en février, j’ai une confiance totale en Kairali et un plan de traitement personnalisé ; j’ai donc réservé un traitement de 4 semaines. Hâte de revenir en avril. »",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxury' rendered as 'confort' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_2eaf0e3e13a5c06d3e8d",
+   "sourceHash": "2eaf0e3e13a5c06d3e8daabe225382bd355bfbd3b50f3b3932fc5e9067931669",
+   "text": "Herman · Extrait d’un avis Google",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ffa9e2b1976acc85b74",
+   "sourceHash": "9ffa9e2b1976acc85b74abe6f317406ab9e6a70a3fdc997cec49f6baff12dfbd",
+   "text": "[[OPEN_1]]Lire tous les avis →[[CLOSE_1]] · [[OPEN_2]]Partagez votre expérience[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6348bca5b98e1e4e8483",
+   "sourceHash": "6348bca5b98e1e4e84835792eda25e1de2f4880fd1b0888773de238c353a43ea",
+   "text": "[[OPEN_1]][[OPEN_2]][[OPEN_3]]4.6[[CLOSE_3]][[OPEN_4]]Note[[CLOSE_4]][[CLOSE_2]][[OPEN_5]][[OPEN_6]]450[[CLOSE_6]][[OPEN_7]]Avis[[CLOSE_7]][[CLOSE_5]][[OPEN_8]][[OPEN_9]]n° 2 sur 27[[CLOSE_9]][[OPEN_10]]Classement[[CLOSE_10]][[CLOSE_8]][[CLOSE_1]] [[OPEN_11]]Classé n° 2 sur 27 hôtels à Palakkad selon les voyageurs Tripadvisor, en août 2026. [[OPEN_12]]Voir notre classement et nos avis →[[CLOSE_12]][[CLOSE_11]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rating '4.6' kept with a decimal point exactly as in the source; French convention would be '4,6' — confirm preferred format."
+   ]
+  },
+  {
+   "id": "t_5bc6ca073a0defa4a0bf",
+   "sourceHash": "5bc6ca073a0defa4a0bf6fb0d87bd65ff04fdeb2648a1b5b7a9a3ab86f4d6860",
+   "text": "Trouvez votre sérénité",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ace3c50b018f2ff69825",
+   "sourceHash": "ace3c50b018f2ff6982551b71a90872056f3473bb59cda7cd58c70bd17893829",
+   "text": "Retrouvez la sérénité et ressourcez-vous en profondeur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d5f9391acd212230ad",
+   "sourceHash": "55d5f9391acd212230ade44180dcb04835668584f01212ee8e638d7daef7f5e3",
+   "text": "Un havre de nature bienfaisant",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_30714d99ddcad44228cb",
+   "sourceHash": "30714d99ddcad44228cb4960193e32c4252550a58cec10f155f86bd1f89dd9b0",
+   "text": "Laissez-vous envelopper par une végétation luxuriante, des paysages préservés et la présence apaisante de la nature, un cadre idyllique propice à la paix intérieure et à la détente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxuriante' is the standard French adjective for lush vegetation (not the banned 'luxe' sense)."
+   ]
+  },
+  {
+   "id": "t_b1bcb576d8e829b38675",
+   "sourceHash": "b1bcb576d8e829b38675d288fcfa146322287b6983db675c4c09c5a17b1a863f",
+   "text": "Régénérez le corps, l’esprit et l’âme",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bebc754cb5a73e15b4f2",
+   "sourceHash": "bebc754cb5a73e15b4f2e2d72f08cb166a11e18bd6aac90939e493d6d8a0cf4c",
+   "text": "Laissez-vous porter par des thérapies régénérantes, des rituels ancestraux et des séances de yoga revitalisantes, soigneusement choisis pour harmoniser vos sens, renforcer votre vitalité et favoriser votre bien-être général.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9bc43956cd3c4fdc7baf",
+   "sourceHash": "9bc43956cd3c4fdc7baf15b577afb56343861952980f2d5bf1a2562b6e61177c",
+   "text": "Cultivé ici, préparé ici",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_63322c6b681d8b715849",
+   "sourceHash": "63322c6b681d8b715849e83a090f15d72dad2587482b435493d0a3f86cc254d2",
+   "text": "Un Ayurveda pur, des bienfaits cultivés sur place",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b7b5e5754412af239ef6",
+   "sourceHash": "b7b5e5754412af239ef674d80f5415de30944d61d3fdc96b7d99fb54053c3912",
+   "text": "Nourrissez votre corps et revitalisez votre âme avec notre cuisine de la ferme à la table et nos produits ayurvédiques.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a1b3bacb2ac9b10e33f7",
+   "sourceHash": "a1b3bacb2ac9b10e33f77f52a33af5fc5595cda69e766ca7e370df9da745c990",
+   "text": "Savourez la délicieuse cuisine de la ferme à la table de notre établissement, élaborée avec soin pour purifier le corps et régénérer l’esprit. Découvrez la force transformatrice de nos produits maison 100% ayurvédiques, réputés pour leur efficacité inégalée et leurs bienfaits naturels.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as 'établissement' per the clinical language lock. Source makes an efficacy claim ('unmatched efficacy'); translated faithfully without strengthening, but flagged for clinical review (Dr. Deepu John)."
+   ]
+  },
+  {
+   "id": "t_bfb20166b0d93b0cc8cc",
+   "sourceHash": "bfb20166b0d93b0cc8cc0b65e59bb6732306d49fa5ca5ecdd416b38d88fc2ea9",
+   "text": "Le plaisir de la ferme à la table",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2aab68dbac7d3e7d993d",
+   "sourceHash": "2aab68dbac7d3e7d993db90ee2b3a6480666e9c11a34bbccba7d71b66b42cb86",
+   "text": "Savourez des ingrédients biologiques d’origine locale, préparés avec soin pour apporter à votre corps une alimentation optimale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4fae643be45859194f06",
+   "sourceHash": "4fae643be45859194f06474687a3756bdfb3d5d6edb1a826f41a993905bb985d",
+   "text": "L’excellence ayurvédique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c06dbca74573a86ac036",
+   "sourceHash": "c06dbca74573a86ac0366a7bca9f05a78329fb0d3702cf0f7a24069658c8db9a",
+   "text": "Adoptez la sagesse ancestrale de l’Ayurveda avec notre gamme de produits fabriqués sur place, soigneusement formulés pour favoriser un bien-être global et une harmonie intérieure.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

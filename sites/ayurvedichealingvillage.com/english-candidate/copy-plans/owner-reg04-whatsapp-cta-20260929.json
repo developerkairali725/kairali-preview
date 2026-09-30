@@ -1,0 +1,15 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "OWNER-REG-04",
+ "note": "Shared 'Not sure which programme fits?' CTA: the WhatsApp Patient Care anchor had no fill and no justify-content, so it rendered white with an off-centre label when stretched (mobile column). Solid brand green (#006038, the site's only green token), light text, centred label; same verified wa.me destination. Applies to the article reader (awards and the other reader routes), the five finder hubs + all-programs, and the finder benchmark so a regeneration keeps it. Other outline WhatsApp buttons already centre their label and are a deliberate secondary style; not changed. Source of the finder copies: tools/build-finder-views.mjs (shared block); the article reader lifts the block from the served benchmark (tools/repair-article-cta.mjs).",
+ "entries": [
+  {
+   "id": "REG04-whatsapp-cta",
+   "auto": true,
+   "old": "href=\"https://wa.me/919289838797\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"border:1.5px solid #006038;color:#006038;border-radius:4px;padding:0 30px;min-height:52px;display:inline-flex;align-items:center;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase\" style-hover=\"background:#006038;color:#F7F4EA;text-decoration:none\"",
+   "new": "href=\"https://wa.me/919289838797\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"background:#006038;border:1.5px solid #006038;color:#F7F4EA;border-radius:4px;padding:0 30px;min-height:52px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase\" style-hover=\"filter:brightness(.9);color:#F7F4EA;text-decoration:none\"",
+   "min": 14,
+   "authority": "OWNER-ADDITIONAL-REGRESSIONS.json OWNER-REG-04 (owner, 28 Sep 2026 23:31 IST) + plans/OWNER-LAYOUT-REPAIR.md REG04"
+  }
+ ]
+}

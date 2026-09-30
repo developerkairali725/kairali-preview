@@ -1,0 +1,1377 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "CLINICAL-COPY",
+ "note": "29 Sep 2026 clinical-claims sweep of the English sources (views, datasets, importer overlays, route metadata): remaining efficacy, safety, cure, guarantee, DMRA-schedule and 'optimal results' claims made neutral and physician-guided; monsoon receptivity/absorption claims attributed to tradition; legacy brand 'Kairali Wellness Retreats' replaced in non-quote text; 'Cervical Spondylitis' corrected on the cervical spondylosis page; testimonial outcome sentences removed only (never reworded). No new facts, numbers, outcomes, guarantees, prices, names or credentials. Entry count exceeds the 60 target because each claim is a distinct exact string; all are auto entries with min = the count found at plan time. Medical/clinical content: Dr. Deepu John review before production (HARD GATE 7).",
+ "entries": [
+  {
+   "id": "CLAIM-001",
+   "auto": true,
+   "old": "Ayurveda addresses hypertension at its roots, promoting lasting well-being and improved heart health. Trust our expertise for holistic, effective hypertension management.",
+   "new": "Ayurveda looks at the underlying factors in hypertension and at your overall well-being. Your physician will plan your care alongside your existing blood pressure treatment.",
+   "min": 2,
+   "route": "/treatment-for-hypertension/",
+   "why": "Root-cause cure framing, 'improved heart health' outcome and 'effective' efficacy claim for hypertension (DMRA schedule condition); translator flag t_10a31051cf46ee16e4b8.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-002",
+   "auto": true,
+   "old": "Customized herbal formulations will be prescribed to support cardiovascular health, regulate blood pressure, and reduce inflammation.",
+   "new": "Where appropriate, your physician may prescribe herbal formulations to support cardiovascular health, coordinated with your existing blood pressure medicines.",
+   "min": 2,
+   "route": "/treatment-for-hypertension/",
+   "why": "Promise that herbal medicines regulate blood pressure (DMRA schedule condition); physician-guided, coordinated with prescribed care.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-003",
+   "auto": true,
+   "old": ", and by the time I left, my blood pressure had notably returned to normal.",
+   "new": ".",
+   "min": 2,
+   "route": "/treatment-for-hypertension/",
+   "why": "Testimonial: outcome clause removed only (blood pressure 'returned to normal'); the rest of the quote is unchanged per testimonial-safety convention.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-004",
+   "auto": true,
+   "old": "Customized herbal medications are prescribed to regulate blood sugar levels, enhance pancreatic function, and support overall health. These natural formulations are prepared from Ayurvedic herbs known for their anti-diabetic properties.",
+   "new": "Where appropriate, your physician may prescribe herbal medicines to support overall health, coordinated with your existing diabetes care. These formulations are prepared from herbs traditionally used in Ayurvedic diabetes care.",
+   "min": 2,
+   "route": "/treatment-for-diabetes/",
+   "why": "Claims that herbs regulate blood sugar, enhance pancreatic function and are 'anti-diabetic' (diabetes is a DMRA schedule condition). Replacement reuses the page's own 'traditionally used in Ayurvedic diabetes care' wording.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-005",
+   "auto": true,
+   "old": " Personalized meal planning and herbal remedies were among the Ayurvedic treatments that helped naturally control my blood sugar levels.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-diabetes/",
+   "why": "Testimonial: the single outcome sentence (herbal remedies controlled blood sugar) removed; the rest of the quote stands unchanged.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-006",
+   "auto": true,
+   "old": "integrates an Ayurvedic Program for Nerve Regeneration into treatments",
+   "new": "integrates an Ayurvedic programme for neurological wellness into treatments",
+   "min": 2,
+   "route": "/treatment-for-nervous-disability/",
+   "why": "'Nerve Regeneration' is a regeneration promise for neurological disorders; translator flag t_7bcaf216c955208c8d4c.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-007",
+   "auto": true,
+   "old": "providing personalized, trustworthy care for lasting results. Your nervous system’s well-being is our top priority, and we are dedicated to guiding you toward optimal health.",
+   "new": "providing personalized, trustworthy care. Your nervous system’s well-being is our priority, and your physician will guide your programme.",
+   "min": 2,
+   "route": "/treatment-for-nervous-disability/",
+   "why": "'Lasting results' and 'optimal health' outcome promises on the nervous-disability page.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-008",
+   "auto": true,
+   "old": "The five-step protocol works deeply and methodically, requiring a minimum two-week commitment for optimal results.",
+   "new": "The five-step protocol is carried out methodically and requires a minimum two-week stay.",
+   "min": 2,
+   "route": "/panchakarma-therapy/",
+   "why": "'Optimal results' outcome promise (translator item 4); the minimum-stay fact is kept.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-009",
+   "auto": true,
+   "old": "Experience wholesome healing through the Best Panchakarma treatment in Kerala.",
+   "new": "Explore physician-guided Panchakarma treatment in Kerala.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "Superlative clinical claim 'Best Panchakarma treatment' plus healing promise (translator item 5).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-010",
+   "auto": true,
+   "old": "Balances Vata Dosha and nourishes the body, rejuvenates, detoxifies, and strengthens the nervous system. The king of all therapy, it treats and prevents various diseases quickly.",
+   "new": "Aims to balance Vata Dosha and to nourish, rejuvenate and cleanse the body. Classical Ayurveda regards it as one of the most important therapies; your physician will advise whether it is suitable for you.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "'Strengthens the nervous system' and 'treats and prevents various diseases quickly' promises (Vasti).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-011",
+   "auto": true,
+   "old": "It helps detoxify and strengthen the nervous system. And treat and prevent suffering in the head and neck region.",
+   "new": "It aims to support cleansing and the nervous system, and may help with discomfort in the head and neck region.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "'Strengthen the nervous system' and 'treat and prevent' promises for Nasya.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-012",
+   "auto": true,
+   "old": "In a mere 3 weeks, you feel healthy, happy, and fulfilled.",
+   "new": "Your physician will advise on the length of your programme.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "Time-bound outcome promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-013",
+   "auto": true,
+   "old": "Panchakarma treatment is highly effective in the treatment and management of various diseases e.g.",
+   "new": "Panchakarma is used in Ayurveda as part of the care of many conditions, e.g.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "'Highly effective' efficacy claim across a list of diseases including rheumatoid arthritis and asthma.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-014",
+   "auto": true,
+   "old": "It is also widely prescribed for chronically incurable diseases and for improving the quality of life.",
+   "new": "It may also be used to support quality of life in long-term conditions. Your physician will advise whether it is suitable for you.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "Implied benefit for 'incurable diseases'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-015",
+   "auto": true,
+   "old": "Spend a few days here for authentic Ayurvedic Panchakarma treatment and heal your mind and body naturally.",
+   "new": "Stay with us for authentic Ayurvedic Panchakarma treatment for mind and body, guided by our physicians.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "Healing promise ('heal your mind and body'); also drops 'a few days', which conflicts with the published 14-night Panchakarma minimum (no new fact added).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-016",
+   "auto": true,
+   "old": "They treat modern ailments with age-old, failsafe remedies.",
+   "new": "They care for modern ailments with age-old remedies, prescribed after consultation.",
+   "min": 2,
+   "route": "/panchkarma-treatment.html",
+   "why": "'Failsafe remedies' is a safety guarantee.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-017",
+   "auto": true,
+   "old": "The rainy season creates a unique biological state in which your nervous system becomes deeply receptive to healing.",
+   "new": "Ayurvedic tradition gives the rainy season particular importance for therapies that calm the nervous system.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Monsoon 'receptive to healing' efficacy claim (translator flag t_1de3498644c882f966a4).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-018",
+   "auto": true,
+   "old": "When monsoon humidity peaks, your skin's absorption capacity reaches its annual high. Classical Ayurveda holds that medicated herbal oils are absorbed more deeply in this season.",
+   "new": "Classical Ayurveda regards the humid monsoon months as a traditional season for oil therapies, which your physician selects for you.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Skin-absorption efficacy claim presented as physiological fact.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-019",
+   "auto": true,
+   "old": "Humidity Opens Your Body",
+   "new": "A Traditional Season for Oil Therapies",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Heading carrying the same absorption claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-020",
+   "auto": true,
+   "old": "The monsoon season puts your body's elimination system into overdrive. Panchakarma performed during this window is traditionally timed to work with the body's natural rhythms.",
+   "new": "In Ayurvedic tradition, Panchakarma is timed to the monsoon to work with the body's natural rhythms; your physician plans each procedure.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Elimination 'into overdrive' physiological claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-021",
+   "auto": true,
+   "old": "According to Ayurveda, this window is ideal for deep detoxification and rejuvenation, as the body becomes more receptive to therapies in the cooler, humid climate — allowing treatments to work at a deeper level on your tissues and doshas (Vata, Pitta, Kapha).",
+   "new": "Classical Ayurveda regards the cool, humid monsoon as a traditional season for detoxification and rejuvenation therapies directed at the tissues and doshas (Vata, Pitta, Kapha).",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Receptivity / 'work at a deeper level' efficacy claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-022",
+   "auto": true,
+   "old": "is ideal for intensive Panchakarma and detoxification, as the pores are open and the body is naturally receptive to therapies.",
+   "new": "is traditionally regarded as a suitable season for intensive Panchakarma and detoxification, planned by your physician.",
+   "min": 2,
+   "route": "/faqs-downloads/",
+   "why": "'Pores are open / naturally receptive' efficacy claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-023",
+   "auto": true,
+   "old": "Karkidaka is that window, when the body is naturally more receptive and even a first-time patient may notice a difference.",
+   "new": "Karkidaka is a traditional season to begin, with a programme your physician plans around you.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Receptivity claim plus implied outcome.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-024",
+   "auto": true,
+   "old": "season-specific, physician-designed protocols that work on root causes your usual treatments never touch.",
+   "new": "season-specific, physician-designed protocols planned around your constitution and concerns.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Superiority claim over other treatments ('root causes your usual treatments never touch').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-025",
+   "auto": true,
+   "old": "quietly rebuilds your immunity, gut, and vitality from the ground up over four sustained weeks.",
+   "new": "is traditionally taken to nourish digestion and vitality over four weeks.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Promise that Karkidaka Kanji rebuilds immunity.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-026",
+   "auto": true,
+   "old": "to enhance immunity, clear accumulated toxins, and gently restore your natural balance through time-tested, clinically aligned therapies",
+   "new": "that aims to support immunity and help restore your natural balance through time-tested, clinically aligned therapies",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Immunity / toxin-clearing outcome promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-027",
+   "auto": true,
+   "old": "Seven days that flush out fatigue and bring you back to yourself.",
+   "new": "Seven days to rest, follow a healthy routine and reconnect with yourself.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Outcome promise ('flush out fatigue').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-028",
+   "auto": true,
+   "old": "Two weeks is where real change begins. A structured, physician-led program that works through your body's deepest channels.",
+   "new": "A structured, physician-led two-week program planned around your constitution.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Outcome promise ('real change begins', 'deepest channels').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-029",
+   "auto": true,
+   "old": "— releasing what stress and years of pressure have locked into your tissues",
+   "new": "— to help ease accumulated tension",
+   "min": 2,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Outcome promise in an inclusions list.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-030",
+   "auto": true,
+   "old": "— healing continues long after checkout",
+   "new": "— to support you after discharge",
+   "min": 2,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Lasting-healing promise; 'checkout' also replaced with the clinical 'discharge'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-031",
+   "auto": true,
+   "old": "restore Agni, support immunity, and correct long-standing imbalances.",
+   "new": "may be prescribed to support Agni, immunity and overall balance.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Promise that medicines 'correct long-standing imbalances'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-032",
+   "auto": true,
+   "old": "What the rainy season delivers, no other window of the year can quite replicate.",
+   "new": "Why Ayurvedic tradition gives the rainy season a special place.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Unique-efficacy claim for the monsoon season.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-033",
+   "auto": true,
+   "old": "Four Things Only the Monsoon Can Do to Your Body",
+   "new": "Four Reasons Ayurveda Values the Monsoon",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Heading claiming effects on the body that only the monsoon can produce.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-034",
+   "auto": true,
+   "old": "supports your body, mind, and spirit to reset and heal in the most powerful Ayurvedic season of the year.",
+   "new": "aims to support your body, mind and spirit in a season that classical Ayurveda values highly.",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Heal promise plus 'most powerful season' efficacy claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-035",
+   "auto": true,
+   "old": "Ayurvedic treatments excel in tackling drug and alcohol addictions, delivering transformation in the recovery process.",
+   "new": "Ayurvedic treatments can support the recovery process for people with drug and alcohol addictions.",
+   "min": 2,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "Efficacy claim ('excel', 'delivering transformation').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-036",
+   "auto": true,
+   "old": "restoring balance to address addiction’s root causes and ensure enduring recovery.",
+   "new": "aiming to restore balance and address the underlying causes of addiction.",
+   "min": 2,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "Recovery guarantee ('ensure enduring recovery').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-037",
+   "auto": true,
+   "old": "This comprehensive strategy not only helps individuals conquer addiction but also cultivates healthy habits and coping mechanisms for lasting recovery. Choosing a wellness retreat for rehabilitation opens doors to a transformative journey toward freedom from addiction. Place trust in our expertise and the proven effectiveness of Ayurvedic treatments as you embark on the path to recovery and a life of wellness.",
+   "new": "This comprehensive approach aims to support recovery and to build healthy habits and coping mechanisms. Choosing a residential programme for rehabilitation can be an important step in recovery from addiction. Our physicians will guide your programme and review your progress throughout your stay.",
+   "min": 2,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "'Conquer addiction', 'lasting recovery', 'proven effectiveness' claims (also removes banned word 'journey').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-038",
+   "auto": true,
+   "old": "Proven Effectiveness: Our Ayurvedic treatments blend ancient wisdom with modern techniques, effectively addressing addiction for lasting recovery.",
+   "new": "Physician-Guided Care: Our Ayurvedic treatments blend traditional knowledge with modern techniques to support your recovery from addiction.",
+   "min": 2,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "'Proven Effectiveness' and 'lasting recovery' claims.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-039",
+   "auto": true,
+   "old": "It includes Panchakarma for complete detoxification and psychological therapies",
+   "new": "It includes Panchakarma cleansing therapies and psychological therapies",
+   "min": 2,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "'Complete detoxification' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-040",
+   "auto": true,
+   "old": "Heal naturally from addiction with Ayurvedic detox",
+   "new": "Physician-guided support for addiction recovery with Ayurvedic detox",
+   "min": 13,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "Metadata/description 'heal naturally from addiction' promise (manifest + view head).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-041",
+   "auto": true,
+   "old": "Personalized therapies for lasting recovery at our serene retreat.",
+   "new": "Personalized therapies to support recovery at our serene retreat.",
+   "min": 13,
+   "route": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "why": "Metadata 'lasting recovery' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-042",
+   "auto": true,
+   "old": "Improve digestion naturally with yoga, Ayurveda, and diet. Heal IBS, acidity, bloating",
+   "new": "Physician-guided yoga, Ayurveda and diet for digestive health. Support for IBS, acidity, bloating",
+   "min": 13,
+   "route": "/digestive-wellness-gut-health-yoga-therapy/",
+   "why": "Metadata 'Heal IBS' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-043",
+   "auto": true,
+   "old": "We follow Ayurvedic principles using natural therapies and herbs to minimize side effects.",
+   "new": "We follow Ayurvedic principles, and your physician monitors how you respond to each therapy and medicine.",
+   "min": 6,
+   "route": "/sleep-restoration-therapy/, /immunity-enhancement-executive-health-assessment-therapy/, /digestive-wellness-gut-health-yoga-therapy/",
+   "why": "Safety claim ('natural ... to minimize side effects').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-044",
+   "auto": true,
+   "old": "Reduces Dependence on Sleep Medication",
+   "new": "Care Coordinated With Any Sleep Medicines You Take",
+   "min": 2,
+   "route": "/sleep-restoration-therapy/",
+   "why": "Patient-safety risk: implies coming off prescribed sleep medicines; house style mirrors W1-10 'Care Coordinated With Your Existing Treatment'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-045",
+   "auto": true,
+   "old": "Speeds postpartum recovery, reduces fatigue, and balances hormones",
+   "new": "Aims to support postpartum recovery, energy and hormonal balance",
+   "min": 2,
+   "route": "/post-pregnancy-health-programme/",
+   "why": "Outcome promises in a benefits bullet.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-046",
+   "auto": true,
+   "old": "this treatment aids in healing and restoring your pelvic structure, promoting healthy lactation, reducing stress, and relieving neck and backaches.",
+   "new": "this treatment aims to support postpartum recovery, healthy lactation, stress reduction and relief from neck and backaches.",
+   "min": 2,
+   "route": "/post-pregnancy-health-programme/",
+   "why": "Structural-restoration promise ('restoring your pelvic structure').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-047",
+   "auto": true,
+   "old": "Ayurvedic therapies and medications are derived from natural sources, offering safety and minimal side effects compared to conventional treatments.",
+   "new": "Ayurvedic therapies and medicines are derived mainly from natural sources; your physician prescribes and monitors them and takes your existing treatment into account.",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "Safety claim and comparative claim against conventional treatment.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-048",
+   "auto": true,
+   "old": "So, it needs to be addressed for deep-rooted and everlasting results.",
+   "new": "So, eye concerns deserve timely, careful attention.",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "'Everlasting results' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-049",
+   "auto": true,
+   "old": "an exclusive chance to experience the world with a new vision with a",
+   "new": "a physician-guided",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "Vision outcome promise ('experience the world with a new vision').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-050",
+   "auto": true,
+   "old": "addressing the root cause of eye conditions and promoting overall well-being for long-lasting results.",
+   "new": "looking at the underlying causes of eye conditions and at your overall well-being.",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "'Long-lasting results' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-051",
+   "auto": true,
+   "old": "cleanse, nourish, and improve circulation in the eyes, enhancing vision and reducing strain.",
+   "new": "aim to cleanse and nourish the eyes, support circulation and ease strain.",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "'Enhancing vision' outcome promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-052",
+   "auto": true,
+   "old": "and preventing age-related eye conditions.",
+   "new": "and to support long-term eye health.",
+   "min": 2,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "Prevention promise for age-related eye disease.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-053",
+   "auto": true,
+   "old": "Improve vision & relieve eye strain with Ayurvedic eye care therapies at Kairali.",
+   "new": "Ayurvedic eye care at Kairali, planned to ease eye strain and support eye health.",
+   "min": 13,
+   "route": "/beauty-care-and-eye-care/",
+   "why": "Metadata/lead 'Improve vision' outcome promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-054",
+   "auto": true,
+   "old": "Herbal remedies reduce inflammation, nourish tissues, and strengthen the spine.",
+   "new": "Herbal remedies, where prescribed, aim to ease inflammation and nourish tissues.",
+   "min": 4,
+   "route": "/treatment-for-chronic-back-pain/, /pain-management.html",
+   "why": "Promise that herbal remedies strengthen the spine and reduce inflammation.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-055",
+   "auto": true,
+   "old": "These herbal remedies, derived from potent herbs and minerals, are chosen for their safety and effectiveness.",
+   "new": "Your physician selects these remedies for your condition and reviews how you respond.",
+   "min": 4,
+   "route": "/treatment-for-chronic-back-pain/, /pain-management.html",
+   "why": "Safety and efficacy claim for herbo-mineral medicines.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-056",
+   "auto": true,
+   "old": "monitor the effectiveness of therapies, medications, and lifestyle changes to ensure optimal results in managing",
+   "new": "review your response to therapies, medications, and lifestyle changes, to support you in managing",
+   "min": 4,
+   "route": "/treatment-for-chronic-back-pain/, /pain-management.html",
+   "why": "'Ensure optimal results' promise (translator item 4).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-057",
+   "auto": true,
+   "old": "including exercises and diet modifications for optimal results.",
+   "new": "including exercises and diet modifications.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Optimal results' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-058",
+   "auto": true,
+   "old": "Yes, Ayurvedic treatment can be highly effective for pain. It addresses the root causes of pain, reduces inflammation, strengthens the spine, and promotes healing.",
+   "new": "Ayurvedic treatment may help with many kinds of pain. It aims to address underlying causes, ease inflammation and support recovery.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Highly effective' efficacy claim with outcome promises.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-059",
+   "auto": true,
+   "old": "Holistic approach targeting root causes for lasting relief and well-being.",
+   "new": "Holistic approach that looks at underlying causes and overall well-being.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Lasting relief' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-060",
+   "auto": true,
+   "old": "Samantha's case exemplifies the effectiveness of Ayurvedic treatment for chronic back pain.",
+   "new": "Samantha's case describes one patient's experience of Ayurvedic treatment for chronic back pain.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "Case study generalised as proof of efficacy.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-061",
+   "auto": true,
+   "old": "This case study showcases the potential of Ayurveda in providing long-lasting results and empowering individuals to manage and overcome chronic back pain.",
+   "new": "Individual results vary; your physician will discuss what to expect for your condition.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Long-lasting results' / 'overcome chronic back pain' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-062",
+   "auto": true,
+   "old": "decided to try Ayurvedic treatment at Kairali Wellness Retreats.",
+   "new": "decided to try Ayurvedic treatment at Kairali – The Ayurvedic Healing Village.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "Legacy brand 'Kairali Wellness Retreats' in narrative (non-quote) text.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-063",
+   "auto": true,
+   "old": "\"alt\":\"Kairali Wellness Retreats\"",
+   "new": "\"alt\":\"Kairali – The Ayurvedic Healing Village\"",
+   "min": 1,
+   "route": "/pain-management.html",
+   "why": "Legacy brand in an image alt.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-064",
+   "auto": true,
+   "old": "A preventive way to lead a disease-free and stress-free life",
+   "new": "A preventive approach to a healthier, more balanced life",
+   "min": 5,
+   "route": "/kairali-cleansing-centre.html, /wellness-resort-kerala.html, /treatment-in-kerala.html",
+   "why": "'Disease-free and stress-free life' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-065",
+   "auto": true,
+   "old": "Let us head towards a disease-free world, hand in hand!",
+   "new": "Let us work towards better health, hand in hand!",
+   "min": 5,
+   "route": "/kairali-cleansing-centre.html, /wellness-resort-kerala.html, /treatment-in-kerala.html",
+   "why": "'Disease-free world' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-066",
+   "auto": true,
+   "old": "ensuring safe and effective treatment for seniors.",
+   "new": "with care planned around each senior’s health.",
+   "min": 1,
+   "route": "/offers/new/",
+   "why": "Safety/efficacy guarantee ('ensuring safe and effective').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-067",
+   "auto": true,
+   "old": "Fertility enhancement treatments for family planning support",
+   "new": "Physician-guided care for family planning concerns",
+   "min": 1,
+   "route": "/family-ayurvedic-retreat-kerala.html",
+   "why": "Fertility enhancement claim (DMRA schedule).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-068",
+   "auto": true,
+   "old": "From menstrual cycle regulation to menopause management and fertility support, each treatment is crafted to restore balance and promote long-term vitality.",
+   "new": "From menstrual concerns to menopause, each treatment is planned by your physician to support balance and long-term vitality.",
+   "min": 1,
+   "route": "/family-ayurvedic-retreat-kerala.html",
+   "why": "Fertility claim (DMRA schedule) and 'cycle regulation' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-069",
+   "auto": true,
+   "old": "A comprehensive anti-ageing program that revitalises tissues, supports immunity, and enhances stamina — ideal for low energy in seniors and muscle weakness. Experience the deep restoration of Panchakarma combined with modern wellness protocols.",
+   "new": "A comprehensive programme for healthy ageing that aims to support immunity, energy and stamina — suited to seniors with low energy or muscle weakness, after physician assessment. It combines Panchakarma with modern wellness protocols.",
+   "min": 2,
+   "route": "/offers/senior-citizen-offer/, /offers/new/",
+   "why": "Anti-ageing claim (premature ageing is a DMRA schedule condition) and 'deep restoration' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-070",
+   "auto": true,
+   "old": "therapies that not only restore lung health but also promote overall vitality.",
+   "new": "therapies that aim to support breathing and overall vitality.",
+   "min": 1,
+   "route": "/family-ayurvedic-retreat-kerala.html",
+   "why": "'Restore lung health' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-071",
+   "auto": true,
+   "old": "the program offers a comprehensive solution to chronic back pain, sciatica, and postural imbalances.",
+   "new": "the program offers structured, physician-guided care for chronic back pain, sciatica, and postural imbalances.",
+   "min": 1,
+   "route": "/family-ayurvedic-retreat-kerala.html",
+   "why": "'Comprehensive solution' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-072",
+   "auto": true,
+   "old": "Herbal medicines and Rasayana therapies to strengthen immunity and vitality for all ages",
+   "new": "Herbal medicines and Rasayana therapies, as prescribed, to support immunity and vitality for all ages",
+   "min": 1,
+   "route": "/family-ayurvedic-retreat-kerala.html",
+   "why": "'Strengthen immunity' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-073",
+   "auto": true,
+   "old": "provides solutions to practically every health-related problem",
+   "new": "offers guidance on a wide range of health concerns",
+   "min": 1,
+   "route": "/treatment-in-kerala.html",
+   "why": "Panacea claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-074",
+   "auto": true,
+   "old": "contains solutions for practically every health problem",
+   "new": "offers guidance on a wide range of health concerns",
+   "min": 4,
+   "route": "/kairali-cleansing-centre.html, /wellness-resort-kerala.html",
+   "why": "Panacea claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-075",
+   "auto": true,
+   "old": "Everyone, from youth to the elderly, can receive therapies and treatments without worry.",
+   "new": "Everyone, from youth to the elderly, can receive therapies and treatments suited to them after a physician’s assessment.",
+   "min": 5,
+   "route": "/kairali-cleansing-centre.html, /wellness-resort-kerala.html, /treatment-in-kerala.html",
+   "why": "Safety claim ('without worry').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-076",
+   "auto": true,
+   "old": "provides authentic and 100% natural treatments.",
+   "new": "provides authentic, physician-guided Ayurvedic treatments.",
+   "min": 2,
+   "route": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "why": "'100% natural' used as a safety/quality claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-077",
+   "auto": true,
+   "old": "provides authentic Ayurvedic treatment and 100% natural therapies",
+   "new": "provides authentic Ayurvedic treatment and natural therapies",
+   "min": 2,
+   "route": "/ayurvedic-treatment-packages.html",
+   "why": "'100% natural' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-078",
+   "auto": true,
+   "old": "Kairali delivers authentic therapies that heal the body and mind while easing stress.",
+   "new": "Kairali offers authentic therapies for body and mind that also help ease stress.",
+   "min": 2,
+   "route": "/kairali-cleansing-centre.html",
+   "why": "Healing promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-079",
+   "auto": true,
+   "old": "our therapy will let nature provide your body with all that it needs to regenerate and heal.",
+   "new": "our therapy aims to support your body’s natural balance and recovery.",
+   "min": 2,
+   "route": "/preventive-rejuvenation-detoxification.html",
+   "why": "Regenerate-and-heal promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-080",
+   "auto": true,
+   "old": "your body will be rid of all toxins and stresses, helping you feel reinvigorated.",
+   "new": "you can step away from daily stress and feel reinvigorated.",
+   "min": 6,
+   "route": "/defence-and-paramilitary-forces/",
+   "why": "Promise that the body 'will be rid of all toxins'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-081",
+   "auto": true,
+   "old": "which heals you internally and externally with traditional and authentic Ayurvedic therapies",
+   "new": "which offers traditional and authentic Ayurvedic therapies",
+   "min": 7,
+   "route": "/about-us/, /our-story/",
+   "why": "Healing promise in the brand description.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-082",
+   "auto": true,
+   "old": "Those seeking an experienced Ayurvedic doctor with a proven track record in slip disc treatment.",
+   "new": "Those seeking care from an experienced Ayurvedic physician for slip disc.",
+   "min": 2,
+   "route": "/treatment-for-slip-disc/",
+   "why": "Unverified 'proven track record' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-083",
+   "auto": true,
+   "old": "— a normal sign of the body eliminating toxins, monitored by our physicians.",
+   "new": "— tell your care team about any symptoms so your physician can review them.",
+   "min": 5,
+   "route": "/faqs-downloads/",
+   "why": "Patient safety: presented adverse symptoms as a 'normal sign of eliminating toxins'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-084",
+   "auto": true,
+   "old": "would help you heal in no time.",
+   "new": "can help you rest and recover.",
+   "min": 8,
+   "route": "/prav-simona-monsoon-yoga-retreat/, /prav-simona-yoga-retreat/",
+   "why": "Time-bound healing promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-085",
+   "auto": true,
+   "old": "General therapy (Abhyangam) has proven to be highly effective in enhancing vision, prolonging life, ensuring restful sleep, alleviating rheumatism, boosting vitality, and promoting radiant skin.",
+   "new": "In Ayurvedic tradition, general therapy (Abhyangam) is used to support restful sleep, vitality and healthy skin.",
+   "min": 5,
+   "route": "/karma-being-retreat/",
+   "why": "'Proven highly effective' for vision, longevity and rheumatism (DMRA schedule).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-086",
+   "auto": true,
+   "old": "This treatment safeguards you against diseases and enhances your immune system, boosting your vitality and well-being. It also supports recovery from rheumatic conditions, hypertension, joint pain, and diabetes.",
+   "new": "In Ayurveda it is traditionally used to support vitality and well-being, and your physician may include it in care for joint pain and other conditions.",
+   "min": 5,
+   "route": "/karma-being-retreat/",
+   "why": "Disease-prevention promise and DMRA schedule conditions (rheumatism, hypertension, diabetes).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-087",
+   "auto": true,
+   "old": "Proven to deliver effective results for a variety of health concerns.",
+   "new": "Formulated according to classical Ayurvedic principles, for use as your physician advises.",
+   "min": 2,
+   "route": "/ayurvedic-proprietary-medicines/",
+   "why": "'Proven effective' claim for medicines.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-088",
+   "auto": true,
+   "old": "These compositions guarantee effectiveness, safety, and authenticity by fusing cutting-edge scientific methods with age-old Ayurvedic knowledge.",
+   "new": "These compositions combine modern manufacturing methods with age-old Ayurvedic knowledge, and are taken as a physician advises.",
+   "min": 2,
+   "route": "/ayurvedic-proprietary-medicines/",
+   "why": "Guarantee of effectiveness and safety for medicines.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-089",
+   "auto": true,
+   "old": ", making them a safe and effective option for those looking for natural solutions.",
+   "new": ", for those looking for natural options.",
+   "min": 2,
+   "route": "/ayurvedic-proprietary-organics/",
+   "why": "'Safe and effective' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-090",
+   "auto": true,
+   "old": "health rejuvenation plan free of side effects.",
+   "new": "health rejuvenation plan.",
+   "min": 2,
+   "route": "/brief-on-kairali/",
+   "why": "'Free of side effects' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-091",
+   "auto": true,
+   "old": "The aim is to completely heal you, and take you towards the state of bliss.",
+   "new": "The aim is to support your wellbeing and help you towards a state of calm.",
+   "min": 6,
+   "route": "/ayurveda-retreats-for-everyone/",
+   "why": "'Completely heal you' promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-092",
+   "auto": true,
+   "old": "Strengthens the immune system and increases resistance to seasonal and chronic ailments.",
+   "new": "Aims to support immunity and overall resilience.",
+   "min": 2,
+   "route": "/faqs-downloads/",
+   "why": "Immunity / disease-resistance promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-093",
+   "auto": true,
+   "old": "The use of high-quality organic herbs ensures maximum efficacy.",
+   "new": "Made with high-quality organic herbs.",
+   "min": 2,
+   "route": "/ayurvedic-proprietary-organics/",
+   "why": "'Ensures maximum efficacy' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-094",
+   "auto": true,
+   "old": "Effective Results",
+   "new": "Quality Herbs",
+   "min": 2,
+   "route": "/ayurvedic-proprietary-organics/",
+   "why": "Efficacy label paired with CLAIM-093.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-095",
+   "auto": true,
+   "old": "These tried-and-tested formulations combine real herbs with natural substances to promote effective, holistic healing.",
+   "new": "These formulations combine real herbs with natural substances and are taken as a physician advises.",
+   "min": 6,
+   "route": "/product-range/",
+   "why": "'Effective healing' claim for medicines.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-096",
+   "auto": true,
+   "old": "to create each composition to guarantee purity, effectiveness, and compatibility with the age-old Ayurvedic knowledge.",
+   "new": "to create each composition in keeping with age-old Ayurvedic knowledge.",
+   "min": 6,
+   "route": "/product-range/",
+   "why": "Guarantee of effectiveness.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-097",
+   "auto": true,
+   "old": "every product is created to guarantee efficacy, purity, and adherence to traditional formulae.",
+   "new": "every product is created in adherence to traditional formulae.",
+   "min": 2,
+   "route": "/ayurvedic-products/",
+   "why": "Guarantee of efficacy.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-098",
+   "auto": true,
+   "old": "Virechanam is an especially effective cure in cases of jaundice and hemorrhoids.",
+   "new": "Virechanam is a classical therapy that your physician may prescribe after assessment.",
+   "min": 2,
+   "route": "/panchakarma/",
+   "why": "Cure claim (named in the brief).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-099",
+   "auto": true,
+   "old": "The decoction depends on the disease that needs to be cured. It has huge advantages and is powerful against diseases like piles, constipation and arthritis.",
+   "new": "The decoction depends on the condition being treated, and your physician decides whether Vasti is suitable for you.",
+   "min": 2,
+   "route": "/panchakarma/",
+   "why": "Cure framing; 'powerful against' piles/arthritis (DMRA schedule).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-100",
+   "auto": true,
+   "old": "thus getting rid of health issues like psoriasis, pigmentation, dermatitis and many more.",
+   "new": "and it is traditionally used in the care of skin conditions such as psoriasis and dermatitis, as your physician advises. ",
+   "min": 2,
+   "route": "/panchakarma/",
+   "why": "Cure-style promise ('getting rid of'); trailing space restores the missing space before 'Nutrition'.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-101",
+   "auto": true,
+   "old": "It is beneficial in getting rid of almost every disease.",
+   "new": "Your physician will advise whether it is suitable for you.",
+   "min": 7,
+   "route": "/live-to-100-with-panchkarma/",
+   "why": "Panacea claim (also in route metadata).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-102",
+   "auto": true,
+   "old": "Accumulation of ama (toxin) is the primary reason for almost every disease and ",
+   "new": "In Ayurveda, accumulation of ama (toxin) is considered a root of many imbalances, and ",
+   "min": 4,
+   "route": "/live-to-100-with-panchkarma/",
+   "why": "Panacea framing; split around an inline link.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-103",
+   "auto": true,
+   "old": " help us get rid of ama.",
+   "new": " aims to help clear ama.",
+   "min": 4,
+   "route": "/live-to-100-with-panchkarma/",
+   "why": "Second half of CLAIM-102 (text after the inline 'Panchkarma' link).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-104",
+   "auto": true,
+   "old": "They are a collection of trusted ayurvedic products with no side-effects at all.",
+   "new": "They are a collection of trusted Ayurvedic products, best used as a physician advises.",
+   "min": 3,
+   "route": "/ayurvedic-classical-medicines/",
+   "why": "'No side-effects at all' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-105",
+   "auto": true,
+   "old": "Merged with almost no side effects, Ayurveda can revolutionize the way we see healthcare sector.",
+   "new": "Used under qualified guidance, Ayurveda can change the way we see the healthcare sector.",
+   "min": 3,
+   "route": "/arogya-shala/",
+   "why": "'Almost no side effects' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-106",
+   "auto": true,
+   "old": "as it not only cures the symptoms and illness but drives a person to a health oriented lifestyle.",
+   "new": "as it looks beyond symptoms and guides a person towards a health-oriented lifestyle.",
+   "min": 2,
+   "route": "/organic-farm/",
+   "why": "Cure claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-107",
+   "auto": true,
+   "old": "A five-step purification process that removes toxins from the body, strengthens the immune system and restores vitality.",
+   "new": "A five-step classical purification process that aims to cleanse the body and support immunity and vitality.",
+   "min": 2,
+   "route": "/ayurveda/",
+   "why": "Immunity / restoration promise.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-108",
+   "auto": true,
+   "old": "100% Natural & Holistic",
+   "new": "Natural & Holistic",
+   "min": 2,
+   "route": "/new-to-ayurveda/",
+   "why": "'100% natural' claim label.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-109",
+   "auto": true,
+   "old": "is well recognized as a side-effect-free health rejuvenation plan since it is based on",
+   "new": "is well recognized as a health rejuvenation plan based on",
+   "min": 2,
+   "route": "/kairali-ayurvedic-group/",
+   "why": "'Side-effect-free' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-110",
+   "auto": true,
+   "old": "Kairali ensures that all its offerings are authentic, natural, and free from harmful side effects.",
+   "new": "Kairali ensures that all its offerings are authentic and natural.",
+   "min": 2,
+   "route": "/in-house-products/",
+   "why": "'Free from harmful side effects' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-111",
+   "auto": true,
+   "old": " thus eradicating the root of any disease from the body entirely.",
+   "new": ".",
+   "min": 4,
+   "route": "/what-is-panchkarma/",
+   "why": "'Eradicating the root of any disease' panacea claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-112",
+   "auto": true,
+   "old": " and they have made the transition from a world riddled with diseases to the world perfectly healthy feasible.",
+   "new": "",
+   "min": 4,
+   "route": "/what-is-panchkarma/",
+   "why": "'World perfectly healthy' panacea claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-113",
+   "auto": true,
+   "old": "Due to its enormous potency and instantaneous effects that last longer, this method has been deemed incredibly effective in fighting off against afflictions.",
+   "new": "It is one of Ayurveda’s classical methods, and your physician decides whether it is suitable for you.",
+   "min": 4,
+   "route": "/what-is-panchkarma/",
+   "why": "'Instantaneous effects' / 'incredibly effective' claims.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-114",
+   "auto": true,
+   "old": "Our professional yoga instructors guarantee a safe and effective practice.",
+   "new": "Our professional yoga instructors guide you through a practice suited to your level.",
+   "min": 2,
+   "route": "/what-is-yoga/",
+   "why": "Safety/efficacy guarantee.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-115",
+   "auto": true,
+   "old": "Being in nature is proven to reduce stress and enhance well-being",
+   "new": "Time in nature can help you relax and support well-being",
+   "min": 2,
+   "route": "/wildlife-drive/",
+   "why": "'Proven' claim.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-116",
+   "auto": true,
+   "old": "Regular practice reduces cortisol levels, helping you manage stress effectively.",
+   "new": "Regular practice may help you manage stress.",
+   "min": 2,
+   "route": "/meditation/",
+   "why": "Physiological outcome claim (cortisol).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-117",
+   "auto": true,
+   "old": "Our unique Ayurvedic massage program supports weight reduction by combating flaccidity and toning muscles, while also eliminating cellulite.",
+   "new": "Our Ayurvedic massage programme is designed to complement a physician-guided weight-management plan and to tone the muscles.",
+   "min": 2,
+   "route": "/kairali-ayurvedic-way-of-weight-management/",
+   "why": "Weight-reduction / 'eliminating cellulite' promise (obesity is a DMRA schedule condition).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-118",
+   "auto": true,
+   "old": "This profoundly soothing procedure rejuvenates and adds shine to the skin; minimizing wrinkles, combating cellulite, and providing our guests with a radiant, glowing appearance.",
+   "new": "This soothing procedure aims to nourish the skin and leave it looking refreshed.",
+   "min": 2,
+   "route": "/kairali-ayurvedic-way-of-weight-management/",
+   "why": "Anti-wrinkle / cellulite outcome promise (also removes banned word 'guests').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-119",
+   "auto": true,
+   "old": "Lose weight Naturally & Effectively in 3 weeks",
+   "new": "Physician-Guided Weight Management",
+   "min": 3,
+   "route": "/sitemap/",
+   "why": "Time-bound weight-loss promise (obesity is a DMRA schedule condition).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-120",
+   "auto": true,
+   "old": "for healing and curing various health conditions. Her audio CDs, healing methods and music are now used for curing various health conditions internationally.",
+   "new": "for wellbeing. Her audio CDs, healing methods and music are now used internationally.",
+   "min": 1,
+   "route": "/mindfulness-retreat/",
+   "why": "Cure claims in a guest facilitator bio on a KTAHV past-retreat page.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-121",
+   "auto": true,
+   "old": "7-DAY CURE with an Ayurvedic check-up",
+   "new": "7-DAY AYURVEDIC PROGRAMME with an Ayurvedic check-up",
+   "min": 1,
+   "route": "/ayurvedic-new-year-yala-2018/",
+   "why": "'Cure' (banned word; Italian 'cura' = treatment) in a past-retreat highlight.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-122",
+   "auto": true,
+   "old": "Ayurvedic Doctor Consultation for Cervical Spondylitis",
+   "new": "Ayurvedic Doctor Consultation for Cervical Spondylosis",
+   "min": 2,
+   "route": "/treatment-for-cervical-spondylosis/",
+   "why": "Term error: the page (/treatment-for-cervical-spondylosis/) is about cervical spondylosis (verified: canonical, meta and body use 'spondylosis').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-123",
+   "auto": true,
+   "old": "Kairali’s Holistic Approach to Cervical Spondylitis",
+   "new": "Kairali’s Holistic Approach to Cervical Spondylosis",
+   "min": 2,
+   "route": "/treatment-for-cervical-spondylosis/",
+   "why": "Term error on the cervical spondylosis page (same verification).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-124",
+   "auto": true,
+   "old": "Ayurvedic Therapy for Stress Management and Stress Free Life",
+   "new": "Ayurvedic Therapy for Stress Management",
+   "min": 2,
+   "route": "/treatment-to-remove-stress-and-strain/",
+   "why": "'Stress Free Life' promise in an image alt.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-125",
+   "auto": true,
+   "old": " My limbs’ strength and sensibility were restored by the Ayurvedic therapies, which included herbal remedies, therapeutic massages, and mild exercises.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-paralysis/",
+   "why": "Testimonial (paralysis): the explicit restoration-outcome sentence removed; the rest of the quote stands.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-126",
+   "auto": true,
+   "old": " My confidence was restored and my facial movement improved thanks to the customized Ayurvedic treatments, which included herbal applications and special oil massages. I am immensely appreciative of Kairali’s assistance in my recuperation and restoration of face muscle control.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-facial-paralysis/",
+   "why": "Testimonial (facial paralysis): two outcome sentences removed; the opening two sentences stand.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-127",
+   "auto": true,
+   "old": "The treatments were soothing and effectively reduced my inflammation and discomfort.",
+   "new": "The treatments were soothing.",
+   "min": 2,
+   "route": "/treatment-for-arthritis-and-spondylitis/",
+   "why": "Testimonial (arthritis): outcome clause removed only.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-128",
+   "auto": true,
+   "old": " My skin improved dramatically after receiving tailored Ayurvedic therapy such as medicated oil massages and herbal treatments.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-skin-diseases/",
+   "why": "Testimonial (psoriasis, skin page): outcome sentence removed only.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-129",
+   "auto": true,
+   "old": " Their herbal massages, detox therapies, and nutritional recommendations helped me get rid of my sinus congestion and migraines in a way I had never experienced before.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-sinusitis-and-migraine/",
+   "why": "Testimonial (sinus/migraine): 'get rid of' outcome sentence removed only.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-130",
+   "auto": true,
+   "old": " Kairali’s Ayurvedic method helped me in ways that traditional therapies were never able to.",
+   "new": "",
+   "min": 2,
+   "route": "/treatment-for-bronchial-diseases/",
+   "why": "Testimonial (bronchial): comparative claim against conventional treatment removed only.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-131",
+   "auto": true,
+   "old": "Why Monsoon Is Ayurveda's Most Powerful Season",
+   "new": "Why the Monsoon Matters in Ayurveda",
+   "min": 4,
+   "route": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "why": "Heading efficacy superlative ('most powerful season').",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-132",
+   "auto": true,
+   "old": "Lifestyle and diet changes, including gentle exercises and stress reduction, maintain dosha balance and prevent pain recurrence. Ayurveda offers a holistic, natural, non-invasive approach that alleviates symptoms and prevents future issues, enhancing overall well-being, reducing stress, and improving your quality of life. Experience this transformation at Kairali",
+   "new": "Lifestyle and diet changes, including gentle exercises and stress reduction, aim to maintain dosha balance and reduce the risk of recurrence. Ayurveda offers a holistic, natural, non-invasive approach that aims to ease symptoms and support overall well-being. Your physician will plan and review your programme at Kairali",
+   "min": 4,
+   "route": "/treatment-for-chronic-back-pain/, /pain-management.html",
+   "why": "Prevention promises ('prevent pain recurrence', 'prevents future issues') on the chronic back pain page and the pain-management campaign; stops before the dash so both 'Kairali – The' and 'Kairali - The' variants match.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-132b",
+   "auto": true,
+   "old": "The Ayurvedic Healing Village, where Ayurveda empowers a pain-free life with enhanced well-being.",
+   "new": "The Ayurvedic Healing Village.",
+   "min": 4,
+   "route": "/treatment-for-chronic-back-pain/, /pain-management.html",
+   "why": "'Pain-free life' outcome promise (tail of CLAIM-132).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-133",
+   "auto": true,
+   "old": "Choose Kairali – The Ayurvedic Healing Village for an authentic Ayurvedic approach that provides lasting relief and holistic well-being by addressing the root cause of skin diseases.",
+   "new": "Choose Kairali – The Ayurvedic Healing Village for an authentic Ayurvedic approach to skin concerns that looks at underlying causes and your overall well-being.",
+   "min": 2,
+   "route": "/treatment-for-skin-diseases/",
+   "why": "'Lasting relief' promise for skin diseases.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-134",
+   "auto": true,
+   "old": "Embrace a Pain-Free Life with the Wisdom of Ayurveda",
+   "new": "Ayurvedic Care for Pain, Guided by Our Physicians",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Pain-free life' outcome promise in a heading.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-135",
+   "auto": true,
+   "old": ", and I feel rejuvenated and pain-free for the first time in years.",
+   "new": ".",
+   "min": 2,
+   "route": "/treatment-for-chronic-back-pain/",
+   "why": "Testimonial (chronic back pain): 'pain-free' outcome clause removed only; the rest of the quote stands.",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  },
+  {
+   "id": "CLAIM-136",
+   "auto": true,
+   "old": "The personalized approach, therapeutic sessions, medications, and ongoing guidance from the doctor will help you achieve relief, restore balance, and promote a pain-free, healthy life.",
+   "new": "The personalized approach, therapeutic sessions, medications and ongoing guidance from the doctor aim to support relief, balance and a healthier life.",
+   "min": 2,
+   "route": "/pain-management.html",
+   "why": "'Will help you achieve relief ... pain-free life' outcome promise (pain-management campaign).",
+   "authority": "Owner medical-content authority; Dr. Deepu John review before production (HARD GATE 7)"
+  }
+ ]
+}

@@ -260,7 +260,20 @@ export function lintBrandDir(dir, { brand } = {}) {
       excerpt: "",
     }];
   }
-  const sheet = TOKEN_SHEETS[eff];
+  let sheet = TOKEN_SHEETS[eff];
+  // An opt-in central palette preserves the already approved Kairali.com
+  // Premium v3 design. This changes only the required token import; every
+  // source-color, contrast and interaction rule below still applies.
+  const configPath = join(dir, "site.config.json");
+  let profile;
+  try { profile = existsSync(configPath) ? JSON.parse(readFileSync(configPath, "utf8")).brandTokenProfile : undefined; }
+  catch { return [{ file: configPath, line: 1, severity: "error", rule: "config", message: "Invalid site.config.json", excerpt: "" }]; }
+  if (profile !== undefined) {
+    if (eff !== "kairali" || profile !== "premium-v3") {
+      return [{ file: configPath, line: 1, severity: "error", rule: "config", message: `Unknown token profile "${profile}" for brand "${eff}"`, excerpt: "" }];
+    }
+    sheet = "kairali-premium-v3-tokens.css";
+  }
   if (!sheet) {
     return [{
       file: join(dir, "site.config.json"), line: 1, severity: "error", rule: "config",

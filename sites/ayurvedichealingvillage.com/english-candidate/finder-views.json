@@ -1,0 +1,144 @@
+{
+  "why": "D-20260916-10: /ayurvedic-treatments/ is the owner's finder template; /wellness-programs/, /treatment-programs/, /training-programs/ and /yoga-meditation-programs/ become instances of it (own category, h1, breadcrumb, intro, head, hero). Every finder carries the owner's shared block. Copy for each hub is the hub's own approved intro; head fields are the route's approved metadata (english-candidate/route-manifest.json). Facts for the five courses: english-candidate/finder-additions.json (tariff KAHR/AY-TRG/2026-2027/04/GBL). 2026-09-23 (D-20260922-32 Option A + D-20260922-33): the finder's search surface is rebuilt by patchSearch() on the same template — one search box + six condition chips + duration + budget + currency in a sticky bar, dataset from public/ahv/search-index.json, engine from public/design/search.js; /all-programs/ is the sixth hub of the template (its h1 and intro are the owner's all-programs copy, public/ahv/assets/all-programs-data.js → copy.h1 / copy.intro).",
+  "benchmark": {
+    "desktop": "ahv-page-ayurvedic-treatments-desktop",
+    "mobile": "ahv-page-ayurvedic-treatments-mobile"
+  },
+  "host": "https://ayurvedichealingvillage.com",
+  "sharedBlock": {
+    "items": [
+      "NABH Certified Hospital",
+      "{{ heritageLine }}",
+      "Individualised Programmes",
+      "World Luxury Award Winner"
+    ],
+    "notSure": "Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.",
+    "whatsapp": "https://wa.me/919289838797",
+    "whatsappLabel": "WhatsApp Patient Care"
+  },
+  "dataPatch": {
+    "umbrella": {
+      "from": "/ayurveda-training-programs/",
+      "to": "/ayurveda-training-programme/",
+      "name": "Ayurveda Training Programmes",
+      "category": "R"
+    },
+    "wellness": [
+      "/personalized-customized-healing-program/",
+      "/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "/immunity-enhancement-executive-health-assessment-therapy/",
+      "/treatment-to-remove-stress-and-strain/",
+      "/sleep-restoration-therapy/",
+      "/panchakarma-therapy/"
+    ],
+    "courseRate": {
+      "INR": "₹18,410",
+      "USD": "$263",
+      "EUR": "€230"
+    },
+    "courses": [
+      {
+        "route": "/one-day-ayurveda-workshop-program-kerala/",
+        "name": "One-Day Ayurveda Workshop",
+        "days": 1,
+        "summary": "Introductory session with hands-on Abhyangam massage.",
+        "image": "/ahv/assets/img/AHV-Ananda-Workshop.jpg"
+      },
+      {
+        "route": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+        "name": "Three-Day Ayurveda Certificate Program",
+        "days": 3,
+        "summary": "Theory and practice of core therapies.",
+        "image": "/ahv/assets/img/AHV-Ayurveda-Training-Practice.jpg"
+      },
+      {
+        "route": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+        "name": "Five-Day Intensive Ayurveda Training Program",
+        "days": 5,
+        "summary": "In-depth training in five major therapies.",
+        "image": "/ahv/assets/img/AHV-Ayurveda-Training-Therapies.jpg"
+      },
+      {
+        "route": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+        "name": "Level One Advanced Ayurveda Training Program",
+        "days": 10,
+        "summary": "Advanced curriculum for wellness professionals.",
+        "image": "/ahv/assets/img/AHV-Ayurveda-Training-About.png"
+      },
+      {
+        "route": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+        "name": "Advanced Ayurveda Lifestyle Consultant & Therapist Training",
+        "days": 20,
+        "summary": "Comprehensive training, including lifestyle consulting and advanced therapies.",
+        "image": "/ahv/assets/img/Ayurvedic-Training-why-min.jpg"
+      }
+    ]
+  },
+  "tariff": {
+    "_why": "C-07 RATE-PARITY (28 Sep 2026): the 'Full tariff sheet' link names the approved 20260925-R1 document of the finder's own programme family (english-candidate/downloads.json, owner-approved final family); USD/EUR point at the /documents/ catalogue section with every language and currency edition. Labels and hrefs are READ from downloads.json at build time, never typed here. feeBasis replaces the benchmark's superseded 'valid to 30 September 2026' clause with the approved wording already served since 12c539a8/01094caa.",
+    "revision": "20260925-R1",
+    "benchmark": "ayurveda",
+    "families": {
+      "ayurveda": { "pdfFamily": "ayurveda-programmes-tariff", "catalogueAnchor": "ayurveda" },
+      "training": { "pdfFamily": "ayurveda-training-courses-tariff", "catalogueAnchor": "training" },
+      "yoga": { "pdfFamily": "yoga-meditation-programmes-tariff", "catalogueAnchor": "yoga" }
+    },
+    "feeBasis": {
+      "from": "per the current KTAHV tariff valid to 30 September 2026.",
+      "to": "per the published tariff and the effective dates shown for each programme."
+    }
+  },
+  "derived": [
+    {
+      "route": "/wellness-programs/",
+      "id": "ahv-page-wellness-programs",
+      "cat": "W",
+      "tariff": "ayurveda",
+      "h1": "Ayurvedic Wellness Programmes",
+      "crumb": "Wellness Programmes",
+      "hero": "/ahv/assets/img/preventive.webp",
+      "intro": "Explore Kairali’s preventive and regenerative Ayurveda programmes. Read the programme details and discuss your next step with an Ayurvedic physician."
+    },
+    {
+      "route": "/treatment-programs/",
+      "id": "ahv-page-treatment-programs",
+      "cat": "T",
+      "tariff": "ayurveda",
+      "h1": "Ayurvedic Treatment Programmes",
+      "crumb": "Treatment Programmes",
+      "intro": "Explore Kairali’s Ayurvedic treatment programmes in Kerala. Read the programme details and speak with an Ayurvedic physician about the options you are considering."
+    },
+    {
+      "route": "/training-programs/",
+      "id": "ahv-page-training-programs",
+      "cat": "R",
+      "tariff": "training",
+      "h1": "Ayurveda Training Programmes",
+      "crumb": "Training Programmes",
+      "hero": "/ahv/assets/img/AHV-Ayurveda-Training-Practice.jpg",
+      "intro": "Explore Ayurveda training at Kairali. Read about the courses, workshop durations and teaching approach, then contact us to discuss your plans."
+    },
+    {
+      "route": "/yoga-meditation-programs/",
+      "id": "ahv-page-yoga-meditation-programs",
+      "cat": "Y",
+      "tariff": "yoga",
+      "h1": "Yoga & Meditation Programmes",
+      "crumb": "Yoga & Meditation",
+      "hero": "/ahv/assets/img/yoga-training-hero-y-based.webp",
+      "intro": "Experience deep relaxation with our yoga & meditation programmes. Restore balance, enhance well-being, and rejuvenate mind & body at the Healing Village."
+    },
+    {
+      "route": "/all-programs/",
+      "id": "ahv-page-all-programs",
+      "cat": "A",
+      "tariff": "ayurveda",
+      "h1": "Find your programme at Kairali",
+      "crumb": "All Programmes",
+      "intro": "Explore programmes for treatment, wellbeing, yoga and Ayurveda training. Browse at your own pace, compare the details, and speak with an Ayurvedic physician before choosing your next step."
+    }
+  ],
+  "search": {
+    "placeholder": "What brings you to us? e.g. back pain, psoriasis"
+  }
+}

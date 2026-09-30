@@ -1,0 +1,15 @@
+{
+ "task": "WOPS-AHV-FINAL-DRAFT-20260924-001",
+ "row": "EF-07 / OWNER-REG-06 follow-up",
+ "note": "/offers/ closing line said 'No discounts' on a page advertising offers of up to 20% (parent actual-Chrome review PARENT-R14-BROWSER-ACCEPTANCE.json). Contradiction removed; nothing new asserted. Views, importer overlays and the commercial dataset record.",
+ "entries": [
+  {
+   "id": "OFFERS-no-discounts",
+   "auto": true,
+   "old": "No discounts. No urgency. Just honest guidance from people who care.",
+   "new": "No pressure and no urgency — just honest guidance from people who care.",
+   "min": 2,
+   "authority": "Owner offers authority (approved offers up to 20%); consistency correction, no new fact."
+  }
+ ]
+}

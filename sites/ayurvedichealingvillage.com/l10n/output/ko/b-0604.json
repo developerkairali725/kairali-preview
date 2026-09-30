@@ -1,0 +1,169 @@
+{
+ "batchId": "b-0604",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_1deb3534c1fb4dde5088",
+   "sourceHash": "1deb3534c1fb4dde50889d45e1f09cf80d60f1ef7e6d9d29355e95b888d8bcfb",
+   "text": "Google에서 리뷰 읽기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5775f4cab6e0a3d1eea4",
+   "sourceHash": "5775f4cab6e0a3d1eea48f37c1e2cb1fbabdd430bcd3ed8d3a0ec0000db41334",
+   "text": "원문 후기 읽기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d262abc4b0a7a3b5011",
+   "sourceHash": "6d262abc4b0a7a3b501188281360bda9763ff464edee1d5043af97ccb7f3a80b",
+   "text": "리뷰 언어",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_510c765f211f334349ea",
+   "sourceHash": "510c765f211f334349ea628fdaf21b83b13865b58b3f73457eae254959afb844",
+   "text": "리뷰를 불러오는 중…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5350a63171a037eca926",
+   "sourceHash": "5350a63171a037eca926bbaf454c3290da2c93496295b738cf30c29e8f2af492",
+   "text": "다시 불러오기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_40f69fa2cb372d60e093",
+   "sourceHash": "40f69fa2cb372d60e093b8011fdee8daae96873624e65b420e4f380a9e470ed8",
+   "text": "Google 리뷰 보기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5edce5c6b1409484d11f",
+   "sourceHash": "5edce5c6b1409484d11fd47e8e7a1d6afbc02dd6f57660fb6d183eb1174c3741",
+   "text": "Google 지도에서 리뷰를 불러오는 중…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2121a7419ac828ab40e",
+   "sourceHash": "e2121a7419ac828ab40e6066d959a3f54c305172da3117bd9b7db1f9d25b315f",
+   "text": "현재 리뷰 패널을 이용할 수 없습니다. Google 지도에서 모든 리뷰를 직접 읽으실 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b29cf705a0386aeeca5d",
+   "sourceHash": "b29cf705a0386aeeca5d27a3d64a4c4e94484e6efd8e3eb5525ddf5856038f5a",
+   "text": "Google 지도 리뷰",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment, likely preceded by a review count in the UI. Rendered as a noun phrase ('Google Maps reviews') so that it reads naturally after a number. Check how it renders in context."
+   ]
+  },
+  {
+   "id": "t_ea37d6d9f4aa220b5e2a",
+   "sourceHash": "ea37d6d9f4aa220b5e2aa3292a213ee83fb12cb8183aa0938a95b64c793a7af0",
+   "text": "최대 5개의 리뷰가 Google의 관련성 순서에 따라 표시됩니다. 별점 필터는 적용되지 않습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_14c5b4eec60e4457ee7b",
+   "sourceHash": "14c5b4eec60e4457ee7b595123e8412e8b75a5fed111ff1d961e90d89aabc3a2",
+   "text": "이 패널에 표시할 수 있는 리뷰가 없습니다. 전체 목록을 보시려면 Google 지도를 여십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_229a524d2b922f39129b",
+   "sourceHash": "229a524d2b922f39129b2c4d0a49924ec807720fe5ebe8fd23e77d36004ea628",
+   "text": "Google 번역 · 원문 보기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bf205dead12f53765dcf",
+   "sourceHash": "bf205dead12f53765dcfb874b326e5d7c68e118721a88eaef0928aa2dbf04ecf",
+   "text": "Google 지도에서 읽기 ↗",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8adb4d5967e26ca6e3cd",
+   "sourceHash": "8adb4d5967e26ca6e3cde53fdf70f9a5a1765c3c592810e3e90790b0a52714d6",
+   "text": "리뷰는 Google 지도에서 제공됩니다. Google은 허위 콘텐츠를 확인하여 발견 시 삭제하지만, 리뷰 자체는 Google의 검증을 거친 것이 아닙니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a14d8afeac52cc8e7ca1",
+   "sourceHash": "a14d8afeac52cc8e7ca19dad4d2c8be48a299f01ea2a0b85969b70c655d84814",
+   "text": "Google 리뷰 전체 읽기 ↗",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cd8401f0d92cc92c526b",
+   "sourceHash": "cd8401f0d92cc92c526bab1054fe06d950249adf960ef59df20b4c408d45d4cf",
+   "text": "방문객 경험",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be5d55bd2a29b60a679f",
+   "sourceHash": "be5d55bd2a29b60a679ff2f1ef3827526beb298757937e02cddd933c094fa068",
+   "text": "Tripadvisor 리뷰 보기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9d942debee18625ee55e",
+   "sourceHash": "9d942debee18625ee55e419556de83ee0463af32b446f0180c122fd9d6eb07c8",
+   "text": "직접 열기를 선택하시면 Tripadvisor 자체 리뷰 위젯을 불러옵니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48032948a3d8b1cb30d4",
+   "sourceHash": "48032948a3d8b1cb30d4241534cb1bb078cf9ef766bccdf4522df0e8a6ad0cce",
+   "text": "Kairali 공식 Tripadvisor 리뷰 위젯",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de63edc928be48a420ed",
+   "sourceHash": "de63edc928be48a420edc37a4543569c01f2fda119f2b09799ede0f601ef7b4e",
+   "text": "Tripadvisor 리뷰 전체 읽기 ↗",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -402,7 +402,7 @@ function ClosingBand() {
           <h2 id="close-title">Health through Ayurveda, four generations on.</h2>
         </div>
         <div className="s-text stack">
-          <p>Ask our physicians about treatments and programmes, or tell us what you are looking for.</p>
+          <p>Contact our care team about treatments and programmes, or tell us what you are looking for.</p>
           <div className="actions"><Link className="btn on-dark" href="/onlineconsultation.aspx">Free online consultation</Link><Link className="btn ghost-dark" href="/enquiry-form.aspx">Enquire now</Link></div>
         </div>
       </div>

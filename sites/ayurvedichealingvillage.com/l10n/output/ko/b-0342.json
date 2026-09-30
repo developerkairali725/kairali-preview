@@ -1,0 +1,195 @@
+{
+ "batchId": "b-0342",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_5ac4b2d1103718bf7d0c",
+   "sourceHash": "5ac4b2d1103718bf7d0c9434545b899a41d04c04645c0a9b5278b803b75d9df5",
+   "text": "WhatsApp 열기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_535817274f898b8d25b5",
+   "sourceHash": "535817274f898b8d25b53451b2a9ac38e55dbb4957970fbb46e3568af23e8204",
+   "text": "대표 전화로 연락하기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7cc1e356c964926645ce",
+   "sourceHash": "7cc1e356c964926645ceab29773b0fff9442c275d4d599afabfeedd5e13c5ffc",
+   "text": "매일 8:00 AM – 9:00 PM IST",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_27ab971b8d879c0304f6",
+   "sourceHash": "27ab971b8d879c0304f683580453f4ac680c0549bd758dc11e05542592684dfa",
+   "text": "예약, 도착 관련 세부 사항 또는 코디네이터 연결 등 담당자와 직접 통화하기. 자동 안내 메뉴가 연결해 드리며, 예약은 2번을 누르십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following '적합한 용도:' label; rendered as a noun-phrase continuation."
+   ]
+  },
+  {
+   "id": "t_95e81bd919c8271e6552",
+   "sourceHash": "95e81bd919c8271e655288e4dc642f25dc7ece87ea2ecbbef887c26fa82e5ac9",
+   "text": "24시간 이내 회신",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a562ecf4c813750b8ae6",
+   "sourceHash": "a562ecf4c813750b8ae6de4b655d0395b47fb4661cb9f16a899b750ddde8ce51",
+   "text": "서면으로 보내고 싶으신 상세 문의, 병력 또는 서류. 적합한 담당 부서로 전달해 드립니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following '적합한 용도:' label; rendered as a noun-phrase continuation."
+   ]
+  },
+  {
+   "id": "t_a0187865b174dc174d67",
+   "sourceHash": "a0187865b174dc174d67ce382c2ded9eb38928603b7b7bfb79228ac03d311882",
+   "text": "info@kairali.com으로 이메일 보내기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a83c22f94293c078c6b",
+   "sourceHash": "7a83c22f94293c078c6b9c0456477a46828cfdd86e36f45e8ad08c3a5eb27654",
+   "text": "Instagram 및 Facebook Messenger",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af474a0e8c6a68b032a0",
+   "sourceHash": "af474a0e8c6a68b032a06096b8d102b6bf88946187426e2e2592083bc650c064",
+   "text": "몇 분 이내 회신",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0713814cf2d2f97c3cb7",
+   "sourceHash": "0713814cf2d2f97c3cb7dada8d72b4f5325e392fd18ae1c5b8ef4c0d9b23aa8f",
+   "text": "Instagram 또는 Facebook Messenger에서 Priya와 채팅하시면 몇 분 이내에 회신을 받으실 수 있습니다. 프로그램, 방문 또는 다음 단계에 대해 문의하십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c610bd651ca94cb4ec60",
+   "sourceHash": "c610bd651ca94cb4ec6007cb0f92ec4fed30058b368f49deebd6532ea3b924ef",
+   "text": "Facebook Messenger",
+   "status": "translated",
+   "unchangedReason": "Product/brand name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_2c6a7fabc586f6877e30",
+   "sourceHash": "2c6a7fabc586f6877e30a54b477f0c6ffe8dad67ef4de7981958ed7c84f7f8d7",
+   "text": "간단한 메시지 보내기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_af00fdf8cf5c7cb8acc5",
+   "sourceHash": "af00fdf8cf5c7cb8acc5a2490f27917ac36ab41e2351d83e33a795edea545cf3",
+   "text": "시작하는 데는 이름과 전화번호, 두 가지만 있으면 됩니다. 나머지는 선택 사항입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_631fcd2add7da8bc2b1e",
+   "sourceHash": "631fcd2add7da8bc2b1e8a60707aebd493975332e7570b6f1f1c32b4f91c86f5",
+   "text": "문의 내용은 무엇입니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8f60b8652e7cd9914e5e",
+   "sourceHash": "8f60b8652e7cd9914e5e8008c8e0c2a668031c79ea4d83ed403066ff1b706e08",
+   "text": "문의 사유 선택",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d59684a7286cb67966f1",
+   "sourceHash": "d59684a7286cb67966f13a1ce0454ad07116d35b78d99f80e3aee434e31bf18c",
+   "text": "치료 프로그램 계획",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_032108339ccbccc9b4d1",
+   "sourceHash": "032108339ccbccc9b4d158d3cdcad37c1642a81ea13e92bc891f2ba6db3550fd",
+   "text": "현재 환자 / 재방문 환자입니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c955fbbfece6d9c8aecc",
+   "sourceHash": "c955fbbfece6d9c8aecc4c4e8799caeefb8f3d83af5658737a7ac3a50c055bc1",
+   "text": "여행업계 / 제휴",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e34f0861ac1062486035",
+   "sourceHash": "e34f0861ac1062486035b9dc53c686e7d9659150fb5824bb573683b92f32a4bd",
+   "text": "미디어 / 언론",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc72843144841a6f8110",
+   "sourceHash": "cc72843144841a6f8110b7ebe7a1768101e03c4c8c152865cb7207e8e4bf8745",
+   "text": "기타",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a057bd996a32915a171",
+   "sourceHash": "7a057bd996a32915a171b4811d248b48f0fee7dd5e74f4510c156569ea36b4c5",
+   "text": "메시지 내용",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f9b561ae22951d847bf6",
+   "sourceHash": "f9b561ae22951d847bf6bfb31ae3ce223e0fed9cbb49c50ad86cc3e075007f01",
+   "text": "이름을 입력해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0073db7df3710a406830",
+   "sourceHash": "0073db7df3710a406830ab7bebd7abc97710a6e8fdc250d3568cf3da56ffc6eb",
+   "text": "연락 가능한 전화번호를 입력해 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,560 @@
+/* source: /design/chrome.css */
+/* AHV — the shared header on ONE row at desktop (owner ruling D-20260922-17,
+ * 22 Sep 2026: "one row, keep EN/DE/FR", applies to every page including the
+ * package pages).
+ *
+ * MEASURED (508-record chrome audit, then the header at 1440/1280/1100/1024 on
+ * /about-us/): the shared header's inner row is `width:min(1220px,94%)` with
+ * flex-wrap:wrap and a 24px gap. Its three children are the logo (171px), the
+ * nav (612px: five links at 12.5px / 2px tracking / 22px gaps) and the
+ * utilities block (395px: search, EN DE FR, BOOK YOUR STAY). 171 + 612 + 395
+ * + two 24px gaps = 1226px — six pixels over 1220, so the utilities drop to a
+ * second row on 241 of 254 routes. The homepage fits because it omits the
+ * language switch.
+ *
+ * WHAT THIS DOES, from 1180px up: no wrapping; the inner gap 24→20, the nav
+ * gaps 22→16, the nav tracking 2→1.6px, the utilities gap 14→10. Fitted
+ * width ≈ 171 + 570 + 385 + 40 = 1166px, inside the 1203px the row has at a
+ * 1280px viewport. Below 1180px the row is allowed to wrap as before (a
+ * 1100px window has 1034px to give).
+ *
+ * SCOPE: the shared header only — `header[data-dc-tpl="4"]`, the component's
+ * desktop half, on every page that mounts it. The homepage carries its own
+ * header (already one row) and is excluded by family. The mobile half
+ * (tpl 26, the burger bar) is untouched. */
+@media (min-width: 1180px) {
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) header[data-dc-tpl="4"] > div:first-child {
+    flex-wrap: nowrap !important;
+    gap: 12px 20px !important;
+  }
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) header[data-dc-tpl="4"] > div:first-child > nav {
+    gap: 10px 16px !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap;
+  }
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) header[data-dc-tpl="4"] > div:first-child > nav a {
+    letter-spacing: 1.6px !important;
+    white-space: nowrap;
+  }
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) header[data-dc-tpl="4"] > div:first-child > div:last-child {
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    flex: 0 0 auto;
+  }
+}
+
+/* The footer's WhatsApp line (D-20260922-19), added by chrome.js next to the
+   hospital phone: the phone's own Marcellus voice, one step smaller. */
+:is(#ahv-design-root, .ahv-campaign-footer) footer a[data-ahv-whatsapp] {
+  display: block;
+  margin-top: 6px;
+  color: #FFFFFF;
+  font-family: Marcellus, Georgia, serif;
+  font-size: 20px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+:is(#ahv-design-root, .ahv-campaign-footer) footer a[data-ahv-whatsapp]:hover { color: #EEB41E; }
+
+/* ---- responsiveness catches from the 254-route sweep (22 Sep, 7 widths) ----
+   The programme (package) pages carry a decorative watermark image
+   (width:430px; opacity:.08) whose right edge runs to 804–854px at a 768px
+   tablet — the only horizontal overflow left on the site. The page design is
+   untouched: the watermark simply may not exceed its column, and a package
+   page never scrolls sideways. The legal page's one unbroken link wraps. */
+@media (max-width:1023px) {
+  #ahv-design-root main img[style*="opacity:.08"],
+  #ahv-design-root main img[style*="opacity: 0.08"] { max-width:100% !important; }
+  #ahv-design-root main { overflow-x:clip; }   /* clip, not hidden: sticky rails keep working */
+}
+#ahv-design-root[data-ahv-family="ahv-template-legal-policy"] main a { overflow-wrap:anywhere; }
+
+/* ---- the shared header sticks on desktop too (owner, 23 Sep 2026: "the top
+   bar doesn't stick when you scroll down" on /no-smoking/). The mobile half
+   is already sticky (narrow="true" import); the desktop half was static on
+   every page except the homepage, whose own header is fixed. Sticky, not
+   fixed, so nothing is covered and the page needs no offset. The design root
+   clips only on the x axis, which leaves sticky intact. */
+@media (min-width:700px) {
+  /* the header is wrapped in two 73px mount divs; a sticky header can only
+     stick inside its parent, so the OUTER mount (whose parent is the page)
+     is the element that sticks */
+  #ahv-design-root:not([data-ahv-family="home-hi-fi-v4"]) div:has(> div > header[data-dc-tpl="4"]) {
+    position:sticky !important; top:0 !important; z-index:80 !important;
+  }
+}
+
+/* Owner, 24 Sep 2026: tighter desktop footer text spacing. The three link
+   columns share this structure across home, family and search footers.
+   Keep mobile/touch rows and the separate social/contact/CTA blocks intact. */
+@media (min-width: 1024px) and (pointer: fine) {
+  :is(#ahv-design-root, .ahv-campaign-footer) footer > div:first-child > div:has(> a:nth-of-type(7)) {
+    gap: 4px !important;
+  }
+  :is(#ahv-design-root, .ahv-campaign-footer) footer > div:first-child > div:has(> a:nth-of-type(7)) > a {
+    min-height: 30px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Section navigation replaces the primary header after its original position.
+   One shared controller covers package, yoga, course and other section bars. */
+#ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }
+#ahv-design-root[data-ahv-secondary-active] nav[data-ahv-secondary] {
+  position:fixed !important; top:0 !important; left:var(--ahv-secondary-left) !important;
+  width:var(--ahv-secondary-width) !important; margin:0 !important; z-index:90 !important;
+  box-sizing:border-box; background:#F7F4EA; box-shadow:0 3px 12px rgba(42,33,24,.12);
+}
+#ahv-design-root[data-ahv-secondary-active] [data-ahv-primary-mount] { visibility:hidden !important; pointer-events:none !important; }
+#ahv-design-root[data-ahv-secondary-page] [id] { scroll-margin-top:calc(var(--ahv-secondary-height,64px) + 16px) !important; }
+#ahv-design-root [data-ahv-secondary-placeholder] { margin:0 !important; padding:0 !important; border:0 !important; min-width:0; }
+
+/* Shared contact controls replace template-specific and vendor launchers.
+   Content/footer contact links and the existing Chatbase loader stay intact. */
+#ahv-design-root a[aria-label="Chat with Priya"],
+#ahv-design-root a[aria-label="WhatsApp us"],
+#chatbase-bubble-button, #chatbase-message-bubbles { display:none !important; }
+#ahv-design-root a[data-ahv-template-launcher] { display:none !important; }
+#ahv-contact-controls { position:fixed;right:22px;bottom:24px;z-index:55;display:flex;flex-direction:column;align-items:flex-end;gap:12px; }
+#ahv-contact-controls a, #ahv-contact-controls button { box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:54px;height:58px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 0 0 2px #F7F4EA,0 8px 24px rgba(60,45,20,.25); }
+#ahv-contact-controls .ahv-contact-wa { width:58px;border-radius:50%;background:#25D366; }
+#ahv-contact-controls .ahv-contact-chat { gap:11px;padding:0 20px 0 14px;border-radius:4px;background:#5A4420;color:#F7F4EA;font:700 13px Mulish,sans-serif;letter-spacing:1px;text-transform:uppercase; }
+#ahv-contact-controls .ahv-contact-symbol { display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:50%;background:#F7F4EA; }
+#ahv-contact-controls :is(a,button):focus-visible { outline:3px solid #006038;outline-offset:5px; }
+#ahv-contact-controls .ahv-contact-chat:hover { background:#483616; }
+@media(max-width:699px) {
+  #ahv-contact-controls { right:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));flex-direction:row;gap:12px; }
+  #ahv-contact-controls a, #ahv-contact-controls button { width:54px;height:54px;min-width:54px; }
+  #ahv-contact-controls .ahv-contact-chat { padding:0;border-radius:50%; }
+  #ahv-contact-controls .ahv-contact-label { display:none; }
+}
+
+/* OWNER-REG-02 (owner, 28 Sep 2026): ONE bottom Call / Enquire / Free-consult bar on every page (chrome.js
+   ctaBar), the homepage bar's own look. The templates' copies are marked by chrome.js (and family-header.js)
+   and never drawn, so exactly one bar shows; an in-content sticky strip stays in place, unpinned. Phone
+   widths only (< 700px), as on the homepage. The bar clears the home indicator (safe-area inset), the page
+   ends above it (body clearance = the bar's measured height, --ahv-cta-bar-h), and the WhatsApp / chat
+   controls and the cookie notice sit above it at their approved gaps (24px / 22px — unchanged at the
+   bar's 52px). Positions only: the notice, its choices and every signal are untouched. */
+[data-ahv-cta-bar] { display:none !important; }
+[data-ahv-cta-unpin] { position:static !important; }
+#ahv-cta-bar { display:none; }
+@media (max-width:699px) {
+  #ahv-cta-bar { position:fixed;left:0;right:0;bottom:0;z-index:55;max-width:430px;margin:0 auto;box-sizing:border-box;display:flex;align-items:stretch;padding-bottom:env(safe-area-inset-bottom,0px);background:#2A2014;box-shadow:0 -8px 24px rgba(0,0,0,.25); }
+  #ahv-cta-bar a { flex:1;min-width:0;min-height:52px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:4px 6px;text-align:center;overflow-wrap:anywhere;font:700 12.5px/1.25 Mulish,system-ui,sans-serif;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:#F7F4EA; }
+  #ahv-cta-bar .ahv-cta-call:hover { background:rgba(247,244,234,.08);color:#F7F4EA;text-decoration:none; }
+  #ahv-cta-bar .ahv-cta-enquire { flex:1.1;background:#5A4420; }
+  #ahv-cta-bar .ahv-cta-enquire:hover { background:#483616;color:#F7F4EA;text-decoration:none; }
+  #ahv-cta-bar .ahv-cta-consult { flex:1.3;background:#EEB41E;color:#2A2014; }
+  #ahv-cta-bar .ahv-cta-consult:hover { filter:brightness(.94);color:#2A2014;text-decoration:none; }
+  /* brand focus ring (packages/ui/brand-tokens.css --leaf-500 #8E9D35, "focus rings"); on the gold segment the
+     site's own darker leaf #6B7726 (its focus colour on light grounds) keeps the ring distinguishable (design-qa R14) */
+  #ahv-cta-bar a:focus-visible { outline:3px solid #8E9D35;outline-offset:-6px; }
+  #ahv-cta-bar .ahv-cta-consult:focus-visible { outline-color:#6B7726; }
+  /* body is viewport-high (support.js: html,body{height:100%}) and the page overflows it, so the clearance is an
+     in-flow block after the page, not body padding: the bar plus the WhatsApp / chat controls above it (54px +
+     24px gap), so at the end of the page no footer link sits under either; in the footers' own colour */
+  html[data-ahv-cta-bar-on] body::after { content:"";display:block;height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px);background:#2A2014; }
+  /* OWNER-REG-02 on landing pages: their own pinned WhatsApp strip steps aside while the shared bar is on (one
+     pinned bar); the WhatsApp action stays in the page and in the floating control */
+  html[data-ahv-cta-bar-on] .lp-sticky { display:none !important; }
+  /* while a form field has focus (on-screen keyboard), the pinned bar does not sit over the field being typed in */
+  html[data-ahv-cta-bar-on] body:has(input:focus, textarea:focus, select:focus) #ahv-cta-bar { display:none; }
+  html[data-ahv-cta-bar-on][data-ahv-consent-open] body::after { height:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 78px + var(--ahv-consent-h, 0px)); }
+  html[data-ahv-cta-bar-on] #ahv-contact-controls { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 24px); }
+  html[data-ahv-cta-bar-on] #ahv-consent, html[data-ahv-cta-bar-on] [data-ahv-cta-notice] { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 22px) !important; }
+  /* keyboard focus is never scrolled under the pinned bar (WCAG 2.4.11; VERIFY footer-reachability found 4-8 footer
+     links fully under it when reached by Tab at 390px) */
+  html[data-ahv-cta-bar-on] { scroll-padding-bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 86px); }
+}
+/* While the cookie notice is pending (a fixed layer at the page bottom), the page ends with a block of the notice's
+   height so the footer's last row can scroll clear of it (design-qa R14: "How to reach", copyright and the language
+   row sat under the notice at the end of the page on desktop). Presentation only: the notice, its choices, storage
+   and signals are untouched; chrome.js liftContacts() measures it and clears the height once it closes. */
+html[data-ahv-consent-open]:not([data-ahv-cta-bar-on]) body::after { content:"";display:block;height:var(--ahv-consent-h, 0px);background:#2A2014; }
+/* data-ahv-cta-bar-on is also set on desktop, where the bar itself is hidden by the phone media query above, so the
+   desktop clearance must not depend on it (VERIFY footer-reachability, 29 Sep: "360 VIEW" / "MAP" stayed under the
+   pending notice at 1440px because the rule above never matched) */
+@media (min-width:700px) {
+  html[data-ahv-consent-open] body::after, html body::after { content:"";display:block;height:var(--ahv-page-clear, var(--ahv-consent-h, 0px));background:#2A2014; }
+  html { scroll-padding-bottom:var(--ahv-page-clear, 0px); }
+  html[data-ahv-consent-open] { scroll-padding-bottom:var(--ahv-page-clear, var(--ahv-focus-clear, calc(var(--ahv-consent-h, 0px) + 8px))); }
+}
+/* --ahv-consent-h is the distance from the notice's top edge to the viewport bottom (it includes a floating notice's
+   own bottom offset and, on phones, the bar under it), so focus scrolled into view also clears the notice */
+html[data-ahv-consent-open] { scroll-padding-bottom:var(--ahv-focus-clear, calc(var(--ahv-consent-h, 0px) + 8px)); }
+/* a control reached by Tab is never scrolled under the fixed/sticky header (VERIFY footer-reachability, 29 Sep: three
+   footer links fully under the header at 1440px). On the focused element only, so anchor jumps keep their own offsets */
+a:focus, button:focus, summary:focus, input:focus, select:focus, textarea:focus { scroll-margin-top:96px; }
+@media print { #ahv-cta-bar { display:none !important; } }
+
+/* Keep native date segments and their calendar controls visible in the home finder. */
+[data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){display:grid!important;grid-template-columns:minmax(160px,1fr) 12px minmax(160px,1fr);gap:12px!important}
+[data-ahv-home-finder] input[type="date"]{width:100%;min-width:160px!important;padding-inline:4px!important}
+@media(min-width:700px){
+  [data-ahv-home-finder]{column-gap:16px!important;padding-left:24px!important}
+  [data-ahv-home-finder] > div:has(input[type="search"]){min-width:190px!important}
+  [data-ahv-home-finder] > div:has(input[type="date"]){flex:1 1 356px!important;min-width:356px!important}
+}
+@media(max-width:429px){
+  [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]){grid-template-columns:minmax(0,1fr);gap:6px!important}
+  [data-ahv-home-finder] > div:has(input[type="date"]) > div:has(input[type="date"]) > span{display:none}
+}
+
+/* Centre the tariff/consultation reading block across every programme finder. */
+section[aria-label="Treatment and wellness programmes"] > p:has(:is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])),
+section[aria-label="Treatment and wellness programmes"] > p:has(:is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])) ~ p{
+  width:100%;max-width:88ch!important;margin-inline:auto!important;line-height:1.7!important;box-sizing:border-box;text-align:left;
+}
+section[aria-label="Treatment and wellness programmes"]:has(> p :is(a[href*="/ahv/assets/doc/"],a[href*="/documents/pdf/"])){padding-bottom:clamp(32px,4vw,56px)!important}
+
+/* Keep partner artwork restrained despite shared responsive-image rules. */
+#partner-logos img{width:100%!important;max-width:180px!important;height:100px!important;object-fit:contain}
+
+/* Partner links: clear destinations and matching homepage fragment targets. */
+a.ahv-home-partner {color:inherit;text-decoration:none;border-radius:4px}
+a.ahv-home-partner:hover span {text-decoration:underline;text-underline-offset:4px}
+a.ahv-home-partner:focus-visible {outline:3px solid #EEB41E;outline-offset:6px}
+#partner-logos .ahv-partner-card {min-width:0;background:#fff;border:1px solid #E9E2D3;border-radius:4px;text-align:center;scroll-margin-top:110px}
+#partner-logos .ahv-partner-card:target, #partner-logos .ahv-partner-selected {outline:3px solid #8F6212;outline-offset:4px;background:#FFFBEF}
+#partner-logos .ahv-partner-link {display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 16px;box-sizing:border-box;height:100%;color:#2A2118;text-decoration:none}
+#partner-logos .ahv-partner-link h3 {font:400 21px/1.35 Marcellus,Georgia,serif;margin:0}
+#partner-logos .ahv-partner-action {font-size:16px;line-height:1.5;color:#006038;text-decoration:underline;text-underline-offset:4px}
+#partner-logos .ahv-partner-link:hover {background:#F7F4EA}
+#partner-logos .ahv-partner-link:focus-visible {outline:3px solid #006038;outline-offset:3px}
+
+/* Keep the same launcher available to minimize an open chat, including phones. */
+body[data-ahv-chat-open="true"] #ahv-contact-controls{z-index:2147483647}
+body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:none}
+#ahv-contact-controls .ahv-contact-chat[aria-expanded="true"] .ahv-contact-symbol svg{display:none}
+#ahv-contact-controls .ahv-contact-chat[aria-expanded="true"] .ahv-contact-symbol::after{content:"−";font:700 27px/1 Mulish,sans-serif;color:#5A4420}
+@media(max-width:699px){
+ body[data-ahv-chat-open="true"] #chatbase-bubble-window{top:12px!important;bottom:calc(144px + env(safe-area-inset-bottom,0px))!important;right:12px!important;left:auto!important;width:calc(100% - 24px)!important;height:calc(100dvh - 156px - env(safe-area-inset-bottom,0px))!important;max-height:none!important;border-radius:14px!important}
+}
+
+@media (max-width: 699px) {
+  :is(#ahv-design-root, .ahv-campaign-footer) footer > nav[style*="grid-template-columns"] {
+    margin-top: 16px !important;
+  }
+}
+
+/* Mobile footer: trim empty spacing while retaining comfortable touch rows. */
+@media (max-width: 699px) {
+  :is(#ahv-design-root, .ahv-campaign-footer) footer:has(> a[href^="tel:"]) {
+    padding-top: 32px !important;
+  }
+  :is(#ahv-design-root, .ahv-campaign-footer) footer > div[style*="grid-template-columns"]:has(> a:nth-of-type(7)) {
+    row-gap: 4px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  :is(#ahv-design-root, .ahv-campaign-footer) footer > div[style*="grid-template-columns"]:has(> a:nth-of-type(7)) > a {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+}
+
+/* Consultation lotus is a divider below the banner, with balanced breathing room. */
+[data-variant="consultation"] > img[data-source-decoration="lotus"] {margin:32px auto 0!important}
+[data-variant="consultation"] > img[data-source-decoration="lotus"] + section {padding-top:32px!important}
+@media(max-width:767px){
+  [data-variant="consultation"] > img[data-source-decoration="lotus"] {margin-top:24px!important}
+  [data-variant="consultation"] > img[data-source-decoration="lotus"] + section {padding-top:24px!important}
+}
+
+/* Owner feedback, 25 Sep: compact centred booking controls and section navigation. */
+#ahv-design-root a[href^="https://bookings.ayurvedichealingvillage.com"] {display:inline-flex;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;line-height:1.35}
+@media(max-width:699px){
+ #ahv-design-root header a[href^="https://bookings.ayurvedichealingvillage.com"]{font-size:10px!important;letter-spacing:.7px!important;padding:8px 10px!important;min-height:44px!important;white-space:nowrap;flex-shrink:0}
+ #ahv-design-root nav[aria-label="On this page"] > p{padding:8px 16px 0!important;font-size:11px!important}
+ #ahv-design-root nav[aria-label="On this page"] > ul{display:flex!important;gap:8px;list-style:none;margin:0!important;padding:4px 16px 8px!important;overflow-x:auto;overscroll-behavior-x:contain}
+ #ahv-design-root nav[aria-label="On this page"] > ul > li{flex:0 0 auto;list-style:none}
+ #ahv-design-root nav[aria-label="On this page"] > ul > li > a{min-height:44px!important;padding:0 12px;border:1px solid #E9E2D3!important;border-radius:4px;white-space:nowrap;font-size:14px!important}
+}
+
+.ahv-home-rates{width:min(1180px,92%);margin:40px auto;padding:28px 0;border-top:1px solid #E9E2D3;color:#2A2118}.ahv-home-rates h2,.ahv-home-rates h3{font-family:Marcellus,serif;font-weight:400}.ahv-home-rates h2{font-size:clamp(27px,3vw,38px);line-height:1.2}.ahv-home-rates p{line-height:1.6}.ahv-rate-kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8F6212;font-weight:700}.ahv-rate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}.ahv-rate-grid article{border-top:2px solid #C1882C;padding-top:12px}.ahv-rate-grid h3{font-size:22px;line-height:1.3}.ahv-rate-price{font-size:28px;margin:12px 0;font-variant-numeric:tabular-nums}.ahv-rate-price span{font-size:15px}.ahv-rate-grid a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}@media(max-width:699px){.ahv-rate-grid{grid-template-columns:1fr;gap:16px}.ahv-home-rates{margin:28px auto}.ahv-rate-grid h3{margin:8px 0}}
+
+@media(max-width:699px){
+ #ahv-design-root header > a:has(img){flex-shrink:1!important;min-width:0}
+ #ahv-design-root header > a > img{max-width:clamp(116px,34vw,146px);height:auto!important;max-height:36px}
+ #ahv-design-root header > div:has(>button[aria-label="Menu"]){gap:4px!important;flex-shrink:0}
+}
+@media(max-width:699px){
+ nav[data-ahv-section-nav] summary{min-height:52px;padding:8px 12px;gap:8px;flex-wrap:nowrap}
+ nav[data-ahv-section-nav] .ahv-rail-kicker{display:none}
+ nav[data-ahv-section-nav] .ahv-rail-name{font-size:18px}
+}
+#ahv-design-root a[href^="https://bookings.ayurvedichealingvillage.com"]{min-height:44px}
+
+/* EF-25: the cookie notice steps under an open header menu (chrome.js noticeUnderMenu); restored on close */
+[data-ahv-notice-under-menu] { z-index:59 !important; }
+
+/* the language switcher follows its neighbours on a light-text (transparent hero) header — chrome.js switcherContrast */
+.ahv-lang[data-ahv-lang-light] > .ahv-lang-btn { color:#fff; border-color:rgba(255,255,255,.6); }
+
+/* FOOTER-13 (28 Sep 2026): the footer language list built by chrome.js from the switcher — all 13 released languages,
+   native names, current one unlinked. Own line in the footer bar; wraps; 44px tap targets; footer colours inherited. */
+.ahv-footer-langs { display:flex; flex-wrap:wrap; align-items:center; gap:0 2px; margin:0 0 4px; line-height:1.4; text-transform:none; letter-spacing:normal; }
+.ahv-footer-langs a, .ahv-footer-langs [aria-current] { display:inline-flex; align-items:center; min-height:44px; padding:0 4px; color:inherit; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(247,244,234,.35); }
+.ahv-footer-langs [aria-current] { text-decoration:none; font-weight:700; }
+[data-ahv-footer-langs] { display:block; }
+
+/* Wrapped breadcrumbs use one consistent row height, including the current page.
+   Keep the existing 44px link targets without adding an extra gap between rows. */
+@media (max-width:699px) {
+  #ahv-design-root nav[aria-label="Breadcrumb"] { column-gap:8px!important;row-gap:0!important;line-height:1.4;align-items:center!important; }
+  #ahv-design-root nav[aria-label="Breadcrumb"] > a,
+  #ahv-design-root nav[aria-label="Breadcrumb"] > span { display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere; }
+}
+
+/* Shared dark-footer language links stay readable across page-family resets. */
+body footer .ahv-footer-langs, body footer .ahv-footer-langs a, body footer .ahv-footer-langs [aria-current] { color:#F7F4EA !important; }
+
+/* QA: keep accreditation copy readable beside its mark on narrow screens. */
+@media(max-width:599px) {
+ #ahv-design-root div:has(> img[src*="First-Panchakarma-Clinic-In-India-2017"]):has(> div > p) {
+  flex-direction:column !important; align-items:flex-start !important; gap:16px !important; padding:22px !important;
+ }
+}
+/* Deepu review: preserve a useful 16:9 programme photograph across locales. */
+#ahv-design-root[data-ahv-family="ayurvedic-treatments"] article > a > img {
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:16 / 9;
+  max-height:230px;
+  object-fit:cover;
+}
+
+/* Centre only the Contact FAQ title under the already centred lotus. */
+#ahv-design-root[data-ahv-family="enquiry"] h2#faq-h {
+  text-align:center !important;
+}
+
+/* Native FAQ disclosure stays semantic; the chevron supplies a visual cue. */
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details > summary {
+  display:flex !important;
+  align-items:center;
+  gap:12px;
+}
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details > summary::after {
+  content:"";
+  width:8px;
+  height:8px;
+  flex:0 0 8px;
+  margin-inline-start:auto;
+  border-right:2px solid #5A4420;
+  border-bottom:2px solid #5A4420;
+  transform:rotate(45deg);
+}
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details[open] > summary::after {
+  transform:rotate(225deg);
+}
+
+/* Match the mobile home quote link to its 24px inset copy. */
+@media(max-width:699px){
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] [data-dc-tpl="374"] > a[data-dc-tpl="382"] {
+    margin-inline:24px;
+  }
+}
+
+/* Keep the recognition disclosure phrase intact instead of laying its count
+   out as a separate flex child. The existing plus cue remains in place. */
+@media(max-width:599px){
+  #ahv-design-root section#recognitions details > summary {
+    display:block !important;
+    width:100%;
+    box-sizing:border-box;
+  }
+  #ahv-design-root section#recognitions details > summary > span {
+    display:inline !important;
+  }
+}
+
+/* Every mobile recognition card places its mark above full-width copy.
+   The existing NABH-only stack did not reach the other award cards. */
+@media(max-width:599px){
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:12px !important;
+    min-width:0;
+    text-align:start;
+  }
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) > img {
+    grid-row:auto !important;
+    grid-column:1 !important;
+    justify-self:center !important;
+  }
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) > :is(h3,p,div,a) {
+    grid-column:1 !important;
+    min-width:0;
+  }
+}
+
+/* Native explanatory copy remains readable on compact screens. */
+.rv-page .rv-filter-note, .rv-page .rv-small, .rv-page .rv-film-caption { font-size:14px; }
+/* These imported sections contain a single content item, not a two-column pair. */
+#ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"],
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="384"] {
+ grid-template-columns:minmax(0,1fr) !important;
+}
+#ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"] > div { max-width:900px; }
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="384"] { max-width:960px; margin-inline:auto; }
+/* Award descriptions need readable columns, including their full certificate labels. */
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="253"] {
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)) !important;
+}
+#ahv-design-root[data-ahv-route="/panchkarma-treatment.html"] [data-dc-tpl="253"] article p {
+ white-space:normal !important; overflow:visible !important; overflow-wrap:anywhere;
+}
+.rv-page .fb-help, .rv-page .sg-source { font-size:14px; line-height:1.6; }
+
+/* PR309 measured contrast defects; shared by all locale documents. */
+#ahv-design-root section:has([data-ahv-guide-form]) { color:#695B49; }
+#ahv-design-root section:has([data-ahv-guide-form]) [style*="color: rgb(117, 105, 90)"],
+#ahv-design-root section:has([data-ahv-guide-form]) [style*="color:#75695A" i],
+#ahv-design-root #ahv-guide-note { color:#695B49 !important; }
+#ahv-design-root section:has([data-ahv-guide-form]) > div:first-of-type { color:#80570F !important; }
+#ahv-design-root a[href*="tripadvisor."] [style*="color: rgb(0, 170, 108)"],
+#ahv-design-root a[href*="tripadvisor."] [style*="color:#00AA6C" i] { color:#00794D !important; }
+#ahv-design-root [style*="font-size: 26px"][style*="rgb(193, 136, 44)"],
+#ahv-design-root [style*="font-size:26px"][style*="#C1882C" i] { color:#8F6212 !important; }
+.ahv-link-context { position:absolute !important; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+
+.ahv-home-rates p a { text-decoration:underline; text-underline-offset:3px; }
+
+/* Short touch landscape: keep the shared and home desktop views, but prevent their
+   wrapping navigation from consuming the screen. The nav remains horizontally
+   scrollable, and every visible action keeps at least a 44px touch target. */
+@media (orientation:landscape) and (max-height:500px) and (min-width:700px) and (pointer:coarse) {
+  #ahv-design-root header[data-dc-tpl="4"],
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) {
+    height:56px !important;
+    min-height:56px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child {
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+    min-height:56px;
+    box-sizing:border-box;
+    padding:5px 0 !important;
+    gap:8px !important;
+    flex-wrap:nowrap !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > a img,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > a img {
+    height:34px !important;
+    width:auto !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > nav,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav {
+    flex:1 1 0 !important;
+    min-width:0;
+    max-height:46px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex-wrap:nowrap !important;
+    white-space:nowrap;
+    gap:12px !important;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > nav > a,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav > a {
+    flex:none;
+    min-height:44px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > div:last-child,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child {
+    flex:none;
+    flex-wrap:nowrap !important;
+    gap:4px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > div:last-child > a[href^="https://bookings.ayurvedichealingvillage.com"],
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child > a[href^="https://bookings.ayurvedichealingvillage.com"] {
+    min-height:44px;
+    padding:6px 10px !important;
+    box-sizing:border-box;
+    display:inline-flex;
+    align-items:center;
+  }
+  html[data-ahv-fh] #ahv-design-root header[data-dc-tpl="4"] .ahv-fh-btn-desk {
+    flex:1 1 0;
+    min-width:44px;
+    max-width:none;
+    margin-inline:0;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) {
+    padding:6px 0 !important;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) > div > a > img {
+    height:44px !important;
+    width:auto !important;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) > div > div:last-child {
+    gap:10px !important;
+  }
+  #ahv-contact-controls { right:12px; flex-direction:row; gap:8px; }
+  #ahv-contact-controls a, #ahv-contact-controls button,
+  #ahv-contact-controls .ahv-contact-wa, #ahv-contact-controls .ahv-contact-chat {
+    width:48px;
+    min-width:48px;
+    height:48px;
+  }
+  #ahv-contact-controls .ahv-contact-chat { padding:0; border-radius:50%; }
+  #ahv-contact-controls .ahv-contact-label { display:none; }
+}
+
+/* Snapshot chrome on native pages has the language markup but no design boot
+   stylesheet. Keep its switcher and open list usable at every viewport size. */
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang { position:relative; display:inline-flex; }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    min-width:44px; min-height:44px; box-sizing:border-box; padding:0 7px;
+    border:1px solid #C9BFA8; border-radius:4px; background:transparent;
+    color:#2A2118; font:700 13px Mulish,system-ui,sans-serif;
+    cursor:pointer;
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list {
+    position:absolute; top:calc(100% + 6px); inset-inline-end:0; z-index:120;
+    min-width:190px; max-height:calc(100dvh - 68px); box-sizing:border-box; overflow:auto;
+    margin:0; padding:6px; list-style:none;
+    background:#FFFDF7; border:1px solid #E2DACA; border-radius:6px;
+    box-shadow:0 14px 34px rgba(42,32,20,.18);
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list[hidden] { display:none; }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list a {
+    display:flex; align-items:center; gap:10px; min-height:44px;
+    padding:0 12px; border-radius:4px; color:#2A2118;
+    font-size:15px; font-weight:600; letter-spacing:0; text-transform:none;
+    text-decoration:none; white-space:nowrap;
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list a:focus-visible,
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-btn:focus-visible {
+    outline:3px solid #6B7726; outline-offset:2px;
+  }
+
+/* source: /design/newsletter.css */
+/* Shared by desktop/mobile footers, including native English pages.
+   Space the input itself: password-manager helper nodes must not add flex gaps. */
+footer .ahv-newsletter {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin:14px 0;max-width:560px;min-width:0}
+footer .ahv-newsletter-label {display:flex;flex-direction:column;gap:0;font-size:16px!important;line-height:1.5;color:#F7F4EA!important;text-transform:none!important;letter-spacing:0!important;min-width:0}
+footer .ahv-newsletter input {margin-top:7px;box-sizing:border-box;width:100%;min-width:0;min-height:48px;padding:10px 12px;border:1px solid #A59B89;border-radius:4px;background:#fff;color:#2A2118;font:400 16px/1.5 Mulish,sans-serif}
+footer .ahv-newsletter button {box-sizing:border-box;align-self:end;min-height:48px;padding:10px 18px;border:0;border-radius:4px;background:#EEB41E;color:#2A2118;font:700 16px/1.5 Mulish,sans-serif;cursor:pointer}
+footer .ahv-newsletter button:disabled {opacity:.7;cursor:wait}
+footer .ahv-newsletter :is(input,button):focus-visible {outline:3px solid #EEB41E;outline-offset:3px}
+footer .ahv-newsletter-permission,footer .ahv-newsletter-status {grid-column:1/-1;margin:0!important;font-size:14px!important;line-height:1.6!important;letter-spacing:0!important;text-transform:none!important;color:#F7F4EA!important}
+footer .ahv-newsletter-permission a {color:#EEB41E!important;text-decoration:underline;text-underline-offset:3px}
+footer .ahv-newsletter-status:empty {display:none}
+@media(max-width:420px){footer .ahv-newsletter {gap:10px 8px}footer .ahv-newsletter button {padding-inline:12px}}
+
+/* source: /ahv/fonts/ahv-b6a82009abac.css */
+@font-face{font-family:"Marcellus";font-style:normal;font-weight:400;font-display:swap;src:url("/ahv/fonts/2f6fa616f76102d81c4a935c3a8cd547a8db9de679ad9fda9cfd42f16e7f0743.common.woff2") format("woff2");unicode-range:U+20-7E,U+A0-17E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+2039-203A,U+20AC,U+2248;}
+@font-face{font-family:"Marcellus";font-style:normal;font-weight:400;font-display:swap;src:url("/ahv/fonts/2f6fa616f76102d81c4a935c3a8cd547a8db9de679ad9fda9cfd42f16e7f0743.extra.woff2") format("woff2");unicode-range:U+192,U+1FC-1FF,U+237,U+2C6-2C7,U+2D8-2DD,U+3BC,U+1E80-1E85,U+1EF2-1EF3,U+201A,U+201E,U+2020-2021,U+2030,U+2044,U+2122,U+2202,U+2212,U+2215,U+2260,U+2264-2265,U+FB01-FB02;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:400;font-display:swap;src:url("/ahv/fonts/46ee5f47fed537401cd92c16b666fccd05140bab39a0390a9b90ee1040c31af9.common.woff2") format("woff2");unicode-range:U+0,U+D,U+20-7E,U+A0-132,U+134-17E,U+1E0D,U+1E47,U+1E6D,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+2039-203A,U+20AC,U+20B9,U+2248;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:400;font-display:swap;src:url("/ahv/fonts/46ee5f47fed537401cd92c16b666fccd05140bab39a0390a9b90ee1040c31af9.extra.woff2") format("woff2");unicode-range:U+181,U+18A,U+18F,U+192,U+1A0-1A1,U+1AF-1B0,U+1B3-1B4,U+1C4-1CE,U+1D4,U+1E5-1E7,U+1E9-1EB,U+1FA-21B,U+21F,U+226-228,U+22A-22D,U+230-233,U+237,U+253,U+257,U+259,U+2B9-2BC,U+2BE-2BF,U+2C6-2CC,U+2D8-2DD,U+300-304,U+306-30C,U+30F,U+311-312,U+31B,U+323-324,U+326-328,U+32E,U+331,U+335,U+337-338,U+394,U+3A3,U+3A9,U+3BC,U+3C0,U+400-45F,U+462-463,U+46A-46B,U+472-475,U+48A-4A5,U+4A8-4FF,U+510-513,U+51A-51D,U+524-529,U+52E-52F,U+1E08-1E09,U+1E0C,U+1E0E-1E0F,U+1E14-1E17,U+1E1C-1E1D,U+1E20-1E21,U+1E24-1E25,U+1E2A-1E2B,U+1E2E-1E2F,U+1E36-1E37,U+1E3A-1E3B,U+1E42-1E46,U+1E48-1E49,U+1E4C-1E53,U+1E5A-1E5B,U+1E5E-1E69,U+1E6C,U+1E6E-1E6F,U+1E78-1E7B,U+1E80-1E85,U+1E8E-1E8F,U+1E92-1E93,U+1E97,U+1E9E,U+1EA0-1EF9,U+2007-200B,U+2010,U+2012,U+2015,U+201A,U+201E,U+2020-2021,U+2030,U+2032-2033,U+2044,U+2052,U+2070,U+2074-2079,U+2080-2089,U+20A1,U+20A3-20A4,U+20A6-20A7,U+20A9,U+20AB,U+20AD-20AE,U+20B1-20B2,U+20B4-20B5,U+20B8,U+20BA,U+20BC-20BD,U+2113,U+2116,U+2122,U+2126,U+212E,U+2202,U+2205-2206,U+220F,U+2211-2212,U+2215,U+2219-221A,U+221E,U+222B,U+2260,U+2264-2265,U+25CA,U+27E8-27E9,U+F8FF,U+FB01-FB02;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:600;font-display:swap;src:url("/ahv/fonts/c97e11561506a43b899685506e54c13c278fc3418da186930f8c705dc63cdbd3.common.woff2") format("woff2");unicode-range:U+0,U+D,U+20-7E,U+A0-132,U+134-17E,U+1E0D,U+1E47,U+1E6D,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+2039-203A,U+20AC,U+20B9,U+2248;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:600;font-display:swap;src:url("/ahv/fonts/c97e11561506a43b899685506e54c13c278fc3418da186930f8c705dc63cdbd3.extra.woff2") format("woff2");unicode-range:U+181,U+18A,U+18F,U+192,U+1A0-1A1,U+1AF-1B0,U+1B3-1B4,U+1C4-1CE,U+1D4,U+1E5-1E7,U+1E9-1EB,U+1FA-21B,U+21F,U+226-228,U+22A-22D,U+230-233,U+237,U+253,U+257,U+259,U+2B9-2BC,U+2BE-2BF,U+2C6-2CC,U+2D8-2DD,U+300-304,U+306-30C,U+30F,U+311-312,U+31B,U+323-324,U+326-328,U+32E,U+331,U+335,U+337-338,U+394,U+3A3,U+3A9,U+3BC,U+3C0,U+400-45F,U+462-463,U+46A-46B,U+472-475,U+48A-4A5,U+4A8-4FF,U+510-513,U+51A-51D,U+524-529,U+52E-52F,U+1E08-1E09,U+1E0C,U+1E0E-1E0F,U+1E14-1E17,U+1E1C-1E1D,U+1E20-1E21,U+1E24-1E25,U+1E2A-1E2B,U+1E2E-1E2F,U+1E36-1E37,U+1E3A-1E3B,U+1E42-1E46,U+1E48-1E49,U+1E4C-1E53,U+1E5A-1E5B,U+1E5E-1E69,U+1E6C,U+1E6E-1E6F,U+1E78-1E7B,U+1E80-1E85,U+1E8E-1E8F,U+1E92-1E93,U+1E97,U+1E9E,U+1EA0-1EF9,U+2007-200B,U+2010,U+2012,U+2015,U+201A,U+201E,U+2020-2021,U+2030,U+2032-2033,U+2044,U+2052,U+2070,U+2074-2079,U+2080-2089,U+20A1,U+20A3-20A4,U+20A6-20A7,U+20A9,U+20AB,U+20AD-20AE,U+20B1-20B2,U+20B4-20B5,U+20B8,U+20BA,U+20BC-20BD,U+2113,U+2116,U+2122,U+2126,U+212E,U+2202,U+2205-2206,U+220F,U+2211-2212,U+2215,U+2219-221A,U+221E,U+222B,U+2260,U+2264-2265,U+25CA,U+27E8-27E9,U+F8FF,U+FB01-FB02;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:700;font-display:swap;src:url("/ahv/fonts/528a02bfa16072dedf3014b2c6eb5df7de54f984e313131c412f804da959ddff.common.woff2") format("woff2");unicode-range:U+0,U+D,U+20-7E,U+A0-132,U+134-17E,U+1E0D,U+1E47,U+1E6D,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026,U+2039-203A,U+20AC,U+20B9,U+2248;}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:700;font-display:swap;src:url("/ahv/fonts/528a02bfa16072dedf3014b2c6eb5df7de54f984e313131c412f804da959ddff.extra.woff2") format("woff2");unicode-range:U+181,U+18A,U+18F,U+192,U+1A0-1A1,U+1AF-1B0,U+1B3-1B4,U+1C4-1CE,U+1D4,U+1E5-1E7,U+1E9-1EB,U+1FA-21B,U+21F,U+226-228,U+22A-22D,U+230-233,U+237,U+253,U+257,U+259,U+2B9-2BC,U+2BE-2BF,U+2C6-2CC,U+2D8-2DD,U+300-304,U+306-30C,U+30F,U+311-312,U+31B,U+323-324,U+326-328,U+32E,U+331,U+335,U+337-338,U+394,U+3A3,U+3A9,U+3BC,U+3C0,U+400-45F,U+462-463,U+46A-46B,U+472-475,U+48A-4A5,U+4A8-4FF,U+510-513,U+51A-51D,U+524-529,U+52E-52F,U+1E08-1E09,U+1E0C,U+1E0E-1E0F,U+1E14-1E17,U+1E1C-1E1D,U+1E20-1E21,U+1E24-1E25,U+1E2A-1E2B,U+1E2E-1E2F,U+1E36-1E37,U+1E3A-1E3B,U+1E42-1E46,U+1E48-1E49,U+1E4C-1E53,U+1E5A-1E5B,U+1E5E-1E69,U+1E6C,U+1E6E-1E6F,U+1E78-1E7B,U+1E80-1E85,U+1E8E-1E8F,U+1E92-1E93,U+1E97,U+1E9E,U+1EA0-1EF9,U+2007-200B,U+2010,U+2012,U+2015,U+201A,U+201E,U+2020-2021,U+2030,U+2032-2033,U+2044,U+2052,U+2070,U+2074-2079,U+2080-2089,U+20A1,U+20A3-20A4,U+20A6-20A7,U+20A9,U+20AB,U+20AD-20AE,U+20B1-20B2,U+20B4-20B5,U+20B8,U+20BA,U+20BC-20BD,U+2113,U+2116,U+2122,U+2126,U+212E,U+2202,U+2205-2206,U+220F,U+2211-2212,U+2215,U+2219-221A,U+221E,U+222B,U+2260,U+2264-2265,U+25CA,U+27E8-27E9,U+F8FF,U+FB01-FB02;}

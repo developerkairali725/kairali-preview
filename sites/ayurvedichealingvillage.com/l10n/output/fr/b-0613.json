@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Se renseigner sur mon soin",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Se renseigner sur le soin des douleurs chroniques du dos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Occupation simple, par villa et par nuit : [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Se renseigner sur le soin de l’arthrite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Nous sommes là pour vous accompagner sur votre chemin vers le bien-être. Si vous avez des questions concernant nos soins, nos séjours ou vos réservations, notre équipe est prête à vous aider avec soutien et transparence. Contactez-nous par téléphone, par e-mail ou via notre formulaire en ligne. Commençons ensemble votre chemin vers une guérison globale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'séjours' (stay) to keep the clinical register rather than a retreat/resort connotation."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "À Kairali – The Ayurvedic Healing Village, notre consultation ayurvédique en ambulatoire (OPD) offre un parcours de soin fluide et personnalisé, fondé sur les principes ayurvédiques traditionnels. Les visiteurs sont accueillis chaleureusement à la réception, où un formulaire OPD est rempli et leurs antécédents médicaux sont saisis numériquement en vue d’une consultation de soin naturel en Ayurveda. Vient ensuite une consultation approfondie avec un médecin ayurvédique, comprenant un diagnostic ayurvédique traditionnel, un examen du pouls et un soin ayurvédique personnalisé, en ligne ou en personne. Un plan de bien-être personnalisé est élaboré selon votre dosha et votre état de santé. Vous passez ensuite aux thérapies, qui comprennent la détox Panchakarma et des soins ciblés pour des troubles tels que l’arthrite, le diabète, le soulagement du stress et les affections cutanées. Les soins sont prodigués par des thérapeutes qualifiés utilisant des huiles thérapeutiques et les produits ayurvédiques de Kairali, de qualité export. Après le soin, des remèdes à base de plantes vous sont remis avec des instructions d’utilisation détaillées, et un plan de suivi est organisé afin d’assurer la continuité de vos soins ayurvédiques. Pour plus de commodité, des consultations en ligne avec un médecin ayurvédique en Inde sont également proposées.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

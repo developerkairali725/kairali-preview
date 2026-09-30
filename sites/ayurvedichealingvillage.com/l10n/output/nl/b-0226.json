@@ -1,0 +1,187 @@
+{
+ "batchId": "b-0226",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_19d9abacb8ce66aa0d10",
+   "sourceHash": "19d9abacb8ce66aa0d107b3d523b543766d93490f52fbc9b6696c45c2bc16ffd",
+   "text": "ISO 9001:2015-certificaat — 2022",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2748f9533c431715a5b4",
+   "sourceHash": "2748f9533c431715a5b47a9254f421aa4dda80a61b3cb729ca983260c3de685e",
+   "text": "17 februari 2022",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_987672400e1af93e31cd",
+   "sourceHash": "987672400e1af93e31cd1369b9ad88436df50c219e6c90c137032cc287b5da1d",
+   "text": "16 februari 2025",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3bcfe9ece91022761af7",
+   "sourceHash": "3bcfe9ece91022761af7f913858956b1084efad3ae20655adb5f85dec25f2900",
+   "text": "Historische brief",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09421fa997612190bd25",
+   "sourceHash": "09421fa997612190bd256de862b697a535b04a112880078c980f9e6fa884978e",
+   "text": "Form 1C-certificaat",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Form 1C' kept verbatim as the official document identifier."
+   ]
+  },
+  {
+   "id": "t_c709329b84687b7f2060",
+   "sourceHash": "c709329b84687b7f20602b256fb943b154381c383b1b3d4db20a71ce63e80a9a",
+   "text": "Eyebrow-H6 en functie-H4 worden alinealabels met exact dezelfde formulering. De directeur-H2 wordt een H3 onder de leiderschap-H2. De naam bij het portret van de oprichter mag een H3 zijn onder de H2 Founder Vision.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/structural note rather than patient-facing copy; translated literally. 'Founder Vision' kept as the section heading identifier."
+   ]
+  },
+  {
+   "id": "t_b39dfc9458279106d75c",
+   "sourceHash": "b39dfc9458279106d75ccea537b5353c56a6ed8eed87d337b628a1e58ba52a03",
+   "text": "Gebruik geen lege alinea's/lijstwrappers als inhoud; behoud betekenisvolle inline links.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_3376a762c80ef5f24f76",
+   "sourceHash": "3376a762c80ef5f24f76fb55f1c86186584e22f2207ac6c6a66611a2e3aa401e",
+   "text": "4 minuten",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab87ef66e42f9822d36f",
+   "sourceHash": "ab87ef66e42f9822d36fee1c5065a64bc6b18613146f35c6db74348c43a85a7b",
+   "text": "Kairali — The Ayurvedic Healing Village ligt in de rustige omgeving van Palakkad, Kerala, en is meer dan alleen een plek voor welzijn; het is een breed erkend symbool van hoogwaardige Ayurvedische gezondheidszorg en volledig welzijn. De certificeringen en onderscheidingen die Kairali door de jaren heen heeft ontvangen, getuigen van de standvastige toewijding aan het bieden van authentieke Ayurvedische therapieën en een zorgervaring van topniveau. Dankzij zijn erfgoed, gebaseerd op de traditionele Ayurvedische leer, heeft Kairali het respect en vertrouwen gewonnen van beoefenaars, leiders uit de sector en gezondheidsbewuste mensen over de hele wereld.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'wellness retreat' rendered as 'plek voor welzijn'; 'top-notch wellness experience' rendered as 'zorgervaring van topniveau' to avoid resort framing."
+   ]
+  },
+  {
+   "id": "t_eda15ce4834ac303532b",
+   "sourceHash": "eda15ce4834ac303532bc6973df5ff8a5deb75d7dfceb9fc2cdf1bb450a01cf5",
+   "text": "strong",
+   "status": "translated",
+   "unchangedReason": "HTML tag name; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_849405d8cb9238d95e41",
+   "sourceHash": "849405d8cb9238d95e413effd256f41dcd6d239d8ba1d5eb465ba0255e0db730",
+   "text": "Een maatstaf voor uitmuntendheid",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4baedca34115bb47a090",
+   "sourceHash": "4baedca34115bb47a09094a809f853d145fba5fd8589d5f5bd8650ec05ceb37a",
+   "text": "Met zijn hoge normen, milieuvriendelijke werkwijze en eersteklas zorg heeft Kairali – The Ayurvedic Healing Village een maatstaf gezet in de gezondheids- en welzijnssector. De accreditaties van het centrum getuigen van zijn kwaliteit, authenticiteit en toewijding aan het behoud van de eeuwenoude Ayurvedische wetenschap.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'The retreat’s accreditations' rendered as 'De accreditaties van het centrum'; 'first-rate services' as 'eersteklas zorg'."
+   ]
+  },
+  {
+   "id": "t_08f8c09d0d00a1abf636",
+   "sourceHash": "08f8c09d0d00a1abf636b005e4015ded2cb0006b69a825ab9486f49b935f6f9e",
+   "text": "Wereldwijd erkende accreditaties",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eea3c64ebc6128e5fcec",
+   "sourceHash": "eea3c64ebc6128e5fcec16f25f3c388c5ffe98bf285531832a2245e10bf2155c",
+   "text": "De accreditaties van Kairali bevestigen dat het voldoet aan internationale veiligheids- en kwaliteitsnormen. Enkele belangrijke certificeringen zijn:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00a9e4255a5b63067b76",
+   "sourceHash": "00a9e4255a5b63067b76cbfb9fd67f26bdb91be802d5ffcb177ec1b7a8d4c623",
+   "text": "li",
+   "status": "translated",
+   "unchangedReason": "HTML tag name; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_c169fd6521328bc3e169",
+   "sourceHash": "c169fd6521328bc3e169a978c0df7fdeabae7cd99c4a5dc4ec5adee28c0cb5aa",
+   "text": "Accreditatie binnen de Ayurveda- en welzijnssector",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4bc01f480ebf57925e44",
+   "sourceHash": "4bc01f480ebf57925e44d8410de8a6754ddfcf1c0e620cead1feff824fb94d1f",
+   "text": "Kairali is geaccrediteerd door gerenommeerde Ayurvedische en welzijnsorganisaties, waardoor de werkwijze aansluit bij de authentieke methoden en ethische principes van de traditionele Ayurveda.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74040f16d17bfdb19273",
+   "sourceHash": "74040f16d17bfdb1927333063a2dc3ead652c4128ddbcf7edc3f41bbf91df247",
+   "text": "ISO-certificering",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1dc030daa62575f166ef",
+   "sourceHash": "1dc030daa62575f166efd3f3d6e357001cbffd87888469e9ed70c5dcc6565707",
+   "text": "De ISO-certificering van Kairali onderstreept de toewijding aan het handhaven van normen van wereldklasse op het gebied van operationele efficiëntie, hygiëne en dienstverlening.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c14b3d992c100fbc8bb7",
+   "sourceHash": "c14b3d992c100fbc8bb7c8bfefba57a8898cf7caace5d60d039bc5e32cb83b16",
+   "text": "Green Leaf Certification",
+   "status": "translated",
+   "unchangedReason": "Proper name of a certification title; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_986569708a8159f20770",
+   "sourceHash": "986569708a8159f20770e5377a32919c94ce7e5859c394fdf057bef036f7bf3a",
+   "text": "Deze certificering, toegekend door het Kerala Tourism Department, erkent Kairali om zijn uitmuntendheid in Ayurvedische behandelingen en milieuvriendelijke werkwijzen, en onderstreept zijn rol als voorbeeldig Ayurvedisch behandelcentrum.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'model Ayurvedic retreat' rendered as 'voorbeeldig Ayurvedisch behandelcentrum'. 'Kerala Tourism Department' kept as proper name."
+   ]
+  }
+ ]
+}

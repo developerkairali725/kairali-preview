@@ -1,0 +1,191 @@
+{
+ "batchId": "b-0359",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "fr",
+ "units": [
+  {
+   "id": "t_9726fec8fd1ecd5dcadf",
+   "sourceHash": "9726fec8fd1ecd5dcadf6a1411faae35d0733e9a185d5ed6e543be58e0e310c4",
+   "text": "Intégration des champs masqués",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e18ceb074c5a003f0f5",
+   "sourceHash": "0e18ceb074c5a003f0f5dc371c005e778bd08f08b07831103e95c0f292e6f43a",
+   "text": "hasConsentCheckbox: true (synthèse dérivée dans LEGACY-TWO-ENQUIRY-SOURCE-BINDINGS.json)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8620909fc879d6c6d018",
+   "sourceHash": "8620909fc879d6c6d01884e78c08787dc50be19e2ece121ddddc372c57c8b98b",
+   "text": "La mise en œuvre ultérieure devra concilier les exigences de consentement sous l’autorité exacte du propriétaire et du service juridique ; ne pas modifier currentapprovedforms.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_643937496e7f3d18a19e",
+   "sourceHash": "643937496e7f3d18a19ed9acb3f1aeb297451577f7a2084ce2382654c8569c94",
+   "text": "Demande | Informations | Contact | Formulaire de demande",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_285e0e3011f652287ecc",
+   "sourceHash": "285e0e3011f652287ecc8fc16af99a6b4e83aab97b8912018e619997efdefa3f",
+   "text": "Pour en savoir plus sur nos traitements ayurvédiques et nos villas, remplissez le formulaire ci-dessous et attendez notre appel sous 24 heures.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db8133123e5c1ab769b8",
+   "sourceHash": "db8133123e5c1ab769b802cce345e310e70e9b3c389a425de014eea0e490299d",
+   "text": "Formulaire de demande (ancienne page)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f45af607e6a8e448a50a",
+   "sourceHash": "f45af607e6a8e448a50a67bc8276a5371c565ae8d3bc8ff456353979ba497bb7",
+   "text": "Réutilisation du composant de la famille « demande » T07 PROPOSÉE et consignée ici uniquement ; la disposition de la route et l’identité du successeur restent inchangées.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e956f9828a35ee1b4629",
+   "sourceHash": "e956f9828a35ee1b46298f718db75b939b70cbdd5430e51abd3fd4c1ec6b489d",
+   "text": "Pour en savoir plus sur nos traitements ayurvédiques ancestraux et authentiques, nos villas tout confort et nos programmes de traitement ayurvédique très recommandés, remplissez simplement le formulaire ci-dessous et attendez notre appel sous 24 heures. Vous pouvez également appeler directement et parler à l’un de nos conseillers. Les numéros figurent sur la page Contact. Pour une consultation en ligne gratuite avec l’un de nos médecins ayurvédiques, veuillez remplir notre formulaire de consultation en ligne gratuite.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious villas' rendered as 'villas tout confort' per the clinical register (no 'luxe')."
+   ]
+  },
+  {
+   "id": "t_a3bb15d2d172350497a6",
+   "sourceHash": "a3bb15d2d172350497a623808f65a063fe79da19e98ee695d017833207590a00",
+   "text": "Consultation en ligne gratuite | Médecin ayurvédique",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Trailing redundant '| Consultation' segment dropped to stay within the 60-character title limit."
+   ]
+  },
+  {
+   "id": "t_88aa94862ba255033c10",
+   "sourceHash": "88aa94862ba255033c105db7dc57ecec5adf16012d84599b14c1f70f40d364d9",
+   "text": "Une consultation ayurvédique gratuite selon votre état de santé. Nos médecins vous donneront leur avis d’expert une fois le formulaire rempli.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2d4561fbc023779b5ab",
+   "sourceHash": "e2d4561fbc023779b5abb87d96a1764913e2fbcb0cd66b1d7954d5d552895e1c",
+   "text": "Consultation en ligne (ancienne page)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4264f3f3dacc133f04e8",
+   "sourceHash": "4264f3f3dacc133f04e888ed58de13b760c416c08bf87915283758aea461802f",
+   "text": "Saisissez cette occasion unique de connaître votre constitution ayurvédique et de découvrir comment les traitements ayurvédiques peuvent vous être d’une grande aide pour soulager les affections particulières dont vous pourriez souffrir. Une consultation ayurvédique gratuite, fondée sur votre état de santé et sur l’expertise de nos médecins, vous sera proposée une fois le formulaire rempli. Nos médecins disposent de connaissances approfondies, et le plus ancien d’entre eux compte à lui seul 45 ans d’expérience. Ne manquez pas cette occasion de bénéficier d’une consultation ayurvédique gratuite.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c6615997399def220c89",
+   "sourceHash": "c6615997399def220c89ed2cd7c0838aa1918ad933d0aea4366df2f838e69e18",
+   "text": "attribut capturé dans la source",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d52271ac110a1338d575",
+   "sourceHash": "d52271ac110a1338d5752252138293a9b0c93f3beca165e57441a42589d30f93",
+   "text": "Aucun contrôle de la source ne porte l’attribut HTML required ; le caractère obligatoire provient de la classe CF7 validates-as-required et de l’attribut aria-required capturé, consignés pour chaque champ.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_251fb3e5a4a2d2fd8f9a",
+   "sourceHash": "251fb3e5a4a2d2fd8f9adf5a6fe9aa72e41a6a03ecd8f589eef7fa6230917605",
+   "text": "nationalité (193 options capturées dans la source)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fec64e5f0ac011c5750",
+   "sourceHash": "7fec64e5f0ac011c575020811f8bd9060aecd5546fd850b786bb7a2a0fc2a84f",
+   "text": "pays (248 options capturées dans la source)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_387e972d5c6772340707",
+   "sourceHash": "387e972d5c677234070734ff8cbe50b3a7692c7a991cba4bee99ec6d185a8020",
+   "text": "texte indicatif uniquement",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f396d1d0cb6bd546d126",
+   "sourceHash": "f396d1d0cb6bd546d126f923d7a96e9e36a36c6d6f6dec6e4b2932c4dff0a1e3",
+   "text": "Formulation exacte de la source retenue comme nom associé au champ ; rien n’a été inventé.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04388eae802f71e8d1b6",
+   "sourceHash": "04388eae802f71e8d1b6df1aadd5f53a656af4adaa4022a51ba858f565312d8a",
+   "text": "Bouton vide de l’étape finale omis de l’interface visiteur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc0b62680cf8e126e44a",
+   "sourceHash": "bc0b62680cf8e126e44a21bb5cb90a19563f23f717a95704e45dbe422144bedf",
+   "text": "Postulez | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source was already French but 66 characters with a translated brand name; restored the proper brand name and shortened 'Postulez maintenant' to 'Postulez' to fit the 60-character limit."
+   ]
+  },
+  {
+   "id": "t_a165136f00c36f5896ea",
+   "sourceHash": "a165136f00c36f5896ea3e1cda8763ab31b7f6a2401223df4078841fcbba95dc",
+   "text": "Postulez maintenant",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source already in French; only capitalisation normalised."
+   ]
+  },
+  {
+   "id": "t_50b0017246c5e51c979b",
+   "sourceHash": "50b0017246c5e51c979b7e64f98f0c4d51ba5e9110cac5edca0333f210ff299b",
+   "text": "Postulez maintenant",
+   "status": "translated",
+   "unchangedReason": "Source already in French.",
+   "issues": []
+  }
+ ]
+}

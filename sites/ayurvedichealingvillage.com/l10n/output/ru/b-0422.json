@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0422",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_e77877ebca17bd29469a",
+   "sourceHash": "e77877ebca17bd29469a255dcdbef31e3971b82a0e13a481903517de49d27448",
+   "text": "Global Spa",
+   "status": "translated",
+   "unchangedReason": "Partner proper name, kept verbatim (contains 'Spa' only as part of the name).",
+   "issues": []
+  },
+  {
+   "id": "t_5885ef7f910c5dcab7b2",
+   "sourceHash": "5885ef7f910c5dcab7b24a8024d4382b03a43b8f3a62809f2efabbcb12704a91",
+   "text": "Логотип Spafinder Wellness 365",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim only inside the partner's proper name 'Spafinder Wellness 365'."
+   ]
+  },
+  {
+   "id": "t_cf480154ca5eea569a7d",
+   "sourceHash": "cf480154ca5eea569a7d4772cf5ea24b9d6783f78faee72e3d4f69be76146234",
+   "text": "Spafinder Wellness 365",
+   "status": "translated",
+   "unchangedReason": "Partner proper name, kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_37ca87f49ad872b78c65",
+   "sourceHash": "37ca87f49ad872b78c65e1c69cb0cc8c6771738b693c4b2e2cd9d280ad63c14a",
+   "text": "Логотип PATA New York Chapter — Pacific Asia Travel Association",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4ef320f64881bbf46594",
+   "sourceHash": "4ef320f64881bbf465944d079f8a7123911ef8c1a9431d1728053ef5df669101",
+   "text": "PATA New York Chapter — Pacific Asia Travel Association",
+   "status": "translated",
+   "unchangedReason": "Organisation proper name, kept unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_96485abcb6721ebe4bf5",
+   "sourceHash": "96485abcb6721ebe4bf572c89357ab84ced0a346ef7ab2296a94b5509d9b01bd",
+   "text": "image/png",
+   "status": "translated",
+   "unchangedReason": "MIME type code, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_eae9ee92d18019a37830",
+   "sourceHash": "eae9ee92d18019a378300ac0acb774f5353ca19757cce1af3b05df16cb237262",
+   "text": ", а также стабильная окупаемость инвестиций",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; translated to continue a preceding list — verify grammatical fit in context."
+   ]
+  },
+  {
+   "id": "t_7939cb5e3ca5f5a6338f",
+   "sourceHash": "7939cb5e3ca5f5a6338f94bd58f023a31c847df9633b98d4001f68df6f1e0e6c",
+   "text": "опыт лидерства и известный бренд",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; translated in nominative case — verify fit in context."
+   ]
+  },
+  {
+   "id": "t_5724dddee475417da3fa",
+   "sourceHash": "5724dddee475417da3fafdff95c3ecc2ee3f67cda41fb0dd3fda8d1793d394ed",
+   "text": "Спокойная жизнь в окружении природы — в наших экологичных виллах на территории Kairali – The Ayurvedic Healing Village в Палаккаде, Керала. Каждая вилла спроектирована по принципам васту и построена так, чтобы способствовать восстановлению, комфорту и умиротворению. Окружённые яркой зеленью и выполненные в классической архитектуре, виллы создают идеальную обстановку для аюрведического восстановления сил. Выберите одну из вилл, отвечающую вашим потребностям в уединении, комфорте и благополучии.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Brand name 'Kairali – The Ayurvedic Healing Village' kept verbatim per rules rather than the 'terms' rendering 'Аюрведическая лечебная деревня'."
+   ]
+  },
+  {
+   "id": "t_6c4d2f1f3e8c418c5e3f",
+   "sourceHash": "6c4d2f1f3e8c418c5e3fef488f98ae93bea4c0897b03097458f61465440ec7dd",
+   "text": "Внутренний двор и вход в кирпичный сьют",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bdda5ad693db4366591b",
+   "sourceHash": "bdda5ad693db4366591bdb4475bbfca5972bf4578d2267cad264648ec55daa1d",
+   "text": "Виллы и садовый канал в сумерках",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87c4a99ace2457cf4f94",
+   "sourceHash": "87c4a99ace2457cf4f9476ec85cdd99437065f40167a7432d1204c2f5a049bbc",
+   "text": "Вход в каменный сьют с белыми креслами",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_57692adc22c466da11ed",
+   "sourceHash": "57692adc22c466da11ed0b7692d56db32801c8144416f51c1117458127c9b048",
+   "text": "Вход в кирпичный сьют с креслами на веранде",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_080887dfead039216726",
+   "sourceHash": "080887dfead039216726b47fe60eeca90641d9f6642c8f04131b6c6a48327fe4",
+   "text": "Веранда кирпичного сьюта с круглым окном",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_51d2c76c37839adffb53",
+   "sourceHash": "51d2c76c37839adffb53c7b5f75986544f77b5326c570f2c824654fb5d4b0049",
+   "text": "Садовый канал под пальмами",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7ec7262e3d8d8f0dcfc5",
+   "sourceHash": "7ec7262e3d8d8f0dcfc5a3a551eb718eabe1aff4f88a70523cc12e5c1f1f9261",
+   "text": "Стоимость программы от",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'terms' entry From='Откуда' (place-of-origin sense) does not fit a price label; used 'от' instead."
+   ]
+  },
+  {
+   "id": "t_05ba921930f559457d4d",
+   "sourceHash": "05ba921930f559457d4d4bb658acae4db846d79c4097647b8ae858f29d516098",
+   "text": "Округлая каменная вилла у водного канала",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f43736b7d8f5dc5556f4",
+   "sourceHash": "f43736b7d8f5dc5556f43cba9cebb97bf25bd8f5a6821e10f4672b4cb950f660",
+   "text": "Округлая кирпичная вилла и сад",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74d277eedcd372ef5f76",
+   "sourceHash": "74d277eedcd372ef5f7608c6dab9548ec8da4e9582bd24f891d7bf126db9c314",
+   "text": "Вилла с жёлтой отделкой в саду",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4e75a78cb2a93f44019",
+   "sourceHash": "f4e75a78cb2a93f440197133e29a8ed566ca24a9b0a21971ca9384f7f191f701",
+   "text": "Вход в зелёную виллу среди пальм",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_52e6d4f8f600cc7ad6f7",
+   "sourceHash": "52e6d4f8f600cc7ad6f7966c574e522e867970bcfd4ec58eb2a91605c52bbab3",
+   "text": "Вилла с синей отделкой под пальмами",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d00402ca3a17d4ceddec",
+   "sourceHash": "d00402ca3a17d4ceddec3927f334e317fda8f46f74fc08a3605e804e6e5bc5ec",
+   "text": "Откройте для себя умиротворение в нашей Deluxe Villa, продуманно созданной для вашего благополучия. В окружении пышной зелени погрузитесь в целительные объятия природы и насладитесь восстанавливающим опытом, который обновит ваш разум, тело и душу как никогда прежде.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Room name 'Deluxe Villa' kept in Latin as a proper name (avoids 'люкс')."
+   ]
+  },
+  {
+   "id": "t_88ef642bab01f75c5e5f",
+   "sourceHash": "88ef642bab01f75c5e5fb7bf438b782809298398357ae8ccbd15507695d65e23",
+   "text": "Каменная вилла у садовой лужайки",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

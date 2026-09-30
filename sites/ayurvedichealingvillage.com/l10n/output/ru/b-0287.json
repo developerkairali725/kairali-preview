@@ -1,0 +1,213 @@
+{
+ "batchId": "b-0287",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_283b28d88423ad38c960",
+   "sourceHash": "283b28d88423ad38c96020c392447b5475c4c63f1cce945a5587266eb947629a",
+   "text": "Калпатхи — одна из старейших в Керале «брахманских аграхарам», расположенная в самом центре города. Праздник «Ратхолсавам», который проходит в середине ноября, широко известен в Палаккаде.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aaa9402664f1a41f40eb",
+   "sourceHash": "aaa9402664f1a41f40ebbc52c9993eb66aeb366602958fdfaa283b71e64db123",
+   "text": "h",
+   "status": "translated",
+   "unchangedReason": "Code fragment concatenated into an HTML tag/class name; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_567479c447e472328522",
+   "sourceHash": "567479c447e472328522a1d759aabb9b579e4522a6da547c983d29e94c1604c2",
+   "text": "-p",
+   "status": "translated",
+   "unchangedReason": "Code fragment concatenated into a class/identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_c432b372e0e30267e65e",
+   "sourceHash": "c432b372e0e30267e65e26a12a42c7957ab52e25dfe3c6d4b929213d88965e45",
+   "text": "intro",
+   "status": "translated",
+   "unchangedReason": "Code identifier used in concatenation (class/key name); translating it would break rendering.",
+   "issues": [
+    "Role also lists js:display; if this string is ever shown to users, it should be localized separately."
+   ]
+  },
+  {
+   "id": "t_5bb55a4bb4fd0e197d9e",
+   "sourceHash": "5bb55a4bb4fd0e197d9e90119f580514d5ea9aa6fe79253f1bd4aa67bf083900",
+   "text": "Открыть изображение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_790fb1b462dfd43b7837",
+   "sourceHash": "790fb1b462dfd43b7837d0525ebbd6aadb1212d2162194fdf32fad54cdae3204",
+   "text": "Закрыть изображение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0a859a7ecd771831e7d",
+   "sourceHash": "f0a859a7ecd771831e7d780c3591f03bea704f73bb52a4d6f6cd4947938acb8a",
+   "text": "Предыдущее изображение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4903f732746e9e1e9f0",
+   "sourceHash": "a4903f732746e9e1e9f03e15148616409cb3bc0e969286016b2f4effae80252e",
+   "text": "Следующее изображение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d77a2fa040de2c0959b8",
+   "sourceHash": "d77a2fa040de2c0959b8a63895a08762271f527b87a9be3efcf6ae44a293f03e",
+   "text": "Подробнее о награде PATWA",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a37bcb709874738a8d01",
+   "sourceHash": "a37bcb709874738a8d01d6c9e3f4879f65d90077a5b73a8f922aa85aca906a7b",
+   "text": "Kairali – The Ayurvedic Healing Village удостоена награды Tripadvisor Travelers’ Choice Award 2026 в знак признания нашей приверженности подлинной аюрведе и исключительной заботе о посетителях.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d613325e71d1a3fc44b",
+   "sourceHash": "1d613325e71d1a3fc44bc14fc8c7c504baf29dc8b8a4f08a5bdb914585b220da",
+   "text": "Эмблема признания Tripadvisor 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dc070de3ccd2092ae2d4",
+   "sourceHash": "dc070de3ccd2092ae2d447dcca05bd9e5f54ca0e9797d688aac004081ece240e",
+   "text": "Группа людей у входа в Kairali.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc34c3c1ccc66af74a79",
+   "sourceHash": "cc34c3c1ccc66af74a79b6292ab18032786efc44a63fd81f12b5f8daeac2779f",
+   "text": "Эмблема победителя Haute Grandeur 2026 в категории отелей.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b82a3ccc3e9e850f3737",
+   "sourceHash": "b82a3ccc3e9e850f3737e083761798d40390162903e7da98c30b62216545a986",
+   "text": "Kairali – The Ayurvedic Healing Village с гордостью получила признание Asia Pacific Spa & Wellness Coalition, что отражает нашу приверженность высочайшему уровню подлинной аюрведы во всём мире.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name."
+   ]
+  },
+  {
+   "id": "t_ba9ffc51262219b68ffc",
+   "sourceHash": "ba9ffc51262219b68ffc5629bcd66e2f8b21e8add6099716d21044977e4db570",
+   "text": "Наградная табличка Asia Pacific Spa and Wellness Coalition.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the organisation's proper name."
+   ]
+  },
+  {
+   "id": "t_e30d9bc77837af3416dd",
+   "sourceHash": "e30d9bc77837af3416dda6fbfaea6c32d8c4e5174c99beedb49e5282ee285128",
+   "text": "Kairali – The Ayurvedic Healing Village с гордостью включена в престижную подборку National Geographic Traveller Spa & Wellness Collection 2026, отмечающую подлинное аюрведическое оздоровление и целостный подход к заботе о человеке во всём мире.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the collection's proper name; 'holistic hospitality' rendered as 'целостный подход к заботе о человеке'."
+   ]
+  },
+  {
+   "id": "t_31a965d8821ebf0fb163",
+   "sourceHash": "31a965d8821ebf0fb16329ec12cc0eb0407578d8c173714d43335d70ecdfe904",
+   "text": "Графика National Geographic Traveller Spa and Wellness Collection 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Spa' kept verbatim inside the proper name."
+   ]
+  },
+  {
+   "id": "t_d62120320a979b73c203",
+   "sourceHash": "d62120320a979b73c20336cb1e81d5faa1c3666a028b414ab03ed1f52eb39d8b",
+   "text": "Эмблема сертификации Haute Grandeur 2026 Spa Awards.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'certified spa awards emblem' restructured so 'Spa' appears only inside the award's proper name."
+   ]
+  },
+  {
+   "id": "t_eacedf5a815697fa4587",
+   "sourceHash": "eacedf5a815697fa458798410204d59e088fa9985633001bb07046061ecc50f1",
+   "text": "Kairali на церемонии PATWA International Travel Awards 2026, прошедшей в рамках ITB Berlin.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f64f280cb5310273fae6",
+   "sourceHash": "f64f280cb5310273fae689d0c13e20b8964d0396b1833e4f86d3fad41b35b4ec",
+   "text": "Абхилаш К. Рамеш (Abhilash K. Ramesh) был удостоен награды Excellence in Wellness Hospitality (India) на церемонии PATWA International Travel Awards 2026, прошедшей в рамках ITB Berlin.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1c90b1232824e85bf1d",
+   "sourceHash": "b1c90b1232824e85bf1d787a20b422f2f7b0d3c5194a07e6ebdf40a3a387e2ec",
+   "text": "Графика с вручением награды PATWA и трофеем.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_434be6dff2f236d77875",
+   "sourceHash": "434be6dff2f236d7787512c13899ea77db2e8feccf7c8b490efdbe5b0d4c839c",
+   "text": "Г-н К. В. Рамеш (K. V. Ramesh), основатель Kairali Ayurveda Group, удостоен награды на International Ayurveda & Wellness Conclave 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70395b9196090fdbeb82",
+   "sourceHash": "70395b9196090fdbeb82a03c4ebe713fd1f1bb4cb6c6234e39fc12c4ac411425",
+   "text": "Презентация International Ayurveda and Wellness Conclave 2026.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22d01e55f131e25c9e4a",
+   "sourceHash": "22d01e55f131e25c9e4a90b9abe28b88ab7b7ecc358202cc7e42352acfb7ad59",
+   "text": "Kairali Ayurvedic Healing Village объявлена победителем в номинации «Best Luxury Ayurveda Spa» за 2020 год",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award title 'Best Luxury Ayurveda Spa' kept verbatim in English as a proper award name (contains banned terms luxury/spa)."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "batchId": "b-0546",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_1cfcf6629a5b24013faa",
+   "sourceHash": "1cfcf6629a5b24013faa9f97ae3c5c12abfa2b999880ed106cf162eb4db4b545",
+   "text": "-lotus-im",
+   "status": "translated",
+   "unchangedReason": "Code/identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_ad373107b8121fb512fd",
+   "sourceHash": "ad373107b8121fb512fd20829958b60be1cb3b3698cff06efb9d22102c214e1e",
+   "text": "-cloud-im",
+   "status": "translated",
+   "unchangedReason": "Code/identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9b2995101aad4eddaea9",
+   "sourceHash": "9b2995101aad4eddaea994f9343bfc4581dfa505d3fc8b69c889a0e6ddd93062",
+   "text": "-leaf",
+   "status": "translated",
+   "unchangedReason": "Code/identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d45169f697d2674dfff",
+   "sourceHash": "4d45169f697d2674dfff82ca92cd73e173af8345c3a8c33227b206864de1e9cf",
+   "text": "-fig-im",
+   "status": "translated",
+   "unchangedReason": "Code/identifier suffix used in string concatenation; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9aaa82af03f3b9536c3b",
+   "sourceHash": "9aaa82af03f3b9536c3b8aab20663189788bbdd207bce080ea603eb66da02c7d",
+   "text": "喀拉拉邦高级阿育吠陀生活方式顾问与治疗师培训项目（AALCT- HV）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d77016a7cf3de127424",
+   "sourceHash": "7d77016a7cf3de1274245993f3451514aeeda19d1b3b848ed5c32c4a49facc02",
+   "text": "项目简介",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d7e7159a3fa28cbfa49b",
+   "sourceHash": "d7e7159a3fa28cbfa49b5ec37a76c8149d8d9b268a5e76ad5e9ec782f5e9df50",
+   "text": "Kairali 创立于 1989 年，承载着正统阿育吠陀的传承，致力于将其益处传播至印度乃至世界各地。高级阿育吠陀生活方式顾问与治疗师培训项目（AALCT-HV）是一门从业者认证课程，面向阿育吠陀爱好者、健康领域从业者和医疗专业人士。这一沉浸式项目结合了基础理论、疗法实操练习，以及来自 Kairali 知名健康调理机构的阿育吠陀和瑜伽专业人士的专家指导。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'health retreat' rendered as 健康调理机构 per clinical register."
+   ]
+  },
+  {
+   "id": "t_6dd28e660bf0e5dd789c",
+   "sourceHash": "6dd28e660bf0e5dd789cb0cd5601aa13b99bb47d31f3b033f4c23b5f78a67c21",
+   "text": "适合人群",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_026af17ec2f230e22ee4",
+   "sourceHash": "026af17ec2f230e22ee4983be9e532ea7c4a145e84105c51c8739364ec6eb361",
+   "text": "本项目尤其适合：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce1f8201c942f3536886",
+   "sourceHash": "ce1f8201c942f353688675499ec5a6d5b72929bb8893eb8d086b499cfbc5c56c",
+   "text": "医疗专业人士",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b37171f06eaebb1d7ed2",
+   "sourceHash": "b37171f06eaebb1d7ed263e58fc95f74384cbe1a2f881131891e8820bf0ed575",
+   "text": "健康顾问和治疗师",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_755d42500d6cecaf12ab",
+   "sourceHash": "755d42500d6cecaf12ab16c1382f5fe979bb8b209ea90d90fc5030ad923d491a",
+   "text": "希望获得进阶专业知识的阿育吠陀爱好者",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f1f3f8e20d0887d28fa",
+   "sourceHash": "7f1f3f8e20d0887d28fa560c85118b22bf71191a0062c36dfbad5e38f190fcad",
+   "text": "结业学员将获得相应的知识与信心，成为健康领域受认可的阿育吠陀专家和从业者。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fbbcb1eea065b74be87c",
+   "sourceHash": "fbbcb1eea065b74be87cf04b04f041335b2b180f8b63300dc93cf04ea97dc4d2",
+   "text": "概述：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_72740c9c8102b4b1e1b7",
+   "sourceHash": "72740c9c8102b4b1e1b71e818cf4d976165cf28ae607d26b43e9ff0f7490d7ce",
+   "text": "AALCT-HV 提供全面而精炼的阿育吠陀学习内容，包括：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc9f370ab5c4808f6787",
+   "sourceHash": "bc9f370ab5c4808f6787c943d06f3354d2eb4af2c91863b8698b9dcdc8aac16b",
+   "text": "基本原理与哲学思想",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_830fe1f4085f2f21fe5d",
+   "sourceHash": "830fe1f4085f2f21fe5d551129adb8c22bddad740aab77a485c78fd2574126ad",
+   "text": "阿育吠陀疗法与 Panchakarma（五业疗法）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a116c6adbcd39beff645",
+   "sourceHash": "a116c6adbcd39beff6455da69740b096487b0b2b80596a647cef5146e70e56e5",
+   "text": "Dravyaguna（阿育吠陀饮食学）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc58557462f209d62e9f",
+   "sourceHash": "fc58557462f209d62e9f90a23fd6d096e53bad78dc52966de5d1ee85045b1c85",
+   "text": "Prakrithi（体质）与身体构成分析",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00b8c4cdd8df8073ed8b",
+   "sourceHash": "00b8c4cdd8df8073ed8b53bad93e07bb7371fec715b228d7553924003875a876",
+   "text": "阿育吠陀管理生活方式疾病的方法",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dfc26b2e0008cbc63b87",
+   "sourceHash": "dfc26b2e0008cbc63b87e9ba8173087a7e011f15a23f27b21afa815b44be5247",
+   "text": "家庭疗法与阿育吠陀药物基础知识",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55dfc8671b9ef60280ff",
+   "sourceHash": "55dfc8671b9ef60280ff198a00958b14f478cd906edcff41cf2bedd427d8ad6d",
+   "text": "Roga Pareeksha 与 Rogi Pareeksha（疾病诊断与患者分析）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a91d2b27ceb4440f0f3e",
+   "sourceHash": "a91d2b27ceb4440f0f3eae1fed5a1806fd8fbc591fe5832789b430d3fb89fa2c",
+   "text": "合格学员有机会被考虑担任 Kairali 国际中心的阿育吠陀健康顾问职位，并将获得从业者证书。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e13f018c0a9f7e5011b6",
+   "sourceHash": "e13f018c0a9f7e5011b6c79ab6215057d199598ec541b240e087d1e1c9b1acfb",
+   "text": "项目益处：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_70a3ab678fa21700a197",
+   "sourceHash": "70a3ab678fa21700a1974e58366233a7b5014f752e5f6a0800eb3b4dbfe7c808",
+   "text": "AALCT-HV 学员将有机会根据自身兴趣，在我们的国内及国际中心参与项目实践和实操培训。此外，项目中表现优异的学员还有机会被考虑担任",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

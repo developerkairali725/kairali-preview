@@ -1,0 +1,30 @@
+{
+ "removed_ctas": [
+  "HERO → slot: ENQUIRE NOW"
+ ],
+ "removed_forms": [],
+ "removed_chrome": [],
+ "links": [
+  "https://ahv-final-staging.vercel.app/ → https://ayurvedichealingvillage.com/",
+  "https://ahv-final-staging.vercel.app/offers/ → https://ayurvedichealingvillage.com/offers/"
+ ],
+ "images": [],
+ "tel": [],
+ "notes": [
+  "NO FORM on staging page — shared enquiry form appended after the last section (#consult)",
+  "og:image dimensions ['1200', '630'] not carried over"
+ ],
+ "edits": [
+  "No discount percentage in the h1: \"…Athletes – Up to 20% OFF\" → \"…Athletes — Special Rates\"",
+  "No discount percentage: \"a unique discount of up to 20% off our wellness packages\" → \"special rates on our wellness packages\"",
+  "CTA placement 2: \"Plan my programme\" moved up under the h1 and its opening paragraph so the treatment name and the CTA share the first screen (staging had its button after the full article)",
+  "Meta text: \"get up to 20% off Ayurvedic retreats\" → \"are offered special rates on Ayurvedic retreats\" [description: 'Olympic & Paralympic athletes get up to 20% off Ayurvedic retreats at Kairali. Rejuvenate with therapies, yoga & personalized wellness in a serene setting.' → 'Olympic & Paralympic athletes are offered special rates on Ayurvedic retreats at Kairali. Rejuvenate with therapies, yoga & personalized wellness in a serene setting.']",
+  "Meta text: \"get up to 20% off Ayurvedic retreats\" → \"are offered special rates on Ayurvedic retreats\" [ogDescription: 'Olympic & Paralympic athletes get up to 20% off Ayurvedic retreats at Kairali. Rejuvenate with therapies, yoga & personalized wellness in a serene setting.' → 'Olympic & Paralympic athletes are offered special rates on Ayurvedic retreats at Kairali. Rejuvenate with therapies, yoga & personalized wellness in a serene setting.']"
+ ],
+ "standing": [
+  "discount percentage and fixed stay length removed: \"10% Discount for ayurvedic treatment package between 3 to 13 Nights\"",
+  "discount percentage and fixed stay length removed: \"15% Discount for ayurvedic treatment package between 14 to 20 Nights; \"",
+  "discount percentage and fixed stay length removed: \"20% Discount for ayurvedic treatment package for 21 Nights or above.\"",
+  "\"since 1908\" removed: \"Kairali — The Ayurvedic Healing Village · Since 1908\""
+ ]
+}

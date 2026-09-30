@@ -1,0 +1,193 @@
+{
+ "batchId": "b-0359",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_9726fec8fd1ecd5dcadf",
+   "sourceHash": "9726fec8fd1ecd5dcadf6a1411faae35d0733e9a185d5ed6e543be58e0e310c4",
+   "text": "隠しフィールドの連携",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e18ceb074c5a003f0f5",
+   "sourceHash": "0e18ceb074c5a003f0f5dc371c005e778bd08f08b07831103e95c0f292e6f43a",
+   "text": "hasConsentCheckbox: true（LEGACY-TWO-ENQUIRY-SOURCE-BINDINGS.json 内の派生サマリー）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8620909fc879d6c6d018",
+   "sourceHash": "8620909fc879d6c6d01884e78c08787dc50be19e2ece121ddddc372c57c8b98b",
+   "text": "今後の実装では、同意要件をオーナー／法務の正式な権限のもとで整合させる必要があります。currentapprovedforms は変更しないでください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_643937496e7f3d18a19e",
+   "sourceHash": "643937496e7f3d18a19ed9acb3f1aeb297451577f7a2084ce2382654c8569c94",
+   "text": "今すぐお問い合わせ | 情報 | ご連絡 | お問い合わせフォーム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_285e0e3011f652287ecc",
+   "sourceHash": "285e0e3011f652287ecc8fc16af99a6b4e83aab97b8912018e619997efdefa3f",
+   "text": "アーユルヴェーダ治療や滞在用ヴィラの詳細は、下記フォームにご記入ください。24時間以内にお電話でご連絡いたします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db8133123e5c1ab769b8",
+   "sourceHash": "db8133123e5c1ab769b802cce345e310e70e9b3c389a425de014eea0e490299d",
+   "text": "お問い合わせフォーム（旧）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f45af607e6a8e448a50a",
+   "sourceHash": "f45af607e6a8e448a50a67bc8276a5371c565ae8d3bc8ff456353979ba497bb7",
+   "text": "T07 お問い合わせ系コンポーネントの再利用は提案（PROPOSED）として、ここにのみ記録しています。ルートの処理方針と後継ページの特定は変更ありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e956f9828a35ee1b4629",
+   "sourceHash": "e956f9828a35ee1b46298f718db75b939b70cbdd5430e51abd3fd4c1ec6b489d",
+   "text": "古くから受け継がれてきた本格的なアーユルヴェーダ治療、快適なプレミアムヴィラ、高い評価を受けているアーユルヴェーダ治療プログラムについての詳細は、下記フォームにご記入のうえ、24時間以内のお電話をお待ちください。担当者に直接お電話でご相談いただくこともできます。電話番号はお問い合わせページに掲載しています。アーユルヴェーダの医師による無料オンライン診察をご希望の方は、無料オンライン診察フォームにご記入ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious villas' rendered as 快適なプレミアムヴィラ (premium/comfort) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_a3bb15d2d172350497a6",
+   "sourceHash": "a3bb15d2d172350497a623808f65a063fe79da19e98ee695d017833207590a00",
+   "text": "無料オンライン診察 | アーユルヴェーダの医師 | 診察",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88aa94862ba255033c10",
+   "sourceHash": "88aa94862ba255033c105db7dc57ecec5adf16012d84599b14c1f70f40d364d9",
+   "text": "健康状態に基づく無料のアーユルヴェーダ診察です。フォームにご記入いただいた後、医師が専門的な見解をお伝えします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2d4561fbc023779b5ab",
+   "sourceHash": "e2d4561fbc023779b5abb87d96a1764913e2fbcb0cd66b1d7954d5d552895e1c",
+   "text": "オンライン診察（旧）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4264f3f3dacc133f04e8",
+   "sourceHash": "4264f3f3dacc133f04e888ed58de13b760c416c08bf87915283758aea461802f",
+   "text": "ご自身のアーユルヴェーダの体質を知り、アーユルヴェーダ治療が、お悩みの特定の症状の緩和にどれほど役立ちうるかを知る絶好の機会です。フォームにご記入いただいた後、健康状態と医師の専門知識に基づく無料のアーユルヴェーダ診察をご提供します。当院の医師は豊富な知識を持ち、最も経験の長い医師は45年の経験があります。無料のアーユルヴェーダ診察を受けるこの機会をぜひご活用ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'extremely helpful in providing you relief' rendered as 緩和にどれほど役立ちうるか (how helpful it can be for relief) — no efficacy guarantee added."
+   ]
+  },
+  {
+   "id": "t_c6615997399def220c89",
+   "sourceHash": "c6615997399def220c89ed2cd7c0838aa1918ad933d0aea4366df2f838e69e18",
+   "text": "取得した元の属性",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d52271ac110a1338d575",
+   "sourceHash": "d52271ac110a1338d5752252138293a9b0c93f3beca165e57441a42589d30f93",
+   "text": "HTMLのrequired属性を持つ元のコントロールはありません。必須であることはCF7の validates-as-required クラスと取得した aria-required によって示され、項目ごとに記録しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_251fb3e5a4a2d2fd8f9a",
+   "sourceHash": "251fb3e5a4a2d2fd8f9adf5a6fe9aa72e41a6a03ecd8f589eef7fa6230917605",
+   "text": "国籍（取得した元の選択肢193件）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fec64e5f0ac011c5750",
+   "sourceHash": "7fec64e5f0ac011c575020811f8bd9060aecd5546fd850b786bb7a2a0fc2a84f",
+   "text": "国（取得した元の選択肢248件）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_387e972d5c6772340707",
+   "sourceHash": "387e972d5c677234070734ff8cbe50b3a7692c7a991cba4bee99ec6d185a8020",
+   "text": "プレースホルダーのみ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f396d1d0cb6bd546d126",
+   "sourceHash": "f396d1d0cb6bd546d126f923d7a96e9e36a36c6d6f6dec6e4b2932c4dff0a1e3",
+   "text": "項目に関連付ける名称として、元の文言をそのまま採用しています。新たに作成したものはありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04388eae802f71e8d1b6",
+   "sourceHash": "04388eae802f71e8d1b6df1aadd5f53a656af4adaa4022a51ba858f565312d8a",
+   "text": "空の最終ステップボタンは訪問者向け画面から省略しています",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc0b62680cf8e126e44a",
+   "sourceHash": "bc0b62680cf8e126e44a21bb5cb90a19563f23f717a95704e45dbe422144bedf",
+   "text": "今すぐ応募 | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French ('Postulez Maintenant' = Apply Now) in the English candidate; translated from French. French brand variant 'Le Village de Guérison Ayurvédique' replaced with the canonical brand name 'The Ayurvedic Healing Village'."
+   ]
+  },
+  {
+   "id": "t_a165136f00c36f5896ea",
+   "sourceHash": "a165136f00c36f5896ea3e1cda8763ab31b7f6a2401223df4078841fcbba95dc",
+   "text": "今すぐ応募",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French ('Postulez Maintenant' = Apply Now); translated from French."
+   ]
+  },
+  {
+   "id": "t_50b0017246c5e51c979b",
+   "sourceHash": "50b0017246c5e51c979b7e64f98f0c4d51ba5e9110cac5edca0333f210ff299b",
+   "text": "今すぐ応募",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is French ('Postulez maintenant' = Apply now); translated from French."
+   ]
+  }
+ ]
+}

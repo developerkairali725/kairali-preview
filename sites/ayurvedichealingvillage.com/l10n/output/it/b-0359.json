@@ -1,0 +1,191 @@
+{
+ "batchId": "b-0359",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_9726fec8fd1ecd5dcadf",
+   "sourceHash": "9726fec8fd1ecd5dcadf6a1411faae35d0733e9a185d5ed6e543be58e0e310c4",
+   "text": "Integrazione dei campi nascosti",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e18ceb074c5a003f0f5",
+   "sourceHash": "0e18ceb074c5a003f0f5dc371c005e778bd08f08b07831103e95c0f292e6f43a",
+   "text": "hasConsentCheckbox: true (riepilogo derivato in LEGACY-TWO-ENQUIRY-SOURCE-BINDINGS.json)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8620909fc879d6c6d018",
+   "sourceHash": "8620909fc879d6c6d01884e78c08787dc50be19e2ece121ddddc372c57c8b98b",
+   "text": "L'implementazione successiva dovrà conciliare i requisiti di consenso sotto l'esatta autorità del titolare/ufficio legale; non modificare currentapprovedforms.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_643937496e7f3d18a19e",
+   "sourceHash": "643937496e7f3d18a19ed9acb3f1aeb297451577f7a2084ce2382654c8569c94",
+   "text": "Richiedi informazioni | Contatti | Modulo di richiesta",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_285e0e3011f652287ecc",
+   "sourceHash": "285e0e3011f652287ecc8fc16af99a6b4e83aab97b8912018e619997efdefa3f",
+   "text": "Per maggiori informazioni sui nostri trattamenti ayurvedici e sulle ville, compili il modulo qui sotto: La richiameremo entro 24 ore.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db8133123e5c1ab769b8",
+   "sourceHash": "db8133123e5c1ab769b802cce345e310e70e9b3c389a425de014eea0e490299d",
+   "text": "Modulo di richiesta (vecchio)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f45af607e6a8e448a50a",
+   "sourceHash": "f45af607e6a8e448a50a67bc8276a5371c565ae8d3bc8ff456353979ba497bb7",
+   "text": "Riutilizzo del componente della famiglia di richiesta T07 PROPOSTO e registrato solo qui; destinazione del percorso e identità della pagina successiva invariate.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e956f9828a35ee1b4629",
+   "sourceHash": "e956f9828a35ee1b46298f718db75b939b70cbdd5430e51abd3fd4c1ec6b489d",
+   "text": "Per ricevere maggiori informazioni sui nostri antichi e autentici trattamenti ayurvedici, sulle nostre ville di pregio e sui nostri apprezzati programmi di trattamento ayurvedico, compili il modulo qui sotto: La richiameremo entro 24 ore. Può anche chiamarci direttamente e parlare con uno dei nostri referenti; i numeri sono disponibili nella pagina dei contatti. Per una consultazione online gratuita con uno dei nostri medici ayurvedici, compili il modulo di Consultazione online gratuita.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'luxurious villas' rendered as 'ville di pregio' (premium) per the banned-word rule (luxury)."
+   ]
+  },
+  {
+   "id": "t_a3bb15d2d172350497a6",
+   "sourceHash": "a3bb15d2d172350497a623808f65a063fe79da19e98ee695d017833207590a00",
+   "text": "Consultazione online gratuita | Medico ayurvedico",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88aa94862ba255033c10",
+   "sourceHash": "88aa94862ba255033c105db7dc57ecec5adf16012d84599b14c1f70f40d364d9",
+   "text": "Una consultazione ayurvedica gratuita basata sulle Sue condizioni di salute: compilato il modulo, i nostri medici Le daranno un parere esperto.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2d4561fbc023779b5ab",
+   "sourceHash": "e2d4561fbc023779b5abb87d96a1764913e2fbcb0cd66b1d7954d5d552895e1c",
+   "text": "Consultazione online (vecchia)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4264f3f3dacc133f04e8",
+   "sourceHash": "4264f3f3dacc133f04e888ed58de13b760c416c08bf87915283758aea461802f",
+   "text": "Colga questa preziosa opportunità per conoscere la Sua costituzione ayurvedica e scoprire come i trattamenti ayurvedici possano aiutarLa in modo significativo ad alleviare eventuali disturbi specifici di cui soffre. Dopo la compilazione del modulo Le sarà fornita una consultazione ayurvedica gratuita, basata sulle Sue condizioni di salute e sull'esperienza dei nostri medici. I nostri medici hanno una profonda preparazione e il più anziano di loro vanta da solo 45 anni di esperienza. Non perda l'occasione di una consultazione ayurvedica gratuita.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c6615997399def220c89",
+   "sourceHash": "c6615997399def220c89ed2cd7c0838aa1918ad933d0aea4366df2f838e69e18",
+   "text": "attributo di origine rilevato",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d52271ac110a1338d575",
+   "sourceHash": "d52271ac110a1338d5752252138293a9b0c93f3beca165e57441a42589d30f93",
+   "text": "Nessun campo del modulo di origine riporta l'attributo HTML required; l'obbligatorietà deriva dalla classe CF7 validates-as-required e dall'attributo aria-required rilevato, registrati per ciascun campo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_251fb3e5a4a2d2fd8f9a",
+   "sourceHash": "251fb3e5a4a2d2fd8f9adf5a6fe9aa72e41a6a03ecd8f589eef7fa6230917605",
+   "text": "nazionalità (193 opzioni di origine rilevate)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7fec64e5f0ac011c5750",
+   "sourceHash": "7fec64e5f0ac011c575020811f8bd9060aecd5546fd850b786bb7a2a0fc2a84f",
+   "text": "paese (248 opzioni di origine rilevate)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_387e972d5c6772340707",
+   "sourceHash": "387e972d5c677234070734ff8cbe50b3a7692c7a991cba4bee99ec6d185a8020",
+   "text": "solo testo segnaposto",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f396d1d0cb6bd546d126",
+   "sourceHash": "f396d1d0cb6bd546d126f923d7a96e9e36a36c6d6f6dec6e4b2932c4dff0a1e3",
+   "text": "Come nome associato al campo è stata scelta la formulazione esatta dell'origine; nulla è stato inventato.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_04388eae802f71e8d1b6",
+   "sourceHash": "04388eae802f71e8d1b6df1aadd5f53a656af4adaa4022a51ba858f565312d8a",
+   "text": "Pulsante vuoto dell'ultimo passaggio omesso dall'interfaccia per i visitatori",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bc0b62680cf8e126e44a",
+   "sourceHash": "bc0b62680cf8e126e44a21bb5cb90a19563f23f717a95704e45dbe422144bedf",
+   "text": "Si candidi ora | Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is in French ('Postulez Maintenant | Kairali - Le Village de Guérison Ayurvédique'); translated to Italian and the brand name restored to its canonical form."
+   ]
+  },
+  {
+   "id": "t_a165136f00c36f5896ea",
+   "sourceHash": "a165136f00c36f5896ea3e1cda8763ab31b7f6a2401223df4078841fcbba95dc",
+   "text": "Si candidi ora",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is in French ('Postulez Maintenant'); translated to Italian."
+   ]
+  },
+  {
+   "id": "t_50b0017246c5e51c979b",
+   "sourceHash": "50b0017246c5e51c979b7e64f98f0c4d51ba5e9110cac5edca0333f210ff299b",
+   "text": "Si candidi ora",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source is in French ('Postulez maintenant'); translated to Italian."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "batchId": "b-0281",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_0d599fc35207973166d6",
+   "sourceHash": "0d599fc35207973166d601b1d4094ca559412f7844e49ae2ea7c91d9f3a87468",
+   "text": "Inizialmente chiuse; più risposte possono restare aperte; pulsanti nativi con aria-expanded/aria-controls, attivazione con Invio e Spazio, nessuno spostamento forzato del focus. Registrato come decisione di design: le classi del plugin acquisite non dimostrano lo stato storico in fase di esecuzione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/implementation note, likely not patient-facing; ARIA attribute names kept verbatim."
+   ]
+  },
+  {
+   "id": "t_1f2f2261f6f8bf70af30",
+   "sourceHash": "1f2f2261f6f8bf70af30d2c64abea248f82451da1a6aac0c174f7bbdc6943046",
+   "text": "Solo i tre paragrafi finali esplicitamente vuoti.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, likely not patient-facing."
+   ]
+  },
+  {
+   "id": "t_b32be30452ae46530342",
+   "sourceHash": "b32be30452ae46530342c8dee769f03a22b56555c7ed4faed896aca91c460fc9",
+   "text": "Nessuno: il testo sorgente non contiene alcun file scaricabile; nessuno è stato inventato a partire dal titolo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, likely not patient-facing."
+   ]
+  },
+  {
+   "id": "t_5249f4fcc629efa0e6d6",
+   "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
+   "text": "-n",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_1e1caaf8cf28cb024317",
+   "sourceHash": "1e1caaf8cf28cb0243175a8dd26a3fc0d8f2c5527c661586bb816e57b9919be2",
+   "text": "-r",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_0c3603e13e24a40b4bf2",
+   "sourceHash": "0c3603e13e24a40b4bf215e3795a9a40d60a8456fb7b63c2d11e81701a231e85",
+   "text": "-c",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_16d1c9050a0b32e83764",
+   "sourceHash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
+   "text": "Tabella",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16cd066b95f1799f059c",
+   "sourceHash": "16cd066b95f1799f059cfc45a00dd2bc67d4356dc883378164c70c7e5b652cf5",
+   "text": "colonne,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment concatenated after a number (e.g. 'Tabella 3 colonne, 5 righe')."
+   ]
+  },
+  {
+   "id": "t_6b05a180063676442fbc",
+   "sourceHash": "6b05a180063676442fbcce9e10309db975749f54423dde996c393c8fb33bac23",
+   "text": "righe (scorrevole)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment concatenated after a number; 'scorrevole' agrees with 'Tabella'."
+   ]
+  },
+  {
+   "id": "t_6ce953bdf5cd0f93cd6f",
+   "sourceHash": "6ce953bdf5cd0f93cd6f4bd612b25843a038a9492b509dbc68727b29511af463",
+   "text": "it-",
+   "status": "translated",
+   "unchangedReason": "Code prefix used to build an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4fc0bdb51ffc8cfdcaae",
+   "sourceHash": "4fc0bdb51ffc8cfdcaaee067eb264b8a5c646176cf870be17c2e647fbb2cb7f4",
+   "text": "-b",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_fa2e2a6ad747546569bd",
+   "sourceHash": "fa2e2a6ad747546569bd7b0e2e9281c550d020290d81ca00ee72bacef0a2260e",
+   "text": "?route=",
+   "status": "translated",
+   "unchangedReason": "URL query-string fragment; must stay unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_9be7ac80b195e000b3cf",
+   "sourceHash": "9be7ac80b195e000b3cf0fcb8853fdf1f224f916f8b460413c608f550ebd1e27",
+   "text": "faq-cat-",
+   "status": "translated",
+   "unchangedReason": "Code prefix used to build an element id; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_485f60d2203a09c605dc",
+   "sourceHash": "485f60d2203a09c605dcf2cfd9d8612f916509ee7e48ab0afebac3f49da1485f",
+   "text": "-btn",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an element id; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_68f4e3ae3fbca42ecfb0",
+   "sourceHash": "68f4e3ae3fbca42ecfb0c59493cc1b8192ebb182fe17ebe3a8cc5f142fa4e5a2",
+   "text": "-panel",
+   "status": "translated",
+   "unchangedReason": "Code suffix used to build an element id; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_9347bd35e495c32fd5df",
+   "sourceHash": "9347bd35e495c32fd5df366f2a70ec9f3b5434d621d4b5a16ae8684b72f554c2",
+   "text": "Yoga e Ayurveda formano una combinazione ideale per purificare corpo e mente, aiutando ciascuno a riconoscere ciò che conta davvero nella vita e ciò che non conta. L'India è la culla dello yoga e la sorgente dell'ispirazione devozionale e meditativa. Praticare yoga in un luogo in cui innumerevoli yogi hanno plasmato le proprie forme è come attingere a una profonda fonte spirituale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a91ebb8c0524e716db",
+   "sourceHash": "44a91ebb8c0524e716dbdda270683d012e9f0afb1022af18234fe46b1ffe57ef",
+   "text": "Durante queste due settimane ci concentreremo sul ritrovare la nostra tranquillità interiore e sul riconoscere il nostro ritmo personale, prendendo consapevolezza del polso e dei bioritmi, delle emozioni, dei sogni e della digestione, e concedendoci al tempo stesso di sintonizzarci con il mutare dei ritmi fisiologici, dei pensieri e delle sensazioni.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a02a5e8bbc377688327a",
+   "sourceHash": "a02a5e8bbc377688327ada62ca6314f9f3b2abb9272433d9c37b7b14efa747ff",
+   "text": "L'offerta alimentare dedicata e l'assistenza ayurvedica quotidiana rispondono alle esigenze di ciascun tipo di costituzione. Grazie a massaggi rilassanti e terapie con oli, i sensi possono distendersi, lontano dalla routine quotidiana. La sessione quotidiana di yoga e meditazione, in un ambiente sereno, La invita a concedersi una pausa, a volgere l'attenzione verso l'interno e a ritrovare il contatto con il Suo vero sé.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'unique culinary offerings' rendered as 'offerta alimentare dedicata' to keep a clinical-dietary register."
+   ]
+  }
+ ]
+}

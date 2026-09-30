@@ -1,0 +1,161 @@
+{
+ "batchId": "b-0281",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_0d599fc35207973166d6",
+   "sourceHash": "0d599fc35207973166d601b1d4094ca559412f7844e49ae2ea7c91d9f3a87468",
+   "text": "प्रारंभ में बंद; एक साथ कई उत्तर खुले रह सकते हैं; aria-expanded/aria-controls वाले नेटिव बटन; Enter और Space से सक्रियण; फ़ोकस को ज़बरदस्ती नहीं हटाया जाता। इसे डिज़ाइन निर्णय के रूप में दर्ज किया गया है — कैप्चर की गई प्लगइन क्लासें ऐतिहासिक रनटाइम स्थिति को प्रमाणित नहीं करतीं।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build/audit note rather than patient-facing copy; attribute and key names kept verbatim."
+   ]
+  },
+  {
+   "id": "t_1f2f2261f6f8bf70af30",
+   "sourceHash": "1f2f2261f6f8bf70af30d2c64abea248f82451da1a6aac0c174f7bbdc6943046",
+   "text": "केवल अंत के तीन स्पष्ट रूप से खाली अनुच्छेद।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build/audit note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_b32be30452ae46530342",
+   "sourceHash": "b32be30452ae46530342c8dee769f03a22b56555c7ed4faed896aca91c460fc9",
+   "text": "कोई नहीं — स्रोत सामग्री में कोई डाउनलोड फ़ाइल नहीं है; शीर्षक के आधार पर कोई फ़ाइल नहीं गढ़ी गई।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal build/audit note rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_5249f4fcc629efa0e6d6",
+   "sourceHash": "5249f4fcc629efa0e6d6b2bf746b6c5de61611ce719ad61ac820fbe5c8cece66",
+   "text": "-n",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_1e1caaf8cf28cb024317",
+   "sourceHash": "1e1caaf8cf28cb0243175a8dd26a3fc0d8f2c5527c661586bb816e57b9919be2",
+   "text": "-r",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_0c3603e13e24a40b4bf2",
+   "sourceHash": "0c3603e13e24a40b4bf215e3795a9a40d60a8456fb7b63c2d11e81701a231e85",
+   "text": "-c",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_16d1c9050a0b32e83764",
+   "sourceHash": "16d1c9050a0b32e83764a81d801a880773abedfd7f8b0b08a1cd87ca0e404f12",
+   "text": "तालिका",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_16cd066b95f1799f059c",
+   "sourceHash": "16cd066b95f1799f059cfc45a00dd2bc67d4356dc883378164c70c7e5b652cf5",
+   "text": "कॉलम,",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following a number in a table caption."
+   ]
+  },
+  {
+   "id": "t_6b05a180063676442fbc",
+   "sourceHash": "6b05a180063676442fbcce9e10309db975749f54423dde996c393c8fb33bac23",
+   "text": "पंक्तियाँ (स्क्रॉल करने योग्य)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment following a number in a table caption."
+   ]
+  },
+  {
+   "id": "t_6ce953bdf5cd0f93cd6f",
+   "sourceHash": "6ce953bdf5cd0f93cd6f4bd612b25843a038a9492b509dbc68727b29511af463",
+   "text": "it-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID prefix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_4fc0bdb51ffc8cfdcaae",
+   "sourceHash": "4fc0bdb51ffc8cfdcaaee067eb264b8a5c646176cf870be17c2e647fbb2cb7f4",
+   "text": "-b",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID/class suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_fa2e2a6ad747546569bd",
+   "sourceHash": "fa2e2a6ad747546569bd7b0e2e9281c550d020290d81ca00ee72bacef0a2260e",
+   "text": "?route=",
+   "status": "translated",
+   "unchangedReason": "URL query-string fragment.",
+   "issues": []
+  },
+  {
+   "id": "t_9be7ac80b195e000b3cf",
+   "sourceHash": "9be7ac80b195e000b3cf0fcb8853fdf1f224f916f8b460413c608f550ebd1e27",
+   "text": "faq-cat-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID prefix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_485f60d2203a09c605dc",
+   "sourceHash": "485f60d2203a09c605dcf2cfd9d8612f916509ee7e48ab0afebac3f49da1485f",
+   "text": "-btn",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_68f4e3ae3fbca42ecfb0",
+   "sourceHash": "68f4e3ae3fbca42ecfb0c59493cc1b8192ebb182fe17ebe3a8cc5f142fa4e5a2",
+   "text": "-panel",
+   "status": "translated",
+   "unchangedReason": "Code fragment (ID suffix) used in string concatenation.",
+   "issues": []
+  },
+  {
+   "id": "t_9347bd35e495c32fd5df",
+   "sourceHash": "9347bd35e495c32fd5df366f2a70ec9f3b5434d621d4b5a16ae8684b72f554c2",
+   "text": "योग और आयुर्वेद शरीर और मन दोनों की शुद्धि के लिए एक आदर्श संयोजन हैं, जो व्यक्ति को यह पहचानने में मदद करते हैं कि जीवन में वास्तव में क्या महत्वपूर्ण है और क्या नहीं। भारत योग की जन्मभूमि है और भक्ति व ध्यान की प्रेरणा का स्रोत है। उस स्थान पर योग करना, जहाँ अनगिनत योगियों ने अपने अभ्यास को आकार दिया है, एक गहरे आध्यात्मिक स्रोत से जुड़ने जैसा है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44a91ebb8c0524e716db",
+   "sourceHash": "44a91ebb8c0524e716dbdda270683d012e9f0afb1022af18234fe46b1ffe57ef",
+   "text": "इन दो सप्ताहों में हम अपनी नाड़ी और जैविक लय, भावनाओं, स्वप्नों और पाचन के प्रति सजग होकर अपनी आंतरिक शांति पाने और अपनी विशिष्ट लय को पहचानने पर ध्यान केंद्रित करेंगे, और साथ ही शारीरिक लय, विचारों और भावनाओं के बदलते स्वरूपों के प्रति स्वयं को संवेदनशील होने देंगे।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a02a5e8bbc377688327a",
+   "sourceHash": "a02a5e8bbc377688327ada62ca6314f9f3b2abb9272433d9c37b7b14efa747ff",
+   "text": "विशिष्ट आहार व्यवस्था और दैनिक आयुर्वेदिक देखभाल प्रत्येक प्रकृति (शारीरिक संरचना) की आवश्यकताओं के अनुरूप होती है। शांतिदायक मालिश और तेल थेरेपी के माध्यम से इंद्रियाँ दैनिक दिनचर्या से विश्राम पा सकती हैं। शांत वातावरण में होने वाला दैनिक योग और ध्यान सत्र आपको ठहरने, भीतर की ओर ध्यान केंद्रित करने और अपने वास्तविक स्वरूप से फिर से जुड़ने के लिए प्रोत्साहित करता है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

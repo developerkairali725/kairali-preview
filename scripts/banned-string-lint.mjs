@@ -84,6 +84,37 @@ export const IGNORED_DIRS = new Set([
  *  no comment syntax and therefore no escape hatch: fix the copy. */
 const ALLOW_RE = /banned-string-allow:\s*([a-z0-9,\s-]+)/i;
 
+// Localization inherits the source unit's approved surface, not the batch filename.
+// Bind each permitted string to its source hash and original context; never exempt
+// an entire translation file or the other strings on the same line.
+let ahvSourceUnits;
+function localizedCareerRanges(text, file) {
+  if (!/^sites\/ayurvedichealingvillage\.com\/l10n\/(?:source\/units\.json|output\/[^/]+\/[^/]+\.json)$/.test(file ?? "")) return [];
+  if (!text.includes("career@kairali.com")) return [];
+  try {
+    ahvSourceUnits ??= new Map(JSON.parse(readFileSync(join(REPO_ROOT, "sites/ayurvedichealingvillage.com/l10n/source/units.json"), "utf8")).units.map(u => [u.id, u]));
+    const units = JSON.parse(text).units;
+    if (!Array.isArray(units)) return [];
+    const ranges = [];
+    for (const unit of units) {
+      const source = ahvSourceUnits.get(unit.id);
+      const value = unit.text ?? unit.source;
+      if (!source || unit.sourceHash !== source.sourceHash || typeof value !== "string" || !value.includes("career@kairali.com")) continue;
+      const sourceCount = source.source.split("career@kairali.com").length - 1;
+      if (!sourceCount || value.split("career@kairali.com").length - 1 > sourceCount) continue;
+      if (!source.files?.length || !source.files.every(p =>
+        p === "public/ahv/assets/policy-family-data.js" ||
+        (p === "public/ahv/assets/article-family-data.js" && source.source.includes("Request deletion at career@kairali.com; the target is 30 days, with any documented exception explained.")) ||
+        /(?:job|career|recruit|apply|vacanc)/i.test(p))) continue;
+      // JSON encoding may use Unicode escapes, so decode values before comparing.
+      for (const m of text.matchAll(/"(?:source|text)"\s*:\s*("(?:\\.|[^"\\])*")/g)) {
+        if (JSON.parse(m[1]) === value) ranges.push([m.index, m.index + m[0].length]);
+      }
+    }
+    return ranges;
+  } catch { return []; } // malformed or unbound localization never gains an exemption
+}
+
 // ---------------------------------------------------------------------------
 // Comment stripping — the load-bearing discrimination.
 // ---------------------------------------------------------------------------
@@ -388,10 +419,46 @@ export const RULES = [
     id: "wrong-contact-email",
     appliesTo: "both",
     why: `CLAUDE.md LOCKED FACTS: the public contact email everywhere is ${CONTACT_EMAIL}.`,
-    scan: (ctx) =>
-      reScan(ctx, /[A-Za-z0-9._%+-]+@kairali\.com/g, (m) =>
-        m[0].toLowerCase() === CONTACT_EMAIL ? "" : `"${m[0]}" — the public contact email everywhere is ${CONTACT_EMAIL}.`
-      ).filter((h) => h.message !== ""),
+    scan: (ctx) => {
+      // (?<!\\) — an address may not START immediately after a backslash. Without
+      // it the class below eats the "n" of a JSON "\n" escape and reports
+      // "ninfo@kairali.com", i.e. it renames the CORRECT address and then fails
+      // it: 791 findings on one AHV evidence file, every one of them the right
+      // address. The engine simply retries one character later and matches
+      // info@kairali.com, which passes.
+      const ADDRESS = /(?<!\\)[A-Za-z0-9._%+-]+@kairali\.com/g;
+
+      // D-20260915-06 (Abilash, 15 Sep 2026): career@kairali.com is a PERMITTED
+      // departmental address on careers/apply routes, and his ruling was
+      // explicit about the shape of the fix — "add a scoped documented exception
+      // to the locked-facts rule rather than changing the address". SCOPED is
+      // the operative word: the exception is bound to the careers surfaces, so
+      // the same address on the contact page or in a footer still FAILS, naming
+      // the ruling that permits it elsewhere. A blanket allow would have retired
+      // the rule for that address across the fleet.
+      const CAREERS_SURFACE = /(?:job|career|recruit|apply|vacanc|enquiry-family)/i;
+      // Owner 25 Sep 2026: the AHV privacy notices also carry the CV deletion channel.
+      // Exact policy surfaces only: contact pages and unrelated fleet sites still fail.
+      const surface = (ctx.path ?? ctx.file ?? "").replace(/\\/g, "/");
+      const ahvCvPolicy = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/(?:public\/ahv\/assets\/policy-family-data\.js|english-candidate\/policy-review-20260925\.json|english-candidate\/prerender\/(?:privacy-policy|privacy-statement|new-privacy-policy)\.html)$/.test(surface);
+      const careersScoped = CAREERS_SURFACE.test(surface) || ahvCvPolicy || surface === "sites/kairali-com-rebuild/site/content/pages.json#/current-openings.aspx";
+
+      return reScan(ctx, ADDRESS, (m) => {
+        const addr = m[0].toLowerCase();
+        if (addr === CONTACT_EMAIL) return "";
+        // The shared AHV article dataset includes the careers notice. Permit only
+        // its explicit deletion-request sentence, never a general contact address.
+        const articleCvDeletion = /(?:^|\/)sites\/ayurvedichealingvillage\.com\/public\/ahv\/assets\/article-family-data\.js$/.test(surface)
+          && ctx.text.slice(Math.max(0, m.index - 20), m.index).endsWith("Request deletion at ")
+          && ctx.text.slice(m.index + m[0].length).startsWith("; the target is 30 days, with any documented exception explained.");
+        const localizedCareer = ctx.localizedCareerRanges?.some(([start, end]) => m.index >= start && m.index < end);
+        if (addr === "career@kairali.com" && (careersScoped || articleCvDeletion || localizedCareer)) return "";
+        if (addr === "career@kairali.com") {
+          return `"${m[0]}" — permitted on careers/apply routes only (D-20260915-06); this file is not one. The public contact email everywhere else is ${CONTACT_EMAIL}.`;
+        }
+        return `"${m[0]}" — the public contact email everywhere is ${CONTACT_EMAIL}.`;
+      }).filter((h) => h.message !== "");
+    },
     probe: "reservations@kairali.com",
     antiProbes: [CONTACT_EMAIL, "info@kairalicentres.com", "info@kairali.mu"],
   },
@@ -414,7 +481,17 @@ export const RULES = [
       const hits = [];
       ctx.lines.forEach((line, i) => {
         // Remove every correct rendering, then see if the name survives.
-        const rest = line.replace(/Dr\.\s+Deepu\s+John/g, "");
+        //
+        // An IMAGE PATH is not prose. The mined legacy asset
+        // karDr.-Deepu-John.webp carries the physician's name in full already,
+        // its bytes are the provenance record of the live file, and renaming it
+        // would break the mined-asset mapping — so it can never be "fixed", only
+        // mis-flagged. The rule is about a byline a PATIENT READS; a src=""
+        // value is not one. Stripped before the test rather than special-cased
+        // after it, so a bare "Deepu" elsewhere on the same line still fails.
+        const rest = line
+          .replace(/[^\s"'<>()]*\.(?:webp|jpe?g|png|svg|gif|avif)\b/gi, " ")
+          .replace(/Dr\.\s+Deepu\s+John/g, "");
         if (/\bDeepu\b/.test(rest)) {
           hits.push({ line: i + 1, message: `"Deepu" not written as the full "Dr. Deepu John". Two Deepus (CLAUDE.md): the developer and the chief physician — never conflate on a shipped page.` });
         }
@@ -426,6 +503,9 @@ export const RULES = [
       "Medically reviewed by Dr. Deepu John (BAMS)",
       '  "deepu-john": {',
       "- **Dr. Deepu John, BAMS** — Chief Physician & Head of Department",
+      // the mined legacy asset path — a filename, never a byline (21 Sep 2026)
+      '"src": "/ahv/assets/img/legacy/karkidaka/karDr.-Deepu-John.webp",',
+      '<img src="/ahv/assets/img/legacy/karDr.-Deepu-John.webp" alt="Dr. Deepu John">',
     ],
   },
   {
@@ -457,7 +537,19 @@ export const RULES = [
         //     typed (D-ROLLING-NUMBER). A fixed span START before a computed end
         //     ("© 1989–{…}") has no literal year token directly after © or the
         //     dash, so it stays legal.
-        if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line)) {
+        //     A dc-runtime template renders its computed end as a <span> rather
+        //     than as `{…}`, so the exemption above could not see it and fired on
+        //     236 correctly-computed AHV footers. Normalising the MARKED span back
+        //     to `{…}` lets the two regexes below stay exactly as ruled — and,
+        //     because this rewrites the line rather than short-circuiting it, a
+        //     TYPED year elsewhere on the same line still fails (minified HTML
+        //     puts a whole page on one line). Only `data-dc-computed` is trusted:
+        //     bare `class="sc-interp"` also carries nav labels, so trusting it
+        //     would blind the rule to a typed year inside any interpolation span.
+        const localizedLine = /^sites\/ayurvedichealingvillage\.com\/l10n\/(?:source|output)\//.test(ctx.file ?? "")
+          ? line.replace(/\[\[VAR_\d+\]\]/g, "{…}") : line;
+        const line_ = localizedLine.replace(/<span\b[^>]*\bdata-dc-computed\b[^>]*>\s*(?:19|20)\d{2}\s*<\/span>/gi, "{…}");
+        if (/©\s*(?:19|20)\d{2}\s*[—–-]\s*(?:19|20)\d{2}\b/.test(line_) || /©\s*(?:19|20)\d{2}\b(?!\s*[—–-]\s*\{)/.test(line_)) {
           hits.push({ line: i + 1, message: `Typed copyright year. Rolling values are computed, never typed (D-ROLLING-NUMBER): © {new Date().getFullYear()} …` });
         }
       });
@@ -588,6 +680,13 @@ export const RULES = [
  * @returns {Finding[]}
  */
 export function scanText(text, { file = "<text>", kind, rules = RULES }) {
+  // Scan each route of the imported public aggregate separately; the HR
+  // address exception cannot apply to other pages in the same JSON file.
+  if (file === "sites/kairali-com-rebuild/site/content/pages.json") {
+    return Object.entries(JSON.parse(text)).flatMap(([route, page]) =>
+      scanText(JSON.stringify(page), { file: `${file}#${route}`, kind, rules })
+    );
+  }
   const scanned = stripComments(text, kind);
   const rawLines = text.split(/\r?\n/);
   const lines = scanned.split(/\r?\n/);
@@ -604,7 +703,7 @@ export function scanText(text, { file = "<text>", kind, rules = RULES }) {
     return lo + 1;
   };
 
-  const ctx = { text: scanned, lines, lineAt, file };
+  const ctx = { text: scanned, lines, lineAt, file, localizedCareerRanges: localizedCareerRanges(scanned, file) };
   const applies = kind === "code" ? "code" : "content";
 
   /** @type {Finding[]} */
@@ -758,7 +857,11 @@ function main(argv) {
   return errors.length === 0 ? 0 : 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// NOTE: comparing import.meta.url to process.argv[1] as raw STRINGS silently
+// broke on any checkout path containing a space — import.meta.url percent-encodes
+// it, argv[1] does not — so main() never ran and the script exited 0 having
+// checked NOTHING. Normalising argv[1] through URL() fixes it with no new import.
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {

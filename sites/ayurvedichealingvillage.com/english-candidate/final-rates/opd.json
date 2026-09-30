@@ -1,0 +1,530 @@
+{
+  "document": "opd",
+  "rate_basis": "Indian Rupees per treatment; GST-exempt when part of a physician-prescribed plan at an NABH-accredited hospital",
+  "validity": {
+    "from": "2025-10-01",
+    "to": null
+  },
+  "validity_basis": "Owner decision 22 Sep 2026: print the rate master's date. Sheet 'Single Treatment and Op Charges' column F is headed 'Final Amount 2025 wef 1st Oct'; S027 (03-opd-updated.docx) says 'Effective from April 1, 2025' with identical values — conflict recorded. No end date is published in either source.",
+  "sources": [
+    "S027 03-opd-updated.docx (Outpatient Day Treatment Rates 2025–2026)",
+    "S025 01-original-day-treatment-25-26.pdf",
+    "Rate master workbook, sheet 'Single Treatment and Op Charges', column F rows 2-43"
+  ],
+  "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026 — see editions",
+  "treatments": [
+    {
+      "no": 1,
+      "name": "Abhyangam (four-handed therapy)",
+      "source_name": "ABHYANGAM (Four Handed Therapy)",
+      "duration_min": 45,
+      "rate": 4400,
+      "rate_inr": 4400,
+      "rate_usd": 63,
+      "rate_eur": 55
+    },
+    {
+      "no": 2,
+      "name": "Sirodhara (Thaila Dhara)",
+      "source_name": "SIRODHARA (Thaila Dhara)",
+      "duration_min": 55,
+      "rate": 6000,
+      "rate_inr": 6000,
+      "rate_usd": 86,
+      "rate_eur": 75
+    },
+    {
+      "no": 3,
+      "name": "Takra Dhara",
+      "source_name": "TAKRA DHARA",
+      "duration_min": 55,
+      "rate": 6200,
+      "rate_inr": 6200,
+      "rate_usd": 89,
+      "rate_eur": 78
+    },
+    {
+      "no": 4,
+      "name": "Dhanyamala Dhara",
+      "source_name": "DHANYAMALA DHARA",
+      "duration_min": 55,
+      "rate": 6200,
+      "rate_inr": 6200,
+      "rate_usd": 89,
+      "rate_eur": 78
+    },
+    {
+      "no": 5,
+      "name": "Pizhichil",
+      "source_name": "PIZHICHIL",
+      "duration_min": 55,
+      "rate": 5600,
+      "rate_inr": 5600,
+      "rate_usd": 80,
+      "rate_eur": 70
+    },
+    {
+      "no": 6,
+      "name": "Ela Kizhi",
+      "source_name": "ELA KIZHI",
+      "duration_min": 55,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 7,
+      "name": "Manjal Kizhi",
+      "source_name": "MANJAL KIZHI",
+      "duration_min": 45,
+      "rate": 5400,
+      "rate_inr": 5400,
+      "rate_usd": 77,
+      "rate_eur": 68
+    },
+    {
+      "no": 8,
+      "name": "Kadi Kizhi",
+      "source_name": "KADI KIZHI",
+      "duration_min": 55,
+      "rate": 5200,
+      "rate_inr": 5200,
+      "rate_usd": 74,
+      "rate_eur": 65
+    },
+    {
+      "no": 9,
+      "name": "Naranga Kizhi",
+      "source_name": "NARANGA KIZHI",
+      "duration_min": 55,
+      "rate": 5400,
+      "rate_inr": 5400,
+      "rate_usd": 77,
+      "rate_eur": 68
+    },
+    {
+      "no": 10,
+      "name": "Manal Kizhi",
+      "source_name": "MANAL KIZHI",
+      "duration_min": 50,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 11,
+      "name": "Podi Kizhi",
+      "source_name": "PODI KIZHI",
+      "duration_min": 50,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 12,
+      "name": "Navara Kizhi",
+      "source_name": "NAVARA KIZHI",
+      "duration_min": 45,
+      "rate": 5600,
+      "rate_inr": 5600,
+      "rate_usd": 80,
+      "rate_eur": 70
+    },
+    {
+      "no": 13,
+      "name": "Thalapothichil",
+      "source_name": "THALAPOTHICHIL",
+      "duration_min": 45,
+      "rate": 5300,
+      "rate_inr": 5300,
+      "rate_usd": 76,
+      "rate_eur": 66
+    },
+    {
+      "no": 14,
+      "name": "Ksheera Dhoomam",
+      "source_name": "KSHEERA DHOOMAM",
+      "duration_min": 30,
+      "rate": 3200,
+      "rate_inr": 3200,
+      "rate_usd": 46,
+      "rate_eur": 40
+    },
+    {
+      "no": 15,
+      "name": "Siro Vasthi",
+      "source_name": "SIRO VASTHI",
+      "duration_min": 30,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 16,
+      "name": "Uro Vasthi",
+      "source_name": "URO VASTHI",
+      "duration_min": 45,
+      "rate": 4700,
+      "rate_inr": 4700,
+      "rate_usd": 67,
+      "rate_eur": 59
+    },
+    {
+      "no": 17,
+      "name": "Janu Vasthi",
+      "source_name": "JANU VASTHI",
+      "duration_min": 45,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 18,
+      "name": "Greeva Vasthi",
+      "source_name": "GREEVA VASTHI",
+      "duration_min": 45,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 19,
+      "name": "Kati Vasthi",
+      "source_name": "KATI VASTHI",
+      "duration_min": 45,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 20,
+      "name": "Matra Vasthi",
+      "source_name": "MATRA VASTHI",
+      "duration_min": 20,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 21,
+      "name": "Kashaya Vasthi",
+      "source_name": "KASHAYA VASTHI",
+      "duration_min": 20,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 22,
+      "name": "Udhwarthanam (powder massage)",
+      "source_name": "UDHWARTHANAM (Powder Massage)",
+      "duration_min": 50,
+      "rate": 5000,
+      "rate_inr": 5000,
+      "rate_usd": 71,
+      "rate_eur": 63
+    },
+    {
+      "no": 23,
+      "name": "Udgharshanam (wet powder massage)",
+      "source_name": "UDGHARSHANAM (Wet Powder Massage)",
+      "duration_min": 50,
+      "rate": 5300,
+      "rate_inr": 5300,
+      "rate_usd": 76,
+      "rate_eur": 66
+    },
+    {
+      "no": 24,
+      "name": "Nasyam",
+      "source_name": "NASYAM",
+      "duration_min": 30,
+      "rate": 3500,
+      "rate_inr": 3500,
+      "rate_usd": 50,
+      "rate_eur": 44
+    },
+    {
+      "no": 25,
+      "name": "Pichu",
+      "source_name": "PICHU",
+      "duration_min": 30,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 26,
+      "name": "Lepam",
+      "source_name": "LEPAM",
+      "duration_min": 30,
+      "rate": 3500,
+      "rate_inr": 3500,
+      "rate_usd": 50,
+      "rate_eur": 44
+    },
+    {
+      "no": 27,
+      "name": "Thalam",
+      "source_name": "THALAM",
+      "duration_min": 30,
+      "rate": 3500,
+      "rate_inr": 3500,
+      "rate_usd": 50,
+      "rate_eur": 44
+    },
+    {
+      "no": 28,
+      "name": "Dhoopanam",
+      "source_name": "DHOOPANAM",
+      "duration_min": 10,
+      "rate": 2200,
+      "rate_inr": 2200,
+      "rate_usd": 31,
+      "rate_eur": 28
+    },
+    {
+      "no": 29,
+      "name": "Netra Dhara",
+      "source_name": "NETRA DHARA",
+      "duration_min": 30,
+      "rate": 3500,
+      "rate_inr": 3500,
+      "rate_usd": 50,
+      "rate_eur": 44
+    },
+    {
+      "no": 30,
+      "name": "Netra Tarpanam",
+      "source_name": "NETRA TARPANAM",
+      "duration_min": 30,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 31,
+      "name": "Kseera Dhara",
+      "source_name": "KSEERA DHARA",
+      "duration_min": 45,
+      "rate": 4100,
+      "rate_inr": 4100,
+      "rate_usd": 59,
+      "rate_eur": 51
+    },
+    {
+      "no": 32,
+      "name": "Kairali's Herbal Mukha-Abhyangam & Mukha-Lepam therapy",
+      "source_name": "KAIRALI'S HERBAL MUKHA-ABHYANGAM & MUKHA-LEPAM THERAPY",
+      "duration_min": 30,
+      "rate": 3700,
+      "rate_inr": 3700,
+      "rate_usd": 53,
+      "rate_eur": 46
+    },
+    {
+      "no": 33,
+      "name": "Kairali Fruit Mukha-Abhyangam & Mukha-Lepam therapy",
+      "source_name": "KAIRALI FRUIT MUKHA-ABHYANGAM & MUKHA-LEPAM THERAPY",
+      "duration_min": 30,
+      "rate": 3700,
+      "rate_inr": 3700,
+      "rate_usd": 53,
+      "rate_eur": 46
+    },
+    {
+      "no": 34,
+      "name": "Kairali's Navara Mukha-Abhyangam & Mukha-Lepam therapy",
+      "source_name": "KAIRALI'S NAVARA MUKHA-ABHYANGAM & MUKHA-LEPAM THERAPY",
+      "duration_min": 30,
+      "rate": 3800,
+      "rate_inr": 3800,
+      "rate_usd": 54,
+      "rate_eur": 48
+    },
+    {
+      "no": 35,
+      "name": "Kairali's Netra Upchar (Netra Dhara + Netra Tarpanam)",
+      "source_name": "KAIRALI'S NETRA UPCHAR (Netra Dhara + Netra Tarpanam)",
+      "duration_min": 50,
+      "rate": 5600,
+      "rate_inr": 5600,
+      "rate_usd": 80,
+      "rate_eur": 70
+    },
+    {
+      "no": 36,
+      "name": "Kairali's Total Eye Care treatment",
+      "source_name": "KAIRALI'S TOTAL EYE CARE TREATMENT",
+      "course_days": 3,
+      "course_min_per_day": 120,
+      "rate": 15000,
+      "rate_inr": 15000,
+      "rate_usd": 214,
+      "rate_eur": 188
+    },
+    {
+      "no": 37,
+      "name": "Soothika Charya (post-natal care)",
+      "source_name": "SOOTHIKA CHARYA (Post Natal Care)",
+      "course_days": 7,
+      "course_min_per_day": 120,
+      "rate": 40000,
+      "rate_inr": 40000,
+      "rate_usd": 571,
+      "rate_eur": 500
+    },
+    {
+      "no": 38,
+      "name": "Yoga session",
+      "source_name": "YOGA SESSION",
+      "duration_min": 60,
+      "rate": 4000,
+      "rate_inr": 4000,
+      "rate_usd": 57,
+      "rate_eur": 50
+    },
+    {
+      "no": 39,
+      "name": "Meditation session",
+      "source_name": "MEDITATION SESSION",
+      "duration_min": 60,
+      "rate": 4000,
+      "rate_inr": 4000,
+      "rate_usd": 57,
+      "rate_eur": 50
+    },
+    {
+      "no": 40,
+      "name": "OP consultation charge",
+      "source_name": "OP Consultation Charge",
+      "rate": 2000,
+      "rate_inr": 2000,
+      "rate_usd": 29,
+      "rate_eur": 25
+    },
+    {
+      "no": 41,
+      "name": "Nursing charges",
+      "source_name": "Nursing Charges",
+      "rate": 1000,
+      "rate_inr": 1000,
+      "rate_usd": 14,
+      "rate_eur": 13
+    }
+  ],
+  "classes_note": "Item 42 does not exist in the source; numbering resumes at 43 as published.",
+  "classes": [
+    {
+      "no": 43,
+      "name": "Practical yoga session",
+      "malayalam": "Prayogika Yoga Session",
+      "duration_min": 60,
+      "rate": 2000,
+      "rate_inr": 2000
+    },
+    {
+      "no": 44,
+      "name": "Theoretical yoga philosophy class",
+      "malayalam": "Yoga Tathwa Charcha",
+      "duration_min": 60,
+      "rate": 1500,
+      "rate_inr": 1500
+    },
+    {
+      "no": 45,
+      "name": "Practical meditation session",
+      "malayalam": "Prayogika Dhyaana Session",
+      "duration_min": 60,
+      "rate": 2000,
+      "rate_inr": 2000
+    },
+    {
+      "no": 46,
+      "name": "Theoretical meditation & mindfulness class",
+      "malayalam": "Dhyaanam & Manassamyamana Tathwam",
+      "duration_min": 60,
+      "rate": 1500,
+      "rate_inr": 1500
+    },
+    {
+      "no": 47,
+      "name": "Ayurvedic cooking demonstration (group)",
+      "malayalam": "Ayurvedha Paachaka Class (Group)",
+      "duration_min": 60,
+      "rate": 2500,
+      "rate_inr": 2500
+    },
+    {
+      "no": 48,
+      "name": "Ayurvedic diet & nutrition theory class",
+      "malayalam": "Aahaaram & Poshakathwa Tathwangal",
+      "duration_min": 60,
+      "rate": 2000,
+      "rate_inr": 2000
+    },
+    {
+      "no": 49,
+      "name": "Herbal remedies & home formulation class",
+      "malayalam": "Herbal Aushadhangalum Veettuchadangukalum",
+      "duration_min": 60,
+      "rate": 2000,
+      "rate_inr": 2000
+    },
+    {
+      "no": 50,
+      "name": "Ayurveda for daily life (Dinacharya, Ritucharya)",
+      "malayalam": "Dinacharyayum Rithucharyayum",
+      "duration_min": 60,
+      "rate": 1500,
+      "rate_inr": 1500
+    }
+  ],
+  "editions": {
+    "INR": {
+      "symbol": "₹",
+      "iso": "INR",
+      "rate_key": "rate_inr",
+      "classes": true,
+      "sources": [
+        "S027 03-opd-updated.docx",
+        "Rate master sheet 'Single Treatment and Op Charges' column F"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; INR reconciled to master column F; effective date printed per master (1 Oct 2025) by owner decision",
+      "review_status_previous": "REVIEW DRAFT — INR reconciled to master column F; effective date printed per master (1 Oct 2025) by owner decision"
+    },
+    "USD": {
+      "symbol": "$",
+      "iso": "USD",
+      "rate_key": "rate_usd",
+      "classes": false,
+      "sources": [
+        "Rate master sheet 'Single Treatment and Op Charges' column G (USD), rows 2-42 — unpublished workbook column, approved as source by owner decision 22 Sep 2026"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; USD from the rate master column G (owner-approved source 22 Sep 2026); classes have no USD rate",
+      "review_status_previous": "REVIEW DRAFT — USD from the rate master's unpublished column G (owner-approved 22 Sep 2026); never published before; classes have no USD rate"
+    },
+    "EUR": {
+      "symbol": "€",
+      "iso": "EUR",
+      "rate_key": "rate_eur",
+      "classes": false,
+      "sources": [
+        "Rate master sheet 'Single Treatment and Op Charges' column H (EURO), rows 2-42 — unpublished workbook column, approved as source by owner decision 22 Sep 2026"
+      ],
+      "review_status": "RATES APPROVED — team approval recorded by owner instruction, 25 Sep 2026; EUR from the rate master column H (owner-approved source 22 Sep 2026); classes have no EUR rate",
+      "review_status_previous": "REVIEW DRAFT — EUR from the rate master's unpublished column H (owner-approved 22 Sep 2026); never published before; classes have no EUR rate"
+    }
+  }
+}

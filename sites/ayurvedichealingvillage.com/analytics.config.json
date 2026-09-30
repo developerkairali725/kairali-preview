@@ -1,0 +1,65 @@
+{
+  "_comment": [
+    "Analytics identities for ayurvedichealingvillage.com, READ FROM THE LIVE SITE'S OWN TAGS on 2026-09-15,",
+    "never invented (HARD GATE 6). These are public identifiers — they are visible in the page source of the",
+    "live site today — not secrets, which is why they are committed. No API keys or tokens live here.",
+    "",
+    "ACTIVATION IS OFF BY DEFAULT. Nothing below loads unless AHV_ANALYTICS=1 AND the visitor has accepted",
+    "cookies. Owner ruling 2026-09-15: keep the IDs recorded but inert on staging, so six reviewers clicking",
+    "around a preview never land in the real GA4 and Clarity data, and switch them on at go-live.",
+    "See docs/reports/2026-09-15-ahv-go-live-checklist.md."
+  ],
+  "activation": {
+    "env": "AHV_ANALYTICS",
+    "enabledWhen": "1",
+    "default": "off",
+    "consentKey": "ktahv-consent",
+    "consentAcceptedValue": "accepted",
+    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page."
+  },
+  "measurement": {
+    "ga4": {
+      "id": "G-PZBX8G4Y9N",
+      "source": "gtag('config', …) on https://ayurvedichealingvillage.com/, 2026-09-15",
+      "consentRequired": true
+    },
+    "clarity": {
+      "id": "rf5s9ugok4",
+      "source": "cross-checked: the Clarity console project URL AND the live clarity.ms tag agree",
+      "consentRequired": true
+    },
+    "metaPixel": {
+      "id": "1305161823266727",
+      "source": "fbq('init', …) on the live site, 2026-09-15",
+      "consentRequired": true
+    }
+  },
+  "verification": {
+    "_comment": "Ownership proof, not tracking: these carry no cookies and are NOT consent-gated. They matter at the DNS flip — if they are missing when the domain moves, Search Console and Bing verification break.",
+    "googleSiteVerification": "wRX83HPNYkjhwhq2L0pjVwMjxccJyNivs0RERF97nWc",
+    "msvalidate01": "8150125AE0C703A62B4F0EBD68520434",
+    "facebookDomainVerification": "2x5q2slnwezqdexrhga0w1pdez0g3p"
+  },
+  "absent": {
+    "bingUet": "RESOLVED 2026-09-16 by the owner: Healing Village does NOT run Bing Ads. No UET tag exists and none is expected. No Microsoft Advertising account to verify, nothing to carry across at go-live. Previously recorded as BLOCKED pending an account identity; that question is now closed.",
+    "googleTagManager": "NONE. The live site uses gtag directly, not GTM."
+  },
+  "googleAds": {
+    "_comment": [
+      "SUPERSEDES the earlier 'no conversion action exists' statement, which was WRONG:",
+      "it was read from the MANAGER account 163-034-6910, and manager accounts do not hold",
+      "conversion actions. Verified read-only in the Ads UI on 2026-09-15."
+    ],
+    "clientAccount": "AHV-NEO 712-961-0573",
+    "managerAccount": "Kairali Ayurveda 163-034-6910",
+    "cancelledAccountNotToUse": "KTAHV 214-403-0919 (cancelled, separate)",
+    "conversionAction": "EnquirySubmission",
+    "conversionTypeId": "15644955",
+    "sendTo": "AW-972059125/fqrBCJvyugcQ9ePBzwM",
+    "firedFrom": "live WordPress /ppc-thanks/ via the HFCM plugin, on PAGE LOAD",
+    "countingRule": "Every conversion",
+    "includedInAccountGoals": false,
+    "status": "NOT ported to the new stack. Candidate prepared and tested but NOT activated: app/(english)/_families/lead-conversion.mjs",
+    "decision": "Activation is an owner/Vikash decision - see docs/reports/2026-09-15-ahv-enquirysubmission-trace.md section 10"
+  }
+}

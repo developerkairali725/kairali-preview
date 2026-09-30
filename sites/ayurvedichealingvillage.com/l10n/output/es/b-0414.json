@@ -1,0 +1,191 @@
+{
+ "batchId": "b-0414",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_8549e99f42b21dbea33b",
+   "sourceHash": "8549e99f42b21dbea33b3768a275b56880025b5e3ddcb092ea9869b76e1d38e1",
+   "text": "Dos acciones del registro cumplen una doble función y se agrupan por su efecto y no por su nombre. REPLACE_WRONG_EQUIPMENT_BREADCRUMB (1) es una sustitución de la ruta de navegación del encabezado principal, por lo que las entradas que sustituyen la ruta suman 25 y no las 24 que corresponden solo a REPLACE_GOVERNED_BREADCRUMB. RELATED_LINKS_GROUPS_OR_EMPTY_HEADING_OMITTED (15) es un nodo de grupo de enlaces relacionados cuyo encabezado vacío no se muestra, por lo que las entradas de grupos relacionados suman 162 y no 147. Por tanto, las exclusiones intencionadas OMIT_* suman 89, y 2 entradas llevan otras acciones (una promoción de título y una sustitución de encabezado de equipo erróneo). 433 + 25 + 162 + 89 + 2 = 711.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b43db53ea136dd89902f",
+   "sourceHash": "b43db53ea136dd89902f079159627554b2c7f211c5957632b79c6df0a6c1fae0",
+   "text": "whole-item STRONG with three BRs",
+   "status": "translated",
+   "unchangedReason": "Internal technical enum/locator label for markup structure, not visitor-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_a3dd2fc874f4d87194eb",
+   "sourceHash": "a3dd2fc874f4d87194eb147512ba9798c590da4519b695f9c6bc50f7bfeca617",
+   "text": "leading STRONG run",
+   "status": "translated",
+   "unchangedReason": "Internal technical enum/locator label for markup structure, not visitor-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_fd74038cfce284c02a0b",
+   "sourceHash": "fd74038cfce284c02a0bb17ac4e98ccb67a2b0ccb3fbdd8048502dc1e755bf55",
+   "text": "Dos segmentos STRONG de la fuente se perdieron al rellenar los datos y se restauran a partir de la evidencia de segmentos en línea del registro: un STRONG que abarca el elemento completo en cuatro líneas con tres BR de la fuente, y un segmento STRONG inicial cuyo espacio final exacto se conserva. Se mantienen los saltos BR significativos y no se ha inventado ningún BR final vacío.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8bcecaeecc5d51139859",
+   "sourceHash": "8bcecaeecc5d511398591d2486546634910685de1e8e4637c8d6cad0e471b8f4",
+   "text": "Píxeles, textos alternativos de la fuente, proporciones nativas, recuento exacto, notas de derechos y metadatos sin cambios; solo ha cambiado la posición.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6016a6c1f51564d2ec26",
+   "sourceHash": "6016a6c1f51564d2ec26abb95b7184627bb70a9b51a69668d2e68775d8baec08",
+   "text": "No se altera, acorta ni reescribe ningún texto de la fuente, URL ni recomendación sobre visados, no se activa ningún enlace y no se recorta ni oculta nada; overflow-wrap solo elige puntos de corte adicionales.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22b7c38dbe29493721f4",
+   "sourceHash": "22b7c38dbe29493721f49d731768445e6aa33f8b17b3670f5fca27e9276ea631",
+   "text": "Los bloques de encabezado se construyeron con un árbol de texto plano, por lo que se perdieron los segmentos STRONG de encabezado completo exigidos por el briefing original, aunque el texto del encabezado coincidía.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10411aa2c78a8804c39f",
+   "sourceHash": "10411aa2c78a8804c39fdb8d52baadd0a742b4ebb978d950955d98dd4a7bff96",
+   "text": "Los cuatro defectos sustanciales de párrafo perdieron su STRONG al restaurarse los 19 nodos y los 3 anclajes del cuerpo: esas reconstrucciones generaron árboles de texto plano.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6a563765172f48d330ff",
+   "sourceHash": "6a563765172f48d330ff2a7a6ce7103e9fac8630210173afbaa0412781132e2c",
+   "text": "Se aplana el STRONG anidado idéntico y redundante. NO se omite ningún BR: el único salto tratado antes como BR final vacío demostró ser significativo según la fuente original y se restaura. Se conservan los superíndices ordinales. Sin sustitución de negrita en nodos completos, sin encabezados duplicados, sin texto nuevo y sin saltos de línea manuales en el texto.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1eaa40d3c8aa9c62019",
+   "sourceHash": "b1eaa40d3c8aa9c620194e222c2469fba683efe5171c2384ec20ec92a325c662",
+   "text": "Una comida vegetariana servida con arroz, verduras y currys.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5babcaa385cf1bd25983",
+   "sourceHash": "5babcaa385cf1bd2598362db73c94cab2f2d3c9a24d5f7c521df78146dd892dc",
+   "text": "Descubra el Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b357c75140b21ee9267e",
+   "sourceHash": "b357c75140b21ee9267e99e96e7cbd90839806cc97075e680a2624dc5db52682",
+   "text": "Programas de Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd8d79a3239b4cbd6370",
+   "sourceHash": "fd8d79a3239b4cbd6370c4df8f9862d7b448ef4a52cdddfceb89004ccfad92f9",
+   "text": "Un paciente sentado entre dos terapeutas durante un tratamiento ayurvédico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e07ad489897aa4c2c37",
+   "sourceHash": "5e07ad489897aa4c2c37ab89513ecde1c93f91559d246068302480590c1381de",
+   "text": "Una mujer practicando yoga sobre una esterilla.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3eca470a849508d92ca9",
+   "sourceHash": "3eca470a849508d92ca9378053018e5a89e8ac13ce81af69681b26167a329375",
+   "text": "Productos ayurvédicos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dcaab2662a8680db59c",
+   "sourceHash": "3dcaab2662a8680db59c2e5e2ec337a14c7289a9afce536381d32aa3c6651759",
+   "text": "Una selección de productos Kairali expuestos al aire libre.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c9dd5736f94d731419f",
+   "sourceHash": "9c9dd5736f94d731419f4d076413bb2388ff2af55bde6dbdea6d495bb914035f",
+   "text": "family-04/LAKSHYA-RECOVERED-NATIVE-PROMPT.txt",
+   "status": "translated",
+   "unchangedReason": "File path; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_489d1ee17cce0b5577de",
+   "sourceHash": "489d1ee17cce0b5577de454ef261e016a11a0ec73cd962be279c79f557b1a8bc",
+   "text": "Los siete detalles históricos aceptados anteriormente, la base de los nueve históricos y su reparación combinada, la corrección de ajuste/href/en línea, la corrección de saltos significativos y los 136 conjuntos de datos previos no se han modificado.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4c6604104512a9934d0f",
+   "sourceHash": "4c6604104512a9934d0fbcdaf828537ae7f1c927c816276f4dfea76f8caf1371",
+   "text": "La autenticidad del archivo se registra únicamente mediante el SHA exacto. No se afirma ninguna verificación médica, organizativa ni de marketing actual. La marca de tiempo de captura de 2016 NO es una fecha del evento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297b1c745d394c1174cd",
+   "sourceHash": "297b1c745d394c1174cdfcd311e52003a497ffa94fa89116f01d81210c24eab2",
+   "text": "Retiro pasado, conservado como referencia histórica. El año del evento no se ha verificado.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c62df69c6a159cf1039",
+   "sourceHash": "1c62df69c6a159cf1039d79cfb3a8823086b899d07909411aa85398c456d8dcf",
+   "text": "Esta sección trata del retiro de siete días de tratamientos ayurvédicos y ejercicios de yoga en The Ayurvedic Healing Village.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8cdf0f53fcef7f91f28c",
+   "sourceHash": "8cdf0f53fcef7f91f28c39b9e81b43ddf86e98819c77e446512ca61a8d52e237",
+   "text": "Solo se aplican tres correcciones recuperadas documentadas: title, description y openGraph.description. Todos los demás valores de metadatos originales y la asignación social de fuente propia se conservan a la espera de la integración final habitual.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab98b881193293f7a40b",
+   "sourceHash": "ab98b881193293f7a40bd0bf09c9f2b402980d6b901cb50dbd51c573ac6b66d5",
+   "text": "El valor original erróneo «Animal Husbandry» se conserva aquí de forma privada junto con su evidencia de corrección.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

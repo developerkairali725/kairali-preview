@@ -1,0 +1,229 @@
+{
+ "batchId": "b-0575",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_72fcbb5be6c6949df857",
+   "sourceHash": "72fcbb5be6c6949df8570f555b15d2b31a2e6f23aabcf920997737a7613de7be",
+   "text": "Скульптура из пяти переплетённых колец на стадионной беговой дорожке на закате",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_54a0aed6532ee04f2d03",
+   "sourceHash": "54a0aed6532ee04f2d0302aff0ab0fdc95729bffc2a1ee0b3c2e49c7af7c504a",
+   "text": "(спортсмены Олимпийских и Паралимпийских игр)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_662c6794c0142e895d26",
+   "sourceHash": "662c6794c0142e895d264a8d45a3eba6b82d344edb298635f7e1501ab717ff4b",
+   "text": "Солдаты в камуфляжной форме и ботинках, стоящие в строю, — вид ниже колен",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1f3d8c26eecd48f2db4",
+   "sourceHash": "f1f3d8c26eecd48f2db48128d4aec032681908697a0db7337906d3a4309781e3",
+   "text": "(для всех пакетов)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_62dd37d1460bad753102",
+   "sourceHash": "62dd37d1460bad7531024601661020964cd5274e0d1790f15c4ffae1fe60827f",
+   "text": "Белое абстрактное геометрическое произведение искусства из Дрездена, Германия",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55d612b5425365ce9727",
+   "sourceHash": "55d612b5425365ce97273ffbaf5f720d54f14a68bc0117f2108f26888388cbbb",
+   "text": "Канал доставки очищает SVG: удаляет элемент style и внедряет манифест метаданных C2PA. Сначала я восстановил побайтно идентичный оригинал — 7790 байт, SHA256 в точности совпадает с записанным оригиналом, — и он ВСЁ РАВНО отображался чёрным, поскольку сервер отдавал очищенную версию размером 15321 байт. Побайтно идентичный сохранённый SVG не может пройти через доставку без изменений, поэтому одно лишь восстановление файла не могло исправить цвета.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical/QA note, not patient-facing content; translated as-is."
+   ]
+  },
+  {
+   "id": "t_9293c60558f3e91d3bc6",
+   "sourceHash": "9293c60558f3e91d3bc65eb2c97b07530ad174be1699e6f2ad0e2aa492c581e9",
+   "text": "Идентичный viewBox 0 0 2993.4 1950.82, идентичные width/height, все 28 контуров (path) и их точные значения d не изменены, атрибуты class сохранены, применены только три исходных цвета. Ничего не перерисовано, не перекрашено и не переоформлено — атрибут fill просто содержит то же правило, которое удаляет санитайзер.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical/QA note, not patient-facing content."
+   ]
+  },
+  {
+   "id": "t_a87a51c358b3dc3514d8",
+   "sourceHash": "a87a51c358b3dc3514d882949cbae1ce4bafd299fe9398167debb910c24c6afc",
+   "text": "Сравнение по отрисовке, а не по хешам или размерам: отдаваемый SVG отрисовывается на canvas, и его пиксели анализируются. Три преобладающих непрозрачных цвета — 234,175,30 / 137,152,53 / 188,131,44, то есть ровно #EAAF1E, #899835 и #BC832C, — а чёрного больше нет. До исправления единственным непрозрачным цветом был 0,0,0.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical/QA note, not patient-facing content."
+   ]
+  },
+  {
+   "id": "t_72e261354cac1a3c66bd",
+   "sourceHash": "72e261354cac1a3c66bdb54a205bb655f743e37349d55c940c22e50804f9a963",
+   "text": "Откройте для себя сочетание воображения и профессионализма вместе с Études — катализатором архитектурных преобразований, обогащающих окружающий нас мир.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be third-party template placeholder copy (Études architecture studio), unrelated to Kairali; flag for removal."
+   ]
+  },
+  {
+   "id": "t_090aee4cb58becb346a5",
+   "sourceHash": "090aee4cb58becb346a5ef95d5b9890a5befe564e89fd78cfc9a30dc3822e58a",
+   "text": "Наши услуги",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_caa218039a689075343d",
+   "sourceHash": "caa218039a689075343d1a680bb157888cc5e4094b5e53fc80792503d7362245",
+   "text": "Познакомьтесь с нашей командой",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_784af458e65868a3b04b",
+   "sourceHash": "784af458e65868a3b04b7e1b14f7084481240cbc41c7ccb46d391f0aecc56975",
+   "text": "Наш обширный штат специалистов объединяет разноплановую команду — от опытных архитекторов до известных инженеров.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder copy unrelated to Kairali; flag for removal."
+   ]
+  },
+  {
+   "id": "t_4e3bf250a5b7026ba7e8",
+   "sourceHash": "4e3bf250a5b7026ba7e82de8704dcb414e9506a5f2a4d1ffbdf46a0405e221da",
+   "text": "Francesca Piovani",
+   "status": "translated",
+   "unchangedReason": "Personal name kept verbatim.",
+   "issues": [
+    "Placeholder template name."
+   ]
+  },
+  {
+   "id": "t_2aa5f616e0d39d7e69ef",
+   "sourceHash": "2aa5f616e0d39d7e69ef9f0d462693ca692673cb192f9431f234b07d7c1790d4",
+   "text": "Основатель, генеральный директор и архитектор",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6313d9b7fc1acd8faa37",
+   "sourceHash": "6313d9b7fc1acd8faa37e937df1aecfec48127f11e297c3286f70713f56fbe60",
+   "text": "Rhye Moore",
+   "status": "translated",
+   "unchangedReason": "Personal name kept verbatim.",
+   "issues": [
+    "Placeholder template name."
+   ]
+  },
+  {
+   "id": "t_e26e2ef076b3f632885d",
+   "sourceHash": "e26e2ef076b3f632885d55412ca604114da8ba917d69d6a3e9faa3b61513c9a1",
+   "text": "Руководитель инженерного отдела",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e6619db4e7fb1ff9e60f",
+   "sourceHash": "e6619db4e7fb1ff9e60f608a8c356cc7e88f95af6538d52fa6d2958aecd5262c",
+   "text": "Helga Steiner",
+   "status": "translated",
+   "unchangedReason": "Personal name kept verbatim.",
+   "issues": [
+    "Placeholder template name."
+   ]
+  },
+  {
+   "id": "t_861eea32ae9990e1fda0",
+   "sourceHash": "861eea32ae9990e1fda0eed4a52552c330f0d17043b515a0cce1792aa0ba4e49",
+   "text": "Архитектор",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ce46daf62835f3db3c7",
+   "sourceHash": "5ce46daf62835f3db3c794b136c9be1266e8e64219fe7bd814a1e191601d8ec4",
+   "text": "Ivan Lawrence",
+   "status": "translated",
+   "unchangedReason": "Personal name kept verbatim.",
+   "issues": [
+    "Placeholder template name."
+   ]
+  },
+  {
+   "id": "t_0a6f51e8898aea307380",
+   "sourceHash": "0a6f51e8898aea3073805197fb1ca622a908f7fac07e587e0c7c77aab295d86b",
+   "text": "Руководитель проекта",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_efd9e463e0e7addeee8a",
+   "sourceHash": "efd9e463e0e7addeee8a2ce6f09050cb4cf2d0793cb5940d5fbe1310f752684f",
+   "text": "Мы сотрудничали с одними из лучших компаний.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder copy; flag for removal."
+   ]
+  },
+  {
+   "id": "t_f09230f091afc1f9c6a2",
+   "sourceHash": "f09230f091afc1f9c6a2ed8b5f0559139bc6967825586ef228168fd4537f8174",
+   "text": "Как вы работаете над небольшими проектами?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4fbd1e5e58ace58f96a",
+   "sourceHash": "f4fbd1e5e58ace58f96ad0ae1ec569a3a2c4890ce4b50c7356597c52b3e4a414",
+   "text": "Études предлагает комплексные решения в области консалтинга, управления, проектирования и исследований. Наша цель — быть в авангарде архитектурных инноваций и объединять мировое сообщество архитекторов и энтузиастов, которых вдохновляет создание пространств. Каждый архитектурный проект — это возможность формировать будущее.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Template placeholder copy unrelated to Kairali; flag for removal."
+   ]
+  },
+  {
+   "id": "t_d569bcad8793a59c442d",
+   "sourceHash": "d569bcad8793a59c442d4dae9a082e7516c2cd447209745ea6f8e480252a054f",
+   "text": "Кто стоит за Études?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be54d2d01d11a092958d",
+   "sourceHash": "be54d2d01d11a092958d9b7f745eea10fa64d7a09ead2a2baed5480783f3e1b0",
+   "text": "Я хотел бы познакомиться с коллегами-архитекторами. Как это сделать?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

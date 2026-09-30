@@ -271,5 +271,26 @@
     "type": "handover",
     "file": "docs/reports/2026-07-22-daily-close.md",
     "supersedes": "RPT-20260721-HANDOVER-MIDNIGHT-CLOSE"
+  },
+  {
+    "report_id": "RPT-20260919-AHV-CI-DIAGNOSIS",
+    "date": "2026-09-19 15:42:33 IST",
+    "type": "audit",
+    "file": "docs/reports/2026-09-19-ahv-ci-diagnosis.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260919-AHV-IMAGE-ALT",
+    "date": "2026-09-19 16:21:00 IST",
+    "type": "audit",
+    "file": "docs/reports/2026-09-19-ahv-image-alt.md",
+    "supersedes": null
+  },
+  {
+    "report_id": "RPT-20260919-AHV-SWEEP-BASELINE",
+    "date": "2026-09-19 16:57:09 IST",
+    "type": "audit",
+    "file": "docs/reports/2026-09-19-ahv-sweep-and-the-stale-baseline.md",
+    "supersedes": null
   }
 ]

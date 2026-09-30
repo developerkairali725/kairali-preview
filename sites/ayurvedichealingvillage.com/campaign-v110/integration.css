@@ -1,0 +1,21 @@
+/* Integration only: supplier layout and palette remain authoritative. */
+#ahv-consent { bottom: calc(var(--mobile-bar-h, 0px) + 12px) !important; }
+#chatbase-bubble-button { bottom: calc(var(--mobile-bar-h, 0px) + 16px) !important; }
+.campaign-form form { display:grid; gap:18px; padding:26px; background:var(--cream); border:1px solid var(--line-ink); border-radius:var(--radius-card); }
+.campaign-form .field { display:grid; gap:6px; }
+.campaign-form input:not([type=checkbox]), .campaign-form textarea { width:100%; min-height:54px; padding:12px 14px; font:inherit; border:1px solid var(--muted); border-radius:4px; background:white; color:var(--ink); }
+.campaign-form .consent { display:flex; gap:12px; align-items:flex-start; font-size:16px; }
+.campaign-form input[type=checkbox] { margin-top:5px; min-width:20px; min-height:20px; }
+.campaign-form .enquiry-error { border-left:3px solid var(--gold); padding-left:12px; }
+
+.campaign-approved-terms { padding-block:40px; }
+.campaign-approved-terms li { margin-block:12px; }
+
+/* Keep the main-site contact pair clear of the supplier mobile CTA bar. */
+body[data-ahv-campaign] #ahv-contact-controls { bottom:max(24px,calc(var(--mobile-bar-h,0px) + 16px)); }
+@media(max-width:699px) { body[data-ahv-campaign] #ahv-contact-controls { bottom:calc(max(60px,var(--mobile-bar-h,0px)) + 16px); } }
+
+/* Native footer keeps its own typography and readable links in the campaign reset. */
+.ahv-campaign-footer { font-family:Arial,sans-serif; font-size:16px; line-height:1.6; padding-bottom:var(--mobile-bar-h,0px); }
+.ahv-campaign-footer footer a { color:inherit; }
+.ahv-campaign-footer footer input { color:var(--ahv-footer-input-ink); background:var(--ahv-footer-input-paper); }

@@ -1,0 +1,701 @@
+{
+  "_why": "AHV FAQ content pass 2026-09-23 (D-20260922-36 owner approval of the 2026-09-23 search brainstorm §5.3/§5.4). Applies the F1-F38 proofread findings to the 44 as-served Q&A and drafts the 25 missing questions from §5.3, strictly from the three fact-source files (rates reckoner + physician roster; programme/attraction/villa/accreditation/about-us/online-consultation datasets; policy/travel/article records). File dated 2026-09-23 to match the sibling docs (as-served extraction, brainstorm) for the review slot; generated 2026-09-22 per the actual session clock, same convention the brainstorm doc itself notes for its own filename. Clinical register lock (KTAHV) applied throughout: patient/physician/programme/Panchakarma register only; banned words removed on sight (guests, retreat, luxury, journey, wellness consultants, etc.); locked contacts (info@kairali.com, WhatsApp +91 92898 38797, hospital phone +91 9555 156 156) used only where already correct in source. Two open, non-per-question fixes this file cannot carry (flagged in the human report): the topic headings 'Treatments & Programs' and 'For International Guests' need a dataset-level rename to 'Treatments & Programmes' / 'For International Patients' outside the answer text itself.",
+  "generatedAt": "2026-09-22 21:40:00 IST",
+  "edits": {
+    "q-01": {
+      "summary": "What makes Kairali different from other Ayurvedic hospitals and centres?",
+      "answerHtml": "<p>Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital, with treatment plans led by BAMS-qualified physicians. The campus draws on four generations of the founding family's Ayurvedic practice, and patients stay, receive treatment and dine within one residential campus in Palakkad, Kerala.</p><p>See our <a href=\"/accreditations/\">accreditations</a> and <a href=\"/our-villas/\">villa options</a> for more detail.</p>",
+      "findings": [
+        "F1",
+        "F2"
+      ],
+      "signoff": null,
+      "flags": [
+        "Rewritten topic per F1 to remove all seven competitor comparisons (HARD GATE 13); the original's 'Laurie Baker' architect claim was dropped — not found in the about-us source, so it is not carried forward (HARD GATE 6)."
+      ]
+    },
+    "q-02": {
+      "summary": "What accreditations does Kairali hold?",
+      "answerHtml": "<p>Kairali – The Ayurvedic Healing Village is NABH-accredited and ISO-certified for its operating standards, and holds a Green Leaf certification from the Kerala Tourism Department for its Ayurvedic and eco-friendly practices.</p><p>See the full list on our <a href=\"/accreditations/\">accreditations page</a>.</p>",
+      "findings": [
+        "F1"
+      ],
+      "signoff": null,
+      "flags": [
+        "New question replacing the old comparative Q2 (F1); facts drawn only from /accreditations/."
+      ]
+    },
+    "q-03": {
+      "summary": "What is Kairali's approach to Ayurvedic treatment?",
+      "answerHtml": "<p>Every programme at Kairali begins with a physician assessment of your constitution, followed by a personalised plan of therapies, diet and daily practice. Treatment is delivered by BAMS-qualified physicians across the hospital's full range of Ayurvedic programmes.</p><p>See the <a href=\"/ayurvedic-treatments/\">Ayurvedic treatment programmes</a>.</p>",
+      "findings": [
+        "F1",
+        "F3"
+      ],
+      "signoff": null,
+      "flags": [
+        "Replaces the old Q3, which named a competitor and claimed unverified 'on-site herbal preparation' — dropped per F1's instruction to remove facts not in the sources."
+      ]
+    },
+    "q-04": {
+      "summary": "What is included during a stay at Kairali?",
+      "answerHtml": "<p>A stay includes your villa accommodation, prescribed daily therapies, follow-up consultations with our physicians, and organic vegetarian meals, all on one residential campus. Patients stay, are treated and dine within the same grounds rather than travelling between separate facilities.</p><p>See what each <a href=\"/our-villas/\">villa type</a> includes.</p>",
+      "findings": [
+        "F1",
+        "F6"
+      ],
+      "signoff": null,
+      "flags": [
+        "'Guests stay, eat, heal, and recover' rewritten to patient register (F6); no competitor named."
+      ]
+    },
+    "q-05": {
+      "summary": "Can I choose a shorter or longer programme at Kairali?",
+      "answerHtml": "<p>Yes. Kairali's programmes range from a 3-night preventive stay to 21-night programmes for chronic conditions, so your physician can recommend a duration that matches your health goals.</p><p>Browse the full range on our <a href=\"/all-programs/\">programmes page</a>.</p>",
+      "findings": [
+        "F1",
+        "F7"
+      ],
+      "signoff": null,
+      "flags": [
+        "'shorter wellness getaways' (leisure framing) replaced; no competitor named. Duration figures match the programme dataset minimums (3–21 nights)."
+      ]
+    },
+    "q-06": {
+      "summary": "Who leads treatment planning at Kairali?",
+      "answerHtml": "<p>Treatment plans are led by BAMS-qualified Ayurvedic physicians, who assess your condition at consultation and review your progress throughout your stay. The Chief Physician & Head of Department oversees medical supervision across all programmes.</p><p>For admission enquiries, please contact the <a href=\"/contact-us/\">patient care team</a>.</p>",
+      "findings": [
+        "F1"
+      ],
+      "signoff": null,
+      "flags": [
+        "Title 'Chief Physician & Head of Department' matches the verified physician-roster source; do not shorten to 'Chief Physician' only."
+      ]
+    },
+    "q-07": {
+      "summary": "What is Kairali's history in Ayurveda?",
+      "answerHtml": "<p>Kairali is a family-run Ayurvedic institution; its Managing Director, K.V. Ramesh, represents four generations dedicated to Ayurvedic practice. Kairali – The Ayurvedic Healing Village in Palakkad, Kerala is the group's residential hospital campus.</p><p>Read more on our <a href=\"/about-us/\">About Us page</a>.</p>",
+      "findings": [
+        "F1"
+      ],
+      "signoff": null,
+      "flags": [
+        "Deliberately omits a founding year: the mined sources show at least four conflicting figures (1908, 1989, '115+ years', '25 years' — physician-roster mine §6-A.4). Owner/Abilash must settle one before any founding date is published here."
+      ]
+    },
+    "q-08": {
+      "summary": "What is Ayurveda, and how can it benefit me?",
+      "answerHtml": "<p>Ayurveda is a classical Indian system of medicine whose texts date back over two thousand years. It focuses on balance between body, mind and spirit through personalised therapies, nutrition, herbal treatments and lifestyle practices, and aims to address the underlying causes of imbalance rather than only symptoms.</p>",
+      "findings": [
+        "F8"
+      ],
+      "signoff": null,
+      "flags": [
+        "'5,000-year-old' replaced with the task's advisory phrasing per F8; confirm final wording with Dr. Deepu John/owner before publishing — the dating claim is contested and not independently sourced in our three fact files."
+      ]
+    },
+    "q-09": {
+      "summary": "How can I incorporate Ayurvedic principles into my daily life?",
+      "answerHtml": "<ul><li>Wake up before sunrise and sleep by 10 PM</li><li>Practice mindful eating with fresh, seasonal foods</li><li>Stay hydrated with warm water throughout the day</li><li>Incorporate gentle movement like yoga or walking</li><li>Practice oil pulling and self-massage (abhyanga) with appropriate oils</li><li>Adjust your diet according to your dominant dosha (body constitution)</li></ul><p>Our physicians provide personalised recommendations during your stay.</p>",
+      "findings": [
+        "F9",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "List markup added; the brainstorm (§5.4 F9) flagged that whether the live FAQ view renders <ul><li> is UNVERIFIED — confirm in the build PR.",
+        "'Our wellness consultants' replaced with 'Our physicians' (the site's actual role, per the roster; 'wellness consultants' is a banned people-name per this task's register lock)."
+      ]
+    },
+    "q-11": {
+      "summary": "Are Ayurvedic doctors real doctors?",
+      "answerHtml": "<p>Yes. Ayurvedic physicians in India complete a five-and-a-half-year BAMS (Bachelor of Ayurvedic Medicine and Surgery) degree that includes clinical training in Ayurvedic and modern medical practice. Many pursue further specialisation (MD in Ayurveda) over an additional three years. Ayurvedic medicine is recognised by the WHO and regulated in India by the Ministry of AYUSH.</p><p>Read more on our <a href=\"/knowledge-centre/\">Knowledge Centre</a>.</p>",
+      "findings": [
+        "F10"
+      ],
+      "signoff": null,
+      "flags": [
+        "The original 'Are Ayurvedic Doctors Real Doctors?' blog link is not a confirmed route in route-manifest.json; replaced with the confirmed /knowledge-centre/ route per F10's suggested fix."
+      ]
+    },
+    "q-13": {
+      "summary": "What treatments and programmes do you offer at Kairali?",
+      "answerHtml": "<p>Kairali offers Ayurvedic programmes tailored to your constitution and health goals, each beginning at a physician-set minimum stay:</p><ul><li>Panchakarma & Detoxification — from 14 nights</li><li>Stress Relief & Mental Wellness — from 7 nights</li><li>Chronic condition support (arthritis, diabetes, hypertension, respiratory, neurological) — from 7 to 14 nights depending on the condition</li><li>Weight Management & Metabolism — from 14 nights</li><li>Women's Hormonal Balance & Endocrine Therapy — from 21 nights; Postpartum Rejuvenation — from 14 nights</li><li>Musculoskeletal Care (back, neck, joints, spine) — from 14 nights</li><li>Skin & Chronic Skin Conditions — from 14 nights</li><li>Immunity Enhancement — from 7 nights</li></ul><p>Each programme includes daily prescribed therapies, a personalised diet, and yoga and meditation sessions. Internal herbal medicines, lab tests and specialty therapies are charged as needed.</p><p>See full programme details on our <a href=\"/all-programs/\">programmes page</a>.</p>",
+      "findings": [
+        "F11",
+        "F35"
+      ],
+      "signoff": "Dr. Deepu John",
+      "flags": [
+        "Durations restated to the minimum-nights figures in the programme dataset/reckoner (the original's day-ranges did not match); the original 'Women's Wellness (7-14 days)' actually spans two different programmes at 14 and 21 nights minimum — split out.",
+        "US 'programs' corrected to 'programmes' throughout, per the register lock."
+      ]
+    },
+    "q-14": {
+      "summary": "How long should I stay for effective results?",
+      "answerHtml": "<p>Recommended stay length depends on your programme and is set by the physician at consultation:</p><ul><li>3 nights — the Preventive Health & Regenerative programme, an introduction to Ayurveda</li><li>7 nights — stress relief, sleep, immunity and several other programmes</li><li>14 nights — Panchakarma, musculoskeletal, skin, weight-management and most chronic-condition programmes</li><li>21 nights — hormonal/endocrine and addiction-recovery programmes</li></ul><p>Our physicians confirm the exact duration for your condition at consultation.</p>",
+      "findings": [
+        "F12",
+        "F38"
+      ],
+      "signoff": "Dr. Deepu John",
+      "flags": [
+        "The original claimed '21 days for comprehensive Panchakarma' — the dataset minimum for Panchakarma is 14 nights; 21 nights belongs to the hormonal/endocrine and addiction-recovery tiers. Corrected."
+      ]
+    },
+    "q-15": {
+      "summary": "Will I experience any side effects during treatment?",
+      "answerHtml": "<p>Some patients notice mild, temporary effects during the first few days, such as headaches, tiredness or changes in digestion. Tell your physician or nurse about any new or worsening symptom; they monitor your progress closely and adjust your plan where needed.</p>",
+      "findings": [
+        "F13",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-16": {
+      "summary": "What types of accommodation do you offer?",
+      "answerHtml": "<ul><li><strong>Deluxe Villa</strong> — comfortable rooms with garden views, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Classic Villa</strong> — Kerala-style architecture, air conditioning and an attached bathroom with hot and cold water</li><li><strong>Royal Villa</strong> — larger villas with additional space and amenities</li><li><strong>Maharaja Suite</strong> — Suite 1001 has a king bedroom and a separate living room. Suite 1002 has two bedrooms: one with a king bed and one with twin beds. Each room in both suites has its own bathroom and wardrobe</li></ul><p>All categories provide hairdryers. All villas are built to Vastu principles amid the campus gardens.</p><p>See every villa on our <a href=\"/our-villas/\">villas page</a>.</p>",
+      "findings": [
+        "F14",
+        "F15"
+      ],
+      "signoff": null,
+      "flags": [
+        "Dropped the original 'private verandas' claim for Classic Villa — not found in the villa dataset; confirm with facilities before restoring.",
+        "Used 'Vastu' spelling (matches our-villas-data.js 'Vastu-Inspired Villas'); the about-us source instead spells it 'Vaastu Shastra' — F15 flags this as UNVERIFIED which the brand manual prefers; pick one sitewide."
+      ],
+      "ownerFactUpdate": "24 September 2026: owner confirmed 1001 king bedroom plus living room; 1002 king and twin bedrooms; bathroom and wardrobe in each room; hairdryers in all categories. Other factual and clinical sign-off flags remain."
+    },
+    "q-18": {
+      "summary": "What's included in the accommodation package?",
+      "answerHtml": "<p>Packages include:</p><ul><li>Accommodation in your chosen villa category</li><li>Three organic, dosha-specific vegetarian meals daily</li><li>Initial and follow-up consultations with our physicians</li><li>Prescribed daily therapies as per your programme</li><li>Herbal medicines and formulations during your stay</li><li>Daily yoga and meditation sessions</li><li>Access to the hospital's facilities</li><li>Weekly workshops, cooking classes and farm walks</li><li>Wi-Fi in common areas</li></ul><p>Additional services at extra cost include airport/railway transfers, laundry, specialised excursions, private yoga/meditation sessions and treatments beyond your prescribed schedule.</p>",
+      "findings": [
+        "F16",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "'Cultural activities and cooking demonstrations' restated as weekly per the rates reckoner's Learning & Cultural Immersion inclusion ('once a week'); confirm exact cadence with the programmes team."
+      ]
+    },
+    "q-19": {
+      "summary": "Can I see a detailed rate breakdown?",
+      "answerHtml": "<p>Yes. Our rate chart lists prices by villa type (Deluxe, Classic, Royal, Maharaja Suite) for single or double occupancy. For a detailed quote including meals and additional treatments, contact the patient care team at +91 9555 156 156.</p>",
+      "findings": [
+        "F17"
+      ],
+      "signoff": null,
+      "flags": [
+        "Confirm the current published rate-chart location/link before this ships — the reckoner is the internal source of truth and is not itself a public page."
+      ]
+    },
+    "q-22": {
+      "summary": "Is alcohol or coffee permitted during the treatment period?",
+      "answerHtml": "<p>We ask you not to drink alcohol during your treatment period; the campus is alcohol-free and caffeine-free. Alcohol can interact with many medicines, so tell your physician if you usually drink alcohol so your care can be planned safely.</p>",
+      "findings": [
+        "F18",
+        "F19"
+      ],
+      "signoff": null,
+      "flags": [
+        "'Our retreat' (banned word) replaced with 'The campus' — not explicitly in F18/F19's wording but required by the register lock."
+      ]
+    },
+    "q-24": {
+      "summary": "Do you offer transportation services?",
+      "answerHtml": "<p>Yes. Pick-up and drop-off is available from nearby airports and railway stations by AC vehicle (MPV or Sedan (premium)), one way, valid 1 Oct 2026 – 30 Sep 2027, inclusive of 5% GST:</p><ul><li>Palakkad Railway Station (25 km) — ₹3,900 / ₹13,649</li><li>Coimbatore Airport (75 km) — ₹6,775 / ₹23,711</li><li>Cochin / Calicut Airport (125 km) — ₹7,950 / ₹27,824</li></ul><p>Please book at least 48 hours in advance with the patient care team.</p>",
+      "findings": [
+        "F21",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "Renamed 'Luxury Sedan' to 'Sedan (premium)' — the printed tariff PDF uses the banned word 'luxury' as a vehicle-class name; flagging the conflict for the tariff owner (per RATES_RECKONER FLAGS) rather than silently keeping banned copy.",
+        "The '48 hours advance booking' figure is carried unchanged from the existing FAQ; not found in the reckoner — confirm with the travel desk."
+      ]
+    },
+    "q-25": {
+      "summary": "What is the best way to reach Kairali from major Indian cities?",
+      "answerHtml": "<p>From Delhi, Mumbai, Bengaluru or Chennai: fly to Coimbatore and use our airport transfer service. From within Kerala: take a train to Palakkad Junction, or drive directly to the hospital — we provide detailed directions upon booking.</p>",
+      "findings": [
+        "F22"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-26": {
+      "summary": "How far is Kairali from nearby tourist attractions?",
+      "answerHtml": "<p>Distances vary by attraction; here are a few, as currently listed on our attractions pages:</p><ul><li>Silent Valley National Park — 80 km</li><li>Parambikulam Wildlife Sanctuary — 100 km</li><li>Tipu's Fort — 14 km</li></ul><p>See the full list, organised by distance: <a href=\"/attractions-under-10kms/\">under 10 km</a>, <a href=\"/attractions-15kms-and-below/\">15 km and below</a>, <a href=\"/attractions-25kms-to-50kms/\">25–50 km</a> and <a href=\"/attractions-above-50kms/\">above 50 km</a>. We can arrange day trips to these locations upon request.</p>",
+      "findings": [
+        "F37"
+      ],
+      "signoff": null,
+      "flags": [
+        "Original figures for Malampuzha Dam (46 km), Parambikulam ('Tiger Reserve', 68.8 km) and Athirappilly Waterfalls (123 km) do not match, or are absent from, the current attractions dataset (attractions-family-data.js); dropped/corrected per the single live source. 'Palakkad Fort' (10.8 km) may be the same place as the dataset's 'Tipu's Fort' (14 km) — confirm the name/distance with the owner before restoring."
+      ]
+    },
+    "q-27": {
+      "summary": "What is the climate like at Kairali throughout the year?",
+      "answerHtml": "<p>Kerala has a warm, tropical climate with four seasons:</p><ul><li><strong>Summer (March–May)</strong> — 28–38°C; warm, sunny days, good for pitta-pacifying treatments</li><li><strong>Monsoon (June–September)</strong> — 23–32°C; regular rainfall, the traditional season for intensive Panchakarma</li><li><strong>Post-monsoon/Autumn (October–November)</strong> — 24–32°C; pleasant, good for rejuvenation therapies</li><li><strong>Winter (December–February)</strong> — 20–30°C; mild days and cooler evenings, good for vata-balancing therapies</li></ul>",
+      "findings": [
+        "F23"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-28": {
+      "summary": "When is the best time to visit for specific treatments?",
+      "answerHtml": "<p>While treatments are beneficial year-round, monsoon (June–September) is traditionally best for intensive Panchakarma and detoxification, winter (December–February) suits rejuvenation and immunity programmes, and summer (March–May) suits pitta-pacifying and stress-management treatments. Our physicians advise on the best timing for your condition.</p>",
+      "findings": [
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "'Our doctors can advise' unified to 'Our physicians advise' per F38, even though this line wasn't in F23's scope — F38 covers all answers."
+      ]
+    },
+    "q-30": {
+      "summary": "What clothing is appropriate for treatments?",
+      "answerHtml": "<p>Wear light, loose-fitting cotton clothing that can be easily washed. We provide disposable loincloths and bathrobes for treatments. Oil treatments may stain clothing, so bring items you do not mind getting oily.</p>",
+      "findings": [
+        "F24"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-32": {
+      "summary": "Are Ayurvedic treatments covered by insurance?",
+      "answerHtml": "<p>Kairali is not currently empanelled with Ayushman Bharat (PM-JAY), CGHS or other government schemes, and we do not offer cashless tie-ups with private insurers. Many patients claim reimbursement afterwards by submitting our invoices and medical documents to their insurer.</p><p>We can provide detailed invoices, treatment summaries, prescriptions and admission/discharge notes to support a reimbursement claim, and can guide you on the documents insurers typically ask for. Final approval always depends on your insurer's policy.</p>",
+      "findings": [
+        "F25"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-33": {
+      "summary": "Can you help with insurance documentation?",
+      "answerHtml": "<p>Yes. The patient care team provides detailed invoices, treatment summaries and medical certificates that meet the requirements of Indian and international insurers. Let us know your insurance needs when booking so we can prepare the right documentation.</p>",
+      "findings": [
+        "F38"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-34": {
+      "summary": "What payment methods do you accept?",
+      "answerHtml": "<p>We accept major credit and debit cards (Visa, Mastercard, American Express), bank transfers, cash (Indian Rupees, Euros or US Dollars) and UPI payments for Indian residents.</p>",
+      "findings": [
+        "F26"
+      ],
+      "signoff": null,
+      "flags": [
+        "Advance-payment percentage removed: the old FAQ said 50%, the rates reckoner says a 40% deposit, and the live cancellation-and-refund-policy page says 100% — three conflicting figures. Owner must confirm the correct current policy before any percentage is restated (F26: 'Owner confirms the figure or the line goes').",
+        "cash currencies per RATES_RECKONER Terms (local currency, Euros or US Dollars)"
+      ]
+    },
+    "q-35": {
+      "summary": "What special considerations do you have for senior patients?",
+      "answerHtml": "<p>Routine assistance, such as help walking or travelling by wheelchair between your room and the treatment centre, is available without requiring a dedicated attendant. If you need dedicated nursing or attendant support, this can be arranged at an additional cost based on the level of assistance required. Please share your needs before admission so the team can confirm suitable arrangements and charges.</p>",
+      "findings": [
+        "F27",
+        "F28"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-36": {
+      "summary": "What visa requirements should international patients be aware of?",
+      "answerHtml": "<p>Most visitors to India need a tourist visa or e-visa; for Ayurvedic treatment, a Medical Visa or Medical Attendant Visa may be more appropriate, especially for stays over 60 days. Visa rules change, so check the official Indian visa portal (indianvisaonline.gov.in) or your local Indian consulate for current requirements before applying.</p><p>We can provide an invitation letter to support your visa application on request.</p>",
+      "findings": [
+        "F27",
+        "F29"
+      ],
+      "signoff": null,
+      "flags": [
+        "Removed the '4–6 weeks' processing-time estimate — not in our sources and visa timelines change; direct patients to the official portal instead, per F29."
+      ]
+    },
+    "q-38": {
+      "summary": "Can you accommodate extended stays for international patients?",
+      "answerHtml": "<p>Yes. Stays longer than 28 nights receive a 5% extended-stay discount on direct bookings, per our current rates. International patients often choose longer stays for chronic conditions that need more time to address.</p>",
+      "findings": [
+        "F27",
+        "F30"
+      ],
+      "signoff": null,
+      "flags": [
+        "Original 'special packages... additional cultural excursions' for 30+ day stays not found in the reckoner; replaced with the confirmed 5%-over-28-nights extended-stay discount. Owner/physician to confirm what an extended-stay programme includes if more detail is wanted."
+      ]
+    },
+    "q-39": {
+      "summary": "How do I continue my Ayurvedic routine after returning home?",
+      "answerHtml": "<p>On completing your programme, our physicians provide a personalised follow-up plan for diet and lifestyle, home-remedy recommendations, specific yoga and meditation practices, and herbal formulations you can continue at home (available for purchase). Online follow-up consultations are also available.</p>",
+      "findings": [
+        "F38"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-40": {
+      "summary": "Can I purchase Ayurvedic medicines to take home?",
+      "answerHtml": "<p>Yes. Our in-house pharmacy prepares authentic Ayurvedic formulations prescribed by our physicians, and can prepare a supply for you to continue treatment at home.</p>",
+      "findings": [
+        "F38"
+      ],
+      "signoff": null,
+      "flags": []
+    },
+    "q-41": {
+      "summary": "Do you offer follow-up consultations after I leave?",
+      "answerHtml": "<p>Your care includes four remote follow-up consultations with your treating physician within one year after discharge. Please schedule each appointment with your doctor; consultation dates are not fixed when you leave.</p>",
+      "findings": [
+        "F31",
+        "F38"
+      ],
+      "signoff": "Dr. Deepu John",
+      "flags": [
+        "The 1/3/6-month follow-up cadence is carried unchanged from the existing FAQ pending Dr. Deepu John's confirmation (F31); flagging rather than altering an unverified clinical schedule."
+      ]
+    },
+    "q-42": {
+      "summary": "Do you offer educational programmes about Ayurveda?",
+      "answerHtml": "<p>Yes. Weekly workshops on Ayurvedic principles and self-care, and Ayurvedic cooking classes, run during your stay. Kairali also runs five training courses for professionals, from a one-day workshop to the 20-day Advanced Ayurveda Lifestyle Consultant & Therapist Training.</p><p>See course details on our <a href=\"/ayurveda-training-programme/\">training programme page</a>.</p>",
+      "findings": [
+        "F34"
+      ],
+      "signoff": null,
+      "flags": [
+        "Original 'Daily lectures' and 'Intensive retreats' not confirmed against the reckoner's weekly-workshop inclusion; restated as weekly, and 'retreats' removed per the register lock. See the five confirmed courses named in full under Q44/F33."
+      ]
+    },
+    "q-43": {
+      "summary": "Where can I learn more about Ayurveda before my visit?",
+      "answerHtml": "<p>Visit our <a href=\"/knowledge-centre/\">Knowledge Centre</a> for articles on Ayurvedic principles, our <a href=\"/books/\">books</a> page, and our <a href=\"/video-gallery/\">video gallery</a> for educational videos.</p>",
+      "findings": [
+        "F32"
+      ],
+      "signoff": null,
+      "flags": [
+        "Dropped the 'free e-books', 'reading list on request' and 'monthly webinars' claims — not confirmed to exist as of this pass; only the three confirmed routes are linked."
+      ]
+    },
+    "q-44": {
+      "summary": "Do you offer any certification or training programmes for Ayurvedic practitioners?",
+      "answerHtml": "<p>Yes. Kairali offers five residential training courses at the hospital:</p><ul><li>One-Day Ayurveda Workshop (1 day)</li><li>Three-Day Ayurveda Certificate Program (3 days)</li><li>Five-Day Intensive Ayurveda Training Program (5 days)</li><li>Level One Advanced Ayurveda Training Program (10 days)</li><li>Advanced Ayurveda Lifestyle Consultant & Therapist Training (20 days)</li></ul><p>Contact the patient care team for upcoming schedules, or see the <a href=\"/ayurveda-training-programme/\">training programme page</a>.</p>",
+      "findings": [
+        "F33",
+        "F35",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "Course names kept exactly as their governed route/dataset titles (finder-additions.json), which use 'Program' — proper-noun course titles are not respelled to 'Programme'."
+      ]
+    },
+    "q-37": {
+      "summary": "What medical support is available during my stay?",
+      "answerHtml": "<p>An RMO and 24-hour care are available on-site, following the hospital’s NABH protocols.</p>",
+      "findings": [
+        "F27",
+        "F38"
+      ],
+      "signoff": null,
+      "flags": [
+        "F27's table listed Q35/Q36/Q38; the g-word also sat in Q37 (lead review 2026-09-23) — register fix only, no fact changed"
+      ]
+    }
+  },
+  "additions": [
+    {
+      "n": 1,
+      "topic": "Consultation & Admission",
+      "summary": "Are online consultations available for new patients?",
+      "answerHtml": "<p>Not sure where to start? Speak with Priya or our sales team, share your details for physician review, or request a free consultation by video call, phone or email—whichever is convenient. After you submit your request, a coordinator will contact you to arrange the consultation.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-datasets.md — /online-consultation/ record: eyebrow 'Online consultation · No charge', card badge 'No charge', trustLine 'A reply within one working day'"
+      ],
+      "signoff": null,
+      "needs": null
+    },
+    {
+      "n": 2,
+      "topic": "Consultation & Admission",
+      "summary": "What happens on the day I arrive — is there an admission process?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": null,
+      "needs": "Dr. Deepu John / patient care team to describe the arrival-day admission process (physician assessment sequence, paperwork, room allocation). Confirmed facts we do have but which don't answer the question alone: check-in from 12:00 noon (RATES_RECKONER); valid photo ID or passport required at check-in (cancellation-and-refund-policy page)."
+    },
+    {
+      "n": 3,
+      "topic": "Consultation & Admission",
+      "summary": "Should I send my medical reports before I come?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": null,
+      "needs": "Dr. Deepu John / patient care team to confirm whether pre-arrival medical reports are required or recommended — not stated anywhere in the three fact sources."
+    },
+    {
+      "n": 4,
+      "topic": "Treatments & Programs",
+      "summary": "Can I continue my current (allopathic) medicines during treatment?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John to confirm the policy on continuing allopathic medication during Ayurvedic treatment — not found in any of the three fact sources."
+    },
+    {
+      "n": 5,
+      "topic": "Accommodation & Facilities",
+      "summary": "Can a family member stay with me, and does a companion pay?",
+      "answerHtml": "<p>Yes, a family member can stay with you. An additional adult is charged for an extra bed and extra meals: the current rates (valid 1 Oct 2026 – 30 Sep 2027) list an extra bed at ₹3,000 / $43 / €38 per night and extra meals at ₹5,500 / $79 / €69 per night, on top of your programme rate.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Add-on prices (26-27 yoga lists)': Extra Bed ₹3,000/$43/€38; Extra Meals ₹5,500/$79/€69"
+      ],
+      "signoff": null,
+      "needs": null
+    },
+    {
+      "n": 6,
+      "topic": "Consultation & Admission",
+      "summary": "Is there a minimum or maximum age for treatment?",
+      "answerHtml": "<p>Bookings must be made by a patient aged 18 or above; minors are welcome when accompanied by a parent or legal guardian. There is no stated maximum age.</p><p>Under-5s stay complimentary, ages 5–12 are charged 50% for food and extra bedding, and over-12s are charged in full.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Age Policy' and 'Child Policy'"
+      ],
+      "signoff": "Dr. Deepu John",
+      "needs": null
+    },
+    {
+      "n": 7,
+      "topic": "Consultation & Admission",
+      "summary": "Can children be treated, or accompany a parent?",
+      "answerHtml": "<p>Children are welcome to accompany a parent or legal guardian (under-5s stay complimentary; ages 5–12 are charged 50% for food and extra bedding). Some areas of the campus are designed primarily for treatment and may not be child-friendly. Whether a child can receive Ayurvedic treatment depends on age and condition — confirm with our physicians before booking.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Child Policy'",
+        "faq-sources-datasets-2.md — cancellation-and-refund-policy: 'certain areas of our facility are designed primarily for wellness treatments and may not be child-friendly'"
+      ],
+      "signoff": "Dr. Deepu John",
+      "needs": null
+    },
+    {
+      "n": 8,
+      "topic": "Treatments & Programs",
+      "summary": "Is a doctor available at night and on weekends?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John / hospital administration to confirm physician on-call coverage at night and on weekends — only generic '24-hour assistance' (Q17, unverified per F36) and 'emergency medical services on call' (Q35) are recorded, neither of which confirms physician availability specifically."
+    },
+    {
+      "n": 9,
+      "topic": "Why Choose Kairali?",
+      "summary": "What does NABH accreditation mean for me as a patient?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John / compliance owner to supply a patient-facing explanation of what NABH accreditation certifies at Kairali (protocols, safety standards, inspection cadence). Beyond the general line on /accreditations/ ('compliance with global safety and quality standards'), no NABH-specific patient explanation exists in the mined sources."
+    },
+    {
+      "n": 10,
+      "topic": "Treatments & Programs",
+      "summary": "Which conditions do you NOT treat?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John to confirm the definitive list of conditions Kairali does not treat. A draft exclusion list (active TB, HIV/AIDS and other communicable disease, cancer-cure claims) exists in programme-search.js's DECLINE class, but that file is outside this task's three designated fact sources and needs clinical confirmation before publishing."
+    },
+    {
+      "n": 11,
+      "topic": "Treatments & Programs",
+      "summary": "Can I take Panchakarma if I have diabetes or high blood pressure?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John to confirm whether/how Panchakarma is adapted for patients with diabetes or hypertension — not stated in the mined sources. Kairali separately offers Diabetes & Metabolic Balance Therapy (14-night minimum) and Cardiovascular Health & Blood Pressure Treatment (14-night minimum) as their own programmes per the rates reckoner."
+    },
+    {
+      "n": 12,
+      "topic": "Treatments & Programs",
+      "summary": "Can I have treatment during my period, or while pregnant?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": "Dr. Deepu John",
+      "needs": "Dr. Deepu John to confirm treatment adjustments during menstruation and whether treatment is offered during pregnancy — not found in the mined sources. Postpartum Rejuvenation Therapy (14-night minimum) is confirmed as a distinct post-natal programme, which is not the same question."
+    },
+    {
+      "n": 13,
+      "topic": "Treatments & Programs",
+      "summary": "Is Panchakarma uncomfortable, and what does a treatment day feel like?",
+      "answerHtml": "<p>Most programmes include two Ayurvedic therapies a day (one a day for the Preventive Health & Regenerative programme), alongside sunrise yoga and evening meditation. Some patients notice mild detoxification symptoms such as headaches, fatigue or digestive changes in the first few days — tell your care team about any symptoms so your physician can review them. Your physician adjusts your plan for comfort throughout.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Treatment Package Inclusions': 'two Ayurvedic therapies per day... Exception: Preventive Health & Regenerative Program includes one therapy per day'",
+        "existing FAQ Q15 (detoxification symptoms)"
+      ],
+      "signoff": "Dr. Deepu John",
+      "needs": null
+    },
+    {
+      "n": 14,
+      "topic": "Insurance & Payment",
+      "summary": "Can I pay in US dollars or euros, and is GST included in the price?",
+      "answerHtml": "<p>Yes. Our published rates are quoted in INR, USD and EUR, cash is accepted in Indian Rupees, Euros or US Dollars, and government taxes are included in the published programme and villa fees. Airport/station transfer rates separately state 'inclusive of 5% GST'.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER Terms & Conditions: 'All government taxes are included in our published fees'; transfer table: 'Price inclusive of 5% GST'",
+        "faq-sources-docs.md — RATES_RECKONER Terms: 'cash (local currency, Euros, or US Dollars)'"
+      ],
+      "signoff": null,
+      "needs": null
+    },
+    {
+      "n": 15,
+      "topic": "Insurance & Payment",
+      "summary": "What is your cancellation and refund policy?",
+      "answerHtml": "<p>More than 30 days before admission: full refund. 15 to 30 days before admission: 50% of the amount paid is refunded, less applicable transaction fees and taxes. Fewer than 15 days before admission, or a change of dates during the stay: no refund.</p><p>See our <a href=\"/cancellation-and-refund-policy/\">Cancellation & Refund Policy</a> page.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Cancellation Policy': '30+ Days Before Admission: Full refund; 15-30 Days: 50% refund; Less than 15 Days or Date Change During Stay: No refund'"
+      ],
+      "signoff": null,
+      "needs": null
+    },
+    {
+      "n": 16,
+      "topic": "Insurance & Payment",
+      "summary": "Is the advance payment refundable if my visa is refused?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": null,
+      "needs": "Owner/reservations policy owner to confirm whether the deposit is refundable if a visa is refused — not addressed in the reckoner's cancellation policy or the live cancellation-and-refund-policy page text mined for this pass."
+    },
+    {
+      "n": 17,
+      "topic": "Insurance & Payment",
+      "summary": "Do you offer any discounts (senior citizens, defence personnel, longer stays)?",
+      "answerHtml": "<p>Yes, on direct bookings: 5% off for booking 90 days in advance, 5% seasonal discount (April–September), 7% returning-patient discount (10% after five previous stays), and 5% off stays longer than 28 nights. Please ask the patient care team about any other concession.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER 'Loyalty Rewards & Special Offers'"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": "[lead review 2026-09-23: the 30% senior/athlete offer came from the /testing/ route's metadata (a noindexed junk route, not a fact source) — removed]"
+    },
+    {
+      "n": 18,
+      "topic": "Accommodation & Facilities",
+      "summary": "Do the villas have air-conditioning, Wi-Fi and mobile signal?",
+      "answerHtml": "<p>Yes, every villa has air conditioning. Wi-Fi is available in common areas. For in-villa Wi-Fi and mobile network coverage, please check with the patient care team when booking.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-datasets.md — deluxe-villa-data.js / classic-villa-data.js / royal-villa-data.js / maharaja-suite-data.js amenities: 'Air Conditioner'",
+        "existing FAQ Q17: 'Free Wi-Fi in common areas'"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": " [lead review 2026-09-23: internal 'not in our records' wording removed from patient-facing text; no fact added]"
+    },
+    {
+      "n": 19,
+      "topic": "Accommodation & Facilities",
+      "summary": "Can I work remotely during a treatment stay?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": null,
+      "needs": "Owner/facilities to confirm whether in-villa Wi-Fi/workspace supports remote work during a treatment stay — only common-area Wi-Fi is recorded (existing FAQ Q17)."
+    },
+    {
+      "n": 20,
+      "topic": "Accommodation & Facilities",
+      "summary": "Can two people share a villa and follow different programmes?",
+      "answerHtml": "<p>Yes, villas are priced for single or double occupancy, so two people can share a villa. Rates are quoted per night, per villa, and each patient's programme is set by the physician at consultation — tell the patient care team when booking that you would like different programmes.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER villa rate tables (Single/Double columns)"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": " [lead review 2026-09-23: internal 'not in our records' wording removed from patient-facing text; no fact added]"
+    },
+    {
+      "n": 21,
+      "topic": "Preparation & Packing",
+      "summary": "Is there a dress code, and what should women bring for treatments?",
+      "answerHtml": "<p>Loose-fitting cotton clothing is recommended throughout your stay; a modest swimsuit is fine for the pool. For treatments, we provide disposable loincloths and bathrobes, and oil treatments may stain clothing, so bring items you do not mind getting oily. For anything specific, the patient care team can advise before you travel.</p>",
+      "status": "drafted",
+      "sources": [
+        "existing FAQ Q29 ('Modest swimwear for the pool')",
+        "existing FAQ Q30 ('disposable loincloths and bathrobes')"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": "[lead review: internal wording removed]"
+    },
+    {
+      "n": 22,
+      "topic": "For International Guests",
+      "summary": "Do the doctors and therapists speak English, German or French?",
+      "answerHtml": null,
+      "status": "no-recorded-fact",
+      "sources": [],
+      "signoff": null,
+      "needs": "Owner/HR to confirm which languages our physicians and therapists speak fluently — not found in the mined sources. (The site itself is published in EN/DE/FR, which is a translation fact, not a staff-language fact, and is not evidence either way.)"
+    },
+    {
+      "n": 23,
+      "topic": "For International Guests",
+      "summary": "Can you arrange a taxi from Coimbatore airport late at night?",
+      "answerHtml": "<p>Yes, a private transfer from Coimbatore Airport is available at ₹6,775 (MPV) or ₹23,711 (Sedan, premium), one way, valid 1 Oct 2026 – 30 Sep 2027, inclusive of 5% GST. Please confirm your arrival time with the patient care team when booking.</p>",
+      "status": "drafted",
+      "sources": [
+        "faq-sources-docs.md — RATES_RECKONER transfer table (Coimbatore Airport row)"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": " [lead review 2026-09-23: internal 'not in our records' wording removed from patient-facing text; no fact added]"
+    },
+    {
+      "n": 24,
+      "topic": "For International Guests",
+      "summary": "Do you provide an invitation letter for a medical visa, and what does it contain?",
+      "answerHtml": "<p>Yes, we can provide an invitation letter to support a medical visa application, on request. The patient care team will confirm what the letter includes when you request one.</p>",
+      "status": "drafted",
+      "sources": [
+        "existing FAQ Q36: 'We can provide an invitation letter to support your visa application upon request'"
+      ],
+      "signoff": null,
+      "needs": null,
+      "reviewNote": " [lead review 2026-09-23: internal 'not in our records' wording removed from patient-facing text; no fact added]"
+    },
+    {
+      "n": 25,
+      "topic": "After Your Treatment",
+      "summary": "Will I receive a discharge summary I can give my doctor at home?",
+      "answerHtml": "<p>Yes. We can provide admission and discharge notes, along with treatment summaries and prescriptions, that you can give to your doctor at home — the same documents we prepare to support insurance reimbursement claims.</p>",
+      "status": "drafted",
+      "sources": [
+        "existing FAQ Q32: 'Provide detailed invoices, treatment summaries, prescriptions, and admission/discharge notes'"
+      ],
+      "signoff": "Dr. Deepu John",
+      "needs": null
+    }
+  ],
+  "leadReview": "2026-09-23: five additions trimmed of internal 'not in our records' wording; #17 30% offer removed (source was the /testing/ junk route); cash currencies added from the reckoner. No other fact added."
+}

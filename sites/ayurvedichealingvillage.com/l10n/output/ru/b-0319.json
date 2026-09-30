@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0319",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_b41f3e7f7b24e85469e1",
+   "sourceHash": "b41f3e7f7b24e85469e18ec01c40d6fa460c5de0c19e85e282766474a213542c",
+   "text": "Мы получили ваши данные, и сотрудник нашей команды уже их изучает. Мы свяжемся с вами в течение 24 часов. Если ваш запрос касается конкретного заболевания, к ответу будет привлечён аюрведический врач.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a864577365310d90c6a",
+   "sourceHash": "4a864577365310d90c6a68fbbc9b5c467fc34c282feb246b9b760e00e6360bee",
+   "text": "Если программа вам подходит, мы организуем консультацию и продумаем практические детали вашего пребывания. Без давления и без обязательств.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_590ccb86e5777f1ec1dd",
+   "sourceHash": "590ccb86e5777f1ec1ddeb00758f83538c3c061d40535f3f7a39798dc717fd98",
+   "text": "Спасибо — ваш запрос передан нашей команде | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Shortened to fit the 60-character seo.title limit: 'care team' rendered as 'team' and the brand suffix reduced to 'Kairali'."
+   ]
+  },
+  {
+   "id": "t_9483a538e6841f8fe4c5",
+   "sourceHash": "9483a538e6841f8fe4c529737c4166b546c1da18516b7487e464ffe7e051a053",
+   "text": "Бронирование | Kairali – Аюрведическая лечебная деревня",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfbd28c3f80ed63c4110",
+   "sourceHash": "bfbd28c3f80ed63c4110ab5603bd65b7de222b6321d627a929e49f91e94c99cb",
+   "text": "Спланируйте пребывание в Kairali – Аюрведической лечебной деревне. Забронируйте аюрведические процедуры, программы йоги и восстановления в Керале.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical-lock substitutions: 'wellness retreat' rendered as 'stay'; 'yoga retreats' as 'yoga programmes'."
+   ]
+  },
+  {
+   "id": "t_bba824389ffdfb3bdff7",
+   "sourceHash": "bba824389ffdfb3bdff70d2f11b72ceda1fd2f56dc83abe27d0e502d9dcc71a8",
+   "text": "booking/book-now",
+   "status": "translated",
+   "unchangedReason": "URL path slug; language-neutral identifier.",
+   "issues": []
+  },
+  {
+   "id": "t_e09bd2655e94c441408d",
+   "sourceHash": "e09bd2655e94c441408d90acac2e4c3cab7d996fcc16a7ff09ea3ce7abf00faf",
+   "text": "Отдавать, индексировать, кандидат для XML; доступно через общее действие бронирования.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/build note rather than visitor copy."
+   ]
+  },
+  {
+   "id": "t_dd4a95b8f70d00dcbfc5",
+   "sourceHash": "dd4a95b8f70d00dcbfc50c867800d986c5de58a1ec39d7de8d8f9354ef424ddb",
+   "text": "Ни на одном из трёх маршрутов нет изображений в теле исходной страницы; общий фирменный элемент оболочки используется без изменений. Родительские элементы отображаемого текста перечислены как wrapperNodes, а не как исключения.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note; 'wrapperNodes' kept as a code identifier."
+   ]
+  },
+  {
+   "id": "t_2e3c55da83d1d4cb308d",
+   "sourceHash": "2e3c55da83d1d4cb308d53996279ac90dcf417f1b7d29d76a3ed7fd63bf619b9",
+   "text": "обёртка макета для отображаемого исходного текста — собственного текста не содержит",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note."
+   ]
+  },
+  {
+   "id": "t_9367d58465ce3eebe865",
+   "sourceHash": "9367d58465ce3eebe86557d4c60f924ce8d136b0fbaf3ba762e61c55f90bad34",
+   "text": "Удалить два пустых разделителя по 225px; не придумывать встроенные поля бронирования.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note."
+   ]
+  },
+  {
+   "id": "t_6d2d59aed44f1efab446",
+   "sourceHash": "6d2d59aed44f1efab446c09e60a3da7794ed1e652cd88d0a67914e72d1f9eae8",
+   "text": "Корзина",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7f5371a9fa4a2bce3375",
+   "sourceHash": "7f5371a9fa4a2bce3375bf2c972bb70f4746c94f138f39514da1b9d851378f3d",
+   "text": "Ваша корзина пока пуста!",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4884c9ef4f94b1fd521e",
+   "sourceHash": "4884c9ef4f94b1fd521e45b5f1d2086c2a301ee90c28c8427a471d69b4e673b2",
+   "text": "Корзина - Аюрведическая лечебная деревня",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2acaa88ebcef4ae9d8d",
+   "sourceHash": "f2acaa88ebcef4ae9d8d15fe5a0097dfe01cdea35948b1861dcc136f09dab5c5",
+   "text": "Отдавать, исключить из XML и навигации; функциональная конечная точка остаётся вне редакционной навигации.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note."
+   ]
+  },
+  {
+   "id": "t_cae0813e3b7f415fae5f",
+   "sourceHash": "cae0813e3b7f415fae5f451d58be131ee4a56896774432fdf93fae74f06ed5af",
+   "text": "Возможно, вас заинтересует… Корзина",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5533c6058d739ef0eb30",
+   "sourceHash": "5533c6058d739ef0eb3002d4942c1ddcb7b00d2f318df755a111dc4ed8eb40c3",
+   "text": "Возможно, вас заинтересует…",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e39bafec6641aed3be25",
+   "sourceHash": "e39bafec6641aed3be25d99424457cd2708f2961e19d0cef7ae0b082fe1950c6",
+   "text": "Новинки в магазине",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_075317471b4727a288f7",
+   "sourceHash": "075317471b4727a288f779aba5d86ee0493c7396f57f7d4370c15d1defa96066",
+   "text": "Незаполненные обёртки рекомендаций и ссылки источника на самого себя не являются товарами; сохранить в закрытом учёте исходников. Не придумывать остатки, товары, суммы или акции.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/build note."
+   ]
+  },
+  {
+   "id": "t_d05c4fc52da967218d76",
+   "sourceHash": "d05c4fc52da967218d76e3a3175e6105509062accf7c560c06f205872f069204",
+   "text": "Перейдите к бронированию, чтобы спланировать своё пребывание.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb6687b0de7bff8ac452",
+   "sourceHash": "bb6687b0de7bff8ac452fb90d2ab984848eb1d28e46265b7c4042eea3a1a826c",
+   "text": "Оформление - Аюрведическая лечебная деревня",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f24b610237efeddced4d",
+   "sourceHash": "f24b610237efeddced4dd53c7a3553bbe1af54528f7d21acd3ee3b19b0de6571",
+   "text": "точный захваченный абзац источника",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  },
+  {
+   "id": "t_1b13181088fa84cca4d6",
+   "sourceHash": "1b13181088fa84cca4d67bd908c847f67280c32c88a05c7fbb8cf4b2667ecd0c",
+   "text": "точное исходное сообщение о пустой корзине",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  }
+ ]
+}

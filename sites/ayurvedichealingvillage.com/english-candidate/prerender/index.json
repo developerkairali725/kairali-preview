@@ -1,0 +1,2298 @@
+{
+ "generated": "2026-09-29T03:18:29.824Z",
+ "base": "http://127.0.0.1:4471",
+ "count": 229,
+ "failures": 0,
+ "routes": [
+  {
+   "path": "/",
+   "ok": true,
+   "file": "index.html",
+   "bytes": 217613,
+   "textChars": 15227,
+   "imgs": 70,
+   "flattened": 46,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/about-us/",
+   "ok": true,
+   "file": "about-us.html",
+   "bytes": 98979,
+   "textChars": 9985,
+   "imgs": 21,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/accreditations/",
+   "ok": true,
+   "file": "accreditations.html",
+   "bytes": 87151,
+   "textChars": 5080,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+   "ok": true,
+   "file": "advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html",
+   "bytes": 109888,
+   "textChars": 7590,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/alcohol-free/",
+   "ok": true,
+   "file": "alcohol-free.html",
+   "bytes": 72873,
+   "textChars": 3202,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/all-programs/",
+   "ok": true,
+   "file": "all-programs.html",
+   "bytes": 179880,
+   "textChars": 9033,
+   "imgs": 42,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+   "ok": true,
+   "file": "ananda-lahari-yoga-and-ayurveda-retreat.html",
+   "bytes": 82418,
+   "textChars": 6957,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/animal-husbandry/",
+   "ok": true,
+   "file": "animal-husbandry.html",
+   "bytes": 71487,
+   "textChars": 3377,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/apply-now/",
+   "ok": true,
+   "file": "apply-now.html",
+   "bytes": 111845,
+   "textChars": 5091,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/archive-yoga-retreat/",
+   "ok": true,
+   "file": "archive-yoga-retreat.html",
+   "bytes": 98192,
+   "textChars": 3957,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/archive/",
+   "ok": true,
+   "file": "archive.html",
+   "bytes": 73499,
+   "textChars": 2044,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/arogya-kendra/",
+   "ok": true,
+   "file": "arogya-kendra.html",
+   "bytes": 72553,
+   "textChars": 2998,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/arogya-shala/",
+   "ok": true,
+   "file": "arogya-shala.html",
+   "bytes": 70387,
+   "textChars": 3217,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+   "ok": true,
+   "file": "ashtanga-yoga-and-ayurveda-retreat.html",
+   "bytes": 82165,
+   "textChars": 4682,
+   "imgs": 7,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/awards-and-accolades/",
+   "ok": true,
+   "file": "awards-and-accolades.html",
+   "bytes": 109633,
+   "textChars": 4672,
+   "imgs": 27,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/awards-and-accreditations/",
+   "ok": true,
+   "file": "awards-and-accreditations.html",
+   "bytes": 73259,
+   "textChars": 2061,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+   "ok": true,
+   "file": "Ayurveda_Treatment_Neo_S.India_Cities.html.html",
+   "bytes": 115520,
+   "textChars": 4835,
+   "imgs": 32,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-offers/",
+   "ok": true,
+   "file": "ayurveda-offers.html",
+   "bytes": 68734,
+   "textChars": 1586,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-package/",
+   "ok": true,
+   "file": "ayurveda-package.html",
+   "bytes": 108770,
+   "textChars": 3028,
+   "imgs": 36,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-retreat-kerala.html",
+   "ok": true,
+   "file": "ayurveda-retreat-kerala.html.html",
+   "bytes": 154929,
+   "textChars": 14977,
+   "imgs": 95,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-retreats-for-everyone/",
+   "ok": true,
+   "file": "ayurveda-retreats-for-everyone.html",
+   "bytes": 72879,
+   "textChars": 2542,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-training-programme/",
+   "ok": true,
+   "file": "ayurveda-training-programme.html",
+   "bytes": 110693,
+   "textChars": 7645,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-training/",
+   "ok": true,
+   "file": "ayurveda-training.html",
+   "bytes": 93560,
+   "textChars": 4072,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-treatment/",
+   "ok": true,
+   "file": "ayurveda-treatment.html",
+   "bytes": 83197,
+   "textChars": 2487,
+   "imgs": 30,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda-workshop/",
+   "ok": true,
+   "file": "ayurveda-workshop.html",
+   "bytes": 96189,
+   "textChars": 5909,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurveda/",
+   "ok": true,
+   "file": "ayurveda.html",
+   "bytes": 78664,
+   "textChars": 4596,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-classical-medicines/",
+   "ok": true,
+   "file": "ayurvedic-classical-medicines.html",
+   "bytes": 70143,
+   "textChars": 1944,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-cuisine/",
+   "ok": true,
+   "file": "ayurvedic-cuisine.html",
+   "bytes": 78981,
+   "textChars": 4939,
+   "imgs": 14,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-franchise/",
+   "ok": true,
+   "file": "ayurvedic-franchise.html",
+   "bytes": 74916,
+   "textChars": 4952,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-herbal-tea/",
+   "ok": true,
+   "file": "ayurvedic-herbal-tea.html",
+   "bytes": 74390,
+   "textChars": 3986,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-links/",
+   "ok": true,
+   "file": "ayurvedic-links.html",
+   "bytes": 75517,
+   "textChars": 3078,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-new-year-yala-2018/",
+   "ok": true,
+   "file": "ayurvedic-new-year-yala-2018.html",
+   "bytes": 106956,
+   "textChars": 12309,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-products/",
+   "ok": true,
+   "file": "ayurvedic-products.html",
+   "bytes": 79381,
+   "textChars": 4813,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-proprietary-medicines/",
+   "ok": true,
+   "file": "ayurvedic-proprietary-medicines.html",
+   "bytes": 77810,
+   "textChars": 3962,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-proprietary-organics/",
+   "ok": true,
+   "file": "ayurvedic-proprietary-organics.html",
+   "bytes": 84521,
+   "textChars": 6409,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+   "ok": true,
+   "file": "ayurvedic-resturant-and-cooking-at-healing-village.html",
+   "bytes": 74999,
+   "textChars": 2759,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-treatment-packages.html",
+   "ok": true,
+   "file": "ayurvedic-treatment-packages.html.html",
+   "bytes": 160782,
+   "textChars": 12694,
+   "imgs": 32,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayurvedic-treatments/",
+   "ok": true,
+   "file": "ayurvedic-treatments.html",
+   "bytes": 180758,
+   "textChars": 8988,
+   "imgs": 42,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ayuryoga/",
+   "ok": true,
+   "file": "ayuryoga.html",
+   "bytes": 86862,
+   "textChars": 5307,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/back-to-roots/",
+   "ok": true,
+   "file": "back-to-roots.html",
+   "bytes": 78224,
+   "textChars": 5078,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/back-water-tour/",
+   "ok": true,
+   "file": "back-water-tour.html",
+   "bytes": 71538,
+   "textChars": 2771,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/beauty-care-and-eye-care/",
+   "ok": true,
+   "file": "beauty-care-and-eye-care.html",
+   "bytes": 219046,
+   "textChars": 16385,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/book-now/",
+   "ok": true,
+   "file": "book-now.html",
+   "bytes": 61323,
+   "textChars": 1463,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/books/",
+   "ok": true,
+   "file": "books.html",
+   "bytes": 73958,
+   "textChars": 3867,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/brief-on-kairali/",
+   "ok": true,
+   "file": "brief-on-kairali.html",
+   "bytes": 70934,
+   "textChars": 2003,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/butterfly-booklet/",
+   "ok": true,
+   "file": "butterfly-booklet.html",
+   "bytes": 77346,
+   "textChars": 3208,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/cancellation-and-refund-policy/",
+   "ok": true,
+   "file": "cancellation-and-refund-policy.html",
+   "bytes": 76971,
+   "textChars": 4875,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/careers/",
+   "ok": true,
+   "file": "careers.html",
+   "bytes": 69997,
+   "textChars": 2711,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/chef-retreat-food-to-wellness/",
+   "ok": true,
+   "file": "chef-retreat-food-to-wellness.html",
+   "bytes": 87637,
+   "textChars": 5182,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/classic-villa/",
+   "ok": true,
+   "file": "classic-villa.html",
+   "bytes": 134439,
+   "textChars": 4298,
+   "imgs": 49,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/consultancy/",
+   "ok": true,
+   "file": "consultancy.html",
+   "bytes": 77055,
+   "textChars": 3747,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/contact-us/",
+   "ok": true,
+   "file": "contact-us.html",
+   "bytes": 112833,
+   "textChars": 5654,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/contact-us/thank-you/",
+   "ok": true,
+   "file": "contact-us_thank-you.html",
+   "bytes": 60838,
+   "textChars": 1112,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/cookie-policy/",
+   "ok": true,
+   "file": "cookie-policy.html",
+   "bytes": 68756,
+   "textChars": 2817,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/cooking-classes/",
+   "ok": true,
+   "file": "cooking-classes.html",
+   "bytes": 72469,
+   "textChars": 3288,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/cultural-events/",
+   "ok": true,
+   "file": "cultural-events.html",
+   "bytes": 80287,
+   "textChars": 5345,
+   "imgs": 14,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+   "ok": true,
+   "file": "de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html",
+   "bytes": 227416,
+   "textChars": 18209,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/defence-and-paramilitary-forces/",
+   "ok": true,
+   "file": "defence-and-paramilitary-forces.html",
+   "bytes": 79762,
+   "textChars": 7444,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/deluxe-villa/",
+   "ok": true,
+   "file": "deluxe-villa.html",
+   "bytes": 128846,
+   "textChars": 4340,
+   "imgs": 46,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/destination-palakkad/",
+   "ok": true,
+   "file": "destination-palakkad.html",
+   "bytes": 85429,
+   "textChars": 5819,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/digestive-wellness-gut-health-yoga-therapy/",
+   "ok": true,
+   "file": "digestive-wellness-gut-health-yoga-therapy.html",
+   "bytes": 228120,
+   "textChars": 17771,
+   "imgs": 52,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/disclaimer/",
+   "ok": true,
+   "file": "disclaimer.html",
+   "bytes": 67409,
+   "textChars": 2496,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/elephant-safari/",
+   "ok": true,
+   "file": "elephant-safari.html",
+   "bytes": 73532,
+   "textChars": 3429,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/emailsubscriber/",
+   "ok": true,
+   "file": "emailsubscriber.html",
+   "bytes": 60520,
+   "textChars": 1117,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/experience/",
+   "ok": true,
+   "file": "experience.html",
+   "bytes": 82465,
+   "textChars": 2962,
+   "imgs": 17,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/family-ayurvedic-retreat-kerala.html",
+   "ok": true,
+   "file": "family-ayurvedic-retreat-kerala.html.html",
+   "bytes": 213255,
+   "textChars": 8497,
+   "imgs": 77,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/faqs-downloads/",
+   "ok": true,
+   "file": "faqs-downloads.html",
+   "bytes": 193990,
+   "textChars": 8083,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/festivals/",
+   "ok": true,
+   "file": "festivals.html",
+   "bytes": 75962,
+   "textChars": 4280,
+   "imgs": 14,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/food-sadhana/",
+   "ok": true,
+   "file": "food-sadhana.html",
+   "bytes": 92278,
+   "textChars": 7568,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/gallery/",
+   "ok": true,
+   "file": "gallery.html",
+   "bytes": 87711,
+   "textChars": 2434,
+   "imgs": 18,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/gift-vouchers/",
+   "ok": true,
+   "file": "gift-vouchers.html",
+   "bytes": 68633,
+   "textChars": 1486,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/givefeedback/",
+   "ok": true,
+   "file": "givefeedback.html",
+   "bytes": 68818,
+   "textChars": 4445,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+   "ok": true,
+   "file": "holistic-treatment-for-rejuvenation-and-detoxification.html",
+   "bytes": 228088,
+   "textChars": 16219,
+   "imgs": 56,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/house-boat-tour/",
+   "ok": true,
+   "file": "house-boat-tour.html",
+   "bytes": 71687,
+   "textChars": 3735,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/how-to-reach/",
+   "ok": true,
+   "file": "how-to-reach.html",
+   "bytes": 123028,
+   "textChars": 7506,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/immunity-enhancement-executive-health-assessment-therapy/",
+   "ok": true,
+   "file": "immunity-enhancement-executive-health-assessment-therapy.html",
+   "bytes": 228171,
+   "textChars": 16978,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/in-house-products/",
+   "ok": true,
+   "file": "in-house-products.html",
+   "bytes": 73481,
+   "textChars": 4638,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+   "ok": true,
+   "file": "intensive-ayurveda-training-program-learn-practice-ayurveda.html",
+   "bytes": 106298,
+   "textChars": 6518,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/internships-at-kairali/",
+   "ok": true,
+   "file": "internships-at-kairali.html",
+   "bytes": 76011,
+   "textChars": 3619,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/jobs/business-development-manager/",
+   "ok": true,
+   "file": "jobs_business-development-manager.html",
+   "bytes": 69702,
+   "textChars": 2959,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kair-by-kairali/",
+   "ok": true,
+   "file": "kair-by-kairali.html",
+   "bytes": 69290,
+   "textChars": 2418,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "ok": true,
+   "file": "Kairali_Brand_and_Competition_Neo-original.html.html",
+   "bytes": 96731,
+   "textChars": 4347,
+   "imgs": 32,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-air-india-maharaja-club.html",
+   "ok": true,
+   "file": "kairali-air-india-maharaja-club.html.html",
+   "bytes": 107719,
+   "textChars": 7789,
+   "imgs": 15,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-centre/",
+   "ok": true,
+   "file": "kairali-ayurvedic-centre.html",
+   "bytes": 79879,
+   "textChars": 6333,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-equipment/",
+   "ok": true,
+   "file": "kairali-ayurvedic-equipment.html",
+   "bytes": 76563,
+   "textChars": 5303,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-group/",
+   "ok": true,
+   "file": "kairali-ayurvedic-group.html",
+   "bytes": 75425,
+   "textChars": 5440,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-products-pvt-ltd/",
+   "ok": true,
+   "file": "kairali-ayurvedic-products-pvt-ltd.html",
+   "bytes": 80530,
+   "textChars": 5735,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-treatment-center/",
+   "ok": true,
+   "file": "kairali-ayurvedic-treatment-center.html",
+   "bytes": 73102,
+   "textChars": 3223,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-ayurvedic-way-of-weight-management/",
+   "ok": true,
+   "file": "kairali-ayurvedic-way-of-weight-management.html",
+   "bytes": 74587,
+   "textChars": 3711,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-cleansing-centre.html",
+   "ok": true,
+   "file": "kairali-cleansing-centre.html.html",
+   "bytes": 141403,
+   "textChars": 9054,
+   "imgs": 63,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-hospitality/",
+   "ok": true,
+   "file": "kairali-hospitality.html",
+   "bytes": 72992,
+   "textChars": 3343,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+   "ok": true,
+   "file": "kairali-institute-of-ayurveda-and-panchakarma-therapy.html",
+   "bytes": 74929,
+   "textChars": 3926,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/kairali-the-ayurvedic-healing-village/",
+   "ok": true,
+   "file": "kairali-the-ayurvedic-healing-village.html",
+   "bytes": 75245,
+   "textChars": 3904,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+   "ok": true,
+   "file": "karkidaka-chikitsha-or-monsoon-wellness.html.html",
+   "bytes": 116141,
+   "textChars": 10026,
+   "imgs": 25,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/karma-being-retreat-2019/",
+   "ok": true,
+   "file": "karma-being-retreat-2019.html",
+   "bytes": 96559,
+   "textChars": 10400,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/karma-being-retreat/",
+   "ok": true,
+   "file": "karma-being-retreat.html",
+   "bytes": 83851,
+   "textChars": 6734,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/katha-wellness-retreat-2019/",
+   "ok": true,
+   "file": "katha-wellness-retreat-2019.html",
+   "bytes": 95493,
+   "textChars": 5164,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/knowledge-centre/",
+   "ok": true,
+   "file": "knowledge-centre.html",
+   "bytes": 70667,
+   "textChars": 1614,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2017/",
+   "ok": true,
+   "file": "lakshya-yoga-retreat-2017.html",
+   "bytes": 80835,
+   "textChars": 4613,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/lakshya-yoga-retreat-2018/",
+   "ok": true,
+   "file": "lakshya-yoga-retreat-2018.html",
+   "bytes": 81300,
+   "textChars": 3741,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/lakshya-yoga-retreat/",
+   "ok": true,
+   "file": "lakshya-yoga-retreat.html",
+   "bytes": 79079,
+   "textChars": 3254,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/lakshya-yoga/",
+   "ok": true,
+   "file": "lakshya-yoga.html",
+   "bytes": 85796,
+   "textChars": 5460,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/learn-about-ayurveda/",
+   "ok": true,
+   "file": "learn-about-ayurveda.html",
+   "bytes": 76554,
+   "textChars": 6079,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/learn-more-about-ayurveda/",
+   "ok": true,
+   "file": "learn-more-about-ayurveda.html",
+   "bytes": 70098,
+   "textChars": 1831,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/learn-more-about-yoga/",
+   "ok": true,
+   "file": "learn-more-about-yoga.html",
+   "bytes": 71812,
+   "textChars": 3190,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/legal-notice/",
+   "ok": true,
+   "file": "legal-notice.html",
+   "bytes": 67339,
+   "textChars": 2393,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+   "ok": true,
+   "file": "level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html",
+   "bytes": 111638,
+   "textChars": 6866,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/live-to-100-with-panchkarma/",
+   "ok": true,
+   "file": "live-to-100-with-panchkarma.html",
+   "bytes": 71324,
+   "textChars": 2121,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/maharaja-suite/",
+   "ok": true,
+   "file": "maharaja-suite.html",
+   "bytes": 114537,
+   "textChars": 4865,
+   "imgs": 33,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/meditation/",
+   "ok": true,
+   "file": "meditation.html",
+   "bytes": 75161,
+   "textChars": 5104,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/mindfulness-retreat/",
+   "ok": true,
+   "file": "mindfulness-retreat.html",
+   "bytes": 87795,
+   "textChars": 9729,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/mountain-jeep-safari/",
+   "ok": true,
+   "file": "mountain-jeep-safari.html",
+   "bytes": 77689,
+   "textChars": 5230,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/nature-walk/",
+   "ok": true,
+   "file": "nature-walk.html",
+   "bytes": 70479,
+   "textChars": 2750,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/new-privacy-policy/",
+   "ok": true,
+   "file": "new-privacy-policy.html",
+   "bytes": 81465,
+   "textChars": 8985,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/new-to-ayurveda/",
+   "ok": true,
+   "file": "new-to-ayurveda.html",
+   "bytes": 81695,
+   "textChars": 5255,
+   "imgs": 14,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/new-to-yoga-teacher-training/",
+   "ok": true,
+   "file": "new-to-yoga-teacher-training.html",
+   "bytes": 72428,
+   "textChars": 3402,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/new-to-yoga/",
+   "ok": true,
+   "file": "new-to-yoga.html",
+   "bytes": 82645,
+   "textChars": 5063,
+   "imgs": 15,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/no-caffeine/",
+   "ok": true,
+   "file": "no-caffeine.html",
+   "bytes": 74545,
+   "textChars": 4884,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/no-preservatives/",
+   "ok": true,
+   "file": "no-preservatives.html",
+   "bytes": 81599,
+   "textChars": 5775,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/no-refridgeration/",
+   "ok": true,
+   "file": "no-refridgeration.html",
+   "bytes": 69461,
+   "textChars": 2007,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/no-smoking/",
+   "ok": true,
+   "file": "no-smoking.html",
+   "bytes": 74672,
+   "textChars": 5338,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/offers/",
+   "ok": true,
+   "file": "offers.html",
+   "bytes": 108936,
+   "textChars": 8719,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+   "ok": true,
+   "file": "offers_defence-paramilitary-personnel-get-upto-30-off.html",
+   "bytes": 57757,
+   "textChars": 3681,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/offers/olympics-and-paralympics-offer/",
+   "ok": true,
+   "file": "offers_olympics-and-paralympics-offer.html",
+   "bytes": 56076,
+   "textChars": 3293,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/offers/senior-citizen-offer/",
+   "ok": true,
+   "file": "offers_senior-citizen-offer.html",
+   "bytes": 123675,
+   "textChars": 11277,
+   "imgs": 36,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/one-day-ayurveda-workshop-program-kerala/",
+   "ok": true,
+   "file": "one-day-ayurveda-workshop-program-kerala.html",
+   "bytes": 103654,
+   "textChars": 5927,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/online-consultation/",
+   "ok": true,
+   "file": "online-consultation.html",
+   "bytes": 94628,
+   "textChars": 4840,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/onlinebookingthankyou/",
+   "ok": true,
+   "file": "onlinebookingthankyou.html",
+   "bytes": 60925,
+   "textChars": 1112,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/onlineconsultation-thanks/",
+   "ok": true,
+   "file": "onlineconsultation-thanks.html",
+   "bytes": 61273,
+   "textChars": 1112,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/organic-farm/",
+   "ok": true,
+   "file": "organic-farm.html",
+   "bytes": 70026,
+   "textChars": 2868,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/our-accolades/",
+   "ok": true,
+   "file": "our-accolades.html",
+   "bytes": 69621,
+   "textChars": 2147,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/our-partners/",
+   "ok": true,
+   "file": "our-partners.html",
+   "bytes": 68771,
+   "textChars": 3052,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/our-villas/",
+   "ok": true,
+   "file": "our-villas.html",
+   "bytes": 103549,
+   "textChars": 3975,
+   "imgs": 26,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/packages/",
+   "ok": true,
+   "file": "packages.html",
+   "bytes": 123173,
+   "textChars": 6340,
+   "imgs": 37,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/pain-management.html",
+   "ok": true,
+   "file": "pain-management.html.html",
+   "bytes": 95759,
+   "textChars": 5442,
+   "imgs": 18,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/panchakarma-therapy/",
+   "ok": true,
+   "file": "panchakarma-therapy.html",
+   "bytes": 224161,
+   "textChars": 15395,
+   "imgs": 56,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/panchakarma/",
+   "ok": true,
+   "file": "panchakarma.html",
+   "bytes": 71733,
+   "textChars": 3911,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/panchkarma-treatment.html",
+   "ok": true,
+   "file": "panchkarma-treatment.html.html",
+   "bytes": 148872,
+   "textChars": 16102,
+   "imgs": 43,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/payment-policy-compliance/",
+   "ok": true,
+   "file": "payment-policy-compliance.html",
+   "bytes": 71127,
+   "textChars": 3818,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/personalized-customized-healing-program/",
+   "ok": true,
+   "file": "personalized-customized-healing-program.html",
+   "bytes": 227999,
+   "textChars": 16169,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/photo-gallery/",
+   "ok": true,
+   "file": "photo-gallery.html",
+   "bytes": 196020,
+   "textChars": 4489,
+   "imgs": 68,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/post-pregnancy-health-programme/",
+   "ok": true,
+   "file": "post-pregnancy-health-programme.html",
+   "bytes": 220069,
+   "textChars": 16445,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/postulez-maintenant/",
+   "ok": true,
+   "file": "postulez-maintenant.html",
+   "bytes": 115677,
+   "textChars": 5256,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/ppc-thanks/",
+   "ok": true,
+   "file": "ppc-thanks.html",
+   "bytes": 59968,
+   "textChars": 1112,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/prav-simona-monsoon-yoga-retreat/",
+   "ok": true,
+   "file": "prav-simona-monsoon-yoga-retreat.html",
+   "bytes": 94389,
+   "textChars": 9028,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/prav-simona-yoga-retreat/",
+   "ok": true,
+   "file": "prav-simona-yoga-retreat.html",
+   "bytes": 83004,
+   "textChars": 5659,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/preventive-and-regenerative-treatment/",
+   "ok": true,
+   "file": "preventive-and-regenerative-treatment.html",
+   "bytes": 222702,
+   "textChars": 16032,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/preventive-rejuvenation-detoxification.html",
+   "ok": true,
+   "file": "preventive-rejuvenation-detoxification.html.html",
+   "bytes": 128117,
+   "textChars": 13578,
+   "imgs": 85,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/product-gallery/",
+   "ok": true,
+   "file": "product-gallery.html",
+   "bytes": 103181,
+   "textChars": 2451,
+   "imgs": 22,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/product-range/",
+   "ok": true,
+   "file": "product-range.html",
+   "bytes": 93103,
+   "textChars": 4635,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/property-gallery/",
+   "ok": true,
+   "file": "property-gallery.html",
+   "bytes": 144397,
+   "textChars": 2423,
+   "imgs": 42,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/read-feedback/",
+   "ok": true,
+   "file": "read-feedback.html",
+   "bytes": 71410,
+   "textChars": 5306,
+   "imgs": 7,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/retreats-for-everyone/",
+   "ok": true,
+   "file": "retreats-for-everyone.html",
+   "bytes": 71227,
+   "textChars": 2917,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/retreats-gallery/",
+   "ok": true,
+   "file": "retreats-gallery.html",
+   "bytes": 130099,
+   "textChars": 2658,
+   "imgs": 35,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+   "ok": true,
+   "file": "revitalizing-and-strengthening-treatment-for-cancer-patients.html",
+   "bytes": 105768,
+   "textChars": 5620,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/revitalizing-and-strengthening/",
+   "ok": true,
+   "file": "revitalizing-and-strengthening.html",
+   "bytes": 221906,
+   "textChars": 15390,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/royal-villa/",
+   "ok": true,
+   "file": "royal-villa.html",
+   "bytes": 132006,
+   "textChars": 4340,
+   "imgs": 47,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/search-results/",
+   "ok": true,
+   "file": "search-results.html",
+   "bytes": 69052,
+   "textChars": 1620,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/sight-seeing-gallery/",
+   "ok": true,
+   "file": "sight-seeing-gallery.html",
+   "bytes": 90232,
+   "textChars": 3292,
+   "imgs": 14,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/sightseeing/",
+   "ok": true,
+   "file": "sightseeing.html",
+   "bytes": 79900,
+   "textChars": 9314,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/sitemap/",
+   "ok": true,
+   "file": "sitemap.html",
+   "bytes": 132151,
+   "textChars": 2494,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/sleep-restoration-therapy/",
+   "ok": true,
+   "file": "sleep-restoration-therapy.html",
+   "bytes": 227258,
+   "textChars": 16823,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/social-cultural-environmental-commitment/",
+   "ok": true,
+   "file": "social-cultural-environmental-commitment.html",
+   "bytes": 74437,
+   "textChars": 3601,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/social-responsibilities/",
+   "ok": true,
+   "file": "social-responsibilities.html",
+   "bytes": 81168,
+   "textChars": 7074,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/special-offers/",
+   "ok": true,
+   "file": "special-offers.html",
+   "bytes": 75594,
+   "textChars": 3613,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/terms-and-conditions/",
+   "ok": true,
+   "file": "terms-and-conditions.html",
+   "bytes": 104397,
+   "textChars": 11183,
+   "imgs": 4,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/thanks-old/",
+   "ok": true,
+   "file": "thanks-old.html",
+   "bytes": 60704,
+   "textChars": 1112,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/thanks/",
+   "ok": true,
+   "file": "thanks.html",
+   "bytes": 59648,
+   "textChars": 1112,
+   "imgs": 5,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/the-baoli-advert-box-deal/",
+   "ok": true,
+   "file": "the-baoli-advert-box-deal.html",
+   "bytes": 68927,
+   "textChars": 1393,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/the-baoli-special-deal/",
+   "ok": true,
+   "file": "the-baoli-special-deal.html",
+   "bytes": 68660,
+   "textChars": 1387,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/things-to-do-in-kerala/",
+   "ok": true,
+   "file": "things-to-do-in-kerala.html",
+   "bytes": 80873,
+   "textChars": 4686,
+   "imgs": 18,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/things-to-do/",
+   "ok": true,
+   "file": "things-to-do.html",
+   "bytes": 98801,
+   "textChars": 8878,
+   "imgs": 23,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+   "ok": true,
+   "file": "three-day-short-term-ayurveda-certificate-program-tap-hv.html",
+   "bytes": 104619,
+   "textChars": 6217,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/training-course-fees/",
+   "ok": true,
+   "file": "training-course-fees.html",
+   "bytes": 122827,
+   "textChars": 5653,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/training-programs/",
+   "ok": true,
+   "file": "training-programs.html",
+   "bytes": 92573,
+   "textChars": 3288,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/training/",
+   "ok": true,
+   "file": "training.html",
+   "bytes": 81081,
+   "textChars": 5538,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-arthritis-and-spondylitis/",
+   "ok": true,
+   "file": "treatment-for-arthritis-and-spondylitis.html",
+   "bytes": 223965,
+   "textChars": 16729,
+   "imgs": 55,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-bronchial-diseases/",
+   "ok": true,
+   "file": "treatment-for-bronchial-diseases.html",
+   "bytes": 230468,
+   "textChars": 18099,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-cervical-spondylosis/",
+   "ok": true,
+   "file": "treatment-for-cervical-spondylosis.html",
+   "bytes": 221857,
+   "textChars": 16496,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-chronic-back-pain/",
+   "ok": true,
+   "file": "treatment-for-chronic-back-pain.html",
+   "bytes": 225715,
+   "textChars": 17016,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-diabetes/",
+   "ok": true,
+   "file": "treatment-for-diabetes.html",
+   "bytes": 219730,
+   "textChars": 16631,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-facial-paralysis/",
+   "ok": true,
+   "file": "treatment-for-facial-paralysis.html",
+   "bytes": 224460,
+   "textChars": 16568,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-hypertension/",
+   "ok": true,
+   "file": "treatment-for-hypertension.html",
+   "bytes": 222494,
+   "textChars": 16191,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-nervous-disability/",
+   "ok": true,
+   "file": "treatment-for-nervous-disability.html",
+   "bytes": 224332,
+   "textChars": 16931,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-paralysis/",
+   "ok": true,
+   "file": "treatment-for-paralysis.html",
+   "bytes": 222436,
+   "textChars": 16014,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-psoriasis/",
+   "ok": true,
+   "file": "treatment-for-psoriasis.html",
+   "bytes": 219714,
+   "textChars": 15518,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-sinusitis-and-migraine/",
+   "ok": true,
+   "file": "treatment-for-sinusitis-and-migraine.html",
+   "bytes": 222953,
+   "textChars": 16765,
+   "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-skin-diseases/",
+   "ok": true,
+   "file": "treatment-for-skin-diseases.html",
+   "bytes": 225969,
+   "textChars": 17184,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-slip-disc/",
+   "ok": true,
+   "file": "treatment-for-slip-disc.html",
+   "bytes": 222309,
+   "textChars": 17099,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-for-spondylitis/",
+   "ok": true,
+   "file": "treatment-for-spondylitis.html",
+   "bytes": 218652,
+   "textChars": 15588,
+   "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-in-kerala-russian.html",
+   "ok": true,
+   "file": "treatment-in-kerala-russian.html.html",
+   "bytes": 152935,
+   "textChars": 16662,
+   "imgs": 71,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-in-kerala.html",
+   "ok": true,
+   "file": "treatment-in-kerala.html.html",
+   "bytes": 178926,
+   "textChars": 19562,
+   "imgs": 61,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-programs/",
+   "ok": true,
+   "file": "treatment-programs.html",
+   "bytes": 156927,
+   "textChars": 7341,
+   "imgs": 33,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatment-to-remove-stress-and-strain/",
+   "ok": true,
+   "file": "treatment-to-remove-stress-and-strain.html",
+   "bytes": 227663,
+   "textChars": 16957,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/treatments-gallery/",
+   "ok": true,
+   "file": "treatments-gallery.html",
+   "bytes": 151600,
+   "textChars": 3516,
+   "imgs": 45,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/vegetarian/",
+   "ok": true,
+   "file": "vegetarian.html",
+   "bytes": 68473,
+   "textChars": 1769,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/video-gallery/",
+   "ok": true,
+   "file": "video-gallery.html",
+   "bytes": 87701,
+   "textChars": 4884,
+   "imgs": 26,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/villa-raag/",
+   "ok": true,
+   "file": "villa-raag.html",
+   "bytes": 84210,
+   "textChars": 8359,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/village-facilities/",
+   "ok": true,
+   "file": "village-facilities.html",
+   "bytes": 88269,
+   "textChars": 5802,
+   "imgs": 18,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/villas-gallery/",
+   "ok": true,
+   "file": "villas-gallery.html",
+   "bytes": 124640,
+   "textChars": 3405,
+   "imgs": 34,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/virtual-tour/",
+   "ok": true,
+   "file": "virtual-tour.html",
+   "bytes": 71449,
+   "textChars": 1628,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/vision-and-mission/",
+   "ok": true,
+   "file": "vision-and-mission.html",
+   "bytes": 70111,
+   "textChars": 3073,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/visit-kerala/",
+   "ok": true,
+   "file": "visit-kerala.html",
+   "bytes": 79986,
+   "textChars": 5515,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/walk-in-ayurveda-treatment/",
+   "ok": true,
+   "file": "walk-in-ayurveda-treatment.html",
+   "bytes": 86085,
+   "textChars": 4213,
+   "imgs": 6,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/weight-loss-programme/",
+   "ok": true,
+   "file": "weight-loss-programme.html",
+   "bytes": 230859,
+   "textChars": 15649,
+   "imgs": 58,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/weight-loss.html",
+   "ok": true,
+   "file": "weight-loss.html.html",
+   "bytes": 138319,
+   "textChars": 11545,
+   "imgs": 92,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/wellness-programs/",
+   "ok": true,
+   "file": "wellness-programs.html",
+   "bytes": 97696,
+   "textChars": 3436,
+   "imgs": 11,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/wellness-resort-kerala.html",
+   "ok": true,
+   "file": "wellness-resort-kerala.html.html",
+   "bytes": 139103,
+   "textChars": 10098,
+   "imgs": 61,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/what-is-ayurvedic-food/",
+   "ok": true,
+   "file": "what-is-ayurvedic-food.html",
+   "bytes": 75910,
+   "textChars": 4868,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/what-is-panchkarma/",
+   "ok": true,
+   "file": "what-is-panchkarma.html",
+   "bytes": 70565,
+   "textChars": 2623,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/what-is-yoga/",
+   "ok": true,
+   "file": "what-is-yoga.html",
+   "bytes": 77599,
+   "textChars": 5150,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/why-get-training-in-ayurveda/",
+   "ok": true,
+   "file": "why-get-training-in-ayurveda.html",
+   "bytes": 79597,
+   "textChars": 5438,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/why-get-training-in-yoga/",
+   "ok": true,
+   "file": "why-get-training-in-yoga.html",
+   "bytes": 70817,
+   "textChars": 3082,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/why-pick-a-yoga-or-yoga-retreat/",
+   "ok": true,
+   "file": "why-pick-a-yoga-or-yoga-retreat.html",
+   "bytes": 77407,
+   "textChars": 5479,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+   "ok": true,
+   "file": "why-pick-an-ayurveda-treatment-or-ayurvedic-retreat.html",
+   "bytes": 72912,
+   "textChars": 2179,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/wildlife-drive/",
+   "ok": true,
+   "file": "wildlife-drive.html",
+   "bytes": 79706,
+   "textChars": 4833,
+   "imgs": 12,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/womens-hormonal-balance-endocrine-therapy/",
+   "ok": true,
+   "file": "womens-hormonal-balance-endocrine-therapy.html",
+   "bytes": 223702,
+   "textChars": 15788,
+   "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-and-ayurveda/",
+   "ok": true,
+   "file": "yoga-and-ayurveda.html",
+   "bytes": 72000,
+   "textChars": 1939,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-and-meditation-package/",
+   "ok": true,
+   "file": "yoga-and-meditation-package.html",
+   "bytes": 84951,
+   "textChars": 4052,
+   "imgs": 13,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-based-stress-energy-reset-program/",
+   "ok": true,
+   "file": "yoga-based-stress-energy-reset-program.html",
+   "bytes": 225753,
+   "textChars": 14699,
+   "imgs": 54,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-classes-practical/",
+   "ok": true,
+   "file": "yoga-classes-practical.html",
+   "bytes": 79176,
+   "textChars": 5699,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-classes-theory/",
+   "ok": true,
+   "file": "yoga-classes-theory.html",
+   "bytes": 76955,
+   "textChars": 5061,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-gallery/",
+   "ok": true,
+   "file": "yoga-gallery.html",
+   "bytes": 92878,
+   "textChars": 2460,
+   "imgs": 16,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-meditation-program/",
+   "ok": true,
+   "file": "yoga-meditation-program.html",
+   "bytes": 192731,
+   "textChars": 11330,
+   "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-meditation-programs/",
+   "ok": true,
+   "file": "yoga-meditation-programs.html",
+   "bytes": 95734,
+   "textChars": 3305,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-meditation-training/",
+   "ok": true,
+   "file": "yoga-meditation-training.html",
+   "bytes": 211980,
+   "textChars": 12149,
+   "imgs": 53,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-retreats-for-everyone/",
+   "ok": true,
+   "file": "yoga-retreats-for-everyone.html",
+   "bytes": 79842,
+   "textChars": 5567,
+   "imgs": 10,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-retreats/",
+   "ok": true,
+   "file": "yoga-retreats.html",
+   "bytes": 94186,
+   "textChars": 4138,
+   "imgs": 8,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  },
+  {
+   "path": "/yoga-therapy-individual/",
+   "ok": true,
+   "file": "yoga-therapy-individual.html",
+   "bytes": 75976,
+   "textChars": 4942,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  }
+ ]
+}

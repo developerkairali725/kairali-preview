@@ -1,0 +1,222 @@
+{
+ "batchId": "b-0268",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_fc0e285a88152ff6e9b1",
+   "sourceHash": "fc0e285a88152ff6e9b15e8b5fa652c0fa01ece629661d9382772ba154d4d049",
+   "text": "Transferencias bancarias",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59fdbbcb4fa723b58b90",
+   "sourceHash": "59fdbbcb4fa723b58b9003be6d71d5c3a3036d471bb3c18d5ec68547180a3fde",
+   "text": "Efectivo (rupias indias)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abe45d95d08a62b6d80e",
+   "sourceHash": "abe45d95d08a62b6d80e328082ff44e51759f6154f4f8158c338d1fc4a1311d4",
+   "text": "Pagos por UPI (para residentes en la India)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_83fadbe39a707a9f952a",
+   "sourceHash": "83fadbe39a707a9f952aa9a939bc7aa4e24ae28c454eccb286f0e5b2b8495958",
+   "text": "Se requiere un anticipo del 50% para confirmar su reserva.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9599d19532011604d619",
+   "sourceHash": "9599d19532011604d619bbd583b8d4b40a1d43c34d82fc646afd1e7b1133b6fa",
+   "text": "Para pacientes internacionales",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_7ef526a220135a89dda9",
+   "sourceHash": "7ef526a220135a89dda9c09d06608089ffb07fc60df8149a302ac0df48f07ae4",
+   "text": "¿Qué atenciones especiales ofrecen a los pacientes de edad avanzada?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Senior guests' rendered as 'pacientes de edad avanzada' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_9f427809d23d8f09c652",
+   "sourceHash": "9f427809d23d8f09c6522bc4b4f9395cce605daa02ca6e6c3e0b6faf6b001ec9",
+   "text": "Ofrecemos:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da51d7c28a7a590ad56b",
+   "sourceHash": "da51d7c28a7a590ad56b541567c15ce5861f9a90ee7309b27a4391f828f9a060",
+   "text": "Entorno accesible y opciones de alojamiento adaptadas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73bcafb8c04eed778f9e",
+   "sourceHash": "73bcafb8c04eed778f9e0a0b0bcaa5180a30ebf993d5ecf75f53d129678fc379",
+   "text": "Ayuda para la movilidad según sea necesario",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b8dfc62530482896b46",
+   "sourceHash": "6b8dfc62530482896b4652ef392995fdb0cb58f55a28781bb4dacb07a3aeeecb",
+   "text": "Tratamientos adaptados a personas mayores",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b93965568d5cc1a18ac1",
+   "sourceHash": "b93965568d5cc1a18ac1036add39c5a860e73cf1392a4b93bd796470414b288b",
+   "text": "Consideraciones dietéticas especiales",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aa76405b196b2d1d3f8",
+   "sourceHash": "8aa76405b196b2d1d3f862926f0be15feec96e23763af6ec2005137c492cef93",
+   "text": "Supervisión médica durante toda su estancia",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cefd115e228160db8d1e",
+   "sourceHash": "cefd115e228160db8d1edfe5472caacf0acb7db829b3141d66fe7057dc2e4a24",
+   "text": "Servicios médicos de urgencia disponibles de guardia",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce8920e3b93a2c47d581",
+   "sourceHash": "ce8920e3b93a2c47d58196390249b917ac697da3c1632a0d117780242ceedfa5",
+   "text": "Nuestro centro está diseñado pensando en la accesibilidad, con rampas y estructuras de apoyo donde se necesitan.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'centro' to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_b367c54a9c6e5136a541",
+   "sourceHash": "b367c54a9c6e5136a541957c7fd4286967b60d6980e870f72df68a4f2b831257",
+   "text": "¿Qué requisitos de visado deben tener en cuenta los pacientes internacionales?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_575c297542d8655fd1ad",
+   "sourceHash": "575c297542d8655fd1ad00d002049b4805da664b7258290adf06a550f3207b8b",
+   "text": "La mayoría de los visitantes de la India necesitan un visado de turista o un visado electrónico (e-visa). Recomendamos solicitarlo al menos 4-6 semanas antes de la visita prevista. Para los tratamientos ayurvédicos, puede ser más adecuado un visado médico (Medical Visa) o un visado de acompañante médico (Medical Attendant Visa), especialmente para estancias de más de 60 días.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4f76f424aa4b7186ae9",
+   "sourceHash": "f4f76f424aa4b7186ae9776359d431d931a70bb591dd6f00009dcd9c83ba86e2",
+   "text": "Consulte el sitio web oficial de visados del Gobierno de la India o el consulado de la India de su localidad para conocer los requisitos más actualizados. Si lo solicita, podemos facilitarle una carta de invitación para respaldar su solicitud de visado.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3650cc554c45b02b780b",
+   "sourceHash": "3650cc554c45b02b780b7e71f37667adca77b6d38ed1f68044e3b7489f476fb9",
+   "text": "¿Existe un servicio de evacuación médica disponible si fuera necesario?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58f23bfab8e5f22caa8e",
+   "sourceHash": "58f23bfab8e5f22caa8e1a3b661766939ae6bfa9d38ad2f4e66eee76d027d6dc",
+   "text": "Sí, tenemos acuerdos con hospitales y servicios de urgencia cercanos. A los pacientes internacionales les recomendamos contratar un seguro de viaje que incluya cobertura de evacuación médica. En caso de urgencia, nuestro equipo se coordinará con su aseguradora.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per clinical language lock.",
+    "t_58f23bfab8e5f22caa8e banned-term-from-source viaje"
+   ]
+  },
+  {
+   "id": "t_c012e72391fd0ddf6da5",
+   "sourceHash": "c012e72391fd0ddf6da52859745df78b07d6d6932f517fd6c34422698bc45f72",
+   "text": "¿Pueden acoger estancias prolongadas de pacientes internacionales?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_6f13abc6c31f43a5e0f7",
+   "sourceHash": "6f13abc6c31f43a5e0f7ca03d8deb992993f10cec07c1c444fe53173576bcabd",
+   "text": "Sí, ofrecemos paquetes especiales para estancias prolongadas de 30 días o más, que incluyen excursiones culturales adicionales y programas personalizados. Muchos pacientes internacionales consideran que las estancias prolongadas son especialmente beneficiosas para las afecciones crónicas y para una transformación integral del bienestar.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_081b3abf7649b9404f2b",
+   "sourceHash": "081b3abf7649b9404f2bc30bcb10d894c336cf2bef69796f2969dbf61e3587fb",
+   "text": "Al finalizar su programa, nuestros médicos le proporcionan:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_859bff4827464416b52a",
+   "sourceHash": "859bff4827464416b52a9571f9d3de6eaa748be909929638a2a5d5f97fca7be6",
+   "text": "Un plan de seguimiento personalizado de dieta y estilo de vida",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b984297c610b63f6035",
+   "sourceHash": "9b984297c610b63f6035c1f45603eaaf869d9e423222721b131552bc679dbaee",
+   "text": "Recomendaciones de remedios caseros",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92db133380a70d8545cf",
+   "sourceHash": "92db133380a70d8545cfd75c8ce1e55cc60dc61ed47dee2bdabce030b2a36f79",
+   "text": "Prácticas específicas de yoga y meditación",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

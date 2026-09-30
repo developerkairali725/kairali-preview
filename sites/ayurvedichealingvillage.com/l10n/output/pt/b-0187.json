@@ -1,0 +1,191 @@
+{
+ "batchId": "b-0187",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_36a17185f8ff24fb1440",
+   "sourceHash": "36a17185f8ff24fb14409fcb533251684c45f186c75c29c9efc0860e04b6b70f",
+   "text": "[[OPEN_1]]Impostos e taxas:[[CLOSE_1]] Todos os impostos aplicáveis, taxas governamentais e encargos de serviço serão acrescentados à fatura, conforme exigido por lei.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21802cc13e021c20fe22",
+   "sourceHash": "21802cc13e021c20fe228307eb708152ab0b9d9dfe77c62cedb15cae6e8fc269",
+   "text": "Política de cancelamento, alterações e reembolso",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2ca9c02c323c25e1dce1",
+   "sourceHash": "2ca9c02c323c25e1dce12eb13c41a89d1be2d5cedb32b767c0f83cb8301af4bc",
+   "text": "Prazos de cancelamento:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d0a41c826d3f0feedb7",
+   "sourceHash": "6d0a41c826d3f0feedb726447f60021e55b1cd1366dc57f584b331d0bf25a23e",
+   "text": "[[OPEN_1]]Alterações:[[CLOSE_1]] As alterações às datas da reserva, aos tratamentos ou às categorias de quarto estão sujeitas a disponibilidade e podem implicar encargos adicionais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0a517e829dc6c7210985",
+   "sourceHash": "0a517e829dc6c7210985509942663ef847c810a6ab7177884314e859b6f75e01",
+   "text": "[[OPEN_1]]Processo de reembolso:[[CLOSE_1]] Os reembolsos aprovados serão processados num prazo razoável, através do mesmo método de pagamento utilizado na transação original.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5fcc1ff036c2b8b59c1d",
+   "sourceHash": "5fcc1ff036c2b8b59c1d7f39bff42e880f16bb7580afe087979a93f143af60e0",
+   "text": "Políticas de check-in, check-out e estadia",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d9e8398054cc05f95ee",
+   "sourceHash": "0d9e8398054cc05f95ee5f5653393bd3caef4d99885785f1e6fa2173f21f73ef",
+   "text": "[[OPEN_1]]Hora de check-in:[[CLOSE_1]] 12:00 PM",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_40178f88c5db1e63960d",
+   "sourceHash": "40178f88c5db1e63960df6d805dd8c6f83eedb8802cac955d7942c3a6b85ff6d",
+   "text": "[[OPEN_1]]Hora de check-out:[[CLOSE_1]] 10:00 AM",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4d02bcc8c741b6095bd4",
+   "sourceHash": "4d02bcc8c741b6095bd468cfedfb2179d9251fec9e1a87ebf1b853272bc5c346",
+   "text": "[[OPEN_1]]Pedidos de entrada antecipada/saída tardia:[[CLOSE_1]] O check-in antecipado e o check-out tardio estão sujeitos a disponibilidade e podem implicar encargos adicionais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9072dfa1069fb031a1d",
+   "sourceHash": "b9072dfa1069fb031a1dafd34814dd98c8d10a7d46931b60d795a4ef4a44e07e",
+   "text": "[[OPEN_1]]Duração da estadia:[[CLOSE_1]] Em determinadas épocas, ofertas ou eventos, podem aplicar-se requisitos de estadia mínima ou máxima.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dea75ce4932e114d1df1",
+   "sourceHash": "dea75ce4932e114d1df139fd9d3bfae9bd76e7d6c1ee062074a94c1723ef6668",
+   "text": "Conduta dos pacientes e restrições de utilização",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'Guest' rendered as 'pacientes'."
+   ]
+  },
+  {
+   "id": "t_98e3d5e06e8729b88f15",
+   "sourceHash": "98e3d5e06e8729b88f15f080b6f06836bb56c9cb797a66f80eb6e7a6272ed2cf",
+   "text": "[[OPEN_1]]Orientações ayurvédicas:[[CLOSE_1]] Espera-se que os pacientes sigam as orientações ayurvédicas dadas pelos nossos especialistas e preservem a tranquilidade do ambiente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'Guests' rendered as 'pacientes'."
+   ]
+  },
+  {
+   "id": "t_b1dd0085434f9b35f79d",
+   "sourceHash": "b1dd0085434f9b35f79d8df9cb9995d3ebbeb63e985e7bf978cfb3b0f0688b1f",
+   "text": "[[OPEN_1]]Artigos e comportamentos proibidos:[[CLOSE_1]] É estritamente proibido fumar, consumir álcool e consumir alimentos não vegetarianos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cbf6c7b5eaa6ef02fc48",
+   "sourceHash": "cbf6c7b5eaa6ef02fc487ccba127bb4cf7de8f125bc3ff806c7391a281a987a8",
+   "text": "[[OPEN_1]]Conduta perturbadora:[[CLOSE_1]] Qualquer comportamento inaceitável ou violação das regras das Instalações pode levar ao termo imediato da estadia, sem reembolso.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_80ff39c82d5721d9f653",
+   "sourceHash": "80ff39c82d5721d9f6537a1a15fdc4b9e71ff2ca078dfaba06828dccd988513c",
+   "text": "Serviços e encargos adicionais",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f9dd6992566dfe8de64",
+   "sourceHash": "1f9dd6992566dfe8de64bc8b7e41a6966e4f26548c8b640af65046d4ffd174f8",
+   "text": "[[OPEN_1]]Utilização das instalações:[[CLOSE_1]] Os pacientes podem utilizar os espaços de lazer, as salas de ioga e as piscinas durante o horário de funcionamento, devendo respeitar as regras afixadas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'Guests' rendered as 'pacientes'."
+   ]
+  },
+  {
+   "id": "t_255151f285332a0b4c7b",
+   "sourceHash": "255151f285332a0b4c7b034bd283842070cad07e623862306a4e774edd250f5e",
+   "text": "[[OPEN_1]]Danos às Instalações:[[CLOSE_1]] Os pacientes são responsáveis por quaisquer danos causados às instalações ou aos equipamentos da Propriedade. Os custos de reparação ou substituição serão debitados na conta do Paciente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Clinical lock: 'Guests'/'Guest' rendered as 'pacientes'/'Paciente'."
+   ]
+  },
+  {
+   "id": "t_8363865d3df465429313",
+   "sourceHash": "8363865d3df465429313fe036c101a1420dd8d1b461f40cf8cbcf87acc1cd903",
+   "text": "[[OPEN_1]]Serviços extra:[[CLOSE_1]] Serviços adicionais, como lavandaria, visitas guiadas ou dietas especiais, podem implicar encargos extra.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7454f2f3120af0b88e68",
+   "sourceHash": "7454f2f3120af0b88e68a5eb5da0a762a6ce28a9d2f489ef4ef427f7c7427c03",
+   "text": "Privacidade e proteção de dados",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4923b9209ef7afc3277a",
+   "sourceHash": "4923b9209ef7afc3277a6f5550b1cb2a0e2587c07ffa2e2c1db55cb810a5be95",
+   "text": "A nossa Política de Privacidade explica o tratamento de pedidos de informação, relatórios médicos, registos de pagamento e dados de recrutamento, incluindo acesso, conservação, opções disponíveis e visitantes internacionais. Um pedido de informação ou de tratamento não implica a subscrição automática de comunicações de marketing. Consulte /privacy-policy/ ou contacte info@kairali.com.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00ea1f1374a90d7bff7c",
+   "sourceHash": "00ea1f1374a90d7bff7cf8b0145852641c8fef2a5f30497d2ea65a6bc43a57cd",
+   "text": "Serviços e ligações de terceiros",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74eb4a98275b38ac5a0d",
+   "sourceHash": "74eb4a98275b38ac5a0d14c9ad857a4f3ec0688988c93d71e1808acc0451b069",
+   "text": "O nosso website ou outros materiais podem fazer referência a serviços, ligações ou recursos de terceiros. Não controlamos nem endossamos estas entidades externas e não somos responsáveis pelo conteúdo, pelas práticas de privacidade ou pelos serviços prestados por terceiros.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

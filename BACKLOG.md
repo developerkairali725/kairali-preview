@@ -279,3 +279,30 @@ _Staleness rule: >3 days without a reply = chase. **RECONCILED against the direc
 - [ ] 2026-07-18 19:46:04 IST (session close) — **YMYL-widen build (D-YMYL-WIDEN, closes O5):** widen the honest-YMYL content lint from whatisayurveda.com to ALL organic health surfaces; per-site rule tuning as sites onboard.
 - [ ] 2026-07-18 19:46:04 IST (session close) — **Facts-package spelling PR + Abishek signboard round:** apply the ruled spellings from the owner-facts package across sites/ and queue the signboard verification round via Abishek.
 - [ ] 2026-07-18 19:46:04 IST (session close) — **Verdict-emitter tranche 2:** extend the CI-wired emitters (#126 T1, wiring #135) to the next gate tranche — keeps the 50-unproven count dropping.
+- [ ] 2026-09-16 21:40:00 IST — **AHV TRANSLATION (trigger: EN frozen in staging; owner's ask this session).** Process
+  written up at docs/plans/2026-09-16-ahv-translation-plan.md. Villa Raag is the precedent and it is REAL locale pages
+  with reciprocal hreflang (verified live 2026-09-16: en/de/fr/ru/es/he/zh-Hans + x-default, zero translation-plugin
+  fingerprints) — but villaraag.com's site code is NOT in this monorepo, only its launch evidence, so the in-repo
+  template to copy is sites/abhilashkr (EN/DE/FR; src/lib/i18n.ts + src/lib/localized-content.ts). THREE things need
+  an owner ruling before any translation is bought: (1) locale set — CLAUDE.md LOCKED FACTS and the locale register
+  both lock KTAHV to EN/DE/FR, so "all the other languages like Villa Raag" (seven) would change a locked fact;
+  (2) the sourceSha256 pin on the 136 view payloads, which translated payloads cannot satisfy by definition;
+  (3) translated slugs => a per-locale route manifest. HARD PRECONDITION: the EN clinical language lock (191/252
+  routes, owner + Dr. Deepu John) must close FIRST — translating before it means every fix lands three times. The
+  clinical lock binds in DE/FR too (Kur/Urlaub/Luxus, cure/vacances/luxe), compliance already emits clinical-lock-de
+  and clinical-lock-fr, and Dr. Deepu John's HARD GATE 7 sign-off is per locale. The three non-English /sitemap/ links
+  left open by the SSR work belong to this lane.
+- [ ] 2026-09-21 19:05:00 IST — **MONITOR: AHV Actions billing is the single blocking dependency for the whole
+  flip proof chain.** Not merely PR #309: `scripts/lib/verdict.mjs` refuses any verdict whose `runner` is `local`
+  or whose last committer is not a CI job ("a hand-authored verdict is a .md file in a different costume"), so
+  **no machine gate can become ship evidence until GitHub Actions runs**. Root cause measured 2026-09-21 on the
+  billing pages: **no payment method on file**, $77.67 metered Actions usage, automatic recurring payments
+  disabled — the Actions budget is fine ($57.85 of $500). Owner-only, one click at
+  `github.com/organizations/kairali-digital/settings/billing/payment_information`. Homed here from
+  RPT-20260919-AHV-CI-DIAGNOSIS disposition 1. Review at every session close until it clears.
+- [ ] 2026-09-21 19:05:00 IST — **MONITOR: 34 routes scroll sideways at 1024px**, clean at 320 and 768. Reproduced
+  at 1024 and 1280; caused by a full-bleed treatment applied to images sitting in narrow grid cells, and it arrived
+  with the article template (63acad69, 19 Sep). Deliberately NOT patched: it lives in the shared article-reader
+  template, which is exactly what the **T1 EXPLAIN** redesign replaces — patching it now is work thrown away, and
+  the redesign has to solve the same layout question anyway. Belongs to that family's build. Homed here from
+  RPT-20260919-AHV-SWEEP-BASELINE disposition 2.

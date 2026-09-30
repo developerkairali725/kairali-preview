@@ -1,0 +1,6 @@
+{
+ "note": "AHV-DUP-047: /gift-vouchers/ is a Coming Soon subpage. The dataset metadata was corrected by the parent patch (commit e3e22120); the served route metadata is copied from the dataset at import time, so it is aligned here to the same strings.",
+ "entries": [
+  {"id": "gift-vouchers-meta", "op": "manifestMeta", "path": "/gift-vouchers/", "set": {"title": "Gift Vouchers — Coming Soon | Kairali", "description": "Gift vouchers are coming soon at Kairali – The Ayurvedic Healing Village. Contact our team for enquiries or explore our current offers.", "ogTitle": "Gift Vouchers — Coming Soon | Kairali", "ogDescription": "Gift vouchers are coming soon at Kairali – The Ayurvedic Healing Village. Contact our team for enquiries or explore our current offers."}}
+ ]
+}

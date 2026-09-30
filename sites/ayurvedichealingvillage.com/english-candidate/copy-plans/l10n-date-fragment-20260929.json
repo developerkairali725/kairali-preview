@@ -1,0 +1,40 @@
+{
+ "entries": [
+  {
+   "id": "DATE-tree",
+   "row": "LANGUAGES",
+   "file": "public/ahv/assets/article-family-data.js",
+   "count": 1,
+   "old": "{\"k\": \"t\", \"v\": \"Date: 3\"}, {\"k\": \"t\", \"v\": \"rd\"}, {\"k\": \"t\", \"v\": \" – 6\"}, {\"k\": \"t\", \"v\": \"th\"}, {\"k\": \"t\", \"v\": \" July 2017\"}",
+   "new": "{\"k\": \"t\", \"v\": \"Date: 3–6 July 2017\"}",
+   "authority": "l10n lifecycle: ordinal suffixes were separate untranslatable units (Q-AHV-L10N-GATE-RETIRED); same date, one translatable unit"
+  },
+  {
+   "id": "DATE-text",
+   "row": "LANGUAGES",
+   "file": "public/ahv/assets/article-family-data.js",
+   "count": 1,
+   "old": "Date: 3rd – 6th July 2017",
+   "new": "Date: 3–6 July 2017",
+   "authority": "same"
+  },
+  {
+   "id": "DATE2-tree",
+   "row": "LANGUAGES",
+   "file": "public/ahv/assets/hist9-family-data.js",
+   "count": 1,
+   "old": "{\"k\":\"t\",\"v\":\"17\"},{\"k\":\"e\",\"tag\":\"sup\",\"c\":[{\"k\":\"t\",\"v\":\"th\"}]},{\"k\":\"t\",\"v\":\" – 22\"},{\"k\":\"e\",\"tag\":\"sup\",\"c\":[{\"k\":\"t\",\"v\":\"nd\"}]},{\"k\":\"t\",\"v\":\" Sept, 2017)\"}",
+   "new": "{\"k\":\"t\",\"v\":\"17–22 Sept, 2017)\"}",
+   "authority": "l10n lifecycle: ordinal suffix fragments as separate units"
+  },
+  {
+   "id": "DATE2-strong",
+   "row": "LANGUAGES",
+   "file": "public/ahv/assets/hist9-family-data.js",
+   "count": 1,
+   "old": "\"strong\":[\"Ayurveda and Yoga for Stress Management & Healthy Lifestyle 17th – 22nd Sept, 2017)\"]",
+   "new": "\"strong\":[\"Ayurveda and Yoga for Stress Management & Healthy Lifestyle 17–22 Sept, 2017)\"]",
+   "authority": "same"
+  }
+ ]
+}

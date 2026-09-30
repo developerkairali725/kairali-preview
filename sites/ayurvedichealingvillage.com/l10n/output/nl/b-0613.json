@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Informeer naar mijn behandeling",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Informeer naar behandeling bij chronische rugpijn",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Bezetting door 1 persoon, per villa per nacht: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Informeer naar behandeling bij artritis",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Wij staan klaar om u te ondersteunen op uw weg naar welzijn. Heeft u vragen over onze behandelingen, programma's of reserveringen, dan helpt ons team u graag, met ondersteuning en transparantie. Neem contact met ons op via telefoon, e-mail of ons webformulier. Laten we samen beginnen aan uw weg naar een alomvattend herstel.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'programma's' (clinical register; avoids resort/holiday connotation)."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "Bij Kairali – The Ayurvedic Healing Village biedt ons ayurvedische poliklinische (OPD) consult een soepel, op maat gemaakt behandelproces, gebaseerd op traditionele ayurvedische principes. Bezoekers worden vriendelijk ontvangen bij de receptie, waar een OPD-formulier wordt ingevuld en hun medische voorgeschiedenis digitaal wordt vastgelegd voor een natuurlijk ayurvedisch consult. Daarna volgt een uitgebreid consult met een ayurvedische arts, met traditionele ayurvedische diagnose, polsonderzoek en een persoonlijke ayurvedische behandeling, online of persoonlijk. Er wordt een persoonlijk welzijnsplan opgesteld op basis van uw dosha en gezondheidstoestand. Vervolgens gaat u over op de therapieën, waaronder Panchakarma-detox en gerichte behandelingen bij klachten zoals artritis, diabetes, stress en huidaandoeningen. De behandelingen worden gegeven door ervaren therapeuten met therapeutische oliën en de exportklare ayurvedische producten van Kairali. Na de behandeling ontvangt u kruidenmiddelen met gedetailleerde gebruiksinstructies, en wordt een vervolgplan opgesteld om doorlopende ayurvedische zorg te waarborgen. Voor uw gemak worden ook online consulten met een ayurvedische arts in India aangeboden.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'comprehensive healing' rendered as 'alomvattend herstel' in the previous unit; here 'stress relief' rendered as treatment for 'stress' (no cure/efficacy claim added)."
+   ]
+  }
+ ]
+}

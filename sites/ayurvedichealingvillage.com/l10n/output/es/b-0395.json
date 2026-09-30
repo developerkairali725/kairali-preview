@@ -1,0 +1,149 @@
+{
+ "batchId": "b-0395",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "es",
+ "units": [
+  {
+   "id": "t_a3e346e396cc58fdcf47",
+   "sourceHash": "a3e346e396cc58fdcf4765565e196b892623cdccfdbf6fc332f3a5994d598b17",
+   "text": "family-04/HISTORICAL-NINE-DISPATCH-SUPPLEMENT.txt",
+   "status": "translated",
+   "unchangedReason": "File path/identifier; language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_c9cc993e923f9c026ab8",
+   "sourceHash": "c9cc993e923f9c026ab820653761d562ad07a52b4ac21828a963eb8490458e39",
+   "text": "Los créditos y marcas de agua originales de las imágenes se conservan tal como se capturaron. La autorización de derechos de las imágenes históricas de los retiros —incluidos retratos de profesores, logotipos de socios o fotografías de terceros— se registra como un PRIVATE RELEASE GATE. La captura de la fuente no equivale a la autorización de derechos.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note displayed as text; 'PRIVATE RELEASE GATE' kept in English as an internal marker. Verify it should be user-facing."
+   ]
+  },
+  {
+   "id": "t_b09ab1a0ea68400eb2a4",
+   "sourceHash": "b09ab1a0ea68400eb2a4e9c54d42329da2fa2501516216e425665fda7bd82911",
+   "text": "Los siete detalles históricos aceptados y sus 14 archivos de vista guardados se conservan idénticos byte a byte, junto con el índice aceptado de retiros anteriores. No se recrearon y no se modificó ningún archivo compartido del que dependan.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note displayed as text; verify it should be user-facing."
+   ]
+  },
+  {
+   "id": "t_b7704640d5ab671f4de5",
+   "sourceHash": "b7704640d5ab671f4de5ad380b5f6175faf1a6dc1b7bb4cd075416569548553d",
+   "text": "Esta página recoge el itinerario del Chef’s Retreat del 3 al 6 de julio de 2017. Su programa, servicios e inclusiones son históricos y no constituyen condiciones de reserva vigentes.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f04241d701553647f234",
+   "sourceHash": "f04241d701553647f23460843691eaa0bad493a49f94d0b2be0c705e975afd11",
+   "text": "Itinerario del Chef’s RetreatFecha: 3 – 6 de julio de 2017Chef Abhijeet Saha, Chef Vikas Seth, Chef Arun Kumar TR y Chef Gill (como mentor)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates heading, date and names without separators; structure preserved."
+   ]
+  },
+  {
+   "id": "t_70dcd842151f19ba61f6",
+   "sourceHash": "70dcd842151f19ba61f60b41a0b02110cf83bbbb5acd709591a4382e22e1e619",
+   "text": "Fecha: 3 – 6 de julio de 2017",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_618315f603fb3d5aa52e",
+   "sourceHash": "618315f603fb3d5aa52e298882b669f0d89891bd75bba4cbd6521e8ab0ef4c45",
+   "text": "Collage de tres platos vegetarianos: ensalada de garbanzos, ensalada de zanahoria rallada, pepino y remolacha en rodajas",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f8dc34cdc40c3e7597c8",
+   "sourceHash": "f8dc34cdc40c3e7597c8ce253ca12049cd1507d976a1345fafa304bfb3ad6aa2",
+   "text": "Se ha restaurado el énfasis en línea conservado de la fuente en su rango exacto. El resto del nodo permanece sin formato: no se sustituyó ningún párrafo ni encabezado completo en negrita y no se añadió texto nuevo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal technical note displayed as text; verify it should be user-facing."
+   ]
+  },
+  {
+   "id": "t_3aaba89b037843bb5d60",
+   "sourceHash": "3aaba89b037843bb5d6010970d615a30df6f7a48bbe6a946804d423f108b74f2",
+   "text": "Todas las comidas (desayuno, almuerzo y cena; solo vegetarianas)1 comida especial durante la estancia, preparada por nuestro chef invitado con platos únicos de su propia elaboración.3 clases magistrales durante la estancia.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates list items without separators; structure preserved. Source typo 'withunique' corrected in translation."
+   ]
+  },
+  {
+   "id": "t_ae6c79d10f1fd4106507",
+   "sourceHash": "ae6c79d10f1fd410650790e63186ec108fa106325b52fbd88de21a43540e6f2c",
+   "text": "imagen principal",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Concatenated fragment 'hero'; context unclear, rendered as 'imagen principal'."
+   ]
+  },
+  {
+   "id": "t_1e9a5b1c8bb1d8fa3087",
+   "sourceHash": "1e9a5b1c8bb1d8fa3087685bf108f99101a7773efb26cc329cc3b9ca391227b8",
+   "text": "Destino exacto de la fuente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4bb41caaa6d2dbe2a23",
+   "sourceHash": "a4bb41caaa6d2dbe2a23522e87ae886515ab9807422e4f6af9b2ad39bbbc6d58",
+   "text": "Food Sadhana",
+   "status": "translated",
+   "unchangedReason": "Proper programme name.",
+   "issues": []
+  },
+  {
+   "id": "t_7f559c0d197247c05baa",
+   "sourceHash": "7f559c0d197247c05baa1973b2974f0eaef0eb647086f4bf522bf763feaa7f4d",
+   "text": "Esta página conserva el material del retiro Food Sadhana y sus momentos destacados de 2017. El programa, las inclusiones y la referencia a la presentación del libro son históricos y no constituyen condiciones de reserva vigentes.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_48a20cb3d22a7e72d15b",
+   "sourceHash": "48a20cb3d22a7e72d15b26bc3953a04a808ada9d77b07f4f0f69865ff2734def",
+   "text": "Archivo del retiro Food Sadhana | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "SEO title shortened to stay within 60 characters; brand reduced to 'Kairali'."
+   ]
+  },
+  {
+   "id": "t_6b9e3bf905fb23e7b491",
+   "sourceHash": "6b9e3bf905fb23e7b4913cb2b2ff63fb548d3c7e4dfa7c09934cc020895118cb",
+   "text": "Consulte el programa archivado Food Sadhana: momentos destacados de 2017, prácticas diarias, comidas ayurvédicas y biografía del profesor.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_88ee8507ab08c93b543e",
+   "sourceHash": "88ee8507ab08c93b543e31562bc35aa475630c87acaaf285990c8559e7e9a62f",
+   "text": "Integrada con los principios del Ayurveda, Food Sadhana se convierte en una experiencia profundamente personal, pero a la vez reflexiva y fundamentada.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

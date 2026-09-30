@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": para pacientes com problemas que afetam a zona da cabeça, como sinusite e enxaqueca, esta terapia ayurvédica é a mais indicada. Trata-se de uma técnica natural de limpeza em que são aplicadas gotas nasais nas narinas de forma controlada, aliviando a dor na zona da cabeça.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'the cerebral area gets freed from any kind of pain' rendered as 'aliviando a dor na zona da cabeça' (no absolute claim); flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam: para pacientes com problemas que afetam a zona da cabeça, como sinusite e enxaqueca, esta terapia ayurvédica é a mais indicada. Trata-se de uma técnica natural de limpeza em que são aplicadas gotas nasais nas narinas de forma controlada, aliviando a dor na zona da cabeça.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'the cerebral area gets freed from any kind of pain' rendered as 'aliviando a dor na zona da cabeça' (no absolute claim); flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "É oferecida formação. Nenhuma página deste lote tem o estado «Brevemente».",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/status note rather than patient-facing copy; verify it should be displayed."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "As atuais afirmações médicas, comerciais, sobre prémios e sobre disponibilidade mantêm os seus exatos controlos privados de publicação. A captura da fonte não constitui verificação, e a ausência de um controlo por página nunca significa que uma afirmação esteja aprovada.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/governance note rather than patient-facing copy; verify it should be displayed."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "Programas para todos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programas' per clinical register."
+   ]
+  }
+ ]
+}

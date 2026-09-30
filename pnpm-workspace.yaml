@@ -5,23 +5,33 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 overrides:
+  # Patch both undici 7.29.0 advisories; published 4 September 2026.
+  undici: "7.29.1"
   postcss: ">=8.5.10"
   # GHSA-8988-4f7v-96qf (moderate): unbounded memory allocation in W3C Baggage
   # propagation, @opentelemetry/core <2.8.0. Transitive via lighthouse>@sentry/node;
   # every declared range accepts ^2.0.0 but pnpm resolved 1.30.1. Remove once
   # lighthouse/@sentry/node resolve >=2.8.0 on their own.
   "@opentelemetry/core@<2.8.0": ">=2.8.0"
-  # GHSA advisory 22 Jul 2026 (high): fast-uri host confusion via literal
-  # backslash authority delimiter, <=3.1.3. Transitive (ajv family). Remove
-  # once parents resolve >=3.1.4 on their own.
-  fast-uri: ">=3.1.4"
-  # Advisories 22 Jul 2026 (high): sharp <0.35.0 inherits libvips CVE-2026-33327/
-  # -33328/-35590/-35591. Direct/transitive image tooling. Remove at sharp's
-  # own next bump.
-  sharp: ">=0.35.0"
+  # 29 Sep 2026: fast-uri 4.1.4 addresses GHSA-qw65-cvwx-89v3
+  # and the authority/host parsing regressions reported against 4.1.3.
+  fast-uri: "4.1.4"
+  # 25 Sep 2026: GHSA-rgj7-g3m4-5g8c requires sharp 0.35.4.
+  # Apply consistently to all direct/transitive image-tooling instances.
+  sharp: "0.35.4"
   # 22 Jul 2026: pin the fleet's proven React — the security-override re-resolve
   # floated react 19.2.4 -> 19.2.7 and next@15.5.20's vendored runtime skews
   # against it (patchFetch server/client prerender failure, arogyashala +
   # kairalihospitality). Remove when next bumps deliberately WITH react.
   react: 19.2.4
   react-dom: 19.2.4
+  # GHSA-2883-xcg3-v3hh: preserve each js-yaml major while applying its fix.
+  "js-yaml@>=3 <3.15.2": "3.15.2"
+  "js-yaml@>=4 <4.3.2": "4.3.2"
+  # GHSA-qhr7-859c-m2p7 and GHSA-6j4f-fj2g-mc7p: keep the
+  # CommonJS 1.x and ESM 5.x lines separate while applying both fixes.
+  "brace-expansion@>=1 <1.1.20": "1.1.20"
+  "brace-expansion@>=5 <5.0.11": "5.0.11"
+  # Remaining current moderate advisories (25 Sep 2026 audit).
+  "qs@<6.16.0": "6.16.0"
+  "hono@<4.13.5": "4.13.5"

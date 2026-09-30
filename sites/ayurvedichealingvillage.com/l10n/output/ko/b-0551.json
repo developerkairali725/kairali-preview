@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0551",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_9fa71ec3c75e0780ebf5",
+   "sourceHash": "9fa71ec3c75e0780ebf5102758d6d43b07eb9713c87ceec20e9ad235f0cae87a",
+   "text": "약제실 운영",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ae07dbb72ff02a2a5940",
+   "sourceHash": "ae07dbb72ff02a2a59402933e2c4d6993ace650af6d060cdb4eb62e32b9ebb0d",
+   "text": "이론 시험 - 객관식",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1365ce60f0f115b4c22b",
+   "sourceHash": "1365ce60f0f115b4c22bb8d2760bdb8515442d70463349177d6ee5ab273ad2d9",
+   "text": "마무리 세션",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce3e3bd32942b110b732",
+   "sourceHash": "ce3e3bd32942b110b7324460c6ffa0adf0dedeedfbec8895bf102ebc92f70b7a",
+   "text": "실기 시험",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da81ced4bc37626249e8",
+   "sourceHash": "da81ced4bc37626249e867159bda413ce843c5f90ac37d4c9c7b7b2ff8936305",
+   "text": "실기 마무리 세션.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b5728256dc11152ae7c",
+   "sourceHash": "6b5728256dc11152ae7c95fa02604a4b7f2fa90a7bfaf053dcc54f16957a7d5c",
+   "text": "패키지 요금",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1150f05446e4d34452b3",
+   "sourceHash": "1150f05446e4d34452b320c78645f5d7f717b745ab3165abde97c15ddc650da5",
+   "text": "참고:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12bb0fc0b1715ddf5dfe",
+   "sourceHash": "12bb0fc0b1715ddf5dfe5051476229c99707eb238fed4468b9c86517f3c444ee",
+   "text": "자세한 내용은 다음 연락처로 문의하실 수 있습니다:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6d70b8dfa8c4b165d89d",
+   "sourceHash": "6d70b8dfa8c4b165d89d1a23f9a1e34499b650f585c11747f1e187f5cc9af78a",
+   "text": "또는 +91 9555 156 156",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_525132208008d3e6e50f",
+   "sourceHash": "525132208008d3e6e50f3d9cbcd00ebb158af6207f026997a79358212ef366b7",
+   "text": "캡처된 contentOuter는",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This unit and t_7d9f5cb021de1d063cfb look like an internal developer/build note leaked into page data, not patient-facing copy; translated as a fragment, but recommend removing from the page."
+   ]
+  },
+  {
+   "id": "t_7d9f5cb021de1d063cfb",
+   "sourceHash": "7d9f5cb021de1d063cfb00b83147319f72e3da0b34e8f54048a1b515c6f1ed65",
+   "text": "래퍼일 뿐입니다(패킷에 하위 요소 없음). 문서 구성은 sections[]입니다. 중복된 본문은 출력되지 않았으며, 고유한 원본 본문도 누락되지 않았습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal developer/build note leaked into page data, not patient-facing copy; recommend removing from the page."
+   ]
+  },
+  {
+   "id": "t_5a8ef53c9fa585e5114d",
+   "sourceHash": "5a8ef53c9fa585e5114ddda93dd4e26de8a0957b93780ec7e3f1f60f89d69a80",
+   "text": "(1박 기준)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7107d3caf3bf97c3e361",
+   "sourceHash": "7107d3caf3bf97c3e361722c2d6e49e659199729e9a78588b5f266ff7b03e4b7",
+   "text": "프로그램 설명",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4118527bcc792b57352e",
+   "sourceHash": "4118527bcc792b57352e359ee1a75f77dccdfe194bd0f44ccf310686f6e067db",
+   "text": "1. OAP (1일 아유르베다 프로그램)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_435dc2eca75897e7252f",
+   "sourceHash": "435dc2eca75897e7252fe41fe7a703eaf7c9a0865e0f995b369aed65da63518a",
+   "text": "강의, 시연, 그리고 직접 실습하는 Abhyangam (아비양감) 마사지 세션을 통해 아유르베다의 역사와 기본 원리, 일상 속 적용 등 핵심 내용을 배웁니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fe7e0ba6a47e06a6bc3d",
+   "sourceHash": "fe7e0ba6a47e06a6bc3dcee6fdbdc2ecfb36fd9a416ab44d17e88bce0e885994",
+   "text": "2. TAP (3일 아유르베다 프로그램)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b11359b3c22e25719ad",
+   "sourceHash": "6b11359b3c22e25719ad51c0db99d784fe69c6e3f223ccf481d690e1d05a1545",
+   "text": "이론과 실습 교육을 병행하며 Abhyangam (아비양감), 시로다라(Shirodhara), 포디키지(Podikizhi) 등 이완과 활력 회복을 위한 요법을 중심으로 더 깊이 배웁니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_529d5f533a76761c669e",
+   "sourceHash": "529d5f533a76761c669e3ad1fad491dbb6f1f34e369e5bb8a2d4ce6f166d6533",
+   "text": "3. WAP (5일 아유르베다 프로그램)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b89faeb7843203896d81",
+   "sourceHash": "b89faeb7843203896d814123cf7ff029f29f0a67a1e1358300951c3b46ab410e",
+   "text": "아유르베다의 기초와 함께 5가지 핵심 요법, 즉 Abhyangam (아비양감), 시로다라(Shirodhara), 포디키지(Podikizhi), 우드와르타남(Udhwarthanam), 카티바스티(Kativasthi)를 직접 실습하며 배웁니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9495cc4c611c03cc4184",
+   "sourceHash": "9495cc4c611c03cc41843dede947e5d35abb89ec9b55a9a408c7bb9ced09968d",
+   "text": "4. AATP (10일 아유르베다 프로그램)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1532e679691c5a277cfd",
+   "sourceHash": "1532e679691c5a277cfd8f39ccda56560c0f23f6aa49ae993d84f66c6467137e",
+   "text": "일과 섭생법(디나차리야, Dinacharya), 계절별 섭생법(리투차리야, Ritucharya), 해부학, 그리고 6가지 핵심 아유르베다 요법의 상세한 실기 적용을 다루는 보다 폭넓은 교육 과정입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c28bdd9926bdc950f816",
+   "sourceHash": "c28bdd9926bdc950f816953a37cd1e083a433eb2aca456e987cddbe977da5683",
+   "text": "5. AALCT (20일 아유르베다 프로그램)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2268b70a7cfe2f5451cb",
+   "sourceHash": "2268b70a7cfe2f5451cb0c12f36c1d1cbe91b5c680e07f7957f82e6196d685f4",
+   "text": "프라크리티(Prakriti, 체질) 분석, 생활습관병 관리, 식이 지침, 처방, 그리고 9가지 주요 아유르베다 요법 교육을 포함하는 심화 종합 과정입니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da4f7ea58d963b1a302b",
+   "sourceHash": "da4f7ea58d963b1a302b76b8fa5570190106c673b9cf2975468b8caea5e27384",
+   "text": "참고 사항:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f8c0fbd6bc413b3982ce",
+   "sourceHash": "f8c0fbd6bc413b3982ce5b35458fe43019a7fa042addcf913ba8a9907e780352",
+   "text": "이론 수업은 전문 아유르베다 의사가 진행합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

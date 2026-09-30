@@ -1,0 +1,126 @@
+{
+  "source": "public/ahv/assets/policy-family-data.js",
+  "note": "Lifted verbatim by tools/extract-copy-provenance.mjs. Build-time audit trail, never served.",
+  "routes": {
+    "/cookie-policy/": [
+      {
+        "sourcePosition": 31,
+        "sourceHref": "/cdn-cgi/l/email-protection",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source paragraph matched to captured live-response HTML; its data-cfemail decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      }
+    ],
+    "/new-privacy-policy/": [
+      {
+        "sourcePosition": 45,
+        "sourceHref": "/cdn-cgi/l/email-protection#573e393138173c363e25363b3e7934383a",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      },
+      {
+        "sourcePosition": 47,
+        "sourceHref": "/cdn-cgi/l/email-protection#4b22252d240b202a22392a272265282426",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      }
+    ],
+    "/privacy-policy/": [
+      {
+        "sourcePosition": 8,
+        "sourceHref": "/cdn-cgi/l/email-protection",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source paragraph matched to captured live-response HTML; its data-cfemail decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      },
+      {
+        "sourcePosition": 32,
+        "sourceHref": "/cdn-cgi/l/email-protection#e58c8b838aa58e848c9784898ccb868a88",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      },
+      {
+        "sourcePosition": 34,
+        "sourceHref": "/cdn-cgi/l/email-protection#147d7a727b547f757d6675787d3a777b79",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      }
+    ],
+    "/privacy-statement/": [
+      {
+        "sourcePosition": 107,
+        "sourceHref": "/cdn-cgi/l/email-protection#533a3d353c1338323a21323f3a7d303c3e",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      },
+      {
+        "sourcePosition": 108,
+        "sourceHref": "/cdn-cgi/l/email-protection#4a23242c250a212b23382b262364292527",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source anchor fragment decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      },
+      {
+        "sourcePosition": 117,
+        "sourceHref": "/cdn-cgi/l/email-protection#d9b0b7bfb6b699b2b8b0abb8b5b0f7bab6b4",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source paragraph matched to captured live-response HTML; its data-cfemail decoded",
+        "sourceFragmentDiffers": true,
+        "sourceFragmentDecoded": "infoo@kairali.com",
+        "resolution": "Use full captured HTML same-paragraph contact and agreement with the other supplied policy contacts; retain the differing source-record fragment as a provenance discrepancy, not an invented address."
+      }
+    ],
+    "/terms-and-conditions/": [
+      {
+        "sourcePosition": 82,
+        "sourceHref": "/cdn-cgi/l/email-protection",
+        "sourceLabel": "[email protected]",
+        "candidateHref": "mailto:info@kairali.com",
+        "candidateLabel": "info@kairali.com",
+        "method": "Exact source paragraph matched to captured live-response HTML; its data-cfemail decoded",
+        "sourceFragmentDiffers": false,
+        "sourceFragmentDecoded": null,
+        "resolution": null
+      }
+    ]
+  }
+}

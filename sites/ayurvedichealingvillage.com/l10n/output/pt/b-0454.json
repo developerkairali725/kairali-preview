@@ -1,0 +1,217 @@
+{
+ "batchId": "b-0454",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_53e6bc91574533a88e94",
+   "sourceHash": "53e6bc91574533a88e94ae59fb8254658d1e7776965e7fc87a8785bdf47ac531",
+   "text": "Política para crianças: as crianças com menos de 5 anos podem ficar alojadas e fazer as refeições gratuitamente quando partilham o quarto e as camas existentes com adultos. Poderão aplicar-se encargos adicionais para crianças mais velhas ou camas extra.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f1865d52026561a3145f",
+   "sourceHash": "f1865d52026561a3145f0422917fd4e98e7a855045150c23da8d57e93c116191",
+   "text": "Política para crianças:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_08661a51d5608f6c1796",
+   "sourceHash": "08661a51d5608f6c17960eca35210cc0cec80543798f74c8b1ceb506c3105302",
+   "text": "As crianças com menos de 5 anos podem ficar alojadas e fazer as refeições gratuitamente quando partilham o quarto e as camas existentes com adultos. Poderão aplicar-se encargos adicionais para crianças mais velhas ou camas extra.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ebfb19dabf37902c2692",
+   "sourceHash": "ebfb19dabf37902c2692a2f90eb22a77c5323423763cbde7e9c8ca6331fd4979",
+   "text": "6. Horário da Consulta Médica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a7659c5df1736378ba48",
+   "sourceHash": "a7659c5df1736378ba484d79819ce5005830cb4f31017b6e12e9cf8a5b3a1c1b",
+   "text": "Os pacientes com marcação para o próprio dia ou que cheguem sem marcação devem fazer o check-in antes das 3:30 PM para poderem ter uma consulta médica no mesmo dia. Este limite é essencial para que os nossos médicos ayurvédicos possam realizar uma consulta detalhada e sem pressa. As chegadas após as 3:30 PM terão a consulta agendada para o dia disponível seguinte, consoante a disponibilidade dos médicos. Recomendamos a todos os pacientes que planeiem a sua deslocação em conformidade, para evitar atrasos no início do seu programa de tratamento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' and 'healing program' as 'programa de tratamento' per the clinical register lock; 'consultation experience' simplified to 'consulta'. Time kept as '3:30 PM' per the keep-times-unchanged rule (15:30 would be the natural PT form). Missing space after 'experience.' in source corrected."
+   ]
+  },
+  {
+   "id": "t_20873db7e326c7fb84da",
+   "sourceHash": "20873db7e326c7fb84dada7dd093644aad778696e312cb92e3a64a31aeadb5ea",
+   "text": "7. Condições e Métodos de Pagamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06b68fd59cee3e1232fa",
+   "sourceHash": "06b68fd59cee3e1232fab34dc112881440ca4454280aaf98a7f6d9e1b2d06580",
+   "text": "Métodos de pagamento: os pacientes podem pagar com cartão de crédito/débito, transferência bancária ou outros métodos aceites, conforme indicado no momento da marcação.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_3cc11a3c40b1339bf5b3",
+   "sourceHash": "3cc11a3c40b1339bf5b3c210755e8014f7aaefb17a9c07386f63bb881efd79b5",
+   "text": "Métodos de pagamento:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e9a9582234afe3f49e05",
+   "sourceHash": "e9a9582234afe3f49e057887644c9fa0bb2f0220becfd2647faa0715462b7294",
+   "text": "Os pacientes podem pagar com cartão de crédito/débito, transferência bancária ou outros métodos aceites, conforme indicado no momento da marcação.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 'pacientes' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_f60c6ca23f88bccbe737",
+   "sourceHash": "f60c6ca23f88bccbe737680cf1a223ac2537bd37cb1047d73c5591397493fdce",
+   "text": "Moeda e encargos: todos os pagamentos serão processados na moeda indicada. Quaisquer encargos bancários, taxas de transação ou diferenças cambiais são da responsabilidade do Paciente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'o Paciente' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_1df199c15d15143eaa84",
+   "sourceHash": "1df199c15d15143eaa8413535c4f5346414c130afe5837f22a851585db413104",
+   "text": "Moeda e encargos:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_124030366e0d03e04e95",
+   "sourceHash": "124030366e0d03e04e95042e205afbf276f4e8fa51e2fd94efc5a85c2c067092",
+   "text": "Todos os pagamentos serão processados na moeda indicada. Quaisquer encargos bancários, taxas de transação ou diferenças cambiais são da responsabilidade do Paciente.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Guest' rendered as 'o Paciente' per the clinical register lock."
+   ]
+  },
+  {
+   "id": "t_ef082a6037a3b0a79b32",
+   "sourceHash": "ef082a6037a3b0a79b32fa64353b50f7b49d554c73acea34b54f4e7a9e6b4e16",
+   "text": "8. Preços, Ofertas e Impostos",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_afb0ea0a6350125b18bf",
+   "sourceHash": "afb0ea0a6350125b18bf6bd2daedfac8a14789301a9a7a20288179aa1f3111c4",
+   "text": "Preços: todas as tarifas e encargos serão os indicados no momento da marcação. Reservamo-nos o direito de alterar preços, promoções e pacotes sem aviso prévio, mas as alterações não afetarão as marcações confirmadas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d15792fe95739fc178d2",
+   "sourceHash": "d15792fe95739fc178d2e0ff4869378cd8b40b6136b07d83e345448d2ae32299",
+   "text": "Preços:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aa732602857428527663",
+   "sourceHash": "aa7326028574285276636d6f7393634f9d9bbc4ffc3d009b994c6d183550395a",
+   "text": "Todas as tarifas e encargos serão os indicados no momento da marcação. Reservamo-nos o direito de alterar preços, promoções e pacotes sem aviso prévio, mas as alterações não afetarão as marcações confirmadas.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_953128a42c11a47cb97a",
+   "sourceHash": "953128a42c11a47cb97a9df45246a0b0b69fbd94592f121ad1d20bcb6b49f493",
+   "text": "Impostos e taxas: todos os impostos aplicáveis, taxas governamentais e encargos de serviço serão acrescentados à fatura, conforme exigido por lei.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5d61d85e4dfc98cbbf9",
+   "sourceHash": "b5d61d85e4dfc98cbbf9b7f451427200f3ab827ec2275f747618f88440d354c7",
+   "text": "Impostos e taxas:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06a7eeaffe8a83a25811",
+   "sourceHash": "06a7eeaffe8a83a25811640e67d7a3fe85077effd986ed1524690b397849a746",
+   "text": "Todos os impostos aplicáveis, taxas governamentais e encargos de serviço serão acrescentados à fatura, conforme exigido por lei.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_050756c2c76bc6bdb9c4",
+   "sourceHash": "050756c2c76bc6bdb9c424b19a204ef5ae9d98b68525ddc41af399c1edf69160",
+   "text": "9. Política de Cancelamento, Alterações e Reembolso",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9eb66d8db6a3ae4a947d",
+   "sourceHash": "9eb66d8db6a3ae4a947dbe8bf85b0bca41cecb42cca753302d758db37a6a7379",
+   "text": "Prazos de cancelamento: mais de 30 dias antes da admissão: reembolso integral. Entre 15 e 30 dias antes da admissão: é reembolsado 50% do montante pago, deduzidas as taxas de transação e os impostos aplicáveis. Menos de 15 dias antes da admissão, ou alteração de datas durante a estadia: sem reembolso.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc0af2857884fbc11d1e",
+   "sourceHash": "cc0af2857884fbc11d1e3b7659de8757cd349a9259171dd229a5c0eee4d43ce9",
+   "text": "Alterações: as alterações às datas da reserva, aos tratamentos ou às categorias de quarto estão sujeitas a disponibilidade e podem implicar encargos adicionais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_93a7da14f78ec4137e88",
+   "sourceHash": "93a7da14f78ec4137e88c74e34e3fe212086b22b177f895b389b3107ac3aa77e",
+   "text": "Alterações:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bcf3065d91ff1f43cfba",
+   "sourceHash": "bcf3065d91ff1f43cfbad030c1b83a2afbe554825aa52e25c5b4dd4592c153d0",
+   "text": "As alterações às datas da reserva, aos tratamentos ou às categorias de quarto estão sujeitas a disponibilidade e podem implicar encargos adicionais.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a8c2638aab5b5a5dc437",
+   "sourceHash": "a8c2638aab5b5a5dc4375421aaac53bb2e9bae16965cdabf7df0f20ba627a0a5",
+   "text": "Processo de reembolso: os reembolsos aprovados serão processados num prazo razoável, através do mesmo método de pagamento utilizado na transação original.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

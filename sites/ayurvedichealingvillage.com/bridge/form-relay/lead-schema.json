@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "about": "Single source of truth for the AHV form relay. Read by the PHP relay on the database host (relay-core.php) and by the website (lib/lead-store.ts). Table and column names below are the ONLY identifiers the relay will ever put into SQL; every value is bound as a parameter.",
+  "database": "ktahv_ayurvedic_healing_village",
+  "site": "ayurvedichealingvillage.com",
+  "rateLimit": { "perIpPerTable": 5, "windowMinutes": 10 },
+  "defaultMaxLength": 500,
+  "longTextMaxLength": 4000,
+  "longTextColumns": ["message", "symptoms", "address", "cover_letter", "highest_qualification"],
+  "booleanColumns": ["consent", "privacy_consent"],
+  "trackingColumns": {
+    "source": 190,
+    "campaign": 190,
+    "medium": 190,
+    "gclid": 255,
+    "fbclid": 255,
+    "utm_source": 190,
+    "utm_medium": 190,
+    "utm_campaign": 190,
+    "utm_term": 190,
+    "utm_content": 190,
+    "lead_source_url": 500,
+    "referrer": 500
+  },
+  "newsletter": {
+    "about": "Double opt-in newsletter audience (relay ops newsletter.*). Its own three tables (newsletter-tables.sql), never the patient lead tables below. consentVersions maps each consent version the site may send to the exact English permission text shown beside the form; the relay records version, text, display locale and source path only when the address is confirmed.",
+    "consentVersions": {
+      "newsletter-2026-09-24": "By subscribing, you agree to receive Kairali news and programme updates. Unsubscribe any time."
+    },
+    "locales": ["en", "hi", "de", "fr", "es", "it", "pt", "nl", "ru", "ar", "zh-Hans", "ja", "ko"],
+    "confirmationTtlHours": 48,
+    "limits": {
+      "perIpPerHour": 10,
+      "perEmailPerDay": 5,
+      "sendsPerEmailPerDay": 3,
+      "resendCooldownSeconds": 120
+    },
+    "outbox": {
+      "inlineLeaseSeconds": 120,
+      "retryDelaySeconds": 600,
+      "maxSendAttempts": 5,
+      "claimBatch": 10
+    },
+    "maxEmailLength": 254,
+    "maxSourcePathLength": 300
+  },
+  "tables": {
+    "contact": [
+      "full_name", "countrycode", "phone", "programme", "email", "subject",
+      "country", "state", "city", "message", "consent"
+    ],
+    "enquiry-form": [
+      "full_name", "countrycode", "phone", "programme", "email", "subject",
+      "country", "state", "city", "message", "consent"
+    ],
+    "apply-now": [
+      "application_type", "fname", "lname", "post_applied_for", "job_reference_code",
+      "gender", "dob", "address", "full_name", "countrycode", "phone", "mobile",
+      "email", "subject", "country", "state", "city", "message", "consent",
+      "position_applied", "resume_url", "current_location", "experience_years",
+      "industry", "highest_qualification", "experience_months", "current_organization",
+      "current_designation", "valid_passport", "photo_url", "cover_letter",
+      "application_file_url", "privacy_consent"
+    ],
+    "opd": [
+      "full_name", "age", "gender", "countrycode", "phone", "email",
+      "preferred_visit_date", "address", "symptoms", "preferred_doctor", "consent"
+    ],
+    "online-consultation": [
+      "full_name", "countrycode", "phone", "email", "subject", "country", "state",
+      "city", "message", "consent", "preferred_date", "preferred_time",
+      "health_concern", "duration", "consultation_for", "preferred_language"
+    ],
+    "landing-page": [
+      "landing_page_path", "form_variant", "fname", "lname", "rdogender", "phone",
+      "email", "country", "duration", "message", "consent", "track_id",
+      "campaign_name", "utm_keyword"
+    ],
+    "exit-intent": [
+      "full_name", "countrycode", "phone", "email", "subject", "country", "state",
+      "city", "message", "consent", "step1_answer", "trigger_type"
+    ]
+  }
+}

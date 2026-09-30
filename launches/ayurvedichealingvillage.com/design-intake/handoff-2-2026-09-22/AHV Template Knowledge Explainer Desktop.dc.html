@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#F7F4EA;color:#2A2118;font-family:'Mulish',sans-serif;font-size:18px;line-height:1.75}
+a{color:#006038;text-decoration:none}a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px;box-shadow:0 0 0 6px rgba(247,244,234,.85)}
+h1,h2,h3,h4{font-weight:400;margin:0}
+p{margin:0}
+</style>
+</helmet>
+<div data-screen-label="Knowledge explainer — desktop template">
+
+<div style="background:#2A2014;color:#F7F4EA;padding:12px 0">
+  <div style="width:min(1220px,94%);margin:0 auto;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <span style="font-family:'Marcellus',serif;font-size:18px;color:#EEB41E">T04 · Knowledge explainer</span>
+    <span style="font-size:14px;color:#E4DECF">One template, three real routes. Switch to stress-test the typography:</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-left:auto">
+      <button type="button" onClick="{{ pickNew }}" style="{{ tabNew }}">New to Ayurveda — 644w</button>
+      <button type="button" onClick="{{ pickLong }}" style="{{ tabLong }}">Learn About Ayurveda — 722w, no lists</button>
+      <button type="button" onClick="{{ pickShort }}" style="{{ tabShort }}">Learn More — 87w</button>
+    </div>
+  </div>
+</div>
+
+<dc-import name="AHV Chrome Header" hint-size="100%,72px"></dc-import>
+
+<sc-if value="{{ isNew }}" hint-placeholder-val="{{ true }}">
+<section style="width:min(1220px,94%);margin:0 auto;padding:40px 0 0">
+  <nav aria-label="Breadcrumb" style="font-size:14px;color:#75695A;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a href="/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><a href="/knowledge-centre/" style="display:inline-flex;align-items:center;min-height:44px">Knowledge Centre</a><span aria-hidden="true">/</span><span style="color:#2A2118">New to Ayurveda</span></nav>
+  <div style="display:flex;gap:28px 56px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;padding:6px 0 30px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+      <h1 style="font-family:'Marcellus',serif;font-size:clamp(38px,4.2vw,58px);line-height:1.08;margin:14px 0 0;max-width:18ch;text-wrap:balance">New to Ayurveda</h1>
+    </div>
+    <p style="font-size:19px;line-height:1.6;color:#514a3f;max-width:46ch;margin:0;border-left:3px solid #C1882C;padding-left:22px">A plain introduction to what Ayurveda is, what a first programme involves, and how a physician decides what you need.</p>
+  </div>
+</section>
+<div style="height:clamp(240px,26vw,340px);background-image:url(assets/img/article/our-story.png);background-size:cover;background-position:center" role="img" aria-label="Kairali — The Ayurvedic Healing Village, Palakkad"></div>
+
+<main style="width:min(1220px,94%);margin:0 auto;padding:56px 0 0;display:grid;grid-template-columns:230px minmax(0,1fr);gap:0 76px;align-items:start">
+  <nav aria-label="On this page" style="position:sticky;top:28px;padding-top:6px">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #DCD3BF">On this page</div>
+    <ul style="list-style:none;margin:0;padding:14px 0 0;display:flex;flex-direction:column;gap:2px">
+      <li><a href="#a-intro" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Discover holistic healing</a></li>
+      <li><a href="#a-seniors" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Why Ayurveda suits older adults</a></li>
+      <li><a href="#a-journey" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Your journey begins here</a></li>
+      <li><a href="#a-expect" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">What you can expect</a></li>
+      <li><a href="#a-why" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Why choose Kairali</a></li>
+      <li><a href="#a-faq" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Common questions</a></li>
+      <li><a href="#a-begin" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Begin your journey</a></li>
+    </ul>
+  </nav>
+
+  <article style="max-width:68ch;min-width:0">
+    <h2 id="a-intro" style="font-family:'Marcellus',serif;font-size:34px;line-height:1.2;margin:0 0 22px;text-wrap:pretty">New to Ayurveda? Discover Holistic Healing at Kairali – The Ayurvedic Healing Village</h2>
+    <p style="font-size:20px;line-height:1.72;color:#3B3226;margin-bottom:22px">If you’re new to Ayurveda, welcome to a 5,000-year-old tradition that promotes health, longevity, and well-being. Ayurveda, or “The Science of Life,” is a natural and holistic approach to wellness that emphasizes harmony in the body, mind, and spirit. Whether you’re looking for relief from chronic pain, increased energy, or simply a rejuvenating experience, Kairali – The Ayurvedic Healing Village is the ideal place to explore Ayurveda at your own speed.</p>
+    <p>Kairali, a prominent Health Retreat in Kerala, provides authentic Ayurvedic experiences tailored exclusively to the needs of older adults seeking natural solutions to maintain health, increase mobility, and improve quality of life.</p>
+
+    <h2 id="a-seniors" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:64px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Why Ayurveda is Perfect for Seniors</h2>
+    <p style="margin:20px 0 26px">Aging is a natural process, but Ayurveda shows us how to age gracefully while being healthy. If you’re experiencing:</p>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px">
+      <li style="display:grid;grid-template-columns:22px 1fr;gap:16px;align-items:start"><span aria-hidden="true" style="height:2px;background:#C1882C;margin-top:16px"></span><span>Joint stiffness or mobility difficulties.</span></li>
+      <li style="display:grid;grid-template-columns:22px 1fr;gap:16px;align-items:start"><span aria-hidden="true" style="height:2px;background:#C1882C;margin-top:16px"></span><span>Digestive problems or loss of appetite.</span></li>
+      <li style="display:grid;grid-template-columns:22px 1fr;gap:16px;align-items:start"><span aria-hidden="true" style="height:2px;background:#C1882C;margin-top:16px"></span><span>Stress, anxiety, or disrupted sleep patterns.</span></li>
+      <li style="display:grid;grid-template-columns:22px 1fr;gap:16px;align-items:start"><span aria-hidden="true" style="height:2px;background:#C1882C;margin-top:16px"></span><span>Low energy levels or weakened immunity</span></li>
+    </ul>
+    <p style="margin-top:26px">Then Ayurveda can help you achieve balance in a peaceful, non-invasive, and holistic way.</p>
+
+    <figure style="margin:52px 0 0;width:calc(100% + 120px);max-width:none;margin-left:-120px">
+      <img src="assets/img/AHV-Consultation-Therapy-Hands.jpg" alt="An Ayurvedic physician examining a patient during a first consultation at Kairali" style="width:100%;height:clamp(260px,26vw,380px);object-fit:cover;display:block;border-radius:2px">
+      <figcaption style="font-size:14px;line-height:1.55;color:#75695A;padding-top:12px;display:grid;grid-template-columns:22px 1fr;gap:16px"><span aria-hidden="true" style="height:1px;background:#C1882C;margin-top:12px"></span><span>Every programme opens with a consultation. Nothing is prescribed before a physician has examined you.</span></figcaption>
+    </figure>
+
+    <h2 id="a-journey" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:64px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Your Ayurvedic Journey Begins at Kairali</h2>
+    <p style="margin-top:20px">At Kairali – The Ayurvedic Healing Village, we offer an immersive Ayurvedic experience in a serene and rejuvenating environment. Recognized as the Best Ayurvedic Resort in Kerala, our retreat is designed to help you understand your body’s unique needs and introduce you to the healing benefits of Ayurveda in a way that is simple, practical, and deeply restorative.</p>
+
+    <h2 id="a-expect" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:64px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">What You Can Expect at Kairali’s Ayurvedic Retreat in India</h2>
+    <dl style="margin:26px 0 0;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Personalized Ayurvedic Consultation</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Your journey begins with a consultation with our Ayurvedic doctors who will evaluate your health, body type (Dosha), and lifestyle requirements.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Gentle &amp; Therapeutic Ayurvedic Practices</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Enjoy traditional Ayurvedic therapies that promote joint flexibility, purification, and relaxation. Herbal oils, warm compresses, and gentle massages are used in our therapies to help aging muscles and joints feel more comfortable and vibrant.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Ayurvedic Nutrition &amp; Diet</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">A well-balanced, easy-to-digest Ayurvedic diet is supplied to fuel your body while also improving digestion. Each meal is meticulously made with fresh, seasonal ingredients that adhere to Ayurvedic principles.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Calming Yoga &amp; Meditation</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Learn basic, yoga postures and breathing methods to increase flexibility, reduce stress, and improve lung function.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD;border-bottom:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">A Peaceful Stay in a Wellness Resort in India</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Relax in a natural, pollution-free environment surrounded by lush foliage and fresh air—the perfect place to relax, rejuvenate, and focus on your health.</dd>
+      </div>
+    </dl>
+
+    <sc-if value="{{ showDrafts }}" hint-placeholder-val="{{ true }}">
+    <aside style="margin:52px 0 0;background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:6px;padding:30px 34px">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-bottom:16px">
+        <span style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">The three doshas, briefly</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px">
+        <div><div style="font-family:'Marcellus',serif;font-size:22px">Vata</div><div style="font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;font-weight:700;padding:4px 0 8px">Ether &amp; air</div><p style="font-size:16px;line-height:1.6;color:#3B3226">Governs movement, circulation and the nervous system. Out of balance it shows as dry skin, restlessness and broken sleep.</p></div>
+        <div><div style="font-family:'Marcellus',serif;font-size:22px">Pitta</div><div style="font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;font-weight:700;padding:4px 0 8px">Fire &amp; water</div><p style="font-size:16px;line-height:1.6;color:#3B3226">Governs digestion, metabolism and body heat. Out of balance it shows as acidity, inflammation and irritability.</p></div>
+        <div><div style="font-family:'Marcellus',serif;font-size:22px">Kapha</div><div style="font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8F6212;font-weight:700;padding:4px 0 8px">Water &amp; earth</div><p style="font-size:16px;line-height:1.6;color:#3B3226">Governs structure, fluid balance and stamina. Out of balance it shows as congestion, weight gain and lethargy.</p></div>
+      </div>
+      <p style="font-size:15px;line-height:1.6;color:#75695A;padding-top:18px;border-top:1px solid #E5DECD;margin-top:22px">Your physician identifies your dominant dosha during the first consultation. It is a description of constitution, not a diagnosis.</p>
+    </aside>
+    </sc-if>
+
+    <h2 id="a-why" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:64px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Why Choose Kairali – The Best Ayurvedic Resort in Kerala?</h2>
+    <dl style="margin:26px 0 0;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">A Home Away from Home</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Our retreat is intended to provide a relaxing, quiet, and homey experience in a stress-free environment.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">100% Natural &amp; Holistic</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">No chemicals or artificial interventions—just pure, traditional Ayurvedic techniques.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Expert Guidance &amp; Support</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Our experienced Ayurvedic doctors and therapists will guide you every step of the way.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">A Globally Recognized Ayurvedic Retreat in India</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Kairali attracts visitors from all over the world seeking authentic Ayurvedic experiences that improve health and well-being.</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,20ch) minmax(0,1fr);gap:8px 40px;padding:24px 0;border-top:1px solid #E5DECD;border-bottom:1px solid #E5DECD">
+        <dt style="font-family:'Marcellus',serif;font-size:21px;line-height:1.3;color:#2A2118">Perfect for Seniors Seeking Relaxation &amp; Vitality</dt>
+        <dd style="margin:0;font-size:17.5px;color:#3B3226">Our retreat is tailored to older folks who desire to revitalize, enhance their health naturally, and live a balanced lifestyle.</dd>
+      </div>
+    </dl>
+
+    <figure style="margin:52px 0 0">
+      <img src="assets/img/Supportive-Care-Hero-Shirodhara.jpg" alt="Shirodhara: a steady stream of warm medicated oil poured across the forehead" style="width:100%;height:clamp(240px,24vw,340px);object-fit:cover;display:block;border-radius:2px">
+      <figcaption style="font-size:14px;line-height:1.55;color:#75695A;padding-top:12px;display:grid;grid-template-columns:22px 1fr;gap:16px"><span aria-hidden="true" style="height:1px;background:#C1882C;margin-top:12px"></span><span>Shirodhara, one of the therapies a physician may include in a first programme.</span></figcaption>
+    </figure>
+
+    <sc-if value="{{ showDrafts }}" hint-placeholder-val="{{ true }}">
+    <section id="a-faq" style="margin:64px 0 0;padding-top:26px;border-top:1px solid #DCD3BF">
+      <div style="display:flex;gap:12px;align-items:baseline;flex-wrap:wrap">
+        <h2 style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22">Common questions before a first visit</h2>
+      </div>
+      <div style="margin-top:26px;display:flex;flex-direction:column">
+        <div style="padding:22px 0;border-top:1px solid #E5DECD">
+          <h3 style="font-size:19px;font-weight:700;line-height:1.4">How long does a first programme usually run?</h3>
+          <p style="font-size:17.5px;color:#3B3226;margin-top:8px">Most first-time patients stay between seven and fourteen nights. Panchakarma detoxification is generally advised for a minimum of fourteen. Your physician sets the length after the consultation.</p>
+        </div>
+        <div style="padding:22px 0;border-top:1px solid #E5DECD">
+          <h3 style="font-size:19px;font-weight:700;line-height:1.4">Do I need a diagnosis before I arrive?</h3>
+          <p style="font-size:17.5px;color:#3B3226;margin-top:8px">No. Bring any recent reports and a list of medicines you take. The consultation on arrival establishes your constitution and current condition.</p>
+        </div>
+        <div style="padding:22px 0;border-top:1px solid #E5DECD;border-bottom:1px solid #E5DECD">
+          <h3 style="font-size:19px;font-weight:700;line-height:1.4">Can I continue my existing medication?</h3>
+          <p style="font-size:17.5px;color:#3B3226;margin-top:8px">Ayurvedic treatment at Kairali is given alongside, not instead of, care you already receive. Declare everything you take at the consultation so the physician can plan around it.</p>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <h2 id="a-begin" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:64px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Begin Your Journey to Wellness Today!</h2>
+    <p style="margin-top:20px">Ayurveda is more than just healing; it is about leading a better, more fulfilling life. If you’re new to Ayurveda and seeking a relaxing, revitalizing experience, Kairali – The Ayurvedic Healing Village is the place to begin.</p>
+    <p style="margin-top:20px">Your wellness journey starts here. Experience Ayurveda and life!</p>
+  </article>
+</main>
+</sc-if>
+
+<sc-if value="{{ isLong }}" hint-placeholder-val="{{ true }}">
+<section style="width:min(1220px,94%);margin:0 auto;padding:40px 0 0">
+  <nav aria-label="Breadcrumb" style="font-size:14px;color:#75695A;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a href="/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><a href="/knowledge-centre/" style="display:inline-flex;align-items:center;min-height:44px">Knowledge Centre</a><span aria-hidden="true">/</span><span style="color:#2A2118">Learn About Ayurveda</span></nav>
+  <div style="display:flex;gap:28px 56px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;padding:6px 0 30px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+      <h1 style="font-family:'Marcellus',serif;font-size:clamp(38px,4.2vw,58px);line-height:1.08;margin:14px 0 0;max-width:18ch;text-wrap:balance">Learn About Ayurveda</h1>
+    </div>
+    <p style="font-size:19px;line-height:1.6;color:#514a3f;max-width:46ch;margin:0;border-left:3px solid #C1882C;padding-left:22px">Dosha theory, Prakriti analysis and the training tradition behind them, from a hospital registered by the Government of Kerala.</p>
+  </div>
+</section>
+<div style="height:clamp(240px,26vw,340px);background-image:url(assets/img/article/our-story.png);background-size:cover;background-position:center" role="img" aria-label="Kairali — The Ayurvedic Healing Village, Palakkad"></div>
+
+<main style="width:min(1220px,94%);margin:0 auto;padding:56px 0 0;display:grid;grid-template-columns:230px minmax(0,1fr);gap:0 76px;align-items:start">
+  <nav aria-label="On this page" style="position:sticky;top:28px;padding-top:6px">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid #DCD3BF">On this page</div>
+    <ul style="list-style:none;margin:0;padding:14px 0 0;display:flex;flex-direction:column;gap:2px">
+      <li><a href="#b-training" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Training at our Ayurveda College</a></li>
+      <li><a href="#b-learn" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">Learn About Ayurveda</a></li>
+      <li><a href="#b-retreat" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0;color:#514a3f">The retreat environment</a></li>
+      <li><a href="#b-yoga" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0 9px 16px;color:#75695A">Yoga and Meditation</a></li>
+      <li><a href="#b-oil" style="display:block;font-size:15.5px;line-height:1.45;padding:9px 0 9px 16px;color:#75695A">Ayurvedic Oil Massage</a></li>
+    </ul>
+    <div style="margin-top:22px;padding-top:16px;border-top:1px solid #DCD3BF;font-size:14px;line-height:1.55;color:#75695A">About 6 minutes to read.</div>
+  </nav>
+
+  <article style="max-width:66ch;min-width:0">
+    <p style="font-size:21px;line-height:1.7;color:#3B3226">Kairali’s The Ayurvedic Healing Village is one of the few Ayurvedic Treatment centers to be registered as an Ayurvedic hospital by the Government of Kerala, which also recognizes us as the ‘model’ of an Ayurvedic health retreat. Our significant achievements in both healthcare and hospitality has made us an industry leader in both areas, as can be seen in our long list of accreditations and awards.</p>
+
+    <h2 id="b-training" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:60px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Training at our Ayurveda College in Kerala</h2>
+    <p style="margin-top:22px">Students of Kairali Ayurvedic Group benefit from four generations and eight decades of experience in Ayurveda treatments; giving us a well-deserved reputation for quality and authenticity. Our growing international reputation brings students from all over the world to our Ayurveda College and Training Institute in Palakkad, Kerala; aiming to earn a Diploma from a world-leader in Ayurvedic spa therapy.</p>
+    <p style="margin-top:22px">Training courses at our Ayurvedic Massage College will provide you with exceptional expertise in Ayurveda theory and practice; a considerable advantage to spa therapists considering the unprecedented spread of Ayurvedic techniques internationally. Studying massage or Panchakarma with Kairali prepares you to provide these treatments at a very high level, enhancing the value of your therapy skills and work resume.</p>
+    <p style="margin-top:22px">Some of our guests wish to gain introductory training in Ayurveda, Massage, Yoga or Meditation, and we are pleased to provide fifteen day beginners’ courses at our luxury retreat center in Palakkad, Kerala – the home of Ayurveda in India.</p>
+
+    <div aria-hidden="true" style="margin:56px 0 0;padding:34px 0;border-top:1px solid #DCD3BF;border-bottom:1px solid #DCD3BF">
+      <p style="font-family:'Marcellus',serif;font-size:30px;line-height:1.35;color:#2A2118;text-wrap:pretty">“No two courses of Ayurveda Treatment can ever be the same.”</p>
+    </div>
+
+    <h2 id="b-learn" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:56px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">Learn About Ayurveda</h2>
+    <p style="margin-top:22px">Those with an interest in complementary or holistic approaches to health should consider starting with the therapy that has the longest lineage. Ayurveda, the ancient health practice of India is thought by some historians to predate even ancient Egyptian medicine. Acknowledged as the inventor of modern day surgery, Ayurvedic Treatment and detoxification methods have remained popular for thousands of years, and their success now precipitates the worldwide spread of this natural and traditional wellbeing knowledge.</p>
+    <p style="margin-top:22px">The first thing to learn about Ayurveda is that the body must always be viewed as a whole, rather than in its separate parts. This means accepting the body as part of an integrated system, involving mind, body and soul. Ayurveda offers curative, as well as preventative methods of health and understands that a united approach to lifestyle ensures true health and longevity.</p>
+    <p style="margin-top:22px">While viewing all individuals as part of an interwoven community, Ayurveda also looks deeply into each individual. This is the reason that no two courses of Ayurveda Treatment can ever be the same. Guests undertake an initial consultation with one of our experienced and compassionate Ayurvedic doctors, who remain in a supervisory role in order to tailor their treatments perfectly to their body type and individual health needs.</p>
+    <p style="margin-top:22px">Part of this initial consultation, or ‘Prakriti Analysis’ is the diagnosis of the individual’s body type, or Ayurvedic dosha. Ayurvedic dosha theory is built upon the ancient metaphysics of the five elements, which appear in different combinations in each of us, forming our unique individuality. The tri-dosha system consists of; Vata Dosha, representing ether and air; Pita Dosha representing fire and water; and Kapha Dosha, representing water and earth.</p>
+
+    <sc-if value="{{ showDrafts }}" hint-placeholder-val="{{ true }}">
+    <aside style="margin:44px 0 0;background:#FFFFFF;border:1px solid #DCD3BF;border-left:3px solid #C1882C;border-radius:6px;padding:26px 30px">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-bottom:14px">
+        <span style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">At a glance</span>
+      </div>
+      <dl style="margin:0;display:grid;grid-template-columns:minmax(0,12ch) minmax(0,1fr);gap:12px 28px;font-size:16.5px">
+        <dt style="font-family:'Marcellus',serif;font-size:19px">Vata</dt><dd style="margin:0;color:#3B3226">Ether and air — movement, circulation, the nervous system.</dd>
+        <dt style="font-family:'Marcellus',serif;font-size:19px">Pitta</dt><dd style="margin:0;color:#3B3226">Fire and water — digestion, metabolism, body heat.</dd>
+        <dt style="font-family:'Marcellus',serif;font-size:19px">Kapha</dt><dd style="margin:0;color:#3B3226">Water and earth — structure, fluid balance, stamina.</dd>
+      </dl>
+    </aside>
+    </sc-if>
+
+    <figure style="margin:52px 0 0;width:calc(100% + 120px);max-width:none;margin-left:-120px">
+      <img src="assets/img/gal-herbal-powder-massage-wakem.jpg" alt="Therapists performing a herbal powder massage in a treatment room at Kairali" style="width:100%;height:clamp(260px,26vw,380px);object-fit:cover;display:block;border-radius:2px">
+      <figcaption style="font-size:14px;line-height:1.55;color:#75695A;padding-top:12px;display:grid;grid-template-columns:22px 1fr;gap:16px"><span aria-hidden="true" style="height:1px;background:#C1882C;margin-top:12px"></span><span>Treatments are delivered by two therapists working in rhythm, a method taught at the Palakkad training institute.</span></figcaption>
+    </figure>
+
+    <h2 id="b-retreat" style="font-family:'Marcellus',serif;font-size:32px;line-height:1.22;margin:60px 0 0;padding-top:26px;border-top:1px solid #EAE3D2;text-wrap:pretty">The Retreat Environment at The Ayurvedic Healing Village</h2>
+    <p style="margin-top:22px">Guests undergoing Panchakarma detoxification or another Ayurveda treatment can expect a transformative procedure a Kairali’s The Ayurvedic Healing Village. Our precisely tailored individual courses of treatment are intense processes, ensuring deep and long-lasting renewal of health. For this reason, guests benefit all the more from our tranquil healing environment and private luxury villas offered at our Kerala retreat center.</p>
+
+    <h3 id="b-yoga" style="font-size:13px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8F6212;margin:44px 0 0">Yoga and Meditation</h3>
+    <p style="margin-top:14px">The fundamental healing practices of Yoga and Meditation will greatly enhance your experience of Ayurveda, and provide physical and mental ease when practiced in the long-term. Our excellent Yoga teachers provide daily Yoga sessions and meditation training to guests at The Ayurvedic Healing Village. Those wishing to undertake a dedicated course in these practices should read more about our <a href="/programs/intensive-ayurveda-training-program-wap-hv/">Yoga and Meditation training</a>.</p>
+
+    <h3 id="b-oil" style="font-size:13px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8F6212;margin:44px 0 0">Ayurvedic Oil Massage</h3>
+    <p style="margin-top:14px">Herbal oil massage is a fundamental part of Ayurvedic therapy, and the ancient scripture recommends that it is performed on a near-daily basis, for optimum health and relaxation!</p>
+    <p style="margin-top:22px">The Managing Director and co-founder of Kairali, Mrs. Gita Ramesh has written an introduction and practical guide to this transformative method of therapy. The following extracts are taken from her excellent manual, which is available in English and Dutch.</p>
+  </article>
+</main>
+</sc-if>
+
+<sc-if value="{{ isShort }}" hint-placeholder-val="{{ true }}">
+<section style="width:min(1220px,94%);margin:0 auto;padding:40px 0 0">
+  <nav aria-label="Breadcrumb" style="font-size:14px;color:#75695A;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a href="/" style="display:inline-flex;align-items:center;min-height:44px">Home</a><span aria-hidden="true">/</span><a href="/knowledge-centre/" style="display:inline-flex;align-items:center;min-height:44px">Knowledge Centre</a><span aria-hidden="true">/</span><span style="color:#2A2118">Learn More About Ayurveda</span></nav>
+  <div style="display:flex;gap:28px 56px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;padding:6px 0 30px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:12.5px;letter-spacing:2.6px;color:#8F6212;text-transform:uppercase">Kairali — The Ayurvedic Healing Village · Since 1908</div>
+      <h1 style="font-family:'Marcellus',serif;font-size:clamp(38px,4.2vw,58px);line-height:1.08;margin:14px 0 0;max-width:18ch;text-wrap:balance">Learn More About Ayurveda</h1>
+    </div>
+    <p style="font-size:19px;line-height:1.6;color:#514a3f;max-width:46ch;margin:0;border-left:3px solid #C1882C;padding-left:22px">Where the general reader can go past the basics: the training programme Kairali runs for people who want the principles, not only the treatment.</p>
+  </div>
+</section>
+<div style="height:clamp(240px,26vw,340px);background-image:url(assets/img/article/our-story.png);background-size:cover;background-position:center" role="img" aria-label="Kairali — The Ayurvedic Healing Village, Palakkad"></div>
+
+<main style="width:min(1220px,94%);margin:0 auto;padding:64px 0 0">
+  <article style="max-width:60ch;margin:0 auto">
+    <p style="font-size:23px;line-height:1.7;color:#3B3226;text-wrap:pretty">Though Ayurveda is fairly known around the world, like many medicinal sciences, it is often very complex and requires constant study as well as innovative remedies. Due to this, a general person won’t have access to advanced concepts of Ayurveda. However, if an individual wants to learn more about this science, they could try their hands at KAIRALI’S Ayurvedic training programme which is designed to enhance the knowledge influx about Ayurveda among the general populace.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;padding-top:34px">
+      <a href="/ayurveda-training-program/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;background:#006038;color:#FFFFFF;font-weight:600;font-size:16px" style-hover="background:#004226;color:#FFFFFF;text-decoration:none">See the training programme</a>
+      <a href="/enquiry-form/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid #006038;color:#006038;font-weight:600;font-size:16px" style-hover="background:#EEF1E6;text-decoration:none">Ask a physician</a>
+    </div>
+  </article>
+
+  <div style="max-width:1220px;margin:64px auto 0;padding-top:34px;border-top:1px solid #DCD3BF">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">The rest of the Knowledge Centre</div>
+    <p style="font-size:17.5px;color:#514a3f;max-width:56ch;margin-top:10px">Eight explainers, grouped the way a first-time reader tends to ask about them.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:26px;margin-top:30px">
+      <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:24px 26px">
+        <div style="font-family:'Marcellus',serif;font-size:20px;padding-bottom:12px;border-bottom:1px solid #E5DECD">Ayurveda</div>
+        <ul style="list-style:none;margin:0;padding:8px 0 0;display:flex;flex-direction:column">
+          <li><a href="/new-to-ayurveda/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">New to Ayurveda</a></li>
+          <li><a href="/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Why pick an Ayurveda Treatment or Ayurvedic Retreat?</a></li>
+          <li><a href="/why-get-training-in-ayurveda/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Why get Training in Ayurveda?</a></li>
+        </ul>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:24px 26px">
+        <div style="font-family:'Marcellus',serif;font-size:20px;padding-bottom:12px;border-bottom:1px solid #E5DECD">What is Panchkarma?</div>
+        <ul style="list-style:none;margin:0;padding:8px 0 0;display:flex;flex-direction:column">
+          <li><a href="/live-to-100-with-panchkarma/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Live to 100 with Panchkarma</a></li>
+          <li><a href="/ayurveda-retreats-for-everyone/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Ayurveda Retreats For Everyone</a></li>
+        </ul>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:24px 26px">
+        <div style="font-family:'Marcellus',serif;font-size:20px;padding-bottom:12px;border-bottom:1px solid #E5DECD">Yoga</div>
+        <ul style="list-style:none;margin:0;padding:8px 0 0;display:flex;flex-direction:column">
+          <li><a href="/new-to-yoga/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">New to Yoga</a></li>
+        </ul>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:24px 26px">
+        <div style="font-family:'Marcellus',serif;font-size:20px;padding-bottom:12px;border-bottom:1px solid #E5DECD">Ayurvedic Cuisine</div>
+        <ul style="list-style:none;margin:0;padding:8px 0 0;display:flex;flex-direction:column">
+          <li><a href="/what-is-ayurvedic-food/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">What is Ayurvedic Food?</a></li>
+          <li><a href="/ayurvedic-resturant-and-cooking-at-healing-village/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Ayurvedic Restaurant &amp; Cooking at Healing Village</a></li>
+        </ul>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:24px 26px">
+        <div style="font-family:'Marcellus',serif;font-size:20px;padding-bottom:12px;border-bottom:1px solid #E5DECD">Ayurvedic Products</div>
+        <ul style="list-style:none;margin:0;padding:8px 0 0;display:flex;flex-direction:column">
+          <li><a href="/ayurvedic-products/" style="display:block;padding:11px 0;font-size:16.5px;line-height:1.45">Products</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<section aria-label="Continue reading" style="width:min(1220px,94%);margin:0 auto;padding:72px 0 0">
+  <div style="display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid #DCD3BF">
+    <h2 style="font-family:'Marcellus',serif;font-size:30px">Continue in the Knowledge Centre</h2>
+    <a href="/knowledge-centre/" style="font-size:15.5px;font-weight:600;margin-left:auto">All explainers</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:28px;padding-top:32px">
+    <a href="/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;overflow:hidden;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+      <img src="assets/img/sinus-migraine-hero-shirodhara-6.jpg" alt="Shirodhara treatment as part of Panchakarma therapy" style="width:100%;height:190px;object-fit:cover;display:block">
+      <div style="padding:20px 24px 24px">
+        <div style="font-weight:700;font-size:11.5px;letter-spacing:2.2px;color:#8F6212;text-transform:uppercase">Ayurveda</div>
+        <div style="font-family:'Marcellus',serif;font-size:22px;line-height:1.3;padding-top:8px;text-wrap:pretty">Why pick an Ayurveda treatment or Ayurvedic Retreat?</div>
+      </div>
+    </a>
+    <a href="/why-get-training-in-ayurveda/" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;overflow:hidden;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+      <img src="assets/img/AHV-Ayurveda-Training-Practice.jpg" alt="Students in a session at the Kairali Ayurveda training institute" style="width:100%;height:190px;object-fit:cover;display:block">
+      <div style="padding:20px 24px 24px">
+        <div style="font-weight:700;font-size:11.5px;letter-spacing:2.2px;color:#8F6212;text-transform:uppercase">Training</div>
+        <div style="font-family:'Marcellus',serif;font-size:22px;line-height:1.3;padding-top:8px;text-wrap:pretty">Why get training in Ayurveda?</div>
+      </div>
+    </a>
+    <a href="/what-is-panchkarma/" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;overflow:hidden;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+      <img src="assets/img/ktahv-bashpa-swedana-herbal-steam-bath-2025.jpg" alt="Bashpa swedana, the herbal steam bath used within Panchakarma" style="width:100%;height:190px;object-fit:cover;display:block">
+      <div style="padding:20px 24px 24px">
+        <div style="font-weight:700;font-size:11.5px;letter-spacing:2.2px;color:#8F6212;text-transform:uppercase">Panchakarma</div>
+        <div style="font-family:'Marcellus',serif;font-size:22px;line-height:1.3;padding-top:8px;text-wrap:pretty">What is Panchkarma?</div>
+      </div>
+    </a>
+    <a href="/ayurveda-retreats-for-everyone/" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;overflow:hidden;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+      <img src="assets/img/AHV-Yoga-Retreats-Practice.jpg" alt="A yoga session on the lawn at the Ayurvedic Healing Village" style="width:100%;height:190px;object-fit:cover;display:block">
+      <div style="padding:20px 24px 24px">
+        <div style="font-weight:700;font-size:11.5px;letter-spacing:2.2px;color:#8F6212;text-transform:uppercase">Retreats</div>
+        <div style="font-family:'Marcellus',serif;font-size:22px;line-height:1.3;padding-top:8px;text-wrap:pretty">Ayurveda Retreats for everyone</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section aria-label="Speak to a physician" style="width:min(1220px,94%);margin:64px auto 0;background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:10px;padding:44px 52px;display:flex;gap:32px 56px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+  <div style="min-width:0;max-width:56ch">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">Still deciding</div>
+    <h2 style="font-family:'Marcellus',serif;font-size:clamp(28px,2.6vw,36px);line-height:1.2;margin:12px 0 0;text-wrap:pretty">Ask a physician before you choose a programme</h2>
+    <p style="font-size:17.5px;line-height:1.65;color:#3B3226;margin-top:14px">A consultation is free and there is no obligation to book. NABH-accredited · registered as an Ayurvedic hospital by the Government of Kerala · Palakkad, Kerala.</p>
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap">
+    <a href="/online-consultation/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:999px;background:#EEB41E;color:#2A2014;font-weight:700;font-size:16px" style-hover="background:#D89E10;color:#2A2014;text-decoration:none">Free doctor consultation</a>
+    <a href="/enquiry-form/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:999px;border:1px solid #8F6212;color:#8F6212;font-weight:600;font-size:16px" style-hover="background:#FBF5E8;color:#8F6212;text-decoration:none">Enquire now</a>
+  </div>
+</section>
+
+<div style="height:72px"></div>
+<dc-import name="AHV Chrome Footer" hint-size="100%,560px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { route: 'new' };
+  tab(on) {
+    return 'display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1px solid '
+      + (on ? '#EEB41E' : 'rgba(247,244,234,.35)')
+      + ';background:' + (on ? '#EEB41E' : 'transparent')
+      + ';color:' + (on ? '#2A2014' : '#F7F4EA');
+  }
+  go(r) { this.setState({ route: r }); if (typeof window !== 'undefined') window.scrollTo(0, 0); }
+  renderVals() {
+    const r = this.state.route;
+    return {
+      isNew: r === 'new', isLong: r === 'long', isShort: r === 'short',
+      showDrafts: true,
+      tabNew: this.tab(r === 'new'), tabLong: this.tab(r === 'long'), tabShort: this.tab(r === 'short'),
+      pickNew: () => this.go('new'), pickLong: () => this.go('long'), pickShort: () => this.go('short')
+    };
+  }
+}
+</script>
+</body>
+</html>

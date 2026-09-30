@@ -1,0 +1,133 @@
+{
+  "source": "docs/rates/RATES_RECKONER.md - KTAHV Ayurveda Training Courses (V2), Ref. KAHR/AY-TRG/2026-2027/04/GBL (w.e.f. 1 Oct 2026). The sheet lists five courses by duration and quotes per-night all-inclusive villa rates; it quotes NO separate course fee, so every row below carries the Deluxe Villa single per-night rate as its 'from' with that basis stated. Names follow the approved route metadata titles; durations match both the sheet and each legacy page's own text (1 / 03 / 05 / 10 / 20 nights).",
+  "ruling": "D-20260916-10 (owner, 2026-09-16): the training hub is /ayurveda-training-programme/ (the URL Google rates); /ayurveda-training-programs/ canonicalises to it. Wellness = Preventive + these six, ruled by the owner 2026-09-17 ('add them ... or link them properly').",
+  "priceBasis": {
+    "from": {
+      "INR": 18410,
+      "USD": 263,
+      "EUR": 230
+    },
+    "validFrom": "2026-10-01",
+    "validTo": "2027-09-30",
+    "sourceRef": "KAHR/AY-TRG/2026-2027/04/GBL - per-night Deluxe Villa single-occupancy rate; the tariff quotes no separate course fee",
+    "priceBasisNote": "Per night, Deluxe Villa, single occupancy, all-inclusive stay for the course duration."
+  },
+  "routeMoves": [
+    {
+      "from": "/ayurveda-training-programs/",
+      "to": "/ayurveda-training-programme/"
+    }
+  ],
+  "updates": [
+    {
+      "route": "/ayurveda-training-programme/",
+      "name": "Ayurveda Training Programmes",
+      "durationDisplay": "1 to 20 days",
+      "cardSummary": "Five residential courses at the hospital, from a one-day workshop to the 20-day consultant and therapist programme.",
+      "priceBasisNote": "From the one-day workshop; per night, Deluxe Villa, single occupancy.",
+      "aliases": [
+        "training",
+        "course",
+        "courses",
+        "learn ayurveda",
+        "ayurveda training programs"
+      ]
+    }
+  ],
+  "programmes": [
+    {
+      "route": "/one-day-ayurveda-workshop-program-kerala/",
+      "name": "One-Day Ayurveda Workshop",
+      "code": "OAP-HV",
+      "minimumNights": 1,
+      "durationDisplay": "1 day",
+      "cardSummary": "Introductory session with hands-on Abhyangam massage.",
+      "aliases": [
+        "OAP-HV",
+        "OAP",
+        "workshop",
+        "one day",
+        "1 day",
+        "abhyangam"
+      ]
+    },
+    {
+      "route": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "name": "Three-Day Ayurveda Certificate Program",
+      "code": "TAP-HV",
+      "minimumNights": 3,
+      "durationDisplay": "3 days",
+      "cardSummary": "Theory and practice of core therapies.",
+      "aliases": [
+        "TAP-HV",
+        "TAP",
+        "certificate",
+        "short term",
+        "three day",
+        "3 day"
+      ]
+    },
+    {
+      "route": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "name": "Five-Day Intensive Ayurveda Training Program",
+      "code": "WAP-HV",
+      "minimumNights": 5,
+      "durationDisplay": "5 days",
+      "cardSummary": "In-depth training in five major therapies.",
+      "aliases": [
+        "WAP-HV",
+        "WAP",
+        "intensive",
+        "five day",
+        "5 day",
+        "learn and practice"
+      ]
+    },
+    {
+      "route": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "name": "Level One Advanced Ayurveda Training Program",
+      "code": "AATP1-HV",
+      "minimumNights": 10,
+      "durationDisplay": "10 days",
+      "cardSummary": "Advanced curriculum for wellness professionals.",
+      "aliases": [
+        "AATP1-HV",
+        "AATP-1",
+        "AATP 1",
+        "level one",
+        "advanced",
+        "ten day",
+        "10 day",
+        "wellness professionals"
+      ]
+    },
+    {
+      "route": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "name": "Advanced Ayurveda Lifestyle Consultant & Therapist Training",
+      "code": "AALCT-HV",
+      "minimumNights": 20,
+      "durationDisplay": "20 days",
+      "cardSummary": "Comprehensive training, including lifestyle consulting and advanced therapies.",
+      "aliases": [
+        "AALCT-HV",
+        "AALCT",
+        "AALC-2",
+        "consultant",
+        "therapist",
+        "lifestyle",
+        "twenty day",
+        "20 day"
+      ]
+    }
+  ],
+  "categoryAdditions": {
+    "Wellness": [
+      "/personalized-customized-healing-program/",
+      "/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "/immunity-enhancement-executive-health-assessment-therapy/",
+      "/treatment-to-remove-stress-and-strain/",
+      "/sleep-restoration-therapy/",
+      "/panchakarma-therapy/"
+    ]
+  }
+}

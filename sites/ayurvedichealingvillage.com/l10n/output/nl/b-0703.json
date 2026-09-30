@@ -1,0 +1,207 @@
+{
+ "batchId": "b-0703",
+ "sourceSetHash": "176063301134397b847ded608555d81e009a988104076f14e91b5d75e644a104",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_b6a21ca5ddd469acd93a",
+   "sourceHash": "b6a21ca5ddd469acd93a1ecf3ace70d2ed9f8ea7372fdbd9b57b842d70cbfa54",
+   "text": "Telefoon:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_044aa3ee8d14eeb4ab6b",
+   "sourceHash": "044aa3ee8d14eeb4ab6b591f091e2741dc761a1e4be156fbe2b7f102b394de9e",
+   "text": "De bron toont de Cloudflare-placeholder \"[email protected]\". Gedecodeerd naar info@kairali.com volgens het herstel op dezelfde route in de binding; de brontekst blijft behouden als emailSourceText.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_06493e74bee8e8ef505d",
+   "sourceHash": "06493e74bee8e8ef505db0892d694d54658b25ac45995235aa64c68cb83d6bf7",
+   "text": "© Kairali – The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": "Copyright symbol plus the brand name only (proper name, kept verbatim).",
+   "issues": []
+  },
+  {
+   "id": "t_ce6056c8d98e6ff647e2",
+   "sourceHash": "ce6056c8d98e6ff647e2681f99aea8dbf2efcb8b90eb71efb0570e3eb6a40947",
+   "text": "In samenwerking met de Air India Maharaja Club",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec19fa16f3ae579173c4",
+   "sourceHash": "ec19fa16f3ae579173c4eecba39530d6b52bcf4eff78b86b3819c79288e97664",
+   "text": "Algemene voorwaarden",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_beae68d336b4d6dcd02e",
+   "sourceHash": "beae68d336b4d6dcd02e12bf5893a4713fd1ffc8877c2e2877445a98fd99bee5",
+   "text": "Form1",
+   "status": "translated",
+   "unchangedReason": "Captured form identifier (matches data-recorded-id \"3011 Form1\" elsewhere on the site); not visitor text; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_87df9dc4b2ea04e1a04a",
+   "sourceHash": "87df9dc4b2ea04e1a04aa39a59a6910d29e7d057134f41a3984823c4fbab045b",
+   "text": "E-mailadres*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b1c8d0bbb2980f979e4",
+   "sourceHash": "8b1c8d0bbb2980f979e4614e912be46818f2e8d9637644816b1da71eb658abc2",
+   "text": "Telefoonnummer*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0829b2bc41f1eee81623",
+   "sourceHash": "0829b2bc41f1eee816231e457985f56f1fb2ecbf9e60b7b1ce07cc78685a9097",
+   "text": "+91 XXXXX XXXXX",
+   "status": "translated",
+   "unchangedReason": "Phone-number input placeholder pattern (country code plus digit mask); language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_306f1bb20677a622fc38",
+   "sourceHash": "306f1bb20677a622fc38185239e89a940f6c1727e440a2b359d7d0e1bf600644",
+   "text": "Telefoonnummer",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_03ebef1c8867bf345288",
+   "sourceHash": "03ebef1c8867bf34528838635ef103296f050a4259e3dd9fb10b13a113c1baa3",
+   "text": "Lidnummer Air India Maharaja Club*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1a23ede97b79dc3ccef0",
+   "sourceHash": "1a23ede97b79dc3ccef05bd5e53cecb9e3297a74f4c5d69bc6da1b51205a6eb6",
+   "text": "Lidnummer Air India Maharaja Club — GEEN persoonsnaam, ondanks de bronnaam \"fname\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_160897a6bf73d647b4d2",
+   "sourceHash": "160897a6bf73d647b4d22eea2075af21b17126237931e4d5299331f071f457a2",
+   "text": "Voorkeursdata*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b1f6489ff004ed2d3f3f",
+   "sourceHash": "b1f6489ff004ed2d3f3f0e9956cd6b0735ff07f5c52d4be439bf8adab61ebdd9",
+   "text": "Voorkeursdatum — GEEN land, ondanks de bronnaam \"country\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_32c0c6c1db58b0d98a1b",
+   "sourceHash": "32c0c6c1db58b0d98a1b641ae906e1c2cf6d42f11e89bd17d4d1dfbdc73d2a52",
+   "text": "Gewenst programma*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5cf28ceaa596b2e7372",
+   "sourceHash": "a5cf28ceaa596b2e7372ff546e14bb63683e75faa6e8bab57c0609d6218a069e",
+   "text": "Programmakeuze — GEEN vrij tekstbericht, ondanks de bronnaam \"message\"",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be2c80e058e07a1bdbf4",
+   "sourceHash": "be2c80e058e07a1bdbf4e45806b6260ffac9520eacf39faeb4843161504e6124",
+   "text": "Selecteer een programma",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_443b75ee1aeea3b0025a",
+   "sourceHash": "443b75ee1aeea3b0025a9525f2ffbfc2e71d1505fc8b54ee7baae0d496f79d24",
+   "text": "Yoga- en meditatieprogramma",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bf203a38420dd671a2d5",
+   "sourceHash": "bf203a38420dd671a2d5bdea0bdbba81db508f30dcf7eb74cd98d26342af55a8",
+   "text": "Programma voor stress- en energiereset op basis van yoga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6212c82d086387c97264",
+   "sourceHash": "6212c82d086387c97264a53df4474d906a7fc5282f1234980e158dce595b8452",
+   "text": "Ayurveda-cursussen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcf519665ab35a896d5e",
+   "sourceHash": "dcf519665ab35a896d5ee084d4196a8d2bb75405cd0f02e1e0e1c373048d463d",
+   "text": "Verificatieantwoord*",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7d6d3a0d635db466c6f3",
+   "sourceHash": "7d6d3a0d635db466c6f32e5fe33453fd60c64957babb9345a6258c15bdbdcbc9",
+   "text": "Antwoordveld voor de captcha (bronnaam \"result\"); in de review wordt geen captcha-opgave gegenereerd.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_614faa2cecd757f05c9e",
+   "sourceHash": "614faa2cecd757f05c9ea182aa461307adc902b277a68796305bcbf7b21fa7b2",
+   "text": "De hashlinks in de bronheader leiden naar de echte lidmaatschapssecties op deze pagina, met toetsenbordactivering, focusverplaatsing en scrollen met sticky-offset. Routes buiten de pagina (Air India-inschrijving, beleidspagina's, home) tonen de bron-URL en zijn in de review geblokkeerd; mail- en tel-links zijn geblokkeerd.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_793bfcb06c69d47d1f54",
+   "sourceHash": "793bfcb06c69d47d1f545da31c3a1cdcfb5530c3a63812a3c8f6edcb99780eb1",
+   "text": "BEHOUDEN: in-pagina-anker uit de bron dat door alle zes koppen van de programmakaarten wordt gebruikt (section id=\"hero\", de band met het boekingsformulier). Geen losse bronverwijzing gevonden op deze route.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b6ac6d619e38f72bbf8d",
+   "sourceHash": "b6ac6d619e38f72bbf8dc6e004162b1066fb134a019fe4d6e7fceda530c14cff",
+   "text": "EXTERNE SITE: Air India-inschrijving — bron-URL getoond, navigatie in de review geblokkeerd.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

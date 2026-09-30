@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHV Template — Knowledge Explainer (Mobile 390)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="assets/knowledge-explainer-8-data.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#F7F4EA;overflow-x:hidden}
+body{font-family:'Mulish',sans-serif;color:#2A2118;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#006038;text-decoration:none}
+a:hover{color:#004226;text-decoration:underline}
+:focus-visible{outline:3px solid #6B7726;outline-offset:2px}
+h1,h2,h3,h4{font-weight:400;margin:0}
+p{margin:0}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+</style>
+</helmet>
+
+<div data-screen-label="Knowledge explainer — mobile 390">
+
+<div style="background:#2A2014;color:#F7F4EA;padding:12px 16px">
+  <div style="font-family:'Marcellus',serif;font-size:16px;color:#EEB41E">T04 · Knowledge explainer — mobile 390</div>
+  <div style="font-size:13px;line-height:1.5;color:#E4DECF;padding:4px 0 10px">Eight real routes from the frozen record. Switch to stress-test the layout:</div>
+  <select aria-label="Review: choose a route" onChange="{{ onPick }}" value="{{ routeKey }}" style="width:100%;min-height:48px;padding:0 12px;border-radius:6px;border:1px solid rgba(247,244,234,.35);background:#3A2E1C;color:#F7F4EA;font-family:inherit;font-size:15px">
+    <sc-for list="{{ routeOptions }}" as="o" hint-placeholder-count="8">
+      <option value="{{ o.key }}">{{ o.label }}</option>
+    </sc-for>
+  </select>
+  <div style="font-size:12.5px;color:#C9BFA8;padding-top:8px">{{ stressLabel }}</div>
+</div>
+
+<div style="width:100%;max-width:390px;margin:0 auto;background:#F7F4EA">
+
+  <div role="presentation" style="height:72px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6B665E;font-weight:700">Site header — frozen mobile chrome</div>
+
+  <header style="padding:24px 20px 0">
+    <nav aria-label="Breadcrumb" style="font-size:14px;line-height:1.5;color:#75695A;margin:0 0 16px">
+      <a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;min-height:44px;margin-left:-8px;padding:0 8px">Home</a>
+      <span style="padding:0 6px;color:#C9BFA8">•</span>
+      <a href="https://ayurvedichealingvillage.com/knowledge-centre/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 8px">Knowledge Centre</a>
+      <span style="padding:0 6px;color:#C9BFA8">•</span>
+      <span aria-current="page" style="color:#2A2118">{{ h1 }}</span>
+    </nav>
+    <p style="margin:0 0 10px;font-size:12.5px;line-height:1.5;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;font-weight:700">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+    <h1 style="margin:0;font-family:'Marcellus',serif;font-size:33px;line-height:1.16;color:#2A2118;text-wrap:balance">{{ h1 }}</h1>
+    <p style="margin:18px 0 0;padding-left:16px;border-left:3px solid #C1882C;font-size:17.5px;line-height:1.65;color:#514A3F">{{ standfirst }}</p>
+    <p style="margin:12px 0 0;padding-left:16px"><span style="display:inline-block;border:1px dashed #C1882C;border-radius:4px;padding:3px 8px;font-size:10.5px;font-weight:700;letter-spacing:1.3px;color:#8F6212;text-transform:uppercase">Standfirst = live meta description · approve or replace</span></p>
+  </header>
+
+  <div style="width:100%;height:220px;margin-top:24px;background:#E0D7C4;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:0 20px">
+    <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;font-weight:700">Hero image band — self-host</span>
+    <span style="font-size:12.5px;line-height:1.5;color:#75695A;word-break:break-word">{{ heroPath }}</span>
+  </div>
+
+  <sc-if value="{{ showJump }}" hint-placeholder-val="{{ true }}">
+  <nav aria-label="On this page" style="margin:28px 20px 0;padding:18px 18px 8px;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid #E5DECD">On this page</div>
+    <ul style="list-style:none;margin:0;padding:6px 0 0;display:flex;flex-direction:column">
+      <sc-for list="{{ jumpItems }}" as="j" hint-placeholder-count="5">
+        <li style="border-top:1px solid #F0EADC"><a href="{{ j.anchor }}" style="display:flex;align-items:center;min-height:48px;font-size:16.5px;line-height:1.4;color:#514A3F;padding:6px 0">{{ j.label }}</a></li>
+      </sc-for>
+    </ul>
+  </nav>
+  </sc-if>
+
+  <main style="padding:30px 20px 0">
+    <article>
+      <sc-for list="{{ body }}" as="b" hint-placeholder-count="8">
+        <div>
+          <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ false }}">
+            <h2 id="{{ b.id }}" style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:38px 0 0;padding-top:22px;border-top:1px solid #EAE3D2;text-wrap:pretty;scroll-margin-top:16px">{{ b.text }}</h2>
+          </sc-if>
+          <sc-if value="{{ b.isH3 }}" hint-placeholder-val="{{ false }}">
+            <h3 id="{{ b.id }}" style="font-size:13px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#8F6212;margin:30px 0 0;line-height:1.5;scroll-margin-top:16px">{{ b.text }}</h3>
+          </sc-if>
+          <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}">
+            <p style="font-size:18px;line-height:1.7;color:#2A2118;margin-top:16px">{{ b.text }}</p>
+          </sc-if>
+          <sc-if value="{{ b.isPLink }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:18px;line-height:1.7;color:#2A2118;margin-top:16px">{{ b.pre }}<a href="{{ b.href }}">{{ b.label }}</a>{{ b.post }}</p>
+          </sc-if>
+          <sc-if value="{{ b.isUl }}" hint-placeholder-val="{{ false }}">
+            <ul style="list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:14px">
+              <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="3">
+                <li style="display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:start;font-size:18px;line-height:1.6"><span aria-hidden="true" style="height:2px;background:#C1882C;margin-top:14px"></span><span>{{ it.t }}</span></li>
+              </sc-for>
+            </ul>
+          </sc-if>
+          <sc-if value="{{ b.isOl }}" hint-placeholder-val="{{ false }}">
+            <ol style="list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;counter-reset:ke">
+              <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="3">
+                <li style="display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:17.5px;line-height:1.6;padding:16px 0;border-top:1px solid #E5DECD"><span aria-hidden="true" style="font-family:'Marcellus',serif;font-size:19px;color:#8F6212">{{ it.n }}</span><span>{{ it.t }}</span></li>
+              </sc-for>
+            </ol>
+          </sc-if>
+          <sc-if value="{{ b.isFig }}" hint-placeholder-val="{{ false }}">
+            <figure style="margin:30px -20px 0">
+              <div style="height:210px;background:#E0D7C4;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:0 20px">
+                <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;font-weight:700">Body image — self-host</span>
+                <span style="font-size:12.5px;line-height:1.5;color:#75695A;word-break:break-word">{{ b.path }}</span>
+              </div>
+              <figcaption style="font-size:13.5px;line-height:1.55;color:#75695A;padding:10px 20px 0">{{ b.altNote }}</figcaption>
+            </figure>
+          </sc-if>
+          <sc-if value="{{ b.isCard }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ b.href }}" style="display:block;margin-top:20px;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;overflow:hidden;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+              <div style="height:170px;background:#E0D7C4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:0 16px">
+                <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;font-weight:700">Card image — self-host</span>
+                <span style="font-size:12px;line-height:1.5;color:#75695A;word-break:break-word">{{ b.path }}</span>
+              </div>
+              <div style="padding:16px 18px 18px;font-family:'Marcellus',serif;font-size:21px;line-height:1.3;text-wrap:pretty">{{ b.label }}</div>
+            </a>
+          </sc-if>
+        </div>
+      </sc-for>
+    </article>
+
+    <nav aria-label="Previous and next explainer" style="margin-top:40px;padding-top:22px;border-top:1px solid #DCD3BF;display:flex;flex-direction:column;gap:12px">
+      <sc-if value="{{ hasPrev }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ prevHref }}" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:16px 18px;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+          <span style="display:block;font-weight:700;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212">Previous</span>
+          <span style="display:block;font-family:'Marcellus',serif;font-size:20px;line-height:1.3;padding-top:6px;text-wrap:pretty">{{ prevLabel }}</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{ hasNext }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ nextHref }}" style="display:block;background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:16px 18px;color:#2A2118" style-hover="border-color:#C1882C;text-decoration:none">
+          <span style="display:block;font-weight:700;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#8F6212">Next</span>
+          <span style="display:block;font-family:'Marcellus',serif;font-size:20px;line-height:1.3;padding-top:6px;text-wrap:pretty">{{ nextLabel }}</span>
+        </a>
+      </sc-if>
+    </nav>
+
+    <section aria-label="More in the Knowledge Center" style="margin-top:44px;padding-top:24px;border-top:1px solid #DCD3BF">
+      <h2 style="font-family:'Marcellus',serif;font-size:26px;line-height:1.24">More in the Knowledge Center</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:20px">
+        <sc-for list="{{ kcGroups }}" as="g" hint-placeholder-count="5">
+          <div style="background:#FFFFFF;border:1px solid #DCD3BF;border-radius:8px;padding:18px 18px 8px">
+            <div style="font-family:'Marcellus',serif;font-size:19px;padding-bottom:10px;border-bottom:1px solid #E5DECD">{{ g.title }}</div>
+            <ul style="list-style:none;margin:0;padding:4px 0 0;display:flex;flex-direction:column">
+              <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="3">
+                <li style="border-top:1px solid #F0EADC">
+                  <sc-if value="{{ l.isCurrent }}" hint-placeholder-val="{{ false }}">
+                    <span aria-current="page" style="display:flex;align-items:center;min-height:52px;font-size:16.5px;line-height:1.4;color:#2A2118;font-weight:700;padding:8px 0 8px 12px;border-left:3px solid #C1882C">{{ l.label }}</span>
+                  </sc-if>
+                  <sc-if value="{{ l.isLink }}" hint-placeholder-val="{{ true }}">
+                    <a href="{{ l.href }}" style="display:flex;align-items:center;min-height:52px;font-size:16.5px;line-height:1.4;padding:8px 0">{{ l.label }}</a>
+                  </sc-if>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <sc-if value="{{ hasLegacy }}" hint-placeholder-val="{{ true }}">
+    <section aria-label="{{ legacyHeading }}" style="margin-top:40px;padding-top:24px;border-top:1px solid #DCD3BF">
+      <h2 style="font-family:'Marcellus',serif;font-size:23px;line-height:1.24;color:#514A3F">{{ legacyHeading }}</h2>
+      <p style="font-size:14px;line-height:1.55;color:#75695A;margin-top:8px">{{ legacyNote }}</p>
+      <ul style="list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column">
+        <sc-for list="{{ legacyItems }}" as="li1" hint-placeholder-count="8">
+          <li>
+            <sc-if value="{{ li1.isTitle }}" hint-placeholder-val="{{ false }}">
+              <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:#8F6212;padding:18px 0 2px;margin-top:8px;border-top:1px solid #E5DECD">{{ li1.label }}</div>
+            </sc-if>
+            <sc-if value="{{ li1.isLink }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ li1.href }}" style="display:flex;align-items:center;min-height:48px;font-size:16.5px;line-height:1.4;color:#514A3F">{{ li1.label }}</a>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+    </sc-if>
+  </main>
+
+  <section aria-label="Speak to a physician" style="margin:44px 20px 0;background:#FFFFFF;border:1px solid #DCD3BF;border-top:3px solid #C1882C;border-radius:10px;padding:26px 20px">
+    <div style="font-weight:700;font-size:11.5px;letter-spacing:2.4px;color:#8F6212;text-transform:uppercase">Still deciding</div>
+    <h2 style="font-family:'Marcellus',serif;font-size:26px;line-height:1.22;margin:10px 0 0;text-wrap:pretty">Ask a physician before you choose a programme</h2>
+    <p style="font-size:17px;line-height:1.65;color:#3B3226;margin-top:12px">A consultation is free and there is no obligation to book. NABH-accredited · registered as an Ayurvedic hospital by the Government of Kerala · Palakkad, Kerala.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
+      <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#EEB41E;color:#2A2014;font-weight:700;font-size:16.5px" style-hover="background:#D89E10;color:#2A2014;text-decoration:none">Free doctor consultation</a>
+      <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;border:1px solid #8F6212;color:#8F6212;font-weight:600;font-size:16.5px" style-hover="background:#FBF5E8;color:#8F6212;text-decoration:none">Enquire now</a>
+    </div>
+  </section>
+
+  <div style="height:36px"></div>
+  <div role="presentation" style="height:180px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#6B665E;font-weight:700">Site footer — frozen mobile chrome</div>
+  <div style="height:76px"></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390},&quot;route&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;/why-get-training-in-ayurveda/&quot;,&quot;options&quot;:[&quot;/why-get-training-in-ayurveda/&quot;,&quot;/new-to-yoga/&quot;,&quot;/what-is-ayurvedic-food/&quot;,&quot;/what-is-panchkarma/&quot;,&quot;/live-to-100-with-panchkarma/&quot;,&quot;/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/&quot;,&quot;/ayurvedic-resturant-and-cooking-at-healing-village/&quot;,&quot;/ayurveda-retreats-for-everyone/&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;}}">
+const ORDER = [
+  '/why-get-training-in-ayurveda/',
+  '/new-to-yoga/',
+  '/what-is-ayurvedic-food/',
+  '/what-is-panchkarma/',
+  '/live-to-100-with-panchkarma/',
+  '/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/',
+  '/ayurvedic-resturant-and-cooking-at-healing-village/',
+  '/ayurveda-retreats-for-everyone/'
+];
+const B = 'https://ayurvedichealingvillage.com';
+// Ported slugs per the owner slug ruling, 22 Sep 2026 (notes/knowledge-explainer-8-routes-dataset.md).
+const PORTED = { '/ayurvedic-resturant-and-cooking-at-healing-village/': '/ayurvedic-restaurant-cooking-at-healing-village/' };
+// The live Knowledge Center nav, verbatim labels, canonical (ruled) hrefs.
+const KC = [
+  { title: 'Ayurveda', links: [
+    { label: 'New to Ayurveda', route: '/new-to-ayurveda/' },
+    { label: 'Why pick an Ayurveda Treatment or Ayurvedic Retreat?', route: '/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/' },
+    { label: 'Why get Training in Ayurveda?', route: '/why-get-training-in-ayurveda/' } ] },
+  { title: 'What is Panchkarma?', links: [
+    { label: 'Live to 100 with Panchkarma', route: '/live-to-100-with-panchkarma/' },
+    { label: 'Ayurveda Retreats For Everyone', route: '/ayurveda-retreats-for-everyone/' } ] },
+  { title: 'Yoga', links: [ { label: 'New to Yoga', route: '/new-to-yoga/' } ] },
+  { title: 'Ayurvedic Cuisine', links: [
+    { label: 'What is Ayurvedic Food?', route: '/what-is-ayurvedic-food/' },
+    { label: 'Ayurvedic Restaurant & Cooking at Healing Village', route: '/ayurvedic-resturant-and-cooking-at-healing-village/' } ] },
+  { title: 'Ayurvedic Products', links: [ { label: 'Products', route: '/ayurvedic-products/' } ] }
+];
+const ENT = { '&amp;':'&', '&#038;':'&', '&nbsp;':'\u00a0', '&#8211;':'\u2013', '&#8212;':'\u2014', '&#8216;':'\u2018', '&#8217;':'\u2019', '&#8220;':'\u201c', '&#8221;':'\u201d', '&#8230;':'\u2026', '&quot;':'"', '&#039;':'\u2019', '&lt;':'<', '&gt;':'>' };
+function dec(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&(amp|#038|nbsp|#8211|#8212|#8216|#8217|#8220|#8221|#8230|quot|#039|lt|gt);/g, function (m) { return ENT[m]; })
+    .replace(/&#(\d+);/g, function (m, n) { return String.fromCharCode(+n); })
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function stripTags(s) { return dec(String(s || '').replace(/<[^>]+>/g, '')); }
+
+class Component extends DCLogic {
+  state = { route: null, ready: false };
+  componentDidMount() {
+    const tick = () => {
+      if (typeof window !== 'undefined' && window.AHV_KE8) this.setState({ ready: true });
+      else setTimeout(tick, 60);
+    };
+    tick();
+  }
+  data() { return (typeof window !== 'undefined' && window.AHV_KE8) || null; }
+  key() { return this.state.route || this.props.route || ORDER[0]; }
+  pick(k) { this.setState({ route: k }); if (typeof window !== 'undefined') window.scrollTo(0, 0); }
+
+  // One inline anchor survives in the record (live-to-100). Split the paragraph around it
+  // so the link is ported instead of flattened; everything else renders as plain text.
+  para(b, i) {
+    const inline = b.inline || '';
+    const m = inline.match(/^([\s\S]*?)<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>([\s\S]*)$/);
+    if (m) return { k: i, isPLink: true, pre: dec(m[1].replace(/<[^>]+>/g, '')) + ' ', href: m[2], label: stripTags(m[3]), post: ' ' + dec(m[4].replace(/<[^>]+>/g, '')) };
+    return { k: i, isP: true, text: dec(b.text) };
+  }
+
+  renderVals() {
+    const d = this.data();
+    const key = this.key();
+    const routeOptions = ORDER.map((k) => ({ key: k, label: k }));
+    if (!d || !d[key]) return { routeKey: key, routeOptions, body: [], kcGroups: [], legacyGroups: [], jumpItems: [], onPick: () => {} };
+
+    const r = d[key];
+    const raw = r.blocks.filter((b) => !b.role);
+    const heads = raw.filter((b) => b.type === 'h2' || b.type === 'h3' || b.type === 'h4').map((b) => b.type);
+    const top = heads.length ? heads.sort()[0] : null;         // highest level present in the body
+    const second = heads.filter((t) => t !== top)[0] || null;
+
+    const hrefFor = (t) => {
+      const l = (r.links || []).find((x) => stripTags(x.text) === stripTags(t) && x.href);
+      return l ? l.href : null;
+    };
+
+    let n = 0;
+    const body = raw.map((b, i) => {
+      if (b.type === 'p') return this.para(b, i);
+      if (b.type === 'h2' || b.type === 'h3' || b.type === 'h4') {
+        n += 1;
+        const isTop = b.type === top;
+        return { k: i, isH2: isTop, isH3: !isTop, id: 's' + n, text: dec(b.text), level: b.type };
+      }
+      if (b.type === 'ul') return { k: i, isUl: true, items: (b.items || []).map((t, j) => ({ k: j, t: dec(t) })) };
+      if (b.type === 'ol') return { k: i, isOl: true, items: (b.items || []).map((t, j) => ({ k: j, n: j + 1 + '.', t: dec(t) })) };
+      if (b.type === 'figure') return { k: i, isFig: true, path: String(b.src || '').split('/uploads/')[1] || b.src, altNote: b.alt ? dec(b.alt) : 'Empty alt in the record — decorative-or-not ruling and alt copy pending.' };
+      if (b.type === 'link-card') return { k: i, isCard: true, href: b.href, label: dec(b.label), path: String(b.src || '').split('/uploads/')[1] || b.src };
+      return { k: i };
+    });
+
+    const jumpSource = body.filter((b) => b.isH2);
+    const showJump = jumpSource.length >= 3 && jumpSource.length <= 10;
+    const jumpItems = jumpSource.map((b) => ({ k: b.k, anchor: '#' + b.id, label: b.text }));
+
+    const hero = (r.images || []).find((im) => /hero cover/i.test(im.note || '')) || (r.images || [])[0] || {};
+    const ported = PORTED[key] || key;
+
+    const kcGroups = KC.map((g, gi) => ({
+      k: gi, title: g.title,
+      links: g.links.map((l, li) => {
+        const cur = l.route === key;
+        return { k: li, label: l.label, href: B + (PORTED[l.route] || l.route), isCurrent: cur, isLink: !cur };
+      })
+    }));
+
+    // Injected live nav, retained verbatim, secondary, below the article.
+    const navBlocks = r.blocks.filter((b) => b.role === 'injected-nav');
+    const legacyHeading = navBlocks.length && navBlocks[0].type === 'h2' ? dec(navBlocks[0].text) : (r.navBlocks && r.navBlocks.liveHeading) || '';
+    const legacyGroups = [];
+    navBlocks.slice(1).forEach((b) => {
+      if (b.type === 'h3') legacyGroups.push({ k: legacyGroups.length, title: dec(b.text), links: [] });
+      if (b.type === 'ul' && legacyGroups.length) {
+        const g = legacyGroups[legacyGroups.length - 1];
+        (b.items || []).forEach((t, j) => { const lab = dec(t); g.links.push({ k: j, label: lab, href: hrefFor(t) || B + '/knowledge-centre/' }); });
+      }
+    });
+    const isKC = /knowledge center/i.test(legacyHeading);
+    const legacyItems = [];
+    legacyGroups.forEach((g) => {
+      legacyItems.push({ k: 't' + legacyItems.length, isTitle: true, isLink: false, label: g.title });
+      g.links.forEach((l) => legacyItems.push({ k: 'l' + legacyItems.length, isTitle: false, isLink: true, label: l.label, href: l.href }));
+    });
+
+    const idx = ORDER.indexOf(key);
+    const lab = (k) => dec((d[k] && (d[k].meta.ogTitle || d[k].meta.title)) || k);
+
+    return {
+      routeKey: key,
+      routeOptions,
+      onPick: (e) => this.pick(e.target.value),
+      stressLabel: r.counts.words + ' words · ' + raw.length + ' body blocks · ' + r.counts.images + ' image(s) · ' + navBlocks.length + ' injected-nav blocks',
+      h1: dec(r.meta.ogTitle || r.meta.title),
+      standfirst: dec(r.meta.description),
+      heroPath: String(hero.src || '').split('/uploads/')[1] || '—',
+      body, showJump, jumpItems, kcGroups,
+      hasLegacy: !isKC && legacyItems.length > 0,
+      legacyItems,
+      legacyHeading,
+      legacyNote: 'Retained verbatim from the live page, in live order, moved below the article.',
+      hasPrev: idx > 0, hasNext: idx < ORDER.length - 1,
+      prevHref: idx > 0 ? B + (PORTED[ORDER[idx - 1]] || ORDER[idx - 1]) : '#',
+      nextHref: idx < ORDER.length - 1 ? B + (PORTED[ORDER[idx + 1]] || ORDER[idx + 1]) : '#',
+      prevLabel: idx > 0 ? lab(ORDER[idx - 1]) : '',
+      nextLabel: idx < ORDER.length - 1 ? lab(ORDER[idx + 1]) : '',
+      portedSlug: ported
+    };
+  }
+}
+</script>
+</body>
+</html>

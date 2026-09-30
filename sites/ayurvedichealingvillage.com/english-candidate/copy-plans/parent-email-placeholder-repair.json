@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "id": "PARENT-CONTACT-t_b674daf0230f1f8fb46f",
+      "row": "HOSPITAL-COPY",
+      "file": "public/ahv/assets/article-family-data.js",
+      "old": "Please contact our patient care team for More Details Email: [email protected] Call: +91 9555 156 156",
+      "new": "Please contact our patient care team for more details Email: info@kairali.com Call: +91 9555 156 156",
+      "count": 1,
+      "authority": "Locked public contact info@kairali.com; remove Cloudflare placeholder in customer-facing text; latest autonomous owner direction"
+    },
+    {
+      "id": "PARENT-CONTACT-t_a9b3b7453cb86585f6fc",
+      "row": "HOSPITAL-COPY",
+      "file": "public/ahv/assets/commercial-family-data.js",
+      "old": "Please contact our patient care team for various discounts and gifting option.Email: [email protected] Call: +91 9555 156 156",
+      "new": "Please contact our patient care team for various discounts and gifting options. Email: info@kairali.com Call: +91 9555 156 156",
+      "count": 1,
+      "authority": "Locked public contact info@kairali.com; remove Cloudflare placeholder in customer-facing text; latest autonomous owner direction"
+    }
+  ],
+  "next": "Validate raw/escaped counts; update authoritative source, regenerate translation delta for these changed IDs and verify displayed text plus mailto target."
+}

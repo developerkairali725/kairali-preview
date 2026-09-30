@@ -1,0 +1,19 @@
+{
+  "_why": "Routes whose family renderer writes NO <link rel=canonical> after the design mounts, so metadata.ts emits the manifest's canonical server-side for them (and only them — the other 241 families write their own, and a second tag would be the duplicate the 320px review flagged). Measured 2026-09-23 with a Playwright sweep of all 254 routes on the served build (SEO audit docs/reports/2026-09-23-ahv-faq-search-seo-audit.md raised it for /faqs-downloads/; the sweep found 13). Re-measure after any family change: tests/_canon-sweep (see docs/reports/2026-09-23-ahv-review-round.md §8).",
+  "measured": "2026-09-23, 254 routes, 13 without a canonical, 0 with two",
+  "routes": [
+    "/attractions-above-50kms/",
+    "/defence-and-paramilitary-forces/",
+    "/faqs-downloads/",
+    "/how-to-reach-old/",
+    "/how-to-reach/",
+    "/karma-being-retreat-2019/",
+    "/no-preservatives/",
+    "/offers/",
+    "/product-range/",
+    "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+    "/sitemap/",
+    "/terms-and-conditions/",
+    "/training-course-fees/"
+  ]
+}

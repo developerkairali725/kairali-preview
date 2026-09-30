@@ -1,0 +1,222 @@
+{
+ "batchId": "b-0268",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_fc0e285a88152ff6e9b1",
+   "sourceHash": "fc0e285a88152ff6e9b15e8b5fa652c0fa01ece629661d9382772ba154d4d049",
+   "text": "銀行振込",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59fdbbcb4fa723b58b90",
+   "sourceHash": "59fdbbcb4fa723b58b9003be6d71d5c3a3036d471bb3c18d5ec68547180a3fde",
+   "text": "現金（インドルピー）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abe45d95d08a62b6d80e",
+   "sourceHash": "abe45d95d08a62b6d80e328082ff44e51759f6154f4f8158c338d1fc4a1311d4",
+   "text": "UPI決済（インド居住者の方）",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_83fadbe39a707a9f952a",
+   "sourceHash": "83fadbe39a707a9f952aa9a939bc7aa4e24ae28c454eccb286f0e5b2b8495958",
+   "text": "ご予約の確定には、50%の前払いが必要です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9599d19532011604d619",
+   "sourceHash": "9599d19532011604d619bbd583b8d4b40a1d43c34d82fc646afd1e7b1133b6fa",
+   "text": "海外からの患者様へ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as '患者様' (patients) per language lock."
+   ]
+  },
+  {
+   "id": "t_7ef526a220135a89dda9",
+   "sourceHash": "7ef526a220135a89dda9c09d06608089ffb07fc60df8149a302ac0df48f07ae4",
+   "text": "高齢の患者様には、どのような特別な配慮がありますか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as '患者様' (patients) per language lock."
+   ]
+  },
+  {
+   "id": "t_9f427809d23d8f09c652",
+   "sourceHash": "9f427809d23d8f09c6522bc4b4f9395cce605daa02ca6e6c3e0b6faf6b001ec9",
+   "text": "当院では以下をご用意しています：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da51d7c28a7a590ad56b",
+   "sourceHash": "da51d7c28a7a590ad56b541567c15ce5861f9a90ee7309b27a4391f828f9a060",
+   "text": "バリアフリーに配慮した環境と客室の選択肢",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73bcafb8c04eed778f9e",
+   "sourceHash": "73bcafb8c04eed778f9e0a0b0bcaa5180a30ebf993d5ecf75f53d129678fc379",
+   "text": "必要に応じた移動のサポート",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b8dfc62530482896b46",
+   "sourceHash": "6b8dfc62530482896b4652ef392995fdb0cb58f55a28781bb4dacb07a3aeeecb",
+   "text": "高齢の方に適した調整済みの治療",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b93965568d5cc1a18ac1",
+   "sourceHash": "b93965568d5cc1a18ac1036add39c5a860e73cf1392a4b93bd796470414b288b",
+   "text": "食事面での特別な配慮",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aa76405b196b2d1d3f8",
+   "sourceHash": "8aa76405b196b2d1d3f862926f0be15feec96e23763af6ec2005137c492cef93",
+   "text": "滞在期間中を通じた医学的モニタリング",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cefd115e228160db8d1e",
+   "sourceHash": "cefd115e228160db8d1edfe5472caacf0acb7db829b3141d66fe7057dc2e4a24",
+   "text": "オンコールの救急医療サービス",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce8920e3b93a2c47d581",
+   "sourceHash": "ce8920e3b93a2c47d58196390249b917ac697da3c1632a0d117780242ceedfa5",
+   "text": "当施設はバリアフリーに配慮して設計されており、必要な場所にはスロープや手すりなどの補助設備を設けています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as '当施設' to avoid resort framing."
+   ]
+  },
+  {
+   "id": "t_b367c54a9c6e5136a541",
+   "sourceHash": "b367c54a9c6e5136a541957c7fd4286967b60d6980e870f72df68a4f2b831257",
+   "text": "海外からの患者様が知っておくべきビザの要件は何ですか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as '患者様' (patients) per language lock."
+   ]
+  },
+  {
+   "id": "t_575c297542d8655fd1ad",
+   "sourceHash": "575c297542d8655fd1ad00d002049b4805da664b7258290adf06a550f3207b8b",
+   "text": "インドを訪れる方の多くは、観光ビザまたは電子ビザが必要です。ご訪問予定日の少なくとも4〜6週間前までに申請されることをおすすめします。アーユルヴェーダ治療を受ける場合、特に60日を超える滞在では、医療ビザまたは医療付添人ビザの方が適している場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4f76f424aa4b7186ae9",
+   "sourceHash": "f4f76f424aa4b7186ae9776359d431d931a70bb591dd6f00009dcd9c83ba86e2",
+   "text": "最新の要件については、インド政府の公式ビザウェブサイトまたはお近くのインド領事館にご確認ください。ご希望に応じて、ビザ申請を補助するための招へい状をご用意できます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3650cc554c45b02b780b",
+   "sourceHash": "3650cc554c45b02b780b7e71f37667adca77b6d38ed1f68044e3b7489f476fb9",
+   "text": "必要な場合、医療搬送サービスは利用できますか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58f23bfab8e5f22caa8e",
+   "sourceHash": "58f23bfab8e5f22caa8e1a3b661766939ae6bfa9d38ad2f4e66eee76d027d6dc",
+   "text": "はい、近隣の病院および救急サービスと連携体制を整えています。海外からの患者様には、医療搬送の補償を含む旅行保険へのご加入をおすすめします。緊急時には、当院のチームがご加入の保険会社と連絡・調整を行います。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as '患者様' (patients) per language lock.",
+    "t_58f23bfab8e5f22caa8e banned-term-from-source 旅"
+   ]
+  },
+  {
+   "id": "t_c012e72391fd0ddf6da5",
+   "sourceHash": "c012e72391fd0ddf6da52859745df78b07d6d6932f517fd6c34422698bc45f72",
+   "text": "海外からの患者様の長期滞在に対応していますか？",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as '患者様' (patients) per language lock."
+   ]
+  },
+  {
+   "id": "t_6f13abc6c31f43a5e0f7",
+   "sourceHash": "6f13abc6c31f43a5e0f7ca03d8deb992993f10cec07c1c444fe53173576bcabd",
+   "text": "はい、30日以上の長期滞在向けに特別パッケージをご用意しており、追加の文化体験の外出やお一人おひとりに合わせたプログラムが含まれます。海外からの患者様の多くが、長期滞在は慢性的な症状への取り組みや、総合的なウェルネスの改善に特に有益だと感じておられます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'guests' rendered as '患者様' (patients) per language lock."
+   ]
+  },
+  {
+   "id": "t_081b3abf7649b9404f2b",
+   "sourceHash": "081b3abf7649b9404f2bc30bcb10d894c336cf2bef69796f2969dbf61e3587fb",
+   "text": "プログラム終了時に、当院の医師から以下が提供されます：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_859bff4827464416b52a",
+   "sourceHash": "859bff4827464416b52a9571f9d3de6eaa748be909929638a2a5d5f97fca7be6",
+   "text": "食事と生活習慣に関する個別のフォローアッププラン",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b984297c610b63f6035",
+   "sourceHash": "9b984297c610b63f6035c1f45603eaaf869d9e423222721b131552bc679dbaee",
+   "text": "ご自宅でできるケアのおすすめ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92db133380a70d8545cf",
+   "sourceHash": "92db133380a70d8545cfd75c8ce1e55cc60dc61ed47dee2bdabce030b2a36f79",
+   "text": "具体的なヨガと瞑想の実践法",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

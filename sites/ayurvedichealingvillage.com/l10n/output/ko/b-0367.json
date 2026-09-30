@@ -1,0 +1,197 @@
+{
+ "batchId": "b-0367",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_6eea8608c452711b8367",
+   "sourceHash": "6eea8608c452711b836732d6846dcdf40c83758f5167aee1b37c6115259c26b6",
+   "text": "이메일(선택)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e2039d7f2e73a6f6b095",
+   "sourceHash": "e2039d7f2e73a6f6b095045507aa545552d460d549b9ea0863a61d9ce4bd16fd",
+   "text": "관심 있는 프로그램(선택)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d40ae1762a6f22a4a024",
+   "sourceHash": "d40ae1762a6f22a4a02446cfd201ebcb76a9e9a5ab5cacc18a1d3a6d3c1c3031",
+   "text": "아직 잘 모르겠습니다 — 안내 부탁드립니다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a2bbb08c63cdf1fcd29e",
+   "sourceHash": "a2bbb08c63cdf1fcd29e7ffc44fa6aa150cc6766886b6a7a89f931cec7c6e918",
+   "text": "판차카르마 및 해독",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_44adaa0462a87c970e41",
+   "sourceHash": "44adaa0462a87c970e4103a67343f0ce60fe61db3bc4719e07adad52b141d3ef",
+   "text": "체중 관리",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4efd16bf4cf62e845486",
+   "sourceHash": "4efd16bf4cf62e8454867bd55d868e24a45b8a674584024f73c007e4bf5cc336",
+   "text": "특정 건강 상태",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aea68f1c84e72741d3e2",
+   "sourceHash": "aea68f1c84e72741d3e29a13cd26a05668ad33fe2994a0bcebd7b79038560c78",
+   "text": "요가 및 명상",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e35e859578e8a89bc2b7",
+   "sourceHash": "e35e859578e8a89bc2b7bee3b4bda285725b4119841217b45543ee6c4477439d",
+   "text": "단체 또는 가족 프로그램",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bf9c1b885e390dadc4a4",
+   "sourceHash": "bf9c1b885e390dadc4a4eccf6e828157ae86765d128ef5b097a136edeb066373",
+   "text": "저희를 찾으신 이유를 간단히 적어 주시고, 희망하시는 날짜가 있다면 함께 알려 주십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_103ad5cfd0ea110d1f59",
+   "sourceHash": "103ad5cfd0ea110d1f598afbeb20dc76dbafa74b7583003383ee8244c2db0e6e",
+   "text": "메시지(선택)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d076cfad7715f92e8277",
+   "sourceHash": "d076cfad7715f92e82773c1e757d147b5bfbdc28e70c77a9ec6a41a0c9aa2532",
+   "text": "이 칸은 비워 두십시오",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_89d69d7b856120ceb9da",
+   "sourceHash": "89d69d7b856120ceb9da55ec7af68d962f3d6454eeb019c8256980cac9f92305",
+   "text": "원본 허니팟 필드로, 수집된 상태 그대로 유지됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note rather than patient-facing copy; translated as instructed."
+   ]
+  },
+  {
+   "id": "t_9da6aaf8655dc7965d0c",
+   "sourceHash": "9da6aaf8655dc7965d0c998c858114a54291ead71238fcf79834a2b06733207b",
+   "text": "케어 팀이 제 문의와 관련하여 연락하는 것에 동의하며, 개인정보 처리방침 에 동의합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source has a space before the final period (likely where a link is inserted); the space after '개인정보 처리방침' is preserved to match."
+   ]
+  },
+  {
+   "id": "t_5e0e9cf992208dd89ce5",
+   "sourceHash": "5e0e9cf992208dd89ce50d9486c3ae13e95da40b0dca4d873b4ee4b05f610f11",
+   "text": "문의 보내기",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c1e7c800beb1762aff4",
+   "sourceHash": "1c1e7c800beb1762aff4a24af3d887c656e6b831d8dd2d711fd730f408d44af9",
+   "text": "연락 가능한 방법을 한 가지 이상 알려 주십시오 — 전화번호 또는 이메일.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_45160afd32834aeea187",
+   "sourceHash": "45160afd32834aeea187bea33f15af3af02b304b924f2976fdc5969b2e1e1d61",
+   "text": "원본 양식 수준의 도움말 텍스트로, 원래 위치에 복원되었으며 aria-describedby를 통해 전화번호 및 이메일 입력란과 연결되어 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal developer note rather than patient-facing copy; translated as instructed."
+   ]
+  },
+  {
+   "id": "t_6fc656b17a3b7e5414b8",
+   "sourceHash": "6fc656b17a3b7e5414b8442e967942659ab24b6c5676f04818f00abab16a7841",
+   "text": "올란드 제도",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1eb48c03805a936ff45a",
+   "sourceHash": "1eb48c03805a936ff45a7b6a1d56d5981c1eda48ded3f19a3dabfca7f4ffe633",
+   "text": "아메리칸사모아",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4a0c7e7b76ddfcad14d",
+   "sourceHash": "a4a0c7e7b76ddfcad14d61b1374d83ae6b75e1add9c22d335763d145bed2e91b",
+   "text": "앵귈라",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c43f33f0578db9c3a0b0",
+   "sourceHash": "c43f33f0578db9c3a0b0d5d4dce5f1cd5d4e9e03e316a6e0d13fa16a1e53f370",
+   "text": "남극",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_86c8a43a7e225f095d71",
+   "sourceHash": "86c8a43a7e225f095d713691fa8ee9c0c6e5d7aacbf2a885dbe871b2d79a475e",
+   "text": "앤티가 바부다",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b566255eb054e5c92c9b",
+   "sourceHash": "b566255eb054e5c92c9bc7736edaa52d300c8554c03197c8109303643cf79430",
+   "text": "아루바",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c699c539e2993c7654ff",
+   "sourceHash": "c699c539e2993c7654ffb1e454ba2939724b6c1cb91bb5ac1d6fccd6ed7f6815",
+   "text": "바하마",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

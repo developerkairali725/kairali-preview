@@ -2,8 +2,39 @@
   "domain": "ayurvedichealingvillage.com",
   "entity": "ktahv",
   "register": "A",
-  "locales": ["en"],
-  "targetMarkets": ["IN", "DE", "FR"],
+  "locales": [
+    "en"
+  ],
+  "targetMarkets": [
+    "IN",
+    "DE",
+    "FR"
+  ],
   "video": "real",
-  "brand": "kairali"
+  "brand": "kairali",
+  "compliance": {
+    "vendored": [
+      "public/ahv",
+      "english-candidate/prerender",
+      "english-candidate/package-overlay",
+      "campaign-v110/pages/Ayurveda_Treatment_Neo_S.India_Cities.html/staging.html",
+      "campaign-v110/pages/Kairali_Brand_and_Competition_Neo-original.html/staging.html",
+      "campaign-v110/pages/ayurveda-retreat-kerala.html/staging.html",
+      "campaign-v110/pages/ayurvedic-treatment-packages.html/staging.html",
+      "campaign-v110/pages/family-ayurvedic-retreat-kerala.html/staging.html",
+      "campaign-v110/pages/kairali-air-india-maharaja-club.html/staging.html",
+      "campaign-v110/pages/kairali-cleansing-centre.html/staging.html",
+      "campaign-v110/pages/karkidaka-chikitsha-or-monsoon-wellness.html/staging.html",
+      "campaign-v110/pages/offers/defence-and-paramilitary/staging.html",
+      "campaign-v110/pages/offers/olympics-and-paralympics-offer/staging.html",
+      "campaign-v110/pages/offers/senior-citizen-offer/staging.html",
+      "campaign-v110/pages/pain-management.html/staging.html",
+      "campaign-v110/pages/panchkarma-treatment.html/staging.html",
+      "campaign-v110/pages/preventive-rejuvenation-detoxification.html/staging.html",
+      "campaign-v110/pages/treatment-in-kerala.html/staging.html",
+      "campaign-v110/pages/weight-loss.html/staging.html",
+      "campaign-v110/pages/wellness-resort-kerala.html/staging.html"
+    ],
+    "note": "public/ahv is the imported approved design payload; tools/import-english-candidate.mjs rewrites it wholesale on every run. english-candidate/prerender is the SAME approved bytes compiled by a browser (tools/prerender-english.mjs) so the body can be server-rendered - it is generated output, contains no authored content, and is regenerated wholesale. Reporting the identical approved copy twice at error severity would double-count vendored source; the KTAHV clinical-lock decision on that copy is already flagged once, as an owner and Dr. Deepu John decision (191 of 252 routes, english-candidate/language-lock-audit.json). Findings in both trees are still reported, at warning. Owner ruling D-20260915-07. 29 Sep 2026, WOPS-AHV-FINAL-DRAFT-20260924-001: the 17 explicitly listed campaign staging.html files are supplier-imported legacy markup rendered through DcPage, not newly authored clinical copy. Apply the same D-20260915-07 imported-source warning treatment narrowly to these files. Keep every finding reported; campaign components and other authored files remain error-checked. Landing-page medical/content acceptance remains an explicit prelaunch requirement; this classification does not certify the claims or authorize production."
+  }
 }

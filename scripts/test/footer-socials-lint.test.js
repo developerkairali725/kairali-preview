@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 // footer-socials-lint.test.js — tests for the fleet-wide footer social-links
 // gate (D-20260718-04: footer social parity on every Factory site).
 //
@@ -14,7 +15,7 @@ import { join } from "node:path";
 import {
   CONFIG_PATH, PKG, PROBE_GOOD, PROBE_HARDCODED, PROBE_HREFS, PROBE_LOCAL_COPY,
   PROBE_MISSING, PROBE_OUTSIDE_FOOTER, REPO_ROOT,
-  canonicalHrefs, checkSiteSources, collectAppSources, fleetSites, main, runControlProbes,
+  canonicalHrefs, checkAhvNativeFooter, checkSiteSources, collectAppSources, fleetSites, main, runControlProbes,
 } from "../footer-socials-lint.mjs";
 import { EXEMPT } from "../factory-matrix-lint.mjs";
 
@@ -91,4 +92,21 @@ test("collectAppSources walks nested app dirs (chrome components are seen)", () 
     files.some((f) => f.path.includes("_components") && f.src.includes(`from "${PKG}"`)),
     "healing.recipes chrome.tsx (nested) must be collected and carry the shared import",
   );
+});
+
+
+test("AHV shared design footer must preserve all hospital profiles and actual consumers", () => {
+  const root = join(REPO_ROOT, "sites/ayurvedichealingvillage.com");
+  const read = p => readFileSync(join(root, p), "utf8");
+  const actual = {
+    template: read("public/ahv/components/AHV Chrome Footer.dc.html"),
+    snapshot: read("english-candidate/prerender/about-us.html"),
+    chrome: read("app/(english)/search/site-chrome.ts"),
+    campaign: read("campaign-v110/components/SiteFooter.tsx"),
+  };
+  assert.deepEqual(checkAhvNativeFooter(actual), []);
+  for (const key of ["template", "snapshot", "chrome", "campaign"]) {
+    assert(checkAhvNativeFooter({ ...actual, [key]: "" }).length > 0, `must detect missing ${key}`);
+  }
+  assert(checkAhvNativeFooter({...actual, snapshot: actual.snapshot.replaceAll("KairaliTheAyurvedicHealingVillage", "wrong-profile")}).length > 0);
 });

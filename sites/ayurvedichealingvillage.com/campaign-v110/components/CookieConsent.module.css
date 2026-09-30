@@ -1,0 +1,40 @@
+/* Sits directly above the sticky mobile bar (when shown) so both stay usable. */
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--mobile-bar-h);
+  z-index: 70;
+  background: var(--white);
+  color: var(--ink);
+  border-top: 1px solid var(--gold);
+  padding: 16px var(--container-pad);
+  display: grid;
+  gap: 12px;
+  font-size: var(--text-small);
+  line-height: 1.5;
+}
+.text {
+  margin: 0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.actions :global(.btn) {
+  padding-inline: 12px;
+  font-size: var(--text-small);
+}
+
+@media (min-width: 900px) {
+  .bar {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+  }
+  .actions {
+    display: flex;
+  }
+}

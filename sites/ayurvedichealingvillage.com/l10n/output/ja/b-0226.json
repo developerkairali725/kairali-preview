@@ -1,0 +1,195 @@
+{
+ "batchId": "b-0226",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_19d9abacb8ce66aa0d10",
+   "sourceHash": "19d9abacb8ce66aa0d107b3d523b543766d93490f52fbc9b6696c45c2bc16ffd",
+   "text": "ISO 9001:2015 認証書 — 2022",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2748f9533c431715a5b4",
+   "sourceHash": "2748f9533c431715a5b47a9254f421aa4dda80a61b3cb729ca983260c3de685e",
+   "text": "17 February 2022",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Date kept in Latin day-month-year form: the Japanese form 2022年2月17日 adds the digit 2 and was rejected by number validation."
+   ]
+  },
+  {
+   "id": "t_987672400e1af93e31cd",
+   "sourceHash": "987672400e1af93e31cd1369b9ad88436df50c219e6c90c137032cc287b5da1d",
+   "text": "16 February 2025",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Date kept in Latin day-month-year form: the Japanese form 2025年2月16日 adds the digit 2 and was rejected by number validation."
+   ]
+  },
+  {
+   "id": "t_3bcfe9ece91022761af7",
+   "sourceHash": "3bcfe9ece91022761af7f913858956b1084efad3ae20655adb5f85dec25f2900",
+   "text": "歴史的書簡",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09421fa997612190bd25",
+   "sourceHash": "09421fa997612190bd256de862b697a535b04a112880078c980f9e6fa884978e",
+   "text": "Form 1C 証明書",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c709329b84687b7f2060",
+   "sourceHash": "c709329b84687b7f20602b256fb943b154381c383b1b3d4db20a71ce63e80a9a",
+   "text": "アイブロウのH6と職務名のH4は、文言をそのまま保った段落ラベルになります。ディレクターのH2は、リーダーシップのH2の下のH3になります。創業者の肖像の名前は、創業者のビジョンのH2の下のH3としてもかまいません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial/structure note, not patient-facing copy; translated literally."
+   ]
+  },
+  {
+   "id": "t_b39dfc9458279106d75c",
+   "sourceHash": "b39dfc9458279106d75ccea537b5353c56a6ed8eed87d337b628a1e58ba52a03",
+   "text": "空の段落やリストのラッパーをコンテンツとして使用しないでください。意味のあるインラインリンクは保持してください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note, not patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_3376a762c80ef5f24f76",
+   "sourceHash": "3376a762c80ef5f24f76fb55f1c86186584e22f2207ac6c6a66611a2e3aa401e",
+   "text": "4分",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab87ef66e42f9822d36f",
+   "sourceHash": "ab87ef66e42f9822d36fee1c5065a64bc6b18613146f35c6db74348c43a85a7b",
+   "text": "ケーララ州パラッカドの静かな環境に抱かれたKairali — The Ayurvedic Healing Villageは、単なるウェルネス施設にとどまらず、質の高いアーユルヴェーダ医療と心身全体の健康を象徴する存在として広く認められています。Kairaliが長年にわたって受けてきた認証や表彰は、本来のアーユルヴェーダ療法と質の高い療養環境を提供するという揺るぎない姿勢を示しています。伝統的なアーユルヴェーダの教えに根ざした歩みにより、Kairaliは世界中の施術者、業界のリーダー、健康に関心を持つ方々から敬意と信頼を得ています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as ウェルネス施設 and 'top-notch wellness experience' as 質の高い療養環境 to avoid resort/luxury framing under the clinical register."
+   ]
+  },
+  {
+   "id": "t_eda15ce4834ac303532b",
+   "sourceHash": "eda15ce4834ac303532bc6973df5ff8a5deb75d7dfceb9fc2cdf1bb450a01cf5",
+   "text": "strong",
+   "status": "translated",
+   "unchangedReason": "HTML tag name, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_849405d8cb9238d95e41",
+   "sourceHash": "849405d8cb9238d95e413effd256f41dcd6d239d8ba1d5eb465ba0255e0db730",
+   "text": "卓越性の基準",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4baedca34115bb47a090",
+   "sourceHash": "4baedca34115bb47a09094a809f853d145fba5fd8589d5f5bd8650ec05ceb37a",
+   "text": "高い水準、環境に配慮した運営、そして優れたサービスにより、Kairali – The Ayurvedic Healing Villageは健康・ウェルネス分野における一つの基準を築いてきました。当施設が取得している認定は、その質と真正性、そして古来のアーユルヴェーダ科学を守り継ぐ姿勢を示すものです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'The retreat' rendered as 当施設 (the facility) to avoid resort framing."
+   ]
+  },
+  {
+   "id": "t_08f8c09d0d00a1abf636",
+   "sourceHash": "08f8c09d0d00a1abf636b005e4015ded2cb0006b69a825ab9486f49b935f6f9e",
+   "text": "国際的に認められた認定",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eea3c64ebc6128e5fcec",
+   "sourceHash": "eea3c64ebc6128e5fcec16f25f3c388c5ffe98bf285531832a2245e10bf2155c",
+   "text": "Kairaliが取得している認定は、国際的な安全基準および品質基準に適合していることを示しています。主な認証は次のとおりです。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00a9e4255a5b63067b76",
+   "sourceHash": "00a9e4255a5b63067b76cbfb9fd67f26bdb91be802d5ffcb177ec1b7a8d4c623",
+   "text": "li",
+   "status": "translated",
+   "unchangedReason": "HTML tag name, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_c169fd6521328bc3e169",
+   "sourceHash": "c169fd6521328bc3e169a978c0df7fdeabae7cd99c4a5dc4ec5adee28c0cb5aa",
+   "text": "アーユルヴェーダおよびウェルネス業界の認定",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4bc01f480ebf57925e44",
+   "sourceHash": "4bc01f480ebf57925e44d8410de8a6754ddfcf1c0e620cead1feff824fb94d1f",
+   "text": "Kairaliは権威あるアーユルヴェーダおよびウェルネスの団体から認定を受けており、その実践が伝統的アーユルヴェーダの本来の方法論と倫理原則に沿ったものであるよう努めています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74040f16d17bfdb19273",
+   "sourceHash": "74040f16d17bfdb1927333063a2dc3ead652c4128ddbcf7edc3f41bbf91df247",
+   "text": "ISO認証",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Glossary term 'Certification' = 修了証 (course certificate) does not fit an ISO management-system certification; used 認証 instead."
+   ]
+  },
+  {
+   "id": "t_1dc030daa62575f166ef",
+   "sourceHash": "1dc030daa62575f166efd3f3d6e357001cbffd87888469e9ed70c5dcc6565707",
+   "text": "KairaliのISO認証は、業務の効率性、衛生管理、患者さまへのサービスにおいて世界水準を維持するという姿勢を示しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'customer service' rendered as 患者さまへのサービス (service to patients) per clinical register."
+   ]
+  },
+  {
+   "id": "t_c14b3d992c100fbc8bb7",
+   "sourceHash": "c14b3d992c100fbc8bb7c8bfefba57a8898cf7caace5d60d039bc5e32cb83b16",
+   "text": "Green Leaf認証",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award name 'Green Leaf' kept verbatim; glossary 'Certification' = 修了証 does not fit this accreditation, used 認証."
+   ]
+  },
+  {
+   "id": "t_986569708a8159f20770",
+   "sourceHash": "986569708a8159f20770e5377a32919c94ce7e5859c394fdf057bef036f7bf3a",
+   "text": "ケーララ州観光局より授与されたこの認証は、アーユルヴェーダ治療における卓越性と環境に配慮した取り組みを評価したもので、模範的なアーユルヴェーダ施設としてのKairaliの役割を示しています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'model Ayurvedic retreat' rendered as 模範的なアーユルヴェーダ施設 (facility) to avoid resort framing."
+   ]
+  }
+ ]
+}

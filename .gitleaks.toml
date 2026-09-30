@@ -125,6 +125,29 @@ id = "generic-api-key"
     regexes = ['''^462-verdict-row$''']
     paths = ['''docs/reports/2026-07-21-prompting-method-review\.md''']
 
+    # FINDINGS 8–9 — inspected 2026-09-25 with gitleaks 8.30.1.
+    # Historical commits 0bde815e (consent-runtime.ts:33) and fa6b6eb6
+    # (boot.ts:682) declare a public localStorage name, not a credential.
+    # Match only this literal secret value AND these two exact paths.
+    # A different secret on the same line/file remains detectable.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^kairali-consent-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/app/\(english\)/_families/(consent-runtime|boot)\.ts$''']
+
+    # Inspected 2026-09-29: four PR309 findings are fixed synthetic request
+    # idempotency IDs in mocked tests, not authentication credentials. Match
+    # exact extracted values AND exact test paths; other secrets still fail.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['^ahv-newsletter-(1-abcd|7-0123456789abcdef)$']
+    paths = ['^sites/ayurvedichealingvillage\.com/test/newsletter-double-opt-in\.test\.mjs$']
+
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['^3f2b8c4e-1d2a-4b6c-9e8f-0a1b2c3d4e5f$']
+    paths = ['^sites/ayurvedichealingvillage\.com/test/form-relay(-php)?\.test\.mjs$']
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;

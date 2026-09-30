@@ -1,0 +1,61 @@
+{
+ "note": "Air India Maharaja Club partner claims reconciled against the official partner page (https://www.airindia.com/content/air-india/in/en/maharaja-club/partner-offers/kairali.html, checked 29 Sep 2026; parent package parent-airindia-claims, patch b5101186): the points rate is kept with its eligibility terms; unsubstantiated exclusive-rate / priority-booking / 500 success stories / 100% natural wording replaced by neutral assistance and the points information; existing owner facts override partner acreage/heritage. Retargeted from the generated partner-air-india-data.js to its source campaign-family-data.js (tools/build-partner-air-india.mjs regenerates the partner file).",
+ "entries": [
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "( Earn 15 Maharaja Points per ₹ 100 Spent )",
+   "new": "Earn 15 Maharaja Points per ₹100 of eligible residential programme charges, including taxes. Membership terms apply.",
+   "count": 2,
+   "id": "ai-claims-1"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "As an Air India Maharaja Club member, access exclusive wellness rates, priority booking, and personalized health consultations with Kairali's lead physicians.",
+   "new": "Maharaja Club members can earn points on eligible residential programme charges. Provide your valid 9-digit membership ID when booking; the booking name must match your member profile. One membership ID applies per room. Advance payment and completion of the stay by the member are required. The offer cannot be combined with other promotions. Points are credited within 30 days after the completed stay. Rates and points terms may change; see Air India’s published partnership terms.",
+   "count": 1,
+   "id": "ai-claims-2"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "\"value\":\"500+\",\"label\":\"Success Stories\"",
+   "new": "\"value\":\"15\",\"label\":\"Points per ₹100 of eligible charges\"",
+   "count": 1,
+   "id": "ai-claims-3"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "\"value\":\"100%\",\"label\":\"Natural Therapies\"",
+   "new": "\"value\":\"Doctor-led\",\"label\":\"Ayurvedic care\"",
+   "count": 1,
+   "id": "ai-claims-4"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "NABH-accredited facility with serene surroundings. 118+ years of heritage and 500+ success stories.",
+   "new": "NABH-accredited Ayurvedic hospital in Palakkad, Kerala.",
+   "count": 1,
+   "id": "ai-claims-5"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "Air India Maharaja Club members receive priority assistance for date securing and program recommendations.",
+   "new": "Include your Maharaja Club ID in your booking enquiry. Our team can help with dates and programme information.",
+   "count": 1,
+   "id": "ai-claims-6"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "15 Maharaja Points per ₹100 validity remains unverified",
+   "new": "15 Maharaja Points per ₹100 eligible charges verified on the official Air India partnership page on 29 September 2026; eligibility terms apply",
+   "count": 1,
+   "id": "ai-claims-7"
+  },
+  {
+   "file": "public/ahv/assets/campaign-family-data.js",
+   "old": "Current partnership, commercial and clinical validity are UNVERIFIED; not promoted in shared navigation and no dates or eligibility invented.",
+   "new": "Points rate and eligibility were verified against the official Air India partnership page on 29 September 2026. Other historical clinical/business claims are not certified by that verification.",
+   "count": 1,
+   "id": "ai-claims-8"
+  }
+ ]
+}

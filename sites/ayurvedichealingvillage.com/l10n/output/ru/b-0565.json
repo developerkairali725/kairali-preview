@@ -1,0 +1,169 @@
+{
+ "batchId": "b-0565",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_bd8d37f976c6fc95a234",
+   "sourceHash": "bd8d37f976c6fc95a234be66eacc7a67c1a786af35116b905c24b97c299777a5",
+   "text": "III/73 Palayamkadu, P.O. Olassery,Kodumbu, Palakkad District – 678551,Kerala, India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_871f0e7a40b6fe7ba09f",
+   "sourceHash": "871f0e7a40b6fe7ba09f299d2339ccb4f16a0e2adb30177cfa4d453e47b4124c",
+   "text": "+91 9555 156 156 WhatsApp +91 92898 38797 [email protected]",
+   "status": "translated",
+   "unchangedReason": "Phone numbers, WhatsApp brand and email placeholder only; language-neutral.",
+   "issues": [
+    "'[email protected]' looks like a Cloudflare email-obfuscation artifact in the source; the locked public email is info@kairali.com — flag for the source."
+   ]
+  },
+  {
+   "id": "t_aba7860053b03ed98375",
+   "sourceHash": "aba7860053b03ed9837575179ae853c3c0c1e1032336d5d2776c416082b90a53",
+   "text": "Mehrauli, New Delhi – 110030,",
+   "status": "translated",
+   "unchangedReason": "Postal address fragment kept in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_561b9aeb39076ea946a5",
+   "sourceHash": "561b9aeb39076ea946a5c2e1cd87a42dc4acf3299ee7a1a43323a8f83e5066e9",
+   "text": "D-130, Block D, Ambedkar Colony,Mehrauli, New Delhi – 110030,India",
+   "status": "translated",
+   "unchangedReason": "Postal address kept in Latin script for courier use.",
+   "issues": []
+  },
+  {
+   "id": "t_be4ff49e6606a164d195",
+   "sourceHash": "be4ff49e6606a164d19550782956a6a3035c16c88eddad66a58daa3f4f77bb9a",
+   "text": "В какой аэропорт лучше лететь — Коимбатур или Кочи?Коимбатур (CJB) — ближайший аэропорт, примерно в полутора-двух часах езды; для большинства посетителей это самый простой вариант. Выбирайте Кочи / Кочин (COK) — примерно в двух с половиной — трёх часах езды, — если оттуда удобнее международная стыковка из вашей страны.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Question and answer are joined without a space in the source; the join is preserved."
+   ]
+  },
+  {
+   "id": "t_0ef43b895faae98d876a",
+   "sourceHash": "0ef43b895faae98d876ac0618a875f551e786d006a5c6aa9a30e76a1df3d4d6c",
+   "text": "Как далеко ближайший аэропорт?Ближайший — Международный аэропорт Коимбатур (CJB), примерно в 62 км, около полутора-двух часов на автомобиле. Международный аэропорт Кочи / Кочин (COK) находится примерно в 115 км, около двух с половиной — трёх часов езды.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Question and answer are joined without a space in the source; the join is preserved."
+   ]
+  },
+  {
+   "id": "t_1e39bc43ea248c679ebe",
+   "sourceHash": "1e39bc43ea248c679ebe1bacd20bb06f1a8a0ef0e2332677fee4d0c77326bc66",
+   "text": "Вы организуете встречу в аэропорту или на вокзале?Да. Больница может организовать частный автомобиль для прибывающих пациентов. Напишите нашей службе заботы о пациентах в WhatsApp или позвоните по основному номеру и сообщите дату и время прибытия, а также номер рейса или поезда. Сотрудник подтвердит имя водителя и данные автомобиля.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_294e5ec15bc0cbdb97a8",
+   "sourceHash": "294e5ec15bc0cbdb97a815f9c46d10cb554806b63dfab6a757769d04862e3f7e",
+   "text": "Как я узнаю водителя?Представитель Kairali будет ждать вас в зоне прилёта с табличкой с вашим именем. Имя водителя и данные автомобиля вы получите ещё до посадки, поэтому будете точно знать, кто вас встречает.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e622077eb42ce87a597",
+   "sourceHash": "0e622077eb42ce87a597aa30fb3b2716de7c03405f832978f1eda20cd64961b7",
+   "text": "Можно ли заказать встречу при позднем вечернем прибытии?Да. При позднем прибытии, когда местные дороги пустеют, рекомендуется заранее заказать трансфер. Сообщите данные рейса заранее, и водитель будет ждать вас в любое время.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b157078cf115cbeb2400",
+   "sourceHash": "b157078cf115cbeb24006507b8af52cb7755b28e24b40f9e1757f10c458853b5",
+   "text": "Можно ли приехать поездом?Да. Рекомендуемая станция — Palakkad Junction (PGT), примерно в 18 км, около 35 минут езды. На станции есть такси; также вы можете сообщить нам номер поезда и время прибытия — мы вас встретим.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3b6d54a20b2720656d5c",
+   "sourceHash": "3b6d54a20b2720656d5c12ef1b5ae63f7a1b25f4f241beecb8432cd8f0a68512",
+   "text": "Безопасна ли поездка, если я путешествую один?Керала — один из самых спокойных регионов Индии, и здесь широко говорят по-английски. При заранее заказанном трансфере вас встретит водитель, имя которого вы будете знать, поэтому искать такси по прибытии не придётся. Многие наши пациенты приезжают к нам в одиночку.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1df073a2a8b186868934",
+   "sourceHash": "1df073a2a8b186868934f1c69a38d3f62bf677f4473afb3b9d90d452bcf59b90",
+   "text": "Можно ли приехать с инвалидной коляской или с сопровождающим?Да. Можно организовать автомобиль, приспособленный для инвалидной коляски, и сопровождение сиделки. Пожалуйста, сообщите о своих потребностях при бронировании, чтобы мы подготовили подходящий автомобиль.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_624f049df25b4ea23384",
+   "sourceHash": "624f049df25b4ea23384f9c2926c963654092fef06b608f7dadaad46e4ba06ce",
+   "text": "Нужна ли мне индийская виза?Большинству иностранных посетителей нужны действительный паспорт и индийская виза или подходящая электронная виза (e-Visa). Требования зависят от гражданства и могут меняться — перед поездкой, пожалуйста, проверьте их на официальном визовом портале Правительства Индии.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e5cb8ec69638c09e8780",
+   "sourceHash": "e5cb8ec69638c09e878025faa97a315b4b6329efc8a1b7c4de24eef11656d233",
+   "text": "Это больница или велнес-центр?Kairali – Аюрведическая лечебная деревня — аюрведическая больница с аккредитацией NABH. Лечение ведут дипломированные врачи-аюрведы, и каждая лечебная программа начинается с клинической консультации. Это не велнес-центр.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source 'spa' (used in a negating disclaimer) rendered as 'велнес-центр' to avoid the banned word; owner may prefer a different contrast term."
+   ]
+  },
+  {
+   "id": "t_155a2e2606264b5658fd",
+   "sourceHash": "155a2e2606264b5658fd27d4a53b73040e5d57d8b79c72ad6aa796119f354320",
+   "text": "Готовы спланировать приезд?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d80a37ccf54bca5844ba",
+   "sourceHash": "d80a37ccf54bca5844baedb7470c2cd47f58d96c8614e156833eb0db1933a20b",
+   "text": "Напишите Priya в WhatsApp, чтобы заказать трансфер, или обсудите поездку с нашей командой. С вами свяжется врач или профильный сотрудник.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_605daa9ff3bb3f5978d2",
+   "sourceHash": "605daa9ff3bb3f5978d208bffe33418f04a0e582cdd701d4b4b1008cda89e9d3",
+   "text": "Написать Priya в WhatsApp Связаться с нами Онлайн-консультация",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_81ea09bedb4e2f6891fe",
+   "sourceHash": "81ea09bedb4e2f6891fe9da421461ac631dd3746d96f2b3c3f2bc619ce05d856",
+   "text": "WhatsApp Позвонить",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_168208823a3e9833c412",
+   "sourceHash": "168208823a3e9833c41231b1722a3b62cae028d83419b8521d22ebb2cf9cfee6",
+   "text": "У этого маршрута нет элемента заголовка для названия страницы — в источнике он обозначен как",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment of an internal engineering note; ends mid-sentence as in source."
+   ]
+  }
+ ]
+}

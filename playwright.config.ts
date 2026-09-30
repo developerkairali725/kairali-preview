@@ -13,8 +13,10 @@
  * ~80% of traffic is mobile; touch-target law is a mobile law).
  */
 import { defineConfig, devices } from "@playwright/test";
+import { resolveSiteAppRoot } from "./scripts/lib/site-app-root.mjs";
 
 const SITE = process.env.SITE ?? "sites/arogyakendra.com";
+const APP_DIR = resolveSiteAppRoot(SITE);
 const PORT = Number(process.env.PORT ?? 4310);
 const BASE_URL = process.env.BASE_URL ?? `http://localhost:${PORT}`;
 
@@ -46,7 +48,8 @@ export default defineConfig({
   webServer: process.env.BASE_URL
     ? undefined
     : {
-        command: `pnpm --dir ${SITE} exec next start -p ${PORT}`,
+        command: `pnpm exec next start -p ${PORT}`,
+        cwd: APP_DIR,
         url: BASE_URL,
         reuseExistingServer: !process.env.CI,
         timeout: 60_000,

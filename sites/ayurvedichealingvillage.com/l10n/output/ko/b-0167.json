@@ -1,0 +1,203 @@
+{
+ "batchId": "b-0167",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_d3cf203c52a385762672",
+   "sourceHash": "d3cf203c52a385762672516d2de995a9ca55ddfaf81589e4fefa6f20fd31de41",
+   "text": "받으신 진단과 현재 따르고 있는 치료를 알려 주십시오. 어떤 문제가 이 프로그램의 범위에 해당하는지, 그리고 먼저 전문의 평가가 필요한지 문의하십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_553f8e7978908c2ba39b",
+   "sourceHash": "553f8e7978908c2ba39b8f1c68da2bfbe8ed51af5706e5083f4e5557db4d1f30",
+   "text": "다낭성 난소 증후군(PCOS), 폐경, 갑상선 및 호르몬 문제를 위한 아유르베다 치료. Kairali의 치유 환경에서 자연스럽게 내분비 건강의 활력을 되찾으십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'healing retreat' rendered as '치유 환경' (healing setting) to avoid resort-type framing under the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_b9b4868452f10cbd3253",
+   "sourceHash": "b9b4868452f10cbd32532f199d66b43b25f6c5360c0f55b979c205eecef4f023",
+   "text": "여성 호르몬 균형 및 내분비 치료 Stri Swasthyam Rakshana",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source concatenates the English title and the Sanskrit programme name without a separator ('TherapyStri'); a space was inserted and the Sanskrit name kept in Latin form as the programme identifier — source likely needs a separator."
+   ]
+  },
+  {
+   "id": "t_0bf7c3a9724ac23f1fa2",
+   "sourceHash": "0bf7c3a9724ac23f1fa2794cbd8168109b8ab8fd26b9a6ed9367c8e28c85f2e5",
+   "text": "여성을 위한 호르몬 균형 및 내분비 치료 | Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3bb895cd245d5e9750e6",
+   "sourceHash": "3bb895cd245d5e9750e6476720636600bc49d337f14a00793d19ecd069e4f4fd",
+   "text": "머리 쪽에서 바라본, 크림색 천을 덮고 목재 치료대에 누운 환자의 복부 위에 놓인 치료사의 손",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6f296f1bba6a97849e46",
+   "sourceHash": "6f296f1bba6a97849e46a9b88a07d35db484bb521b5a4fd379714c220868721c",
+   "text": "목재 치료대에 바로 누운 환자의 어깨에 따뜻한 허브 찜질 주머니를 누르는 두 명의 Kairali 치료사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_890089867a00afc9b5aa",
+   "sourceHash": "890089867a00afc9b5aa47e43be78e2c704908462d27023403ef8fe532b66e16",
+   "text": "목재 치료대에 누운 환자의 다리에 두 개의 따뜻한 허브 찜질 주머니를 누르는 Kairali 치료사",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f4cdac3745025231959",
+   "sourceHash": "1f4cdac37450252319596b779d57a28f21a0837681d93572e48422765050e9ff",
+   "text": ": 병력, 증상 및 생활 습관을 파악하기 위한 철저한 상담으로 시작합니다. 이를 통해 고유한 도샤 불균형을 판단하고 개인 맞춤형 치료 계획을 수립합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fe29ae87cb99bd29206",
+   "sourceHash": "3fe29ae87cb99bd292062804acf64e8e0fd0e64921d2c4dfb6a0bbf403f0675a",
+   "text": "아유르베다 평가",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1924edd963044253ab1a",
+   "sourceHash": "1924edd963044253ab1aaee68f45094b9402ecc3e83dcc049f040aa170d8ee71",
+   "text": ": 맥진(나디 파릭샤, Nadi Pariksha)과 시진(다르샤나 파릭샤, Darshana Pariksha)을 통해 도샤 불균형을 평가합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_56640dc69d146500f717",
+   "sourceHash": "56640dc69d146500f71726f8e485f4f8766f9572945b0942f067731906b9d378",
+   "text": ": 평가를 바탕으로 여러 치료법, 허브 약물, 식이 권장 사항 및 생활 습관 개선을 결합한 종합적인 치료 계획을 수립합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dee3f453e36eec8cf04f",
+   "sourceHash": "dee3f453e36eec8cf04f48f13c58c33a623003f283f725dc9167ea871a68030c",
+   "text": ": 치료에는 체질, 상태 및 호르몬 수치에 따라 아비양감(abhyangam), 우드와르타남(udwarthanam), 비레차남(virechanam), 바스티(vasti), 마트라바스티(matravasti) 등이 포함됩니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8088b9b018917abc1d8e",
+   "sourceHash": "8088b9b018917abc1d8e430e8145d34776a97ffc40c4bed5cfcbbe030e7237bc",
+   "text": ": 의사는 체내 치유 과정을 돕고 신체를 강화하기 위해 천연 허브로 만든 아유르베다 약물을 처방합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0d00feb1f3609b8e8dc7",
+   "sourceHash": "0d00feb1f3609b8e8dc7258ed401d59a918f715f286bc95d0d1667fc084878a6",
+   "text": ": 아유르베다 의사가 도샤 불균형에 맞춘 식이 권장 사항을 제공하고 균형을 유지하기 위한 생활 습관 개선을 제안합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_501dd439e618d698f700",
+   "sourceHash": "501dd439e618d698f7007a32717e69f0fbb84ad23a5cf47b6ea7cb9268618934",
+   "text": ": 경과를 추적하고, 필요한 경우 치료 계획을 조정하며, 지속적인 지원과 안내를 제공하기 위해 정기적인 추적 세션 일정을 잡습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2aaf6a9395a5422bc396",
+   "sourceHash": "2aaf6a9395a5422bc396dcb1846603784b751959570cac8f6b24af9d9b12e60f",
+   "text": "월경 주기가 불규칙한 여성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5ae7ceadbd6f17cbeff5",
+   "sourceHash": "5ae7ceadbd6f17cbeff525b13bd18615036d600fc864e7f23c94b30765a816dc",
+   "text": "다낭성 난소 증후군(PCOS / PCOD)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_937a056157f6669eef6a",
+   "sourceHash": "937a056157f6669eef6a3dc23e404442bd2081295cbe5f093047e64956694d73",
+   "text": "갑상선 불균형(갑상선 기능 저하증 / 갑상선 기능 항진증)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dcfa9349fb3b0e3e03ca",
+   "sourceHash": "dcfa9349fb3b0e3e03ca5e124400b0f802e70517dd958e5ec715624a310723de",
+   "text": "폐경 전후기 및 폐경기 여성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_76373340147d9fbde4fc",
+   "sourceHash": "76373340147d9fbde4fc564085931b8f7c2d7e6cc931eb5c355c7453aed69a2d",
+   "text": "호르몬성 여드름 및 피부 문제",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f73d01595c064b6daa1a",
+   "sourceHash": "f73d01595c064b6daa1a753ecbcbcd5240d0009c40116101ff25afd1c6e8c5d2",
+   "text": "원인 불명의 체중 증가 또는 대사 저하",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8fdf30a8e2e3822f7caa",
+   "sourceHash": "8fdf30a8e2e3822f7caa7e9fba8e8c5bb904f59a0b23b0f63cbaca98757e4f2d",
+   "text": "정서적 불안정, 불안 또는 과민함",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd844ceb871d9ff98d67",
+   "sourceHash": "fd844ceb871d9ff98d67244f663ddd69e297e21742d4fd9624d00290bd917f67",
+   "text": "호르몬 치료 또는 피임약 사용 후 회복 중인 여성",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b9b39e88e4b047631e7",
+   "sourceHash": "8b9b39e88e4b047631e76c1fad091b2fb2cca796cdd30e9ebb885bc8bf2e1924",
+   "text": "만성 피로 또는 기력 저하",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

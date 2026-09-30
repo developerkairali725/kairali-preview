@@ -1,0 +1,142 @@
+/* Phone layout derived from a Batch A page's desktop design.
+   Used only when staging's own phone design ("<name> (mobile).html") has not
+   been saved: the page root then carries data-phone-layout="derived".
+   Same sections, order, copy and images as the desktop design; only the
+   layout changes, following the approved /lp/ pages:
+   - one column; 16px side gutter; no horizontal scroll;
+   - body text 19px (floors in dc-overrides.css), buttons 54px or taller;
+   - images never wider than their own pixels (inline max-width from the
+     converter) and never wider than the screen.
+   Staging's inline styles are overridden with !important, which is the only
+   way a stylesheet can beat an inline style. */
+
+@media (max-width: 699px) {
+  #ahv-design-root[data-phone-layout="derived"] {
+    overflow-x: clip;
+  }
+
+  /* 1 · one column. Staging sets columns both inline and through its
+     stylesheets' classes (.campaign-hero, …), so every element outside the
+     shared form gets one column (the property does nothing on non-grids),
+     and every grid child returns to that column in source order — staging's
+     grid-column/grid-row placements would otherwise add implicit columns. */
+  #ahv-design-root[data-phone-layout="derived"] *:not(form, form *) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas: none !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] *:not(form, form *) > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style*="display:flex"] > :not(img, button, a, .btn) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* image + text rows: the text keeps at least 200px beside the image, or
+     moves below it (a small icon keeps its text alongside; a large badge or
+     photo sits above its text) */
+  #ahv-design-root[data-phone-layout="derived"] [style*="display:flex"]:not([style*="flex-direction:column"], [style*="overflow-x:auto"]):has(> img, > picture, > figure) {
+    flex-wrap: wrap !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style*="display:flex"]:not([style*="flex-direction:column"], [style*="overflow-x:auto"]):has(> img, > picture, > figure) > :not(img, picture, figure, svg) {
+    flex: 1 1 200px !important;
+  }
+
+  /* the treatment-packages stats strip (five short figures above the hero)
+     keeps two per row, so the headline stays in the first screen */
+  #ahv-design-root[data-phone-layout="derived"][data-ahv-route="/ayurvedic-treatment-packages.html"] [data-dc-tpl="34"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"][data-ahv-route="/ayurvedic-treatment-packages.html"] [data-dc-tpl="33"] {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"][data-ahv-route="/ayurvedic-treatment-packages.html"] [data-dc-tpl="34"] > * {
+    grid-column: auto !important;
+  }
+
+  /* the headline comes first: where staging's hero puts another column (a
+     form, a photo) before the h1 column, the h1 column moves to the top so
+     the treatment name and "Plan my programme" are in the first screen.
+     Only columns inside the hero move; the sections keep staging's order. */
+  #ahv-design-root[data-phone-layout="derived"] *:has(> * h1) > *:has(h1) {
+    order: -1 !important;
+  }
+
+  /* no fixed widths wider than the screen */
+  #ahv-design-root[data-phone-layout="derived"] [style*="width:"]:not(img):not(svg) {
+    max-width: 100% !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style*="min-width:"]:not(img, button, a, .btn) {
+    min-width: 0 !important;
+  }
+  /* phone rhythm: staging's desktop section spacing (44–76px above and below)
+     becomes 32–36px, as on the approved /lp/ pages; card padding is unchanged */
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:36px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:44px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:48px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:54px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:56px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:58px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:72px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:76px 0px"] {
+    padding-top: 32px !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:56px 0px 60px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:56px 0px 64px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:58px 0px 62px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:54px 0px 58px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:48px 0px 52px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:44px 0px 48px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*="padding:56px 0px;"] {
+    padding-bottom: 36px !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style^="margin-top:56px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*=";margin-top:56px"],
+  #ahv-design-root[data-phone-layout="derived"] [style^="margin-top:76px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*=";margin-top:76px"],
+  #ahv-design-root[data-phone-layout="derived"] [style^="margin:48px 0px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*=";margin:48px 0px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style^="margin:76px 0px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*=";margin:76px 0px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style^="margin:56px 0px 0px"],
+  #ahv-design-root[data-phone-layout="derived"] [style*=";margin:56px 0px 0px"] {
+    margin-top: 32px !important;
+  }
+
+  /* 3 · images: fit the column, keep their proportions, never upscale */
+  /* (max-width stays as the converter set it inline: min(100%, <own width>px),
+     so an image never grows past its own pixels — a plain 100% here would
+     let thumbnails in icon + text rows swallow the whole row) */
+  #ahv-design-root[data-phone-layout="derived"] img:not([style*="object-fit"]) {
+    height: auto !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] iframe,
+  #ahv-design-root[data-phone-layout="derived"] video {
+    max-width: 100% !important;
+  }
+
+  /* 5 · text: long words wrap; headings keep a phone-sized ceiling */
+  #ahv-design-root[data-phone-layout="derived"] :is(h1, h2, h3, p, li, span, a) {
+    overflow-wrap: break-word;
+  }
+  #ahv-design-root[data-phone-layout="derived"] h1 {
+    font-size: clamp(32px, 8.4vw, 40px) !important;
+    max-width: none !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] h2 {
+    font-size: clamp(27px, 7vw, 32px) !important;
+  }
+  /* fractional-em text inside the smaller phone headings keeps the 16px floor */
+  #ahv-design-root[data-phone-layout="derived"] :is(h1, h2, h3) [style*="font-size:0."] {
+    font-size: max(16px, 0.55em) !important;
+  }
+  #ahv-design-root[data-phone-layout="derived"] [style*="text-align:right"] {
+    text-align: left !important;
+  }
+
+  /* 6 · buttons and the hero call-to-action use the full width */
+  #ahv-design-root[data-phone-layout="derived"] [data-dc-hero-cta] .btn {
+    width: 100%;
+  }
+}

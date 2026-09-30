@@ -1,0 +1,65 @@
+// /awards-and-accolades/ — verbatim from family-04/AWARDS-AND-ACCOLADES-BUILD.json (WOPS-AHV-CLAUDE-CONTINUATION-002). 22 cards in source order; captions per packet copyChangeLedger; originalCaption retained for source review. No invented content.
+window.AHV_AWARDS = {
+  h1: "Awards & Accolades",
+  eyebrow: "Awards History",
+  intro: "Awards and recognition from across the Kairali group, including The Ayurvedic Healing Village.",
+  collectionHeading: "Awards and recognition",
+  context: "A collection of awards, features and certificates from different years.",
+  groupLinksHeading: "Kairali Group",
+  aboutLinksHeading: "About Kairali",
+  viewImageLabel: "View image", closeImageLabel: "Close image", previousLabel: "Previous image", nextLabel: "Next image",
+  hero: { image: "/ahv/assets/img/AHV-Awards-Landscape.webp", width: 1440, height: 524, alt: "Palm trees and fields seen from above.", legacyUrl: "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png" },
+  patwaStoryLink: { label: "Read the PATWA award story", href: "https://whyayurveda.org/kairali-the-ayurvedic-healing-village-wins-patwa-international-travel-award-2026-at-itb-berlin/", underCard: "award-07" },
+  cards: [
+    { id: "award-01", caption: "Kairali – The Ayurvedic Healing Village has been awarded the Tripadvisor Travelers’ Choice Award 2026, recognizing our commitment to authentic Ayurveda and exceptional hospitality.", image: "/ahv/assets/img/AHV-Award-01.webp", width: 600, height: 337, alt: "Tripadvisor 2026 recognition emblem." },
+    { id: "award-02", caption: "Abhilash K. Ramesh, Executive Director at Kairali – The Ayurvedic Healing Village, wins Best Marketing Director India at the Haute Grandeur Global Excellence Awards 2026.", image: "/ahv/assets/img/AHV-Award-02.webp", width: 600, height: 337, alt: "A group standing outside the Kairali entrance." },
+    { id: "award-03", caption: "Kairali – The Ayurvedic Healing Village proudly wins two titles at the Haute Grandeur Global Excellence Awards 2026, reaffirming our place among the Best Wellness Retreat India and Best Ayurveda Retreat India.", image: "/ahv/assets/img/AHV-Award-03.webp", width: 600, height: 337, alt: "Haute Grandeur 2026 hotel winner emblem." },
+    { id: "award-04", caption: "Kairali – The Ayurvedic Healing Village is proudly recognized by the Asia Pacific Spa & Wellness Coalition, reflecting our commitment to authentic Ayurvedic excellence worldwide today.", image: "/ahv/assets/img/AHV-Award-04.webp", width: 1000, height: 562, alt: "Asia Pacific Spa and Wellness Coalition award plaque." },
+    { id: "award-05", caption: "Kairali – The Ayurvedic Healing Village is proudly featured in the prestigious National Geographic Traveller Spa & Wellness Collection 2026, celebrating authentic Ayurvedic healing and holistic hospitality globally.", image: "/ahv/assets/img/AHV-Award-05.webp", width: 1000, height: 562, alt: "National Geographic Traveller Spa and Wellness Collection 2026 graphic." },
+    { id: "award-06", caption: "Kairali – The Ayurvedic Healing Village is proudly certified by Haute Grandeur Global Spa Awards 2026, honoring our authentic Ayurvedic wellness excellence worldwide.", image: "/ahv/assets/img/AHV-Award-06.webp", width: 1000, height: 562, alt: "Haute Grandeur 2026 certified spa awards emblem." },
+    { id: "award-07", caption: "Kairali at the PATWA International Travel Awards 2026, held during ITB Berlin.", originalCaption: "Abhilash K. Ramesh was honoured with the award of Excellence in Wellness Hospitality (India) at the PATWA International Travel Awards 2026, held during ITB Berlin.", image: "/ahv/assets/img/AHV-Award-07.webp", width: 1000, height: 562, alt: "PATWA award presentation and trophy graphic.", storyLink: true },
+    { id: "award-08", caption: "Mr. K. V. Ramesh, Founder of Kairali Ayurveda Group, honoured at the International Ayurveda & Wellness Conclave 2026.", image: "/ahv/assets/img/AHV-Award-08.webp", width: 1000, height: 562, alt: "International Ayurveda and Wellness Conclave 2026 presentation." },
+    { id: "award-09", caption: "Kairali Ayurvedic Healing Village is declared the Winner of Best Luxury Ayurveda Spa for 2020", image: "/ahv/assets/img/AHV-Award-09.webp", width: 1000, height: 562, alt: "World Luxury Spa Awards 2020 regional winner graphic." },
+    { id: "award-10", caption: "Kairali Hand Sanitizer received the Certificate of Compliance from Safe Cosmetics Australia", image: "/ahv/assets/img/AHV-Award-10.webp", width: 1000, height: 562, alt: "Kairali Hand Sanitizer compliance certificate." },
+    { id: "award-11", caption: "Kairali- the Ayurvedic Healing Village receives Fit Premium Quality Certificate for promoting health", image: "/ahv/assets/img/AHV-Award-11.webp", width: 1000, height: 562, alt: "Fit Reisen Premium Partner 2020 graphic." },
+    { id: "award-12", caption: "Kairali Ayurvedic Group receives the Certificate of Excellence 2019 by Xel Research.", image: "/ahv/assets/img/AHV-Award-12.webp", width: 1000, height: 561, alt: "Kairali Ayurvedic Group certificate and award graphic." },
+    { id: "award-13", caption: "Way ahead for Kairali, Abishek Ramesh awarded 50 most admired Global Indians in 2019", image: "/ahv/assets/img/AHV-Award-13.webp", width: 1000, height: 562, alt: "Award presentation and Global Indians 2019 certificate graphic." },
+    { id: "award-14", caption: "Asian African Leadership Awards 2020 for promoting Healthcare & Wellness in Ayurveda", image: "/ahv/assets/img/AHV-Award-14.webp", width: 1000, height: 562, alt: "Kairali Ayurvedic Group Asian African Leadership award graphic." },
+    { id: "award-15", caption: "Kairali Healing Village moving forward with Green leaf Certificate in 2020 by Government of Kerala", image: "/ahv/assets/img/AHV-Award-15.webp", width: 1000, height: 562, alt: "Historical Green Leaf classification certificate and campus image." },
+    { id: "award-16", caption: "Top Ayurveda Health Farm, Kairali, wins South Asian Travel Awards Again", image: "/ahv/assets/img/AHV-Award-16.webp", width: 1000, height: 562, alt: "South Asian Travel Awards 2019 certificate and presentation." },
+    { id: "award-17", caption: "FICCI Travel & Tourism Award for Promoting Wellness Tourism", image: "/ahv/assets/img/AHV-Award-17.webp", width: 1000, height: 562, alt: "FICCI 2019 certificate and trophy for Kairali Ayurvedic Group." },
+    { id: "award-18", caption: "Glorious Appreciation conferred upon Kairali as the Best Ayurveda Brand of the Year", image: "/ahv/assets/img/AHV-Award-18.webp", width: 1000, height: 562, alt: "Best Ayurveda Brand of the Year award graphic." },
+    { id: "award-19", caption: "Three Years in a Row & Kairali Health Resorts Bags the World Luxury Spa Awards 2019 Again", image: "/ahv/assets/img/AHV-Award-19.webp", width: 1000, height: 562, alt: "World Luxury Spa Awards 2019 presentation." },
+    { id: "award-20", caption: "Kairali Healing Village wins the Best Wellness Destination of the Year", image: "/ahv/assets/img/AHV-Award-20.webp", width: 1000, height: 562, alt: "Best Wellness Destination of the Year 2019 certificate graphic." },
+    { id: "award-21", caption: "Kairali Ayurvedic Products Wins Brand Brilliance Award in 2019", originalCaption: "Karali Ayurvedic Products Wins Brand Brilliance Award in 2019", image: "/ahv/assets/img/AHV-Award-21.webp", width: 1000, height: 562, alt: "Kairali Ayurvedic Products Brand Brilliance award graphic." },
+    { id: "award-22", caption: "5 Times in Row- Certificate of Excellence by Trip Advisor", image: "/ahv/assets/img/AHV-Award-22.webp", width: 1000, height: 562, alt: "Tripadvisor 2019 Certificate of Excellence and Hall of Fame graphic." }
+  ],
+  groupLinks: [
+    { label: "Kairali Hospitality", href: "/kairali-hospitality/" },
+    { label: "Kairali Ayurvedic Products Pvt.ltd.", href: "/kairali-ayurvedic-products-pvt-ltd/" },
+    { label: "Product Range", href: "/product-range/" },
+    { label: "Ayurvedic Herbal Tea", href: "/ayurvedic-herbal-tea/" },
+    { label: "Ayurvedic Proprietary Organics", href: "/ayurvedic-proprietary-organics/" },
+    { label: "Kair by Kairali", href: "/kair-by-kairali/" },
+    { label: "Ayurvedic Proprietary Medicines", href: "/ayurvedic-proprietary-medicines/" },
+    { label: "Ayurvedic Classical Medicines", href: "/ayurvedic-classical-medicines/" },
+    { label: "Books", href: "/books/" },
+    { label: "Kairali Ayurvedic Equipment", href: "/kairali-ayurvedic-equipment/" },
+    { label: "Arogya Kendra", href: "/arogya-kendra/" },
+    { label: "Arogya Shala", href: "/arogya-shala/" },
+    { label: "Kairali Ayurvedic Center", href: "/kairali-ayurvedic-centre/" },
+    { label: "Kairali Ayurveda Franchise", href: "/ayurvedic-franchise/" },
+    { label: "Kairali Institute Of Ayurveda And Panchakarma Therapy", href: "/kairali-institute-of-ayurveda-and-panchakarma-therapy/" }
+  ],
+  aboutLinks: [
+    { label: "Vision and Mission", href: "/vision-and-mission/" },
+    { label: "Social, Cultural & Environmental Commitment", href: "/social-cultural-environmental-commitment/" },
+    { label: "Awards & Accreditations", href: "/awards-and-accreditations/" },
+    { label: "Accreditations", href: "/accreditations/" }
+  ],
+  footerLinks: [
+    { label: "Social Responsibility", href: "/social-responsibilities/" },
+    { label: "Past Retreats", href: "/archive-yoga-retreat/" },
+    { label: "News & Past Events", href: "/archive/" }
+  ]
+};

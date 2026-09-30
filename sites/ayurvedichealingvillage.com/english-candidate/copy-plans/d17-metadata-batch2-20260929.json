@@ -1,0 +1,68 @@
+{
+ "plan": "parent-d17-batch2",
+ "entries": [
+  {
+   "file": "public/ahv/assets/article-family-data.js",
+   "old": "Kairali - The Ayurvedic Healing Village | Ayurvedic Family | What is Ayurveda | Ayurvedic Body Types",
+   "new": "Kairali Ayurvedic Group: History & Ayurveda | Kairali",
+   "count": 1,
+   "id": "d17b2-1"
+  },
+  {
+   "file": "public/ahv/assets/article-family-data.js",
+   "old": "Kairali Ayurvedic Group is the accomplished family behind The Ayurvedic Healing Village, who continue to build on the knowledge and expertise of their long lineage of Ayurvedic doctors.",
+   "new": "Read about Kairali Ayurvedic Group, its family background, Ayurvedic practice and patient education.",
+   "count": 2,
+   "id": "d17b2-2"
+  },
+  {
+   "op": "manifestMeta",
+   "path": "/brief-on-kairali/",
+   "set": {
+    "title": "Kairali Ayurvedic Group: History & Ayurveda | Kairali",
+    "description": "Read about Kairali Ayurvedic Group, its family background, Ayurvedic practice and patient education.",
+    "ogDescription": "Read about Kairali Ayurvedic Group, its family background, Ayurvedic practice and patient education."
+   },
+   "id": "d17b2-3"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-desktop.json",
+   "old": "Kairali – The Ayurvedic Healing Village | Yoga and Meditation Retreat | Ayurveda and Yoga India | Yoga and Meditation Kerala",
+   "new": "Yoga & Meditation Programme in Kerala | Kairali",
+   "count": 2,
+   "id": "d17b2-4"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-desktop.json",
+   "old": "Guided yoga and meditation sessions are presented alongside Ayurveda at Kairali’s residential retreat in Kerala.",
+   "new": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.",
+   "count": 4,
+   "id": "d17b2-5"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-mobile.json",
+   "old": "Kairali – The Ayurvedic Healing Village | Yoga and Meditation Retreat | Ayurveda and Yoga India | Yoga and Meditation Kerala",
+   "new": "Yoga & Meditation Programme in Kerala | Kairali",
+   "count": 2,
+   "id": "d17b2-6"
+  },
+  {
+   "file": "public/ahv/views/ahv-page-yoga-meditation-program-mobile.json",
+   "old": "Guided yoga and meditation sessions are presented alongside Ayurveda at Kairali’s residential retreat in Kerala.",
+   "new": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.",
+   "count": 4,
+   "id": "d17b2-7"
+  },
+  {
+   "op": "manifestMeta",
+   "path": "/yoga-meditation-program/",
+   "set": {
+    "title": "Yoga & Meditation Programme in Kerala | Kairali",
+    "description": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.",
+    "ogDescription": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors."
+   },
+   "id": "d17b2-8"
+  }
+ ],
+ "note": "D17 metadata batch 2 (parent package parent-d17-metadata-batch2, patch c6e0e314; content-geo-writer workflow, KTAHV lint 0/0): neutral titles/descriptions for /brief-on-kairali/ (group overview; no superlatives, network counts, certification or lineage dates) and /yoga-meditation-program/ (guided sessions alongside Ayurveda); dataset, both yoga view payloads and served manifest."
+}

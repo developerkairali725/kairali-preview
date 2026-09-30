@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "hi",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": साइनस और माइग्रेन जैसी सिर से जुड़ी समस्याओं से पीड़ित रोगियों के लिए यह आयुर्वेदिक चिकित्सा सर्वोत्तम है। यह एक प्राकृतिक शोधन विधि है, जिसमें नासिका में नियंत्रित रूप से औषधीय बूँदें डाली जाती हैं और सिर के क्षेत्र को हर प्रकार के दर्द से राहत मिलती है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source superlative and pain-relief claim kept as-is (not strengthened); flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "नस्यम्: साइनस और माइग्रेन जैसी सिर से जुड़ी समस्याओं से पीड़ित रोगियों के लिए यह आयुर्वेदिक चिकित्सा सर्वोत्तम है। यह एक प्राकृतिक शोधन विधि है, जिसमें नासिका में नियंत्रित रूप से औषधीय बूँदें डाली जाती हैं और सिर के क्षेत्र को हर प्रकार के दर्द से राहत मिलती है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source superlative and pain-relief claim kept as-is (not strengthened); flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "प्रशिक्षण उपलब्ध है। इस बैच के किसी भी रूट पर 'Coming Soon' स्थिति लागू नहीं है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be internal editorial/status text; 'Coming Soon' kept in English as a status label."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "वर्तमान चिकित्सा, व्यावसायिक, पुरस्कार और उपलब्धता संबंधी दावों पर उनके सटीक निजी रिलीज़ गेट लागू रहते हैं। स्रोत से लिया गया पाठ सत्यापन नहीं है, और किसी रूट पर अलग गेट न होने का अर्थ यह कभी नहीं है कि दावा स्वीकृत है।",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be internal editorial text rather than patient-facing copy."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "सभी के लिए उपचार कार्यक्रम",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'उपचार कार्यक्रम' (treatment programmes) per clinical register."
+   ]
+  }
+ ]
+}

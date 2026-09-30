@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0414",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "it",
+ "units": [
+  {
+   "id": "t_8549e99f42b21dbea33b",
+   "sourceHash": "8549e99f42b21dbea33b3768a275b56880025b5e3ddcb092ea9869b76e1d38e1",
+   "text": "Due azioni del registro hanno una doppia funzione e sono raggruppate in base al loro effetto anziché al nome. REPLACE_WRONG_EQUIPMENT_BREADCRUMB (1) è una sostituzione del percorso nell'hero, per cui le voci che sostituiscono il percorso sono in totale 25 anziché le 24 riportate dal solo REPLACE_GOVERNED_BREADCRUMB. RELATED_LINKS_GROUPS_OR_EMPTY_HEADING_OMITTED (15) è un nodo di gruppo di link correlati il cui titolo vuoto non viene visualizzato, per cui le voci dei gruppi correlati sono in totale 162 anziché 147. Le esclusioni intenzionali OMIT_* sono quindi in totale 89, e 2 voci riportano altre azioni (una promozione del titolo e una sostituzione del titolo per attrezzatura errata). 433 + 25 + 162 + 89 + 2 = 711.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content leaking into display data — consider excluding from the public page."
+   ]
+  },
+  {
+   "id": "t_b43db53ea136dd89902f",
+   "sourceHash": "b43db53ea136dd89902f079159627554b2c7f211c5957632b79c6df0a6c1fae0",
+   "text": "whole-item STRONG with three BRs",
+   "status": "translated",
+   "unchangedReason": "Internal markup descriptor (js:enum), not user-facing copy.",
+   "issues": []
+  },
+  {
+   "id": "t_a3dd2fc874f4d87194eb",
+   "sourceHash": "a3dd2fc874f4d87194eb147512ba9798c590da4519b695f9c6bc50f7bfeca617",
+   "text": "leading STRONG run",
+   "status": "translated",
+   "unchangedReason": "Internal markup descriptor (js:enum), not user-facing copy.",
+   "issues": []
+  },
+  {
+   "id": "t_fd74038cfce284c02a0b",
+   "sourceHash": "fd74038cfce284c02a0bb17ac4e98ccb67a2b0ccb3fbdd8048502dc1e755bf55",
+   "text": "Due sequenze STRONG della fonte erano andate perse durante il popolamento e sono state ripristinate sulla base delle evidenze inline del registro: un elemento interamente in strong esteso su quattro righe con tre BR della fonte, e una sequenza strong iniziale di cui è conservato lo spazio finale esatto. Le interruzioni BR significative sono mantenute e non è stato inventato alcun BR finale vuoto.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_8bcecaeecc5d51139859",
+   "sourceHash": "8bcecaeecc5d511398591d2486546634910685de1e8e4637c8d6cad0e471b8f4",
+   "text": "Pixel, testi alternativi della fonte, proporzioni native, numero esatto, note sui diritti e metadati invariati: è cambiata solo la posizione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_6016a6c1f51564d2ec26",
+   "sourceHash": "6016a6c1f51564d2ec26abb95b7184627bb70a9b51a69668d2e68775d8baec08",
+   "text": "Nessun testo della fonte, URL o indicazione sul visto è stato modificato, abbreviato o riscritto, nessun link è stato attivato e nulla è stato tagliato o nascosto: overflow-wrap sceglie soltanto ulteriori punti di interruzione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_22b7c38dbe29493721f4",
+   "sourceHash": "22b7c38dbe29493721f49d731768445e6aa33f8b17b3670f5fca27e9276ea631",
+   "text": "I blocchi dei titoli erano stati costruiti con un albero di testo semplice, per cui le sequenze STRONG sull'intero titolo richieste dal brief originale erano state eliminate, pur coincidendo il testo del titolo.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_10411aa2c78a8804c39f",
+   "sourceHash": "10411aa2c78a8804c39fdb8d52baadd0a742b4ebb978d950955d98dd4a7bff96",
+   "text": "I quattro difetti sostanziali dei paragrafi avevano perso lo STRONG quando sono stati ripristinati i 19 nodi e i 3 ancoraggi del corpo testo: quelle ricostruzioni avevano generato alberi di testo semplice.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_6a563765172f48d330ff",
+   "sourceHash": "6a563765172f48d330ff2a7a6ce7103e9fac8630210173afbaa0412781132e2c",
+   "text": "Gli STRONG identici annidati e ridondanti vengono appiattiti. NESSUN BR è omesso: l'unica interruzione in precedenza trattata come BR finale vuoto si è dimostrata significativa in base alla fonte grezza ed è stata ripristinata. Gli apici degli ordinali sono conservati. Nessuna sostituzione con grassetto sull'intero nodo, nessun titolo duplicato, nessun nuovo testo e nessun ritorno a capo manuale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_b1eaa40d3c8aa9c62019",
+   "sourceHash": "b1eaa40d3c8aa9c620194e222c2469fba683efe5171c2384ec20ec92a325c662",
+   "text": "Un pasto vegetariano servito con riso, verdure e curry.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5babcaa385cf1bd25983",
+   "sourceHash": "5babcaa385cf1bd2598362db73c94cab2f2d3c9a24d5f7c521df78146dd892dc",
+   "text": "Scopra l'Ayurveda",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b357c75140b21ee9267e",
+   "sourceHash": "b357c75140b21ee9267e99e96e7cbd90839806cc97075e680a2624dc5db52682",
+   "text": "Programmi ayurvedici",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fd8d79a3239b4cbd6370",
+   "sourceHash": "fd8d79a3239b4cbd6370c4df8f9862d7b448ef4a52cdddfceb89004ccfad92f9",
+   "text": "Un paziente seduto tra due terapisti durante un trattamento ayurvedico.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5e07ad489897aa4c2c37",
+   "sourceHash": "5e07ad489897aa4c2c37ab89513ecde1c93f91559d246068302480590c1381de",
+   "text": "Una donna che pratica yoga su un tappetino.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3eca470a849508d92ca9",
+   "sourceHash": "3eca470a849508d92ca9378053018e5a89e8ac13ce81af69681b26167a329375",
+   "text": "Prodotti ayurvedici",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3dcaab2662a8680db59c",
+   "sourceHash": "3dcaab2662a8680db59c2e5e2ec337a14c7289a9afce536381d32aa3c6651759",
+   "text": "Una selezione di prodotti Kairali esposti all'aperto.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c9dd5736f94d731419f",
+   "sourceHash": "9c9dd5736f94d731419f4d076413bb2388ff2af55bde6dbdea6d495bb914035f",
+   "text": "family-04/LAKSHYA-RECOVERED-NATIVE-PROMPT.txt",
+   "status": "translated",
+   "unchangedReason": "File path, language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_489d1ee17cce0b5577de",
+   "sourceHash": "489d1ee17cce0b5577de454ef261e016a11a0ec73cd962be279c79f557b1a8bc",
+   "text": "I sette dettagli storici accettati in precedenza, la base di riferimento dei nove storici e la relativa riparazione combinata, la correzione di wrap/href/inline, la correzione delle interruzioni significative e tutti i 136 dataset precedenti restano invariati.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal engineering note; appears to be non-patient-facing content in display data."
+   ]
+  },
+  {
+   "id": "t_4c6604104512a9934d0f",
+   "sourceHash": "4c6604104512a9934d0fbcdaf828537ae7f1c927c816276f4dfea76f8caf1371",
+   "text": "L'autenticità dell'archivio è registrata esclusivamente tramite SHA esatto. Non si dichiara alcuna verifica medica, organizzativa o di marketing attuale. Il timestamp di acquisizione del 2016 NON è una data dell'evento.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_297b1c745d394c1174cd",
+   "sourceHash": "297b1c745d394c1174cdfcd311e52003a497ffa94fa89116f01d81210c24eab2",
+   "text": "Ritiro passato, conservato a scopo di riferimento storico. L'anno dell'evento non è stato verificato.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c62df69c6a159cf1039",
+   "sourceHash": "1c62df69c6a159cf1039d79cfb3a8823086b899d07909411aa85398c456d8dcf",
+   "text": "Questa sezione presenta il ritiro di sette giorni con trattamenti ayurvedici ed esercizi yogici presso l'Ayurvedic Healing Village.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8cdf0f53fcef7f91f28c",
+   "sourceHash": "8cdf0f53fcef7f91f28c39b9e81b43ddf86e98819c77e446512ca61a8d52e237",
+   "text": "Sono applicate solo tre correzioni recuperate documentate: title, description e openGraph.description. Tutti gli altri valori dei metadati originali e la mappatura social dalla fonte propria sono conservati in attesa della normale integrazione finale.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Metadata field names (title, description, openGraph.description) kept as code identifiers."
+   ]
+  },
+  {
+   "id": "t_ab98b881193293f7a40b",
+   "sourceHash": "ab98b881193293f7a40bd0bf09c9f2b402980d6b901cb50dbd51c573ac6b66d5",
+   "text": "Il valore originale errato «Animal Husbandry» è conservato qui in forma privata insieme alle evidenze della correzione.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Animal Husbandry' kept in English as the quoted original erroneous value."
+   ]
+  }
+ ]
+}

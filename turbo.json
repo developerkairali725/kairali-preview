@@ -2,8 +2,26 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**"
+      ],
+      "env": [
+        "AHV_STAGING",
+        "SITE_ENV",
+        "NEXT_PUBLIC_ASSET_ORIGIN",
+        "NEXT_PUBLIC_GA4_ID",
+        "NEXT_PUBLIC_GTM_ID",
+        "NEXT_PUBLIC_CLARITY_ID",
+        "GOOGLE_SITE_VERIFICATION"
+      ],
+      "passThroughEnv": [
+        "GH_TOKEN"
+      ]
     },
     "dev": {
       "cache": false,
@@ -11,7 +29,9 @@
     },
     "lint": {},
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "compliance": {
       "cache": false

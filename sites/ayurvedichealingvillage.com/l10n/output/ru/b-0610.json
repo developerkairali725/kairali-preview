@@ -1,0 +1,171 @@
+{
+ "batchId": "b-0610",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_ed0ee7f51cae78f3e954",
+   "sourceHash": "ed0ee7f51cae78f3e95408c38c1d10ca40a644f6ea8c1c35eca6794fd354e2ee",
+   "text": "цены действительны с",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00d9344ceb6a435761fd",
+   "sourceHash": "00d9344ceb6a435761fda9860a892fea19ce9ecffeb1d87a9ced580130bcf2ff",
+   "text": "На видео — и экскурсия уже готовится",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5381066c58eba135fc",
+   "sourceHash": "4e5381066c58eba135fcf2977a2508f7d72105cd42076fd321b2b364ba867606",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Упомяните это предложение при обращении в нашу службу по работе с пациентами.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a84dbe0ef7b2c4d0df3",
+   "sourceHash": "7a84dbe0ef7b2c4d0df325a6f165ff38a35c184e76f52f2b8145b7353bc2b995",
+   "text": "Телефон: [[OPEN_1]]+91 9555 156 156[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11929d76dbfd2699da2a",
+   "sourceHash": "11929d76dbfd2699da2a9a21c8138e4c5adf25497ed547c2c4e8a1f8d87dbe95",
+   "text": "10% при 3–13 ночах · 15% при 14–20 ночах · 20% при 21 ночи и более. На все пакеты. Без фиксированной даты окончания.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4b06ef6d3c81436f60a",
+   "sourceHash": "f4b06ef6d3c81436f60a318c81c42f8f7e2d774d45a22f3b9b5f3b6980d28146",
+   "text": "По",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Rendered as date-range end label ('с … по …')."
+   ]
+  },
+  {
+   "id": "t_930bf5e7c871c668c034",
+   "sourceHash": "930bf5e7c871c668c034874a7fb987a73104237db57edc1e2bcaab32f679a6e3",
+   "text": "Необязательно. Оставьте поле пустым, если даты ещё не определены.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_35f00e26d4d1289f7d2e",
+   "sourceHash": "35f00e26d4d1289f7d2e18d11070f142df3b068b28f8dbe0aec3bf104d2e8427",
+   "text": "[[VAR_1]][[OPEN_1]] / ночь[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11150a76f47719f852ac",
+   "sourceHash": "11150a76f47719f852acdc2dd26418e70c1382558d1a1b8ecf7f0264043fd2f3",
+   "text": "Проживание 1 чел., за виллу за ночь: Вилла Делюкс [[VAR_1]] · Классическая вилла [[VAR_2]] · Королевская вилла [[VAR_3]] · Сьют Махараджа [[VAR_4]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b7fbde536ad5fef7062",
+   "sourceHash": "8b7fbde536ad5fef70628f83c3b1bb2bbd72210aa26d1a8e96426cd8d9fcb974",
+   "text": "от ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a06ab10d8d5ca673a47",
+   "sourceHash": "3a06ab10d8d5ca673a473bdfaa5bbb025dbc5b618fb48068f4a1d4e673e9ae46",
+   "text": "€ EUR",
+   "status": "translated",
+   "unchangedReason": "Currency symbol and ISO code are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d88f343350776672ed0",
+   "sourceHash": "4d88f343350776672ed05ba6a7dbdd61d5c151fb8758ef47142dcf4f9adfcf6e",
+   "text": "[[OPEN_1]]Сьюты Махараджа[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0b842b338c651688df07",
+   "sourceHash": "0b842b338c651688df07e77f94f7a8925424164c713c47a39c297dd435980ed9",
+   "text": "[[OPEN_1]]Королевская вилла[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8c6d38d6fa1ddb636f3c",
+   "sourceHash": "8c6d38d6fa1ddb636f3c714cd7708831aa44900bd8889909f4ec53e32085b29d",
+   "text": "[[OPEN_1]]Классическая вилла[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_34dcfd7b06e164529337",
+   "sourceHash": "34dcfd7b06e164529337dd6e1491c9e23eacf8fa41973b9516ff979c5d08c8a9",
+   "text": "[[OPEN_1]]Вилла Делюкс[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a5ae35d01590114a18e",
+   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
+   "text": "[[OPEN_1]]Аюрведическое лечение[[CLOSE_1]] [[OPEN_2]]Виллы[[CLOSE_2]] [[OPEN_3]]Обучение йоге и медитации[[CLOSE_3]] [[OPEN_4]]Программа обучения Аюрведе[[CLOSE_4]] [[OPEN_5]]Аюрведическая кухня[[CLOSE_5]] [[OPEN_6]]Наша продукция[[CLOSE_6]] [[OPEN_7]]Инфраструктура деревни[[CLOSE_7]] [[OPEN_8]]Предложения[[CLOSE_8]] [[OPEN_9]]О нас[[CLOSE_9]] [[OPEN_10]]Центр знаний[[CLOSE_10]] [[OPEN_11]]Медиагалерея[[CLOSE_11]] [[OPEN_12]]Награды[[CLOSE_12]] [[OPEN_13]]Отзывы[[CLOSE_13]] [[OPEN_14]]Как добраться[[CLOSE_14]] [[OPEN_15]]Вопросы и материалы[[CLOSE_15]] [[OPEN_16]]Контакты[[CLOSE_16]] [[OPEN_17]]Амбулаторный приём (без записи)[[CLOSE_17]] [[OPEN_18]]Лечение и обучение[[CLOSE_18]] [[OPEN_19]]Ретриты йоги и Аюрведы[[CLOSE_19]] [[OPEN_20]]Пакеты йоги и медитации[[CLOSE_20]] [[OPEN_21]]Социальная ответственность[[CLOSE_21]] [[OPEN_22]]Наши партнёры[[CLOSE_22]] [[OPEN_23]]Достопримечательности[[CLOSE_23]] [[OPEN_24]]Фестивали[[CLOSE_24]] [[OPEN_25]]Фотогалерея[[CLOSE_25]] [[OPEN_26]]Вакансии[[CLOSE_26]] [[OPEN_27]]Подать заявку[[CLOSE_27]] [[OPEN_28]]Полезные ссылки по Аюрведе[[CLOSE_28]] [[OPEN_29]]Архив[[CLOSE_29]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aeefcfa5e981ddea1acf",
+   "sourceHash": "aeefcfa5e981ddea1acff2eec574b3f7dd0336bd1b16df373ac649e9ebb67ea8",
+   "text": "Постоянная регистрация медицинского учреждения — 2025–2030",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_371e4203197189a6da16",
+   "sourceHash": "371e4203197189a6da164c7b0ad6cad0d06fc8964891bcd59edda18f13c7600b",
+   "text": "Kairali – The Ayurvedic Healing Village предлагает подлинную заботу о благополучии и целостный подход, где спокойствие встречается с традицией. На нашей территории не употребляют алкоголь, не курят и не пьют кофеинсодержащие напитки — это чистая, восстанавливающая среда для гармонии тела и разума. Погрузитесь в традиционные аюрведические методы, йогу, медитацию и органический образ жизни — подлинный опыт преображения и оздоровления в Керале.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Our retreat' rendered as 'our premises' (на нашей территории) to keep clinical register."
+   ]
+  },
+  {
+   "id": "t_aaa300737e84bb2384ee",
+   "sourceHash": "aaa300737e84bb2384eeef2a171807565c2671cd57eed54575bd54020d481563",
+   "text": "Женщина в зелёном льняном костюме в позе йоги с поднятыми над головой сложенными руками",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31265b74f519c209f5b9",
+   "sourceHash": "31265b74f519c209f5b978ee27914d89dd153a5a60e5b3a3df2c7945a2d81814",
+   "text": "Двое терапевтов прикладывают тёплые травяные мешочки к пациенту, лежащему на деревянном процедурном столе",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

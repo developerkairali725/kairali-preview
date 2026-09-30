@@ -1,0 +1,157 @@
+{
+ "batchId": "b-0031",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_b7281984588fb6e7e269",
+   "sourceHash": "b7281984588fb6e7e26900adfd29541f6537b1278f4c815247b4f5cdafa809e3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Больница, аккредитованная NABH",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fd4ecd0a8a411eeb7f3",
+   "sourceHash": "3fd4ecd0a8a411eeb7f3b63c726e19bea47be2ea702a7780694c70fe26bdbfc3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Индивидуальные программы",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_be81badf9990dedf0ab8",
+   "sourceHash": "be81badf9990dedf0ab89f0ddcb4d332c90f1fe2ab29f2c48930b8a046bae5c5",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Лауреат премии World Luxury Award",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Award name containing 'Luxury' kept verbatim per the award-title exception."
+   ]
+  },
+  {
+   "id": "t_8d4c3019d439e53e1879",
+   "sourceHash": "8d4c3019d439e53e18799544ad9c753a348d4ccfb9ce490708422bd97699232b",
+   "text": "[[OPEN_1]]Бесплатная консультация врача[[CLOSE_1]] [[OPEN_2]]Отправить запрос[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_49563b4648988c892c91",
+   "sourceHash": "49563b4648988c892c91324722247d14b2b5a37dcd7e9fc3aaf9c312654692c2",
+   "text": "Наш подход",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_43fd10f6a956bcf2ab68",
+   "sourceHash": "43fd10f6a956bcf2ab680a1fc84ac7c305cdad87856d7138d338aab5774a8001",
+   "text": "Наш подход [[OPEN_1]]к лечению: терапия для улучшения дыхания и здоровья органов дыхания[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1f89d9dce7a4a57ce74a",
+   "sourceHash": "1f89d9dce7a4a57ce74a5830cfa900f8b79b52425ff823a562dc61f5eccfbf1d",
+   "text": "Для кого предназначена эта программа?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7de04008869383afa014",
+   "sourceHash": "7de04008869383afa0149c75601e8d57ff47b9086f763804056a55ba3de16a86",
+   "text": "NABH",
+   "status": "translated",
+   "unchangedReason": "Accreditation body acronym; language-neutral proper name.",
+   "issues": []
+  },
+  {
+   "id": "t_9d219992e74123bcf488",
+   "sourceHash": "9d219992e74123bcf488a71e31d9bc5aa9d66522628122cb40e7cee6af991c52",
+   "text": "Kairali – The Ayurvedic Healing Village имеет аккредитацию NABH в области Панчакармы — сертификат AH-2024-0250, действителен с 25 апреля 2024 по 24 апреля 2027 года.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Full brand name kept verbatim per the brand rule rather than the 'terms' entry for 'The Ayurvedic Healing Village'."
+   ]
+  },
+  {
+   "id": "t_83b794145c0cc3f560cb",
+   "sourceHash": "83b794145c0cc3f560cb6dfb6b5bcf7afac4dba15e5c6dbc54d103dae029fec6",
+   "text": "Читать далее",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_65c51937a7b8376cf7a4",
+   "sourceHash": "65c51937a7b8376cf7a43ab91d26f4d58746c840ce8ac6bfa29a7fdb3adae9d4",
+   "text": "Все награды и признание (ещё [[VAR_1]])",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5a094783a6f19579e3",
+   "sourceHash": "4e5a094783a6f19579e37d5be158d1347109877c9f48fee980851dc41845c3e3",
+   "text": "Как проходит [[OPEN_1]]лечение: терапия для улучшения дыхания и здоровья органов дыхания[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82381cb039f19d7763f0",
+   "sourceHash": "82381cb039f19d7763f0968f0eb4be0e8cfcef8af980ef621373ef693b1eb5f7",
+   "text": "Аюрведическое лечение бронхиальных заболеваний обычно включает следующие этапы:",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bbab16514157715dabf1",
+   "sourceHash": "bbab16514157715dabf181588aa2b838d5e25d08e3c8c547379e2886303098a1",
+   "text": "[[OPEN_1]]Почему[[CLOSE_1]] стоит выбрать терапию для улучшения дыхания и здоровья органов дыхания?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_101f6ef3f6977434a497",
+   "sourceHash": "101f6ef3f6977434a497adbef2ad4f1e70147a9f5b6d0c4e371232579d365bb3",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]]Индивидуальное лечение с учётом ваших потребностей",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f20f28ff044c0e113bbf",
+   "sourceHash": "f20f28ff044c0e113bbf0821b131954e328e4f02c385dc8f04cb78a6163dc414",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Более [[VAR_1]] лет аюрведического опыта — на службе ваших интересов[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'[[VAR_1]]+ years' rendered as 'Более [[VAR_1]] лет' (more than N years); 'clients' rephrased to address the patient."
+   ]
+  },
+  {
+   "id": "t_98af38d475085ae82032",
+   "sourceHash": "98af38d475085ae8203258cd3a8cf1f7f78401b5e7e41005b1444d40d860a606",
+   "text": "Начать лечение",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3311b1563d0d754022d",
+   "sourceHash": "d3311b1563d0d754022dbfd96846c02f31f6fa130b4c02d8d6db0188cb91bade",
+   "text": "[[OPEN_1]]Преимущества[[CLOSE_1]] терапии для улучшения дыхания и здоровья органов дыхания",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "batchId": "b-0106",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ru",
+ "units": [
+  {
+   "id": "t_ffc398193dfd0f2a5568",
+   "sourceHash": "ffc398193dfd0f2a55681d71fe91b5618735043ad7537fee678e0809194bb174",
+   "text": "Образ жизни без консервантов",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_22bcbe0a70077ac3cbca",
+   "sourceHash": "22bcbe0a70077ac3cbca478836a7ed3bd2facd494cb6b8f870073e730df1cbce",
+   "text": "Кухня Kairali следует её принципам чистоты и простоты. Блюда здесь готовят из свежих местных продуктов, без консервантов и искусственных добавок. Такой подход не только поддерживает физическое здоровье, но и развивает осознанность и более глубокую связь с пищей, которую мы едим.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered neutrally as 'здесь' (language lock: avoids resort framing)."
+   ]
+  },
+  {
+   "id": "t_4311e3f84eb00ddbfb21",
+   "sourceHash": "4311e3f84eb00ddbfb2143c5570fa20d0f0bd828367ab638654a033b95b9f365",
+   "text": "Приверженность целостному подходу к здоровью",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09161012e78634cb21fc",
+   "sourceHash": "09161012e78634cb21fc6fa743fbf4ca3ac548196c503a4bb50ef9db1aede08a",
+   "text": "Иллюстрация: свежие овощи, листовая зелень и тыква",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_dfa1e1901921b18ac141",
+   "sourceHash": "dfa1e1901921b18ac141315fb491376771e07f7eac4d4beacbb8119005768192",
+   "text": "Ничто из того, что подаётся в Kairali, не консервируется, не хранится в банках и не стабилизируется химическими веществами. Блюда готовят в день их употребления из продуктов, собранных на территории.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_edc3df52553b7d354b53",
+   "sourceHash": "edc3df52553b7d354b531da4e178e04b70fc2329bedb806959cc7d17e36512e3",
+   "text": "[[OPEN_1]]Без курения[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68ed0d02172c47b47332",
+   "sourceHash": "68ed0d02172c47b473325110cbb26b483c7e3ff4c047db34ff13127ca1e4df5e",
+   "text": "[[OPEN_1]]Без алкоголя[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eceb498f57b89048ed48",
+   "sourceHash": "eceb498f57b89048ed482e1af0cff059cbc54ca05f2f0cbcd2b71e66b684e0a4",
+   "text": "[[OPEN_1]]Без кофеина[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fc45e5880f8b845675dd",
+   "sourceHash": "fc45e5880f8b845675ddd21f6e07f7b97076c25aeacd0e328fd313fde61d5bd9",
+   "text": "[[OPEN_1]]Без консервантов[[CLOSE_1]][[OPEN_2]]Вы здесь[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0f9f2ed15e11d3f326c2",
+   "sourceHash": "0f9f2ed15e11d3f326c26740bf768fd51b7852a8aa8142b0bab6334b376c7e40",
+   "text": "[[OPEN_1]]Без холодильного хранения[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source typo 'Refridgeration' read as 'Refrigeration'."
+   ]
+  },
+  {
+   "id": "t_958922f8cd82ead32685",
+   "sourceHash": "958922f8cd82ead326856405665103ab7c6ba8fbd825bc0877cc81e038a43418",
+   "text": "[[OPEN_1]]Вегетарианское питание[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02ea82d00f58266a7047",
+   "sourceHash": "02ea82d00f58266a70474453f0ff59340752fa93729c546c6a8272176dc0b191",
+   "text": "[[OPEN_1]]Органическое земледелие[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68b5322f579d0b9e26ee",
+   "sourceHash": "68b5322f579d0b9e26eee4df0af3e071cdd91805bd9b5c74a27f31f3ef85985c",
+   "text": "[[OPEN_1]]Животноводство[[CLOSE_1]][[OPEN_2]]◆[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1d67e84a9ab195efea54",
+   "sourceHash": "1d67e84a9ab195efea54460229fcc0530f36a1efc2903098fa15527c228841ed",
+   "text": "[[OPEN_1]]1[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Потеря жизненной силы и питательных веществ[[CLOSE_3]]: при обработке пища лишается необходимых питательных веществ и праны, из-за чего хуже питает организм.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d21f0eb6658a08d1e8cf",
+   "sourceHash": "d21f0eb6658a08d1e8cf86a069fcae325f11ce6c39c2baf0fd917b31a5d3dac9",
+   "text": "[[OPEN_1]]2[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Усиление дош[[CLOSE_3]]: употребление такой пищи нарушает баланс дош Вата, Питта и Капха, который жизненно важен для физической и психической гармонии.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87cd2cf1b891f53bf675",
+   "sourceHash": "87cd2cf1b891f53bf675534c825f866b5a6d5dd0f1c00004fff4fb2df0965116",
+   "text": "[[OPEN_1]]3[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Примеси и риски для здоровья[[CLOSE_3]]: консерванты и химические вещества со временем могут вызывать интоксикацию организма, нарушая обмен веществ и общее состояние здоровья.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_82963ccacc95ebe2e015",
+   "sourceHash": "82963ccacc95ebe2e015065610a9c99ca911b7e2229c6416335042cc8e3e0e9f",
+   "text": "[[OPEN_1]]4[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Трудности с пищеварением[[CLOSE_3]]: в таких продуктах часто не хватает натуральной клетчатки и ферментов, необходимых для нормального пищеварения, что ведёт к застою и плохому усвоению питательных веществ.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ae55b4441243ea2481bf",
+   "sourceHash": "ae55b4441243ea2481bf9a0d65f8802f67fc0d29d1b3c58e51e20653fd00c2cd",
+   "text": "[[OPEN_1]]1[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Восстанавливает равновесие[[CLOSE_3]]: свежие продукты помогают поддерживать баланс дош, способствуя физическому и психическому здоровью.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_78424ecff83a0439040e",
+   "sourceHash": "78424ecff83a0439040e7a86241135e6836085231fd91282e1c5e904506a13a1",
+   "text": "[[OPEN_1]]2[[CLOSE_1]][[OPEN_2]][[OPEN_3]]Повышает жизненный тонус[[CLOSE_3]]: пища, богатая праной, придаёт организму энергию, улучшает пищеварение и поддерживает иммунную систему.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

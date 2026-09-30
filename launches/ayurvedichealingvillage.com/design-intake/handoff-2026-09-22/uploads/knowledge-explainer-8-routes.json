@@ -1,0 +1,2611 @@
+{
+  "fetched": "2026-09-21T12:42:39.060Z",
+  "assembled": "2026-09-22",
+  "source": "live server-rendered HTML, single <main id=wp--skip-link--target> per page",
+  "sourceRecord": "knowledge-explainer-8-routes.json delivered as three chunks (routes 1-3 / 4-6 / 7-8), extractedBy sites/ayurvedichealingvillage.com/tools/fetch-explainer-routes.mjs",
+  "assembledBy": "Re-shaped from the delivered record into the schema of uploads/FETCH-PROMPT-8-EXPLAINER-ROUTES.md. No text fetched, paraphrased or invented; entity strings (&#8211;, &#8217;, &#8220;, &amp;, &nbsp;) are preserved exactly as the record carries them.",
+  "verbatim": "text copied exactly as published - typos, spacing, curly quotes and dashes preserved; 'resturant' is the live spelling and is NOT corrected",
+  "excluded": "everything outside <main> (mega-menu, language switchers, footer columns, newsletter, exit-intent popup, chat widget, YouTube embeds)",
+  "inMainSidebarPolicy": "The 'Things To Do' / 'Knowledge Center' accordion sits INSIDE <main> on every one of these 8 routes. The delivered record counts it as body content, so it is kept here in source order as body blocks. It is the main reason every route's listItems and images fall short of the expected-counts table. Flagged per route in `discrepancy` and awaiting the owner ruling (see notes/knowledge-explainer-8-routes-dataset.md).",
+  "routeCount": 8,
+  "toConfirm": [
+    "meta.ogImageWidth / ogImageHeight - not carried by the delivered record",
+    "meta.ogType / ogLocale / ogLocaleAlternate / twitterCard - not carried by the delivered record",
+    "meta.readingTime (twitter:data1) - not carried by the delivered record",
+    "meta.modified (article:modified_time) - not carried by the delivered record",
+    "meta.hreflang (en/de/fr) - not carried by the delivered record",
+    "h1 - every one of the 8 routes ships h1: null in the record; the page title renders as an <h2> twice (hero + body column). Confirm this is the live truth and not an extractor artefact before porting.",
+    "images[].width/height are the record's <img> width/height attributes (WordPress's stored natural size), not a re-measure of the file on disk."
+  ],
+  "routes": {
+    "/why-get-training-in-ayurveda/": {
+      "url": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Ayurvedic Training at Kairali | Learn Authentic Ayurveda",
+        "description": "Gain hands-on expertise in Ayurveda with structured training at Kairali. Master therapies, holistic healing, and career-building skills in a serene learning environment.",
+        "canonical": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "Why get Training in Ayurveda?",
+        "ogDescription": "Gain hands-on expertise in Ayurveda with structured training at Kairali. Master therapies, holistic healing, and career-building skills in a serene learning environment.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 524,
+        "ogType": "article",
+        "ogImageType": "image/png",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "3 minutes",
+        "modified": "2025-02-10T11:25:53+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. Page title renders as <h2> 'Why get Training in Ayurveda?' in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "Why get Training in Ayurveda?"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Why get Training in Ayurveda?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Things To Do",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Healing Village",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Healing Village",
+            "Nature Walk",
+            "Village Facilities",
+            "Butterfly Booklet",
+            "Cooking Classes",
+            "Meditation",
+            "Yoga Classes (Theory)",
+            "Yoga Classes (Practical)"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Kerala",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Kerala",
+            "Visit Kerala",
+            "Destination Palakkad",
+            "Wildlife Drive",
+            "Elephant Safari",
+            "House Boat Tour",
+            "Backwater Tour",
+            "Mountain Jeep Safari",
+            "Cultural Events",
+            "Festivals"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Sightseeing",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Attractions 10 Kms &amp; Under",
+            "Attractions 15 Kms &amp; Below",
+            "Attractions 25 to 50 Kms",
+            "Attractions Above 50 Kms"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "Why get Training in Ayurveda?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "Training in Ayurveda is an essential step for anyone looking to delve deeply into this ancient science of holistic healing. Ayurveda, with its intricate methods and precise practices, demands a profound understanding and exceptional skill to ensure effective and authentic implementation. This is where comprehensive and regulated training programs play a vital role, providing the necessary foundation to master the principles and applications of Ayurveda. At Kairali – The Ayurvedic Healing Village , we emphasize structured, hands-on training to equip individuals with the expertise they need to excel in this field.",
+          "inline": "Training in Ayurveda is an essential step for anyone looking to delve deeply into this ancient science of holistic healing. Ayurveda, with its intricate methods and precise practices, demands a profound understanding and exceptional skill to ensure effective and authentic implementation. This is where comprehensive and regulated training programs play a vital role, providing the necessary foundation to master the principles and applications of Ayurveda. At <strong>Kairali – The Ayurvedic Healing Village</strong>, we emphasize structured, hands-on training to equip individuals with the expertise they need to excel in this field."
+        },
+        {
+          "type": "h4",
+          "text": "The Importance of Ayurvedic Training"
+        },
+        {
+          "type": "p",
+          "text": "Ayurveda is not just a practice; it’s a vast system of knowledge that requires dedication and precision. Understanding the complexity of doshas (Vata, Pitta, Kapha), the impact of diet and lifestyle, and the art of administering Ayurvedic treatments are critical for achieving effective outcomes. Training programs focus on bridging the gap between theoretical knowledge and practical application, ensuring that practitioners develop a thorough grasp of Ayurvedic methodologies."
+        },
+        {
+          "type": "h4",
+          "text": "Key Benefits of Ayurvedic Training:"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Mastering Core Principles :\n \n Training provides an in-depth understanding of Ayurvedic concepts such as doshas, dhatus, malas, and the role of diet and lifestyle in maintaining health.",
+            "Honing Practical Skills :\n \n Participants learn to perform therapies such as Abhyangam, Shirodhara, and Panchakarma with precision, ensuring safe and effective treatments.",
+            "Building Confidence :\n \n Hands-on experience and guidance from experts instill confidence in practitioners, enabling them to handle diverse health conditions with competence.",
+            "Understanding Holistic Care :\n \n Training fosters a deeper connection with Ayurveda’s holistic approach, addressing the body, mind, and spirit for comprehensive well-being."
+          ],
+          "itemsNote": "Each <li> is '<strong>Term</strong>:' followed by a nested single-item <ul> holding the description. The record flattens that nesting into one string per item; kept verbatim."
+        },
+        {
+          "type": "h4",
+          "text": "For Aspiring Ayurvedic Professionals"
+        },
+        {
+          "type": "p",
+          "text": "Ayurveda is witnessing a surge in global demand as people increasingly seek natural and sustainable health solutions. This growing interest has created a wealth of opportunities for trained professionals. For individuals aspiring to build a career in Ayurveda, training is an indispensable step toward achieving mastery in the field."
+        },
+        {
+          "type": "h4",
+          "text": "Why Training is Critical for Professionals:"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Meeting Industry Standards :\n \n With the increasing demand for qualified Ayurvedic therapists and practitioners, training ensures adherence to the highest standards of care.",
+            "Specialization in Techniques :\n \n Training programs delve into the finer details of Ayurvedic therapies, providing the expertise needed to address complex health conditions.",
+            "Professional Growth :\n \n A strong foundation in Ayurveda enhances career prospects, opening doors to roles in wellness centres, spas, and healthcare institutions worldwide."
+          ],
+          "itemsNote": "Same nested-<ul> shape as the block above."
+        },
+        {
+          "type": "h4",
+          "text": "Kairali – The Ideal Destination for Ayurvedic Training"
+        },
+        {
+          "type": "p",
+          "text": "At Kairali – The Ayurvedic Healing Village , our training programs are thoughtfully designed to provide both theoretical knowledge and practical experience. Set amidst the serene landscapes of Kerala, the birthplace of Ayurveda, Kairali offers an immersive learning environment where participants can connect deeply with this ancient tradition.",
+          "inline": "At <strong>Kairali – The Ayurvedic Healing Village</strong>, our training programs are thoughtfully designed to provide both theoretical knowledge and practical experience. Set amidst the serene landscapes of Kerala, the birthplace of Ayurveda, Kairali offers an immersive learning environment where participants can connect deeply with this ancient tradition."
+        },
+        {
+          "type": "h4",
+          "text": "What We Offer:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Expert guidance from seasoned Ayurvedic practitioners.",
+            "Hands-on training in therapies and treatments.",
+            "A focus on the principles of holistic healing.",
+            "Opportunities to learn in a tranquil, nature-filled setting."
+          ]
+        },
+        {
+          "type": "h4",
+          "text": "Embrace Ayurveda as a Profession"
+        },
+        {
+          "type": "p",
+          "text": "Whether you’re seeking to deepen your understanding of Ayurveda or aspiring to pursue a career in this field, training is the key to success. With the right skills and knowledge, you can contribute to spreading the timeless wisdom of Ayurveda while addressing the growing global demand for natural and holistic wellness practices. At Kairali – The Ayurvedic Healing Village , we are committed to nurturing the next generation of Ayurvedic professionals. Join us and embark on a transformative journey that combines learning, growth, and the opportunity to make a meaningful impact in the world of holistic health.",
+          "inline": "Whether you’re seeking to deepen your understanding of Ayurveda or aspiring to pursue a career in this field, training is the key to success. With the right skills and knowledge, you can contribute to spreading the timeless wisdom of Ayurveda while addressing the growing global demand for natural and holistic wellness practices.<br><br>At <strong>Kairali – The Ayurvedic Healing Village</strong>, we are committed to nurturing the next generation of Ayurvedic professionals. Join us and embark on a transformative journey that combines learning, growth, and the opportunity to make a meaningful impact in the world of holistic health."
+        }
+      ],
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "In Healing Village",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-property/"
+        },
+        {
+          "text": "Nature Walk",
+          "href": "https://ayurvedichealingvillage.com/nature-walk/"
+        },
+        {
+          "text": "Village Facilities",
+          "href": "https://ayurvedichealingvillage.com/village-facilities/"
+        },
+        {
+          "text": "Butterfly Booklet",
+          "href": "https://ayurvedichealingvillage.com/butterfly-booklet/"
+        },
+        {
+          "text": "Cooking Classes",
+          "href": "https://ayurvedichealingvillage.com/cooking-classes/"
+        },
+        {
+          "text": "Meditation",
+          "href": "https://ayurvedichealingvillage.com/meditation/"
+        },
+        {
+          "text": "Yoga Classes (Theory)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-theory/"
+        },
+        {
+          "text": "Yoga Classes (Practical)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-practical/"
+        },
+        {
+          "text": "In Kerala",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-kerala/"
+        },
+        {
+          "text": "Visit Kerala",
+          "href": "https://ayurvedichealingvillage.com/visit-kerala/"
+        },
+        {
+          "text": "Destination Palakkad",
+          "href": "https://ayurvedichealingvillage.com/destination-palakkad/"
+        },
+        {
+          "text": "Wildlife Drive",
+          "href": "https://ayurvedichealingvillage.com/wildlife-drive/"
+        },
+        {
+          "text": "Elephant Safari",
+          "href": "https://ayurvedichealingvillage.com/elephant-safari/"
+        },
+        {
+          "text": "House Boat Tour",
+          "href": "https://ayurvedichealingvillage.com/house-boat-tour/"
+        },
+        {
+          "text": "Backwater Tour",
+          "href": "https://ayurvedichealingvillage.com/back-water-tour/"
+        },
+        {
+          "text": "Mountain Jeep Safari",
+          "href": "https://ayurvedichealingvillage.com/mountain-jeep-safari/"
+        },
+        {
+          "text": "Cultural Events",
+          "href": "https://ayurvedichealingvillage.com/cultural-events/"
+        },
+        {
+          "text": "Festivals",
+          "href": "https://ayurvedichealingvillage.com/festivals/"
+        },
+        {
+          "text": "Attractions 10 Kms &amp; Under",
+          "href": "https://ayurvedichealingvillage.com/attractions-under-10kms/"
+        },
+        {
+          "text": "Attractions 15 Kms &amp; Below",
+          "href": "https://ayurvedichealingvillage.com/attractions-15kms-and-below/"
+        },
+        {
+          "text": "Attractions 25 to 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/"
+        },
+        {
+          "text": "Attractions Above 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-above-50kms/"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image (wp-block-cover__image-background), not a content <figure>. Same file reused as the hero on /what-is-ayurvedic-food/, /what-is-panchkarma/, /live-to-100-with-panchkarma/, /why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/, /ayurvedic-resturant-and-cooking-at-healing-village/ and /ayurveda-retreats-for-everyone/ - reuse flag."
+        }
+      ],
+      "counts": {
+        "words": 662,
+        "h2": 3,
+        "h3": 3,
+        "h4": 7,
+        "listItems": 40,
+        "listItemsInBlocks": 33,
+        "images": 1
+      },
+      "discrepancy": "Expected table says words 1099 (incl. ~440 chrome -> ~659 body: matches 662), h2 3 (matches), h3 3 (matches), listItems 44 (found 40), images 9 (found 1). listItems 40 = every <li> in main: 22 in-main sidebar + (4 parent + 4 nested) + (3 parent + 3 nested) + 4. The blocks array carries only 33 item strings, because each ol item's nested single-item <ul> description is flattened into its parent string per the prompt's do-not-split rule - hence listItemsInBlocks. Remaining 4-item gap to the table is unexplained by <main> and points at the table being taken with a wider container. images: the table counts chrome/mega-menu images; main holds exactly one image (the hero cover).",
+      "navBlocks": {
+        "range": [
+          2,
+          8
+        ],
+        "count": 7,
+        "liveHeading": "Things To Do",
+        "taxonomy": "unrelated (see sidecar ruling)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/new-to-yoga/": {
+      "url": "https://ayurvedichealingvillage.com/new-to-yoga/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "New to Yoga? Start Your Journey at Kairali’s Yoga Retreat",
+        "description": "Experience beginner-friendly yoga at Kairali’s Ayurveda retreat in Kerala. Personalized guidance, meditation, and Ayurvedic wellness for holistic healing.",
+        "canonical": "https://ayurvedichealingvillage.com/new-to-yoga/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "New to Yoga",
+        "ogDescription": "Experience beginner-friendly yoga at Kairali’s Ayurveda retreat in Kerala. Personalized guidance, meditation, and Ayurvedic wellness for holistic healing.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/Yoga-Retreats-Banner-min.jpg",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 459,
+        "ogType": "article",
+        "ogImageType": "image/jpeg",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "5 minutes",
+        "modified": "2025-03-24T09:01:03+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/new-to-yoga/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/new-to-yoga/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. 'New to Yoga' renders as <h2> in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "New to Yoga"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "New to Yoga",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Knowledge Center",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurveda",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Ayurveda",
+            "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+            "Why get Training in Ayurveda?"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "What is Panchkarma?",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Live to 100 with Panchkarma",
+            "Ayurveda Retreats For Everyone"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Yoga",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Yoga"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Cuisine",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "What is Ayurvedic Food?",
+            "Ayurvedic Restaurant &amp; Cooking at Healing Village"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Products",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Products"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "New to Yoga",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "h3",
+          "text": "New to Yoga? Begin Your Journey at Kairali &#8211; The Ayurvedic Healing Village"
+        },
+        {
+          "type": "p",
+          "text": "Yoga is an ancient technique that has been used for ages to promote health and wellness. Yoga provides a holistic approach to wellness, whether you seek stress alleviation, increased flexibility, or a deeper connection between your mind and body. If you&#8217;re new to yoga and wondering where to start, Kairali &#8211; The Ayurvedic Healing Village offers the ideal atmosphere for you to begin your journey. Our Yoga and Ayurveda Retreat in Kerala is designed to help novices ease into the discipline by providing expert guidance and tailored programming.",
+          "inline": "Yoga is an ancient technique that has been used for ages to promote health and wellness. Yoga provides a holistic approach to wellness, whether you seek stress alleviation, increased flexibility, or a deeper connection between your mind and body. If you&#8217;re new to yoga and wondering where to start, <strong>Kairali &#8211; The Ayurvedic Healing Village</strong> offers the ideal atmosphere for you to begin your journey. Our <strong>Yoga and Ayurveda Retreat</strong> in Kerala is designed to help novices ease into the discipline by providing expert guidance and tailored programming.&nbsp;"
+        },
+        {
+          "type": "h3",
+          "text": "Why Start Your Yoga Journey at Kairali?"
+        },
+        {
+          "type": "p",
+          "text": "Getting started with yoga can be overwhelming, especially with so many different styles and practices. At Kairali&#8217;s Yoga Retreat Kerala, we recognize that each person has distinct requirements. That is why we provide:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Personalized instruction from qualified yoga instructors.",
+            "A serene and supportive environment amidst Kerala&#8217;s gorgeous nature.",
+            "A combination of yoga and Ayurveda to enhance overall well-being.",
+            "Gentle and effective yoga techniques for beginners."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "What to Expect from Our Yoga Retreat Program"
+        },
+        {
+          "type": "p",
+          "text": "If you&#8217;re new to yoga, our Yoga Retreat Program is an excellent way to get started. We focus on basic yet effective approaches to help you acquire confidence in your practice. Here&#8217;s what to expect:",
+          "inline": "If you&#8217;re new to yoga, our <strong>Yoga Retreat Program </strong>is an excellent way to get started. We focus on basic yet effective approaches to help you acquire confidence in your practice. Here&#8217;s what to expect:&nbsp;"
+        },
+        {
+          "type": "h3",
+          "text": "1. Introduction to Basic Yoga Asanas (Postures)"
+        },
+        {
+          "type": "p",
+          "text": "Yoga postures, also known as asanas, increase flexibility, strength, and posture. At our retreat, novices will begin with easy postures that align the body, promote blood circulation, and improve general well-being."
+        },
+        {
+          "type": "h3",
+          "text": "2. Breathing Techniques (Pranayama)"
+        },
+        {
+          "type": "p",
+          "text": "Breathing regulation is a key component of yoga. Pranayama teaches you how to control your breathing, relax your mind, and boost your energy levels. These approaches are very effective at reducing tension and anxiety."
+        },
+        {
+          "type": "h3",
+          "text": "3. Yoga Meditation for Mental Clarity"
+        },
+        {
+          "type": "p",
+          "text": "Meditation is an extremely effective practice for relaxation and self-awareness. Our instructors will lead you through yoga meditation exercises that encourage mindfulness, emotional balance, and mental clarity."
+        },
+        {
+          "type": "h3",
+          "text": "4. Ayurvedic Integration for Holistic Wellness"
+        },
+        {
+          "type": "p",
+          "text": "Kairali&#8217;s Yoga and Ayurveda Retreat is unique in that it mixes yoga and Ayurvedic healing skills. Each participant receives an Ayurvedic consultation to better understand their body constitution (Prakriti) and receive individualized food and lifestyle suggestions.",
+          "inline": "Kairali&#8217;s <strong>Yoga and Ayurveda Retreat </strong>is unique in that it mixes yoga and Ayurvedic healing skills. Each participant receives an Ayurvedic consultation to better understand their body constitution (Prakriti) and receive individualized food and lifestyle suggestions.&nbsp;"
+        },
+        {
+          "type": "h3",
+          "text": "5. A Tranquil and Supportive Atmosphere"
+        },
+        {
+          "type": "p",
+          "text": "Our retreat is situated in a serene, natural setting free of distractions. You can completely focus on your well-being while surrounded by the tranquility of Kerala&#8217;s surroundings."
+        },
+        {
+          "type": "h3",
+          "text": "Benefits of Starting Yoga at Kairali"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Enhances physical health by boosting flexibility, strength, and balance.",
+            "Relieves stress and anxiety through relaxing techniques.",
+            "Yoga meditation promotes mental clarity and attention.",
+            "Ayurvedic methods promote complete health.",
+            "Provides a foundation for lifetime wellness through guided learning."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Join Us at Kairali and Begin Your Yoga Journey"
+        },
+        {
+          "type": "p",
+          "text": "If you&#8217;re new to yoga, Kairali &#8211; The Ayurvedic Healing Village is the best location to get started. Our Yoga Retreat Kerala is intended to help novices in their quest for health, mindfulness, and self-discovery. Whether you want to improve your flexibility, reduce stress, or discover the profound benefits of yoga and Ayurveda, our retreat is the ideal place to learn and grow.",
+          "inline": "If you&#8217;re new to yoga, Kairali &#8211; The Ayurvedic Healing Village is the best location to get started. Our <strong>Yoga Retreat Kerala </strong>is intended to help novices in their quest for health, mindfulness, and self-discovery. Whether you want to improve your flexibility, reduce stress, or discover the profound benefits of yoga and Ayurveda, our retreat is the ideal place to learn and grow."
+        },
+        {
+          "type": "p",
+          "text": "Begin your wellness journey today at Kairali&#8217;s Yoga and Ayurveda Retreat and discover the transformative benefits of yoga!"
+        },
+        {
+          "type": "link-card",
+          "label": "What is Yoga?",
+          "href": "https://ayurvedichealingvillage.com/what-is-yoga/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/De-addiction-About-us.jpg",
+          "alt": "What is Yoga?"
+        },
+        {
+          "type": "link-card",
+          "label": "Why pick a yoga or yoga retreat",
+          "href": "https://ayurvedichealingvillage.com/why-pick-a-yoga-or-yoga-retreat/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/fusionyogaforstressed.jpg",
+          "alt": "Yoga and Meditation Benefits"
+        },
+        {
+          "type": "link-card",
+          "label": "Learn more about yoga",
+          "href": "https://ayurvedichealingvillage.com/learn-more-about-yoga/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/internationalyogafestival.jpg",
+          "alt": "YOGA AND MEDITATION"
+        },
+        {
+          "type": "link-card",
+          "label": "Why get training in yoga?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-yoga/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yogateacher.jpg",
+          "alt": "Why get training in yoga"
+        },
+        {
+          "type": "link-card",
+          "label": "Yoga teacher training",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yogateacherteachinghisstudent.jpg",
+          "alt": "Yoga teacher training\n"
+        },
+        {
+          "type": "link-card",
+          "label": "Yoga retreats for everyone",
+          "href": "https://ayurvedichealingvillage.com/retreats-for-everyone/",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yoga-retreat-centre.jpg",
+          "alt": "Yoga retreats for everyone"
+        }
+      ],
+      "blocksNote": "The delivered record represents the six end-of-page cards as alternating figure + paragraph blocks. They are recorded here as `link-card` per the prompt's blocks rules (image + label + link card grid). No `cta` field: the cards carry no separate 'View'/'READ MORE' text - the caption itself is the link. Each card's image is wrapped in the same href as its caption.",
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "New to Ayurveda",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "Why get Training in Ayurveda?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Live to 100 with Panchkarma",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Ayurveda Retreats For Everyone",
+          "href": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "New to Yoga",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "What is Ayurvedic Food?",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-restaurant-cooking-at-healing-village/"
+        },
+        {
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/"
+        },
+        {
+          "text": "Products",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-products/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/what-is-yoga/"
+        },
+        {
+          "text": "What is Yoga?",
+          "href": "https://ayurvedichealingvillage.com/what-is-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-pick-a-yoga-or-yoga-retreat/"
+        },
+        {
+          "text": "Why pick a yoga or yoga retreat",
+          "href": "https://ayurvedichealingvillage.com/why-pick-a-yoga-or-yoga-retreat/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/learn-more-about-yoga/"
+        },
+        {
+          "text": "Learn more about yoga",
+          "href": "https://ayurvedichealingvillage.com/learn-more-about-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-yoga/"
+        },
+        {
+          "text": "Why get training in yoga?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/"
+        },
+        {
+          "text": "Yoga teacher training",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/retreats-for-everyone/"
+        },
+        {
+          "text": "Yoga retreats for everyone",
+          "href": "https://ayurvedichealingvillage.com/retreats-for-everyone/"
+        }
+      ],
+      "linksNote": "The sidebar and the card grid both contain empty <a> elements that immediately precede the labelled link to the same URL (a WordPress editor artefact). Recorded verbatim with text \"\". Two sidebar hrefs do NOT match the canonical route: 'why-pick-an-ayurveda-treatment-orayurvedic-retreat' (missing hyphen) and the empty anchor 'ayurvedic-restaurant-cooking-at-healing-village' (correct spelling, different slug from the live 'resturant-and-cooking' route). Both need a link-audit ruling.",
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/Yoga-Retreats-Banner-min.jpg",
+          "alt": "",
+          "width": 1440,
+          "height": 459,
+          "note": "Hero cover background image."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/De-addiction-About-us.jpg",
+          "alt": "What is Yoga?",
+          "width": 580,
+          "height": 386
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/fusionyogaforstressed.jpg",
+          "alt": "Yoga and Meditation Benefits",
+          "width": 1000,
+          "height": 562
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/internationalyogafestival.jpg",
+          "alt": "YOGA AND MEDITATION",
+          "width": 1000,
+          "height": 562
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yogateacher.jpg",
+          "alt": "Why get training in yoga",
+          "width": 1000,
+          "height": 562
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yogateacherteachinghisstudent.jpg",
+          "alt": "Yoga teacher training\n",
+          "width": 1000,
+          "height": 562,
+          "note": "alt ends with a literal newline in the source markup."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/07/yoga-retreat-centre.jpg",
+          "alt": "Yoga retreats for everyone",
+          "width": 1000,
+          "height": 562
+        }
+      ],
+      "counts": {
+        "words": 621,
+        "h2": 3,
+        "h3": 15,
+        "h4": 0,
+        "listItems": 18,
+        "images": 7
+      },
+      "discrepancy": "Expected table says words 1060 (incl. ~440 chrome -> ~620 body: matches 621), h2 3 (matches), h3 15 (matches), listItems 28 (found 18), images 15 (found 7). listItems: 9 in-main sidebar + 4 + 5 = 18. images: 1 hero cover + 6 cards = 7; the table's 15 includes chrome/mega-menu images.",
+      "navBlocks": {
+        "range": [
+          2,
+          12
+        ],
+        "count": 11,
+        "liveHeading": "Knowledge Center",
+        "taxonomy": "sibling-explorers (correct)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/what-is-ayurvedic-food/": {
+      "url": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Ayurvedic Food at Kairali – Nourishment for Healing and Balance",
+        "description": "Experience Ayurvedic food at Kairali, crafted to balance doshas, detoxify, and promote wellness. Enjoy fresh, satvic meals that nourish mind, body, and spirit.",
+        "canonical": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "What is Ayurvedic Food?",
+        "ogDescription": "Experience Ayurvedic food at Kairali, crafted to balance doshas, detoxify, and promote wellness. Enjoy fresh, satvic meals that nourish mind, body, and spirit.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 524,
+        "ogType": "article",
+        "ogImageType": "image/png",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [
+          "fr_FR"
+        ],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "3 minutes",
+        "modified": "2025-02-07T06:36:04+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. 'What is Ayurvedic Food?' renders as <h2> in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "What is Ayurvedic Food?"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "What is Ayurvedic Food?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Knowledge Center",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurveda",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Ayurveda",
+            "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+            "Why get Training in Ayurveda?"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "What is Panchkarma?",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Live to 100 with Panchkarma",
+            "Ayurveda Retreats For Everyone"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Yoga",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Yoga"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Cuisine",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "What is Ayurvedic Food?",
+            "Ayurvedic Restaurant &amp; Cooking at Healing Village"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Products",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Products"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "What is Ayurvedic Food?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "h4",
+          "text": "About"
+        },
+        {
+          "type": "p",
+          "text": "Food at Kairali &#8211; The Ayurvedic Healing Village is more than just nourishment; it is an essential component of the healing process. Every meal is designed to balance the three doshas—Vata, Pitta, and Kapha—and promote the body&#8217;s natural ability to detox, regenerate, and thrive. Ayurvedic cuisine&#8217;s philosophy extends beyond calories and nutrition, concentrating on mind, body, and spirit harmony through mindful eating."
+        },
+        {
+          "type": "h4",
+          "text": "History"
+        },
+        {
+          "type": "p",
+          "text": "Ayurvedic food at Kairali is created with a thorough grasp of the six flavors: sweet, sour, salty, bitter, pungent, and astringent. Each meal is a perfect balance of these flavors, according to each individual&#8217;s dietary demands. Before guests arrive, they get a thorough consultation with an Ayurvedic doctor to evaluate their Prakriti (body constitution) and Vikriti (present imbalances). This individualized approach ensures that the food given is specifically designed to restore balance and promote good health."
+        },
+        {
+          "type": "p",
+          "text": "Seasonal and locally sourced ingredients are prioritized, ensuring that the recipes are fresh, nutritious, and in harmony with nature&#8217;s cycle. Kairali&#8217;s culinary philosophy also emphasizes &#8220;Satvic&#8221; food, which is light, vegetarian, and easy to digest, promoting mental clarity and physical vitality."
+        },
+        {
+          "type": "h4",
+          "text": "Benefits of Ayurvedic Food"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Promotes Healing and Detoxification : At Kairali, specially selected Ayurvedic meals work in tandem with Panchakarma therapies to eliminate toxins, nourish tissues, and revitalize the body.",
+            "Boosts Digestion and Metabolism : The usage of digestive spices such as cumin, ginger, turmeric, and fennel promotes Agni (digestive fire), which is essential for optimal health in Ayurveda.",
+            "Balances Mind and Emotions : Satvic cuisine, created with positive energy and intention, helps to relax the mind, alleviate tension, and improve mood.",
+            "Enhances Immunity : The nutrient-dense, natural ingredients boost the immune system, promoting resilience and lifespan."
+          ],
+          "itemsNote": "Each <li> is '<strong>Term</strong>: description' in the source; kept as one string per the prompt's do-not-split rule."
+        },
+        {
+          "type": "h4",
+          "text": "Unique Dining Experience"
+        },
+        {
+          "type": "p",
+          "text": "The dining experience at Kairali is an engaging voyage into Ayurvedic culinary wisdom. Meals are given in a tranquil setting that promotes thoughtful eating. Guests are instructed to eat at certain times that correspond to their digestive cycle, ensuring maximum nutrient absorption."
+        },
+        {
+          "type": "h4",
+          "text": "Signature Dishes and Beverages"
+        },
+        {
+          "type": "p",
+          "text": "Some of the signature offerings include:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Kitchari : A nourishing blend of rice, lentils, and spices that is gentle on the digestive system and perfect for detoxification.",
+            "Herbal Teas : Infused with Ayurvedic herbs like tulsi, ashwagandha, and Brahmi, these teas boost immunity and promote relaxation.",
+            "Seasonal Vegetable Curries : Made with freshly harvested vegetables and tempered with dosha-specific spices."
+          ],
+          "itemsNote": "Each <li> is '<strong>Term</strong>: description' in the source."
+        },
+        {
+          "type": "h4",
+          "text": "Sustainability and Ayurveda"
+        },
+        {
+          "type": "p",
+          "text": "Kairali&#8217;s dedication to Ayurveda extends beyond its sourcing strategies. Organic farming techniques and sustainable practices keep products free of chemicals and pesticides, conserving their natural prana (life energy). This not only improves the food&#8217;s medicinal capabilities but also accords with the group&#8217;s environmentally responsible mindset."
+        },
+        {
+          "type": "h4",
+          "text": "Conclusion"
+        },
+        {
+          "type": "p",
+          "text": "Ayurvedic food at Kairali &#8211; The Ayurvedic Healing Village exemplifies the healing power of nature and tradition. It is an ideal combination of taste, nutrition, and therapeutic advantages, intended to supplement the retreat&#8217;s wellness therapies and lifestyle habits. Embracing Ayurvedic cuisine during their stay results in deep transformation, paving the way for a healthier and more balanced existence."
+        }
+      ],
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "New to Ayurveda",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "Why get Training in Ayurveda?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Live to 100 with Panchkarma",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Ayurveda Retreats For Everyone",
+          "href": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "New to Yoga",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "What is Ayurvedic Food?",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-restaurant-cooking-at-healing-village/"
+        },
+        {
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/"
+        },
+        {
+          "text": "Products",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-products/"
+        }
+      ],
+      "linksNote": "Body copy on this route contains no links at all - every anchor above is in the in-main Knowledge Center sidebar. Same empty-anchor artefact and same two non-canonical sidebar hrefs as /new-to-yoga/.",
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image; same file reused as the hero on 6 of these 8 routes - reuse flag."
+        }
+      ],
+      "counts": {
+        "words": 559,
+        "h2": 3,
+        "h3": 5,
+        "h4": 7,
+        "listItems": 16,
+        "images": 1
+      },
+      "discrepancy": "Expected table says words 997 (incl. ~440 chrome -> ~557 body: matches 559), h2 3 (matches), h3 5 (matches), listItems 20 (found 16), images 9 (found 1). listItems: 9 in-main sidebar + 4 + 3 = 16. images: main holds exactly one image (the hero cover).",
+      "navBlocks": {
+        "range": [
+          2,
+          12
+        ],
+        "count": 11,
+        "liveHeading": "Knowledge Center",
+        "taxonomy": "sibling-explorers (correct)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/what-is-panchkarma/": {
+      "url": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "What is Panchkarma?",
+        "description": "This section deals with the category of Ayurveda called Panchkarma and emphasises on its implications and uses.",
+        "canonical": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "What is Panchkarma?",
+        "ogDescription": "This section deals with the category of Ayurveda called Panchkarma and emphasises on its implications and uses.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/panchkarma.webp",
+        "ogImageWidth": 1920,
+        "ogImageHeight": 1000,
+        "ogType": "article",
+        "ogImageType": "image/webp",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [
+          "fr_FR"
+        ],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "2 minutes",
+        "modified": "2025-07-15T06:53:58+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/what-is-panchkarma/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. 'What is Panchkarma?' renders as <h2> in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "What is Panchkarma?"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "What is Panchkarma?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Things To Do",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Kairali Ayurvedic Group",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Kairali Hospitality",
+            "Kairali Ayurvedic Products Pvt.ltd.",
+            "Product Range",
+            "Ayurvedic Herbal Tea",
+            "Ayurvedic Proprietary Organics",
+            "Kair by Kairali",
+            "Ayurvedic Proprietary Medicines",
+            "Ayurvedic Classical Medicines",
+            "Books",
+            "Kairali Ayurvedic Equipment",
+            "Arogya Kendra",
+            "Arogya Shala",
+            "Kairali Ayurvedic Center",
+            "Kairali Ayurveda Franchise",
+            "Kairali Institute Of Ayurveda And Panchakarma Therapy"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Vision and Mission",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Vision and Mission"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Corporate Social Responsibility (CSR)",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Social, Cultural &amp; Environmental Commitment"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Awards &amp; Accreditations",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Awards &amp; Accreditations",
+            "Accreditations"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "What is Panchkarma?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "Ayurveda has given the world a lot of things. These things have changed the way humans live and they have made the transition from a world riddled with diseases to the world perfectly healthy feasible. The importance of Ayurveda is immense and it is the undoubtedly the leading practice when it comes to alternate forms of medicine. The incredible potency of Ayurveda can be attributed to its multifaceted nature as well as to its branches that have facilitated the use of medicines according to the maladies present thus eradicating the root of any disease from the body entirely."
+        },
+        {
+          "type": "p",
+          "text": "Arguably the most renowned of these branches is Panchkarma techniques of Ayurveda. The name Panchkarma literally means &#8220;Five Actions&#8221; which is apt given the fact that this technique depends on five different elemental actions that control the body namely Vomiting, Purgation, Niruham, Anuvaasan, and Nasyam. In a way, this Panchkarma healing technique is the pillar upon which a majority of Ayurvedic techniques stand. All of the styles and methods that Ayurveda has, they all have been inspired or derived somehow from these elemental actions.",
+          "inline": "Arguably the most renowned of these branches is <a href=\"https://ayurvedichealingvillage.com/programs/panchakarma-therapy/\" data-type=\"programs\" data-id=\"2522\">Panchkarma techniques</a> of Ayurveda. The name Panchkarma literally means &#8220;Five Actions&#8221; which is apt given the fact that this technique depends on five different elemental actions that control the body namely Vomiting, Purgation, Niruham, Anuvaasan, and Nasyam. In a way, this Panchkarma healing technique is the pillar upon which a majority of Ayurvedic techniques stand. All of the styles and methods that Ayurveda has, they all have been inspired or derived somehow from these elemental actions."
+        },
+        {
+          "type": "p",
+          "text": "Panchkarma works best with the use of medicated oils that are used to purge the human body of any impurities that it might be harbouring inadvertently. Due to its enormous potency and instantaneous effects that last longer, this method has been deemed incredibly effective in fighting off against afflictions. Panchkarma is the true embodiment of Ayurvedic values and it lives up to its reputation."
+        }
+      ],
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "Kairali Hospitality",
+          "href": "https://ayurvedichealingvillage.com/kairali-hospitality/"
+        },
+        {
+          "text": "Kairali Ayurvedic Products Pvt.ltd.",
+          "href": "https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/"
+        },
+        {
+          "text": "Product Range",
+          "href": "https://ayurvedichealingvillage.com/product-range/"
+        },
+        {
+          "text": "Ayurvedic Herbal Tea",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/"
+        },
+        {
+          "text": "Ayurvedic Proprietary Organics",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/"
+        },
+        {
+          "text": "Kair by Kairali",
+          "href": "https://ayurvedichealingvillage.com/kair-by-kairali/"
+        },
+        {
+          "text": "Ayurvedic Proprietary Medicines",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/"
+        },
+        {
+          "text": "Ayurvedic Classical Medicines",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/"
+        },
+        {
+          "text": "Books",
+          "href": "https://ayurvedichealingvillage.com/books/"
+        },
+        {
+          "text": "Kairali Ayurvedic Equipment",
+          "href": "https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/"
+        },
+        {
+          "text": "Arogya Kendra",
+          "href": "https://ayurvedichealingvillage.com/arogya-kendra/"
+        },
+        {
+          "text": "Arogya Shala",
+          "href": "https://ayurvedichealingvillage.com/arogya-shala/"
+        },
+        {
+          "text": "Kairali Ayurvedic Center",
+          "href": "https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/"
+        },
+        {
+          "text": "Kairali Ayurveda Franchise",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-franchise/"
+        },
+        {
+          "text": "Kairali Institute Of Ayurveda And Panchakarma Therapy",
+          "href": "https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/"
+        },
+        {
+          "text": "Vision and Mission",
+          "href": "https://ayurvedichealingvillage.com/vision-and-mission/"
+        },
+        {
+          "text": "Social, Cultural &amp; Environmental Commitment",
+          "href": "https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/"
+        },
+        {
+          "text": "Awards &amp; Accreditations",
+          "href": "https://ayurvedichealingvillage.com/awards-and-accreditations/"
+        },
+        {
+          "text": "Accreditations",
+          "href": "https://ayurvedichealingvillage.com/accreditations/"
+        },
+        {
+          "text": "Panchkarma techniques",
+          "href": "https://ayurvedichealingvillage.com/programs/panchakarma-therapy/"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image. Note the mismatch: og:image for this route is 2024/11/panchkarma.webp, which does not appear in main."
+        }
+      ],
+      "counts": {
+        "words": 329,
+        "h2": 3,
+        "h3": 4,
+        "h4": 0,
+        "listItems": 19,
+        "images": 1
+      },
+      "discrepancy": "Expected table says words 768 (incl. ~440 chrome -> ~328 body: matches 329), h2 3 (matches), h3 4 (matches), listItems 23 (found 19), images 9 (found 1). listItems: 15 + 1 + 1 + 2 = 19, all in the in-main 'Things To Do' sidebar; body copy has no lists. images: main holds exactly one image (the hero cover).",
+      "navBlocks": {
+        "range": [
+          2,
+          10
+        ],
+        "count": 9,
+        "liveHeading": "Things To Do",
+        "taxonomy": "unrelated (see sidecar ruling)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/live-to-100-with-panchkarma/": {
+      "url": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Kairali - The Ayurvedic Healing Village | Ayurvedic Health Retreat | Panchkarma- Ayurvedic Treatment| Yoga, Ayurveda and Meditation | Wellness Centre, Palakkad, Kerala",
+        "description": "Panchkarma is an ayurvedic treatment that involves elaborated methods of purification to release stress, which prepares the body tissues to accept the maximum benefits of food, nutrition and exercise. It is beneficial in getting rid of almost every disease.",
+        "canonical": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "Live to 100 with Panchkarma",
+        "ogDescription": "Panchkarma is an ayurvedic treatment that involves elaborated methods of purification to release stress, which prepares the body tissues to accept the maximum benefits of food, nutrition and exercise. It is beneficial in getting rid of almost every disease.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/panchkarma.webp",
+        "ogImageWidth": 1920,
+        "ogImageHeight": 1000,
+        "ogType": "article",
+        "ogImageType": "image/webp",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "2 minutes",
+        "modified": "2025-07-15T06:52:34+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. 'Live to 100 with Panchkarma' renders as <h2> in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "Live to 100 with Panchkarma"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Live to 100 with Panchkarma",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Things To Do",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Healing Village",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Healing Village",
+            "Nature Walk",
+            "Village Facilities",
+            "Butterfly Booklet",
+            "Cooking Classes",
+            "Meditation",
+            "Yoga Classes (Theory)",
+            "Yoga Classes (Practical)"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Kerala",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Kerala",
+            "Visit Kerala",
+            "Destination Palakkad",
+            "Wildlife Drive",
+            "Elephant Safari",
+            "House Boat Tour",
+            "Backwater Tour",
+            "Mountain Jeep Safari",
+            "Cultural Events",
+            "Festivals"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Sightseeing",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Attractions 10 Kms &amp; Under",
+            "Attractions 15 Kms &amp; Below",
+            "Attractions 25 to 50 Kms",
+            "Attractions Above 50 Kms"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "Live to 100 with Panchkarma",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "Panchakarma &#8211; panch and karmas, when literally translated means ‘Five Procedures’. It is an ayurvedic treatment that involves elaborated methods of purification to release stress, which prepares the body tissues to accept the maximum benefits of food, nutrition and exercise."
+        },
+        {
+          "type": "p",
+          "text": "The five procedures are Vamana (Emesis), Virechana (Purgation), Niroohavasti (Decoction enema), Nasya (Instillation of medicine through nostrils), and Anuvasanavasti (Oil enema). Panchkarma treatment is a three stage process—purva (pre-operative), pradhana (operative) and paschat (post-operative) measures. Ayurveda advises to practice Purvakarma because of the deep rooted imbalances in the body, which needs to be flushed out in the right way by Purvakarma and then by Panchkarma."
+        },
+        {
+          "type": "figure",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/learnmore-about-yoga-1.jpg",
+          "alt": "",
+          "width": 500,
+          "height": 380
+        },
+        {
+          "type": "p",
+          "text": "To undergo a purification therapy it is highly important for the body to be prepared for the rigorous process to encourage the body to let go of the toxins. Treatment like abhyangam , shirodhara and elakizhi are included to soften the tissues where the oil is applied to the entire body with a particular type of massage which helps the toxins to move towards the gastro-intestinal tract. Thereafter, therapies like Vamana, Virechana, Vasti, Nasya, Raktamoksha are used as per the body constitution (Vata, Pitta and Kapha) to complete the detoxifying process.",
+          "inline": "To undergo a purification therapy it is highly important for the body to be prepared for the rigorous process to encourage the body to let go of the toxins. Treatment like <a href=\"https://ayurvedichealingvillage.com/ayurvedic-treatments/\" data-type=\"page\" data-id=\"4937\">abhyangam</a>, shirodhara and elakizhi are included to soften the tissues where the oil is applied to the entire body with a particular type of massage which helps the toxins to move towards the gastro-intestinal tract. Thereafter, therapies like Vamana, Virechana, Vasti, Nasya, Raktamoksha are used as per the body constitution (Vata, Pitta and Kapha) to complete the detoxifying process."
+        },
+        {
+          "type": "p",
+          "text": "Accumulation of ama (toxin) is the primary reason for almost every disease and Panchkarma help us get rid of ama.",
+          "inline": "Accumulation of ama (toxin) is the primary reason for almost every disease and <a href=\"https://ayurvedichealingvillage.com/programs/panchakarma-therapy/\" data-type=\"programs\" data-id=\"2522\">Panchkarma</a> help us get rid of ama."
+        }
+      ],
+      "blocksNote": "Source order caveat: the first two paragraphs and the figure sit in a two-column group - the paragraphs are in the left column and the figure (alignright) in the right column, so the figure renders beside them, not after them. Recorded in DOM order as the record delivers it.",
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "In Healing Village",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-property/"
+        },
+        {
+          "text": "Nature Walk",
+          "href": "https://ayurvedichealingvillage.com/nature-walk/"
+        },
+        {
+          "text": "Village Facilities",
+          "href": "https://ayurvedichealingvillage.com/village-facilities/"
+        },
+        {
+          "text": "Butterfly Booklet",
+          "href": "https://ayurvedichealingvillage.com/butterfly-booklet/"
+        },
+        {
+          "text": "Cooking Classes",
+          "href": "https://ayurvedichealingvillage.com/cooking-classes/"
+        },
+        {
+          "text": "Meditation",
+          "href": "https://ayurvedichealingvillage.com/meditation/"
+        },
+        {
+          "text": "Yoga Classes (Theory)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-theory/"
+        },
+        {
+          "text": "Yoga Classes (Practical)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-practical/"
+        },
+        {
+          "text": "In Kerala",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-kerala/"
+        },
+        {
+          "text": "Visit Kerala",
+          "href": "https://ayurvedichealingvillage.com/visit-kerala/"
+        },
+        {
+          "text": "Destination Palakkad",
+          "href": "https://ayurvedichealingvillage.com/destination-palakkad/"
+        },
+        {
+          "text": "Wildlife Drive",
+          "href": "https://ayurvedichealingvillage.com/wildlife-drive/"
+        },
+        {
+          "text": "Elephant Safari",
+          "href": "https://ayurvedichealingvillage.com/elephant-safari/"
+        },
+        {
+          "text": "House Boat Tour",
+          "href": "https://ayurvedichealingvillage.com/house-boat-tour/"
+        },
+        {
+          "text": "Backwater Tour",
+          "href": "https://ayurvedichealingvillage.com/back-water-tour/"
+        },
+        {
+          "text": "Mountain Jeep Safari",
+          "href": "https://ayurvedichealingvillage.com/mountain-jeep-safari/"
+        },
+        {
+          "text": "Cultural Events",
+          "href": "https://ayurvedichealingvillage.com/cultural-events/"
+        },
+        {
+          "text": "Festivals",
+          "href": "https://ayurvedichealingvillage.com/festivals/"
+        },
+        {
+          "text": "Attractions 10 Kms &amp; Under",
+          "href": "https://ayurvedichealingvillage.com/attractions-under-10kms/"
+        },
+        {
+          "text": "Attractions 15 Kms &amp; Below",
+          "href": "https://ayurvedichealingvillage.com/attractions-15kms-and-below/"
+        },
+        {
+          "text": "Attractions 25 to 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/"
+        },
+        {
+          "text": "Attractions Above 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-above-50kms/"
+        },
+        {
+          "text": "abhyangam",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-treatments/"
+        },
+        {
+          "text": "Panchkarma",
+          "href": "https://ayurvedichealingvillage.com/programs/panchakarma-therapy/"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image; og:image for this route is 2024/11/panchkarma.webp, which does not appear in main."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/learnmore-about-yoga-1.jpg",
+          "alt": "",
+          "width": 500,
+          "height": 380,
+          "note": "Empty alt in source (kept as \"\"). Filename refers to yoga, used here on a Panchkarma page - possible content mismatch, flagged for the owner."
+        }
+      ],
+      "counts": {
+        "words": 300,
+        "h2": 3,
+        "h3": 3,
+        "h4": 0,
+        "listItems": 22,
+        "images": 2
+      },
+      "discrepancy": "Expected table says words 737 (incl. ~440 chrome -> ~297 body: matches 300), h2 3 (matches), h3 3 (matches), listItems 26 (found 22), images 10 (found 2). listItems: 8 + 10 + 4 = 22, all in the in-main sidebar. images: 1 hero cover + 1 figure.",
+      "navBlocks": {
+        "range": [
+          2,
+          8
+        ],
+        "count": 7,
+        "liveHeading": "Things To Do",
+        "taxonomy": "unrelated (see sidecar ruling)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/": {
+      "url": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Ayurvedic treatments: Why we need them?",
+        "description": "Being the oldest form of medicine, ayurveda is well known for its ability to cure any malady without causing side effects. Being derived from herbs and plants, its completely safe.",
+        "canonical": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+        "ogDescription": "Being the oldest form of medicine, ayurveda is well known for its ability to cure any malady without causing side effects. Being derived from herbs and plants, its completely safe.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 524,
+        "ogType": "article",
+        "ogImageType": "image/png",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [
+          "fr_FR"
+        ],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "2 minutes",
+        "modified": "2026-04-13T06:28:29+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "slugRuling": {
+          "status": "RULED — owner, 22 Sep 2026",
+          "portedSlug": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+          "redirect301From": "/why-pick-an-ayurveda-treatment-orayurvedic-retreat/",
+          "note": "Owner ruling 22 Sep 2026: fix the spelling, 301 the old slug. Here the canonical was already correct — the live sidebar link was the broken one (missing hyphen, orayurvedic). So the canonical is unchanged and the malformed sidebar URL 301s to it.",
+          "liveCanonicalUnchangedInRecord": true
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. The page title renders as <h2> in the hero cover and again as <h2> at the top of the content column.",
+      "breadcrumbVisible": [
+        "Home",
+        "Why pick an Ayurveda Treatment or Ayurvedic Retreat?"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Things To Do",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Healing Village",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Healing Village",
+            "Nature Walk",
+            "Village Facilities",
+            "Butterfly Booklet",
+            "Cooking Classes",
+            "Meditation",
+            "Yoga Classes (Theory)",
+            "Yoga Classes (Practical)"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "In Kerala",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Kerala",
+            "Visit Kerala",
+            "Destination Palakkad",
+            "Wildlife Drive",
+            "Elephant Safari",
+            "House Boat Tour",
+            "Backwater Tour",
+            "Mountain Jeep Safari",
+            "Cultural Events",
+            "Festivals"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Sightseeing",
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Attractions 10 Kms &amp; Under",
+            "Attractions 15 Kms &amp; Below",
+            "Attractions 25 to 50 Kms",
+            "Attractions Above 50 Kms"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Things To Do",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "figure",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/ayurveda-stress-management-therapy-1024x299.jpg",
+          "alt": "",
+          "width": 1024,
+          "height": 299
+        },
+        {
+          "type": "p",
+          "text": "Ayurveda, as we already know is one of the oldest medicinal disciplines to exist in the contemporary world. Over the years that it has existed among us, it has been constantly upgraded through research and novel discoveries such that it now stands at its prime position. However, more than the constant evolution of Ayurveda, the thing that makes it so effective and accurate at plucking out maladies is the fact that it doesn’t depend upon synthetic products to fight ailments but rather, all of its potency is the result of natural herbs and medicinal shrubs. Due to the thorough natural ingredients of its medicines, Ayurveda has no side effect which makes it very safe for human bodies."
+        },
+        {
+          "type": "p",
+          "text": "However, having negligible side effects is not the only reason why anyone should pick Ayurveda. One of the principal reasons favouring the use Ayurveda is its total potency against afflictions. Where many modern medicines have failed, Ayurveda has proved that it can completely eradicate them, or in the case of complex incurable diseases, control their growth rate. Ayurveda has shown this incredible resistance against diseases such as Diabetes where it has put a regulatory check on the amount of sugar in the blood, thus effectively counteracting it."
+        }
+      ],
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "In Healing Village",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-property/"
+        },
+        {
+          "text": "Nature Walk",
+          "href": "https://ayurvedichealingvillage.com/nature-walk/"
+        },
+        {
+          "text": "Village Facilities",
+          "href": "https://ayurvedichealingvillage.com/village-facilities/"
+        },
+        {
+          "text": "Butterfly Booklet",
+          "href": "https://ayurvedichealingvillage.com/butterfly-booklet/"
+        },
+        {
+          "text": "Cooking Classes",
+          "href": "https://ayurvedichealingvillage.com/cooking-classes/"
+        },
+        {
+          "text": "Meditation",
+          "href": "https://ayurvedichealingvillage.com/meditation/"
+        },
+        {
+          "text": "Yoga Classes (Theory)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-theory/"
+        },
+        {
+          "text": "Yoga Classes (Practical)",
+          "href": "https://ayurvedichealingvillage.com/yoga-classes-practical/"
+        },
+        {
+          "text": "In Kerala",
+          "href": "https://ayurvedichealingvillage.com/things-to-do-in-kerala/"
+        },
+        {
+          "text": "Visit Kerala",
+          "href": "https://ayurvedichealingvillage.com/visit-kerala/"
+        },
+        {
+          "text": "Destination Palakkad",
+          "href": "https://ayurvedichealingvillage.com/destination-palakkad/"
+        },
+        {
+          "text": "Wildlife Drive",
+          "href": "https://ayurvedichealingvillage.com/wildlife-drive/"
+        },
+        {
+          "text": "Elephant Safari",
+          "href": "https://ayurvedichealingvillage.com/elephant-safari/"
+        },
+        {
+          "text": "House Boat Tour",
+          "href": "https://ayurvedichealingvillage.com/house-boat-tour/"
+        },
+        {
+          "text": "Backwater Tour",
+          "href": "https://ayurvedichealingvillage.com/back-water-tour/"
+        },
+        {
+          "text": "Mountain Jeep Safari",
+          "href": "https://ayurvedichealingvillage.com/mountain-jeep-safari/"
+        },
+        {
+          "text": "Cultural Events",
+          "href": "https://ayurvedichealingvillage.com/cultural-events/"
+        },
+        {
+          "text": "Festivals",
+          "href": "https://ayurvedichealingvillage.com/festivals/"
+        },
+        {
+          "text": "Attractions 10 Kms &amp; Under",
+          "href": "https://ayurvedichealingvillage.com/attractions-under-10kms/"
+        },
+        {
+          "text": "Attractions 15 Kms &amp; Below",
+          "href": "https://ayurvedichealingvillage.com/attractions-15kms-and-below/"
+        },
+        {
+          "text": "Attractions 25 to 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-25kms-to-50kms/"
+        },
+        {
+          "text": "Attractions Above 50 Kms",
+          "href": "https://ayurvedichealingvillage.com/attractions-above-50kms/"
+        }
+      ],
+      "linksNote": "Body copy on this route contains no links. Route-identity warning: the Knowledge Center sidebar on the other explainer routes points at /why-pick-an-ayurveda-treatment-orayurvedic-retreat/ (no hyphen before 'ayurvedic'), a different slug from this canonical route.",
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image; same file reused as the hero on 6 of these 8 routes - reuse flag."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/ayurveda-stress-management-therapy-1024x299.jpg",
+          "alt": "",
+          "width": 1024,
+          "height": 299,
+          "note": "Body figure points at the 1024x299 WordPress derivative; the full-size original (1200w) is in the srcset. Empty alt in source."
+        }
+      ],
+      "counts": {
+        "words": 297,
+        "h2": 3,
+        "h3": 3,
+        "h4": 0,
+        "listItems": 22,
+        "images": 2
+      },
+      "discrepancy": "Expected table says words 730 (incl. ~440 chrome -> ~290 body: matches 297), h2 3 (matches), h3 3 (matches), listItems 26 (found 22), images 10 (found 2). listItems: 8 + 10 + 4 = 22, all in the in-main sidebar. images: 1 hero cover + 1 figure.",
+      "navBlocks": {
+        "range": [
+          2,
+          8
+        ],
+        "count": 7,
+        "liveHeading": "Things To Do",
+        "taxonomy": "unrelated (see sidecar ruling)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/ayurvedic-resturant-and-cooking-at-healing-village/": {
+      "url": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Ayurvedic Dining Experience | Healing Food at Kairali",
+        "description": "Enjoy sattvic, Ayurvedic meals at Kairali’s Healing Village. Personalized, organic, and balanced for well-being. Experience mindful eating and Ayurvedic cooking.",
+        "canonical": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+        "ogDescription": "Enjoy sattvic, Ayurvedic meals at Kairali’s Healing Village. Personalized, organic, and balanced for well-being. Experience mindful eating and Ayurvedic cooking.",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 524,
+        "ogType": "article",
+        "ogImageType": "image/png",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [
+          "fr_FR"
+        ],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "2 minutes",
+        "modified": "2025-03-31T12:17:16+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "slugRuling": {
+          "status": "RULED — owner, 22 Sep 2026",
+          "portedSlug": "/ayurvedic-restaurant-cooking-at-healing-village/",
+          "redirect301From": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+          "note": "Owner ruling 22 Sep 2026: fix the spelling, 301 the old slug. The correctly-spelled URL is the one the live Knowledge Center sidebar already links to, which also drops the word and — so the ported slug differs from the old canonical in two ways (resturant to restaurant, and the word and removed), not one. Flagged for confirmation.",
+          "liveCanonicalUnchangedInRecord": true
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. The page title renders as <h2> in the hero cover and again as <h2> at the top of the content column. URL keeps the live misspelling 'resturant'; the visible title spells it 'Restaurant'.",
+      "breadcrumbVisible": [
+        "Home",
+        "Ayurvedic Restaurant &amp; Cooking at Healing Village"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Knowledge Center",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurveda",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Ayurveda",
+            "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+            "Why get Training in Ayurveda?"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "What is Panchkarma?",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Live to 100 with Panchkarma",
+            "Ayurveda Retreats For Everyone"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Yoga",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Yoga"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Cuisine",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "What is Ayurvedic Food?",
+            "Ayurvedic Restaurant &amp; Cooking at Healing Village"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Products",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Products"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "h3",
+          "text": "FOOD THAT UNITES BOUNDARIES"
+        },
+        {
+          "type": "p",
+          "text": "At Kairali &#8211; The Ayurvedic Healing Village, each meal is intentionally prepared to contribute to your healing process. Our Ayurvedic eatery offers nourishing, sattvic dishes customized to your Prakriti (body constitution) and present health status. Employing organic, locally sourced ingredients and traditional Ayurvedic cooking techniques, every dish is crafted to restore equilibrium, enhance digestion, and nurture both body and mind."
+        },
+        {
+          "type": "figure",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/cooking.jpg",
+          "alt": "",
+          "width": 400,
+          "height": 420
+        },
+        {
+          "type": "p",
+          "text": "Founded on the belief that &#8220;food is medicine,&#8221; our cooking philosophy transcends flavor. Our skilled chefs collaborate with Ayurvedic physicians to guarantee that dishes correspond with therapeutic objectives, aiding in detoxification, rejuvenation, and overall health. The calm, natural environment of our restaurant enriches the dining experience, encouraging mindful eating and tranquility."
+        },
+        {
+          "type": "p",
+          "text": "Visitors also enjoy the rare chance to engage in Ayurvedic cooking sessions while they are here. These practical experiences immerse you in the age-old knowledge of Ayurvedic nutrition—showing you how to make restorative dishes, utilize therapeutic spices, and incorporate Ayurvedic concepts into your daily cooking. It’s a fulfilling method to bring the healing back with you."
+        }
+      ],
+      "blocksNote": "Source order caveat: the first body paragraph and the figure sit in a two-column group (paragraph left, alignright figure right), so they render side by side. Recorded in DOM order.",
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "New to Ayurveda",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "Why get Training in Ayurveda?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Live to 100 with Panchkarma",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Ayurveda Retreats For Everyone",
+          "href": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "New to Yoga",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "What is Ayurvedic Food?",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-restaurant-cooking-at-healing-village/"
+        },
+        {
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/"
+        },
+        {
+          "text": "Products",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-products/"
+        }
+      ],
+      "linksNote": "Body copy on this route contains no links. The sidebar's empty anchor for this very page uses the correctly-spelled slug 'ayurvedic-restaurant-cooking-at-healing-village', which is not the live route - link-audit item.",
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image; same file reused as the hero on 6 of these 8 routes - reuse flag."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/10/cooking.jpg",
+          "alt": "",
+          "width": 400,
+          "height": 420,
+          "note": "Empty alt in source (kept as \"\")."
+        }
+      ],
+      "counts": {
+        "words": 245,
+        "h2": 3,
+        "h3": 6,
+        "h4": 0,
+        "listItems": 9,
+        "images": 2
+      },
+      "discrepancy": "Expected table says words 698 (incl. ~440 chrome -> ~258 body: found 245, close), h2 4 (found 3), h3 6 (matches), listItems 18 (found 9), images 10 (found 2). The h2 gap and the doubled listItems suggest the table was taken with a wider container than <main>. listItems: 3+2+1+2+1 = 9, all in the in-main sidebar; body has no lists.",
+      "navBlocks": {
+        "range": [
+          2,
+          12
+        ],
+        "count": 11,
+        "liveHeading": "Knowledge Center",
+        "taxonomy": "sibling-explorers (correct)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    },
+    "/ayurveda-retreats-for-everyone/": {
+      "url": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+      "httpStatus": 200,
+      "meta": {
+        "title": "Ayurvedic Retreat | Halth Treatment | Techniques | Healing Resort",
+        "description": "Among all, Ayurveda Retreats, are step apart for maintaining an equilibrium of soul, mind and body. The aim is to completely heal you, and take you towards the state of bliss. Kairali - The Ayurvedic Healing village in Palakkad, Kerala, India is one of the places which gives a new meaning for inspiring Ayurveda holiday with wellness",
+        "canonical": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "ogTitle": "Ayurveda Retreats For Everyone",
+        "ogDescription": "Among all, Ayurveda Retreats, are step apart for maintaining an equilibrium of soul, mind and body. The aim is to completely heal you, and take you towards the state of bliss. Kairali - The Ayurvedic Healing village in Palakkad, Kerala, India is one of the places which gives a new meaning for inspiring Ayurveda holiday with wellness",
+        "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+        "ogImageWidth": 1440,
+        "ogImageHeight": 524,
+        "ogType": "article",
+        "ogImageType": "image/png",
+        "ogLocale": "en_US",
+        "ogLocaleAlternate": [],
+        "twitterCard": "summary_large_image",
+        "twitterLabel1": "Est. reading time",
+        "readingTime": "2 minutes",
+        "modified": "2024-12-10T09:54:13+00:00",
+        "hreflang": {
+          "en": null,
+          "de": null,
+          "fr": null
+        },
+        "draftHreflang": {
+          "status": "DRAFT — approve or replace",
+          "en": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+          "de": "[TO CONFIRM — no German equivalent of this explainer was found in the live /de/ nav; confirm whether one exists before emitting a de alternate]",
+          "fr": "[TO CONFIRM — no French equivalent of this explainer was found in the live /fr/ nav; confirm whether one exists before emitting a fr alternate]",
+          "xDefault": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/",
+          "note": "Live truth is the hreflang object above (all null — no tags present). This draft is a proposal for the ported pages only. Only the en/x-default entries are derived from a value the live page actually declares (its canonical); the de and fr targets are unknown and must not be emitted until confirmed."
+        },
+        "hreflangNote": "No hreflang/alternate link tags present in the live head. Verified 22 Sep 2026.",
+        "headVerified": "2026-09-22 live head pass"
+      },
+      "h1": null,
+      "h1Note": "No <h1> in main. 'Ayurveda Retreats For Everyone' renders as <h2> in the hero cover and again as <h2> at the top of the content column. Note the live <title> typo 'Halth' - preserved verbatim.",
+      "breadcrumbVisible": [
+        "Home",
+        "Ayurveda Retreats For Everyone"
+      ],
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Ayurveda Retreats For Everyone",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "p",
+          "text": "&#8211;",
+          "role": "breadcrumb-artifact"
+        },
+        {
+          "type": "h2",
+          "text": "Knowledge Center",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurveda",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Ayurveda",
+            "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+            "Why get Training in Ayurveda?"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "What is Panchkarma?",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Live to 100 with Panchkarma",
+            "Ayurveda Retreats For Everyone"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Yoga",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "New to Yoga"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Cuisine",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "What is Ayurvedic Food?",
+            "Ayurvedic Restaurant &amp; Cooking at Healing Village"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h3",
+          "text": "Ayurvedic Products",
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Products"
+          ],
+          "role": "injected-nav",
+          "navGroup": "Knowledge Center",
+          "portPlacement": "after-article"
+        },
+        {
+          "type": "h2",
+          "text": "Ayurveda Retreats For Everyone",
+          "role": "absorbed-into-hero"
+        },
+        {
+          "type": "figure",
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/Ayurvedic-Training-aboutus-min-1.png",
+          "alt": "",
+          "width": 580,
+          "height": 386,
+          "note": "Natural size 580x386; the source forces a display width of 631px (style=\"width:631px;height:auto\"), i.e. it is upscaled on the live page."
+        },
+        {
+          "type": "p",
+          "text": "For making a fast-paced life come to a standstill, Ayurveda, has to offer the knowledge of the sages, the riches of the centuries and finding new relevance with various methods including literature, records and unique places for rejuvenation. Among all, Ayurveda Retreats , are step apart for maintaining an equilibrium of body, mind and soul. The aim is to completely heal you, and take you towards the state of bliss.",
+          "inline": "For making a fast-paced life come to a standstill, Ayurveda, has to offer the knowledge of the sages, the riches of the centuries and finding new relevance with various methods including literature, records and unique places for rejuvenation. Among all, <a href=\"https://ayurvedichealingvillage.com/ayurvedic-treatments/\" data-type=\"page\" data-id=\"4937\">Ayurveda Retreats</a>, are step apart for maintaining an equilibrium of body, mind and soul. The aim is to completely heal you, and take you towards the state of bliss."
+        },
+        {
+          "type": "p",
+          "text": "Kairali – The Ayurvedic Healing village in Palakkad, Kerala, India is one of the places which give a new meaning for inspiring Ayurveda holiday with wellness. The Hospital which boasts of being a retreat, offers a mesmerizing experience where you get to witness a sui generis blend of Ayurveda, Yoga and Meditation. The healing modalities of our ancient science at the Healing Village will enlighten your consciousness while being in the arms of nature.",
+          "inline": "Kairali – The Ayurvedic Healing village in Palakkad, Kerala, India is one of the places which give a new meaning for inspiring <a href=\"https://ayurvedichealingvillage.com/villas/\" data-type=\"page\" data-id=\"2322\">Ayurveda holiday</a> with wellness. The Hospital which boasts of being a retreat, offers a mesmerizing experience where you get to witness a sui generis blend of Ayurveda, Yoga and Meditation. The healing modalities of our ancient science at the Healing Village will enlighten your consciousness while being in the arms of nature."
+        },
+        {
+          "type": "p",
+          "text": "Along with endowing Ayurvedic treatments and healing, the village has incredible lodging and accommodation. This place promises therapeutic methods and treating from within, making it a perfect getaway."
+        }
+      ],
+      "blocksNote": "The source also holds an empty <p class=\"wp-block-paragraph\"></p> between the figure and the first body paragraph (and the record's paragraph count of 5 includes it). Empty paragraphs are not emitted as blocks. Copy note: the meta description says 'soul, mind and body' and 'gives'; the body says 'body, mind and soul' and 'give'.",
+      "links": [
+        {
+          "text": "Home",
+          "href": "https://ayurvedichealingvillage.com/kairali-the-ayurvedic-healing-village/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "New to Ayurveda",
+          "href": "https://ayurvedichealingvillage.com/new-to-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "Why pick an Ayurveda Treatment or Ayurvedic Retreat?",
+          "href": "https://ayurvedichealingvillage.com/why-pick-an-ayurveda-treatment-orayurvedic-retreat/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "Why get Training in Ayurveda?",
+          "href": "https://ayurvedichealingvillage.com/why-get-training-in-ayurveda/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Live to 100 with Panchkarma",
+          "href": "https://ayurvedichealingvillage.com/live-to-100-with-panchkarma/"
+        },
+        {
+          "text": "Ayurveda Retreats For Everyone",
+          "href": "https://ayurvedichealingvillage.com/ayurveda-retreats-for-everyone/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "New to Yoga",
+          "href": "https://ayurvedichealingvillage.com/new-to-yoga/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "What is Ayurvedic Food?",
+          "href": "https://ayurvedichealingvillage.com/what-is-ayurvedic-food/"
+        },
+        {
+          "text": "",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-restaurant-cooking-at-healing-village/"
+        },
+        {
+          "text": "Ayurvedic Restaurant &amp; Cooking at Healing Village",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-resturant-and-cooking-at-healing-village/"
+        },
+        {
+          "text": "Products",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-products/"
+        },
+        {
+          "text": "Ayurveda Retreats",
+          "href": "https://ayurvedichealingvillage.com/ayurvedic-treatments/"
+        },
+        {
+          "text": "Ayurveda holiday",
+          "href": "https://ayurvedichealingvillage.com/villas/"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
+          "alt": "",
+          "width": 1440,
+          "height": 524,
+          "note": "Hero cover background image; same file reused as the hero on 6 of these 8 routes - reuse flag."
+        },
+        {
+          "src": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/Ayurvedic-Training-aboutus-min-1.png",
+          "alt": "",
+          "width": 580,
+          "height": 386,
+          "note": "Empty alt in source. Upscaled to 631px wide on the live page. Filename refers to Ayurvedic Training, used here on a retreats page - possible content mismatch, flagged for the owner."
+        }
+      ],
+      "counts": {
+        "words": 237,
+        "h2": 3,
+        "h3": 5,
+        "h4": 0,
+        "listItems": 9,
+        "images": 2
+      },
+      "discrepancy": "Expected table says words 696 (incl. ~440 chrome -> ~256 body: found 237, close), h2 4 (found 3), h3 5 (matches), listItems 18 (found 9), images 10 (found 2). Same pattern as /ayurvedic-resturant-and-cooking-at-healing-village/: the table's h2 and listItems figures point to a wider container than <main>.",
+      "navBlocks": {
+        "range": [
+          2,
+          12
+        ],
+        "count": 11,
+        "liveHeading": "Knowledge Center",
+        "taxonomy": "sibling-explorers (correct)",
+        "ruling": "Removed from article flow; replaced by the standard Knowledge Center block after the article. Retained verbatim below it as a secondary list. See notes/knowledge-explainer-8-routes-dataset.md § In-main navigation."
+      }
+    }
+  }
+}

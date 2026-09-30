@@ -33,6 +33,8 @@
  * exemption: a Map entry with the ruling as its paper trail, printed every
  * run — never a silent skip.
  *
+ * AHV campaigns retain the main-site chat/footer by the owner’s 29 Sep 2026
+ * instruction (WOPS-AHV-FINAL-DRAFT-20260924-001). Other historical
  * /lp/ landing pages are OUT of scope by law — single-CTA rule, no chat
  * widget competes with the one conversion goal (gates/registry.yaml:
  * chat-bubble-present → landing: n_a; same ruling as chatbase-entity-bot).
@@ -47,9 +49,11 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
-import { join, resolve, dirname } from "node:path";
+import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
+import { stripCodeComments } from "./banned-string-lint.mjs";
+import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PKG = "@kairali/chat";
@@ -70,6 +74,7 @@ export const CHAT_EXEMPT = new Map([
  * @param {string} site — label for messages
  */
 export function checkLayoutSource(src, site) {
+  src = stripCodeComments(src);
   const v = [];
   if (!src.includes(`from "${PKG}"`)) {
     v.push(`${site}: layout does not import from "${PKG}" — the chat bubble is mandatory fleet-wide (D-20260718-05) and always the ONE shared component, never a local copy`);
@@ -85,6 +90,49 @@ export function checkLayoutSource(src, site) {
     v.push(`${site}: <ChatbaseLoader/> appears BEFORE <ConsentScripts/> — denied-before-loaders order regressed (pilot security-audit contract)`);
   }
   return v;
+}
+
+/** Follow only unconditional document delegation, never an unused import.
+ * The actual document must still import/render chat after consent. */
+export function documentLayoutSource(file, read = p => readFileSync(p, "utf8"), seen = new Set()) {
+  if (seen.has(file) || seen.size >= 8) throw new Error(`cyclic document layout: ${file}`);
+  seen.add(file);
+  const src = stripCodeComments(read(file));
+  const wrapper = src.match(/return\s+\(?\s*<([A-Z]\w*)\b[^>]*>\s*\{children\}\s*<\/\1>\s*\)?\s*;?\s*}/);
+  if (!wrapper) return src;
+  const name = wrapper[1];
+  const imported = src.match(new RegExp(`import\\s+(?:${name}|\\{\\s*${name}\\s*\\})\\s+from\\s+["']([^"']+)["']`));
+  if (!imported?.[1].startsWith(".")) return src;
+  const base = resolve(dirname(file), imported[1]);
+  for (const target of [base, `${base}.tsx`, `${base}.ts`, join(base, "index.tsx")]) {
+    try { read(target); } catch { continue; }
+    return documentLayoutSource(target, read, seen);
+  }
+  throw new Error(`unresolved document layout: ${imported[1]} from ${file}`);
+}
+
+/**
+ * Every ROOT layout of a site.
+ *
+ * app/layout.tsx is the single-root case. Next.js also allows one root layout
+ * PER ROUTE GROUP — app/(english)/layout.tsx, app/(lp)/layout.tsx — which is
+ * the only way to serve two independent documents from one app. This lint
+ * previously looked for app/layout.tsx alone, so a site that had split into
+ * route-group roots read as "no root layout at all" and its actual layouts
+ * were never inspected. That is a detection bug, not a policy: the gate was
+ * reporting the wrong reason and, worse, could not have seen a bubble that WAS
+ * there. Fixed 2026-09-21 on the AHV English lane.
+ */
+export function rootLayouts(siteDir) {
+  const appDir = join(siteDir, "app");
+  if (!existsSync(appDir)) return [];
+  const single = join(appDir, "layout.tsx");
+  if (existsSync(single)) return [single];
+  return readdirSync(appDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && /^\(.+\)$/.test(d.name))
+    .map((d) => join(appDir, d.name, "layout.tsx"))
+    .filter((f) => existsSync(f))
+    .sort();
 }
 
 /** Discover fleet sites: sites/<dir> with a site.config.json. */
@@ -123,6 +171,35 @@ export function runControlProbes() {
   return fails;
 }
 
+/** Check the configured application while retaining the fleet site's identity. */
+export function checkSite(key, { root = REPO_ROOT } = {}) {
+  const appDir = resolveSiteAppRoot(key, { root });
+  const violations = [];
+  const roots = rootLayouts(appDir);
+  if (roots.length === 0) {
+    violations.push(`${key}: no root layout (app/layout.tsx, nor any app/(group)/layout.tsx) and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
+    return violations;
+  }
+  // EVERY root is checked, not just the first. Next.js route-group roots are
+  // independent documents: a visitor on a route served by one of them never
+  // sees the other, so a bubble in only one root is a bubble missing from
+  // every route the other root serves.
+  for (const r of roots) {
+    const label = roots.length === 1 ? key : `${key} [${relative(appDir, r)}]`;
+    violations.push(...checkLayoutSource(documentLayoutSource(r), label));
+  }
+
+  const pkgPath = join(appDir, "package.json");
+  if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
+    violations.push(`${key}: package.json does not declare "${PKG}"`);
+  }
+  const nextCfg = join(appDir, "next.config.ts");
+  if (existsSync(nextCfg) && !readFileSync(nextCfg, "utf8").includes(`"${PKG}"`)) {
+    violations.push(`${key}: next.config.ts does not transpile "${PKG}" (it ships TSX source, like consent/analytics)`);
+  }
+  return violations;
+}
+
 export function main(argv = []) {
   const sitesFlag = argv.indexOf("--sites");
   const sitesDir = sitesFlag !== -1 ? resolve(argv[sitesFlag + 1]) : join(REPO_ROOT, "sites");
@@ -156,21 +233,7 @@ export function main(argv = []) {
       console.log(`  EXEMPT ${key} — ${CHAT_EXEMPT.get(key)}`);
       continue;
     }
-    const layoutPath = join(sitesDir, name, "app", "layout.tsx");
-    if (!existsSync(layoutPath)) {
-      violations.push(`${key}: no app/layout.tsx and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
-      continue;
-    }
-    violations.push(...checkLayoutSource(readFileSync(layoutPath, "utf8"), key));
-
-    const pkgPath = join(sitesDir, name, "package.json");
-    if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
-      violations.push(`${key}: package.json does not declare "${PKG}"`);
-    }
-    const nextCfg = join(sitesDir, name, "next.config.ts");
-    if (existsSync(nextCfg) && !readFileSync(nextCfg, "utf8").includes(`"${PKG}"`)) {
-      violations.push(`${key}: next.config.ts does not transpile "${PKG}" (it ships TSX source, like consent/analytics)`);
-    }
+    violations.push(...checkSite(key, { root: dirname(sitesDir) }));
   }
 
   if (violations.length === 0) {
@@ -182,7 +245,13 @@ export function main(argv = []) {
   return 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// A path containing a space made this guard false forever: import.meta.url
+// percent-encodes it as %20 and process.argv[1] does not, so main() never ran
+// and the gate exited 0 having checked NOTHING — a silent pass, the worst kind
+// of gate failure. Compare resolved paths instead of strings.
+// (QUESTIONS.md Q-MAIN-GUARD-ENCODING / Q-AHV-PATH-SPACES: ~31 scripts share
+// this bug; this is the one this session touched.)
+if (process.argv[1] && resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {

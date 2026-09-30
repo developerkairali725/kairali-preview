@@ -1,0 +1,159 @@
+{
+ "batchId": "b-0270",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_41a2eb1c1d677dc82833",
+   "sourceHash": "41a2eb1c1d677dc8283395165f57fdad17df281051774c5cf2cb5e5b12a7633d",
+   "text": "12のカテゴリーを一覧しやすく保ちつつ、回答を比較できるようにします。すべての回答は引き続き閲覧可能です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal design note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_f78323ac52ba322d5400",
+   "sourceHash": "f78323ac52ba322d5400b03701b5917983ce21630c3ef68cdf04c35849233d51",
+   "text": "元の本文にはダウンロード資料が含まれていません。ルートのタイトルは「Downloads」となっていますが、取得した内容にはダウンロード可能なものが存在しないため、新たに作成したり示唆したりはしていません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal editorial note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_be5f96b912a35879e1a9",
+   "sourceHash": "be5f96b912a35879e1a9d6d8a649fc17634c28f20937a7e3d84b9923f7e8ed15",
+   "text": "取得した回答には、現在の認証、建築家、医学的有効性、競合他社との比較に関する記述が含まれています。原文を保持していることは、これらの主張を検証または承認したことを意味しません",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal editorial note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_b1867b9b027433218ea5",
+   "sourceHash": "b1867b9b027433218ea55bbbe4d2ddba9b12cf16c932e75c4fbf9c6d49f5d1f9",
+   "text": "元の本文にあるリンクは whyayurveda.org への1件のみで、この一覧にはダウンロード用の元ファイルは見つかりませんでした。ページタイトルを根拠にダウンロード資料を作成しないでください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal editorial note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_15e5c2022690bd9f672e",
+   "sourceHash": "15e5c2022690bd9f672ea9b319a8c1e75b579ea511ea49162311b9f4b831f5f7",
+   "text": "リスト／強調（strong／emphasis）／段落からなる回答構造をすべて保持します。複数同時展開や元の初期状態については、実行時のデザイン承認前に、取得した原文の確認が必要です",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal implementation note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_2ca2a2edf6937e6b62f1",
+   "sourceHash": "2ca2a2edf6937e6b62f16f94089b478f6c6552ab4ed667cd4dd756767afb0b4f",
+   "text": "承認済みのFAQの操作方式と編集スタイルを再利用し、承認済みのデザインと閲覧者向けデータセットをすべて保持します。回答ごとに個別のデザインは作成しません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source reads as an internal design note rather than patient-facing copy; translated literally — confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_b9e0dfe51a52360fbf01",
+   "sourceHash": "b9e0dfe51a52360fbf01c3555526e13a49ab1e359ce36f6c6cf1b6408bf65cdb",
+   "text": "ケーララのモンスーン期アーユルヴェーダ治療｜カルキダカ Chikitsa（チキツァ）リセット｜Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bb25112c9aa27fa8ab5c",
+   "sourceHash": "bb25112c9aa27fa8ab5ca57becf1414ad9de79cdc22a78e14361f2696ad52e93",
+   "text": "ケーララでのモンスーン期アーユルヴェーダ治療で、体をまるごとリセット",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5b9272ca941f4c76022f",
+   "sourceHash": "5b9272ca941f4c76022f2bdfb015d86731f8d110aecc2c015783e6f75836337d",
+   "text": "Kairaliによるケーララのモンスーン期アーユルヴェーダ治療。パンチャカルマ、ラサーヤナ、カルキダカ・カンジを組み合わせたカルキダカ Chikitsa（チキツァ）で体全体をリセット。7／14／21日間のプログラムがあります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9ce7b523c6a669a18795",
+   "sourceHash": "9ce7b523c6a669a18795707fcf40595541145b2ceb96e7dc6c7ac0acef2a4f9a",
+   "text": "Trip Advisor",
+   "status": "translated",
+   "unchangedReason": "Proper name (brand) kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_d889e48e98c76a48e640",
+   "sourceHash": "d889e48e98c76a48e640ce361bcae3e5be4ed498bef4c71ec5d4900e926dd223",
+   "text": "Haute Awards",
+   "status": "translated",
+   "unchangedReason": "Proper name (award title) kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_d8c8793a2f004c06c347",
+   "sourceHash": "d8c8793a2f004c06c3474fc2f8e69247c9cf306f8c0fa92b3b61d080c7cf827c",
+   "text": "Asia Spa Wellness Awards",
+   "status": "translated",
+   "unchangedReason": "Proper name (award title) kept verbatim; contains 'Spa' but award titles are exempt from the language lock.",
+   "issues": []
+  },
+  {
+   "id": "t_b13110acefa2c5a12485",
+   "sourceHash": "b13110acefa2c5a12485d1e0763ba7d7c56e5f54b72c19a1bfd42eaf0125379c",
+   "text": "Condé Nast",
+   "status": "translated",
+   "unchangedReason": "Proper name (publisher) kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_1c9078473d9462238775",
+   "sourceHash": "1c9078473d9462238775ebae77f35f09d2622894e32da0fe4b28fec29fef1fce",
+   "text": "118年の系譜が、アーユルヴェーダで最も神聖な季節と出会う場所",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_511611ccae2ae1650d93",
+   "sourceHash": "511611ccae2ae1650d937e00e12ea2e7a5aba7047ae7bea9b1b45ea680e7af61",
+   "text": "30年以上にわたり、創業者一族の主治医たちは、この季節こそがデトックス、修復、ラサーヤナのための最も神聖な時期であるとして備えてきました — 「ウェルネス滞在」が流行するよりずっと前から。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreats' rendered as 'ウェルネス滞在' to avoid resort framing per language lock."
+   ]
+  },
+  {
+   "id": "t_795f1db2e4d02de0b545",
+   "sourceHash": "795f1db2e4d02de0b545af7b60e0cac9f28ea90a20a93c4b17a89c106a084d26",
+   "text": "1908年以来、Kairaliのアーユルヴェーダの系譜は、医師の一家から、政府認定かつNABH認定の療養施設を併設した病院へと発展し、インド全土の医師に古典的な薬を供給するGMP認証の自社薬局も有しています。Kairaliのカルキダカは、この118年にわたる臨床の伝統と、体が特に受け入れる準備が整うモンスーンの季節とが出会う場です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'hospital-cum-retreat' rendered as '療養施設を併設した病院' to avoid resort framing per language lock."
+   ]
+  },
+  {
+   "id": "t_93544a010137418612e5",
+   "sourceHash": "93544a010137418612e5e805de660e91f9780584d5563d7c965f3eb6203b8237",
+   "text": "カルキダカ Chikitsa（チキツァ）は、マラヤーラム語暦のカルキダカム月（7月〜8月）に行われます。この時期はケーララのモンスーンの最盛期であり、古典的なアーユルヴェーダの教えでは、一年で最も治療効果が高まりやすい時期とされています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

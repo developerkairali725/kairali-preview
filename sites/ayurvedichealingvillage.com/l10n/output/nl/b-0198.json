@@ -1,0 +1,210 @@
+{
+ "batchId": "b-0198",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "nl",
+ "units": [
+  {
+   "id": "t_4366a893ff5683c7b438",
+   "sourceHash": "4366a893ff5683c7b4382850934d5d8df6e2c798624cda9d52cf89394e0e7211",
+   "text": "06:30 – 07:30 uur – yogasessie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0811d4eba5a5b11e3695",
+   "sourceHash": "0811d4eba5a5b11e3695d765fa9d1971c4512244aa7050ecf5a2ff72ec0cd752",
+   "text": "08:00 – 09:00 uur – ontbijt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_093da1d61935df334ac9",
+   "sourceHash": "093da1d61935df334ac93fc3b593d90ccc65f4fd28aebae418d940d0b308f6fc",
+   "text": "09:00 – 13:00 uur – 1e behandeling van de dag, 1 uur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "12-hour times converted to 24-hour Dutch notation (01:00 pm = 13:00)."
+   ]
+  },
+  {
+   "id": "t_a00d8c9f45bc1bd836b4",
+   "sourceHash": "a00d8c9f45bc1bd836b45c92bf81861a9d61bfc3b551899d88fde4988ce7742f",
+   "text": "13:00 – 14:30 uur – lunch",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "12-hour times converted to 24-hour Dutch notation."
+   ]
+  },
+  {
+   "id": "t_d6488958b6196398ecf7",
+   "sourceHash": "d6488958b6196398ecf735c9898307dd46247aa748072ccfe3cbbff5a11a9b6b",
+   "text": "15:00 – 18:00 uur – 2e behandeling van de dag, 1 uur",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "12-hour times converted to 24-hour Dutch notation."
+   ]
+  },
+  {
+   "id": "t_6126373920d6c4edf5dd",
+   "sourceHash": "6126373920d6c4edf5dd44c721f6b98c1cabd65c7b437633cde71105c704fe4d",
+   "text": "18:30 – 19:30 uur – meditatiesessie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "12-hour times converted to 24-hour Dutch notation."
+   ]
+  },
+  {
+   "id": "t_d2abd164c349cc158c72",
+   "sourceHash": "d2abd164c349cc158c721e22c2387787ac7372539283a166a5e1c1ea1dcc05f3",
+   "text": "19:30 – 21:00 uur – diner",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "12-hour times converted to 24-hour Dutch notation."
+   ]
+  },
+  {
+   "id": "t_7b6f18eee0469b55a753",
+   "sourceHash": "7b6f18eee0469b55a753f350a62a5ff49084b0d6fd8f642c9e0d5cb321c33336",
+   "text": "24 november",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b9c8bd4282e23da20cef",
+   "sourceHash": "b9c8bd4282e23da20cefc9c9e9cf1c7884901f15c3a2d6d9437af5f335e754fa",
+   "text": "06:30 uur yoga",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b646d80b345d0cbceac",
+   "sourceHash": "2b646d80b345d0cbceac384126c8325d094e2c615eb75272170fd84697cde3fa",
+   "text": "08:00 uur ontbijt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_99e71f48c48f121baddd",
+   "sourceHash": "99e71f48c48f121baddd4def9d50fa3363580ae26c2d22dfe364c23f6da15240",
+   "text": "Afrekenen",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c3c93f102c5aa34c3847",
+   "sourceHash": "c3c93f102c5aa34c3847de53fc6091ee221e294f7ecdbc4f36b52913231fce65",
+   "text": "Historische reisinformatie [[OPEN_1]]Afgeleid label[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_90920dc31ec722dcc31e",
+   "sourceHash": "90920dc31ec722dcc31e5ae46639769c230ea5c692941f96d4d8073af288d57b",
+   "text": "Deze reisinformatie is bewaard gebleven van het programma uit 2019 en is geen actuele reis- of visuminformatie.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'programma' (clinical register).",
+    "t_90920dc31ec722dcc31e banned-term reis"
+   ]
+  },
+  {
+   "id": "t_604062d724a066664c88",
+   "sourceHash": "604062d724a066664c88c68c134a2d6e7a886e92d00540b03e5f4cfc4af26b54",
+   "text": "[[OPEN_1]]LET OP[[CLOSE_1]][[TAG_2]]Dichtstbijzijnde luchthaven Thiruvananthapuram, vluchten niet inbegrepen[[TAG_3]]De dichtstbijzijnde luchthaven is Cochin International Airport. Vluchten zijn niet inbegrepen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source names two different 'closest' airports (Thiruvananthapuram and Cochin); translated faithfully, flag for owner review."
+   ]
+  },
+  {
+   "id": "t_5acb463dd636dc0c2a20",
+   "sourceHash": "5acb463dd636dc0c2a202d828a0560f7536a7048c6b78068c8a17044aec3f72e",
+   "text": "Programma-informatie",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 'programma' (clinical register)."
+   ]
+  },
+  {
+   "id": "t_530ce732a05f1d373a19",
+   "sourceHash": "530ce732a05f1d373a191747f0cb3a3054b9f241528ce3579ccd3cf36b265295",
+   "text": "Visa",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de08ec4c6c962b659c0e",
+   "sourceHash": "de08ec4c6c962b659c0e19fc56ab0537561ee039806fda6db7e5c2c706091014",
+   "text": "Elke reiziger is zelf verantwoordelijk voor zijn of haar visum; momenteel kan het e-visum 34 dagen vóór aankomst worden aangevraagd. De inreisvoorwaarden kunnen op elk moment wijzigen, dus raadpleeg https://indianvisaonline.gov.in/visa/tvoa.html voor actuele informatie.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9c405fb442ba827e75af",
+   "sourceHash": "9c405fb442ba827e75af8f22e515e3d27ce5f7711cb004ed227d948e1e351332",
+   "text": "INDIA:",
+   "status": "translated",
+   "unchangedReason": "Place name identical in Dutch.",
+   "issues": []
+  },
+  {
+   "id": "t_575da4eecda598ddeb5b",
+   "sourceHash": "575da4eecda598ddeb5b7eb562bdcfd990468d1ac27587c7043f4fa73613aa9c",
+   "text": "Voor houders van een paspoort van een aantal landen is een E-Tourist Visa (eVT) beschikbaar. Hiermee kunnen reizigers zich vóór hun reis naar India vooraf registreren en hun visum betalen. Het visum wordt bij aankomst op een van de 16 aangewezen luchthavens in India afgegeven. Let op de strikte richtlijnen op de onderstaande website.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_575da4eecda598ddeb5b banned-term reis"
+   ]
+  },
+  {
+   "id": "t_bc71df2657503a9602e7",
+   "sourceHash": "bc71df2657503a9602e7c94816baccaf17439b3077f315da8b2495a29619cb9b",
+   "text": "Een E-Tourist Visa (eVT) bij aankomst is beschikbaar voor bepaalde nationaliteiten, waaronder, maar niet uitsluitend, de volgende",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce04cf02c3d28af9884c",
+   "sourceHash": "ce04cf02c3d28af9884c5262525fb1468a902efcda61beca1d2641b5b73beea7",
+   "text": "Australische, Canadese, Nieuw-Zeelandse, Duitse, Britse en Amerikaanse paspoorten.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ec4c41f641d1a6b5fb39",
+   "sourceHash": "ec4c41f641d1a6b5fb39ef5147aaab4201bc36790d5a9da4e77ea62f3e5cb967",
+   "text": "Paspoorthouders uit deze landen kunnen een E-Tourist Visa (eVT) aanvragen, waarna hun visum bij aankomst wordt afgegeven op 16 grote luchthavens in India, waaronder Chennai en Trivandrum.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e18c420a84eff85edfb4",
+   "sourceHash": "e18c420a84eff85edfb4a385f89a6c12c68400d131de2f990680c3a1d7e0917f",
+   "text": "Volg de instructies op https://indianvisaonline.gov.in/visa/tvoa.html en vul de aanvraag voor uw E-Tourist Visa in.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

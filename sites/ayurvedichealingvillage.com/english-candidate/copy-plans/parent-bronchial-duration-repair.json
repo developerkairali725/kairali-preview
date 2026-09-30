@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "id": "PARENT-BRONCHIAL-DURATION-desktop",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-breath-respiratory-desktop.json",
+      "old": "Kairali – The Ayurvedic Healing Village offers this programme over 7 to 21 days.",
+      "new": "The published residential programme has a minimum stay of 14 nights.",
+      "count": 1,
+      "authority": "Approved Group III residential tariff; same page already states minimum 14 nights. Resolves obsolete conflicting legacy duration; no new medical claim."
+    },
+    {
+      "id": "PARENT-BRONCHIAL-DURATION-mobile",
+      "row": "CLINICAL-COPY",
+      "file": "public/ahv/views/ahv-page-breath-respiratory-mobile.json",
+      "old": "Kairali – The Ayurvedic Healing Village offers this programme over 7 to 21 days.",
+      "new": "The published residential programme has a minimum stay of 14 nights.",
+      "count": 1,
+      "authority": "Approved Group III residential tariff; same page already states minimum 14 nights. Resolves obsolete conflicting legacy duration; no new medical claim."
+    }
+  ],
+  "note": "Apply only after validating current counts. Synchronize authoritative generator/copy-plan if used for regeneration; translate changed units. Existing source plan has old duration embedded."
+}

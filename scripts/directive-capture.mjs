@@ -249,7 +249,15 @@ function main(argv) {
   return 1;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Main-module guard. NOT `import.meta.url === \`file://${process.argv[1]}\``:
+// import.meta.url percent-encodes the path, process.argv[1] does not, so on any
+// checkout whose path contains a space (this fleet lives under
+// "/Volumes/Extreme SSD - Blue 2nd/…") the comparison is always false and this
+// script exits 0 having captured NOTHING — an unlogged directive is a dropped
+// directive, which is the exact failure this file exists to prevent.
+// fileURLToPath decodes, so the two sides are comparable. 30 other scripts in
+// scripts/ carry the same unsafe guard (see QUESTIONS.md Q-MAIN-GUARD-ENCODING).
+if (process.argv[1] && resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1])) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {

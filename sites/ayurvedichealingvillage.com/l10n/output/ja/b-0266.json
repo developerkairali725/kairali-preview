@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0266",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_8bb84bfef11937ef55b3",
+   "sourceHash": "8bb84bfef11937ef55b3d077eaf14b893adde96c2030a4ddd3100e1f4a4158e5",
+   "text": "出発地：Delhi／Mumbai／Bangalore／Chennai — Coimbatoreへの直行便をご利用のうえ、当院の空港送迎サービスをお選びください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ee96fd97cb1e2d1ba8a4",
+   "sourceHash": "ee96fd97cb1e2d1ba8a4cde12842463e6badb25379c593ac1ecddb7152ce496f",
+   "text": "出発地：Kerala州内",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8243c67ab752b1e67415",
+   "sourceHash": "8243c67ab752b1e67415011bcb44236b7912af337dc8a53b4db32ef434cdc047",
+   "text": "Palakkad Junction駅まで列車をご利用いただくか、当施設まで直接お車でお越しください（ご予約時に詳しい道順をご案内します）。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as '当施設' to avoid resort framing."
+   ]
+  },
+  {
+   "id": "t_7d1dedf3fb49f6c57bbc",
+   "sourceHash": "7d1dedf3fb49f6c57bbcfec435edb6ffb953d5f1613f42fcca41978d0c33ec1d",
+   "text": "出発地：Kerala州内 — Palakkad Junction駅まで列車をご利用いただくか、当施設まで直接お車でお越しください（ご予約時に詳しい道順をご案内します）。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as '当施設' to avoid resort framing."
+   ]
+  },
+  {
+   "id": "t_80ded997801fc877334d",
+   "sourceHash": "80ded997801fc877334d8d693ad9c57f2e18e14a9ca0bc405fd6ba74ea81ea19",
+   "text": "Silent Valley国立公園：100 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1bdd1e59f1d443555fd2",
+   "sourceHash": "1bdd1e59f1d443555fd25a2be3668a31365d8bea2ac6efaf20f5658f951fc2e6",
+   "text": "Malampuzhaダムと庭園：46 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_25d112c4fe5f00b383fe",
+   "sourceHash": "25d112c4fe5f00b383fe55a56fa5f2a26b11cfc694cc7bab40fe9ea98a7e027c",
+   "text": "Parambikulamトラ保護区：68.8 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3fa1cf49eef126c3cda3",
+   "sourceHash": "3fa1cf49eef126c3cda32786290ad77a3538acb90721f9ae329c67e4f76de913",
+   "text": "Athirappillyの滝：123 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_bfb800cc4dcce0bd2d7c",
+   "sourceHash": "bfb800cc4dcce0bd2d7c41c1bb168f618846500c3eca5097a9bcc6999aff95e1",
+   "text": "Palakkad城塞：10.8 km",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_53b5c20c4aec265f588f",
+   "sourceHash": "53b5c20c4aec265f588fcc1c5aef24a7e5517b354ce56ed62272dfc72accbbb8",
+   "text": "ご希望に応じて、これらの場所への日帰り外出を手配することができます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b71f9e517a7176f1d19d",
+   "sourceHash": "b71f9e517a7176f1d19d555edb662fe3e0aa5d2e005733e550ea7518260bd990",
+   "text": "Kerala州は温暖な熱帯気候で、はっきりとした季節の違いがあります：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7b42269cab8b62d8bda1",
+   "sourceHash": "7b42269cab8b62d8bda14ab5a07bbf9b6096174dfa5842e51cd06e20acca4f5d",
+   "text": "夏（3月〜5月）：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_55387947c458aa66ae95",
+   "sourceHash": "55387947c458aa66ae95db07a712d4bda3b5a61767349ed79e9304ad4c4f81d6",
+   "text": "気温：28〜38°C",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_41dac2c31300eda1502c",
+   "sourceHash": "41dac2c31300eda1502cf2cfbf8ed95c4f904e6479d1e705f642624d5e01fc90",
+   "text": "暖かく晴れた日が多く、朝夕の屋外での活動に適しています",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f184a9991cf6850c75ce",
+   "sourceHash": "f184a9991cf6850c75ce136af426c598b16be84f24d50c2244c6af1039b14b72",
+   "text": "ピッタを鎮める治療に最適な時期です",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1c21c5952fabf0904f6b",
+   "sourceHash": "1c21c5952fabf0904f6b1d46151c3c66c57b518897dd7040b754ee266ac35153",
+   "text": "モンスーン期（6月〜9月）：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cdae15f9f2fd5b010ff3",
+   "sourceHash": "cdae15f9f2fd5b010ff343271b284c0932bf3e8e1bdff328d292eb88c74acf5a",
+   "text": "気温：23〜32°C",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_02ce4bc83257773e2e99",
+   "sourceHash": "02ce4bc83257773e2e9913499bb466bdab87e54fa8e53db9463b78a59f1f7846",
+   "text": "定期的な降雨があり、緑豊かで気温も比較的涼しくなります",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_21784d603b63461dbb48",
+   "sourceHash": "21784d603b63461dbb48bebc2bab445db6a78036840dd5e87f1ede87021215d4",
+   "text": "集中的なパンチャカルマ治療の伝統的な時期です",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f0d7a0681b3af4c00cc8",
+   "sourceHash": "f0d7a0681b3af4c00cc8c47e83dfcaa923a946cded1040e1fb9087195f0fbea3",
+   "text": "モンスーン明け／秋（10月〜11月）：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_356f6a58c8718ce11c24",
+   "sourceHash": "356f6a58c8718ce11c2457ca6e543f6fdd202e52d45bfe7694ac0400df91c974",
+   "text": "気温：24〜32°C",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8be0873c66694b3c605c",
+   "sourceHash": "8be0873c66694b3c605c73ab87dec05a4592b49cb3c9f5e6ac1c6ef0dd28ba8a",
+   "text": "時折小雨が降る程度の、過ごしやすい気候です",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3db723cd60d423331046",
+   "sourceHash": "3db723cd60d423331046b875cdb08993a9e7efe9a643745cdab7f8b288cbad5c",
+   "text": "若返り療法に非常に適しています",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b5ac8261d5e143df2627",
+   "sourceHash": "b5ac8261d5e143df26279efb91d38ce9146de8fd716cdd6e06d89f6c19724d8f",
+   "text": "冬（12月〜2月）：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_37ef5c7dec90fb8c7bb1",
+   "sourceHash": "37ef5c7dec90fb8c7bb168c4615b863d8e17782d0c460a3cb8139a451b8616c5",
+   "text": "気温：20〜30°C",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

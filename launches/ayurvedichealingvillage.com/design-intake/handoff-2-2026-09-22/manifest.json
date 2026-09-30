@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "generated": "2026-09-25 17:16:03 IST",
+  "collected_at_utc": "2026-09-25T11:46:03Z",
+  "run_id": "2026-09-25-r1",
+  "producer": {
+    "session": "01a0d7a6-5a2b-77d1-8e57-789488c4716d",
+    "role": "builder"
+  },
+  "files": [
+    {
+      "path": "AHV Template Knowledge Explainer Desktop.dc.html",
+      "sha256": "a1e74dd63df42df0d51e892e45b054b87bbb117bc351d84462904ae1cbef1568",
+      "bytes": 44206,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "AHV Template Knowledge Explainer Mobile.dc.html",
+      "sha256": "f4001320329f4730796333b8758c43f114c7f1d8abfe73fbce8d619ad1485ea6",
+      "bytes": 24455,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "AHV Template Long-Form Advertising Desktop.dc.html",
+      "sha256": "fa9beede7637341b43428d96831d8628bd7adb5d6c4da514cd13fce3a4613d9a",
+      "bytes": 85145,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "AHV Template Long-Form Advertising Mobile.dc.html",
+      "sha256": "72111c7a8abaa109a54d306a4a587749ea0ae56f7d621d75f635f3c912b21450",
+      "bytes": 83719,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "EVIDENCE-WRAPPER-20260925.md",
+      "sha256": "f08f7fc86b4993dc56e52692041918c31c08f1c3097de6dfd1df5ca499d5ca3e",
+      "bytes": 295,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3ef6be5dacd88269853271fa7372f7d5c2548bbe0b89699bd127fc05a6484fa0",
+      "bytes": 3459,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "assets/knowledge-explainer-8-data.js",
+      "sha256": "96daa5c901fe20765bb2ef1c0773bc77d22cd29e0f9d0b708489982b4663b188",
+      "bytes": 73905,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/knowledge-explainer-8-routes-dataset.md",
+      "sha256": "fe9abdee0563af37cb32e7c320b6ed7c089d33b19f3ca264736dba4414ea4e91",
+      "bytes": 18014,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/knowledge-explainer-claude-code-handover.md",
+      "sha256": "6d090e07e402be212dc431b4b8b83744707f99744f8c04bd06068cfac94a2ce8",
+      "bytes": 6628,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/knowledge-explainer-family-page.md",
+      "sha256": "830475eb00842e57c0794c0edb946fc57924f793a847c99d8a0b52ef0e680df8",
+      "bytes": 7013,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/knowledge-explainer-mobile-template.md",
+      "sha256": "5f7deaee4d0cc19b4cd0c0cb0880f391bc682dc796a20924cdfd89452bbf57ac",
+      "bytes": 6797,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/long-form-advertising-claude-code-handover.md",
+      "sha256": "e84695bdde7911aa57a708158f6461e1851d137a395e1b8fc9887ded473d26de",
+      "bytes": 9328,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "notes/long-form-advertising-family-page.md",
+      "sha256": "8c22962d3f5ed0c69b644b77863e81b73ebf741892918ff401481a1ed560e672",
+      "bytes": 14188,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "source-package-manifest.json",
+      "sha256": "757a72a128ded8261a2056174b60754072b3ed0e070833e6f3fd40b4553140a9",
+      "bytes": 2630,
+      "run_id": "2026-09-25-r1"
+    },
+    {
+      "path": "support.js",
+      "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "bytes": 69150,
+      "run_id": "2026-09-25-r1"
+    }
+  ]
+}

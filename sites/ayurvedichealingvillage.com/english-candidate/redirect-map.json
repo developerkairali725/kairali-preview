@@ -1,0 +1,250 @@
+{
+  "why": "Owner ruling, Abilash in chat, 2026-09-19: 'make all these pages 301'. These twelve routes were surfaced by the template-family audit (docs/reports/2026-09-19-ahv-article-template-families-and-design-brief.md §7) as pages that needed a fate rather than a design: six WordPress leftovers with no subject, three '-old' duplicates of pages that now exist properly, two WooCommerce routes on a site that has no commerce, and one 93% copy of a page that earns 236 clicks while it earns 0. Every source measures ZERO clicks in the Search Console export (launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19{,-www}/Pages.csv), so no ranking value is being moved; every target is an existing, content-rich approved route, which is the CLAUDE.md BUILD DECISION MATRIX rule 2 condition ('content-rich ranking pages are never redirected to thin targets'). Single hop only: no target here is itself a source. Supersedes the earlier 'Keep outside navigation' ownerAction recorded against /cart/ and /checkout/ in confirmation-family-data.js, and the sitemapExclude-only treatment in route-overrides.json, both of which left the pages serving.",
+  "scope": "Applies at the DNS flip, like every other route rule in this lane. Nothing changes on the production WordPress host from here (HARD GATE 1); these redirects take effect when this build becomes the live site.",
+  "statusCode": 301,
+  "statusNote": "301 explicitly, not Next's permanent:true (which emits 308). The owner asked for 301 and there is no reason to substitute a different code.",
+  "redirects": {
+    "/test-page/": {
+      "to": "/",
+      "reason": "h1 'Test Page'. A WordPress scratch page with no subject and nothing to consolidate.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 1
+      }
+    },
+    "/test-page-2/": {
+      "to": "/givefeedback/",
+      "reason": "h1 'Test Page' but the head title is 'Write a Review | Give Testimonials | Opinions | Feedback' - it is a scratch copy of the feedback page, so the signal belongs there.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 9
+      }
+    },
+    "/testing/": {
+      "to": "/",
+      "reason": "h1 'Testing'. A WordPress scratch page with no subject.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 44
+      }
+    },
+    "/gift-test/": {
+      "to": "/gift-vouchers/",
+      "reason": "h1 'Shop' - a WooCommerce shop-page test. There is no shop; gift vouchers are the nearest real page on the same subject.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 271
+      }
+    },
+    "/my-account/": {
+      "to": "/",
+      "reason": "WooCommerce account page. No commerce, no accounts, nothing equivalent to send it to.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/how-to-reach-old/": {
+      "to": "/how-to-reach/",
+      "reason": "Superseded duplicate. The current page carries all four maps and earns 410 clicks.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/contact-us-old/": {
+      "to": "/contact-us/",
+      "reason": "Superseded duplicate. The current page earns 310 clicks.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/enquiry-form-old/": {
+      "to": "/contact-us/",
+      "reason": "Superseded duplicate of the enquiry form. Single hop straight to /contact-us/ since /enquiry-form/ itself merged there (owner, 28 Sep 2026, AHV-DUP-004).",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/online-consultation-old/": {
+      "to": "/online-consultation/",
+      "reason": "Superseded duplicate. The current page earns 379 clicks, the most of any page in scope.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/cart/": {
+      "to": "/packages/",
+      "reason": "WooCommerce cart on a site with no commerce. A visitor who reached a cart was choosing something to book; /packages/ is the content-rich equivalent (733 words, 27 cards, 118 clicks).",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/checkout/": {
+      "to": "/packages/",
+      "reason": "WooCommerce checkout on a site with no commerce. Same target and same reason as /cart/.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/offers/new/": {
+      "to": "/offers/senior-citizen-offer/",
+      "reason": "93% identical to the senior-citizen offer, which earns 236 clicks while this earns 0. Its canonical already pointed here (route-overrides.json); the 301 makes the consolidation real instead of advisory.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "/deaddiction-treatment-program.html": {
+      "to": "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/",
+      "legacy": true,
+      "liveStatus": 200,
+      "reason": "A live, unlisted ad destination with a rebuilt sibling that says the same thing properly. Zero Search Console presence, so no ranking value moves. Its title - 'Luxury Ayurvedic Deaddiction Treatment at Kairali' - carries a banned word on a clinical page; that is a live-site fix for Dr. Deepu John (HARD GATE 7) and is not resolved by this redirect.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 0,
+        "note": "no row in the 2026-07-19 Search Console export"
+      }
+    },
+    "/panchakarma-treatment.html": {
+      "to": "/panchkarma-treatment.html",
+      "legacy": true,
+      "liveStatus": 404,
+      "reason": "A misspelling of /panchkarma-treatment.html, which earns 499 clicks against 29,346 impressions. This spelling is already 404 on the live site and has never earned a click. The 301 costs nothing and stops the six impressions landing on an error page.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 6
+      }
+    },
+    "/founders-message/": {
+      "to": "/about-us/",
+      "reason": "Owner approved consolidation on 24 September 2026: preserve K.V. Ramesh’s full signed founder letter on About Us, redirect the duplicate page, update internal links and remove its sitemap entry.",
+      "ownerApproval": "2026-09-24 explicit consolidation request",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      }
+    },
+    "/attractions-under-10kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-15kms-and-below/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-25kms-to-50kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/attractions-above-50kms/": {
+      "to": "/sightseeing/",
+      "reason": "Owner-approved consolidation of all four distance guides into one complete sightseeing guide, preserving all 22 destinations and correcting road-distance estimates.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-09-24 explicit consolidation request"
+    },
+    "/map/": {
+      "to": "/how-to-reach/",
+      "reason": "Owner-approved consolidation of Map into How to Reach, retaining origin-specific directions including Ottapalam railway station and Bengaluru.",
+      "ownerApproval": "2026-09-24 explicit consolidation request",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      }
+    },
+    "/ayurveda-gallery/": {
+      "to": "/treatments-gallery/",
+      "reason": "Owner-approved consolidation (EF-21): the Ayurveda Gallery held eight uncaptioned legacy banner images and generic copy; the Treatment Gallery covers the same intent with verified on-site photographs. Per-image audit (worker, 28 Sep 2026): none of the eight carries AHV provenance — five are stock-style still lifes/spa props, one an illustration, one a stock paste scene; two plausible therapy photos (AHV-Gallery-06, -08) have no provenance record and are listed for the owner image review instead of being moved into the verified set.",
+      "gsc": {
+        "clicks": 2,
+        "impressions": 72,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 EF-21 owner selected option 1 (OWNER-DECISIONS-LATEST.md)"
+    },
+    "/privacy-policy/": {
+      "to": "/new-privacy-policy/",
+      "reason": "Owner named /new-privacy-policy/ the final privacy document ('merge it with this … 301 these two'). Measured 28 Sep: every line of this page's text is on the destination (identical notice, revision 25 Sep 2026).",
+      "gsc": {
+        "clicks": 2,
+        "impressions": 427,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-001/002"
+    },
+    "/privacy-statement/": {
+      "to": "/new-privacy-policy/",
+      "reason": "Owner named /new-privacy-policy/ the final privacy document. Measured 28 Sep: the text is identical to the destination apart from the page title.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 473,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-002/003"
+    },
+    "/enquiry-form/": {
+      "to": "/contact-us/",
+      "reason": "Owner kept /contact-us/. Both pages render the same contact form (same fields, programme select, consent and transport); the only difference is the intro line. Query strings are carried by the redirect, so ?programme= preselection still works.",
+      "gsc": {
+        "clicks": 7,
+        "impressions": 2726,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-004"
+    },
+    "/ayurveda-training-programs/": {
+      "to": "/ayurveda-training-programme/",
+      "reason": "Owner kept /ayurveda-training-programme/ (the canonical already pointed there). The destination links every course this page listed; no text is lost. NOTE for the owner: this source had more July clicks (48) than the destination (19); the 301 carries them.",
+      "gsc": {
+        "clicks": 48,
+        "impressions": 2983,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-006"
+    },
+    "/our-story/": {
+      "to": "/about-us/",
+      "reason": "Owner merged Our Story into About Us (canonical already pointed there; DUP-046 asks for a separate awards family, not a reversal). The only blocks the destination lacks are the shared maps, trust strip and enquiry prompt carried by many pages.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 106,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-008"
+    },
+    "/things-to-do-in-property/": {
+      "to": "/things-to-do/",
+      "reason": "Owner kept /things-to-do/. Its in-village section already carries this page's introduction and all eight activity descriptions; the in-village activity pages move under /things-to-do/ in the site tree.",
+      "gsc": {
+        "clicks": 1,
+        "impressions": 349,
+        "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
+      },
+      "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-011"
+    }
+  },
+  "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
+}

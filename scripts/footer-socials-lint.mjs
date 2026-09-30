@@ -29,6 +29,8 @@
  * D-RULE-MATRIX-EXEMPT; the two zero-page scaffolds until their first page).
  * Every exemption prints LOUDLY every run.
  *
+ * AHV campaigns retain the main-site chat/footer by the owner’s 29 Sep 2026
+ * instruction (WOPS-AHV-FINAL-DRAFT-20260924-001). Other historical
  * /lp/ landing pages are OUT of scope by law — stripped-footer LPs carry no
  * social links by design (attention ratio; gates/registry.yaml:
  * footer-socials-present → landing: n_a, same ruling as social-press-links).
@@ -71,10 +73,10 @@ export function canonicalHrefs(configSrc) {
  * @param {string} site — label for messages
  * @param {string[]} hrefs — canonical profile URLs (from canonicalHrefs())
  */
-export function checkSiteSources(files, site, hrefs) {
+export function checkSiteSources(files, site, hrefs, nativeFooter = false) {
   const v = [];
   const rendering = files.filter((f) => f.src.includes("<SocialLinks"));
-  if (rendering.length === 0) {
+  if (rendering.length === 0 && !nativeFooter) {
     v.push(`${site}: no app source renders <SocialLinks/> — footer social links are mandatory fleet-wide (D-20260718-04) and always the ONE shared component, never a local copy`);
   }
   for (const f of rendering) {
@@ -93,6 +95,32 @@ export function checkSiteSources(files, site, hrefs) {
     }
   }
   return v;
+}
+
+/** Owner-approved AHV design (29 Sep 2026, WOPS-AHV-FINAL-DRAFT-20260924-001)
+ * uses the hospital's shared design footer, including on imported campaigns.
+ * Require the same six hospital profiles in both snapshot footers and their
+ * shared consumer, instead of injecting a duplicate group-profile footer. */
+export function checkAhvNativeFooter({ template, snapshot, chrome, campaign }) {
+  const problems = [];
+  const platforms = ["facebook.com", "instagram.com", "youtube.com", "linkedin.com", "twitter.com", "pinterest.com"];
+  const socialLinks = html => [...html.matchAll(/href=["'](https:\/\/[^"']+)["']/g)].map(m => m[1]).filter(h => {
+    try { const host = new URL(h).hostname; return platforms.some(p => host === p || host.endsWith(`.${p}`)); } catch { return false; }
+  });
+  const footers = html => html.match(/<footer\b[\s\S]*?<\/footer>/g) ?? [];
+  const canonical = socialLinks(footers(template).join(""));
+  for (const platform of platforms) {
+    if (!canonical.some(h => { const host = new URL(h).hostname; return host === platform || host.endsWith(`.${platform}`); })) problems.push(`AHV shared footer missing ${platform}`);
+  }
+  const rendered = footers(snapshot);
+  if (rendered.length !== 2) problems.push("AHV shared snapshot must contain desktop and mobile footers");
+  for (const footer of rendered) {
+    const actual = socialLinks(footer);
+    if (new Set(actual).size !== new Set(canonical).size || canonical.some(h => !actual.includes(h))) problems.push("AHV snapshot social profiles differ from the approved shared footer");
+  }
+  if (!chrome.includes('english-candidate/prerender/about-us.html') || !chrome.includes('block(t, "footer", 0)') || !chrome.includes('block(t, "footer", 1)')) problems.push("AHV native chrome no longer consumes both shared snapshot footers");
+  if (!campaign.includes('from "../../app/(english)/search/site-chrome"') || !campaign.includes('chrome.footer') || !campaign.includes('__html: footer')) problems.push("AHV campaign no longer renders the main-site shared footer");
+  return problems;
 }
 
 /** Discover fleet sites: sites/<dir> with a site.config.json. */
@@ -221,7 +249,18 @@ export function main(argv = []) {
       violations.push(`${key}: no app/ sources and not in the EXEMPT ledger — a page-bearing site without an app dir (or an exemption) cannot carry the mandatory footer socials`);
       continue;
     }
-    violations.push(...checkSiteSources(files, key, hrefs));
+    const nativeFooter = name === "ayurvedichealingvillage.com";
+    if (nativeFooter) {
+      const read = p => readFileSync(join(siteDir, p), "utf8");
+      violations.push(...checkAhvNativeFooter({
+        template: read("public/ahv/components/AHV Chrome Footer.dc.html"),
+        snapshot: read("english-candidate/prerender/about-us.html"),
+        chrome: read("app/(english)/search/site-chrome.ts"),
+        campaign: read("campaign-v110/components/SiteFooter.tsx"),
+      }));
+      console.log("  CHECK AHV native shared footer — six hospital profiles, desktop/mobile parity and campaign consumer (owner-approved design)");
+    }
+    violations.push(...checkSiteSources(files, key, hrefs, nativeFooter));
 
     const pkgPath = join(siteDir, "package.json");
     if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
@@ -242,7 +281,11 @@ export function main(argv = []) {
   return 2;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// NOTE: comparing import.meta.url to process.argv[1] as raw STRINGS silently
+// broke on any checkout path containing a space — import.meta.url percent-encodes
+// it, argv[1] does not — so main() never ran and the script exited 0 having
+// checked NOTHING. Normalising argv[1] through URL() fixes it with no new import.
+if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1]}`).href) {
   try {
     process.exit(main(process.argv.slice(2)));
   } catch (e) {

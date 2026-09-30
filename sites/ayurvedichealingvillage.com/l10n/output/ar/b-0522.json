@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "fd7a9371242b1a005c119a280769fedd60bbc7f342d865654ab5a2de9ed65ed8",
+ "locale": "ar",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": يُعد هذا العلاج الأيورفيدي الأفضل للمرضى الذين يعانون مشكلات تصيب منطقة الرأس مثل التهاب الجيوب الأنفية والصداع النصفي. وهو أسلوب تنقية طبيعي يُخلّص منطقة الرأس من أي نوع من الألم، وتُنظَّم فيه القطرات الأنفية داخل فتحتي الأنف.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source makes strong claims ('the best', 'freed from any kind of pain'); translated faithfully without strengthening — flag for Dr. Deepu John's clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "ناسيام: يُعد هذا العلاج الأيورفيدي الأفضل للمرضى الذين يعانون مشكلات تصيب منطقة الرأس مثل التهاب الجيوب الأنفية والصداع النصفي. وهو أسلوب تنقية طبيعي يُخلّص منطقة الرأس من أي نوع من الألم، وتُنظَّم فيه القطرات الأنفية داخل فتحتي الأنف.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source makes strong claims ('the best', 'freed from any kind of pain'); translated faithfully without strengthening — flag for Dr. Deepu John's clinical sign-off."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "يُتاح التدريب. لا تُطبَّق حالة «قريبًا» على أي مسار في هذه الدفعة.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be internal editorial/status text rather than patient-facing copy; confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "تحتفظ الادعاءات الحالية المتعلقة بالجوانب الطبية والتجارية والجوائز والتوافر ببوابات الإصدار الخاصة بها كما هي تمامًا. إن التقاط المصدر لا يُعد تحققًا، وغياب بوابة خاصة بمسار ما لا يعني أبدًا أن الادعاء معتمد.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be internal editorial/governance text rather than patient-facing copy; confirm whether it should be displayed."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "برامج إقامة للجميع",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'برامج إقامة' (stay programmes) to keep the clinical register."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "batchId": "b-0066",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "zh-Hans",
+ "units": [
+  {
+   "id": "t_4bf2297658676cac4899",
+   "sourceHash": "4bf2297658676cac4899fc0a6a441c3fcde2f2975be4787022995d6a11d6b846",
+   "text": "-error",
+   "status": "translated",
+   "unchangedReason": "Code fragment (element id/class suffix) used in JS concatenation; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_62420113f0eae0cae574",
+   "sourceHash": "62420113f0eae0cae574f53f24a69786b491e7ba32b6835c384e416f64364b27",
+   "text": "请输入有效的电子邮件地址，例如name@example.com。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_681dac472e89d5d61bbf",
+   "sourceHash": "681dac472e89d5d61bbfbd2a3854f5090465889f7b6c16a72c321d97324ea379",
+   "text": "请选择要附加的文件。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_68cadcee19d24b1aeae7",
+   "sourceHash": "68cadcee19d24b1aeae71d92cd2a2098fc183e74b604d3a06b1e655c9887d660",
+   "text": "此项为必填项。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4a3ee8438804f86b2a9e",
+   "sourceHash": "4a3ee8438804f86b2a9e9e8973742d1462ccbe841ea4fdc6d9cdb1d3c790f22f",
+   "text": "原网站通过服务器端插件，根据所选国家生成此列表。当前采集的页面仅包含占位选项，因此该控件保持停用状态，相关的选项集记录为尚未解决的实现依赖项——未虚构任何选项。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal review/implementation note displayed by script; translated as-is — owner may prefer it not to appear on the public page."
+   ]
+  },
+  {
+   "id": "t_bf11119a6348ea151b62",
+   "sourceHash": "bf11119a6348ea151b62d3041d84138d85d0a869a75ab334e7d13ce6ff68589e",
+   "text": "仅为字段定义审核而呈现——所选的任何文件都会被立即清除，不会读取、存储或传输任何内容。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal review note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_d782492103f6a592ef3e",
+   "sourceHash": "d782492103f6a592ef3e7ed28b970bac7e3510a782a4b8a17d7ab3d291d5290a",
+   "text": "-note",
+   "status": "translated",
+   "unchangedReason": "Code fragment (element id/class suffix) used in JS concatenation; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_569bd25dce87a68e236e",
+   "sourceHash": "569bd25dce87a68e236eead6f6df69579acd12bf7d179bc1ec334bb6d4a3a209",
+   "text": "translate(-50%, -50%)",
+   "status": "translated",
+   "unchangedReason": "CSS transform value; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_0454a0c1d705c1868c28",
+   "sourceHash": "0454a0c1d705c1868c289cfa24d5681999f006586f54515ad47859306ccadb4a",
+   "text": "此表单正在接入中。在此之前，请发送电子邮件至info@kairali.com，或通过WhatsApp发送消息至+91 92898 38797。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8e6a6cca7aae1d1e781d",
+   "sourceHash": "8e6a6cca7aae1d1e781d3ee04849d6b00f7aaf48f7c642f35105e4bf990a8cb4",
+   "text": "步骤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2fca843fae642c145258",
+   "sourceHash": "2fca843fae642c1452589ff26ed41a7f1d3c312a486c94c229f410ec7e37bbbc",
+   "text": "— 步骤",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d151e7ccdd1bb94c1583",
+   "sourceHash": "d151e7ccdd1bb94c15836de66438a16455b9f9b79273cca41d64d2cb0ed21b35",
+   "text": "审核模式下已停用提交功能——未发送、存储或确认任何数据。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_317bfb75ace0877b53c6",
+   "sourceHash": "317bfb75ace0877b53c6a853484f066da4ba303d44e94d91980f2e2fb02c5ef1",
+   "text": "lc-panel-",
+   "status": "translated",
+   "unchangedReason": "Code fragment (element id prefix) used in JS concatenation; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_0f2a693e93e2ed7008fe",
+   "sourceHash": "0f2a693e93e2ed7008feb5b7714bbab236e3907e64188199e3be1ae367f49c40",
+   "text": "grid",
+   "status": "translated",
+   "unchangedReason": "CSS display value used by script; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_79da22a18213d6566cc7",
+   "sourceHash": "79da22a18213d6566cc775bd21ec52f92be277b0827752112b57d193062b37cc",
+   "text": "原网站最后一步的控件没有标签，也没有下一步；审核模式下不会提交任何内容。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal review note; translated as-is."
+   ]
+  },
+  {
+   "id": "t_078152e94d3eca13bb58",
+   "sourceHash": "078152e94d3eca13bb58626cbf6609264eedc164926cc137769fbeae654efcd2",
+   "text": "审核模式下已停用提交功能——未发送、存储或确认任何问诊申请、健康信息或文件。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_63ee8124c56458906c79",
+   "sourceHash": "63ee8124c56458906c797f0333e05a1d2e6c48c2574541b74c3309dffa1784a9",
+   "text": "预览字段",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_235292ee6c13db199ec5",
+   "sourceHash": "235292ee6c13db199ec570fa8fa8bd89dff8f088dd27832c6ccb8c384d4710d7",
+   "text": "2px solid #5A4420",
+   "status": "translated",
+   "unchangedReason": "CSS border value; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_1dda96aa6ee661d9b9c9",
+   "sourceHash": "1dda96aa6ee661d9b9c98fa37232f2c7ce961ae1e3834b0725b5b6b1d61b2ac9",
+   "text": "1px solid #75695A",
+   "status": "translated",
+   "unchangedReason": "CSS border value; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_6735ba3a893895fc080c",
+   "sourceHash": "6735ba3a893895fc080cb538e62c1e26c12204203ed6759a4e70edd284dfb98e",
+   "text": ";background:",
+   "status": "translated",
+   "unchangedReason": "CSS property fragment used in JS concatenation; not user-facing text.",
+   "issues": []
+  },
+  {
+   "id": "t_f1e87baab87ff80c9c14",
+   "sourceHash": "f1e87baab87ff80c9c14dfb2bf98abf76a008d3691c3c9ec856483e49381f7e1",
+   "text": ";color:",
+   "status": "translated",
+   "unchangedReason": "CSS property fragment used in JS concatenation; not user-facing text.",
+   "issues": []
+  }
+ ]
+}

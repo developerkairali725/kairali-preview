@@ -1,4 +1,10 @@
 import type { NextConfig } from "next";
+import documentRedirects from "./english-candidate/document-redirects.json";
+import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
+import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
+import l10nRoutes from "./l10n/routes.json";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 // KTAHV LP lane (launches/ktahv-lp-batch — D-LP-LIST). This site dir is the
 // factory home of the ayurvedichealingvillage.com rebuild; TONIGHT it ships
@@ -21,16 +27,118 @@ import type { NextConfig } from "next";
 //   /pain-management.html                     → /lp/pain-management
 //   /de/behandlung-in-kerala/                 → /lp/behandlung-in-kerala        (DE)
 //   /treatment-in-kerala.html                 → /lp/treatment-in-kerala
+//
+// SUPERSEDED (29 Sep 2026, SEO lane D-14): these legacy .html pages are now served 200 as indexable organic pages
+// and several rank (e.g. /panchkarma-treatment.html ~499 clicks per redirect-map.json). Arming this map would 301
+// ranking pages into noindex /lp/ pages. Do NOT arm it: route ads to /lp/ by changing the ad's final URL (Vikash,
+// per URL), never by redirecting the ranking page (BUILD DECISION MATRIX rule 2).
+// STAGING LOCK (WOPS-AHV-ENGLISH-STAGING-BUILD-20260915-001). The English
+// candidate lane is a review build. X-Robots-Tag is the authoritative
+// no-index control here because the approved design writes its own <head> at
+// runtime (the family renderers call applyHead with the source's
+// "index, follow"): a response header is the one directive page JavaScript
+// cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
+// when the owner takes this to production.
+const IS_STAGING = process.env.AHV_STAGING !== "0";
+
+/**
+ * PROTECTION MAP — the twelve legacy URLs the owner ruled 301 on 2026-09-19
+ * ("make all these pages 301"). The map itself, with a reason and the measured
+ * Search Console figures per URL, is english-candidate/redirect-map.json; this
+ * only turns it into routes so the fate lives in ONE place and the reasons
+ * travel with it.
+ *
+ * 301 explicitly rather than `permanent: true`, which emits 308. Google treats
+ * the two the same, but the owner asked for 301 and substituting a different
+ * status code is not the agent's call.
+ *
+ * Every source measures zero clicks and every target is an existing approved
+ * route, so nothing that ranks is being moved into a thin page (CLAUDE.md
+ * BUILD DECISION MATRIX rule 2). test/redirect-map.test.mjs asserts the map's
+ * integrity per URL — sources real, targets real, no chains, single hop.
+ */
+interface RedirectRule {
+  to: string;
+  reason: string;
+  gsc: { clicks: number | null; impressions: number | null };
+}
+interface RedirectMap {
+  statusCode: number;
+  redirects: Record<string, RedirectRule>;
+}
+const REDIRECT_MAP = JSON.parse(
+  readFileSync(join(process.cwd(), "english-candidate/redirect-map.json"), "utf8"),
+) as RedirectMap;
+
 const nextConfig: NextConfig = {
+  // Keep dependency tracing inside this monorepo on Windows and macOS.
+  outputFileTracingRoot: join(process.cwd(), "../.."),
+  // Static media is served from Vercel's static output, not read by page functions.
+  // Keep JSON/JS datasets and SSR snapshots in the trace for dynamic rendering.
+  outputFileTracingExcludes: {
+    "/*": [
+      "./public/**/*.{webp,png,jpg,jpeg,gif,svg,ico,avif,mp4,webm,pdf,woff,woff2,ttf,otf}",
+      "./public/ahv/l10n/*/views/!(ahv-page-faqs-and-downloads-desktop).json",
+    ],
+  },
+  // The approved content, its canonicals, the sitemap and the legacy WordPress
+  // URLs that hold the rankings ALL use a trailing slash. Next's default is the
+  // opposite, so before this line 238 of 252 routes answered 308 and redirected,
+  // 228 of 230 canonicals pointed at a URL that redirected away from the
+  // indexable one, and 23,403 of 23,669 internal links (98.9%) were a redirect
+  // hop. One line aligns served URL, canonical, sitemap, internal link and
+  // legacy URL -- and matters most at the DNS flip, when every ranked URL would
+  // otherwise land on a redirect.
+  trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
-  async redirects() {
+  async rewrites() { return [{ source: "/documents/", destination: "/documents/index.html" }]; },
+  async headers() {
+    // The payload URLs are stable across deployments; they are not content-addressed.
+    // Revalidate with ETags so returning visitors receive updated views and consent UI.
+    const assets = {
+      source: "/ahv/:path*",
+      headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+    };
+    const documents = { source: "/documents/:path*.pdf", headers: [{ key: "Content-Type", value: "application/pdf" }, { key: "Cache-Control", value: "public, max-age=86400" }] };
+    if (!IS_STAGING) return [assets, documents];
     return [
-      // Interim only: the factory site has no organic homepage yet, and the
-      // factory spec suite exercises "/" — route it to the golden LP. The
-      // KTAHV rebuild replaces this with the real homepage.
-      { source: "/", destination: "/lp/panchkarma-treatment", permanent: false },
+      assets, documents,
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive, noimageindex" },
+        ],
+      },
     ];
   },
+  async redirects() {
+    // The twelve routes of 2026-09-19 carry the trailing slash the whole site is
+    // normalised to (trailingSlash: true above), so the served URL and the
+    // redirect source are the same string and no request pays two hops.
+    //
+    // The two `legacy: true` entries of 2026-09-20 are .html files, not
+    // directories, and trailingSlash leaves an extension alone - so they are
+    // also a single hop, just by the other rule. They are ad-landing URLs that
+    // were never in the manifest: unlisted in the sitemap and linked from no
+    // page on the live site, which is why nothing surfaced them until now.
+    return [{source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+      source,
+      destination: rule.to,
+      statusCode: REDIRECT_MAP.statusCode,
+    })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 })),
+    // Legacy German/French/Russian URLs of the WordPress site that the locale
+    // lane does not serve in place (l10n/routes.json, generated from the verified
+    // l10n/legacy-map.json): one 301 hop each. Case-only variants are NOT here -
+    // custom-route matching is case-insensitive, so they would match the served
+    // lowercase page and loop; middleware.ts lower-cases those instead.
+    ...Object.entries((l10nRoutes as unknown as { redirects: Record<string, { to: string }> }).redirects)
+      .filter(([source, rule]) => source.toLowerCase() !== rule.to.toLowerCase())
+      .map(([source, rule]) => ({ source, destination: rule.to, statusCode: 301 as const }))];
+  },
+  // The interim "/" -> /lp/panchkarma-treatment redirect is GONE: the approved
+  // English homepage now exists at "/" (app/(english)/page.tsx), which is the
+  // replacement its own comment anticipated. The commented legacy -> /lp/
+  // cutover map above stays commented; nothing about the live Ads URLs changes.
 };
 
 export default nextConfig;

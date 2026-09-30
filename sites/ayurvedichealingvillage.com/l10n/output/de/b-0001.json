@@ -1,0 +1,197 @@
+{
+ "batchId": "b-0001",
+ "sourceSetHash": "eef18c44c17f8918205ca407adb10b382dc55d07351ba427f9abd7d084f523a2",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_a118c84bbeecaf94e3da",
+   "sourceHash": "a118c84bbeecaf94e3dac275ee244c4937af45cc36d41251e0fd4d47a2d4b8ef",
+   "text": "Gesundheit durch Ayurveda | seit 1908",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3b398e64e4b116f43832",
+   "sourceHash": "3b398e64e4b116f438324300e3d62af81d41e30cc272b3803efb95bcc4e11337",
+   "text": "III/73 Palayamkadu, P.O. Olassery, Kodumbu,[[TAG_1]]Distrikt Palakkad – 678551, Kerala, Indien",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Postal address: place names kept verbatim; only 'District' and 'India' localised (Distrikt, Indien). Revert to the English form if the owner wants the postal address kept exactly as in English."
+   ]
+  },
+  {
+   "id": "t_3b73900b8d29f963dece",
+   "sourceHash": "3b73900b8d29f963dece78edd4bd9529d855e50f2a3fcc39b3d66cd657630905",
+   "text": "Entdecken",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2aaf56d3ce2b825c6f25",
+   "sourceHash": "2aaf56d3ce2b825c6f25e80d4633366b7d7a06d6f577e0c05f8008febcdd37c9",
+   "text": "[[OPEN_1]]Ayurveda-Behandlung[[CLOSE_1]] [[OPEN_2]]Villen[[CLOSE_2]] [[OPEN_3]]Yoga- & Meditationsausbildung[[CLOSE_3]] [[OPEN_4]]Ayurveda-Ausbildungsprogramm[[CLOSE_4]] [[OPEN_5]]Ayurvedische Küche[[CLOSE_5]] [[OPEN_6]]Unsere Produkte[[CLOSE_6]] [[OPEN_7]]Einrichtungen im Village[[CLOSE_7]] [[OPEN_8]]Angebote[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d4a33d5b78bccebe3f16",
+   "sourceHash": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954",
+   "text": "Mehr erfahren",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d3adbc173f2b2185a48f",
+   "sourceHash": "d3adbc173f2b2185a48fce80116144db307906d0fac40f75450ee8502ba41a60",
+   "text": "[[OPEN_1]]Über uns[[CLOSE_1]] [[OPEN_2]]Wissenszentrum[[CLOSE_2]] [[OPEN_3]]Mediengalerie[[CLOSE_3]] [[OPEN_4]]Auszeichnungen[[CLOSE_4]] [[OPEN_5]]Bewertungen[[CLOSE_5]] [[OPEN_6]]Anreise[[CLOSE_6]] [[OPEN_7]]FAQs & Downloads[[CLOSE_7]] [[OPEN_8]]Kontakt[[CLOSE_8]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_d47d7cb0e4f8fd2be5ee",
+   "sourceHash": "d47d7cb0e4f8fd2be5ee07826694c18917d83ca77d0a01698582d05f432db996",
+   "text": "Mehr",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_feb29c0610996521852f",
+   "sourceHash": "feb29c0610996521852f5057554d3cadbbd08df6b21673c3854df1bc3e7cf90f",
+   "text": "[[OPEN_1]]Ambulanz (ohne Termin)[[CLOSE_1]] [[OPEN_2]]Behandlung & Ausbildung[[CLOSE_2]] [[OPEN_3]]Yoga- & Ayurveda-Retreats[[CLOSE_3]] [[OPEN_4]]Yoga- & Meditationspakete[[CLOSE_4]] [[OPEN_5]]CSR[[CLOSE_5]] [[OPEN_6]]Unsere Partner[[CLOSE_6]] [[OPEN_7]]Sehenswürdigkeiten[[CLOSE_7]] [[OPEN_8]]Feste[[CLOSE_8]] [[OPEN_9]]Fotogalerie[[CLOSE_9]] [[OPEN_10]]Karriere[[CLOSE_10]] [[OPEN_11]]Jetzt bewerben[[CLOSE_11]] [[OPEN_12]]Ayurveda-Links[[CLOSE_12]] [[OPEN_13]]Archiv[[CLOSE_13]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'OPD (Walk-in)' rendered as 'Ambulanz (ohne Termin)' (outpatient department, no appointment needed)."
+   ]
+  },
+  {
+   "id": "t_f2fdd1ad10bf2c7a2ade",
+   "sourceHash": "f2fdd1ad10bf2c7a2adeaf18b761f36cb56f6f69dc4080d4342d3d005cc5288d",
+   "text": "Bleiben Sie in Kontakt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_aba2397add2c185fcee5",
+   "sourceHash": "aba2397add2c185fcee59562d0d9f73676969fe57dbfb2a177005e9cf916f0a1",
+   "text": "[[OPEN_1]]+91 9555 156 156[[CLOSE_1]] [[OPEN_2]]info@kairali.com[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Contains only a phone number and an email address, which stay unchanged.",
+   "issues": []
+  },
+  {
+   "id": "t_d05a6fb89f0f3b609a33",
+   "sourceHash": "d05a6fb89f0f3b609a3386f91db5fb0ddce666b641858d7e31bd44a7f3330c56",
+   "text": "Newsletter — Programme & saisonale Detox-Kalender",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f2488fd4ef4adbc6ac61",
+   "sourceHash": "f2488fd4ef4adbc6ac61300083f2c33980e48bb4bbf3c540ad760d61fc36f420",
+   "text": "E-Mail-Adresse",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cc0e38da9c41790bffef",
+   "sourceHash": "cc0e38da9c41790bffef1b88af32d39ac285edce93da766810edc237cb2f1625",
+   "text": "Abonnieren",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6afe39e8acd39632ffd2",
+   "sourceHash": "6afe39e8acd39632ffd2d6dbe06e330d65b48cf48066583999df50c7a4c8257c",
+   "text": "Mit Ihrer Anmeldung erklären Sie sich einverstanden, Neuigkeiten von Kairali und Informationen zu unseren Programmen zu erhalten. Sie können sich jederzeit abmelden. [[OPEN_1]]Datenschutzerklärung[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "This is newsletter consent text. The legal/consent wording should be checked by the owner before it goes live."
+   ]
+  },
+  {
+   "id": "t_d7402d72681c799b67ef",
+   "sourceHash": "d7402d72681c799b67ef5a05c8eef355f4ec9f7685618defad944a3e3e677204",
+   "text": "[[OPEN_1]]Jetzt anfragen[[CLOSE_1]][[OPEN_2]]Aufenthalt buchen[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eee9a50a2d06519b78f8",
+   "sourceHash": "eee9a50a2d06519b78f81028b00bf6a19724f71550fd05edb3926cf37922634d",
+   "text": "[[OPEN_1]]+91 9555 156 156[[CLOSE_1]] [[OPEN_2]]info@kairali.com[[CLOSE_2]] [[OPEN_3]]Mit Priya chatten[[CLOSE_3]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e5471c36a41aa153f366",
+   "sourceHash": "e5471c36a41aa153f36675bcd18fe5eab1fd79ce6f48e313ea564fbfd8528fab",
+   "text": "Newsletter — Behandlungsprogramme & saisonale Detox-Kalender",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_db1c22e1268e0231c001",
+   "sourceHash": "db1c22e1268e0231c00143b0e19fc3c8bb8252c971a9437af759af0fd82df859",
+   "text": "© 1908 — [[VAR_1]] Kairali — The Ayurvedic Healing Village.",
+   "status": "translated",
+   "unchangedReason": "Copyright line made up of a symbol, a year, a variable and the brand name. It reads the same in German.",
+   "issues": []
+  },
+  {
+   "id": "t_d41f5b4977ee05c6b61b",
+   "sourceHash": "d41f5b4977ee05c6b61b3b5f054784628f5cd1cbe06a82a5484d1e6de6eefe85",
+   "text": "Facebook",
+   "status": "translated",
+   "unchangedReason": "Brand name.",
+   "issues": []
+  },
+  {
+   "id": "t_bad57ef7837c8e6bf99c",
+   "sourceHash": "bad57ef7837c8e6bf99c2a5935cc9d6fe5324a53d88744ad5551db0e46b03cd6",
+   "text": "Instagram",
+   "status": "translated",
+   "unchangedReason": "Brand name.",
+   "issues": []
+  },
+  {
+   "id": "t_fb7accfff8c6f8ea9b03",
+   "sourceHash": "fb7accfff8c6f8ea9b03c91ee5576d0d08080e9ba35918d801aaeb6020dbc88c",
+   "text": "YouTube",
+   "status": "translated",
+   "unchangedReason": "Brand name.",
+   "issues": []
+  },
+  {
+   "id": "t_dd84425b72da12c6c828",
+   "sourceHash": "dd84425b72da12c6c828339ce814342daceac705b50d42e377e1acebf8f2320b",
+   "text": "LinkedIn",
+   "status": "translated",
+   "unchangedReason": "Brand name.",
+   "issues": []
+  },
+  {
+   "id": "t_4b68ab3847feda7d6c62",
+   "sourceHash": "4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015",
+   "text": "X",
+   "status": "translated",
+   "unchangedReason": "Brand name (the X social network).",
+   "issues": []
+  }
+ ]
+}

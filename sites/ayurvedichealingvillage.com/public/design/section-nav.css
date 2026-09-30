@@ -1,0 +1,197 @@
+/* AHV — the shared section rail (owner, 23 Sep 2026: one left-side navigation
+ * for Knowledge Centre, About Us, Things to Do, Attractions, Village
+ * Facilities and the other content sections; mobile- and desktop-friendly and
+ * readable by an older visitor).
+ *
+ * Markup is built by section-nav.js from public/design/section-nav.data.js
+ * (tools/build-section-nav.mjs). Three placements, one look:
+ *   grid   — the rail is a direct child of <main>; main becomes a 300px + 1fr
+ *            grid from 1024px up. Title and hero span both columns (order 0),
+ *            the rail sits in column 1 (order 1) and spans every content row,
+ *            content follows in column 2 (order 2), the closing "Where we
+ *            are"/"Guidance" blocks span both again (order 3).
+ *   inline — the article family already has a left column: the rail replaces
+ *            the old disclosure menu in place.
+ *   toc    — the attractions family keeps its "On this page" list; the rail
+ *            sits under it in the same column.
+ * Under 1024px the rail is a <details> bar under the page title: one 56px
+ * row "In this section · <Section>", tap to open. Every row is ≥48px, 17px
+ * type, the current page is bold with a gold bar, branches have separate expand/collapse buttons
+ * on both desktop and mobile, and a rail taller than the window scrolls
+ * inside its own box so no link is ever out of reach.
+ * Tokens are the site's own. */
+
+nav[data-ahv-section-nav] {
+  --rail-paper:#F7F4EA; --rail-raise:#FFFFFF; --rail-ink:#2A2118; --rail-muted:#75695A;
+  --rail-hair:#E4DCC8; --rail-gold:#C1882C; --rail-brown:#5A4420; --rail-green:#006038;
+  box-sizing:border-box; min-width:0; max-width:100%;
+  font-family:Mulish,system-ui,sans-serif; font-size:17px; line-height:1.35; color:var(--rail-ink);
+  margin:0 0 28px;
+}
+nav[data-ahv-section-nav] * { box-sizing:border-box; }
+nav[data-ahv-section-nav] details { border:1px solid var(--rail-hair); border-top:3px solid var(--rail-gold); border-radius:4px; background:var(--rail-raise); }
+nav[data-ahv-section-nav] summary {
+  list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  min-height:56px; padding:10px 18px; margin:0;
+}
+nav[data-ahv-section-nav] summary::-webkit-details-marker { display:none; }
+nav[data-ahv-section-nav] summary:focus-visible { outline:3px solid #6B7726; outline-offset:2px; }
+nav[data-ahv-section-nav] .ahv-rail-kicker { font-size:12px; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:var(--rail-muted); }
+nav[data-ahv-section-nav] .ahv-rail-name { font-family:Marcellus,Georgia,serif; font-size:21px; line-height:1.25; color:var(--rail-ink); }
+nav[data-ahv-section-nav] .ahv-rail-chev { margin-left:auto; width:12px; height:12px; border-right:2px solid var(--rail-brown); border-bottom:2px solid var(--rail-brown); transform:rotate(45deg); transition:transform .2s; flex:none; }
+nav[data-ahv-section-nav] details[open] .ahv-rail-chev { transform:rotate(225deg); }
+nav[data-ahv-section-nav] .ahv-rail-body { padding:4px 10px 12px; }
+nav[data-ahv-section-nav] ul { list-style:none; margin:0; padding:0; }
+nav[data-ahv-section-nav] ul ul { padding-left:18px; border-left:1px solid var(--rail-hair); margin-left:14px; }
+nav[data-ahv-section-nav] li { margin:0; padding:0; display:block; list-style:none !important; }
+#ahv-design-root main nav[data-ahv-section-nav] li::marker { content:none !important; }
+nav[data-ahv-section-nav] a, nav[data-ahv-section-nav] .ahv-rail-plain {
+  display:block; min-height:48px; padding:12px 12px 12px 14px; border-radius:3px;
+  color:var(--rail-ink); text-decoration:none; font-size:17px; line-height:1.35;
+  border-left:3px solid transparent;
+}
+nav[data-ahv-section-nav] .ahv-rail-plain { color:var(--rail-muted); font-weight:700; font-size:14px; letter-spacing:1.2px; text-transform:uppercase; min-height:40px; padding-top:14px; }
+nav[data-ahv-section-nav] a:hover { color:var(--rail-green); text-decoration:underline; text-underline-offset:3px; }
+nav[data-ahv-section-nav] a:focus-visible { outline:3px solid #6B7726; outline-offset:-3px; }
+nav[data-ahv-section-nav] a[aria-current="page"] { font-weight:800; color:var(--rail-brown); background:var(--rail-paper); border-left-color:var(--rail-gold); }
+nav[data-ahv-section-nav] a.ahv-rail-hub { font-family:Marcellus,Georgia,serif; font-size:18.5px; border-bottom:1px solid var(--rail-hair); border-radius:0; margin-bottom:4px; }
+nav[data-ahv-section-nav] a.ahv-rail-hub[aria-current="page"] { border-bottom-color:var(--rail-hair); }
+nav[data-ahv-section-nav] .ahv-rail-open > a:not([aria-current]) { font-weight:700; }
+nav[data-ahv-section-nav] .ahv-rail-count { color:var(--rail-muted); font-weight:400; font-size:15px; white-space:nowrap; }
+
+/* ---- phone and tablet: a closed bar under the title ---------------------- */
+@media (max-width:1023px) {
+  nav[data-ahv-section-nav] { width:min(1220px,94%); margin:12px auto 22px; }
+  main[data-ahv-rail="inline"] nav[data-ahv-section-nav], main[data-ahv-rail="toc"] nav[data-ahv-section-nav] { width:100%; }
+  nav[data-ahv-section-nav] .ahv-rail-body { max-height:70vh; overflow:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+}
+
+/* ---- desktop: the rail is always open, and sticks while it fits -------- */
+@media (min-width:1024px) {
+  nav[data-ahv-section-nav] details { position:sticky; top:92px; max-height:calc(100vh - 108px); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+
+  main[data-ahv-rail="grid"] {
+    display:grid !important;
+    grid-template-columns:300px minmax(0,1fr) !important;
+    column-gap:40px !important;
+    width:min(1220px,94%) !important;
+    margin:0 auto !important;
+    align-items:start !important;
+    overflow-x:visible !important;
+  }
+  main[data-ahv-rail="grid"] > * { grid-column:1 / -1; min-width:0; }
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="full"] { grid-column:1 / -1; order:0; }
+  main[data-ahv-rail="grid"] > nav[data-ahv-section-nav] { grid-column:1; order:1; align-self:stretch; margin:0 0 26px; }
+  /* breathing room between a full-width hero and the two columns under it */
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="full"]:not(:first-child) { margin-bottom:28px !important; }
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] { grid-column:2; order:2; }
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="tail"] { grid-column:1 / -1; order:3; }
+  /* inner containers were sized for a full-width main; inside the grid they fill their cell */
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"][style*="min(1220px"],
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] > [style*="min(1220px"],
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="full"][style*="min(1220px"] { width:100% !important; }
+  /* body images stay inside the content column */
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] img {
+    max-width:100% !important; margin-left:0 !important; margin-right:0 !important; left:auto !important; transform:none !important;
+  }
+  main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] [style*="width:100vw"], main[data-ahv-rail="grid"] > [data-ahv-rail-col="2"] [style*="width: 100vw"] { width:100% !important; }
+  /* the attractions family: the rail sits under "On this page", the article spans both rows */
+  main[data-ahv-rail="toc"] nav[data-ahv-section-nav] { margin-top:22px; }
+}
+
+/* Independent, keyboard-accessible branch controls on every viewport. */
+nav[data-ahv-section-nav] .ahv-rail-row { display:flex; align-items:stretch; }
+nav[data-ahv-section-nav] .ahv-rail-row > a,
+nav[data-ahv-section-nav] .ahv-rail-row > .ahv-rail-plain { flex:1; min-width:0; overflow-wrap:anywhere; }
+nav[data-ahv-section-nav] .ahv-rail-toggle {
+  display:flex; align-items:center; justify-content:center; flex:0 0 44px;
+  min-width:44px; min-height:48px; padding:0; border:0; border-radius:3px;
+  background:transparent; color:var(--rail-green); font:700 23px Mulish, sans-serif; cursor:pointer;
+}
+nav[data-ahv-section-nav] .ahv-rail-toggle:hover { background:var(--rail-paper); }
+nav[data-ahv-section-nav] .ahv-rail-toggle:focus-visible { outline:3px solid #6B7726; outline-offset:-3px; }
+nav[data-ahv-section-nav] .ahv-rail-children[hidden] { display:none !important; }
+@media (prefers-reduced-motion:reduce) {
+  nav[data-ahv-section-nav] .ahv-rail-chev { transition:none; }
+}
+@media (min-width:1024px) {
+  main[data-ahv-rail="toc"] > div:has(> nav[data-ahv-section-nav]),
+  main[data-ahv-rail="inline"] > div:has(> nav[data-ahv-section-nav]) {
+    display:grid !important; grid-template-columns:300px minmax(0,1fr) !important; gap:40px !important;
+  }
+  main[data-ahv-rail="inline"] > div > nav[data-ahv-section-nav] { width:300px; }
+  main[data-ahv-rail="inline"] > div:has(> nav[data-ahv-section-nav]) > article { max-width:100% !important; }
+}
+
+/* A single section rail, with in-page destinations across the top. */
+#ahv-design-root main[data-ahv-rail="page-bar"] { display:block !important; }
+#ahv-design-root nav[data-ahv-page-bar] {
+  width:min(1220px,94%) !important; margin:24px auto 0 !important;
+  padding:12px 16px !important; box-sizing:border-box;
+  background:#F7F4EA; border:1px solid #E0D7C4; border-radius:4px;
+}
+#ahv-design-root nav[data-ahv-page-bar] h2 { margin:0 0 6px !important; }
+#ahv-design-root nav[data-ahv-page-bar] ol {
+  display:flex !important; flex-direction:row !important; gap:8px 20px;
+  overflow-x:auto; margin:0 !important; padding:0 !important; border:0 !important;
+  list-style:none; scrollbar-width:thin;
+}
+#ahv-design-root nav[data-ahv-page-bar] li { flex:0 0 auto; border:0 !important; }
+#ahv-design-root nav[data-ahv-page-bar] a { min-height:44px !important; white-space:nowrap; }
+#ahv-design-root [data-ahv-reader-columns] { padding-top:28px !important; }
+#ahv-design-root [data-ahv-reader-columns] > article { min-width:0; max-width:100% !important; }
+@media(min-width:1024px) {
+  #ahv-design-root [data-ahv-reader-columns] { display:grid !important; grid-template-columns:300px minmax(0,1fr) !important; gap:40px !important; }
+}
+@media(max-width:1023px) {
+  #ahv-design-root [data-ahv-reader-columns] { display:block !important; }
+  #ahv-design-root [data-ahv-reader-columns] > nav[data-ahv-section-nav] { width:100%; margin:0 0 24px; }
+}
+
+/* Editorial images keep their proportions inside the section rail. */
+#ahv-design-root main[data-ahv-rail] article img:not([class]),
+#ahv-design-root main[data-ahv-rail] [data-ahv-rail-col="2"] img[data-source-pointer] {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:480px; object-fit:contain !important;
+  margin-left:0 !important; margin-right:0 !important;
+}
+/* Comparable source-labelled photo cards use a consistent frame. */
+#ahv-design-root[data-ahv-route^="/things-to-do"] main[data-ahv-rail] [data-source-card] img[data-source-pointer] {
+  width:100% !important; height:auto !important; aspect-ratio:8 / 5;
+  max-height:none; object-fit:cover !important;
+}
+#ahv-design-root main[data-ahv-rail] article img[src*="/house-rules/"] {
+  display:block; width:min(100%,560px) !important; height:auto !important;
+  max-height:none; object-fit:contain !important; margin:0 auto !important;
+}
+#ahv-design-root main[data-ahv-rail] figure:has(> img[src*="/house-rules/"]) {margin:28px 0 36px !important;}
+@media(max-width:600px) {
+  #ahv-design-root main[data-ahv-rail] article img:not([class]),
+  #ahv-design-root main[data-ahv-rail] [data-ahv-rail-col="2"] img[data-source-pointer] {max-height:360px;}
+  #ahv-design-root[data-ahv-route^="/things-to-do"] main[data-ahv-rail] [data-source-card] img[data-source-pointer],
+  #ahv-design-root main[data-ahv-rail] article img[src*="/house-rules/"] {max-height:none;}
+}
+/* A portrait poster is not a panoramic hero: show it complete at a readable\n   size without letting it consume multiple screens. */
+#ahv-design-root main[data-ahv-rail] > [data-ahv-rail-col="full"] img[data-source-pointer] {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:460px; object-fit:contain !important;
+  margin-left:auto !important; margin-right:auto !important;
+}
+#ahv-design-root main[data-ahv-rail] img[src$="/kar5-19.webp"] {
+  width:auto !important; height:auto !important; max-width:100% !important;
+  max-height:460px; object-fit:contain !important; margin-inline:auto !important;
+}
+/* Card headings should not inherit long-article section spacing. */
+#ahv-design-root main[data-ahv-rail] [data-source-card] {gap:14px !important;}
+#ahv-design-root main[data-ahv-rail] [data-source-card] > div:has(img),
+#ahv-design-root main[data-ahv-rail] [data-source-card] > h3,
+#ahv-design-root main[data-ahv-rail] [data-source-card] > p {margin:0 !important;}
+#ahv-design-root main[data-ahv-rail] [data-source-card] > h3 {min-height:0 !important; line-height:1.35 !important;}
+
+/* Product-family section navigation lives in the header; do not reserve its old right column. */
+#ahv-design-root[data-ahv-family="ahv-template-product-family"] main {
+  grid-template-columns:minmax(0,1fr) !important;
+}
+#ahv-design-root[data-ahv-family="ahv-template-product-family"] main > aside[aria-labelledby="rail-h"] {
+  display:none !important;
+}

@@ -1,0 +1,10 @@
+{
+  "_why": "Per-route hero photographs for article pages whose WordPress source reused the paddy-field aerial (our-story.png) as the hero (owner, 23 Sep 2026: stop using duplicates; /kair-by-kairali/ is broken). Applied by tools/repair-article-heroes.mjs. Every src is a file already served by the site; every alt is the record's own alt text for that photograph (english-candidate/record-images.json) — nothing invented. Routes not listed keep their record's hero; the gallery rebuild's candidate manifest (docs/media/ahv-gallery-candidates-2026-09-23.json) is the source for the next batch.",
+  "routes": {
+    "/kair-by-kairali/": {
+      "src": "/ahv/assets/img/products/kairali-kairoil-01.webp",
+      "alt": "Kairoil — Kairali Ayurvedic hair oil (product photograph)",
+      "source": "image bank products/kairali-kairoil-01.jpg (KAPPL catalogue export, candidate manifest 2026-09-23; the served record image is only 400px wide)"
+    }
+  }
+}

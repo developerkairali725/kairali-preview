@@ -1,0 +1,261 @@
+/* AHV — directions page layout (/how-to-reach/).
+ *
+ * WHY. The page is served by the generic article-reader template: one stock
+ * photo and a single 91-block prose column. The content underneath is
+ * well-structured (eyebrows, h2/h3 groups, a steps list, a "Good to know"
+ * grid, a distances table, addresses, a 10-question FAQ, a closing CTA), and
+ * the reader flattens all of it. This lays that structure out with the
+ * homepage's own tokens. No word of content changes.
+ *
+ * HOW IT TARGETS. The renderer emits no classes, only stable
+ * data-source-pointer paths, so every rule below keys on a pointer. Card and
+ * band containers carry no pointer at all, so boot.ts tags them
+ * (.ahv-band / .ahv-card / .ahv-grid / .ahv-facts) by climbing from the
+ * pointer to its own container — this file only styles those tags.
+ *
+ * TOKENS are the homepage's: paper #F7F4EA · ink #2A2118 · muted #75695A ·
+ * gold #C1882C (eyebrows) · gold button #EEB41E · brown #5A4420 · green
+ * #006038 · Marcellus display over Mulish body · 1.2px-tracked eyebrows.
+ * Served from public/design/, not public/ahv/, so a design re-import cannot
+ * erase it. */
+
+[data-ahv-route="/how-to-reach/"] { --paper:#F7F4EA; --raise:#FFFFFF; --ink:#2A2118; --muted:#75695A; --hair:#E4DCC8;
+       --gold:#C1882C; --gold-btn:#EEB41E; --brown:#5A4420; --green:#006038; --focus:#6B7726; }
+
+/* ---- rhythm & type ---------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] { font-size:17px !important; line-height:1.65 !important; color:var(--ink) !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main h2[data-source-pointer] { font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:clamp(26px,3vw,34px) !important;
+  line-height:1.15 !important; color:var(--ink) !important; margin:6px 0 18px !important; text-wrap:balance !important; }
+[data-ahv-route="/how-to-reach/"] main h3[data-source-pointer] { font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:21px !important; line-height:1.25 !important;
+  color:var(--ink) !important; margin:0 0 10px !important; }
+
+/* eyebrows: the first label of every section and every card */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer$="/c/1/c/1"] { font-family:Mulish,sans-serif !important; font-size:12px !important; font-weight:800 !important; letter-spacing:1.2px !important;
+  text-transform:uppercase !important; color:var(--gold) !important; margin:0 0 8px !important; }
+/* three pseudo-headings the source renders as paragraphs */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/1"],
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/9"],
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer="/sections/3/c/9/c/1/c/1/c/3/c/13"] { font-family:Marcellus,Georgia,serif !important; font-size:21px !important; line-height:1.25 !important;
+  color:var(--ink) !important; margin:30px 0 10px !important; max-width:none !important; }
+
+/* ---- hero -------------------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { display:block !important; width:100%; aspect-ratio:16/10; object-fit:cover;
+  border-radius:10px !important; margin:6px 0 34px !important; }
+@media (min-width:900px) { [data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { aspect-ratio:21/9; } }
+
+/* ---- bands (tagged by boot.ts) ---------------------------------------- */
+[data-ahv-route="/how-to-reach/"] .ahv-band { padding-block:36px; border-top:1px solid var(--hair); }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] { border-top:0; padding-top:0; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="9"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] {
+  background:var(--raise) !important; margin-inline:0 !important; padding-inline:20px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
+@media (min-width:900px) {
+  [data-ahv-route="/how-to-reach/"] .ahv-band { padding-block:56px; }
+  [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="9"], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] {
+    margin-inline:0; padding-inline:40px; border-radius:14px !important; border:1px solid var(--hair) !important; }
+}
+/* closing call to action: the one bold moment on the page */
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] { background:var(--brown) !important; color:var(--paper) !important; margin-inline:0 !important; padding:40px 20px !important;
+  border:0 !important; border-radius:12px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] h2[data-source-pointer], [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] p[data-source-pointer] { color:var(--paper) !important; }
+@media (min-width:900px) { [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] { margin-inline:0; padding:56px 48px !important; border-radius:14px !important; } }
+
+/* ---- cards & grids (tagged by boot.ts) -------------------------------- */
+[data-ahv-route="/how-to-reach/"] .ahv-grid { display:grid !important; grid-template-columns:1fr; gap:16px; margin:8px 0 22px !important; }
+@media (min-width:640px) { [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="2"], [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="3"] { grid-template-columns:1fr 1fr; } }
+@media (min-width:960px) { [data-ahv-route="/how-to-reach/"] .ahv-grid[data-ahv-cols="3"] { grid-template-columns:1fr 1fr 1fr; } }
+[data-ahv-route="/how-to-reach/"] .ahv-card { background:var(--raise) !important; border:1px solid var(--hair) !important; border-radius:10px !important; padding:22px 20px !important; min-width:0; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="5"] .ahv-card, [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="15"] .ahv-card { background:var(--paper) !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer] { font-size:16px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer]:last-child { margin-bottom:0 !important; }
+
+/* "Good to know" label / value pairs */
+[data-ahv-route="/how-to-reach/"] .ahv-facts { display:grid !important; grid-template-columns:1fr; gap:14px 24px; margin:8px 0 22px !important; }
+@media (min-width:560px) { [data-ahv-route="/how-to-reach/"] .ahv-facts { grid-template-columns:1fr 1fr; } }
+[data-ahv-route="/how-to-reach/"] .ahv-fact { border-inline-start:3px solid var(--gold); padding-inline-start:14px; }
+[data-ahv-route="/how-to-reach/"] .ahv-fact > p[data-source-pointer]:first-child { font-weight:800 !important; font-size:15px !important; margin:0 0 2px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-fact > p[data-source-pointer]:last-child { color:var(--muted) !important; font-size:15.5px !important; margin:0 !important; }
+
+/* ---- the link pairs that ran together into one sentence ---------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href^="https://wa.me"]),
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href^="tel:"]),
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer]:has(> a[href*="google.com/maps"]) { display:flex !important; flex-wrap:wrap; gap:12px; max-width:none !important; margin:18px 0 8px !important; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="https://wa.me"], [data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="tel:"], [data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href*="google.com/maps"] {
+  display:inline-flex !important; align-items:center; justify-content:center; min-height:48px; padding:0 22px !important; border-radius:6px !important;
+  font-family:Mulish,sans-serif !important; font-size:13.5px !important; font-weight:800 !important; letter-spacing:1.1px !important; text-transform:uppercase !important;
+  text-decoration:none !important; border:2px solid var(--brown) !important; color:var(--ink) !important; background:transparent !important; flex:1 1 220px; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a[href^="https://wa.me"] { background:var(--gold-btn) !important; border-color:var(--gold-btn) !important; }
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer] > a:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="19"] p[data-source-pointer] > a[href^="tel:"] { border-color:var(--paper) !important; color:var(--paper) !important; }
+
+/* ---- steps ------------------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] { list-style:none; counter-reset:ahv; padding:0 !important; margin:12px 0 22px !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] > li { counter-increment:ahv; position:relative; padding-inline-start:48px; margin-bottom:14px !important; font-size:16.5px !important; line-height:1.6 !important; }
+[data-ahv-route="/how-to-reach/"] main ol[data-source-pointer] > li::before { content:counter(ahv); position:absolute; inset-inline-start:0; top:0; width:34px; height:34px;
+  border-radius:50% !important; background:var(--gold-btn) !important; color:var(--ink) !important; font-weight:800 !important; font-size:14px !important; display:grid !important; place-items:center;
+  font-variant-numeric:tabular-nums; }
+[data-ahv-route="/how-to-reach/"] main ul[data-source-pointer] { padding-inline-start:22px; margin:10px 0 18px !important; max-width:68ch !important; }
+[data-ahv-route="/how-to-reach/"] main ul[data-source-pointer] > li { margin-bottom:6px !important; line-height:1.55 !important; }
+
+/* ---- distances table --------------------------------------------------- */
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] { display:block !important; overflow-x:auto; width:100%; border:1px solid var(--hair) !important; border-radius:10px !important; margin:14px 0 10px !important;
+  font-variant-numeric:tabular-nums; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] th { background:var(--brown) !important; color:var(--paper) !important; font-family:Mulish,sans-serif !important; font-size:12px !important; font-weight:800 !important;
+  letter-spacing:1px !important; text-transform:uppercase !important; text-align:start; padding:12px 14px !important; white-space:nowrap; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] td { padding:12px 14px !important; border-top:1px solid var(--hair); font-size:15.5px !important; vertical-align:top; }
+[data-ahv-route="/how-to-reach/"] main table[data-source-pointer] tr:nth-child(even) td { background:var(--paper) !important; }
+
+/* ---- FAQ (boot.ts splits the question from the answer) ----------------- */
+[data-ahv-route="/how-to-reach/"] main p[data-source-pointer^="/sections/3/c/17/c/1/c/"]:not([data-source-pointer$="/c/1"]):not([data-source-pointer$="/c/3"]) { max-width:none !important; padding:18px 0 !important; margin:0 !important;
+  border-top:1px solid var(--hair); }
+[data-ahv-route="/how-to-reach/"] .ahv-q { display:block !important; font-family:Marcellus,Georgia,serif !important; font-weight:400 !important; font-size:19px !important; line-height:1.3 !important; margin-bottom:6px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-a { display:block !important; color:var(--muted) !important; font-size:16px !important; line-height:1.6 !important; max-width:68ch !important; }
+
+/* ---- contact-us & enquiry: gold primary, matching the homepage ---------- */
+[data-ahv-route="/contact-us/"] a[data-dc-tpl="252"], [data-ahv-route="/enquiry-form/"] a[data-dc-tpl="252"] {
+  background:#EEB41E !important; border-color:#EEB41E !important; color:#2A2118 !important; }
+
+/* ---- consent notice must not sit on top of the last footer links ------- */
+@media (max-width:699px) { body:has(#ahv-consent) { padding-bottom:156px; } }
+
+/* Adjacent source runs the reader glues together ("nearest~62 km",
+ * "corridorCoimbatore–Kochi"): the second unclassed run is a detail line and
+ * sits on its own line beneath its label. No text is touched. */
+[data-ahv-route="/how-to-reach/"] .ahv-card > p[data-source-pointer] > span:not([class]) + span:not([class]),
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="7"] p[data-source-pointer] > span:not([class]) + span:not([class]) {
+  display:block !important; color:var(--muted) !important; font-size:15.5px !important; margin-top:2px !important; }
+/* Dead band between the hero and the first section. */
+[data-ahv-route="/how-to-reach/"] main img[data-source-pointer="/sections/1/c/1/c/0"] { margin-bottom:22px !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] { border-top:0 !important; padding-top:0 !important; margin-top:0 !important; }
+[data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > *:first-child, [data-ahv-route="/how-to-reach/"] .ahv-band[data-ahv-band="1"] > div:first-child > *:first-child { margin-top:0 !important; }
+
+/* ---- the four maps ----------------------------------------------------- */
+/* Injected into the shared article template by tools/repair-how-to-reach-maps.mjs
+   and hidden everywhere by default, because 129 routes share that template.
+   Only this page shows them. */
+[data-ahv-maps] { display:none !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps],
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] { display:block !important; }  /* /map/: the legacy location page shows the same four maps (23 Sep) */
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] h2,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] h2 {
+  font-family:Marcellus,Georgia,serif !important; font-weight:400 !important;
+  font-size:clamp(24px,2.2vw,30px) !important; color:#2A2118 !important;
+  margin:52px 0 10px !important; padding-top:18px !important;
+  border-top:1px solid #E4DCC8 !important;
+}
+/* The shared article template makes its first image a full-bleed hero and
+   the page's own rules size images too. Inside the maps grid neither applies:
+   each map is one cell, or every map paints 1280px wide and the page scrolls
+   sideways - measured. */
+/* SPECIFICITY, learned by measuring: the article template makes the page's
+   first image a full-bleed hero -
+     [data-ahv-family="article-reader"] main img:first-of-type   = (0,2,2)
+   and on this page the first image is the first MAP, so it painted 1280px
+   wide with a -435px left margin and the page scrolled sideways. Both rules
+   carry !important, so specificity decides. Chaining the two root attributes
+   here gives (0,3,1) and these win.
+
+   boot.ts tags containers on this page for the bands-and-cards layout and
+   re-lays them out, which was overriding the inline grid and painting each
+   map at the full 1280px. Pin the grid here so it wins. */
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:26px !important; align-items:end !important;
+  width:100% !important; max-width:100% !important; margin:22px 0 30px !important;
+  float:none !important;
+}
+@media (max-width:699px) {
+  [data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > div,
+  [data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > div {
+    grid-template-columns:1fr !important;
+  }
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figure,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] figure {
+  margin:0 !important; width:100% !important; max-width:100% !important; min-width:0 !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] img,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] img {
+  width:100% !important; max-width:100% !important;
+  margin-left:0 !important; border-radius:0 !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] > figure img {
+  height:auto !important; border-radius:4px !important;
+}
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] figcaption { margin-bottom:0 !important; }
+[data-ahv-route="/how-to-reach/"][data-ahv-family="article-reader"] [data-ahv-maps] p,
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] p {
+  font-size:17.5px !important; line-height:1.72 !important; color:#2A2118 !important; max-width:66ch !important;
+}
+
+/* /map/: the maps block is a direct child of a full-width main — give it the page column */
+[data-ahv-route="/map/"][data-ahv-family="article-reader"] [data-ahv-maps] { width:min(1220px,94%) !important; margin:32px auto 0 !important; }
+
+/* ---- enquiry family, content variant (OPD /walk-in-ayurveda-treatment/): large-desktop composition -----------------
+   Owner, 28 Sep 2026 (feedback-master-audit DESKTOP-SECONDARY-FAMILIES.md): the OPD page left the right side of large
+   screens empty. Measured (tools/desktop-space-audit.mjs, 1440px): 54% of the page height was content stopping at the
+   left 62% — a 693px prose column left-aligned in 1220px. Same editorial composition as the article-reader family:
+   section headings in a label column aligned with the H1 edge, prose at its reading measure beside them, the rates
+   table and any figure or image block spanning the full width. Only content blocks WITHOUT a form (the contact,
+   enquiry, apply and consultation variants are untouched); nothing added, removed or reordered; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) {
+    display:grid !important;
+    grid-template-columns:minmax(220px,1fr) minmax(0,693px) !important;
+    column-gap:clamp(48px,5vw,88px) !important;
+    align-items:start !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > * { grid-column:2 !important; min-width:0 !important; }
+  /* the page's section title spans the composition; the sub-sections' headings become the label column */
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h2 { grid-column:1 / -1 !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 {
+    grid-column:1 !important; max-width:20ch !important; margin-top:36px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + * { margin-top:40px !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > :is(table, figure, img, div:has(table), div:has(img), [style*="grid-template-columns"]) {
+    grid-column:1 / -1 !important;
+  }
+}
+
+/* ---- OPD: structured service / visit sections on large desktops (owner brief, 28 Sep 2026; parent R8 review) ----
+   The heading/prose split alone left long blank label-column runs. Same content, same order, deliberate structure:
+   a section whose body is a list of three or more short entries (the conditions consulted for, why patients choose
+   the OPD) becomes a full-width band — its heading across the top, the entries as a bounded grid of cards; every
+   other sub-section keeps its heading in the label column beside its prose. Nothing
+   added, removed or reworded; forms untouched; < 1180px unchanged. */
+@media (min-width:1180px) {
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3:has(+ ul > li:nth-child(3)) {
+    grid-column:1 / -1 !important; max-width:none !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) {
+    grid-column:1 / -1 !important; display:grid !important; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)) !important;
+    gap:14px 20px !important; list-style:none !important; padding:0 !important; max-width:none !important; margin-top:20px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li {
+    background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-top:3px solid #C1882C !important;
+    border-radius:4px !important; padding:14px 18px !important; margin:0 !important; list-style:none !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li::before,
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li::marker { content:none !important; display:none !important; }
+}
+/* OPD visit block (same brief): the timings read as an at-a-glance panel, and the long "How it works" walkthrough
+   runs as a full-width band in two reading columns instead of one tall column beside an empty label column.
+   Addressed by the dataset's stable source pointers, so every locale of the page gets the same structure. */
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main p[data-source-pointer="/sections/3/c/1/c/11"] {
+    background:#FFFDF7 !important; border:1px solid #E4DCC8 !important; border-left:3px solid #C1882C !important;
+    border-radius:4px !important; padding:18px 24px !important; max-width:52ch !important;
+  }
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main h3[data-source-pointer="/sections/3/c/1/c/13"] { grid-column:1 / -1 !important; max-width:none !important; }
+  #ahv-design-root[data-ahv-route="/walk-in-ayurveda-treatment/"] main p[data-source-pointer="/sections/3/c/1/c/15"] {
+    grid-column:1 / -1 !important; max-width:none !important; column-count:2 !important; column-gap:clamp(48px,5vw,88px) !important; margin-top:16px !important;
+  }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) { margin-left:0 !important; padding-left:0 !important; }
+  [data-ahv-family="enquiry"] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) > li { margin-left:0 !important; }
+}
+@media (min-width:1180px) {
+  #ahv-design-root[data-ahv-family="enquiry"][data-ahv-route] main > div > div:has(> p):has(> :is(h2,h3)):not(:has(form)) > h3 + ul:has(> li:nth-child(3)) { padding-inline-start:0 !important; padding-left:0 !important; }
+}

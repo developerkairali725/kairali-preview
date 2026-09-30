@@ -1,0 +1,189 @@
+{
+ "batchId": "b-0226",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_19d9abacb8ce66aa0d10",
+   "sourceHash": "19d9abacb8ce66aa0d107b3d523b543766d93490f52fbc9b6696c45c2bc16ffd",
+   "text": "ISO 9001:2015 인증서 — 2022",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2748f9533c431715a5b4",
+   "sourceHash": "2748f9533c431715a5b47a9254f421aa4dda80a61b3cb729ca983260c3de685e",
+   "text": "17February2022",
+   "status": "translated",
+   "unchangedReason": "Compact date data token; translating the month as '2월' adds a digit and fails numeric validation, so the source form is kept.",
+   "issues": [
+    "Date kept in source form; if a localized date display is wanted, it should be formatted by code (e.g. 2022년 2월 17일)."
+   ]
+  },
+  {
+   "id": "t_987672400e1af93e31cd",
+   "sourceHash": "987672400e1af93e31cd1369b9ad88436df50c219e6c90c137032cc287b5da1d",
+   "text": "16February2025",
+   "status": "translated",
+   "unchangedReason": "Compact date data token; translating the month as '2월' adds a digit and fails numeric validation, so the source form is kept.",
+   "issues": [
+    "Date kept in source form; if a localized date display is wanted, it should be formatted by code (e.g. 2025년 2월 16일)."
+   ]
+  },
+  {
+   "id": "t_3bcfe9ece91022761af7",
+   "sourceHash": "3bcfe9ece91022761af7f913858956b1084efad3ae20655adb5f85dec25f2900",
+   "text": "역사적 서한",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_09421fa997612190bd25",
+   "sourceHash": "09421fa997612190bd256de862b697a535b04a112880078c980f9e6fa884978e",
+   "text": "Form 1C 인증서",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c709329b84687b7f2060",
+   "sourceHash": "c709329b84687b7f20602b256fb943b154381c383b1b3d4db20a71ce63e80a9a",
+   "text": "아이브로 H6와 직무 H4는 문구를 그대로 유지한 단락 레이블로 바꿉니다. 이사 H2는 경영진 H2 아래의 H3로 바꿉니다. 창립자 초상 이름은 창립자 비전 H2 아래의 H3로 둘 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial/structure note rather than public copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_b39dfc9458279106d75c",
+   "sourceHash": "b39dfc9458279106d75ccea537b5353c56a6ed8eed87d337b628a1e58ba52a03",
+   "text": "빈 단락이나 목록 래퍼를 콘텐츠로 사용하지 말고, 의미 있는 인라인 링크는 유지하십시오.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than public copy; translated as-is."
+   ]
+  },
+  {
+   "id": "t_3376a762c80ef5f24f76",
+   "sourceHash": "3376a762c80ef5f24f76fb55f1c86186584e22f2207ac6c6a66611a2e3aa401e",
+   "text": "4분",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ab87ef66e42f9822d36f",
+   "sourceHash": "ab87ef66e42f9822d36fee1c5065a64bc6b18613146f35c6db74348c43a85a7b",
+   "text": "케랄라주 팔라카드의 고요한 환경 속에 자리한 Kairali — The Ayurvedic Healing Village는 단순한 웰니스 치유 공간을 넘어, 높은 수준의 아유르베다 건강 관리와 전인적 웰빙을 상징하는 곳으로 널리 인정받고 있습니다. Kairali가 수년간 받아 온 인증과 수상은 정통 아유르베다 요법과 최고 수준의 웰니스 경험을 제공하려는 변함없는 헌신을 보여 줍니다. 전통 아유르베다 가르침에 뿌리를 둔 유산 덕분에 Kairali는 전 세계의 전문가, 업계 리더, 건강에 관심 있는 이들로부터 존중과 신뢰를 얻어 왔습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'wellness retreat' rendered as '웰니스 치유 공간' per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_eda15ce4834ac303532b",
+   "sourceHash": "eda15ce4834ac303532bc6973df5ff8a5deb75d7dfceb9fc2cdf1bb450a01cf5",
+   "text": "strong",
+   "status": "translated",
+   "unchangedReason": "HTML tag name; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_849405d8cb9238d95e41",
+   "sourceHash": "849405d8cb9238d95e413effd256f41dcd6d239d8ba1d5eb465ba0255e0db730",
+   "text": "탁월함의 기준",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4baedca34115bb47a090",
+   "sourceHash": "4baedca34115bb47a09094a809f853d145fba5fd8589d5f5bd8650ec05ceb37a",
+   "text": "높은 기준, 친환경적인 운영, 최상의 서비스를 바탕으로 Kairali – The Ayurvedic Healing Village는 건강 및 웰니스 분야에서 하나의 기준을 세웠습니다. 이곳이 받은 인증은 그 수준과 진정성, 그리고 오랜 전통의 아유르베다 과학을 보존하려는 노력을 입증합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'The retreat’s' rendered as '이곳이' (this place) per the clinical language lock."
+   ]
+  },
+  {
+   "id": "t_08f8c09d0d00a1abf636",
+   "sourceHash": "08f8c09d0d00a1abf636b005e4015ded2cb0006b69a825ab9486f49b935f6f9e",
+   "text": "국제적으로 인정받는 인증",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_eea3c64ebc6128e5fcec",
+   "sourceHash": "eea3c64ebc6128e5fcec16f25f3c388c5ffe98bf285531832a2245e10bf2155c",
+   "text": "Kairali의 인증은 국제 안전 및 품질 기준을 준수하고 있음을 입증합니다. 주요 인증은 다음과 같습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00a9e4255a5b63067b76",
+   "sourceHash": "00a9e4255a5b63067b76cbfb9fd67f26bdb91be802d5ffcb177ec1b7a8d4c623",
+   "text": "li",
+   "status": "translated",
+   "unchangedReason": "HTML tag name; language-neutral code.",
+   "issues": []
+  },
+  {
+   "id": "t_c169fd6521328bc3e169",
+   "sourceHash": "c169fd6521328bc3e169a978c0df7fdeabae7cd99c4a5dc4ec5adee28c0cb5aa",
+   "text": "아유르베다 및 웰니스 업계 인증",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4bc01f480ebf57925e44",
+   "sourceHash": "4bc01f480ebf57925e44d8410de8a6754ddfcf1c0e620cead1feff824fb94d1f",
+   "text": "Kairali는 권위 있는 아유르베다 및 웰니스 협회로부터 인증을 받았으며, 이를 통해 그 운영 방식이 전통 아유르베다의 정통 방법론과 윤리 원칙에 부합하도록 하고 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_74040f16d17bfdb19273",
+   "sourceHash": "74040f16d17bfdb1927333063a2dc3ead652c4128ddbcf7edc3f41bbf91df247",
+   "text": "ISO 인증",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_1dc030daa62575f166ef",
+   "sourceHash": "1dc030daa62575f166efd3f3d6e357001cbffd87888469e9ed70c5dcc6565707",
+   "text": "Kairali의 ISO 인증은 운영 효율성, 위생, 고객 서비스 전반에서 세계적 수준의 기준을 유지하려는 노력을 보여 줍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c14b3d992c100fbc8bb7",
+   "sourceHash": "c14b3d992c100fbc8bb7c8bfefba57a8898cf7caace5d60d039bc5e32cb83b16",
+   "text": "Green Leaf 인증",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_986569708a8159f20770",
+   "sourceHash": "986569708a8159f20770e5377a32919c94ce7e5859c394fdf057bef036f7bf3a",
+   "text": "케랄라주 관광청이 수여하는 이 인증은 아유르베다 치료와 친환경 운영에서의 우수성을 인정한 것으로, 모범적인 아유르베다 치유 시설로서 Kairali의 역할을 보여 줍니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'model Ayurvedic retreat' rendered as '모범적인 아유르베다 치유 시설' per the clinical language lock."
+   ]
+  }
+ ]
+}

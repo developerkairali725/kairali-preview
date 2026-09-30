@@ -1,0 +1,223 @@
+{
+ "batchId": "b-0448",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_3285cec0b8bfac7386e9",
+   "sourceHash": "3285cec0b8bfac7386e9daf5a716aab414565359eceb600f075852281a6f92e8",
+   "text": "ご予約の日程変更",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (lead phrase); rendered as a noun phrase so the following fragment can complete it after a colon in Japanese word order."
+   ]
+  },
+  {
+   "id": "t_2c74c9763c42f1ebcd5a",
+   "sourceHash": "2c74c9763c42f1ebcd5a77233601b62ee13c9ce35a96768a024035d2b39997d5",
+   "text": "：追加料金なしで、双方が合意する日程に変更します。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the preceding noun-phrase lead."
+   ]
+  },
+  {
+   "id": "t_dcb1d3a1e24bb50c617b",
+   "sourceHash": "dcb1d3a1e24bb50c617b8964ae8db483925f76f4d5d93e89f0c8d4b310791c13",
+   "text": "お支払い済みの金額についてクレジットノートを発行し、発行日から一定の期間内に今後のご利用に充てていただけるようにします。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2afa4659eb60f9241df3",
+   "sourceHash": "2afa4659eb60f9241df34e06d9933d08dcce7c2f805b8b365426dc1770fb334b",
+   "text": "クレジットノートの発行",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (lead phrase); rendered as a noun phrase completed by the following fragment."
+   ]
+  },
+  {
+   "id": "t_06cf91ec02a45efd66f4",
+   "sourceHash": "06cf91ec02a45efd66f4564455484d1c6ecc2a056d2aa38328f5654342a50536",
+   "text": "：お支払い済みの金額が対象で、発行日から一定の期間内に今後のご利用に充てていただけます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the preceding noun-phrase lead."
+   ]
+  },
+  {
+   "id": "t_04c6f6808dc33ae1bb11",
+   "sourceHash": "04c6f6808dc33ae1bb11c413f0388f95b15ef7a9bf9656b65dcb25aee7e50efa",
+   "text": "例外的な場合には、運営側の承認を条件とし、発生した返金不可の費用を所定のとおり差し引いたうえで、返金を行います。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ff68bbe2e2386988281b",
+   "sourceHash": "ff68bbe2e2386988281bc43810bac0e9001f03f7e683e8c20d9bc648e9d222ee",
+   "text": "返金の実施",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment (lead phrase); rendered as a noun phrase completed by the following fragment."
+   ]
+  },
+  {
+   "id": "t_32a6345a93a26700043b",
+   "sourceHash": "32a6345a93a26700043b9a1188ce458bd281c5627ac8b9575d1891817a2ad82f",
+   "text": "：例外的な場合に限り、運営側の承認を条件とし、発生した返金不可の費用を所定のとおり差し引いたうえで行います。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment; completes the preceding noun-phrase lead."
+   ]
+  },
+  {
+   "id": "t_d751b2f3bc69fb5fc393",
+   "sourceHash": "d751b2f3bc69fb5fc393a5adbf6e081be9141607292014d95054ee5887072d93",
+   "text": "このような場合は、ご予約担当チームにご連絡いただき、利用可能な選択肢についてご相談ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered without an explicit subject per the banned-word rule."
+   ]
+  },
+  {
+   "id": "t_12bc9e9fffb5babce7db",
+   "sourceHash": "12bc9e9fffb5babce7dbae59f7755e9e73670c6a5ecc2270d1228e782296855d",
+   "text": "これらのポリシーへのご理解とご協力に感謝いたします。その他のお問い合わせやご不明な点がございましたら、サポートチームまでご連絡ください。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_325f5ed96c5f2a0f5ab0",
+   "sourceHash": "325f5ed96c5f2a0f5ab0c2c813151acd25d90df3c4e74208ed3bad492eeeae87",
+   "text": "強行法規上の権利と補足説明",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_507353c4685ea45af145",
+   "sourceHash": "507353c4685ea45af145c73f34fe6af2cdcf7341f590b7ecb0719af391cc32a8",
+   "text": "これらの条件は、法律で保障された患者または消費者の権利に優先するものではありません。見積書、料金表PDF、ウェブサイト上の条件が異なる場合は、お支払いの前に、書面で整合させるようチームにご依頼ください。また、返金が入金される時期は、銀行や決済事業者によっても異なります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a5723e1c796aac7d6626",
+   "sourceHash": "a5723e1c796aac7d6626a31dd72b792158391bd50bc9edd84ec369ff65c570b1",
+   "text": "Cookieポリシー | Kairali - The Ayurvedic Healing Village",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cec63b1e2110d4cf0284",
+   "sourceHash": "cec63b1e2110d4cf028466bd5ad68725ff9a341a434c9242fe271c278b80f2ec",
+   "text": "Kairali - The Ayurvedic Healing VillageがCookieをどのように使用し、利便性の向上、パフォーマンスの計測、コンテンツのパーソナライズを行っているかをご説明します。Cookieの設定はいつでも変更できます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_595194d787f621b8624d",
+   "sourceHash": "595194d787f621b8624dc6419770888e6689b4b9d6a0f12b74ad8a8524871488",
+   "text": "Cookieポリシー — 2026年9月25日更新",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a4784a9df2cfc884002e",
+   "sourceHash": "a4784a9df2cfc884002e924116da2305e15a96089f7d0a317e8fc1a18f3f1c7f",
+   "text": "Cookieおよび同様のブラウザストレージは、セキュリティの確保や選択内容の記憶に役立ち、必要な許可を得て有効化された場合には、ウェブサイトの利用状況の計測にも使われます。サイトを訪問したり閲覧を続けたりするだけでは、任意のCookieに同意したことにはなりません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5bf4a92fb60d2717ad12",
+   "sourceHash": "5bf4a92fb60d2717ad121c4d4630925427f6594ded43ec50a6dfa1c8c30065aa",
+   "text": "お客様の選択",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2a16c39354bf8fb5602f",
+   "sourceHash": "2a16c39354bf8fb5602f031708ae047823e8fa413362b1b1c1461497bee4a6fb",
+   "text": "Cookieのお知らせで「Accept」または「Decline」を選択してください。任意の計測を拒否しても、プログラム情報の閲覧や病院へのお問い合わせが妨げられることはありません。保存された選択を取り消し、任意の同意を拒否した状態で再読み込みするには、このページの「Cookie choices」の操作をご利用ください。保存されたCookieはブラウザでも管理できます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "UI labels Accept / Decline / Cookie choices kept in English in quotes because the Japanese banner labels are not known; replace with the localized button labels if the banner is translated."
+   ]
+  },
+  {
+   "id": "t_f5ffee0ad1e0f7c39fcf",
+   "sourceHash": "f5ffee0ad1e0f7c39fcff0df7545e7679a14d6139f92f528386b0a507d5262ab",
+   "text": "必須のストレージ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_956c63d7a6313029d285",
+   "sourceHash": "956c63d7a6313029d2853f354b907547cade9df278aae4a73976e6acfb42ade3",
+   "text": "本ウェブサイトは、Cookieの設定をブラウザのローカルストレージ（ktahv-consent、kairali-consent-v1など）に保存します。セキュリティやセッションの機能には、必須のストレージが使われることがあります。ブラウザの設定によっては、これらの機能に影響が出る場合があります。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2441dd767e11a83d632d",
+   "sourceHash": "2441dd767e11a83d632d01c6b2ca8716229003367e7f83b892b2af5a13dbe0c4",
+   "text": "任意の計測",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_c5021c1f0e5d3c105dd2",
+   "sourceHash": "c5021c1f0e5d3c105dd2e38f8c569f533f594967c09a47a2d9005dab96c3c7c5",
+   "text": "本番環境で計測が有効になっている場合、本サイトにはGoogle Analytics、Microsoft Clarity、Metaとの連携が含まれます。任意のスクリプトは、同意の選択に従わなければなりません。同意は、診療記録、お問い合わせの本文、識別子、入力された健康に関する検索内容を広告サービスや分析サービスに送信することへの許可ではありません。健康情報に基づくパーソナライズ広告には別途の評価が必要であり、広告プラットフォームの規則によって制限されています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9d8d05b9736daf8d0191",
+   "sourceHash": "9d8d05b9736daf8d0191f31d1877ca6ba941a7c388bde5cd7db91ad93f6709ad",
+   "text": "外部サービス",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_de147f941d02869c0d82",
+   "sourceHash": "de147f941d02869c0d82e3cb4721a3f768593c2821d1cb9a2246522dcaba8429",
+   "text": "WhatsApp、Priyaのチャット、決済サービス、地図や動画を開くと、第三者に接続される場合があります。そのサービスには、各事業者のプライバシーおよびCookieに関する規定が適用されます。第三者によるストレージのすべてが、病院のCookieバナーで管理されるわけではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2b5c3d26721ae9c350cf",
+   "sourceHash": "2b5c3d26721ae9c350cf3009318b626f0fc8a90b4a2ac0ca8099c05aa849282e",
+   "text": "お問い合わせ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

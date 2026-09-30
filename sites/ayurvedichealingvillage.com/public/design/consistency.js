@@ -1,0 +1,266 @@
+/* AHV — sitewide consistency layer, the DOM half (D-20260922-13, 22 Sep 2026).
+ *
+ * consistency.css does everything a stylesheet can. Two things it cannot:
+ *
+ *   1. THE TYPE FLOOR. The served views size text inline, and the small print
+ *      is where the families diverge: 10–13.5px micro labels ("View image",
+ *      "Past Retreat", jump-nav labels, table headers) against the package
+ *      page's 13px labels and 17px body. CSS cannot select "anything whose
+ *      computed size is under N", so this walks the rendered text once and
+ *      raises what is under the floor:
+ *        · an uppercase / tracked label            → 14px
+ *        · any other text                          → 15.5px
+ *      (the package page's own labels are 13px; 14px is the smallest a
+ *      45-year-old reads a tracked capital label without effort, and the
+ *      gold standard itself is not touched — it is a locked family).
+ *      Only the text's own element is sized, with !important because the size
+ *      it beats is inline. Nothing is sized DOWN.
+ *
+ *   2. TABLES ON A PHONE. A table with a header row gets each cell labelled
+ *      (data-label = its column header) so consistency.css can stack it as
+ *      labelled cards under 700px; a table without one is wrapped so it
+ *      scrolls inside its own box instead of the page.
+ *
+ * SCOPE. Runs only when the design root carries data-ahv-consistency="1"
+ * (see design-view.tsx / tools/build-consistency-lock.mjs) — the homepage,
+ * the package pages, the finder hubs and the course family never enter this
+ * file. Within a page it touches <main> only: the shared header and footer
+ * are the homepage's chrome. It runs its own MutationObserver on the root,
+ * coalesced to one pass per animation frame, and never edits boot.ts. */
+(function () {
+  "use strict";
+  var root = document.getElementById("ahv-design-root");
+  if (!root || root.getAttribute("data-ahv-consistency") !== "1") return;
+  var LABEL_MIN = 14, TEXT_MIN = 15.5;
+  var done = (typeof WeakSet === "function") ? new WeakSet() : { has: function () { return false; }, add: function () {} };
+  var scheduled = false;
+
+  function typeFloor(main) {
+    var walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT, null);
+    var node, el, seen = [];
+    while ((node = walker.nextNode())) {
+      var text = node.nodeValue;
+      if (!text || text.replace(/\s+/g, "").length < 3) continue;   // separators, icons, ◆
+      el = node.parentElement;
+      if (!el || done.has(el) || seen.indexOf(el) !== -1) continue;
+      seen.push(el);
+      if (el.closest("script,style,svg,sup,sub,[aria-hidden='true'],[data-ahv-no-floor]")) { done.add(el); continue; }
+      var cs = window.getComputedStyle(el);
+      var fs = parseFloat(cs.fontSize);
+      if (!fs) continue;
+      var isLabel = cs.textTransform === "uppercase" || parseFloat(cs.letterSpacing) >= 1;
+      var min = isLabel ? LABEL_MIN : TEXT_MIN;
+      if (fs < min) {
+        el.style.setProperty("font-size", min + "px", "important");
+        el.setAttribute("data-ahv-floored", String(fs));
+      }
+      done.add(el);
+    }
+  }
+
+  function tables(main) {
+    var list = main.querySelectorAll("table");
+    for (var i = 0; i < list.length; i++) {
+      var tb = list[i];
+      if (tb.hasAttribute("data-ahv-table")) continue;
+      tb.setAttribute("data-ahv-table", "1");
+      var first = tb.rows[0];
+      var head = null;
+      if (tb.tHead && tb.tHead.rows.length) head = tb.tHead.rows[0];
+      else if (first && first.cells.length > 1 && first.querySelectorAll("th").length === first.cells.length) head = first;
+      if (head) {
+        var labels = [];
+        for (var c = 0; c < head.cells.length; c++) labels.push((head.cells[c].textContent || "").replace(/\s+/g, " ").trim());
+        tb.setAttribute("data-ahv-stack", "1");
+        head.setAttribute("data-ahv-head", "1");
+        for (var r = 0; r < tb.rows.length; r++) {
+          var row = tb.rows[r];
+          if (row === head) continue;
+          for (var k = 0; k < row.cells.length; k++) if (labels[k] && row.cells[k].tagName === "TD") row.cells[k].setAttribute("data-label", labels[k]);
+        }
+      } else if (tb.parentElement && !tb.parentElement.classList.contains("ahv-table-scroll")) {
+        var wrap = document.createElement("div");
+        wrap.className = "ahv-table-scroll";
+        tb.parentNode.insertBefore(wrap, tb);
+        wrap.appendChild(tb);
+      }
+    }
+  }
+
+  // The legacy campaign template renders its hero slider's slide names as a
+  // bulleted list ("Image 01" … "Image 06") — a list of nothing. Dropped.
+  function campaignSliderStubs(main) {
+    if (root.getAttribute("data-ahv-family") !== "campaign-nine") return;
+    var items = main.querySelectorAll("li");
+    for (var i = 0; i < items.length; i++) {
+      if (/^Image \d\d$/.test((items[i].textContent || "").trim())) items[i].parentNode.removeChild(items[i]);
+    }
+  }
+
+  // A sticky side rail taller than the window pins its top and hides its
+  // bottom links for ever (measured on /books/: a 19-link rail, top:96px,
+  // links below the fold unreachable — "the navigation links are not
+  // clickable"). If the rail cannot fit, it scrolls with the page instead.
+  function tallStickyRails(main) {
+    var els = main.querySelectorAll("nav, aside");
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i]; var cs = window.getComputedStyle(el);
+      if (cs.position !== "sticky") continue;
+      var top = parseFloat(cs.top) || 0;
+      if (el.offsetHeight + top > window.innerHeight - 24) el.style.setProperty("position", "static", "important");
+      else if (el.getAttribute("data-ahv-unstuck") === "1") el.style.removeProperty("position");
+      el.setAttribute("data-ahv-unstuck", el.style.position === "static" ? "1" : "0");
+    }
+  }
+  // The WordPress source printed its own breadcrumb ("Home – Kair by Kairali")
+  // as the first paragraph of a few legacy articles and the capture kept it as
+  // body text. It is never content: the site has a real breadcrumb above it.
+  function strayBreadcrumbs(main) {
+    var ps = main.querySelectorAll("p");
+    for (var i = 0; i < ps.length; i++) {
+      var t = (ps[i].textContent || "").replace(/\s+/g, " ").trim();
+      // a paragraph that is only a dash ("–") is a WordPress separator the
+      // capture kept as copy (the hero of /things-to-do/, /village-facilities/)
+      if (/^[-–—]$/.test(t) && !ps[i].querySelector("img,a")) { ps[i].parentNode.removeChild(ps[i]); continue; }
+      // a breadcrumb line: "Home – Page" as text, or the same with "Home" linked to /
+      if (/^Home [–»>] .{1,80}$/.test(t) && !ps[i].querySelector("img") && ps[i].querySelectorAll("a").length <= 2 && ![...ps[i].querySelectorAll("a")].some(function (a) { return !/^(\/|https?:\/\/(www\.)?ayurvedichealingvillage\.com\/?)(index\.php)?$/.test(a.getAttribute("href") || ""); })) ps[i].parentNode.removeChild(ps[i]);
+    }
+  }
+  // D-20260922-28: the contact page's live map, CONSENT-GATED. The static
+  // map (an <img> inside the map link, data-source-embed="map") shows first;
+  // once the visitor has accepted cookies (the design's own notice writes
+  // localStorage "ktahv-consent" = "accepted") it becomes a Google Maps
+  // embed of the hospital. No API key, no script: an <iframe> with the
+  // public embed URL, lazy, titled. Declined or undecided: the static map
+  // stays and the Get-directions button beside it still works.
+  function liveMap(main) {
+    if (root.getAttribute("data-ahv-route") !== "/contact-us/") return;
+    var link = main.querySelector('a[data-source-embed="map"]');
+    if (!link || link.getAttribute("data-ahv-live-map") === "1") return;
+    var accepted = false;
+    try { accepted = window.localStorage.getItem("ktahv-consent") === "accepted"; } catch (e) {}
+    if (!accepted) return;
+    var img = link.querySelector("img");
+    if (!img) return;
+    var frame = document.createElement("iframe");
+    frame.setAttribute("title", "Map: Kairali \u2013 The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad");
+    frame.setAttribute("loading", "lazy");
+    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    frame.setAttribute("allowfullscreen", "");
+    frame.src = "https://www.google.com/maps?q=Kairali+-+The+Ayurvedic+Healing+Village,+Olassery,+Kodumbu,+Palakkad&z=15&output=embed";
+    frame.style.cssText = "display:block;width:100%;height:" + Math.max(300, Math.round(img.getBoundingClientRect().height || 340)) + "px;border:0;border-radius:4px;";
+    img.parentNode.replaceChild(frame, img);
+    link.setAttribute("data-ahv-live-map", "1");
+    // the link wrapper must not swallow clicks inside the map
+    link.style.pointerEvents = "none"; frame.style.pointerEvents = "auto";
+    var caption = link.querySelector("span"); if (caption) caption.style.pointerEvents = "auto";
+  }
+  // /map/ (D-20260922-24 "no broken pages"): the legacy location page holds
+  // six <li data-map-slot> boxes where the WordPress page embedded Google
+  // route maps ("Map disabled in this preview" — a builder note). Each slot's
+  // section heading names the route ("Route 1: Via Coimbatore Airport", "By
+  // Road from Bangalore"); the origin is read from that heading, the
+  // destination is the hospital. Before consent: a plain line and a
+  // Get-directions link (no cookies). After consent: a Google Maps
+  // directions embed in the box. Nothing typed by hand: origins come from
+  // the page's own headings.
+  var DEST = "Kairali - The Ayurvedic Healing Village, Olassery, Kodumbu, Palakkad";
+  function mapSlots(main) {
+    var slots = main.querySelectorAll("li[data-map-slot]");
+    if (!slots.length) return;
+    var accepted = false;
+    try { accepted = window.localStorage.getItem("ktahv-consent") === "accepted"; } catch (e) {}
+    for (var i = 0; i < slots.length; i++) {
+      var li = slots[i];
+      if (li.getAttribute("data-ahv-map") === "live") continue;
+      // the route heading: the h2/h3 whose source pointer shares the longest
+      // prefix with the slot's (the renderer collects every map into one
+      // "Maps" list at the end, so document order says nothing)
+      var ptr = li.getAttribute("data-source-pointer") || "", h = null, best = 0;
+      var hs = main.querySelectorAll("h2[data-source-pointer], h3[data-source-pointer]");
+      for (var k = 0; k < hs.length; k++) {
+        var hp = hs[k].getAttribute("data-source-pointer") || "", n = 0;
+        while (n < hp.length && n < ptr.length && hp[n] === ptr[n]) n++;
+        n = hp.slice(0, n).lastIndexOf("/") + 1;            // whole segments only
+        if (n > best && /^\/sections\/\d+\//.test(hp.slice(0, n))) { best = n; h = hs[k]; }
+      }
+      var heading = h ? h.textContent.replace(/\s+/g, " ").trim() : "";
+      var m = heading.match(/(?:via|from)\s+(.+)$/i);
+      origin = m ? m[1].trim() : "";
+      var label = origin ? "Route map: " + origin + " to Kairali" : "Map: Kairali \u2013 The Ayurvedic Healing Village, Palakkad";
+      var dirUrl = origin ? "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(origin) + "&destination=" + encodeURIComponent(DEST) : "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(DEST);
+      if (li.getAttribute("data-ahv-map") !== "static") {
+        li.innerHTML = '<div data-ahv-map-box style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;padding:16px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between">' +
+          '<span style="font-size:16px;line-height:1.5;color:#514A3F">' + label.replace(/</g, "&lt;") + '<br><span style="font-size:14.5px;color:#75695A">The live map appears once you accept cookies.</span></span>' +
+          '<a href="' + dirUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1.5px solid #5A4420;border-radius:4px;color:#5A4420;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none">Open directions</a></div>';
+        li.setAttribute("data-ahv-map", "static");
+      }
+      if (accepted) {
+        var box = li.querySelector("[data-ahv-map-box]");
+        var frame = document.createElement("iframe");
+        frame.setAttribute("title", label);
+        frame.setAttribute("loading", "lazy");
+        frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        frame.src = origin ? "https://www.google.com/maps?saddr=" + encodeURIComponent(origin) + "&daddr=" + encodeURIComponent(DEST) + "&output=embed" : "https://www.google.com/maps?q=" + encodeURIComponent(DEST) + "&z=14&output=embed";
+        frame.style.cssText = "display:block;width:100%;height:360px;border:0;border-radius:4px;margin-top:12px;";
+        if (box) box.appendChild(frame); else li.appendChild(frame);
+        li.setAttribute("data-ahv-map", "live");
+      }
+    }
+  }
+  function pass() {
+    scheduled = false;
+    var main = root.querySelector("main") || root;
+    try { typeFloor(main); tables(main); campaignSliderStubs(main); tallStickyRails(main); strayBreadcrumbs(main); liveMap(main); mapSlots(main); } catch (e) { /* never break the page */ }
+  }
+  // consent can be given after load: re-run on the notice's click and on storage
+  document.addEventListener("click", function () { setTimeout(schedule, 50); }, true);
+  window.addEventListener("storage", schedule);
+  window.addEventListener("resize", schedule);
+  // setTimeout, NOT requestAnimationFrame: a frame callback never fires in a
+  // hidden tab (measured on the deployed preview opened in a background tab —
+  // the pass never ran and the slider stubs stayed), and a page opened in the
+  // background must still be right when the visitor switches to it.
+  function schedule() {
+    if (scheduled) return;
+    scheduled = true;
+    setTimeout(pass, 0);
+  }
+  // Video facades (the /video-gallery/ cards, tools/repair-video-gallery.mjs):
+  // nothing is requested from YouTube until the visitor presses play; then the
+  // button becomes a youtube-nocookie player in place.
+  root.addEventListener("click", function (ev) {
+    var btn = ev.target && ev.target.closest ? ev.target.closest("[data-ahv-video]") : null;
+    if (!btn) return;
+    var id = (btn.getAttribute("data-ahv-video") || "").replace(/[^A-Za-z0-9_-]/g, "");
+    if (!id) return;
+    ev.preventDefault();
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    frame.setAttribute("title", (btn.getAttribute("aria-label") || "Video").replace(/^Play video: /, ""));
+    frame.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    frame.setAttribute("allowfullscreen", "");
+    frame.setAttribute("loading", "lazy");
+    frame.style.cssText = "display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:3px;background:#000;";
+    btn.parentNode.replaceChild(frame, btn);
+  });
+  if (window.MutationObserver) new MutationObserver(schedule).observe(root, { childList: true, subtree: true });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
+  window.addEventListener("load", schedule);
+})();
+
+// Date fields (EF-05, owner 26 Sep 2026) — on EVERY design page, not only consistency-locked
+// families: an untouched date input shows nothing on iPhone and today's date on desktop WebKit, both
+// of which read as a chosen value. data-ahv-empty marks the empty state so consistency.css can mute it.
+// The value itself is never set here.
+(function () {
+  "use strict";
+  function markDates() {
+    var ds = document.querySelectorAll('input[type="date"]');
+    for (var i = 0; i < ds.length; i++) { if (ds[i].value) ds[i].removeAttribute("data-ahv-empty"); else if (!ds[i].hasAttribute("data-ahv-empty")) ds[i].setAttribute("data-ahv-empty", ""); }
+  }
+  document.addEventListener("input", function (e) { if (e.target && e.target.type === "date") markDates(); }, true);
+  document.addEventListener("change", function (e) { if (e.target && e.target.type === "date") markDates(); }, true);
+  if (window.MutationObserver) new MutationObserver(markDates).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", markDates); else markDates();
+})();

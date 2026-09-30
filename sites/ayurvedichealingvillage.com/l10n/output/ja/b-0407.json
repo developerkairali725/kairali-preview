@@ -1,0 +1,211 @@
+{
+ "batchId": "b-0407",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_74b7de10d8791d7b501c",
+   "sourceHash": "74b7de10d8791d7b501cb5dc41365994f2cc80227b7ce5cb2548e24af26dc939",
+   "text": "昼食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_216713d08860cfa0d978",
+   "sourceHash": "216713d08860cfa0d9787ea5c6cebc8a8f5b73777f91c904853ac234bb9df642",
+   "text": "夕食",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e05f7f1e17e6788dca8b",
+   "sourceHash": "e05f7f1e17e6788dca8b65e7227c86c609923eb5058d41c2502cd33dd5e47b55",
+   "text": "以下の飲み物が含まれます：",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7ca7dea906800f87091b",
+   "sourceHash": "7ca7dea906800f87091b819132ecf2aa2b7ea14c9841fa18b9db121d3bbe82dc",
+   "text": "水",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b0e1f06cf1e7d466ee30",
+   "sourceHash": "b0e1f06cf1e7d466ee3048ebef45d85b2d1d31d6164a9b92a6fd0887ba8ffe89",
+   "text": "コーヒー",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_017979e8299034d8c481",
+   "sourceHash": "017979e8299034d8c481af1f282eb32af0ca7e39553664ba27289257b01d49c1",
+   "text": "紅茶",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_12646a04d6e5b9cda97d",
+   "sourceHash": "12646a04d6e5b9cda97d5916a57162a8b2f712432de5c83c53c08bfbeaa5f2b3",
+   "text": "含まれないもの",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_10a08cf59145e2e995d4",
+   "sourceHash": "10a08cf59145e2e995d48ec8b3ab0b73e76c7e3e12c64eafb3c6e0848c094b2e",
+   "text": "コーチン国際空港までの往復航空運賃",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_fb44b039cb65cfbb7023",
+   "sourceHash": "fb44b039cb65cfbb7023d7122fc6daf72c238f6ccf0d1ab0c41f6624798d8b3d",
+   "text": "ビザおよび旅行保険",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "t_fb44b039cb65cfbb7023 banned-term 旅"
+   ]
+  },
+  {
+   "id": "t_6b2a64b4e365102d1142",
+   "sourceHash": "6b2a64b4e365102d114251b7d4971d1b91a4d467e08255dde75be950e257071d",
+   "text": "上記以外の追加の食事・飲み物",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_a792e6715a7b8e6c4ab4",
+   "sourceHash": "a792e6715a7b8e6c4ab424f604939e9346a5c6c791fc8aa4afe19b638ad6a7cc",
+   "text": "施設での追加宿泊",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the retreat' rendered as 施設 (the facility) per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_7ac2b1868fe2916e6bd8",
+   "sourceHash": "7ac2b1868fe2916e6bd86c11c6db794556d0da91a9b9afe414c5e57ff9cb0a04",
+   "text": "心・身体・魂をリフレッシュしましょう。ぜひ Katha Wellness Retreat にご参加ください",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Katha Wellness Retreat' kept verbatim as the event's proper name; missing space after the first sentence in source normalised."
+   ]
+  },
+  {
+   "id": "t_41cb0779a3219b02b397",
+   "sourceHash": "41cb0779a3219b02b397a4e8415bcd48b5eb795e69fdc4c9933d5580b4be2a7e",
+   "text": "このページは Lakshya Yoga Retreat 2017 の資料を保存したものです。記載されているプログラム内容、スケジュール、含まれるものは過去の情報であり、現在の予約条件ではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Lakshya Yoga Retreat 2017' kept verbatim as the event's proper name."
+   ]
+  },
+  {
+   "id": "t_9e22a078cf483839015c",
+   "sourceHash": "9e22a078cf483839015cc0d690bfb531cb61ac39b9f7ab5b7e24f7d1771e5652",
+   "text": "Lakshya Yoga Retreat 2017｜ケーララのアーユルヴェーダとウェルネス",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Event proper name kept verbatim. Length approx. 46 characters (≤60)."
+   ]
+  },
+  {
+   "id": "t_dbe0df49966ebb658d03",
+   "sourceHash": "dbe0df49966ebb658d03efbcdf19631b5430ac70647b342713db0cd88d40d3f6",
+   "text": "ウェルネスと質の高い暮らしの象徴である Kairali Ayurvedic Group は、アーユルヴェーダの原則を世界に広めるため、1989年に設立されました。創設者たちはアーユルヴェーダに関する深い知識を持ち、ホリスティックな生き方の原則を信じ、身体と精神の両方を癒し浄化するその可能性を心から認めていました。彼らは豊富な経験と知恵を、アーユルヴェーダの再興に同じく情熱を注ぐ4世代の医師たちへと受け継いできました。こうした皆の努力の結果、Kairali Ayurvedic Group は成功と社会貢献の両面で新たな高みに到達しました。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_e91b11eac7af67677420",
+   "sourceHash": "e91b11eac7af676774206f776f6d327ba36727139d09fd5ea2ad6b6ebf4427e3",
+   "text": "主要なイベントのひとつが Lakshya Yoga Retreat です。アーユルヴェーダ、ヨガ、健康的なライフスタイルを1週間にわたって祝うイベントです。このプログラムでは、さまざまなヨガの実践が紹介され、参加者は健康に関する幅広いサービスや指導を受けることができます。パンチャカルマ（Panchkarma）をはじめとする数多くの有名なアーユルヴェーダの手法が取り入れられており、ぜひ訪れていただきたい場となっています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Event proper name kept verbatim; 'this retreat' rendered as このプログラム (this programme) and 'essential destination' as ぜひ訪れていただきたい場 per clinical register lock. Source spelling 'Panchkarma' kept in parentheses."
+   ]
+  },
+  {
+   "id": "t_30a087d004b0e5ff110b",
+   "sourceHash": "30a087d004b0e5ff110b0a95f86849abb4c179c8ebe85a3134ee8bb9945bfeae",
+   "text": "Kairali – The Ayurvedic Healing Village は、静けさと健康的なライフスタイルの本質を体現する場所であり、外部の雑音や心配事から離れて過ごすことができます。先進的な技術とアーユルヴェーダの変わらぬ思いやりを融合させたこの穏やかな環境は、忙しい日常から離れるのに理想的な場所となっています。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source misspells the brand as 'Kairli'; rendered with the correct brand name 'Kairali' — please confirm or fix the English source. 'ideal retreat' rendered as 離れるのに理想的な場所 (ideal place to step away) per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_c5acc529ec65b48d094c",
+   "sourceHash": "c5acc529ec65b48d094c00b2461b853ed5be25ed3254821ebd11302150611225",
+   "text": "ケーララ州パラッカドにある Kairali – The Ayurvedic Healing Village で開催される、ヨガとアーユルヴェーダを中心としたプログラムにぜひご参加ください。このプログラムは、心身をほぐしてリフレッシュし、ヨガの実践をより深く探求する絶好の機会です。アーユルヴェーダ・マッサージ、ヨガセッション、瞑想、そして美味しいベジタリアン料理のビュッフェを1日3食お楽しみいただきます。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as プログラム (programme) per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_3caada2307025b1935f4",
+   "sourceHash": "3caada2307025b1935f4e3df49d1dc8c9d1c117b4b6bf17d7d222512e340b964",
+   "text": "プログラムに含まれるもの",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'the Retreat' rendered as プログラム (programme) per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_40c9bd7d19d0de0d6e1c",
+   "sourceHash": "40c9bd7d19d0de0d6e1c7c40125938bbcd75c3b5f9ac174470340d656c44323a",
+   "text": "原文の段落5つ、含まれるもの9項目、スケジュール8項目を保持し、原文のリストラベル「プログラムに含まれるもの」をセクション見出しに昇格させています。新たなコピーは追加していません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy; translated faithfully — confirm whether it should render. 'Retreat' rendered as プログラム per clinical register lock."
+   ]
+  },
+  {
+   "id": "t_9503a228b97c52daa26d",
+   "sourceHash": "9503a228b97c52daa26d852a75eec00d1111559bad784ebf049397bba526929c",
+   "text": "村の散策",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_87ae2c54b48d5b8496eb",
+   "sourceHash": "87ae2c54b48d5b8496eb62cbc7459fe51314e7b5ed964b2e5ce5ed5232ed62e1",
+   "text": "毎日ヨガ2回と瞑想1回",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_5874ad19a0bce28582f3",
+   "sourceHash": "5874ad19a0bce28582f3c5faf1197621c44d1046c17f5fa3cfb8b3e16a343e24",
+   "text": "1日1回のアーユルヴェーダ・マッサージ",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

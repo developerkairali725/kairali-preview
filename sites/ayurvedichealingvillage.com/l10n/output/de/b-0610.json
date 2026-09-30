@@ -1,0 +1,171 @@
+{
+ "batchId": "b-0610",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_ed0ee7f51cae78f3e954",
+   "sourceHash": "ed0ee7f51cae78f3e95408c38c1d10ca40a644f6ea8c1c35eca6794fd354e2ee",
+   "text": "Preise gültig ab",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_00d9344ceb6a435761fd",
+   "sourceHash": "00d9344ceb6a435761fda9860a892fea19ce9ecffeb1d87a9ced580130bcf2ff",
+   "text": "Im Film – und ein Rundgang in Vorbereitung",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_4e5381066c58eba135fc",
+   "sourceHash": "4e5381066c58eba135fcf2977a2508f7d72105cd42076fd321b2b364ba867606",
+   "text": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Fragen Sie bei Ihrer Anfrage an unser Patientenbetreuungsteam nach diesem Angebot.[[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a84dbe0ef7b2c4d0df3",
+   "sourceHash": "7a84dbe0ef7b2c4d0df325a6f165ff38a35c184e76f52f2b8145b7353bc2b995",
+   "text": "Telefon: [[OPEN_1]]+91 9555 156 156[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11929d76dbfd2699da2a",
+   "sourceHash": "11929d76dbfd2699da2a9a21c8138e4c5adf25497ed547c2c4e8a1f8d87dbe95",
+   "text": "10 % für 3–13 Nächte · 15 % für 14–20 Nächte · 20 % ab 21 Nächten. Für alle Pakete. Kein festes Enddatum.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4b06ef6d3c81436f60a",
+   "sourceHash": "f4b06ef6d3c81436f60a318c81c42f8f7e2d774d45a22f3b9b5f3b6980d28146",
+   "text": "Bis",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_930bf5e7c871c668c034",
+   "sourceHash": "930bf5e7c871c668c034874a7fb987a73104237db57edc1e2bcaab32f679a6e3",
+   "text": "Optional. Lassen Sie das Feld leer, wenn Ihre Termine noch nicht feststehen.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_35f00e26d4d1289f7d2e",
+   "sourceHash": "35f00e26d4d1289f7d2e18d11070f142df3b068b28f8dbe0aec3bf104d2e8427",
+   "text": "[[VAR_1]][[OPEN_1]] / Nacht[[CLOSE_1]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_11150a76f47719f852ac",
+   "sourceHash": "11150a76f47719f852acdc2dd26418e70c1382558d1a1b8ecf7f0264043fd2f3",
+   "text": "Einzelbelegung, pro Villa und Nacht: Deluxe Villa [[VAR_1]] · Classic Villa [[VAR_2]] · Royal Villa [[VAR_3]] · Maharaja Suite [[VAR_4]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8b7fbde536ad5fef7062",
+   "sourceHash": "8b7fbde536ad5fef70628f83c3b1bb2bbd72210aa26d1a8e96426cd8d9fcb974",
+   "text": "ab ·",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3a06ab10d8d5ca673a47",
+   "sourceHash": "3a06ab10d8d5ca673a473bdfaa5bbb025dbc5b618fb48068f4a1d4e673e9ae46",
+   "text": "€ EUR",
+   "status": "translated",
+   "unchangedReason": "Currency symbol and code are language-neutral.",
+   "issues": []
+  },
+  {
+   "id": "t_4d88f343350776672ed0",
+   "sourceHash": "4d88f343350776672ed05ba6a7dbdd61d5c151fb8758ef47142dcf4f9adfcf6e",
+   "text": "[[OPEN_1]]Maharaja Suites[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_0b842b338c651688df07",
+   "sourceHash": "0b842b338c651688df07e77f94f7a8925424164c713c47a39c297dd435980ed9",
+   "text": "[[OPEN_1]]Royal Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_8c6d38d6fa1ddb636f3c",
+   "sourceHash": "8c6d38d6fa1ddb636f3c714cd7708831aa44900bd8889909f4ec53e32085b29d",
+   "text": "[[OPEN_1]]Classic Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_34dcfd7b06e164529337",
+   "sourceHash": "34dcfd7b06e164529337dd6e1491c9e23eacf8fa41973b9516ff979c5d08c8a9",
+   "text": "[[OPEN_1]]Deluxe Villa[[CLOSE_1]][[OPEN_2]][[VAR_1]][[OPEN_3]]*[[CLOSE_3]][[CLOSE_2]]",
+   "status": "translated",
+   "unchangedReason": "Room category proper name; kept verbatim.",
+   "issues": []
+  },
+  {
+   "id": "t_3a5ae35d01590114a18e",
+   "sourceHash": "3a5ae35d01590114a18e16c921361d07dea98ccb7f6e745758109d36dd60756c",
+   "text": "[[OPEN_1]]Ayurveda-Behandlung[[CLOSE_1]] [[OPEN_2]]Villen[[CLOSE_2]] [[OPEN_3]]Yoga- & Meditationsausbildung[[CLOSE_3]] [[OPEN_4]]Ayurveda-Ausbildungsprogramm[[CLOSE_4]] [[OPEN_5]]Ayurvedische Küche[[CLOSE_5]] [[OPEN_6]]Unsere Produkte[[CLOSE_6]] [[OPEN_7]]Einrichtungen im Village[[CLOSE_7]] [[OPEN_8]]Angebote[[CLOSE_8]] [[OPEN_9]]Über uns[[CLOSE_9]] [[OPEN_10]]Wissenszentrum[[CLOSE_10]] [[OPEN_11]]Mediengalerie[[CLOSE_11]] [[OPEN_12]]Auszeichnungen[[CLOSE_12]] [[OPEN_13]]Bewertungen[[CLOSE_13]] [[OPEN_14]]Anreise[[CLOSE_14]] [[OPEN_15]]FAQs & Downloads[[CLOSE_15]] [[OPEN_16]]Kontakt[[CLOSE_16]] [[OPEN_17]]Ambulanz (ohne Termin)[[CLOSE_17]] [[OPEN_18]]Behandlung & Ausbildung[[CLOSE_18]] [[OPEN_19]]Yoga- & Ayurveda-Programme[[CLOSE_19]] [[OPEN_20]]Yoga- & Meditationspakete[[CLOSE_20]] [[OPEN_21]]CSR[[CLOSE_21]] [[OPEN_22]]Unsere Partner[[CLOSE_22]] [[OPEN_23]]Ausflüge & Sehenswürdigkeiten[[CLOSE_23]] [[OPEN_24]]Feste[[CLOSE_24]] [[OPEN_25]]Fotogalerie[[CLOSE_25]] [[OPEN_26]]Karriere[[CLOSE_26]] [[OPEN_27]]Jetzt bewerben[[CLOSE_27]] [[OPEN_28]]Ayurveda-Links[[CLOSE_28]] [[OPEN_29]]Archiv[[CLOSE_29]]",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programme' to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_aeefcfa5e981ddea1acf",
+   "sourceHash": "aeefcfa5e981ddea1acff2eec574b3f7dd0336bd1b16df373ac649e9ebb67ea8",
+   "text": "Dauerhafte Registrierung als klinische Einrichtung — 2025–2030",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_371e4203197189a6da16",
+   "sourceHash": "371e4203197189a6da164c7b0ad6cad0d06fc8964891bcd59edda18f13c7600b",
+   "text": "Kairali – The Ayurvedic Healing Village bietet authentisches Wohlbefinden und ganzheitliche Betreuung, wo Ruhe auf Tradition trifft. Unser Haus ist alkohol-, rauch- und koffeinfrei und bietet eine saubere, belebende Umgebung für den Einklang von Körper und Geist. Erleben Sie traditionelle ayurvedische Anwendungen, Yoga, Meditation und ein Leben im Einklang mit der Natur – für eine authentische, verändernde und heilsame Erfahrung in Kerala.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreat' rendered as 'Haus' (facility) to keep the clinical register; 'remedies' rendered as 'Anwendungen'; 'organic living' rendered as 'Leben im Einklang mit der Natur'."
+   ]
+  },
+  {
+   "id": "t_aaa300737e84bb2384ee",
+   "sourceHash": "aaa300737e84bb2384eeef2a171807565c2671cd57eed54575bd54020d481563",
+   "text": "Eine Frau in grüner Leinenkleidung hebt in einer Yoga-Haltung die gefalteten Hände über den Kopf",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_31265b74f519c209f5b9",
+   "sourceHash": "31265b74f519c209f5b978ee27914d89dd153a5a60e5b3a3df2c7945a2d81814",
+   "text": "Zwei Therapeuten drücken warme Kräuterstempel auf einen Patienten, der auf einer hölzernen Behandlungsliege liegt",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

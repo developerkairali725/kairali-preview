@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "c3b8c158d4caa339babc486319799314d9dd543b3b0ab3beca6c2ec79ad0875d",
+ "locale": "ja",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": "：副鼻腔炎や片頭痛など、頭部に関わる不調に悩む患者さまには、このアーユルヴェーダ療法が最適です。点鼻薬を鼻孔に適切に用いることで、頭部をあらゆる痛みから解放する自然な浄化法です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment. Source claims ('the best', 'freed from any kind of pain') kept as-is, not strengthened; flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "ナスヤム：副鼻腔炎や片頭痛など、頭部に関わる不調に悩む患者さまには、このアーユルヴェーダ療法が最適です。点鼻薬を鼻孔に適切に用いることで、頭部をあらゆる痛みから解放する自然な浄化法です。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') kept as-is, not strengthened; flag for clinical review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "研修を提供しています。このバッチのどのルートにも「近日公開」ステータスは適用されていません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy; translated as displayed."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "現在の医療、商業、受賞、提供状況に関する記載には、それぞれ非公開の公開承認ゲートがそのまま適用されます。ソースの取得は検証を意味せず、ルートごとのゲートがないことは、その記載が承認されたことを意味するものではありません。",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Appears to be an internal editorial note rather than patient-facing copy; translated as displayed."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "すべての方のための滞在プログラム",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 滞在プログラム (stay programmes) for clinical register."
+   ]
+  }
+ ]
+}

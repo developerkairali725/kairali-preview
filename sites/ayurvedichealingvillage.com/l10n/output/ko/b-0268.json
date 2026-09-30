@@ -1,0 +1,221 @@
+{
+ "batchId": "b-0268",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "ko",
+ "units": [
+  {
+   "id": "t_fc0e285a88152ff6e9b1",
+   "sourceHash": "fc0e285a88152ff6e9b15e8b5fa652c0fa01ece629661d9382772ba154d4d049",
+   "text": "계좌 이체",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_59fdbbcb4fa723b58b90",
+   "sourceHash": "59fdbbcb4fa723b58b9003be6d71d5c3a3036d471bb3c18d5ec68547180a3fde",
+   "text": "현금(인도 루피)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_abe45d95d08a62b6d80e",
+   "sourceHash": "abe45d95d08a62b6d80e328082ff44e51759f6154f4f8158c338d1fc4a1311d4",
+   "text": "UPI 결제(인도 거주자 대상)",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_83fadbe39a707a9f952a",
+   "sourceHash": "83fadbe39a707a9f952aa9a939bc7aa4e24ae28c454eccb286f0e5b2b8495958",
+   "text": "예약을 확정하려면 50%의 선금 결제가 필요합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9599d19532011604d619",
+   "sourceHash": "9599d19532011604d619bbd583b8d4b40a1d43c34d82fc646afd1e7b1133b6fa",
+   "text": "해외 환자 및 방문객 안내",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Guests' rendered as 환자 및 방문객 (patients and visitors) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_7ef526a220135a89dda9",
+   "sourceHash": "7ef526a220135a89dda9c09d06608089ffb07fc60df8149a302ac0df48f07ae4",
+   "text": "고령 환자를 위해 어떤 특별한 배려를 하고 있습니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Senior guests' rendered as 고령 환자 (senior patients) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_9f427809d23d8f09c652",
+   "sourceHash": "9f427809d23d8f09c6522bc4b4f9395cce605daa02ca6e6c3e0b6faf6b001ec9",
+   "text": "다음과 같은 지원을 제공합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_da51d7c28a7a590ad56b",
+   "sourceHash": "da51d7c28a7a590ad56b541567c15ce5861f9a90ee7309b27a4391f828f9a060",
+   "text": "이용하기 편리한 환경과 숙소 옵션",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_73bcafb8c04eed778f9e",
+   "sourceHash": "73bcafb8c04eed778f9e0a0b0bcaa5180a30ebf993d5ecf75f53d129678fc379",
+   "text": "필요에 따른 이동 보조",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_6b8dfc62530482896b46",
+   "sourceHash": "6b8dfc62530482896b4652ef392995fdb0cb58f55a28781bb4dacb07a3aeeecb",
+   "text": "고령자에게 적합하게 조정된 치료",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_b93965568d5cc1a18ac1",
+   "sourceHash": "b93965568d5cc1a18ac1036add39c5a860e73cf1392a4b93bd796470414b288b",
+   "text": "식단에 대한 특별한 배려",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_8aa76405b196b2d1d3f8",
+   "sourceHash": "8aa76405b196b2d1d3f862926f0be15feec96e23763af6ec2005137c492cef93",
+   "text": "체류 기간 내내 이루어지는 의료 모니터링",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cefd115e228160db8d1e",
+   "sourceHash": "cefd115e228160db8d1edfe5472caacf0acb7db829b3141d66fe7057dc2e4a24",
+   "text": "상시 대기 중인 응급 의료 서비스",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_ce8920e3b93a2c47d581",
+   "sourceHash": "ce8920e3b93a2c47d58196390249b917ac697da3c1632a0d117780242ceedfa5",
+   "text": "저희 시설은 접근성을 고려하여 설계되었으며, 필요한 곳에는 경사로와 지지 구조물이 설치되어 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreat' rendered as 시설 (facility) to keep the clinical register."
+   ]
+  },
+  {
+   "id": "t_b367c54a9c6e5136a541",
+   "sourceHash": "b367c54a9c6e5136a541957c7fd4286967b60d6980e870f72df68a4f2b831257",
+   "text": "해외 환자는 어떤 비자 요건을 알아 두어야 합니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'International guests' rendered as 해외 환자 (international patients) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_575c297542d8655fd1ad",
+   "sourceHash": "575c297542d8655fd1ad00d002049b4805da664b7258290adf06a550f3207b8b",
+   "text": "인도를 방문하는 대부분의 방문객은 관광 비자 또는 전자 비자가 필요합니다. 계획하신 방문일로부터 최소 4-6주 전에 신청하실 것을 권장합니다. 아유르베다 치료를 받으시는 경우, 특히 체류 기간이 60일을 넘는다면 의료 비자(Medical Visa) 또는 의료 동반자 비자(Medical Attendant Visa)가 더 적합할 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_f4f76f424aa4b7186ae9",
+   "sourceHash": "f4f76f424aa4b7186ae9776359d431d931a70bb591dd6f00009dcd9c83ba86e2",
+   "text": "최신 요건은 인도 정부 공식 비자 웹사이트 또는 가까운 인도 영사관에 문의해 주십시오. 요청하시면 비자 신청을 지원하기 위한 초청장을 발급해 드릴 수 있습니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3650cc554c45b02b780b",
+   "sourceHash": "3650cc554c45b02b780b7e71f37667adca77b6d38ed1f68044e3b7489f476fb9",
+   "text": "필요한 경우 의료 후송 서비스를 이용할 수 있습니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_58f23bfab8e5f22caa8e",
+   "sourceHash": "58f23bfab8e5f22caa8e1a3b661766939ae6bfa9d38ad2f4e66eee76d027d6dc",
+   "text": "네, 인근 병원 및 응급 서비스와 협력 체계를 갖추고 있습니다. 해외 환자분께는 의료 후송 보장이 포함된 여행자 보험에 가입하실 것을 권장합니다. 응급 상황이 발생하면 저희 팀이 환자분의 보험사와 연락하여 조율합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'International guests' rendered as 해외 환자 (international patients) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_c012e72391fd0ddf6da5",
+   "sourceHash": "c012e72391fd0ddf6da52859745df78b07d6d6932f517fd6c34422698bc45f72",
+   "text": "해외 환자의 장기 체류가 가능합니까?",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'International guests' rendered as 해외 환자 (international patients) per clinical language lock."
+   ]
+  },
+  {
+   "id": "t_6f13abc6c31f43a5e0f7",
+   "sourceHash": "6f13abc6c31f43a5e0f7ca03d8deb992993f10cec07c1c444fe53173576bcabd",
+   "text": "네, 30일 이상의 장기 체류를 위한 특별 패키지를 제공하며, 여기에는 추가 문화 탐방과 개인 맞춤 프로그램이 포함됩니다. 많은 해외 환자분들이 만성 질환 관리와 전반적인 건강 개선에 장기 체류가 특히 도움이 된다고 느끼십니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'International guests' rendered as 해외 환자 (international patients) per clinical language lock; 'comprehensive wellness transformation' rendered as 전반적인 건강 개선 (overall health improvement)."
+   ]
+  },
+  {
+   "id": "t_081b3abf7649b9404f2b",
+   "sourceHash": "081b3abf7649b9404f2bc30bcb10d894c336cf2bef69796f2969dbf61e3587fb",
+   "text": "프로그램을 마치시면 저희 의사가 다음을 제공합니다.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_859bff4827464416b52a",
+   "sourceHash": "859bff4827464416b52a9571f9d3de6eaa748be909929638a2a5d5f97fca7be6",
+   "text": "식단과 생활 습관에 관한 개인 맞춤 사후 관리 계획",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_9b984297c610b63f6035",
+   "sourceHash": "9b984297c610b63f6035c1f45603eaaf869d9e423222721b131552bc679dbaee",
+   "text": "가정에서 실천할 수 있는 요법 권장 사항",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_92db133380a70d8545cf",
+   "sourceHash": "92db133380a70d8545cfd75c8ce1e55cc60dc61ed47dee2bdabce030b2a36f79",
+   "text": "구체적인 요가 및 명상 수련법",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  }
+ ]
+}

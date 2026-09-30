@@ -1,0 +1,149 @@
+/* Staging .enquiry-form, with larger type, 54px+ controls and white fields. */
+.form {
+  min-width: 0;
+  background: var(--cream);
+  border: 1px solid var(--line-ink);
+  border-radius: var(--radius-card);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form p {
+  margin: 0;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field label {
+  font-size: var(--text-small);
+  font-weight: 500;
+}
+.field label span {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: var(--tap);
+  padding: 12px 14px;
+  font: inherit;
+  font-size: var(--text);
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+}
+.field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+.field input::placeholder {
+  color: var(--muted);
+}
+.field [aria-invalid="true"] {
+  border: 2px solid var(--ink);
+}
+
+/* Errors: staging's red is not in the palette → ink + gold rule. */
+.error {
+  font-size: var(--text-small);
+  font-weight: 500;
+  padding-left: 12px;
+  border-left: 3px solid var(--gold);
+}
+.summary {
+  padding: 16px 18px;
+  background: var(--white);
+  border-left: 3px solid var(--gold);
+}
+.summary p {
+  font-weight: 500;
+}
+.summary ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.pair {
+  display: grid;
+  gap: 18px;
+}
+
+.honeypot input {
+  color: var(--ink);
+  border: 1px solid var(--muted);
+}
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Custom checkbox so the browser's own grey never appears. */
+.consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: var(--text-small);
+}
+.consent input {
+  flex: none;
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--ink);
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background: var(--white) center / 18px no-repeat;
+  border: 2px solid var(--muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.consent input:checked {
+  background-color: var(--green-mid);
+  border-color: var(--green-mid);
+  /* plain white tick */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+.consent input[aria-invalid="true"] {
+  border: 3px solid var(--ink);
+}
+.consent label {
+  cursor: pointer;
+  padding-top: 2px;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+.note {
+  font-size: var(--text);
+  color: var(--muted);
+}
+
+.sent {
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}

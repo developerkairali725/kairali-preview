@@ -1,0 +1,3331 @@
+{
+  "$schema": "search-vocabulary/v1",
+  "why": "One governed vocabulary for the three search surfaces (header overlay, programme finder, FAQ filter) per D-20260922-32 (Option A) and docs/research/2026-09-23-ahv-search-brainstorm.md §6/§7.2 step 1. The classes URGENT / CONSULT_FIRST / NOT_TREATED / MULTI and the lists terms/misspell/generic/urgent/rehabExempt/consult/decline/caveat/filler/weakWords are the 1 Sep 2026 matcher's lists moved out of public/ahv/assets/programme-search.js unchanged (except the register rows listed in registerNotes.removed and the D-20260916-10 route rename). synonyms/intents/pages/faqKeywords/chips/ui are new, non-clinical navigation rows except where marked clinical.",
+  "clinicalSignoff": "PENDING — HARD GATE 7: the condition→programme mapping (terms, generic, synonyms rows marked clinical, consult, decline, caveat) is clinical content; Dr. Deepu John signs before go-live (brainstorm Q-13). The 1 Sep matcher header already carried 'NOT approved for release'.",
+  "registerNotes": {
+    "allowed": [
+      "World Luxury Award Winner (award title — finder shared block, brainstorm Q-08b pending)",
+      "decline phrases that quote the c-word exist to REFUSE the claim (cure my cancer, cure cancer, cancer cure)"
+    ],
+    "removed": [
+      {
+        "route": "/panchakarma-therapy/",
+        "term": "panchakarma kur",
+        "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
+      },
+      {
+        "route": "/yoga-retreats/",
+        "term": "yoga holiday",
+        "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
+      },
+      {
+        "route": "/yoga-retreats/",
+        "term": "getaway",
+        "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
+      },
+      {
+        "route": "/yoga-retreats/",
+        "term": "yoga urlaub",
+        "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
+      },
+      {
+        "route": "/yoga-retreats/",
+        "term": "kurzreise",
+        "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
+      }
+    ]
+  },
+  "classes": {
+    "DIRECT": "DIRECT_MATCH",
+    "MULTI": "MULTIPLE_POSSIBLE_MATCHES",
+    "CONSULT": "CONSULT_FIRST",
+    "URGENT": "URGENT_MEDICAL_HELP",
+    "NONE": "OUT_OF_SCOPE",
+    "DECLINE": "NOT_TREATED"
+  },
+  "filler": [
+    "a",
+    "about",
+    "after",
+    "also",
+    "always",
+    "am",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "been",
+    "but",
+    "can",
+    "cannot",
+    "cant",
+    "could",
+    "do",
+    "does",
+    "dont",
+    "for",
+    "from",
+    "get",
+    "had",
+    "has",
+    "have",
+    "help",
+    "her",
+    "here",
+    "his",
+    "how",
+    "i",
+    "if",
+    "in",
+    "is",
+    "it",
+    "its",
+    "just",
+    "like",
+    "me",
+    "more",
+    "much",
+    "my",
+    "need",
+    "no",
+    "not",
+    "of",
+    "on",
+    "only",
+    "or",
+    "over",
+    "please",
+    "quite",
+    "should",
+    "so",
+    "some",
+    "that",
+    "the",
+    "their",
+    "them",
+    "then",
+    "there",
+    "these",
+    "they",
+    "this",
+    "to",
+    "us",
+    "very",
+    "was",
+    "we",
+    "what",
+    "when",
+    "which",
+    "who",
+    "why",
+    "will",
+    "with",
+    "would",
+    "you",
+    "your",
+    "aber",
+    "alle",
+    "als",
+    "also",
+    "am",
+    "auch",
+    "auf",
+    "aus",
+    "bei",
+    "beim",
+    "bin",
+    "bis",
+    "bitte",
+    "damit",
+    "das",
+    "dass",
+    "dem",
+    "den",
+    "der",
+    "des",
+    "die",
+    "diese",
+    "dir",
+    "doch",
+    "du",
+    "ein",
+    "eine",
+    "einen",
+    "er",
+    "es",
+    "etwas",
+    "fur",
+    "habe",
+    "haben",
+    "hat",
+    "hier",
+    "ich",
+    "ihr",
+    "im",
+    "immer",
+    "in",
+    "ist",
+    "ja",
+    "kann",
+    "kein",
+    "keine",
+    "mein",
+    "meine",
+    "mich",
+    "mir",
+    "mit",
+    "nach",
+    "nicht",
+    "noch",
+    "nur",
+    "oder",
+    "sehr",
+    "sein",
+    "sich",
+    "sie",
+    "sind",
+    "so",
+    "uber",
+    "um",
+    "und",
+    "viel",
+    "vielleicht",
+    "vom",
+    "von",
+    "war",
+    "was",
+    "weil",
+    "wenn",
+    "werden",
+    "wie",
+    "wieder",
+    "wir",
+    "wird",
+    "zu",
+    "zum",
+    "zur",
+    "ai",
+    "alors",
+    "au",
+    "aussi",
+    "aux",
+    "avec",
+    "avoir",
+    "beaucoup",
+    "bien",
+    "ce",
+    "cela",
+    "ces",
+    "cette",
+    "comme",
+    "dans",
+    "de",
+    "des",
+    "du",
+    "elle",
+    "en",
+    "encore",
+    "est",
+    "et",
+    "etre",
+    "eux",
+    "il",
+    "ils",
+    "je",
+    "la",
+    "le",
+    "les",
+    "leur",
+    "lui",
+    "ma",
+    "mais",
+    "me",
+    "mes",
+    "moi",
+    "mon",
+    "ne",
+    "nos",
+    "notre",
+    "nous",
+    "on",
+    "ou",
+    "par",
+    "pas",
+    "peu",
+    "peut",
+    "plus",
+    "pour",
+    "quand",
+    "que",
+    "quel",
+    "quelle",
+    "qui",
+    "quoi",
+    "sa",
+    "sans",
+    "se",
+    "ses",
+    "si",
+    "son",
+    "sous",
+    "sur",
+    "ta",
+    "tes",
+    "toi",
+    "ton",
+    "tous",
+    "tout",
+    "tres",
+    "tu",
+    "un",
+    "une",
+    "vos",
+    "votre",
+    "vous",
+    "y"
+  ],
+  "weakWords": [
+    "body",
+    "own",
+    "which",
+    "pain",
+    "ache",
+    "aches",
+    "aching",
+    "sore",
+    "hurt",
+    "hurts",
+    "painful",
+    "treatment",
+    "treatments",
+    "therapy",
+    "therapies",
+    "programme",
+    "programme",
+    "programs",
+    "program",
+    "health",
+    "healthy",
+    "care",
+    "support",
+    "chronic",
+    "best",
+    "good",
+    "ayurveda",
+    "ayurvedic",
+    "kairali",
+    "india",
+    "kerala",
+    "schmerzen",
+    "schmerz",
+    "behandlung",
+    "therapie",
+    "gesundheit",
+    "pflege",
+    "bestes",
+    "douleur",
+    "douleurs",
+    "traitement",
+    "therapie",
+    "sante",
+    "soins",
+    "meilleur",
+    "hospital",
+    "healing",
+    "village",
+    "programme",
+    "programmes",
+    "program",
+    "programs",
+    "therapy",
+    "therapies",
+    "clinic",
+    "centre",
+    "center",
+    "kairali",
+    "want",
+    "need",
+    "looking",
+    "find",
+    "search",
+    "info",
+    "information",
+    "details"
+  ],
+  "misspell": {
+    "slep": "sleep",
+    "sleap": "sleep",
+    "sleeep": "sleep",
+    "insomia": "insomnia",
+    "bak": "back",
+    "nek": "neck",
+    "neek": "neck",
+    "joynt": "joint",
+    "kneee": "knee",
+    "shoulderpain": "shoulder",
+    "diabetis": "diabetes",
+    "diabetese": "diabetes",
+    "diabets": "diabetes",
+    "diabeties": "diabetes",
+    "arthritus": "arthritis",
+    "arthiritis": "arthritis",
+    "athritis": "arthritis",
+    "artritis": "arthritis",
+    "psoriasus": "psoriasis",
+    "soriasis": "psoriasis",
+    "psorisis": "psoriasis",
+    "migrane": "migraine",
+    "migrain": "migraine",
+    "migrenne": "migraine",
+    "presure": "pressure",
+    "pressuer": "pressure",
+    "hypertention": "hypertension",
+    "spondilitis": "spondylitis",
+    "spondelitis": "spondylitis",
+    "spondylosys": "spondylosis",
+    "panchkarma": "panchakarma",
+    "panchakarama": "panchakarma",
+    "pachakarma": "panchakarma",
+    "sinusitus": "sinusitis",
+    "sinustis": "sinusitis",
+    "ezcema": "eczema",
+    "excema": "eczema",
+    "eksema": "eczema",
+    "siatica": "sciatica",
+    "sciatia": "sciatica",
+    "sciatika": "sciatica",
+    "obesety": "obesity",
+    "obesitiy": "obesity",
+    "paralisis": "paralysis",
+    "paralisys": "paralysis",
+    "paralysys": "paralysis",
+    "ruken": "rucken",
+    "rukenschmerzen": "ruckenschmerzen",
+    "ruckenschmerz": "ruckenschmerzen",
+    "kopfschmerz": "kopfschmerzen",
+    "gelenkschmerz": "gelenkschmerzen",
+    "migrene": "migrane",
+    "schlafstorung": "schlafstorungen",
+    "hautproblem": "hautprobleme",
+    "vissa": "visa",
+    "viza": "visa",
+    "vesa": "visa",
+    "treatement": "treatment",
+    "treatmnt": "treatment",
+    "tretment": "treatment",
+    "punchakarma": "panchakarma",
+    "wieght": "weight",
+    "weigth": "weight",
+    "strees": "stress",
+    "stres": "stress",
+    "laundary": "laundry",
+    "laundery": "laundry",
+    "insurence": "insurance",
+    "shirodara": "shirodhara",
+    "scaitica": "sciatica",
+    "spondolitis": "spondylitis",
+    "spondylitus": "spondylitis",
+    "diabities": "diabetes",
+    "ayurved": "ayurveda",
+    "ayurvedha": "ayurveda",
+    "pancakarma": "panchakarma",
+    "kairaly": "kairali",
+    "kerela": "kerala",
+    "vegeterian": "vegetarian",
+    "vegitarian": "vegetarian",
+    "accomodation": "accommodation",
+    "acommodation": "accommodation",
+    "airoport": "airport",
+    "aiport": "airport",
+    "raiway": "railway",
+    "palakad": "palakkad",
+    "palghat": "palakkad",
+    "coimbotore": "coimbatore",
+    "psoriases": "psoriasis",
+    "migraines": "migraine",
+    "cholestrol": "cholesterol",
+    "colestrol": "cholesterol",
+    "thyroide": "thyroid",
+    "thyriod": "thyroid",
+    "menapause": "menopause",
+    "menopose": "menopause",
+    "constipated": "constipation",
+    "imunity": "immunity",
+    "rejuvination": "rejuvenation",
+    "rejuvenate": "rejuvenation",
+    "detoxify": "detox",
+    "weightloss": "weight loss",
+    "panchakram": "panchakarma"
+  },
+  "rehabExempt": [
+    "i had",
+    "had a",
+    "have had",
+    "i have had",
+    "history of",
+    "years ago",
+    "year ago",
+    "months ago",
+    "month ago",
+    "weeks ago",
+    "last year",
+    "since 20",
+    "recovering from",
+    "recovered from",
+    "ever since",
+    "ich hatte",
+    "vor jahren",
+    "seit jahren",
+    "seit dem",
+    "j ai eu",
+    "il y a des annees",
+    "depuis des annees",
+    "after stroke",
+    "post stroke",
+    "stroke rehabilitation",
+    "rehabilitation after stroke",
+    "recovering from a stroke",
+    "had a stroke last year",
+    "years after stroke",
+    "long standing",
+    "long term",
+    "nach schlaganfall",
+    "rehabilitation nach schlaganfall",
+    "apres un avc",
+    "reeducation apres avc",
+    "long standing facial paralysis",
+    "old facial paralysis"
+  ],
+  "urgent": [
+    "facial droop",
+    "face drooping",
+    "drooping face",
+    "face has dropped",
+    "mouth droop",
+    "one side of my face",
+    "side of my face has dropped",
+    "gesicht hangt",
+    "haengender mundwinkel",
+    "visage affaisse",
+    "coin de la bouche tombe",
+    "slurred speech",
+    "cannot speak",
+    "undeutliche sprache",
+    "troubles de la parole",
+    "one sided weakness",
+    "weakness on one side",
+    "sudden weakness",
+    "sudden numbness",
+    "plotzliche schwache",
+    "faiblesse soudaine",
+    "engourdissement soudain",
+    "cannot breathe",
+    "can t breathe",
+    "unable to breathe",
+    "struggling to breathe",
+    "severe breathlessness",
+    "severe shortness of breath",
+    "gasping for breath",
+    "ich kann nicht atmen",
+    "starke atemnot",
+    "je n arrive pas a respirer",
+    "essoufflement severe",
+    "chest pain",
+    "pain in my chest",
+    "brustschmerzen",
+    "douleur thoracique",
+    "severe withdrawal",
+    "alcohol withdrawal",
+    "shaking without alcohol",
+    "delirium tremens",
+    "starke entzugserscheinungen",
+    "sevrage alcoolique severe",
+    "sudden vision loss",
+    "sudden blurred vision",
+    "lost sight in one eye",
+    "plotzlicher sehverlust",
+    "perte de vision soudaine"
+  ],
+  "consult": [
+    "palpitations",
+    "heart palpitations",
+    "herzklopfen",
+    "palpitations cardiaques",
+    "gout",
+    "gicht",
+    "goutte",
+    "fertility",
+    "trying for a baby",
+    "ivf",
+    "kinderwunsch",
+    "fertilite",
+    "hair fall",
+    "hair loss",
+    "losing hair",
+    "haarausfall",
+    "perte de cheveux",
+    "hearing loss",
+    "deaf",
+    "hormone injections",
+    "surgery",
+    "operation"
+  ],
+  "decline": [
+    "hiv",
+    "aids",
+    "hiv positive",
+    "retroviral",
+    "tuberculosis",
+    "active tb",
+    "tb patient",
+    "hepatitis b",
+    "hepatitis c",
+    "covid",
+    "corona",
+    "measles",
+    "chicken pox",
+    "typhoid",
+    "dengue",
+    "contagious",
+    "infectious disease",
+    "communicable disease",
+    "cure my cancer",
+    "cure cancer",
+    "treat my cancer",
+    "treat cancer",
+    "cancer cure",
+    "chemotherapy instead",
+    "instead of chemotherapy",
+    "alternative to chemotherapy",
+    "krebs heilen",
+    "guerir le cancer",
+    "tuberkulose",
+    "ansteckend",
+    "infektionskrankheit",
+    "maladie contagieuse"
+  ],
+  "caveat": {
+    "/revitalizing-and-strengthening/": "We do not treat cancer itself. Our doctors provide supportive care alongside your oncologist’s treatment — they will tell you what is possible at consultation.",
+    "/womens-hormonal-balance-endocrine-therapy/": "Endocrine and hormonal care. An Ayurvedic doctor confirms at consultation whether it suits your diagnosis.",
+    "/treatment-for-hypertension/": "Cardiovascular and blood-pressure care. Bring your current prescriptions — our doctors review them with you at consultation.",
+    "/post-pregnancy-health-programme/": "Postnatal care, including feeding and recovery concerns. An Ayurvedic doctor confirms what is appropriate for you.",
+    "/treatment-for-paralysis/": "Rehabilitation rather than acute care. Our doctors confirm at consultation whether this is the right stage for you.",
+    "/treatment-for-facial-paralysis/": "Rehabilitation for long-standing facial paralysis. Our doctors confirm suitability at consultation.",
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": "Our doctors assess you before any programme begins, and supervise withdrawal medically."
+  },
+  "generic": [
+    {
+      "term": "detox",
+      "routes": [
+        "/panchakarma-therapy/",
+        "/holistic-treatment-for-rejuvenation-and-detoxification/",
+        "/preventive-and-regenerative-treatment/"
+      ]
+    },
+    {
+      "term": "detoxification",
+      "routes": [
+        "/panchakarma-therapy/",
+        "/holistic-treatment-for-rejuvenation-and-detoxification/",
+        "/preventive-and-regenerative-treatment/"
+      ]
+    },
+    {
+      "term": "entgiftung",
+      "routes": [
+        "/panchakarma-therapy/",
+        "/holistic-treatment-for-rejuvenation-and-detoxification/",
+        "/preventive-and-regenerative-treatment/"
+      ]
+    },
+    {
+      "term": "back pain",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-slip-disc/",
+        "/treatment-for-spondylitis/"
+      ]
+    },
+    {
+      "term": "stress",
+      "routes": [
+        "/treatment-to-remove-stress-and-strain/",
+        "/yoga-based-stress-energy-reset-program/"
+      ]
+    },
+    {
+      "term": "skin problem",
+      "routes": [
+        "/treatment-for-skin-diseases/",
+        "/treatment-for-psoriasis/"
+      ]
+    },
+    {
+      "term": "skin problems",
+      "routes": [
+        "/treatment-for-skin-diseases/",
+        "/treatment-for-psoriasis/"
+      ]
+    },
+    {
+      "term": "hautprobleme",
+      "routes": [
+        "/treatment-for-skin-diseases/",
+        "/treatment-for-psoriasis/"
+      ]
+    },
+    {
+      "term": "problemes de peau",
+      "routes": [
+        "/treatment-for-skin-diseases/",
+        "/treatment-for-psoriasis/"
+      ]
+    },
+    {
+      "term": "yoga",
+      "routes": [
+        "/yoga-and-meditation-package/",
+        "/yoga-retreats/",
+        "/yoga-meditation-training/"
+      ]
+    },
+    {
+      "term": "pain",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-arthritis-and-spondylitis/",
+        "/treatment-for-cervical-spondylosis/",
+        "/treatment-for-slip-disc/"
+      ]
+    },
+    {
+      "term": "schmerzen",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-arthritis-and-spondylitis/",
+        "/treatment-for-cervical-spondylosis/"
+      ]
+    },
+    {
+      "term": "douleur",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-arthritis-and-spondylitis/",
+        "/treatment-for-cervical-spondylosis/"
+      ]
+    },
+    {
+      "term": "ruckenschmerzen",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-slip-disc/",
+        "/treatment-for-spondylitis/"
+      ]
+    },
+    {
+      "term": "mal de dos",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-slip-disc/",
+        "/treatment-for-spondylitis/"
+      ]
+    },
+    {
+      "term": "stiff back",
+      "routes": [
+        "/treatment-for-spondylitis/",
+        "/treatment-for-chronic-back-pain/"
+      ]
+    },
+    {
+      "term": "nerve pain",
+      "routes": [
+        "/treatment-for-slip-disc/",
+        "/treatment-for-nervous-disability/"
+      ]
+    },
+    {
+      "term": "nervenschmerzen",
+      "routes": [
+        "/treatment-for-slip-disc/",
+        "/treatment-for-nervous-disability/"
+      ]
+    },
+    {
+      "term": "shoulder pain",
+      "routes": [
+        "/treatment-for-cervical-spondylosis/",
+        "/treatment-for-arthritis-and-spondylitis/"
+      ]
+    },
+    {
+      "term": "joint pain",
+      "routes": [
+        "/treatment-for-arthritis-and-spondylitis/",
+        "/treatment-for-spondylitis/"
+      ]
+    },
+    {
+      "term": "skin",
+      "routes": [
+        "/treatment-for-skin-diseases/",
+        "/treatment-for-psoriasis/"
+      ]
+    },
+    {
+      "term": "yoga retreat",
+      "routes": [
+        "/yoga-retreats/"
+      ]
+    }
+  ],
+  "terms": {
+    "/panchakarma-therapy/": [
+      "panchakarma",
+      "classical panchakarma",
+      "ayurvedic detox",
+      "detox programme",
+      "toxin removal",
+      "vamana",
+      "virechana",
+      "basti",
+      "nasya",
+      "raktamokshana",
+      "entgiftungskur",
+      "detoxification ayurvedique",
+      "cleanse",
+      "purification",
+      "five actions",
+      "pancha karma",
+      "punchakarma",
+      "panchakarma treatment"
+    ],
+    "/weight-loss-programme/": [
+      "weight loss",
+      "lose weight",
+      "losing weight",
+      "obesity",
+      "obese",
+      "overweight",
+      "belly fat",
+      "tummy fat",
+      "slimming",
+      "metabolism",
+      "gewichtsverlust",
+      "abnehmen",
+      "übergewicht",
+      "fettabbau",
+      "perte de poids",
+      "obésité",
+      "maigrir",
+      "métabolisme",
+      "sthoulyaghna",
+      "fat",
+      "weight",
+      "weight management",
+      "weight reduction"
+    ],
+    "/holistic-treatment-for-rejuvenation-and-detoxification/": [
+      "rejuvenation",
+      "anti ageing",
+      "anti aging",
+      "vitality",
+      "run down",
+      "worn out",
+      "feeling tired all the time",
+      "restore energy",
+      "verjüngung",
+      "vitalität",
+      "erschöpfung",
+      "rajeunissement",
+      "vitalité",
+      "fatigue chronique",
+      "tired",
+      "always tired",
+      "no stamina"
+    ],
+    "/personalized-customized-healing-program/": [
+      "personalised programme",
+      "personalized program",
+      "customised programme",
+      "tailored programme",
+      "bespoke programme",
+      "more than one condition",
+      "several conditions",
+      "multiple conditions",
+      "lots of problems",
+      "not sure which programme",
+      "not sure what i need",
+      "individuelles programm",
+      "maßgeschneidertes programm",
+      "mehrere beschwerden",
+      "programme personnalisé",
+      "sur mesure",
+      "plusieurs problèmes",
+      "more than one problem",
+      "several problems",
+      "many problems",
+      "not sure",
+      "which programme is right for me",
+      "personalised",
+      "personalized"
+    ],
+    "/digestive-wellness-gut-health-yoga-therapy/": [
+      "digestion",
+      "digestive",
+      "gut health",
+      "stomach problems",
+      "bloating",
+      "bloated",
+      "constipation",
+      "ibs",
+      "irritable bowel",
+      "acidity",
+      "acid reflux",
+      "indigestion",
+      "verdauung",
+      "darmgesundheit",
+      "blähungen",
+      "verstopfung",
+      "digestion difficile",
+      "ballonnements",
+      "santé intestinale",
+      "gastric",
+      "gas",
+      "stomach",
+      "fatty liver",
+      "stomach trouble"
+    ],
+    "/yoga-based-stress-energy-reset-program/": [
+      "yoga for stress",
+      "burnout",
+      "burn out",
+      "low energy",
+      "no energy",
+      "exhausted",
+      "overworked",
+      "breathing practice",
+      "yoga gegen stress",
+      "energielosigkeit",
+      "yoga anti stress",
+      "épuisement",
+      "manque d énergie",
+      "energy reset",
+      "burnout recovery"
+    ],
+    "/immunity-enhancement-executive-health-assessment-therapy/": [
+      "immunity",
+      "immune system",
+      "executive health check",
+      "health assessment",
+      "frequent infections",
+      "falling ill often",
+      "immunsystem",
+      "abwehrkräfte",
+      "gesundheitscheck",
+      "immunité",
+      "système immunitaire",
+      "bilan de santé",
+      "ojas",
+      "immune",
+      "health check",
+      "checkup",
+      "check up"
+    ],
+    "/sleep-restoration-therapy/": [
+      "sleep",
+      "insomnia",
+      "cannot sleep",
+      "can t sleep",
+      "broken sleep",
+      "waking at night",
+      "poor sleep",
+      "sleepless",
+      "sleeping problems",
+      "schlafstörungen",
+      "einschlafprobleme",
+      "durchschlafprobleme",
+      "schlaflosigkeit",
+      "ich kann nicht schlafen",
+      "troubles du sommeil",
+      "insomnie",
+      "réveils nocturnes",
+      "je ne dors pas",
+      "nidra",
+      "sleeping"
+    ],
+    "/womens-hormonal-balance-endocrine-therapy/": [
+      "thyroid",
+      "thyroid problem",
+      "underactive thyroid",
+      "overactive thyroid",
+      "hypothyroid",
+      "hyperthyroid",
+      "schilddruse",
+      "schilddrusenunterfunktion",
+      "thyroide",
+      "endocrine",
+      "hormonal balance",
+      "hormone imbalance",
+      "hormonal problems",
+      "menopause",
+      "perimenopause",
+      "hot flushes",
+      "hot flashes",
+      "pcos",
+      "pcod",
+      "irregular periods",
+      "painful periods",
+      "hormonelles gleichgewicht",
+      "wechseljahre",
+      "hitzewallungen",
+      "unregelmäßige periode",
+      "équilibre hormonal",
+      "ménopause",
+      "bouffées de chaleur",
+      "règles irrégulières",
+      "hormones",
+      "hormonal",
+      "women s health",
+      "womens health",
+      "period problems",
+      "pcod problem"
+    ],
+    "/preventive-and-regenerative-treatment/": [
+      "preventive treatment",
+      "prevention",
+      "stay healthy",
+      "regenerative treatment",
+      "annual detox",
+      "yearly programme",
+      "vorbeugende behandlung",
+      "prävention",
+      "regeneration",
+      "traitement préventif",
+      "prévention",
+      "régénération",
+      "annual checkup",
+      "annual check up",
+      "yearly checkup",
+      "health checkup",
+      "preventive",
+      "preventive care"
+    ],
+    "/treatment-for-diabetes/": [
+      "diabetes",
+      "diabetic",
+      "type 2 diabetes",
+      "prediabetes",
+      "blood sugar",
+      "high blood sugar",
+      "sugar levels",
+      "hba1c",
+      "insulin resistance",
+      "blutzucker",
+      "zuckerkrank",
+      "insulinresistenz",
+      "diabète",
+      "glycémie",
+      "sucre dans le sang",
+      "madhumeha",
+      "sugar",
+      "sugar problem",
+      "blood sugar problem",
+      "diabetes treatment"
+    ],
+    "/yoga-meditation-training/": [
+      "yoga teacher training",
+      "become a yoga teacher",
+      "yoga certification",
+      "ttc",
+      "meditation course",
+      "yogalehrer ausbildung",
+      "meditationskurs",
+      "formation professeur de yoga",
+      "cours de méditation",
+      "yoga training",
+      "yoga course",
+      "teacher training"
+    ],
+    "/ayurveda-training-programme/": [
+      "ayurveda course",
+      "learn ayurveda",
+      "study ayurveda",
+      "therapist training",
+      "panchakarma therapist training",
+      "ayurveda diploma",
+      "ayurveda certification",
+      "ayurveda ausbildung",
+      "therapeutenausbildung",
+      "ayurveda diplom",
+      "formation ayurveda",
+      "diplôme ayurveda",
+      "training course",
+      "training courses",
+      "course",
+      "courses",
+      "training",
+      "ayurveda training",
+      "therapist course",
+      "certificate course"
+    ],
+    "/yoga-retreats/": [
+      "yoga retreat",
+      "short break",
+      "time out",
+      "auszeit",
+      "retraite de yoga",
+      "séjour bien être",
+      "yoga programme",
+      "yoga program",
+      "personalised yoga"
+    ],
+    "/yoga-and-meditation-package/": [
+      "yoga and meditation",
+      "meditation",
+      "pranayama",
+      "mindfulness",
+      "breathing exercises",
+      "daily practice",
+      "calm mind",
+      "yoga und meditation",
+      "achtsamkeit",
+      "atemübungen",
+      "yoga et méditation",
+      "pleine conscience",
+      "exercices de respiration"
+    ],
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": [
+      "withdrawal",
+      "entzug",
+      "entwohnung",
+      "sevrage",
+      "addiction",
+      "addicted",
+      "alcohol problem",
+      "drinking problem",
+      "stop drinking",
+      "give up alcohol",
+      "drugs",
+      "drug problem",
+      "quit smoking",
+      "stop smoking",
+      "tobacco",
+      "cigarettes",
+      "rehabilitation",
+      "dependency",
+      "sucht",
+      "abhängigkeit",
+      "alkoholproblem",
+      "rauchen aufhören",
+      "drogen",
+      "entwöhnung",
+      "dépendance",
+      "arrêter de fumer",
+      "problème d alcool",
+      "drogue",
+      "alcohol addiction",
+      "de addiction",
+      "deaddiction",
+      "smoking"
+    ],
+    "/treatment-for-sinusitis-and-migraine/": [
+      "sinusitis",
+      "sinus problems",
+      "blocked nose",
+      "stuffy nose",
+      "nasal congestion",
+      "migraine",
+      "migraines",
+      "headache",
+      "headaches",
+      "nebenhöhlenentzündung",
+      "verstopfte nase",
+      "migräne",
+      "kopfschmerzen",
+      "sinusite",
+      "nez bouché",
+      "maux de tête",
+      "céphalées",
+      "nasyam",
+      "nasal drops",
+      "sinus treatment",
+      "sinus"
+    ],
+    "/treatment-for-bronchial-diseases/": [
+      "asthma",
+      "bronchitis",
+      "wheezing",
+      "chronic cough",
+      "coughing",
+      "breathing problems",
+      "respiratory problems",
+      "husten",
+      "atemwege",
+      "atembeschwerden",
+      "asthme",
+      "bronchite",
+      "toux",
+      "voies respiratoires",
+      "breathing problem",
+      "breathing",
+      "breathless"
+    ],
+    "/beauty-care-and-eye-care/": [
+      "eye care",
+      "eyesight",
+      "vision",
+      "dry eyes",
+      "tired eyes",
+      "eye strain",
+      "screen fatigue",
+      "augenpflege",
+      "sehkraft",
+      "trockene augen",
+      "augenbelastung",
+      "soins des yeux",
+      "vue",
+      "sécheresse oculaire",
+      "fatigue des yeux",
+      "eyes",
+      "eye"
+    ],
+    "/treatment-to-remove-stress-and-strain/": [
+      "stress",
+      "anxiety",
+      "anxious",
+      "worry",
+      "tension",
+      "mental health",
+      "overwhelmed",
+      "cannot switch off",
+      "relaxation",
+      "shirodhara",
+      "angst",
+      "sorgen",
+      "anspannung",
+      "entspannung",
+      "überforderung",
+      "anxiété",
+      "inquiétude",
+      "détente",
+      "oil on forehead",
+      "head oil",
+      "mental",
+      "mind",
+      "manas shanthi",
+      "burn out stress"
+    ],
+    "/treatment-for-hypertension/": [
+      "cholesterol",
+      "high cholesterol",
+      "circulation",
+      "poor circulation",
+      "heart health",
+      "cardiovascular",
+      "herzgesundheit",
+      "sante cardiaque",
+      "high blood pressure",
+      "blood pressure",
+      "hypertension",
+      "bluthochdruck",
+      "hoher blutdruck",
+      "hypertonie",
+      "tension artérielle",
+      "bp",
+      "high bp",
+      "blood pressure problem"
+    ],
+    "/treatment-for-nervous-disability/": [
+      "numbness",
+      "weakness in legs",
+      "weakness in arms",
+      "taubheit",
+      "engourdissement",
+      "nerve problems",
+      "nervous system",
+      "neurological",
+      "neuropathy",
+      "numbness in hands",
+      "tingling",
+      "pins and needles",
+      "tremor",
+      "multiple sclerosis",
+      "nervensystem",
+      "neurologisch",
+      "taubheitsgefühl",
+      "kribbeln",
+      "zittern",
+      "système nerveux",
+      "neuropathie",
+      "engourdissement",
+      "fourmillements",
+      "tremblements",
+      "nerve",
+      "nerves"
+    ],
+    "/revitalizing-and-strengthening/": [
+      "cancer",
+      "krebs",
+      "chemotherapy",
+      "chemotherapie",
+      "chimiotherapie",
+      "radiotherapy",
+      "oncology",
+      "support during cancer treatment",
+      "supportive care during chemotherapy",
+      "after chemotherapy",
+      "radiotherapy support",
+      "oncology supportive care",
+      "begleitende therapie bei krebs",
+      "nach der chemotherapie",
+      "soins de support pendant le cancer",
+      "après la chimiothérapie",
+      "cancer support",
+      "supportive care",
+      "cancer patient",
+      "cancer patients",
+      "chemotherapy side effects",
+      "chemo"
+    ],
+    "/treatment-for-slip-disc/": [
+      "slipped disc",
+      "slip disc",
+      "herniated disc",
+      "disc prolapse",
+      "sciatica",
+      "trapped nerve",
+      "shooting leg pain",
+      "lumbar disc",
+      "bandscheibenvorfall",
+      "ischias",
+      "hernie discale",
+      "sciatique",
+      "disk",
+      "slip disk",
+      "slipped disk",
+      "herniated disk",
+      "prolapsed disc"
+    ],
+    "/treatment-for-arthritis-and-spondylitis/": [
+      "arthritis",
+      "knee",
+      "knees",
+      "hip",
+      "hips",
+      "knee pain",
+      "hip pain",
+      "swollen joints",
+      "stiff joints",
+      "rheumatoid arthritis",
+      "rheumatism",
+      "osteoarthritis",
+      "gelenkschmerzen",
+      "knieschmerzen",
+      "rheuma",
+      "steife gelenke",
+      "arthrite",
+      "douleur au genou",
+      "rhumatisme",
+      "sandhivata",
+      "joints",
+      "joint"
+    ],
+    "/treatment-for-chronic-back-pain/": [
+      "chronic back pain",
+      "lower back pain",
+      "backache",
+      "lumbago",
+      "bad back",
+      "long standing back pain",
+      "kreuzschmerzen",
+      "lendenschmerzen",
+      "lombalgie",
+      "douleur dorsale",
+      "mal de dos chronique",
+      "kati vasti",
+      "kati shula",
+      "lower back oil pool",
+      "lower back"
+    ],
+    "/post-pregnancy-health-programme/": [
+      "breastfeeding",
+      "lactation",
+      "milk supply",
+      "not enough milk",
+      "c section recovery",
+      "caesarean recovery",
+      "stillen",
+      "milchbildung",
+      "allaitement",
+      "post pregnancy",
+      "postpartum",
+      "after birth",
+      "after delivery",
+      "new mother",
+      "baby weight",
+      "postnatal recovery",
+      "nach der geburt",
+      "wochenbett",
+      "rückbildung",
+      "après l accouchement",
+      "post partum",
+      "récupération après accouchement",
+      "sutika",
+      "postnatal"
+    ],
+    "/treatment-for-skin-diseases/": [
+      "skin problems",
+      "eczema",
+      "dermatitis",
+      "rash",
+      "itching",
+      "itchy skin",
+      "acne",
+      "pimples",
+      "dry skin",
+      "pigmentation",
+      "hautprobleme",
+      "ekzem",
+      "ausschlag",
+      "juckreiz",
+      "akne",
+      "trockene haut",
+      "problèmes de peau",
+      "eczéma",
+      "éruption",
+      "démangeaisons",
+      "acné",
+      "peau sèche",
+      "tvacha",
+      "skin disease",
+      "skin diseases"
+    ],
+    "/treatment-for-facial-paralysis/": [
+      "facial paralysis",
+      "bells palsy",
+      "facial nerve",
+      "long standing facial paralysis",
+      "gesichtslähmung",
+      "fazialisparese",
+      "paralysie faciale",
+      "nerf facial",
+      "ardita",
+      "facial palsy",
+      "bell s palsy"
+    ],
+    "/treatment-for-paralysis/": [
+      "paralysis",
+      "stroke",
+      "schlaganfall",
+      "avc",
+      "one sided weakness",
+      "weakness on one side",
+      "half body weakness",
+      "cannot walk",
+      "difficulty walking",
+      "kann nicht gehen",
+      "ne peut plus marcher",
+      "after stroke",
+      "post stroke rehabilitation",
+      "stroke rehabilitation",
+      "hemiplegia",
+      "loss of movement",
+      "mobility rehabilitation",
+      "physiotherapy after stroke",
+      "lähmung",
+      "nach schlaganfall",
+      "halbseitenlähmung",
+      "rehabilitation nach schlaganfall",
+      "paralysie",
+      "après un avc",
+      "hémiplégie",
+      "rééducation",
+      "pakshaghata",
+      "stroke rehab"
+    ],
+    "/treatment-for-cervical-spondylosis/": [
+      "neck",
+      "nacken",
+      "neck pain",
+      "stiff neck",
+      "cervical spondylosis",
+      "cervical spine",
+      "neck and shoulder pain",
+      "upper back pain",
+      "computer neck",
+      "nackenschmerzen",
+      "steifer nacken",
+      "halswirbelsäule",
+      "douleur cervicale",
+      "nuque raide",
+      "haut du dos",
+      "manyastambha",
+      "cervical",
+      "spondylosis",
+      "cervical spondylitis"
+    ],
+    "/treatment-for-spondylitis/": [
+      "spondylitis",
+      "ankylosing spondylitis",
+      "spine stiffness",
+      "morning stiffness",
+      "sacroiliac",
+      "wirbelsäule",
+      "morgensteifigkeit",
+      "rückensteifheit",
+      "spondylite",
+      "colonne vertébrale",
+      "raideur matinale",
+      "spondylitis treatment",
+      "stiff spine"
+    ],
+    "/treatment-for-psoriasis/": [
+      "psoriasis",
+      "scaly skin",
+      "flaky skin",
+      "silvery scales",
+      "scalp psoriasis",
+      "flare up",
+      "schuppenflechte",
+      "schuppige haut",
+      "kopfhaut psoriasis",
+      "peau squameuse",
+      "cuir chevelu",
+      "kushtha"
+    ],
+    "/one-day-ayurveda-workshop-program-kerala/": [
+      "abhyangam",
+      "abhyanga",
+      "oil massage",
+      "full body massage",
+      "one day workshop"
+    ]
+  },
+  "forWhat": {
+    "/panchakarma-therapy/": "classical detox, toxin removal",
+    "/weight-loss-programme/": "weight loss, obesity",
+    "/holistic-treatment-for-rejuvenation-and-detoxification/": "rejuvenation, feeling tired all the time",
+    "/personalized-customized-healing-program/": "more than one condition",
+    "/digestive-wellness-gut-health-yoga-therapy/": "digestion, gut health",
+    "/yoga-based-stress-energy-reset-program/": "burnout, low energy",
+    "/immunity-enhancement-executive-health-assessment-therapy/": "immunity, executive health check",
+    "/sleep-restoration-therapy/": "sleep, insomnia",
+    "/womens-hormonal-balance-endocrine-therapy/": "thyroid, hormonal balance, menopause",
+    "/preventive-and-regenerative-treatment/": "preventive treatment, staying healthy",
+    "/treatment-for-diabetes/": "diabetes, blood sugar",
+    "/yoga-meditation-training/": "yoga teacher training",
+    "/ayurveda-training-programme/": "learn Ayurveda, therapist training",
+    "/yoga-retreats/": "yoga retreat",
+    "/yoga-and-meditation-package/": "yoga and meditation, pranayama",
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": "addiction, withdrawal",
+    "/treatment-for-sinusitis-and-migraine/": "sinusitis, migraine",
+    "/treatment-for-bronchial-diseases/": "asthma, bronchitis",
+    "/beauty-care-and-eye-care/": "eye care, eyesight",
+    "/treatment-to-remove-stress-and-strain/": "stress, anxiety",
+    "/treatment-for-hypertension/": "high blood pressure, cholesterol",
+    "/treatment-for-nervous-disability/": "numbness, neuropathy",
+    "/revitalizing-and-strengthening/": "supportive care during cancer treatment",
+    "/treatment-for-slip-disc/": "slipped disc, sciatica",
+    "/treatment-for-arthritis-and-spondylitis/": "arthritis, knee pain",
+    "/treatment-for-chronic-back-pain/": "chronic back pain, lower back pain",
+    "/post-pregnancy-health-programme/": "post pregnancy, postpartum recovery",
+    "/treatment-for-skin-diseases/": "eczema, dermatitis",
+    "/treatment-for-facial-paralysis/": "facial paralysis, Bell's palsy",
+    "/treatment-for-paralysis/": "paralysis, stroke rehabilitation",
+    "/treatment-for-cervical-spondylosis/": "neck pain, cervical spondylosis",
+    "/treatment-for-spondylitis/": "spondylitis, spine stiffness",
+    "/treatment-for-psoriasis/": "psoriasis, scaly skin",
+    "/one-day-ayurveda-workshop-program-kerala/": "one-day workshop, Abhyangam",
+    "/three-day-short-term-ayurveda-certificate-program-tap-hv/": "three-day certificate course",
+    "/intensive-ayurveda-training-program-learn-practice-ayurveda/": "five-day intensive training",
+    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/": "ten-day advanced training",
+    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/": "twenty-day consultant and therapist training"
+  },
+  "chips": [
+    {
+      "id": "back",
+      "label": "Back & joints",
+      "routes": [
+        "/treatment-for-chronic-back-pain/",
+        "/treatment-for-slip-disc/",
+        "/treatment-for-spondylitis/",
+        "/treatment-for-cervical-spondylosis/",
+        "/treatment-for-arthritis-and-spondylitis/"
+      ]
+    },
+    {
+      "id": "skin",
+      "label": "Skin",
+      "routes": [
+        "/treatment-for-psoriasis/",
+        "/treatment-for-skin-diseases/"
+      ]
+    },
+    {
+      "id": "stress",
+      "label": "Stress & sleep",
+      "routes": [
+        "/treatment-to-remove-stress-and-strain/",
+        "/yoga-based-stress-energy-reset-program/",
+        "/sleep-restoration-therapy/"
+      ]
+    },
+    {
+      "id": "weight",
+      "label": "Weight & diabetes",
+      "routes": [
+        "/weight-loss-programme/",
+        "/treatment-for-diabetes/",
+        "/digestive-wellness-gut-health-yoga-therapy/"
+      ]
+    },
+    {
+      "id": "women",
+      "label": "Women's health",
+      "routes": [
+        "/womens-hormonal-balance-endocrine-therapy/",
+        "/post-pregnancy-health-programme/"
+      ]
+    },
+    {
+      "id": "detox",
+      "label": "Detox & prevention",
+      "routes": [
+        "/panchakarma-therapy/",
+        "/holistic-treatment-for-rejuvenation-and-detoxification/",
+        "/preventive-and-regenerative-treatment/",
+        "/immunity-enhancement-executive-health-assessment-therapy/"
+      ]
+    }
+  ],
+  "intents": [
+    {
+      "words": [
+        "price",
+        "prices",
+        "cost",
+        "costs",
+        "rates",
+        "rate",
+        "fees",
+        "fee",
+        "charges",
+        "tariff",
+        "pricing",
+        "how much",
+        "euro",
+        "dollar",
+        "dollars",
+        "rupees",
+        "usd",
+        "eur",
+        "inr",
+        "price list",
+        "rate card"
+      ],
+      "target": "/ayurveda-package/"
+    },
+    {
+      "words": [
+        "cheapest",
+        "cheap",
+        "lowest price",
+        "budget",
+        "affordable"
+      ],
+      "target": "/ayurveda-package/",
+      "sort": "priceAsc"
+    },
+    {
+      "words": [
+        "reach",
+        "directions",
+        "how to reach",
+        "airport",
+        "airports",
+        "flight",
+        "flights",
+        "train",
+        "trains",
+        "railway",
+        "station",
+        "taxi",
+        "pickup",
+        "pick up",
+        "transfer",
+        "transfers",
+        "distance",
+        "km",
+        "coimbatore",
+        "cochin",
+        "kochi",
+        "calicut",
+        "drive",
+        "travel"
+      ],
+      "target": "/how-to-reach/"
+    },
+    {
+      "words": [
+        "map",
+        "location",
+        "google map"
+      ],
+      "target": "/how-to-reach/"
+    },
+    {
+      "words": [
+        "visa",
+        "e visa",
+        "evisa",
+        "medical visa",
+        "invitation letter"
+      ],
+      "target": "q-36"
+    },
+    {
+      "words": [
+        "villa",
+        "villas",
+        "room",
+        "rooms",
+        "suite",
+        "stay",
+        "accommodation",
+        "ac",
+        "air conditioning",
+        "where to stay"
+      ],
+      "target": "/our-villas/"
+    },
+    {
+      "words": [
+        "food",
+        "meals",
+        "diet",
+        "cuisine",
+        "restaurant",
+        "eat",
+        "eating",
+        "veg"
+      ],
+      "target": "/ayurvedic-cuisine/"
+    },
+    {
+      "words": [
+        "vegetarian",
+        "vegetarian food"
+      ],
+      "target": "/vegetarian/"
+    },
+    {
+      "words": [
+        "vegan",
+        "gluten",
+        "allergy",
+        "allergies"
+      ],
+      "target": "q-21"
+    },
+    {
+      "words": [
+        "alcohol",
+        "coffee",
+        "caffeine"
+      ],
+      "target": "/alcohol-free/"
+    },
+    {
+      "words": [
+        "doctor",
+        "doctors",
+        "physician",
+        "consult",
+        "consultation",
+        "vaidya",
+        "talk to a doctor",
+        "speak to a doctor",
+        "online consultation",
+        "free consultation"
+      ],
+      "target": "/online-consultation/"
+    },
+    {
+      "words": [
+        "book",
+        "booking",
+        "reserve",
+        "reservation",
+        "book now"
+      ],
+      "target": "/book-now/"
+    },
+    {
+      "words": [
+        "contact",
+        "phone",
+        "phone number",
+        "whatsapp",
+        "email",
+        "call",
+        "number",
+        "telephone"
+      ],
+      "target": "/contact-us/"
+    },
+    {
+      "words": [
+        "enquiry",
+        "enquire",
+        "inquiry",
+        "enquiry form"
+      ],
+      "target": "/enquiry-form/"
+    },
+    {
+      "words": [
+        "offer",
+        "offers",
+        "discount",
+        "discounts",
+        "deal",
+        "deals",
+        "promotion"
+      ],
+      "target": "/offers/"
+    },
+    {
+      "words": [
+        "senior",
+        "senior citizen",
+        "elderly",
+        "old age",
+        "pensioner"
+      ],
+      "target": "/offers/senior-citizen-offer/"
+    },
+    {
+      "words": [
+        "army",
+        "defence",
+        "defense",
+        "military",
+        "paramilitary",
+        "soldier"
+      ],
+      "target": "/offers/defence-paramilitary-personnel-get-upto-30-off/"
+    },
+    {
+      "words": [
+        "gift",
+        "voucher",
+        "vouchers",
+        "gift voucher"
+      ],
+      "target": "/gift-vouchers/"
+    },
+    {
+      "words": [
+        "training",
+        "course",
+        "courses",
+        "certificate",
+        "diploma",
+        "learn",
+        "therapist",
+        "tap",
+        "aatp",
+        "aalct",
+        "internship",
+        "fees for course"
+      ],
+      "target": "/ayurveda-training-programme/"
+    },
+    {
+      "words": [
+        "ayurveda",
+        "ayurvedic",
+        "ayurved",
+        "treatments"
+      ],
+      "target": "/ayurvedic-treatments/"
+    },
+    {
+      "words": [
+        "faq",
+        "faqs",
+        "questions",
+        "question",
+        "download",
+        "downloads"
+      ],
+      "target": "/faqs-downloads/"
+    },
+    {
+      "words": [
+        "gallery",
+        "photos",
+        "pictures",
+        "images"
+      ],
+      "target": "/gallery/"
+    },
+    {
+      "words": [
+        "video",
+        "videos",
+        "virtual tour"
+      ],
+      "target": "/video-gallery/"
+    },
+    {
+      "words": [
+        "review",
+        "reviews",
+        "feedback",
+        "testimonials"
+      ],
+      "target": "/read-feedback/"
+    },
+    {
+      "words": [
+        "nabh",
+        "accreditation",
+        "accredited",
+        "certified"
+      ],
+      "target": "/accreditations/"
+    },
+    {
+      "words": [
+        "award",
+        "awards"
+      ],
+      "target": "/awards-and-accolades/"
+    },
+    {
+      "words": [
+        "job",
+        "jobs",
+        "career",
+        "careers",
+        "vacancy",
+        "recruitment"
+      ],
+      "target": "/careers/"
+    },
+    {
+      "words": [
+        "cancellation",
+        "refund",
+        "cancel"
+      ],
+      "target": "/cancellation-and-refund-policy/"
+    },
+    {
+      "words": [
+        "privacy",
+        "cookies"
+      ],
+      "target": "/privacy-policy/"
+    },
+    {
+      "words": [
+        "weather",
+        "climate",
+        "temperature",
+        "rain"
+      ],
+      "target": "q-27"
+    },
+    {
+      "words": [
+        "best time",
+        "season",
+        "monsoon season",
+        "when to come",
+        "when to visit",
+        "monsoon"
+      ],
+      "target": "q-28"
+    },
+    {
+      "words": [
+        "wifi",
+        "wi fi",
+        "internet",
+        "pool",
+        "swimming",
+        "gym",
+        "facilities",
+        "amenities"
+      ],
+      "target": "q-17"
+    },
+    {
+      "words": [
+        "pack",
+        "packing",
+        "what to pack",
+        "what should i bring",
+        "what to bring"
+      ],
+      "target": "q-29"
+    },
+    {
+      "words": [
+        "laundry",
+        "washing"
+      ],
+      "target": "q-31"
+    },
+    {
+      "words": [
+        "insurance",
+        "reimbursement",
+        "cashless",
+        "claim"
+      ],
+      "target": "q-32"
+    },
+    {
+      "words": [
+        "payment",
+        "pay",
+        "card",
+        "credit card",
+        "upi",
+        "advance",
+        "deposit"
+      ],
+      "target": "q-34"
+    },
+    {
+      "words": [
+        "emergency",
+        "evacuation",
+        "ambulance"
+      ],
+      "target": "q-37"
+    },
+    {
+      "words": [
+        "follow up",
+        "followup",
+        "after treatment",
+        "after i leave"
+      ],
+      "target": "q-41"
+    },
+    {
+      "words": [
+        "medicines",
+        "medicine",
+        "take home",
+        "buy medicines"
+      ],
+      "target": "q-40"
+    },
+    {
+      "words": [
+        "side effects",
+        "side effect"
+      ],
+      "target": "q-15"
+    },
+    {
+      "words": [
+        "how long",
+        "duration",
+        "length of stay",
+        "how many days"
+      ],
+      "target": "q-14"
+    },
+    {
+      "words": [
+        "dosha",
+        "doshas",
+        "vata",
+        "pitta",
+        "kapha",
+        "body type",
+        "constitution"
+      ],
+      "target": "q-10"
+    },
+    {
+      "words": [
+        "bams",
+        "qualified",
+        "qualification",
+        "real doctors"
+      ],
+      "target": "q-11"
+    },
+    {
+      "words": [
+        "wheelchair",
+        "accessibility",
+        "accessible",
+        "elderly parent"
+      ],
+      "target": "q-35"
+    },
+    {
+      "words": [
+        "extended stay",
+        "long stay",
+        "longer stay"
+      ],
+      "target": "q-38"
+    },
+    {
+      "words": [
+        "cooking class",
+        "cooking classes",
+        "workshop",
+        "lectures",
+        "educational"
+      ],
+      "target": "q-42"
+    },
+    {
+      "words": [
+        "clothes",
+        "clothing",
+        "dress",
+        "what to wear",
+        "wear"
+      ],
+      "target": "q-30"
+    }
+  ],
+  "pages": {
+    "/": {
+      "label": "Kairali – The Ayurvedic Healing Village",
+      "keywords": [
+        "kairali palakkad",
+        "kairali",
+        "healing village",
+        "palakkad",
+        "kerala",
+        "ayurvedic hospital",
+        "home"
+      ]
+    },
+    "/about-us/": {
+      "keywords": [
+        "about kairali",
+        "about us",
+        "who we are",
+        "history",
+        "since 1908",
+        "four generations"
+      ]
+    },
+    "/how-to-reach/": {
+      "label": "How to Reach Us",
+      "keywords": [
+        "how to reach",
+        "directions",
+        "nearest airport",
+        "airport",
+        "flight",
+        "railway station",
+        "train",
+        "palakkad junction",
+        "coimbatore",
+        "cochin",
+        "kochi",
+        "calicut",
+        "taxi",
+        "pickup",
+        "airport pickup",
+        "transfer",
+        "distance",
+        "km",
+        "drive",
+        "map",
+        "location",
+        "google map",
+        "where is kairali"
+      ]
+    },
+    "/destination-palakkad/": {
+      "keywords": [
+        "palakkad",
+        "palghat",
+        "destination",
+        "kerala"
+      ]
+    },
+    "/contact-us/": {
+      "keywords": [
+        "contact",
+        "phone number",
+        "phone",
+        "whatsapp",
+        "email",
+        "call us",
+        "address",
+        "telephone"
+      ]
+    },
+    "/enquiry-form/": {
+      "keywords": [
+        "enquiry",
+        "enquire",
+        "inquiry",
+        "form",
+        "ask a question"
+      ]
+    },
+    "/book-now/": {
+      "keywords": [
+        "book",
+        "booking",
+        "reserve",
+        "reservation"
+      ]
+    },
+    "/online-consultation/": {
+      "keywords": [
+        "online consultation",
+        "doctor consultation",
+        "free consultation",
+        "talk to a doctor",
+        "speak to a doctor",
+        "doctor",
+        "physician",
+        "consult",
+        "video consultation"
+      ]
+    },
+    "/ayurveda-package/": {
+      "label": "Ayurveda Packages & Price Lists",
+      "keywords": [
+        "price",
+        "prices",
+        "cost",
+        "rates",
+        "tariff",
+        "fees",
+        "price list",
+        "price list pdf",
+        "pdf",
+        "packages",
+        "package",
+        "how much",
+        "euro",
+        "dollar",
+        "rupees",
+        "rates 2026",
+        "budget"
+      ]
+    },
+    "/ayurvedic-treatments/": {
+      "label": "Ayurvedic Treatment Programmes",
+      "keywords": [
+        "ayurveda treatment",
+        "ayurvedic treatments",
+        "treatments",
+        "all programmes",
+        "programme finder",
+        "find a programme",
+        "ayurveda"
+      ]
+    },
+    "/all-programs/": {
+      "label": "All Programmes",
+      "keywords": [
+        "all programmes",
+        "all programs",
+        "programme list"
+      ]
+    },
+    "/wellness-programs/": {
+      "keywords": [
+        "wellness programmes"
+      ]
+    },
+    "/treatment-programs/": {
+      "keywords": [
+        "treatment programmes"
+      ]
+    },
+    "/training-programs/": {
+      "keywords": [
+        "training programmes"
+      ]
+    },
+    "/yoga-meditation-programs/": {
+      "keywords": [
+        "yoga programmes",
+        "meditation programmes"
+      ]
+    },
+    "/ayurveda/": {
+      "keywords": [
+        "what is ayurveda",
+        "ayurveda explained",
+        "about ayurveda"
+      ]
+    },
+    "/learn-about-ayurveda/": {
+      "keywords": [
+        "learn about ayurveda",
+        "ayurveda basics",
+        "doshas"
+      ]
+    },
+    "/what-is-panchkarma/": {
+      "label": "What is Panchakarma?",
+      "keywords": [
+        "what is panchakarma",
+        "panchakarma explained",
+        "panchakarma meaning"
+      ]
+    },
+    "/knowledge-centre/": {
+      "keywords": [
+        "knowledge centre",
+        "articles",
+        "blog",
+        "read"
+      ]
+    },
+    "/books/": {
+      "keywords": [
+        "books",
+        "ebook",
+        "e book",
+        "healing secrets"
+      ]
+    },
+    "/our-villas/": {
+      "keywords": [
+        "villa",
+        "villas",
+        "rooms",
+        "accommodation",
+        "where you will stay",
+        "stay",
+        "suite"
+      ]
+    },
+    "/deluxe-villa/": {
+      "label": "Deluxe Villa",
+      "keywords": [
+        "deluxe villa",
+        "deluxe",
+        "hairdryer",
+        "hair dryer",
+        "hairdryers"
+      ]
+    },
+    "/classic-villa/": {
+      "label": "Classic Villa",
+      "keywords": [
+        "classic villa",
+        "classic",
+        "hairdryer",
+        "hair dryer",
+        "hairdryers"
+      ]
+    },
+    "/royal-villa/": {
+      "label": "Royal Villa",
+      "keywords": [
+        "royal villa",
+        "royal",
+        "hairdryer",
+        "hair dryer",
+        "hairdryers"
+      ]
+    },
+    "/maharaja-suite/": {
+      "label": "Maharaja Suite",
+      "keywords": [
+        "maharaja suite",
+        "maharaja",
+        "suite",
+        "hairdryer",
+        "hair dryer",
+        "hairdryers",
+        "1001",
+        "1002",
+        "king bedroom living room",
+        "king twin bedrooms"
+      ]
+    },
+    "/village-facilities/": {
+      "keywords": [
+        "facilities",
+        "amenities",
+        "library",
+        "gym"
+      ]
+    },
+    "/ayurvedic-cuisine/": {
+      "keywords": [
+        "food",
+        "cuisine",
+        "meals",
+        "diet",
+        "restaurant",
+        "what do we eat",
+        "ayurvedic food"
+      ]
+    },
+    "/vegetarian/": {
+      "keywords": [
+        "vegetarian",
+        "vegetarian food",
+        "veg food",
+        "pure veg"
+      ]
+    },
+    "/alcohol-free/": {
+      "keywords": [
+        "alcohol",
+        "alcohol free",
+        "no alcohol",
+        "coffee"
+      ]
+    },
+    "/offers/": {
+      "keywords": [
+        "offers",
+        "offer",
+        "discount",
+        "discounts",
+        "deals",
+        "special offers"
+      ]
+    },
+    "/offers/senior-citizen-offer/": {
+      "keywords": [
+        "senior citizen",
+        "senior citizen offer",
+        "senior",
+        "elderly",
+        "pensioner"
+      ]
+    },
+    "/offers/defence-paramilitary-personnel-get-upto-30-off/": {
+      "label": "Defence & Paramilitary Personnel Offer",
+      "keywords": [
+        "army discount",
+        "army",
+        "defence",
+        "military",
+        "paramilitary",
+        "defence offer"
+      ]
+    },
+    "/offers/olympics-and-paralympics-offer/": {
+      "keywords": [
+        "olympics",
+        "paralympics",
+        "athletes"
+      ]
+    },
+    "/gift-vouchers/": {
+      "keywords": [
+        "gift voucher",
+        "gift vouchers",
+        "voucher",
+        "gift"
+      ]
+    },
+    "/accreditations/": {
+      "keywords": [
+        "nabh",
+        "accreditation",
+        "accredited",
+        "certification",
+        "iso"
+      ]
+    },
+    "/awards-and-accolades/": {
+      "keywords": [
+        "awards",
+        "award",
+        "accolades",
+        "recognition"
+      ]
+    },
+    "/read-feedback/": {
+      "label": "Read Feedback",
+      "keywords": [
+        "reviews",
+        "feedback",
+        "testimonials",
+        "patient stories"
+      ]
+    },
+    "/gallery/": {
+      "keywords": [
+        "gallery",
+        "photos",
+        "pictures",
+        "images"
+      ]
+    },
+    "/photo-gallery/": {
+      "keywords": [
+        "photo gallery",
+        "photos"
+      ]
+    },
+    "/video-gallery/": {
+      "label": "Video Gallery",
+      "keywords": [
+        "video",
+        "videos",
+        "video gallery"
+      ]
+    },
+    "/virtual-tour/": {
+      "keywords": [
+        "virtual tour",
+        "360 tour",
+        "tour"
+      ]
+    },
+    "/villas-gallery/": {
+      "keywords": [
+        "villa photos",
+        "villas gallery"
+      ]
+    },
+    "/faqs-downloads/": {
+      "label": "FAQs & Downloads",
+      "keywords": [
+        "faq",
+        "faqs",
+        "frequently asked questions",
+        "questions",
+        "downloads"
+      ]
+    },
+    "/cancellation-and-refund-policy/": {
+      "keywords": [
+        "cancellation policy",
+        "refund",
+        "cancel booking",
+        "cancellation"
+      ]
+    },
+    "/privacy-policy/": {
+      "keywords": [
+        "privacy policy",
+        "privacy",
+        "cookies"
+      ]
+    },
+    "/terms-and-conditions/": {
+      "keywords": [
+        "terms and conditions",
+        "terms"
+      ]
+    },
+    "/walk-in-ayurveda-treatment/": {
+      "keywords": [
+        "walk in treatment",
+        "walk in",
+        "day treatment",
+        "outpatient",
+        "opd"
+      ]
+    },
+    "/karkidaka-chikitsha-or-monsoon-wellness.html": {
+      "label": "Karkidaka Chikitsa – Monsoon Treatment",
+      "keywords": [
+        "monsoon treatment",
+        "monsoon",
+        "karkidaka",
+        "karkidaka chikitsa",
+        "rainy season treatment"
+      ]
+    },
+    "/yoga-meditation-training/": {
+      "keywords": [
+        "yoga teacher training",
+        "yoga training",
+        "meditation training"
+      ]
+    },
+    "/ayurveda-training-programme/": {
+      "keywords": [
+        "ayurveda training",
+        "training course",
+        "courses",
+        "learn ayurveda",
+        "therapist training"
+      ]
+    },
+    "/training-course-fees/": {
+      "label": "Training Course Fees",
+      "keywords": [
+        "course fees",
+        "training fees",
+        "fees",
+        "ayurveda course fees"
+      ]
+    },
+    "/internships-at-kairali/": {
+      "keywords": [
+        "internship",
+        "internships",
+        "intern"
+      ]
+    },
+    "/careers/": {
+      "keywords": [
+        "jobs",
+        "careers",
+        "career",
+        "vacancies",
+        "work with us"
+      ]
+    },
+    "/apply-now/": {
+      "keywords": [
+        "apply",
+        "apply now",
+        "job application"
+      ]
+    },
+    "/meditation/": {
+      "keywords": [
+        "meditation",
+        "meditate",
+        "mindfulness"
+      ]
+    },
+    "/sitemap/": {
+      "keywords": [
+        "sitemap",
+        "site map",
+        "all pages"
+      ]
+    },
+    "/social-responsibilities/": {
+      "keywords": [
+        "social responsibility",
+        "csr",
+        "community"
+      ]
+    },
+    "/arogya-kendra/": {
+      "keywords": [
+        "arogya kendra"
+      ]
+    },
+    "/ayurveda-offers/": {
+      "label": "Ayurveda Offers",
+      "keywords": [
+        "ayurveda offers"
+      ]
+    },
+    "/special-offers/": {
+      "label": "Special Offers",
+      "keywords": [
+        "special offers"
+      ]
+    },
+    "/givefeedback/": {
+      "label": "Give Feedback",
+      "keywords": [
+        "write a review",
+        "give feedback",
+        "write feedback"
+      ]
+    },
+    "/sightseeing/": {
+      "label": "Sightseeing near Kairali",
+      "keywords": [
+        "Thiruvalathoor Temple",
+        "Chittur Gurumadam",
+        "Thenari Sree Rama Temple",
+        "Palakkad Fort · Tipu’s Fort",
+        "Jainimedu Jain Temple",
+        "Kalpathy Shiva Temple",
+        "Kerala Kalamandalam",
+        "Thiruvegappura Sankaranarayana Temple",
+        "Thrithala",
+        "Guruvayur",
+        "Fantasy Park",
+        "Malampuzha Rock Garden",
+        "Malampuzha Dam & Gardens",
+        "Meenkara Dam",
+        "Pothundy Dam",
+        "Meenvallam Waterfalls",
+        "Mangalam Dam",
+        "Kanjirapuzha Dam & Garden",
+        "Nelliyampathy",
+        "Silent Valley National Park",
+        "Parambikulam Tiger Reserve",
+        "Attappadi",
+        "places to visit",
+        "attractions",
+        "road distances",
+        "Palakkad",
+        "Thenari",
+        "Thiruvalathoor",
+        "Pothundi",
+        "Tipu fort"
+      ]
+    },
+    "/jobs/business-development-manager/": {
+      "label": "Business Development Manager — Vacancy Closed"
+    }
+  },
+  "faqKeywords": {
+    "q-01": [
+      "why kairali",
+      "different",
+      "nabh",
+      "four generations",
+      "hospital"
+    ],
+    "q-02": [
+      "accreditation",
+      "accredited",
+      "nabh",
+      "iso",
+      "green leaf",
+      "certified"
+    ],
+    "q-03": [
+      "approach",
+      "assessment",
+      "constitution",
+      "personalised plan"
+    ],
+    "q-04": [
+      "included",
+      "inclusions",
+      "what is included",
+      "stay includes"
+    ],
+    "q-05": [
+      "shorter",
+      "longer",
+      "duration",
+      "how many nights",
+      "length"
+    ],
+    "q-06": [
+      "who treats",
+      "chief physician",
+      "doctor in charge",
+      "physician led"
+    ],
+    "q-07": [
+      "history",
+      "founded",
+      "family",
+      "managing director",
+      "heritage"
+    ],
+    "q-08": [
+      "what is ayurveda",
+      "ayurveda",
+      "benefit",
+      "benefits",
+      "history"
+    ],
+    "q-09": [
+      "daily life",
+      "daily routine",
+      "dinacharya",
+      "lifestyle",
+      "habits",
+      "routine"
+    ],
+    "q-10": [
+      "dosha",
+      "doshas",
+      "vata",
+      "pitta",
+      "kapha",
+      "body type",
+      "constitution",
+      "prakriti"
+    ],
+    "q-11": [
+      "real doctors",
+      "qualified",
+      "qualification",
+      "bams",
+      "md",
+      "degree",
+      "doctor",
+      "doctors",
+      "physician",
+      "registered"
+    ],
+    "q-12": [
+      "conditions",
+      "condition",
+      "health conditions",
+      "diseases",
+      "back pain",
+      "arthritis",
+      "psoriasis",
+      "diabetes",
+      "stress",
+      "obesity",
+      "skin",
+      "digestive",
+      "what can be treated",
+      "treat"
+    ],
+    "q-13": [
+      "treatments",
+      "programmes",
+      "programs",
+      "panchakarma",
+      "detox",
+      "stress management",
+      "weight management",
+      "rejuvenation",
+      "what do you offer"
+    ],
+    "q-14": [
+      "how long",
+      "duration",
+      "length of stay",
+      "how many days",
+      "how many nights",
+      "minimum stay",
+      "days",
+      "weeks",
+      "effective results"
+    ],
+    "q-15": [
+      "side effects",
+      "side effect",
+      "safe",
+      "safety",
+      "reactions",
+      "discomfort"
+    ],
+    "q-16": [
+      "accommodation",
+      "villa",
+      "villas",
+      "rooms",
+      "room",
+      "suite",
+      "classic villa",
+      "deluxe villa",
+      "royal villa",
+      "maharaja suite",
+      "types",
+      "1001",
+      "1002",
+      "hairdryer",
+      "hair dryer",
+      "wardrobes",
+      "living room",
+      "twin beds"
+    ],
+    "q-17": [
+      "amenities",
+      "facilities",
+      "wifi",
+      "wi fi",
+      "internet",
+      "swimming pool",
+      "pool",
+      "library",
+      "gym",
+      "yoga hall",
+      "gift shop"
+    ],
+    "q-18": [
+      "included",
+      "inclusions",
+      "what is included",
+      "package",
+      "meals included",
+      "treatments included"
+    ],
+    "q-19": [
+      "rate breakdown",
+      "rates",
+      "rate",
+      "price",
+      "prices",
+      "cost",
+      "tariff",
+      "villa rates",
+      "per night",
+      "phone"
+    ],
+    "q-20": [
+      "food",
+      "meals",
+      "vegetarian",
+      "veg",
+      "diet",
+      "menu",
+      "what food",
+      "cuisine",
+      "sattvic"
+    ],
+    "q-21": [
+      "dietary restrictions",
+      "allergies",
+      "allergy",
+      "vegan",
+      "gluten",
+      "gluten free",
+      "diabetic diet",
+      "jain",
+      "special diet"
+    ],
+    "q-22": [
+      "alcohol",
+      "coffee",
+      "caffeine",
+      "tea",
+      "smoking",
+      "permitted"
+    ],
+    "q-23": [
+      "airport",
+      "airports",
+      "nearest airport",
+      "flight",
+      "railway",
+      "railway station",
+      "train",
+      "station",
+      "coimbatore",
+      "cochin",
+      "kochi",
+      "calicut",
+      "palakkad junction",
+      "distance",
+      "km",
+      "how far"
+    ],
+    "q-24": [
+      "transportation",
+      "transport",
+      "pickup",
+      "pick up",
+      "taxi",
+      "cab",
+      "transfer",
+      "transfer cost",
+      "car",
+      "airport pickup",
+      "cost"
+    ],
+    "q-25": [
+      "reach",
+      "how to reach",
+      "from delhi",
+      "from mumbai",
+      "from bangalore",
+      "from chennai",
+      "major cities",
+      "delhi",
+      "mumbai",
+      "bangalore",
+      "bengaluru",
+      "chennai",
+      "hyderabad",
+      "road",
+      "drive"
+    ],
+    "q-26": [
+      "tourist attractions",
+      "attractions",
+      "sightseeing",
+      "nearby",
+      "places to visit",
+      "silent valley",
+      "malampuzha",
+      "parambikulam",
+      "athirappilly",
+      "palakkad fort"
+    ],
+    "q-27": [
+      "weather",
+      "climate",
+      "temperature",
+      "rain",
+      "humidity",
+      "summer",
+      "winter"
+    ],
+    "q-28": [
+      "best time",
+      "best time to visit",
+      "season",
+      "when to visit",
+      "when to come",
+      "monsoon",
+      "karkidaka",
+      "specific treatments"
+    ],
+    "q-29": [
+      "what to pack",
+      "pack",
+      "packing",
+      "bring",
+      "luggage",
+      "essentials"
+    ],
+    "q-30": [
+      "clothing",
+      "clothes",
+      "dress",
+      "wear",
+      "what to wear",
+      "loincloth",
+      "bathrobe",
+      "oil stains"
+    ],
+    "q-31": [
+      "laundry",
+      "washing",
+      "laundry service",
+      "clothes washing"
+    ],
+    "q-32": [
+      "insurance",
+      "covered by insurance",
+      "reimbursement",
+      "cashless",
+      "claim",
+      "health insurance",
+      "mediclaim"
+    ],
+    "q-33": [
+      "insurance documentation",
+      "documents",
+      "invoice",
+      "bill",
+      "certificate",
+      "paperwork"
+    ],
+    "q-34": [
+      "payment",
+      "payment methods",
+      "credit card",
+      "debit card",
+      "upi",
+      "bank transfer",
+      "cash",
+      "advance",
+      "deposit",
+      "pay",
+      "card"
+    ],
+    "q-35": [
+      "senior",
+      "senior citizen",
+      "senior citizens",
+      "elderly",
+      "older",
+      "wheelchair",
+      "accessibility",
+      "accessible",
+      "parent",
+      "mother",
+      "father"
+    ],
+    "q-36": [
+      "visa",
+      "medical visa",
+      "e visa",
+      "evisa",
+      "visa requirements",
+      "invitation letter",
+      "international patients",
+      "foreign",
+      "immigration"
+    ],
+    "q-37": [
+      "emergency",
+      "medical evacuation",
+      "evacuation",
+      "ambulance",
+      "hospital nearby",
+      "urgent"
+    ],
+    "q-38": [
+      "extended stay",
+      "long stay",
+      "longer stay",
+      "30 days",
+      "month",
+      "months",
+      "international"
+    ],
+    "q-39": [
+      "after returning home",
+      "continue",
+      "routine at home",
+      "after treatment",
+      "home care",
+      "maintain"
+    ],
+    "q-40": [
+      "medicines",
+      "medicine",
+      "take home",
+      "buy",
+      "purchase",
+      "pharmacy",
+      "herbal products",
+      "oils"
+    ],
+    "q-41": [
+      "follow up",
+      "followup",
+      "follow up consultation",
+      "after i leave",
+      "online consultation after",
+      "review",
+      "aftercare"
+    ],
+    "q-42": [
+      "educational programs",
+      "educational",
+      "workshops",
+      "cooking class",
+      "cooking classes",
+      "lectures",
+      "learn",
+      "classes"
+    ],
+    "q-43": [
+      "learn more",
+      "before my visit",
+      "resources",
+      "books",
+      "videos",
+      "youtube",
+      "webinar",
+      "reading"
+    ],
+    "q-44": [
+      "certification",
+      "training",
+      "training programs",
+      "courses",
+      "course",
+      "practitioners",
+      "therapist training",
+      "ayurveda course"
+    ],
+    "q-45": [
+      "free consultation",
+      "first consultation",
+      "book consultation",
+      "online consultation",
+      "no charge"
+    ],
+    "q-46": [
+      "companion",
+      "family member",
+      "spouse",
+      "wife",
+      "husband",
+      "extra bed",
+      "extra meals",
+      "accompany",
+      "companion charge",
+      "companion stay",
+      "does a companion pay"
+    ],
+    "q-47": [
+      "age limit",
+      "minimum age",
+      "maximum age",
+      "minors",
+      "18"
+    ],
+    "q-48": [
+      "children",
+      "child",
+      "kids",
+      "kid",
+      "child policy",
+      "bring my kids",
+      "bring children",
+      "kids allowed",
+      "bring my child",
+      "bring a child",
+      "can children come",
+      "travel with children",
+      "stay with children"
+    ],
+    "q-49": [
+      "uncomfortable",
+      "painful",
+      "what to expect",
+      "treatment day",
+      "daily schedule",
+      "two therapies"
+    ],
+    "q-50": [
+      "dollars",
+      "usd",
+      "euro",
+      "eur",
+      "currency",
+      "gst",
+      "tax included",
+      "foreign currency"
+    ],
+    "q-51": [
+      "cancellation",
+      "cancel",
+      "refund",
+      "refund policy",
+      "cancellation policy"
+    ],
+    "q-52": [
+      "discount",
+      "offer",
+      "senior citizen",
+      "defence",
+      "loyalty",
+      "returning",
+      "concession"
+    ],
+    "q-53": [
+      "air conditioning",
+      "ac",
+      "wifi",
+      "wi-fi",
+      "internet",
+      "mobile signal",
+      "network",
+      "phone signal"
+    ],
+    "q-54": [
+      "share a villa",
+      "sharing",
+      "two people",
+      "couple",
+      "different programmes",
+      "double occupancy"
+    ],
+    "q-55": [
+      "dress code",
+      "what to wear",
+      "women",
+      "clothing for treatment",
+      "swimsuit"
+    ],
+    "q-56": [
+      "taxi",
+      "late night",
+      "night arrival",
+      "coimbatore airport",
+      "airport pickup",
+      "pick up"
+    ],
+    "q-57": [
+      "invitation letter",
+      "medical visa",
+      "visa letter",
+      "letter for visa"
+    ],
+    "q-58": [
+      "discharge summary",
+      "medical report",
+      "report for my doctor",
+      "discharge",
+      "documents"
+    ]
+  },
+  "oftenSearched": [
+    "back pain",
+    "Panchakarma",
+    "psoriasis",
+    "diabetes",
+    "airport",
+    "prices"
+  ],
+  "ui": {
+    "dialogTitle": "Search Kairali",
+    "placeholder": "Condition, price, airport, visa…",
+    "emptyHeading": "What are you looking for?",
+    "emptyButtons": [
+      {
+        "label": "A health condition",
+        "action": "chips"
+      },
+      {
+        "label": "Prices and duration",
+        "href": "/ayurveda-package/"
+      },
+      {
+        "label": "How to reach us",
+        "href": "/how-to-reach/"
+      },
+      {
+        "label": "Where you will stay",
+        "href": "/our-villas/"
+      },
+      {
+        "label": "Learn Ayurveda",
+        "href": "/ayurveda-training-programme/"
+      },
+      {
+        "label": "Talk to a doctor",
+        "href": "/online-consultation/"
+      }
+    ],
+    "oftenSearchedLabel": "Often searched:",
+    "groups": {
+      "programmes": "Programmes",
+      "questions": "Questions",
+      "pages": "Pages"
+    },
+    "showAll": "Show all {n}",
+    "showingFor": "Showing results for “{corrected}” — you typed “{typed}”",
+    "searchInstead": "search for “{typed}” instead",
+    "didYouMean": "Did you mean:",
+    "results": "{n} results for “{q}”",
+    "resultOne": "1 result for “{q}”",
+    "zero": "No page matches “{q}”. Try a condition (back pain, psoriasis), a place (airport) or a question (visa).",
+    "loading": "Loading search…",
+    "notSure": "Not sure? Our doctors decide what suits you, at consultation.",
+    "fallback": {
+      "whatsapp": "Ask Priya on WhatsApp",
+      "consultation": "Free online consultation",
+      "call": "Call +91 9555 156 156"
+    },
+    "urgent": "If this has just started, please speak to a person rather than a search box: call +91 9555 156 156, or your local emergency service if it is severe. Kairali is an NABH-accredited Ayurvedic hospital, not an emergency service.",
+    "declined": "This is not something we treat. We do not treat HIV or AIDS, active communicable diseases, or cancer itself. Supportive care alongside treatment you are having elsewhere is a different matter — an Ayurvedic doctor can judge your case at consultation.",
+    "consultFirst": "We would rather talk to you about this than point you at a programme. Tell us in your own words and an Ayurvedic doctor will place it.",
+    "multi": "More than one programme may apply. If you are dealing with several things at once, the Personalised Programme is usually the right starting point.",
+    "handoff": "Looking for {label}?",
+    "requestQuote": "Request a quote",
+    "basis": "(Deluxe, single)",
+    "nights": "{n} nights",
+    "days": "{n}-day course",
+    "perNight": "stay from {price} per night",
+    "from": "from {price}",
+    "currencyLabel": "Currency",
+    "close": "Close search",
+    "clear": "Clear"
+  },
+  "faqKeywordsNote": " q-01..q-07 re-keyed and q-45..q-58 added on 2026-09-23 with the FAQ content pass (D-20260922-36, tools/repair-faq-content.mjs)."
+}

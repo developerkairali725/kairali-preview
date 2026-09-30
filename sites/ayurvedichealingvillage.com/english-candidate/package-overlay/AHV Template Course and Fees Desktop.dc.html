@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHV Template — Course &amp; Fees (Desktop 1440)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F7F4EA; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family:'Mulish', sans-serif; color:#2A2118; -webkit-font-smoothing:antialiased; }
+  a { color:#006038; }
+  a:hover { color:#004226; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</helmet>
+
+<div style="width:1440px;background:#F7F4EA;font-family:'Mulish',sans-serif;color:#2A2118;font-size:18px;line-height:1.7;">
+
+  <div role="presentation" style="height:72px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#6B665E;font-weight:700;">Site header — fixed, not redesigned</div>
+
+  <header style="padding:40px 0 0;">
+    <div style="width:min(1220px,94%);margin:0 auto;">
+      <nav aria-label="Breadcrumb" style="font-size:14px;line-height:1.5;color:#75695A;margin-bottom:26px;">
+        <a href="https://ayurvedichealingvillage.com/" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;margin-left:-8px;padding:0 8px;color:#006038;text-decoration:none;">Home</a>
+        <span style="padding:0 10px;color:#C9BFA8;">•</span>
+        <a href="https://ayurvedichealingvillage.com/ayurveda-training-programs/" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 4px;color:#006038;text-decoration:none;">Training Courses</a>
+        <span style="padding:0 10px;color:#C9BFA8;">•</span>
+        <span aria-current="page">Training Course Fees</span>
+      </nav>
+      <p style="margin:0 0 14px;font-size:12.5px;line-height:1.5;letter-spacing:2.6px;text-transform:uppercase;color:#8F6212;font-weight:700;">Kairali — The Ayurvedic Healing Village · Since 1908</p>
+      <h1 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:56px;line-height:1.12;letter-spacing:-0.4px;color:#2A2118;max-width:18ch;">Training Course Fees</h1>
+      <p style="margin:26px 0 0;padding-left:22px;border-left:3px solid #C1882C;font-size:21px;line-height:1.6;color:#514A3F;max-width:56ch;">Course structure, duration, schedule and fees for study at the Kairali Institute of Ayurveda and Panchakarma Therapy, with accommodation rates listed separately.</p>
+    </div>
+  </header>
+
+  <div style="width:100%;margin-top:44px;">
+    <div style="width:100%;height:420px;background:#E0D7C4;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:0 24px;">
+      <span style="font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#5A4420;font-weight:700;">Hero image band — self-host required</span>
+      <span style="font-size:14px;color:#75695A;">Top banner from the record, or Kairali-Image-Library file [TO CONFIRM] — 1440×524</span>
+    </div>
+  </div>
+
+  <main style="width:min(1220px,94%);margin:0 auto;padding:64px 0 0;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:80px;align-items:start;">
+
+    <div style="min-width:0;">
+
+      <h2 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:34px;line-height:1.2;color:#2A2118;">{{ introHeading }}</h2>
+      <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 28px;"></div>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;">{{ introBody }}</p>
+
+      <sc-if value="{{ showIntroImage }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top:34px;height:300px;background:#E0D7C4;border:1px solid #E9E2D3;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:16px;">
+          <span style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:#5A4420;font-weight:700;">In-body image — self-host</span>
+          <span style="font-size:12.5px;line-height:1.5;color:#75695A;">Image 1 of 2 from the record</span>
+        </div>
+      </sc-if>
+
+      <section aria-labelledby="fees-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="fees-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">Course fees, duration and schedule</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 22px;"></div>
+        <p style="margin:0 0 12px;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;">Rates are charged <strong>per night</strong> and are all-inclusive of accommodation, meals, training and taxes. The rate sheet prints no separate course fee.</p>
+        <p style="margin:0 0 26px;font-size:15.5px;line-height:1.6;color:#75695A;max-width:66ch;">Source: KTAHV Ayurveda Training Courses V2, Ref KAHR/AY-TRG/2026-2027/04/GBL, with effect from 1 October 2026 to 30 September 2027. Figures are shown exactly as held; no totals are calculated here.</p>
+
+        <div style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;overflow:hidden;">
+          <table style="width:100%;border-collapse:collapse;font-size:16.5px;line-height:1.55;font-variant-numeric:tabular-nums;">
+            <caption style="caption-side:top;text-align:left;padding:16px 20px;background:#EFEADD;border-bottom:1px solid #E9E2D3;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#5A4420;">Training programmes — KAHR/AY-TRG/2026-2027/04/GBL</caption>
+            <thead>
+              <tr style="background:#E0D7C4;">
+                <th scope="col" style="text-align:left;padding:14px 20px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;">Course</th>
+                <th scope="col" style="text-align:left;padding:14px 16px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;">Duration</th>
+                <th scope="col" style="text-align:left;padding:14px 16px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;">Code</th>
+                <th scope="col" style="text-align:left;padding:14px 16px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;">Schedule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ courseRows }}" as="r" hint-placeholder-count="5">
+                <tr style="border-bottom:1px solid #E9E2D3;">
+                  <th scope="row" style="text-align:left;padding:16px 20px;font-size:17px;font-weight:600;color:#2A2118;vertical-align:top;max-width:30ch;">
+                    {{ r.course }}
+                    <span style="display:block;margin-top:6px;font-size:15px;font-weight:400;line-height:1.5;color:#514A3F;">{{ r.summary }}</span>
+                  </th>
+                  <td style="padding:16px;color:#514A3F;vertical-align:top;white-space:nowrap;">{{ r.duration }}</td>
+                  <td style="padding:16px;color:#514A3F;vertical-align:top;white-space:nowrap;">{{ r.code }}</td>
+                  <td style="padding:16px;color:#514A3F;vertical-align:top;"><span style="display:inline-block;padding:2px 8px;background:#F3EEE0;border:1px solid #E9E2D3;border-radius:4px;font-size:12.5px;font-weight:700;letter-spacing:1.2px;color:#8F6212;white-space:nowrap;">TO CONFIRM</span></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:#75695A;max-width:66ch;">The rate sheet prices per night by villa and occupancy and prints no separate course fee: tuition is inside the nightly rate. Daily timetables are not held in the record, so the schedule column stays <span style="color:#8F6212;font-weight:700;">[TO CONFIRM]</span>.</p>
+      </section>
+
+      <section aria-labelledby="villa-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="villa-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">Accommodation rates</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 26px;"></div>
+
+        <p style="margin:0 0 18px;font-size:17.5px;line-height:1.7;color:#2A2118;max-width:66ch;">Per night, all-inclusive of accommodation, meals, training and taxes. Valid 1 October 2026 to 30 September 2027.</p>
+        <div style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:16px;line-height:1.55;font-variant-numeric:tabular-nums;">
+            <thead>
+              <tr style="background:#E0D7C4;">
+                <th scope="col" style="text-align:left;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">Villa</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">INR single</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">INR double</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">USD single</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">USD double</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">EUR single</th>
+                <th scope="col" style="text-align:right;padding:14px 14px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">EUR double</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ villaRows }}" as="v" hint-placeholder-count="4">
+                <tr style="border-bottom:1px solid #E9E2D3;">
+                  <th scope="row" style="text-align:left;padding:15px 14px;font-size:17px;font-weight:600;color:#2A2118;white-space:nowrap;">{{ v.villa }}</th>
+                  <td style="padding:15px 14px;text-align:right;color:#2A2118;">{{ v.inrS }}</td>
+                  <td style="padding:15px 14px;text-align:right;color:#2A2118;">{{ v.inrD }}</td>
+                  <td style="padding:15px 14px;text-align:right;color:#514A3F;">{{ v.usdS }}</td>
+                  <td style="padding:15px 14px;text-align:right;color:#514A3F;">{{ v.usdD }}</td>
+                  <td style="padding:15px 14px;text-align:right;color:#514A3F;">{{ v.eurS }}</td>
+                  <td style="padding:15px 14px;text-align:right;color:#514A3F;">{{ v.eurD }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:#75695A;max-width:66ch;">Transcribed from the KTAHV Ayurveda Training Courses V2 rate sheet and independently confirmed by the marketing team.</p>
+      </section>
+
+      <section aria-labelledby="incl-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="incl-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">What the rate includes</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 24px;"></div>        <div style="margin-bottom:26px;">
+          <h3 style="margin:0 0 12px;font-size:19px;line-height:1.3;color:#2A2118;">Professional Training &amp; Certification</h3>
+          <ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none;max-width:70ch;">
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Daily theory classes by expert Ayurvedic Doctors</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Hands-on practical training led by Senior Ayurvedic Trainers &amp; Ayurvedic Doctors</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Comprehensive training in authentic Ayurvedic therapies and techniques</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Certification issued by Kairali Institute of Panchakarma Therapies</span></li>
+          </ul>
+        </div>        <div style="margin-bottom:26px;">
+          <h3 style="margin:0 0 12px;font-size:19px;line-height:1.3;color:#2A2118;">Accommodation &amp; Meals</h3>
+          <ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none;max-width:70ch;">
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Villa accommodation (category per package)</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Three wholesome vegetarian Ayurvedic meals daily using organic ingredients</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Daily in-room mineral water and unlimited herbal detox water</span></li>
+          </ul>
+        </div>        <div style="margin-bottom:26px;">
+          <h3 style="margin:0 0 12px;font-size:19px;line-height:1.3;color:#2A2118;">Additional Benefits</h3>
+          <ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none;max-width:70ch;">
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Pool, library, gym, outdoor facilities</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Organic farm tours and cultural immersion</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>All-inclusive pricing with no hidden costs (accommodation, meals, training &amp; taxes)</span></li>
+          </ul>
+        </div>      </section>
+
+      <section aria-labelledby="notes-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="notes-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">Programme notes</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 24px;"></div>        <ul style="display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none;max-width:70ch;">
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Classes Monday to Friday only</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Full advance payment required</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>Group discount 20% for 5 or more students</span></li>
+            <li style="display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;font-size:17px;line-height:1.65;color:#2A2118;"><span style="color:#C1882C" aria-hidden="true">◆</span><span>No photography or videography during practical sessions</span></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="transport-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="transport-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">Transport</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 24px;"></div>        <p style="margin:0 0 18px;font-size:17.5px;line-height:1.7;color:#2A2118;max-width:66ch;">One-way, air-conditioned, including 5% GST.</p>
+        <div style="border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:16.5px;line-height:1.55;font-variant-numeric:tabular-nums;">
+            <thead>
+              <tr style="background:#E0D7C4;">
+                <th scope="col" style="text-align:left;padding:14px 18px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;">From</th>
+                <th scope="col" style="text-align:right;padding:14px 16px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">MPV</th>
+                <th scope="col" style="text-align:right;padding:14px 18px;border-bottom:1px solid #C9BFA8;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#5A4420;white-space:nowrap;">Sedan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #E9E2D3;">
+                <th scope="row" style="text-align:left;padding:15px 18px;font-size:17px;font-weight:600;color:#2A2118;">Palakkad Railway Station (25 km)</th>
+                <td style="padding:15px 16px;text-align:right;color:#2A2118;white-space:nowrap;">₹3,900 <span style="color:#75695A">($56 · €49)</span></td>
+                <td style="padding:15px 18px;text-align:right;color:#2A2118;white-space:nowrap;">₹13,649 <span style="color:#75695A">($195 · €171)</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid #E9E2D3;">
+                <th scope="row" style="text-align:left;padding:15px 18px;font-size:17px;font-weight:600;color:#2A2118;">Coimbatore Airport (75 km)</th>
+                <td style="padding:15px 16px;text-align:right;color:#2A2118;white-space:nowrap;">₹6,775 <span style="color:#75695A">($97 · €85)</span></td>
+                <td style="padding:15px 18px;text-align:right;color:#2A2118;white-space:nowrap;">₹23,711 <span style="color:#75695A">($339 · €296)</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid #E9E2D3;">
+                <th scope="row" style="text-align:left;padding:15px 18px;font-size:17px;font-weight:600;color:#2A2118;">Cochin or Calicut Airport (125 km)</th>
+                <td style="padding:15px 16px;text-align:right;color:#2A2118;white-space:nowrap;">₹7,950 <span style="color:#75695A">($114 · €99)</span></td>
+                <td style="padding:15px 18px;text-align:right;color:#2A2118;white-space:nowrap;">₹27,824 <span style="color:#75695A">($397 · €348)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="policies-h" style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+        <h2 id="policies-h" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">Booking and payment policies</h2>
+        <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 24px;"></div>        <dl style="margin:0;display:grid;gap:0;max-width:70ch;">
+          <div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid #E9E2D3;">
+            <dt style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#75695A;line-height:1.6;">Deposit</dt>
+            <dd style="margin:0;font-size:17px;line-height:1.65;color:#2A2118;">40% deposit, balance 30 days prior</dd>
+          </div>
+          <div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid #E9E2D3;">
+            <dt style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#75695A;line-height:1.6;">Check-in / check-out</dt>
+            <dd style="margin:0;font-size:17px;line-height:1.65;color:#2A2118;">Check-in 12:00, check-out 10:00</dd>
+          </div>
+          <div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid #E9E2D3;">
+            <dt style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#75695A;line-height:1.6;">Cancellation</dt>
+            <dd style="margin:0;font-size:17px;line-height:1.65;color:#2A2118;">More than 30 days before admission: full refund. 15 to 30 days before admission: 50% of the amount paid is refunded, less applicable transaction fees and taxes. Fewer than 15 days before admission, or a change of dates during the stay: no refund.</dd>
+          </div>
+          <div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid #E9E2D3;">
+            <dt style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#75695A;line-height:1.6;">Payments</dt>
+            <dd style="margin:0;font-size:17px;line-height:1.65;color:#2A2118;">Bank transfer, local bank cheques, cash (INR/EUR/USD), major cards. No personal cheques</dd>
+          </div>
+          <div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid #E9E2D3;">
+            <dt style="margin:0;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#75695A;line-height:1.6;">Admission</dt>
+            <dd style="margin:0;font-size:17px;line-height:1.65;color:#2A2118;">18+ (minors with a guardian)</dd>
+          </div>
+        </dl>
+      </section>
+
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="4">
+        <section style="margin-top:56px;padding-top:44px;border-top:1px solid #E9E2D3;">
+          <h2 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px;line-height:1.22;color:#2A2118;">{{ s.h2 }}</h2>
+          <div style="width:56px;height:2px;background:#C1882C;margin:18px 0 22px;"></div>
+          <p style="margin:0;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;">{{ s.body }}</p>
+          <sc-for list="{{ s.groups }}" as="g" hint-placeholder-count="2">
+            <div style="margin-top:30px;">
+              <h3 style="margin:0 0 14px;font-family:'Marcellus',serif;font-weight:400;font-size:23px;line-height:1.3;color:#2A2118;">{{ g.h3 }}</h3>
+              <ul style="list-style:none;margin:0;padding:0;max-width:66ch;border-top:1px solid #E9E2D3;">
+                <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+                  <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #E9E2D3;font-size:17px;line-height:1.6;color:#2A2118;">
+                    <span aria-hidden="true" style="color:#C1882C;line-height:1.6;">◆</span>
+                    <span style="min-width:0;">{{ i }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-for>
+        </section>
+      </sc-for>
+
+      <section aria-labelledby="cert-h" style="margin-top:56px;padding:34px 30px;background:#FFFFFF;border:1px solid #E9E2D3;border-radius:4px;">
+        <h2 id="cert-h" style="margin:0 0 12px;font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.25;color:#2A2118;">Certification</h2>
+        <p style="margin:0;font-size:18px;line-height:1.7;color:#2A2118;max-width:66ch;">Candidates are issued a certification upon successful completion of their chosen course</p>
+      </section>
+
+    </div>
+
+    <aside aria-labelledby="rail-h" style="position:sticky;top:24px;border:1px solid #E9E2D3;border-radius:4px;background:#FFFFFF;padding:28px 26px;">
+      <h2 id="rail-h" style="margin:0 0 4px;font-family:'Marcellus',serif;font-weight:400;font-size:24px;line-height:1.25;">On this page</h2>
+      <div style="width:40px;height:2px;background:#C1882C;margin:14px 0 20px;"></div>
+      <ul style="list-style:none;margin:0 0 28px;padding:0;border-top:1px solid #E9E2D3;">
+        <sc-for list="{{ anchors }}" as="a" hint-placeholder-count="5">
+          <li style="border-bottom:1px solid #E9E2D3;">
+            <a href="{{ a.href }}" style="display:flex;align-items:center;min-height:44px;padding:8px 0;font-size:15.5px;line-height:1.5;color:#006038;text-decoration:none;">{{ a.label }}</a>
+          </li>
+        </sc-for>
+      </ul>
+      <h3 style="margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8F6212;line-height:1.5;">Admissions</h3>
+      <ul style="list-style:none;margin:0 0 24px;padding:0;border-top:1px solid #E9E2D3;">
+        <li style="border-bottom:1px solid #E9E2D3;"><a href="mailto:info@kairali.com" style="display:flex;align-items:center;min-height:44px;padding:8px 0;font-size:15.5px;color:#006038;text-decoration:none;">info@kairali.com</a></li>
+        <li style="border-bottom:1px solid #E9E2D3;"><a href="https://wa.me/919289838797" style="display:flex;align-items:center;min-height:44px;padding:8px 0;font-size:15.5px;color:#006038;text-decoration:none;">WhatsApp +91 92898 38797</a></li>
+      </ul>
+      <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:inline-flex;align-items:center;justify-content:center;width:100%;height:52px;padding:0 16px;border:1.5px solid #5A4420;color:#5A4420;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">Enquire Now</a>
+    </aside>
+
+  </main>
+
+  <div style="height:56px;"></div>
+
+  <section aria-labelledby="close-h" style="width:100%;background:#FFFFFF;border-top:1px solid #E9E2D3;border-bottom:1px solid #E9E2D3;background-image:repeating-linear-gradient(135deg, rgba(193,136,44,.05) 0 1px, transparent 1px 9px);padding:56px 24px;">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <ul style="list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;text-align:left;">
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>NABH Certified Hospital</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>118+ Years Heritage</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>Individualised Programmes</li>
+        <li style="font-size:16px;line-height:1.6;color:#2A2118;"><span aria-hidden="true" style="color:#C1882C;margin-right:10px;">◆</span>World Luxury Award Winner</li>
+      </ul>
+      <h2 id="close-h" style="margin:0 0 14px;font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.3;color:#2A2118;">Not sure which programme fits?</h2>
+      <p style="margin:0 auto 30px;font-size:16.5px;line-height:1.6;color:#514A3F;max-width:56ch;">Share your goal in your own words — the patient care team or an Ayurvedic doctor will point you to the right programme.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="https://ayurvedichealingvillage.com/online-consultation/" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;background:#EEB41E;color:#2A2118;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">Free Doctor Consultation</a>
+        <a href="https://wa.me/919289838797" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border:1.5px solid #006038;color:#006038;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">WhatsApp Patient Care</a>
+        <a href="https://ayurvedichealingvillage.com/enquiry-form/" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 18px;border:1.5px solid #5A4420;color:#5A4420;border-radius:4px;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;">Enquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div role="presentation" style="height:620px;background:#D8D4CC;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:#6B665E;font-weight:700;">Site footer — fixed, not redesigned</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;stressTest&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;example — 424 words, 9 lists, 12 headings&quot;,&quot;options&quot;:[&quot;example — 424 words, 9 lists, 12 headings&quot;,&quot;long — 583 words&quot;,&quot;short — 132 words, 7 lists&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;},&quot;feeColumns&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;USD and EUR&quot;,&quot;options&quot;:[&quot;USD and EUR&quot;,&quot;USD only&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Template stress test&quot;}}">
+const SLOT = 'Body copy is poured verbatim from the site record for this route. This paragraph shows the measure the template holds prose to — 66 characters at 18px Mulish, line-height 1.7, never the full column width.';
+
+const VILLAS = [
+  { villa: 'Deluxe Villa',  inrS: '₹18,410', inrD: '₹30,530', usdS: '$263', usdD: '$436', eurS: '€230', eurD: '€382' },
+  { villa: 'Classic Villa', inrS: '₹20,855', inrD: '₹32,735', usdS: '$298', usdD: '$468', eurS: '€261', eurD: '€409' },
+  { villa: 'Royal Villa',   inrS: '₹25,160', inrD: '₹36,620', usdS: '$359', usdD: '$523', eurS: '€315', eurD: '€458' },
+  { villa: 'Maharaja Suite', inrS: '₹45,110', inrD: '₹55,520', usdS: '$644', usdD: '$793', eurS: '€564', eurD: '€694' }
+];
+
+const SECTIONS = [
+  { h2: 'Course structure', body: SLOT, groups: [
+    { h3: 'Modules', items: ['List item poured from the record', 'List item poured from the record', 'List item poured from the record', 'List item poured from the record', 'List item poured from the record'] },
+    { h3: 'Practical sessions', items: ['List item poured from the record', 'List item poured from the record', 'List item poured from the record'] }
+  ]},
+  { h2: 'Daily schedule', body: SLOT, groups: [
+    { h3: 'Morning', items: ['Session — time [TO CONFIRM]', 'Session — time [TO CONFIRM]', 'Session — time [TO CONFIRM]'] },
+    { h3: 'Afternoon', items: ['Session — time [TO CONFIRM]', 'Session — time [TO CONFIRM]', 'Session — time [TO CONFIRM]'] }
+  ]},
+  { h2: 'Eligibility and admission', body: SLOT, groups: [
+    { h3: 'Who may apply', items: ['List item poured from the record', 'List item poured from the record', 'List item poured from the record'] },
+    { h3: 'Documents required at admission', items: ['List item poured from the record', 'List item poured from the record', 'List item poured from the record', 'List item poured from the record'] }
+  ]},
+  { h2: 'What the fee includes', body: SLOT, groups: [
+    { h3: 'Included', items: ['List item poured from the record', 'List item poured from the record', 'List item poured from the record'] },
+    { h3: 'Charged separately', items: ['Accommodation, at the villa rates above', 'List item poured from the record'] }
+  ]}
+];
+
+const ANCHORS = [
+  { label: 'Course fees and schedule', href: '#fees-h' },
+  { label: 'Accommodation rates', href: '#villa-h' },
+  { label: 'Certification', href: '#cert-h' }
+];
+
+const COURSES = [
+  { course: '1 Day Workshop', duration: '1 Day', code: 'OAP-HV', summary: 'Introductory session with hands-on Abhyangam massage' },
+  { course: '3 Day Certificate Program', duration: '3 Days', code: 'TAP-HV', summary: 'Theory and practice of core therapies' },
+  { course: '5 Day Intensive Program', duration: '5 Days', code: 'WAP-HV', summary: 'In-depth training in five major therapies' },
+  { course: '10 Days Advanced Program', duration: '10 Days', code: 'AATP1-HV', summary: 'Advanced curriculum for wellness professionals' },
+  { course: '20 Days Advanced Consultant Program', duration: '20 Days', code: 'AALCT-HV', summary: 'Comprehensive training, including lifestyle consulting and advanced therapies' }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    const stress = this.props.stressTest ?? 'example — 424 words, 9 lists, 12 headings';
+    const short = stress.indexOf('short') === 0;
+    const long = stress.indexOf('long') === 0;
+    const sections = short ? SECTIONS.slice(0, 1) : (long ? SECTIONS : SECTIONS.slice(0, 3));
+    return {
+      introHeading: short ? 'Workshop overview' : 'Course overview',
+      introBody: SLOT,
+      showIntroImage: !short,
+      sections: sections,
+      anchors: ANCHORS,
+      villaRows: VILLAS,
+      showEuro: (this.props.feeColumns ?? 'USD and EUR') === 'USD and EUR',
+      courseRows: (short ? COURSES.slice(0, 1) : COURSES)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

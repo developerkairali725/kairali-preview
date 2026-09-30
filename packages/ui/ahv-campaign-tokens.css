@@ -1,0 +1,16 @@
+:root {
+  /* Imported Vikash palette accepted for AHV campaigns; preserve exact colours. */
+  --green: #163828;
+  --green-deep: #0e2419;
+  --green-mid: #26543c;
+  --gold: #c8973f;
+  --gold-soft: #e0bd7d;
+  --cream: #f7f5ef;
+  --sand: #ebe4d6;
+  --ink: #1d241f;
+  --muted: #5d6b61;
+  --white: #fff;
+
+  --ahv-footer-input-ink: #211d18;
+  --ahv-footer-input-paper: #fffdf7;
+}

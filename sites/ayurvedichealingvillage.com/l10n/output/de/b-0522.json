@@ -1,0 +1,57 @@
+{
+ "batchId": "b-0522",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_82b4fbc564459cb32bba",
+   "sourceHash": "82b4fbc564459cb32bba3d06e71e341172723611f1b648f13648482baebd6111",
+   "text": ": Für Patienten mit Beschwerden im Kopfbereich wie Sinusitis und Migräne ist diese ayurvedische Therapie die beste Wahl. Es handelt sich um ein natürliches Reinigungsverfahren, bei dem Nasentropfen dosiert in die Nasenlöcher gegeben werden und der Kopfbereich von Schmerzen jeglicher Art befreit werden soll.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') translated without strengthening; 'soll' added to avoid presenting pain relief as guaranteed — clinical wording may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_21e5dd548c3602b07a86",
+   "sourceHash": "21e5dd548c3602b07a86a36c1c45fc5d2740f30d2f553d9ef09ffc1307219782",
+   "text": "Nasyam: Für Patienten mit Beschwerden im Kopfbereich wie Sinusitis und Migräne ist diese ayurvedische Therapie die beste Wahl. Es handelt sich um ein natürliches Reinigungsverfahren, bei dem Nasentropfen dosiert in die Nasenlöcher gegeben werden und der Kopfbereich von Schmerzen jeglicher Art befreit werden soll.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source claims ('the best', 'freed from any kind of pain') translated without strengthening; 'soll' added to avoid presenting pain relief as guaranteed — clinical wording may warrant Dr. Deepu John's review."
+   ]
+  },
+  {
+   "id": "t_a9673dced53a8ea87162",
+   "sourceHash": "a9673dced53a8ea871627b6fdd9b32e6f06e9f3967fbe9a8d5062986b1657537",
+   "text": "Schulungen werden angeboten. Für keine Route in diesem Batch gilt der Status „Coming Soon“.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note; 'Coming Soon' kept as a status label."
+   ]
+  },
+  {
+   "id": "t_ee4bc125274e724dff26",
+   "sourceHash": "ee4bc125274e724dff26fb8092b3ea691813b87afd989e0c398aa6af4ffd5ea4",
+   "text": "Aktuelle medizinische, kommerzielle, Auszeichnungs- und Verfügbarkeitsangaben unterliegen weiterhin genau ihren internen Freigabestufen. Die Erfassung einer Quelle ist keine Verifizierung, und das Fehlen einer routenspezifischen Freigabestufe bedeutet niemals, dass eine Angabe genehmigt ist.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Internal editorial note."
+   ]
+  },
+  {
+   "id": "t_e046d1a407105a3025dd",
+   "sourceHash": "e046d1a407105a3025dd5cb32736711e52cd929c12e4913508caf5caf3c90d27",
+   "text": "Programme für alle",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'Retreats' rendered as 'Programme' to keep the clinical register."
+   ]
+  }
+ ]
+}

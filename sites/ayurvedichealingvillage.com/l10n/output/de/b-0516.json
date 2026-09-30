@@ -1,0 +1,43 @@
+{
+ "batchId": "b-0516",
+ "sourceSetHash": "2bb765198fa14f1818bc2d39e1c2b0b4fbcca43e35fd776b7cdd9a4bea65a84f",
+ "locale": "de",
+ "units": [
+  {
+   "id": "t_07e9ae11ac0e8c079be6",
+   "sourceHash": "07e9ae11ac0e8c079be6248fa99a5594de2b962a24ac2808a76ad5145deb67f7",
+   "text": "Ein Ort für Balance und Reinheit",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_629afc4f989742144361",
+   "sourceHash": "629afc4f9897421443611c0c8cf93d3a33dbefbb71a08058c73552fb76a60206",
+   "text": "Für eine gesündere Zukunft bei Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_2870260a9f62e697d3f0",
+   "sourceHash": "2870260a9f62e697d3f01356634fd3a407eaf45848cfd4e76226044ce3f6f9b2",
+   "text": "Indem es bewusst auf Koffein verzichtet, bietet",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Fragment ends with the verb so that the following brand name is the subject (German verb-second order)."
+   ]
+  },
+  {
+   "id": "t_075d75eb90bdaf62d083",
+   "sourceHash": "075d75eb90bdaf62d083392096f16d3ed248ed2c799006fec4e3c2434564cd8d",
+   "text": "Frische, natürliche ayurvedische Küche bei Kairali",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "SEO title shortened to fit 60 characters; 'for Holistic Wellness' omitted."
+   ]
+  }
+ ]
+}

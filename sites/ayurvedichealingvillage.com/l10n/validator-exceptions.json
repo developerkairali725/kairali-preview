@@ -1,0 +1,368 @@
+{
+ "_about": "Source-bound, reviewed numeric exceptions. Each entry applies ONLY to the named unit id, its exact frozen sourceHash and the listed locale, and only to the listed numbers. A change of source text voids the entry. Reviewed by the coordinator against parent review PARENT-RELEASE-GATE-REVIEW.md (26 Sep 2026); no general loosening of the numeric check.",
+ "entries": [
+  {
+   "id": "t_925e1c8551f5218828c2",
+   "sourceHash": "925e1c8551f5218828c2cbb2da7b1cd284aa0d5b01e8c230a82d2e0d89a72eee",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'share a villa' → 1つのヴィラ: Japanese counter for the indefinite article; no new fact"
+  },
+  {
+   "id": "t_713d6e5818e75f50f459",
+   "sourceHash": "713d6e5818e75f50f45939d19f4f577b6f2d3434f39c3b2f377a5f36460d1d5f",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'share a villa' → 1つのヴィラ: Japanese counter for the indefinite article; no new fact"
+  },
+  {
+   "id": "t_dc2f0f854f42d0836968",
+   "sourceHash": "dc2f0f854f42d0836968e90617d84cff6688c918a4ab1d8d44bafc18923b1316",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "reason": "'Weekly' → 週1回 (once a week): standard Japanese rendering of 'weekly'; no new fact"
+  },
+  {
+   "id": "t_e58b9a94a0df59bf6d5c",
+   "sourceHash": "e58b9a94a0df59bf6d5c4cb594cf90e9355c6aca3fefa1ff517aee9f0ff9a5bf",
+   "locale": "zh-Hans",
+   "allowMissing": [
+    "5"
+   ],
+   "requireText": "第五代",
+   "reason": "'5th-generation' → 第五代: Chinese ordinal generation written with 五; the fact (fifth) is present as text"
+  },
+  {
+   "id": "t_0face5875dcf1c6f9606",
+   "sourceHash": "0face5875dcf1c6f9606544aa512786ed5f8e0c2a2c6602cb86cbe50f9672c89",
+   "locale": "ar",
+   "requireText": "القرن الرابع عشر",
+   "reason": "'14th-century' → القرن الرابع عشر: Arabic ordinal century in words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "14"
+   ]
+  },
+  {
+   "id": "t_d3313c6d80ede104a21c",
+   "sourceHash": "d3313c6d80ede104a21cd8b05236a20ac2b8a663774a9807cc2dcd77643e689a",
+   "locale": "ar",
+   "requireText": "لليلتين",
+   "reason": "'2 nights' → لليلتين: Arabic dual form (two nights); same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2"
+   ]
+  },
+  {
+   "id": "t_735c05e54429eb9eb946",
+   "sourceHash": "735c05e54429eb9eb9464c5ab46de8efc1d5d40ffec4b4c584210aca299460c9",
+   "locale": "ar",
+   "requireText": "الأربعينيات والخمسينيات",
+   "reason": "'40s and 50s' → الأربعينيات والخمسينيات: Arabic decade words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "40",
+    "50"
+   ]
+  },
+  {
+   "id": "t_a6c1bf2dc38bb88dcab6",
+   "sourceHash": "a6c1bf2dc38bb88dcab678255e29b0d7a5f692d1f3c225f8a0142801c53bd2a9",
+   "locale": "ar",
+   "requireText": "ساعتان نظريتان + ساعتان عمليتان",
+   "reason": "'2 hours' → ساعتان: Arabic dual; 20 kept as digits (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "2"
+   ]
+  },
+  {
+   "id": "t_b380baeb89660ee30157",
+   "sourceHash": "b380baeb89660ee30157b3725720792130cd3dd01828b806f6e247a4395d35ab",
+   "locale": "ar",
+   "requireText": "جانبان",
+   "reason": "'2 aspects' → جانبان: Arabic dual; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2"
+   ]
+  },
+  {
+   "id": "t_24f962a28a6159314cdc",
+   "sourceHash": "24f962a28a6159314cdcfaa46fd266ad53e3ab377bd373cebd34d6e1ad1ecb05",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_1943b7ef2be5d43b660b",
+   "sourceHash": "1943b7ef2be5d43b660bc69ec8a2269b7fd83379c1f4053de80cace4ff481005",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_a517928897903fc42b8f",
+   "sourceHash": "a517928897903fc42b8f5cde56eb9df95d72a31d82ec5b742fcd372ad932f793",
+   "locale": "ar",
+   "requireText": "ساعة واحدة",
+   "reason": "'1 hour' → ساعة واحدة: Arabic 'one hour'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "ar",
+   "requireText": "ليوم واحد",
+   "reason": "'1-day' → ليوم واحد: Arabic 'one day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_c34735c55fad4c4e89bc",
+   "sourceHash": "c34735c55fad4c4e89bc64e0bf37a889354caf91bcdaf867bf20521ccba4dcb4",
+   "locale": "ar",
+   "requireText": "ساعتان من الدراسة النظرية + ساعتان",
+   "reason": "'2 hours' → ساعتان: Arabic dual; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "2"
+   ]
+  },
+  {
+   "id": "t_e07d8b694cced6e01bf5",
+   "sourceHash": "e07d8b694cced6e01bf50323f81030f1cdbbf634afe7a5dac9bc70e095907c3e",
+   "locale": "ar",
+   "requireText": "ساعتان من الدروس النظرية",
+   "reason": "'2 hours'/'1 hour' → ساعتان/ساعة واحدة: Arabic dual and 'one hour'; 45 kept as digits (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "2",
+    "1"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "ar",
+   "requireText": "القرن الحادي والعشرين",
+   "reason": "'21st century' → القرن الحادي والعشرين: Arabic ordinal century in words; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_31714f481343f2a869a5",
+   "sourceHash": "31714f481343f2a869a5c9ae3434d7845ee2157d1f1890fb26ef5cbb301cbbc2",
+   "locale": "de",
+   "requireText": "1,25 MW",
+   "reason": "'1.25MW' → 1,25 MW: German decimal comma; same value (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1",
+    "25"
+   ],
+   "allowAdded": [
+    "125"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "es",
+   "requireText": "siglo XXI",
+   "reason": "'21st century' → siglo XXI: Spanish Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "fr",
+   "requireText": "XXIe siècle",
+   "reason": "'21st century' → XXIe siècle: French Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_9506189fdc9386db2797",
+   "sourceHash": "9506189fdc9386db27972b36bde540561fc4b7f39b795d8518bf0e1969d5e980",
+   "locale": "it",
+   "requireText": "XXI secolo",
+   "reason": "'21st century' → XXI secolo: Italian Roman-numeral century; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "21"
+   ]
+  },
+  {
+   "id": "t_7b50708eb8d1b4a7bc48",
+   "sourceHash": "7b50708eb8d1b4a7bc48041006d9fbba41ffeeea1b821a6e7a3ba502f99df6cb",
+   "locale": "nl",
+   "requireText": "anderhalf uur",
+   "reason": "'1 and a half hours' → anderhalf uur: Dutch idiom; same duration, 51.2 km kept (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_b4b5ba88daf1d3f4502a",
+   "sourceHash": "b4b5ba88daf1d3f4502a0806d18200111aed2ea8815f62d472bf17d033f83665",
+   "locale": "ja",
+   "requireText": "10万人",
+   "reason": "'100K' → 10万人 (100,000 in Japanese man units); same value, 35 kept (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "100"
+   ],
+   "allowAdded": [
+    "10"
+   ]
+  },
+  {
+   "id": "t_ff90479fa30f2110affb",
+   "sourceHash": "ff90479fa30f2110affbe69e128152434d744d236d15e0f948863f95e4436479",
+   "locale": "ja",
+   "requireText": "30万件",
+   "reason": "'300K' → 30万件 (300,000 in Japanese man units); same value (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "300"
+   ],
+   "allowAdded": [
+    "30"
+   ]
+  },
+  {
+   "id": "t_be4ff49e6606a164d195",
+   "sourceHash": "be4ff49e6606a164d19550782956a6a3035c16c88eddad66a58daa3f4f77bb9a",
+   "locale": "ko",
+   "requireText": "1시간 30분에서 2시간",
+   "reason": "source 'one and a half … two and a half hours' in words → 1시간 30분 / 2시간 30분: Korean hour+minute notation; same durations (coordinator review 2026-09-28)",
+   "allowAdded": [
+    "30",
+    "30"
+   ]
+  },
+  {
+   "id": "t_0ef43b895faae98d876a",
+   "sourceHash": "0ef43b895faae98d876ac0618a875f551e786d006a5c6aa9a30e76a1df3d4d6c",
+   "locale": "ko",
+   "requireText": "1시간 30분에서 2시간",
+   "reason": "source 'one and a half … two and a half hours' in words → 1시간 30분 / 2시간 30분: Korean hour+minute notation; same durations (coordinator review 2026-09-28)",
+   "allowAdded": [
+    "30",
+    "30"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "ru",
+   "requireText": "Однодневный",
+   "reason": "'1-day' → Однодневный: Russian compound 'one-day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_63f6ba006aaefc89ef69",
+   "sourceHash": "63f6ba006aaefc89ef69c32c321b0bf391d786ff6045cfa01fbc51aa5a52ce63",
+   "locale": "fr",
+   "requireText": "9 h à 17 h",
+   "reason": "'routine of 9 to 5' → routine de 9 h à 17 h: French 24-hour clock for the same office hours; no new fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "5"
+   ],
+   "allowAdded": [
+    "17"
+   ]
+  },
+  {
+   "id": "t_5f87187350d564ce399e",
+   "sourceHash": "5f87187350d564ce399ef1776fdf0147187f25c4f7df5ee3321385d14f755327",
+   "locale": "nl",
+   "requireText": "Eendaags",
+   "reason": "'1-day' → Eendaags: Dutch compound 'one-day'; same fact (coordinator review 2026-09-28)",
+   "allowMissing": [
+    "1"
+   ]
+  },
+  {
+   "id": "t_919f0819ddf505f67514",
+   "sourceHash": "919f0819ddf505f67514c32173f3de642c1781fc663c6083beca647fe1cd1555",
+   "locale": "fr",
+   "allowMissing": [
+    "0",
+    "0"
+   ],
+   "requireText": "12 h ; départ au plus tard à 10 h",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): '12:00 / 10:00' → '12 h / 10 h', French time style; same times (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_ccac20fad2690e5f9d98",
+   "sourceHash": "ccac20fad2690e5f9d98437ddedf4c069d95ecef875d86a11496fe7514f598ff",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "週1回",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'Weekly' → 週1回 (once a week); no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_2881bd9199222e7ebb1e",
+   "sourceHash": "2881bd9199222e7ebb1e7473ec0fbcc61a7a3a14d603a99ab9bf604b6ad6113f",
+   "locale": "ja",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "週1回",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'Weekly' → 週1回 (once a week); no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_4550f480791696d7bf3b",
+   "sourceHash": "4550f480791696d7bf3ba4b2fb38358c72f34bb987e2ca472727d496e51df90c",
+   "locale": "ko",
+   "allowAdded": [
+    "1"
+   ],
+   "requireText": "1회",
+   "reason": "owner-approved PDF family text (pdf-20260925-R1): 'a … session' → 세션 1회 (one session) Korean counter; no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "locale": "ja",
+   "allowAdded": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "requireText": "1名利用、ヴィラ1棟1泊あたり",
+   "reason": "'Single occupancy, per villa per night' → 1名利用、ヴィラ1棟1泊あたり: Japanese counters for one person / one villa / one night; same basis, no new fact (coordinator review 2026-09-28)"
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "locale": "ko",
+   "allowAdded": [
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "requireText": "1인 이용, 빌라 1동 1박 기준",
+   "reason": "'Single occupancy, per villa per night' → 1인 이용, 빌라 1동 1박 기준: Korean counters for one person / one villa / one night; same basis, no new fact (coordinator review 2026-09-28)"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "batchId": "b-0613",
+ "sourceSetHash": "ec226a82e9fa091e8f6c9b4643755cb5d9b282a0d3b450c39d751d1dfb5d587d",
+ "locale": "pt",
+ "units": [
+  {
+   "id": "t_d982e3aa2a6cb004801f",
+   "sourceHash": "d982e3aa2a6cb004801f615dfeb0d5c34c686fe5b9d7a1d971bcdedbbdc528c4",
+   "text": "Pedir informações sobre o meu tratamento",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_3448758d32e3334ef357",
+   "sourceHash": "3448758d32e3334ef35792c5427afe98fda225756247b664274a9e8e6026dc15",
+   "text": "Pedir informações sobre o tratamento da dor lombar crónica",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_0e4583b0d91785ec2f19",
+   "sourceHash": "0e4583b0d91785ec2f19bc5d224cb16c104a8d2f81be9d9fbd1361f3714b3795",
+   "text": "Ocupação individual, por villa e por noite: [[VAR_1]].",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_7a2928dfb1b15524aa16",
+   "sourceHash": "7a2928dfb1b15524aa16152b0b0dd0149381ceedb1116642d1227d497e9a806a",
+   "text": "Pedir informações sobre o tratamento da artrite",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": []
+  },
+  {
+   "id": "t_cce0c95b27653fb482e5",
+   "sourceHash": "cce0c95b27653fb482e5614790db765daabeb536577b6e1e1040f911e868be6c",
+   "text": "Estamos aqui para apoiá-lo no seu caminho para o bem-estar. Se tiver dúvidas sobre os nossos tratamentos, programas ou reservas, a nossa equipa está preparada para ajudá-lo com apoio e transparência. Contacte-nos por telefone, e-mail ou através do nosso formulário online. Vamos iniciar juntos o seu caminho para uma recuperação integral.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "'retreats' rendered as 'programas' (clinical register; avoids resort/holiday connotation). 'comprehensive healing' rendered as 'recuperação integral' to avoid cure-type wording."
+   ]
+  },
+  {
+   "id": "t_678c22cd2acdfaf1bc7f",
+   "sourceHash": "678c22cd2acdfaf1bc7f9e43b9c2523828e944c71df86a02457e3d05bf63dcab",
+   "text": "No Kairali – The Ayurvedic Healing Village, a nossa consulta ayurvédica em regime de ambulatório (OPD) oferece um processo de tratamento fluido e personalizado, baseado nos princípios tradicionais do Ayurveda. Os visitantes são recebidos numa receção acolhedora, onde é preenchido um formulário OPD e o seu historial clínico é registado digitalmente para uma consulta de tratamento natural em Ayurveda. Segue-se uma consulta completa com um médico ayurvédico, que inclui o diagnóstico ayurvédico tradicional, o exame do pulso e um tratamento ayurvédico personalizado, online ou presencial. É elaborado um plano de bem-estar personalizado de acordo com o seu dosha e o seu estado de saúde. Em seguida, passa às terapias, que incluem a desintoxicação por Panchakarma e tratamentos direcionados para problemas como artrite, diabetes, alívio do stress e afeções da pele. Os tratamentos são administrados por terapeutas qualificados, que utilizam óleos terapêuticos e produtos ayurvédicos da Kairali prontos para exportação. Após o tratamento, recebe remédios à base de plantas com instruções detalhadas de utilização, e é definido um plano de acompanhamento para garantir a continuidade dos cuidados ayurvédicos. Para maior comodidade, são também disponibilizadas consultas online com um médico ayurvédico na Índia.",
+   "status": "translated",
+   "unchangedReason": null,
+   "issues": [
+    "Source has a stray comma in 'utilizing, therapeutic oils'; corrected in translation. 'natural healing consultation' rendered as 'consulta de tratamento natural' to avoid cure-type wording."
+   ]
+  }
+ ]
+}
