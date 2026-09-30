@@ -1,9 +1,9 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html) {
-  for (var name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
+  for (var name of ['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.webp');
   }
-  return html;
+  return html.split('/ahv/assets/img/wx-hero.webp').join('/ahv/assets/img/wx-hero-544.webp');
 }
 /** Use the existing accessible award title for descriptive rendered link text.
  * No new content or translation: the title already belongs to this exact link.
@@ -19,6 +19,6 @@ export function descriptiveAwardLinks(html) {
 }
 
 export function firstCriticalImage(html) {
-  var paths = ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner'].map(function (name) { return '/ahv/assets/img/' + name + '-768.webp'; });
+  var paths = ['/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-768.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp'];
   return paths.filter(function (path) { return html.indexOf(path) >= 0; }).sort(function (a, b) { return html.indexOf(a) - html.indexOf(b); })[0] || null;
 }

@@ -5,10 +5,10 @@ import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '.
 test('only named first-screen images gain the same-image phone variant', () => {
   const input = '<video poster="/ahv/assets/img/wx-hero.webp"></video><img src="/ahv/assets/img/other.webp">';
   const result = phoneCriticalMedia(input);
-  assert.ok(result.includes('wx-hero-768.webp'));
+  assert.ok(result.includes('wx-hero-544.webp'));
   assert.ok(result.includes('other.webp'));
   assert.equal(phoneCriticalMedia(result), result);
-  assert.equal(firstCriticalImage(result), '/ahv/assets/img/wx-hero-768.webp');
+  assert.equal(firstCriticalImage(result), '/ahv/assets/img/wx-hero-544.webp');
   assert.equal(firstCriticalImage('<img src="/unrelated.webp">'), null);
 });
 test('the four home phone slots use 768px variants without changing preload selection or other markup', () => {
@@ -23,8 +23,8 @@ test('the four home phone slots use 768px variants without changing preload sele
   // Reversing just these four URL substitutions recovers the exact source, including slots and lazy attributes.
   let restored = mapped;
   for (const name of names) restored = restored.replaceAll('/ahv/assets/img/' + name + '-768.webp', '/ahv/assets/img/' + name + '.webp');
-  let existing = template;
-  for (const name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner'])
+  let existing = template.replaceAll('/ahv/assets/img/wx-hero.webp', '/ahv/assets/img/wx-hero-544.webp');
+  for (const name of ['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner'])
     existing = existing.replaceAll('/ahv/assets/img/' + name + '.webp', '/ahv/assets/img/' + name + '-768.webp');
   assert.equal(restored, existing, 'only the four new URLs change beyond the pre-existing mapping');
   assert.equal(firstCriticalImage(mapped), firstCriticalImage(existing), 'existing preload selection is unchanged');
