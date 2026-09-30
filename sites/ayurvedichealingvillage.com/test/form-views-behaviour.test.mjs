@@ -110,3 +110,12 @@ test('online consultation: not configured keeps the WhatsApp-draft step with the
   assert.equal(c.st.step, 'review', 'a failure never advances to the done step');
   assert.match(c.st.oSubmitError, /could not confirm your submission/);
 });
+
+test('application upload rejects oversize before transport and reports server413 honestly', async () => {
+  const s = sandbox(async () => json(413, {ok:false, code:'FILE_TOO_LARGE'}));
+  const c = new s.Component({route:'/apply-now/'});
+  await assert.rejects(c.uploadApplicationFile({size:4194305}, 'resume', 'synthetic'), /larger than 4 MB/);
+  assert.equal(s.requests.length, 0);
+  await assert.rejects(c.uploadApplicationFile(new Blob(['synthetic']), 'resume', 'synthetic'), /larger than 4 MB/);
+  assert.equal(s.requests.length, 1);
+});

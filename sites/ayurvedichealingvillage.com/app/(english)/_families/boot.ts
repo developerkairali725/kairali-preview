@@ -571,21 +571,32 @@ export const BOOT_SCRIPT = `
   // wholesale. Hidden the way a honeypot is meant to be — removed from sight,
   // from the accessibility tree and from tab order, while staying in the DOM
   // and in the submitted payload so it still traps bots.
+  var honeypotDatasetCache = new WeakMap();
   function honeypotNames() {
     var names = [];
     Object.keys(window).forEach(function (key) {
       if (key.indexOf("AHV_") !== 0) return;
+      var dataset = window[key];
+      if (!dataset || typeof dataset !== "object") return;
+      var cached = honeypotDatasetCache.get(dataset);
+      if (cached) {
+        cached.forEach(function (name) { if (names.indexOf(name) === -1) names.push(name); });
+        return;
+      }
+      var found = [];
       var seen = 0;
       (function scan(node) {
         if (!node || typeof node !== "object" || seen++ > 20000) return;
         if (Array.isArray(node)) { node.forEach(scan); return; }
         if (node.honeypot === true && typeof node.name === "string") {
-          if (names.indexOf(node.name) === -1) names.push(node.name);
+          if (found.indexOf(node.name) === -1) found.push(node.name);
         } else if (node.honeypot && typeof node.honeypot === "object" && typeof node.honeypot.name === "string") {
-          if (names.indexOf(node.honeypot.name) === -1) names.push(node.honeypot.name);
+          if (found.indexOf(node.honeypot.name) === -1) found.push(node.honeypot.name);
         }
         Object.keys(node).forEach(function (k) { scan(node[k]); });
-      })(window[key]);
+      })(dataset);
+      honeypotDatasetCache.set(dataset, found);
+      found.forEach(function (name) { if (names.indexOf(name) === -1) names.push(name); });
     });
     return names;
   }
@@ -872,13 +883,15 @@ export const BOOT_SCRIPT = `
   var hpNames = [];
   function hideHoneypots(root) {
     if (!root || root.nodeType !== 1) return;
-    // Recomputed until it finds something: the dataset global is loaded by the
-    // family script, which runs AFTER the first sweep tick, so caching an empty
-    // first result would disable this permanently.
-    if (!hpNames.length) { try { hpNames = honeypotNames(); } catch (e) { hpNames = []; } }
+    // Most added nodes contain no input. Dataset discovery caches each object,
+    // including empty results, while still seeing later/replaced family globals.
+    if (!root.matches("input") && !root.querySelector("input")) return;
+    try { hpNames = honeypotNames(); } catch (e) { hpNames = []; }
     if (!hpNames.length) return;
     hpNames.forEach(function (name) {
-      root.querySelectorAll('input[name="' + name + '"]').forEach(function (input) {
+      var inputs = Array.prototype.slice.call(root.querySelectorAll('input[name="' + name + '"]'));
+      if (root.matches('input[name="' + name + '"]')) inputs.unshift(root);
+      inputs.forEach(function (input) {
         if (input.__ahvHoneypotHidden) return;
         var field = input.closest("label") || input.parentElement || input;
         // Off-screen rather than display:none — a bot reading the DOM still
@@ -1092,14 +1105,15 @@ export const BOOT_SCRIPT = `
   // shadow root. Sweep on the same retry cadence as bindRoute so late upgrades
   // and <sc-for>-rendered list slots are covered too.
   function sweepSlots(tries) {
-    restoreSlotScrolling(host);
-    deferSlotImages(host);
-    deferBackgrounds(host);
-    aliasImages(host);
-    enhanceDirections(host);
-    startIstClock(host);
-    hideHoneypots(host);
-    if (tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
+    // General repairs already run for added nodes. Only custom elements can
+    // upgrade without another host mutation, so retry those pending slots.
+    var pending = false;
+    host.querySelectorAll("image-slot").forEach(function (slot) {
+      if (!slot.__ahvTouchFixed) restoreSlotScroll(slot);
+      if (!slot.__ahvLazySet) deferSlotImage(slot);
+      if (!slot.__ahvTouchFixed || !slot.__ahvLazySet) pending = true;
+    });
+    if (pending && tries > 0) setTimeout(function () { sweepSlots(tries - 1); }, 60);
   }
 
   function bindRoute(tries) {
@@ -1195,12 +1209,16 @@ export const BOOT_SCRIPT = `
         s.src = entry.src;
         if (entry.view) s.setAttribute("data-ahv-view", entry.view);
         s.async = false; // keeps classic-script execution in insertion order
+        s.onload = function () { honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
         s.onerror = function () { fail(new Error("script " + entry.src)); };
         host.appendChild(s);
       });
 
       bindRoute(40);
       sweepSlots(40);
+      if (window.customElements && window.customElements.whenDefined) {
+        window.customElements.whenDefined("image-slot").then(function () { sweepSlots(40); });
+      }
     })
     .catch(fail);
 })();
