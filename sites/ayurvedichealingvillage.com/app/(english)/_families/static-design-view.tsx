@@ -61,6 +61,15 @@ const STATIC_BOOT = `
   window.__ahvStaticDesignBooted = true;
   var host = document.getElementById("ahv-design-root");
   if (!host) return;
+  function initializeNearViewport(target, initialize) {
+    if (!target || !("IntersectionObserver" in window)) { initialize(); return; }
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+      observer.disconnect();
+      initialize();
+    }, { rootMargin: "500px 0px" });
+    observer.observe(target);
+  }
   var cfg = JSON.parse(document.getElementById("ahv-static-design-config").textContent || "{}");
   if (cfg.deferFonts) {
     var revealFonts = function () {
@@ -166,9 +175,9 @@ const STATIC_BOOT = `
     });
   }
   if (cfg.staticHome) {
-    var homeSection = host.querySelector('section:has(button[aria-label="Next announcement"])');
+    var homeSection = host.querySelector('section[data-dc-tpl="213"]');
     var homeNews = cfg.staticHome.news || [];
-    if (homeSection && homeNews.length) {
+    if (homeSection && homeNews.length) initializeNearViewport(homeSection, function () {
       var nextNewsButton = homeSection.querySelector('[aria-label="Next announcement"]');
       var newsCard = nextNewsButton && nextNewsButton.closest("div[data-dc-tpl]");
       while (newsCard && !newsCard.querySelector("h3")) newsCard = newsCard.parentElement;
@@ -195,22 +204,19 @@ const STATIC_BOOT = `
       if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
         window.setInterval(function () { showNews(newsIndex + 1); }, 7000);
       }
-    }
-    var programmeLabels = ["Detox & Rejuvenation", "Pain, Spine & Joints", "Lifestyle & Chronic Conditions", "Women's Health", "Yoga & Mind"];
-    var programmeSection = Array.from(host.querySelectorAll("section")).find(function (section) {
-      var labels = Array.from(section.querySelectorAll("button")).map(function (button) { return button.textContent.trim(); });
-      return programmeLabels.every(function (label) { return labels.indexOf(label) >= 0; });
     });
-    if (programmeSection) {
+    var programmeLabels = ["Detox & Rejuvenation", "Pain, Spine & Joints", "Lifestyle & Chronic Conditions", "Women's Health", "Yoga & Mind"];
+    var programmeSection = host.querySelector('section[data-dc-tpl="195"]');
+    if (programmeSection) initializeNearViewport(programmeSection, function () {
       var programmeButtons = Array.from(programmeSection.querySelectorAll("button")).filter(function (button) { return programmeLabels.indexOf(button.textContent.trim()) >= 0; });
-      var programmeGroups = Array.from(programmeSection.querySelectorAll("div")).filter(function (div) {
-        return div.querySelectorAll("a[href]").length >= 2 && div.children.length > 0 && Array.from(div.children).every(function (child) { return child.tagName === "A"; });
-      });
-      if (programmeGroups.length > 5) programmeGroups = programmeGroups.slice(-5);
       var programmeCategoryGroups = Array.from(programmeSection.querySelectorAll('div[data-dc-tpl="202"]')).filter(function (group) {
         return group.querySelectorAll('div[data-dc-tpl="204"]').length > 0;
       });
-      var programmeCards = Array.from(programmeSection.querySelectorAll('div[data-dc-tpl="204"]'));
+      var programmeGroups = programmeCategoryGroups.length === 5 ? [] : Array.from(programmeSection.querySelectorAll("div")).filter(function (div) {
+        return div.querySelectorAll("a[href]").length >= 2 && div.children.length > 0 && Array.from(div.children).every(function (child) { return child.tagName === "A"; });
+      });
+      if (programmeGroups.length > 5) programmeGroups = programmeGroups.slice(-5);
+      var programmeCards = programmeGroups.length === 5 || programmeCategoryGroups.length === 5 ? [] : Array.from(programmeSection.querySelectorAll('div[data-dc-tpl="204"]'));
       var programmeCounts = cfg.staticHome.programmeCounts || [];
       programmeButtons.forEach(function (button, index) {
         button.addEventListener("click", function () {
@@ -230,9 +236,10 @@ const STATIC_BOOT = `
           });
         });
       });
-    }
+    });
     var homeRates = cfg.staticHome.rates || {};
-    var rateSection = host.querySelector('section:has(button[aria-pressed])');
+    var rateSection = host.querySelector("section[data-ahv-final-rates]");
+    if (rateSection) initializeNearViewport(rateSection, function () {
     var rateButtons = rateSection ? Array.from(rateSection.querySelectorAll('button[aria-pressed]')) : [];
     var rateCurrencies = ["INR", "USD", "EUR"];
     var visibleRates = [];
@@ -270,25 +277,28 @@ const STATIC_BOOT = `
       var savedCurrency = localStorage.getItem("ahv-cur");
       if (savedCurrency && rateCurrencies.indexOf(savedCurrency) >= 0) chooseHomeCurrency(savedCurrency);
     } catch (error) {}
-    var galleryButtons = Array.from(host.querySelectorAll("button")).filter(function (button) {
-      return ["All", "Treatment", "Villa", "Yoga & Meditation", "Experience at Kairali"].indexOf(button.textContent.trim()) >= 0;
     });
-    var galleryItems = Array.from(host.querySelectorAll("a[aria-description]"));
-    var galleryCategories = cfg.staticHome.galleryCategories || [];
-    galleryButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        var category = button.textContent.trim();
-        galleryItems.forEach(function (item, index) {
-          item.style.display = category === "All" || galleryCategories[index] === category ? "block" : "none";
-        });
-        galleryButtons.forEach(function (other) {
-          var active = other === button;
-          other.style.background = active ? "#EEB41E" : "transparent";
-          other.style.color = active ? "#2A2118" : "#F7F4EA";
+    var gallerySection = host.querySelector('section[data-dc-tpl="770"]');
+    var galleryButtons = gallerySection ? Array.from(gallerySection.querySelectorAll("button")).filter(function (button) {
+      return ["All", "Treatment", "Villa", "Yoga & Meditation", "Experience at Kairali"].indexOf(button.textContent.trim()) >= 0;
+    }) : [];
+    if (galleryButtons.length && gallerySection) initializeNearViewport(gallerySection, function () {
+      var galleryItems = Array.from(gallerySection.querySelectorAll("a[aria-description]"));
+      var galleryCategories = cfg.staticHome.galleryCategories || [];
+      galleryButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var category = button.textContent.trim();
+          galleryItems.forEach(function (item, index) {
+            item.style.display = category === "All" || galleryCategories[index] === category ? "block" : "none";
+          });
+          galleryButtons.forEach(function (other) {
+            var active = other === button;
+            other.style.background = active ? "#EEB41E" : "transparent";
+            other.style.color = active ? "#2A2118" : "#F7F4EA";
+          });
         });
       });
-    });
-    var photoData = cfg.staticHome.galleryPhotos || [];
+      var photoData = cfg.staticHome.galleryPhotos || [];
     var galleryDialog = document.createElement("dialog");
     galleryDialog.setAttribute("aria-label", "Photo gallery");
     galleryDialog.style.cssText = "border:0;padding:18px;max-width:min(96vw,1100px);max-height:94vh;background:#17130f;color:#fff;border-radius:6px;box-shadow:0 16px 70px rgba(0,0,0,.5)";
@@ -334,9 +344,11 @@ const STATIC_BOOT = `
       if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(photoIndex - 1); }
       if (event.key === "ArrowRight") { event.preventDefault(); showPhoto(photoIndex + 1); }
     });
-    var heroVideo = host.querySelector("video");
-    var heroToggle = host.querySelector('button[aria-label*="background video"]');
-    var chapterButtons = Array.from(host.querySelectorAll("button")).filter(function (button) { return /^0[1-4] ·/.test(button.textContent.trim()); });
+    });
+    var heroSection = host.querySelector('section[data-dc-tpl="53"]');
+    var heroVideo = heroSection && heroSection.querySelector("video");
+    var heroToggle = heroSection && heroSection.querySelector('button[aria-label*="background video"]');
+    var chapterButtons = heroSection ? Array.from(heroSection.querySelectorAll("button")).filter(function (button) { return /^0[1-4] ·/.test(button.textContent.trim()); }) : [];
     var chapterTimes = [0, 8.067, 15.767, 22.834];
     function playHero(time) {
       if (!heroVideo) return;
