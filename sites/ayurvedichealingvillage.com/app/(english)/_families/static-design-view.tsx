@@ -260,6 +260,9 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(routeSchema(route, "en")) }} />
       {firstCriticalImage(mobile) ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={firstCriticalImage(mobile)!} /> : null}
       {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
+      {phonePaint?.preloadFonts.map((href) => (
+        <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={narrow} />
+      ))}
       <link rel="preload" as="fetch" crossOrigin="anonymous" media={wide} href={staticDesktopPath} />
       {fontCss.map(({ href, css }) => css
         ? <style key={href} dangerouslySetInnerHTML={{ __html: css }} />
