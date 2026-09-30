@@ -59,7 +59,7 @@
     "firedFrom": "live WordPress /ppc-thanks/ via the HFCM plugin, on PAGE LOAD",
     "countingRule": "Every conversion",
     "includedInAccountGoals": false,
-    "status": "NOT ported to the new stack. Candidate prepared and tested but NOT activated: app/(english)/_families/lead-conversion.mjs",
-    "decision": "Activation is an owner/Vikash decision - see docs/reports/2026-09-15-ahv-enquirysubmission-trace.md section 10"
+    "status": "Accepted-response-only event implemented in consent-runtime.ts and lead-receipt.js; Production activation and destination receipt unverified",
+    "decision": "The launch-preparation task authorizes source implementation; Production AHV_ANALYTICS activation, Ads/GA4/Meta/Clarity receipt and goal configuration remain release checks"
   }
 }

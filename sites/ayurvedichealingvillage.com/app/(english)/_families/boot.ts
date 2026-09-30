@@ -81,7 +81,7 @@ export interface BootConfig {
    * so no tag can load however the visitor answers the cookie notice. The
    * consent gate is the second lock, not the only one.
    */
-  measurement?: { ga4?: string; clarity?: string; metaPixel?: string };
+  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsSendTo?: string };
   /**
    * The page's locale (25 Sep 2026): code, document language/direction, the
    * localized URL, every language that has THIS page (for the switcher), and

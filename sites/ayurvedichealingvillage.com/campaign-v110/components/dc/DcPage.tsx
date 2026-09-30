@@ -49,22 +49,25 @@ export type DcMeta = {
 
 export function dcMetadata(m: DcMeta): Metadata {
   const { title, description, keywords, canonical, ogImage, locale, siteName } = m.head;
+  // The saved campaign route is the indexed URL when an imported metadata
+  // record omitted its canonical. Do not let Next infer a Preview hostname.
+  const effectiveCanonical = canonical ?? new URL(m.route, "https://ayurvedichealingvillage.com").href;
   return {
     title,
     description: description ?? undefined,
     keywords: keywords ? keywords.split(",").map((k) => k.trim()) : undefined,
-    alternates: canonical ? { canonical } : undefined,
+    alternates: { canonical: effectiveCanonical },
     openGraph: {
       title,
       description: description ?? undefined,
-      url: canonical ?? undefined,
+      url: effectiveCanonical,
       siteName,
       locale,
       type: "website",
       // Staging's og:image dimensions are not carried over (see OPEN-ITEMS).
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
-    twitter: { card: "summary_large_image", title, description: description ?? undefined },
+    twitter: { card: "summary_large_image", title, description: description ?? undefined, images: ogImage ? [ogImage] : undefined },
   };
 }
 

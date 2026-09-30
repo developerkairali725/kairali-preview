@@ -40,6 +40,17 @@ import { join } from "node:path";
 // cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
 // when the owner takes this to production.
 const IS_STAGING = process.env.AHV_STAGING !== "0";
+// Submitted WordPress sitemap URLs, read from the current public WP index on
+// 30 Sep 2026. Keep the old submissions alive through one 301 to the new
+// canonical sitemap; GSC/Bing can then be resubmitted and monitored.
+const LEGACY_SITEMAPS = [
+  "/sitemap_index.xml", "/sitemap.xml.gz", "/wp-sitemap.xml",
+  "/wp-sitemap-posts-page-1.xml", "/de/wp-sitemap-posts-page-1.xml", "/fr/wp-sitemap-posts-page-1.xml",
+  "/wp-sitemap-posts-offers-1.xml", "/fr/wp-sitemap-posts-offers-1.xml",
+  "/wp-sitemap-posts-villas-1.xml", "/de/wp-sitemap-posts-villas-1.xml", "/fr/wp-sitemap-posts-villas-1.xml",
+  "/wp-sitemap-posts-programs-1.xml", "/de/wp-sitemap-posts-programs-1.xml", "/fr/wp-sitemap-posts-programs-1.xml",
+  "/wp-sitemap-posts-awsm_job_openings-1.xml",
+];
 
 /**
  * PROTECTION MAP — the twelve legacy URLs the owner ruled 301 on 2026-09-19
@@ -91,7 +102,12 @@ const nextConfig: NextConfig = {
   // otherwise land on a redirect.
   trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
-  async rewrites() { return [{ source: "/documents/", destination: "/documents/index.html" }]; },
+  async rewrites() { return [
+    { source: "/documents/", destination: "/documents/index.html" },
+    // The home runtime still requests this legacy logo path. Serve its
+    // packaged same-dimension SVG after Vercel takes the public hostname.
+    { source: "/wp-content/uploads/2024/11/logo_color-da22eb.svg", destination: "/ahv/assets/img/logo_color-da22eb.svg" },
+  ]; },
   async headers() {
     // The payload URLs are stable across deployments; they are not content-addressed.
     // Revalidate with ETags so returning visitors receive updated views and consent UI.
@@ -121,7 +137,7 @@ const nextConfig: NextConfig = {
     // also a single hop, just by the other rule. They are ad-landing URLs that
     // were never in the manifest: unlisted in the sitemap and linked from no
     // page on the live site, which is why nothing surfaced them until now.
-    return [{source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+    return [...LEGACY_SITEMAPS.map((source) => ({source,destination:"/sitemap.xml",statusCode:301})), {source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,

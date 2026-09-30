@@ -176,13 +176,77 @@ export const CONSENT_RUNTIME = `
   // the build must set AHV_ANALYTICS=1, AND the visitor must have accepted.
   // Both are off on staging by the owner's 15 Sep ruling, so a preview reviewer
   // never lands in the production GA4 and Clarity data.
-  var measurementStarted = false;
+  var measurementStarted = !!window.__ahvMeasurementStarted;
+  function measurementUrlSafe() {
+    // Meta and Clarity can inspect document.location themselves. Only start
+    // them when every URL parameter is a bounded attribution value.
+    var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
+    var safe = !window.location.hash;
+    new URLSearchParams(window.location.search).forEach(function (value, name) {
+      if (allowed.indexOf(name) === -1 || !/^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) safe = false;
+    });
+    return safe;
+  }
+  function safePageLocation() {
+    // Keep paid attribution parameters, but never send arbitrary URL parameters
+    // or fragments (which can contain names, email addresses or form drafts).
+    var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
+    var query = new URLSearchParams();
+    var incoming = new URLSearchParams(window.location.search);
+    allowed.forEach(function (name) {
+      var value = incoming.get(name);
+      if (value && /^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) query.set(name, value);
+    });
+    return window.location.origin + window.location.pathname + (query.size ? "?" + query.toString() : "");
+  }
+  function safeReferrer() {
+    // Retain the referring site for acquisition reports without forwarding
+    // its query string or path, either of which may carry private values.
+    try {
+      var referrer = new URL(document.referrer);
+      return /^https?:$/.test(referrer.protocol) ? referrer.origin + "/" : "";
+    } catch (e) { return ""; }
+  }
+  function recordAcceptedLead(form, token) {
+    // Careers are applications, not the Ads EnquirySubmission conversion.
+    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page"].indexOf(form) === -1) return false;
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(token || ""))) return false;
+    if (consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
+    var key = "ktahv-accepted-lead-events-v1";
+    var seen = window.__ahvLeadEventTokens || (window.__ahvLeadEventTokens = []);
+    try { seen = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
+    if (!Array.isArray(seen)) seen = [];
+    if (seen.indexOf(token) !== -1) return false;
+    var sent = false;
+    var m = cfg.measurement;
+    if (m.ga4 && typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", { event_id: token, page_location: safePageLocation() });
+      if (m.adsSendTo) window.gtag("event", "conversion", { send_to: m.adsSendTo, transaction_id: token, page_location: safePageLocation() });
+      sent = true;
+    }
+    if (m.metaPixel && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {}, { eventID: token });
+      sent = true;
+    }
+    if (m.clarity && typeof window.clarity === "function") {
+      window.clarity("event", "lead_received");
+      sent = true;
+    }
+    if (sent) {
+      seen.push(token);
+      window.__ahvLeadEventTokens = seen.slice(-50);
+      try { localStorage.setItem(key, JSON.stringify(window.__ahvLeadEventTokens)); } catch (e) {}
+    }
+    return sent;
+  }
+  window.AHV_MEASUREMENT = { recordLead: recordAcceptedLead };
   function startMeasurement() {
     if (measurementStarted) return;
-    if (window.location.search || window.location.hash) return;
+    if (!measurementUrlSafe()) return;
     var m = cfg.measurement;
     if (!m) return; // build-time switch is off: nothing to start
     measurementStarted = true;
+    window.__ahvMeasurementStarted = true;
     if (m.ga4) {
       var g = document.createElement("script");
       g.async = true;
@@ -196,7 +260,8 @@ export const CONSENT_RUNTIME = `
         window.gtag = function () { window.dataLayer.push(arguments); };
       }
       window.gtag("js", new Date());
-      window.gtag("config", m.ga4);
+      window.gtag("config", m.ga4, { page_location: safePageLocation(), page_referrer: safeReferrer() });
+      if (m.adsSendTo) window.gtag("config", m.adsSendTo.split("/")[0], { send_page_view: false });
     }
     if (m.clarity) {
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };

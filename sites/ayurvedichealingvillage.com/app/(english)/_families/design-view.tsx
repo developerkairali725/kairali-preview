@@ -20,6 +20,11 @@ import { youtubeNewTabs } from "./youtube-links";
 import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
+// Next ships this pinned Terser build for its own output minification. Keep
+// the boot inline (no extra render-blocking request) but remove its comments
+// and unused syntax before React serializes it into HTML and Flight data.
+// @ts-expect-error Next's bundled Terser has no public declaration file.
+import { minify } from "next/dist/compiled/terser";
 import { routeSchema } from "./schema";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -80,9 +85,9 @@ function prerenderedBody(routePath: string, locale: LocaleCode = "en"): string {
  */
 function measurementForBuild(): BootConfig["measurement"] {
   const a = analyticsConfig.activation;
-  if (process.env[a.env] !== a.enabledWhen) return undefined;
+  if (process.env.AHV_STAGING !== "0" || process.env[a.env] !== a.enabledWhen) return undefined;
   const m = analyticsConfig.measurement;
-  return { ga4: m.ga4.id, clarity: m.clarity.id, metaPixel: m.metaPixel.id };
+  return { ga4: m.ga4.id, clarity: m.clarity.id, metaPixel: m.metaPixel.id, adsSendTo: analyticsConfig.googleAds.sendTo };
 }
 
 const PAYLOAD_BASE = "/ahv/views/";
@@ -122,7 +127,13 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
   };
 }
 
-export function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
+const compactBoot = minify(BOOT_SCRIPT, { compress: true, mangle: true }).then((result: { code?: string }) => {
+  if (!result.code) throw new Error("AHV boot minification produced no script");
+  return result.code;
+});
+
+export async function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
+  const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
   const snapshot = descriptiveAwardLinks(phoneCriticalMedia(prerenderedBody(route.path, locale)));
@@ -251,7 +262,7 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
         // <script> text node below.
         dangerouslySetInnerHTML={{ __html: jsonForScript(cfg) }}
       />
-      <script dangerouslySetInnerHTML={{ __html: BOOT_SCRIPT }} />
+      <script dangerouslySetInnerHTML={{ __html: bootScript }} />
     </>
   );
 }
