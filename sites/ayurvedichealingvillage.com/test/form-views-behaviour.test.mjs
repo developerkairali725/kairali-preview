@@ -6,11 +6,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { applyUnits, jsUnits } from '../tools/l10n/lib.mjs';
 
 const read = (p) => fs.readFileSync(new URL(p, import.meta.url), 'utf8');
 const noopEl = () => new Proxy(function () {}, { get: (t, k) => (k === Symbol.toPrimitive ? () => '' : k === 'style' || k === 'dataset' || k === 'classList' ? noopEl() : noopEl()), apply: () => noopEl(), set: () => true });
 
-function sandbox(fetchImpl, view = 'desktop') {
+function sandbox(fetchImpl, view = 'desktop', translate = null) {
   const requests = [];
   const document = { title: 'T', referrer: '', documentElement: { lang: 'de' }, head: noopEl(), body: noopEl(), querySelector: () => null, querySelectorAll: () => [], getElementById: () => null, createElement: () => noopEl(), addEventListener() {} };
   const window = { location: { href: 'https://preview.example.test/contact-us/?utm_source=google', search: '?utm_source=google', pathname: '/contact-us/', hash: '' }, addEventListener() {}, matchMedia: () => ({ matches: false, addEventListener() {} }) };
@@ -24,13 +25,15 @@ function sandbox(fetchImpl, view = 'desktop') {
   vm.createContext(ctx);
   // The family scripts publish onto window.*; expose window's members globally the way a browser does.
   vm.runInContext('var self = window;', ctx);
-  for (const file of ['../public/ahv/assets/enquiry-family-data.js', '../public/ahv/assets/enquiry-family-render.js']) {
-    vm.runInContext(read(file), ctx, { filename: file });
+  for (const file of ['../public/design/lead-receipt.js', '../public/ahv/assets/enquiry-family-data.js', '../public/ahv/assets/enquiry-family-render.js']) {
+    const script = read(file);
+    vm.runInContext(translate && !file.includes('lead-receipt') ? applyUnits(script, jsUnits(script).units, translate) : script, ctx, { filename: file });
     for (const k of Object.keys(ctx.window)) if (!(k in ctx)) ctx[k] = ctx.window[k];
   }
   ctx.DCLogic = class { constructor(props) { this.props = props || {}; } setState(u) { this.state = Object.assign({}, this.state, typeof u === 'function' ? u(this.state) : u); } };
   const { logic } = JSON.parse(read('../public/ahv/views/ahv-page-enquiry-' + view + '.json'));
-  const Component = vm.runInContext(logic + '\n;Component', ctx);
+  const renderedLogic = translate ? applyUnits(logic, jsUnits(logic).units, translate) : logic;
+  const Component = vm.runInContext(renderedLogic + '\n;Component', ctx);
   return { ctx, Component, requests };
 }
 
@@ -206,4 +209,17 @@ test('OPD ownership is exact across released locales; old legacy forms retain th
   assert.match(c.renderVals().leNotice, /being connected/);
   c.renderVals().leSubmit({ preventDefault() {}, nativeEvent: {} });
   assert.match(c.renderVals().leNotice, /Submission is disabled in review/);
+});
+
+for (const view of ['desktop', 'mobile']) test(view + ' translated consultation keeps canonical defaults visibly selected', () => {
+  const labels = { Myself: 'Für mich selbst', English: 'Englisch', 'A family member': 'Ein Familienmitglied' };
+  const s = sandbox(async () => { throw new Error('This check must not submit'); }, view, text => labels[text] ?? text);
+  s.ctx.window.location.pathname = '/de/kostenlose-online-beratung/';
+  const c = new s.Component({route:'/online-consultation/'});
+  c.state.step = 2;
+  const groups = c.renderVals().chipGroups;
+  for (const key of ['who', 'lang']) assert.equal(groups.find(g => g.key === key).chips.filter(chip => chip.on).length, 1, key + ' has one visible selected default');
+  assert.equal(c.state.ov.who, 'Myself');
+  assert.equal(c.state.ov.lang, 'English');
+  assert.equal(groups.find(g => g.key === 'who').chips.find(chip => chip.on).label, 'Für mich selbst');
 });

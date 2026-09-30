@@ -14,8 +14,8 @@
     '/ayurveda-retreat-kerala.html',
     '/ayurvedic-treatment-packages.html',
     '/family-ayurvedic-retreat-kerala.html',
-    '/kairali-air-india-maharaja-club.html',
     '/kairali-cleansing-centre.html',
+    '/kairali-air-india-maharaja-club.html',
     '/offers/defence-paramilitary-personnel-get-upto-30-off/',
     '/offers/new/',
     '/offers/olympics-and-paralympics-offer/',
@@ -73,6 +73,7 @@
     if (form.getAttribute('aria-busy') === 'true') return;
     var status = statusFor(form);
     var fd = new FormData(form);
+    var airIndia = window.location.pathname === '/kairali-air-india-maharaja-club.html';
     if (!form.reportValidity()) return;
     if (!captchaValid(form, fd)) {
       status.textContent = 'Please check the sum before submitting.';
@@ -98,7 +99,7 @@
         body: JSON.stringify({
           form: 'landing-page',
           submissionToken: token,
-          site_language: document.documentElement.lang || 'en',
+          site_language: window.AHV_LEAD_RECEIPT.siteLanguage(),
           lead_source_url: window.location.href,
           referrer: document.referrer,
           utm_source: value(fd, 'utm_source') || query.get('utm_source') || '',
@@ -111,8 +112,10 @@
             form_variant: form.getAttribute('data-recorded-id') || form.id || 'campaign',
             fname: value(fd, 'fname') || value(fd, 'fullName'), lname: value(fd, 'lname'),
             rdogender: value(fd, 'rdogender'), phone: value(fd, 'phone'),
-            email: value(fd, 'email'), country: value(fd, 'country'),
-            duration: value(fd, 'duration'), message: value(fd, 'message'),
+            email: value(fd, 'email'), country: airIndia ? '' : value(fd, 'country'),
+            duration: value(fd, 'duration'), message: airIndia
+              ? 'Air India Maharaja Club membership number: ' + value(fd, 'membership_number') + '\nPreferred date: ' + value(fd, 'country') + '\nProgramme interest: ' + value(fd, 'message')
+              : value(fd, 'message'),
             consent: !!fd.get('chkAgree') || !!fd.get('consent'),
             track_id: value(fd, 'hdntrackid'), campaign_name: value(fd, 'hdncampionname'),
             utm_keyword: value(fd, 'utm_keyword') || query.get('utm_keyword') || '',

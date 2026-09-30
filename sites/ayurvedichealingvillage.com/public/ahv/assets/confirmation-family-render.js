@@ -3,16 +3,17 @@
   const A = 'https://ayurvedichealingvillage.com';
   const DEFAULT_ROUTE = '/thanks/';
   function resolveRoute(propRoute) {
+    // The route prop comes from the released manifest; a public query cannot change a confirmation family.
     let q = null; try { q = new URLSearchParams(location.search).get('route'); } catch (e) {}
-    const want = q || propRoute || DEFAULT_ROUTE; const D = window.AHV_CONFIRM || { routes: [] };
-    return D.routes.find(r => r.path === want || r.slug === want) || D.routes.find(r => r.path === DEFAULT_ROUTE) || null;
+    const want = propRoute || q || DEFAULT_ROUTE; const D = window.AHV_CONFIRM || { routes: [] };
+    const route = D.routes.find(r => r.path === want || r.slug === want) || D.routes.find(r => r.path === DEFAULT_ROUTE) || null;
+    const receipt = window.AHV_LEAD_RECEIPT && window.AHV_LEAD_RECEIPT.consume(location.pathname);
+    return receipt ? window.AHV_LEAD_RECEIPT.personalize(route, receipt, D.images) : route;
   }
-  // Review-only state. A URL/query is NEVER treated as a submission receipt; only the private Tweaks prop
-  // (and the QA harness's explicit ?receipt=prototype flag, which is the same review-only mechanism) shows the synthetic mockup.
-  function resolveReceipt(propReceipt) {
-    let q = null; try { q = new URLSearchParams(location.search).get('receipt'); } catch (e) {}
-    if (q === 'prototype') return true;
-    return propReceipt === true || propReceipt === 'prototype';
+  // Only the one-use marker set after /api/lead/ acknowledges storage can show receipt state.
+  // Query strings, direct visits and refreshes never establish a submission.
+  function resolveReceipt() {
+    return !!(window.AHV_LEAD_RECEIPT && window.AHV_LEAD_RECEIPT.current());
   }
   function decode(s) { return String(s || '').replace(/&#8217;/g, '’').replace(/&hellip;/g, '…').replace(/&amp;/g, '&'); }
   function applyHead(R) {

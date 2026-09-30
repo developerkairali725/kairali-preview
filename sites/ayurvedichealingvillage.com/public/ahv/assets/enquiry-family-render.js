@@ -5,7 +5,11 @@
   function resolveRoute(propRoute) {
     let q = null; try { q = new URLSearchParams(location.search).get('route'); } catch (e) {}
     const want = q || propRoute || DEFAULT_ROUTE; const D = window.AHV_ENQUIRY || { routes: [] };
-    return D.routes.find(r => r.path === want || r.slug === want) || D.routes.find(r => r.path === DEFAULT_ROUTE) || null;
+    const route = D.routes.find(r => r.path === want || r.slug === want) || D.routes.find(r => r.path === DEFAULT_ROUTE) || null;
+    if (route && route.path === '/contact-us/' && window.AHV_LEAD_RECEIPT) {
+      return Object.assign({}, route, { form: Object.assign({}, route.form, { sub: window.AHV_LEAD_RECEIPT.contactIntro() }) });
+    }
+    return route;
   }
   // Inline tree → React. Internal links become governed absolute URLs and are default-prevented; tel:/mailto:/external kept but prevented too (prototype: no external actions).
   function inline(tree, key, guard) {

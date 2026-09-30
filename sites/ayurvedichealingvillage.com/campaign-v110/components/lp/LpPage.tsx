@@ -76,7 +76,7 @@ export default function LpPage({ content: c }: { content: LpContent }) {
           heading: c.enquiry.form.heading,
           intro: c.enquiry.form.intro,
           whatsappText: c.whatsappText,
-          lang: c.lang && c.lang !== "en" ? "en" : undefined,
+          lang: c.lang,
           headingLang: c.lang && c.lang !== "en" ? c.lang : undefined,
         }}
         aside={{
