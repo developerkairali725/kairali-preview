@@ -11,6 +11,7 @@
 // house style: plain ESM + node --test.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { checkHashBinding, sha256Hex } from "../authenticated-approval.mjs";
 
 import {
   MODE_B_GATE, REQUIRED_GATES, VALID_STATUS,
@@ -63,6 +64,23 @@ test("parseApprovals reads a well-formed ledger", () => {
   assert.equal(p.mode, "A");
   assert.deepEqual(p.rows.map((r) => r.gate), REQUIRED_GATES);
   assert.equal(p.rows[0].owner, "Abilash");
+});
+
+test("hash-bound approvals pass both parsers while changed or missing hashes still block", () => {
+  const hash = sha256Hex("reviewed artifact bytes");
+  const text = ledger("A", REQUIRED_GATES).replaceAll("artifact: docs/x.md", `artifact: docs/x.md\n    artifact_sha256: ${hash}`);
+  const binding = (headText, actual = hash) => checkHashBinding({
+    ledgers: [{ path: "launches/x.com/approvals.yaml", baseText: null, headText }],
+    hashOf: (path) => path === "docs/x.md" ? actual : null,
+  });
+  assert.deepEqual(parseApprovals(text).errors, []);
+  assert.deepEqual(checkFrontGate({ changed: PAGE, ledgers: { "x.com": text } }).blockers, []);
+  assert.deepEqual(binding(text), []);
+  assert.equal(binding(text, sha256Hex("changed artifact bytes")).length, REQUIRED_GATES.length);
+  assert.equal(binding(ledger("A", REQUIRED_GATES)).length, REQUIRED_GATES.length);
+  const pending = text.replaceAll("status: approved", "status: pending");
+  assert.equal(checkFrontGate({ changed: PAGE, ledgers: { "x.com": pending } }).blockers.length, REQUIRED_GATES.length);
+  assert.ok(parseApprovals(text.replaceAll("artifact_sha256:", "artifact_sha257:")).errors.length > 0);
 });
 
 test("parseApprovals rejects what it cannot read — never silently passes", () => {

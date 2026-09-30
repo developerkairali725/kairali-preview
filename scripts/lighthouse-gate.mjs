@@ -38,6 +38,7 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn, execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
+import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -185,6 +186,7 @@ async function main(argv) {
     console.error(`lighthouse-gate: ${site} has no site.config.json — not a fleet site`);
     return 1;
   }
+  const appDir = resolveSiteAppRoot(site);
   const { urls, defaulted } = urlsFor(site);
 
   console.log(`\nlighthouse-gate — Ship Gate A5 · ${site} · budgets perf ≥${BUDGETS.performance} / a11y ≥${BUDGETS.accessibility} / SEO =${BUDGETS.seo} (mobile)`);
@@ -192,8 +194,8 @@ async function main(argv) {
     console.log(`  NOTICE: no ${site}/lighthouse-urls.json — gating "/" ONLY. A5 wants home + one content template + one LP; add the file to close the gap (QUESTIONS.md item, 17 Jul). Partial coverage is stated, never silent.`);
   }
 
-  const server = spawn("pnpm", ["--dir", site, "exec", "next", "start", "-p", String(port)], {
-    cwd: REPO_ROOT,
+  const server = spawn("pnpm", ["exec", "next", "start", "-p", String(port)], {
+    cwd: appDir,
     stdio: ["ignore", "pipe", "pipe"],
   });
   let serverLog = "";

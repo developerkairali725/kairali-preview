@@ -10,7 +10,15 @@
         "!.next/cache/**",
         "dist/**"
       ],
-      "env": ["AHV_STAGING"],
+      "env": [
+        "AHV_STAGING",
+        "SITE_ENV",
+        "NEXT_PUBLIC_ASSET_ORIGIN",
+        "NEXT_PUBLIC_GA4_ID",
+        "NEXT_PUBLIC_GTM_ID",
+        "NEXT_PUBLIC_CLARITY_ID",
+        "GOOGLE_SITE_VERIFICATION"
+      ],
       "passThroughEnv": [
         "GH_TOKEN"
       ]

@@ -23,6 +23,7 @@
 import { test, expect, Page } from "@playwright/test";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { resolveSiteAppRoot } from "../../scripts/lib/site-app-root.mjs";
 // Locked-count law (17 Jul 2026 ruling, PROJECT_CONTEXT §12): stale network
 // counts must never RENDER; sites that source the canonical line from
 // @kairali/facts must actually emit it. One pattern list, shared with the lints.
@@ -33,6 +34,7 @@ import { CENTRES_NETWORK_LINE, COUNTRIES_PHRASE } from "../../packages/facts/src
 import { SOCIAL_PROFILES } from "../../packages/social/src/config";
 
 const SITE_DIR = process.env.SITE ?? "sites/arogyakendra.com";
+const APP_DIR = resolveSiteAppRoot(SITE_DIR);
 const config = JSON.parse(readFileSync(join(SITE_DIR, "site.config.json"), "utf8")) as {
   domain: string;
   entity: string;
@@ -94,7 +96,7 @@ test.describe(`factory spec — ${config.domain} [${config.entity}]`, () => {
     }
     // llms.txt is the machine-readable surface AI answers quote — same law,
     // plus: a route that sources CENTRES_NETWORK_LINE must actually emit it.
-    const llmsRoute = join(SITE_DIR, "app", "llms.txt", "route.ts");
+    const llmsRoute = join(APP_DIR, "app", "llms.txt", "route.ts");
     if (existsSync(llmsRoute)) {
       const res = await request.get("/llms.txt");
       expect(res.ok(), "llms.txt route exists but does not serve").toBeTruthy();

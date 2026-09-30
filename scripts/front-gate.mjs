@@ -93,7 +93,7 @@ export function newSiteDomain(p) {
  * exactly the shape launch-scaffold.mjs writes and rejects everything else, so
  * a malformed or creatively-reformatted ledger blocks rather than waves through.
  * @param {string} text
- * @returns {{domain:string|null, mode:string|null, rows:Array<{gate:string,status:string,owner:string,date:string,artifact:string}>, errors:string[]}}
+ * @returns {{domain:string|null, mode:string|null, rows:Array<{gate:string,status:string,owner:string,date:string,artifact:string,artifact_sha256?:string}>, errors:string[]}}
  */
 export function parseApprovals(text) {
   const errors = [];
@@ -118,10 +118,12 @@ export function parseApprovals(text) {
     if ((m = line.match(/^\s*-\s*gate:\s*(\S+)\s*$/))) {
       if (!inApprovals) { errors.push(`gate row outside the "approvals:" block: ${JSON.stringify(line)}`); continue; }
       push();
-      cur = { gate: m[1], status: "", owner: "", date: "", artifact: "" };
+      cur = { gate: m[1], status: "", owner: "", date: "", artifact: "", artifact_sha256: "" };
       continue;
     }
-    if ((m = line.match(/^\s+(status|owner|date|artifact|commit):\s*(.*)$/))) {
+    // The authenticated-approval step checks hash presence and committed bytes.
+    // Accept its schema here so a correctly hash-bound ledger can reach it.
+    if ((m = line.match(/^\s+(status|owner|date|artifact|artifact_sha256|commit):\s*(.*)$/))) {
       if (!cur) { errors.push(`"${m[1]}" appears before any "- gate:" row`); continue; }
       const key = m[1] === "commit" ? "artifact" : m[1];
       cur[key] = m[2].trim();
@@ -144,7 +146,7 @@ export function parseApprovals(text) {
 
 /**
  * Which required rows are not signed? Pure — the heart of the gate.
- * @param {{domain:string, mode:string|null, rows:Array<{gate:string,status:string,owner:string,date:string,artifact:string}>}} ledger
+ * @param {{domain:string, mode:string|null, rows:Array<{gate:string,status:string,owner:string,date:string,artifact:string,artifact_sha256?:string}>}} ledger
  * @returns {string[]} human-readable blockers (empty = every required row signed)
  */
 export function unsignedGates({ domain, mode, rows }) {
