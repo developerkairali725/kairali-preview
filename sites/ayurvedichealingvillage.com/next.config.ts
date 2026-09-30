@@ -116,9 +116,15 @@ const nextConfig: NextConfig = {
       headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
     };
     const documents = { source: "/documents/:path*.pdf", headers: [{ key: "Content-Type", value: "application/pdf" }, { key: "Cache-Control", value: "public, max-age=86400" }] };
-    if (!IS_STAGING) return [assets, documents];
+    // These are desktop-only view fragments fetched by indexable pages. They
+    // must never become separate search results or compete with the canonicals.
+    const staticFragments = {
+      source: "/ahv/static/:path*.html",
+      headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
+    };
+    if (!IS_STAGING) return [assets, documents, staticFragments];
     return [
-      assets, documents,
+      assets, documents, staticFragments,
       {
         source: "/:path*",
         headers: [

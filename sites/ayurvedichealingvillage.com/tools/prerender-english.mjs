@@ -36,6 +36,7 @@
  * Usage:
  *   node tools/prerender-english.mjs --base http://127.0.0.1:4321 \
  *        --out english-candidate/prerender [--only /about-us/] [--limit 5]
+ *   Add --width 1280 --height 900 when capturing the desktop variant.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -78,6 +79,8 @@ const CONCURRENCY = Math.max(1, Number(arg("concurrency", "1")) || 1);
 const OUT = arg("out", LOCALE ? `l10n/prerender-tmp/${LOCALE}` : "english-candidate/prerender");
 const ONLY = arg("only", null);
 const LIMIT = Number(arg("limit", "0")) || 0;
+const WIDTH = Number(arg("width", "390")) || 390;
+const HEIGHT = Number(arg("height", "900")) || 900;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
@@ -214,10 +217,10 @@ const run = async () => {
   const worker = async () => { for (let item = queue.shift(); item; item = queue.shift()) await one(...item); };
   const one = async (i, route) => {
     const ctx = await browser.newContext({
-      viewport: { width: 390, height: 900 },
-      hasTouch: true,
-      isMobile: true,
-      deviceScaleFactor: 2,
+      viewport: { width: WIDTH, height: HEIGHT },
+      hasTouch: WIDTH < 700,
+      isMobile: WIDTH < 700,
+      deviceScaleFactor: WIDTH < 700 ? 2 : 1,
     });
     const page = await ctx.newPage();
     let rec = { path: route.path, ok: false };
@@ -241,7 +244,9 @@ const run = async () => {
       // payload the page rendered (English or the locale copy), so the visible
       // FAQ and its schema come from one template.
       let html = got.html;
-      const viewId = route.mobileView || route.desktopView;
+      const viewId = WIDTH >= 700
+        ? route.desktopView || route.mobileView
+        : route.mobileView || route.desktopView;
       const viewPath = LOCALE
         ? path.join(SITE, "public", "ahv", "l10n", JSON.parse(fs.readFileSync(path.join(SITE, "l10n/locales.json"), "utf8"))[LOCALE].prefix, "views", viewId + ".json")
         : path.join(SITE, "public", "ahv", "views", viewId + ".json");
@@ -250,7 +255,8 @@ const run = async () => {
         const faq = [...tpl.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]).find((j) => /"@type":\s*"FAQPage"/.test(j));
         if (faq) html += `<script type="application/ld+json">${faq}</script>`;
       }
-      fs.writeFileSync(path.join(outDir, file), html);
+      // Browser serialization may leave indentation on otherwise blank lines.
+      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, ""));
       rec = {
         path: route.path,
         ok: true,

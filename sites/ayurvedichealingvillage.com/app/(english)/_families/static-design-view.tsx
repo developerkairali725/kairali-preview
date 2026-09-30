@@ -1,0 +1,269 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from "./critical-media.mjs";
+import { formPostSafety } from "./form-post-safety.mjs";
+import { newsletterFooters } from "./newsletter-markup.mjs";
+import { computedFooterYear } from "./computed-footer-year";
+import { youtubeNewTabs } from "./youtube-links";
+import { snapshotStylesFor } from "./snapshot-styles.mjs";
+import { routeSchema } from "./schema";
+import { buildBootConfig } from "./design-view";
+import { CONSENT_RUNTIME } from "./consent-runtime";
+import { createBackgroundDeferral } from "./media-loading.mjs";
+import type { CandidateRoute } from "./registry";
+import consistencyLock from "../../../english-candidate/consistency-locked-families.json";
+
+// The compiled approved views are captured at both view widths during the
+// build. The mobile document remains the crawlable, no-JS HTML. Wide screens
+// fetch their static HTML fragment instead of making phones download a second
+// full document. Neither variant loads the design runtime or a second React root.
+function snapshot(routePath: string, desktop = false): string {
+  const name = routePath === "/" ? "index" : routePath.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9._-]+/gi, "_");
+  const source = readFileSync(desktop
+    ? join(process.cwd(), "public/ahv/static", `${name}.html`)
+    : join(process.cwd(), "english-candidate/prerender", `${name}.html`), "utf8");
+  const safe = formPostSafety(newsletterFooters(computedFooterYear(youtubeNewTabs(source))));
+  return descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe));
+}
+
+function tariffRows(viewId: string | null): Record<string, string[][]> | undefined {
+  if (!viewId) return undefined;
+  const payload = JSON.parse(readFileSync(join(process.cwd(), "public/ahv/views", `${viewId}.json`), "utf8"));
+  const match = String(payload.logic || "").match(/const tableData = (\{[^\n]+?\});/);
+  if (!match) throw new Error(`AHV static tariff data missing from ${viewId}`);
+  const rows = JSON.parse(match[1]) as Record<string, string[][]>;
+  if (!["INR", "USD", "EURO"].every((key) => rows[key]?.length === 4)) throw new Error(`AHV static tariff data invalid in ${viewId}`);
+  return rows;
+}
+
+const STATIC_BOOT = `
+(async function () {
+  if (window.__ahvStaticDesignBooted) return;
+  window.__ahvStaticDesignBooted = true;
+  var host = document.getElementById("ahv-design-root");
+  if (!host) return;
+  var cfg = JSON.parse(document.getElementById("ahv-static-design-config").textContent || "{}");
+  if (window.matchMedia("(min-width:" + cfg.breakpoint + "px)").matches) {
+    try {
+      var response = await fetch(cfg.staticDesktopPath, { credentials: "same-origin" });
+      if (!response.ok) throw new Error("desktop view " + response.status);
+      host.innerHTML = await response.text();
+      host.setAttribute("data-ahv-variant", "desktop");
+    } catch (error) {
+      host.setAttribute("data-ahv-variant", "mobile-fallback");
+    }
+  }
+  host.removeAttribute("data-ahv-static-pending");
+  (${createBackgroundDeferral.toString()})(window, 800)(host);
+  ${CONSENT_RUNTIME}
+  ensureConsentNotice();
+  if (consentChoice() === "accepted") startMeasurement();
+  var menuButton = host.querySelector('button[aria-label="Menu"]');
+  var drawer = host.querySelector('[data-ahv-drawer]');
+  function closeMenu() {
+    if (!menuButton || !drawer) return;
+    menuButton.setAttribute("aria-expanded", "false");
+    drawer.style.display = "none";
+  }
+  if (menuButton && drawer) {
+    menuButton.addEventListener("click", function () {
+      var opening = menuButton.getAttribute("aria-expanded") !== "true";
+      menuButton.setAttribute("aria-expanded", String(opening));
+      drawer.style.display = opening ? "flex" : "none";
+      if (opening) drawer.querySelector('button[aria-label="Close menu"]').focus();
+    });
+    drawer.querySelector('button[aria-label="Close menu"]').addEventListener("click", function () {
+      closeMenu(); menuButton.focus();
+    });
+    drawer.addEventListener("click", function (event) {
+      if (event.target.closest("a[href]")) closeMenu();
+    });
+  }
+  function closeLanguages() {
+    host.querySelectorAll(".ahv-lang-btn[aria-expanded=true]").forEach(function (button) {
+      button.setAttribute("aria-expanded", "false");
+      var list = document.getElementById(button.getAttribute("aria-controls"));
+      if (list) list.hidden = true;
+    });
+  }
+  document.addEventListener("click", function (event) {
+    var button = event.target && event.target.closest && event.target.closest(".ahv-lang-btn");
+    if (!button || !host.contains(button)) {
+      if (!event.target.closest || !event.target.closest(".ahv-lang-list")) closeLanguages();
+      return;
+    }
+    var list = document.getElementById(button.getAttribute("aria-controls"));
+    if (!list) return;
+    var open = button.getAttribute("aria-expanded") !== "true";
+    closeLanguages();
+    button.setAttribute("aria-expanded", String(open));
+    list.hidden = !open;
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeLanguages();
+  });
+  if (cfg.staticTariffs) {
+    var tariffSection = host.querySelector("#package");
+    var group = tariffSection && tariffSection.querySelector('[role="group"][aria-label="Currency"]');
+    var buttons = group ? Array.from(group.querySelectorAll("button")) : [];
+    var currentCurrency = "INR";
+    function chooseCurrency(nextCurrency) {
+      if (!tariffSection || !cfg.staticTariffs[nextCurrency] || nextCurrency === currentCurrency) return;
+      var previous = cfg.staticTariffs[currentCurrency];
+      var next = cfg.staticTariffs[nextCurrency];
+      var prices = {};
+      for (var row = 0; row < previous.length; row++) {
+        prices[previous[row][1]] = next[row][1];
+        prices[previous[row][2]] = next[row][2];
+      }
+      var walker = document.createTreeWalker(tariffSection, NodeFilter.SHOW_TEXT);
+      var node;
+      while ((node = walker.nextNode())) {
+        var value = (node.nodeValue || "").trim();
+        if (prices[value]) node.nodeValue = node.nodeValue.replace(value, prices[value]);
+      }
+      currentCurrency = nextCurrency;
+      buttons.forEach(function (button, index) {
+        var active = ["INR", "USD", "EURO"][index] === nextCurrency;
+        button.setAttribute("aria-pressed", String(active));
+        button.style.background = active ? "#5A4420" : "#fff";
+        button.style.color = active ? "#F7F4EA" : "#2A2118";
+        button.style.borderColor = active ? "#5A4420" : "#C9BFA8";
+      });
+    }
+    buttons.forEach(function (button, index) {
+      button.addEventListener("click", function () { chooseCurrency(["INR", "USD", "EURO"][index]); });
+    });
+  }
+  var form = host.querySelector('form[data-form="contact"]');
+  if (!form) return;
+  var status = form.querySelector('[role="status"]');
+  var token = null;
+  var busy = false;
+  form.addEventListener("input", function () { if (!busy) token = null; });
+  form.addEventListener("change", function () { if (!busy) token = null; });
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    if (busy) return;
+    var data = new FormData(form);
+    var name = String(data.get("fname") || "").trim();
+    var countryCode = String(data.get("country_code") || "").trim();
+    var phone = String(data.get("phone") || "").trim();
+    var email = String(data.get("email") || "").trim();
+    var invalid = {
+      fname: name.length < 2,
+      country_code: !countryCode,
+      phone: phone.replace(/\\D/g, "").length < 7,
+      email: !/^\\S+@\\S+\\.\\S+$/.test(email)
+    };
+    var first = null;
+    Object.keys(invalid).forEach(function (field) {
+      var input = form.elements.namedItem(field);
+      if (!input) return;
+      if (invalid[field]) {
+        input.setAttribute("aria-invalid", "true");
+        if (!first) first = input;
+      } else input.removeAttribute("aria-invalid");
+    });
+    if (first) { first.focus(); return; }
+    if (!token) token = crypto.randomUUID();
+    busy = true;
+    form.setAttribute("aria-busy", "true");
+    if (status) status.textContent = "Sending…";
+    var controller = new AbortController();
+    var timeout = setTimeout(function () { controller.abort(); }, 10000);
+    try {
+      var programme = String(data.get("programme") || "");
+      var select = form.elements.namedItem("programme");
+      if (select && window.AHV_LEAD_RECEIPT) {
+        programme = window.AHV_LEAD_RECEIPT.canonicalOption("programme", select.selectedIndex, programme);
+      }
+      var response = await fetch("/api/lead/", {
+        method: "POST", credentials: "same-origin", cache: "no-store",
+        body: new Blob([JSON.stringify({
+          form: "contact", submissionToken: token,
+          utm_source: new URLSearchParams(location.search).get("utm_source") || "",
+          utm_medium: new URLSearchParams(location.search).get("utm_medium") || "",
+          utm_campaign: new URLSearchParams(location.search).get("utm_campaign") || "",
+          utm_term: new URLSearchParams(location.search).get("utm_term") || "",
+          utm_content: new URLSearchParams(location.search).get("utm_content") || "",
+          gclid: new URLSearchParams(location.search).get("gclid") || "",
+          fbclid: new URLSearchParams(location.search).get("fbclid") || "",
+          lead_source_url: location.href.slice(0, 500),
+          referrer: (document.referrer || "").slice(0, 500),
+          fields: { full_name: name, countrycode: countryCode, phone: phone,
+            programme: programme, email: email, message: String(data.get("message") || "") }
+        })], { type: "application/json" }),
+        signal: controller.signal
+      });
+      var result = await response.json().catch(function () { return {}; });
+      if (response.status === 503 && /_NOT_CONFIGURED$/.test(String(result.code || ""))) {
+        if (status) status.textContent = "The form is not connected yet. Your details are still here; please contact us by phone or email.";
+        return;
+      }
+      if (!response.ok || result.ok !== true) {
+        if (status) status.textContent = response.status === 429
+          ? "Please wait before trying again. Your details are still in the form."
+          : "We could not confirm your submission. Your details are still here; please try again.";
+        return;
+      }
+      if (typeof result.guideUrl === "string" && result.guideUrl.charAt(0) === "/") {
+        var guide = document.createElement("a");
+        guide.href = result.guideUrl; guide.download = ""; guide.hidden = true;
+        document.body.appendChild(guide); guide.click(); guide.remove();
+      }
+      if (status) status.textContent = "Thank you — your details have been received.";
+    } catch (error) {
+      if (status) status.textContent = "We could not confirm your submission. Check your connection and try again.";
+    } finally {
+      clearTimeout(timeout);
+      busy = false;
+      form.removeAttribute("aria-busy");
+    }
+  });
+})();`;
+
+function safeJson(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
+export function StaticDesignView({ route }: { route: CandidateRoute }) {
+  const mobile = snapshot(route.path);
+  const desktop = snapshot(route.path, true);
+  const cfg = buildBootConfig(route);
+  const family = (route.desktopView ?? route.mobileView ?? "").replace(/^ahv-page-/, "").replace(/-(desktop|mobile)$/, "").replace(/--[a-z0-9-]+$/, "");
+  const consistency = Object.hasOwn(consistencyLock.families, family.replace(/^ahv-template-/, "")) ? undefined : "1";
+  const staticDesktopPath = `/ahv/static/${route.path === "/" ? "index" : route.path.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9._-]+/gi, "_")}.html`;
+  const staticConfig = {
+    breakpoint: cfg.breakpoint,
+    locale: cfg.locale,
+    measurement: cfg.measurement,
+    staticDesktopPath,
+    staticTariffs: route.path === "/panchakarma-therapy/" ? tariffRows(route.mobileView) : undefined,
+  };
+  const narrow = `(max-width: ${cfg.breakpoint - 1}px)`;
+  const wide = `(min-width: ${cfg.breakpoint}px)`;
+  const phonePaint = snapshotStylesFor(cfg);
+  const widePaint = snapshotStylesFor({ ...cfg, mobileView: cfg.desktopView });
+  const fontCss = [...(phonePaint?.fontCss || []), ...(widePaint?.fontCss || [])].filter((value, index, all) =>
+    all.findIndex((item) => item.href === value.href) === index,
+  );
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(routeSchema(route, "en")) }} />
+      {firstCriticalImage(mobile) ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={firstCriticalImage(mobile)!} /> : null}
+      {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
+      <link rel="preload" as="fetch" crossOrigin="anonymous" media={wide} href={staticDesktopPath} />
+      {fontCss.map(({ href, css }) => css
+        ? <style key={href} dangerouslySetInnerHTML={{ __html: css }} />
+        : <link key={href} rel="stylesheet" href={href} />)}
+      {phonePaint?.styles.map((css, index) => <style key={`phone-${index}`} media={narrow} dangerouslySetInnerHTML={{ __html: css }} />)}
+      {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
+      <style dangerouslySetInnerHTML={{ __html: `@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
+      <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
+        suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
+      <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
+      <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />
+    </>
+  );
+}
