@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Script from "next/script";
 import { ChatbaseLoader } from "@kairali/chat";
 import { ConsentScripts } from "@kairali/consent";
 import analyticsConfig from "../../../analytics.config.json";
@@ -49,6 +50,8 @@ export function SiteDocument({
             calls gtag("config") and never gtag("consent") — and an accepting
             visitor would have been measured in denied mode forever. */}
         <ConsentScripts />
+        {/* Keep one-use thank-you navigation tied to a confirmed lead receipt. */}
+        <Script src="/design/lead-receipt.js" strategy="beforeInteractive" />
         {/* ALWAYS emitted, deliberately NOT behind the analytics flag.
             Ownership proof is not tracking: these set no cookie, identify no
             visitor and are not a consent matter. They were previously gated on
