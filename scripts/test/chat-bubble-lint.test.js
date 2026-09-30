@@ -8,12 +8,13 @@
 // house style: plain ESM + node --test.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import {
   PKG, PROBE_BAD_ORDER, PROBE_GOOD, PROBE_MISSING, REPO_ROOT,
-  documentLayoutSource, checkLayoutSource, fleetSites, main, rootLayouts, runControlProbes,
+  documentLayoutSource, checkLayoutSource, checkSite, fleetSites, main, rootLayouts, runControlProbes,
 } from "../chat-bubble-lint.mjs";
 import { EXEMPT } from "../factory-matrix-lint.mjs";
 
@@ -127,4 +128,44 @@ test("all AHV delegated roots contain the real consent and chat implementation",
   for (const file of rootLayouts(join(REPO_ROOT, "sites/ayurvedichealingvillage.com"))) {
     assert.deepEqual(checkLayoutSource(documentLayoutSource(file), file), []);
   }
+});
+
+
+function nestedAppFixture(t) {
+  const root = mkdtempSync(join(tmpdir(), "chat-app-root-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const site = join(root, "sites/nested");
+  const app = join(site, "site");
+  mkdirSync(join(app, "app"), { recursive: true });
+  writeFileSync(join(site, "site.config.json"), JSON.stringify({ appRoot: "site" }));
+  writeFileSync(join(app, "package.json"), JSON.stringify({ dependencies: { "@kairali/chat": "workspace:*" } }));
+  writeFileSync(join(app, "next.config.ts"), 'export default { transpilePackages: ["@kairali/chat"] };');
+  writeFileSync(join(app, "app/layout.tsx"), PROBE_GOOD);
+  return { root, site, app };
+}
+
+test("configured appRoot checks the real nested layout and rejects a missing chat loader", (t) => {
+  const { root, site, app } = nestedAppFixture(t);
+  // A misleading outer layout must never satisfy the nested application's gate.
+  mkdirSync(join(site, "app"));
+  writeFileSync(join(site, "app/layout.tsx"), PROBE_GOOD);
+  assert.deepEqual(checkSite("sites/nested", { root }), []);
+  writeFileSync(join(app, "app/layout.tsx"), PROBE_MISSING);
+  assert.ok(checkSite("sites/nested", { root }).some(v => v.includes("layout never renders <ChatbaseLoader/>")));
+});
+
+test("configured appRoot checks nested package declaration and transpilation", (t) => {
+  const { root, app } = nestedAppFixture(t);
+  assert.deepEqual(checkSite("sites/nested", { root }), []);
+  writeFileSync(join(app, "package.json"), "{}");
+  writeFileSync(join(app, "next.config.ts"), "export default {};");
+  const findings = checkSite("sites/nested", { root });
+  assert.ok(findings.some(v => v.includes("package.json does not declare")));
+  assert.ok(findings.some(v => v.includes("next.config.ts does not transpile")));
+});
+
+test("escaping appRoot fails closed before layout inspection", (t) => {
+  const { root, site } = nestedAppFixture(t);
+  writeFileSync(join(site, "site.config.json"), JSON.stringify({ appRoot: "../other" }));
+  assert.throws(() => checkSite("sites/nested", { root }), /relative child directory/);
 });

@@ -53,6 +53,7 @@ import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
 import { stripCodeComments } from "./banned-string-lint.mjs";
+import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PKG = "@kairali/chat";
@@ -170,6 +171,35 @@ export function runControlProbes() {
   return fails;
 }
 
+/** Check the configured application while retaining the fleet site's identity. */
+export function checkSite(key, { root = REPO_ROOT } = {}) {
+  const appDir = resolveSiteAppRoot(key, { root });
+  const violations = [];
+  const roots = rootLayouts(appDir);
+  if (roots.length === 0) {
+    violations.push(`${key}: no root layout (app/layout.tsx, nor any app/(group)/layout.tsx) and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
+    return violations;
+  }
+  // EVERY root is checked, not just the first. Next.js route-group roots are
+  // independent documents: a visitor on a route served by one of them never
+  // sees the other, so a bubble in only one root is a bubble missing from
+  // every route the other root serves.
+  for (const r of roots) {
+    const label = roots.length === 1 ? key : `${key} [${relative(appDir, r)}]`;
+    violations.push(...checkLayoutSource(documentLayoutSource(r), label));
+  }
+
+  const pkgPath = join(appDir, "package.json");
+  if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
+    violations.push(`${key}: package.json does not declare "${PKG}"`);
+  }
+  const nextCfg = join(appDir, "next.config.ts");
+  if (existsSync(nextCfg) && !readFileSync(nextCfg, "utf8").includes(`"${PKG}"`)) {
+    violations.push(`${key}: next.config.ts does not transpile "${PKG}" (it ships TSX source, like consent/analytics)`);
+  }
+  return violations;
+}
+
 export function main(argv = []) {
   const sitesFlag = argv.indexOf("--sites");
   const sitesDir = sitesFlag !== -1 ? resolve(argv[sitesFlag + 1]) : join(REPO_ROOT, "sites");
@@ -203,28 +233,7 @@ export function main(argv = []) {
       console.log(`  EXEMPT ${key} — ${CHAT_EXEMPT.get(key)}`);
       continue;
     }
-    const roots = rootLayouts(join(sitesDir, name));
-    if (roots.length === 0) {
-      violations.push(`${key}: no root layout (app/layout.tsx, nor any app/(group)/layout.tsx) and not in the EXEMPT ledger — a page-bearing site without a root layout (or an exemption) cannot carry the mandatory chat bubble`);
-      continue;
-    }
-    // EVERY root is checked, not just the first. Next.js route-group roots are
-    // independent documents: a visitor on a route served by one of them never
-    // sees the other, so a bubble in only one root is a bubble missing from
-    // every route the other root serves.
-    for (const r of roots) {
-      const label = roots.length === 1 ? key : `${key} [${relative(join(sitesDir, name), r)}]`;
-      violations.push(...checkLayoutSource(documentLayoutSource(r), label));
-    }
-
-    const pkgPath = join(sitesDir, name, "package.json");
-    if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
-      violations.push(`${key}: package.json does not declare "${PKG}"`);
-    }
-    const nextCfg = join(sitesDir, name, "next.config.ts");
-    if (existsSync(nextCfg) && !readFileSync(nextCfg, "utf8").includes(`"${PKG}"`)) {
-      violations.push(`${key}: next.config.ts does not transpile "${PKG}" (it ships TSX source, like consent/analytics)`);
-    }
+    violations.push(...checkSite(key, { root: dirname(sitesDir) }));
   }
 
   if (violations.length === 0) {
