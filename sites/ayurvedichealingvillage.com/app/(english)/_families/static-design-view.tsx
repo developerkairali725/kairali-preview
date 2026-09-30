@@ -207,12 +207,17 @@ const STATIC_BOOT = `
         return div.querySelectorAll("a[href]").length >= 2 && div.children.length > 0 && Array.from(div.children).every(function (child) { return child.tagName === "A"; });
       });
       if (programmeGroups.length > 5) programmeGroups = programmeGroups.slice(-5);
+      var programmeCategoryGroups = Array.from(programmeSection.querySelectorAll('div[data-dc-tpl="202"]')).filter(function (group) {
+        return group.querySelectorAll('div[data-dc-tpl="204"]').length > 0;
+      });
       var programmeCards = Array.from(programmeSection.querySelectorAll('div[data-dc-tpl="204"]'));
       var programmeCounts = cfg.staticHome.programmeCounts || [];
       programmeButtons.forEach(function (button, index) {
         button.addEventListener("click", function () {
           if (programmeGroups.length === 5) {
             programmeGroups.forEach(function (group, groupIndex) { group.style.display = groupIndex === index ? "flex" : "none"; });
+          } else if (programmeCategoryGroups.length === 5) {
+            programmeCategoryGroups.forEach(function (group, groupIndex) { group.style.display = groupIndex === index ? "grid" : "none"; });
           } else {
             var start = programmeCounts.slice(0, index).reduce(function (sum, count) { return sum + count; }, 0);
             var end = start + (programmeCounts[index] || 0);
