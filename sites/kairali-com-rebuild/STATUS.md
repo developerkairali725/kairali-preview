@@ -17,3 +17,7 @@ Local preview: http://127.0.0.1:8774. Current public alias remains the previous 
 Acceptance matrix, actual document entry URLs and remaining owner/access/release dependencies: [MID-15049-PREVIEW-FIXES.md](docs/MID-15049-PREVIEW-FIXES.md).
 
 3 October EOD IST handback: reviewed candidate URL, final commit, checks and blocker owner/date. Real iPhone Safari, final visual approval, hosted verifier/OG/Rich Results/Lighthouse, legal/privacy/HR/analytics access remain open. No live-domain or DNS cutover approval.
+
+## CI follow-up
+
+2026-09-30 15:58:16 IST — Windows archive repair and footer notice contrast fix verified. Linux root build/package tests pass at 74ff099b; compliance, brand and AHV Lighthouse remain red. Automatic candidate Ready but protected; connected account gets 403 for Kairali team. Final local mobile lab scores: {'performance': 53, 'accessibility': 100, 'best-practices': 100, 'seo': 69}. Full evidence and dependencies: [MID-15049-CI-FOLLOWUP.md](docs/MID-15049-CI-FOLLOWUP.md).

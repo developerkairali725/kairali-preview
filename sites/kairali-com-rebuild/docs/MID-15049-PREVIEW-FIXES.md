@@ -63,3 +63,7 @@ Evidence files are in `evidence/`: JSON browser/fix/audit/hub reports, verify su
 | Hosted candidate verification | Deepu + repository/Vercel maintainer | Required PR gates, candidate URL, full deployed verifier, OG fetch, Google Rich Results and throttled mobile Lighthouse; pending normal release path |
 
 No production analytics firing, live-domain/DNS change, form delivery or credentials by email. Deadline is 3 October 2026 EOD IST. The 5 October document review remains separate. No reply email was sent by this task.
+
+## Later CI follow-up
+
+See [MID-15049-CI-FOLLOWUP.md](MID-15049-CI-FOLLOWUP.md) for the later Windows archive repair, notice contrast fix, actual Linux root build PASS, protected candidate and mobile lab results. Earlier local gate findings above are retained as dated evidence.

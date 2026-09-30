@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-09-30 15:32:41 IST",
-  "generated_utc": "2026-09-30T10:02:41Z",
+  "generated": "2026-09-30 15:58:26 IST",
+  "generated_utc": "2026-09-30T10:28:26Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -44,7 +44,7 @@
       "stage": "preview",
       "phase": 5,
       "owner": "Abilash",
-      "blocker": "MID-15049: 30 Sep owner preview rulings implemented and local/fresh-clone build verified (c3b7679d). Six forms hard-locked inactive; 72 legacy PDFs unchanged. Root build fails in AHV archive restore; compliance/brand integration gates remain red under owner separation 434bf952. Hosted exact-candidate QA, final visual acceptance and real iPhone Safari evidence pending for 3 Oct EOD IST. Report: sites/kairali-com-rebuild/docs/MID-15049-PREVIEW-FIXES.md. Existing preview URL is historical, not this candidate.",
+      "blocker": "MID-15049: fixes verified; Windows asset restore and preview-notice contrast repaired. Linux CI root build/package tests pass at 74ff099b, compliance/brand/AHV Lighthouse remain red. Automatic candidate Ready but protected; Kairali Vercel team access required. Local mobile performance remains below target. Real iPhone/final visual evidence pending by 3 Oct EOD IST. Follow-up: sites/kairali-com-rebuild/docs/MID-15049-CI-FOLLOWUP.md. Existing preview_url remains historical.",
       "updated": "2026-09-30",
       "preview_url": "https://kairali-web-factory-kairali-com.vercel.app",
       "live_url": null,
@@ -64,9 +64,7 @@
         "audits": 2,
         "checklists": false
       },
-      "waiting_on": [
-        "owner"
-      ]
+      "waiting_on": []
     },
     {
       "name": "ayurvedichealingvillage.com (KTAHV)",

@@ -1,0 +1,37 @@
+{
+  "timestamp_ist": "2026-09-30 15:58:16 IST",
+  "tested_url": "http://127.0.0.1:8774/",
+  "mobile_lab_scores": {
+    "performance": 53,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 69
+  },
+  "metrics": {
+    "largest-contentful-paint": "4.5\u00a0s",
+    "total-blocking-time": "2,740\u00a0ms",
+    "cumulative-layout-shift": "0"
+  },
+  "color_contrast_score": 1,
+  "site_build": "passed",
+  "focused_acceptance": "15/15 passed",
+  "archive_regression": "5/5 passed",
+  "owned_archive_assets_verified": 2053,
+  "ahv_full_suite": {
+    "passed": 337,
+    "failed": 9,
+    "skipped": 26,
+    "note": "Existing overlay/runtime expectations and missing generated locale fixtures; not claimed green."
+  },
+  "ci_base_head": "74ff099b",
+  "linux_root_build": "passed",
+  "linux_package_tests": "passed",
+  "remaining_ci_failures": [
+    "Compliance lint",
+    "Brand lint",
+    "AHV Lighthouse"
+  ],
+  "hosted_candidate": "https://kairali-web-factory-git-codex-mid15049-preview-fixes-kairali.vercel.app",
+  "hosted_status": "GitHub Vercel Ready; URL redirects to Vercel login; connector gets 403 for Kairali team; contents unverified",
+  "no_gate_weakened": true
+}

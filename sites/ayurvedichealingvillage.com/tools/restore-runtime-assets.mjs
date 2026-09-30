@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { downloadReleaseAsset } from './download-release-asset.mjs';
+import { assertArchiveMembers } from './archive-members.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const spec=JSON.parse(fs.readFileSync(path.join(site,process.argv.includes('--documents') ? 'english-candidate/document-assets-release.json' : process.argv.includes('--gallery') ? 'english-candidate/gallery-assets-release.json' : 'english-candidate/runtime-assets-release.json'),'utf8'));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
@@ -22,9 +23,8 @@ try{
  await downloadReleaseAsset(spec,temp);
  const archive=path.join(temp,spec.asset);
  if(hash(archive)!==spec.sha256)throw Error('Runtime asset archive hash mismatch');
- const names=execFileSync('tar',['-tzf',archive],{encoding:'utf8'}).trim().split('\n');
- const allowed=new Set(spec.files.map(f=>f.file));
- if(names.length!==allowed.size||names.some(n=>!allowed.has(n)))throw Error('Unexpected archive member');
+ const listing=execFileSync('tar',['-tzf',archive],{encoding:'utf8'});
+ assertArchiveMembers(listing,spec.files);
  const unpack=path.join(temp,'unpack');fs.mkdirSync(unpack);
  execFileSync('tar',['-xzf',archive,'-C',unpack]);
  for(let i=0;i<spec.files.length;i+=25){

@@ -518,3 +518,6 @@ input[type="file"]::file-selector-button { border-radius: 0; border: 1.5px solid
 /* Inactive preview fields retain the approved layout; date fallback stays square. */
 .form-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
 input.date-control { -webkit-appearance: none; appearance: none; border-radius: 0; }
+
+/* Preview notices use a light surface, including inside the dark footer. */
+.site-footer .form-status.preview a, .site-footer .form-status.preview a:hover { color: var(--indigo); text-decoration: underline; }

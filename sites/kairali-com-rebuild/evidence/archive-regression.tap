@@ -1,0 +1,44 @@
+TAP version 13
+# Subtest: Unix LF and Windows CRLF tar listings match the same exact allowlist
+ok 1 - Unix LF and Windows CRLF tar listings match the same exact allowlist
+  ---
+  duration_ms: 4.6045
+  type: 'test'
+  ...
+# Subtest: missing, duplicate, extra, traversal and renamed members fail closed
+ok 2 - missing, duplicate, extra, traversal and renamed members fail closed
+  ---
+  duration_ms: 1.0944
+  type: 'test'
+  ...
+# Asset download transport failure; retry 1/2.
+# Asset download transport failure; retry 2/2.
+# Asset download transport failure; retry 1/2.
+# Asset download transport failure; retry 2/2.
+# Subtest: transient GitHub errors retry with bounded backoff and replace only temporary partial downloads
+ok 3 - transient GitHub errors retry with bounded backoff and replace only temporary partial downloads
+  ---
+  duration_ms: 6.9636
+  type: 'test'
+  ...
+# Subtest: permanent access and integrity errors fail immediately
+ok 4 - permanent access and integrity errors fail immediately
+  ---
+  duration_ms: 4.4679
+  type: 'test'
+  ...
+# Subtest: persistent transport failures stop after three attempts
+ok 5 - persistent transport failures stop after three attempts
+  ---
+  duration_ms: 1.5865
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 279.1038
