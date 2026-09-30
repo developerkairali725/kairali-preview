@@ -1,5 +1,8 @@
 # Owner questions — kairali.com local build (29 September 2026)
 
+> Updated 2026-09-30 15:29:41 IST: the 30 September owner reply supersedes the historical assumptions below. Q8-C means all six preview forms are disabled and non-sending. Applied owner rulings and current results: [MID-15049 preview fixes](docs/MID-15049-PREVIEW-FIXES.md). The original question/baseline text is retained as dated history, not the current decision register.
+
+
 These are consequential facts where genuine company sources conflict or are silent. The build continues without waiting: each item states **what the local build currently does**. Reply with the question number and letter (e.g. "3B").
 
 1. **Home statistics band.** The live home shows a raster graphic: 109 years, 20 distributors, 300 products, 25 centres, 700 staff, 40 awards. "109 years" dates it to about 2017, and "25 centres" conflicts with the verified centre roster (14 centres in 5 countries, kairalicenters.com, ruled 17 Jul 2026). <!-- banned-string-allow: hardcoded-centres-count: historical owner-review quote; not published copy -->

@@ -1,5 +1,8 @@
 # DEEPU-HANDOFF — kairali.com rebuild
 
+> Updated 2026-09-30 15:29:41 IST: the 30 September owner reply supersedes the historical assumptions below. Q8-C means all six preview forms are disabled and non-sending. Applied owner rulings and current results: [MID-15049 preview fixes](docs/MID-15049-PREVIEW-FIXES.md). The original question/baseline text is retained as dated history, not the current decision register.
+
+
 Prepared 29 September 2026. Target completion: **Saturday 3 October 2026**.
 - **Owner of completion:** Deepu, assignment reused as MID-15049 via COS; Sunaj in CC. (banned-string-allow: deepu-name-conflation: internal developer handoff)
 - **Publishing:** Codex publishes the working build to the private repo `kairali-digital/kairali-web-factory` under `sites/kairali-com-rebuild/`, with `site/` as the app root. The Vercel project is `kairali-web-factory` (staging host `kairali-web-factory.vercel.app`).

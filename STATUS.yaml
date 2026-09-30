@@ -93,8 +93,8 @@ sites:
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
-    blocker: null
-    updated: "2026-07-18"
+    blocker: "MID-15049: 30 Sep owner preview rulings implemented and local/fresh-clone build verified (c3b7679d). Six forms hard-locked inactive; 72 legacy PDFs unchanged. Root build fails in AHV archive restore; compliance/brand integration gates remain red under owner separation 434bf952. Hosted exact-candidate QA, final visual acceptance and real iPhone Safari evidence pending for 3 Oct EOD IST. Report: sites/kairali-com-rebuild/docs/MID-15049-PREVIEW-FIXES.md. Existing preview URL is historical, not this candidate."
+    updated: "2026-09-30"
     preview_url: "https://kairali-web-factory-kairali-com.vercel.app"
     live_url: null
   - name: "ayurvedichealingvillage.com (KTAHV)"
