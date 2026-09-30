@@ -930,6 +930,21 @@ export const BOOT_SCRIPT = `
     }
   }
   new MutationObserver(function (changes) {
+    // A delivery can contain a parent insertion AND insertions into that parent.
+    // Repair the final attached subtree once, not once per nested mutation record.
+    // Detached nodes belong to discarded runtime renders and need no repair.
+    var addedRoots = new Set();
+    changes.forEach(function (change) {
+      if (change.type !== "childList") return;
+      change.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && host.contains(node)) addedRoots.add(node);
+      });
+    });
+    addedRoots.forEach(function (node) {
+      for (var parent = node.parentElement; parent && parent !== host; parent = parent.parentElement) {
+        if (addedRoots.has(parent)) { addedRoots.delete(node); break; }
+      }
+    });
     var addedContent = false;
     changes.forEach(function (change) {
       if (change.type === "childList") lastLiveChange = Date.now();
@@ -941,6 +956,7 @@ export const BOOT_SCRIPT = `
       }
       else change.addedNodes.forEach(function (node) {
         addedContent = true;
+        if (!addedRoots.delete(node)) return;
         localizeLinks(node);
         restoreSlotScrolling(node);
         deferSlotImages(node);
@@ -1119,10 +1135,12 @@ export const BOOT_SCRIPT = `
   function bindRoute(tries) {
     if (typeof window.__dcSetProps === "function" && typeof window.__dcRootName === "function") {
       var name = window.__dcRootName();
+      var headChanged = false;
       if (!templatePushed && pendingTemplate && typeof window.__dcUpdate === "function") {
         try {
           window.__dcUpdate(name, "html", pendingTemplate, false);
           templatePushed = true;
+          headChanged = true;
           host.setAttribute("data-ahv-template", "source");
           releaseSnapshot();
         } catch (e) {
@@ -1133,9 +1151,12 @@ export const BOOT_SCRIPT = `
         if (name !== boundRouteName) {
           window.__dcSetProps(name, { route: cfg.path });
           boundRouteName = name;
+          headChanged = true;
         }
       } catch (e) { /* a view without a route prop simply ignores it */ }
-      scheduleHead();
+      // Readiness polling without a render cannot change the head. Later head
+      // writes are independently guarded by its existing MutationObserver.
+      if (headChanged) scheduleHead();
     }
     if (tries > 0) setTimeout(function () { bindRoute(tries - 1); }, 60);
   }
