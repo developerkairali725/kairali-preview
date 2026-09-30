@@ -1,6 +1,5 @@
 packages:
   - "sites/*"
-  - "sites/kairali-com-rebuild/site"
   - "packages/*"
 allowBuilds:
   sharp: true

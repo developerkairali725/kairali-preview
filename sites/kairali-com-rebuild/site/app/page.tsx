@@ -12,7 +12,7 @@ import Prose from "@/components/Prose";
 export const metadata: Metadata = buildMetadata({
   route: "/",
   title: "Kairali Ayurvedic Group | Health through Ayurveda since 1908",
-  description: "Kairali Ayurvedic Group: four generations of Ayurveda since 1908. The Ayurvedic Healing Village in Palakkad, Villa Raag in Goa, products and training.",
+  description: "Kairali Ayurvedic Group: four generations of Ayurveda since 1908 — The Ayurvedic Healing Village in Palakkad, Villa Raag in Goa, Ayurvedic treatment centres, products and training.",
   image: "/og/ahv-grounds-pond.jpg",
 });
 
@@ -40,7 +40,7 @@ export default function Home() {
             <span className="overline accent">Purely Ayurvedic</span>
             <h1 id="page-title">{HOME_H1}</h1>
             <p className="lede"><strong><em>Ayur</em></strong> means <strong>Life</strong> &amp; <strong><em>Veda</em></strong> means <strong>Science</strong>. <strong><em>Ayurveda</em></strong> – Science of life.</p>
-            <div className="actions"><Link className="btn" href="/ayurveda.aspx" data-cta="explore-ayurveda">Explore Ayurveda</Link><Link className="btn secondary" href="/hospitality.aspx">Plan your Kairali experience</Link></div>
+            <div className="actions"><Link className="btn" href="/ayurveda.aspx">Explore Ayurveda</Link><Link className="btn secondary" href="/hospitality.aspx">Plan your Kairali experience</Link></div>
           </div>
         </div></div>
       </section>

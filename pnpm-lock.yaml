@@ -488,37 +488,6 @@ importers:
         specifier: ^5.8.0
         version: 5.9.3
 
-  sites/kairali-com-rebuild/site:
-    dependencies:
-      '@kairali/ui':
-        specifier: workspace:*
-        version: link:../../../packages/ui
-      next:
-        specifier: 16.3.6
-        version: 16.3.6(@opentelemetry/api@1.9.1)(@playwright/test@1.62.1)(@types/node@24.13.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      react:
-        specifier: 19.2.4
-        version: 19.2.4
-      react-dom:
-        specifier: 19.2.4
-        version: 19.2.4(react@19.2.4)
-    devDependencies:
-      '@types/node':
-        specifier: ^24.0.0
-        version: 24.13.3
-      '@types/react':
-        specifier: ^19.1.0
-        version: 19.2.18
-      '@types/react-dom':
-        specifier: ^19.1.0
-        version: 19.2.4(@types/react@19.2.18)
-      playwright:
-        specifier: 1.62.1
-        version: 1.62.1
-      typescript:
-        specifier: ^5.8.0
-        version: 5.9.3
-
   sites/kairali.ai:
     dependencies:
       next:

@@ -1,5 +1,3 @@
-import { SOCIAL_PROFILES } from "../../../../packages/social/src/config";
-
 // Site-wide constants. Every value here is sourced; see docs/SOURCE-FACT-DECISIONS.md.
 
 export const SITE_URL = "https://www.kairali.com"; // production canonical host (live site uses www)
@@ -135,15 +133,13 @@ export const LEGAL_LINKS: NavLink[] = [
   { label: "Security policy", href: "/security-policy.aspx" },
   { label: "Useful links", href: "/useful-links.aspx" },
 ];
-const groupSocial = Object.fromEntries(SOCIAL_PROFILES.map((profile) => [profile.id, profile])) as Record<string, (typeof SOCIAL_PROFILES)[number]>;
-// Preserve the locally sourced Pinterest and Instagram links without labelling them as group-registry profiles.
-export const SOCIAL = [
-  { ...groupSocial.facebook, icon: "fb" },
-  { ...groupSocial.x, icon: "x" },
-  { ...groupSocial.linkedin, icon: "in" },
-  { id: undefined, label: "Pinterest", href: "https://www.pinterest.com/kairalihealing/", icon: "pi" },
-  { id: undefined, label: "Instagram", href: "https://www.instagram.com/kairali_the_healing_village/", icon: "ig" },
-  { ...groupSocial.youtube, icon: "yt" },
+export const SOCIAL: { label: string; href: string; icon: string }[] = [
+  { label: "Facebook", href: "https://www.facebook.com/KairaliGroup", icon: "fb" },
+  { label: "X (Twitter)", href: "https://x.com/Kairali_Group", icon: "x" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/kairali-ayurvedic-group", icon: "in" },
+  { label: "Pinterest", href: "https://www.pinterest.com/kairalihealing/", icon: "pi" },
+  { label: "Instagram", href: "https://www.instagram.com/kairali_the_healing_village/", icon: "ig" },
+  { label: "YouTube", href: "https://www.youtube.com/user/kairaliayurvedagroup", icon: "yt" },
 ];
 
 // Confirmed dedicated sites (each resolved 200 on 29 Sep 2026; brand manual 2026 ch. 06).

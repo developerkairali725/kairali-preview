@@ -430,7 +430,7 @@ jobs:
         # promising self-registration and no mechanism doing it). abhilashkr +
         # kairali.ai are exempt (imported/internal) — STANDING RULING, Abilash
         # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
-        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/kairali-com-rebuild", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
+        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
@@ -481,7 +481,7 @@ jobs:
       matrix:
         # Kept in lockstep with the factory-spec matrix by factory-matrix-lint.mjs
         # (it validates EVERY site matrix in this file).
-        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/kairali-com-rebuild", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
+        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
     steps:
       - uses: actions/checkout@v7
         if: needs.changes.outputs.site_affecting == 'true'
@@ -504,8 +504,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           AHV_STAGING: "0"
-          # Measure the candidate's production eligibility locally; deployments remain preview.
-          SITE_ENV: ${{ matrix.site == 'sites/kairali-com-rebuild' && 'production' || '' }}
         run: pnpm build
 
       - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
@@ -514,8 +512,6 @@ jobs:
         env:
           SITE: ${{ matrix.site }}
           AHV_STAGING: "0"
-          # Measure the candidate's production eligibility locally; deployments remain preview.
-          SITE_ENV: ${{ matrix.site == 'sites/kairali-com-rebuild' && 'production' || '' }}
 
   # VERDICT EMITTERS → CI (D-EMITTER-WIRING, Abilash's ratification 18 Jul 2026:
   # "wire the #126 emitters into CI as its own PR"). PR #126 built the emitters

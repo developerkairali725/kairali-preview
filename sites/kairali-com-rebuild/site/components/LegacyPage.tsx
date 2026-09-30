@@ -287,7 +287,7 @@ function AwardsGrid() {
       <div className="grid three">
         {idx.map((a) => (
           <article key={a.href} className="card stack" style={{ gap: 12, padding: 18 }}>
-            {a.image && <Link href={a.href} tabIndex={-1} aria-hidden="true" className="photo" style={{ aspectRatio: "4 / 3", display: "block", background: "var(--white)" }}>
+            {a.image && <Link href={a.href} tabIndex={-1} aria-hidden="true" className="photo" style={{ aspectRatio: "4 / 3", display: "block", background: "#fff" }}>
               <img src={a.image.src} width={a.image.w} height={a.image.h} alt="" loading="lazy" decoding="async" style={{ objectFit: "contain" }} /></Link>}
             <h3 style={{ fontSize: "1.2rem" }}><Link href={a.href}>{a.title}</Link></h3>
             <p style={{ fontSize: 15 }}>{a.teaser}</p>

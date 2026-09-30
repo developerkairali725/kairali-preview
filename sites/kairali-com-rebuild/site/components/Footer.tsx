@@ -28,7 +28,7 @@ export default function Footer() {
             <Form schema={NEWSLETTER} compact formName="Newsletter subscription" />
           </div>
           <ul className="social" aria-label="Kairali on social media">
-            {SOCIAL.map((s) => (<li key={s.label} style={{ listStyle: "none" }}><a href={s.href} rel="noopener" target="_blank" data-social={s.id} aria-label={`${s.label} (opens in a new tab)`}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICONS[s.icon]} /></svg></a></li>))}
+            {SOCIAL.map((s) => (<li key={s.label} style={{ listStyle: "none" }}><a href={s.href} rel="noopener" target="_blank" aria-label={`${s.label} (opens in a new tab)`}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ICONS[s.icon]} /></svg></a></li>))}
           </ul>
         </div>
         <div className="footer-cols">

@@ -123,8 +123,5 @@ export function applicationSchema(jobId?: string): FormSchema & { preset: Record
 
 export const NEWSLETTER: FormSchema = {
   id: "newsletter", title: "Subscribe to our Newsletter", submitLabel: "Subscribe",
-  fields: [
-    { name: "email", label: "Enter Your Email Id", type: "email", required: true, pattern: "email", requiredMsg: "Please Provide Valid Email", formatMsg: "Please Provide Valid Email", autoComplete: "email" },
-    consent,
-  ],
+  fields: [{ name: "email", label: "Enter Your Email Id", type: "email", required: true, pattern: "email", requiredMsg: "Please Provide Valid Email", formatMsg: "Please Provide Valid Email", autoComplete: "email" }],
 };
