@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/kairaliorganic.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "204f349d47a1fac19679a0ad0969c470212e295aaf65ab6ebcb66d69904b66b9",
+  "artifact_sha256": "80d19810cb2907dd48327c7b32dd85f61901f364bc82386fc5ee071a5b70a60e",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=kairaliorganic.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-09-29T16:54:19+05:30",
-  "finished_at": "2026-09-29T16:54:47+05:30",
+  "started_at": "2026-09-30T11:04:06+05:30",
+  "finished_at": "2026-09-30T11:04:30+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36560600622",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36673289212",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,

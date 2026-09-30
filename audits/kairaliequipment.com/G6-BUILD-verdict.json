@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/kairaliequipment.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "be5a4b8890e3e39e80fca7203810aac8b47ef4523d2301aee3eb4c949c0e1cdf",
+  "artifact_sha256": "7aa0ee432905ac505f56beb3c82d85c3032cc64c7b43c8bc2b5afc316cbfe7cc",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=kairaliequipment.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-09-29T16:53:21+05:30",
-  "finished_at": "2026-09-29T16:53:52+05:30",
+  "started_at": "2026-09-30T11:03:13+05:30",
+  "finished_at": "2026-09-30T11:03:41+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36560600622",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36673289212",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,

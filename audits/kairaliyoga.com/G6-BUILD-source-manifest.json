@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/kairaliyoga.com",
-  "file_count": 55,
-  "tree_sha256": "e9f07e73a5b9a49870de7610f8dff9d130cfafd79518ac8696e978989f34e1f2",
+  "file_count": 56,
+  "tree_sha256": "785fcf1fe42e9ae5f9aef779ec971f5acb713e1e0c839f3fb5450229d75222dc",
   "files": [
     {
       "path": "sites/kairaliyoga.com/IMAGE_MANIFEST.md",
@@ -65,7 +65,7 @@
     },
     {
       "path": "sites/kairaliyoga.com/package.json",
-      "sha256": "51ae8546d5c11550ce838171a9485e0eeb00eb2b8bb49384695d7c760f9072dd"
+      "sha256": "37710d8cb56beff39d28eb6928ab3a717e8e0314f4f400e2574561ae6da067c0"
     },
     {
       "path": "sites/kairaliyoga.com/public/images/ahv-food-idiyappam-veg-stew-1024.jpg",
@@ -222,6 +222,10 @@
     {
       "path": "sites/kairaliyoga.com/tsconfig.json",
       "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    },
+    {
+      "path": "sites/kairaliyoga.com/vercel.json",
+      "sha256": "2bb97b345ca97ff42b0902d69dbc7d2d1acdd13ab8838fb28cdcf97e43701da2"
     }
   ]
 }

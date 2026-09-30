@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/kairaliequipment.com",
-  "file_count": 42,
-  "tree_sha256": "1b9c73212902ae1a6cb76ba0eae10538d58c235f594ec8aee27242b3acd3d423",
+  "file_count": 43,
+  "tree_sha256": "a4a200e6a3ede1fd2951a47b2c91934467e05dddadef164062373ccc5d500021",
   "files": [
     {
       "path": "sites/kairaliequipment.com/.gitignore",
@@ -121,7 +121,7 @@
     },
     {
       "path": "sites/kairaliequipment.com/package.json",
-      "sha256": "68aa4aeb21c99f6280076dc8152a2fc7810da2b4a78d67ad9f6be627a187a91a"
+      "sha256": "dcca52ec1937c39a8d6af29275f48617ae8f2416c7029b0bc1f37a571cddf0d7"
     },
     {
       "path": "sites/kairaliequipment.com/public/catalogue-placeholder.pdf",
@@ -170,6 +170,10 @@
     {
       "path": "sites/kairaliequipment.com/tsconfig.json",
       "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    },
+    {
+      "path": "sites/kairaliequipment.com/vercel.json",
+      "sha256": "2bb97b345ca97ff42b0902d69dbc7d2d1acdd13ab8838fb28cdcf97e43701da2"
     }
   ]
 }

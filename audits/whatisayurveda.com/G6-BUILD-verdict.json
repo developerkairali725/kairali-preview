@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/whatisayurveda.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "319eefc0b0e021fd8e2fca1416b7a7332d5f2acce9097e65cb50bb7b5dbd96b2",
+  "artifact_sha256": "a5782c75dcfff2a74936698c0c3c4592f0e7a905206c1717d690675ded713245",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=whatisayurveda.com"
   ],
   "exit_code": 0,
-  "started_at": "2026-09-29T16:55:45+05:30",
-  "finished_at": "2026-09-29T16:56:14+05:30",
+  "started_at": "2026-09-30T11:05:22+05:30",
+  "finished_at": "2026-09-30T11:05:49+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36560600622",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36673289212",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,

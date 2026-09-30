@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "PASS",
   "artifact_path": "audits/healing.recipes/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "9894ac983f0096ebc8c3a08a06174b8ae1b32fbb9138ef6f375264170c6892bc",
+  "artifact_sha256": "da61fe61de8dc91df4cb07e8c6c71e1922594e7797f4dd69da95f7d5c0fe171c",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=healing.recipes"
   ],
   "exit_code": 0,
-  "started_at": "2026-09-29T16:51:57+05:30",
-  "finished_at": "2026-09-29T16:52:25+05:30",
+  "started_at": "2026-09-30T11:01:56+05:30",
+  "finished_at": "2026-09-30T11:02:22+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36560600622",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36673289212",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,

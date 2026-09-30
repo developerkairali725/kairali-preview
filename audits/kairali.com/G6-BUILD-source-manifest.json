@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/kairali.com",
-  "file_count": 28,
-  "tree_sha256": "2e0e5b33530a6e26bb6e8163b006f77f56615e7682180874584c0f4e7298eb07",
+  "file_count": 29,
+  "tree_sha256": "c51a95864013440fc1556f76204edbec5a550bd10f0a9d4f1691275a0eebbfae",
   "files": [
     {
       "path": "sites/kairali.com/IMAGE_MANIFEST.md",
@@ -61,7 +61,7 @@
     },
     {
       "path": "sites/kairali.com/package.json",
-      "sha256": "1e535e80f0444dd0de241921b8d8f4c9246dd3b155d357c08ee5662b28cf481d"
+      "sha256": "6e2aa664c98808295130b8c8d6c641cc207fad24548f1063b6c93197e2ef1c5b"
     },
     {
       "path": "sites/kairali.com/public/images/centres-products-garden.jpg",
@@ -114,6 +114,10 @@
     {
       "path": "sites/kairali.com/tsconfig.json",
       "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    },
+    {
+      "path": "sites/kairali.com/vercel.json",
+      "sha256": "2bb97b345ca97ff42b0902d69dbc7d2d1acdd13ab8838fb28cdcf97e43701da2"
     }
   ]
 }

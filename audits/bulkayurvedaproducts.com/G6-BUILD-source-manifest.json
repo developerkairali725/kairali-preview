@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/bulkayurvedaproducts.com",
-  "file_count": 37,
-  "tree_sha256": "453a771a208e463f225a6756f6acdcbfe98e58d69564e9b80c483cffe948a0a6",
+  "file_count": 38,
+  "tree_sha256": "66c1c1275a9ffdc2a810d83d1a1d77fea2f69ed7bbbc602ad80b2ded895d1238",
   "files": [
     {
       "path": "sites/bulkayurvedaproducts.com/IMAGE_MANIFEST.md",
@@ -121,7 +121,7 @@
     },
     {
       "path": "sites/bulkayurvedaproducts.com/package.json",
-      "sha256": "fbaedb087366b99649caf1b8f1f4c0a6778f5cf84a43f8366faa4c03ca65e1a1"
+      "sha256": "2125bfa89c71baf0fdf314e10454ce6fbd7ebd71f3af8e5a588aed4df38cb87f"
     },
     {
       "path": "sites/bulkayurvedaproducts.com/public/images/classical-range.jpg",
@@ -150,6 +150,10 @@
     {
       "path": "sites/bulkayurvedaproducts.com/tsconfig.json",
       "sha256": "a06fd5d5a54b84fd86a6661b7bfb7211758dfab3b58a2ba88a90e1a20449d054"
+    },
+    {
+      "path": "sites/bulkayurvedaproducts.com/vercel.json",
+      "sha256": "2bb97b345ca97ff42b0902d69dbc7d2d1acdd13ab8838fb28cdcf97e43701da2"
     }
   ]
 }
