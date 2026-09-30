@@ -6,6 +6,8 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 overrides:
+  # Patch both undici 7.29.0 advisories; published 4 September 2026.
+  undici: "7.29.1"
   postcss: ">=8.5.10"
   # GHSA-8988-4f7v-96qf (moderate): unbounded memory allocation in W3C Baggage
   # propagation, @opentelemetry/core <2.8.0. Transitive via lighthouse>@sentry/node;

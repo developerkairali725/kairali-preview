@@ -206,3 +206,7 @@ Playwright 1.62.1 is a dev dependency. On a new machine, run `pnpm exec playwrig
 - [ ] Form recipients and integration decided. The forms stay mocked on staging until the integration is implemented and tested with synthetic data.
 - [ ] GA4 access confirmed. Production firing is tested only after cutover (preview must stay excluded).
 - [ ] Remaining gaps recorded in STATUS.md with owners and dates.
+
+## Factory workspace integration — 30 September 2026
+
+The app remains in `site/` and now uses the factory root workspace and root `pnpm-lock.yaml`. Run the frozen install from the factory checkout; `pnpm --filter kairali-com-local build` builds this candidate. The obsolete nested lockfile is retained in Git history. Next.js is pinned to the factory-tested 16.3.6 patch so a fresh CI install respects the existing release-age policy. This packaging change does not approve a production cutover.
