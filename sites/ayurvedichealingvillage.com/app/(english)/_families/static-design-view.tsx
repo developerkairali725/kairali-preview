@@ -473,6 +473,11 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   };
   const narrow = `(max-width: ${cfg.breakpoint - 1}px)`;
   const wide = `(min-width: ${cfg.breakpoint}px)`;
+  const deferredSectionLayout = route.path === "/"
+    ? `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}`
+    : route.path === "/panchakarma-therapy/"
+      ? `#ahv-design-root .sc-host main#main-content > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}`
+      : "";
   const phonePaint = snapshotStylesFor(cfg);
   const widePaint = snapshotStylesFor({ ...cfg, mobileView: cfg.desktopView });
   const fontCss = [...(phonePaint?.fontCss || []), ...(widePaint?.fontCss || [])].filter((value, index, all) =>
@@ -493,7 +498,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {phonePaint?.styles.map((css, index) => <style key={`phone-${index}`} media={narrow} dangerouslySetInnerHTML={{ __html: css }} />)}
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
-      {route.path === "/" ? <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}` }} /> : null}
+      {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
       <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
