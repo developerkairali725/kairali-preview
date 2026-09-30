@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-29T03:18:29.824Z",
- "base": "http://127.0.0.1:4471",
+ "generated": "2026-09-30T11:52:12.765Z",
+ "base": "http://127.0.0.1:4321",
  "count": 229,
  "failures": 0,
  "routes": [
@@ -8,9 +8,9 @@
    "path": "/",
    "ok": true,
    "file": "index.html",
-   "bytes": 217613,
-   "textChars": 15227,
-   "imgs": 70,
+   "bytes": 218525,
+   "textChars": 15204,
+   "imgs": 72,
    "flattened": 46,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
   },

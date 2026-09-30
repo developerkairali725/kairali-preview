@@ -1,0 +1,18 @@
+{
+ "generated": "2026-09-30T11:52:09.984Z",
+ "base": "http://127.0.0.1:4321",
+ "count": 1,
+ "failures": 0,
+ "routes": [
+  {
+   "path": "/",
+   "ok": true,
+   "file": "index.html",
+   "bytes": 258384,
+   "textChars": 17573,
+   "imgs": 74,
+   "flattened": 50,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  }
+ ]
+}
