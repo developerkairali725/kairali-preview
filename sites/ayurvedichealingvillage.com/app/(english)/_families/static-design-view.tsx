@@ -137,6 +137,12 @@ const STATIC_BOOT = `
   }
   var form = host.querySelector('form[data-form="contact"]');
   if (!form) return;
+  if (location.hash.indexOf("#message?") === 0) {
+    var draft = new URLSearchParams(location.hash.slice(9)).get("draft");
+    var messageField = form.elements.namedItem("message");
+    if (draft && messageField && !messageField.value) messageField.value = draft.slice(0, 1000);
+    if (messageField) setTimeout(function () { messageField.focus(); }, 100);
+  }
   var status = form.querySelector('[role="status"]');
   var token = null;
   var busy = false;
@@ -182,13 +188,14 @@ const STATIC_BOOT = `
         method: "POST", credentials: "same-origin", cache: "no-store",
         body: new Blob([JSON.stringify({
           form: "contact", submissionToken: token,
-          utm_source: new URLSearchParams(location.search).get("utm_source") || "",
-          utm_medium: new URLSearchParams(location.search).get("utm_medium") || "",
-          utm_campaign: new URLSearchParams(location.search).get("utm_campaign") || "",
-          utm_term: new URLSearchParams(location.search).get("utm_term") || "",
-          utm_content: new URLSearchParams(location.search).get("utm_content") || "",
-          gclid: new URLSearchParams(location.search).get("gclid") || "",
-          fbclid: new URLSearchParams(location.search).get("fbclid") || "",
+          site_language: window.AHV_LEAD_RECEIPT.siteLanguage(),
+          utm_source: (new URLSearchParams(location.search).get("utm_source") || "").slice(0, 190),
+          utm_medium: (new URLSearchParams(location.search).get("utm_medium") || "").slice(0, 190),
+          utm_campaign: (new URLSearchParams(location.search).get("utm_campaign") || "").slice(0, 190),
+          utm_term: (new URLSearchParams(location.search).get("utm_term") || "").slice(0, 190),
+          utm_content: (new URLSearchParams(location.search).get("utm_content") || "").slice(0, 190),
+          gclid: (new URLSearchParams(location.search).get("gclid") || "").slice(0, 190),
+          fbclid: (new URLSearchParams(location.search).get("fbclid") || "").slice(0, 190),
           lead_source_url: location.href.slice(0, 500),
           referrer: (document.referrer || "").slice(0, 500),
           fields: { full_name: name, countrycode: countryCode, phone: phone,
