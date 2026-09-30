@@ -315,6 +315,81 @@ body footer .ahv-footer-langs, body footer .ahv-footer-langs a, body footer .ahv
   flex-direction:column !important; align-items:flex-start !important; gap:16px !important; padding:22px !important;
  }
 }
+/* Deepu review: preserve a useful 16:9 programme photograph across locales. */
+#ahv-design-root[data-ahv-family="ayurvedic-treatments"] article > a > img {
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:16 / 9;
+  max-height:230px;
+  object-fit:cover;
+}
+
+/* Centre only the Contact FAQ title under the already centred lotus. */
+#ahv-design-root[data-ahv-family="enquiry"] h2#faq-h {
+  text-align:center !important;
+}
+
+/* Native FAQ disclosure stays semantic; the chevron supplies a visual cue. */
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details > summary {
+  display:flex !important;
+  align-items:center;
+  gap:12px;
+}
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details > summary::after {
+  content:"";
+  width:8px;
+  height:8px;
+  flex:0 0 8px;
+  margin-inline-start:auto;
+  border-right:2px solid #5A4420;
+  border-bottom:2px solid #5A4420;
+  transform:rotate(45deg);
+}
+#ahv-design-root[data-ahv-family="how-to-reach"] section:has(> details) > details[open] > summary::after {
+  transform:rotate(225deg);
+}
+
+/* Match the mobile home quote link to its 24px inset copy. */
+@media(max-width:699px){
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] [data-dc-tpl="374"] > a[data-dc-tpl="382"] {
+    margin-inline:24px;
+  }
+}
+
+/* Keep the recognition disclosure phrase intact instead of laying its count
+   out as a separate flex child. The existing plus cue remains in place. */
+@media(max-width:599px){
+  #ahv-design-root section#recognitions details > summary {
+    display:block !important;
+    width:100%;
+    box-sizing:border-box;
+  }
+  #ahv-design-root section#recognitions details > summary > span {
+    display:inline !important;
+  }
+}
+
+/* Every mobile recognition card places its mark above full-width copy.
+   The existing NABH-only stack did not reach the other award cards. */
+@media(max-width:599px){
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:12px !important;
+    min-width:0;
+    text-align:start;
+  }
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) > img {
+    grid-row:auto !important;
+    grid-column:1 !important;
+    justify-self:center !important;
+  }
+  #ahv-design-root section#recognitions div:has(> img):is(:has(> h3),:has(> div > h3)) > :is(h3,p,div,a) {
+    grid-column:1 !important;
+    min-width:0;
+  }
+}
+
 /* Native explanatory copy remains readable on compact screens. */
 .rv-page .rv-filter-note, .rv-page .rv-small, .rv-page .rv-film-caption { font-size:14px; }
 /* These imported sections contain a single content item, not a two-column pair. */

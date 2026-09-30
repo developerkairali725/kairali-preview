@@ -645,7 +645,8 @@
   /* ---- the homepage "I am looking for" bar: live suggestions (owner, 23 Sep 2026:
      "should have auto suggest or auto complete"). The same engine and index as the
      dialog; a combobox listbox under the input with up to six rows (programmes first,
-     then questions and pages), arrow keys + Enter to follow a row, Escape to close,
+     then questions and pages). Picking a programme fills the query and leaves the
+     visitor on the form to choose optional dates. Questions/pages stay links.
      Enter with nothing chosen submits the form to the finder as before. Rows are
      ≥48px, 17px type. Nothing here fires analytics. */
   // Carry only visitor-entered interests/dates into an editable enquiry draft.
@@ -662,14 +663,17 @@
     if (!a) return;
     var home = doc.querySelector('form[data-ahv-home-finder="1"]');
     var url; try { url = new URL(a.href, root.location.href); } catch (_) { return; }
-    if (home && url.origin === root.location.origin && url.pathname === "/enquiry-form/") {
+    var contactPath = new URL(localHref("/contact-us/"), root.location.href).pathname;
+    if (home && home.contains(a) && url.origin === root.location.origin &&
+        (url.pathname === contactPath || url.pathname === "/contact-us/")) {
       var message = homeEnquiryMessage(home);
-      a.href = "/enquiry-form/#message" + (message ? "?draft=" + encodeURIComponent(message) : "");
+      a.href = contactPath + "#message" + (message ? "?draft=" + encodeURIComponent(message) : "");
     }
     if (url.hostname === "wa.me" && url.pathname === "/919289838797") {
       var field = doc.querySelector('form[data-form="contact"] textarea[name="message"]');
-      var draft = home ? homeEnquiryMessage(home) : (root.location.pathname === "/enquiry-form/" && field ? field.value.trim() : "");
-      if (home || (root.location.pathname === "/enquiry-form/" && field)) {
+      var onContactPage = root.location.pathname === contactPath || root.location.pathname === "/contact-us/";
+      var draft = home ? homeEnquiryMessage(home) : (onContactPage && field ? field.value.trim() : "");
+      if (home || (onContactPage && field)) {
         if (draft) url.searchParams.set("text", "Hello Kairali, I would like to enquire.\n\n" + draft);
         else url.searchParams.delete("text");
         a.href = url.href;
@@ -678,7 +682,10 @@
   }, true);
   function homeSuggest() {
     var form = doc.querySelector('form[data-ahv-home-finder="1"]');
-    if (!form || form.getAttribute("data-ahvs-suggest") === "1") return;
+    if (!form) return;
+    var action = localHref("/ayurvedic-treatments/");
+    if (form.getAttribute("action") !== action) form.setAttribute("action", action);
+    if (form.getAttribute("data-ahvs-suggest") === "1") return;
     var inp = form.querySelector('input[name="q"]');
     if (!inp) return;
     form.setAttribute("data-ahvs-suggest", "1");
@@ -692,6 +699,12 @@
     inp.setAttribute("role", "combobox"); inp.setAttribute("aria-autocomplete", "list");
     inp.setAttribute("aria-controls", box.id); inp.setAttribute("aria-expanded", "false");
     var active = -1, rows = [], t2 = null;
+    function choose(a) {
+      if (a.closest("li").getAttribute("data-ahvs-programme") === "1") {
+        inp.value = (a.querySelector(".ahvs-home-t").textContent || "").trim().slice(0, 120);
+        hide();
+      } else root.location.href = a.getAttribute("href");
+    }
     function hide() { box.hidden = true; box.innerHTML = ""; rows = []; active = -1; inp.setAttribute("aria-expanded", "false"); inp.removeAttribute("aria-activedescendant"); }
     function paint() {
       rows.forEach(function (r, i) { r.setAttribute("aria-selected", i === active ? "true" : "false"); });
@@ -705,7 +718,7 @@
       res.order.forEach(function (kind) {
         res[kind].slice(0, 6).forEach(function (r) {
           var p = r.data;
-          if (kind === "programmes") list.push({ href: localHref(p.route), t: p.name, a: p.sanskrit || p.durationDisplay || "", k: "Programme" });
+          if (kind === "programmes") list.push({ href: localHref(p.route), t: p.name, a: p.sanskrit || p.durationDisplay || "", k: "Programme", programme: true });
           else if (kind === "questions") list.push({ href: localHref(p.href || "/faqs-downloads/#" + p.id), t: p.q, a: p.topic || "", k: "Question" });
           else list.push({ href: localHref(p.route), t: p.label, a: p.desc || "", k: "Page" });
         });
@@ -713,7 +726,7 @@
       list = list.slice(0, 6);
       if (!list.length) { hide(); return; }
       box.innerHTML = list.map(function (it, i) {
-        return '<li id="ahvs-home-opt-' + i + '" role="option" aria-selected="false"><a class="ahvs-home-row" href="' + esc(it.href) + '" tabindex="-1"><span class="ahvs-home-t">' + mark(it.t, res.tokens || []) + '</span><span class="ahvs-home-a">' + esc(it.k) + (it.a ? " · " + esc(String(it.a).slice(0, 70)) : "") + "</span></a></li>";
+        return '<li id="ahvs-home-opt-' + i + '" role="option" aria-selected="false" data-ahvs-programme="' + (it.programme ? "1" : "0") + '"><a class="ahvs-home-row" href="' + esc(it.href) + '" tabindex="-1"><span class="ahvs-home-t">' + mark(it.t, res.tokens || []) + '</span><span class="ahvs-home-a">' + esc(it.k) + (it.a ? " · " + esc(String(it.a).slice(0, 70)) : "") + "</span></a></li>";
       }).join("");
       rows = Array.prototype.slice.call(box.querySelectorAll("li"));
       active = -1; box.hidden = false; inp.setAttribute("aria-expanded", "true"); paint();
@@ -725,9 +738,12 @@
       if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(rows.length - 1, active + 1); paint(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(-1, active - 1); paint(); }
       else if (e.key === "Escape") { e.preventDefault(); hide(); }
-      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); var a = rows[active].querySelector("a"); if (a) root.location.href = a.getAttribute("href"); }
+      else if (e.key === "Enter" && active >= 0) { e.preventDefault(); var a = rows[active].querySelector("a"); if (a) choose(a); }
     });
-    box.addEventListener("mousedown", function (e) { var a = e.target.closest("a"); if (a) { e.preventDefault(); root.location.href = a.getAttribute("href"); } });
+    box.addEventListener("click", function (e) {
+      var a = e.target.closest("a");
+      if (a) { e.preventDefault(); choose(a); }
+    });
     doc.addEventListener("click", function (e) { if (!host.contains(e.target)) hide(); });
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", homeSuggest); else homeSuggest();

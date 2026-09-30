@@ -43,7 +43,7 @@
     return React.createElement('svg', {width:22,height:22,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.7,strokeLinecap:'round',strokeLinejoin:'round','aria-hidden':'true',focusable:'false',style:{flexShrink:0,verticalAlign:'middle',marginRight:8}}, React.createElement('path',{d:path}));
   }
   function homeEnquiryDraft() {
-    if (location.pathname !== '/enquiry-form/' || !location.hash.startsWith('#message?')) return null;
+    if (!location.hash.startsWith('#message?')) return null;
     const draft = new URLSearchParams(location.hash.slice(9)).get('draft');
     return draft ? draft.slice(0, 1000) : null;
   }
