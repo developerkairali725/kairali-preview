@@ -276,9 +276,10 @@
       var p = pinned[i];
       if (p.hasAttribute("data-ahv-cta-bar") || p.hasAttribute("data-ahv-cta-unpin")) continue;
       if (p.closest("header, #ahv-consent, #ahv-contact-controls") || p.querySelector("header")) continue;
+      var kind = ctaBarKind(p.getAttribute("style") || "", p.querySelectorAll("a[href]").length, !!p.querySelector('a[href^="tel:"]'));
+      if (!kind) continue;
       var ph = p.getBoundingClientRect().height;
       if (!ph || ph > 160) continue; // not laid out yet (re-checked next pass), or not a bar
-      var kind = ctaBarKind(p.getAttribute("style") || "", p.querySelectorAll("a[href]").length, !!p.querySelector('a[href^="tel:"]'));
       if (kind === "replace") p.setAttribute("data-ahv-cta-bar", "");
       else if (kind === "unpin") p.setAttribute("data-ahv-cta-unpin", "");
     }
@@ -307,23 +308,39 @@
     // (its privacy link carries the locale's own slug on locale pages, read from the same path map)
     markDesignNotices();
     var hgt = Math.round(bar.getBoundingClientRect().height);
-    if (hgt) html.style.setProperty("--ahv-cta-bar-h", hgt + "px"); else html.style.removeProperty("--ahv-cta-bar-h");
+    var barHeight = hgt ? hgt + "px" : "";
+    if (html.style.getPropertyValue("--ahv-cta-bar-h") !== barHeight) {
+      if (hgt) html.style.setProperty("--ahv-cta-bar-h", barHeight); else html.style.removeProperty("--ahv-cta-bar-h");
+    }
   }
   window.addEventListener("resize", function () { schedule(); });
   // Shared policy, including carousel href changes and links outside the design root.
   var externalOriginals = new WeakMap();
+  var checkedExternalHrefs = new WeakMap();
   function externalLink(a) {
-    var u; try { u = new URL(a.getAttribute('href'), window.location.href); } catch (_) { return; }
+    var href = a.getAttribute('href'), base = window.location.href;
+    var checked = checkedExternalHrefs.get(a);
+    // The mutation pass scans every link. Most hrefs are unchanged after the
+    // first pass, including the many external links in the shared footer.
+    // Keep enforcing the policy if another script changes target or rel.
+    if (checked && checked.href === href && checked.base === base) {
+      if (!externalOriginals.has(a)) return;
+      var currentRel = a.getAttribute('rel') || '';
+      if (a.getAttribute('target') === '_blank' && /(?:^|\s)noopener(?:\s|$)/.test(currentRel) && /(?:^|\s)noreferrer(?:\s|$)/.test(currentRel)) return;
+    }
+    var u; try { u = new URL(href, window.location.href); } catch (_) { return; }
     var external = /^https?:$/.test(u.protocol) && ((u.origin !== window.location.origin && !/^(www\.)?ayurvedichealingvillage\.com$/.test(u.hostname)) || /^\/wp-content\//.test(u.pathname));
     if (external) {
       if (!externalOriginals.has(a)) externalOriginals.set(a, { target: a.getAttribute('target'), rel: a.getAttribute('rel') });
-      a.target = '_blank';
-      a.rel = Array.from(new Set((a.rel || '').split(/\s+/).filter(Boolean).concat(['noopener', 'noreferrer']))).join(' ');
+      if (a.getAttribute('target') !== '_blank') a.target = '_blank';
+      var rel = Array.from(new Set((a.rel || '').split(/\s+/).filter(Boolean).concat(['noopener', 'noreferrer']))).join(' ');
+      if (a.getAttribute('rel') !== rel) a.rel = rel;
     } else if (externalOriginals.has(a)) {
       var old = externalOriginals.get(a);
       ['target', 'rel'].forEach(function (key) { if (old[key] === null) a.removeAttribute(key); else a.setAttribute(key, old[key]); });
       externalOriginals.delete(a);
     }
+    checkedExternalHrefs.set(a, { href: href, base: base });
   }
   function externalLinks() { document.querySelectorAll('a[href]').forEach(externalLink); }
   document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href]'); if (a) externalLink(a); }, true);
@@ -516,21 +533,29 @@
     // distance from the notice's top edge to the viewport bottom: includes a floating notice's own bottom offset
     if (n) off = Math.max(0, Math.round(window.innerHeight - n.getBoundingClientRect().top + 12));
     var c = document.getElementById('ahv-contact-controls');
-    if (c) { if (off) c.style.bottom = off + 'px'; else c.style.removeProperty('bottom'); }
-    // page-end clearance for the pending notice (chrome.css html[data-ahv-consent-open]) and matching
-    // scroll-padding so keyboard focus is never scrolled under it; presentation only
-    var root = document.documentElement;
-    // focus clearance adds the WhatsApp / chat controls, which sit just above the notice while it is pending
-    var clear = off && c ? off + Math.round(c.getBoundingClientRect().height) + 12 : off + 8;
-    if (off) { root.setAttribute('data-ahv-consent-open', ''); root.style.setProperty('--ahv-consent-h', off + 'px'); root.style.setProperty('--ahv-focus-clear', clear + 'px'); }
-    else if (root.hasAttribute('data-ahv-consent-open')) { root.removeAttribute('data-ahv-consent-open'); root.style.removeProperty('--ahv-consent-h'); root.style.removeProperty('--ahv-focus-clear'); }
-    // desktop page-end clearance (chrome.css --ahv-page-clear): whichever reaches higher, the pending notice (with the
-    // controls lifted above it) or the floating WhatsApp / chat controls alone, so the footer's last row can scroll
-    // clear of both. In RTL that row starts on the right, under the controls (VERIFY footer-reachability, /ar/ 1440px)
+    if (c) {
+      var bottom = off ? off + 'px' : '';
+      if (c.style.bottom !== bottom) {
+        if (off) c.style.bottom = bottom; else c.style.removeProperty('bottom');
+      }
+    }
+    // Read the controls once, after their offset changes and before updating root styles. This keeps
+    // the focus and page-end clearance in sync without another read after a style write.
     var cr = c ? c.getBoundingClientRect() : null;
+    var root = document.documentElement;
+    var clear = off && cr ? off + Math.round(cr.height) + 12 : off + 8;
     var ctrl = cr && cr.height ? Math.max(0, Math.round(window.innerHeight - cr.top + 12)) : 0;
     var page = Math.max(off ? clear : 0, ctrl);
-    if (page) root.style.setProperty('--ahv-page-clear', page + 'px'); else root.style.removeProperty('--ahv-page-clear');
+    if (off && !root.hasAttribute('data-ahv-consent-open')) root.setAttribute('data-ahv-consent-open', '');
+    if (!off && root.hasAttribute('data-ahv-consent-open')) root.removeAttribute('data-ahv-consent-open');
+    function setClearance(name, value) {
+      if (root.style.getPropertyValue(name) === value) return;
+      if (value) root.style.setProperty(name, value); else root.style.removeProperty(name);
+    }
+    setClearance('--ahv-consent-h', off ? off + 'px' : '');
+    setClearance('--ahv-focus-clear', off ? clear + 'px' : '');
+    // Desktop page-end clearance reaches above either the pending notice and lifted controls or the controls alone.
+    setClearance('--ahv-page-clear', page ? page + 'px' : '');
   }
   window.addEventListener('resize', liftContacts);
   // EF-25 (owner, 26 Sep 2026: the cookie notice must not obscure navigation): the homepage's own phone
@@ -542,7 +567,7 @@
   // neighbours (Search, phone) are white over the video, so the switcher read dark-on-dark (28 Sep 2026). It
   // follows its neighbours: light when most sibling controls use light text. Structural, any locale.
   function switcherContrast() {
-    var boxes = document.querySelectorAll('.ahv-lang');
+    var boxes = document.querySelectorAll('.ahv-lang'), decisions = [];
     for (var i = 0; i < boxes.length; i++) {
       var box = boxes[i], par = box.parentElement; if (!par) continue;
       var light = 0, dark = 0;
@@ -552,7 +577,12 @@
         var lum = (0.2126 * m[1] + 0.7152 * m[2] + 0.0722 * m[3]) / 255;
         if (lum > 0.7) light++; else dark++;
       }
-      if (light > dark) box.setAttribute('data-ahv-lang-light', ''); else box.removeAttribute('data-ahv-lang-light');
+      decisions.push({ box: box, light: light > dark });
+    }
+    for (var j = 0; j < decisions.length; j++) {
+      var decision = decisions[j];
+      if (decision.light && !decision.box.hasAttribute('data-ahv-lang-light')) decision.box.setAttribute('data-ahv-lang-light', '');
+      else if (!decision.light && decision.box.hasAttribute('data-ahv-lang-light')) decision.box.removeAttribute('data-ahv-lang-light');
     }
   }
   function noticeUnderMenu() {
