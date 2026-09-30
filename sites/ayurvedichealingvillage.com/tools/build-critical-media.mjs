@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { createRequire } from 'node:module';
 const require = createRequire(process.cwd() + '/package.json');
 const sharp = require(require.resolve('sharp', { paths: [require.resolve('next')] }));
-for (const name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner']) {
+for (const name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
   const source = `public/ahv/assets/img/${name}.webp`;
   const dest = `public/ahv/assets/img/${name}-768.webp`;
   const original = fs.readFileSync(source);

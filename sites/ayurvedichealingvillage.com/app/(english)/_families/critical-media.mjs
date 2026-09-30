@@ -1,6 +1,6 @@
-/** Shared first-screen image variants; only phone templates/snapshots use these. */
+/** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html) {
-  for (var name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner']) {
+  for (var name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.webp');
   }
   return html;

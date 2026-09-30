@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '../app/(english)/_families/critical-media.mjs';
 test('only named first-screen images gain the same-image phone variant', () => {
   const input = '<video poster="/ahv/assets/img/wx-hero.webp"></video><img src="/ahv/assets/img/other.webp">';
@@ -10,6 +11,28 @@ test('only named first-screen images gain the same-image phone variant', () => {
   assert.equal(firstCriticalImage(result), '/ahv/assets/img/wx-hero-768.webp');
   assert.equal(firstCriticalImage('<img src="/unrelated.webp">'), null);
 });
+test('the four home phone slots use 768px variants without changing preload selection or other markup', () => {
+  const names = ['wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106'];
+  const template = JSON.parse(fs.readFileSync('public/ahv/views/home-mobile.json', 'utf8')).template;
+  for (const name of names) assert.ok(template.includes('/ahv/assets/img/' + name + '.webp'), name + ' in approved phone view');
+  const mapped = phoneCriticalMedia(template);
+  for (const name of names) {
+    assert.ok(mapped.includes('/ahv/assets/img/' + name + '-768.webp'), name + ' gets derivative');
+    assert.ok(!mapped.includes('/ahv/assets/img/' + name + '.webp'), name + ' original not in phone template');
+  }
+  // Reversing just these four URL substitutions recovers the exact source, including slots and lazy attributes.
+  let restored = mapped;
+  for (const name of names) restored = restored.replaceAll('/ahv/assets/img/' + name + '-768.webp', '/ahv/assets/img/' + name + '.webp');
+  let existing = template;
+  for (const name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner'])
+    existing = existing.replaceAll('/ahv/assets/img/' + name + '.webp', '/ahv/assets/img/' + name + '-768.webp');
+  assert.equal(restored, existing, 'only the four new URLs change beyond the pre-existing mapping');
+  assert.equal(firstCriticalImage(mapped), firstCriticalImage(existing), 'existing preload selection is unchanged');
+  assert.equal(phoneCriticalMedia(mapped), mapped, 'phone mapping is idempotent');
+  const onlyNew = names.map((name) => '<img src="/ahv/assets/img/' + name + '-768.webp">').join('');
+  assert.equal(firstCriticalImage(onlyNew), null, 'new below-fold images do not gain a priority preload');
+});
+
 test('award link uses its existing title without inventing or translating copy', () => {
   const link = '<a href="/award" aria-label="Read more — Existing title">Read more</a>';
   const result = descriptiveAwardLinks(link);
