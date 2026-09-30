@@ -994,8 +994,9 @@
     // pan toward zero.
     _geom() {
       const iw = this._img.naturalWidth, ih = this._img.naturalHeight;
+      if (!iw || !ih) return null;
       const fw = this.clientWidth, fh = this.clientHeight;
-      if (!iw || !ih || !fw || !fh) return null;
+      if (!fw || !fh) return null;
       const contain = (this.getAttribute('fit') || 'cover').toLowerCase() === 'contain';
       const base = contain
         ? Math.min(fw / iw, fh / ih)

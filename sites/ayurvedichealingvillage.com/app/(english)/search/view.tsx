@@ -1,4 +1,5 @@
-import { translate, localizedPath, LOCALE_INFO, type LocaleCode } from "../_families/l10n";
+import { translate, localizedPath, LOCALE_INFO, routeTable, type LocaleCode } from "../_families/l10n";
+import { mapSearchHref, resolveSearchLocale } from "./search-language";
 import "@kairali/ui/brand-tokens.css";
 import { CONSENT_RUNTIME } from "../_families/consent-runtime";
 import analyticsConfig from "../../../analytics.config.json";
@@ -45,16 +46,21 @@ type Result = {
 };
 type Engine = { priceAvailable: (p: any) => boolean; query: (q: string, o: { scope: string; limit?: number }) => Result; answerLine: (p: any, cur: string, ui: any) => string };
 
-let cached: { engine: Engine; index: any } | null = null;
-function engine(): { engine: Engine; index: any } {
-  if (cached) return cached;
-  const src = readFileSync(join(process.cwd(), "public/design/search.js"), "utf8");
-  const index = JSON.parse(readFileSync(join(process.cwd(), "public/ahv/search-index.json"), "utf8"));
+const cached = new Map<LocaleCode, { engine: Engine; index: any }>();
+function engine(locale: LocaleCode): { engine: Engine; index: any } {
+  const hit = cached.get(locale);
+  if (hit) return hit;
+  const prefix = LOCALE_INFO[locale].prefix;
+  const base = prefix ? join("public", "ahv", "l10n", prefix) : "public";
+  const src = readFileSync(join(process.cwd(), base, "design/search.js"), "utf8");
+  const indexPath = prefix ? join(process.cwd(), base, "search-index.json") : join(process.cwd(), "public/ahv/search-index.json");
+  const index = JSON.parse(readFileSync(indexPath, "utf8"));
   const ctx: any = { console };
   vm.createContext(ctx);
-  vm.runInContext(src, ctx, { filename: "search.js" });
-  cached = { engine: ctx.AHVSearch.createEngine(index) as Engine, index };
-  return cached;
+  vm.runInContext(src, ctx, { filename: `search-${locale}.js` });
+  const pair = { engine: ctx.AHVSearch.createEngine(index) as Engine, index };
+  cached.set(locale, pair);
+  return pair;
 }
 
 const WA = "https://wa.me/919289838797";
@@ -77,12 +83,19 @@ function Group({ title, rows, render }: { title: string; rows: Row[]; render: (r
 }
 
 export async function SearchView({ searchParams, locale = "en" }: { searchParams: Promise<Record<string, string | string[] | undefined>>; locale?: LocaleCode }) {
- const T = (s: string) => translate(locale, s); const L = (p: string) => localizedPath(p, locale) ?? p;
   const sp = await searchParams;
+  const selectedLocale = (locale === "en" ? resolveSearchLocale(sp.lang, LOCALE_INFO) : locale) as LocaleCode;
+  const T = (s: string) => translate(selectedLocale, s);
+  const localHref = (href: string) => mapSearchHref(href, (path) => localizedPath(path, selectedLocale));
+  const L = (path: string) => localizedPath(path, selectedLocale) ?? path;
   const raw = Array.isArray(sp.q) ? sp.q[0] ?? "" : sp.q;
   const typed = String(raw || "").slice(0, 120).trim();
-  const { engine: eng, index } = engine();
-  const chrome = siteChrome(locale, '/search/');
+  const { engine: eng, index } = engine(selectedLocale);
+  const chrome = siteChrome(selectedLocale, "/search/", typed);
+  // The English root layout remains en-US. Mark this results region honestly,
+  // and make its reviewed route map available to the overlay on ?lang= pages.
+  const localPaths = Object.fromEntries(Object.keys(routeTable()).map((path) => [path, localizedPath(path, selectedLocale)]).filter(([, path]) => path));
+  const localeScript = `window.__AHV_LOCALE=${JSON.stringify(selectedLocale)};window.AHV_LOCAL_PATHS=${JSON.stringify(localPaths).replace(/</g, "\\u003c")};`;
   const measurement = process.env[analyticsConfig.activation.env] === analyticsConfig.activation.enabledWhen
     ? { ga4: analyticsConfig.measurement.ga4.id, clarity: analyticsConfig.measurement.clarity.id, metaPixel: analyticsConfig.measurement.metaPixel.id }
     : undefined;
@@ -110,7 +123,8 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
     // id="ahv-design-root": chrome.js (© line, WhatsApp, one chat link) and consistency.js scope their passes to this
     // id, so the lifted footer gets the same additions here as on every design page; overflow-x clip is what the
     // mobile views' root carries (the narrow header's right-hand group is wider than a 390px viewport by design).
-    <div id="ahv-design-root" style={{ minHeight: "100vh", background: paper, color: ink, fontFamily: "Mulish, sans-serif", fontSize: 17, lineHeight: 1.5, overflowX: "clip" }}>
+    <div id="ahv-design-root" lang={LOCALE_INFO[selectedLocale].htmlLang} dir={LOCALE_INFO[selectedLocale].dir} style={{ minHeight: "100vh", background: paper, color: ink, fontFamily: "Mulish, sans-serif", fontSize: 17, lineHeight: 1.5, overflowX: "clip" }}>
+      <script dangerouslySetInnerHTML={{ __html: localeScript }} />
       <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css" />
       {/* the site's own header + footer, lifted from the design's prerendered snapshot (site-chrome.ts) */}
       <style dangerouslySetInnerHTML={{ __html: chrome.css }} />
@@ -120,6 +134,7 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
         <form action="/search/" method="get" role="search" style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 56, border: "1px solid var(--bronze-400)", borderRadius: 4, background: "var(--card-bg)", padding: "0 6px 0 14px" }}>
           <span aria-hidden="true" style={{ color: "var(--bronze-600)", fontSize: 20 }}>⌕</span>
           <label htmlFor="search-q" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap" }}>{ui.dialogTitle}</label>
+          <input type="hidden" name="lang" value={selectedLocale} />
           <input id="search-q" name="q" type="search" maxLength={120} defaultValue={typed} placeholder={ui.placeholder} autoComplete="off" style={{ flex: 1, minWidth: 0, minHeight: 54, border: 0, outline: "none", background: "transparent", font: "18px Mulish, sans-serif", color: ink }} />
           <button type="submit" style={{ minHeight: 44, padding: "0 18px", border: 0, borderRadius: 4, background: brown, color: paper, font: "700 14px Mulish, sans-serif", letterSpacing: 1.2, textTransform: "uppercase", cursor: "pointer" }}>{T("Search")}</button>
         </form>
@@ -134,20 +149,20 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
         {res && res.cls === "MULTIPLE_POSSIBLE_MATCHES" && res.programmes.length > 1 ? <p style={{ margin: "12px 0 0", fontSize: 15.5, color: "var(--bronze-600)" }}>{ui.multi}</p> : null}
         {res ? res.caveats.map((c) => <p key={c} style={{ margin: "12px 0 0", fontSize: 15.5, color: muted, borderLeft: `3px solid ${gold}`, paddingLeft: 12 }}>{c}</p>) : null}
         {res ? res.order.map((k) => {
-          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, "INR", ui) + (eng.priceAvailable(p) && p.basis !== "night" ? " " + ui.basis : ""); return <a href={p.route} style={rowStyle}><span style={rowT}>{T(p.name)}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "var(--bronze-600)", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
-          if (k === "questions") return <Group key={k} title={ui.groups.questions} rows={res.questions} render={(r) => { const q = r.data; return <a href={`/faqs-downloads/?q=${encodeURIComponent(typed)}#${q.id}`} style={rowStyle}><span style={rowT}>{q.q}</span><span style={rowA}>{q.topic}</span>{chevron}</a>; }} />;
-          return <Group key={k} title={ui.groups.pages} rows={res.pages} render={(r) => { const p = r.data; return <a href={p.route} style={rowStyle}><span style={rowT}>{T(p.label)}</span>{p.desc ? <span style={rowA}>{T(p.desc)}</span> : null}{chevron}</a>; }} />;
+          if (k === "programmes") return <Group key={k} title={ui.groups.programmes} rows={res.programmes} render={(r) => { const p = r.data; const a = eng.answerLine(p, LOCALE_INFO[selectedLocale].currency, ui) + (eng.priceAvailable(p) && p.basis !== "night" ? " " + ui.basis : ""); return <a href={localHref(p.route)} style={rowStyle}><span style={rowT}>{T(p.name)}{p.sanskrit ? <span style={{ fontFamily: "Marcellus, serif", fontSize: 15, color: "var(--bronze-600)", marginLeft: 8 }}>{p.sanskrit}</span> : null}</span><span style={rowA}>{a}</span>{chevron}</a>; }} />;
+          if (k === "questions") return <Group key={k} title={ui.groups.questions} rows={res.questions} render={(r) => { const q = r.data; return <a href={localHref(`/faqs-downloads/?q=${encodeURIComponent(typed)}#${encodeURIComponent(q.id)}`)} style={rowStyle}><span style={rowT}>{q.q}</span><span style={rowA}>{q.topic}</span>{chevron}</a>; }} />;
+          return <Group key={k} title={ui.groups.pages} rows={res.pages} render={(r) => { const p = r.data; return <a href={localHref(p.route)} style={rowStyle}><span style={rowT}>{T(p.label)}</span>{p.desc ? <span style={rowA}>{T(p.desc)}</span> : null}{chevron}</a>; }} />;
         }) : null}
         {!res || res.total === 0 ? (
           <div style={{ marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 10 }}>
-            {ui.emptyButtons.map((b: any) => <a key={b.label} href={b.href || "/ayurvedic-treatments/"} style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 72, padding: "8px 12px", border: "1.5px solid color-mix(in srgb, var(--bronze-400) 35%, var(--ivory))", borderRadius: 4, background: "var(--card-bg)", fontSize: 18, color: ink, textDecoration: "none" }}>{T(b.label)}</a>)}
+            {ui.emptyButtons.map((b: any) => <a key={b.label} href={localHref(b.href || "/ayurvedic-treatments/")} style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 72, padding: "8px 12px", border: "1.5px solid color-mix(in srgb, var(--bronze-400) 35%, var(--ivory))", borderRadius: 4, background: "var(--card-bg)", fontSize: 18, color: ink, textDecoration: "none" }}>{T(b.label)}</a>)}
           </div>
         ) : null}
         <div style={{ marginTop: 28, borderTop: "1px solid color-mix(in srgb, var(--bronze-400) 18%, var(--ivory))", paddingTop: 14 }}>
           <p style={{ margin: "0 0 10px", fontSize: 15, color: muted }}>{ui.notSure}</p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <a href={WA} target="_blank" rel="noopener noreferrer" style={{ ...btn, background: green, color: paper }}>{ui.fallback.whatsapp}</a>
-            <a href={CONSULT} style={{ ...btn, background: "var(--marigold-400)", color: ink }}>{ui.fallback.consultation}</a>
+            <a href={localHref(CONSULT)} style={{ ...btn, background: "var(--marigold-400)", color: ink }}>{ui.fallback.consultation}</a>
             <a href={TEL} style={{ ...btn, border: `1.5px solid ${brown}`, color: brown, background: "var(--card-bg)" }}>{ui.fallback.call}</a>
           </div>
         </div>

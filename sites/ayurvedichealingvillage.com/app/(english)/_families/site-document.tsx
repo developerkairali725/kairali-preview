@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ChatbaseLoader } from "@kairali/chat";
 import { ConsentScripts } from "@kairali/consent";
 import analyticsConfig from "../../../analytics.config.json";
+import "../../../public/design/site-bundle.css";
 
 /**
  * The shared document for every locale of the approved-design lane: the
@@ -60,7 +61,6 @@ export function SiteDocument({
             Scoped by data-ahv-route, so loading it site-wide is inert elsewhere.
             Lives in public/design/, outside public/ahv/, so a design re-import
             cannot erase it. */}
-        <link rel="stylesheet" href="/design/site-bundle.css" />
 
 
         {/* Sitewide consistency layer (owner's 22 Sep 2026 final-build

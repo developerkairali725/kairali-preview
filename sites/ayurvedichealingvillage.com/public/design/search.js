@@ -37,7 +37,7 @@
   function norm(s) {
     return String(s == null ? "" : s).toLowerCase()
       .replace(/ß/g, "ss").normalize("NFD").replace(/[̀-ͯ]/g, "")
-      .replace(/[’'`´]/g, "").replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+      .replace(/[’'`´]/g, "").replace(/[^\p{L}\p{N}\p{M}]+/gu, " ").replace(/\s+/g, " ").trim();
   }
   function fold(s) { return norm(s).replace(/ue/g, "u").replace(/oe/g, "o").replace(/ae/g, "a"); }
   function pad(s) { return " " + s + " "; }
@@ -383,14 +383,32 @@
 
   /* --------------------------------------------------------- index load */
   var indexPromise = null;
+  function currentLocale() {
+    var loc = root.__AHV_LOCALE;
+    if (!loc && root.location && root.location.pathname === "/search/") {
+      try { loc = new URLSearchParams(root.location.search).get("lang"); } catch (e) { /* malformed query */ }
+    }
+    return /^(en|hi|de|fr|es|it|pt|nl|ru|ar|zh-Hans|ja|ko)$/.test(loc || "") ? loc : "en";
+  }
+  function localHref(href) {
+    var h = String(href || "");
+    if (h.charAt(0) !== "/" || h.charAt(1) === "/") return h;
+    var cut = h.search(/[?#]/), path = cut < 0 ? h : h.slice(0, cut);
+    var paths = root.AHV_LOCAL_PATHS, mapped = paths && Object.prototype.hasOwnProperty.call(paths, path) ? paths[path] : null;
+    return typeof mapped === "string" ? mapped + (cut < 0 ? "" : h.slice(cut)) : h;
+  }
+  function searchPageHref(q) {
+    var lang = currentLocale();
+    return "/search/?q=" + encodeURIComponent(q) + (lang === "en" ? "" : "&lang=" + encodeURIComponent(lang));
+  }
   function load() {
     if (indexPromise) return indexPromise;
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
-    var lang = (root.document && root.document.documentElement.lang || "en").slice(0, 2).toLowerCase();
-    // locale copies (tools/l10n/build.mjs) already point INDEX_URL at /ahv/l10n/<prefix>/search-index.json;
-    // no "<name>.<lang>.json" file is ever built, so guessing one only produced a 404 on every locale page
-    // (and the unread 404 kept a connection open, so prerender never reached network idle)
-    var url = lang === "en" || /\/ahv\/l10n\//.test(INDEX_URL) ? INDEX_URL : INDEX_URL.replace(/\.json$/, "." + lang + ".json");
+    // Locale copies already use their own index. The English /search/?lang=
+    // page selects the same generated index without inventing locale routes.
+    var lang = currentLocale();
+    var prefix = lang === "zh-Hans" ? "zh" : lang;
+    var url = /\/ahv\/l10n\//.test(INDEX_URL) || lang === "en" ? INDEX_URL : "/ahv/l10n/" + prefix + "/search-index.json";
     indexPromise = fetch(url, { credentials: "same-origin" }).then(function (r) { if (!r.ok && url !== INDEX_URL) return fetch(INDEX_URL).then(function (r2) { return r2.json(); }); if (!r.ok) throw new Error("index " + r.status); return r.json(); });
     indexPromise.catch(function () { indexPromise = null; });
     return indexPromise;
@@ -412,7 +430,7 @@
     return false;
   }
 
-  var api = { track: track, measurementActive: measurementActive, version: "2026-09-24a", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
+  var api = { track: track, measurementActive: measurementActive, currentLocale: currentLocale, localHref: localHref, searchPageHref: searchPageHref, version: "2026-09-24a", norm: norm, fold: fold, dl: dl, fmtNum: fmtNum, fmt: fmt, esc: esc, createEngine: createEngine, load: load, WA_HREF: WA_HREF, TEL_HREF: TEL_HREF, CONSULT_HREF: CONSULT_HREF };
   root.AHVSearch = api;
   if (!root.document) return;
 
@@ -437,7 +455,7 @@
         '<div class="ahvs-head"><h2 id="ahvs-title" class="ahvs-title">Search Kairali</h2>' +
           '<div class="ahvs-cur" role="group" aria-label="Currency"><button type="button" data-cur="INR">₹</button><button type="button" data-cur="USD">$</button><button type="button" data-cur="EUR">€</button></div>' +
           '<button type="button" class="ahvs-close" data-close="1" aria-label="Close search">✕</button></div>' +
-        '<form class="ahvs-form" action="/search/" method="get" role="search"><span class="ahvs-glyph" aria-hidden="true">⌕</span>' +
+        '<form class="ahvs-form" action="/search/" method="get" role="search"><input type="hidden" name="lang" value="' + esc(currentLocale()) + '"><span class="ahvs-glyph" aria-hidden="true">⌕</span>' +
           '<label for="ahvs-input" class="ahvs-sr">Search Kairali</label>' +
           '<input id="ahvs-input" class="ahvs-input" name="q" type="search" maxlength="120" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="Condition, price, airport, visa…">' +
           '<button type="button" class="ahvs-clear" aria-label="Clear" hidden>✕</button></form>' +
@@ -445,7 +463,7 @@
         '<div class="ahvs-body"></div>' +
         '<div class="ahvs-fallback"><p class="ahvs-notsure">Need help finding the right information?</p><div class="ahvs-fb-row">' +
           '<a href="' + WA_HREF + '" target="_blank" rel="noopener noreferrer" data-fb="whatsapp">WhatsApp patient care</a>' +
-          '<a href="' + CONSULT_HREF + '" data-fb="consultation">Free online consultation</a>' +
+          '<a href="' + esc(localHref(CONSULT_HREF)) + '" data-fb="consultation">Free online consultation</a>' +
           '<a href="' + TEL_HREF + '" data-fb="call">Call +91 9555 156 156</a></div></div>' +
       '</div>';
     doc.body.appendChild(dialog);
@@ -532,15 +550,15 @@
   function rowProgramme(r) {
     var p = r.data, name = mark(p.name, r.hits);
     var a = engine.answerLine(p, cur, ui);
-    return '<li><a class="ahvs-row" href="' + esc(p.route) + '"><span class="ahvs-row-t">' + name + (p.sanskrit ? ' <span class="ahvs-sk">' + esc(p.sanskrit) + "</span>" : "") + '</span><span class="ahvs-row-a">' + esc(a) + (priceAvailable(p) && p.basis !== "night" ? " " + esc(ui.basis) : "") + "</span></a></li>";
+    return '<li><a class="ahvs-row" href="' + esc(localHref(p.route)) + '"><span class="ahvs-row-t">' + name + (p.sanskrit ? ' <span class="ahvs-sk">' + esc(p.sanskrit) + "</span>" : "") + '</span><span class="ahvs-row-a">' + esc(a) + (priceAvailable(p) && p.basis !== "night" ? " " + esc(ui.basis) : "") + "</span></a></li>";
   }
   function rowQuestion(r) {
-    var q = r.data, href = "/faqs-downloads/?q=" + encodeURIComponent(input.value.trim()) + "#" + q.id;
+    var q = r.data, href = localHref("/faqs-downloads/?q=" + encodeURIComponent(input.value.trim()) + "#" + encodeURIComponent(q.id));
     return '<li><a class="ahvs-row" href="' + esc(href) + '"><span class="ahvs-row-t">' + mark(q.q, r.hits) + '</span><span class="ahvs-row-a">' + esc(q.topic) + "</span></a></li>";
   }
   function rowPage(r) {
     var p = r.data;
-    return '<li><a class="ahvs-row" href="' + esc(p.route) + '"><span class="ahvs-row-t">' + mark(p.label, r.hits) + '</span>' + (p.desc ? '<span class="ahvs-row-a">' + esc(p.desc) + "</span>" : "") + "</a></li>";
+    return '<li><a class="ahvs-row" href="' + esc(localHref(p.route)) + '"><span class="ahvs-row-t">' + mark(p.label, r.hits) + '</span>' + (p.desc ? '<span class="ahvs-row-a">' + esc(p.desc) + "</span>" : "") + "</a></li>";
   }
   function mark(text, hits) {
     var out = esc(text);
@@ -558,7 +576,7 @@
       (rest.length ? '<button type="button" class="ahvs-more" data-more="1">' + esc(fmt(ui.showAll, { n: rows.length }).replace(/^Show all /, "Show ")) + "</button>" : "") + "</section>";
   }
   function emptyState(heading) {
-    var b = ui.emptyButtons.map(function (x) { return x.action === "chips" ? '<button type="button" data-chips="1">' + esc(x.label) + "</button>" : '<a href="' + esc(x.href) + '">' + esc(x.label) + "</a>"; }).join("");
+    var b = ui.emptyButtons.map(function (x) { return x.action === "chips" ? '<button type="button" data-chips="1">' + esc(x.label) + "</button>" : '<a href="' + esc(localHref(x.href)) + '">' + esc(x.label) + "</a>"; }).join("");
     var often = (ui.oftenSearched || engine.index.oftenSearched || []).map(function (q) { return '<button type="button" data-q="' + esc(q) + '">' + esc(q) + "</button>"; }).join("");
     return '<div class="ahvs-empty"><p class="ahvs-empty-h">' + esc(heading || ui.emptyHeading) + '</p><div class="ahvs-six">' + b + '</div>' + (often ? '<p class="ahvs-often"><span>' + esc(ui.oftenSearchedLabel) + "</span> " + often + "</p>" : "") + "</div>";
   }
@@ -604,7 +622,7 @@
       if (k === "questions") html += group("questions", res.questions, rowQuestion);
       if (k === "pages") html += group("pages", res.pages, rowPage);
     });
-    html += '<p><a class="ahvs-all" href="/search/?q=' + encodeURIComponent(q) + '">View all ' + res.total + (res.total === 1 ? ' result' : ' results') + ' →</a></p>';
+    html += '<p><a class="ahvs-all" href="' + esc(searchPageHref(q)) + '">View all ' + res.total + (res.total === 1 ? ' result' : ' results') + ' →</a></p>';
     body.innerHTML = html;
   }
 
@@ -687,9 +705,9 @@
       res.order.forEach(function (kind) {
         res[kind].slice(0, 6).forEach(function (r) {
           var p = r.data;
-          if (kind === "programmes") list.push({ href: p.route, t: p.name, a: p.sanskrit || p.durationDisplay || "", k: "Programme" });
-          else if (kind === "questions") list.push({ href: p.href || "/faqs-downloads/#" + p.id, t: p.q, a: p.topic || "", k: "Question" });
-          else list.push({ href: p.route, t: p.label, a: p.desc || "", k: "Page" });
+          if (kind === "programmes") list.push({ href: localHref(p.route), t: p.name, a: p.sanskrit || p.durationDisplay || "", k: "Programme" });
+          else if (kind === "questions") list.push({ href: localHref(p.href || "/faqs-downloads/#" + p.id), t: p.q, a: p.topic || "", k: "Question" });
+          else list.push({ href: localHref(p.route), t: p.label, a: p.desc || "", k: "Page" });
         });
       });
       list = list.slice(0, 6);

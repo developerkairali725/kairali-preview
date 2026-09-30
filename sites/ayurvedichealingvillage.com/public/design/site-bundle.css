@@ -1833,6 +1833,118 @@ body footer .ahv-footer-langs, body footer .ahv-footer-langs a, body footer .ahv
 
 .ahv-home-rates p a { text-decoration:underline; text-underline-offset:3px; }
 
+/* Short touch landscape: keep the shared and home desktop views, but prevent their
+   wrapping navigation from consuming the screen. The nav remains horizontally
+   scrollable, and every visible action keeps at least a 44px touch target. */
+@media (orientation:landscape) and (max-height:500px) and (min-width:700px) and (pointer:coarse) {
+  #ahv-design-root header[data-dc-tpl="4"],
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) {
+    height:56px !important;
+    min-height:56px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child {
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+    min-height:56px;
+    box-sizing:border-box;
+    padding:5px 0 !important;
+    gap:8px !important;
+    flex-wrap:nowrap !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > a img,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > a img {
+    height:34px !important;
+    width:auto !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > nav,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav {
+    flex:1 1 0 !important;
+    min-width:0;
+    max-height:46px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    flex-wrap:nowrap !important;
+    white-space:nowrap;
+    gap:12px !important;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > nav > a,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav > a {
+    flex:none;
+    min-height:44px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > div:last-child,
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child {
+    flex:none;
+    flex-wrap:nowrap !important;
+    gap:4px !important;
+  }
+  #ahv-design-root header[data-dc-tpl="4"] > div:first-child > div:last-child > a[href^="https://bookings.ayurvedichealingvillage.com"],
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child > a[href^="https://bookings.ayurvedichealingvillage.com"] {
+    min-height:44px;
+    padding:6px 10px !important;
+    box-sizing:border-box;
+    display:inline-flex;
+    align-items:center;
+  }
+  html[data-ahv-fh] #ahv-design-root header[data-dc-tpl="4"] .ahv-fh-btn-desk {
+    flex:1 1 0;
+    min-width:44px;
+    max-width:none;
+    margin-inline:0;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) {
+    padding:6px 0 !important;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) > div > a > img {
+    height:44px !important;
+    width:auto !important;
+  }
+  #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:first-of-type > div:has(> div > a > img[src*="logo-white"]) > div > div:last-child {
+    gap:10px !important;
+  }
+  #ahv-contact-controls { right:12px; flex-direction:row; gap:8px; }
+  #ahv-contact-controls a, #ahv-contact-controls button,
+  #ahv-contact-controls .ahv-contact-wa, #ahv-contact-controls .ahv-contact-chat {
+    width:48px;
+    min-width:48px;
+    height:48px;
+  }
+  #ahv-contact-controls .ahv-contact-chat { padding:0; border-radius:50%; }
+  #ahv-contact-controls .ahv-contact-label { display:none; }
+}
+
+/* Snapshot chrome on native pages has the language markup but no design boot
+   stylesheet. Keep its switcher and open list usable at every viewport size. */
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang { position:relative; display:inline-flex; }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    min-width:44px; min-height:44px; box-sizing:border-box; padding:0 7px;
+    border:1px solid #C9BFA8; border-radius:4px; background:transparent;
+    color:#2A2118; font:700 13px Mulish,system-ui,sans-serif;
+    cursor:pointer;
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list {
+    position:absolute; top:calc(100% + 6px); inset-inline-end:0; z-index:120;
+    min-width:190px; max-height:calc(100dvh - 68px); box-sizing:border-box; overflow:auto;
+    margin:0; padding:6px; list-style:none;
+    background:#FFFDF7; border:1px solid #E2DACA; border-radius:6px;
+    box-shadow:0 14px 34px rgba(42,32,20,.18);
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list[hidden] { display:none; }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list a {
+    display:flex; align-items:center; gap:10px; min-height:44px;
+    padding:0 12px; border-radius:4px; color:#2A2118;
+    font-size:15px; font-weight:600; letter-spacing:0; text-transform:none;
+    text-decoration:none; white-space:nowrap;
+  }
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-list a:focus-visible,
+  #ahv-design-root header:is(.ahv-sc-desk,.ahv-sc-narrow-h) .ahv-lang-btn:focus-visible {
+    outline:3px solid #6B7726; outline-offset:2px;
+  }
+
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
    Space the input itself: password-manager helper nodes must not add flex gaps. */

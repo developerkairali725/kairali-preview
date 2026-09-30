@@ -1,9 +1,10 @@
 import { newsletterFooters } from "../_families/newsletter-markup.mjs";
+import { localizeFallbackChrome, searchLanguageHref } from "./search-language";
 import { computedFooterYear } from "../_families/computed-footer-year";
 import { youtubeNewTabs } from "../_families/youtube-links";
 import { readFileSync, existsSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { LOCALE_CODES, localizedPath, type LocaleCode } from "../_families/l10n";
+import { LOCALE_CODES, LOCALE_INFO, localizedPath, translate, type LocaleCode } from "../_families/l10n";
 import { join } from "node:path";
 
 /**
@@ -77,12 +78,19 @@ const show = (html: string, cls: string, display: string) =>
  * localized ones; selectors are structural because aria-labels are translated;
  * the snapshot's language switcher is re-pointed at THIS page's equivalents.
  */
-export function siteChrome(locale: LocaleCode = "en", enPath?: string): Chrome {
+export function siteChrome(locale: LocaleCode = "en", enPath?: string, query = ""): Chrome {
   const base = chromeFor(locale);
   if (!enPath) return base;
-  const relink = (html: string) => html.replace(/<a href="[^"]*"([^>]*data-ahv-lang-option="([^"]+)")/g, (m, rest, code) => {
-    const href = LOCALE_CODES.includes(code as LocaleCode) ? localizedPath(enPath, code as LocaleCode) : null;
-    return href ? `<a href="${href}"${rest}` : m;
+  const relink = (html: string) => html.replace(/<a\b[^>]*data-ahv-lang-option="([^"]+)"[^>]*>/g, (tag, code) => {
+    if (!LOCALE_CODES.includes(code as LocaleCode)) return tag;
+    const href = enPath === "/search/" ? searchLanguageHref(code, query) : localizedPath(enPath, code as LocaleCode);
+    if (!href) return tag;
+    let linked = tag.replace(/\bhref="[^"]*"/, `href="${href}"`);
+    if (enPath === "/search/") {
+      linked = linked.replace(/\saria-current="[^"]*"/g, "");
+      if (code === locale) linked = linked.replace(/>$/, ' aria-current="page">');
+    }
+    return linked;
   });
   return { ...base, header: relink(base.header), footer: relink(base.footer) };
 }
@@ -91,16 +99,31 @@ function chromeFor(locale: LocaleCode): Chrome {
   if (hit) return hit;
   let cached: Chrome | null = null;
   let t = "";
+  let englishFallback = false;
   try {
     if (locale === "en") t = newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))));
     else {
       const gz = join(process.cwd(), "l10n", "prerender", locale, "about-us.html.gz");
-      t = existsSync(gz) ? computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8"))) : "";
+      englishFallback = !existsSync(gz);
+      t = englishFallback ? newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))))
+        : computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8")));
     }
   } catch { t = ""; }
-  const deskHeader = block(t, "header", 0), narrowHeader = block(t, "header", 1);
-  const panel = narrowHeader ? nextElement(t, narrowHeader) : null;
-  const deskFooter = block(t, "footer", 0), narrowFooter = block(t, "footer", 1);
+  let deskHeader = block(t, "header", 0), narrowHeader = block(t, "header", 1);
+  let panel = narrowHeader ? nextElement(t, narrowHeader) : null;
+  let deskFooter = block(t, "footer", 0), narrowFooter = block(t, "footer", 1);
+  if (englishFallback) {
+    const localize = (html: string | null) => html && localizeFallbackChrome(
+      html, locale, LOCALE_INFO[locale].name,
+      (path) => localizedPath(path, locale),
+      (text) => translate(locale, text),
+    );
+    deskHeader = localize(deskHeader);
+    narrowHeader = localize(narrowHeader);
+    panel = localize(panel);
+    deskFooter = localize(deskFooter);
+    narrowFooter = localize(narrowFooter);
+  }
   const ok = deskHeader && narrowHeader && panel && deskFooter && narrowFooter && /<nav\b/.test(deskHeader) && /aria-expanded=/.test(narrowHeader) && /<button\b/.test(panel);
   if (!ok) {
     console.error(`[search/site-chrome] snapshot ${SNAPSHOT} lacks a chrome block — plain strip used (header:${!!deskHeader}/${!!narrowHeader} panel:${!!panel} footer:${!!deskFooter}/${!!narrowFooter})`);
