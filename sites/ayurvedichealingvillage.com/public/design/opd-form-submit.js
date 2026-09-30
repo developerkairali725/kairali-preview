@@ -1,8 +1,8 @@
 /* Walk-in Ayurveda Treatment (OPD) intake — the one "legacy-enquiry" variant
    page that is a live destination (contact-us-old / enquiry-form-old /
    online-consultation-old / postulez-maintenant are historical/untranslated
-   snapshots and are deliberately left untouched). No React submit handler
-   exists for this variant, so this mirrors the newsletter.js pattern: a
+   snapshots and are deliberately left untouched). This overrides the inert
+   legacy React submit notice, mirroring the newsletter.js pattern: a
    small, page-scoped progressive-enhancement listener alongside the shared
    family logic, not inside it. boot.ts's capture-phase submit guard already
    preventDefaults every non-search form; this only adds the real behaviour
@@ -32,6 +32,8 @@
     if (!form || !form.matches || !form.matches('form')) return;
     if (!form.elements.namedItem('fname') || !form.elements.namedItem('symptoms')) return;
     event.preventDefault();
+    // The shared legacy view must not overwrite this handler's real receipt/error.
+    event.__ahvOpdHandled = true;
     if (form.getAttribute('aria-busy') === 'true') return;
     var fd = new FormData(form);
     var email = (fd.get('email') || '').toString().trim();

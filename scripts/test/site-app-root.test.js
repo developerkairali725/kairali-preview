@@ -1,7 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdirSync, mkdtempSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
+import { createRequire } from "node:module";
+import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { resolveSiteAppRoot } from "../lib/site-app-root.mjs";
 
@@ -60,4 +62,29 @@ test("SITE identity itself cannot escape the fleet sites directory", (t) => {
   for (const value of ["../example.com", "/sites/example.com", "sites/../example.com", "sites/example.com/site", "sites/example.com;false"]) {
     assert.throws(() => resolveSiteAppRoot(value, { root: f.root }), /Invalid fleet site path/);
   }
+});
+
+
+test("CommonJS and native ESM callers use the same resolver", (t) => {
+  const require = createRequire(import.meta.url);
+  const commonjs = require("../lib/site-app-root.cjs");
+  assert.equal(commonjs.resolveSiteAppRoot, resolveSiteAppRoot);
+  const f = fixture(t, "site");
+  assert.equal(commonjs.resolveSiteAppRoot("sites/example.com", { root: f.root }), join(f.site, "site"));
+  f.configure("../other.com");
+  assert.throws(() => commonjs.resolveSiteAppRoot("sites/example.com", { root: f.root }), /relative child directory/);
+});
+
+test("CommonJS default root stays module-relative when the caller changes directory", (t) => {
+  const f = fixture(t, "site");
+  const lib = join(f.root, "scripts", "lib");
+  mkdirSync(lib, { recursive: true });
+  const modulePath = join(lib, "site-app-root.cjs");
+  writeFileSync(modulePath, readFileSync(new URL("../lib/site-app-root.cjs", import.meta.url)));
+  const result = spawnSync(process.execPath, ["-e", `
+    const { resolveSiteAppRoot } = require(${JSON.stringify(modulePath)});
+    process.stdout.write(resolveSiteAppRoot("sites/example.com"));
+  `], { cwd: tmpdir(), encoding: "utf8" });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.stdout, join(f.site, "site"));
 });
