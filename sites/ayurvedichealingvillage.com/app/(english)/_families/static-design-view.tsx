@@ -511,7 +511,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
-      <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
+      <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-snapshot-state="retired" data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
       <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />
