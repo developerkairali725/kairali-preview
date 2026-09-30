@@ -166,9 +166,9 @@ const STATIC_BOOT = `
       buttons.forEach(function (button, index) {
         var active = ["INR", "USD", "EURO"][index] === nextCurrency;
         button.setAttribute("aria-pressed", String(active));
-        button.style.background = active ? "#5A4420" : "#fff";
-        button.style.color = active ? "#F7F4EA" : "#2A2118";
-        button.style.borderColor = active ? "#5A4420" : "#C9BFA8";
+        button.style.background = active ? "var(--bronze-600)" : "var(--ivory)";
+        button.style.color = active ? "var(--ivory)" : "var(--ink)";
+        button.style.borderColor = active ? "var(--bronze-600)" : "var(--ink-line)";
       });
     }
     buttons.forEach(function (button, index) {
@@ -232,8 +232,8 @@ const STATIC_BOOT = `
           }
           programmeButtons.forEach(function (other, otherIndex) {
             var active = otherIndex === index;
-            other.style.background = active ? "#5A4420" : "transparent";
-            other.style.color = active ? "#F7F4EA" : "#2A2118";
+            other.style.background = active ? "var(--bronze-600)" : "transparent";
+            other.style.color = active ? "var(--ivory)" : "var(--ink)";
           });
         });
       });
@@ -265,9 +265,9 @@ const STATIC_BOOT = `
       rateButtons.forEach(function (button, index) {
         var active = rateCurrencies[index] === currency;
         button.setAttribute("aria-pressed", String(active));
-        button.style.background = active ? "#5A4420" : "#fff";
-        button.style.color = active ? "#F7F4EA" : "#2A2118";
-        button.style.borderColor = active ? "#5A4420" : "#C9BFA8";
+        button.style.background = active ? "var(--bronze-600)" : "var(--ivory)";
+        button.style.color = active ? "var(--ivory)" : "var(--ink)";
+        button.style.borderColor = active ? "var(--bronze-600)" : "var(--ink-line)";
       });
       try { localStorage.setItem("ahv-cur", currency); } catch (error) {}
     }
@@ -294,18 +294,18 @@ const STATIC_BOOT = `
           });
           galleryButtons.forEach(function (other) {
             var active = other === button;
-            other.style.background = active ? "#EEB41E" : "transparent";
-            other.style.color = active ? "#2A2118" : "#F7F4EA";
+            other.style.background = active ? "var(--marigold-400)" : "transparent";
+            other.style.color = active ? "var(--ink)" : "var(--ivory)";
           });
         });
       });
       var photoData = cfg.staticHome.galleryPhotos || [];
     var galleryDialog = document.createElement("dialog");
     galleryDialog.setAttribute("aria-label", "Photo gallery");
-    galleryDialog.style.cssText = "border:0;padding:18px;max-width:min(96vw,1100px);max-height:94vh;background:#17130f;color:#fff;border-radius:6px;box-shadow:0 16px 70px rgba(0,0,0,.5)";
+    galleryDialog.style.cssText = "border:0;padding:18px;max-width:min(96vw,1100px);max-height:94vh;background:var(--forest-800);color:var(--ivory);border-radius:6px;box-shadow:0 16px 70px color-mix(in srgb,var(--ink) 40%,transparent)";
     var galleryClose = document.createElement("button");
     galleryClose.type = "button"; galleryClose.textContent = "Close"; galleryClose.setAttribute("aria-label", "Close photo");
-    galleryClose.style.cssText = "display:block;margin:0 0 12px auto;padding:10px 14px;border:1px solid #ddd;background:#17130f;color:#fff;cursor:pointer";
+    galleryClose.style.cssText = "display:block;margin:0 0 12px auto;padding:10px 14px;border:1px solid color-mix(in srgb,var(--ivory) 38%,var(--forest-800));background:var(--forest-800);color:var(--ivory);cursor:pointer";
     var galleryImage = document.createElement("img");
     galleryImage.style.cssText = "display:block;max-width:90vw;max-height:76vh;width:auto;height:auto;object-fit:contain;margin:auto";
     var galleryCaption = document.createElement("p");
@@ -316,7 +316,7 @@ const STATIC_BOOT = `
     galleryPrevious.type = "button"; galleryPrevious.textContent = "Previous"; galleryPrevious.setAttribute("aria-label", "Previous photo");
     var galleryNext = document.createElement("button");
     galleryNext.type = "button"; galleryNext.textContent = "Next"; galleryNext.setAttribute("aria-label", "Next photo");
-    [galleryPrevious, galleryNext].forEach(function (button) { button.style.cssText = "padding:10px 14px;border:1px solid #ddd;background:#17130f;color:#fff;cursor:pointer"; });
+    [galleryPrevious, galleryNext].forEach(function (button) { button.style.cssText = "padding:10px 14px;border:1px solid color-mix(in srgb,var(--ivory) 38%,var(--forest-800));background:var(--forest-800);color:var(--ivory);cursor:pointer"; });
     galleryControls.append(galleryPrevious, galleryNext);
     galleryDialog.append(galleryClose, galleryImage, galleryCaption, galleryControls);
     document.body.appendChild(galleryDialog);
