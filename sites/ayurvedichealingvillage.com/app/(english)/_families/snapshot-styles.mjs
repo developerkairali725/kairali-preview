@@ -83,6 +83,26 @@ export function viewFirstPaintStyles(viewTemplate, resources, readText) {
   return out;
 }
 
+/** Inline only served local font CSS, rebasing its relative font URLs to the stylesheet directory.
+ * Keep the complete @font-face text (all weights, display values and unicode ranges) verbatim otherwise.
+ * An unexpected URL or markup falls back to the original stylesheet link. */
+export function inlineFontStyles(fonts, readText) {
+  return fonts.map((href) => {
+    const source = LOCAL_FONT_CSS.test(href) ? readText(href) : null;
+    if (!source || /<\/?\s*(?:style|script)/i.test(source) || /[{][{]/.test(source)) return { href, css: null };
+    let urls = 0;
+    let unsafe = false;
+    const base = href.slice(0, href.lastIndexOf("/") + 1);
+    const css = source.replace(/url\(\s*(["']?)([^"'()\s]+)\1\s*\)/gi, (match, quote, url) => {
+      if (!/^[A-Za-z0-9._-]+\.(?:woff2?|ttf)$/.test(url)) { unsafe = true; return match; }
+      urls++;
+      return `url(${quote}${base}${url}${quote})`;
+    });
+    if (unsafe || !urls || (source.match(/url\s*\(/gi) || []).length !== urls) return { href, css: null };
+    return { href, css };
+  });
+}
+
 /**
  * The body-text face of these styles: the family of the first `body{font-family:…}` rule, weight 400,
  * normal style — the face the page's paragraphs (the text LCP element on the text-LCP routes) render in.
@@ -141,7 +161,7 @@ const TEXT_CACHE = new Map();
  * Build-time reader over public/: the served mobile view payload for a route config.
  * @param {{ mobileView: string | null, payloadBase: string, resources?: Record<string, string> }} cfg
  * @param {string} [publicDir]
- * @returns {{ fonts: string[], styles: string[], preloadFonts: string[] } | null}
+ * @returns {{ fonts: string[], styles: string[], fontCss: { href: string, css: string | null }[], preloadFonts: string[] } | null}
  */
 export function snapshotStylesFor(cfg, publicDir = join(process.cwd(), "public")) {
   const id = cfg && cfg.mobileView;
@@ -164,5 +184,5 @@ export function snapshotStylesFor(cfg, publicDir = join(process.cwd(), "public")
   if (!styles.fonts.length && !styles.styles.length) return null;
   // Only the body face is preloaded (measured: all four upright faces bought nothing on the simulated LCP and
   // cost 0.2-0.9 s under applied throttling, where 157 KB of TTF competed with the styles and the LCP image).
-  return { ...styles, preloadFonts: bodyFontFiles(styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
+  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: bodyFontFiles(styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
 }

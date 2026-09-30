@@ -208,7 +208,9 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
           ))
         : null}
       {snapshotFaces
-        ? snapshotFaces.fonts.map((href) => <link key={href} rel="stylesheet" href={href} data-ahv-snapshot-style="" />)
+        ? snapshotFaces.fontCss.map(({ href, css }) => css
+            ? <style key={href} data-ahv-snapshot-style="" dangerouslySetInnerHTML={{ __html: css }} />
+            : <link key={href} rel="stylesheet" href={href} data-ahv-snapshot-style="" />)
         : null}
       {firstPaint
         ? firstPaint.styles.map((css, i) => (

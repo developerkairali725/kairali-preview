@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, bodyFontFiles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
   const t = `<helmet>
@@ -62,6 +62,25 @@ test("every served mobile view (EN + built locales) yields safe first-paint styl
   }
   assert.ok(views > 80, `mobile views seen: ${views}`);
   assert.ok(withStyles / views > 0.9, `views with first-paint styles: ${withStyles}/${views}`);
+});
+
+test("inline font CSS retains every face and declaration and resolves only local font URLs", () => {
+  const cm = JSON.parse(fs.readFileSync("english-candidate/component-map.json", "utf8"));
+  for (const view of ["ahv-page-our-villas-mobile", "ahv-page-panchkarma-treatment-mobile"]) {
+    const out = snapshotStylesFor({ mobileView: view, payloadBase: "/ahv/views/", resources: cm.resources });
+    assert.equal(out.fontCss.length, out.fonts.length, view);
+    for (const { href, css } of out.fontCss) {
+      assert.ok(css, `${view}: ${href} did not inline`);
+      const original = fs.readFileSync("public" + href, "utf8");
+      const base = href.slice(0, href.lastIndexOf("/") + 1);
+      assert.equal(css.replaceAll(base, ""), original, `${view}: font CSS changed beyond URL rebasing`);
+      assert.equal((css.match(/@font-face\b/g) || []).length, (original.match(/@font-face\b/g) || []).length);
+      for (const url of css.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/g))
+        assert.ok(fs.existsSync("public" + url[1]), `${view}: missing font ${url[1]}`);
+    }
+  }
+  assert.deepEqual(inlineFontStyles(["/ahv/fonts/a.css"], () => '@font-face{src:url("https://example.com/x.woff2")}'),
+    [{ href: "/ahv/fonts/a.css", css: null }], "unexpected URLs retain stylesheet fallback");
 });
 
 test("firstScreenPoster: a first-screen <video poster> only, local paths only", () => {
