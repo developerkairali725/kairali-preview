@@ -78,36 +78,23 @@ const browser = await chromium.launch();
   await ctx.close();
 }
 
-// 4. Forms: errors, then honest preview state (no network submission)
+// 4. Q8-C supersedes editable mock validation: all six preview forms are inactive.
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
   const posts = [];
   page.on("request", (r) => { if (r.method() !== "GET") posts.push(r.url()); });
+  const routes = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/apply-now.aspx?id=7", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"];
+  for (const route of routes) {
+    await page.goto(BASE + route, { waitUntil: "networkidle" });
+    const form = page.locator("main form[data-form]");
+    check(`${route}: all form controls inactive`, await form.locator("input, select, textarea, button").evaluateAll((els) => els.length > 0 && els.every((el) => el.matches(":disabled"))));
+    check(`${route}: explicit preview notice`, (await form.textContent()).includes("does not collect, store, email or upload"));
+    await form.evaluate((el) => el.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })));
+  }
+  check("no form data transmitted (no POST requests)", posts.length === 0, posts.join(", "));
   await page.goto(BASE + "/enquiry-form.aspx", { waitUntil: "networkidle" });
   check("general enquiry has no gender/age/address fields (Q7)", (await page.locator('main form[data-form="enquiry"] [name="gender"], main form[data-form="enquiry"] [name="age"], main form[data-form="enquiry"] [name="address"]').count()) === 0);
-  await page.click('main form[data-form="enquiry"] button[type="submit"]');
-  const errs = await page.locator('main form[data-form="enquiry"] .error').count();
-  check("empty submit shows inline errors", errs >= 7, `${errs} errors`);
-  check("error summary focused", await page.evaluate(() => document.activeElement?.classList.contains("form-status")));
-  await page.screenshot({ path: shots + "enquiry-errors.png", fullPage: true });
-  const f = 'main form[data-form="enquiry"] ';
-  await page.fill(f + '[name="name"]', "Test Person");
-  await page.fill(f + '[name="phone"]', "9999999999");
-  await page.fill(f + '[name="email"]', "not-an-email");
-  await page.click(f + 'button[type="submit"]');
-  check("invalid email message", (await page.textContent(f + "#enquiry-email-err"))?.includes("valid email"));
-  await page.fill(f + '[name="email"]', "test@example.com");
-  await page.selectOption(f + '[name="country"]', "India");
-  await page.fill(f + '[name="state"]', "Delhi"); await page.fill(f + '[name="city"]', "New Delhi");
-  await page.fill(f + '[name="subject"]', "Synthetic QA"); await page.fill(f + '[name="message"]', "Synthetic QA message — not a real enquiry.");
-  await page.check(f + '[name="agree"]');
-  await page.click(f + 'button[type="submit"]');
-  await page.waitForSelector(f + ".form-status.preview");
-  const txt = await page.textContent(f + ".form-status.preview");
-  check("valid submit shows 'checked — not sent' state", txt.includes("not sent") && txt.includes("nothing has been sent"));
-  check("no form data transmitted (no POST requests)", posts.length === 0, posts.join(", "));
-  await page.screenshot({ path: shots + "enquiry-preview-state.png", fullPage: true });
   await page.goto(BASE + "/apply-now.aspx?id=7", { waitUntil: "networkidle" });
   check("apply ?id=7 pre-selects Ayurveda Therapist", (await page.inputValue('main [name="post"]')) === "Ayurveda Therapist");
   check("apply ?id=7 pre-fills job reference Ayu819814", (await page.inputValue('main [name="jobRef"]')) === "Ayu819814");

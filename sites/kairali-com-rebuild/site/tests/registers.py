@@ -9,10 +9,13 @@ seo = {r["route"]: r for r in rep["seo"]}
 par = {r["route"]: r for r in rep["parity"]}
 status = {r["route"]: r for r in rep["routes"]}
 mapping = json.load(open(os.path.join(REPO, "reference", "route-family-mapping.json")))
-def reason(t):
+# Exact captured blocks only; unknown omissions still fail below.
+omissions = {(r["route"], r["source_text"][:200]): r["classification"] for r in json.load(open(os.path.join(EVID, "owner-approved-omissions.json"), encoding="utf-8"))}
+def reason(t, route=""):
+    if (route, t) in omissions: return omissions[(route, t)]
     t = t.lower()
     if "security code" in t: return "CAPTCHA replaced (anti-spam integration pending)"
-    if re.search(r"please (enter|select|provide|present)|enter only numbers|valid email|mandatory", t): return "form validation message (shown on error in rebuilt form)"
+    if re.search(r"please (enter|select|provide|present)|enter only numbers|valid email|mandatory", t): return "captured validation text retained in schema; Q8-C disables preview interaction"
     if t.strip().startswith(("gender", "address")) or "enter age" in t: return "field removed from general enquiry (owner Q7)"
     if t.startswith("mob:") or t.startswith("tel:"): return "empty phone stub removed (R-11)"
     if "courtesy: whyayurveda" in t: return "hidden popup shell in source (not content)"
@@ -44,7 +47,7 @@ for r in mapping["routes"]:
     rows.append({"route": rt, "classification": r["classification"], "family": r["wf_family"], "template": r["template"], "disposition": r["action"],
                  "http_status": s.get("status"), "redirect_to": s.get("location", ""), "source_url": p["sourceUrl"] if p else "", "source_sha256": p["sourceSha256"] if p else "",
                  "rendered_words": p["words"] if p else "", "source_blocks": pr.get("blocks", ""), "unmatched_blocks": len(miss),
-                 "unmatched_reasons": "; ".join(sorted({(f"rendered on {m['moved']}" if m.get("moved") else reason(m["text"])) for m in miss})), "owner_fact": r.get("owner_fact", "")})
+                 "unmatched_reasons": "; ".join(sorted({(f"rendered on {m['moved']}" if m.get("moved") else reason(m["text"], rt)) for m in miss})), "owner_fact": r.get("owner_fact", "")})
 for o in mapping["observations_not_in_215"]:
     rt = o["route"]; s = status.get(rt, {}); p = pages.get(rt)
     rows.append({"route": rt, "classification": "Observation: " + o["triage"], "family": "", "template": (p or {}).get("template") or "", "disposition": "discovered route (outside the 215)",
@@ -62,12 +65,15 @@ for rt, p in pages.items():
 with open(os.path.join(EVID, "metadata-register.csv"), "w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=list(meta[0].keys())); w.writeheader(); w.writerows(meta)
 unm = [(r["route"], m) for r in rows for m in (par.get(r["route"], {}).get("missing", []))]
-buckets = collections.Counter("moved" if m.get("moved") else reason(m["text"]) for _, m in unm)
+buckets = collections.Counter("moved" if m.get("moved") else reason(m["text"], rt) for rt, m in unm)
 words = collections.Counter()
-for _, m in unm: words["moved" if m.get("moved") else reason(m["text"])] += m["words"]
+for rt, m in unm: words["moved" if m.get("moved") else reason(m["text"], rt)] += m["words"]
 with open(os.path.join(EVID, "parity-classification.csv"), "w", newline="") as fh:
     w = csv.writer(fh); w.writerow(["route", "unmatched_text", "words", "classification"])
-    for rt, m in unm: w.writerow([rt, m["text"], m["words"], f"rendered on {m['moved']}" if m.get("moved") else reason(m["text"])])
+    for rt, m in unm: w.writerow([rt, m["text"], m["words"], f"rendered on {m['moved']}" if m.get("moved") else reason(m["text"], rt)])
 print("parity buckets (blocks):", dict(buckets)); print("parity buckets (words):", dict(words))
 print("routes", len(rows), "| review-needed unmatched:", review[:10])
 print("titles changed", sum(m["title_changed"] for m in meta), "| descriptions changed", sum(m["description_changed"] for m in meta), "of", len(meta))
+
+if review:
+    raise SystemExit("Unclassified parity omissions require review")

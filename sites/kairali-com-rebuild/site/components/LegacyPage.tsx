@@ -6,6 +6,7 @@ import { Breadcrumbs, JsonLd, Photograph, SubNav } from "./Bits";
 import { Canopy, Divider } from "./Motif";
 import Prose, { videoFacade } from "./Prose";
 import Form from "./Form";
+import { documentHubLink } from "@/lib/document-links";
 import DownloadCentre from "./DownloadCentre";
 import SearchPage from "./SearchPage";
 import { AwardsBrowser, BrandPillars, Certifications, LatestAwards, NewsBrowser, awardIdFor } from "./Lists";
@@ -111,7 +112,8 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
           {sub && <SubBrandCallout b={sub} />}
           {base === "/kairali-group-awards.aspx" && <Certifications />}
           {base === "/villa-raag.aspx" && <p className="badge" style={{ marginBottom: 24 }}>Kairali-owned and operated</p>}
-          {base === "/svata-katerina-prague-czech-republic.aspx" && <p className="notice" style={{ marginBottom: 32 }}>Svata Katerina is a current partner resort of Kairali. Room and package rates below are as previously published; please confirm current rates and availability using the enquiry form on this page.</p>}
+          {base === "/svata-katerina-prague-czech-republic.aspx" && <p className="notice" style={{ marginBottom: 32 }}>Svata Katerina is a current partner resort of Kairali. Contact the resort directly to confirm current programmes and availability.</p>}
+          {["/careers.aspx", "/current-openings.aspx", "/apply-now.aspx"].includes(base) && <p className="notice" style={{ marginBottom: 32 }}>These are previously published vacancy records. Current availability is awaiting HR confirmation; applications are inactive in this preview.</p>}
           {base === "/virtual-tour.aspx" && <ComingSoon />}
           {base === "/kairali-group-awards.aspx" ? <AwardsBrowser /> : base === "/kairali-news.aspx" ? <><article className="stack prose-cap" style={{ gap: 0, maxWidth: 880, marginBottom: 40 }}>{body}</article><NewsBrowser /></> : isForm ? <FormLayout page={page} body={body} applyId={applyId} /> :
             withRail ? (
@@ -158,11 +160,11 @@ function OpenerActions({ actions }: { actions: { label: string; href: string }[]
   return (
     <div className="actions">
       {actions.map((a, i) => a.href.startsWith("/download/")
-        ? <a key={a.href} className="btn secondary" href={a.href}>{a.label}<span className="sr-only"> (earlier edition, PDF)</span></a>
+        ? <a key={a.href} className="btn secondary" href={documentHubLink(a.href)}>{a.label}<span className="sr-only"> (maintained document library)</span></a>
         : a.href.startsWith("http")
           ? <a key={a.href} className={`btn${i ? " secondary" : ""}`} href={a.href} rel="noopener" target="_blank">{a.label} ↗<span className="sr-only"> (opens in a new tab)</span></a>
           : <Link key={a.href} className={`btn${i ? " secondary" : ""}`} href={a.href}>{a.label}</Link>)}
-      {actions.some((a) => a.href.startsWith("/download/")) && <p className="meta" style={{ flexBasis: "100%" }}>The brochure is an earlier edition kept available until a new one is published; see the <Link href="/download-centre.aspx">Download Centre</Link> for current editions.</p>}
+      {actions.some((a) => a.href.startsWith("/download/")) && <p className="meta" style={{ flexBasis: "100%" }}>Choose a current PDF in the maintained document library. Earlier direct URLs remain available; see the <Link href="/download-centre.aspx">Download Centre</Link> for current editions.</p>}
     </div>
   );
 }

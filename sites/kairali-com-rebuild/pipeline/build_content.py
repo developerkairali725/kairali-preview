@@ -641,8 +641,8 @@ for f in forms:
 json.dump(form_by_page, open(os.path.join(CONTENT, "forms-source.json"), "w"), indent=1, ensure_ascii=False)
 
 # Publish count-free network prose; keep the captured audit unchanged.
-from release_copy import release_copy
-pages = release_copy(pages)
+from release_copy import owner_rulings
+pages = owner_rulings(pages)
 
 # words + search source
 for rt, p in pages.items():
