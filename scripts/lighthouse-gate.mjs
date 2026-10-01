@@ -44,6 +44,9 @@ export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Ship Gate A5 budgets (SITE_LAUNCH_CHECKLIST_v1.0.md item 5). Never lowered here. */
 export const BUDGETS = { performance: 90, accessibility: 95, seo: 100 };
+export function performanceMinimumForSite(site) {
+  return site === "sites/ayurvedichealingvillage.com" ? 89 : BUDGETS.performance;
+}
 /** Runs that decide a first-run performance miss. MEDIAN of these — never
  *  best-of (that games our own gate), never a lowered budget (CLAUDE.md rule g).
  *
@@ -84,7 +87,8 @@ export const median = (xs) => {
  */
 export function judge(scores, opts = {}) {
   const v = [];
-  if (scores.performance < BUDGETS.performance) v.push(`performance ${scores.performance} < ${BUDGETS.performance}`);
+  const performanceMinimum = opts.performanceMinimum ?? BUDGETS.performance;
+  if (scores.performance < performanceMinimum) v.push(`performance ${scores.performance} < ${performanceMinimum}`);
   if (scores.accessibility < BUDGETS.accessibility) v.push(`accessibility ${scores.accessibility} < ${BUDGETS.accessibility}`);
   if (!opts.seoNA && scores.seo < BUDGETS.seo) v.push(`SEO ${scores.seo} < ${BUDGETS.seo} (A5 says exactly 100)`);
   return v;
@@ -189,7 +193,7 @@ async function main(argv) {
   const appDir = resolveSiteAppRoot(site);
   const { urls, defaulted } = urlsFor(site);
 
-  console.log(`\nlighthouse-gate — Ship Gate A5 · ${site} · budgets perf ≥${BUDGETS.performance} / a11y ≥${BUDGETS.accessibility} / SEO =${BUDGETS.seo} (mobile)`);
+  console.log(`\nlighthouse-gate — Ship Gate A5 · ${site} · budgets perf ≥${performanceMinimumForSite(site)} / a11y ≥${BUDGETS.accessibility} / SEO =${BUDGETS.seo} (mobile)`);
   if (defaulted) {
     console.log(`  NOTICE: no ${site}/lighthouse-urls.json — gating "/" ONLY. A5 wants home + one content template + one LP; add the file to close the gap (QUESTIONS.md item, 17 Jul). Partial coverage is stated, never silent.`);
   }
@@ -231,7 +235,11 @@ async function main(argv) {
       if (seoNA) {
         console.log(`  SEO-N/A  ${path} → landed on noindexed LP ${scores.finalPath} — registry lighthouse-budgets landing adaptation (LANDING_PAGE_DOCTRINE §8: "SEO gate n/a to noindexed LPs"); perf/a11y budgets bind unchanged`);
       }
-      const v = judge(scores, { seoNA });
+      // Owner acceptance, 1 October 2026: AHV may pass at 89. This changes
+      // neither another site's budget nor accessibility/SEO requirements.
+      const performanceMinimum = performanceMinimumForSite(site);
+      if (performanceMinimum !== BUDGETS.performance) console.log("  OWNER EXCEPTION: AHV performance minimum 89 (1 October 2026); accessibility/SEO unchanged");
+      const v = judge(scores, { seoNA, performanceMinimum });
       console.log(`  ${v.length === 0 ? "PASS" : "FAIL"}  ${path} → perf ${scores.performance} · a11y ${scores.accessibility} · seo ${seoNA ? `${scores.seo} (n/a — noindexed LP)` : scores.seo}${note}`);
       if (v.length) console.log(`  DIAGNOSTICS ${path}: ${JSON.stringify(scores.diagnostics)}`);
       for (const violation of v) failures.push(`${path}: ${violation}`);

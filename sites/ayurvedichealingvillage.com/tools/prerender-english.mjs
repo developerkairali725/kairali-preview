@@ -105,7 +105,11 @@ const EXTRACT = () => {
   const root = document.getElementById("ahv-design-root");
   if (!root || !root.firstElementChild) return null;
 
-  const clone = root.cloneNode(true);
+  // Keep the copy inert: upgraded image-slot clones can mutate their image
+  // attributes while the snapshot is being flattened.
+  const inert = document.createElement("template");
+  inert.innerHTML = root.innerHTML;
+  const clone = inert.content;
 
   // Pair each live slot with its clone by document order, because a clone has no
   // shadow root of its own to read from.
@@ -133,7 +137,9 @@ const EXTRACT = () => {
       } catch { /* leave a relative value alone */ }
     }
     if (!resolved) continue;
-    img.setAttribute("src", resolved);
+    // The live runtime intercepts setAttribute("src") to defer image loads.
+    // A saved inert snapshot needs the actual address, not that live hook.
+    img.setAttributeNS(null, "src", resolved);
     img.setAttribute("alt", el.getAttribute("placeholder") || "");
     // The LCP candidate sits among the first images (image 1 is the header logo,
     // the hero is image 2), so the first three are never lazy-loaded. Lazy on the
@@ -179,7 +185,7 @@ const EXTRACT = () => {
   clone.querySelectorAll("x-dc").forEach((s) => s.remove());
 
   return {
-    html: clone.innerHTML,
+    html: inert.innerHTML,
     textChars: (root.innerText || "").trim().length,
     imgs: clone.querySelectorAll("img").length,
     flattened,

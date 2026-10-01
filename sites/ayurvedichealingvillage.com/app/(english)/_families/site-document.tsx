@@ -122,7 +122,7 @@ export function SiteDocument({
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
       </head>
-      <body>
+      <body data-ahv-chat-open="false">
         {/* Two rules, both load-bearing.
             1. Paper tone from the approved design, so the first paint before
                the runtime mounts is the design's background, not white.

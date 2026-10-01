@@ -23,7 +23,25 @@ function snapshot(routePath: string, desktop = false): string {
   const source = readFileSync(desktop
     ? join(process.cwd(), "public/ahv/static", `${name}.html`)
     : join(process.cwd(), "english-candidate/prerender", `${name}.html`), "utf8");
-  const safe = formPostSafety(newsletterFooters(computedFooterYear(youtubeNewTabs(source))));
+  let safe = formPostSafety(newsletterFooters(computedFooterYear(youtubeNewTabs(source))));
+  if (routePath === "/" && !desktop) {
+    let imageIndex = 0;
+    safe = safe.replace(/<img\b[^>]*>/g, (tag: string) => {
+      if (imageIndex++ < 2) return tag; // Header logo and first-screen hero.
+      return tag.replace(/\s+(?:loading|fetchpriority)="[^"]*"/g, "")
+        .replace("<img", '<img loading="lazy"');
+    });
+    // Closed-menu captures omit the conditional panel. Preserve the approved
+    // mobile navigation so the lightweight menu handler has a panel to open.
+    const payload = JSON.parse(readFileSync(join(process.cwd(), "public/ahv/views/home-mobile.json"), "utf8"));
+    const panel = String(payload.template).match(/<sc-if value="\{\{ menuOpen \}\}"[^>]*>([\s\S]*?)<\/sc-if>/)?.[1];
+    if (!panel) throw new Error("AHV mobile menu missing from approved view");
+    safe += panel.replace('<div style="position:fixed;', '<div data-ahv-drawer="" style="display:none;position:fixed;')
+      .replace('display:flex;flex-direction:column;padding:20px', 'flex-direction:column;padding:20px')
+      .replace(/\s+onClick="[^"]*"/g, "")
+      .replace('aria-label="Close"', 'aria-label="Close menu"')
+      .replace(/https:\/\/ayurvedichealingvillage\.com\//g, "/");
+  }
   return descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe));
 }
 
@@ -510,7 +528,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
         : <link key={href} rel="stylesheet" href={href} media={route.path === "/" ? "print" : undefined} data-ahv-deferred-font={route.path === "/" ? "" : undefined} data-ahv-font-media={route.path === "/" ? "all" : undefined} />)}
       {phonePaint?.styles.map((css, index) => <style key={`phone-${index}`} media={narrow} dangerouslySetInnerHTML={{ __html: css }} />)}
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
-      <style dangerouslySetInnerHTML={{ __html: `@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
+      <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
       <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />

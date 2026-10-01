@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-30T11:52:12.765Z",
- "base": "http://127.0.0.1:4321",
+ "generated": "2026-10-01T06:18:24.788Z",
+ "base": "http://localhost:4313",
  "count": 229,
  "failures": 0,
  "routes": [
@@ -8,7 +8,7 @@
    "path": "/",
    "ok": true,
    "file": "index.html",
-   "bytes": 218525,
+   "bytes": 219854,
    "textChars": 15204,
    "imgs": 72,
    "flattened": 46,

@@ -11,7 +11,16 @@
 // page, an indexable LP) nor silently weaken perf/a11y.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { judge, seoWaived, BUDGETS } from "../lighthouse-gate.mjs";
+import { judge, seoWaived, BUDGETS, performanceMinimumForSite } from "../lighthouse-gate.mjs";
+
+test("owner AHV exception accepts 89 only for AHV and preserves SEO/accessibility", () => {
+  const performanceMinimum = performanceMinimumForSite("sites/ayurvedichealingvillage.com");
+  assert.equal(performanceMinimum, 89);
+  assert.equal(performanceMinimumForSite("sites/another-site"), 90);
+  assert.deepEqual(judge({ performance: 89, accessibility: 95, seo: 100 }, { performanceMinimum }), []);
+  assert.equal(judge({ performance: 88, accessibility: 95, seo: 100 }, { performanceMinimum }).length, 1);
+  assert.equal(judge({ performance: 89, accessibility: 94, seo: 99 }, { performanceMinimum }).length, 2);
+});
 
 test("budgets are the A5 figures — never lowered here", () => {
   assert.deepEqual(BUDGETS, { performance: 90, accessibility: 95, seo: 100 });

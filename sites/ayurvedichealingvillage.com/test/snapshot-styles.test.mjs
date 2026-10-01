@@ -90,7 +90,7 @@ test("firstScreenPoster: a first-screen <video poster> only, local paths only", 
   assert.equal(firstScreenPoster('<video poster="//x.example/p.webp"></video>'), null);
   assert.equal(firstScreenPoster("<p>text</p>"), null);
   // the served EN home snapshot opens on the hero poster; a content page does not
-  assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/index.html", "utf8")), "/ahv/assets/img/wx-hero.webp");
+  assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/index.html", "utf8")), "/ahv/assets/img/wx-hero-544.webp");
   assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/our-villas.html", "utf8")), null);
 });
 
