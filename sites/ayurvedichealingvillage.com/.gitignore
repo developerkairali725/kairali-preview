@@ -1924,3 +1924,6 @@
 
 # Shared runtime minification outputs, regenerated before each build
 /public/design/*.min.js
+
+# Hash-verified locale body release bundle; publish with the combined staging release.
+/english-candidate/ahv-locale-prerenders-*.tar.gz

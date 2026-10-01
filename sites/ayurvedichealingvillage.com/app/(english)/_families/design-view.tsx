@@ -1,4 +1,5 @@
-import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from "./critical-media.mjs";
+import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
@@ -76,18 +77,9 @@ function prerenderedBody(routePath: string, locale: LocaleCode = "en"): string {
   }
 }
 
-/**
- * Measurement ids reach the browser ONLY when the build asks for them.
- * AHV_ANALYTICS is unset on staging by the owner's 15 Sep 2026 ruling, so a
- * preview reviewer accepting cookies still sends nothing to the production
- * GA4 and Clarity properties. Switching it on is a go-live step, recorded in
- * docs/reports/2026-09-15-ahv-go-live-checklist.md.
- */
+/** Explicit activation remains consent-gated; staging needs its own switch. */
 function measurementForBuild(): BootConfig["measurement"] {
-  const a = analyticsConfig.activation;
-  if (process.env.AHV_STAGING !== "0" || process.env[a.env] !== a.enabledWhen) return undefined;
-  const m = analyticsConfig.measurement;
-  return { ga4: m.ga4.id, clarity: m.clarity.id, metaPixel: m.metaPixel.id, adsSendTo: analyticsConfig.googleAds.sendTo };
+  return measurementForEnvironment(process.env, analyticsConfig);
 }
 
 const PAYLOAD_BASE = "/ahv/views/";
@@ -136,7 +128,8 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const snapshot = descriptiveAwardLinks(phoneCriticalMedia(prerenderedBody(route.path, locale)));
+  const body = responsiveVillaImages(phoneCriticalMedia(prerenderedBody(route.path, locale)));
+  const snapshot = descriptiveAwardLinks(route.path === "/" ? deferHomeSnapshotImages(body) : body);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one

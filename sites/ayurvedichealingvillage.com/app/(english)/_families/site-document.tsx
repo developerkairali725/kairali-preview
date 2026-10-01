@@ -178,6 +178,8 @@ export function SiteDocument({
         <style>
           {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}}" +
+            // Reserve the first viewport while a translated/runtime view mounts.
+            "#ahv-design-root[data-ahv-snapshot-state='held'],#ahv-design-root[data-ahv-snapshot-state='released']{min-height:100vh}" +
             "#ahv-design-root[data-ahv-live-pending]{position:relative}#ahv-design-root[data-ahv-live-pending]>#dc-root{position:absolute!important;top:0!important;left:0!important;right:0!important;visibility:hidden!important;pointer-events:none!important}" +
             // Desktop hold only when this document runs script (html[data-ahv-js], set by the inline script below)
             // and the runtime has not failed (data-ahv-fallback). Without JavaScript, or when the runtime never

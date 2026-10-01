@@ -1,4 +1,4 @@
-import { phoneCriticalMedia, descriptiveAwardLinks } from "./critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -81,7 +81,7 @@ export interface BootConfig {
    * so no tag can load however the visitor answers the cookie notice. The
    * consent gate is the second lock, not the only one.
    */
-  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsSendTo?: string };
+  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsSendTo?: string; environment?: string };
   /**
    * The page's locale (25 Sep 2026): code, document language/direction, the
    * localized URL, every language that has THIS page (for the switcher), and
@@ -159,7 +159,7 @@ export const BOOT_SCRIPT = `
   // two hooks that decide loading ahead of the first src write.
   var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
   var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
-  (${installLazyImgOrder.toString()})(window);
+  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}));
   (${installSlotLoading.toString()})(window, EAGER_SLOTS);
 
   // The server response carries the prerendered snapshot (phone width, for
@@ -369,6 +369,31 @@ export const BOOT_SCRIPT = `
   // Same map as tools/repair-snapshot-links.mjs applies to the snapshots, so
   // the server HTML and the mounted runtime show the same picture.
   var IMG_ALIASES = ${JSON.stringify(IMAGE_ALIASES)};
+  // A translated "Learn more" needs the visible news title as link context.
+  // Reuse that exact title for assistive readers without changing visible copy.
+  function describeHomeNewsLinks(root) {
+    if (cfg.path !== "/" || !root) return;
+    root.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      if (href.slice(-12) !== "/contact-us/") return;
+      var parent = a.parentElement, title = null;
+      for (var depth = 0; parent && parent !== root && depth < 3; depth++, parent = parent.parentElement) {
+        title = parent.querySelector("h3");
+        if (title || parent.tagName === "SECTION") break;
+      }
+      if (!title || !(title.textContent || "").trim()) return;
+      var context = a.querySelector("[data-ahv-news-context]");
+      if (!context) {
+        context = document.createElement("span");
+        context.setAttribute("data-ahv-news-context", "");
+        context.style.cssText = "position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0";
+        a.appendChild(context);
+      }
+      var text = " — " + title.textContent.trim();
+      if (context.textContent !== text) context.textContent = text;
+    });
+  }
+
   function aliasImages(root) {
     if (!root || root.nodeType !== 1) return;
     var imgs = root.matches("img") ? [root] : root.querySelectorAll("img[src]");
@@ -549,6 +574,7 @@ export const BOOT_SCRIPT = `
       return;
     }
     if (!img.getAttribute("loading")) img.setAttribute("loading", "lazy");
+    img.setAttribute("fetchpriority", "low");
     if (!img.getAttribute("decoding")) img.setAttribute("decoding", "async");
   }
   function deferSlotImages(root) {
@@ -972,7 +998,7 @@ export const BOOT_SCRIPT = `
     // These scan the entire host/document, unlike the node-local repairs above.
     // One mutation delivery already contains the completed DOM batch: scanning
     // it again for every added node caused quadratic work during hydration.
-    if (addedContent) { enhanceDirections(host); applyConsent(); }
+    if (addedContent) { enhanceDirections(host); applyConsent(); describeHomeNewsLinks(host); }
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href", "style"] });
   // Also normalize synchronously before native activation, including middle
   // clicks and copied link addresses, without overriding browser behavior.

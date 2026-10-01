@@ -28,3 +28,16 @@ for (const { name, width, quality, suffix } of [
   if (!fs.existsSync(dest) || !fs.readFileSync(dest).equals(output)) fs.writeFileSync(dest, output);
   console.log(`German campaign hero: ${original.length} -> ${output.length} bytes; dimensions and original retained`);
 }
+
+// The villa gallery uses thumbnails while its expanded viewer keeps full originals.
+const villaPhotos = [...new Set(fs.readFileSync('public/ahv/assets/our-villas-data.js','utf8').match(/\/ahv\/assets\/img\/AHV-OurVillas-(?:Hero|(?:Maharaja|Royal|Deluxe|Classic)-[0-9]+)\.webp/g))];
+const variants = villaPhotos.flatMap(src => [384,768].map(width => ({src,width})));
+for(let start=0;start<variants.length;start+=25){
+ for(const {src,width} of variants.slice(start,start+25)){
+  const source='public'+src, dest=source.replace(/\.webp$/, '-'+width+'.webp');
+  const original=fs.readFileSync(source), output=await sharp(original).resize({width,withoutEnlargement:true}).webp({quality:74}).toBuffer();
+  if(!fs.existsSync(dest)||!fs.readFileSync(dest).equals(output))fs.writeFileSync(dest,output);
+  if(!fs.readFileSync(source).equals(original))throw Error('Villa original changed');
+  console.log(src+': '+original.length+' -> '+output.length+' bytes at '+width+'px; original retained');
+ }
+}

@@ -54,13 +54,18 @@ export function deferHeroFilm(logic) {
  * property (image-slot uses it) and every other element/attribute pass straight through; a later direct
  * src write wins over the held one. Verified by the staging A/B (48/48 -> 6/48).
  */
-export function installLazyImgOrder(win) {
+export function installLazyImgOrder(win, responsiveAttrs) {
   var P = win.Element && win.Element.prototype;
   if (!P || P.__ahvLazyOrder) return;
   var setAttr = P.setAttribute;
   var later = win.queueMicrotask ? win.queueMicrotask.bind(win) : function (f) { Promise.resolve().then(f); };
   try { Object.defineProperty(P, "__ahvLazyOrder", { value: true }); } catch (e) { P.__ahvLazyOrder = true; }
   P.setAttribute = function (name, value) {
+    if (name === "loading" && value === "lazy" && this.tagName === "IMG") setAttr.call(this, "fetchpriority", "low");
+    if (name === "src" && this.tagName === "IMG" && responsiveAttrs) {
+      var attrs = responsiveAttrs(String(value), this.id || "");
+      if (attrs) { setAttr.call(this, "srcset", attrs.srcset); setAttr.call(this, "sizes", attrs.sizes); }
+    }
     if (name === "src" && this.tagName === "IMG" && !this.isConnected && !this.hasAttribute("loading")) {
       var el = this, queued = el.__ahvSrc !== undefined;
       el.__ahvSrc = String(value);
@@ -98,7 +103,7 @@ export function installSlotLoading(win, eager) {
     if (!img) return;
     if (img.getAttribute("src")) { slot.__ahvLoadingFixed = true; return; }
     if (eager[slot.id]) { img.setAttribute("fetchpriority", "high"); img.removeAttribute("loading"); }
-    else { img.setAttribute("loading", "lazy"); img.setAttribute("decoding", "async"); }
+    else { img.setAttribute("loading", "lazy"); img.setAttribute("fetchpriority", "low"); img.setAttribute("decoding", "async"); }
     if (ghost && !ghost.getAttribute("src")) ghost.setAttribute("loading", "lazy");
   }
   ce.define = function (name, C, opts) {

@@ -228,6 +228,13 @@ const run = async () => {
       isMobile: WIDTH < 700,
       deviceScaleFactor: WIDTH < 700 ? 2 : 1,
     });
+    // Local release snapshots need only first-party resources. This test-only
+    // switch avoids third-party chat/network waits and emits no tracking events.
+    if (process.argv.includes("--block-external")) await ctx.route("**/*", async (request) => {
+      const target = new URL(request.request().url());
+      if (target.origin !== new URL(BASE).origin && /^https?:$/.test(target.protocol)) await request.abort();
+      else await request.continue();
+    });
     const page = await ctx.newPage();
     let rec = { path: route.path, ok: false };
     try {

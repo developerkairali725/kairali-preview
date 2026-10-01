@@ -50,7 +50,7 @@ function mutationHarness() {
   const ctx = {host, lastLiveChange: 0, Set, Date,
     MutationObserver: class {constructor(cb) {callback = cb;} observe() {}},
     enhanceDirections: node => globals.push(['directions', node]), applyConsent: () => globals.push(['consent']),
-    localizeLink: node => globals.push(['link', node])};
+    localizeLink: node => globals.push(['link', node]), describeHomeNewsLinks: node => globals.push(['news', node])};
   for (const name of repairs) ctx[name] = (...args) => calls[name].push(args);
   vm.createContext(ctx); vm.runInContext(mutations, ctx);
   const node = (name, parentElement = host, nodeType = 1) => ({name, parentElement, nodeType});
@@ -62,14 +62,14 @@ test('nested and repeated insertion records repair each attached outermost subtr
   // The child record deliberately precedes its parent; final tree membership wins.
   h.run([h.add(child), h.add(parent, sibling), h.add(grandchild), h.add(parent)]);
   for (const calls of Object.values(h.calls)) assert.deepEqual(calls.map(([node]) => node.name), ['parent', 'sibling']);
-  assert.deepEqual(h.globals.map(([name]) => name), ['directions', 'consent']);
+  assert.deepEqual(h.globals.map(([name]) => name), ['directions', 'consent', 'news']);
   assert.ok(h.ctx.lastLiveChange > 0);
 });
 test('discarded render nodes are skipped while text updates retain the global repairs', () => {
   const h = mutationHarness(), oldRoot = h.node('discarded', null), oldChild = h.node('discarded child', oldRoot), text = h.node('text', h.host, 3);
   h.run([h.add(oldRoot, oldChild, text)]);
   for (const calls of Object.values(h.calls)) assert.equal(calls.length, 0);
-  assert.deepEqual(h.globals.map(([name]) => name), ['directions', 'consent']);
+  assert.deepEqual(h.globals.map(([name]) => name), ['directions', 'consent', 'news']);
 });
 test('later child additions are repaired and attribute changes keep their existing handling', () => {
   const h = mutationHarness(), parent = h.node('parent'), child = h.node('late child', parent);

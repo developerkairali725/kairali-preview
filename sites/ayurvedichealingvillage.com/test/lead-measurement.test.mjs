@@ -8,7 +8,7 @@ const consentRuntime = consentSource.slice(consentSource.indexOf("`") + 1, conse
 const receiptRuntime = readFileSync(new URL("../public/design/lead-receipt.js", import.meta.url), "utf8");
 const token = "c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a";
 
-function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123") {
+function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123", environment = "production") {
   const items = new Map([["ktahv-consent", choice]]);
   const storage = {
     getItem: (key) => items.get(key) ?? null,
@@ -37,7 +37,7 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
   };
   ctx.window = ctx;
   ctx.window.fetch = async () => ({ status, clone: () => ({ json: async () => result }) });
-  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action"}};var host=document.body;${consentRuntime}\nif(consentChoice()==="accepted")startMeasurement();`, ctx);
+  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nif(consentChoice()==="accepted")startMeasurement();`, ctx);
   runInNewContext(receiptRuntime, ctx);
   return ctx;
 }
@@ -84,4 +84,25 @@ test("a received careers application is not an enquiry conversion", async () => 
   assert.equal(ctx.dataLayer.filter((entry) => entry[0] === "event").length, 0);
   assert.equal(ctx.fbq.queue.filter((entry) => entry[0] === "track" && entry[1] === "Lead").length, 0);
   assert.equal(ctx.clarity.q?.filter((entry) => entry[0] === "event").length ?? 0, 0);
+});
+
+test("authorised staging labels signals without creating production lead conversions", async () => {
+  const ctx = browser("accepted", 200, { ok: true, status: "received" }, "?utm_source=cody_qa", "staging");
+  const config = ctx.dataLayer.find(entry => entry[0] === "config" && entry[1] === "G-test");
+  assert.equal(config[2].ahv_environment, "staging");
+  assert.equal(config[2].debug_mode, true);
+  await ctx.fetch("/api/lead/", { method: "POST", body: JSON.stringify({ form: "contact", submissionToken: token }) });
+  assert.equal(ctx.dataLayer.filter(entry => entry[1] === "conversion" || entry[1] === "generate_lead").length, 0);
+  assert.equal(ctx.dataLayer.filter(entry => entry[1] === "ahv_staging_lead").length, 1);
+  assert.equal(ctx.fbq.queue.filter(entry => entry[0] === "trackCustom" && entry[1] === "AHVStagingLead").length, 1);
+  assert.equal(ctx.clarity.q.filter(entry => entry[1] === "ahv_staging_lead").length, 1);
+  assert.ok(ctx.clarity.q.some(entry => entry[0] === "consentv2" && entry[1].analytics_Storage === "granted"));
+});
+
+test("Meta bootstrap dispatches events through the loaded SDK instead of leaving them queued", () => {
+  const ctx = browser();
+  let dispatched;
+  ctx.fbq.callMethod = (...args) => { dispatched = args; };
+  ctx.fbq("track", "Lead");
+  assert.deepEqual(dispatched, ["track", "Lead"]);
 });
