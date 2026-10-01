@@ -1921,3 +1921,6 @@
 /l10n/generated/
 /l10n/prerender-tmp/
 /l10n/prerender/
+
+# Shared runtime minification outputs, regenerated before each build
+/public/design/*.min.js

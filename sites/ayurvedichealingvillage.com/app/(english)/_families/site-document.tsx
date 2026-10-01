@@ -79,7 +79,7 @@ export function SiteDocument({
             data-labels for phone-stacked tables. It runs its own observer on
             the design root and never touches boot.ts. */}
 
-        <script defer src={`${designBase}consistency.js`} />
+        <script defer src={`${designBase}consistency.min.js`} />
         {/* Shared chrome, every page INCLUDING the homepage (owner rulings
             D-20260922-17/-18/-19, 22 Sep 2026): the desktop header on one row
             with the EN/DE/FR switch kept (chrome.css, ≥1180px), the copyright
@@ -87,7 +87,7 @@ export function SiteDocument({
             phone (chrome.js). Not scoped by data-ahv-consistency on purpose —
             the header and footer are one component on every family. */}
 
-        <script defer src={`${designBase}chrome.js`} />
+        <script defer src={`${designBase}chrome.min.js`} />
 
 
         <script src={`${designBase}film-player.js`} defer />
@@ -103,7 +103,7 @@ export function SiteDocument({
             search.js takes over the header's inert dialog at runtime, like chrome.js
             does for the footer; the package component is never edited. */}
 
-        <script defer src={`${designBase}search.js`} />
+        <script defer src={`${designBase}search.min.js`} />
         {/* ONE section navigation for every content family (owner, 23 Sep 2026):
             the captured WordPress sidebars are removed and a governed rail built
             from the owner-authorised breadcrumbs takes their place — data from

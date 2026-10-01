@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '../app/(english)/_families/critical-media.mjs';
+test('Panchakarma phone image and priority preload use the same smaller address', () => {
+  const source = '<div style="background-image:url(/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025.webp)"></div>';
+  const mapped = phoneCriticalMedia(source);
+  assert.equal(firstCriticalImage(mapped), '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp');
+  assert.equal(phoneCriticalMedia(mapped), mapped);
+  assert.ok(!mapped.includes('-768.webp'));
+});
 test('only named first-screen images gain the same-image phone variant', () => {
   const input = '<video poster="/ahv/assets/img/wx-hero.webp"></video><img src="/ahv/assets/img/other.webp">';
   const result = phoneCriticalMedia(input);

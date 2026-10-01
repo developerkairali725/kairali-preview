@@ -4,6 +4,7 @@ const require = createRequire(process.cwd() + '/package.json');
 const sharp = require(require.resolve('sharp', { paths: [require.resolve('next')] }));
 for (const { name, width, quality, suffix } of [
   { name: 'wx-hero', width: 544, quality: 74, suffix: '-544' },
+  { name: 'ktahv-abhyanga-oil-therapy-2025', width: 544, quality: 82, suffix: '-544' },
   ...['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']
     .map((name) => ({ name, width: 768, quality: 82, suffix: '-768' })),
 ]) {
