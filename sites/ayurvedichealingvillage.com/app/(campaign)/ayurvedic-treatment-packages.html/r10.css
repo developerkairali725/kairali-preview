@@ -32,3 +32,13 @@
 .r10-revision .quote-grid article{padding:32px!important}.r10-revision .footer-logo{width:230px;height:auto;background:#f7f4ea;padding:14px;border-radius:3px;margin-bottom:16px}.r10-revision .culture-detail summary:focus-visible{outline:2px solid #C1882C;outline-offset:4px}
 
 .r10-revision .gender-field{padding:0;border:0;margin:0;min-width:0}.r10-revision .gender-field legend{font-size:16px;margin-bottom:8px}.r10-revision .consent{display:flex;align-items:start;gap:12px}.r10-revision .consent input{flex:none}.r10-revision .footer-bottom button{font:inherit;color:inherit;background:transparent;border:0;text-decoration:underline;cursor:pointer;min-height:44px}.r10-revision .enquiry-error{color:#922b20}.r10-revision button:disabled{opacity:.65;cursor:wait}
+/* Programme catalogue: English first, published Sanskrit names secondary. */
+.r10-revision .treatment-list .programme-name{color:#5A4420;text-decoration:none;text-underline-offset:5px;display:inline}
+.r10-revision .treatment-list .programme-name:hover{text-decoration:underline}
+.r10-revision .treatment-list .programme-name:focus-visible{outline:2px solid #C1882C;outline-offset:4px}
+.r10-revision .treatment-list .programme-sanskrit{display:block;font-size:17px;line-height:1.5;font-weight:400;color:#75695A;margin-top:4px}
+.r10-revision .yoga-programmes{grid-template-columns:1fr;margin:20px 0 0}
+.r10-revision .treatment-list .programme-entry{display:block}
+.r10-revision .treatment-list .programme-entry p{margin:0}
+.r10-revision #section-1 .reading{max-width:none;width:100%}
+.r10-revision #section-1{display:block}
