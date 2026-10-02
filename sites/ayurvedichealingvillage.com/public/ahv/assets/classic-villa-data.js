@@ -3,7 +3,7 @@ window.AHV_CLASSIC = {
  "h1": "Classic Villa",
  "eyebrow": "Our Villas",
  "facts": [
-  "144 – 244 Sqft",
+  "309 – 373 Sqft",
   "Twin/King Size Bed",
   "Upto 3 Adults",
   "Garden View"
@@ -11,7 +11,7 @@ window.AHV_CLASSIC = {
  "quote": "“Experience the perfect blend of traditional elegance and modern comfort at our Classic Villa. Discover the timeless beauty of Kerala’s architecture and immerse yourself in Ayurvedic healing amidst comfortable amenities. Unwind and rediscover your inner balance in this haven of serenity.“",
  "aboutHeading": "The Villa",
  "aboutParagraphs": [
-  "The Classic Villa at Kairali – The Ayurvedic Healing Village is a tranquil haven that blends contemporary conveniences with traditional Kerala architecture, making it the perfect place to unwind and revitalize. Up to three people can stay in each villa, which ranges in size from 144 to 244 square feet and has twin or king-size bedrooms. The villas’ comfortable interiors, which follow the principles of Vastu Shastra, create a peaceful environment that encourages equilibrium and inner serenity.",
+  "The Classic Villa at Kairali – The Ayurvedic Healing Village is a tranquil haven that blends contemporary conveniences with traditional Kerala architecture, making it the perfect place to unwind and revitalize. Up to three people can stay in each villa, which ranges in size from 309 to 373 square feet and has twin or king-size bedrooms. The villas’ comfortable interiors, which follow the principles of Vastu Shastra, create a peaceful environment that encourages equilibrium and inner serenity.",
   "The Classic Villa guarantees a comfortable stay with air conditioning, LED TVs, telephones, and attached bathrooms with hot and cold running water all day long. A supply of water bottles, bathrobes, toiletries, and wardrobes are extra conveniences. Some villas are situated close to a calming stream that meanders through the grounds, providing calming noises that heighten the feeling of being in harmony with the natural world.",
   "Additionally, patients staying in the Classic Villas have access to a range of amenities, such as daily yoga and meditation sessions, authentic Ayurvedic treatments, and wholesome organic meals prepared with ingredients that are sourced locally. For a full wellness experience, the retreat also has a gym, library, swimming pool, and indoor recreation facilities. The Classic Villa offers the ideal environment for rest by combining comfort, elegance, and Kerala’s natural beauty harmoniously."
  ],

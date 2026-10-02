@@ -18,7 +18,7 @@ window.AHV_OUR_VILLAS = {
    "href": "/maharaja-suite/",
    "description": "Experience ultimate bliss at our Maharaja Suite, where grandeur meets comfort. Indulge in royal treatment and Ayurvedic rejuvenation, immersing yourself in elegance and serenity. A sanctuary designed to transport you to unparalleled wellness and timeless relaxation.",
    "facts": [
-    "144 – 432 Sqft",
+    "603 – 654 Sqft",
     "Twin/King Size Bed",
     "Upto 4 Adults",
     "Garden View"
@@ -85,7 +85,7 @@ window.AHV_OUR_VILLAS = {
    "href": "/royal-villa/",
    "description": "Step into a world of regal opulence and let the enchanting ambiance of our Royal Villa captivate your senses. With its spacious layout and impeccable attention to detail, this villa offers a truly immersive experience, where Ayurvedic healing meets refined comfort.",
    "facts": [
-    "144- 244 Sqft",
+    "284- 441 Sqft",
     "Twin/King Size Bed",
     "Upto 3 Adults",
     "Garden View"
@@ -145,7 +145,7 @@ window.AHV_OUR_VILLAS = {
    "href": "/deluxe-villa/",
    "description": "Discover serenity at our Deluxe Villa, thoughtfully designed for your well-being. Surrounded by lush greenery, immerse in nature’s healing embrace and enjoy a rejuvenating experience that revitalizes your mind, body, and soul like never before.",
    "facts": [
-    "144- 244 Sqft",
+    "260- 375 Sqft",
     "Twin/King Size Bed",
     "Upto 3 Adults",
     "Garden View"
@@ -212,7 +212,7 @@ window.AHV_OUR_VILLAS = {
    "href": "/classic-villa/",
    "description": "Experience traditional elegance and modern comfort at our Classic Villa. Embrace Kerala’s timeless architecture, indulge in Ayurvedic healing and enjoy comfortable amenities. Unwind in this serene haven, where inner balance awaits your discovery.",
    "facts": [
-    "144- 244 Sqft",
+    "309- 373 Sqft",
     "Twin/King Size Bed",
     "Upto 3 Adults",
     "Garden View"

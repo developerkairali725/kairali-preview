@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-pr326-combined-20261002.tar.gz",
-  "archive": "ahv-locale-prerenders-pr326-combined-20261002.tar.gz",
-  "sha256": "ce6781e9f6f072e85951531328ee6b3d8385b0ea264c019d5bf49c7cb4a66797",
-  "bytes": 46490022,
-  "capturedSource": "b65b26b84dc09470cd18fe45a07cddd2e2b9d474 + accepted copy 49968ff03374c454d178db198cc27b09dc8eef3b + local combined repairs (uncommitted)",
+  "asset": "ahv-locale-prerenders-villa-sizes-20261002.tar.gz",
+  "archive": "ahv-locale-prerenders-villa-sizes-20261002.tar.gz",
+  "sha256": "0d56f012b46354c61206a598f3c6e2ed5c3cd6857ed72574a05490aa5a05aef7",
+  "bytes": 46481384,
+  "capturedSource": "4a67da3 + owner-approved villa total-area ranges",
   "captured": "2026-10-02",
   "sources": [
     {
@@ -14,99 +14,99 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "d0dcb3bc965d7f89e1435d1ea7c609468c1856494ab1fd27e27145a4a1fc323a"
+      "sha256": "c8574d5e3c8dbcad4a11f2a320bcb14e4d92b8a1b8904e736dcfd5002fe4ea5b"
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "66605a2422264d764267f2ac3b68e09ac89ba7a9a894e3ffb8ee9bdc86948013"
+      "sha256": "fd03c3bf998fc841b2ef0a0eb6fe10c3cf7c4f25683382c13f20bc7366f603f3"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "1b8a1e54a8a104ded2409aafe18990aca1f3ca25c7f4ce42ac37a79fb295ac3f"
+      "sha256": "850aec1796e54acf66a747b8b1b27db1b97adf12281168b3d45490563906b153"
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "62101070e768a712c9439f87f910c8961db0cb4e2d4cfd562a3a6f54bc0594ad"
+      "sha256": "906adc16ec56a2217400873c7ca90c290f3c868b213d8c285f9b53382b23dd12"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "98074c2f8f466223a2152d041d797fa858c3db2b1f09cc0a8e42a79ed0df79a5"
+      "sha256": "58a67f78f2fc4f86231d84d04a63b17c22f9b449a36aeaf782654a7eff5e5ba2"
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "aafa16e2db7047d4a3614b3812d0e5343de11ccc5e256d797097968085d322ce"
+      "sha256": "e1b59da4cbc76e0a94734ecb5eea1ace7a2374261dcba4cbfa33d4dc5c93aa6c"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "60503c0c2b020054232ec844721c65df9ebe9ccc8961811515f45756dc21a0be"
+      "sha256": "60cf85232318473795216a4accd5f6ff152c82fc42b6d6a78d672ac030668254"
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "54db9e599b87fa0a3f194fa4b760b0f0366fbfb8140f2d782b5396b830ad63a4"
+      "sha256": "6f2888c3dbc1c36c6bf4142f241c7b2e81cd96d07b4625d506a7cbdb09bbf675"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "e96b4b5dbd35daab4f3818937bd1dce0bf1cb788749020f4241f968424a5c45a"
+      "sha256": "a7b8bda5bbaac9821d8c76a7ec7f4c84bee012293e13c4a50a51e49bb076c15a"
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "8d500ee6409616286fed27fb72c967c6429131b306fb5f0aba45c80ee7c73559"
+      "sha256": "7722be319e08ec5ceb7208bf2f0a5447d39eecce7de8811a9fc50fc9c1172d2d"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "271ec5f41eb800139dba0e4e3642a2afcb6d6c02473d1df1202b199b20065552"
+      "sha256": "4178c723c015561e960e4d8120f74b39fa1b0cc3fce5f910da87ef511d722606"
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "574559247106d8aa2fac73c0e2975d1ed3234e4cdbcd04fd15c6d304b5c494c1"
+      "sha256": "b1f9dec219725c6321f2e5789a0ce9baf346818441c62b18120720d7cf12e4dd"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "4b042166715f4cd1285a62b79cb0a35bdfa4153995b2b16f5268b2e3674e20b9"
+      "sha256": "f3a2d52f8e776d1b9311481781e4b832fcccb520d75cdfe0d871ab97e11b09cf"
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "679a38ec642ea0f74b1cef300fb9c53c9461e7b342ce77570cbb861eefa932bf"
+      "sha256": "4dbac593630442ccf783fb7011e3a7fa55a4847df85c020dc249a524efb2ce01"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "e986beac88225e6ac1f195d909a2a79d759df0bb14131d283500a281fb9e9dca"
+      "sha256": "d67728767537877afdb5b35d117b1f4ada018a9c444c1a7bfd74dc5e920470bc"
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "b225f939c988125e09354dc4ed6131477ece88f220e4919e9c1f363a0a263cff"
+      "sha256": "eda719ac99739c51dab99fd42b2b80e8f8622faa43df2eb31a16d10c54290995"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "14a5135b232cc5a044c28fb30d6cabbad6278339ccd5767d1b7f116c8dd62aca"
+      "sha256": "0a3959c1fc75bf2044f6bfd6c34c021530e491c285c4a6f56f06aae9f1a624e6"
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "c95a250f59dcc8cae9ab9c419d5c3cde133a0ce1a6ebbe4aeca39d7479949d42"
+      "sha256": "8d2d80046942ce70f802359f0fa4859b99f70d416a09769056734c7da2f75672"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "010c07ec7c66291fadd00c6344aa10e34ffc3eee19fd77aa709d385b827017a6"
+      "sha256": "eaa2f9fd477e1d3d048bb039854c67e4ad15d05a2174612e1a813ac1c0493488"
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "15044e76cc32df0069f628702f5875d7a0300b074230abc5a33c82abf5dfa96c"
+      "sha256": "29f48ca0d896b695250ce8c17ba9f093d59ae40733bd949f8a9bf1871e413385"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "57904a877b88e34cd96d31b1b5b97c54e0b5cfe1a62dfc15138c44dc5a8b151e"
+      "sha256": "74fedd88fdbe7c119295a26e2d1e28854d97a7dce57d8148d96c00f238ae88e1"
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "a6a0011e82409cd7f73548a53db4149380b70f2c26565a2e61e4a11779c7a168"
+      "sha256": "c05ae4b403358ad4fb11af640e8268bb1fc72837b9be217de0ed31b1144c2b63"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "1a4979d95b84acee36188d6a5bbc5e98fc319a38ce0f063d5a253c6792fac241"
+      "sha256": "51085ea328586f45723a3c3b0d2aabfb0eb3d0ba57a094961332977ea9be661f"
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "516a3dc06d3bf380a95007c62b9863b66fd669d2182952fb883bab894b50fca2"
+      "sha256": "a813546f72fbc440e068ff26ab51e63835c083588c65980fe0e5a737803c0870"
     },
     {
       "file": "l10n/routes.json",
@@ -174,7 +174,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/classic-villa-data.js",
-      "sha256": "94ed1c43b734d4caff461f814c245788fd5c5075f3f61e91518c28b2b560a73c"
+      "sha256": "7a3a9d3d1464977f2a44f7b14a418b7c7023e21aa1fa98a6340393278bfb3f9e"
     },
     {
       "file": "public/ahv/l10n/ar/assets/collection-family-data.js",
@@ -222,7 +222,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/deluxe-villa-data.js",
-      "sha256": "3fc884cdde3df470b72e148ee91d1bab2f202bbd88a69a9a05531af19ae77c59"
+      "sha256": "b11970016f7d789f4e4bfbb76a8fc9b935636863b477da1bd57537914241d830"
     },
     {
       "file": "public/ahv/l10n/ar/assets/enquiry-family-data.js",
@@ -278,7 +278,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/maharaja-suite-data.js",
-      "sha256": "d687d07c8a75cbfb01cfba43b627f21652119520b8b6f2e18475488edfead43a"
+      "sha256": "31c032565b30a45bf0a3f75603fe59881a7567bf786ebfd3a20ab6f947b37cb4"
     },
     {
       "file": "public/ahv/l10n/ar/assets/mindfulness-retreat-data.js",
@@ -290,7 +290,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/our-villas-data.js",
-      "sha256": "94f7998cb938bd5dcc8c5d8281c7cc1e1db0f4b850fbdac736f8210661cba40c"
+      "sha256": "d6b254ea90a5a3fdfbef0ea4f3e5c6ac4178b9cd7da83b95a1a019ab42f66a66"
     },
     {
       "file": "public/ahv/l10n/ar/assets/partner-air-india-data.js",
@@ -342,7 +342,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/royal-villa-data.js",
-      "sha256": "94800ac0ba764c31b2d58446c71df8ba255fc25828767026cd55a60c07d76550"
+      "sha256": "eb35c730112e1471e1bd5f69214af499c7f0c01afdbcfd1ca580150eea579fe9"
     },
     {
       "file": "public/ahv/l10n/ar/assets/seven-informational-data.js",
@@ -1146,11 +1146,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/home-hi-fi-v4.json",
-      "sha256": "231c06c49ee3fd3b6faa7550fd66489ca1111533e957b0290e57b7f87ed5245a"
+      "sha256": "9ca10394ff4dda8ccff75922d696d23a3f1c8e51177f05849229f6f673ac1e47"
     },
     {
       "file": "public/ahv/l10n/ar/views/home-mobile.json",
-      "sha256": "994883b7ea3e05a27b2f55fbc6a210f068edd06608594b139bb5e731826fc19c"
+      "sha256": "6263b39759332306eb5ce3399d2bbaebad4acfa545ea0b029f7da3388bd2744c"
     },
     {
       "file": "public/ahv/l10n/de/assets/about-us-data.js",
@@ -1214,7 +1214,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/classic-villa-data.js",
-      "sha256": "a1379b3707bde5fc344f6b008c884ecdc64ac5132e94109184c98aaa43a8c5b3"
+      "sha256": "2a3ca4bec268547401cef7c14eb4306562615abc5bea6e1063fde9c80ed24203"
     },
     {
       "file": "public/ahv/l10n/de/assets/collection-family-data.js",
@@ -1262,7 +1262,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/deluxe-villa-data.js",
-      "sha256": "ee19f5f35a71ae0492325f597b3f334d37ac285358dd3c795a5842646d246400"
+      "sha256": "328ac88cd31c786fbd4bfe8334c04f3063f4e0c45be6209e13062e0b5d7276bc"
     },
     {
       "file": "public/ahv/l10n/de/assets/enquiry-family-data.js",
@@ -1318,7 +1318,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/maharaja-suite-data.js",
-      "sha256": "39d48e6dffda8a57f14d401866a3f1c26aaf0b11d81d1e47bae5c6fdec87326d"
+      "sha256": "09076dd4affcf09c69c4bef49d7729c779e379e14a432b2fc6572fce407734fc"
     },
     {
       "file": "public/ahv/l10n/de/assets/mindfulness-retreat-data.js",
@@ -1330,7 +1330,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/our-villas-data.js",
-      "sha256": "824ce1ce6891cbb4635d93cbfb6d591e75a1ec857c6ed7f8bba91c56bb635428"
+      "sha256": "6df411c051e0e64b54e1b7a25219bd7c18af8221aa7acf409989bf1f1278146f"
     },
     {
       "file": "public/ahv/l10n/de/assets/partner-air-india-data.js",
@@ -1382,7 +1382,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/royal-villa-data.js",
-      "sha256": "c966dc5def08820c03ab4e0fb0b9dfcc612a5d07a9128a305e3df501c1e24a22"
+      "sha256": "4beb10c5870635fcec63dd8c5978f01d54db3a97d4647752a3605af1ed156cd0"
     },
     {
       "file": "public/ahv/l10n/de/assets/seven-informational-data.js",
@@ -2186,11 +2186,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/home-hi-fi-v4.json",
-      "sha256": "a6b3ac65ac7f394bd31ffc391233604b62c8a56d3d4713ffe7cb5d94ec2d7f09"
+      "sha256": "a5c3b2240cf936c90781698f634e0e7350214b5ec0cf601da55607a269068aa6"
     },
     {
       "file": "public/ahv/l10n/de/views/home-mobile.json",
-      "sha256": "eff2dc4a829845f95ab11409ef1e9a56af61fb16a8b397c73cc0cdcc76ee5ca1"
+      "sha256": "f097a1c3034e22430956a40cb7dbc6830fb9c71672883e7bd9f3569f8e85c024"
     },
     {
       "file": "public/ahv/l10n/es/assets/about-us-data.js",
@@ -2254,7 +2254,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/classic-villa-data.js",
-      "sha256": "9fbc732c65e74f17940091e88e1c0a57e1cef86122a4326f8e47ee41e78ff234"
+      "sha256": "7151bb0c1a3dcfbb94d7be5146d19f1a4f89f3f7b03fe570d49259cce93a6b52"
     },
     {
       "file": "public/ahv/l10n/es/assets/collection-family-data.js",
@@ -2302,7 +2302,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/deluxe-villa-data.js",
-      "sha256": "27c64858090c945e2101d7548bfed6e2209ca21df91b00fafcfcdfae375d194d"
+      "sha256": "133498ccf29ea2682384f0c5cc2e7de062c4e35121fa7f5cab8450b679eeab24"
     },
     {
       "file": "public/ahv/l10n/es/assets/enquiry-family-data.js",
@@ -2358,7 +2358,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/maharaja-suite-data.js",
-      "sha256": "31f9715202716d8009ec1989c403ef393d382f1cd09445f37f4952cf1c61bfb8"
+      "sha256": "48286e9d0810ff781e50e1eb4961f0a694f19f86780f2291ed64378c81afc9af"
     },
     {
       "file": "public/ahv/l10n/es/assets/mindfulness-retreat-data.js",
@@ -2370,7 +2370,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/our-villas-data.js",
-      "sha256": "50b3d6246be5e03e8f6c808b864b35960b3a7ef9559bc0bdcaba2ba4db975993"
+      "sha256": "33cb2df877f7ce5d2f9536e25100c55399c68976ee985752b0bf4246764917bb"
     },
     {
       "file": "public/ahv/l10n/es/assets/partner-air-india-data.js",
@@ -2422,7 +2422,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/royal-villa-data.js",
-      "sha256": "e7377ceb3f5d16122fd3fa10c18bf18df11f2b3008e1519b1e378ed8c8fd7644"
+      "sha256": "c0d77c458032000af572c62ba27f57dd944b3f0599880b4b3e673cb48f9267f9"
     },
     {
       "file": "public/ahv/l10n/es/assets/seven-informational-data.js",
@@ -3226,11 +3226,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/home-hi-fi-v4.json",
-      "sha256": "ee49255768b67cbba98e1877eda1ae3bb0006a64f41f4c9a528e6d52bab1b82b"
+      "sha256": "037132974747dd2453f7c16cb3e4a84ed096288ab9719397320faa1235533f1b"
     },
     {
       "file": "public/ahv/l10n/es/views/home-mobile.json",
-      "sha256": "380ac9ebe7cc358d17139af8bd1c709530630086f759c076c82afc43404483fa"
+      "sha256": "166169c8bf06d03056385bc25ea664408db98f6f951aae0f2b3bcaf36b073463"
     },
     {
       "file": "public/ahv/l10n/fr/assets/about-us-data.js",
@@ -3294,7 +3294,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/classic-villa-data.js",
-      "sha256": "63e3f790120e60abbea52f8ccdc9200069b33a2a1c98754ce7dd4da5cbe80f0c"
+      "sha256": "b16e18c22e915945f8d1107500a70db23795f8319ab7d5bfad350fc71501050e"
     },
     {
       "file": "public/ahv/l10n/fr/assets/collection-family-data.js",
@@ -3342,7 +3342,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/deluxe-villa-data.js",
-      "sha256": "635d32c1e322db16b5e39610a7a1ce67ea90c2676bdf03f3e615ed0c2d2b093c"
+      "sha256": "a94f5893c2517a71f28c23f7b762eb0ff741b803d830e30ecf62f367fb84bdc6"
     },
     {
       "file": "public/ahv/l10n/fr/assets/enquiry-family-data.js",
@@ -3398,7 +3398,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/maharaja-suite-data.js",
-      "sha256": "a16547d217a04ab6b5295ec7ed29986b3eeac6f0a374aa3b66e80c3e6dd7b970"
+      "sha256": "e504dbdfb30d1749f2f30f492f567440c4e37273505a3b1941aacb50ee515941"
     },
     {
       "file": "public/ahv/l10n/fr/assets/mindfulness-retreat-data.js",
@@ -3410,7 +3410,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/our-villas-data.js",
-      "sha256": "fab7bfbddb97d113c5aa83ade3fa2f6bb0f036005ed25cacac78550ccb5bd211"
+      "sha256": "c45fa075af3bba1c0c52bd8c9acde19584ce85521febfb6a2f1f7dae093b804d"
     },
     {
       "file": "public/ahv/l10n/fr/assets/partner-air-india-data.js",
@@ -3462,7 +3462,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/royal-villa-data.js",
-      "sha256": "bddb45831341fb82b94da0a87b3615d8466473672a768d5855860b50d76cd2eb"
+      "sha256": "3b7434e2a1554b1fa093324dbe5058d42b4defe29da8251f9ecde7059653b8ee"
     },
     {
       "file": "public/ahv/l10n/fr/assets/seven-informational-data.js",
@@ -4266,11 +4266,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/home-hi-fi-v4.json",
-      "sha256": "59e08eeab78a125965db755c919d98a00d2e799af473cc9d24c49c4e53af5f7f"
+      "sha256": "758029ac559c8fcd32b346d83011dd37c4a42ef49b575e3d6880725aef24b570"
     },
     {
       "file": "public/ahv/l10n/fr/views/home-mobile.json",
-      "sha256": "958709a0227be843555d56980082f98f2dad9bfbbddc6d0d349dfef8c949e2c9"
+      "sha256": "b187c8d307d65cedec0f2ca0f8b290db1606063bc6ed48d73af3c54bb6458441"
     },
     {
       "file": "public/ahv/l10n/hi/assets/about-us-data.js",
@@ -4334,7 +4334,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/classic-villa-data.js",
-      "sha256": "bbbed06b94e139d66b7de90ee969b7d164ee4fcd3a98e7a07dc4dd37a87689d9"
+      "sha256": "9e27ba1b2fdd87fca4c98a18537f514c07af18ff7e350166631ec521721577f3"
     },
     {
       "file": "public/ahv/l10n/hi/assets/collection-family-data.js",
@@ -4382,7 +4382,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/deluxe-villa-data.js",
-      "sha256": "c87b79d7688159677991bef7a43d3300c6bb27a2d441322d108a04b24eea1d3b"
+      "sha256": "cf7dfb5ecb39732a69cb2680595ff0934b4b3b61e866ac8fa9d46b4bae314498"
     },
     {
       "file": "public/ahv/l10n/hi/assets/enquiry-family-data.js",
@@ -4438,7 +4438,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/maharaja-suite-data.js",
-      "sha256": "d0573d338b772c875c45af3d679d2ffbde6c4211fa50749a5a232daf2114706b"
+      "sha256": "16f3914c1f752ff570c4ef551a16d5b28b2b4c36e4cecaf40c60c0f77116b557"
     },
     {
       "file": "public/ahv/l10n/hi/assets/mindfulness-retreat-data.js",
@@ -4450,7 +4450,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/our-villas-data.js",
-      "sha256": "0d977652b844c3110a072efb4d91667005881df188c9ade0c289f3e1aaefede1"
+      "sha256": "0f8a0eaa6c7296b72266b0ca3c41bc95ee74308732dd4b077b917291a503a98c"
     },
     {
       "file": "public/ahv/l10n/hi/assets/partner-air-india-data.js",
@@ -4502,7 +4502,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/royal-villa-data.js",
-      "sha256": "5630efadb8ca179807dc81c013429d94dba1ce882a6e62af066597dff58352d3"
+      "sha256": "bcf4cc8c271dc4d4d9883d4556101f26197c711615535f39ea80561dac237b0f"
     },
     {
       "file": "public/ahv/l10n/hi/assets/seven-informational-data.js",
@@ -5306,11 +5306,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/home-hi-fi-v4.json",
-      "sha256": "7b6e887a5f6d7f8dbcb716f3c199c0e97345ea9cc6f412d3c760d1a0bc41d1e7"
+      "sha256": "6136b2d7964c5188fef03cecf5b660ef9061d10e0010ad0a53bdf9be026e9abd"
     },
     {
       "file": "public/ahv/l10n/hi/views/home-mobile.json",
-      "sha256": "c6885266af8e264fb13bba939ddca907af0beb810c067036bf7f7eaeedb0f839"
+      "sha256": "3114729b3a683cdc9acde221a902b43dfe592dd8c5487187c3107fecc30fdbef"
     },
     {
       "file": "public/ahv/l10n/it/assets/about-us-data.js",
@@ -5374,7 +5374,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/classic-villa-data.js",
-      "sha256": "5058f29b86400684913123a55d969c94c2107ed6af92205753b3a1a594f323e5"
+      "sha256": "91fd91b5b98d7ec41e6486759902ef232c1f7a1ba461a0936a5b0475ad06a728"
     },
     {
       "file": "public/ahv/l10n/it/assets/collection-family-data.js",
@@ -5422,7 +5422,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/deluxe-villa-data.js",
-      "sha256": "10710fe5357c834989aa54a22c1e22175aeeec909cf04ed714367786225a37f1"
+      "sha256": "a48f23c41f117a8c6d3bc71e534e0a93b1fe30c9285106881e9147eb03ce9d1b"
     },
     {
       "file": "public/ahv/l10n/it/assets/enquiry-family-data.js",
@@ -5478,7 +5478,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/maharaja-suite-data.js",
-      "sha256": "6bf3a35d41a57ed9ef39ed0fd93b3fe6670d4bc23cdb91bd6ec1288e0316cb91"
+      "sha256": "6d82c9865faf4c944c9b1618bf9bda8b408a7bb8b13235bca33dc84823ec9ebc"
     },
     {
       "file": "public/ahv/l10n/it/assets/mindfulness-retreat-data.js",
@@ -5490,7 +5490,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/our-villas-data.js",
-      "sha256": "a1da6de3fcb6d8a8b9da82b2017667733242078aebc76a8bfb37258a968d4762"
+      "sha256": "96c7d039d188d50569d1c2e7366501bd083a16c0f19cd332661e5e9767174729"
     },
     {
       "file": "public/ahv/l10n/it/assets/partner-air-india-data.js",
@@ -5542,7 +5542,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/royal-villa-data.js",
-      "sha256": "cdeca67a93a0eaa841f9bbbdc524b1cfd79d20d36e36c3eead38dbb7ec44325f"
+      "sha256": "1bcaaf03f83296b9aef3e7c73146efc697da1ee76bcd0898c9aae46dbae4c0e2"
     },
     {
       "file": "public/ahv/l10n/it/assets/seven-informational-data.js",
@@ -6346,11 +6346,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/home-hi-fi-v4.json",
-      "sha256": "77fd1131eb3b2ff5da6e13b28101149cae09f8cd91dedf02aed7978add9f7fb6"
+      "sha256": "250e51c5b98e437b48dca87c5f682fbccdf07a073c1c4d18e6c48697d54b7464"
     },
     {
       "file": "public/ahv/l10n/it/views/home-mobile.json",
-      "sha256": "e91ae85179e738e39b49017b1d16c6f0fafa17db10c5075f13b3eafbd48a91f6"
+      "sha256": "52e1bf8b2d92cb6d6661988abe93b4896e016bc466a95fd85d1fc4291e5fd0e6"
     },
     {
       "file": "public/ahv/l10n/ja/assets/about-us-data.js",
@@ -6414,7 +6414,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/classic-villa-data.js",
-      "sha256": "39e5859802e72dd4f3b99b3b260eabe84efef367c8c5628e1619eec409c18ef2"
+      "sha256": "f3a4e0f95241441a326cca5c217bc51521ae6763dcd5838998662e86bda2186d"
     },
     {
       "file": "public/ahv/l10n/ja/assets/collection-family-data.js",
@@ -6462,7 +6462,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/deluxe-villa-data.js",
-      "sha256": "2a82b89d592f8252874f03ae5874b589e61feb975fbcabed9e45252885b313fe"
+      "sha256": "79b4ecf9e445f282cb480d39156312d204e8ed6572200e8ae20f07501c8db15c"
     },
     {
       "file": "public/ahv/l10n/ja/assets/enquiry-family-data.js",
@@ -6518,7 +6518,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/maharaja-suite-data.js",
-      "sha256": "2b5d474072f6f82c218df3317a72b98c5aa4b68afdaa39621407df780d3a84ba"
+      "sha256": "166fc29430f18670a28aa975b057ddce5e013ac2978558c6bb09adec1f301926"
     },
     {
       "file": "public/ahv/l10n/ja/assets/mindfulness-retreat-data.js",
@@ -6530,7 +6530,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/our-villas-data.js",
-      "sha256": "e24e9ee412e4406c9b3ccc9e1647895bc75f18dd005eb702458befd48645c3b6"
+      "sha256": "7fba865c1c0e40fb95eb4f0557ea57697aa29eb151e3d51f7822545bfc350072"
     },
     {
       "file": "public/ahv/l10n/ja/assets/partner-air-india-data.js",
@@ -6582,7 +6582,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/royal-villa-data.js",
-      "sha256": "5712229e49fa47c53f4c4e38b1ace602a8de038b85a5a019aead118341224595"
+      "sha256": "b1dab1dc566ef200f60904201110aace93892d978205a57d804f3a5eef6d58c1"
     },
     {
       "file": "public/ahv/l10n/ja/assets/seven-informational-data.js",
@@ -7386,11 +7386,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/home-hi-fi-v4.json",
-      "sha256": "7715e86732193ddf9e6c39ad0d99fc1d525db9ef7bbefd46ea811bec0017a3c6"
+      "sha256": "35b7d49c1e36662985291ed1282f2e2da2c8ebed17ce0738c2526c6394be0080"
     },
     {
       "file": "public/ahv/l10n/ja/views/home-mobile.json",
-      "sha256": "4d0c30973248d10c9f66f6a90f016e252ef5c0e50cba2ded2f3a269288576a70"
+      "sha256": "a2615ded33d0a715049ed8550382451cd50e7767f0c42d2545a7ecdd9314ce3c"
     },
     {
       "file": "public/ahv/l10n/ko/assets/about-us-data.js",
@@ -7454,7 +7454,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/classic-villa-data.js",
-      "sha256": "ef4f498e4f5149981ba4a59e7c1625def45323bb51bffa585d57236456b442d3"
+      "sha256": "8e36fcc431264727ae0c12ae28b094947a24d70dc9d594a5785fdbe2f6a848cf"
     },
     {
       "file": "public/ahv/l10n/ko/assets/collection-family-data.js",
@@ -7502,7 +7502,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/deluxe-villa-data.js",
-      "sha256": "ac730ec9916b7556c3312b3af0fc2de9c928b276861f55a490fae0df6f5d22cf"
+      "sha256": "27ad103c9f81328083e69acad1e86cb3f2600a4fd252bb917abc37975b8e5bee"
     },
     {
       "file": "public/ahv/l10n/ko/assets/enquiry-family-data.js",
@@ -7558,7 +7558,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/maharaja-suite-data.js",
-      "sha256": "0af6772cd4969775bf422105f4e0b416103321ce7c6080c5ff569efc0dd12aec"
+      "sha256": "c40035cc2a700d943a2048b2f5431d1d0f4d490541ee3d8e531df04752a22bb5"
     },
     {
       "file": "public/ahv/l10n/ko/assets/mindfulness-retreat-data.js",
@@ -7570,7 +7570,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/our-villas-data.js",
-      "sha256": "f258c37e3c8b11e1ccf73b69cfe56ba146c82d1ab06ae2a9324ccc9ddaaa2b79"
+      "sha256": "ff033c0499d415c8a288834ae3766015d13ee7a3b705b628a00d0bf046975291"
     },
     {
       "file": "public/ahv/l10n/ko/assets/partner-air-india-data.js",
@@ -7622,7 +7622,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/royal-villa-data.js",
-      "sha256": "231e08d52a9fbb8d7c69d54d2e9eb54b563e409a41b5e5559066e4f23edc20f4"
+      "sha256": "cf0a586121b61005aac80b1879805d9beefd57c49ce7869467761089eb885534"
     },
     {
       "file": "public/ahv/l10n/ko/assets/seven-informational-data.js",
@@ -8426,11 +8426,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/home-hi-fi-v4.json",
-      "sha256": "f76b0b3d0b0547fe692d091bc36346b2c6a9d21f28e5273e9b4c8d22b98f6f9c"
+      "sha256": "28558a1269e93656dda56566dc607d979916f0195ac5c7ffb649411ed706fff3"
     },
     {
       "file": "public/ahv/l10n/ko/views/home-mobile.json",
-      "sha256": "9df1b1b7e857b53c1f9c99b6bcf8cfc39eab3d2668b388d08f497eec52fe469b"
+      "sha256": "8653912ef2f45432fd68f16138480d63cadb202fc43cfe038c3d42f46e42d067"
     },
     {
       "file": "public/ahv/l10n/nl/assets/about-us-data.js",
@@ -8494,7 +8494,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/classic-villa-data.js",
-      "sha256": "5e454381311d1de1004a0fdd65795f94052a2e898faeb517dcf6ebaf7bf97ba9"
+      "sha256": "73b45d859f1b78c0ba300fdafe733d0dafeb8217dac941152a3530433377c201"
     },
     {
       "file": "public/ahv/l10n/nl/assets/collection-family-data.js",
@@ -8542,7 +8542,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/deluxe-villa-data.js",
-      "sha256": "2e08f51b3533bcc5772fdf955888345354c212a5b070bffe30e969a0f83da375"
+      "sha256": "a4fbb54c64faa350d62009a8568ceb065dad496bddee0373cec01cd5e8d64e53"
     },
     {
       "file": "public/ahv/l10n/nl/assets/enquiry-family-data.js",
@@ -8598,7 +8598,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/maharaja-suite-data.js",
-      "sha256": "cb0881f9cbe55833ca683ffb99392a4a98e9d4b1605cccfb5522d6e304ead0b6"
+      "sha256": "6152b437fa0245717b55b5a41b41ce4bc4dcebdfb011c28e703aa99766c60196"
     },
     {
       "file": "public/ahv/l10n/nl/assets/mindfulness-retreat-data.js",
@@ -8610,7 +8610,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/our-villas-data.js",
-      "sha256": "56d1f1cf9cb7a142e9e6e0ccd36f5c4862ecde350ae777fdbb43643c06fc8374"
+      "sha256": "bd06db1bdae2a75698d648f9af0e512805357e4af2627124edd2c55e560bbfdd"
     },
     {
       "file": "public/ahv/l10n/nl/assets/partner-air-india-data.js",
@@ -8662,7 +8662,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/royal-villa-data.js",
-      "sha256": "1209d365b021f37ab958af06943a5b11165957244e105e590e7bdbd9b93c685c"
+      "sha256": "07256337162ba0236aa9d7e36d169fc1ea94c61f3d74ddd48ed73613e3877f08"
     },
     {
       "file": "public/ahv/l10n/nl/assets/seven-informational-data.js",
@@ -9466,11 +9466,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/home-hi-fi-v4.json",
-      "sha256": "b4d1a0d62013f8352aac41955b66e8476e8fa7fcf9f59be78a4796ebbdee6949"
+      "sha256": "7607df96cfef7d11914ce15281dd3da30322e95cf925b9f2ca7fd7fa26f720ac"
     },
     {
       "file": "public/ahv/l10n/nl/views/home-mobile.json",
-      "sha256": "1c0ff57abe9c53ee43b6cb216492f9c8d093b840c4ffef23b5372cfd476cfb8a"
+      "sha256": "4580bab9e981914fa53f79440fc2623636fab1f4d3ddc62394ef5d175f854a9f"
     },
     {
       "file": "public/ahv/l10n/pt/assets/about-us-data.js",
@@ -9534,7 +9534,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/classic-villa-data.js",
-      "sha256": "4adc4434ee4382a9b2e543655e1b11d57add8233b57ddaac24c2df8c909cee23"
+      "sha256": "1966b7309b9a6dfa4eba71e0789bd6082e95551543e8cd5fadf87868fe4230cb"
     },
     {
       "file": "public/ahv/l10n/pt/assets/collection-family-data.js",
@@ -9582,7 +9582,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/deluxe-villa-data.js",
-      "sha256": "311953585be998c9a872fd8d21a1f1d27728cbc465c1f6e54f6598177eddb283"
+      "sha256": "9ac078558c2ae386bb3e53f961e5be497aaaa1d70524c0aa2d1cfc741e3eef61"
     },
     {
       "file": "public/ahv/l10n/pt/assets/enquiry-family-data.js",
@@ -9638,7 +9638,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/maharaja-suite-data.js",
-      "sha256": "9c299ecd36ebc636f1f1902adebe0db4d79d900a92e3386b7030302d9df8822a"
+      "sha256": "a7f6b7c463d73fcb840303952b9d708dfe24f77b321513e45f16c31e142c2bd3"
     },
     {
       "file": "public/ahv/l10n/pt/assets/mindfulness-retreat-data.js",
@@ -9650,7 +9650,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/our-villas-data.js",
-      "sha256": "f1ceade92c5c203304a80098956be25f12ee969c07d73d1de4f3fbda6d19bdff"
+      "sha256": "6f25c516425f95b99fc64294c2bf0a4943e7cc3d3e702c5c151c58dd315fe11c"
     },
     {
       "file": "public/ahv/l10n/pt/assets/partner-air-india-data.js",
@@ -9702,7 +9702,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/royal-villa-data.js",
-      "sha256": "2fa6ee93c1d6538f19d00943577dd869c3a3bc4537007a39430ae82be84af53c"
+      "sha256": "265ee682546be18bf1ce3cf2673e8cd35abf2261be9292fdcbcb494f2a52b97b"
     },
     {
       "file": "public/ahv/l10n/pt/assets/seven-informational-data.js",
@@ -10506,11 +10506,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/home-hi-fi-v4.json",
-      "sha256": "61f6d0632700710c040db655cb905e1771e420a9391418bcc1b9ed0ebe79584f"
+      "sha256": "4b55f15832691f5d84cf9a650cf27f1af7b71b969c53cd9297b5158555490053"
     },
     {
       "file": "public/ahv/l10n/pt/views/home-mobile.json",
-      "sha256": "3f21628c8b8b98a013b04364ae248d0d814ea0c8c8e04f0c9b65840197965d25"
+      "sha256": "98a6edf2ce5b8b5f1c9e5d8497192c2f6c3214fb9dee870b7ee62728efeedb5a"
     },
     {
       "file": "public/ahv/l10n/ru/assets/about-us-data.js",
@@ -10574,7 +10574,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/classic-villa-data.js",
-      "sha256": "bad1fe25df2df3ec82357607140eeb4b551511f18bb67870da33b653214c149e"
+      "sha256": "c56172b0bf9e6a22f4c3c6117dad256d50048980fe5682f904f95f03963aa53f"
     },
     {
       "file": "public/ahv/l10n/ru/assets/collection-family-data.js",
@@ -10622,7 +10622,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/deluxe-villa-data.js",
-      "sha256": "b4c7817e9967c1abdedea86645bcbf9ee9fed437ec1789d4909f87597a91b623"
+      "sha256": "ca0619dbb7f4de7dd31a0a9053f72a843e91b6395e77e27a3a17fd9aed07bb57"
     },
     {
       "file": "public/ahv/l10n/ru/assets/enquiry-family-data.js",
@@ -10678,7 +10678,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/maharaja-suite-data.js",
-      "sha256": "4beb537c1fbafcf1574cc9b6cc2a36d66661384a0e9a70fadde8f222808faefb"
+      "sha256": "acb0a48d437da8f86d83940180f6302f769719b81da12baed75136cc68b25656"
     },
     {
       "file": "public/ahv/l10n/ru/assets/mindfulness-retreat-data.js",
@@ -10690,7 +10690,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/our-villas-data.js",
-      "sha256": "d1914ebb66d84c2bb18dd3f7eb8fe92ceae6111cf2becb702b11ede706c96459"
+      "sha256": "d1e99f6078b8e9aeb83f96d71bcdbca01a9b6da97f7a5aaa296d899e1d5a3fc1"
     },
     {
       "file": "public/ahv/l10n/ru/assets/partner-air-india-data.js",
@@ -10742,7 +10742,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/royal-villa-data.js",
-      "sha256": "32a20b323bd99d1b989bb2dccba5fb1cfcf61d034ceac26fcf6f3300691cf8bf"
+      "sha256": "b6103146e644862112045c61967497eede5815c6b7c457c354a63586c5bde4d9"
     },
     {
       "file": "public/ahv/l10n/ru/assets/seven-informational-data.js",
@@ -11546,11 +11546,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/home-hi-fi-v4.json",
-      "sha256": "70c050c2a4d462302a509d8e2e18bdafc46b95e53ab00a3594cdba1f18c592b5"
+      "sha256": "f530faf8f3d64901ff7a5df17f35b859a768e7f6d6be7c7aaa398872d118e684"
     },
     {
       "file": "public/ahv/l10n/ru/views/home-mobile.json",
-      "sha256": "0848a4aacace93f4704f3b37d054ecefee58008d145c3f78cc7ff01f8df51576"
+      "sha256": "3a13986e6161a329043c27bdbe8a7b4a5636ad28b76852ac377e81bb78eb80c9"
     },
     {
       "file": "public/ahv/l10n/zh/assets/about-us-data.js",
@@ -11614,7 +11614,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/classic-villa-data.js",
-      "sha256": "971765ba6cebf8f6c0328b2113ae5cec7067baf14615a4c71f08d189b5ff950b"
+      "sha256": "8533753b16d8c52f45b1a7883a6a46197230ff1d393ee960744458aa33f34254"
     },
     {
       "file": "public/ahv/l10n/zh/assets/collection-family-data.js",
@@ -11662,7 +11662,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/deluxe-villa-data.js",
-      "sha256": "2fdd842a0e30ad78a3a5b9b976922c5753a0e9fb7fcff718551ec7d5c42f5507"
+      "sha256": "a506493f1226b764b018e483a7d13d482458d469a9f34e65a44bbdb6f1df87d2"
     },
     {
       "file": "public/ahv/l10n/zh/assets/enquiry-family-data.js",
@@ -11718,7 +11718,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/maharaja-suite-data.js",
-      "sha256": "aeee1fc30b9cd830f91f80f4fc123870fa3a23aeb6a981e248b128dc6e24c5d3"
+      "sha256": "398fb967fdf6423a0b5cc459c0616d6dec6a1afd06859e1314bbf69a56b1b7c8"
     },
     {
       "file": "public/ahv/l10n/zh/assets/mindfulness-retreat-data.js",
@@ -11730,7 +11730,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/our-villas-data.js",
-      "sha256": "40d840815f94ac79630fc1471c260f2fc267fba609f27fa4dd1abf59ba6f9f24"
+      "sha256": "04c8e42ad626b9ddbd52e64cad03043ff8c7d67a54af7385aa9174cbf305ae3d"
     },
     {
       "file": "public/ahv/l10n/zh/assets/partner-air-india-data.js",
@@ -11782,7 +11782,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/royal-villa-data.js",
-      "sha256": "87bd019bce2402c20f0c950b43672709f98c975f30e92eb6c310548217d7d65f"
+      "sha256": "94147682dbba9c56b0099973241bb82646107ee8b10ef4b5c142c2b15adc5150"
     },
     {
       "file": "public/ahv/l10n/zh/assets/seven-informational-data.js",
@@ -12586,11 +12586,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/home-hi-fi-v4.json",
-      "sha256": "f17600b6b0cab4dffe2f89f44df877f0a93cb3afa0c20a84f19e85d5a5d56cc6"
+      "sha256": "0e63a7bd158453ecac8554936436897e21b221e9a040bf0aff36a90e353520ce"
     },
     {
       "file": "public/ahv/l10n/zh/views/home-mobile.json",
-      "sha256": "b5b0f9c4d57ddfedab50adcb2ba400d7a5b4cea1b7be865a63705d858598591f"
+      "sha256": "fadcd0a85c437e4d10f047dffe901f07a646006f43d967c13fa0ff21e502cf0c"
     }
   ],
   "files": [
@@ -12826,8 +12826,8 @@
     },
     {
       "file": "l10n/prerender/hi/classic-villa.html.gz",
-      "sha256": "2f2c98850dbaca849169d0fc381dc76e3d32fe4ae9d875507291e14a1fbccc25",
-      "bytes": 16317
+      "sha256": "48207a3eb91a1ec46c8e24f75029e675235285effafefb060b9d0cc8936cce92",
+      "bytes": 16162
     },
     {
       "file": "l10n/prerender/hi/consultancy.html.gz",
@@ -12871,8 +12871,8 @@
     },
     {
       "file": "l10n/prerender/hi/deluxe-villa.html.gz",
-      "sha256": "2677af63bd58b7c88a8d658f29946b5c488c9d14aafbb19da73a7366042933bf",
-      "bytes": 16538
+      "sha256": "e67ddd50a537810ad98959f366dff54358e1eda4ecf3d9fd97c29c0ac001146c",
+      "bytes": 16380
     },
     {
       "file": "l10n/prerender/hi/destination-palakkad.html.gz",
@@ -12961,8 +12961,8 @@
     },
     {
       "file": "l10n/prerender/hi/index.html.gz",
-      "sha256": "a20b8672cb7b6a7eae787ceecb35e9b59f1a4abbc1d51405662f20a01d210110",
-      "bytes": 34185
+      "sha256": "ea23124745797f6a4cff4b2cd47f30ab5cc7062f74203a64ac5bcaf301de710a",
+      "bytes": 34042
     },
     {
       "file": "l10n/prerender/hi/index.json",
@@ -13116,8 +13116,8 @@
     },
     {
       "file": "l10n/prerender/hi/maharaja-suite.html.gz",
-      "sha256": "45ec607ead13088ac62cfb1ec28bc37c4ba5d5e800346f76a3d57914619e4707",
-      "bytes": 16379
+      "sha256": "0fbebb2f22a2a5e10514a31304223e4859f2dc8f785a792a13aac7f4d7584954",
+      "bytes": 16220
     },
     {
       "file": "l10n/prerender/hi/meditation.html.gz",
@@ -13221,8 +13221,8 @@
     },
     {
       "file": "l10n/prerender/hi/our-villas.html.gz",
-      "sha256": "c3dd4e65bef69919b13ca382d5d1871c8e847200436ac2e550b1b13882fe4ea9",
-      "bytes": 15188
+      "sha256": "7136fc434344a74cfec7dbb2a9c1d5483d40f64a61082f05ad804d67f4ecf7a5",
+      "bytes": 15081
     },
     {
       "file": "l10n/prerender/hi/packages.html.gz",
@@ -13331,8 +13331,8 @@
     },
     {
       "file": "l10n/prerender/hi/royal-villa.html.gz",
-      "sha256": "be5836a297d02c1ffb5ca6c7c7321898aa852277d1ab4f6ff98ed8f3f1050d19",
-      "bytes": 16582
+      "sha256": "e18b51cfdf672dba05342d9ef5f54ee20bee3ea1e2f8623a20884aebe00ab2c6",
+      "bytes": 16429
     },
     {
       "file": "l10n/prerender/hi/search-results.html.gz",
@@ -13911,8 +13911,8 @@
     },
     {
       "file": "l10n/prerender/de/classic-villa.html.gz",
-      "sha256": "d1363680508b356b12ebd7503814075e7e8f7bd95e71ce09d089480e4b2674f1",
-      "bytes": 15500
+      "sha256": "efa8b3c7822501310eac2284917263cae616cb5fba94b855f8a5f7e9b8811a17",
+      "bytes": 15384
     },
     {
       "file": "l10n/prerender/de/consultancy.html.gz",
@@ -13956,8 +13956,8 @@
     },
     {
       "file": "l10n/prerender/de/deluxe-villa.html.gz",
-      "sha256": "b50f4f75518c24520027f5241a63656dbda8a90ada3a218f2abe6c536a9fc62b",
-      "bytes": 15457
+      "sha256": "9f0cc903f0a8bba2029e1aef4289ab42e9dc2eef0635182fb18732afa13731c2",
+      "bytes": 15349
     },
     {
       "file": "l10n/prerender/de/destination-palakkad.html.gz",
@@ -14046,8 +14046,8 @@
     },
     {
       "file": "l10n/prerender/de/index.html.gz",
-      "sha256": "ff4b614505221d7602da8b380e63f7e1804aa351b57fb41510838b5d582e345f",
-      "bytes": 31664
+      "sha256": "99301f04db5bbdedfb9efa6e873e415c64daa1430738b49214c5cd0dc9ce409c",
+      "bytes": 31631
     },
     {
       "file": "l10n/prerender/de/index.json",
@@ -14201,8 +14201,8 @@
     },
     {
       "file": "l10n/prerender/de/maharaja-suite.html.gz",
-      "sha256": "8a8b351c34c609b0fe4309eaf66799efd67f11a0099165bbf1f61506bf5bdb1e",
-      "bytes": 15404
+      "sha256": "a544adfaa73d677a2867d0bbcb994002701c8e5faee85b20acb602fcdd627a79",
+      "bytes": 15282
     },
     {
       "file": "l10n/prerender/de/meditation.html.gz",
@@ -14306,8 +14306,8 @@
     },
     {
       "file": "l10n/prerender/de/our-villas.html.gz",
-      "sha256": "78851eb727857b44ea4b240ee3bd4ceddfddbbbd4b5292d9a7ff2a57f5e02203",
-      "bytes": 14524
+      "sha256": "b4c7e25cea66178d0dfec4e0a251b9c64125618f42b424ee5d25dba639e4134d",
+      "bytes": 14442
     },
     {
       "file": "l10n/prerender/de/packages.html.gz",
@@ -14416,8 +14416,8 @@
     },
     {
       "file": "l10n/prerender/de/royal-villa.html.gz",
-      "sha256": "8a75d0ae1c4a0481e6e01672d0a060d220595fa3201f7df977ecec7929c18505",
-      "bytes": 15554
+      "sha256": "cda7aef3bc26ff682e5c8895491b078d76b789530a42c24e579ff8fdd84df9b5",
+      "bytes": 15449
     },
     {
       "file": "l10n/prerender/de/search-results.html.gz",
@@ -14996,8 +14996,8 @@
     },
     {
       "file": "l10n/prerender/fr/classic-villa.html.gz",
-      "sha256": "2e9ce6bb5704ce973b44ad762a7c0ab7911be232755f178f94940f8db3b4d0ee",
-      "bytes": 15407
+      "sha256": "dbfb8ea89cfe854a8ec9d6a5cb760991dd9c452e24baa7f532064b7c5ef58aae",
+      "bytes": 15320
     },
     {
       "file": "l10n/prerender/fr/consultancy.html.gz",
@@ -15041,8 +15041,8 @@
     },
     {
       "file": "l10n/prerender/fr/deluxe-villa.html.gz",
-      "sha256": "08b723f48305ff7697f443ffbc1908911c4934afd77979cf26bac8feb4fb22d1",
-      "bytes": 15454
+      "sha256": "c3ac6afa68525009300592b09110d2e3ef75120008d51955861cb32eb383b39b",
+      "bytes": 15357
     },
     {
       "file": "l10n/prerender/fr/destination-palakkad.html.gz",
@@ -15131,8 +15131,8 @@
     },
     {
       "file": "l10n/prerender/fr/index.html.gz",
-      "sha256": "378b65f32e7c137385be534419c55aa976c881bde193f144cff6492f1491c186",
-      "bytes": 31673
+      "sha256": "5566908a4071691eebd6e088e6c01cb81d6647574b5689993a54c588ddb68067",
+      "bytes": 31647
     },
     {
       "file": "l10n/prerender/fr/index.json",
@@ -15286,8 +15286,8 @@
     },
     {
       "file": "l10n/prerender/fr/maharaja-suite.html.gz",
-      "sha256": "afad11323c478938fe47f29efd8bc2d08bd71a13bdf6e23b13d2d51014249410",
-      "bytes": 15391
+      "sha256": "3abf5a59224eb50db27e91d7d93eb1e62494423b02216c6705b23efe1d79b9a3",
+      "bytes": 15305
     },
     {
       "file": "l10n/prerender/fr/meditation.html.gz",
@@ -15391,8 +15391,8 @@
     },
     {
       "file": "l10n/prerender/fr/our-villas.html.gz",
-      "sha256": "5fa4d80e1c710ff29b99e253945daa7a6bec39092e6cda0d72195a2bf74f686c",
-      "bytes": 14515
+      "sha256": "83273c100b1905047c3e19ede67cb24a10580422267eec83085a5ff77b77895f",
+      "bytes": 14454
     },
     {
       "file": "l10n/prerender/fr/packages.html.gz",
@@ -15501,8 +15501,8 @@
     },
     {
       "file": "l10n/prerender/fr/royal-villa.html.gz",
-      "sha256": "df0946562eec4f2b2f102cc5eba85af4ac35da1a0b909ec28c357a5f5dc6ae5a",
-      "bytes": 15488
+      "sha256": "3fdcf1aec6d370f4ccd660e8d3cd5bd52e08e4077ba897d9799efda6e15cd9e2",
+      "bytes": 15393
     },
     {
       "file": "l10n/prerender/fr/search-results.html.gz",
@@ -16081,8 +16081,8 @@
     },
     {
       "file": "l10n/prerender/es/classic-villa.html.gz",
-      "sha256": "3caafc9ec5387957a32f83c9c5a4d5050d42ea3a3c589962e499a869fb496372",
-      "bytes": 15215
+      "sha256": "faee3ed60e455455c2141dc5f9def8f0dd30d2d080dbb2aa66b4afa3cb3be639",
+      "bytes": 15119
     },
     {
       "file": "l10n/prerender/es/consultancy.html.gz",
@@ -16126,8 +16126,8 @@
     },
     {
       "file": "l10n/prerender/es/deluxe-villa.html.gz",
-      "sha256": "f0e8ce5503f4026f1b464d470dc42122d6bd5a03c9374f9884e8c091ee4b3182",
-      "bytes": 15259
+      "sha256": "70a4a8524c79b0b01ac4d56e0cb7a72a42d1ccf5379d00068bf9e3636db4688d",
+      "bytes": 15163
     },
     {
       "file": "l10n/prerender/es/destination-palakkad.html.gz",
@@ -16216,8 +16216,8 @@
     },
     {
       "file": "l10n/prerender/es/index.html.gz",
-      "sha256": "b57757156ebf8a92f8bfbb7fa9a53c90c7ebe282cf76052f5b8326fb8da80422",
-      "bytes": 31417
+      "sha256": "42b47602e0cbf08d1774a84ed489ca3d0eb5b469960bf10742b54084dcfede10",
+      "bytes": 31432
     },
     {
       "file": "l10n/prerender/es/index.json",
@@ -16371,8 +16371,8 @@
     },
     {
       "file": "l10n/prerender/es/maharaja-suite.html.gz",
-      "sha256": "8798dfb78c7b278dac1ab950d87ca1dd235ddca6f8a2573d96818a51899dfde2",
-      "bytes": 15314
+      "sha256": "e1ab13d347e4efc0842860cdc3f30057deee8e6f1898a7b597de633763bf207c",
+      "bytes": 15204
     },
     {
       "file": "l10n/prerender/es/meditation.html.gz",
@@ -16476,8 +16476,8 @@
     },
     {
       "file": "l10n/prerender/es/our-villas.html.gz",
-      "sha256": "8a6585a1df3a85723dc58a1167817f5d4e91e85290b8e489dd4416582eb210cf",
-      "bytes": 14306
+      "sha256": "3a9f0c9b51b62cba02645f73bfe360bdba98922a6dfdb3230bdf24803c00a7ac",
+      "bytes": 14239
     },
     {
       "file": "l10n/prerender/es/packages.html.gz",
@@ -16586,8 +16586,8 @@
     },
     {
       "file": "l10n/prerender/es/royal-villa.html.gz",
-      "sha256": "d3d0482489ee8b5faa837492a35abcdfe826eacc2150accfe7f1d1ca300e4cd5",
-      "bytes": 15404
+      "sha256": "40de044d787537bcfb29256691f830cd67c09ac46c39ec93bff9799f0f0f73d4",
+      "bytes": 15304
     },
     {
       "file": "l10n/prerender/es/search-results.html.gz",
@@ -17166,8 +17166,8 @@
     },
     {
       "file": "l10n/prerender/it/classic-villa.html.gz",
-      "sha256": "430521db8c635cd3fb2b86cb4bcc942a50e61a6ab9bc27ba6a3532c6a277a2e3",
-      "bytes": 15253
+      "sha256": "f1d6f94cf05eaac1eef9a5868587b1e37cef9436e46ed9882a1f3eca29a90144",
+      "bytes": 15177
     },
     {
       "file": "l10n/prerender/it/consultancy.html.gz",
@@ -17211,8 +17211,8 @@
     },
     {
       "file": "l10n/prerender/it/deluxe-villa.html.gz",
-      "sha256": "fe727ece97d6c0ff429e9bc84d702b4c8ec286060627c095e028dec7bbbfd70d",
-      "bytes": 15274
+      "sha256": "086f2a72b695d7aa5f27c6d887bba975fbf68f1eddfdadcbb0b682379b4ddf34",
+      "bytes": 15209
     },
     {
       "file": "l10n/prerender/it/destination-palakkad.html.gz",
@@ -17301,8 +17301,8 @@
     },
     {
       "file": "l10n/prerender/it/index.html.gz",
-      "sha256": "c3f28e8d1d55ef582c8655c6d616b5c669c3d53bf964f942ce94a3e0e0d44aeb",
-      "bytes": 31172
+      "sha256": "fdc7e86f6d99635c15c0f1d421348f5657bc8ed1f2ef41c51805134cf2eebb19",
+      "bytes": 31193
     },
     {
       "file": "l10n/prerender/it/index.json",
@@ -17456,8 +17456,8 @@
     },
     {
       "file": "l10n/prerender/it/maharaja-suite.html.gz",
-      "sha256": "3bdf57bd3067138cbf30ddc41c773e3bfcfbacfbaceae33834d0fe322462638c",
-      "bytes": 15244
+      "sha256": "771c682588b6f9419798a40b5024cfb13203bcda8cf97d86218e82c1a4859ee8",
+      "bytes": 15168
     },
     {
       "file": "l10n/prerender/it/meditation.html.gz",
@@ -17561,8 +17561,8 @@
     },
     {
       "file": "l10n/prerender/it/our-villas.html.gz",
-      "sha256": "39290939c9d7013e5b540da4b45256f21b9ef47c635eb341c626d3867e588bc0",
-      "bytes": 14375
+      "sha256": "7bfcd15548f424e8d24e2e564e2cae2658422a0b023792ed78a9904cda946bc0",
+      "bytes": 14317
     },
     {
       "file": "l10n/prerender/it/packages.html.gz",
@@ -17671,8 +17671,8 @@
     },
     {
       "file": "l10n/prerender/it/royal-villa.html.gz",
-      "sha256": "415d45caddc99f5feafc4cc4a152323a3689cbd98c042dc2f9d68552404a043a",
-      "bytes": 15415
+      "sha256": "44222d9ed10364227c42da06d2378d5fa38d44c445dc231ea241484ea73d9c98",
+      "bytes": 15331
     },
     {
       "file": "l10n/prerender/it/search-results.html.gz",
@@ -18251,8 +18251,8 @@
     },
     {
       "file": "l10n/prerender/pt/classic-villa.html.gz",
-      "sha256": "83828fc0bb1458b4efd24a9247f3ea118569f5b8594bba5ac437b5880fb09b98",
-      "bytes": 15324
+      "sha256": "fb4b020b913d9197f157e59a930f4a7c64c6b4ab13e6d43726668b7af9f37fa9",
+      "bytes": 15224
     },
     {
       "file": "l10n/prerender/pt/consultancy.html.gz",
@@ -18296,8 +18296,8 @@
     },
     {
       "file": "l10n/prerender/pt/deluxe-villa.html.gz",
-      "sha256": "2420e40246a1ee3f778a4e6f555ea1c0c57926bd1535569386f0e5daa57ee5a4",
-      "bytes": 15344
+      "sha256": "ef053dfa51365c39fb471be30b84d363d6352f221df9e432f1cfc0435b230a17",
+      "bytes": 15256
     },
     {
       "file": "l10n/prerender/pt/destination-palakkad.html.gz",
@@ -18386,8 +18386,8 @@
     },
     {
       "file": "l10n/prerender/pt/index.html.gz",
-      "sha256": "3decace35b3509555d890914d4524b62907c58bc44c1a4163c435257e6ddef11",
-      "bytes": 31716
+      "sha256": "edf1f14aec7307c87303e470c5af438545ed2460a75fd91686dde276587a335f",
+      "bytes": 31761
     },
     {
       "file": "l10n/prerender/pt/index.json",
@@ -18541,8 +18541,8 @@
     },
     {
       "file": "l10n/prerender/pt/maharaja-suite.html.gz",
-      "sha256": "1fbe47b0f486780d8698a8f04173af9d3b86ab71bbbdf873ecba8d923e5c84d3",
-      "bytes": 15341
+      "sha256": "9ad69226d0ca0f9719e319affa4d2818a9d651ed42371fb67beef79f36a4b1c6",
+      "bytes": 15242
     },
     {
       "file": "l10n/prerender/pt/meditation.html.gz",
@@ -18646,8 +18646,8 @@
     },
     {
       "file": "l10n/prerender/pt/our-villas.html.gz",
-      "sha256": "4f86d7711e0c3e71f37b8a7eaf29a48052b645a6131ef06886f5314bf1d5e7d9",
-      "bytes": 14408
+      "sha256": "a622cee1a661fabc5e14c9beb44917671b116a48ad9e6aa5c77652fa2acbe170",
+      "bytes": 14341
     },
     {
       "file": "l10n/prerender/pt/packages.html.gz",
@@ -18756,8 +18756,8 @@
     },
     {
       "file": "l10n/prerender/pt/royal-villa.html.gz",
-      "sha256": "cd1cf08aceca7d84a8b9411722939dcf445d98229a393cdb9a91cfd6dca42635",
-      "bytes": 15465
+      "sha256": "f62680633eda032f5f1971a87ded5e7042f015bd293a6ebf5bcab029d55f32a1",
+      "bytes": 15380
     },
     {
       "file": "l10n/prerender/pt/search-results.html.gz",
@@ -19336,8 +19336,8 @@
     },
     {
       "file": "l10n/prerender/nl/classic-villa.html.gz",
-      "sha256": "3e45c57ef4ae311d4d42970e7487c188a6d05224c38ba70d997bd1a1078735f4",
-      "bytes": 15261
+      "sha256": "f4b0c1df9c7c38e26d5316e3f2aaf0a16f230e241be3c734f04c0f308ceedf3f",
+      "bytes": 15171
     },
     {
       "file": "l10n/prerender/nl/consultancy.html.gz",
@@ -19381,8 +19381,8 @@
     },
     {
       "file": "l10n/prerender/nl/deluxe-villa.html.gz",
-      "sha256": "575506a8622443ba8fa8eb9cf00a14350b73030c3014630156c6b55c926c645b",
-      "bytes": 15293
+      "sha256": "4fa5fd9048f17851eafe0d5951a1f85272836788d1b6fedaa3f9fbe3284a548f",
+      "bytes": 15200
     },
     {
       "file": "l10n/prerender/nl/destination-palakkad.html.gz",
@@ -19471,8 +19471,8 @@
     },
     {
       "file": "l10n/prerender/nl/index.html.gz",
-      "sha256": "1c08f5e19277433ae8d0ccffc775fcda38e575538ac71d66430d8c9348d06112",
-      "bytes": 31024
+      "sha256": "d405a1083e82700461b2e86475f852ecee3432667ce9d50e32c23cc392da0eff",
+      "bytes": 31033
     },
     {
       "file": "l10n/prerender/nl/index.json",
@@ -19626,8 +19626,8 @@
     },
     {
       "file": "l10n/prerender/nl/maharaja-suite.html.gz",
-      "sha256": "fffa167f971ba0e8039ebf26416167d56fe33b47e00b7a38d38950fed27ecd31",
-      "bytes": 15188
+      "sha256": "c90819742f2a4a67fbccaf9ee41a0dfa78830fe4d68089e97f8007719e5e49cc",
+      "bytes": 15092
     },
     {
       "file": "l10n/prerender/nl/meditation.html.gz",
@@ -19731,8 +19731,8 @@
     },
     {
       "file": "l10n/prerender/nl/our-villas.html.gz",
-      "sha256": "9950194949be3514727f343cadc8829cea4c747b0326e5ff77f3b5d17d86a82c",
-      "bytes": 14297
+      "sha256": "ee1e51cea11647193c0e6bc52d19a7d9548fa3eba96a9830603ca3d0c5262068",
+      "bytes": 14238
     },
     {
       "file": "l10n/prerender/nl/packages.html.gz",
@@ -19841,8 +19841,8 @@
     },
     {
       "file": "l10n/prerender/nl/royal-villa.html.gz",
-      "sha256": "8d71ebaf029a589a02b1e983d40982ba7739df795efafa67bbfca2c3c6ff68d5",
-      "bytes": 15381
+      "sha256": "d1634c89c9fad76a6bee90666ef11df7177ba25bab27d5e5d868b1ed3b2fa59c",
+      "bytes": 15293
     },
     {
       "file": "l10n/prerender/nl/search-results.html.gz",
@@ -20421,8 +20421,8 @@
     },
     {
       "file": "l10n/prerender/ru/classic-villa.html.gz",
-      "sha256": "16204b29cb5a255e7d96c37824c2ac3c9c7f2a24f3af5414d2efe37cd75d47ce",
-      "bytes": 16720
+      "sha256": "0624618e8ec5edff2f5ba65d44746978bfbba8a7e8c6675c41087e38b5255536",
+      "bytes": 16526
     },
     {
       "file": "l10n/prerender/ru/consultancy.html.gz",
@@ -20466,8 +20466,8 @@
     },
     {
       "file": "l10n/prerender/ru/deluxe-villa.html.gz",
-      "sha256": "31dc8800f01c2ebb3df01f751f1b7b7cf67e981f174bd428a8ef9e904efc128c",
-      "bytes": 16795
+      "sha256": "e21270ef065303149668685c3aed3a4b7cdd38dbb287022d64fc0bd6929d2625",
+      "bytes": 16607
     },
     {
       "file": "l10n/prerender/ru/destination-palakkad.html.gz",
@@ -20556,8 +20556,8 @@
     },
     {
       "file": "l10n/prerender/ru/index.html.gz",
-      "sha256": "c91397e9eda4d3083cbe31522f6426ff90edfdf612a2aaca6f6c6299c5561e44",
-      "bytes": 35222
+      "sha256": "9c5693e37594b97cce59260364ba7228e33e3b7a1c540d8ea68089539f6968df",
+      "bytes": 35065
     },
     {
       "file": "l10n/prerender/ru/index.json",
@@ -20711,8 +20711,8 @@
     },
     {
       "file": "l10n/prerender/ru/maharaja-suite.html.gz",
-      "sha256": "b89d95ea465e16452501d252b3761242a0f7a6c6847086dcfe07819682531d6a",
-      "bytes": 16877
+      "sha256": "3129167f17c78f97cb3716df6c554f116f922daa1bd2787d32c6cb44c1192f97",
+      "bytes": 16687
     },
     {
       "file": "l10n/prerender/ru/meditation.html.gz",
@@ -20816,8 +20816,8 @@
     },
     {
       "file": "l10n/prerender/ru/our-villas.html.gz",
-      "sha256": "569ede516fddf0d3dcb4d4aea8ebb8a81f5c8bda6d257c1bab80f9e6a4712823",
-      "bytes": 15732
+      "sha256": "9161908c637c9dae300e98613bdf52ecea4fee6db1efad6ea8e6fc4b419b2a5f",
+      "bytes": 15573
     },
     {
       "file": "l10n/prerender/ru/packages.html.gz",
@@ -20926,8 +20926,8 @@
     },
     {
       "file": "l10n/prerender/ru/royal-villa.html.gz",
-      "sha256": "dcf6304ecc273005d32f9b3762fe4c49d86f34360b2f7693ad4668cec8a49cb4",
-      "bytes": 16921
+      "sha256": "5cffed881d7589d57cef2f1ad3675a03d740f85344579439884d9590854d4d4b",
+      "bytes": 16730
     },
     {
       "file": "l10n/prerender/ru/search-results.html.gz",
@@ -21506,8 +21506,8 @@
     },
     {
       "file": "l10n/prerender/ar/classic-villa.html.gz",
-      "sha256": "6d6aaf59b0161670728c59a2ec217c54c542e21d461b33d44e25b1307ab7462c",
-      "bytes": 16081
+      "sha256": "0e39936a64e3292b12f1c1d767f60df7f7a11e61ed0d26372bc3bd46e2bcb1d3",
+      "bytes": 15895
     },
     {
       "file": "l10n/prerender/ar/consultancy.html.gz",
@@ -21551,8 +21551,8 @@
     },
     {
       "file": "l10n/prerender/ar/deluxe-villa.html.gz",
-      "sha256": "732f9db7bd7a4698d6395a927e33fd8e18976826f794d4aa9f9a50db7251e044",
-      "bytes": 16078
+      "sha256": "d0c375c92d2202d3de82d25d464006c7a99fb883ab470cea93f0bdd16877b284",
+      "bytes": 15882
     },
     {
       "file": "l10n/prerender/ar/destination-palakkad.html.gz",
@@ -21641,8 +21641,8 @@
     },
     {
       "file": "l10n/prerender/ar/index.html.gz",
-      "sha256": "5a70ea853b4c958ad870049c85c2a6b76cc660d1d824caf1e0160fc54f88a78d",
-      "bytes": 33261
+      "sha256": "8f3fe7da4125c1664988444bb420042cde41e4826f15703e888dcda822897ef1",
+      "bytes": 33046
     },
     {
       "file": "l10n/prerender/ar/index.json",
@@ -21796,8 +21796,8 @@
     },
     {
       "file": "l10n/prerender/ar/maharaja-suite.html.gz",
-      "sha256": "3d4073e9768d077a1e76a0f43d2a90c7ebb453909505c08c76d8ddccb441551f",
-      "bytes": 16065
+      "sha256": "11aeecfc97287471517d14b063419dd051dd12758482233110c29004fa1402f5",
+      "bytes": 15877
     },
     {
       "file": "l10n/prerender/ar/meditation.html.gz",
@@ -21901,8 +21901,8 @@
     },
     {
       "file": "l10n/prerender/ar/our-villas.html.gz",
-      "sha256": "43f896fe743c777fbfdcb80aac53d6f39034d88e5c48a9ca359d5a741cbe58d8",
-      "bytes": 14976
+      "sha256": "1c8f11c74aab8d7f32178c8080a5a981425fb015bcfb325b891471568f70aef8",
+      "bytes": 14811
     },
     {
       "file": "l10n/prerender/ar/packages.html.gz",
@@ -22011,8 +22011,8 @@
     },
     {
       "file": "l10n/prerender/ar/royal-villa.html.gz",
-      "sha256": "129d46815b3ef0e68e45b554ec852547dd451d3af3e1852a1fc38fff97b7c326",
-      "bytes": 16158
+      "sha256": "225cd2de6f4a188e1e461f01193e47342c31977de4fd6472d96604db17f061d8",
+      "bytes": 15965
     },
     {
       "file": "l10n/prerender/ar/search-results.html.gz",
@@ -22591,8 +22591,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/classic-villa.html.gz",
-      "sha256": "694311e38d97928548dcc2e33b6e7fdfb4d9b8e62a67619d418d4d1a47bf6baa",
-      "bytes": 15823
+      "sha256": "c0d1d049f5844e4fdeda7be54ac69aace364ab43ef66abf8b16bf6e12ac29989",
+      "bytes": 15553
     },
     {
       "file": "l10n/prerender/zh-Hans/consultancy.html.gz",
@@ -22636,8 +22636,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/deluxe-villa.html.gz",
-      "sha256": "c429ac0adbc6962815711a69ec1447d5fa56e16f2f36575c7f17010a03eea7d6",
-      "bytes": 15863
+      "sha256": "6bfb18ca15cc4c18fc13b67f03ad0a95c9ed19a60b2d832e70a8959026e2674a",
+      "bytes": 15578
     },
     {
       "file": "l10n/prerender/zh-Hans/destination-palakkad.html.gz",
@@ -22726,8 +22726,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.html.gz",
-      "sha256": "c7dbebb958ad192e108b2a7432afa8c39bede756df2c0ec9a7942f493406ead5",
-      "bytes": 33051
+      "sha256": "d0129ab1e18f3034407bc882061d8d5d70d4cfe1d19b90f6276a11295ae13b43",
+      "bytes": 32613
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
@@ -22881,8 +22881,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/maharaja-suite.html.gz",
-      "sha256": "768fabb50f29b83ffeb50a8f1c50e301973d695fcf2c4684a5df430d4123a1a9",
-      "bytes": 15950
+      "sha256": "4fa54a929118e1b8b9717cd2eb0bce3ef6492e0eacd08badef0fdeebe66a9612",
+      "bytes": 15662
     },
     {
       "file": "l10n/prerender/zh-Hans/meditation.html.gz",
@@ -22986,8 +22986,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/our-villas.html.gz",
-      "sha256": "2821dcbea040c80de941acfa0f5a0332b17f00792d5c12b599afa28c5035b228",
-      "bytes": 14863
+      "sha256": "3a040cc06becbf8b0f6e5d559d9e77b1d66d2164e20dd1053a77dd05c6324167",
+      "bytes": 14654
     },
     {
       "file": "l10n/prerender/zh-Hans/packages.html.gz",
@@ -23096,8 +23096,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/royal-villa.html.gz",
-      "sha256": "33dd2335042c89ba6f13ee44975d9625b837092ae332433cef659efc8f33cd3f",
-      "bytes": 15952
+      "sha256": "508bbaa4865d191af8fa39145b1da97b471d17db5b1b06368b98c54cc63e50d4",
+      "bytes": 15680
     },
     {
       "file": "l10n/prerender/zh-Hans/search-results.html.gz",
@@ -23676,8 +23676,8 @@
     },
     {
       "file": "l10n/prerender/ja/classic-villa.html.gz",
-      "sha256": "7446680a56dd4593c08477ae86bda17e848315d30cafa641dfe5219b30dc99af",
-      "bytes": 16427
+      "sha256": "a1c9d0b720f980e9aac4a342eaeb7a491086c8ebb3a10b403402b3defbf07c8b",
+      "bytes": 16178
     },
     {
       "file": "l10n/prerender/ja/consultancy.html.gz",
@@ -23721,8 +23721,8 @@
     },
     {
       "file": "l10n/prerender/ja/deluxe-villa.html.gz",
-      "sha256": "19e46423790f4f31d4f66f85a75613c2f3eea719c07eef1cd3bd26d6a9592d6d",
-      "bytes": 16429
+      "sha256": "78796a6edd3bfe3791d7c1f67161ab8a43349a75e747d1a21a9871053b5874e1",
+      "bytes": 16193
     },
     {
       "file": "l10n/prerender/ja/destination-palakkad.html.gz",
@@ -23811,8 +23811,8 @@
     },
     {
       "file": "l10n/prerender/ja/index.html.gz",
-      "sha256": "defaaa3de3f9e83a05208f0c5f927b1413af5af17b96030880f567ec04b76c9a",
-      "bytes": 34169
+      "sha256": "49a14aa053d86c1ea3aa98c870e12f629cbe106c8df79561c67c362bef4dab2f",
+      "bytes": 33813
     },
     {
       "file": "l10n/prerender/ja/index.json",
@@ -23966,8 +23966,8 @@
     },
     {
       "file": "l10n/prerender/ja/maharaja-suite.html.gz",
-      "sha256": "5b210c43ce4a596de4c04935192488bc2d8db19bbb0cc27d69fc7c70b195f4a5",
-      "bytes": 16489
+      "sha256": "16617580a2145b89c9d260f6902312b8ef258dd4e8b4d2740c618b468c14570d",
+      "bytes": 16238
     },
     {
       "file": "l10n/prerender/ja/meditation.html.gz",
@@ -24071,8 +24071,8 @@
     },
     {
       "file": "l10n/prerender/ja/our-villas.html.gz",
-      "sha256": "280df5f2ce5040e7803e92a745cec60bc9f78610dc96f7bb1d58a343c28d341f",
-      "bytes": 15437
+      "sha256": "23fa9b1d9e953d9c459650817ce9cf74a44afa2189e8cf61f231e3f8a313203d",
+      "bytes": 15244
     },
     {
       "file": "l10n/prerender/ja/packages.html.gz",
@@ -24181,8 +24181,8 @@
     },
     {
       "file": "l10n/prerender/ja/royal-villa.html.gz",
-      "sha256": "f2b81324347b23109772e8c3de6ec57c6a0a08ae3f2daa83a3a4d0930a6b4e46",
-      "bytes": 16544
+      "sha256": "c9efe79aff0ef07bc9cf065ec5431c7d4d162cd1a4368d9b37010d0eacb16826",
+      "bytes": 16300
     },
     {
       "file": "l10n/prerender/ja/search-results.html.gz",
@@ -24761,8 +24761,8 @@
     },
     {
       "file": "l10n/prerender/ko/classic-villa.html.gz",
-      "sha256": "e9e3376139a7af29aeaef0464472dc48af47c6a6b601613a61f45fd30500e649",
-      "bytes": 15931
+      "sha256": "40e09b40d285d064aaa3697ea8e60b74636a119893d1500068bda750486fd0b5",
+      "bytes": 15683
     },
     {
       "file": "l10n/prerender/ko/consultancy.html.gz",
@@ -24806,8 +24806,8 @@
     },
     {
       "file": "l10n/prerender/ko/deluxe-villa.html.gz",
-      "sha256": "5c95e00d0bba0aa13122246e439c8dcb53a09d24f01546724e6d21dc1cfa4747",
-      "bytes": 16049
+      "sha256": "88462074e2087de354fd337abb480f8e90b5958b0a93edc0871318336c1348f2",
+      "bytes": 15787
     },
     {
       "file": "l10n/prerender/ko/destination-palakkad.html.gz",
@@ -24896,8 +24896,8 @@
     },
     {
       "file": "l10n/prerender/ko/index.html.gz",
-      "sha256": "934b5097e4c7fbe6284ec1b0d13d002159e0adc72ef77608a50bd94ecb772870",
-      "bytes": 32527
+      "sha256": "bfca896614335c62c28eaf14ae1dd26935ed9edcb481c373fff0c0078ac8636f",
+      "bytes": 32213
     },
     {
       "file": "l10n/prerender/ko/index.json",
@@ -25051,8 +25051,8 @@
     },
     {
       "file": "l10n/prerender/ko/maharaja-suite.html.gz",
-      "sha256": "4356e097cc2077ffb9426984f1d54423a2db631e114d541adb1818a9d1a58ba2",
-      "bytes": 16025
+      "sha256": "f42dc5226ccbe92bd4d5bf9a1f2c82f4b4f229268584eaf06bcf308cd7240693",
+      "bytes": 15770
     },
     {
       "file": "l10n/prerender/ko/meditation.html.gz",
@@ -25156,8 +25156,8 @@
     },
     {
       "file": "l10n/prerender/ko/our-villas.html.gz",
-      "sha256": "261b917488fb3204dac564735867265188652f0d7daafa27155239056d33674a",
-      "bytes": 15030
+      "sha256": "afccb6912c329b5dc7fcf887e3acec568a072102369a615a6d9f8bd6cf4d8104",
+      "bytes": 14851
     },
     {
       "file": "l10n/prerender/ko/packages.html.gz",
@@ -25266,8 +25266,8 @@
     },
     {
       "file": "l10n/prerender/ko/royal-villa.html.gz",
-      "sha256": "34746c0124e1af46c5e572cfe8d3551aba27ac123609a216c167f2ce6315c231",
-      "bytes": 16090
+      "sha256": "733b27a3a877cb56da192c5cef52dc0e0ff5ecff9a63b307c0a15e65f52a506a",
+      "bytes": 15828
     },
     {
       "file": "l10n/prerender/ko/search-results.html.gz",
