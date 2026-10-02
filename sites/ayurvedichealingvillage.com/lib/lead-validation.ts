@@ -44,9 +44,13 @@ export function validationProblem(table: LeadTable, values: Record<string, strin
   }
 
   if (table === 'landing-page') {
-    if (values.landing_page_path === '/ayurvedic-treatment-packages.html') {
-      return ['landing_page_path','fname','phone','email'].every((key)=>present(values,key)) && values.consent === true
-        ? null : 'MISSING_REQUIRED_FIELDS';
+    const campaignPath = typeof values.landing_page_path === 'string' ? values.landing_page_path.replace(/\/+$/, '') : '';
+    if (campaignPath === '/ayurvedic-treatment-packages.html' || (typeof values.form_variant === 'string' && values.form_variant.startsWith('r10-'))) {
+      if (!['landing_page_path','fname','phone','email'].every((key)=>present(values,key)) || values.consent !== true) return 'MISSING_REQUIRED_FIELDS';
+      const phone = String(values.phone).trim();
+      const digits = phone.replace(/[^0-9]/g, '');
+      if (!/^\+?[0-9() .-]+$/.test(phone) || digits.length < 8 || digits.length > 15 || /^(\d)\1+$/.test(digits)) return 'INVALID_PHONE';
+      return null;
     }
     const required = ['landing_page_path', 'email'];
     return required.every((key) => present(values, key)) ? null : 'MISSING_REQUIRED_FIELDS';

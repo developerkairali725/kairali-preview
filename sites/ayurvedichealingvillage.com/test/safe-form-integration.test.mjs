@@ -203,3 +203,11 @@ test('R10 lead cannot bypass name, phone or contact consent on the server',()=>{
  assert.equal(validationProblem('landing-page',valid),null);
  for(const override of [{fname:''},{phone:''},{consent:false},{consent:'true'}])assert.equal(validationProblem('landing-page',{...valid,...override}),'MISSING_REQUIRED_FIELDS');
 });
+
+ test('R10 aliases and variant enforce consent and valid phone',()=>{
+ const valid={landing_page_path:'/ayurvedic-treatment-packages.html/',fname:'Test',phone:'+44 20 7946 0958',email:'test@example.com',consent:true,form_variant:'r10-consultation'};
+ assert.equal(validationProblem('landing-page',valid),null);
+ for(const phone of ['abc','1234567','9999999999','1234567890123456'])assert.equal(validationProblem('landing-page',{...valid,phone}),'INVALID_PHONE');
+ assert.equal(validationProblem('landing-page',{landing_page_path:'/other.html',email:'test@example.com',form_variant:'r10-consultation'}),'MISSING_REQUIRED_FIELDS');
+ assert.equal(validationProblem('landing-page',{...valid,consent:false}),'MISSING_REQUIRED_FIELDS');
+ });
