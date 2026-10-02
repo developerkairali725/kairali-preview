@@ -52,7 +52,7 @@ export function GuestSupport() {
   <span className="section-overline">Your stay, thoughtfully planned</span>
   <h2 id="r10-exit-title">Need help choosing a programme?</h2>
   <p>Our patient care team can help you understand the programmes, villa options and what your stay includes.</p>
-  <a className="primary" href="#enquiry" onClick={()=>{close('enquire');setTimeout(()=>document.getElementById('R10-fname')?.focus(),0);}}>Ask about my stay</a>
+  <a className="primary" href="#enquiry" onClick={()=>{close('enquire');setTimeout(()=>document.getElementById('R10-fname')?.focus(),0);}}>Enquire about treatment</a>
   <a className="r10-exit-whatsapp" href="https://wa.me/919289838797" target="_blank" rel="noopener noreferrer" onClick={()=>close('whatsapp')}>Speak with patient care on WhatsApp ↗</a>
   <button type="button" className="r10-exit-later" onClick={()=>close()}>Continue browsing</button>
  </dialog>;
