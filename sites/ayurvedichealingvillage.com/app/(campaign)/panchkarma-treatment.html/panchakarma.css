@@ -62,3 +62,5 @@
 .p26-page .package-refined .inclusions-heading{grid-row:3}.p26-page .package-refined .package-inclusions{grid-row:4}.p26-page .package-refined .package-price{grid-row:5}.p26-page .package-refined .package-benefits{grid-row:6}.p26-page .package-refined .package-next{grid-row:7}
 
 .p26-page .doctor-testimonial::before,.p26-page .doctor-testimonial::after{content:none}
+
+.p26-page .award-year-mark{color:var(--brown)}
