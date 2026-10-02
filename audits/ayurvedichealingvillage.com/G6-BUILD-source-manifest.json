@@ -1,7 +1,7 @@
 {
   "judged_dir": "sites/ayurvedichealingvillage.com",
-  "file_count": 13607,
-  "tree_sha256": "a69507b0d4b1579d12886d7e8aa0046461d0c826d7e39bb691b9ac644eb0c7e1",
+  "file_count": 13636,
+  "tree_sha256": "d4d482ffe8f83ebd75004f6215264c83fc06bc818aafa490ff2be4efb2888c6b",
   "files": [
     {
       "path": "sites/ayurvedichealingvillage.com/.gitignore",
@@ -40,8 +40,24 @@
       "sha256": "d37fe5d87ee02a135621705f4a9efcba238e4c7b293ec16e9ac8b34d1eabba89"
     },
     {
+      "path": "sites/ayurvedichealingvillage.com/app/(campaign)/ayurvedic-treatment-packages.html/EnquiryForm.tsx",
+      "sha256": "062aa29f41cbcfad9142163f854094e707af33bc3ddb48d94775011139e2e118"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/(campaign)/ayurvedic-treatment-packages.html/GuestSupport.tsx",
+      "sha256": "4df545b8458593479c7c84f72bde5dc38f95cf1441051ee4cebf1fbd3340709c"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/(campaign)/ayurvedic-treatment-packages.html/content.ts",
+      "sha256": "a631f7e2bbdc60b236800132b9ec74e4819093eaae7e82e4d9f3bc066f6731e9"
+    },
+    {
       "path": "sites/ayurvedichealingvillage.com/app/(campaign)/ayurvedic-treatment-packages.html/page.tsx",
-      "sha256": "c56fed018fd57c73450d07f379a2a244eace6cdd0cd16710a9f747f0d5232eb3"
+      "sha256": "362df408e091e87f8081b24073f661a28ff85add062aa74a0b1e87eb5f712c09"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/app/(campaign)/ayurvedic-treatment-packages.html/r10.css",
+      "sha256": "1c7cb5b8fdae71e3eda79ca3c2363f0768767692123724cabda6b5cfd704c346"
     },
     {
       "path": "sites/ayurvedichealingvillage.com/app/(campaign)/family-ayurvedic-retreat-kerala.html/page.tsx",
@@ -125,7 +141,7 @@
     },
     {
       "path": "sites/ayurvedichealingvillage.com/app/(english)/_families/consent-runtime.ts",
-      "sha256": "9e7d86256336280c77c615646a9f1f3c797868a3eec65719904d5356dc96c57c"
+      "sha256": "65fbef71642f1a2b26481042d546517ab93d590ce01d460a394ee0deccdd91ac"
     },
     {
       "path": "sites/ayurvedichealingvillage.com/app/(english)/_families/content-review.mjs",
@@ -38561,7 +38577,7 @@
     },
     {
       "path": "sites/ayurvedichealingvillage.com/lib/lead-validation.ts",
-      "sha256": "d150b25973527752c75b0d4cd174935ff498639958157b3f0c22a3fa46a9bcae"
+      "sha256": "48cb3747f483e23dc71033aa059e65115faabb26574cd8c63f81809db201646b"
     },
     {
       "path": "sites/ayurvedichealingvillage.com/lib/measurement-config.mjs",
@@ -53248,6 +53264,106 @@
       "sha256": "c429cf4fcbe8e4ca81b7e2b940f37848ecef1555fd4dbeeb52c86385c28a95a5"
     },
     {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/2f6fa616f76102d81c4a935c3a8cd547a8db9de679ad9fda9cfd42f16e7f0743.woff2",
+      "sha256": "2e4846836adb2e35ac2166bb52ede96b6f939340c8c5158ec080559de17064a2"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/46ee5f47fed537401cd92c16b666fccd05140bab39a0390a9b90ee1040c31af9.woff2",
+      "sha256": "ebce2a5eb5fa7ee7c70f421685713ee9007d141e8a715f9f929810811f3fcd00"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/528a02bfa16072dedf3014b2c6eb5df7de54f984e313131c412f804da959ddff.woff2",
+      "sha256": "98e5a32d6520b471cd2ad07af34186df60af50f5a28f4a6d9b605bf9f7291ad1"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/asap.ttf",
+      "sha256": "7bf29bcab72f7d00de600e964a3fc206620050d8448ddd976822378d0fe18028"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/c6ea6328021e.webp",
+      "sha256": "6556e0168d068bf5059ab15287d8716c8e6f0b92e20fba910eeee58cfa20d594"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/c97e11561506a43b899685506e54c13c278fc3418da186930f8c705dc63cdbd3.woff2",
+      "sha256": "87355097ec1707fbf882fc5e9a602a32a1dc560028936ffc55ed9ef7f8bcfab3"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/chaggan-bhujbal.jpg",
+      "sha256": "e419a31b78101cc3f046c01782868aa486cde6e8ed00c1af496d7e799bdc416d"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-kairali-colorful-logo.webp",
+      "sha256": "6bc8a1f233b14d67f21a961764e8526fcc450d9f42a99442900fd2f5bba9ffad"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-kt-1.webp",
+      "sha256": "6c21549a75a81c455fefaa95075c24208cca0ed734545a028ae963adb215822f"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-kt-116.webp",
+      "sha256": "7e2e391d2a2534d873aa59698e8a708435e1e194e6d69c137ac0e06a5ec2c0af"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-kt-18.webp",
+      "sha256": "08584252b76e89c975f162b6a81b13af21a0c488447c7a5cc4bec4fdcf856059"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-kt-314.webp",
+      "sha256": "e0f4ae85e660f9a55a6bcf5953622140d18de66c5da0ebc1388eb1440f8b68d6"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-wx-hero.webp",
+      "sha256": "70b48c7ff411f932bf9703b14def999878c3100963a68df313e7056a7d7024be"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-wx-welcome.webp",
+      "sha256": "e0809cf9cdcf8d460e25f83a2a9773c844d8bade6c1627c80329657936784722"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/home-wx-yogahall.webp",
+      "sha256": "93841e83dbfab080d1fec4c9b3f67ce5217037303918c42c784aa421b8639ac9"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/kurale.ttf",
+      "sha256": "6055aaca6870ca64210dd81fa47f8bb71595a9c8fbe570351ed45a15f1a0820d"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/lato.ttf",
+      "sha256": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/og.jpg",
+      "sha256": "952f712a834894db311dc37adc7d48c1134375cb2c015286f808b1f0e68f85b4"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/pramod-mahajan.jpg",
+      "sha256": "d1bc12aa1709c8f3a10f4bfa913d19b8e773c617d916acf1db263b634d27814d"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-07tVC2oXd8g.jpg",
+      "sha256": "f0a6ad305f02f4721bbd3a485a67453b358bc9a0c797a1b6a5539f2759e362db"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-1s1gMtcpTME.jpg",
+      "sha256": "e5a2263bf488403ac969ec919cc2120eb8cca16869c8dae5d0905531e7575b90"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-CcDPOeSR67E.jpg",
+      "sha256": "9ef810cb9fb8c5da0ef8dc4870f9609dd0d1c21a1711ed8c4c1ea84cc271e08e"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-ExM6_gMdRHs.jpg",
+      "sha256": "de0668f27268b7baf2def3a81089553dc57256e311ad93bf9dbad27cffccbedd"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-iPARaMRASUs.jpg",
+      "sha256": "e627889b88436b0655940dea0c383c9e6c6cb00c2f7f36b0b1a0a751c8754a5a"
+    },
+    {
+      "path": "sites/ayurvedichealingvillage.com/public/landing/r10/video-nwCIY-19BRE.jpg",
+      "sha256": "d9fa49e8ac80547dcd67762cfb2541da9f17990a02747a7ba9ed81d542252ea2"
+    },
+    {
       "path": "sites/ayurvedichealingvillage.com/public/review-widgets/tripadvisor.html",
       "sha256": "34dcb7a5c8042854a057d853b0a604d263626fbfd6720ec182131ffe7fb65086"
     },
@@ -53381,7 +53497,7 @@
     },
     {
       "path": "sites/ayurvedichealingvillage.com/test/lead-measurement.test.mjs",
-      "sha256": "c1d94b5011c7d5ddf280009ac45a24de433c902324512a22f2d05e94518ea012"
+      "sha256": "bd8bc6bd329c98e43efaa6ab3f29c291f77eaa7500f17133d86623e92b76557f"
     },
     {
       "path": "sites/ayurvedichealingvillage.com/test/lead-receipt.test.mjs",
@@ -53445,7 +53561,7 @@
     },
     {
       "path": "sites/ayurvedichealingvillage.com/test/safe-form-integration.test.mjs",
-      "sha256": "5739bf62f91383fb4cb9305ed75debbdc55804aad12727f0e8262c80ac64def4"
+      "sha256": "67ac9e16d854f715c7d7465e2f1c07701b88287bd581e07a1685d87465d8852f"
     },
     {
       "path": "sites/ayurvedichealingvillage.com/test/schema.test.mjs",
