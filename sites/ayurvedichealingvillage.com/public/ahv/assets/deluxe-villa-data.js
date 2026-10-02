@@ -3,7 +3,7 @@ window.AHV_DELUXE = {
  "h1": "Deluxe Villa",
  "eyebrow": "Our Villas",
  "facts": [
-  "144- 244 Sqft",
+  "260- 375 Sqft",
   "Twin/King Size Bed",
   "Upto 3 Adults",
   "Garden View"
@@ -11,7 +11,7 @@ window.AHV_DELUXE = {
  "quote": "“Indulge in tranquility and serenity at our Deluxe Villa, where every inch is thoughtfully designed to align with your well-being. Immerse yourself in the healing power of nature, surrounded by lush greenery and enjoy a rejuvenating experience like no other.“",
  "aboutHeading": "About the Deluxe Villa",
  "aboutParagraphs": [
-  "The Deluxe Villa at Kairali – The Ayurvedic Healing Village is a calm haven surrounded by lush vegetation that is intended to foster peace and harmony with the natural world. Up to three people can stay in each villa, which ranges in size from 144 to 244 square feet and has twin or king-size bedrooms.",
+  "The Deluxe Villa at Kairali – The Ayurvedic Healing Village is a calm haven surrounded by lush vegetation that is intended to foster peace and harmony with the natural world. Up to three people can stay in each villa, which ranges in size from 260 to 375 square feet and has twin or king-size bedrooms.",
   "Modern conveniences including air conditioning, an LED TV, a telephone, and attached washrooms with hot and cold running water all day are available to patients. The villas are decorated to offer a relaxing and revitalizing stay that lets patients take in the surrounding area’s natural splendor.",
   "A sense of belonging is fostered by the elegant and simple interior design, which creates a familial atmosphere. The Deluxe Villa is the perfect option for anyone looking for a restful and revitalizing stay at a reasonable cost because of its excellent décor and tranquil surroundings.",
   "Along with the cozy lodgings, patients may take advantage of the retreat’s many amenities, which include a gym, library, swimming pool, and indoor recreation areas. In order to provide a comprehensive wellness experience, Kairali – The Ayurvedic Healing Village also provides organic, locally sourced food, yoga and meditation classes, and authentic Ayurvedic therapies.",

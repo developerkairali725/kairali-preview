@@ -1,6 +1,7 @@
 /* One-use, same-tab confirmation for accepted AHV lead submissions.
    The existing form handlers retain validation, retry, guide download and error UI.
-   This observes only the confirmed /api/lead/ response; it sends no event or data. */
+   This observes only the confirmed /api/lead/ response; consented measurement
+   receives only an enquiry form type and the non-personal submission token. */
 (function () {
   'use strict';
   if (window.AHV_LEAD_RECEIPT) return;
@@ -154,6 +155,11 @@
       if (!request) return response;
       var result = await response.clone().json();
       if (!result || result.ok !== true || result.status !== 'received') return response;
+      // Only the accepted API response can dispatch a lead event. A direct or
+      // refreshed thank-you page has no call path to this method.
+      try {
+        if (window.AHV_MEASUREMENT) window.AHV_MEASUREMENT.recordLead(request.form, request.token);
+      } catch (_) { /* Measurement must never change form delivery or receipt UI. */ }
       var lang = language();
       var path = targetFor(request.form, lang);
       if (!path) return response;

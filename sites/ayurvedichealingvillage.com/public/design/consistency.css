@@ -202,3 +202,17 @@ html:not([lang^="en"]) #ahv-design-root :is(h1, h2, h3, h4, h5, p, li, dt, dd, f
    menu and cookie notice off-screen. A button is never wider than its container; it wraps only when it must. */
 #ahv-design-root button { max-width:100%; }
 #ahv-design-root button[style*="nowrap"] { white-space:normal !important; overflow-wrap:break-word; }
+
+/* Visually hidden accessibility content must not extend an RTL scroll area.
+   Keep skip links visible when keyboard-focused; retain table captions for AT. */
+#ahv-design-root a[href="#main-content"][style*="-9999"]:not(:focus),
+#ahv-design-root a[href="#content"][style*="-9999"]:not(:focus),
+#ahv-design-root caption[style*="-9999"] {
+  left:0 !important; right:auto !important; width:1px !important; height:1px !important;
+  margin:0 !important; padding:0 !important; border:0 !important; overflow:hidden !important;
+  clip-path:inset(50%) !important; white-space:nowrap !important;
+}
+
+/* Focus clearance must finish before a form button receives pointer release.
+   Smooth native focus scrolling otherwise moves the first mobile submit tap. */
+html:has(#ahv-design-root form:focus-within) { scroll-behavior:auto !important; }

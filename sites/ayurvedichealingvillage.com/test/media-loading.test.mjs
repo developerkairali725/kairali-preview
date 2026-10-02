@@ -7,11 +7,11 @@ import fs from "node:fs";
 import {
   EAGER_SLOTS, lazyImgFirst, deferHeroFilm, installLazyImgOrder, installSlotLoading, createBackgroundDeferral,
 } from "../app/(english)/_families/media-loading.mjs";
-import { phoneCriticalMedia, descriptiveAwardLinks } from "../app/(english)/_families/critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "../app/(english)/_families/critical-media.mjs";
 import { formPostSafety } from "../app/(english)/_families/form-post-safety.mjs";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime.ts";
 // lane PERF2: two more helpers injected into BOOT_SCRIPT (snapshot-paint.mjs); the parse test needs them in scope
-import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget } from "../app/(english)/_families/snapshot-paint.mjs";
+import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs } from "../app/(english)/_families/snapshot-paint.mjs";
 
 const attrs = (tag) => (tag.match(/\s[a-zA-Z-:]+(?:=(?:"[^"]*"|'[^']*'|[^\s>]+))?/g) || []).map((a) => a.trim()).sort();
 
@@ -113,10 +113,11 @@ test("installLazyImgOrder: a detached img's src lands after its loading attribut
   const set = (el, n, v) => proto.setAttribute.call(el, n, v);
   const detached = fakeImg(false);
   set(detached, "src", "/a.webp"); set(detached, "alt", ""); set(detached, "loading", "lazy");
-  assert.deepEqual([...detached.order.keys()], ["alt", "loading"], "src held for a microtask");
+  assert.deepEqual([...detached.order.keys()], ["alt", "fetchpriority", "loading"], "src held for a microtask");
   await Promise.resolve();
-  assert.deepEqual([...detached.order.keys()], ["alt", "loading", "src"]);
+  assert.deepEqual([...detached.order.keys()], ["alt", "fetchpriority", "loading", "src"]);
   assert.equal(detached.getAttribute("src"), "/a.webp");
+  assert.equal(detached.getAttribute("fetchpriority"), "low", "off-screen image cannot compete with the hero");
   const connected = fakeImg(true);
   set(connected, "src", "/b.webp");
   assert.equal(connected.getAttribute("src"), "/b.webp", "connected images are untouched");
@@ -145,7 +146,7 @@ test("installSlotLoading decides loading before the slot's first src write; LCP 
   win.customElements.define("image-slot", Slot);
   const C = defined["image-slot"];
   for (const id of ["hero-still", "welcome-photo", "m-hero", "m-gita"]) { const s = new C(id); s.attributeChangedCallback("id"); s.attributeChangedCallback("src"); }
-  assert.deepEqual(writes, [["hero-still", null, "high"], ["welcome-photo", "lazy", null], ["m-hero", null, "high"], ["m-gita", "lazy", null]]);
+  assert.deepEqual(writes, [["hero-still", null, "high"], ["welcome-photo", "lazy", "low"], ["m-hero", null, "high"], ["m-gita", "lazy", "low"]]);
   const late = new C("zen-1"); late.img.setAttribute("src", "/y.webp"); late.attributeChangedCallback("shape");
   assert.equal(late.img.getAttribute("loading"), null, "never rewritten once the first src exists");
 });
@@ -194,8 +195,8 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    phoneCriticalMedia, descriptiveAwardLinks, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
-    deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget };
+    phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");
 });
@@ -220,4 +221,19 @@ test("snapshot -> live swap is shift-free: live root mounts first, hidden out of
   // no-JS / runtime-failure fallback (parent review 29 Sep 2026): without html[data-ahv-js] or with data-ahv-fallback the held snapshot is shown, never a blank page
   assert.match(doc, /setAttribute\('data-ahv-js',''\)/, "an early inline script marks scripted documents");
   assert.match(doc, /data-ahv-fallback/, "the runtime-failure fallback is armed");
+});
+
+test("renderer images select the phone derivative before starting its request", async () => {
+ const proto = {setAttribute(n,v){this.order.set(n,String(v));}};
+ const win = {Element:{prototype:proto},queueMicrotask,matchMedia:()=>({matches:true})};
+ installLazyImgOrder(win,villaImageAttributes,phoneCriticalMedia);
+ const image=fakeImg(false),original='/ahv/assets/img/owner-approved-20260928/ahv-img-002.webp';
+ proto.setAttribute.call(image,'src',original);
+ await Promise.resolve();
+ assert.equal(image.getAttribute('src'),original.replace('.webp','-768.webp'));
+ assert.equal(image.getAttribute('fetchpriority'),'high');
+ const desktopProto={setAttribute(n,v){this.order.set(n,String(v));}};
+ installLazyImgOrder({Element:{prototype:desktopProto},queueMicrotask,matchMedia:()=>({matches:false})},villaImageAttributes,phoneCriticalMedia);
+ const wide=fakeImg(true);desktopProto.setAttribute.call(wide,'src',original);
+ assert.equal(wide.getAttribute('src'),original);
 });

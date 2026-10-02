@@ -1,3 +1,5 @@
+import { routeStylesFor } from "../_families/route-styles.mjs";
+import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { translate, localizedPath, LOCALE_INFO, type LocaleCode } from "../_families/l10n";
 import '@kairali/ui/brand-tokens.css';
 import type {Metadata} from 'next';
@@ -14,11 +16,11 @@ export const metadata:Metadata={title:'Patient Reviews & Stories | Kairali – T
 export function PageView({ locale = "en" }: { locale?: LocaleCode }){
  const T = (s: string) => translate(locale, s); const L = (p: string) => localizedPath(p, locale) ?? p;
  const chrome=siteChrome(locale,'/read-feedback/');const route=findRoute(['read-feedback']);
- const measurement=process.env[analyticsConfig.activation.env]===analyticsConfig.activation.enabledWhen?{ga4:analyticsConfig.measurement.ga4.id,clarity:analyticsConfig.measurement.clarity.id,metaPixel:analyticsConfig.measurement.metaPixel.id}:undefined;
+ const measurement = measurementForEnvironment(process.env, analyticsConfig);
  const consentScript=`(function(){var cfg=${JSON.stringify({breakpoint:700,measurement,locale:{privacyHref:L("/new-privacy-policy/")}})};var host=document.getElementById("ahv-design-root");${CONSENT_RUNTIME}\nensureConsentNotice();if(consentChoice()==="accepted")startMeasurement();window.addEventListener("resize",function(){var notice=document.getElementById("ahv-consent");if(notice)notice.remove();ensureConsentNotice();});})();`;
  const featured=VIDEOS[0];
  return <ReviewsShell consentScript={consentScript} headerScript={chrome.script||''} locale={locale} designBase={locale==='en'?'/design/':`/ahv/l10n/${LOCALE_INFO[locale].prefix}/design/`}>
- <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/>
+ <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor() }} /><link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css"/><style dangerouslySetInnerHTML={{__html:chrome.css}}/>
  {route&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(routeSchema(route, locale)).replace(/</g,'\\u003c')}}/>}
  <a href="#main-content" className="rv-skip">{T("Skip to patient reviews")}</a><div data-sc-name="AHV Chrome Header" dangerouslySetInnerHTML={{__html:chrome.header}}/>
  <main id="main-content" className="rv-main"><section className="rv-intro"><nav aria-label={T("Breadcrumb")} className="rv-breadcrumb"><a href={L("/")}>{T("Home")}</a><span aria-hidden="true">/</span><span>{T("Patient reviews")}</span></nav><p className="rv-eyebrow">{T("Patient voices · Palakkad, Kerala")}</p><h1>{T("A place to pause.")}<br/><em>{T("Stories to remember.")}</em></h1><p className="rv-lead">{T("The people who have stayed here tell the story best. Meet our patients, hear their experiences and explore independent reviews before you plan your own stay.")}</p><div className="rv-intro-links"><a href="#guest-stories">{T("Read patient stories ↓")}</a><a href="#independent-reviews">{T("Google & Tripadvisor ↓")}</a></div></section>

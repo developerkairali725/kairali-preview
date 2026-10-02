@@ -1,4 +1,4 @@
-import { phoneCriticalMedia, descriptiveAwardLinks } from "./critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -8,7 +8,7 @@ import {
   installSlotLoading,
   createBackgroundDeferral,
 } from "./media-loading.mjs";
-import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget } from "./snapshot-paint.mjs";
+import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs } from "./snapshot-paint.mjs";
 import { CONSENT_RUNTIME } from "./consent-runtime";
 /**
  * AHV English candidate — page bootstrap.
@@ -65,6 +65,8 @@ import LINK_ALIASES from "../../../english-candidate/link-aliases.json";
 import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
+  bookingCopy?: {old: string; new: string};
+  contentReviewCopy?: Array<{old: string; new: string; kind: string}>;
   path: string;
   robots?: string;
   desktopView: string | null;
@@ -81,7 +83,7 @@ export interface BootConfig {
    * so no tag can load however the visitor answers the cookie notice. The
    * consent gate is the second lock, not the only one.
    */
-  measurement?: { ga4?: string; clarity?: string; metaPixel?: string };
+  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsSendTo?: string; environment?: string };
   /**
    * The page's locale (25 Sep 2026): code, document language/direction, the
    * localized URL, every language that has THIS page (for the switcher), and
@@ -154,12 +156,66 @@ export const BOOT_SCRIPT = `
   if (!cfgEl || !host) return;
   var cfg = JSON.parse(cfgEl.textContent || "{}");
 
+  // Secondary English content-review lane. Apply before the snapshot swap and
+  // to subsequently rendered content; shared family payloads remain untouched.
+  var reviewByKey = new Map();
+  (cfg.contentReviewCopy || []).forEach(function(e) {
+    var key = e.kind + "\\0" + e.old;
+    if (!reviewByKey.has(key)) reviewByKey.set(key, e.new);
+  });
+  function applyContentReview(root) {
+    if (!cfg.contentReviewCopy || cfg.path === "/villa-raag/") return;
+    function normal(s) { return (s || "").replace(/\\s+/g, " ").trim(); }
+    function changeText(n) {
+      var p = n.parentElement;
+      if (!p || p.closest("script,style,svg,noscript,form")) return;
+      var h = p.closest("h1,h2,h3,h4,h5,h6");
+      var kind = h ? h.tagName.toLowerCase() : (p.closest(".ahv-link-context") ? "text" : (p.closest("a") ? "link" : "text"));
+      var value = normal(n.nodeValue);
+      var link = p.closest("a");
+      if (cfg.bookingCopy && value === cfg.bookingCopy.old && link && link.getAttribute("href") === "https://bookings.ayurvedichealingvillage.com/") return;
+      var replacement = reviewByKey.get(kind + "\\0" + value);
+      if (replacement != null) {
+        var nextValue = (n.nodeValue.match(/^\\s*/) || [""])[0] + replacement + (n.nodeValue.match(/\\s*$/) || [""])[0];
+        if (n.nodeValue !== nextValue) n.nodeValue = nextValue;
+      }
+    }
+    if (root.nodeType === 3) changeText(root);
+    else {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n;
+      while ((n = walker.nextNode())) changeText(n);
+    }
+    var links = root.querySelectorAll ? Array.from(root.querySelectorAll("a[href]")) : [];
+    if (root.nodeType === 1 && root.matches("a[href]")) links.unshift(root);
+    links.forEach(function(a) {
+      var label = normal(a.textContent), href = a.getAttribute("href");
+      var accessible = a.getAttribute("aria-label");
+      if (accessible) (cfg.contentReviewCopy || []).forEach(function(edit) {
+        if (edit.kind === "link" && accessible.indexOf(edit.old) !== -1) accessible = accessible.replace(edit.old, edit.new);
+      });
+      if (a.hasAttribute("data-recorded-embed") && label) accessible = label;
+      if (accessible && accessible !== a.getAttribute("aria-label")) a.setAttribute("aria-label", accessible);
+      if (cfg.bookingCopy && label === cfg.bookingCopy.old && href === "https://bookings.ayurvedichealingvillage.com/") {
+        var walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT), n;
+        while ((n = walker.nextNode())) if (normal(n.nodeValue) === cfg.bookingCopy.old) n.nodeValue = cfg.bookingCopy.new;
+      }
+    });
+  }
+  applyContentReview(host);
+  if (cfg.contentReviewCopy) new MutationObserver(function(changes) {
+    changes.forEach(function(c) {
+      if (c.type === "characterData") applyContentReview(c.target);
+      else c.addedNodes.forEach(function(n) { applyContentReview(n); });
+    });
+  }).observe(host, {subtree: true, childList: true, characterData: true});
+
+
   // Media loading (lane P-perf, media-loading.mjs). The LCP slots, the inline-background deferral that
   // the site-document stylesheet pairs with, and — before any design script can create an image — the
   // two hooks that decide loading ahead of the first src write.
   var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
   var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
-  (${installLazyImgOrder.toString()})(window);
+  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), (${phoneCriticalMedia.toString()}));
   (${installSlotLoading.toString()})(window, EAGER_SLOTS);
 
   // The server response carries the prerendered snapshot (phone width, for
@@ -224,6 +280,8 @@ export const BOOT_SCRIPT = `
         setTimeout(function () { retireSnapshot(tries - 1); }, 100);
         return;
       }
+      (${preserveSnapshotInputs.toString()})(document, snapshotNodes, live);
+      applyContentReview(live);
       var focusTarget = (${snapshotFocusTarget.toString()})(document, snapshotNodes, live);
       for (var i = 0; i < snapshotNodes.length; i++) {
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
@@ -369,6 +427,31 @@ export const BOOT_SCRIPT = `
   // Same map as tools/repair-snapshot-links.mjs applies to the snapshots, so
   // the server HTML and the mounted runtime show the same picture.
   var IMG_ALIASES = ${JSON.stringify(IMAGE_ALIASES)};
+  // A translated "Learn more" needs the visible news title as link context.
+  // Reuse that exact title for assistive readers without changing visible copy.
+  function describeHomeNewsLinks(root) {
+    if (cfg.path !== "/" || !root) return;
+    root.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute("href") || "";
+      if (href.slice(-12) !== "/contact-us/") return;
+      var parent = a.parentElement, title = null;
+      for (var depth = 0; parent && parent !== root && depth < 3; depth++, parent = parent.parentElement) {
+        title = parent.querySelector("h3");
+        if (title || parent.tagName === "SECTION") break;
+      }
+      if (!title || !(title.textContent || "").trim()) return;
+      var context = a.querySelector("[data-ahv-news-context]");
+      if (!context) {
+        context = document.createElement("span");
+        context.setAttribute("data-ahv-news-context", "");
+        context.style.cssText = "position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0";
+        a.appendChild(context);
+      }
+      var text = " — " + title.textContent.trim();
+      if (context.textContent !== text) context.textContent = text;
+    });
+  }
+
   function aliasImages(root) {
     if (!root || root.nodeType !== 1) return;
     var imgs = root.matches("img") ? [root] : root.querySelectorAll("img[src]");
@@ -549,6 +632,7 @@ export const BOOT_SCRIPT = `
       return;
     }
     if (!img.getAttribute("loading")) img.setAttribute("loading", "lazy");
+    img.setAttribute("fetchpriority", "low");
     if (!img.getAttribute("decoding")) img.setAttribute("decoding", "async");
   }
   function deferSlotImages(root) {
@@ -724,7 +808,8 @@ export const BOOT_SCRIPT = `
     var wrap = document.createElement("div");
     wrap.className = "ahv-lang";
     wrap.setAttribute("data-ahv-locale-switcher", "");
-    var id = "ahv-lang-list-" + (++langSeq);
+    var id;
+    do { id = "ahv-lang-list-" + (++langSeq); } while (document.getElementById(id));
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "ahv-lang-btn";
@@ -732,7 +817,7 @@ export const BOOT_SCRIPT = `
     btn.setAttribute("aria-controls", id);
     var current = null;
     LOC.options.forEach(function (o) { if (o.code === LOC.code) current = o; });
-    btn.setAttribute("aria-label", (LOC_UI.choose || "Choose language") + " — " + (LOC_UI.current || "Current language") + ": " + (current ? current.name : "English"));
+    btn.setAttribute("aria-label", shortCode(LOC.code) + " — " + (LOC_UI.choose || "Choose language") + " — " + (LOC_UI.current || "Current language") + ": " + (current ? current.name : "English"));
     btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.4"></circle><ellipse cx="8" cy="8" rx="2.8" ry="6.3" stroke="currentColor" stroke-width="1.1"></ellipse><path d="M2 8h12" stroke="currentColor" stroke-width="1.1"></path></svg>';
     var lbl = document.createElement("span");
     lbl.textContent = shortCode(LOC.code);
@@ -897,7 +982,8 @@ export const BOOT_SCRIPT = `
         // Off-screen rather than display:none — a bot reading the DOM still
         // sees a fillable field, which is the whole point of a honeypot.
         field.style.position = "absolute";
-        field.style.left = "-9999px";
+        field.style.left = "0";
+        field.style.clipPath = "inset(50%)";
         field.style.width = "1px";
         field.style.height = "1px";
         field.style.overflow = "hidden";
@@ -972,7 +1058,7 @@ export const BOOT_SCRIPT = `
     // These scan the entire host/document, unlike the node-local repairs above.
     // One mutation delivery already contains the completed DOM batch: scanning
     // it again for every added node caused quadratic work during hydration.
-    if (addedContent) { enhanceDirections(host); applyConsent(); }
+    if (addedContent) { enhanceDirections(host); applyConsent(); describeHomeNewsLinks(host); }
   }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ["href", "style"] });
   // Also normalize synchronously before native activation, including middle
   // clicks and copied link addresses, without overriding browser behavior.
@@ -1202,7 +1288,7 @@ export const BOOT_SCRIPT = `
       if (snapshotNodes.length) host.setAttribute("data-ahv-live-pending", "");
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})(view.template) : view.template)));
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})(view.template) : view.template, cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");

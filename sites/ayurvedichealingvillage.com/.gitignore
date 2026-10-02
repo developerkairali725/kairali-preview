@@ -1921,3 +1921,25 @@
 /l10n/generated/
 /l10n/prerender-tmp/
 /l10n/prerender/
+
+# Shared runtime minification outputs, regenerated before each build
+/public/design/*.min.js
+
+# Hash-verified locale body release bundle; publish with the combined staging release.
+/english-candidate/ahv-locale-prerenders-*.tar.gz
+
+# Exact approved frame required by the shared Ayurveda Treatment page.
+!/public/ahv/assets/img/ktahv-video-2023/sirodhara-defe5c5f089c4be7.webp
+!/public/ahv/assets/img/ktahv-video-2023/knowledge-02a1d00663e4c51e.webp
+!/public/ahv/assets/img/ktahv-video-2023/udgharshanam-85f39fe3fb0bbf71.webp
+
+# Owner-authorized labelled therapy illustrations; exact source assets for combined release.
+!/public/ahv/assets/img/therapy-illustrations/dhoompanam.webp
+!/public/ahv/assets/img/therapy-illustrations/gandoosham.webp
+!/public/ahv/assets/img/therapy-illustrations/greevavasti.webp
+!/public/ahv/assets/img/therapy-illustrations/karnapoornam.webp
+!/public/ahv/assets/img/therapy-illustrations/kashayavasthi.webp
+!/public/ahv/assets/img/therapy-illustrations/kavalagraham.webp
+!/public/ahv/assets/img/therapy-illustrations/matravasti.webp
+!/public/ahv/assets/img/therapy-illustrations/thalam.webp
+!/public/ahv/assets/img/therapy-illustrations/urovasti.webp

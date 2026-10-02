@@ -1,5 +1,13 @@
 [
   {
+    "source": "/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv"
+  },
+  {
+    "source": "/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv"
+  },
+  {
     "source": "/ahv/assets/doc/healing-secrets.pdf",
     "destination": "/documents/pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf"
   },

@@ -1,0 +1,165 @@
+{
+  "locale": "hi",
+  "batchId": "combined-final-20261001-004",
+  "units": [
+    {
+      "id": "t_66cf70943ffe9bf035a1",
+      "status": "translated",
+      "text": "परामर्श अनुरोध भेजें",
+      "sourceHash": "66cf70943ffe9bf035a19bacac7bc1a8fd2cd5efae583c7ced84de38615d6678"
+    },
+    {
+      "id": "t_2cc5de93a0b3603d687e",
+      "status": "translated",
+      "text": "आपके विवरण का उपयोग केवल आपके परामर्श की व्यवस्था करने और उसे संचालित करने के लिए किया जाता है, और इन्हें हमारी चिकित्सा टीम पढ़ती है। यह अनुरोध भेजने पर आपके विवरण इस वेबसाइट के माध्यम से जमा होते हैं। यदि आप WhatsApp के माध्यम से आगे संपर्क करना चुनते हैं, तो वह संदेश WhatsApp की सेवा से होकर जाता है। हम आपकी जानकारी कभी नहीं बेचते; इसे निम्नलिखित के अनुरूप संभाला जाता है: हमारी",
+      "issue": "Source ends mid-sentence (\"in line with our\"), presumably followed by a linked policy name. Hindi word order normally places the object before \"के अनुरूप\"; phrased with a trailing \"हमारी\" so the appended link text still reads correctly. Please verify against the rendered link.",
+      "sourceHash": "2cc5de93a0b3603d687e05a829354bf994c56ecebefc61c5be099882056750a5"
+    },
+    {
+      "id": "t_79187ade12b58d2ad219",
+      "status": "translated",
+      "text": "परामर्श का अनुरोध करने के लिए WhatsApp ड्राफ़्ट खोलें, अपने विवरण की समीक्षा करें और उसे वहीं से भेजें। ड्राफ़्ट खोलने से यह पुष्टि नहीं होती कि आपका अनुरोध प्राप्त हो गया है।",
+      "sourceHash": "79187ade12b58d2ad219ff18ca38e140f0f3f97a193df3812c6eaaa8525c4829"
+    },
+    {
+      "id": "t_9612d71291fd024ed871",
+      "status": "translated",
+      "text": "WhatsApp पर आगे संपर्क करें (वैकल्पिक)",
+      "sourceHash": "9612d71291fd024ed8717fc73bb9e149edf20d6e48adc336a8ede86c25e66766"
+    },
+    {
+      "id": "t_8eadc9343241ae641957",
+      "status": "translated",
+      "text": "यह फ़ॉर्म अभी जुड़ा नहीं है। कुछ भी सहेजा या भेजा नहीं गया है। इसके बजाय आप WhatsApp ड्राफ़्ट का उपयोग कर सकते हैं।",
+      "sourceHash": "8eadc9343241ae641957bff8166de273152846481270db923c2ad68eebc9f371"
+    },
+    {
+      "id": "t_a7248eeb45eb1ce247f8",
+      "status": "translated",
+      "text": "Normal",
+      "unchangedReason": "Technical style identifier kept unchanged per source-bound terminology.",
+      "sourceHash": "a7248eeb45eb1ce247f81693283e22e8b39e8a50890cecd22d02e75025547d90"
+    },
+    {
+      "id": "t_4dab480972513f3c980e",
+      "status": "translated",
+      "text": "Dhara (धारा)",
+      "sourceHash": "4dab480972513f3c980ef4a541b9ce10a04695c372c8e8dfef0f71550e9f4a64"
+    },
+    {
+      "id": "t_e9cf7a1ca4a760843ff3",
+      "status": "translated",
+      "text": "जुलाई",
+      "sourceHash": "e9cf7a1ca4a760843ff30e1fbb125e6a066c63e883c58523bdbe04c9daf5dbae"
+    },
+    {
+      "id": "t_6b1c950c7aeacfb5bf47",
+      "status": "translated",
+      "text": "योग और ध्यान",
+      "sourceHash": "6b1c950c7aeacfb5bf475478c7bfdc91d6fad9e52ec8fcccb125e7b843254d4c"
+    },
+    {
+      "id": "t_9a777bc3d436caf7753d",
+      "status": "translated",
+      "text": "Abhyangam (अभ्यंगम)",
+      "sourceHash": "9a777bc3d436caf7753d3d837a94899f356d020420b31741ad698ded484c0abf"
+    },
+    {
+      "id": "t_8b8d36c77f8f5d6b55c1",
+      "status": "translated",
+      "text": "Kizhi (किझी)",
+      "sourceHash": "8b8d36c77f8f5d6b55c1e55b3448f0cf1793389351a859c8b9196523fa139269"
+    },
+    {
+      "id": "t_f048627a616d4787da79",
+      "status": "translated",
+      "text": "चिकित्सक द्वारा निर्धारित किए जाने पर ये भी उपलब्ध हैं: Dhanyamala Dhara, Elakizhi (Patraswedam), Muttakizhi और Manalkizhi।",
+      "unchangedReason": "Therapy names kept in their original form as proper names.",
+      "sourceHash": "f048627a616d4787da7919f9196b3b2b1124ee631e93f69c9219276e56125a53"
+    },
+    {
+      "id": "t_b9b6426d2ec1cdbea0a3",
+      "status": "translated",
+      "text": "छाती के ऊपरी भाग पर आटे के घेरे के भीतर पर्यवेक्षण में तेल लगाने का चित्रण",
+      "sourceHash": "b9b6426d2ec1cdbea0a3c143cb5b174143c5739f3cd60d6de8d45b8b52b937c0"
+    },
+    {
+      "id": "t_745b257e55400b382982",
+      "status": "translated",
+      "text": "Urovasti (उरोबस्ति) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "745b257e55400b3829825e834888c9f1650a4ff02196fc4392b18c43edcac585"
+    },
+    {
+      "id": "t_28aa0875aba0aab1a667",
+      "status": "translated",
+      "text": "मुख कुल्ला करने के लिए कप और बेसिन के साथ बैठे हुए व्यक्ति का चित्रण",
+      "sourceHash": "28aa0875aba0aab1a667c3f427971ccb420c8029b9f571813a123a38ac09fd61"
+    },
+    {
+      "id": "t_5aa0235a74057af77b4c",
+      "status": "translated",
+      "text": "Kavalagraham (कवलग्रह) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "5aa0235a74057af77b4cb300d3c7487da178ea2c4ae7482f3eb2620f8ff8c6c5"
+    },
+    {
+      "id": "t_70fda4ed5c2d3428b94f",
+      "status": "translated",
+      "text": "पास में बेसिन के साथ मुँह में कुल्ले का द्रव रोके बैठे हुए व्यक्ति का चित्रण",
+      "sourceHash": "70fda4ed5c2d3428b94fe7d68a1da9be5a05ddf1ecc3ebe3a8acd8d523612adf"
+    },
+    {
+      "id": "t_4441df4aef96d29c0566",
+      "status": "translated",
+      "text": "Gandoosham (गण्डूष) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "4441df4aef96d29c0566471e0f2fc09c2b611d30ff98778863916d2b43660b52"
+    },
+    {
+      "id": "t_e18d6e41c3c319ed5b6b",
+      "status": "translated",
+      "text": "करवट लेकर लेटे हुए व्यक्ति के कान के पास तेल लगाते हुए चिकित्सक का चित्रण",
+      "sourceHash": "e18d6e41c3c319ed5b6b561dfd38071aa411a07131c8a6a0bb56ccbef73a9458"
+    },
+    {
+      "id": "t_b53b55e649bab82ce639",
+      "status": "translated",
+      "text": "Karnapoornam (कर्णपूरण) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "b53b55e649bab82ce6397cc7eb7744651da29adad2bae0c933437d8289e20408"
+    },
+    {
+      "id": "t_695890dfaabcd21af834",
+      "status": "translated",
+      "text": "उपचार उपकरण की सहायता से पर्यवेक्षण में जड़ी-बूटी के धुएँ/वाष्प को श्वास द्वारा लेने का चित्रण",
+      "sourceHash": "695890dfaabcd21af834add4d2211e76e4d4987fbb25dccc816c712ac25aa23e"
+    },
+    {
+      "id": "t_057746bf331455f7a1c5",
+      "status": "translated",
+      "text": "Dhoompanam (धूमपान) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "057746bf331455f7a1c573e1676c033d4c21b2df0a132d9be3b3021897505119"
+    },
+    {
+      "id": "t_c382a8faa306b15d020c",
+      "status": "translated",
+      "text": "सिर के शीर्ष भाग पर जड़ी-बूटी का लेप लगाते हुए चिकित्सक का चित्रण",
+      "sourceHash": "c382a8faa306b15d020c54eb6f1a8ff3d338fb6613a41ea853d3ff849e1eae28"
+    },
+    {
+      "id": "t_1a073b24d76a68913164",
+      "status": "translated",
+      "text": "Thalam (तलम्) — चित्रण",
+      "unchangedReason": "Therapy name kept as proper name, with Devanagari gloss.",
+      "sourceHash": "1a073b24d76a6891316424ccd80d9c7916fd3ab353c21e5aa2d92e6ef01fe72d"
+    },
+    {
+      "id": "t_a7dd7a99af45be509819",
+      "status": "translated",
+      "text": "सीलबंद तेल और उपचार सामग्री के साथ तैयार किए गए उपचार बिस्तर का चित्रण",
+      "sourceHash": "a7dd7a99af45be5098195888a65027db0731c9c883a434be58c81e8f386a8a67"
+    }
+  ]
+}

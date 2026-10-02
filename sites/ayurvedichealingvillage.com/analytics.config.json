@@ -1,13 +1,9 @@
 {
   "_comment": [
-    "Analytics identities for ayurvedichealingvillage.com, READ FROM THE LIVE SITE'S OWN TAGS on 2026-09-15,",
-    "never invented (HARD GATE 6). These are public identifiers — they are visible in the page source of the",
-    "live site today — not secrets, which is why they are committed. No API keys or tokens live here.",
-    "",
-    "ACTIVATION IS OFF BY DEFAULT. Nothing below loads unless AHV_ANALYTICS=1 AND the visitor has accepted",
-    "cookies. Owner ruling 2026-09-15: keep the IDs recorded but inert on staging, so six reviewers clicking",
-    "around a preview never land in the real GA4 and Clarity data, and switch them on at go-live.",
-    "See docs/reports/2026-09-15-ahv-go-live-checklist.md."
+    "Public measurement identities read from the live AHV tags, never invented.",
+    "Off by default. AHV_ANALYTICS=1 and visitor acceptance are required.",
+    "Owner 1 October 2026 authorises staging verification; staging additionally requires AHV_ANALYTICS_STAGING=1.",
+    "Staging remains noindex. Events carry ahv_environment; staging leads use separate diagnostic names and never fire live Ads conversions."
   ],
   "activation": {
     "env": "AHV_ANALYTICS",
@@ -15,12 +11,13 @@
     "default": "off",
     "consentKey": "ktahv-consent",
     "consentAcceptedValue": "accepted",
-    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page."
+    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page.",
+    "stagingEnv": "AHV_ANALYTICS_STAGING"
   },
   "measurement": {
     "ga4": {
       "id": "G-PZBX8G4Y9N",
-      "source": "gtag('config', …) on https://ayurvedichealingvillage.com/, 2026-09-15",
+      "source": "gtag('config', \u2026) on https://ayurvedichealingvillage.com/, 2026-09-15",
       "consentRequired": true
     },
     "clarity": {
@@ -30,12 +27,12 @@
     },
     "metaPixel": {
       "id": "1305161823266727",
-      "source": "fbq('init', …) on the live site, 2026-09-15",
+      "source": "fbq('init', \u2026) on the live site, 2026-09-15",
       "consentRequired": true
     }
   },
   "verification": {
-    "_comment": "Ownership proof, not tracking: these carry no cookies and are NOT consent-gated. They matter at the DNS flip — if they are missing when the domain moves, Search Console and Bing verification break.",
+    "_comment": "Ownership proof, not tracking: these carry no cookies and are NOT consent-gated. They matter at the DNS flip \u2014 if they are missing when the domain moves, Search Console and Bing verification break.",
     "googleSiteVerification": "wRX83HPNYkjhwhq2L0pjVwMjxccJyNivs0RERF97nWc",
     "msvalidate01": "8150125AE0C703A62B4F0EBD68520434",
     "facebookDomainVerification": "2x5q2slnwezqdexrhga0w1pdez0g3p"
@@ -59,7 +56,7 @@
     "firedFrom": "live WordPress /ppc-thanks/ via the HFCM plugin, on PAGE LOAD",
     "countingRule": "Every conversion",
     "includedInAccountGoals": false,
-    "status": "NOT ported to the new stack. Candidate prepared and tested but NOT activated: app/(english)/_families/lead-conversion.mjs",
-    "decision": "Activation is an owner/Vikash decision - see docs/reports/2026-09-15-ahv-enquirysubmission-trace.md section 10"
+    "status": "Accepted-response-only event implemented in consent-runtime.ts and lead-receipt.js; Production activation and destination receipt unverified",
+    "decision": "Owner 1 October authorises consented staging verification; production event receipt and Ads account goal configuration remain separate release checks."
   }
 }

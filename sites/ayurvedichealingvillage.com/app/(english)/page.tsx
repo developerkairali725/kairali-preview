@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DesignView } from "./_families/design-view";
+import { StaticDesignView } from "./_families/static-design-view";
 import { routeMetadata } from "./_families/metadata";
 import { homeRoute } from "./_families/registry";
 
@@ -16,5 +16,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function Page() {
-  return <DesignView route={homeRoute()} />;
+  return <StaticDesignView route={homeRoute()} />;
 }

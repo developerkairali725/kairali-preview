@@ -1,4 +1,7 @@
-import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from "./critical-media.mjs";
+import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
+import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
+import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
@@ -20,6 +23,11 @@ import { youtubeNewTabs } from "./youtube-links";
 import type { CandidateRoute } from "./registry";
 import { BREAKPOINT } from "./registry";
 import { BOOT_SCRIPT, DESIGN_ROOT_ID, ROUTE_CONFIG_ID, type BootConfig } from "./boot";
+// Next ships this pinned Terser build for its own output minification. Keep
+// the boot inline (no extra render-blocking request) but remove its comments
+// and unused syntax before React serializes it into HTML and Flight data.
+// @ts-expect-error Next's bundled Terser has no public declaration file.
+import { minify } from "next/dist/compiled/terser";
 import { routeSchema } from "./schema";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -71,18 +79,9 @@ function prerenderedBody(routePath: string, locale: LocaleCode = "en"): string {
   }
 }
 
-/**
- * Measurement ids reach the browser ONLY when the build asks for them.
- * AHV_ANALYTICS is unset on staging by the owner's 15 Sep 2026 ruling, so a
- * preview reviewer accepting cookies still sends nothing to the production
- * GA4 and Clarity properties. Switching it on is a go-live step, recorded in
- * docs/reports/2026-09-15-ahv-go-live-checklist.md.
- */
+/** Explicit activation remains consent-gated; staging needs its own switch. */
 function measurementForBuild(): BootConfig["measurement"] {
-  const a = analyticsConfig.activation;
-  if (process.env[a.env] !== a.enabledWhen) return undefined;
-  const m = analyticsConfig.measurement;
-  return { ga4: m.ga4.id, clarity: m.clarity.id, metaPixel: m.metaPixel.id };
+  return measurementForEnvironment(process.env, analyticsConfig);
 }
 
 const PAYLOAD_BASE = "/ahv/views/";
@@ -101,6 +100,8 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     // keyed by the English path) and scopes route-specific styling. The URL the
     // visitor sees is locale.path.
     path: route.path,
+    contentReviewCopy: reviewCopyFor(route.path, locale),
+    bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
     mobileView: route.mobileView,
@@ -122,10 +123,17 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
   };
 }
 
-export function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
+const compactBoot = minify(BOOT_SCRIPT, { compress: true, mangle: true }).then((result: { code?: string }) => {
+  if (!result.code) throw new Error("AHV boot minification produced no script");
+  return result.code;
+});
+
+export async function DesignView({ route, locale = "en" }: { route: CandidateRoute; locale?: LocaleCode }) {
+  const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const snapshot = descriptiveAwardLinks(phoneCriticalMedia(prerenderedBody(route.path, locale)));
+  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale)));
+  const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
@@ -202,6 +210,7 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
           hoists a preload <link> into <head>) so the first paint can already be in it: a first paint in the
           fallback face broke lines differently and the live copy of the LCP paragraph came out larger — a
           second, later LCP candidate. Phone-width only: the desktop never paints the snapshot. */}
+      {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {snapshotFaces
         ? snapshotFaces.preloadFonts.map((href) => (
             <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={narrowMedia} />
@@ -223,8 +232,10 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
           neither hydrates nor reconciles what the boot script mounts here.
           Without it, hydration threw 418 and React's recovery render wiped
           the approved design off the page. */}
+      {route.path === "/" ? <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}` }} /> : null}
       <div
         id={DESIGN_ROOT_ID}
+        role={route.path === "/" ? "main" : undefined}
         data-ahv-route={route.path}
         data-ahv-locale={locale === "en" ? undefined : locale}
         data-ahv-family={family || undefined}
@@ -251,7 +262,7 @@ export function DesignView({ route, locale = "en" }: { route: CandidateRoute; lo
         // <script> text node below.
         dangerouslySetInnerHTML={{ __html: jsonForScript(cfg) }}
       />
-      <script dangerouslySetInnerHTML={{ __html: BOOT_SCRIPT }} />
+      <script dangerouslySetInnerHTML={{ __html: bootScript }} />
     </>
   );
 }

@@ -31,6 +31,10 @@
   if (!section) return;
   var LP = window.AHV_LOCAL_PATHS || null;
   function lp(p) { return (LP && LP[p]) || p; }
+  function searchHref() {
+    var loc = (root && root.getAttribute("data-ahv-locale")) || window.__AHV_LOCALE || "en";
+    return "/search/" + (loc === "en" ? "" : "?lang=" + encodeURIComponent(loc));
+  }
   function T(s) { var d = window.__AHV_T; return (d && d[s]) || s; }
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   var html = document.documentElement;
@@ -95,7 +99,7 @@
         '<div class="ahv-fh-cols">' +
           '<nav class="ahv-fh-family" aria-label="' + esc(T("In this section") + ": " + section.label) + '">' + hub + list(section.items) + "</nav>" +
           '<nav class="ahv-fh-main" aria-label="' + esc(T("Main menu")) + '"><span class="ahv-fh-kicker">' + esc(T("Main menu")) + '</span><ul class="ahv-fh-list">' + menu +
-            '<li><a href="' + esc(lp("/search/")) + '">' + esc(T("Search")) + "</a></li></ul></nav>" +
+            '<li><a href="' + esc(searchHref()) + '">' + esc(T("Search")) + "</a></li></ul></nav>" +
         "</div>" +
       "</div>";
     if (!panel.querySelector('.ahv-fh-family [aria-current="page"]')) {

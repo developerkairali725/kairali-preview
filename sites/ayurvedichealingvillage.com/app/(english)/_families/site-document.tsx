@@ -3,7 +3,6 @@ import Script from "next/script";
 import { ChatbaseLoader } from "@kairali/chat";
 import { ConsentScripts } from "@kairali/consent";
 import analyticsConfig from "../../../analytics.config.json";
-import "../../../public/design/site-bundle.css";
 
 /**
  * The shared document for every locale of the approved-design lane: the
@@ -79,7 +78,7 @@ export function SiteDocument({
             data-labels for phone-stacked tables. It runs its own observer on
             the design root and never touches boot.ts. */}
 
-        <script defer src={`${designBase}consistency.js`} />
+        <script defer src={`${designBase}consistency.min.js`} />
         {/* Shared chrome, every page INCLUDING the homepage (owner rulings
             D-20260922-17/-18/-19, 22 Sep 2026): the desktop header on one row
             with the EN/DE/FR switch kept (chrome.css, ≥1180px), the copyright
@@ -87,7 +86,7 @@ export function SiteDocument({
             phone (chrome.js). Not scoped by data-ahv-consistency on purpose —
             the header and footer are one component on every family. */}
 
-        <script defer src={`${designBase}chrome.js`} />
+        <script defer src={`${designBase}chrome.min.js`} />
 
 
         <script src={`${designBase}film-player.js`} defer />
@@ -96,14 +95,14 @@ export function SiteDocument({
             intake and the legacy campaign/landing routes. Both are inert elsewhere, post to /api/lead/
             and show receipt only after the server confirms storage (a truthful "not connected" otherwise). */}
         <script defer src={`${designBase}opd-form-submit.js`} />
-        <script defer src="/design/landing-page-form-submit.js" />
+        <script defer src={`${designBase}landing-page-form-submit.js`} />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
             search control on every page, the programme finder and the FAQ filter.
             search.js takes over the header's inert dialog at runtime, like chrome.js
             does for the footer; the package component is never edited. */}
 
-        <script defer src={`${designBase}search.js`} />
+        <script defer src={`${designBase}search.min.js`} />
         {/* ONE section navigation for every content family (owner, 23 Sep 2026):
             the captured WordPress sidebars are removed and a governed rail built
             from the owner-authorised breadcrumbs takes their place — data from
@@ -122,7 +121,7 @@ export function SiteDocument({
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
       </head>
-      <body>
+      <body data-ahv-chat-open="false">
         {/* Two rules, both load-bearing.
             1. Paper tone from the approved design, so the first paint before
                the runtime mounts is the design's background, not white.
@@ -178,6 +177,8 @@ export function SiteDocument({
         <style>
           {"html,body{margin:0;background:#F7F4EA;color:#2A2118}x-dc{display:none!important}" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
             "@media (min-width:700px){#ahv-design-root[data-ahv-snapshot-state='released']>[data-ahv-snapshot]{display:none!important}}" +
+            // Reserve the first viewport while a translated/runtime view mounts.
+            "#ahv-design-root[data-ahv-snapshot-state='held'],#ahv-design-root[data-ahv-snapshot-state='released']{min-height:100vh}" +
             "#ahv-design-root[data-ahv-live-pending]{position:relative}#ahv-design-root[data-ahv-live-pending]>#dc-root{position:absolute!important;top:0!important;left:0!important;right:0!important;visibility:hidden!important;pointer-events:none!important}" +
             // Desktop hold only when this document runs script (html[data-ahv-js], set by the inline script below)
             // and the runtime has not failed (data-ahv-fallback). Without JavaScript, or when the runtime never

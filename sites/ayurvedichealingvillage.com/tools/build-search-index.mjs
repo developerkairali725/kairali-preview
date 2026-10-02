@@ -229,4 +229,12 @@ if (CHECK) {
   }
   console.log("search index matches current sources");
 }
-if (!DRY) { fs.writeFileSync(OUT, text + "\n"); console.log("wrote", path.relative(SITE, OUT)); }
+if (!DRY && !CHECK) {
+  let existing = null;
+  try { existing = JSON.parse(fs.readFileSync(OUT, "utf8")); } catch {}
+  // Generation time describes a changed index, not every verification/build.
+  // Keep identical payloads stable for cache validators and release source pins.
+  const unchanged = existing && JSON.stringify({ ...existing, generated: null }) === JSON.stringify({ ...index, generated: null });
+  if (unchanged) console.log("search index unchanged; retained generation timestamp");
+  else { fs.writeFileSync(OUT, text + "\n"); console.log("wrote", path.relative(SITE, OUT)); }
+}

@@ -438,7 +438,7 @@ export const INTERNAL_KEYS = new Set(("reason sourceClass recordedOriginalSha256
   "ruling outlineOffset fontFamily generated k fw preparedAltPrivate action basis oraclePlacement component by before " +
   "sourceTag control key id el width disposition cause retraction bodyPolicy inlineRepair interactionPolicy provenanceNote " +
   "renderRule sourceStatus privateNote internalNote auditNote wrapperClass sourceHref sourceUrl sourcePointer pointer " +
-  "payloadSchema").split(/\s+/)); // payloadSchema = submitted field keys (28 Sep 2026 locale audit), never rendered
+  "payloadSchema rootMargin").split(/\s+/)); // payloadSchema = submitted field keys (28 Sep 2026 locale audit), never rendered
 const INTERNAL_PROSE = /\b(governed|verbatim|packet|pointer|oracle|adjudicat\w*|sha-?256|dataset|renderer|prerender|payload|readback|H1|h[1-6]|canonical|sourceAlt|source (node|record|subtree|tree|tag|hero|anchor|order|position|title|head|alt|image|page|file|route|grid|label|heading|trail)|owner[- ]rul\w*|retained privately|poured from)\b/;
 const HASHLIKE = /^(?:[0-9a-f]{16,}|[A-Za-z0-9_-]{11}|\d{4}-\d\d-\d\d(?:T[\d:.]+(?:Z|[+-]\d\d:\d\d)?)?|T[\d:.]+Z?|-?[\d.]+(px|rem|em|%|vh|vw|s|ms|fr)?|[A-Z][A-Z0-9_]{3,}|en[_-]US)$/;
 export function isInternalDatum(keyPath, value) {

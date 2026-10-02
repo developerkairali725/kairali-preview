@@ -13,11 +13,11 @@ export function GuestStories(){
   <div className="rv-filters"><div className="rv-tabs" role="group" aria-label={T("Reviewer location")}>{[{id:'all',label:T("All reviews")},{id:'india',label:T("Reviews from India")},{id:'international',label:T("International reviews")}].map(t=><button key={t.id} type="button" aria-pressed={region===t.id} onClick={()=>setRegion(t.id)}>{t.label}</button>)}</div><label className="rv-language">{T("Read excerpts in")}<select value={language} onChange={e=>setLanguage(e.target.value as Language)}>{LANGUAGES.map(l=><option key={l.id} value={l.id}>{l.label}</option>)}</select></label></div>
   <p className="rv-filter-note" aria-live="polite">{stories.length}{" "}{T("stories ·")}{" "}{language==='en'?T("Original English excerpts"):T("Translated excerpts · original English remains available on each card")}{T(". Reviewer location is shown only where the source identifies it.")}</p>
   <div className="rv-story-grid">{stories.map(s=><article className="rv-story" key={s.id}>
-   <div className="rv-story-top"><span className="rv-source">{s.source}</span><span aria-hidden="true" className="rv-quote-mark">“</span></div>
+   <div className="rv-story-top"><span className="rv-source">{T(s.source)}</span><span aria-hidden="true" className="rv-quote-mark">“</span></div>
    <blockquote lang={language}>{s.quote[language]}</blockquote>
    {language!=='en'&&<details className="rv-original"><summary>{T("Original English")}</summary><p lang="en">{s.quote.en}</p></details>}
-   <p className="rv-summary">{s.summary}</p><div className="rv-person"><span className="rv-initial" aria-hidden="true">{s.name.replace(/^Mrs\. & Mr\. /,'').charAt(0).toUpperCase()}</span><div><h3>{s.name}</h3><p>{s.place}</p></div></div>
-   <p className="rv-date">{s.date}</p><a className="rv-text-link" href={s.href} target="_blank" rel="noopener noreferrer">{s.source==='Google'?T("Read reviews on Google"):T("Read the original testimonial")} <span aria-hidden="true">↗</span></a>
+   <p className="rv-summary">{T(s.summary)}</p><div className="rv-person"><span className="rv-initial" aria-hidden="true">{s.name.replace(/^Mrs\. & Mr\. /,'').charAt(0).toUpperCase()}</span><div><h3>{s.name}</h3><p>{T(s.place)}</p></div></div>
+   <p className="rv-date">{T(s.date)}</p><a className="rv-text-link" href={s.href} target="_blank" rel="noopener noreferrer">{s.source==='Google'?T("Read reviews on Google"):T("Read the original testimonial")} <span aria-hidden="true">↗</span></a>
   </article>)}</div>
   <p className="rv-small">{T("These are selected patient accounts, not a complete review feed. Archived testimonials are labelled. Personal experiences and treatment outcomes vary.")}</p>
  </section>;

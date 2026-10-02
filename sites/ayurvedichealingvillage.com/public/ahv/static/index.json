@@ -1,0 +1,18 @@
+{
+ "generated": "2026-10-01T06:13:20.072Z",
+ "base": "http://localhost:4313",
+ "count": 1,
+ "failures": 0,
+ "routes": [
+  {
+   "path": "/",
+   "ok": true,
+   "file": "index.html",
+   "bytes": 260344,
+   "textChars": 17573,
+   "imgs": 74,
+   "flattened": 50,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+  }
+ ]
+}
