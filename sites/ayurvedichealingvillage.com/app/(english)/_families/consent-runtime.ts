@@ -192,13 +192,16 @@ export const CONSENT_RUNTIME = `
   // Owner 1 October authorises staging behind a separate explicit build switch.
   // Staging events carry environment markers; staging leads never fire live Ads goals.
   var measurementStarted = !!window.__ahvMeasurementStarted;
+  function attributionValueSafe(name, value) {
+    return name.indexOf("utm_") === 0 ? /^[a-zA-Z0-9_.~ -]{1,120}$/.test(value) : /^[a-zA-Z0-9_.~-]{1,120}$/.test(value);
+  }
   function measurementUrlSafe() {
     // Meta and Clarity can inspect document.location themselves. Only start
     // them when every URL parameter is a bounded attribution value.
     var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
-    var safe = !window.location.hash;
+    var safe = !window.location.hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(window.location.hash);
     new URLSearchParams(window.location.search).forEach(function (value, name) {
-      if (allowed.indexOf(name) === -1 || !/^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) safe = false;
+      if (allowed.indexOf(name) === -1 || !attributionValueSafe(name, value)) safe = false;
     });
     return safe;
   }
@@ -210,7 +213,7 @@ export const CONSENT_RUNTIME = `
     var incoming = new URLSearchParams(window.location.search);
     allowed.forEach(function (name) {
       var value = incoming.get(name);
-      if (value && /^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) query.set(name, value);
+      if (value && attributionValueSafe(name, value)) query.set(name, value);
     });
     return window.location.origin + window.location.pathname + (query.size ? "?" + query.toString() : "");
   }
@@ -254,12 +257,42 @@ export const CONSENT_RUNTIME = `
     }
     return sent;
   }
-  window.AHV_MEASUREMENT = { recordLead: recordAcceptedLead };
+  function attribution() {
+    var allowed = ["gclid", "gbraid", "wbraid", "fbclid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+    var current = {}, incoming = new URLSearchParams(window.location.search);
+    allowed.forEach(function (name) {
+      var value = incoming.get(name);
+      if (value && attributionValueSafe(name, value)) current[name] = value;
+    });
+    // Retain the paid visit across programme navigation only after consent,
+    // for this tab/session and for at most 30 minutes. Never persist private URLs.
+    if (consentChoice() !== "accepted") return current;
+    try {
+      var key = "ahv-paid-attribution-v1", previous = JSON.parse(sessionStorage.getItem(key) || "null");
+      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:Date.now(),values:current}));
+      else if (previous && Date.now()-previous.at >= 0 && Date.now()-previous.at < 1800000) {
+        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === "string" && attributionValueSafe(name,value)) current[name]=value;});
+      } else sessionStorage.removeItem(key);
+    } catch(e) {}
+    return current;
+  }
+  function recordInteraction(name, target) {
+    var targets = { enquiry_open:["enquiry"], contact_click:["phone","whatsapp","directions","email"], tariff_download:["tariff"], programme_open:["programme"], video_open:["video"], form_start:["enquiry"], exit_help:["shown","dismissed","enquire","whatsapp"] };
+    if (!targets[name] || targets[name].indexOf(target) === -1 || window.location.pathname !== "/ayurvedic-treatment-packages.html") return false;
+    if(consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
+    var m=cfg.measurement;
+    if(!m.ga4 || typeof window.gtag !== "function") return false;
+    // Interaction diagnostics are never Ads or Meta lead conversions.
+    window.gtag("event", m.environment === "staging" ? "ahv_staging_"+name : name, { interaction_target:target, page_location:safePageLocation(), ahv_environment:m.environment || "production", debug_mode:m.environment === "staging" });
+    return true;
+  }
+  window.AHV_MEASUREMENT = { recordLead: recordAcceptedLead, recordInteraction:recordInteraction, attribution:attribution };
   function startMeasurement() {
     if (measurementStarted) return;
     if (!measurementUrlSafe()) return;
     var m = cfg.measurement;
     if (!m) return; // build-time switch is off: nothing to start
+    attribution();
     measurementStarted = true;
     window.__ahvMeasurementStarted = true;
     if (m.ga4) {

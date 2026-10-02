@@ -106,3 +106,40 @@ test("Meta bootstrap dispatches events through the loaded SDK instead of leaving
   ctx.fbq("track", "Lead");
   assert.deepEqual(dispatched, ["track", "Lead"]);
 });
+
+
+test("R10 paid campaign spaces and fixed enquiry anchor retain attribution and one confirmed conversion", async () => {
+ const ctx=browser("accepted",200,{ok:true,status:"received"},"?utm_campaign=Competition&utm_content=kairali+ahv&gclid=paid123");
+ assert.equal(ctx.__ahvMeasurementStarted,true);
+ ctx.location.hash="#enquiry";
+ await ctx.fetch("/api/lead/",{method:"POST",body:JSON.stringify({form:"landing-page",submissionToken:token})});
+ const events=ctx.dataLayer.filter(entry=>entry[1]==="conversion");
+ assert.equal(events.length,1);
+ assert.match(events[0][2].page_location,/utm_content=kairali\+ahv/);
+ assert.equal(events[0][2].page_location.includes("#"),false);
+ for(const query of ["?utm_content=private%40example.com","?email=private%40example.com","?utm_content=%3Cscript%3E","?gclid=not+a+click+id"])
+  assert.equal(browser("accepted",200,{ok:true,status:"received"},query).__ahvMeasurementStarted,undefined);
+});
+
+test('R10 interactions respect consent, environment and a fixed non-personal parameter allowlist',()=>{
+ const ctx=browser('accepted',200,{ok:true,status:'received'},'?utm_source=google','staging');
+ ctx.location.pathname='/ayurvedic-treatment-packages.html';
+ assert.equal(ctx.AHV_MEASUREMENT.recordInteraction('contact_click','whatsapp'),true);
+ assert.equal(ctx.dataLayer.filter(e=>e[1]==='ahv_staging_contact_click').length,1);
+ assert.equal(ctx.AHV_MEASUREMENT.recordInteraction('contact_click','private@example.com'),false);
+ assert.equal(ctx.AHV_MEASUREMENT.recordInteraction('generate_lead','enquiry'),false);
+ assert.equal(ctx.dataLayer.filter(e=>e[1]==='conversion').length,0);
+ const declined=browser('declined');declined.location.pathname=ctx.location.pathname;
+ assert.equal(declined.AHV_MEASUREMENT.recordInteraction('exit_help','shown'),false);
+});
+
+test('consented attribution survives programme navigation, expires, and excludes arbitrary private parameters',()=>{
+ const ctx=browser('accepted',200,{ok:true,status:'received'},'?utm_source=google&utm_content=kairali+ahv&gbraid=braid123&email=private%40example.com');
+ const first=ctx.AHV_MEASUREMENT.attribution();
+ assert.equal(first.utm_content,'kairali ahv');assert.equal(first.gbraid,'braid123');assert.equal(first.email,undefined);
+ ctx.location.search='';assert.equal(ctx.AHV_MEASUREMENT.attribution().utm_source,'google');
+ ctx.sessionStorage.setItem('ahv-paid-attribution-v1',JSON.stringify({at:Date.now()-1800001,values:first}));
+ assert.equal(Object.keys(ctx.AHV_MEASUREMENT.attribution()).length,0);
+ const declined=browser('declined');declined.AHV_MEASUREMENT.attribution();
+ assert.equal(declined.sessionStorage.getItem('ahv-paid-attribution-v1'),null);
+});

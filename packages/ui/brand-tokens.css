@@ -296,3 +296,78 @@ a { color: var(--forest-500); transition: color var(--dur-fast) var(--ease-brand
    logo lockups SVG (full/wordmark/icon, light+dark), clear-space = K-width,
    min screen sizes 72px lockup / 40px icon; heritage engraving asset;
    full ramp hex values (50–900 × 5 families) + exact ink hex. */
+
+/* AHV R10 owner-approved homepage palette, 3 October 2026. Scoped to campaign only. */
+.r10-revision {
+  --ahv-r10-color-1: #0042260b;
+  --ahv-r10-color-2: #00422633;
+  --ahv-r10-color-3: #2A211850;
+  --ahv-r10-color-4: #2A2118a8;
+  --ahv-r10-color-5: #2a201420;
+  --ahv-r10-color-6: #2a201422;
+  --ahv-r10-color-7: #2a2014b8;
+  --ahv-r10-color-8: #2a2014de;
+  --ahv-r10-color-9: #2a2014ed;
+  --ahv-r10-color-10: #5a442007;
+  --ahv-r10-color-11: #5a442008;
+  --ahv-r10-color-12: #5a44200a;
+  --ahv-r10-color-13: #5a44200b;
+  --ahv-r10-color-14: #c1882c04;
+  --ahv-r10-color-15: #c1882c06;
+  --ahv-r10-color-16: #c1882c08;
+  --ahv-r10-color-17: #c1882c33;
+  --ahv-r10-color-18: #c1882c55;
+  --ahv-r10-color-19: #c1882c66;
+  --ahv-r10-color-20: #c1882c70;
+  --ahv-r10-color-21: #c1882c80;
+  --ahv-r10-color-22: #e6c07888;
+  --ahv-r10-color-23: #f7f4ea06;
+  --ahv-r10-color-24: #f7f4ea33;
+  --ahv-r10-color-25: #f7f4ea55;
+  --ahv-r10-color-26: #f7f4ea88;
+  --ahv-r10-color-27: #f7f4eac7;
+  --ahv-r10-color-28: #f7f4eaed;
+  --ahv-r10-color-29: #004226;
+  --ahv-r10-color-30: #006038;
+  --ahv-r10-color-31: #242c26;
+  --ahv-r10-color-32: #2A2014;
+  --ahv-r10-color-33: #2A2118;
+  --ahv-r10-color-34: #453319;
+  --ahv-r10-color-35: #5A4420;
+  --ahv-r10-color-36: #5c675f;
+  --ahv-r10-color-37: #665846;
+  --ahv-r10-color-38: #75695A;
+  --ahv-r10-color-39: #875119;
+  --ahv-r10-color-40: #8F6212;
+  --ahv-r10-color-41: #922b20;
+  --ahv-r10-color-42: #9a6d25;
+  --ahv-r10-color-43: #C1882C;
+  --ahv-r10-color-44: #E0D7C4;
+  --ahv-r10-color-45: #EEB41E;
+  --ahv-r10-color-46: #F7F4EA;
+  --ahv-r10-color-47: #b5c2b3;
+  --ahv-r10-color-48: #b69c66;
+  --ahv-r10-color-49: #c6bba7;
+  --ahv-r10-color-50: #cbd3c7;
+  --ahv-r10-color-51: #cbd6c7;
+  --ahv-r10-color-52: #d6c8aa;
+  --ahv-r10-color-53: #d9dfd3;
+  --ahv-r10-color-54: #ddb01f;
+  --ahv-r10-color-55: #e0a91c;
+  --ahv-r10-color-56: #e0d7c4;
+  --ahv-r10-color-57: #e6c078;
+  --ahv-r10-color-58: #e9e2d3;
+  --ahv-r10-color-59: #e9ece6;
+  --ahv-r10-color-60: #e9eee5;
+  --ahv-r10-color-61: #e9efe5;
+  --ahv-r10-color-62: #ede5d6;
+  --ahv-r10-color-63: #f7f4ea;
+  --ahv-r10-color-64: #fffdf7;
+  --ahv-r10-color-65: #0002;
+  --ahv-r10-color-66: #fff9;
+  --ahv-r10-overlay-1: rgba(247,244,234,.7);
+  --ahv-r10-overlay-2: rgba(247,244,234,.97);
+  --ahv-r10-overlay-3: rgba(42,32,20,.18);
+  --ahv-r10-overlay-4: rgba(42,32,20,.56);
+  --ahv-r10-overlay-5: rgba(42,32,20,.90);
+}
