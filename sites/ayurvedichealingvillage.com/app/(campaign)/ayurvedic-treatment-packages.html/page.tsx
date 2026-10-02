@@ -3,6 +3,7 @@ import Image from 'next/image';
 import parse, { Element, type HTMLReactParserOptions } from 'html-react-parser';
 import { approvedContent } from './content';
 import { R10EnquiryForm } from './EnquiryForm';
+import { GuestSupport } from './GuestSupport';
 import './r10.css';
 
 const canonical = 'https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html';
@@ -30,5 +31,5 @@ const schema = {
  breadcrumb:{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://ayurvedichealingvillage.com/'},{'@type':'ListItem',position:2,name:'Ayurvedic treatment packages',item:canonical}]}
 };
 export default function Page() {
- return <div className="r10-revision"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(approvedContent,options)}</div>;
+ return <div className="r10-revision"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(approvedContent,options)}<GuestSupport/></div>;
 }

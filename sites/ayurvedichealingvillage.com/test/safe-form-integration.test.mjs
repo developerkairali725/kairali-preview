@@ -197,3 +197,9 @@ test('successful non-newsletter forms receive the final language-matched Healing
   assert.match(read('../app/(lp)/_components/campaign-enquiry-form.tsx'), /result\.guideUrl/);
   assert.doesNotMatch(read('../public/design/newsletter.js'), /guideUrl|healing-secrets/i);
 });
+
+test('R10 lead cannot bypass name, phone or contact consent on the server',()=>{
+ const valid={landing_page_path:'/ayurvedic-treatment-packages.html',fname:'QA',phone:'+919999999999',email:'qa@example.com',consent:true};
+ assert.equal(validationProblem('landing-page',valid),null);
+ for(const override of [{fname:''},{phone:''},{consent:false},{consent:'true'}])assert.equal(validationProblem('landing-page',{...valid,...override}),'MISSING_REQUIRED_FIELDS');
+});

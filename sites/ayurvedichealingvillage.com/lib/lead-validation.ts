@@ -44,6 +44,10 @@ export function validationProblem(table: LeadTable, values: Record<string, strin
   }
 
   if (table === 'landing-page') {
+    if (values.landing_page_path === '/ayurvedic-treatment-packages.html') {
+      return ['landing_page_path','fname','phone','email'].every((key)=>present(values,key)) && values.consent === true
+        ? null : 'MISSING_REQUIRED_FIELDS';
+    }
     const required = ['landing_page_path', 'email'];
     return required.every((key) => present(values, key)) ? null : 'MISSING_REQUIRED_FIELDS';
   }
