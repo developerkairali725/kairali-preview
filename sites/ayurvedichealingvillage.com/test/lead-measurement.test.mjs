@@ -143,3 +143,25 @@ test('consented attribution survives programme navigation, expires, and excludes
  const declined=browser('declined');declined.AHV_MEASUREMENT.attribution();
  assert.equal(declined.sessionStorage.getItem('ahv-paid-attribution-v1'),null);
 });
+
+test('cookie preferences revoke current tags and leave no stored choice for the reopened notice', () => {
+  const stored = new Map([['ktahv-consent', 'accepted'], ['kairali-consent-v1', 'accepted']]);
+  let click, reloads = 0;
+  const ctx = {
+    JSON, Date,
+    localStorage: {getItem: k => stored.get(k) ?? null, setItem: (k,v) => stored.set(k,v), removeItem: k => stored.delete(k)},
+    document: {addEventListener: (type, handler) => {if(type === 'click') click = handler;}},
+    location: {reload: () => {assert.equal(stored.size, 0); reloads++;}},
+  };
+  ctx.window = ctx;
+  runInNewContext(`var cfg={}; ${consentRuntime}`, ctx);
+  let prevented = false;
+  click({target: {closest: selector => selector === '[data-ahv-cookie-choices]' ? {} : null}, preventDefault: () => {prevented = true;}});
+  assert.equal(prevented, true);
+  assert.equal(reloads, 1);
+  assert.equal(stored.size, 0);
+  const signals = ctx.dataLayer.find(entry => entry[0] === 'consent' && entry[1] === 'update')[2];
+  assert.equal(signals.analytics_storage, 'denied');
+  assert.equal(signals.ad_storage, 'denied');
+  assert.equal(signals.security_storage, 'granted');
+});
