@@ -106,3 +106,17 @@ test("Meta bootstrap dispatches events through the loaded SDK instead of leaving
   ctx.fbq("track", "Lead");
   assert.deepEqual(dispatched, ["track", "Lead"]);
 });
+
+
+test("R10 paid campaign spaces and fixed enquiry anchor retain attribution and one confirmed conversion", async () => {
+ const ctx=browser("accepted",200,{ok:true,status:"received"},"?utm_campaign=Competition&utm_content=kairali+ahv&gclid=paid123");
+ assert.equal(ctx.__ahvMeasurementStarted,true);
+ ctx.location.hash="#enquiry";
+ await ctx.fetch("/api/lead/",{method:"POST",body:JSON.stringify({form:"landing-page",submissionToken:token})});
+ const events=ctx.dataLayer.filter(entry=>entry[1]==="conversion");
+ assert.equal(events.length,1);
+ assert.match(events[0][2].page_location,/utm_content=kairali\+ahv/);
+ assert.equal(events[0][2].page_location.includes("#"),false);
+ for(const query of ["?utm_content=private%40example.com","?email=private%40example.com","?utm_content=%3Cscript%3E","?gclid=not+a+click+id"])
+  assert.equal(browser("accepted",200,{ok:true,status:"received"},query).__ahvMeasurementStarted,undefined);
+});

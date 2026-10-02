@@ -192,13 +192,16 @@ export const CONSENT_RUNTIME = `
   // Owner 1 October authorises staging behind a separate explicit build switch.
   // Staging events carry environment markers; staging leads never fire live Ads goals.
   var measurementStarted = !!window.__ahvMeasurementStarted;
+  function attributionValueSafe(name, value) {
+    return name.indexOf("utm_") === 0 ? /^[a-zA-Z0-9_.~ -]{1,120}$/.test(value) : /^[a-zA-Z0-9_.~-]{1,120}$/.test(value);
+  }
   function measurementUrlSafe() {
     // Meta and Clarity can inspect document.location themselves. Only start
     // them when every URL parameter is a bounded attribution value.
     var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
-    var safe = !window.location.hash;
+    var safe = !window.location.hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(window.location.hash);
     new URLSearchParams(window.location.search).forEach(function (value, name) {
-      if (allowed.indexOf(name) === -1 || !/^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) safe = false;
+      if (allowed.indexOf(name) === -1 || !attributionValueSafe(name, value)) safe = false;
     });
     return safe;
   }
@@ -210,7 +213,7 @@ export const CONSENT_RUNTIME = `
     var incoming = new URLSearchParams(window.location.search);
     allowed.forEach(function (name) {
       var value = incoming.get(name);
-      if (value && /^[a-zA-Z0-9_.~-]{1,120}$/.test(value)) query.set(name, value);
+      if (value && attributionValueSafe(name, value)) query.set(name, value);
     });
     return window.location.origin + window.location.pathname + (query.size ? "?" + query.toString() : "");
   }
