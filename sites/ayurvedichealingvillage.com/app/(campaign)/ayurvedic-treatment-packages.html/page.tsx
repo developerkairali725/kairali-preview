@@ -23,7 +23,7 @@ const options: HTMLReactParserOptions = { replace(node) {
  if (node.name === 'img') {
   const a=node.attribs;
   const hero=a.class?.includes('hero-photograph');
-  return <Image src={a.src} alt={a.alt || ''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} sizes={hero?'100vw':'(max-width: 700px) 100vw, 50vw'}/>;
+  return <Image src={a.src} alt={a.alt || ''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width: 700px) 100vw, 50vw'}/>;
  }
 }};
 const schema = {
