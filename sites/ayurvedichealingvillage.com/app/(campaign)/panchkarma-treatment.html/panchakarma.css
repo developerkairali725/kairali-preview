@@ -28,3 +28,4 @@
 @media(max-width:800px){.p26-page .package-refined .package-inclusions{grid-template-columns:1fr}.p26-page .package-refined .package-price{margin:22px 0!important}.p26-page .package-benefits{margin-top:22px}}
 .p26-page .doctors-section .programme-grid{align-items:start}.p26-page .doctor-testimonial{margin:28px 0 0;padding:24px 30px;border-left:2px solid var(--bronze);background:#eee8dc}.p26-page .doctor-testimonial p{max-width:none;font-size:18px;margin:0}.p26-page .doctor-testimonial p:first-child{font:36px/1 Marcellus;color:var(--bronze);margin-bottom:10px}
 @media(max-width:600px){.p26-page .doctor-copy p{font-size:18px;line-height:1.7}}
+.p26-page .package-refined .package-detail{width:100%;margin:0}.p26-page .package-refined .package-detail h3{font:600 16px/1.6 Mulish;margin:0 0 4px}
