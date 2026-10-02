@@ -1,9 +1,9 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-villa-sizes-20261002.tar.gz",
-  "archive": "ahv-locale-prerenders-villa-sizes-20261002.tar.gz",
-  "sha256": "0d56f012b46354c61206a598f3c6e2ed5c3cd6857ed72574a05490aa5a05aef7",
+  "asset": "ahv-locale-prerenders-villa-sizes-final-20261002.tar.gz",
+  "archive": "ahv-locale-prerenders-villa-sizes-final-20261002.tar.gz",
+  "sha256": "9d1688c4bd2915f6728407d39073a6d13e72b6384e87ce16e334059c67d2fc00",
   "bytes": 46481384,
   "capturedSource": "4a67da3 + owner-approved villa total-area ranges",
   "captured": "2026-10-02",
@@ -14,99 +14,99 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "c8574d5e3c8dbcad4a11f2a320bcb14e4d92b8a1b8904e736dcfd5002fe4ea5b"
+      "sha256": "777fe9d198c283b66f0b64fd01b0879924f6b8099f405bfc4eb0d0022b045f13"
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "fd03c3bf998fc841b2ef0a0eb6fe10c3cf7c4f25683382c13f20bc7366f603f3"
+      "sha256": "f7a1e6f32494f572ee9b1a2620c4e3dedc9412b63f4c30c8ef73cb84e4fdd619"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "850aec1796e54acf66a747b8b1b27db1b97adf12281168b3d45490563906b153"
+      "sha256": "b36c2fab3448ea603cffc375eb89e6e9df23562df3ab3735f3032aefacd722c6"
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "906adc16ec56a2217400873c7ca90c290f3c868b213d8c285f9b53382b23dd12"
+      "sha256": "bc20d81a2cc568b1c14cb5112bc4edb0f4212d856fabdbc57f9c90a293d4929c"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "58a67f78f2fc4f86231d84d04a63b17c22f9b449a36aeaf782654a7eff5e5ba2"
+      "sha256": "343001de42fb3017c07ce4f0232556e10f86f9ffe1e67c510883098d4f9c4a0e"
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "e1b59da4cbc76e0a94734ecb5eea1ace7a2374261dcba4cbfa33d4dc5c93aa6c"
+      "sha256": "f89a671fcb7595afa55eaebe89c7ef07b54583f211ad744e0ecb845749318771"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "60cf85232318473795216a4accd5f6ff152c82fc42b6d6a78d672ac030668254"
+      "sha256": "4252a40c7c295098668925040be2deba9d0f19515c0430d33fe0c9c1322a7eb3"
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "6f2888c3dbc1c36c6bf4142f241c7b2e81cd96d07b4625d506a7cbdb09bbf675"
+      "sha256": "e70c378c6b3c12b79f905c99ed3829b110f65bfbc51873de8612581f6992684d"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "a7b8bda5bbaac9821d8c76a7ec7f4c84bee012293e13c4a50a51e49bb076c15a"
+      "sha256": "81a7c2be7463ee16d4f692d0c49984fed750206c890f398f901e7edd9219c510"
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "7722be319e08ec5ceb7208bf2f0a5447d39eecce7de8811a9fc50fc9c1172d2d"
+      "sha256": "a17697a0f7a859e56e94e1825b4d14b55d3db87ce23a7ba9c8256fbd7957842e"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "4178c723c015561e960e4d8120f74b39fa1b0cc3fce5f910da87ef511d722606"
+      "sha256": "38165efc07d3fd6c3ef359425a86363584f6fb0ce7c4c79c077f07df5bad1790"
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "b1f9dec219725c6321f2e5789a0ce9baf346818441c62b18120720d7cf12e4dd"
+      "sha256": "16fae5c9c9e443c3916b8755f68933a2ac7eaa0f6c9f22f09c8c7323dd9c80cf"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "f3a2d52f8e776d1b9311481781e4b832fcccb520d75cdfe0d871ab97e11b09cf"
+      "sha256": "a7ac58d27f514489c9fa9bc7baeb952a6013a3a3cd212b70c3c6e7b735aff442"
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "4dbac593630442ccf783fb7011e3a7fa55a4847df85c020dc249a524efb2ce01"
+      "sha256": "218ea261040ff0a86f8cb67797e236f098858b74472dc64af51759be57a2b81f"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "d67728767537877afdb5b35d117b1f4ada018a9c444c1a7bfd74dc5e920470bc"
+      "sha256": "af6ad438fddcf84c6c9576675bb90172fbf5d12925500a106a712e618adb1ae9"
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "eda719ac99739c51dab99fd42b2b80e8f8622faa43df2eb31a16d10c54290995"
+      "sha256": "5dcb6d7ce64de3db394ffd86c586d3efdd259014935fcbe9ca919e3511bbc304"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "0a3959c1fc75bf2044f6bfd6c34c021530e491c285c4a6f56f06aae9f1a624e6"
+      "sha256": "7801c614b8a8c3f320678cf304010ddfc3ad9aaecc41adb6b2ba9e9d351488c7"
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "8d2d80046942ce70f802359f0fa4859b99f70d416a09769056734c7da2f75672"
+      "sha256": "9043e0e74cee4897cdf945d428a3125e43e5bf5de8640aab5f85f9ab03c5687b"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "eaa2f9fd477e1d3d048bb039854c67e4ad15d05a2174612e1a813ac1c0493488"
+      "sha256": "1e83a72a98cd8439b0fae778e3f0701c2d43f277adbf9c00eb5b2c34da08a134"
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "29f48ca0d896b695250ce8c17ba9f093d59ae40733bd949f8a9bf1871e413385"
+      "sha256": "eec146e161d5bfc942261f9075f535ba337db36195e59822100a79026a7d9359"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "74fedd88fdbe7c119295a26e2d1e28854d97a7dce57d8148d96c00f238ae88e1"
+      "sha256": "6ba40a7f8e3305cefe7c8c7f7ede11de4ed4d2d2541aa13b610f1638c66d513b"
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "c05ae4b403358ad4fb11af640e8268bb1fc72837b9be217de0ed31b1144c2b63"
+      "sha256": "8bcd1bc2e1e8e99c83c2216121c9569bef4697f6e19576b63ad36d9ac1c99b34"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "51085ea328586f45723a3c3b0d2aabfb0eb3d0ba57a094961332977ea9be661f"
+      "sha256": "721be1f1ed2cf309bb98c0e5c1adcc997abe8ef38072390f79d94267c0f71601"
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "a813546f72fbc440e068ff26ab51e63835c083588c65980fe0e5a737803c0870"
+      "sha256": "4075698c01e54b3dc5c7e41678666cae0eac64f3225edd007d95a9536ad4a46d"
     },
     {
       "file": "l10n/routes.json",
