@@ -6,7 +6,7 @@ import {useRef,useState,type FormEvent} from 'react';
  * route is not configured it answers 503 *_NOT_CONFIGURED and this form says
  * so truthfully — nothing is sent, nothing is claimed. Without JavaScript the
  * form posts to /api/forms-unavailable, which never reads the body. */
-export function R10EnquiryForm({formType='consultation',heading='Request a consultation',submitLabel='Request consultation',lang='en',downloadGuide=true}:{formType?:string;heading?:string;submitLabel?:string;lang?:string;downloadGuide?:boolean}) {
+export function R10EnquiryForm({formType='consultation',heading='Request a consultation',submitLabel='Request consultation',lang='en',downloadGuide=true,familyFields=false}:{familyFields?:boolean;formType?:string;heading?:string;submitLabel?:string;lang?:string;downloadGuide?:boolean}) {
  const [sending,setSending]=useState(false),[error,setError]=useState(''),[sent,setSent]=useState(false);
  const submissionToken=useRef<string|null>(null);
  const started=useRef(false);
@@ -43,7 +43,7 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
    const sourceUrl=window.location.origin+window.location.pathname+(query.size?'?'+query.toString():'');
    let referrer='';try{referrer=new URL(document.referrer).origin+'/';}catch{}
    if(!submissionToken.current)submissionToken.current=crypto.randomUUID();
-   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:`r10-${formType}`,campaign_name:campaign.utm_campaign||'',utm_keyword:campaign.utm_term||'',fname:String(data.get('fullName')).trim(),rdogender:String(data.get('rdogender')||''),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
+   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:`r10-${formType}`,campaign_name:campaign.utm_campaign||'',utm_keyword:campaign.utm_term||'',fname:String(data.get('fullName')).trim(),rdogender:String(data.get('rdogender')||''),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:(familyFields?`Country: ${String(data.get('country')||'').trim()}\nPreferred duration: ${String(data.get('duration')||'').trim()}\n`: '')+String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
    const result=await response.json().catch(()=>({}));
    if(response.status===503&&/_NOT_CONFIGURED$/.test(String(result.code||'')))throw new Error(copy.notConnected);
    if(!response.ok||result.ok!==true||result.status!=='received')throw new Error(response.status===429?copy.retry:copy.unconfirmed);
@@ -58,7 +58,8 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
   <fieldset className="field gender-field"><legend>Gender</legend><div className="choices"><label><input name="rdogender" type="radio" value="Male"/> Male</label><label><input name="rdogender" type="radio" value="Female"/> Female</label></div></fieldset>
   <div className="field"><label htmlFor="R10-phone">Phone No</label><input id="R10-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={30} pattern="[+0-9() .-]{7,30}"/></div>
   <div className="field"><label htmlFor="R10-email">Email Id</label><input id="R10-email" name="email" type="email" autoComplete="email" required maxLength={254}/></div>
-  <div className="field"><label htmlFor="R10-message">Message</label><textarea id="R10-message" name="message" rows={4} maxLength={3000}/></div>
+  {familyFields&&<><div className="field"><label htmlFor="R10-country">Country</label><input id="R10-country" name="country" autoComplete="country-name" required maxLength={100}/></div><div className="field"><label htmlFor="R10-duration">Preferred duration</label><select id="R10-duration" name="duration" defaultValue=""><option value="">Select duration</option><option value="7 days">7 days</option><option value="14 days">14 days</option><option value="21 days">21 days</option></select></div></>}
+  <div className="field"><label htmlFor="R10-message">{familyFields?'Any existing health conditions?':'Message'}</label><textarea id="R10-message" name="message" rows={4} maxLength={familyFields?2700:3000}/></div>
   <div hidden aria-hidden="true"><label>Leave empty<input name="company" tabIndex={-1} autoComplete="off"/></label></div>
   <label className="field consent"><input id="R10-chkAgree" name="consent" type="checkbox" required/><span>I have read and agree to the <a href="/new-privacy-policy/">privacy policy</a> and <a href="/terms-and-conditions/">terms</a></span></label>
   </div><button className="primary" disabled={sending} type="submit">{sending?'Sending…':submitLabel}</button>
