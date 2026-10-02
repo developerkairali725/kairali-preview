@@ -4,6 +4,7 @@ import parse, { Element, type HTMLReactParserOptions } from 'html-react-parser';
 import { approvedContent } from './content';
 import { R10EnquiryForm } from './EnquiryForm';
 import { GuestSupport } from './GuestSupport';
+import '@kairali/ui/brand-tokens.css';
 import './r10.css';
 
 const canonical = 'https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html';
