@@ -13,6 +13,13 @@ test('villa thumbnails select smaller files while the expanded viewer and origin
  const expanded=new Element('villa-expanded');expanded.setAttribute('src',src);assert.equal(expanded.attrs.has('srcset'),false);assert.equal(expanded.attrs.get('src'),src);
 });
 test('home snapshots keep logo and hero priority while off-screen photos wait for scrolling',()=>{
- const html=deferHomeSnapshotImages('<img src="/ahv/assets/img/kairali-colorful-logo.webp"><img src="/ahv/assets/img/wx-hero-544.webp" fetchpriority="high"><img src="/ahv/assets/img/wx-welcome-768.webp" fetchpriority="high">');
- assert.match(html,/<img src="\/ahv\/assets\/img\/wx-hero-544.webp" fetchpriority="high">/);assert.match(html,/<img loading="lazy" fetchpriority="low" src="\/ahv\/assets\/img\/wx-welcome-768.webp">/);
+ const html=deferHomeSnapshotImages('<img src="/ahv/assets/img/kairali-colorful-logo.webp"><img src="/ahv/assets/img/wx-hero-544.avif" fetchpriority="high"><img src="/ahv/assets/img/wx-welcome-768.webp" fetchpriority="high">');
+ assert.match(html,/<img src="\/ahv\/assets\/img\/wx-hero-544.avif" fetchpriority="high">/);assert.match(html,/<img loading="lazy" fetchpriority="low" src="\/ahv\/assets\/img\/wx-welcome-768.webp">/);
+});
+
+test('villa hero selects its lighter first-screen derivative and expanded images keep original resolution',()=>{
+ const src='/ahv/assets/img/AHV-OurVillas-Hero.webp';
+ const attrs=villaImageAttributes(src);
+ assert.equal(attrs.srcset,'/ahv/assets/img/AHV-OurVillas-Hero-768-hero.avif 768w, '+src+' 1024w');
+ assert.equal(villaImageAttributes(src,'villa-expanded'),null);
 });

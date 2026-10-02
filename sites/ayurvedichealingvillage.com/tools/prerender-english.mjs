@@ -156,6 +156,19 @@ const EXTRACT = () => {
     flattened++;
   }
 
+  // Deferred gallery photos keep real image URLs in the crawlable/no-JS snapshot.
+  // Restore on the inert clone only; the live observer retains its loading policy.
+  clone.querySelectorAll('img[data-ahv-photo-src]').forEach(img => {
+    const src = img.getAttribute('data-ahv-photo-src');
+    const set = img.getAttribute('data-ahv-photo-srcset');
+    img.setAttribute('loading', 'lazy');
+    img.removeAttribute('fetchpriority');
+    if (set) img.setAttributeNS(null, 'srcset', set);
+    if (src) img.setAttributeNS(null, 'src', src);
+    img.removeAttribute('data-ahv-photo-src');
+    img.removeAttribute('data-ahv-photo-srcset');
+  });
+
   // Never ship the cookie notice in the snapshot: consent state is per visitor
   // and the live layer renders it from localStorage on hydration.
   const notice = clone.querySelector("#ahv-consent");

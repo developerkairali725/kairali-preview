@@ -1,3 +1,5 @@
+import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
+import { applyReviewSnapshot } from "./content-review.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { runInNewContext } from "node:vm";
@@ -42,7 +44,11 @@ function snapshot(routePath: string, desktop = false): string {
       .replace('aria-label="Close"', 'aria-label="Close menu"')
       .replace(/https:\/\/ayurvedichealingvillage\.com\//g, "/");
   }
-  return descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe));
+  if (routePath === "/") {
+    safe = safe.replace(/<footer\b[\s\S]*?<\/footer>/g, (footer: string) => footer.replace(/(<a\b[^>]*href=")[^"]*("[^>]*>\s*Reviews\s*<\/a>)/g, "$1/read-feedback/$2"));
+    safe = safe.replace(/aria-label="Choose language — Current language: English"/g, 'aria-label="EN — Choose language — Current language: English"');
+  }
+  return applyReviewSnapshot(descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe), routePath), routePath);
 }
 
 function tariffRows(viewId: string | null): Record<string, string[][]> | undefined {
@@ -108,6 +114,33 @@ const STATIC_BOOT = `
       host.setAttribute("data-ahv-variant", "desktop");
     } catch (error) {
       host.setAttribute("data-ahv-variant", "mobile-fallback");
+    }
+  }
+  if (cfg.staticHome) {
+    host.querySelectorAll('footer a[href]').forEach(function (link) {
+      if (link.textContent.trim() === "Reviews") link.setAttribute("href", "/read-feedback/");
+    });
+    host.querySelectorAll('.ahv-lang-btn').forEach(function (button) {
+      var label = button.getAttribute("aria-label") || "";
+      if (label && !label.startsWith("EN — ")) button.setAttribute("aria-label", "EN — " + label);
+    });
+  }
+  host.querySelectorAll('a[aria-label]').forEach(function (link) {
+    var label = link.getAttribute("aria-label");
+    (cfg.contentReviewCopy || []).forEach(function (edit) {
+      if (edit.kind === "link" && label.indexOf(edit.old) !== -1) label = label.replace(edit.old, edit.new);
+    });
+    if (link.hasAttribute("data-recorded-embed") && link.textContent.trim()) label = link.textContent.replace(/\\s+/g, " ").trim();
+    if (label !== link.getAttribute("aria-label")) link.setAttribute("aria-label", label);
+  });
+  if (cfg.staticHome) {
+    var stickyHeader = host.querySelector('header[style*="translateY"]');
+    if (stickyHeader && window.matchMedia("(min-width:" + cfg.breakpoint + "px)").matches) {
+      function updateStickyHeader() {
+        stickyHeader.style.transform = window.scrollY > 520 ? "translateY(0)" : "translateY(-110%)";
+      }
+      window.addEventListener("scroll", updateStickyHeader, { passive: true });
+      updateStickyHeader();
     }
   }
   host.setAttribute("data-ahv-snapshot-state", "retired");
@@ -496,6 +529,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   const staticConfig = {
     breakpoint: cfg.breakpoint,
     locale: cfg.locale,
+    contentReviewCopy: cfg.contentReviewCopy,
     measurement: cfg.measurement,
     staticDesktopPath,
     deferFonts: route.path === "/",
@@ -519,6 +553,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(routeSchema(route, "en")) }} />
       {firstCriticalImage(mobile) ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={firstCriticalImage(mobile)!} /> : null}
       {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
+      {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {phonePaint?.preloadFonts.map((href) => (
         <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={route.path === "/" ? "print" : narrow} data-ahv-deferred-font={route.path === "/" ? "" : undefined} data-ahv-font-media={route.path === "/" ? narrow : undefined} />
       ))}
@@ -530,7 +565,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
-      <div id="ahv-design-root" data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
+      <div id="ahv-design-root" role={route.path === "/" ? "main" : undefined} data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
       <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />

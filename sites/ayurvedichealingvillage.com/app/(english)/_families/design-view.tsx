@@ -1,3 +1,5 @@
+import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
+import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
@@ -98,6 +100,8 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     // keyed by the English path) and scopes route-specific styling. The URL the
     // visitor sees is locale.path.
     path: route.path,
+    contentReviewCopy: reviewCopyFor(route.path, locale),
+    bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
     mobileView: route.mobileView,
@@ -128,8 +132,8 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const body = responsiveVillaImages(phoneCriticalMedia(prerenderedBody(route.path, locale)));
-  const snapshot = descriptiveAwardLinks(route.path === "/" ? deferHomeSnapshotImages(body) : body);
+  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale)));
+  const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
@@ -206,6 +210,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           hoists a preload <link> into <head>) so the first paint can already be in it: a first paint in the
           fallback face broke lines differently and the live copy of the LCP paragraph came out larger — a
           second, later LCP candidate. Phone-width only: the desktop never paints the snapshot. */}
+      {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {snapshotFaces
         ? snapshotFaces.preloadFonts.map((href) => (
             <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={narrowMedia} />
@@ -227,8 +232,10 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           neither hydrates nor reconciles what the boot script mounts here.
           Without it, hydration threw 418 and React's recovery render wiped
           the approved design off the page. */}
+      {route.path === "/" ? <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}` }} /> : null}
       <div
         id={DESIGN_ROOT_ID}
+        role={route.path === "/" ? "main" : undefined}
         data-ahv-route={route.path}
         data-ahv-locale={locale === "en" ? undefined : locale}
         data-ahv-family={family || undefined}

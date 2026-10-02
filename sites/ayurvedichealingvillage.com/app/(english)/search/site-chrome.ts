@@ -1,3 +1,4 @@
+import { applyReviewSnapshot } from "../_families/content-review.mjs";
 import { newsletterFooters } from "../_families/newsletter-markup.mjs";
 import { localizeFallbackChrome, searchLanguageHref } from "./search-language";
 import { computedFooterYear } from "../_families/computed-footer-year";
@@ -109,6 +110,7 @@ function chromeFor(locale: LocaleCode): Chrome {
         : computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8")));
     }
   } catch { t = ""; }
+  t = applyReviewSnapshot(t, "/about-us/", locale);
   let deskHeader = block(t, "header", 0), narrowHeader = block(t, "header", 1);
   let panel = narrowHeader ? nextElement(t, narrowHeader) : null;
   let deskFooter = block(t, "footer", 0), narrowFooter = block(t, "footer", 1);

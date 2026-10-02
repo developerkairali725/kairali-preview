@@ -19,7 +19,7 @@ export function isNativeRoute(path: string): boolean {
 }
 export function NativeLocalePage({ route, locale, searchParams }: { route: CandidateRoute; locale: LocaleCode; searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const paths = Object.fromEntries(Object.keys(routeTable()).map((p) => [p, localizedPath(p, locale) ?? p]));
-  const value = { locale, dict: localeData(locale)?.native ?? {}, paths };
+  const value = { locale, dict: { ...localeData(locale)?.ui, ...localeData(locale)?.native }, paths };
   const view =
     route.path === "/sightseeing/" ? <Sightseeing locale={locale} /> :
     route.path === "/video-gallery/" ? <VideoGallery locale={locale} /> :

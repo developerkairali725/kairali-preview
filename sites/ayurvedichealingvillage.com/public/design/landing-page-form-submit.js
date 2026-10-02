@@ -27,15 +27,56 @@
     '/weight-loss.html',
     '/wellness-resort-kerala.html',
   ]);
-  if (!routes.has(window.location.pathname)) return;
+  var host = document.getElementById('ahv-design-root');
+  var canonicalRoute = host && host.getAttribute('data-ahv-route') || window.location.pathname;
+  if (!routes.has(canonicalRoute)) return;
 
-  var tokens = new WeakMap();
+  var records = new Map();
+  function keyFor(form) { return form.getAttribute('data-recorded-id') || form.id || 'campaign'; }
+  function recordFor(form) {
+    var key = keyFor(form);
+    if (!records.has(key)) records.set(key, { text: '', busy: false, token: null, form: null, fields: [] });
+    return records.get(key);
+  }
+  function applyRecord(form, record) {
+    if (record.form && record.form !== form) {
+      record.fields.forEach(function (field) {
+        var control = form.elements.namedItem(field.name);
+        if (!control || !('value' in control)) return;
+        if (control.type === 'checkbox' || control.type === 'radio') control.checked = field.checked;
+        else control.value = field.value;
+      });
+      record.form = form;
+    }
+    var status = statusFor(form);
+    if (status.textContent !== record.text) status.textContent = record.text;
+    if (record.busy && form.getAttribute('aria-busy') !== 'true') form.setAttribute('aria-busy', 'true');
+    if (!record.busy && form.hasAttribute('aria-busy')) form.removeAttribute('aria-busy');
+    var button = form.querySelector('button[type="submit"], input[type="submit"]');
+    if (button && button.disabled !== record.busy) button.disabled = record.busy;
+  }
+  function refreshRecords() {
+    document.querySelectorAll('form').forEach(function (form) {
+      if (isLandingForm(form) && records.has(keyFor(form))) applyRecord(form, records.get(keyFor(form)));
+    });
+  }
+  // A reader can submit the crawlable snapshot before the live view mounts.
+  // Carry pending/receipt state to its replacement, with idempotent DOM writes.
+  if (host && window.MutationObserver) {
+    var queued = false;
+    new MutationObserver(function () {
+      if (queued || !records.size) return;
+      queued = true;
+      queueMicrotask(function () { queued = false; refreshRecords(); });
+    }).observe(host, { childList: true, subtree: true });
+  }
+  function setStatus(record, text) { record.text = text; refreshRecords(); }
   function isLandingForm(form) {
     return !!(form && form.elements && form.elements.namedItem('email') &&
       (form.elements.namedItem('fname') || form.elements.namedItem('phone')));
   }
   function statusFor(form) {
-    var status = form.querySelector('.ahv-landing-status');
+    var status = form.querySelector('.ahv-landing-status, p[aria-live="polite"]');
     if (!status) {
       status = document.createElement('p');
       status.className = 'ahv-landing-status';
@@ -43,6 +84,7 @@
       status.setAttribute('aria-live', 'polite');
       form.appendChild(status);
     }
+    if (!status.classList.contains('ahv-landing-status')) status.classList.add('ahv-landing-status');
     return status;
   }
   function value(fd, name) { return (fd.get(name) || '').toString().trim(); }
@@ -58,11 +100,11 @@
 
   document.addEventListener('input', function (event) {
     var form = event.target && event.target.form;
-    if (isLandingForm(form) && form.getAttribute('aria-busy') !== 'true') tokens.delete(form);
+    if (isLandingForm(form) && !recordFor(form).busy) { var record = recordFor(form); record.token = null; record.text = ''; refreshRecords(); }
   }, true);
   document.addEventListener('change', function (event) {
     var form = event.target && event.target.form;
-    if (isLandingForm(form) && form.getAttribute('aria-busy') !== 'true') tokens.delete(form);
+    if (isLandingForm(form) && !recordFor(form).busy) { var record = recordFor(form); record.token = null; record.text = ''; refreshRecords(); }
   }, true);
 
   document.addEventListener('submit', async function (event) {
@@ -70,13 +112,16 @@
     if (!isLandingForm(form)) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    if (form.getAttribute('aria-busy') === 'true') return;
+    var record = recordFor(form);
+    if (record.busy) return;
     var status = statusFor(form);
     var fd = new FormData(form);
-    var airIndia = window.location.pathname === '/kairali-air-india-maharaja-club.html';
+    record.form = form;
+    record.fields = Array.from(form.elements).filter(function (control) { return !!control.name && 'value' in control; }).map(function (control) { return { name: control.name, value: control.value, checked: control.checked }; });
+    var airIndia = canonicalRoute === '/kairali-air-india-maharaja-club.html';
     if (!form.reportValidity()) return;
     if (!captchaValid(form, fd)) {
-      status.textContent = 'Please check the sum before submitting.';
+      setStatus(record, 'Please check the sum before submitting.');
       var result = form.elements.namedItem('result');
       if (result && result.focus) result.focus();
       return;
@@ -86,11 +131,9 @@
     var query = new URLSearchParams(window.location.search);
     var controller = new AbortController();
     var timeout = setTimeout(function () { controller.abort(); }, 10000);
-    var token = tokens.get(form) || crypto.randomUUID();
-    tokens.set(form, token);
-    form.setAttribute('aria-busy', 'true');
-    if (button) button.disabled = true;
-    status.textContent = 'Sending…';
+    var token = record.token || crypto.randomUUID();
+    record.token = token; record.busy = true;
+    setStatus(record, 'Sending…');
 
     try {
       var response = await fetch('/api/lead/', {
@@ -125,27 +168,26 @@
       });
       var data = await response.json().catch(function () { return {}; });
       if (response.ok && data.ok === true) {
-        status.textContent = 'Thank you — your details have been received.';
+        setStatus(record, 'Thank you — your details have been received.');
         if (typeof data.guideUrl === 'string' && data.guideUrl.charAt(0) === '/') {
           var guide = document.createElement('a');
           guide.href = data.guideUrl; guide.download = ''; guide.hidden = true;
           document.body.appendChild(guide); guide.click(); guide.remove();
         }
-        form.reset();
-        tokens.delete(form);
+        document.querySelectorAll('form').forEach(function (current) { if (isLandingForm(current) && keyFor(current) === keyFor(form)) current.reset(); });
+        record.token = null; record.fields = [];
       } else if (response.status === 503 && /_NOT_CONFIGURED$/.test(String(data.code || ''))) {
-        status.textContent = 'This form is not connected yet. Nothing has been saved or sent. Please email info@kairali.com or WhatsApp +91 92898 38797.';
+        setStatus(record, 'This form is not connected yet. Nothing has been saved or sent. Please email info@kairali.com or WhatsApp +91 92898 38797.');
       } else if (response.status === 429) {
-        status.textContent = 'Please wait before trying again. Your details are still in the form.';
+        setStatus(record, 'Please wait before trying again. Your details are still in the form.');
       } else {
-        status.textContent = 'We could not confirm this was received. Your details are still here; please try again.';
+        setStatus(record, 'We could not confirm this was received. Your details are still here; please try again.');
       }
     } catch (_) {
-      status.textContent = 'We could not confirm this was received. Please check your connection and try again.';
+      setStatus(record, 'We could not confirm this was received. Please check your connection and try again.');
     } finally {
       clearTimeout(timeout);
-      form.removeAttribute('aria-busy');
-      if (button) button.disabled = false;
+      record.busy = false; refreshRecords();
     }
   }, true);
 })();

@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "c9d024d175dfd5919ed3433f67a6ad639c3c0a5c4baf139de358a88a74cba3a3",
+ "sourceSetHash": "09df8e661f81ca35752fc466653625ff2a1629a573a599b33952bc16b217babf",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -207,13 +207,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-desktop.json",
-   "sha256": "832333d967b2d36b99e531194adafb0b431f8e43fd8f2d7b00790ef73cd50bf7",
+   "sha256": "0c5b236c25b5f8da1c8f3385344c65482fd759e4bc4e61faeeaf60e67b14d55d",
    "units": 114,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-campaign-retreat--air-india-mobile.json",
-   "sha256": "33ec9391383aba655ec002c9c8c43364c465129e29f6410912db15902f325f37",
+   "sha256": "49edf00f4d4603bacb7325408b160a66ade4017be00e55086aee2692f6812eeb",
    "units": 120,
    "status": "covered"
   },
@@ -387,14 +387,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-enquiry-desktop.json",
-   "sha256": "774166b7f2ba455dbd542934bb67172a4a441efe9fbbc56810f08a9b901d49d2",
-   "units": 112,
+   "sha256": "f46794e130a1275c23eced369e89ca98169107f559597fa29d96f67a80b82d53",
+   "units": 113,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-enquiry-mobile.json",
-   "sha256": "3e431bb1dc9f92bb7a11ad60bb996b2b16ed45ba11f1ea64c962508ece62a338",
-   "units": 112,
+   "sha256": "0ca1f7fda7937e306464394d86e722d02776d5bb7be2760ba8a4259472d5bad9",
+   "units": 113,
    "status": "covered"
   },
   {
@@ -411,14 +411,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
-   "sha256": "6a57849bc487bcfcb3fa05da621944f77a312f558b9418237e12b5983814c903",
-   "units": 357,
+   "sha256": "da92b8f77f6206863ef70c19aab78987d43b11ae1d0fa9046d86f6692aab686f",
+   "units": 371,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json",
-   "sha256": "01f07725eee3fc587841c33667c612329c97cd887df1b9cc33079a988630b5b5",
-   "units": 354,
+   "sha256": "1a22eee8cb3f0fd69209d2528be56a921a744d78de583ac26cd8de2ec03aad8c",
+   "units": 368,
    "status": "covered"
   },
   {
@@ -1023,37 +1023,37 @@
   },
   {
    "file": "public/ahv/views/ahv-template-photo-collections-desktop.json",
-   "sha256": "0b005879a4b58ad78e27e09e44a6b5673fa1ecb7f9b0811bdd46b2d36a0c36e0",
+   "sha256": "3e6d9164a7f9b6c27a349b5d675359febb55922f936d5af3898b20773a1eb0fa",
    "units": 39,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-photo-collections-mobile.json",
-   "sha256": "7bbfbe0d86e31bc39e58afa7ff0f06b5baf565818f14b4e50662f5e85729e3c0",
+   "sha256": "17cfd624c9bc1b9627421da094d27b9322b068e7b08a365fb2b01904ef0bcd2f",
    "units": 39,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-product-family-desktop.json",
-   "sha256": "ee30732af020fdc8a0a72d0651ccfc207eac5a656b872d623c93dc77e573350f",
+   "sha256": "a8d32f33bb8a58c8f855a1e9f43ad01828fa972d788e7cf584f4f857a7118e82",
    "units": 56,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-template-product-family-mobile.json",
-   "sha256": "18f9ada52432c4a25bf6179d2ea51c36ea64780a8905c7e690393178112a6d0b",
+   "sha256": "47955ad9256058a4699ff929714a32c3f8d2eb80acae5dbe593d0527ec7da0fe",
    "units": 58,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "47179c7736364e3a1a5932867bcafe2e84f5c16c70605d0723ddd371dc2f3285",
+   "sha256": "167729296cbd2516ff122062a6bbbfbaef64160ed4087abe204a1a196d68cd77",
    "units": 684,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "786a92b58bde0d6c0ec82eb9d87d74839946b8776cb3bda2c77955380312f11b",
+   "sha256": "728fe469050e4c17fd820265158287fb29b7dedcf1d8a91126f9d6363e8608e3",
    "units": 618,
    "status": "covered"
   },
@@ -1155,7 +1155,7 @@
   },
   {
    "file": "public/ahv/assets/collection-family-data.js",
-   "sha256": "ebe3849dc213fcb02e42a942b88d56ce64e7cba9346c299c9764a42d159d8a62",
+   "sha256": "9e892abbe192132d14777bf2f4309cf5efa2dca213b43969047583ee4766aced",
    "units": 851,
    "status": "covered"
   },
@@ -1185,7 +1185,7 @@
   },
   {
    "file": "public/ahv/assets/confirmation-family-render.js",
-   "sha256": "7d66084f2465b5598fe8f861116ed530528853415b7e72782b1ddd8400521bda",
+   "sha256": "6f8d4156b9a92caf1d47835b16382ea39b3a097e5f8ef37050e709f64e2ad64a",
    "units": 1,
    "status": "covered"
   },
@@ -1227,13 +1227,13 @@
   },
   {
    "file": "public/ahv/assets/enquiry-family-data.js",
-   "sha256": "2896e622fca4a246e55365cdbd59fa3899e24c55b3a4e63d512505100738a6e1",
-   "units": 2377,
+   "sha256": "61becbf9a4bbea3054989bc3a942cee6656a174b3f7ca70f70f1198502345566",
+   "units": 2378,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/enquiry-family-render.js",
-   "sha256": "b7f8408ddfe9ad450148d457ed24b31ce8a6d3dc7cf2025e0ce60173db02c797",
+   "sha256": "bfe916e28606e4988e0ac0664707fe4425b9ae130cd02cb49265336d68d7efed",
    "units": 16,
    "status": "covered"
   },
@@ -1341,13 +1341,13 @@
   },
   {
    "file": "public/ahv/assets/photo-collections-data.js",
-   "sha256": "7c5ae653c1a3714a0f9eef9318b2dcb4764f0f3604f70fc0c650a6152298e24e",
+   "sha256": "80747d422340ab13edfa18a54df1719bdb51b9973e87e59e1fb799e7d2dd84dd",
    "units": 1361,
    "status": "covered"
   },
   {
    "file": "public/ahv/assets/policy-family-data.js",
-   "sha256": "642455de682cc7e997edb3b5b29ac67a8330953f3c82f04402e1cd2f40eefea1",
+   "sha256": "8f1c3d724ddee7f089c7f5634f69175e73d99d5caf5335f7cd1d9709da260813",
    "units": 653,
    "status": "covered"
   },
@@ -1371,7 +1371,7 @@
   },
   {
    "file": "public/ahv/assets/reader25b-family-data.js",
-   "sha256": "12e1f0b74af65ced0101244b74f6763ce0f63f587c0be3c3f7757774dede0d54",
+   "sha256": "bfc530d25abb32c3f6f0a8d7a1c09f2ebf1f725f649298455385482aa46f6d5c",
    "units": 2241,
    "status": "covered"
   },
@@ -1407,8 +1407,8 @@
   },
   {
    "file": "public/ahv/assets/seven-informational-data.js",
-   "sha256": "baab87102d8348d86d462c250ca8357106ae098491f8d6b114beb0c8bbbece79",
-   "units": 675,
+   "sha256": "d827fc734956925fc1b01e231d5f7e57c1a4e23c561362cd12aa5b85f34a3cff",
+   "units": 693,
    "status": "covered"
   },
   {
@@ -1479,13 +1479,13 @@
   },
   {
    "file": "public/ahv/image-slot.js",
-   "sha256": "8db445d4b54405dbfe936fb53ea04003061e7e0014ff5b2ef26db34268b50442",
+   "sha256": "7e88ad343c7e78203bee28076690fa88a8afe61e4e3661139fe94e0cda62c2a1",
    "units": 24,
    "status": "covered"
   },
   {
    "file": "public/design/chrome.js",
-   "sha256": "86d83f11603aae34c724a19d7a497b6e6289283abf8158db51e1bc7811b7dcfa",
+   "sha256": "e1776cd1ff52b9a14b072043e2672ca3bfbbedc18884a55ca318d5681d59f3a3",
    "units": 13,
    "status": "covered (curated allowlist)"
   },
@@ -1497,7 +1497,7 @@
   },
   {
    "file": "public/design/film-player.js",
-   "sha256": "b2a9df659205374745fa7bcb349547ae96a58dc262833f93534823d7fe6493b0",
+   "sha256": "c8b93e6dd696be3994adebe91a42e64986febdacb4e80930b9fe2b33e635e769",
    "units": 4,
    "status": "covered (curated allowlist)"
   },
@@ -1509,19 +1509,25 @@
   },
   {
    "file": "public/design/opd-form-submit.js",
-   "sha256": "f244e35a892de9a420bf279a5d3f9f360c9137fd93fca9a86383d427b7e57551",
+   "sha256": "1df64beb8d21828f02e7c44033d3319a5b9d9711d0c47fe3c076ffa62db0f8b3",
    "units": 7,
    "status": "covered (curated allowlist)"
   },
   {
+   "file": "public/design/landing-page-form-submit.js",
+   "sha256": "d0961c3b82b533690da95e9f29d84aae779b15868aad963eb1cd3ba917cd06eb",
+   "units": 0,
+   "status": "covered (curated allowlist)"
+  },
+  {
    "file": "public/design/search.js",
-   "sha256": "873cbc8a62dd04c63ab6e49fc3eb3b90bd2e76a32a29aa90697b661c54f0097b",
+   "sha256": "77c9303c01a4c79ceefd17f7217bfb82e69b3a1fb1ce76f37a70fed60377b7a4",
    "units": 16,
    "status": "covered (curated allowlist)"
   },
   {
    "file": "public/design/section-nav.js",
-   "sha256": "b4a1f3622c8b3cec9880c42fd0ed162ad4bd5e1f575638dd475f3626a59aef5c",
+   "sha256": "46ca6696f76c25885bf8273657140776a7d8ab650695b0da3583d08d1c47e230",
    "units": 9,
    "status": "covered (curated allowlist)"
   },
@@ -1532,9 +1538,15 @@
    "status": "covered"
   },
   {
+   "file": "english-candidate/content-review-copy.json",
+   "sha256": "5898a03862f73656ddb77e9806405fcef59c040814467b57b726dee6d9b50d30",
+   "units": 10664,
+   "status": "covered (key whitelist)"
+  },
+  {
    "file": "public/ahv/search-index.json",
-   "sha256": "a9d00d9e698ec729208db6945538b0fa4ed8209a2468d89b021e03a25e55886f",
-   "units": 700,
+   "sha256": "650faa3ac9be45f183f16ad10864df35fd3864943f3450afed4edfec1b0a2235",
+   "units": 721,
    "status": "covered (key whitelist)"
   },
   {
@@ -1557,25 +1569,25 @@
   },
   {
    "file": "app/(english)/sightseeing/view.tsx",
-   "sha256": "56bb98a97ac303b9f524269d9c443efd53d166900f4d334d28239ebaf95d6de6",
+   "sha256": "403992f15881646f75da57fbe9b00e3050abc971b9ce35abf1a823a369d7c6b0",
    "units": 41,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/video-gallery/view.tsx",
-   "sha256": "bab410bb7bd6d7b68543d03830eea979fc566f44482e81a064c3b598d2455b0c",
-   "units": 32,
+   "sha256": "55748b6320ebdea162f0b8f3415300419925a5836f5a142a61c54e72b6cb5cb9",
+   "units": 27,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/read-feedback/view.tsx",
-   "sha256": "cea203df5786736775cf331cf55d1006220b046a495beea58e8fc20e1f6aced3",
+   "sha256": "f395b7a3cb5a781b4f0d66c098daaee6222f583f6ce5c339a83baf96b242eee4",
    "units": 44,
    "status": "covered (native page)"
   },
   {
    "file": "app/(english)/read-feedback/ReviewsClient.tsx",
-   "sha256": "4e3da26eef7ad2c52a0cb3c57f511ab6dd5e610a129f38540eb73d41474ef638",
+   "sha256": "f199b9c147c337a896dfb08a0c052424bc65872df564c6f926b2e75656db4edd",
    "units": 40,
    "status": "covered (native page)"
   },
@@ -1587,7 +1599,7 @@
   },
   {
    "file": "app/(english)/givefeedback/view.tsx",
-   "sha256": "9809606a0fcd51e6960ae58c239832e20d888d503744571896a67b1b0982190f",
+   "sha256": "f3ef05043f249e9343de2be1b7222b033c4a91ec4725fbfcfd5577fe77f4f2e7",
    "units": 62,
    "status": "covered (native page)"
   },
@@ -1605,7 +1617,7 @@
   },
   {
    "file": "app/(english)/search/view.tsx",
-   "sha256": "c47650fdce7e8216e299f97c008bda41ef377a4bb88c0600b6b1db2f7a7f158f",
+   "sha256": "b26d4e2ab26ed907b5fc059f576ef67b1a039f626e7c1d898862741998c0b089",
    "units": 2,
    "status": "covered (native page)"
   }

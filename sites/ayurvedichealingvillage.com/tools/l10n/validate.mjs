@@ -112,7 +112,7 @@ export function numberDiff(src, t, locale) {
     // month names/abbreviations → month numbers in CJK/Korean date formats
     MONTHS.forEach((name, i) => allow(i + 1, count(new RegExp("\\b(" + name + "|" + name.slice(0, 3) + (i === 8 ? "t?" : "") + ")\\b", "g"))));
     // counters: per night / per day / daily → 1泊, 1日, 每晚 1 …
-    allow(1, count(/\b(per|a|each|every)\s+(night|day|person|session)\b|\bdaily\b|\bnightly\b|\bpp\b/g)); // pp = per person
+    allow(1, count(/\b(per|a|each|every)[\s-]+(night|day|person|session|villa)\b|\bdaily\b|\bnightly\b|\bpp\b/g)); // pp = per person
   }
   // repeating a number the source already states adds no new fact (24-hour → 24 h/24)
   const srcSet = new Set(want);

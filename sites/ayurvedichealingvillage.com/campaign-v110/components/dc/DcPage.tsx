@@ -1,3 +1,4 @@
+import contentReviewCopy from "../../../english-candidate/content-review-copy.json";
 // Renders a Batch A page: the staging markup (app/<route>/staging.html,
 // produced by scripts/dc_convert.py) inside the shared page shell. Three
 // slots in the markup are filled with the approved components:
@@ -14,7 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
-import parse, { Element, type DOMNode, type HTMLReactParserOptions } from "html-react-parser";
+import { Element, domToReact, htmlToDOM, type DOMNode, type HTMLReactParserOptions } from "html-react-parser";
 import EnquiryForm from "../EnquiryForm";
 import PageShell from "../PageShell";
 import { ENQUIRY_HREF, PRIMARY_CTA, contact } from "../../lib/site";
@@ -24,6 +25,7 @@ import "./dc-phone.css";
 import styles from "./DcPage.module.css";
 import VariantSwitch from "./VariantSwitch";
 import DcWidgets from "./DcWidgets";
+import { layoutCampaign } from "./dc-layout";
 
 export type DcMeta = {
   route: string;
@@ -94,6 +96,18 @@ function render(
 ) {
   const options: HTMLReactParserOptions = {
     replace(node: DOMNode) {
+      if ((!meta.lang || meta.lang === "en") && node.type === "text" && "data" in node) {
+        let parent = node.parent, kind = "text";
+        while (parent) {
+          if (parent instanceof Element && /^h[1-6]$/.test(parent.name)) { kind = parent.name; break; }
+          if (parent instanceof Element && parent.name === "a") kind = "link";
+          parent = parent.parent;
+        }
+        const edits = (contentReviewCopy as Record<string, Array<{old: string; new: string; kind: string}>>)[meta.route] ?? [];
+        const edit = edits.find(e => e.old === node.data.replace(/\s+/g, " ").trim() && e.kind === kind);
+        if (edit) node.data = edit.new;
+        return;
+      }
       if (!(node instanceof Element)) return;
       // Keep on-site navigation on the environment being reviewed.
       if (node.name === "a" && /^https:\/\/(?:www\.)?ayurvedichealingvillage\.com(?:\/|$)/i.test(node.attribs.href || "")) {
@@ -118,7 +132,7 @@ function render(
   };
   return (
     <div id="ahv-design-root" className={styles.root} {...rootAttrs} data-phone-layout={phoneLayout}>
-      {parse(html, options)}
+      {domToReact(layoutCampaign(htmlToDOM(html) as DOMNode[]), options)}
     </div>
   );
 }

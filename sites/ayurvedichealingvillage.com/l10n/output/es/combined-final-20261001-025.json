@@ -1,0 +1,21 @@
+{
+  "locale": "es",
+  "batchId": "combined-final-20261001-025",
+  "units": [
+    {
+      "id": "t_5de3c6f1d8eeb522a94d",
+      "status": "translated",
+      "text": "Planifique su programa ayurvédico | Kairali",
+      "issue": "The full title with 'Kairali - The Ayurvedic Healing Village' would exceed 60 characters (the English source is already 71), so the brand suffix was shortened to 'Kairali'. Please confirm, or choose a shorter descriptive part if the full brand name is required.",
+      "sourceHash": "5de3c6f1d8eeb522a94db72023400b06c35aab8284dbb0c04886b6f4887945e1"
+    },
+    {
+      "id": "t_ca0b6cc9cd9d30008fe0",
+      "status": "translated",
+      "text": "Kairali – The Ayurvedic Healing Village: «Top Ten Wellness Destination in Asia» de National Geographic Traveler y reconocimiento internacional en Ayurveda.",
+      "unchangedReason": "The brand name 'Kairali – The Ayurvedic Healing Village', the award title 'Top Ten Wellness Destination in Asia' and the publication name 'National Geographic Traveler' are kept in English as proper names.",
+      "issue": "To stay within 155 characters (the English source is about 170), 'Ayurvedic wellness' was shortened to 'Ayurveda'. The full wording 'reconocimiento internacional en bienestar ayurvédico' would exceed the limit. Please confirm.",
+      "sourceHash": "ca0b6cc9cd9d30008fe03b2072fe0b10bd30b220ae38cce24f4f218dcb7b1c0a"
+    }
+  ]
+}

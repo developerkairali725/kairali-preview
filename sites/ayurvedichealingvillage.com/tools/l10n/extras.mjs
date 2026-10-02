@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 import { jsUnits, htmlUnits, norm, meaningful, isInternalDatum } from "./lib.mjs";
 import { rel } from "./sources-lite.mjs";
 
-export const RUNTIME_SCRIPTS = ["chrome.js", "consistency.js", "film-player.js", "newsletter.js", "opd-form-submit.js", "search.js", "section-nav.js"];
+export const RUNTIME_SCRIPTS = ["chrome.js", "consistency.js", "film-player.js", "newsletter.js", "opd-form-submit.js", "landing-page-form-submit.js", "search.js", "section-nav.js"];
 const ALLOW = JSON.parse(fs.readFileSync(rel("l10n/source/runtime-allowlist.json"), "utf8"));
 
 const markupish = (s) => /^[\s"'>=]|[<>]|="|\\"|&\w+=/.test(s) || !meaningful(s);
@@ -32,6 +32,7 @@ export function runtimeScriptUnits(file, text) {
 }
 
 export const JSON_SOURCES = [
+  { file: "english-candidate/content-review-copy.json", keys: /^(old|new)$/ },
   { file: "public/ahv/search-index.json", keys: /^(label|desc|name|topic|q|a|oftenSearched|sanskrit|aliases)$|^ui\./ , skipKeys: /^(href|action|route|id|target|cats|basis|priceState|terms|kw|words|filler|validTo|validFrom|n|nights)$/ },
   { file: "english-candidate/site-tree.json", keys: /^title$/ },
   { file: "app/(english)/sightseeing/destinations.json", keys: /^(name|description|endpoint)$/ },
@@ -99,6 +100,10 @@ export function tsxUnits(code) {
   const out = [];
   const walk = (node, parent, key) => {
     if (!node || typeof node.type !== "string") return;
+    // Responsive image expressions contain CSS lengths and resource URLs, never prose.
+    if (node.type === "JSXAttribute" && /^(sizes|srcSet)$/.test(String(node.name.name))) return;
+    // Inline CSS/JavaScript is executable source, never visitor-facing prose.
+    if (node.type === "JSXElement" && node.openingElement.name.type === "JSXIdentifier" && /^(style|script)$/.test(node.openingElement.name.name)) return;
     if (node.type === "CallExpression" && node.callee.type === "Identifier" && node.callee.name === "T" && node.arguments[0]?.type === "StringLiteral") {
       const s = norm(node.arguments[0].value);
       if (meaningful(s)) out.push({ source: s, kind: "tsx-T", start: node.arguments[0].start, end: node.arguments[0].end });

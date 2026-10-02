@@ -3,6 +3,18 @@
 (function(){
  if(window.__ahvFilmPlayerBound)return;
  window.__ahvFilmPlayerBound=true;
+ // Worded film links use their visible localized name. Poster-only duration
+ // links retain their richer existing accessible label.
+ function names() {
+  document.querySelectorAll('[data-ahv-film]').forEach(function (link) {
+   if (link.querySelector('img, video')) return;
+   var text = link.textContent.trim();
+   if (!/[A-Za-z\u00c0-\uffff]/.test(text)) return;
+   if (link.getAttribute('aria-label') !== text) link.setAttribute('aria-label', text);
+  });
+ }
+ names();
+ new MutationObserver(names).observe(document.getElementById('ahv-design-root') || document.body, {childList:true,subtree:true});
  var dialog, slot, heading, external, trigger, scrollOverflow, paused=[];
  function create(){
   dialog=document.createElement('dialog');dialog.className='ahv-film-dialog';dialog.setAttribute('aria-labelledby','ahv-film-heading');

@@ -90,3 +90,23 @@ test('a deep insertion batch has linear repair traversal rather than repeated an
   // traversed 40+39+...+1 = 820 per hook for this same final DOM.
   assert.equal(Object.values(h.calls).reduce((sum, calls) => sum + calls.length, 0), 10);
 });
+
+const reviewSource = source.slice(source.indexOf('  var reviewByKey'), source.indexOf('  applyContentReview(host);'));
+test('translated review labels stabilize without repeatedly mutating unchanged text', () => {
+  const runtime = vm.runInNewContext('`' + reviewSource + '`');
+  const parent = {closest: () => null};
+  let value = '  Ayurvedic restaurant  ', writes = 0;
+  const node = {nodeType: 3, parentElement: parent,
+    get nodeValue() {return value;}, set nodeValue(v) {writes++; value = v;}};
+  const ctx = {cfg: {path: '/ayurvedic-resturant-and-cooking-at-healing-village/', contentReviewCopy: [
+    {kind: 'text', old: 'Ayurvedic restaurant', new: 'Ayurvedic restaurant'}
+  ]}, Map, NodeFilter: {SHOW_TEXT: 4}};
+  vm.createContext(ctx); vm.runInContext(runtime, ctx);
+  for (let i = 0; i < 5; i++) ctx.applyContentReview(node);
+  assert.equal(writes, 0);
+  ctx.cfg.contentReviewCopy = [{kind: 'text', old: 'Ayurvedic restaurant', new: 'Ayurvedic dining'}];
+  vm.runInContext(runtime, ctx);
+  for (let i = 0; i < 5; i++) ctx.applyContentReview(node);
+  assert.equal(writes, 1);
+  assert.equal(value, '  Ayurvedic dining  ');
+});

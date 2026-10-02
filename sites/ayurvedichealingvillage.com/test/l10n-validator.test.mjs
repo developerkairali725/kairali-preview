@@ -107,3 +107,10 @@ test("bounded normalizations: 'Sept' month and 'PP' counter in CJK, '…fold', g
   assert.ok(run("The reasons are several", "原因は3つあります", "ja").errs.some((e) => /numbers added/.test(e)), "no source word, no allowance");
   assert.deepEqual(run("6:30am Yoga8am Breakfast", "6:30 Uhr Yoga 8:00 Uhr Frühstück", "de").errs, []);
 });
+
+// Financial counters are display units; a changed occupancy/night quantity must still fail.
+test("CJK per-night and per-villa tariffs retain source quantities", () => {
+  const src = "Rates are per-night, per villa for single occupancy.";
+  assert.deepEqual(run(src, "1인 이용 기준 1박당 빌라 1채당 요금입니다.", "ko").errs, []);
+  assert.ok(run(src, "1인 이용 기준 2박당 빌라 1채당 요금입니다.", "ko").errs.some(e => e.includes("numbers added 2")));
+});

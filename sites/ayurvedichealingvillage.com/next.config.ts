@@ -82,6 +82,8 @@ const REDIRECT_MAP = JSON.parse(
 ) as RedirectMap;
 
 const nextConfig: NextConfig = {
+  // This app has multiple root layouts; unmatched URLs need their own document.
+  experimental: { globalNotFound: true },
   // Keep dependency tracing inside this monorepo on Windows and macOS.
   outputFileTracingRoot: join(process.cwd(), "../.."),
   // Static media is served from Vercel's static output, not read by page functions.
@@ -103,7 +105,6 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   transpilePackages: ["@kairali/consent", "@kairali/analytics", "@kairali/chat", "@kairali/social", "@kairali/legal", "@kairali/forms"],
   async rewrites() { return [
-    { source: "/documents/", destination: "/documents/index.html" },
     // The home runtime still requests this legacy logo path. Serve its
     // packaged same-dimension SVG after Vercel takes the public hostname.
     { source: "/wp-content/uploads/2024/11/logo_color-da22eb.svg", destination: "/ahv/assets/img/logo_color-da22eb.svg" },

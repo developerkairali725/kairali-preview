@@ -54,13 +54,20 @@ export function deferHeroFilm(logic) {
  * property (image-slot uses it) and every other element/attribute pass straight through; a later direct
  * src write wins over the held one. Verified by the staging A/B (48/48 -> 6/48).
  */
-export function installLazyImgOrder(win, responsiveAttrs) {
+export function installLazyImgOrder(win, responsiveAttrs, phoneSrc) {
   var P = win.Element && win.Element.prototype;
   if (!P || P.__ahvLazyOrder) return;
   var setAttr = P.setAttribute;
   var later = win.queueMicrotask ? win.queueMicrotask.bind(win) : function (f) { Promise.resolve().then(f); };
   try { Object.defineProperty(P, "__ahvLazyOrder", { value: true }); } catch (e) { P.__ahvLazyOrder = true; }
   P.setAttribute = function (name, value) {
+    if (name === "src" && this.tagName === "IMG" && phoneSrc && win.matchMedia && win.matchMedia("(max-width:699px)").matches) {
+      var mapped = phoneSrc(String(value));
+      if (mapped !== String(value)) {
+        value = mapped;
+        if (String(value).indexOf('/owner-approved-20260928/ahv-img-002-768.webp') >= 0) setAttr.call(this, "fetchpriority", "high");
+      }
+    }
     if (name === "loading" && value === "lazy" && this.tagName === "IMG") setAttr.call(this, "fetchpriority", "low");
     if (name === "src" && this.tagName === "IMG" && responsiveAttrs) {
       var attrs = responsiveAttrs(String(value), this.id || "");
