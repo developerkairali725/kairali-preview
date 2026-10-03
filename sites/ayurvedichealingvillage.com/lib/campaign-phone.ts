@@ -1,3 +1,4 @@
+export const CAMPAIGN_PHONE_PATTERN=String.raw`[+0-9\(\) .\-]{7,30}`;
 /** Shared campaign validation. This checks number structure, not ownership. */
 // Remove optional national trunk 0 for these common calling codes. Italy's 0 is retained.
 export function normaliseCampaignPhone(value: string): string {

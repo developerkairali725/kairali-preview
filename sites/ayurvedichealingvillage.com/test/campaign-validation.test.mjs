@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validationProblem} from '../lib/lead-validation.ts';
-import {validCampaignPhone,normaliseCampaignPhone} from '../lib/campaign-phone.ts';
+import {validCampaignPhone,normaliseCampaignPhone,CAMPAIGN_PHONE_PATTERN} from '../lib/campaign-phone.ts';
 const paths=['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html'];
 for(const path of paths) test(`Native campaign cannot omit required fields or consent: ${path}`,()=>{
  const fields={landing_page_path:path+'/',fname:'Example Visitor',email:'visitor@example.com',phone:'+91 98765 43219',consent:true,message:''};
@@ -32,4 +32,11 @@ test('Server rejects honeypot and invalid campaign before any transport',async()
   const spam=await POST(make({form:'landing-page',company:'spam bot'}));assert.equal(spam.status,400);assert.equal((await spam.json()).code,'INVALID_SUBMISSION');
   for(const path of paths){const invalid=await POST(make({form:'landing-page',submissionToken:'545404ff-a177-4f93-b5ab-10b90ee90d58',fields:{landing_page_path:path,email:'visitor@example.com'}}));assert.equal(invalid.status,400);assert.equal((await invalid.json()).code,'MISSING_REQUIRED_FIELDS');}
  }finally{for(const k of Object.keys(config)) previous[k]===undefined?delete process.env[k]:process.env[k]=previous[k];}
+});
+
+test('Native HTML phone pattern compiles with modern browser Unicode sets',()=>{
+ const pattern=new RegExp('^(?:'+CAMPAIGN_PHONE_PATTERN+')$','v');
+ assert.equal(pattern.test('+1 (202) 555-0137'),true);
+ assert.equal(pattern.test('98765 43219'),true);
+ assert.equal(pattern.test('abc12345678'),false);
 });
