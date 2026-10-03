@@ -16,3 +16,18 @@
 @media(max-width:700px){.r10-revision.tl-page .tl-hero:before{background:rgba(24,30,19,.78)!important}.r10-revision.tl-page nav .primary{padding:10px 14px!important;font-size:15px!important}}
 .tl-family .programme-photo{float:right;width:36%;height:auto;aspect-ratio:4/3;object-fit:cover;margin:0 0 24px 32px}.tl-family .family-programmes details:after{content:'';display:block;clear:both}.tl-family .recognition-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:32px}.tl-family .recognition-grid figure{margin:0;background:#eee8dc;padding:22px;text-align:center}.tl-family .recognition-grid img{width:100%;height:110px;object-fit:contain;margin:0 0 14px}.tl-family .recognition-grid figcaption{font:15px/1.5 Mulish;color:var(--brown)}
 @media(max-width:700px){.tl-family .programme-photo{float:none;width:100%;margin:24px 0;object-fit:contain;background:#e9e0ce}.tl-family .recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tl-family .recognition-grid figure{padding:16px 12px}.tl-family .recognition-grid img{height:85px}.tl-family .recognition-grid figcaption{font-size:14px}}
+
+/* Keep text comfortably inside every tinted Pain Management panel. */
+.r10-revision.tl-pain .content-section.benefit-panel,.r10-revision.tl-pain .content-section.journey-stage,.r10-revision.tl-pain .content-section.guest-story,.r10-revision.tl-pain .content-section.case-study{padding:36px!important;margin:28px 0;box-sizing:border-box}
+.r10-revision.tl-pain .content-section.benefit-panel:before,.r10-revision.tl-pain .content-section.journey-stage:before,.r10-revision.tl-pain .content-section.guest-story:before,.r10-revision.tl-pain .content-section.case-study:before{position:static;margin-bottom:22px}
+.r10-revision.tl-pain .guest-story .guest-rating{display:flex;gap:12px;align-items:center;font:600 16px/1.5 Mulish;color:#5a4420;border-top:1px solid #d9cfba;padding-top:16px;margin-top:16px}
+.r10-revision.tl-pain .guest-rating .rating-stars{letter-spacing:3px}
+.r10-revision.tl-pain .case-study .case-profile{background:#f7f4ea;padding:24px;margin:24px 0;border:1px solid #d9cfba}
+.r10-revision.tl-pain .case-study .case-profile .list-item{display:inline-flex;width:50%;box-sizing:border-box;padding:8px 12px 8px 0;border:0}
+.r10-revision.tl-pain .case-study .case-stage{padding:28px 0;border-top:1px solid #d9cfba}
+.r10-revision.tl-pain .case-study .case-stage h3{margin:0 0 20px}
+.r10-revision.tl-pain .case-study p{max-width:78ch}
+@media(max-width:700px){.r10-revision.tl-pain .content-section.benefit-panel,.r10-revision.tl-pain .content-section.journey-stage,.r10-revision.tl-pain .content-section.guest-story,.r10-revision.tl-pain .content-section.case-study{padding:26px 22px!important;margin:22px 0}.r10-revision.tl-pain .case-study .case-profile{padding:18px}.r10-revision.tl-pain .case-study .case-profile .list-item{width:100%}.r10-revision.tl-pain .case-study .case-stage{padding:24px 0}}
+@media(max-width:700px){.r10-revision.tl-page .hero-copy h1,.r10-revision.tl-page .hero-copy p,.r10-revision.tl-page .hero-copy .eyebrow,.r10-revision.tl-page .hero-copy .heritage-mark,.r10-revision.tl-page .hero-copy .heritage-mark small,.r10-revision.tl-page .hero-copy .heritage-mark span{color:#5a4420!important}.r10-revision.tl-page .hero-copy>p:not(.hero-deck){font-size:17px!important;line-height:1.65!important}.r10-revision.tl-page .hero-copy .hero-deck{font-size:21px!important;line-height:1.4!important}.r10-revision.tl-page .hero-copy .primary{background:#5a4420!important;color:#f7f4ea!important;border-color:#5a4420!important}}
+
+.r10-revision.tl-pain .guest-rating .rating-stars{color:#8a641e}

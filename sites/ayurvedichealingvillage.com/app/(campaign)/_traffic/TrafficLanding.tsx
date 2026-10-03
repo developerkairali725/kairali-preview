@@ -18,7 +18,7 @@ export function trafficMetadata(route:string,title:string,description:string):Me
 export function TrafficLanding({content,kind}:{content:string;kind:'pain'|'family'}){
  const options:HTMLReactParserOptions={replace(node){
   if(!(node instanceof Element))return;
-  if(node.name==='traffic-enquiry')return <R10EnquiryForm formType={kind==='pain'?'pain-management':'family-retreat'} familyFields={kind==='family'} submitLabel={kind==='pain'?'Request pain management consultation':'Plan my family retreat'} downloadGuide={false}/>;
+  if(node.name==='traffic-enquiry')return <R10EnquiryForm formType={kind==='pain'?'pain-management':'family-retreat'} familyFields={kind==='family'} submitLabel={kind==='pain'?'Enquire about pain care':'Plan my family retreat'} downloadGuide={false}/>;
   if(node.name==='heritage-years')return <HeritageYears initial={heritageYears()}/>;
   if(node.name==='stay-gallery')return <StayGallery/>;
   if(node.name==='img'){const a=node.attribs,hero=a.class?.includes('hero-photograph');return <Image src={a.src} alt={a.alt||''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width:700px) 100vw, 50vw'}/>;}

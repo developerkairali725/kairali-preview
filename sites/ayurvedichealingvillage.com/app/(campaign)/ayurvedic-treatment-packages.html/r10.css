@@ -55,3 +55,39 @@
 /* Native landing pages: use the current brand font for shared consent UI too. */
 body:has(.r10-revision){font-family:Mulish,Arial,sans-serif}
 .r10-revision #section-4 .section-overline{color:var(--ink)}
+
+/* Owner refinement: compact, readable native enquiry across the four campaigns. */
+.r10-revision form.enquiry{padding:24px!important;min-width:0}
+.r10-revision form.enquiry h2{margin:0 0 16px!important;font-size:28px!important}
+.r10-revision form.enquiry .form-grid{display:grid;grid-template-columns:1fr!important;gap:12px!important}
+.r10-revision form.enquiry .field{margin:0!important;min-width:0;grid-column:1!important}
+.r10-revision form.enquiry .field>label{display:block;margin-bottom:5px;font-size:16px}
+.r10-revision form.enquiry input:not([type=checkbox]):not([type=radio]),.r10-revision form.enquiry select,.r10-revision form.enquiry textarea{width:100%;min-height:46px;padding:9px 11px;font:17px/1.4 Mulish,sans-serif;box-sizing:border-box;color:#2a2118;background:#fffdf7;border:1px solid #b7a98f}
+.r10-revision form.enquiry textarea{min-height:76px;resize:vertical}
+.r10-revision form.enquiry .gender-field legend{margin-bottom:4px}
+.r10-revision form.enquiry .choices{gap:18px;min-height:32px;align-items:center}
+.r10-revision form.enquiry .phone-inputs{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px;align-items:end}
+.r10-revision form.enquiry .dial-label{display:block;font-size:12px;line-height:1.4;margin-bottom:4px}
+.r10-revision form.enquiry .phone-field small{display:block;font-size:13px;line-height:1.5;margin:6px 0 0;color:#5a4420}
+.r10-revision form.enquiry .consent{font-size:14px;line-height:1.5;gap:10px}
+.r10-revision form.enquiry>.primary{margin-top:16px!important;min-height:48px}
+.r10-revision form.enquiry .enquiry-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+/* A finite photographic panel prevents a tall form from enlarging a mobile crop. */
+@media(max-width:700px){
+.r10-revision .cover,.r10-revision .p26-hero,.r10-revision .tl-hero{display:flex!important;flex-direction:column;gap:0!important;padding:0 0 24px!important;min-height:0!important;background:#f7f4ea!important}
+.r10-revision .cover:before,.r10-revision .p26-hero:before,.r10-revision .tl-hero:before{display:none!important}
+.r10-revision .cover>.hero-photograph,.r10-revision .p26-hero>.hero-photograph,.r10-revision .tl-hero>.hero-photograph{position:relative!important;inset:auto!important;z-index:auto!important;width:100%!important;height:auto!important;aspect-ratio:16/10;object-fit:cover;object-position:center;filter:none!important}
+.r10-revision .cover-copy,.r10-revision .hero-copy{padding:28px 22px!important;margin:0!important;width:100%;max-width:none!important}
+.r10-revision .cover-copy h1,.r10-revision .hero-copy h1,.r10-revision .cover-copy p,.r10-revision .hero-copy p,.r10-revision .cover-copy .eyebrow,.r10-revision .hero-copy .eyebrow,.r10-revision .hero-copy .heritage-mark,.r10-revision .cover-copy .heritage-mark{color:#5a4420!important}
+.r10-revision .hero-copy .heritage-mark,.r10-revision .cover-copy .heritage-mark{border-color:#d9cfba!important}
+.r10-revision .hero-copy .primary,.r10-revision .cover-copy .primary{background:#5a4420!important;color:#f7f4ea!important;border-color:#5a4420!important}
+.r10-revision form.enquiry{width:calc(100% - 40px)!important;margin:0 20px!important;padding:22px 20px!important;align-self:center;max-width:none!important}
+}
+
+.r10-revision form.enquiry .field>label{line-height:1.4;margin-bottom:4px}
+.r10-revision form.enquiry .gender-field legend{font-size:15px;line-height:1.4}
+.r10-revision form.enquiry .dial-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.r10-revision form.enquiry .phone-inputs{align-items:center}
+.r10-revision form.enquiry .phone-field small{font-size:12px;line-height:1.4}
+
+.r10-revision form.enquiry .family-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}.r10-revision form.enquiry .family-options .field{grid-column:auto!important}

@@ -1,5 +1,6 @@
 'use client';
 import {useRef,useState,type FormEvent} from 'react';
+import {validCampaignPhone,normaliseCampaignPhone} from '../../../lib/campaign-phone';
 
 /** AHV-only short enquiry UI. Receipt appears only after /api/lead/ confirms
  * durable storage (database via the signed relay, then the Sheet). While that
@@ -30,7 +31,11 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
  };
  async function submit(event:FormEvent<HTMLFormElement>){
   event.preventDefault();const form=event.currentTarget;if(!form.reportValidity()||sending)return;
-  const data=new FormData(form);if(data.get('company'))return;
+  const data=new FormData(form);
+  const phone=String(data.get('phone')||'').trim();
+  const dialCode=String(data.get('dialCode')||'').trim();
+  const fullPhone=normaliseCampaignPhone(phone.startsWith('+')?phone:dialCode+' '+phone);
+  if(!validCampaignPhone(fullPhone)){setError(de?'Bitte geben Sie eine gültige Telefonnummer mit Ländervorwahl ein.':'Please enter a valid phone number with its country code.');return;}
   setSending(true);setError('');
   const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);
   try{
@@ -43,7 +48,7 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
    const sourceUrl=window.location.origin+window.location.pathname+(query.size?'?'+query.toString():'');
    let referrer='';try{referrer=new URL(document.referrer).origin+'/';}catch{}
    if(!submissionToken.current)submissionToken.current=crypto.randomUUID();
-   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:`r10-${formType}`,campaign_name:campaign.utm_campaign||'',utm_keyword:campaign.utm_term||'',fname:String(data.get('fullName')).trim(),rdogender:String(data.get('rdogender')||''),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:(familyFields?`Country: ${String(data.get('country')||'').trim()}\nPreferred duration: ${String(data.get('duration')||'').trim()}\n`: '')+String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
+   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',company:String(data.get('company')||''),submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:`r10-${formType}`,campaign_name:campaign.utm_campaign||'',utm_keyword:campaign.utm_term||'',fname:String(data.get('fullName')).trim(),rdogender:String(data.get('rdogender')||''),email:String(data.get('email')).trim(),phone:fullPhone,message:(familyFields?`Country: ${String(data.get('country')||'').trim()}\nPreferred duration: ${String(data.get('duration')||'').trim()}\n`: '')+String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
    const result=await response.json().catch(()=>({}));
    if(response.status===503&&/_NOT_CONFIGURED$/.test(String(result.code||'')))throw new Error(copy.notConnected);
    if(!response.ok||result.ok!==true||result.status!=='received')throw new Error(response.status===429?copy.retry:copy.unconfirmed);
@@ -56,11 +61,11 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
   <h2>Enquire now</h2><div className="form-grid">
   <div className="field"><label htmlFor="R10-fname">Name</label><input id="R10-fname" name="fullName" autoComplete="name" required maxLength={120} pattern={String.raw`.*\S.*`}/></div>
   <fieldset className="field gender-field"><legend>Gender</legend><div className="choices"><label><input name="rdogender" type="radio" value="Male"/> Male</label><label><input name="rdogender" type="radio" value="Female"/> Female</label></div></fieldset>
-  <div className="field"><label htmlFor="R10-phone">Phone No</label><input id="R10-phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" required maxLength={30} pattern="[+0-9() .-]{7,30}"/></div>
+  <div className="field phone-field"><label htmlFor="R10-phone">Phone / WhatsApp</label><div className="phone-inputs"><div><label className="dial-label" htmlFor="R10-dial">Country code</label><input id="R10-dial" name="dialCode" type="tel" autoComplete="tel-country-code" defaultValue="+91" inputMode="tel" required maxLength={4} pattern="\+[1-9][0-9]{0,2}" title="Country calling code, for example +91, +44 or +1" onInput={event=>{const phone=event.currentTarget.form?.elements.namedItem('phone') as HTMLInputElement|null;phone?.setCustomValidity('');}}/></div><input id="R10-phone" name="phone" type="tel" autoComplete="tel-national" inputMode="tel" required maxLength={30} pattern="[+0-9() .-]{7,30}" aria-describedby="R10-phone-help" onBlur={event=>{const input=event.currentTarget;const dial=input.form?.elements.namedItem('dialCode') as HTMLInputElement|null;const value=input.value.trim();input.setCustomValidity(value&&!validCampaignPhone(value.startsWith('+')?value:(dial?.value||'')+' '+value)?'Enter a valid phone number with its country code.':'');}} onInput={event=>event.currentTarget.setCustomValidity('')}/></div><small id="R10-phone-help">Change +91 for your country.</small></div>
   <div className="field"><label htmlFor="R10-email">Email Id</label><input id="R10-email" name="email" type="email" autoComplete="email" required maxLength={254}/></div>
-  {familyFields&&<><div className="field"><label htmlFor="R10-country">Country</label><input id="R10-country" name="country" autoComplete="country-name" required maxLength={100}/></div><div className="field"><label htmlFor="R10-duration">Preferred duration</label><select id="R10-duration" name="duration" defaultValue=""><option value="">Select duration</option><option value="7 days">7 days</option><option value="14 days">14 days</option><option value="21 days">21 days</option></select></div></>}
-  <div className="field"><label htmlFor="R10-message">{familyFields?'Any existing health conditions?':'Message'}</label><textarea id="R10-message" name="message" rows={4} maxLength={familyFields?2700:3000}/></div>
-  <div hidden aria-hidden="true"><label>Leave empty<input name="company" tabIndex={-1} autoComplete="off"/></label></div>
+  {familyFields&&<div className="family-options"><div className="field"><label htmlFor="R10-country">Country</label><input id="R10-country" name="country" autoComplete="country-name" required maxLength={100}/></div><div className="field"><label htmlFor="R10-duration">Preferred duration</label><select id="R10-duration" name="duration" defaultValue=""><option value="">Select duration</option><option value="7 days">7 days</option><option value="14 days">14 days</option><option value="21 days">21 days</option></select></div></div>}
+  <div className="field"><label htmlFor="R10-message">{familyFields?'Any existing health conditions?':'Message'}</label><textarea id="R10-message" name="message" rows={2} maxLength={familyFields?2700:3000}/></div>
+  <div className="enquiry-trap" aria-hidden="true"><label>Leave empty<input name="company" tabIndex={-1} autoComplete="off"/></label></div>
   <label className="field consent"><input id="R10-chkAgree" name="consent" type="checkbox" required/><span>I have read and agree to the <a href="/new-privacy-policy/">privacy policy</a> and <a href="/terms-and-conditions/">terms</a></span></label>
   </div><button className="primary" disabled={sending} type="submit">{sending?'Sending…':submitLabel}</button>
   {error&&<p className="enquiry-error" role="alert">{error}</p>}
