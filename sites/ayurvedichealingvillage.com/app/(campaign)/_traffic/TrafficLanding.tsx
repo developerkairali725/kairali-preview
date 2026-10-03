@@ -1,3 +1,4 @@
+import {HeroMedia} from './HeroMedia';
 import type {Metadata} from 'next';
 import Image from 'next/image';
 import parse,{Element,type HTMLReactParserOptions} from 'html-react-parser';
@@ -21,7 +22,7 @@ export function TrafficLanding({content,kind}:{content:string;kind:'pain'|'famil
   if(node.name==='traffic-enquiry')return <R10EnquiryForm formType={kind==='pain'?'pain-management':'family-retreat'} familyFields={kind==='family'} submitLabel={kind==='pain'?'Enquire about pain care':'Plan my family retreat'} downloadGuide={false}/>;
   if(node.name==='heritage-years')return <HeritageYears initial={heritageYears()}/>;
   if(node.name==='stay-gallery')return <StayGallery/>;
-  if(node.name==='img'){const a=node.attribs,hero=a.class?.includes('hero-photograph');return <Image src={a.src} alt={a.alt||''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width:700px) 100vw, 50vw'}/>;}
+  if(node.name==='img'){const a=node.attribs,hero=a.class?.includes('hero-photograph');if(hero)return <HeroMedia src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1000}/>;return <Image src={a.src} alt={a.alt||''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width:700px) 100vw, 50vw'}/>;}
  }};
  const url='https://ayurvedichealingvillage.com/'+(kind==='pain'?'pain-management.html':'family-ayurvedic-retreat-kerala.html');
  const schema={'@context':'https://schema.org','@type':'WebPage',url,name:kind==='pain'?'Ayurvedic Pain Management in Kerala':'Family Ayurveda Retreat in Kerala',inLanguage:'en',isPartOf:{'@type':'WebSite',url:'https://ayurvedichealingvillage.com/',name:'Kairali Ayurvedic Healing Village'}};
