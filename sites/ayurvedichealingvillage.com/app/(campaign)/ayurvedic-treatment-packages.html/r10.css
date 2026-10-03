@@ -132,3 +132,5 @@ body:has(.r10-revision){font-family:Mulish,Arial,sans-serif}
 @media(max-width:700px){#ahv-consent{flex-wrap:wrap!important;gap:16px!important}#ahv-consent>div{width:100%!important;flex:1 1 100%!important;min-width:0!important}#ahv-consent>div:last-child{display:flex!important;gap:12px!important;flex-wrap:wrap!important}#ahv-consent button{min-height:48px!important;font-size:17px!important}}
 
 @media(max-width:700px){.r10-revision.tl-page .hero-copy>p:not(.hero-deck){font-size:18px!important;line-height:1.75!important}.r10-revision .campaign-authority span span{font-size:16px}.r10-revision .heading-kicker,.r10-revision .programme-jump,.r10-revision .gallery-photo small{font-size:17px!important;line-height:1.55!important}.r10-revision .campaign-authority a{padding:9px 8px;gap:6px}}
+
+.r10-revision .process-section .list-item:before{content:none!important}.r10-revision .process-section .list-item{display:block!important;padding-left:0!important}.r10-revision .process-section>p:has(+.list-item){color:#5a4420!important;font-variant-numeric:tabular-nums;letter-spacing:.08em}
