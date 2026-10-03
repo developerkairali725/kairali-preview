@@ -46,7 +46,7 @@ export function validationProblem(table: LeadTable, values: Record<string, strin
 
   if (table === 'landing-page') {
     const campaignPath = typeof values.landing_page_path === 'string' ? values.landing_page_path.replace(/\/+$/, '') : '';
-    if (['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html'].includes(campaignPath) || (typeof values.form_variant === 'string' && values.form_variant.startsWith('r10-'))) {
+    if (['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html','/preventive-rejuvenation-detoxification.html','/ayurveda-retreat-kerala.html','/weight-loss-programme','/digestive-wellness-gut-health-yoga-therapy','/karkidaka-chikitsha-or-monsoon-wellness.html'].includes(campaignPath) || (typeof values.form_variant === 'string' && values.form_variant.startsWith('r10-'))) {
       if (!['landing_page_path','fname','phone','email'].every((key)=>present(values,key)) || values.consent !== true) return 'MISSING_REQUIRED_FIELDS';
       const phone = normaliseCampaignPhone(String(values.phone));
       values.phone = phone;

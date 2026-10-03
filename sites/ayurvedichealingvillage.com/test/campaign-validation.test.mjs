@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validationProblem} from '../lib/lead-validation.ts';
 import {validCampaignPhone,normaliseCampaignPhone,CAMPAIGN_PHONE_PATTERN} from '../lib/campaign-phone.ts';
-const paths=['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html'];
+const paths=['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html','/preventive-rejuvenation-detoxification.html','/ayurveda-retreat-kerala.html','/weight-loss-programme','/digestive-wellness-gut-health-yoga-therapy','/karkidaka-chikitsha-or-monsoon-wellness.html'];
 for(const path of paths) test(`Native campaign cannot omit required fields or consent: ${path}`,()=>{
  const fields={landing_page_path:path+'/',fname:'Example Visitor',email:'visitor@example.com',phone:'+91 98765 43219',consent:true,message:''};
  assert.equal(validationProblem('landing-page',fields),null);
