@@ -31,3 +31,7 @@
 @media(max-width:700px){.r10-revision.tl-page .hero-copy h1,.r10-revision.tl-page .hero-copy p,.r10-revision.tl-page .hero-copy .eyebrow,.r10-revision.tl-page .hero-copy .heritage-mark,.r10-revision.tl-page .hero-copy .heritage-mark small,.r10-revision.tl-page .hero-copy .heritage-mark span{color:#5a4420!important}.r10-revision.tl-page .hero-copy>p:not(.hero-deck){font-size:17px!important;line-height:1.65!important}.r10-revision.tl-page .hero-copy .hero-deck{font-size:21px!important;line-height:1.4!important}.r10-revision.tl-page .hero-copy .primary{background:#5a4420!important;color:#f7f4ea!important;border-color:#5a4420!important}}
 
 .r10-revision.tl-pain .guest-rating .rating-stars{color:#8a641e}
+.r10-revision.tl-page .content{padding:0}
+.r10-revision.tl-pain .content-section.closing-consultation{padding:36px!important;box-sizing:border-box}
+.r10-revision.tl-pain .closing-consultation:before{position:static;margin-bottom:22px}
+@media(max-width:700px){.r10-revision.tl-pain .content-section.closing-consultation{padding:26px 22px!important}}
