@@ -12,6 +12,7 @@ import { GuestSupport } from '../ayurvedic-treatment-packages.html/GuestSupport'
 import '@kairali/ui/brand-tokens.css';
 import '../ayurvedic-treatment-packages.html/r10.css';
 import './panchakarma.css';
+import '../_traffic/refinements.css';
 const canonical='https://ayurvedichealingvillage.com/panchkarma-treatment.html';
 const title='Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village';
 const description='Explore the 14–21 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.';
