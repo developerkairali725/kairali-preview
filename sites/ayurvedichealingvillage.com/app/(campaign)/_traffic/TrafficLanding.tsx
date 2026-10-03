@@ -11,6 +11,7 @@ import '@kairali/ui/brand-tokens.css';
 import '../ayurvedic-treatment-packages.html/r10.css';
 import './traffic.css';
 import './refinements.css';
+import './family-pain-refinements.css';
 import {ProgrammeNavigation} from './ProgrammeNavigation';
 export function trafficMetadata(route:string,title:string,description:string):Metadata{
  const url=`https://ayurvedichealingvillage.com/${route}`;
