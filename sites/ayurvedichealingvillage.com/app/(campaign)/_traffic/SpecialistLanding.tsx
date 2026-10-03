@@ -20,7 +20,7 @@ export function SpecialistLanding({content,route,title,kind}:{content:string;rou
   if(node.name==='heritage-years')return <HeritageYears initial={heritageYears()}/>;
   if(node.name==='stay-gallery')return <StayGallery/>;
   if(node.name==='img'){
-   const a=node.attribs;if(a.class?.includes('hero-photograph'))return <HeroMedia src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1066}/>;
+   const a=node.attribs;if(a.class?.includes('hero-photograph'))return <HeroMedia quality={75} src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1066}/>;
    return <Image src={a.src} alt={a.alt||''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} sizes="(max-width:700px) 100vw, 50vw"/>;
   }
  }};
