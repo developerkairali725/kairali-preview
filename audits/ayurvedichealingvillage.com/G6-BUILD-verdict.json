@@ -2,17 +2,17 @@
   "gate": "G6-BUILD",
   "status": "FAIL",
   "artifact_path": "audits/ayurvedichealingvillage.com/G6-BUILD-source-manifest.json",
-  "artifact_sha256": "6187a5c2beb6574dbe08da77b7f8c1739a1b1494e162bfd8cbb62db61e7fa24a",
+  "artifact_sha256": "ed7794dc0ec4c80fd65561051740fd229a8387edd69544c73a3aa91343635dce",
   "rubric_sha256": null,
   "command": "pnpm exec turbo build --filter=<site>",
   "argv": [
     "pnpm exec turbo build --filter=ayurvedichealingvillage.com"
   ],
   "exit_code": 1,
-  "started_at": "2026-10-02T14:03:15+05:30",
-  "finished_at": "2026-10-02T14:03:17+05:30",
+  "started_at": "2026-10-03T01:08:44+05:30",
+  "finished_at": "2026-10-03T01:08:50+05:30",
   "runner": "github-actions",
-  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/36984358639",
+  "ci_run_url": "https://github.com/kairali-digital/kairali-web-factory/actions/runs/37054253671",
   "control_probe": {
     "name": "harness-detects-nonzero-exit",
     "expected": 2,
