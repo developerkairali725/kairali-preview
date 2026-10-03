@@ -91,3 +91,4 @@ body:has(.r10-revision){font-family:Mulish,Arial,sans-serif}
 .r10-revision form.enquiry .phone-field small{font-size:12px;line-height:1.4}
 
 .r10-revision form.enquiry .family-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}.r10-revision form.enquiry .family-options .field{grid-column:auto!important}
+@media(max-width:700px){.r10-revision .cover-copy .heritage-mark>span,.r10-revision .cover-copy .heritage-mark small,.r10-revision .hero-copy .heritage-mark>span,.r10-revision .hero-copy .heritage-mark small{color:#5a4420!important}}
