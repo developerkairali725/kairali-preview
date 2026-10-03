@@ -1,3 +1,4 @@
+import {specialistStyles} from './specialist-styles';
 import Image from 'next/image';
 import parse,{Element,type HTMLReactParserOptions} from 'html-react-parser';
 import {HeroMedia} from './HeroMedia';
@@ -7,11 +8,6 @@ import {StayGallery} from '../panchkarma-treatment.html/StayGallery';
 import {HeritageYears} from '../panchkarma-treatment.html/HeritageYears';
 import {heritageYears} from '../../../lib/heritage-age.mjs';
 import '@kairali/ui/brand-tokens.css';
-import '../ayurvedic-treatment-packages.html/r10.css';
-import './traffic.css';
-import './refinements.css';
-import './family-pain-refinements.css';
-import './specialist.css';
 
 export function SpecialistLanding({content,route,title,kind}:{content:string;route:string;title:string;kind:string}){
  const options:HTMLReactParserOptions={replace(node){
@@ -25,5 +21,5 @@ export function SpecialistLanding({content,route,title,kind}:{content:string;rou
   }
  }};
  const schema={'@context':'https://schema.org','@type':'WebPage',url:'https://ayurvedichealingvillage.com/'+route,name:title,inLanguage:'en',isPartOf:{'@type':'WebSite',url:'https://ayurvedichealingvillage.com/',name:'Kairali Ayurvedic Healing Village'}};
- return <div className={`r10-revision tl-page tl-specialist tl-${kind}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(content,options)}<GuestSupport/></div>;
+ return <div className={`r10-revision tl-page tl-specialist tl-${kind}`}><style dangerouslySetInnerHTML={{__html:specialistStyles}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(content,options)}<GuestSupport/></div>;
 }
