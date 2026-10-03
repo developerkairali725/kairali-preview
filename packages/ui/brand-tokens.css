@@ -371,3 +371,47 @@ a { color: var(--forest-500); transition: color var(--dur-fast) var(--ease-brand
   --ahv-r10-overlay-4: rgba(42,32,20,.56);
   --ahv-r10-overlay-5: rgba(42,32,20,.90);
 }
+
+/* Exact AHV campaign release palette; preserve approved rendered values. */
+.r10-revision {
+  --ahv-release-color-1: #2a2118;
+  --ahv-release-color-2: #f7f4ea;
+  --ahv-release-color-3: #5a4420;
+  --ahv-release-color-4: #c1882c;
+  --ahv-release-color-5: #d9cfba;
+  --ahv-release-color-6: rgba(90,68,32,.025);
+  --ahv-release-color-7: #3f301b;
+  --ahv-release-color-8: #efe9db;
+  --ahv-release-color-9: rgba(24,30,19,.83);
+  --ahv-release-color-10: rgba(24,30,19,.6);
+  --ahv-release-color-11: rgba(24,30,19,.32);
+  --ahv-release-color-12: #eedcae;
+  --ahv-release-color-13: rgba(247,244,234,.35);
+  --ahv-release-color-14: #eeb41e;
+  --ahv-release-color-15: #d0b889;
+  --ahv-release-color-16: rgba(0,0,0,.15);
+  --ahv-release-color-17: #fffdf7;
+  --ahv-release-color-18: #b7a98f;
+  --ahv-release-color-19: #e9e0ce;
+  --ahv-release-color-20: #eee6d6;
+  --ahv-release-color-21: #eee8dc;
+  --ahv-release-color-22: rgba(247,244,234,.3);
+  --ahv-release-color-23: #201b14dc;
+  --ahv-release-color-24: #dfd2b8;
+  --ahv-release-color-25: rgba(24,30,19,.88);
+  --ahv-release-color-26: rgba(24,30,19,.7);
+  --ahv-release-color-27: rgba(24,30,19,.45);
+  --ahv-release-color-28: rgba(24,30,19,.78);
+  --ahv-release-color-29: #8a641e;
+  --ahv-release-color-30: #e8dfcc;
+  --ahv-release-color-31: #0003;
+  --ahv-release-color-32: #ffffff30;
+  --ahv-release-color-33: #e7ddc9;
+}
+
+.r10-revision {
+  --ahv-release-color-34: rgba(247,244,234,.97);
+  --ahv-release-color-35: #181e1920;
+  --ahv-release-color-36: rgba(24,30,19,.8);
+  --ahv-release-color-37: rgba(24,30,19,.2);
+}
