@@ -625,6 +625,19 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
  #ahv-design-root [data-ahv-home-finder] > div > a { flex:none!important;min-width:0;white-space:normal; }
 }
 
+/* Keep the brand legible without reducing 44px touch targets on compact phones. */
+@media(max-width:360px) {
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header { padding:0 8px!important;gap:4px!important; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header > a:first-child { flex:0 0 64px!important;min-width:64px;max-width:64px; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header > div { gap:2px!important; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header [aria-label=Search] { margin-left:0!important; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header .ahv-lang-btn { width:44px;min-width:44px;padding:8px!important;justify-content:center;gap:0; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header .ahv-lang-btn svg { display:none; }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header a[href*="bookings."] { padding:12px 8px!important;letter-spacing:.4px!important; }
+ #ahv-design-root [data-ahv-home-finder] button[type=submit],
+ #ahv-design-root [data-ahv-home-finder] > div > a { padding-inline:12px!important; }
+}
+
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
    Space the input itself: password-manager helper nodes must not add flex gaps. */
