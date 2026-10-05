@@ -1,12 +1,12 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-villa-sizes-final-20261002.tar.gz",
-  "archive": "ahv-locale-prerenders-villa-sizes-final-20261002.tar.gz",
-  "sha256": "9d1688c4bd2915f6728407d39073a6d13e72b6384e87ce16e334059c67d2fc00",
-  "bytes": 46481384,
-  "capturedSource": "4a67da3 + owner-approved villa total-area ranges",
-  "captured": "2026-10-02",
+  "asset": "ahv-locale-prerenders-home-search-20261005.tar.gz",
+  "archive": "ahv-locale-prerenders-home-search-20261005.tar.gz",
+  "sha256": "946c3f2679f3dbbbc83ad524feff49f082b721f52ff284722c0cd8cc802bbb43",
+  "bytes": 46687507,
+  "capturedSource": "e32903b13 + reviewed search focus handling; 12 translated homepages recaptured; all other 2592 snapshot members unchanged",
+  "captured": "2026-10-05",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -434,11 +434,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/design/search.js",
-      "sha256": "f96de0447bdd55425dc5fdf90e7a8b07ad8b8fb52bd86c66aff8f4d62aedd1e4"
+      "sha256": "eb0588de09f5585d3959b7e85f7e4c6345c4998bd0f476dcd5efef1417d6c1c1"
     },
     {
       "file": "public/ahv/l10n/ar/design/search.min.js",
-      "sha256": "6873204378920633495c021390d5e15ab0560bce91e935a52997a256d1fb79d1"
+      "sha256": "3c4cbcea2ecbee7bbccc650be676db38519fe6395c8baf7424a18816064aba16"
     },
     {
       "file": "public/ahv/l10n/ar/design/section-nav.data.js",
@@ -454,7 +454,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/search-index.json",
-      "sha256": "6421fb787b722bd75d71c2b1a9cc1be16b2af5348233e97ba2d1094daed9d497"
+      "sha256": "4832ca38e65c66c32b7090c547c6bde7031220e1e560d69c8237e506967ad7b3"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-about-us-desktop.json",
@@ -1474,11 +1474,11 @@
     },
     {
       "file": "public/ahv/l10n/de/design/search.js",
-      "sha256": "3120cb0344007954c2188a6bfca60f0b56782d26ebfd640e114785f22b5d1338"
+      "sha256": "3eeec5ddabe209296a2041bec452d674488f27f25501d9510cf43105e51c46f4"
     },
     {
       "file": "public/ahv/l10n/de/design/search.min.js",
-      "sha256": "5ff33dfbfd8549cffb983749f67808b9486359fbeda2ebecf3564a4db7857433"
+      "sha256": "630a577a44a8c9a053e935abd369e72d1d6f55b1b430e7d3fed8e54a887c0f7f"
     },
     {
       "file": "public/ahv/l10n/de/design/section-nav.data.js",
@@ -1494,7 +1494,7 @@
     },
     {
       "file": "public/ahv/l10n/de/search-index.json",
-      "sha256": "a8f0b8ec1ea450c23fc250f06572372dcfbfa5d169d546eb0b29e0b3e0c46258"
+      "sha256": "c06211e3f3ec6cb5dc034f4d3573312dce07a1b06d4434d0f96d4096c968ac40"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-about-us-desktop.json",
@@ -2514,11 +2514,11 @@
     },
     {
       "file": "public/ahv/l10n/es/design/search.js",
-      "sha256": "20e591eab1eaddae5bd40e69b118cede119b926f42b1879f5c31e51e12161700"
+      "sha256": "51e7a9606bcbcfe1b50869b2dcbaf5f9a41d25f22ed41c52343e882b547e5d2b"
     },
     {
       "file": "public/ahv/l10n/es/design/search.min.js",
-      "sha256": "013be1194bcf5c905cdf7b7761289d8d54f2cbbd8c4fdef94367d0a3595fcc07"
+      "sha256": "c4ca9e4bbc083c7a237bd9db14ac342314ed65e6d692790753502f609b5c404e"
     },
     {
       "file": "public/ahv/l10n/es/design/section-nav.data.js",
@@ -2534,7 +2534,7 @@
     },
     {
       "file": "public/ahv/l10n/es/search-index.json",
-      "sha256": "7eb7ba16d2cf9a9d521dc8d9e6ce48b7e23a5c316d431d918561bf4e312b166c"
+      "sha256": "c709c997c3c703fe79861e8ff5fe0ce85692aee7c99cc24ebb935e7e0ceb691a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-about-us-desktop.json",
@@ -3554,11 +3554,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/design/search.js",
-      "sha256": "c3d35ca38e43d21f3a9fe61acca755b4cad2fbf237a4cdcf3ca6009e05b15f57"
+      "sha256": "8f2f553ce0f7a59a64fcb9efe229f7fa50feac582d1cc5a9b521b6be91b6c32b"
     },
     {
       "file": "public/ahv/l10n/fr/design/search.min.js",
-      "sha256": "0cadeeb0d1b4cc18872a13dd5f57ce186bf8579ab7b89581f492b72ff320ebc7"
+      "sha256": "8c455d7dd4adbb10945a4c3da4b7d39f4e0e1158efc18dfd12734c5bb68aaa1d"
     },
     {
       "file": "public/ahv/l10n/fr/design/section-nav.data.js",
@@ -3574,7 +3574,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/search-index.json",
-      "sha256": "21a04daaa157863c82ad73dace7b1445f7bc9244562533b3b04c374badf3a105"
+      "sha256": "3acfc0f692b1c3e0329408acd01466fef0d29807c008dd47c1356c6cb4ead485"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-about-us-desktop.json",
@@ -4594,11 +4594,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/design/search.js",
-      "sha256": "e3bac323dbb14aad346a8f0adce7da682df38138279e7215dffa7638b8c8eb67"
+      "sha256": "e0050377f994674eb59d1345e1aeaa3a9233ef52d44a00150708974f819b1723"
     },
     {
       "file": "public/ahv/l10n/hi/design/search.min.js",
-      "sha256": "6c3d9111d2d3bce5b940eeee37bdc3d074be04bbe0df006f998b371af089dd23"
+      "sha256": "675651f888638cb7a39c055ee0c116183a38abb699810e2137375f8480f3eea9"
     },
     {
       "file": "public/ahv/l10n/hi/design/section-nav.data.js",
@@ -4614,7 +4614,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/search-index.json",
-      "sha256": "26d0794bd85c6e6725dffcb2aa4b914df9080f955ba02dc6ed06ae1a50019789"
+      "sha256": "8e2c9b7d0ef097a3459767714aa9fb0ba4af494c04d58425728e7b185360d25a"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-about-us-desktop.json",
@@ -5634,11 +5634,11 @@
     },
     {
       "file": "public/ahv/l10n/it/design/search.js",
-      "sha256": "3833cbf92f6355b8ebc2c32cfa00e0dfafb50f9c8e414f5a6bcea5c7ab35b47a"
+      "sha256": "3f7c7fbfe082ab94c7141c10a9035f4b0cce449751a79d2c073b0304ac98822d"
     },
     {
       "file": "public/ahv/l10n/it/design/search.min.js",
-      "sha256": "7250a6f464b8c6b0fd636c40a66b224fc2f9ebb8accbbd7127c65bc94927b937"
+      "sha256": "03e8972b1bd3d0e6119c4ebaf68ae50e35067752cabeb57b3afa0b99955a5d35"
     },
     {
       "file": "public/ahv/l10n/it/design/section-nav.data.js",
@@ -5654,7 +5654,7 @@
     },
     {
       "file": "public/ahv/l10n/it/search-index.json",
-      "sha256": "7170c12543f5687e2236606dcbdc8fca731447f26b9272bd9019518d247f5b6a"
+      "sha256": "d2e1af86c0c1e80529579d50b6772e4319df2d43fcac54211ef7eee36924901d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-about-us-desktop.json",
@@ -6674,11 +6674,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/design/search.js",
-      "sha256": "f5b5dbd3b5dab96a901fac1a2b4985973be65bfc442e0477965dc4c8756a8100"
+      "sha256": "28f47aeaab0a38a9424850d53a9ae4eb8008fccf51596d4f1fa12384ef585bb1"
     },
     {
       "file": "public/ahv/l10n/ja/design/search.min.js",
-      "sha256": "af616510142f4a5276367fb92d0fe93ddbe0bde042b4e9326f45d44fc53b7245"
+      "sha256": "36de42242e13c87939a2dbb1d68af8c8d322071210f364382fbcd8450dfd6795"
     },
     {
       "file": "public/ahv/l10n/ja/design/section-nav.data.js",
@@ -6694,7 +6694,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/search-index.json",
-      "sha256": "53ac66487f0d0f6f8d404af37faa05ebd032a328753418b56755ff63eb028a6e"
+      "sha256": "3f019ca0f99c280783ff997c4b9895a644a83684b30ed4d13d4a7e2ae3191bfd"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-about-us-desktop.json",
@@ -7714,11 +7714,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/design/search.js",
-      "sha256": "02a08ee936face2c3b61e88650ba591c68c3aac501eaac416adb406a818b7e78"
+      "sha256": "a2f4fdcdd6d00eb89c91290ff618b2aadd0fe6d37b0e829fc61ef3111f9c7749"
     },
     {
       "file": "public/ahv/l10n/ko/design/search.min.js",
-      "sha256": "2135dbb8afe9a9cc40a6f38d1c27ca06f4148ff035765553812a4747dbde1e85"
+      "sha256": "0b1fff96aab7c2d68076ec65cd5ebf25215e076b25054882c02405ea20925829"
     },
     {
       "file": "public/ahv/l10n/ko/design/section-nav.data.js",
@@ -7734,7 +7734,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/search-index.json",
-      "sha256": "d3f9db0791a494831e72647210eb1ce96c0eeb8cb15ba220d3aa63e0b11be84f"
+      "sha256": "f053dcf8c3267a73ae46ade049f35d3f517a13b2e99881596bcec841fc61003e"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-about-us-desktop.json",
@@ -8754,11 +8754,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/design/search.js",
-      "sha256": "5fa9afc14356cacada777cba012be81a882f7d351a1dd572515a38aab4ebed3f"
+      "sha256": "fea8bd92250d6dc47dc06690068f489e3560d5446cb75239bef2a631b2429a22"
     },
     {
       "file": "public/ahv/l10n/nl/design/search.min.js",
-      "sha256": "966efb8583fcff7591e454b69cd68b851abb73ebbab72fa97324bb8973971d05"
+      "sha256": "10ebfe6f1e79166a73a0fa5512c23dc41ef72d5d03c97dd48e028aecc4a07193"
     },
     {
       "file": "public/ahv/l10n/nl/design/section-nav.data.js",
@@ -8774,7 +8774,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/search-index.json",
-      "sha256": "2727b50039d6d35463bba774babf5135e45e59ffa678a93f10ebe8b0132d49e1"
+      "sha256": "eb020d92ededf86baa226d14b70a8040276259c3d8d2330adac9de8eb0a7a725"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-about-us-desktop.json",
@@ -9794,11 +9794,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/design/search.js",
-      "sha256": "8d8626f5c5e8031286f1769c8d4fe106f631af3344a9f2bad63c4c1abae8c367"
+      "sha256": "1c9a0d6e462ca3cd4d7895c2f244e635848d355b2c3fb95e1f80dd2fb31f102d"
     },
     {
       "file": "public/ahv/l10n/pt/design/search.min.js",
-      "sha256": "294d6a491598d957ef4ff42b1ff831e523413cd43dcccbf1c67fe7944a48957c"
+      "sha256": "d65e0036355e6b58f1b540109649efae3b80864c55e96ca5412fa063adef570f"
     },
     {
       "file": "public/ahv/l10n/pt/design/section-nav.data.js",
@@ -9814,7 +9814,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/search-index.json",
-      "sha256": "5ff0e0bab64e2bcb43e1198a2c193fd59d97e6f41f9d1df241b9f9ffe48ea27c"
+      "sha256": "4478fdb3b3892ca06caa1ac2e96868965ccef9f1dc6b5b953834dbfde4085a3f"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-about-us-desktop.json",
@@ -10834,11 +10834,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/design/search.js",
-      "sha256": "217aa6d9bad0db71832243bad53c9ef988eee58a0731ceb2c961032e835238b9"
+      "sha256": "3f607a22a35552568b7d9a42885d7fa9005953f26e341a5f2c3e7f1b2901b47f"
     },
     {
       "file": "public/ahv/l10n/ru/design/search.min.js",
-      "sha256": "7463844eae21813866a7192b150e259cff7e86e8e575e9bda36917ee4e5bb05f"
+      "sha256": "e705f0df69c14ef2875d689d404b64cfc336f0c956eb4da660e5deb355b082ec"
     },
     {
       "file": "public/ahv/l10n/ru/design/section-nav.data.js",
@@ -10854,7 +10854,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/search-index.json",
-      "sha256": "7cb1159186ec5c44a8ced8a26a77dfb3eb1150e158c6864dc669b62fc93572fb"
+      "sha256": "393266193eb4ef5411e3ff737910cfc0d49dbe06a50c57121c373e59d25c88a4"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-about-us-desktop.json",
@@ -11874,11 +11874,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/design/search.js",
-      "sha256": "5c57f61533eb9cb24bc06c885dabc735f52f6dc286c6a4ddcd0a95eda0fc7772"
+      "sha256": "ae2b9b921e89c7e0c2a2ea70c67ac630d9a347ac7378fd7e40ee80b94bd889e9"
     },
     {
       "file": "public/ahv/l10n/zh/design/search.min.js",
-      "sha256": "55bce158eb590e7822c39a9691be69fa7ef6d250eb505f552221a3bbf89d4eae"
+      "sha256": "72e63c14b17b0bb792d8a8ea3f22f777bfde5da63e769f8799ab533135a1f4d6"
     },
     {
       "file": "public/ahv/l10n/zh/design/section-nav.data.js",
@@ -11894,7 +11894,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/search-index.json",
-      "sha256": "d5bca5486758014ec786564b9f33c5bc0629c215a954ed6fb62cc6af362c4e4a"
+      "sha256": "81b4f12ed3c67481f999a35f9799530cb1fc9d455d249d8d0df883de52786ae0"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-about-us-desktop.json",
@@ -12961,8 +12961,8 @@
     },
     {
       "file": "l10n/prerender/hi/index.html.gz",
-      "sha256": "ea23124745797f6a4cff4b2cd47f30ab5cc7062f74203a64ac5bcaf301de710a",
-      "bytes": 34042
+      "sha256": "553ac93e1b86e3f23014be1087f1e085b6c3b5866f04f7c74c8efd291420770e",
+      "bytes": 33562
     },
     {
       "file": "l10n/prerender/hi/index.json",
@@ -14046,8 +14046,8 @@
     },
     {
       "file": "l10n/prerender/de/index.html.gz",
-      "sha256": "99301f04db5bbdedfb9efa6e873e415c64daa1430738b49214c5cd0dc9ce409c",
-      "bytes": 31631
+      "sha256": "6930010728aa8f07bdada10b813aa71a5e3b38fbacaf15183bdb2608001c2cd4",
+      "bytes": 31061
     },
     {
       "file": "l10n/prerender/de/index.json",
@@ -15131,8 +15131,8 @@
     },
     {
       "file": "l10n/prerender/fr/index.html.gz",
-      "sha256": "5566908a4071691eebd6e088e6c01cb81d6647574b5689993a54c588ddb68067",
-      "bytes": 31647
+      "sha256": "70461ec1a8d8ed3a1e25f5b97d6fdc9aaf153a917bd4324e8340b2c6a56098f2",
+      "bytes": 31067
     },
     {
       "file": "l10n/prerender/fr/index.json",
@@ -16216,8 +16216,8 @@
     },
     {
       "file": "l10n/prerender/es/index.html.gz",
-      "sha256": "42b47602e0cbf08d1774a84ed489ca3d0eb5b469960bf10742b54084dcfede10",
-      "bytes": 31432
+      "sha256": "c868dd70a2660440216ffdb5461e7f8b0a0801d259d380a9517f1150d0368bb9",
+      "bytes": 30818
     },
     {
       "file": "l10n/prerender/es/index.json",
@@ -17301,8 +17301,8 @@
     },
     {
       "file": "l10n/prerender/it/index.html.gz",
-      "sha256": "fdc7e86f6d99635c15c0f1d421348f5657bc8ed1f2ef41c51805134cf2eebb19",
-      "bytes": 31193
+      "sha256": "d1dda36cf17cd8a91a67955802c41503bf0d6295d08564846de78dc04de95781",
+      "bytes": 30560
     },
     {
       "file": "l10n/prerender/it/index.json",
@@ -18386,8 +18386,8 @@
     },
     {
       "file": "l10n/prerender/pt/index.html.gz",
-      "sha256": "edf1f14aec7307c87303e470c5af438545ed2460a75fd91686dde276587a335f",
-      "bytes": 31761
+      "sha256": "c66a8c8d4bfc887a3c362c7e92a3251165c8fa149fe8283f6f4653e7c93167b6",
+      "bytes": 30792
     },
     {
       "file": "l10n/prerender/pt/index.json",
@@ -19471,8 +19471,8 @@
     },
     {
       "file": "l10n/prerender/nl/index.html.gz",
-      "sha256": "d405a1083e82700461b2e86475f852ecee3432667ce9d50e32c23cc392da0eff",
-      "bytes": 31033
+      "sha256": "58155da153eade807b9eb4dd11482ce72f20e628fea6415aac081c27e020e4da",
+      "bytes": 30425
     },
     {
       "file": "l10n/prerender/nl/index.json",
@@ -20556,8 +20556,8 @@
     },
     {
       "file": "l10n/prerender/ru/index.html.gz",
-      "sha256": "9c5693e37594b97cce59260364ba7228e33e3b7a1c540d8ea68089539f6968df",
-      "bytes": 35065
+      "sha256": "4a1f8a42e7a4c160bb03dea96803351d08c50bd3a6285f28bf8da99f3c4a9bcc",
+      "bytes": 34609
     },
     {
       "file": "l10n/prerender/ru/index.json",
@@ -21641,8 +21641,8 @@
     },
     {
       "file": "l10n/prerender/ar/index.html.gz",
-      "sha256": "8f3fe7da4125c1664988444bb420042cde41e4826f15703e888dcda822897ef1",
-      "bytes": 33046
+      "sha256": "f2ee0370d9ce8bda0e6e04de9594f18f3f004b1eacaaebc031d1d360de9229c5",
+      "bytes": 32676
     },
     {
       "file": "l10n/prerender/ar/index.json",
@@ -22726,8 +22726,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.html.gz",
-      "sha256": "d0129ab1e18f3034407bc882061d8d5d70d4cfe1d19b90f6276a11295ae13b43",
-      "bytes": 32613
+      "sha256": "123ecdb9cb6aab0d13dbb2993d2f4237e7e26df4e6d77c7c7a22efd8cd9f5f10",
+      "bytes": 32474
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
@@ -23811,8 +23811,8 @@
     },
     {
       "file": "l10n/prerender/ja/index.html.gz",
-      "sha256": "49a14aa053d86c1ea3aa98c870e12f629cbe106c8df79561c67c362bef4dab2f",
-      "bytes": 33813
+      "sha256": "6be0678d0dafd36ac5e2f68537b78c9a98ef5aa0fbb163f20743bd0e82160cd6",
+      "bytes": 33564
     },
     {
       "file": "l10n/prerender/ja/index.json",
@@ -24896,8 +24896,8 @@
     },
     {
       "file": "l10n/prerender/ko/index.html.gz",
-      "sha256": "bfca896614335c62c28eaf14ae1dd26935ed9edcb481c373fff0c0078ac8636f",
-      "bytes": 32213
+      "sha256": "47db9a6c7b20319317c097366a20721a48abfbaa59a1df2d4420ddce4c198191",
+      "bytes": 31930
     },
     {
       "file": "l10n/prerender/ko/index.json",

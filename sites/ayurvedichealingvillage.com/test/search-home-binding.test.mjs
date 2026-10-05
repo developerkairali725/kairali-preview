@@ -22,7 +22,7 @@ const until = async predicate => {
 test('homepage suggestions bind a marked snapshot and rebind a replaced input once', async () => {
   const doc = new Element(), form = new Element(), host = new Element();
   let input = new Element(), onMutation;
-  host.appendChild(input);
+  host.appendChild(input); doc.activeElement = input;
   form.setAttribute('data-ahvs-suggest', '1'); // Serialized marker has no listeners.
   form.querySelector = selector => selector === 'input[name="q"]' ? input : null;
   doc.querySelector = selector => selector === 'form[data-ahv-home-finder="1"]' ? form : null;
@@ -39,7 +39,7 @@ test('homepage suggestions bind a marked snapshot and rebind a replaced input on
   input.value = 'offers'; input.dispatchEvent(new Event('input'));
   await until(() => host.querySelector('#ahvs-home-list')?.innerHTML?.includes('href="/offers/"'));
   const oldInput = input, oldBox = host.querySelector('#ahvs-home-list');
-  input = new Element(); input.value = 'awards'; oldInput.remove(); host.appendChild(input);
+  input = new Element(); input.value = 'awards'; oldInput.remove(); host.appendChild(input); doc.activeElement = input;
   onMutation();
   await until(() => host.querySelector('#ahvs-home-list') !== oldBox);
   await until(() => host.querySelector('#ahvs-home-list')?.innerHTML?.includes('href="/awards-and-accreditations/"'));
@@ -49,4 +49,15 @@ test('homepage suggestions bind a marked snapshot and rebind a replaced input on
   assert.equal(host.querySelector('#ahvs-home-list'), box);
   assert.equal(host.children.filter(e => e.id === 'ahvs-home-list').length, 1);
   assert.equal(oldBox.isConnected, false);
+  const unchanged = box.innerHTML;
+  oldInput.value = 'offers'; oldInput.dispatchEvent(new Event('input'));
+  await new Promise(resolve => setTimeout(resolve, 110));
+  assert.equal(box.innerHTML, unchanged, 'replaced input listeners are detached');
+  const dateInput = new Element(); doc.activeElement = dateInput;
+  const leaving = new Event('focusout'); Object.defineProperty(leaving, 'relatedTarget', { value: dateInput });
+  host.dispatchEvent(leaving);
+  assert.equal(box.hidden, true, 'Tab to the date field closes suggestions');
+  input.dispatchEvent(new Event('input'));
+  await new Promise(resolve => setTimeout(resolve, 110));
+  assert.equal(box.hidden, true, 'a pending query cannot reopen suggestions without focus');
 });

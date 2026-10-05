@@ -720,7 +720,7 @@
     }
     function show() {
       var q = inp.value.trim();
-      if (!inp.isConnected || q.length < 2 || !engine) { hide(); return; }
+      if (!inp.isConnected || doc.activeElement !== inp || q.length < 2 || !engine) { hide(); return; }
       var res = engine.query(q, { scope: "site" });
       var list = [];
       res.order.forEach(function (kind) {
@@ -762,7 +762,10 @@
       if (a) { e.preventDefault(); choose(a); }
     }, listenOptions);
     doc.addEventListener("click", function (e) { if (!host.contains(e.target)) hide(); }, listenOptions);
-    if (inp.value.trim().length >= 2) updateSuggestions();
+    host.addEventListener("focusout", function (e) {
+      if (e.relatedTarget && !host.contains(e.relatedTarget)) hide();
+    }, listenOptions);
+    if (doc.activeElement === inp && inp.value.trim().length >= 2) updateSuggestions();
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", homeSuggest); else homeSuggest();
   if (root.MutationObserver) { var hsRoot = doc.getElementById("ahv-design-root"); if (hsRoot) new MutationObserver(function () { setTimeout(homeSuggest, 0); }).observe(hsRoot, { childList: true, subtree: true }); }
